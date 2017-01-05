@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102080432) do
+ActiveRecord::Schema.define(version: 20170103170147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,9 +107,8 @@ ActiveRecord::Schema.define(version: 20170102080432) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.integer "geozone_id"
-    t.string  "name",       limit: 50
-    t.integer "price",      limit: 8
+    t.string  "name",     limit: 50
+    t.integer "price",    limit: 8
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree

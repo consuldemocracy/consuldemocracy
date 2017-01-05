@@ -47,7 +47,7 @@ feature 'Admin budgets' do
       expect(page).to_not have_content(budget4.name)
       expect(page).to have_content(budget5.name)
 
-      click_link 'Current'
+      click_link 'Open'
       expect(page).to have_content(budget1.name)
       expect(page).to have_content(budget2.name)
       expect(page).to have_content(budget3.name)
@@ -55,8 +55,8 @@ feature 'Admin budgets' do
       expect(page).to_not have_content(budget5.name)
     end
 
-    scenario 'Current filter is properly highlighted' do
-      filters_links = {'current' => 'Current', 'finished' => 'Finished'}
+    scenario 'Open filter is properly highlighted' do
+      filters_links = {'current' => 'Open', 'finished' => 'Finished'}
 
       visit admin_budgets_path
 
@@ -110,22 +110,29 @@ feature 'Admin budgets' do
       visit admin_budgets_path
 
       within("#budget_#{budget.id}") do
-        click_link 'Info'
+        click_link 'Edit headings groups'
       end
 
+      expect(page).to have_content '0 Groups of budget headings'
       expect(page).to have_content 'No groups created yet.'
 
       click_link 'Add new group'
 
-      fill_in 'budget_group_name', with: 'General improvments'
+      fill_in 'budget_group_name', with: 'Health'
       click_button 'Create group'
 
+      expect(page).to have_content '1 Group of budget headings'
+      expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
       expect(page).to_not have_content 'No groups created yet.'
 
       visit admin_budgets_path
-      click_link 'Yearly participatory budget'
+      within("#budget_#{budget.id}") do
+        click_link 'Edit headings groups'
+      end
 
+      expect(page).to have_content '1 Group of budget headings'
+      expect(page).to have_content 'Health'
       expect(page).to have_content 'Yearly participatory budget'
       expect(page).to_not have_content 'No groups created yet.'
     end
@@ -153,7 +160,6 @@ feature 'Admin budgets' do
 
         expect(page).to have_content 'District 9 reconstruction'
         expect(page).to have_content '6785'
-        expect(page).to have_content 'All city'
       end
     end
 

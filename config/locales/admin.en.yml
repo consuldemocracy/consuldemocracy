@@ -62,10 +62,17 @@ en:
       index:
         title: Participatory budgets
         new_link: Create new budget
-        info_link: Info
         filters:
-          open: Open
+          current: Open
           finished: Finished
+        budget_investments: See budget investments
+        table_name: Name
+        table_phase: Phase
+        table_investments: Investments
+        table_edit_groups: Headings groups
+        table_edit_budget: Edit
+        edit_groups: Edit headings groups
+        edit_budget: Edit budget
       create:
         notice: New participatory budget created successfully!
       update:
@@ -75,9 +82,9 @@ en:
       new:
         title: New participatory budget
       show:
-        phase: Current phase
-        currency: Currency
-        groups: Groups of budget headings
+        groups:
+          one: 1 Group of budget headings
+          other: "%{count} Groups of budget headings"
       form:
         group: Group name
         no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
@@ -88,10 +95,8 @@ en:
         amount: Amount
         save_heading: Save heading
         no_heading: This group has no assigned heading.
-        geozone: Scope of operation
         table_heading: Heading
         table_amount: Amount
-        table_geozone: Scope of operation
     budget_investments:
       index:
         heading_filter_all: All headings

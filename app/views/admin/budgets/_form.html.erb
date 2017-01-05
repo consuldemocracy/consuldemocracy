@@ -3,10 +3,12 @@
   <%= f.text_field :name, maxlength: Budget.title_max_length %>
 
   <% Budget::PHASES.each do |phase| %>
-    <%= f.cktext_area "description_#{phase}", maxlength: Budget.description_max_length, ckeditor: { language: I18n.locale } %>
+    <div class="margin-top">
+      <%= f.cktext_area "description_#{phase}", maxlength: Budget.description_max_length, ckeditor: { language: I18n.locale } %>
+    </div>
   <% end %>
 
-  <div class="row">
+  <div class="row margin-top">
     <div class="small-12 medium-9 column">
       <%= f.select :phase, budget_phases_select_options %>
     </div>

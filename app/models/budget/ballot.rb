@@ -36,14 +36,17 @@ class Budget
       self.groups.include?(group)
     end
 
+    def wrong_budget?(heading)
+      heading.budget_id != budget_id
+    end
+
+    def different_heading_assigned?(heading)
+      other_heading_ids = heading.group.heading_ids - [heading.id]
+      lines.where(heading_id: other_heading_ids).exists?
+    end
+
     def valid_heading?(heading)
-      group = heading.group
-      return false if group.budget_id != budget_id
-
-      line = lines.where(heading_id: group.heading_ids).first
-      return false if line.present? && line.heading_id != heading.id
-
-      true
+      !wrong_budget?(heading) && !different_heading_assigned?(heading)
     end
 
     def has_lines_with_no_heading?

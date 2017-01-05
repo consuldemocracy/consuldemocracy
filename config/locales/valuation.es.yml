@@ -9,8 +9,13 @@ es:
       index:
         title: Presupuestos participativos
         filters:
-          open: Abiertos
+          current: Abiertos
           finished: Terminados
+        table_name: Nombre
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
+        table_actions: Acciones
+        evaluate: Evaluar
     budget_investments:
       index:
         headings_filter_all: Todas las partidas
@@ -19,11 +24,16 @@ es:
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
         title: Propuestas de inversión
-        edit: Editar
+        assigned_to: "Asignadas a %{valuator}"
+        edit: Editar informe
         valuators_assigned:
           one: Evaluador asignado
           other: "%{count} evaluadores asignados"
         no_valuators_assigned: Sin evaluador
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nombre de la partida
+        table_actions: Acciones
       show:
         back: Volver
         title: Propuesta de inversión
