@@ -5,7 +5,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
       <div class="notice-text">
-        <%= flash_message %>
+        <%= flash_message.try(:html_safe) %>
       </div>
     </div>
   </div>

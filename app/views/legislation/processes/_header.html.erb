@@ -1,0 +1,24 @@
+<% if header == :small %>
+  <div class="legislation-hero legislation-allegation no-margin-top grey-heading" data-target="legislation-header-small">
+    <div class="row headline">
+      <div class="small-12 medium-7 column">
+        <h3><%= process.title %></h3>
+      </div>
+      <div class="small-12 medium-4 column right">
+        <a class="button-subscribed expanded button strong" title="Suscríbete al proceso" data-remote="true" rel="nofollow" data-method="post" href="#">
+          <span class="icon-checkmark-circle" aria-hidden="true"></span>
+          <h3>Suscrito</h3>
+        </a>
+      </div>
+    </div>
+    <div class="center half-gradient">
+      <a class="button big center button-circle" title="<%= t('.view_process_information') %>" id="js-toggle-legislation-process-header">
+        <span class="icon-angle-down" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+  <%= render 'legislation/processes/header_full', process: @process, hidden: true %>
+<% else %>
+  <%= render 'legislation/processes/header_full', process: @process, hidden: false %>
+<% end %>

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Legislation::Process, type: :model do
-  let(:legislation_process) { build(:legislation_process) }
+  let(:process) { create(:legislation_process) }
 
   it "should be valid" do
-    expect(legislation_process).to be_valid
+    expect(process).to be_valid
   end
 
   describe "date ranges validations" do
@@ -76,8 +76,6 @@ RSpec.describe Legislation::Process, type: :model do
 
   describe "#open_phase?" do
     it "checks debate phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(debate_start_date: Date.current + 2.days, debate_end_date: Date.current + 3.days)
       expect(process.open_phase?(:debate)).to be false
@@ -96,7 +94,6 @@ RSpec.describe Legislation::Process, type: :model do
     end
 
     it "checks allegations phase" do
-      process = create(:legislation_process)
 
       # future
       process.update_attributes(allegations_start_date: Date.current + 2.days, allegations_end_date: Date.current + 3.days)
@@ -116,8 +113,6 @@ RSpec.describe Legislation::Process, type: :model do
     end
 
     it "checks draft publication phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(draft_publication_date: Date.current + 2.days)
       expect(process.open_phase?(:draft_publication)).to be false
@@ -132,8 +127,6 @@ RSpec.describe Legislation::Process, type: :model do
     end
 
     it "checks final version publication phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(final_publication_date: Date.current + 2.days)
       expect(process.open_phase?(:final_version_publication)).to be false
@@ -150,8 +143,6 @@ RSpec.describe Legislation::Process, type: :model do
 
   describe "#show_phase?" do
     it "checks debate phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(debate_start_date: Date.current + 2.days, debate_end_date: Date.current + 3.days)
       expect(process.show_phase?(:debate)).to be false
@@ -170,8 +161,6 @@ RSpec.describe Legislation::Process, type: :model do
     end
 
     it "checks allegations phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(allegations_start_date: Date.current + 2.days, allegations_end_date: Date.current + 3.days)
       expect(process.show_phase?(:allegations)).to be false
@@ -190,8 +179,6 @@ RSpec.describe Legislation::Process, type: :model do
     end
 
     it "checks draft publication phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(draft_publication_date: Date.current + 2.days)
       expect(process.show_phase?(:draft_publication)).to be false
@@ -206,8 +193,6 @@ RSpec.describe Legislation::Process, type: :model do
     end
 
     it "checks final version publication phase" do
-      process = create(:legislation_process)
-
       # future
       process.update_attributes(final_publication_date: Date.current + 2.days)
       expect(process.show_phase?(:final_version_publication)).to be false
@@ -219,6 +204,22 @@ RSpec.describe Legislation::Process, type: :model do
       # starts today
       process.update_attributes(final_publication_date: Date.current)
       expect(process.show_phase?(:final_version_publication)).to be true
+    end
+  end
+
+  describe "#status" do
+    it "should detect planned phase" do
+      process.update_attributes(start_date: Date.current + 2.days)
+      expect(process.status).to eq(:planned)
+    end
+
+    it "should detect closed phase" do
+      process.update_attributes(end_date: Date.current - 2.days)
+      expect(process.status).to eq(:closed)
+    end
+
+    it "should detect open phase" do
+      expect(process.status).to eq(:open)
     end
   end
 end

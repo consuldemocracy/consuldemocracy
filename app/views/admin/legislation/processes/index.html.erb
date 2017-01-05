@@ -20,6 +20,8 @@
     <thead>
       <tr>
         <th><%= t("admin.legislation.processes.process.title") %></th>
+        <th><%= t("admin.legislation.processes.process.status") %></th>
+        <th><%= t("admin.legislation.processes.process.creation_date") %></th>
         <th><%= t("admin.legislation.processes.process.comments") %></th>
         <th></th>
       </tr>
@@ -30,6 +32,8 @@
         <td class="small-12 medium-8">
           <%= link_to process.title, edit_admin_legislation_process_path(process) %>
         </td>
+        <td><%= t("admin.legislation.processes.process.status_#{process.status}") %></td>
+        <td><%= I18n.l process.created_at.to_date %></td>
         <td><%= process.total_comments %></td>
         <td>
           <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),

@@ -5,6 +5,17 @@ feature 'Legislation' do
   context 'processes home page' do
 
     scenario 'Processes can be listed' do
+      visit legislation_processes_path
+      expect(page).to have_text "There aren't open processes"
+
+      visit legislation_processes_path(filter: 'next')
+      expect(page).to have_text "There aren't planned processes"
+
+      visit legislation_processes_path(filter: 'past')
+      expect(page).to have_text "There aren't past processes"
+    end
+
+    scenario 'Processes can be listed' do
       processes = create_list(:legislation_process, 3)
 
       visit legislation_processes_path

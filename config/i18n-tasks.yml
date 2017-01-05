@@ -149,6 +149,8 @@ ignore_unused:
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
+  - 'admin.legislation.processes.process.*'
+  - 'legislation.processes.index.*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

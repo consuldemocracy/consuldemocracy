@@ -239,6 +239,8 @@ en:
         text_body: Text
         text_comments: Comments
     processes:
+      header:
+        view_process_information: View process information
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
@@ -254,6 +256,9 @@ en:
           open: Open processes
           next: Next
           past: Past
+        no_open_processes: There aren't open processes
+        no_next_processes: There aren't planned processes
+        no_past_processes: There aren't past processes
       phase_not_open:
         not_open: This phase is not open yet
       phase_empty:
@@ -278,6 +283,7 @@ en:
         answer_question: Submit answer
         comments: Comments
         next_question: Next question
+        first_question: First question
         share: Share
         share_twitter: Share on Twitter
         share_facebook: Share on Facebook
@@ -291,6 +297,7 @@ en:
         unauthenticated: You must %{signin} or %{signup} to participate.
         verified_only: Only verified users can participate, %{verify_account}.
         verify_account: verify your account
+        debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
   locale: English
   notifications:
     index:

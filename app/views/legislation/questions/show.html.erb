@@ -16,6 +16,13 @@
             <span class="icon-angle-right" aria-hidden="true">
           <% end %>
         <% end %>
+      <% elsif @question.first_question_id %>
+        <%= link_to legislation_process_question_path(@process, @question.first_question_id), class: "quiz-next-link" do %>
+          <%= content_tag :div, class: "quiz-next" do %>
+            <%= t('.first_question') %>
+            <span class="icon-angle-right" aria-hidden="true">
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -32,7 +39,7 @@
       <div id="social-share" class="sidebar-divider"></div>
       <h3><%= t('.share') %></h3>
       <div class="social-share-full">
-          <div class="social-share-button" data-title="<%= @question.title %>" data-img="" data-url="" data-desc="" data-via="">
+          <div class="social-share-button" data-title="<%= @question.title.truncate(115) %>" data-img="" data-url="" data-desc="" data-via="">
             <a rel="nofollow " data-site="twitter" class="ssb-icon ssb-twitter" onclick="return SocialShareButton.share(this);" title="<%= t('.share_twitter') %>" href="#"><span class="sr-only">twitter</span></a>
             <a rel="nofollow " data-site="facebook" class="ssb-icon ssb-facebook" onclick="return SocialShareButton.share(this);" title="<%= t('.share_facebook') %>" href="#"><span class="sr-only">facebook</span></a>
             <a rel="nofollow " data-site="google_plus" class="ssb-icon ssb-google_plus" onclick="return SocialShareButton.share(this);" title="<%= t('.share_gplus') %>" href="#"><span class="sr-only">google_plus</span></a>

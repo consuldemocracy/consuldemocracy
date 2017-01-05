@@ -13,23 +13,25 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   def create
     @question.author = current_user
     if @question.save
-      redirect_to admin_legislation_process_questions_path
+      redirect_to admin_legislation_process_questions_path, notice: t('admin.legislation.questions.create.notice', link: legislation_process_question_path(@process, @question).html_safe)
     else
+      flash.now[:error] = t('admin.legislation.questions.create.error')
       render :new
     end
   end
 
   def update
     if @question.update(question_params)
-      redirect_to admin_legislation_process_questions_path
+      redirect_to edit_admin_legislation_process_question_path(@process, @question), notice: t('admin.legislation.questions.update.notice', link: legislation_process_question_path(@process, @question).html_safe)
     else
+      flash.now[:error] = t('admin.legislation.questions.update.error')
       render :edit
     end
   end
 
   def destroy
     @question.destroy
-    redirect_to admin_legislation_process_questions_path
+    redirect_to admin_legislation_process_questions_path, notice: t('admin.legislation.questions.destroy.notice')
   end
 
   private

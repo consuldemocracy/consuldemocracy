@@ -1,6 +1,6 @@
 <% provide :title do %><%= @process.title %><% end %>
 
-<%= render 'header_full', process: @process %>
+<%= render 'legislation/processes/header', process: @process, header: :full %>
 
 <div class="row">
   <%= render 'key_dates', process: @process, phase: :debate %>

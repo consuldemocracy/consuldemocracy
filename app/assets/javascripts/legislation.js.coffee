@@ -14,3 +14,10 @@ App.Legislation =
     $('form#draft_version_go_to_version select').on
       change: ->
         $('form#draft_version_go_to_version').submit()
+
+    $('#js-toggle-legislation-process-header').on
+      click: ->
+        $('[data-target="legislation-header-small"]').toggle()
+        $('[data-target="legislation-header-full"]').toggle()
+
+
