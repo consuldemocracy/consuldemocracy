@@ -267,6 +267,10 @@ FactoryGirl.define do
     user
   end
 
+  factory :poll_officer, class: 'Poll::Officer' do
+    user
+  end
+
   factory :poll do
     sequence(:name) { |n| "Poll #{n}" }
 
@@ -305,10 +309,6 @@ FactoryGirl.define do
   factory :poll_booth_assignment, class: 'Poll::BoothAssignment' do
     poll
     association :booth, factory: :poll_booth
-  end
-
-  factory :poll_officer, class: 'Poll::Officer' do
-    user
   end
 
   factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do

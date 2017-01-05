@@ -30,7 +30,7 @@
     <% else %>
       <h3><%= t("admin.poll_booth_assignments.show.officers_list") %></h3>
 
-      <table>
+      <table id="officers_list">
         <tbody>
           <% @booth_assignment.officers.uniq.each do |officer| %>
             <tr id="officer_<%= officer.id %>" class="officer">
@@ -50,7 +50,7 @@
       </div>
     <% else %>
       <h3><%= t("admin.poll_booth_assignments.show.recounts_list") %></h3>
-      <table>
+      <table id="recounts_list">
         <thead>
           <tr>
             <th><%= t("admin.poll_booth_assignments.show.date") %></th>
