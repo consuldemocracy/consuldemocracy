@@ -41,7 +41,7 @@
     <div class="small-12 medium-8 column">
       <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
         <%= f.radio_button :status, status, label: false %>
-        <%= f.label t("admin.legislation.draft_versions.statuses.#{status}") %>
+        <%= f.label "status_#{status}", t("admin.legislation.draft_versions.statuses.#{status}") %>
         <small><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></small>
         <br/>
       <% end %>
