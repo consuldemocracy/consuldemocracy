@@ -805,6 +805,11 @@ form {
 .callout {
   font-size: $small-font-size;
 
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
@@ -821,12 +826,6 @@ form {
     background-color: $warning-bg;
     border-color: $warning-border;
     color: $color-warning;
-
-    a {
-      color: $color-warning;
-      font-weight: bold;
-      text-decoration: underline;
-    }
   }
 
   &.alert, &.error {

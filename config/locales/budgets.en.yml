@@ -85,6 +85,9 @@ en:
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
           create: "Create budget investment"
+          not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
+          sign_in: "sign in"
+          sign_up: "sign up"
         orders:
           random: random
           confidence_score: highest rated
