@@ -91,3 +91,6 @@ Setting['direct_message_max_per_day'] = 3
 # Email settings
 Setting['mailer_from_name'] = 'Consul'
 Setting['mailer_from_address'] = 'noreply@consul.dev'
+
+# Verification settings
+Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
