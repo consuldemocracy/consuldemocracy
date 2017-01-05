@@ -9,26 +9,22 @@ class Budget
 
       validates :ballot_id, :investment_id, :heading_id, :group_id, :budget_id, presence: true
 
-      validate :insufficient_funds
-      #needed? validate :different_geozone, :if => :district_proposal?
-      validate :unselected
+      validate :check_selected
+      validate :check_sufficient_funds
+      validate :check_valid_heading
 
       before_validation :set_denormalized_ids
 
-      def insufficient_funds
+      def check_sufficient_funds
         errors.add(:money, "insufficient funds") if ballot.amount_available(investment.heading) < investment.price.to_i
       end
 
-      def different_geozone
-        errors.add(:heading, "different heading assigned") if (ballot.heading.present? && investment.heading != ballot.heading)
+      def check_valid_heading
+        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected") unless ballot.valid_heading?(self.heading)
       end
 
-      def unselected
+      def check_selected
         errors.add(:investment, "unselected investment") unless investment.selected?
-      end
-
-      def heading_proposal?
-        investment.heading_id.present?
       end
 
       private

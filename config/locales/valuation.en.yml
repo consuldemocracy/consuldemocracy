@@ -9,8 +9,13 @@ en:
       index:
         title: Participatory budgets
         filters:
-          open: Open
+          current: Open
           finished: Finished
+        table_name: Name
+        table_phase: Phase
+        table_assigned_investments_valuation_open: Investment projects assigned with valuation open
+        table_actions: Actions
+        evaluate: Evaluate
     budget_investments:
       index:
         headings_filter_all: All headings
@@ -18,12 +23,17 @@ en:
           valuation_open: Open
           valuating: Under valuation
           valuation_finished: Valuation finished
+        assigned_to: "Assigned to %{valuator}"
         title: Investment projects
-        edit: Edit
+        edit: Edit dossier
         valuators_assigned:
           one: Assigned valuator
           other: "%{count} valuators assigned"
         no_valuators_assigned: No valuators assigned
+        table_id: ID
+        table_title: Title
+        table_heading_name: Heading name
+        table_actions: Actions
       show:
         back: Back
         title: Investment project

@@ -54,34 +54,6 @@ feature 'Valuation budget investments' do
     expect(investment10.title).to appear_before(investment1.title)
   end
 
-  scenario 'Index shows assignments info' do
-    investment1 = create(:budget_investment, budget: @budget)
-    investment2 = create(:budget_investment, budget: @budget)
-    investment3 = create(:budget_investment, budget: @budget)
-
-    valuator1 = create(:valuator, user: create(:user))
-    valuator2 = create(:valuator, user: create(:user))
-    valuator3 = create(:valuator, user: create(:user))
-
-    investment1.valuator_ids = [@valuator.id]
-    investment2.valuator_ids = [@valuator.id, valuator1.id, valuator2.id]
-    investment3.valuator_ids = [@valuator.id, valuator3.id]
-
-    visit valuation_budget_budget_investments_path(@budget)
-
-    within("#budget_investment_#{investment1.id}") do
-      expect(page).to have_content("Rachel")
-    end
-
-    within("#budget_investment_#{investment2.id}") do
-      expect(page).to have_content("3 valuators assigned")
-    end
-
-    within("#budget_investment_#{investment3.id}") do
-      expect(page).to have_content("2 valuators assigned")
-    end
-  end
-
   scenario "Index filtering by heading", :js do
     group = create(:budget_group, budget: @budget)
     heading1 = create(:budget_heading, name: "District 9", group: group)
@@ -262,7 +234,7 @@ feature 'Valuation budget investments' do
     scenario 'Edit dossier' do
       visit valuation_budget_budget_investments_path(@budget)
       within("#budget_investment_#{@investment.id}") do
-        click_link "Edit"
+        click_link "Edit dossier"
       end
 
       fill_in 'budget_investment_price', with: '12345'
@@ -381,7 +353,7 @@ feature 'Valuation budget investments' do
     scenario 'Validates price formats' do
       visit valuation_budget_budget_investments_path(@budget)
       within("#budget_investment_#{@investment.id}") do
-        click_link "Edit"
+        click_link "Edit dossier"
       end
 
       fill_in 'budget_investment_price', with: '12345,98'

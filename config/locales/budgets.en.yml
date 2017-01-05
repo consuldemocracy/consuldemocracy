@@ -118,7 +118,7 @@ en:
           one: 1 support
           other: "%{count} supports"
           zero: No supports
-        vote: Vote
+        give_support: Support
       header:
         check_ballot: Check my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
@@ -127,3 +127,4 @@ en:
       heading: Heading
       price: Price
       no_heading: No Heading
+      phase: Actual phase

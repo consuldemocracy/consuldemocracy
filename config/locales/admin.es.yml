@@ -62,10 +62,17 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
-        info_link: Info
         filters:
-          open: Abiertos
+          current: Abiertos
           finished: Terminados
+        budget_investments: Ver propuestas de inversión
+        table_name: Nombre
+        table_phase: Fase
+        table_investments: Propuestas de inversión
+        table_edit_groups: Grupos de partidas
+        table_edit_budget: Editar
+        edit_groups: Editar grupos de partidas
+        edit_budget: Editar presupuesto
       create:
         notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
       update:
@@ -75,9 +82,9 @@ es:
       new:
         title: Nuevo presupuesto ciudadano
       show:
-        phase: Fase actual
-        currency: Divisa
-        groups: Grupos de partidas presupuestarias
+        groups:
+          one: 1 Grupo de partidas presupuestarias
+          other: "%{count} Grupos de partidas presupuestarias"
       form:
         group: Nombre del grupo
         no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
@@ -88,10 +95,8 @@ es:
         amount: Cantidad
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
-        geozone: Ámbito de actuación
         table_heading: Partida
         table_amount: Cantidad
-        table_geozone: Ámbito de actuación
     budget_investments:
       index:
         heading_filter_all: Todas las partidas

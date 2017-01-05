@@ -46,7 +46,7 @@ module Abilities
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
       can [:hide, :update, :toggle_selection], Budget::Investment
-      can :valuate, Budget::Investment, budget: { phase: 'valuating' }
+      can :valuate, Budget::Investment
       can :create, Budget::ValuatorAssignment
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner

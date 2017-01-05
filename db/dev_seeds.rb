@@ -38,6 +38,7 @@ Setting.create(key: 'mailer_from_name', value: 'Consul')
 Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
 Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
+Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 
 puts "Creating Geozones"
 ('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }
@@ -372,7 +373,7 @@ tags = Faker::Lorem.words(10)
     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
     created_at: rand((Time.now - 1.week) .. Time.now),
     feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
-    unfeasibility_explanation: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+    unfeasibility_explanation: Faker::Lorem.paragraph,
     valuation_finished: [false, true].sample,
     tag_list: tags.sample(3).join(','),
     price: rand(1 .. 100) * 100000,

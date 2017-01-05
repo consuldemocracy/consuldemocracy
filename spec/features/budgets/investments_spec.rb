@@ -344,10 +344,8 @@ feature 'Budget Investments' do
       global_group   = create(:budget_group, budget: budget, name: 'Global Group')
       global_heading = create(:budget_heading, group: global_group, name: 'Global Heading')
 
-      carabanchel         = create(:geozone, name: "Carabanchel")
-      new_york            = create(:geozone, name: "New York")
-      carabanchel_heading = create(:budget_heading, group: group, geozone: carabanchel, name: carabanchel.name)
-      new_york_heading    = create(:budget_heading, group: group, geozone: new_york, name: new_york.name)
+      carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
+      new_york_heading    = create(:budget_heading, group: group, name: "New York")
 
 
       sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)

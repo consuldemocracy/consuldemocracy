@@ -26,7 +26,7 @@ class Budget
     validates :heading_id, presence: true
     validates_presence_of :unfeasibility_explanation, if: :unfeasibility_explanation_required?
 
-    validates :title, length: { in: 4 .. Budget::Investment.title_max_length }
+    validates :title, length: { in: 4..Budget::Investment.title_max_length }
     validates :description, length: { maximum: Budget::Investment.description_max_length }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -53,7 +53,7 @@ class Budget
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
-    scope :for_render,             -> { includes(heading: :geozone) }
+    scope :for_render,             -> { includes(:heading) }
 
     before_save :calculate_confidence_score
     before_validation :set_responsible_name

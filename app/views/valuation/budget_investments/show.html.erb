@@ -1,4 +1,7 @@
-<%= render "shared/back_link" %>
+<%= link_to valuation_budget_budget_investments_path do %>
+  <span class="icon-angle-left"></span>
+  <%= t('shared.back') %>
+<% end %>
 
 <h2><%= t("valuation.budget_investments.show.title") %> <%= @investment.id %> </h2>
 <h1><%= @investment.title %></h1>
