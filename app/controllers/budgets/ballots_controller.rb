@@ -3,9 +3,9 @@ module Budgets
     before_action :authenticate_user!
     load_and_authorize_resource :budget
     before_action :load_ballot
-    authorize_resource :ballot, through: :budget
 
     def show
+      authorize! :show, @ballot
       render template: "budgets/ballot/show"
     end
 
