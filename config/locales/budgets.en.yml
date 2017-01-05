@@ -16,7 +16,7 @@ en:
         not_verified: Only verified users can vote on proposals; %{verify_account}.
         organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
-        not_enough_money: "Price is higher than the available amount left"
+        not_enough_money: "Price is higher than the available amount left."
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned: You have already voted a different heading
     groups:
@@ -122,6 +122,8 @@ en:
       header:
         check_ballot: Check my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+    progress_bar:
+      available: "Available: "
     show:
       group: Group
       heading: Heading

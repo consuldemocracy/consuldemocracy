@@ -27,7 +27,7 @@
   </div>
 
   <% if reason.present? && !user_voted_for %>
-    <div class="js-participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="js-participation-not-allowed participation-not-allowed" style='display:none' aria-hidden="false">
       <p>
           <%= t("votes.budget_investments.#{reason}",
                 verify_account: link_to(t("votes.verify_account"), verification_path),

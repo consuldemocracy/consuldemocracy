@@ -3,7 +3,7 @@
   <% if ballot.has_investment?(investment) %>
 
     <div class="remove supported inline-block">
-      <span class="icon-check-circle bounceIn animated"
+      <span class="icon-check-circle"
             title="<%= t("budget.investments.investment.already_added") %>">
       </span>
       <p class="investment-project-amount">
@@ -42,7 +42,7 @@
 
   <% if reason.present? && !ballot.has_investment?(investment) %>
 
-    <div class="js-participation-not-allowed" style='display:none'>
+    <div class="js-participation-not-allowed participation-not-allowed" style='display:none'>
       <p>
         <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
               verify_account: link_to(t("votes.verify_account"), verification_path),
