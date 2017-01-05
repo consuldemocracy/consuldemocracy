@@ -239,6 +239,8 @@ es:
         text_body: Texto
         text_comments: Comentarios
     processes:
+      header:
+        view_process_information: Ver información del proceso
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.

@@ -239,6 +239,8 @@ en:
         text_body: Text
         text_comments: Comments
     processes:
+      header:
+        view_process_information: View process information
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
