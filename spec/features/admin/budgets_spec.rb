@@ -127,7 +127,9 @@ feature 'Admin budgets' do
       expect(page).to_not have_content 'No groups created yet.'
 
       visit admin_budgets_path
-      click_link 'Edit budget'
+      within("#budget_#{budget.id}") do
+        click_link 'Edit headings groups'
+      end
 
       expect(page).to have_content '1 Group of budget headings'
       expect(page).to have_content 'Health'
