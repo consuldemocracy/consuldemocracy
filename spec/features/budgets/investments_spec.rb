@@ -204,6 +204,18 @@ feature 'Budget Investments' do
       click_button 'Create'
       expect(page).to have_content error_message
     end
+
+    scenario 'Ballot is not visible' do
+      login_as(author)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      expect(page).to_not have_link('Check my ballot')
+      expect(page).to_not have_css('#progress_bar')
+      within('#sidebar') do
+        expect(page).to_not have_content('My ballot')
+      end
+    end
   end
 
   scenario "Show" do
@@ -277,7 +289,7 @@ feature 'Budget Investments' do
 
   end
 
-  context "Phase 3 - Final Voting" do
+  context "Balloting Phase" do
 
     background do
       budget.update(phase: "balloting")
@@ -397,6 +409,18 @@ feature 'Budget Investments' do
 
         expect(page).to_not have_content sp6.title
         expect(page).to_not have_content "€100,000"
+      end
+    end
+
+    scenario 'Ballot is visible' do
+      login_as(author)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      expect(page).to have_link('Check my ballot')
+      expect(page).to have_css('#progress_bar')
+      within('#sidebar') do
+        expect(page).to have_content('My ballot')
       end
     end
 

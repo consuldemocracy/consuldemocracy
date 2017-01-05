@@ -17,7 +17,7 @@
         <%= t("budgets.phases.#{@budget.phase}") %>
       </p>
 
-      <% if @budget.accepting? %>
+      <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
         <% if current_user && current_user.level_two_or_three_verified? %>
           <%= link_to t("budget.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top" %>
         <% else %>
