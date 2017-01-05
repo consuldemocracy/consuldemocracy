@@ -56,7 +56,7 @@ class Legislation::Process < ActiveRecord::Base
   end
 
   def total_comments
-    questions.map(&:comments_count).sum
+    questions.sum(:comments_count)
   end
 
   def status
