@@ -1,0 +1,25 @@
+<% provide :title do %><%= @process.title %><% end %>
+
+<%= render 'legislation/processes/header_full', process: @process %>
+
+<div class="row">
+  <%= render 'legislation/processes/key_dates', process: @process, phase: @phase %>
+
+  <div class="debate-chooser">
+    <div class="row">
+      <div class="debate-draft">
+        <div class="small-12 medium-7 column">
+          <h3><%= t('.not_open') %></h3>
+          <p>Suscríbete al proceso para recibir un aviso en el momento en que se abra.</p>
+        </div>
+
+        <div class="small-12 medium-5 column">
+          <button class="button-subscribe expanded button strong" title="Suscríbete al proceso" data-remote="true" rel="nofollow" data-method="post" href="/proposals/6-soluta-sed-sapiente-dolores/vote?value=yes">
+            <h3>Suscríbete al proceso</h3>
+            <p>Recibe notificaciones clave sobre el proceso</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
