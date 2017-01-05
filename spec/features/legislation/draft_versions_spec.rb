@@ -160,4 +160,27 @@ feature 'Legislation Draft Versions' do
     end
   end
 
+  context "Annotations page" do
+    background do
+      @draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "first quote")
+      @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "second quote")
+    end
+    scenario "See all annotations for a draft version" do
+      visit legislation_process_draft_version_annotations_path(@draft_version.process, @draft_version)
+
+      expect(page).to have_content "first quote"
+      expect(page).to have_content "second quote"
+    end
+
+    scenario "See one annotation with replies for a draft version" do
+      visit legislation_process_draft_version_annotation_path(@draft_version.process, @draft_version, @annotation_2)
+
+      expect(page).to_not have_content "first quote"
+      expect(page).to have_content "second quote"
+      expect(page).to_not have_content "my annotation"
+      expect(page).to have_content "my other annotation"
+    end
+  end
+
 end

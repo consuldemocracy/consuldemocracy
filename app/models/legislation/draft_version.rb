@@ -5,6 +5,7 @@ class Legislation::DraftVersion < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
+  has_many :annotations, class_name: 'Legislation::Annotation', foreign_key: 'legislation_draft_version_id'
 
   validates :title, presence: true
   validates :body, presence: true

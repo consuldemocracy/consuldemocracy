@@ -10,4 +10,8 @@ module LegislationHelper
   def legislation_question_path(question)
     legislation_process_question_path(question.process, question)
   end
+
+  def legislation_annotation_path(annotation)
+    legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation)
+  end
 end
