@@ -83,10 +83,10 @@ es:
     legislation:
       processes:
         create:
-          notice: Proceso creado correctamente
+          notice: 'Proceso creado correctamente. <a href="%{link}">Haz click para verlo</a>'
           error: No se ha podido crear el proceso
         update:
-          notice: Proceso actualizado correctamente
+          notice: 'Proceso actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
           error: No se ha podido actualizar el proceso
         destroy:
           notice: Proceso eliminado correctamente
@@ -130,10 +130,10 @@ es:
           questions: Debate
       draft_versions:
         create:
-          notice: Borrador creado correctamente
+          notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
           error: No se ha podido crear el borrador
         update:
-          notice: Borrador actualizado correctamente
+          notice: 'Borrador actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
           error: No se ha podido actualizar el borrador
         destroy:
           notice: Borrador eliminado correctamente
@@ -172,10 +172,10 @@ es:
           status: Estado
       questions:
         create:
-          notice: Pregunta creada correctamente
+          notice: 'Pregunta creada correctamente. <a href="%{link}">Haz click para verla</a>'
           error: No se ha podido crear la pregunta
         update:
-          notice: Pregunta actualizada correctamente
+          notice: 'Pregunta actualizada correctamente. <a href="%{link}">Haz click para verla</a>'
           error: No se ha podido actualizar la pregunta
         destroy:
           notice: Pregunta eliminada correctamente

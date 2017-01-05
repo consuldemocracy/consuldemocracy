@@ -85,10 +85,10 @@ en:
     legislation:
       processes:
         create:
-          notice: Process created successfully
+          notice: 'Process created successfully. <a href="%{link}">Click to visit</a>'
           error: Process couldn't be created
         update:
-          notice: Process updated successfully
+          notice: 'Process updated successfully. <a href="%{link}">Click to visit</a>'
           error: Process couldn't be updated
         destroy:
           notice: Process deleted successfully
@@ -132,10 +132,10 @@ en:
           questions: Debate
       draft_versions:
         create:
-          notice: Draft created successfully
+          notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
           error: Draft couldn't be created
         update:
-          notice: Draft updated successfully
+          notice: 'Draft updated successfully. <a href="%{link}">Click to visit</a>'
           error: Draft couldn't be updated
         destroy:
           notice: Draft deleted successfully
@@ -174,10 +174,10 @@ en:
           status: Status
       questions:
         create:
-          notice: Question created successfully
+          notice: 'Question created successfully. <a href="%{link}">Click to visit</a>'
           error: Question couldn't be created
         update:
-          notice: Question updated successfully
+          notice: 'Question updated successfully. <a href="%{link}">Click to visit</a>'
           error: Question couldn't be updated
         destroy:
           notice: Question deleted successfully
