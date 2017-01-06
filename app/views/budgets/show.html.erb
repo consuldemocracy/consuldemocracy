@@ -12,18 +12,18 @@
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
-        <strong><%= t('budget.show.phase') %></strong>
+        <strong><%= t('budgets.show.phase') %></strong>
         <br>
         <%= t("budget.phase.#{@budget.phase}") %>
       </p>
 
       <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
         <% if current_user && current_user.level_two_or_three_verified? %>
-          <%= link_to t("budget.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top" %>
+          <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top" %>
         <% else %>
           <div class="callout warning margin-top">
-            <%= t("budget.investments.index.sidebar.verified_only",
-                verify: link_to(t("budget.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+            <%= t("budgets.investments.index.sidebar.verified_only",
+                verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
           </div>
         <% end %>
       <% end %>
@@ -35,7 +35,7 @@
   <div class="small-12 medium-9 column">
     <table class="table-fixed">
       <thead>
-        <th><%= t('budget.show.group') %></th>
+        <th><%= t('budgets.show.group') %></th>
       </thead>
       <tbody>
         <% @budget.groups.each do |group| %>

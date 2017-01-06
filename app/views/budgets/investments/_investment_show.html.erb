@@ -20,18 +20,18 @@
 
       <br>
       <p id="investment_code">
-        <%= t("budget.investments.show.code_html", code: investment.id) %>
+        <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
 
       <% if investment.location.present? %>
         <p>
-          <%= t("budget.investments.show.location_html", location: investment.location) %>
+          <%= t("budgets.investments.show.location_html", location: investment.location) %>
         </p>
       <% end %>
 
       <% if investment.organization_name.present? %>
         <p>
-          <%= t("budget.investments.show.organization_name_html", name: investment.organization_name) %>
+          <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
         </p>
       <% end %>
 
@@ -44,12 +44,12 @@
       <% end %>
 
       <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
-        <h2><%= t('budget.investments.show.unfeasibility_explanation') %></h2>
+        <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
 
       <% if investment.feasible? && investment.price_explanation.present? %>
-        <h2><%= t('budget.investments.show.price_explanation') %></h2>
+        <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
     </div>
@@ -80,7 +80,7 @@
         </div>
 
         <div class="sidebar-divider"></div>
-        <h2><%= t("budget.investments.show.share") %></h2>
+        <h2><%= t("budgets.investments.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
           <% if browser.device.mobile? %>

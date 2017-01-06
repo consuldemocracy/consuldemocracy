@@ -10,7 +10,7 @@
           <% end %>
 
           <% if can? :show, @ballot %>
-            <%= link_to t("budget.investments.header.check_ballot"),
+            <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
                         class: "button float-right" %>
           <% end %>
@@ -23,7 +23,7 @@
             <h1 class="inline-block margin-top"><%= @heading.name %></h1>
             <% if can? :show, @ballot %>
               <div id="check-ballot" style="display: none;">
-                <%= link_to t("budget.investments.header.check_ballot"),
+                <%= link_to t("budgets.investments.header.check_ballot"),
                             budget_ballot_path(@budget) %>
               </div>
               <% if @ballot.valid_heading?(@heading) %>
@@ -33,7 +33,7 @@
               <% else %>
                 <br>
                 <p class="callout warning inline-block">
-                  <%= t("budget.investments.header.different_heading_assigned_html",
+                  <%= t("budgets.investments.header.different_heading_assigned_html",
                         heading_link: link_to(
                           @assigned_heading.name,
                           budget_investments_path(@budget, heading: @assigned_heading))
@@ -57,7 +57,7 @@
           <%= t("shared.back") %>
         <% end %>
 
-        <h1><%= t('budget.investments.index.title') %></h1>
+        <h1><%= t('budgets.investments.index.title') %></h1>
       </div>
     </div>
   </div>
