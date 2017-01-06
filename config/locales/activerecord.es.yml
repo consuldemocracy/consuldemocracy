@@ -58,6 +58,8 @@ es:
         external_url: "Enlace a documentación adicional"
         heading_id: "Partida presupuestaria"
         title: "Título"
+        location: "Ubicación"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
       comment:
         body: "Comentario"
         user: "Usuario"

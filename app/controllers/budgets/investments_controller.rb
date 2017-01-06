@@ -80,7 +80,7 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location, :organization_name)
       end
 
       def load_ballot
