@@ -69,8 +69,8 @@ es:
         title: Propuesta de inversión
         add: Añadir
         already_added: "Ya has añadido esta propuesta de inversión"
-        already_supported: Ya has apoyado este proyecto. ¡Compártelo!
-        support_title: Apoyar este proyecto
+        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        support_title: Apoyar esta propuesta
         supports:
           one: 1 apoyo
           other: "%{count} apoyos"
