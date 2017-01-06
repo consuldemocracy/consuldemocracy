@@ -85,6 +85,9 @@ es:
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
           create: "Crear propuesta de inversión"
+          not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
+          sign_in: "iniciar sesión"
+          sign_up: "registrarte"
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas
