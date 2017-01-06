@@ -32,6 +32,7 @@ data:
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
+    - config/locales/budgets.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -94,8 +95,6 @@ search:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
 # - '{devise,simple_form}.*'
 ignore_missing:
-  - 'budget.*'
-  - 'budgets.*'
   - 'unauthorized.*'
   - 'activerecord.models.proposal'
   - 'activerecord.models.spending_proposal'
@@ -109,8 +108,8 @@ ignore_missing:
 
 ## Consider these keys used:
 ignore_unused:
-  - 'budget.*'
-  - 'budgets.*'
+  - 'budgets.phase.*'
+  - 'budgets.investments.index.orders.*'
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
