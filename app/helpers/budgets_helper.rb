@@ -8,10 +8,6 @@ module BudgetsHelper
     Budget::CURRENCY_SYMBOLS.map { |cs| [ cs, cs ] }
   end
 
-  def heading_name(heading)
-    heading.present? ? heading.name : t("budget.headings.none")
-  end
-
   def namespaced_budget_investment_path(investment, options={})
     case namespace
     when "management::budgets"
