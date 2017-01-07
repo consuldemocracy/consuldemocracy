@@ -5,6 +5,7 @@ describe Proposal do
   let(:proposal) { build(:proposal) }
 
   it_behaves_like "public_voters_stats"
+  it_behaves_like "has_public_author"
 
   it "should be valid" do
     expect(proposal).to be_valid

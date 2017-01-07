@@ -5,7 +5,8 @@ describe Debate do
   let(:debate) { build(:debate) }
 
   it_behaves_like "public_voters_stats"
-  
+  it_behaves_like "has_public_author"
+
   it "should be valid" do
     expect(debate).to be_valid
   end
