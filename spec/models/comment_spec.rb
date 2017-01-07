@@ -4,6 +4,8 @@ describe Comment do
 
   let(:comment) { build(:comment) }
 
+  it_behaves_like "public_voters_stats"
+  
   it "is valid" do
     expect(comment).to be_valid
   end

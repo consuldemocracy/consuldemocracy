@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Proposal do
   let(:proposal) { build(:proposal) }
 
+  it_behaves_like "public_voters_stats"
+
   it "should be valid" do
     expect(proposal).to be_valid
   end

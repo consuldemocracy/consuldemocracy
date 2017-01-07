@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Debate do
   let(:debate) { build(:debate) }
 
+  it_behaves_like "public_voters_stats"
+  
   it "should be valid" do
     expect(debate).to be_valid
   end

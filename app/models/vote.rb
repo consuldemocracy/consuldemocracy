@@ -8,7 +8,7 @@ class Vote < ActsAsVotable::Vote
   end
 
   def public_voter
-    User.select("gender, geozone_id, date_of_birth").where(id: self.voter_id).first
+    votable.votes_above_threshold? ? voter : nil
   end
 
   def public_timestamp
