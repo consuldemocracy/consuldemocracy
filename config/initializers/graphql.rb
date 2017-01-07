@@ -55,26 +55,14 @@ QueryRoot = GraphQL::ObjectType.define do
         type created_type
         description "Find one #{model.model_name.human} by ID"
         argument :id, !types.ID
-        resolve -> (object, arguments, context) do
-          if model.respond_to?(:public_for_api)
-            model.public_for_api.find(arguments["id"])
-          else
-            model.find(arguments["id"])
-          end
-        end
+        resolve GraphQL::RootElementResolver.new(model)
       end
     end
 
     # create an entry filed to retrive a paginated collection
     connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
       description "Find all #{model.model_name.human.pluralize}"
-      resolve -> (object, arguments, context) do
-        if model.respond_to?(:public_for_api)
-          model.public_for_api
-        else
-          model.all
-        end
-      end
+      resolve GraphQL::RootCollectionResolver.new(model)
     end
 
   end
