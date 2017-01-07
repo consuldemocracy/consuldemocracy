@@ -13,10 +13,6 @@ module GraphQL
       filter_forbidden_elements(requested_elements)
     end
 
-    def self.matching_exceptions
-      [:public_voter]
-    end
-
     private
 
       def target_public_elements
@@ -24,9 +20,7 @@ module GraphQL
       end
 
       def filter_forbidden_elements(requested_elements)
-        if AssociationResolver.matching_exceptions.include?(field_name)
-          requested_elements
-        elsif requested_elements.respond_to?(:each)
+        if requested_elements.respond_to?(:each)
           requested_elements.all & allowed_elements.all
         else
           allowed_elements.include?(requested_elements) ? requested_elements : nil

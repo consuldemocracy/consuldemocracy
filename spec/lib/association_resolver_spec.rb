@@ -25,7 +25,7 @@ describe GraphQL::AssociationResolver do
     it 'resolves simple associations' do
       geozone = create(:geozone)
       proposal = create(:proposal, geozone: geozone)
-      
+
       result = geozone_resolver.call(proposal, nil, nil)
 
       expect(result).to eq(geozone)
@@ -54,9 +54,6 @@ describe GraphQL::AssociationResolver do
 
       expect(result).to be_empty
     end
-
-    it 'permits all elements for exceptions' do
-      skip 'Current implementation is temporary'
-    end
   end
+  
 end

@@ -3,7 +3,6 @@ User:
     id:       integer
     username: string
 Voter:
-  options: [disable_filtering]
   fields:
     gender:     string
     age_range:  string
