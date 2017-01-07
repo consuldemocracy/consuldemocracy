@@ -376,3 +376,12 @@ Proposal.last(3).each do |proposal|
                           created_at: rand((Time.current - 1.week) .. Time.current))
   puts "    #{banner.title}"
 end
+
+puts "Creating proposal notifications"
+
+100.times do |i|
+  ProposalNotification.create!(title: "Proposal notification title #{i}",
+                               body: "Proposal notification body #{i}",
+                               author: User.reorder("RANDOM()").first,
+                               proposal: Proposal.reorder("RANDOM()").first)
+end
