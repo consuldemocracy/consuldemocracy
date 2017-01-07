@@ -363,5 +363,8 @@ Rails.application.routes.draw do
   #Campaña Blas Bonilla
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
 
+  #Budgets welcome
+  get 'budgets/welcome',  to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+
   resources :pages, path: '/', only: [:show]
 end

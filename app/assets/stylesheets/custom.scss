@@ -18,6 +18,7 @@
 // 16. Si te sientes gato
 // 17. Blas Bonilla
 // 18. Voluntarios mesas presenciales
+// 19. Budgets welcome
 //
 
 // 01. Global styles
@@ -2591,5 +2592,65 @@ ul.ballot-list {
   .any_district {
     background: $highlight;
     padding-top: rem-calc(6);
+  }
+}
+
+// 19. Budgets welcome
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.budgets-welcome {
+
+  .header {
+    background: #7E328A;
+
+    h1, p {
+      color: white;
+    }
+  }
+
+  h3 {
+    color: #7E328A;
+  }
+
+  @include breakpoint(large) {
+    .block-border-left {
+      border-left: 2px solid #7E328A;
+    }
+
+    .block-border-right {
+      border-right: 2px solid #7E328A;
+    }
+  }
+
+  .highlight {
+    background: #ECEBF6;
+  }
+}
+
+.budgets-welcome-timeline {
+  color: white;
+
+  ul {
+    margin-bottom: 0;
+
+    @include breakpoint(medium) {
+      border-left: 1px solid #A19DD3;
+    }
+
+    li {
+      border-top: 1px solid #A19DD3;
+      padding: $line-height/2 0;
+
+      @include breakpoint(medium) {
+        border-right: 1px solid #A19DD3;
+        border-top: 0;
+        display: inline-block;
+        padding: $line-height/2 $line-height;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
   }
 }
