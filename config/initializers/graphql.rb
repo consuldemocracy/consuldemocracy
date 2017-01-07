@@ -1,6 +1,6 @@
 api_config = YAML.load_file('./config/api.yml')
 
-API_TYPE_DEFINITIONS = {}
+api_type_definitions = {}
 
 # Parse API configuration file
 
@@ -19,16 +19,13 @@ api_config.each do |api_type_model, api_type_info|
     end
   end
 
-  API_TYPE_DEFINITIONS[model] = { options: options, fields: fields }
+  api_type_definitions[model] = { options: options, fields: fields }
 end
 
 # Create all GraphQL types
-
-type_creator = GraphQL::TypeCreator.new
-
-API_TYPE_DEFINITIONS.each do |model, info|
-  type_creator.create(model, info[:fields])
-end
+type_creator = GraphQL::TypeCreator.new(api_type_definitions)
+type_creator.create_api_types
+QueryRoot = type_creator.create_query_root
 
 ConsulSchema = GraphQL::Schema.define do
   query QueryRoot
@@ -41,29 +38,4 @@ ConsulSchema = GraphQL::Schema.define do
     type_name = object.class.name
     ConsulSchema.types[type_name]
   }
-end
-
-QueryRoot = GraphQL::ObjectType.define do
-  name "Query"
-  description "The query root for this schema"
-
-  type_creator.created_types.each do |model, created_type|
-
-    # create an entry field to retrive a single object
-    if API_TYPE_DEFINITIONS[model][:fields][:id]
-      field model.name.underscore.to_sym do
-        type created_type
-        description "Find one #{model.model_name.human} by ID"
-        argument :id, !types.ID
-        resolve GraphQL::RootElementResolver.new(model)
-      end
-    end
-
-    # create an entry filed to retrive a paginated collection
-    connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
-      description "Find all #{model.model_name.human.pluralize}"
-      resolve GraphQL::RootCollectionResolver.new(model)
-    end
-
-  end
 end

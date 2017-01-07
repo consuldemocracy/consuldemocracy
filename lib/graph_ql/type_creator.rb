@@ -8,13 +8,20 @@ module GraphQL
       string: GraphQL::STRING_TYPE
     }
 
-    attr_accessor :created_types
+    attr_accessor :created_types, :api_type_definitions
 
-    def initialize
+    def initialize(api_type_definitions)
+      @api_type_definitions = api_type_definitions
       @created_types = {}
     end
 
-    def create(model, fields)
+    def create_api_types
+      api_type_definitions.each do |model, info|
+        self.create_type(model, info[:fields])
+      end
+    end
+
+    def create_type(model, fields)
       type_creator = self
 
       created_type = GraphQL::ObjectType.define do
@@ -42,6 +49,35 @@ module GraphQL
       end
       created_types[model] = created_type
       return created_type # GraphQL::ObjectType
+    end
+
+    def create_query_root
+      type_creator = self
+
+      GraphQL::ObjectType.define do
+        name 'QueryRoot'
+        description 'The query root for this schema'
+
+        type_creator.created_types.each do |model, created_type|
+
+          # create an entry field to retrive a single object
+          if type_creator.api_type_definitions[model][:fields][:id]
+            field model.name.underscore.to_sym do
+              type created_type
+              description "Find one #{model.model_name.human} by ID"
+              argument :id, !types.ID
+              resolve GraphQL::RootElementResolver.new(model)
+            end
+          end
+
+          # create an entry filed to retrive a paginated collection
+          connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
+            description "Find all #{model.model_name.human.pluralize}"
+            resolve GraphQL::RootCollectionResolver.new(model)
+          end
+
+        end
+      end
     end
 
     def self.type_kind(type)
