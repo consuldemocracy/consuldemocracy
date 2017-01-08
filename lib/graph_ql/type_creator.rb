@@ -1,3 +1,5 @@
+require 'graphql'
+
 module GraphQL
   class TypeCreator
     SCALAR_TYPES = {
@@ -8,11 +10,13 @@ module GraphQL
       string: GraphQL::STRING_TYPE
     }
 
-    attr_accessor :created_types, :api_type_definitions
+    attr_accessor :created_types, :api_type_definitions, :query_root
 
     def initialize(api_type_definitions)
       @api_type_definitions = api_type_definitions
       @created_types = {}
+      create_api_types
+      @query_root = create_query_root
     end
 
     def create_api_types

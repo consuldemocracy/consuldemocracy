@@ -22,20 +22,15 @@ api_config.each do |api_type_model, api_type_info|
   api_type_definitions[model] = { options: options, fields: fields }
 end
 
-# Create all GraphQL types
 type_creator = GraphQL::TypeCreator.new(api_type_definitions)
-type_creator.create_api_types
-QueryRoot = type_creator.create_query_root
+QueryRoot = type_creator.query_root
 
 ConsulSchema = GraphQL::Schema.define do
   query QueryRoot
-
-  # Reject deeply-nested queries
   max_depth 10
 
-  resolve_type -> (object, ctx) {
-    # look up types by class name
-    type_name = object.class.name
+  resolve_type -> (object, ctx) do
+    type_name = object.class.name # look up types by class name
     ConsulSchema.types[type_name]
-  }
+  end
 end
