@@ -9,6 +9,8 @@
           verify: link_to(t("budget.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
     </div>
   <% end %>
+  <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
+  <%= render 'categories' %>
 <% end %>
 
 <div class="sidebar-divider"></div>

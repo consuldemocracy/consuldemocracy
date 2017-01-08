@@ -210,70 +210,7 @@ feature 'Debates' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
-  context 'Tagging debates' do
-    let(:author) { create(:user) }
 
-    background do
-      login_as(author)
-    end
-
-    pending 'Category tags', :js do
-      education = create(:tag, name: 'Education', kind: 'category')
-      health    = create(:tag, name: 'Health',    kind: 'category')
-
-      visit new_debate_path
-
-      fill_in 'debate_title', with: 'Testing auto link'
-      fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
-      check 'debate_terms_of_service'
-
-      find('.js-add-tag-link', text: 'Education').click
-      click_button 'Start a debate'
-
-      expect(page).to have_content 'Debate created successfully.'
-
-      within "#tags_debate_#{Debate.last.id}" do
-        expect(page).to have_content 'Education'
-        expect(page).to_not have_content 'Health'
-      end
-    end
-
-    scenario 'Custom tags' do
-      visit new_debate_path
-
-      fill_in 'debate_title', with: "Great title"
-      fill_in 'debate_description', with: 'Very important issue...'
-      check 'debate_terms_of_service'
-
-      fill_in 'debate_tag_list', with: 'Refugees, Solidarity'
-      click_button 'Start a debate'
-
-      expect(page).to have_content 'Debate created successfully.'
-
-      within "#tags_debate_#{Debate.last.id}" do
-        expect(page).to have_content 'Refugees'
-        expect(page).to have_content 'Solidarity'
-      end
-    end
-
-    scenario 'using dangerous strings' do
-      visit new_debate_path
-
-      fill_in 'debate_title', with: 'A test of dangerous strings'
-      fill_in 'debate_description', with: 'A description suitable for this test'
-      check 'debate_terms_of_service'
-
-      fill_in 'debate_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
-
-      click_button 'Start a debate'
-
-      expect(page).to have_content 'Debate created successfully.'
-      expect(page).to have_content 'user_id1'
-      expect(page).to have_content 'a3'
-      expect(page).to have_content 'scriptalert("hey");script'
-      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
-    end
-  end
 
   scenario 'Update should not be posible if logged user is not the author' do
     debate = create(:debate)
@@ -327,33 +264,6 @@ feature 'Debates' do
     click_button "Save changes"
 
     expect(page).to have_content error_message
-  end
-
-  describe 'Limiting tags shown' do
-    scenario 'Index page shows up to 5 tags per debate' do
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-      create :debate, tag_list: tag_list
-
-      visit debates_path
-
-      within('.debate .tags') do
-        expect(page).to have_content '1+'
-      end
-    end
-
-    scenario 'Index page shows 3 tags with no plus link' do
-      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-      create :debate, tag_list: tag_list
-
-      visit debates_path
-
-      within('.debate .tags') do
-        tag_list.each do |tag|
-          expect(page).to have_content tag
-        end
-        expect(page).not_to have_content '+'
-      end
-    end
   end
 
   scenario "Flagging", :js do
@@ -843,16 +753,6 @@ feature 'Debates' do
 
   end
 
-  scenario 'Index tag does not show featured debates' do
-    featured_debates = create_featured_debates
-    debates = create(:debate, tag_list: "123")
-
-    visit debates_path(tag: "123")
-
-    expect(page).to_not have_selector('#debates .debate-featured')
-    expect(page).to_not have_selector('#featured-debates')
-  end
-
   scenario 'Conflictive' do
     good_debate = create(:debate)
     conflictive_debate = create(:debate, :conflictive)
@@ -877,25 +777,6 @@ feature 'Debates' do
   end
 
   context "Filter" do
-
-    pending "By category" do
-      education = create(:tag, name: 'Education', kind: 'category')
-      health    = create(:tag, name: 'Health',    kind: 'category')
-
-      debate1 = create(:debate, tag_list: education.name)
-      debate2 = create(:debate, tag_list: health.name)
-
-      visit debates_path
-
-      within "#categories" do
-        click_link "Education"
-      end
-
-      within("#debates") do
-        expect(page).to have_css('.debate', count: 1)
-        expect(page).to have_content(debate1.title)
-      end
-    end
 
     context "By geozone" do
 

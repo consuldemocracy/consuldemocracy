@@ -35,7 +35,7 @@
         </p>
       <% end %>
 
-      <%= render 'shared/tags', taggable: @investment, url: budget_investments_path(@budget) %>
+      <%= render 'shared/tags', taggable: @investment %>
 
       <%= safe_html_with_links investment.description.html_safe %>
 

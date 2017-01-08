@@ -28,6 +28,7 @@ module Budgets
       @investments = @investments.apply_filters_and_search(@budget, params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
+      @tag_cloud = tag_cloud
     end
 
     def new
@@ -101,6 +102,9 @@ module Budgets
         @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
       end
 
+      def tag_cloud
+        TagCloud.new(Budget::Investment, params[:search])
+      end
   end
 
 end
