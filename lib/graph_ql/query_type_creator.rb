@@ -17,7 +17,6 @@ module GraphQL
         description 'The root query for the schema'
 
         query_type_creator.created_api_types.each do |model, created_type|
-          # debugger
           if created_type.fields['id']
             field model.name.underscore.to_sym do
               type created_type
