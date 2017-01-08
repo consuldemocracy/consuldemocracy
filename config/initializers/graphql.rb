@@ -12,7 +12,7 @@ api_config.each do |api_type_model, api_type_info|
   api_type_info['fields'].each do |field_name, field_type|
     if field_type.is_a?(Array) # paginated association
       fields[field_name.to_sym] = [field_type.first.constantize]
-    elsif GraphQL::TypeCreator::SCALAR_TYPES[field_type.to_sym]
+    elsif GraphQL::ApiTypesCreator::SCALAR_TYPES[field_type.to_sym]
       fields[field_name.to_sym] = field_type.to_sym
     else # simple association
       fields[field_name.to_sym] = field_type.constantize
@@ -22,8 +22,11 @@ api_config.each do |api_type_model, api_type_info|
   api_type_definitions[model] = { options: options, fields: fields }
 end
 
-type_creator = GraphQL::TypeCreator.new(api_type_definitions)
-QueryType = type_creator.query_type
+api_types_creator = GraphQL::ApiTypesCreator.new(api_type_definitions)
+created_api_types = api_types_creator.create
+
+query_type_creator = GraphQL::QueryTypeCreator.new(created_api_types)
+QueryType = query_type_creator.create
 
 ConsulSchema = GraphQL::Schema.define do
   query QueryType
