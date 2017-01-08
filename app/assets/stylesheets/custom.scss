@@ -1314,6 +1314,10 @@ tr td, tr th {
 .processes-show {
   @extend .processes;
 
+  .back, .icon-angle-left {
+    color: white;
+  }
+
   @include breakpoint(large) {
     background: $brand;
     height: auto;
