@@ -232,4 +232,34 @@ feature 'Tags' do
       expect(page).to_not have_content investment3.title
     end
   end
+
+  context "Valuation" do
+
+    scenario "Users do not see valuator tags" do
+      investment = create(:budget_investment, heading: heading, tag_list: 'Park')
+      investment.set_tag_list_on(:valuation, 'Education')
+      investment.save
+
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to     have_content 'Park'
+      expect(page).to_not have_content 'Education'
+    end
+
+    scenario "Valuators do not see user tags" do
+      investment = create(:budget_investment, heading: heading, tag_list: 'Park')
+      investment.set_tag_list_on(:valuation, 'Education')
+      investment.save
+
+      admin = create(:administrator)
+      login_as(admin.user)
+
+      visit admin_budget_budget_investment_path(budget, investment)
+      click_link 'Edit classification'
+
+      expect(page).to     have_content 'Education'
+      expect(page).to_not have_content 'Park'
+    end
+
+  end
 end
