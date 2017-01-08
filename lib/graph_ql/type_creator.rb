@@ -10,21 +10,26 @@ module GraphQL
       string: GraphQL::STRING_TYPE
     }
 
-    attr_accessor :created_types, :api_type_definitions, :query_root
+    attr_accessor :created_types, :api_type_definitions, :query_type
 
     def initialize(api_type_definitions)
       @api_type_definitions = api_type_definitions
       @created_types = {}
       create_api_types
-      @query_root = create_query_root
+      create_query_type
     end
 
-    def create_api_types
-      api_type_definitions.each do |model, info|
-        self.create_type(model, info[:fields])
+    def self.type_kind(type)
+      if SCALAR_TYPES[type]
+        :scalar
+      elsif type.class == Class
+        :simple_association
+      elsif type.class == Array
+        :paginated_association
       end
     end
 
+    # TODO: this method shouldn't be public just for testing purposes, ¿smell?
     def create_type(model, fields)
       type_creator = self
 
@@ -55,44 +60,41 @@ module GraphQL
       return created_type # GraphQL::ObjectType
     end
 
-    def create_query_root
-      type_creator = self
+    private
 
-      GraphQL::ObjectType.define do
-        name 'QueryRoot'
-        description 'The query root for this schema'
+      def create_api_types
+        api_type_definitions.each do |model, info|
+          self.create_type(model, info[:fields])
+        end
+      end
 
-        type_creator.created_types.each do |model, created_type|
+      def create_query_type
+        type_creator = self
 
-          # create an entry field to retrive a single object
-          if type_creator.api_type_definitions[model][:fields][:id]
-            field model.name.underscore.to_sym do
-              type created_type
-              description "Find one #{model.model_name.human} by ID"
-              argument :id, !types.ID
-              resolve GraphQL::RootElementResolver.new(model)
+        @query_type = GraphQL::ObjectType.define do
+          name 'QueryType'
+          description 'The root query for this schema'
+
+          type_creator.created_types.each do |model, created_type|
+            # create field to retrive a single object
+            if type_creator.api_type_definitions[model][:fields][:id]
+              field model.name.underscore.to_sym do
+                type created_type
+                description "Find one #{model.model_name.human} by ID"
+                argument :id, !types.ID
+                resolve GraphQL::RootElementResolver.new(model)
+              end
             end
-          end
 
-          # create an entry filed to retrive a paginated collection
-          connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
-            description "Find all #{model.model_name.human.pluralize}"
-            resolve GraphQL::RootCollectionResolver.new(model)
+            # create connection to retrive a collection
+            connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
+              description "Find all #{model.model_name.human.pluralize}"
+              resolve GraphQL::RootCollectionResolver.new(model)
+            end
           end
 
         end
       end
-    end
-
-    def self.type_kind(type)
-      if SCALAR_TYPES[type]
-        :scalar
-      elsif type.class == Class
-        :simple_association
-      elsif type.class == Array
-        :paginated_association
-      end
-    end
 
   end
 end

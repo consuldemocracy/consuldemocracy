@@ -23,10 +23,10 @@ api_config.each do |api_type_model, api_type_info|
 end
 
 type_creator = GraphQL::TypeCreator.new(api_type_definitions)
-QueryRoot = type_creator.query_root
+QueryType = type_creator.query_type
 
 ConsulSchema = GraphQL::Schema.define do
-  query QueryRoot
+  query QueryType
   max_depth 10
 
   resolve_type -> (object, ctx) do
