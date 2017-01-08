@@ -148,7 +148,7 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_description', with: 'This is the description'
       check   'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
@@ -166,7 +166,7 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_description', with: 'This is the description'
       check   'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
       expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
@@ -183,7 +183,7 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
       check   'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully'
       expect(page).to have_content 'You can access it from My activity'
@@ -201,7 +201,7 @@ feature 'Budget Investments' do
       login_as(author)
 
       visit new_budget_investment_path(budget_id: budget.id)
-      click_button 'Create'
+      click_button 'Create Investment'
       expect(page).to have_content error_message
     end
 

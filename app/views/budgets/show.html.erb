@@ -14,24 +14,24 @@
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
         <br>
-        <%= t("budget.phase.#{@budget.phase}") %>
+        <%= t("budgets.phase.#{@budget.phase}") %>
       </p>
 
       <% if can?(:create, Budget::Investment.new(budget: @budget))%>
         <% if current_user %>
           <% if current_user.level_two_or_three_verified? %>
-            <%= link_to t("budget.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
           <% else %>
             <div class="callout warning margin-top">
-              <%= t("budget.investments.index.sidebar.verified_only",
-                  verify: link_to(t("budget.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+              <%= t("budgets.investments.index.sidebar.verified_only",
+                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
             </div>
           <% end %>
         <% else %>
           <div class="callout primary margin-top">
-            <%= t("budget.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to(t("budget.investments.index.sidebar.sign_in"), new_user_session_path),
-                  sign_up: link_to(t("budget.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+            <%= t("budgets.investments.index.sidebar.not_logged_in",
+                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
+                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
           </div>
         <% end %>
       <% end %>

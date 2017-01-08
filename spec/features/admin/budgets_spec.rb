@@ -23,7 +23,7 @@ feature 'Admin budgets' do
       visit admin_budgets_path
 
       expect(page).to have_content(budget.name)
-      expect(page).to have_content(I18n.t("budget.phase.#{budget.phase}"))
+      expect(page).to have_content(I18n.t("budgets.phase.#{budget.phase}"))
     end
 
     scenario 'Filters by phase' do

@@ -76,7 +76,7 @@ class Budget < ActiveRecord::Base
   end
 
   def translated_phase
-    I18n.t "budget.phase.#{phase}"
+    I18n.t "budgets.phase.#{phase}"
   end
 
   def formatted_amount(amount)
