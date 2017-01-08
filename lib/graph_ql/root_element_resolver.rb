@@ -8,9 +8,9 @@ module GraphQL
 
     def call(object, arguments, context)
       if target_model.respond_to?(:public_for_api)
-        target_model.public_for_api.find(arguments["id"])
+        target_model.public_for_api.find_by(id: arguments["id"])
       else
-        target_model.find(arguments["id"])
+        target_model.find_by(id: arguments["id"])
       end
     end
   end
