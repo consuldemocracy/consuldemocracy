@@ -361,6 +361,10 @@ Rails.application.routes.draw do
   get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
   get 'proceso/distrito-villa-de-vallecas',         to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
 
+  #Budgets meetings
+  get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
+  get 'budgets/meetings/2017', to: 'pages#show', id: 'budgets/meetings/2017', as: 'budgets_meetings_2017'
+
   #Campaña Blas Bonilla
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
 
