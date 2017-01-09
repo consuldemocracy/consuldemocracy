@@ -123,7 +123,7 @@ describe Proposal do
       expect(proposal).to_not be_valid
     end
 
-    it "should be valid with a tag list of more than 6 elements" do
+    it "should be valid with a tag list of up to 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
       expect(proposal).to be_valid
     end
