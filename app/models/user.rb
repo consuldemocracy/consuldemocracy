@@ -196,6 +196,10 @@ class User < ActiveRecord::Base
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60
   end
 
+  def self.minimum_required_age
+    (Setting['min_age_to_participate'] || 16).to_i
+  end
+
   def show_welcome_screen?
     sign_in_count == 1 && unverified? && !organization && !administrator?
   end

@@ -29,7 +29,7 @@ en:
       not_in_census_info: 'Citizens not in the Census can participate in the website with the following permissions:'
       please_check_account_data: Please check that the account data above are correct.
       title: User management
-      under_age: You must be over 16 to verify your account.
+      under_age: "You don't have the required age to verify your account."
       verify: Verify
     email_label: Email
     email_verifications:

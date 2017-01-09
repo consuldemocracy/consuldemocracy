@@ -29,7 +29,7 @@ es:
       not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
       please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
       title: Gestión de usuarios
-      under_age: Debes ser mayor de 16 años para verificar tu cuenta.
+      under_age: No tienes edad suficiente para verificar tu cuenta.
       verify: Verificar usuario
     email_label: Email
     email_verifications:
