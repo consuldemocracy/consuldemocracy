@@ -57,7 +57,7 @@ feature 'Tags' do
 
     fill_in 'budget_investment_tag_list', with: 'Economía, Hacienda'
 
-    click_button 'Create'
+    click_button 'Create Investment'
 
     expect(page).to have_content 'Investment created successfully.'
     expect(page).to have_content 'Economía'
@@ -78,7 +78,7 @@ feature 'Tags' do
     check   'budget_investment_terms_of_service'
 
     find('.js-add-tag-link', text: 'Education').click
-    click_button 'Create'
+    click_button 'Create Investment'
 
     expect(page).to have_content 'Investment created successfully.'
 
@@ -100,7 +100,7 @@ feature 'Tags' do
 
     fill_in 'budget_investment_tag_list', with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
-    click_button 'Create'
+    click_button 'Create Investment'
 
     expect(page).to have_content error_message
     expect(page).to have_content 'tags must be less than or equal to 6'
@@ -118,7 +118,7 @@ feature 'Tags' do
 
     fill_in 'budget_investment_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
 
-    click_button 'Create'
+    click_button 'Create Investment'
 
     expect(page).to have_content 'Investment created successfully.'
     expect(page).to have_content 'user_id1'

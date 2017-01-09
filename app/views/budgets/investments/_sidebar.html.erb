@@ -9,6 +9,9 @@
           verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
     </div>
   <% end %>
+<% end %>
+
+<% if @budget.accepting? %>
   <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
   <%= render 'categories' %>
 <% end %>
