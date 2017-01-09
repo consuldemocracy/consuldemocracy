@@ -11,7 +11,7 @@ en:
         representative: "You have updated your representative"
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
-        budget_investment: "Budget Investment created successfully. You can access it from %{activity}"
+        budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
       save_changes:

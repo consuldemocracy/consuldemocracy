@@ -12,6 +12,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   end
 
   def new
+    load_categories
   end
 
   def create
@@ -56,6 +57,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def load_heading
       @heading = @budget.headings.find(params[:heading_id]) if params[:heading_id].present?
+    end
+
+    def load_categories
+      @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
     end
 
 end

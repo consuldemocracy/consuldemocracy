@@ -10,7 +10,7 @@ es:
         proposal_notification: "Tu message ha sido enviado correctamente."
         representative: "Has actualizado tu representante"
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
-        budget_investment: "Inversión creada correctamente. Puedes verla desde %{activity}"
+        budget_investment: "Propuesta de inversión creada correctamente."
         signature_sheet: "Hoja de firmas creada correctamente"
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
       save_changes:

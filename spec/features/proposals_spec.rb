@@ -136,6 +136,7 @@ feature 'Proposals' do
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
@@ -147,6 +148,8 @@ feature 'Proposals' do
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
     expect(page).to have_content author.name
+    expect(page).to have_content 'Refugees'
+    expect(page).to have_content 'Solidarity'
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
@@ -294,6 +297,7 @@ feature 'Proposals' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
+<<<<<<< HEAD
   context 'Tagging' do
     let(:author) { create(:user) }
 
@@ -357,6 +361,8 @@ feature 'Proposals' do
     end
   end
 
+=======
+>>>>>>> upstream/budgets
   context 'Geozones' do
 
     scenario "Default whole city" do
@@ -543,35 +549,6 @@ feature 'Proposals' do
     click_button "Save changes"
 
     expect(page).to have_content error_message
-  end
-
-  describe 'Limiting tags shown' do
-    scenario 'Index page shows up to 5 tags per proposal' do
-      create_featured_proposals
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-      create :proposal, tag_list: tag_list
-
-      visit proposals_path
-
-      within('.proposal .tags') do
-        expect(page).to have_content '1+'
-      end
-    end
-
-    scenario 'Index page shows 3 tags with no plus link' do
-      create_featured_proposals
-      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-      create :proposal, tag_list: tag_list
-
-      visit proposals_path
-
-      within('.proposal .tags') do
-        tag_list.each do |tag|
-          expect(page).to have_content tag
-        end
-        expect(page).not_to have_content '+'
-      end
-    end
   end
 
   feature 'Proposal index order filters' do
@@ -1157,16 +1134,6 @@ feature 'Proposals' do
 
   end
 
-  scenario 'Index tag does not show featured proposals' do
-    featured_proposals = create_featured_proposals
-    proposal = create(:proposal, tag_list: "123")
-
-    visit proposals_path(tag: "123")
-
-    expect(page).to_not have_selector('#proposals .proposal-featured')
-    expect(page).to_not have_selector('#featured-proposals')
-  end
-
   scenario 'Conflictive' do
     good_proposal = create(:proposal)
     conflictive_proposal = create(:proposal, :conflictive)
@@ -1231,25 +1198,6 @@ feature 'Proposals' do
   end
 
   context "Filter" do
-
-    scenario "By category" do
-      education = create(:tag, name: 'Education', kind: 'category')
-      health    = create(:tag, name: 'Health',    kind: 'category')
-
-      proposal1 = create(:proposal, tag_list: education.name)
-      proposal2 = create(:proposal, tag_list: health.name)
-
-      visit proposals_path
-
-      within "#categories" do
-        click_link "Education"
-      end
-
-      within("#proposals") do
-        expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal1.title)
-      end
-    end
 
     context "By geozone" do
 

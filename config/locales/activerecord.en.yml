@@ -62,6 +62,11 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
+        heading_id: "Sección de presupuesto"
+        title: "Title"
+        description: "Description"
+        external_url: "External url"
+        location: "Location"
         administrator_id: "Administrator"
         description: "Description"
         external_url: "Link to additional documentation"
@@ -122,6 +127,10 @@ en:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
         proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        budget/investment:
           attributes:
             tag_list:
               less_than_or_equal_to: "tags must be less than or equal to %{count}"

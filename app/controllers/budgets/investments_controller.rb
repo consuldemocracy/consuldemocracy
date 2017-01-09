@@ -13,6 +13,7 @@ module Budgets
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
+    before_action :load_categories, only: [:index, :new, :create]
 
     feature_flag :budgets
 
@@ -27,6 +28,7 @@ module Budgets
       @investments = @investments.apply_filters_and_search(@budget, params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
+      @tag_cloud = tag_cloud
     end
 
     def new
@@ -44,11 +46,8 @@ module Budgets
       @investment.author = current_user
 
       if @investment.save
-        activity_link = view_context.link_to(t('layouts.header.my_activity_link'),
-                                             user_path(current_user, filter: :budget_investments))
         redirect_to budget_investment_path(@budget, @investment),
-                    flash: { html_safe: true },
-                    notice: t('flash.actions.create.budget_investment', activity: activity_link)
+                    notice: t('flash.actions.create.budget_investment')
       else
         render :new
       end
@@ -80,7 +79,7 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location, :organization_name)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
       end
 
       def load_ballot
@@ -95,6 +94,13 @@ module Budgets
         end
       end
 
+      def load_categories
+        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+      end
+
+      def tag_cloud
+        TagCloud.new(Budget::Investment, params[:search])
+      end
   end
 
 end

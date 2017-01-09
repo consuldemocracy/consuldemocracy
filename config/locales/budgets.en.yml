@@ -33,6 +33,11 @@ en:
     index:
       title: Participatory budgets
     investments:
+      form:
+        tag_category_label: "Categories"
+        tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
+        tags_label: Tags
+        tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -71,6 +76,7 @@ en:
         location_html: 'Location: <strong>%{location}</strong>'
         organization_name_html: 'Organization: <strong>%{name}</strong>'
         share: Share
+        title: Investment project
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project

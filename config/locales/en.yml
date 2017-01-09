@@ -181,6 +181,7 @@ en:
     proposal_notification: "Notification"
     signature_sheet: Signature sheet
     spending_proposal: Spending proposal
+    budget/investment: Investment
     user: Account
     verification/sms: phone
   forums:

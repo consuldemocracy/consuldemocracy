@@ -331,7 +331,7 @@
     margin-bottom: $line-height/2;
     position: relative;
 
-    span {
+    span:not(.label) {
       line-height: rem-calc(32); // Same as avatar height
     }
 
@@ -738,6 +738,31 @@
 .budget-investment-show .supports .total-supports.no-button {
   display: block;
   margin-top: $line-height*1.5;
+}
+
+.budget-investment-show {
+
+  .label-budget-investment {
+    background: none;
+    clear: both;
+    color: $budget;
+    display: block;
+    font-size: rem-calc(12);
+    font-weight: bold;
+    line-height: $line-height;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    text-transform: uppercase;
+  }
+
+  .icon-budget {
+    color: $budget;
+    font-size: $small-font-size;
+    line-height: $line-height;
+    margin-left: rem-calc(6);
+    top: 0;
+  }
 }
 
 // 05. Featured

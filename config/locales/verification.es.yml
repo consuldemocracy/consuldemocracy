@@ -86,8 +86,8 @@ es:
           residence_card: Tarjeta de residencia
           spanish_id: DNI
         document_type_label: Tipo de documento
+        error_not_allowed_age: No tienes la edad mínima para participar
         error_can_not_redeem_code: No se pudo validar el código. Por favor asegúrese de que es correcto. Si aun así no es correcto, déjelo en blanco (puede rellenarlo más tarde).
-        error_not_allowed_age: Hay que tener al menos 16 años
         error_not_allowed_postal_code: Para verificarte debes estar empadronado en el municipio de Madrid.
         error_verifying_census: El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al 010 (o a su versión gratuita 915298210) o visita cualquiera de las %{offices}.
         error_verifying_census_offices: 26 Oficinas de Atención al Ciudadano

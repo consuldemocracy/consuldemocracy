@@ -24,6 +24,7 @@ feature 'Budget Investments' do
   end
 
   context("Search") do
+
     scenario 'Search by text' do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
       investment2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
@@ -44,9 +45,11 @@ feature 'Budget Investments' do
         expect(page).to_not have_content(investment3.title)
       end
     end
+
   end
 
   context("Filters") do
+
     scenario 'by unfeasibility' do
       investment1 = create(:budget_investment, :unfeasible, heading: heading, valuation_finished: true)
       investment2 = create(:budget_investment, :feasible, heading: heading)
@@ -187,13 +190,8 @@ feature 'Budget Investments' do
       click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully'
-      expect(page).to have_content 'You can access it from My activity'
 
-      within "#notice" do
-        click_link 'My activity'
-      end
-
-      expect(current_url).to eq(user_url(author, filter: :budget_investments))
+      visit user_url(author, filter: :budget_investments)
       expect(page).to have_content "1 Investment"
       expect(page).to have_content "Build a skyscraper"
     end
@@ -426,5 +424,4 @@ feature 'Budget Investments' do
     end
 
   end
-
 end
