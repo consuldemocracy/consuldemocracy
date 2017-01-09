@@ -618,6 +618,11 @@ h2.sidebar-title {
   h1 {
     margin-top: $line-height;
 
+    img {
+      height: rem-calc(80);
+      width: rem-calc(80);
+    }
+
     a {
       color: white;
       display: block;
@@ -640,6 +645,19 @@ h2.sidebar-title {
 
   p, a, .checkbox {
     font-size: $small-font-size;
+  }
+}
+
+.auth-divider {
+  border-bottom: 1px solid $border;
+  height: $line-height/2;
+  margin: $line-height 0;
+  text-align: center;
+
+  span {
+    background: white;
+    font-weight: bold;
+    padding: 0 $line-height/2;
   }
 }
 

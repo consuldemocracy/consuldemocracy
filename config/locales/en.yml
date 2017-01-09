@@ -245,14 +245,23 @@ en:
     facebook:
       sign_in: Sign in with Facebook
       sign_up: Sign up with Facebook
+      name: Facebook
     finish_signup:
       title: Add your email address
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
+      name: Google
     twitter:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
+      name: Twitter
+    info_sign_in: "Sign in with:"
+    info_sign_up: "Sign up with:"
+    or_fill: "Or fill the following form:"
+    finish_signup:
+      title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
   proposals:
     create:
       form:
