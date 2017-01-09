@@ -64,5 +64,28 @@ module GraphQL
       return created_type # GraphQL::ObjectType
     end
 
+    def self.parse_api_config_file(file)
+      api_type_definitions = {}
+
+      file.each do |api_type_model, api_type_info|
+        model = api_type_model.constantize
+        options = api_type_info['options']
+        fields = {}
+
+        api_type_info['fields'].each do |field_name, field_type|
+          if field_type.is_a?(Array) # paginated association
+            fields[field_name.to_sym] = [field_type.first.constantize]
+          elsif SCALAR_TYPES[field_type.to_sym]
+            fields[field_name.to_sym] = field_type.to_sym
+          else # simple association
+            fields[field_name.to_sym] = field_type.constantize
+          end
+        end
+
+        api_type_definitions[model] = { options: options, fields: fields }
+      end
+
+      api_type_definitions
+    end
   end
 end
