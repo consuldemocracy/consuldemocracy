@@ -70,6 +70,7 @@ feature 'Budget Investments' do
   end
 
   context("Orders") do
+    before(:each) { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
       per_page = Kaminari.config.default_per_page
@@ -151,7 +152,7 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_description', with: 'This is the description'
       check   'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
@@ -169,7 +170,7 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_description', with: 'This is the description'
       check   'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
       expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
@@ -186,7 +187,7 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
       check   'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully'
       expect(page).to have_content 'You can access it from My activity'
@@ -204,8 +205,20 @@ feature 'Budget Investments' do
       login_as(author)
 
       visit new_budget_investment_path(budget_id: budget.id)
-      click_button 'Create'
+      click_button 'Create Investment'
       expect(page).to have_content error_message
+    end
+
+    scenario 'Ballot is not visible' do
+      login_as(author)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      expect(page).to_not have_link('Check my ballot')
+      expect(page).to_not have_css('#progress_bar')
+      within('#sidebar') do
+        expect(page).to_not have_content('My ballot')
+      end
     end
   end
 
@@ -280,7 +293,7 @@ feature 'Budget Investments' do
 
   end
 
-  context "Phase 3 - Final Voting" do
+  context "Balloting Phase" do
 
     background do
       budget.update(phase: "balloting")
@@ -400,6 +413,18 @@ feature 'Budget Investments' do
 
         expect(page).to_not have_content sp6.title
         expect(page).to_not have_content "€100,000"
+      end
+    end
+
+    scenario 'Ballot is visible' do
+      login_as(author)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      expect(page).to have_link('Check my ballot')
+      expect(page).to have_css('#progress_bar')
+      within('#sidebar') do
+        expect(page).to have_content('My ballot')
       end
     end
 

@@ -6,7 +6,7 @@
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
-            <span class="label-budget-investment float-left"><%= t("budget.investments.investment.title") %></span>
+            <span class="label-budget-investment float-left"><%= t("budgets.investments.investment.title") %></span>
             <span class="icon-budget"></span>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
             <p class="investment-project-info">
@@ -16,7 +16,7 @@
               <% if investment.author.hidden? || investment.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">
-                  <%= t("budget.investments.show.author_deleted") %>
+                  <%= t("budgets.investments.show.author_deleted") %>
                 </span>
               <% else %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -32,10 +32,10 @@
               <% end %>
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <%= heading_name(investment.heading) %>
+              <%= investment.heading.name %>
             </p>
             <div class="investment-project-description">
-              <p><%= link_to investment.description, namespaced_budget_investment_path(investment) %></p>
+              <p><%= investment.description %></p>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>

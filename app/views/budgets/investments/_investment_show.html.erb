@@ -1,11 +1,5 @@
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
 
-  <ul class="breadcrumbs">
-    <li><%= link_to investment.budget.name, budget_path(investment.budget) %></a></li>
-    <li><%= investment.group.name %></a></li>
-    <li><%= investment.heading.name %></a></li>
-  </ul>
-
   <div class="row">
     <div class="small-12 medium-9 column">
       <%= link_to :back, class: "back" do %>
@@ -21,17 +15,23 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= l investment.created_at.to_date %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= heading_name(investment.heading) %>
+        <%= investment.heading.name %>
       </div>
 
       <br>
       <p id="investment_code">
-        <%= t("budget.investments.show.code_html", code: investment.id) %>
+        <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
 
       <% if investment.location.present? %>
-        <p id="investment_code">
-          <%= t("budget.investments.show.location_html", location: investment.location) %>
+        <p>
+          <%= t("budgets.investments.show.location_html", location: investment.location) %>
+        </p>
+      <% end %>
+
+      <% if investment.organization_name.present? %>
+        <p>
+          <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
         </p>
       <% end %>
 
@@ -46,12 +46,12 @@
       <% end %>
 
       <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
-        <h2><%= t('budget.investments.show.unfeasibility_explanation') %></h2>
+        <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
 
       <% if investment.feasible? && investment.price_explanation.present? %>
-        <h2><%= t('budget.investments.show.price_explanation') %></h2>
+        <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
     </div>
@@ -59,7 +59,7 @@
     <% if investment.should_show_aside? %>
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
+        <h2><%= t("votes.supports") %></h2>
         <div class="text-center">
 
         <% if investment.should_show_votes? %>
@@ -82,7 +82,7 @@
         </div>
 
         <div class="sidebar-divider"></div>
-        <h3><%= t("budget.investments.show.share") %></h3>
+        <h2><%= t("budgets.investments.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
           <% if browser.device.mobile? %>
@@ -96,5 +96,3 @@
 
   </div>
 </section>
-
-

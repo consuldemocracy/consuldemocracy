@@ -348,7 +348,7 @@ Budget::PHASES.each_with_index do |phase, i|
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
       group.headings << group.headings.create!(name: geozone.name,
-                                               geozone: geozone,
+                                               #geozone: geozone,
                                                price: rand(1 .. 100) * 100000)
 
     end

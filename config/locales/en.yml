@@ -33,15 +33,6 @@ en:
   application:
     close: Close
     menu: Menu
-  budgets:
-    progress_bar:
-      available: Available
-    phases:
-      accepting: Accepting investment projects
-      on_hold: On Hold
-      selecting: Selecting investment projects
-      balloting: Voting investment projects
-      finished: Finished
   comments:
     comment:
       admin: Administrator

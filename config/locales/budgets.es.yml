@@ -11,35 +11,26 @@ es:
           other: "Has votado <span>%{count}</span> propuestas."
         voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
         zero: "Todavía no has votado ninguna propuesta de inversión."
-    reasons_for_not_balloting:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
-      not_selected: No se pueden votar propuestas inviables.
-      not_enough_money: No hay fondos suficientes
-      no_ballots_allowed: El periodo de votación está cerrado.
-      different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+      reasons_for_not_balloting:
+        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+        not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+        organization: Las organizaciones no pueden votar.
+        not_selected: No se pueden votar propuestas inviables.
+        not_enough_money: No hay fondos suficientes.
+        no_ballots_allowed: El periodo de votación está cerrado.
+        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
     groups:
       show:
         title: Selecciona una partida
-  budget:
     phase:
-      accepting: Fase de propuestas
-      reviewing: Fase de revisión de propuestas
-      selecting: Fase de apoyos
-      valuating: Fase de evaluación de propuestas
-      balloting: Fase de votación
-      reviewing_ballots: Fase de revisión de resultados
-      finished: Resultados
-    groups:
-      index:
-        group_title: "Grupos"
-    headings:
-      none: Toda la ciudad
-      all: Todos los ámbitos
+      accepting: Aceptando propuestas
+      reviewing: Revisando propuestas
+      selecting: Selección de propuestas
+      valuating: Evaluación de propuestas
+      balloting: Votación de propuestas
+      reviewing_ballots: Contando resultados
+      finished: Presupuesto terminado
     index:
-      name: Nombre del presupuesto
-      phase: Fase
       title: Presupuestos participativos
     investments:
       form:
@@ -58,7 +49,6 @@ es:
           new: Crear
         title: Título de la propuesta de inversión
       index:
-        available: "Disponible:"
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
         unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
@@ -66,25 +56,17 @@ es:
         by_heading: "Propuestas de inversión con ámbito: %{heading}"
         search_form:
           button: Buscar
-          placeholder: Propuestas de inversión...
+          placeholder: Buscar propuestas de inversión...
           title: Buscar
         search_results:
           one: " que contiene '%{search_term}'"
           other: " que contienen '%{search_term}'"
         sidebar:
-          back: Volver a página de selección
-          district: Distrito
           my_ballot: Mis votos
-          remember_city: Además puedes votar propuestas de inversión para %{city}.
-          remember_city_link_html: <strong>toda la ciudad</strong>
-          remember_district: Además puedes votar propuestas de inversión para %{district}.
-          remember_district_link_html: <strong>un distrito</strong>
           voted_html:
             one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
             other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
           voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
-          votes: Apoyos restantes
-          votes_district: "Solo puedes votar en el distrito %{district}"
           zero: "Todavía no has votado ninguna propuesta de inversión."
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
@@ -96,30 +78,21 @@ es:
           random: Aleatorias
           confidence_score: Mejor valoradas
           price: Por coste
-      new:
-        more_info: "¿Cómo funcionan los presupuestos participativos?"
-        recommendation_one: Consulta los %{requirements}.
-        recommendation_one_link: requisitos que debe cumplir una propuesta
-        recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
-        recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-        recommendations_title: Cómo crear una propuesta de inversión
-        start_new: Crear una propuesta de inversión
-        back_link: Volver
       show:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
+        organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión
         add: Añadir
         already_added: "Ya has añadido esta propuesta de inversión"
-        already_supported: Ya has apoyado este proyecto. ¡Compártelo!
-        forum: Espacio de debate distrital
-        support_title: Apoyar este proyecto
+        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        support_title: Apoyar esta propuesta
         supports:
           one: 1 apoyo
           other: "%{count} apoyos"
@@ -128,9 +101,8 @@ es:
       header:
         check_ballot: Revisar mis votos
         different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+    progress_bar:
+      available: "Disponible: "
     show:
       group: Grupo
-      heading: Partida
-      price: Cantidad
-      no_heading: Sin línea
       phase: Fase actual

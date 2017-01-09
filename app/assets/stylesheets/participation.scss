@@ -462,7 +462,7 @@
   word-break: break-word;
 }
 
-.proposal-show, .investment-project-show {
+.proposal-show, .investment-project-show, .budget-investment-show {
 
   .supports {
     padding: $line-height/2 0 0;
@@ -712,6 +712,7 @@
     }
 
     .remove .icon-check-circle {
+      color: $budget;
       display: block;
       font-size: rem-calc(70);
       line-height: rem-calc(70);
@@ -1030,7 +1031,6 @@
 
   .amount-spent {
     background: $success-bg;
-    color: $success-color;
     font-weight: normal;
     padding: $line-height/2;
 

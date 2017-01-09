@@ -64,5 +64,27 @@ describe Budget do
       expect(budget.heading_price(create(:budget_heading))).to eq(-1)
     end
   end
+
+  describe "investments_orders" do
+    let(:budget) { create(:budget) }
+    it "is random when accepting and reviewing" do
+      budget.phase = 'accepting'
+      expect(budget.investments_orders).to eq(['random'])
+      budget.phase = 'reviewing'
+      expect(budget.investments_orders).to eq(['random'])
+    end
+    it "is random and price when ballotting and reviewing ballots" do
+      budget.phase = 'balloting'
+      expect(budget.investments_orders).to eq(['random', 'price'])
+      budget.phase = 'reviewing_ballots'
+      expect(budget.investments_orders).to eq(['random', 'price'])
+    end
+    it "is random and confidence_score in all other cases" do
+      budget.phase = 'selecting'
+      expect(budget.investments_orders).to eq(['random', 'confidence_score'])
+      budget.phase = 'valuating'
+      expect(budget.investments_orders).to eq(['random', 'confidence_score'])
+    end
+  end
 end
 

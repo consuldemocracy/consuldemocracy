@@ -63,6 +63,8 @@ en:
         external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
+        location: "Location"
+        organization_name: "If you are proposing in the name of a collective/organization, write its name"
       comment:
         body: "Comment"
         user: "User"
