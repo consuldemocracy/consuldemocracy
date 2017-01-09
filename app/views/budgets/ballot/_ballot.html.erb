@@ -36,9 +36,6 @@
         <% else %>
           <p>
             <%= t("budgets.ballots.show.zero") %><br>
-            <%= link_to t("budgets.ballots.show.heading_link"),
-                        budget_investments_path(budget, heading_id: heading.id),
-                        data: { no_turbolink: true } %>
           </p>
         <% end %>
 

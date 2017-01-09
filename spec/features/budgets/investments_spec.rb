@@ -67,6 +67,7 @@ feature 'Budget Investments' do
   end
 
   context("Orders") do
+    before(:each) { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
       per_page = Kaminari.config.default_per_page
