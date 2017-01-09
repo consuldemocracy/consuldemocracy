@@ -33,6 +33,11 @@ es:
     index:
       title: Presupuestos participativos
     investments:
+      form:
+        tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
+        tags_label: Temas
+        tag_category_label: "Categorías"
+        tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables

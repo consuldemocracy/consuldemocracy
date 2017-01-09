@@ -24,6 +24,7 @@ feature 'Budget Investments' do
   end
 
   context("Search") do
+
     scenario 'Search by text' do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
       investment2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
@@ -44,9 +45,11 @@ feature 'Budget Investments' do
         expect(page).to_not have_content(investment3.title)
       end
     end
+
   end
 
   context("Filters") do
+
     scenario 'by unfeasibility' do
       investment1 = create(:budget_investment, :unfeasible, heading: heading, valuation_finished: true)
       investment2 = create(:budget_investment, :feasible, heading: heading)
@@ -426,5 +429,4 @@ feature 'Budget Investments' do
     end
 
   end
-
 end

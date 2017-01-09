@@ -46,6 +46,7 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { where(selected: true) }
+    scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
     scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
@@ -106,6 +107,7 @@ class Budget
       { title              => 'A',
         author.username    => 'B',
         heading.try(:name) => 'B',
+        tag_list.join(' ') => 'B',
         description        => 'C'
       }
     end

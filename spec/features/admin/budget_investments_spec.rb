@@ -343,12 +343,14 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Adds existing tags", :js do
-      create(:budget_investment, tag_list: 'Education, Health')
+    scenario "Adds existing valuation tags", :js do
+      budget_investment1 = create(:budget_investment)
+      budget_investment1.set_tag_list_on(:valuation, 'Education, Health')
+      budget_investment1.save
 
-      budget_investment = create(:budget_investment)
+      budget_investment2 = create(:budget_investment)
 
-      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      visit admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
       click_link 'Edit classification'
 
       find('.js-add-tag-link', text: 'Education').click
@@ -365,13 +367,13 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Adds non existent tags" do
+    scenario "Adds non existent valuation tags" do
       budget_investment = create(:budget_investment)
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link 'Edit classification'
 
-      fill_in 'budget_investment_tag_list', with: 'Refugees, Solidarity'
+      fill_in 'budget_investment_valuation_tag_list', with: 'Refugees, Solidarity'
       click_button 'Update'
 
       expect(page).to have_content 'Investment project updated succesfully.'
@@ -380,6 +382,39 @@ feature 'Admin budget investments' do
         expect(page).to have_content 'Refugees'
         expect(page).to have_content 'Solidarity'
       end
+    end
+
+    scenario "Only displays valuation tags" do
+      budget_investment = create(:budget_investment, tag_list: 'Park')
+      budget_investment.set_tag_list_on(:valuation, 'Education')
+      budget_investment.save
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      expect(page).to     have_content "Education"
+      expect(page).to_not have_content "Park"
+
+      click_link 'Edit classification'
+
+      expect(page).to     have_content "Education"
+      expect(page).to_not have_content "Park"
+    end
+
+    scenario "Maintains user tags" do
+      budget_investment = create(:budget_investment, tag_list: 'Park')
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      click_link 'Edit classification'
+
+      fill_in 'budget_investment_valuation_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Update'
+
+      expect(page).to have_content 'Investment project updated succesfully.'
+
+      visit budget_investment_path(budget_investment.budget, budget_investment)
+      expect(page).to have_content "Park"
+      expect(page).to_not have_content "Refugees, Solidarity"
     end
 
     scenario "Errors on update" do

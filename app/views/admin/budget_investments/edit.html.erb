@@ -45,7 +45,8 @@
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </div>
-      <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
+      <%= f.text_field :valuation_tag_list,
+                        value: @investment.tag_list_on(:valuation).sort.join(','),
                         label: false,
                         placeholder: t("admin.budget_investments.edit.tags_placeholder"),
                         class: 'js-tag-list' %>

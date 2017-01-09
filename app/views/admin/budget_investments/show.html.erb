@@ -19,7 +19,7 @@
 <p id="tags">
   <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
 
-  <%= @investment.tags.pluck(:name).join(', ') %>
+  <%= @investment.tags_on(:valuation).pluck(:name).join(', ') %>
 </p>
 
 <p id="assigned_valuators">

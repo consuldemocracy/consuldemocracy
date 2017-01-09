@@ -594,8 +594,4 @@ feature 'Ballots' do
       end
     end
   end
-
-
 end
-
-
