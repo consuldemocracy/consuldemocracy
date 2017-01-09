@@ -159,6 +159,14 @@ blockquote p {
   font-weight: bold;
 }
 
+.sticky-bottom {
+  margin-bottom: rem-calc(-$line-height*3);
+
+  &.highlight {
+    border-bottom: $line-height/2 solid $highlight;
+  }
+}
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -2652,5 +2660,18 @@ ul.ballot-list {
         }
       }
     }
+  }
+}
+
+.expanded.brand {
+  background: $brand;
+
+  h2, p {
+    color: white;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
   }
 }
