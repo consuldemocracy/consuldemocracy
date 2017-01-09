@@ -34,20 +34,10 @@ es:
       title: Presupuestos participativos
     investments:
       form:
-        association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
-        association_name: 'Nombre de la asociación'
-        description: Descripción detallada
-        external_url: Enlace a documentación adicional
-        heading: "Elige si es una propuesta para toda la ciudad o para un distrito"
-        location: "Ubicación de la propuesta"
         tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
         tags_label: Temas
         tag_category_label: "Categorías"
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
-        submit_buttons:
-          create: Crear
-          new: Crear
-        title: Título de la propuesta de inversión
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables

@@ -29,11 +29,11 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("budget.investments.form.tags_label") %>
-      <p class="note"><%= t("budget.investments.form.tags_instructions") %></p>
+      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+      <p class="note"><%= t("budgets.investments.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("budget.investments.form.tag_category_label") %>
+        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
         <% @categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
@@ -42,7 +42,7 @@
       <br>
       <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
                         label: false,
-                        placeholder: t("budget.investments.form.tags_placeholder"),
+                        placeholder: t("budgets.investments.form.tags_placeholder"),
                         class: 'js-tag-list' %>
     </div>
 

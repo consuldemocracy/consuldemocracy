@@ -34,20 +34,10 @@ en:
       title: Participatory budgets
     investments:
       form:
-        association_name_label: 'If you propose in name of an assocation or collective add the name here'
-        association_name: 'Association name'
-        description: Description
-        external_url: Link to additional documentation
-        heading: Choose if a proposed citywide or district
-        location: "Location"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
-        submit_buttons:
-          create: Create
-          new: Create
-        title: Investment title
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
