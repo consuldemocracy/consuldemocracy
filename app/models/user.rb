@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
 
   validate :validate_username_length
 
-  validates :official_level, inclusion: {in: 0..5}
+  validates :official_level, inclusion: {in: 0..6}
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s),
@@ -123,6 +123,10 @@ class User < ActiveRecord::Base
 
   def official?
     official_level && official_level > 0
+  end
+
+  def user_level?
+    official_level && official_level == 0 
   end
 
   def add_official_position!(position, level)

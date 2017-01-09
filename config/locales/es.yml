@@ -401,11 +401,12 @@ es:
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
+      author_type_0: 'Usuarios'
       author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
       author_type_3: 'Director general'
       author_type_4: 'Concejal'
       author_type_5: 'Alcaldesa'
+      author_type_6: 'Colectivo de usuarios'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
@@ -427,6 +428,7 @@ es:
     check_all: Todos
     check_none: Ninguno
     collective: Colectivo
+    users: Usuarios
     flag: Denunciar como inapropiado
     hide: Ocultar
     print:

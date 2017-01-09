@@ -885,7 +885,53 @@ feature 'Proposals' do
           end
         end
 
-        scenario "Municipal Organization", :js do
+        scenario "Users", :js do
+          ana = create :user, official_level: 0
+          john = create :user, official_level: 3
+
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "Users", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          expect(page).to have_content("There are 2 citizen proposals")
+
+          within("#proposals") do
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+        scenario "Collective Users", :js do
+          ana = create :user, official_level: 6
+          john = create :user, official_level: 1
+
+          proposal1 = create(:proposal, author: ana)
+          proposal2 = create(:proposal, author: ana)
+          proposal3 = create(:proposal, author: john)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "Collective users", from: "advanced_search_official_level"
+          click_button "Filter"
+
+          expect(page).to have_content("There are 2 citizen proposals")
+
+          within("#proposals") do
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to_not have_content(proposal3.title)
+          end
+        end
+
+        pending "Municipal Organization", :js do
           ana = create :user, official_level: 2
           john = create :user, official_level: 3
 
