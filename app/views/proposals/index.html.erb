@@ -1,6 +1,6 @@
-<% provide :title do %>
-  <%= t('proposals.index.title') %>
-<% end %>
+<% provide :title, t("meta_tags.proposals.title") %>
+<% provide :meta_description, t("meta_tags.proposals.description") %>
+<% provide :meta_keywords, t("meta_tags.proposals.keywords") %>
 
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
