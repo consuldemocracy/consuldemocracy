@@ -331,7 +331,7 @@
     margin-bottom: $line-height/2;
     position: relative;
 
-    span {
+    span:not(.label) {
       line-height: rem-calc(32); // Same as avatar height
     }
 
