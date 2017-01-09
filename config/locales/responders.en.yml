@@ -9,7 +9,7 @@ en:
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
-        budget_investment: "Budget Investment created successfully. You can access it from %{activity}"
+        budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
       save_changes:
         notice: Changes saved

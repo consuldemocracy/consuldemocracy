@@ -46,13 +46,9 @@ module Budgets
       @investment.author = current_user
 
       if @investment.save
-        activity_link = view_context.link_to(t('layouts.header.my_activity_link'),
-                                             user_path(current_user, filter: :budget_investments))
         redirect_to budget_investment_path(@budget, @investment),
-                    flash: { html_safe: true },
-                    notice: t('flash.actions.create.budget_investment', activity: activity_link)
+                    notice: t('flash.actions.create.budget_investment')
       else
-
         render :new
       end
     end

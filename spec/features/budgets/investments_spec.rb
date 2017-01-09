@@ -190,13 +190,8 @@ feature 'Budget Investments' do
       click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully'
-      expect(page).to have_content 'You can access it from My activity'
 
-      within "#notice" do
-        click_link 'My activity'
-      end
-
-      expect(current_url).to eq(user_url(author, filter: :budget_investments))
+      visit user_url(author, filter: :budget_investments)
       expect(page).to have_content "1 Investment"
       expect(page).to have_content "Build a skyscraper"
     end
