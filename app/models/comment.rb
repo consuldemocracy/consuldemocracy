@@ -19,6 +19,8 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
 
+  has_many :votes, -> { for_comments }, foreign_key: 'votable_id'
+
   before_save :calculate_confidence_score
 
   scope :for_render, -> { with_hidden.includes(user: :organization) }

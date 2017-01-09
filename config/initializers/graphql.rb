@@ -9,7 +9,7 @@ QueryType = query_type_creator.create
 
 ConsulSchema = GraphQL::Schema.define do
   query QueryType
-  max_depth 10
+  max_depth 12
 
   resolve_type -> (object, ctx) do
     type_name = object.class.name # look up types by class name

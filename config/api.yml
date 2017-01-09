@@ -1,7 +1,10 @@
 User:
   fields:
-    id:       integer
-    username: string
+    id:         integer
+    username:   string
+    debates:    [Debate]
+    proposals:  [Proposal]
+    comments:   [Comment]
 Voter:
   fields:
     gender:     string
@@ -24,6 +27,7 @@ Debate:
     geozone:            Geozone
     comments:           [Comment]
     public_author:      User
+    votes:              [Vote]
 Proposal:
   fields:
     id:                   integer
@@ -45,6 +49,7 @@ Proposal:
     comments:             [Comment]
     proposal_notifications: [ProposalNotification]
     public_author:        User
+    votes:                [Vote]
 Comment:
   fields:
     id:                 integer
@@ -58,6 +63,7 @@ Comment:
     ancestry:           string
     confidence_score:   integer
     public_author:      User
+    votes:              [Vote]
 Geozone:
   fields:
     id:               integer
