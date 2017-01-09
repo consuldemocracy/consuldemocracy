@@ -233,7 +233,7 @@ es:
           other: "%{count} comentarios"
       show:
         title: Comentario
-        comments: Respuestas
+        comments: Comentarios
       version_chooser:
         seeing_version: Comentarios para la versión
         see_text: Ver borrador del texto

@@ -3,14 +3,14 @@ include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
   let(:user)   { create :user }
-  let(:legislation_annotation) { create :legislation_annotation }
+  let(:legislation_annotation) { create :legislation_annotation, author: user }
 
   scenario 'Index' do
     3.times { create(:comment, commentable: legislation_annotation) }
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
 
-    expect(page).to have_css('.comment', count: 3)
+    expect(page).to have_css('.comment', count: 4)
 
     comment = Comment.last
     within first('.comment') do
@@ -36,7 +36,7 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Collapsable comments', :js do
-    parent_comment = create(:comment, body: "Main comment", commentable: legislation_annotation)
+    parent_comment = legislation_annotation.comments.first
     child_comment  = create(:comment, body: "First subcomment", commentable: legislation_annotation, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: legislation_annotation, parent: child_comment)
 
@@ -143,7 +143,7 @@ feature 'Commenting legislation questions' do
       click_link "Next", exact: false
     end
 
-    expect(page).to have_css('.comment', count: 2)
+    expect(page).to have_css('.comment', count: 3)
   end
 
   feature 'Not logged user' do
@@ -168,7 +168,7 @@ feature 'Commenting legislation questions' do
 
     within "#comments" do
       expect(page).to have_content 'Have you thought about...?'
-      expect(page).to have_content '(1)'
+      expect(page).to have_content '(2)'
     end
   end
 
@@ -184,7 +184,8 @@ feature 'Commenting legislation questions' do
   scenario 'Reply', :js do
     citizen = create(:user, username: 'Ana')
     manuela = create(:user, username: 'Manuela')
-    comment = create(:comment, commentable: legislation_annotation, user: citizen)
+    legislation_annotation = create(:legislation_annotation, author: citizen)
+    comment = legislation_annotation.comments.first
 
     login_as(manuela)
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
@@ -204,7 +205,7 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Errors on reply', :js do
-    comment = create(:comment, commentable: legislation_annotation, user: user)
+    comment = legislation_annotation.comments.first
 
     login_as(user)
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
@@ -326,7 +327,8 @@ feature 'Commenting legislation questions' do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       moderator = create(:moderator, user: manuela)
-      comment = create(:comment, commentable: legislation_annotation, user: citizen)
+      legislation_annotation = create(:legislation_annotation, author: citizen)
+      comment = legislation_annotation.comments.first
 
       login_as(manuela)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
@@ -382,7 +384,8 @@ feature 'Commenting legislation questions' do
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
       admin   = create(:administrator, user: manuela)
-      comment = create(:comment, commentable: legislation_annotation, user: citizen)
+      legislation_annotation = create(:legislation_annotation, author: citizen)
+      comment = legislation_annotation.comments.first
 
       login_as(manuela)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)

@@ -13,6 +13,12 @@ class Legislation::Annotation < ActiveRecord::Base
   validates :draft_version, presence: true
   validates :author, presence: true
 
+  after_create :create_first_comment
+
+  def create_first_comment
+    comments.create(body: self.text, user: self.author)
+  end
+
   def title
     text[0..50]
   end

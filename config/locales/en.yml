@@ -233,7 +233,7 @@ en:
           other: "%{count} comments"
       show:
         title: Comment
-        comments: Replies
+        comments: Comments
       version_chooser:
         seeing_version: Commments for version
         see_text: See text draft
