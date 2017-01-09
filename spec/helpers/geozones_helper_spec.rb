@@ -67,6 +67,8 @@ describe GeozonesHelper do
       ballot = create(:ballot, user: user, geozone: nil)
 
       expect(my_geozone?(california,  ballot)).to eq false
+    end
+  end
 
   describe "#geozone_name_from_id" do
 
