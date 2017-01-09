@@ -400,11 +400,6 @@ en:
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
-      author_type_1: 'Public employee'
-      author_type_2: 'Municipal Organization'
-      author_type_3: 'General director'
-      author_type_4: 'City councillor'
-      author_type_5: 'Mayoress'
       date: 'By date'
       date_placeholder: 'DD/MM/YYYY'
       date_range_blank: 'Choose a date'
