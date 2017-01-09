@@ -17,7 +17,7 @@ module Budgets
     feature_flag :budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
-    has_orders ->(c){ c.instance_variable_get(:@budget).balloting? ? %w{random price} : %w{random confidence_score} }, only: :index
+    has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -80,7 +80,7 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :terms_of_service, :location, :organization_name)
       end
 
       def load_ballot

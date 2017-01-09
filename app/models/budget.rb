@@ -76,7 +76,7 @@ class Budget < ActiveRecord::Base
   end
 
   def translated_phase
-    I18n.t "budget.phase.#{phase}"
+    I18n.t "budgets.phase.#{phase}"
   end
 
   def formatted_amount(amount)
@@ -92,6 +92,17 @@ class Budget < ActiveRecord::Base
 
   def formatted_heading_amount_spent(heading)
     formatted_amount(amount_spent(heading))
+  end
+
+  def investments_orders
+    case phase
+    when 'accepting', 'reviewing'
+      %w{random}
+    when 'balloting', 'reviewing_ballots'
+      %w{random price}
+    else
+      %w{random confidence_score}
+    end
   end
 
   private

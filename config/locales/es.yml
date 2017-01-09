@@ -33,15 +33,6 @@ es:
   application:
     close: Cerrar
     menu: Menú
-  budgets:
-    progress_bar:
-      available: Disponible
-    phases:
-      accepting: Aceptación de proyectos
-      on_hold: En espera
-      selecting: Selección de proyectos
-      balloting: Votación de proyectos
-      finished: Terminado
   comments:
     comment:
       admin: Administrador

@@ -35,12 +35,12 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_external_url', with: 'http://moarparks.com'
       check 'budget_investment_terms_of_service'
 
-      click_button 'Create'
+      click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully.'
 
-      expect(page).to have_content '2016'
-      expect(page).to have_content 'Whole city'
+      expect(page).to have_content '2017'
+      #expect(page).to have_content 'Whole city'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
@@ -82,7 +82,6 @@ feature 'Budget Investments' do
         expect(page).to have_content(budget_investment1.title)
         expect(page).to_not have_content(budget_investment2.title)
         expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.description)
       end
     end
 
@@ -107,7 +106,6 @@ feature 'Budget Investments' do
         expect(page).to_not have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
         expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.description)
       end
     end
   end
@@ -135,9 +133,7 @@ feature 'Budget Investments' do
     within("#budget-investments") do
       expect(page).to have_css('.budget-investment', count: 2)
       expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.description)
       expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.description)
     end
   end
 

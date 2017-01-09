@@ -16,45 +16,24 @@ en:
         not_verified: Only verified users can vote on proposals; %{verify_account}.
         organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
-        not_enough_money: "Price is higher than the available amount left"
+        not_enough_money: "Price is higher than the available amount left."
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned: You have already voted a different heading
     groups:
       show:
         title: Select a heading
-  budget:
     phase:
       accepting: Accepting proposals
       reviewing: Reviewing proposals
-      selecting: Selecting
-      valuating: Valuating
-      balloting: Balloting
+      selecting: Selecting proposals
+      valuating: Valuating proposals
+      balloting: Balloting proposals
       reviewing_ballots: Reviewing Ballots
-      finished: Finished
-    groups:
-      index:
-        group_title: "Groups"
-    headings:
-      none: Whole City
-      all: All scopes
+      finished: Finished budget
     index:
-      name: Budget name
-      phase: Phase
       title: Participatory budgets
     investments:
-      form:
-        association_name_label: 'If you propose in name of an assocation or collective add the name here'
-        association_name: 'Association name'
-        description: Description
-        external_url: Link to additional documentation
-        heading: Choose if a proposed citywide or district
-        location: "Location"
-        submit_buttons:
-          create: Create
-          new: Create
-        title: Investment title
       index:
-        available: "Available:"
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
         unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
@@ -62,25 +41,17 @@ en:
         by_heading: "Investment projects with scope: %{heading}"
         search_form:
           button: Search
-          placeholder: Investment projects...
+          placeholder: Search investment projects...
           title: Search
         search_results:
           one: " containing the term '%{search_term}'"
           other: " containing the term '%{search_term}'"
         sidebar:
-          back: Back to select page
-          district: District
           my_ballot: My ballot
-          remember_city: You can also vote %{city} investment projects.
-          remember_city_link_html: <strong>city-wide</strong>
-          remember_district: You can also vote investment projects for %{district}.
-          remember_district_link_html: <strong>a district</strong>
           voted_html:
             one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
             other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
           voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
-          votes: Supports remaining
-          votes_district: "You can only vote in the district %{district}"
           zero: You have not voted any investment project.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
@@ -92,22 +63,13 @@ en:
           random: random
           confidence_score: highest rated
           price: by price
-      new:
-        back_link: Back
-        more_info: "Important, not to be ruled out your proposal must comply:"
-        recommendation_one: See the %{requirements}.
-        recommendation_one_link: requirements to be met by a proposal
-        recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-        recommendation_two: Each proposal must be submitted separately. You can make as many want.
-        recommendations_title: How to create a spending proposal
-        start_new: Create spending proposal
       show:
         author_deleted: User deleted
         price_explanation: Price explanation
         unfeasibility_explanation: Unfeasibility explanation
         code_html: 'Investment project code: <strong>%{code}</strong>'
         location_html: 'Location: <strong>%{location}</strong>'
-        location: Location
+        organization_name_html: 'Organization: <strong>%{name}</strong>'
         share: Share
       wrong_price_format: Only integer numbers
       investment:
@@ -115,7 +77,6 @@ en:
         add: Add
         already_added: You have already added this investment project
         already_supported: You have already supported this. Share it!
-        forum: District discussion space
         support_title: Support this project
         supports:
           one: 1 support
@@ -125,9 +86,8 @@ en:
       header:
         check_ballot: Check my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+    progress_bar:
+      available: "Available: "
     show:
       group: Group
-      heading: Heading
-      price: Price
-      no_heading: No Heading
       phase: Actual phase

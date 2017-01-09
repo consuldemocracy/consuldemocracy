@@ -9,7 +9,8 @@
                 class: "remove-investment-project",
                 method: :delete,
                 remote: true do %>
-       <span class="icon-x delete"></span>
+      <span class="sr-only"><%= t('budgets.ballots.show.remove') %></span>
+      <span class="icon-x delete"></span>
     <% end %>
   <% end %>
 </li>
