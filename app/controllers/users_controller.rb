@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  has_filters %w{proposals debates comments spending_proposals ballot}, only: :show
+  has_filters %w{proposals debates spending_proposals budget_investments comments ballot}, only: :show
 
   load_and_authorize_resource
-  helper_method :authorized_for_filter?
   helper_method :author?
   helper_method :author_or_admin?
   helper_method :current_user_is_author?
@@ -18,7 +17,8 @@ class UsersController < ApplicationController
                           debates: Debate.where(author_id: @user.id).count,
                           comments: Comment.not_as_admin_or_moderator.where(user_id: @user.id).count,
                           spending_proposals: SpendingProposal.where(author_id: @user.id).count,
-                          ballot: Setting["feature.spending_proposal_features.phase3"].blank? ? 0 : 1)
+                          ballot: Setting["feature.spending_proposal_features.phase3"].blank? ? 0 : 1),
+                          budget_investments: Budget::Investment.where(author_id: @user.id).count
     end
 
     def load_filtered_activity
@@ -26,6 +26,7 @@ class UsersController < ApplicationController
       case params[:filter]
       when "proposals" then load_proposals
       when "debates"   then load_debates
+      when "budget_investments" then load_budget_investments
       when "comments"  then load_comments
       when "spending_proposals"  then load_spending_proposals if author_or_admin?
       when "ballot"    then load_ballot
@@ -40,12 +41,12 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
+      elsif  @activity_counts[:budget_investments] > 0
+        load_budget_investments
+        @current_filter = "budget_investments"
       elsif  @activity_counts[:comments] > 0
         load_comments
         @current_filter = "comments"
-      elsif  @activity_counts[:spending_proposals] > 0 && author_or_admin?
-        load_spending_proposals
-        @current_filter = "spending_proposals"
       end
     end
 
@@ -61,8 +62,8 @@ class UsersController < ApplicationController
       @comments = Comment.not_as_admin_or_moderator.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
-    def load_spending_proposals
-      @spending_proposals = SpendingProposal.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+    def load_budget_investments
+      @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
 
     def load_ballot

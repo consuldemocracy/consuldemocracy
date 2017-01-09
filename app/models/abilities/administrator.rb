@@ -4,7 +4,6 @@ module Abilities
 
     def initialize(user)
       self.merge Abilities::Moderation.new(user)
-      self.merge Abilities::Valuator.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -45,6 +44,15 @@ module Abilities
       if Setting['feature.spending_proposal_features.valuation_allowed'].present?
         can [:update, :destroy], SpendingProposal
       end
+
+      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+
+      can [:index, :read, :new, :create, :update, :destroy], Budget
+      can [:read, :create, :update, :destroy], Budget::Group
+      can [:read, :create, :update, :destroy], Budget::Heading
+      can [:hide, :update, :toggle_selection], Budget::Investment
+      can :valuate, Budget::Investment
+      can :create, Budget::ValuatorAssignment
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
       can [:index, :create, :edit, :update, :destroy], Geozone

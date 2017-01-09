@@ -8,7 +8,8 @@ feature 'Users' do
       @user = create(:user)
       1.times {create(:debate, author: @user)}
       2.times {create(:proposal, author: @user)}
-      3.times {create(:comment, user: @user)}
+      3.times {create(:budget_investment, author: @user)}
+      4.times {create(:comment, user: @user)}
 
       visit user_path(@user)
     end
@@ -16,7 +17,8 @@ feature 'Users' do
     scenario 'shows user public activity' do
       expect(page).to have_content('1 Debate')
       expect(page).to have_content('2 Proposals')
-      expect(page).to have_content('3 Comments')
+      expect(page).to have_content('3 Investments')
+      expect(page).to have_content('4 Comments')
     end
 
     scenario 'shows only items where user has activity' do
@@ -24,7 +26,8 @@ feature 'Users' do
 
       expect(page).to_not have_content('0 Proposals')
       expect(page).to have_content('1 Debate')
-      expect(page).to have_content('3 Comments')
+      expect(page).to have_content('3 Investments')
+      expect(page).to have_content('4 Comments')
     end
 
     scenario 'default filter is proposals' do
@@ -48,9 +51,18 @@ feature 'Users' do
       expect(page).to have_content(@user.debates.first.title)
     end
 
-    scenario 'shows comments by default if user has no proposals nor debates' do
+    scenario 'shows investments by default if user has no proposals nor debates' do
       @user.proposals.destroy_all
       @user.debates.destroy_all
+      visit user_path(@user)
+
+      expect(page).to have_content(@user.budget_investments.first.title)
+    end
+
+    scenario 'shows comments by default if user has no proposals nor debates nor investments' do
+      @user.proposals.destroy_all
+      @user.debates.destroy_all
+      @user.budget_investments.destroy_all
       visit user_path(@user)
 
       @user.comments.each do |comment|
@@ -73,7 +85,7 @@ feature 'Users' do
         expect(page).to_not have_content(comment.body)
       end
 
-      click_link '3 Comments'
+      click_link '4 Comments'
 
       @user.comments.each do |comment|
         expect(page).to have_content(comment.body)

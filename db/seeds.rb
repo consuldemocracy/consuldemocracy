@@ -57,6 +57,10 @@ Setting["org_name"] = "Decide Madrid"
 # Consul installation place name (City, Country...)
 Setting["place_name"] = "Madrid"
 
+# Meta tags for SEO
+Setting["meta_description"] = nil
+Setting["meta_keywords"] = nil
+
 # Feature flags
 Setting['feature.debates'] = true
 Setting['feature.spending_proposals'] = true
@@ -64,6 +68,7 @@ Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
+Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 
 # Spending proposals feature flags
@@ -92,3 +97,6 @@ Setting['direct_message_max_per_day'] = 3
 # Email settings
 Setting['mailer_from_name'] = 'Consul'
 Setting['mailer_from_address'] = 'noreply@consul.dev'
+
+# Verification settings
+Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'

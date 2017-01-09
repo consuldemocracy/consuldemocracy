@@ -42,6 +42,10 @@ module ActsAsTaggableOn
       ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
     end
 
+    def self.budget_investment_tags
+      ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'Budget::Investment').includes(:taggings).order(:name).uniq
+    end
+
     private
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"

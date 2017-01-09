@@ -31,5 +31,10 @@
                                   accesskey: "s" %>
       </li>
     <% end %>
+    <% if feature?(:budgets) %>
+      <li>
+        <%= link_to t("layouts.header.budgets"), budgets_path, class: ("active" if controller_name == "budgets"), accesskey: "b" %>
+      </li>
+    <% end %>
   </ul>
 </div>

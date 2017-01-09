@@ -1,0 +1,10 @@
+<%= link_to admin_budgets_path do %>
+  <span class="icon-angle-left"></span>
+  <%= t('shared.back') %>
+<% end %>
+
+<h2><%= @budget.name %></h2>
+
+<div id="<%= dom_id @budget %>_groups">
+  <%= render "groups", groups: @budget.groups %>
+</div>

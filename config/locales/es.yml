@@ -200,6 +200,7 @@ es:
       confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
+    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -263,6 +264,15 @@ es:
       sign_up: Ver el vídeo de Blas Bonilla
       sign_in: Si ya tienes una cuenta %{login}.
       sign_in_link: entra ahora
+      see_all: Ver propuestas
+      budgets: Presupuestos ciudadanos
+  legislation:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"
   locale: Español
   notifications:
     index:
@@ -484,6 +494,7 @@ es:
     hide: Ocultar
     print:
       print_button: Imprimir esta información
+    search: Buscar
     show: Mostrar
     suggest:
       debate:
@@ -714,7 +725,7 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
-        spending_proposals:
+        budget_investments:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
         ballot: Presupuestos participativos

@@ -182,14 +182,8 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to_not have_content 'Investment project created successfully'
-    expect(page).to have_content '1 error'
-
-    within "#notice" do
-      click_link 'My activity'
-    end
-
-    expect(page).to have_content 'Investment project created successfully'
+    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'You can access it from My activity'
   end
 
   xscenario 'Errors on create' do
