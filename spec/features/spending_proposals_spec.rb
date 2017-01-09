@@ -244,7 +244,7 @@ feature 'Spending proposals' do
 
   context "Destroy" do
 
-    scenario "Admin cannot destroy spending proposals" do
+    xscenario "Admin cannot destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
@@ -368,15 +368,15 @@ feature 'Spending proposals' do
       first(:link, "Spending proposals").click
       click_link "Vote city proposals"
 
-      add_to_ballot(sp1)
-      add_to_ballot(sp2)
+      add_spending_proposal_to_ballot(sp1)
+      add_spending_proposal_to_ballot(sp2)
 
       first(:link, "Spending proposals").click
       click_link "Vote district proposals"
       click_link carabanchel.name
 
-      add_to_ballot(sp4)
-      add_to_ballot(sp5)
+      add_spending_proposal_to_ballot(sp4)
+      add_spending_proposal_to_ballot(sp5)
 
       click_link "Check my ballot"
 

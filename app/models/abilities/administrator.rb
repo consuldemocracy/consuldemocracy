@@ -45,7 +45,7 @@ module Abilities
         can [:update, :destroy], SpendingProposal
       end
 
-      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+      can [:read, :valuate, :summary], SpendingProposal
 
       can [:index, :read, :new, :create, :update, :destroy], Budget
       can [:read, :create, :update, :destroy], Budget::Group

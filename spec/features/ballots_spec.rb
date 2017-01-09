@@ -437,7 +437,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'User is organization', :js do
+    xscenario 'User is organization', :js do
       org = create(:organization)
       spending_proposal = create(:spending_proposal, :feasible, :finished)
 

@@ -374,6 +374,13 @@ module CommonActions
     expect(page).to have_content "3 invitations have been sent."
   end
 
+  def add_spending_proposal_to_ballot(spending_proposal)
+    within("#spending_proposal_#{spending_proposal.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
+    end
+  end
+
   def add_to_ballot(budget_investment)
     within("#budget_investment_#{budget_investment.id}") do
       find('.add a').trigger('click')

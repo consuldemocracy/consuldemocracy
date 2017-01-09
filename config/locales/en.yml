@@ -450,6 +450,8 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    "yes": "Yes"
+    "no": "No"
     comments:
       title: "Comments"
       login_to_comment: "You must sign in in order to comment"

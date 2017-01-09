@@ -165,6 +165,18 @@ ignore_unused:
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
+#### Review unused keys after merge with Budgest (both en and es)
+  - layouts.header.see_all
+  - legislation.help.alt
+  - legislation.help.text
+  - legislation.help.text_sign_in
+  - legislation.help.text_sign_up
+  - legislation.help.title
+  - users.show.confirm_deletion_spending_proposal
+  - users.show.delete_spending_proposal
+  - verification.letter.create.flash.offices_url
+  - verification.letter.new.offices_url
+####
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

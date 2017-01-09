@@ -572,7 +572,7 @@ feature 'Votes' do
       end
     end
 
-    scenario 'Disable voting on spending proposals', :js do
+    xscenario 'Disable voting on spending proposals', :js do
       login_as(@manuela)
       Setting["feature.spending_proposal_features.voting_allowed"] = nil
       spending_proposal = create(:spending_proposal)

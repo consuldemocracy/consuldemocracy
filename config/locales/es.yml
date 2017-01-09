@@ -200,7 +200,6 @@ es:
       confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -450,6 +449,8 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    "yes": "Sí"
+    "no": "No"
     comments:
       title: "Comentarios"
       login_to_comment: "Debes iniciar sesión para comentar"
@@ -725,6 +726,9 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
+        spending_proposals:
+          one: 1 Propuesta de inversión
+          other: "%{count} Propuestas de inversión"
         budget_investments:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
