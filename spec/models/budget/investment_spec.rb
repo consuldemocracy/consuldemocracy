@@ -188,6 +188,23 @@ describe Budget::Investment do
     end
   end
 
+  describe "search" do
+
+    context "tags" do
+      it "searches by tags" do
+        investment = create(:budget_investment, tag_list: 'Latina')
+
+        results = Budget::Investment.search('Latina')
+        expect(results.first).to eq(investment)
+
+        results = Budget::Investment.search('Latin')
+        expect(results.first).to eq(investment)
+      end
+    end
+
+  end
+
+
   describe 'Permissions' do
     let(:budget)      { create(:budget) }
     let(:group)       { create(:budget_group, budget: budget) }
