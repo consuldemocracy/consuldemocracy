@@ -71,6 +71,7 @@ es:
         location_html: 'Ubicación: <strong>%{location}</strong>'
         organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
+        title: Propuesta de inversión
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión

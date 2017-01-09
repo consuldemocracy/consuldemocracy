@@ -71,6 +71,7 @@ en:
         location_html: 'Location: <strong>%{location}</strong>'
         organization_name_html: 'Organization: <strong>%{name}</strong>'
         share: Share
+        title: Investment project
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project
