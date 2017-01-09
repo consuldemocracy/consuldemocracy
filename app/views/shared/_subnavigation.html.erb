@@ -30,7 +30,10 @@
     <% end %>
     <% if feature?(:budgets) %>
       <li>
-        <%= link_to t("layouts.header.budgets"), budgets_path, class: ("active" if controller_name == "budgets"), accesskey: "b" %>
+        <%= layout_menu_link_to t("layouts.header.budgets"),
+                                  budgets_path,
+                                  controller_name == "budgets" || controller_name == "investments",
+                                  accesskey: "b" %>
       </li>
     <% end %>
   </ul>
