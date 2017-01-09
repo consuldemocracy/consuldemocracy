@@ -7,11 +7,18 @@ module GraphQL
     end
 
     def call(object, arguments, context)
-      if target_model.respond_to?(:public_for_api)
-        target_model.public_for_api.find_by(id: arguments["id"])
-      else
-        target_model.find_by(id: arguments["id"])
-      end
+      public_elements.find_by(id: arguments['id'])
     end
+
+    private
+
+      def public_elements
+        if target_model.respond_to?(:public_for_api)
+          target_model.public_for_api
+        else
+          target_model
+        end
+      end
+
   end
 end
