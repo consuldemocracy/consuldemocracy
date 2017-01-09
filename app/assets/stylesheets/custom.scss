@@ -2620,6 +2620,11 @@ ul.ballot-list {
     color: #7E328A;
   }
 
+  .button {
+    background: white;
+    color: #7E328A;
+  }
+
   @include breakpoint(large) {
     .block-border-left {
       border-left: 2px solid #7E328A;
@@ -2630,8 +2635,17 @@ ul.ballot-list {
     }
   }
 
+  img {
+    margin-top: -1px;
+  }
+
   .highlight {
     background: #ECEBF6;
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
   }
 }
 
