@@ -35,9 +35,6 @@ describe "Abilities::Valuator" do
     it { should_not be_able_to(:valuate, SpendingProposal) }
   end
 
-  it { should be_able_to(:update, SpendingProposal) }
-  it { should be_able_to(:valuate, SpendingProposal) }
-
   it { should_not be_able_to(:update, non_assigned_investment) }
   it { should_not be_able_to(:valuate, non_assigned_investment) }
 

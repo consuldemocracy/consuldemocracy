@@ -501,7 +501,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient funds (added after create)', :js do
+    xscenario 'Insufficient funds (added after create)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
