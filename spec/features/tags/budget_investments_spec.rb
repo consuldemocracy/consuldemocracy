@@ -164,33 +164,13 @@ feature 'Tags' do
 
   context 'Tag cloud' do
 
-    scenario 'Display user tags' do
+    scenario 'Do not display user tags' do
       earth = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
       money = create(:budget_investment, heading: heading, tag_list: 'Economía')
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within "#tag-cloud" do
-        expect(page).to have_content "Medio Ambiente"
-        expect(page).to have_content "Economía"
-      end
-    end
-
-    scenario "Filter by user tags" do
-      investment1 = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      investment2 = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      investment3 = create(:budget_investment, heading: heading, tag_list: 'Economía')
-
-      visit budget_investments_path(budget, heading_id: heading.id)
-
-      within "#tag-cloud" do
-        click_link "Medio Ambiente"
-      end
-
-      expect(page).to have_css ".budget-investment", count: 2
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).to_not have_content investment3.title
+      expect(page).to_not have_css("#tag-cloud")
     end
 
   end
