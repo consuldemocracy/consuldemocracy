@@ -63,7 +63,7 @@ Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
-Setting['feature.spending_proposals'] = true
+Setting['feature.spending_proposals'] = nil
 Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
@@ -72,7 +72,7 @@ Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 
 # Spending proposals feature flags
-Setting['feature.spending_proposal_features.voting_allowed'] = true
+Setting['feature.spending_proposal_features.voting_allowed'] = nil
 
 # Banner styles
 Setting['banner-style.banner-style-one']   = "Banner style 1"
