@@ -224,6 +224,15 @@ en:
       title: How I can comment this document?
   legislation:
     annotations:
+      comments:
+        see_all: See all
+        see_complete: See complete
+        comments_count:
+          one: "%{count} comment"
+          other: "%{count} comments"
+        replies_count:
+          one: "%{count} reply"
+          other: "%{count} replies"
       index:
         title: Comments
         comments_about: Comments about
@@ -243,6 +252,7 @@ en:
         seeing_changelog_version: Revision changes summary
         see_text: See text draft
       show:
+        loading_comments: Loading comments
         seeing_version: You're seeing draft version
         select_draft_version: Select draft
         select_version_submit: see

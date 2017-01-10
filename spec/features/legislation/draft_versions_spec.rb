@@ -155,7 +155,7 @@ feature 'Legislation Draft Versions' do
       first(:css, ".annotator-hl").click
       expect(page).to have_content "my annotation"
 
-      all(".annotator-hl")[1].click
+      all(".annotator-hl")[1].trigger('mouseover')
       expect(page).to have_content "my other annotation"
     end
   end

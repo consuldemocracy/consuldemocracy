@@ -77,7 +77,8 @@ var initialize_modules = function() {
   App.MarkdownEditor.initialize();
   App.LegislationAllegations.initialize();
   App.Legislation.initialize();
-  App.LegislationAnnotatable.initialize();
+  if ( $(".legislation-annotatable").length )
+    App.LegislationAnnotatable.initialize();
 };
 
 $(function(){

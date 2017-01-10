@@ -224,6 +224,15 @@ es:
       title: "¿Cómo puedo comentar este documento?"
   legislation:
     annotations:
+      comments:
+        see_all: Ver todos
+        see_complete: Ver completo
+        comments_count:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+        replies_count:
+          one: "%{count} respuesta"
+          other: "%{count} respuestas"
       index:
         title: Comentarios
         see_in_context: Ver en contexto
@@ -243,6 +252,7 @@ es:
         seeing_changelog_version: Resumen de cambios de la revisión
         see_text: Ver borrador del texto
       show:
+        loading_comments: Cargando comentarios
         seeing_version: Estás viendo la revisión
         select_draft_version: Seleccionar borrador
         select_version_submit: ver

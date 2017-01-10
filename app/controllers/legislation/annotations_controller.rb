@@ -32,6 +32,10 @@ class Legislation::AnnotationsController < ApplicationController
     render json: annotations_hash.to_json
   end
 
+  def comments
+    @annotation = Legislation::Annotation.find(params[:annotation_id])
+  end
+
   private
 
     def annotation_params
