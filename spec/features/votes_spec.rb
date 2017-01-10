@@ -363,7 +363,11 @@ feature 'Votes' do
   end
 
   feature 'Spending Proposals' do
-    background { login_as(@manuela) }
+    background do
+     Setting["feature.spending_proposals"] = true
+     Setting['feature.spending_proposal_features.voting_allowed'] = true
+     login_as(@manuela)
+    end
 
     feature 'Index' do
       scenario "Index shows user votes on proposals" do
@@ -434,25 +438,26 @@ feature 'Votes' do
         end
       end
     end
+
+    scenario 'Disable voting on spending proposals', :js do
+      login_as(@manuela)
+      Setting["feature.spending_proposal_features.voting_allowed"] = nil
+      spending_proposal = create(:spending_proposal)
+
+      visit spending_proposals_path
+
+      within("#spending_proposal_#{spending_proposal.id}") do
+        find("div.supports").hover
+        expect_message_voting_not_allowed
+      end
+
+      visit spending_proposal_path(spending_proposal)
+
+      within("#spending_proposal_#{spending_proposal.id}") do
+        find("div.supports").hover
+        expect_message_voting_not_allowed
+      end
+    end
   end
 
-  scenario 'Disable voting on spending proposals', :js do
-    login_as(@manuela)
-    Setting["feature.spending_proposal_features.voting_allowed"] = nil
-    spending_proposal = create(:spending_proposal)
-
-    visit spending_proposals_path
-
-    within("#spending_proposal_#{spending_proposal.id}") do
-      find("div.supports").hover
-      expect_message_voting_not_allowed
-    end
-
-    visit spending_proposal_path(spending_proposal)
-
-    within("#spending_proposal_#{spending_proposal.id}") do
-      find("div.supports").hover
-      expect_message_voting_not_allowed
-    end
-  end
 end

@@ -522,6 +522,3 @@ DEPENDENCIES
   unicorn (~> 5.2.0)
   web-console (= 3.3.0)
   whenever
-
-BUNDLED WITH
-   1.13.6

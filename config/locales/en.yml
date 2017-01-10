@@ -8,8 +8,8 @@ en:
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
-      organization_name_label: Name of organisation
-      organization_responsible_name_placeholder: Representative of the organisation/collective
+      organization_name_label: Name of organization
+      organization_responsible_name_placeholder: Representative of the organization/collective
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
@@ -152,6 +152,7 @@ en:
     proposal: Proposal
     proposal_notification: "Notification"
     spending_proposal: Spending proposal
+    budget/investment: Investment
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
@@ -205,7 +206,7 @@ en:
       new_notifications:
         one: You have a new notification
         other: You have %{count} new notifications
-      no_notifications: You don't have new notifications
+      no_notifications: "You don't have new notifications"
       open: open
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
@@ -213,7 +214,8 @@ en:
       proposals: Proposals
       proposal_ballot: Voting
       see_all: See proposals
-      spending_proposals: Spending proposals
+      budgets: Participatory budgeting
+      spending_proposals: Spending Proposals
   legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
@@ -398,6 +400,8 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    "yes": "Yes"
+    "no": "No"
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
@@ -431,6 +435,7 @@ en:
     hide: Hide
     print:
       print_button: Print this info
+    search: Search
     show: Show
     suggest:
       debate:
@@ -546,8 +551,7 @@ en:
       deleted: Deleted
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
-      delete_spending_proposal: Delete
-      confirm_deletion_spending_proposal: Are you sure? This action can not be undone
+      deleted_budget_investment: This investment has been deleted
       filters:
         comments:
           one: 1 Comment
@@ -558,9 +562,9 @@ en:
         proposals:
           one: 1 Proposal
           other: "%{count} Proposals"
-        spending_proposals:
-          one: 1 Spending proposal
-          other: "%{count} Spending proposals"
+        budget_investments:
+          one: 1 Investment
+          other: "%{count} Investments"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private
@@ -574,7 +578,7 @@ en:
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
-    organizations: Organisations are not permitted to vote
+    organizations: Organizations are not permitted to vote
     signin: Sign in
     signup: Sign up
     supports: Supports
@@ -584,7 +588,7 @@ en:
     spending_proposals:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organisations are not permitted to vote
+      organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
   welcome:

@@ -152,12 +152,13 @@ es:
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
+    budget/investment: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos
+    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -213,7 +214,8 @@ es:
       proposals: Propuestas
       proposal_ballot: Votaciones
       see_all: Ver propuestas
-      spending_proposals: Presupuestos participativos
+      budgets: Presupuestos ciudadanos
+      spending_proposals: "Propuestas de inversión"
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -398,6 +400,8 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    "yes": "Sí"
+    "no": "No"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
@@ -431,6 +435,7 @@ es:
     hide: Ocultar
     print:
       print_button: Imprimir esta información
+    search: Buscar
     show: Mostrar
     suggest:
       debate:
@@ -546,8 +551,7 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
+      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
       filters:
         comments:
           one: 1 Comentario
@@ -558,7 +562,7 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
-        spending_proposals:
+        budget_investments:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
       no_activity: Usuario sin actividad pública
