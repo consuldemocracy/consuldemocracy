@@ -22,16 +22,16 @@ App.LegislationAnnotatable =
 
   scrollToAnchor: ->
     annotationsLoaded: (annotations) ->
-      anchor = $(location).attr('hash')
-      ann_id = anchor.split("-")[-1..]
-      el = $("span[data-annotation-id='" + ann_id + "']")
-      App.LegislationAllegations.show_comments()
-      $('html,body').animate({scrollTop: el.offset().top})
-      $.event.trigger
-        type: "renderLegislationAnnotation"
-        annotation_id: ann_id
-        annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-        offset: el.offset()["top"]
+      if anchor = $(location).attr('hash')
+        ann_id = anchor.split("-")[-1..]
+        el = $("span[data-annotation-id='" + ann_id + "']")
+        App.LegislationAllegations.show_comments()
+        $('html,body').animate({scrollTop: el.offset().top})
+        $.event.trigger
+          type: "renderLegislationAnnotation"
+          annotation_id: ann_id
+          annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+          offset: el.offset()["top"]
 
   initialize: ->
     $(document).on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
