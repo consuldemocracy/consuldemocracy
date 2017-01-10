@@ -235,6 +235,8 @@ en:
         replies_count:
           one: "%{count} reply"
           other: "%{count} replies"
+        cancel: Cancel
+        publish_comment: Publish Comment
       index:
         title: Comments
         comments_about: Comments about

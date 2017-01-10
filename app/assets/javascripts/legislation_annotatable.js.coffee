@@ -19,7 +19,23 @@ App.LegislationAnnotatable =
         annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
         offset: $(event.target).offset()["top"]
 
+  customShow: (position) ->
+    $(@element).html ''
+    # Clean comments section and open it
+    $('#comments-box').html ''
+    App.LegislationAllegations.show_comments()
 
+    annotation_url = $('[data-legislation-annotatable-base-url]').data('legislation-annotatable-base-url')
+    $.ajax(
+      method: 'GET'
+      url: annotation_url + '/annotations/new'
+      dataType: 'script').done (->
+        $('#new_annotation #annotation_quote').val(@annotation.quote)
+        $('#new_annotation #annotation_ranges').val(JSON.stringify(@annotation.ranges))
+    ).bind(this)
+
+  editorExtension: (editor) ->
+    editor.show = App.LegislationAnnotatable.customShow
 
   scrollToAnchor: ->
     annotationsLoaded: (annotations) ->
@@ -62,7 +78,11 @@ App.LegislationAnnotatable =
             ann["legislation_draft_version_id"] = ann_id
             ann.permissions = ann.permissions || {}
             ann.permissions.admin = []
-        .include(annotator.ui.main, { element: this, viewerExtensions: [App.LegislationAnnotatable.viewerExtension] })
+        .include(annotator.ui.main, { 
+          element: this, 
+          viewerExtensions: [App.LegislationAnnotatable.viewerExtension],
+          editorExtensions: [App.LegislationAnnotatable.editorExtension]
+        })
         .include(App.LegislationAnnotatable.scrollToAnchor)
         .include(annotator.storage.http, { prefix: base_url, urls: { search: "/annotations/search" } })
 

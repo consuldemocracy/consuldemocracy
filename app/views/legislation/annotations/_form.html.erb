@@ -1,0 +1,31 @@
+<div class="comment-header">
+  <span class="icon-comment" aria-hidden="true"></span>
+  <div class="comment-number"><%= t('legislation.annotations.comments.comments_count', count: 0) %></div>
+  <%= link_to '#' do %>
+    <span class="icon-expand" aria-hidden="true"></span>
+  <% end %>
+</div>
+
+<div class="comments-wrapper">
+  <div class="comment-input">
+    <%= form_for [@process, @draft_version, Annotation.new], url: legislation_process_draft_version_annotations_path(@process, @draft_version), remote: true do |f| %>
+      <%= f.text_area :text, autofocus: true %>
+
+      <div class="comment-actions">
+        <a class="cancel-comment" href="#"><%= t('legislation.annotations.comments.cancel') %></a>
+        <%= f.submit t('legislation.annotations.comments.publish_comment'), class: 'button strong publish-comment' %>
+        <% if false %>
+          <a class="button strong publish-comment" title="<%= t('legislation.annotations.comments.publish_comment') %>" href="#"><%= t('legislation.annotations.comments.publish_comment') %></a>
+        <% end %>
+      </div>
+
+      <%= f.hidden_field :quote %>
+      <%= f.hidden_field :ranges %>
+    <% end %>
+  </div>
+
+  <div class="comment-footer">
+    <a class="button strong" title="Ver todos" href="#">Ver todos</a>
+  </div>
+</div>
+
