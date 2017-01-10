@@ -407,7 +407,7 @@ FactoryGirl.define do
 
   factory :legislation_annotation, class: 'Legislation::Annotation' do
     draft_version factory: :legislation_draft_version
-    user
+    author factory: :user
     quote "ipsum"
     text "Loremp ipsum dolor"
     ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]

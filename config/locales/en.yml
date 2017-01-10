@@ -223,6 +223,20 @@ en:
       text_sign_up: sign up
       title: How I can comment this document?
   legislation:
+    annotations:
+      index:
+        title: Comments
+        comments_about: Comments about
+        see_in_context: See in context
+        comments_count:
+          one: "%{count} comment"
+          other: "%{count} comments"
+      show:
+        title: Comment
+        comments: Comments
+      version_chooser:
+        seeing_version: Commments for version
+        see_text: See text draft
     draft_versions:
       changes:
         title: Changes

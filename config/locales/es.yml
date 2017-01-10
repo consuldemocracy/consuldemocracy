@@ -223,6 +223,20 @@ es:
       text_sign_up: registrarte
       title: "¿Cómo puedo comentar este documento?"
   legislation:
+    annotations:
+      index:
+        title: Comentarios
+        see_in_context: Ver en contexto
+        comments_about: Comentarios sobre
+        comments_count:
+          one: "%{count} comentario"
+          other: "%{count} comentarios"
+      show:
+        title: Comentario
+        comments: Comentarios
+      version_chooser:
+        seeing_version: Comentarios para la versión
+        see_text: Ver borrador del texto
     draft_versions:
       changes:
         title: Cambios
