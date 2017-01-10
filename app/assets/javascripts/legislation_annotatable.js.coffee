@@ -1,7 +1,35 @@
 _t = (key) -> new Gettext().gettext(key)
 
 App.LegislationAnnotatable =
+
+  renderAnnotationComments: (event) ->
+    $('.comment-box').offset(top: event.offset)
+    $.ajax
+      method: "GET"
+      url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments"
+      dataType: 'script'
+
+  viewerExtension: (viewer) ->
+    viewer._onHighlightMouseover = (event) ->
+      App.LegislationAllegations.show_comments()
+      $.event.trigger
+        type: "renderLegislationAnnotation"
+        annotation_id: $(event.target).data("annotation-id")
+        annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+        offset: $(event.target).offset()["top"]
+
+
+
+  scrollToAnchor: ->
+    annotationsLoaded: (annotations) ->
+      anchor = $(location).attr('hash')
+      ann_id = anchor.split("-")[-1..]
+      el = $("span[data-annotation-id='" + ann_id + "']")
+      $('html,body').animate({scrollTop: el.offset().top})
+
   initialize: ->
+    $(document).on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
+
     current_user_id = $('html').data('current-user-id')
     if current_user_id == ""
       annotator.ui.editor.Editor.template = [
@@ -27,7 +55,8 @@ App.LegislationAnnotatable =
             ann["legislation_draft_version_id"] = ann_id
             ann.permissions = ann.permissions || {}
             ann.permissions.admin = []
-        .include(annotator.ui.main, { element: this })
+        .include(annotator.ui.main, { element: this, viewerExtensions: [App.LegislationAnnotatable.viewerExtension] })
+        .include(App.LegislationAnnotatable.scrollToAnchor)
         .include(annotator.storage.http, { prefix: base_url, urls: { search: "/annotations/search" } })
 
       app.start().then ->

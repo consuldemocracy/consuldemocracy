@@ -103,6 +103,7 @@ Rails.application.routes.draw do
         get :changes
         resources :annotations do
           get :search, on: :collection
+          get :comments
         end
       end
     end
