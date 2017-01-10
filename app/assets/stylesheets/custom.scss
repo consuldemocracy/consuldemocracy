@@ -153,6 +153,10 @@ blockquote p {
   padding-left: 0;
 }
 
+ul.menu > li > a {
+  line-height: $line-height;
+}
+
 .tabs li.is-active a {
   color: $brand;
   border-bottom: 2px solid $brand;
