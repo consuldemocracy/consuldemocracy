@@ -155,6 +155,7 @@ blockquote p {
 
 ul.menu > li > a {
   line-height: $line-height;
+  padding: $line-height/2 $line-height/2 $line-height 0;
 }
 
 .tabs li.is-active a {
