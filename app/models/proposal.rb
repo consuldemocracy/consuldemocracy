@@ -51,7 +51,6 @@ class Proposal < ActiveRecord::Base
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
-
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :successfull,              -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success)}

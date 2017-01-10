@@ -1,4 +1,7 @@
-<% provide :title do %><%= t('spending_proposals.welcome.page_title') %><% end %>
+<% provide :title, t("meta_tags.budget.title") %>
+<% provide :meta_description, t("meta_tags.budget.description") %>
+<% provide :meta_keywords, t("meta_tags.budget.keywords") %>
+
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
@@ -126,7 +129,7 @@
         <h3>
           <%= t("spending_proposals.welcome.delegation_text",
               meetings: link_to(t("spending_proposals.welcome.delegation_meetings"),
-              page_path('participatory_budget_meetings'))).html_safe %>
+              budgets_meetings_2016_path)).html_safe %>
         </h3>
 
         <p><%= t("spending_proposals.welcome.delegation_info_html") %></p>
@@ -138,7 +141,7 @@
        <h3>
           <%= t("spending_proposals.welcome.delegation_text_closed",
               meetings: link_to(t("spending_proposals.welcome.delegation_meetings"),
-              page_path('participatory_budget_meetings'))).html_safe %>
+              budgets_meetings_2016_path)).html_safe %>
         </h3>
 
         <p>&nbsp;</p>

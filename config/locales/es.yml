@@ -130,7 +130,6 @@ es:
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
       start_debate: Empieza un debate
-      title: Debates
       top: Destacados
       top_link_debates: '#TúPreguntas'
     new:
@@ -375,7 +374,6 @@ es:
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
-      title: Propuestas ciudadanas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
     new:
@@ -590,7 +588,6 @@ es:
       districts_link: Votar propuestas de distrito
       districts_link_close: Propuestas de distrito
       in_two_minutes: Toda la información sobre los presupuestos participativos
-      page_title: Presupuestos participativos
       title: "Ya puedes votar las propuestas"
       title_close: "Presupuestos participativos"
       title_results: "Presupuestos participativos"

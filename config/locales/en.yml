@@ -130,7 +130,6 @@ en:
         other: " containing the term '%{search_term}'"
       select_order: Order by
       start_debate: Start a debate
-      title: Debates
       top: Featured
       top_link_debates: '#TúPreguntas'
     new:
@@ -376,7 +375,6 @@ en:
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create proposal
-      title: Proposals
       top: Top weekly
       top_link_proposals: The most supported proposals by category
     new:
@@ -591,7 +589,6 @@ en:
       districts_link: Vote district proposals
       districts_link_close: District proposals
       in_two_minutes: All information about participatory budgets
-      page_title: Participatory budgeting
       title: "You already can vote investment projects!"
       title_close: "Participatory budgeting"
       title_results: "Participatory budgeting"
