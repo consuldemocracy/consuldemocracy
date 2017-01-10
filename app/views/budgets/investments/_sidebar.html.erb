@@ -2,7 +2,10 @@
 
 <% if can?(:create, Budget::Investment.new(budget: @budget)) %>
   <% if current_user && current_user.level_two_or_three_verified? %>
-    <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path, class: "button budget expanded" %>
+    <%= link_to t("budgets.investments.index.sidebar.create"),
+                new_budget_investment_path,
+                class: "button budget expanded",
+                data: { no_turbolink: true } %>
   <% else %>
     <div class="callout warning">
       <%= t("budgets.investments.index.sidebar.verified_only",
