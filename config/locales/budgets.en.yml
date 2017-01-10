@@ -21,7 +21,7 @@ en:
         different_heading_assigned: You have already voted a different heading
     groups:
       show:
-        title: Select a heading
+        title: Select an option
     phase:
       accepting: Accepting proposals
       reviewing: Reviewing proposals

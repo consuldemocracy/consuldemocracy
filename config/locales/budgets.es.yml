@@ -21,7 +21,7 @@ es:
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
     groups:
       show:
-        title: Selecciona una partida
+        title: Selecciona una opción
     phase:
       accepting: Aceptando propuestas
       reviewing: Revisando propuestas
