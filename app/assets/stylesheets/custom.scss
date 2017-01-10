@@ -2609,29 +2609,38 @@ ul.ballot-list {
 .budgets-welcome {
 
   .header {
-    background: #7E328A;
+    background: #FFDB19;
 
     h1, p {
-      color: white;
+      color: black;
     }
   }
 
-  h3 {
-    color: #7E328A;
+  .budgets-timeline {
+
+    h3 {
+      background: #E23135;
+      color: white;
+      padding: $line-height/4 $line-height/2;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
+    }
   }
 
   .button {
-    background: white;
-    color: #7E328A;
+    background: black;
+    color: #FFDB19;
   }
 
   @include breakpoint(large) {
     .block-border-left {
-      border-left: 2px solid #7E328A;
+      border-left: 3px solid #E23135;
     }
 
     .block-border-right {
-      border-right: 2px solid #7E328A;
+      border-right: 3px solid #E23135;
     }
   }
 
@@ -2649,25 +2658,65 @@ ul.ballot-list {
   }
 }
 
-.budgets-welcome-timeline {
-  color: white;
+.block-black , .block-yellow {
+  padding-bottom: $line-height*2;
+  padding-top: $line-height*2;
+}
+
+.block-black {
+  background: black;
+  padding-left: 0;
+
+  h3, p, a {
+    color: white;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.block-yellow {
+  background: #FFDB19;
+  padding-right: 0;
+
+  h3, p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.budgets-calendar {
+  background: white;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  color: black;
 
   ul {
     margin-bottom: 0;
 
     @include breakpoint(medium) {
-      border-left: 1px solid #A19DD3;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
     }
 
     li {
-      border-top: 1px solid #A19DD3;
+      border-top: 1px solid black;
       padding: $line-height/2 0;
 
+      &:first-child {
+        border-top: 0;
+      }
+
       @include breakpoint(medium) {
-        border-right: 1px solid #A19DD3;
+        border-right: 1px solid black;
         border-top: 0;
         display: inline-block;
         padding: $line-height/2 $line-height;
+        width: 24%;
 
         &:last-child {
           border-right: 0;
