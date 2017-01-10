@@ -84,7 +84,6 @@ describe "Abilities::Administrator" do
   end
 
   it { should be_able_to(:valuate, SpendingProposal) }
-  it { should be_able_to(:destroy, SpendingProposal) }
 
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }
