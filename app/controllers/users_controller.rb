@@ -14,11 +14,11 @@ class UsersController < ApplicationController
     def set_activity_counts
       @activity_counts = HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
-                          debates: Debate.where(author_id: @user.id).count,
-                          comments: Comment.not_as_admin_or_moderator.where(user_id: @user.id).count,
+                          debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
                           #spending_proposals: SpendingProposal.where(author_id: @user.id).count,
                           ballot: (Setting["feature.spending_proposal_features.phase3"].blank? ? 0 : 1),
-                          budget_investments: Budget::Investment.where(author_id: @user.id).count)
+                          budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
+                          comments: only_active_commentables.count)
     end
 
     def load_filtered_activity
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       if @activity_counts[:proposals] > 0
         load_proposals
         @current_filter = "proposals"
-      elsif  @activity_counts[:debates] > 0
+      elsif @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
       #elsif @activity_counts[:spending_proposals] > 0
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
     end
 
     def load_comments
-      @comments = Comment.not_as_admin_or_moderator.where(user_id: @user.id).includes(:commentable).order(created_at: :desc).page(params[:page])
+      @comments = only_active_commentables.includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
     def load_spending_proposals
@@ -97,9 +97,18 @@ class UsersController < ApplicationController
       @authorized_current_user ||= current_user && (current_user == @user || current_user.moderator? || current_user.administrator?)
     end
 
-    def authorized_for_filter?(filter)
-      return author_or_admin?        if filter == "spending_proposals"
-      return current_user_is_author? if filter == "ballot"
-      return true
+    def all_user_comments
+      Comment.not_as_admin_or_moderator.where(user_id: @user.id)
+    end
+
+    def only_active_commentables
+      disabled_commentables = []
+      disabled_commentables << "Debate" unless Setting['feature.debates']
+      disabled_commentables << "Budget::Investment" unless Setting['feature.budgets']
+      if disabled_commentables.present?
+        all_user_comments.where("commentable_type NOT IN (?)", disabled_commentables)
+      else
+        all_user_comments
+      end
     end
 end

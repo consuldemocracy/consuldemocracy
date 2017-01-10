@@ -4,6 +4,11 @@ feature 'Spending proposals' do
 
   let(:author) { create(:user, :level_two, username: 'Isabel') }
 
+  background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
   scenario 'Index' do
     spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal, feasible: true)]
     unfeasible_spending_proposal = create(:spending_proposal, feasible: false)

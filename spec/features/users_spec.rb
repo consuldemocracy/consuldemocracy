@@ -349,6 +349,24 @@ feature 'Users' do
       expect(page).to have_content(comment.body)
       expect(page).to_not have_content(admin_comment.body)
     end
+
+    scenario 'shows only comments from active features' do
+      user = create(:user)
+      1.times {create(:comment, user: user, commentable: create(:debate))}
+      2.times {create(:comment, user: user, commentable: create(:budget_investment))}
+      4.times {create(:comment, user: user, commentable: create(:proposal))}
+
+      visit user_path(user)
+      expect(page).to have_content('7 Comments')
+
+      Setting['feature.debates'] = nil
+      visit user_path(user)
+      expect(page).to have_content('6 Comments')
+
+      Setting['feature.budgets'] = nil
+      visit user_path(user)
+      expect(page).to have_content('4 Comments')
+    end
   end
 
 end
