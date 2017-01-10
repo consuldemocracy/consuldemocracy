@@ -64,13 +64,63 @@ feature 'Tags' do
     expect(page).to have_content 'Hacienda'
   end
 
-  scenario 'Category with category tags', :js do
+  scenario 'Create with category tags', :js do
     login_as(author)
 
     education = create(:tag, name: 'Education', kind: 'category')
     health    = create(:tag, name: 'Health',    kind: 'category')
 
     visit new_budget_investment_path(budget_id: budget.id)
+
+    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    check   'budget_investment_terms_of_service'
+
+    find('.js-add-tag-link', text: 'Education').click
+    click_button 'Create Investment'
+
+    expect(page).to have_content 'Investment created successfully.'
+
+    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+      expect(page).to have_content 'Education'
+      expect(page).to_not have_content 'Health'
+    end
+  end
+
+  scenario "Turbolinks sanity check from budget's show", :js do
+    login_as(author)
+
+    education = create(:tag, name: 'Education', kind: 'category')
+    health    = create(:tag, name: 'Health',    kind: 'category')
+
+    visit budget_path(budget)
+    click_link 'Create budget investment'
+
+    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
+    check   'budget_investment_terms_of_service'
+
+    find('.js-add-tag-link', text: 'Education').click
+    click_button 'Create Investment'
+
+    expect(page).to have_content 'Investment created successfully.'
+
+    within "#tags_budget_investment_#{Budget::Investment.last.id}" do
+      expect(page).to have_content 'Education'
+      expect(page).to_not have_content 'Health'
+    end
+  end
+
+  scenario "Turbolinks sanity check from budget heading's show", :js do
+    login_as(author)
+
+    education = create(:tag, name: 'Education', kind: 'category')
+    health    = create(:tag, name: 'Health',    kind: 'category')
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+    click_link 'Create budget investment'
 
     select  'Health: More hospitals', from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
