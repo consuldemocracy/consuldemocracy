@@ -6,7 +6,7 @@ module Budgets
 
     before_action :authenticate_user!, except: [:index, :show]
 
-    load_and_authorize_resource :budget, find_by: :name
+    load_and_authorize_resource :budget, find_by: :slug
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
@@ -89,7 +89,7 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
+          @heading = @budget.headings.where(slug: params[:heading_id]).first
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
         end
       end

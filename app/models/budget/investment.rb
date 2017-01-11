@@ -49,7 +49,7 @@ class Budget
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
-    scope :by_heading,  -> (heading_id)  { where(heading_id: heading_id) }
+    scope :by_heading,  -> (heading_id)  { where(heading_id: Budget::Heading.where(slug: heading_id).first) }
     scope :by_admin,    -> (admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,      -> (tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, -> (valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
@@ -217,6 +217,7 @@ class Budget
       else
         investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
       end
+
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments

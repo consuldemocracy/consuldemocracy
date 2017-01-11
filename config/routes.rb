@@ -73,6 +73,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
+  get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'propuesta' do

@@ -15,6 +15,7 @@ class Budget < ActiveRecord::Base
   has_many :headings, through: :groups
 
   before_validation :sanitize_descriptions
+  before_save :set_slug
 
   scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
   scope :accepting, -> { where(phase: "accepting") }
@@ -29,6 +30,10 @@ class Budget < ActiveRecord::Base
 
   def to_param
     name.parameterize
+  end
+
+  def set_slug
+    self.slug = name.parameterize
   end
 
   def description

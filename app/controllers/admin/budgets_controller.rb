@@ -4,7 +4,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   has_filters %w{current finished}, only: :index
 
-  load_and_authorize_resource find_by: :name
+  load_and_authorize_resource find_by: :slug
 
   def index
     @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
