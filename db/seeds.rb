@@ -63,16 +63,17 @@ Setting["meta_keywords"] = nil
 
 # Feature flags
 Setting['feature.debates'] = true
-Setting['feature.spending_proposals'] = true
+Setting['feature.spending_proposals'] = nil
 Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
+Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 
 # Spending proposals feature flags
-Setting['feature.spending_proposal_features.voting_allowed'] = true
+Setting['feature.spending_proposal_features.voting_allowed'] = nil
 
 # Banner styles
 Setting['banner-style.banner-style-one']   = "Banner style 1"
@@ -94,3 +95,4 @@ Setting['mailer_from_address'] = 'noreply@consul.dev'
 
 # Verification settings
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
+Setting['min_age_to_participate'] = 16

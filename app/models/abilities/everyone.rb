@@ -6,10 +6,15 @@ module Abilities
       can [:read, :map], Debate
       can [:read, :map, :summary], Proposal
       can :read, Comment
+      can [:read, :welcome], Budget
+      can :read, Budget::Investment
       can :read, SpendingProposal
       can :read, LegacyLegislation
       can :read, User
       can [:search, :read], Annotation
+      can [:read], Budget
+      can [:read], Budget::Group
+      can [:read, :print], Budget::Investment
       can :new, DirectMessage
       can [:read, :draft_publication, :allegations, :final_version_publication], Legislation::Process
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
