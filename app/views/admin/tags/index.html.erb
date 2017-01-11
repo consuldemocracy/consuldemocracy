@@ -3,15 +3,22 @@
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
 
   <div class="row">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-4 column">
       <%= f.label :name, t("admin.tags.name.placeholder") %>
       <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
     </div>
 
-    <div class="is-featured small-12 medium-6 column">
+    <div class="is-featured small-12 medium-4 column">
       <%= f.label :featured do %>
         <%= f.check_box :featured, title: t('admin.tags.mark_as_featured'), label: false %>
         <span class="checkbox"><%= t("admin.tags.mark_as_featured") %></span>
+      <% end %>
+    </div>
+
+    <div class="is-featured small-12 medium-4 column">
+      <%= f.label :kind do %>
+        <%= f.check_box :kind, title: t('admin.tags.proposals_category'), label: false %>
+        <span class="checkbox"><%= t("admin.tags.proposals_category") %></span>
       <% end %>
     </div>
   </div>
@@ -36,6 +43,10 @@
               <%= f.label "featured_#{tag.id}" do %>
                 <%= f.check_box :featured, title: t('admin.tags.mark_as_featured'), label: false, id: "tag_featured_#{tag.id}", class: "inline-block" %>
                 <span class="checkbox inline-block"><%= t("admin.tags.mark_as_featured") %></span>
+                <span class="checkbox inline-block">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <%= f.check_box :kind, title: t('admin.tags.proposals_category'), label: false, id: "tag_kind_#{tag.id}", class: "inline-block",
+                                checked: (tag.kind == 'category' ? true : false) %>
+                <span class="checkbox inline-block"><%= t("admin.tags.proposals_category") %></span>
               <% end %>
             </span>
 

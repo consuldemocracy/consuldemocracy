@@ -19,9 +19,16 @@
       <%= f.label :tag_list, t("debates.form.tags_label") %>
       <p class="note"><%= t("debates.form.tags_instructions") %></p>
 
+      <div id="category_tags" class="tags">
+        <%= f.label :featured_tag_list, t("debates.form.tag_featured_label") %>
+        <% @featured_tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end if @featured_tags%>
+      </div>
+
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
-                        label: false,
-                        placeholder: t("debates.form.tags_placeholder") %>
+                       label: false,
+                       placeholder: t("debates.form.tags_placeholder"), class: 'js-tag-list' %>
     </div>
     <div class="small-12 column">
       <% if @debate.new_record? %>

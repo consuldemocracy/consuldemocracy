@@ -86,7 +86,8 @@ en:
     form:
       debate_text: Initial debate text
       debate_title: Debate title
-      tags_instructions: Tag this debate.
+      tag_featured_label: Proposed topics
+      tags_instructions: Tag this debate. You can choose from proposed topics or add your own
       tags_label: Topics
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:

@@ -8,6 +8,7 @@ class DebatesController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :set_search_order, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
+  before_action :load_featured_tags, only: [:new, :edit]
 
   feature_flag :debates
 
@@ -47,12 +48,16 @@ class DebatesController < ApplicationController
 
   private
 
-    def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
-    end
+  def debate_params
+    params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
+  end
 
-    def resource_model
-      Debate
-    end
+  def resource_model
+    Debate
+  end
+
+  def load_featured_tags
+    @featured_tags = ActsAsTaggableOn::Tag.where(featured: true).order(:name)
+  end
 
 end

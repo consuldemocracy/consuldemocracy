@@ -26,7 +26,12 @@ class Admin::TagsController < Admin::BaseController
   private
 
     def tag_params
-      params.require(:tag).permit(:featured, :name)
+      if (params[:tag][:kind] == "1")
+        params[:tag][:kind] = "category"
+      else
+        params[:tag][:kind] = nil
+      end
+      params.require(:tag).permit(:featured, :name, :kind)
     end
 
     def find_tag

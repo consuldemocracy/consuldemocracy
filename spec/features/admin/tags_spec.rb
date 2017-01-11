@@ -37,12 +37,15 @@ feature 'Admin tags' do
 
     within("#edit_tag_#{@tag1.id}") do
       check "tag_featured_#{@tag1.id}"
+      check "tag_kind_#{@tag1.id}"
       click_button 'Update Topic'
     end
 
     visit admin_tags_path
     featured_checkbox = find("#tag_featured_#{@tag1.id}")
     expect(featured_checkbox.checked?).to eq(true)
+    kind_checkbox = find("#tag_kind_#{@tag1.id}")
+    expect(kind_checkbox.checked?).to eq(true)
   end
 
   scenario 'Delete' do
