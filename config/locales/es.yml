@@ -242,7 +242,6 @@ es:
           other: "%{count} comentarios"
       show:
         title: Comentario
-        comments: Comentarios
       version_chooser:
         seeing_version: Comentarios para la versión
         see_text: Ver borrador del texto
@@ -305,7 +304,6 @@ es:
         debate: Debate
       show:
         answer_question: Enviar respuesta
-        comments: Comentarios
         next_question: Siguiente pregunta
         first_question: Primera pregunta
         share: Compartir
@@ -322,6 +320,8 @@ es:
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
         verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
+    shared:
+      comments: Comentarios
   locale: Español
   notifications:
     index:

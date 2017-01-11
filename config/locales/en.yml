@@ -242,7 +242,6 @@ en:
           other: "%{count} comments"
       show:
         title: Comment
-        comments: Comments
       version_chooser:
         seeing_version: Commments for version
         see_text: See text draft
@@ -305,7 +304,6 @@ en:
         debate: Debate
       show:
         answer_question: Submit answer
-        comments: Comments
         next_question: Next question
         first_question: First question
         share: Share
@@ -322,6 +320,8 @@ en:
         verified_only: Only verified users can participate, %{verify_account}.
         verify_account: verify your account
         debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
+    shared:
+      comments: Comments
   locale: English
   notifications:
     index:
