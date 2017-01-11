@@ -4,10 +4,7 @@
 
       <div class="row">
         <div class="small-12 column">
-          <%= link_to budget_group_path(@budget, @heading.group), class: "back" do %>
-            <i class="icon-angle-left"></i>
-            <%= t("shared.back") %>
-          <% end %>
+          <%= back_link_to budget_group_path(@budget, @heading.group) %>
 
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
@@ -52,10 +49,7 @@
   <div class="expanded jumbo-budget padding no-margin-top margin-bottom">
     <div class="row">
       <div class="small-12 column">
-        <%= link_to budget_path(@budget), class: "back" do %>
-          <i class="icon-angle-left"></i>
-          <%= t("shared.back") %>
-        <% end %>
+        <%= back_link_to budget_path(@budget) %>
 
         <h1><%= t('budgets.investments.index.title') %></h1>
       </div>
