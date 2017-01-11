@@ -61,6 +61,18 @@ feature 'Legislation Draft Versions' do
       expect(page).to_not have_content("Body of the first version")
       expect(page).to have_content("Body of the second version")
     end
+
+    context "for final versions" do
+      it "does not show the comments panel" do
+        final_version = create(:legislation_draft_version, process: @process, title: "Final version", body: "Final body", status: "published", final_version: true)
+
+        visit legislation_process_draft_version_path(@process, final_version)
+
+        expect(page).to have_content("Final body")
+        expect(page).to_not have_content("See all comments")
+        expect(page).to_not have_content("Comments")
+      end
+    end
   end
 
   context "See changes page" do
