@@ -1,0 +1,126 @@
+<% provide :title, "I Votación Ciudadana" %>
+
+<div class="landing-voting">
+  <div class="expanded header no-margin-top">
+    <div class="row">
+      <div class="small-12 medium-8 column padding">
+        <h1>I Votación Ciudadana</h1>
+        <p class="lead">Del 13 al 19 de febrero, tú decides si quieres o no un Madrid 100% sostenible, billete único para el transporte público y la remodelación de Plaza España.</p>
+        <div class="small-12 medium-6">
+          <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
+        </div>
+      </div>
+      <div class="show-for-medium medium-4 column text-center">
+        <%= image_tag "landings/first_voting_calendar.png", alt: "Vota del 13 al 19 de febrero de 2017" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded block">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="block-yellow show-for-medium"></div>
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <%= image_tag "landings/first_voting_transport.jpg", alt: "" %>
+      </div>
+      <div class="small-12 medium-6 column">
+          <div class="block-content" data-equalizer-watch>
+            <div class="one show-for-medium">01</div>
+            <h2>Billete único para<br> el transporte público</h2>
+            <div class="small-12 medium-8">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded hollow" %>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded block">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column">
+        <div class="block-content" data-equalizer-watch>
+          <div class="block-blue show-for-medium"></div>
+          <div class="two show-for-medium">02</div>
+          <h2>Madrid 100% sostenible</h2>
+          <div class="small-12 medium-8">
+            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded hollow" %>
+          </div>
+        </div>
+      </div>
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <%= image_tag "landings/first_voting_sustainable.jpg", alt: "" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded padding plaza-espana-projects">
+    <div class="row">
+      <div class="small-12 medium-8 column small-centered text-center">
+        <div class="three show-for-medium">03</div>
+        <h2>Remodelación de plaza España</h2>
+        <div class="small-12 medium-6 large-4 small-centered">
+          <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-6 column project-x">
+        <figure>
+          <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
+          <figcaption>
+            <%= link_to "Proyecto X", "#" %>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="small-12 medium-6 column project-y">
+        <figure>
+          <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
+          <figcaption>
+            <%= link_to "Proyecto Y", "#" %>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="row block">
+    <div class="small-12 medium-8 small-centered text-center">
+      <h2>Votaciones de distrito</h2>
+      <p class="lead">Los habitantes de Retiro, Chamberí y Arganzuela también deciden varias cuestiones sobre sus distritos. Mira todas las votaciones que habrá del 13 al 19 de febrero.</p>
+      <div class="small-12 medium-6 large-4 small-centered">
+        <%= link_to "Más votaciones", "#", class: "button hollow expanded" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="expanded how-voting">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <h2>Cómo votar</h2>
+          <ul>
+            <li>En <strong>esta web</strong> después de <%= link_to "registrarte", new_user_registration_path %>.</li>
+            <li>En urnas que encontrarás repartidas por los <strong>21 distritos de Madrid</strong> <em>(próximamente mapa de localización)</em></li>
+            <li>Por carta enviando tus decisiones <strong>antes del 12 de febrero</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

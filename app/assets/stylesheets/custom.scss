@@ -18,6 +18,7 @@
 // 16. Si te sientes gato
 // 17. Blas Bonilla
 // 18. Voluntarios mesas presenciales
+// 20. Landing voting february 2017
 //
 
 // 01. Global styles
@@ -2595,5 +2596,138 @@ ul.ballot-list {
   .any_district {
     background: $highlight;
     padding-top: rem-calc(6);
+  }
+}
+
+// 20. Landing voting february 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$campaign-blue:   #009FDE;
+$campaign-red:    #E23135;
+$campaign-yellow: #FFDB19;
+
+.landing-voting {
+
+  .header {
+    background: $campaign-red;
+    padding-top: $line-height*2;
+
+    h1, p {
+      color: white;
+    }
+
+    .button {
+      background: white;
+      color: $campaign-red;
+    }
+  }
+
+  .one, .two, .three {
+    color: #F2F2F2;
+    font-size: rem-calc(190);
+    font-weight: bold;
+    position: absolute;
+    top: -40px;
+    z-index: -1;
+  }
+
+  .three {
+    color: #EEE;
+    top: -140px;
+    left: 44%;
+  }
+
+  .block {
+    padding-top: $line-height*2;
+
+    @include breakpoint(medium) {
+
+      .block-content {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 48px;
+        position: relative;
+      }
+    }
+
+    .block-blue, .block-yellow {
+      border-style: solid;
+      line-height: 0;
+      _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+      height: 0;
+      position: absolute;
+      width: 0;
+    }
+
+    .block-blue {
+      border-width: 120px 0 0 120px;
+      border-color: transparent transparent transparent $campaign-blue;
+      _border-color: #000000 #000000 #000000 $campaign-blue;
+      bottom: 0;
+      left: 0;
+    }
+
+    .block-yellow {
+      border-width: 0 120px 120px 0;
+      border-color: transparent $campaign-yellow transparent transparent;
+      _border-color: #000000 $campaign-yellow #000000 #000000;
+      _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .plaza-espana-projects {
+    background: #F7F7F7;
+    color: black;
+    margin-top: $line-height*4;
+    padding-bottom: $line-height*2;
+    padding-top: $line-height*2;
+    position: relative;
+    z-index: 2;
+
+    .button {
+      background: black;
+      color: white;
+    }
+
+    figure {
+      position: relative;
+
+      figcaption {
+        background: black;
+        bottom: -40px;
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        left: 5%;
+        padding: $line-height;
+        position: absolute;
+        width: 90%;
+
+        a {
+          color: white;
+
+          &:hover {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .project-x, .project-y {
+      padding: 0;
+    }
+  }
+
+  .how-voting {
+    background: #F7F7F7;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*3 0;
+
+    ul li {
+      line-height: $line-height*2;
+    }
   }
 }
