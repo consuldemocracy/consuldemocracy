@@ -46,8 +46,9 @@
               target: "_blank")).html_safe %>
         </span>
       <% end %>
-
-      <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
+      </div>
     </div>
   </div>
 <% end %>
