@@ -74,6 +74,7 @@ Rails.application.routes.draw do
   end
 
   get 'budgets/welcome',  to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+  get 'budgets/faq',      to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
   resources :budgets, only: [:show, :index] do
     resources :groups, controller: "budgets/groups", only: [:show]
     resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
@@ -407,9 +408,6 @@ Rails.application.routes.draw do
 
   #Campaña Blas Bonilla
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
-
-  #Budgets pages
-  get 'budgets/faq',      to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
 
   resources :pages, path: '/', only: [:show]
 end
