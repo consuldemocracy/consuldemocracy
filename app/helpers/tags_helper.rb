@@ -6,6 +6,8 @@ module TagsHelper
       debates_path(search: tag_name)
     when 'proposal'
       proposals_path(search: tag_name)
+    when 'budget/investment'
+      budget_investments_path(@budget, search: tag_name)
     else
       '#'
     end

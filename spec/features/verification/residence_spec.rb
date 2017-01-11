@@ -102,4 +102,24 @@ feature 'Residence' do
     expect(page).to have_content "You have reached the maximum number of attempts. Please try again later."
     expect(current_path).to eq(account_path)
   end
+
+  scenario 'Error when trying to verify a deregistered account' do
+    create(:user, document_number: '12345678Z', document_type: '1', erased_at: Time.now)
+
+    login_as(create(:user))
+
+    visit account_path
+    click_link 'Verify my account'
+
+    fill_in 'residence_document_number', with: "12345678Z"
+    select 'DNI', from: 'residence_document_type'
+    select_date '31-December-1980', from: 'residence_date_of_birth'
+    fill_in 'residence_postal_code', with: '28013'
+    check 'residence_terms_of_service'
+
+    click_button 'Verify residence'
+
+    expect(page).to_not have_content 'Residence verified'
+    expect(page).to have_content 'has already been taken'
+  end
 end

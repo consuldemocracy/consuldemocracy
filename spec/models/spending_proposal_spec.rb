@@ -290,6 +290,11 @@ describe SpendingProposal do
     let(:city_sp)     { create(:spending_proposal) }
     let(:district_sp) { create(:spending_proposal, geozone: district) }
 
+    before(:each) do
+      Setting["feature.spending_proposals"] = true
+      Setting['feature.spending_proposal_features.voting_allowed'] = true
+    end
+
     describe '#reason_for_not_being_votable_by' do
       it "rejects not logged in users" do
         expect(city_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
@@ -336,7 +341,7 @@ describe SpendingProposal do
 
     it "does not get updated if the user is erased" do
       user.erase
-      expect(user.document_number).to be_blank
+      expect(user.erased_at).to be
       spending_proposal.touch
       expect(spending_proposal.responsible_name).to eq("123456")
     end
@@ -344,6 +349,9 @@ describe SpendingProposal do
 
   describe "total votes" do
     it "takes into account physical votes in addition to web votes" do
+      Setting["feature.spending_proposals"] = true
+      Setting['feature.spending_proposal_features.voting_allowed'] = true
+
       sp = create(:spending_proposal)
       sp.register_vote(create(:user, :level_two), true)
       expect(sp.total_votes).to eq(1)

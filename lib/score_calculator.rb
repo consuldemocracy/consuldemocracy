@@ -11,7 +11,7 @@ module ScoreCalculator
     score   = ups - downs
     offset  = Math.log([score.abs, 1].max, 10) * (ups / [total, 1].max)
     sign    = score <=> 0
-    seconds = ((date || Time.now) - EPOC).to_f
+    seconds = ((date || Time.current) - EPOC).to_f
 
     (((offset * sign) + (seconds/TIME_UNIT)) * 10000000).round
   end

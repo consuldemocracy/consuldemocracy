@@ -7,20 +7,20 @@ gem 'pg', '~> 0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 3.0.3'
+gem 'uglifier', '>= 3.0.4'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 4.2.1'
+gem 'jquery-rails', '~> 4.2.2'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Fix sprockets on the
-gem 'sprockets', '~> 3.7.0'
+gem 'sprockets', '~> 3.7.1'
 
 gem 'devise', '~> 3.5.7'
 gem 'devise_security_extension'
@@ -32,31 +32,32 @@ gem 'omniauth-facebook', '~> 3.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari'
-gem 'ancestry', '~> 2.2.1'
+gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.3.0'
 gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
-gem 'ckeditor', '~> 4.2.0'
-gem 'invisible_captcha', '~> 0.9.1'
+gem 'ckeditor', '~> 4.2.2'
+gem 'invisible_captcha', '~> 0.9.2'
 gem 'cancancan'
 gem 'social-share-button'
 gem 'initialjs-rails', '0.2.0.4'
-gem 'unicorn', '~> 5.1.0'
+gem 'unicorn', '~> 5.2.0'
 gem 'paranoia', '~> 2.2.0'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.13.3'
+gem 'rollbar', '~> 2.14.0'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.17.0.325'
+gem 'newrelic_rpm', '~> 3.17.2.327'
 gem 'whenever', require: false
 gem 'pg_search'
+gem 'sitemap_generator'
 
-gem 'ahoy_matey', '~> 1.4.2'
+gem 'ahoy_matey', '~> 1.5.3'
 gem 'groupdate', '~> 3.1.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
@@ -79,13 +80,14 @@ group :development, :test do
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
   gem 'capistrano', '3.5.0',           require: false
-  gem "capistrano-bundler", '1.1.4',   require: false
+  gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '1.1.8',     require: false
-  gem "capistrano-rvm",                require: false
+  gem 'rvm1-capistrano3',              require: false
   gem 'capistrano3-delayed-job', '~> 1.0'
   gem "bullet"
   gem "faker"
   gem 'rubocop', '~> 0.45.0', require: false
+  gem 'knapsack'
 end
 
 group :test do

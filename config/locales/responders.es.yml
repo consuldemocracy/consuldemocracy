@@ -9,6 +9,8 @@ es:
         proposal: "Propuesta creada correctamente."
         proposal_notification: "Tu message ha sido enviado correctamente."
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
+        budget_investment: "Propuesta de inversión creada correctamente."
+        signature_sheet: "Hoja de firmas creada correctamente"
       save_changes:
         notice: Cambios guardados
       update:
@@ -16,5 +18,7 @@ es:
         debate: "Debate actualizado correctamente."
         proposal: "Propuesta actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
+        budget_investment: "Propuesta de inversión actualizada correctamente"
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
+        budget_investment: "Propuesta de inversión eliminada."

@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <%=render "layouts/tracking_data"%>
+    <%= render "layouts/tracking_data" %>
+    <%= render "layouts/meta_tags" %>
     <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
     <%= stylesheet_link_tag    "application" %>
     <!--[if lt IE 9]>
@@ -14,7 +15,7 @@
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
     <%= favicon_link_tag "apple-touch-icon-200.png",
-                     rel: "apple-touch-icon",
+                     rel: "icon apple-touch-icon",
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>

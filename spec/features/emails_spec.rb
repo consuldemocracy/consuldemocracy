@@ -123,6 +123,8 @@ feature 'Emails' do
   end
 
   scenario "Email on unfeasible spending proposal" do
+    Setting["feature.spending_proposals"] = true
+
     spending_proposal = create(:spending_proposal)
     administrator = create(:administrator)
     valuator = create(:valuator)

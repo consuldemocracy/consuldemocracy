@@ -32,6 +32,7 @@ data:
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
+    - config/locales/budgets.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -95,6 +96,8 @@ search:
 # - '{devise,simple_form}.*'
 ignore_missing:
   - 'unauthorized.*'
+  - 'activerecord.models.proposal'
+  - 'activerecord.models.spending_proposal'
   - 'activerecord.errors.models.proposal_notification.*'
   - 'activerecord.errors.models.direct_message.*'
   - 'errors.messages.blank'
@@ -105,6 +108,8 @@ ignore_missing:
 
 ## Consider these keys used:
 ignore_unused:
+  - 'budgets.phase.*'
+  - 'budgets.investments.index.orders.*'
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
@@ -113,6 +118,8 @@ ignore_unused:
   - 'admin.banners.index.filters.*'
   - 'admin.debates.index.filter*'
   - 'admin.proposals.index.filter*'
+  - 'admin.budgets.index.filter*'
+  - 'admin.budget_investments.index.filter*'
   - 'admin.spending_proposals.index.filter*'
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
@@ -127,14 +134,15 @@ ignore_unused:
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
   - 'valuation.spending_proposals.index.filter*'
+  - 'valuation.budgets.index.filter*'
+  - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
-  - 'debates.index.search_form.*'
   - 'proposals.index.select_order'
   - 'proposals.index.orders.*'
-  - 'proposals.index.search_form.*'
   - 'spending_proposals.index.search_form.*'
+  - '*.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'notifications.index.proposal_notification*'

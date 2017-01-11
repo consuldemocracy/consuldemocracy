@@ -36,12 +36,21 @@ body.admin {
     input[type="text"], textarea {
       width: 100%;
     }
+
+    .input-group input[type="text"] {
+      border-radius: 0;
+      margin-bottom: 0 !important;
+    }
   }
 
   table {
 
     th {
       text-align: left;
+
+      &.with-button {
+        line-height: $line-height*2;
+      }
     }
 
     tr {
@@ -375,7 +384,7 @@ body.admin {
   }
 }
 
-.admin-content .select-geozone {
+.admin-content .select-geozone, .admin-content .select-heading {
 
   a {
     display: block;

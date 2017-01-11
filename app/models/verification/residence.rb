@@ -31,12 +31,12 @@ class Verification::Residence
                 geozone:               self.geozone,
                 date_of_birth:         date_of_birth.to_datetime,
                 gender:                gender,
-                residence_verified_at: Time.now)
+                residence_verified_at: Time.current)
   end
 
   def allowed_age
     return if errors[:date_of_birth].any?
-    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless self.date_of_birth <= 16.years.ago
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless self.date_of_birth <= User.minimum_required_age.years.ago
   end
 
   def document_number_uniqueness

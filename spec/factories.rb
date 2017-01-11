@@ -7,7 +7,7 @@ FactoryGirl.define do
 
     password            'judgmentday'
     terms_of_service     '1'
-    confirmed_at        { Time.now }
+    confirmed_at        { Time.current }
 
     trait :incomplete_verification do
       after :create do |user|
@@ -16,7 +16,7 @@ FactoryGirl.define do
     end
 
     trait :level_two do
-      residence_verified_at Time.now
+      residence_verified_at Time.current
       unconfirmed_phone "611111111"
       confirmed_phone "611111111"
       sms_confirmation_code "1234"
@@ -25,17 +25,17 @@ FactoryGirl.define do
     end
 
     trait :level_three do
-      verified_at Time.now
+      verified_at Time.current
       document_type "1"
       document_number
     end
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
   end
 
@@ -86,7 +86,7 @@ FactoryGirl.define do
   factory :lock do
     user
     tries 0
-    locked_until Time.now
+    locked_until Time.current
   end
 
   factory :verified_user do
@@ -101,15 +101,15 @@ FactoryGirl.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.now
+      ignored_flag_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
 
     trait :flagged do
@@ -146,15 +146,15 @@ FactoryGirl.define do
     association :author, factory: :user
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.now
+      ignored_flag_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
 
     trait :flagged do
@@ -192,6 +192,102 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :budget do
+    sequence(:name) { |n| "Budget #{n}" }
+    currency_symbol "€"
+    phase 'accepting'
+    description_accepting "This budget is accepting"
+    description_reviewing "This budget is reviewing"
+    description_selecting "This budget is selecting"
+    description_valuating "This budget is valuating"
+    description_balloting "This budget is balloting"
+    description_reviewing_ballots "This budget is reviewing ballots"
+    description_finished "This budget is finished"
+
+    trait :accepting do
+      phase 'accepting'
+    end
+
+    trait :reviewing do
+      phase 'reviewing'
+    end
+
+    trait :selecting do
+      phase 'selecting'
+    end
+
+    trait :valuating do
+      phase 'valuating'
+    end
+
+    trait :balloting do
+      phase 'balloting'
+    end
+
+    trait :reviewing_ballots do
+      phase 'reviewing_ballots'
+    end
+
+    trait :finished do
+      phase 'finished'
+    end
+  end
+
+  factory :budget_group, class: 'Budget::Group' do
+    budget
+    sequence(:name) { |n| "Group #{n}" }
+  end
+
+  factory :budget_heading, class: 'Budget::Heading' do
+    association :group, factory: :budget_group
+    sequence(:name) { |n| "Heading #{n}" }
+    price 1000000
+  end
+
+  factory :budget_investment, class: 'Budget::Investment' do
+    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    association :heading, factory: :budget_heading
+    association :author, factory: :user
+    description          'Spend money on this'
+    price                10
+    unfeasibility_explanation ''
+    external_url         'http://external_documention.org'
+    terms_of_service     '1'
+
+    trait :with_confidence_score do
+      before(:save) { |i| i.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasibility "feasible"
+    end
+
+    trait :unfeasible do
+      feasibility "unfeasible"
+      unfeasibility_explanation "set to unfeasible on creation"
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+
+    trait :selected do
+      selected true
+      feasibility "feasible"
+      valuation_finished true
+    end
+  end
+
+  factory :budget_ballot, class: 'Budget::Ballot' do
+    association :user, factory: :user
+    budget
+  end
+
+  factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
+    association :ballot, factory: :budget_ballot
+    association :investment, factory: :budget_investment
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -212,15 +308,15 @@ FactoryGirl.define do
     sequence(:body) { |n| "Comment body #{n}" }
 
     trait :hidden do
-      hidden_at Time.now
+      hidden_at Time.current
     end
 
     trait :with_ignored_flag do
-      ignored_flag_at Time.now
+      ignored_flag_at Time.current
     end
 
     trait :with_confirmed_hide do
-      confirmed_hide_at Time.now
+      confirmed_hide_at Time.current
     end
 
     trait :flagged do
@@ -269,11 +365,11 @@ FactoryGirl.define do
     sequence(:name) { |n| "org#{n}" }
 
     trait :verified do
-      verified_at Time.now
+      verified_at Time.current
     end
 
     trait :rejected do
-      rejected_at Time.now
+      rejected_at Time.current
     end
   end
 
@@ -296,13 +392,13 @@ FactoryGirl.define do
 
   factory :ahoy_event, :class => Ahoy::Event do
     id { SecureRandom.uuid }
-    time DateTime.now
+    time DateTime.current
     sequence(:name) {|n| "Event #{n} type"}
   end
 
   factory :visit  do
     id { SecureRandom.uuid }
-    started_at DateTime.now
+    started_at DateTime.current
   end
 
   factory :campaign do
@@ -317,7 +413,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    census_code { '01' }
+    sequence(:external_code) { |n| "#{n}" }
+    sequence(:census_code) { |n| "#{n}" }
   end
 
   factory :banner do
@@ -326,8 +423,8 @@ FactoryGirl.define do
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
-    post_started_at Time.now - 7.days
-    post_ended_at Time.now + 7.days
+    post_started_at Time.current - 7.days
+    post_ended_at Time.current + 7.days
   end
 
   factory :proposal_notification do
@@ -341,5 +438,16 @@ FactoryGirl.define do
     body     "How are You doing?"
     association :sender,   factory: :user
     association :receiver, factory: :user
+  end
+
+  factory :signature_sheet do
+    association :signable, factory: :proposal
+    association :author, factory: :user
+    document_numbers "123A, 456B, 789C"
+  end
+
+  factory :signature do
+    signature_sheet
+    sequence(:document_number) { |n| "#{n}A" }
   end
 end

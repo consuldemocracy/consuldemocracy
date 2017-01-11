@@ -30,6 +30,8 @@ module UsersHelper
       t("users.show.deleted_proposal")
     when "Debate"
       t("users.show.deleted_debate")
+    when "Budget::Investment"
+      t("users.show.deleted_budget_investment")
     else
       t("users.show.deleted")
     end
