@@ -2614,10 +2614,16 @@ ul.ballot-list {
 .budgets-welcome {
 
   .header {
-    background: #FFDB19;
+    background: black;
 
     h1, p {
-      color: black;
+      color: white;
+    }
+
+    h1 span {
+      background: #E23135;
+      display: inline-block;
+      padding: 0 $line-height/4;
     }
   }
 
@@ -2635,8 +2641,8 @@ ul.ballot-list {
   }
 
   .button {
-    background: black;
-    color: #FFDB19;
+    background: white;
+    color: black;
   }
 
   @include breakpoint(large) {
@@ -2695,21 +2701,19 @@ ul.ballot-list {
 }
 
 .budgets-calendar {
-  background: white;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  background: #FFDB19;
   color: black;
 
   ul {
     margin-bottom: 0;
 
     @include breakpoint(medium) {
-      border-left: 1px solid black;
-      border-right: 1px solid black;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
     }
 
     li {
-      border-top: 1px solid black;
+      border-top: 1px solid white;
       padding: $line-height/2 0;
 
       &:first-child {
@@ -2717,7 +2721,7 @@ ul.ballot-list {
       }
 
       @include breakpoint(medium) {
-        border-right: 1px solid black;
+        border-right: 1px solid white;
         border-top: 0;
         display: inline-block;
         padding: $line-height/2 $line-height;
