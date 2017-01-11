@@ -1,9 +1,9 @@
 class ProbeOption < ActiveRecord::Base
-  include Commentable
 
   belongs_to :probe
   belongs_to :debate
   has_many :probe_selections
+  has_many :comments, as: :commentable
 
   scope :with_hidden, -> { all }
 
@@ -45,11 +45,7 @@ class ProbeOption < ActiveRecord::Base
     "#{id}-#{name}".parameterize
   end
 
-  def commentable_path
-    Rails.application.routes.url_helpers.probe_probe_option_path(probe_id: self.probe.codename, id: self.id)
-  end
-
-  def commentable_title
+  def title
     self.name
   end
 
