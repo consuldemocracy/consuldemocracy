@@ -47,9 +47,9 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
-        can :show, Ballot
+        can :show, ::Ballot
         if Setting["feature.spending_proposal_features.final_voting_allowed"].present?
-          can [:create, :destroy], BallotLine
+          can [:create, :destroy], ::BallotLine
         end
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
@@ -65,7 +65,7 @@ module Abilities
 
       if user.forum?
         can :vote, SpendingProposal
-        can [:create, :destroy], BallotLine
+        can [:create, :destroy], ::BallotLine
       end
 
       can [:create, :read], Answer
