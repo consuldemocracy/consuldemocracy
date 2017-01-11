@@ -1,10 +1,7 @@
 <div class="expanded budget no-margin-top">
   <div class="row" data-equalizer>
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
-      <%= link_to budgets_path, class: "back" do %>
-        <span class="icon-angle-left"></span>
-        <%= t('shared.back') %>
-      <% end %>
+      <%= back_link_to budgets_path %>
 
       <h1><%= @budget.name %></h1>
 
