@@ -4,7 +4,7 @@
           data-order="<%= @current_order %>"
           name="order-selector"
           id="order-selector-participation">
-     <% valid_orders.each do |order| %>
+     <% @valid_orders.each do |order| %>
        <option <%= 'selected' if order == @current_order %>
           value='<%= current_path_with_query_params(order: order, page: 1) %>'>
          <%= t("#{i18n_namespace}.orders.#{order}") %>

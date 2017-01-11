@@ -73,6 +73,16 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :budgets, only: [:show, :index] do
+    resources :groups, controller: "budgets/groups", only: [:show]
+    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
+      member { post :vote }
+    end
+    resource :ballot, only: :show, controller: "budgets/ballots" do
+      resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
+    end
+  end
+
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
       get :welcome, on: :collection
@@ -165,6 +175,18 @@ Rails.application.routes.draw do
     end
 
     resources :probes, only: [:index, :show]
+
+    resources :budgets do
+      resources :budget_groups do
+        resources :budget_headings do
+        end
+      end
+
+      resources :budget_investments, only: [:index, :show, :edit, :update] do
+        member { patch :toggle_selection }
+      end
+    end
+
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
@@ -249,10 +271,16 @@ Rails.application.routes.draw do
   end
 
   namespace :valuation do
-    root to: "spending_proposals#index"
+    root to: "budgets#index"
 
     resources :spending_proposals, only: [:index, :show, :edit] do
       patch :valuate, on: :member
+    end
+
+    resources :budgets, only: :index do
+      resources :budget_investments, only: [:index, :show, :edit] do
+        patch :valuate, on: :member
+      end
     end
   end
 
@@ -289,6 +317,17 @@ Rails.application.routes.draw do
       get :print, on: :collection
     end
 
+    resources :budgets, only: :index do
+      collection do
+        get :create_investments
+        get :support_investments
+        get :print_investments
+      end
+      resources :investments, only: [:index, :new, :create, :show], controller: 'budgets/investments' do
+        post :vote, on: :member
+        get :print, on: :collection
+      end
+    end
   end
 
   resources :forums, only: [:index, :create, :show]
@@ -359,6 +398,11 @@ Rails.application.routes.draw do
   get 'proceso/ordenanza-subvenciones',             to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
   get 'proceso/plan-calidad-aire',                  to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
   get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
+  get 'proceso/distrito-villa-de-vallecas',         to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
+
+  #Budgets meetings
+  get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
+  get 'budgets/meetings/2017', to: 'pages#show', id: 'budgets/meetings/2017', as: 'budgets_meetings_2017'
 
   #Campaña Blas Bonilla
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'

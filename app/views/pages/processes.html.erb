@@ -1,4 +1,7 @@
-<% provide :title do %><%= t("pages.processes.index.title") %><% end %>
+<% provide :title, t("meta_tags.processes.title") %>
+<% provide :meta_description, t("meta_tags.processes.description") %>
+<% provide :meta_keywords, t("meta_tags.processes.keywords") %>
+
 <% if @proposal_successfull_exists %>
   <div class="expanded jumbo-proposal-ballots-small no-margin-top">
     <div class="row">
@@ -26,12 +29,12 @@
     <div class="row">
       <div class="small-12 column">
         <div class="small-12 medium-9 column">
-          <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
-          <h3><%= t("pages.processes.index.process_11_title") %></h3>
-          <p><%= t("pages.processes.index.process_11_description") %></p>
+          <!-- Nuevo barrio distrito Villa de Vallecas -->
+          <h3><%= t("pages.processes.index.process_13_title") %></h3>
+          <p><%= t("pages.processes.index.process_13_description") %></p>
           <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_11_button"),
-                        air_quality_plan_path, class: "button expanded" %>
+            <%= link_to t("pages.processes.index.process_13_button"),
+                        vallecas_path, class: "button expanded" %>
           </div>
         </div>
       </div>

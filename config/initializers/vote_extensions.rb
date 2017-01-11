@@ -25,6 +25,10 @@ ActsAsVotable::Vote.class_eval do
     joins(:votable).where("#{votable.table_name}.geozone is not null")
   end
 
+  def self.for_budget_investments(budget_investments)
+    where(votable_type: 'Budget::Investment', votable_id: budget_investments)
+  end
+
   def value
     vote_flag
   end

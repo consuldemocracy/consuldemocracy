@@ -3,6 +3,7 @@ require 'rails_helper'
 feature 'Ballots' do
 
   background do
+    Setting["feature.spending_proposals"] = true
     Setting['feature.spending_proposal_features.phase3'] = true
     Setting['feature.spending_proposal_features.final_voting_allowed'] ||= true
   end
@@ -437,7 +438,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'User is organization', :js do
+    xscenario 'User is organization', :js do
       org = create(:organization)
       spending_proposal = create(:spending_proposal, :feasible, :finished)
 

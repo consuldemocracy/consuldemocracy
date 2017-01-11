@@ -6,7 +6,6 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
-  include Commentable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -18,6 +17,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :proposal_notifications
+  has_many :comments, as: :commentable
 
   validates :title, presence: true
   validates :summary, presence: true
@@ -53,7 +53,7 @@ class Proposal < ActiveRecord::Base
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
-  scope :successfull,              -> { where("cached_votes_up + physical_votes >= ?", Proposal.votes_needed_for_success)}
+  scope :successfull,              -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success)}
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -99,12 +99,8 @@ class Proposal < ActiveRecord::Base
     summary
   end
 
-  def description
-    super.try :html_safe
-  end
-
   def total_votes
-    cached_votes_up + physical_votes
+    cached_votes_up
   end
 
   def voters

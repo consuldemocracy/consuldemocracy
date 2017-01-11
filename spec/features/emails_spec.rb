@@ -122,7 +122,10 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
+
   xscenario "Email on unfeasible spending proposal" do
+    Setting["feature.spending_proposals"] = true
+
     spending_proposal = create(:spending_proposal)
     administrator = create(:administrator)
     valuator = create(:valuator)
