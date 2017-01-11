@@ -20,6 +20,8 @@ class Legislation::DraftVersionsController < Legislation::BaseController
 
     if params[:redirect_action] == 'changes'
       redirect_to legislation_process_draft_version_changes_path(@process, version)
+    elsif params[:redirect_action] == 'annotations'
+      redirect_to legislation_process_draft_version_annotations_path(@process, version)
     else
       redirect_to legislation_process_draft_version_path(@process, version)
     end

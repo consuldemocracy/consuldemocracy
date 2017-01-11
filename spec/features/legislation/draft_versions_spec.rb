@@ -178,11 +178,51 @@ feature 'Legislation Draft Versions' do
       @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "first quote")
       @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "second quote")
     end
+
     scenario "See all annotations for a draft version" do
       visit legislation_process_draft_version_annotations_path(@draft_version.process, @draft_version)
 
       expect(page).to have_content "first quote"
       expect(page).to have_content "second quote"
+    end
+
+    context "switching versions" do
+      background do
+        @process = create(:legislation_process)
+        @draft_version_1 = create(:legislation_draft_version, :published, process: @process, title: "Version 1", body: Faker::Lorem.paragraph)
+        @annotation_1 = create(:legislation_annotation, draft_version: @draft_version_1, text: "annotation for version 1", quote: "quote for version 1")
+        @draft_version_2 = create(:legislation_draft_version, :published, process: @process, title: "Version 2", body: Faker::Lorem.paragraph)
+        @annotation_1 = create(:legislation_annotation, draft_version: @draft_version_2, text: "annotation for version 2", quote: "quote for version 2")
+      end
+
+      scenario "without js" do
+        visit legislation_process_draft_version_annotations_path(@process, @draft_version_1)
+        expect(page).to have_content("quote for version 1")
+
+        select("Version 2")
+        click_button "see"
+
+        expect(page).to_not have_content("quote for version 1")
+        expect(page).to have_content("quote for version 2")
+      end
+
+      scenario "with js", :js do
+        visit legislation_process_draft_version_annotations_path(@process, @draft_version_1)
+        expect(page).to have_content("quote for version 1")
+
+        select("Version 2")
+
+        expect(page).to_not have_content("quote for version 1")
+        expect(page).to have_content("quote for version 2")
+      end
+    end
+  end
+
+  context "Annotation comments page" do
+    background do
+      @draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "first quote")
+      @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "second quote")
     end
 
     scenario "See one annotation with replies for a draft version" do

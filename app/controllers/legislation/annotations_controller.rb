@@ -10,6 +10,7 @@ class Legislation::AnnotationsController < ApplicationController
   has_orders %w{most_voted newest oldest}, only: :show
 
   def index
+    @annotations = @draft_version.annotations
   end
 
   def show
