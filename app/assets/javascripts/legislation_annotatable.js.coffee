@@ -9,15 +9,21 @@ App.LegislationAnnotatable =
       url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments"
       dataType: 'script'
 
+  onClick: (event) ->
+    event.preventDefault()
+    event.stopPropagation()
+
+    App.LegislationAllegations.show_comments()
+    $("#comments-box").show()
+    $.event.trigger
+      type: "renderLegislationAnnotation"
+      annotation_id: $(event.target).data("annotation-id")
+      annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+      offset: $(event.target).offset()["top"]
+
   viewerExtension: (viewer) ->
     viewer._onHighlightMouseover = (event) ->
-      App.LegislationAllegations.show_comments()
-      $("#comments-box").show()
-      $.event.trigger
-        type: "renderLegislationAnnotation"
-        annotation_id: $(event.target).data("annotation-id")
-        annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-        offset: $(event.target).offset()["top"]
+      return
 
   customShow: (position) ->
     $(@element).html ''
@@ -52,6 +58,7 @@ App.LegislationAnnotatable =
 
   initialize: ->
     $(document).on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
+    $(document).on('click', '[data-annotation-id]', App.LegislationAnnotatable.onClick)
 
     current_user_id = $('html').data('current-user-id')
     if current_user_id == ""
