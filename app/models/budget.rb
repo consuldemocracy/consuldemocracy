@@ -27,6 +27,10 @@ class Budget < ActiveRecord::Base
 
   scope :current,   -> { where.not(phase: "finished") }
 
+  def to_param
+    name.parameterize
+  end
+
   def description
     self.send("description_#{self.phase}").try(:html_safe)
   end

@@ -6,7 +6,7 @@ module Budgets
 
     before_action :authenticate_user!, except: [:index, :show]
 
-    load_and_authorize_resource :budget
+    load_and_authorize_resource :budget, find_by: :name
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
 
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }

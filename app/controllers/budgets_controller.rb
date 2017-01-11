@@ -3,7 +3,7 @@ class BudgetsController < ApplicationController
   feature_flag :budgets
 
 
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :name
   respond_to :html, :js
 
   def show
