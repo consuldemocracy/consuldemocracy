@@ -22,13 +22,13 @@ module GraphQL
               type created_type
               description "Find one #{model.model_name.human} by ID"
               argument :id, !types.ID
-              resolve GraphQL::RootElementResolver.new(model)
+              resolve -> (object, arguments, context) { model.public_for_api.find_by(id: arguments['id'])}
             end
           end
 
           connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
             description "Find all #{model.model_name.human.pluralize}"
-            resolve GraphQL::RootCollectionResolver.new(model)
+            resolve -> (object, arguments, context) { model.public_for_api }
           end
 
         end

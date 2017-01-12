@@ -49,12 +49,12 @@ module GraphQL
             field(field_name, SCALAR_TYPES[field_type])
           when :simple_association
             field(field_name, -> { api_types_creator.created_types[field_type] }) do
-              resolve GraphQL::AssociationResolver.new(field_name, field_type)
+              resolve -> (object, arguments, context) { field_type.public_for_api.find(object) }
             end
           when :paginated_association
             field_type = field_type.first
             connection(field_name, -> { api_types_creator.created_types[field_type].connection_type }) do
-              resolve GraphQL::AssociationResolver.new(field_name, field_type)
+              resolve -> (object, arguments, context) { field_type.public_for_api }
             end
           end
         end
