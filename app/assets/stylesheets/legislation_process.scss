@@ -310,6 +310,7 @@ $epigraph-font-size: rem-calc(15);
     }
 
     .quiz-next-link {
+      display: block;
 
       &:hover, &:active {
         text-decoration: none;
@@ -484,15 +485,12 @@ $epigraph-font-size: rem-calc(15);
     }
 
     span {
-      margin-left: 0.75rem;
+      margin-left: 0.25rem;
       font-style: italic;
       font-size: $small-font-size;
       color: $text-medium;
       vertical-align: top;
-
-      @include breakpoint(medium) {
-        margin-left: 1rem;
-      }
+      line-height: 2.35rem;
     }
 
     .select-box {
@@ -547,17 +545,14 @@ $epigraph-font-size: rem-calc(15);
     // Panel calcs for desktop
     @media screen and (min-width: 40em) {
       .calc-index {
-        transition: all 0.25s;
         width: calc(35% - 25px);
       }
 
       .calc-text {
-        transition: all 0.25s;
         width: calc(65% - 25px)
       }
 
       .calc-comments {
-        transition: all 0.25s;
         cursor: pointer;
         background: #F2F2F2;
         width: 50px;
