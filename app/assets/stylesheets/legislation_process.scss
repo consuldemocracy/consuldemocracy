@@ -280,6 +280,9 @@ $epigraph-font-size: rem-calc(15);
 // 05. Debate quiz
 // -----------------
 .debate-quiz {
+  .comments {
+    margin-top: 4rem;
+  }
 
   .quiz-header {
     margin-bottom: 2rem;
@@ -349,6 +352,10 @@ $epigraph-font-size: rem-calc(15);
   .debate-questions {
     position: relative;
     list-style: none;
+    
+    .participation-not-allowed {
+      padding-bottom: 3rem;
+    }
 
     .control {
       position: relative;
@@ -430,6 +437,10 @@ $epigraph-font-size: rem-calc(15);
 
   .headline {
     margin-bottom: 0;
+    
+    .headline-small {
+      padding-top: 0.75rem;
+    }
   }
 
   .button-circle {
