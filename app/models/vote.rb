@@ -1,9 +1,5 @@
 class Vote < ActsAsVotable::Vote
 
-  scope :for_debates,   -> { where(votable_type: 'Debate')   }
-  scope :for_proposals, -> { where(votable_type: 'Proposal') }
-  scope :for_comments,  -> { where(votable_type: 'Comment')  }
-
   def self.public_for_api
     joins("FULL OUTER JOIN debates ON votable_type = 'Debate' AND votable_id = debates.id").
     joins("FULL OUTER JOIN proposals ON votable_type = 'Proposal' AND votable_id = proposals.id").
