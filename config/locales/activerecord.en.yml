@@ -139,10 +139,12 @@ en:
         status: Status
         final_version: Final version
       legislation/question:
-        title: "Title"
+        title: Title
         question_options: Options
       legislation/question_option:
-        value: "Value"
+        value: Value
+      legislation/annotation:
+        text: Comment
     errors:
       models:
         user:

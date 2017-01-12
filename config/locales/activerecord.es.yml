@@ -134,10 +134,12 @@ es:
         status: Estado
         final_version: Versión final
       legislation/question:
-        title: "Título"
+        title: Título
         question_options: Respuestas
       legislation/question_option:
-        value: "Valor"
+        value: Valor
+      legislation/annotation:
+        text: Comentario
     errors:
       models:
         user:
