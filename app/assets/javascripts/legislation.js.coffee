@@ -4,6 +4,11 @@ App.Legislation =
     $('#js-toggle-debate').on
       click: ->
         $('#debate-info').toggle()
+        
+    $('#js-toggle-small-debate').on
+      click: ->
+        $('#debate-info').toggle()
+        $('span').toggleClass('icon-angle-up')
 
     $('form#new_legislation_answer input.button').hide()
     $('form#new_legislation_answer input[type=radio]').on
@@ -17,7 +22,4 @@ App.Legislation =
 
     $('#js-toggle-legislation-process-header').on
       click: ->
-        $('[data-target="legislation-header-small"]').toggle()
         $('[data-target="legislation-header-full"]').toggle()
-
-

@@ -11,8 +11,17 @@
         </a>
       </div>
     </div>
+    
+    <div class="row description">
+      <div id="debate-info" style="display: none" class="small-12 column">
+        <div class="debate-info-wrapper">
+          <%= markdown process.additional_info if process.additional_info %>
+        </div>
+      </div>
+    </div>
+    
     <div class="center half-gradient">
-      <a class="button big center button-circle" title="<%= t('.view_process_information') %>" id="js-toggle-legislation-process-header">
+      <a class="button big center button-circle" title="<%= t('.view_process_information') %>" id="js-toggle-small-debate">
         <span class="icon-angle-down" aria-hidden="true"></span>
       </a>
     </div>

@@ -447,8 +447,18 @@ $epigraph-font-size: rem-calc(15);
 
   .button-circle {
     line-height: 0;
-    padding: 0.5em;
+    padding: 0em;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    
+    span {
+      padding-left: 1px;
+      
+      &:before {
+        line-height: 1.55;
+      }
+    }
   }
 
   .icon-checkmark-circle {
