@@ -168,6 +168,7 @@ $epigraph-font-size: rem-calc(15);
     }
     
     ul {
+      position: relative;
       max-width: 75rem;
       margin-left: auto;
       margin-right: auto;
@@ -182,10 +183,11 @@ $epigraph-font-size: rem-calc(15);
       
       svg {
         position: absolute;
-        top: 1.5rem;
+        top: 1.25rem;
+        left: -1rem;
 
         @include breakpoint(medium) {
-          transform: rotate(-8deg);
+          transform: rotate(-6deg);
           top: 0.75rem;
         }
       }
