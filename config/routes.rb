@@ -73,6 +73,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'budgets/welcome',  to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+  get 'budgets/faq',      to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
   resources :budgets, only: [:show, :index] do
     resources :groups, controller: "budgets/groups", only: [:show]
     resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
