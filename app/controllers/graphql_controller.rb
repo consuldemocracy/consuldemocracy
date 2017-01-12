@@ -8,8 +8,25 @@ class GraphqlController < ApplicationController
 
   def query
     begin
+      # ------------------------------------------------------------------------
+      api_types_creator = GraphQL::ApiTypesCreator.new(API_TYPE_DEFINITIONS)
+      created_api_types = api_types_creator.create
+
+      query_type_creator = GraphQL::QueryTypeCreator.new(created_api_types)
+      query_type = query_type_creator.create
+
+      consul_schema = GraphQL::Schema.define do
+        query query_type
+        max_depth 12
+
+        resolve_type -> (object, ctx) do
+          type_name = object.class.name # look up types by class name
+          ConsulSchema.types[type_name]
+        end
+      end
+      # ------------------------------------------------------------------------
       set_query_environment
-      response = ConsulSchema.execute query_string, variables: query_variables
+      response = consul_schema.execute query_string, variables: query_variables
       render json: response, status: :ok
     rescue GraphqlController::QueryStringError
       render json: { message: 'Query string not present' }, status: :bad_request

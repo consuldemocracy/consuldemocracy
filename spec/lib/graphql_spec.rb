@@ -1,5 +1,23 @@
 require 'rails_helper'
 
+# ------------------------------------------------------------------------------
+api_types_creator = GraphQL::ApiTypesCreator.new(API_TYPE_DEFINITIONS)
+created_api_types = api_types_creator.create
+
+query_type_creator = GraphQL::QueryTypeCreator.new(created_api_types)
+QueryType = query_type_creator.create
+
+ConsulSchema = GraphQL::Schema.define do
+  query QueryType
+  max_depth 12
+
+  resolve_type -> (object, ctx) do
+    type_name = object.class.name # look up types by class name
+    ConsulSchema.types[type_name]
+  end
+end
+# ------------------------------------------------------------------------------
+
 def execute(query_string, context = {}, variables = {})
   ConsulSchema.execute(query_string, context: context, variables: variables)
 end
@@ -14,7 +32,7 @@ def hidden_field?(response, field_name)
   data_is_empty && error_is_present
 end
 
-describe ConsulSchema do
+describe 'ConsulSchema' do
   let(:user) { create(:user) }
   let(:proposal) { create(:proposal, author: user) }
 
