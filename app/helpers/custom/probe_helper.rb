@@ -9,7 +9,7 @@ module Custom::ProbeHelper
   end
 
   def finalist?(probe_option)
-    ["03","10","28","30","68"].include? probe_option.code
+    ["00"].include? probe_option.code
   end
 
   def project_x?(probe_option)

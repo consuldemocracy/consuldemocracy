@@ -2,7 +2,7 @@
   <%= render "probe_options/plaza/header" %>
 <% end %>
 
-<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1"] do %>
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_01132017"] do %>
   <div class="probe-show">
     <div class="row">
       <div class="small-12 medium-9 column">
@@ -76,23 +76,23 @@
         <% end %>
       <% end %>
 
-<% cache ["plaza", "probe_option", @probe_option.id, "fragment_2"] do %>
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_2_01132017"] do %>
         <div class="sidebar-divider"></div>
-        <% if @probe_option.code == "68" %>
-        <h3>Documentación finalista</h3>
-        <%= link_to @probe_option.file_path('memoria', 'pdf'),
-                    title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
-                    target: "_blank", class: "button hollow expanded" do %>
-                    <%= image_tag "icon_pdf.png", alt: "PDF" %>
-                    <%= "<small>Memoria Final (#{@probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
-        <% end %>
-        <%= link_to @probe_option.file_path('dossier', 'pdf'),
-                    title: "PDF #{@probe_option.name} | #{@probe_option.file_size('dossier', 'pdf')}",
-                    target: "_blank", class: "button hollow expanded" do %>
-                    <%= image_tag "icon_pdf.png", alt: "PDF" %>
-                    <%= "<small>Imágenes Finales  (#{@probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
-        <% end %>
-        <br>
+        <% if finalist?(@probe_option) %>
+          <h3><%= t("probes.show.documents_finalist") %></h3>
+          <%= link_to @probe_option.file_path('memoria_finalista', 'pdf'),
+                      title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('memoria_finalista', 'pdf')}",
+                      target: "_blank", class: "button hollow expanded" do %>
+                      <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                      <%= "<small>Memoria Final (#{@probe_option.file_size('memoria_finalista', 'pdf')})</small>".html_safe %>
+          <% end %>
+          <%= link_to @probe_option.file_path('dossier_finalista', 'pdf'),
+                      title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('dossier_finalista', 'pdf')}",
+                      target: "_blank", class: "button hollow expanded" do %>
+                      <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                      <%= "<small>Imágenes Finales  (#{@probe_option.file_size('dossier_finalista', 'pdf')})</small>".html_safe %>
+          <% end %>
+          <br>
         <% end %>
 
         <h3><%= t("probes.show.documents") %></h3>

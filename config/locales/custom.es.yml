@@ -30,6 +30,7 @@ es:
     show:
       vote: "Votar"
       documents: "Documentación"
+      documents_finalist: "Documentación finalista"
       share: "Compartir"
       button: "Votar"
       code_html: '<abbr title="Referencia">REF.</abbr> %{code}'

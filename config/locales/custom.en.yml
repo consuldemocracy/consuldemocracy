@@ -30,6 +30,7 @@ en:
     show:
       vote: "Vote"
       documents: "Documents"
+      documents_finalist: "Finalist documents"
       share: "Share"
       button: "Vote"
       code_html: '<abbr title="Reference">REF.</abbr> %{code}'
