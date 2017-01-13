@@ -218,7 +218,7 @@ class Budget
     end
 
     def should_show_votes?
-      budget.selecting? || budget.on_hold?
+      budget.selecting?
     end
 
     def should_show_ballots?
