@@ -77,6 +77,8 @@ es:
         organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
         title: Propuesta de inversión
+        supports: Apoyos
+        votes: Votos
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión
