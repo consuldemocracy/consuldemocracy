@@ -4,15 +4,10 @@ describe Legislation::AnswersController do
 
   describe 'POST create' do
     before(:each) do
-      InvisibleCaptcha.timestamp_enabled = false
       @process = create(:legislation_process, debate_start_date: Date.current - 3.day, debate_end_date: Date.current + 2.days)
       @question = create(:legislation_question, process: @process, title: "Question 1")
       @question_option = create(:legislation_question_option, question: @question, value: "Yes")
       @user = create(:user, :level_two)
-    end
-
-    after(:each) do
-      InvisibleCaptcha.timestamp_enabled = true
     end
 
     it 'should create an ahoy event' do
