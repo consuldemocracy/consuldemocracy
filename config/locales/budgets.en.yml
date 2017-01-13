@@ -77,6 +77,8 @@ en:
         organization_name_html: 'Organization: <strong>%{name}</strong>'
         share: Share
         title: Investment project
+        supports: Supports
+        votes: Votes
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project

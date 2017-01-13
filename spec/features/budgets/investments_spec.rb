@@ -345,6 +345,46 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario "Sidebar in show should display support text" do
+      investment = create(:budget_investment, budget: budget)
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "Supports"
+      end
+    end
+
+  end
+
+  context "Evaluating Phase" do
+
+    background do
+      budget.update(phase: "valuating")
+    end
+
+    scenario "Sidebar in show should display supports text and supports" do
+      investment = create(:budget_investment, :selected, budget: budget)
+      create(:vote, votable: investment)
+
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "Supports"
+        expect(page).to have_content "1 support"
+      end
+    end
+
+    scenario "Index should display supports" do
+      investment = create(:budget_investment, :selected, budget: budget, heading: heading)
+      create(:vote, votable: investment)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "1 support"
+      end
+    end
+
   end
 
   context "Balloting Phase" do
@@ -405,6 +445,15 @@ feature 'Budget Investments' do
       click_link sp1.title
 
       expect(page).to have_content "€10,000"
+    end
+
+    scenario "Sidebar in show should display vote text" do
+      investment = create(:budget_investment, :selected, budget: budget)
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "Votes"
+      end
     end
 
     scenario "Confirm", :js do
