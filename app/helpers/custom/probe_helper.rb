@@ -8,4 +8,15 @@ module Custom::ProbeHelper
     @discarded_probe_option_ids.include?(probe_option.id) ? 'display:none;' : 'display:initial;'
   end
 
+  def finalist?(probe_option)
+    ["03","10","28","30","68"].include? probe_option.code
+  end
+
+  def project_x?(probe_option)
+    probe_option.code == "00"
+  end
+
+  def project_y?(probe_option)
+    probe_option.code == "00"
+  end
 end

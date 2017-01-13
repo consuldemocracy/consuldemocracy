@@ -17,8 +17,14 @@
         </h1>
         <h2 class="codename"><%= t("probes.codenames.#{@probe.codename}") %></h2>
 
-        <% if @probe_option.code == "68" %>
+        <% if project_x?(@probe_option) %>
           <%= render "probe_options/plaza/project_x" %>
+        <% elsif project_y?(@probe_option) %>
+          <%= render "probe_options/plaza/project_y" %>
+        <% end %>
+
+        <% if finalist?(@probe_option) %>
+          <%= render "probe_options/plaza/video_#{@probe_option.code}" %>
         <% else %>
           <div class="margin">
             <%= image_tag @probe_option.original_image_url, alt: @probe_option.name %>

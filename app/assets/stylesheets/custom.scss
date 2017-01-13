@@ -159,8 +159,8 @@ blockquote p {
   font-weight: bold;
 }
 
-@include foundation-orbit;
 @import 'motion-ui/motion-ui';
+@include foundation-orbit;
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
