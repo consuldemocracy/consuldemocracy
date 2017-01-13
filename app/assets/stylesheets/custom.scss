@@ -159,6 +159,11 @@ blockquote p {
   font-weight: bold;
 }
 
+@include foundation-orbit;
+@import 'motion-ui/motion-ui';
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -764,10 +769,19 @@ table {
   }
 }
 
-.menu.border-bottom {
-  border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
-  padding-bottom: $line-height/4;
+.menu {
+
+  &.border-bottom {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+    padding-bottom: $line-height/4;
+  }
+
+  &.border-top {
+    border-top: 1px solid $border;
+    margin-top: $line-height;
+    padding-top: $line-height/4;
+  }
 }
 
 .section-title {

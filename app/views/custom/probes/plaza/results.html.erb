@@ -2,9 +2,30 @@
 
 <%= render "shared/plaza_espana_header" %>
 
+<div class="row survey-results">
+  <div class="small-12 column">
+    <h2 id="title_0" class="subtitle">Finalistas</h2>
+
+    <div class="row ">
+      <div class="small-12 medium-6 column">
+        <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
+        <h3 class="margin">
+          <%= link_to "Proyecto X", "#" %>
+        </h3>
+      </div>
+      <div class="small-12 medium-6 column">
+        <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
+        <h3 class="margin">
+          <%= link_to "Proyecto Y", "#" %>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="small-12 column">
-    <ul class="expanded menu text-center border-bottom">
+    <ul class="expanded menu text-center border-bottom border-top">
       <li><a href="#title_1"><strong>Finalistas de la preselección</strong></a></li>
       <li><a href="#title_2"><strong>Resultado de la votación ciudadana</strong></a></li>
       <li><a href="#title_3"><strong>Resultado de la encuesta</strong></a></li>
