@@ -28,9 +28,9 @@ module GraphQL
       if SCALAR_TYPES[type]
         :scalar
       elsif type.class == Class
-        :simple_association
+        :singular_association
       elsif type.class == Array
-        :paginated_association
+        :multiple_association
       end
     end
 
@@ -47,11 +47,11 @@ module GraphQL
           case ApiTypesCreator.type_kind(field_type)
           when :scalar
             field(field_name, SCALAR_TYPES[field_type])
-          when :simple_association
+          when :singular_association
             field(field_name, -> { api_types_creator.created_types[field_type] }) do
-              resolve -> (object, arguments, context) { field_type.public_for_api.find(object) }
+              resolve -> (object, arguments, context) { field_type.public_for_api.find_by(id: object.id) }
             end
-          when :paginated_association
+          when :multiple_association
             field_type = field_type.first
             connection(field_name, -> { api_types_creator.created_types[field_type].connection_type }) do
               resolve -> (object, arguments, context) { field_type.public_for_api }
