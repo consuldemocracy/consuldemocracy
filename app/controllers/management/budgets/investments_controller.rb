@@ -34,6 +34,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   def vote
     @investment.register_selection(managed_user)
     load_investment_votes(@investment)
+    respond_to do |format|
+      format.html { redirect_to management_budget_investments_path(heading_id: @investment.heading.id) }
+      format.js
+    end
   end
 
   def print

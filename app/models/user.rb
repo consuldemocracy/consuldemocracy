@@ -117,6 +117,10 @@ class User < ActiveRecord::Base
     votes.for_type(class_name).any?
   end
 
+  def voted_in_group?(group)
+    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+  end
+
   def administrator?
     administrator.present?
   end

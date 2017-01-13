@@ -465,11 +465,6 @@ es:
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
-      author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
-      author_type_3: 'Director general'
-      author_type_4: 'Concejal'
-      author_type_5: 'Alcaldesa'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'

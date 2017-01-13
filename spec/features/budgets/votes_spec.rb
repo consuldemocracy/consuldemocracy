@@ -55,7 +55,7 @@ feature 'Votes' do
 
     feature 'Single spending proposal' do
       background do
-        @investment = create(:budget_investment, budget: budget)
+        @investment = create(:budget_investment, budget: budget, heading: heading)
       end
 
       scenario 'Show no votes' do

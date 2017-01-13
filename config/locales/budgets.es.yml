@@ -84,6 +84,7 @@ es:
         already_added: "Ya has añadido esta propuesta de inversión"
         already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
         support_title: Apoyar esta propuesta
+        confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
           one: 1 apoyo
           other: "%{count} apoyos"
