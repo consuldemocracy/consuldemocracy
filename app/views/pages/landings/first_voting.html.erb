@@ -6,9 +6,11 @@
       <div class="small-12 medium-8 column padding small-centered text-center">
         <h1>I Votación Ciudadana</h1>
         <p class="lead">Del <strong>13 al 19 de febrero</strong>, tú decides si quieres o no billete único para el transporte público, un Madrid 100% sostenible, y la remodelación de Plaza España.</p>
-        <div class="small-12 medium-6 large-4 small-centered">
-          <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
-        </div>
+        <% if !user_signed_in? %>
+          <div class="small-12 medium-6 large-4 small-centered">
+            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -29,9 +31,11 @@
             </h2>
             <h3>¿Sí o No?</h3>
           </div>
-          <div class="small-12 medium-8">
-            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-          </div>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-8">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -50,9 +54,11 @@
             </h2>
             <h3>¿Sí o No?</h3>
           </div>
-          <div class="small-12 medium-8">
-            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-          </div>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-8">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="small-12 medium-6 column" data-equalizer-watch>
@@ -72,9 +78,11 @@
             <%= link_to "Remodelación de plaza España", plaza_path %>
           </h2>
           <h3>¿Proyecto X o Proyecto Y?</h3>
-          <div class="small-12 medium-6">
-            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-          </div>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-6">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
         </div>
       </div>
 
@@ -84,7 +92,7 @@
             <figure>
               <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
               <figcaption>
-                <%= link_to "Proyecto X", "#" %>
+                <%= link_to "Proyecto X", plaza_path %>
               </figcaption>
             </figure>
           </div>
@@ -93,7 +101,7 @@
             <figure>
               <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
               <figcaption>
-                <%= link_to "Proyecto Y", "#" %>
+                <%= link_to "Proyecto Y", plaza_path %>
               </figcaption>
             </figure>
           </div>
