@@ -61,6 +61,10 @@ module Budgets
     def vote
       @investment.register_selection(current_user)
       load_investment_votes(@investment)
+      respond_to do |format|
+        format.html { redirect_to budget_investments_path(heading_id: @investment.heading.id) }
+        format.js
+      end
     end
 
     private
