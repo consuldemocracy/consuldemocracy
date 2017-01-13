@@ -296,7 +296,7 @@ feature 'Budget Investments' do
 
     context "Popup alert to vote only in one heading per group" do
 
-      scenario "When supporting in the first heading group", :js, :focus do
+      scenario "When supporting in the first heading group", :js do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
@@ -310,7 +310,7 @@ feature 'Budget Investments' do
         end
       end
 
-      scenario "When already supported in the group", :js, :focus do
+      scenario "When already supported in the group", :js do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
@@ -327,7 +327,7 @@ feature 'Budget Investments' do
         end
       end
 
-      scenario "When supporting in another group", :js, :focus do
+      scenario "When supporting in another group", :js do
         carabanchel     = create(:budget_heading, group: group)
         another_heading = create(:budget_heading, group: create(:budget_group, budget: budget))
 
