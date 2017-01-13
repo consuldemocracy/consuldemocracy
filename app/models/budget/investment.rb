@@ -214,11 +214,17 @@ class Budget
     end
 
     def should_show_aside?
-      (budget.selecting? && !unfeasible?) || (budget.balloting? && feasible?) || budget.on_hold?
+      (budget.selecting?  && !unfeasible?) ||
+      (budget.balloting?  && feasible?)    ||
+      (budget.valuating? && feasible?)
     end
 
     def should_show_votes?
       budget.selecting?
+    end
+
+    def should_show_vote_count?
+      budget.valuating?
     end
 
     def should_show_ballots?
