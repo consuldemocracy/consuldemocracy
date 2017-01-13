@@ -149,6 +149,30 @@ feature 'Tags' do
     expect(page).to_not have_content 'Economía'
   end
 
+  scenario 'Featured tags', :js do
+    education = create(:tag, name: 'Education', featured: true)
+    health    = create(:tag, name: 'Health',    featured: true)
+
+    user = create(:user)
+    login_as(user)
+
+    visit new_debate_path
+
+    fill_in 'debate_title', with: 'Title'
+    fill_in_ckeditor 'debate_description', with: 'Description'
+    check 'debate_terms_of_service'
+
+    page.find('.js-add-tag-link', text: 'Education').click
+    click_button 'Start a debate'
+
+    expect(page).to have_content 'Debate created successfully.'
+
+    within('.tags') do
+      expect(page).to have_content 'Education'
+      expect(page).to_not have_content 'Health'
+    end
+  end
+
   context "Filter" do
 
     scenario "From index" do
