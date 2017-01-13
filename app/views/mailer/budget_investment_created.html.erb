@@ -1,0 +1,16 @@
+Hola <%= @investment.author.name %>
+
+Muchas gracias por crear tu proyecto <%= @investment.title %> para los Presupuestos Participativos de <%= @investment.budget.name %> de Madrid.
+
+Te informaremos de cómo avanza el proceso, que también puedes seguir en
+<%= link_to budgets_url, budgets_url %>
+
+Atentamente,
+
+Área de Participación Ciudadana, Transparencia
+y Gobierno Abierto del Ayuntamiento de Madrid
+
+<div class="social-share-full">
+  <%= social_share_button_tag("#{@investment.title} #{setting['twitter_hashtag']}",
+                              url: budget_investment_url(@investment.budget, @investment)) %>
+</div>

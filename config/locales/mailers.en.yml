@@ -53,3 +53,5 @@ en:
       title: "Welcome to %{org}"
       button: Complete registration
       subject: "Invitation to %{org_name}"
+    budget_investment_created:
+      subject: "Thank you for creating a proposal!"

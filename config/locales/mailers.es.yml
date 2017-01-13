@@ -53,3 +53,5 @@ es:
       title: "Bienvenido a %{org}"
       button: Completar registro
       subject: "Invitación a %{org_name}"
+    budget_investment_created:
+      subject: "¡Gracias por crear una propuesta!"
