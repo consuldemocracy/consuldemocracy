@@ -65,6 +65,24 @@ describe Budget::Investment do
     end
   end
 
+  describe "#should_show_votes?" do
+    it "returns true in selecting phase" do
+      budget = create(:budget, phase: "selecting")
+      investment = create(:budget_investment, budget: budget)
+
+      expect(investment.should_show_votes?).to eq(true)
+    end
+
+    it "returns false in any other phase" do
+      Budget::PHASES.reject {|phase| phase == "selecting"}.each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, budget: budget)
+
+        expect(investment.should_show_votes?).to eq(false)
+      end
+    end
+  end
+
   describe "by_admin" do
     it "should return investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
