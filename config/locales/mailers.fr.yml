@@ -10,7 +10,7 @@ fr:
       manage_email_subscriptions: "Pour ne plus recevoir de notifications, paramétrer votre compte"
     email_verification:
       click_here_to_verify: ce lien
-      instructions_html: Pour completer la verifiration de votre compte avec Open Government Portal of the Madrid City Council, vous devez imperativement suivre ce lien: %{verification_link}.
+      instructions_html: 'Pour completer la verifiration de votre compte avec Open Government Portal of the Madrid City Council, vous devez imperativement suivre ce lien: %{verification_link}.'
       instructions_2_html: Ce mail vous permettrez de verifier votre compte avec <b>%{document_type} %{document_number}</b>. Si celles-ci ne vous appartiennent pas, nous vous prions de ne pas cliquer et d'ignorer cet mail.
       subject: Confirmer votre email
       thanks: Merci beaucoup
