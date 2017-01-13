@@ -1,8 +1,3 @@
-# Fixes rails autoloading errors related with having two models named the same under
-# different namespaces (Ballot vs Budget::Ballot) during development
-require_dependency Rails.root.join('app', 'models', 'budget', 'ballot')
-require_dependency Rails.root.join('app', 'models', 'ballot')
-
 module Abilities
   class Common
     include CanCan::Ability
@@ -52,15 +47,18 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
+        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+        # This line must happen after Budget::Ballot is used (in the previous lines);
+        # otherwise Rails autoloader gets confused in Dev
         can :show, ::Ballot
+
         if Setting["feature.spending_proposal_features.final_voting_allowed"].present?
           can [:create, :destroy], ::BallotLine
         end
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
         can :vote,   Budget::Investment,               budget: { phase: "selecting" }
-        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
-        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
