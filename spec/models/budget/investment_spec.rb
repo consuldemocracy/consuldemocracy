@@ -236,6 +236,18 @@ describe Budget::Investment do
         budget.phase = "selecting"
         expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
       end
+
+      it "rejects votes in two headings of the same group" do
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        expect(salamanca_investment.valid_heading?(user)).to eq(false)
+      end
     end
   end
 
