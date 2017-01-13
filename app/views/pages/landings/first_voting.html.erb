@@ -1,0 +1,134 @@
+<% provide :title, "I Votación Ciudadana" %>
+
+<div class="landing-voting">
+  <div class="expanded header no-margin-top padding">
+    <div class="row">
+      <div class="small-12 medium-8 column padding small-centered text-center">
+        <h1>I Votación Ciudadana</h1>
+        <p class="lead">Del <strong>13 al 19 de febrero</strong>, tú decides si quieres o no billete único para el transporte público, un Madrid 100% sostenible, y la remodelación de Plaza España.</p>
+        <% if !user_signed_in? %>
+          <div class="small-12 medium-6 large-4 small-centered">
+            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded block">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <%= image_tag "landings/first_voting_transport.jpg", alt: "" %>
+      </div>
+      <div class="small-12 medium-6 column">
+        <div class="block-yellow">
+          <div class="one">
+            <span>01</span>
+          </div>
+          <div class="block-content" data-equalizer-watch>
+            <h2>
+              <%= link_to "Billete único para el transporte público", "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" %>
+            </h2>
+            <h3>¿Sí o No?</h3>
+          </div>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-8">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded block">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column">
+        <div class="block-blue">
+          <div class="two">
+            <span>02</span>
+          </div>
+          <div class="block-content text-right" data-equalizer-watch>
+            <h2>
+              <%= link_to "Madrid 100% sostenible", "https://decide.madrid.es/proposals/199-madrid-100-sostenible" %>
+            </h2>
+            <h3>¿Sí o No?</h3>
+          </div>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-8">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <%= image_tag "landings/first_voting_sustainable.jpg", alt: "" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="expanded plaza-espana-projects">
+    <div class="row" data-equalizer data-equalize-on="medium">
+      <div class="small-12 medium-6 column">
+        <div class="block-black" data-equalizer-watch>
+          <div class="three">
+            <span>03</span>
+          </div>
+          <h2>
+            <%= link_to "Remodelación de plaza España", plaza_path %>
+          </h2>
+          <h3>¿Proyecto X o Proyecto Y?</h3>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-6">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 column" data-equalizer-watch>
+        <div class="row">
+          <div class="small-12 column project-x">
+            <figure>
+              <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
+              <figcaption>
+                <%= link_to "Proyecto X", plaza_path %>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="small-12 column project-y">
+            <figure>
+              <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
+              <figcaption>
+                <%= link_to "Proyecto Y", plaza_path %>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-8 small-centered text-center">
+      <h2>Votaciones de distrito</h2>
+      <p class="lead">Los habitantes de varios distritos también decidirán sobre diferentes preguntas. Próximamente publicaremos las preguntas de distrito.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="expanded how-voting">
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <h2>Cómo votar</h2>
+          <ul>
+            <li>En <strong>esta web</strong> después de <%= link_to "registrarte", new_user_registration_path %>.</li>
+            <li>En urnas que encontrarás repartidas por los <strong>21 distritos de Madrid</strong> <em>(próximamente mapa de localización)</em></li>
+            <li>Por carta enviando tus decisiones <strong>antes del 12 de febrero</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
