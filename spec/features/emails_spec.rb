@@ -263,14 +263,16 @@ feature 'Emails' do
 
   context "Budgets" do
 
-      let(:author)   { create(:user, :level_two) }
-      let(:budget)   { create(:budget) }
-      let(:group)    { create(:budget_group, name: "Health", budget: budget) }
-      let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+    background do
+      Setting["feature.budgets"] = true
+    end
+
+    let(:author)   { create(:user, :level_two) }
+    let(:budget)   { create(:budget) }
+    let(:group)    { create(:budget_group, name: "Health", budget: budget) }
+    let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
     scenario "Investment created" do
-      Setting["feature.budgets"] = true
-
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
@@ -294,6 +296,30 @@ feature 'Emails' do
       expect(email).to have_body_text(budget_path(budget))
     end
 
-  end
+    scenario "Unfeasible investment" do
+      investment = create(:budget_investment, author: author, budget: budget)
 
+      valuator = create(:valuator)
+      investment.valuators << valuator
+
+      login_as(valuator.user)
+      visit edit_valuation_budget_budget_investment_path(budget, investment)
+
+      choose 'budget_investment_feasibility_unfeasible'
+      fill_in 'budget_investment_unfeasibility_explanation', with: 'This is not legal as stated in Article 34.9'
+      check 'budget_investment_valuation_finished'
+      click_button 'Save changes'
+
+      expect(page).to have_content "Dossier updated"
+      investment.reload
+
+      email = open_last_email
+      expect(email).to have_subject("Your investment project '#{investment.code}' has been marked as unfeasible")
+      expect(email).to deliver_to(investment.author.email)
+      expect(email).to have_body_text(investment.title)
+      expect(email).to have_body_text(investment.code)
+      expect(email).to have_body_text(investment.unfeasibility_explanation)
+    end
+
+  end
 end

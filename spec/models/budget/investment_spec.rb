@@ -58,10 +58,29 @@ describe Budget::Investment do
   end
 
   describe "#code" do
-    it "returns the investment and budget id" do
-      investment = create(:budget_investment)
-      expect(investment.code).to include("#{investment.id}")
-      expect(investment.code).to include("#{investment.budget.id}")
+    let(:investment) { create(:budget_investment) }
+
+      it "returns the proposal id" do
+        expect(investment.code).to include("#{investment.id}")
+      end
+
+      it "returns the administrator id when assigned" do
+        investment.administrator = create(:administrator)
+        expect(investment.code).to include("#{investment.id}-A#{investment.administrator.id}")
+      end
+  end
+
+  describe "#send_unfeasible_email" do
+    let(:investment) { create(:budget_investment) }
+
+    it "sets the time when the unfeasible email was sent" do
+      expect(investment.unfeasible_email_sent_at).to_not be
+      investment.send_unfeasible_email
+      expect(investment.unfeasible_email_sent_at).to be
+    end
+
+    it "send an email" do
+      expect {investment.send_unfeasible_email}.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
   end
 
