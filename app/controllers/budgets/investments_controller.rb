@@ -46,6 +46,7 @@ module Budgets
       @investment.author = current_user
 
       if @investment.save
+        Mailer.budget_investment_created(@investment).deliver_later
         redirect_to budget_investment_path(@budget, @investment),
                     notice: t('flash.actions.create.budget_investment')
       else
