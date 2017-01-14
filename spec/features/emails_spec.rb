@@ -261,4 +261,39 @@ feature 'Emails' do
 
   end
 
+  context "Budgets" do
+
+      let(:author)   { create(:user, :level_two) }
+      let(:budget)   { create(:budget) }
+      let(:group)    { create(:budget_group, name: "Health", budget: budget) }
+      let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
+
+    scenario "Investment created" do
+      Setting["feature.budgets"] = true
+
+      login_as(author)
+      visit new_budget_investment_path(budget_id: budget.id)
+
+      select  'Health: More hospitals', from: 'budget_investment_heading_id'
+      fill_in 'budget_investment_title', with: 'Build a hospital'
+      fill_in 'budget_investment_description', with: 'We have lots of people that require medical attention'
+      fill_in 'budget_investment_external_url', with: 'http://http://hospitalsforallthepeople.com/'
+      check   'budget_investment_terms_of_service'
+
+      click_button 'Create Investment'
+      expect(page).to have_content 'Investment created successfully'
+
+      email = open_last_email
+      investment = Budget::Investment.last
+
+      expect(email).to have_subject("Thank you for creating a proposal!")
+      expect(email).to deliver_to(investment.author.email)
+      expect(email).to have_body_text(author.name)
+      expect(email).to have_body_text(investment.title)
+      expect(email).to have_body_text(investment.budget.name)
+      expect(email).to have_body_text(budget_path(budget))
+    end
+
+  end
+
 end
