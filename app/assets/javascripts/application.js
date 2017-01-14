@@ -53,8 +53,8 @@
 //= require cocoon
 //= require legislation
 //= require legislation_allegations
-//= require custom
 //= require legislation_annotatable
+//= require custom
 
 var initialize_modules = function() {
   App.Comments.initialize();
