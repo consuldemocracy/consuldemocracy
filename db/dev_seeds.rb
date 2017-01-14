@@ -54,6 +54,7 @@ end
 
 admin = create_user('admin@consul.dev', 'admin')
 admin.create_administrator
+admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
 
 moderator = create_user('mod@consul.dev', 'mod')
 moderator.create_moderator
