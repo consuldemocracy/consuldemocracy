@@ -17,8 +17,6 @@ App.LegislationAnnotatable =
     return
 
   highlight: (colour) ->
-    range = undefined
-    sel = undefined
     if window.getSelection
       # IE9 and non-IE
       try
@@ -39,7 +37,7 @@ App.LegislationAnnotatable =
     return
 
   renderAnnotationComments: (event) ->
-    $('.comment-box').offset(top: event.offset)
+    $('#comments-box').css({top: event.offset - $('.calc-comments').offset().top})
     $.ajax
       method: "GET"
       url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments"
@@ -75,18 +73,23 @@ App.LegislationAnnotatable =
       dataType: 'script').done (->
         $('#new_legislation_annotation #legislation_annotation_quote').val(@annotation.quote)
         $('#new_legislation_annotation #legislation_annotation_ranges').val(JSON.stringify(@annotation.ranges))
-        $('#comments-box').css({top: $('.annotator-adder').position().top})
+        $('#comments-box').css({top: position.top - $('.calc-comments').offset().top})
 
         App.LegislationAnnotatable.highlight('#7fff9a')
         $('#comments-box textarea').focus()
 
         $("#new_legislation_annotation").on("ajax:complete", (e, data, status, xhr) ->
-          App.LegislationAnnotatable.remove_highlight()
-          $("#comments-box").html("").hide();
+          if data.status == 200
+            App.LegislationAnnotatable.remove_highlight()
+            $("#comments-box").html("").hide()
+            $.ajax
+              method: "GET"
+              url: annotation_url + "/annotations/" + data.responseJSON.id + "/comments"
+              dataType: 'script'
+          else
+            $(e.target).find('label').addClass('error')
+            $('<small class="error">' + data.responseJSON[0] + '</small>').insertAfter($(e.target).find('textarea'))
           return true
-        ).on("ajax:error", (e, data, status, xhr) ->
-          console.log(data)
-          return false
         )
         return
     ).bind(this)
@@ -108,9 +111,9 @@ App.LegislationAnnotatable =
           offset: el.offset()["top"]
 
   initialize: ->
-    $(document).on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
-    $(document).on('click', '[data-annotation-id]', App.LegislationAnnotatable.onClick)
-    $(document).on('click', '[data-cancel-annotation]', (e) ->
+    $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
+    $(document).off('click', '[data-annotation-id]').on('click', '[data-annotation-id]', App.LegislationAnnotatable.onClick)
+    $(document).off('click', '[data-cancel-annotation]').on('click', '[data-cancel-annotation]', (e) ->
       e.preventDefault()
       $('#comments-box').html('')
       $('#comments-box').hide()
