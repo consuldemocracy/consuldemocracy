@@ -21,6 +21,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   def valuate
     if valid_price_params? && @investment.update(valuation_params)
+
+      if @investment.unfeasible_email_pending?
+        @investment.send_unfeasible_email
+      end
+
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: t('valuation.budget_investments.notice.valuate')
     else
       render action: :edit

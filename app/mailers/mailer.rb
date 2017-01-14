@@ -82,6 +82,15 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def budget_investment_unfeasible(investment)
+    @investment = investment
+    @author = investment.author
+
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.budget_investment_unfeasible.subject', code: @investment.code))
+    end
+  end
+
   private
 
   def with_user(user, &block)
