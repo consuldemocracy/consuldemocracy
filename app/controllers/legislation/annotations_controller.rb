@@ -31,7 +31,7 @@ class Legislation::AnnotationsController < ApplicationController
       track_event
       render json: @annotation.to_json
     else
-      render json: {}, status: :unprocessable_entity
+      render json: @annotation.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -51,12 +51,11 @@ class Legislation::AnnotationsController < ApplicationController
     end
   end
 
-
   private
 
     def annotation_params
       params
-        .require(:annotation)
+        .require(:legislation_annotation)
         .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
     end
 
@@ -67,8 +66,8 @@ class Legislation::AnnotationsController < ApplicationController
     end
 
     def convert_ranges_parameters
-      if params[:annotation] && params[:annotation][:ranges]
-        params[:annotation][:ranges] = JSON.parse(params[:annotation][:ranges])
+      if params[:legislation_annotation] && params[:legislation_annotation][:ranges]
+        params[:legislation_annotation][:ranges] = JSON.parse(params[:legislation_annotation][:ranges])
       end
     rescue JSON::ParserError
     end

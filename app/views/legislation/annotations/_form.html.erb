@@ -9,7 +9,7 @@
 <div class="comments-wrapper">
   <div class="comment-input">
     <%= form_for Legislation::Annotation.new, url: legislation_process_draft_version_annotations_path(@process, @draft_version), remote: true do |f| %>
-      <%= f.text_area :text, autofocus: true %>
+      <%= f.text_area :text %>
 
       <div class="comment-actions">
         <a class="cancel-comment" href="#" data-cancel-annotation><%= t('legislation.annotations.comments.cancel') %></a>
