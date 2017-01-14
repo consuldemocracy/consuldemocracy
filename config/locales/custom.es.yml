@@ -47,7 +47,7 @@ es:
     air_quality_plan:
       title_html: "#BorradorPlanCalidadDeAire<br>yCambioClimático"
       text: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
-      date_html: "Participa hasta el <strong>mes de marzo</strong>"
+      date_html: "Participa hasta el <strong>31 de enero</strong>"
       button: "Más información"
     first_voting:
       title: "En febrero tú dedices"
