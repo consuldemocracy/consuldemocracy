@@ -10,6 +10,7 @@ class Legislation::AnnotationsController < ApplicationController
   has_orders %w{most_voted newest oldest}, only: :show
 
   def index
+    @annotations = @draft_version.annotations
   end
 
   def show
@@ -19,15 +20,22 @@ class Legislation::AnnotationsController < ApplicationController
   end
 
   def create
-    @annotation = Legislation::Annotation.new(annotation_params)
+    if !@process.open_phase?(:allegations) || @draft_version.final_version?
+      render json: {}, status: :not_found and return
+    end
+
+    @annotation = @draft_version.annotations.new(annotation_params)
     @annotation.author = current_user
     if @annotation.save
+      track_event
       render json: @annotation.to_json
+    else
+      render json: {}, status: :unprocessable_entity
     end
   end
 
   def search
-    @annotations = Legislation::Annotation.where(legislation_draft_version_id: params[:legislation_draft_version_id])
+    @annotations = @draft_version.annotations
     annotations_hash = { total: @annotations.size, rows: @annotations }
     render json: annotations_hash.to_json
   end
@@ -42,7 +50,12 @@ class Legislation::AnnotationsController < ApplicationController
       params
         .require(:annotation)
         .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
-        .merge(legislation_draft_version_id: params[:legislation_draft_version_id])
+    end
+
+    def track_event
+      ahoy.track "legislation_annotation_created".to_sym,
+                 "legislation_annotation_id": @annotation.id,
+                 "legislation_draft_version_id": @draft_version.id
     end
 
 end

@@ -12,6 +12,7 @@ App.LegislationAnnotatable =
   viewerExtension: (viewer) ->
     viewer._onHighlightMouseover = (event) ->
       App.LegislationAllegations.show_comments()
+      $("#comments-box").show()
       $.event.trigger
         type: "renderLegislationAnnotation"
         annotation_id: $(event.target).data("annotation-id")

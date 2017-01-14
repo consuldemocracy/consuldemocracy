@@ -499,6 +499,10 @@ FactoryGirl.define do
     trait :published do
       status "published"
     end
+
+    trait :final_version do
+      final_version true
+    end
   end
 
   factory :legislation_annotation, class: 'Legislation::Annotation' do
