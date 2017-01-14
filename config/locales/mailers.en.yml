@@ -65,7 +65,7 @@ en:
       subject: "Invitation to %{org_name}"
     budget_investment_created:
       subject: "Thank you for creating a proposal!"
-    bundget_investment_unfeasible:
+    budget_investment_unfeasible:
       hi: "Dear user,"
       new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
