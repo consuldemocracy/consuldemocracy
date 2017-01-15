@@ -73,8 +73,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
-  get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
@@ -84,6 +82,8 @@ Rails.application.routes.draw do
       resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
     end
   end
+  get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
+  get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
 
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled

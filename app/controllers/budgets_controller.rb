@@ -2,8 +2,8 @@ class BudgetsController < ApplicationController
   include FeatureFlags
   feature_flag :budgets
 
-
-  load_and_authorize_resource find_by: :slug
+  before_action :load_budget
+  load_and_authorize_resource
   respond_to :html, :js
 
   def show
@@ -11,6 +11,12 @@ class BudgetsController < ApplicationController
 
   def index
     @budgets = @budgets.order(:created_at)
+  end
+
+  private
+
+  def load_budget
+    @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
   end
 
 end

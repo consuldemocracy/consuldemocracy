@@ -8,7 +8,9 @@ feature 'Budget Investments' do
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
-    investments = [create(:budget_investment, heading: heading), create(:budget_investment, heading: heading), create(:budget_investment, :feasible, heading: heading)]
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, :feasible, heading: heading)]
     unfeasible_investment = create(:budget_investment, :unfeasible, heading: heading)
 
     visit budget_investments_path(budget, heading_id: heading.id)
@@ -17,7 +19,7 @@ feature 'Budget Investments' do
     investments.each do |investment|
       within('#budget-investments') do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
+        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
         expect(page).to_not have_content(unfeasible_investment.title)
       end
     end
@@ -156,7 +158,7 @@ feature 'Budget Investments' do
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
-      expect(current_path).to eq(budget_investments_path(budget_id: budget.id))
+      expect(current_path).to eq(budget_investments_path(budget))
     end
 
     scenario 'Create spending proposal too fast' do
@@ -229,6 +231,7 @@ feature 'Budget Investments' do
     expect(page).to have_content(investment.description)
     expect(page).to have_content(investment.author.name)
     expect(page).to have_content(investment.heading.name)
+
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
@@ -357,7 +360,6 @@ feature 'Budget Investments' do
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York")
-
 
       sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)
       sp2 = create(:budget_investment, :selected, price:     10, heading: global_heading)

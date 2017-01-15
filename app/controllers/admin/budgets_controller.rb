@@ -4,7 +4,8 @@ class Admin::BudgetsController < Admin::BaseController
 
   has_filters %w{current finished}, only: :index
 
-  load_and_authorize_resource find_by: :slug
+  before_action :load_budget
+  load_and_authorize_resource
 
   def index
     @budgets = Budget.send(@current_filter).order(created_at: :desc).page(params[:page])
@@ -42,6 +43,10 @@ class Admin::BudgetsController < Admin::BaseController
       descriptions = Budget::PHASES.map{|p| "description_#{p}"}.map(&:to_sym)
       valid_attributes = [:name, :phase, :currency_symbol] + descriptions
       params.require(:budget).permit(*valid_attributes)
+    end
+
+    def load_budget
+      @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
     end
 
 end
