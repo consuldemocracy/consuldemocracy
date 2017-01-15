@@ -67,6 +67,7 @@ module Budgets
         def load_categories
           @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
         end
+
     end
   end
 end
