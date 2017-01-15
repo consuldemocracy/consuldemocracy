@@ -95,7 +95,8 @@
         <div class="social-share-full">
           <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
           <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>" data-action="share/whatsapp/share">
+            <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>"
+               data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>
             </a>
           <% end %>
@@ -104,11 +105,23 @@
     <% else %>
       <div class="small-12 medium-3 column">
         <div class="float-right">
-          <span class="label-budget-investment float-left"><%= t("budgets.investments.show.title") %></span>
+          <span class="label-budget-investment float-left">
+            <%= t("budgets.investments.show.title") %>
+          </span>
           <span class="icon-budget"></span>
         </div>
+        <br>
+      <% end %>
+      <div id="social-share" class="sidebar-divider"></div>
+      <h2><%= t("budgets.investments.show.share") %></h2>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
       </div>
-    <% end %>
-
+     </aside>
   </div>
 </section>

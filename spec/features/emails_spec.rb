@@ -292,7 +292,7 @@ feature 'Emails' do
       email = open_last_email
       investment = Budget::Investment.last
 
-      expect(email).to have_subject("Thank you for creating a proposal!")
+      expect(email).to have_subject("Thank you for creating an investment!")
       expect(email).to deliver_to(investment.author.email)
       expect(email).to have_body_text(author.name)
       expect(email).to have_body_text(investment.title)
