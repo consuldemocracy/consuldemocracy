@@ -51,7 +51,7 @@
             <td>
               <% if group.headings.count == 1 %>
                 <%= link_to group.name,
-                            budget_investments_path(@budget, heading_id: group.headings.first.id),
+                            custom_budget_investments_path(budget_id: @budget, heading_id: group.headings.first.to_param),
                             data: { no_turbolink: true } %>
               <% else %>
                 <%= link_to group.name, custom_budget_group_path(@budget, group) %>

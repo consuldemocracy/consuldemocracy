@@ -41,4 +41,6 @@ feature 'Custom urls' do
 
     expect(current_path).to eq("/presupuestos/big-budget/proyecto/#{investment.id}")
   end
+
+  pending "group with single heading"
 end
