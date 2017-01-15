@@ -77,7 +77,7 @@ Rails.application.routes.draw do
   get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
-    resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'propuesta' do
+    resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
       member { post :vote }
     end
     resource :ballot, only: :show, controller: "budgets/ballots" do
