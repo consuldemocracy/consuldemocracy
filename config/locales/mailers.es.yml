@@ -53,3 +53,23 @@ es:
       title: "Bienvenido a %{org}"
       button: Completar registro
       subject: "Invitación a %{org_name}"
+    budget_investment_created:
+      subject: "¡Gracias por crear un proyecto!"
+      title: "¡Gracias por crear un proyecto!"
+      intro_html: "Hola <strong>%{author}</strong>,"
+      text_html: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      follow_html: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
+      follow_link: "Presupuestos participativos"
+      sincerely: "Atentamente,"
+      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
+      share: "Comparte tu proyecto"
+    budget_investment_unfeasible:
+      hi: "Estimado usuario,"
+      new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
+      new_href: "nueva propuesta de inversión"
+      reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
+      sincerely: "Atentamente"
+      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
+      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
+      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
+      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu proyecto <strong>'%{title}'</strong> quedará excluido de este proceso participativo por el siguiente motivo:"
