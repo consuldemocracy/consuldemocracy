@@ -8,9 +8,7 @@ module Abilities
       can :read, Comment
 
       can [:read, :welcome, :select_district], SpendingProposal
-      if Setting["feature.spending_proposal_features.open_results_page"].present?
-        can [:stats, :results], SpendingProposal
-      end
+      can [:stats, :results], SpendingProposal
 
       can [:read, :welcome], Budget
       can [:read, :print], Budget::Investment
