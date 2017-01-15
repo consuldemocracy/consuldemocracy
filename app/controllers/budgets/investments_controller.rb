@@ -5,6 +5,7 @@ module Budgets
     include FlagActions
 
     before_action :authenticate_user!, except: [:index, :show]
+    before_action :load_budget
 
     load_and_authorize_resource :budget
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment"
@@ -94,7 +95,7 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
+          @heading = @budget.headings.find_by(slug: params[:heading_id]) || @budget.headings.find_by(id: params[:heading_id])
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
         end
       end
@@ -105,6 +106,10 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def load_budget
+        @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       end
   end
 

@@ -54,7 +54,7 @@
                             budget_investments_path(@budget, heading_id: group.headings.first.id),
                             data: { no_turbolink: true } %>
               <% else %>
-                <%= link_to group.name, budget_group_path(@budget, group) %>
+                <%= link_to group.name, custom_budget_group_path(@budget, group) %>
               <% end %>
               <br>
             </td>

@@ -73,17 +73,19 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'budgets/welcome',  to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
-  get 'budgets/faq',      to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
-  resources :budgets, only: [:show, :index] do
-    resources :groups, controller: "budgets/groups", only: [:show]
-    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
+  get 'presupuestos/faq', to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
+  get 'presupuestos',  to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+  resources :budgets, only: [:show, :index], path: 'presupuestos' do
+    resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
+    resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
       member { post :vote }
     end
     resource :ballot, only: :show, controller: "budgets/ballots" do
       resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
     end
   end
+  get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
+  get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
 
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
