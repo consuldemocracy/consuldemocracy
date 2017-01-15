@@ -194,10 +194,10 @@ en:
       delegate_button: "Delegate on %{forum}"
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
-      no_votes: This Forum has not supported any investment proposals
-      no_city_votes: This Forum has not supported any city investment proposals
-      no_district_votes: This Forum has not supported any district investment proposals
-      confirm: You have already voted some investment proposals. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
+      no_votes: This Forum has not supported any investment projects
+      no_city_votes: This Forum has not supported any city investment projects
+      no_district_votes: This Forum has not supported any district investment projects
+      confirm: You have already voted some investment projects. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
   geozones:
     none: All city
   layouts:
@@ -711,13 +711,13 @@ en:
       deleted: Deleted
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
-      deleted_budget_investment: This investment has been deleted
+      deleted_budget_investment: This investment project has been deleted
       delete_spending_proposal: Delete
       confirm_deletion_spending_proposal: Are you sure? This action can not be undone
       ballot_link_text:
-        zero: You have not voted for any proposal yet.
-        one: You voted one proposal with a cost of %{amount_spent}.
-        other: You voted %{count} proposals with a cost of %{amount_spent}.
+        zero: You have not voted for any investment yet.
+        one: You voted one investment with a cost of %{amount_spent}.
+        other: You voted %{count} investments with a cost of %{amount_spent}.
       ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
       verify_account: verify your account
       filters:

@@ -65,10 +65,10 @@ es:
         filters:
           current: Abiertos
           finished: Terminados
-        budget_investments: Ver propuestas de inversión
+        budget_investments: Ver proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
+        table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
@@ -104,15 +104,15 @@ es:
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abiertos
           without_admin: Sin administrador
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
           valuation_finished_feasible: Viables
-          selected: Seleccionadas
+          selected: Seleccionados
           all: Todas
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -120,7 +120,7 @@ es:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
-        selected: "Seleccionada"
+        selected: "Seleccionado"
         select: "Seleccionar"
         table_id: "ID"
         table_title: "Título"
@@ -134,7 +134,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -233,11 +233,11 @@ es:
         search: Buscar
         user_not_found: Usuario no encontrado
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
+        finished_and_feasible_count: Finalizados viables
+        finished_and_unfeasible_count: Finalizados inviables
+        finished_count: Finalizados
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total

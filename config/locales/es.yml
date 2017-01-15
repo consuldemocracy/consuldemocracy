@@ -180,7 +180,7 @@ es:
     signature_sheet: la hoja de firmas
     spending_proposal: la propuesta de inversión
     proposal_notification: "la notificación"
-    budget/investment: la propuesta de inversión
+    budget/investment: el proyecto de gasto
     user: la cuenta
     verification/sms: el teléfono
   forums:
@@ -194,10 +194,10 @@ es:
       delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
-      no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
-      no_city_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta de ciudad
-      no_district_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta de distrito
-      confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
+      no_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto
+      no_city_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de ciudad
+      no_district_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de distrito
+      confirm: Ya has votado algunos proyectos de gasto. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
   layouts:
@@ -710,13 +710,13 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       delete_spending_proposal: Eliminar
       confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
       ballot_link_text:
-        zero: Todavía no has votado por ninguna propuesta.
-        one: "Has votado sólo una propuesta por un valor de %{amount_spent}."
-        other: "Has votado %{count} propuestas por un valor de %{amount_spent}."
+        zero: Todavía no has votado por ningún proyecto.
+        one: "Has votado un proyecto por un valor de %{amount_spent}."
+        other: "Has votado %{count} proyectos por un valor de %{amount_spent}."
       ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
       verify_account: verifica tu cuenta
       filters:
