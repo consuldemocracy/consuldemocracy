@@ -26,18 +26,18 @@ feature 'Budget Investments' do
   end
 
   scenario 'Feasibility links' do
-    visit budget_investments_path(budget, heading_id: heading.id)
+    visit budget_investments_path(budget, heading_id: heading)
     expect(page).to_not have_content('Feasible projects')
 
     within('#sidebar') do
       click_link 'Unfeasible projects'
     end
-    expect(page).to have_current_path(budget_investments_path(budget, heading_id: heading.id, unfeasible: 1))
+    expect(page).to have_current_path(budget_investments_path(budget, heading_id: heading, unfeasible: 1))
 
     within('#sidebar') do
       click_link 'Feasible projects'
     end
-    expect(page).to have_current_path(budget_investments_path(budget, heading_id: heading.id, unfeasible: nil))
+    expect(page).to have_current_path(budget_investments_path(budget, heading_id: heading, unfeasible: nil))
   end
 
   context("Search") do

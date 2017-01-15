@@ -31,8 +31,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_content parent_comment.body
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
-
-    expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
+    expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget.id, investment)
   end
 
   scenario 'Collapsable comments', :js do
@@ -417,7 +416,7 @@ feature 'Commenting Budget::Investments' do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
-      visit budget_investment_path(@budget, @budget, @investment)
+      visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
         within(".in_favor") do
