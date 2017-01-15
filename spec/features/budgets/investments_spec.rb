@@ -417,10 +417,7 @@ feature 'Budget Investments' do
       sp2 = create(:budget_investment, :selected, heading: heading, price: 20000)
 
       login_as(user)
-      visit root_path
-
-      first(:link, "Participatory budgeting").click
-      click_link budget.name
+      visit budget_path(budget)
       click_link "Health"
 
       within("#budget_investment_#{sp1.id}") do

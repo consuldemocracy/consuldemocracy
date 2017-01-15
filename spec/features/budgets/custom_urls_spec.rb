@@ -32,6 +32,16 @@ feature 'Custom urls' do
     expect(current_path).to eq("/presupuestos/big-budget/health/more-hospitals")
   end
 
+  scenario "group with single heading" do
+    heading2.destroy
+
+    visit budgets_path
+    click_link "Presenta tu proyecto"
+    click_link "Health"
+
+    expect(current_path).to eq("/presupuestos/big-budget/health/more-hospitals")
+  end
+
   scenario "investments" do
     visit budgets_path
     click_link "Presenta tu proyecto"
@@ -42,5 +52,4 @@ feature 'Custom urls' do
     expect(current_path).to eq("/presupuestos/big-budget/proyecto/#{investment.id}")
   end
 
-  pending "group with single heading"
 end

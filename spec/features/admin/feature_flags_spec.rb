@@ -17,6 +17,7 @@ feature 'Admin feature flags' do
 
   scenario 'Disable a feature' do
     setting_id = Setting.find_by(key: 'feature.budgets').id
+    budget = create(:budget)
 
     visit admin_settings_path
 
@@ -32,7 +33,7 @@ feature 'Admin feature flags' do
       expect(page).not_to have_link "Participatory budgets"
     end
 
-    expect{ visit budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect{ visit budget_path(budget) }.to raise_exception(FeatureFlags::FeatureDisabled)
     expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
