@@ -155,6 +155,7 @@ class Budget
 
     def reason_for_not_being_selectable_by(user)
       return permission_problem(user) if permission_problem?(user)
+      return :different_heading_assigned unless valid_heading?(user)
 
       return :no_selecting_allowed unless budget.selecting?
     end
@@ -182,6 +183,24 @@ class Budget
       reason_for_not_being_selectable_by(user).blank?
     end
 
+    def valid_heading?(user)
+      !different_heading_assigned?(user)
+    end
+
+    def different_heading_assigned?(user)
+      other_heading_ids = group.heading_ids - [heading.id]
+      voted_in?(other_heading_ids, user)
+    end
+
+    def voted_in?(heading_ids, user)
+      heading_ids.include? heading_voted_by_user?(user)
+    end
+
+    def heading_voted_by_user?(user)
+      user.votes.for_budget_investments(budget.investments.where(group: group)).
+      votables.map(&:heading_id).first
+    end
+
     def ballotable_by?(user)
       reason_for_not_being_ballotable_by(user).blank?
     end
@@ -204,11 +223,17 @@ class Budget
     end
 
     def should_show_aside?
-      (budget.selecting? && !unfeasible?) || (budget.balloting? && feasible?) || budget.on_hold?
+      (budget.selecting?  && !unfeasible?) ||
+      (budget.balloting?  && feasible?)    ||
+      (budget.valuating? && feasible?)
     end
 
     def should_show_votes?
       budget.selecting?
+    end
+
+    def should_show_vote_count?
+      budget.valuating?
     end
 
     def should_show_ballots?

@@ -46,7 +46,6 @@
       <% unless investment.unfeasible? %>
 
         <% if investment.should_show_votes? %>
-
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center">
                <%= render partial: '/budgets/investments/votes', locals: {
@@ -55,9 +54,17 @@
                  vote_url: namespaced_budget_investment_vote_path(investment, value: 'yes')
                } %>
           </div>
-
+        <% elsif investment.should_show_vote_count? %>
+          <div id="<%= dom_id(investment) %>_votes"
+               class="small-12 medium-3 column text-center">
+            <div class="supports js-participation">
+              <span class="total-supports no-button">
+                <%= t("budgets.investments.investment.supports",
+                    count: investment.total_votes) %>
+              </span>
+            </div>
+          </div>
         <% elsif investment.should_show_ballots? %>
-
           <div id="<%= dom_id(investment) %>_ballot"
                 class="small-12 medium-3 column text-center">
                 <%= render partial: '/budgets/investments/ballot', locals: {
@@ -66,7 +73,6 @@
                   ballot: ballot
                 } %>
           </div>
-
         <% end %>
 
       <% end %>
