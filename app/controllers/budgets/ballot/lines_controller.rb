@@ -5,6 +5,8 @@ module Budgets
       #before_action :ensure_final_voting_allowed
       before_action :load_budget
       before_action :load_ballot
+      before_action :load_tag_cloud
+      before_action :load_categories
 
       before_action :load_investments
 
@@ -61,6 +63,14 @@ module Budgets
 
         def load_heading
           @heading = @investment.heading
+        end
+
+        def load_tag_cloud
+          @tag_cloud = TagCloud.new(Budget::Investment, params[:search])
+        end
+
+        def load_categories
+          @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
         end
 
     end
