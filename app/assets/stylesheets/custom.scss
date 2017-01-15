@@ -165,7 +165,7 @@ ul.menu > li > a {
 }
 
 .sticky-bottom {
-  margin-bottom: rem-calc(-$line-height*3);
+  margin-bottom: rem-calc(-$line-height*2);
 
   &.highlight {
     border-bottom: $line-height/2 solid $highlight;
@@ -2615,19 +2615,29 @@ ul.ballot-list {
 // 19. Budgets welcome
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+$campaign-blue:    #009FDE;
+$campaign-brown:   #EFEDE7;
+$campaign-red:     #E23135;
+$campaign-yellow:  #FFDB19;
+
 .budgets-welcome {
 
   .header {
-    background: black;
+    background: $campaign-brown;
 
-    h1, p {
-      color: white;
+    h1 {
+      color: black;
+
+      span {
+        background: black;
+        color: $campaign-yellow;;
+        padding: 0 $line-height/2;
+      }
     }
 
-    h1 span {
-      background: #E23135;
-      display: inline-block;
-      padding: 0 $line-height/4;
+    ul.info li {
+      color: black;
+      margin-bottom: $line-height;
     }
   }
 
@@ -2645,8 +2655,8 @@ ul.ballot-list {
   }
 
   .button {
-    background: white;
-    color: black;
+    background: black;
+    color: white;
   }
 
   @include breakpoint(large) {
@@ -2670,6 +2680,28 @@ ul.ballot-list {
   .margin {
     margin-bottom: $line-height*2;
     margin-top: $line-height*2;
+  }
+
+  table {
+
+    th {
+      background: black;
+      color: white;
+    }
+
+    @include breakpoint(medium) {
+
+      .budget-big-number {
+        font-size: rem-calc(36);
+        padding: $line-height;
+      }
+    }
+  }
+
+  .note {
+    background: $campaign-yellow;
+    display: inline-block;
+    font-weight: bold;
   }
 }
 
@@ -2705,19 +2737,15 @@ ul.ballot-list {
 }
 
 .budgets-calendar {
-  background: #FFDB19;
+  background: $campaign-yellow;
   color: black;
 
   ul {
     margin-bottom: 0;
-
-    @include breakpoint(medium) {
-      border-left: 1px solid white;
-      border-right: 1px solid white;
-    }
+    padding: $line-height/2 0;
 
     li {
-      border-top: 1px solid white;
+      border-top: 1px solid #605F5D;
       padding: $line-height/2 0;
 
       &:first-child {
@@ -2725,7 +2753,7 @@ ul.ballot-list {
       }
 
       @include breakpoint(medium) {
-        border-right: 1px solid white;
+        border-left: 1px solid #605F5D;
         border-top: 0;
         display: inline-block;
         padding: $line-height/2 $line-height;
@@ -2739,15 +2767,7 @@ ul.ballot-list {
   }
 }
 
-.expanded.brand {
-  background: $brand;
-
-  h2, p {
-    color: white;
-  }
-
-  a.button {
-    background: white;
-    color: $brand;
-  }
+.previous-budgets {
+  border-top: 1px solid $border;
+  padding: $line-height*2 0;
 }
