@@ -74,7 +74,7 @@ feature "Forum" do
       visit forum_path(forum)
 
       expect(page).to_not have_css("#city")
-      expect(page).to have_content "This Forum has not supported any investment proposals"
+      expect(page).to have_content "This Forum has not supported any investment project"
     end
 
   end
@@ -135,7 +135,7 @@ feature "Forum" do
 
         within("#district") do
           expect(page).to have_css(".forum_vote", count: 0)
-          expect(page).to have_content "This Forum has not supported any district investment proposals"
+          expect(page).to have_content "This Forum has not supported any district investment projects"
         end
       end
 
@@ -153,7 +153,7 @@ feature "Forum" do
 
         within("#city") do
           expect(page).to have_css(".forum_vote", count: 0)
-          expect(page).to have_content  "This Forum has not supported any city investment proposals"
+          expect(page).to have_content  "This Forum has not supported any city investment projects"
         end
 
         within("#district") do
