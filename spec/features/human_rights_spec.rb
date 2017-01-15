@@ -110,7 +110,7 @@ feature 'Human Rights' do
         visit human_rights_proposals_path
 
         click_link "Advanced search"
-        select "Municipal Organization", from: "advanced_search_official_level"
+        select Setting['official_level_2_name'], from: "advanced_search_official_level"
         click_button "Filter"
 
         expect(page).to have_content("There are 2 citizen proposals")

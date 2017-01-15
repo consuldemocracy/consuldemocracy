@@ -18,6 +18,7 @@
 // 16. Si te sientes gato
 // 17. Blas Bonilla
 // 18. Voluntarios mesas presenciales
+// 19. Budgets welcome
 //
 
 // 01. Global styles
@@ -152,10 +153,23 @@ blockquote p {
   padding-left: 0;
 }
 
+ul.menu > li > a {
+  line-height: $line-height;
+  padding: $line-height/2 $line-height/2 $line-height 0;
+}
+
 .tabs li.is-active a {
   color: $brand;
   border-bottom: 2px solid $brand;
   font-weight: bold;
+}
+
+.sticky-bottom {
+  margin-bottom: rem-calc(-$line-height*3);
+
+  &.highlight {
+    border-bottom: $line-height/2 solid $highlight;
+  }
 }
 
 // 02. Header
@@ -2595,5 +2609,145 @@ ul.ballot-list {
   .any_district {
     background: $highlight;
     padding-top: rem-calc(6);
+  }
+}
+
+// 19. Budgets welcome
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.budgets-welcome {
+
+  .header {
+    background: black;
+
+    h1, p {
+      color: white;
+    }
+
+    h1 span {
+      background: #E23135;
+      display: inline-block;
+      padding: 0 $line-height/4;
+    }
+  }
+
+  .budgets-timeline {
+
+    h3 {
+      background: #E23135;
+      color: white;
+      padding: $line-height/4 $line-height/2;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
+    }
+  }
+
+  .button {
+    background: white;
+    color: black;
+  }
+
+  @include breakpoint(large) {
+    .block-border-left {
+      border-left: 3px solid #E23135;
+    }
+
+    .block-border-right {
+      border-right: 3px solid #E23135;
+    }
+  }
+
+  img {
+    margin-top: -1px;
+  }
+
+  .highlight {
+    background: #ECEBF6;
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+}
+
+.block-black , .block-yellow {
+  padding-bottom: $line-height*2;
+  padding-top: $line-height*2;
+}
+
+.block-black {
+  background: black;
+  padding-left: 0;
+
+  h3, p, a {
+    color: white;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.block-yellow {
+  background: #FFDB19;
+  padding-right: 0;
+
+  h3, p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.budgets-calendar {
+  background: #FFDB19;
+  color: black;
+
+  ul {
+    margin-bottom: 0;
+
+    @include breakpoint(medium) {
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+    }
+
+    li {
+      border-top: 1px solid white;
+      padding: $line-height/2 0;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      @include breakpoint(medium) {
+        border-right: 1px solid white;
+        border-top: 0;
+        display: inline-block;
+        padding: $line-height/2 $line-height;
+        width: 24%;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.expanded.brand {
+  background: $brand;
+
+  h2, p {
+    color: white;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
   }
 }

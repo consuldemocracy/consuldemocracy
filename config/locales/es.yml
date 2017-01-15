@@ -180,7 +180,7 @@ es:
     signature_sheet: la hoja de firmas
     spending_proposal: la propuesta de inversión
     proposal_notification: "la notificación"
-    budget/investment: la propuesta de inversión
+    budget/investment: el proyecto de gasto
     user: la cuenta
     verification/sms: el teléfono
   forums:
@@ -194,10 +194,10 @@ es:
       delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
-      no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
-      no_city_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta de ciudad
-      no_district_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta de distrito
-      confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
+      no_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto
+      no_city_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de ciudad
+      no_district_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de distrito
+      confirm: Ya has votado algunos proyectos de gasto. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
   layouts:
@@ -465,11 +465,6 @@ es:
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
-      author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
-      author_type_3: 'Director general'
-      author_type_4: 'Concejal'
-      author_type_5: 'Alcaldesa'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
@@ -715,13 +710,13 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       delete_spending_proposal: Eliminar
       confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
       ballot_link_text:
-        zero: Todavía no has votado por ninguna propuesta.
-        one: "Has votado sólo una propuesta por un valor de %{amount_spent}."
-        other: "Has votado %{count} propuestas por un valor de %{amount_spent}."
+        zero: Todavía no has votado por ningún proyecto.
+        one: "Has votado un proyecto por un valor de %{amount_spent}."
+        other: "Has votado %{count} proyectos por un valor de %{amount_spent}."
       ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
       verify_account: verifica tu cuenta
       filters:
@@ -775,6 +770,13 @@ es:
       confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
       confirm_discard_delegation: "Si votas dejarás de delegar. "
       no_ballots_allowed: No se puede votar
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
     featured:
       title: Procesos abiertos
@@ -806,19 +808,6 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
-  omniauth:
-    finish_signup:
-      title: "Detalles adicionales de tu cuenta"
-      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
-    twitter:
-      sign_in: "Entra con Twitter"
-      sign_up: "Regístrate con Twitter"
-    facebook:
-      sign_in: "Entra con Facebook"
-      sign_up: "Regístrate con Facebook"
-    google_oauth2:
-      sign_in: "Entra con Google"
-      sign_up: "Regístrate con Google"
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"

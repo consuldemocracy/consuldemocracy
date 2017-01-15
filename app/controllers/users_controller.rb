@@ -105,6 +105,7 @@ class UsersController < ApplicationController
       disabled_commentables = []
       disabled_commentables << "Debate" unless Setting['feature.debates']
       disabled_commentables << "Budget::Investment" unless Setting['feature.budgets']
+      disabled_commentables << "SpendingProposal" unless Setting['feature.spending_proposals']
       if disabled_commentables.present?
         all_user_comments.where("commentable_type NOT IN (?)", disabled_commentables)
       else

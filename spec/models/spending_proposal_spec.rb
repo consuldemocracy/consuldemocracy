@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe SpendingProposal do
+
   let(:spending_proposal) { build(:spending_proposal) }
 
   it "should be valid" do
@@ -487,10 +488,12 @@ describe SpendingProposal do
   end
 
   describe "total votes" do
-    it "takes into account physical votes in addition to web votes" do
+    before(:each) do
       Setting["feature.spending_proposals"] = true
-      Setting['feature.spending_proposal_features.voting_allowed'] = true
+      Setting["feature.spending_proposal_features.voting_allowed"] = true
+    end
 
+    it "takes into account physical votes in addition to web votes" do
       sp = create(:spending_proposal)
 
       sp.register_vote(create(:user, :level_two), true)
@@ -523,6 +526,10 @@ describe SpendingProposal do
   end
 
   describe "#delegated_votes" do
+    before(:each) do
+      Setting["feature.spending_proposal_features.voting_allowed"] = true
+    end
+
     it "counts delegated votes" do
       forum = create(:forum)
       user1 = create(:user, representative: forum)
