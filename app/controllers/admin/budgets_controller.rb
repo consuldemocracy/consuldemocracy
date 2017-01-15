@@ -6,6 +6,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   has_filters %w{open finished}, only: :index
 
+  before_action :load_budget
   load_and_authorize_resource
 
   def index
@@ -64,6 +65,10 @@ class Admin::BudgetsController < Admin::BaseController
       descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
       valid_attributes = [:phase, :currency_symbol] + descriptions
       params.require(:budget).permit(*valid_attributes, *report_attributes, translation_params(Budget))
+    end
+
+    def load_budget
+      @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id])
     end
 
 end

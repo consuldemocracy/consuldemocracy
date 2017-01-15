@@ -40,7 +40,7 @@ describe "Budget Investments" do
     investments.each do |investment|
       within("#budget-investments") do
         expect(page).to have_content investment.title
-        expect(page).to have_css("a[href='#{budget_investment_path(budget_id: budget.id, id: investment.id)}']", text: investment.title)
+        expect(page).to have_css("a[href='#{budget_investment_path(budget, id: investment.id)}']", text: investment.title)
         expect(page).not_to have_content(unfeasible_investment.title)
       end
     end
@@ -476,7 +476,7 @@ describe "Budget Investments" do
       investment3 = create(:budget_investment, heading: heading)
       investment4 = create(:budget_investment, :feasible, heading: heading)
 
-      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unfeasible")
+      visit budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
 
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 1)
@@ -810,7 +810,7 @@ describe "Budget Investments" do
 
     scenario "Create with invisible_captcha honeypot field" do
       login_as(author)
-      visit new_budget_investment_path(budget_id: budget.id)
+      visit new_budget_investment_path(budget)
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "budget_investment_title", with: "I am a bot"
@@ -822,14 +822,14 @@ describe "Budget Investments" do
 
       expect(page.status_code).to eq(200)
       expect(page.html).to be_empty
-      expect(page).to have_current_path(budget_investments_path(budget_id: budget.id))
+      expect(page).to have_current_path(budget_investments_path(budget))
     end
 
     scenario "Create budget investment too fast" do
       allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
       login_as(author)
-      visit new_budget_investment_path(budget_id: budget.id)
+      visit new_budget_investment_path(budget)
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "budget_investment_title", with: "I am a bot"
@@ -839,13 +839,13 @@ describe "Budget Investments" do
       click_button "Create Investment"
 
       expect(page).to have_content "Sorry, that was too quick! Please resubmit"
-      expect(page).to have_current_path(new_budget_investment_path(budget_id: budget.id))
+      expect(page).to have_current_path(new_budget_investment_path(budget))
     end
 
     scenario "Create" do
       login_as(author)
 
-      visit new_budget_investment_path(budget_id: budget.id)
+      visit new_budget_investment_path(budget)
 
       select  heading.name, from: "budget_investment_heading_id"
       fill_in "budget_investment_title", with: "Build a skyscraper"
@@ -872,7 +872,7 @@ describe "Budget Investments" do
     scenario "Errors on create" do
       login_as(author)
 
-      visit new_budget_investment_path(budget_id: budget.id)
+      visit new_budget_investment_path(budget)
       click_button "Create Investment"
       expect(page).to have_content error_message
     end
@@ -948,7 +948,7 @@ describe "Budget Investments" do
 
       login_as(author)
 
-      visit new_budget_investment_path(budget_id: budget.id)
+      visit new_budget_investment_path(budget)
 
       select_options = find("#budget_investment_heading_id").all("option").collect(&:text)
       expect(select_options.first).to eq("")
@@ -964,7 +964,7 @@ describe "Budget Investments" do
 
     investment = create(:budget_investment, heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).to have_content(investment.title)
     expect(page).to have_content(investment.description)
@@ -984,7 +984,7 @@ describe "Budget Investments" do
       scenario "Price & explanation is shown when Budget is on published prices phase" do
         Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
           budget.update(phase: phase)
-          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+          visit budget_investment_path(budget, id: investment.id)
 
           expect(page).to have_content(investment.formatted_price)
           expect(page).to have_content(investment.price_explanation)
@@ -1003,7 +1003,7 @@ describe "Budget Investments" do
       scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
         (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
           budget.update(phase: phase)
-          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+          visit budget_investment_path(budget, id: investment.id)
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
@@ -1025,7 +1025,7 @@ describe "Budget Investments" do
       scenario "Price & explanation isn't shown for any Budget's phase" do
         Budget::Phase::PHASE_KINDS.each do |phase|
           budget.update(phase: phase)
-          visit budget_investment_path(budget_id: budget.id, id: investment.id)
+          visit budget_investment_path(budget, id: investment.id)
 
           expect(page).not_to have_content(investment.formatted_price)
           expect(page).not_to have_content(investment.price_explanation)
@@ -1044,7 +1044,7 @@ describe "Budget Investments" do
     Setting["feature.community"] = true
 
     investment = create(:budget_investment, heading: heading)
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
     expect(page).to have_content "Access the community"
 
     Setting["feature.community"] = false
@@ -1054,14 +1054,14 @@ describe "Budget Investments" do
     Setting["feature.community"] = false
 
     investment = create(:budget_investment, heading: heading)
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
     expect(page).not_to have_content "Access the community"
   end
 
   scenario "Don't display flaggable buttons" do
     investment = create(:budget_investment, heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).not_to have_selector ".js-follow"
   end
@@ -1092,7 +1092,7 @@ describe "Budget Investments" do
 
     scenario "Budget in selecting phase" do
       budget.update(phase: "selecting")
-      visit budget_investment_path(budget_id: budget.id, id: investment.id)
+      visit budget_investment_path(budget, id: investment.id)
 
       expect(page).not_to have_content("Unfeasibility explanation")
       expect(page).not_to have_content("Price explanation")
@@ -1120,14 +1120,14 @@ describe "Budget Investments" do
                         heading: heading,
                         unfeasibility_explanation: "The unfeasible explanation")
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this")
     expect(page).not_to have_content("This investment project has been marked as not feasible "\
                                      "and will not go to balloting phase")
 
-    visit budget_investment_path(budget_id: budget.id, id: investment_2.id)
+    visit budget_investment_path(budget, id: investment_2.id)
 
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content("The unfeasible explanation")
@@ -1147,7 +1147,7 @@ describe "Budget Investments" do
                         group: group,
                         heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).to have_content("This investment project has been selected for balloting phase")
   end
@@ -1166,13 +1166,13 @@ describe "Budget Investments" do
                         group: group,
                         heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).not_to have_content("Winning investment project")
 
     budget.update(phase: "finished")
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).to have_content("Winning investment project")
   end
@@ -1189,7 +1189,7 @@ describe "Budget Investments" do
                         group: group,
                         heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).to have_content("This investment project has not been selected for balloting phase")
   end
@@ -1205,7 +1205,7 @@ describe "Budget Investments" do
                         group: group,
                         heading: heading)
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     within("aside") do
       expect(page).to have_content("Investment project")
@@ -1225,7 +1225,7 @@ describe "Budget Investments" do
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this matter")
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this matter")
@@ -1243,7 +1243,7 @@ describe "Budget Investments" do
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this matter")
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    visit budget_investment_path(budget, id: investment.id)
 
     expect(page).not_to have_content("Unfeasibility explanation")
     expect(page).not_to have_content("Local government is not competent in this matter")
@@ -1647,7 +1647,7 @@ describe "Budget Investments" do
       investment3 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
       investment4 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
 
-      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
+      visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
 
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 1)
@@ -1691,7 +1691,7 @@ describe "Budget Investments" do
     scenario "Do not display vote button for unselected investments in index" do
       investment = create(:budget_investment, :unselected, heading: heading)
 
-      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
+      visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
 
       expect(page).to have_content investment.title
       expect(page).not_to have_link("Vote")
