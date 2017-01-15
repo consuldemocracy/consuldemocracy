@@ -35,7 +35,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
                                   budgets_welcome_path,
-                                  controller_name == "budgets" || controller_name == "investments",
+                                  controller_name == "budgets" || controller_name == "investments" || current_page?(budgets_welcome_path),
                                   accesskey: "b" %>
       </li>
     <% end %>
