@@ -5,6 +5,7 @@ module Budgets
       #before_action :ensure_final_voting_allowed
       before_action :load_budget
       before_action :load_ballot
+      before_action :load_categories
 
       before_action :load_investments
 
@@ -63,6 +64,9 @@ module Budgets
           @heading = @investment.heading
         end
 
+        def load_categories
+          @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        end
     end
   end
 end
