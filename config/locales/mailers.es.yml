@@ -54,7 +54,15 @@ es:
       button: Completar registro
       subject: "Invitación a %{org_name}"
     budget_investment_created:
-      subject: "¡Gracias por crear una propuesta!"
+      subject: "¡Gracias por crear un proyecto!"
+      title: "¡Gracias por crear un proyecto!"
+      intro_html: "Hola <strong>%{author}</strong>,"
+      text_html: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      follow_html: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
+      follow_link: "Presupuestos participativos"
+      sincerely: "Atentamente,"
+      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
+      share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
       new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
