@@ -40,25 +40,20 @@ es:
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
   cards:
     vallecas:
-      title_html: "#NuevoBarrioVillaDeVallecas"
+      title_html: "Nuevo barrio en Villa de Vallecas"
       text: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
       date_html: "Participa hasta el <strong>23 de enero</strong>"
-      button: "Más información"
+      button: "Quiero opinar"
     air_quality_plan:
-      title_html: "#BorradorPlanCalidadDeAire<br>yCambioClimático"
+      title_html: "Borrador Plan calidad de aire y cambio climático"
       text: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
       date_html: "Participa hasta el <strong>31 de enero</strong>"
-      button: "Más información"
-    first_voting:
-      title: "En febrero tú dedices"
-      text: "Madrid 100% sostenible. Billete único para el transporte público. Remodelación de Plaza España. ¿Sí o no? Regístrate y vota del 13 al 19 de febrero en Decide Madrid."
-      date_html: "<strong>Del 13 al 19 de febrero</strong>"
-      button: "Quiero decidir"
+      button: "Quiero opinar"
     plaza:
-      title: "#RemodelaciónPlazaEspaña"
+      title: "Proyecto de remodelación de Plaza España"
       text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
       date_html: "Resultados <strong>disponibles</strong>"
-      button: "Ver resultados"
+      button: "Ver finalistas"
   meta_tags:
     welcome_index:
       title: "Decide Madrid - Participación del Ayuntamiento de Madrid"

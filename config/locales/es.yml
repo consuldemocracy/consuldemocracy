@@ -252,14 +252,15 @@ es:
       no_notifications: No tienes notificaciones nuevas
       open: abierto
       open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
-      open_city_slogan_short_html: "Blas Bonilla ha hecho sus propuestas en <u>decide.madrid.es </u><br>¡Regístrate y haz las tuyas!"
-      open_city_title:  '"En Madrid es la gente la que decide cómo es la ciudad en la que quiere vivir"'
+      open_city_slogan_short_html: '"Billete único para el transporte público" y "Madrid 100% sostenible".'
+      open_city_title:  "En febrero #TúDecides"
+      lead_text_html: "Son las dos primeras propuestas ciudadanas que podrás votar del <strong>13 al 19 de febrero de 2017</strong>."
       open_gov: Gobierno %{open}
       proposals: Propuestas
       processes: Procesos
       spending_proposals: Presupuestos participativos
       proposal_ballot: Votaciones
-      sign_up: Ver el vídeo de Blas Bonilla
+      sign_up: Quiero registrarme
       sign_in: Si ya tienes una cuenta %{login}.
       sign_in_link: entra ahora
   locale: Español
@@ -753,16 +754,15 @@ es:
     featured:
       title: Procesos abiertos
       see_all: Ver todos los procesos
+      features: "Participa en %{org_name}"
       proposals:
-        link: Ver propuestas
-        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
-        title: Propuestas ciudadanas
-      spending_proposals:
-        link: Participa en la votación final
-        link_close: Ver propuestas de inversión
-        see_results: Ver resultados
-        text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
+        title: Crea propuestas ciudadanas
+        text: "¿Tienes una idea para Madrid? Propón, tienes un año para conseguir %{supports} apoyos para que el Ayuntamiento lleve tu idea a cabo."
+        link: Ver propuestas ciudadanas
+      budgets:
         title: Presupuestos participativos
+        text: "Tú propones y decides en qué invierte el Ayuntamiento un parte del presupuesto municipal."
+        link: Ver proyectos de gasto
     more_information: Más información sobre %{org_name}
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
