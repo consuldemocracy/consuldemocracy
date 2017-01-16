@@ -47,7 +47,7 @@ describe 'ConsulSchema' do
   end
 
   it "returns has_one associations" do
-    pending "Organizations are not being exposed yet"
+    skip "Organizations are not being exposed yet"
     organization = create(:organization)
     response = execute("{ user(id: #{organization.user_id}) { organization { name } } }")
     expect(dig(response, 'data.user.organization.name')).to eq(organization.name)
@@ -71,7 +71,7 @@ describe 'ConsulSchema' do
   end
 
   it "executes deeply nested queries" do
-    pending "Organizations are not being exposed yet"
+    skip "Organizations are not being exposed yet"
     org_user = create(:user)
     organization = create(:organization, user: org_user)
     org_proposal = create(:proposal, author: org_user)
