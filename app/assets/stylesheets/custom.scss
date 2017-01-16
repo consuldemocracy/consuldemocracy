@@ -2319,23 +2319,12 @@ ul.ballot-list {
 .welcome {
 
   .header {
-    background: $brand image-url('home_page_bg.gif');
+    background: #E23135 image-url('home_page_bg.jpg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    height: rem-calc(450);
-    padding-top: $line-height;
-
-    @include breakpoint(medium) {
-      height: rem-calc(562);
-      padding-top: rem-calc(225);
-
-      h1 {
-        font-size: rem-calc(40);
-        line-height: $line-height*2;
-      }
-    }
+    padding: $line-height*2 0;
 
     a.decoration-none {
       text-decoration: none !important;
@@ -2353,21 +2342,21 @@ ul.ballot-list {
 
     .button {
       background: white;
+      color: $text;
+    }
+  }
+
+  h2 {
+
+    &.title {
+      border-left: 1px solid $brand;
       color: $brand;
+      padding-left: $line-height/2;
     }
   }
 
   .cards {
     background: #fafafa;
-
-    h2 {
-
-      &.title {
-        border-left: 1px solid $brand;
-        color: $brand;
-        padding-left: $line-height/2;
-      }
-    }
 
     .panel {
 
@@ -2411,20 +2400,26 @@ ul.ballot-list {
   }
 
   .features {
-    border-bottom: 1px solid $border;
+    padding: $line-height*2 0;
 
     .panel {
       border: 0;
       margin-bottom: $line-height;
+      padding-left: 0;
 
-      .button {
-        color: white;
+      a {
+        text-decoration: underline;
       }
     }
   }
 
   .slogan {
-    padding-top: $line-height*2;
+    background: #E23135 image-url('home_page_bg_slogan.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*2 0;
 
     p {
       font-size: rem-calc(30);

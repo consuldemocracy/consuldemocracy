@@ -1,27 +1,32 @@
 <div class="expanded features">
 
-  <div class="row" data-equalizer>
-    <div class="small-12 medium-6 column text-center" data-equalizer-watch>
-      <div class="panel">
-        <%= image_tag "welcome_featured_proposals.png", alt: "", class: "margin-bottom" %>
-        <h2><%= t('welcome.featured.proposals.title') %></h2>
-        <p><%= t('welcome.featured.proposals.text') %></p>
-        <%= link_to t('welcome.featured.proposals.link'), proposals_path, class: "button" %>
+  <div class="row">
+    <div class="small-12 column">
+      <h2 class="title margin-bottom">
+        <%= t('welcome.featured.features',
+               org_name: setting['org_name']) %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row margin-top" data-equalizer>
+    <div class="small-12 medium-6 column">
+      <%= image_tag "welcome_featured_proposals.png", alt: "" %>
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t('welcome.featured.proposals.title') %></h3>
+        <p>
+          <%= t('welcome.featured.proposals.text') %>
+        </p>
+        <%= link_to t('welcome.featured.proposals.link'), proposals_path %>
       </div>
     </div>
 
-    <div class="small-12 medium-6 column text-center" data-equalizer-watch>
-      <div class="panel">
-        <%= image_tag "welcome_featured_sps.png", alt: "", class: "margin-bottom" %>
-        <h2><%= t('welcome.featured.spending_proposals.title') %></h2>
-        <p><%= t('welcome.featured.spending_proposals.text') %></p>
-        <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
-          <%= link_to t('welcome.featured.spending_proposals.link'), participatory_budget_path, class: "button" %>
-        <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
-          <%= link_to t('welcome.featured.spending_proposals.see_results'), participatory_budget_path, class: "button" %>
-        <% else %>
-          <%= link_to t('welcome.featured.spending_proposals.link_close'), participatory_budget_path, class: "button" %>
-        <% end %>
+    <div class="small-12 medium-6 column">
+      <%= image_tag "welcome_featured_budgets.png", alt: "" %>
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t('welcome.featured.budgets.title') %></h3>
+        <p><%= t('welcome.featured.budgets.text') %></p>
+        <%= link_to t('welcome.featured.budgets.link'), participatory_budget_path %>
       </div>
     </div>
   </div>
