@@ -18,11 +18,6 @@ class GraphqlController < ApplicationController
       consul_schema = GraphQL::Schema.define do
         query query_type
         max_depth 12
-
-        resolve_type -> (object, ctx) do
-          type_name = object.class.name # look up types by class name
-          ConsulSchema.types[type_name]
-        end
       end
       # ------------------------------------------------------------------------
       set_query_environment
