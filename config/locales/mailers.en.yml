@@ -69,7 +69,7 @@ en:
       follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Dear user,"
@@ -77,7 +77,7 @@ en:
       new_href: "new investment project"
       reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
       sincerely: "Sincerely"
-      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
       unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
