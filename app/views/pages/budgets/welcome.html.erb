@@ -6,13 +6,20 @@
 
   <div class="expanded header">
     <div class="row no-margin-top padding">
-      <div class="small-12 medium-9 column">
-        <h1>Tú decides cómo invertir<br><span>100 millones de euros</span> para Madrid</h1>
-        <p>Los habitantes de Madrid deciden a qué proyectos irán destinados 100 millones de euros del presupuesto del Ayuntamiento para 2018. La gente puede proponer proyectos de gasto, apoyar y votar.<br>
-        El Gobierno asume la decisión como vinculante y la ejecuta a partir del 1 de enero de 2018.</p>
-        <div class="small-12 medium-6 large-4">
-          <%= link_to "Presenta tu proyecto", budget_path(Budget.first), class: "button expanded" %>
+      <div class="small-12 medium-6 column">
+        <h1>Tú decides cómo invertir<br><span>100 millones de euros</span><br>para Madrid</h1>
+        <div class="small-12 medium-6 margin-top">
+          <%= link_to "Presenta tu proyecto",
+                      budget_path(Budget.first),
+                      class: "button expanded" %>
         </div>
+      </div>
+      <div class="small-12 medium-6 column margin-top">
+        <ul class="info">
+          <li>Los habitantes de Madrid deciden a qué proyectos irán destinados <strong>100 millones de euros</strong> del presupuesto del Ayuntamiento para 2018.</li>
+          <li>La gente puede proponer proyectos de gasto, apoyar y votar.</li>
+          <li>El Gobierno asume la decisión como vinculante y la ejecuta a partir del 1 de enero de 2018.</li>
+        </ul>
       </div>
     </div>
 
@@ -22,7 +29,7 @@
           <ul class="no-bullet">
             <li>
               <strong>Recogida de proyectos</strong>
-              <br>12 enero - 6 marzo
+              <br>18 enero - 6 marzo
             </li>
             <li>
               <strong>Apoyos</strong>
@@ -115,15 +122,11 @@
       <h2>
         Distribución del presupuesto participativo y proyectos de gasto
       </h2>
-
-      <p>Un proyecto de gasto es...</p>
-
-      <%= link_to "Entérate de qué tipo de proyectos puedes presentar", "#" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="small-12 medium-9 small-centered column margin-bottom">
+    <div class="small-12 column margin-bottom">
       <table>
         <thead>
           <tr>
@@ -133,23 +136,27 @@
         </thead>
         <tbody>
           <tr>
-            <td class="text-center">
+            <td class="text-center budget-big-number">
               <strong>30.000.000&euro;</strong>
             </td>
-            <td class="text-center">
+            <td class="text-center budget-big-number">
               <strong>70.000.000&euro;</strong>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <p><em>* El reparto por distritos es proporcional a la población e inversamente proporcional a la renta per capita.</em></p>
+      <p class="note"><small>* El reparto por distritos es proporcional a la población e inversamente proporcional a la renta per capita.</small></p>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="small-12 medium-6 column margin-bottom">
       <table>
         <thead>
           <tr>
             <th>Distrito</th>
-            <th class="text-center">Cantidad asignada</th>
+            <th class="text-center district">Cantidad asignada</th>
           </tr>
         </thead>
         <tbody>
@@ -197,6 +204,19 @@
             <td>Moncloa-Aravaca</td>
             <td class="text-center">2.055.934&euro;</td>
           </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="small-12 medium-6 column margin-bottom">
+      <table>
+        <thead>
+          <tr>
+            <th>Distrito</th>
+            <th class="text-center">Cantidad asignada</th>
+          </tr>
+        </thead>
+        <tbody>
           <tr>
             <td>Moratalaz</td>
             <td class="text-center">2.076.549&euro;</td>
@@ -237,20 +257,23 @@
             <td>Villaverde</td>
             <td class="text-center">3.947.434&euro;</td>
           </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
 
-<hr>
-
-<div class="row margin">
-  <div class="small-12 medium-8 column small-centered text-center margin-top">
-    <h2>Presupuestos participativos de 2016</h2>
-    <p>La ciudadanía decidió que el Ayuntamiento de Madrid destinara <strong>60.000.000 de euros</strong> a los proyectos que se plantearon, debatieron y votaron en 2016 para ejecutar a partir del 1 de enero de 2017.</p>
-    <div class="small-12 medium-6 small-centered">
-      <%= link_to "Resultados de 2016", participatory_budget_results_path, class: "button expanded" %>
+<div class="expanded previous-budgets sticky-bottom">
+  <div class="row">
+    <div class="small-12 medium-8 column small-centered text-center">
+      <h2>Presupuestos participativos de 2016</h2>
+      <p>La ciudadanía decidió que el Ayuntamiento de Madrid destinara <strong>60.000.000 de euros</strong> a los proyectos que se plantearon, debatieron y votaron en 2016 para ejecutar a partir del 1 de enero de 2017.</p>
+      <div class="small-12 medium-6 small-centered">
+        <%= link_to "Resultados de 2016", participatory_budget_results_path, class: "button expanded" %>
+      </div>
     </div>
   </div>
 </div>
