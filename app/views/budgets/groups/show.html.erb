@@ -7,11 +7,13 @@
   </div>
 </div>
 
-<div class="row margin-top">
-  <% if params[:unfeasible] %>
-    Propuestas inviables
-  <% end %>
-</div>
+<% if params[:unfeasible] %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h3><%= t("budgets.groups.show.unfeasible_title") %></h3>
+    </div>
+  </div>
+<% end %>
 
 <div class="row margin-top">
   <div id="select-district" class="small-12 medium-7 column select-district">
@@ -39,7 +41,9 @@
 
 <% if params[:unfeasible].blank? %>
   <div class="row margin-top">
-    <%= link_to t("budgets.investments.index.sidebar.unfeasible"),
-                budget_path(@budget, unfeasible: 1) %>
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.groups.show.unfeasible"),
+                 budget_path(@budget, unfeasible: 1) %></small>
+    </div>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 <div class="expanded budget no-margin-top">
-  <div class="row" data-equalizer>
+  <div class="row" data-equalizer data-equalizer-on="medium">
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
       <%= back_link_to budgets_path %>
 
@@ -10,9 +10,8 @@
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
-        <br>
-        <%= t("budgets.phase.#{@budget.phase}") %>
       </p>
+      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
       <% if @budget.accepting? %>
         <% if current_user %>
@@ -38,12 +37,12 @@
 
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
+    <% if params[:unfeasible] %>
+      <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
+    <% end %>
     <table class="table-fixed">
       <thead>
         <th><%= t('budgets.show.group') %></th>
-        <% if params[:unfeasible] %>
-          Propuestas inviables
-        <% end %>
       </thead>
       <tbody>
         <% @budget.groups.each do |group| %>
@@ -71,7 +70,9 @@
 
 <% unless params[:unfeasible] %>
   <div class="row margin-top">
-    <%= link_to t("budgets.investments.index.sidebar.unfeasible"),
-                budget_path(@budget, unfeasible: 1) %>
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.show.unfeasible"),
+                  budget_path(@budget, unfeasible: 1) %></small>
+    </div>
   </div>
 <% end %>
