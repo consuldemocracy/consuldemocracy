@@ -75,22 +75,23 @@ App.LegislationAnnotatable =
         $('#new_legislation_annotation #legislation_annotation_ranges').val(JSON.stringify(@annotation.ranges))
         $('#comments-box').css({top: position.top - $('.calc-comments').offset().top})
 
-        App.LegislationAnnotatable.highlight('#7fff9a')
-        $('#comments-box textarea').focus()
+        unless  $('[data-legislation-open-phase]').data('legislation-open-phase') == false
+          App.LegislationAnnotatable.highlight('#7fff9a')
+          $('#comments-box textarea').focus()
 
-        $("#new_legislation_annotation").on("ajax:complete", (e, data, status, xhr) ->
-          if data.status == 200
-            App.LegislationAnnotatable.remove_highlight()
-            $("#comments-box").html("").hide()
-            $.ajax
-              method: "GET"
-              url: annotation_url + "/annotations/" + data.responseJSON.id + "/comments"
-              dataType: 'script'
-          else
-            $(e.target).find('label').addClass('error')
-            $('<small class="error">' + data.responseJSON[0] + '</small>').insertAfter($(e.target).find('textarea'))
-          return true
-        )
+          $("#new_legislation_annotation").on("ajax:complete", (e, data, status, xhr) ->
+            if data.status == 200
+              App.LegislationAnnotatable.remove_highlight()
+              $("#comments-box").html("").hide()
+              $.ajax
+                method: "GET"
+                url: annotation_url + "/annotations/" + data.responseJSON.id + "/comments"
+                dataType: 'script'
+            else
+              $(e.target).find('label').addClass('error')
+              $('<small class="error">' + data.responseJSON[0] + '</small>').insertAfter($(e.target).find('textarea'))
+            return true
+          )
         return
     ).bind(this)
 
