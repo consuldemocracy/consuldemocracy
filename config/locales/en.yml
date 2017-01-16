@@ -252,9 +252,9 @@ en:
       no_notifications: You don't have new notifications
       open: open
       open_city_slogan_html: In Madrid their inhabitants, <strong>discuss the topics</strong> they are concerned about, <strong>propose ideas</strong> to improve their lives and <strong>decide among themselves</strong> which ones will be carried out.
-      open_city_slogan_short_html: '"Single ticket for public transport" and "Madrid 100% sustainable".'
+      open_city_slogan_short_html: 'Single ticket for public transport, Madrid 100% sustainable and Remodeling of Plaza España.'
       open_city_title:  "In February #YouDecide"
-      lead_text_html: "These are the first two citizen proposals you can vote from <strong>the 13 to the 19 of February of 2017</strong>."
+      lead_text_html: "Be part of a historical process. Decide what the City Council should do from <strong>the 13 to the 19 of February of 2017</strong>."
       open_gov: Open government
       proposals: Proposals
       processes: Processes
@@ -758,7 +758,7 @@ en:
       features: "Participate on %{org_name}"
       proposals:
         title: Create citizen proposals
-        text: "Do you have an idea for Madrid? Propose, you have a year to get %{supports} supports for the City Council take your idea out."
+        text: "Do you have an idea for Madrid? Propose it. If 1% of the people of Madrid support it, we will vote to make it out."
         link: See citizen proposals
       budgets:
         title: Participatory budgeting
