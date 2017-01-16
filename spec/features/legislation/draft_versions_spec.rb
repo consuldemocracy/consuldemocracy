@@ -135,6 +135,18 @@ feature 'Legislation Draft Versions' do
     let(:user) { create(:user) }
     background { login_as user }
 
+    scenario 'Visit as anonymous' do
+      logout
+      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      page.find(:css, ".legislation-annotatable").double_click
+      page.find(:css, ".annotator-adder button").click
+      expect(page).to_not have_css('#legislation_annotation_text')
+      expect(page).to have_content "ou must Sign in or Sign up to leave a comment."
+    end
+
     scenario 'Create' do
       draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
 
@@ -142,8 +154,11 @@ feature 'Legislation Draft Versions' do
 
       page.find(:css, ".legislation-annotatable").double_click
       page.find(:css, ".annotator-adder button").click
-      fill_in 'annotator-field-0', with: 'this is my annotation'
-      page.find(:css, ".annotator-controls a[href='#save']").click
+      page.click_button "Publish Comment"
+      expect(page).to have_content "Comment can't be blank"
+
+      fill_in 'legislation_annotation_text', with: 'this is my annotation'
+      page.click_button "Publish Comment"
 
       expect(page).to have_css ".annotator-hl"
       first(:css, ".annotator-hl").click
@@ -167,7 +182,7 @@ feature 'Legislation Draft Versions' do
       first(:css, ".annotator-hl").click
       expect(page).to have_content "my annotation"
 
-      all(".annotator-hl")[1].trigger('mouseover')
+      all(".annotator-hl")[1].trigger('click')
       expect(page).to have_content "my other annotation"
     end
   end

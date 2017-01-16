@@ -2,6 +2,7 @@ class Legislation::AnnotationsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   before_action :authenticate_user!, only: [:create]
+  before_action :convert_ranges_parameters, only: [:create]
 
   load_and_authorize_resource :process
   load_and_authorize_resource :draft_version, through: :process
@@ -30,7 +31,7 @@ class Legislation::AnnotationsController < ApplicationController
       track_event
       render json: @annotation.to_json
     else
-      render json: {}, status: :unprocessable_entity
+      render json: @annotation.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -44,11 +45,17 @@ class Legislation::AnnotationsController < ApplicationController
     @annotation = Legislation::Annotation.find(params[:annotation_id])
   end
 
+  def new
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
     def annotation_params
       params
-        .require(:annotation)
+        .require(:legislation_annotation)
         .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
     end
 
@@ -56,6 +63,13 @@ class Legislation::AnnotationsController < ApplicationController
       ahoy.track "legislation_annotation_created".to_sym,
                  "legislation_annotation_id": @annotation.id,
                  "legislation_draft_version_id": @draft_version.id
+    end
+
+    def convert_ranges_parameters
+      if params[:legislation_annotation] && params[:legislation_annotation][:ranges] && params[:legislation_annotation][:ranges].is_a?(String)
+        params[:legislation_annotation][:ranges] = JSON.parse(params[:legislation_annotation][:ranges])
+      end
+    rescue JSON::ParserError
     end
 
 end

@@ -15,7 +15,7 @@ describe Legislation::AnnotationsController do
 
       post :create, process_id: @process.id,
                     draft_version_id: @draft_version.id,
-                    annotation: {
+                    legislation_annotation: {
                         "quote"=>"Ordenación Territorial",
                         "ranges"=>[{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>3}],
                         "text": "una anotacion"
@@ -29,7 +29,7 @@ describe Legislation::AnnotationsController do
 
       post :create, process_id: @process.id,
                     draft_version_id: @final_version.id,
-                    annotation: {
+                    legislation_annotation: {
                       "quote"=>"Ordenación Territorial",
                       "ranges"=>[{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>3}],
                       "text": "una anotacion"
@@ -44,7 +44,7 @@ describe Legislation::AnnotationsController do
       expect do
         xhr :post, :create, process_id: @process.id,
                     draft_version_id: @draft_version.id,
-                    annotation: {
+                    legislation_annotation: {
                         "quote"=>"Ordenación Territorial",
                         "ranges"=>[{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>3}],
                         "text": "una anotacion"
@@ -59,12 +59,27 @@ describe Legislation::AnnotationsController do
       expect do
         xhr :post, :create, process_id: @process.id,
                     draft_version_id: @draft_version.id,
-                    annotation: {
+                    legislation_annotation: {
                         "quote"=>"Ordenación Territorial",
                         "ranges"=>[{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>3}],
                         "text": "una anotacion"
                       }
       end.to_not change { @draft_version.annotations.count }
     end
+
+    it 'should create an annotation by parsing parameters in JSON' do
+      sign_in @user
+
+      expect do
+        xhr :post, :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote"=>"Ordenación Territorial",
+                        "ranges"=>[{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>3}].to_json,
+                        "text": "una anotacion"
+                      }
+      end.to change { @draft_version.annotations.count }.by(1)
+    end
+
   end
 end
