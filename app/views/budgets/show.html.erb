@@ -41,6 +41,9 @@
     <table class="table-fixed">
       <thead>
         <th><%= t('budgets.show.group') %></th>
+        <% if params[:unfeasible] %>
+          Propuestas inviables
+        <% end %>
       </thead>
       <tbody>
         <% @budget.groups.each do |group| %>
@@ -48,10 +51,14 @@
             <td>
               <% if group.headings.count == 1 %>
                 <%= link_to group.name,
-                            budget_investments_path(@budget, heading_id: group.headings.first.id),
+                            budget_investments_path(@budget,
+                              heading_id: group.headings.first.id,
+                              unfeasible: params[:unfeasible]),
                             data: { no_turbolink: true } %>
               <% else %>
-                <%= link_to group.name, budget_group_path(@budget, group) %>
+                <%= link_to group.name,
+                            budget_group_path(@budget, group,
+                              unfeasible: params[:unfeasible]) %>
               <% end %>
               <br>
             </td>
@@ -61,3 +68,10 @@
     </table>
   </div>
 </div>
+
+<% unless params[:unfeasible] %>
+  <div class="row margin-top">
+    <%= link_to t("budgets.investments.index.sidebar.unfeasible"),
+                budget_path(@budget, unfeasible: 1) %>
+  </div>
+<% end %>

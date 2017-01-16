@@ -8,6 +8,12 @@
 </div>
 
 <div class="row margin-top">
+  <% if params[:unfeasible] %>
+    Propuestas inviables
+  <% end %>
+</div>
+
+<div class="row margin-top">
   <div id="select-district" class="small-12 medium-7 column select-district">
     <div class="row">
       <% @group.headings.each_slice(7) do |slice| %>
@@ -16,7 +22,8 @@
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %>">
               <%= link_to heading.name,
-                          budget_investments_path(heading_id: heading.id),
+                          budget_investments_path(heading_id: heading.id,
+                                                  unfeasible: params[:unfeasible]),
                           data: { no_turbolink: true } %><br>
             </span>
           <% end %>
@@ -29,3 +36,10 @@
     <%= image_tag "map.jpg" %>
   </div>
 </div>
+
+<% if params[:unfeasible].blank? %>
+  <div class="row margin-top">
+    <%= link_to t("budgets.investments.index.sidebar.unfeasible"),
+                budget_path(@budget, unfeasible: 1) %>
+  </div>
+<% end %>
