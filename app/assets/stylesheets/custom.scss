@@ -18,7 +18,7 @@
 // 16. Si te sientes gato
 // 17. Blas Bonilla
 // 18. Voluntarios mesas presenciales
-// 19. Budgets welcome
+// 19. Budgets custom
 //
 
 // 01. Global styles
@@ -2612,9 +2612,10 @@ ul.ballot-list {
   }
 }
 
-// 19. Budgets welcome
+// 19. Budgets custom
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+$campaign-black:   #605F5D;
 $campaign-blue:    #009FDE;
 $campaign-brown:   #EFEDE7;
 $campaign-red:     #E23135;
@@ -2644,7 +2645,7 @@ $campaign-yellow:  #FFDB19;
   .budgets-timeline {
 
     h3 {
-      background: #E23135;
+      background: $campaign-red;
       color: white;
       padding: $line-height/4 $line-height/2;
 
@@ -2661,20 +2662,16 @@ $campaign-yellow:  #FFDB19;
 
   @include breakpoint(large) {
     .block-border-left {
-      border-left: 3px solid #E23135;
+      border-left: 3px solid $campaign-red;
     }
 
     .block-border-right {
-      border-right: 3px solid #E23135;
+      border-right: 3px solid $campaign-red;
     }
   }
 
   img {
     margin-top: -1px;
-  }
-
-  .highlight {
-    background: #ECEBF6;
   }
 
   .margin {
@@ -2724,7 +2721,7 @@ $campaign-yellow:  #FFDB19;
 }
 
 .block-yellow {
-  background: #FFDB19;
+  background: $campaign-yellow;
   padding-right: 0;
 
   h3, p, a {
@@ -2745,7 +2742,7 @@ $campaign-yellow:  #FFDB19;
     padding: $line-height/2 0;
 
     li {
-      border-top: 1px solid #605F5D;
+      border-top: 1px solid $campaign-black;
       padding: $line-height/2 0;
 
       &:first-child {
@@ -2753,7 +2750,7 @@ $campaign-yellow:  #FFDB19;
       }
 
       @include breakpoint(medium) {
-        border-left: 1px solid #605F5D;
+        border-left: 1px solid $campaign-black;
         border-top: 0;
         display: inline-block;
         padding: $line-height/2 $line-height;
@@ -2770,4 +2767,94 @@ $campaign-yellow:  #FFDB19;
 .previous-budgets {
   border-top: 1px solid $border;
   padding: $line-height*2 0;
+}
+
+// Overrides budgets default colors
+// -------------------------------
+
+.expanded.budget, .jumbo-budget {
+
+  h1, h2, p, a.back, .icon-angle-left {
+    color: $text;
+  }
+
+  a.button, &.button {
+    background: black;
+    color: white;
+  }
+
+  .info {
+    background: $campaign-yellow;
+
+    p {
+      color: black;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid $campaign-yellow;
+    }
+  }
+}
+
+.budget-investment .panel .label-budget-investment,
+.budget-investment .panel .icon-budget,
+.budget-investment-show .label-budget-investment,
+.budget-investment-show .icon-budget {
+  color: #5A6175;
+}
+
+.progress-votes {
+
+  .progress {
+    background: #212033;
+  }
+
+  .progress-meter {
+    background: #fdcb10;
+  }
+
+  .spent-amount-text:before {
+    color: #a5a1ff;
+  }
+
+  .total-amount {
+    color: white;
+  }
+}
+
+.ballot {
+
+  h2, h3 {
+
+    span {
+      color: $budget;
+    }
+  }
+
+  h3.subtitle {
+    border-bottom: 3px solid $budget;
+  }
+}
+
+ul.ballot-list {
+
+  li:hover {
+    background: $budget;
+    color: white;
+
+    a, span {
+      color: white;
+    }
+
+    .remove-investment-project .icon-x {
+      color: white;
+    }
+  }
+}
+
+.select-district .active a {
+  background: $budget;
+  color: $text;
 }
