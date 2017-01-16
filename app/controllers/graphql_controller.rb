@@ -52,10 +52,10 @@ class GraphqlController < ApplicationController
     end
 
     def set_query_variables
-      if params[:variables].nil?
+      if params[:variables].blank?
         @query_variables = {}
       else
-        @query_variables = params[:variables]
+        @query_variables = JSON.parse(params[:variables])
       end
     end
 end
