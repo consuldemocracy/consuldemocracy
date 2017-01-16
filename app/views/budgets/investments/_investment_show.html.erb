@@ -53,8 +53,8 @@
       <% end %>
     </div>
 
-    <% if investment.should_show_aside? %>
-      <aside class="small-12 medium-3 column">
+    <aside class="small-12 medium-3 column">
+      <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>
           <div class="sidebar-divider"></div>
           <h2><%= t("budgets.investments.show.supports") %></h2>
@@ -89,21 +89,7 @@
             </div>
           </div>
         <% end %>
-
-        <div class="sidebar-divider"></div>
-        <h2><%= t("budgets.investments.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>"
-               data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
-        </div>
-      </aside>
-    <% else %>
-      <div class="small-12 medium-3 column">
+      <% else %>
         <div class="float-right">
           <span class="label-budget-investment float-left">
             <%= t("budgets.investments.show.title") %>
