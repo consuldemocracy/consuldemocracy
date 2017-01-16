@@ -73,7 +73,7 @@ feature 'Budget Investments' do
       heading = create(:budget_heading, name: "Madrid",   group: group)
 
       visit budget_path(budget)
-      click_link 'Unfeasible projects'
+      click_link 'See unfeasible investments'
 
       click_link "All City"
 
@@ -87,7 +87,8 @@ feature 'Budget Investments' do
       heading2 = create(:budget_heading, name: 'Barajas',     group: group)
 
       visit budget_path(budget)
-      click_link 'Unfeasible projects'
+
+      click_link 'See unfeasible investments'
 
       click_link 'Districts'
       click_link 'Carabanchel'
