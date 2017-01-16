@@ -34,6 +34,8 @@
   font-weight: 700;
 }
 
+$epigraph-font-size: rem-calc(15);
+
 // 02. Hero
 // -----------------
 .legislation-hero {
@@ -63,7 +65,9 @@
 
   #debate-info {
     display: none;
-    margin-top: 1rem;
+    margin-top: 3rem;
+    padding-top: 4rem;
+    border-top: 1px solid darken($border, 10%);
 
     @include breakpoint(medium) {
       margin-bottom: 2rem;
@@ -80,6 +84,7 @@
       }
 
       p {
+        font-size: $base-font-size;
         @include breakpoint(medium) {
           margin-left: 25%;
         }
@@ -97,7 +102,7 @@
   }
 
   .center .button {
-    background: #004A83;
+    background: $brand;
     margin-bottom: 0;
   }
 
@@ -112,6 +117,14 @@
 
   .description {
     margin-bottom: 1rem;
+    
+    p {
+      font-size: $epigraph-font-size;
+    }
+    
+    h4 {
+      font-size: $base-font-size;
+    }
 
     @include breakpoint(medium) {
         margin-bottom: 0;
@@ -145,61 +158,77 @@
 // -----------------
 .legislation-process-categories {
   position: relative;
-
-  svg {
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-
-    @include breakpoint(medium) {
-      transform: rotate(-8deg);
-      top: 0.75rem;
-    }
-  }
-
-  ul {
-    padding-top: 4rem;
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
+  
+  .legislation-process-list {
     border-bottom: 1px solid $medium-gray;
-
-    li {
-      cursor: pointer;
+    margin: 0 1rem 1rem 1rem;
+    
+    @include breakpoint(medium) {
       margin-left: 0;
-      display: inline-block;
-      margin-bottom: 1rem;
-      margin-right: 1rem;
+    }
+    
+    ul {
+      position: relative;
+      max-width: 75rem;
+      margin-left: auto;
+      margin-right: auto;
+      list-style: none;
+      padding-top: 4rem;
+      padding-left: 0;
+      margin-bottom: 0;
+      
+      @include breakpoint(medium) {
+        padding-left: 1rem;
+      }
+      
+      svg {
+        position: absolute;
+        top: 1.25rem;
+        left: -1rem;
 
-      @media (min-width: 950px) {
-        margin-right: 0;
-        margin-left: 3rem;
-        margin-bottom: 0;
+        @include breakpoint(medium) {
+          transform: rotate(-6deg);
+          top: 0.75rem;
+        }
       }
 
-      a,
-      h4 {
-        color: #6D6D6D;
-        margin-bottom: 0;
-      }
-
-      a {
-        &:hover, &:active {
-          text-decoration: none;
+      li {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 1rem 1rem 0;
+        
+        &:first-of-type {
+          margin-left: 0;
         }
 
-        p {
-          margin-bottom: 0;
+        @media (min-width: 950px) {
+          margin: 0 0 0 3rem;
+        }
 
-          @include breakpoint(medium) {
-            margin-bottom: 1rem;
+        a,
+        h4 {
+          color: #6D6D6D;
+          margin-bottom: 0;
+        }
+
+        a {
+          &:hover, &:active {
+            text-decoration: none;
+          }
+
+          p {
+            margin-bottom: 0;
+
+            @include breakpoint(medium) {
+              margin-bottom: 1rem;
+            }
           }
         }
       }
-    }
 
-    .active {
-      border-bottom: 2px solid $brand;
+      .active {
+        border-bottom: 2px solid $brand;
+      }
     }
   }
 }
@@ -252,7 +281,10 @@
 
 // 05. Debate quiz
 // -----------------
-.debate-quiz {
+.debate-questions {
+  .comments {
+    margin-top: 4rem;
+  }
 
   .quiz-header {
     margin-bottom: 2rem;
@@ -283,6 +315,7 @@
     }
 
     .quiz-next-link {
+      display: block;
 
       &:hover, &:active {
         text-decoration: none;
@@ -321,6 +354,10 @@
   .debate-questions {
     position: relative;
     list-style: none;
+    
+    .participation-not-allowed {
+      padding-bottom: 3rem;
+    }
 
     .control {
       position: relative;
@@ -332,6 +369,7 @@
       border-radius: 4px;
       padding: 0.75rem 2.5rem;
       margin-right: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .active {
@@ -402,12 +440,26 @@
 
   .headline {
     margin-bottom: 0;
+    
+    .headline-small {
+      padding-top: 0.75rem;
+    }
   }
 
   .button-circle {
     line-height: 0;
-    padding: 0.5em;
+    padding: 0em;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    
+    span {
+      padding-left: 1px;
+      
+      &:before {
+        line-height: 1.55;
+      }
+    }
   }
 
   .icon-checkmark-circle {
@@ -457,15 +509,12 @@
     }
 
     span {
-      margin-left: 0.75rem;
+      margin-left: 0.25rem;
       font-style: italic;
       font-size: $small-font-size;
       color: $text-medium;
       vertical-align: top;
-
-      @include breakpoint(medium) {
-        margin-left: 1rem;
-      }
+      line-height: 2.35rem;
     }
 
     .select-box {
@@ -520,17 +569,14 @@
     // Panel calcs for desktop
     @media screen and (min-width: 40em) {
       .calc-index {
-        transition: all 0.25s;
         width: calc(35% - 25px);
       }
 
       .calc-text {
-        transition: all 0.25s;
         width: calc(65% - 25px)
       }
 
       .calc-comments {
-        transition: all 0.25s;
         cursor: pointer;
         background: #F2F2F2;
         width: 50px;
