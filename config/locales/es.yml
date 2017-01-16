@@ -757,7 +757,7 @@ es:
       features: "Participa en %{org_name}"
       proposals:
         title: Crea propuestas ciudadanas
-        text: "¿Tienes una idea para Madrid? Propónla. Si el 1% de los madrileños la apoyan, votaremos si llevarla a cabo."
+        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
         link: Ver propuestas ciudadanas
       budgets:
         title: Presupuestos participativos
