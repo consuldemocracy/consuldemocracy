@@ -1,4 +1,5 @@
 require 'database_cleaner'
+require "csv"
 
 DatabaseCleaner.clean_with :truncation
 
@@ -43,7 +44,7 @@ Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion
 Setting.create(key: 'min_age_to_participate', value: '16')
 
 puts "Creating Geozones"
-['Gondoles nord', 'Gondoles sud', 'Choisy nord', 'Centre nord', 'Centre sud', 'Choisy sud'  ].each { |i| Geozone.create(name: "Quartier #{i}", external_code: i.ord, census_code: i.ord) }
+['Toute la ville', '1er', '2ème', '3ème', '4ème', '5ème'  ].each { |i| Geozone.create(name: "Quartier #{i}", external_code: i.ord, census_code: i.ord) }
 
 puts "Creating Users"
 
@@ -106,31 +107,10 @@ not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
 puts "Creating Tags Categories"
 
-ActsAsTaggableOn::Tag.create!(name:  "Solidarité et cohésion sociale", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Propreté", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Economie et emploi", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Environnement", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Cadre de vie", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Education et jeunesse", featured: true, kind: "category")
-
-
-
-
-Solidarité et cohésion sociale
-  Des abris pour les personnes sans domicile fixe
-  DES BOÎTES À JOUER ET DES LUDOTHÈQUES DANS LES ÉCOLES DES QUARTIERS POPULAIRES
-Propreté
-  Paris plus propre : + de toilettes et + de technologie au service de la Propreté
-Economie et emploi
-  + de commerces dans les quartiers populaires
-Environnement
-  + de nature en ville
-  + de végétal dans les quartiers populaires
-  Des quartiers populaires à énergie positive
-Cadre de vie
-Education et jeunesse
-  DES BOÎTES À JOUER ET DES LUDOTHÈQUES DANS LES ÉCOLES DES QUARTIERS POPULAIRES
-
+tags = ['Solidarité et cohésion sociale', 'Propreté', 'Environnement', 'Cadre de vie', 'Economie', 'Education jeunesse', 'Sport', 'Santé', 'Culture et Patrimoine']
+tags.each do |tag|
+  ActsAsTaggableOn::Tag.create!(name:  tag, featured: true, kind: "category")
+end
 
 
 puts "Creating Debates"
@@ -167,22 +147,23 @@ end
 
 puts "Creating Proposals"
 
-tags = Faker::Lorem.words(25)
-(1..30).each do |i|
+file = File.expand_path('../dev_seeds_fr.csv', __FILE__)
+CSV.foreach(file, :headers => true) do |row|
   author = User.reorder("RANDOM()").first
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
-                              title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3) + "?",
+                              title: row[0],
+                              question: row[2],
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
-                              description: description,
+                              description: row[3],
                               created_at: rand((Time.current - 1.week) .. Time.current),
-                              tag_list: tags.sample(3).join(','),
+                              tag_list: row[1],
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
   puts "    #{proposal.title}"
+
+
 end
 
 puts "Creating Archived Proposals"
@@ -208,16 +189,16 @@ end
 
 
 tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-(1..30).each do
+file = File.expand_path('../dev_seeds_fr.csv', __FILE__)
+CSV.foreach(file, :headers => true) do |row|
   author = User.reorder("RANDOM()").first
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: author,
-                              title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3) + "?",
+                              title: row[0],
+                              question: row[2],
                               summary: Faker::Lorem.sentence(3),
                               responsible_name: Faker::Name.name,
                               external_url: Faker::Internet.url,
-                              description: description,
+                              description: row[3],
                               created_at: rand((Time.current - 1.week) .. Time.current),
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
