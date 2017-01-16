@@ -8,7 +8,11 @@
 
 <div class="comments-wrapper">
   <div class="comment-input">
-    <% if user_signed_in? %>
+    <% if !@process.open_phase?(:allegations) %>
+      <div data-alert class="callout primary">
+        <%= t("legislation.annotations.form.phase_not_open") %>
+      </div>
+    <% elsif user_signed_in? %>
       <%= form_for Legislation::Annotation.new, url: legislation_process_draft_version_annotations_path(@process, @draft_version), remote: true do |f| %>
         <%= f.text_area :text %>
 
@@ -22,10 +26,10 @@
       <% end %>
     <% else %>
       <div data-alert class="callout primary">
-        <%= t("debates.show.login_to_comment",
-            signin: link_to(t("votes.signin"), new_user_session_path),
-            signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-        </div>
+        <%= t("legislation.annotations.form.login_to_comment",
+            signin: link_to(t("legislation.annotations.form.signin"), new_user_session_path),
+            signup: link_to(t("legislation.annotations.form.signup"), new_user_registration_path)).html_safe %>
+      </div>
     <% end %>
   </div>
 </div>

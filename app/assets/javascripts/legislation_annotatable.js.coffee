@@ -122,17 +122,6 @@ App.LegislationAnnotatable =
     )
 
     current_user_id = $('html').data('current-user-id')
-    if current_user_id == ""
-      annotator.ui.editor.Editor.template = [
-        '<div class="annotator-outer annotator-editor annotator-hide">',
-        '  <form class="annotator-widget">',
-        '    ' + _t('Unregistered'),
-        '    <div class="annotator-controls">',
-        '      <a href="#cancel" class="annotator-cancel">' + _t('Cancel') + '</a>',
-        '    </div>',
-        '  </form>',
-        '</div>'
-      ].join('\n')
 
     $(".legislation-annotatable").each ->
       $this          = $(this)
@@ -146,8 +135,8 @@ App.LegislationAnnotatable =
             ann["legislation_draft_version_id"] = ann_id
             ann.permissions = ann.permissions || {}
             ann.permissions.admin = []
-        .include(annotator.ui.main, { 
-          element: this, 
+        .include(annotator.ui.main, {
+          element: this,
           viewerExtensions: [App.LegislationAnnotatable.viewerExtension],
           editorExtensions: [App.LegislationAnnotatable.editorExtension]
         })
