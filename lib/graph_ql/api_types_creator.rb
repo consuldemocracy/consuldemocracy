@@ -54,7 +54,7 @@ module GraphQL
           when :multiple_association
             field_type = field_type.first
             connection(field_name, -> { api_types_creator.created_types[field_type].connection_type }) do
-              resolve -> (object, arguments, context) { field_type.public_for_api }
+              resolve -> (object, arguments, context) { field_type.public_for_api & object.send(field_name) }
             end
           end
         end
