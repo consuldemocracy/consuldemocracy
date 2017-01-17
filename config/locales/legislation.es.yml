@@ -81,6 +81,11 @@ es:
         allegations_dates: Alegaciones
         final_publication_date: Publicación resultados
     questions:
+      comments:
+        comment_button: Publicar respuesta
+        comments_title: Respuestas abiertas
+        form:
+          leave_comment: Deja tu respuesta
       question:
         comments:
           zero: Sin comentarios
@@ -105,5 +110,3 @@ es:
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
         verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
-    shared:
-      comments: Comentarios

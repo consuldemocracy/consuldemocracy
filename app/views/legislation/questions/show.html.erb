@@ -47,7 +47,7 @@
       </div>
     </aside>
   </div>
-  
-  <%= render 'legislation/shared/comments', commentable: @question %>
+
+  <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree, comment_flags: @comment_flags } %>
 
 </section>

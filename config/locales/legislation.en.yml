@@ -81,6 +81,11 @@ en:
         allegations_dates: Allegations
         final_publication_date: Final result publication
     questions:
+      comments:
+        comment_button: Publish answer
+        comments_title: Open answers
+        form:
+          leave_comment: Leave your answer
       question:
         comments:
           zero: No comments
@@ -105,5 +110,3 @@ en:
         verified_only: Only verified users can participate, %{verify_account}.
         verify_account: verify your account
         debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
-    shared:
-      comments: Comments

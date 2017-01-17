@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <%= render 'legislation/shared/comments', commentable: @annotation %>
+        <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree, comment_flags: @comment_flags } %>
 
       </div>
     </div>

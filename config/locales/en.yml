@@ -62,6 +62,7 @@ en:
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
+    comments_title: Comments
     reply_button: Publish reply
     reply_link: Reply
   debates:

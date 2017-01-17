@@ -62,6 +62,7 @@ es:
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
+    comments_title: Comentarios
     reply_button: Publicar respuesta
     reply_link: Responder
   debates:

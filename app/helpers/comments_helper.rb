@@ -1,11 +1,31 @@
 module CommentsHelper
 
+  def comment_tree_title_text(commentable)
+    if commentable.class == Legislation::Question
+      t("legislation.questions.comments.comments_title")
+    else
+      t("comments_helper.comments_title")
+    end
+  end
+
+  def leave_comment_text(commentable)
+    if commentable.class == Legislation::Question
+      t("legislation.questions.comments.form.leave_comment")
+    else
+      t("comments.form.leave_comment")
+    end
+  end
+
   def comment_link_text(parent_id)
     parent_id.present? ? t("comments_helper.reply_link") : t("comments_helper.comment_link")
   end
 
-  def comment_button_text(parent_id)
-    parent_id.present?  ? t("comments_helper.reply_button") : t("comments_helper.comment_button")
+  def comment_button_text(parent_id, commentable)
+    if commentable.class == Legislation::Question
+      parent_id.present? ? t("comments_helper.reply_button") : t("legislation.questions.comments.comment_button")
+    else
+      parent_id.present? ? t("comments_helper.reply_button") : t("comments_helper.comment_button")
+    end
   end
 
   def parent_or_commentable_dom_id(parent_id, commentable)
