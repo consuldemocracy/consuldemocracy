@@ -642,52 +642,27 @@ $epigraph-line-height: rem-calc(22);
     }
 
     .draft-index {
-      table {
-        tbody {
-          border: none;
-
-          tr {
-            background: white;
-
-            td {
-              padding: 0.25rem 1rem;
-
-              .icon-plus-square,
-              .icon-minus-square {
-                color: $text-medium;
-                cursor: pointer;
-                vertical-align: sub;
-              }
-
-              a {
-                color: $brand;
-                text-decoration: underline;
-                font-size: $small-font-size;
-              }
-            }
-
-            .collapse-all {
-              padding: 1rem;
-
-              a {
-                color: $text-medium;
-              }
-
-              .icon-plus-square,
-              .icon-minus-square {
-                color: $text-medium;
-              }
-            }
-          }
-
-          .child_group {
-            td {
-              padding: 0 1rem;
-
-              table {
-                margin-bottom: 0.5rem;
-              }
-            }
+      ul:first-child {
+        font-size: 1rem;
+        text-decoration: underline;
+        margin-left: 2.25rem;
+        margin-top: 1.5rem;
+      }
+      
+      ul {
+        list-style: none;
+        
+        li {
+          margin-bottom: 1rem;
+          
+          &::before {
+            cursor: pointer;
+            position: absolute;
+            margin-left: -1.25rem;
+            font-family: "icons";
+            content: "\5a";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
           }
         }
       }
