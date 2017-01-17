@@ -43,8 +43,26 @@ es:
     attributes:
       volunteer_poll:
         email: "Email"
-        availability_week: "De lunes a viernes"
-        availability_weekend: "Sábados y domingos"
+        first_name: "Nombre"
+        last_name: "Apellidos"
+        document_number: "Número de documento"
+        phone: "Número de teléfono de contacto (preferiblemente móvil)"
+        monday_13_morning: Lunes 13 feb mañana
+        monday_13_afternoon: Lunes 13 feb tarde
+        tuesday_14_morning: Martes 14 feb mañana
+        tuesday_14_afternoon: Martes 14 feb tarde
+        wednesday_15_morning: Miércoles 15 feb mañana
+        wednesday_15_afternoon: Miércoles 15 feb tarde
+        thursday_16_morning: Jueves 16 feb mañana
+        thursday_16_afternoon: Jueves 16 feb tarde
+        friday_17_morning: Viernes 17 feb mañana
+        friday_17_afternoon: Viernes 17 feb tarde
+        saturday_18_morning: Sábado 18 feb mañana
+        saturday_18_afternoon: Sábado 18 feb tarde
+        sunday_19_morning: Domingo 19 feb mañana
+        sunday_19_afternoon: Domingo 19 feb tarde
+        monday_20_morning: Lunes 20 feb mañana
+        monday_20_afternoon: Lunes 20 feb tarde
         turns: "turnos"
         any_district: "En cualquier distrito"
         arganzuela: "Arganzuela"

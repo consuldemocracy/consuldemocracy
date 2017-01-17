@@ -19,6 +19,7 @@
 // 17. Blas Bonilla
 // 18. Voluntarios mesas presenciales
 // 19. Budgets custom
+// 20. Landing voting february 2017
 //
 
 // 01. Global styles
@@ -171,6 +172,11 @@ ul.menu > li > a {
     border-bottom: $line-height/2 solid $highlight;
   }
 }
+
+@import 'motion-ui/motion-ui';
+@include foundation-orbit;
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -777,10 +783,19 @@ table {
   }
 }
 
-.menu.border-bottom {
-  border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
-  padding-bottom: $line-height/4;
+.menu {
+
+  &.border-bottom {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+    padding-bottom: $line-height/4;
+  }
+
+  &.border-top {
+    border-top: 1px solid $border;
+    margin-top: $line-height;
+    padding-top: $line-height/4;
+  }
 }
 
 .section-title {
@@ -2318,23 +2333,12 @@ ul.ballot-list {
 .welcome {
 
   .header {
-    background: $brand image-url('home_page_bg.gif');
+    background: #E23135 image-url('home_page_bg.jpg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    height: rem-calc(450);
-    padding-top: $line-height;
-
-    @include breakpoint(medium) {
-      height: rem-calc(562);
-      padding-top: rem-calc(225);
-
-      h1 {
-        font-size: rem-calc(40);
-        line-height: $line-height*2;
-      }
-    }
+    padding: $line-height*2 0;
 
     a.decoration-none {
       text-decoration: none !important;
@@ -2352,21 +2356,21 @@ ul.ballot-list {
 
     .button {
       background: white;
+      color: $text;
+    }
+  }
+
+  h2 {
+
+    &.title {
+      border-left: 1px solid $brand;
       color: $brand;
+      padding-left: $line-height/2;
     }
   }
 
   .cards {
     background: #fafafa;
-
-    h2 {
-
-      &.title {
-        border-left: 1px solid $brand;
-        color: $brand;
-        padding-left: $line-height/2;
-      }
-    }
 
     .panel {
 
@@ -2410,20 +2414,26 @@ ul.ballot-list {
   }
 
   .features {
-    border-bottom: 1px solid $border;
+    padding: $line-height*2 0;
 
     .panel {
       border: 0;
       margin-bottom: $line-height;
+      padding-left: 0;
 
-      .button {
-        color: white;
+      a {
+        text-decoration: underline;
       }
     }
   }
 
   .slogan {
-    padding-top: $line-height*2;
+    background: #E23135 image-url('home_page_bg_slogan.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*2 0;
 
     p {
       font-size: rem-calc(30);
@@ -2767,6 +2777,222 @@ $campaign-yellow:  #FFDB19;
 .previous-budgets {
   border-top: 1px solid $border;
   padding: $line-height*2 0;
+}
+
+// 20. Landing voting february 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$campaign-blue:   #009FDE;
+$campaign-red:    #E23135;
+$campaign-yellow: #FFDB19;
+
+.landing-voting {
+
+  .header {
+    background: $campaign-red;
+
+    h1, p {
+      color: white;
+    }
+
+    h1 {
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+      }
+    }
+
+    .button {
+      background: white;
+      color: $campaign-red;
+    }
+  }
+
+  .one, .two, .three {
+    font-size: rem-calc(60);
+    font-weight: bold;
+  }
+
+  .one {
+    color: black;
+
+    @include breakpoint(medium) {
+      float: right;
+      padding-right: $line-height;
+    }
+  }
+
+  .two {
+    color: white;
+
+    @include breakpoint(medium) {
+      float: left;
+      padding-left: $line-height;
+    }
+  }
+
+  .three {
+    color: white;
+  }
+
+  .block {
+    padding-top: $line-height*2;
+
+    @include breakpoint(medium) {
+
+      .block-content {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 48px;
+        position: relative;
+      }
+    }
+
+    .block-blue, .block-yellow {
+      padding: $line-height;
+      position: relative;
+
+      @include breakpoint(medium) {
+        padding: 0;
+      }
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(50);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+
+        .button {
+          bottom: 0;
+          margin-bottom: $line-height;
+          max-width: rem-calc(200);
+          position: absolute;
+          right: 24px;
+        }
+      }
+    }
+
+    .block-blue {
+      background: $campaign-blue;
+
+      h2 a, h3 {
+        color: white;
+      }
+
+      .button {
+        background: white;
+        color: $brand;
+      }
+
+      @include breakpoint(large) {
+
+        .button {
+          left: 24px;
+        }
+      }
+    }
+
+    .block-yellow {
+      background: $campaign-yellow;
+
+      h2 a, h3 {
+        color: black;
+      }
+
+      .button {
+        background: black;
+      }
+
+      @include breakpoint(large) {
+
+        .button {
+          right: 24px;
+        }
+      }
+    }
+  }
+
+  .plaza-espana-projects {
+    margin-top: $line-height*2;
+    padding-bottom: $line-height*3;
+    position: relative;
+
+    .block-black {
+      background: black;
+      color: white;
+      padding: $line-height;
+      position: relative;
+
+      h2 a, h3 {
+        color: white;
+      }
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(50);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+
+        .button {
+          max-width: rem-calc(200);
+        }
+      }
+    }
+
+    .button {
+      background: white;
+      color: black;
+    }
+
+    figure {
+      margin: 0 $line-height/2;
+      position: relative;
+
+      figcaption {
+        background: black;
+        font-weight: bold;
+        padding: $line-height;
+        text-align: center;
+        width: 100%;
+
+        a {
+          color: white;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .project-x, .project-y {
+      padding: 0;
+    }
+
+    .project-x figcaption {
+      margin-bottom: $line-height/2;
+    }
+  }
+
+  .how-voting {
+    background: #F7F7F7;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*3 0;
+
+    ul li {
+      line-height: $line-height*2;
+    }
+  }
 }
 
 // Overrides budgets default colors

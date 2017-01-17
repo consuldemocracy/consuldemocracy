@@ -16,8 +16,8 @@
     </li>
     <li>
       <%= layout_menu_link_to t("layouts.header.proposal_ballot"),
-                                proposal_ballots_index_path,
-                                controller_name == 'proposal_ballots',
+                                first_voting_path,
+                                current_page?(first_voting_path),
                                 accesskey: "v" %>
     </li>
     <li>

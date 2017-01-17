@@ -371,7 +371,7 @@ Rails.application.routes.draw do
 
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
-  get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
+  #get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
 
   #Probes
   get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
@@ -410,6 +410,9 @@ Rails.application.routes.draw do
 
   #Campaña Blas Bonilla
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
+
+  #Landings
+  get 'vota', to: 'pages#show', id: 'landings/first_voting', as: 'first_voting'
 
   resources :pages, path: '/', only: [:show]
 end

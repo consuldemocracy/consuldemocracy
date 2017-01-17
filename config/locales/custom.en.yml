@@ -30,6 +30,7 @@ en:
     show:
       vote: "Vote"
       documents: "Documents"
+      documents_finalist: "Finalist documents"
       share: "Share"
       button: "Vote"
       code_html: '<abbr title="Reference">REF.</abbr> %{code}'
@@ -39,25 +40,20 @@ en:
       text_html: "Participate until <u>November 4</u>!"
   cards:
     vallecas:
-      title_html: "#NuevoBarrioVillaDeVallecas"
+      title_html: "Nuevo barrio en Villa de Vallecas"
       text: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
       date_html: "Participate until <strong>January 23th</strong>"
       button: "More information"
     air_quality_plan:
-      title_html: "#DraftAirQuality<br>andClimateChangePlan"
+      title_html: "Draft air quality and climate change plan"
       text: "Information and communication of the measures proposed in the draft of the new air quality and climate change plan of the city of Madrid."
-      date_html: "Participate until <strong>March</strong>"
+      date_html: "Participate until <strong>January 31th</strong>"
       button: "More information"
-    proposal_ballots:
-      title: "In February you decide"
-      text: "Madrid 100% sustainable. Single ticket for public transport. Remodeling Plaza España. Yes or no? Sign up and vote from 13th to 19th February in Decide Madrid."
-      date_html: "<strong>From 13th to 19th of February</strong>"
-      button: "I want to decide"
     plaza:
-      title: "#RemodelingPlazaEspaña"
+      title: "Remodeling Plaza España"
       text: "The preselection of the projects is over. You can already see the results."
       date_html: "Results are <strong>available</strong>"
-      button: "See results"
+      button: "See finalists"
   meta_tags:
     welcome_index:
       title: "Decide Madrid - Participación del Ayuntamiento de Madrid"
