@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Volunteer Poll' do
 
-  scenario "Create", :focus do
+  scenario "Create" do
     visit new_volunteer_poll_path
     fill_in 'volunteer_poll_email', with: "example@example.com"
     fill_in 'volunteer_poll_first_name', with: "Isabel"
