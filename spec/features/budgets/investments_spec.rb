@@ -68,7 +68,7 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "by unfeasibilty link for group with one heading", :focus do
+    scenario "by unfeasibilty link for group with one heading" do
       group   = create(:budget_group,   name: 'All City', budget: budget)
       heading = create(:budget_heading, name: "Madrid",   group: group)
 
@@ -81,7 +81,7 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(expected_path)
     end
 
-    scenario "by unfeasibilty link for group with many headings", :focus do
+    scenario "by unfeasibilty link for group with many headings" do
       group = create(:budget_group, name: 'Districts', budget: budget)
       heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
       heading2 = create(:budget_heading, name: 'Barajas',     group: group)
