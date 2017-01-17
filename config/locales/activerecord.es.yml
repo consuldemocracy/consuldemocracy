@@ -85,7 +85,7 @@ es:
         external_url: "Enlace a documentación adicional"
         heading_id: "¿Tu proyecto es para toda la ciudad o está ubicado en un distrito en concreto?"
         title: "Título"
-        location: "Ubicación"
+        location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
       comment:
         body: "Comentario"
