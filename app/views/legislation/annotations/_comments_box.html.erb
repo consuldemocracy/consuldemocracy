@@ -6,7 +6,7 @@
   <% end %>
 </div>
 <div class="comments-wrapper">
-  <% annotation.comments.each do |comment| %>
+  <% annotation.comments.roots.each do |comment| %>
   <div class="comment">
     <div class="comment-text">
       <p><%= comment.body %></p>
