@@ -13,7 +13,7 @@
           <p class="lead"><%= t("layouts.header.open_city_slogan_short_html") %></p>
           <p><%= t("layouts.header.lead_text_html") %></p>
 
-          <% unless user_signed_in? %>
+          <% if !user_signed_in? %>
             <div class="small-12 medium-6 large-4 small-centered">
               <%= link_to t("layouts.header.sign_up"), new_user_registration_path , class: "button expanded" %>
             </div>
