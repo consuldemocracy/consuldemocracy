@@ -38,7 +38,7 @@ feature 'Legislation' do
       visit legislation_process_question_path(@process, @process.questions.first)
 
       expect(page).to have_content("Question 1")
-      expect(page).to have_content("Comments (0)")
+      expect(page).to have_content("Open answers (0)")
     end
 
     scenario 'shows next question link in question page' do

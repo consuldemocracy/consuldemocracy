@@ -164,7 +164,7 @@ feature 'Commenting legislation questions' do
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
     fill_in "comment-body-legislation_question_#{legislation_question.id}", with: 'Have you thought about...?'
-    click_button 'Publish comment'
+    click_button 'Publish answer'
 
     within "#comments" do
       expect(page).to have_content 'Have you thought about...?'
@@ -176,7 +176,7 @@ feature 'Commenting legislation questions' do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    click_button 'Publish comment'
+    click_button 'Publish answer'
 
     expect(page).to have_content "Can't be blank"
   end
@@ -295,11 +295,11 @@ feature 'Commenting legislation questions' do
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
     fill_in "comment-body-legislation_question_#{legislation_question.id}", with: 'Testing submit button!'
-    click_button 'Publish comment'
+    click_button 'Publish answer'
 
     # The button's text should now be "..."
     # This should be checked before the Ajax request is finished
-    expect(page).to_not have_button 'Publish comment'
+    expect(page).to_not have_button 'Publish answer'
 
     expect(page).to have_content('Testing submit button!')
   end
@@ -313,7 +313,7 @@ feature 'Commenting legislation questions' do
 
       fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am moderating!"
       check "comment-as-moderator-legislation_question_#{legislation_question.id}"
-      click_button "Publish comment"
+      click_button "Publish answer"
 
       within "#comments" do
         expect(page).to have_content "I am moderating!"
@@ -369,7 +369,7 @@ feature 'Commenting legislation questions' do
 
       fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am your Admin!"
       check "comment-as-administrator-legislation_question_#{legislation_question.id}"
-      click_button "Publish comment"
+      click_button "Publish answer"
 
       within "#comments" do
         expect(page).to have_content "I am your Admin!"
