@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229110336) do
+ActiveRecord::Schema.define(version: 20170117122632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -569,12 +569,12 @@ ActiveRecord::Schema.define(version: 20161229110336) do
     t.boolean  "accepted_delegation_alert",                                   default: false
     t.string   "gender",                                           limit: 10
     t.datetime "date_of_birth"
-    t.boolean  "email_on_proposal_notification",            default: true
-    t.boolean  "email_digest",                              default: true
-    t.boolean  "email_on_direct_message",                   default: true
-    t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-12-21 17:55:08', null: false
-    t.boolean  "created_from_signature",                    default: false
+    t.boolean  "email_on_proposal_notification",                              default: true
+    t.boolean  "email_digest",                                                default: true
+    t.boolean  "email_on_direct_message",                                     default: true
+    t.boolean  "official_position_badge",                                     default: false
+    t.datetime "password_changed_at",                                         default: '2016-12-21 17:55:08', null: false
+    t.boolean  "created_from_signature",                                      default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -646,8 +646,6 @@ ActiveRecord::Schema.define(version: 20161229110336) do
 
   create_table "volunteer_polls", force: :cascade do |t|
     t.string  "email"
-    t.string  "availability_week"
-    t.string  "availability_weekend"
     t.string  "turns"
     t.boolean "any_district"
     t.boolean "arganzuela"
@@ -671,6 +669,25 @@ ActiveRecord::Schema.define(version: 20161229110336) do
     t.boolean "vicalvaro"
     t.boolean "villa_de_vallecas"
     t.boolean "villaverde"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "document_number"
+    t.string  "phone"
+    t.boolean "monday_13_morning"
+    t.boolean "monday_13_afternoon"
+    t.boolean "tuesday_14_morning"
+    t.boolean "tuesday_14_afternoon"
+    t.boolean "wednesday_15_morning"
+    t.boolean "wednesday_15_afternoon"
+    t.boolean "thursday_16_morning"
+    t.boolean "thursday_16_afternoon"
+    t.boolean "friday_17_morning"
+    t.boolean "friday_17_afternoon"
+    t.boolean "saturday_18_morning"
+    t.boolean "saturday_18_afternoon"
+    t.boolean "sunday_19_morning"
+    t.boolean "sunday_19_afternoon"
+    t.boolean "monday_20_morning"
   end
 
   create_table "votes", force: :cascade do |t|

@@ -19,6 +19,30 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :first_name %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :last_name %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :document_number %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :phone %>
+        </div>
+      </div>
+
       <p>
         <strong>¿En qué franjas horarias crees que estarás disponible durante la semana de votación?</strong><br>
         <em>(independientemente de si puedes participar un único día o varios)</em>
@@ -26,10 +50,28 @@
 
       <div class="row">
         <div class="small-12 medium-6 large-4 column">
-          <%= f.collection_select :availability_week, VolunteerPoll::VALID_AVAILABILITY_WEEKS, :to_s, :to_s, include_blank: true %>
-        </div>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= f.collection_select :availability_weekend, VolunteerPoll::VALID_AVAILABILITY_WEEKENDS, :to_s, :to_s, include_blank: true %>
+          <%= f.check_box :monday_13_morning %>
+          <%= f.check_box :monday_13_afternoon %>
+
+          <%= f.check_box :tuesday_14_morning %>
+          <%= f.check_box :tuesday_14_afternoon %>
+
+          <%= f.check_box :wednesday_15_morning %>
+          <%= f.check_box :wednesday_15_afternoon %>
+
+          <%= f.check_box :thursday_16_morning %>
+          <%= f.check_box :thursday_16_afternoon %>
+
+          <%= f.check_box :friday_17_morning %>
+          <%= f.check_box :friday_17_afternoon %>
+
+          <%= f.check_box :saturday_18_morning %>
+          <%= f.check_box :saturday_18_afternoon %>
+
+          <%= f.check_box :sunday_19_morning %>
+          <%= f.check_box :sunday_19_afternoon %>
+
+          <%= f.check_box :monday_20_morning %>
         </div>
       </div>
 
