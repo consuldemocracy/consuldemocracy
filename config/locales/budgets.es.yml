@@ -38,6 +38,8 @@ es:
         tags_label: Temas
         tag_category_label: "Categorías"
         tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+        faq: "¿Qué puedes proponer?"
+        faq_link: "Mira toda la información sobre los presupuestos participativos"
       index:
         title: Presupuestos participativos
         unfeasible: Proyectos de gasto no viables
