@@ -22,6 +22,8 @@ es:
     groups:
       show:
         title: Selecciona una opción
+        unfeasible_title: Propuestas inviables
+        unfeasible: Ver propuestas inviables
     phase:
       accepting: Aceptando proyectos
       reviewing: Revisando proyectos
@@ -103,3 +105,5 @@ es:
     show:
       group: Grupo
       phase: Fase actual
+      unfeasible_title: Propuestas inviables
+      unfeasible: Ver las propuestas inviables

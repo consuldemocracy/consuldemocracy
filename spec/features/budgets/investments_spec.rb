@@ -25,21 +25,6 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario 'Feasibility links' do
-    visit budget_investments_path(budget, heading_id: heading)
-    expect(page).to_not have_content('Feasible projects')
-
-    within('#sidebar') do
-      click_link 'Unfeasible projects'
-    end
-    expect(page).to have_current_path(budget_investments_path(budget, heading_id: heading, unfeasible: 1))
-
-    within('#sidebar') do
-      click_link 'Feasible projects'
-    end
-    expect(page).to have_current_path(budget_investments_path(budget, heading_id: heading, unfeasible: nil))
-  end
-
   context("Search") do
 
     scenario 'Search by text' do
@@ -83,6 +68,35 @@ feature 'Budget Investments' do
         expect(page).to_not have_content(investment3.title)
         expect(page).to_not have_content(investment4.title)
       end
+    end
+
+    scenario "by unfeasibilty link for group with one heading" do
+      group   = create(:budget_group,   name: 'All City', budget: budget)
+      heading = create(:budget_heading, name: "Madrid",   group: group)
+
+      visit budget_path(budget)
+      click_link 'See unfeasible investments'
+
+      click_link "All City"
+
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading.to_param, unfeasible: 1)
+      expect(page).to have_current_path(expected_path)
+    end
+
+    scenario "by unfeasibilty link for group with many headings" do
+      group = create(:budget_group, name: 'Districts', budget: budget)
+      heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
+      heading2 = create(:budget_heading, name: 'Barajas',     group: group)
+
+      visit budget_path(budget)
+
+      click_link 'See unfeasible investments'
+
+      click_link 'Districts'
+      click_link 'Carabanchel'
+
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading1.to_param, unfeasible: 1)
+      expect(page).to have_current_path(expected_path)
     end
   end
 

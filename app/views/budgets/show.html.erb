@@ -1,5 +1,5 @@
 <div class="expanded budget no-margin-top">
-  <div class="row" data-equalizer data-equalize-on="medium">
+  <div class="row" data-equalizer data-equalizer-on="medium">
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
       <%= back_link_to budgets_path %>
 
@@ -12,7 +12,6 @@
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
       <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
-
 
       <% if @budget.accepting? %>
         <% if current_user %>
@@ -41,6 +40,9 @@
 
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
+    <% if params[:unfeasible] %>
+      <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
+    <% end %>
     <table class="table-fixed">
       <thead>
         <th><%= t('budgets.show.group') %></th>
@@ -51,10 +53,16 @@
             <td>
               <% if group.headings.count == 1 %>
                 <%= link_to group.name,
-                            custom_budget_investments_path(@budget, group, heading_id: group.headings.first.to_param),
-                            data: { no_turbolink: true } %>
+                      custom_budget_investments_path(@budget,
+                        group,
+                        heading_id: group.headings.first.to_param,
+                        unfeasible: params[:unfeasible]),
+                        data: { no_turbolink: true } %>
               <% else %>
-                <%= link_to group.name, custom_budget_group_path(@budget, group) %>
+                <%= link_to group.name,
+                      custom_budget_group_path(@budget,
+                        group,
+                        unfeasible: params[:unfeasible]) %>
               <% end %>
               <br>
             </td>
@@ -64,3 +72,12 @@
     </table>
   </div>
 </div>
+
+<% unless params[:unfeasible] %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.show.unfeasible"),
+                  budget_path(@budget, unfeasible: 1) %></small>
+    </div>
+  </div>
+<% end %>
