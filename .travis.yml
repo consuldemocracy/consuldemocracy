@@ -8,7 +8,7 @@ before_script:
   - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
   - bundle exec rake db:setup
 script:
-  - "bundle exec rake knapsack:rspec"
+  - "KNAPSACK_GENERATE_REPORT=true bundle exec rspec spec"
 env:
   - CI_NODE_TOTAL=2 CI_NODE_INDEX=0
   - CI_NODE_TOTAL=2 CI_NODE_INDEX=1
