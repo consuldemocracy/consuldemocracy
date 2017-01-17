@@ -654,16 +654,24 @@ $epigraph-line-height: rem-calc(22);
         
         li {
           margin-bottom: 1rem;
-          
-          &::before {
-            cursor: pointer;
-            position: absolute;
-            margin-left: -1.25rem;
-            font-family: "icons";
-            content: "\5a";
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-          }
+        }
+        .open::before {
+          cursor: pointer;
+          position: absolute;
+          margin-left: -1.25rem;
+          font-family: "icons";
+          content: "\58";
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        .closed::before {
+          cursor: pointer;
+          position: absolute;
+          margin-left: -1.25rem;
+          font-family: "icons";
+          content: "\5a";
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       }
     }
