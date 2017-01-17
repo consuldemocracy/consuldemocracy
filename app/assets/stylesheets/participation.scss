@@ -895,6 +895,11 @@
   .info {
     background: #6A2A72;
 
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
     @include breakpoint(medium) {
       border-top: rem-calc(6) solid #54225C;
     }
