@@ -17,10 +17,10 @@ module Custom::ProbeHelper
   end
 
   def project_x?(probe_option)
-    probe_option.code == "00"
+    probe_option.code == "30"
   end
 
   def project_y?(probe_option)
-    probe_option.code == "00"
+    probe_option.code == "10"
   end
 end
