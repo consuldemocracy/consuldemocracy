@@ -12,6 +12,11 @@
         <% end %>
 
         <h1>
+          <% if project_x?(@probe_option) %>
+            Proyecto X:
+          <% elsif project_y?(@probe_option) %>
+            Proyecto Y:
+          <% end %>
           <%= @probe_option.name %>
           <span>(<%= t("probes.show.code_html", code: @probe_option.code) %>)</span>
         </h1>
