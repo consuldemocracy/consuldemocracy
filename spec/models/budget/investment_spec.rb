@@ -58,10 +58,47 @@ describe Budget::Investment do
   end
 
   describe "#code" do
-    it "returns the investment and budget id" do
-      investment = create(:budget_investment)
-      expect(investment.code).to include("#{investment.id}")
-      expect(investment.code).to include("#{investment.budget.id}")
+    let(:investment) { create(:budget_investment) }
+
+      it "returns the proposal id" do
+        expect(investment.code).to include("#{investment.id}")
+      end
+
+      it "returns the administrator id when assigned" do
+        investment.administrator = create(:administrator)
+        expect(investment.code).to include("#{investment.id}-A#{investment.administrator.id}")
+      end
+  end
+
+  describe "#send_unfeasible_email" do
+    let(:investment) { create(:budget_investment) }
+
+    it "sets the time when the unfeasible email was sent" do
+      expect(investment.unfeasible_email_sent_at).to_not be
+      investment.send_unfeasible_email
+      expect(investment.unfeasible_email_sent_at).to be
+    end
+
+    it "send an email" do
+      expect {investment.send_unfeasible_email}.to change { ActionMailer::Base.deliveries.count }.by(1)
+    end
+  end
+
+  describe "#should_show_votes?" do
+    it "returns true in selecting phase" do
+      budget = create(:budget, phase: "selecting")
+      investment = create(:budget_investment, budget: budget)
+
+      expect(investment.should_show_votes?).to eq(true)
+    end
+
+    it "returns false in any other phase" do
+      Budget::PHASES.reject {|phase| phase == "selecting"}.each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, budget: budget)
+
+        expect(investment.should_show_votes?).to eq(false)
+      end
     end
   end
 
@@ -235,6 +272,18 @@ describe Budget::Investment do
       it "accepts valid selections when selecting is allowed" do
         budget.phase = "selecting"
         expect(district_sp.reason_for_not_being_selectable_by(user)).to be_nil
+      end
+
+      it "rejects votes in two headings of the same group" do
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
     end
   end

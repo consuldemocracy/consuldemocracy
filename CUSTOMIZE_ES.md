@@ -17,6 +17,7 @@ Para adaptarlo puedes hacerlo a través de los directorios que están en custom 
 Aparte de estos directorios también cuentas con ciertos ficheros para:
 
 * `app/assets/stylesheets/custom.css`
+* `app/assets/stylesheets/_custom_settings.css`
 * `app/assets/javascripts/custom.js`
 * `Gemfile_custom`
 * `config/application.custom.rb`
@@ -66,6 +67,11 @@ Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en
 .top-links {
   background: red;
 }
+```
+Si quieres cambiar alguna variable de foundation puedes hacerlo en el fichero `app/assets/stylesheets/_custom_settings.scss`. Por ejemplo para cambiar el color general de la aplicación puedes hacerlo agregando:
+
+```css
+$brand:             #446336;
 ```
 
 Usamos un preprocesador de CSS, [SASS, con la sintaxis SCSS](http://sass-lang.com/guide).

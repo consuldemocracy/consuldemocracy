@@ -426,7 +426,7 @@ feature 'Debates' do
           visit debates_path
 
           click_link "Advanced search"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 debates")
@@ -449,7 +449,7 @@ feature 'Debates' do
           visit debates_path
 
           click_link "Advanced search"
-          select "Municipal Organization", from: "advanced_search_official_level"
+          select Setting['official_level_2_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 debates")
@@ -472,7 +472,7 @@ feature 'Debates' do
           visit debates_path
 
           click_link "Advanced search"
-          select "General director", from: "advanced_search_official_level"
+          select Setting['official_level_3_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 debates")
@@ -495,7 +495,7 @@ feature 'Debates' do
           visit debates_path
 
           click_link "Advanced search"
-          select "City councillor", from: "advanced_search_official_level"
+          select Setting['official_level_4_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 debates")
@@ -518,7 +518,7 @@ feature 'Debates' do
           visit debates_path
 
           click_link "Advanced search"
-          select "Mayoress", from: "advanced_search_official_level"
+          select Setting['official_level_5_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 debates")
@@ -652,7 +652,7 @@ feature 'Debates' do
 
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           select "Last 24 hours",   from: "js-advanced-search-date-min"
 
           click_button "Filter"
@@ -668,14 +668,14 @@ feature 'Debates' do
           click_link "Advanced search"
 
           fill_in "Write the text", with: "Schwifty"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
 
           within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
+            expect(page).to have_select('advanced_search[official_level]', selected: Setting['official_level_1_name'])
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
           end
         end

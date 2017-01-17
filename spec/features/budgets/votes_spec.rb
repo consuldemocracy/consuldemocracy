@@ -55,7 +55,7 @@ feature 'Votes' do
 
     feature 'Single spending proposal' do
       background do
-        @investment = create(:budget_investment, budget: budget)
+        @investment = create(:budget_investment, budget: budget, heading: heading)
       end
 
       scenario 'Show no votes' do
@@ -94,15 +94,13 @@ feature 'Votes' do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.js-participation").hover
-        expect(page).to have_content 'No Selecting Allowed'
+        expect(page).to_not have_css("budget_investment_#{investment.id}_votes")
       end
 
       visit budget_investment_path(budget, investment)
 
       within("#budget_investment_#{investment.id}") do
-        find("div.js-participation").hover
-        expect(page).to have_content 'No Selecting Allowed'
+        expect(page).to_not have_css("budget_investment_#{investment.id}_votes")
       end
     end
   end

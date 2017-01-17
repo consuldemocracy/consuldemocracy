@@ -1383,11 +1383,6 @@ pt-BR:
   shared:
     advanced_search:
       author_type: Por categoria de autor
-      author_type_1: Servidor público
-      author_type_2: Organização municipal
-      author_type_3: Diretor geral
-      author_type_4: Conselheiro municipal
-      author_type_5: Prefeita
       author_type_blank: Selecione um categoria
       date: Por data
       date_1: "Últimas 24 horas"
