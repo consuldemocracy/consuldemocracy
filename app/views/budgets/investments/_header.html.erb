@@ -35,13 +35,15 @@
               </div>
             <% else %>
               <h1><%= @heading.name %></h1>
-              <p class="callout warning inline-block">
-                <%= t("budgets.investments.header.different_heading_assigned_html",
-                      heading_link: link_to(
-                        @assigned_heading.name,
-                        budget_investments_path(@budget, heading: @assigned_heading))
-                     ) %>
-              </p>
+              <div class="small-12 medium-9">
+                <div class="callout warning">
+                  <%= t("budgets.investments.header.different_heading_assigned_html",
+                        heading_link: link_to(
+                          @assigned_heading.name,
+                          budget_investments_path(@budget, heading: @assigned_heading))
+                       ) %>
+                </div>
+              </div>
             <% end %>
           <% else %>
             <h1 class="margin-top"><%= @heading.name %></h1>

@@ -921,6 +921,14 @@
     color: white;
   }
 
+  .callout.warning {
+    font-size: $base-font-size;
+
+    a {
+      color: $color-warning;
+    }
+  }
+
   &.welcome {
     background: $budget image-url('spending_proposals_bg.jpg');
     background-position: 50% 50%;
