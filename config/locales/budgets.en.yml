@@ -40,6 +40,8 @@ en:
         tags_instructions: "Tag this investment. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+        faq: "What can you propose?"
+        faq_link: "See all information of participatory budgets"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
