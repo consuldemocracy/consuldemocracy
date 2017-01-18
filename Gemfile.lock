@@ -97,11 +97,10 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     chronic (0.10.2)
-    ckeditor (4.2.2)
+    ckeditor (4.2.0)
       cocaine
       orm_adapter (~> 0.5.0)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
+    climate_control (0.1.0)
     cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -208,7 +207,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
-    json (1.8.3)
+    json (1.8.6)
     jwt (1.5.4)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
@@ -468,7 +467,7 @@ DEPENDENCIES
   capistrano-rails (= 1.1.8)
   capistrano3-delayed-job (~> 1.0)
   capybara
-  ckeditor (~> 4.2.2)
+  ckeditor (= 4.2.0)
   coffee-rails (~> 4.2.1)
   coveralls
   daemons
@@ -528,3 +527,6 @@ DEPENDENCIES
   unicorn (~> 5.2.0)
   web-console (= 3.3.0)
   whenever
+
+BUNDLED WITH
+   1.13.7
