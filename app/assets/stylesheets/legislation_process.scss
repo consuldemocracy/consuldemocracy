@@ -129,6 +129,11 @@ $epigraph-line-height: rem-calc(22);
       line-height: $epigraph-line-height;
     }
     
+    ul {
+      font-size: $epigraph-font-size;
+      line-height: $epigraph-line-height;
+    }
+    
     h4 {
       font-size: $base-font-size;
     }
