@@ -1,6 +1,8 @@
 class Admin::BudgetsController < Admin::BaseController
-  include FeatureFlags
-  feature_flag :budgets
+  #### commented out so that admins can insert data before it is public
+  #include FeatureFlags
+  #feature_flag :budgets
+  ####
 
   has_filters %w{current finished}, only: :index
 
