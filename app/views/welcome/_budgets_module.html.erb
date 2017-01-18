@@ -15,7 +15,7 @@
           </div>
         <% else %>
           <div class="small-12 medium-6 large-4">
-            <%= link_to "Participa", budget_path(Budget.last) , class: "button expanded" if Budget.last %>
+            <%= link_to "Participa", budgets_welcome_path, class: "button expanded" %>
           </div>
         <% end %>
       </div>
