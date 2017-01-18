@@ -2456,6 +2456,28 @@ ul.ballot-list {
   }
 }
 
+.budgets-module {
+  background: $budget;
+
+  .module {
+    display: table;
+  }
+
+  .module-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .button {
+    background: black;
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+}
+
 // 16. Si te sientes gato
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
