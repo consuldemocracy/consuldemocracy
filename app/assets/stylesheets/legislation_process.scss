@@ -62,9 +62,12 @@ $epigraph-font-size: rem-calc(15);
       color: #8AA8BE;
     }
   }
-
-  #debate-info {
+  
+  #debate-show {
     display: none;
+  }
+
+  .debate-add-info {
     margin-top: 3rem;
     padding-top: 4rem;
     border-top: 1px solid darken($border, 10%);
@@ -437,6 +440,10 @@ $epigraph-font-size: rem-calc(15);
 // -----------------
 .legislation-allegation {
   padding-top: 1rem;
+  
+  #debate-show {
+    margin-top: 2rem;
+  }
 
   .headline {
     margin-bottom: 0;

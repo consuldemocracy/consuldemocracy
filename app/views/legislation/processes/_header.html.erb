@@ -12,8 +12,20 @@
       </div>
     </div>
     
-    <div class="row description">
-      <div id="debate-info" style="display: none" class="small-12 column">
+    <div id="debate-show" class="row description">
+      <div class="small-12 medium-4 column">
+        <h4><%= t('legislation.processes.header_full.description') %></h4>
+        <%= markdown process.description %>
+      </div>
+      <div class="small-12 medium-4 column">
+        <h4><%= t('legislation.processes.header_full.target') %></h4>
+        <%= markdown process.target %>
+      </div>
+      <div class="small-12 medium-4 column">
+        <h4><%= t('legislation.processes.header_full.how_to_participate') %></h4>
+        <%= markdown process.how_to_participate %>
+      </div>
+      <div class="small-12 column debate-add-info">
         <div class="debate-info-wrapper">
           <%= markdown process.additional_info if process.additional_info %>
         </div>
