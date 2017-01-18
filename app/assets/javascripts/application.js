@@ -54,6 +54,7 @@
 //= require legislation
 //= require legislation_allegations
 //= require legislation_annotatable
+//= require watch_form_changes
 //= require custom
 
 var initialize_modules = function() {
@@ -83,6 +84,7 @@ var initialize_modules = function() {
   App.Legislation.initialize();
   if ( $(".legislation-annotatable").length )
     App.LegislationAnnotatable.initialize();
+  App.WatchFormChanges.initialize();
 };
 
 $(function(){
