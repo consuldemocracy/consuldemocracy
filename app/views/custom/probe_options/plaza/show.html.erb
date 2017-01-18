@@ -2,7 +2,7 @@
   <%= render "probe_options/plaza/header" %>
 <% end %>
 
-<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_01132017"] do %>
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_01182017"] do %>
   <div class="probe-show">
     <div class="row">
       <div class="small-12 medium-9 column">
@@ -30,6 +30,7 @@
 
         <% if finalist?(@probe_option) %>
           <%= render "probe_options/plaza/video_#{@probe_option.code}" %>
+          <%= render "probe_options/plaza/finalist_docs" %>
         <% else %>
           <div class="margin">
             <%= image_tag @probe_option.original_image_url, alt: @probe_option.name %>
