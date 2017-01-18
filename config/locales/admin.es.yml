@@ -198,6 +198,11 @@ es:
           start: Inicio
           end: Fin
           use_markdown: Usa Markdown para formatear el texto
+          title_placeholder: Escribe el título del proceso
+          description_placeholder: Añade una descripción del proceso
+          target_placeholder: Describe a quién va dirigido
+          how_to_participate_placeholder: Describe cómo participar
+          additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso
           delete: Borrar
@@ -247,6 +252,9 @@ es:
             status:
               draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
               published: Será visible para todo el mundo
+          title_placeholder: Escribe el título de esta versión del borrador
+          changelog_placeholder: Describe cualquier cambio relevante con la versión anterior
+          body_placeholder: Escribe el texto del borrador
         index:
           title: Versiones del borrador
           create: Crear versión
@@ -283,6 +291,8 @@ es:
             error: Error
         form:
           add_option: +Añadir respuesta cerrada
+          title_placeholder: Escribe un título a la pregunta
+          value_placeholder: Escribe una respuesta cerrada
         index:
           back: Volver
           title: Preguntas asociadas a este proceso

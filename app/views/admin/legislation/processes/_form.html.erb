@@ -119,7 +119,8 @@
     </div>
     <div class="small-12 medium-8 column">
       <%= f.text_field :title,
-                       label: false %>
+                       label: false,
+                       placeholder: t('admin.legislation.processes.form.title_placeholder') %>
     </div>
   </div>
 
@@ -131,7 +132,8 @@
     <div class="small-12 medium-8 column">
       <%= f.text_area :description,
                        label: false,
-                       rows: 5 %>
+                       rows: 5,
+                       placeholder: t('admin.legislation.processes.form.description_placeholder') %>
     </div>
   </div>
 
@@ -143,7 +145,8 @@
     <div class="small-12 medium-8 column">
       <%= f.text_area :target,
                        label: false,
-                       rows: 5 %>
+                       rows: 5,
+                       placeholder: t('admin.legislation.processes.form.target_placeholder') %>
     </div>
   </div>
 
@@ -155,7 +158,8 @@
     <div class="small-12 medium-8 column">
       <%= f.text_area :how_to_participate,
                        label: false,
-                       rows: 5 %>
+                       rows: 5,
+                       placeholder: t('admin.legislation.processes.form.how_to_participate_placeholder') %>
     </div>
   </div>
 
@@ -167,7 +171,8 @@
     <div class="small-12 medium-8 column">
       <%= f.text_area :additional_info,
                        label: false,
-                       rows: 10 %>
+                       rows: 10,
+                       placeholder: t('admin.legislation.processes.form.additional_info_placeholder') %>
     </div>
   </div>
 
