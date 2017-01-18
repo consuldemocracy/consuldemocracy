@@ -73,8 +73,10 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'presupuestos/faq', to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
-  get 'presupuestos',  to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+  get 'presupuestos/faq',     to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
+  get 'presupuestos',         to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+  get 'participatory_budget', to: 'pages#show', id: 'budgets/welcome',  as: 'participatory_budget'
+  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'budgets/welcome'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
@@ -362,13 +364,10 @@ Rails.application.routes.draw do
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/participa/')
-  get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
   get 'noticias', to: 'pages#show', id: 'news'
-  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
-
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
   #get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
