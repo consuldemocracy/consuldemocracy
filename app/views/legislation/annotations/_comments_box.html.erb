@@ -1,12 +1,12 @@
 <div class="comment-header">
   <span class="icon-comment" aria-hidden="true"></span>
-  <div class="comment-number"><%= t('legislation.annotations.comments.comments_count', count: annotation.comments_count) %></div>
+  <div class="comment-number"><%= t('legislation.annotations.comments.comments_count', count: annotation.comments.roots.count) %></div>
   <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation) do %>
     <span class="icon-expand" aria-hidden="true"></span>
   <% end %>
 </div>
 <div class="comments-wrapper">
-  <% annotation.comments.roots.limit(5).each do |comment| %>
+  <% annotation.comments.roots.sort_by_newest.limit(Legislation::Annotation::COMMENTS_PAGE_SIZE).each do |comment| %>
   <div class="comment">
     <div class="comment-text">
       <p><%= truncate comment.body, length: 250 %></p>
@@ -36,11 +36,39 @@
   <% end %>
 
 </div>
+
 <div class="comment-footer">
   <% if annotation.comments.roots.count > Legislation::Annotation::COMMENTS_PAGE_SIZE %>
     <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation), class: "button strong" do %>
       <%= t('legislation.annotations.comments.see_all') %>
     <% end %>
   <% end %>
-  <a class="button strong publish-comment" title="Publicar comentario" href="#">Publicar comentario</a>
+
+  <% if @process.open_phase?(:allegations) %>
+    <a class="button strong publish-comment" title="Publicar comentario" href="#">Publicar comentario</a>
+  <% end %>
+
+  <% if @process.open_phase?(:allegations) %>
+    <% if user_signed_in? %>
+      <% css_id = parent_or_commentable_dom_id(nil, annotation) %>
+      <div id="js-comment-form-annotation" style="display:none" class="comment-form">
+        <%= form_for @comment, url: legislation_process_draft_version_annotation_new_comment_path(annotation.draft_version.process, annotation.draft_version, annotation), remote: true do |f| %>
+          <%= label_tag "comment-body-#{css_id}", leave_comment_text(annotation) %>
+          <%= f.text_area :body, id: "comment-body-#{css_id}", maxlength: Comment.body_max_length, label: false %>
+          <%= f.hidden_field :commentable_type, value: "Legislation::Annotation" %>
+          <%= f.hidden_field :commentable_id, value: annotation.id %>
+          <%= f.hidden_field :parent_id, value: nil %>
+
+          <%= f.submit comment_button_text(nil, annotation), class: "button" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div data-alert class="callout primary">
+        <%= t("legislation.annotations.form.login_to_comment",
+            signin: link_to(t("legislation.annotations.form.signin"), new_user_session_path),
+            signup: link_to(t("legislation.annotations.form.signup"), new_user_registration_path)).html_safe %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
+

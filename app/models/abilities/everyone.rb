@@ -20,7 +20,7 @@ module Abilities
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:create], Legislation::Answer
-      can [:search, :comments, :read, :create], Legislation::Annotation
+      can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
     end
   end
 end
