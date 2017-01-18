@@ -28,7 +28,7 @@
     </div>
 
     <div class="row draft-allegation medium-collapse">
-      <div class="small-12 calc-index column border-right <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
+      <div class="small-12 calc-index column <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
         <div class="draft-panel">
           <div>
             <span class="icon-banner" aria-hidden="true"></span> <span class="panel-title"><%= t('.text_toc') %></span>
@@ -38,16 +38,18 @@
         <div class="draft-index-rotated center">
           <span class="panel-title"><%= t('.text_toc') %></span>
         </div>
-
-        <div class="draft-index">
-          <%= @draft_version.toc_html.html_safe %>
+        
+        <div data-sticky-container>
+          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky">
+            <%= @draft_version.toc_html.html_safe %>
+          </div>
         </div>
       </div>
-      <div class="small-12 calc-text column border-right">
+      <div class="small-12 calc-text column border-right border-left">
         <div class="draft-panel">
           <div><span class="panel-title"><%= t('.text_body') %></span></div>
         </div>
-        <div class="draft-text">
+        <div id="sticky-panel" class="draft-text">
           <% if @draft_version.final_version? %>
           <section>
           <% else %>

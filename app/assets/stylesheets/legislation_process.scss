@@ -614,6 +614,12 @@ $epigraph-line-height: rem-calc(22);
         border-right: 1px solid $border;
       }
     }
+    
+    .border-left {
+      @include breakpoint(medium) {
+        border-left: 1px solid $border;
+      }
+    }
 
     .draft-panel {
       text-transform: uppercase;
