@@ -187,11 +187,10 @@ $epigraph-font-size: rem-calc(15);
       svg {
         position: absolute;
         top: 1.25rem;
-        left: -1rem;
-
-        @include breakpoint(medium) {
+        
+        @include breakpoint(1280px) {
           transform: rotate(-6deg);
-          top: 0.75rem;
+          left: -1rem;
         }
       }
 
