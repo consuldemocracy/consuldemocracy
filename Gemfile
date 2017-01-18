@@ -39,7 +39,7 @@ gem 'responders', '~> 2.3.0'
 gem 'foundation-rails', '6.2.3.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
-gem 'ckeditor', '4.2.0'
+gem 'ckeditor', git: "https://github.com/galetahub/ckeditor.git"
 gem 'invisible_captcha', '~> 0.9.2'
 gem 'cancancan'
 gem 'social-share-button'
