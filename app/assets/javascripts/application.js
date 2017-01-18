@@ -73,7 +73,7 @@ var initialize_modules = function() {
   App.Forms.initialize();
   App.Tracks.initialize();
   App.ValuationBudgetInvestmentForm.initialize();
-  //App.ValuationSpendingProposalForm.initialize();
+  App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
