@@ -1169,14 +1169,14 @@ table.age-groups {
   }
 
   h1 {
-    color: $budget;
+    color: #7E328A;
   }
 
   .button.budget {
-    background: $budget;
+    background: #7E328A !important;
 
     &:hover {
-      background: $budget-hover;
+      background: #7571BF;
     }
   }
 }
@@ -1194,7 +1194,7 @@ table.age-groups {
 }
 
 .jumbo-delegation {
-  background: $budget image-url('investment_project_delegation.jpg');
+  background: #7E328A image-url('investment_project_delegation.jpg');
   margin-bottom: rem-calc(-96);
 
   @include breakpoint(medium) {
@@ -1212,7 +1212,7 @@ table.age-groups {
 
   .button {
     background: white;
-    color: $budget;
+    color: #7E328A;
   }
 }
 
@@ -1925,7 +1925,7 @@ a.show-hidden-projects {
 }
 
 .big-number {
-  color: $budget;
+  color: #7E328A;
   font-size: rem-calc(60);
   line-height: rem-calc(120);
 
