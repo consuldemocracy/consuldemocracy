@@ -218,6 +218,8 @@ es:
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
       spending_proposals: "Propuestas de inversión"
+    admin:
+      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
   legacy_legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.

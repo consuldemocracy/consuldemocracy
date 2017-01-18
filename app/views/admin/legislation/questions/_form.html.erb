@@ -1,4 +1,4 @@
-<%= form_for [:admin, @process, @question], url: url do |f| %>
+<%= form_for [:admin, @process, @question], url: url, html: {data: {watch_changes: true}} do |f| %>
 
   <% if @question.errors.any? %>
 
