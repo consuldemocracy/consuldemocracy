@@ -21,7 +21,7 @@
           </div>
         <% end %>
         <div class="comment-replies">
-          <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation) do %>
+          <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation, anchor: "comment_#{comment.id}") do %>
             <%= t('legislation.annotations.comments.replies_count', count: comment.children.size) %>
           <% end %>
         </div>
