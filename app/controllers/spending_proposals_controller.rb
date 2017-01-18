@@ -1,5 +1,4 @@
 class SpendingProposalsController < ApplicationController
-  include FeatureFlags
   include CommentableActions
   include FlagActions
 
@@ -13,8 +12,6 @@ class SpendingProposalsController < ApplicationController
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
-
-  feature_flag :spending_proposals
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 

@@ -46,10 +46,20 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
-        can :show, Ballot
+
+        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+        # This line must happen after Budget::Ballot is used (in the previous lines);
+        # otherwise Rails autoloader gets confused in Dev
+        can :show, ::Ballot
+
         if Setting["feature.spending_proposal_features.final_voting_allowed"].present?
-          can [:create, :destroy], BallotLine
+          can [:create, :destroy], ::BallotLine
         end
+
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
       end
@@ -58,7 +68,7 @@ module Abilities
 
       if user.forum?
         can :vote, SpendingProposal
-        can [:create, :destroy], BallotLine
+        can [:create, :destroy], ::BallotLine
       end
 
       can [:create, :read], Answer

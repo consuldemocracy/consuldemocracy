@@ -237,6 +237,16 @@ module CommonActions
 
   def expect_message_insufficient_funds
     expect(page).to have_content "This proposal's price is more than the available amount left"
+  end
+
+  def expect_message_selecting_not_allowed
+    expect(page).to have_content 'No Selecting Allowed'
+    expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_organizations_cannot_vote
+    #expect(page).to have_content 'Organisations are not permitted to vote.'
+    expect(page).to have_content 'Organization'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
@@ -362,6 +372,20 @@ module CommonActions
     click_button "Send invites"
 
     expect(page).to have_content "3 invitations have been sent."
+  end
+
+  def add_spending_proposal_to_ballot(spending_proposal)
+    within("#spending_proposal_#{spending_proposal.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
+    end
+  end
+
+  def add_to_ballot(budget_investment)
+    within("#budget_investment_#{budget_investment.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
+    end
   end
 
 end

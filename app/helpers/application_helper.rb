@@ -37,4 +37,11 @@ module ApplicationHelper
     return false if authorable.blank? || user.blank?
     authorable.author_id == user.id
   end
+
+  def back_link_to(destination_path)
+    destination = destination_path || :back
+    link_to destination, class: "back" do
+      "<span class='icon-angle-left'></span>".html_safe + t("shared.back")
+    end
+  end
 end

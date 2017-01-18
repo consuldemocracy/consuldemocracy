@@ -4,6 +4,11 @@ feature 'Spending proposals' do
 
   let(:author) { create(:user, :level_two, username: 'Isabel') }
 
+  background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
   scenario 'Index' do
     spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal, feasible: true)]
     unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
@@ -182,14 +187,8 @@ feature 'Spending proposals' do
 
     click_button 'Create'
 
-    expect(page).to_not have_content 'Investment project created successfully'
-    expect(page).to have_content '1 error'
-
-    within "#notice" do
-      click_link 'My activity'
-    end
-
-    expect(page).to have_content 'Investment project created successfully'
+    expect(page).to have_content 'Spending proposal created successfully'
+    expect(page).to have_content 'You can access it from My activity'
   end
 
   xscenario 'Errors on create' do
@@ -250,7 +249,7 @@ feature 'Spending proposals' do
 
   context "Destroy" do
 
-    scenario "Admin cannot destroy spending proposals" do
+    xscenario "Admin cannot destroy spending proposals" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       spending_proposal = create(:spending_proposal, author: user)
@@ -374,15 +373,15 @@ feature 'Spending proposals' do
       first(:link, "Spending proposals").click
       click_link "Vote city proposals"
 
-      add_to_ballot(sp1)
-      add_to_ballot(sp2)
+      add_spending_proposal_to_ballot(sp1)
+      add_spending_proposal_to_ballot(sp2)
 
       first(:link, "Spending proposals").click
       click_link "Vote district proposals"
       click_link carabanchel.name
 
-      add_to_ballot(sp4)
-      add_to_ballot(sp5)
+      add_spending_proposal_to_ballot(sp4)
+      add_spending_proposal_to_ballot(sp5)
 
       click_link "Check my ballot"
 

@@ -136,6 +136,7 @@ feature 'Proposals' do
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
@@ -147,6 +148,8 @@ feature 'Proposals' do
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
     expect(page).to have_content author.name
+    expect(page).to have_content 'Refugees'
+    expect(page).to have_content 'Solidarity'
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
@@ -292,69 +295,6 @@ feature 'Proposals' do
     expect(current_path).to eq edit_proposal_path(Proposal.last)
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
-  end
-
-  context 'Tagging' do
-    let(:author) { create(:user) }
-
-    background do
-      login_as(author)
-    end
-
-    scenario 'Category tags', :js do
-      education = create(:tag, name: 'Education', kind: 'category')
-      health    = create(:tag, name: 'Health',    kind: 'category')
-
-      visit new_proposal_path
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
-
-      find('.js-add-tag-link', text: 'Education').click
-      click_button 'Create proposal'
-
-      expect(page).to have_content 'Proposal created successfully.'
-
-      within "#tags_proposal_#{Proposal.last.id}" do
-        expect(page).to have_content 'Education'
-        expect(page).to_not have_content 'Health'
-      end
-    end
-
-    scenario 'Custom tags' do
-      visit new_proposal_path
-
-      fill_in_proposal
-      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
-      click_button 'Create proposal'
-
-      expect(page).to have_content 'Proposal created successfully.'
-      within "#tags_proposal_#{Proposal.last.id}" do
-        expect(page).to have_content 'Refugees'
-        expect(page).to have_content 'Solidarity'
-      end
-    end
-
-    scenario 'using dangerous strings' do
-      author = create(:user)
-      login_as(author)
-
-      visit new_proposal_path
-      fill_in_proposal
-      fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
-
-      click_button 'Create proposal'
-
-      expect(page).to have_content 'Proposal created successfully.'
-      expect(page).to have_content 'user_id1'
-      expect(page).to have_content 'a3'
-      expect(page).to have_content 'scriptalert("hey");script'
-      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
-    end
   end
 
   context 'Geozones' do
@@ -543,35 +483,6 @@ feature 'Proposals' do
     click_button "Save changes"
 
     expect(page).to have_content error_message
-  end
-
-  describe 'Limiting tags shown' do
-    scenario 'Index page shows up to 5 tags per proposal' do
-      create_featured_proposals
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-      create :proposal, tag_list: tag_list
-
-      visit proposals_path
-
-      within('.proposal .tags') do
-        expect(page).to have_content '1+'
-      end
-    end
-
-    scenario 'Index page shows 3 tags with no plus link' do
-      create_featured_proposals
-      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-      create :proposal, tag_list: tag_list
-
-      visit proposals_path
-
-      within('.proposal .tags') do
-        tag_list.each do |tag|
-          expect(page).to have_content tag
-        end
-        expect(page).not_to have_content '+'
-      end
-    end
   end
 
   feature 'Proposal index order filters' do
@@ -825,7 +736,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -848,7 +759,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "Municipal Organization", from: "advanced_search_official_level"
+          select Setting['official_level_2_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -871,7 +782,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "General director", from: "advanced_search_official_level"
+          select Setting['official_level_3_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -894,7 +805,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "City councillor", from: "advanced_search_official_level"
+          select Setting['official_level_4_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -917,7 +828,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "Mayoress", from: "advanced_search_official_level"
+          select Setting['official_level_5_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -1051,7 +962,7 @@ feature 'Proposals' do
 
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           select "Last 24 hours",   from: "js-advanced-search-date-min"
 
           click_button "Filter"
@@ -1068,7 +979,7 @@ feature 'Proposals' do
           click_link "Advanced search"
 
           fill_in "Write the text", with: "Schwifty"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
@@ -1077,7 +988,7 @@ feature 'Proposals' do
 
           within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
+            expect(page).to have_select('advanced_search[official_level]', selected: Setting['official_level_1_name'])
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
           end
         end
@@ -1157,16 +1068,6 @@ feature 'Proposals' do
 
   end
 
-  scenario 'Index tag does not show featured proposals' do
-    featured_proposals = create_featured_proposals
-    proposal = create(:proposal, tag_list: "123")
-
-    visit proposals_path(tag: "123")
-
-    expect(page).to_not have_selector('#proposals .proposal-featured')
-    expect(page).to_not have_selector('#featured-proposals')
-  end
-
   scenario 'Conflictive' do
     good_proposal = create(:proposal)
     conflictive_proposal = create(:proposal, :conflictive)
@@ -1231,25 +1132,6 @@ feature 'Proposals' do
   end
 
   context "Filter" do
-
-    scenario "By category" do
-      education = create(:tag, name: 'Education', kind: 'category')
-      health    = create(:tag, name: 'Health',    kind: 'category')
-
-      proposal1 = create(:proposal, tag_list: education.name)
-      proposal2 = create(:proposal, tag_list: health.name)
-
-      visit proposals_path
-
-      within "#categories" do
-        click_link "Education"
-      end
-
-      within("#proposals") do
-        expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal1.title)
-      end
-    end
 
     context "By geozone" do
 

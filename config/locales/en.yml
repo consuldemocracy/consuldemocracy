@@ -9,8 +9,8 @@ en:
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
-      organization_name_label: Name of organisation
-      organization_responsible_name_placeholder: Representative of the organisation/collective
+      organization_name_label: Name of organization
+      organization_responsible_name_placeholder: Representative of the organization/collective
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
@@ -180,6 +180,7 @@ en:
     proposal_notification: "Notification"
     signature_sheet: Signature sheet
     spending_proposal: Spending proposal
+    budget/investment: Investment
     user: Account
     verification/sms: phone
   forums:
@@ -193,10 +194,10 @@ en:
       delegate_button: "Delegate on %{forum}"
       sign_in_to_delegate: "Sign in to delegate"
       verify_accont_to_delegate: "Verify your account to delegate"
-      no_votes: This Forum has not supported any investment proposals
-      no_city_votes: This Forum has not supported any city investment proposals
-      no_district_votes: This Forum has not supported any district investment proposals
-      confirm: You have already voted some investment proposals. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
+      no_votes: This Forum has not supported any investment projects
+      no_city_votes: This Forum has not supported any city investment projects
+      no_district_votes: This Forum has not supported any district investment projects
+      confirm: You have already voted some investment projects. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
   geozones:
     none: All city
   layouts:
@@ -249,7 +250,7 @@ en:
       new_notifications:
         one: You have a new notification
         other: You have %{count} new notifications
-      no_notifications: You don't have new notifications
+      no_notifications: "You don't have new notifications"
       open: open
       open_city_slogan_html: In Madrid their inhabitants, <strong>discuss the topics</strong> they are concerned about, <strong>propose ideas</strong> to improve their lives and <strong>decide among themselves</strong> which ones will be carried out.
       open_city_slogan_short_html: 'Single ticket for public transport, Madrid 100% sustainable and Remodeling of Plaza España.'
@@ -264,6 +265,15 @@ en:
       sign_up: I want to register
       sign_in: If you have an account %{login}.
       sign_in_link: enter now
+      see_all: See proposals
+      budgets: Participatory budgeting
+  legislation:
+    help:
+      alt: Select the text you want to comment and press the button with the pencil.
+      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
+      text_sign_in: login
+      text_sign_up: sign up
+      title: How I can comment this document?
   locale: English
   notifications:
     index:
@@ -288,14 +298,23 @@ en:
     facebook:
       sign_in: Sign in with Facebook
       sign_up: Sign up with Facebook
+      name: Facebook
     finish_signup:
       title: Add your email address
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
+      name: Google
     twitter:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
+      name: Twitter
+    info_sign_in: "Sign in with:"
+    info_sign_up: "Sign up with:"
+    or_fill: "Or fill the following form:"
+    finish_signup:
+      title: "Additional details"
+      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
   proposals:
     create:
       form:
@@ -440,17 +459,14 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    "yes": "Yes"
+    "no": "No"
     comments:
       title: "Comments"
       login_to_comment: "You must sign in in order to comment"
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
-      author_type_1: 'Public employee'
-      author_type_2: 'Municipal Organization'
-      author_type_3: 'General director'
-      author_type_4: 'City councillor'
-      author_type_5: 'Mayoress'
       date: 'By date'
       date_placeholder: 'DD/MM/YYYY'
       date_range_blank: 'Choose a date'
@@ -484,6 +500,7 @@ en:
     hide: Hide
     print:
       print_button: Print this info
+    search: Search
     show: Show
     suggest:
       debate:
@@ -695,12 +712,13 @@ en:
       deleted: Deleted
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
+      deleted_budget_investment: This investment project has been deleted
       delete_spending_proposal: Delete
       confirm_deletion_spending_proposal: Are you sure? This action can not be undone
       ballot_link_text:
-        zero: You have not voted for any proposal yet.
-        one: You voted one proposal with a cost of %{amount_spent}.
-        other: You voted %{count} proposals with a cost of %{amount_spent}.
+        zero: You have not voted for any investment yet.
+        one: You voted one investment with a cost of %{amount_spent}.
+        other: You voted %{count} investments with a cost of %{amount_spent}.
       ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
       verify_account: verify your account
       filters:
@@ -716,6 +734,9 @@ en:
         spending_proposals:
           one: 1 Spending proposal
           other: "%{count} Spending proposals"
+        budget_investments:
+          one: 1 Investment
+          other: "%{count} Investments"
         ballot: Participatory budget
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
@@ -730,7 +751,7 @@ en:
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
-    organizations: Organisations are not permitted to vote
+    organizations: Organizations are not permitted to vote
     signin: Sign in
     signup: Sign up
     supports: Supports
@@ -740,8 +761,8 @@ en:
     spending_proposals:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on proposals; %{verify_account}.
-      unfeasible: Unfeasible proposal.
       organization: Organisations are not permitted to vote.
+      unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
       no_city_supports_available: You have already used all your city-wide supports.
       no_district_supports_available: You have already used all your district-wide supports.
@@ -751,6 +772,13 @@ en:
       confirm_first_vote_on_district: "Everyone can support the proposal of the city and one district of their choice, If you accept you support this proposal and only can support the proposals for %{district}. This district can't change later. Do you want support this proposal and select this district?"
       confirm_discard_delegation: "If you vote you will stop delegating. "
       no_ballots_allowed: No ballots allowed
+    budget_investments:
+      not_logged_in: You must %{signin} or %{signup} to continue.
+      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      organization: Organizations are not permitted to vote
+      unfeasible: Unfeasible investment projects can not be supported
+      not_voting_allowed: Voting phase is closed
+      different_heading_assigned: You can only support proposals in one district
   welcome:
     featured:
       title: Open processes
@@ -781,19 +809,13 @@ en:
       user_permission_verify_info: "* Only for users on Madrid Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
-  omniauth:
-    finish_signup:
-      title: "Additional details"
-      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
-    twitter:
-      sign_in: "Sign in with Twitter"
-      sign_up: "Sign up with Twitter"
-    facebook:
-      sign_in: "Sign in with Facebook"
-      sign_up: "Sign up with Facebook"
-    google_oauth2:
-      sign_in: "Sign in with Google"
-      sign_up: "Sign up with Google"
+  legislation:
+    help:
+      title: "How I can comment this document?"
+      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
+      text_sign_in: "login"
+      text_sign_up: "sign up"
+      alt: "Select the text you want to comment and press the button with the pencil."
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."

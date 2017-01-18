@@ -1383,11 +1383,6 @@ pt-BR:
   shared:
     advanced_search:
       author_type: Por categoria de autor
-      author_type_1: Servidor público
-      author_type_2: Organização municipal
-      author_type_3: Diretor geral
-      author_type_4: Conselheiro municipal
-      author_type_5: Prefeita
       author_type_blank: Selecione um categoria
       date: Por data
       date_1: "Últimas 24 horas"
@@ -1518,7 +1513,6 @@ pt-BR:
       create:
         flash:
           offices: Escritórios de Apoio ao Cidadão
-          offices_url: http://offices.consul
           success_html: Obrigado por solicitar seu <b>código de segurança máxima (somente
             solicitado em votações finais)</b>. Em poucos dias nós lhe enviaremos
             para seu endereço relacionado nos dados que temos em arquivo. Por favor
@@ -1534,7 +1528,6 @@ pt-BR:
         go_to_index: Ver propostas
         office: Verificar em qualquer %{office}
         offices: Escritórios de Apoio ao Cidadão
-        offices_url: http://offices.consul
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
         user_permission_info: Com a sua conta você pode...

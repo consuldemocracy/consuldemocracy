@@ -6,7 +6,6 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
-  include Commentable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -18,6 +17,7 @@ class Proposal < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :proposal_notifications
+  has_many :comments, as: :commentable
 
   validates :title, presence: true
   validates :summary, presence: true
@@ -97,10 +97,6 @@ class Proposal < ActiveRecord::Base
       summary[group] = search(group).last_week.sort_by_confidence_score.limit(3)
     end
     summary
-  end
-
-  def description
-    super.try :html_safe
   end
 
   def total_votes

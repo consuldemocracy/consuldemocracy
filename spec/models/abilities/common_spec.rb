@@ -9,6 +9,16 @@ describe "Abilities::Common" do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
+  let(:accepting_budget) { create(:budget, phase: 'accepting') }
+  let(:selecting_budget) { create(:budget, phase: 'selecting') }
+  let(:balloting_budget) { create(:budget, phase: 'balloting') }
+
+  let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
+  let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
+  let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
+  let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
+  let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
+  let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
   let(:own_debate) { create(:debate, author: user) }
   let(:own_comment) { create(:comment, author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
@@ -118,6 +128,19 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:destroy, own_spending_proposal) }
 
     it { should be_able_to(:show, Ballot) }
+
+    it { should be_able_to(:create, investment_in_accepting_budget) }
+    it { should_not be_able_to(:create, investment_in_selecting_budget) }
+    it { should_not be_able_to(:create, investment_in_balloting_budget) }
+
+    it { should_not be_able_to(:vote, investment_in_accepting_budget) }
+    it { should be_able_to(:vote, investment_in_selecting_budget) }
+    it { should_not be_able_to(:vote, investment_in_balloting_budget) }
+
+    it { should_not be_able_to(:create, ballot_in_accepting_budget) }
+    it { should_not be_able_to(:create, ballot_in_selecting_budget) }
+    it { should be_able_to(:create, ballot_in_balloting_budget) }
+
     it { should be_able_to(:new, DirectMessage) }
     it { should be_able_to(:create, DirectMessage) }
     it { should be_able_to(:show, own_direct_message) }

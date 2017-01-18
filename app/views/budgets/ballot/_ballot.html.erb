@@ -1,0 +1,54 @@
+<div class="expanded budget no-margin-top padding">
+  <div class="row">
+    <%= render 'shared/back_link' %>
+
+    <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
+
+    <div class="small-12 medium-8 column small-centered text-center">
+      <h2>
+        <%= t("budgets.ballots.show.voted_html",
+            count: @ballot.investments.count) %>
+      </h2>
+      <p>
+        <small>
+          <%= t("budgets.ballots.show.voted_info_html") %>
+        </small>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row ballot">
+  <div class="margin-top">
+    <% @ballot.groups.each do |group| %>
+      <div id="<%= dom_id(group) %>"
+          class="small-12 medium-6 column">
+        <h3 class="subtitle">
+          <%= group.name %> - <%= group.headings.first.name %>
+        </h3>
+        <% if @ballot.has_lines_in_group?(group) %>
+          <h4 class="amount-spent text-right">
+            <%= t("budgets.ballots.show.amount_spent") %>
+            <span>
+              <%= @ballot.formatted_amount_spent(@ballot.heading_for_group(group)) %>
+            </span>
+          </h4>
+        <% else %>
+          <p>
+            <%= t("budgets.ballots.show.zero") %><br>
+          </p>
+        <% end %>
+
+        <ul class="ballot-list">
+          <%= render partial: 'budgets/ballot/investment',
+                     collection: @ballot.investments.by_group(group.id) %>
+        </ul>
+
+        <h4>
+          <%= t("budgets.ballots.show.remaining",
+                amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe %>
+        </h4>
+      </div>
+    <% end %>
+  </div>
+</div>
