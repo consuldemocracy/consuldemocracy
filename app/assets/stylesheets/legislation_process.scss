@@ -35,6 +35,7 @@
 }
 
 $epigraph-font-size: rem-calc(15);
+$epigraph-line-height: rem-calc(22);
 
 // 02. Hero
 // -----------------
@@ -87,7 +88,9 @@ $epigraph-font-size: rem-calc(15);
       }
 
       p {
-        font-size: $base-font-size;
+        font-size: $epigraph-font-size;
+        line-height: $epigraph-line-height;
+        
         @include breakpoint(medium) {
           margin-left: 25%;
         }
@@ -123,14 +126,11 @@ $epigraph-font-size: rem-calc(15);
     
     p {
       font-size: $epigraph-font-size;
+      line-height: $epigraph-line-height;
     }
     
     h4 {
       font-size: $base-font-size;
-    }
-
-    @include breakpoint(medium) {
-        margin-bottom: 0;
     }
   }
 
