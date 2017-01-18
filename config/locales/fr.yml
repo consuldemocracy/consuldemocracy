@@ -3,21 +3,21 @@ fr:
   account:
     show:
       change_credentials_link: Changer mes autorisations
-      email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions
-        ou mes débats
-      email_on_comment_reply_label: Me notifier par email quand quelqu'un répond à
-        mes commentaires
+      email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions ou mes débats
+      email_on_comment_reply_label: Me notifier par email quand quelqu'un répond à mes commentaires
       erase_account_link: Supprimer mon compte
       finish_verification: Finir la vérification
       notifications: Notifications
       organization_name_label: Nom de l'organisation
-      organization_responsible_name_placeholder: Représentant de l'organisation ou
-        du collectif
+      organization_responsible_name_placeholder: Représentant de l'organisation ou du collectif
       personal: Détails personnels
       phone_number_label: Téléphone
       public_activity_label: Garder publique ma liste d'activités
       save_changes_submit: Sauvegarder mes changements
       subscription_to_website_newsletter_label: Recevoir par email la newsletter
+      email_on_direct_message_label:
+      email_digest_label:
+      official_position_badge_label:
       title: Mon compte
       username_label: Nom d'utilisateur
       user_permission_debates: Participer aux débats
@@ -25,13 +25,356 @@ fr:
       user_permission_proposal: Créer de nouvelles propositions
       user_permission_support_proposal: Soutenir des propositions
       user_permission_title: Participation
-      user_permission_verify: Pour pouvoir réaliser toutes ces actions, merci de vérifier
-        votre compte
-      user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur
-        le Recensement de Madrid"
+      user_permission_verify: Pour pouvoir réaliser toutes ces actions, merci de vérifier votre compte
+      user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur le Recensement de la RIVP"
       user_permission_votes: Participer au vote final
       verified_account: Compte vérifié
       verify_my_account: Vérifier mon compte
+  application:
+    close: Fermer
+    menu: Menu
+  comments:
+    comment:
+      admin: Administrateur
+      author: Auteur
+      deleted: Ce commentaire a été supprimé
+      moderator: Modérateur
+      responses:
+        one: 1 réponse
+        other: "%{count} réponses"
+        zero: Aucune réponses
+      user_deleted: Utilisateur supprimé
+      votes:
+        one: 1 vote
+        other: "%{count} votes"
+        zero: Aucun votes
+    form:
+      comment_as_admin: Commenter en tant qu'administrateur
+      comment_as_moderator: Commenter en tant que modérateur
+      leave_comment: Laisser un commentaire
+    orders:
+      most_voted: Le plus voté
+      newest: Plus récent en premier
+      oldest: Plus ancien en premier
+    select_order: Trier par
+    show:
+      return_to_commentable: Revenir à
+  comments_helper:
+    comment_button: Publier un commentaire
+    comment_link: Commentaire
+    reply_button: Publier la réponse
+    reply_link: Répondre
+  debates:
+    create:
+      form:
+        submit_button: Commencer un débat
+    debate:
+      comments:
+        one: 1 commentaire
+        other: "%{count} commentaires"
+        zero: Aucun commentaires
+      debate: Débat
+      votes:
+        one: 1 vote
+        other: "%{count} votes"
+        zero: Aucun vote
+    edit:
+      editing: Modifier le débat
+      form:
+        submit_button: Enregistrer les changements
+      show_link: Voir le débat
+    form:
+      debate_text: Texte initial du debat
+      debate_title: Titre du débat
+      tags_instructions: "Étiquetter ce débat"
+      tags_label: Sujets
+      tags_placeholder: Entrez les étiquettes que vous voulez utiliser, séparées par des virgules (',')
+    index:
+      featured_debates: Présenté
+      filter_topic:
+        one: avec thème '%{topic}'
+        other: avec thème '%{topic}'
+      orders:
+        confidence_score: Mieux noté
+        created_at: plus récent
+        hot_score: Plus active
+        most_commented: Plus commentée
+        relevance: Pertinence
+      search_form:
+        button: Rechercher
+        placeholder: Rechercher des débats...
+        title: Rechercher
+      search_results:
+        one: " contenant le mot '%{search_term}'"
+        other: " contenant le mot '%{search_term}'"
+      select_order: Trier par
+      start_debate: Commencer un débat
+      title: Débats
+    new:
+      form:
+        submit_button: Commencer un débat
+      info: Si vous souhaitez faire une proposition, vous êtez dans la mauvaise section, entrez %{info_link}.
+      info_link: Créer une nouvelles proposition
+      more_info: Plus d'informations
+      recommendation_four: Profitez de cet espace et des voix qui le remplissent. Il vous appartient aussi.
+      recommendation_one: Ne pas utiliser de lettres capitales pour le titre du débat ou pour des phrases entières. Sur internet, c'est considéré comme crier. Et personne n'aime se faire crier dessus.
+      recommendations_title: Recommandations pour créer un débat
+      recommendation_three: La critique sans pitié est la bienvenue. Ceci est un espace pour la reflexion. Mais nous recommandons de conserver de l'élégance et de l'intelligence. Le monde est un endroit meilleur avec ces qualités.
+      recommendation_two: Tout débat ou commentaire suggérant des actions illégales sera supprimé, de même que ceux ayant pour but de saboter l'espace de débat. Tout le reste est autorisé.
+      start_new: Commencer un débat
+    show:
+      author_deleted: Utilisateur supprimé
+      comments:
+        one: 1 commentaire
+        other: "%{count} commentaires"
+        zero: Aucun commentaire
+      comments_title: Commentaires
+      edit_debate_link: Modifier
+      flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
+      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
+      share: Partager
+    update:
+      form:
+        submit_button: Sauvegarder les changements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Vous utilisez Internet Explorer. Pour une navigation plus sûre, %{chrome} ou %{firefox} sont recommandés.
+      ie_title: Ce site internet n'est pas affiché de manière optimale par votre navigateur.
+    footer:
+      accessibility: Accessibilité
+      conditions: Conditions d'utilisation
+      consul: Application Consul
+      consul_url: https://github.com/consul/consul
+      contact_us: Pour l'assistance technique entrer
+      copyright: Consul, %{year}
+      description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
+      faq: assistance technique
+      more_info: Plus d'information
+      open_data_text: Tout les détails de la Mairie sont vôtre pour accès
+      open_data_title: Open data
+      open_source: logiciel libre
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Modelez la ville de Madrid dans laquelle vous souhaitez vivre
+      participation_title: Participation
+      privacy: Vie privée
+      transparency_text: Trouver tout à propos de la mairie de Madrid
+      transparency_title: Transparence
+      transparency_url: https://transparency.consul
+    header:
+      administration: Administration
+      debates: Débats
+      external_link_blog: Blog
+      external_link_opendata: Open data
+      external_link_transparency: Transparence
+      external_link_transparency_url: https://transparency.consul
+      locale: 'Langue :'
+      logo: Consul
+      moderation: Modération
+      more_information: Plus d'information
+      my_account_link: Mon compte
+      my_activity_link: Mon activité
+      new_notifications:
+        one: Vous avez une nouvelle notification
+        other: Vous avez %{count} nouvelles notifications
+      no_notifications: Vous n'avez pas de nouvelles notifications
+      open: ouvert
+      open_city_slogan_html: Il y a des villes gouvernées directement par leurs habitants
+        qui discutent des sujets dont il se sentent concernées, proposent des idées
+        pour améliorer leurs vies et décider lesquelles seront mises en place. Madrid
+        est déjà une de ces villes.
+      open_city_title: Aimez la ville, et elle deviendra la ville que vous aimez
+      open_data: Open data
+      open_gov: Gouvernement ouvert
+      proposals: Propositions
+      see_all: Voir les propositions
+      spending_proposals: Propositions de dépense
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  proposals:
+    create:
+      form:
+        submit_button: Créer une proposition
+    edit:
+      editing: Modifier la proposition
+      form:
+        submit_button: Sauvegarder les changements
+      show_link: Voir les propositions
+    retire_form:
+      title: Retirer la proposition
+      warning:
+      retired_reason_label:
+      retired_reason_blank:
+      retired_explanation_label:
+      retired_explanation_placeholder:
+      submit_button: Retirer la proposition
+    retire_options:
+      duplicated: Dupliquer
+      started: Déjà en cours
+      unfeasible: Infaisable
+      done: Fait
+      other: Autre
+    form:
+      geozone: Scope d'operation
+      proposal_external_url: Lien vers de la documentation complémentaire
+      proposal_question: Question proposée
+      proposal_question_example_html: 'Doit être résumé par une question appelant à une réponse par oui ou par non. <em>Exemple : ''Êtes-vous d''accord avec la piétonnisation de Calle Mayor?''</em>'
+      proposal_responsible_name: Nom complet de la personne qui soumet la proposition
+      proposal_responsible_name_note: "(individuellement ou comme représentant d'un collectif; ne sera pas public)"
+      proposal_summary: Résumé de la proposition
+      proposal_summary_note: "(maximum 200 caractères)"
+      proposal_text: Texte de la proposition
+      proposal_title: Titre de la proposition
+      proposal_video_url: Lien vers une vidéo externe
+      proposal_video_url_note: Vous pouvez ajouter un lien vers YouTube ou Vimeo
+      tag_category_label: Catégories
+      tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi les catégories proposées ou ajouter la vôtre"
+      tags_label: "Étiquettes"
+      tags_placeholder: Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')
+    index:
+      featured_proposals: Mis en avant
+      filter_topic:
+        one: " avec sujet '%{topic}'"
+        other: " avec sujets '%{topic}'"
+      orders:
+        confidence_score: la plus votée
+        created_at: la plus récente
+        hot_score: la plus active
+        most_commented: la plus commentée
+        relevance: pertinence
+      retired_proposals: Propositions retirées
+      retired_proposals_link: Proposition retirée par l'auteur
+      retired_links:
+        all: Toutes
+        duplicated: Dupliquée
+        started: En cours
+        unfeasible: Infaisable
+        done: Fait
+        other: Autre
+      search_form:
+        button: Chercher
+        placeholder: Chercher des propositions
+        title: Chercher
+      search_results:
+        one: " contenant le mot '%{search_term}'"
+        other: " contenant les mots '%{search_term}'"
+      select_order: Trier par
+      select_order_long: Vous êtes en train de voir les propositions en fonction de
+      start_proposal: Créer une proposition
+      title: Propositions
+      top: Top de la semaine
+      top_link_proposals: Les plus actives par catégorie
+    new:
+      form:
+        submit_button: Créer la proposition
+      more_info: Comment les propositions citoyennes marchent ?
+      recommendation_one: Ne pas user de lettres capitales dans le titre de votre proposition ou des phrases entières. Sur internet, c'est considéré comme hurler sur une personne. Et personne n'aime qu'on lui crie dessus.
+      recommendations_title: Recommendations pour créer une proposition
+      recommendation_three: Appréciez ces espaces et les voix qui le remplissent. Tout vous appartient.
+      recommendation_two: Toute proposition ou commentaire suggérant une action illicite sera supprimé ainsi que ceux qui perturbent les espaces de débats. Le reste est autorisé.
+      start_new: Créer une nouvelle proposition
+    notice:
+      retired: Proposition retirée
+    proposal:
+      already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
+      comments:
+        one: 1 commentaire
+        other: "%{count} commentaires"
+        zero: Aucun commentaire
+      proposal: Proposition
+      reason_for_supports_necessary: 1% du Recensement
+      support: Soutenir
+      supports:
+        one: 1 soutien
+        other: "%{count} soutiens"
+        zero: Aucun soutien
+      supports_necessary: "%{number} soutiens nécessaires"
+      support_title: Soutenir cette proposition
+      total_percent: 100%
+    show:
+      author_deleted: Utilisateur effacé
+      code: Code de la proposition
+      comments:
+        one: 1 commentaire
+        other: "%{count} commentaires"
+        zero: No comments
+      comments_tab: Commentaires
+      edit_proposal_link: Modifier
+      flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
+      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
+      notifications_tab: Notifications
+      retired_warning:
+      retired_warning_link_to_explanation:
+      retired: Proposition retirée par l'auteur
+      share: Partager
+      send_notification: Envoyer une notification
+      no_notifications: Cette proposition n'a aucune notification
+    update:
+      form:
+        submit_button: Sauvegarder des changements
+
+
+
+
   activemodel:
     attributes:
       verification:
@@ -310,9 +653,6 @@ fr:
         phone_not_given: Téléphone non renseigné
         sms_code_not_confirmed: Code SMS non confirmé
         title: Vérifications incomplètes
-  application:
-    close: Fermer
-    menu: Menu
   ckeditor:
     buttons:
       cancel: Fermer
@@ -321,37 +661,6 @@ fr:
       upload: Upload
     confirm_delete: Supprimer le fichier ?
     page_title: Gestionnaire de fichiers CKEditor
-  comments:
-    comment:
-      admin: Administrateur
-      author: Auteur
-      deleted: Ce commentaire a été supprimé
-      moderator: Modérateur
-      responses:
-        one: 1 réponse
-        other: "%{count} réponses"
-        zero: Aucune réponses
-      user_deleted: Utilisateur supprimé
-      votes:
-        one: 1 vote
-        other: "%{count} votes"
-        zero: Aucun votes
-    form:
-      comment_as_admin: Commenter en tant qu'administrateur
-      comment_as_moderator: Commenter en tant que modérateur
-      leave_comment: Laisser un commentaire
-    orders:
-      most_voted: Le plus voté
-      newest: Plus récent en premier
-      oldest: Plus ancien en premier
-    select_order: Trier par
-    show:
-      return_to_commentable: Revenir à
-  comments_helper:
-    comment_button: Publier un commentaire
-    comment_link: Commentaire
-    reply_button: Publier la réponse
-    reply_link: Répondre
   date:
     abbr_day_names:
     - Dim
@@ -448,87 +757,6 @@ fr:
       month: Mois
       second: Secondes
       year: Années
-  debates:
-    create:
-      form:
-        submit_button: Commencer un débat
-    debate:
-      comments:
-        one: 1 commentaire
-        other: "%{count} commentaires"
-        zero: Aucun commentaires
-      debate: Débat
-      votes:
-        one: 1 vote
-        other: "%{count} votes"
-        zero: Aucun vote
-    edit:
-      editing: Modifier le débat
-      form:
-        submit_button: Enregistrer les changements
-      show_link: Voir le débat
-    form:
-      debate_text: Texte initial du debat
-      debate_title: Titre du débat
-      tags_instructions: "Étiquetter ce débat"
-      tags_label: Sujets
-      tags_placeholder: Entrez les étiquettes que vous voulez utiliser, séparées par
-        des virgules (',')
-    index:
-      featured_debates: Présenté
-      filter_topic:
-        one: avec thème '%{topic}'
-        other: avec thème '%{topic}'
-      orders:
-        confidence_score: Mieux noté
-        created_at: plus récent
-        hot_score: Plus active
-        most_commented: Plus commentée
-        relevance: Pertinence
-      search_form:
-        button: Rechercher
-        placeholder: Rechercher des débats...
-        title: Rechercher
-      search_results:
-        one: " contenant le mot '%{search_term}'"
-        other: " contenant le mot '%{search_term}'"
-      select_order: Trier par
-      start_debate: Commencer un débat
-      title: Débats
-    new:
-      form:
-        submit_button: Commencer un débat
-      info: Si vous souhaitez faire une proposition, vous êtez dans la mauvaise section,
-        entrez %{info_link}.
-      info_link: Créer une nouvelles proposition
-      more_info: Plus d'informations
-      recommendation_four: Profitez de cet espace et des voix qui le remplissent.
-        Il vous appartient aussi.
-      recommendation_one: Ne pas utiliser de lettres capitales pour le titre du débat
-        ou pour des phrases entières. Sur internet, c'est considéré comme crier. Et
-        personne n'aime se faire crier dessus.
-      recommendations_title: Recommandations pour créer un débat
-      recommendation_three: La critique sans pitié est la bienvenue. Ceci est un espace
-        pour la reflexion. Mais nous recommandons de conserver de l'élégance et de
-        l'intelligence. Le monde est un endroit meilleur avec ces qualités.
-      recommendation_two: Tout débat ou commentaire suggérant des actions illégales
-        sera supprimé, de même que ceux ayant pour but de saboter l'espace de débat.
-        Tout le reste est autorisé.
-      start_new: Commencer un débat
-    show:
-      author_deleted: Utilisateur supprimé
-      comments:
-        one: 1 commentaire
-        other: "%{count} commentaires"
-        zero: Aucun commentaire
-      comments_title: Commentaires
-      edit_debate_link: Modifier
-      flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
-      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
-      share: Partager
-    update:
-      form:
-        submit_button: Sauvegarder les changements
   devise:
     confirmations:
       confirmed: Votre compte a été confirmé
@@ -544,7 +772,7 @@ fr:
       last_attempt: Vous pouvez encore essayer une fois avant que votre compte soit
         bloqué.
       locked: Votre compte a été bloqué
-      not_found_in_database: Clés %{authentication_keys} ou mot de passe.
+      not_found_in_database: Le %{authentication_keys} ou mot de passe incorrect
       timeout: Votre session a expiré. Merci de vous connecter de nouveau pour continuer.
       unauthenticated: Vous devez vous connecter ou vous enregistrer pour continuer.
       unconfirmed: Pour continuer, merci de cliquer sur le lien de confirmation que
@@ -740,7 +968,7 @@ fr:
           username_label: Nom utilisateur
           username_note: Nom qui doit apparaître près de vos posts
         success:
-          back_to_index: Je comprends; Aller à la page principale
+          back_to_index: Je comprends. Retourner à la page principale
           instructions_1_html: Veuillez <b>vérifier votre email</b> - nous vous avons
             envoyé </b> un lien pour confirmer votre compte</b>.
           instructions_2_html: Une fois confirmé, vous pouvez commencer à participer
@@ -837,62 +1065,7 @@ fr:
       create: Créer %{model}
       submit: Sauvegarder %{model}
       update: Actualiser %{model}
-  layouts:
-    application:
-      chrome: Google Chrome
-      firefox: Firefox
-      ie: Vous utilisez Internet Explorer. Pour une navigation plus sûre, %{chrome}
-        ou %{firefox} sont recommandés.
-      ie_title: Ce site internet n'est pas affiché de manière optimale par votre navigateur.
-    footer:
-      accessibility: Accessibilité
-      conditions: Conditions d'utilisation
-      consul: Application Consul
-      consul_url: https://github.com/consul/consul
-      contact_us: Pour l'assistance technique entrer
-      copyright: Consul, %{year}
-      description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid
-        ouvert sur le monde.
-      faq: assistance technique
-      more_info: Plus d'information
-      open_data_text: Tout les détails de la Mairie sont vôtre pour accès
-      open_data_title: Open data
-      open_source: logiciel libre
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Modelez la ville de Madrid dans laquelle vous souhaitez
-        vivre
-      participation_title: Participation
-      privacy: Vie privée
-      transparency_text: Trouver tout à propos de la mairie de Madrid
-      transparency_title: Transparence
-      transparency_url: https://transparency.consul
-    header:
-      administration: Administration
-      debates: Débats
-      external_link_blog: Blog
-      external_link_opendata: Open data
-      external_link_transparency: Transparence
-      external_link_transparency_url: https://transparency.consul
-      locale: 'Langue :'
-      logo: Consul
-      moderation: Modération
-      more_information: Plus d'information
-      my_account_link: Mon compte
-      my_activity_link: Mon activité
-      new_notifications:
-        one: Vous avez une nouvelle notification
-        other: Vous avez %{count} nouvelles notifications
-      no_notifications: Vous n'avez pas de nouvelles notifications
-      open: ouvert
-      open_city_slogan_html: Il y a des villes gouvernées directement par leurs habitants
-        qui discutent des sujets dont il se sentent concernées, proposent des idées
-        pour améliorer leurs vies et décider lesquelles seront mises en place. Madrid
-        est déjà une de ces villes.
-      open_city_title: Aimez la ville, et elle deviendra la ville que vous aimez
-      open_data: Open data
-      open_gov: Gouvernement ouvert
-      proposals: Propositions
-      spending_proposals: Propositions de dépense
+
   locale: Français
   mailers:
     comment:
@@ -1154,7 +1327,7 @@ fr:
       sign_in: S'enregistrer avec Twitter
       sign_up: S'enregistrer avec Twitter
   pages:
-    census_terms: "Pour confirmer votre compte, vous devez avoir plus de 16 ans et
+    census_terms: Pour confirmer votre compte, vous devez avoir plus de 16 ans et
       résider à Madrid. Après avoir rempli les informations déjà demandées, la Direction
       Générale de la Participation Civile vérifiera dans deux fichiers, le Recensement
       municipal des Habitants (dont la responsabilité dépend de la Direction Générale
@@ -1164,7 +1337,7 @@ fr:
       de vos informations, ainsi que les méthodes de contact des fichiers mentionnés.
       Les informations fournies seront acquises et collectées par la Direction Générale
       de la Participation Civile dans le fichier Gestion des Activités participatives\"
-      mentionnées dans les conditions d'utilisation de ce portail."
+      mentionnées dans les conditions d'utilisation de ce portail.
     conditions: Conditions d'utilisation
     general_terms: Conditions d'utilisation
     more_information:
@@ -1243,102 +1416,7 @@ fr:
       password: Mot de passe
       submit: Vérifier mon compte
       title: Vérifier mon compte
-  proposals:
-    create:
-      form:
-        submit_button: Créer une proposition
-    edit:
-      editing: Modifier la proposition
-      form:
-        submit_button: Sauvegarder les changements
-      show_link: Voir les propositions
-    form:
-      proposal_external_url: Lien vers de la documentation complémentaire
-      proposal_question: Question proposée
-      proposal_question_example_html: 'Doit être résumé par une question appelant
-        à une réponse par oui ou par non. <em>Exemple : ''Êtes-vous d''accord avec
-        la piétonnisation de Calle Mayor?''</em>'
-      proposal_responsible_name: Nom complet de la personne qui soumet la proposition
-      proposal_responsible_name_note: "(individuellement ou comme représentant d'un
-        collectif; ne sera pas public)"
-      proposal_summary: Résumé de la proposition
-      proposal_summary_note: "(maximum 200 caractères)"
-      proposal_text: Texte de la proposition
-      proposal_title: Titre de la proposition
-      proposal_video_url: Lien vers une vidéo externe
-      proposal_video_url_note: Vous pouvez ajouter un lien vers YouTube ou Vimeo
-      tag_category_label: Catégories
-      tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi
-        les catégories proposées ou ajouter la vôtre"
-      tags_label: "Étiquettes"
-      tags_placeholder: Entrez les étiquettes que vous voudriez utiliser, séparer
-        par des virgules (',')
-    index:
-      featured_proposals: Mis en avant
-      filter_topic:
-        one: " avec sujet '%{topic}'"
-        other: " avec sujets '%{topic}'"
-      orders:
-        confidence_score: la plus votée
-        created_at: la plus récente
-        hot_score: la plus active
-        most_commented: la plus commentée
-        relevance: pertinence
-      search_form:
-        button: Chercher
-        placeholder: Chercher des propositions
-        title: Chercher
-      search_results:
-        one: " contenant le mot '%{search_term}'"
-        other: " contenant les mots '%{search_term}'"
-      select_order: Trier par
-      select_order_long: Vous êtes en train de voir les propositions en fonction de
-      start_proposal: Créer une proposition
-      title: Propositions
-    new:
-      form:
-        submit_button: Créer la proposition
-      more_info: Comment les propositions citoyennes marchent ?
-      recommendation_one: Ne pas user de lettres capitales dans le titre de votre
-        proposition ou des phrases entières. Sur internet, c'est considéré comme hurler
-        sur une personne. Et personne n'aime qu'on lui crie dessus.
-      recommendations_title: Recommendations pour créer une proposition
-      recommendation_three: Appréciez ces espaces et les voix qui le remplissent.
-        Tout vous appartient.
-      recommendation_two: Toute proposition ou commentaire suggérant une action illicite
-        sera supprimé ainsi que ceux qui perturbent les espaces de débats. Le reste
-        est autorisé.
-      start_new: Créer une nouvelle proposition
-    proposal:
-      already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
-      comments:
-        one: 1 commentaire
-        other: "%{count} commentaires"
-        zero: Aucun commentaire
-      proposal: Proposition
-      reason_for_supports_necessary: 1% du Recensement
-      support: Soutenir
-      supports:
-        one: 1 soutien
-        other: "%{count} soutiens"
-        zero: Aucun soutien
-      supports_necessary: "%{number} soutiens nécessaires"
-      support_title: Soutenir cette proposition
-      total_percent: 100%
-    show:
-      author_deleted: Utilisateur effacé
-      code: Code de la proposition
-      comments:
-        one: 1 commentaire
-        other: "%{count} commentaires"
-        zero: No comments
-      edit_proposal_link: Modifier
-      flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
-      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
-      share: Partager
-    update:
-      form:
-        submit_button: Sauvegarder des changements
+
   settings:
     email_domain_for_officials: Nom de domaine pour les personnes officielles
     feature:
@@ -1383,6 +1461,7 @@ fr:
       to: Pour
     author_info:
       author_deleted: Utilisateur effacé
+    back: Retour
     check: Sélectionner
     check_all: Tous
     check_none: Aucune
@@ -1390,10 +1469,27 @@ fr:
     flag: Signaler comme inapproprié
     print:
       print_button: Imprimer cette info
+
+    show: Voir
+    suggest:
+      debate:
+        found:
+          one:
+          other:
+        message:
+        see_all:
+      proposal:
+        found:
+          one:
+          other:
+        message:
+        see_all:
     tags_cloud:
-      categories: Catégories
-      districts: Secteurs
       tags: Tendance
+      districts: Districts
+      districts_list: Liste des districts
+      categories: Catégories
+    target_blank_html:
     unflag: Désignaler
   social:
     blog: Blog
@@ -1497,6 +1593,7 @@ fr:
       create:
         flash:
           offices: Bureaux de soutien aux citoyens
+          offices_url: http://offices.consul
           success_html: Merci d'avoir demandé votre <b>code de sécurité maximum (uniquement
             requis pour le vote final)</b>.  Dans quelques jours, nous vous enverrons
             un courrier vers votre adresse postale. Vous pouvez le réclamer dans n'importe
@@ -1511,6 +1608,7 @@ fr:
         go_to_index: Voir les propositions
         office: Vérifier dans n'importe quel %{office}
         offices: Bureaux de soutien aux citoyens
+        offices_url: http://offices.consul
         send_letter: Envoyer une lettre avec le code
         title: Félicitations
         user_permission_info: Avec votre compte, vous pouvez
@@ -1537,16 +1635,13 @@ fr:
           residence_card: Carte de résident
           spanish_id: CNI
         error_not_allowed_age: Vous devez avoir plus de 16 ans
-        error_not_allowed_postal_code: Afin de pouvoir vérifier votre compte, vous
-          devez être enregistrer par la Municipalité de Madrid.
-        error_verifying_census: Il a été impossible pour le recensement de Madrid
-          de vérifier vos informations. Merci de confirmer que vos informations sont
-          correctes en appelant 010 (ou 915298210) ou en visitant n'importe quel %{offices}.
+        error_not_allowed_postal_code: Afin de pouvoir vérifier votre compte, vous devez être enregistrer par la Municipalité de Madrid ( TODO ).
+        error_verifying_census: ( TODO ) Il a été impossible pour le recensement de Madrid de vérifier vos informations. Merci de confirmer que vos informations sont correctes en appelant 010 (ou 915298210) ou en visitant n'importe quel %{offices}.
         error_verifying_census_offices: 26 bureaux du citoyen
+        error_verifying_census_offices_url: http://offices.consul
         form_errors: Empêche la vérification de votre résidence
         postal_code: Code postal
-        postal_code_note: Afin de vérifier votre compte, vous devez être inscrit dans
-          le récensement de Madrid
+        postal_code_note: Afin de vérifier votre compte, vous devez être inscrit dans le récensement de la RIVP
         terms: Les conditions d'utilisation et d'accès
         title: Vérifier la résidence
         verify_residence: Vérifier la résidence
@@ -1646,7 +1741,8 @@ fr:
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_proposal: Créer des propositions
       user_permission_support_proposal: Soutenir des propositions
-      user_permission_verify: Réaliser toutes ces actions %{verify}.
+      user_permission_verify: Réaliser toutes ces actions.
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur
         le recensement de Madrid"
+      user_permission_verify_my_account: Verifier mon compte
       user_permission_votes: Participer au vote final

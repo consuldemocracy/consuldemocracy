@@ -1,0 +1,18 @@
+---
+fr:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} créé avec succès."
+        debate: "Débat créé avec succès."
+        proposal: "Proposition créée avec succès."
+        spending_proposal: "Proposition d'investissement créée avec succès. Vous pouvez y accèder depuis %{activity}"
+      save_changes:
+        notice: Changements sauvegardés
+      update:
+        notice: "%{resource_name} actualisée avec succès."
+        debate: "Débat actualisé avec succès."
+        proposal: "Proposition actualisée avec succès."
+        spending_proposal: "Proposition d'investissement actualisée avec succès."
+      destroy:
+        spending_proposal: "Proposition d'investissement effacée avec succès."
