@@ -2811,6 +2811,49 @@ $campaign-yellow:  #FFDB19;
   padding: $line-height*2 0;
 }
 
+.type-selection {
+  margin-top: $line-height*2;
+
+  .callout {
+
+    a, a h3 {
+      color: $text;
+      text-decoration: none;
+
+      &:hover {
+        border-color: $brand;
+        color: $brand;
+      }
+    }
+  }
+}
+
+.type-selection-proposal .type-proposal,
+.type-selection-investment .type-investment {
+
+  .callout {
+    background: $highlight;
+    border-color: $brand;
+    color: $brand;
+    position: relative;
+
+    &:after {
+      background: $brand;
+      border-radius: rem-calc(40);
+      color: white;
+      content: "\6c";
+      font-family: 'icons';
+      font-size: rem-calc(16);
+      height: rem-calc(24);
+      padding: 0 $line-height/6;
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      width: rem-calc(24);
+    }
+  }
+}
+
 // 20. Landing voting february 2017
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

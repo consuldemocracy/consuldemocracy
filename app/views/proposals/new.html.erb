@@ -10,6 +10,12 @@
       <%= render "shared/back_link" %>
     <% end %>
 
+    <% if feature?(:budgets) && Budget.accepting.any? %>
+      <div class="type-selection-proposal">
+        <%= render "custom/shared/type_selection_proposal" %>
+      </div>
+    <% end %>
+
     <h1><%= t("proposals.new.start_new") %></h1>
 
     <% unless @proposal.proceeding? %>
