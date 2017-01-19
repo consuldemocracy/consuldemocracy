@@ -14,7 +14,9 @@
             <%= select_tag "draft_version_id", options_from_collection_for_select(@draft_versions_list, 'id', 'display_title', @draft_version.id), "aria-label": t('.select_draft_version') %>
             <%= submit_tag t('.select_version_submit'), class: "button" %>
           <% end %>
-          <span><%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version) %></span>
+          <% if @draft_version.changelog.present? %>
+            <span><%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version) %></span>
+          <% end %>
         </div>
         <span><%= t('.updated_at', date: format_date(@draft_version.updated_at)) %></span>
       </div>

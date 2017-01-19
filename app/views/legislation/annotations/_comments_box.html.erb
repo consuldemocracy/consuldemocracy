@@ -6,20 +6,22 @@
   <% end %>
 </div>
 <div class="comments-wrapper">
-  <% annotation.comments.roots.each do |comment| %>
+  <% annotation.comments.roots.limit(5).each do |comment| %>
   <div class="comment">
     <div class="comment-text">
-      <p><%= comment.body %></p>
+      <p><%= truncate comment.body, length: 250 %></p>
     </div>
     <div class="comment-meta">
       <div class="comment-more-info">
-        <div class="comment-expand">
-          <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation) do %>
-            <%= t('legislation.annotations.comments.see_complete') %>
-          <% end %>
-        </div>
+        <% if comment.body.length > 250 %>
+          <div class="comment-expand">
+            <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation) do %>
+              <%= t('legislation.annotations.comments.see_complete') %>
+            <% end %>
+          </div>
+        <% end %>
         <div class="comment-replies">
-          <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation) do %>
+          <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation, anchor: "comment_#{comment.id}") do %>
             <%= t('legislation.annotations.comments.replies_count', count: comment.children.size) %>
           <% end %>
         </div>
@@ -35,8 +37,10 @@
 
 </div>
 <div class="comment-footer">
-  <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation), class: "button strong" do %>
-    <%= t('legislation.annotations.comments.see_all') %>
+  <% if annotation.comments.roots.count > Legislation::Annotation::COMMENTS_PAGE_SIZE %>
+    <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation), class: "button strong" do %>
+      <%= t('legislation.annotations.comments.see_all') %>
+    <% end %>
   <% end %>
   <a class="button strong publish-comment" title="Publicar comentario" href="#">Publicar comentario</a>
 </div>
