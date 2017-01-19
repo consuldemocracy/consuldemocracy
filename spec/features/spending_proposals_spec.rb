@@ -300,7 +300,7 @@ feature 'Spending proposals' do
       Setting["feature.spending_proposal_features.phase3"] = true
     end
 
-    scenario "Index" do
+    xscenario "Index" do
       user = create(:user, :level_two)
       sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
       sp2 = create(:spending_proposal, :feasible, :finished, price: 20000)
@@ -341,7 +341,7 @@ feature 'Spending proposals' do
       expect(current_url).to include('page=1')
     end
 
-    scenario "Show" do
+    xscenario "Show" do
       user = create(:user, :level_two)
       sp1 = create(:spending_proposal, :feasible, :finished, price: 10000)
 
@@ -356,7 +356,7 @@ feature 'Spending proposals' do
       expect(page).to have_content "$10,000"
     end
 
-    scenario "Confirm", :js do
+    xscenario "Confirm", :js do
       user = create(:user, :level_two)
       carabanchel = create(:geozone, name: "Carabanchel")
       new_york = create(:geozone)

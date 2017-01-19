@@ -35,14 +35,13 @@
       </li>
     <% end %>
 
-    <%# if feature?(:budgets) %>
-    <!-- commented out so that admins can insert data before it is public -->
+    <% if feature?(:budgets) %>
       <li <%= "class=active" if controller_name == "budgets" %>>
         <%= link_to admin_budgets_path do %>
           <span class="icon-budget"></span><%= t("admin.menu.budgets") %>
         <% end %>
       </li>
-    <%# end %>
+    <% end %>
 
     <% if feature?(:signature_sheets) %>
       <li <%= "class=active" if controller_name == "signature_sheets" %>>

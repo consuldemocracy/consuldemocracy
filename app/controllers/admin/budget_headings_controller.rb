@@ -1,8 +1,6 @@
 class Admin::BudgetHeadingsController < Admin::BaseController
-  ### commented out so that admins can insert data before it is public
-  #include FeatureFlags
-  #feature_flag :budgets
-  ###
+  include FeatureFlags
+  feature_flag :budgets
 
   before_action :load_budget
   before_action :load_group

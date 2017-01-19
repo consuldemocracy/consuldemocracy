@@ -151,7 +151,7 @@ feature 'Ballots' do
 
     context "City and District" do
 
-      scenario "Independent progress bar for city and district proposals", :js do
+      xscenario "Independent progress bar for city and district proposals", :js do
         carabanchel = create(:geozone, name: "Carabanchel")
 
         sp1 = create(:spending_proposal, :feasible, :finished, geozone: nil,        price: 10000)

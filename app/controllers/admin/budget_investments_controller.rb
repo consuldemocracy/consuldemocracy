@@ -1,8 +1,6 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
-  ### commented out so that admins can insert data before it is public
-  #include FeatureFlags
-  #feature_flag :budgets
-  ###
+  include FeatureFlags
+  feature_flag :budgets
 
   has_filters(%w{valuation_open without_admin managed valuating valuation_finished
                  valuation_finished_feasible selected all},
