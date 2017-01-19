@@ -6,6 +6,8 @@ def deploysecret(key)
   @deploy_secrets_yml.fetch(key.to_s, 'undefined')
 end
 
+set :default_shell, 'bash -l'
+
 set :rails_env, fetch(:stage)
 set :rvm1_ruby_version, '2.3.2'
 
@@ -13,7 +15,7 @@ set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, 'https://github.com/AjuntamentdeCastello/consul'
 
 set :scm, :git
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
@@ -53,7 +55,7 @@ namespace :deploy do
 end
 
 task :install_bundler_gem do
-  on roles(:app) do
-    execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
-  end
+  # on roles(:app) do
+  #   execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
+  # end
 end
