@@ -80,8 +80,8 @@ en:
       description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
       keywords: "Presupuestos participativos, presupuestos municipales, Decide Madrid, inversión pública, Ayuntamiento de Madrid, participación ciudadana"
   type_selection:
-    title: "Estas creando..."
-    proposals_title: "Propuesta ciudadanda"
+    title: "Estás creando..."
+    proposals_title: "Propuesta ciudadana"
     proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
     investment_title: "Proyecto de Presupuestos participativos"
     investment_info: "Decide a qué se destina una parte del presupuesto municipal."
