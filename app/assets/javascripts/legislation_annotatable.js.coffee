@@ -100,7 +100,8 @@ App.LegislationAnnotatable =
 
   scrollToAnchor: ->
     annotationsLoaded: (annotations) ->
-      if anchor = $(location).attr('hash')
+      anchor = $(location).attr('hash')
+      if anchor && anchor.startsWith('#annotation')
         ann_id = anchor.split("-")[-1..]
         el = $("span[data-annotation-id='" + ann_id + "']")
         App.LegislationAllegations.show_comments()
