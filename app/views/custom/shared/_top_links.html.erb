@@ -1,0 +1,43 @@
+<div class="top-links hide-for-small-only">
+  <div class="row">
+    <div class="large-12 small-12">
+      <ul class="menu float-right">
+        <%= render "shared/admin_login_items" %>
+        <%= render "devise/menu/login_items" %>
+      </ul>
+      <div class="float-right">
+        <%= render "shared/locale_switcher" %>
+      </div>
+    </div>
+  </div>
+    <!-- <ul class="no-bullet external-links">
+      <li class="inline-block">
+        <%= link_to t("layouts.header.more_information"),
+                    page_path('more_information'),
+                    class: ("selected" if current_page?("/more_information")),
+                    accesskey: "i"  %>
+                    &nbsp;|
+      </li>
+      <li class="inline-block">
+        <%= link_to t("layouts.header.external_link_transparency"),
+                    t("layouts.header.external_link_transparency_url"),
+                    target: "_blank",
+                    title: t('shared.target_blank_html') %>
+                    &nbsp;|
+      </li>
+      <li class="inline-block">
+        <%= link_to t("layouts.header.external_link_opendata"),
+                    t("layouts.header.external_link_opendata_url"),
+                    target: "_blank",
+                    title: t('shared.target_blank_html') %>
+      </li>
+      <% if setting['blog_url'] %>
+        <li class="inline-block">|&nbsp;
+          <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
+            <%= t("layouts.header.external_link_blog") %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul> -->
+  <!-- </div> -->
+</div>
