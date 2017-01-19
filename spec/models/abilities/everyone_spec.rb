@@ -27,5 +27,5 @@ describe "Abilities::Everyone" do
   it { should be_able_to(:index, SpendingProposal) }
   it { should_not be_able_to(:create, SpendingProposal) }
 
-  pending "only authors can access new and create for ProposalNotifications"
+  it { should be_able_to(:index, Budget) }
 end

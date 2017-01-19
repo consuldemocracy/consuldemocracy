@@ -59,6 +59,10 @@ body.admin {
       select {
         height: $line-height*2;
       }
+
+    .input-group input[type="text"] {
+      border-radius: 0;
+      margin-bottom: 0 !important;
     }
   }
 
@@ -73,6 +77,10 @@ body.admin {
 
       &.text-right {
         text-align: right;
+      }
+
+      &.with-button {
+        line-height: $line-height*2;
       }
     }
 
@@ -456,7 +464,7 @@ body.admin {
   }
 }
 
-.admin-content .select-geozone {
+.admin-content .select-geozone, .admin-content .select-heading {
 
   a {
     display: block;

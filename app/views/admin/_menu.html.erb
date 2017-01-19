@@ -53,6 +53,7 @@
       </li>
     <% end %>
 
+
     <% if feature?(:polls) %>
       <li class="section-title">
         <a href="#">
@@ -76,6 +77,15 @@
             <%= link_to t('admin.menu.poll_booths'), admin_booths_path %>
           </li>
         </ul>
+      </li>
+    <% end %>
+
+    <% if feature?(:budgets) %>
+      <li class="section-title" <%= "class=active" if controller_name == "budgets" %>>
+        <%= link_to admin_budgets_path do %>
+          <span class="icon-budget"></span>
+          <strong><%= t("admin.menu.budgets") %></strong>
+        <% end %>
       </li>
     <% end %>
 

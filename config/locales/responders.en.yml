@@ -11,6 +11,7 @@ en:
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
+        budget_investment: "Budget Investment created successfully."
         signature_sheet: "Signature sheet created successfully"
       save_changes:
         notice: Changes saved
@@ -21,6 +22,8 @@ en:
         poll_booth: "Booth updated successfully."
         proposal: "Proposal updated successfully."
         spending_proposal: "Investment project updated succesfully."
+        budget_investment: "Investment project updated succesfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
+        budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"

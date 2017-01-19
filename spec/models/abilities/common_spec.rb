@@ -14,6 +14,17 @@ describe "Abilities::Common" do
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
 
+  let(:accepting_budget) { create(:budget, phase: 'accepting') }
+  let(:selecting_budget) { create(:budget, phase: 'selecting') }
+  let(:balloting_budget) { create(:budget, phase: 'balloting') }
+
+  let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
+  let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
+  let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
+  let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
+  let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
+  let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
+
   let(:current_poll)  { create(:poll) }
   let(:incoming_poll) { create(:poll, :incoming) }
   let(:expired_poll)  { create(:poll, :expired)  }
@@ -164,6 +175,21 @@ describe "Abilities::Common" do
         it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
       end
     end
+
+    describe "Budgets" do
+      it { should be_able_to(:create, investment_in_accepting_budget) }
+      it { should_not be_able_to(:create, investment_in_selecting_budget) }
+      it { should_not be_able_to(:create, investment_in_balloting_budget) }
+
+      it { should_not be_able_to(:vote, investment_in_accepting_budget) }
+      it { should be_able_to(:vote, investment_in_selecting_budget) }
+      it { should_not be_able_to(:vote, investment_in_balloting_budget) }
+
+      it { should_not be_able_to(:create, ballot_in_accepting_budget) }
+      it { should_not be_able_to(:create, ballot_in_selecting_budget) }
+      it { should be_able_to(:create, ballot_in_balloting_budget) }
+    end
+
   end
 
   describe "when level 3 verified" do

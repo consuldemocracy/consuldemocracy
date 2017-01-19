@@ -1,0 +1,60 @@
+<% provide :title do %><%= t('budgets.investments.index.title') %><% end %>
+<% content_for :header_addon do %>
+  <%= render "shared/search_form",
+             search_path: budget_investments_path(budget_id: @budget.id, page: 1),
+             i18n_namespace: "budgets.investments.index.search_form" %>
+<% end %>
+
+<main id="budget-investments-main">
+
+  <% unless params[:search].present? %>
+    <%= render '/budgets/investments/header' %>
+  <% end %>
+
+  <div class="wrap row">
+    <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
+
+      <div class="small-12 search-results margin-bottom">
+
+        <% if params[:unfeasible].present? %>
+          <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
+          <div class="callout primary margin">
+              <%= t("budgets.investments.index.unfeasible_text",
+              definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
+          </div>
+        <% else %>
+          <%= content_tag(:h2, t("budgets.investments.index.by_heading", heading: @heading.name)) if @heading.present? %>
+        <% end %>
+
+        <% if params[:search].present? %>
+          <h2>
+            <%= page_entries_info @investments %>
+            <%= t("budgets.investments.index.search_results", count: @investments.size, search_term: params[:search]) %>
+          </h2>
+        <% end %>
+      </div>
+
+      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless params[:unfeasible].present? %>
+
+      <% @investments.each do |investment| %>
+        <%= render partial: '/budgets/investments/investment', locals: {
+          investment: investment,
+          investment_ids: @investment_ids,
+          investment_votes: @investment_votes,
+          ballot: @ballot
+        } %>
+      <% end %>
+
+      <%= paginate @investments %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <aside class="margin-bottom">
+        <div id="sidebar">
+          <%= render '/budgets/investments/sidebar' %>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+</main>

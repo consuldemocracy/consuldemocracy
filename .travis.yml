@@ -10,5 +10,8 @@ before_script:
 script:
   - "bundle exec rake knapsack:rspec"
 env:
-  - CI_NODE_TOTAL=2 CI_NODE_INDEX=0
-  - CI_NODE_TOTAL=2 CI_NODE_INDEX=1
+  global:
+    - CI_NODE_TOTAL=2
+  matrix:
+    - CI_NODE_INDEX=0
+    - CI_NODE_INDEX=1
