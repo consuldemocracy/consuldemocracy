@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= content_for?(:title) ? yield(:title) : "Gobierno abierto" %></title>
+    <%= render "layouts/meta_tags" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+  </head>
+
+  <body class="auth-page">
+    <div class="wrapper">
+      <div class="auth-image small-12 medium-3 column">
+        <h1 class="logo margin">
+          <%= link_to root_path do %>
+            <%= image_tag('logo_header.png', class: 'float-left', alt: t("layouts.header.logo")) %>
+            <%= setting['org_name'] %>
+          <% end %>
+        </h1>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <div class="row">
+          <div class="small-12 medium-9 large-7 small-centered column">
+            <div class="auth-form margin">
+              <%= render 'layouts/flash' %>
+
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="push"></div>
+    </div>
+
+    <div class="footer">
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
+</html>

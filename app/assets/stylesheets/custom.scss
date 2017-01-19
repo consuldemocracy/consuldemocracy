@@ -3,3 +3,83 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+@font-face {
+  font-family: 'Arvo Regular';
+  font-style: normal;
+  font-weight: 300;
+  src: font-url('Arvo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Arvo BoldItalic';
+  font-style: normal;
+  font-weight: 300;
+  src: font-url('Arvo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Arvo Italic';
+  font-style: italic;
+  font-weight: 300;
+  src: font-url('Arvo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Arvo Bold';
+  font-style: bold;
+  font-weight: 300;
+  src: font-url('Arvo-Bold.ttf') format('truetype');
+}
+
+.top-links {
+  background: $white;
+  color: $text;
+  a {
+    color: $text;
+  }
+}
+
+form.locale-form label {
+  color: $text;
+}
+
+form.locale-form select.locale-switcher {
+  color: $text;
+}
+
+.highlight {
+  background: $white;
+}
+
+header {
+  background: $white;
+}
+
+.top-bar {
+  background: $white !important;
+}
+
+.custom_item_1_title {
+  color: #AE997E;
+  font-family: "Arvo Bold" !important;
+}
+.custom_item_2_title {
+  color: #AA7881;
+  font-family: "Arvo Bold" !important;
+}
+
+.custom_item_3_title {
+  color: #78a0a0;
+  font-family: "Arvo Bold" !important;
+}
+
+.custom_item_1_subtitle {
+  color: #AE997E;
+  font-family: "Arvo Bold" !important;
+}
+.custom_item_2_subtitle {
+  color: #AE997E;
+  font-family: "Arvo Bold" !important;
+}
+.custom_item_3_subtitle {
+  color: #AE997E;
+  font-family: "Arvo Bold" !important;
+}
