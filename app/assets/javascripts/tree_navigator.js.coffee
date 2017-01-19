@@ -30,3 +30,9 @@ App.TreeNavigator =
           elem.removeClass('closed').addClass('open')
           elem.siblings('ul').show()
 
+    if anchor = $(location).attr('hash')
+      if link = elem.find('a[href="'+anchor+'"]')
+        link.parents('ul').each ->
+          $(this).show()
+          $(this).siblings('span').removeClass('closed').addClass('open')
+
