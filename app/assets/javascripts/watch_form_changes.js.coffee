@@ -7,7 +7,6 @@ App.WatchFormChanges =
       return $('[data-watch-form-message]').data('watch-form-message')
 
   checkChanges: (event) ->
-    console.log(event)
     changes = false
     App.WatchFormChanges.forms().each ->
       form = $(this)
