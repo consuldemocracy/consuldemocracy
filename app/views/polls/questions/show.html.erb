@@ -1,0 +1,99 @@
+<% provide :title do %><%= @question.title %><% end %>
+
+<div class="expanded no-margin-top dark-heading">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <%= render "shared/back_link" %>
+
+      <h1><%= @question.title %></h1>
+
+      <% if @question.proposal.present? %>
+        <div class="margin-bottom">
+          <%= link_to t('poll_questions.show.original_proposal'), @question.proposal %>
+        </div>
+      <% end %>
+
+      <p><%= @question.summary %></p>
+
+      <ul class="no-bullet margin-top tags">
+        <% @question.geozones.each do |g| %>
+          <li class="inline-block"><span><%= g.name %></span></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-3 column info">
+      <p>
+        <span class="title">
+          <strong><%= t('poll_questions.show.author') %></strong>
+        </span>
+        <br>
+        <%= link_to @question.author.name, @question.author %>
+      </p>
+
+      <p>
+        <span class="title">
+          <strong><%= t('poll_questions.show.poll') %></strong>
+        </span>
+        <br>
+        <%= link_to @question.poll.name, @question.poll %>
+      </p>
+
+      <p>
+        <span class="title">
+          <strong><%= t('poll_questions.show.dates_title') %></strong>
+        </span>
+        <br>
+        <%= poll_dates(@question.poll) %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <% if @question.poll.current? %>
+
+      <% if current_user.nil? %>
+        <div class="callout primary">
+          <%= t("poll_questions.show.not_logged_in",
+              signin: link_to(t("poll_questions.show.signin"), new_user_session_path, class: "probe-message"),
+              signup: link_to(t("poll_questions.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+        </div>
+      <% elsif current_user.unverified? %>
+        <div class="callout warning">
+          <%= t('poll_questions.show.cant_answer_verify_html',
+                 verify_link: link_to(t('poll_questions.show.verify_link'), verification_path)) %>
+        </div>
+      <% else %>
+        <div class="callout warning">
+          <%= t('poll_questions.show.cant_answer_wrong_geozone') %>
+        </div>
+      <% end %>
+
+      <div class="small-12 small-centered text-center column">
+        <div id="<%= dom_id(@question) %>_answers">
+          <%= render "answers", question: @question %>
+        </div>
+      </div>
+
+    <% elsif @question.poll.incoming? %>
+      <div class="callout alert">
+        <%= t('poll_questions.show.cant_answer_expired') %>
+      </div>
+    <% elsif @question.poll.expired? %>
+      <div class="callout primary">
+        <%= t('poll_questions.show.cant_answer_incoming') %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h3><%= t('poll_questions.show.more_info') %></h3>
+    <%= @question.description %>
+  </div>
+</div>
+
+<%= render "comments" %>

@@ -38,14 +38,13 @@
         <%= render "shared/banner" %>
       <% end %>
 
-
       <% if feature?("probe.plaza") %>
         <%= render "custom/probes/plaza/banner" %>
-      <% elsif @proposal_successfull_exists %>
-        <%= render "proposals/proposal_ballots_banner" %>
+      <% elsif @proposal_successful_exists %>
+        <%= render "proposals/successful_banner" %>
       <% end %>
 
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_ballots.present? || @proposal_successfull_exists || feature?("probe.plaza") %>
+      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists || feature?("probe.plaza") %>
         <%= render "featured_debates" %>
       <% end %>
 

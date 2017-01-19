@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :forum
   has_one :lock
@@ -135,6 +136,10 @@ class User < ActiveRecord::Base
 
   def manager?
     manager.present?
+  end
+
+  def poll_officer?
+    poll_officer.present?
   end
 
   def organization?

@@ -28,6 +28,8 @@ Setting.create(key: 'place_name', value: 'City')
 
 Setting.create(key: 'feature.debates', value: "true")
 
+Setting.create(key: 'feature.polls', value: "true")
+
 Setting.create(key: 'feature.spending_proposals', value: nil)
 Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: nil)
 Setting.create(key: 'feature.spending_proposal_features.phase1', value: nil)
@@ -103,9 +105,10 @@ geozones = [
   ["San Blas - Canillejas", "282,295,404,306,372,320,351,340,335,359,303,346"],
   ["Vicálvaro", "291,381,304,347,335,362,351,342,358,355,392,358,404,342,423,360,417,392,393,387,375,438,325,413,323,393"]
 ]
-geozones.each do |name, coordinates|
-  Geozone.create(name: name, html_map_coordinates: coordinates)
+geozones.each_with_index do |geozone, i|
+  Geozone.create(name: geozone[0], html_map_coordinates: geozone[1], external_code: i.ord, census_code: i.ord)
 end
+Geozone.create(name: "city")
 
 puts "Creating Users"
 
@@ -127,6 +130,9 @@ valuator.create_valuator
 
 manager = create_user('manager@madrid.es', 'manager')
 manager.create_manager
+
+poll_officer = create_user('poll_officer@madrid.es', 'Paul O. Fisher')
+poll_officer.create_poll_officer
 
 level_2 = create_user('leveltwo@madrid.es', 'level 2')
 level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
@@ -256,6 +262,27 @@ tags = Faker::Lorem.words(25)
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
                               created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
+  puts "    #{proposal.title}"
+end
+
+puts "Creating Successful Proposals"
+
+tags = Faker::Lorem.words(25)
+(1..10).each do |i|
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  proposal = Proposal.create!(author: author,
+                              title: Faker::Lorem.sentence(3).truncate(60),
+                              question: Faker::Lorem.sentence(3) + "?",
+                              summary: Faker::Lorem.sentence(3),
+                              responsible_name: Faker::Name.name,
+                              external_url: Faker::Internet.url,
+                              description: description,
+                              created_at: rand((Time.current - 1.week) .. Time.current),
+                              tag_list: tags.sample(3).join(','),
+                              geozone: Geozone.reorder("RANDOM()").first,
+                              terms_of_service: "1",
+                              cached_votes_up: Setting["votes_for_proposal_success"])
   puts "    #{proposal.title}"
 end
 
@@ -734,4 +761,96 @@ tags = Faker::Lorem.words(25)
                               proceeding: "Derechos Humanos",
                               sub_proceeding: subproceedings.sample)
   puts "    #{proposal.title}"
+end
+
+puts "Creating polls"
+
+puts "Active Poll"
+poll = Poll.create(name: "Poll 1",
+                   starts_at: 1.month.ago,
+                   ends_at:   1.month.from_now)
+puts "    #{poll.name}"
+
+puts "Upcoming Poll"
+poll = Poll.create(name: "Poll 2",
+                   starts_at: 1.month.from_now,
+                   ends_at:   2.months.from_now)
+puts "    #{poll.name}"
+
+puts "Expired Poll"
+poll = Poll.create(name: "Poll 3",
+                     starts_at: 2.months.ago,
+                     ends_at:   1.months.ago)
+puts "    #{poll.name}"
+
+puts "Creating Poll Questions"
+
+(1..20).each do |i|
+  poll = Poll.reorder("RANDOM()").first
+  author = User.reorder("RANDOM()").first
+  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+  open_at = rand(2.months.ago .. 2.months.from_now)
+  question = Poll::Question.create!(author: author,
+                                    title: Faker::Lorem.sentence(3).truncate(60),
+                                    summary: Faker::Lorem.sentence(3),
+                                    description: description,
+                                    valid_answers: Faker::Lorem.words(3).join(', '),
+                                    poll: poll,
+                                    geozones: Geozone.reorder("RANDOM()").limit(3),
+                                    all_geozones: [true, false].sample)
+  puts "    #{question.title}"
+end
+
+puts "Creating Poll Booths"
+10.times.each_with_index do |i|
+  Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
+end
+
+puts "Creating Booth Assignments"
+Poll::Booth.all.each do |booth|
+  Poll::BoothAssignment.create(booth: booth, poll: Poll.all.sample)
+end
+
+puts "Creating Poll Officer Assignments"
+(1..10).to_a.sample.times do |i|
+  Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
+    Poll::OfficerAssignment.create(officer: poll_officer,
+                                   booth_assignment: booth_assignment,
+                                   date: booth_assignment.poll.starts_at)
+  end
+end
+
+puts "Creating Poll Question from Proposals"
+
+(1..3).each do |i|
+  proposal = Proposal.reorder("RANDOM()").first
+  poll = Poll.current.first
+  question = Poll::Question.create(valid_answers: "Yes, No")
+  question.copy_attributes_from_proposal(proposal)
+  question.save!
+
+  puts " #{question.title} (from proposal)"
+end
+
+puts "Creating Successful Proposals"
+
+(1..10).each do |i|
+  proposal = Proposal.reorder("RANDOM()").first
+  poll = Poll.current.first
+  question = Poll::Question.create(valid_answers: "Yes, No")
+  question.copy_attributes_from_proposal(proposal)
+  question.save!
+
+  puts " #{question.title} (from proposal)"
+end
+
+puts "Commenting Poll Questions"
+
+(1..30).each do |i|
+  author = User.reorder("RANDOM()").first
+  question = Poll::Question.reorder("RANDOM()").first
+  Comment.create!(user: author,
+                  created_at: rand(question.created_at .. Time.current),
+                  commentable: question,
+                  body: Faker::Lorem.sentence)
 end

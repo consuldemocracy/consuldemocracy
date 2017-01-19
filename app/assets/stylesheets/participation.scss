@@ -6,7 +6,8 @@
 // 04. List participation
 // 05. Featured
 // 06. Budget
-// 07. Proposals successfull
+// 07. Proposals successful
+// 08. Polls
 //
 
 // 01. Votes and supports
@@ -769,7 +770,7 @@
 // ------------
 
 .featured-debates, .featured-proposals,
-.proposals-ballot, .proposals-ballot-list {
+.enquiries-list {
   padding: $line-height/2 0;
 
   @include breakpoint(medium) {
@@ -1202,7 +1203,7 @@ ul.ballot-list {
   }
 }
 
-// 07. Proposals successfull
+// 07. Proposals successful
 // -------------------------
 
 .dark-heading {
@@ -1235,7 +1236,7 @@ ul.ballot-list {
   }
 }
 
-.featured-proposals-ballot-banner {
+.featured-proposals-ballot-banner, .sucessfull-proposals-banner {
   background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;
   background-position: 75% 0;
   position: relative;
@@ -1259,10 +1260,10 @@ ul.ballot-list {
   }
 }
 
-.featured-proposals-ballot-banner,
-.successfull .panel {
+.sucessfull-proposals-banner,
+.successful .panel {
 
-  .icon-successfull {
+  .icon-successful {
     border-right: 60px solid #FFD200;
     border-top: 0;
     border-bottom: 60px solid transparent;
@@ -1283,17 +1284,7 @@ ul.ballot-list {
   }
 }
 
-.proposals-ballot-list {
-
-  .proposal-sucessfull {
-    background: white;
-    border-top: 1px solid $border;
-    padding: $line-height 0;
-    position: relative;
-  }
-}
-
-.successfull {
+.successful {
 
   .panel {
     position: relative;
@@ -1311,6 +1302,103 @@ ul.ballot-list {
     @include breakpoint(medium) {
       border-left: 1px solid $border;
       margin: $line-height rem-calc(-25) 0 rem-calc(12);
+    }
+  }
+}
+
+// 08. Polls
+// ----------------------
+
+.dark-heading {
+  background: #2D3E50;
+  color: white;
+
+  .title {
+    color: #92BA48;
+  }
+
+  .info {
+    background: #314253;
+    padding: $line-height;
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid #92BA48;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .back, .icon-angle-left {
+    color: white;
+  }
+
+  &.poll-show {
+    min-height: $line-height*8;
+  }
+}
+
+.poll, .poll-question {
+  background: white;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height/2;
+}
+
+.poll {
+  padding: $line-height;
+
+  .dates {
+    color: $text-medium;
+    font-size: $small-font-size;
+  }
+
+  h3 a {
+    color: $text;
+  }
+}
+
+h2.questions-callout {
+  font-size: $base-font-size;
+}
+
+.poll-question {
+  padding: 0 $line-height;
+
+  h3 {
+    padding-top: $line-height;
+
+    a {
+      color: $text;
+    }
+  }
+}
+
+.poll-question-answers {
+
+  .button {
+    margin-right: $line-height/4;
+    min-width: rem-calc(168);
+
+    &.answered {
+      background: #F4F8EC;
+      border: 2px solid #92BA48;
+      color: $text;
+      position: relative;
+
+      &:after {
+        background: #92BA48;
+        border-radius: rem-calc(20);
+        content: "\6c";
+        color: white;
+        font-family: "icons" !important;
+        font-size: rem-calc(12);
+        padding: $line-height/4;
+        position: absolute;
+        right: -6px;
+        top: -6px;
+      }
     }
   }
 }

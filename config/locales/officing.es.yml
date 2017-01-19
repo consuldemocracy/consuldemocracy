@@ -1,0 +1,48 @@
+---
+es:
+  officing:
+    dashboard:
+      index:
+        title: Presidir mesa de votaciones
+        info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+    menu:
+      voters: "Validar documento"
+      recounts: "Guardar recuento"
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "No eres presidente de mesa en ninguna votación activa"
+        select_poll: "Selecciona votación"
+        add_recount: "Añadir recuento"
+    recounts:
+      flash:
+        create: "Datos añadidos"
+        error_create: "Recuento NO añadido. Error en los datos"
+      new:
+        title: "%{poll} - Añadir recuento diario"
+        not_allowed: "No eres presidente de mesa en esta votación"
+        booth_date: "Fecha y urna"
+        select_booth_date: "Elige fecha y urna"
+        count: "Número de votos"
+        count_placeholder: "Número de votos"
+        submit: "Guardar"
+        recount_list: "Tus recuentos"
+        booth: "Urna"
+        date: "Fecha"
+    voters:
+      new:
+        title: Validar documento
+        document_number: Número de documento
+        document_type:
+          passport: Pasaporte
+          residence_card: Tarjeta de residencia
+          spanish_id: DNI
+        document_type_label: Tipo de documento
+        submit: Validar documento
+      show:
+        title: Validar documento
+        error_verifying_census: "El Padrón no pudo verificar la información de este documento."
+        error_already_voted: "La persona asociada al documento ya ha participado en la votación."
+        can_participate: "La persona asociada al documento puede participar en la votación."
+        submit: Validar voto
+        success: "Voto validado correctamente."

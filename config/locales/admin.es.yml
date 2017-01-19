@@ -9,6 +9,7 @@ es:
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
+      edit: Editar
     banners:
       index:
         title: Banners
@@ -189,24 +190,33 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      proposals_topics: Temas de propuestas
+      poll_questions: Preguntas ciudadanas
       budgets: Presupuestos participativos
-      debate_topics: Temas de debate
       geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
-      incomplete_verifications: Verificaciones incompletas
       managers: Gestores
       moderators: Moderadores
       newsletter: Envío de Newsletters
       valuators: Evaluadores
+      poll_officers: Presidentes de mesa
+      polls: Votaciones
+      poll_booths: Ubicación de urnas
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
       signature_sheets: Hojas de firmas
+      title_categories: Categorías
+      title_moderated_content: Contenido moderado
+      title_budgets: Presupuestos
+      title_polls: Votaciones
+      title_profiles: Perfiles
+      title_banners: Banners
     moderators:
       index:
         title: Moderadores
@@ -241,6 +251,142 @@ es:
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
+    poll_officers:
+      index:
+        title: Presidentes de mesa
+      officer:
+        add: Añadir como Presidente de mesa
+        delete: Eliminar cargo
+        name: Nombre
+        email: Email
+        entry_name: presidente de mesa
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
+    poll_officer_assignments:
+      flash:
+        destroy: "Eliminado turno de presidente de mesa"
+        create: "Añadido turno de presidente de mesa"
+        error_destroy: "Se ha producido un error al eliminar el turno"
+        error_create: "Se ha producido un error al intentar crear el turno"
+      index:
+        new_assignment: "Nuevo turno"
+        date: "Fecha"
+        booth: "Urna"
+        assignment: "Asignación"
+        select_date: "Seleccionar día"
+        select_booth: "Seleccionar urna"
+        add_assignment: "Añadir turno"
+        remove_assignment: "Eliminar turno"
+        assignments: "Turnos como presidente de mesa en esta votación"
+        no_assignments: "No tiene turnos como presidente de mesa en esta votación."
+    poll_booth_assignments:
+      show:
+        location: "Ubicación"
+        officers: "Presidentes de mesa"
+        officers_list: "Lista de presidentes de mesa asignados a esta urna"
+        no_officers: "No hay presidentes de mesa para esta urna"
+        recounts: "Recuentos"
+        recounts_list: "Lista de recuentos de esta urna"
+        no_recounts: "No hay recuentos diarios de esta urna"
+        date: "Fecha"
+        count_by_officer: "Votos (presidente de mesa)"
+        count_by_system:  "Votos (automático)"
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "No hay ninguna votación."
+        create: "Crear votación"
+        name: "Nombre"
+        dates: "Fechas"
+      new:
+        title: "Nueva votación"
+        submit_button: "Crear votación"
+      edit:
+        title: "Editar votación"
+        submit_button: "Actualizar votación"
+      form:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+      show:
+        questions_tab: Preguntas
+        booths_tab: Urnas
+        officers_tab: Presidentes de mesa
+        no_booths: "No hay urnas asignadas a esta votación."
+        no_questions: "No hay preguntas asignadas a esta votación."
+        no_officers: "No hay presidentes de mesa asignados a esta votación."
+        remove_booth: "Desasignar urna"
+        booths_title: "Listado de urnas asignadas"
+        officers_title: "Listado de presidentes de mesa asignados"
+        questions_title: "Listado de preguntas asignadas"
+        remove_question: "Desasignar pregunta"
+        add_booth: "Asignar urna"
+        add_question: "Incluir pregunta"
+        add_officer_assignments: "Añadir turnos como presidente de mesa"
+        edit_officer_assignments: "Editar turnos"
+        search_results: "Resultados de la búsqueda"
+        no_search_results: "No se han encontrado resultados."
+        table_title: "Título"
+        table_summary: "Resumen"
+        table_assignment: "Asignación"
+        table_name: "Nombre"
+        table_location: "Ubicación"
+        table_email: "Email"
+      flash:
+        question_added: "Pregunta añadida a esta votación"
+        error_on_question_added: "No se pudo asignar la pregunta"
+        question_removed: "Pregunta eliminada de esta votación"
+        error_on_question_removed: "No se pudo quitar la pregunta"
+    questions:
+      index:
+        title: "Preguntas ciudadanas"
+        create: "Crear pregunta ciudadana"
+        no_questions: "No hay ninguna pregunta ciudadana."
+        filter_poll: "Filtrar por votación"
+        select_poll: "Seleccionar votación"
+        questions_tab: "Preguntas ciudadanas"
+        successful_proposals_tab: "Propuestas que han superado el umbral"
+        create_question: "Crear pregunta para votación"
+      edit:
+        title: "Editar pregunta ciudadana"
+      new:
+        title: "Crear pregunta ciudadana"
+        poll_label: "Votación"
+        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
+      show:
+        proposal: Propuesta ciudadana original
+        author: Autor
+        title: Título
+        valid_answers: Respuestas válidas
+        summary: Resumen
+        description: Descripción
+        geozones: Distritos
+        preview: Ver en la web
+    booths:
+      index:
+        title: "Lista de urnas"
+        no_booths: "No hay urnas."
+        add_booth: "Añadir urna"
+        name: "Nombre"
+        location: "Ubicación"
+      new:
+        title: "Nueva urna"
+        name: "Nombre"
+        location: "Ubicación"
+        submit_button: "Crear urna"
+      edit:
+        title: "Editar urna"
+        submit_button: "Actualizar urna"
+      show:
+        location: "Ubicación"
+    booth_assignments:
+      flash:
+        destroy: "Urna desasignada"
+        create: "Urna asignada"
+        error_destroy: "Se ha producido un error al desasignar la urna"
+        error_create: "Se ha producido un error al intentar asignar la urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -303,6 +449,15 @@ es:
           enable: "Activar"
           disable: "Desactivar"
     shared:
+      booths_search:
+        button: Buscar
+        placeholder: Buscar urna por nombre
+      poll_officers_search:
+        button: Buscar
+        placeholder: Buscar presidentes de mesa
+      poll_questions_search:
+        button: Buscar
+        placeholder: Buscar preguntas
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
@@ -481,6 +636,11 @@ es:
         users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
         users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
+        spending_proposals_title: Propuestas de inversión
+        visits_title: Visitas
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+        incomplete_verifications: Verificaciones incompletas
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -503,9 +663,9 @@ es:
       create: Crear Tema
       destroy: Eliminar Tema
       index:
-        add_tag: Añade un nuevo tema de debate
-        title: Temas de debate
-      mark_as_featured: Proponer tema al crear debate
+        add_tag: Añade un nuevo tema de propuesta
+        title: Temas de propuesta
+      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema

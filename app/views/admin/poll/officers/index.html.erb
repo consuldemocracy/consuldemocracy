@@ -1,0 +1,53 @@
+<h2><%= t("admin.poll_officers.index.title") %></h2>
+
+<div class="row">
+  <div class="small-12 medium-6 column">
+    <%= render 'search' %>
+  </div>
+</div>
+
+<div id="search-result"></div>
+
+<h3>
+  <%= page_entries_info @officers, entry_name: t('admin.poll_officers.officer.entry_name') %>
+</h3>
+
+<% if @officers.any? %>
+  <table id="officers">
+    <thead>
+      <tr>
+        <th><%= t('admin.poll_officers.officer.name') %></th>
+        <th colspan="2"><%= t('admin.poll_officers.officer.email') %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @officers.each do |officer| %>
+      <tr>
+        <td>
+          <%= officer.name %>
+        </td>
+        <td>
+          <%= officer.email %>
+        </td>
+        <td class="text-right">
+          <% if officer.persisted? %>
+            <%= link_to t('admin.poll_officers.officer.delete'),
+                        admin_officer_path(officer),
+                        method: :delete,
+                        class: "button hollow alert"
+            %>
+          <% else %>
+            <%= link_to t('admin.poll_officers.officer.add'),
+                        { controller: "admin/poll/officers", action: :create,
+                          user_id: officer.user_id },
+                        method: :post,
+                        class: "button success" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @officers %>
+<% end %>

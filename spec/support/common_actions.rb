@@ -261,7 +261,7 @@ module CommonActions
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
   end
 
-  def create_successfull_proposals
+  def create_successful_proposals
     [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
      create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end

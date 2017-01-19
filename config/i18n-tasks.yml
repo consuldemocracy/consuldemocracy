@@ -33,6 +33,7 @@ data:
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
     - config/locales/custom.%{locale}.yml
+    - config/locales/officing.%{locale}.yml
     - config/locales/budgets.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
@@ -131,6 +132,8 @@ ignore_unused:
   - 'admin.activity.show.filter*'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
+  - 'admin.polls.*.submit_button'
+  - 'admin.booths.*.submit_button'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'
   - 'moderation.debates.index.filter*'
@@ -142,6 +145,7 @@ ignore_unused:
   - 'valuation.budgets.index.filter*'
   - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
+  - 'polls.index.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
   - 'proposals.index.select_order'

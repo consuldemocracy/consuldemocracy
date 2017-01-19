@@ -166,6 +166,7 @@ en:
   errors:
     messages:
       user_not_found: User not found
+      invalid_date_range: "Invalid date range"
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
     accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
@@ -243,6 +244,7 @@ en:
       management: Management
       moderation: Moderation
       valuation: Valuation
+      officing: Polling officers
       more_information: More information
       my_account_link: My account
       my_activity_link: My activity
@@ -261,10 +263,10 @@ en:
       processes: Processes
       spending_proposals: Participatory budgeting
       proposal_ballot: Voting
-      spending_proposals: Spending proposals
       sign_up: I want to register
       sign_in: If you have an account %{login}.
       sign_in_link: enter now
+      poll_questions: Voting
       see_all: See proposals
       budgets: Participatory budgeting
   legislation:
@@ -415,6 +417,8 @@ en:
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
+      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
+      voting: "next voting"
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
@@ -436,18 +440,50 @@ en:
     update:
       form:
         submit_button: Save changes
-  proposal_ballots:
-    title: "Votings"
-    description_html: "The following citizen proposals that have reached the <strong>required supports</strong> and will be voted. Before the vote, we will publish all the information on this website."
-    date_title: "Dates of participation"
-    date: "From 13th to 19th of February"
-    successfull: "This proposal has reached the required supports and will be voted in the %{voting}."
-    voting: "next voting"
-    featured_title: "In February you decide"
-    nothing_to_vote: "There is nothing to vote at the moment."
-    info: "From 13th to 19th of February, first vote on citizen proposals."
-    info_extend: "Yes or no? From 13th to 19th February you decide: single ticket for public transport, Madrid 100% sustainable and remodeling Plaza España. Sign up!"
-    button: "I want to decide"
+  polls:
+    all: "All"
+    no_dates: "no date assigned"
+    dates: "From %{open_at} to %{closed_at}"
+    index:
+      filters:
+        current: "Open"
+        incoming: "Incoming"
+        expired: "Expired"
+      title: "Polls"
+      button: "Participate in this poll"
+    show:
+      dates_title: "Participation dates"
+      cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
+      signin: Sign in
+      signup: Sign up
+      cant_answer_verify_html: "You must %{verify_link} in order to answer."
+      verify_link: "verify your account"
+      cant_answer_incoming: "This poll has not yet started."
+      cant_answer_expired: "This poll has finished."
+      cant_answer_wrong_geozone: "You can't answers the following %{count} questions because are not available in your geozone."
+      question_count_html: "This poll has a total of <strong>%{count} qeustions</strong>."
+  poll_questions:
+    create_question: "Create question"
+    default_valid_answers: "Yes, No"
+    show:
+      original_proposal: "Original proposal"
+      author: "Created by"
+      dates_title: "Participation dates"
+      more_info: "More information"
+      not_logged_in: "You must %{signin} or %{signup} to participate."
+      signin: Sign in
+      signup: Sign up
+      cant_answer_verify_html: "You must %{verify_link} in order to answer."
+      verify_link: "verify your account"
+      cant_answer_incoming: "This poll has not yet started."
+      cant_answer_expired: "This poll has finished."
+      cant_answer_wrong_geozone: "This question is not available on your geozone."
+      vote_answer: "Vote %{answer}"
+      voted: "You have voted %{answer}"
+      poll: "Poll"
+    banner:
+      featured_title: "#NextVoting"
+      info: "New proposals that have reached the voting phase."
   proposal_notifications:
     new:
       title: "Send message"
@@ -459,6 +495,12 @@ en:
     show:
       back: "Go back to my activity"
   shared:
+    edit: 'Edit'
+    save: 'Save'
+    delete: 'Delete'
+    comments:
+      title: 'Comments'
+      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     "yes": "Yes"
     "no": "No"
     comments:

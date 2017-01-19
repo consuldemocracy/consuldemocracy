@@ -10,6 +10,9 @@ module Abilities
       can [:read, :welcome, :select_district], SpendingProposal
       can [:stats, :results], SpendingProposal
 
+      can :read, Poll
+      can :read, Poll::Question
+
       can [:read, :welcome], Budget
       can [:read, :print], Budget::Investment
       can [:read], Budget::Group

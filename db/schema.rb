@@ -253,10 +253,10 @@ ActiveRecord::Schema.define(version: 20170117122632) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -348,6 +348,14 @@ ActiveRecord::Schema.define(version: 20170117122632) do
     t.string   "census_code"
   end
 
+  create_table "geozones_poll_questions", force: :cascade do |t|
+    t.integer "geozone_id"
+    t.integer "question_id"
+  end
+
+  add_index "geozones_poll_questions", ["geozone_id"], name: "index_geozones_poll_questions_on_geozone_id", using: :btree
+  add_index "geozones_poll_questions", ["question_id"], name: "index_geozones_poll_questions_on_question_id", using: :btree
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -438,6 +446,94 @@ ActiveRecord::Schema.define(version: 20170117122632) do
   end
 
   add_index "probes", ["codename"], name: "index_probes_on_codename", using: :btree
+
+  create_table "poll_booth_assignments", force: :cascade do |t|
+    t.integer  "booth_id"
+    t.integer  "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "poll_booths", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+  end
+
+  create_table "poll_officer_assignments", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.datetime "date"
+  end
+
+  create_table "poll_officers", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  create_table "poll_partial_results", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "author_id"
+    t.string  "answer"
+    t.integer "amount"
+    t.string  "origin"
+  end
+
+  add_index "poll_partial_results", ["answer"], name: "index_poll_partial_results_on_answer", using: :btree
+  add_index "poll_partial_results", ["author_id"], name: "index_poll_partial_results_on_author_id", using: :btree
+  add_index "poll_partial_results", ["origin"], name: "index_poll_partial_results_on_origin", using: :btree
+  add_index "poll_partial_results", ["question_id"], name: "index_poll_partial_results_on_question_id", using: :btree
+
+  create_table "poll_questions", force: :cascade do |t|
+    t.integer  "proposal_id"
+    t.integer  "poll_id"
+    t.integer  "author_id"
+    t.string   "author_visible_name"
+    t.string   "title"
+    t.string   "summary"
+    t.string   "valid_answers"
+    t.text     "description"
+    t.integer  "comments_count"
+    t.datetime "hidden_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "all_geozones",        default: false
+    t.tsvector "tsv"
+  end
+
+  add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
+  add_index "poll_questions", ["poll_id"], name: "index_poll_questions_on_poll_id", using: :btree
+  add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
+  add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
+
+  create_table "poll_recounts", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_assignment_id"
+    t.integer  "count"
+    t.text     "count_log",                 default: ""
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.datetime "date"
+    t.text     "officer_assignment_id_log", default: ""
+  end
+
+  add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
+  add_index "poll_recounts", ["officer_assignment_id"], name: "index_poll_recounts_on_officer_assignment_id", using: :btree
+
+  create_table "poll_voters", force: :cascade do |t|
+    t.string   "document_number"
+    t.string   "document_type"
+    t.integer  "booth_assignment_id", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "published", default: false
+  end
 
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"
@@ -814,6 +910,8 @@ ActiveRecord::Schema.define(version: 20170117122632) do
   add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
+  add_foreign_key "geozones_poll_questions", "geozones"
+  add_foreign_key "geozones_poll_questions", "poll_questions", column: "question_id"
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
@@ -821,6 +919,11 @@ ActiveRecord::Schema.define(version: 20170117122632) do
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
   add_foreign_key "probe_options", "debates"
+  add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
+  add_foreign_key "poll_partial_results", "users", column: "author_id"
+  add_foreign_key "poll_questions", "polls"
+  add_foreign_key "poll_questions", "proposals"
+  add_foreign_key "poll_questions", "users", column: "author_id"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

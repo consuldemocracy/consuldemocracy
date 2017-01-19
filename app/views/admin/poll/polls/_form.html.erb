@@ -1,0 +1,34 @@
+<%= form_for [:admin, @poll] do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :name,
+                       placeholder: t('admin.polls.form.name'),
+                       label:       t("admin.polls.form.name") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.label :starts_at, t("admin.polls.form.starts_at") %>
+      <%= f.text_field :starts_at,
+                        label: false,
+                        value: @poll.starts_at.present? ? l(@poll.starts_at.to_date) : nil,
+                        class: "js-calendar-full" %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= f.label :ends_at, t("admin.polls.form.ends_at") %>
+      <%= f.text_field :ends_at,
+                        label: false,
+                        value: @poll.ends_at.present? ? l(@poll.ends_at.to_date) : nil,
+                        class: "js-calendar-full" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.submit t("admin.polls.#{admin_submit_action(@poll)}.submit_button"),
+                   class: "button success expanded" %>
+    </div>
+  </div>
+<% end %>

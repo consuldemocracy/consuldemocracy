@@ -151,6 +151,18 @@ describe User do
     end
   end
 
+  describe "poll_officer?" do
+    it "is false when the user is not a poll officer" do
+      expect(subject.poll_officer?).to be false
+    end
+
+    it "is true when the user is a poll officer" do
+      subject.save
+      create(:poll_officer, user: subject)
+      expect(subject.poll_officer?).to be true
+    end
+  end
+
   describe "organization?" do
     it "is false when the user is not an organization" do
       expect(subject.organization?).to be false

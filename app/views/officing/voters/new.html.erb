@@ -1,0 +1,20 @@
+<h2><%= t("officing.voters.new.title") %></h2>
+
+<div class="row">
+  <div class="small-12 medium-6 column">
+    <form>
+
+      <label><%= t("officing.voters.new.document_type_label") %></label>
+      <select>
+        <option><%= t("officing.voters.new.document_type.spanish_id") %></option>
+        <option><%= t("officing.voters.new.document_type.residence_card") %></option>
+        <option><%= t("officing.voters.new.document_type.passport") %></option>
+      </select>
+
+      <label><%= t("officing.voters.new.document_number") %></label>
+      <input type="text" placeholder="<%= t("officing.voters.new.document_number") %>">
+
+      <input type="submit" value="<%= t("officing.voters.new.submit") %>" class="button">
+    </form>
+  </div>
+</div>

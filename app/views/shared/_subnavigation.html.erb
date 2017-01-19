@@ -3,9 +3,9 @@
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
-                                debates_path,
-                                controller_name == 'debates',
-                                accesskey: "d" %>
+                                  debates_path,
+                                  controller_name == 'debates',
+                                  accesskey: "d" %>
       </li>
     <% end %>
     <li>
@@ -14,15 +14,20 @@
                                 controller_name == 'proposals',
                                 accesskey: "p" %>
     </li>
-    <li>
-      <%= layout_menu_link_to t("layouts.header.proposal_ballot"),
-                                first_voting_path,
-                                current_page?(first_voting_path),
-                                accesskey: "v" %>
-    </li>
+
+    <% if feature?(:polls) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.poll_questions"),
+                                  polls_path,
+                                  controller_name == "polls",
+                                  accesskey: "v" %>
+      </li>
+    <% end %>
+
     <li>
       <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "o"  %>
     </li>
+
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),

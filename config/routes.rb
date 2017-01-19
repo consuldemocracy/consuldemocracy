@@ -63,8 +63,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposal_ballots, only: [:index]
-
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
@@ -112,6 +110,12 @@ Rails.application.routes.draw do
 
   resources :annotations do
     get :search, on: :collection
+  end
+
+  resources :polls, only: [:show, :index] do
+    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
+      post :answer, on: :member
+    end
   end
 
   resources :users, only: [:show] do
@@ -223,6 +227,27 @@ Rails.application.routes.draw do
 
     resources :managers, only: [:index, :create, :destroy] do
       get :search, on: :collection
+    end
+
+    scope module: :poll do
+      resources :polls do
+        get :search_booths, on: :member
+        get :search_officers, on: :member
+        get :search_questions, on: :member
+        patch :add_question, on: :member
+        patch :remove_question, on: :member
+
+        resources :booth_assignments, only: :show
+      end
+
+      resources :officers do
+        get :search, on: :collection
+      end
+
+      resources :booths
+      resources :booth_assignments, only: [:create, :destroy]
+      resources :officer_assignments, only: [:index, :create, :destroy]
+      resources :questions
     end
 
     resources :verifications, controller: :verifications, only: :index do
@@ -353,6 +378,13 @@ Rails.application.routes.draw do
 
   resource :volunteer_poll, only: [:new, :create] do
     get :thanks, on: :collection
+
+  namespace :officing do
+    resources :polls, only: [:index] do
+      resources :recounts, only: [:new, :create]
+      resources :voters, only: [:new, :show]
+    end
+    root to: "dashboard#index"
   end
 
   if Rails.env.development?

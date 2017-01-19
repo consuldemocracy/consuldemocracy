@@ -1,0 +1,20 @@
+<ul class="tabs" data-tabs id="assigned-resources-tabs">
+  <li class="tabs-title is-active">
+    <%= link_to "#tab-questions" do %>
+      <%= t("admin.polls.show.questions_tab") %>
+      <span class="js-comments-count">(<%= @poll.questions.count %>)</span>
+    <% end %>
+  </li>
+  <li class="tabs-title">
+    <%= link_to "#tab-booths" do %>
+      <%= t("admin.polls.show.booths_tab") %>
+      (<%= @poll.booths.count %>)
+    <% end %>
+  </li>
+  <li class="tabs-title">
+    <%= link_to "#tab-officers" do %>
+      <%= t("admin.polls.show.officers_tab") %>
+      (<%= @poll.officers.uniq.count %>)
+    <% end %>
+  </li>
+</ul>

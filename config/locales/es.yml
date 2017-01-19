@@ -166,6 +166,7 @@ es:
   errors:
     messages:
       user_not_found: No se encontró el usuario
+      invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
@@ -243,6 +244,7 @@ es:
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
+      officing: Presidentes de mesa
       more_information: Más información
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
@@ -264,6 +266,7 @@ es:
       sign_up: Quiero registrarme
       sign_in: Si ya tienes una cuenta %{login}.
       sign_in_link: entra ahora
+      poll_questions: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
   legislation:
@@ -414,6 +417,8 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -435,18 +440,50 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  proposal_ballots:
-    title: "Votaciones"
-    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación. Antes de la votación publicaremos en esta misma web toda la información al respecto."
-    date_title: "Fechas de participación"
-    date: "Del 13 al 19 de febrero"
-    successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
-    voting: "próxima votación"
-    featured_title: "En febrero tú decides"
-    nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Del 13 al 19 de febrero, primera votación de propuestas ciudadanas."
-    info_extend: "¿Sí o no? Del 13 al 19 de febrero tú decides: billete único para el transporte público, Madrid 100% sostenible y reforma de Plaza España. ¡Regístrate!"
-    button: "Quiero decidir"
+  polls:
+    all: "Todas"
+    no_dates: "sin fecha asignada"
+    dates: "Desde el %{open_at} hasta el %{closed_at}"
+    index:
+      filters:
+        current: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
+      title: "Votaciones"
+      button: "Participar en esta votación"
+    show:
+      dates_title: "Fechas de participación"
+      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "No puedes responder a las siguientes %{count} preguntas porque no están disponibles en tu zona:"
+      question_count_html: "Esta votación tiene un total de <strong>%{count} preguntas</strong>."
+  poll_questions:
+    create_question: "Crear pregunta para votación"
+    default_valid_answers: "Sí, No"
+    show:
+      original_proposal: "Propuesta original"
+      author: "Creado por"
+      dates_title: "Fechas de participación"
+      more_info: "Más información"
+      not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
+      vote_answer: "Votar %{answer}"
+      voted: "Has votado %{answer}"
+      poll: "Votación"
+    banner:
+      featured_title: "#PróximaVotación"
+      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -458,6 +495,12 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
     comments:
