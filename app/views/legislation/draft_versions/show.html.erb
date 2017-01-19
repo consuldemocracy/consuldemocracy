@@ -38,9 +38,9 @@
         <div class="draft-index-rotated center">
           <span class="panel-title"><%= t('.text_toc') %></span>
         </div>
-        
+
         <div data-sticky-container>
-          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky">
+          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
             <%= @draft_version.toc_html.html_safe %>
           </div>
         </div>
