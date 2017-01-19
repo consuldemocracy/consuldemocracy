@@ -60,9 +60,10 @@ body.admin {
         height: $line-height*2;
       }
 
-    .input-group input[type="text"] {
-      border-radius: 0;
-      margin-bottom: 0 !important;
+      .input-group input[type="text"] {
+        border-radius: 0;
+        margin-bottom: 0 !important;
+      }
     }
   }
 
