@@ -11,9 +11,7 @@
     <% end %>
 
     <% if feature?(:budgets) && Budget.accepting.any? %>
-      <div class="type-selection-proposal">
-        <%= render "custom/shared/type_selection_proposal" %>
-      </div>
+      <%= render "custom/shared/type_selection_proposal" %>
     <% end %>
 
     <h1><%= t("proposals.new.start_new") %></h1>
