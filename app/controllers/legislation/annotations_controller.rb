@@ -1,7 +1,7 @@
 class Legislation::AnnotationsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :new_comment]
   before_action :convert_ranges_parameters, only: [:create]
 
   load_and_authorize_resource :process
@@ -43,11 +43,25 @@ class Legislation::AnnotationsController < ApplicationController
 
   def comments
     @annotation = Legislation::Annotation.find(params[:annotation_id])
+    @comment = @annotation.comments.new
   end
 
   def new
     respond_to do |format|
       format.js
+    end
+  end
+
+  def new_comment
+    @draft_version = Legislation::DraftVersion.find(params[:draft_version_id])
+    @annotation = @draft_version.annotations.find(params[:annotation_id])
+    @comment = @annotation.comments.new(body: params[:comment][:body], user: current_user)
+    if @comment.save
+      @comment = @annotation.comments.new
+    end
+
+    respond_to do |format|
+      format.js { render :comments }
     end
   end
 
