@@ -811,15 +811,17 @@ Poll::Booth.all.each do |booth|
   Poll::BoothAssignment.create(booth: booth, poll: Poll.all.sample)
 end
 
+#There is date validation that can break seeds.
+#Creating only one Poll::OfficerAssignament for now
 puts "Creating Poll Officer Assignments"
-(1..10).to_a.sample.times do |i|
-  Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
-    Poll::OfficerAssignment.create(officer: poll_officer,
-                                   booth_assignment: booth_assignment,
-                                   date: booth_assignment.poll.starts_at)
-  end
-end
-
+#10.times.each_with_index do |i|
+  #Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
+    booth_assignment = Poll::BoothAssignment.first
+    Poll::OfficerAssignment.create!(officer: Poll::Officer.first,
+                                    booth_assignment: booth_assignment,
+                                    date: booth_assignment.poll.starts_at)
+  #end
+#end
 puts "Creating Poll Question from Proposals"
 
 (1..3).each do |i|
