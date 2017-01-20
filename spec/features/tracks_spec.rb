@@ -400,5 +400,14 @@ feature 'Tracking' do
       expect(page.html).to have_content "weboConv(34);"
     end
 
+    scenario "codes with turbolinks", :js do
+      visit "debates"
+      expect(page.html).to have_content "weboConv(27);"
+
+      first(:link, "Proposals").click
+      expect(page).to have_content "Create proposal"
+      expect(page.html).to have_content "weboConv(29);"
+    end
+
   end
 end
