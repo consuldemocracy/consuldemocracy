@@ -110,6 +110,55 @@
     </div>
   </div>
 
+  <div class="expanded">
+    <div class="row relative" data-equalizer data-equalize-on="medium">
+      <div class="small-12 column">
+        <div class="block-grey">
+          <div class="four inline-block">
+            <span>04</span>
+          </div>
+          <h2 class="inline-block">Gran vía</h2>
+          <div class="block-content" data-equalizer-watch>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+              <div class="small-12 medium-6 column">
+                <div class="question">
+                  <h3>¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?</h3>
+                  <h4>¿Sí o No?</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if !user_signed_in? %>
+            <div class="small-12 medium-8">
+              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="row">
     <div class="small-12 medium-8 small-centered text-center">
       <h2>Votaciones de distrito</h2>
