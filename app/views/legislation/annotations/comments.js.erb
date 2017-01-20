@@ -10,3 +10,8 @@ $('a.publish-comment').on({
   }
 });
 
+<% if @comment.errors.any? %>
+  $('a.publish-comment').hide();
+  $('#js-comment-form-annotation').toggle();
+  $('#js-comment-form-annotation textarea').focus();
+<% end %>
