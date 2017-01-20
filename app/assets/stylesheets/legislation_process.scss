@@ -212,9 +212,17 @@ $epigraph-line-height: rem-calc(22);
         cursor: pointer;
         display: inline-block;
         margin: 0 1rem 1rem 0;
+        transition: all 0.4s;
+        border-bottom: 2px solid transparent;
         
         &:first-of-type {
           margin-left: 0;
+        }
+        
+        &:hover,
+        &:active,
+        &:focus {
+          border-bottom: 2px solid $brand;
         }
 
         @media (min-width: 950px) {
@@ -223,6 +231,7 @@ $epigraph-line-height: rem-calc(22);
 
         a,
         h4 {
+          display: block;
           color: #6D6D6D;
           margin-bottom: 0;
         }
