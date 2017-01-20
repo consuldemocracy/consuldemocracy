@@ -415,38 +415,6 @@ ActiveRecord::Schema.define(version: 20170117122632) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
-  create_table "probe_options", force: :cascade do |t|
-    t.string  "code"
-    t.string  "name"
-    t.integer "probe_id"
-    t.integer "probe_selections_count", default: 0
-    t.integer "debate_id"
-    t.integer "comments_count",         default: 0, null: false
-  end
-
-  add_index "probe_options", ["debate_id"], name: "index_probe_options_on_debate_id", using: :btree
-
-  create_table "probe_selections", force: :cascade do |t|
-    t.integer  "probe_id"
-    t.integer  "probe_option_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "probe_selections", ["probe_id"], name: "index_probe_selections_on_probe_id", using: :btree
-  add_index "probe_selections", ["probe_option_id"], name: "index_probe_selections_on_probe_option_id", using: :btree
-  add_index "probe_selections", ["user_id"], name: "index_probe_selections_on_user_id", using: :btree
-
-  create_table "probes", force: :cascade do |t|
-    t.string   "codename"
-    t.boolean  "selecting_allowed", default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "probes", ["codename"], name: "index_probes_on_codename", using: :btree
-
   create_table "poll_booth_assignments", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "poll_id"
@@ -534,6 +502,38 @@ ActiveRecord::Schema.define(version: 20170117122632) do
     t.datetime "ends_at"
     t.boolean  "published", default: false
   end
+
+  create_table "probe_options", force: :cascade do |t|
+    t.string  "code"
+    t.string  "name"
+    t.integer "probe_id"
+    t.integer "probe_selections_count", default: 0
+    t.integer "debate_id"
+    t.integer "comments_count",         default: 0, null: false
+  end
+
+  add_index "probe_options", ["debate_id"], name: "index_probe_options_on_debate_id", using: :btree
+
+  create_table "probe_selections", force: :cascade do |t|
+    t.integer  "probe_id"
+    t.integer  "probe_option_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "probe_selections", ["probe_id"], name: "index_probe_selections_on_probe_id", using: :btree
+  add_index "probe_selections", ["probe_option_id"], name: "index_probe_selections_on_probe_option_id", using: :btree
+  add_index "probe_selections", ["user_id"], name: "index_probe_selections_on_user_id", using: :btree
+
+  create_table "probes", force: :cascade do |t|
+    t.string   "codename"
+    t.boolean  "selecting_allowed", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "probes", ["codename"], name: "index_probes_on_codename", using: :btree
 
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"
@@ -918,12 +918,12 @@ ActiveRecord::Schema.define(version: 20170117122632) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
-  add_foreign_key "probe_options", "debates"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
   add_foreign_key "poll_partial_results", "users", column: "author_id"
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
+  add_foreign_key "probe_options", "debates"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end
