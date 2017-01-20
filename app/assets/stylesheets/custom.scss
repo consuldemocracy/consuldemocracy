@@ -2758,7 +2758,7 @@ $campaign-yellow:  #FFDB19;
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -2771,7 +2771,7 @@ $campaign-yellow:  #FFDB19;
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -2884,7 +2884,7 @@ $campaign-yellow: #FFDB19;
     }
   }
 
-  .one, .two, .three {
+  .one, .two, .three, .four {
     font-size: rem-calc(60);
     font-weight: bold;
   }
@@ -2909,6 +2909,10 @@ $campaign-yellow: #FFDB19;
 
   .three {
     color: white;
+  }
+
+  .four {
+    color: black;
   }
 
   .block {
@@ -2981,6 +2985,7 @@ $campaign-yellow: #FFDB19;
 
       .button {
         background: black;
+        color: white;
       }
 
       @include breakpoint(large) {
@@ -2992,9 +2997,48 @@ $campaign-yellow: #FFDB19;
     }
   }
 
+  .block-grey {
+    background: #FAFAFA;
+    margin-bottom: $line-height*2;
+    padding: $line-height;
+    position: relative;
+
+    h2 {
+      margin-left: $line-height;
+
+      @include breakpoint(large) {
+        font-size: rem-calc(50);
+      }
+    }
+
+    h3 {
+      font-size: rem-calc(24);
+    }
+
+    .question {
+      margin-bottom: $line-height;
+      min-height: rem-calc(144);
+    }
+
+    h2, h3, h4 {
+      color: black;
+    }
+
+    .button {
+      background: black;
+    }
+
+    @include breakpoint(large) {
+
+      .button {
+        right: 24px;
+      }
+    }
+  }
+
   .plaza-espana-projects {
     margin-top: $line-height*2;
-    padding-bottom: $line-height*3;
+    padding-bottom: $line-height*2;
     position: relative;
 
     .block-black {
