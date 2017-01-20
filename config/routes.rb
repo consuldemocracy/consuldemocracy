@@ -378,6 +378,7 @@ Rails.application.routes.draw do
 
   resource :volunteer_poll, only: [:new, :create] do
     get :thanks, on: :collection
+  end
 
   namespace :officing do
     resources :polls, only: [:index] do
