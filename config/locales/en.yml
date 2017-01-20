@@ -7,7 +7,7 @@ en:
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
-      finish_verification: Complete verification
+      finish_verification: "Add a double verification check to your account"
       notifications: Notifications
       organization_name_label: Name of organization
       organization_responsible_name_placeholder: Representative of the organization/collective
@@ -799,7 +799,7 @@ en:
       question: Do you already have an account in %{org_name}?
       title: Account verification
     welcome:
-      go_to_index: See proposals and debates
+      go_to_index: Not now, start to participate
       title: Participate
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
