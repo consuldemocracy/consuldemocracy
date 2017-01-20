@@ -466,27 +466,32 @@ end
 
 puts "Creating polls"
 
-puts "Active Poll"
-poll = Poll.create(name: "Poll 1",
-                   starts_at: 1.month.ago,
-                   ends_at:   1.month.from_now)
-puts "    #{poll.name}"
+puts "Active Polls"
+(1..5).each do |i|
+  poll = Poll.create(name: "Active Poll #{i}",
+                     starts_at: 1.month.ago,
+                     ends_at:   1.month.from_now,
+                     geozone_restricted: true,
+                     geozones: Geozone.reorder("RANDOM()").limit(3)
+                    )
+  puts "    #{poll.name}"
+end
 
 puts "Upcoming Poll"
-poll = Poll.create(name: "Poll 2",
+poll = Poll.create(name: "Upcoming Poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
 puts "    #{poll.name}"
 
 puts "Expired Poll"
-poll = Poll.create(name: "Poll 3",
+poll = Poll.create(name: "Expired Poll",
                      starts_at: 2.months.ago,
                      ends_at:   1.months.ago)
 puts "    #{poll.name}"
 
 puts "Creating Poll Questions"
 
-(1..20).each do |i|
+(1..50).each do |i|
   poll = Poll.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -496,14 +501,12 @@ puts "Creating Poll Questions"
                                     summary: Faker::Lorem.sentence(3),
                                     description: description,
                                     valid_answers: Faker::Lorem.words(3).join(', '),
-                                    poll: poll,
-                                    geozones: Geozone.reorder("RANDOM()").limit(3),
-                                    all_geozones: [true, false].sample)
+                                    poll: poll)
   puts "    #{question.title}"
 end
 
 puts "Creating Poll Booths"
-10.times.each_with_index do |i|
+30.times.each_with_index do |i|
   Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
 end
 
@@ -515,7 +518,7 @@ end
 puts "Creating Poll Officer Assignments"
 (1..10).to_a.sample.times do |i|
   Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
-    Poll::OfficerAssignment.create(officer: poll_officer,
+    Poll::OfficerAssignment.create(officer: poll_officer.poll_officer,
                                    booth_assignment: booth_assignment,
                                    date: booth_assignment.poll.starts_at)
   end
@@ -523,7 +526,7 @@ end
 
 puts "Creating Poll Question from Proposals"
 
-(1..3).each do |i|
+(1..3).each do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
   question = Poll::Question.create(valid_answers: "Yes, No")
@@ -535,7 +538,7 @@ end
 
 puts "Creating Successful Proposals"
 
-(1..10).each do |i|
+(1..10).each do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
   question = Poll::Question.create(valid_answers: "Yes, No")
@@ -547,7 +550,7 @@ end
 
 puts "Commenting Poll Questions"
 
-(1..30).each do |i|
+(1..30).each do
   author = User.reorder("RANDOM()").first
   question = Poll::Question.reorder("RANDOM()").first
   Comment.create!(user: author,
