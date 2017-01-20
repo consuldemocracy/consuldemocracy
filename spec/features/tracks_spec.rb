@@ -352,4 +352,53 @@ feature 'Tracking' do
     end
   end
 
+  context "Tracking pages" do
+
+    background do
+      Setting['per_page_code'] = '<script type="text/javascript">function weboConv(idConv){}</script>'
+    end
+
+    scenario "Codes", :js do
+      visit root_path
+      expect(page.html).to have_content "weboConv(23);"
+
+      visit "users/sign_up"
+      expect(page.html).to have_content "weboConv(24);"
+
+      visit "users/sign_up/success"
+      expect(page.html).to have_content "weboConv(26);"
+
+      visit "debates"
+      expect(page.html).to have_content "weboConv(27);"
+
+      user = create(:user, :level_two)
+      login_as(user)
+
+      visit "debates/new"
+      expect(page.html).to have_content "weboConv(28);"
+
+      visit "proposals"
+      expect(page.html).to have_content "weboConv(29);"
+
+      visit "proposals/new"
+      expect(page.html).to have_content "weboConv(30);"
+
+      visit "vota"
+      expect(page.html).to have_content "weboConv(31);"
+
+      visit "procesos"
+      expect(page.html).to have_content "weboConv(32);"
+
+      budget = create(:budget)
+      visit "participatory_budget"
+      expect(page.html).to have_content "weboConv(33);"
+
+      visit "presupuestos"
+      expect(page.html).to have_content "weboConv(33);"
+
+      visit "more_information"
+      expect(page.html).to have_content "weboConv(34);"
+    end
+
+  end
 end

@@ -11,6 +11,7 @@
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
     <%= setting['per_page_code'].try(:html_safe) %>
+    <%= render "layouts/tracking_page" %>
   </head>
 
   <body class="auth-page">
