@@ -2985,6 +2985,7 @@ $campaign-yellow: #FFDB19;
 
       .button {
         background: black;
+        color: white;
       }
 
       @include breakpoint(large) {
