@@ -5,6 +5,7 @@ $('a.publish-comment').on({
     e.preventDefault();
     $('a.publish-comment').hide();
     $('#js-comment-form-annotation').toggle();
+    $('#js-comment-form-annotation textarea').focus();
     return;
   }
 });
