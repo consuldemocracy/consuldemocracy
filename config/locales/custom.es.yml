@@ -39,11 +39,6 @@ es:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
   cards:
-    vallecas:
-      title_html: "Nuevo barrio en Villa de Vallecas"
-      text: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
-      date_html: "Participa hasta el <strong>23 de enero</strong>"
-      button: "Quiero opinar"
     air_quality_plan:
       title_html: "Borrador Plan calidad de aire y cambio climático"
       text: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
