@@ -1,0 +1,29 @@
+<% content_for :title, "Votación de #{@poll.name} #{current_user.name}" %>
+
+<script>
+    function getCastHmac(auth_data, callback) {
+    // auth_data is of type:
+    // {
+    //   permission: "vote",
+    //   object_type: "election",
+    //   object_id: 110
+    // }
+    $.ajax("<%= create_token_vote_path %>")
+      .done(function(data) {callback("khmac:///sha-256;"+data);})
+      .fail(function(jqXHR) {window.location.href=jqXHR.responseText});
+    }
+</script>
+
+
+<%= @poll.server_url %>election/<%= @scoped_agora_poll_id %>/vote
+<div class="booth_container">
+  <a class="agoravoting-voting-booth"
+    href="<%= @poll.server_url %>booth/<%= @scoped_agora_poll_id %>/vote"
+    data-authorization-funcname="getCastHmac">
+    Votar con Agora Voting
+  </a>
+
+  <script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="<%= @poll.server_url %>admin/avWidgets.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","agoravoting-widgets-js");
+  </script>
+</div>
