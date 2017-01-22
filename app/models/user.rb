@@ -295,6 +295,16 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
+  def get_or_create_vote(poll_id)
+    v = Nvote.new({poll_id: poll_id, user_id: self.id})
+    if Nvote.find_by_voter_id( v.generate_message )
+      return v
+    else
+      v.save
+      return v
+    end
+  end
+
   private
 
     def clean_document_number

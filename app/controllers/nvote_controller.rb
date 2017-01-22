@@ -9,8 +9,8 @@ class NvoteController < ApplicationController
   end
 
   def create_token
-    election = Poll.find params[:poll_id]
-    vote = current_user.get_or_create_vote(election.id)
+    poll = Poll.find params[:poll_id]
+    vote = current_user.get_or_create_vote(poll.id)
     message = vote.generate_message
     render content_type: 'text/plain', :status => :ok, :text => "#{vote.generate_hash message}/#{message}"
   end
