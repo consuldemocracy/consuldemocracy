@@ -20,6 +20,9 @@ App.MarkdownEditor =
         $('.legislation-draft-versions-edit .warning').show()
         return
 
+      $(this).find('textarea').on 'scroll', ->
+        $('#markdown-preview').scrollTop($(this).scrollTop())
+
       $(this).find('.fullscreen-toggle').on 'click', ->
         $('.markdown-editor').toggleClass('fullscreen')
         $('.fullscreen-container').toggleClass('medium-8', 'medium-12')
