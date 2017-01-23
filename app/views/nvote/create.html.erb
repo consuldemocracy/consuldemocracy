@@ -1,4 +1,5 @@
 <% content_for :title, "Votación de #{@poll.name} #{current_user.name}" %>
+<% content_for :wrapper_class, "light" %>
 
 <script>
     function getCastHmac(auth_data, callback) {
