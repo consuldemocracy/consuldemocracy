@@ -20,6 +20,7 @@
 // 18. Voluntarios mesas presenciales
 // 19. Budgets custom
 // 20. Landing voting february 2017
+// 21. Nvotes
 //
 
 // 01. Global styles
@@ -3115,4 +3116,14 @@ ul.ballot-list {
 .select-district .active a {
   background: $budget;
   color: $text;
+}
+
+// 21. Nvotes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.booth-container {
+
+  iframe {
+    height: 100vh !important;
+  }
 }
