@@ -2,6 +2,7 @@ App.LegislationAllegations =
 
   toggle_comments: ->
     $('.draft-allegation').toggleClass('comments-on');
+    $('#comments-box').html('').hide()
 
   show_comments: ->
     $('.draft-allegation').addClass('comments-on');
