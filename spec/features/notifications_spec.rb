@@ -1,10 +1,17 @@
 require 'rails_helper'
 
 feature "Notifications" do
+  let(:admin_user) { create :user }
+  let(:administrator) do
+    create(:administrator, user: admin_user)
+    admin_user
+  end
   let(:author) { create :user }
   let(:user) { create :user }
   let(:debate) { create :debate, author: author }
   let(:proposal) { create :proposal, author: author }
+  let(:legislation_question) { create(:legislation_question, author: administrator) }
+  let(:legislation_annotation) { create(:legislation_annotation, author: author) }
 
   scenario "User commented on my debate", :js do
     login_as user
@@ -18,6 +25,28 @@ feature "Notifications" do
 
     logout
     login_as author
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+
+    expect(page).to have_content "Someone commented on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
+  scenario "User commented on my legislation question", :js do
+    login_as user
+    visit legislation_process_question_path legislation_question.process, legislation_question
+
+    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I answered your question"
+    click_button "Publish answer"
+    within "#comments" do
+      expect(page).to have_content "I answered your question"
+    end
+
+    logout
+    login_as administrator
     visit root_path
 
     find(".icon-notification").click
