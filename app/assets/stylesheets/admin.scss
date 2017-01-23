@@ -411,6 +411,11 @@ table.investment-projects-summary {
 
 .markdown-editor {
   background-color: white;
+  
+  .markdown-area,
+  #markdown-preview {
+    display: none;
+  }
 }
 
 .markdown-editor #markdown-preview {
@@ -437,7 +442,9 @@ table.investment-projects-summary {
 
 // 06. Legislation
 // --------------
-
+.edit_legislation_draft_version .row {
+  margin-bottom: 2rem;
+}
 .legislation-admin {
   .menu .active > a {
     background: none;
@@ -595,6 +602,8 @@ table.investment-projects-summary {
   }
   
   .fullscreen-container {
+    text-align: center;
+    background: #ccdbe6;
     
     .markdown-editor-header,
     .markdown-editor-buttons {
@@ -602,12 +611,7 @@ table.investment-projects-summary {
     }
     
     a {
-
-      @include breakpoint(medium) {
-        float: right;
-      }
-      
-      line-height: 3rem;
+      line-height: 8rem;
       
       span {
         text-decoration: none;
@@ -656,13 +660,28 @@ table.investment-projects-summary {
   
   .fullscreen {
     
+    .markdown-area,
+    #markdown-preview {
+      display: block;
+    }
+    
     .column {
       padding: 0;
     }
     
     .fullscreen-container {
+      text-align: left;
       background: $admin-color;
       padding: 0.5rem 1rem;
+      margin-bottom: 0;
+        
+        a {
+          line-height: 3rem;
+
+          @include breakpoint(medium) {
+            float: right;
+          }
+        }
       
       .markdown-editor-header {
         vertical-align: top;
