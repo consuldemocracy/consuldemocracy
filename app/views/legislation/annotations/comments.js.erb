@@ -1,2 +1,17 @@
 $("#comments-box").html("<%= j render('comments_box', annotation: @annotation) %>").show();
 
+$('a.publish-comment').on({
+  click: function(e) {
+    e.preventDefault();
+    $('a.publish-comment').hide();
+    $('#js-comment-form-annotation').toggle();
+    $('#js-comment-form-annotation textarea').focus();
+    return;
+  }
+});
+
+<% if @comment.errors.any? %>
+  $('a.publish-comment').hide();
+  $('#js-comment-form-annotation').toggle();
+  $('#js-comment-form-annotation textarea').focus();
+<% end %>

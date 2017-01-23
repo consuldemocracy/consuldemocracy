@@ -114,6 +114,7 @@ Rails.application.routes.draw do
         resources :annotations do
           get :search, on: :collection
           get :comments
+          post :new_comment
         end
       end
     end

@@ -4,7 +4,7 @@ App.Legislation =
     $('#js-toggle-debate').on
       click: ->
         $('#debate-show').toggle()
-        
+
     $('#js-toggle-small-debate').on
       click: ->
         $('#debate-show').toggle()

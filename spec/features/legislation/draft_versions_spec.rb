@@ -171,7 +171,7 @@ feature 'Legislation Draft Versions' do
       expect(page).to have_content "this is my annotation"
     end
 
-    scenario 'Search' do
+    scenario 'View annotations and comments' do
       draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
       annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}])
       annotation2 = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>12, "end"=>"/p[1]", "endOffset"=>19}])
@@ -184,6 +184,22 @@ feature 'Legislation Draft Versions' do
 
       all(".annotator-hl")[1].trigger('click')
       expect(page).to have_content "my other annotation"
+    end
+
+    scenario "Publish new comment for an annotation from comments box" do
+      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      annotation = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}])
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+      expect(page).to have_content "my annotation"
+
+      click_link "Publish Comment"
+      fill_in "comment[body]", with: "My interesting comment"
+      click_button "Publish comment"
+      expect(page).to have_content "My interesting comment"
     end
   end
 
