@@ -22,9 +22,9 @@ App.MarkdownEditor =
 
       $(this).find('.fullscreen-toggle').on 'click', ->
         $('.markdown-editor').toggleClass('fullscreen')
+        $('.fullscreen-container').toggleClass('medium-8', 'medium-12')
 
         if $('.markdown-editor').hasClass('fullscreen')
           $('.markdown-editor textarea').height($(window).height() - 100)
         else
           $('.markdown-editor textarea').height("10em")
-

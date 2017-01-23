@@ -63,20 +63,19 @@
       <%= f.label :body %>
       <small><%= t('admin.legislation.draft_versions.form.use_markdown') %></small>
     </div>
-    <br/>
     <div class="markdown-editor">
-      <div class="small-12 column fullscreen-container">
-            <div class="markdown-editor-header truncate">Consul | Editando <span class="strong">Versión 3</span> del proceso <span class="strong">Licencias urbanísticas, declaraciones</span></div>
+      <div class="small-12 medium-8 column fullscreen-container">
+        <div class="markdown-editor-header truncate">Consul | Editando <span class="strong">Versión 3</span> del proceso <span class="strong">Licencias urbanísticas, declaraciones</span></div>
 
-            <div class="markdown-editor-buttons">
-              <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
-            </div>
+        <div class="markdown-editor-buttons">
+          <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+        </div>
 
         <%= link_to "#", class: 'fullscreen-toggle' do %>
           <span><%= t("admin.legislation.draft_versions.form.fullscreen_toggle")%></span> <span class="icon-expand"></span>
         <% end %>
       </div>
-      <div class="small-12 medium-6 column">
+      <div class="small-12 medium-6 column mardown-area">
         <%= f.text_area :body, label: false, placeholder: t('admin.legislation.draft_versions.form.body_placeholder') %>
       </div>
       <div id="markdown-preview" class="small-12 medium-6 column">
