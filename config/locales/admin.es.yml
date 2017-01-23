@@ -245,7 +245,9 @@ es:
           form:
             error: Error
         form:
-          fullscreen_toggle: Pantalla completa
+          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
+          launch_text_editor: Lanzar editor de texto
+          close_text_editor: Cerrar editor de texto
           use_markdown: Usa Markdown para formatear el texto
           hints:
             final_version: Será la versión que se publique en Publicación de Resultados. Esta versión no se podrá comentar
