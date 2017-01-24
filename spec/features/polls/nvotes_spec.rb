@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Nvotes' do
 
-  scenario "Voting", :focus do
+  scenario "Voting", :selenium do
     user = create(:user, :verified, id: rand(9999))
     poll = create(:poll, published: true)
 

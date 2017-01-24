@@ -55,6 +55,15 @@ RSpec.configure do |config|
     end
   end
 
+  config.before(:each, :selenium) do
+    Capybara.current_driver = :selenium
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.after(:each, :selenium) do
+    Capybara.current_driver = Capybara.default_driver
+  end
+
   config.before(:each) do
     DatabaseCleaner.start
   end
@@ -109,11 +118,10 @@ end
 Knapsack::Adapters::RSpecAdapter.bind
 
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(
-    app,
-    browser: :firefox,
-    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
-  )
-end
-Capybara.default_driver = :selenium
+      Capybara::Selenium::Driver.new(
+        app,
+        browser: :firefox,
+        desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
+      )
+    end
 Capybara.default_max_wait_time = 240
