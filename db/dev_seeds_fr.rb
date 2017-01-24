@@ -72,6 +72,26 @@ level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::Phon
 verified = create_user('verified@consul.dev', 'verified')
 verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
 
+# création des utilisateurs francçais
+
+valentin = create_user('valentin@consul.dev', 'valentin')
+valentin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+
+alain = create_user('alain@consul.dev', 'alain')
+alain.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+
+olivier = create_user('olivier@consul.dev', 'olivier')
+olivier.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+
+virgile = create_user('virgile@consul.dev', 'virgile')
+virgile.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+
+noe = create_user('noe@consul.dev', 'noe')
+noe.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+
+hugo = create_user('hugo@consul.dev', 'hugo')
+hugo.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+
 (1..10).each do |i|
   org_name = Faker::Company.name
   org_user = create_user("org#{i}@consul.dev", org_name)
