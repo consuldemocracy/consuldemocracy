@@ -18,7 +18,8 @@ feature 'Admin poll questions' do
 
   scenario 'Show' do
     geozone = create(:geozone)
-    question = create(:poll_question, geozone_ids: geozone.id)
+    poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+    question = create(:poll_question, poll: poll)
 
     visit admin_question_path(question)
 
@@ -27,7 +28,6 @@ feature 'Admin poll questions' do
     expect(page).to have_content(question.summary)
     expect(page).to have_content(question.author.name)
     expect(page).to have_content(question.valid_answers.join(" "))
-    expect(page).to have_content(geozone.name)
   end
 
   scenario 'Create' do
@@ -53,7 +53,6 @@ feature 'Admin poll questions' do
   end
 
   scenario 'Create from successful proposal index' do
-    geozones = create_list(:geozone, 3)
     proposal = create(:proposal, :successful)
 
     visit proposals_path
