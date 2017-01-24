@@ -650,7 +650,7 @@ h2.sidebar-title {
 
 .auth-divider {
   border-bottom: 1px solid $border;
-  height: $line-height/2;
+  height: rem-calc(14);
   margin: $line-height 0;
   text-align: center;
 

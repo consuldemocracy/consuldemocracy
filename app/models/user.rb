@@ -103,6 +103,10 @@ class User < ActiveRecord::Base
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
   end
 
+  def voted_in_group?(group)
+    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+  end
+
   def administrator?
     administrator.present?
   end

@@ -4,8 +4,13 @@
 
       <div class="row">
         <div class="small-12 column">
-          <%= back_link_to budget_group_path(@budget, @heading.group) %>
-
+          <% if @heading.group.headings.count == 1 %>
+            <%= back_link_to budget_path(@budget, unfeasible: params[:unfeasible]) %>
+          <% else %>
+            <%= back_link_to budget_group_path(@budget,
+                    @heading.group,
+                    unfeasible: params[:unfeasible]) %>
+          <% end %>
           <% if can? :show, @ballot %>
             <%= link_to t("budgets.investments.header.check_ballot"),
                         budget_ballot_path(@budget),
@@ -16,31 +21,34 @@
 
       <div class="row progress-votes">
         <div class="small-12 column">
-          <div class="progress-bar-nav" data-fixed-bar>
-            <h1 class="inline-block margin-top"><%= @heading.name %></h1>
-            <% if can? :show, @ballot %>
-              <div id="check-ballot" style="display: none;">
-                <%= link_to t("budgets.investments.header.check_ballot"),
-                            budget_ballot_path(@budget) %>
-              </div>
-              <% if @ballot.valid_heading?(@heading) %>
+          <% if can? :show, @ballot %>
+            <div id="check-ballot" style="display: none;">
+              <%= link_to t("budgets.investments.header.check_ballot"),
+                          budget_ballot_path(@budget) %>
+            </div>
+            <% if @ballot.valid_heading?(@heading) %>
+              <div class="progress-bar-nav" data-fixed-bar>
+                <h1><%= @heading.name %></h1>
                 <div id="progress_bar" class="no-margin-top">
                   <%= render 'budgets/ballot/progress_bar' %>
                 </div>
-              <% else %>
-                <br>
-                <p class="callout warning inline-block">
+              </div>
+            <% else %>
+              <h1><%= @heading.name %></h1>
+              <div class="small-12 medium-9">
+                <div class="callout warning">
                   <%= t("budgets.investments.header.different_heading_assigned_html",
                         heading_link: link_to(
                           @assigned_heading.name,
                           budget_investments_path(@budget, heading: @assigned_heading))
                        ) %>
-                </p>
-              <% end %>
-            <% else %>
-              <h2><%= @budget.formatted_heading_price(@heading) %></h2>
+                </div>
+              </div>
             <% end %>
-          </div>
+          <% else %>
+            <h1 class="margin-top"><%= @heading.name %></h1>
+            <h2><%= @budget.formatted_heading_price(@heading) %></h2>
+          <% end %>
         </div>
       </div>
     </div>

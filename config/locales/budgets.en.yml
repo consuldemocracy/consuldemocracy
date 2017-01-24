@@ -22,6 +22,8 @@ en:
     groups:
       show:
         title: Select an option
+        unfeasible_title: Unfeasible investments
+        unfeasible: See unfeasible investments
     phase:
       accepting: Accepting proposals
       reviewing: Reviewing proposals
@@ -64,6 +66,9 @@ en:
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
           sign_in: "sign in"
           sign_up: "sign up"
+          by_feasibility: By feasibility
+          feasible: Feasible projects
+          unfeasible: Unfeasible projects
         orders:
           random: random
           confidence_score: highest rated
@@ -77,6 +82,8 @@ en:
         organization_name_html: 'Organization: <strong>%{name}</strong>'
         share: Share
         title: Investment project
+        supports: Supports
+        votes: Votes
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project
@@ -84,6 +91,7 @@ en:
         already_added: You have already added this investment project
         already_supported: You have already supported this. Share it!
         support_title: Support this project
+        confirm_group: "You can only support investments in one district. If you continue you cannot change your decision. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"
@@ -97,3 +105,5 @@ en:
     show:
       group: Group
       phase: Actual phase
+      unfeasible_title: Unfeasible investments
+      unfeasible: See unfeasible investments

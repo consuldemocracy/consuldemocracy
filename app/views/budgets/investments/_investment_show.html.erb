@@ -53,13 +53,12 @@
       <% end %>
     </div>
 
-    <% if investment.should_show_aside? %>
-      <aside class="small-12 medium-3 column">
-        <div class="sidebar-divider"></div>
-        <h2><%= t("votes.supports") %></h2>
-        <div class="text-center">
-
+    <aside class="small-12 medium-3 column">
+      <% if investment.should_show_aside? %>
         <% if investment.should_show_votes? %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.supports") %></h2>
+          <div class="text-center">
             <div id="<%= dom_id(investment) %>_votes">
               <%= render partial: '/budgets/investments/votes', locals: {
                 investment: investment,
@@ -67,7 +66,20 @@
                 vote_url: vote_budget_investment_path(investment.budget, investment, value: 'yes')
               } %>
             </div>
-          <% elsif investment.should_show_ballots? %>
+          </div>
+        <% elsif investment.should_show_vote_count? %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.supports") %></h2>
+          <div class="text-center">
+            <span class="total-supports">
+                <%= t("budgets.investments.investment.supports",
+                    count: investment.total_votes) %>
+            </span>
+          </div>
+        <% elsif investment.should_show_ballots? %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("budgets.investments.show.votes") %></h2>
+          <div class="text-center">
             <div id="<%= dom_id(investment) %>_ballot">
               <%= render partial: 'ballot', locals: {
                 investment: investment,
@@ -75,28 +87,27 @@
                 ballot: ballot,
               } %>
             </div>
-         <% end %>
-        </div>
-
-        <div class="sidebar-divider"></div>
-        <h2><%= t("budgets.investments.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
-        </div>
-      </aside>
-    <% else %>
-      <div class="small-12 medium-3 column">
+          </div>
+        <% end %>
+      <% else %>
         <div class="float-right">
-          <span class="label-budget-investment float-left"><%= t("budgets.investments.show.title") %></span>
+          <span class="label-budget-investment float-left">
+            <%= t("budgets.investments.show.title") %>
+          </span>
           <span class="icon-budget"></span>
         </div>
+        <br>
+      <% end %>
+      <div id="social-share" class="sidebar-divider"></div>
+      <h2><%= t("budgets.investments.show.share") %></h2>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= investment.title %> <%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
       </div>
-    <% end %>
-
+     </aside>
   </div>
 </section>

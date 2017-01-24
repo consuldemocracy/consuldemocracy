@@ -140,7 +140,7 @@ feature 'Budget Investments' do
   context "Supporting" do
 
     scenario 'Supporting budget investments on behalf of someone in index view', :js do
-      budget_investment = create(:budget_investment, budget: @budget)
+      budget_investment = create(:budget_investment, budget: @budget, heading: @heading)
 
       user = create(:user, :level_two)
       login_managed_user(user)

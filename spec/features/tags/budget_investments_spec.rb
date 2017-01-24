@@ -36,6 +36,18 @@ feature 'Tags' do
     end
   end
 
+  scenario 'Index shows up to 5 tags per proposal' do
+    create_featured_proposals
+    tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
+    create :budget_investment, heading: heading, tag_list: tag_list
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within('.budget-investment .tags') do
+      expect(page).to have_content '1+'
+    end
+  end
+
   scenario 'Show' do
     investment = create(:budget_investment, heading: heading, tag_list: 'Hacienda, Economía')
 
@@ -164,72 +176,91 @@ feature 'Tags' do
 
   context 'Tag cloud' do
 
+    let!(:investment1) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
+    let!(:investment2) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
+    let!(:investment3) { create(:budget_investment, heading: heading, tag_list: 'Economía') }
+
     scenario 'Display user tags' do
-      earth = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      money = create(:budget_investment, heading: heading, tag_list: 'Economía')
+      Budget::PHASES.each do |phase|
+        budget.update(phase: phase)
 
-      visit budget_investments_path(budget, heading_id: heading.id)
+        visit budget_investments_path(budget, heading_id: heading.id)
 
-      within "#tag-cloud" do
-        expect(page).to have_content "Medio Ambiente"
-        expect(page).to have_content "Economía"
+        within "#tag-cloud" do
+          expect(page).to have_content "Medio Ambiente"
+          expect(page).to have_content "Economía"
+        end
       end
     end
 
     scenario "Filter by user tags" do
-      investment1 = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      investment2 = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      investment3 = create(:budget_investment, heading: heading, tag_list: 'Economía')
+      Budget::PHASES.each do |phase|
+        budget.update(phase: phase)
 
-      visit budget_investments_path(budget, heading_id: heading.id)
+        if budget.balloting?
+          [investment1, investment2, investment3].each do |investment|
+            investment.update(selected: true)
+          end
+        end
 
-      within "#tag-cloud" do
-        click_link "Medio Ambiente"
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within "#tag-cloud" do
+          click_link "Medio Ambiente"
+        end
+
+        expect(page).to have_css ".budget-investment", count: 2
+        expect(page).to have_content investment1.title
+        expect(page).to have_content investment2.title
+        expect(page).to_not have_content investment3.title
       end
-
-      expect(page).to have_css ".budget-investment", count: 2
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).to_not have_content investment3.title
     end
 
   end
 
   context "Categories" do
 
+    let!(:tag1) { create(:tag, kind: 'category', name: 'Medio Ambiente') }
+    let!(:tag2) { create(:tag, kind: 'category', name: 'Economía') }
+
+    let!(:investment1) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
+    let!(:investment2) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
+    let!(:investment3) { create(:budget_investment, heading: heading, tag_list: 'Economía') }
+
     scenario 'Display category tags' do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      Budget::PHASES.each do |phase|
+        budget.update(phase: phase)
 
-      earth = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      money = create(:budget_investment, heading: heading, tag_list: 'Economía')
+        visit budget_investments_path(budget, heading_id: heading.id)
 
-      visit budget_investments_path(budget, heading_id: heading.id)
-
-      within "#categories" do
-        expect(page).to have_content "Medio Ambiente"
-        expect(page).to have_content "Economía"
+        within "#categories" do
+          expect(page).to have_content "Medio Ambiente"
+          expect(page).to have_content "Economía"
+        end
       end
     end
 
     scenario "Filter by category tags" do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      Budget::PHASES.each do |phase|
+        budget.update(phase: phase)
 
-      investment1 = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      investment2 = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
-      investment3 = create(:budget_investment, heading: heading, tag_list: 'Economía')
+        if budget.balloting?
+          [investment1, investment2, investment3].each do |investment|
+            investment.update(selected: true)
+          end
+        end
 
-      visit budget_investments_path(budget, heading_id: heading.id, search: 'Economía')
+        visit budget_investments_path(budget, heading_id: heading.id, search: 'Economía')
 
-      within "#categories" do
-        click_link "Medio Ambiente"
+        within "#categories" do
+          click_link "Medio Ambiente"
+        end
+
+        expect(page).to have_css ".budget-investment", count: 2
+        expect(page).to have_content investment1.title
+        expect(page).to have_content investment2.title
+        expect(page).to_not have_content investment3.title
       end
-
-      expect(page).to have_css ".budget-investment", count: 2
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).to_not have_content investment3.title
     end
   end
 

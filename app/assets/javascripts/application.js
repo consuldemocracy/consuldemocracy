@@ -46,6 +46,7 @@
 //= require valuation_budget_investment_form
 //= require valuation_spending_proposal_form
 //= require embed_video
+//= require fixed_bar
 //= require banners
 //= require social_share
 //= require custom
@@ -70,6 +71,7 @@ var initialize_modules = function() {
   App.ValuationBudgetInvestmentForm.initialize();
   App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
+  App.FixedBar.initialize();
   App.Banners.initialize();
   App.SocialShare.initialize();
 };

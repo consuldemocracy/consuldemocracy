@@ -414,11 +414,6 @@ es:
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
-      author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
-      author_type_3: 'Director general'
-      author_type_4: 'Concejal'
-      author_type_5: 'Alcaldesa'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
@@ -600,6 +595,13 @@ es:
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
     debates:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.

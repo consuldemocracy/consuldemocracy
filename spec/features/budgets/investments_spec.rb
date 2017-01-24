@@ -67,6 +67,35 @@ feature 'Budget Investments' do
         expect(page).to_not have_content(investment4.title)
       end
     end
+
+    scenario "by unfeasibilty link for group with one heading" do
+      group   = create(:budget_group,   name: 'All City', budget: budget)
+      heading = create(:budget_heading, name: "Madrid",   group: group)
+
+      visit budget_path(budget)
+      click_link 'See unfeasible investments'
+
+      click_link "All City"
+
+      expected_path = budget_investments_path(budget, heading_id: heading.id, unfeasible: 1)
+      expect(page).to have_current_path(expected_path)
+    end
+
+    scenario "by unfeasibilty link for group with many headings" do
+      group = create(:budget_group, name: 'Districts', budget: budget)
+      heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
+      heading2 = create(:budget_heading, name: 'Barajas',     group: group)
+
+      visit budget_path(budget)
+
+      click_link 'See unfeasible investments'
+
+      click_link 'Districts'
+      click_link 'Carabanchel'
+
+      expected_path = budget_investments_path(budget, heading_id: heading1.id, unfeasible: 1)
+      expect(page).to have_current_path(expected_path)
+    end
   end
 
   context("Orders") do
@@ -288,6 +317,105 @@ feature 'Budget Investments' do
 
   end
 
+  context "Selecting Phase" do
+
+    background do
+      budget.update(phase: "selecting")
+    end
+
+    context "Popup alert to vote only in one heading per group" do
+
+      scenario "When supporting in the first heading group", :js do
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, :selected, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, :selected, heading: salamanca)
+
+        visit budget_investments_path(budget, heading_id: carabanchel.id)
+
+        within("#budget_investment_#{carabanchel_investment.id}") do
+          expect(page).to have_css(".in-favor a[data-confirm]")
+        end
+      end
+
+      scenario "When already supported in the group", :js do
+        carabanchel = create(:budget_heading, group: group)
+        salamanca   = create(:budget_heading, group: group)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: author)
+
+        login_as(author)
+        visit budget_investments_path(budget, heading_id: carabanchel.id)
+
+        within("#budget_investment_#{carabanchel_investment.id}") do
+          expect(page).to_not have_css(".in-favor a[data-confirm]")
+        end
+      end
+
+      scenario "When supporting in another group", :js do
+        carabanchel     = create(:budget_heading, group: group)
+        another_heading = create(:budget_heading, group: create(:budget_group, budget: budget))
+
+        carabanchel_investment   = create(:budget_investment, heading: carabanchel)
+        another_group_investment = create(:budget_investment, heading: another_heading)
+
+        create(:vote, votable: carabanchel_investment, voter: author)
+
+        login_as(author)
+        visit budget_investments_path(budget, heading_id: another_heading.id)
+
+        within("#budget_investment_#{another_group_investment.id}") do
+          expect(page).to have_css(".in-favor a[data-confirm]")
+        end
+      end
+    end
+
+    scenario "Sidebar in show should display support text" do
+      investment = create(:budget_investment, budget: budget)
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "Supports"
+      end
+    end
+
+  end
+
+  context "Evaluating Phase" do
+
+    background do
+      budget.update(phase: "valuating")
+    end
+
+    scenario "Sidebar in show should display supports text and supports" do
+      investment = create(:budget_investment, :selected, budget: budget)
+      create(:vote, votable: investment)
+
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "Supports"
+        expect(page).to have_content "1 support"
+      end
+    end
+
+    scenario "Index should display supports" do
+      investment = create(:budget_investment, :selected, budget: budget, heading: heading)
+      create(:vote, votable: investment)
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "1 support"
+      end
+    end
+
+  end
+
   context "Balloting Phase" do
 
     background do
@@ -346,6 +474,15 @@ feature 'Budget Investments' do
       click_link sp1.title
 
       expect(page).to have_content "€10,000"
+    end
+
+    scenario "Sidebar in show should display vote text" do
+      investment = create(:budget_investment, :selected, budget: budget)
+      visit budget_investment_path(budget, investment)
+
+      within("aside") do
+        expect(page).to have_content "Votes"
+      end
     end
 
     scenario "Confirm", :js do

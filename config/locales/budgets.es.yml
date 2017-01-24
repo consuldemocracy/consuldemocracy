@@ -22,6 +22,8 @@ es:
     groups:
       show:
         title: Selecciona una opción
+        unfeasible_title: Propuestas inviables
+        unfeasible: Ver propuestas inviables
     phase:
       accepting: Aceptando propuestas
       reviewing: Revisando propuestas
@@ -64,6 +66,9 @@ es:
           not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
           sign_in: "iniciar sesión"
           sign_up: "registrarte"
+          by_feasibility: Por viabilidad
+          feasible: Ver los proyectos viables
+          unfeasible: Ver los proyectos inviables
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas
@@ -77,6 +82,8 @@ es:
         organization_name_html: 'Organización: <strong>%{name}</strong>'
         share: Compartir
         title: Propuesta de inversión
+        supports: Apoyos
+        votes: Votos
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión
@@ -84,6 +91,7 @@ es:
         already_added: "Ya has añadido esta propuesta de inversión"
         already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
         support_title: Apoyar esta propuesta
+        confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
           one: 1 apoyo
           other: "%{count} apoyos"
@@ -97,3 +105,5 @@ es:
     show:
       group: Grupo
       phase: Fase actual
+      unfeasible_title: Propuestas inviables
+      unfeasible: Ver las propuestas inviables

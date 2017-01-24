@@ -894,6 +894,11 @@
   .info {
     background: #6A2A72;
 
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
     @include breakpoint(medium) {
       border-top: rem-calc(6) solid #54225C;
     }
@@ -914,6 +919,14 @@
 
   h1, h2, .back, .icon-angle-left, p, a {
     color: white;
+  }
+
+  .callout.warning {
+    font-size: $base-font-size;
+
+    a {
+      color: $color-warning;
+    }
   }
 
   &.welcome {
@@ -1146,6 +1159,45 @@ ul.ballot-list {
 
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+
+.progress-bar-nav {
+  padding: $line-height 0;
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint(medium) {
+    background-color: $budget;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+
+    h1 {
+      -webkit-transition: font-size 0.3s;
+      -moz-transition: font-size 0.3s;
+      transition: font-size 0.3s;
+    }
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    &.is-fixed {
+      height: auto;
+      left: 0;
+      padding: $line-height;
+      position: fixed;
+      top: 0;
+      width: 100%;
+
+      h1 {
+        font-size: rem-calc(24);
+        -webkit-transition: font-size 0.3s;
+        -moz-transition: font-size 0.3s;
+        transition: font-size 0.3s;
+      }
     }
   }
 }

@@ -7,6 +7,14 @@
   </div>
 </div>
 
+<% if params[:unfeasible] %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h3><%= t("budgets.groups.show.unfeasible_title") %></h3>
+    </div>
+  </div>
+<% end %>
+
 <div class="row margin-top">
   <div id="select-district" class="small-12 medium-7 column select-district">
     <div class="row">
@@ -16,7 +24,8 @@
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %>">
               <%= link_to heading.name,
-                          budget_investments_path(heading_id: heading.id),
+                          budget_investments_path(heading_id: heading.id,
+                                                  unfeasible: params[:unfeasible]),
                           data: { no_turbolink: true } %><br>
             </span>
           <% end %>
@@ -29,3 +38,12 @@
     <%= image_tag "map.jpg" %>
   </div>
 </div>
+
+<% if params[:unfeasible].blank? %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.groups.show.unfeasible"),
+                 budget_path(@budget, unfeasible: 1) %></small>
+    </div>
+  </div>
+<% end %>

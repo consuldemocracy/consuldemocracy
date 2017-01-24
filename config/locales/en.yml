@@ -414,11 +414,6 @@ en:
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
-      author_type_1: 'Public employee'
-      author_type_2: 'Municipal Organization'
-      author_type_3: 'General director'
-      author_type_4: 'City councillor'
-      author_type_5: 'Mayoress'
       date: 'By date'
       date_placeholder: 'DD/MM/YYYY'
       date_range_blank: 'Choose a date'
@@ -600,6 +595,13 @@ en:
       organization: Organizations are not permitted to vote
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
+    budget_investments:
+      not_logged_in: You must %{signin} or %{signup} to continue.
+      not_verified: Only verified users can vote on proposals; %{verify_account}.
+      organization: Organizations are not permitted to vote
+      unfeasible: Unfeasible investment projects can not be supported
+      not_voting_allowed: Voting phase is closed
+      different_heading_assigned: You can only support proposals in one district
   welcome:
     debates:
       description: For meeting, discussing and sharing the things that matter to us in our city.
