@@ -2,8 +2,6 @@ class Admin::Poll::QuestionsController < Admin::BaseController
   load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: 'Poll::Question'
 
-  before_action :load_geozones, only: [:new, :create, :edit, :update]
-
   def index
     @polls = Poll.all
     @search = search_params[:search]
@@ -55,12 +53,8 @@ class Admin::Poll::QuestionsController < Admin::BaseController
 
   private
 
-    def load_geozones
-      @geozones = Geozone.all.order(:name)
-    end
-
     def question_params
-      params.require(:poll_question).permit(:title, :question, :summary, :description, :proposal_id, :valid_answers, :poll_id, :geozone_ids => [])
+      params.require(:poll_question).permit(:title, :question, :summary, :description, :proposal_id, :valid_answers)
     end
 
     def search_params
