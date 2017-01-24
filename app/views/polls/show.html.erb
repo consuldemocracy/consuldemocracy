@@ -11,6 +11,11 @@
         <%= t("polls.show.question_count_html",
             count: @poll.questions.count) %>
       </p>
+      <ul class="no-bullet margin-top tags">
+        <% @poll.geozones.each do |g| %>
+          <li class="inline-block"><span><%= g.name %></span></li>
+        <% end %>
+      </ul>
 
       <%= render "callout" %>
     </div>
