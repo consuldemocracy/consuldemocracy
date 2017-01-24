@@ -35,21 +35,7 @@
 
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
-    <% @answerable_questions.each do |question| %>
-      <%= render 'polls/questions/question', question: question %>
-    <% end %>
-
-    <% if can?(:answer, @poll) &&
-          @non_answerable_questions.present? %>
-      <div class="callout warning margin-top">
-        <h2 class="questions-callout">
-          <%= t("polls.show.cant_answer_wrong_geozone",
-              count: @non_answerable_questions.count) %>
-        </h2>
-      </div>
-    <% end %>
-
-    <% @non_answerable_questions.each do |question| %>
+    <% @questions.each do |question| %>
       <%= render 'polls/questions/question', question: question %>
     <% end %>
   </div>
