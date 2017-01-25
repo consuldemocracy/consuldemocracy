@@ -70,7 +70,7 @@ feature 'Poll Questions' do
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
 
       user = create(:user, :level_two, geozone: geozone)
-      create(:poll_partial_result, question: question, author: user, answer: 'Chewbacca')
+      create(:poll_answer, question: question, author: user, answer: 'Chewbacca')
 
       login_as user
       visit question_path(question)
@@ -91,6 +91,22 @@ feature 'Poll Questions' do
 
       expect(page).to_not have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
+    end
+
+    scenario 'Records participarion', :js do
+      question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
+      user = create(:user, :level_two, geozone: geozone)
+
+      login_as user
+      visit question_path(question)
+
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+
+      answer = Poll::Answer.by_question(question.id).by_author(user.id).first
+      expect(answer.voter.document_number).to eq(user.document_number)
+      expect(answer.voter.poll_id).to eq(poll.id)
     end
 
   end
