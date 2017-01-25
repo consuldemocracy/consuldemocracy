@@ -4,9 +4,13 @@
 <div class="landing-voting">
   <div class="expanded header no-margin-top padding">
     <div class="row">
-      <div class="small-12 medium-8 column padding small-centered text-center">
-        <h1>I Votación Ciudadana</h1>
-        <p class="lead">Del <strong>13 al 19 de febrero</strong>, tú decides si quieres o no billete único para el transporte público, un Madrid 100% sostenible, la remodelación de Plaza España y mejorar el espacio peatonal de la Gran Vía.</p>
+      <div class="small-12 column text-center margin-top">
+        <h1 class="uppercase">Primera Votación Ciudadana</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-10 column small-centered text-center">
+        <p class="lead">Del 13 al 19 de febrero, tú decides si quieres o no billete único para el transporte público, un Madrid 100% sostenible, la remodelación de Plaza España y mejorar el espacio peatonal de la Gran Vía</p>
         <% if !user_signed_in? %>
           <div class="small-12 medium-6 large-4 small-centered">
             <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
@@ -22,15 +26,12 @@
         <%= image_tag "landings/first_voting_transport.jpg", alt: "" %>
       </div>
       <div class="small-12 medium-6 column">
-        <div class="block-yellow">
-          <div class="one">
-            <span>01</span>
-          </div>
+        <div class="block-yellow-vota">
           <div class="block-content" data-equalizer-watch>
-            <h2>
-              <%= link_to "Billete único para el transporte público", "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" %>
+            <h2 class="text-center uppercase">
+              <%= link_to "Uno para todos", "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" %>
             </h2>
-            <h3>¿Sí o No?</h3>
+            <h3 class="text-center">Un billete: todo el transporte</h3>
           </div>
           <% if !user_signed_in? %>
             <div class="small-12 medium-8">
@@ -46,14 +47,11 @@
     <div class="row relative" data-equalizer data-equalize-on="medium">
       <div class="small-12 medium-6 column">
         <div class="block-blue">
-          <div class="two">
-            <span>02</span>
-          </div>
-          <div class="block-content text-right" data-equalizer-watch>
-            <h2>
+          <div class="block-content" data-equalizer-watch>
+            <h2 class="text-center uppercase">
               <%= link_to "Madrid 100% sostenible", "https://decide.madrid.es/proposals/199-madrid-100-sostenible" %>
             </h2>
-            <h3>¿Sí o No?</h3>
+            <h3 class="text-center">Ahorro de energía, Eficiente y Renovable<br> Movilidad y Urbanismo Sostenibles</h3>
           </div>
           <% if !user_signed_in? %>
             <div class="small-12 medium-8">
@@ -71,19 +69,26 @@
   <div class="expanded plaza-espana-projects">
     <div class="row" data-equalizer data-equalize-on="medium">
       <div class="small-12 medium-6 column">
-        <div class="block-black" data-equalizer-watch>
-          <div class="three">
-            <span>03</span>
-          </div>
-          <h2>
+        <div class="block-red" data-equalizer-watch>
+          <h2 class="text-center uppercase">
             <%= link_to "Remodelación de plaza España", plaza_path %>
           </h2>
-          <h3>¿Proyecto X o Proyecto Y?</h3>
+          <h3 class="text-center uppercase">¿Proyecto X o Proyecto Y?</h3>
+
           <% if !user_signed_in? %>
             <div class="small-12 medium-6">
               <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
             </div>
           <% end %>
+
+          <div class="block-projects">
+            <h4 class="text-center">
+              <span class="uppercase">Proyecto X</span>:<br> Welcome mother Nature,<br> good bye Mr Ford
+            </h4>
+            <h4 class="text-center">
+             <span class="uppercase">Proyecto Y</span>:<br> UN PASEO POR LA CORNISA
+            </h4>
+          </div>
         </div>
       </div>
 
@@ -93,7 +98,7 @@
             <figure>
               <%= image_tag "landings/first_voting_project_x.jpg", alt: "Project X" %>
               <figcaption>
-                <%= link_to "Proyecto X: Welcome mother Nature, good bye Mr Ford", plaza_probe_option_path(38) %>
+                <%= link_to "Proyecto X", plaza_probe_option_path(38) %>
               </figcaption>
             </figure>
           </div>
@@ -102,7 +107,7 @@
             <figure>
               <%= image_tag "landings/first_voting_project_y.jpg", alt: "Project Y" %>
               <figcaption>
-                <%= link_to "Proyecto Y: UN PASEO POR LA CORNISA", plaza_probe_option_path(22) %>
+                <%= link_to "Proyecto Y", plaza_probe_option_path(22) %>
               </figcaption>
             </figure>
           </div>
@@ -115,10 +120,7 @@
     <div class="row relative" data-equalizer data-equalize-on="medium">
       <div class="small-12 column">
         <div class="block-grey">
-          <div class="four inline-block">
-            <span>04</span>
-          </div>
-          <h2 class="inline-block">Gran vía</h2>
+          <h2 class="inline-block uppercase">Gran vía</h2>
           <div class="block-content" data-equalizer-watch>
             <div class="row">
               <div class="small-12 medium-6 column">
@@ -161,8 +163,8 @@
 
   <div class="row">
     <div class="small-12 medium-8 small-centered text-center">
-      <h2>Votaciones de distrito</h2>
-      <p class="lead">Los habitantes de varios distritos también decidirán sobre diferentes preguntas. Próximamente publicaremos las preguntas de distrito.</p>
+      <h2 class="big uppercase">Votaciones de distrito</h2>
+      <p class="lead">Los habitantes de varios distritos también decidirán sobre diferentes preguntas.<br> Próximamente publicaremos las preguntas de distrito.</p>
     </div>
   </div>
 
@@ -170,11 +172,11 @@
     <div class="expanded how-voting">
       <div class="row">
         <div class="small-12 medium-10 column">
-          <h2>Cómo votar</h2>
+          <h2 class="uppercase">Cómo votar</h2>
           <ul>
-            <li>En <strong>esta web</strong> después de <%= link_to "registrarte", new_user_registration_path %>.</li>
-            <li>En urnas que encontrarás repartidas por los <strong>21 distritos de Madrid</strong> <em>(próximamente mapa de localización)</em></li>
-            <li>Por carta. Te llegará próximamente una carta a casa con tu papeleta para votar por correo. Puedes hacerlo <strong>hasta el día 12 de febrero</strong>.</li>
+            <li>En esta web después de <%= link_to "registrarte", new_user_registration_path %>.</li>
+            <li>En urnas que encontrarás repartidas por los 21 distritos de Madrid (próximamente mapa de localización)</li>
+            <li>Por carta. Te llegará próximamente una carta a casa con tu papeleta para votar por correo. Puedes hacerlo hasta el día 12 de febrero.</li>
           </ul>
         </div>
       </div>
