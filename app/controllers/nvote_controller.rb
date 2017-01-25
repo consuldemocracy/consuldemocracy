@@ -1,23 +1,16 @@
 class NvoteController < ApplicationController
-  #layout "full", only: [:create]
   before_action :authenticate_user!
   skip_authorization_check
 
   def create
-    @poll = Poll.find params[:poll_id]
-    @scoped_agora_poll_id = @poll.scoped_agora_poll_id current_user
+    @poll = Poll.find(params[:poll_id])
   end
 
   def create_token
-    poll = Poll.find params[:poll_id]
-    vote = current_user.get_or_create_vote(poll.id)
+    poll = Poll.find(params[:poll_id])
+    vote = current_user.get_or_create_vote(poll)
     message = vote.generate_message
-    render content_type: 'text/plain', :status => :ok, :text => "#{vote.generate_hash message}/#{message}"
-  end
-
-  def check
-    @poll = Poll.find params[:poll_id]
-    @scoped_agora_poll_id = @poll.scoped_agora_poll_id(current_user)
+    render content_type: 'text/plain', status: :ok, text: "#{vote.generate_hash message}/#{message}"
   end
 
 end

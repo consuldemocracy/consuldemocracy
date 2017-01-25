@@ -53,6 +53,7 @@ describe Nvote do
       it "generates hash for voter_id" do
         nvote = create(:nvote)
         voter_id = nvote.generate_voter_id
+
         expect(voter_id.length).to eq(64)
       end
     end
@@ -65,6 +66,7 @@ describe Nvote do
       poll = create(:poll, nvotes_poll_id: "1234")
       nvote = create(:nvote, poll: poll)
       message  = nvote.generate_message
+
       expect(message.split(':')[0]).to eq(nvote.voter_id)
       expect(message.split(':')[2]).to eq("1234")
       timestamp = message.split(':')[4].to_i
@@ -87,6 +89,7 @@ describe Nvote do
     it "generates url with vote information" do
       poll = create(:poll, nvotes_poll_id: "1234")
       nvote = create(:nvote, poll: poll)
+
       expect(nvote.url).to start_with("https://")
       expect(nvote.url.length).to be > 64
       expect(nvote.url).to include "https://prevotsecdecide.madrid.es"

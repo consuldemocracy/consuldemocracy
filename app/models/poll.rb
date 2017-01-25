@@ -48,10 +48,6 @@ class Poll < ActiveRecord::Base
     end
   end
 
-  def scoped_agora_poll_id(user)
-    128 #agora_election_id
-  end
-
   def server_shared_key
     Rails.application.secrets["nvotes_shared_key"] || ENV["nvotes_shared_key"]
   end

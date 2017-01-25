@@ -15,13 +15,11 @@
     }
 </script>
 
-
-<%= @poll.server_url %>booth/<%= @scoped_agora_poll_id %>/vote
 <div class="row">
   <div class="small-12 column">
     <div class="booth-container">
       <a class="agoravoting-voting-booth"
-        href="<%= @poll.server_url %>booth/<%= @scoped_agora_poll_id %>/vote"
+        href="<%= @poll.server_url %>booth/<%= @poll.nvotes_poll_id %>/vote"
         data-authorization-funcname="getCastHmac">
         Votar con Agora Voting
       </a>

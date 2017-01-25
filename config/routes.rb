@@ -391,7 +391,6 @@ Rails.application.routes.draw do
   #nVotes
   get '/vote/create/:poll_id', to: 'nvote#create', as: :create_vote
   get '/vote/create_token/:poll_id', to: 'nvote#create_token', as: :create_token_vote
-  get '/vote/check/:poll_id', to: 'nvote#check', as: :check_vote
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
