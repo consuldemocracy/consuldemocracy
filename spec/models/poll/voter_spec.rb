@@ -8,36 +8,37 @@ describe :voter do
 
   describe "validations" do
 
-    it "should be valid if in census and has not voted" do
-       voter = build(:poll_voter, :valid_document, booth_assignment: booth_assignment)
+    it "should be valid if has not voted" do
+       voter = build(:poll_voter, :valid_document)
 
        expect(voter).to be_valid
     end
 
-    it "should not be valid if the user is not in the census" do
-      voter = build(:poll_voter, :invalid_document, booth_assignment: booth_assignment)
-
-      expect(voter).to_not be_valid
-      expect(voter.errors.messages[:document_number]).to eq(["Document not in census"])
-    end
-
-    it "should not be valid if the user has already voted in the same booth/poll" do
-      voter1 = create(:poll_voter, :valid_document, booth_assignment: booth_assignment)
-      voter2 =  build(:poll_voter, :valid_document, booth_assignment: booth_assignment)
+    it "should not be valid if the user has already voted in the same poll or booth_assignment" do
+      voter1 = create(:poll_voter, :valid_document, poll: poll)
+      voter2 =  build(:poll_voter, :valid_document, poll: poll)
 
       expect(voter2).to_not be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["José García has already voted"])
+      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
+    end
+
+    it "should not be valid if the user has already voted in the same poll/booth" do
+      voter1 = create(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment)
+      voter2 =  build(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment)
+
+      expect(voter2).to_not be_valid
+      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "should not be valid if the user has already voted in different booth in the same poll" do
       booth_assignment1 = create(:poll_booth_assignment, poll: poll)
       booth_assignment2 = create(:poll_booth_assignment, poll: poll)
 
-      voter1 = create(:poll_voter, :valid_document, booth_assignment: booth_assignment1)
-      voter2 =  build(:poll_voter, :valid_document, booth_assignment: booth_assignment2)
+      voter1 = create(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment1)
+      voter2 =  build(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment2)
 
       expect(voter2).to_not be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["José García has already voted"])
+      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "should be valid if the user has already voted in the same booth in different poll" do
@@ -50,8 +51,13 @@ describe :voter do
       expect(voter2).to be_valid
     end
 
-    xit "should not be valid if the user has voted via web" do
-      pending "Implementation for voting via web"
+    it "should not be valid if the user has voted via web" do
+      answer = create(:poll_answer)
+      answer.record_voter_participation
+
+      voter = build(:poll_voter, poll: answer.question.poll, document_number: answer.author.document_number, document_type: "1")
+      expect(voter).to_not be_valid
+      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
   end
