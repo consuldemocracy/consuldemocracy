@@ -81,5 +81,25 @@ describe Legislation::AnnotationsController do
       end.to change { @draft_version.annotations.count }.by(1)
     end
 
+    it 'should create a new comment on an existing annotation when range is the same' do
+      annotation = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",
+                          ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}],
+                          range_start: "/p[1]", range_start_offset: 5, range_end: "/p[1]", range_end_offset: 10)
+      sign_in @user
+
+      expect do
+        xhr :post, :create, process_id: @process.id,
+                    draft_version_id: @draft_version.id,
+                    legislation_annotation: {
+                        "quote"=>"Ordenación Territorial",
+                        "ranges"=>[{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}],
+                        "text": "una anotacion"
+                      }
+      end.to_not change { @draft_version.annotations.count }
+
+      expect(annotation.reload.comments_count).to eq(2)
+      expect(annotation.comments.last.body).to eq("una anotacion")
+    end
+
   end
 end

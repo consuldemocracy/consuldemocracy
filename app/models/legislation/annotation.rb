@@ -14,7 +14,15 @@ class Legislation::Annotation < ActiveRecord::Base
   validates :draft_version, presence: true
   validates :author, presence: true
 
+  before_save :store_range
   after_create :create_first_comment
+
+  def store_range
+    self.range_start = ranges.first["start"]
+    self.range_start_offset = ranges.first["startOffset"]
+    self.range_end = ranges.first["end"]
+    self.range_end_offset = ranges.first["endOffset"]
+  end
 
   def create_first_comment
     comments.create(body: self.text, user: self.author)
