@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114154421) do
+ActiveRecord::Schema.define(version: 20170125093101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -335,11 +335,16 @@ ActiveRecord::Schema.define(version: 20170114154421) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "comments_count",               default: 0
+    t.string   "range_start"
+    t.integer  "range_start_offset"
+    t.string   "range_end"
+    t.integer  "range_end_offset"
   end
 
   add_index "legislation_annotations", ["author_id"], name: "index_legislation_annotations_on_author_id", using: :btree
   add_index "legislation_annotations", ["hidden_at"], name: "index_legislation_annotations_on_hidden_at", using: :btree
   add_index "legislation_annotations", ["legislation_draft_version_id"], name: "index_legislation_annotations_on_legislation_draft_version_id", using: :btree
+  add_index "legislation_annotations", ["range_start", "range_end"], name: "index_legislation_annotations_on_range_start_and_range_end", using: :btree
 
   create_table "legislation_answers", force: :cascade do |t|
     t.integer  "legislation_question_id"
