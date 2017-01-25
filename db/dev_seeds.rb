@@ -467,7 +467,14 @@ end
 puts "Creating polls"
 
 puts "Active Polls"
-(1..5).each do |i|
+(1..3).each do |i|
+  poll = Poll.create(name: "Active Poll #{i}",
+                     starts_at: 1.month.ago,
+                     ends_at:   1.month.from_now,
+                     geozone_restricted: false)
+  puts "    #{poll.name}"
+end
+(4..5).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
@@ -476,6 +483,10 @@ puts "Active Polls"
                     )
   puts "    #{poll.name}"
 end
+
+
+
+
 
 puts "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
