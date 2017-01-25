@@ -596,4 +596,8 @@ FactoryGirl.define do
     turns "3 turnos"
   end
 
+  factory :nvote do
+    user
+    poll
+  end
 end

@@ -4,7 +4,7 @@ feature 'Nvotes' do
 
   scenario "Voting", :selenium do
     user = create(:user, :verified, id: rand(9999))
-    poll = create(:poll, published: true)
+    poll = create(:poll, published: true, nvotes_poll_id: 128)
 
     login_as(user)
     visit poll_path(poll)
