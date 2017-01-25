@@ -1,11 +1,13 @@
 class Poll
   class Voter < ActiveRecord::Base
     belongs_to :booth_assignment
-    delegate :poll, to: :booth_assignment
+    belongs_to :poll
 
     validates :booth_assignment, presence: true
     validate :in_census
     validate :has_not_voted
+    validates :poll, presence: true
+    validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type] }
 
     def in_census
       errors.add(:document_number, :not_in_census) unless census_api_response.valid?
