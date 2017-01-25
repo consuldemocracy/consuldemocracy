@@ -262,7 +262,6 @@ es:
       proposals: Propuestas
       processes: Procesos
       spending_proposals: Presupuestos participativos
-      proposal_ballot: Votaciones
       sign_up: Quiero registrarme
       sign_in: Si ya tienes una cuenta %{login}.
       sign_in_link: entra ahora
@@ -484,6 +483,7 @@ es:
     banner:
       featured_title: "#PróximaVotación"
       info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
+      button: "Vota"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

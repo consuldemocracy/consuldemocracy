@@ -599,6 +599,7 @@ en:
         redeemable_codes: Redeemable codes
         user_invites: Invitations
         external_stats: External stats
+        incomplete_verifications: Incomplete verifications
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -636,11 +637,6 @@ en:
         users_city_only: Users who voted ONLY for city-wide proposals
         users_district_only: Users who voted ONLY for district-wide proposals
         users_both_total:  Users who voted for BOTH
-        spending_proposals_title: Spending Proposals
-        visits_title: Visits
-        direct_messages: Direct messages
-        proposal_notifications: Proposal notifications
-        incomplete_verifications: Incomplete verifications
       direct_messages:
         title: Direct messages
         total: Total
