@@ -13,7 +13,6 @@ class Poll::Question < ActiveRecord::Base
   has_many :partial_results
   belongs_to :proposal
 
-  validates :poll_id, presence: true
   validates :title, presence: true
   validates :summary, presence: true
   validates :author, presence: true
