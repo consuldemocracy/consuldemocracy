@@ -2897,7 +2897,8 @@ $campaign-yellow: #FFDB19;
 
     .button {
       background: white;
-      color: $campaign-red;
+      color: black;
+      text-transform: uppercase;
     }
   }
 
@@ -2940,7 +2941,8 @@ $campaign-yellow: #FFDB19;
 
       .button {
         background: white;
-        color: $brand;
+        color: black;
+        text-transform: uppercase;
       }
 
       @include breakpoint(large) {
@@ -2952,14 +2954,6 @@ $campaign-yellow: #FFDB19;
 
         h3 {
           font-size: rem-calc(36);
-        }
-
-        .button {
-          bottom: 0;
-          margin-bottom: $line-height;
-          max-width: rem-calc(200);
-          position: absolute;
-          left: 24px;
         }
       }
     }
@@ -2974,6 +2968,7 @@ $campaign-yellow: #FFDB19;
       .button {
         background: black;
         color: white;
+        text-transform: uppercase;
       }
 
       @include breakpoint(large) {
@@ -2985,14 +2980,6 @@ $campaign-yellow: #FFDB19;
 
         h3 {
           font-size: rem-calc(36);
-        }
-
-        .button {
-          bottom: 0;
-          margin-bottom: $line-height;
-          max-width: rem-calc(200);
-          position: absolute;
-          right: 24px;
         }
       }
     }
@@ -3026,6 +3013,7 @@ $campaign-yellow: #FFDB19;
 
     .button {
       background: black;
+      text-transform: uppercase;
     }
 
     @include breakpoint(large) {
@@ -3062,10 +3050,6 @@ $campaign-yellow: #FFDB19;
           font-size: rem-calc(36);
         }
 
-        .button {
-          max-width: rem-calc(200);
-        }
-
         .block-projects {
           bottom: 30px;
           position: absolute;
@@ -3083,6 +3067,7 @@ $campaign-yellow: #FFDB19;
     .button {
       background: white;
       color: black;
+      text-transform: uppercase;
     }
 
     figure {

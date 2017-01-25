@@ -32,12 +32,12 @@
               <%= link_to "Uno para todos", "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" %>
             </h2>
             <h3 class="text-center">Un billete: todo el transporte</h3>
+            <% if !user_signed_in? %>
+              <div class="small-12 medium-8 small-centered">
+                <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+              </div>
+            <% end %>
           </div>
-          <% if !user_signed_in? %>
-            <div class="small-12 medium-8">
-              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-            </div>
-          <% end %>
         </div>
       </div>
     </div>
@@ -52,12 +52,12 @@
               <%= link_to "Madrid 100% sostenible", "https://decide.madrid.es/proposals/199-madrid-100-sostenible" %>
             </h2>
             <h3 class="text-center">Ahorro de energía, Eficiente y Renovable<br> Movilidad y Urbanismo Sostenibles</h3>
+            <% if !user_signed_in? %>
+              <div class="small-12 medium-8 small-centered">
+                <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+              </div>
+            <% end %>
           </div>
-          <% if !user_signed_in? %>
-            <div class="small-12 medium-8">
-              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-            </div>
-          <% end %>
         </div>
       </div>
       <div class="small-12 medium-6 column" data-equalizer-watch>
@@ -76,7 +76,7 @@
           <h3 class="text-center uppercase">¿Proyecto X o Proyecto Y?</h3>
 
           <% if !user_signed_in? %>
-            <div class="small-12 medium-6">
+            <div class="small-12 medium-8 small-centered">
               <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
             </div>
           <% end %>
@@ -171,7 +171,7 @@
   <div class="block">
     <div class="expanded how-voting">
       <div class="row">
-        <div class="small-12 medium-10 column">
+        <div class="small-12 column">
           <h2 class="uppercase">Cómo votar</h2>
           <ul>
             <li>En esta web después de <%= link_to "registrarte", new_user_registration_path %>.</li>
