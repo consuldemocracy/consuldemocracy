@@ -69,7 +69,6 @@ module GraphQL
 
       file.each do |api_type_model, api_type_info|
         model = api_type_model.constantize
-        options = api_type_info['options']
         fields = {}
 
         api_type_info['fields'].each do |field_name, field_type|
@@ -82,7 +81,7 @@ module GraphQL
           end
         end
 
-        api_type_definitions[model] = { options: options, fields: fields }
+        api_type_definitions[model] = { fields: fields }
       end
 
       api_type_definitions

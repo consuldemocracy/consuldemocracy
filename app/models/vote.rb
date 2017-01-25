@@ -7,10 +7,6 @@ class Vote < ActsAsVotable::Vote
     where("votable_type = 'Proposal' AND proposals.hidden_at IS NULL OR votable_type = 'Debate' AND debates.hidden_at IS NULL OR votable_type = 'Comment' AND comments.hidden_at IS NULL")
   end
 
-  def public_voter
-    votable.votes_above_threshold? ? voter : nil
-  end
-
   def public_timestamp
     self.created_at.change(min: 0)
   end

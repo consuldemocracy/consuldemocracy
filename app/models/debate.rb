@@ -8,7 +8,6 @@ class Debate < ActiveRecord::Base
   include Searchable
   include Filterable
   include HasPublicAuthor
-  include PublicVotersStats
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

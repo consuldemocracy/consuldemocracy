@@ -1,2 +1,0 @@
-class Voter < User
-end
