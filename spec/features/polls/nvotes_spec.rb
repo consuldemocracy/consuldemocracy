@@ -15,8 +15,9 @@ feature 'Nvotes' do
     within_frame(nvotes) do
       expect(page).to have_content "Votación de prueba"
 
-      # Sometimes this button does not appear, maybe because the user has already voted?
-      #click_button "Empezar a votar"
+      if page.has_button?("Empezar a votar")
+        click_button "Empezar a votar"
+      end
 
       expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
 
