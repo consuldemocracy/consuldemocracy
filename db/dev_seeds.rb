@@ -768,7 +768,8 @@ puts "Creating polls"
 puts "Active Poll"
 poll = Poll.create(name: "Poll 1",
                    starts_at: 1.month.ago,
-                   ends_at:   1.month.from_now)
+                   ends_at:   1.month.from_now,
+                   nvotes_poll_id: 128)
 puts "    #{poll.name}"
 
 puts "Upcoming Poll"
