@@ -46,15 +46,6 @@
       <%= @question.description %>
     </p>
 
-    <p>
-      <strong><%= t("admin.questions.show.geozones") %></strong>
-      <br>
-      <% @question.geozones.each do |geozone| %>
-        <span class="geozone">
-          <%= geozone.name %>
-        </span>
-      <% end %>
-    </p>
 
     <%= link_to t("admin.questions.show.preview"), question_path(@question) %>
   </div>

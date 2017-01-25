@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117122632) do
+ActiveRecord::Schema.define(version: 20170125114952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -348,13 +348,13 @@ ActiveRecord::Schema.define(version: 20170117122632) do
     t.string   "census_code"
   end
 
-  create_table "geozones_poll_questions", force: :cascade do |t|
+  create_table "geozones_polls", force: :cascade do |t|
     t.integer "geozone_id"
-    t.integer "question_id"
+    t.integer "poll_id"
   end
 
-  add_index "geozones_poll_questions", ["geozone_id"], name: "index_geozones_poll_questions_on_geozone_id", using: :btree
-  add_index "geozones_poll_questions", ["question_id"], name: "index_geozones_poll_questions_on_question_id", using: :btree
+  add_index "geozones_polls", ["geozone_id"], name: "index_geozones_polls_on_geozone_id", using: :btree
+  add_index "geozones_polls", ["poll_id"], name: "index_geozones_polls_on_poll_id", using: :btree
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
@@ -415,6 +415,18 @@ ActiveRecord::Schema.define(version: 20170117122632) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
+  create_table "poll_answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "author_id"
+    t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poll_answers", ["author_id"], name: "index_poll_answers_on_author_id", using: :btree
+  add_index "poll_answers", ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer", using: :btree
+  add_index "poll_answers", ["question_id"], name: "index_poll_answers_on_question_id", using: :btree
+
   create_table "poll_booth_assignments", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "poll_id"
@@ -465,7 +477,6 @@ ActiveRecord::Schema.define(version: 20170117122632) do
     t.datetime "hidden_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "all_geozones",        default: false
     t.tsvector "tsv"
   end
 
@@ -491,16 +502,26 @@ ActiveRecord::Schema.define(version: 20170117122632) do
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
-    t.integer  "booth_assignment_id", null: false
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.integer  "poll_id",             null: false
+    t.integer  "booth_assignment_id"
+    t.integer  "age"
+    t.string   "gender"
+    t.integer  "geozone_id"
+    t.integer  "answer_id"
   end
+
+  add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree
+  add_index "poll_voters", ["poll_id", "document_number", "document_type"], name: "doc_by_poll", using: :btree
+  add_index "poll_voters", ["poll_id"], name: "index_poll_voters_on_poll_id", using: :btree
 
   create_table "polls", force: :cascade do |t|
     t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.boolean  "published", default: false
+    t.boolean  "published",          default: false
+    t.boolean  "geozone_restricted", default: false
   end
 
   create_table "probe_options", force: :cascade do |t|
@@ -910,8 +931,8 @@ ActiveRecord::Schema.define(version: 20170117122632) do
   add_foreign_key "annotations", "users"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
-  add_foreign_key "geozones_poll_questions", "geozones"
-  add_foreign_key "geozones_poll_questions", "poll_questions", column: "question_id"
+  add_foreign_key "geozones_polls", "geozones"
+  add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"

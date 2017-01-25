@@ -114,6 +114,11 @@ en:
         external_url: "Link to additional documentation"
         geozone_id: "Scope of operation"
         title: "Title"
+      poll:
+        name: "Name"
+        starts_at: "Start Date"
+        ends_at: "Closing Date"
+        geozone_restricted: "Restricted by geozone"
       poll/question:
         title: "Question"
         valid_answers: "Posibles answers"
@@ -142,7 +147,7 @@ en:
           attributes:
             document_number:
               not_in_census: "Document not in census"
-              has_voted: "%{name} has already voted"
+              has_voted: "User has already voted"
         proposal:
           attributes:
             tag_list:

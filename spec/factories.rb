@@ -447,7 +447,11 @@ FactoryGirl.define do
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
-    association :booth_assignment, factory: :poll_booth_assignment
+    poll
+
+    trait :from_booth do
+      association :booth_assignment, factory: :poll_booth_assignment
+    end
 
     trait :valid_document do
       document_type   "1"
@@ -460,11 +464,17 @@ FactoryGirl.define do
     end
   end
 
+  factory :poll_answer, class: 'Poll::Answer' do
+    association :question, factory: :poll_question
+    association :author, factory: [:user, :level_three]
+    answer { question.valid_answers.sample }
+  end
+
   factory :poll_partial_result, class: 'Poll::PartialResult' do
     association :question, factory: :poll_question
     association :author, factory: :user
     origin { 'web' }
-    answer { question.verified_answers.sample }
+    answer { question.valid_answers.sample }
   end
 
   factory :organization do

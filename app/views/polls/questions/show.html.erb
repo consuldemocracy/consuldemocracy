@@ -14,12 +14,6 @@
       <% end %>
 
       <p><%= @question.summary %></p>
-
-      <ul class="no-bullet margin-top tags">
-        <% @question.geozones.each do |g| %>
-          <li class="inline-block"><span><%= g.name %></span></li>
-        <% end %>
-      </ul>
     </div>
 
     <div class="small-12 medium-3 column info">

@@ -1,7 +1,7 @@
 class Polls::QuestionsController < ApplicationController
 
   load_and_authorize_resource :poll
-  load_and_authorize_resource :question, class: 'Poll::Question'#, through: :poll
+  load_and_authorize_resource :question, class: 'Poll::Question'
 
   has_orders %w{most_voted newest oldest}, only: :show
 
@@ -10,17 +10,16 @@ class Polls::QuestionsController < ApplicationController
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
 
-    question_answer = @question.partial_results.where(author_id: current_user.try(:id)).first
+    question_answer = @question.answers.where(author_id: current_user.try(:id)).first
     @answers_by_question_id = {@question.id => question_answer.try(:answer)}
   end
 
   def answer
-    partial_result = @question.partial_results.find_or_initialize_by(author: current_user,
-                                                                     amount: 1,
-                                                                     origin: 'web')
+    answer = @question.answers.find_or_initialize_by(author: current_user)
 
-    partial_result.answer = params[:answer]
-    partial_result.save!
+    answer.answer = params[:answer]
+    answer.save!
+    answer.record_voter_participation
 
     @answers_by_question_id = {@question.id => params[:answer]}
   end

@@ -1,31 +1,55 @@
 class Poll
   class Voter < ActiveRecord::Base
+    belongs_to :poll
     belongs_to :booth_assignment
-    delegate :poll, to: :booth_assignment
+    belongs_to :answer
 
-    validates :booth_assignment, presence: true
-    validate :in_census
-    validate :has_not_voted
-
-    def in_census
-      errors.add(:document_number, :not_in_census) unless census_api_response.valid?
-    end
-
-    def has_not_voted
-      errors.add(:document_number, :has_voted, name: name) if has_voted?
-    end
+    validates :poll, presence: true
+    validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
 
     def census_api_response
-      @census ||= CensusApi.new.call(document_type, document_number)
+      @census_api_response ||= CensusApi.new.call(document_type, document_number)
     end
 
-    def has_voted?
-      poll.document_has_voted?(document_number, document_type)
+    def in_census?
+      census_api_response.valid?
     end
 
-    def name
-      @census.name
+    def fill_stats_fields
+      if in_census?
+        self.gender = census_api_response.gender
+        self.geozone_id = Geozone.select(:id).where(census_code: census_api_response.district_code).first.try(:id)
+        self.age = voter_age(census_api_response.date_of_birth)
+      end
     end
+
+    def self.create_from_user(user, options = {})
+      poll_id = options[:poll_id]
+      booth_assignment_id = options[:booth_assignment_id]
+      answer_id = options[:answer_id]
+
+      Voter.create(
+        document_type: user.document_type,
+        document_number: user.document_number,
+        poll_id: poll_id,
+        booth_assignment_id: booth_assignment_id,
+        gender: user.gender,
+        geozone_id: user.geozone_id,
+        age: user.age,
+        answer_id: answer_id
+      )
+    end
+
+    private
+
+      def voter_age(dob)
+        if dob.blank?
+          nil
+        else
+          now = Time.now.utc.to_date
+          now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+        end
+      end
 
   end
 end

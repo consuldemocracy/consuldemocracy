@@ -306,10 +306,6 @@ es:
       edit:
         title: "Editar votación"
         submit_button: "Actualizar votación"
-      form:
-        name: "Nombre"
-        starts_at: "Fecha de apertura"
-        ends_at: "Fecha de cierre"
       show:
         questions_tab: Preguntas
         booths_tab: Urnas
@@ -362,7 +358,6 @@ es:
         valid_answers: Respuestas válidas
         summary: Resumen
         description: Descripción
-        geozones: Distritos
         preview: Ver en la web
     booths:
       index:

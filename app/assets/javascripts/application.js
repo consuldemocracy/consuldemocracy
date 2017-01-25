@@ -53,6 +53,7 @@
 //= require countdown
 //= require probe
 //= require social_share
+//= require checkbox_toggle
 //= require custom
 
 var initialize_modules = function() {
@@ -79,6 +80,7 @@ var initialize_modules = function() {
   App.Banners.initialize();
   App.Countdown.initialize();
   App.SocialShare.initialize();
+  App.CheckboxToggle.initialize();
 };
 
 $(function(){
