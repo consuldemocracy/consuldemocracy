@@ -124,4 +124,4 @@ Capybara.register_driver :selenium do |app|
         desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
       )
     end
-Capybara.default_max_wait_time = 240
+Capybara.default_max_wait_time = 10
