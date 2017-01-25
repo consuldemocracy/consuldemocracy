@@ -42,11 +42,12 @@ class Poll
 
     private
 
-      def voter_age(date_of_birth)
-        if date_of_birth.blank?
+      def voter_age(dob)
+        if dob.blank?
           nil
         else
-          ((Date.today - date_of_birth.to_date).to_i / 365.25).to_i
+          now = Time.now.utc.to_date
+          now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
         end
       end
 

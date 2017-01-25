@@ -250,7 +250,10 @@ class User < ActiveRecord::Base
     if date_of_birth.blank?
       nil
     else
-      ((Date.today - date_of_birth.to_date).to_i / 365.25).to_i
+      now = Time.now.utc.to_date
+      now.year - date_of_birth.year - (
+        (now.month > date_of_birth.month || (now.month == date_of_birth.month && now.day >= date_of_birth.day)
+        ) ? 0 : 1)
     end
   end
 
