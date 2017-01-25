@@ -301,10 +301,6 @@ en:
       edit:
         title: "Edit poll"
         submit_button: "Update poll"
-      form:
-        name: "Name"
-        starts_at: "Open date"
-        ends_at: "Close date"
       show:
         questions_tab: Questions
         booths_tab: Booths
@@ -357,7 +353,6 @@ en:
         valid_answers: Valid answers
         summary: Summary
         description: Description
-        geozones: Geozones
         preview: View on website
     booths:
       index:

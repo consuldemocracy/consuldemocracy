@@ -49,6 +49,7 @@
 //= require fixed_bar
 //= require banners
 //= require social_share
+//= require checkbox_toggle
 //= require custom
 
 var initialize_modules = function() {
@@ -74,6 +75,7 @@ var initialize_modules = function() {
   App.FixedBar.initialize();
   App.Banners.initialize();
   App.SocialShare.initialize();
+  App.CheckboxToggle.initialize();
 };
 
 $(function(){

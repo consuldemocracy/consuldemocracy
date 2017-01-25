@@ -11,7 +11,6 @@ class Poll::Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :answers
   has_many :partial_results
-  has_and_belongs_to_many :geozones
   belongs_to :proposal
 
   validates :title, presence: true
@@ -21,9 +20,7 @@ class Poll::Question < ActiveRecord::Base
   validates :title, length: { in: 4..Poll::Question.title_max_length }
   validates :description, length: { maximum: Poll::Question.description_max_length }
 
-  scope :no_poll,       -> { where(poll_id: nil) }
-  scope :by_poll_id,    -> (poll_id)    { where(poll_id: poll_id) }
-  scope :by_geozone_id, -> (geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
+  scope :by_poll_id,    ->(poll_id)    { where(poll_id: poll_id) }
 
   scope :sort_for_list, -> { order('poll_questions.proposal_id IS NULL', :created_at)}
   scope :for_render,    -> { includes(:author, :proposal) }
@@ -41,9 +38,7 @@ class Poll::Question < ActiveRecord::Base
       summary               => 'B',
       description           => 'C',
       author.username       => 'C',
-      author_visible_name   => 'C',
-      geozones.pluck(:name).join(' ')  => 'C'
-    }
+      author_visible_name   => 'C' }
   end
 
   def description
@@ -62,29 +57,17 @@ class Poll::Question < ActiveRecord::Base
       self.title = proposal.title
       self.description = proposal.description
       self.summary = proposal.summary
-      self.all_geozones = true
       self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end
   end
 
   def answerable_by?(user)
-    poll.answerable_by?(user) && (self.all_geozones || self.geozone_ids.include?(user.geozone_id))
+    poll.answerable_by?(user)
   end
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
-
-    where(poll_id:  answerable_polls(user),
-          geozones: { id: answerable_geozones(user) }).
-    joins(:geozones)
-  end
-
-  def self.answerable_polls(user)
-    Poll.answerable_by(user)
-  end
-
-  def self.answerable_geozones(user)
-    user.geozone || Geozone.city
+    where(poll_id: Poll.answerable_by(user).pluck(:id))
   end
 
 end

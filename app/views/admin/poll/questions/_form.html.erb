@@ -30,17 +30,6 @@
       </div>
 
       <div class="row">
-        <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
-          <div class="small-6 medium-3 column">
-            <%= b.label do %>
-              <%= b.check_box + b.text %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <%# TODO include all link %>
-
-      <div class="row">
         <div class="actions small-12 medium-4 column margin-top">
           <%= f.submit(class: "button expanded", value: t("shared.save")) %>
         </div>

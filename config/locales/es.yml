@@ -411,7 +411,6 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
-      cant_answer_wrong_geozone: "No puedes responder a las siguientes %{count} preguntas porque no están disponibles en tu zona:"
       question_count_html: "Esta votación tiene un total de <strong>%{count} preguntas</strong>."
   poll_questions:
     create_question: "Crear pregunta para votación"

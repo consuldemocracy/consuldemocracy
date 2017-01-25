@@ -6,6 +6,8 @@ class Poll < ActiveRecord::Base
   has_many :officers, through: :officer_assignments
   has_many :questions
 
+  has_and_belongs_to_many :geozones
+
   validates :name, presence: true
 
   validate :date_range
@@ -14,6 +16,7 @@ class Poll < ActiveRecord::Base
   scope :incoming, -> { where('? < starts_at', Time.current) }
   scope :expired,  -> { where('ends_at < ?', Time.current) }
   scope :published,  -> { where('published = ?', true) }
+  scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
 
   scope :sort_for_list, -> { order(:starts_at) }
 
@@ -30,12 +33,15 @@ class Poll < ActiveRecord::Base
   end
 
   def answerable_by?(user)
-    user.present? && user.level_two_or_three_verified? && current?
+    user.present? &&
+      user.level_two_or_three_verified? &&
+      current? &&
+      (!geozone_restricted || geozone_ids.include?(user.geozone_id))
   end
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
-    current
+    current.joins(:geozones).where('geozone_restricted = ? or geozones.id = ?', false, user.geozone_id)
   end
 
   def document_has_voted?(document_number, document_type)
