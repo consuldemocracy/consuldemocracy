@@ -434,6 +434,12 @@ FactoryGirl.define do
     end
   end
 
+  factory :poll_answer, class: 'Poll::Answer' do
+    association :question, factory: :poll_question
+    association :author, factory: :user
+    answer { question.verified_answers.sample }
+  end
+
   factory :poll_partial_result, class: 'Poll::PartialResult' do
     association :question, factory: :poll_question
     association :author, factory: :user

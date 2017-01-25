@@ -166,7 +166,7 @@ feature 'Polls' do
     scenario 'Level 2 users who have already answered' do
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two)
-      create(:poll_partial_result, question: question, author: user, answer: 'Chewbacca')
+      create(:poll_answer, question: question, author: user, answer: 'Chewbacca')
 
       login_as user
       visit poll_path(poll)

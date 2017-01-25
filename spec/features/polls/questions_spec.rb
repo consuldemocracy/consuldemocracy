@@ -70,7 +70,7 @@ feature 'Poll Questions' do
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
 
       user = create(:user, :level_two, geozone: geozone)
-      create(:poll_partial_result, question: question, author: user, answer: 'Chewbacca')
+      create(:poll_answer, question: question, author: user, answer: 'Chewbacca')
 
       login_as user
       visit question_path(question)
