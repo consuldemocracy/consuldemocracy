@@ -2864,7 +2864,11 @@ $campaign-yellow: #FFDB19;
 .landing-voting {
   font-family: 'Franklin Gothic' !important;
   font-weight: normal;
+  font-size: rem-calc(24);
 
+  h1, h2, h3 {
+    font-size: rem-calc(36);
+  }
 
   .uppercase {
     text-transform: uppercase;
