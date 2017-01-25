@@ -92,25 +92,6 @@ describe 'Vote' do
     end
   end
 
-  describe 'public_voter' do
-    it 'only returns voter if votable has enough votes' do
-      create(:setting, key: 'proposal_api_votes_threshold', value: '2')
-
-      proposal_1 = create(:proposal)
-      proposal_2 = create(:proposal)
-
-      voter_1 = create(:user)
-      voter_2 = create(:user)
-
-      vote_1 = create(:vote, votable: proposal_1, voter: voter_1)
-      vote_2 = create(:vote, votable: proposal_2, voter: voter_1)
-      vote_3 = create(:vote, votable: proposal_2, voter: voter_2)
-
-      expect(vote_1.public_voter).to be_nil
-      expect(vote_2.public_voter).to eq(voter_1)
-    end
-  end
-
   describe '#public_timestamp' do
     it "truncates created_at timestamp up to minutes" do
       vote = create(:vote, created_at: Time.zone.parse('2016-02-10 15:30:45'))

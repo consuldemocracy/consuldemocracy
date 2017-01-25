@@ -4,7 +4,6 @@ describe Comment do
 
   let(:comment) { build(:comment) }
 
-  it_behaves_like "public_voters_stats"
   it_behaves_like "has_public_author"
 
   it "is valid" do
