@@ -246,6 +246,14 @@ class User < ActiveRecord::Base
     "#{name} (#{email})"
   end
 
+  def age
+    if date_of_birth.blank?
+      nil
+    else
+      ((Date.today - date_of_birth.to_date).to_i / 365.25).to_i
+    end
+  end
+
   def save_requiring_finish_signup
     begin
       self.registering_with_oauth = true
