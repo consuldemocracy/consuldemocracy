@@ -2862,6 +2862,8 @@ $campaign-red:    #E23135;
 $campaign-yellow: #FFDB19;
 
 .landing-voting {
+  font-family: 'Franklin Gothic' !important;
+  text-transform: uppercase !important;
 
   .header {
     background: $campaign-red;
@@ -3112,6 +3114,19 @@ $campaign-yellow: #FFDB19;
       line-height: $line-height*2;
     }
   }
+}
+
+// Franklin Gothic Extra Condensed
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('franklin_gothic.eot');
+  src: font-url('franklin_gothic.eot?#iefix') format('embedded-opentype'),
+       font-url('franklin_gothic.woff2')      format('woff2'),
+       font-url('franklin_gothic.woff')       format('woff'),
+       font-url('franklin_gothic.ttf')        format('truetype'),
 }
 
 // Overrides budgets default colors
