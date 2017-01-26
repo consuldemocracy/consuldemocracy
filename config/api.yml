@@ -1,10 +1,11 @@
 User:
   fields:
-    id:         integer
-    username:   string
-    debates:    [Debate]
-    proposals:  [Proposal]
-    comments:   [Comment]
+    id:                 integer
+    username:           string
+    debates:            [Debate]
+    proposals:          [Proposal]
+    comments:           [Comment]
+    organization:       Organization
 Debate:
   fields:
     id:                 integer
@@ -82,3 +83,8 @@ Vote:
     votable_id:       integer
     votable_type:     string
     public_timestamp: string
+Organization:
+  fields:
+    id:               integer
+    user_id:          integer
+    name:             string
