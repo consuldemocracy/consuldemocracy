@@ -168,19 +168,19 @@ fr:
       conditions: Conditions d'utilisation
       consul: Application Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Pour l'assistance technique entrer
+      contact_us: Pour l'assistance technique cliquez
       copyright: Consul, %{year}
-      description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid ouvert sur le monde.
-      faq: assistance technique
+      description: Ce portail utilise %{consul} qui est un %{open_source}.
+      faq: ici
       more_info: Plus d'information
       open_data_text: Tout les détails de la Mairie sont vôtre pour accès
       open_data_title: Open data
       open_source: logiciel libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Modelez la ville de Madrid dans laquelle vous souhaitez vivre
+      participation_text: Modelez la ville dans laquelle vous voulez vivre.
       participation_title: Participation
       privacy: Vie privée
-      transparency_text: Trouver tout à propos de la mairie de Madrid
+      transparency_text: Accédez à toutes les infos concernant votre ville
       transparency_title: Transparence
       transparency_url: https://transparency.consul
     header:
@@ -296,11 +296,12 @@ fr:
         one: " avec sujet '%{topic}'"
         other: " avec sujets '%{topic}'"
       orders:
-        confidence_score: la plus votée
-        created_at: la plus récente
-        hot_score: la plus active
-        most_commented: la plus commentée
+        confidence_score: les plus votées
+        created_at: les plus récentes
+        hot_score: les plus actives
+        most_commented: les plus commentées
         relevance: pertinence
+        archival_date: Archives
       retired_proposals: Propositions retirées
       retired_proposals_link: Proposition retirée par l'auteur
       retired_links:
@@ -335,7 +336,7 @@ fr:
     notice:
       retired: Proposition retirée
     proposal:
-      already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
+      already_supported: Vous soutenez déjà cette proposition. Partagez-la !
       comments:
         one: 1 commentaire
         other: "%{count} commentaires"
