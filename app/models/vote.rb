@@ -1,5 +1,7 @@
 class Vote < ActsAsVotable::Vote
 
+  include Graphqlable
+  
   def self.public_for_api
     joins("FULL OUTER JOIN debates ON votable_type = 'Debate' AND votable_id = debates.id").
     joins("FULL OUTER JOIN proposals ON votable_type = 'Proposal' AND votable_id = proposals.id").

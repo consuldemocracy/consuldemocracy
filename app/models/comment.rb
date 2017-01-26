@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
   include Flaggable
   include HasPublicAuthor
+  include Graphqlable
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

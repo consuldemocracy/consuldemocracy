@@ -18,16 +18,16 @@ module GraphQL
 
         query_type_creator.created_api_types.each do |model, created_type|
           if created_type.fields['id']
-            field model.name.underscore.to_sym do
+            field model.graphql_field_name do
               type created_type
-              description "Find one #{model.model_name.human} by ID"
+              description model.graphql_field_description
               argument :id, !types.ID
               resolve -> (object, arguments, context) { model.public_for_api.find_by(id: arguments['id'])}
             end
           end
 
-          connection model.name.underscore.pluralize.to_sym, created_type.connection_type do
-            description "Find all #{model.model_name.human.pluralize}"
+          connection model.graphql_pluralized_field_name, created_type.connection_type do
+            description model.graphql_pluralized_field_description
             resolve -> (object, arguments, context) { model.public_for_api }
           end
 

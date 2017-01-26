@@ -39,8 +39,8 @@ module GraphQL
 
       created_type = GraphQL::ObjectType.define do
 
-        name(model.name)
-        description("#{model.model_name.human}")
+        name        model.graphql_type_name
+        description model.graphql_type_description
 
         # Make a field for each column, association or method
         fields.each do |field_name, field_type|
