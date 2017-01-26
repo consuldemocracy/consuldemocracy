@@ -700,4 +700,16 @@ describe Debate do
     end
   end
 
+  describe 'public_for_api scope' do
+    it 'returns debates' do
+      debate = create(:debate)
+      expect(Debate.public_for_api).to include(debate)
+    end
+
+    it 'does not return hidden debates' do
+      debate = create(:debate, :hidden)
+      expect(Debate.public_for_api).to_not include(debate)
+    end
+  end
+
 end

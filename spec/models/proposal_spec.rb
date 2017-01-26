@@ -842,4 +842,16 @@ describe Proposal do
     end
   end
 
+  describe 'public_for_api scope' do
+    it 'returns proposals' do
+      proposal = create(:proposal)
+      expect(Proposal.public_for_api).to include(proposal)
+    end
+
+    it 'does not return hidden proposals' do
+      proposal = create(:proposal, :hidden)
+      expect(Proposal.public_for_api).to_not include(proposal)
+    end
+  end
+
 end

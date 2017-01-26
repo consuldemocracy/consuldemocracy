@@ -134,7 +134,7 @@ describe Comment do
     end
   end
 
-  describe "public_for_api" do
+  describe "public_for_api scope" do
     it "returns comments" do
       comment = create(:comment)
 
@@ -171,6 +171,13 @@ describe Comment do
     it "does not return comments on hidden proposals" do
       hidden_proposal = create(:proposal, :hidden)
       comment = create(:comment, commentable: hidden_proposal)
+
+      expect(Comment.public_for_api).not_to include(comment)
+    end
+
+    it 'does not return comments on budget investments' do
+      budget_investment = create(:budget_investment)
+      comment = create(:comment, commentable: budget_investment)
 
       expect(Comment.public_for_api).not_to include(comment)
     end
