@@ -83,6 +83,7 @@ Vote:
     votable_id:       integer
     votable_type:     string
     public_timestamp: string
+    vote_flag:        boolean
 Organization:
   fields:
     id:               integer
