@@ -3,6 +3,8 @@ require 'rails_helper'
 feature 'Valuation spending proposals' do
 
   background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
   end

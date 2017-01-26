@@ -62,10 +62,6 @@ class Debate < ActiveRecord::Base
     "#{id}-#{title}".parameterize
   end
 
-  def description
-    super.try :html_safe
-  end
-
   def likes
     cached_votes_up
   end

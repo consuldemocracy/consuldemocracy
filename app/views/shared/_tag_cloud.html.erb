@@ -5,7 +5,7 @@
   <ul class="no-bullet tag-cloud">
     <% @tag_cloud.tags.each do |tag| %>
       <li class="inline-block">
-        <%= link_to taggable_path(taggable, tag.name) do %>
+        <%= link_to taggables_path(taggable, tag.name) do %>
           <span class="tag"><%= tag.name %></span>
         <% end %>
       </li>

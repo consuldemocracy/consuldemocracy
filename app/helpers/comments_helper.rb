@@ -20,6 +20,14 @@ module CommentsHelper
     end
   end
 
+  def commentable_path(comment)
+    if comment.commentable_type == "Budget::Investment"
+      budget_investment_path(comment.commentable.budget_id, comment.commentable)
+    else
+      comment.commentable
+    end
+  end
+
   def user_level_class(comment)
     if comment.as_administrator?
       "is-admin"
