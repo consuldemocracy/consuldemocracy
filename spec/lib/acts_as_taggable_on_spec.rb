@@ -64,6 +64,26 @@ describe 'ActsAsTaggableOn' do
         expect(tag.proposals_count).to eq(1)
       end
     end
+
+    describe "public_for_api scope" do
+      it "returns tags whose kind is NULL" do
+        tag = create(:tag, kind: nil)
+
+        expect(ActsAsTaggableOn::Tag.public_for_api).to include(tag)
+      end
+
+      it "returns tags whose kind is 'category'" do
+        tag = create(:tag, kind: 'category')
+
+        expect(ActsAsTaggableOn::Tag.public_for_api).to include(tag)
+      end
+
+      it "blocks other kinds of tags" do
+        tag = create(:tag, kind: 'foo')
+
+        expect(ActsAsTaggableOn::Tag.public_for_api).not_to include(tag)
+      end
+    end
   end
 
 end
