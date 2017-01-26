@@ -94,6 +94,7 @@ feature 'Poll Questions' do
       login_as user
       visit question_path(question)
 
+      click_link 'Answer this question'
       click_link 'Han Solo'
 
       expect(page).to_not have_link('Han Solo')
