@@ -49,7 +49,14 @@ module GraphQL
             field(field_name, SCALAR_TYPES[field_type])
           when :singular_association
             field(field_name, -> { api_types_creator.created_types[field_type] }) do
-              resolve -> (object, arguments, context) { field_type.public_for_api.find_by(id: object.id) }
+              resolve -> (object, arguments, context) do
+                association_target = object.send(field_name)
+                if association_target.nil?
+                  nil
+                else
+                  field_type.public_for_api.find_by(id: association_target.id)
+                end
+              end
             end
           when :multiple_association
             field_type = field_type.first
