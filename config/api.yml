@@ -22,6 +22,7 @@ Debate:
     comments:           [Comment]
     public_author:      User
     votes:              [Vote]
+    tags:               ["ActsAsTaggableOn::Tag"]
 Proposal:
   fields:
     id:                   integer
@@ -44,6 +45,7 @@ Proposal:
     proposal_notifications: [ProposalNotification]
     public_author:        User
     votes:                [Vote]
+    tags:                 ["ActsAsTaggableOn::Tag"]
 Comment:
   fields:
     id:                 integer
@@ -69,7 +71,7 @@ ProposalNotification:
     proposal_id:      integer
     created_at:       string
     proposal:         Proposal
-Tag:
+ActsAsTaggableOn::Tag:
   fields:
     id:               integer
     name:             string

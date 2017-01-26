@@ -20,6 +20,8 @@ module ActsAsTaggableOn
 
   Tag.class_eval do
 
+    include Graphqlable
+    
     def increment_custom_counter_for(taggable_type)
       Tag.increment_counter(custom_counter_field_name_for(taggable_type), id)
     end
@@ -40,6 +42,10 @@ module ActsAsTaggableOn
 
     def self.spending_proposal_tags
       ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
+    end
+
+    def self.public_for_api
+      where("kind IS NULL OR kind = 'category'")
     end
 
     private
