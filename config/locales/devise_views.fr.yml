@@ -1,0 +1,130 @@
+---
+fr:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Reénvoyer les instructions
+        title: Reénvoyer les instructions de confirmation
+      show:
+        instructions_html: "Confirmer le compte associer avec l'address mail: %{email}"
+        new_password_confirmation_label: Confirmer le nouveau mot de passe
+        new_password_label: Nouveau mot de passe
+        please_set_password: Choisissez votre nouveau mot de passe (vous permettant un access avec l'address mail ci-dessus)
+        submit: Confirmer
+        title: Confirmer mon compte
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmer mon compte
+        text: 'Vous pouvez confirmer votre address mail en suivant le lien ci-dessous:'
+        title: Bienvenue au Portail du Gouvernment Ouvert de la Ville de Madrid
+        welcome: Beinvenue
+      reset_password_instructions:
+        change_link: Changer mon mot de passe
+        hello: Bonjour
+        ignore_text: Si vous n'avez pas demander un changement de mot de passe, vous pourriez ignorer ce mail.
+        info_text: Votre mot de passe ne changera pas, tant que vous n'avez pas suivi le lien et editer votre mot de passe actuel.
+        text: 'Nous avons reçu une demande de changement de mot de passe. Vous pouvez éffectuer ce changement en suivant ce lien:'
+        title: Changer votre mot de passe
+      unlock_instructions:
+        hello: Bonjour
+        info_text: Votre compte est désormais bloqué suite à trop de tentative de connections échouées.
+        instructions_text: 'Cliquer ce lien pour débloquer votre compte'
+        title: Votre compte bloqué
+        unlock_link: Débloquer mon compte
+    menu:
+      login_items:
+        login: Connectez vous
+        logout: Déconnectez
+        signup: Enregistrez vous
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Organisation
+          password_confirmation_label: Confirmer votre mot de passe
+          password_label: Mot de passe
+          phone_number_label: Numero de téléphone
+          responsible_name_label: Nom et prénom de la personne responsable de la collectif
+          responsible_name_note: La representante de l'assocation ou collectif, dans le nom de qui les propositions sont présenter
+          submit: Enregistrer
+          title: "Enregistrer en tant qu'organisation ou collectif"
+        success:
+          back_to_index: Je comprends. retour à la page d'accueil
+          instructions_1_html: "<b>Nous vous contacterons bientôt</b> à fin de verifier que vous répresenter cette collectif en réalité."
+          instructions_2_html: En attendant, nous vous avons envoyé un lien pour <b>confirmer votre address mail</b>.
+          instructions_3_html: Dès que vous avez confirmé votre address, vous pourriez participer en tant que collectif non-verifié.
+          thank_you_html: Merci d'avoir enregistrer votre collectif. Elle est en <b>attente de verification</b>.
+          title: Enregistrement d'organisation ou collectif
+    passwords:
+      edit:
+        change_submit: Changer mot de passe
+        password_confirmation_label: Confirmer mot de passe
+        password_label: Nouveau mot de passe
+        title: Changer votre mot de passe
+      new:
+        email_label: Email
+        send_submit: Envoyer les instructions
+        title: Mot de passe oublié?
+    sessions:
+      new:
+        email_label: Email
+        password_label: Mot de passe
+        remember_me: Se souvenir de moi
+        submit: Envoyer
+        title: Connectez vous
+    shared:
+      links:
+        login: Envoyer
+        new_confirmation: Vous n'avez pas encore reçu vous instructions pour activer votre compte?
+        new_password: Mot de passe oublié?
+        new_unlock: Pas encore reçu les instructions de débloquage?
+        signin_with_provider: Connectez vous avec %{provider}
+        signup: Vous n'avez pas encore de compte? %{signup_link}
+        signup_link: S'inscrire
+    unlocks:
+      new:
+        email_label: Email
+        submit: Re-envoyer les instructions de débloquage
+        title: Re-envoyer les instructions de débloquage
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Raison
+          info: Cette action est permanante. S'il vous plaît de verifier que vous souhaiter effacer cette compte.
+          info_reason: Nous expliquer vos raisons d'effacer votre compte (facultatif)
+          submit: Effacer mon compte
+          title: Effacer mon compte
+        edit:
+          current_password_label: Mot de passe actuel
+          edit: Editer
+          email_label: Email
+          leave_blank: Laisser vide si vous ne voulez pas modifier
+          need_current: Nous avons besoin de votre mot de passe actuel
+          password_confirmation_label: Confirmer nouveau mot de passe
+          password_label: Nouveau mot de passe
+          update_submit: Actualiser
+          waiting_for: 'En attente de confirmation de:'
+        new:
+          cancel: Annuler connection
+          email_label: Email
+          organization_signup: Representez-vous une organisation ou collectif? %{signup_link}
+          organization_signup_link: S'inscrire
+          password_confirmation_label: Confirmer mot de passe
+          password_label: Mot de passe
+          redeemable_code: Code de verification reçu par email (facultatif)
+          submit: S'inscrire
+          terms: En s'inscrivant vous acceptez les %{terms}
+          terms_link: termes et conditions d'utilisation
+          terms_title: En s'inscrivant vous acceptez les termes et conditions d'utilisationBy registering you accept the terms and conditions of use
+          title: S'inscrire
+          username_is_available: "Identifiant disponible"
+          username_is_not_available: "Identifiant déjà enregistrer"
+          username_label: Identifiant
+          username_note: Votre identifiant sera afficher avec vos messages
+        success:
+          back_to_index: Je comprends; retour à la page d'accueil
+          instructions_1_html: S'il vous plaît de <b>regarder dans vos mails</b> - nous vous avons envoyer <b>un lien de confirmation</b>.
+          instructions_2_html: Dès que votre address mail est confirmé, vous pourriez participer.
+          thank_you_html: Merci de vous avoir inscrit! S'il vous plaît de <b>confirmer votre address mail</b>.
+          title: Modifier votre address mail.
