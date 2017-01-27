@@ -87,9 +87,9 @@ feature 'Poll Questions' do
       expect(page).to have_link('Answer this question')
     end
 
-    scenario 'Records participarion', :js do
+    scenario 'Records participation', :js do
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
-      user = create(:user, :level_two, geozone: geozone)
+      user = create(:user, :level_two, geozone: geozone, gender: 'female', date_of_birth: 33.years.ago)
 
       login_as user
       visit question_path(question)
@@ -99,9 +99,12 @@ feature 'Poll Questions' do
 
       expect(page).to_not have_link('Han Solo')
 
-      answer = Poll::Answer.by_question(question.id).by_author(user.id).first
-      expect(answer.voter.document_number).to eq(user.document_number)
-      expect(answer.voter.poll_id).to eq(poll.id)
+      voter = poll.voters.first
+      expect(voter.document_number).to eq(user.document_number)
+      expect(voter.geozone_id).to eq(user.geozone_id)
+      expect(voter.gender).to eq(user.gender)
+      expect(voter.age).to eq(33)
+      expect(voter.poll_id).to eq(poll.id)
     end
 
   end

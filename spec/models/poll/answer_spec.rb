@@ -16,12 +16,12 @@ describe Poll::Answer do
   describe "#record_voter_participation" do
     it "creates a poll_voter with user and poll data" do
       answer = create(:poll_answer)
-      expect(answer.voter).to be_nil
+      expect(answer.poll.voters).to be_blank
 
       answer.record_voter_participation
-      voter = answer.reload.voter
+      expect(answer.poll.reload.voters.size).to eq(1)
+      voter = answer.poll.voters.first
 
-      expect(voter.answer).to eq(answer)
       expect(voter.document_number).to eq(answer.author.document_number)
       expect(voter.poll_id).to eq(answer.poll.id)
     end
