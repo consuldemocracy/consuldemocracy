@@ -175,7 +175,7 @@ describe Comment do
       expect(Comment.public_for_api).not_to include(comment)
     end
 
-    it 'does not return comments on budget investments' do
+    it 'does not return comments on elements which are not debates or proposals' do
       budget_investment = create(:budget_investment)
       comment = create(:comment, commentable: budget_investment)
 
