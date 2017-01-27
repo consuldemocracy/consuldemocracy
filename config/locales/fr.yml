@@ -1975,85 +1975,11 @@ fr:
   valuation.budgets.index.evaluate  : Evaluer
   valuation.budgets.index.filters.current : Ouvrir
   valuation.budgets.index.filters.finished  : "Terminé"
-  budgets.investments.wrong_price_format  : Seulement des nombres entiers
-  budgets.investments.investment.already_added  : Vous avez déjà ajouté ce projet d'investissement
-  budgets.investments.investment.add  : Ajouter
-  budgets.investments.investment.support_title  : Soutenir ce projet
-  budgets.investments.investment.title  : Projet d'investissement
-  budgets.investments.investment.supports :
-    one: "1 soutien"
-    other: "%{count} soutiens"
-    zero: "Aucun soutiens"
-  budgets.investments.investment.already_supported  : Vous soutenez déjà ce projet. Partagez-le !
-  budgets.investments.investment.give_support : Soutenir
-  budgets.investments.form.tags_label : "Etiquettes"
-  budgets.investments.form.tags_instructions  : "Etiquettez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
-  budgets.investments.form.tag_category_label : Catégories
-  budgets.investments.form.tags_placeholder : Entrez les étiquettes que vous souhaiter utiliser, séparées par des virgules (',')
-  budgets.investments.header.check_ballot : "Voir mon bulletin"
-  budgets.investments.header.different_heading_assigned_html  : 'Vous avez des votes actifs dans un autre en-tête : %{en-tête_lien}'
-  budgets.investments.index.title : Budgétisation participative
-  budgets.investments.index.sidebar.create  : Créer un budget d'investissement
-  budgets.investments.index.sidebar.verified_only : Pour créer un nouveau budget d'investissement %{verify}
-  budgets.investments.index.sidebar.verify_account  : Vérifier votre compte
-  budgets.investments.index.sidebar.my_ballot : Mon bulletin
-  budgets.investments.index.sidebar.voted_html  :
-    one: "<strong>Vous avez voté sur une proposition avec un coût de %{amount_spent}</strong>"
-    other: "<strong>Vous avez voté %{count} propositions avec un coût de %{amount_spent}</strong>"
-  budgets.investments.index.sidebar.zero  : Vous n'avez voter sur aucun projet d'investissement
-  budgets.investments.index.sidebar.voted_info  : "Vous pouvez changer votre vote à tout moment jusqu'à la fin de cette phase. Pas besoin de dépenser l'intégralité de votre argent."
-  budgets.investments.index.sidebar.not_logged_in : Pour créer un nouveau budget d'investissement vous devez %{sign_in} ou %{sign_up}
-  budgets.investments.index.sidebar.sign_in : Identification
-  budgets.investments.index.sidebar.sign_up : Inscription
-  budgets.investments.index.unfeasible  : Projets d'investissement infaisable
-  budgets.investments.index.unfeasible_text : La proposition doit remplir plusieurs conditions (légalité, être concrete, être la responsabilité de la ville, ne pas exceder la limite du budget; %"{definitions}) pour être déclarée viable et atteindre la phase finale de vote. Toute proposition ne remplissant pas ces conditions est marquée comme "infaisable" et publiée dans la liste ci-contre, avec son rapport d'infaisablité.
-  budgets.investments.index.unfeasible_text_definitions : Voir définition ci-contre
-  budgets.investments.index.by_heading  : "Projets d'investissement avec visibilité : %{heading}"
-  budgets.investments.index.search_results  :
-    one: " contenant le terme '%{search_term}'"
-    other: " contenant le terme '%{search_term}'"
-  budgets.investments.index.search_form.button  : Rechercher
-  budgets.investments.index.search_form.placeholder : Rechercher des projets d'investissement
-  budgets.investments.index.search_form.title : Rechercher
-  budgets.investments.index.orders.random : "aléatoire"
-  budgets.investments.index.orders.confidence_score : "meilleur classement"
-  budgets.investments.index.orders.price  : par prix
-  budgets.investments.show.author_deleted : Utilisateur supprimé
-  budgets.investments.show.code_html  : "Code du projet d'investissement : <strong>%{code}</strong>"
-  budgets.investments.show.location_html  : "Lieu : <strong>%{location}</strong>"
-  budgets.investments.show.organization_name_html : "Organisation : <strong>%{name}</strong>"
-  budgets.investments.show.unfeasibility_explanation  : Explication de l'infaisabilité
-  budgets.investments.show.price_explanation  : Explication du prix
-  budgets.investments.show.share  : Partager
-  budgets.investments.show.title  : Projet d'investissement
-  budgets.ballots.show.title  : Votre bulletin
-  budgets.ballots.show.voted_html :
-    one: "Vous avez voté sur <span>une</span> proposition."
-    ohter: "Vous avez voté sur <span>%{count}</span> propositions"
-  budgets.ballots.show.voted_info_html  : Vous pouvez modifier votre vote à tout moment, jusqu'à la fin de cette phase.<br> Pas besoin d'investir tout l'argent disponible.
-  budgets.ballots.show.amount_spent : "Montant dépensé"
-  budgets.ballots.show.zero : Vous n'avez voté sur aucun projet d'investissement
-  budgets.ballots.show.remaining  : Vous avez encore <span>%{amount}</span> à investir
-  budgets.ballots.show.remove : Retirer le vote
-  budgets.ballots.reasons_for_not_balloting.not_logged_in : Vous devez %{signin} ou %{signup} pour contiuer
-  budgets.ballots.reasons_for_not_balloting.not_verified  : Seul les utilisateurs enregistrés peuvent voter sur les propositions; {verify_account}.
-  budgets.ballots.reasons_for_not_balloting.organization  : Les organisations ne sont pas autorisées à voter
-  budgets.ballots.reasons_for_not_balloting.not_selected  : Les projets d'investissement non séléctionnés ne peuvent pas être soutenus.
-  budgets.ballots.reasons_for_not_balloting.not_enough_money  : Le prix est plus élevé que le montant disponible
-  budgets.ballots.reasons_for_not_balloting.no_ballots_allowed  : La phase de sélection est close
-  budgets.ballots.reasons_for_not_balloting.different_heading_assigned  : Vous avez déjà voté sur un en-tête différent
-  budgets.progress_bar.available  : "Disponible :"
-  budgets.groups.show.title : Sélectionnez une option
-  budgets.index.title : Budgets participatifs
-  budgets.show.phase  : Phase actuelle
-  budgets.show.group  : Groupe
-  budgets.phase.accepting : Accepter les propositions
-  budgets.phase.reviewing : Voir les propositions
-  budgets.phase.selecting : Selectionner les propositions
-  budgets.phase.valuating : "Evaluer les propositions"
-  budgets.phase.balloting : Voter sur les propositions
-  budgets.phase.reviewing_ballots : Voir les bulletins
-  budgets.phase.finished  : Budget terminé
+
+
+
+
+
   spending_proposals.wrong_price_format : Seulement les nombres entiers
   spending_proposals.form.association_name  : Nom de l'association
   spending_proposals.form.association_name_label  : Si vous proposez un nom d'association ou de collectif, ajoutez le ici
