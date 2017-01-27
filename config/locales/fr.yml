@@ -173,7 +173,7 @@ fr:
       description: Ce portail utilise %{consul} qui est un %{open_source}.
       faq: ici
       more_info: Plus d'information
-      open_data_text: Tout les détails de la Mairie sont vôtre pour accès
+      open_data_text: Vous pouvez accéder à un compte-rendu détaillé des conseil municipaux
       open_data_title: Open data
       open_source: logiciel libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
