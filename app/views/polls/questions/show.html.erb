@@ -88,11 +88,13 @@
   </div>
 </div>
 
-<div class="row margin-top">
-  <div class="small-12 medium-9 column">
-    <h3><%= t('poll_questions.show.more_info') %></h3>
-    <%= @question.description %>
+<% if @question.description.present? %>
+  <div class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <h3><%= t('poll_questions.show.more_info') %></h3>
+      <%= @question.description %>
+    </div>
   </div>
-</div>
+<% end %>
 
 <%= render "comments" %>
