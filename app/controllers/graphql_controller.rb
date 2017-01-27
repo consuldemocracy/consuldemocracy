@@ -14,6 +14,8 @@ class GraphqlController < ApplicationController
       render json: { message: 'Query string not present' }, status: :bad_request
     rescue GraphQL::ParseError
       render json: { message: 'Query string is not valid JSON' }, status: :bad_request
+    rescue
+      unless Rails.env.production? then raise end
     end
   end
 
