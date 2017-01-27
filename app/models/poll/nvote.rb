@@ -1,4 +1,5 @@
-class Nvote < ActiveRecord::Base
+class Poll
+  class Nvote < ActiveRecord::Base
 
   acts_as_paranoid
 
@@ -36,13 +37,14 @@ class Nvote < ActiveRecord::Base
 
   private
 
-  def save_voter_hash
-    if self.poll and self.user
-      self.update_attribute(:nvotes_poll_id, self.poll.nvotes_poll_id)
-      self.update_attribute(:voter_hash, generate_voter_hash)
-    else
-      self.errors.add(:voter_hash, "No se pudo generar")
+    def save_voter_hash
+      if self.poll and self.user
+        self.update_attribute(:nvotes_poll_id, self.poll.nvotes_poll_id)
+        self.update_attribute(:voter_hash, generate_voter_hash)
+      else
+        self.errors.add(:voter_hash, "No se pudo generar")
+      end
     end
-  end
 
+  end
 end

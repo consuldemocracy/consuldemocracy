@@ -1,4 +1,4 @@
-class NvoteController < ApplicationController
+class Polls::NvotesController < ApplicationController
   before_action :authenticate_user!
   skip_authorization_check
 

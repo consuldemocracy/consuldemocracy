@@ -116,6 +116,9 @@ Rails.application.routes.draw do
     resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
+    resources :nvotes, only: [:new], controller: 'polls/nvotes' do
+      get :token, on: :collection
+    end
   end
 
   resources :users, only: [:show] do
@@ -387,10 +390,6 @@ Rails.application.routes.draw do
     end
     root to: "dashboard#index"
   end
-
-  #nVotes
-  get '/nvote/new/:poll_id', to: 'nvote#new', as: :new_nvote
-  get '/nvote/token/:poll_id', to: 'nvote#token', as: :token_nvote
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
