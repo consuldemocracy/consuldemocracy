@@ -59,13 +59,23 @@
           </tr>
         </thead>
         <tbody>
-          <% @booth_assignment.recounts.sort_by{|r| r.date}.each do |recount| %>
-            <tr id="recount_<%= recount.id %>" class="<%= 'count-error' if recount.count != 0 %>">
-              <td><%= l recount.date.to_date %></td>
+        <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
+          <% recount = recount_for_date(@booth_assignment.recounts, voting_date) %>
+          <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
+          <% if recount.present? %>
+            <tr id="recount_<%= recount.id %>" class="<%= 'count-error' if recount.count != system_count %>">
+              <td><%= l voting_date %></td>
               <td class="text-center" title="<%= recount.officer_assignment.officer.name %>"><%= recount.count %></td>
-              <td class="text-center">0</td>
+              <td class="text-center"><%= system_count %></td>
+            </tr>
+          <% else %>
+            <tr id="recount_<%= voting_date.strftime('%Y%m%d') %>">
+              <td><%= l voting_date %></td>
+              <td class="text-center" title=""> - </td>
+              <td class="text-center"><%= system_count %></td>
             </tr>
           <% end %>
+        <% end %>
         </tbody>
       </table>
     <% end %>
