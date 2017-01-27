@@ -17,13 +17,15 @@ class Poll::Question < ActiveRecord::Base
   validates :summary, presence: true
   validates :author, presence: true
 
-  validates :title, length: { in: 4..Poll::Question.title_max_length }
-  validates :description, length: { maximum: Poll::Question.description_max_length }
+  validates :title, length: { in: 4..Poll::Question.title_max_length }, unless: :skip_length_checks
+  validates :description, length: { maximum: Poll::Question.description_max_length }, unless: :skip_length_checks
 
   scope :by_poll_id,    ->(poll_id)    { where(poll_id: poll_id) }
 
   scope :sort_for_list, -> { order('poll_questions.proposal_id IS NULL', :created_at)}
   scope :for_render,    -> { includes(:author, :proposal) }
+
+  attr_accessor :skip_length_checks
 
   def self.search(params)
     results = self.all
