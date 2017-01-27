@@ -61,6 +61,18 @@ module ActsAsTaggableOn
       |)
     end
 
+    def self.graphql_field_name
+      :tag
+    end
+
+    def self.graphql_pluralized_field_name
+      :tags
+    end
+
+    def self.graphql_type_name
+      'Tag'
+    end
+
     private
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"

@@ -46,7 +46,7 @@ module GraphQL
         fields.each do |field_name, field_type|
           case ApiTypesCreator.type_kind(field_type)
           when :scalar
-            field(field_name, SCALAR_TYPES[field_type])
+            field(field_name, SCALAR_TYPES[field_type], model.human_attribute_name(field_name))
           when :singular_association
             field(field_name, -> { api_types_creator.created_types[field_type] }) do
               resolve -> (object, arguments, context) do
