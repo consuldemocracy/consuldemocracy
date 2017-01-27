@@ -17,7 +17,6 @@ class Debate < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
-  has_many :votes, -> { for_debates }, foreign_key: 'votable_id'
 
   validates :title, presence: true
   validates :description, presence: true

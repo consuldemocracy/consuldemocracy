@@ -19,7 +19,6 @@ class Proposal < ActiveRecord::Base
   belongs_to :geozone
   has_many :comments, as: :commentable
   has_many :proposal_notifications
-  has_many :votes, -> { for_proposals }, foreign_key: 'votable_id'
 
   validates :title, presence: true
   validates :question, presence: true
