@@ -2,6 +2,7 @@ class Poll
   class Voter < ActiveRecord::Base
     belongs_to :poll
     belongs_to :booth_assignment
+    belongs_to :officer_assignment
 
     validates :poll, presence: true
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
