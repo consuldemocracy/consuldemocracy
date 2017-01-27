@@ -355,9 +355,9 @@ Budget::PHASES.each_with_index do |phase, i|
   )
 
   puts budget.name
-
+  group = ["Choisissez votre résidence"]
   (1..([1, 2, 3].sample)).each do
-    # group = budget.groups.create!(name: Faker::StarWars.planet)
+    group = budget.groups.create!(name: Faker::StarWars.planet)
 
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
