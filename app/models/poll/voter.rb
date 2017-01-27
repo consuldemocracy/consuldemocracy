@@ -2,7 +2,7 @@ class Poll
   class Voter < ActiveRecord::Base
     belongs_to :poll
     belongs_to :booth_assignment
-    belongs_to :answer
+    belongs_to :officer_assignment
 
     validates :poll, presence: true
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
@@ -26,7 +26,6 @@ class Poll
     def self.create_from_user(user, options = {})
       poll_id = options[:poll_id]
       booth_assignment_id = options[:booth_assignment_id]
-      answer_id = options[:answer_id]
 
       Voter.create(
         document_type: user.document_type,
@@ -35,8 +34,7 @@ class Poll
         booth_assignment_id: booth_assignment_id,
         gender: user.gender,
         geozone_id: user.geozone_id,
-        age: user.age,
-        answer_id: answer_id
+        age: user.age
       )
     end
 
