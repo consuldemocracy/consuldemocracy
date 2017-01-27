@@ -7,7 +7,7 @@ es:
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
-      finish_verification: Finalizar verificación
+      finish_verification: "Añade una doble comprobación de verificación a tu cuenta"
       notifications: Notificaciones
       organization_name_label: Nombre de la organización
       organization_responsible_name_placeholder: Representante de la asociación/colectivo
@@ -255,7 +255,7 @@ es:
       no_notifications: No tienes notificaciones nuevas
       open: abierto
       open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
-      open_city_slogan_short_html: 'Billete único para el transporte público, Madrid 100% sostenible y Remodelación de Plaza España.'
+      open_city_slogan_short_html: 'Billete único para el transporte público, Madrid 100% sostenible, Remodelación de Plaza España y mejorar el espacio peatonal de la Gran Vía.'
       open_city_title:  "En febrero #TúDecides"
       lead_text_html: "Sé parte de un proceso histórico. Decide qué debe hacer el Ayuntamiento del <strong>13 al 19 de febrero de 2017</strong>."
       open_gov: Gobierno %{open}
@@ -841,7 +841,7 @@ es:
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      go_to_index: Ahora no, ver propuestas
+      go_to_index: Ahora no, empezar a participar
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...

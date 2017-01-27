@@ -39,11 +39,6 @@ en:
       title: "#HumanRightsPlan"
       text_html: "Participate until <u>November 4</u>!"
   cards:
-    vallecas:
-      title_html: "Nuevo barrio en Villa de Vallecas"
-      text: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
-      date_html: "Participate until <strong>January 23th</strong>"
-      button: "More information"
     air_quality_plan:
       title_html: "Draft air quality and climate change plan"
       text: "Information and communication of the measures proposed in the draft of the new air quality and climate change plan of the city of Madrid."
@@ -75,3 +70,9 @@ en:
       title: "Presupuestos participativos en Decide Madrid"
       description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
       keywords: "Presupuestos participativos, presupuestos municipales, Decide Madrid, inversión pública, Ayuntamiento de Madrid, participación ciudadana"
+  type_selection:
+    title: "Estás creando..."
+    proposals_title: "Propuesta ciudadana"
+    proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
+    investment_title: "Proyecto de Presupuestos participativos"
+    investment_info: "Decide a qué se destina una parte del presupuesto municipal."

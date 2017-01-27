@@ -52,7 +52,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  context "Searching" do
+  xcontext "Searching" do
     scenario "by title" do
       spending_proposal1 = create(:spending_proposal, title: "Show me what you got")
       spending_proposal2 = create(:spending_proposal, title: "Get Schwifty")
@@ -100,7 +100,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  scenario "Listing" do
+  xscenario "Listing" do
     spending_proposal1 = create(:spending_proposal, title: "Show me what you got")
     spending_proposal2 = create(:spending_proposal, title: "Get Schwifty")
 
@@ -127,7 +127,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  context "Voting" do
+  xcontext "Voting" do
 
     background do
       Setting["feature.spending_proposal_features.phase2"] = true
@@ -180,7 +180,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  context "Printing" do
+  xcontext "Printing" do
 
     scenario 'Printing spending proposals' do
       16.times { create(:spending_proposal, geozone_id: nil) }

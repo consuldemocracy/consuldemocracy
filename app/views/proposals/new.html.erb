@@ -1,3 +1,5 @@
+<% provide :tracking_page_number, "30" %>
+
 <div class="proposal-form row">
 
   <div class="small-12 medium-9 column">
@@ -8,6 +10,10 @@
       <% end %>
     <% else %>
       <%= render "shared/back_link" %>
+    <% end %>
+
+    <% if feature?(:budgets) && Budget.accepting.any? %>
+      <%= render "custom/shared/type_selection_proposal" %>
     <% end %>
 
     <h1><%= t("proposals.new.start_new") %></h1>

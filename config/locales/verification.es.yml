@@ -22,20 +22,14 @@ es:
         flash:
           offices: Oficinas de Atención al Ciudadano
           offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
-          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
+          success_html: Próximamente recibirás una carta por correo postal con las instrucciones para añadir un doble comprobación a tu cuenta.<br> Recuerda que puedes ahorrar el envío acudiendo presencialmente a cualquiera de las %{offices}.
       edit:
-        see_all: Ver propuestas
-        title: Carta solicitada
+        see_all: Empezar a participar
+        title: Doble comprobación de verificación
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        already_received: "Ya he recibido una carta con mi código de verificación"
-        explanation: 'Para participar en las votaciones finales puedes:'
-        go_to_index: Ver propuestas
-        office: Verificarte presencialmente en cualquier %{office}
-        offices: Oficina de Atención al Ciudadano
-        offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
-        send_letter: Solicitar una carta por correo postal
+        go_to_index: Empezar a participar
         title: "¡Felicidades!"
         user_permission_info: Con tu cuenta ya puedes...
       update:

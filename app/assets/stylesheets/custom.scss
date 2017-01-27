@@ -2759,7 +2759,7 @@ $campaign-yellow:  #FFDB19;
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -2772,7 +2772,7 @@ $campaign-yellow:  #FFDB19;
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -2812,6 +2812,49 @@ $campaign-yellow:  #FFDB19;
   padding: $line-height*2 0;
 }
 
+.type-selection {
+  margin-top: $line-height*2;
+
+  .callout {
+
+    a, a h3 {
+      color: $text;
+      text-decoration: none;
+
+      &:hover {
+        border-color: $brand;
+        color: $brand;
+      }
+    }
+  }
+}
+
+.type-selection-proposal .type-proposal,
+.type-selection-investment .type-investment {
+
+  .callout {
+    background: $highlight;
+    border-color: $brand;
+    color: $brand;
+    position: relative;
+
+    &:after {
+      background: $brand;
+      border-radius: rem-calc(40);
+      color: white;
+      content: "\6c";
+      font-family: 'icons';
+      font-size: rem-calc(16);
+      height: rem-calc(24);
+      padding: 0 $line-height/6;
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      width: rem-calc(24);
+    }
+  }
+}
+
 // 20. Landing voting february 2017
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -2820,9 +2863,25 @@ $campaign-red:    #E23135;
 $campaign-yellow: #FFDB19;
 
 .landing-voting {
+  font-family: 'Franklin Gothic' !important;
+  font-weight: normal;
+  font-size: rem-calc(24);
+
+  h1, h2, h3 {
+    font-size: rem-calc(36);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Franklin Gothic' !important;
+    font-weight: normal;
+  }
 
   .header {
-    background: $campaign-red;
+    background: black;
 
     h1, p {
       color: white;
@@ -2832,41 +2891,24 @@ $campaign-yellow: #FFDB19;
       text-transform: uppercase;
 
       @include breakpoint(medium) {
-        font-size: rem-calc(60);
+        font-size: rem-calc(80);
+        line-height: rem-calc(70);
       }
     }
 
     .button {
       background: white;
-      color: $campaign-red;
+      color: black;
+      text-transform: uppercase;
     }
   }
 
-  .one, .two, .three {
-    font-size: rem-calc(60);
-    font-weight: bold;
-  }
+  @include breakpoint(medium) {
 
-  .one {
-    color: black;
-
-    @include breakpoint(medium) {
-      float: right;
-      padding-right: $line-height;
+    h2.big {
+      font-size: rem-calc(80);
+      line-height: rem-calc(70);
     }
-  }
-
-  .two {
-    color: white;
-
-    @include breakpoint(medium) {
-      float: left;
-      padding-left: $line-height;
-    }
-  }
-
-  .three {
-    color: white;
   }
 
   .block {
@@ -2882,31 +2924,12 @@ $campaign-yellow: #FFDB19;
       }
     }
 
-    .block-blue, .block-yellow {
+    .block-blue, .block-yellow-vota {
       padding: $line-height;
       position: relative;
 
       @include breakpoint(medium) {
         padding: 0;
-      }
-
-      @include breakpoint(large) {
-
-        h2 {
-          font-size: rem-calc(50);
-        }
-
-        h3 {
-          font-size: rem-calc(36);
-        }
-
-        .button {
-          bottom: 0;
-          margin-bottom: $line-height;
-          max-width: rem-calc(200);
-          position: absolute;
-          right: 24px;
-        }
       }
     }
 
@@ -2919,18 +2942,24 @@ $campaign-yellow: #FFDB19;
 
       .button {
         background: white;
-        color: $brand;
+        color: black;
+        text-transform: uppercase;
       }
 
       @include breakpoint(large) {
 
-        .button {
-          left: 24px;
+        h2 {
+          font-size: rem-calc(100);
+          line-height: rem-calc(90);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
         }
       }
     }
 
-    .block-yellow {
+    .block-yellow-vota {
       background: $campaign-yellow;
 
       h2 a, h3 {
@@ -2939,24 +2968,70 @@ $campaign-yellow: #FFDB19;
 
       .button {
         background: black;
+        color: white;
+        text-transform: uppercase;
       }
 
       @include breakpoint(large) {
 
-        .button {
-          right: 24px;
+        h2 {
+          font-size: rem-calc(105);
+          line-height: rem-calc(95);
         }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+      }
+    }
+  }
+
+  .block-grey {
+    background: #FAFAFA;
+    margin-bottom: $line-height*2;
+    padding: $line-height;
+    position: relative;
+
+    h2 {
+
+      @include breakpoint(large) {
+        font-size: rem-calc(50);
+      }
+    }
+
+    h3 {
+      font-size: rem-calc(24);
+    }
+
+    .question {
+      margin-bottom: $line-height;
+      min-height: rem-calc(144);
+    }
+
+    h2, h3, h4 {
+      color: black;
+    }
+
+    .button {
+      background: black;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(large) {
+
+      .button {
+        right: 24px;
       }
     }
   }
 
   .plaza-espana-projects {
     margin-top: $line-height*2;
-    padding-bottom: $line-height*3;
+    padding-bottom: $line-height*2;
     position: relative;
 
-    .block-black {
-      background: black;
+    .block-red {
+      background: $campaign-red;
       color: white;
       padding: $line-height;
       position: relative;
@@ -2968,15 +3043,24 @@ $campaign-yellow: #FFDB19;
       @include breakpoint(large) {
 
         h2 {
-          font-size: rem-calc(50);
+          font-size: rem-calc(90);
+          line-height: rem-calc(90);
         }
 
         h3 {
           font-size: rem-calc(36);
         }
 
-        .button {
-          max-width: rem-calc(200);
+        .block-projects {
+          bottom: 30px;
+          position: absolute;
+          width: 100%;
+
+          h4 {
+            font-size: rem-calc(36);
+            line-height: rem-calc(36);
+            margin-bottom: $line-height*2;
+          }
         }
       }
     }
@@ -2984,6 +3068,7 @@ $campaign-yellow: #FFDB19;
     .button {
       background: white;
       color: black;
+      text-transform: uppercase;
     }
 
     figure {
@@ -2992,7 +3077,8 @@ $campaign-yellow: #FFDB19;
 
       figcaption {
         background: black;
-        font-weight: bold;
+        font-size: rem-calc(30);
+        margin-top: rem-calc(-1);
         padding: $line-height;
         text-align: center;
         width: 100%;
@@ -3026,6 +3112,19 @@ $campaign-yellow: #FFDB19;
       line-height: $line-height*2;
     }
   }
+}
+
+// Franklin Gothic Extra Condensed
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('franklin_gothic.eot');
+  src: font-url('franklin_gothic.eot?#iefix') format('embedded-opentype'),
+       font-url('franklin_gothic.woff2')      format('woff2'),
+       font-url('franklin_gothic.woff')       format('woff'),
+       font-url('franklin_gothic.ttf')        format('truetype'),
 }
 
 // Overrides budgets default colors

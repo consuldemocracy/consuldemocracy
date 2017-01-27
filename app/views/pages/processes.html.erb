@@ -1,6 +1,7 @@
 <% provide :title, t("meta_tags.processes.title") %>
 <% provide :meta_description, t("meta_tags.processes.description") %>
 <% provide :meta_keywords, t("meta_tags.processes.keywords") %>
+<% provide :tracking_page_number, "32" %>
 
 <% if @proposal_successfull_exists %>
   <div class="expanded jumbo-proposal-ballots-small no-margin-top">
@@ -29,12 +30,12 @@
     <div class="row">
       <div class="small-12 column">
         <div class="small-12 medium-9 column">
-          <!-- Nuevo barrio distrito Villa de Vallecas -->
-          <h3><%= t("pages.processes.index.process_13_title") %></h3>
-          <p><%= t("pages.processes.index.process_13_description") %></p>
+          <!-- Proceso destacado (Remodelación de Plaza España) -->
+          <h3><%= t("pages.processes.index.process_2_title") %></h3>
+          <p><%= t("pages.processes.index.process_2_description_close") %></p>
           <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_13_button"),
-                        vallecas_path, class: "button expanded" %>
+            <%= link_to t("pages.processes.index.process_2_button"),
+                        plaza_path, class: "button expanded" %>
           </div>
         </div>
       </div>
@@ -84,18 +85,21 @@
         <div class="tabs-panel" id="panel2v">
           <h2 class="sr-only"><%= t("pages.processes.menu.coming_soon") %></h2>
 
-          <!-- Remodelación Plaza España -->
-          <div class="panel">
-            <h3><%= t("pages.processes.index.process_2_title") %></h3>
-            <p><%= t("pages.processes.index.process_2_description_close") %></p>
-            <%= link_to t("pages.processes.index.process_2_button"),
-                        plaza_path, class: "button hollow" %>
+          <div class="callout primary">
+            <small>No hay procesos próximamente.</small>
           </div>
         </div>
 
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Nuevo barrio distrito Villa de Vallecas -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_13_title") %></h3>
+            <p><%= t("pages.processes.index.process_13_description") %></p>
+            <%= link_to t("pages.processes.index.process_13_button"), vallecas_path, class: "button hollow" %>
+          </div>
 
           <!-- Rotulación de vías -->
           <div class="panel">
