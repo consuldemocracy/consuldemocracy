@@ -3,20 +3,12 @@ require 'graphql'
 module GraphQL
   class QueryTypeCreator
 
-    attr_accessor :created_api_types
-
-    def initialize(created_api_types)
-      @created_api_types = created_api_types
-    end
-
-    def create
-      query_type_creator = self
-
+    def self.create(api_types)
       GraphQL::ObjectType.define do
         name 'QueryType'
         description 'The root query for the schema'
 
-        query_type_creator.created_api_types.each do |model, created_type|
+        api_types.each do |model, created_type|
           if created_type.fields['id']
             field model.graphql_field_name do
               type created_type
