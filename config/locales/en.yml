@@ -262,7 +262,6 @@ en:
       proposals: Proposals
       processes: Processes
       spending_proposals: Participatory budgeting
-      proposal_ballot: Voting
       sign_up: I want to register
       sign_in: If you have an account %{login}.
       sign_in_link: enter now
@@ -484,6 +483,7 @@ en:
     banner:
       featured_title: "#NextVoting"
       info: "New proposals that have reached the voting phase."
+      button: "Vote"
   proposal_notifications:
     new:
       title: "Send message"
