@@ -24,7 +24,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::BaseController
 
   def show
     @poll = ::Poll.find(params[:poll_id])
-    @booth_assignment = @poll.booth_assignments.includes(:recounts, officer_assignments: [officer: [:user]]).find(params[:id])
+    @booth_assignment = @poll.booth_assignments.includes(:recounts, :voters, officer_assignments: [officer: [:user]]).find(params[:id])
+    @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
   end
 
   private
