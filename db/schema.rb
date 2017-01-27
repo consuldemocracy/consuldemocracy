@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125123628) do
+ActiveRecord::Schema.define(version: 20170127084618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -408,11 +408,11 @@ ActiveRecord::Schema.define(version: 20170125123628) do
   create_table "nvotes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "poll_id"
-    t.string   "voter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.string   "nvotes_poll_id"
+    t.string   "voter_hash"
   end
 
   add_index "nvotes", ["deleted_at"], name: "index_nvotes_on_deleted_at", using: :btree
@@ -532,9 +532,9 @@ ActiveRecord::Schema.define(version: 20170125123628) do
     t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.string   "nvotes_poll_id"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
+    t.string   "nvotes_poll_id"
   end
 
   create_table "probe_options", force: :cascade do |t|

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Nvotes' do
+feature 'Nvotes', :focus do
 
   scenario "Voting", :selenium do
     user = create(:user, :verified, id: rand(9999))

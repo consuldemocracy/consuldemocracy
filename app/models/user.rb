@@ -309,7 +309,7 @@ class User < ActiveRecord::Base
   def get_or_create_vote(poll)
     nvote = Nvote.new(poll: poll, user: self)
 
-    if Nvote.find_by_voter_id(nvote.generate_message)
+    if Nvote.find_by_voter_hash(nvote.generate_message)
       nvote
     else
       nvote.save
