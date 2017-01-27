@@ -64,15 +64,14 @@ describe :poll do
 
   describe "#document_has_voted?" do
     it "returns true if Poll::Voter with document exists" do
-      booth_assignment = create(:poll_booth_assignment, poll: poll)
-      voter = create(:poll_voter, :valid_document, booth_assignment: booth_assignment)
+      voter = create(:poll_voter, :valid_document, poll: poll)
 
       expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(true)
     end
 
     it "returns false if Poll::Voter with document does not exists" do
-      booth_assignment = create(:poll_booth_assignment)
-      voter = create(:poll_voter, :valid_document, booth_assignment: booth_assignment)
+      poll_2 = create(:poll)
+      voter = create(:poll_voter, :valid_document, poll: poll_2)
 
       expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(false)
     end

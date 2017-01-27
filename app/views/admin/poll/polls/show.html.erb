@@ -6,9 +6,15 @@
   <%= @poll.name %>
 </h2>
 <br>
-<p class="inline-block">
+<span>
   (<%= l @poll.starts_at.to_date %> - <%= l @poll.ends_at.to_date %>)
-</p>
+</span>
+<% if @poll.geozone_restricted %>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <span>
+    <%= @poll.geozones.pluck(:name).to_sentence %>
+  <span>
+<% end %>
 
 <div id="poll-resources" class="tabs-content" data-tabs-content="assigned-resources-tabs">
   <%= render "filter_subnav" %>

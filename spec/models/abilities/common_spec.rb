@@ -27,19 +27,26 @@ describe "Abilities::Common" do
 
   let(:current_poll)  { create(:poll) }
   let(:incoming_poll) { create(:poll, :incoming) }
+  let(:incoming_poll_from_own_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [geozone]) }
+  let(:incoming_poll_from_other_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [create(:geozone)]) }
   let(:expired_poll)  { create(:poll, :expired)  }
+  let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
+  let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
+  let(:poll) { create(:poll, geozone_restricted: false) }
+  let(:poll_from_own_geozone) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
+  let(:poll_from_other_geozone) { create(:poll, geozone_restricted: true, geozones: [create(:geozone)]) }
 
-  let(:poll_question_from_own_geozone)   { create(:poll_question, geozones: [geozone])          }
-  let(:poll_question_from_other_geozone) { create(:poll_question, geozones: [create(:geozone)]) }
-  let(:poll_question_from_all_geozones)  { create(:poll_question, all_geozones: true)           }
+  let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone)  }
+  let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }
+  let(:poll_question_from_all_geozones)  { create(:poll_question, poll: poll) }
 
-  let(:expired_poll_question_from_own_geozone)   { create(:poll_question, poll: expired_poll, geozones: [geozone])          }
-  let(:expired_poll_question_from_other_geozone) { create(:poll_question, poll: expired_poll, geozones: [create(:geozone)]) }
-  let(:expired_poll_question_from_all_geozones)  { create(:poll_question, poll: expired_poll, all_geozones: true)           }
+  let(:expired_poll_question_from_own_geozone)   { create(:poll_question, poll: expired_poll_from_own_geozone) }
+  let(:expired_poll_question_from_other_geozone) { create(:poll_question, poll: expired_poll_from_other_geozone) }
+  let(:expired_poll_question_from_all_geozones)  { create(:poll_question, poll: expired_poll) }
 
-  let(:incoming_poll_question_from_own_geozone)   { create(:poll_question, poll: incoming_poll, geozones: [geozone])          }
-  let(:incoming_poll_question_from_other_geozone) { create(:poll_question, poll: incoming_poll, geozones: [create(:geozone)]) }
-  let(:incoming_poll_question_from_all_geozones)  { create(:poll_question, poll: incoming_poll, all_geozones: true)           }
+  let(:incoming_poll_question_from_own_geozone)   { create(:poll_question, poll: incoming_poll_from_own_geozone) }
+  let(:incoming_poll_question_from_other_geozone) { create(:poll_question, poll: incoming_poll_from_other_geozone) }
+  let(:incoming_poll_question_from_all_geozones)  { create(:poll_question, poll: incoming_poll) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }

@@ -14,12 +14,6 @@
       <% end %>
 
       <p><%= @question.summary %></p>
-
-      <ul class="no-bullet margin-top tags">
-        <% @question.geozones.each do |g| %>
-          <li class="inline-block"><span><%= g.name %></span></li>
-        <% end %>
-      </ul>
     </div>
 
     <div class="small-12 medium-3 column info">
@@ -52,9 +46,23 @@
 
 <div class="row margin-top">
   <div class="small-12 column">
-    <% if @question.poll.current? %>
-
-      <% if current_user.nil? %>
+    <% if can? :answer, @question %>
+      <div class="text-center">
+        <%= link_to t('poll_questions.show.answer_this_question'),
+              @question.poll,
+              class: 'large button'
+        %>
+      </div>
+    <% else %>
+      <% if @question.poll.incoming? %>
+        <div class="callout alert">
+          <%= t('poll_questions.show.cant_answer_incoming') %>
+        </div>
+      <% elsif @question.poll.expired? %>
+        <div class="callout primary">
+          <%= t('poll_questions.show.cant_answer_expired') %>
+        </div>
+      <% elsif current_user.nil? %>
         <div class="callout primary">
           <%= t("poll_questions.show.not_logged_in",
               signin: link_to(t("poll_questions.show.signin"), new_user_session_path, class: "probe-message"),
@@ -75,15 +83,6 @@
         <div id="<%= dom_id(@question) %>_answers">
           <%= render "answers", question: @question %>
         </div>
-      </div>
-
-    <% elsif @question.poll.incoming? %>
-      <div class="callout alert">
-        <%= t('poll_questions.show.cant_answer_expired') %>
-      </div>
-    <% elsif @question.poll.expired? %>
-      <div class="callout primary">
-        <%= t('poll_questions.show.cant_answer_incoming') %>
       </div>
     <% end %>
   </div>

@@ -18,7 +18,8 @@ feature 'Admin poll questions' do
 
   scenario 'Show' do
     geozone = create(:geozone)
-    question = create(:poll_question, geozone_ids: geozone.id)
+    poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+    question = create(:poll_question, poll: poll)
 
     visit admin_question_path(question)
 
@@ -27,10 +28,10 @@ feature 'Admin poll questions' do
     expect(page).to have_content(question.summary)
     expect(page).to have_content(question.author.name)
     expect(page).to have_content(question.valid_answers.join(" "))
-    expect(page).to have_content(geozone.name)
   end
 
   scenario 'Create' do
+    poll = create(:poll, name: 'Movies')
     title = "Star Wars: Episode IV - A New Hope"
     summary = "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire"
     description = %{
@@ -41,6 +42,7 @@ feature 'Admin poll questions' do
     visit admin_questions_path
     click_link "Create question"
 
+    select 'Movies', from: 'poll_question_poll_id'
     fill_in 'poll_question_title', with: title
     fill_in 'poll_question_summary', with: summary
     fill_in 'poll_question_description', with: description
@@ -53,7 +55,7 @@ feature 'Admin poll questions' do
   end
 
   scenario 'Create from successful proposal index' do
-    geozones = create_list(:geozone, 3)
+    poll = create(:poll, name: 'Proposals')
     proposal = create(:proposal, :successful)
 
     visit proposals_path
@@ -64,6 +66,8 @@ feature 'Admin poll questions' do
     expect(page).to have_field('poll_question_summary', with: proposal.summary)
     expect(page).to have_field('poll_question_description', with: proposal.description)
     expect(page).to have_field('poll_question_valid_answers', with: "Yes, No")
+
+    select 'Proposals', from: 'poll_question_poll_id'
 
     click_button 'Save'
 

@@ -65,6 +65,13 @@ describe User do
     end
   end
 
+  describe "#age" do
+    it "is the rounded integer age based on the date_of_birth" do
+      user = create(:user, date_of_birth: 33.years.ago)
+      expect(user.age).to eq(33)
+    end
+  end
+
   describe 'preferences' do
     describe 'email_on_comment' do
       it 'should be false by default' do

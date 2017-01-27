@@ -14,7 +14,7 @@ feature 'Poll Questions' do
 
   context 'Answering' do
     let(:geozone) { create(:geozone) }
-
+    let(:poll) { create(:poll, geozone_restricted: true, geozone_ids: [geozone.id]) }
     scenario 'Non-logged in users' do
       question = create(:poll_question, valid_answers: 'Han Solo, Chewbacca')
 
@@ -29,7 +29,7 @@ feature 'Poll Questions' do
     end
 
     scenario 'Level 1 users' do
-      question = create(:poll_question, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
 
       login_as(create(:user, geozone: geozone))
       visit question_path(question)
@@ -43,9 +43,11 @@ feature 'Poll Questions' do
     end
 
     scenario 'Level 2 users in an poll question for a geozone which is not theirs' do
-      question = create(:poll_question, geozone_ids: [], valid_answers: 'Vader, Palpatine')
 
-      login_as(create(:user, :level_two))
+      other_poll = create(:poll, geozone_restricted: true, geozone_ids: [create(:geozone).id])
+      question = create(:poll_question, poll: other_poll, valid_answers: 'Vader, Palpatine')
+
+      login_as(create(:user, :level_two, geozone: geozone))
       visit question_path(question)
 
       expect(page).to have_content('Vader')
@@ -55,40 +57,51 @@ feature 'Poll Questions' do
     end
 
     scenario 'Level 2 users who can answer' do
-      question = create(:poll_question, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
 
       login_as(create(:user, :level_two, geozone: geozone))
       visit question_path(question)
 
-      expect(page).to have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to have_link('Answer this question')
     end
 
     scenario 'Level 2 users who have already answered' do
-      question = create(:poll_question, geozone_ids:[geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
 
       user = create(:user, :level_two, geozone: geozone)
-      create(:poll_partial_result, question: question, author: user, answer: 'Chewbacca')
+      create(:poll_answer, question: question, author: user, answer: 'Chewbacca')
 
       login_as user
       visit question_path(question)
 
-      expect(page).to have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
-      expect(page).to have_content('Chewbacca')
+      expect(page).to have_link('Answer this question')
     end
 
     scenario 'Level 2 users answering', :js do
-      question = create(:poll_question, geozone_ids: [geozone.id], valid_answers: 'Han Solo, Chewbacca')
+      question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two, geozone: geozone)
 
       login_as user
       visit question_path(question)
 
+      expect(page).to have_link('Answer this question')
+    end
+
+    scenario 'Records participarion', :js do
+      question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
+      user = create(:user, :level_two, geozone: geozone)
+
+      login_as user
+      visit question_path(question)
+
+      click_link 'Answer this question'
       click_link 'Han Solo'
 
       expect(page).to_not have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+
+      answer = Poll::Answer.by_question(question.id).by_author(user.id).first
+      expect(answer.voter.document_number).to eq(user.document_number)
+      expect(answer.voter.poll_id).to eq(poll.id)
     end
 
   end
