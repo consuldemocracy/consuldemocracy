@@ -38,7 +38,9 @@
     <!-- Temporarily using the test Poll in Nvotes.
          Use @poll when we have all Polls setup in Nvotes -->
     <% poll = Poll.first %>
-    <%= link_to "Votar con Nvotes", create_vote_path(poll), data: { no_turbolink: true } %>
+    <%= link_to "Votar con Nvotes",
+                new_poll_nvote_path(poll),
+                data: { no_turbolink: true } %>
   <% end %>
 </div>
 

@@ -9,7 +9,7 @@
     //   object_type: "election",
     //   object_id: 110
     // }
-    $.ajax("<%= create_token_vote_path %>")
+    $.ajax("<%= token_poll_nvotes_path(@poll) %>")
       .done(function(data) {callback("khmac:///sha-256;"+data);})
       .fail(function(jqXHR) {window.location.href=jqXHR.responseText});
     }

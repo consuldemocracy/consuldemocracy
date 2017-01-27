@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe Nvote do
+describe Poll::Nvote do
 
   describe "validations" do
-    let(:nvote) { build(:nvote) }
+    let(:nvote) { build(:poll_nvote) }
 
     it "should be valid" do
       expect(nvote).to be_valid
@@ -19,9 +19,9 @@ describe Nvote do
       expect(nvote).to_not be_valid
     end
 
-    it "should not be valid without a voter_id" do
+    it "should not be valid without a voter_hash" do
       nvote.save
-      nvote.voter_id = nil
+      nvote.voter_hash = nil
       expect(nvote).to_not be_valid
     end
 
@@ -31,10 +31,10 @@ describe Nvote do
 
       user = create(:user)
 
-      nvote1 = create(:nvote, user: user, poll: poll1)
-      nvote2 = create(:nvote, user: user, poll: poll2)
+      nvote1 = create(:poll_nvote, user: user, poll: poll1)
+      nvote2 = create(:poll_nvote, user: user, poll: poll2)
 
-      nvote3 = build(:nvote, user: user, poll: poll1)
+      nvote3 = build(:poll_nvote, user: user, poll: poll1)
 
       expect(nvote1).to be_valid
       expect(nvote2).to be_valid
@@ -42,19 +42,19 @@ describe Nvote do
     end
   end
 
-  describe "voter_id" do
+  describe "voter_hash" do
 
-    it "should generate and save voter_id on creation" do
-      nvote = create(:nvote)
-      expect(nvote.voter_id).to be
+    it "should generate and save voter_hash on creation" do
+      nvote = create(:poll_nvote)
+      expect(nvote.voter_hash).to be
     end
 
-    describe "#generate_voter_id" do
-      it "generates hash for voter_id" do
-        nvote = create(:nvote)
-        voter_id = nvote.generate_voter_id
+    describe "#generate_voter_hash" do
+      it "generates hash for voter_hash" do
+        nvote = create(:poll_nvote)
+        voter_hash = nvote.generate_voter_hash
 
-        expect(voter_id.length).to eq(64)
+        expect(voter_hash.length).to eq(64)
       end
     end
 
@@ -64,10 +64,10 @@ describe Nvote do
 
     it "generates valid message" do
       poll = create(:poll, nvotes_poll_id: "1234")
-      nvote = create(:nvote, poll: poll)
+      nvote = create(:poll_nvote, poll: poll)
       message  = nvote.generate_message
 
-      expect(message.split(':')[0]).to eq(nvote.voter_id)
+      expect(message.split(':')[0]).to eq(nvote.voter_hash)
       expect(message.split(':')[2]).to eq("1234")
       timestamp = message.split(':')[4].to_i
       expect(Time.at(timestamp).to_date).to eq(Date.today)
@@ -78,7 +78,7 @@ describe Nvote do
   describe "#generate_hash" do
 
     it "generates hash from message" do
-      nvote = create(:nvote)
+      nvote = create(:poll_nvote)
       expect(nvote.generate_hash("test").length).to eq(64)
     end
 
@@ -88,7 +88,7 @@ describe Nvote do
 
     it "generates url with vote information" do
       poll = create(:poll, nvotes_poll_id: "1234")
-      nvote = create(:nvote, poll: poll)
+      nvote = create(:poll_nvote, poll: poll)
 
       expect(nvote.url).to start_with("https://")
       expect(nvote.url.length).to be > 64

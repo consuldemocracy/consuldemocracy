@@ -481,6 +481,11 @@ FactoryGirl.define do
     answer { question.valid_answers.sample }
   end
 
+  factory :poll_nvote, class: 'Poll::Nvote' do
+    user
+    poll
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"
@@ -606,8 +611,4 @@ FactoryGirl.define do
     turns "3 turnos"
   end
 
-  factory :nvote do
-    user
-    poll
-  end
 end
