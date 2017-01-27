@@ -44,7 +44,7 @@ Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion
 Setting.create(key: 'min_age_to_participate', value: '16')
 
 puts "Creating Geozones"
-['Toute la ville', '1er', '2ème', '3ème', '4ème', '5ème'  ].each { |i| Geozone.create(name: "Quartier #{i}", external_code: i.ord, census_code: i.ord) }
+['75010 - La Grange aux Belles', '75019 - Bd Macdonald', "75012 / 75020 - Elie Faure / Cdt l'Herminier", "75020 - Les cardeurs - Mouraud", "75020 - Bisson Ramponneau", "75018 - La Chapelle Evangile", "75019 - Scotto Reverdy", "75011 - Cité Beauharnais", "75014 - Porte de Vanves"].each { |i| Geozone.create(name: "Quartier #{i}", external_code: i.ord, census_code: i.ord) }
 
 puts "Creating Users"
 
@@ -357,7 +357,7 @@ Budget::PHASES.each_with_index do |phase, i|
   puts budget.name
 
   (1..([1, 2, 3].sample)).each do
-    group = budget.groups.create!(name: Faker::StarWars.planet)
+    # group = budget.groups.create!(name: Faker::StarWars.planet)
 
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
