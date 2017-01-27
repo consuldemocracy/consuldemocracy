@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe GraphQL::ApiTypesCreator do
-  let(:api_types_creator) { GraphQL::ApiTypesCreator.new( {} ) }
+  let(:created_types) { {} }
 
   describe "::create_type" do
     it "creates fields for Int attributes" do
-      debate_type = api_types_creator.create_type(Debate, { id: :integer })
+      debate_type = GraphQL::ApiTypesCreator.create_type(Debate, { id: :integer }, created_types)
       created_field = debate_type.fields['id']
 
       expect(created_field).to be_a(GraphQL::Field)
@@ -14,7 +14,7 @@ describe GraphQL::ApiTypesCreator do
     end
 
     it "creates fields for String attributes" do
-      debate_type = api_types_creator.create_type(Debate, { title: :string })
+      debate_type = GraphQL::ApiTypesCreator.create_type(Debate, { title: :string }, created_types)
       created_field = debate_type.fields['title']
 
       expect(created_field).to be_a(GraphQL::Field)
@@ -23,8 +23,8 @@ describe GraphQL::ApiTypesCreator do
     end
 
     it "creates connections for :belongs_to associations" do
-      user_type = api_types_creator.create_type(User, { id: :integer })
-      debate_type = api_types_creator.create_type(Debate, { author: User })
+      user_type = GraphQL::ApiTypesCreator.create_type(User, { id: :integer }, created_types)
+      debate_type = GraphQL::ApiTypesCreator.create_type(Debate, { author: User }, created_types)
 
       connection = debate_type.fields['author']
 
@@ -34,8 +34,8 @@ describe GraphQL::ApiTypesCreator do
     end
 
     it "creates connections for :has_one associations" do
-      user_type = api_types_creator.create_type(User, { organization: Organization })
-      organization_type = api_types_creator.create_type(Organization, { id: :integer })
+      user_type = GraphQL::ApiTypesCreator.create_type(User, { organization: Organization }, created_types)
+      organization_type = GraphQL::ApiTypesCreator.create_type(Organization, { id: :integer }, created_types)
 
       connection = user_type.fields['organization']
 
@@ -45,8 +45,8 @@ describe GraphQL::ApiTypesCreator do
     end
 
     it "creates connections for :has_many associations" do
-      comment_type = api_types_creator.create_type(Comment, { id: :integer })
-      debate_type = api_types_creator.create_type(Debate, { comments: [Comment] })
+      comment_type = GraphQL::ApiTypesCreator.create_type(Comment, { id: :integer }, created_types)
+      debate_type = GraphQL::ApiTypesCreator.create_type(Debate, { comments: [Comment] }, created_types)
 
       connection = debate_type.fields['comments']
 

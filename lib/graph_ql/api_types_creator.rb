@@ -10,16 +10,10 @@ module GraphQL
       string: GraphQL::STRING_TYPE
     }
 
-    attr_accessor :created_types
-
-    def initialize(api_type_definitions)
-      @api_type_definitions = api_type_definitions
-      @created_types = {}
-    end
-
-    def create
-      @api_type_definitions.each do |model, info|
-        self.create_type(model, info[:fields])
+    def self.create(api_types_definitions)
+      created_types = {}
+      api_types_definitions.each do |model, info|
+        create_type(model, info[:fields], created_types)
       end
       created_types
     end
@@ -34,10 +28,9 @@ module GraphQL
       end
     end
 
-    def create_type(model, fields)
-      api_types_creator = self
+    def self.create_type(model, fields, created_types)
 
-      created_type = GraphQL::ObjectType.define do
+      created_types[model] = GraphQL::ObjectType.define do
 
         name        model.graphql_type_name
         description model.graphql_type_description
@@ -48,7 +41,7 @@ module GraphQL
           when :scalar
             field(field_name, SCALAR_TYPES[field_type], model.human_attribute_name(field_name))
           when :singular_association
-            field(field_name, -> { api_types_creator.created_types[field_type] }) do
+            field(field_name, -> { created_types[field_type] }) do
               resolve -> (object, arguments, context) do
                 association_target = object.send(field_name)
                 if association_target.nil?
@@ -60,15 +53,13 @@ module GraphQL
             end
           when :multiple_association
             field_type = field_type.first
-            connection(field_name, -> { api_types_creator.created_types[field_type].connection_type }) do
+            connection(field_name, -> { created_types[field_type].connection_type }) do
               resolve -> (object, arguments, context) { field_type.public_for_api & object.send(field_name) }
             end
           end
         end
 
       end
-      created_types[model] = created_type
-      return created_type # GraphQL::ObjectType
     end
 
     def self.parse_api_config_file(file)
