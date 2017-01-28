@@ -2,7 +2,7 @@ require 'database_cleaner'
 
 DatabaseCleaner.clean_with :truncation
 
-puts "Creating Settings"
+print "Creating Settings"
 Setting.create(key: 'official_level_1_name', value: 'Empleados públicos')
 Setting.create(key: 'official_level_2_name', value: 'Organización Municipal')
 Setting.create(key: 'official_level_3_name', value: 'Directores generales')
@@ -42,17 +42,18 @@ Setting.create(key: 'meta_keywords', value: 'citizen participation, open governm
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
 
-puts "Creating Geozones"
+puts " ✅"
+print "Creating Geozones"
 
 Geozone.create(name: "city")
 Geozone.create(name: "Existent District", census_code: "01")
 ('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }
 
-puts "Creating Users"
+puts " ✅"
+print "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
-  puts "    #{username}"
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
 end
 
@@ -111,7 +112,8 @@ end
 org_user_ids = User.organizations.pluck(:id)
 not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
-puts "Creating Tags Categories"
+puts " ✅"
+print "Creating Tags Categories"
 
 ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
@@ -129,7 +131,8 @@ ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "cat
 ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
 
-puts "Creating Debates"
+puts " ✅"
+print "Creating Debates"
 
 tags = Faker::Lorem.words(25)
 (1..30).each do
@@ -142,7 +145,6 @@ tags = Faker::Lorem.words(25)
                           tag_list: tags.sample(3).join(','),
                           geozone: Geozone.reorder("RANDOM()").first,
                           terms_of_service: "1")
-  puts "    #{debate.title}"
 end
 
 
@@ -157,11 +159,11 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
                           tag_list: tags.sample(3).join(','),
                           geozone: Geozone.reorder("RANDOM()").first,
                           terms_of_service: "1")
-  puts "    #{debate.title}"
 end
 
 
-puts "Creating Proposals"
+puts " ✅"
+print "Creating Proposals"
 
 tags = Faker::Lorem.words(25)
 (1..30).each do |i|
@@ -178,10 +180,10 @@ tags = Faker::Lorem.words(25)
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
-  puts "    #{proposal.title}"
 end
 
-puts "Creating Archived Proposals"
+puts " ✅"
+print "Creating Archived Proposals"
 
 tags = Faker::Lorem.words(25)
 (1..5).each do
@@ -198,10 +200,10 @@ tags = Faker::Lorem.words(25)
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
                               created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
-  puts "    #{proposal.title}"
 end
 
-puts "Creating Successful Proposals"
+puts " ✅"
+print "Creating Successful Proposals"
 
 tags = Faker::Lorem.words(25)
 (1..10).each do |i|
@@ -219,7 +221,6 @@ tags = Faker::Lorem.words(25)
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
                               cached_votes_up: Setting["votes_for_proposal_success"])
-  puts "    #{proposal.title}"
 end
 
 
@@ -238,11 +239,11 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
-  puts "    #{proposal.title}"
 end
 
 
-puts "Commenting Debates"
+puts " ✅"
+print "Commenting Debates"
 
 (1..100).each do
   author = User.reorder("RANDOM()").first
@@ -254,7 +255,8 @@ puts "Commenting Debates"
 end
 
 
-puts "Commenting Proposals"
+puts " ✅"
+print "Commenting Proposals"
 
 (1..100).each do |i|
   author = User.reorder("RANDOM()").first
@@ -266,7 +268,8 @@ puts "Commenting Proposals"
 end
 
 
-puts "Commenting Comments"
+puts " ✅"
+print "Commenting Comments"
 
 (1..200).each do
   author = User.reorder("RANDOM()").first
@@ -280,7 +283,8 @@ puts "Commenting Comments"
 end
 
 
-puts "Voting Debates, Proposals & Comments"
+puts " ✅"
+print "Voting Debates, Proposals & Comments"
 
 (1..100).each do
   voter  = not_org_users.reorder("RANDOM()").first
@@ -303,7 +307,8 @@ end
 end
 
 
-puts "Flagging Debates & Comments"
+puts " ✅"
+print "Flagging Debates & Comments"
 
 (1..40).each do
   debate = Debate.reorder("RANDOM()").first
@@ -323,7 +328,8 @@ end
   Flag.flag(flagger, proposal)
 end
 
-puts "Creating Spending Proposals"
+puts " ✅"
+print "Creating Spending Proposals"
 
 tags = Faker::Lorem.words(10)
 
@@ -346,17 +352,18 @@ tags = Faker::Lorem.words(10)
                               tag_list: tags.sample(3).join(','),
                               price: rand(1000000),
                               terms_of_service: "1")
-  puts "    #{spending_proposal.title}"
 end
 
-puts "Creating Valuation Assignments"
+puts " ✅"
+print "Creating Valuation Assignments"
 
 (1..17).to_a.sample.times do
   SpendingProposal.reorder("RANDOM()").first.valuators << valuator.valuator
 end
 
 
-puts "Creating Budgets"
+puts " ✅"
+print "Creating Budgets"
 
 Budget::PHASES.each_with_index do |phase, i|
   descriptions = Hash[Budget::PHASES.map{ |p| ["description_#{p}",
@@ -369,8 +376,6 @@ Budget::PHASES.each_with_index do |phase, i|
     )
   )
 
-  puts budget.name
-
   (1..([1, 2, 3].sample)).each do
     group = budget.groups.create!(name: Faker::StarWars.planet)
 
@@ -381,13 +386,12 @@ Budget::PHASES.each_with_index do |phase, i|
                                                price: rand(1 .. 100) * 100000)
 
     end
-    print "#{group.name} "
   end
-  puts ""
 end
 
 
-puts "Creating Investments"
+puts " ✅"
+print "Creating Investments"
 tags = Faker::Lorem.words(10)
 (1..100).each do |i|
   heading = Budget::Heading.reorder("RANDOM()").first
@@ -407,47 +411,53 @@ tags = Faker::Lorem.words(10)
     tag_list: tags.sample(3).join(','),
     price: rand(1 .. 100) * 100000,
     terms_of_service: "1")
-  puts "    #{investment.title}"
 end
 
-puts "Selecting Investments"
+puts " ✅"
+print "Selecting Investments"
 Budget.balloting.reorder("RANDOM()").limit(3).each do |budget|
   budget.investments.feasible.reorder("RANDOM()").limit(10).update_all(selected: true)
 end
 
-puts "Creating Valuation Assignments"
+puts " ✅"
+print "Creating Valuation Assignments"
 
 (1..17).to_a.sample.times do
   Budget::Investment.reorder("RANDOM()").first.valuators << valuator.valuator
 end
 
 
-puts "Creating Legislation"
+puts " ✅"
+print "Creating Legislation"
 
 Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
 
 
-puts "Ignoring flags in Debates, comments & proposals"
+puts " ✅"
+print "Ignoring flags in Debates, comments & proposals"
 
 Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
 Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
 Proposal.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
 
 
-puts "Hiding debates, comments & proposals"
+puts " ✅"
+print "Hiding debates, comments & proposals"
 
 Comment.with_hidden.flagged.reorder("RANDOM()").limit(30).each(&:hide)
 Debate.with_hidden.flagged.reorder("RANDOM()").limit(5).each(&:hide)
 Proposal.with_hidden.flagged.reorder("RANDOM()").limit(10).each(&:hide)
 
 
-puts "Confirming hiding in debates, comments & proposals"
+puts " ✅"
+print "Confirming hiding in debates, comments & proposals"
 
 Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
-puts "Creating banners"
+puts " ✅"
+print "Creating banners"
 
 Proposal.last(3).each do |proposal|
   title = Faker::Lorem.sentence(word_count = 3)
@@ -462,18 +472,18 @@ Proposal.last(3).each do |proposal|
                           post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
                           post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
                           created_at: rand((Time.current - 1.week) .. Time.current))
-  puts "    #{banner.title}"
 end
 
-puts "Creating polls"
+puts " ✅"
+print "Creating polls"
 
-puts "Active Polls"
+puts " ✅"
+print "Active Polls"
 (1..3).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
                      geozone_restricted: false)
-  puts "    #{poll.name}"
 end
 (4..5).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
@@ -482,26 +492,26 @@ end
                      geozone_restricted: true,
                      geozones: Geozone.reorder("RANDOM()").limit(3)
                     )
-  puts "    #{poll.name}"
 end
 
 
 
 
 
-puts "Upcoming Poll"
+puts " ✅"
+print "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
-puts "    #{poll.name}"
 
-puts "Expired Poll"
+puts " ✅"
+print "Expired Poll"
 poll = Poll.create(name: "Expired Poll",
                      starts_at: 2.months.ago,
                      ends_at:   1.months.ago)
-puts "    #{poll.name}"
 
-puts "Creating Poll Questions"
+puts " ✅"
+print "Creating Poll Questions"
 
 (1..50).each do |i|
   poll = Poll.reorder("RANDOM()").first
@@ -514,21 +524,23 @@ puts "Creating Poll Questions"
                                     description: description,
                                     valid_answers: Faker::Lorem.words(3).join(', '),
                                     poll: poll)
-  puts "    #{question.title}"
 end
 
-puts "Creating Poll Booths"
+puts " ✅"
+print "Creating Poll Booths"
 30.times.each_with_index do |i|
   Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
 end
 
-puts "Creating Booth Assignments"
+puts " ✅"
+print "Creating Booth Assignments"
 Poll::Booth.all.each do |booth|
   Poll::BoothAssignment.create(booth: booth, poll: Poll.all.sample)
 end
 
-puts "Creating Poll Officer Assignments"
-(1..10).to_a.sample.times do |i|
+puts " ✅"
+print "Creating Poll Officer Assignments"
+(1..15).to_a.sample.times do |i|
   Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
     Poll::OfficerAssignment.create(officer: poll_officer.poll_officer,
                                    booth_assignment: booth_assignment,
@@ -536,7 +548,21 @@ puts "Creating Poll Officer Assignments"
   end
 end
 
-puts "Creating Poll Question from Proposals"
+puts " ✅"
+print "Creating Poll Recounts" do
+(1..15).to_a.sample.times do |i|
+  poll_officer.poll_officer.officer_assignments.all.sample(i).each do |officer_assignment|
+    Poll::Recount.create(officer_assignment: officer_assignment,
+                         booth_assignment: officer_assignment.booth_assignment,
+                         date: officer_assignment.date,
+                         count: (1..5000).to_a.sample)
+  end
+end
+
+end
+
+puts " ✅"
+print "Creating Poll Questions from Proposals"
 
 (1..3).each do
   proposal = Proposal.reorder("RANDOM()").first
@@ -544,11 +570,10 @@ puts "Creating Poll Question from Proposals"
   question = Poll::Question.create(valid_answers: "Yes, No")
   question.copy_attributes_from_proposal(proposal)
   question.save!
-
-  puts " #{question.title} (from proposal)"
 end
 
-puts "Creating Successful Proposals"
+puts " ✅"
+print "Creating Successful Proposals"
 
 (1..10).each do
   proposal = Proposal.reorder("RANDOM()").first
@@ -556,11 +581,10 @@ puts "Creating Successful Proposals"
   question = Poll::Question.create(valid_answers: "Yes, No")
   question.copy_attributes_from_proposal(proposal)
   question.save!
-
-  puts " #{question.title} (from proposal)"
 end
 
-puts "Commenting Poll Questions"
+puts " ✅"
+print "Commenting Poll Questions"
 
 (1..30).each do
   author = User.reorder("RANDOM()").first
@@ -571,10 +595,14 @@ puts "Commenting Poll Questions"
                   body: Faker::Lorem.sentence)
 end
 
-puts "Creating Poll Voters"
+puts " ✅"
+print "Creating Poll Voters"
 
 (1..10).each do
   poll = Poll.all.sample
   document_number = Faker::Number.number(10)
   Poll::Voter.create!(poll: poll, document_number: document_number)
 end
+
+puts " ✅"
+puts "All dev seeds created successfuly 👍"

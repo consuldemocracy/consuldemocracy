@@ -461,15 +461,16 @@ ActiveRecord::Schema.define(version: 20170128214244) do
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.integer  "poll_id",             null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "poll_id",               null: false
     t.integer  "booth_assignment_id"
     t.integer  "age"
     t.string   "gender"
     t.integer  "geozone_id"
     t.integer  "answer_id"
     t.integer  "user_id"
+    t.integer  "officer_assignment_id"
   end
 
   add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree

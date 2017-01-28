@@ -4,6 +4,7 @@ class Poll
     belongs_to :user
     belongs_to :geozone
     belongs_to :booth_assignment
+    belongs_to :officer_assignment
 
     validates :poll_id, presence: true
     validates :user_id, presence: true

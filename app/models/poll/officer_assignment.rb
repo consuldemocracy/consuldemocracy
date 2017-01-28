@@ -3,6 +3,7 @@ class Poll
     belongs_to :officer
     belongs_to :booth_assignment
     has_one :recount
+    has_many :voters
 
     validates :officer_id, presence: true
     validates :booth_assignment_id, presence: true
