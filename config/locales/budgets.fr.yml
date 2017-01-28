@@ -85,13 +85,13 @@ fr:
         title  : Projet d'investissement
       wrong_price_format  : Seulement des nombres entiers
     phase:
-      accepting : Accepter les propositions
-      reviewing : Voir les propositions
-      selecting : Selectionner les propositions
-      valuating : "Evaluer les propositions"
-      balloting : Voter sur les propositions
-      reviewing_ballots : Voir les bulletins
-      finished  : Budget terminé
+      accepting : Dépôt des propositions
+      reviewing : Evaluation des propositions
+      selecting : Sélection des propositions
+      valuating : Cotation des propositions
+      balloting : Vote des propositions
+      reviewing_ballots : Décompte des votes
+      finished  : Fin du budget
     progress_bar:
       available  : "Disponible :"
     show:

@@ -339,18 +339,18 @@ fr:
         title  : Modifier le budget participatif
       index:
         title : Budgets participatifs
-        new_link  : Créer un nouveau budget
-        table_name  : Nom
-        table_phase : Phase
+        new_link  : Créer un nouveau budget participatif
+        table_name  : Nom du BP
+        table_phase : Phase actuelle du BP
         table_investments : Investissements
-        table_edit_groups : Catégories
+        table_edit_groups : Zones
         table_edit_budget : Modifier
         budget_investments  : Voir les investissements budgétaires
         edit_groups : Modifier les groupes de titres
         edit_budget : Modifier le budget
         filters:
-          current : Ouvert
-          finished  : Fini
+          current : Budgets participatifs en cours
+          finished  : Budgets participatifs terminés
       new:
         title : Nouveau budget participatif
     geozones:
