@@ -316,3 +316,160 @@ fr:
         phone_not_given: Phone not given
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
+    budgets:
+      update.notice: Budget participatif mis à jour avec succès
+      create.notice : Nouveau budget participatif créé avec succès!
+      form:
+        add_heading  : Ajouter une rubrique
+        no_heading : Ce groupe n'a pas de rubrique affectée.
+        table_heading  : Titre
+        table_amount : Montant
+        heading  : Nom du titre
+        amount : Montant
+        save_heading : Enregistrer le titre
+        no_groups  : Aucun groupe créé. Chaque utilisateur pourra voter pour une seule rubrique par groupe.
+        add_group  : Ajouter un nouveau groupe
+        group  : Nom de groupe
+        create_group : Créer un groupe
+      show:
+        groups:
+          one: "1 Groupe de lignes budgétaires"
+          other: "%{count} Groupes de lignes budgétaires"
+      edit:
+        title  : Modifier le budget participatif
+      index:
+        title : Budgets participatifs
+        new_link  : Créer un nouveau budget participatif
+        table_name  : Nom du BP
+        table_phase : Phase actuelle du BP
+        table_investments : Investissements
+        table_edit_groups : Zones
+        table_edit_budget : Modifier
+        budget_investments  : Voir les investissements budgétaires
+        edit_groups : Modifier les groupes de titres
+        edit_budget : Modifier le budget
+        filters:
+          current : Budgets participatifs en cours
+          finished  : Budgets participatifs terminés
+      new:
+        title : Nouveau budget participatif
+    geozones:
+      delete.success : La zone géographique a été supprimée avec succès
+      delete.error : Cette zone géographique ne peut pas être supprimée car il ya des éléments qui y sont attachés
+      errors.form.error  :
+        one: "empêchait cette zone géographique d'être enregistré"
+        other: "empêchait cette zone géographique d'être enregistrés"
+      geozone:
+        name : Nom
+        coordinates  : Coordonnées
+        external_code  : Code externe
+        census_code  : Code de recensement
+      edit:
+        form.submit_button  : Sauvegarder les modifications
+        back  : Retour
+        editing : Modification de la zone géographique
+      index:
+        create : Créer une zone géographique
+        title  : Zone géographique
+        edit : Modifier
+        delete : Effacer
+      new:
+        back : Retour
+        creating : Créer un district
+    menu:
+      budgets: Budgets participatifs
+      signature_sheets : Feuilles de signature
+      geozones : Gérer les zones géographiques
+    budget_investments:
+      index:
+        table_id : ID
+        table_title  : Titre
+        table_admin  : Administrateur
+        table_valuator : Expert
+        table_geozone  : Champ d'application
+        table_feasibility  : Faisabilité
+        table_valuation_finished : Val. Fin.
+        table_selection  : Sélection
+        assigned_admin : Administrateur affecté
+        no_admin_assigned  : Aucun administrateur affecté
+        no_valuators_assigned  : Aucun évaluateur assigné
+        selected : Choisi
+        select : Sélectionner
+        title  : Projets d'investissement
+        administrator_filter_all : Tous les administrateurs
+        valuator_filter_all  : Tous les évaluateurs
+        heading_filter_all : Toutes les rubriques
+        tags_filter_all  : Tous les tags
+        filters:
+          valuation_open : Ouvert
+          without_admin  : Sans administrateur affecté
+          managed  : Réussi
+          valuating  : Sous évaluation
+          valuation_finished : Évaluation terminée
+          valuation_finished_feasible  : Val. ailette. Faisable
+          selected : Choisi
+          all  : Tout
+        feasibility:
+          feasible : Faisable (%{price})
+          unfeasible : Infaisable
+          undecided  : Indécis
+      show:
+        info  : "%{budget_name} - Groupe : %{group_name} - Projet d'investissement %{id}"
+        group : Groupe
+        heading : Poste budgétaire
+        by  : Par
+        sent  : Envoyé
+        edit  : Modifier
+        classification  : Classement
+        assigned_admin  : Administrateur affecté
+        undefined : Indéfini
+        tags  : Mots clés
+        assigned_valuators  : Évaluateurs affectés
+        edit_classification : Modifier la classification
+        dossier : Dossier
+        edit_dossier  : Modifier le dossier
+      edit:
+        select_heading  : Sélectionner rubrique
+        classification  : Classification
+        undefined : Indéfini
+        tags  : Mots clés
+        tags_placeholder  : Écrivez les mots clés que vous voulez, séparées par des virgules (,)
+        assigned_valuators  : Évaluateurs
+        submit_button : Mettre à jour
+    signature_sheets:
+      index:
+        title: Feuilles de signature
+        new: Nouvelles feuilles de signature
+      name: Prénom
+      author: Auteur
+      created_at: Date de création
+      no_signature_sheets: Il n'y a pas de feuilles de signature
+      new:
+        title: Nouvelles feuilles de signature
+        document_numbers_note  : Écrivez les nombres séparés par des virgules (,)
+        submit : Créer une feuille de signature
+      show:
+        created_at  : Créé
+        author  : Auteur
+        document_count  : "Nombre de documents:"
+        documents : Documents
+        verified  :
+          one: "Il y a %{count} signature valide"
+          other: "Il y a %{count} signatures valides"
+        unverified  :
+          one: "Il y a% {count} signature invalide"
+          other: "Il y a %{count} signatures non valides"
+        unverified_error  : (Non vérifié par recensement)
+        loading : Il ya encore des signatures qui sont vérifiées par le recensement, s'il vous plaît rafraîchissez la page dans quelques instants
+    stats:
+      direct_messages:
+        title : Messages directs
+        total : Total
+        users_who_have_sent_message : Utilisateurs ayant envoyé un message privé
+      proposal_notifications:
+        title  : Notifications de propositions
+        total  : Total
+        proposals_with_notifications : Propositions avec notifications
+      show:
+        direct_messages  : Messages directs
+        proposal_notifications : Notifications de <propositions>   </propositions>
