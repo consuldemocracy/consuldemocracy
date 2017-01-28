@@ -1749,136 +1749,14 @@ fr:
   flash.actions.create.direct_message: Votre message a été envoyé avec succès.
   flash.actions.create.proposal_notification: Votre message a été envoyé correctement.
   flash.actions.destroy.budget_investment: Projet d'investissement supprimé avec succès.
-  admin.budgets.update.notice: Budget participatif mis à jour avec succès
-  admin.budgets.create.notice : Nouveau budget participatif créé avec succès!
-  admin.budgets.form.add_heading  : Ajouter une rubrique
-  admin.budgets.form.no_heading : Ce groupe n'a pas de rubrique affectée.
-  admin.budgets.form.table_heading  : Titre
-  admin.budgets.form.table_amount : Montant
-  admin.budgets.form.heading  : Nom du titre
-  admin.budgets.form.amount : Montant
-  admin.budgets.form.save_heading : Enregistrer le titre
-  admin.budgets.form.no_groups  : Aucun groupe créé. Chaque utilisateur pourra voter pour une seule rubrique par groupe.
-  admin.budgets.form.add_group  : Ajouter un nouveau groupe
-  admin.budgets.form.group  : Nom de groupe
-  admin.budgets.form.create_group : Créer un groupe
-  admin.budgets.show.groups:
-    one: "1 Groupe de lignes budgétaires"
-    other: "%{count} Groupes de lignes budgétaires"
-  admin.budgets.edit.title  : Modifier le budget participatif
-  admin.budgets.index.title : Budgets participatifs
-  admin.budgets.index.new_link  : Créer un nouveau budget
-  admin.budgets.index.table_name  : Nom
-  admin.budgets.index.table_phase : Phase
-  admin.budgets.index.table_investments : Investissements
-  admin.budgets.index.table_edit_groups : Catégories
-  admin.budgets.index.table_edit_budget : Modifier
-  admin.budgets.index.budget_investments  : Voir les investissements budgétaires
-  admin.budgets.index.edit_groups : Modifier les groupes de titres
-  admin.budgets.index.edit_budget : Modifier le budget
-  admin.budgets.index.filters.current : Ouvert
-  admin.budgets.index.filters.finished  : Fini
-  admin.budgets.new.title : Nouveau budget participatif
-  admin.geozones.delete.success : La zone géographique a été supprimée avec succès
-  admin.geozones.delete.error : Cette zone géographique ne peut pas être supprimée car il ya des éléments qui y sont attachés
-  admin.geozones.errors.form.error  :
-    one: "empêchait cette zone géographique d'être enregistré"
-    other: "empêchait cette zone géographique d'être enregistrés"
-  admin.geozones.geozone.name : Nom
-  admin.geozones.geozone.coordinates  : Coordonnées
-  admin.geozones.geozone.external_code  : Code externe
-  admin.geozones.geozone.census_code  : Code de recensement
-  admin.geozones.edit.form.submit_button  : Sauvegarder les modifications
-  admin.geozones.edit.back  : Retour
-  admin.geozones.edit.editing : Modification de la zone géographique
-  admin.geozones.index.create : Créer une zone géographique
-  admin.geozones.index.title  : Zone géographique
-  admin.geozones.index.edit : Modifier
-  admin.geozones.index.delete : Effacer
-  admin.geozones.new.back : Retour
-  admin.geozones.new.creating : Créer un district
-  admin.menu.budgets  : Budgets participatifs
-  admin.menu.signature_sheets : Feuilles de signature
-  admin.menu.geozones : Gérer les zones géographiques
-  admin.budget_investments.index.table_id : ID
-  admin.budget_investments.index.table_title  : Titre
-  admin.budget_investments.index.table_admin  : Administrateur
-  admin.budget_investments.index.table_valuator : Expert
-  admin.budget_investments.index.table_geozone  : Champ d'application
-  admin.budget_investments.index.table_feasibility  : Faisabilité
-  admin.budget_investments.index.table_valuation_finished : Val. Fin.
-  admin.budget_investments.index.table_selection  : Sélection
-  admin.budget_investments.index.assigned_admin : Administrateur affecté
-  admin.budget_investments.index.no_admin_assigned  : Aucun administrateur affecté
-  admin.budget_investments.index.no_valuators_assigned  : Aucun évaluateur assigné
-  admin.budget_investments.index.selected : Choisi
-  admin.budget_investments.index.select : Sélectionner
-  admin.budget_investments.index.title  : Projets d'investissement
-  admin.budget_investments.index.administrator_filter_all : Tous les administrateurs
-  admin.budget_investments.index.valuator_filter_all  : Tous les évaluateurs
-  admin.budget_investments.index.heading_filter_all : Toutes les rubriques
-  admin.budget_investments.index.tags_filter_all  : Tous les tags
-  admin.budget_investments.index.filters.valuation_open : Ouvert
-  admin.budget_investments.index.filters.without_admin  : Sans administrateur affecté
-  admin.budget_investments.index.filters.managed  : Réussi
-  admin.budget_investments.index.filters.valuating  : Sous évaluation
-  admin.budget_investments.index.filters.valuation_finished : Évaluation terminée
-  admin.budget_investments.index.filters.valuation_finished_feasible  : Val. ailette. Faisable
-  admin.budget_investments.index.filters.selected : Choisi
-  admin.budget_investments.index.filters.all  : Tout
-  admin.budget_investments.index.feasibility.feasible : Faisable (%{price})
-  admin.budget_investments.index.feasibility.unfeasible : Infaisable
-  admin.budget_investments.index.feasibility.undecided  : Indécis
-  admin.budget_investments.show.info  : "%{budget_name} - Groupe : %{group_name} - Projet d'investissement %{id}"
-  admin.budget_investments.show.group : Groupe
-  admin.budget_investments.show.heading : Poste budgétaire
-  admin.budget_investments.show.by  : Par
-  admin.budget_investments.show.sent  : Envoyé
-  admin.budget_investments.show.edit  : Modifier
-  admin.budget_investments.show.classification  : Classement
-  admin.budget_investments.show.assigned_admin  : Administrateur affecté
-  admin.budget_investments.show.undefined : Indéfini
-  admin.budget_investments.show.tags  : Mots clés
-  admin.budget_investments.show.assigned_valuators  : Évaluateurs affectés
-  admin.budget_investments.show.edit_classification : Modifier la classification
-  admin.budget_investments.show.dossier : Dossier
-  admin.budget_investments.show.edit_dossier  : Modifier le dossier
-  admin.budget_investments.edit.select_heading  : Sélectionner rubrique
-  admin.budget_investments.edit.classification  : Classification
-  admin.budget_investments.edit.undefined : Indéfini
-  admin.budget_investments.edit.tags  : Mots clés
-  admin.budget_investments.edit.tags_placeholder  : Écrivez les mots clés que vous voulez, séparées par des virgules (,)
-  admin.budget_investments.edit.assigned_valuators  : Évaluateurs
-  admin.budget_investments.edit.submit_button : Mettre à jour
-  admin.signature_sheets.index.title  : Feuilles de signature
-  admin.signature_sheets.index.new  : Nouvelles feuilles de signature
-  admin.signature_sheets.name : Prénom
-  admin.signature_sheets.author : Auteur
-  admin.signature_sheets.created_at : Date de création
-  admin.signature_sheets.no_signature_sheets  : Il n'y a pas de feuilles de signature
-  admin.signature_sheets.new.title  : Nouvelles feuilles de signature
-  admin.signature_sheets.new.document_numbers_note  : Écrivez les nombres séparés par des virgules (,)
-  admin.signature_sheets.new.submit : Créer une feuille de signature
-  admin.signature_sheets.show.created_at  : Créé
-  admin.signature_sheets.show.author  : Auteur
-  admin.signature_sheets.show.document_count  : "Nombre de documents:"
-  admin.signature_sheets.show.documents : Documents
-  admin.signature_sheets.show.verified  :
-    one: "Il y a %{count} signature valide"
-    other: "Il y a %{count} signatures valides"
-  admin.signature_sheets.show.unverified  :
-    one: "Il y a% {count} signature invalide"
-    other: "Il y a %{count} signatures non valides"
-  admin.signature_sheets.show.unverified_error  : (Non vérifié par recensement)
-  admin.signature_sheets.show.loading : Il ya encore des signatures qui sont vérifiées par le recensement, s'il vous plaît rafraîchissez la page dans quelques instants
-  admin.stats.direct_messages.title : Messages directs
-  admin.stats.direct_messages.total : Total
-  admin.stats.direct_messages.users_who_have_sent_message : Utilisateurs ayant envoyé un message privé
-  admin.stats.proposal_notifications.title  : Notifications de propositions
-  admin.stats.proposal_notifications.total  : Total
-  admin.stats.proposal_notifications.proposals_with_notifications : Propositions avec notifications
-  admin.stats.show.direct_messages  : Messages directs
-  admin.stats.show.proposal_notifications : Notifications de propositions
+
+
+
+
+
+
+
+
   verification.residence.new.document_number_help_title : Aide
   # verification.residence.new.document_number_help_text_html : <strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Carte de résidence</strong>: X1234567P
   verification.residence.new.accept_terms_text_title  : J'accepte les conditions d'accès au recensement
