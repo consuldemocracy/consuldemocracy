@@ -527,12 +527,24 @@ Poll::Booth.all.each do |booth|
 end
 
 puts "Creating Poll Officer Assignments"
-(1..10).to_a.sample.times do |i|
+(1..15).to_a.sample.times do |i|
   Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
     Poll::OfficerAssignment.create(officer: poll_officer.poll_officer,
                                    booth_assignment: booth_assignment,
                                    date: booth_assignment.poll.starts_at)
   end
+end
+
+puts "Creating Poll Recounts" do
+(1..15).to_a.sample.times do |i|
+  poll_officer.poll_officer.officer_assignments.all.sample(i).each do |officer_assignment|
+    Poll::Recount.create(officer_assignment: officer_assignment,
+                         booth_assignment: officer_assignment.booth_assignment,
+                         date: officer_assignment.date,
+                         count: (1..5000).to_a.sample)
+  end
+end
+
 end
 
 puts "Creating Poll Question from Proposals"
