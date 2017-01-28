@@ -51,7 +51,6 @@ puts "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
-  puts "    #{username}"
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
 end
 
@@ -141,7 +140,6 @@ tags = Faker::Lorem.words(25)
                           tag_list: tags.sample(3).join(','),
                           geozone: Geozone.reorder("RANDOM()").first,
                           terms_of_service: "1")
-  puts "    #{debate.title}"
 end
 
 
@@ -156,7 +154,6 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
                           tag_list: tags.sample(3).join(','),
                           geozone: Geozone.reorder("RANDOM()").first,
                           terms_of_service: "1")
-  puts "    #{debate.title}"
 end
 
 
@@ -177,7 +174,6 @@ tags = Faker::Lorem.words(25)
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
-  puts "    #{proposal.title}"
 end
 
 puts "Creating Archived Proposals"
@@ -197,7 +193,6 @@ tags = Faker::Lorem.words(25)
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
                               created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
-  puts "    #{proposal.title}"
 end
 
 puts "Creating Successful Proposals"
@@ -218,7 +213,6 @@ tags = Faker::Lorem.words(25)
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1",
                               cached_votes_up: Setting["votes_for_proposal_success"])
-  puts "    #{proposal.title}"
 end
 
 
@@ -237,7 +231,6 @@ tags = ActsAsTaggableOn::Tag.where(kind: 'category')
                               tag_list: tags.sample(3).join(','),
                               geozone: Geozone.reorder("RANDOM()").first,
                               terms_of_service: "1")
-  puts "    #{proposal.title}"
 end
 
 
@@ -345,7 +338,6 @@ tags = Faker::Lorem.words(10)
                               tag_list: tags.sample(3).join(','),
                               price: rand(1000000),
                               terms_of_service: "1")
-  puts "    #{spending_proposal.title}"
 end
 
 puts "Creating Valuation Assignments"
@@ -368,8 +360,6 @@ Budget::PHASES.each_with_index do |phase, i|
     )
   )
 
-  puts budget.name
-
   (1..([1, 2, 3].sample)).each do
     group = budget.groups.create!(name: Faker::StarWars.planet)
 
@@ -380,9 +370,7 @@ Budget::PHASES.each_with_index do |phase, i|
                                                price: rand(1 .. 100) * 100000)
 
     end
-    print "#{group.name} "
   end
-  puts ""
 end
 
 
@@ -406,7 +394,6 @@ tags = Faker::Lorem.words(10)
     tag_list: tags.sample(3).join(','),
     price: rand(1 .. 100) * 100000,
     terms_of_service: "1")
-  puts "    #{investment.title}"
 end
 
 puts "Selecting Investments"
@@ -461,7 +448,6 @@ Proposal.last(3).each do |proposal|
                           post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
                           post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
                           created_at: rand((Time.current - 1.week) .. Time.current))
-  puts "    #{banner.title}"
 end
 
 puts "Creating polls"
@@ -472,7 +458,6 @@ puts "Active Polls"
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
                      geozone_restricted: false)
-  puts "    #{poll.name}"
 end
 (4..5).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
@@ -481,7 +466,6 @@ end
                      geozone_restricted: true,
                      geozones: Geozone.reorder("RANDOM()").limit(3)
                     )
-  puts "    #{poll.name}"
 end
 
 
@@ -492,13 +476,11 @@ puts "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
-puts "    #{poll.name}"
 
 puts "Expired Poll"
 poll = Poll.create(name: "Expired Poll",
                      starts_at: 2.months.ago,
                      ends_at:   1.months.ago)
-puts "    #{poll.name}"
 
 puts "Creating Poll Questions"
 
@@ -513,7 +495,6 @@ puts "Creating Poll Questions"
                                     description: description,
                                     valid_answers: Faker::Lorem.words(3).join(', '),
                                     poll: poll)
-  puts "    #{question.title}"
 end
 
 puts "Creating Poll Booths"
@@ -547,7 +528,7 @@ end
 
 end
 
-puts "Creating Poll Question from Proposals"
+puts "Creating Poll Questions from Proposals"
 
 (1..3).each do
   proposal = Proposal.reorder("RANDOM()").first
@@ -555,8 +536,6 @@ puts "Creating Poll Question from Proposals"
   question = Poll::Question.create(valid_answers: "Yes, No")
   question.copy_attributes_from_proposal(proposal)
   question.save!
-
-  puts " #{question.title} (from proposal)"
 end
 
 puts "Creating Successful Proposals"
@@ -567,8 +546,6 @@ puts "Creating Successful Proposals"
   question = Poll::Question.create(valid_answers: "Yes, No")
   question.copy_attributes_from_proposal(proposal)
   question.save!
-
-  puts " #{question.title} (from proposal)"
 end
 
 puts "Commenting Poll Questions"
