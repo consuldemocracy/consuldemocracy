@@ -5,8 +5,28 @@ describe :voter do
   let(:poll) { create(:poll) }
   let(:booth) { create(:poll_booth) }
   let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
+  let(:voter) { create(:poll_voter) }
 
   describe "validations" do
+
+    it "should be valid" do
+      expect(voter).to be_valid
+    end
+
+    it "should not be valid without a user" do
+      voter.user = nil
+      expect(voter).to_not be_valid
+    end
+
+    it "should not be valid without a poll" do
+      voter.poll = nil
+      expect(voter).to_not be_valid
+    end
+
+    it "should not be valid without a geozone" do
+      voter.user.geozone = nil
+      expect(voter).to_not be_valid
+    end
 
     it "should be valid if has not voted" do
        voter = build(:poll_voter, :valid_document)
@@ -60,5 +80,32 @@ describe :voter do
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
+  end
+
+  describe "save" do
+
+    it "sets demographic info" do
+      geozone = create(:geozone)
+      user = create(:user,
+                    geozone: geozone,
+                    date_of_birth: 30.years.ago,
+                    gender: "female")
+
+      voter = build(:poll_voter, user: user)
+      voter.save
+
+      expect(voter.geozone).to eq(geozone)
+      expect(voter.age).to eq(30)
+      expect(voter.gender).to eq("female")
+    end
+
+    it "sets user info" do
+      user = create(:user, document_number: "1234A", document_type: "1")
+      voter = build(:poll_voter, user: user)
+      voter.save
+
+      expect(voter.document_number).to eq("1234A")
+      expect(voter.document_type).to eq("1")
+    end
   end
 end

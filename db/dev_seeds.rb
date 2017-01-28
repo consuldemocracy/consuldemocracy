@@ -45,6 +45,7 @@ Setting.create(key: 'min_age_to_participate', value: '16')
 puts "Creating Geozones"
 
 Geozone.create(name: "city")
+Geozone.create(name: "Existent District", census_code: "01")
 ('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }
 
 puts "Creating Users"
@@ -568,4 +569,12 @@ puts "Commenting Poll Questions"
                   created_at: rand(question.created_at .. Time.current),
                   commentable: question,
                   body: Faker::Lorem.sentence)
+end
+
+puts "Creating Poll Voters"
+
+(1..10).each do
+  poll = Poll.all.sample
+  document_number = Faker::Number.number(10)
+  Poll::Voter.create!(poll: poll, document_number: document_number)
 end

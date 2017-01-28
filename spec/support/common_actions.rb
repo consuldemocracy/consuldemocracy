@@ -141,6 +141,16 @@ module CommonActions
     expect(page).to have_content 'Residence verified'
   end
 
+  def officing_verify_residence
+    fill_in 'residence_document_number', with: "12345678Z"
+    select 'DNI', from: 'residence_document_type'
+    select_date '31-December-1980', from: 'residence_date_of_birth'
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Document verified with Census'
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
