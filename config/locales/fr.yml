@@ -1757,9 +1757,6 @@ fr:
 
 
 
-  verification.residence.new.document_number_help_title : Aide
-  # verification.residence.new.document_number_help_text_html : <strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Carte de résidence</strong>: X1234567P
-  verification.residence.new.accept_terms_text_title  : J'accepte les conditions d'accès au recensement
   management.budget_investments.alert.unverified_user : L'utilisateur n'est pas vérifié
   management.budget_investments.create  : Créer un budget d'investissement
   management.budget_investments.filters.unfeasible  : Investissement irréalisable
