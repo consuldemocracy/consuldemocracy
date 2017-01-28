@@ -595,4 +595,4 @@ print "Commenting Poll Questions"
 end
 
 puts " ✅"
-puts "All dev seeds created succesfully 👍"
+puts "All dev seeds created successfuly 👍"
