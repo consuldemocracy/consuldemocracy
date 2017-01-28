@@ -1,7 +1,7 @@
 namespace :polls do
 
-  def create_2017_poll(geozone_name, attributes)
-    poll = Poll.create(
+  def create_2017_district_poll(geozone_name, attributes)
+    poll = Poll.create!(
       name: geozone_name,
       starts_at: Date.new(2017, 2, 13),
       ends_at: Date.new(2017, 2, 19),
@@ -23,7 +23,141 @@ namespace :polls do
   desc "Imports the 2017 polls"
   task import_2017: :environment do
 
-      create_2017_poll('Barajas',
+    poll_bu = Poll.create!(
+      name: "Billete único para el transporte público",
+      starts_at: Date.new(2017, 2, 13),
+      ends_at: Date.new(2017, 2, 19),
+      geozone_restricted: false
+    )
+    poll_bu.questions.create!(
+      author: User.where(username: 'inwit').first || User.first,
+      author_visible_name: "inwit",
+      title: "Billete único para el transporte público",
+      summary: "Es imprescindible que existan facilidades a la intermodalidad. Cambiar de medio de transporte público sin pagar más, en un periodo amplio (90 minutos al menos), es básico.",
+      proposal: Proposal.where(id: 9).first || nil,
+      valid_answers: "Sí,No",
+      description: %{
+<p>Esta propuesta bebe de los siguientes debates, que están entre los más valorados:</p>
+
+<p><a href="https://decide.madrid.es/debates/74">https://decide.madrid.es/debates/74</a><p>
+<p><a href="https://decide.madrid.es/debates/1772">https://decide.madrid.es/debates/1772</a><p>
+
+<p>y otros.</p>
+      }
+    )
+
+    poll_m100 = Poll.create!(
+      name: "Madrid 100% Sostenible",
+      starts_at: Date.new(2017, 2, 13),
+      ends_at: Date.new(2017, 2, 19),
+      geozone_restricted: false
+    )
+    poll_m100.questions.create!(
+      author: User.where(username: 'Alianza por el Clima').first || User.first,
+      author_visible_name: 'Alianza por el Clima',
+      title: "Madrid 100% Sostenible",
+      summary: "Queremos un Madrid que no amanezca con una boina de contaminación gris, que desafíe a las eléctricas, potencie las renovables y se asegure de que a ninguna familia le corten la luz este invierno.",
+      proposal: Proposal.where(id: 199).first || nil,
+      valid_answers: "Sí,No",
+      description: %{
+<p>¿Cómo?</p>
+
+<p>Pidiéndole al Ayuntamiento de Madrid que se comprometa a<strong> firmar el manifiesto "MADRID CIUDAD SOSTENIBLE"</strong></u><strong> y a ponerlo en marcha -- </strong>Exigimos el cumplimiento de los 14 puntos siguientes:</p>
+
+<ol>
+<li>Desarrollar campañas de sensibilización, formación y <strong>fomento de la cultura energética </strong>en todos los ámbitos de la ciudad.</li>
+<li>Contratar la <strong>energía eléctrica municipal con garantía de origen 100% renovable.</strong>
+</li>
+<li>Establecer un equipo de trabajo transversal para la <strong>elaboración, ejecución y seguimiento de los planes estratégicos.</strong>
+</li>
+<li>Facilitar la obtención de forma regular de los <strong>datos energéticos y económicos</strong> necesarios para su gestión.</li>
+<li>
+<strong>Diseñar e implantar acciones de eficiencia energética en las instalaciones municipales</strong> priorizando cambios de hábitos para eliminar los derroches en el consumo. Los ahorros conseguidos por el cambio de hábitos se invertirán, en parte o en su totalidad, en nuevas medidas de eficiencia energética.</li>
+<li>
+<strong>Implantar programas de eficiencia energética en los centros educativos</strong>, como el proyecto 50/50 -- consistente en devolver el 50% de los ahorros a la escuela y revertir la otra mitad en nuevas medidas de ahorro, eficiencia y renovables en el mismo centro.</li>
+<li>
+<strong>Aplicar medidas de lucha contra la pobreza energética</strong>: tramitación del bono social, etc.</li>
+<li>Diseñar y ejecutar todas las <strong>construcciones u obras municipales nuevas con criterios de consumo de energía casi nulo.</strong>
+</li>
+<li>
+<strong>Implementar acciones de movilidad sostenible</strong>: fomento de transporte público, uso de vehículos sostenibles, peatonalización de las calles,etc.</li>
+<li>Diseñar un plan para sustituir paulatinamente por <strong>vehículos eléctricos</strong> todo el parque móvil dedicado al  transporte público y los vehículos municipales.</li>
+<li>Establecer <strong>medidas fiscales de fomento de la eficiencia energética </strong>y las energías renovables.</li>
+<li>Revisar las ordenanzas municipales para <strong>favorecer los sistemas de auto-abastecimiento energético </strong>a partir de energías renovables.</li>
+<li>Generar <strong>un modelo urbanístico sostenible mediante la paralización de los procesos especulativos.</strong>
+</li>
+<li>
+<strong>Hacer una gestión sostenible de los Residuos Sólidos Urbanos</strong>.</li>
+</ol>
+
+<p>*Propuesta impulsada por Alianza por el Clima -- plataforma formada por más de 400 organizaciones que luchan contra el cambio climático global alrededor de la Cumbre de París, que se celebrará el 30 de Noviembre de este año.</p>
+        <p>
+      }
+    )
+
+    poll_pe = Poll.create!(
+      name: "Remodelación de Plaza España",
+      starts_at: Date.new(2017, 2, 13),
+      ends_at: Date.new(2017, 2, 19),
+      geozone_restricted: false
+    )
+    poll_pe.questions.create!(
+      author_visible_name: "Ayuntamiento de Madrid",
+      skip_length_checks: true,
+      author: User.first,
+      title: "Votación final ciudadana del proyecto ganador",
+      summary: "Proyecto X: Welcome mother Nature, good bye Mr Ford. Proyecto Y: Proyecto Y: UN PASEO POR LA CORNISA",
+      valid_answers: "Proyecto X, Proyecto Y",
+      description: %{
+        <p>El pasado 14 de diciembre se convocó un grupo de trabajo multidisciplinar (asociaciones de vecinos, urbanistas, hoteleros, técnicos del Ayuntamiento, etc), que decidió las preguntas clave que habría que resolver para definir la nueva Plaza de España. Desde el 28 de enero esas preguntas han estado disponibles aquí para que cualquier madrileño las responda, y las respuestas mayoritarias se han convertido en las bases obligatorias del concurso internacional de remodelación de Plaza España.</p>
+        <p>Todos los proyectos presentados han sido publicados en la web para ser debatidos y valorados. Un jurado ha elegido cinco de ellos, que serán desarrollados, y posteriormente dos finalistas. Finalmente será la gente de Madrid la que vote entre esos dos decidiendo el proyecto final a ejecutar.</p>
+        <ul>
+          <li><a href="https://decide.madrid.es/proceso/plaza-espana/proyectos/38">Proyecto X: Welcome mother Nature, good bye Mr Ford</a></li>
+          <li><a href="https://decide.madrid.es/proceso/plaza-espana/proyectos/22">Proyecto Y: UN PASEO POR LA CORNISA</a></li>
+        </ul>
+      }
+    )
+
+    poll_gv = Poll.create!(
+      name: "Gran Vía",
+      starts_at: Date.new(2017, 2, 13),
+      ends_at: Date.new(2017, 2, 19),
+      geozone_restricted: false
+    )
+    poll_gv.questions.create!(
+      author: User.first,
+      author_visible_name: "Ayuntamiento de Madrid",
+      skip_length_checks: true,
+      title: "¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?",
+      summary: "¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?",
+      valid_answers: "Sí,No"
+    )
+    poll_gv.questions.create!(
+      author: User.first,
+      author_visible_name: "Ayuntamiento de Madrid",
+      skip_length_checks: true,
+      title: "¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?",
+      summary: "¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?",
+      valid_answers: "Sí,No"
+    )
+    poll_gv.questions.create!(
+      author: User.first,
+      author_visible_name: "Ayuntamiento de Madrid",
+      skip_length_checks: true,
+      title: "¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?",
+      summary: "¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?",
+      valid_answers: "Sí,No"
+    )
+    poll_gv.questions.create!(
+      author: User.first,
+      author_visible_name: "Ayuntamiento de Madrid",
+      skip_length_checks: true,
+      title: "¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?",
+      summary: "¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?",
+      valid_answers: "Sí,No"
+    )
+
+    create_2017_district_poll('Barajas',
         title: "Prioriza el Plan Participativo de Actuación Territorial de Barajas",
         summary: %{Las 10 propuestas que tengan mayor número de apoyos serán asumidas por la Junta Municipal como propuestas de
                    máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo},
@@ -99,7 +233,7 @@ namespace :polls do
 </ul>
 })
 
-      create_2017_poll('San Blas - Canillejas',
+      create_2017_district_poll('San Blas - Canillejas',
         title: "Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas",
         summary: %{Las 10 propuestas que tengan mayor número de apoyos, serán asumidas por la Junta Municipal de
                    San Blas-Canillejas como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.},
@@ -248,7 +382,7 @@ namespace :polls do
 </ul>
 
 })
-      create_2017_poll('Hortaleza', [
+      create_2017_district_poll('Hortaleza', [
         {
           title: "¿Cambiamos el nombre del distrito de Hortaleza a Hortaleza-Canillas?",
           summary: %{La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.},
@@ -266,7 +400,7 @@ namespace :polls do
         }
       ])
 
-      create_2017_poll('Retiro', [
+      create_2017_district_poll('Retiro', [
         {
           title: "¿Cómo quieres que se llame el Centro Cultural situado en el Mercado de Ibiza, c/ Ibiza 8?",
           summary: "¿Cómo quieres que se llame el Centro Cultural situado en el Mercado de Ibiza, c/ Ibiza 8?",
@@ -282,7 +416,7 @@ namespace :polls do
         }
       ])
 
-      create_2017_poll('Salamanca', [
+      create_2017_district_poll('Salamanca', [
         {
           title: "¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?",
           summary: "La respuesta que cuente con mayor número de votos será la que se lleve a cabo",
@@ -291,7 +425,7 @@ namespace :polls do
         }
       ])
 
-      create_2017_poll('Vicálvaro', [
+      create_2017_district_poll('Vicálvaro', [
         {
           title: "¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?",
           summary: "El nombre que cuente con mayor número de apoyos será la que se utilizará para designar al Espacio de Igualdad del Distrito de Vicálvaro.",
