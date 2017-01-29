@@ -212,6 +212,14 @@ fr:
       see_all: Voir les propositions
       spending_proposals: Propositions de dépense
 
+      notifications  : Notifications
+      valuation  : Evaluation
+      management : Gestion
+      available_locales  : Langues disponibles
+      proposal_ballot  : Vote
+      budgets  : Budget participatif
+      external_link_opendata_url : /opendata
+
 
 
 
@@ -1898,15 +1906,6 @@ fr:
     or_fill  : "Ou bien remplir le formulaire suivant :"
     info_sign_up : "s'enregistrer avec :"
     finish_signup.username_warning : Du fait de la façon dont nous interagissons avec les réseaux sociaux, il est possible que votre nom d'utilisateur apparaissent comme 'déjà utilisé'. Si c'est le cas, choisissez-en un autre s'il vous plaît.
-  layouts:
-    header:
-      notifications  : Notifications
-      valuation  : Evaluation
-      management : Gestion
-      available_locales  : Langues disponibles
-      proposal_ballot  : Vote
-      budgets  : Budget participatif
-      external_link_opendata_url : /opendata
   legislation:
     help:
       title  : Comment puis-je commenter ce document
