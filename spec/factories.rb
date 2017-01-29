@@ -445,7 +445,7 @@ FactoryGirl.define do
 
   factory :poll_answer, class: 'Poll::Answer' do
     association :question, factory: :poll_question
-    association :author, factory: [:user, :level_three]
+    association :author, factory: [:user, :level_two]
     answer { question.valid_answers.sample }
   end
 

@@ -35,16 +35,20 @@ describe :voter do
     end
 
     it "should not be valid if the user has already voted in the same poll or booth_assignment" do
-      voter1 = create(:poll_voter, :valid_document, poll: poll)
-      voter2 =  build(:poll_voter, :valid_document, poll: poll)
+      user = create(:user, :level_two)
+
+      voter1 = create(:poll_voter, user: user, poll: poll)
+      voter2 =  build(:poll_voter, user: user, poll: poll)
 
       expect(voter2).to_not be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "should not be valid if the user has already voted in the same poll/booth" do
-      voter1 = create(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment)
-      voter2 =  build(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment)
+      user = create(:user, :level_two)
+
+      voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
+      voter2 =  build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
       expect(voter2).to_not be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
@@ -54,8 +58,10 @@ describe :voter do
       booth_assignment1 = create(:poll_booth_assignment, poll: poll)
       booth_assignment2 = create(:poll_booth_assignment, poll: poll)
 
-      voter1 = create(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment1)
-      voter2 =  build(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment2)
+      user = create(:user, :level_two)
+
+      voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment1)
+      voter2 =  build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment2)
 
       expect(voter2).to_not be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
@@ -65,8 +71,10 @@ describe :voter do
       booth_assignment1 = create(:poll_booth_assignment, booth: booth)
       booth_assignment2 = create(:poll_booth_assignment, booth: booth, poll: poll)
 
-      voter1 = create(:poll_voter, :valid_document, booth_assignment: booth_assignment1)
-      voter2 =  build(:poll_voter, :valid_document, booth_assignment: booth_assignment2)
+      user = create(:user, :level_two)
+
+      voter1 = create(:poll_voter, user: user, booth_assignment: booth_assignment1)
+      voter2 =  build(:poll_voter, user: user, booth_assignment: booth_assignment2)
 
       expect(voter2).to be_valid
     end
@@ -75,7 +83,7 @@ describe :voter do
       answer = create(:poll_answer)
       answer.record_voter_participation
 
-      voter = build(:poll_voter, poll: answer.question.poll, document_number: answer.author.document_number, document_type: "1")
+      voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).to_not be_valid
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
