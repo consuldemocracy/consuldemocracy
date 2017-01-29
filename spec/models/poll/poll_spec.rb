@@ -64,6 +64,7 @@ describe :poll do
 
   describe "#document_has_voted?" do
     it "returns true if Poll::Voter with document exists" do
+      poll = create(:poll)
       voter = create(:poll_voter, :valid_document, poll: poll)
 
       expect(poll.document_has_voted?(voter.document_number, voter.document_type)).to eq(true)

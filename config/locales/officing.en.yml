@@ -29,20 +29,20 @@ en:
         recount_list: "Your recounts"
         booth: "Booth"
         date: "Date"
-    voters:
+    residence:
+      flash:
+        create: "Document verified with Census"
       new:
         title: Validate document
         document_number: Document number
-        document_type:
-          passport: Passport
-          residence_card: Residence card
-          spanish_id: DNI
         document_type_label: Document type
         submit: Validate document
+        error_verifying_census: "The Census was unable to verify this document."
+        form_errors: prevented the verification of this document
+    voters:
+      new:
+        title: Polls
       show:
-        title: Validate document
-        error_verifying_census: "The Census was unable to verify the information of this document."
-        error_already_voted: "The person associated with the document has already participated in the vote."
-        can_participate: "The person associated with the document can participate in the vote."
+        error_already_voted: Has already participated in this poll
         submit: Validate vote
-        success: "Vote validated correctly."
+        success: Vote validated successfully.

@@ -44,6 +44,10 @@ class Poll < ActiveRecord::Base
     current.joins(:geozones).where('geozone_restricted = ? or geozones.id = ?', false, user.geozone_id)
   end
 
+  def votable_by?(user)
+    !document_has_voted?(user.document_number, user.document_type)
+  end
+
   def document_has_voted?(document_number, document_type)
     voters.where(document_number: document_number, document_type: document_type).exists?
   end

@@ -125,3 +125,8 @@ Capybara.register_driver :selenium do |app|
       )
     end
 Capybara.default_max_wait_time = 10
+
+options = {js_errors: false}
+Capybara.register_driver :poltergeist_no_js_errors do |app|
+  Capybara::Poltergeist::Driver.new(app, options)
+end
