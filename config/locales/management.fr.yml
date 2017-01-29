@@ -30,6 +30,7 @@ fr:
       title: Management d'utilisateur
       under_age: Vous devez avoir 16 ans pour verifier votre compte.
       verify: Verifier
+      link  : Consul
     email_label: Email
     email_verifications:
       already_verified: Ce compte est déjà verifiée
@@ -46,12 +47,15 @@ fr:
       create_proposal: Créer proposition
       print_proposals: Imprimer proposition
       support_proposals: Soutenir proposition
-      create_spending_proposal: Créer proposition d'investissement 
+      create_spending_proposal: Créer proposition d'investissement
       print_spending_proposals: Imprimer proposition d'investissements
       support_spending_proposals: Soutenir proposition d'investissements
-      title: Management
       users: Utilisateurs
       edit_user_accounts: Modifier compte utilisateur
+      create_budget_investment  : Créer un budget d'investissement
+      support_budget_investments  : Supportez les investissements budgétaires
+      print_budget_investments  : Imprimer Investissements budgétaires
+      user_invites  : Invitations de l'utilisateur
     permissions:
       create_proposals: Creér proposition
       debates: Participez dans les débats
@@ -63,6 +67,8 @@ fr:
       proposals_title: 'Proposition:'
       spending_proposals_info: Participez à http://decide.madrid.es
       spending_proposals_note: Budget participatif serait distribué aux propositions d'investissements avec le plus de votes.
+      budget_investments_info : 'Participez à http: //url.consul'
+      budget_investments_note  : Le budget participatif sera affecté à l'investissement budgétaire le plus voté.
     print_info: Imprimez cette information.
     proposals:
       alert:
@@ -70,6 +76,22 @@ fr:
       create_proposal: Créer proposition
       print:
         print_button: Imprimer
+    budgets:
+      create_new_investment  : Créer un nouvel investissement
+      print_investments  : Imprimer Investissements budgétaires
+      support_investments  : Supportez les investissements budgétaires
+    budget_investments:
+      alert:
+        unverified_user: L'utilisateur n'est pas vérifié
+      create: Créer un budget d'investissement
+      filters:
+        unfeasible  : Investissement irréalisable
+        heading : Concept
+      search_results  :
+        one: "contenant le terme '%{search_term}'"
+        other: "contenant le terme '%{search_term}'"
+      print:
+        print_button  : Impression
     spending_proposals:
       alert:
         unverified_user: Utilisater n'est pas verifiée
@@ -97,3 +119,18 @@ fr:
       erase_account_confirm: Vous êtes sur de vouloir suprimmer ce compte? Cette action n'est pas reversible.
       erase_warning: Cette action n'est pas reversible. S'il vous plaît de vous assurer que vous souhaitez vraiment effacer ce compte!
       erase_submit: Supprimer compte
+    user_invites:
+      create:
+        title  : Invitation de l'utilisateur
+        success_html : <strong>%{count} invitations</strong> ont été envoyées.
+      new:
+        title : Invitation utilisateur
+        label : Courriels
+        info  : Renseignez les adresses séparées par des virgules (',')
+        submit  : Envoyer les <invitations>  </invitations>
+
+
+    menu:
+      title: Management
+
+

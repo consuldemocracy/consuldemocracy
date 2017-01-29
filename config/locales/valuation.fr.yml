@@ -3,7 +3,75 @@ fr:
   valuation:
     menu:
       title: Instruction
+      budgets: Budgets participatifs
       spending_proposals: Propositions de dépenses
+    budgets:
+      index:
+        title : Budgets participatifs
+        table_name  : Nom
+        table_phase : Phase
+        table_assigned_investments_valuation_open : Projets d'investissement assigné avec évaluation ouverte
+        table_actions : Actions
+        evaluate  : Evaluer
+        filters:
+          current : Ouvrir
+          finished  : "Terminé"
+    budget_investments:
+      notice:
+        valuate : Dossier mis à jour
+      index:
+        headings_filter_all  : Tous les en-têtes
+        no_valuators_assigned  : Aucun évaluateur assigné
+        valuators_assigned :
+          one: "évaluateur assigné"
+          other: "%{count} évaluateurs assignés"
+        title  : Projets d'investissement
+        assigned_to  : Assigné à %{valuator}
+        table_id : "index"
+        table_title  : Titre
+        table_heading_name : "En-tête"
+        table_actions  : Actions
+        edit : Editer le dossier
+        filters:
+          valuation_open : Ouvrir
+          valuating  : En cours d'évaluation
+          valuation_finished : Evaluation terminée
+      show:
+        price : Prix
+        currency  : €
+        undefined : Indéfini
+        price_first_year  : Coût durant la première année
+        duration  : Durée
+        feasibility : Faisabilité
+        valuation_finished  : Evaluation terminée
+        internal_comments : Commentaires internes
+        title : Projet d'investissement
+        info  : Info auteur
+        by  : Envoyé par
+        heading : "En-tête"
+        sent  : Envoyé à
+        responsibles  : Responsables
+        assigned_admin  : Administrateur assigné
+        assigned_valuators  : Evaluateurs assignés
+        dossier : Dossier mis à jour
+        edit_dossier  : Editer le dossier
+        back  : Retour
+        feasible  : Faisable
+        unfeasible  : Infaisable
+      edit:
+        dossier : Dossier
+        feasibility : Faisabilité
+        undefined_feasible  : En attente
+        feasible  : Faisable
+        unfeasible  : Pas faisable
+        feasible_explanation_html : Explication de la faisabilité
+        price_html  : Prix (%{currency})
+        price_first_year_html : Coût durant la première année (%{currency})
+        price_explanation_html  : Explication du prix
+        duration_html : Durée
+        valuation_finished  : "Evaluation terminée"
+        internal_comments_html  : Commentaires internes
+        save  : Sauvegarder les changements
     spending_proposals:
       index:
         geozone_filter_all: Tous secteurs
@@ -57,3 +125,8 @@ fr:
         save: Sauvegarder les changements
       notice:
         valuate: "Dossier actualisé"
+
+
+
+
+
