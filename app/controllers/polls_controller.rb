@@ -5,7 +5,7 @@ class PollsController < ApplicationController
   has_filters %w{current expired incoming}
 
   def index
-    @polls = @polls.send(@current_filter).sort_for_list.page(params[:page])
+    @polls = @polls.send(@current_filter).includes(:geozones).sort_for_list.page(params[:page])
   end
 
   def show
