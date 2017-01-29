@@ -76,7 +76,8 @@ Setting[:per_page_code] = piwik_tracking_code
 Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'analytics_url', value: "")
 
-puts "Creating Legislations"
+puts " ✅"
+print "Creating Legislations"
 6.times {|i| Legislation.create!(title: "Legislation #{i+1}")}
 
 puts " ✅"
@@ -115,7 +116,6 @@ print "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
-  puts "    #{username}"
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, date_of_birth: (16..100).to_a.sample.years.ago, terms_of_service: "1")
 end
 
@@ -417,10 +417,10 @@ tags = Faker::Lorem.words(10)
                               forum: forum,
                               price: rand(1000000),
                               terms_of_service: "1")
-  puts "    #{spending_proposal.title}"
 end
 
-puts "Creating ballotable spending proposals for districts"
+puts " ✅"
+print "Creating ballotable spending proposals for districts"
 (1..60).each do |i|
   geozone = Geozone.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").reject {|a| a.organization? }.first
@@ -544,14 +544,16 @@ Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
 Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
 
-puts "Creating district Forums"
+puts " ✅"
+print "Creating district Forums"
 forums = ["Fuencarral - El Pardo", "Moncloa - Aravaca", "Tetuán", "Chamberí", "Centro", "Latina", "Carabanchel", "Arganzuela", "Usera", "Villaverde", "Chamartín", "Salamanca", "Retiro", "Puente de Vallecas", "Villa de Vallecas", "Hortaleza", "Barajas", "Ciudad Lineal", "Moratalaz", "San Blas - Canillejas", "Vicálvaro"]
 forums.each_with_index do |forum, i|
   user = create_user("user_for_forum#{i+1}@example.es")
   Forum.create(name: forum, user: user)
 end
 
-puts "Open plenary debate"
+puts " ✅"
+print "Open plenary debate"
 open_plenary = Debate.create!(author: User.reorder("RANDOM()").first,
                         title: "Pregunta en el Pleno Abierto",
                         created_at: Date.parse("20-04-2016"),
@@ -559,9 +561,9 @@ open_plenary = Debate.create!(author: User.reorder("RANDOM()").first,
                         terms_of_service: "1",
                         tag_list: 'plenoabierto',
                         comment_kind: 'question')
-puts "#{open_plenary.title}"
 
-puts "Open plenary questions"
+puts " ✅"
+print "Open plenary questions"
 (1..30).each do |i|
   author = User.reorder("RANDOM()").first
   cached_votes_up = rand(1000)
@@ -576,7 +578,8 @@ puts "Open plenary questions"
                   cached_votes_total: cached_votes_total)
 end
 
-puts "Open plenary proposal"
+puts " ✅"
+print "Open plenary proposal"
 (1..30).each do |i|
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   proposal = Proposal.create!(author: User.reorder("RANDOM()").first,
@@ -589,7 +592,6 @@ puts "Open plenary proposal"
                               terms_of_service: "1",
                               tag_list: 'plenoabierto',
                               cached_votes_up: rand(1000))
-  puts "#{proposal.title}"
 end
 
 puts " ✅"
@@ -610,7 +612,8 @@ Proposal.last(3).each do |proposal|
                           created_at: rand((Time.current - 1.week) .. Time.current))
 end
 
-puts "Creating Probe and ProbeOptions for Town Planning project"
+puts " ✅"
+print "Creating Probe and ProbeOptions for Town Planning project"
 town_planning = Probe.create(codename: "town_planning")
 town_planning_options = [
 ["Balle Malle Hupe und Artur", "003"],
@@ -630,7 +633,8 @@ town_planning_options.each do |name, code|
   ProbeOption.create(probe_id: town_planning.id, name: name, code: code)
 end
 
-puts "Creating Probe and ProbeOptions for Plaza de España project"
+puts " ✅"
+print "Creating Probe and ProbeOptions for Plaza de España project"
 plaza = Probe.create(codename: "plaza")
 plaza_options = [
 ["MÁS O MENOS", "01"],
@@ -708,7 +712,8 @@ plaza_options.each do |option_name, option_code|
   ProbeOption.create(probe_id: plaza.id, name: option_name, code: option_code)
 end
 
-puts "Commenting probe options"
+puts " ✅"
+print "Commenting probe options"
 
 (1..100).each do |i|
   author = User.reorder("RANDOM()").first
@@ -719,7 +724,8 @@ puts "Commenting probe options"
                   body: Faker::Lorem.sentence)
 end
 
-puts "Commenting Comments"
+puts " ✅"
+print "Commenting Comments"
 
 (1..300).each do |i|
   author = User.reorder("RANDOM()").first
@@ -732,7 +738,8 @@ puts "Commenting Comments"
                   parent: parent)
 end
 
-puts "Creating Proposals for Human Right Proceeding"
+puts " ✅"
+print "Creating Proposals for Human Right Proceeding"
 
 subproceedings = ["Derecho a una vida sin violencia machista",
 "Derecho a contar con una policía municipal democrática y eficaz",
@@ -769,7 +776,6 @@ tags = Faker::Lorem.words(25)
                               terms_of_service: "1",
                               proceeding: "Derechos Humanos",
                               sub_proceeding: subproceedings.sample)
-  puts "    #{proposal.title}"
 end
 
 puts " ✅"
