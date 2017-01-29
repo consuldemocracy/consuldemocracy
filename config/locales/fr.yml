@@ -217,7 +217,7 @@ fr:
       management : Gestion
       available_locales  : Langues disponibles
       proposal_ballot  : Vote
-      budgets  : Budget participatif
+      budgets: Budget participatif
       external_link_opendata_url : /opendata
 
 
@@ -408,23 +408,119 @@ fr:
 
 
 
-  activemodel:
-    attributes:
-      verification:
-        email:
-          recipient: Courriel
-        residence:
-          date_of_birth: Date de naissance
-          document_number: Numéro du document (en incluant les lettres)
-          document_type: Type de document
-          postal_code: Code postal
-        sms:
-          confirmation_code: Code de confirmation
-          phone: Téléphone
-    models:
-      verification:
-        residence: Résidence
-        sms: SMS
+  shared:
+    "yes": "Oui"
+    "no": "Non"
+    advanced_search:
+      author_type: Par catégorie d'auteur
+      author_type_blank: Sélectionner une catégorie
+      date: Par date
+      date_1: Dernières 24 heures
+      date_2: La semaine passée
+      date_3: Le mois passé
+      date_4: L'année passée
+      date_5: La période de votre choix
+      date_placeholder: JJ/MM/AAAA
+      date_range_blank: Choisir une date
+      from: Depuis
+      general: Avec le texte
+      general_placeholder: "Écrire le texte"
+      search: Filtre
+      title: Recherche avancée
+      to: Pour
+    author_info:
+      author_deleted: Utilisateur effacé
+    back: Retour
+    check: Sélectionner
+    check_all: Tous
+    check_none: Aucune
+    collective: Collective
+    flag: Signaler comme inapproprié
+    hide : Cacher
+    print:
+      print_button: Imprimer cette info
+    search: Rechercher
+    show: Voir
+    suggest:
+      debate:
+        found:
+          one: "TODO - Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
+          other: "TODO - Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
+        message: "TODO - Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'"
+        see_all: "TODO - Ver todos"
+      proposal:
+        found:
+          one: "TODO - Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
+          other: "TODO - Existen propuestas con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
+        message: "TODO - Estás viendo %{limit} de %{count} propuestas que contienen el término '%{query}'"
+        see_all: "TODO - Ver todas"
+    tags_cloud:
+      tags: Tendance
+      districts: Districts
+      districts_list: Liste des districts
+      categories: Catégories
+    target_blank_html: (ouvrir le lien dans une nouvelle fenêtre)
+    you_are_in: "Vous êtes dans"
+    unflag: Désignaler
+    outline:
+      debates  : Débats
+      proposals  : "Propositions"
+      searcher : "Chercheur"
+      budget : Budget participatif
+  social:
+    blog: Blog
+    facebook: Facebook
+    twitter: Twitter
+    youtube: YouTube
+  spending_proposals:
+    form:
+      association_name_label: Si vous proposez un nom d'association ou de collectif, ajoutez le ici
+      association_name: Nom de l'association
+      description: Description
+      external_url: Lien vers de la documentation supplémentaire
+      geozone: Périmètre de l'opération
+      submit_buttons:
+        create: Créer
+        new: Créer
+      title: Titre de la proposition de dépense
+    index:
+      title: Budget participatif
+      unfeasible: Projets d'investissement infaisables
+      by_geozone: "Projets d'investissement délimités : %{geozone}"
+      search_form:
+        button: Rechercher
+        placeholder: Projets d'investissement...
+        title: Rechercher
+      search_results:
+        one: " contenant le terme '%{search_term}'"
+        other: "contenant le terme '%{search_term}'"
+      sidebar:
+        geozones: Délimitation de l'opération
+        feasibility: Faisabilité
+        unfeasible: Infaisable
+      start_spending_proposal: Créer un projet d'investissement
+    new:
+      back_link: Revenir en arrière
+      more_info: Comment le budget participatif marche ?
+      recommendation_one: Faire référence à une action budgétaire est obligatoire pour la proposition.
+      recommendations_title: Comment cŕeer une proposition de dépense
+      recommendation_three: N'hésitez pas à détailler votre proposition pour que l'équipe d'analyse la comprenne
+      recommendation_two: Toute proposition ou commentaire qui appelle à une action illégale sera supprimée.
+      start_new: Créer la proposition de dépenses
+    show:
+      author_deleted  : Utilisateur supprimé
+      code  : "Code de la proposition :"
+      share : Partagez
+    wrong_price_format : Seulement les nombres entiers
+    spending_proposal:
+      spending_proposal  : Projet d'investissement
+      supports :
+        one: "1 soutien"
+        other: "%{count} soutiens"
+        zero: "Aucun soutiens"
+      already_supported  : Vous êtes déjà un soutien de ce projet. Partagez le !
+      support_title  : Soutenez ce projet
+      support  : Soutenez
   activerecord:
     attributes:
       comment:
@@ -1425,15 +1521,13 @@ fr:
         how_it_works: Comment marche le portail Gouvernement ouvert ?
         how_to_use: Utiliser dans votre collectivité
         participation: Participation et transparence à Madrid - les nouvelles à venir
-        participation_facts: Faits à propos de la participation citoyenne et de la
-          démocratie directe
+        participation_facts: Faits à propos de la participation citoyenne et de la démocratie directe
         participation_world: Participation citoyenne directe dans le monde
         proposals_info: Comment marche les propositions citoyennes ?
         signature_sheet: Feuille de signature
         spending_proposals_info: Comment marche le budget participatif ?
     opendata:
-      slogan: Nous travaillons sur le nouveau portail Open Data de la Ville de
-        Madrid, tandis que vous pouvez toujours visiter la version actuelle.
+      slogan: Nous travaillons sur le nouveau portail Open Data de la Ville de Madrid, tandis que vous pouvez toujours visiter la version actuelle.
       title: Open Data
     privacy: Vie privée
     titles:
@@ -1457,10 +1551,8 @@ fr:
       debates: Débats
       spending_proposals: Propositions de dépenses
     max_ratio_anon_votes_on_debates: Ratio maximum de votes anonymes par débat
-    max_votes_for_debate_edit: Nombre de votes à partir duquel un débat ne peut plus
-      être modifié
-    max_votes_for_proposal_edit: Nombre de votes à partir duquel une proposition ne
-      peut plus être modifiée
+    max_votes_for_debate_edit: Nombre de votes à partir duquel un débat ne peut plus être modifié
+    max_votes_for_proposal_edit: Nombre de votes à partir duquel une proposition ne peut plus être modifiée
     official_level_1_name: Niveau 1 personne officielle
     official_level_2_name: Niveau 2 personne officielle
     official_level_3_name: Niveau 3 personne officielle
@@ -1468,63 +1560,9 @@ fr:
     official_level_5_name: Niveau 5 personne officielle
     per_page_code: Code à inclure dans chaque page
     proposal_code_prefix: Préfixe pour les codes de propositions
-    votes_for_proposal_success: Nombre de votes nécessaires pour l'approbation d'une
-      proposition
-  shared:
-    advanced_search:
-      author_type: Par catégorie d'auteur
-      author_type_blank: Sélectionner une catégorie
-      date: Par date
-      date_1: Dernières 24 heures
-      date_2: La semaine passée
-      date_3: Le mois passé
-      date_4: L'année passée
-      date_5: La période de votre choix
-      date_placeholder: JJ/MM/AAAA
-      date_range_blank: Choisir une date
-      from: Depuis
-      general: Avec le texte
-      general_placeholder: "Écrire le texte"
-      search: Filtre
-      title: Recherche avancée
-      to: Pour
-    author_info:
-      author_deleted: Utilisateur effacé
-    back: Retour
-    check: Sélectionner
-    check_all: Tous
-    check_none: Aucune
-    collective: Collective
-    flag: Signaler comme inapproprié
-    print:
-      print_button: Imprimer cette info
+    votes_for_proposal_success: Nombre de votes nécessaires pour l'approbation d'une proposition
 
-    show: Voir
-    suggest:
-      debate:
-        found:
-          one:
-          other:
-        message:
-        see_all:
-      proposal:
-        found:
-          one:
-          other:
-        message:
-        see_all:
-    tags_cloud:
-      tags: Tendance
-      districts: Districts
-      districts_list: Liste des districts
-      categories: Catégories
-    target_blank_html:
-    unflag: Désignaler
-  social:
-    blog: Blog
-    facebook: Facebook
-    twitter: Twitter
-    youtube: YouTube
+
   social_share_button:
     baidu: Baidu.com
     delicious: Delicious
@@ -1543,28 +1581,8 @@ fr:
     tumblr: Tumblr
     twitter: Twitter
     weibo: Sina Weibo
-  spending_proposals:
-    form:
-      description: Description
-      external_url: Lien vers de la documentation supplémentaire
-      geozone: Périmètre de l'opération
-      submit_buttons:
-        create: Créer
-        new: Créer
-      title: Titre de la proposition de dépense
-    index:
-      title: Budget participatif
-    new:
-      back_link: Revenir en arrière
-      more_info: Comment le budget participatif marche ?
-      recommendation_one: Faire référence à une action budgétaire est obligatoire
-        pour la proposition.
-      recommendations_title: Comment cŕeer une proposition de dépense
-      recommendation_three: N'hésitez pas à détailler votre proposition pour que l'équipe
-        d'analyse la comprenne
-      recommendation_two: Toute proposition ou commentaire qui appelle à une action
-        illégale sera supprimée.
-      start_new: Créer la proposition de dépenses
+
+
   support:
     array:
       last_word_connector: ", et"
@@ -1801,57 +1819,8 @@ fr:
 
 
 
-  spending_proposals:
-    wrong_price_format : Seulement les nombres entiers
-    form.association_name  : Nom de l'association
-    form.association_name_label  : Si vous proposez un nom d'association ou de collectif, ajoutez le ici
-    index:
-      sidebar:
-        geozones : Délimitation de l'opération
-        feasibility  : Faisabilité
-        unfeasible : Infaisable
-      unfeasible : Projets d'investissement infaisables
-      by_geozone : "Projets d'investissement délimités : %{geozone}"
-      search_results :
-        one: " contenant le terme '%{search_term}'"
-        other: "contenant le terme '%{search_term}'"
-      start_spending_proposal  : Créer un projet d'investissement
-      search_form:
-        button : Rechercher
-        placeholder  : Projets d'investissement...
-        title  : Rechercher
-    spending_proposal:
-      spending_proposal  : Projet d'investissement
-      supports :
-        one: "1 soutien"
-        other: "%{count} soutiens"
-        zero: "Aucun soutiens"
-      already_supported  : Vous êtes déjà un soutien de ce projet. Partagez le !
-      support_title  : Soutenez ce projet
-      support  : Soutenez
-    show:
-      author_deleted  : Utilisateur supprimé
-      code  : "Code de la proposition :"
-      share : Partagez
-  shared:
-    you_are_in: "Vous êtes dans"
-    yes: "Oui"
-    no: "Non"
-    search: Rechercher
-    hide : Cacher
-    outline:
-      debates  : Débats
-      proposals  : "Propositions"
-      searcher : "Chercheur"
-      budget : Budget participatif
-    target_blank_html  : (ouvrir le lien dans une nouvelle fenêtre)
-    suggest:
-      debate:
-        message : Vous voyez %{limit} sur %{count} débats contenant le terme '%{query}'
-        see_all : Voir tout
-      proposal:
-        message : Vous voyez %{limit} sur %{count} propositions contenant le terme '%{query}'
-        see_all : "Voir tout"
+
+
   users:
     show:
       deleted_budget_investment  : Cet investissement a été supprimé
@@ -1958,3 +1927,84 @@ fr:
   invisible_captcha:
     sentence_for_humans : Si vous êtes humain, ignorez ce champ
     timestamp_error_message : Désolé, c'était trop rapide ! Envoyez à nouveau s'il vous plaît.
+
+
+
+
+
+
+
+    # suggest:
+    #   debate:
+    #     message : Vous voyez %{limit} sur %{count} débats contenant le terme '%{query}'
+    #     see_all : Voir tout
+    #   proposal:
+    #     message : Vous voyez %{limit} sur %{count} propositions contenant le terme '%{query}'
+    #     see_all : "Voir tout"
+
+
+
+
+  activemodel:
+    attributes:
+      verification:
+        email:
+          recipient: Courriel
+        residence:
+          date_of_birth: Date de naissance
+          document_number: Numéro du document (en incluant les lettres)
+          document_type: Type de document
+          postal_code: Code postal
+        sms:
+          confirmation_code: Code de confirmation
+          phone: Téléphone
+    models:
+      verification:
+        residence: Résidence
+        sms: SMS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
