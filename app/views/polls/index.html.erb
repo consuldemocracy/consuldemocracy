@@ -28,10 +28,12 @@
             </ul>
           </div>
           <div class="small-12 medium-6 column text-right">
-            <%= link_to t("polls.index.button"),
-                        poll,
-                        class: "button",
-                        title: t("polls.index.button") + ": " + (poll.name) %>
+            <% if can? :answer, poll %>
+              <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
+            <% else %>
+              <%= render 'polls/reasons_for_not_answering', poll: poll %>
+              <%= link_to t("polls.index.view_button"), poll, class: "button info small" %>
+            <% end %>
           </div>
         </div>
       </div>
