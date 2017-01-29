@@ -30,3 +30,26 @@ fr:
       sorry: "Nos excuse de l'inconvenient, nous vous remercions de votre participation précieux."
       subject: "Votre projet d'investissement '%{code}' a était signaler infaissable."
       unfeasible_html: "De la Ville de Madrid, nous vous remercions de votre participation dans <strong>le budget participatif de la ville de Madrid</strong>. Nous regrettons de vous informer que votre proposition <strong>'%{title}'</strong> n'a pas pu être retenu dans cette processus participatif pour la raison suivante:"
+    direct_message_for_receiver:
+      subject : Vous avez un nouveau message privé
+      reply : Répondre à %{sender}
+      unsubscribe : Si vous ne voulez pas recevoir de messages instantanés, visitez %{account} et décochez 'Recevoir des mails à propos des messages instantanés'.
+      unsubscribe_account : Mon compte
+    direct_message_for_sender:
+      subject : Vous avez envoyé un message privé
+      title_html  : "Vous avez envoyé un message privé à <strong>%{receiver}</strong> contenant :"
+    proposal_notification_digest:
+      title  : "Proposition de notifications sur %{org_name}"
+      info : "Voici les nouvelles notifications qui ont été publiées par les auteurs de la proposition que vous avez soutenu dans %{org_name}"
+      share  : Partager la proposition
+      comment  : Commenter la proposition
+      unsubscribe  : Si vous ne voumez pas recevoir de notifications sur les propositions, visit %{account} et décochez 'Recevoir un résumé des notifications de propositions
+      unsubscribe_account  : Mon compte
+    user_invite:
+      subject : Invitation à %{org_name}
+      title : Bienvenue à %{org}
+      text  : "Merci d'avoir postulé pour rejoindre %{org} ! Dans quelques instants vous choisir votre ville, remplissez simplement le formulaire ci-dessous :"
+      button  : Complétez l'enregistrement
+      ignore  : Si vous n'avez pas demandé cette invitation, pas d'inquiétude, vous pouvez ignorer cet email.
+      thanks  : "Merci beaucoup."
+    no_reply  : Ce message a été envoyé depuis une adresse mail qui n'accepte pas les réponses.

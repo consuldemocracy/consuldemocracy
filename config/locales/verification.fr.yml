@@ -72,6 +72,9 @@ fr:
         terms: Les conditions d'utilisation et d'accès
         title: Vérifier la résidence
         verify_residence: Vérifier la résidence
+        document_number_help_title : Aide
+        document_number_help_text_html : "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Carte de résidence</strong>: X1234567P"
+        accept_terms_text_title  : J'accepte les conditions d'accès au recensement
     sms:
       create:
         flash:
@@ -115,3 +118,4 @@ fr:
         phone_title: Téléphone
         title: Information disponible
         use_another_phone: Utiliser un autre téléphone
+

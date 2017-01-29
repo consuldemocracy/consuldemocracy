@@ -34,8 +34,6 @@ fr:
           submit_button: Save changes
       errors:
         form:
-      errors:
-        form:
           error:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'

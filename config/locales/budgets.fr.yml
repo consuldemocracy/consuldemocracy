@@ -22,6 +22,8 @@ fr:
     groups:
       show:
         title : Sélectionnez une option
+        unfeasible_title: Propositions invalides
+        unfeasible: Voir les propositions invalides
     index:
       title : Budgets participatifs
     investissements:
@@ -59,9 +61,9 @@ fr:
           not_logged_in : Pour créer un nouveau budget d'investissement vous devez %{sign_in} ou %{sign_up}
           sign_in : Identification
           sign_up : Inscription
-        title : Budgétisation participative
-        unfeasible  : Projets d'investissement infaisable
-        unfeasible_text : La proposition doit remplir plusieurs conditions (légalité, être concrete, être la responsabilité de la ville, ne pas exceder la limite du budget; %"{definitions}) pour être déclarée viable et atteindre la phase finale de vote. Toute proposition ne remplissant pas ces conditions est marquée comme "infaisable" et publiée dans la liste ci-contre, avec son rapport d'infaisablité.
+        title: Budgétisation participative
+        unfeasible: Projets d'investissement infaisable
+        unfeasible_text: La proposition doit remplir plusieurs conditions (légalité, être concrete, être la responsabilité de la ville, ne pas exceder la limite du budget; %"{definitions}) pour être déclarée viable et atteindre la phase finale de vote. Toute proposition ne remplissant pas ces conditions est marquée comme "infaisable" et publiée dans la liste ci-contre, avec son rapport d'infaisablité.
         unfeasible_text_definitions : Voir définition ci-contre
       investment:
         already_added  : Vous avez déjà ajouté ce projet d'investissement
@@ -97,3 +99,5 @@ fr:
     show:
       phase  : Phase actuelle
       group  : Groupe
+      unfeasible_title: Propositions invalides
+      unfeasible: Voir les propositions invalides

@@ -212,6 +212,28 @@ fr:
       see_all: Voir les propositions
       spending_proposals: Propositions de dépense
 
+      notifications  : Notifications
+      valuation  : Evaluation
+      management : Gestion
+      available_locales  : Langues disponibles
+      proposal_ballot  : Vote
+      budgets  : Budget participatif
+      external_link_opendata_url : /opendata
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -351,6 +373,7 @@ fr:
       supports_necessary: "%{number} soutiens nécessaires"
       support_title: Soutenir cette proposition
       total_percent: 100%
+      archived : Cette proposition a été archivée et ne peut plus recevoir de soutiens.
     show:
       author_deleted: Utilisateur effacé
       code: Code de la proposition
@@ -363,16 +386,25 @@ fr:
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
       login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
       notifications_tab: Notifications
-      retired_warning:
-      retired_warning_link_to_explanation:
       retired: Proposition retirée par l'auteur
       share: Partager
       send_notification: Envoyer une notification
       no_notifications: Cette proposition n'a aucune notification
+      retired_warning  : L'auteur ne souhaite plus recevoir de soutiens pour cette proposition.
+      retired_warning_link_to_explanation  : Lisez la description avant de voter.
     update:
       form:
         submit_button: Sauvegarder des changements
 
+    retire_form:
+      warning : Si vous retirez cette proposition, elle pourra toujours recevoir des soutiens, mais sera retirée de la liste des propositions et un message sera affiché pour indiquer aux autilisateurs que l'auteur ne souhaite plus recevoir de soutiens pour cette proposition.
+      retired_reason_label  : Raison du retrait de la proposition
+      retired_reason_blank  : Choisissez une option
+      retired_explanation_label : Explication
+      retired_explanation_placeholder : Expliquez rapidement pourquoi vous souhaitez retirer cette proposition.
+    index:
+      orders:
+        archival_date  : Archivé(e)
 
 
 
@@ -1046,6 +1078,7 @@ fr:
     user: Compte
   geozones:
     none: Toute la ville
+    all: Toutes les zones
   helpers:
     page_entries_info:
       entry:
@@ -1743,12 +1776,17 @@ fr:
       user_permission_verify_my_account: Verifier mon compte
       user_permission_votes: Participer au vote final
 
-  flash.actions.update.budget_investment: Projet d'investissement mis à jour avec succès.
-  flash.actions.create.signature_sheet: Fiche de signature créée avec succès
-  flash.actions.create.budget_investment: Investissement budgétaire créé avec succès.
-  flash.actions.create.direct_message: Votre message a été envoyé avec succès.
-  flash.actions.create.proposal_notification: Votre message a été envoyé correctement.
-  flash.actions.destroy.budget_investment: Projet d'investissement supprimé avec succès.
+  flash:
+    actions:
+      update:
+        budget_investment: Projet d'investissement mis à jour avec succès.
+      create:
+        signature_sheet: Fiche de signature créée avec succès
+        budget_investment: Investissement budgétaire créé avec succès.
+        direct_message: Votre message a été envoyé avec succès.
+        proposal_notification: Votre message a été envoyé correctement.
+      destroy:
+        budget_investment: Projet d'investissement supprimé avec succès.
 
 
 
@@ -1757,253 +1795,166 @@ fr:
 
 
 
-  verification.residence.new.document_number_help_title : Aide
-  # verification.residence.new.document_number_help_text_html : <strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Carte de résidence</strong>: X1234567P
-  verification.residence.new.accept_terms_text_title  : J'accepte les conditions d'accès au recensement
-  management.budget_investments.alert.unverified_user : L'utilisateur n'est pas vérifié
-  management.budget_investments.create  : Créer un budget d'investissement
-  management.budget_investments.filters.unfeasible  : Investissement irréalisable
-  management.budget_investments.filters.heading : Concept
-  management.budget_investments.search_results  :
-    one: "contenant le terme '%{search_term}'"
-    other: "contenant le terme '%{search_term}'"
-  management.budget_investments.print.print_button  : Impression
-  management.menu.create_budget_investment  : Créer un budget d'investissement
-  management.menu.support_budget_investments  : Supportez les investissements budgétaires
-  management.menu.print_budget_investments  : Imprimer Investissements budgétaires
-  management.menu.user_invites  : Invitations de l'utilisateur
-  management.budgets.create_new_investment  : Créer un nouvel investissement
-  management.budgets.print_investments  : Imprimer Investissements budgétaires
-  management.budgets.support_investments  : Supportez les investissements budgétaires
-  management.print.budget_investments_info : 'Participez à http: //url.consul'
-  management.print.budget_investments_note  : Le budget participatif sera affecté à l'investissement budgétaire le plus voté.
-  management.document_verifications.link  : Consul
-  management.user_invites.create.title  : Invitation de l'utilisateur
-  management.user_invites.create.success_html : <strong>%{count} invitations</strong> ont été envoyées.
-  management.user_invites.new.title : Invitation utilisateur
-  management.user_invites.new.label : Courriels
-  management.user_invites.new.info  : Renseignez les adresses séparées par des virgules (',')
-  management.user_invites.new.submit  : Envoyer les invitations
-  geozones.all  : Toutes les zones
-  proposals.show.retired_warning  : L'auteur ne souhaite plus recevoir de soutiens pour cette proposition.
-  proposals.show.retired_warning_link_to_explanation  : Lisez la description avant de voter.
-  proposals.proposal.archived : Cette proposition a été archivée et ne peut plus recevoir de soutiens.
-  proposals.retire_form.warning : Si vous retirez cette proposition, elle pourra toujours recevoir des soutiens, mais sera retirée de la liste des propositions et un message sera affiché pour indiquer aux autilisateurs que l'auteur ne souhaite plus recevoir de soutiens pour cette proposition.
-  proposals.retire_form.retired_reason_label  : Raison du retrait de la proposition
-  proposals.retire_form.retired_reason_blank  : Choisissez une option
-  proposals.retire_form.retired_explanation_label : Explication
-  proposals.retire_form.retired_explanation_placeholder : Expliquez rapidement pourquoi vous souhaitez retirer cette proposition.
-  proposals.index.orders.archival_date  : Archivé(e)
-  valuation.budget_investments.notice.valuate : Dossier mis à jour
-  valuation.budget_investments.index.headings_filter_all  : Tous les en-têtes
-  valuation.budget_investments.index.no_valuators_assigned  : Aucun évaluateur assigné
-  valuation.budget_investments.index.valuators_assigned :
-    one: "évaluateur assigné"
-    other: "%{count} évaluateurs assignés"
-  valuation.budget_investments.index.title  : Projets d'investissement
-  valuation.budget_investments.index.assigned_to  : Assigné à %{valuator}
-  valuation.budget_investments.index.table_id : "index"
-  valuation.budget_investments.index.table_title  : Titre
-  valuation.budget_investments.index.table_heading_name : "En-tête"
-  valuation.budget_investments.index.table_actions  : Actions
-  valuation.budget_investments.index.edit : Editer le dossier
-  valuation.budget_investments.index.filters.valuation_open : Ouvrir
-  valuation.budget_investments.index.filters.valuating  : En cours d'évaluation
-  valuation.budget_investments.index.filters.valuation_finished : Evaluation terminée
-  valuation.budget_investments.show.price : Prix
-  valuation.budget_investments.show.currency  : €
-  valuation.budget_investments.show.undefined : Indéfini
-  valuation.budget_investments.show.price_first_year  : Coût durant la première année
-  valuation.budget_investments.show.duration  : Durée
-  valuation.budget_investments.show.feasibility : Faisabilité
-  valuation.budget_investments.show.valuation_finished  : Evaluation terminée
-  valuation.budget_investments.show.internal_comments : Commentaires internes
-  valuation.budget_investments.show.title : Projet d'investissement
-  valuation.budget_investments.show.info  : Info auteur
-  valuation.budget_investments.show.by  : Envoyé par
-  valuation.budget_investments.show.heading : "En-tête"
-  valuation.budget_investments.show.sent  : Envoyé à
-  valuation.budget_investments.show.responsibles  : Responsables
-  valuation.budget_investments.show.assigned_admin  : Administrateur assigné
-  valuation.budget_investments.show.assigned_valuators  : Evaluateurs assignés
-  valuation.budget_investments.show.dossier : Dossier mis à jour
-  valuation.budget_investments.show.edit_dossier  : Editer le dossier
-  valuation.budget_investments.show.back  : Retour
-  valuation.budget_investments.show.feasible  : Faisable
-  valuation.budget_investments.show.unfeasible  : Infaisable
-  valuation.budget_investments.edit.dossier : Dossier
-  valuation.budget_investments.edit.feasibility : Faisabilité
-  valuation.budget_investments.edit.undefined_feasible  : En attente
-  valuation.budget_investments.edit.feasible  : Faisable
-  valuation.budget_investments.edit.unfeasible  : Pas faisable
-  valuation.budget_investments.edit.feasible_explanation_html : Explication de la faisabilité
-  valuation.budget_investments.edit.price_html  : Prix (%{currency})
-  valuation.budget_investments.edit.price_first_year_html : Coût durant la première année (%{currency})
-  valuation.budget_investments.edit.price_explanation_html  : Explication du prix
-  valuation.budget_investments.edit.duration_html : Durée
-  valuation.budget_investments.edit.valuation_finished  : "Evaluation terminée"
-  valuation.budget_investments.edit.internal_comments_html  : Commentaires internes
-  valuation.budget_investments.edit.save  : Sauvegarder les changements
-  valuation.menu.budgets  : Budgets participatifs
-  valuation.budgets.index.title : Budgets participatifs
-  valuation.budgets.index.table_name  : Nom
-  valuation.budgets.index.table_phase : Phase
-  valuation.budgets.index.table_assigned_investments_valuation_open : Projets d'investissement assigné avec évaluation ouverte
-  valuation.budgets.index.table_actions : Actions
-  valuation.budgets.index.evaluate  : Evaluer
-  valuation.budgets.index.filters.current : Ouvrir
-  valuation.budgets.index.filters.finished  : "Terminé"
 
 
 
 
 
-  spending_proposals.wrong_price_format : Seulement les nombres entiers
-  spending_proposals.form.association_name  : Nom de l'association
-  spending_proposals.form.association_name_label  : Si vous proposez un nom d'association ou de collectif, ajoutez le ici
-  spending_proposals.index.sidebar.geozones : Délimitation de l'opération
-  spending_proposals.index.sidebar.feasibility  : Faisabilité
-  spending_proposals.index.sidebar.unfeasible : Infaisable
-  spending_proposals.index.unfeasible : Projets d'investissement infaisables
-  spending_proposals.index.by_geozone : "Projets d'investissement délimités : %{geozone}"
-  spending_proposals.index.search_results :
-    one: " contenant le terme '%{search_term}'"
-    other: "contenant le terme '%{search_term}'"
-  spending_proposals.index.start_spending_proposal  : Créer un projet d'investissement
-  spending_proposals.index.search_form.button : Rechercher
-  spending_proposals.index.search_form.placeholder  : Projets d'investissement...
-  spending_proposals.index.search_form.title  : Rechercher
-  spending_proposals.spending_proposal.spending_proposal  : Projet d'investissement
-  spending_proposals.spending_proposal.supports :
-    one: "1 soutien"
-    other: "%{count} soutiens"
-    zero: "Aucun soutiens"
-  spending_proposals.spending_proposal.already_supported  : Vous êtes déjà un soutien de ce projet. Partagez le !
-  spending_proposals.spending_proposal.support_title  : Soutenez ce projet
-  spending_proposals.spending_proposal.support  : Soutenez
-  spending_proposals.show.author_deleted  : Utilisateur supprimé
-  spending_proposals.show.code  : "Code de la proposition :"
-  spending_proposals.show.share : Partagez
-  shared.you_are_in : Vous êtes dans
-  shared.yes  : Oui
-  shared.no : Non
-  shared.search : Rechercher
-  shared.hide : Cacher
-  shared.outline.debates  : Débats
-  shared.outline.proposals  : "Propositions"
-  shared.outline.searcher : "Chercheur"
-  shared.outline.budget : Budget participatif
-  shared.target_blank_html  : (ouvrir le lien dans une nouvelle fenêtre)
-  shared.suggest.debate.message : Vous voyez %{limit} sur %{count} débats contenant le terme '%{query}'
-  shared.suggest.debate.see_all : Voir tout
-  shared.suggest.proposal.message : Vous voyez %{limit} sur %{count} propositions contenant le terme '%{query}'
-  shared.suggest.proposal.see_all : "Voir tout"
-  users.show.deleted_budget_investment  : Cet investissement a été supprimé
-  users.show.send_private_message : Envoyer un message privé
-  users.show.no_private_messages  : Cet utilisateur n'accepte pas les messages privés
-  users.show.filters.budget_investments :
-    one: "1 Investissement"
-    other: "%{count} Investissements"
-  users.direct_messages.new.title : Envoyer un message privé à %{receiver}
-  users.direct_messages.new.authenticate  : Vous devez %{signin} ou %{signup} pour continuer
-  users.direct_messages.new.signin  : Identification
-  users.direct_messages.new.signup  : Inscription
-  users.direct_messages.new.direct_messages_bloqued : Cet utilisateur a décidé de ne pas recevoir de message instantanés
-  users.direct_messages.new.title_label : Titre
-  users.direct_messages.new.body_label  : Message
-  users.direct_messages.new.submit_button : Envoyer un message
-  users.direct_messages.new.verified_only : Pour envoyer un message privé %{verify_account}
-  users.direct_messages.new.verify_account  : Vérifier votre compte
-  users.direct_messages.show.receiver : Message envoyé à %{receiver}
-  users.proposals.send_notification : Envoyer une notification
-  users.proposals.retired : Retirée
-  users.proposals.retire  : Retirer
-  mailers.direct_message_for_receiver.subject : Vous avez un nouveau message privé
-  mailers.direct_message_for_receiver.reply : Répondre à %{sender}
-  mailers.direct_message_for_receiver.unsubscribe : Si vous ne voulez pas recevoir de messages instantanés, visitez %{account} et décochez 'Recevoir des mails à propos des messages instantanés'.
-  mailers.direct_message_for_receiver.unsubscribe_account : Mon compte
-  mailers.direct_message_for_sender.subject : Vous avez envoyé un message privé
-  mailers.direct_message_for_sender.title_html  : "Vous avez envoyé un message privé à <strong>%{receiver}</strong> contenant :"
-  mailers.proposal_notification_digest.title  : "Proposition de notifications sur %{org_name}"
-  mailers.proposal_notification_digest.info : "Voici les nouvelles notifications qui ont été publiées par les auteurs de la proposition que vous avez soutenu dans %{org_name}"
-  mailers.proposal_notification_digest.share  : Partager la proposition
-  mailers.proposal_notification_digest.comment  : Commenter la proposition
-  mailers.proposal_notification_digest.unsubscribe  : Si vous ne voumez pas recevoir de notifications sur les propositions, visit %{account} et décochez 'Recevoir un résumé des notifications de propositions
-  mailers.proposal_notification_digest.unsubscribe_account  : Mon compte
-  mailers.user_invite.subject : Invitation à %{org_name}
-  mailers.user_invite.title : Bienvenue à %{org}
-  mailers.user_invite.text  : "Merci d'avoir postulé pour rejoindre %{org} ! Dans quelques instants vous choisir votre ville, remplissez simplement le formulaire ci-dessous :"
-  mailers.user_invite.button  : Complétez l'enregistrement
-  mailers.user_invite.ignore  : Si vous n'avez pas demandé cette invitation, pas d'inquiétude, vous pouvez ignorer cet email.
-  mailers.user_invite.thanks  : "Merci beaucoup."
-  mailers.no_reply  : Ce message a été envoyé depuis une adresse mail qui n'accepte pas les réponses.
-  account.show.email_digest_label : Recevoir un résumé des notifications de propositions
-  account.show.email_on_direct_message_label  : Recevoir des emails concernant les messages instantanés
-  account.show.official_position_badge_label  : "Monter le badge de position officielle"
-  votes.comment_unauthenticated : Vous devez %{signin} ou %{signup} pour voter.
-  votes.spending_proposals.not_logged_in  : Vous devez %{signinr} ou %{signup} pour continuer.
-  votes.spending_proposals.not_verified : Seul les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
-  votes.spending_proposals.organization : Les organisations ne peuvent pas voter
-  votes.spending_proposals.unfeasible : Les projets d'investissement infaisables ne peuvent être soutenus
-  votes.spending_proposals.not_voting_allowed : La phase de vote est close
-  form.accept_terms_title : J'accepte la politique de confidentialité et les termes des conditions d'utilisation
-  form.direct_message : message privé
-  form.proposal_notification  : Notification
-  form.budget/investment  : Investissement
-  form.verification/sms : téléphone
-  form.signature_sheet  : feuille de signature
-  omniauth.info_sign_in : "S'enregistrer avec :"
-  omniauth.twitter.name : Twitter
-  omniauth.facebook.name  : Facebook
-  omniauth.google_oauth2.name : Google
-  omniauth.or_fill  : "Ou bien remplir le formulaire suivant :"
-  omniauth.info_sign_up : "s'enregistrer avec :"
-  omniauth.finish_signup.username_warning : Du fait de la façon dont nous interagissons avec les réseaux sociaux, il est possible que votre nom d'utilisateur apparaissent comme 'déjà utilisé'. Si c'est le cas, choisissez-en un autre s'il vous plaît.
-  layouts.header.notifications  : Notifications
-  layouts.header.valuation  : Evaluation
-  layouts.header.management : Gestion
-  layouts.header.available_locales  : Langues disponibles
-  layouts.header.proposal_ballot  : Vote
-  layouts.header.budgets  : Budget participatif
-  layouts.header.external_link_opendata_url : /opendata
-  legislation.help.title  : Comment puis-je commenter ce document
-  legislation.help.text : Pour commenter ce document, vous devez %{sign_in} ou %{sign_up}. Choisissez ensuite le texte que vous voulez commenter et appuyez sur le bouton avec le crayon.
-  legislation.help.text_sign_in : "Indentification"
-  legislation.help.text_sign_up : Inscription
-  legislation.help.alt  : Selectionnez le texte que vous voulez commenter et appuyez sur le bouton avec le crayon.
-  proposal_ballots.title  : "Scrutins"
-  proposal_ballots.description_html : Les propositions citoyennes suivantes ont atteint le nombre de <strong>soutiens requis</strong> et seront votées.
-  proposal_ballots.date_title : Dates de participation
-  proposal_ballots.date : Nous annoncerons bientôt la date de vote de ces propositions.
-  proposal_ballots.nothing_to_vote  : Il n'y a rien à voter pour l'instant.
-  proposal_ballots.successfull  : Cette proposition a atteint le nombre de soutiens requis et sera votée au cours du %{voting}.
-  proposal_ballots.voting : prochain scrutin
-  proposal_ballots.featured_title : #ProchainScrutin
-  proposal_ballots.info : Nouvelles propositions ayant atteint la phase de vote.
-  proposal_ballots.button : Je veux décider
-  proposal_notifications.new.title  : Envoyer un message
-  proposal_notifications.new.info_about_receivers_html  : Ce message sera envoyé à <strong>%{count} personnes</strong> et sera visible sur %{proposal_page}.<br> Les messages ne sont pas envoyés immédiatements, les utilisateurs recevront périodiquement un email contenant toutes les notifications de propositions.
-  proposal_notifications.new.proposal_page  : la page de la proposition
-  proposal_notifications.new.title_label  : Titre
-  proposal_notifications.new.body_label : Message
-  proposal_notifications.new.submit_button  : Envoyer le message
-  proposal_notifications.show.back  : Retourner à mon activité
-  stats.index.visits  : Visites
-  stats.index.debates : Débats
-  stats.index.proposals : "Propositions"
-  stats.index.comments  : Commentaires
-  stats.index.proposal_votes  : Votes sur les propositions
-  stats.index.debate_votes  : Votes sur les débats
-  stats.index.comment_votes : Votes sur les commentaires
-  stats.index.votes : "Total des votes"
-  stats.index.verified_users  : Utilisateurs vérifiés
-  stats.index.unverified_users  : Utilisateurs non-vérifiés
-  welcome.verification.title  : Vérification du compte
-  welcome.verification.question : Avez-vous déjà un compte sur %{org_name}
-  welcome.verification.i_have_an_account  : J'ai déjà un compte
-  welcome.verification.i_dont_have_an_account : Je n'ai pas de compte
+
+  spending_proposals:
+    wrong_price_format : Seulement les nombres entiers
+    form.association_name  : Nom de l'association
+    form.association_name_label  : Si vous proposez un nom d'association ou de collectif, ajoutez le ici
+    index:
+      sidebar:
+        geozones : Délimitation de l'opération
+        feasibility  : Faisabilité
+        unfeasible : Infaisable
+      unfeasible : Projets d'investissement infaisables
+      by_geozone : "Projets d'investissement délimités : %{geozone}"
+      search_results :
+        one: " contenant le terme '%{search_term}'"
+        other: "contenant le terme '%{search_term}'"
+      start_spending_proposal  : Créer un projet d'investissement
+      search_form:
+        button : Rechercher
+        placeholder  : Projets d'investissement...
+        title  : Rechercher
+    spending_proposal:
+      spending_proposal  : Projet d'investissement
+      supports :
+        one: "1 soutien"
+        other: "%{count} soutiens"
+        zero: "Aucun soutiens"
+      already_supported  : Vous êtes déjà un soutien de ce projet. Partagez le !
+      support_title  : Soutenez ce projet
+      support  : Soutenez
+    show:
+      author_deleted  : Utilisateur supprimé
+      code  : "Code de la proposition :"
+      share : Partagez
+  shared:
+    you_are_in: "Vous êtes dans"
+    yes: "Oui"
+    no: "Non"
+    search: Rechercher
+    hide : Cacher
+    outline:
+      debates  : Débats
+      proposals  : "Propositions"
+      searcher : "Chercheur"
+      budget : Budget participatif
+    target_blank_html  : (ouvrir le lien dans une nouvelle fenêtre)
+    suggest:
+      debate:
+        message : Vous voyez %{limit} sur %{count} débats contenant le terme '%{query}'
+        see_all : Voir tout
+      proposal:
+        message : Vous voyez %{limit} sur %{count} propositions contenant le terme '%{query}'
+        see_all : "Voir tout"
+  users:
+    show:
+      deleted_budget_investment  : Cet investissement a été supprimé
+      send_private_message : Envoyer un message privé
+      no_private_messages  : Cet utilisateur n'accepte pas les messages privés
+      filters:
+        budget_investments :
+          one: "1 Investissement"
+          other: "%{count} Investissements"
+    direct_messages:
+      new:
+        title : Envoyer un message privé à %{receiver}
+        authenticate  : Vous devez %{signin} ou %{signup} pour continuer
+        signin  : Identification
+        signup  : Inscription
+        direct_messages_bloqued : Cet utilisateur a décidé de ne pas recevoir de message instantanés
+        title_label : Titre
+        body_label  : Message
+        submit_button : Envoyer un message
+        verified_only : Pour envoyer un message privé %{verify_account}
+        verify_account  : Vérifier votre compte
+      show.receiver : Message envoyé à %{receiver}
+    proposals:
+      send_notification : Envoyer une notification
+      retired : Retirée
+      retire  : Retirer
+  account:
+    show:
+      email_digest_label : Recevoir un résumé des notifications de propositions
+      email_on_direct_message_label  : Recevoir des emails concernant les messages instantanés
+      official_position_badge_label  : "Monter le badge de position officielle"
+  votes:
+    comment_unauthenticated : Vous devez %{signin} ou %{signup} pour voter.
+    spending_proposals:
+      not_logged_in  : Vous devez %{signinr} ou %{signup} pour continuer.
+      not_verified : Seul les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
+      organization : Les organisations ne peuvent pas voter
+      unfeasible : Les projets d'investissement infaisables ne peuvent être soutenus
+      not_voting_allowed : La phase de vote est close
+  form:
+    accept_terms_title : J'accepte la politique de confidentialité et les termes des conditions d'utilisation
+    direct_message : message privé
+    proposal_notification  : Notification
+    budget/investment  : Investissement
+    verification/sms : téléphone
+    signature_sheet  : feuille de signature
+  omniauth:
+    info_sign_in : "S'enregistrer avec :"
+    twitter.name : Twitter
+    facebook.name  : Facebook
+    google_oauth2.name : Google
+    or_fill  : "Ou bien remplir le formulaire suivant :"
+    info_sign_up : "s'enregistrer avec :"
+    finish_signup.username_warning : Du fait de la façon dont nous interagissons avec les réseaux sociaux, il est possible que votre nom d'utilisateur apparaissent comme 'déjà utilisé'. Si c'est le cas, choisissez-en un autre s'il vous plaît.
+  legislation:
+    help:
+      title  : Comment puis-je commenter ce document
+      text : Pour commenter ce document, vous devez %{sign_in} ou %{sign_up}. Choisissez ensuite le texte que vous voulez commenter et appuyez sur le bouton avec le crayon.
+      text_sign_in : "Indentification"
+      text_sign_up : Inscription
+      alt  : Selectionnez le texte que vous voulez commenter et appuyez sur le bouton avec le crayon.
+  proposal_ballots:
+    title : "Scrutins"
+    description_html : Les propositions citoyennes suivantes ont atteint le nombre de <strong>soutiens requis</strong> et seront votées.
+    date_title : Dates de participation
+    date : Nous annoncerons bientôt la date de vote de ces propositions.
+    nothing_to_vote  : Il n'y a rien à voter pour l'instant.
+    successfull  : Cette proposition a atteint le nombre de soutiens requis et sera votée au cours du %{voting}.
+    voting : prochain scrutin
+    featured_title : #ProchainScrutin
+    info : Nouvelles propositions ayant atteint la phase de vote.
+    button : Je veux décider
+  proposal_notifications:
+    new:
+      title: Envoyer un message
+      info_about_receivers_html  : Ce message sera envoyé à <strong>%{count} personnes</strong> et sera visible sur %{proposal_page}.<br> Les messages ne sont pas envoyés immédiatements, les utilisateurs recevront périodiquement un email contenant toutes les notifications de propositions.
+      proposal_page  : la page de la proposition
+      title_label  : Titre
+      body_label : Message
+      submit_button  : Envoyer le message
+    show:
+      back  : Retourner à mon activité
+  stats:
+    index:
+      visits  : Visites
+      debates : Débats
+      proposals : "Propositions"
+      comments  : Commentaires
+      proposal_votes  : Votes sur les propositions
+      debate_votes  : Votes sur les débats
+      comment_votes : Votes sur les commentaires
+      votes : "Total des votes"
+      verified_users  : Utilisateurs vérifiés
+      unverified_users  : Utilisateurs non-vérifiés
+  welcome:
+    verification:
+      title  : Vérification du compte
+      question : Avez-vous déjà un compte sur %{org_name}
+      i_have_an_account  : J'ai déjà un compte
+      i_dont_have_an_account : Je n'ai pas de compte
   notifications.index.proposal_notification :
     one: "Il y a une nouvelle notification sur"
     other: "Il y a %{count} nouvelles notifications sur"
-  invisible_captcha.sentence_for_humans : Si vous êtes humain, ignorez ce champ
-  invisible_captcha.timestamp_error_message : Désolé, c'était trop rapide ! Envoyez à nouveau s'il vous plaît.
+  invisible_captcha:
+    sentence_for_humans : Si vous êtes humain, ignorez ce champ
+    timestamp_error_message : Désolé, c'était trop rapide ! Envoyez à nouveau s'il vous plaît.
