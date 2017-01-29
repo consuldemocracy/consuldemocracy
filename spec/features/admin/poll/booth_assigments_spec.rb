@@ -20,6 +20,7 @@ feature 'Admin booths assignments' do
 
     fill_in 'search-booths', with: booth.name
     click_button 'Search'
+    expect(page).to have_content(booth.name)
 
     within('#search-booths-results') do
       click_link 'Assign booth'
