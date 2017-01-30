@@ -10,54 +10,54 @@ feature 'Votes' do
   feature 'Debates' do
     background { login_as(@manuela) }
 
-    scenario "Index shows user votes on debates" do
-
-      debate1 = create(:debate)
-      debate2 = create(:debate)
-      debate3 = create(:debate)
-      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
-
-      visit debates_path
-
-      within("#debates") do
-        within("#debate_#{debate1.id}_votes") do
-          within(".in-favor") do
-            expect(page).to have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
-
-          within(".against") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
-        end
-
-        within("#debate_#{debate2.id}_votes") do
-          within(".in-favor") do
-            expect(page).to_not have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
-
-          within(".against") do
-            expect(page).to_not have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
-        end
-
-        within("#debate_#{debate3.id}_votes") do
-          within(".in-favor") do
-            expect(page).to have_css("a.no-voted")
-            expect(page).to_not have_css("a.voted")
-          end
-
-          within(".against") do
-            expect(page).to have_css("a.voted")
-            expect(page).to_not have_css("a.no-voted")
-          end
-        end
-      end
-    end
+    # scenario "Index shows user votes on debates" do
+    #
+    #   debate1 = create(:debate)
+    #   debate2 = create(:debate)
+    #   debate3 = create(:debate)
+    #   create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
+    #   create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+    #
+    #   visit debates_path
+    #
+    #   within("#debates") do
+    #     within("#debate_#{debate1.id}_votes") do
+    #       within(".in-favor") do
+    #         expect(page).to have_css("a.voted")
+    #         expect(page).to_not have_css("a.no-voted")
+    #       end
+    #
+    #       within(".against") do
+    #         expect(page).to have_css("a.no-voted")
+    #         expect(page).to_not have_css("a.voted")
+    #       end
+    #     end
+    #
+    #     within("#debate_#{debate2.id}_votes") do
+    #       within(".in-favor") do
+    #         expect(page).to_not have_css("a.voted")
+    #         expect(page).to_not have_css("a.no-voted")
+    #       end
+    #
+    #       within(".against") do
+    #         expect(page).to_not have_css("a.no-voted")
+    #         expect(page).to_not have_css("a.voted")
+    #       end
+    #     end
+    #
+    #     within("#debate_#{debate3.id}_votes") do
+    #       within(".in-favor") do
+    #         expect(page).to have_css("a.no-voted")
+    #         expect(page).to_not have_css("a.voted")
+    #       end
+    #
+    #       within(".against") do
+    #         expect(page).to have_css("a.voted")
+    #         expect(page).to_not have_css("a.no-voted")
+    #       end
+    #     end
+    #   end
+    # end
 
     feature 'Single debate' do
 
@@ -299,16 +299,16 @@ feature 'Votes' do
     end
   end
 
-  scenario 'Not logged user trying to vote comments in debates', :js do
-    debate = create(:debate)
-    comment = create(:comment, commentable: debate)
-
-    visit comment_path(debate)
-    within("#comment_#{comment.id}") do
-      find("div.votes").hover
-      expect_message_you_need_to_sign_in_to_vote_comments
-    end
-  end
+  # scenario 'Not logged user trying to vote comments in debates', :js do
+  #   debate = create(:debate)
+  #   comment = create(:comment, commentable: debate)
+  #
+  #   visit comment_path(debate)
+  #   within("#comment_#{comment.id}") do
+  #     find("div.votes").hover
+  #     expect_message_you_need_to_sign_in_to_vote_comments
+  #   end
+  # end
 
   scenario 'Not logged user trying to vote comments in proposals', :js do
     proposal = create(:proposal)

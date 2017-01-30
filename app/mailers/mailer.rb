@@ -5,6 +5,10 @@ class Mailer < ApplicationMailer
   helper :mailer
   helper :users
 
+  def prueba
+    mail(to: 'ffaubell@fadrell.com', subject: 'pruebas')
+  end 
+
   def comment(comment)
     @comment = comment
     @commentable = comment.commentable

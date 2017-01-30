@@ -76,10 +76,30 @@ header {
   font-family: "Arvo Bold" !important;
 }
 .custom_item_2_subtitle {
-  color: #AE997E;
+  color: #AA7881;
   font-family: "Arvo Bold" !important;
 }
 .custom_item_3_subtitle {
-  color: #AE997E;
+  color: #78a0a0;
   font-family: "Arvo Bold" !important;
+}
+
+
+.background-principal {
+  display: table;
+  background-image: asset_url('principal.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  @include breakpoint(medium down) {
+    height: 380px;
+  }
+  @include breakpoint(large up) {
+    height: 540px;
+  }
+}
+
+.hijo {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }

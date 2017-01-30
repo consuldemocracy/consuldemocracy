@@ -47,7 +47,10 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
-        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        if user.budget_investments.includes(:budget )
+          can :create, Budget::Investment,               budget: { phase: "accepting" }
+        end
+        # can :create, Budget::Investment,               budget: { phase: "accepting" }
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can :vote, Budget::Investment,                 budget: { phase: "selecting" }

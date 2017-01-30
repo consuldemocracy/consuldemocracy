@@ -71,7 +71,7 @@ FactoryGirl.define do
     document_number
     document_type    "1"
     date_of_birth    Date.new(1980, 12, 31)
-    postal_code      "28013"
+    postal_code      "12003"
     terms_of_service '1'
 
     trait :invalid do

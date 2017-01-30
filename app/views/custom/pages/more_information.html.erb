@@ -1,54 +1,26 @@
 <% provide :title do %><%= t('pages.titles.more_information') %><% end %>
 
 <div class="row">
-  <div class="small-2 large-4 columns">
+  <div class="small-1 large-4 columns">
     <%= image_tag('auth_bg.png', class: 'float-left', alt: t("layouts.header.logo")) %>
   </div>
-  <div class="small-10 large-8 columns">
+  <div class="small-11 large-8 columns">
 
-    <div class="row">
-      <div class="small-4 large-4 columns"></div>
-      <div class="small-8 large-8 columns">
-        <h1 class="custom_item_1_title"><%= t('pages.more_information.item_1.title') %></h1>
+    <% (1..6).each do |i| %>
+      <div class="row">
+        <div class="small-3 large-3 columns"></div>
+        <div class="small-9 large-9 columns">
+          <h1 class="custom_item_<%= i %>_title"><%= t("pages.more_information.item_#{i}.title") %></h1>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="small-4 large-4 columns">
-        <p class="custom_item_1_subtitle"><%= t('pages.more_information.item_1.subt') %></p>
+      <div class="row">
+        <div class="small-3 large-3 columns">
+          <p class="custom_item_<%= i %>_subtitle"><%= t("pages.more_information.item_#{i}.subt") %></p>
+        </div>
+        <div class="small-9 large-9 columns">
+          <span><%= markdown t("pages.more_information.item_#{i}.text") %></span>
+        </div>
       </div>
-      <div class="small-8 large-8 columns">
-        <span><%= markdown t('pages.more_information.item_1.text') %></span>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-4 large-4 columns"></div>
-      <div class="small-8 large-8 columns">
-        <h1 class="custom_item_2_title"><%= t('pages.more_information.item_2.title') %></h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-4 large-4 columns">
-        <p class="custom_item_2_subtitle"><%= t('pages.more_information.item_2.subt') %></p>
-      </div>
-      <div class="small-8 large-8 columns">
-        <p><%= t('pages.more_information.item_2.text') %></p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-4 large-4 columns"></div>
-      <div class="small-8 large-8 columns">
-        <h1 class="custom_item_3_title"><%= t('pages.more_information.item_3.title') %></h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-4 large-4 columns">
-        <p class="custom_item_3_subtitle"><%= t('pages.more_information.item_3.subt') %></p>
-      </div>
-      <div class="small-8 large-8 columns">
-        <p><%= t('pages.more_information.item_3.text') %></p>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
