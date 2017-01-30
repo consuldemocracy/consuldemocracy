@@ -321,7 +321,6 @@ en:
         search_results: "Search results"
         no_search_results: "No results found."
         table_title: "Title"
-        table_summary: "Summary"
         table_assignment: "Assignment"
         table_name: "Name"
         table_location: "Location"
@@ -352,7 +351,6 @@ en:
         author: Author
         title: Title
         valid_answers: Valid answers
-        summary: Summary
         description: Description
         preview: View on website
     booths:

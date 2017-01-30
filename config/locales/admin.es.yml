@@ -321,7 +321,6 @@ es:
         search_results: "Resultados de la búsqueda"
         no_search_results: "No se han encontrado resultados."
         table_title: "Título"
-        table_summary: "Resumen"
         table_assignment: "Asignación"
         table_name: "Nombre"
         table_location: "Ubicación"
@@ -352,7 +351,6 @@ es:
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
-        summary: Resumen
         description: Descripción
         preview: Ver en la web
     booths:
