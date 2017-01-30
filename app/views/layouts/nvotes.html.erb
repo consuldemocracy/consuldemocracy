@@ -28,24 +28,10 @@
   <body>
     <h1 class="sr-only"><%= setting['org_name'] %></h1>
 
-    <div class="wrapper <%= yield (:wrapper_class) %>">
+    <div class="wrapper nvotes <%= yield (:wrapper_class) %>">
       <%# render 'layouts/header' %>
       <%= render 'layouts/ie_version_too_old' %>
       <%= render 'layouts/flash' %>
-
-      <ul>
-        <% @polls.each do |poll| %>
-          <li>
-            <%= link_to poll.name,
-                        new_officing_poll_nvote_path(poll),
-                        data: {no_turbolink: true} %>
-          </li>
-        <% end %>
-
-        <li>
-          <%= link_to "Terminar", thanks_officing_poll_nvotes_path %>
-        </li>
-      </ul>
 
       <%= yield %>
 

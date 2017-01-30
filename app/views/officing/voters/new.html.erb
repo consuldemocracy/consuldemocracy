@@ -5,9 +5,9 @@
 <%# if true#officer.has_tablet? %>
 
   <div class="small-12 medium-6 large-4">
-    <%= link_to "Votar con tablet",
+    <%= link_to t("nvotes.tablet"),
                   vote_with_tablet_officing_voter_path(@user),
-                  class: "button success expanded" %>
+                  class: "button expanded" %>
   </div>
 
 <%# else %>
@@ -40,4 +40,3 @@
   <% end %>
 
 <%# end %>
-

@@ -1,0 +1,13 @@
+<div class="small-12 medium-3 column">
+  <ul class="tabs vertical">
+    <% @polls.each do |poll| %>
+      <li class="<%= "is-active" if current_page?(new_officing_poll_nvote_path(poll.id)) %>">
+        <%= link_to poll.name,
+                    new_officing_poll_nvote_path(poll),
+                    data: {no_turbolink: true} %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to t("nvotes.finish"), thanks_officing_poll_nvotes_path, class: "button warning expanded" %>
+</div>

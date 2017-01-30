@@ -76,3 +76,9 @@ en:
     proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
     investment_title: "Proyecto de Presupuestos participativos"
     investment_info: "Decide a qué se destina una parte del presupuesto municipal."
+  nvotes:
+    thanks: "Thank you very much to participate!"
+    finish: "Finish voting"
+    officer_title: "Officer"
+    officer_message_html: "Thanks for your collaboration, <strong>give the device to Officer</strong>."
+    tablet: "Vote on tablet"
