@@ -22,6 +22,9 @@ FactoryGirl.define do
       sms_confirmation_code "1234"
       document_type "1"
       document_number
+      date_of_birth Date.new(1980, 12, 31)
+      gender "female"
+      geozone
     end
 
     trait :level_three do
@@ -452,6 +455,7 @@ FactoryGirl.define do
 
   factory :poll_voter, class: 'Poll::Voter' do
     poll
+    association :user, :level_two
 
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
@@ -470,7 +474,7 @@ FactoryGirl.define do
 
   factory :poll_answer, class: 'Poll::Answer' do
     association :question, factory: :poll_question
-    association :author, factory: [:user, :level_three]
+    association :author, factory: [:user, :level_two]
     answer { question.valid_answers.sample }
   end
 
@@ -484,6 +488,13 @@ FactoryGirl.define do
   factory :poll_nvote, class: 'Poll::Nvote' do
     user
     poll
+  end
+
+  factory :officing_residence, class: 'Officing::Residence' do
+    user
+    document_number
+    document_type    "1"
+    date_of_birth    Date.new(1980, 12, 31)
   end
 
   factory :organization do
@@ -552,6 +563,10 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code) { |n| "#{n}" }
     sequence(:census_code) { |n| "#{n}" }
+
+    trait :in_census do
+      census_code "01"
+    end
   end
 
   factory :forum do

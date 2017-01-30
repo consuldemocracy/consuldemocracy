@@ -109,7 +109,6 @@ geozones = [
 geozones.each_with_index do |geozone, i|
   Geozone.create(name: geozone[0], html_map_coordinates: geozone[1], external_code: i.ord, census_code: i.ord)
 end
-Geozone.create(name: "city")
 
 puts " ✅"
 print "Creating Users"
@@ -894,6 +893,15 @@ print "Commenting Poll Questions"
                   created_at: rand(question.created_at .. Time.current),
                   commentable: question,
                   body: Faker::Lorem.sentence)
+end
+
+puts " ✅"
+print "Creating Poll Voters"
+
+(1..10).each do
+  poll = Poll.all.sample
+  document_number = Faker::Number.number(10)
+  Poll::Voter.create!(poll: poll, document_number: document_number)
 end
 
 puts " ✅"

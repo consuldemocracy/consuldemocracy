@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127173553) do
+ActiveRecord::Schema.define(version: 20170128214244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -522,12 +522,14 @@ ActiveRecord::Schema.define(version: 20170127173553) do
     t.string   "gender"
     t.integer  "geozone_id"
     t.integer  "answer_id"
+    t.integer  "user_id"
     t.integer  "officer_assignment_id"
   end
 
   add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree
   add_index "poll_voters", ["poll_id", "document_number", "document_type"], name: "doc_by_poll", using: :btree
   add_index "poll_voters", ["poll_id"], name: "index_poll_voters_on_poll_id", using: :btree
+  add_index "poll_voters", ["user_id"], name: "index_poll_voters_on_user_id", using: :btree
 
   create_table "polls", force: :cascade do |t|
     t.string   "name"

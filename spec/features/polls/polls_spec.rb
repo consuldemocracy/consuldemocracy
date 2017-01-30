@@ -11,7 +11,7 @@ feature 'Polls' do
 
       polls.each do |poll|
         expect(page).to have_content(poll.name)
-        expect(page).to have_link("Participate in this poll")
+        expect(page).to have_link("View details about this poll")
       end
     end
 
