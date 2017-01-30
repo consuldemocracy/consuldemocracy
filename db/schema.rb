@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130001438) do
+ActiveRecord::Schema.define(version: 20170130171322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -439,6 +439,19 @@ ActiveRecord::Schema.define(version: 20170130001438) do
     t.string "location"
   end
 
+  create_table "poll_final_recounts", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_assignment_id"
+    t.integer  "count"
+    t.text     "count_log",                 default: ""
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.text     "officer_assignment_id_log", default: ""
+    t.date     "date",                                   null: false
+  end
+
+  add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
+
   create_table "poll_nvotes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "poll_id"
@@ -454,9 +467,10 @@ ActiveRecord::Schema.define(version: 20170130001438) do
   create_table "poll_officer_assignments", force: :cascade do |t|
     t.integer  "booth_assignment_id"
     t.integer  "officer_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.datetime "date"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.date     "date",                                null: false
+    t.boolean  "final",               default: false
   end
 
   create_table "poll_officers", force: :cascade do |t|
@@ -482,7 +496,6 @@ ActiveRecord::Schema.define(version: 20170130001438) do
     t.integer  "author_id"
     t.string   "author_visible_name"
     t.string   "title"
-    t.string   "summary"
     t.string   "valid_answers"
     t.text     "description"
     t.integer  "comments_count"
@@ -504,7 +517,7 @@ ActiveRecord::Schema.define(version: 20170130001438) do
     t.text     "count_log",                 default: ""
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.datetime "date"
+    t.date     "date",                                   null: false
     t.text     "officer_assignment_id_log", default: ""
   end
 

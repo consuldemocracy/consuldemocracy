@@ -11,7 +11,7 @@
     <div class="small-12 medium-4 column">
       <label><%= t("admin.poll_officer_assignments.index.date") %></label>
       <%= select_tag :date,
-                      poll_dates_select_options(@poll),
+                      poll_dates_select_options(@poll) + poll_final_recount_option(@poll),
                       { prompt: t("admin.poll_officer_assignments.index.select_date"),
                         label: false } %>
     </div>
@@ -51,7 +51,7 @@
     <tbody>
       <% @officer_assignments.each do |officer_assignment| %>
         <tr id="<%= dom_id officer_assignment %>">
-          <td><%= l officer_assignment.date.to_date %></td>
+          <td><%= officer_assignment.final? ? t('polls.final_date') : l(officer_assignment.date.to_date) %></td>
           <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
           <td class="text-center">
             <%= link_to t("admin.poll_officer_assignments.index.remove_assignment"),

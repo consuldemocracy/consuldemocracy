@@ -17,6 +17,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     @officer_assignment = ::Poll::OfficerAssignment.new(booth_assignment: @booth_assignment,
                                                         officer_id: create_params[:officer_id],
                                                         date: create_params[:date])
+    @officer_assignment.final = true if @officer_assignment.date > @booth_assignment.poll.ends_at
 
     if @officer_assignment.save
       notice = t("admin.poll_officer_assignments.flash.create")
@@ -48,7 +49,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     end
 
     def load_booth_assignment
-      @booth_assignment = ::Poll::BoothAssignment.find_by(poll_id: create_params[:poll_id], booth_id: create_params[:booth_id])
+      @booth_assignment = ::Poll::BoothAssignment.includes(:poll).find_by(poll_id: create_params[:poll_id], booth_id: create_params[:booth_id])
     end
 
     def redirect_if_blank_required_params

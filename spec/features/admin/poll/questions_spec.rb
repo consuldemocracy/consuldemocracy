@@ -25,7 +25,6 @@ feature 'Admin poll questions' do
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.description)
-    expect(page).to have_content(question.summary)
     expect(page).to have_content(question.author.name)
     expect(page).to have_content(question.valid_answers.join(" "))
   end
@@ -33,7 +32,6 @@ feature 'Admin poll questions' do
   scenario 'Create' do
     poll = create(:poll, name: 'Movies')
     title = "Star Wars: Episode IV - A New Hope"
-    summary = "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire"
     description = %{
       During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
       Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....
@@ -44,14 +42,12 @@ feature 'Admin poll questions' do
 
     select 'Movies', from: 'poll_question_poll_id'
     fill_in 'poll_question_title', with: title
-    fill_in 'poll_question_summary', with: summary
     fill_in 'poll_question_description', with: description
 
     click_button 'Save'
 
     expect(page).to have_content(title)
     expect(page).to have_content(description)
-    expect(page).to have_content(summary)
   end
 
   scenario 'Create from successful proposal index' do
@@ -63,7 +59,6 @@ feature 'Admin poll questions' do
 
     expect(current_path).to eq(new_admin_question_path)
     expect(page).to have_field('poll_question_title', with: proposal.title)
-    expect(page).to have_field('poll_question_summary', with: proposal.summary)
     expect(page).to have_field('poll_question_description', with: proposal.description)
     expect(page).to have_field('poll_question_valid_answers', with: "Yes, No")
 
@@ -72,7 +67,6 @@ feature 'Admin poll questions' do
     click_button 'Save'
 
     expect(page).to have_content(proposal.title)
-    expect(page).to have_content(proposal.summary)
     expect(page).to have_content(proposal.description)
     expect(page).to have_link(proposal.title, href: proposal_path(proposal))
     expect(page).to have_link(proposal.author.name, href: user_path(proposal.author))

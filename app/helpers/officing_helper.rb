@@ -8,4 +8,12 @@ module OfficingHelper
     options_for_select(options)
   end
 
+  def booths_for_officer_select_options(officer_assignments)
+    options = []
+    officer_assignments.each do |oa|
+      options << ["#{oa.booth_assignment.booth.name}", oa.id]
+    end
+    options_for_select(options)
+  end
+
 end

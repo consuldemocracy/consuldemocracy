@@ -14,7 +14,6 @@ class Poll::Question < ActiveRecord::Base
   belongs_to :proposal
 
   validates :title, presence: true
-  validates :summary, presence: true
   validates :author, presence: true
 
   validates :title, length: { in: 4..Poll::Question.title_max_length }, unless: :skip_length_checks
@@ -37,8 +36,7 @@ class Poll::Question < ActiveRecord::Base
   def searchable_values
     { title                 => 'A',
       proposal.try(:title)  => 'A',
-      summary               => 'B',
-      description           => 'C',
+      description           => 'B',
       author.username       => 'C',
       author_visible_name   => 'C' }
   end
@@ -58,7 +56,6 @@ class Poll::Question < ActiveRecord::Base
       self.proposal_id = proposal.id
       self.title = proposal.title
       self.description = proposal.description
-      self.summary = proposal.summary
       self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end
   end

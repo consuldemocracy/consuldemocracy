@@ -11,7 +11,6 @@
     <thead>
       <tr>
         <th><%= t("admin.polls.show.table_name") %></th>
-        <th><%= t("admin.polls.show.table_summary") %></th>
         <th class="text-center"><%= t("admin.polls.show.table_assignment") %></th>
       </tr>
     </thead>
@@ -20,9 +19,6 @@
       <tr>
         <td>
           <%= question.title %>
-        </td>
-        <td>
-          <%= question.summary %>
         </td>
         <td class="text-center">
           <%= link_to t("admin.polls.show.add_question"),
