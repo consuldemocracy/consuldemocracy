@@ -31,8 +31,7 @@
             <% if can? :answer, poll %>
               <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
             <% else %>
-              <%= render 'polls/reasons_for_not_answering', poll: poll %>
-              <%= link_to t("polls.index.view_button"), poll, class: "button info small" %>
+              <%= link_to t("polls.index.view_button"), poll %>
             <% end %>
           </div>
         </div>
