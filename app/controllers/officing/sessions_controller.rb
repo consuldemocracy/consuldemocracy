@@ -2,7 +2,7 @@ class Officing::SessionsController < Officing::BaseController
   skip_before_action :verify_officer
   skip_before_action :authenticate_user!
 
-  layout :false
+  layout "nvotes"
 
   def new
     @officer = User.new
