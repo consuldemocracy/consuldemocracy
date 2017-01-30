@@ -34,7 +34,6 @@ en:
         create: "Document verified with Census"
       new:
         title: Validate document
-        document_type_label: Document type
         document_number: "Document number (including letters)"
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."

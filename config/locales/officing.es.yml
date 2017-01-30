@@ -34,7 +34,6 @@ es:
         create: "Documento verificado con el Padrón"
       new:
         title: Validar documento
-        document_type_label: Tipo de documento
         document_number: "Número de documento (incluida letra)"
         submit: Validar documento
         error_verifying_census: El Padrón no pudo verificar este documento.
