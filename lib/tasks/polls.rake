@@ -233,7 +233,7 @@ namespace :polls do
 </ul>
 })
 
-      create_2017_district_poll('San Blas - Canillejas',
+      create_2017_district_poll('San Blas-Canillejas',
         title: "Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas",
         summary: %{Las 10 propuestas que tengan mayor número de apoyos, serán asumidas por la Junta Municipal de
                    San Blas-Canillejas como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.},
