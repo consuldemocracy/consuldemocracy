@@ -522,7 +522,6 @@ ActiveRecord::Schema.define(version: 20170130001438) do
     t.string   "gender"
     t.integer  "geozone_id"
     t.integer  "answer_id"
-    t.integer  "user_id"
     t.integer  "officer_assignment_id"
     t.integer  "user_id"
   end

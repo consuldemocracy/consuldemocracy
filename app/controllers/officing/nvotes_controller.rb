@@ -1,8 +1,8 @@
 class Officing::NvotesController < Officing::BaseController
   load_and_authorize_resource :nvote, class: "Poll::Nvote"
-  skip_authorize_resource only: :thanks
 
-  skip_before_action :verify_officer #if voting...
+  skip_before_action :verify_officer
+
   layout "nvotes"
 
   def new
