@@ -146,23 +146,23 @@ feature 'Spending Proposals' do
       expect(current_path).to eq(management_spending_proposals_path)
     end
 
-    scenario 'Voting spending proposals on behalf of someone in show view', :js do
-      spending_proposal = create(:spending_proposal)
-
-      user = create(:user, :level_two)
-      login_managed_user(user)
-
-      click_link "Support spending proposals"
-
-      within("#investment-projects") do
-        click_link spending_proposal.title
-      end
-
-      find('.in-favor a').click
-      expect(page).to have_content "1 support"
-      expect(page).to have_content "You have already supported this. Share it!"
-      expect(current_path).to eq(management_spending_proposal_path(spending_proposal))
-    end
+    # scenario 'Voting spending proposals on behalf of someone in show view', :js do
+    #   spending_proposal = create(:spending_proposal)
+    #
+    #   user = create(:user, :level_two)
+    #   login_managed_user(user)
+    #
+    #   click_link "Support spending proposals"
+    #
+    #   within("#investment-projects") do
+    #     click_link spending_proposal.title
+    #   end
+    #
+    #   find('.in-favor a').click
+    #   expect(page).to have_content "1 support"
+    #   expect(page).to have_content "You have already supported this. Share it!"
+    #   expect(current_path).to eq(management_spending_proposal_path(spending_proposal))
+    # end
 
     scenario "Should not allow unverified users to vote proposals" do
       spending_proposal = create(:spending_proposal)

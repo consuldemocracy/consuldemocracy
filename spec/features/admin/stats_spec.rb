@@ -58,17 +58,17 @@ feature 'Stats' do
 
   end
 
-  scenario 'Level 2 user' do
-    create(:geozone)
-    visit account_path
-    click_link 'Verify my account'
-    verify_residence
-    confirm_phone
-
-    visit admin_stats_path
-
-    expect(page).to have_content "Level 2 User (1)"
-  end
+  # scenario 'Level 2 user' do
+  #   create(:geozone)
+  #   visit account_path
+  #   click_link 'Verify my account'
+  #   verify_residence
+  #   confirm_phone
+  # 
+  #   visit admin_stats_path
+  #
+  #   expect(page).to have_content "Level 2 User (1)"
+  # end
 
   context "Proposal notifications" do
 

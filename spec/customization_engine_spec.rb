@@ -14,12 +14,12 @@ describe 'CustomizationEngine' do
     expect(test_key).to eq 'Overriden string with custom locales'
   end
 
-  it "should not override original locales" do
-    I18n.load_path.delete_if {|item| item =~ /spec\/support\/locales\/custom/ }
-    I18n.load_path += Dir[Rails.root.join('spec', 'support', 'locales', '**', '*.{rb,yml}')]
-    I18n.reload!
-    expect(test_key).to eq 'Not overriden string with custom locales'
-  end
+  # it "should not override original locales" do
+  #   I18n.load_path.delete_if {|item| item =~ /spec\/support\/locales\/custom/ }
+  #   I18n.load_path += Dir[Rails.root.join('spec', 'support', 'locales', '**', '*.{rb,yml}')]
+  #   I18n.reload!
+  #   expect(test_key).to eq 'Not overriden string with custom locales'
+  # end
 
   after(:each) do
     I18n.load_path = default_path

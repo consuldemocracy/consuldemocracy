@@ -31,7 +31,8 @@ module Verification
   end
 
   def level_two_verified?
-    level_two_verified_at.present? || (residence_verified? && sms_verified?)
+    # level_two_verified_at.present? || (residence_verified? && sms_verified?)
+    level_two_verified_at.present? || residence_verified?
   end
 
   def level_three_verified?

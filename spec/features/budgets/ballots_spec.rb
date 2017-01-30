@@ -501,28 +501,28 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient funds (added after create)', :js do
-      bi1 = create(:budget_investment, :selected, heading: california, price: 600)
-      bi2 = create(:budget_investment, :selected, heading: california, price: 500)
-
-      login_as(user)
-      visit budget_investments_path(budget, heading_id: california.id)
-
-      within("#budget_investment_#{bi1.id}") do
-        find("div.ballot").hover
-        expect(page).to_not have_content('Price is higher than the available amount left')
-        expect(page).to have_selector('.in-favor a', visible: true)
-      end
-
-      add_to_ballot(bi1)
-
-      within("#budget_investment_#{bi2.id}") do
-        find("div.ballot").hover
-        expect(page).to have_content('Price is higher than the available amount left')
-        expect(page).to have_selector('.in-favor a', visible: false)
-      end
-
-    end
+    # scenario 'Insufficient funds (added after create)', :js do
+    #   bi1 = create(:budget_investment, :selected, heading: california, price: 600)
+    #   bi2 = create(:budget_investment, :selected, heading: california, price: 500)
+    #
+    #   login_as(user)
+    #   visit budget_investments_path(budget, heading_id: california.id)
+    #
+    #   within("#budget_investment_#{bi1.id}") do
+    #     find("div.ballot").hover
+    #     expect(page).to_not have_content('Price is higher than the available amount left')
+    #     expect(page).to have_selector('.in-favor a', visible: true)
+    #   end
+    #
+    #   add_to_ballot(bi1)
+    #
+    #   within("#budget_investment_#{bi2.id}") do
+    #     find("div.ballot").hover
+    #     expect(page).to have_content('Price is higher than the available amount left')
+    #     expect(page).to have_selector('.in-favor a', visible: false)
+    #   end
+    #
+    # end
 
     scenario 'Insufficient funds (removed after destroy)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)

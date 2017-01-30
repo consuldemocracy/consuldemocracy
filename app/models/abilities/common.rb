@@ -45,7 +45,11 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
-        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        # TODO: no dejar crear si ya se ha creado
+        if user.budget_investments.includes(:budget )
+          can :create, Budget::Investment,               budget: { phase: "accepting" }
+        end
+
         can :vote,   Budget::Investment,               budget: { phase: "selecting" }
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }

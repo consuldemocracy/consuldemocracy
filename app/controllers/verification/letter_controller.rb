@@ -3,7 +3,7 @@ class Verification::LetterController < ApplicationController
   before_action :login_via_form, only: :update
 
   before_action :verify_resident!, if: :signed_in?
-  before_action :verify_phone!, if: :signed_in?
+  # before_action :verify_phone!, if: :signed_in?
   before_action :verify_verified!, if: :signed_in?
   before_action :verify_lock, if: :signed_in?
 
