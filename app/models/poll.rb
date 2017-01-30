@@ -18,7 +18,7 @@ class Poll < ActiveRecord::Base
   scope :published,  -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
 
-  scope :sort_for_list, -> { order(:starts_at) }
+  scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
   def current?(timestamp = DateTime.current)
     starts_at <= timestamp && timestamp <= ends_at
