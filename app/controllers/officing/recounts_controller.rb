@@ -28,7 +28,7 @@ class Officing::RecountsController < Officing::BaseController
 
   private
     def load_poll
-      @poll = Poll.current.find(params[:poll_id])
+      @poll = Poll.find(params[:poll_id])
     end
 
     def load_officer_assignment

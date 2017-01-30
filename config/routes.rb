@@ -332,7 +332,10 @@ Rails.application.routes.draw do
 
   namespace :officing do
     resources :polls, only: [:index] do
+      get :final, on: :collection
+
       resources :recounts, only: [:new, :create]
+      resources :final_recounts, only: [:new, :create]
     end
     resource :residence, controller: "residence", only: [:new, :create]
     resources :voters, only: [:new, :create]

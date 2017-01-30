@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130133736) do
+ActiveRecord::Schema.define(version: 20170130163030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -406,7 +406,7 @@ ActiveRecord::Schema.define(version: 20170130133736) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.text     "officer_assignment_id_log", default: ""
-    t.datetime "date",                                   null: false
+    t.date     "date",                                   null: false
   end
 
   add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
@@ -416,7 +416,7 @@ ActiveRecord::Schema.define(version: 20170130133736) do
     t.integer  "officer_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.datetime "date"
+    t.date     "date",                                null: false
     t.boolean  "final",               default: false
   end
 
@@ -465,7 +465,7 @@ ActiveRecord::Schema.define(version: 20170130133736) do
     t.text     "count_log",                 default: ""
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.datetime "date"
+    t.date     "date",                                   null: false
     t.text     "officer_assignment_id_log", default: ""
   end
 
