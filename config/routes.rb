@@ -386,9 +386,15 @@ Rails.application.routes.draw do
   namespace :officing do
     resources :polls, only: [:index] do
       resources :recounts, only: [:new, :create]
+      resources :nvotes, only: :new do
+        get :thanks, on: :collection
+      end
     end
     resource :residence, controller: "residence", only: [:new, :create]
-    resources :voters, only: [:new, :create]
+    resources :voters, only: [:new, :create] do
+      get :vote_with_tablet, on: :member
+    end
+    resource :session, only: [:new, :create]
     root to: "dashboard#index"
   end
 

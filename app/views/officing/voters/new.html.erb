@@ -1,15 +1,23 @@
 <h2><%= t("officing.voters.new.title") %></h2>
 
-<% @polls.each do |poll| %>
-  <div id="<%= dom_id(poll) %>">
-    <div><%= poll.name %></div>
-
-    <div id="actions">
-      <% if poll.votable_by?(@user) %>
-        <%= render "can_vote", poll: poll %>
-      <% else %>
-        <%= render "already_voted" %>
-      <% end %>
-    </div>
+<%# if true#officer.has_tablet? %>
+  <div class="small-12 medium-6 large-4">
+    <%= link_to "Votar con tablet",
+                  vote_with_tablet_officing_voter_path(@user),
+                  class: "button success expanded" %>
   </div>
-<% end %>
+<%# else %>
+  <% @polls.each do |poll| %>
+    <div id="<%= dom_id(poll) %>">
+      <div><%= poll.name %></div>
+
+      <div id="actions">
+        <% if poll.votable_by?(@user) %>
+          <%= render "can_vote", poll: poll %>
+        <% else %>
+          <%= render "already_voted" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<%# end %>

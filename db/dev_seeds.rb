@@ -123,6 +123,7 @@ end
 admin = create_user('admin@madrid.es', 'admin')
 admin.create_administrator
 admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
+admin.create_poll_officer
 
 moderator = create_user('mod@madrid.es', 'mod')
 moderator.create_moderator
@@ -889,15 +890,6 @@ print "Commenting Poll Questions"
                   created_at: rand(question.created_at .. Time.current),
                   commentable: question,
                   body: Faker::Lorem.sentence)
-end
-
-puts " ✅"
-print "Creating Poll Voters"
-
-(1..10).each do
-  poll = Poll.all.sample
-  document_number = Faker::Number.number(10)
-  Poll::Voter.create!(poll: poll, document_number: document_number)
 end
 
 puts " ✅"

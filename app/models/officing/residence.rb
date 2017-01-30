@@ -35,6 +35,7 @@ class Officing::Residence
         gender:                gender,
         residence_verified_at: Time.current,
         verified_at:           Time.current,
+        confirmed_at:          Time.current,
         erased_at:             Time.current,
         password:              random_password,
         terms_of_service:      '1',
@@ -42,6 +43,7 @@ class Officing::Residence
       }
       self.user = User.create!(user_params)
     end
+    self.user.update(officing_voter: true)
   end
 
   def user_exists?

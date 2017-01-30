@@ -142,6 +142,10 @@ class User < ActiveRecord::Base
     poll_officer.present?
   end
 
+  def officing_voter?
+    officing_voter.present?
+  end
+
   def organization?
     organization.present?
   end

@@ -1,0 +1,15 @@
+<div>
+  Por favor dale el tablet al Presidente de mesa.
+</div>
+
+<%= form_for @officer, as: :officer, url: officing_session_path, method: :post do |f| %>
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label"), tabindex: "1" %>
+    </div>
+
+    <div class="small-12 medium-6 small-centered">
+      <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
+    </div>
+  </div>
+<% end %>
