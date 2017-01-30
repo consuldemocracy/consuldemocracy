@@ -7,6 +7,6 @@ class Officing::BaseController < ApplicationController
   skip_authorization_check
 
   def verify_officer
-      raise CanCan::AccessDenied unless current_user.try(:poll_officer?) || current_user.try(:administrator?)
-    end
+    raise CanCan::AccessDenied unless current_user.try(:poll_officer?) || current_user.try(:administrator?)
+  end
 end

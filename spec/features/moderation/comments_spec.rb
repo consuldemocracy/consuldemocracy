@@ -84,6 +84,8 @@ feature 'Moderate comments' do
       end
 
       scenario "select all/none", :js do
+        Capybara.current_driver = :poltergeist_no_js_errors
+
         create_list(:comment, 2)
 
         visit moderation_comments_path

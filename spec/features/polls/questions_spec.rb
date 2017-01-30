@@ -15,6 +15,7 @@ feature 'Poll Questions' do
   context 'Answering' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, geozone_restricted: true, geozone_ids: [geozone.id]) }
+
     scenario 'Non-logged in users' do
       question = create(:poll_question, valid_answers: 'Han Solo, Chewbacca')
 
