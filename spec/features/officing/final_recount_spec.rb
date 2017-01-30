@@ -63,7 +63,7 @@ feature 'Officing Final Recount' do
     end
   end
 
-  scenario 'Edit recount' do
+  scenario 'Edit final recount' do
     final_recount = create(:poll_final_recount,
                     officer_assignment: @officer_assignment,
                     booth_assignment: @officer_assignment.booth_assignment,
@@ -96,5 +96,39 @@ feature 'Officing Final Recount' do
       expect(page).to have_content('42')
     end
     expect(page).to_not have_content('100')
+  end
+
+  scenario 'Show daily, final and system recounts to compare' do
+    voting_officer_assignment = create(:poll_officer_assignment, date: 7.days.ago)
+    poll = voting_officer_assignment.booth_assignment.poll
+    poll.update(ends_at: 1.day.ago)
+    daily_recount = create(:poll_recount,
+                    officer_assignment: voting_officer_assignment,
+                    booth_assignment: voting_officer_assignment.booth_assignment,
+                    date: voting_officer_assignment.date,
+                    count: 500)
+    final_officer_assignment = create(:poll_officer_assignment, :final,
+                                booth_assignment: voting_officer_assignment.booth_assignment,
+                                date: poll.ends_at + 1.day,
+                                officer: @poll_officer)
+    final_recount = create(:poll_final_recount,
+                    officer_assignment: final_officer_assignment,
+                    booth_assignment: final_officer_assignment.booth_assignment,
+                    date: daily_recount.date,
+                    count: 100)
+    33.times { create(:poll_voter, :valid_document,
+                      poll: poll,
+                      booth_assignment: final_officer_assignment.booth_assignment,
+                      created_at: daily_recount.date) }
+
+    visit new_officing_poll_final_recount_path(poll)
+    within("#poll_final_recount_#{final_recount.id}") do
+      expect(page).to have_content(I18n.l(final_recount.date.to_date, format: :long))
+      expect(page).to have_content(final_officer_assignment.booth_assignment.booth.name)
+      expect(page).to have_content('500')
+      expect(page).to have_content('100')
+      expect(page).to have_content('33')
+    end
+
   end
 end

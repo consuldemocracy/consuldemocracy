@@ -52,6 +52,8 @@
       <th><%= t("officing.final_recounts.new.date")  %></th>
       <th><%= t("officing.final_recounts.new.booth") %></th>
       <th><%= t("officing.final_recounts.new.count") %></th>
+      <th><%= "Recuento diario anterior" %></th>
+      <th><%= "Recuento del sistema" %></th>
     </thead>
     <tbody>
       <% @final_recounts.each do |final_recount| %>
@@ -64,6 +66,12 @@
           </td>
           <td>
             <strong><%= final_recount.count %></strong>
+          </td>
+          <td>
+            <strong><%= recount_to_compare_with_final_recount final_recount %></strong>
+          </td>
+          <td>
+            <strong><%= system_recount_to_compare_with_final_recount final_recount %></strong>
           </td>
         </tr>
       <% end %>

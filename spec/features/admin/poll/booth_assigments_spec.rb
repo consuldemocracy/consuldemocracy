@@ -90,11 +90,12 @@ feature 'Admin booths assignments' do
     end
 
     scenario 'Lists all recounts for the booth assignment' do
-      poll = create(:poll)
+      poll = create(:poll, starts_at: 2.weeks.ago, ends_at: 1.week.ago)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       officer_assignment_1 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.starts_at)
       officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
+      final_officer_assignment = create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
 
       recount_1 = create(:poll_recount,
                          booth_assignment: booth_assignment,
@@ -105,7 +106,12 @@ feature 'Admin booths assignments' do
                          booth_assignment: booth_assignment,
                          officer_assignment: officer_assignment_2,
                          date: officer_assignment_2.date,
-                         count: 1)
+                         count: 78)
+      final_recount = create(:poll_final_recount,
+                         booth_assignment: booth_assignment,
+                         officer_assignment: final_officer_assignment,
+                         date: final_officer_assignment.date,
+                         count: 5678)
 
       booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
       other_recount = create(:poll_recount, booth_assignment: booth_assignment_2, count: 100)
@@ -119,12 +125,16 @@ feature 'Admin booths assignments' do
       within('#recounts_list') do
         expect(page).to_not have_content other_recount.count
 
-        within("#recount_#{recount_1.id}") do
+        within("#recounting_#{recount_1.date.strftime('%Y%m%d')}") do
           expect(page).to have_content recount_1.count
         end
 
-        within("#recount_#{recount_2.id}") do
+        within("#recounting_#{recount_2.date.strftime('%Y%m%d')}") do
           expect(page).to have_content recount_2.count
+        end
+
+        within("#recounting_#{final_recount.date.strftime('%Y%m%d')}") do
+          expect(page).to have_content final_recount.count
         end
 
       end
@@ -147,8 +157,8 @@ feature 'Admin booths assignments' do
       click_link 'Recounts'
 
       within('#recounts_list') do
-        expect(page).to have_css("#recount_#{recount.id}.count-error")
-        within("#recount_#{recount.id}") do
+        expect(page).to have_css("#recounting_#{recount.date.strftime('%Y%m%d')} td.count-error")
+        within("#recounting_#{recount.date.strftime('%Y%m%d')}") do
           expect(page).to have_content recount.count
           expect(page).to have_content 0
         end
@@ -161,7 +171,7 @@ feature 'Admin booths assignments' do
 
       within('#recounts_list') do
         expect(page).to_not have_css('.count-error')
-        within("#recount_#{recount.id}") do
+        within("#recounting_#{recount.date.strftime('%Y%m%d')}") do
           expect(page).to have_content(recount.count)
         end
       end
