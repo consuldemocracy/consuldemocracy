@@ -19,7 +19,7 @@
       <div class="poll">
         <div class="row">
           <div class="small-12 medium-6 column">
-            <h3><%= poll.name %></h3>
+            <h3><%= link_to poll.name, poll %></h3>
             <p class="dates"><%= poll_dates(poll) %></p>
             <ul class="no-bullet margin-top tags">
               <% poll.geozones.each do |g| %>
