@@ -111,10 +111,10 @@ feature 'Officing Nvotes', :selenium do
       click_link "Finish voting"
     end
 
-    fill_in "officer_password", with: "wrong_password"
+    fill_in "officer_password", with: "not my password"
     click_button "Enter"
 
-    expect(page).to have_content "Contraseña inválida"
+    expect(page).to have_content "Wrong password"
     expect(page).to have_content "please give the device to the Officer"
   end
 

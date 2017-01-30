@@ -14,7 +14,7 @@ class Officing::SessionsController < Officing::BaseController
       sign_in(@officer)
       redirect_to new_officing_residence_path
     else
-      flash.now[:alert] = "Contraseña inválida"
+      flash.now[:alert] = I18n.t("officing.sessions.create.flash.wrong_password")
       render :new
     end
   end
