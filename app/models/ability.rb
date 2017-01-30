@@ -7,13 +7,12 @@ class Ability
     alias_action :hide_in_moderation_screen, to: :hide
     if user # logged-in users
       self.merge Abilities::Valuator.new(user) if user.valuator?
+      self.merge Abilities::Officing::Voter.new(user) if user.officing_voter?
 
       if user.administrator?
         self.merge Abilities::Administrator.new(user)
       elsif user.moderator?
         self.merge Abilities::Moderator.new(user)
-      elsif user.officing_voter?
-        self.merge Abilities::Officing::Voter.new(user)
       else
         self.merge Abilities::Common.new(user)
       end
