@@ -1,0 +1,36 @@
+<% provide :title do %><%= "#{t('.title')} - #{@draft_version.title} - #{@process.title}" %><% end %>
+
+<%= render 'legislation/processes/header', process: @process, header: :small %>
+
+<div class="column row">
+  <%= render 'legislation/processes/key_dates', process: @process, phase: :allegations %>
+
+  <div class="draft-panels small-12 column row">
+    <%= render 'version_chooser', process: @process, draft_version: @draft_version %>
+
+    <div class="row">
+      <div class="small-12 medium-12 column legislation-comment">
+        <div class="annotation-comment">
+          <strong><%= t('legislation.annotations.index.comments_about') %></strong>
+          <div class="comment-section">
+            <div class="row">
+              <div class="small-12 medium-10 column legislation-comment">
+                <%= @annotation.quote %>
+              </div>
+              <div class="small-12 medium-2 column legislation-comment">
+                <span class="pull-right">
+                  <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{@annotation.id}") do %>
+                    <span><%= t('legislation.annotations.index.see_in_context') %></span> <span class="icon-expand" aria-hidden="true"></span>
+                  <% end %>
+                </span>
+              </div>
+            </div>
+        </div>
+
+        <%= render 'legislation/shared/comments', commentable: @annotation %>
+
+      </div>
+    </div>
+
+  </div>
+</div>

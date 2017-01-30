@@ -1,0 +1,11 @@
+<ul class="menu simple clear">
+  <li <%= "class=active" if active == 'info' %>>
+    <%= link_to t("admin.legislation.processes.subnav.info"), edit_admin_legislation_process_path(process) %>
+  </li>
+    <li <%= "class=active" if active == 'questions' %>>
+    <%= link_to t("admin.legislation.processes.subnav.questions"), admin_legislation_process_questions_path(process) %>
+  </li>
+  <li <%= "class=active" if active == 'draft_versions' %>>
+    <%= link_to t("admin.legislation.processes.subnav.draft_texts"), admin_legislation_process_draft_versions_path(process) %>
+  </li>
+</ul>

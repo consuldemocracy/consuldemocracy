@@ -16,6 +16,10 @@ module AdminHelper
     Administrator.all.order('users.username asc').includes(:user).collect { |v| [ v.name, v.id ] }
   end
 
+  def admin_submit_action(resource)
+    resource.persisted? ? "edit" : "new"
+  end
+
   private
 
     def namespace

@@ -24,7 +24,7 @@ class AnnotationsController < ApplicationController
   end
 
   def search
-    @annotations = Annotation.where(legislation_id: params[:legislation_id])
+    @annotations = Annotation.where(legacy_legislation_id: params[:legacy_legislation_id])
     annotations_hash = { total: @annotations.size, rows: @annotations }
     render json: annotations_hash.to_json(methods: :permissions)
   end
@@ -35,6 +35,6 @@ class AnnotationsController < ApplicationController
     params
       .require(:annotation)
       .permit(:quote, :text, ranges: [:start, :startOffset, :end, :endOffset])
-      .merge(legislation_id: params[:legislation_id])
+      .merge(legacy_legislation_id: params[:legacy_legislation_id])
   end
 end

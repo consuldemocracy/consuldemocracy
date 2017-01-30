@@ -297,6 +297,7 @@
 .debate-show,
 .proposal-show,
 .investment-project-show,
+.debate-quiz,
 .budget-investment-show {
 
   p {
@@ -490,7 +491,7 @@
   }
 }
 
-.debate, .proposal, .investment-project, .budget-investment {
+.debate, .proposal, .investment-project, .budget-investment, .legislation {
   margin: $line-height/4 0;
 
   .panel {

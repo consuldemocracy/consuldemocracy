@@ -49,6 +49,12 @@
 //= require fixed_bar
 //= require banners
 //= require social_share
+//= require markdown-it
+//= require markdown_editor
+//= require cocoon
+//= require legislation
+//= require legislation_allegations
+//= require legislation_annotatable
 //= require custom
 
 var initialize_modules = function() {
@@ -74,6 +80,11 @@ var initialize_modules = function() {
   App.FixedBar.initialize();
   App.Banners.initialize();
   App.SocialShare.initialize();
+  App.MarkdownEditor.initialize();
+  App.LegislationAllegations.initialize();
+  App.Legislation.initialize();
+  if ( $(".legislation-annotatable").length )
+    App.LegislationAnnotatable.initialize();
 };
 
 $(function(){

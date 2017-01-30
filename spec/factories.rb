@@ -330,8 +330,8 @@ FactoryGirl.define do
     end
   end
 
-  factory :legislation do
-    sequence(:title) { |n| "Legislation #{n}" }
+  factory :legacy_legislation do
+    sequence(:title) { |n| "Legacy Legislation #{n}" }
     body "In order to achieve this..."
   end
 
@@ -339,7 +339,7 @@ FactoryGirl.define do
     quote "ipsum"
     text "Loremp ipsum dolor"
     ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
-    legislation
+    legacy_legislation
     user
   end
 
@@ -449,5 +449,84 @@ FactoryGirl.define do
   factory :signature do
     signature_sheet
     sequence(:document_number) { |n| "#{n}A" }
+  end
+
+  factory :legislation_process, class: 'Legislation::Process' do
+    title "A collaborative legislation process"
+    description "Description of the process"
+    target "Who will affected by this law?"
+    how_to_participate "You can participate by answering some questions"
+    start_date Date.current - 5.days
+    end_date Date.current + 5.days
+    debate_start_date Date.current - 5.days
+    debate_end_date Date.current - 2.days
+    draft_publication_date Date.current - 1.day
+    allegations_start_date Date.current
+    allegations_end_date Date.current + 3.days
+    final_publication_date Date.current + 5.days
+
+    trait :next do
+      start_date Date.current + 2.days
+      end_date Date.current + 8.days
+      debate_start_date Date.current + 2.days
+      debate_end_date Date.current + 4.days
+      draft_publication_date Date.current + 5.day
+      allegations_start_date Date.current + 5.days
+      allegations_end_date Date.current + 7.days
+      final_publication_date Date.current + 8.days
+    end
+
+    trait :past do
+      start_date Date.current - 12.days
+      end_date Date.current - 2.days
+      debate_start_date Date.current - 12.days
+      debate_end_date Date.current - 9.days
+      draft_publication_date Date.current - 8.day
+      allegations_start_date Date.current - 8.days
+      allegations_end_date Date.current - 4.days
+      final_publication_date Date.current - 2.days
+    end
+  end
+
+  factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
+    process factory: :legislation_process
+    title "Version 1"
+    changelog "What changed in this version"
+    status "draft"
+    final_version false
+    body "Body of the legislation text"
+
+    trait :published do
+      status "published"
+    end
+
+    trait :final_version do
+      final_version true
+    end
+  end
+
+  factory :legislation_annotation, class: 'Legislation::Annotation' do
+    draft_version factory: :legislation_draft_version
+    author factory: :user
+    quote "ipsum"
+    text "Loremp ipsum dolor"
+    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+  end
+
+  factory :legislation_question, class: 'Legislation::Question' do
+    process factory: :legislation_process
+    title "Question text"
+    author factory: :user
+  end
+
+  factory :legislation_question_option, class: 'Legislation::QuestionOption' do
+    question factory: :legislation_question
+    sequence(:value) { |n| "Option #{n}" }
+  end
+
+  factory :legislation_answer, class: 'Legislation::Answer' do
+    question factory: :legislation_question
+    question_option factory: :legislation_question_option
+    user
   end
 end
