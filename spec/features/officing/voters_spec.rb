@@ -13,7 +13,7 @@ feature 'Voters' do
   end
 
   scenario "Can vote", :js do
-    poll = create(:poll)
+    poll = create(:poll, :incoming, :published)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -32,8 +32,8 @@ feature 'Voters' do
   end
 
   scenario "Already voted", :js do
-    poll1 = create(:poll)
-    poll2 = create(:poll)
+    poll1 = create(:poll, :incoming, :published)
+    poll2 = create(:poll, :incoming, :published)
 
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll1, user: user)

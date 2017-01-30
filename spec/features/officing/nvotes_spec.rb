@@ -10,7 +10,7 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Voting single poll" do
     user = create(:user, :in_census, id: rand(9999))
-    poll = create(:poll, published: true, nvotes_poll_id: 128)
+    poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -41,8 +41,8 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Voting all answerable polls" do
     user  = create(:user, :in_census, id: rand(9999))
-    poll1 = create(:poll, published: true, nvotes_poll_id: 128)
-    poll2 = create(:poll, published: true, nvotes_poll_id: 128)
+    poll1 = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
+    poll2 = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -66,7 +66,7 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Validate next document" do
     user  = create(:user, :in_census, id: rand(9999))
-    poll = create(:poll, published: true, nvotes_poll_id: 128)
+    poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -94,7 +94,7 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Error on validate next document" do
     user  = create(:user, :in_census, id: rand(9999))
-    poll = create(:poll, published: true, nvotes_poll_id: 128)
+    poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -120,7 +120,7 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Trying to access unauthorized urls as a voter" do
     user  = create(:user, :in_census, id: rand(9999))
-    poll = create(:poll, published: true, nvotes_poll_id: 128)
+    poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -138,7 +138,7 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Trying to access the officing nvote page as a non poll voter" do
     user = create(:user, :level_two)
-    poll = create(:poll, published: true, nvotes_poll_id: 128)
+    poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
     login_as(user)
     visit new_officing_poll_nvote_path(poll)

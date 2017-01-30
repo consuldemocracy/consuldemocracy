@@ -529,4 +529,11 @@ periodo postrevolucionario</p>
 
 
   end
+
+  desc "Temporarily adds a valid nvotes_election_id to all polls"
+  task add_tmp_nvotes_id: :environment do
+    Poll.all.each do |poll|
+      poll.update(nvotes_poll_id: "128")
+    end
+  end
 end
