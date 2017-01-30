@@ -50,8 +50,8 @@ en:
         date: "Date"
         select_booth: "Select booth"
         select_date: "Select date"
-        count: "Vote count"
-        count_placeholder: "Vote count"
+        count: "Final vote count"
+        count_placeholder: "Final vote count"
         submit: Save
         final_recount_list: "Your final recounts"
     residence:

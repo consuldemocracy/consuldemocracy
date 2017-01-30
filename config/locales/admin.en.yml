@@ -293,6 +293,7 @@ en:
         no_recounts: "There are not daily recounts of this booth yet"
         date: "Date"
         count_by_officer: "Votes (by officer)"
+        count_final: "Final recount"
         count_by_system:  "Votes (automatic)"
     polls:
       index:

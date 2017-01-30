@@ -4,7 +4,7 @@ class Officing::FinalRecountsController < Officing::BaseController
 
   def new
     @officer_assignments = ::Poll::OfficerAssignment.
-                  includes(:final_recounts, booth_assignment: :booth).
+                  includes(:final_recounts, booth_assignment: [:booth]).
                   joins(:booth_assignment).
                   final.
                   where(id: current_user.poll_officer.officer_assignment_ids).

@@ -50,8 +50,8 @@ es:
         date: "Día"
         select_booth: "Elige urna"
         select_date: "Elige día"
-        count: "Número de votos"
-        count_placeholder: "Número de votos"
+        count: "Recuento final"
+        count_placeholder: "Número final de votos"
         submit: "Guardar"
         final_recount_list: "Tus recuentos finales"
     residence:
