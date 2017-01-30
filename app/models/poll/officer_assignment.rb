@@ -10,5 +10,8 @@ class Poll
     validates :date, presence: true, uniqueness: { scope: [:officer_id, :booth_assignment_id] }
 
     delegate :poll_id, :booth_id, to: :booth_assignment
+
+    scope :voting_days, -> { where(final: false) }
+    scope :final,       -> { where(final: true) }
   end
 end
