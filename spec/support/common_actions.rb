@@ -192,6 +192,27 @@ module CommonActions
     expect(page).to have_content 'Document verified with Census'
   end
 
+  def vote_for_poll(poll)
+    #Use different poll once we have different polls in Nvotes
+    expect(page).to have_content "Votación de prueba"
+
+    if page.has_button?("Empezar a votar")
+      click_button "Empezar a votar"
+    end
+
+    expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
+
+    first(".opt.ng-binding").click
+
+    click_button "Continuar"
+
+    expect(page).to have_content "La opción que seleccionaste es: Sí"
+    click_button "Enviar el voto"
+
+    expect(page).to have_content "Enviando la papeleta cifrada al servidor"
+    expect(page).to have_content "Voto emitido con éxito"
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
