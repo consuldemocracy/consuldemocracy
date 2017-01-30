@@ -1,9 +1,9 @@
 <% if poll.incoming? %>
-  <div class="callout alert">
+  <div class="callout primary">
     <%= t('poll_questions.show.cant_answer_incoming') %>
   </div>
 <% elsif poll.expired? %>
-  <div class="callout primary">
+  <div class="callout alert">
     <%= t('poll_questions.show.cant_answer_expired') %>
   </div>
 <% elsif current_user.nil? %>
