@@ -3,7 +3,7 @@ class Officing::VotersController < Officing::BaseController
 
   def new
     @user = User.find(params[:id])
-    @polls = Poll.current # fix and use answerable_by(@user)
+    @polls = Poll.incoming # fix and use answerable_by(@user)
   end
 
   def create
@@ -18,7 +18,7 @@ class Officing::VotersController < Officing::BaseController
 
   def vote_with_tablet
     sign_in_voter
-    redirect_to new_officing_poll_nvote_path(Poll.current.first)
+    redirect_to new_officing_poll_nvote_path(Poll.incoming.first)
   end
 
   private

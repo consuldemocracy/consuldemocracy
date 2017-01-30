@@ -6,12 +6,12 @@ class Officing::NvotesController < Officing::BaseController
   layout "nvotes"
 
   def new
-    @polls = Poll.current
+    @polls = Poll.incoming
     @poll = Poll.find(params[:poll_id])
   end
 
   def thanks
-    @polls = Poll.current
+    @polls = Poll.incoming
   end
 
   private
