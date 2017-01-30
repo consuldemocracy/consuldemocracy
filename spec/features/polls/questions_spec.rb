@@ -21,12 +21,7 @@ feature 'Poll Questions' do
 
       visit question_path(question)
 
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
       expect(page).to have_content('You must Sign in or Sign up to participate')
-
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
     end
 
     scenario 'Level 1 users' do
@@ -35,12 +30,7 @@ feature 'Poll Questions' do
       login_as(create(:user, geozone: geozone))
       visit question_path(question)
 
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
       expect(page).to have_content('You must verify your account in order to answer')
-
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
     end
 
     scenario 'Level 2 users in an poll question for a geozone which is not theirs' do
@@ -51,10 +41,7 @@ feature 'Poll Questions' do
       login_as(create(:user, :level_two, geozone: geozone))
       visit question_path(question)
 
-      expect(page).to have_content('Vader')
-      expect(page).to have_content('Palpatine')
-      expect(page).to_not have_link('Vader')
-      expect(page).to_not have_link('Palpatine')
+      expect(page).to have_content('This question is not available on your geozone')
     end
 
     scenario 'Level 2 users who can answer' do
