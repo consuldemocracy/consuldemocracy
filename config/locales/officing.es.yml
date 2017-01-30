@@ -14,6 +14,10 @@ es:
         no_polls: "No eres presidente de mesa en ninguna votación activa"
         select_poll: "Selecciona votación"
         add_recount: "Añadir recuento"
+    sessions:
+      create:
+        flash:
+          wrong_password: "Contraseña inválida"
     recounts:
       flash:
         create: "Datos añadidos"
@@ -44,6 +48,6 @@ es:
         table_poll: Votación
         table_actions: Validar
       show:
-        error_already_voted: "Ya ha participado en esta votación."
+        error_already_voted: "Ya ha participado en la votación."
         submit: Validar voto
         success: Voto validado correctamente.

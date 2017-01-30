@@ -3226,3 +3226,25 @@ ul.ballot-list {
     height: 100vh !important;
   }
 }
+
+.nvotes ul.tabs {
+
+  li {
+    border-top: 1px soild $border;
+    padding: $line-height/2;
+
+    &.is-active {
+      background: $info-bg;
+      border-bottom: 2px solid $brand;
+      border-top: 2px solid $brand;
+
+      a {
+        border: 0;
+      }
+    }
+
+    &:not(.is-active) a {
+      color: $text;
+    }
+  }
+}

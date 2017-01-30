@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170128214244) do
+ActiveRecord::Schema.define(version: 20170130001438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -522,8 +522,8 @@ ActiveRecord::Schema.define(version: 20170128214244) do
     t.string   "gender"
     t.integer  "geozone_id"
     t.integer  "answer_id"
-    t.integer  "user_id"
     t.integer  "officer_assignment_id"
+    t.integer  "user_id"
   end
 
   add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree
@@ -809,6 +809,7 @@ ActiveRecord::Schema.define(version: 20170128214244) do
     t.boolean  "official_position_badge",                                     default: false
     t.datetime "password_changed_at",                                         default: '2016-12-21 17:55:08', null: false
     t.boolean  "created_from_signature",                                      default: false
+    t.boolean  "officing_voter",                                              default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

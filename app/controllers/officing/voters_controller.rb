@@ -16,10 +16,21 @@ class Officing::VotersController < Officing::BaseController
     @voter.save!
   end
 
+  def vote_with_tablet
+    sign_in_voter
+    redirect_to new_officing_poll_nvote_path(Poll.current.first)
+  end
+
   private
 
     def voter_params
       params.require(:voter).permit(:poll_id, :user_id)
     end
 
+    def sign_in_voter
+      @voter = User.find(params[:id])
+      session[:officer_email] = current_user.email
+      sign_out(:user)
+      sign_in(@voter)
+    end
 end
