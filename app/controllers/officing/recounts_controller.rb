@@ -6,6 +6,7 @@ class Officing::RecountsController < Officing::BaseController
     @officer_assignments = ::Poll::OfficerAssignment.
                   includes(:recount, booth_assignment: :booth).
                   joins(:booth_assignment).
+                  voting_days.
                   where(id: current_user.poll_officer.officer_assignment_ids).
                   where("poll_booth_assignments.poll_id = ?", @poll.id).
                   order(date: :asc)
@@ -27,7 +28,7 @@ class Officing::RecountsController < Officing::BaseController
 
   private
     def load_poll
-      @poll = Poll.current.find(params[:poll_id])
+      @poll = Poll.find(params[:poll_id])
     end
 
     def load_officer_assignment

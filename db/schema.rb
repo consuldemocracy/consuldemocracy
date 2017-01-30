@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170128214244) do
+ActiveRecord::Schema.define(version: 20170130163030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -398,12 +398,26 @@ ActiveRecord::Schema.define(version: 20170128214244) do
     t.string "location"
   end
 
+  create_table "poll_final_recounts", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_assignment_id"
+    t.integer  "count"
+    t.text     "count_log",                 default: ""
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.text     "officer_assignment_id_log", default: ""
+    t.date     "date",                                   null: false
+  end
+
+  add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
+
   create_table "poll_officer_assignments", force: :cascade do |t|
     t.integer  "booth_assignment_id"
     t.integer  "officer_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.datetime "date"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.date     "date",                                null: false
+    t.boolean  "final",               default: false
   end
 
   create_table "poll_officers", force: :cascade do |t|
@@ -451,7 +465,7 @@ ActiveRecord::Schema.define(version: 20170128214244) do
     t.text     "count_log",                 default: ""
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.datetime "date"
+    t.date     "date",                                   null: false
     t.text     "officer_assignment_id_log", default: ""
   end
 
@@ -469,8 +483,8 @@ ActiveRecord::Schema.define(version: 20170128214244) do
     t.string   "gender"
     t.integer  "geozone_id"
     t.integer  "answer_id"
-    t.integer  "user_id"
     t.integer  "officer_assignment_id"
+    t.integer  "user_id"
   end
 
   add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree

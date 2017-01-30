@@ -8,12 +8,18 @@ en:
     menu:
       voters: Validate document
       recounts: Store recount
+      final_recounts: Final recounts
     polls:
       index:
         title: Poll list
         no_polls: You are not officing in any active poll
         select_poll: Select poll
         add_recount: Add recount
+      final:
+        title: Polls ready for final recounting
+        no_polls: You are not officing final recounts in any active poll
+        select_poll: Select poll
+        add_recount: Add final recount
     recounts:
       flash:
         create: "Data added"
@@ -29,6 +35,21 @@ en:
         recount_list: "Your recounts"
         booth: "Booth"
         date: "Date"
+    final_recounts:
+      flash:
+        create: "Data added"
+        error_create: "Final counts NOT added. Error in data."
+      new:
+        title: "%{poll} - Add final recount"
+        not_allowed: "You are allowed to add final recounts for this poll"
+        booth: "Booth"
+        date: "Date"
+        select_booth: "Select booth"
+        select_date: "Select date"
+        count: "Vote count"
+        count_placeholder: "Vote count"
+        submit: Save
+        final_recount_list: "Your final recounts"
     residence:
       flash:
         create: "Document verified with Census"

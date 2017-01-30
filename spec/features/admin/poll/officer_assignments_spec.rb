@@ -30,7 +30,7 @@ feature 'Admin officer assignments in poll' do
     expect(page).to have_content booth_assignment.poll.name
 
     within('#officer_assignment_form') do
-      select I18n.l(booth_assignment.poll.ends_at.to_date), from: 'date'
+      select I18n.l(booth_assignment.poll.ends_at.to_date, format: :long), from: 'date'
       select "#{booth_assignment.booth.name} (#{booth_assignment.booth.location})", from: 'booth_id'
       click_button 'Add shift'
     end
