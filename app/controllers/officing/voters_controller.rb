@@ -18,6 +18,7 @@ class Officing::VotersController < Officing::BaseController
 
   def vote_with_tablet
     sign_in_voter
+    redirect_to new_officing_poll_nvote_path(Poll.current.first)
   end
 
   private
@@ -31,7 +32,5 @@ class Officing::VotersController < Officing::BaseController
       session[:officer_email] = current_user.email
       sign_out(:user)
       sign_in(@voter)
-
-      redirect_to new_officing_poll_nvote_path(Poll.current.first)
     end
 end

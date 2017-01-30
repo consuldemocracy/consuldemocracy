@@ -34,14 +34,16 @@ en:
         create: "Document verified with Census"
       new:
         title: Validate document
-        document_number: Document number
         document_type_label: Document type
+        document_number: "Document number (including letters)"
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
     voters:
       new:
         title: Polls
+        table_poll: Poll
+        table_actions: Validate
       show:
         error_already_voted: Has already participated in this poll
         submit: Validate vote

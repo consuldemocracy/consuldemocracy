@@ -449,7 +449,8 @@ es:
         incoming: "Próximamente"
         expired: "Terminadas"
       title: "Votaciones"
-      button: "Participar en esta votación"
+      participate_button: "Participar en esta votación"
+      view_button: "Ver detalles de la votación"
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
