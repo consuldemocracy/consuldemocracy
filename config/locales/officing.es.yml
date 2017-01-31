@@ -50,6 +50,7 @@ es:
         count_placeholder: "Número final de votos"
         submit: "Guardar"
         final_recount_list: "Tus recuentos finales"
+        system_count: "Recuento del sistema"
     residence:
       flash:
         create: "Documento verificado con el Padrón"
