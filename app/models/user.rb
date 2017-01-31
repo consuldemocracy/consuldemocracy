@@ -258,6 +258,10 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
+  def age_range
+    AgeRangeCalculator::range_from_birthday(self.date_of_birth).to_s
+  end
+
   private
 
     def clean_document_number

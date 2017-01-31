@@ -1,0 +1,2 @@
+class Voter < User
+end

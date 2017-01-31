@@ -469,4 +469,10 @@ describe User do
 
   end
 
+  describe "#age_range" do
+    it 'returns string representation of age range' do
+      user = create(:user, date_of_birth: Time.current - 41.years)
+      expect(user.age_range).to eq('41..60')
+    end
+  end
 end

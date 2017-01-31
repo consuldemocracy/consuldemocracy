@@ -6,8 +6,9 @@ FactoryGirl.define do
     sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 
     password            'judgmentday'
-    terms_of_service     '1'
+    terms_of_service    '1'
     confirmed_at        { Time.current }
+    public_activity     true
 
     trait :incomplete_verification do
       after :create do |user|

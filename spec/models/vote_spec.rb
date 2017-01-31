@@ -40,4 +40,62 @@ describe 'Vote' do
       expect(vote.value).to eq(false)
     end
   end
+
+  describe 'public_for_api scope' do
+    it 'returns votes on debates' do
+      debate = create(:debate)
+      vote = create(:vote, votable: debate)
+
+      expect(Vote.public_for_api).to include(vote)
+    end
+
+    it 'blocks votes on hidden debates' do
+      debate = create(:debate, :hidden)
+      vote = create(:vote, votable: debate)
+
+      expect(Vote.public_for_api).not_to include(vote)
+    end
+
+    it 'returns votes on proposals' do
+      proposal = create(:proposal)
+      vote = create(:vote, votable: proposal)
+
+      expect(Vote.public_for_api).to include(vote)
+    end
+
+    it 'blocks votes on hidden proposals' do
+      proposal = create(:proposal, :hidden)
+      vote = create(:vote, votable: proposal)
+
+      expect(Vote.public_for_api).not_to include(vote)
+    end
+
+    it 'returns votes on comments' do
+      comment = create(:comment)
+      vote = create(:vote, votable: comment)
+
+      expect(Vote.public_for_api).to include(vote)
+    end
+
+    it 'blocks votes on hidden comments' do
+      comment = create(:comment, :hidden)
+      vote = create(:vote, votable: comment)
+
+      expect(Vote.public_for_api).not_to include(vote)
+    end
+
+    it 'blocks any other kind of votes' do
+      spending_proposal = create(:spending_proposal)
+      vote = create(:vote, votable: spending_proposal)
+
+      expect(Vote.public_for_api).not_to include(vote)
+    end
+  end
+
+  describe '#public_timestamp' do
+    it "truncates created_at timestamp up to minutes" do
+      vote = create(:vote, created_at: Time.zone.parse('2016-02-10 15:30:45'))
+      expect(vote.public_timestamp).to eq(Time.zone.parse('2016-02-10 15:00:00'))
+    end
+  end
 end
