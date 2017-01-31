@@ -12,6 +12,14 @@
           <%= link_to t('poll_questions.show.original_proposal'), @question.proposal %>
         </div>
       <% end %>
+
+      <% if can? :answer, @question %>
+        <%= link_to t('poll_questions.show.answer_this_question'),
+              @question.poll,
+              class: 'large button' %>
+      <% else %>
+        <%= render 'polls/reasons_for_not_answering', poll: @question.poll %>
+      <% end %>
     </div>
 
     <div class="small-12 medium-3 column info">
@@ -20,11 +28,7 @@
           <strong><%= t('poll_questions.show.author') %></strong>
         </span>
         <br>
-        <% if @question.author_visible_name.present? %>
-          <%= @question.author_visible_name %>
-        <% else %>
-          <%= link_to @question.author.name, @question.author %>
-        <% end %>
+        <%= link_to @question.author.name, @question.author %>
       </p>
 
       <p>
@@ -47,33 +51,10 @@
 </div>
 
 <div class="row margin-top">
-  <div class="small-12 column">
-    <% if can? :answer, @question %>
-      <div class="text-center">
-        <%= link_to t('poll_questions.show.answer_this_question'),
-              @question.poll,
-              class: 'large button'
-        %>
-      </div>
-    <% else %>
-      <%= render 'polls/reasons_for_not_answering', poll: @question.poll %>
-
-      <div class="small-12 small-centered text-center column">
-        <div id="<%= dom_id(@question) %>_answers">
-          <%= render "answers", question: @question %>
-        </div>
-      </div>
-    <% end %>
+  <div class="small-12 medium-9 column">
+    <h3><%= t('poll_questions.show.more_info') %></h3>
+    <%= @question.description %>
   </div>
 </div>
-
-<% if @question.description.present? %>
-  <div class="row margin-top">
-    <div class="small-12 medium-9 column">
-      <h3><%= t('poll_questions.show.more_info') %></h3>
-      <%= @question.description %>
-    </div>
-  </div>
-<% end %>
 
 <%= render "comments" %>

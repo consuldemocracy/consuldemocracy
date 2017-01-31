@@ -1317,6 +1317,15 @@ ul.ballot-list {
     color: #92BA48;
   }
 
+  .button {
+    background: white;
+    color: $brand;
+  }
+
+  .callout.warning a {
+    color: $color-warning;
+  }
+
   .info {
     background: #314253;
     padding: $line-height;
