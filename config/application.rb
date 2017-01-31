@@ -42,6 +42,7 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/models/custom"
     config.paths['app/views'].unshift(Rails.root.join('app', 'views', 'custom'))
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{rb,yml}')]
+    config.autoload_paths << Rails.root.join('app', 'graph')
   end
 end
 
