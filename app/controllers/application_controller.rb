@@ -16,17 +16,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  def self.force_ssl(options = {})
-    before_filter(options) do
-      puts request.inspect
-    end
-
-
-  end
-
-  force_ssl
-
-
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.html { redirect_to main_app.root_url, alert: exception.message }
@@ -56,12 +45,6 @@ class ApplicationController < ActionController::Base
     end
 
     def set_locale
-      puts "@@@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@@@"
-      puts request.remote_ip.inspect
-      puts "@@@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@@@"
       if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
         session[:locale] = params[:locale]
       end
