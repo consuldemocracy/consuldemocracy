@@ -18,7 +18,7 @@ class PadronCastellonApi
     number_variants << document_number
     number_variants.each do |nv|
       variants << { dni: nv, caracterControl: letra }
-      variants << { dni: nv, caracterControl: '' }
+      variants << { dni: nv, caracterControl: ' ' }
     end
     variants
   end
@@ -147,7 +147,7 @@ class PadronCastellonApi
           }, {
             HABFECNAC: "1980-12-31 00:00:00.0",
             HABDISTRI: "7",
-            ELSEXO: "Varón",
+            ELSEX: "Varón",
             HABNOMHAB: "JUAN",
             HABAP1HAB: "GOMEZ",
             HABAP2HAB: "GARCIA",

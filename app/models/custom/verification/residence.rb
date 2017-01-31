@@ -21,11 +21,6 @@ class Verification::Residence
   end
 
   def save
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~4"
-    # puts document_number
-    # puts valid?.inspect
-    # puts errors.full_messages.inspect
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~4"
     return false unless valid?
     user.update(document_number:       document_number,
                 document_type:         document_type,
@@ -44,22 +39,13 @@ class Verification::Residence
     end
 
     def residency_valid?
-      # puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-      # puts @census_api_response.valid?
-      # puts @census_api_response.postal_code
-      # puts @census_api_response.date_of_birth
-      # puts "%%%%%%%%%%%%%%%%"
-      # puts postal_code.inspect
-      # puts date_of_birth.inspect
-      # puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-
       @census_api_response.valid? &&
         @census_api_response.postal_code == postal_code &&
         @census_api_response.date_of_birth == date_of_birth
     end
 
     def valid_postal_code?
-      postal_code =~ /^120/
+      postal_code =~ /^12/
     end
 
 end
