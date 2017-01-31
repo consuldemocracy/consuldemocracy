@@ -12,6 +12,8 @@ class GraphqlController < ApplicationController
       render json: response, status: :ok
     rescue GraphqlController::QueryStringError
       render json: { message: 'Query string not present' }, status: :bad_request
+    rescue JSON::ParserError
+      render json: { message: 'Error parsing JSON' }, status: :bad_request
     rescue GraphQL::ParseError
       render json: { message: 'Query string is not valid JSON' }, status: :bad_request
     rescue
@@ -40,6 +42,10 @@ class GraphqlController < ApplicationController
     end
 
     def query_variables
-      params[:variables].blank? ? {} : JSON.parse(params[:variables])
+      if params[:variables].blank? || params[:variables] == 'null'
+        {}
+      else
+        JSON.parse(params[:variables])
+      end
     end
 end
