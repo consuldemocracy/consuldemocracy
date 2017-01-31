@@ -665,7 +665,7 @@ plaza_options = [
 ["Metamorfosis del girasol", "27"],
 ["De este a oeste", "28"],
 ["Corredor ecologico", "29"],
-["Welcome mother Nature, good bye Mr Ford", "30"],
+["Welcome mother Nature", "30"],
 ["PLAZA DE ESPAÑA 2017", "31"],
 ["Ñ-AGORA", "32"],
 ["OASIS24H", "33"],
