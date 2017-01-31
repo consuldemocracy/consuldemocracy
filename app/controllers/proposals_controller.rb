@@ -1,4 +1,5 @@
 class ProposalsController < ApplicationController
+  include FeatureFlags
   include CommentableActions
   include FlagActions
 
@@ -6,6 +7,8 @@ class ProposalsController < ApplicationController
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
+
+  feature_flag :proposals
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
