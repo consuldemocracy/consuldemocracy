@@ -39,11 +39,6 @@ es:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
   cards:
-    air_quality_plan:
-      title_html: "Borrador Plan calidad de aire y cambio climático"
-      text: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
-      date_html: "Participa hasta el <strong>31 de enero</strong>"
-      button: "Quiero opinar"
     plaza:
       title: "Proyecto de remodelación de Plaza España"
       text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
