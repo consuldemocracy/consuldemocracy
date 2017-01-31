@@ -68,9 +68,9 @@ Rails.application.configure do
 
   # config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              '192.168.1.91',
-    port:                 25,
-    domain:               'castello.es',
+    address:              Rails.application.secrets.smtp_server,
+    port:                 Rails.application.secrets.smtp_port,
+    domain:               Rails.application.secrets.smtp_domain,
     enable_starttls_auto: true
   }
 
