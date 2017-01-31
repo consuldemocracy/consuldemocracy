@@ -3,12 +3,10 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      puts "@@@@@@@@@@@@@@@"
       if !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
-        proposals_path
-        # super
+        super
       end
     end
 
