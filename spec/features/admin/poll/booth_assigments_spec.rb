@@ -80,7 +80,7 @@ feature 'Admin booths assignments' do
       visit admin_poll_path(poll)
       click_link 'Booths (2)'
 
-      click_link booth.name
+      within('#assigned_booths_list') { click_link booth.name }
 
       click_link 'Officers'
       within('#officers_list') do
@@ -119,7 +119,7 @@ feature 'Admin booths assignments' do
       visit admin_poll_path(poll)
       click_link 'Booths (2)'
 
-      click_link booth.name
+      within('#assigned_booths_list') { click_link booth.name }
 
       click_link 'Recounts'
       within('#recounts_list') do
