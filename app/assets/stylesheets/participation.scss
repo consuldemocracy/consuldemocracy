@@ -1322,8 +1322,19 @@ ul.ballot-list {
     color: $brand;
   }
 
-  .callout.warning a {
-    color: $color-warning;
+  .callout {
+
+    &.warning a {
+      color: $color-warning;
+    }
+
+    &.primary a {
+      color: $color-info;
+    }
+
+    &.alert a {
+      color: $color-alert;
+    }
   }
 
   .info {
