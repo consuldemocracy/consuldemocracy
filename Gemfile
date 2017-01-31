@@ -65,6 +65,9 @@ gem 'browser'
 gem 'turnout', '~> 2.4.0'
 gem 'redcarpet'
 
+gem 'graphql'
+gem 'graphiql-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -95,6 +98,7 @@ group :test do
   gem 'poltergeist'
   gem 'coveralls', require: false
   gem 'email_spec'
+  gem 'http'
 end
 
 group :development do
