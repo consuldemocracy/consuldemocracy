@@ -277,6 +277,10 @@ en:
         remove_assignment: "Remove"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
+        recounts: "Daily recounts"
+        recount: "Recount"
+        final_recounts: "Final recounts"
+        final_recount: "Final recount"
     poll_booth_assignments:
       show:
         location: "Location"

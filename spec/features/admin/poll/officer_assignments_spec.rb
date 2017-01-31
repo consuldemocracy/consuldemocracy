@@ -48,7 +48,7 @@ feature 'Admin officer assignments in poll' do
     expect(page).to have_content officer.email
   end
 
-  scenario 'remove booth from poll' do
+  scenario 'Remove officer assignment from poll' do
     officer_assignment = create(:poll_officer_assignment)
     poll = officer_assignment.booth_assignment.poll
     booth = officer_assignment.booth_assignment.booth
@@ -64,5 +64,34 @@ feature 'Admin officer assignments in poll' do
 
     expect(page).to have_content 'Officing shift removed'
     expect(page).to have_content 'This user has no officing shifts in this poll'
+  end
+
+  scenario 'Index view shows recounts info for officer' do
+    booth_assignment = create(:poll_booth_assignment)
+    poll = booth_assignment.poll
+    officer = create(:poll_officer)
+    officer_assignment = create(:poll_officer_assignment,
+                                booth_assignment: booth_assignment,
+                                officer: officer,
+                                date: poll.starts_at)
+    final_officer_assignment = create(:poll_officer_assignment, :final,
+                                       booth_assignment: booth_assignment,
+                                       officer: officer,
+                                       date: poll.ends_at + 1.day)
+    recount = create(:poll_recount,
+                     booth_assignment: booth_assignment,
+                     officer_assignment: officer_assignment,
+                     date: officer_assignment.date,
+                     count: 77)
+    final_recount = create(:poll_final_recount,
+                           booth_assignment: booth_assignment,
+                           officer_assignment: final_officer_assignment,
+                           date: poll.ends_at,
+                           count: 9876)
+
+    visit admin_officer_assignments_path(poll: poll, officer: officer)
+
+    within('#recount_list') { expect(page).to have_content('77') }
+    within('#final_recount_list') { expect(page).to have_content('9876') }
   end
 end
