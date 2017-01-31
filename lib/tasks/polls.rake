@@ -1,21 +1,22 @@
 namespace :polls do
 
-  def create_2017_district_poll(geozone_name, attributes)
+  def create_2017_district_poll(geozone_name, questions_attributes)
+    questions = Array.wrap(questions_attributes)
     poll = Poll.create!(
-      name: geozone_name,
+      name: questions.size == 1 ? questions[0][:title] : geozone_name,
       starts_at: Date.new(2017, 2, 13),
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: true
     )
     poll.geozones << Geozone.where(name: geozone_name).first!
-    Array.wrap(attributes).each do |attributes|
+    questions.each do |question_attributes|
       Poll::Question.create!(
         { author_visible_name: "Junta de Distrito de #{geozone_name}",
           valid_answers: "",
           poll: poll,
           skip_length_checks: true,
           author: User.first
-        }.merge(attributes)
+        }.merge(question_attributes)
       )
     end
   end
@@ -23,20 +24,20 @@ namespace :polls do
   desc "Imports the 2017 polls"
   task import_2017: :environment do
 
-    poll_bu = Poll.create!(
-      name: "Billete único para el transporte público",
+    poll_main = Poll.create!(
+      name: "Billete único, Madrid 100% Sostenible, Plaza de España",
       starts_at: Date.new(2017, 2, 13),
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: false
     )
-    poll_bu.questions.create!(
+    poll_main.questions.create!(
       author: User.where(username: 'inwit').first || User.first,
       author_visible_name: "inwit",
-      title: "Billete único para el transporte público",
-      summary: "Es imprescindible que existan facilidades a la intermodalidad. Cambiar de medio de transporte público sin pagar más, en un periodo amplio (90 minutos al menos), es básico.",
+      title: "¿Estás de acuerdo con la propuesta “Billete único para el transporte público”?",
       proposal: Proposal.where(id: 9).first || nil,
       valid_answers: "Sí,No",
       description: %{
+<blockquote><p>Es imprescindible que existan facilidades a la intermodalidad. Cambiar de medio de transporte público sin pagar más, en un periodo amplio (90 minutos al menos), es básico.</p></blockquote>
 <p>Esta propuesta bebe de los siguientes debates, que están entre los más valorados:</p>
 
 <p><a href="https://decide.madrid.es/debates/74">https://decide.madrid.es/debates/74</a><p>
@@ -45,21 +46,15 @@ namespace :polls do
 <p>y otros.</p>
       }
     )
-
-    poll_m100 = Poll.create!(
-      name: "Madrid 100% Sostenible",
-      starts_at: Date.new(2017, 2, 13),
-      ends_at: Date.new(2017, 2, 19),
-      geozone_restricted: false
-    )
-    poll_m100.questions.create!(
+    poll_main.questions.create!(
       author: User.where(username: 'Alianza por el Clima').first || User.first,
       author_visible_name: 'Alianza por el Clima',
-      title: "Madrid 100% Sostenible",
-      summary: "Queremos un Madrid que no amanezca con una boina de contaminación gris, que desafíe a las eléctricas, potencie las renovables y se asegure de que a ninguna familia le corten la luz este invierno.",
+      title: "¿Estás de acuerdo con la propuesta “Madrid 100% Sostenible”?",
       proposal: Proposal.where(id: 199).first || nil,
       valid_answers: "Sí,No",
       description: %{
+<blockquote><p>Queremos un Madrid que no amanezca con una boina de contaminación gris, que desafíe a las eléctricas, potencie las renovables y se asegure de que a ninguna familia le corten la luz este invierno.</p></blockquote>
+
 <p>¿Cómo?</p>
 
 <p>Pidiéndole al Ayuntamiento de Madrid que se comprometa a<strong> firmar el manifiesto "MADRID CIUDAD SOSTENIBLE"</strong></u><strong> y a ponerlo en marcha -- </strong>Exigimos el cumplimiento de los 14 puntos siguientes:</p>
@@ -95,18 +90,11 @@ namespace :polls do
       }
     )
 
-    poll_pe = Poll.create!(
-      name: "Remodelación de Plaza España",
-      starts_at: Date.new(2017, 2, 13),
-      ends_at: Date.new(2017, 2, 19),
-      geozone_restricted: false
-    )
-    poll_pe.questions.create!(
+    poll_main.questions.create!(
       author_visible_name: "Ayuntamiento de Madrid",
       skip_length_checks: true,
       author: User.first,
-      title: "Votación final ciudadana del proyecto ganador",
-      summary: "Proyecto X: Welcome mother Nature, good bye Mr Ford. Proyecto Y: Proyecto Y: UN PASEO POR LA CORNISA",
+      title: "De los dos proyectos finalistas para reformar la Plaza de España ¿cuál prefieres que se lleve a cabo?",
       valid_answers: "Proyecto X, Proyecto Y",
       description: %{
         <p>El pasado 14 de diciembre se convocó un grupo de trabajo multidisciplinar (asociaciones de vecinos, urbanistas, hoteleros, técnicos del Ayuntamiento, etc), que decidió las preguntas clave que habría que resolver para definir la nueva Plaza de España. Desde el 28 de enero esas preguntas han estado disponibles aquí para que cualquier madrileño las responda, y las respuestas mayoritarias se han convertido en las bases obligatorias del concurso internacional de remodelación de Plaza España.</p>
@@ -129,7 +117,6 @@ namespace :polls do
       author_visible_name: "Ayuntamiento de Madrid",
       skip_length_checks: true,
       title: "¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?",
-      summary: "¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?",
       valid_answers: "Sí,No"
     )
     poll_gv.questions.create!(
@@ -137,7 +124,6 @@ namespace :polls do
       author_visible_name: "Ayuntamiento de Madrid",
       skip_length_checks: true,
       title: "¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?",
-      summary: "¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?",
       valid_answers: "Sí,No"
     )
     poll_gv.questions.create!(
@@ -145,7 +131,6 @@ namespace :polls do
       author_visible_name: "Ayuntamiento de Madrid",
       skip_length_checks: true,
       title: "¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?",
-      summary: "¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?",
       valid_answers: "Sí,No"
     )
     poll_gv.questions.create!(
@@ -153,17 +138,17 @@ namespace :polls do
       author_visible_name: "Ayuntamiento de Madrid",
       skip_length_checks: true,
       title: "¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?",
-      summary: "¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?",
       valid_answers: "Sí,No"
     )
 
     create_2017_district_poll('Barajas',
-        title: "Prioriza el Plan Participativo de Actuación Territorial de Barajas",
-        summary: %{Las 10 propuestas que tengan mayor número de apoyos serán asumidas por la Junta Municipal como propuestas de
-                   máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo},
-        valid_answers: (1..64).to_a.join(','),
-        description: %{
+      title: "Prioriza el Plan Participativo de Actuación Territorial de Barajas",
+      valid_answers: (1..64).to_a.join(','),
+      description: %{
 <p>Entre 2015 y 2016, la Junta Municipal de Barajas impulsó la realización de un Plan Participativo de Actuación Territorial en el que vecinas, vecinos y entidades sociales plantearon las propuestas que desean que lleve a cabo el actual equipo de gobierno. Dichas propuestas han sido asumidas por la Junta Municipal, incluso aunque en algunos casos no sean competencia del Ayuntamiento de Madrid. Respecto a estas últimas la Junta Municipal se compromete con la ciudadanía a dedicarles los esfuerzos necesarios para que puedan hacerse realidad. Emplazamos a las ciudadanas y ciudadanos de Barajas a que nos indiquen cuáles creen que son las más importantes entre todas ellas.</p>
+
+<p><strong>Las 10 propuestas que tengan mayor número de apoyos serán asumidas por la Junta Municipal como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.</strong></p>
+
 <p>De la siguiente lista de propuestas, marque las que considere más importantes (máximo 10 propuestas).</p>
 <ul>
 <li>1. (CULTURA) Mejorar la oferta cultural, tanto en calidad como en variedad</li>
@@ -235,20 +220,20 @@ namespace :polls do
 
       create_2017_district_poll('San Blas-Canillejas',
         title: "Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas",
-        summary: %{Las 10 propuestas que tengan mayor número de apoyos, serán asumidas por la Junta Municipal de
-                   San Blas-Canillejas como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.},
-        valid_answers: ( (1..12).map{|x|"ED#{x}"} +
-                         (1..9).map{|x|"EQ#{x}"} +
-                         (1..12).map{|x|"CU#{x}"} +
-                         (1..5).map{|x|"EM#{x}"} +
-                         (1..7).map{|x|"CO#{x}"} +
-                         (1..9).map{|x|"DE#{x}"} +
-                         (1..9).map{|x|"MA#{x}"} +
-                         (1..9).map{|x|"UR#{x}"} +
-                         (1..9).map{|x|"SA#{x}"} +
-                         (1..8).map{|x|"MO#{x}"} ).join(','),
+        valid_answers: ( (1..12).map{|x| "ED#{x}"} +
+                         (1..9).map{|x| "EQ#{x}"} +
+                         (1..12).map{|x| "CU#{x}"} +
+                         (1..5).map{|x| "EM#{x}"} +
+                         (1..7).map{|x| "CO#{x}"} +
+                         (1..9).map{|x| "DE#{x}"} +
+                         (1..9).map{|x| "MA#{x}"} +
+                         (1..9).map{|x| "UR#{x}"} +
+                         (1..9).map{|x| "SA#{x}"} +
+                         (1..8).map{|x| "MO#{x}"} ).join(','),
         description: %{
 <p>Entre 2015 y 2016, la Junta Municipal de San Blas-Canillejas impulsó la realización de un Plan Participativo de Actuación Territorial en el que vecinas, vecinos y entidades sociales plantearon las propuestas que desean que lleve a cabo el actual equipo de gobierno. Dichas propuestas han sido asumidas por la Junta Municipal, incluso aunque en algunos casos no sean competencia del Ayuntamiento de Madrid. Respecto a estas últimas la Junta Municipal se compromete con la ciudadanía a dedicarles los esfuerzos necesarios para que puedan hacerse realidad. Emplazamos a las ciudadanas y ciudadanos de Barajas a que nos indiquen cuáles creen que son las más importantes entre todas ellas.</p>
+
+<p><strong>Las 10 propuestas que tengan mayor número de apoyos, serán asumidas por la Junta Municipal de San Blas-Canillejas como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.</strong></p>
 
 <p>De las siguientes listas de propuestas, marque las que considere más importantes (máximo 10 propuestas).</p>
 
@@ -264,7 +249,7 @@ namespace :polls do
 <li>ED8. Incrementar educadores sociales</li>
 <li>ED9. Mejorar mantenimiento de los colegios públicos</li>
 <li>ED10. Hacer gratuita la educación de 0 a 3 años</li>
-<li>ED11. Revisar o suprimir la ley educativa (LOMCE</li>
+<li>ED11. Revisar o suprimir la ley educativa (LOMCE)</li>
 <li>ED12. Eliminar asignatura de religión en horario lectivo</li>
 </ul>
 
@@ -385,33 +370,29 @@ namespace :polls do
       create_2017_district_poll('Hortaleza', [
         {
           title: "¿Cambiamos el nombre del distrito de Hortaleza a Hortaleza-Canillas?",
-          summary: %{La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.},
           valid_answers: "Sí,No",
           description: %{
 <p>Es en los siglos XII y XIII cuando aparecen los nombres de Hortaleza y Canillas, asentamientos que nacieron al noreste de la Villa de Madrid, como consecuencia de la repoblación castellana llevada a cabo para asentar el territorio conquistado a las tropas musulmanas.<p>
 <p>Hasta el siglo XX Hortaleza y Canillas contaron con Ayuntamientos propios e independientes. Es en 1950 cuando el antiguo municipio de Canillas fue absorbido por Madrid, dentro del proyecto denominado Gran Madrid. Un día después sucedió lo mismo con Hortaleza.</p>
 <p>Al contrario que el resto de municipios absorbidos a la capital, como Hortaleza, Vallecas, los Carabancheles, Vicálvaro o Villaverde, Canillas continua desaparecido del mapa administrativo de la capital.</p>
+<p><strong>La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.</strong></p>
 }
         }, {
           title: "¿Debe retomar el actual Parque de Felipe VI a su nombre original Parque Forestal de Valdebebas?",
-          summary: %{La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.},
           valid_answers: "Sí,No",
-          description: ""
+          description: "<p><strong>La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.</strong></p>"
         }
       ])
 
       create_2017_district_poll('Retiro', [
         {
           title: "¿Cómo quieres que se llame el Centro Cultural situado en el Mercado de Ibiza, c/ Ibiza 8?",
-          summary: "¿Cómo quieres que se llame el Centro Cultural situado en el Mercado de Ibiza, c/ Ibiza 8?",
           valid_answers: "Amparo Barayón,Ángeles García-Madrid,El Buen Mercado de Retiro,Carmen Martín Gaite,Concha García Campoy,Duquesa de Santoña,Fernando Rivero Ramírez,Francisco Bernis Madrazo,José Hierro,Marcos Ana,María Asquerino,Mercado de Ibiza,Pepita Embil Echániz,Ramón J. Sénder,Santiago Ramón y Cajal,Las Sin Sombrero,Zenobia Camprubí"
         }, {
           title: "¿Cómo quieres que se llame el Centro Cultural situado en c/ Luis Peidró 2?",
-          summary: "¿Cómo quieres que se llame el Centro Cultural situado en c/ Luis Peidró 2?",
           valid_answers: "Ángeles García-Madrid,Las Californias,Zenobia Camprubí"
         }, {
           title: "¿Cómo quieres que se llame el Centro Sociocultural situado en la Junta Municipal de Retiro, Avda. Ciudad de Barcelona 164?",
-          summary: "¿Cómo quieres que se llame el Centro Sociocultural situado en la Junta Municipal de Retiro, Avda. Ciudad de Barcelona 164?",
           valid_answers: "Ángeles García-Madrid,Clara Campoamor Rodríguez,Concha García Campoy,Concha Méndez Cuesta,José Hierro,Marcos Ana,María Asquerino,María Casares,Memorial 11M,Las Sin Sombrero"
         }
       ])
@@ -419,8 +400,10 @@ namespace :polls do
       create_2017_district_poll('Salamanca', [
         {
           title: "¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?",
-          summary: "La respuesta que cuente con mayor número de votos será la que se lleve a cabo",
-          description: %{<p>El Distrito de Salamanca cuenta con un número importante de edificios con alto valor histórico y patrimonial. En la actualidad, algunos de ellos figuran en el catálogo de bienes protegidos del Ayuntamiento de Madrid, que establece su grado de protección. Sin embargo, existen inmuebles que actualmente están fuera de este listado o cuyo nivel de protección es demasiado bajo. Es por esto que, desde la Junta Municipal del Distrito de Salamanca, se consulta a la población si considera que esta línea de preservación de los elementos que conforman la historia de la ciudad de Madrid debería incluirse en las líneas y prioridades de trabajo de esta administración</p>},
+          description: %{
+            <p>El Distrito de Salamanca cuenta con un número importante de edificios con alto valor histórico y patrimonial. En la actualidad, algunos de ellos figuran en el catálogo de bienes protegidos del Ayuntamiento de Madrid, que establece su grado de protección. Sin embargo, existen inmuebles que actualmente están fuera de este listado o cuyo nivel de protección es demasiado bajo. Es por esto que, desde la Junta Municipal del Distrito de Salamanca, se consulta a la población si considera que esta línea de preservación de los elementos que conforman la historia de la ciudad de Madrid debería incluirse en las líneas y prioridades de trabajo de esta administración</p>
+            <p><strong>La respuesta que cuente con mayor número de votos será la que se lleve a cabo.</strong></p>
+          },
           valid_answers: "Sí,No"
         }
       ])
@@ -428,15 +411,17 @@ namespace :polls do
       create_2017_district_poll('Vicálvaro', [
         {
           title: "¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?",
-          summary: "El nombre que cuente con mayor número de apoyos será la que se utilizará para designar al Espacio de Igualdad del Distrito de Vicálvaro.",
           valid_answers: "María Pacheco,Federica Montseny,Gloria Fuertes,Frida Kahlo",
           description: %{
-<p>Información adicional sobre las personas cuyos nombres se proponen para de
-Espacio de Igualdad del Distrito de Vicálvaro:</p>
+<p>Durante el último trimestre de 2016 se realizó un proceso participativo presencial apoyado en redes en el que se solicitaban sugerencias para la preselección de nombres para el Espacio de Igualdad de Vicálvaro y enero de 2017 se ha contado además con la participación de las entidades de mujeres. Como resultado de estas consultas se ha llegado a las cuatro propuestas siguientes, dos de ellas surgidos del proceso inicial de selección y otras dos aportadas por las entidades.</p>
 
-<p><strong>María Pacheco</strong></p>
+<p><strong>El nombre que cuente con mayor número de apoyos será la que se utilizará para designar al Espacio de Igualdad del Distrito de Vicálvaro.</strong></p>
 
-<p>(<a href="https://es.wikipedia.org/wiki/Granada_(Espa%C3%B1a)">Granada</a>,
+<p>Información adicional sobre las personas cuyos nombres se proponen para de Espacio de Igualdad del Distrito de Vicálvaro:</p>
+
+<ul>
+
+<li><strong>María Pacheco</strong> (<a href="https://es.wikipedia.org/wiki/Granada_(Espa%C3%B1a)">Granada</a>,
 <a href="https://es.wikipedia.org/wiki/1497">1497</a>
 - <a href="https://es.wikipedia.org/wiki/Oporto">Oporto</a>,
 <a href="https://es.wikipedia.org/wiki/Portugal">Portugal</a>,
@@ -449,11 +434,9 @@ el mando de la sublevación de las <a href="https://es.wikipedia.org/wiki/Comuni
 de Castilla</a>
 hasta que capituló ante el rey <a href="https://es.wikipedia.org/wiki/Carlos_I_de_Espa%C3%B1a">Carlos
 I de España y V del Sacro Imperio Romano Germánico</a>
-en febrero de <a href="https://es.wikipedia.org/wiki/1522">1522</a>.</p>
+en febrero de <a href="https://es.wikipedia.org/wiki/1522">1522</a>.</li>
 
-<p><strong>Federica Montseny Mañé</p>
-
-<p>(<a href="https://es.wikipedia.org/wiki/Madrid">Madrid</a>,
+<li><strong>Federica Montseny Mañé</p> (<a href="https://es.wikipedia.org/wiki/Madrid">Madrid</a>,
 <a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">España</a>;
 <a href="https://es.wikipedia.org/wiki/12_de_febrero">12
 de febrero</a>
@@ -471,14 +454,11 @@ ministra durante la <a href="https://es.wikipedia.org/wiki/II_Rep%C3%BAblica_esp
 República española</a>,
 siendo la primera mujer en ocupar un cargo ministerial en <a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">España</a>
 y una de las primeras en <a href="https://es.wikipedia.org/wiki/Europa_Occidental">Europa
-  Occidental</a>.</p>
-<p>Publicó casi cincuenta novelas cortas con trasfondo romántico-social
+  Occidental</a>.Publicó casi cincuenta novelas cortas con trasfondo romántico-social
 dirigidas concretamente a las mujeres de la clase proletaria, así
-como escritos políticos, éticos, biográficos y autobiográficos.</p>
+como escritos políticos, éticos, biográficos y autobiográficos.</li>
 
-<p><strong>Gloria Fuertes García</strong></p>
-
-<p>(<a href="https://es.wikipedia.org/wiki/Madrid">Madrid</a>,
+<li><strong>Gloria Fuertes García</strong> (<a href="https://es.wikipedia.org/wiki/Madrid">Madrid</a>,
 <a href="https://es.wikipedia.org/wiki/28_de_julio">28
 de julio</a>
 de <a href="https://es.wikipedia.org/wiki/1917">1917</a>
@@ -488,11 +468,9 @@ de noviembre</a>
 de <a href="https://es.wikipedia.org/wiki/1998">1998</a>)
 fue una poeta <a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">española</a>
 y autora de <a href="https://es.wikipedia.org/wiki/Literatura_infantil_y_juvenil">literatura
-infantil y juvenil</a></p>
+infantil y juvenil</a></li>
 
-<p><strong>Magdalena Carmen Frida Kahlo Calderón</strong></p>
-
-<p>(<a href="https://es.wikipedia.org/wiki/Coyoac%C3%A1n">Coyoacán</a>,
+<li><strong>Magdalena Carmen Frida Kahlo Calderón</strong> (<a href="https://es.wikipedia.org/wiki/Coyoac%C3%A1n">Coyoacán</a>,
 <a href="https://es.wikipedia.org/wiki/6_de_julio">6
 de julio</a>
 de <a href="https://es.wikipedia.org/wiki/1907">1907</a>-
@@ -511,17 +489,17 @@ postrada en cama durante largos periodos, llegando a someterse hasta
 a 32 operaciones quirúrgicas. Llevó una vida poco convencional, fue
 <a href="https://es.wikipedia.org/wiki/Bisexual">bisexual</a> y
 entre sus amantes se encontraba <a href="https://es.wikipedia.org/wiki/Le%C3%B3n_Trotski">León
-  Trotski</a>.</p>
-
-<p>Su obra pictórica gira temáticamente en torno a su biografía y a
+  Trotski</a>. Su obra pictórica gira temáticamente en torno a su biografía y a
 su propio sufrimiento. Fue autora de unas 200 obras, principalmente
 autorretratos, en los que proyectó sus dificultades por sobrevivir.
 La obra de Kahlo está influenciada por su esposo, el reconocido
 pintor <a href="https://es.wikipedia.org/wiki/Diego_Rivera">Diego
-Rivera</a>,
-con el que compartió su gusto por el arte popular mexicano de raíces
+Rivera</a>, con el que compartió su gusto por el arte popular mexicano de raíces
 indígenas, inspirando a otros pintores y pintoras mexicanos del
-periodo postrevolucionario</p>
+periodo postrevolucionario</li>
+
+</ul>
+
 }
 
         }
