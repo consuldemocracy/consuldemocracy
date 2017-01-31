@@ -18,7 +18,7 @@
     <% @polls.each do |poll| %>
       <div class="poll">
         <div class="row">
-          <div class="small-12 medium-6 column">
+          <div class="small-12 column">
             <h3><%= link_to poll.name, poll %></h3>
             <p class="dates"><%= poll_dates(poll) %></p>
             <ul class="no-bullet margin-top tags">
@@ -27,7 +27,7 @@
               <% end %>
             </ul>
           </div>
-          <div class="small-12 medium-6 column text-right">
+          <div class="small-12 column">
             <% if can? :answer, poll %>
               <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
             <% else %>
