@@ -15,30 +15,61 @@
   </div>
 
   <div class="small-12 medium-9 column margin-top">
-    <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3>
-    <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3>
-    <% @polls.each do |poll| %>
-      <div class="poll">
-        <div class="row">
-          <div class="small-12 column">
-            <div class="dates"><%= poll_dates(poll) %></div>
-            <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
-            <ul>
-              <% poll.questions.each do |question| %>
-                <li><%= link_to question.title, question_path(question) %></li>
-              <% end %>
-            </ul>
-            <ul class="no-bullet margin-top tags">
-              <% poll.geozones.each do |g| %>
-                <li class="inline-block"><span><%= g.name %></span></li>
-              <% end %>
-            </ul>
-          </div>
-          <div class="small-12 column">
-            <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
+    <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
+
+    <% if polls_by_geozone_restriction[false].any? %>
+      <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3>
+
+      <% polls_by_geozone_restriction[false].each do |poll| %>
+        <div class="poll">
+          <div class="row">
+            <div class="small-12 column">
+              <div class="dates"><%= poll_dates(poll) %></div>
+              <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
+              <ul>
+                <% poll.questions.each do |question| %>
+                  <li><%= link_to question.title, question_path(question) %></li>
+                <% end %>
+              </ul>
+              <ul class="no-bullet margin-top tags">
+                <% poll.geozones.each do |g| %>
+                  <li class="inline-block"><span><%= g.name %></span></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="small-12 column">
+              <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
+    <% end %>
+
+    <% if polls_by_geozone_restriction[true].any? %>
+      <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3>
+      <% polls_by_geozone_restriction[true].each do |poll| %>
+        <div class="poll">
+          <div class="row">
+            <div class="small-12 column">
+              <div class="dates"><%= poll_dates(poll) %></div>
+              <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
+              <ul>
+                <% poll.questions.each do |question| %>
+                  <li><%= link_to question.title, question_path(question) %></li>
+                <% end %>
+              </ul>
+              <ul class="no-bullet margin-top tags">
+                <% poll.geozones.each do |g| %>
+                  <li class="inline-block"><span><%= g.name %></span></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="small-12 column">
+              <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
 
     <%= paginate @polls %>
