@@ -3,9 +3,7 @@
 <% if @polls.any? %>
   <table>
     <thead>
-      <th><%= t("officing.polls.final.select_poll") %></th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
+      <th colspan="2"><%= t("officing.polls.final.select_poll") %></th>
     </thead>
     <tbody>
       <% @polls.each do |poll| %>
@@ -19,8 +17,6 @@
             <%= link_to t("officing.polls.final.add_recount"),
                         new_officing_poll_final_recount_path(poll),
                         class: "button hollow" %>
-          </td>
-          <td class="text-right">
             <%= link_to t("officing.polls.final.add_results"),
                         new_officing_poll_result_path(poll),
                         class: "button hollow" %>
