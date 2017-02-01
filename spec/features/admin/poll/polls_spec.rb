@@ -165,6 +165,7 @@ feature 'Admin polls' do
   end
 
   context "Questions" do
+
     context "Poll show" do
 
       scenario "Question list", :js do
@@ -240,5 +241,67 @@ feature 'Admin polls' do
     end
   end
 
+  context "Recounting" do
+    context "Poll show" do
+      scenario "No recounts", :js do
+        poll = create(:poll)
+        visit admin_poll_path(poll)
+        click_link "Recounting"
+
+        expect(page).to have_content "There is nothing to be recounted"
+      end
+
+      scenario "Recounts list", :js do
+        poll = create(:poll)
+        booth_assignment = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_recounted = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
+
+        3.times { |i| create(:poll_recount,
+                         booth_assignment: booth_assignment,
+                         date: poll.starts_at + i.days,
+                         count: 33) }
+
+        3.times { |i| create(:poll_final_recount,
+                         booth_assignment: booth_assignment,
+                         date: poll.starts_at + i.days,
+                         count: 21) }
+
+        create(:poll_recount,
+               booth_assignment: booth_assignment_recounted,
+               date: poll.ends_at,
+               count: 777)
+
+        create(:poll_final_recount,
+               booth_assignment: booth_assignment_final_recounted,
+               date: poll.ends_at,
+               count: 55555)
+
+        visit admin_poll_path(poll)
+
+        click_link "Recounting"
+
+        expect(page).to have_css ".booth_recounts", count: 3
+
+        within("#poll_booth_assignment_#{booth_assignment.id}_recounts") do
+          expect(page).to have_content(booth_assignment.booth.name)
+          expect(page).to have_content('99')
+          expect(page).to have_content('63')
+        end
+
+        within("#poll_booth_assignment_#{booth_assignment_recounted.id}_recounts") do
+          expect(page).to have_content(booth_assignment_recounted.booth.name)
+          expect(page).to have_content('777')
+          expect(page).to have_content('-')
+        end
+
+        within("#poll_booth_assignment_#{booth_assignment_final_recounted.id}_recounts") do
+          expect(page).to have_content(booth_assignment_final_recounted.booth.name)
+          expect(page).to have_content('-')
+          expect(page).to have_content('55555')
+        end
+      end
+    end
+  end
 
 end

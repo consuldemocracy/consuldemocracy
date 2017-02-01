@@ -1333,11 +1333,11 @@ ul.ballot-list {
     @include breakpoint(medium) {
       border-top: rem-calc(6) solid #92BA48;
     }
+  }
 
-    a {
-      color: white;
-      text-decoration: underline;
-    }
+  a:not(.button) {
+    color: white;
+    text-decoration: underline;
   }
 
   .back, .icon-angle-left {

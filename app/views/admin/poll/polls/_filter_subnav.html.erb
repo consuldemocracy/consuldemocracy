@@ -17,4 +17,9 @@
       (<%= @poll.officers.uniq.count %>)
     <% end %>
   </li>
+  <li class="tabs-title">
+    <%= link_to "#tab-recounts" do %>
+      <%= t("admin.polls.show.recounts_tab") %>
+    <% end %>
+  </li>
 </ul>

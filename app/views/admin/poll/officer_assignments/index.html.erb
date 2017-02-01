@@ -65,5 +65,59 @@
   </table>
 <% end %>
 
+<% voting_days_officer_assignments = @officer_assignments.select{|oa| oa.final == false} %>
+<% if voting_days_officer_assignments.any? %>
+  <h3><%= t("admin.poll_officer_assignments.index.recounts") %></h3>
+  <table id="recount_list">
+    <thead>
+      <tr>
+        <th><%= t("admin.poll_officer_assignments.index.date") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.booth") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.recount") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% voting_days_officer_assignments.each do |officer_assignment| %>
+        <tr id="recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
+          <td><%= l(officer_assignment.date.to_date) %></td>
+          <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
+          <% if officer_assignment.recount.present? %>
+            <td><%= officer_assignment.recount.count %></td>
+          <% else %>
+            <td> - </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% final_officer_assignments = @officer_assignments.select{|oa| oa.final == true} %>
+<% if final_officer_assignments.any? %>
+  <h3><%= t("admin.poll_officer_assignments.index.final_recounts") %></h3>
+  <table id="final_recount_list">
+    <thead>
+      <tr>
+        <th><%= t("admin.poll_officer_assignments.index.date") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.booth") %></th>
+        <th><%= t("admin.poll_officer_assignments.index.final_recount") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% final_officer_assignments.each do |officer_assignment| %>
+          <tr id="final_recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
+            <td><%= l(officer_assignment.date.to_date) %></td>
+            <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
+            <% if officer_assignment.final_recounts.any? %>
+              <td><%= officer_assignment.final_recounts.to_a.sum(&:count) %></td>
+            <% else %>
+              <td> - </td>
+            <% end %>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
 
 

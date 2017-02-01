@@ -282,6 +282,10 @@ en:
         remove_assignment: "Remove"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
+        recounts: "Daily recounts"
+        recount: "Recount"
+        final_recounts: "Final recounts"
+        final_recount: "Final recount"
     poll_booth_assignments:
       show:
         location: "Location"
@@ -312,13 +316,16 @@ en:
         questions_tab: Questions
         booths_tab: Booths
         officers_tab: Officers
+        recounts_tab: Recounting
         no_booths: "There are no booths assigned to this poll."
         no_questions: "There are no questions assigned to this poll."
         no_officers: "There are no officers assigned to this poll."
+        no_recounts: "There is nothing to be recounted"
         remove_booth: "Remove booth from poll"
         booths_title: "List of booths"
         officers_title: "List of officers"
         questions_title: "List of questions"
+        recounting_title: "Recounts"
         remove_question: "Remove question from poll"
         add_booth: "Assign booth"
         add_question: "Include question"
@@ -331,6 +338,9 @@ en:
         table_name: "Name"
         table_location: "Location"
         table_email: "Email"
+        table_booth_name: "Booth"
+        table_final_recount: "Final recount"
+        table_recounts: "Accumulated daily recounts"
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
