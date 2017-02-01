@@ -52,6 +52,7 @@ es:
         submit: "Guardar"
         final_recount_list: "Tus recuentos finales"
         system_count: "Recuento del sistema"
+        add_results: "Añadir resultados"
     results:
       flash:
         create: "Datos guardados"

@@ -52,6 +52,7 @@ en:
         submit: Save
         final_recount_list: "Your final recounts"
         system_count: "System recount"
+        add_results: "Add results"
     results:
       flash:
         create: "Results saved"
