@@ -1,0 +1,55 @@
+<% if current_user %>
+  <% if can? :vote, SpendingProposal %>
+    <div class="sidebar-divider"></div>
+    <h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.votes") %></h2>
+    <br>
+
+    <% if current_user.city_wide_spending_proposals_supported_count > 0 %>
+      <div class="callout primary text-center" data-equalizer-watch>
+        <p class="votes-number"><%= current_user.city_wide_spending_proposals_supported_count %></p>
+        <span><%= t('geozones.none') %></span>
+      </div>
+    <% else %>
+      <div class="callout alert text-center" data-equalizer-watch>
+        <p class="votes-number">0</p>
+        <span><%= t('geozones.none') %></span>
+      </div>
+    <% end %>
+
+    <% if can_support_spending_proposals_on_current_district? %>
+
+      <% if current_user.district_wide_spending_proposals_supported_count > 0 %>
+
+        <div class="callout success text-center" data-equalizer-watch>
+
+          <p class="votes-number"><%= current_user.district_wide_spending_proposals_supported_count %></p>
+          <% if current_user.supported_spending_proposals_geozone.blank? %>
+            <span><%= t("spending_proposals.index.sidebar.district") %></span>
+          <% else %>
+            <span><%= current_user.supported_spending_proposals_geozone.try(:name) %></span>
+          <% end %>
+        </div>
+
+      <% else %>
+
+        <div class="callout alert text-center" data-equalizer-watch>
+          <p class="votes-number">0</p>
+        </div>
+
+      <% end %>
+
+    <% else %>
+
+      <div class="callout warning text-center" data-equalizer-watch>
+        <span class="icon-deleted"></span>
+        <br>
+        <span>
+          <%= t("spending_proposals.index.sidebar.votes_district",
+            district: link_to( current_user.supported_spending_proposals_geozone.try(:name),
+            spending_proposals_path(geozone: current_user.supported_spending_proposals_geozone_id))).html_safe %>
+        </span>
+      </div>
+
+    <% end %>
+  <% end %>
+<% end %>

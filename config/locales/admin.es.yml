@@ -66,10 +66,10 @@ es:
         filters:
           current: Abiertos
           finished: Terminados
-        budget_investments: Ver propuestas de inversión
+        budget_investments: Ver proyectos de gasto
         table_name: Nombre
         table_phase: Fase
-        table_investments: Propuestas de inversión
+        table_investments: Proyectos de gasto
         table_edit_groups: Grupos de partidas
         table_edit_budget: Editar
         edit_groups: Editar grupos de partidas
@@ -105,15 +105,15 @@ es:
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abiertos
           without_admin: Sin administrador
           managed: Gestionando
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
           valuation_finished_feasible: Viables
-          selected: Seleccionadas
+          selected: Seleccionados
           all: Todas
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -121,7 +121,7 @@ es:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
-        selected: "Seleccionada"
+        selected: "Seleccionado"
         select: "Seleccionar"
         table_id: "ID"
         table_title: "Título"
@@ -135,7 +135,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        info: "%{budget_name} - Grupo: %{group_name} - Proyecto de gasto %{id}"
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -201,6 +201,7 @@ es:
       hidden_users: Usuarios bloqueados
       managers: Gestores
       moderators: Moderadores
+      newsletter: Envío de Newsletters
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
       polls: Votaciones
@@ -227,6 +228,10 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+    newsletters:
+      index:
+        title: Envío de newsletters
+        button: Descargar zip con lista de usuarios
     valuators:
       index:
         title: Evaluadores
@@ -239,11 +244,11 @@ es:
         search: Buscar
         user_not_found: Usuario no encontrado
       summary:
-        title: Resumen de evaluación de propuestas de inversión
+        title: Resumen de evaluación de proyectos de gasto
         valuator_name: Evaluador
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
+        finished_and_feasible_count: Finalizados viables
+        finished_and_unfeasible_count: Finalizados inviables
+        finished_count: Finalizados
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
@@ -473,6 +478,8 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_geozone: Corte por distrito
+        max_for_no_geozone: Corte por ciudad
         filters:
           valuation_open: Abiertas
           without_admin: Sin administrador
@@ -495,6 +502,10 @@ es:
         assigned_valuators: Evaluadores asignados
         back: Volver
         classification: Clasificación
+        compatibility_title: Compatibilidad
+        compatibility:
+          "true": "Compatible"
+          "false": "Incompatible"
         heading: Propuesta de inversión %{id}
         edit: Editar
         edit_classification: Editar clasificación
@@ -513,9 +524,18 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+        compatibility: Compatibilidad
+      results:
+        title: Ranking actual de propuestas - Votaciones finales
+        spending_proposal: Título
+        ballot_lines_count: Votos
+        hide_discarded_link: Ocultar descartadas
+        show_all_link: Mostrar todas
+        price: Coste
+        amount_available: Presupuesto disponible
+        incompatible: Incompatibles
       summary:
         title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
         geozone_name: Ámbito de ciudad
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables
@@ -578,13 +598,23 @@ es:
     stats:
       show:
         stats_title: Estadísticas
+        participatory_budget: Presupuestos Participativos
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+        redeemable_codes: Códigos enviados por carta
+        user_invites: Invitaciones Linea Madrid
+        external_stats: Estadísticas externas
+        incomplete_verifications: Verificaciones incompletas
         summary:
+          ballot_line_votes: Votos en inversión
+          ballot_votes: Presupuestos votados
           comment_votes: Votos en comentarios
           comments: Comentarios
           debate_votes: Votos en debates
           debates: Debates
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          spending_proposal_votes: Votos Propuesta Inversión
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -594,11 +624,24 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        spending_proposals_title: Propuestas de inversión
-        visits_title: Visitas
-        direct_messages: Mensajes directos
-        proposal_notifications: Notificaciones de propuestas
-        incomplete_verifications: Verificaciones incompletas
+      graph:
+        debate_created: Debates
+        spending_proposals: Propuestas de inversión
+        visit: Visitas
+        level_2_user: Usuarios nivel 2
+        proposal_created: Propuestas Ciudadanas
+        participatory_budget: Presupuestos Participativos
+        user_voted_budgets: Usuarios que han votado
+        unverified_users: Usuarios sin verificar
+      spending_proposals:
+        title: Presupuestos participativos
+        districts: Distrito
+        users: Usuarios
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han votado AMBAS
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -607,6 +650,16 @@ es:
         title: Notificaciones de propuestas
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
+        not_available: Esta propuesta ya no está disponible
+      reedemable_codes:
+        title: Códigos enviados por carta
+        total: Total
+        campaign: Después de las 400.000 cartas
+      user_invites:
+        title: Invitaciones Linea Madrid
+        total: Total
+        clicked_email_link: Link del email clickado
+        clicked_signup_button: Botón de registrarse clickado
     tags:
       create: Crear Tema
       destroy: Eliminar Tema
@@ -627,6 +680,7 @@ es:
         title: Usuarios bloqueados
       show:
         email: 'Email:'
+        phone: Teléfono
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})

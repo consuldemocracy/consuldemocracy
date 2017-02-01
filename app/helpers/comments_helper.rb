@@ -4,8 +4,9 @@ module CommentsHelper
     parent_id.present? ? t("comments_helper.reply_link") : t("comments_helper.comment_link")
   end
 
-  def comment_button_text(parent_id)
-    parent_id.present?  ? t("comments_helper.reply_button") : t("comments_helper.comment_button")
+  def comment_button_text(parent_id, parent=nil)
+    comment_kind = find_comment_kind(parent)
+    parent_id.present?  ? t("#{comment_kind.pluralize}_helper.reply_button") : t("#{comment_kind.pluralize}_helper.comment_button")
   end
 
   def parent_or_commentable_dom_id(parent_id, commentable)
@@ -23,6 +24,8 @@ module CommentsHelper
   def commentable_path(comment)
     if comment.commentable_type == "Budget::Investment"
       budget_investment_path(comment.commentable.budget_id, comment.commentable)
+    elsif comment.commentable_type == "ProbeOption"
+      probe_probe_option_path(probe_id: comment.commentable.probe.codename, id: comment.commentable.id)
     else
       comment.commentable
     end

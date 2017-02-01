@@ -44,9 +44,18 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
     attributes:
+      budget_poll:
+        name: "First and last name"
+        email: "Email (optional)"
+        preferred_subject: "Preferred subject"
+        collective: "Collective"
+        public_worker: "Public Worker"
+        proposal_author: "Proposal author"
+        selected_proposal_author: "Selected proposal author"
+        help: "I want to help"
       budget:
         name: "Name"
         description_accepting: "Description during Accepting phase"
@@ -67,9 +76,9 @@ en:
         administrator_id: "Administrator"
         description: "Description"
         external_url: "Link to additional documentation"
-        heading_id: "Heading"
+        heading_id: "Is your project for the whole city or is it located in a specific district?"
         title: "Title"
-        location: "Location"
+        location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
       comment:
         body: "Comment"
@@ -155,4 +164,3 @@ en:
           attributes:
             document_number:
               not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'

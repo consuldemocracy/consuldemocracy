@@ -1,20 +1,29 @@
 ---
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
+    help_translate:
+      title: ¡Ayúdanos a traducir!
+      text: |-
+        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
+
+        Escríbenos a <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> para que te demos acceso al sistema de traducción colaborativo.
+        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     more_information:
       description:
         faq: Preguntas frecuentes sobre problemas técnicos
         how_it_works: Descubre todo lo que puedes hacer en esta web
         how_to_use: Utilízalo libremente o ayúdanos a mejorarlo, es software libre
+        human_rights_info: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos
+        meetings: Debatir y construir colectivamente
         participation: Participación Ciudadana, Transparencia y Gobierno Abierto
         participation_facts: Para perderle el miedo
         participation_world: Sistemas de participación ciudadana que ya existen en el mundo
         proposals_info: Crea tus propias propuestas
         signature_sheet: Hojas de firmas para recoger apoyos
-        spending_proposals_info: Envía tus propuestas de gasto
+        spending_proposals_info: Envía tus propuestas de presupuesto
       how_it_works:
         i: Participación
         i1: Espacio de debate
@@ -22,7 +31,7 @@ es:
         text: |-
           El nuevo Portal de Gobierno Abierto está dividido en tres partes: Participación, Transparencia y Datos Abiertos (verás los enlaces en la parte superior derecha).
           >**I. Participación:** Donde poder decidir qué ciudad queremos tener (a través de propuestas ciudadanas, espacios de debate, presupuestos participativos, legislación colaborativa, y muchos otros procesos que iremos implementando).
-          **II. Transparencia:** En este espacio se publicarán todos los datos relativos a quién y cómo se gestiona la ciudad (nombres de los responsables, cargos, sueldos, planes de gobierno, contratos, agendas de los responsables...). Además es el espacio donde ejercer el derecho de acceso a la información, pudiendo solicitar cualquier información sobre el Ayuntamiento de manera fácil y rápida.
+          **II. Transparencia:** En este espacio se publicarán todos los datos relativos a quién y cómo se gestiona Madrid (nombres de los responsables, cargos, sueldos, planes de gobierno, contratos, agendas de los responsables...). Además es el espacio donde ejercer el derecho de acceso a la información, pudiendo solicitar cualquier información sobre el Ayuntamiento de Madrid de manera fácil y rápida.
           **III. Datos Abiertos:** En este espacio se cuelgan las bases de datos que tiene el Ayuntamiento, para que cualquiera pueda usar toda la información directamente, sin necesidad ni siquiera de preguntar. También se puede solicitar la publicación de más bases de datos.
 
           Inauguramos el nuevo portal con la nueva sección de Participación, y en breve añadiremos las nuevas secciones de Transparencia y Datos Abiertos (así que mantenemos por el momento los enlaces a las páginas al respecto que ya existían).
@@ -33,39 +42,109 @@ es:
 
           Tanto los hilos, como los comentarios podrán ser valorados por cualquiera, de tal manera que será la propia ciudadanía, y nadie en su nombre, la que decida cuáles son los temas más importantes en cada momento. Estos serán presentados en la portada del espacio, pudiendo por supuesto accederse a todos los demás temas en páginas posteriores, o usando otros criterios de ordenación (los temas con más comentarios, los más nuevos, los más controvertidos, etc.).
 
-          Cada uno de los trabajadores del Ayuntamiento tiene un usuario propio, que será resaltado como tal, permitiendo que participen en los debates al mismo nivel que todos los demás ciudadanos. Esto permitirá crear espacios de comunicación directos entre unos y otros, evitando los inconvenientes que implica la comunicación mediada, y respondiendo a un planteamiento claro por parte del nuevo gobierno por el cual el Ayuntamiento trabaja para la ciudadanía, y ante ella debe responder.
+
+          Cada uno de los trabajadores del Ayuntamiento tiene un usuario propio, que será resaltado como tal, permitiendo que participen en los debates al mismo nivel que todos los demás ciudadanos. Esto permitirá crear espacios de comunicación directos entre unos y otros, evitando los inconvenientes que implica la comunicación medidada, y respondiendo a un planteamiento claro por parte del nuevo gobierno de Madrid por el cual el Ayuntamiento trabaja para la ciudadanía, y ante ella debe responder.
+
           ## <a id='i2'></a> I.I. Espacio de propuestas
           En este espacio, cualquier persona puede proponer una iniciativa con la intención de recabar los suficientes apoyos como para que la idea pase a ser consultada a toda la ciudadanía con carácter vinculante.
 
-          Las propuestas pueden ser apoyadas por ciudadanos empadronados que hayan verificado su cuenta en la plataforma de participación, de tal manera que será la propia ciudadanía, y nadie en su nombre, la que decida cuáles son las propuestas que merecen la pena ser llevadas a cabo.
+          Las propuestas pueden ser apoyadas por ciudadanos empadronados en Madrid que hayan verificado su cuenta en la plataforma de participación, de tal manera que será la propia ciudadanía, y nadie en su nombre, la que decida cuáles son las propuestas que merecen la pena ser llevadas a cabo.
 
-          Una vez que una propuesta alcance una cantidad de apoyos equivalente al 1% del censo, automáticamente pasa a ser estudiada por un grupo de trabajo del Ayuntamiento y pasará a la siguiente fase de consulta popular, en la que la ciudadanía votará si se lleva a cabo o no. El plazo máximo para recabar los apoyos necesarios será de 12 meses.
+          Una vez que una propuesta alcance una cantidad de apoyos equivalente al 1% del censo de Madrid (unos 27000), automaticamente pasa a ser estudiada por un grupo de trabajo del Ayuntamiento y pasará a la siguiente fase de consulta popular, en la que la ciudadanía de Madrid votará si se lleva a cabo o no. El plazo máximo para recabar los apoyos necesarios será de 12 meses.
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
 
-          Este Portal de Gobierno Abierto usa la [aplicación Consul](https://github.com/ayuntamientomadrid 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+          Este Portal de Gobierno Abierto usa la [aplicación Consul](https://github.com/consul/consul 'github consul' ) que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
 
-          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación Consul](https://github.com/ayuntamientomadrid 'github consul').
+          No sólo puedes utilizar libremente este portal en tu municipio, sino que desde el Ayuntamiento de Madrid vamos a ayudarte todo lo posible a que lo hagas, así que si estás interesado, escríbenos a <a href='mailto:extension.institucional@madrid.es'>extension.institucional@madrid.es</a>
+
+          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación Consul](https://github.com/consul/consul 'github consul' ).
       titles:
         faq: Soluciones a problemas técnicos (FAQ)
         how_it_works: "¿Cómo funciona este Portal de Gobierno Abierto?"
         how_to_use: Utilízalo en tu municipio
-        participation: Participación y Transparencia - Próximas novedades
+        human_rights_info: "¿Qué significa trabajar con enfoque de derechos humanos?"
+        meetings: Espacios presenciales de debate y propuesta
+        participation: Participación y Transparencia en Madrid - Próximas novedades
         participation_facts: Hechos sobre participación ciudadana y democracia directa
         participation_world: Participación ciudadana directa en el mundo
         proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
         signature_sheet: Hojas de firmas
-        spending_proposals_info: "¿Cómo funcionan los presupuestos participativos?"
-    opendata:
-      slogan: "Información sobre Datos abiertos."
-      title: Datos abiertos
+        spending_proposals_info: "¿Qué son los presupuestos participativos?"
     privacy: Política de Privacidad
+    processes:
+      back: Volver
+      menu:
+        open: "Abiertos"
+        coming_soon: "Próximamente"
+        finished: "Terminados"
+      index:
+        featured: Destacado
+        process_1_title: Ordenanza de Transparencia
+        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo.
+        process_1_button: Más información sobre la Ordenanza
+        process_2_title: Remodelación de Plaza España
+        process_2_description_close: La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
+        process_2_button: Ver resultados
+        process_3_title: "Pleno Abierto"
+        process_3_description: Apoya las propuestas y preguntas enviadas. Las cinco más votadas serán formuladas en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
+        process_3_button: Ver propuestas y preguntas
+        process_5_title: Plan de Derechos Humanos
+        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
+        process_5_title_voting: Plan de Derechos Humanos
+        process_5_description_voting_html: "Hasta el 4 de noviembre los ciudadanos priorizaron las medidas y comentaron el borrador del Plan de Derechos Humanos."
+        process_5_button_voting: Más información
+        process_6_title: Cartas de Servicios
+        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_button: Ver resultados de participación
+        process_7_title: "Urbanismo: nuevos bancos"
+        process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
+        process_7_button: Ver resultados de la votación
+        process_8_title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
+        process_8_description: Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
+        process_8_button: "Más información"
+        process_9_title: "Alianza para el Gobierno Abierto"
+        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
+        process_9_button: "Más información"
+        process_10_title: "Ordenanza de subvenciones"
+        process_10_description: "El Ayuntamiento de Madrid sometió a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
+        process_10_button: "Más información"
+        process_11_title: "Borrador de Plan de Calidad de Aire y Cambio Climático"
+        process_11_description: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+        process_11_button: "Más información"
+        process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
+        process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
+        process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        title: Procesos
+        process_plaza_title: Remodelación de Plaza España
+        process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.
+      process_1:
+        title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
+        comment: dejar tus comentarios
+        text: |
+          Este es el texto sometido a consulta pública. En breve publicaremos el texto del proyecto inicial de Ordenanza que apruebe la Junta de Gobierno de la Ciudad de Madrid con las aportaciones ciudadanas que se hayan incluido.
+
+          La Ordenanza regulará la publicidad activa, el derecho de acceso y la reutilización de la información pública, así como el registro de lobbies, desde un principio básico de máxima transparencia y divulgación de la información que genera el Ayuntamiento de Madrid y el resto de los sujetos obligados por la norma.
+
+          Este texto, en cuya elaboración ha participado un nutrido grupo de representantes de diferentes áreas de gobierno y órganos directivos municipales, surge con la vocación de convertir la transparencia en uno de los ejes inspiradores de la actuación municipal y para lograr devolver la información que genera la Administración a sus verdaderos propietarios, los ciudadanos.
+
+          El proceso de consulta pública finalizó el 31 de Enero de 2016.
+
+        button: Ver borrador
+      process_3:
+        send_proposal: Enviar una propuesta
+        send_question: Hacer una pregunta
+        view_all: Ver propuestas y preguntas más votadas
+        view_proposals: Ver todas las propuestas enviadas
+        view_questions: Ver todas las preguntas enviadas
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       more_information: Más información
-      opendata: Datos abiertos
       privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta
@@ -75,3 +154,22 @@ es:
       password: Contraseña
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
+  participatory_budget:
+    in_two_minutes:
+      date_1: 22 febrero - 31 marzo
+      date_1_info: Recogida de propuestas
+      date_2: 1 abril - 15 abril
+      date_2_info: Apoyos
+      date_3: 16 abril - 14 mayo
+      date_3_info: Evaluación
+      date_4: 15 mayo - 30 junio
+      date_4_info: Votación final
+      title_html: Tú decides cómo invertir 60 millones de euros<br> para tu ciudad
+      title_page: Presupuestos participativos
+  annotator:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"

@@ -1,4 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
+  after_filter :after_login, only: :create
 
   private
 
@@ -10,8 +11,12 @@ class Users::SessionsController < Devise::SessionsController
       end
     end
 
+    def after_login
+      log_event("login", "successful_login")
+    end
+
     def after_sign_out_path_for(resource)
-      request.referrer.present? ? request.referrer : super
+      super
     end
 
     def verifying_via_email?

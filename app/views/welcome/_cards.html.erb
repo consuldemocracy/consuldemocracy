@@ -1,0 +1,41 @@
+<div class="expanded padding cards">
+
+  <div class="row">
+    <div class="small-12 column">
+      <h2 class="title inline-block">
+        <%= t("welcome.featured.title") %>
+      </h2>
+      <small>
+        <%= link_to t("welcome.featured.see_all"),
+                    processes_path, class: "float-right margin-top" %>
+      </small>
+    </div>
+  </div>
+
+  <div class="row" data-equalizer>
+
+    <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
+    <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.air_quality_plan.title_html") %></h3>
+        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.air_quality_plan.date_html") %></p>
+        <p class="info">
+          <%= t("cards.air_quality_plan.text") %>
+        </p>
+        <%= link_to t("cards.air_quality_plan.button"), air_quality_plan_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
+    <!-- Remodelación Plaza España -->
+    <div class="small-12 medium-4 column margin-top end">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.plaza.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.plaza.date_html") %></p>
+        <p class="info">
+          <%= t("cards.plaza.text") %>
+        </p>
+        <%= link_to t("cards.plaza.button"), plaza_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+  </div>
+</div>

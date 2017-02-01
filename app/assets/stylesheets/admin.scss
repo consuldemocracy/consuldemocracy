@@ -92,6 +92,10 @@ body.admin {
       &:hover {
         background: #f3f6f7;
       }
+
+      &.success {
+        background: $success-bg;
+      }
     }
 
     input[type="submit"] ~ a, a ~ a {
@@ -290,6 +294,10 @@ body.admin {
 // -----------------
 
 .delete {
+  color: $delete;
+}
+
+a.delete {
   border-bottom: 1px dotted #CF2A0E;
   color: $delete;
   font-size: $small-font-size;

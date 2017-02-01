@@ -1,0 +1,18 @@
+<div class="remove supported inline-block">
+  <span class="icon-check-circle bounceIn animated"
+        title="<%= t("spending_proposals.spending_proposal.already_added") %>">
+  </span>
+
+  <p class="investment-project-amount">
+    <%= format_price(spending_proposal.price) %>
+  </p>
+
+  <% if feature?("spending_proposal_features.final_voting_allowed") %>
+    <%= link_to t('ballots.show.remove'),
+                ballot_line_path(id: spending_proposal.id,
+                                 spending_proposals_ids: spending_proposal_ids),
+                class: "delete small expanded",
+                method: :delete,
+                remote: true %>
+  <% end %>
+</div>

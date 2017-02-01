@@ -13,6 +13,15 @@ module TagsHelper
     end
   end
 
+  def display_tag_list(resource)
+    tag_list = resource.tag_list.to_s
+
+    if resource.tag_list.count == 1
+       tag_list += ","
+    end
+    tag_list
+  end
+
   def taggable_path(taggable)
     taggable_type = taggable.class.name.underscore
     case taggable_type

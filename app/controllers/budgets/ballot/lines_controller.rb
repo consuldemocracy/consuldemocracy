@@ -5,7 +5,6 @@ module Budgets
       #before_action :ensure_final_voting_allowed
       before_action :load_budget
       before_action :load_ballot
-      before_action :load_tag_cloud
       before_action :load_categories
 
       before_action :load_investments
@@ -43,7 +42,7 @@ module Budgets
         end
 
         def load_budget
-          @budget = Budget.find(params[:budget_id])
+          @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
         end
 
         def load_ballot
@@ -63,10 +62,6 @@ module Budgets
 
         def load_heading
           @heading = @investment.heading
-        end
-
-        def load_tag_cloud
-          @tag_cloud = TagCloud.new(Budget::Investment, params[:search])
         end
 
         def load_categories

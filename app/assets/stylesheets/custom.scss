@@ -1,5 +1,3250 @@
-// Overrides and adds customized styles in this file
-// Read more on documentation:
-// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
-// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+// Overrides and adds customized styles
 //
+// 01. Global styles
+// 02. Header
+// 03. Alerts
+// 04. Tables
+// 05. Social
+// 06. Choose proposal type
+// 07. Surveys
+// 08. Spending proposals
+// 09. Featured
+// 10. Processes
+// 11. Spending proposals votes
+// 12. Collaborative legislation
+// 13. Counter
+// 14. Proposal Ballots
+// 15. Welcome
+// 16. Si te sientes gato
+// 17. Blas Bonilla
+// 18. Voluntarios mesas presenciales
+// 19. Budgets custom
+// 20. Landing voting february 2017
+// 21. Nvotes
+//
+
+// 01. Global styles
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.absolute {
+  position: absolute;
+}
+
+.absolute-survey {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+.highlight {
+  background: $highlight;
+  padding: $line-height/2;
+
+  .callout.info {
+    border: 1px solid $color-info;
+  }
+}
+
+.no-margin-top {
+  margin-top: rem-calc(-24);
+}
+
+.no-margin-top ~ .no-margin-top {
+  margin-top: 0 !important;
+}
+
+.panel {
+  background: white;
+  border: 1px solid $border;
+  padding: $line-height;
+}
+
+blockquote.featured {
+  border-left: 0;
+  border-top: 2px solid $brand;
+  color: $text;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+}
+
+blockquote p {
+  font-size: rem-calc(24);
+}
+
+@include breakpoint(medium down) {
+
+  .text-right {
+    text-align: left;
+  }
+}
+
+.panel.white {
+  background: white;
+}
+
+.jumbo {
+  background: $highlight;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $text;
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+
+  @include breakpoint(medium) {
+    padding-top: $line-height;
+  }
+
+  h1 {
+    border-left: 2px solid black;
+    display: inline-block;
+    padding-left: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
+
+  @include breakpoint(medium) {
+    padding-top: $line-height;
+  }
+
+  h1, h2, .back, .icon-angle-left, .p, a {
+    color: black;
+  }
+}
+
+.geozone a.featured-link {
+  display: block;
+  font-size: $base-font-size;
+  margin-bottom: $line-height;
+  text-align: center;
+  width: 100%;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.menu.no-padding>li>a {
+  padding-left: 0;
+}
+
+ul.menu > li > a {
+  line-height: $line-height;
+  padding: $line-height/2 $line-height/2 $line-height 0;
+}
+
+.tabs li.is-active a {
+  color: $brand;
+  border-bottom: 2px solid $brand;
+  font-weight: bold;
+}
+
+.sticky-bottom {
+  margin-bottom: rem-calc(-$line-height*2);
+
+  &.highlight {
+    border-bottom: $line-height/2 solid $highlight;
+  }
+}
+
+@import 'motion-ui/motion-ui';
+@include foundation-orbit;
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+// 02. Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.jumbo-survey, .jumbo-featured, .jumbo-investment-project {
+
+  h1, h2, .back, .icon-angle-left, p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a.button {
+    background: white;
+    color: $brand;
+    margin-bottom: rem-calc(3);
+    text-decoration: none;
+  }
+
+  .social-share-button a {
+    color: white;
+
+    &.social-share-button-twitter:hover {
+      color: #40A2D1;
+    }
+
+    &.social-share-button-facebook:hover {
+      color: #354F88;
+    }
+
+    &.social-share-button-google_plus:hover {
+      color: #CE3E26;
+    }
+  }
+}
+
+.jumbo-brand {
+  background: $brand;
+
+  h1, p, a {
+    color: white;
+  }
+}
+
+.jumbo-survey {
+  background: #33DADF;
+  border-bottom: 1px solid #33DADF;
+}
+
+.jumbo-featured {
+  background: $featured;
+  border-bottom: 1px solid $featured;
+}
+
+.jumbo-investment-project {
+  background: $budget;
+  border-bottom: 1px solid $budget;
+
+  &.investment-project-geozone {
+    min-height: $line-height*10;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  h1, h2, .back, .icon-angle-left, p, a {
+    color: white;
+  }
+
+  &.welcome {
+    background: $budget image-url('spending_proposals_bg.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .spending-proposal-timeline {
+      padding-top: $line-height;
+
+      ul li {
+        margin-right: $line-height;
+        padding-top: $line-height/2;
+
+        .icon-calendar {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+form.locale-form select {
+  background-position: rem-calc(48);
+}
+
+.orbit-bullets button {
+  background-color: #ccc;
+  height: $line-height/2;
+  width: $line-height/2;
+
+  &.is-active {
+    background-color: $brand;
+  }
+}
+
+// 03. Alerts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.callout.featured {
+  background-color: $featured;
+  border-color: $warning-border;
+  color: black;
+
+  a {
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+
+      h3 {
+        color: black;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.callout.highlighted {
+  background-color: #fff8a3;
+  border-color: #ffe485;
+  border-width: 2px;
+  color: #343d47;
+}
+
+// 04. Tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+table {
+  border: $border;
+
+  th {
+    background: #f8f9fb;
+  }
+
+  tr {
+
+    &:nth-child(odd) {
+      background: white;
+    }
+
+    &:nth-child(even) {
+      background: #fafcfb;
+    }
+
+    &.success {
+      background: $success-bg;
+    }
+  }
+}
+
+// 05. Social
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.button.button-twitter {
+  background: #40A2D1;
+}
+
+.button.button-facebook {
+  background: #354F88;
+}
+
+.button.button-google {
+  background: #CE3E26;
+}
+
+
+// 06. Choose proposal type
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.choose-proposal-type {
+  min-height: $line-height*25;
+
+  .panel {
+
+    &.proposal, &.participatory-budget {
+      border: 0;
+      color: white;
+      position: relative;
+    }
+
+    &.proposal {
+      background: $proposals;
+    }
+
+    &.participatory-budget {
+      background: $budget;
+    }
+
+    .icon-proposals,
+    .icon-budget {
+      font-size: rem-calc(60);
+    }
+
+    p a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .button {
+      background: white;
+      color: $text;
+    }
+  }
+}
+
+// 07. Surveys
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.jumbo {
+  background: $highlight;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(24) 0;
+  }
+
+  h1, p {
+    color: $text;
+  }
+}
+
+.survey {
+
+  .callout {
+    margin-bottom: 0;
+  }
+
+  form input[type=radio] {
+    height: $line-height !important;
+    vertical-align: top;
+    width: 18px\9;
+  }
+}
+
+.survey-questions {
+
+  &::before {
+    display: none;
+  }
+
+  article {
+    border-bottom: 1px solid $border;
+
+    @include breakpoint(large) {
+      padding: $line-height 0;
+    }
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .selections {
+    display: none;
+  }
+}
+
+.survey-timeline {
+  display: none;
+  width: 100%;
+  background-color: #f2f2f2;
+
+  ul {
+    height: $line-height*2;
+    margin: $line-height/4 0;
+
+    li {
+      counter-increment: articles;
+      display: inline-block;
+      height: $line-height*2;
+      list-style-type: none;
+      margin: 0 $line-height/4;
+      width: rem-calc(36);
+
+      &:last-of-type a::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.survey-timeline a {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    border-radius: 50%;
+    bottom: auto;
+    content: counter(articles);
+    color: $text-medium;
+    position: absolute;
+    transform: translateY(-50%);
+    height: rem-calc(36);
+    line-height: rem-calc(36);
+    margin-top: $line-height/4;
+    text-align: center;
+    top: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    -moz-transition: background-color 0.3s, color 0.3s;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: rem-calc(36);
+  }
+
+  &.read::before {
+    background-color: $brand;
+    color: white;
+  }
+
+  &.reading {
+
+    svg {
+      display: block;
+    }
+
+    &::before {
+      background-color: White;
+      color: $text;
+    }
+  }
+}
+
+.survey-timeline svg {
+  bottom: auto;
+  display: none;
+  margin-top: $line-height/4;
+  position: absolute;
+  stroke: $brand;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transition: all 0.5s ease
+}
+
+@include breakpoint(large) {
+
+  .survey-timeline {
+    display: none;
+    padding: $line-height;
+    text-align: center;
+
+    &.fixed {
+      display: block;
+      padding: 0 $line-height;
+    }
+  }
+}
+
+.survey-comments {
+
+  .comments {
+    border: 1px solid $border;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .comment-body {
+    margin-left: $line-height/2 !important;
+    padding-left: $line-height/2 !important;
+    padding-right: $line-height/2 !important;
+  }
+
+  .reply {
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.survey-timeline-line {
+  background: #2D3E50;
+  color: white;
+
+  ul {
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    margin-bottom: 0;
+
+    li {
+      border-top: 1px solid $border;
+      padding: $line-height/2 $line-height;
+
+      @include breakpoint(medium) {
+        border-right: 1px solid $border;
+        border-top: 0;
+        display: inline-block;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.survey-results {
+
+  .legend {
+    color: $text-medium;
+    margin-bottom: 0;
+  }
+
+  .title {
+    color: #000201;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+    }
+  }
+
+  .subtitle {
+    border-left: 1px solid $brand;
+    color: $brand;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    margin-bottom: rem-calc(40);
+    padding-left: $line-height/2;
+  }
+
+  .panel {
+    border: 0;
+
+    &.green {
+      background: #58ff87;
+    }
+
+    &.purple, &.light-green {
+
+      p {
+        color: white;
+        margin-bottom: 0;
+      }
+    }
+
+    &.purple {
+      background: $budget;
+    }
+
+    &.light-green {
+      background: #9CC56A;
+    }
+  }
+
+  .number-stat {
+    font-size: rem-calc(24);
+    font-weight: bold;
+  }
+
+  .big-number-stat {
+    font-size: rem-calc(72);
+    font-weight: bold;
+    line-height: rem-calc(72);
+  }
+
+  .chart-legend .big-number-stat {
+    color: $budget;
+  }
+
+  hr {
+    border: 0;
+
+    &.double {
+      height: $line-height*2;
+    }
+  }
+
+  .progress {
+    background: none;
+  }
+
+  .progress-meter {
+    background: #00dae0;
+    height: $line-height/2;
+
+    &.web {
+      background: #00ad51;
+    }
+
+    &.zero-ten {
+      background: #007dc3;
+    }
+
+    &.paper {
+      background: #ffdc08;
+    }
+  }
+
+  .progress-meter-text {
+    color: #000201;
+    font-weight: normal;
+    left: 0;
+    top: $line-height/2;
+    transform: initial;
+  }
+
+  table {
+    margin-top: $line-height*1.5;
+
+    &.questions-table {
+
+      tr.empty td {
+        border: 0 !important;
+      }
+
+      td:first-child, th:first-child {
+        border-right: 1px solid $border;
+      }
+
+      td:last-child, th:last-child {
+        border-left: 1px solid $border;
+      }
+
+      @include breakpoint(medium) {
+
+        th {
+          width: rem-calc(160);
+        }
+
+        th:first-child {
+          width: auto;
+        }
+      }
+    }
+
+    tr td, tr th {
+      text-align: left;
+
+      @include breakpoint(medium) {
+        padding: $line-height/2 $line-height;
+      }
+
+      &.border-left {
+        border-left: 1px solid $border;
+      }
+
+      &.border-right {
+        border-right: 1px solid $border;
+      }
+    }
+
+    tr.empty {
+      background: white;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-top: 1px solid $border;
+      height: $line-height;
+
+      @include breakpoint(medium) {
+        height: $line-height*1.5;
+      }
+    }
+
+    th.table-width {
+
+      @include breakpoint(medium) {
+        width: rem-calc(200);
+      }
+    }
+
+    .question, caption {
+      background: #fff7b4;
+      border: 2px solid #fae100;
+      text-align: left;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(24);
+        line-height: $line-height;
+      }
+    }
+
+    th.question-subtitle {
+      background: #9af6f9;
+    }
+
+    tr.answer {
+      background: #c1fdd2;
+      border-bottom: 2px solid #58ff87;
+      border-top: 2px solid #58ff87;
+
+      th {
+        background: #c1fdd2;
+      }
+
+      td:first-child, td:last-child {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.menu {
+
+  &.border-bottom {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+    padding-bottom: $line-height/4;
+  }
+
+  &.border-top {
+    border-top: 1px solid $border;
+    margin-top: $line-height;
+    padding-top: $line-height/4;
+  }
+}
+
+.section-title-stats {
+  background: $brand;
+  color: white;
+  margin-bottom: $line-height*2;
+  padding: $line-height 0;
+  text-align: center;
+}
+
+.chart-legend {
+  bottom: $line-height;
+  list-style-type: none;
+
+  .label {
+    height: rem-calc(14);
+    padding: 0;
+    width: rem-calc(14);
+  }
+
+  strong {
+    text-transform: uppercase;
+  }
+}
+
+.label.large {
+  font-size: $base-font-size;
+}
+
+table.survey-districts {
+
+  tr th {
+    border: 1px solid $border;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .tiny {
+    font-size: rem-calc(11);
+    font-weight: normal;
+  }
+
+  .success {
+    background: #c1fdd2;
+  }
+
+  .border-left-success {
+    background: #c1fdd2;
+    border-left: 2px solid #58ff87;
+  }
+
+  .border-right-success {
+    background: #c1fdd2;
+    border-right: 2px solid #58ff87;
+  }
+}
+
+@include breakpoint(medium down) {
+
+  table.survey-districts thead {
+    font-size: rem-calc(12);
+
+    th {
+      width: 25%;
+      word-break: break-all;
+    }
+  }
+
+  table.questions-table {
+
+    thead th {
+      font-size: rem-calc(13);
+      width: 20%;
+      word-break: break-all;
+    }
+
+    td {
+      font-size: rem-calc(13);
+    }
+  }
+}
+
+table.age-groups {
+
+  th {
+    width: 20%;
+  }
+}
+
+// 08. Spending proposals
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.spending-proposals {
+  background: $budget image-url('spending_proposals_bg.jpg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    color: white;
+    margin: $line-height 0;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+  &.results {
+
+    .back {
+      color: white;
+    }
+  }
+}
+
+.spending-proposal-timeline {
+
+  ul {
+    display: inline-block;
+
+    @include breakpoint(medium) {
+      border-top: 2px solid $border;
+    }
+
+    p {
+      color: white;
+
+      &.title {
+        font-size: rem-calc(24);
+        font-weight: bold;
+      }
+    }
+
+
+    li {
+      padding-top: $line-height*1.5;
+      position: relative;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+        margin-right: $line-height*2.5;
+      }
+
+      .icon-calendar {
+        background: white;
+        border: 1px solid $border;
+        border-radius: rem-calc(30);
+        color: $budget;
+        height: rem-calc(40);
+        left: 50%;
+        margin-left: rem-calc(-20);
+        padding: rem-calc(10);
+        position: absolute;
+        top: -20px;
+        width: rem-calc(40);
+      }
+
+      &.active {
+        @include breakpoint(medium) {
+          border-top: 1px solid $featured;
+          margin-top: rem-calc(-1);
+        }
+
+        .icon-calendar, h3, p {
+          color: $featured;
+        }
+
+        .icon-calendar {
+          background: $featured;
+          border: none;
+          box-shadow: 0 0 rem-calc(10) $featured;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.spending-proposals-text {
+
+  table {
+
+    thead tr th {
+      background: $highlight;
+      text-transform: uppercase;
+    }
+
+    tr td {
+      font-size: $base-font-size;
+    }
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+
+  @include breakpoint(medium down) {
+    .text-right {
+      text-align: left !important;
+    }
+  }
+}
+
+.investment-project-sidebar-votes {
+
+  .sticky {
+    background: rgba(255,255,255,.85);
+
+    @include breakpoint(medium down) {
+      margin-top: $line-height;
+      position: initial;
+    }
+  }
+
+  .counters {
+
+    .callout {
+      float: left;
+      margin-right: $line-height/4;
+      min-height: rem-calc(130);
+      padding: $line-height/2 0;
+      width: rem-calc(125);
+    }
+
+    .callout.warning.unverified {
+      padding: $line-height/2;
+      width: 100%;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  .votes-number {
+    font-size: rem-calc(80);
+    font-weight: bold;
+    line-height: rem-calc(80);
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+
+  .icon-deleted {
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+  }
+}
+
+.investment-projects-scope {
+
+  .callout {
+    background: white;
+    border-color: $border;
+    border-radius: 0;
+    color: $text;
+
+    @include breakpoint(medium) {
+      height: $line-height*17;
+    }
+
+    a {
+      font-size: $base-font-size;
+    }
+  }
+
+  .callout.primary {
+    border-top: 4px solid $info-border;
+
+    @include breakpoint(medium) {
+      background: image-url('investment_project_city.jpg') no-repeat bottom;
+    }
+  }
+
+  .callout.success {
+    border-top: 4px solid $success-border;
+
+    @include breakpoint(medium) {
+      background: image-url('investment_project_districts.jpg') no-repeat bottom;
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+
+    .accordion {
+      background: white;
+      border: 0;
+    }
+
+    .accordion-title {
+      border: 0;
+      color: $text;
+      padding: 0;
+
+      &:before {
+        content: none;
+      }
+
+      &:hover, &:focus, &:hover h2, &:focus h2 {
+        background: none;
+        color: $text;
+        text-decoration: none;
+      }
+    }
+
+    .accordion-content {
+      background: none;
+      border: 0;
+
+      @include breakpoint(medium) {
+        padding-bottom: rem-calc(39);
+      }
+    }
+  }
+}
+
+.no-underline a,
+.no-underline a:hover,
+.no-underline a:hover h2 {
+  color: $text !important;
+  text-decoration: none !important;
+}
+
+.is-forum {
+  background: $budget;
+}
+
+.forum.active {
+  color: $check;
+  font-weight: bold;
+
+  a {
+    background: $success-bg;
+    border: 1px solid $success-border;
+    border-radius: 35px;
+    color: $success-color;
+    padding: rem-calc(6) rem-calc(12);
+  }
+
+  &:after {
+    color: $check;
+    content: "\6c";
+    font-family: 'icons';
+    margin-left: rem-calc(6);
+  }
+}
+
+.jumbo-investment-project-votes {
+  background: #F6F5F8;
+
+  .content {
+    background: #F6F5F8;
+
+    @include breakpoint(large) {
+      padding-bottom: $line-height;
+      padding-top: $line-height;
+    }
+  }
+
+  h1 {
+    color: #7E328A;
+  }
+
+  .button.budget {
+    background: #7E328A !important;
+
+    &:hover {
+      background: #7571BF;
+    }
+  }
+}
+
+.jumbo-investment-image {
+  height: rem-calc(360);
+  position: absolute;
+}
+
+.investment-projects-scope {
+
+  a {
+    line-height: $line-height*2;
+  }
+}
+
+.jumbo-delegation {
+  background: #7E328A image-url('investment_project_delegation.jpg');
+  margin-bottom: rem-calc(-96);
+
+  @include breakpoint(medium) {
+    min-height: $line-height*15;
+  }
+
+  h2, h3, p {
+    color: white;
+  }
+
+  h3 a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .button {
+    background: white;
+    color: #7E328A;
+  }
+}
+
+.investment-project .supports .total-supports.no-button,
+.investment-project-show .supports .total-supports.no-button {
+  display: block;
+  margin-top: $line-height*1.5;
+}
+
+table.age-groups-investment-projects {
+
+  .progress {
+    background: #dad9e3;
+    height: $line-height/2;
+  }
+
+  .progress-meter {
+    background: $budget;
+  }
+}
+
+// 09. Featured
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.featured-process {
+  background: #33DADF;
+  padding: $line-height/2;
+
+  @include breakpoint(medium) {
+    background: #33DADF image-url('processes_plaza_espana_small.gif') no-repeat;
+    background-position: right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: #eaeaf2;
+    margin: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: #eaeaf2 !important;
+    text-decoration: none;
+  }
+}
+
+.featured-spending-proposals {
+  background: $budget;
+  padding: $line-height/2;
+
+  @include breakpoint(medium) {
+    background: $budget image-url('featured_spending_proposals.png') no-repeat;
+    background-position: bottom right;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  h2, h3, a {
+    color: white;
+    margin: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: white !important;
+    text-decoration: none;
+  }
+}
+
+.process {
+  min-height: $line-height*15;
+
+  p {
+    margin: $line-height 0;
+  }
+}
+
+// 10. Processes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.processes {
+  background: $brand;
+
+  &.show {
+    height: auto;
+    background-position: 80% 100%;
+  }
+
+  h1 {
+    border-left: 2px solid white;
+    padding-left: $line-height;
+  }
+
+  h1, h2, h3, p {
+    color: white
+  }
+
+  .button {
+    background: white;
+    color: $brand;
+  }
+
+  .label {
+    background: none;
+    padding: 0;
+    text-transform: uppercase;
+  }
+}
+
+tr td, tr th {
+
+  &.border-left {
+    border-left: 1px solid $border;
+  }
+
+  &.border-right {
+    border-right: 1px solid $border;
+  }
+}
+
+.services-letters {
+
+  h3 {
+    font-size: rem-calc(18);
+    line-height: $line-height;
+  }
+
+  a.button.hollow {
+    height: $line-height*2;
+    line-height: $line-height*2;
+    padding-top: 0;
+
+    img {
+      vertical-align: sub;
+    }
+  }
+}
+
+.processes-show {
+  @extend .processes;
+
+  .back, .icon-angle-left {
+    color: white;
+  }
+
+  @include breakpoint(large) {
+    background: $brand;
+    height: auto;
+  }
+
+  @include breakpoint(large) {
+    img {
+      position: absolute;
+
+      &.human-rights-img {
+        top: -50px;
+      }
+    }
+  }
+
+  a.white {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .button.hollow {
+    background: none;
+    border-color: white;
+    color: white;
+
+    &:hover {
+      background: white;
+      color: $brand;
+    }
+  }
+}
+
+.supports-open-plenary-title {
+  color: white !important;
+  font-size: rem-calc(12);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.supports-open-plenary-number {
+  font-size: rem-calc(18) !important;
+  font-weight: bold;
+  padding: $line-height/2;
+}
+
+.supports-human-rights-title {
+  color: white !important;
+  font-size: rem-calc(12);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.supports-human-rights-number {
+  font-size: rem-calc(18) !important;
+  font-weight: bold;
+  padding: $line-height/2;
+}
+
+.plenaries {
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  [class^="icon-"] {
+    color: $text-light;
+  }
+}
+
+.quoted .panel {
+  border: 0;
+  padding:0;
+
+  @include breakpoint(medium) {
+    padding: $line-height;
+
+    h4 {
+      position: relative;
+
+      &:before {
+        color: #ddd;
+        content: "\201C";
+        font-size: rem-calc(60);
+        left: -40px;
+        position: absolute;
+        top: -20px;
+      }
+    }
+  }
+}
+
+.vertical-image {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.process-comment {
+  border-bottom: 1px solid $border;
+  border-top: 1px solid $border;
+  margin: $line-height 0;
+  padding: $line-height/2 0;
+}
+
+.process-collection {
+  list-style-type: none;
+  margin-left: 0;
+
+  li .panel {
+    background: #ececec;
+    border: 0;
+    border-radius: rem-calc(6);
+    margin: $line-height/2 $line-height/4;
+    min-height: $line-height*5;
+    padding: 0;
+    position: relative;
+    vertical-align: top;
+
+    @include breakpoint(medium) {
+      min-height: $line-height*7;
+    }
+
+    @include breakpoint(large) {
+      min-height: $line-height*6;
+    }
+
+    &:hover {
+      background: $highlight;
+      position: relative;
+
+      &:before {
+        color: $brand;
+        content: "\56";
+        font-family: "icons";
+        position: absolute;
+        right: -6px;
+        top: -12px;
+      }
+    }
+
+    a {
+      color: $text;
+      display: block;
+      height: 100%;
+      padding: $line-height;
+      position: absolute;
+      text-decoration: none;
+      width: 100%;
+    }
+  }
+}
+
+.proposal-new, .proposal-show {
+
+  h2.proceeding {
+    color: #cacaca;
+  }
+
+  h3.sub-proceeding {
+    background: $highlight;
+    border-radius: rem-calc(6);
+    color: $brand;
+    font-size: rem-calc(18);
+    padding: $line-height/2;
+    position: relative;
+
+    &:after {
+      color: $brand;
+      content: "\56";
+      font-family: "icons";
+      position: absolute;
+      right: -6px;
+      top: -12px;
+    }
+  }
+}
+
+.timeline {
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: $line-height/2;
+
+  @include breakpoint(medium) {
+    margin-bottom: $line-height*2.5;
+    padding-top: $line-height;
+  }
+
+  span {
+    display: block;
+    padding: $line-height/2 0;
+    position: relative;
+
+    @include breakpoint(medium) {
+      display: inline;
+      padding: 0;
+    }
+
+    &:after {
+      background: $border;
+      border-radius: rem-calc(20);
+      bottom: -24px;
+      content: none;
+      height: rem-calc(20);
+      left: 50%;
+      margin-left: rem-calc(-10);
+      position: absolute;
+      width: rem-calc(20);
+
+      @include breakpoint(medium) {
+        content: " ";
+      }
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &:after {
+        background: $brand;
+      }
+    }
+  }
+}
+
+.survey-radio-images {
+
+  form {
+
+    label {
+      padding: $line-height/2 0;
+      text-align: center;
+
+      &:hover {
+        background: #fbfbfb;
+      }
+
+      span {
+        color: #004A83;
+        padding: rem-calc(12) rem-calc(3) 0;
+
+        &.selected {
+          display: block;
+          padding: 0;
+          position: relative;
+        }
+      }
+    }
+
+    label > input {
+      visibility: hidden;
+      position: absolute;
+
+      &:checked + img {
+        border: 4px solid #fcbc41;
+      }
+
+      &:checked ~ span.selected:after {
+        color: #fbfbfb;
+        content: "\56";
+        font-family: "icons";
+        font-size: rem-calc(30);
+        position: absolute;
+        right: 50px;
+        top: -40px;
+      }
+
+      & + img {
+        cursor:pointer;
+        border: 4px solid transparent;
+      }
+    }
+  }
+}
+
+table.probe-results {
+
+  tr:nth-child(1), tr:nth-child(2), tr:nth-child(3) {
+    background: $success-bg;
+
+    td:last-child {
+      font-weight: bold;
+    }
+  }
+}
+
+.project {
+  background: #F3F3F3;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: $line-height;
+  padding: 0 $line-height/2 $line-height;
+  position: relative;
+  text-align: center;
+
+  .thumbnail {
+    box-shadow: none;
+    margin-top: $line-height;
+  }
+
+  a {
+
+    h4.probe-title {
+      color: $text;
+    }
+  }
+}
+
+.probe-title {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: $small-font-size;
+  margin-bottom: 0;
+  padding-bottom: $line-height/2;
+  padding-top: $line-height;
+
+  @include breakpoint(medium) {
+    min-height: rem-calc(75);
+  }
+}
+
+.project-thumbnail {
+  display: block;
+  position: relative;
+}
+
+.probe-links {
+  border-top: 1px solid #e0e0e0;
+  text-align: left;
+
+  a:not(.probe-message) {
+    display: inline-block;
+    margin-top: $line-height/2;
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    img {
+      vertical-align: text-bottom;
+    }
+  }
+}
+
+.callout-small {
+  margin-bottom: 0;
+  padding: $line-height/4;
+}
+
+.probe-option {
+  font-size: $small-font-size;
+  font-weight: normal;
+}
+
+.probe-banner {
+  border: 1px solid black;
+  color: black;
+  padding: $line-height/2;
+  text-align: center;
+
+  a {
+    color: black;
+  }
+}
+
+.probe-show {
+
+  h1 {
+    margin-bottom: 0;
+
+    span {
+      font-size: rem-calc(24);
+    }
+  }
+
+  h2 {
+
+    &.codename {
+      color: $text-medium !important;
+      font-size: rem-calc(24);
+      font-style: italic;
+    }
+  }
+}
+
+aside {
+
+  h3 {
+    border-top: 2px solid $brand;
+    display: inline-block;
+    font-size: rem-calc(16);
+    margin: -1px 0 rem-calc(12);
+    padding-top: rem-calc(6);
+    text-transform: uppercase;
+  }
+}
+
+.social-share-button {
+  display: inline-block;
+}
+
+.whatsapp:before {
+  background-color: #43d854;
+  color: white;
+  font-size: 1.7em;
+  margin-left: rem-calc(0.5);
+  padding: rem-calc(9.5) rem-calc(9.8);
+  vertical-align: rem-calc(10);
+}
+
+.human-rights .panel {
+
+  .icon-human-rights {
+    border-left: 48px solid $brand;
+    border-top: 0;
+    border-bottom: 48px solid transparent;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+
+    &:after {
+      color: #FFF;
+      content: "\73";
+      font-family: "icons" !important;
+      right: 24px;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.human-rights {
+
+  .panel {
+    position: relative;
+  }
+
+  .proposal-content {
+
+    .label-proposal {
+      color: $brand;
+      padding-top: $line-height;
+
+      &:after {
+        content: " equipo derechos humanos"
+      }
+    }
+
+    .icon-proposals {
+      display: none;
+    }
+  }
+}
+
+.process-debates {
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  a .panel:hover {
+    background: $highlight;
+  }
+}
+
+a.show-hidden-projects {
+  display: none;
+  margin-bottom: $line-height;
+  padding-right: rem-calc(16);
+  position: relative;
+
+  &:before {
+    background: image-url("icon_eye.png") no-repeat;
+    content: " ";
+    height: 24px;
+    left: -26px;
+    position: absolute;
+    top: -2px;
+    width: 24px;
+  }
+}
+
+.processes-list {
+
+  .tabs {
+    border: 0;
+    padding: $line-height;
+  }
+
+  .tabs.vertical > li {
+    margin-bottom: $line-height;
+  }
+
+  .tabs-content {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+
+  .tabs-panel {
+    padding: 0;
+  }
+
+  .panel {
+    margin-bottom: $line-height/4;
+  }
+}
+
+// 11. Spending proposals votes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.progress-votes {
+  position: relative;
+
+  .progress {
+    background: #212033;
+    clear: both;
+  }
+
+  .progress-meter {
+    background: #fdcb10;
+    border-radius: 0;
+    -webkit-transition: width 2s;
+    transition: width 2s;
+  }
+
+  .spent-amount-progress,
+  .spent-amount-meter {
+    background: none !important;
+  }
+
+  .spent-amount-text {
+    color: white;
+    font-size: $base-font-size;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 16px;
+    width: 100%;
+
+    &:before {
+      color: #a5a1ff;
+      content: "\57";
+      font-family: 'icons';
+      font-size: $small-font-size;
+      position: absolute;
+      right: -6px;
+      top: -17px;
+    }
+  }
+
+  .total-amount {
+    color: white;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    float: right;
+  }
+
+  .amount-available {
+    display: block;
+    text-align: right;
+
+    span {
+      font-size: rem-calc(24);
+      font-weight: bold;
+    }
+  }
+}
+
+.big-number {
+  color: #7E328A;
+  font-size: rem-calc(60);
+  line-height: rem-calc(120);
+
+  @include breakpoint(large) {
+    font-size: rem-calc(90);
+    line-height: rem-calc(240);
+  }
+}
+
+.ballot {
+
+  h2, h3 {
+    font-weight: normal;
+
+    span {
+      color: $budget;
+      font-weight: bold;
+    }
+  }
+
+  h3.subtitle {
+    border-bottom: 3px solid $budget;
+
+    span {
+      font-size: $base-font-size;
+      font-weight: normal;
+    }
+  }
+
+  .amount-spent {
+    background: $success-bg;
+    color: $success-color;
+    font-weight: normal;
+    padding: $line-height/2;
+
+    span {
+      font-size: rem-calc(24);
+      font-weight: bold;
+    }
+  }
+}
+
+ul.ballot-list {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    background: #f9f9f9;
+    line-height: $line-height;
+    margin-bottom: $line-height/4;
+    padding: $line-height/2;
+    position: relative;
+
+    a {
+      color: $text;
+    }
+
+    span {
+      color: #9f9f9f;
+      display: block;
+      font-style: italic;
+    }
+
+    .remove-investment-project {
+      display: block;
+      height: 0;
+
+      .icon-x {
+        color: #9f9f9f;
+        font-size: rem-calc(24);
+        line-height: $line-height/2;
+        position: absolute;
+        right: 6px;
+        text-decoration: none;
+        top: 6px;
+
+        @include breakpoint(medium) {
+          font-size: $base-font-size;
+        }
+      }
+    }
+
+    &:hover {
+      background: $budget;
+      color: white;
+
+      a, span {
+        color: white;
+        outline: 0;
+        text-decoration: none;
+      }
+
+      .remove-investment-project .icon-x {
+        color: white;
+      }
+    }
+  }
+}
+
+.select-district .active a {
+  background: #f9f9f9;
+  border-radius: rem-calc(3);
+  color: $budget;
+  font-weight: bold;
+  padding: $line-height/4;
+
+  &:after {
+    content: "\56";
+    font-family: "icons";
+    font-size: $small-font-size;
+    font-weight: normal;
+    line-height: $line-height;
+    padding-left: rem-calc(3);
+    vertical-align: baseline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// News page
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.news-page {
+
+  .row.expanded {
+    background: $brand;
+
+    h1, h2 {
+      color: white;
+    }
+
+    h2 {
+      font-weight: normal;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .row.expanded.banner {
+    background: #FFDC00;
+    margin-bottom: rem-calc(-48);
+    padding-top: $line-height;
+  }
+}
+
+// Animaton on progress bar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.progress-bar-nav {
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint(large) {
+    background-color: $budget;
+    height: rem-calc(100);
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    transition: height 0.3s;
+    z-index: 1;
+
+    h1 {
+      -webkit-transition: font-size 0.3s;
+      -moz-transition: font-size 0.3s;
+      transition: font-size 0.3s;
+    }
+
+    &.is-fixed {
+      height: $line-height*6;
+      left: 0;
+      padding: rem-calc(24);
+      padding-bottom: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+
+      h1 {
+        font-size: rem-calc(24);
+        line-height: rem-calc(31);
+        -webkit-transition: font-size 0.3s;
+        -moz-transition: font-size 0.3s;
+        transition: font-size 0.3s;
+      }
+    }
+  }
+}
+
+// 12. Collaborative legislation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.legislation {
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $brand;
+  }
+
+  ul, ol {
+    margin-bottom: $line-height;
+
+    li {
+      padding: $line-height/4 0;
+    }
+
+    li ul {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.download {
+  background: $highlight;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height;
+  padding: $line-height/2;
+}
+
+// 13. Counter
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.jumbo-counter, .jumbo-brand {
+  background: $budget;
+  text-align: center;
+
+  h2, h3 {
+    color: white;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+  &.banner {
+
+    h2 {
+      font-size: rem-calc(24);
+      margin-top: $line-height;
+    }
+
+    h3 {
+      font-size: rem-calc(18);
+    }
+
+    a {
+      &:hover {
+        background: #363559;
+        display: block;
+
+        h2, h3 {
+          color: white;
+        }
+      }
+    }
+
+    .countdown {
+      background: none;
+    }
+  }
+}
+
+.jumbo-brand {
+  background: $brand;
+}
+
+.countdown {
+  background: #e6434d;
+  border-radius: rem-calc(6);
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  font-size: rem-calc(30);
+
+  .number {
+    display: inline-block;
+    padding: $line-height/2;
+
+    .value {
+      background: #dc2d43;
+      border-radius: rem-calc(3);
+      display: inline-block;
+      padding: $line-height/2;
+
+      @include breakpoint(medium) {
+        width: rem-calc(60);
+      }
+    }
+  }
+
+  .counter-text {
+    font-size: $small-font-size;
+    text-transform: uppercase;
+    padding-top: $line-height/4;
+  }
+}
+
+.featured-brand-banner {
+  background: $brand image-url("plaza_banner_small.jpg") no-repeat;
+  background-position: 100% 0;
+  position: relative;
+
+  h2, a:hover h2 {
+    color: #FFF !important;
+  }
+
+  p {
+    color: white;
+  }
+
+  @include breakpoint(medium) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.human-rights-banner {
+  background: #08819A;
+  margin-bottom: $line-height/2;
+  position: relative;
+
+  h3, a:hover h3 {
+    color: white !important;
+  }
+
+  h3 {
+    margin-bottom: 0;
+    padding: $line-height/2 0;
+
+    small {
+      color: white;
+    }
+  }
+
+  @include breakpoint(medium) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .icon-human-rights {
+    border-right: 57px solid #079082;
+    border-top: 0;
+    border-bottom: 57px solid transparent;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+
+    &:after {
+      color: white;
+      content: "\73";
+      font-family: "icons" !important;
+      font-size: rem-calc(20);
+      left: 30px;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+// 14. Proposal Ballots
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.jumbo-proposal-ballots {
+  background: #2D3E50;
+  text-align: center;
+
+  h2 {
+    color: #FFD200;
+  }
+
+  h3 {
+    color: white;
+    margin-bottom: $line-height;
+  }
+
+  .button {
+    background: #FFD200;
+    color: $text;
+  }
+}
+
+.jumbo-proposal-ballots-small {
+  @extend .jumbo-proposal-ballots;
+  color: white;
+
+  h2 {
+    font-size: rem-calc(24);
+  }
+
+  h2, p {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: #FFD200;
+    text-decoration: underline;
+  }
+
+  .banner-text {
+    padding: $line-height/4;
+  }
+}
+
+// 15. Welcome
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.welcome {
+
+  .header {
+    background: #E23135 image-url('home_page_bg.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: $line-height*2 0;
+
+    a.decoration-none {
+      text-decoration: none !important;
+    }
+
+    p.lead {
+      font-size: rem-calc(24);
+      line-height: $line-height*1.5;
+    }
+
+    a:not(.button) {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .button {
+      background: white;
+      color: $text;
+    }
+  }
+
+  h2 {
+
+    &.title {
+      border-left: 1px solid $brand;
+      color: $brand;
+      padding-left: $line-height/2;
+    }
+  }
+
+  .cards {
+    background: #fafafa;
+
+    .panel {
+
+      [class^="icon-"] {
+        left: 0;
+        position: absolute;
+        top: 2px;
+      }
+
+      &.dark {
+        background: #2D3E50;
+
+        h3, p.info-date {
+          color: #FFD200;
+        }
+
+        p {
+          color: white;
+        }
+
+        .button {
+          background: #FFD200;
+          color: $text;
+        }
+      }
+    }
+
+    p {
+
+      &.info {
+        min-height: rem-calc(140);
+      }
+
+      &.info-date {
+        color: $brand;
+        font-size: $small-font-size;
+        padding-left: rem-calc(16);
+        position: relative;
+      }
+    }
+  }
+
+  .features {
+    padding: $line-height*2 0;
+
+    .panel {
+      border: 0;
+      margin-bottom: $line-height;
+      padding-left: 0;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .slogan {
+    background: #E23135 image-url('home_page_bg_slogan.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*2 0;
+
+    p {
+      font-size: rem-calc(30);
+      line-height: rem-calc(48);
+    }
+
+    strong {
+      background: #F4FB2D;
+    }
+  }
+}
+
+.budgets-module {
+  background: $budget;
+
+  .module {
+    display: table;
+  }
+
+  .module-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .button {
+    background: black;
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+}
+
+// 16. Si te sientes gato
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.si-te-sientes-gato {
+  font-family: 'Rubik', $body-font-family;
+  letter-spacing: 0.9px;
+  font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  h1, h2, p, a {
+    font-family: 'Rubik', $body-font-family;
+  }
+
+  h1, h2, h3 {
+    color: #1d1d1d;
+  }
+
+  h1 {
+    font-size: rem-calc(54);
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: rem-calc(26);
+    font-weight: normal;
+  }
+
+  p {
+    color: #696969;
+    font-weight: 300;
+  }
+
+  ul li {
+    font-size: $small-font-size;
+    font-weight: 300;
+    line-height: rem-calc(28);
+  }
+
+  .header-gato {
+    position: relative;
+
+    .main-button {
+      background: rgba(0,74,131,.8) !important;
+      left: 50%;
+      margin-left: rem-calc(-72);
+      position: absolute;
+      top: 110%;
+
+      @include breakpoint(medium) {
+        top: 50%;
+      }
+    }
+  }
+
+  .info {
+    color: #696969;
+    font-size: rem-calc(15);
+    font-weight: 300;
+    line-height: rem-calc(28);
+  }
+
+  .green-link {
+    text-decoration: underline;
+  }
+
+  .lead {
+    color: white;
+    font-size: rem-calc(26);
+    font-style: italic;
+    padding-top: $line-height*3;
+
+    span {
+      font-style: normal;
+    }
+  }
+
+  .big-lead {
+    padding: $line-height*4 0 $line-height*6;
+  }
+
+  .section {
+    min-height: $line-height*10;
+    padding: $line-height*2 0;
+  }
+
+  .header {
+    background: #FFBD7A;
+  }
+
+  .section-1 {
+    background: #FF7EA3;
+  }
+
+  .section-2 {
+    background: #20D7C8;
+  }
+
+  .section-3 {
+    background: #FFBC79;
+  }
+
+  .social {
+
+    a {
+      display: inline-block;
+      height: 48px;
+      width: 48px;
+
+      &:hover {
+        opacity: .5;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// 17. Blas Bonilla
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.blas-bonilla {
+
+  a {
+    text-decoration: underline;
+  }
+
+  .header {
+    background: $brand image-url('header_blas_bonilla.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    min-height: $line-height*12;
+
+    h1 {
+      color: white;
+      padding: $line-height*2 0 $line-height;
+    }
+
+    a {
+      color: white;
+    }
+
+    .button {
+      font-size: rem-calc(24);
+    }
+  }
+
+  .button, .video-thumbnail {
+    text-decoration: none;
+  }
+
+  .video-thumbnail {
+    color: $text;
+    font-size: $small-font-size;
+
+    a {
+      color: $text;
+      text-decoration: none;
+    }
+
+    img {
+      margin-bottom: $line-height/2;
+    }
+  }
+}
+
+// 18. Voluntarios mesas presenciales
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.volunteer-poll-districts {
+
+  .any_district {
+    background: $highlight;
+    padding-top: rem-calc(6);
+  }
+}
+
+// 19. Budgets custom
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$campaign-black:   #605F5D;
+$campaign-blue:    #009FDE;
+$campaign-brown:   #EFEDE7;
+$campaign-red:     #E23135;
+$campaign-yellow:  #FFDB19;
+
+.budgets-welcome {
+
+  .header {
+    background: $campaign-brown;
+
+    h1 {
+      color: black;
+
+      span {
+        background: black;
+        color: $campaign-yellow;;
+        padding: 0 $line-height/2;
+      }
+    }
+
+    ul.info li {
+      color: black;
+      margin-bottom: $line-height;
+    }
+  }
+
+  .budgets-timeline {
+
+    h3 {
+      background: $campaign-red;
+      color: white;
+      padding: $line-height/4 $line-height/2;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
+    }
+  }
+
+  .button {
+    background: black;
+    color: white;
+  }
+
+  @include breakpoint(large) {
+    .block-border-left {
+      border-left: 3px solid $campaign-red;
+    }
+
+    .block-border-right {
+      border-right: 3px solid $campaign-red;
+    }
+  }
+
+  img {
+    margin-top: -1px;
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+
+  table {
+
+    th {
+      background: black;
+      color: white;
+    }
+
+    @include breakpoint(medium) {
+
+      .budget-big-number {
+        font-size: rem-calc(36);
+        padding: $line-height;
+      }
+    }
+  }
+
+  .note {
+    background: $campaign-yellow;
+    display: inline-block;
+    font-weight: bold;
+  }
+}
+
+.block-black , .block-yellow {
+  padding-bottom: $line-height*2;
+  padding-top: $line-height*2;
+}
+
+.block-black {
+  background: black;
+  padding-left: 0;
+
+  h3, p, a {
+    color: white;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.block-yellow {
+  background: $campaign-yellow;
+  padding-right: 0;
+
+  h3, p, a {
+    color: black;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.budgets-calendar {
+  background: $campaign-yellow;
+  color: black;
+
+  ul {
+    margin-bottom: 0;
+    padding: $line-height/2 0;
+
+    li {
+      border-top: 1px solid $campaign-black;
+      padding: $line-height/2 0;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      @include breakpoint(medium) {
+        border-left: 1px solid $campaign-black;
+        border-top: 0;
+        display: inline-block;
+        padding: $line-height/2 $line-height;
+        width: 24%;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.previous-budgets {
+  border-top: 1px solid $border;
+  padding: $line-height*2 0;
+}
+
+.type-selection {
+  margin-top: $line-height*2;
+
+  .callout {
+
+    a, a h3 {
+      color: $text;
+      text-decoration: none;
+
+      &:hover {
+        border-color: $brand;
+        color: $brand;
+      }
+    }
+  }
+}
+
+.type-selection-proposal .type-proposal,
+.type-selection-investment .type-investment {
+
+  .callout {
+    background: $highlight;
+    border-color: $brand;
+    color: $brand;
+    position: relative;
+
+    &:after {
+      background: $brand;
+      border-radius: rem-calc(40);
+      color: white;
+      content: "\6c";
+      font-family: 'icons';
+      font-size: rem-calc(16);
+      height: rem-calc(24);
+      padding: 0 $line-height/6;
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      width: rem-calc(24);
+    }
+  }
+}
+
+// 20. Landing voting february 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$campaign-blue:   #009FDE;
+$campaign-red:    #E23135;
+$campaign-yellow: #FFDB19;
+
+.landing-voting {
+  font-family: 'Franklin Gothic' !important;
+  font-weight: normal;
+  font-size: rem-calc(24);
+
+  h1, h2, h3 {
+    font-size: rem-calc(36);
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Franklin Gothic' !important;
+    font-weight: normal;
+  }
+
+  .header {
+    background: black;
+
+    h1, p {
+      color: white;
+    }
+
+    h1 {
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(80);
+        line-height: rem-calc(70);
+      }
+    }
+
+    .button {
+      background: white;
+      color: black;
+      text-transform: uppercase;
+    }
+  }
+
+  @include breakpoint(medium) {
+
+    h2.big {
+      font-size: rem-calc(80);
+      line-height: rem-calc(70);
+    }
+  }
+
+  .block {
+    padding-top: $line-height*2;
+
+    @include breakpoint(medium) {
+
+      .block-content {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 48px;
+        position: relative;
+      }
+    }
+
+    .block-blue, .block-yellow-vota {
+      padding: $line-height;
+      position: relative;
+
+      @include breakpoint(medium) {
+        padding: 0;
+      }
+    }
+
+    .block-blue {
+      background: $campaign-blue;
+
+      h2 a, h3 {
+        color: white;
+      }
+
+      .button {
+        background: white;
+        color: black;
+        text-transform: uppercase;
+      }
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(100);
+          line-height: rem-calc(90);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+      }
+    }
+
+    .block-yellow-vota {
+      background: $campaign-yellow;
+
+      h2 a, h3 {
+        color: black;
+      }
+
+      .button {
+        background: black;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(105);
+          line-height: rem-calc(95);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+      }
+    }
+  }
+
+  .block-grey {
+    background: #FAFAFA;
+    margin-bottom: $line-height*2;
+    padding: $line-height;
+    position: relative;
+
+    h2 {
+
+      @include breakpoint(large) {
+        font-size: rem-calc(50);
+      }
+    }
+
+    h3 {
+      font-size: rem-calc(24);
+    }
+
+    .question {
+      margin-bottom: $line-height;
+      min-height: rem-calc(144);
+    }
+
+    h2, h3, h4 {
+      color: black;
+    }
+
+    .button {
+      background: black;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(large) {
+
+      .button {
+        right: 24px;
+      }
+    }
+  }
+
+  .plaza-espana-projects {
+    margin-top: $line-height*2;
+    padding-bottom: $line-height*2;
+    position: relative;
+
+    .block-red {
+      background: $campaign-red;
+      color: white;
+      padding: $line-height;
+      position: relative;
+
+      h2 a, h3 {
+        color: white;
+      }
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(90);
+          line-height: rem-calc(90);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+
+        .block-projects {
+          bottom: 30px;
+          position: absolute;
+          width: 100%;
+
+          h4 {
+            font-size: rem-calc(36);
+            line-height: rem-calc(36);
+            margin-bottom: $line-height*2;
+          }
+        }
+      }
+    }
+
+    .button {
+      background: white;
+      color: black;
+      text-transform: uppercase;
+    }
+
+    figure {
+      margin: 0 $line-height/2;
+      position: relative;
+
+      figcaption {
+        background: black;
+        font-size: rem-calc(30);
+        margin-top: rem-calc(-1);
+        padding: $line-height;
+        text-align: center;
+        width: 100%;
+
+        a {
+          color: white;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .project-x, .project-y {
+      padding: 0;
+    }
+
+    .project-x figcaption {
+      margin-bottom: $line-height/2;
+    }
+  }
+
+  .how-voting {
+    background: #F7F7F7;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*3 0;
+
+    ul li {
+      line-height: $line-height*2;
+    }
+  }
+}
+
+// Franklin Gothic Extra Condensed
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('franklin_gothic.eot');
+  src: font-url('franklin_gothic.eot?#iefix') format('embedded-opentype'),
+       font-url('franklin_gothic.woff2')      format('woff2'),
+       font-url('franklin_gothic.woff')       format('woff'),
+       font-url('franklin_gothic.ttf')        format('truetype'),
+}
+
+// Overrides budgets default colors
+// -------------------------------
+
+.expanded.budget, .jumbo-budget {
+
+  h1, h2, p, a.back, .icon-angle-left {
+    color: $text;
+  }
+
+  a.button, &.button {
+    background: black;
+    color: white;
+  }
+
+  .info {
+    background: $campaign-yellow;
+
+    p {
+      color: black;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid $campaign-yellow;
+    }
+  }
+}
+
+.budget-investment .panel .label-budget-investment,
+.budget-investment .panel .icon-budget,
+.budget-investment-show .label-budget-investment,
+.budget-investment-show .icon-budget {
+  color: #5A6175;
+}
+
+.progress-votes {
+
+  .progress {
+    background: #212033;
+  }
+
+  .progress-meter {
+    background: #fdcb10;
+  }
+
+  .spent-amount-text:before {
+    color: #a5a1ff;
+  }
+
+  .total-amount {
+    color: white;
+  }
+}
+
+.ballot {
+
+  h2, h3 {
+
+    span {
+      color: $budget;
+    }
+  }
+
+  h3.subtitle {
+    border-bottom: 3px solid $budget;
+  }
+}
+
+ul.ballot-list {
+
+  li:hover {
+    background: $budget;
+    color: white;
+
+    a, span {
+      color: white;
+    }
+
+    .remove-investment-project .icon-x {
+      color: white;
+    }
+  }
+}
+
+.select-district .active a {
+  background: $budget;
+  color: $text;
+}
+
+// 21. Nvotes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.booth-container {
+
+  iframe {
+    height: 100vh !important;
+  }
+}
+
+.nvotes ul.tabs {
+
+  li {
+    border-top: 1px soild $border;
+    padding: $line-height/2;
+
+    &.is-active {
+      background: $info-bg;
+      border-bottom: 2px solid $brand;
+      border-top: 2px solid $brand;
+
+      a {
+        border: 0;
+      }
+    }
+
+    &:not(.is-active) a {
+      color: $text;
+    }
+  }
+}

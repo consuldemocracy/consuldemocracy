@@ -41,6 +41,14 @@ FactoryGirl.define do
       confirmed_hide_at Time.current
     end
 
+    trait :verified do
+      verified_at Time.now
+    end
+
+    trait :in_census do
+      document_number "12345678Z"
+      document_type "1"
+    end
   end
 
   factory :identity do
@@ -101,6 +109,7 @@ FactoryGirl.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
     description          'Debate description'
+    comment_kind         'comment'
     terms_of_service     '1'
     association :author, factory: :user
 
@@ -189,15 +198,40 @@ FactoryGirl.define do
     trait :successful do
       cached_votes_up { Proposal.votes_needed_for_success + 100 }
     end
+
+    trait :human_rights do
+      proceeding     "Derechos Humanos"
+      sub_proceeding "Derecho a la vida"
+    end
+  end
+
+  factory :redeemable_code do
+    sequence(:token) { |n| "token#{n}" }
   end
 
   factory :spending_proposal do
     sequence(:title)     { |n| "Spending Proposal #{n} title" }
     description          'Spend money on this'
-    feasible_explanation 'This proposal is not viable because...'
+    feasible_explanation 'This proposal is viable because...'
     external_url         'http://external_documention.org'
     terms_of_service     '1'
     association :author, factory: :user
+
+    trait :with_confidence_score do
+      before(:save) { |sp| sp.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasible true
+    end
+
+    trait :unfeasible do
+      feasible false
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
   end
 
   factory :budget do
@@ -346,7 +380,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start"=>"/span[1]", "startOffset"=>1, "end"=>"/span[1]", "endOffset"=>5}]
     legislation
     user
   end
@@ -466,6 +500,11 @@ FactoryGirl.define do
     answer { question.valid_answers.sample }
   end
 
+  factory :poll_nvote, class: 'Poll::Nvote' do
+    user
+    poll
+  end
+
   factory :officing_residence, class: 'Officing::Residence' do
     user
     document_number
@@ -525,6 +564,16 @@ FactoryGirl.define do
     association :notifiable, factory: :proposal
   end
 
+  factory :probe do
+    sequence(:codename) { |n| "probe_#{n}" }
+  end
+
+  factory :probe_option do
+    probe
+    sequence(:name) { |n| "Probe option #{n}" }
+    sequence(:code) { |n| "probe_option_#{n}" }
+  end
+
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code) { |n| "#{n}" }
@@ -533,6 +582,20 @@ FactoryGirl.define do
     trait :in_census do
       census_code "01"
     end
+  end
+
+  factory :forum do
+    sequence(:name) { |n| "Forum #{n}" }
+    user
+  end
+
+  factory :ballot do
+    user
+  end
+
+  factory :ballot_line do
+    ballot
+    spending_proposal { FactoryGirl.build(:spending_proposal, feasible: true) }
   end
 
   factory :banner do
@@ -568,4 +631,14 @@ FactoryGirl.define do
     signature_sheet
     sequence(:document_number) { |n| "#{n}A" }
   end
+
+  factory :volunteer_poll do
+    sequence(:email)      { |n| "volunteer#{n}@consul.dev" }
+    sequence(:first_name) { |n| "volunteer#{n} first name" }
+    sequence(:last_name)  { |n| "volunteer#{n} last name" }
+    sequence(:document_number) { |n| "12345#{n}" }
+    sequence(:phone)      { |n| "6061111#{n}" }
+    turns "3 turnos"
+  end
+
 end

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-es
+//= require jquery-ui/effect-shake
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -40,6 +41,7 @@
 //= require annotatable
 //= require advanced_search
 //= require registration_form
+//= require forms
 //= require suggest
 //= require forms
 //= require tracks
@@ -48,6 +50,8 @@
 //= require embed_video
 //= require fixed_bar
 //= require banners
+//= require countdown
+//= require probe
 //= require social_share
 //= require checkbox_toggle
 //= require custom
@@ -74,6 +78,7 @@ var initialize_modules = function() {
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
+  App.Countdown.initialize();
   App.SocialShare.initialize();
   App.CheckboxToggle.initialize();
 };

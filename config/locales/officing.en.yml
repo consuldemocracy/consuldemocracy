@@ -20,6 +20,10 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_recount: Add final recount
+    sessions:
+      create:
+        flash:
+          wrong_password: "Wrong password"
     recounts:
       flash:
         create: "Data added"

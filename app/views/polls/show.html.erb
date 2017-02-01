@@ -34,6 +34,17 @@
 </div>
 
 <div class="row margin-top">
+  <% if can?(:answer, @poll) %>
+    <!-- Temporarily using the test Poll in Nvotes.
+         Use @poll when we have all Polls setup in Nvotes -->
+    <% poll = Poll.first %>
+    <%= link_to "Votar con Nvotes",
+                new_poll_nvote_path(poll),
+                data: { no_turbolink: true } %>
+  <% end %>
+</div>
+
+<div class="row margin-top">
   <div class="small-12 medium-9 column">
     <% @questions.each do |question| %>
       <%= render 'polls/questions/question', question: question %>

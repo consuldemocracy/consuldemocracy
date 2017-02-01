@@ -1,0 +1,17 @@
+<% provide :title, "Pleno Abierto" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_open_plenary"),
+          social_title: t("pages.processes.index.process_3_title") ,
+          social_description: t("pages.processes.index.process_3_description") %>
+<% end %>
+
+<% if Time.now.in_time_zone <= DateTime.new(2016,4,21) %>
+
+  <%= render "open_plenary_active" %>
+
+<% else %>
+
+  <%= render "open_plenary_closed" %>
+
+<% end %>

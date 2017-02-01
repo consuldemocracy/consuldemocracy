@@ -19,7 +19,7 @@ feature 'Verification path' do
     visit verification_path
 
     expect(current_path).to eq account_path
-    expect(page).to have_content 'Your account is already verified'
+    expect(page).to have_content 'Your account is verified'
   end
 
   scenario "User requested a letter" do
@@ -95,7 +95,7 @@ feature 'Verification path' do
       visit step_path
 
       expect(current_path).to eq account_path
-      expect(page).to have_content 'Your account is already verified'
+      expect(page).to have_content 'Your account is verified'
     end
   end
 

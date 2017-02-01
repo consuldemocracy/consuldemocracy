@@ -8,7 +8,7 @@ feature 'Spending Proposals' do
     login_as_manager
   end
 
-  context "Create" do
+  xcontext "Create" do
 
     scenario 'Creating spending proposals on behalf of someone' do
       user = create(:user, :level_two)
@@ -30,7 +30,7 @@ feature 'Spending Proposals' do
 
       click_button 'Create'
 
-      expect(page).to have_content 'Spending proposal created successfully.'
+      expect(page).to have_content 'Investment project created successfully.'
 
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
@@ -52,7 +52,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  context "Searching" do
+  xcontext "Searching" do
     scenario "by title" do
       spending_proposal1 = create(:spending_proposal, title: "Show me what you got")
       spending_proposal2 = create(:spending_proposal, title: "Get Schwifty")
@@ -100,7 +100,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  scenario "Listing" do
+  xscenario "Listing" do
     spending_proposal1 = create(:spending_proposal, title: "Show me what you got")
     spending_proposal2 = create(:spending_proposal, title: "Get Schwifty")
 
@@ -127,7 +127,11 @@ feature 'Spending Proposals' do
     end
   end
 
-  context "Voting" do
+  xcontext "Voting" do
+
+    background do
+      Setting["feature.spending_proposal_features.phase2"] = true
+    end
 
     scenario 'Voting spending proposals on behalf of someone in index view', :js do
       spending_proposal = create(:spending_proposal)
@@ -176,7 +180,7 @@ feature 'Spending Proposals' do
     end
   end
 
-  context "Printing" do
+  xcontext "Printing" do
 
     scenario 'Printing spending proposals' do
       16.times { create(:spending_proposal, geozone_id: nil) }

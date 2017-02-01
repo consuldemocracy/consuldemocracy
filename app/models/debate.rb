@@ -14,6 +14,7 @@ class Debate < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
+  has_one :probe_option
   has_many :comments, as: :commentable
 
   validates :title, presence: true
@@ -22,12 +23,14 @@ class Debate < ActiveRecord::Base
 
   validates :title, length: { in: 4..Debate.title_max_length }
   validates :description, length: { in: 10..Debate.description_max_length }
+  validates_inclusion_of :comment_kind, in: ["comment", "question"]
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_save :calculate_hot_score, :calculate_confidence_score
+  before_save :set_comment_kind
 
-  scope :for_render,               -> { includes(:tags) }
+  scope :for_render,               -> { includes(:tags, :probe_option, author: :organization) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
@@ -37,6 +40,7 @@ class Debate < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
+  scope :not_probe,                -> { where.not(id: ProbeOption.pluck(:debate_id))}
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
@@ -92,6 +96,7 @@ class Debate < ActiveRecord::Base
 
   def votable_by?(user)
     return false unless user
+    return false if ProbeOption.where(debate: self).present?
     total_votes <= 100 ||
       !user.unverified? ||
       Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||
@@ -126,6 +131,17 @@ class Debate < ActiveRecord::Base
 
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+  end
+
+  def set_comment_kind
+    self.comment_kind ||= 'comment'
+  end
+
+  def self.open_plenary_winners
+    where(comment_kind: 'question').first.
+    comments.
+    sort_by_most_voted.
+    limit(5)
   end
 
   def featured?

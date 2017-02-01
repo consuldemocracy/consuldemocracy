@@ -1,0 +1,84 @@
+---
+en:
+  admin:
+    probes:
+      index:
+        title: Probes
+        no_results: No probes created
+        status:
+          selecting: Selecting
+          results: Results published
+      show:
+        option: Option
+        selects: Votes
+  probes:
+    codenames:
+      town_planning: 'Town planning - Benches'
+      plaza: 'Remodeling of the Plaza España'
+    verified_only: To participate in this process you need to %{verify_account}
+    verify_account: verify your account
+    not_logged_in: You must %{signin} or %{signup} to participate.
+    signin: Sign in
+    signup: Sign up
+    plaza_banner:
+      title: '#RemodelingPlazaEspaña'
+      date_html: 'Participate until <u>October 28</u>!'
+    plaza:
+      selecting:
+        code_html: '<abbr title="Reference">REF.</abbr> %{code}'
+    back: "Back to list"
+    show:
+      vote: "Vote"
+      documents: "Documents"
+      documents_finalist: "Finalist documents"
+      share: "Share"
+      button: "Vote"
+      code_html: '<abbr title="Reference">REF.</abbr> %{code}'
+  human_rights:
+    banner:
+      title: "#HumanRightsPlan"
+      text_html: "Participate until <u>November 4</u>!"
+  cards:
+    air_quality_plan:
+      title_html: "Draft air quality and climate change plan"
+      text: "Information and communication of the measures proposed in the draft of the new air quality and climate change plan of the city of Madrid."
+      date_html: "Participate until <strong>January 31th</strong>"
+      button: "More information"
+    plaza:
+      title: "Remodeling Plaza España"
+      text: "The preselection of the projects is over. You can already see the results."
+      date_html: "Results are <strong>available</strong>"
+      button: "See finalists"
+  meta_tags:
+    welcome_index:
+      title: "Decide Madrid - Participación del Ayuntamiento de Madrid"
+      description: "Decide Madrid. Web de participación ciudadana del Ayuntamiento de Madrid. Haz, apoya y vota propuestas, decide en qué gasta el Ayuntamiento su presupuesto."
+      keywords: "Decide Madrid, consulta ciudadana, participación ciudadana, participación Ayuntamiento Madrid, Ayuntamiento de Madrid, votación ciudadana"
+    debates:
+      title: "Debates ciudadanos en Decide Madrid"
+      description: "Debate con otros habitantes de Madrid los temas de la ciudad que te preocupan y envía tus preguntas a los concejales del Ayuntamiento para que te respondan."
+      keywords: "Debate, debates, debates ciudadanos, Decide Madrid, participación ciudadana, Ayuntamiento de Madrid, participación"
+    proposals:
+      title: "Propuestas ciudadanas en Decide Madrid"
+      description: "Haz una propuesta, tienes un plazo de un año para conseguir 27.000 apoyos y que los habitantes de Madrid la voten. El Ayuntamiento de Madrid la realizará."
+      keywords: "Propuestas ciudadanas, propuestas, Decide Madrid, participación ciudadana, Ayuntamiento de Madrid"
+    processes:
+      title: "Procesos de participación en Decide Madrid"
+      description: "Haz tus sugerencias en la elaboración de ordenanzas municipales, consultas previas y en los proyectos en los que el Ayuntamiento quiere saber tu opinión."
+      keywords: "procesos de participación, legislación colaborativa, Decide Madrid, Ayuntamiento de Madrid, participación ciudadana"
+    budget:
+      title: "Presupuestos participativos en Decide Madrid"
+      description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
+      keywords: "Presupuestos participativos, presupuestos municipales, Decide Madrid, inversión pública, Ayuntamiento de Madrid, participación ciudadana"
+  type_selection:
+    title: "Estás creando..."
+    proposals_title: "Propuesta ciudadana"
+    proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
+    investment_title: "Proyecto de Presupuestos participativos"
+    investment_info: "Decide a qué se destina una parte del presupuesto municipal."
+  nvotes:
+    thanks: "Thank you very much for your participation!"
+    finish: "Finish voting"
+    officer_title: "Officer"
+    officer_message_html: "Thank you for your collaboration, <strong>please give the device to the Officer</strong>."
+    tablet: "Vote on tablet"

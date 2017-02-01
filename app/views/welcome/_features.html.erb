@@ -1,0 +1,33 @@
+<div class="expanded features">
+
+  <div class="row">
+    <div class="small-12 column">
+      <h2 class="title margin-bottom">
+        <%= t('welcome.featured.features',
+               org_name: setting['org_name']) %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="row margin-top" data-equalizer>
+    <div class="small-12 medium-6 column">
+      <%= image_tag "welcome_featured_proposals.png", alt: "" %>
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t('welcome.featured.proposals.title') %></h3>
+        <p>
+          <%= t('welcome.featured.proposals.text') %>
+        </p>
+        <%= link_to t('welcome.featured.proposals.link'), proposals_path %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= image_tag "welcome_featured_budgets.png", alt: "" %>
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t('welcome.featured.budgets.title') %></h3>
+        <p><%= t('welcome.featured.budgets.text') %></p>
+        <%= link_to t('welcome.featured.budgets.link'), participatory_budget_path %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -27,6 +27,7 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
+    add_predefined_tag
     set_geozone
     set_resource_instance
   end
@@ -42,6 +43,9 @@ module CommentableActions
 
     if @resource.save
       track_event
+      if @resource.class == Proposal
+        log_event("proposal", "create")
+      end
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
@@ -153,6 +157,10 @@ module CommentableActions
 
     def index_customization
       nil
+    end
+
+    def add_predefined_tag
+      @resource.tag_list << params[:tag] if params[:tag].present?
     end
 
 end

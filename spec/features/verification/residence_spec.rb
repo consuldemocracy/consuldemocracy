@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Residence' do
 
-  background { create(:geozone) }
+  let!(:geozone) { create(:geozone) }
 
   scenario 'Verify resident' do
     user = create(:user)
@@ -16,10 +16,40 @@ feature 'Residence' do
     select_date '31-December-1980', from: 'residence_date_of_birth'
     fill_in 'residence_postal_code', with: '28013'
     check 'residence_terms_of_service'
-
     click_button 'Verify residence'
 
     expect(page).to have_content 'Residence verified'
+  end
+
+  scenario 'Initialize the redeemable code with the user redeemable code' do
+    user = create(:user, redeemable_code: 'abcde')
+    login_as(user)
+
+    visit account_path
+    click_link 'Verify my account'
+
+    expect(page).to have_field 'residence_redeemable_code', with: 'abcde'
+  end
+
+  scenario 'Verify a resident in Madrid with a redeemable code' do
+    code = create(:redeemable_code)
+    user = create(:user)
+    login_as(user)
+
+    visit account_path
+    click_link 'Verify my account'
+
+    fill_in 'residence_document_number', with: "12345678Z"
+    select 'DNI', from: 'residence_document_type'
+    select_date '31-December-1980', from: 'residence_date_of_birth'
+    fill_in 'residence_postal_code', with: '28013'
+    fill_in 'residence_redeemable_code', with: code.token
+
+    check 'residence_terms_of_service'
+
+    click_button 'Verify residence'
+
+    expect(page).to have_content 'Your account is verified'
   end
 
   scenario 'Error on verify' do
@@ -51,7 +81,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'In order to be verified, you must be registered'
+    expect(page).to have_content 'In order to be verified, you must be registered in the municipality of Madrid'
   end
 
   scenario 'Error on census' do
@@ -71,7 +101,7 @@ feature 'Residence' do
 
     click_button 'Verify residence'
 
-    expect(page).to have_content 'The Census was unable to verify your information'
+    expect(page).to have_content 'The Madrid Census was unable to verify your information'
   end
 
   scenario '5 tries allowed' do
@@ -91,7 +121,7 @@ feature 'Residence' do
       check 'residence_terms_of_service'
 
       click_button 'Verify residence'
-      expect(page).to have_content 'The Census was unable to verify your information'
+      expect(page).to have_content 'The Madrid Census was unable to verify your information'
     end
 
     click_button 'Verify residence'

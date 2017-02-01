@@ -25,11 +25,13 @@ class SMSApi
   def request(phone, code)
     { autorizacion:  authorization,
       destinatarios: { destinatario: phone },
-      texto_mensaje: "Clave para verificarte: #{code}. Gobierno Abierto",
+      texto_mensaje: "Clave para verificarte: #{code}. Gobierno Abierto - Ayuntamiento de Madrid",
       solicita_notificacion: "All" }
   end
 
   def success?(response)
+    response.body[:respuesta_sms] &&
+    response.body[:respuesta_sms][:respuesta_servicio_externo] &&
     response.body[:respuesta_sms][:respuesta_servicio_externo][:texto_respuesta] == "Success"
   end
 

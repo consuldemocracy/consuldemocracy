@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   include Verification
+  require 'date'
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable
@@ -15,7 +16,9 @@ class User < ActiveRecord::Base
   has_one :manager
   has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
+  has_one :forum
   has_one :lock
+  has_one :ballot
   has_many :flags
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
@@ -28,6 +31,7 @@ class User < ActiveRecord::Base
   has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
   has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
   belongs_to :geozone
+  belongs_to :representative, class_name: "Forum"
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
@@ -48,10 +52,12 @@ class User < ActiveRecord::Base
   attr_accessor :skip_password_validation
   attr_accessor :use_redeemable_code
 
-  scope :administrators, -> { joins(:administrators) }
+  scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
+  scope :forums,         -> { joins(:forum) }
   scope :officials,      -> { where("official_level > 0") }
+  scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
@@ -79,6 +85,10 @@ class User < ActiveRecord::Base
     organization? ? organization.name : username
   end
 
+  def phone
+    confirmed_phone || phone_number
+  end
+
   def debate_votes(debates)
     voted = votes.for_debates(debates)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
@@ -102,6 +112,10 @@ class User < ActiveRecord::Base
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
+  end
+
+  def voted_for_any?(class_name)
+    votes.for_type(class_name).any?
   end
 
   def voted_in_group?(group)
@@ -128,8 +142,24 @@ class User < ActiveRecord::Base
     poll_officer.present?
   end
 
+  def officing_voter?
+    officing_voter.present?
+  end
+
   def organization?
     organization.present?
+  end
+
+  def forum?
+    forum.present?
+  end
+
+  def has_representative?
+    representative.present?
+  end
+
+  def pending_delegation_alert?
+    has_representative? && accepted_delegation_alert == false
   end
 
   def verified_organization?
@@ -269,10 +299,27 @@ class User < ActiveRecord::Base
     true
   end
 
+  def supported_spending_proposals_geozone
+    if supported_spending_proposals_geozone_id.present?
+      Geozone.find(supported_spending_proposals_geozone_id)
+    end
+  end
+
   def ability
     @ability ||= Ability.new(self)
   end
   delegate :can?, :cannot?, to: :ability
+
+  def get_or_create_nvote(poll)
+    nvote = Poll::Nvote.new(poll: poll, user: self)
+
+    if Poll::Nvote.find_by_voter_hash(nvote.generate_message)
+      nvote
+    else
+      nvote.save
+      nvote
+    end
+  end
 
   private
 

@@ -14,6 +14,7 @@
                                 controller_name == 'proposals',
                                 accesskey: "p" %>
     </li>
+
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
@@ -22,10 +23,15 @@
                                   accesskey: "v" %>
       </li>
     <% end %>
+
+    <li>
+      <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "o"  %>
+    </li>
+
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),
-                                  spending_proposals_path,
+                                  participatory_budget_path,
                                   controller_name == 'spending_proposals',
                                   accesskey: "s" %>
       </li>
@@ -33,8 +39,8 @@
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
-                                  budgets_path,
-                                  controller_name == "budgets" || controller_name == "investments",
+                                  budgets_welcome_path,
+                                  controller_name == "budgets" || controller_name == "investments" || current_page?(budgets_welcome_path),
                                   accesskey: "b" %>
       </li>
     <% end %>

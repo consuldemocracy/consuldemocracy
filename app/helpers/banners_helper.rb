@@ -1,7 +1,7 @@
 module BannersHelper
 
-  def has_banners
-    @banners.count > 0
+  def has_banners?
+    @banners.present? && @banners.count > 0
   end
 
 end

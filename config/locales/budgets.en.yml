@@ -7,13 +7,13 @@ en:
         remaining: "You still have <span>%{amount}</span> to invest."
         remove: Remove vote
         voted_html:
-          one: "You have voted <span>one</span> proposal."
-          other: "You have voted <span>%{count}</span> proposals."
+          one: "You have voted <span>one</span> investment."
+          other: "You have voted <span>%{count}</span> investments."
         voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to invest all the money available."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
         not_logged_in: You must %{signin} or %{signup} to continue.
-        not_verified: Only verified users can vote on proposals; %{verify_account}.
+        not_verified: Only verified users can vote on investments; %{verify_account}.
         organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
         not_enough_money: "Price is higher than the available amount left."
@@ -25,11 +25,11 @@ en:
         unfeasible_title: Unfeasible investments
         unfeasible: See unfeasible investments
     phase:
-      accepting: Accepting proposals
-      reviewing: Reviewing proposals
-      selecting: Selecting proposals
-      valuating: Valuating proposals
-      balloting: Balloting proposals
+      accepting: Accepting investments
+      reviewing: Reviewing investments
+      selecting: Selecting investments
+      valuating: Valuating investments
+      balloting: Balloting investments
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
     index:
@@ -37,13 +37,15 @@ en:
     investments:
       form:
         tag_category_label: "Categories"
-        tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
+        tags_instructions: "Tag this investment. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+        faq: "What can you propose?"
+        faq_link: "See all information of participatory budgets"
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
-        unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text: "The investments must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All investments don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
         unfeasible_text_definitions: see definitions here
         by_heading: "Investment projects with scope: %{heading}"
         search_form:
@@ -56,8 +58,8 @@ en:
         sidebar:
           my_ballot: My ballot
           voted_html:
-            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
-            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+            one: "<strong>You voted one investment with a cost of %{amount_spent}</strong>"
+            other: "<strong>You voted %{count} investments with a cost of %{amount_spent}</strong>"
           voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
           zero: You have not voted any investment project.
           verified_only: "To create a new budget investment %{verify}."

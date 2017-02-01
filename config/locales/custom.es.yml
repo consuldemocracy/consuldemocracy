@@ -1,0 +1,84 @@
+---
+es:
+  admin:
+    probes:
+      index:
+        title: Sondeos
+        no_results: No se creado ningún sondeo
+        status:
+          selecting: Votación en curso
+          results: Resultados publicados
+      show:
+        option: Opción
+        selects: Número de votos
+  probes:
+    codenames:
+      town_planning: 'Planificación urbana - Bancos'
+      plaza: 'Remodelación de Plaza España'
+    verified_only: La participación en este proceso está restringida a usuarios verificados, %{verify_account}.
+    verify_account: verifica tu cuenta
+    not_logged_in: Necesitas %{signin} o %{signup} para participar.
+    signin: iniciar sesión
+    signup: registrarte
+    plaza_banner:
+      title: '#RemodelaciónPlazaEspaña'
+      date_html: '¡Participa hasta el <u>28 de octubre</u>!'
+    plaza:
+      selecting:
+        code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
+    back: "Volver al listado"
+    show:
+      vote: "Votar"
+      documents: "Documentación"
+      documents_finalist: "Documentación finalista"
+      share: "Compartir"
+      button: "Votar"
+      code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
+  human_rights:
+    banner:
+      title: "#PlanDerechosHumanos"
+      text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
+  cards:
+    air_quality_plan:
+      title_html: "Borrador Plan calidad de aire y cambio climático"
+      text: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+      date_html: "Participa hasta el <strong>31 de enero</strong>"
+      button: "Quiero opinar"
+    plaza:
+      title: "Proyecto de remodelación de Plaza España"
+      text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
+      date_html: "Resultados <strong>disponibles</strong>"
+      button: "Ver finalistas"
+  meta_tags:
+    welcome_index:
+      title: "Decide Madrid - Participación del Ayuntamiento de Madrid"
+      description: "Decide Madrid. Web de participación ciudadana del Ayuntamiento de Madrid. Haz, apoya y vota propuestas, decide en qué gasta el Ayuntamiento su presupuesto."
+      keywords: "Decide Madrid, consulta ciudadana, participación ciudadana, participación Ayuntamiento Madrid, Ayuntamiento de Madrid, votación ciudadana"
+    debates:
+      title: "Debates ciudadanos en Decide Madrid"
+      description: "Debate con otros habitantes de Madrid los temas de la ciudad que te preocupan y envía tus preguntas a los concejales del Ayuntamiento para que te respondan."
+      keywords: "Debate, debates, debates ciudadanos, Decide Madrid, participación ciudadana, Ayuntamiento de Madrid, participación"
+    proposals:
+      title: "Propuestas ciudadanas en Decide Madrid"
+      description: "Haz una propuesta, tienes un plazo de un año para conseguir 27.000 apoyos y que los habitantes de Madrid la voten. El Ayuntamiento de Madrid la realizará."
+      keywords: "Propuestas ciudadanas, propuestas, Decide Madrid, participación ciudadana, Ayuntamiento de Madrid"
+    processes:
+      title: "Procesos de participación en Decide Madrid"
+      description: "Haz tus sugerencias en la elaboración de ordenanzas municipales, consultas previas y en los proyectos en los que el Ayuntamiento quiere saber tu opinión."
+      keywords: "procesos de participación, legislación colaborativa, Decide Madrid, Ayuntamiento de Madrid, participación ciudadana"
+    budget:
+      title: "Presupuestos participativos en Decide Madrid"
+      description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
+      keywords: "Presupuestos participativos, presupuestos municipales, Decide Madrid, inversión pública, Ayuntamiento de Madrid, participación ciudadana"
+  type_selection:
+    title: "Estás creando..."
+    proposals_title: "Propuesta ciudadana"
+    proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
+    investment_title: "Proyecto de Presupuestos participativos"
+    investment_info: "Decide a qué se destina una parte del presupuesto municipal."
+  nvotes:
+    thanks: "¡Muchas gracias por participar en la votación!"
+    finish: "Terminar votación"
+    officer_title: "Presidente de mesa"
+    officer_message_html: "Gracias por su colaboración, <strong>entregue el dispositivo al Presidente de mesa</strong>."
+    tablet: "Votar en tablet"

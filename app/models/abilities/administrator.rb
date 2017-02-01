@@ -32,15 +32,20 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment]
+      can :comment_as_administrator, [Debate, Comment, Proposal, SpendingProposal, Poll::Question, ProbeOption, Budget::Investment]
 
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
 
       can :manage, Annotation
+      can [:read, :stats, :results, :summary, :edit, :update], SpendingProposal
 
-      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+      if Setting['feature.spending_proposal_features.valuation_allowed'].present?
+        can [:update, :destroy], SpendingProposal
+      end
+
+      can [:read, :valuate, :summary], SpendingProposal
 
       can [:index, :read, :new, :create, :update, :destroy], Budget
       can [:read, :create, :update, :destroy], Budget::Group

@@ -20,6 +20,10 @@ es:
         no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
         select_poll: "Selecciona votación"
         add_recount: "Añadir recuentos finales"
+    sessions:
+      create:
+        flash:
+          wrong_password: "Contraseña inválida"
     recounts:
       flash:
         create: "Datos añadidos"
@@ -66,6 +70,6 @@ es:
         table_poll: Votación
         table_actions: Validar
       show:
-        error_already_voted: "Ya ha participado en esta votación."
+        error_already_voted: "Ya ha participado en la votación."
         submit: Validar voto
         success: Voto validado correctamente.
