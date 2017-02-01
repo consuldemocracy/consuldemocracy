@@ -38,21 +38,20 @@
     <% end %>
 
     <div class="row">
-      <h3><%= t("officing.results.new.ballots_blank") %></h3>
-      <div class="small-12 medium-6 large-4 column">
+      <div class="small-12 medium-6 large-3 column">
+        <h3><%= t("officing.results.new.ballots_blank") %></h3>
+        <%= text_field_tag :count, nil, placeholder: "0" %>
+      </div>
+
+      <div class="small-12 medium-6 large-3 column end">
+        <h3><%= t("officing.results.new.ballots_null") %></h3>
         <%= text_field_tag :count, nil, placeholder: "0" %>
       </div>
     </div>
-    <div class="row">
-      <h3><%= t("officing.results.new.ballots_null") %></h3>
-      <div class="small-12 medium-6 large-4 column">
-        <%= text_field_tag :count, nil, placeholder: "0" %>
-      </div>
-    </div>
-
+    <hr>
 
     <div class="row">
-      <div class="small-12 medium-6 large-4 column">
+      <div class="small-12 medium-6 large-3 column">
         <%= submit_tag t("officing.results.new.submit"), class: "button expanded" %>
       </div>
     </div>
