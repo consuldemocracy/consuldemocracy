@@ -142,9 +142,9 @@ module CommonActions
   end
 
   def officing_verify_residence
-    fill_in 'residence_document_number', with: "12345678Z"
     select 'DNI', from: 'residence_document_type'
-    select_date '31-December-1980', from: 'residence_date_of_birth'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: "1980"
 
     click_button 'Validate document'
 
