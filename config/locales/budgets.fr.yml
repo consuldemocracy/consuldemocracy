@@ -36,10 +36,10 @@ fr:
       title: Budgets participatifs
     investissements:
       from:
-        tags_label: "Etiquettes"
-        tags_instructions: "Etiquettez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
+        tags_label: "Catégories"
+        tags_instructions: "Catégorisez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
         tag_category_label: Catégories
-        tags_placeholder: Entrez les étiquettes que vous souhaiter utiliser, séparées par des virgules (',')
+        tags_placeholder: Entrez les catégories que vous souhaitez utiliser, séparées par des virgules (',')
       index:
         title: Budgétisation participative
         unfeasible: Projets d'investissement infaisable
