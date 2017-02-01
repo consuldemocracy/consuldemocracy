@@ -403,7 +403,8 @@ es:
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
-      view_button: "Ver detalles de la votación"
+      no_geozone_restricted: "Toda la ciudad"
+      geozone_restricted: "Distritos"
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."

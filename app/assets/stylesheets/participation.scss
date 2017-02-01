@@ -1322,8 +1322,19 @@ ul.ballot-list {
     color: $brand;
   }
 
-  .callout.warning a {
-    color: $color-warning;
+  .callout {
+
+    &.warning a {
+      color: $color-warning;
+    }
+
+    &.primary a {
+      color: $color-info;
+    }
+
+    &.alert a {
+      color: $color-alert;
+    }
   }
 
   .info {
@@ -1361,15 +1372,25 @@ ul.ballot-list {
   .dates {
     color: $text-medium;
     font-size: $small-font-size;
+
+    @include breakpoint(medium) {
+      float: right;
+    }
   }
 
-  h3 a {
+  h4 a {
     color: $text;
   }
 }
 
 h2.questions-callout {
   font-size: $base-font-size;
+}
+
+h3.section-title-divider {
+  border-bottom: 2px solid $brand;
+  color: $brand;
+  margin-bottom: $line-height;
 }
 
 .poll-question {

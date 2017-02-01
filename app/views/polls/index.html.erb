@@ -15,27 +15,16 @@
   </div>
 
   <div class="small-12 medium-9 column margin-top">
-    <% @polls.each do |poll| %>
-      <div class="poll">
-        <div class="row">
-          <div class="small-12 column">
-            <h3><%= link_to poll.name, poll %></h3>
-            <p class="dates"><%= poll_dates(poll) %></p>
-            <ul class="no-bullet margin-top tags">
-              <% poll.geozones.each do |g| %>
-                <li class="inline-block"><span><%= g.name %></span></li>
-              <% end %>
-            </ul>
-          </div>
-          <div class="small-12 column">
-            <% if can? :answer, poll %>
-              <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
-            <% else %>
-              <%= link_to t("polls.index.view_button"), poll %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+    <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
+
+    <% if polls_by_geozone_restriction[false].present? %>
+      <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3>
+      <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
+    <% end %>
+
+    <% if polls_by_geozone_restriction[true].present? %>
+      <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3>
+      <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
     <% end %>
 
     <%= paginate @polls %>

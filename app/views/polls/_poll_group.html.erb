@@ -1,0 +1,23 @@
+<% poll_group.each do |poll| %>
+  <div class="poll">
+    <div class="row">
+      <div class="small-12 column">
+        <div class="dates"><%= poll_dates(poll) %></div>
+        <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
+        <ul>
+          <% poll.questions.each do |question| %>
+            <li><%= link_to question.title, question_path(question) %></li>
+          <% end %>
+        </ul>
+        <ul class="no-bullet margin-top tags">
+          <% poll.geozones.each do |g| %>
+            <li class="inline-block"><span><%= g.name %></span></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="small-12 column">
+        <%= link_to t("polls.index.participate_button"), poll, class: "button" %>
+      </div>
+    </div>
+  </div>
+<% end %>
