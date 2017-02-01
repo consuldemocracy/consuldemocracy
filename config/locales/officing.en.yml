@@ -50,6 +50,7 @@ en:
         count_placeholder: "Final vote count"
         submit: Save
         final_recount_list: "Your final recounts"
+        system_count: "System recount"
     residence:
       flash:
         create: "Document verified with Census"
