@@ -11,23 +11,33 @@ describe Officing::Residence do
       expect(residence).to be_valid
     end
 
-    describe "dates" do
-      it "should be valid with a valid date of birth" do
-        residence = Officing::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"1980"})
-        expect(residence.errors[:date_of_birth].size).to eq(0)
-      end
-
-      it "should not be valid without a date of birth" do
-        residence = Officing::Residence.new({"date_of_birth(3i)"=>"", "date_of_birth(2i)"=>"", "date_of_birth(1i)"=>""})
-        expect(residence).to_not be_valid
-        expect(residence.errors[:date_of_birth]).to include("can't be blank")
-      end
+    it "should not be valid without a document number" do
+      residence.document_number = nil
+      expect(residence).to_not be_valid
     end
 
-    it "should validate user has allowed age" do
-      residence = Officing::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.year.ago.year}"})
+    it "should not be valid without a document type" do
+      residence.document_type = nil
       expect(residence).to_not be_valid
-      expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
+    end
+
+    it "should not be valid without a year of birth" do
+      residence.year_of_birth = nil
+      expect(residence).to_not be_valid
+    end
+
+    describe "allowed age" do
+      it "should not be valid if user is under allowed age" do
+        allow_any_instance_of(Officing::Residence).to receive(:date_of_birth).and_return(15.years.ago)
+        expect(residence).to_not be_valid
+        expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
+      end
+
+      it "should be valid if user is above allowed age" do
+        allow_any_instance_of(Officing::Residence).to receive(:date_of_birth).and_return(16.years.ago)
+        expect(residence).to be_valid
+        expect(residence.errors[:date_of_birth]).to be_empty
+      end
     end
 
   end

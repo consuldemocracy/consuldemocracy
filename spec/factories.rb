@@ -470,7 +470,7 @@ FactoryGirl.define do
     user
     document_number
     document_type    "1"
-    date_of_birth    Date.new(1980, 12, 31)
+    year_of_birth    "1980"
   end
 
   factory :organization do

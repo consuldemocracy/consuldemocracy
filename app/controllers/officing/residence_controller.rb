@@ -16,6 +16,6 @@ class Officing::ResidenceController < Officing::BaseController
   private
 
     def residence_params
-      params.require(:residence).permit(:document_number, :document_type, :date_of_birth)
+      params.require(:residence).permit(:document_number, :document_type, :year_of_birth)
     end
 end

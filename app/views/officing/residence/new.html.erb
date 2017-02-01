@@ -14,9 +14,7 @@
       </div>
 
       <div class="date-of-birth small-12 medium-6">
-        <%= f.date_select :date_of_birth,
-                          prompt: true,
-                          start_year: 1900, end_year: 16.years.ago.year %>
+        <%= f.text_field :year_of_birth %>
       </div>
 
       <div class="small-12 medium-6">
