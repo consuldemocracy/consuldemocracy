@@ -451,7 +451,8 @@ en:
         expired: "Expired"
       title: "Polls"
       participate_button: "Participate in this poll"
-      view_button: "View details about this poll"
+      no_geozone_restricted: "All city"
+      geozone_restricted: "Districts"
     show:
       dates_title: "Participation dates"
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."

@@ -23,11 +23,6 @@ describe :voter do
       expect(voter).to_not be_valid
     end
 
-    it "should not be valid without a geozone" do
-      voter.user.geozone = nil
-      expect(voter).to_not be_valid
-    end
-
     it "should be valid if has not voted" do
        voter = build(:poll_voter, :valid_document)
 
