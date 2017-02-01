@@ -43,7 +43,10 @@ feature 'Officing Final Recount' do
       click_link 'Final recounts'
     end
 
-    click_link @poll.name
+    within("#poll_#{@poll.id}") do
+      expect(page).to have_content(@poll.name)
+      click_link 'Add final recount'
+    end
 
     expect(page).to_not have_content('Your recounts')
 
