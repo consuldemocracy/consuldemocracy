@@ -122,6 +122,26 @@ feature 'Officing Final Recount' do
       expect(page).to have_content('100')
       expect(page).to have_content('33')
     end
-
   end
+
+  scenario "Show link to add results for same booth/date" do
+    final_officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
+    poll = final_officer_assignment.booth_assignment.poll
+    poll.update(ends_at: 1.day.ago)
+    final_recount = create(:poll_final_recount,
+                    officer_assignment: final_officer_assignment,
+                    booth_assignment: final_officer_assignment.booth_assignment,
+                    date: 7.days.ago,
+                    count: 100)
+    visit new_officing_poll_final_recount_path(poll)
+    within("#poll_final_recount_#{final_recount.id}") do
+      click_link "Add results"
+    end
+
+    expected_path = new_officing_poll_result_path(poll, oa: final_recount.officer_assignment.id, d: I18n.l(final_recount.date.to_date))
+    expect(page).to have_current_path(expected_path)
+    expect(page).to have_select('officer_assignment_id', selected: final_recount.booth_assignment.booth.name)
+    expect(page).to have_select('date', selected: I18n.l(final_recount.date.to_date, format: :long))
+  end
+
 end
