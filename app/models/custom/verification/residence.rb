@@ -3,6 +3,12 @@ require_dependency Rails.root.join('app', 'models', 'verification', 'residence')
 
 class Verification::Residence
 
+  validate :residence_present
+
+  def residence_present
+    residency_valid?
+  end
+
   # validate :postal_code_in_castellon
   # validate :residence_in_castellon
 

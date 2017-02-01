@@ -56,30 +56,32 @@ Setting["transparency_url"] = nil
 Setting["opendata_url"] = "/opendata"
 
 # Public-facing URL of the app.
-Setting["url"] = "http://example.com"
+Setting["url"] = "https://decidimpre.castello.es"
 
 # Consul installation's organization name
 Setting["org_name"] = "Consul"
 
 # Consul installation place name (City, Country...)
-Setting["place_name"] = "Consul-land"
+Setting["place_name"] = "Castellón de la Plana"
 
 # Meta tags for SEO
 Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Feature flags
-Setting['feature.debates'] = true
+Setting['feature.debates'] = false
 Setting['feature.spending_proposals'] = nil
 Setting['feature.polls'] = true
-Setting['feature.twitter_login'] = true
-Setting['feature.facebook_login'] = true
-Setting['feature.google_login'] = true
-Setting['feature.public_stats'] = true
+Setting['feature.twitter_login'] = false
+Setting['feature.facebook_login'] = false
+Setting['feature.google_login'] = false
+Setting['feature.public_stats'] = false
 Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 Setting['feature.proposals'] = true
+Setting['feature.signature_sheets'] = false
+Setting['feature.proposals'] = false
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -99,7 +101,7 @@ Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
 
 # Email settings
-Setting['mailer_from_name'] = 'Consul'
+Setting['mailer_from_name'] = 'Decidim Castelló'
 Setting['mailer_from_address'] = 'noreply@castello.es'
 
 # Verification settings
