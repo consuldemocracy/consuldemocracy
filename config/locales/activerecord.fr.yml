@@ -1,11 +1,5 @@
 fr:
   activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              password_already_set: "Cet utilisateur à déjà un mot de passe"
     models:
       activity:
         one: "activité"
@@ -41,6 +35,31 @@ fr:
         one: "Spending proposal"
         other: "Spending proposals"
     attributes:
+      budget:
+        name: "Titre du budget participatif"
+        description_accepting: "Description de la phase de dépôt des propositions"
+        description_reviewing: "Description de la phase d'amélioration des propositions"
+        description_selecting: "Description de la phase de selection des propositions"
+        description_valuating: "Description de la phase de cotation des propositions"
+        description_balloting: "Description de la phase de vote des propositions"
+        description_reviewing_ballots: "Description de la phase de décompte des votes"
+        description_finished: "Description de la phase BP terminé"
+        phase: "Phase"
+        currency_symbol: "Currency"
+      budget/investment:
+        heading_id: "Sección de presupuesto"
+        title: "Title"
+        description: "Description"
+        external_url: "External url"
+        location: "Location"
+        administrator_id: "Administrator"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        heading_id: "Heading"
+        title: "Title"
+        location: "Location"
+        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+
       comment:
         body: "Commentaire"
         user: "Utilisateur"
@@ -84,3 +103,9 @@ fr:
           attributes:
             tag_list:
               less_than_or_equal_to: "tags must be less than or equal to %{count}"
+      user:
+          attributes:
+            email:
+              password_already_set: "Cet utilisateur à déjà un mot de passe"
+
+
