@@ -1,22 +1,19 @@
 class Officing::Residence
   include ActiveModel::Model
-  include ActiveModel::Dates
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :officer, :document_number, :document_type, :date_of_birth
+  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth
 
   before_validation :call_census_api
 
   validates_presence_of :document_number
   validates_presence_of :document_type
-  validates_presence_of :date_of_birth
+  validates_presence_of :year_of_birth
 
   validate :allowed_age
   validate :residence_in_madrid
 
   def initialize(attrs={})
-    self.date_of_birth = parse_date('date_of_birth', attrs)
-    attrs = remove_date('date_of_birth', attrs)
     super
     clean_document_number
   end
@@ -64,7 +61,8 @@ class Officing::Residence
   end
 
   def allowed_age
-    return if errors[:date_of_birth].any?
+    return if errors[:year_of_birth].any?
+    return unless @census_api_response.valid?
 
     unless allowed_age?
       errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
@@ -72,7 +70,7 @@ class Officing::Residence
   end
 
   def allowed_age?
-    self.date_of_birth <= User.minimum_required_age.years.ago
+    date_of_birth <= User.minimum_required_age.years.ago
   end
 
   def geozone
@@ -87,6 +85,10 @@ class Officing::Residence
     @census_api_response.gender
   end
 
+  def date_of_birth
+    @census_api_response.date_of_birth
+  end
+
   private
 
     def call_census_api
@@ -95,7 +97,11 @@ class Officing::Residence
 
     def residency_valid?
       @census_api_response.valid? &&
-      @census_api_response.date_of_birth == date_of_birth
+      @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
+    end
+
+    def census_year_of_birth
+      @census_api_response.date_of_birth.year
     end
 
     def clean_document_number
