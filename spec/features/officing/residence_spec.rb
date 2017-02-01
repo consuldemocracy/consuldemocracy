@@ -13,9 +13,9 @@ feature 'Residence' do
       click_link "Validate document"
     end
 
-    fill_in 'residence_document_number', with: "12345678Z"
     select 'DNI', from: 'residence_document_type'
-    select_date '31-December-1980', from: 'residence_date_of_birth'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: '1980'
 
     click_button 'Validate document'
 
@@ -31,16 +31,28 @@ feature 'Residence' do
     expect(page).to have_content /\d errors? prevented the verification of this document/
   end
 
-  scenario "Error on Census" do
+  scenario "Error on Census (document number)" do
     within("#side_menu") do
       click_link "Validate document"
     end
 
-    fill_in 'residence_document_number', with: "12345678Z"
     select 'DNI', from: 'residence_document_type'
-    select '1997', from: 'residence_date_of_birth_1i'
-    select 'January', from: 'residence_date_of_birth_2i'
-    select '1', from: 'residence_date_of_birth_3i'
+    fill_in 'residence_document_number', with: "9999999A"
+    fill_in 'residence_year_of_birth', with: '1980'
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'The Census was unable to verify this document'
+  end
+
+  scenario "Error on Census (year of birth)" do
+    within("#side_menu") do
+      click_link "Validate document"
+    end
+
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: '1981'
 
     click_button 'Validate document'
 
