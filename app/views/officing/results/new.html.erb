@@ -1,0 +1,65 @@
+<% if @officer_assignments.any? %>
+  <h2><%= t("officing.results.new.title", poll: @poll.name) %></h2>
+
+  <%= form_tag(officing_poll_results_path(@poll), {id: "officer_assignment_form"}) do %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <label><%= t("officing.results.new.booth") %></label>
+        <%= select_tag :officer_assignment_id,
+                        booths_for_officer_select_options(@officer_assignments),
+                        { prompt: t("officing.results.new.select_booth"),
+                          label: false } %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <label><%= t("officing.results.new.date") %></label>
+        <%= select_tag :date,
+                        poll_dates_select_options(@poll),
+                        { prompt: t("officing.results.new.select_date"),
+                          label: false } %>
+      </div>
+    </div>
+
+    <% @poll.questions.each do |question| %>
+      <div class="row">
+        <h3><%= question.title %></h3>
+        <% question.valid_answers.each do |answer| %>
+          <div class="small-12 medium-6 large-4 column">
+            <label><%= answer %></label>
+            <%= text_field_tag :count, nil, placeholder: "0" %>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+    <% end %>
+
+    <div class="row">
+      <h3><%= t("officing.results.new.ballots_blank") %></h3>
+      <div class="small-12 medium-6 large-4 column">
+        <%= text_field_tag :count, nil, placeholder: "0" %>
+      </div>
+    </div>
+    <div class="row">
+      <h3><%= t("officing.results.new.ballots_null") %></h3>
+      <div class="small-12 medium-6 large-4 column">
+        <%= text_field_tag :count, nil, placeholder: "0" %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="small-12 medium-6 large-4 column">
+        <%= submit_tag t("officing.results.new.submit"), class: "button expanded" %>
+      </div>
+    </div>
+  <% end %>
+
+<% else %>
+  <h2><%= @poll.name %></h2>
+  <div class="callout alert">
+    <%= t("officing.results.new.not_allowed") %>
+  </div>
+<% end %>
+
