@@ -1,51 +1,16 @@
 fr:
   budgets:
-    ballots:
-      show:
-        title: Votre bulletin
-        voted_html:
-          one: "Vous avez voté sur <span>une</span> proposition."
-          ohter: "Vous avez voté sur <span>%{count}</span> propositions"
-        voted_info_html: Vous pouvez modifier votre vote à tout moment, jusqu'à la fin de cette phase.<br> Pas besoin d'investir tout l'argent disponible.
-        amount_spent: "Montant dépensé"
-        zero: Vous n'avez voté sur aucun projet d'investissement
-        remaining: Vous avez encore <span>%{amount}</span> à investir
-        remove: Retirer le vote
-      reasons_for_not_balloting:
-        not_logged_in: Vous devez %{signin} ou %{signup} pour contiuer
-        not_verified: Seul les utilisateurs enregistrés peuvent voter sur les propositions; {verify_account}.
-        organization: Les organisations ne sont pas autorisées à voter
-        not_selected: Les projets d'investissement non séléctionnés ne peuvent pas être soutenus.
-        not_enough_money: Le prix est plus élevé que le montant disponible
-        no_ballots_allowed: La phase de sélection est close
-        different_heading_assigned: Vous avez déjà voté sur un en-tête différent
-    groups:
-      show:
-        title: Sélectionnez une option
-        unfeasible_title: Propositions invalides
-        unfeasible: Voir les propositions invalides
-    phase:
-      accepting: Dépôt des propositions
-      reviewing: Evaluation des propositions
-      selecting: Sélection des propositions
-      valuating: Cotation des propositions
-      balloting: Vote des propositions
-      reviewing_ballots: Décompte des votes
-      finished: Fin du budget
-    index:
-      title: Budgets participatifs
-    investissements:
-      from:
-        tags_label: "Catégories"
-        tags_instructions: "Catégorisez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
-        tag_category_label: Catégories
-        tags_placeholder: Entrez les catégories que vous souhaitez utiliser, séparées par des virgules (',')
+    investments:
       index:
         title: Budgétisation participative
         unfeasible: Projets d'investissement infaisable
         unfeasible_text: La proposition doit remplir plusieurs conditions (légalité, être concrete, être la responsabilité de la ville, ne pas exceder la limite du budget; %"{definitions}) pour être déclarée viable et atteindre la phase finale de vote. Toute proposition ne remplissant pas ces conditions est marquée comme "infaisable" et publiée dans la liste ci-contre, avec son rapport d'infaisablité.
         unfeasible_text_definitions: Voir définition ci-contre
         by_heading: "Projets d'investissement avec visibilité : %{heading}"
+        orders:
+          random: "aléatoire"
+          confidence_score: "meilleur classement"
+          price: par prix
         search_form:
           button: Rechercher
           placeholder: Rechercher des projets d'investissement
@@ -69,10 +34,6 @@ fr:
           by_feasibility: TODO - Por viabilidad
           feasible: TODO - Ver los proyectos viables
           unfeasible: TODO - Ver los proyectos inviables
-        orders:
-          random: "aléatoire"
-          confidence_score: "meilleur classement"
-          price: par prix
       show:
         author_deleted : Utilisateur supprimé
         code_html: "Code du projet d'investissement : <strong>%{code}</strong>"
@@ -85,6 +46,9 @@ fr:
         supports: TODO - Apoyos
         votes: TODO - Votos
       wrong_price_format  : Seulement des nombres entiers
+      header:
+        check_ballot : "Voir mon bulletin"
+        different_heading_assigned_html  : 'Vous avez des votes actifs dans un autre en-tête : %{en-tête_lien}'
       investment:
         already_added: Vous avez déjà ajouté ce projet d'investissement
         already_supported: Vous soutenez déjà ce projet. Partagez-le !
@@ -96,10 +60,62 @@ fr:
           one: "1 soutien"
           other: "%{count} soutiens"
           zero: "Aucun soutiens"
-        give_support: TODO - Apoyar
-      header:
-        check_ballot : "Voir mon bulletin"
-        different_heading_assigned_html  : 'Vous avez des votes actifs dans un autre en-tête : %{en-tête_lien}'
+        give_support: Soutenir
+    phase:
+      accepting: Dépôt des propositions
+      reviewing: Evaluation des propositions
+      selecting: Sélection des propositions
+      valuating: Cotation des propositions
+      balloting: Vote des propositions
+      reviewing_ballots: Décompte des votes
+      finished: Fin du budget
+    groups:
+      show:
+        title: Sélectionnez une option
+        unfeasible_title: Propositions invalides
+        unfeasible: Voir les propositions invalides
+# ok jusqu'à là
+
+    # ballots:
+    #   show:
+    #     title: Votre bulletin
+    #     voted_html:
+    #       one: "Vous avez voté sur <span>une</span> proposition."
+    #       ohter: "Vous avez voté sur <span>%{count}</span> propositions"
+    #     voted_info_html: Vous pouvez modifier votre vote à tout moment, jusqu'à la fin de cette phase.<br> Pas besoin d'investir tout l'argent disponible.
+    #     amount_spent: "Montant dépensé"
+    #     zero: Vous n'avez voté sur aucun projet d'investissement
+    #     remaining: Vous avez encore <span>%{amount}</span> à investir
+    #     remove: Retirer le vote
+    #   reasons_for_not_balloting:
+    #     not_logged_in: Vous devez %{signin} ou %{signup} pour contiuer
+    #     not_verified: Seul les utilisateurs enregistrés peuvent voter sur les propositions; {verify_account}.
+    #     organization: Les organisations ne sont pas autorisées à voter
+    #     not_selected: Les projets d'investissement non séléctionnés ne peuvent pas être soutenus.
+    #     not_enough_money: Le prix est plus élevé que le montant disponible
+    #     no_ballots_allowed: La phase de sélection est close
+    #     different_heading_assigned: Vous avez déjà voté sur un en-tête différent
+
+    # phase:
+    #   accepting: Dépôt des propositions
+    #   reviewing: Evaluation des propositions
+    #   selecting: Sélection des propositions
+    #   valuating: Cotation des propositions
+    #   balloting: Vote des propositions
+    #   reviewing_ballots: Décompte des votes
+    #   finished: Fin du budget
+    index:
+      title: Budgets participatifs
+    # investissements:
+    #   from:
+    #     tags_label: "Catégories"
+    #     tags_instructions: "Catégorisez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
+    #     tag_category_label: Catégories
+    #     tags_placeholder: Entrez les catégories que vous souhaitez utiliser, séparées par des virgules (',')
+    #   index:
+    #
+    #
+    #
     progress_bar:
       available  : "Disponible :"
     show:
