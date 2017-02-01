@@ -5,18 +5,24 @@
     <thead>
       <th><%= t("officing.polls.final.select_poll") %></th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
     </thead>
     <tbody>
       <% @polls.each do |poll| %>
         <tr id="<%= dom_id(poll) %>" class="poll">
           <td>
             <strong>
-              <%= link_to poll.name, new_officing_poll_final_recount_path(poll) %>
+              <%= poll.name %>
             </strong>
           </td>
           <td class="text-right">
             <%= link_to t("officing.polls.final.add_recount"),
                         new_officing_poll_final_recount_path(poll),
+                        class: "button hollow" %>
+          </td>
+          <td class="text-right">
+            <%= link_to t("officing.polls.final.add_results"),
+                        new_officing_poll_result_path(poll),
                         class: "button hollow" %>
           </td>
         </tr>
