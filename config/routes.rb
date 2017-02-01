@@ -336,6 +336,7 @@ Rails.application.routes.draw do
 
       resources :recounts, only: [:new, :create]
       resources :final_recounts, only: [:new, :create]
+      resources :results, only: [:new, :create]
     end
     resource :residence, controller: "residence", only: [:new, :create]
     resources :voters, only: [:new, :create]

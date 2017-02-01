@@ -20,6 +20,7 @@ es:
         no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
         select_poll: "Selecciona votación"
         add_recount: "Añadir recuentos finales"
+        add_results: "Añadir resultados"
     recounts:
       flash:
         create: "Datos añadidos"
@@ -51,6 +52,20 @@ es:
         submit: "Guardar"
         final_recount_list: "Tus recuentos finales"
         system_count: "Recuento del sistema"
+    results:
+      flash:
+        create: "Datos guardados"
+        error_create: "Resultados NO añadidos. Error en los datos"
+      new:
+        title: "%{poll} - Añadir resultados"
+        not_allowed: "No tienes permiso para introducir resultados"
+        booth: "Urna"
+        date: "Día"
+        select_booth: "Elige urna"
+        select_date: "Elige día"
+        ballots_blank: "Papeletas en blanco"
+        ballots_null: "Papeletas nulas"
+        submit: "Guardar"
     residence:
       flash:
         create: "Documento verificado con el Padrón"
