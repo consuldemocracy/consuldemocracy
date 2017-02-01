@@ -13,7 +13,7 @@ module OfficingHelper
     officer_assignments.each do |oa|
       options << ["#{oa.booth_assignment.booth.name}", oa.id]
     end
-    options_for_select(options)
+    options_for_select(options, params[:oa])
   end
 
   def recount_to_compare_with_final_recount(final_recount)
