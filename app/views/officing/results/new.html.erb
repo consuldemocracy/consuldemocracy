@@ -24,9 +24,11 @@
 
     <% @poll.questions.each do |question| %>
       <div class="row">
-        <h3><%= question.title %></h3>
+        <div class="small-12 column">
+          <h3><%= question.title %></h3>
+        </div>
         <% question.valid_answers.each do |answer| %>
-          <div class="small-12 medium-6 large-4 column">
+          <div class="small-12 medium-6 large-3 column end">
             <label><%= answer %></label>
             <%= text_field_tag :count, nil, placeholder: "0" %>
           </div>
