@@ -8,9 +8,6 @@ class Poll
 
     validates :poll_id, presence: true
     validates :user_id, presence: true
-    validates :geozone_id, presence: true
-    validates :gender, presence: true
-    validates :age, presence: true
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
 
