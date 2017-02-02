@@ -8,7 +8,7 @@ es:
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
       notifications: Notificaciones
-      organization_name_label: Nombre de la organización
+      organization_name_label: Nombre de la asociación
       organization_responsible_name_placeholder: Representante de la asociación/colectivo
       personal: Datos personales
       phone_number_label: Teléfono
@@ -168,12 +168,12 @@ es:
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      consul: aplicación Consul
+      consul: Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Para asistencia técnica entra en
+      contact_us: Puedes consultar las preguntas más frecuentes sobre el uso de este portal
       copyright: Consul, %{year}
-      description: Este portal usa la %{consul} que es %{open_source}.
-      faq: Asistencia técnica
+      description: Este portal es una adaptación de la plataforma de %{open_source} %{consul} desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Castellón de la Plana.
+      faq: aquí
       more_info: Más información
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
