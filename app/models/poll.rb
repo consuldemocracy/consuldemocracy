@@ -41,7 +41,8 @@ class Poll < ActiveRecord::Base
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
-    current.joins(:geozones).where('geozone_restricted = ? or geozones.id = ?', false, user.geozone_id)
+    current.joins('LEFT JOIN "geozones_polls" ON "geozones_polls"."poll_id" = "polls"."id"')
+           .where('geozone_restricted = ? OR geozones_polls.geozone_id = ?', false, user.geozone_id)
   end
 
   def votable_by?(user)
