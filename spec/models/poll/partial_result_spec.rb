@@ -13,4 +13,69 @@ describe Poll::PartialResult do
     end
   end
 
+  describe "logging changes" do
+    it "should update amount_log if amount changes" do
+      partial_result = create(:poll_partial_result, amount: 33)
+
+      expect(partial_result.amount_log).to eq("")
+
+      partial_result.amount = 33
+      partial_result.save
+      partial_result.amount = 32
+      partial_result.save
+      partial_result.amount = 34
+      partial_result.save
+
+      expect(partial_result.amount_log).to eq(":33:32")
+    end
+
+    it "should update officer_assignment_id_log if amount changes" do
+      partial_result = create(:poll_partial_result, amount: 33)
+
+      expect(partial_result.amount_log).to eq("")
+      expect(partial_result.officer_assignment_id_log).to eq("")
+
+      partial_result.amount = 33
+      partial_result.officer_assignment_id = 1
+      partial_result.save
+
+      partial_result.amount = 32
+      partial_result.officer_assignment_id = 2
+      partial_result.save
+
+      partial_result.amount = 34
+      partial_result.officer_assignment_id = 3
+      partial_result.save
+
+      expect(partial_result.amount_log).to eq(":33:32")
+      expect(partial_result.officer_assignment_id_log).to eq(":1:2")
+    end
+
+    it "should update author_id if amount changes" do
+      partial_result = create(:poll_partial_result, amount: 33)
+
+      expect(partial_result.amount_log).to eq("")
+      expect(partial_result.author_id_log).to eq("")
+
+      author_A = create(:poll_officer).user
+      author_B = create(:poll_officer).user
+      author_C = create(:poll_officer).user
+
+      partial_result.amount = 33
+      partial_result.author_id = author_A.id
+      partial_result.save!
+
+      partial_result.amount = 32
+      partial_result.author_id = author_B.id
+      partial_result.save!
+
+      partial_result.amount = 34
+      partial_result.author_id = author_C.id
+      partial_result.save!
+
+      expect(partial_result.amount_log).to eq(":33:32")
+      expect(partial_result.author_id_log).to eq(":#{author_A.id}:#{author_B.id}")
+    end
+  end
+
 end

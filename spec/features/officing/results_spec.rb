@@ -84,7 +84,7 @@ feature 'Officing Results' do
 
     visit officing_poll_results_path(@poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
 
-    expect(page).to have_content('7777')
+    within("#question_#{@question_1.id}_0_result") { expect(page).to have_content('7777') }
 
     visit new_officing_poll_result_path(@poll)
 

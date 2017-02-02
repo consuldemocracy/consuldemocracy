@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201113206) do
+ActiveRecord::Schema.define(version: 20170202151151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -433,6 +433,9 @@ ActiveRecord::Schema.define(version: 20170201113206) do
     t.date    "date"
     t.integer "booth_assignment_id"
     t.integer "officer_assignment_id"
+    t.text    "amount_log",                default: ""
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
   end
 
   add_index "poll_partial_results", ["answer"], name: "index_poll_partial_results_on_answer", using: :btree

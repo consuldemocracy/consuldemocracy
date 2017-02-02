@@ -15,4 +15,14 @@ class Poll::PartialResult < ActiveRecord::Base
 
   scope :by_author, -> (author_id) { where(author_id: author_id) }
   scope :by_question, -> (question_id) { where(question_id: question_id) }
+
+  before_save :update_logs
+
+  def update_logs
+    if self.amount_changed? && self.amount_was.present?
+      self.amount_log += ":#{self.amount_was.to_s}"
+      self.officer_assignment_id_log += ":#{self.officer_assignment_id_was.to_s}"
+      self.author_id_log += ":#{self.author_id_was.to_s}"
+    end
+  end
 end
