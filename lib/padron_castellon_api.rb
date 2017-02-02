@@ -14,6 +14,7 @@ class PadronCastellonApi
     document_number = document_number.to_s.gsub(/[^0-9A-Za-z]/i, '')
     variants = []
     numero, letra = split_letter_from(document_number)
+    letra = ' ' unless letra.present?
     number_variants = get_number_variants_with_leading_zeroes_from(numero)
     number_variants << document_number
     number_variants.each do |nv|
