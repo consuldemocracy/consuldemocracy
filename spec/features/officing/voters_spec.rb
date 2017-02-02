@@ -21,14 +21,14 @@ feature 'Voters' do
     expect(page).to have_content "Polls"
     expect(page).to have_content poll.name
 
-    click_button "Validate vote"
+    click_button "Confirm vote"
 
-    expect(page).to have_content "Vote validated successfully"
-    expect(page).to_not have_button "Validate vote"
+    expect(page).to have_content "Vote introduced!"
+    expect(page).to_not have_button "Confirm vote"
 
     page.evaluate_script("window.location.reload()")
     expect(page).to have_content "Has already participated in this poll"
-    expect(page).to_not have_button "Validate vote"
+    expect(page).to_not have_button "Confirm vote"
   end
 
   scenario "Already voted", :js do
@@ -42,11 +42,11 @@ feature 'Voters' do
 
     within("#poll_#{poll1.id}") do
       expect(page).to have_content "Has already participated in this poll"
-      expect(page).to_not have_button "Validate vote"
+      expect(page).to_not have_button "Confirm vote"
     end
 
     within("#poll_#{poll2.id}") do
-      expect(page).to have_button "Validate vote"
+      expect(page).to have_button "Confirm vote"
     end
   end
 
