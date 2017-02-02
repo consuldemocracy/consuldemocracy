@@ -6,10 +6,13 @@ class Budget < ActiveRecord::Base
   PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
+  # validates :name, presence: true, length: { maximum: 80 }
   validates :name, presence: true, uniqueness: true
+
   validates :phase, inclusion: { in: PHASES }
   validates :currency_symbol, presence: true
   validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
+
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy
@@ -141,4 +144,3 @@ class Budget < ActiveRecord::Base
       end
     end
 end
-
