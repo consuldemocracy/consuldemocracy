@@ -1,5 +1,6 @@
 class Polls::NvotesController < ApplicationController
   before_action :authenticate_user!, except: :success
+  skip_before_action :verify_authenticity_token, only: [:success]
   skip_authorization_check
 
   def new
