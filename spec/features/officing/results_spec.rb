@@ -72,4 +72,68 @@ feature 'Officing Results' do
     end
   end
 
+  scenario 'Edit result' do
+    partial_result = create(:poll_partial_result,
+                      officer_assignment: @officer_assignment,
+                      booth_assignment: @officer_assignment.booth_assignment,
+                      date: @poll.starts_at,
+                      question: @question_1,
+                      answer: @question_1.valid_answers[0],
+                      author: @poll_officer.user,
+                      amount: 7777)
+
+    visit officing_poll_results_path(@poll, date: I18n.l(partial_result.date), booth_assignment_id: partial_result.booth_assignment_id)
+
+    expect(page).to have_content('7777')
+
+    visit new_officing_poll_result_path(@poll)
+
+    booth_name = partial_result.booth_assignment.booth.name
+    date = I18n.l(partial_result.date, format: :long)
+    select booth_name, from: 'officer_assignment_id'
+    select date, from: 'date'
+
+    fill_in "questions[#{@question_1.id}][0]", with: '5555'
+    fill_in "questions[#{@question_1.id}][1]", with: '200'
+
+    click_button 'Save'
+
+    within("#results_#{partial_result.booth_assignment_id}_#{partial_result.date.strftime('%Y%m%d')}") do
+      expect(page).to have_content(I18n.l(partial_result.date, format: :long))
+      expect(page).to have_content(partial_result.booth_assignment.booth.name)
+      click_link "See results"
+    end
+
+    expect(page).to_not have_content('7777')
+    within("#question_#{@question_1.id}_0_result") { expect(page).to have_content('5555') }
+    within("#question_#{@question_1.id}_1_result") { expect(page).to have_content('200') }
+  end
+
+  scenario 'Index lists all questions and answers' do
+    partial_result = create(:poll_partial_result,
+                      officer_assignment: @officer_assignment,
+                      booth_assignment: @officer_assignment.booth_assignment,
+                      date: @poll.ends_at,
+                      question: @question_1,
+                      amount: 33)
+
+    visit officing_poll_results_path(@poll,
+                                     date: I18n.l(@poll.ends_at.to_date),
+                                     booth_assignment_id: @officer_assignment.booth_assignment_id)
+
+    expect(page).to have_content(I18n.l(@poll.ends_at.to_date, format: :long))
+    expect(page).to have_content(@officer_assignment.booth_assignment.booth.name)
+
+    expect(page).to have_content(@question_1.title)
+    @question_1.valid_answers.each_with_index do |answer, i|
+      within("#question_#{@question_1.id}_#{i}_result") { expect(page).to have_content(answer) }
+    end
+
+    expect(page).to have_content(@question_2.title)
+    @question_2.valid_answers.each_with_index do |answer, i|
+      within("#question_#{@question_2.id}_#{i}_result") { expect(page).to have_content(answer) }
+    end
+
+  end
+
 end

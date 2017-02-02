@@ -81,13 +81,13 @@
         <% results_by_booth[booth_assignment].group_by(&:date).keys.each do |date| %>
           <tr id="results_<%= booth_assignment %>_<%= date.strftime('%Y%m%d') %>">
             <td>
-              <%= l(date.to_date, format: :long) %>
+              <%= l(date, format: :long) %>
             </td>
             <td>
               <%= results_by_booth[booth_assignment].first.booth_assignment.booth.name %>
             </td>
             <td>
-
+            <%= link_to t("officing.results.new.see_results"), officing_poll_results_path(@poll, date: l(date), booth_assignment_id: booth_assignment) %>
             </td>
           </tr>
         <% end %>

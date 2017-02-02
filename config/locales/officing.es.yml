@@ -70,6 +70,10 @@ es:
         ballots_null: "Papeletas nulas"
         submit: "Guardar"
         results_list: "Tus resultados"
+        see_results: "Ver resultados"
+      index:
+        no_results: "No hay resultados"
+        results: "Resultados"
     residence:
       flash:
         create: "Documento verificado con el Padrón"

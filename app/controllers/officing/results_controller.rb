@@ -18,6 +18,17 @@ class Officing::ResultsController < Officing::BaseController
     redirect_to new_officing_poll_result_path(@poll), notice: notice
   end
 
+  def index
+    @booth_assignment = ::Poll::BoothAssignment.includes(:booth).find(index_params[:booth_assignment_id])
+    if current_user.poll_officer.officer_assignments.final.
+                    where(booth_assignment_id: @booth_assignment.id).exists?
+
+      @partial_results = ::Poll::PartialResult.includes(:question).
+                                            where(booth_assignment_id: index_params[:booth_assignment_id]).
+                                            where(date: index_params[:date])
+    end
+  end
+
   private
 
     def check_booth_and_date
@@ -91,6 +102,10 @@ class Officing::ResultsController < Officing::BaseController
 
     def results_params
       params.permit(:officer_assignment_id, :date, :questions)
+    end
+
+    def index_params
+      params.permit(:booth_assignment_id, :date)
     end
 
 end

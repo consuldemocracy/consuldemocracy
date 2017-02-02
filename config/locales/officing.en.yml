@@ -70,6 +70,10 @@ en:
         ballots_null: "Invalid ballots"
         submit: "Save"
         results_list: "Your results"
+        see_results: "See results"
+      index:
+        no_results: "No results"
+        results: Results
     residence:
       flash:
         create: "Document verified with Census"
