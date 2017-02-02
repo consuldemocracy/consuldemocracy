@@ -899,4 +899,13 @@ print "Commenting Poll Questions"
 end
 
 puts " ✅"
+print "Creating Poll Voters"
+
+(1..10).each do
+  poll = Poll.all.sample
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll: poll, user: user)
+end
+
+puts " ✅"
 puts "All dev seeds created successfuly 👍"

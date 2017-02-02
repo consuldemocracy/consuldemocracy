@@ -516,3 +516,12 @@ table.investment-projects-summary {
   color: $color-alert;
   font-weight: bold;
 }
+
+table {
+
+  .callout {
+    height: $line-height*2;
+    line-height: $line-height*2;
+    padding: 0 $line-height/2;
+  }
+}
