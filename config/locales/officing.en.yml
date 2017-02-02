@@ -8,7 +8,7 @@ en:
     menu:
       voters: Validate document
       recounts: Store recount
-      final_recounts: Final recounts
+      final_recounts: Final recounts and results
     polls:
       index:
         title: Poll list
@@ -57,6 +57,8 @@ en:
       flash:
         create: "Results saved"
         error_create: "Results NOT saved. Error in data."
+        error_wrong_booth: "Wrong booth. Results NOT saved."
+        error_wrong_date: "Wrong date. Results NOT saved."
       new:
         title: "%{poll} - Add results"
         not_allowed: "You are allowed to add results for this poll"
@@ -67,6 +69,7 @@ en:
         ballots_blank: "Blank ballots"
         ballots_null: "Invalid ballots"
         submit: "Save"
+        results_list: "Your results"
     residence:
       flash:
         create: "Document verified with Census"

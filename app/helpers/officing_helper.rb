@@ -25,4 +25,11 @@ module OfficingHelper
     final_recount.booth_assignment.voters.select {|v| v.created_at.to_date == final_recount.date}.size
   end
 
+  def answer_result_value(question_id, answer_index)
+    return nil if params.blank?
+    return nil if params[:questions].blank?
+    return nil if params[:questions][question_id.to_s].blank?
+    params[:questions][question_id.to_s][answer_index.to_s]
+  end
+
 end
