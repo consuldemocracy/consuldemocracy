@@ -1,0 +1,38 @@
+<div class="expanded budget no-margin-top padding">
+  <div class="row">
+    <div class="small-12 column">
+      <h1><%= t('budgets.index.title') %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="small-12 large-12 text-center">
+      <%= link_to "Presenta tu Proyecto", budget_path(@current_budget), class: "button" %>
+  </div>
+
+</div>
+
+
+<div class="budgets-calendar">
+  <div class="row">
+    <div class="small-2 large-2 column">
+      <%= markdown @current_budget.description_accepting %>
+    </div>
+    <div class="small-2 large-2 column">
+      <%= markdown @current_budget.description_reviewing %>
+    </div>
+    <div class="small-2 large-2 column">
+      <%= markdown @current_budget.description_selecting %>
+    </div>
+    <div class="small-2 large-2 column">
+      <%= markdown @current_budget.description_valuating %>
+    </div>
+    <div class="small-2 large-2 column">
+      <%= markdown @current_budget.description_balloting %>
+    </div>
+    <div class="small-2 large-2 column">
+      <%= markdown @current_budget.description_reviewing_ballots %>
+    </div>
+  </div>
+</div>

@@ -32,8 +32,8 @@ class Verification::Residence
     end
 
     def residency_valid?
+      # TODO: Errores en el Padron @census_api_response.postal_code == postal_code &&
       @census_api_response.valid? &&
-        @census_api_response.postal_code == postal_code &&
         @census_api_response.date_of_birth == date_of_birth
     end
 
