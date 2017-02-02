@@ -74,6 +74,8 @@ es:
       index:
         no_results: "No hay resultados"
         results: "Resultados"
+        table_answer: Respuesta
+        table_votes: Votos
     residence:
       flash:
         create: "Documento verificado con el Padrón"
