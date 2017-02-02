@@ -8,5 +8,6 @@ class Poll
     has_many :final_recounts, class_name: "Poll::FinalRecount", dependent: :destroy
     has_many :officers, through: :officer_assignments
     has_many :voters
+    has_many :partial_results
   end
 end

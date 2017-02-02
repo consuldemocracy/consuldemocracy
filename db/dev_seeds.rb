@@ -825,7 +825,7 @@ print "Creating Poll Questions"
   question = Poll::Question.create!(author: author,
                                     title: Faker::Lorem.sentence(3).truncate(60),
                                     description: description,
-                                    valid_answers: Faker::Lorem.words(3).join(', '),
+                                    valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
                                     poll: poll)
 end
 

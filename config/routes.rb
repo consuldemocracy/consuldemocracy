@@ -389,6 +389,7 @@ Rails.application.routes.draw do
 
       resources :recounts, only: [:new, :create]
       resources :final_recounts, only: [:new, :create]
+      resources :results, only: [:new, :create, :index]
 
       resources :nvotes, only: :new do
         get :thanks, on: :collection

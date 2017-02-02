@@ -8,7 +8,7 @@ en:
     menu:
       voters: Validate document
       recounts: Store recount
-      final_recounts: Final recounts
+      final_recounts: Final recounts and results
     polls:
       index:
         title: Poll list
@@ -20,6 +20,7 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_recount: Add final recount
+        add_results: Add results
     sessions:
       create:
         flash:
@@ -55,6 +56,28 @@ en:
         submit: Save
         final_recount_list: "Your final recounts"
         system_count: "System recount"
+        add_results: "Add results"
+    results:
+      flash:
+        create: "Results saved"
+        error_create: "Results NOT saved. Error in data."
+        error_wrong_booth: "Wrong booth. Results NOT saved."
+        error_wrong_date: "Wrong date. Results NOT saved."
+      new:
+        title: "%{poll} - Add results"
+        not_allowed: "You are allowed to add results for this poll"
+        booth: "Booth"
+        date: "Date"
+        select_booth: "Select booth"
+        select_date: "Select date"
+        ballots_blank: "Blank ballots"
+        ballots_null: "Invalid ballots"
+        submit: "Save"
+        results_list: "Your results"
+        see_results: "See results"
+      index:
+        no_results: "No results"
+        results: Results
     residence:
       flash:
         create: "Document verified with Census"

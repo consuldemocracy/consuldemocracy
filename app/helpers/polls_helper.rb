@@ -25,7 +25,7 @@ module PollsHelper
     (poll.starts_at.to_date..poll.ends_at.to_date).each do |date|
       options << [l(date, format: :long), l(date)]
     end
-    options_for_select(options)
+    options_for_select(options, params[:d])
   end
 
   def poll_final_recount_option(poll)
