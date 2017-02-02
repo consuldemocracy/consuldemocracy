@@ -599,8 +599,8 @@ print "Creating Poll Voters"
 
 (1..10).each do
   poll = Poll.all.sample
-  document_number = Faker::Number.number(10)
-  Poll::Voter.create!(poll: poll, document_number: document_number)
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll: poll, user: user)
 end
 
 puts " ✅"
