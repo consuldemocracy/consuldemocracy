@@ -78,6 +78,8 @@ en:
       index:
         no_results: "No results"
         results: Results
+        table_answer: Answer
+        table_votes: Votes
     residence:
       flash:
         create: "Document verified with Census"

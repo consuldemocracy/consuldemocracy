@@ -3,7 +3,11 @@ class Officing::VotersController < Officing::BaseController
 
   def new
     @user = User.find(params[:id])
-    @polls = Poll.incoming # fix and use answerable_by(@user)
+
+    # Temp solution to test in pre
+    # @polls = Poll.answerable_by(@user)
+    @polls = Poll.incoming
+
   end
 
   def create
@@ -34,3 +38,4 @@ class Officing::VotersController < Officing::BaseController
       sign_in(@voter)
     end
 end
+
