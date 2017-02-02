@@ -33,4 +33,21 @@ feature 'Nvotes' do
     end
   end
 
+  scenario "Store voter", :focus do
+    user  = create(:user, :in_census, id: rand(9999))
+    poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
+    nvote = create(:poll_nvote, user: user, poll: poll)
+    nvote.update(voter_hash: "33333333")
+
+    authorization_hash = "khmac:///sha-256;12345678/33333333:AuthEvent:128:RegisterSuccessfulLogin:1486030800"
+    page.driver.header 'Authorization', authorization_hash
+    page.driver.post polls_nvotes_success_path
+
+    expect(Poll::Voter.count).to eq(1)
+
+    voter = Poll::Voter.first
+    expect(voter.poll).to eq(poll)
+    expect(voter.user).to eq(user)
+  end
+
 end

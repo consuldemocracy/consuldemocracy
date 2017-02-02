@@ -120,6 +120,7 @@ Rails.application.routes.draw do
       get :token, on: :collection
     end
   end
+  post "/polls/nvotes/success" => "polls/nvotes#success", as: :polls_nvotes_success
 
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
