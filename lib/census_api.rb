@@ -29,6 +29,9 @@ class CensusApi
   end
 
   class Response
+    DDMMYYYY_REGEX = /(\d\d?)\D(\d\d?)\D(\d\d\d\d)/
+    YYYYMMDD_REGEX = /(\d\d\d\d)\D(\d\d?)\D(\d\d?)/
+
     def initialize(body)
       @body = body
     end
@@ -39,9 +42,13 @@ class CensusApi
 
     def date_of_birth
       str = data[:datos_habitante][:item][:fecha_nacimiento_string]
-      day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
-      return nil unless day.present? && month.present? && year.present?
-      Date.new(year.to_i, month.to_i, day.to_i)
+      day, month, year = str.match(DDMMYYYY_REGEX).try(:[], 1..3)
+      date = extract_date(year, month, day) || extract_date(year, day, month)
+      unless date
+        year, month, day = str.match(YYYYMMDD_REGEX).try(:[], 1..3)
+        date = extract_date(year, month, day)
+      end
+      date
     end
 
     def postal_code
@@ -62,6 +69,14 @@ class CensusApi
     end
 
     private
+      def extract_date(year, month, day)
+        if day.present? && month.present? && year.present?
+          year  = year.to_i
+          month = month.to_i
+          day   = day.to_i
+          Date.new(year, month, day) if Date.valid_date?(year, month, day)
+        end
+      end
 
       def datos_habitante
         (data[:datos_habitante] && data[:datos_habitante][:item]) || {}
