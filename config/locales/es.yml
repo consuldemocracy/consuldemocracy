@@ -405,6 +405,7 @@ es:
       participate_button: "Participar en esta votación"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
+      geozone_info: "Solo pueden participar las personas empadronadas en: "
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."

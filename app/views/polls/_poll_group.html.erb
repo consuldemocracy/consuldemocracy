@@ -9,7 +9,12 @@
             <li><%= link_to question.title, question_path(question) %></li>
           <% end %>
         </ul>
-        <ul class="no-bullet margin-top tags">
+        <% if poll.geozones.any? %>
+          <p class="inline-block">
+            <small><%= t("polls.index.geozone_info") %></small>
+          </p>
+        <% end %>
+        <ul class="no-bullet tags inline-block">
           <% poll.geozones.each do |g| %>
             <li class="inline-block"><span><%= g.name %></span></li>
           <% end %>
