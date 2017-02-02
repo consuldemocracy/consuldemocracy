@@ -64,8 +64,9 @@ en:
       new:
         title: Polls
         table_poll: Poll
-        table_actions: Validate
+        table_actions: Polls status
       show:
+        can_vote: Can vote
         error_already_voted: Has already participated in this poll
-        submit: Validate vote
-        success: Vote validated successfully.
+        submit: Confirm vote
+        success: "Vote introduced!"
