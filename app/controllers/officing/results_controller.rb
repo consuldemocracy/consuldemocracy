@@ -72,6 +72,7 @@ class Officing::ResultsController < Officing::BaseController
       params[:oa] = results_params[:officer_assignment_id]
       flash.now[:alert] = (alert || t("officing.results.flash.error_create"))
       load_officer_assignments
+      load_partial_results
       render :new
     end
 
