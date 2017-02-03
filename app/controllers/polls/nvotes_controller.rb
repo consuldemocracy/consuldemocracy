@@ -1,5 +1,6 @@
 class Polls::NvotesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :success
+  skip_before_action :verify_authenticity_token, only: :success
   skip_authorization_check
 
   def new
@@ -13,8 +14,10 @@ class Polls::NvotesController < ApplicationController
     render content_type: 'text/plain', status: :ok, text: "#{nvote.generate_hash message}/#{message}"
   end
 
-  #Agora Callback
   def success
+    authorization_hash = request.headers["Authorization"]
+    Poll::Nvote.store_voter(authorization_hash)
+    render content_type: 'text/plain', status: :ok, text: ""
   end
 
 end
