@@ -410,6 +410,7 @@ en:
       cant_answer: "This poll is not available on your geozone"
       cant_answer_not_logged_in: "You must sign in or sign up to participate"
       cant_answer_verify: "You must verify your account in order to answer"
+      already_answer: "You already have participated in this poll"
     show:
       dates_title: "Participation dates"
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
