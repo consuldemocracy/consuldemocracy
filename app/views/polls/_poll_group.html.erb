@@ -30,7 +30,7 @@
         <div class="dates"><%= poll_dates(poll) %></div>
         <% if poll.questions.count == 1 %>
           <% poll.questions.each do |question| %>
-            <h4 class="inline-block"><%= link_to question.title, question_path(question) %></h4>
+            <h4 class="inline-block"><%= link_to question.title, poll %></h4>
           <% end %>
         <% else %>
           <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
