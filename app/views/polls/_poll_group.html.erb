@@ -3,18 +3,24 @@
     <div class="row">
       <div class="small-12 column">
         <div class="dates"><%= poll_dates(poll) %></div>
-        <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
-        <ul>
+        <% if poll.questions.count == 1 %>
           <% poll.questions.each do |question| %>
-            <li><%= link_to question.title, question_path(question) %></li>
+            <h4 class="inline-block"><%= link_to question.title, question_path(question) %></h4>
           <% end %>
-        </ul>
-        <% if poll.geozones.any? %>
-          <p class="inline-block">
-            <small><%= t("polls.index.geozone_info") %></small>
-          </p>
+        <% else %>
+          <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
+          <ul>
+            <% poll.questions.each do |question| %>
+              <li><%= link_to question.title, question_path(question) %></li>
+            <% end %>
+          </ul>
         <% end %>
-        <ul class="no-bullet tags inline-block">
+        <% if poll.geozones.any? %>
+          <span>
+            <small><%= t("polls.index.geozone_info") %></small>
+          </span>
+        <% end %>
+        <ul class="no-bullet tags">
           <% poll.geozones.each do |g| %>
             <li class="inline-block"><span><%= g.name %></span></li>
           <% end %>
