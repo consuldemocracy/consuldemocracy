@@ -13,7 +13,7 @@ feature 'Voters' do
   end
 
   scenario "Can vote", :js do
-    poll = create(:poll)
+    poll = create(:poll_officer_assignment, officer: officer).booth_assignment.poll
 
     visit new_officing_residence_path
     officing_verify_residence
