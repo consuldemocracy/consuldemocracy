@@ -65,7 +65,7 @@ class PadronCastellonApi
   private
 
     def get_response_body(document_type, document_hash)
-      if end_point_available?
+      if end_point_available? && document_hash[:dni].present?
         llamada_padron(document_type, document_hash)
       else
         binding_response(document_hash, stubbed_response(document_type, document_hash))
