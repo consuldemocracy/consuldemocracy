@@ -26,6 +26,8 @@ class Officing::ResultsController < Officing::BaseController
       @partial_results = ::Poll::PartialResult.includes(:question).
                                             where(booth_assignment_id: index_params[:booth_assignment_id]).
                                             where(date: index_params[:date])
+      @whites = ::Poll::WhiteResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
+      @nulls  = ::Poll::NullResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
     end
   end
 
@@ -65,6 +67,33 @@ class Officing::ResultsController < Officing::BaseController
           end
         end
       end
+
+      build_white_results
+      build_null_results
+    end
+
+    def build_white_results
+      if results_params[:whites].present?
+        white_result = ::Poll::WhiteResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                  date: results_params[:date])
+        white_result.officer_assignment_id = @officer_assignment.id
+        white_result.amount = results_params[:whites].to_i
+        white_result.author = current_user
+        white_result.origin = 'booth'
+        @results << white_result
+      end
+    end
+
+    def build_null_results
+      if results_params[:nulls].present?
+        white_result = ::Poll::WhiteResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                  date: results_params[:date])
+        white_result.officer_assignment_id = @officer_assignment.id
+        white_result.amount = results_params[:nulls].to_i
+        white_result.author = current_user
+        white_result.origin = 'booth'
+        @results << white_result
+      end
     end
 
     def go_back_to_new(alert = nil)
@@ -102,7 +131,7 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def results_params
-      params.permit(:officer_assignment_id, :date, :questions)
+      params.permit(:officer_assignment_id, :date, :questions, :whites, :nulls)
     end
 
     def index_params
