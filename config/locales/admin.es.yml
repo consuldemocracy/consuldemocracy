@@ -283,9 +283,9 @@ es:
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
         recounts: "Recuentos diarios"
-        recount: "Recuento"
+        recount: "Recuento diario (presidente de mesa)"
         final_recounts: "Recuentos finales"
-        final_recount: "Recuento total"
+        final_recount: "Recuento final (presidente de mesa)"
     poll_booth_assignments:
       show:
         location: "Ubicación"
@@ -296,8 +296,8 @@ es:
         recounts_list: "Lista de recuentos de esta urna"
         no_recounts: "No hay recuentos diarios de esta urna"
         date: "Fecha"
-        count_by_officer: "Votos (presidente de mesa)"
-        count_final: "Recuento final"
+        count_by_officer: "Recuento diario (presidente de mesa)"
+        count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
     polls:
       index:
@@ -339,8 +339,8 @@ es:
         table_location: "Ubicación"
         table_email: "Email"
         table_booth_name: "Urna"
-        table_final_recount: "Recuento final"
-        table_recounts: "Recuentos diarios acumulados"
+        table_final_recount: "Recuento final (presidente de mesa)"
+        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"

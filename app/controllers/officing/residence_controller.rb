@@ -1,5 +1,8 @@
 class Officing::ResidenceController < Officing::BaseController
 
+  before_action :load_officer_assignment
+  before_action :validate_officer_assignment, only: :create
+
   def new
     @residence = Officing::Residence.new
   end
@@ -17,5 +20,18 @@ class Officing::ResidenceController < Officing::BaseController
 
     def residence_params
       params.require(:residence).permit(:document_number, :document_type, :year_of_birth)
+    end
+
+    def load_officer_assignment
+      @officer_assignments = current_user.poll_officer.
+                               officer_assignments.
+                               voting_days.
+                               where(date: Time.current.to_date)
+    end
+
+    def validate_officer_assignment
+      if @officer_assignments.blank?
+        redirect_to officing_root_path, notice: t("officing.residence.flash.not_allowed")
+      end
     end
 end
