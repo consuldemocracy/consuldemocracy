@@ -1,10 +1,38 @@
 ---
 es:
+  budgets:
+    index_title: Presenta tu proyecto
+    index_timeline: Los presupuestos participativos en 2 minutos
+    fases:
+      fase_1: Envío de proyectos
+      fase_1_subtitle: fechas
+      fase_1_timeline_title: Envío de proyectos
+      fase_1_timeline_body: Texto a incluir en el envío de proyectos.
+
+      fase_2: Apoyos
+      fase_2_subtitle: fechas
+      fase_2_timeline_title: Apoyo a proyectos
+      fase_2_timeline_body:  Texto a incluir en el apoyo a proyectos.
+
+      fase_3: Evaluación
+      fase_3_subtitle: fechas
+      fase_3_timeline_title: Evaluación de proyectos
+      fase_3_timeline_body: Texto a incluir en la evaluación de proyectos
+
+      fase_4: Votación final
+      fase_4_subtitle: fechas
+      fase_4_timeline_title: Votación final
+      fase_4_timeline_body: Texto a incluir en la votación final de proyectos
+
+
+
+
+
   pages:
     more_information:
       item_1:
         title: Presupuestos participativos
-        subt:
+        subt: ''
         text: |-
           Los presupuestos participativos son un mecanismo de participación ciudadana local que contribuye a que las vecinas y vecinos de la ciudad se involucren en la toma de decisiones respecto a la ejecución del presupuesto municipal. Tu decides en qué invertir 1.650.000 euros.
 

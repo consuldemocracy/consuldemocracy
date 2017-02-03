@@ -8,7 +8,7 @@
 
 <div class="row margin">
   <div class="small-12 large-12 text-center">
-      <%= link_to "Presenta tu Proyecto", budget_path(@current_budget), class: "button" %>
+      <%= link_to t('budgets.index_title'), budget_path(@current_budget), class: "button" %>
   </div>
 
 </div>
@@ -16,23 +16,61 @@
 
 <div class="budgets-calendar">
   <div class="row">
-    <div class="small-2 large-2 column">
-      <%= markdown @current_budget.description_accepting %>
+    <div class="small-3 large-3 column text-center">
+      <p><strong><%= t('budgets.fases.fase_1')%></strong></p>
+      <p><%= t('budgets.fases.fase_1_subtitle')%></p>
     </div>
-    <div class="small-2 large-2 column">
-      <%= markdown @current_budget.description_reviewing %>
+    <div class="small-3 large-3 column text-center">
+      <p><strong><%= t('budgets.fases.fase_2')%></strong></p>
+      <p><%= t('budgets.fases.fase_2_subtitle')%></p>
     </div>
-    <div class="small-2 large-2 column">
-      <%= markdown @current_budget.description_selecting %>
+    <div class="small-3 large-3 column text-center">
+      <p><strong><%= t('budgets.fases.fase_3')%></strong></p>
+      <p><%= t('budgets.fases.fase_3_subtitle')%></p>
     </div>
-    <div class="small-2 large-2 column">
-      <%= markdown @current_budget.description_valuating %>
-    </div>
-    <div class="small-2 large-2 column">
-      <%= markdown @current_budget.description_balloting %>
-    </div>
-    <div class="small-2 large-2 column">
-      <%= markdown @current_budget.description_reviewing_ballots %>
+    <div class="small-3 large-3 column text-center">
+      <p><strong><%= t('budgets.fases.fase_4')%></strong></p>
+      <p><%= t('budgets.fases.fase_4_subtitle')%></p>
     </div>
   </div>
+</div>
+
+<div class="row margin">
+  <div class="large-12 small-12 columns">
+    <h2><%= t('budgets.index_timeline') %></h2>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="large-5 columns text-right">&nbsp;</div>
+  <div class="large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="large-5 columns">
+    <h3><%= t('budgets.fases.fase_1_timeline_title') %></h3>
+    <p><%= markdown t('budgets.fases.fase_1_timeline_body') %></p>
+  </div>
+</div>
+<div class="row margin">
+  <div class="large-5 columns text-right">
+    <h3><%= t('budgets.fases.fase_2_timeline_title') %></h3>
+    <p><%= markdown t('budgets.fases.fase_2_timeline_body') %></p>
+  </div>
+  <div class="large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="large-5 columns text-right">&nbsp;</div>
+</div>
+<div class="row margin">
+  <div class="large-5 columns text-right">&nbsp;</div>
+  <div class="large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="large-5 columns">
+    <h3><%= t('budgets.fases.fase_3_timeline_title') %></h3>
+    <p><%= markdown t('budgets.fases.fase_3_timeline_body') %></p>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="large-5 columns text-right">
+    <h3><%= t('budgets.fases.fase_4_timeline_title') %></h3>
+    <p><%= markdown t('budgets.fases.fase_4_timeline_body') %></p>
+  </div>
+  <div class="large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="large-5 columns text-right">&nbsp;</div>
 </div>
