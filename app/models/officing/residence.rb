@@ -68,7 +68,7 @@ class Officing::Residence
   end
 
   def allowed_age?
-    Age.in_years(date_of_birth) <= User.minimum_required_age
+    Age.in_years(date_of_birth) >= User.minimum_required_age
   end
 
   def geozone
