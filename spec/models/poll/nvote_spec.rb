@@ -98,4 +98,31 @@ describe Poll::Nvote do
     end
   end
 
+  describe "#parse_authorization" do
+    it "returns nvote and poll from an authorization message" do
+      poll = create(:poll, nvotes_poll_id: 123)
+      nvote = create(:poll_nvote, poll: poll)
+      nvote.update(voter_hash: "33333333")
+
+      message = "33333333:AuthEvent:123:RegisterSuccessfulLogin:1486030800"
+      expect(Poll::Nvote.parse_authorization(message)).to eq([nvote, poll])
+    end
+  end
+
+  describe "#store_voter" do
+    it "stores a poll voter given a valid callback from Nvotes" do
+      user  = create(:user, :in_census)
+      poll = create(:poll, nvotes_poll_id: 123)
+      nvote = create(:poll_nvote, user: user, poll: poll)
+      nvote.update(voter_hash: "33333333")
+
+      authorization_hash = "khmac:///sha-256;12345678/33333333:AuthEvent:123:RegisterSuccessfulLogin:1486030800"
+      Poll::Nvote.store_voter(authorization_hash)
+
+      expect(Poll::Voter.count).to eq(1)
+      expect(Poll::Voter.first.poll).to eq(poll)
+      expect(Poll::Voter.first.user).to eq(user)
+    end
+  end
+
 end

@@ -33,7 +33,7 @@ feature 'Nvotes' do
     end
   end
 
-  scenario "Store voter", :focus do
+  scenario "Store voter" do
     user  = create(:user, :in_census, id: rand(9999))
     poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
     nvote = create(:poll_nvote, user: user, poll: poll)
@@ -46,10 +46,6 @@ feature 'Nvotes' do
     page.driver.post polls_nvotes_success_path
 
     expect(Poll::Voter.count).to eq(1)
-
-    voter = Poll::Voter.first
-    expect(voter.poll).to eq(poll)
-    expect(voter.user).to eq(user)
   end
 
 end
