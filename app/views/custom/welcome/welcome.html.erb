@@ -1,0 +1,27 @@
+<h2><%= t("welcome.welcome.title") %></h2>
+
+<div class="user-permissions">
+
+  <p><%= t("welcome.welcome.user_permission_info") %></p>
+
+  <!-- <ul>
+    <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_debates") %></li>
+    <li><span class="icon-check"></span>&nbsp;<%= t("welcome.welcome.user_permission_proposal") %></li>
+    <li><span class="icon-x"></span>&nbsp;<%= t("welcome.welcome.user_permission_support_proposal") %></li>
+    <li><span class="icon-x"></span>&nbsp;<%= t("welcome.welcome.user_permission_votes") %></li>
+  </ul>
+
+  <p>
+    <span><%= t("welcome.welcome.user_permission_verify_info") %></span>
+  </p>
+
+  <p>
+    <%= t("welcome.welcome.user_permission_verify") %>
+  </p> -->
+
+  <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
+
+  <p class="text-center">
+    <%= link_to t("welcome.welcome.go_to_index"), budgets_path %>
+  </p>
+</div>
