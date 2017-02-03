@@ -247,7 +247,7 @@ class User < ActiveRecord::Base
   end
 
   def age
-    date_of_birth.try(:age_in_years)
+    Age.in_years(date_of_birth)
   end
 
   def save_requiring_finish_signup

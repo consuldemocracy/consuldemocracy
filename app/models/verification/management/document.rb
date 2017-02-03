@@ -32,7 +32,7 @@ class Verification::Management::Document
   end
 
   def under_age?(response)
-    response.date_of_birth && User.minimum_required_age < response.date_of_birth.age_in_years
+    response.date_of_birth && User.minimum_required_age < Age.in_years(response.date_of_birth)
   end
 
   def verified?
