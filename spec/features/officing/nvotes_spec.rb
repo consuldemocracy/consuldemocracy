@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'Officing Nvotes', :selenium do
   let(:officer) { create(:poll_officer) }
+  let!(:officer_assignment) { create(:poll_officer_assignment, officer: officer) }
 
   background do
     login_as(officer.user)

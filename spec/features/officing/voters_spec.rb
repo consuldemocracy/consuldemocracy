@@ -32,8 +32,8 @@ feature 'Voters' do
   end
 
   scenario "Already voted", :js do
-    poll1 = create(:poll, :incoming, :published)
-    poll2 = create(:poll, :incoming, :published)
+    poll1 = create(:poll, geozone_restricted: false)
+    poll2 = create(:poll, geozone_restricted: false)
 
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll1, user: user)
