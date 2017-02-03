@@ -35,6 +35,27 @@ class Poll
     "#{self.poll.server_url}booth/#{self.nvotes_poll_id}/vote/#{hash}/#{message}"
   end
 
+  def self.store_voter(authorization_hash)
+    authorization_hash.gsub!("khmac:///sha-256;", "")
+    signature, message = authorization_hash.split("/")
+    nvote, poll = parse_authorization(message)
+
+    if nvote && poll
+      Poll::Voter.create!(user: nvote.user, poll: poll)
+    end
+  end
+
+  def self.parse_authorization(message)
+    message_parts = message.split(":")
+    voter_hash = message_parts[0]
+    nvotes_poll_id = message_parts[2]
+
+    nvote = Poll::Nvote.where(voter_hash: voter_hash).first
+    poll = Poll.where(nvotes_poll_id: nvotes_poll_id).first
+
+    return nvote, poll
+  end
+
   private
 
     def save_voter_hash
