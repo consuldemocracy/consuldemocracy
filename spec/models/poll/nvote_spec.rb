@@ -123,6 +123,24 @@ describe Poll::Nvote do
       expect(Poll::Voter.first.poll).to eq(poll)
       expect(Poll::Voter.first.user).to eq(user)
     end
+
+    it "store demografic data of a poll voter" do
+      geozone = create(:geozone, :in_census)
+      user  = create(:user, :in_census, date_of_birth: 18.years.ago, gender: "female", geozone: geozone)
+
+      poll = create(:poll)
+      nvote = create(:poll_nvote, user: user, poll: poll)
+
+      authorization_hash = "khmac:///sha-256;1/1:AuthEvent:1:RegisterSuccessfulLogin:1"
+      allow(Poll::Nvote).to receive(:parse_authorization).and_return([nvote, poll])
+
+      Poll::Nvote.store_voter(authorization_hash)
+
+      expect(Poll::Voter.count).to eq(1)
+      expect(Poll::Voter.first.age).to eq(18)
+      expect(Poll::Voter.first.gender).to eq("female")
+      expect(Poll::Voter.first.geozone).to eq(geozone)
+    end
   end
 
 end
