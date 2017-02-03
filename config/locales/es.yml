@@ -406,6 +406,11 @@ es:
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
       geozone_info: "Solo pueden participar las personas empadronadas en: "
+      can_answer: "¡Puedes participar en esta votación!"
+      cant_answer: "Esta votación no está disponible en tu zona"
+      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
+      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
+      already_answer: "Ya has participado en esta votación"
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
