@@ -38,10 +38,11 @@
                                   accesskey: "b" %>
       </li>
     <% end %>
-    <li>
-      <%= link_to t("layouts.footer.more_info"),
-                                page_path('more_information'),
-                                accesskey: "b" %>
-    </li>
+      <li>
+        <%= layout_menu_link_to t("layouts.footer.more_info"),
+                                  page_path('more_information'),
+                                  controller_name == "pages" && params[:id] == 'more_information',
+                                  accesskey: "b" %>
+      </li>
   </ul>
 </div>
