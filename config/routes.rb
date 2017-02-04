@@ -411,7 +411,8 @@ Rails.application.routes.draw do
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
 
   #Landings
-  get 'vota', to: 'pages#show', id: 'landings/first_voting', as: 'first_voting'
+  get 'vota',  to: 'pages#show', id: 'landings/first_voting', as: 'first_voting'
+  get 'g1000', to: 'pages#show', id: 'landings/g1000',        as: 'g1000'
 
   resources :pages, path: '/', only: [:show]
 end
