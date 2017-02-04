@@ -70,7 +70,7 @@ en:
         date: "Date"
         select_booth: "Select booth"
         select_date: "Select date"
-        ballots_blank: "Blank ballots"
+        ballots_white: "Blank ballots"
         ballots_null: "Invalid ballots"
         submit: "Save"
         results_list: "Your results"
@@ -80,6 +80,8 @@ en:
         results: Results
         table_answer: Answer
         table_votes: Votes
+        table_whites: "Blank ballots"
+        table_nulls: "Invalid ballots"
     residence:
       flash:
         create: "Document verified with Census"

@@ -505,6 +505,16 @@ FactoryGirl.define do
     poll
   end
 
+  factory :poll_white_result, class: 'Poll::WhiteResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
+  factory :poll_null_result, class: 'Poll::NullResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
   factory :officing_residence, class: 'Officing::Residence' do
     user
     document_number
