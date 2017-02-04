@@ -452,18 +452,6 @@ ActiveRecord::Schema.define(version: 20170203163317) do
 
   add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
 
-  create_table "poll_nvotes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "poll_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "deleted_at"
-    t.string   "nvotes_poll_id"
-    t.string   "voter_hash"
-  end
-
-  add_index "poll_nvotes", ["deleted_at"], name: "index_poll_nvotes_on_deleted_at", using: :btree
-
   create_table "poll_null_results", force: :cascade do |t|
     t.integer "author_id"
     t.integer "amount"
@@ -478,6 +466,18 @@ ActiveRecord::Schema.define(version: 20170203163317) do
 
   add_index "poll_null_results", ["booth_assignment_id"], name: "index_poll_null_results_on_booth_assignment_id", using: :btree
   add_index "poll_null_results", ["officer_assignment_id"], name: "index_poll_null_results_on_officer_assignment_id", using: :btree
+
+  create_table "poll_nvotes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "poll_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+    t.string   "nvotes_poll_id"
+    t.string   "voter_hash"
+  end
+
+  add_index "poll_nvotes", ["deleted_at"], name: "index_poll_nvotes_on_deleted_at", using: :btree
 
   create_table "poll_officer_assignments", force: :cascade do |t|
     t.integer  "booth_assignment_id"
