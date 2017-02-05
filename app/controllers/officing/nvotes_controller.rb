@@ -5,12 +5,12 @@ class Officing::NvotesController < Officing::BaseController
   layout "nvotes"
 
   def new
-    @polls = Poll.incoming
-    @poll = Poll.find(params[:poll_id])
+    @polls = Poll.votable_by(current_user)
+    @poll = @polls.find(params[:poll_id])
   end
 
   def thanks
-    @polls = Poll.incoming
+    @polls = Poll.votable_by(current_user)
   end
 
   private

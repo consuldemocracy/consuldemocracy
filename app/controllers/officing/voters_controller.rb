@@ -19,7 +19,9 @@ class Officing::VotersController < Officing::BaseController
 
   def vote_with_tablet
     sign_in_voter
-    redirect_to new_officing_poll_nvote_path(Poll.incoming.first)
+
+    poll = Poll.votable_by(current_user).first
+    redirect_to new_officing_poll_nvote_path(poll)
   end
 
   private

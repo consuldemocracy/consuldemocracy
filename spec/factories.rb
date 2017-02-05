@@ -48,6 +48,7 @@ FactoryGirl.define do
     trait :in_census do
       document_number "12345678Z"
       document_type "1"
+      verified_at Time.now
     end
   end
 
@@ -407,6 +408,7 @@ FactoryGirl.define do
 
   factory :poll do
     sequence(:name) { |n| "Poll #{n}" }
+    nvotes_poll_id "128"
 
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
