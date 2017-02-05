@@ -24,35 +24,35 @@ namespace :polls do
   end
 
   POLL_SPECS_2017 = [ {
-        nvotes_poll_id: 102,
+        nvotes_poll_id: 105,
         name: 'Billete único, Madrid 100% Sostenible, Plaza de España',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 202,
+        nvotes_poll_id: 205,
         name: 'Gran Vía',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 302,
+        nvotes_poll_id: 305,
         name: '¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 402,
+        nvotes_poll_id: 405,
         name: '¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 502,
+        nvotes_poll_id: 505,
         name: 'Hortaleza',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 602,
+        nvotes_poll_id: 605,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de Barajas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 702,
+        nvotes_poll_id: 705,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 801,
+        nvotes_poll_id: 805,
         name: 'Retiro',
         layout: 'simultaneous-questions'
       }
@@ -782,7 +782,6 @@ periodo postrevolucionario</li>
       poll = Poll.where(name: spec[:name]).first!
       poll.update!(nvotes_poll_id: spec[:nvotes_poll_id])
     end
-    puts "All polls updated"
   end
 
   desc "Temporarily adds a valid nvotes_election_id to all polls"
@@ -799,5 +798,12 @@ periodo postrevolucionario</li>
       Poll::Question.all.each {|q| q.really_destroy!}
       Poll.all.destroy_all
     end
+  end
+
+  desc "Runs all necessary tasks to setup polls"
+  task setup: :environment do
+    Rake::Task["polls:danger:destroy_all"].execute
+    Rake::Task["polls:import_2017"].execute
+    Rake::Task["polls:add_2017_nvotes_poll_id"].execute
   end
 end
