@@ -768,7 +768,7 @@ periodo postrevolucionario</li>
           options.each_with_index do |option, index|
             name = option[:name]
             name = "#{index+1}. #{name}" if spec[:layout] == 'accordion'
-            f.puts "#{index+1}\t#{name}\t#{option[:description]}\t#{option[:category]}"
+            f.puts "#{index}\t#{name}\t#{option[:description]}\t#{option[:category]}"
           end
         end
       end
