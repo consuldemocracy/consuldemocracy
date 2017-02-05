@@ -782,7 +782,6 @@ periodo postrevolucionario</li>
       poll = Poll.where(name: spec[:name]).first!
       poll.update!(nvotes_poll_id: spec[:nvotes_poll_id])
     end
-    puts "All polls updated"
   end
 
   desc "Temporarily adds a valid nvotes_election_id to all polls"
@@ -799,5 +798,12 @@ periodo postrevolucionario</li>
       Poll::Question.all.each {|q| q.really_destroy!}
       Poll.all.destroy_all
     end
+  end
+
+  desc "Runs all necessary tasks to setup polls"
+  task setup: :environment do
+    Rake::Task["polls:danger:destroy_all"].execute
+    Rake::Task["polls:import_2017"].execute
+    Rake::Task["polls:add_2017_nvotes_poll_id"].execute
   end
 end
