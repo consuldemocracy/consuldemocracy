@@ -7,7 +7,7 @@ class Verification::Residence
 
   def residence_in_castellon
     if !residency_valid?
-      errors.add(:residence_in_castellon, false) unless residency_valid?
+      errors.add(:residence_in_castellon, false) if terms_of_service != '0'
       store_failed_attempt
       Lock.increase_tries(user)
     end
@@ -28,6 +28,9 @@ class Verification::Residence
   private
 
     def call_census_api
+      puts "@@@@@@@@@@@@@@@@@@@@@"
+      puts terms_of_service
+      puts "@@@@@@@@@@@@@@@@@@@@@"
       @census_api_response = PadronCastellonApi.new.call(document_type, document_number)
     end
 

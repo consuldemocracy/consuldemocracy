@@ -1,32 +1,28 @@
 ---
 es:
   budgets:
-    index_title: Presenta tu proyecto
+    index_title: Presenta tu propuesta de inversión
     index_timeline: Los presupuestos participativos en 2 minutos
     fases:
-      fase_1: Envío de proyectos
+      fase_1: Envío de propuestas de inversión
       fase_1_subtitle: fechas
-      fase_1_timeline_title: Envío de proyectos
-      fase_1_timeline_body: Texto a incluir en el envío de proyectos.
+      fase_1_timeline_title: Envío de propuestas de inversión
+      fase_1_timeline_body: Texto a incluir en el envío de propuestas de inversión.
 
       fase_2: Apoyos
       fase_2_subtitle: fechas
-      fase_2_timeline_title: Apoyo a proyectos
-      fase_2_timeline_body:  Texto a incluir en el apoyo a proyectos.
+      fase_2_timeline_title: Apoyo a propuestas de inversión
+      fase_2_timeline_body:  Texto a incluir en el apoyo a propuestas de inversión.
 
       fase_3: Evaluación
       fase_3_subtitle: fechas
-      fase_3_timeline_title: Evaluación de proyectos
-      fase_3_timeline_body: Texto a incluir en la evaluación de proyectos
+      fase_3_timeline_title: Evaluación de propuestas de inversión
+      fase_3_timeline_body: Texto a incluir en la evaluación de propuestas de inversión
 
       fase_4: Votación final
       fase_4_subtitle: fechas
       fase_4_timeline_title: Votación final
-      fase_4_timeline_body: Texto a incluir en la votación final de proyectos
-
-
-
-
+      fase_4_timeline_body: Texto a incluir en la votación final de propuestas de inversión
 
   pages:
     more_information:
@@ -49,9 +45,9 @@ es:
         title: Presentación de propuestas
         subt: Del 15 de febrero al 5 de marzo de 2017.
         text: |-
-          Las personas mayores de 16 años empadronadas en Castellón de la Plana pueden proponer alguna inversión para la ciudad. Cada persona podrá presentar una única propuesta de proyecto de inversión.
+          Las personas mayores de 16 años empadronadas en Castellón de la Plana pueden proponer alguna inversión para la ciudad. Cada persona podrá presentar una única propuesta de propuesta de inversión de inversión.
 
-          Las propuestas de proyectos de inversión se presentarán de forma individual, sin perjuicio que la persona que la presenta represente a una organización, grupo o colectivo.
+          Las propuestas de propuestas de inversión de inversión se presentarán de forma individual, sin perjuicio que la persona que la presenta represente a una organización, grupo o colectivo.
 
           Las propuestas se pueden hacer a través de la web decidim.castello.es. Las propuestas sólo pueden ser realizadas a través de ésta web pero si se tiene dificultades de acceso a internet o no se tiene un manejo suficiente de las nuevas tecnologías se podría presentar en las Tenencias de Alcaldía del Ayuntamiento, donde se le ayudará a presentar la/las propuestas.
       item_3:
@@ -62,7 +58,7 @@ es:
 
           El apoyo de las propuestas se recogerá a través de la plataforma web decidim.castello.es
 
-          Cada ciudadano y ciudadana tienen la posibilidad de apoyar con su voto hasta un máximo de 3 propuestas de proyectos de inversión.
+          Cada ciudadano y ciudadana tienen la posibilidad de apoyar con su voto hasta un máximo de 3 propuestas de propuestas de inversión de inversión.
 
       item_4:
         title: Evaluación de las propuestas

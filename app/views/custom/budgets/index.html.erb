@@ -8,7 +8,9 @@
 
 <div class="row margin">
   <div class="small-12 large-12 text-center">
+    <% if @current_budget.present? %>
       <%= link_to t('budgets.index_title'), budget_path(@current_budget), class: "button" %>
+    <% end %>
   </div>
 
 </div>

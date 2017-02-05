@@ -513,9 +513,9 @@ es:
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
-      already_supported: Ya has apoyado este proyecto. ¡Compártelo!
+      already_supported: Ya has apoyado esta propuesta de inversión. ¡Compártelo!
       support: Apoyar
-      support_title: Apoyar este proyecto
+      support_title: Apoyar esta propuesta de inversión
       supports:
         one: 1 apoyo
         other: "%{count} apoyos"
@@ -555,7 +555,7 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
+      deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
       filters:
         comments:
           one: 1 Comentario
@@ -621,6 +621,8 @@ es:
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
+      terms_censed: Para poder participar en el proceso de presupuestos participativos debe ser mayor de 16 años y debe estar empadronado en la ciudad de Castellón de la Plana
+      verify_account: Por favor, haga clic en el botón "Verificar mi cuenta" para realizar esta comprobación.
       go_to_index: Ahora no, ver propuestas
       title: Empieza a participar
       user_permission_debates: Participar en debates

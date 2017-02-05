@@ -17,7 +17,7 @@ es:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
         text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
-        title: Te damos la bienvenida al Portal de Gobierno Abierto
+        title: Te damos la bienvenida al Portal de Participación Ciudadana
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña
@@ -116,7 +116,6 @@ es:
           redeemable_code: Tu código de verificación (si has recibido una carta con él)
           submit: Registrarse
           terms: Al registrarte aceptas las %{terms}.
-          terms_censed: Para poder participar en el proceso de presupuestos participativos debe ser mayor de 16 años y debe estar empadronado en la ciudad de Castellón de la Plana
           terms_link: condiciones de uso
           terms_title: Al registrarte aceptas las condiciones de uso
           title: Registrarse
