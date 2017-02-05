@@ -20,6 +20,22 @@ module PollsHelper
     end
   end
 
+  def all_poll_dates_select_options(poll)
+    poll_simulation_dates_option +
+    poll_dates_select_options(poll) +
+    poll_final_recount_option(poll)
+  end
+
+  def poll_simulation_dates_option
+    options = []
+    simulation_dates = [Date.new(2017, 2, 5), Date.new(2017, 2, 6)]
+    simulation_dates.each do |date|
+      name = "#{I18n.t("polls.simulation_date")} #{l(date, format: :long)}"
+      options << ([name, l(date)])
+    end
+    options_for_select(options, params[:d])
+  end
+
   def poll_dates_select_options(poll)
     options = []
     (poll.starts_at.to_date..poll.ends_at.to_date).each do |date|
