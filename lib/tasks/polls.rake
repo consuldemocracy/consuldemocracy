@@ -24,31 +24,31 @@ namespace :polls do
   end
 
   POLL_SPECS_2017 = [ {
-        nvotes_poll_id: 101,
+        nvotes_poll_id: 102,
         name: 'Billete único, Madrid 100% Sostenible, Plaza de España',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 201,
+        nvotes_poll_id: 202,
         name: 'Gran Vía',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 301,
+        nvotes_poll_id: 302,
         name: '¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 401,
+        nvotes_poll_id: 402,
         name: '¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 501,
+        nvotes_poll_id: 502,
         name: 'Hortaleza',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 601,
+        nvotes_poll_id: 602,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de Barajas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 701,
+        nvotes_poll_id: 702,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas',
         layout: 'accordion'
       }, {
