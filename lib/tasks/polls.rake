@@ -762,6 +762,7 @@ periodo postrevolucionario</li>
           f.puts "Minimum choices\t0"
           f.puts "Maximum choices\t#{spec[:layout] == 'accordion' ? 10 : 1}"
           f.puts "Randomize options order\tFALSE"
+          f.puts ""
           f.puts "@Options"
           options.each_with_index do |option, index|
             name = option[:name]
