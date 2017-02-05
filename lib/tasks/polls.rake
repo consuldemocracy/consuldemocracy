@@ -6,7 +6,7 @@ namespace :polls do
     questions = Array.wrap(questions_attributes)
     poll = Poll.create!(
       name: questions.size == 1 ? questions[0][:title] : geozone_name,
-      starts_at: Date.new(2017, 2, 13),
+      starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: true
     )
@@ -456,7 +456,7 @@ namespace :polls do
 
     poll_main = Poll.create!(
       name: "Billete único, Madrid 100% Sostenible, Plaza de España",
-      starts_at: Date.new(2017, 2, 13),
+      starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: false
     )
@@ -538,7 +538,7 @@ namespace :polls do
 
     poll_gv = Poll.create!(
       name: "Gran Vía",
-      starts_at: Date.new(2017, 2, 13),
+      starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: false
     )
