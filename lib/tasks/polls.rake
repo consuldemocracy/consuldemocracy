@@ -764,6 +764,7 @@ periodo postrevolucionario</li>
           f.puts "Randomize options order\tFALSE"
           f.puts ""
           f.puts "@Options"
+          f.puts "Id\tText"
           options.each_with_index do |option, index|
             name = option[:name]
             name = "#{index+1}. #{name}" if spec[:layout] == 'accordion'
