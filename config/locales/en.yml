@@ -443,6 +443,7 @@ en:
     all: "All"
     no_dates: "no date assigned"
     dates: "From %{open_at} to %{closed_at}"
+    simulation_date: "Presimulation"
     final_date: "Final recounts/Results"
     index:
       filters:
