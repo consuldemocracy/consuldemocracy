@@ -52,7 +52,7 @@ Setting["blog_url"] = nil
 Setting["url"] = "https://decidimpre.castello.es"
 
 # Consul installation's organization name
-Setting["org_name"] = "Consul"
+Setting["org_name"] = "Ayuntamiento de Castellón de la Plana"
 
 # Consul installation place name (City, Country...)
 Setting["place_name"] = "Castellón de la Plana"

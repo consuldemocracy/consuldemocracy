@@ -100,7 +100,7 @@ class PadronCastellonApi
     end
 
     def stubbed_response(document_type, document_hash)
-      if document_hash[:dni] == "012345671" && document_hash[:caracterControl] == 'Z' && document_type == "1"
+      if document_hash[:dni] == "012345678" && document_hash[:caracterControl] == 'Z' && document_type == "1"
         stubbed_valid_response
       else
         stubbed_invalid_response
@@ -150,7 +150,7 @@ class PadronCastellonApi
             HABNOMHAB: "JUAN",
             HABAP1HAB: "GOMEZ",
             HABAP2HAB: "GARCIA",
-            HABNUMIDE: "012345671",
+            HABNUMIDE: "012345678",
             HABCONDIG: "Z",
             HABCODPOS: "12004"
           }

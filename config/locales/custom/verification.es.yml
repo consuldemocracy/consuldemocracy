@@ -63,7 +63,7 @@ es:
         document_type_label: Tipo de documento
         error_not_allowed_age: No tienes la edad mínima para participar
         error_not_allowed_postal_code: Para verificarte debes estar empadronado.
-        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
+        error_verifying_census: "Según los datos que constan en el Padrón Municipal, usted no consta como empadronado/a en Castellón de la Plana. Para cualquier incidencia en la verificación de su cuenta, puede contactar con la Unidad de Estadística-Gestión de Padrón (Teléfono: 964 355 185; E-mail: padronhabitantes@castello.es)"
         error_verifying_census_offices: oficina de Atención al ciudadano
         form_errors: evitaron verificar tu residencia
         postal_code: Código postal
