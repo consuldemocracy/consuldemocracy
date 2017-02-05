@@ -757,7 +757,7 @@ periodo postrevolucionario</li>
           f.puts "Title\t#{question.title}"
           f.puts "Voting System\tplurality-at-large"
           f.puts "Layout\t#{spec[:layout]}"
-          f.puts "Description\t#{description.try(:gsub, "\n", '')}"
+          f.puts "Description\t#{description.try(:gsub, "\n", '').try(:gsub, "</p>", "</p><br></br>")}"
           f.puts "Number of winners\t#{spec[:layout] == 'accordion' ? 10 : 1}"
           f.puts "Minimum choices\t0"
           f.puts "Maximum choices\t#{spec[:layout] == 'accordion' ? 10 : 1}"
