@@ -24,35 +24,35 @@ namespace :polls do
   end
 
   POLL_SPECS_2017 = [ {
-        nvotes_poll_id: 100,
+        nvotes_poll_id: 101,
         name: 'Billete único, Madrid 100% Sostenible, Plaza de España',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 200,
+        nvotes_poll_id: 201,
         name: 'Gran Vía',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 300,
+        nvotes_poll_id: 301,
         name: '¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 400,
+        nvotes_poll_id: 401,
         name: '¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 500,
+        nvotes_poll_id: 501,
         name: 'Hortaleza',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 600,
+        nvotes_poll_id: 601,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de Barajas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 700,
+        nvotes_poll_id: 701,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 800,
+        nvotes_poll_id: 801,
         name: 'Retiro',
         layout: 'simultaneous-questions'
       }
@@ -757,16 +757,18 @@ periodo postrevolucionario</li>
           f.puts "Title\t#{question.title}"
           f.puts "Voting System\tplurality-at-large"
           f.puts "Layout\t#{spec[:layout]}"
-          f.puts "Description\t#{description.try(:gsub, "\n", '')}"
+          f.puts "Description\t#{description.try(:gsub, "\n", '').try(:gsub, "</p>", "</p><br></br>")}"
           f.puts "Number of winners\t#{spec[:layout] == 'accordion' ? 10 : 1}"
           f.puts "Minimum choices\t0"
           f.puts "Maximum choices\t#{spec[:layout] == 'accordion' ? 10 : 1}"
           f.puts "Randomize options order\tFALSE"
+          f.puts ""
           f.puts "@Options"
+          f.puts "Id\tText"
           options.each_with_index do |option, index|
             name = option[:name]
             name = "#{index+1}. #{name}" if spec[:layout] == 'accordion'
-            f.puts "#{index+1}\t#{name}\t#{option[:description]}\t#{option[:category]}"
+            f.puts "#{index}\t#{name}\t#{option[:description]}\t#{option[:category]}"
           end
         end
       end
