@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   end
 
   root 'welcome#index'
+  # get '/', to: 'budgets'
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
