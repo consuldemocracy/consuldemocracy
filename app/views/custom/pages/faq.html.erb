@@ -1,0 +1,20 @@
+<div class="row margin-top">
+  <div class="menu small-12 medium-3 column">
+    <%= render "shared/back_link" %>
+
+    <ul class="menu vertical margin-top">
+      <% (1..9).each do |i| %>
+        <li><a href="#quest_<%= i %>"><strong><%= t("pages.faq.quest_#{i}.title") %></strong></a></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="text small-12 medium-9 column">
+    <h1 class="clear"><%= t("pages.faq.title") %></h1>
+    <p><%= t("pages.faq.body") %></p>
+    <% (1..9).each do |i| %>
+      <h2 id="quest_<%= i %>"><%= t("pages.faq.quest_#{i}.title") %></h2>
+      <%= markdown t("pages.faq.quest_#{i}.response") %>
+    <% end %>
+  </div>
+</div>
