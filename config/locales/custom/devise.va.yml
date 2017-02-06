@@ -1,4 +1,4 @@
-es:
+va:
   devise:
     password_expired:
       expire_password: "Contraseña caducada"
@@ -38,7 +38,7 @@ es:
       updated_not_active: "Tu contraseña se ha cambiado correctamente."
     registrations:
       destroyed:
-        ¡Adiós! Tu cuenta ha sido cancelada. Esperamos volver a verte pronto. Le informamos que de conformidad con su petición, sus datos personales registrados como usuario de la Web y que forman parte del fichero 'DATOS PERSONALES WEB' cuyo responsable es el Ayuntamiento de Castellón de la Plana, han sido cancelados en los términos de lo previsto en el artículo 16 de la Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal y del artículo 31 de su Reglamento de desarrollo (RD 1720/2007).
+        Adéu! El teu compte ha sigut cancel·lat. Esperem tornar a veure't prompte. Li informem que de conformitat amb la seua petició, les seues dades personals registrades com a usuari de la Web i que formen part del fitxer 'DADES PERSONALS WEB' el responsable de la qual és l'Ajuntament de Castelló de la Plana, han sigut cancel·lats en els termes del previst en l'article 16 de la Llei Orgànica 15/1999 de Protecció de Dades de Caràcter Personal i de l'article 31 del seu Reglament de desenvolupament (RD 1720/2007).
       signed_up: "¡Bienvenido! Has sido identificado."
       signed_up_but_inactive: "Te has registrado correctamente, pero no has podido iniciar sesión porque tu cuenta no ha sido activada."
       signed_up_but_locked: "Te has registrado correctamente, pero no has podido iniciar sesión porque tu cuenta está bloqueada."
