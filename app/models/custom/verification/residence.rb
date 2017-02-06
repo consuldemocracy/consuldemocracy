@@ -28,9 +28,6 @@ class Verification::Residence
   private
 
     def call_census_api
-      puts "@@@@@@@@@@@@@@@@@@@@@"
-      puts terms_of_service
-      puts "@@@@@@@@@@@@@@@@@@@@@"
       @census_api_response = PadronCastellonApi.new.call(document_type, document_number)
     end
 

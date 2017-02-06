@@ -1,7 +1,7 @@
 class Management::UsersController < Management::BaseController
 
   def new
-    @user = User.new(user_params)
+    @user = User.new
   end
 
   def create
@@ -14,8 +14,9 @@ class Management::UsersController < Management::BaseController
     end
 
     @user.terms_of_service = '1'
-    @user.residence_verified_at = Time.current
-    @user.verified_at = Time.current
+    verificado = verificar_residencia
+    @user.residence_verified_at = verificado
+    @user.verified_at = verificado
 
     if @user.save then
       render :show
