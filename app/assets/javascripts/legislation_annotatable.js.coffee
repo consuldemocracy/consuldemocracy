@@ -47,6 +47,10 @@ App.LegislationAnnotatable =
     event.preventDefault()
     event.stopPropagation()
 
+
+    $('[data-annotation-id]').removeClass('current-annotation')
+    $(this).addClass('current-annotation')
+
     App.LegislationAllegations.show_comments()
     $("#comments-box").show()
     $.event.trigger
