@@ -24,35 +24,35 @@ namespace :polls do
   end
 
   POLL_SPECS_2017 = [ {
-        nvotes_poll_id: 105,
+        nvotes_poll_id: 106,
         name: 'Billete único, Madrid 100% Sostenible, Plaza de España',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 205,
+        nvotes_poll_id: 206,
         name: 'Gran Vía',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 305,
+        nvotes_poll_id: 306,
         name: '¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 405,
+        nvotes_poll_id: 406,
         name: '¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 505,
+        nvotes_poll_id: 506,
         name: 'Hortaleza',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 605,
+        nvotes_poll_id: 606,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de Barajas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 705,
+        nvotes_poll_id: 706,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 805,
+        nvotes_poll_id: 806,
         name: 'Retiro',
         layout: 'simultaneous-questions'
       }
@@ -762,6 +762,7 @@ periodo postrevolucionario</li>
           f.puts "Minimum choices\t0"
           f.puts "Maximum choices\t#{spec[:layout] == 'accordion' ? 10 : 1}"
           f.puts "Randomize options order\tFALSE"
+          f.puts "extra: group\t#{question.id}"
           f.puts ""
           f.puts "@Options"
           f.puts "Id\tText"
