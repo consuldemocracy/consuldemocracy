@@ -1,0 +1,109 @@
+es:
+  budgets:
+    ballots:
+      show:
+        title: Mis votos
+        amount_spent: Coste total
+        remaining: "Te quedan <span>%{amount}</span> para invertir"
+        remove: Quitar voto
+        voted_html:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
+        zero: "Todavía no has votado ninguna propuesta de inversión."
+      reasons_for_not_balloting:
+        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+        not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+        organization: Las organizaciones no pueden votar.
+        not_selected: No se pueden votar propuestas inviables.
+        not_enough_money: No hay fondos suficientes.
+        no_ballots_allowed: El periodo de votación está cerrado.
+        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+    groups:
+      show:
+        title: Selecciona una opción
+        unfeasible_title: Propuestas inviables
+        unfeasible: Ver propuestas inviables
+    phase:
+      accepting: Aceptando propuestas
+      reviewing: Revisando propuestas
+      selecting: Selección de propuestas
+      valuating: Evaluación de propuestas
+      balloting: Votación de propuestas
+      reviewing_ballots: Contando resultados
+      finished: Presupuesto terminado
+    index:
+      title: Presupuestos participativos
+    investments:
+      form:
+        tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
+        tags_label: Temas
+        tag_category_label: "Categorías"
+        tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      index:
+        title: Presupuestos participativos
+        unfeasible: Propuestas de inversión no viables
+        unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+        unfeasible_text_definitions: ver definiciones aquí
+        by_heading: "Propuestas de inversión con ámbito: %{heading}"
+        search_form:
+          button: Buscar
+          placeholder: Buscar propuestas de inversión...
+          title: Buscar
+        search_results:
+          one: " que contiene '%{search_term}'"
+          other: " que contienen '%{search_term}'"
+        sidebar:
+          my_ballot: Mis votos
+          voted_html:
+            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+          voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          zero: "Todavía no has votado ninguna propuesta de inversión."
+          verified_only: "Para crear una nueva propuesta de inversión %{verify}."
+          verify_account: "verifica tu cuenta"
+          create: "Crear propuesta de inversión"
+          not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
+          sign_in: "iniciar sesión"
+          sign_up: "registrarte"
+          by_feasibility: Por viabilidad
+          feasible: Ver las propuestas de inversión viables
+          unfeasible: Ver las propuestas de inversión inviables
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
+          price: Por coste
+      show:
+        author_deleted: Usuario eliminado
+        price_explanation: Informe de coste
+        unfeasibility_explanation: Informe de inviabilidad
+        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        location_html: 'Ubicación: <strong>%{location}</strong>'
+        organization_name_html: 'Organización: <strong>%{name}</strong>'
+        share: Compartir
+        title: Propuesta de inversión
+        supports: Apoyos
+        votes: Votos
+      wrong_price_format: Solo puede incluir caracteres numéricos
+      investment:
+        title: Propuesta de inversión
+        add: Añadir
+        already_added: "Ya has añadido esta propuesta de inversión"
+        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        support_title: Apoyar esta propuesta
+        confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        supports:
+          one: 1 apoyo
+          other: "%{count} apoyos"
+          zero: Sin apoyos
+        give_support: Apoyar
+      header:
+        check_ballot: Revisar mis votos
+        different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+    progress_bar:
+      available: "Disponible: "
+    show:
+      group: Grupo
+      phase: Fase actual
+      unfeasible_title: Propuestas inviables
+      unfeasible: Ver las propuestas inviables
