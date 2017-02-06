@@ -24,35 +24,35 @@ namespace :polls do
   end
 
   POLL_SPECS_2017 = [ {
-        nvotes_poll_id: 106,
-        name: 'Billete único, Madrid 100% Sostenible, Plaza de España',
+        nvotes_poll_id: 107,
+        name: 'Propuestas en DecideMadrid',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 206,
+        nvotes_poll_id: 207,
         name: 'Gran Vía',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 306,
+        nvotes_poll_id: 307,
         name: '¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 406,
+        nvotes_poll_id: 407,
         name: '¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 506,
+        nvotes_poll_id: 507,
         name: 'Hortaleza',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 606,
+        nvotes_poll_id: 607,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de Barajas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 706,
+        nvotes_poll_id: 707,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 806,
+        nvotes_poll_id: 807,
         name: 'Retiro',
         layout: 'simultaneous-questions'
       }
@@ -455,7 +455,7 @@ namespace :polls do
   task import_2017: :environment do
 
     poll_main = Poll.create!(
-      name: "Billete único, Madrid 100% Sostenible, Plaza de España",
+      name: "Propuestas en DecideMadrid",
       starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: false
@@ -466,15 +466,7 @@ namespace :polls do
       title: "¿Estás de acuerdo con la propuesta “Billete único para el transporte público”?",
       proposal: Proposal.where(id: 9).first || nil,
       valid_answers: "Sí,No",
-      description: %{
-<blockquote><p>Es imprescindible que existan facilidades a la intermodalidad. Cambiar de medio de transporte público sin pagar más, en un periodo amplio (90 minutos al menos), es básico.</p></blockquote>
-<p>Esta propuesta bebe de los siguientes debates, que están entre los más valorados:</p>
-
-<p><a href="https://decide.madrid.es/debates/74">https://decide.madrid.es/debates/74</a><p>
-<p><a href="https://decide.madrid.es/debates/1772">https://decide.madrid.es/debates/1772</a><p>
-
-<p>y otros.</p>
-      }
+      description: ""
     )
     poll_main.questions.create!(
       author: User.where(username: 'Alianza por el Clima').first || User.first,
@@ -482,42 +474,7 @@ namespace :polls do
       title: "¿Estás de acuerdo con la propuesta “Madrid 100% Sostenible”?",
       proposal: Proposal.where(id: 199).first || nil,
       valid_answers: "Sí,No",
-      description: %{
-<blockquote><p>Queremos un Madrid que no amanezca con una boina de contaminación gris, que desafíe a las eléctricas, potencie las renovables y se asegure de que a ninguna familia le corten la luz este invierno.</p></blockquote>
-
-<p>¿Cómo?</p>
-
-<p>Pidiéndole al Ayuntamiento de Madrid que se comprometa a<strong> firmar el manifiesto "MADRID CIUDAD SOSTENIBLE"</strong></u><strong> y a ponerlo en marcha -- </strong>Exigimos el cumplimiento de los 14 puntos siguientes:</p>
-
-<ol>
-<li>Desarrollar campañas de sensibilización, formación y <strong>fomento de la cultura energética </strong>en todos los ámbitos de la ciudad.</li>
-<li>Contratar la <strong>energía eléctrica municipal con garantía de origen 100% renovable.</strong>
-</li>
-<li>Establecer un equipo de trabajo transversal para la <strong>elaboración, ejecución y seguimiento de los planes estratégicos.</strong>
-</li>
-<li>Facilitar la obtención de forma regular de los <strong>datos energéticos y económicos</strong> necesarios para su gestión.</li>
-<li>
-<strong>Diseñar e implantar acciones de eficiencia energética en las instalaciones municipales</strong> priorizando cambios de hábitos para eliminar los derroches en el consumo. Los ahorros conseguidos por el cambio de hábitos se invertirán, en parte o en su totalidad, en nuevas medidas de eficiencia energética.</li>
-<li>
-<strong>Implantar programas de eficiencia energética en los centros educativos</strong>, como el proyecto 50/50 -- consistente en devolver el 50% de los ahorros a la escuela y revertir la otra mitad en nuevas medidas de ahorro, eficiencia y renovables en el mismo centro.</li>
-<li>
-<strong>Aplicar medidas de lucha contra la pobreza energética</strong>: tramitación del bono social, etc.</li>
-<li>Diseñar y ejecutar todas las <strong>construcciones u obras municipales nuevas con criterios de consumo de energía casi nulo.</strong>
-</li>
-<li>
-<strong>Implementar acciones de movilidad sostenible</strong>: fomento de transporte público, uso de vehículos sostenibles, peatonalización de las calles,etc.</li>
-<li>Diseñar un plan para sustituir paulatinamente por <strong>vehículos eléctricos</strong> todo el parque móvil dedicado al  transporte público y los vehículos municipales.</li>
-<li>Establecer <strong>medidas fiscales de fomento de la eficiencia energética </strong>y las energías renovables.</li>
-<li>Revisar las ordenanzas municipales para <strong>favorecer los sistemas de auto-abastecimiento energético </strong>a partir de energías renovables.</li>
-<li>Generar <strong>un modelo urbanístico sostenible mediante la paralización de los procesos especulativos.</strong>
-</li>
-<li>
-<strong>Hacer una gestión sostenible de los Residuos Sólidos Urbanos</strong>.</li>
-</ol>
-
-<p>*Propuesta impulsada por Alianza por el Clima -- plataforma formada por más de 400 organizaciones que luchan contra el cambio climático global alrededor de la Cumbre de París, que se celebrará el 30 de Noviembre de este año.</p>
-        <p>
-      }
+      description: ""
     )
 
     poll_main.questions.create!(
@@ -526,14 +483,7 @@ namespace :polls do
       author: User.first,
       title: "De los dos proyectos finalistas para reformar la Plaza de España ¿cuál prefieres que se lleve a cabo?",
       valid_answers: "Proyecto X, Proyecto Y",
-      description: %{
-        <p>El pasado 14 de diciembre se convocó un grupo de trabajo multidisciplinar (asociaciones de vecinos, urbanistas, hoteleros, técnicos del Ayuntamiento, etc), que decidió las preguntas clave que habría que resolver para definir la nueva Plaza de España. Desde el 28 de enero esas preguntas han estado disponibles aquí para que cualquier madrileño las responda, y las respuestas mayoritarias se han convertido en las bases obligatorias del concurso internacional de remodelación de Plaza España.</p>
-        <p>Todos los proyectos presentados han sido publicados en la web para ser debatidos y valorados. Un jurado ha elegido cinco de ellos, que serán desarrollados, y posteriormente dos finalistas. Finalmente será la gente de Madrid la que vote entre esos dos decidiendo el proyecto final a ejecutar.</p>
-        <ul>
-          <li><a href="https://decide.madrid.es/proceso/plaza-espana/proyectos/38">Proyecto X: Welcome mother Nature</a></li>
-          <li><a href="https://decide.madrid.es/proceso/plaza-espana/proyectos/22">Proyecto Y: UN PASEO POR LA CORNISA</a></li>
-        </ul>
-      }
+      description: ""
     )
 
     poll_gv = Poll.create!(
@@ -719,7 +669,6 @@ periodo postrevolucionario</li>
 </ul>
 
 }
-
       }
     ])
   end
@@ -797,6 +746,8 @@ periodo postrevolucionario</li>
     task destroy_all: :environment do
       Poll::PartialResult.all.destroy_all
       Poll::Question.all.each {|q| q.really_destroy!}
+      Poll::Voter.all.destroy_all
+      Poll::Nvote.all.each {|n| n.really_destroy!}
       Poll.all.destroy_all
     end
   end
