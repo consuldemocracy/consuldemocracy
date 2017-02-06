@@ -25,7 +25,7 @@ namespace :polls do
 
   POLL_SPECS_2017 = [ {
         nvotes_poll_id: 107,
-        name: 'Billete único, Madrid 100% Sostenible, Plaza de España',
+        name: 'Propuestas en DecideMadrid',
         layout: 'simultaneous-questions'
       }, {
         nvotes_poll_id: 207,
@@ -455,7 +455,7 @@ namespace :polls do
   task import_2017: :environment do
 
     poll_main = Poll.create!(
-      name: "Billete único, Madrid 100% Sostenible, Plaza de España",
+      name: "Propuestas en DecideMadrid",
       starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: false
