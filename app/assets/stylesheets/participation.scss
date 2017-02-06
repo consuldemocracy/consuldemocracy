@@ -1439,15 +1439,16 @@ ul.ballot-list {
   .dates {
     color: $text-medium;
     font-size: $small-font-size;
-
-    @include breakpoint(medium) {
-      float: right;
-      margin-right: $line-height;
-    }
+    margin-bottom: $line-height/2;
   }
 
-  h4 a {
-    color: $text;
+  h4 {
+    font-size: rem-calc(30);
+    line-height: $line-height*1.5;
+
+    a {
+      color: $text;
+    }
   }
 }
 
