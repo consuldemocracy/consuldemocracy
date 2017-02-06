@@ -1,15 +1,16 @@
 class Management::UsersController < Management::BaseController
 
   def new
-    @user = User.new(user_params)
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     @user.skip_password_validation = true
     @user.terms_of_service = '1'
-    @user.residence_verified_at = Time.current
-    @user.verified_at = Time.current
+    verificado = verificar_residencia
+    @user.residence_verified_at = verificado
+    @user.verified_at = verificado
 
     if @user.save then
       render :show
@@ -32,12 +33,31 @@ class Management::UsersController < Management::BaseController
   private
 
     def user_params
-      params.require(:user).permit(:document_type, :document_number, :username, :email)
+      params.require(:user).permit(:document_type, :document_number, :username, :email, :date_of_birth)
+    end
+
+    def residence_params
+      {
+        document_type: params[:user][:document_type],
+        document_number: params[:user][:document_number],
+        date_of_birth: params[:user][:date_of_birth],
+        postal_code: '12000'
+      }
+
     end
 
     def destroy_session
       session[:document_type] = nil
       session[:document_number] = nil
+    end
+
+    def verificar_residencia
+      residence =  Verification::Residence.new(residence_params)
+      if residence.save
+        Time.now
+      else
+        nil
+      end
     end
 
 end

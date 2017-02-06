@@ -56,6 +56,7 @@ en:
       users: Users
       edit_user_accounts: Edit user account
       user_invites: User's invites
+      user_new: New user
     permissions:
       create_proposals: Create proposals
       debates: Engage in debates

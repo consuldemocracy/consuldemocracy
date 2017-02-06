@@ -1,0 +1,9 @@
+<%= link_to t("management.users.erase_account_link"), "#", class: "button hollow alert js-toggle-link", data: { "toggle-selector" => "#erase-account-form" } %>
+
+<div id="erase-account-form" style="display:none">
+  <div class="callout alert medium-6">
+    <%= t("management.users.erase_warning") %>
+  </div>
+
+  <%= link_to t("management.users.erase_submit"), erase_management_users_path, method: :delete, class: "button hollow alert", data: { confirm: t("management.users.erase_account_confirm") } %>
+</div>
