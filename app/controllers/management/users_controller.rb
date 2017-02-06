@@ -18,9 +18,10 @@ class Management::UsersController < Management::BaseController
     @user.residence_verified_at = verificado
     @user.verified_at = verificado
 
-    if @user.save then
+    if verificado && @user.save then
       render :show
     else
+      flash[:alert] = 'Usuario no verificado en el padrón municipal'
       render :new
     end
   end
