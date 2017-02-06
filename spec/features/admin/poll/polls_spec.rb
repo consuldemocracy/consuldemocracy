@@ -304,4 +304,68 @@ feature 'Admin polls' do
     end
   end
 
+  context "Results" do
+    context "Poll show" do
+      scenario "No results", :js do
+        poll = create(:poll)
+        visit admin_poll_path(poll)
+        click_link "Results"
+
+        expect(page).to have_content "There are no results"
+      end
+
+      scenario "Results by answer", :js do
+        poll = create(:poll)
+        booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
+
+        question_1 = create(:poll_question, poll: poll, valid_answers: "Yes,No")
+        question_2 = create(:poll_question, poll: poll, valid_answers: "Today,Tomorrow")
+
+        [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
+          create(:poll_partial_result,
+                  booth_assignment: ba,
+                  question: question_1,
+                  answer: 'Yes',
+                  amount: 11)
+          create(:poll_partial_result,
+                  booth_assignment: ba,
+                  question: question_2,
+                  answer: 'Tomorrow',
+                  amount: 5)
+        end
+        create(:poll_white_result,
+               booth_assignment: booth_assignment_1,
+               amount: 21)
+        create(:poll_null_result,
+               booth_assignment: booth_assignment_3,
+               amount: 44)
+
+        visit admin_poll_path(poll)
+
+        click_link "Results"
+
+        expect(page).to have_content(question_1.title)
+        question_1.valid_answers.each_with_index do |answer, i|
+          within("#question_#{question_1.id}_#{i}_result") do
+            expect(page).to have_content(answer)
+            expect(page).to have_content([33, 0][i])
+          end
+        end
+
+        expect(page).to have_content(question_2.title)
+        question_2.valid_answers.each_with_index do |answer, i|
+          within("#question_#{question_2.id}_#{i}_result") do
+            expect(page).to have_content(answer)
+            expect(page).to have_content([0,15][i])
+          end
+        end
+
+        within('#white_results') { expect(page).to have_content('21') }
+        within('#null_results') { expect(page).to have_content('44') }
+      end
+    end
+  end
+
 end
