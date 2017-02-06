@@ -746,6 +746,8 @@ periodo postrevolucionario</li>
     task destroy_all: :environment do
       Poll::PartialResult.all.destroy_all
       Poll::Question.all.each {|q| q.really_destroy!}
+      Poll::Voter.all.destroy_all
+      Poll::Nvote.all.each {|n| n.really_destroy!}
       Poll.all.destroy_all
     end
   end
