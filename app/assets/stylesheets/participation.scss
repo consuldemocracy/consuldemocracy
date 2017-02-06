@@ -298,7 +298,8 @@
 .debate-show,
 .proposal-show,
 .investment-project-show,
-.budget-investment-show {
+.budget-investment-show,
+.polls-show {
 
   p {
     word-wrap: break-word;
@@ -1355,7 +1356,7 @@ ul.ballot-list {
     color: white;
   }
 
-  &.poll-show {
+  &.polls-show-header {
     min-height: $line-height*8;
   }
 }
