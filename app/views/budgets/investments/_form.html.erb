@@ -1,10 +1,12 @@
 <%= form_for(@investment, url: form_url, method: :post) do |f| %>
   <%= render 'shared/errors', resource: @investment %>
+  <%= f.hidden_field :heading_id, value: @budget.headings.last.id %>
+
 
   <div class="row">
-    <div class="small-12 medium-8 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
-    </div>
+    <!-- <div class="small-12 medium-8 column">
+      <%# f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
+    </div> -->
 
     <div class="small-12 column">
       <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>
