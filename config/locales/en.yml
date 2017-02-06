@@ -27,6 +27,7 @@ en:
       user_permission_title: Participation
       user_permission_verify: To perform all the actions verify your account.
       user_permission_verify_info: "* Only for users on Madrid City Census."
+      user_permission_create_budget_investments: Create budget investments
       user_permission_votes: Participate on final voting
       username_label: Username
       verified_account: Account verified
