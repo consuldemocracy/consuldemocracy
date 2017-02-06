@@ -61,6 +61,12 @@ fr:
           other: "%{count} soutiens"
           zero: "Aucun soutiens"
         give_support: Soutenir
+      form:
+        tags_label: "Catégories"
+        tags_instructions: "Catégorisez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
+        tag_category_label: Catégories
+        tags_placeholder: Entrez les catégories que vous souhaitez utiliser, séparées par des virgules (',')
+
     phase:
       accepting: Dépôt des propositions
       reviewing: Evaluation des propositions
@@ -106,13 +112,7 @@ fr:
     #   finished: Fin du budget
     index:
       title: Budgets participatifs
-    # investissements:
-    #   from:
-    #     tags_label: "Catégories"
-    #     tags_instructions: "Catégorisez cette proposition. Vous pouvez choisir des catégories existantes ou ajouter les vôtres"
-    #     tag_category_label: Catégories
-    #     tags_placeholder: Entrez les catégories que vous souhaitez utiliser, séparées par des virgules (',')
-    #   index:
+
     #
     #
     #

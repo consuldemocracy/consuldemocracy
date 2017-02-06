@@ -977,17 +977,6 @@ fr:
         debate: Débat actualisé avec succès !
         notice: "%{resource_name} actualisé avec succès !"
         proposal: Proposition actualisée avec succès
-  form:
-    accept_terms: J'accepte le %{policy} et les %{conditions}
-    conditions: Conditions légales
-    debate: Débat
-    error: erreur
-    errors: erreurs
-    not_saved: "%{resource} empêché d'être sauvegardé"
-    policy: Vie privée
-    proposal: Proposition
-    spending_proposal: Proposition de dépense
-    user: Compte
   geozones:
     none: Toute la ville
     all: Toutes les zones
@@ -1682,6 +1671,16 @@ fr:
     budget/investment  : Investissement
     verification/sms : téléphone
     signature_sheet  : feuille de signature
+    accept_terms: J'accepte le %{policy} et les %{conditions}
+    conditions: Conditions légales
+    debate: Débat
+    error: erreur
+    errors: erreurs
+    not_saved: "%{resource} empêché d'être sauvegardé"
+    policy: Vie privée
+    proposal: Proposition
+    spending_proposal: Proposition de dépense
+    user: Compte
   omniauth:
     info_sign_in : "S'enregistrer avec :"
     twitter.name : Twitter
