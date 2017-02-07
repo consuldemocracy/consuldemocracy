@@ -81,7 +81,7 @@ es:
         table_answer: Respuesta
         table_votes: Votos
         table_whites: Papeletas en blanco
-        table_nulls: Papeletas en blanco
+        table_nulls: Papeletas nulas
     residence:
       flash:
         create: "Documento verificado con el Padrón"
