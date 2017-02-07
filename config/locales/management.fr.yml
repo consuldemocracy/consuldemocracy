@@ -1,0 +1,136 @@
+---
+fr:
+  management:
+    account:
+      alert:
+        unverified_user: Aucun utilisateur verifié s'est connecté pour l'instant
+      show:
+        title: Compte d'utilisateur
+    account_info:
+      change_user: Modifier compte utilisateur
+      document_number_label: 'Numéro de document:'
+      document_type_label: 'Type de document:'
+      email_label: 'Email:'
+      identified_label: 'Identifier comme:'
+      username_label: 'Identifiant:'
+    check: Check
+    dashboard:
+      index:
+        title: Management
+        info: Dans le menu à gauche, vous pouvez trouvez les actions disponible pour manager les utilisateurs
+    document_number: Numéro de document
+    document_type_label: Type de document
+    document_verifications:
+      already_verified: Déjà verifier
+      has_no_account_html: A fin de créer ce compte, suivre %{link} et cliquer <b>"S'inscrire"</b> en haut à gauche.
+      in_census_has_following_permissions: 'Cet utilisateur peut participer avec les permissions suivants:'
+      not_in_census: Ce document n'est pas enregistré dans la ville de Madrid
+      not_in_census_info: 'Citoyennes non recensées peuvent participés avec les permissions suivants:'
+      please_check_account_data: S'il vous plaît de verifier les données de compte ci-dessus.
+      title: Management d'utilisateur
+      under_age: Vous devez avoir 16 ans pour verifier votre compte.
+      verify: Verifier
+      link  : Consul
+    email_label: Email
+    email_verifications:
+      already_verified: Ce compte est déjà verifiée
+      choose_options: 'Choisissez une des options suivantes:'
+      document_found_in_census: Document trouvé dans le recensement, mais aucune utilisateur est associée.
+      document_mismatch: 'Cette address mail est déjà associé à une utilisateur: %{document_number}(%{document_type})'
+      email_placeholder: Addresse mail utiliser pour créer ce compte.
+      email_sent_instructions: A fin de verifier cette utilisateur, il est necessaire qu'elle suit le lien de confirmation dans le email envoyer à l'address ci-dessus. Cet étape est necessaire à fin de confirmer que l'addresse mail leur appartient.
+      if_existing_account: Si la personne a déjà créer un compte,
+      if_no_existing_account: Si la personne n'a pas encore créer un compte,
+      introduce_email: "S'il vous plaît de entrer l'e-mail associé avec ce compte"
+      send_email: Envoyer mail de verification
+    menu:
+      create_proposal: Créer proposition
+      print_proposals: Imprimer proposition
+      support_proposals: Soutenir proposition
+      create_spending_proposal: Créer proposition d'investissement
+      print_spending_proposals: Imprimer proposition d'investissements
+      support_spending_proposals: Soutenir proposition d'investissements
+      users: Utilisateurs
+      edit_user_accounts: Modifier compte utilisateur
+      create_budget_investment  : Créer un budget d'investissement
+      support_budget_investments  : Supportez les investissements budgétaires
+      print_budget_investments  : Imprimer Investissements budgétaires
+      user_invites  : Invitations de l'utilisateur
+    permissions:
+      create_proposals: Creér proposition
+      debates: Participez dans les débats
+      support_proposals: Soutenir des propositions
+      vote_proposals: Votez les propositions
+    print:
+      proposals_info: Creér votre proposition à http://decide.madrid.es
+      proposals_note: Les propositions avec suffisament de soutien serait voter, celles avec une majorité de votes seront éffectuer par la Ville de Madrid.
+      proposals_title: 'Proposition:'
+      spending_proposals_info: Participez à http://decide.madrid.es
+      spending_proposals_note: Budget participatif serait distribué aux propositions d'investissements avec le plus de votes.
+      budget_investments_info : 'Participez à http: //url.consul'
+      budget_investments_note  : Le budget participatif sera affecté à l'investissement budgétaire le plus voté.
+    print_info: Imprimez cette information.
+    proposals:
+      alert:
+        unverified_user: Utilisater n'est pas verifiée.
+      create_proposal: Créer proposition
+      print:
+        print_button: Imprimer
+    budgets:
+      create_new_investment  : Créer un nouvel investissement
+      print_investments  : Imprimer Investissements budgétaires
+      support_investments  : Supportez les investissements budgétaires
+    budget_investments:
+      alert:
+        unverified_user: L'utilisateur n'est pas vérifié
+      create: Créer un budget d'investissement
+      filters:
+        unfeasible  : Investissement irréalisable
+        heading : Concept
+      search_results  :
+        one: "contenant le terme '%{search_term}'"
+        other: "contenant le terme '%{search_term}'"
+      print:
+        print_button  : Impression
+    spending_proposals:
+      alert:
+        unverified_user: Utilisater n'est pas verifiée
+      create: Créer proposition d'investissement
+      filters:
+        unfeasible: Projets d'investissement infaissable
+        by_geozone: "Projets d'investissement par scope: %{geozone}"
+      print:
+        print_button: Imprimer
+      search_results:
+        one: " avec le terme '%{search_term}'"
+        other: " avec le terme '%{search_term}'"
+    sessions:
+      signed_out: Déconnecté
+      signed_out_managed_user: Session déconnecté
+    username_label: Identifiant
+    users:
+      create_user: Créer un nouveau compte
+      create_user_info: 'Nous allons créer un nouveau compte avec les données suivantes:'
+      create_user_submit: Créer utilisateur
+      create_user_success_html: Nous avons envoyer un mail à l'address email <b>%{email}</b> à fin de verifier qu'il appartient a cette utilisateur. Le mail conteint un lien qu'elle doit suivre pour confirmer son addresse mail. En suite ils devrait choisir un mot de passe et se connecter sur le site.
+      erased_notice: Compte Suprimmé
+      erased_by_manager: "Suprimmé par: %{manager}"
+      erase_account_link: Supprimer utilisateur
+      erase_account_confirm: Vous êtes sur de vouloir suprimmer ce compte? Cette action n'est pas reversible.
+      erase_warning: Cette action n'est pas reversible. S'il vous plaît de vous assurer que vous souhaitez vraiment effacer ce compte!
+      erase_submit: Supprimer compte
+    user_invites:
+      create:
+        title  : Invitation de l'utilisateur
+        success_html : <strong>%{count} invitations</strong> ont été envoyées.
+      new:
+        title : Invitation utilisateur
+        label : Courriels
+        info  : Renseignez les adresses séparées par des virgules (',')
+        submit  : Envoyer les <invitations>  </invitations>
+
+
+    menu:
+      title: Management
+
+

@@ -1,0 +1,666 @@
+fr:
+  admin:
+    actions:
+      confirm: "Êtes-vous sûr(e) ?"
+      confirm_hide: Confirmer
+      hide: Cacher
+      hide_author: Cacher l'auteur
+      restore: Restaurer
+    activity:
+      show:
+        action: Action
+        actions:
+          block: Bloqué
+          hide: Caché
+          restore: Restauré
+        by: Modifié par
+        filter: Montrer
+        filters:
+          all: Tous
+          on_comments: Commentaires
+          on_debates: Débats
+          on_proposals: Propositions
+          on_users: Utilisateurs
+        title: Activité de modération
+        type: Type
+    comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tous
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: En attente
+        hidden_debate: Débat masqué
+        hidden_proposal: Proposition masquée
+        title: Commentaire masqué
+    dashboard:
+      index:
+        title: Administration
+        back: Retour à
+    debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tous
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: En attente
+        title: Débats masqués
+    menu:
+      activity: Activité du modérateur
+      debate_topics: Sujets de débat
+      hidden_comments: Commentaires masqués
+      hidden_debates: Débats masqués
+      hidden_proposals: Propositions masquées
+      hidden_users: Utilisateurs masqués
+      incomplete_verifications: Vérifications incomplètes
+      moderators: Modérateurs
+      officials: Officiels
+      organizations: Organisations
+      settings: Paramètres
+      spending_proposals: Envoyer les propositions
+      stats: Statistiques
+      admin: Menu d'administration
+      banner: Gestion des bannières
+      budgets: Budgets participatifs
+      geozones: Gestion des sites
+      managers: Gestionnaires
+      signature_sheets: Feuilles de signature
+      valuators: Evaluateurs
+    moderators:
+      index:
+        title: Modérateurs
+      moderator:
+        add: Ajouter
+        delete: Supprimer
+      search:
+        email_placeholder: Chercher par courriel
+        search: Chercher
+        user_not_found: Utilisateur non trouvé
+    officials:
+      edit:
+        destroy: Enlever le statut "Officiel"
+        title: 'Officiels : Modifier l''utilisateur'
+      flash:
+        official_destroyed: 'Détails sauvegardés: l''utilisateur n''est plus maintenant
+          une personne officielle'
+        official_updated: Détails de l'officiel
+      index:
+        title: Officiels
+      level_0: Non officiel
+      level_1: Niveau 1
+      level_2: Niveau 2
+      level_3: Niveau 3
+      level_4: Niveau 4
+      level_5: Niveau 5
+      search:
+        edit_official: Editer un officiel
+        make_official: Rendre officiel
+        title: 'Propositions officielles : recherche utilisateur'
+    organizations:
+      index:
+        filter: Filtrer
+        filters:
+          all: Tout
+          pending: En attente
+          rejected: Rejeté
+          verified: Vérifié
+        reject: Rejeter
+        rejected: Rejeté
+        search: Chercher
+        search_placeholder: Nom, email ou numéro de téléphone
+        title: Organisations
+        verified: Vérifié
+        verify: Vérifier
+      search:
+        title: Chercher des organisations
+    proposals:
+      index:
+        filter: Filtrer
+        filters:
+          all: Tout
+          with_confirmed_hide: Confirmer
+          without_confirmed_hide: En attente
+        title: Propositions cachées
+    settings:
+      flash:
+        updated: Valeur mise a jour
+      index:
+        feature_flags: Fonctionnalités
+        features:
+          disable: Désactivé
+          disabled: Fonctionnalité désactivée
+          enable: Active
+          enabled: Fonctionnalité activée
+        title: Paramètres
+        update_setting: Mise a jour
+    shared:
+      proposal_search:
+        button: Chercher
+        placeholder: Rechercher des propositions par titre, description ou question
+      user_search:
+        button: Chercher
+        placeholder: Rechercher un utilisateur par nom ou mail
+    spending_proposals:
+      index:
+        title: Propositions de dépenses pour le budget participatif
+      show:
+        by: Envoyé par
+        geozone: Champ d'application
+    stats:
+      show:
+        stats_title: Statistiques
+        summary:
+          comments: Commentaires
+          comment_votes: Commenter les votes
+          debates: Débats
+          debate_votes: Débattre
+          proposals: Propositions
+          proposal_votes: Proposition de votes
+          unverified_users: Utilisateurs non vérifiés
+          user_level_three: Utilisateurs de niveau 3
+          user_level_two: Utilisateurs de niveau 2
+          users: Total des utilisateurs
+          verified_users: Utilisateurs vérifiés
+          visits: Visites
+          votes: Total de votes
+    tags:
+      create: Créer un sujet
+      destroy: Supprimer un sujet
+      index:
+        add_tag: Ajouter un nouveau sujet de débat
+        title: Sujets de débat
+      mark_as_featured: Proposer un sujet après création d'un débat
+      name:
+        placeholder: "Écrire le nom du sujet"
+      update: Mettre à jour le sujet
+    users:
+      index:
+        filter: Filtrer
+        filters:
+          all: Tout
+          with_confirmed_hide: Confirmé
+          without_confirmed_hide: En attente
+        title: Utilisateurs cachés
+      show:
+        email: 'Mail :'
+        hidden_at: 'Caché à :'
+        registered_at: 'Enregistré à :'
+        title: Activité de l'utilisateur %{user}
+    verifications:
+      index:
+        phone_not_given: Téléphone non renseigné
+        sms_code_not_confirmed: Code SMS non confirmé
+        title: Vérifications incomplètes
+    budgets:
+      update.notice: Budget participatif mis à jour avec succès
+      create.notice : Nouveau budget participatif créé avec succès!
+      form:
+        add_heading  : Ajouter une rubrique
+        no_heading : Ce groupe n'a pas de rubrique affectée.
+        table_heading  : Titre
+        table_amount : Montant
+        heading  : Nom du titre
+        amount : Montant
+        save_heading : Enregistrer le titre
+        no_groups  : Aucun groupe créé. Chaque utilisateur pourra voter pour une seule rubrique par groupe.
+        add_group  : Ajouter un nouveau groupe
+        group  : Nom de groupe
+        create_group : Créer un groupe
+      show:
+        groups:
+          one: "1 Groupe de lignes budgétaires"
+          other: "%{count} Groupes de lignes budgétaires"
+      edit:
+        title  : Modifier le budget participatif
+      index:
+        title : Budgets participatifs
+        new_link  : Créer un nouveau budget participatif
+        table_name  : Nom du BP
+        table_phase : Phase actuelle du BP
+        table_investments : Investissements
+        table_edit_groups : Zones
+        table_edit_budget : Modifier
+        budget_investments  : Voir les investissements budgétaires
+        edit_groups : Modifier les groupes de titres
+        edit_budget : Modifier le budget
+        filters:
+          current : Budgets participatifs en cours
+          finished  : Budgets participatifs terminés
+      new:
+        title : Nouveau budget participatif
+
+
+
+  # admin:
+  #   menu:
+  #     activity: Moderator activity
+  #     admin: Admin menu
+  #     banner: Manage banners
+  #     debate_topics: Debate topics
+  #     hidden_comments: Hidden comments
+  #     hidden_debates: Hidden debates
+  #     hidden_proposals: Hidden proposals
+  #     hidden_users: Hidden users
+  #     incomplete_verifications: Incomplete verifications
+  #     managers: Managers
+  #     moderators: Moderators
+  #     valuators: Valuators
+  #     officials: Officials
+  #     organizations: Organisations
+  #     settings: Configuration settings
+  #     spending_proposals: Spending proposals
+  #     stats: Statistics
+    # actions:
+    #   confirm: êtes vous sur(e) ?
+    #   confirm_hide: Confirmer
+    #   hide: Cacher
+    #   hide_author: Cacher auteur
+    #   restore: Restaurer
+    #   mark_featured: En avant
+    #   unmark_featured: Ne plus mettre en avant
+    # banners:
+    #   index:
+    #     title: Bannière
+    #     create: Créer bannière
+    #     edit: Editer bannière
+    #     delete: Effacer bannière
+    #     filters:
+    #       all: Tout
+    #       with_active: Active
+    #       with_inactive: Inactive
+    #   banner:
+    #     title: Titre
+    #     description:  Description
+    #     target_url:  Lien
+    #     style: Style
+    #     image: Image
+    #     post_started_at: Post started at
+    #     post_ended_at: Post ended at
+    #   edit:
+    #     back: Retour
+    #     editing: Editer bannière
+    #     form:
+    #       submit_button: Save changes
+    #   errors:
+    #     form:
+    #       error:
+    #         one: "prevented this banner from being saved"
+    #         other: 'prevented this banner from being saved'
+    #   new:
+    #     back: Back
+    #     creating: Create banner
+    # activity:
+    #   show:
+    #     action: Action
+    #     actions:
+    #       block: Blocked
+    #       hide: Hidden
+    #       restore: Restored
+    #     by: Moderated by
+    #     content: Contenu
+    #     filter: Montrer
+    #     filters:
+    #       all: Tout
+    #       on_comments: Commentaires
+    #       on_debates: Débats
+    #       on_proposals: Propositions
+    #       on_users: Utilisateurs
+    #     title: Moderator activity
+    #     type: Type
+    # comments:
+    #   index:
+    #     filter: Filtrer
+    #     filters:
+    #       all: Tout
+    #       with_confirmed_hide: Confirmer
+    #       without_confirmed_hide: En attente
+    #     hidden_debate: Hidden debate
+    #     hidden_proposal: Hidden proposal
+    #     title: Hidden comments
+
+    # debates:
+    #   index:
+    #     filter: Filtrer
+    #     filters:
+    #       all: Tout
+    #       with_confirmed_hide: Confirmer
+    #       without_confirmed_hide: En attente
+    #     title: Hidden debates
+    # managers:
+    #   index:
+    #     title: Managers
+    #   manager:
+    #     add: Ajouter
+    #     delete: Effacer
+    #   search:
+    #     email_placeholder: Chercher utilisateur par email
+    #     search: Chercher
+    #     user_not_found: Utilisateur non trouvé
+
+    # moderators:
+    #   index:
+    #     title: Moderators
+    #   moderator:
+    #     add: Ajouter
+    #     delete: Effacer
+    #   search:
+    #     email_placeholder: Search user by email
+    #     search: Search
+    #     user_not_found: User not found
+    # valuators:
+    #   index:
+    #     title: Valuators
+    #   valuator:
+    #     description_placeholder: 'Description (optional)'
+    #     user_found: User found
+    #     add: Add to valuators
+    #   search:
+    #     email_placeholder: Search user by email
+    #     search: Search
+    #     user_not_found: User not found
+    #   summary:
+    #     title: Valuator summary for investment projects
+    #     valuator_name: Valuator
+    #     finished_and_feasible_count: Finished and feasible
+    #     finished_and_unfeasible_count: Finished and unfeasible
+    #     finished_count: Finished
+    #     in_evaluation_count: In evaluation
+    #     total_count: Total
+    #     cost: Cost
+    # officials:
+    #   edit:
+    #     destroy: Remove 'Official' status
+    #     title: 'Officials: Edit user'
+    #   flash:
+    #     official_destroyed: 'Details saved: the user is no longer an official'
+    #     official_updated: Details of official saved
+    #   index:
+    #     title: Officials
+    #   level_0: Not official
+    #   level_1: Niveau 1
+    #   level_2: Niveau 2
+    #   level_3: Niveau 3
+    #   level_4: Niveau 4
+    #   level_5: Niveau 5
+    #   search:
+    #     edit_official: Edit official
+    #     make_official: Make official
+    #     title: 'Official positions: User search'
+    # organizations:
+    #   index:
+    #     filter: Filter
+    #     filters:
+    #       all: All
+    #       pending: En attente
+    #       rejected: Rejetée
+    #       verified: Verified
+    #     hidden_count_html:
+    #       one: There is also <strong>one organisation</strong> with no users or with a hidden user.
+    #       other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
+    #     reject: Reject
+    #     rejected: Rejected
+    #     search: Search
+    #     search_placeholder: Nom, email ou numéro de téléphone
+    #     title: Organisations
+    #     verified: Verified
+    #     verify: Verify
+    #   search:
+    #     title: Search Organisations
+    # proposals:
+    #   index:
+    #     filter: Filter
+    #     filters:
+    #       all: All
+    #       with_confirmed_hide: Confirmed
+    #       without_confirmed_hide: Pending
+    #     title: Hidden proposals
+    # settings:
+    #   flash:
+    #     updated: Value updated
+    #   index:
+    #     banners: Estilos de banners
+    #     banner_imgs: Imágenes para los banners
+    #     title: Configuration settings
+    #     update_setting: Update
+    #     feature_flags: Features
+    #     features:
+    #       enabled: "Feature enabled"
+    #       disabled: "Feature disabled"
+    #       enable: "Enable"
+    #       disable: "Disable"
+    # shared:
+    #   proposal_search:
+    #     button: Search
+    #     placeholder: Search proposals by title, code, description or question
+    #   spending_proposal_search:
+    #     button: Search
+    #     placeholder: Search spending proposals by title or description
+    #   user_search:
+    #     button: Search
+    #     placeholder: Search user by name or email'
+    # spending_proposals:
+    #   index:
+    #     geozone_filter_all: All zones
+    #     administrator_filter_all: All administrators
+    #     valuator_filter_all: All valuators
+    #     tags_filter_all: All tags
+    #     filters:
+    #       valuation_open: Open
+    #       without_admin: Without assigned admin
+    #       managed: Managed
+    #       valuating: Under valuation
+    #       valuation_finished: Valuation finished
+    #       all: All
+    #     title: Investment projects for participatory budgeting
+    #     assigned_admin: Assigned administrator
+    #     no_admin_assigned: No admin assigned
+    #     no_valuators_assigned: No valuators assigned
+    #     summary_link: "Investment project summary"
+    #     valuator_summary_link: "Valuator summary"
+    #     feasibility:
+    #       feasible: "Feasible (%{price})"
+    #       not_feasible: "Not feasible"
+    #       undefined: "Undefined"
+    #   show:
+    #     assigned_admin: Assigned administrator
+    #     assigned_valuators: Assigned valuators
+    #     back: Back
+    #     classification: Clasification
+    #     heading: "Investment project %{id}"
+    #     edit: Edit
+    #     edit_classification: Edit classification
+    #     association_name: Association
+    #     by: By
+    #     sent: Sent
+    #     geozone: Scope
+    #     dossier: Dossier
+    #     edit_dossier: Edit dossier
+    #     tags: Tags
+    #     undefined: Undefined
+    #   edit:
+    #     classification: Clasification
+    #     assigned_valuators: Valuators
+    #     submit_button: Update
+    #     tags: Tags
+    #     tags_placeholder: "Write the tags you want separated by commas (,)"
+    #     undefined: Undefined
+    #   summary:
+    #     title: Summary for investment projects
+    #     title_proposals_with_supports: Summary for investment projects with supports
+    #     geozone_name: Scope
+    #     finished_and_feasible_count: Finished and feasible
+    #     finished_and_unfeasible_count: Finished and unfeasible
+    #     finished_count: Finished
+    #     in_evaluation_count: In evaluation
+    #     total_count: Total
+    #     cost_for_geozone: Cost
+    # stats:
+    #   show:
+    #     stats_title: Stats
+    #     summary:
+    #       comment_votes: Comment votes
+    #       comments: Comments
+    #       debate_votes: Debate votes
+    #       debates: Debates
+    #       proposal_votes: Proposal votes
+    #       proposals: Proposals
+    #       spending_proposals: Spending Proposals
+    #       unverified_users: Unverified users
+    #       user_level_three: Level three users
+    #       user_level_two: Level two users
+    #       users: Total users
+    #       verified_users: Verified users
+    #       verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
+    #       visits: Visits
+    #       votes: Total votes
+    #     spending_proposals_title: Spending Proposals
+    #     visits_title: Visits
+    # tags:
+    #   create: Create Topic
+    #   destroy: Destroy Topic
+    #   index:
+    #     add_tag: Add a new debate topic
+    #     title: Debate topics
+    #   mark_as_featured: Propose topic upon creating debate
+    #   name:
+    #     placeholder: Type the name of the topic
+    #   update: Update Topic
+    # users:
+    #   index:
+    #     filter: Filter
+    #     filters:
+    #       all: All
+    #       with_confirmed_hide: Confirmed
+    #       without_confirmed_hide: Pending
+    #     title: Hidden users
+    #   show:
+    #     email: 'Email:'
+    #     hidden_at: 'Hidden at:'
+    #     registered_at: 'Registered at:'
+    #     title: Activity of user (%{user})
+    # verifications:
+    #   index:
+    #     phone_not_given: Phone not given
+    #     sms_code_not_confirmed: Has not confirmed the sms code
+    #     title: Incomplete verifications
+
+    # geozones:
+    #   delete.success : La zone géographique a été supprimée avec succès
+    #   delete.error : Cette zone géographique ne peut pas être supprimée car il ya des éléments qui y sont attachés
+    #   errors.form.error  :
+    #     one: "empêchait cette zone géographique d'être enregistré"
+    #     other: "empêchait cette zone géographique d'être enregistrés"
+    #   geozone:
+    #     name : Nom
+    #     coordinates  : Coordonnées
+    #     external_code  : Code externe
+    #     census_code  : Code de recensement
+    #   edit:
+    #     form.submit_button  : Sauvegarder les modifications
+    #     back  : Retour
+    #     editing : Modification de la zone géographique
+    #   index:
+    #     create : Créer une zone géographique
+    #     title  : Zone géographique
+    #     edit : Modifier
+    #     delete : Effacer
+    #   new:
+    #     back : Retour
+    #     creating : Créer un district
+    # menu:
+    #   budgets: Budgets participatifs
+    #   signature_sheets : Feuilles de signature
+    #   geozones : Gérer les zones géographiques
+    budget_investments:
+      index:
+        table_id : ID
+        table_title  : Titre
+        table_admin  : Administrateur
+        table_valuator : Expert
+        table_geozone  : Champ d'application
+        table_feasibility  : Faisabilité
+        table_valuation_finished : Val. Fin.
+        table_selection  : Sélection
+        assigned_admin : Administrateur affecté
+        no_admin_assigned  : Aucun administrateur affecté
+        no_valuators_assigned  : Aucun évaluateur assigné
+        selected : Choisi
+        select : Sélectionner
+        title  : Projets d'investissement
+        administrator_filter_all : Tous les administrateurs
+        valuator_filter_all  : Tous les évaluateurs
+        heading_filter_all : Toutes les rubriques
+        tags_filter_all  : Tous les tags
+        filters:
+          valuation_open : Ouvert
+          without_admin  : Sans administrateur affecté
+          managed  : Réussi
+          valuating  : Sous évaluation
+          valuation_finished : Évaluation terminée
+          valuation_finished_feasible  : Val. ailette. Faisable
+          selected : Choisi
+          all  : Tout
+        feasibility:
+          feasible : Faisable (%{price})
+          unfeasible : Infaisable
+          undecided  : Indécis
+      show:
+        info  : "%{budget_name} - Groupe : %{group_name} - Projet d'investissement %{id}"
+        group : Groupe
+        heading : Poste budgétaire
+        by  : Par
+        sent  : Envoyé
+        edit  : Modifier
+        classification  : Classement
+        assigned_admin  : Administrateur affecté
+        undefined : Indéfini
+        tags  : Mots clés
+        assigned_valuators  : Évaluateurs affectés
+        edit_classification : Modifier la classification
+        dossier : Dossier
+        edit_dossier  : Modifier le dossier
+      edit:
+        select_heading  : Sélectionner rubrique
+        classification  : Classification
+        undefined : Indéfini
+        tags  : Mots clés
+        tags_placeholder  : Écrivez les mots clés que vous voulez, séparées par des virgules (,)
+        assigned_valuators  : Évaluateurs
+        submit_button : Mettre à jour
+    # signature_sheets:
+    #   index:
+    #     title: Feuilles de signature
+    #     new: Nouvelles feuilles de signature
+    #   name: Prénom
+    #   author: Auteur
+    #   created_at: Date de création
+    #   no_signature_sheets: Il n'y a pas de feuilles de signature
+    #   new:
+    #     title: Nouvelles feuilles de signature
+    #     document_numbers_note  : Écrivez les nombres séparés par des virgules (,)
+    #     submit : Créer une feuille de signature
+    #   show:
+    #     created_at  : Créé
+    #     author  : Auteur
+    #     document_count  : "Nombre de documents:"
+    #     documents : Documents
+    #     verified  :
+    #       one: "Il y a %{count} signature valide"
+    #       other: "Il y a %{count} signatures valides"
+    #     unverified  :
+    #       one: "Il y a% {count} signature invalide"
+    #       other: "Il y a %{count} signatures non valides"
+    #     unverified_error  : (Non vérifié par recensement)
+    #     loading : Il ya encore des signatures qui sont vérifiées par le recensement, s'il vous plaît rafraîchissez la page dans quelques instants
+    # stats:
+    #   direct_messages:
+    #     title : Messages directs
+    #     total : Total
+    #     users_who_have_sent_message : Utilisateurs ayant envoyé un message privé
+    #   proposal_notifications:
+    #     title  : Notifications de propositions
+    #     total  : Total
+    #     proposals_with_notifications : Propositions avec notifications
+    #   show:
+    #     direct_messages  : Messages directs
+    #     proposal_notifications : Notifications de <propositions>   </propositions>
