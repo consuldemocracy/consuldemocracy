@@ -124,3 +124,10 @@ ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+
+['Urbanismo', 'Cultura', 'Deportes', 'Agricultura', 'Comercio y consumo', 'Juventud', 'Turismo',
+ 'Igualdad', 'Gente Mayor', 'Bienestar Social', 'Seguridad ciudadana', 'Mercados', 'Fiestas',
+ 'Servicios Públicos', 'Nuevas tecnologías', 'Atención y Participación ciudadana', 'Desarrollo Sostenible',
+ 'Distrito Norte', 'Distrito Sur', 'Distrito Este', 'Distrito Oeste', 'Distrito Centro', 'Distrito Grao'].each do |c|
+
+  ActsAsTaggableOn::Tag.create!(name:  c, featured: true, kind: "category")

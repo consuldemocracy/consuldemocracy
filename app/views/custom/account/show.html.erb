@@ -110,19 +110,35 @@
             <p><%#= t("account.show.user_permission_info") %></p>
           <% end %> -->
 
-          <ul>
-            <% if !current_user.level_two_verified? %>
-              <li>
-                <span class="icon-x text-warning"></span>&nbsp;
-                <%= t("verification.residence.permission_warning") %>
-              </li>
-            <% else %>
-              <li>
-                <span class="icon-check text-warning"></span>&nbsp;
-                <%= t("verification.residence.permission_success") %>
-              </li>
-            <% end %>
-          </ul>
+          <% if @account.organization? %>
+            <ul>
+              <% if !current_user.level_two_verified? %>
+                <li>
+                  <span class="icon-x text-warning"></span>
+                  <%= t("verification.organization.not_verified") %>
+                </li>
+
+              <% end %>
+            </ul>
+            <ul>
+              <li></li>
+            </ul>
+
+          <% else %>
+            <ul>
+              <% if !current_user.level_two_verified? %>
+                <li>
+                  <span class="icon-x text-warning"></span>&nbsp;
+                  <%= t("verification.residence.permission_warning") %>
+                </li>
+              <% else %>
+                <li>
+                  <span class="icon-check text-warning"></span>&nbsp;
+                  <%= t("verification.residence.permission_success") %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
 
 
           <!-- <p>

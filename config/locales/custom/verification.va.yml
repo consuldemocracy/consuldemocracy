@@ -1,5 +1,5 @@
 ---
-es:
+va:
   verification:
     alert:
       lock: Has llegado al máximo número de intentos. Por favor intentalo de nuevo más tarde.
@@ -113,4 +113,4 @@ es:
         title: Información disponible
         use_another_phone: Utilizar otro teléfono
     organization:
-      not_verified: Para poder participar en el proceso de presupuestos participativos es necesario comprobar que la asociación tiene su domicilio social y su ámbito de actuación territorial en la ciudad de Castellón de la Plana, y que se encuentra inscrita en el Registro de Asociaciones.
+      not_verified: Per a poder participar en el procés de pressupostos participatius és necessari comprovar que l'associació té el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que es troba inscrita en el Registre d'Associacions.

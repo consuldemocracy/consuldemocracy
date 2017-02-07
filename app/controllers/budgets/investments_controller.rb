@@ -103,8 +103,8 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list,
-                                                  :organization_name, :location, :terms_of_service)
+        params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
       end
 
       def load_ballot
@@ -127,6 +127,11 @@ module Budgets
         TagCloud.new(Budget::Investment, params[:search])
       end
 
+      def locate(tag_string)
+        array_tags = tag_string.split(',').collect(&:strip)
+        array_tags.collect! { |t| I18n.translate(t, locale: :es)}
+        array_tags.join(',')
+      end
   end
 
 end

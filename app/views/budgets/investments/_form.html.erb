@@ -38,7 +38,7 @@
       <div id="category_tags" class="tags">
         <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
         <% @categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
+          <a class="js-add-tag-link"><%= t(tag.name) %></a>
         <% end %>
       </div>
 
