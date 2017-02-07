@@ -11,7 +11,12 @@ class NotificationsController < ApplicationController
 
   def show
     @notification = current_user.notifications.find(params[:id])
-    redirect_to url_for(@notification.linkable_resource)
+    # TODO: Parche, url_for no genera una ruta correcta para Budget::Investment
+    if @notification.linkable_resource.class == Budget::Investment
+      redirect_to url_for(budget_investment_path(@notification.linkable_resource.budget_id, @notification.linkable_resource.id))
+    else
+      redirect_to url_for(@notification.linkable_resource)
+    end
   end
 
   def mark_all_as_read
