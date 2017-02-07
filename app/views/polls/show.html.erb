@@ -45,6 +45,11 @@
       <% @questions.each do |question| %>
         <%= render 'polls/questions/question', question: question %>
       <% end %>
+      <% if @questions.count == 1 %>
+        <% question = @questions.first %>
+        <h3 class="margin-top"><%= t('polls.show.more_info') %></h3>
+        <%= question.description %>
+      <% end %>
     </div>
 
     <aside class="small-12 medium-3 column">
