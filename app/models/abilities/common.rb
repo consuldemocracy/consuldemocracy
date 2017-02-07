@@ -56,10 +56,14 @@ module Abilities
 
           can :create, Budget::Investment,               budget: { phase: "accepting" }
         end
-        # can :create, Budget::Investment,               budget: { phase: "accepting" }
+
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
-        can :vote, Budget::Investment,                 budget: { phase: "selecting" }
+        budgets_current = Budget.where(phase: 'selecting')
+        investment_ids = budgets_current.map{|b| b.investment_ids}.flatten
+        if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size <= 3
+          can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+        end
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
