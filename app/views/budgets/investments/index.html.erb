@@ -49,6 +49,18 @@
         </div>
       <% end %>
 
+        <%# else %>
+          <%= content_tag(:h2, t("budgets.investments.index.by_heading", heading: @heading.name)) if @heading.present? %>
+        <% end %>
+
+        <% if params[:search].present? %>
+          <h2>
+            <%= page_entries_info @investments %>
+            <%= t("budgets.investments.index.search_results", count: @investments.size, search_term: t(params[:search])) %>
+          </h2>
+        <% end %>
+      </div>
+
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
       <% @investments.each do |investment| %>
