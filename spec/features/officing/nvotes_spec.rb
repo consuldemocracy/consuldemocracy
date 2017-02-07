@@ -16,6 +16,7 @@ feature 'Officing Nvotes', :selenium do
     visit new_officing_residence_path
     officing_verify_residence
 
+    expect(::Poll::Nvote.count).to eq(0)
     click_link "Vote on tablet"
 
     nvotes = find(".agoravoting-voting-booth-iframe")
@@ -38,6 +39,11 @@ feature 'Officing Nvotes', :selenium do
       expect(page).to have_content "Enviando la papeleta cifrada al servidor"
       expect(page).to have_content "Voto emitido con éxito"
     end
+    expect(::Poll::Nvote.count).to eq(1)
+    nvote = ::Poll::Nvote.last
+    expect(nvote.poll_id).to eq(poll.id)
+    expect(nvote.user_id).to eq(user.id)
+    expect(nvote.nvotes_poll_id).to eq(poll.nvotes_poll_id)
   end
 
   scenario "Voting all answerable polls" do
@@ -47,6 +53,8 @@ feature 'Officing Nvotes', :selenium do
 
     visit new_officing_residence_path
     officing_verify_residence
+
+    expect(::Poll::Nvote.count).to eq(0)
 
     click_link "Vote on tablet"
 
@@ -63,6 +71,14 @@ feature 'Officing Nvotes', :selenium do
     within_frame(nvotes) do
       vote_for_poll(poll2)
     end
+
+    expect(::Poll::Nvote.count).to eq(2)
+    nvote_1 = ::Poll::Nvote.first
+    expect(nvote_1.poll_id).to eq(poll1.id)
+    expect(nvote_1.user_id).to eq(user.id)
+    nvote_2 = ::Poll::Nvote.last
+    expect(nvote_2.poll_id).to eq(poll2.id)
+    expect(nvote_2.user_id).to eq(user.id)
   end
 
   scenario "Validate next document" do
