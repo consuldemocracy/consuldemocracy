@@ -104,7 +104,7 @@ feature 'Spending proposals' do
 
     scenario 'Random order maintained with pagination', :js do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:spending_proposal) }
+      (per_page * 100).times { create(:spending_proposal) }
 
       visit spending_proposals_path
 
