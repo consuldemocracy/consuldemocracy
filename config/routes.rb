@@ -363,7 +363,7 @@ Rails.application.routes.draw do
 
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
-  get '/blog' => redirect('http://diario.madrid.es/participa/')
+  get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
