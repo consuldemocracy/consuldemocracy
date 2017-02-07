@@ -153,6 +153,7 @@ es:
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
+      search_unfeasible: Buscar inviables
     comments:
       index:
         filter: Filtro
