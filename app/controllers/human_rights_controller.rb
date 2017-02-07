@@ -77,7 +77,8 @@ class HumanRightsController < ApplicationController
   def set_random_seed
     if params[:order] == 'random' || params[:order].blank?
       session[:random_seed] ||= rand(99)/100.0
-      Proposal.connection.execute "select setseed(#{session[:random_seed]})"
+      seed = Float(params[:random_seed]) rescue 0
+      Proposal.connection.execute "select setseed(#{seed})"
     else
       session[:random_seed] = nil
     end
