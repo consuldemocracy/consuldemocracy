@@ -69,6 +69,7 @@ es:
           by_feasibility: Por viabilidad
           feasible: Ver las propuestas de inversión viables
           unfeasible: Ver las propuestas de inversión inviables
+          already_created: Ya ha creado las Propuestas de Inversión permitidas
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas

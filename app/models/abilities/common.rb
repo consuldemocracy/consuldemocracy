@@ -46,7 +46,12 @@ module Abilities
         can :create, SpendingProposal
 
         # TODO: no dejar crear si ya se ha creado
-        if user.budget_investments.includes(:budget )
+        if user
+           .budget_investments
+           .includes(:budget)
+           .where(budgets: { phase: 'accepting'})
+           .where(budget_investments: { feasibility: ['feasible', 'undecided']}).count < 1
+
           can :create, Budget::Investment,               budget: { phase: "accepting" }
         end
 
