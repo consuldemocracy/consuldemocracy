@@ -79,6 +79,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.0'
   gem 'i18n-tasks'
+  gem 'axlsx' # for export i18n tag missing with i18n-tasks
   gem 'capistrano', '3.5.0',           require: false
   gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '1.1.8',     require: false

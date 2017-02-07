@@ -1,0 +1,111 @@
+fr:
+  activerecord:
+    models:
+      activity:
+        one: "activité"
+        other: "activités"
+      comment:
+        one: "Commentaire"
+        other: "Commentaires"
+      debate:
+        one: "Débat"
+        other: "Débats"
+      tag:
+        one: "Tag"
+        other: "Tags"
+      user:
+        one: "Utilisateur"
+        other: "Utilisateurs"
+      moderator:
+        one: "Moderateur"
+        other: "Moderateurs"
+      administrator:
+        one: "Administrateur"
+        other: "Administrateurs"
+      vote:
+        one: "Vote"
+        other: "Votes"
+      organization:
+        one: "Organisation"
+        other: "Organisations"
+      proposal:
+        one: "Proposition citoyenne"
+        other: "Proposition citoyennes"
+      spending_proposal:
+        one: "Spending proposal"
+        other: "Spending proposals"
+    attributes:
+      budget:
+        name: "Titre du budget participatif"
+        description_accepting: "Description de la phase de dépôt des propositions"
+        description_reviewing: "Description de la phase d'amélioration des propositions"
+        description_selecting: "Description de la phase de selection des propositions"
+        description_valuating: "Description de la phase de cotation des propositions"
+        description_balloting: "Description de la phase de vote des propositions"
+        description_reviewing_ballots: "Description de la phase de décompte des votes"
+        description_finished: "Description de la phase BP terminé"
+        phase: "Phase"
+        currency_symbol: "Currency"
+      budget/investment:
+        heading_id: "Sección de presupuesto"
+        title: "Title"
+        description: "Description"
+        external_url: "External url"
+        location: "Location"
+        administrator_id: "Administrator"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        heading_id: "Heading"
+        title: "Title"
+        location: "Location"
+        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+
+      comment:
+        body: "Commentaire"
+        user: "Utilisateur"
+      debate:
+        author: "Auteur"
+        description: "Opinion"
+        terms_of_service: "Terms of service"
+        title: "Titre"
+      proposal:
+        author: "Auteur"
+        title: "Titre"
+        question: "Question"
+        description: "Description"
+        terms_of_service: "Terms of service"
+      user:
+        email: "Email"
+        username: "Username"
+        password_confirmation: "Password confirmation"
+        password: "Mot de passe"
+        phone_number: "Numéro de téléphone"
+        official_position: "Official position"
+        official_level: "Official level"
+        redeemable_code: "Verification code received via email"
+      organization:
+        name: "Name of organisation"
+        responsible_name: "Person responsible for the group"
+      spending_proposal:
+        administrator_id: "Administrador"
+        association_name: "Association name"
+        description: "Description"
+        external_url: "Lien pour de la documentation supplémentaire"
+        geozone_id: "Scope of operation"
+        title: "Titre"
+    errors:
+      models:
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+      user:
+          attributes:
+            email:
+              password_already_set: "Cet utilisateur à déjà un mot de passe"
+
+

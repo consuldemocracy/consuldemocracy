@@ -1,0 +1,121 @@
+---
+fr:
+  verification:
+    alert:
+      lock: Vous avez atteint le nombre limite de tentatives. Merci de recommencer plus tard.
+    back: Retourner à mon compte
+    email:
+      create:
+        alert:
+          failure: Il y a eu un problème avec l'envoi d'un courriel vers votre compte
+        flash:
+          success: 'Nous avons envoyé un courriel de confirmation vers votre compte: %{email}'
+      show:
+        alert:
+          failure: Code de vérification incorrect
+        flash:
+          success: Vous êtes un utilisateur vérifié
+    letter:
+      alert:
+        unconfirmed_code: Vous n'avez pas encore entré votre code de confirmation
+      create:
+        flash:
+          offices: Bureaux d'aide pour les citoyens
+          offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
+          success_html: Merci de demander votre <b>code de sécurité maximum (uniquement requis pour le vote final)</b>. Dans quelques jours, nous vous enverrons un courrier vers votre adresse postale. Vous pouvez le réclamer dans n'importe quel %{offices}.
+      edit:
+        see_all: Voir les propositions
+        title: Lettre demandée
+      errors:
+        incorrect_code: Code de vérification incorrect
+        explanation: 'Pour participer au vote final, vous pouvez :'
+        go_to_index: Voir les propositions
+        office: Vérifier dans n'importe quel %{office}
+        offices: Bureaux de soutien aux citoyens
+        offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
+        send_letter: Envoyer une lettre avec le code
+        title: Félicitations
+        user_permission_info: Avec votre compte, vous pouvez
+      update:
+        flash:
+          success: Code correct. Votre compte est désormais vérifié
+    redirect_notices:
+      already_verified: Votre compte est déjà vérifié
+      email_already_sent: Nous vous avons déjà envoyé un courriel avec un lien de
+        confirmation. Nous pouvons vous en renvoyer un ici.
+    residence:
+      alert:
+        unconfirmed_residency: Vous n'avez pas encore confirmé votre résidence
+      create:
+        flash:
+          success: Résidence vérifiée
+      new:
+        accept_terms_text: J'accepte %{terms_url} du recensement.
+        date_of_birth: Date de naissance
+        document_number: Numéro de document
+        document_type_label: Type de document
+        document_type:
+          passport: Passeport
+          residence_card: Carte de résident
+          spanish_id: CNI
+        error_not_allowed_age: Vous devez avoir plus de 16 ans
+        error_not_allowed_postal_code: Afin de pouvoir vérifier votre compte, vous
+          devez être enregistrer par la Municipalité de Madrid.
+        error_verifying_census: Il a été impossible pour le recensement de Madrid
+          de vérifier vos informations. Merci de confirmer que vos informations sont
+          correctes en appelant 010 (ou 915298210) ou en visitant n'importe quel %{offices}.
+        error_verifying_census_offices: 26 bureaux du citoyen
+        form_errors: Empêche la vérification de votre résidence
+        postal_code: Code postal
+        postal_code_note: Afin de vérifier votre compte, vous devez être inscrit dans
+          le récensement de Madrid
+        terms: Les conditions d'utilisation et d'accès
+        title: Vérifier la résidence
+        verify_residence: Vérifier la résidence
+        document_number_help_title : Aide
+        document_number_help_text_html : "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Carte de résidence</strong>: X1234567P"
+        accept_terms_text_title  : J'accepte les conditions d'accès au recensement
+    sms:
+      create:
+        flash:
+          success:Merci d'enregistrer le code de confirmation envoyé par texto
+      edit:
+        confirmation_code: Rentrer le code reçu sur votre mobile
+        resend_sms_link: Cliquer ici pour renvoyer
+        resend_sms_text: Le code de confirmation n'a pas été encore reçu ?
+        submit_button: Envoyer
+        title: Confirmation du code de sécurité
+      new:
+        phone: Entrez votre numéro de téléphone mobile pour recevoir le code
+        phone_format_html: "<strong><em>(Exemple: 612345678 or +34612345678)</em></strong>"
+        phone_note: Nous utiliserons uniquement votre téléphone pour vous envoyer ce code, sans jamais vous recontacter par la suite.
+        phone_placeholder: "Exemple: 612345678 or +34612345678"
+        submit_button: Envoyer
+        title: Envoyer le code de confirmation
+      update:
+        error: Code de vérification incorrect
+        flash:
+          level_three:
+            success: Code validé. Votre compte est vérifié
+          level_two:
+            success: Code validé.
+    step_1: Résidence
+    step_2: Code de confirmation
+    step_3: Vérification finale
+    user_permission_debates: Participer aux débats
+    user_permission_info: En vérifiant votre compte vous serez capable de...
+    user_permission_proposal: Créer des propositions nouvelles
+    user_permission_support_proposal: Soutenir des propositions*
+    user_permission_votes: Participer au vote final*
+    verified_user:
+      form:
+        submit_button: Envoyer le code
+      show:
+        email_title: Courriels
+        explanation: Nous avons à l'heure actuelle les informations suivantes dans
+          notre base de données. Merci de sélectionner une méthode pour l'envoi de
+          votre code de confirmation.
+        phone_title: Téléphone
+        title: Information disponible
+        use_another_phone: Utiliser un autre téléphone
+
