@@ -29,7 +29,7 @@
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @investments %>
-            <%= t("budgets.investments.index.search_results", count: @investments.size, search_term: params[:search]) %>
+            <%= t("budgets.investments.index.search_results", count: @investments.size, search_term: t(params[:search])) %>
           </h2>
         <% end %>
       </div>
