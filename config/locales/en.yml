@@ -470,7 +470,6 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
-      question_count_html: "This poll has a total of <strong>%{count} qeustions</strong>."
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"

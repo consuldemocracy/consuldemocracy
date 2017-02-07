@@ -317,15 +317,18 @@ es:
         booths_tab: Urnas
         officers_tab: Presidentes de mesa
         recounts_tab: Recuentos
+        results_tab: Resultados
         no_booths: "No hay urnas asignadas a esta votación."
         no_questions: "No hay preguntas asignadas a esta votación."
         no_officers: "No hay presidentes de mesa asignados a esta votación."
         no_recounts: "No hay nada de lo que hacer recuento"
+        no_results: "No hay resultados"
         remove_booth: "Desasignar urna"
         booths_title: "Listado de urnas asignadas"
         officers_title: "Listado de presidentes de mesa asignados"
         questions_title: "Listado de preguntas asignadas"
         recounting_title: "Recuentos"
+        results_title: "Resultados"
         remove_question: "Desasignar pregunta"
         add_booth: "Asignar urna"
         add_question: "Incluir pregunta"
@@ -341,6 +344,10 @@ es:
         table_booth_name: "Urna"
         table_final_recount: "Recuento final (presidente de mesa)"
         table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
+        table_whites: Papeletas en blanco
+        table_nulls: Papeletas nulas
+        table_answer: Respuesta
+        table_votes: Votos
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
