@@ -15,6 +15,7 @@ class Organization < ActiveRecord::Base
 
   def verify
     update(verified_at: Time.current)
+    user.update(verified_at: Time.current)
   end
 
   def reject

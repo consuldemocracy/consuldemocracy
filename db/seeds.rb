@@ -97,18 +97,11 @@ Setting['mailer_from_address'] = 'noreply@castello.es'
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
-ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true , kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+['Urbanismo', 'Cultura', 'Deportes', 'Agricultura', 'Comercio y consumo', 'Juventud', 'Turismo',
+ 'Igualdad', 'Gente Mayor', 'Bienestar Social', 'Seguridad ciudadana', 'Mercados', 'Fiestas',
+ 'Servicios Públicos', 'Nuevas tecnologías', 'Atención y Participación ciudadana', 'Desarrollo Sostenible',
+ 'Distrito Norte', 'Distrito Sur', 'Distrito Este', 'Distrito Oeste', 'Distrito Centro', 'Distrito Grao'].each do |c|
+
+  ActsAsTaggableOn::Tag.create!(name:  c, featured: true, kind: "category")
+
+ end
