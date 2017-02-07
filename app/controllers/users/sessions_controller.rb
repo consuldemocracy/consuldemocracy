@@ -11,7 +11,9 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def after_sign_out_path_for(resource)
-      request.referrer.present? ? request.referrer : super
+      # TODO: en request.referrer a veces tenemos url que no admiten GET... por lo que da un error de acceso.
+      # request.referrer.present? ? request.referrer : super
+      root_path
     end
 
     def verifying_via_email?
