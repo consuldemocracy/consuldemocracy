@@ -420,7 +420,6 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
-      question_count_html: "Esta votación tiene un total de <strong>%{count} preguntas</strong>."
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
