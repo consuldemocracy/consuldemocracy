@@ -153,6 +153,7 @@ en:
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
+      search_unfeasible: Search unfeasible
     comments:
       index:
         filter: Filter

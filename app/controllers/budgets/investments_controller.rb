@@ -79,7 +79,7 @@ module Budgets
         if params[:order] == 'random' || params[:order].blank?
           params[:random_seed] ||= rand(99)/100.0
           seed = Float(params[:random_seed]) rescue 0
-          Budget::Investment.connection.execute "select setseed(#{seed})"
+          Budget::Investment.connection.execute("select setseed(#{seed})")
         else
           params[:random_seed] = nil
         end
