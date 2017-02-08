@@ -27,6 +27,7 @@ class Management::UsersController < Management::BaseController
         render :new
       end
     else
+      flash[:alert] = 'Verificación incorrecta en el Padrón'
       render :new
     end
   end
@@ -49,7 +50,8 @@ class Management::UsersController < Management::BaseController
     end
 
     def residence_params
-      { postal_code: '12000' }.merge!(params[:user])
+      params_for_residence = params[:user].except(:username, :email)
+      { postal_code: '12000' }.merge!(params_for_residence)
     end
 
     def destroy_session
@@ -57,6 +59,15 @@ class Management::UsersController < Management::BaseController
       session[:document_number] = nil
     end
 
+    def verificar_residencia
+      verificacion = Verification::Residence.new(residence_params)
+      if verificacion.save
+        return Time.zone.now
+      else
+        puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+        puts verificacion.errors.inspect
+        nil
+      end
     end
 
 end
