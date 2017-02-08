@@ -26,7 +26,7 @@ feature 'Nvotes' do
       expect(page).to have_content "La opción que seleccionaste es: Sí"
       click_button "Enviar el voto"
 
-      expect(page).to have_content "Enviando la papeleta cifrada al servidor"
+      expect(page).to have_content "Enviando voto cifrado al servidor"
       expect(page).to have_content "Voto emitido con éxito"
     end
   end
