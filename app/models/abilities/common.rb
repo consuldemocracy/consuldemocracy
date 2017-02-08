@@ -48,14 +48,14 @@ module Abilities
         can :create, SpendingProposal
 
         # TODO: no dejar crear si ya se ha creado
-        # if user
-        #    .budget_investments
-        #    .includes(:budget)
-        #    .where(budgets: { phase: 'accepting'})
-        #    .where(budget_investments: { hidden_at: nil}).count < 1
+        if user
+           .budget_investments
+           .includes(:budget)
+           .where(budgets: { phase: 'accepting'})
+           .where(budget_investments: { hidden_at: nil}).count < 1
 
           can :create, Budget::Investment,               budget: { phase: "accepting" }
-        # end
+        end
 
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
