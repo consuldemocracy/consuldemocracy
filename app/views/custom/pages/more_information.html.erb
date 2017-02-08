@@ -1,7 +1,7 @@
 <% provide :title do %><%= t('pages.titles.more_information') %><% end %>
 
 <div class="row">
-  <div class="small-2 large-3 columns">
+  <div class="small-12 large-3 columns">
     <ul class="menu vertical margin-top">
       <% (1..10).each do |i| %>
         <li><a href="#item_<%= i %>"><strong><%= t("pages.more_information.item_#{i}.title") %></strong></a></li>
@@ -12,7 +12,7 @@
     <% end %>
 
   </div>
-  <div class="small-10 large-9 columns">
+  <div class="small-12 large-9 columns">
 
     <% (1..10).each do |i| %>
       <div class="row">

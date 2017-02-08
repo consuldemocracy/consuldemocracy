@@ -7,7 +7,7 @@
 </div>
 
 <div class="row margin">
-  <div class="large-8 small-8 column">
+  <div class="large-8 small-12 column">
       <%= markdown t('budgets.header_body_principal_1') %>
       <% if @current_budget.present? %>
         <%= link_to t('budgets.index_title'), budget_path(@current_budget), class: "button" %>
@@ -15,7 +15,7 @@
       <%= markdown t('budgets.header_body_principal_2') %>
   </div>
 
-  <div class="large-4 small-4 column">
+  <div class="large-4 small-12 column">
       <%= markdown t('budgets.header_body_secondary') %>
   </div>
 
@@ -25,19 +25,19 @@
 
 <div class="budgets-calendar">
   <div class="row">
-    <div class="small-3 large-3 column text-center">
+    <div class="small-6 large-3 column text-center">
       <p><strong><%= t('budgets.fases.fase_1')%></strong></p>
       <p><%= t('budgets.fases.fase_1_subtitle')%></p>
     </div>
-    <div class="small-3 large-3 column text-center">
+    <div class="small-6 large-3 column text-center">
       <p><strong><%= t('budgets.fases.fase_2')%></strong></p>
       <p><%= t('budgets.fases.fase_2_subtitle')%></p>
     </div>
-    <div class="small-3 large-3 column text-center">
+    <div class="small-6 large-3 column text-center">
       <p><strong><%= t('budgets.fases.fase_3')%></strong></p>
       <p><%= t('budgets.fases.fase_3_subtitle')%></p>
     </div>
-    <div class="small-3 large-3 column text-center">
+    <div class="small-6 large-3 column text-center">
       <p><strong><%= t('budgets.fases.fase_4')%></strong></p>
       <p><%= t('budgets.fases.fase_4_subtitle')%></p>
     </div>
@@ -51,35 +51,35 @@
 </div> -->
 
 <div class="row margin">
-  <div class="large-5 columns text-right">&nbsp;</div>
-  <div class="large-2 columns text-center"><div class="circulo"></div></div>
-  <div class="large-5 columns">
+  <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
+  <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="small-12 large-5 columns">
     <h3><%= t('budgets.fases.fase_1_timeline_title') %></h3>
     <p><%= markdown t('budgets.fases.fase_1_timeline_body') %></p>
   </div>
 </div>
 <div class="row margin">
-  <div class="large-5 columns text-right">
+  <div class="small-12 large-5 columns text-right">
     <h3><%= t('budgets.fases.fase_2_timeline_title') %></h3>
     <p><%= markdown t('budgets.fases.fase_2_timeline_body') %></p>
   </div>
-  <div class="large-2 columns text-center"><div class="circulo"></div></div>
-  <div class="large-5 columns text-right">&nbsp;</div>
+  <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
 </div>
 <div class="row margin">
-  <div class="large-5 columns text-right">&nbsp;</div>
-  <div class="large-2 columns text-center"><div class="circulo"></div></div>
-  <div class="large-5 columns">
+  <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
+  <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="small-12 large-5 columns">
     <h3><%= t('budgets.fases.fase_3_timeline_title') %></h3>
     <p><%= markdown t('budgets.fases.fase_3_timeline_body') %></p>
   </div>
 </div>
 
 <div class="row margin">
-  <div class="large-5 columns text-right">
+  <div class="small-12 large-5 columns text-right">
     <h3><%= t('budgets.fases.fase_4_timeline_title') %></h3>
     <p><%= markdown t('budgets.fases.fase_4_timeline_body') %></p>
   </div>
-  <div class="large-2 columns text-center"><div class="circulo"></div></div>
-  <div class="large-5 columns text-right">&nbsp;</div>
+  <div class="hide-for-small-only large-2 columns text-center"><div class="circulo"></div></div>
+  <div class="hide-for-small-only large-5 columns text-right">&nbsp;</div>
 </div>
