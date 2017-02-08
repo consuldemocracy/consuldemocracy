@@ -162,7 +162,10 @@ feature 'Polls' do
       expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users who have already answered' do
+    xscenario 'Level 2 users who have already answered' do
+      #Not currently aplicable in this fork, users vote for polls not questions.
+      #In addition, in this fork we use AgoraVoting instead of using Poll::Answers.
+      #Activate once we have an option to vote either with AgoraVoting or Poll::Answers
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two)
       create(:poll_answer, question: question, author: user, answer: 'Chewbacca')
