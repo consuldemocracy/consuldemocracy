@@ -9,7 +9,7 @@ es:
       finish_verification: Finalizar verificación
       notifications: Notificaciones
       organization_name_label: Nombre de la asociación
-      organization_responsible_name_placeholder: Representante de la asociación/colectivo
+      organization_responsible_name_placeholder: Representante de la asociación
       personal: Datos personales
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
@@ -434,7 +434,7 @@ es:
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno
-    collective: Colectivo
+    collective: Asociación
     flag: Denunciar como inapropiado
     hide: Ocultar
     print:
@@ -474,7 +474,7 @@ es:
     youtube: YouTube
   spending_proposals:
     form:
-      association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
+      association_name_label: 'Si propones en nombre de una asociación añade el nombre aquí'
       association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
