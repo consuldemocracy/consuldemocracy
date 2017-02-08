@@ -15,10 +15,6 @@ feature 'Nvotes' do
     within_frame(nvotes) do
       expect(page).to have_content "Votación de prueba"
 
-      if page.has_button?("Empezar a votar")
-        click_button "Empezar a votar"
-      end
-
       expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
 
       first(".opt.ng-binding").click
@@ -28,7 +24,6 @@ feature 'Nvotes' do
       expect(page).to have_content "La opción que seleccionaste es: Sí"
       click_button "Enviar el voto"
 
-      expect(page).to have_content "Enviando la papeleta cifrada al servidor"
       expect(page).to have_content "Voto emitido con éxito"
     end
   end
