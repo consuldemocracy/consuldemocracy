@@ -15,5 +15,11 @@ class Poll
 
     scope :voting_days, -> { where(final: false) }
     scope :final,       -> { where(final: true) }
+
+    before_create :log_user_data
+
+    def log_user_data
+      self.user_data_log = "#{officer.user_id} - #{officer.user.name_and_email}"
+    end
   end
 end
