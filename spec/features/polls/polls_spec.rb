@@ -150,8 +150,10 @@ feature 'Polls' do
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
-      expect(page).to have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to have_selector('.booth-container')
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
     end
 
     scenario 'Level 2 users reading a all-geozones poll' do
@@ -159,8 +161,10 @@ feature 'Polls' do
       login_as(create(:user, :level_two))
       visit poll_path(poll)
 
-      expect(page).to have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to have_selector('.booth-container')
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
     end
 
     scenario 'Level 2 users who have already answered' do
@@ -184,10 +188,10 @@ feature 'Polls' do
       login_as user
       visit poll_path(poll)
 
-      click_link 'Han Solo'
+      expect(page).to have_selector('.booth-container')
 
       expect(page).to_not have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to_not have_link('Chewbacca')
     end
 
   end

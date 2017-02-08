@@ -83,8 +83,10 @@ feature 'Poll Questions' do
       visit question_path(question)
 
       click_link 'Answer this question'
-      click_link 'Han Solo'
 
+      expect(page).to have_selector('.booth-container')
+
+      expect(page).to_not have_link('Chewbacca')
       expect(page).to_not have_link('Han Solo')
 
       voter = poll.voters.first
