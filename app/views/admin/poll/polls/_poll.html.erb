@@ -11,5 +11,8 @@
     <%= link_to t("admin.actions.edit"),
                 edit_admin_poll_path(poll),
                 class: "button hollow" %>
+    <%= link_to t("admin.actions.configure"),
+                admin_poll_path(poll),
+                class: "button hollow" %>
   </td>
 </tr>

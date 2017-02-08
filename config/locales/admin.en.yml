@@ -10,6 +10,7 @@ en:
       mark_featured: Featured
       unmark_featured: Unmark featured
       edit: Edit
+      configure: Configure
     banners:
       index:
         title: Banners
