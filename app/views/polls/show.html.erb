@@ -14,7 +14,7 @@
           <h2><%= @poll.name %></h2>
         <% end %>
 
-        <% if @poll.votable_by?(current_user) %>
+        <% if @poll.votable_by?(current_user) || @poll.voted_by?(current_user) %>
           <ol class="margin-top">
             <% @questions.each do |question| %>
               <li><%= link_to question.title, question_path(question) %></li>
@@ -48,6 +48,10 @@
     <div class="small-12 medium-9 column">
       <% if @poll.votable_by?(current_user) %>
         <%= render "polls/nvotes/iframe" %>
+      <% elsif @poll.voted_by?(current_user) %>
+        <div class="callout warning">
+          <%= t("polls.show.already_voted") %>
+        </div>
       <% else %>
         <% @questions.each do |question| %>
           <%= render 'polls/questions/question', question: question %>
