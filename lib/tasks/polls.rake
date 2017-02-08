@@ -2,10 +2,10 @@ require 'fileutils'
 
 namespace :polls do
 
-  def create_2017_district_poll(geozone_name, questions_attributes)
+  def create_2017_district_poll(geozone_name, questions_attributes, poll_name=nil)
     questions = Array.wrap(questions_attributes)
     poll = Poll.create!(
-      name: questions.size == 1 ? questions[0][:title] : geozone_name,
+      name: questions.size == 1 ? questions[0][:title] : (poll_name || geozone_name),
       starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: true
@@ -24,47 +24,41 @@ namespace :polls do
   end
 
   POLL_SPECS_2017 = [ {
-        nvotes_poll_id: 1003,
-        name: 'Propuestas en DecideMadrid',
+        nvotes_poll_id: 1004,
+        name: 'Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 2003,
+        nvotes_poll_id: 2004,
         name: 'Gran Vía',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 3003,
+        nvotes_poll_id: 3004,
         name: '¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 4003,
+        nvotes_poll_id: 4004,
         name: '¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 5003,
-        name: 'Hortaleza',
+        nvotes_poll_id: 5004,
+        name: 'Nombre de distrito y Parque Felipe VI en Hortaleza',
         layout: 'simultaneous-questions'
       }, {
-        nvotes_poll_id: 6003,
+        nvotes_poll_id: 6004,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de Barajas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 7003,
+        nvotes_poll_id: 7004,
         name: 'Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas',
         layout: 'accordion'
       }, {
-        nvotes_poll_id: 8003,
-        name: 'Retiro',
+        nvotes_poll_id: 8004,
+        name: 'Nombres de centros culturales en Retiro',
         layout: 'simultaneous-questions'
       }
     ]
 
-  BARAJAS_2017_SHORT_DESCRIPTION = %{
-<p>Entre 2015 y 2016, la Junta Municipal de Barajas impulsó la realización de un Plan Participativo de Actuación Territorial en el que vecinas, vecinos y entidades sociales plantearon las propuestas que desean que lleve a cabo el actual equipo de gobierno. Dichas propuestas han sido asumidas por la Junta Municipal, incluso aunque en algunos casos no sean competencia del Ayuntamiento de Madrid. Respecto a estas últimas la Junta Municipal se compromete con la ciudadanía a dedicarles los esfuerzos necesarios para que puedan hacerse realidad. Emplazamos a las ciudadanas y ciudadanos de Barajas a que nos indiquen cuáles creen que son las más importantes entre todas ellas.</p>
-
-<p><strong>Las 10 propuestas que tengan mayor número de apoyos serán asumidas por la Junta Municipal como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.</strong></p>
-
-<p>De la siguiente lista de propuestas, marque las que considere más importantes (máximo 10 propuestas).</p>
-  }
+  BARAJAS_2017_SHORT_DESCRIPTION = ""
 
   BARAJAS_2017_OPTIONS = [
     { category: "EDUCACIÓN",
@@ -262,13 +256,7 @@ namespace :polls do
   ]
 
 
-  SAN_BLAS_2017_SHORT_DESCRIPTION = %{
-<p>Entre 2015 y 2016, la Junta Municipal de San Blas-Canillejas impulsó la realización de un Plan Participativo de Actuación Territorial en el que vecinas, vecinos y entidades sociales plantearon las propuestas que desean que lleve a cabo el actual equipo de gobierno. Dichas propuestas han sido asumidas por la Junta Municipal, incluso aunque en algunos casos no sean competencia del Ayuntamiento de Madrid. Respecto a estas últimas la Junta Municipal se compromete con la ciudadanía a dedicarles los esfuerzos necesarios para que puedan hacerse realidad. Emplazamos a las ciudadanas y ciudadanos de Barajas a que nos indiquen cuáles creen que son las más importantes entre todas ellas.</p>
-
-<p><strong>Las 10 propuestas que tengan mayor número de apoyos, serán asumidas por la Junta Municipal de San Blas-Canillejas como propuestas de máxima prioridad y se realizarán todas las acciones posibles desde la Junta para que se lleven a cabo.</strong></p>
-
-<p>De las siguientes listas de propuestas, marque las que considere más importantes (máximo 10 propuestas).</p>
-  }
+  SAN_BLAS_2017_SHORT_DESCRIPTION = ""
 
   SAN_BLAS_2017_OPTIONS = [
     { category: "EDUCACIÓN",
@@ -455,7 +443,7 @@ namespace :polls do
   task import_2017: :environment do
 
     poll_main = Poll.create!(
-      name: "Propuestas en DecideMadrid",
+      name: "Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España",
       starts_at: Date.today,
       ends_at: Date.new(2017, 2, 19),
       geozone_restricted: false
@@ -539,18 +527,13 @@ namespace :polls do
       {
         title: "¿Cambiamos el nombre del distrito de Hortaleza a Hortaleza-Canillas?",
         valid_answers: "Sí,No",
-        description: %{
-<p>Es en los siglos XII y XIII cuando aparecen los nombres de Hortaleza y Canillas, asentamientos que nacieron al noreste de la Villa de Madrid, como consecuencia de la repoblación castellana llevada a cabo para asentar el territorio conquistado a las tropas musulmanas.<p>
-<p>Hasta el siglo XX Hortaleza y Canillas contaron con Ayuntamientos propios e independientes. Es en 1950 cuando el antiguo municipio de Canillas fue absorbido por Madrid, dentro del proyecto denominado Gran Madrid. Un día después sucedió lo mismo con Hortaleza.</p>
-<p>Al contrario que el resto de municipios absorbidos a la capital, como Hortaleza, Vallecas, los Carabancheles, Vicálvaro o Villaverde, Canillas continua desaparecido del mapa administrativo de la capital.</p>
-<p><strong>La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.</strong></p>
-}
+        description: ""
       }, {
         title: "¿Debe retomar el actual Parque de Felipe VI a su nombre original Parque Forestal de Valdebebas?",
         valid_answers: "Sí,No",
-        description: "<p><strong>La respuesta que cuente con mayor número de apoyos será la que la Concejala-Presidenta llevará al Pleno del Ayuntamiento para su votación.</strong></p>"
+        description: ""
       }
-    ])
+    ], "Nombre de distrito y Parque Felipe VI en Hortaleza")
 
     create_2017_district_poll('Retiro', [
       {
@@ -563,15 +546,12 @@ namespace :polls do
         title: "¿Cómo quieres que se llame el Centro Sociocultural situado en la Junta Municipal de Retiro, Avda. Ciudad de Barcelona 164?",
         valid_answers: "Ángeles García-Madrid,Clara Campoamor Rodríguez,Concha García Campoy,Concha Méndez Cuesta,José Hierro,Marcos Ana,María Asquerino,María Casares,Memorial 11M,Las Sin Sombrero"
       }
-    ])
+    ], "Nombres de centros culturales en Retiro")
 
     create_2017_district_poll('Salamanca', [
       {
         title: "¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?",
-        description: %{
-          <p>El Distrito de Salamanca cuenta con un número importante de edificios con alto valor histórico y patrimonial. En la actualidad, algunos de ellos figuran en el catálogo de bienes protegidos del Ayuntamiento de Madrid, que establece su grado de protección. Sin embargo, existen inmuebles que actualmente están fuera de este listado o cuyo nivel de protección es demasiado bajo. Es por esto que, desde la Junta Municipal del Distrito de Salamanca, se consulta a la población si considera que esta línea de preservación de los elementos que conforman la historia de la ciudad de Madrid debería incluirse en las líneas y prioridades de trabajo de esta administración</p>
-          <p><strong>La respuesta que cuente con mayor número de votos será la que se lleve a cabo.</strong></p>
-        },
+        description: "",
         valid_answers: "Sí,No"
       }
     ])
@@ -580,95 +560,7 @@ namespace :polls do
       {
         title: "¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?",
         valid_answers: "María Pacheco,Federica Montseny,Gloria Fuertes,Frida Kahlo",
-        description: %{
-<p>Durante el último trimestre de 2016 se realizó un proceso participativo presencial apoyado en redes en el que se solicitaban sugerencias para la preselección de nombres para el Espacio de Igualdad de Vicálvaro y enero de 2017 se ha contado además con la participación de las entidades de mujeres. Como resultado de estas consultas se ha llegado a las cuatro propuestas siguientes, dos de ellas surgidos del proceso inicial de selección y otras dos aportadas por las entidades.</p>
-
-<p><strong>El nombre que cuente con mayor número de apoyos será la que se utilizará para designar al Espacio de Igualdad del Distrito de Vicálvaro.</strong></p>
-
-<p>Información adicional sobre las personas cuyos nombres se proponen para de Espacio de Igualdad del Distrito de Vicálvaro:</p>
-
-<ul>
-
-<li><strong>María Pacheco</strong> (<a href="https://es.wikipedia.org/wiki/Granada_(Espa%C3%B1a)">Granada</a>,
-<a href="https://es.wikipedia.org/wiki/1497">1497</a>
-- <a href="https://es.wikipedia.org/wiki/Oporto">Oporto</a>,
-<a href="https://es.wikipedia.org/wiki/Portugal">Portugal</a>,
-<a href="https://es.wikipedia.org/wiki/1531">1531</a>),
-de nombre completo María Pacheco y Mendoza. Noble <a href="https://es.wikipedia.org/wiki/Castilla">castellana</a>.
-Fue esposa del general comunero <a href="https://es.wikipedia.org/wiki/Juan_de_Padilla">Juan
-de Padilla</a>;
-tras la muerte de su marido asumió desde <a href="https://es.wikipedia.org/wiki/Toledo">Toledo</a>
-el mando de la sublevación de las <a href="https://es.wikipedia.org/wiki/Comunidades_de_Castilla">Comunidades
-de Castilla</a>
-hasta que capituló ante el rey <a href="https://es.wikipedia.org/wiki/Carlos_I_de_Espa%C3%B1a">Carlos
-I de España y V del Sacro Imperio Romano Germánico</a>
-en febrero de <a href="https://es.wikipedia.org/wiki/1522">1522</a>.</li>
-
-<li><strong>Federica Montseny Mañé</p> (<a href="https://es.wikipedia.org/wiki/Madrid">Madrid</a>,
-<a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">España</a>;
-<a href="https://es.wikipedia.org/wiki/12_de_febrero">12
-de febrero</a>
-de <a href="https://es.wikipedia.org/wiki/1905">1905</a>
-<a href="https://es.wikipedia.org/wiki/Toulouse">Toulouse</a>,
-<a href="https://es.wikipedia.org/wiki/Francia">Francia</a>;
-<a href="https://es.wikipedia.org/wiki/14_de_enero">14
-de enero</a>
-de <a href="https://es.wikipedia.org/wiki/1994">1994</a>)
-fue una <a href="https://es.wikipedia.org/wiki/Pol%C3%ADtico">política</a>
-y <a href="https://es.wikipedia.org/wiki/Sindicalista">sindicalista</a>
-<a href="https://es.wikipedia.org/wiki/Anarquista">anarquista</a>
-<a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">española</a>,
-ministra durante la <a href="https://es.wikipedia.org/wiki/II_Rep%C3%BAblica_espa%C3%B1ola">II
-República española</a>,
-siendo la primera mujer en ocupar un cargo ministerial en <a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">España</a>
-y una de las primeras en <a href="https://es.wikipedia.org/wiki/Europa_Occidental">Europa
-Occidental</a>.Publicó casi cincuenta novelas cortas con trasfondo romántico-social
-dirigidas concretamente a las mujeres de la clase proletaria, así
-como escritos políticos, éticos, biográficos y autobiográficos.</li>
-
-<li><strong>Gloria Fuertes García</strong> (<a href="https://es.wikipedia.org/wiki/Madrid">Madrid</a>,
-<a href="https://es.wikipedia.org/wiki/28_de_julio">28
-de julio</a>
-de <a href="https://es.wikipedia.org/wiki/1917">1917</a>
-- <a href="https://es.wikipedia.org/wiki/Ib%C3%ADdem">ibídem</a>,
-<a href="https://es.wikipedia.org/wiki/27_de_noviembre">27
-de noviembre</a>
-de <a href="https://es.wikipedia.org/wiki/1998">1998</a>)
-fue una poeta <a href="https://es.wikipedia.org/wiki/Espa%C3%B1a">española</a>
-y autora de <a href="https://es.wikipedia.org/wiki/Literatura_infantil_y_juvenil">literatura
-infantil y juvenil</a></li>
-
-<li><strong>Magdalena Carmen Frida Kahlo Calderón</strong> (<a href="https://es.wikipedia.org/wiki/Coyoac%C3%A1n">Coyoacán</a>,
-<a href="https://es.wikipedia.org/wiki/6_de_julio">6
-de julio</a>
-de <a href="https://es.wikipedia.org/wiki/1907">1907</a>-
-<a href="https://es.wikipedia.org/wiki/Ib%C3%ADdem">Ib.</a>,
-<a href="https://es.wikipedia.org/wiki/13_de_julio">13
-de julio</a>
-de <a href="https://es.wikipedia.org/wiki/1954">1954</a>)
-fue una <a href="https://es.wikipedia.org/wiki/Pintura">pintora</a>
-y <a href="https://es.wikipedia.org/wiki/Poes%C3%ADa">poetisa</a>
-<a href="https://es.wikipedia.org/wiki/Mexicana">mexicana</a>.
-Casada con el célebre muralista mexicano <a href="https://es.wikipedia.org/wiki/Diego_Rivera">Diego
-Rivera</a>,
-su vida estuvo marcada por el infortunio de contraer <a href="https://es.wikipedia.org/wiki/Poliomielitis">poliomielitis</a>
-y después por un grave accidente en su juventud que la mantuvo
-postrada en cama durante largos periodos, llegando a someterse hasta
-a 32 operaciones quirúrgicas. Llevó una vida poco convencional, fue
-<a href="https://es.wikipedia.org/wiki/Bisexual">bisexual</a> y
-entre sus amantes se encontraba <a href="https://es.wikipedia.org/wiki/Le%C3%B3n_Trotski">León
-Trotski</a>. Su obra pictórica gira temáticamente en torno a su biografía y a
-su propio sufrimiento. Fue autora de unas 200 obras, principalmente
-autorretratos, en los que proyectó sus dificultades por sobrevivir.
-La obra de Kahlo está influenciada por su esposo, el reconocido
-pintor <a href="https://es.wikipedia.org/wiki/Diego_Rivera">Diego
-Rivera</a>, con el que compartió su gusto por el arte popular mexicano de raíces
-indígenas, inspirando a otros pintores y pintoras mexicanos del
-periodo postrevolucionario</li>
-
-</ul>
-
-}
+        description: ""
       }
     ])
   end
@@ -706,7 +598,7 @@ periodo postrevolucionario</li>
           f.puts "Title\t#{question.title}"
           f.puts "Voting System\tplurality-at-large"
           f.puts "Layout\t#{spec[:layout]}"
-          f.puts "Description\t#{description.try(:gsub, "\n", '').try(:gsub, "</p>", "</p><br></br>")}"
+          f.puts "Description\t"
           f.puts "Number of winners\t#{spec[:layout] == 'accordion' ? 10 : 1}"
           f.puts "Minimum choices\t0"
           f.puts "Maximum choices\t#{spec[:layout] == 'accordion' ? 10 : 1}"
