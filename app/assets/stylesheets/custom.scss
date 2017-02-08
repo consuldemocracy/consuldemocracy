@@ -3241,16 +3241,44 @@ ul.ballot-list {
   }
 }
 
+p.can-participate-info {
+  background: white;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding: $line-height/2;
+  padding-top: $line-height;
+}
+
+.nvotes .panel {
+  border: 0
+}
+
 .nvotes ul.tabs {
 
   li {
-    border-top: 1px soild $border;
-    padding: $line-height/2;
+    position: relative;
+
+    a {
+      display: block;
+      padding: $line-height/2;
+      padding-left: $line-height*1.5;
+    }
+
+    &:before {
+      content: "\6c";
+      font-family: 'icons';
+      left: 12px;
+      position: absolute;
+      top: 12px;
+    }
 
     &.is-active {
       background: $info-bg;
-      border-bottom: 2px solid $brand;
-      border-top: 2px solid $brand;
+
+      &:before {
+        color: $brand;
+        content: "\59";
+      }
 
       a {
         border: 0;
