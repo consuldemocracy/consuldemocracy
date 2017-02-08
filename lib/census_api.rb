@@ -68,6 +68,10 @@ class CensusApi
       end
     end
 
+    def name
+      "#{data[:datos_habitante][:item][:nombre]} #{data[:datos_habitante][:item][:apellido1]}"
+    end
+
     private
       def extract_date(year, month, day)
         if day.present? && month.present? && year.present?

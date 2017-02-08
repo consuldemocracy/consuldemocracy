@@ -43,7 +43,7 @@ class Verification::Residence
 
   def allowed_age
     return if errors[:date_of_birth].any?
-    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless self.date_of_birth <= User.minimum_required_age.years.ago
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless Age.in_years(self.date_of_birth) >= User.minimum_required_age_for_verification
   end
 
   def document_number_uniqueness

@@ -104,7 +104,7 @@ feature 'Spending proposals' do
 
     scenario 'Random order maintained with pagination', :js do
       per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:spending_proposal) }
+      (per_page * 100).times { create(:spending_proposal) }
 
       visit spending_proposals_path
 
@@ -791,12 +791,18 @@ feature 'Spending proposals' do
       #take into account unknown ages when calculating percentage in table?
       within "#age_group_16_to_19" do
         expect(page).to have_content "16 - 19"
-        expect(page).to have_content "2 (66.67%)"
+        expect(page).to have_content "2 (50%)"
+      end
+
+      # this is for previously-created manuela user, which comes with a default age of 20
+      within "#age_group_20_to_24" do
+        expect(page).to have_content "20 - 24"
+        expect(page).to have_content "1 (25%)"
       end
 
       within "#age_group_35_to_39" do
         expect(page).to have_content "35 - 39"
-        expect(page).to have_content "1 (33.33%)"
+        expect(page).to have_content "1 (25%)"
       end
     end
 

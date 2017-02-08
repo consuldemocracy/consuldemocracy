@@ -1,0 +1,28 @@
+<h3><%= t("admin.polls.show.officers_title") %></h3>
+
+<% if @poll.officers.empty? %>
+  <div class="callout primary margin-top">
+    <%= t("admin.polls.show.no_officers") %>
+  </div>
+<% else %>
+  <table class="margin">
+    <thead>
+      <th><%= t("admin.polls.show.table_name") %></th>
+      <th><%= t("admin.polls.show.table_email") %></th>
+    </thead>
+    <tbody>
+      <% @poll.officers.each do |officer| %>
+        <tr id="officer_<%= officer.id %>" class="officer">
+          <td>
+            <strong>
+              <%= link_to officer.name, admin_officer_assignments_path(officer: officer, poll: @poll) %>
+            </strong>
+          </td>
+          <td>
+            <%= officer.email %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

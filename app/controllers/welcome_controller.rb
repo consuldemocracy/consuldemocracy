@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
   def index
     if current_user
     end
-    @proposal_successfull_exists = Proposal.successfull.exists?
+    @proposal_successfull_exists = Proposal.successful.exists?
   end
 
   def welcome

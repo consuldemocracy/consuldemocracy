@@ -1,0 +1,32 @@
+<% provide :title do %><%= t("polls.index.title") %><% end %>
+<% content_for :wrapper_class, "light" %>
+
+<div class="expanded no-margin-top dark-heading">
+  <div class="row">
+    <div class="small-12 medium-6 column padding">
+      <h1><%= t("polls.index.title") %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-3 column">
+    <%= render 'shared/filter_subnav_vertical', i18n_namespace: "polls.index" %>
+  </div>
+
+  <div class="small-12 medium-9 column margin-top">
+    <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
+
+    <% if polls_by_geozone_restriction[false].present? %>
+      <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3>
+      <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
+    <% end %>
+
+    <% if polls_by_geozone_restriction[true].present? %>
+      <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3>
+      <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
+    <% end %>
+
+    <%= paginate @polls %>
+  </div>
+</div>

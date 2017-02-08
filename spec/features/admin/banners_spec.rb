@@ -114,6 +114,7 @@ feature 'Admin banners magement' do
     visit admin_root_path
 
     within('#side_menu') do
+      click_link "Banners"
       click_link "Manage banners"
     end
 

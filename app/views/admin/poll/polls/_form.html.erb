@@ -1,0 +1,46 @@
+<%= form_for [:admin, @poll] do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :starts_at,
+                        value: @poll.starts_at.present? ? l(@poll.starts_at.to_date) : nil,
+                        class: "js-calendar-full" %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :ends_at,
+                        value: @poll.ends_at.present? ? l(@poll.ends_at.to_date) : nil,
+                        class: "js-calendar-full" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-6 medium-6 column">
+      <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
+    </div>
+  </div>
+
+  <div id="geozones" style="<%= @poll.geozone_restricted? ? '' : 'display:none' %>">
+    <div class="row">
+      <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
+        <div class="small-6 medium-3 column">
+          <%= b.label do %>
+            <%= b.check_box + b.text %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.submit t("admin.polls.#{admin_submit_action(@poll)}.submit_button"),
+                   class: "button success expanded" %>
+    </div>
+  </div>
+<% end %>

@@ -134,7 +134,7 @@ feature 'Residence' do
   end
 
   scenario 'Error when trying to verify a deregistered account' do
-    create(:user, document_number: '12345678Z', document_type: '1', erased_at: Time.now)
+    create(:user, document_number: '12345678Z', document_type: '1', erased_at: Time.current)
 
     login_as(create(:user))
 

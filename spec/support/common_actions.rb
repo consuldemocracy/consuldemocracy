@@ -182,6 +182,39 @@ module CommonActions
     expect(page).to have_content 'Residence verified'
   end
 
+  def officing_verify_residence
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: "1980"
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Document verified with Census'
+  end
+
+  def validate_officer
+    allow_any_instance_of(Officing::ResidenceController).
+    to receive(:validate_officer_assignment).and_return(true)
+  end
+
+  def vote_for_poll(poll)
+    expect(page).to have_content poll.name
+
+    first(".opt.ng-binding").click
+
+    click_button "Continuar"
+
+    if poll.nvotes_poll_id == "128"
+      expect(page).to have_content "La opción que seleccionaste es: Sí"
+    elsif poll.nvotes_poll_id == "136"
+      expect(page).to have_content "La opción que seleccionaste es: A"
+    end
+
+    click_button "Enviar el voto"
+
+    expect(page).to have_content "Voto emitido con éxito"
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
@@ -261,7 +294,7 @@ module CommonActions
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
   end
 
-  def create_successfull_proposals
+  def create_successful_proposals
     [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
      create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end

@@ -1,0 +1,13 @@
+<tr id="booth_<%= booth.id %>" class="booth">
+  <td>
+    <%= booth.name %>
+  </td>
+  <td>
+    <%= booth.location %>
+  </td>
+  <td class="text-right">
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_booth_path(booth),
+                class: "button hollow" %>
+  </td>
+</tr>

@@ -23,7 +23,7 @@ class SpendingProposalsController < ApplicationController
   end
 
   def welcome
-    @proposal_successfull_exists = Proposal.successfull.exists?
+    @proposal_successfull_exists = Proposal.successful.exists?
   end
 
   def select_district

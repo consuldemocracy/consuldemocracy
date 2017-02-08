@@ -65,6 +65,13 @@ describe User do
     end
   end
 
+  describe "#age" do
+    it "is the rounded integer age based on the date_of_birth" do
+      user = create(:user, date_of_birth: 33.years.ago)
+      expect(user.age).to eq(33)
+    end
+  end
+
   describe 'preferences' do
     describe 'email_on_comment' do
       it 'should be false by default' do
@@ -148,6 +155,18 @@ describe User do
       subject.save
       create(:manager, user: subject)
       expect(subject.manager?).to be true
+    end
+  end
+
+  describe "poll_officer?" do
+    it "is false when the user is not a poll officer" do
+      expect(subject.poll_officer?).to be false
+    end
+
+    it "is true when the user is a poll officer" do
+      subject.save
+      create(:poll_officer, user: subject)
+      expect(subject.poll_officer?).to be true
     end
   end
 

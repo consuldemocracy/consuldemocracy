@@ -16,3 +16,7 @@ es:
           confirmation_code: "Código de confirmación"
         email:
           recipient: "Email"
+      officing/residence:
+        document_type: "Tipo documento"
+        document_number: "Numero de documento (incluida letra)"
+        year_of_birth: "Año de nacimiento"

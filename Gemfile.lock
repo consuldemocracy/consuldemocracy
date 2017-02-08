@@ -104,6 +104,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    childprocess (0.6.1)
+      ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
     climate_control (0.1.0)
     cliver (0.3.2)
@@ -166,6 +168,7 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
+    ffi (1.9.17)
     foundation-rails (6.2.3.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -379,6 +382,10 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 2.4)
       wasabi (~> 3.4)
+    selenium-webdriver (3.0.5)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     simplecov (0.12.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -446,6 +453,7 @@ GEM
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
+    websocket (1.2.3)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -519,6 +527,7 @@ DEPENDENCIES
   rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.4)
   savon
+  selenium-webdriver
   sitemap_generator
   social-share-button
   spring

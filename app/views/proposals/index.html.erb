@@ -47,8 +47,8 @@
 
       <% if feature?("probe.plaza") %>
         <%= render "custom/probes/plaza/banner" %>
-      <% elsif @proposal_successfull_exists %>
-        <%= render "proposal_ballots_banner" %>
+      <% elsif @proposal_successful_exists %>
+        <%= render "successful_banner" %>
       <% elsif @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">

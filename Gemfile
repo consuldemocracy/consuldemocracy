@@ -98,6 +98,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'email_spec'
   gem 'timecop'
+  gem 'selenium-webdriver'
 end
 
 group :development do

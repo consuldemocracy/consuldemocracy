@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :forum
   has_one :lock
@@ -137,6 +138,14 @@ class User < ActiveRecord::Base
     manager.present?
   end
 
+  def poll_officer?
+    poll_officer.present?
+  end
+
+  def officing_voter?
+    officing_voter.present?
+  end
+
   def organization?
     organization.present?
   end
@@ -230,6 +239,10 @@ class User < ActiveRecord::Base
     (Setting['min_age_to_participate'] || 16).to_i
   end
 
+  def self.minimum_required_age_for_verification
+    (Setting['min_age_to_verify'] || 16).to_i
+  end
+
   def show_welcome_screen?
     sign_in_count == 1 && unverified? && !organization && !administrator?
   end
@@ -267,6 +280,10 @@ class User < ActiveRecord::Base
     "#{name} (#{email})"
   end
 
+  def age
+    Age.in_years(date_of_birth)
+  end
+
   def save_requiring_finish_signup
     begin
       self.registering_with_oauth = true
@@ -289,6 +306,17 @@ class User < ActiveRecord::Base
     @ability ||= Ability.new(self)
   end
   delegate :can?, :cannot?, to: :ability
+
+  def get_or_create_nvote(poll)
+    nvote = Poll::Nvote.new(poll: poll, user: self)
+
+    if Poll::Nvote.find_by_voter_hash(nvote.generate_message)
+      nvote
+    else
+      nvote.save
+      nvote
+    end
+  end
 
   private
 

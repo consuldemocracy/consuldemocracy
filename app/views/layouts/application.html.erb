@@ -28,7 +28,7 @@
   <body>
     <h1 class="sr-only"><%= setting['org_name'] %></h1>
 
-    <div class="wrapper">
+    <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render 'layouts/header' %>
       <%= render 'layouts/ie_version_too_old' %>
       <%= render 'layouts/flash' %>

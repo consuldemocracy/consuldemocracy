@@ -1,0 +1,12 @@
+<%= back_link_to admin_booths_path %>
+
+<div class="clear"></div>
+
+<h2 class="inline-block">
+  <%= @booth.name %>
+</h2>
+
+<p>
+  <strong><%= t("admin.booths.show.location") %></strong>:
+  <%= @booth.location %>
+</p>

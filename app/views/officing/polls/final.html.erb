@@ -1,0 +1,32 @@
+<h2><%= t("officing.polls.final.title") %></h2>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <th colspan="2"><%= t("officing.polls.final.select_poll") %></th>
+    </thead>
+    <tbody>
+      <% @polls.each do |poll| %>
+        <tr id="<%= dom_id(poll) %>" class="poll">
+          <td>
+            <strong>
+              <%= poll.name %>
+            </strong>
+          </td>
+          <td class="text-right">
+            <%= link_to t("officing.polls.final.add_recount"),
+                        new_officing_poll_final_recount_path(poll),
+                        class: "button hollow" %>
+            <%= link_to t("officing.polls.final.add_results"),
+                        new_officing_poll_result_path(poll),
+                        class: "button hollow" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("officing.polls.final.no_polls") %>
+  </div>
+<% end %>
