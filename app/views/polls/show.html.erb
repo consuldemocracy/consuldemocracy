@@ -7,7 +7,12 @@
       <div class="small-12 medium-9 column padding">
         <%= back_link_to polls_path %>
 
-        <h2><%= @poll.name %></h2>
+        <% if @questions.count == 1 %>
+          <% question = @questions.first %>
+          <h2><%= question.title %></h2>
+        <% else %>
+          <h2><%= @poll.name %></h2>
+        <% end %>
 
         <% if @poll.votable_by?(current_user) %>
           <ol class="margin-top">
