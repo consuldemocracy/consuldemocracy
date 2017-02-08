@@ -88,7 +88,10 @@ feature 'Poll Questions' do
       expect(page).to have_link('Answer this question')
     end
 
-    scenario 'Records participation', :js do
+    xscenario 'Records participation', :js do
+      #Not currently aplicable in this fork, users vote for polls not questions.
+      #In addition, in this fork we use AgoraVoting instead of using Poll::Answers.
+      #Activate once we have an option to vote either with AgoraVoting or Poll::Answers
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two, geozone: geozone, gender: 'female', date_of_birth: 33.years.ago)
 
