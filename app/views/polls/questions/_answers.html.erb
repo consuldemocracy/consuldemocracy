@@ -14,6 +14,14 @@
           class: "button secondary hollow" %>
       <% end %>
     <% end %>
+  <% elsif !user_signed_in? %>
+    <% question.valid_answers.each do |answer| %>
+      <%= link_to answer, new_user_session_path, class: "button secondary hollow" %>
+    <% end %>
+  <%  elsif !current_user.level_two_or_three_verified? %>
+    <% question.valid_answers.each do |answer| %>
+      <%= link_to answer, verification_path, class: "button secondary hollow" %>
+    <% end %>
   <% else %>
     <% question.valid_answers.each do |answer| %>
       <span class="button secondary hollow disabled"><%= answer %></span>
