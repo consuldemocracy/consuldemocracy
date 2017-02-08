@@ -39,11 +39,6 @@ en:
       title: "#HumanRightsPlan"
       text_html: "Participate until <u>November 4</u>!"
   cards:
-    air_quality_plan:
-      title_html: "Draft air quality and climate change plan"
-      text: "Information and communication of the measures proposed in the draft of the new air quality and climate change plan of the city of Madrid."
-      date_html: "Participate until <strong>January 31th</strong>"
-      button: "More information"
     plaza:
       title: "Remodeling Plaza España"
       text: "The preselection of the projects is over. You can already see the results."

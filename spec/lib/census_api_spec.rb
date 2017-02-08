@@ -52,4 +52,24 @@ describe CensusApi do
     end
   end
 
+  describe 'Response' do
+    describe '#date_of_birth' do
+      def make_response_with_date(date_string)
+        CensusApi::Response.new(get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {item: {fecha_nacimiento_string: date_string}}}})
+      end
+
+      it "handles dates in yyyymmdd format as well as ddmmyyyy and even mmddyyyy" do
+        expect(make_response_with_date('12-20-1980').date_of_birth).to eq(Date.new(1980, 12, 20))
+        expect(make_response_with_date('20-12-1980').date_of_birth).to eq(Date.new(1980, 12, 20))
+        expect(make_response_with_date('1980-12-20').date_of_birth).to eq(Date.new(1980, 12, 20))
+      end
+
+      it "handles bogus body dates without throwing an error" do
+        expect(make_response_with_date('50').date_of_birth).to be_nil
+        expect(make_response_with_date('1980').date_of_birth).to be_nil
+        expect(make_response_with_date('potato').date_of_birth).to be_nil
+      end
+    end
+  end
+
 end
