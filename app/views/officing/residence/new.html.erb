@@ -10,11 +10,12 @@
 
 
         <%= f.text_field :document_number,
-                       placeholder: t("officing.residence.new.document_number") %>
+                         placeholder: t("officing.residence.new.document_number"),
+                         autocomplete: "off" %>
       </div>
 
       <div class="date-of-birth small-12 medium-6">
-        <%= f.text_field :year_of_birth %>
+        <%= f.text_field :year_of_birth, type: "number", autocomplete: "off" %>
       </div>
 
       <div class="small-12 medium-6">

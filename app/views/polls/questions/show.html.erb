@@ -28,7 +28,12 @@
           <strong><%= t('poll_questions.show.author') %></strong>
         </span>
         <br>
-        <%= link_to @question.author.name, @question.author %>
+        <% if @question.author_visible_name.present? %>
+          <%= @question.author_visible_name %>
+        <% else %>
+          <%= link_to @question.author.name, @question.author %>
+        <% end %>
+
       </p>
 
       <p>

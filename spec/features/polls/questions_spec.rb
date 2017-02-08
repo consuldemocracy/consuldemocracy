@@ -12,6 +12,19 @@ feature 'Poll Questions' do
     expect(proposal_question.title).to appear_before(normal_question.title)
   end
 
+  scenario 'shows the author visible name instead of a link to the author' do
+    poll = create(:poll)
+    question_with_author = create(:poll_question, poll: poll)
+    question_with_author_visible_name = create(:poll_question, poll: poll, author_visible_name: 'potato')
+
+    visit question_path(question_with_author)
+    expect(page).to have_link(question_with_author.author.name)
+
+    visit question_path(question_with_author_visible_name)
+    expect(page).to_not have_link(question_with_author_visible_name.author.name)
+    expect(page).to have_content(question_with_author_visible_name.author_visible_name)
+  end
+
   context 'Answering' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, geozone_restricted: true, geozone_ids: [geozone.id]) }
