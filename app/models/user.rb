@@ -239,6 +239,10 @@ class User < ActiveRecord::Base
     (Setting['min_age_to_participate'] || 16).to_i
   end
 
+  def self.minimum_required_age_for_verification
+    (Setting['min_age_to_verify'] || 16).to_i
+  end
+
   def show_welcome_screen?
     sign_in_count == 1 && unverified? && !organization && !administrator?
   end

@@ -8,6 +8,7 @@ FactoryGirl.define do
     password            'judgmentday'
     terms_of_service     '1'
     confirmed_at        { Time.current }
+    date_of_birth       { 20.years.ago }
 
     trait :incomplete_verification do
       after :create do |user|
