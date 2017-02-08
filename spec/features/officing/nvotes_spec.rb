@@ -88,13 +88,13 @@ feature 'Officing Nvotes', :selenium do
       expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
     end
 
-    click_link "Finish voting"
+    click_link "Exit voting"
     expect(page).to have_content "Thank you very much for your participation!"
 
     within("#nvotes-main") do
-      click_link "Finish voting"
+      click_link "Yes, exit voting"
     end
-    expect(page).to have_content "please give the device to the Officer"
+    expect(page).to have_content "Officer"
 
     fill_in "officer_password", with: "judgmentday"
     click_button "Enter"
@@ -116,16 +116,16 @@ feature 'Officing Nvotes', :selenium do
       expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
     end
 
-    click_link "Finish voting"
+    click_link "Exit voting"
     within("#nvotes-main") do
-      click_link "Finish voting"
+      click_link "Yes, exit voting"
     end
 
     fill_in "officer_password", with: "not my password"
     click_button "Enter"
 
     expect(page).to have_content "Wrong password"
-    expect(page).to have_content "please give the device to the Officer"
+    expect(page).to have_content "Officer"
   end
 
   scenario "Trying to access unauthorized urls as a voter" do
@@ -143,7 +143,7 @@ feature 'Officing Nvotes', :selenium do
     end
 
     visit officing_root_path
-    expect(page).to have_content "please give the device to the Officer"
+    expect(page).to have_content "Officer"
   end
 
   scenario "Trying to access the officing nvote page as a non poll voter" do
