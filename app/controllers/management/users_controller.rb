@@ -17,9 +17,12 @@ class Management::UsersController < Management::BaseController
     @user.save
     verificado = verificar_residencia
     @user.residence_verified_at = verificado
+    @user.level_two_verified_at = verificado
     @user.verified_at = verificado
+    @user.save
 
     if verificado
+      @user.send_reset_password_instructions
       flash[:notice] = 'Verificación correcta en el Padrón'
       render :show
     else
