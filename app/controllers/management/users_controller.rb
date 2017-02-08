@@ -18,10 +18,15 @@ class Management::UsersController < Management::BaseController
     @user.residence_verified_at = verificado
     @user.verified_at = verificado
 
-    if verificado && @user.save then
-      render :show
+    if verificado
+      flash[:notice] = 'Verificación correcta en el Padrón'
+      if @user.save
+        render :show
+      else
+        flash[:alert] = 'Usuario incorrecto'
+        render :new
+      end
     else
-      flash[:alert] = 'Usuario no verificado en el padrón municipal'
       render :new
     end
   end
@@ -43,29 +48,15 @@ class Management::UsersController < Management::BaseController
       params.require(:user).permit(:document_type, :document_number, :username, :email, :date_of_birth)
     end
 
+    def residence_params
+      { postal_code: '12000' }.merge!(params[:user])
+    end
+
     def destroy_session
       session[:document_type] = nil
       session[:document_number] = nil
     end
 
-    def user_without_email
-      new_password = "aAbcdeEfghiJkmnpqrstuUvwxyz23456789$!".split('').sample(10).join('')
-      @user.password = new_password
-      @user.password_confirmation = new_password
-
-      @user.email = nil
-      @user.confirmed_at = Time.current
-
-      @user.newsletter = false
-      @user.email_on_proposal_notification = false
-      @user.email_digest = false
-      @user.email_on_direct_message = false
-      @user.email_on_comment = false
-      @user.email_on_comment_reply = false
-    end
-
-    def user_with_email
-      @user.skip_password_validation = true
     end
 
 end
