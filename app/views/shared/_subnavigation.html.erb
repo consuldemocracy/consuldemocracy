@@ -18,8 +18,9 @@
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
-                                  polls_path,
-                                  controller_name == "polls",
+                                  first_voting_path,
+                                  controller_name == 'pages' &&
+                                  params[:id] == 'landings/first_voting',
                                   accesskey: "v" %>
       </li>
     <% end %>
