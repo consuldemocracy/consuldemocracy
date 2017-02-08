@@ -3,7 +3,6 @@ class Officing::VotersController < Officing::BaseController
 
   def new
     @user = User.find(params[:id])
-
     @polls = Poll.answerable_by(@user)
   end
 

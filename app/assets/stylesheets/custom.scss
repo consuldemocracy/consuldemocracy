@@ -187,6 +187,8 @@ ul.menu > li > a {
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import 'g1000';
+
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -2954,6 +2956,10 @@ $campaign-yellow: #FFDB19;
         text-transform: uppercase;
       }
 
+      .white {
+        color: white;
+      }
+
       @include breakpoint(large) {
 
         h2 {
@@ -3030,6 +3036,14 @@ $campaign-yellow: #FFDB19;
       .button {
         right: 24px;
       }
+    }
+  }
+
+  .block-red, .block-grey {
+
+    p {
+      font-size: rem-calc(30);
+      line-height: $line-height*1.5;
     }
   }
 

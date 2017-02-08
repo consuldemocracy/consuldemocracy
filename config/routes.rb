@@ -414,7 +414,7 @@ Rails.application.routes.draw do
 
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
-  get '/blog' => redirect('http://diario.madrid.es/participa/')
+  get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
@@ -462,7 +462,8 @@ Rails.application.routes.draw do
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
 
   #Landings
-  get 'vota', to: 'pages#show', id: 'landings/first_voting', as: 'first_voting'
+  get 'vota',  to: 'pages#show', id: 'landings/first_voting', as: 'first_voting'
+  get 'g1000', to: 'pages#show', id: 'landings/g1000',        as: 'g1000'
 
   resources :pages, path: '/', only: [:show]
 end
