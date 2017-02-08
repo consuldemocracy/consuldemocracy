@@ -12,10 +12,15 @@ class Management::UsersController < Management::BaseController
     @user.residence_verified_at = verificado
     @user.verified_at = verificado
 
-    if verificado && @user.save then
-      render :show
+    if verificado
+      flash[:notice] = 'Verificación correcta en el Padrón'
+      if @user.save
+        render :show
+      else
+        flash[:alert] = 'Usuario incorrecto'
+        render :new
+      end
     else
-      flash[:alert] = 'Usuario no verificado en el padrón municipal'
       render :new
     end
   end
@@ -38,13 +43,7 @@ class Management::UsersController < Management::BaseController
     end
 
     def residence_params
-      {
-        document_type: params[:user][:document_type],
-        document_number: params[:user][:document_number],
-        date_of_birth: params[:user][:date_of_birth],
-        postal_code: '12000'
-      }
-
+      { postal_code: '12000' }.merge!(params[:user])
     end
 
     def destroy_session
@@ -53,12 +52,7 @@ class Management::UsersController < Management::BaseController
     end
 
     def verificar_residencia
-      residence =  Verification::Residence.new(residence_params)
-      if residence.save
-        Time.now
-      else
-        nil
-      end
+      Verification::Residence.new(residence_params).save ? Time.now : nil
     end
 
 end
