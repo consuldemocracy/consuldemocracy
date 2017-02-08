@@ -51,7 +51,7 @@ class Management::UsersController < Management::BaseController
 
     def residence_params
       params_for_residence = params[:user].except(:username, :email)
-      { postal_code: '12000' }.merge!(params_for_residence)
+      { postal_code: '12000', terms_of_service: '1' }.merge!(params_for_residence)
     end
 
     def destroy_session
