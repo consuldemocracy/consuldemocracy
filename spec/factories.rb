@@ -486,6 +486,17 @@ FactoryGirl.define do
       allegations_end_date Date.current - 4.days
       final_publication_date Date.current - 2.days
     end
+
+    trait :in_debate_phase do
+      start_date Date.current - 5.days
+      end_date Date.current + 5.days
+      debate_start_date Date.current - 5.days
+      debate_end_date Date.current + 1.days
+      draft_publication_date Date.current + 1.day
+      allegations_start_date Date.current + 2.days
+      allegations_end_date Date.current + 3.days
+      final_publication_date Date.current + 5.days
+    end
   end
 
   factory :legislation_draft_version, class: 'Legislation::DraftVersion' do

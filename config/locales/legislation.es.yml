@@ -84,6 +84,7 @@ es:
       comments:
         comment_button: Publicar respuesta
         comments_title: Respuestas abiertas
+        comments_closed: Fase cerrada
         form:
           leave_comment: Deja tu respuesta
       question:

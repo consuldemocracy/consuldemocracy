@@ -34,6 +34,9 @@ en:
     close: Close
     menu: Menu
   comments:
+    comments_closed: Comments are closed
+    verified_only: To participate %{verify_account}
+    verify_account: verify your account
     comment:
       admin: Administrator
       author: Author
