@@ -470,6 +470,8 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
+      more_info: "More information"
+      already_voted: "You already have participated in this poll."
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
