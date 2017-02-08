@@ -41,6 +41,17 @@ class Officing::Residence
     end
   end
 
+  def store_failed_census_call
+    FailedCensusCall.create({
+      user: user,
+      document_number: document_number,
+      document_type:   document_type,
+      year_of_birth:   year_of_birth,
+      poll_officer:    officer
+    })
+
+  end
+
   def user_exists?
     find_user_by_document.present?
   end
@@ -54,6 +65,7 @@ class Officing::Residence
     return if errors.any?
 
     unless residency_valid?
+      store_failed_census_call
       errors.add(:residence_in_madrid, false)
     end
   end
