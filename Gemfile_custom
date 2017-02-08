@@ -8,5 +8,7 @@ gem 'rspec-autotest', group: [:development, :test]
 gem 'autotest-standalone', group: [:development, :test]
 gem 'non-stupid-digest-assets'
 
+gem 'html2text'
+
 
 gem 'rest-client'

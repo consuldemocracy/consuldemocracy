@@ -48,19 +48,19 @@ module Abilities
         can :create, SpendingProposal
 
         # TODO: no dejar crear si ya se ha creado
-        if user
-           .budget_investments
-           .includes(:budget)
-           .where(budgets: { phase: 'accepting'})
-           .where(budget_investments: { feasibility: ['feasible', 'undecided']}).count < 1
+        # if user
+        #    .budget_investments
+        #    .includes(:budget)
+        #    .where(budgets: { phase: 'accepting'})
+        #    .where(budget_investments: { hidden_at: nil}).count < 1
 
           can :create, Budget::Investment,               budget: { phase: "accepting" }
-        end
+        # end
 
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
-        budgets_current = Budget.where(phase: 'selecting')
-        investment_ids = budgets_current.map{|b| b.investment_ids}.flatten
+        budgets_current = Budget.includes(:investments).where(phase: 'selecting')
+        investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
         if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size <= 3
           can :vote,   Budget::Investment,               budget: { phase: "selecting" }
         end

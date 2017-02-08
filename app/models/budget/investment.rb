@@ -31,7 +31,9 @@ class Budget
     validates :price, presence: { if: :price_required? }
 
     validates :title, length: { in: 4..Budget::Investment.title_max_length }
-    validates :description, length: { maximum: Budget::Investment.description_max_length }
+    # validates :description, length: { maximum: Budget::Investment.description_max_length }
+    validate :description_length
+
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
@@ -257,10 +259,16 @@ class Budget
 
     private
 
-      def set_denormalized_ids
-        self.group_id = heading.try(:group_id) if heading_id_changed?
-        self.budget_id ||= heading.try(:group).try(:budget_id)
-      end
+    def set_denormalized_ids
+      self.group_id ||= self.heading.try(:group_id)
+      self.budget_id ||= self.heading.try(:group).try(:budget_id)
+    end
+
+    def description_length
+      text = Html2Text.convert(description)
+      max = Budget::Investment.description_max_length
+      errors.add(:description, I18n.t('errors.messages.too_long', count: max)) if text.length > max
+    end
 
   end
 end

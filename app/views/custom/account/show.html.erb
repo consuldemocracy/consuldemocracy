@@ -117,6 +117,12 @@
                   <span class="icon-x text-warning"></span>
                   <%= t("verification.organization.not_verified") %>
                 </li>
+              <% else %>
+                <li>
+
+                  <span class="icon-check text-success"></span>&nbsp;
+                  <%= t("verification.residence.permission_success") %>
+                </li>
 
               <% end %>
             </ul>
@@ -133,7 +139,7 @@
                 </li>
               <% else %>
                 <li>
-                  <span class="icon-check text-warning"></span>&nbsp;
+                  <span class="icon-check text-success"></span>&nbsp;
                   <%= t("verification.residence.permission_success") %>
                 </li>
               <% end %>
