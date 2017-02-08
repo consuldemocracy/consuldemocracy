@@ -49,11 +49,11 @@
           </ul>
         <% end %>
         <% if poll.geozones.any? %>
-          <p>
+          <p class="inline-block">
             <small><%= t("polls.index.geozone_info") %></small>
           </p>
         <% end %>
-        <ul class="no-bullet tags">
+        <ul class="no-bullet inline-block tags">
           <% poll.geozones.each do |g| %>
             <li class="inline-block"><span><%= g.name %></span></li>
           <% end %>
