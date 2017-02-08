@@ -90,7 +90,10 @@ header {
   background-image: asset_url('principal.png');
   background-size: 100%;
   background-repeat: no-repeat;
-  @include breakpoint(medium down) {
+  @include breakpoint(small) {
+    height: 100px;
+  }
+  @include breakpoint(medium) {
     height: 380px;
   }
   @include breakpoint(large up) {
@@ -258,4 +261,24 @@ ol.ordered_alpha {
 
 ol.ordered_alpha_up {
   list-style-type: upper-alpha;
+}
+
+.logo {
+  color: black;
+  display: inline-block;
+  font-family: 'Lato' !important;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+.subnavigation ul li a.active {
+  color: black;
+}
+.subnavigation ul li a {
+  color: gray;
+  display: inline-block;
+  line-height: 3rem;
+  position: relative;
+  text-align: left;
+  width: 100%;
 }
