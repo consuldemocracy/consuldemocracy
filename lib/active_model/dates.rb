@@ -4,9 +4,10 @@ module ActiveModel::Dates
     day, month, year = attrs["#{field}(1i)"],
                        attrs["#{field}(2i)"],
                        attrs["#{field}(3i)"]
-
     return nil unless day.present? && month.present? && year.present?
     Date.new(day.to_i, month.to_i, year.to_i)
+  rescue ArgumentError
+    return nil
   end
 
   def remove_date(field, attrs)
