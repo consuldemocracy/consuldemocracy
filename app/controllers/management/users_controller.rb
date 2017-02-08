@@ -8,18 +8,14 @@ class Management::UsersController < Management::BaseController
     @user = User.new(user_params)
     @user.skip_password_validation = true
     @user.terms_of_service = '1'
+    @user.save
     verificado = verificar_residencia
     @user.residence_verified_at = verificado
     @user.verified_at = verificado
 
     if verificado
       flash[:notice] = 'Verificación correcta en el Padrón'
-      if @user.save
-        render :show
-      else
-        flash[:alert] = 'Usuario incorrecto'
-        render :new
-      end
+      render :show
     else
       flash[:alert] = 'Verificación incorrecta en el Padrón'
       render :new
@@ -45,6 +41,7 @@ class Management::UsersController < Management::BaseController
 
     def residence_params
       params_for_residence = params[:user].except(:username, :email)
+      params_for_residence.merge!(user: @user)
       { postal_code: '12000', terms_of_service: '1' }.merge!(params_for_residence)
     end
 
