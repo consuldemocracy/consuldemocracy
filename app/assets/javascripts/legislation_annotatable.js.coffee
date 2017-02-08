@@ -38,6 +38,9 @@ App.LegislationAnnotatable =
 
   renderAnnotationComments: (event) ->
     $('#comments-box').css({top: event.offset - $('.calc-comments').offset().top})
+    if App.LegislationAnnotatable.isMobile()
+      return
+
     $.ajax
       method: "GET"
       url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments"
@@ -47,6 +50,14 @@ App.LegislationAnnotatable =
     event.preventDefault()
     event.stopPropagation()
 
+    if App.LegislationAnnotatable.isMobile()
+      annotation_url = $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+      window.location.href = annotation_url + "/annotations/" + $(this).data('annotation-id')
+      return
+
+    $('[data-annotation-id]').removeClass('current-annotation')
+    $(this).addClass('current-annotation')
+
     App.LegislationAllegations.show_comments()
     $("#comments-box").show()
     $.event.trigger
@@ -54,6 +65,9 @@ App.LegislationAnnotatable =
       annotation_id: $(event.target).data("annotation-id")
       annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
       offset: $(event.target).offset()["top"]
+
+  isMobile: () ->
+    return window.innerWidth <= 652
 
   viewerExtension: (viewer) ->
     viewer._onHighlightMouseover = (event) ->

@@ -97,3 +97,12 @@
     }
   }
 }
+
+.annotator-hl {
+  cursor: pointer;
+  background: rgba(255, 255, 10, 0.2);
+}
+
+.current-annotation {
+  text-decoration: underline;
+}
