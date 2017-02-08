@@ -2,9 +2,9 @@ require 'rails_helper'
 
 feature 'Officing Nvotes', :selenium do
   let(:officer) { create(:poll_officer) }
-  let!(:officer_assignment) { create(:poll_officer_assignment, officer: officer) }
 
   background do
+    validate_officer
     login_as(officer.user)
     create(:geozone, census_code: "01")
   end
@@ -16,17 +16,10 @@ feature 'Officing Nvotes', :selenium do
     visit new_officing_residence_path
     officing_verify_residence
 
-    expect(::Poll::Nvote.count).to eq(0)
     click_link "Vote on tablet"
 
     nvotes = find(".agoravoting-voting-booth-iframe")
     within_frame(nvotes) do
-      expect(page).to have_content "Votación de prueba"
-
-      if page.has_button?("Empezar a votar")
-        click_button "Empezar a votar"
-      end
-
       expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
 
       first(".opt.ng-binding").click
@@ -36,11 +29,12 @@ feature 'Officing Nvotes', :selenium do
       expect(page).to have_content "La opción que seleccionaste es: Sí"
       click_button "Enviar el voto"
 
-      expect(page).to have_content "Enviando la papeleta cifrada al servidor"
       expect(page).to have_content "Voto emitido con éxito"
     end
-    expect(::Poll::Nvote.count).to eq(1)
-    nvote = ::Poll::Nvote.last
+
+    expect(Poll::Nvote.count).to eq(1)
+    nvote = Poll::Nvote.last
+
     expect(nvote.poll_id).to eq(poll.id)
     expect(nvote.user_id).to eq(user.id)
     expect(nvote.nvotes_poll_id).to eq(poll.nvotes_poll_id)
@@ -48,13 +42,11 @@ feature 'Officing Nvotes', :selenium do
 
   scenario "Voting all answerable polls" do
     user  = create(:user, :in_census, id: rand(9999))
-    poll1 = create(:poll)
-    poll2 = create(:poll)
+    poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
+    poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
     visit new_officing_residence_path
     officing_verify_residence
-
-    expect(::Poll::Nvote.count).to eq(0)
 
     click_link "Vote on tablet"
 
@@ -72,11 +64,12 @@ feature 'Officing Nvotes', :selenium do
       vote_for_poll(poll2)
     end
 
-    expect(::Poll::Nvote.count).to eq(2)
-    nvote_1 = ::Poll::Nvote.first
+    expect(Poll::Nvote.count).to eq(2)
+    nvote_1 = Poll::Nvote.first
     expect(nvote_1.poll_id).to eq(poll1.id)
     expect(nvote_1.user_id).to eq(user.id)
-    nvote_2 = ::Poll::Nvote.last
+
+    nvote_2 = Poll::Nvote.last
     expect(nvote_2.poll_id).to eq(poll2.id)
     expect(nvote_2.user_id).to eq(user.id)
   end
@@ -92,7 +85,7 @@ feature 'Officing Nvotes', :selenium do
 
     nvotes = find(".agoravoting-voting-booth-iframe")
     within_frame(nvotes) do
-      expect(page).to have_content "Votación de prueba"
+      expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
     end
 
     click_link "Finish voting"
@@ -120,7 +113,7 @@ feature 'Officing Nvotes', :selenium do
 
     nvotes = find(".agoravoting-voting-booth-iframe")
     within_frame(nvotes) do
-      expect(page).to have_content "Votación de prueba"
+      expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
     end
 
     click_link "Finish voting"
@@ -146,7 +139,7 @@ feature 'Officing Nvotes', :selenium do
 
     nvotes = find(".agoravoting-voting-booth-iframe")
     within_frame(nvotes) do
-      expect(page).to have_content "Votación de prueba"
+      expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
     end
 
     visit officing_root_path

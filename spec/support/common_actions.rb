@@ -192,24 +192,26 @@ module CommonActions
     expect(page).to have_content 'Document verified with Census'
   end
 
+  def validate_officer
+    allow_any_instance_of(Officing::ResidenceController).
+    to receive(:validate_officer_assignment).and_return(true)
+  end
+
   def vote_for_poll(poll)
-    #Use different poll once we have different polls in Nvotes
-    expect(page).to have_content "Votación de prueba"
-
-    if page.has_button?("Empezar a votar")
-      click_button "Empezar a votar"
-    end
-
-    expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
+    expect(page).to have_content poll.name
 
     first(".opt.ng-binding").click
 
     click_button "Continuar"
 
-    expect(page).to have_content "La opción que seleccionaste es: Sí"
+    if poll.nvotes_poll_id == "128"
+      expect(page).to have_content "La opción que seleccionaste es: Sí"
+    elsif poll.nvotes_poll_id == "136"
+      expect(page).to have_content "La opción que seleccionaste es: A"
+    end
+
     click_button "Enviar el voto"
 
-    expect(page).to have_content "Enviando la papeleta cifrada al servidor"
     expect(page).to have_content "Voto emitido con éxito"
   end
 
