@@ -21,4 +21,9 @@ module CommonActions
     check "user_terms_of_service"
   end
 
+  def validate_officer
+    allow_any_instance_of(Officing::ResidenceController).
+    to receive(:validate_officer_assignment).and_return(true)
+  end
+
 end
