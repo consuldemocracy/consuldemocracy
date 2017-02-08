@@ -9,8 +9,6 @@ feature 'Nvotes' do
     login_as(user)
     visit poll_path(poll)
 
-    click_link "Votar con Nvotes"
-
     nvotes = find(".agoravoting-voting-booth-iframe")
     within_frame(nvotes) do
       expect(page).to have_content "Votación de prueba"
