@@ -455,7 +455,7 @@ en:
       participate_button: "Participate in this poll"
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
-      geozone_info: "Only can participate people in the Census of: "
+      geozone_info: "Can participate people in the Census of: "
       can_answer: "You can participate in this poll!"
       cant_answer: "This poll is not available on your geozone"
       cant_answer_not_logged_in: "You must sign in or sign up to participate"
