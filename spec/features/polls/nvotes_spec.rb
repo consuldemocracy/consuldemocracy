@@ -13,8 +13,6 @@ feature 'Nvotes' do
 
     nvotes = find(".agoravoting-voting-booth-iframe")
     within_frame(nvotes) do
-      expect(page).to have_content "Votación de prueba"
-
       expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
 
       first(".opt.ng-binding").click
