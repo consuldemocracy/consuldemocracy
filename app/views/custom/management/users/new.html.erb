@@ -28,8 +28,8 @@
               placeholder: t('management.email_label') %>
         </div>
       </div>
-      <div class="row">
-        <div class="date-of-birth small-12 medium-12 clear">
+      <div class="row verification">
+        <div class="date-of-birth small-12 medium-12 columns">
           <%= f.label t("verification.residence.new.date_of_birth") %>
           <%= f.date_select :date_of_birth,
                             prompt: true,
