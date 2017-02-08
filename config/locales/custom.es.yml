@@ -72,8 +72,10 @@ es:
     investment_title: "Proyecto de Presupuestos participativos"
     investment_info: "Decide a qué se destina una parte del presupuesto municipal."
   nvotes:
-    thanks: "¡Muchas gracias por participar en la votación!"
-    finish: "Terminar votación"
+    can_participate: "Puedes participar en las siguientes votaciones:"
+    thanks: "¡Muchas gracias por participar!"
+    exit: "Salir de la votación"
+    finish: "Sí, salir de la votación"
     officer_title: "Presidente de mesa"
-    officer_message_html: "Gracias por su colaboración, <strong>entregue el dispositivo al Presidente de mesa</strong>."
     tablet: "Votar en tablet"
+    are_you_sure: "¿Estás seguro de que has terminado?"
