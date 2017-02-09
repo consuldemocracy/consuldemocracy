@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208160130) do
+ActiveRecord::Schema.define(version: 20170208175122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -475,6 +475,8 @@ ActiveRecord::Schema.define(version: 20170208160130) do
     t.datetime "deleted_at"
     t.string   "nvotes_poll_id"
     t.string   "voter_hash"
+    t.integer  "officer_assignment_id"
+    t.integer  "booth_assignment_id"
   end
 
   add_index "poll_nvotes", ["deleted_at"], name: "index_poll_nvotes_on_deleted_at", using: :btree
@@ -1008,6 +1010,8 @@ ActiveRecord::Schema.define(version: 20170208160130) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
+  add_foreign_key "poll_nvotes", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_nvotes", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
   add_foreign_key "poll_partial_results", "users", column: "author_id"
   add_foreign_key "poll_questions", "polls"
