@@ -55,8 +55,20 @@ header {
 
 .top-bar {
   background: $white !important;
+  color: black;
 }
 
+.top-bar .menu-icon.dark::after, .top-bar .menu-icon.dark:hover::after {
+  background: black;
+  box-shadow: 0 7px 0 black, 0 14px 0 black;
+}
+.top-bar ul.menu > li a {
+    color: black;
+}
+
+.logo-small {
+  max-width: 60%;
+}
 .custom_item_1_title {
   color: #AE997E;
   font-family: "Arvo Bold" !important;
