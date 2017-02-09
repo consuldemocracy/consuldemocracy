@@ -1,5 +1,6 @@
 va:
   budgets:
+    button_text: Participa als pressupostos de la teva ciutat
     ballots:
       show:
         title: Mis votos
