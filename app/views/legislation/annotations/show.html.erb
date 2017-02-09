@@ -8,6 +8,10 @@
   <div class="draft-panels small-12 column row">
     <%= render 'version_chooser', process: @process, draft_version: @draft_version %>
 
+    <div class="social-share-full">
+      <%= render '/legislation/shared/share_buttons', title: @annotation.quote %>
+    </div>
+
     <div class="row">
       <div class="small-12 medium-12 column legislation-comment">
         <div class="annotation-comment">
