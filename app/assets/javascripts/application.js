@@ -52,6 +52,7 @@
 //= require markdown-it
 //= require markdown_editor
 //= require cocoon
+//= require legislation_admin
 //= require legislation
 //= require legislation_allegations
 //= require legislation_annotatable
@@ -83,6 +84,7 @@ var initialize_modules = function() {
   App.Banners.initialize();
   App.SocialShare.initialize();
   App.MarkdownEditor.initialize();
+  App.LegislationAdmin.initialize();
   App.LegislationAllegations.initialize();
   App.Legislation.initialize();
   if ( $(".legislation-annotatable").length )
