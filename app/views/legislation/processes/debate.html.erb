@@ -1,0 +1,25 @@
+<% provide :title do %><%= @process.title %><% end %>
+
+<%= render 'legislation/processes/header', process: @process, header: :full %>
+
+<%= render 'key_dates', process: @process, phase: :debate %>
+
+<div class="row">
+  <div class="debate-chooser">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <div class="debate-list">
+          <% if @process.questions.empty? %>
+            <p><%= t('.empty_questions') %></p>
+          <% else %>
+            <%= render @process.questions %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <div class="debate-info"><%= t('.participate') %></div>
+      </div>
+    </div>
+  </div>
+</div>

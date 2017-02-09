@@ -1,10 +1,10 @@
-<nav class="legislation-process-categories">  
+<nav class="legislation-process-categories">
   <div class="legislation-process-list">
     <ul>
       <%= render 'legislation/processes/key_dates_svg' %>
-      
+
       <li <%= "class=active" if phase == :debate %>>
-        <%= link_to process do %>
+        <%= link_to legislation_process_debate_path(process) do %>
           <h4><%= t('legislation.processes.shared.debate_dates') %></h4>
           <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
         <% end %>

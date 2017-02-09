@@ -8,8 +8,18 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def show
+    if @process.show_phase?(:allegations) && draft_version = @process.draft_versions.published.last
+      redirect_to legislation_process_draft_version_path(@process, draft_version)
+    else
+      redirect_to legislation_process_debate_path(@process)
+    end
+  end
+
+  def debate
+    phase :debate
+
     if @process.show_phase?(:debate)
-      render :show
+      render :debate
     else
       render :phase_not_open
     end
