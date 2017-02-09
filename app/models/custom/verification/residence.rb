@@ -17,7 +17,6 @@ class Verification::Residence
   end
 
   def save
-    raise "No queremos salvar"
     return false unless valid?
     user.update(document_number:       document_number,
                 document_type:         document_type,
