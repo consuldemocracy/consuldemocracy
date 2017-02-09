@@ -26,6 +26,9 @@ class Verification::Residence
 
   def save
     return false unless valid?
+
+    user.take_votes_if_erased_document(document_number, document_type)
+
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 geozone:               self.geozone,
@@ -40,7 +43,7 @@ class Verification::Residence
   end
 
   def document_number_uniqueness
-    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where(document_number: document_number).any?
+    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.active.where(document_number: document_number).any?
   end
 
   def store_failed_attempt
