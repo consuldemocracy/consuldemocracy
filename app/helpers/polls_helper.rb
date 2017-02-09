@@ -28,7 +28,7 @@ module PollsHelper
 
   def poll_simulation_dates_option
     options = []
-    simulation_dates = [Date.new(2017, 2, 5), Date.new(2017, 2, 6), Date.new(2017, 2, 7)]
+    simulation_dates = [Date.new(2017, 2, 5), Date.new(2017, 2, 6), Date.new(2017, 2, 7), Date.new(2017, 2, 9)]
     simulation_dates.each do |date|
       name = "#{I18n.t("polls.simulation_date")} #{l(date, format: :long)}"
       options << ([name, l(date)])
