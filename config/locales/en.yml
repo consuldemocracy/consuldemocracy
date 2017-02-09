@@ -455,7 +455,7 @@ en:
       participate_button: "Participate in this poll"
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
-      geozone_info: "Only can participate people in the Census of: "
+      geozone_info: "Can participate people in the Census of: "
       can_answer: "You can participate in this poll!"
       cant_answer: "This poll is not available on your geozone"
       cant_answer_not_logged_in: "You must sign in or sign up to participate"
@@ -470,6 +470,8 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
+      more_info: "More information"
+      already_voted: "You already have participated in this poll."
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"

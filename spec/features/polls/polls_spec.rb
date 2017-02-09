@@ -73,12 +73,10 @@ feature 'Polls' do
       create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       visit poll_path(poll)
 
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
       expect(page).to have_content('You must Sign in or Sign up to participate')
 
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
+      expect(page).to have_link('Han Solo', href: new_user_session_path)
+      expect(page).to have_link('Chewbacca', href: new_user_session_path)
     end
 
     scenario 'Level 1 users' do
@@ -90,11 +88,8 @@ feature 'Polls' do
 
       expect(page).to have_content('You must verify your account in order to answer')
 
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
-
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
+      expect(page).to have_link('Han Solo', href: verification_path)
+      expect(page).to have_link('Chewbacca', href: verification_path)
     end
 
     scenario 'Level 2 users in an incoming poll' do
@@ -150,8 +145,10 @@ feature 'Polls' do
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
-      expect(page).to have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to have_selector('.booth-container')
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
     end
 
     scenario 'Level 2 users reading a all-geozones poll' do
@@ -159,11 +156,16 @@ feature 'Polls' do
       login_as(create(:user, :level_two))
       visit poll_path(poll)
 
-      expect(page).to have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to have_selector('.booth-container')
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
     end
 
-    scenario 'Level 2 users who have already answered' do
+    xscenario 'Level 2 users who have already answered' do
+      #Not currently aplicable in this fork, users vote for polls not questions.
+      #In addition, in this fork we use AgoraVoting instead of using Poll::Answers.
+      #Activate once we have an option to vote either with AgoraVoting or Poll::Answers
       question = create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two)
       create(:poll_answer, question: question, author: user, answer: 'Chewbacca')
@@ -184,10 +186,10 @@ feature 'Polls' do
       login_as user
       visit poll_path(poll)
 
-      click_link 'Han Solo'
+      expect(page).to have_selector('.booth-container')
 
       expect(page).to_not have_link('Han Solo')
-      expect(page).to have_link('Chewbacca')
+      expect(page).to_not have_link('Chewbacca')
     end
 
   end

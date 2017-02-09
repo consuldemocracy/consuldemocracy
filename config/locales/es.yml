@@ -455,7 +455,7 @@ es:
       participate_button: "Participar en esta votación"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
-      geozone_info: "Solo pueden participar las personas empadronadas en: "
+      geozone_info: "Pueden participar las personas empadronadas en: "
       can_answer: "¡Puedes participar en esta votación!"
       cant_answer: "Esta votación no está disponible en tu zona"
       cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
@@ -470,6 +470,8 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
+      more_info: "Más información"
+      already_voted: "Ya has participado en esta votación."
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
