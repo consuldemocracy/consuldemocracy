@@ -27,4 +27,16 @@ class Legislation::Question < ActiveRecord::Base
   def answer_for_user(user)
     answers.where(user: user).first
   end
+
+  def comments_for_verified_residents_only?
+    true
+  end
+
+  def comments_closed?
+    !comments_open?
+  end
+
+  def comments_open?
+    process.open_phase?(:debate)
+  end
 end

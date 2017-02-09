@@ -75,4 +75,22 @@ module CommentsHelper
     end
   end
 
+  def require_verified_resident_for_commentable?(commentable, current_user)
+    return false if current_user.administrator? || current_user.moderator?
+
+    commentable.respond_to?(:comments_for_verified_residents_only?) && commentable.comments_for_verified_residents_only? && !current_user.residence_verified?
+  end
+
+  def comments_closed_for_commentable?(commentable)
+    commentable.respond_to?(:comments_closed?) && commentable.comments_closed?
+  end
+
+  def comments_closed_text(commentable)
+    if commentable.class == Legislation::Question
+      t("legislation.questions.comments.comments_closed")
+    else
+      t("comments.comments_closed")
+    end
+  end
+
 end

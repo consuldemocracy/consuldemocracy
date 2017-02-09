@@ -84,6 +84,7 @@ en:
       comments:
         comment_button: Publish answer
         comments_title: Open answers
+        comments_closed: Closed phase
         form:
           leave_comment: Leave your answer
       question:

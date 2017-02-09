@@ -10,7 +10,8 @@ feature "Notifications" do
   let(:user) { create :user }
   let(:debate) { create :debate, author: author }
   let(:proposal) { create :proposal, author: author }
-  let(:legislation_question) { create(:legislation_question, author: administrator) }
+  let(:process) { create :legislation_process, :in_debate_phase }
+  let(:legislation_question) { create(:legislation_question, process: process, author: administrator) }
   let(:legislation_annotation) { create(:legislation_annotation, author: author) }
 
   scenario "User commented on my debate", :js do
@@ -36,7 +37,8 @@ feature "Notifications" do
   end
 
   scenario "User commented on my legislation question", :js do
-    login_as user
+    verified_user = create(:user, :level_two)
+    login_as verified_user
     visit legislation_process_question_path legislation_question.process, legislation_question
 
     fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I answered your question"

@@ -2,8 +2,9 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
-  let(:user)   { create :user }
-  let(:legislation_question) { create :legislation_question }
+  let(:user)   { create :user, :level_two }
+  let(:process) { create :legislation_process, :in_debate_phase }
+  let(:legislation_question) { create :legislation_question, process: process }
 
   scenario 'Index' do
     3.times { create(:comment, commentable: legislation_question) }
@@ -181,9 +182,27 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content "Can't be blank"
   end
 
+  scenario "Unverified user can't create comments", :js do
+    unverified_user = create :user
+    login_as(unverified_user)
+
+    visit legislation_process_question_path(legislation_question.process, legislation_question)
+
+    expect(page).to have_content "To participate verify your account"
+  end
+
+  scenario "Can't create comments if debate phase is not open", :js do
+    process.update_attributes(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.days)
+    login_as(user)
+
+    visit legislation_process_question_path(legislation_question.process, legislation_question)
+
+    expect(page).to have_content "Closed phase"
+  end
+
   scenario 'Reply', :js do
     citizen = create(:user, username: 'Ana')
-    manuela = create(:user, username: 'Manuela')
+    manuela = create(:user, :level_two, username: 'Manuela')
     comment = create(:comment, commentable: legislation_question, user: citizen)
 
     login_as(manuela)
@@ -264,7 +283,7 @@ feature 'Commenting legislation questions' do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    legislation_question = create(:legislation_question, title: "Should we change the world?")
+    legislation_question = create(:legislation_question, process: process, title: "Should we change the world?")
     comment = create(:comment, commentable: legislation_question)
 
     login_as(user)
@@ -278,7 +297,6 @@ feature 'Commenting legislation questions' do
   end
 
   scenario "Erasing a comment's author" do
-    legislation_question = create(:legislation_question)
     comment = create(:comment, commentable: legislation_question, body: 'this should be visible')
     comment.user.erase
 
@@ -290,7 +308,6 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Submit button is disabled after clicking', :js do
-    legislation_question = create(:legislation_question)
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
