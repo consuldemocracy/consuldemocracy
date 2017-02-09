@@ -18,10 +18,10 @@ class Management::UsersController < Management::BaseController
     # @user.save
 
     verificado = verificar_residencia
-    @user.residence_verified_at = verificado
-    @user.level_two_verified_at = verificado
-    @user.verified_at = verificado
-    if false && @user.save
+    if verificado && @user.save
+      @user.residence_verified_at = verificado
+      @user.level_two_verified_at = verificado
+      @user.verified_at = verificado
       @user.send_reset_password_instructions
       flash[:notice] = 'Verificación correcta en el Padrón'
       render :show
@@ -60,13 +60,13 @@ class Management::UsersController < Management::BaseController
     end
 
     def verificar_residencia
-      # verificacion = Verification::Residence.new(residence_params)
-      verificacion = PadronCastellonApi.new.call(params[:user][:document_type], params[:user][:document_number])
+      verificacion = Verification::Residence.new(residence_params)
+      # verificacion = PadronCastellonApi.new.call(params[:user][:document_type], params[:user][:document_number])
       if verificacion.valid?
-        return Time.zone.now
-      else
-        return nil
-      end
+         return Time.zone.now
+       else
+         return nil
+       end
     end
 
 end

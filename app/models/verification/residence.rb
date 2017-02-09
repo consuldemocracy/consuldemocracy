@@ -47,13 +47,15 @@ class Verification::Residence
   end
 
   def store_failed_attempt
-    FailedCensusCall.create(
-      user: user,
-      document_number: document_number,
-      document_type: document_type,
-      date_of_birth: date_of_birth,
-      postal_code: postal_code
-    )
+    if user.persisted?
+      FailedCensusCall.create({
+        user: user,
+        document_number: document_number,
+        document_type:   document_type,
+        date_of_birth:   date_of_birth,
+        postal_code:     postal_code
+      })
+    end
   end
 
   def geozone
