@@ -25,7 +25,9 @@ class Verification::Residence
                 gender:                gender,
                 residence_verified_at: Time.current,
                 confirmed_at: Time.current,
-                verified_at: Time.current)
+                verified_at: Time.current,
+                unconfirmed_phone: '-',
+                confirmed_phone: '-')
   end
 
   private

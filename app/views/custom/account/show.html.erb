@@ -112,14 +112,13 @@
 
           <% if @account.organization? %>
             <ul>
-              <% if !current_user.level_two_verified? %>
+              <% if !current_user.level_two_verified? || !current_user.organization.verified? %>
                 <li>
                   <span class="icon-x text-warning"></span>
                   <%= t("verification.organization.not_verified") %>
                 </li>
               <% else %>
                 <li>
-
                   <span class="icon-check text-success"></span>&nbsp;
                   <%= t("verification.residence.permission_success") %>
                 </li>
@@ -146,12 +145,6 @@
             </ul>
           <% end %>
 
-
-          <!-- <p>
-            <span><%= t("account.show.user_permission_verify_info") %></span>
-            <br>
-            <%= t("account.show.user_permission_verify") %>
-          </p> -->
 
           <% unless @account.organization? %>
             <div>
