@@ -10,7 +10,7 @@
   <div class="large-8 small-12 column">
       <%= markdown t('budgets.header_body_principal_1') %>
       <% if @current_budget.present? %>
-        <%= link_to t('budgets.index_title'), budget_path(@current_budget), class: "button" %>
+        <%= link_to t('budgets.button_text'), budget_path(@current_budget), class: "button" %>
       <% end %>
       <%= markdown t('budgets.header_body_principal_2') %>
   </div>

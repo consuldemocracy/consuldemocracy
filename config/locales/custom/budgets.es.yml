@@ -1,5 +1,6 @@
 es:
   budgets:
+    button_text: Participa en los presupuestos de tu ciudad
     ballots:
       show:
         title: Mis votos
