@@ -6,7 +6,7 @@
     <div class="top-bar">
 
       <%# link_to setting['org_name'], root_path, class: "logo show-for-small-only text-danger" %>
-      <%= link_to image_tag('logo.svg'), root_path, class: "show-for-small-only" %>
+      <%= link_to image_tag('logo.svg', class: 'logo-small'), root_path, class: "show-for-small-only" %>
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
@@ -27,6 +27,10 @@
         </div>
 
         <div class="top-bar-right">
+          <ul class="menu">
+            <%= render "shared/admin_login_items" %>
+            <%= render "devise/menu/login_items" %>
+          </ul>
           <div class="show-for-small-only">
             <div class="subnavigation row">
               <%= render "shared/subnavigation" %>
@@ -36,11 +40,6 @@
       </div>
     </div>
   </div>
-          <div class="show-for-small-only">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
-            </div>
-          </div>
 
   <div class="subnavigation expanded">
     <div class="row">
