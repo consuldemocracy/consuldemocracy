@@ -1,0 +1,28 @@
+<p><%= t("management.organization.create_organization.info") %></p>
+<% resource = @user %>
+<% provide :title do %><%= t("management.organization.create_organization.title") %><% end %>
+
+ <%= form_for(resource, as: :user, url: management_organizations_path) do |f| %>
+   <%= render 'shared/errors', resource: resource %>
+   <div class="row">
+     <div class="small-12 column">
+
+      <%= f.fields_for :organization do |fo| %>
+        <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("devise_views.organizations.registrations.new.organization_name_label") %>
+        <%= fo.label :responsible_name %>
+        <p class="note"><%= t("devise_views.organizations.registrations.new.responsible_name_note") %></p>
+        <%= fo.text_field :responsible_name, placeholder: t("devise_views.organizations.registrations.new.responsible_name_label"), maxlength: Organization.responsible_name_max_length, label: false %>
+      <% end %>
+
+      <%= f.email_field :email, placeholder: t("devise_views.organizations.registrations.new.email_label") %>
+
+      <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label") %>
+
+      <%= f.invisible_captcha :address %>
+
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("management.organization.create_organization.submit"), class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+<% end %>
