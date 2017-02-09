@@ -7,9 +7,6 @@ class Legislation::Process < ActiveRecord::Base
   has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
 
   validates :title, presence: true
-  validates :description, presence: true
-  validates :target, presence: true
-  validates :how_to_participate, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :debate_start_date, presence: true
