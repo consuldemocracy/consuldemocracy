@@ -370,6 +370,20 @@ describe User do
       end
 
     end
+
+    describe "erased" do
+
+      it "returns users that have been erased" do
+        user1 = create(:user, erased_at: Time.current)
+        user2 = create(:user, erased_at: Time.current)
+        user3 = create(:user, erased_at: nil)
+
+        expect(User.erased).to include(user1)
+        expect(User.erased).to include(user2)
+        expect(User.erased).to_not include(user3)
+      end
+
+    end
   end
 
   describe "self.search" do
