@@ -5,7 +5,7 @@
     <%= t("admin.polls.show.no_recounts") %>
   </div>
 <% else %>
-  <table class="margin">
+  <table class="fixed margin">
     <thead>
       <th><%= t("admin.polls.show.table_booth_name") %></th>
       <th class="text-center"><%= t("admin.polls.show.table_recounts") %></th>
@@ -19,16 +19,20 @@
               <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: 'tab-recounts') %>
             </strong>
           </td>
-          <% if booth_assignment.recounts.any? %>
-            <td class="text-center"><%= booth_assignment.recounts.to_a.sum(&:count) %></td>
-          <% else %>
-            <td class="text-center"> - </td>
-          <% end %>
-          <% if booth_assignment.final_recounts.any? %>
-            <td class="text-center"><strong><%= booth_assignment.final_recounts.to_a.sum(&:count) %></strong></td>
-          <% else %>
-            <td class="text-center"> - </td>
-          <% end %>
+          <td class="text-center">
+            <% if booth_assignment.recounts.any? %>
+              <%= booth_assignment.recounts.to_a.sum(&:count) %>
+            <% else %>
+              <span>-</span>
+            <% end %>
+          </td>
+          <td class="text-center">
+            <% if booth_assignment.final_recounts.any? %>
+              <strong><%= booth_assignment.final_recounts.to_a.sum(&:count) %></strong>
+            <% else %>
+              <span>-</span>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

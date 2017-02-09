@@ -1,4 +1,10 @@
-<table>
+<table class="fixed">
+  <thead>
+    <tr>
+      <th><%= t('admin.questions.index.table_proposal') %></th>
+      <th class="text-right"><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @proposals.each do |proposal| %>
       <tr id="<%= dom_id(proposal) %>">
