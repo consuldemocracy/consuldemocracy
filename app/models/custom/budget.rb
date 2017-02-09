@@ -8,4 +8,12 @@ class Budget < ActiveRecord::Base
     current.last
   end
 
+  def can_create_investment_by_user(user)
+    if user.organization? && !user.organization.verified?
+      return :association_not_verified
+    else
+      return :already_created
+    end
+  end
+
 end
