@@ -3278,21 +3278,28 @@ p.can-participate-info {
   border: 0
 }
 
+.nvotes-tablet-sidebar {
+  background: white;
+}
+
 .nvotes ul.tabs {
+  border: 0;
+  margin-bottom: 0;
 
   li {
+    border: 1px solid $border;
+    margin: $line-height/2 $line-height/2 0;
     position: relative;
 
     a {
       display: block;
       padding: $line-height/2;
-      padding-left: $line-height*1.5;
     }
 
-    &:before {
-      content: "\6c";
+    &:after {
+      content: "\63";
       font-family: 'icons';
-      left: 12px;
+      right: 12px;
       position: absolute;
       top: 12px;
     }
@@ -3300,9 +3307,9 @@ p.can-participate-info {
     &.is-active {
       background: $info-bg;
 
-      &:before {
+      &:after {
         color: $brand;
-        content: "\59";
+        content: "\61";
       }
 
       a {
