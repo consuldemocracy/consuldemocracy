@@ -7,6 +7,9 @@ fr:
       comment:
         one: "Commentaire"
         other: "Commentaires"
+      budget/investment:
+        one: "un projet"
+        other: "projets"
       debate:
         one: "Débat"
         other: "Débats"
@@ -47,18 +50,16 @@ fr:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
+        heading_id: "Section du budget"
+        title: "Nom du projet"
+        description: "Description du projet"
+        external_url: "URL externe"
+        location: "Localisation exacte"
+        administrator_id: "Administrateur"
         description: "Description"
-        external_url: "External url"
-        location: "Location"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        heading_id: "Heading"
-        title: "Title"
-        location: "Location"
-        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        external_url: "Lien vers une documentation externe"
+        heading_id: "Site concerné"
+        organization_name: "Si vous représentez un collectif ou une organisation, écrivez son nom"
 
       comment:
         body: "Commentaire"

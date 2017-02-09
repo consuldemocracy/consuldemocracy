@@ -83,7 +83,7 @@ fr:
     budget_investments:
       alert:
         unverified_user: L'utilisateur n'est pas vérifié
-      create: Créer un budget d'investissement
+      create: Déposer un projet
       filters:
         unfeasible  : Investissement irréalisable
         heading : Concept
