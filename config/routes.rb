@@ -453,6 +453,7 @@ Rails.application.routes.draw do
   get 'proceso/plan-calidad-aire',                  to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
   get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
   get 'proceso/distrito-villa-de-vallecas',         to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
+  get 'proceso/linea-madrid',                       to: 'pages#show', id: 'processes/linea_madrid/index',     as: 'linea_madrid'
 
   #Budgets meetings
   get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
