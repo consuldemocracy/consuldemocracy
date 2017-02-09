@@ -8,12 +8,16 @@ class Verification::Residence
   def residence_in_castellon
     if !residency_valid?
       errors.add(:residence_in_castellon, false) if terms_of_service != '0'
-      store_failed_attempt
-      Lock.increase_tries(user)
+      if user.persisted?
+        store_failed_attempt
+        Lock.increase_tries(user)
+      end
+
     end
   end
 
   def save
+    raise "No queremos salvar"
     return false unless valid?
     user.update(document_number:       document_number,
                 document_type:         document_type,
@@ -35,6 +39,7 @@ class Verification::Residence
       # TODO: Errores en el Padron @census_api_response.postal_code == postal_code &&
       @census_api_response.valid? &&
         @census_api_response.date_of_birth == date_of_birth
+
     end
 
     def valid_postal_code?

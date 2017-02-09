@@ -4,9 +4,6 @@ module Abilities
 
     def initialize(user)
 
-
-
-
       self.merge Abilities::Everyone.new(user)
 
       can [:read, :update], User, id: user.id

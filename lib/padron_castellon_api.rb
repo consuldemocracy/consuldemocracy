@@ -90,7 +90,10 @@ class PadronCastellonApi
     def binding_response(document_hash, response_hash)
       ret = {}
       response_hash[:target].each do |rh|
-        return rh if rh[:HABNUMIDE] == document_hash[:dni]
+        # return rh if rh[:HABNUMIDE] == document_hash[:dni]
+        a = rh[:HABNUMIDE] == document_hash[:dni]
+        puts "#{rh[:HABNUMIDE] == document_hash[:dni]}"
+        return rh if a
       end
       ret
     end
@@ -100,7 +103,7 @@ class PadronCastellonApi
     end
 
     def stubbed_response(document_type, document_hash)
-      if document_hash[:dni] == "012345678" && document_hash[:caracterControl] == 'Z' && document_type == "1"
+      if true || document_hash[:dni] == "012345678" && document_hash[:caracterControl] == 'Z' && document_type == "1"
         stubbed_valid_response
       else
         stubbed_invalid_response
