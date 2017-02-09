@@ -361,6 +361,8 @@ Rails.application.routes.draw do
 
     resources :user_invites, only: [:new, :create]
 
+    resources :organizations
+
     resources :users, only: [:new, :create] do
       collection do
         delete :logout

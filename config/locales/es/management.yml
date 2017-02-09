@@ -1,6 +1,11 @@
 ---
 es:
   management:
+    organization:
+      create_organization:
+        submit: Crear asociación
+        title: Creación de asociaciones
+        info: Creación de asociaciones
     account:
       alert:
         unverified_user: Solo se pueden editar cuentas de usuarios verificados
@@ -57,6 +62,7 @@ es:
       users: Usuarios
       edit_user_accounts: Editar cuenta de usuario
       user_invites: Invitaciones para usuarios
+      organization_new: Nueva asociación
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates

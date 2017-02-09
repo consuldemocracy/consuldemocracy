@@ -6,6 +6,14 @@
         <%= t("management.menu.user_new") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "organizations" %>>
+      <%= link_to new_management_organization_path do %>
+        <span class="icon-user"></span>
+        <%= t("management.menu.organization_new") %>
+      <% end %>
+    </li>
+
     <li <%= "class=active" if controller_name == "document_verifications" ||
                               controller_name == "email_verifications" %>>
       <%= link_to management_document_verifications_path do %>
