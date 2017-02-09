@@ -60,7 +60,10 @@
         </ul>
       </div>
       <div class="small-12 medium-6 large-4 column end">
-        <%= link_to t("polls.index.participate_button"), poll, class: "button expanded" %>
+        <%= link_to t("polls.index.participate_button"),
+                    poll_path(poll, anchor: "questions"),
+                    class: "button expanded",
+                    data: { no_turbolink: true } %>
       </div>
     </div>
   </div>
