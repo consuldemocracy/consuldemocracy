@@ -70,6 +70,8 @@ va:
           by_feasibility: Por viabilidad
           feasible: Ver las propuestas de inversión viables
           unfeasible: Ver las propuestas de inversión inviables
+          already_created: Ya ha creado las Propuestas de Inversión permitidas
+          association_not_verified: Su asociación no ha sido verificada todavía
         orders:
           random: Aleatorias
           confidence_score: Mejor valoradas

@@ -54,6 +54,11 @@ module Abilities
            .where(budget_investments: { hidden_at: nil}).count < 1
 
           can :create, Budget::Investment,               budget: { phase: "accepting" }
+
+          if user.organization? && !user.organization.verified?
+            cannot :create, Budget::Investment
+          end
+
         end
 
         budgets_current = Budget.includes(:investments).where(phase: 'selecting')
