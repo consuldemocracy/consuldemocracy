@@ -4,8 +4,12 @@
     <td><%= budget.name %></td>
     <td><%= budget.translated_phase %></td>
     <td align="right">
-      <%= link_to t("management.budgets.create_new_investment"),
-                  new_management_budget_investment_path(budget) %>
+      <% if managed_user.can? :create, Budget::Investment %>
+        <%= link_to t("management.budgets.create_new_investment"),
+                    new_management_budget_investment_path(budget) %>
+      <% else %>
+        Este usuario no puede crear nuevas propuestas de inversión
+      <% end %>
     </td>
   </tr>
 <% end %>
