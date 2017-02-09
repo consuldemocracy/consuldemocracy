@@ -94,9 +94,20 @@ body.admin {
       }
     }
 
+    &.fixed {
+      table-layout: fixed;
+    }
+
     input[type="submit"] ~ a, a ~ a {
-      margin-left: $line-height/2;
-      margin-right: $line-height/2;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: $line-height/2;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height/2;
+        margin-right: $line-height/2;
+        margin-top: 0;
+      }
     }
   }
 

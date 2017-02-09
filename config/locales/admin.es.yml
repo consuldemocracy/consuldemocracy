@@ -2,6 +2,7 @@
 es:
   admin:
     actions:
+      actions: Acciones
       confirm: "¿Estás seguro?"
       confirm_hide: Confirmar
       hide: Ocultar
