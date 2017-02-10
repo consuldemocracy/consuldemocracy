@@ -2390,6 +2390,12 @@ ul.ballot-list {
     .button {
       background: black;
       color: white;
+      font-family: 'Franklin Gothic' !important;
+      font-weight: normal;
+      font-size: rem-calc(36);
+      line-height: $line-height*1.5;
+      padding-bottom: $line-height/2;
+      padding-top: $line-height/2;
     }
   }
 
@@ -2894,7 +2900,10 @@ $campaign-yellow: #FFDB19;
   }
 
   .button {
-    font-size: rem-calc(24);
+    font-size: rem-calc(36);
+    line-height: $line-height*1.5;
+    padding-bottom: $line-height/2;
+    padding-top: $line-height/2;
   }
 
   .uppercase {
