@@ -12,9 +12,10 @@ Tolk.config do |config|
   # config.mapping['fr-ES']   = 'Frañol !'
   # config.mapping['is']      = 'Icelandic'
   # config.mapping['vi']      = 'Vietnamese'
+  config.mapping['va']      = 'Valencià'
 
   # Master source of strings to be translated
-  config.primary_locale_name = 'en'
+  config.primary_locale_name = 'es'
 end
 
 Tolk::ApplicationController.authenticator = proc {
