@@ -27,10 +27,34 @@ class Legislation::Annotation < ActiveRecord::Base
   def store_context
     html = draft_version.body_html
     doc = Nokogiri::HTML(html)
-    selector = "/#{range_start}"
-    text  = doc.xpath(selector).text
-    text[range_start_offset .. range_end_offset-1] = "<span class=annotator-hl>#{quote}</span>"
-    self.context = text
+
+    selector_start = "/html/body/#{range_start}"
+    el_start = doc.at_xpath(selector_start)
+
+    selector_end = "/html/body/#{range_end}"
+    el_end = doc.at_xpath(selector_end)
+
+    context_text = ""
+
+    if el_start.path == el_end.path
+      context_text = el_start.text
+      quote_range = range_start_offset .. range_end_offset-1
+    else
+      i = el_start
+
+      while i.path != el_end.path
+        context_text << i.text
+        i = i.next_element
+      end
+
+      context_text << el_end.text
+
+      end_of_range = (el_end.text.size - range_end_offset) * -1
+      quote_range = range_start_offset .. end_of_range-1
+    end
+
+    context_text[quote_range] = "<span class=annotator-hl>#{quote}</span>"
+    self.context = context_text
   end
 
   def create_first_comment
