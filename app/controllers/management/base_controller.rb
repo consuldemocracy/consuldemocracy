@@ -21,7 +21,11 @@ class Management::BaseController < ActionController::Base
     end
 
     def managed_user
-      @managed_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
+      if session[:organization_email]
+        @managed_user ||= Verification::Management::ManagedUser.find_organization_user(session[:organization_email])
+      else
+        @managed_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
+      end
     end
 
     def check_verified_user(alert_msg)

@@ -1,6 +1,9 @@
 ---
 va:
   management:
+    organization_verifications:
+      title: Utilizar la aplicación en nombre de una Asociación
+      verify: Comprobar
     account:
       alert:
         unverified_user: Solo se pueden editar cuentas de usuarios verificados
@@ -55,8 +58,9 @@ va:
       support_budget_investments: Apoyar propuestas de inversión
       users: Usuarios
       edit_user_accounts: Editar cuenta de usuario
-      user_invites: Invitaciones para usuarios
-      user_new: Nuevo usuario
+      user_invites: Invitacions a usuaris
+      user_new: Nou usuari
+      use_organization: Utilitzar com Associació
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates

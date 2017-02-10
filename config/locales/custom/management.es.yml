@@ -1,6 +1,9 @@
 ---
 es:
   management:
+    organization_verifications:
+      title: Utilizar la aplicación en nombre de una Asociación
+      verify: Comprobar
     account:
       alert:
         unverified_user: Solo se pueden editar cuentas de usuarios verificados
@@ -57,6 +60,7 @@ es:
       edit_user_accounts: Editar cuenta de usuario
       user_invites: Invitaciones para usuarios
       user_new: Nuevo usuario
+      use_organization: Utilizar como asociación
     permissions:
       create_proposals: Crear nuevas propuestas
       debates: Participar en debates

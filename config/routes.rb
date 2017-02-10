@@ -359,6 +359,8 @@ Rails.application.routes.draw do
 
     resources :email_verifications, only: [:new, :create]
 
+    resources :organization_verifications, only: [:new, :create]
+
     resources :user_invites, only: [:new, :create]
 
     resources :organizations
