@@ -7,6 +7,32 @@ RSpec.describe Legislation::Process, type: :model do
     expect(process).to be_valid
   end
 
+  describe "dates validations" do
+    it "is invalid if debate_start_date is present but debate_end_date is not" do
+      process = build(:legislation_process, debate_start_date: Date.current, debate_end_date: "")
+      expect(process).to be_invalid
+      expect(process.errors.messages[:debate_end_date]).to include("can't be blank")
+    end
+
+    it "is invalid if debate_end_date is present but debate_start_date is not" do
+      process = build(:legislation_process, debate_start_date: nil, debate_end_date: Date.current)
+      expect(process).to be_invalid
+      expect(process.errors.messages[:debate_start_date]).to include("can't be blank")
+    end
+
+    it "is invalid if allegations_start_date is present but debate_end_date is not" do
+      process = build(:legislation_process, allegations_start_date: Date.current, allegations_end_date: "")
+      expect(process).to be_invalid
+      expect(process.errors.messages[:allegations_end_date]).to include("can't be blank")
+    end
+
+    it "is invalid if debate_end_date is present but allegations_start_date is not" do
+      process = build(:legislation_process, allegations_start_date: nil, allegations_end_date: Date.current)
+      expect(process).to be_invalid
+      expect(process.errors.messages[:allegations_start_date]).to include("can't be blank")
+    end
+  end
+
   describe "date ranges validations" do
     it "is invalid if end_date is before start_date" do
       process = build(:legislation_process, start_date: Date.current, end_date: Date.current - 1.day)

@@ -16,7 +16,7 @@ module Abilities
       can [:read], Budget::Group
       can [:read, :print], Budget::Investment
       can :new, DirectMessage
-      can [:read, :draft_publication, :allegations, :final_version_publication], Legislation::Process
+      can [:read, :debate, :draft_publication, :allegations, :final_version_publication], Legislation::Process
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:create], Legislation::Answer

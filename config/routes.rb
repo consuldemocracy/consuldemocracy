@@ -102,6 +102,7 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
+      get :debate
       get :draft_publication
       get :allegations
       get :final_version_publication
