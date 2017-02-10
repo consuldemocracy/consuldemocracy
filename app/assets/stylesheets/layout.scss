@@ -294,7 +294,7 @@ header {
 
 .top-bar {
   background: $brand !important;
-  color: white;
+  color: $dark;
   height: $line-height*2;
   line-height: $line-height*2;
   padding-bottom: 0;
@@ -307,10 +307,13 @@ header {
   .top-bar-title a {
     @include logo;
     line-height: rem-calc(80) !important;
-
+    color: $dark;
     &:hover {
       text-decoration: none;
     }
+    // img {
+    //   padding-top: 30;
+    // }
   }
 
   ul {
