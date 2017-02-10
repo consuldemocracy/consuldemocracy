@@ -29,7 +29,7 @@ class Legislation::Annotation < ActiveRecord::Base
     doc = Nokogiri::HTML(html)
     selector = "/#{range_start}"
     text  = doc.xpath(selector).text
-    text[quote] = "<span class=annotator-hl>#{quote}</span>"
+    text[range_start_offset .. range_end_offset-1] = "<span class=annotator-hl>#{quote}</span>"
     self.context = text
   end
 
