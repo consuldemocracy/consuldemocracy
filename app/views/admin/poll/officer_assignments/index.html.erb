@@ -11,7 +11,7 @@
     <div class="small-12 medium-4 column">
       <label><%= t("admin.poll_officer_assignments.index.date") %></label>
       <%= select_tag :date,
-                      all_poll_dates_select_options(@poll),
+                      poll_dates_select_options(@poll) + poll_final_recount_option(@poll),
                       { prompt: t("admin.poll_officer_assignments.index.select_date"),
                         label: false } %>
     </div>
