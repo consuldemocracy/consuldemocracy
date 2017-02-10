@@ -73,8 +73,15 @@
         <div class="tabs-panel is-active" id="panel1v">
           <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
 
-          <!-- Proceso destacado (Remodelación de Plaza España) -->
-          <div id="air_quality_plan" class="panel">
+          <!-- Nueva Ordenanza Movilidad -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_15_title") %></h3>
+            <p><%= t("pages.processes.index.process_15_description") %></p>
+            <%= link_to t("pages.processes.index.process_15_button"), movilidad_path, class: "button hollow" %>
+          </div>
+
+          <!-- Remodelación de Plaza España -->
+          <div class="panel">
             <h3><%= t("pages.processes.index.process_2_title") %></h3>
             <p><%= t("pages.processes.index.process_2_description_close") %></p>
             <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "button hollow" %>
