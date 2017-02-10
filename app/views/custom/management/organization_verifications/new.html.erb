@@ -1,0 +1,8 @@
+<h2><%= t('management.organization_verifications.title') %></h2>
+
+<%= form_for @organization_verification,
+    as: :organization_verification,
+    url: management_organization_verifications_path do |f| %>
+  <%= f.text_field :email, label: 'Email asociación' %>
+  <%= f.submit t("management.organization_verifications.verify"), class: "button" %>
+<% end %>
