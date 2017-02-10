@@ -13,6 +13,18 @@
   </div>
 
   <div class="row" data-equalizer>
+    <!-- Nueva ordenanza movilidad -->
+    <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.movilidad.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.movilidad.date_html") %></p>
+        <p class="info">
+          <%= t("cards.movilidad.text") %>
+        </p>
+        <%= link_to t("cards.movilidad.button"), movilidad_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
     <!-- Línea Madrid -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>

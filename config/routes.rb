@@ -454,6 +454,7 @@ Rails.application.routes.draw do
   get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
   get 'proceso/distrito-villa-de-vallecas',         to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
   get 'proceso/linea-madrid',                       to: 'pages#show', id: 'processes/linea_madrid/index',     as: 'linea_madrid'
+  get 'proceso/nueva-ordenanza-movilidad',          to: 'pages#show', id: 'processes/movilidad/index',        as: 'movilidad'
 
   #Budgets meetings
   get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
