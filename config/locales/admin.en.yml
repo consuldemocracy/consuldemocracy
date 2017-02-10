@@ -2,6 +2,7 @@
 en:
   admin:
     actions:
+      actions: Actions
       confirm: Are you sure?
       confirm_hide: Confirm
       hide: Hide
@@ -364,6 +365,8 @@ en:
         questions_tab: "Questions"
         successful_proposals_tab: "Successful proposals"
         create_question: "Create question"
+        table_proposal: "Proposal"
+        table_question: "Question"
       edit:
         title: "Edit Question"
       new:

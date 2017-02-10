@@ -11,7 +11,7 @@
     <div class="small-12 medium-4 column">
       <label><%= t("admin.poll_officer_assignments.index.date") %></label>
       <%= select_tag :date,
-                      all_poll_dates_select_options(@poll),
+                      poll_dates_select_options(@poll) + poll_final_recount_option(@poll),
                       { prompt: t("admin.poll_officer_assignments.index.select_date"),
                         label: false } %>
     </div>
@@ -40,12 +40,12 @@
   </div>
 <% else %>
   <h3><%= t("admin.poll_officer_assignments.index.assignments") %></h3>
-  <table>
+  <table class="fixed">
     <thead>
       <tr>
         <th><%= t("admin.poll_officer_assignments.index.date") %></th>
         <th><%= t("admin.poll_officer_assignments.index.booth") %></th>
-        <th class="text-center"><%= t("admin.poll_officer_assignments.index.assignment") %></th>
+        <th class="text-right"><%= t("admin.poll_officer_assignments.index.assignment") %></th>
       </tr>
     </thead>
     <tbody>
@@ -53,7 +53,7 @@
         <tr id="<%= dom_id officer_assignment %>">
           <td><%= officer_assignment.final? ? t('polls.final_date') : l(officer_assignment.date.to_date) %></td>
           <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-          <td class="text-center">
+          <td class="text-right">
             <%= link_to t("admin.poll_officer_assignments.index.remove_assignment"),
                         admin_officer_assignment_path(officer_assignment),
                         method: :delete,
@@ -68,12 +68,12 @@
 <% voting_days_officer_assignments = @officer_assignments.select{|oa| oa.final == false} %>
 <% if voting_days_officer_assignments.any? %>
   <h3><%= t("admin.poll_officer_assignments.index.recounts") %></h3>
-  <table id="recount_list">
+  <table id="recount_list" class="fixed">
     <thead>
       <tr>
         <th><%= t("admin.poll_officer_assignments.index.date") %></th>
         <th><%= t("admin.poll_officer_assignments.index.booth") %></th>
-        <th><%= t("admin.poll_officer_assignments.index.recount") %></th>
+        <th class="text-right"><%= t("admin.poll_officer_assignments.index.recount") %></th>
       </tr>
     </thead>
     <tbody>
@@ -81,11 +81,13 @@
         <tr id="recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
           <td><%= l(officer_assignment.date.to_date) %></td>
           <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-          <% if officer_assignment.recount.present? %>
-            <td><%= officer_assignment.recount.count %></td>
-          <% else %>
-            <td> - </td>
-          <% end %>
+          <td class="text-right">
+            <% if officer_assignment.recount.present? %>
+              <%= officer_assignment.recount.count %>
+            <% else %>
+              <span>-</span>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
@@ -95,12 +97,12 @@
 <% final_officer_assignments = @officer_assignments.select{|oa| oa.final == true} %>
 <% if final_officer_assignments.any? %>
   <h3><%= t("admin.poll_officer_assignments.index.final_recounts") %></h3>
-  <table id="final_recount_list">
+  <table id="final_recount_list" class="fixed">
     <thead>
       <tr>
         <th><%= t("admin.poll_officer_assignments.index.date") %></th>
         <th><%= t("admin.poll_officer_assignments.index.booth") %></th>
-        <th><%= t("admin.poll_officer_assignments.index.final_recount") %></th>
+        <th class="text-right"><%= t("admin.poll_officer_assignments.index.final_recount") %></th>
       </tr>
     </thead>
     <tbody>
@@ -108,11 +110,13 @@
           <tr id="final_recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
             <td><%= l(officer_assignment.date.to_date) %></td>
             <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
-            <% if officer_assignment.final_recounts.any? %>
-              <td><%= officer_assignment.final_recounts.to_a.sum(&:count) %></td>
-            <% else %>
-              <td> - </td>
-            <% end %>
+            <td class="text-right">
+              <% if officer_assignment.final_recounts.any? %>
+                <%= officer_assignment.final_recounts.to_a.sum(&:count) %>
+              <% else %>
+                <span>-</span>
+              <% end %>
+            </td>
           </tr>
       <% end %>
     </tbody>

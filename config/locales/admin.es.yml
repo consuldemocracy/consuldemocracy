@@ -2,6 +2,7 @@
 es:
   admin:
     actions:
+      actions: Acciones
       confirm: "¿Estás seguro?"
       confirm_hide: Confirmar
       hide: Ocultar
@@ -364,6 +365,8 @@ es:
         questions_tab: "Preguntas ciudadanas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
+        table_proposal: "Propuesta"
+        table_question: "Pregunta"
       edit:
         title: "Editar pregunta ciudadana"
       new:
