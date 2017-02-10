@@ -15,8 +15,9 @@
 
       <% if can? :answer, @question %>
         <%= link_to t('poll_questions.show.answer_this_question'),
-              @question.poll,
-              class: 'large button' %>
+              poll_path(@question.poll, anchor: "questions"),
+              class: 'large button',
+              data: { no_turbolink: true } %>
       <% else %>
         <%= render 'polls/reasons_for_not_answering', poll: @question.poll %>
       <% end %>
