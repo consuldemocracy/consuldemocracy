@@ -121,6 +121,7 @@ Rails.application.routes.draw do
     end
   end
   post "/polls/nvotes/success" => "polls/nvotes#success", as: :polls_nvotes_success
+  get "votaciones", to: 'polls#index'
 
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
