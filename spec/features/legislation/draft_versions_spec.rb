@@ -137,7 +137,7 @@ feature 'Legislation Draft Versions' do
 
     scenario 'Visit as anonymous' do
       logout
-      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      draft_version = create(:legislation_draft_version, :published)
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
@@ -148,7 +148,7 @@ feature 'Legislation Draft Versions' do
     end
 
     scenario 'Create' do
-      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      draft_version = create(:legislation_draft_version, :published)
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
@@ -172,7 +172,7 @@ feature 'Legislation Draft Versions' do
     end
 
     scenario 'View annotations and comments' do
-      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
+      draft_version = create(:legislation_draft_version, :published)
       annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}])
       annotation2 = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>12, "end"=>"/p[1]", "endOffset"=>19}])
 
@@ -187,8 +187,8 @@ feature 'Legislation Draft Versions' do
     end
 
     scenario "Publish new comment for an annotation from comments box" do
-      draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
-      annotation = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}])
+      draft_version = create(:legislation_draft_version, :published)
+      annotation = create(:legislation_annotation, draft_version: draft_version, text: "my annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}])
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
@@ -205,25 +205,25 @@ feature 'Legislation Draft Versions' do
 
   context "Annotations page" do
     background do
-      @draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
-      @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "first quote")
-      @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "second quote")
+      @draft_version = create(:legislation_draft_version, :published)
+      @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "ipsum", ranges: [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}])
+      @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "audiam", ranges: [{"start"=>"/p[3]", "startOffset"=>6, "end"=>"/p[3]", "endOffset"=>11}])
     end
 
     scenario "See all annotations for a draft version" do
       visit legislation_process_draft_version_annotations_path(@draft_version.process, @draft_version)
 
-      expect(page).to have_content "first quote"
-      expect(page).to have_content "second quote"
+      expect(page).to have_content "ipsum"
+      expect(page).to have_content "audiam"
     end
 
     context "switching versions" do
       background do
         @process = create(:legislation_process)
-        @draft_version_1 = create(:legislation_draft_version, :published, process: @process, title: "Version 1", body: Faker::Lorem.paragraph)
-        @annotation_1 = create(:legislation_annotation, draft_version: @draft_version_1, text: "annotation for version 1", quote: "quote for version 1")
-        @draft_version_2 = create(:legislation_draft_version, :published, process: @process, title: "Version 2", body: Faker::Lorem.paragraph)
-        @annotation_1 = create(:legislation_annotation, draft_version: @draft_version_2, text: "annotation for version 2", quote: "quote for version 2")
+        @draft_version_1 = create(:legislation_draft_version, :published, process: @process, title: "Version 1", body: "Text with quote for version 1")
+        @annotation_1 = create(:legislation_annotation, draft_version: @draft_version_1, text: "annotation for version 1", quote: "quote for version 1", ranges: [{"start"=>"/p[1]", "startOffset"=>11, "end"=>"/p[1]", "endOffset"=>30}])
+        @draft_version_2 = create(:legislation_draft_version, :published, process: @process, title: "Version 2", body: "Text with quote for version 2")
+        @annotation_1 = create(:legislation_annotation, draft_version: @draft_version_2, text: "annotation for version 2", quote: "quote for version 2", ranges: [{"start"=>"/p[1]", "startOffset"=>11, "end"=>"/p[1]", "endOffset"=>30}])
       end
 
       scenario "without js" do
@@ -251,17 +251,18 @@ feature 'Legislation Draft Versions' do
 
   context "Annotation comments page" do
     background do
-      @draft_version = create(:legislation_draft_version, :published, body: Faker::Lorem.paragraph)
-      @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "first quote")
-      @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "second quote")
+      @draft_version = create(:legislation_draft_version, :published)
+      @annotation_1 = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",       quote: "ipsum", ranges: [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}])
+      @annotation_2 = create(:legislation_annotation, draft_version: @draft_version, text: "my other annotation", quote: "audiam", ranges: [{"start"=>"/p[3]", "startOffset"=>6, "end"=>"/p[3]", "endOffset"=>11}])
     end
 
     scenario "See one annotation with replies for a draft version" do
       visit legislation_process_draft_version_annotation_path(@draft_version.process, @draft_version, @annotation_2)
 
-      expect(page).to_not have_content "first quote"
-      expect(page).to have_content "second quote"
+      expect(page).to_not have_content "ipsum"
       expect(page).to_not have_content "my annotation"
+
+      expect(page).to have_content "audiam"
       expect(page).to have_content "my other annotation"
     end
   end
