@@ -49,7 +49,7 @@ es:
           responsible_name_note: Será la persona representante de la asociación en cuyo nombre se presenten las propuestas
           submit: Registrarse
           title: Registrarse como asociación
-          permission_warning: En el proceso de presupuestos participativos podrán participar todas aquellas asociaciones registradas en el Registro de Asociaciones Municipal que tengan su ámbito territorial en la ciudad de Castellón de la Plana.
+          permission_warning: En el proceso de presupuestos participativos podrán participar todas aquellas asociaciones que tengan su domicilio social y su ámbito de actuación territorial en la ciudad de Castellón de la Plana, y que se encuentren inscritas en el Registro de Asociaciones.
         success:
           back_to_index: Entendido, volver a la página principal
           instructions_1_html: En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a esta asociación.

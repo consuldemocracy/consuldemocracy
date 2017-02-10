@@ -48,15 +48,15 @@ va:
           responsible_name_label: Nombre y apellidos de la persona responsable de la asociación
           responsible_name_note: Será la persona representante de la asociación en cuyo nombre se presenten las propuestas
           submit: Registrarse
-          title: Registrarse como asociación
-          permission_warning: En el proceso de presupuestos participativos podrán participar todas aquellas asociaciones registradas en el Registro de Asociaciones Municipal que tengan su ámbito territorial en la ciudad de Castellón de la Plana.
+          title: Registrarse com associació
+          permission_warning: En el procés de pressupostos participatius podran participar totes aquelles associacions que tinguen el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que es troben inscrites en el Registre d'Associacions.
         success:
           back_to_index: Entendido, volver a la página principal
           instructions_1_html: En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a esta asociación.
           instructions_2_html: Mientras <b>revisa tu correo electrónico</b>, te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
           instructions_3_html: Una vez confirmado, podrás empezar a participar como asociación no verificada.
           thank_you_html: Gracias por registrar tu asociación en la web. Ahora está <b>pendiente de verificación</b>.
-          title: Registro de asociación
+          title: Registre d'associació
     passwords:
       edit:
         change_submit: Cambiar mi contraseña
