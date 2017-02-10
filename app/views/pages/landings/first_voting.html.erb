@@ -11,11 +11,13 @@
     <div class="row">
       <div class="small-12 medium-10 column small-centered text-center">
         <p class="lead">Del 13 al 19 de febrero, decide sobre las dos primeras propuestas ciudadanas que pasan a votación, "Madrid 100% sostenible" y "Billete único para el transporte público". También sobre la remodelación de Plaza de España y el futuro de la Gran Vía</p>
-        <% if !user_signed_in? %>
-          <div class="small-12 medium-6 large-4 small-centered">
-            <%= link_to "Regístrate", new_user_registration_path, class: "button expanded" %>
-          </div>
-        <% end %>
+        <div class="small-12 medium-6 large-4 small-centered">
+          <% if user_signed_in? %>
+            <%= link_to "VOTA", polls_path, class: "button expanded" %>
+          <% else %>
+            <%= link_to "VOTA", new_user_registration_path, class: "button expanded" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -33,11 +35,13 @@
               <%= link_to "Uno para todos", "https://decide.madrid.es/questions/1" %>
             </h2>
             <h3 class="text-center">Un billete: todo el transporte</h3>
-            <% if !user_signed_in? %>
               <div class="small-12 medium-8 small-centered">
-                <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
+                <% if user_signed_in? %>
+                  <%= link_to "VOTA", polls_path, class: "button expanded" %>
+                <% else %>
+                  <%= link_to "VOTA", new_user_registration_path, class: "button expanded" %>
+                <% end %>
               </div>
-            <% end %>
           </div>
         </div>
       </div>
@@ -54,11 +58,13 @@
               <%= link_to "Madrid 100% sostenible", "https://decide.madrid.es/questions/2" %>
             </h2>
             <h3 class="text-center">Ahorro de energía, Eficiente y Renovable<br> Movilidad y Urbanismo Sostenibles</h3>
-            <% if !user_signed_in? %>
-              <div class="small-12 medium-8 small-centered">
-                <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-              </div>
-            <% end %>
+            <div class="small-12 medium-8 small-centered">
+              <% if user_signed_in? %>
+                <%= link_to "VOTA", polls_path, class: "button expanded" %>
+              <% else %>
+                <%= link_to "VOTA", new_user_registration_path, class: "button expanded" %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -78,11 +84,13 @@
           <p class="text-center">La Plaza de España se va a reformar y tú decides cuál será el proyecto final.</p>
           <h3 class="text-center uppercase">¿Proyecto X o Proyecto Y?</h3>
 
-          <% if !user_signed_in? %>
-            <div class="small-12 medium-8 small-centered">
-              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-            </div>
-          <% end %>
+          <div class="small-12 medium-8 small-centered">
+            <% if user_signed_in? %>
+              <%= link_to "VOTA", polls_path, class: "button expanded" %>
+            <% else %>
+              <%= link_to "VOTA", new_user_registration_path, class: "button expanded" %>
+            <% end %>
+          </div>
 
           <div class="block-projects">
             <h4 class="text-center">
@@ -155,11 +163,15 @@
               </div>
             </div>
           </div>
-          <% if !user_signed_in? %>
-            <div class="small-12 medium-6 large-4 small-centered text-center">
-              <%= link_to "Regístrate", new_user_registration_path, class: "button expanded margin-top" %>
-            </div>
-          <% end %>
+
+          <div class="small-12 medium-6 large-4 small-centered text-center">
+            <% if user_signed_in? %>
+              <%= link_to "VOTA", polls_path, class: "button expanded" %>
+            <% else %>
+              <%= link_to "VOTA", new_user_registration_path, class: "button expanded" %>
+            <% end %>
+          </div>
+
         </div>
       </div>
     </div>
@@ -218,7 +230,7 @@
           <h2 class="uppercase">Cómo votar</h2>
           <ul>
             <li>En esta web después de <%= link_to "registrarte", new_user_registration_path %>.</li>
-            <li>Por carta. Te llegará próximamente una carta a casa con tu papeleta para votar por correo. Puedes hacerlo hasta el día 12 de febrero.</li>
+            <li>Por carta (hasta el día 12 de febrero).</li>
             <li>En urnas que encontrarás repartidas por los 21 distritos de Madrid (ver los siguientes mapas).</li>
           </ul>
         </div>

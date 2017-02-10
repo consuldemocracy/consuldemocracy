@@ -2354,12 +2354,24 @@ ul.ballot-list {
 .welcome {
 
   .header {
-    background: #E23135 image-url('home_page_bg.jpg');
+    background: #FFDB19;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: black;
     padding: $line-height*2 0;
+
+    h1 {
+      font-family: 'Franklin Gothic' !important;
+      font-weight: normal;
+      font-size: rem-calc(200);
+      line-height: rem-calc(200);
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(270);
+        line-height: rem-calc(240);
+      }
+    }
 
     a.decoration-none {
       text-decoration: none !important;
@@ -2371,13 +2383,13 @@ ul.ballot-list {
     }
 
     a:not(.button) {
-      color: white;
+      color: black;
       text-decoration: underline;
     }
 
     .button {
-      background: white;
-      color: $text;
+      background: black;
+      color: white;
     }
   }
 
@@ -2879,6 +2891,10 @@ $campaign-yellow: #FFDB19;
 
   h1, h2, h3 {
     font-size: rem-calc(36);
+  }
+
+  .button {
+    font-size: rem-calc(24);
   }
 
   .uppercase {

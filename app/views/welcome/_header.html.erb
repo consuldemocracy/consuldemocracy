@@ -1,19 +1,23 @@
 <div class="expanded header">
   <div class="row">
-    <div class="small-12 medium-9 small-centered text-center column">
-      <h1>
+    <div class="small-12 medium-5 column">
+      <h1 class="text-center"><%= t("layouts.header.sign_up") %></h1>
+    </div>
+    <div class="small-12 medium-7 column">
+      <h2>
         <%= link_to t("layouts.header.open_city_title"), first_voting_path, class: "decoration-none" %>
-      </h1>
+      </h2>
       <p class="lead"><%= t("layouts.header.open_city_slogan_short_html") %></p>
       <p><%= t("layouts.header.lead_text_html") %></p>
 
-      <% unless user_signed_in? %>
-        <div class="small-12 medium-6 large-4 small-centered">
-          <%= link_to t("layouts.header.sign_up"), new_user_registration_path , class: "button expanded" %>
-        </div>
-        <p><%= t("layouts.header.sign_in",
-            login: link_to(t("layouts.header.sign_in_link"), new_user_session_path)).html_safe %></p>
-      <% end %>
+
+      <div class="small-12 medium-6 large-4">
+        <% if user_signed_in? %>
+          <%= link_to t("layouts.header.sign_up"), polls_path , class: "button expanded" %>
+        <% else %>
+          <%= link_to t("layouts.header.sign_up"), new_user_session_path , class: "button expanded" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -263,9 +263,7 @@ en:
       proposals: Proposals
       processes: Processes
       spending_proposals: Participatory budgeting
-      sign_up: I want to register
-      sign_in: If you have an account %{login}.
-      sign_in_link: enter now
+      sign_up: VOTE
       poll_questions: Voting
       see_all: See proposals
       budgets: Participatory budgeting

@@ -263,9 +263,7 @@ es:
       proposals: Propuestas
       processes: Procesos
       spending_proposals: Presupuestos participativos
-      sign_up: Quiero registrarme
-      sign_in: Si ya tienes una cuenta %{login}.
-      sign_in_link: entra ahora
+      sign_up: VOTA
       poll_questions: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
