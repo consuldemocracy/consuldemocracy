@@ -83,11 +83,11 @@ class Poll < ActiveRecord::Base
     end
   end
 
-  def server_shared_key
+  def self.server_shared_key
     Rails.application.secrets["nvotes_shared_key"] || ENV["nvotes_shared_key"]
   end
 
-  def server_url
+  def self.server_url
     Rails.application.secrets["nvotes_server_url"] || ENV["nvotes_server_url"]
   end
 
