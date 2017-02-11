@@ -17,10 +17,12 @@ class Officing::VotersController < Officing::BaseController
   end
 
   def vote_with_tablet
-    sign_in_voter
+    @voter = User.find(params[:id])
+    votable_polls = Poll.votable_by(@voter)
 
-    poll = Poll.votable_by(current_user).first
-    redirect_to new_officing_poll_nvote_path(poll)
+    prepopulate_nvotes(@voter, current_user, votable_polls)
+    sign_in_as_voter(@voter)
+    redirect_to new_officing_poll_nvote_path(votable_polls.first)
   end
 
   private
@@ -29,10 +31,20 @@ class Officing::VotersController < Officing::BaseController
       params.require(:voter).permit(:poll_id, :user_id)
     end
 
-    def sign_in_voter
-      @voter = User.find(params[:id])
+    def sign_in_as_voter(voter)
       session[:officer_email] = current_user.email
       sign_out(:user)
-      sign_in(@voter)
+      sign_in(voter)
+    end
+
+    def prepopulate_nvotes(voter, officer, votable_polls)
+      votable_polls.with_nvotes.sort_for_list.each do |poll|
+        officer_assignment = ::Poll::OfficerAssignment.by_officer(officer)
+                                                      .by_poll(poll)
+                                                      .by_date(Date.current)
+                                                      .first
+
+        voter.get_or_create_nvote(poll, officer_assignment)
+      end
     end
 end
