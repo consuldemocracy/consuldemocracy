@@ -3357,3 +3357,7 @@ p.can-participate-info {
     }
   }
 }
+
+.auth-form p, .auth-form p a {
+  font-size: $base-font-size;
+}
