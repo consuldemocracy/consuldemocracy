@@ -9,7 +9,7 @@ feature 'Officing Nvotes', :selenium do
     create(:geozone, census_code: "01")
   end
 
-  scenario "Voting single poll" do
+  scenario "Send vote for single poll" do
     user = create(:user, :in_census, id: rand(9999))
     poll = create(:poll)
 
@@ -40,7 +40,7 @@ feature 'Officing Nvotes', :selenium do
     expect(nvote.nvotes_poll_id).to eq(poll.nvotes_poll_id)
   end
 
-  scenario "Voting all answerable polls" do
+  scenario "Send vote for all votable polls" do
     user  = create(:user, :in_census, id: rand(9999))
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
@@ -72,6 +72,37 @@ feature 'Officing Nvotes', :selenium do
     nvote_2 = Poll::Nvote.last
     expect(nvote_2.poll_id).to eq(poll2.id)
     expect(nvote_2.user_id).to eq(user.id)
+  end
+
+  scenario "Store officer and booth information" do
+    user  = create(:user, :in_census, id: rand(9999))
+    poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
+    poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
+
+    ba1 = create(:poll_booth_assignment, poll: poll1)
+    ba2 = create(:poll_booth_assignment, poll: poll2)
+    oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
+    oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    click_link "Vote on tablet"
+
+    nvotes = find(".agoravoting-voting-booth-iframe")
+    within_frame(nvotes) do
+      expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
+    end
+
+    expect(Poll::Nvote.count).to eq(2)
+
+    nvote1 = Poll::Nvote.first
+    expect(nvote1.booth_assignment).to eq(ba1)
+    expect(nvote1.officer_assignment).to eq(oa1)
+
+    nvote2 = Poll::Nvote.last
+    expect(nvote2.booth_assignment).to eq(ba2)
+    expect(nvote2.officer_assignment).to eq(oa2)
   end
 
   scenario "Validate next document" do
