@@ -327,8 +327,7 @@ class User < ActiveRecord::Base
   def get_or_create_nvote(poll, officer_assignment = nil)
     nvote = Poll::Nvote.new(poll: poll,
                             user: self,
-                            officer_assignment: officer_assignment,
-                            booth_assignment: officer_assignment.try(:booth_assignment))
+                            officer_assignment: officer_assignment)
 
     if Poll::Nvote.find_by_voter_hash(nvote.generate_message)
       nvote
