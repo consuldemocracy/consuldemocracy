@@ -171,13 +171,8 @@ describe Poll::Nvote do
       poll = create(:poll)
       nvote = create(:poll_nvote, user: user, poll: poll)
 
-      message = "1:AuthEvent:1:RegisterSuccessfulLogin:1"
-      signature = nvote.generate_hash(message)
-
-      authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
       allow(Poll::Nvote).to receive(:parse_authorization).and_return([nvote, poll])
-
-      Poll::Nvote.store_voter(authorization_hash)
+      Poll::Nvote.store_voter(valid_authorization_hash(nvote))
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.age).to eq(18)
@@ -187,23 +182,19 @@ describe Poll::Nvote do
 
     it "stores officer and booth information" do
       user  = create(:user, :in_census)
-      poll = create(:poll, nvotes_poll_id: 123)
+      poll = create(:poll)
+
       booth_assignment = create(:poll_booth_assignment, poll: poll)
       officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
+
       nvote = create(:poll_nvote,
                      user: user,
                      poll: poll,
                      booth_assignment: booth_assignment,
                      officer_assignment: officer_assignment)
-      nvote.update(voter_hash: "33333333")
 
-      message = "1:AuthEvent:1:RegisterSuccessfulLogin:1"
-      signature = nvote.generate_hash(message)
-
-      authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
       allow(Poll::Nvote).to receive(:parse_authorization).and_return([nvote, poll])
-
-      Poll::Nvote.store_voter(authorization_hash)
+      Poll::Nvote.store_voter(valid_authorization_hash(nvote))
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.poll).to eq(poll)

@@ -215,6 +215,13 @@ module CommonActions
     expect(page).to have_content "Voto emitido con éxito"
   end
 
+  def valid_authorization_hash(nvote)
+    message = "1:AuthEvent:1:RegisterSuccessfulLogin:1"
+    signature = nvote.generate_hash(message)
+
+    "khmac:///sha-256;#{signature}/#{message}"
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
