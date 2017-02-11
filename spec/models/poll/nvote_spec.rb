@@ -149,13 +149,45 @@ describe Poll::Nvote do
       expect(Poll::Voter.first.user).to eq(user)
     end
 
-    it "does not store voter given an invalid callback from Nvotes" do
+    it "does not store voter given an invalid signature from Nvotes" do
       user  = create(:user, :in_census)
       poll = create(:poll, nvotes_poll_id: 123)
       nvote = create(:poll_nvote, user: user, poll: poll)
       nvote.update(voter_hash: "33333333")
 
       message = "33333333:AuthEvent:123:RegisterSuccessfulLogin:1486030800"
+      signature = "wrong_signature"
+
+      authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
+      Poll::Nvote.store_voter(authorization_hash)
+
+      expect(Poll::Voter.count).to eq(0)
+    end
+
+    it "does not store voter given an invalid user" do
+      user  = create(:user, :in_census)
+      poll = create(:poll, nvotes_poll_id: 123)
+      nvote = create(:poll_nvote, user: user, poll: poll)
+      nvote.update(voter_hash: "33333333")
+
+      user_id = "-1"
+      message = "#{user_id}:AuthEvent:123:RegisterSuccessfulLogin:1486030800"
+      signature = "wrong_signature"
+
+      authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
+      Poll::Nvote.store_voter(authorization_hash)
+
+      expect(Poll::Voter.count).to eq(0)
+    end
+
+    it "does not store voter given an invalid poll" do
+      user  = create(:user, :in_census)
+      poll = create(:poll, nvotes_poll_id: 123)
+      nvote = create(:poll_nvote, user: user, poll: poll)
+      nvote.update(voter_hash: "33333333")
+
+      poll_id = "-1"
+      message = "1:AuthEvent:#{poll_id}:RegisterSuccessfulLogin:1486030800"
       signature = "wrong_signature"
 
       authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
