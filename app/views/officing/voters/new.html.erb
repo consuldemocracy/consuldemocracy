@@ -2,15 +2,7 @@
 
 <h2><%= t("officing.voters.new.title") %></h2>
 
-<%# if true#officer.has_tablet? %>
-
-  <div class="small-12 medium-6 large-4">
-    <%= link_to t("nvotes.tablet"),
-                  vote_with_tablet_officing_voter_path(@user),
-                  class: "button expanded" %>
-  </div>
-
-<%# else %>
+<% if physical_booth? %>
 
   <% if @polls.any? %>
     <table>
@@ -39,4 +31,12 @@
     </table>
   <% end %>
 
-<%# end %>
+<% else %>
+
+  <div class="small-12 medium-6 large-4">
+    <%= link_to t("nvotes.tablet"),
+                  vote_with_tablet_officing_voter_path(@user),
+                  class: "button expanded" %>
+  </div>
+
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208175122) do
+ActiveRecord::Schema.define(version: 20170211192737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -435,8 +435,9 @@ ActiveRecord::Schema.define(version: 20170208175122) do
   end
 
   create_table "poll_booths", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
+    t.string  "name"
+    t.string  "location"
+    t.boolean "physical", default: true
   end
 
   create_table "poll_final_recounts", force: :cascade do |t|

@@ -50,6 +50,37 @@ feature 'Voters' do
     end
   end
 
-  #Fix and use answerable_by(user)
-  xscenario "Display only answerable polls"
+  context "Booth type" do
+
+    scenario "Physical booth", :js do
+      poll = create(:poll)
+      booth = create(:poll_booth, physical: true)
+
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to     have_button "Confirm vote"
+      expect(page).to_not have_link "Vote on tablet"
+    end
+
+    scenario "Digital booth", :js do
+      poll = create(:poll)
+      booth = create(:poll_booth, physical: false)
+
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to_not have_button "Confirm vote"
+      expect(page).to     have_link "Vote on tablet"
+    end
+
+  end
+
+   xscenario "Display only answerable polls"
 end
