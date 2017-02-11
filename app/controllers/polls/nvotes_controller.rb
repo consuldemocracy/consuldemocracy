@@ -11,7 +11,7 @@ class Polls::NvotesController < ApplicationController
     poll = Poll.find(params[:poll_id])
     nvote = current_user.get_or_create_nvote(poll)
     message = nvote.generate_message
-    render content_type: 'text/plain', status: :ok, text: "#{nvote.generate_hash message}/#{message}"
+    render content_type: 'text/plain', status: :ok, text: "#{Poll::Nvote.generate_hash message}/#{message}"
   end
 
   def success

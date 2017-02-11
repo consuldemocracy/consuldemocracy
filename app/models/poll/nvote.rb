@@ -22,7 +22,7 @@ class Poll
     "#{self.voter_hash}:AuthEvent:#{self.nvotes_poll_id}:vote:#{Time.now.to_i}"
   end
 
-  def generate_hash(message)
+  def self.generate_hash(message)
     key = Poll.server_shared_key
     OpenSSL::HMAC.hexdigest(OpenSSL::Digest::SHA256.new('sha256'), key, message)
   end
@@ -34,7 +34,7 @@ class Poll
   def url
     key = Poll.server_shared_key
     message =  self.generate_message
-    hash = self.generate_hash message
+    hash = Poll::Nvote.generate_hash(message)
     "#{Poll.server_url}booth/#{self.nvotes_poll_id}/vote/#{hash}/#{message}"
   end
 
@@ -52,7 +52,7 @@ class Poll
   end
 
   def self.signature_valid?(signature, message)
-    signature == new.generate_hash(message)
+    signature == generate_hash(message)
   end
 
   def self.parse_authorization(message)

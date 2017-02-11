@@ -34,7 +34,7 @@ feature 'Nvotes' do
       nvote.update(voter_hash: "33333333")
 
       message = "33333333:AuthEvent:128:RegisterSuccessfulLogin:1486030800"
-      signature = nvote.generate_hash(message)
+      signature = Poll::Nvote.generate_hash(message)
 
       authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
 
@@ -80,7 +80,7 @@ feature 'Nvotes' do
       nvote.update(voter_hash: "33333333")
 
       message = "33333333:AuthEvent:128:RegisterSuccessfulLogin:1486030800"
-      signature = nvote.generate_hash(message)
+      signature = Poll::Nvote.generate_hash(message)
 
       authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
 

@@ -217,7 +217,7 @@ module CommonActions
 
   def valid_authorization_hash(nvote)
     message = "1:AuthEvent:1:RegisterSuccessfulLogin:1"
-    signature = nvote.generate_hash(message)
+    signature = Poll::Nvote.generate_hash(message)
 
     "khmac:///sha-256;#{signature}/#{message}"
   end

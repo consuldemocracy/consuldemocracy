@@ -79,7 +79,7 @@ describe Poll::Nvote do
 
     it "generates hash from message" do
       nvote = create(:poll_nvote)
-      expect(nvote.generate_hash("test").length).to eq(64)
+      expect(Poll::Nvote.generate_hash("test").length).to eq(64)
     end
 
   end
@@ -94,7 +94,7 @@ describe Poll::Nvote do
       expect(nvote.url.length).to be > 64
       expect(nvote.url).to include "https://prevotsecdecide.madrid.es"
       expect(nvote.url).to include "booth/1234"
-      expect(nvote.url).to include "vote/#{nvote.generate_hash(nvote.generate_message)}/#{nvote.generate_message}"
+      expect(nvote.url).to include "vote/#{Poll::Nvote.generate_hash(nvote.generate_message)}/#{nvote.generate_message}"
     end
   end
 
@@ -115,7 +115,7 @@ describe Poll::Nvote do
       nvote = build(:poll_nvote)
 
       message = "1:AuthEvent:1:RegisterSuccessfulLogin:1"
-      signature = nvote.generate_hash(message)
+      signature = Poll::Nvote.generate_hash(message)
 
       expect(Poll::Nvote.signature_valid?(signature, message)).to be(true)
     end
@@ -139,7 +139,7 @@ describe Poll::Nvote do
       nvote.update(voter_hash: "33333333")
 
       message = "33333333:AuthEvent:123:RegisterSuccessfulLogin:1486030800"
-      signature = nvote.generate_hash(message)
+      signature = Poll::Nvote.generate_hash(message)
 
       authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
       Poll::Nvote.store_voter(authorization_hash)
