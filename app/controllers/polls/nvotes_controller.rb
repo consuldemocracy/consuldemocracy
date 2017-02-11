@@ -16,8 +16,8 @@ class Polls::NvotesController < ApplicationController
 
   def success
     authorization_hash = request.headers["Authorization"]
-    Poll::Nvote.store_voter(authorization_hash)
-    render content_type: 'text/plain', status: :ok, text: ""
+    status = Poll::Nvote.store_voter(authorization_hash) ? 200 : 400
+    render content_type: 'text/plain', status: status, text: ""
   end
 
 end

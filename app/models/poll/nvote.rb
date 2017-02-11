@@ -20,7 +20,7 @@ class Poll
   end
 
   def generate_hash(message)
-    key = self.poll.server_shared_key
+    key = Poll.server_shared_key
     OpenSSL::HMAC.hexdigest(OpenSSL::Digest::SHA256.new('sha256'), key, message)
   end
 
@@ -29,20 +29,24 @@ class Poll
   end
 
   def url
-    key = self.poll.server_shared_key
+    key = Poll.server_shared_key
     message =  self.generate_message
     hash = self.generate_hash message
-    "#{self.poll.server_url}booth/#{self.nvotes_poll_id}/vote/#{hash}/#{message}"
+    "#{Poll.server_url}booth/#{self.nvotes_poll_id}/vote/#{hash}/#{message}"
   end
 
   def self.store_voter(authorization_hash)
     authorization_hash.gsub!("khmac:///sha-256;", "")
     signature, message = authorization_hash.split("/")
-    nvote, poll = parse_authorization(message)
 
-    if nvote && poll
-      Poll::Voter.create!(user: nvote.user, poll: poll)
+    if signature_valid?(signature, message)
+      nvote, poll = parse_authorization(message)
+      Poll::Voter.create(user: nvote.try(:user), poll: poll)
     end
+  end
+
+  def self.signature_valid?(signature, message)
+    signature == new.generate_hash(message)
   end
 
   def self.parse_authorization(message)
