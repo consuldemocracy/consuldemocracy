@@ -475,10 +475,6 @@ FactoryGirl.define do
     poll
     association :user, :level_two
 
-    trait :from_booth do
-      association :booth_assignment, factory: :poll_booth_assignment
-    end
-
     trait :valid_document do
       document_type   "1"
       document_number "12345678Z"

@@ -113,7 +113,13 @@ describe Poll::Nvote do
     it "stores a poll voter given a valid callback from Nvotes" do
       user  = create(:user, :in_census)
       poll = create(:poll, nvotes_poll_id: 123)
-      nvote = create(:poll_nvote, user: user, poll: poll)
+      booth_assignment = create(:poll_booth_assignment, poll: poll)
+      officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
+      nvote = create(:poll_nvote,
+                     user: user,
+                     poll: poll,
+                     booth_assignment: booth_assignment,
+                     officer_assignment: officer_assignment)
       nvote.update(voter_hash: "33333333")
 
       authorization_hash = "khmac:///sha-256;12345678/33333333:AuthEvent:123:RegisterSuccessfulLogin:1486030800"
@@ -122,6 +128,8 @@ describe Poll::Nvote do
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.poll).to eq(poll)
       expect(Poll::Voter.first.user).to eq(user)
+      expect(Poll::Voter.first.booth_assignment).to eq(nvote.booth_assignment)
+      expect(Poll::Voter.first.officer_assignment).to eq(nvote.officer_assignment)
     end
 
     it "store demografic data of a poll voter" do
