@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Officing Nvotes', :selenium, :focus do
+feature 'Officing Nvotes', :selenium do
   let(:officer) { create(:poll_officer) }
 
   background do

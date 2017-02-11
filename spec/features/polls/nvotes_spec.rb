@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Nvotes', :focus do
+feature 'Nvotes' do
 
   scenario "Voting", :selenium do
     user = create(:user, :verified, id: rand(9999))
@@ -27,7 +27,14 @@ feature 'Nvotes', :focus do
   scenario "Store voter (valid signature)" do
     user  = create(:user, :in_census, id: rand(9999))
     poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
-    nvote = create(:poll_nvote, user: user, poll: poll)
+
+    booth_assignment = create(:poll_booth_assignment, poll: poll)
+    officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
+    nvote = create(:poll_nvote,
+                   user: user,
+                   poll: poll,
+                   booth_assignment: booth_assignment,
+                   officer_assignment: officer_assignment)
     nvote.update(voter_hash: "33333333")
 
     message = "33333333:AuthEvent:128:RegisterSuccessfulLogin:1486030800"
@@ -41,6 +48,9 @@ feature 'Nvotes', :focus do
 
     expect(page.status_code).to eq(200)
     expect(Poll::Voter.count).to eq(1)
+    v = Poll::Voter.first
+    expect(v.officer_assignment_id).to eq(nvote.officer_assignment_id)
+    expect(v.booth_assignment_id).to eq(nvote.booth_assignment_id)
   end
 
   scenario "Store voter (invalid signature)" do

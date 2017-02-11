@@ -324,8 +324,10 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
-  def get_or_create_nvote(poll)
-    nvote = Poll::Nvote.new(poll: poll, user: self)
+  def get_or_create_nvote(poll, officer_assignment = nil)
+    nvote = Poll::Nvote.new(poll: poll,
+                            user: self,
+                            officer_assignment: officer_assignment)
 
     if Poll::Nvote.find_by_voter_hash(nvote.generate_message)
       nvote

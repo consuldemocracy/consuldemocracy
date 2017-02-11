@@ -20,6 +20,7 @@ class Poll < ActiveRecord::Base
   scope :expired,  -> { where('ends_at < ?', Time.current) }
   scope :published,  -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
+  scope :with_nvotes, -> { where.not(nvotes_poll_id: nil) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
