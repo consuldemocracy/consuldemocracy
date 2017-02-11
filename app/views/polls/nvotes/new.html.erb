@@ -17,12 +17,12 @@
 
 <div class="booth-container">
   <a class="agoravoting-voting-booth"
-    href="<%= @poll.server_url %>booth/<%= @poll.nvotes_poll_id %>/vote"
+    href="<%= Poll.server_url %>booth/<%= @poll.nvotes_poll_id %>/vote"
     data-authorization-funcname="getCastHmac">
     Votar con Agora Voting
   </a>
 
   <script>
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="<%= @poll.server_url %>admin/avWidgets.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","agoravoting-widgets-js");
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="<%= Poll.server_url %>admin/avWidgets.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","agoravoting-widgets-js");
   </script>
 </div>
