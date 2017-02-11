@@ -2367,7 +2367,7 @@ ul.ballot-list {
       font-size: rem-calc(200);
       line-height: rem-calc(200);
 
-      @include breakpoint(medium) {
+      @include breakpoint(large) {
         font-size: rem-calc(270);
         line-height: rem-calc(240);
       }
