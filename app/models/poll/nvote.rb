@@ -12,6 +12,7 @@ class Poll
   validates :voter_hash, uniqueness: {scope: :user_id}
 
   before_validation :save_voter_hash, on: :create
+  before_validation :set_denormalized_booth_assignment_id
 
   def generate_voter_hash
     Digest::SHA256.hexdigest("#{Rails.application.secrets.secret_key_base}:#{self.user_id}:#{self.poll_id}:#{self.nvotes_poll_id}")
@@ -62,6 +63,10 @@ class Poll
   end
 
   private
+
+    def set_denormalized_booth_assignment_id
+      self.booth_assignment_id ||= officer_assignment.try(:booth_assignment_id)
+    end
 
     def save_voter_hash
       if self.poll and self.user

@@ -11,7 +11,7 @@ class Poll
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
 
-    before_validation :set_demographic_info, :set_document_info
+    before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
 
     def set_demographic_info
       return unless user.present?
@@ -29,6 +29,10 @@ class Poll
     end
 
     private
+
+      def set_denormalized_booth_assignment_id
+        self.booth_assignment_id ||= officer_assignment.try(:booth_assignment_id)
+      end
 
       def in_census?
         census_api_response.valid?
