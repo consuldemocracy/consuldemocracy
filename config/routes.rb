@@ -270,6 +270,7 @@ Rails.application.routes.draw do
       get :direct_messages, on: :collection
       get :redeemable_codes, on: :collection
       get :user_invites, on: :collection
+      get :polls, on: :collection
     end
 
     namespace :api do

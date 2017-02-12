@@ -16,7 +16,9 @@ class Admin::Poll::PollsController < Admin::BaseController
     #                      order('poll_questions.title', 'poll_booths.name', 'users.username').
     #                      find(params[:id])
 
-    @poll = Poll.includes(officers: [:user]).find(params[:id])
+    @poll = Poll.includes(officers: [:user],
+                          booth_assignments: [:booth]).
+                          find(params[:id])
   end
 
   def new

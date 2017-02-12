@@ -395,4 +395,63 @@ feature 'Stats' do
 
   end
 
+  context "Polls" do
+
+    scenario "Total votes by origin" do
+      3.times { create(:poll_voter, origin: "web") }
+      5.times { create(:poll_voter, origin: "booth") }
+
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link "Polls"
+      end
+
+      within("#web_votes") do
+        expect(page).to have_content "3"
+      end
+
+      within("#booth_votes") do
+        expect(page).to have_content "5"
+      end
+    end
+
+    scenario "Votes by poll" do
+      poll1 = create(:poll)
+      poll2 = create(:poll)
+
+      1.times { create(:poll_voter, poll: poll1, origin: "web") }
+      2.times { create(:poll_voter, poll: poll2, origin: "web") }
+
+      3.times { create(:poll_voter, poll: poll1, origin: "booth") }
+      4.times { create(:poll_voter, poll: poll2, origin: "booth") }
+
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link "Polls"
+      end
+
+      within("#polls") do
+
+        within("#poll_#{poll1.id}_web") do
+          expect(page).to have_content "1"
+        end
+
+        within("#poll_#{poll2.id}_web") do
+          expect(page).to have_content "2"
+        end
+
+        within("#poll_#{poll1.id}_booth") do
+          expect(page).to have_content "3"
+        end
+
+        within("#poll_#{poll2.id}_booth") do
+          expect(page).to have_content "4"
+        end
+
+      end
+    end
+  end
+
 end

@@ -13,11 +13,11 @@
 </script>
 
 <div class="booth-container">
-  <a class="agoravoting-voting-booth"
+  <div class="agoravoting-voting-booth"
     href="<%= Poll.server_url %>booth/<%= @poll.nvotes_poll_id %>/vote"
     data-authorization-funcname="getCastHmac">
-    Votar con Agora Voting
-  </a>
+    Ha habido un problema con la detección de javascript en tu dispositivo, por favor vuelve a intentarlo en unos instantes.
+  </div>
 
   <script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="<%= Poll.server_url %>admin/avWidgets.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","agoravoting-widgets-js");

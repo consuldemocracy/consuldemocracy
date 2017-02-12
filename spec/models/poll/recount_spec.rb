@@ -23,18 +23,18 @@ describe :recount do
     expect(recount.count_log).to eq("")
 
     recount.count = 33
-    recount.officer_assignment_id = 1
+    recount.officer_assignment = create(:poll_officer_assignment, id: 11)
     recount.save
 
     recount.count = 32
-    recount.officer_assignment_id = 2
+    recount.officer_assignment = create(:poll_officer_assignment, id: 12)
     recount.save
 
     recount.count = 34
-    recount.officer_assignment_id = 3
+    recount.officer_assignment = create(:poll_officer_assignment, id: 13)
     recount.save
 
-    expect(recount.officer_assignment_id_log).to eq(":1:2")
+    expect(recount.officer_assignment_id_log).to eq(":11:12")
   end
 
 end

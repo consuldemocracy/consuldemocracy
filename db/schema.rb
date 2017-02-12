@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211192737) do
+ActiveRecord::Schema.define(version: 20170212154916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -316,6 +316,8 @@ ActiveRecord::Schema.define(version: 20170211192737) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "district_code"
+    t.integer  "poll_officer_id"
+    t.integer  "year_of_birth"
   end
 
   add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
@@ -434,6 +436,9 @@ ActiveRecord::Schema.define(version: 20170211192737) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "poll_booth_assignments", ["booth_id"], name: "index_poll_booth_assignments_on_booth_id", using: :btree
+  add_index "poll_booth_assignments", ["poll_id"], name: "index_poll_booth_assignments_on_poll_id", using: :btree
+
   create_table "poll_booths", force: :cascade do |t|
     t.string  "name"
     t.string  "location"
@@ -452,6 +457,7 @@ ActiveRecord::Schema.define(version: 20170211192737) do
   end
 
   add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
+  add_index "poll_final_recounts", ["officer_assignment_id"], name: "index_poll_final_recounts_on_officer_assignment_id", using: :btree
 
   create_table "poll_null_results", force: :cascade do |t|
     t.integer "author_id"
@@ -481,6 +487,8 @@ ActiveRecord::Schema.define(version: 20170211192737) do
   end
 
   add_index "poll_nvotes", ["deleted_at"], name: "index_poll_nvotes_on_deleted_at", using: :btree
+  add_index "poll_nvotes", ["user_id"], name: "index_poll_nvotes_on_user_id", using: :btree
+  add_index "poll_nvotes", ["voter_hash"], name: "index_poll_nvotes_on_voter_hash", using: :btree
 
   create_table "poll_officer_assignments", force: :cascade do |t|
     t.integer  "booth_assignment_id"
@@ -492,9 +500,16 @@ ActiveRecord::Schema.define(version: 20170211192737) do
     t.string   "user_data_log",       default: ""
   end
 
+  add_index "poll_officer_assignments", ["booth_assignment_id"], name: "index_poll_officer_assignments_on_booth_assignment_id", using: :btree
+  add_index "poll_officer_assignments", ["officer_id", "date"], name: "index_poll_officer_assignments_on_officer_id_and_date", using: :btree
+  add_index "poll_officer_assignments", ["officer_id"], name: "index_poll_officer_assignments_on_officer_id", using: :btree
+
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "failed_census_calls_count", default: 0
   end
+
+  add_index "poll_officers", ["user_id"], name: "index_poll_officers_on_user_id", using: :btree
 
   create_table "poll_partial_results", force: :cascade do |t|
     t.integer "question_id"
@@ -563,9 +578,12 @@ ActiveRecord::Schema.define(version: 20170211192737) do
     t.integer  "answer_id"
     t.integer  "officer_assignment_id"
     t.integer  "user_id"
+    t.string   "origin"
   end
 
+  add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree
   add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree
+  add_index "poll_voters", ["officer_assignment_id"], name: "index_poll_voters_on_officer_assignment_id", using: :btree
   add_index "poll_voters", ["poll_id", "document_number", "document_type"], name: "doc_by_poll", using: :btree
   add_index "poll_voters", ["poll_id"], name: "index_poll_voters_on_poll_id", using: :btree
   add_index "poll_voters", ["user_id"], name: "index_poll_voters_on_user_id", using: :btree
@@ -593,6 +611,8 @@ ActiveRecord::Schema.define(version: 20170211192737) do
     t.boolean  "geozone_restricted", default: false
     t.string   "nvotes_poll_id"
   end
+
+  add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
 
   create_table "probe_options", force: :cascade do |t|
     t.string  "code"
@@ -1001,6 +1021,7 @@ ActiveRecord::Schema.define(version: 20170211192737) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "geozones_polls", "geozones"
@@ -1013,12 +1034,26 @@ ActiveRecord::Schema.define(version: 20170211192737) do
   add_foreign_key "organizations", "users"
   add_foreign_key "poll_nvotes", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_nvotes", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "poll_answers", "poll_questions", column: "question_id"
+  add_foreign_key "poll_booth_assignments", "polls"
+  add_foreign_key "poll_final_recounts", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_final_recounts", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "poll_null_results", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_null_results", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "poll_officer_assignments", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_partial_results", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
   add_foreign_key "poll_partial_results", "users", column: "author_id"
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
   add_foreign_key "probe_options", "debates"
+  add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "poll_voters", "polls"
+  add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

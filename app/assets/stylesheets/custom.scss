@@ -3239,6 +3239,16 @@ ul.ballot-list {
   color: $text;
 }
 
+.dark-heading {
+
+  .button.hollow {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    margin-right: $line-height/2;
+  }
+}
+
 // 21. Nvotes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

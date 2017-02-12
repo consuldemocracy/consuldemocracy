@@ -2,7 +2,7 @@
 <% content_for :wrapper_class, "light" %>
 
 <div class="polls-show">
-  <div class="expanded no-margin-top dark-heading polls-show-header">
+  <div id="polls-show-header" class="expanded no-margin-top dark-heading polls-show-header">
     <div class="row">
       <div class="small-12 medium-9 column padding">
         <%= back_link_to polls_path %>
@@ -28,7 +28,9 @@
           <% end %>
         </ul>
 
-        <%= render "callout" %>
+        <% unless can?(:answer, @poll) %>
+          <%= render 'reasons_for_not_answering', poll: @poll %>
+        <% end %>
       </div>
       <div class="small-12 medium-3 column">
         <div class="info">

@@ -474,6 +474,7 @@ FactoryGirl.define do
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    origin "web"
 
     trait :valid_document do
       document_type   "1"
@@ -516,9 +517,14 @@ FactoryGirl.define do
 
   factory :officing_residence, class: 'Officing::Residence' do
     user
+    association :officer, factory: :poll_officer
     document_number
     document_type    "1"
     year_of_birth    "1980"
+
+    trait :invalid do
+      year_of_birth Time.current.year
+    end
   end
 
   factory :organization do
