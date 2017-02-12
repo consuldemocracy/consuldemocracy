@@ -28,7 +28,9 @@
           <% end %>
         </ul>
 
-        <%= render "callout" %>
+        <% unless can?(:answer, @poll) %>
+          <%= render 'reasons_for_not_answering', poll: @poll %>
+        <% end %>
       </div>
       <div class="small-12 medium-3 column">
         <div class="info">
