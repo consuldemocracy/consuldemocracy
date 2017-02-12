@@ -475,7 +475,7 @@ es:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
     show:
-      answer_this_question: "Responder a esta pregunta"
+      answer_this_question: "Ir a la página de votación"
       original_proposal: "Propuesta original"
       author: "Creado por"
       dates_title: "Fechas de participación"
