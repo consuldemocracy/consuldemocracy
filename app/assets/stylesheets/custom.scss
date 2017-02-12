@@ -182,6 +182,13 @@ ul.menu > li > a {
   padding-top: $line-height;
 }
 
+.more-info-text {
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 @import 'motion-ui/motion-ui';
 @include foundation-orbit;
 @include motion-ui-transitions;
