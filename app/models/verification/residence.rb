@@ -29,6 +29,8 @@ class Verification::Residence
   def save
     return false unless valid?
 
+    self.document_number = @census_api_response.document_number
+
     user.take_votes_if_erased_document(document_number, document_type)
 
     user.update(document_number:       document_number,

@@ -112,6 +112,15 @@ describe Verification::Residence do
       expect(user).to be_level_three_verified
     end
 
+    it "updates the document number with the Census API number" do
+      user = create(:user)
+      residence.user = user
+      residence.document_number = '00012345678Z'
+      residence.save
+      expect(residence.document_number).to eq('12345678Z')
+      expect(user.reload.document_number).to eq('12345678Z')
+    end
+
   end
 
   describe "tries" do

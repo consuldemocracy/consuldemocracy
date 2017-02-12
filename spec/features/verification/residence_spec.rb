@@ -21,6 +21,25 @@ feature 'Residence' do
     expect(page).to have_content 'Residence verified'
   end
 
+  scenario 'User document matches census API document' do
+    user = create(:user)
+    login_as(user)
+
+    visit account_path
+    click_link 'Verify my account'
+
+    fill_in 'residence_document_number', with: "000012345678Z"
+    select 'DNI', from: 'residence_document_type'
+    select_date '31-December-1980', from: 'residence_date_of_birth'
+    fill_in 'residence_postal_code', with: '28013'
+    check 'residence_terms_of_service'
+    click_button 'Verify residence'
+
+    expect(page).to have_content 'Residence verified'
+    expect(user.reload.document_number).to eq("12345678Z")
+
+  end
+
   scenario 'Initialize the redeemable code with the user redeemable code' do
     user = create(:user, redeemable_code: 'abcde')
     login_as(user)
