@@ -7,6 +7,9 @@ feature 'Nvotes' do
     poll = create(:poll, published: true, nvotes_poll_id: 128)
     officer = create(:poll_officer)
 
+    booth_assignment = create(:poll_booth_assignment, poll: poll)
+    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
     login_as(user)
     visit poll_path(poll)
 
