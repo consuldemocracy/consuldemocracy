@@ -132,6 +132,7 @@ feature 'Polls' do
 
       visit poll_path(poll)
 
+      expect(page).to have_content('You can not answer this poll because you are not censed in the right district')
       expect(page).to have_content('Vader')
       expect(page).to have_content('Palpatine')
       expect(page).to_not have_link('Vader')
