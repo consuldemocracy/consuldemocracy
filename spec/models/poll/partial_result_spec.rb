@@ -36,19 +36,19 @@ describe Poll::PartialResult do
       expect(partial_result.officer_assignment_id_log).to eq("")
 
       partial_result.amount = 33
-      partial_result.officer_assignment_id = 1
+      partial_result.officer_assignment = create(:poll_officer_assignment, id: 10)
       partial_result.save
 
       partial_result.amount = 32
-      partial_result.officer_assignment_id = 2
+      partial_result.officer_assignment = create(:poll_officer_assignment, id: 20)
       partial_result.save
 
       partial_result.amount = 34
-      partial_result.officer_assignment_id = 3
+      partial_result.officer_assignment = create(:poll_officer_assignment, id: 30)
       partial_result.save
 
       expect(partial_result.amount_log).to eq(":33:32")
-      expect(partial_result.officer_assignment_id_log).to eq(":1:2")
+      expect(partial_result.officer_assignment_id_log).to eq(":10:20")
     end
 
     it "should update author_id if amount changes" do
