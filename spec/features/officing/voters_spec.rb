@@ -38,6 +38,7 @@ feature 'Voters' do
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll1, user: user)
 
+    use_physical_booth
     visit new_officing_voter_path(id: voter.user.id)
 
     within("#poll_#{poll1.id}") do
