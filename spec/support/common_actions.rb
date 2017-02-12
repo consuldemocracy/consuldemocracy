@@ -222,6 +222,17 @@ module CommonActions
     "khmac:///sha-256;#{signature}/#{message}"
   end
 
+  def simulate_nvotes_callback(nvote, poll)
+    message = "#{nvote.voter_hash}:AuthEvent:#{poll.nvotes_poll_id}:RegisterSuccessfulLogin:#{Time.now.to_i}"
+    signature = Poll::Nvote.generate_hash(message)
+
+    authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
+
+    page.driver.header 'Authorization', authorization_hash
+    page.driver.header 'ACCEPT', "application/json"
+    page.driver.post polls_nvotes_success_path
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
