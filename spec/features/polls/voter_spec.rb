@@ -17,16 +17,21 @@ feature "Voter" do
 
     scenario "Voting in booth", :js do
       user  = create(:user, :in_census)
+      create(:geozone, :in_census)
+
       poll = create(:poll)
       officer = create(:poll_officer)
+      create(:poll_officer_assignment, officer: officer)
 
       login_as(officer.user)
-
       validate_officer
+
       visit new_officing_residence_path
       officing_verify_residence
 
-      click_button "Confirm vote"
+      expect(page).to have_content poll.name
+
+      first(:button, "Confirm vote").click
       expect(page).to have_content "Vote introduced!"
 
       expect(Poll::Voter.count).to eq(1)
