@@ -1,6 +1,8 @@
 ---
 es:
   officing:
+    header:
+      title: Votaciones
     dashboard:
       index:
         title: Presidir mesa de votaciones

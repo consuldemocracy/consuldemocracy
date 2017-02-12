@@ -1,6 +1,8 @@
 ---
 en:
   officing:
+    header:
+      title: Polling
     dashboard:
       index:
         title: Poll officing

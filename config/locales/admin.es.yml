@@ -1,6 +1,8 @@
 ---
 es:
   admin:
+    header:
+      title: Administración
     actions:
       actions: Acciones
       confirm: "¿Estás seguro?"
