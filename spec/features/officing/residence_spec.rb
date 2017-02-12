@@ -52,10 +52,11 @@ feature 'Residence' do
       end
 
       click_button 'Validate document'
-      expect(page).to have_content /\d errors? prevented the verification of this document/
+      expect(page).to have_content(/\d errors? prevented the verification of this document/)
     end
 
     scenario "Error on Census (document number)" do
+      initial_failed_census_calls_count = officer.failed_census_calls_count
       within("#side_menu") do
         click_link "Validate document"
       end
@@ -67,6 +68,13 @@ feature 'Residence' do
       click_button 'Validate document'
 
       expect(page).to have_content 'The Census was unable to verify this document'
+
+      officer.reload
+      fcc = FailedCensusCall.last
+      expect(fcc).to be
+      expect(fcc.poll_officer).to eq(officer)
+      expect(officer.failed_census_calls.last).to eq(fcc)
+      expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 1)
     end
 
     scenario "Error on Census (year of birth)" do
