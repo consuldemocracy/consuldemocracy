@@ -397,7 +397,7 @@ feature 'Stats' do
 
   context "Polls" do
 
-    scenario "Total votes by origin", :focus do
+    scenario "Total votes by origin" do
       3.times { create(:poll_voter, origin: "web") }
       5.times { create(:poll_voter, origin: "booth") }
 
@@ -416,7 +416,7 @@ feature 'Stats' do
       end
     end
 
-    scenario "Votes by poll", :focus do
+    scenario "Votes by poll" do
       poll1 = create(:poll)
       poll2 = create(:poll)
 
