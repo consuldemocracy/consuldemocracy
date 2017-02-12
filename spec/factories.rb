@@ -474,6 +474,7 @@ FactoryGirl.define do
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    origin "web"
 
     trait :valid_document do
       document_type   "1"

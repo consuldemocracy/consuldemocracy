@@ -611,6 +611,7 @@ en:
       show:
         stats_title: Stats
         participatory_budget: Participatory Budget
+        polls: Polls
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         redeemable_codes: Redeemable codes
@@ -658,6 +659,15 @@ en:
         title: Direct messages
         total: Total
         users_who_have_sent_message: Users that have sent a private message
+      polls:
+        title: Poll February 13th to 19th
+        web_votes: Web votes
+        booth_votes: Booth votes
+        table:
+          title: Votes by poll
+          poll_name: Poll
+          origin_web: Web
+          origin_booth: Booth
       proposal_notifications:
         title: Proposal notifications
         total: Total

@@ -611,6 +611,7 @@ es:
       show:
         stats_title: Estadísticas
         participatory_budget: Presupuestos Participativos
+        polls: Votaciones
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         redeemable_codes: Códigos enviados por carta
@@ -658,6 +659,15 @@ es:
         title: Mensajes directos
         total: Total
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
+      polls:
+        title: Votación 13 al 19 de Febrero
+        web_votes: Votos en Ágora
+        booth_votes: Votos en Urnas
+        table:
+          title: Votos por votación
+          poll_name: Votación
+          origin_web: Ágora
+          origin_booth: Urna
       proposal_notifications:
         title: Notificaciones de propuestas
         total: Total

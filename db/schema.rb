@@ -578,6 +578,7 @@ ActiveRecord::Schema.define(version: 20170212154916) do
     t.integer  "answer_id"
     t.integer  "officer_assignment_id"
     t.integer  "user_id"
+    t.string   "origin"
   end
 
   add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree

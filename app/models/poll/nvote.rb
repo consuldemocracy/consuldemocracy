@@ -47,7 +47,8 @@ class Poll
       Poll::Voter.create(user: nvote.user,
                          poll: poll,
                          officer_assignment: nvote.officer_assignment,
-                         booth_assignment: nvote.booth_assignment)
+                         booth_assignment: nvote.booth_assignment,
+                         origin: "web")
     end
   end
 
