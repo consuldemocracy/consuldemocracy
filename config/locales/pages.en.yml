@@ -24,6 +24,7 @@ en:
         proposals_info: Create your own proposals
         signature_sheet: Sheet collecting signatures for support
         spending_proposals_info: Create your own spending proposals
+        polls: "First vote of citizen proposals of the City of Madrid"
       how_it_works:
         i: Participation
         i1: Debates area
@@ -70,6 +71,7 @@ en:
           proposals_info: How does citizen proposals work?
           signature_sheet: Signature sheet
           spending_proposals_info: What is participatory budgeting?
+          polls: "Information about voting"
     privacy: Privacy Policy
     processes:
       back: Back

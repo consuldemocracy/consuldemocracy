@@ -24,6 +24,7 @@ es:
         proposals_info: Crea tus propias propuestas
         signature_sheet: Hojas de firmas para recoger apoyos
         spending_proposals_info: Envía tus propuestas de presupuesto
+        polls: "Primera votación de propuestas ciudadanas del Ayuntamiento de Madrid"
       how_it_works:
         i: Participación
         i1: Espacio de debate
@@ -72,6 +73,7 @@ es:
         proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
         signature_sheet: Hojas de firmas
         spending_proposals_info: "¿Qué son los presupuestos participativos?"
+        polls: "Información sobre las votaciones"
     privacy: Política de Privacidad
     processes:
       back: Volver
