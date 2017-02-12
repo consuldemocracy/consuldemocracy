@@ -16,7 +16,6 @@ namespace :polls do
         { author_visible_name: "Junta de Distrito de #{geozone_name}",
           valid_answers: "",
           poll: poll,
-          skip_length_checks: true,
           author: User.first
         }.merge(question_attributes)
       )
@@ -467,7 +466,6 @@ namespace :polls do
 
     poll_main.questions.create!(
       author_visible_name: "Ayuntamiento de Madrid",
-      skip_length_checks: true,
       author: User.first,
       title: "De los dos proyectos finalistas para reformar la Plaza de España ¿cuál prefieres que se lleve a cabo?",
       valid_answers: "Proyecto X, Proyecto Y",
@@ -483,28 +481,24 @@ namespace :polls do
     poll_gv.questions.create!(
       author: User.first,
       author_visible_name: "Ayuntamiento de Madrid",
-      skip_length_checks: true,
       title: "¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?",
       valid_answers: "Sí,No"
     )
     poll_gv.questions.create!(
       author: User.first,
       author_visible_name: "Ayuntamiento de Madrid",
-      skip_length_checks: true,
       title: "¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?",
       valid_answers: "Sí,No"
     )
     poll_gv.questions.create!(
       author: User.first,
       author_visible_name: "Ayuntamiento de Madrid",
-      skip_length_checks: true,
       title: "¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?",
       valid_answers: "Sí,No"
     )
     poll_gv.questions.create!(
       author: User.first,
       author_visible_name: "Ayuntamiento de Madrid",
-      skip_length_checks: true,
       title: "¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?",
       valid_answers: "Sí,No"
     )

@@ -93,5 +93,19 @@ describe Officing::Residence do
       expect(user.geozone).to eq(geozone)
     end
 
+    it "stores failed census calls" do
+      residence = build(:officing_residence, :invalid, document_number: "12345678Z")
+      residence.save
+
+      expect(FailedCensusCall.count).to eq(1)
+      expect(FailedCensusCall.first).to have_attributes({
+        user_id:         residence.user.id,
+        poll_officer_id: residence.officer.id,
+        document_number: "12345678Z",
+        document_type:   "1",
+        year_of_birth:   Time.current.year
+      })
+    end
+
   end
 end

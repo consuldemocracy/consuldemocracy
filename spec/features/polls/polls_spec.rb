@@ -192,5 +192,56 @@ feature 'Polls' do
       expect(page).to_not have_link('Chewbacca')
     end
 
+    context "Nvotes iframe" do
+
+      let!(:question1) { create(:poll_question, poll: poll) }
+      let!(:question2) { create(:poll_question, poll: poll) }
+
+      scenario "Anonymous user" do
+        visit poll_path(poll)
+
+        within("#polls-show-header") do
+          expect(page).to_not have_content question2.title
+        end
+
+        within("#questions") do
+          expect(page).to     have_content question2.title
+          expect(page).to_not have_css(".booth-container")
+        end
+      end
+
+      scenario "Level 1 user" do
+        user = create(:user)
+        login_as(user)
+
+        visit poll_path(poll)
+
+        within("#polls-show-header") do
+          expect(page).to_not have_content question2.title
+        end
+
+        within("#questions") do
+          expect(page).to     have_content question2.title
+          expect(page).to_not have_css(".booth-container")
+        end
+      end
+
+      scenario "Level 2 user" do
+        user = create(:user, :level_two)
+        login_as(user)
+
+        visit poll_path(poll)
+
+        within("#polls-show-header") do
+          expect(page).to have_content question2.title
+        end
+
+        within("#questions") do
+          expect(page).to     have_css(".booth-container")
+          expect(page).to_not have_content question2.title
+        end
+      end
+
+    end
   end
 end
