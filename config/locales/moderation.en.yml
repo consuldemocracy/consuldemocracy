@@ -1,6 +1,8 @@
 ---
 en:
   moderation:
+    header:
+      title: Moderation
     comments:
       index:
         block_authors: Block authors
