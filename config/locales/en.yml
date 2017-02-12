@@ -469,6 +469,7 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
+      cant_answer_wrong_geozone: "You can not answer this poll because you are not censed in the right district"
       more_info: "More information"
       already_voted: "You already have participated in this poll."
   poll_questions:
@@ -480,14 +481,6 @@ en:
       author: "Created by"
       dates_title: "Participation dates"
       more_info: "More information"
-      not_logged_in: "You must %{signin} or %{signup} to participate."
-      signin: Sign in
-      signup: Sign up
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
-      verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
-      cant_answer_expired: "This poll has finished."
-      cant_answer_wrong_geozone: "This question is not available on your geozone."
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       poll: "Poll"

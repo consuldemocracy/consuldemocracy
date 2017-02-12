@@ -31,11 +31,13 @@ feature 'Voters' do
     expect(page).to_not have_button "Confirm vote"
   end
 
-  scenario "Already voted", :js do
+  scenario "After voting, via nvotes or physical booth", :js do
     poll1 = create(:poll, geozone_restricted: false)
     poll2 = create(:poll, geozone_restricted: false)
 
     user = create(:user, :level_two)
+    # We can not simulate the nvotes callback in selenium, so this covers
+    # voting via officing - physical and tablet
     voter = create(:poll_voter, poll: poll1, user: user)
 
     use_physical_booth
@@ -49,6 +51,12 @@ feature 'Voters' do
     within("#poll_#{poll2.id}") do
       expect(page).to have_button "Confirm vote"
     end
+
+    login_as(user)
+    visit poll_path(poll1)
+    expect(page).to have_content "You already have participated in this poll."
+    visit poll_path(poll2)
+    expect(page).to_not have_content "You already have participated in this poll."
   end
 
   context "Booth type" do

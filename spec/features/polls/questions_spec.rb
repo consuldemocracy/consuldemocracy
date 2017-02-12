@@ -54,7 +54,7 @@ feature 'Poll Questions' do
       login_as(create(:user, :level_two, geozone: geozone))
       visit question_path(question)
 
-      expect(page).to have_content('This question is not available on your geozone')
+      expect(page).to have_content('You can not answer this poll because you are not censed in the right district')
     end
 
     scenario 'Level 2 users who can answer' do

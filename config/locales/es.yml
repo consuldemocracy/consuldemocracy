@@ -469,6 +469,7 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "No puedes responder esta votación al no ser del distrito adecuado"
       more_info: "Más información"
       already_voted: "Ya has participado en esta votación."
   poll_questions:
@@ -480,14 +481,6 @@ es:
       author: "Creado por"
       dates_title: "Fechas de participación"
       more_info: "Más información"
-      not_logged_in: "Necesitas %{signin} o %{signup} para participar."
-      signin: iniciar sesión
-      signup: registrarte
-      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
-      verify_link: "verifica tu cuenta"
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
-      cant_answer_expired: "Esta votación ha terminado."
-      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       poll: "Votación"

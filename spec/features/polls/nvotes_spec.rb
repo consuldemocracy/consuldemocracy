@@ -3,8 +3,9 @@ require 'rails_helper'
 feature 'Nvotes' do
 
   scenario "Send vote", :selenium do
-    user = create(:user, :verified, id: rand(9999))
+    user = create(:user, :level_two, id: rand(9999))
     poll = create(:poll, published: true, nvotes_poll_id: 128)
+    officer = create(:poll_officer)
 
     login_as(user)
     visit poll_path(poll)
@@ -21,6 +22,18 @@ feature 'Nvotes' do
       click_button "Enviar el voto"
 
       expect(page).to have_content "Voto emitido con éxito"
+    end
+
+    # Simulate callback
+    create(:poll_voter, :valid_document, user: user, poll: poll)
+
+    login_as(officer.user)
+
+    visit new_officing_voter_path(id: user.id)
+
+    within("#poll_#{poll.id}") do
+      expect(page).to have_content "Has already participated in this poll"
+      expect(page).to_not have_button "Confirm vote"
     end
   end
 
