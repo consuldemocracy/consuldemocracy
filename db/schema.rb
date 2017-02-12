@@ -435,8 +435,9 @@ ActiveRecord::Schema.define(version: 20170212130926) do
   end
 
   create_table "poll_booths", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
+    t.string  "name"
+    t.string  "location"
+    t.boolean "physical", default: true
   end
 
   create_table "poll_final_recounts", force: :cascade do |t|

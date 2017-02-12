@@ -1,5 +1,6 @@
 class Officing::VotersController < Officing::BaseController
   respond_to :html, :js
+  helper_method :physical_booth?
 
   def new
     @user = User.find(params[:id])
@@ -47,5 +48,13 @@ class Officing::VotersController < Officing::BaseController
 
         voter.get_or_create_nvote(poll, officer_assignment)
       end
+    end
+
+    def physical_booth?
+      officer_assignment = ::Poll::OfficerAssignment.by_officer(current_user.poll_officer)
+                                                    .by_date(Date.current)
+                                                    .first
+
+      officer_assignment.booth_assignment.booth.physical?
     end
 end

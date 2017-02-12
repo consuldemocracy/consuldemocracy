@@ -7,6 +7,7 @@ feature 'Officing Nvotes', :selenium do
     validate_officer
     login_as(officer.user)
     create(:geozone, census_code: "01")
+    use_digital_booth
   end
 
   scenario "Send vote for single poll" do

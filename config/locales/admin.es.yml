@@ -391,6 +391,7 @@ es:
         title: "Nueva urna"
         name: "Nombre"
         location: "Ubicación"
+        physical: "Urna física"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
