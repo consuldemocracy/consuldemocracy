@@ -12,7 +12,7 @@
       <th class="text-right"><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
-      <% @poll.officers.each do |officer| %>
+      <% @poll.officers.uniq.each do |officer| %>
         <tr id="officer_<%= officer.id %>" class="officer">
           <td>
             <strong>
