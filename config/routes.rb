@@ -112,7 +112,7 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resources :polls, only: [:show, :index] do
+  resources :polls, only: [:show, :index], path: 'votaciones' do
     resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
