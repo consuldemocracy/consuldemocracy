@@ -15,7 +15,8 @@ class Officing::VotersController < Officing::BaseController
                              user: @user,
                              poll: @poll,
                              origin: "booth",
-                             officer: current_user.poll_officer)
+                             officer: current_user.poll_officer,
+                             officer_assignment: officer_assignment(@poll))
     @voter.save!
   end
 
@@ -25,4 +26,10 @@ class Officing::VotersController < Officing::BaseController
       params.require(:voter).permit(:poll_id, :user_id)
     end
 
+    def officer_assignment(poll)
+      Poll::OfficerAssignment.by_officer(current_user.poll_officer)
+                             .by_poll(poll)
+                             .by_date(Date.current)
+                             .first
+    end
 end
