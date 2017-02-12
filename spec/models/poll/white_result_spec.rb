@@ -25,19 +25,19 @@ describe Poll::WhiteResult do
       expect(white_result.officer_assignment_id_log).to eq("")
 
       white_result.amount = 33
-      white_result.officer_assignment_id = 1
+      white_result.officer_assignment = create(:poll_officer_assignment, id: 21)
       white_result.save
 
       white_result.amount = 32
-      white_result.officer_assignment_id = 2
+      white_result.officer_assignment = create(:poll_officer_assignment, id: 22)
       white_result.save
 
       white_result.amount = 34
-      white_result.officer_assignment_id = 3
+      white_result.officer_assignment = create(:poll_officer_assignment, id: 23)
       white_result.save
 
       expect(white_result.amount_log).to eq(":33:32")
-      expect(white_result.officer_assignment_id_log).to eq(":1:2")
+      expect(white_result.officer_assignment_id_log).to eq(":21:22")
     end
 
     it "should update author_id if amount changes" do

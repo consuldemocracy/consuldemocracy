@@ -520,7 +520,7 @@ describe User do
       expect(user.former_users_data_log).to include("| id: #{another_user.id}")
     end
 
-    it "reassignes votes from other user" do
+    it "reassigns votes from other user" do
       other_user = create(:user, :level_three)
       user = create(:user, :level_three)
 
@@ -539,7 +539,7 @@ describe User do
       expect(user.vote_ids.sort).to eq([v1.id, v2.id, v3.id].sort)
     end
 
-    it "reassignes budget ballots from other user" do
+    it "reassigns budget ballots from other user" do
       other_user = create(:user, :level_three)
       user = create(:user, :level_three)
 
@@ -557,7 +557,7 @@ describe User do
       expect(Budget::Ballot.where(user: user).sort).to eq([b1, b2].sort)
     end
 
-    it "reassignes poll voters from other user" do
+    it "reassigns poll voters from other user" do
       other_user = create(:user, :level_three)
       user = create(:user, :level_three)
 
