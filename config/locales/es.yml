@@ -476,7 +476,7 @@ es:
     default_valid_answers: "Sí, No"
     show:
       answer_this_question: "Ir a la página de votación"
-      original_proposal: "Propuesta original"
+      original_proposal: "Ver el texto de la propuesta"
       author: "Creado por"
       dates_title: "Fechas de participación"
       more_info: "Más información"

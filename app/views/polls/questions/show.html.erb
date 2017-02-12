@@ -8,8 +8,8 @@
       <h1><%= @question.title %></h1>
 
       <% if @question.proposal.present? %>
-        <div class="margin-bottom">
-          <%= link_to t('poll_questions.show.original_proposal'), @question.proposal %>
+        <div class="inline-block">
+          <%= link_to t('poll_questions.show.original_proposal'), @question.proposal, class: "button hollow large" %>
         </div>
       <% end %>
 
