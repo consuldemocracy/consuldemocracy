@@ -25,19 +25,19 @@ describe Poll::NullResult do
       expect(null_result.officer_assignment_id_log).to eq("")
 
       null_result.amount = 33
-      null_result.officer_assignment_id = 1
+      null_result.officer_assignment = create(:poll_officer_assignment, id: 101)
       null_result.save
 
       null_result.amount = 32
-      null_result.officer_assignment_id = 2
+      null_result.officer_assignment = create(:poll_officer_assignment, id: 102)
       null_result.save
 
       null_result.amount = 34
-      null_result.officer_assignment_id = 3
+      null_result.officer_assignment = create(:poll_officer_assignment, id: 103)
       null_result.save
 
       expect(null_result.amount_log).to eq(":33:32")
-      expect(null_result.officer_assignment_id_log).to eq(":1:2")
+      expect(null_result.officer_assignment_id_log).to eq(":101:102")
     end
 
     it "should update author_id if amount changes" do
