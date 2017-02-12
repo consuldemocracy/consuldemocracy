@@ -67,4 +67,9 @@ class Admin::StatsController < Admin::BaseController
     @clicked_signup_button = Ahoy::Event.where(name: :clicked_signup_button).count
   end
 
+  def polls
+    @polls = ::Poll.all
+    @voters = ::Poll::Voter.all
+  end
+
 end
