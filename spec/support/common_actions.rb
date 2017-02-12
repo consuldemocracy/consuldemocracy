@@ -222,6 +222,16 @@ module CommonActions
     "khmac:///sha-256;#{signature}/#{message}"
   end
 
+  def use_digital_booth
+    allow_any_instance_of(Officing::VotersController).
+    to receive(:physical_booth?).and_return(false)
+  end
+
+  def use_physical_booth
+    allow_any_instance_of(Officing::VotersController).
+    to receive(:physical_booth?).and_return(true)
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
