@@ -475,8 +475,8 @@ en:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
     show:
-      answer_this_question: "Answer this question"
-      original_proposal: "Original proposal"
+      answer_this_question: "Go to voting page"
+      original_proposal: "See proposal's text"
       author: "Created by"
       dates_title: "Participation dates"
       more_info: "More information"
