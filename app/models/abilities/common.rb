@@ -52,8 +52,10 @@ module Abilities
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
-        can(:answer, Poll, Poll.answerable_by(user)){ |poll| poll.answerable_by?(user) }
-        can(:answer, Poll::Question, Poll::Question.answerable_by(user)) do |question|
+        can :answer, Poll do |poll|
+          poll.answerable_by?(user)
+        end
+        can :answer, Poll::Question do |question|
           question.answerable_by?(user)
         end
       end
