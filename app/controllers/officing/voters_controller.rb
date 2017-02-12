@@ -12,7 +12,8 @@ class Officing::VotersController < Officing::BaseController
     @voter = Poll::Voter.new(document_type:   @user.document_type,
                              document_number: @user.document_number,
                              user: @user,
-                             poll: @poll)
+                             poll: @poll,
+                             officer_assignment: officer_assignment(@poll))
     @voter.save!
   end
 
@@ -20,7 +21,7 @@ class Officing::VotersController < Officing::BaseController
     @voter = User.find(params[:id])
     votable_polls = Poll.votable_by(@voter)
 
-    prepopulate_nvotes(@voter, current_user, votable_polls)
+    prepopulate_nvotes(@voter, votable_polls)
     sign_in_as_voter(@voter)
     redirect_to new_officing_poll_nvote_path(votable_polls.first)
   end
@@ -37,14 +38,16 @@ class Officing::VotersController < Officing::BaseController
       sign_in(voter)
     end
 
-    def prepopulate_nvotes(voter, officer, votable_polls)
+    def prepopulate_nvotes(voter,votable_polls)
       votable_polls.with_nvotes.sort_for_list.each do |poll|
-        officer_assignment = ::Poll::OfficerAssignment.by_officer(officer)
-                                                      .by_poll(poll)
-                                                      .by_date(Date.current)
-                                                      .first
-
-        voter.get_or_create_nvote(poll, officer_assignment)
+        voter.get_or_create_nvote(poll, officer_assignment(poll))
       end
+    end
+
+    def officer_assignment(poll)
+      Poll::OfficerAssignment.by_officer(current_user.poll_officer)
+                             .by_poll(poll)
+                             .by_date(Date.current)
+                             .first
     end
 end
