@@ -282,6 +282,8 @@ ActiveRecord::Schema.define(version: 20170208160130) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "district_code"
+    t.integer  "poll_officer_id"
+    t.integer  "year_of_birth"
   end
 
   add_index "failed_census_calls", ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
@@ -438,6 +440,7 @@ ActiveRecord::Schema.define(version: 20170208160130) do
 
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "failed_census_calls_count", default: 0
   end
 
   create_table "poll_partial_results", force: :cascade do |t|
@@ -842,6 +845,7 @@ ActiveRecord::Schema.define(version: 20170208160130) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "geozones_polls", "geozones"
