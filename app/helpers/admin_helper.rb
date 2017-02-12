@@ -4,6 +4,14 @@ module AdminHelper
     render "/#{namespace}/menu"
   end
 
+  def namespaced_root_path
+    "/#{namespace}"
+  end
+
+  def namespaced_header_title
+    t("#{namespace}.header.title")
+  end
+
   def menu_tags?
     ["tags"].include? controller_name
   end

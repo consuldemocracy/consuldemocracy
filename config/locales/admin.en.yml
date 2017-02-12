@@ -1,6 +1,8 @@
 ---
 en:
   admin:
+    header:
+      title: Administration
     actions:
       actions: Actions
       confirm: Are you sure?
