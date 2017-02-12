@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212123435) do
+ActiveRecord::Schema.define(version: 20170212154916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -484,6 +484,8 @@ ActiveRecord::Schema.define(version: 20170212123435) do
   end
 
   add_index "poll_nvotes", ["deleted_at"], name: "index_poll_nvotes_on_deleted_at", using: :btree
+  add_index "poll_nvotes", ["user_id"], name: "index_poll_nvotes_on_user_id", using: :btree
+  add_index "poll_nvotes", ["voter_hash"], name: "index_poll_nvotes_on_voter_hash", using: :btree
 
   create_table "poll_officer_assignments", force: :cascade do |t|
     t.integer  "booth_assignment_id"
