@@ -466,7 +466,7 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
-      cant_answer_wrong_geozone: "No puedes responder esta votación al no ser del distrito adecuado"
+      cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
       more_info: "Más información"
       already_voted: "Ya has participado en esta votación."
   poll_questions:
