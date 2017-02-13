@@ -11,16 +11,16 @@ Rails.application.routes.draw do
                        confirmations: 'users/confirmations',
                        omniauth_callbacks: 'users/omniauth_callbacks'
                      }
-  devise_for :organizations, class_name: 'User',
-             controllers: {
-               registrations: 'organizations/registrations',
-               sessions: 'devise/sessions',
-             },
-             skip: [:omniauth_callbacks]
-
-  devise_scope :organization do
-    get 'organizations/sign_up/success', to: 'organizations/registrations#success'
-  end
+  # devise_for :organizations, class_name: 'User',
+  #            controllers: {
+  #              registrations: 'organizations/registrations',
+  #              sessions: 'devise/sessions',
+  #            },
+  #            skip: [:omniauth_callbacks]
+  #
+  # devise_scope :organization do
+  #   get 'organizations/sign_up/success', to: 'organizations/registrations#success'
+  # end
 
   devise_scope :user do
     patch '/user/confirmation', to: 'users/confirmations#update', as: :update_user_confirmation
@@ -359,11 +359,11 @@ Rails.application.routes.draw do
 
     resources :email_verifications, only: [:new, :create]
 
-    resources :organization_verifications, only: [:new, :create]
+    # resources :organization_verifications, only: [:new, :create]
 
     resources :user_invites, only: [:new, :create]
 
-    resources :organizations
+    # resources :organizations
 
     resources :users, only: [:new, :create] do
       collection do

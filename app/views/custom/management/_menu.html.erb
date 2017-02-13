@@ -15,19 +15,20 @@
       <% end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "organizations" %>>
-      <%= link_to new_management_organization_path do %>
+
+    <!-- <li <%# "class=active" if controller_name == "organizations" %>>
+      <%# link_to new_management_organization_path do %>
         <span class="icon-organizations"></span>
-        <%= t("management.menu.organization_new") %>
-      <% end %>
+        <%# t("management.menu.organization_new") %>
+      <%# end %>
     </li>
 
-    <li <%= "class=active" if controller_name == "organization_verifications" %>>
-      <%= link_to new_management_organization_verification_path do %>
+    <li <%# "class=active" if controller_name == "organization_verifications" %>>
+      <%# link_to new_management_organization_verification_path do %>
         <span class="icon-organizations"></span>
-        <%= t("management.menu.use_organization") %>
-      <% end %>
-    </li>
+        <%# t("management.menu.use_organization") %>
+      <%# end %>
+    </li> -->
 
     <li <%= "class=active" if controller_name == "account" %>>
       <%= link_to management_account_path do %>

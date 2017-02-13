@@ -110,6 +110,7 @@ module Budgets
 
       def investment_params
         params[:budget_investment][:tag_list] = locate(params[:budget_investment][:tag_list])
+        params[:budget_investment][:tag_list] = add_organization(params[:budget_investment][:tag_list])
         params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
       end
 
@@ -136,6 +137,13 @@ module Budgets
       def locate(tag_string)
         array_tags = tag_string.split(',').collect(&:strip)
         array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
+        array_tags.join(',')
+      end
+
+      def add_organization(tag_string)
+        return tag_string unless params[:budget_investment][:organization_name].present?
+        array_tags = tag_string.split(',').collect(&:strip)
+        array_tags << 'Asociación' unless array_tags.include?('Asociación')
         array_tags.join(',')
       end
   end
