@@ -309,3 +309,29 @@ ol.ordered_alpha_up {
   text-align: left;
   width: 100%;
 }
+
+.expanded.budget {
+  background: $budget;
+
+  h1, h2, p, a.back, .icon-angle-left {
+    color: white;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+  .info {
+    background: darken($budget, 15%);
+
+    p {
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid darken($budget, 30%);
+    }
+  }
+}
