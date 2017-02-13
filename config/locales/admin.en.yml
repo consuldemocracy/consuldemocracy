@@ -665,6 +665,7 @@ en:
         title: Poll February 13th to 19th
         web_votes: Web votes
         booth_votes: Booth votes
+        participants: Participants
         table:
           title: Votes by poll
           poll_name: Poll

@@ -665,6 +665,7 @@ es:
         title: Votación 13 al 19 de Febrero
         web_votes: Votos en Ágora
         booth_votes: Votos en Urnas
+        participants: Participantes
         table:
           title: Votos por votación
           poll_name: Votación
