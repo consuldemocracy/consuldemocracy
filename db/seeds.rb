@@ -97,7 +97,7 @@ Setting['mailer_from_address'] = 'noreply@castello.es'
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
-['Urbanismo', 'Cultura', 'Deportes', 'Agricultura', 'Comercio y consumo', 'Juventud', 'Turismo',
+['Asociaciones', 'Urbanismo', 'Cultura', 'Deportes', 'Agricultura', 'Comercio y consumo', 'Juventud', 'Turismo',
  'Igualdad', 'Gente Mayor', 'Bienestar Social', 'Seguridad ciudadana', 'Mercados', 'Fiestas',
  'Servicios Públicos', 'Nuevas tecnologías', 'Atención y Participación ciudadana', 'Desarrollo Sostenible',
  'Distrito Norte', 'Distrito Sur', 'Distrito Este', 'Distrito Oeste', 'Distrito Centro', 'Distrito Grao'].each do |c|
