@@ -13,7 +13,7 @@
         <% if user_signed_in? %>
           <%= link_to t("layouts.header.sign_up"), polls_path , class: "button expanded" %>
         <% else %>
-          <%= link_to t("layouts.header.sign_up"), new_user_session_path , class: "button expanded" %>
+          <%= link_to t("layouts.header.sign_up"), first_voting_path , class: "button expanded" %>
         <% end %>
       </div>
     </div>
