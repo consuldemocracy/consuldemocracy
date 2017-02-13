@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="small-12 medium-6 large-4 column">
+  <div class="small-12 medium-6 column">
     <div class="callout success text-center">
       <strong><%= t("officing.voters.show.can_vote") %></strong>
     </div>
   </div>
-  <div class="small-12 medium-6 large-4 column end">
+  <div class="small-12 medium-6 column">
     <%= form_for @user, as: :voter, url: officing_voters_path,
                  method: :post, remote: true do |f| %>
 
