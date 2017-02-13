@@ -143,7 +143,7 @@ module Budgets
       def add_organization(tag_string)
         return tag_string unless params[:budget_investment][:organization_name].present?
         array_tags = tag_string.split(',').collect(&:strip)
-        array_tags << 'Asociación' unless array_tags.include?('Asociación')
+        array_tags << 'Asociaciones' unless array_tags.include?('Asociaciones')
         array_tags.join(',')
       end
   end
