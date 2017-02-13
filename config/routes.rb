@@ -330,6 +330,11 @@ Rails.application.routes.draw do
       put :moderate, on: :collection
     end
 
+    resources :investments, only: :index do
+      put :hide, on: :member
+      put :moderate, on: :collection
+    end
+
     resources :comments, only: :index do
       put :hide, on: :member
       put :moderate, on: :collection

@@ -1,0 +1,82 @@
+<h2><%= t("moderation.budget_investments.index.title") %></h2>
+
+<%#= render 'shared/filter_subnav', i18n_namespace: "moderation.budget_investments.index" %>
+
+<div class="row">
+  <h3 class="small-8 large-8 columns"><%= page_entries_info @budget_investmens %></h3>
+  <div class="small-4 large-4 columns">
+    <div class="float-right">
+      <%= t("moderation.budget_investments.index.order") %>
+      <%# render 'shared/order_selector', i18n_namespace: "moderation.budget_investments.index" %>
+    </div>
+  </div>
+</div>
+
+<%= form_tag moderate_moderation_investments_path(request.query_parameters), method: :put do %>
+  <p class="js-check">
+    <%= t('shared.check') %>:
+    <%= link_to t('shared.check_all'), '#', data: {check_all: "budget_investment_ids[]"} %>
+    |
+    <%= link_to t('shared.check_none'), '#', data: {check_none: "budget_investment_ids[]"} %>
+  </p>
+
+  <table>
+    <tr>
+      <th>
+        <%= t("moderation.budget_investments.index.headers.budget_investment") %>
+      </th>
+      <th>
+       <%= t("moderation.budget_investments.index.headers.moderate") %>
+      </th>
+    </tr>
+
+    <% @budget_investmens.each do |budget_investment| %>
+      <tr id="budget_investment_<%= budget_investment.id %>">
+        <td>
+          <%# if budget_investment.investmentable.kind_of?(Budget::Investment) %>
+            <%# budget_investment.budget_investmentable_type.constantize.model_name.human %> -
+            <%# link_to budget_investment.budget_investmentable.title, budget_investment_path(budget_investment.budget_investmentable.budget, budget_investment.budget_investmentable) %>
+          <%# else %>
+            <%# budget_investment.budget_investmentable_type.constantize.model_name.human %> -
+            <%# link_to budget_investment.budget_investmentable.title, budget_investment.budget_investmentable %>
+          <%# end %>
+          <br>
+          <span class="date"><%= l budget_investment.updated_at.to_date %></span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%# budget_investment.flags_count %><span class="icon-flag flag-disable"></span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= budget_investment.author.username %>
+          <br>
+          <p>
+            <%# budget_investment.body %>
+          </p>
+        </td>
+        <td class="text-center">
+          <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= submit_tag t('moderation.budget_investments.index.block_authors'),
+    name: "block_authors",
+    class: "button hollow alert",
+    data: {confirm: t('moderation.budget_investments.index.confirm')}
+  %>
+
+  <div class="float-right">
+    <%= submit_tag t('moderation.budget_investments.index.hide_budget_investments'),
+      name: "hide_budget_investments",
+      class: "button hollow alert",
+      data: {confirm: t('moderation.budget_investments.index.confirm')}
+    %>
+    <%= submit_tag t('moderation.budget_investments.index.ignore_flags'),
+      name: "ignore_flags",
+      class: "button hollow",
+      data: {confirm: t('moderation.budget_investments.index.confirm')}
+    %>
+  </div>
+
+  <%# paginate @budget_investments %>
+
+<% end %>
