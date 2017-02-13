@@ -2354,12 +2354,24 @@ ul.ballot-list {
 .welcome {
 
   .header {
-    background: #E23135 image-url('home_page_bg.jpg');
+    background: #FFDB19;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: black;
     padding: $line-height*2 0;
+
+    h1 {
+      font-family: 'Franklin Gothic' !important;
+      font-weight: normal;
+      font-size: rem-calc(200);
+      line-height: rem-calc(200);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(270);
+        line-height: rem-calc(240);
+      }
+    }
 
     a.decoration-none {
       text-decoration: none !important;
@@ -2371,13 +2383,19 @@ ul.ballot-list {
     }
 
     a:not(.button) {
-      color: white;
+      color: black;
       text-decoration: underline;
     }
 
     .button {
-      background: white;
-      color: $text;
+      background: black;
+      color: white;
+      font-family: 'Franklin Gothic' !important;
+      font-weight: normal;
+      font-size: rem-calc(36);
+      line-height: $line-height*1.5;
+      padding-bottom: $line-height/2;
+      padding-top: $line-height/2;
     }
   }
 
@@ -2881,6 +2899,13 @@ $campaign-yellow: #FFDB19;
     font-size: rem-calc(36);
   }
 
+  .button {
+    font-size: rem-calc(36);
+    line-height: $line-height*1.5;
+    padding-bottom: $line-height/2;
+    padding-top: $line-height/2;
+  }
+
   .uppercase {
     text-transform: uppercase;
   }
@@ -3331,4 +3356,8 @@ p.can-participate-info {
       color: $text;
     }
   }
+}
+
+.auth-form p, .auth-form p a {
+  font-size: $base-font-size;
 }

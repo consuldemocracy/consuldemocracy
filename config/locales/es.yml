@@ -257,15 +257,12 @@ es:
       open: abierto
       open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
       open_city_slogan_short_html: 'Billete único para el transporte público, Madrid 100% sostenible, Remodelación de Plaza España y mejorar el espacio peatonal de la Gran Vía.'
-      open_city_title:  "En febrero #TúDecides"
-      lead_text_html: "Sé parte de un proceso histórico. Decide qué debe hacer el Ayuntamiento del <strong>13 al 19 de febrero de 2017</strong>."
+      open_city_title:  "Del 13 al 19 de febrero #TúDecides"
       open_gov: Gobierno %{open}
       proposals: Propuestas
       processes: Procesos
       spending_proposals: Presupuestos participativos
-      sign_up: Quiero registrarme
-      sign_in: Si ya tienes una cuenta %{login}.
-      sign_in_link: entra ahora
+      sign_up: VOTA
       poll_questions: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
@@ -469,7 +466,7 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
-      cant_answer_wrong_geozone: "No puedes responder esta votación al no ser del distrito adecuado"
+      cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
       more_info: "Más información"
       already_voted: "Ya has participado en esta votación."
   poll_questions:

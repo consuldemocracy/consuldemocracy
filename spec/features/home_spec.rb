@@ -6,7 +6,7 @@ feature "Home" do
     scenario 'Welcome message' do
       visit root_path
 
-      expect(page).to have_content "In February #YouDecide"
+      expect(page).to have_content "From the 13 to the 19 of February #YouDecide"
     end
   end
 

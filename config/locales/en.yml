@@ -257,15 +257,12 @@ en:
       open: open
       open_city_slogan_html: In Madrid their inhabitants, <strong>discuss the topics</strong> they are concerned about, <strong>propose ideas</strong> to improve their lives and <strong>decide among themselves</strong> which ones will be carried out.
       open_city_slogan_short_html: 'Single ticket for public transport, Madrid 100% sustainable, Remodeling of Plaza España and improve Gran Vía.'
-      open_city_title:  "In February #YouDecide"
-      lead_text_html: "Be part of a historical process. Decide what the City Council should do from <strong>the 13 to the 19 of February of 2017</strong>."
+      open_city_title:  "From the 13 to the 19 of February #YouDecide"
       open_gov: Open government
       proposals: Proposals
       processes: Processes
       spending_proposals: Participatory budgeting
-      sign_up: I want to register
-      sign_in: If you have an account %{login}.
-      sign_in_link: enter now
+      sign_up: VOTE
       poll_questions: Voting
       see_all: See proposals
       budgets: Participatory budgeting
