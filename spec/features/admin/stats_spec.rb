@@ -416,6 +416,22 @@ feature 'Stats' do
       end
     end
 
+    scenario "Total participants" do
+      user = create(:user, :level_two)
+      3.times { create(:poll_voter, user: user) }
+      create(:poll_voter)
+
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link "Polls"
+      end
+
+      within("#participants") do
+        expect(page).to have_content "2"
+      end
+    end
+
     scenario "Votes by poll" do
       poll1 = create(:poll)
       poll2 = create(:poll)

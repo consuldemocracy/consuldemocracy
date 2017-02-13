@@ -70,6 +70,7 @@ class Admin::StatsController < Admin::BaseController
   def polls
     @polls = ::Poll.all
     @voters = ::Poll::Voter.all
+    @participants = ::Poll::Voter.select(:user_id).distinct.count
   end
 
 end
