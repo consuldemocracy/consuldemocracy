@@ -459,7 +459,7 @@ es:
       already_answer: "Ya has participado en esta votación"
       more_info: "Más información sobre las votaciones"
     show:
-      dates_title: "Fechas de participación"
+      dates_title: "Fechas de votación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión
       signup: registrarte
@@ -479,7 +479,7 @@ es:
       answer_this_question: "Ir a la página de votación"
       original_proposal: "Ver el texto de la propuesta"
       author: "Creado por"
-      dates_title: "Fechas de participación"
+      dates_title: "Fechas de votación"
       more_info: "Más información"
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"

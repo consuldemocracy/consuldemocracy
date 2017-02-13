@@ -459,7 +459,7 @@ en:
       already_answer: "You already have participated in this poll"
       more_info: "More information about voting"
     show:
-      dates_title: "Participation dates"
+      dates_title: "Voting dates"
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       signin: Sign in
       signup: Sign up
@@ -479,7 +479,7 @@ en:
       answer_this_question: "Go to voting page"
       original_proposal: "See proposal's text"
       author: "Created by"
-      dates_title: "Participation dates"
+      dates_title: "Voting dates"
       more_info: "More information"
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
