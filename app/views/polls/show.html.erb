@@ -67,6 +67,9 @@
     </div>
 
     <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("polls.show.polls") %></h2>
+      <%= link_to t("polls.show.more_polls"), polls_path, class: "button hollow expanded" %>
       <div id="social-share" class="sidebar-divider"></div>
       <h2><%= t("proposals.show.share") %></h2>
       <div class="social-share-full">

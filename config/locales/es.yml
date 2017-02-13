@@ -470,6 +470,8 @@ es:
       cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
       more_info: "Más información"
       already_voted: "Ya has participado en esta votación."
+      polls: "Votaciones"
+      more_polls: "Seguir votando"
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
