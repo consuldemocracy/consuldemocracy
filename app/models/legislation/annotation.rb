@@ -25,36 +25,23 @@ class Legislation::Annotation < ActiveRecord::Base
   end
 
   def store_context
-    html = draft_version.body_html
-    doc = Nokogiri::HTML(html)
+    begin
+      html = draft_version.body_html
+      doc = Nokogiri::HTML(html)
 
-    selector_start = "/html/body/#{range_start}"
-    el_start = doc.at_xpath(selector_start)
+      selector_start = "/html/body/#{range_start}"
+      el_start = doc.at_xpath(selector_start)
 
-    selector_end = "/html/body/#{range_end}"
-    el_end = doc.at_xpath(selector_end)
+      selector_end = "/html/body/#{range_end}"
+      el_end = doc.at_xpath(selector_end)
 
-    context_text = ""
+      remainder_el_start = el_start.text[0 .. range_start_offset-1]
+      remainder_el_end = el_end.text[range_end_offset .. -1]
 
-    if el_start.path == el_end.path
-      context_text = el_start.text
-      quote_range = range_start_offset .. range_end_offset-1
-    else
-      i = el_start
-
-      while i.path != el_end.path
-        context_text << i.text
-        i = i.next_element
-      end
-
-      context_text << el_end.text
-
-      end_of_range = (el_end.text.size - range_end_offset) * -1
-      quote_range = range_start_offset .. end_of_range-1
+      self.context = "#{remainder_el_start}<span class=annotator-hl>#{quote}</span>#{remainder_el_end}"
+    rescue
+      "<span class=annotator-hl>#{quote}</span>"
     end
-
-    context_text[quote_range] = "<span class=annotator-hl>#{quote}</span>"
-    self.context = context_text
   end
 
   def create_first_comment
