@@ -211,6 +211,7 @@ va:
       open: abierto
       open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: Participa i decideix sobre la teua ciutat!
+      open_date: A partir del 15 de febrer
       open_gov: Gobierno %{open}
       proposals: Propuestas
       proposal_ballot: Votaciones

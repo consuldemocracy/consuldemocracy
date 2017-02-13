@@ -1,8 +1,8 @@
 <header>
 
-  <%= render "shared/top_links" %>
+  <% render "shared/top_links" %>
 
-  <div class="row">
+  <div class="row margin">
     <div class="top-bar">
 
       <%# link_to setting['org_name'], root_path, class: "logo show-for-small-only text-danger" %>
@@ -45,7 +45,7 @@
   <div class="subnavigation expanded">
     <div class="row">
       <div class="hide-for-small-only">
-        <%= render "shared/subnavigation" %>
+        <% render "shared/subnavigation" %>
       </div>
       <div class="small-12 medium-3 column">
         <%= yield :header_addon %>
