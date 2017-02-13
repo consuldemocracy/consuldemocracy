@@ -21,6 +21,14 @@
                 <span class="author">
                   <%= investment.author.name %>
                 </span>
+                <% if investment.respond_to?(:organization_name) && investment.organization_name.present? %>
+                  <span class="label round is-association">
+                    <%= t("shared.author_info.representa_a") %>
+                  </span>
+                  <span>
+                    <%= "(#{investment.organization_name})" %>
+                  </span>
+                <% end %>
                 <% if investment.author.official? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= investment.author.official_level %>">

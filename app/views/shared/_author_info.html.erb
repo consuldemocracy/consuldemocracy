@@ -9,6 +9,15 @@
       <%= link_to resource.author.name, user_path(resource.author) %>
   </span>
 
+  <% if resource.respond_to?(:organization_name) && resource.organization_name.present? %>
+    <span class="label round is-association">
+      <%= t("shared.author_info.representa_a"): %>
+    </span>
+    <span>
+      <%= "(#{resource.organization_name})" %>
+    </span>
+  <% end %>
+
   <% if resource.respond_to?(:association_name) && resource.association_name.present? %>
     <span>
       <%= "(#{resource.association_name})" %>
