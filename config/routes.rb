@@ -468,5 +468,9 @@ Rails.application.routes.draw do
   get 'vota',  to: 'pages#show', id: 'landings/first_voting', as: 'first_voting'
   get 'g1000', to: 'pages#show', id: 'landings/g1000',        as: 'g1000'
 
+  #More information pages
+  get 'mas-informacion',             to: 'pages#show', id: 'more_information',       as: 'more_info'
+  get 'mas-informacion/votaciones',  to: 'pages#show', id: 'more_information/polls', as: 'more_info_polls'
+
   resources :pages, path: '/', only: [:show]
 end

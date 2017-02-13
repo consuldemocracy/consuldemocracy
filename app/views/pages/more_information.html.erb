@@ -48,6 +48,13 @@
       <% end %>
       </li>
       <li>
+        <%= link_to more_info_polls_path do %>
+          <%= t('pages.more_information.titles.polls') %>
+          <br>
+          <span><%= t('pages.more_information.description.polls') %></span>
+        <% end %>
+      </li>
+      <li>
       <%= link_to page_path('human_rights_info') do %>
           <%= t('pages.more_information.titles.human_rights_info') %>
           <br>

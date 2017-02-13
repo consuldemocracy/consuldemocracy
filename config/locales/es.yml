@@ -457,6 +457,7 @@ es:
       cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
       cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
       already_answer: "Ya has participado en esta votación"
+      more_info: "Más información sobre las votaciones"
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
