@@ -1,4 +1,14 @@
-<% provide :title do %><%= @poll.name %><% end %>
+<% provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
+<% provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
+<% provide :meta_keywords,    t("social_share.polls_show.keywords_#{@poll.id}") %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: first_voting_url,
+              social_title: t("social_share.polls_show.title_#{@poll.id}"),
+              social_description: t("social_share.polls_show.facebook_#{@poll.id}") %>
+<% end %>
+
 <% content_for :wrapper_class, "light" %>
 
 <div class="polls-show">
@@ -73,7 +83,7 @@
       <div id="social-share" class="sidebar-divider"></div>
       <h2><%= t("proposals.show.share") %></h2>
       <div class="social-share-full">
-        <%= social_share_button_tag("#{@poll.name} #{setting['twitter_hashtag']}") %>
+        <%= social_share_button_tag(t("social_share.polls_show.twitter_#{@poll.id}"), url: first_voting_url) %>
         <% if browser.device.mobile? %>
           <a href="whatsapp://send?text=<%= @poll.name %> <%= poll_url %>" data-action="share/whatsapp/share">
             <span class="icon-whatsapp whatsapp"></span>
