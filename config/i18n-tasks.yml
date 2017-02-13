@@ -165,6 +165,7 @@ ignore_unused:
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
   - 'probes.codenames.*' # custom probes names
+  - 'social_share.polls_show.*' # SEO for polls
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
