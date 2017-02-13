@@ -8,16 +8,12 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def show
-    #@poll = Poll.includes(:questions,
-    #                      booth_assignments: [:booth,
-    #                                          :final_recounts,
-    #                                          :recounts],
-    #                      officers: [:user]).
-    #                      order('poll_questions.title', 'poll_booths.name', 'users.username').
-    #                      find(params[:id])
-
-    @poll = Poll.includes(officers: [:user],
-                          booth_assignments: [:booth]).
+    @poll = Poll.includes(:questions,
+                          booth_assignments: [:booth,
+                                              :final_recounts,
+                                              :recounts],
+                          officers: [:user]).
+                          order('poll_questions.title', 'poll_booths.name', 'users.username').
                           find(params[:id])
   end
 

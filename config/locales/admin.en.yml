@@ -388,12 +388,12 @@ en:
         no_booths: "There are no booths."
         add_booth: "Add booth"
         name: "Name"
-        physical: "Physical booth"
         location: "Location"
       new:
         title: "New booth"
         name: "Name"
         location: "Location"
+        physical: "Physical booth"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
