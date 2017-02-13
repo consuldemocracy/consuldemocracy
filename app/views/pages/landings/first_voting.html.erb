@@ -1,5 +1,9 @@
 <% provide :title, "I Votación Ciudadana" %>
 <% provide :tracking_page_number, "31" %>
+<% provide :social_media_meta_tags do %>
+  <meta property="og:image"   content="<%= image_url '/social_media_vota.png' %>" />
+  <meta name="twitter:image"  content="<%= image_url '/social_media_vota.png' %>" />
+<% end %>
 
 <div class="landing-voting">
   <div class="expanded header no-margin-top padding">
