@@ -470,6 +470,8 @@ en:
       cant_answer_wrong_geozone: "You can not answer this poll because you are not censed in the right district"
       more_info: "More information"
       already_voted: "You already have participated in this poll."
+      polls: "Polls"
+      more_polls: "Keep voting"
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
