@@ -485,9 +485,9 @@ es:
       voted: "Has votado %{answer}"
       poll: "Votación"
     banner:
-      featured_title: "#PróximaVotación"
-      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
-      button: "Vota"
+      featured_title: "PRIMERA VOTACIÓN CIUDADANA"
+      info: "VOTA DEL 13 AL 19 DE FEBRERO"
+      button: "VOTA"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
