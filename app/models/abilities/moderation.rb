@@ -20,6 +20,9 @@ module Abilities
       can :moderate, Comment
       cannot :moderate, Comment, user_id: user.id
 
+      can :moderate, Budget::Investment
+      cannot :moderate, Budget::Investment, author_id: user.id
+
       can :hide, Debate, hidden_at: nil
       cannot :hide, Debate, author_id: user.id
 
