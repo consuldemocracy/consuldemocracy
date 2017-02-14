@@ -216,6 +216,11 @@ Rails.application.routes.draw do
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
           get :search_booths, on: :collection
         end
+
+        resources :officer_assignments, only: [:index, :create, :destroy] do
+          get :search_officers, on: :collection
+          get :by_officer, on: :collection
+        end
       end
 
       resources :officers do
@@ -223,7 +228,6 @@ Rails.application.routes.draw do
       end
 
       resources :booths
-      resources :officer_assignments, only: [:index, :create, :destroy]
       resources :questions
     end
 

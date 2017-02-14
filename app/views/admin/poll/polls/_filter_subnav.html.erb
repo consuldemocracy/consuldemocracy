@@ -12,7 +12,7 @@
     <% end %>
   </li>
   <li>
-    <%= link_to "#tab-officers" do %>
+    <%= link_to admin_poll_officer_assignments_path(@poll) do %>
       <%= t("admin.polls.show.officers_tab") %>
       (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
     <% end %>
