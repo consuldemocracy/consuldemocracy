@@ -75,6 +75,10 @@ en:
       title: "Presupuestos participativos en Decide Madrid"
       description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
       keywords: "Presupuestos participativos, presupuestos municipales, Decide Madrid, inversión pública, Ayuntamiento de Madrid, participación ciudadana"
+    first_voting:
+      title: "Votaciones ciudadanas en Decide Madrid"
+      description: "Vota las propuestas ciudadanas para mejorar la ciudad en la web Decide Madrid. Del 13 al 19 de febrero de 2017 tú decides cómo quieres que sea Madrid."
+      keywords: "votación ciudadana, votaciones ciudadanas, Decide Madrid, participación Madrid, Alianza por el Clima, Madrid sostenible, billete único"
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"

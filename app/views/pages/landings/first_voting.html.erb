@@ -1,8 +1,19 @@
-<% provide :title, "I Votación Ciudadana" %>
+<% provide :title,                t("meta_tags.first_voting.title") %>
+<% provide :meta_description,     t("meta_tags.first_voting.description") %>
+<% provide :meta_keywords,        t("meta_tags.first_voting.keywords") %>
 <% provide :tracking_page_number, "31" %>
 <% provide :social_media_meta_tags do %>
-  <meta property="og:image"   content="<%= image_url '/social_media_vota.png' %>" />
-  <meta name="twitter:image"  content="<%= image_url '/social_media_vota.png' %>" />
+  <!-- Facebook -->
+  <meta property="og:url"            content="<%= first_voting_url %>" />
+  <meta property="og:title"          content="<%= t("meta_tags.first_voting.title") %>" />
+  <meta property="og:image"          content="<%= image_url '/social_media_vota.png' %>" />
+  <meta property="og:description"    content="<%= t("meta_tags.first_voting.description") %>" />
+  <!-- Twitter -->
+  <meta name="twitter:card"          content="summary" />
+  <meta name="twitter:site"          content="@DecideMadrid" />
+  <meta name="twitter:title"         content="<%= t("meta_tags.first_voting.title") %>" />
+  <meta name="twitter:image"         content="<%= image_url '/social_media_vota.png' %>" />
+  <meta name="twitter:description"   content="<%= t("meta_tags.first_voting.description") %>" />
 <% end %>
 
 <div class="landing-voting">
