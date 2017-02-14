@@ -142,14 +142,14 @@ va:
       user_not_found: "No es va trobar l'usuari"
   form:
     accept_terms: Accepte la %{policy} i les %{conditions}
-    accept_terms_title: "Accepte la Política de privadesa i les Condicions d'ús"
+    accept_terms_title: "Accepte la Política de privacitat i les Condicions d'ús"
     conditions: "Condicions d'ús"
     debate: el debat
     direct_message: el missatge privat
     error: error
     errors: errors
     not_saved: 'van impedir guardar %{resource}:'
-    policy: Política de privadesa
+    policy: Política de privacitat
     proposal: la proposta
     proposal_notification: "la notificació"
     spending_proposal: "la proposta d'inversió"
@@ -182,7 +182,7 @@ va:
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Decideix com ha de ser la ciutat que vols.
       participation_title: Participació
-      privacy: Política de privadesa
+      privacy: Política de privacitat
       transparency_text: Obtén qualsevol informació sobre la ciutat.
       transparency_title: Transparència
       transparency_url: https://transparency.consul
