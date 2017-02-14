@@ -5,7 +5,7 @@
 
   <h3><%= t("admin.poll_booth_assignments.index.booths_title") %></h3>
 
-  <% if @poll.booth_assignments.empty? %>
+  <% if @booth_assignments.empty? %>
     <div class="callout primary margin-top">
       <%= t("admin.poll_booth_assignments.index.no_booths") %>
     </div>
@@ -17,7 +17,7 @@
         <th class="text-right"><%= t("admin.poll_booth_assignments.index.table_assignment") %></th>
       </thead>
       <tbody>
-        <% @poll.booth_assignments.each do |booth_assignment| %>
+        <% @booth_assignments.each do |booth_assignment| %>
           <tr id="<%= dom_id(booth_assignment) %>" class="booth">
             <td>
               <strong>
@@ -37,5 +37,7 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= paginate @booth_assignments %>
   <% end %>
 </div>
