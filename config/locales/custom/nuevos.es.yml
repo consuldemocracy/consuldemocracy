@@ -1,0 +1,15 @@
+---
+es:
+  moderation:
+    menu:
+      budget_investments: Propuestas de Inversión
+    investments:
+      index:
+        title: Moderación de Propuestas de Inversión
+        block_authors: Bloquear autores
+        hide_investments: Ocultar propuestas
+        ignore_flags: Marcar como revisadas
+
+        headers:
+          investment: Propuesta de Inversión
+          moderate: Moderar
