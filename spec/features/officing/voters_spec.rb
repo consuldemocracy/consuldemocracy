@@ -50,6 +50,18 @@ feature 'Voters' do
     end
   end
 
+  scenario "Had already verified his residence, but is not level 2 yet", :js do
+    user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+    expect(user).to_not be_level_two_verified
+    poll = create(:poll_officer_assignment, officer: officer).booth_assignment.poll
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content "Polls"
+    expect(page).to have_content poll.name
+  end
+
   #Fix and use answerable_by(user)
   xscenario "Display only answerable polls"
 end
