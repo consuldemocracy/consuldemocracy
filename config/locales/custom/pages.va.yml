@@ -1,6 +1,19 @@
 ---
 va:
   pages:
+    priv:
+      title: "Política de Privadesa"
+      subtitle: "AVÍS DE PROTECCIÓ DE DADES"
+      body: |-
+        1. La navegació per la informació disponible al Portal de Govern Obert és anònima.
+        2. Per a utilitzar els serveis continguts en el Portal de Govern Obert l'usuari haurà de donar-se d'alta i proporcionar prèviament les dades de caràcter personal segun la informació específica que consta en cada tipus d'alta.
+        3. Les dades aportades seran incorporades i tractades per l'Ajuntament d'acord amb la descripció del fitxer següent:
+          * __Nom del fitxer/tractament:__ DATOS PERSONALES WEB
+          * __Finalitat del fitxer/tractament:__ Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana
+          * __Òrgan responsable:__ AYUNTAMIENTO DE CASTELLÓN
+        4. L'interessat podrà exercir els drets d'accés, rectificació, cancel·lació i oposició, davant l'òrgan responsable indicat tot la qual cosa s'informa en el compliment de l'article 5 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+        5. Com a principi general, aquest lloc web no comparteix ni revela informació obtinguda, excepte quan haja sigut autoritzada per l'usuari, o la informació siga requerida per l'autoritat judicial, ministeri fiscal o la policia judicial, o se de algun dels supòsits regulats en l'article 11 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+
     census_terms: "Per a verificar el compte cal tenir 16 anys o més i estar empadronat aportant les dades indicades anteriorment, els quals seran contrastats. Acceptant el procés de verificació accepta donar el seu consentiment per a contrastar aquesta informació, així com mitjans de contacte que figuren en aquests fitxers. Les dades aportades seran incorporats i tractats en un fitxer indicat anteriorment en les condicions d'ús del portal."
     conditions: "Condicions d'ús"
     conditions_body: |-
