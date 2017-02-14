@@ -82,7 +82,7 @@ es:
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
-        organization_name_html: 'Organización: <strong>%{name}</strong>'
+        organization_name_html: 'Asociación: <strong>%{name}</strong>'
         share: Compartir
         title: Propuesta de inversión
         supports: Apoyos
