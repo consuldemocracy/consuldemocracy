@@ -2,115 +2,115 @@
 va:
   verification:
     alert:
-      lock: Has llegado al máximo número de intentos. Por favor intentalo de nuevo más tarde.
-    back: Volver a mi cuenta
+      lock: "Has arribat al màxim nombre d'intents. Per favor intenta-ho de nou més tard."
+    back: Tornar al meu compte
     email:
       create:
         alert:
-          failure: Hubo un problema enviándote un email a tu cuenta
+          failure: Va haver-hi un problema enviant-te un email al teu compte
         flash:
-          success: 'Te hemos enviado un email de confirmación a tu cuenta: %{email}'
+          success: "T'hem enviat un email de confirmació al teu compte: %{email}"
       show:
         alert:
-          failure: Código de verificación incorrecto
+          failure: Codi de verificació incorrecte
         flash:
-          success: Eres un usuario verificado
+          success: Eres un usuari verificat
     letter:
       alert:
-        unconfirmed_code: Todavía no has introducido el código de confirmación
+        unconfirmed_code: Encara no has introduït el codi de confirmació
       create:
         flash:
-          offices: Oficinas de Atención al Ciudadano
-          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
+          offices: "Oficines d'Atenció al Ciutadà"
+          success_html: "Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.Recorda que pots estalviar l'enviament verificant-te presencialment en qualsevol de les %{offices}."
       edit:
-        see_all: Ver propuestas
-        title: Carta solicitada
+        see_all: Veure propostes
+        title: "Carta sol·licitada"
       errors:
-        incorrect_code: Código de verificación incorrecto
+        incorrect_code: 'Codi de verificació incorrecte'
       new:
-        explanation: 'Para participar en las votaciones finales puedes:'
-        go_to_index: Ver propuestas
-        office: Verificarte presencialmente en cualquier %{office}
-        offices: Oficina de Atención al Ciudadano
-        send_letter: Solicitar una carta por correo postal
-        title: "¡Felicidades!"
-        user_permission_info: Con tu cuenta ya puedes...
+        explanation: 'Per a participar en les votacions finals pots:'
+        go_to_index: Veure propostes
+        office: Verificar-te presencialment en qualsevol %{office}
+        offices: "Oficina d'Atenció al Ciutadà"
+        send_letter: "Sol·licitar una carta per correu postal"
+        title: "Felicitats!"
+        user_permission_info: Amb el teu compte ja pots...
       update:
         flash:
-          success: Tu cuenta ya está verificada
+          success: El teu compte ja està verificat
     redirect_notices:
-      already_verified: Tu cuenta ya está verificada
-      email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
+      already_verified: El teu compte ja està verificat
+      email_already_sent: "Ja t'enviem un email amb un enllaç de confirmació, si no ho trobes pots sol·licitar ací que t'ho reexpedim"
     residence:
-      permission_warning: Para poder participar en el proceso de presupuestos participativos es necesario comprobar que usted es mayor de 16 años y que está empadronado en la ciudad de Castellón de la Plana. Por favor, haga clic en el botón "Verificar mi cuenta" para realizar esta comprobación.
-      permission_success: Con tu cuenta ya puedes participar en el proceso de presupuestos participativos.
+      permission_warning: "Per a poder participar en el procés de pressupostos participatius és necessari comprovar que vostè és major de 16 anys i que està empadronat en la ciutat de Castelló de la Plana. Per favor, faça clic en el botó 'Verificar el meu compte' per a realitzar aquesta comprovació."
+      permission_success: "Amb el teu compte ja pots participar en el procés de pressupostos participatius.Amb el teu compte ja pots participar en el procés de pressupostos participatius."
       alert:
-        unconfirmed_residency: Aún no has verificado tu residencia
+        unconfirmed_residency: Encara no has verificat la teua residència
       create:
         flash:
-          success: Residencia verificada
+          success: Residència verificada
       new:
-        accept_terms_text: Acepto %{terms_url} al Padrón
-        accept_terms_text_title: Acepto los términos de acceso al Padrón
-        date_of_birth: Fecha de nacimiento
-        document_number: Número de documento
-        document_number_help_title: Ayuda
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P'
+        accept_terms_text: "Accepte %{terms_url} al Padró"
+        accept_terms_text_title: "Accepte els termes d'accés al Padró"
+        date_of_birth: Data de naixement
+        document_number: Nombre de document
+        document_number_help_title: Ajuda
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P"
         document_type:
-          passport: Pasaporte
-          residence_card: Tarjeta de residencia
+          passport: Passaport
+          residence_card: Targeta de residència
           spanish_id: DNI
-        document_type_label: Tipo de documento
-        error_not_allowed_age: No tienes la edad mínima para participar
-        error_not_allowed_postal_code: Para verificarte debes estar empadronado.
-        error_verifying_census: "Según los datos que constan en el Padrón Municipal, usted no consta como empadronado/a en Castellón de la Plana. Para cualquier incidencia en la verificación de su cuenta, puede contactar con la Unidad de Estadística-Gestión de Padrón (Teléfono: 964 355 185; E-mail: padronhabitantes@castello.es)"
-        error_verifying_census_offices: oficina de Atención al ciudadano
-        form_errors: evitaron verificar tu residencia
-        postal_code: Código postal
-        postal_code_note: Para verificar tus datos debes estar empadronado
-        terms: los términos de acceso
-        title: Verificar residencia
-        verify_residence: Verificar residencia
+        document_type_label: Tipus de document
+        error_not_allowed_age: "No tens l'edat mínima per a participar"
+        error_not_allowed_postal_code: "Per a verificar-te has d'estar empadronat"
+        error_verifying_census: "Segons les dades que consten en el Padró Municipal, vostè no consta com empadronat/da a Castelló de la Plana. Per a qualsevol incidència en la verificació del seu compte, pot contactar amb la Unitat d'Estadística-Gestió de Padró (Telèfon: 964 355 185; E-mail: padronhabitantes@castello.es)"
+        error_verifying_census_offices: "oficina d'Atenció al ciutadà"
+        form_errors: 'van evitar verificar la teua residència'
+        postal_code: Codi postal
+        postal_code_note: "Per a verificar les teues dades has d'estar empadronat"
+        terms: "els termes d'accés"
+        title: Verificar residència
+        verify_residence: Verificar residència
     sms:
       create:
         flash:
-          success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
+          success: "Introdueix el codi de confirmació que t'hem enviat per missatge de text"
       edit:
-        confirmation_code: Introduce el código que has recibido en tu móvil
-        resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
+        confirmation_code: "Introdueix el codi que has rebut en el teu mòbil"
+        resend_sms_link: "Sol·licitar un nou codi"
+        resend_sms_text: "No has rebut un missatge de text amb el teu codi de confirmació?"
         submit_button: Enviar
         title: SMS de confirmación
       new:
-        phone: Introduce tu teléfono móvil para recibir el código
+        phone: "Introduce tu teléfono móvil para recibir el código"
         phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
-        phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
+        phone_note: "Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos."
         phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar
-        title: SMS de confirmación
+        title: SMS de confirmació
       update:
-        error: Código de confirmación incorrecto
+        error: Codi de confirmació incorrecte
         flash:
           level_three:
-            success: Código correcto. Tu cuenta ya está verificada
+            success: Codi correcte. El teu compte ja està verificat
           level_two:
-            success: Código correcto
-    step_1: Residencia
-    step_2: SMS de confirmación
-    step_3: Verificación final
-    user_permission_debates: Participar en debates
-    user_permission_info: Al verificar tus datos podrás...
-    user_permission_proposal: Crear nuevas propuestas
-    user_permission_support_proposal: Apoyar propuestas
-    user_permission_votes: Participar en las votaciones finales
+            success: Codi correcte
+    step_1: Residència
+    step_2: SMS de confirmació
+    step_3: Verificació final
+    user_permission_debates: Participar en debats
+    user_permission_info: En verificar les teues dades podràs...
+    user_permission_proposal: Crear noves propostes
+    user_permission_support_proposal: Recolzar propostes
+    user_permission_votes: Participar en les votacions finals
     verified_user:
       form:
-        submit_button: Enviar código
+        submit_button: Enviar codi
       show:
         email_title: Emails
-        explanation: Actualmente disponemos de los siguientes datos en el Padrón, selecciona donde quieres que enviemos el código de confirmación.
-        phone_title: Teléfonos
-        title: Información disponible
-        use_another_phone: Utilizar otro teléfono
+        explanation: "Actualment disposem de les següents dades en el Padró, selecciona on vols que enviem el codi de confirmació."
+        phone_title: Telèfons
+        title: Informació disponible
+        use_another_phone: Utilitzar un altre telèfon
     organization:
-      not_verified: Per a poder participar en el procés de pressupostos participatius és necessari comprovar que l'associació té el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que es troba inscrita en el Registre d'Associacions.
+      not_verified: "Per a poder participar en el procés de pressupostos participatius és necessari comprovar que l'associació te el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que és troba inscrita en el Registre d'Associacions."
