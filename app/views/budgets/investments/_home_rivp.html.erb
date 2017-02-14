@@ -3,17 +3,37 @@
 
 
 
-<div class="container">
+<div class="container home">
+<h1>Les étapes du budget participatif</h1>
   <div class="row">
-    <% t("budgets.home_rivp.cards").each do |card| %>
+    <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-4 column text-center">
         <div class="card">
-          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('apple-touch-icon-200.png');">
+          <div class="card-img" style="">
+          <%= image_tag(card[1][:img], size: 32, class: "") %>
           </div>
 
           <div class="card-description">
-            <h2><%= card[1][:title] %></h2>
+            <h3><%= card[1][:title] %></h2>
             <p><%= card[1][:dates] %><p>
+            <p><%= card[1][:description] %><p>
+          </div>
+        </div>
+
+      </div>
+    <% end%>
+  </div>
+<h1>les thèmes</h1>
+  <div class="row">
+    <% t("budgets.home_rivp.theme_cards").each do |card| %>
+      <div class="small-12 medium-6 column text-center theme-cards">
+        <div class="card ">
+          <div class="card-img" style="">
+          <%= image_tag(card[1][:img], size: 32, class: "") %>
+          </div>
+
+          <div class="card-description">
+            <h3><%= card[1][:title] %></h2>
             <p><%= card[1][:description] %><p>
           </div>
         </div>

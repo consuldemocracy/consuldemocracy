@@ -83,31 +83,54 @@ fr:
 
     home_rivp:
       title: Les étapes du budget participatif
-      cards:
+      steps_cards:
         accepting:
           title: Déposez vos idées
           dates: Du X au X
           description: Vous avez une idée ? Décrivez votre idée et déposez-la sur la plateforme.
+          img: custom/accepting.svg
         reviewing:
           title: Contribuez aux idées
           dates: Du X au X
           description: Contribuez à améliorer les idées déposées en échangeant sur la plateforme.
+          img: custom/reviewing.svg
         selecting:
           title: Soutenez les idées
           dates: Du X au X
           description: Parmi les idées proposées, soutenez celles qui vous plaisent.
+          img: custom/selecting.svg
         valuating:
           title: Evaluation de la RIVP
           dates: Du X au X
           description: La RIVP contrôle que les idées répondent aux critères, puis les chiffre.
+          img: custom/valuating.svg
         balloting:
           title: Vote final
           dates: Du X au X
           description: Soutenez les propositions qui auront été validées et qui vous plaisent, dans la limite de l’enveloppe alouée pour votre site.
+          img: balloting.svg
         finished:
           title: Résultats
           dates: Du X au X
           description: Les résultats seront publiés de manière transparente à l’issue du vote.
+          img: custom/finished.svg
+      theme_cards:
+        living_environment:
+          title: Cadre de vie
+          description: Actions propreté / Végétalisation / Compostage collectif / Jardin partagé / Lutte contre les incivilités
+          img: custom/living_environment.svg
+        solidarity:
+          title: Solidarité
+          description: Réseaux d'entraide / Soutien scolaire / Troc
+          img: custom/solidarity.svg
+        social_link:
+          title: Lien social
+          description: Fêtes des voisins / Sorties culturelles / Echanges culinaires
+          img: custom/social_link.svg
+        micro_development:
+          title: Micro aménagements
+          description: Abr vélo / Equipements mobiles pour livres / CD / magazines / jardinières
+          img: custom/micro_development.svg
 # ok jusqu'à là
 
     # ballots:
