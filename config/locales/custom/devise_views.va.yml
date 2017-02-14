@@ -4,129 +4,129 @@ va:
     confirmations:
       new:
         email_label: Email
-        submit: Reenviar instrucciones
-        title: Reenviar instrucciones de confirmación
+        submit: Reenviar instruccions
+        title: Reenviar instruccions de confirmació
       show:
-        instructions_html: Vamos a proceder a confirmar la cuenta con el email <b>%{email}</b>
-        new_password_confirmation_label: Repite la clave de nuevo
-        new_password_label: Nueva clave de acceso
-        please_set_password: Por favor introduce una nueva clave de acceso para su cuenta (te permitirá hacer login con el email de más arriba)
+        instructions_html: Anem a procedir a confirmar el compte amb l'email <b>%{email}</b>
+        new_password_confirmation_label: Repeteix la clau de nou
+        new_password_label: Nova clau d'accés
+        please_set_password: Per favor introdueix una nova clau d'accés per al seu compte (et permetrà fer login amb l'email de més amunt)
         submit: Confirmar
-        title: Confirmar mi cuenta
+        title: Confirmar el meu compte
     mailer:
       confirmation_instructions:
-        confirm_link: Confirmar mi cuenta
-        text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
-        title: Te damos la bienvenida al Portal de Participación Ciudadana
-        welcome: Bienvenido/a
+        confirm_link: Confirmar el meu compte
+        text: 'Pots confirmar el teu compte de correu electrònic en el següent enllaç:'
+        title: Et donem la benvinguda al Portal de Participació Ciutadana
+        welcome: Benvingut/a
       reset_password_instructions:
-        change_link: Cambiar mi contraseña
+        change_link: Canviar la meua contrasenya
         hello: Hola
-        ignore_text: Si tú no lo has solicitado, puedes ignorar este email.
-        info_text: Tu contraseña no cambiará hasta que no accedas al enlace y la modifiques.
-        text: 'Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:'
-        title: Cambia tu contraseña
+        ignore_text: Si tu no ho has sol·licitat, pots ignorar aquest email.
+        info_text: La teua contrasenya no canviarà fins que no accedisques a l'enllaç i la modifiques.
+        text: "S'ha sol·licitat canviar la teua contrasenya, pots fer-ho en el següent enllaç:"
+        title: Canvia la teua contrasenya
       unlock_instructions:
         hello: Hola
-        info_text: Tu cuenta ha sido bloqueada debido a un excesivo número de intentos fallidos de alta.
-        instructions_text: 'Sigue el siguiente enlace para desbloquear tu cuenta:'
-        title: Tu cuenta ha sido bloqueada
-        unlock_link: Desbloquear mi cuenta
+        info_text: El teu compte ha sigut bloquejat a causa d'un excessiu nombre d'intents fallits d'alta.
+        instructions_text: 'Segueix el següent enllaç per a desbloquejar el teu compte:'
+        title: El teu compte ha sigut bloquejat
+        unlock_link: Desbloquejar el meu compte
     menu:
       login_items:
         login: Entrar
-        logout: Salir
-        signup: Registrarse
+        logout: Eixir
+        signup: Registrar-se
     organizations:
       registrations:
         new:
           email_label: Email
-          organization_name_label: Nombre de la asociación
-          password_confirmation_label: Confirmar contraseña
-          password_label: Contraseña
-          phone_number_label: Teléfono
-          responsible_name_label: Nombre y apellidos de la persona responsable de la asociación
-          responsible_name_note: Será la persona representante de la asociación en cuyo nombre se presenten las propuestas
-          submit: Registrarse
-          title: Registrarse com associació
-          permission_warning: En el procés de pressupostos participatius podran participar totes aquelles associacions que tinguen el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que es troben inscrites en el Registre d'Associacions.
+          organization_name_label: Nom de l'associació
+          password_confirmation_label: Confirmar contrasenya
+          password_label: Contrasenya
+          phone_number_label: Telèfon
+          responsible_name_label: Nom i cognoms de la persona responsable de l'associació
+          responsible_name_note: Serà la persona representant de l'associació en el nom de la qual es presenten les propostes
+          submit: Registrar-se
+          title: Registrar-se com associació
+          permission_warning: En el procés de pressupostos participatius podran participar totes aquelles associacions que tinguen el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que és troben inscrites en el Registre d'Associacions.
         success:
-          back_to_index: Entendido, volver a la página principal
-          instructions_1_html: En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a esta asociación.
-          instructions_2_html: Mientras <b>revisa tu correo electrónico</b>, te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
-          instructions_3_html: Una vez confirmado, podrás empezar a participar como asociación no verificada.
-          thank_you_html: Gracias por registrar tu asociación en la web. Ahora está <b>pendiente de verificación</b>.
+          back_to_index: Entès, tornar a la pàgina principal
+          instructions_1_html: En breu <b>ens posarem en contacte amb tu</b> per a verificar que realment representes a aquesta associació.
+          instructions_2_html: Mentre <b>revisas el teu correu electrònic</b>, t'hem enviat un <b>enllaç per a confirmar el teu compte</b>.
+          instructions_3_html: Una vegada confirmat, podràs començar a participar com a associació no verificada.
+          thank_you_html: Gràcies per registrar la teua associació en la web. Ara està <b>pendent de verificació</b>.
           title: Registre d'associació
     passwords:
       edit:
-        change_submit: Cambiar mi contraseña
-        password_confirmation_label: Confirmar contraseña nueva
-        password_label: Contraseña nueva
-        title: Cambia tu contraseña
+        change_submit: Canviar la meua contrasenya
+        password_confirmation_label: Confirmar contrasenya nova
+        password_label: Contrasenya nova
+        title: Canvia la teua contrasenya
       new:
         email_label: Email
-        send_submit: Recibir instrucciones
-        title: "¿Has olvidado tu contraseña?"
+        send_submit: Rebre instruccions
+        title: "Has oblidat la teua contrasenya?"
     sessions:
       new:
         email_label: Email
-        password_label: Contraseña
-        remember_me: Recordarme
+        password_label: Contrasenya
+        remember_em: Recordar-me
         submit: Entrar
         title: Entrar
     shared:
       links:
         login: Entrar
-        new_confirmation: "¿No has recibido instrucciones para confirmar tu cuenta?"
-        new_password: "¿Olvidaste tu contraseña?"
-        new_unlock: "¿No has recibido instrucciones para desbloquear?"
-        signin_with_provider: Entrar con %{provider}
-        signup: "¿No tienes una cuenta? %{signup_link}"
-        signup_link: Regístrate
+        new_confirmation: "No has rebut instruccions per a confirmar el teu compte?"
+        new_password: "Vas oblidar la teua contrasenya?"
+        new_unlock: "No has rebut instruccions per a desbloquejar?"
+        signin_with_provider: Entrar amb %{provider}
+        signup: "No tens un compte? %{signup_link}"
+        signup_link: Registra't
     unlocks:
       new:
         email_label: Email
-        submit: Reenviar instrucciones para desbloquear
-        title: Reenviar instrucciones para desbloquear
+        submit: Reexpedir instruccions per a desbloquejar
+        title: Reexpedir instruccions per a desbloquejar
     users:
       registrations:
         delete_form:
-          erase_reason_label: Razón de la baja
-          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella.
-          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
-          submit: Borrar mi cuenta
-          title: Darme de baja
+          erase_reason_label: Raó de la baixa
+          info: Aquesta acció no es pot desfer. Una vegada que dónes de baixa el teu compte, no podràs tornar a fer login amb ell.
+          info_reason: Si vols, escriu el motiu pel qual et dónes de baixa (opcional).
+          submit: Esborrar el meu compte
+          title: Donar-me de baixa
         edit:
-          current_password_label: Contraseña actual
+          current_password_label: Contrasenya actual
           edit: Editar
           email_label: Email
-          leave_blank: Dejar en blanco si no deseas cambiarla
-          need_current: Necesitamos tu contraseña actual para confirmar los cambios
-          password_confirmation_label: Confirmar contraseña nueva
-          password_label: Contraseña nueva
-          update_submit: Actualizar
-          waiting_for: 'Esperando confirmación de:'
+          leave_blank: Deixar en blanc si no desitges canviar-la
+          need_current: Necessitem la teua contrasenya actual per a confirmar els canvis
+          password_confirmation_label: Confirmar contrasenya nova
+          password_label: Contrasenya nova
+          update_submit: Actualitzar
+          waiting_for: 'Esperant confirmació de:'
         new:
-          cancel: Cancelar login
-          email_label: Tu correo electrónico
-          organization_signup: "¿Representas a una asociación? %{signup_link}"
-          organization_signup_link: Regístrate aquí
-          password_confirmation_label: Repite la contraseña anterior
-          password_label: Contraseña que utilizarás para acceder a este sitio web
-          redeemable_code: Tu código de verificación (si has recibido una carta con él)
-          submit: Registrarse
-          terms: Al registrarte aceptas las %{terms}.
-          terms_link: condiciones de uso
-          terms_title: Al registrarte aceptas las condiciones de uso
+          cancel: Cancel·lar login
+          email_label: El teu correu electrònic
+          organization_signup: "Representes a una associació? %{signup_link}"
+          organization_signup_link: Registra't ací
+          password_confirmation_label: Repeteix la contrasenya anterior
+          password_label: Contrasenya que utilitzaràs per a accedir a aquesta web
+          redeemable_code: El teu codi de verificació (si has rebut una carta amb ell)
+          submit: Registrar-se
+          terms: En registrar-te acceptes les %{terms}.
+          terms_link: condicions d'ús
+          terms_title: En registrar-te acceptes les condicions d'ús
           terms_censed: Per a participar en el procés de pressupostos participatius ha de ser major de 16 anys i ha d'estar empadronat en la ciutat de Castelló de la Plana
-          title: Registrarse
-          username_is_available: "Nombre de usuario disponible"
-          username_is_not_available: "Nombre de usuario ya existente"
+          title: Registrar-se
+          username_is_available: "Nom d'usuari disponible"
+          username_is_not_available: "Nom d'usuari ja existent"
           username_label: Nom d'usuari
-          username_note: Nombre público que aparecerá en tus publicaciones
+          username_note: Nom públic que apareixerà en les teues publicacions
         success:
-          back_to_index: Entendido, volver a la página principal
-          instructions_1_html: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
-          instructions_2_html: Una vez confirmado, podrás empezar a participar.
-          thank_you_html: Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>.
-          title: Revisa tu correo
+          back_to_index: Entès, tornar a la pàgina principal
+          instructions_1_html: Per favor <b>revisa el teu correu electrònic</b> - te hem enviat un <b>enllaç per a confirmar el teu compte</b>.
+          instructions_2_html: Una vegada confirmat, podràs començar a participar.
+          thank_you_html: Gràcies per registrar-te en la web. Ara deus <b>confirmar el teu correu</b>.
+          title: Revisa el teu correu

@@ -3,22 +3,22 @@ va:
   flash:
     actions:
       create:
-        notice: "%{resource_name} creado correctamente."
-        debate: "Debate creado correctamente."
-        direct_message: "Tu mensaje ha sido enviado correctamente."
-        proposal: "Propuesta creada correctamente."
-        proposal_notification: "Tu message ha sido enviado correctamente."
-        spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
-        budget_investment: "Propuesta de inversión creada correctamente."
-        signature_sheet: "Hoja de firmas creada correctamente"
+        notice: "%{resource_name} creat correctament."
+        debate: "Debat creat correctament."
+        direct_message: "El teu missatge ha sigut enviat correctament."
+        proposal: "Proposta creada correctament."
+        proposal_notification: "El teu message ha sigut enviat correctament."
+        spending_proposal: "Proposta d'inversió creada correctament. Pots accedir a ella des de %{activity}"
+        budget_investment: "Proposta d'inversió creada correctament."
+        signature_sheet: "Fulla de signatures creada correctament"
       save_changes:
-        notice: Cambios guardados
+        notice: Canvis guardats
       update:
-        notice: "%{resource_name} actualizado correctamente."
-        debate: "Debate actualizado correctamente."
-        proposal: "Propuesta actualizada correctamente."
-        spending_proposal: "Propuesta de inversión actualizada correctamente."
-        budget_investment: "Propuesta de inversión actualizada correctamente"
+        notice: "%{resource_name} actualitzat correctament."
+        debate: "Debat actualitzat correctament."
+        proposal: "Proposta actualitzada correctament."
+        spending_proposal: "Proposta d'inversió actualitzada correctament."
+        budget_investment: "Proposta d'inversió actualitzada correctament"
       destroy:
-        spending_proposal: "Propuesta de inversión eliminada."
-        budget_investment: "Propuesta de inversión eliminada."
+        spending_proposal: "Proposta d'inversió eliminada."
+        budget_investment: "Proposta d'inversió eliminada."

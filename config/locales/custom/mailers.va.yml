@@ -1,75 +1,75 @@
 ---
-es:
+va:
   mailers:
-    no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
+    no_reply: "Aquest missatge s'ha enviat des d'una adreça de correu electrònic que no admet respostes."
     comment:
       hi: Hola
-      new_comment_by_html: Hay un nuevo comentario de <b>%{commenter}</b> en
-      subject: Alguien ha comentado en tu %{commentable}
-      title: Nuevo comentario
+      new_comment_by_html: Hi ha un nou comentari de <b>%{commenter}</b> en
+      subject: Algú ha comentat en el teu %{commentable}
+      title: Nou comentari
     config:
-      manage_email_subscriptions: Puedes dejar de recibir estos emails cambiando tu configuración en
+      manage_email_subscriptions: Pots deixar de rebre aquests emails canviant la teua configuració en
     email_verification:
-      click_here_to_verify: en este enlace
-      instructions_2_html: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
-      instructions_html: Para terminar de verificar tu cuenta de usuario en el Portal de Gobierno Abierto, necesitamos que pulses %{verification_link}.
-      subject: Verifica tu email
-      thanks: Muchas gracias.
-      title: Verifica tu cuenta con el siguiente enlace
+      click_here_to_verify: en aquest enllaç
+      instructions_2_html: Aquest email és per a verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si aquestes no són les teues dades, per favor no premes l'enllaç anterior i ignora aquest email.
+      instructions_html: Per a acabar de verificar el teu compte d'usuari en el Portal Decidim Castelló, necessitem que premes %{verification_link}.
+      subject: Verifica el teu email
+      thanks: Moltes gràcies.
+      title: Verifica el teu compte amb el següent enllaç
     reply:
       hi: Hola
-      new_reply_by_html: Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en
-      subject: Alguien ha respondido a tu comentario
-      title: Nueva respuesta a tu comentario
+      new_reply_by_html: Hi ha una nova resposta de <b>%{commenter}</b> al teu comentari en
+      subject: Algú ha respost al teu comentari
+      title: Nova resposta al teu comentari
     unfeasible_spending_proposal:
-      hi: "Estimado usuario,"
-      new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nueva propuesta de inversión"
-      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
-      sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
-      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
+      hi: "Benvolgut usuari,"
+      new_html: "Per tot açò, et convidem al fet que elabores una <strong>nova proposta</strong> que s'ajuste a les condicions d'aquest procés. Açò el pots fer en aquest enllaç: %{url}."
+      new_href: "nova proposta d'inversió"
+      reconsider_html: "Si consideres que la proposta rebutjada compleix els requisits per a mantenir-la com a proposta d'inversió, podràs comunicar-ho, en el termini de 48 hores, al correu decicim@castello.es, indicant necessàriament per a la seua tramitació el codi %{code} com a assumpte del correu, corresponent a la teua proposta."
+      sincerely: "Atentament"
+      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
+      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
+      unfeasible_html: "Des de l'Ajuntament volem agrair la teua participació en els <strong>Presupostos Participatius</strong>. Lamentem informar-te que la teua proposta <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
     proposal_notification_digest:
-      info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
-      title: "Notificaciones de propuestas en %{org_name}"
-      share: Compartir propuesta
-      comment: Comentar propuesta
-      unsubscribe: "Si no quieres recibir notificaciones de propuestas, puedes entrar en %{account} y desmarcar la opción 'Recibir resumen de notificaciones sobre propuestas'."
-      unsubscribe_account: Mi cuenta
+      info: "A continuació et mostrem les noves notificacions que han publicat els autors de les propostes que estàs recolzant en %{org_name}."
+      title: "Notificacions de propostes en %{org_name}"
+      share: Compartir proposta
+      comment: Comentar proposta
+      unsubscribe: "Si no vols rebre notificacions de propostes, pots entrar en %{account} i desmarcar l'opció 'Rebre resum de notificacions sobre propostes'."
+      unsubscribe_account: El meu compte
     direct_message_for_receiver:
-      subject: "Has recibido un nuevo mensaje privado"
-      reply: Responder a %{sender}
-      unsubscribe: "Si no quieres recibir mensajes privados, puedes entrar en %{account} y desmarcar la opción 'Recibir emails con mensajes privados'."
-      unsubscribe_account: Mi cuenta
+      subject: "Has rebut un nou missatge privat"
+      reply: Respondre a %{sender}
+      unsubscribe: "Si no vols rebre missatges privats, pots entrar en %{account} i desmarcar l'opció 'Rebre emails amb missatges privats'."
+      unsubscribe_account: El meu compte
     direct_message_for_sender:
-      subject: "Has enviado un nuevo mensaje privado"
-      title_html: "Has enviado un nuevo mensaje privado a <strong>%{receiver}</strong> con el siguiente contenido:"
+      subject: "Has enviat un nou missatge privat"
+      title_html: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el següent contingut:"
     user_invite:
-      ignore: "Si no has solicitado esta invitación no te preocupes, puedes ignorar este correo."
-      text: "¡Gracias por solicitar unirte a %{org}! En unos segundos podrás empezar a decidir la ciudad que quieres, sólo tienes que rellenar el siguiente formulario:"
-      thanks: "Muchas gracias."
-      title: "Bienvenido a %{org}"
-      button: Completar registro
-      subject: "Invitación a %{org_name}"
+      ignore: "Si no has sol·licitat aquesta invitació no et preocupes, pots ignorar aquest correu."
+      text: "Gràcies per sol·licitar unir-te a %{org}! En uns segons podràs començar a decidir la ciutat que vols, només has d'emplenar el següent formulari:"
+      thanks: "Moltes gràcies."
+      title: "Benvingut a %{org}"
+      button: Completar registre
+      subject: "Invitació a %{org_name}"
     budget_investment_created:
-      subject: "¡Gracias por crear una propuesta de inversión!"
-      title: "¡Gracias por crear una propuesta de inversión!"
+      subject: "Gràcies per crear una proposta d'inversió!"
+      title: "Gràcies per crear una proposta d'inversió!"
       intro_html: "Hola <strong>%{author}</strong>,"
-      text_html: "Muchas gracias por crear tu propuesta de inversión <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
-      follow_html: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
-      follow_link: "Presupuestos participativos"
-      sincerely: "Atentamente,"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
-      share: "Comparte tu propuesta de inversión"
+      text_html: "Moltes gràcies per crear la teua proposta d'inversió <strong>%{investment}</strong> per als Pressupostos Participatius <strong>%{budget}</strong>."
+      follow_html: "T'informarem de com avança el procés, que també pots seguir en la pàgina de <strong>%{link}</strong>."
+      follow_link: "Pressupostos participatius"
+      sincerely: "Atentament,"
+      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
+      share: "Comparteix la teua proposta d'inversió"
     budget_investment_unfeasible:
-      hi: "Estimado usuario,"
-      new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta de inversión</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nueva propuesta de inversión"
-      reconsider_html: "Si consideras que la propuesta de inversión rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta de inversión."
-      sincerely: "Atentamente"
-      signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
-      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta de inversión <strong>'%{title}'</strong> quedará excluido de este proceso participativo por el siguiente motivo:"
+      hi: "Benvolgut usuari,"
+      new_html: "Per tot açò, et convidem al fet que elabores una <strong>nova proposta d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Açò el pots fer en aquest enllaç: %{url}."
+      new_href: "nova proposta d'inversió"
+      reconsider_html: "Si consideres que la proposta d'inversió rebutjada compleix els requisits per a mantenir-la com a proposta d'inversió, podràs comunicar-ho, en el termini de 48 hores, al correu decidim@castello.es, indicant necessàriament per a la seua tramitació el codi %{code} com a assumpte del correu, corresponent a la teua proposta d'inversió."
+      sincerely: "Atentament"
+      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
+      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
+      unfeasible_html: "es de l'Ajuntament volem agrair la teua participació en els <strong>Pressupostos Participatius</strong>. Lamentem informar-te que la teua proposta d'inversió <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
