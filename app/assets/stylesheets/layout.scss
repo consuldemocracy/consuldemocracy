@@ -294,24 +294,26 @@ header {
 
 .top-bar {
   background: $brand !important;
-  color: white;
+  color: $dark;
   height: $line-height*2;
   line-height: $line-height*2;
   padding-bottom: 0;
   padding-top: 0;
 
   @include breakpoint(medium) {
-    padding: 0;
+    padding: 10px;
   }
 
   .top-bar-title a {
     @include logo;
     line-height: rem-calc(80) !important;
+    color: $dark;
 
     &:hover {
       text-decoration: none;
     }
   }
+
 
   ul {
     background: none;
@@ -326,7 +328,7 @@ header {
       }
 
       a {
-        color: white;
+        color: $dark;
         padding-left: 0;
 
         @include breakpoint(medium) {
@@ -1122,6 +1124,9 @@ table {
     td {
       line-height: $line-height;
       padding: $line-height/2 $line-height/4;
+      a {
+        color: black;
+      }
     }
 
     &:nth-child(odd) {
