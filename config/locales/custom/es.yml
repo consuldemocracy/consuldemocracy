@@ -184,16 +184,16 @@ es:
       privacy: Política de privacidad
       transparency_text: Obtén cualquier información sobre la ciudad.
       transparency_title: Transparencia
-      transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=PGO
+      transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=DCD
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
-      external_link_opendata_url: "/opendata"
+      external_link_opendata_url: http://www.castello.es/web20/archivos/contenidos/370/Observatorio_Urbano.php?src=DCD
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=PGO
+      external_link_transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=DCD
       locale: 'Idioma:'
       logo: Consul
       management: Gestión
