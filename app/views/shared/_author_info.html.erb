@@ -11,7 +11,7 @@
 
   <% if resource.respond_to?(:organization_name) && resource.organization_name.present? %>
     <span class="label round is-association">
-      <%= t("shared.author_info.representa_a"): %>
+      <%= t("shared.author_info.representa_a") %>
     </span>
     <span>
       <%= "(#{resource.organization_name})" %>
