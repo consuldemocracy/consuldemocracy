@@ -93,6 +93,16 @@ describe Officing::Residence do
       expect(user.geozone).to eq(geozone)
     end
 
+    it "makes half-verified users fully verified" do
+      user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
+      expect(user).to be_unverified
+      residence = build(:officing_residence, document_number: "12345678Z", year_of_birth: 1980)
+      expect(residence).to be_valid
+      expect(user.reload).to be_unverified
+      residence.save
+      expect(user.reload).to be_level_three_verified
+    end
+
     it "stores failed census calls" do
       residence = build(:officing_residence, :invalid, document_number: "12345678Z")
       residence.save
