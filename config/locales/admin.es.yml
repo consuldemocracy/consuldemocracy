@@ -386,6 +386,7 @@ es:
         table_booth_name: "Urna"
         table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
         table_final_recount: "Recuento final (presidente de mesa)"
+        table_system_count: "Votos (automático)"
     results:
       index:
         title: "Resultados"
