@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125093101) do
+ActiveRecord::Schema.define(version: 20170210083026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -339,6 +339,7 @@ ActiveRecord::Schema.define(version: 20170125093101) do
     t.integer  "range_start_offset"
     t.string   "range_end"
     t.integer  "range_end_offset"
+    t.text     "context"
   end
 
   add_index "legislation_annotations", ["author_id"], name: "index_legislation_annotations_on_author_id", using: :btree

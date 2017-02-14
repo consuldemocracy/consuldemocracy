@@ -15,7 +15,7 @@
           <div class="comment-section">
             <div class="row">
               <div class="small-12 medium-10 column legislation-comment">
-                <%= @annotation.quote %>
+                <%= @annotation.context.try(:html_safe).presence || @annotation.quote %>
               </div>
               <div class="small-12 medium-2 column legislation-comment">
                 <span class="pull-right">

@@ -9,12 +9,10 @@ class Legislation::Process < ActiveRecord::Base
   validates :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :debate_start_date, presence: true
-  validates :debate_end_date, presence: true
-  validates :draft_publication_date, presence: true
-  validates :allegations_start_date, presence: true
-  validates :allegations_end_date, presence: true
-  validates :final_publication_date, presence: true
+  validates :debate_start_date, presence: true, if: :debate_end_date?
+  validates :debate_end_date, presence: true, if: :debate_start_date?
+  validates :allegations_start_date, presence: true, if: :allegations_end_date?
+  validates :allegations_end_date, presence: true, if: :allegations_start_date?
   validate :valid_date_ranges
 
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current).order('id DESC') }
@@ -26,13 +24,13 @@ class Legislation::Process < ActiveRecord::Base
 
     case phase
     when :debate
-      today >= debate_start_date && today <= debate_end_date
+      active_phase?(:debate) && today >= debate_start_date && today <= debate_end_date
     when :draft_publication
-      today >= draft_publication_date
+      active_phase?(:draft_publication) && today >= draft_publication_date
     when :allegations
-      today >= allegations_start_date && today <= allegations_end_date
+      active_phase?(:allegations) && today >= allegations_start_date && today <= allegations_end_date
     when :final_version_publication
-      today >= final_publication_date
+      active_phase?(:final_version_publication) && today >= final_publication_date
     end
   end
 
@@ -42,13 +40,26 @@ class Legislation::Process < ActiveRecord::Base
 
     case phase
     when :debate
-      today >= debate_start_date
+      active_phase?(:debate) && today >= debate_start_date
     when :draft_publication
-      today >= draft_publication_date
+      active_phase?(:draft_publication) && today >= draft_publication_date
     when :allegations
-      today >= allegations_start_date
+      active_phase?(:allegations) && today >= allegations_start_date
     when :final_version_publication
-      today >= final_publication_date
+      active_phase?(:final_version_publication) && today >= final_publication_date
+    end
+  end
+
+  def active_phase?(phase)
+    case phase
+    when :debate
+      debate_start_date.present? && debate_end_date.present?
+    when :draft_publication
+      draft_publication_date.present?
+    when :allegations
+      allegations_start_date.present? && allegations_end_date.present?
+    when :final_version_publication
+      final_publication_date.present?
     end
   end
 

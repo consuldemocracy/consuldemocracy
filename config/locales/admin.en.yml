@@ -193,6 +193,7 @@ en:
           form:
             error: Error
         form:
+          active: Active
           process: Process
           debate_phase: Debate phase
           allegations_phase: Allegations phase

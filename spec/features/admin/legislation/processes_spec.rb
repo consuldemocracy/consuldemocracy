@@ -59,4 +59,27 @@ feature 'Admin legislation processes' do
       expect(page).to have_content 'An example legislation process'
     end
   end
+
+  context 'Update' do
+    scenario 'Deactivate debate phase', js: true do
+      process = create(:legislation_process, title: 'An example legislation process')
+      visit admin_root_path
+
+      within('#side_menu') do
+        click_link "Collaborative Legislation"
+      end
+
+      click_link "An example legislation process"
+
+      expect(page).to have_selector("h1", text: "An example legislation process")
+      expect(find("#debate_phase_active")).to be_checked
+
+      uncheck "debate_phase_active"
+      click_button "Save changes"
+
+      expect(page).to have_content "Process updated successfully"
+      expect(find("#debate_start_date").value).to be_blank
+      expect(find("#debate_end_date").value).to be_blank
+    end
+  end
 end

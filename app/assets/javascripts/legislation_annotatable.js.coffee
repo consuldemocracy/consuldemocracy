@@ -56,7 +56,14 @@ App.LegislationAnnotatable =
       return
 
     $('[data-annotation-id]').removeClass('current-annotation')
-    $(this).addClass('current-annotation')
+
+    parent = $(this).parents('[data-annotation-id]:eq(0)')
+    if parent.length
+      target = parent
+    else
+      target = $(this)
+    annotation_id = target.data('annotation-id')
+    $('[data-annotation-id="'+annotation_id+'"]').addClass('current-annotation')
 
     App.LegislationAllegations.show_comments()
     $("#comments-box").show()
