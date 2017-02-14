@@ -20,7 +20,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::BaseController
   end
 
   def create
-    @booth_assignment = ::Poll::BoothAssignment.new(poll_id: booth_assignment_params[:poll], booth_id: booth_assignment_params[:booth])
+    @booth_assignment = ::Poll::BoothAssignment.new(poll_id: booth_assignment_params[:poll_id], booth_id: booth_assignment_params[:booth])
 
     if @booth_assignment.save
       notice = t("admin.poll_booth_assignments.flash.create")
@@ -48,7 +48,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::BaseController
     end
 
     def booth_assignment_params
-      params.permit(:booth, :poll)
+      params.permit(:booth, :poll_id)
     end
 
     def load_poll
