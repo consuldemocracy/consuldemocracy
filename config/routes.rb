@@ -208,7 +208,6 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
-        get :search_officers, on: :member
         get :search_questions, on: :member
         patch :add_question, on: :member
         patch :remove_question, on: :member
