@@ -5,7 +5,12 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
   before_action :load_booth_assignment, only: [:create]
 
   def index
-    @officers = @poll.officer_assignments.includes(officer: :user).select(:officer_id).distinct.map(&:officer)
+    @officers = ::Poll::Officer.
+                  includes(:user).
+                  order('users.username').
+                  where(
+                    id: @poll.officer_assignments.select(:officer_id).distinct.map(&:officer_id)
+                  ).page(params[:page]).per(50)
   end
 
   def by_officer
