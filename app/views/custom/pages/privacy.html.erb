@@ -1,0 +1,15 @@
+<% provide :title do %><%= t('pages.titles.privacy') %><% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h1><%= t("pages.priv.title") %></h1>
+
+    <h2><%= t("pages.priv.subtitle") %></h2>
+    <%= markdown t("pages.priv.body") %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= render '/shared/print' %>
+  </div>
+
+</div>
