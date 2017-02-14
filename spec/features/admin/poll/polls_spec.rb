@@ -258,6 +258,9 @@ feature 'Admin polls' do
                          date: poll.starts_at + i.days,
                          count: 21) }
 
+        2.times { create(:poll_voter,
+                  booth_assignment: booth_assignment_final_recounted) }
+
         create(:poll_recount,
                booth_assignment: booth_assignment_recounted,
                date: poll.ends_at,
@@ -290,6 +293,7 @@ feature 'Admin polls' do
           expect(page).to have_content(booth_assignment_final_recounted.booth.name)
           expect(page).to have_content('-')
           expect(page).to have_content('55555')
+          expect(page).to have_content('2')
         end
       end
     end
