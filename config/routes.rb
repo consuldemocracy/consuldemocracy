@@ -223,6 +223,7 @@ Rails.application.routes.draw do
         end
 
         resources :recounts, only: :index
+        resources :results, only: :index
       end
 
       resources :officers do
