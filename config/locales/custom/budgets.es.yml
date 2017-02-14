@@ -80,7 +80,7 @@ es:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste
         unfeasibility_explanation: Informe de inviabilidad
-        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        code_html: 'Código propuesta de inversión: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
         organization_name_html: 'Asociación: <strong>%{name}</strong>'
         share: Compartir
