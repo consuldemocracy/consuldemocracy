@@ -21,6 +21,7 @@ module Abilities
       cannot :moderate, Comment, user_id: user.id
 
       can :moderate, Budget::Investment
+      can :ignore_flag, Budget::Investment, ignored_flag_at: nil, hidden_at: nil
       cannot :moderate, Budget::Investment, author_id: user.id
 
       can :hide, Debate, hidden_at: nil

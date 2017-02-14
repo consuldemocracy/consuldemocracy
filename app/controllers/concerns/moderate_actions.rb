@@ -49,8 +49,8 @@ module ModerateActions
     end
 
     def set_resource_params
-      params[:resource_ids] = params["#{resource_name}_ids"]
-      params[:hide_resources] = params["hide_#{resource_name.pluralize}"]
+      params[:resource_ids] = params["#{resource_name.gsub('::', '_')}_ids"]
+      params[:hide_resources] = params["hide_#{resource_name.pluralize.gsub('::', '_')}"]
     end
 
     def author_id
