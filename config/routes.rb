@@ -221,6 +221,8 @@ Rails.application.routes.draw do
           get :search_officers, on: :collection
           get :by_officer, on: :collection
         end
+
+        resources :recounts, only: :index
       end
 
       resources :officers do

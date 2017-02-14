@@ -338,19 +338,14 @@ en:
         recounts_tab: Recounting
         results_tab: Results
         no_questions: "There are no questions assigned to this poll."
-        no_recounts: "There is nothing to be recounted"
         no_results: "There are no results"
         questions_title: "List of questions"
-        recounting_title: "Recounts"
         results_title: "Results"
         remove_question: "Remove question from poll"
         add_question: "Include question"
         table_title: "Title"
         table_assignment: "Assignment"
         table_name: "Name"
-        table_booth_name: "Booth"
-        table_final_recount: "Final recount (by officer)"
-        table_recounts: "Accumulated daily recounts (by officer)"
         table_whites: "Blank ballots"
         table_nulls: "Invalid ballots"
         table_answer: Answer
@@ -385,6 +380,13 @@ en:
         valid_answers: Valid answers
         description: Description
         preview: View on website
+    recounts:
+      index:
+        title: "Recounts"
+        no_recounts: "There is nothing to be recounted"
+        table_booth_name: "Booth"
+        table_recounts: "Accumulated daily recounts (by officer)"
+        table_final_recount: "Final recount (by officer)"
     booths:
       index:
         title: "List of booths"

@@ -34,7 +34,7 @@
         <tbody>
           <% @booth_assignment.officers.uniq.each do |officer| %>
             <tr id="officer_<%= officer.id %>" class="officer">
-              <td><%= link_to officer.name, admin_officer_assignments_path(officer: officer, poll: @poll) %></td>
+              <td><%= link_to officer.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: officer.id) %></td>
               <td><%= officer.email %></td>
             </tr>
           <% end %>

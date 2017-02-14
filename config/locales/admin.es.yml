@@ -338,19 +338,14 @@ es:
         recounts_tab: Recuentos
         results_tab: Resultados
         no_questions: "No hay preguntas asignadas a esta votación."
-        no_recounts: "No hay nada de lo que hacer recuento"
         no_results: "No hay resultados"
         questions_title: "Listado de preguntas asignadas"
-        recounting_title: "Recuentos"
         results_title: "Resultados"
         remove_question: "Desasignar pregunta"
         add_question: "Incluir pregunta"
         table_title: "Título"
         table_assignment: "Asignación"
         table_name: "Nombre"
-        table_booth_name: "Urna"
-        table_final_recount: "Recuento final (presidente de mesa)"
-        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
         table_whites: Papeletas en blanco
         table_nulls: Papeletas nulas
         table_answer: Respuesta
@@ -385,6 +380,13 @@ es:
         valid_answers: Respuestas válidas
         description: Descripción
         preview: Ver en la web
+    recounts:
+      index:
+        title: "Recuentos"
+        no_recounts: "No hay nada de lo que hacer recuento"
+        table_booth_name: "Urna"
+        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
+        table_final_recount: "Recuento final (presidente de mesa)"
     booths:
       index:
         title: "Lista de urnas"

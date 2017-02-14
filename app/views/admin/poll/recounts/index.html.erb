@@ -1,0 +1,45 @@
+<%= render "/admin/poll/polls/poll_header" %>
+<div id="poll-resources">
+  <%= render "/admin/poll/polls/filter_subnav" %>
+
+  <h3><%= t("admin.recounts.index.title") %></h3>
+
+  <% if @booth_assignments.empty? %>
+    <div class="callout primary margin-top">
+      <%= t("admin.recounts.index.no_recounts") %>
+    </div>
+  <% else %>
+    <table class="fixed margin">
+      <thead>
+        <th><%= t("admin.recounts.index.table_booth_name") %></th>
+        <th class="text-center"><%= t("admin.recounts.index.table_recounts") %></th>
+        <th class="text-center"><%= t("admin.recounts.index.table_final_recount") %></th>
+      </thead>
+      <tbody>
+        <% @booth_assignments.each do |booth_assignment| %>
+          <tr id="<%= dom_id(booth_assignment) %>_recounts" class="booth_recounts">
+            <td>
+              <strong>
+                <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: 'tab-recounts') %>
+              </strong>
+            </td>
+            <td class="text-center">
+              <% if booth_assignment.recounts.any? %>
+                <%= booth_assignment.recounts.to_a.sum(&:count) %>
+              <% else %>
+                <span>-</span>
+              <% end %>
+            </td>
+            <td class="text-center">
+              <% if booth_assignment.final_recounts.any? %>
+                <strong><%= booth_assignment.final_recounts.to_a.sum(&:count) %></strong>
+              <% else %>
+                <span>-</span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

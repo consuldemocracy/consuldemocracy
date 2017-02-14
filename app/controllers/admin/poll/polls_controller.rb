@@ -8,9 +8,7 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def show
-    @poll = Poll.includes(:questions,
-                          booth_assignments: [:final_recounts,
-                                              :recounts]).
+    @poll = Poll.includes(:questions).
                           order('poll_questions.title').
                           find(params[:id])
   end
@@ -46,7 +44,7 @@ class Admin::Poll::PollsController < Admin::BaseController
     else
       notice = t("admin.polls.flash.error_on_question_added")
     end
-    redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
+    redirect_to admin_poll_path(@poll), notice: notice
   end
 
   def remove_question
@@ -58,7 +56,7 @@ class Admin::Poll::PollsController < Admin::BaseController
     else
       notice = t("admin.polls.flash.error_on_question_removed")
     end
-    redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
+    redirect_to admin_poll_path(@poll), notice: notice
   end
 
   def search_questions
