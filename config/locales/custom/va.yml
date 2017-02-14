@@ -171,10 +171,10 @@ va:
       conditions: "Condicions d'ús"
       consul: "aplicació Consul"
       consul_url: https://github.com/consul/consul
-      contact_us: Per a assistència tècnica entra en
-      copyright: Consul, %{year}
-      description: Aquest portal usa la %{consul} que és %{open_source}.
-      faq: Assistència tècnica
+      contact_us: "Pots consultar les preguntes més freqüents sobre l'ús d'aquest portal"
+      copyright: Ajuntament de Castelló de la Plana, %{year}
+      description: "Aquest portal és una adaptació de la plataforma de %{open_source} %{consul} desenvolupada per l'Ajuntament de Madrid i adaptada per l'Ajuntament de Castelló de la Plana."
+      faq: açí
       more_info: Més informació
       open_data_text: "Totes les dades de l'Ajuntament són teues."
       open_data_title: Dades Obertes.
@@ -183,7 +183,7 @@ va:
       participation_text: Decideix com ha de ser la ciutat que vols.
       participation_title: Participació
       privacy: Política de privadesa
-      transparency_text: Obtingues qualsevol informació sobre la ciutat.
+      transparency_text: Obtén qualsevol informació sobre la ciutat.
       transparency_title: Transparència
       transparency_url: https://transparency.consul
     header:
