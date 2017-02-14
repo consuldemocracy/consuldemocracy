@@ -61,7 +61,7 @@
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
         <ul id="polls_menu" <%= "class=is-active" if menu_polls? %>>
-          <li <%= 'class=active' if ["polls", "officer_assignments", "booth_assignments"].include? controller_name  %>>
+          <li <%= 'class=active' if ["polls", "officer_assignments", "booth_assignments", "recounts"].include? controller_name  %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
 
