@@ -16,6 +16,10 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_results: Add results
+    booth:
+      new:
+        title: "Choose your booth"
+        success: "You are officing booth %{booth}"
     results:
       flash:
         create: "Results saved"

@@ -16,6 +16,10 @@ es:
         no_polls: No tienes permiso para recuento final en ninguna votación reciente
         select_poll: Selecciona votación
         add_results: Añadir resultados
+    booth:
+      new:
+        title: "Escoge tu urna"
+        success: "Estás presidiendo la urna %{booth}"
     results:
       flash:
         create: "Datos guardados"
