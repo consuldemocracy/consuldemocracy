@@ -33,31 +33,10 @@
     <% @budget_investmens.each do |budget_investment| %>
       <tr id="budget_investment_<%= budget_investment.id %>">
         <td>
-          <%= render 'budgets/investments/investment', investment: budget_investment %>
+          <%= render 'budgets/investments/investment_simple', investment: budget_investment %>
         </td>
         <td class="text-center">
           <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
-        </td>
-      </tr>
-      <tr id="budget_investment_<%= budget_investment.id %>">
-        <td>
-          <%# if budget_investment.investmentable.kind_of?(Budget::Investment) %>
-            <%# budget_investment.budget_investmentable_type.constantize.model_name.human %> -
-            <%# link_to budget_investment.budget_investmentable.title, budget_investment_path(budget_investment.budget_investmentable.budget, budget_investment.budget_investmentable) %>
-          <%# else %>
-            <%# budget_investment.budget_investmentable_type.constantize.model_name.human %> -
-            <%# link_to budget_investment.budget_investmentable.title, budget_investment.budget_investmentable %>
-          <%# end %>
-          <br>
-          <span class="date"><%= l budget_investment.updated_at.to_date %></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <!-- <%# budget_investment.flags_count %><span class="icon-flag flag-disable"></span> -->
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= budget_investment.author.username %>
-          <br>
-          <p>
-            <%= budget_investment.description %>
-          </p>
         </td>
       </tr>
     <% end %>
