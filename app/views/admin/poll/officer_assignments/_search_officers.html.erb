@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-12 medium-6 column">
-    <%= form_tag(search_officers_admin_poll_path(@poll), method: :get, remote: true) do |f| %>
+    <%= form_tag(search_officers_admin_poll_officer_assignments_path(@poll), method: :get, remote: true) do |f| %>
       <div class="input-group">
         <%= text_field_tag :search,
                            @search,

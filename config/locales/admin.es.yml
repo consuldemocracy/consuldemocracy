@@ -276,6 +276,13 @@ es:
         error_destroy: "Se ha producido un error al eliminar el turno"
         error_create: "Se ha producido un error al intentar crear el turno"
       index:
+        officers_title: "Listado de presidentes de mesa asignados"
+        no_officers: "No hay presidentes de mesa asignados a esta votación."
+        table_name: "Nombre"
+        table_email: "Email"
+        add_officer_assignments: "Añadir turnos como presidente de mesa"
+        edit_officer_assignments: "Editar turnos"
+      by_officer:
         new_assignment: "Nuevo turno"
         date: "Fecha"
         booth: "Urna"
@@ -291,6 +298,11 @@ es:
         final_recounts: "Recuentos finales"
         final_recount: "Recuento final (presidente de mesa)"
     poll_booth_assignments:
+      flash:
+        destroy: "Urna desasignada"
+        create: "Urna asignada"
+        error_destroy: "Se ha producido un error al desasignar la urna"
+        error_create: "Se ha producido un error al intentar asignar la urna"
       show:
         location: "Ubicación"
         officers: "Presidentes de mesa"
@@ -303,6 +315,14 @@ es:
         count_by_officer: "Recuento diario (presidente de mesa)"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
+      index:
+        booths_title: "Listado de urnas asignadas"
+        no_booths: "No hay urnas asignadas a esta votación."
+        table_name: "Nombre"
+        table_location: "Ubicación"
+        table_assignment: "Asignación"
+        remove_booth: "Desasignar urna"
+        add_booth: "Asignar urna"
     polls:
       index:
         title: "Listado de votaciones"
@@ -322,36 +342,13 @@ es:
         officers_tab: Presidentes de mesa
         recounts_tab: Recuentos
         results_tab: Resultados
-        no_booths: "No hay urnas asignadas a esta votación."
         no_questions: "No hay preguntas asignadas a esta votación."
-        no_officers: "No hay presidentes de mesa asignados a esta votación."
-        no_recounts: "No hay nada de lo que hacer recuento"
-        no_results: "No hay resultados"
-        remove_booth: "Desasignar urna"
-        booths_title: "Listado de urnas asignadas"
-        officers_title: "Listado de presidentes de mesa asignados"
         questions_title: "Listado de preguntas asignadas"
-        recounting_title: "Recuentos"
-        results_title: "Resultados"
         remove_question: "Desasignar pregunta"
-        add_booth: "Asignar urna"
         add_question: "Incluir pregunta"
-        add_officer_assignments: "Añadir turnos como presidente de mesa"
-        edit_officer_assignments: "Editar turnos"
-        search_results: "Resultados de la búsqueda"
-        no_search_results: "No se han encontrado resultados."
         table_title: "Título"
         table_assignment: "Asignación"
         table_name: "Nombre"
-        table_location: "Ubicación"
-        table_email: "Email"
-        table_booth_name: "Urna"
-        table_final_recount: "Recuento final (presidente de mesa)"
-        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
-        table_whites: Papeletas en blanco
-        table_nulls: Papeletas nulas
-        table_answer: Respuesta
-        table_votes: Votos
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
@@ -382,6 +379,21 @@ es:
         valid_answers: Respuestas válidas
         description: Descripción
         preview: Ver en la web
+    recounts:
+      index:
+        title: "Recuentos"
+        no_recounts: "No hay nada de lo que hacer recuento"
+        table_booth_name: "Urna"
+        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
+        table_final_recount: "Recuento final (presidente de mesa)"
+    results:
+      index:
+        title: "Resultados"
+        no_results: "No hay resultados"
+        table_whites: Papeletas en blanco
+        table_nulls: Papeletas nulas
+        table_answer: Respuesta
+        table_votes: Votos
     booths:
       index:
         title: "Lista de urnas"
@@ -400,12 +412,6 @@ es:
         submit_button: "Actualizar urna"
       show:
         location: "Ubicación"
-    booth_assignments:
-      flash:
-        destroy: "Urna desasignada"
-        create: "Urna asignada"
-        error_destroy: "Se ha producido un error al desasignar la urna"
-        error_create: "Se ha producido un error al intentar asignar la urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -486,6 +492,8 @@ es:
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
+      search_results: "Resultados de la búsqueda"
+      no_search_results: "No se han encontrado resultados."
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación

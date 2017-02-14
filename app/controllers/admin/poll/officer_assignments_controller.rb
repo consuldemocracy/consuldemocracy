@@ -1,16 +1,30 @@
 class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
 
-  before_action :redirect_if_blank_required_params, only: [:index]
+  before_action :load_poll
+  before_action :redirect_if_blank_required_params, only: [:by_officer]
   before_action :load_booth_assignment, only: [:create]
 
   def index
-    @poll = ::Poll.includes(:booths).find(officer_assignment_params[:poll])
-    @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer])
+    @officers = @poll.officer_assignments.includes(officer: :user).select(:officer_id).distinct.map(&:officer)
+  end
+
+  def by_officer
+    @poll = ::Poll.includes(:booths).find(params[:poll_id])
+    @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer_id])
     @officer_assignments = ::Poll::OfficerAssignment.
                            joins(:booth_assignment).
                            includes(:recount, :final_recounts, booth_assignment: :booth).
                            where("officer_id = ? AND poll_booth_assignments.poll_id = ?", @officer.id, @poll.id).
                            order(:date)
+  end
+
+  def search_officers
+    load_search
+    @officers = User.joins(:poll_officer).search(@search).order(username: :asc)
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
@@ -24,7 +38,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     else
       notice = t("admin.poll_officer_assignments.flash.error_create")
     end
-    redirect_to admin_officer_assignments_path(officer: create_params[:officer_id], poll: create_params[:poll_id]), notice: notice
+    redirect_to by_officer_admin_poll_officer_assignments_path(poll_id: create_params[:poll_id], officer_id: create_params[:officer_id]), notice: notice
   end
 
   def destroy
@@ -35,13 +49,13 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     else
       notice = t("admin.poll_officer_assignments.flash.error_destroy")
     end
-    redirect_to admin_officer_assignments_path(officer: @officer_assignment.officer_id, poll: @officer_assignment.poll_id), notice: notice
+    redirect_to by_officer_admin_poll_officer_assignments_path(poll_id: @officer_assignment.poll_id, officer_id: @officer_assignment.officer_id), notice: notice
   end
 
   private
 
     def officer_assignment_params
-      params.permit(:officer, :poll)
+      params.permit(:officer_id)
     end
 
     def create_params
@@ -52,14 +66,22 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
       @booth_assignment = ::Poll::BoothAssignment.includes(:poll).find_by(poll_id: create_params[:poll_id], booth_id: create_params[:booth_id])
     end
 
+    def load_poll
+      @poll = ::Poll.find(params[:poll_id])
+    end
+
     def redirect_if_blank_required_params
-      if officer_assignment_params[:officer].blank?
-        if officer_assignment_params[:poll].blank?
-          redirect_to admin_polls_path
-        else
-          redirect_to admin_poll_path(officer_assignment_params[:poll])
-        end
+      if officer_assignment_params[:officer_id].blank?
+        redirect_to admin_poll_path(@poll)
       end
+    end
+
+    def search_params
+      params.permit(:poll_id, :search)
+    end
+
+    def load_search
+      @search = search_params[:search]
     end
 
 end

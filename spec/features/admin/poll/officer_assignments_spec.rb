@@ -54,7 +54,7 @@ feature 'Admin officer assignments in poll' do
     booth = officer_assignment.booth_assignment.booth
     officer = officer_assignment.officer
 
-    visit admin_officer_assignments_path(poll: poll, officer: officer)
+    visit by_officer_admin_poll_officer_assignments_path(poll, officer_id: officer.id)
 
     expect(page).to_not have_content 'This user has no officing shifts in this poll'
     within("#poll_officer_assignment_#{officer_assignment.id}") do
@@ -89,7 +89,7 @@ feature 'Admin officer assignments in poll' do
                            date: poll.ends_at,
                            count: 9876)
 
-    visit admin_officer_assignments_path(poll: poll, officer: officer)
+    visit by_officer_admin_poll_officer_assignments_path(poll, officer_id: officer.id)
 
     within('#recount_list') { expect(page).to have_content('77') }
     within('#final_recount_list') { expect(page).to have_content('9876') }

@@ -1,0 +1,17 @@
+<%= link_to t("admin.actions.edit"),
+            edit_admin_poll_path(@poll),
+            class: "button hollow float-right" %>
+
+<h2 class="inline-block">
+  <%= @poll.name %>
+</h2>
+<br>
+<span>
+  (<%= l @poll.starts_at.to_date %> - <%= l @poll.ends_at.to_date %>)
+</span>
+<% if @poll.geozone_restricted %>
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <span>
+    <%= @poll.geozones.pluck(:name).to_sentence %>
+  <span>
+<% end %>
