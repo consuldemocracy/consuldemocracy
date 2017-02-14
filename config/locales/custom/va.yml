@@ -192,9 +192,9 @@ va:
       debates: Debats
       external_link_blog: Blog
       external_link_opendata: Dades obertes
-      external_link_opendata_url: "/opendata"
+      external_link_opendata_url: http://www.castello.es/web20/archivos/contenidos/370/Observatorio_Urbano.php?src=DCD
       external_link_transparency: Transparència
-      external_link_transparency_url: https://transparency.consul
+      external_link_transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=DCD
       locale: 'Idioma:'
       logo: Consul
       management: Gestió
