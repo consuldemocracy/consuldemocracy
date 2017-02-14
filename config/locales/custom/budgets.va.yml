@@ -80,7 +80,7 @@ va:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
         unfeasibility_explanation: Informe de inviabilitat
-        code_html: 'Codi proposta de despesa: <strong>%{code}</strong>'
+        code_html: "Codi proposta d'inversió: <strong>%{code}</strong>"
         location_html: 'Ubicació: <strong>%{location}</strong>'
         organization_name_html: 'Associació: <strong>%{name}</strong>'
         share: Compartir
