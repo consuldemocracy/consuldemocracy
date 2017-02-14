@@ -3,6 +3,8 @@ class Budget
 
     include Flaggable
 
+    scope :flagged, -> { where("flags_count >= 0") }
+
     include Measurable
     include Sanitizable
     include Taggable
