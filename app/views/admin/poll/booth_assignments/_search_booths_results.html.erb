@@ -25,10 +25,12 @@
           <%= booth.location %>
         </td>
         <td class="text-center">
-          <%= link_to t("admin.poll_booth_assignments.index.add_booth"),
-                        admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
-                        method: :post,
-                        class: "button hollow" %>
+          <% unless @poll.booth_ids.include?(booth.id) %>
+            <%= link_to t("admin.poll_booth_assignments.index.add_booth"),
+                          admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+                          method: :post,
+                          class: "button hollow" %>
+          <% end %>
         </td>
       </tr>
       <% end %>
