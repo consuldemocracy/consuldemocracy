@@ -1,2 +1,24 @@
 
-<p>La home est là</p>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <% t("budgets.home_rivp.cards").each do |card| %>
+      <div class="small-12 medium-4 column text-center">
+        <div class="card">
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('apple-touch-icon-200.png');">
+          </div>
+
+          <div class="card-description">
+            <h2><%= card[1][:title] %></h2>
+            <p><%= card[1][:dates] %><p>
+            <p><%= card[1][:description] %><p>
+          </div>
+        </div>
+
+      </div>
+    <% end%>
+  </div>
+</div>
