@@ -171,7 +171,7 @@ es:
       consul: Consul
       consul_url: https://github.com/consul/consul
       contact_us: Puedes consultar las preguntas más frecuentes sobre el uso de este portal
-      copyright: Consul, %{year}
+      copyright: Ayuntamiento de Castellón de la Plana, %{year}
       description: Este portal es una adaptación de la plataforma de %{open_source} %{consul} desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Castellón de la Plana.
       faq: aquí
       more_info: Más información
