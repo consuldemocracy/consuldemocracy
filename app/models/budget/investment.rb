@@ -1,6 +1,8 @@
 class Budget
   class Investment < ActiveRecord::Base
 
+    include Flaggable
+
     include Measurable
     include Sanitizable
     include Taggable
@@ -35,6 +37,7 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
     scope :sort_by_random,           -> { reorder("RANDOM()") }
+    scope :sort_by_created_at, -> {reorder(:created_at)}
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
