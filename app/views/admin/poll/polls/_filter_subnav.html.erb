@@ -1,28 +1,28 @@
-<ul class="tabs" data-tabs id="assigned-resources-tabs">
-  <li class="tabs-title is-active">
-    <%= link_to "#tab-questions" do %>
+<ul class="menu simple clear" id="assigned-resources-tabs">
+  <li>
+    <%= link_to admin_poll_path(@poll) do %>
       <%= t("admin.polls.show.questions_tab") %>
-      <span class="js-comments-count">(<%= @poll.questions.count %>)</span>
+      (<%= @poll.questions.count %>)
     <% end %>
   </li>
-  <li class="tabs-title">
-    <%= link_to "#tab-booths" do %>
+  <li>
+    <%= link_to admin_poll_booth_assignments_path(@poll) do %>
       <%= t("admin.polls.show.booths_tab") %>
-      (<%= @poll.booths.count %>)
+      (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
     <% end %>
   </li>
-  <li class="tabs-title">
+  <li>
     <%= link_to "#tab-officers" do %>
       <%= t("admin.polls.show.officers_tab") %>
-      (<%= @poll.officers.uniq.count %>)
+      (<%= @poll.officer_assignments.select(:officer_id).distinct.count %>)
     <% end %>
   </li>
-  <li class="tabs-title">
+  <li>
     <%= link_to "#tab-recounts" do %>
       <%= t("admin.polls.show.recounts_tab") %>
     <% end %>
   </li>
-  <li class="tabs-title">
+  <li>
     <%= link_to "#tab-results" do %>
       <%= t("admin.polls.show.results_tab") %>
     <% end %>

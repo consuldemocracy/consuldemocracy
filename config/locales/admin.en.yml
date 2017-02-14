@@ -286,6 +286,11 @@ en:
         final_recounts: "Final recounts"
         final_recount: "Final recount (by officer)"
     poll_booth_assignments:
+      flash:
+        destroy: "Booth not assigned anymore"
+        create: "Booth assigned"
+        error_destroy: "An error ocurred when removing booth assignment"
+        error_create: "An error ocurred when assigning booth to the poll"
       show:
         location: "Location"
         officers: "Officers"
@@ -298,6 +303,14 @@ en:
         count_by_officer: "Daily recount (by officer)"
         count_final: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
+      index:
+        booths_title: "List of booths"
+        no_booths: "There are no booths assigned to this poll."
+        table_name: "Name"
+        table_location: "Location"
+        table_assignment: "Assignment"
+        remove_booth: "Remove booth from poll"
+        add_booth: "Assign booth"
     polls:
       index:
         title: "List of polls"
@@ -317,28 +330,21 @@ en:
         officers_tab: Officers
         recounts_tab: Recounting
         results_tab: Results
-        no_booths: "There are no booths assigned to this poll."
         no_questions: "There are no questions assigned to this poll."
         no_officers: "There are no officers assigned to this poll."
         no_recounts: "There is nothing to be recounted"
         no_results: "There are no results"
-        remove_booth: "Remove booth from poll"
-        booths_title: "List of booths"
         officers_title: "List of officers"
         questions_title: "List of questions"
         recounting_title: "Recounts"
         results_title: "Results"
         remove_question: "Remove question from poll"
-        add_booth: "Assign booth"
         add_question: "Include question"
         add_officer_assignments: "Add shifts as officer"
         edit_officer_assignments: "Edit officing shifts"
-        search_results: "Search results"
-        no_search_results: "No results found."
         table_title: "Title"
         table_assignment: "Assignment"
         table_name: "Name"
-        table_location: "Location"
         table_email: "Email"
         table_booth_name: "Booth"
         table_final_recount: "Final recount (by officer)"
@@ -394,12 +400,6 @@ en:
         submit_button: "Update booth"
       show:
         location: "Location"
-    booth_assignments:
-      flash:
-        destroy: "Booth not assigned anymore"
-        create: "Booth assigned"
-        error_destroy: "An error ocurred when removing booth assignment"
-        error_create: "An error ocurred when assigning booth to the poll"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -480,6 +480,8 @@ en:
       user_search:
         button: Search
         placeholder: Search user by name or email'
+      search_results: "Search results"
+      no_search_results: "No results found."
     spending_proposals:
       index:
         geozone_filter_all: All zones

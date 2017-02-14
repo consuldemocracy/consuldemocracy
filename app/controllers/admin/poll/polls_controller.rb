@@ -63,13 +63,6 @@ class Admin::Poll::PollsController < Admin::BaseController
     redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
   end
 
-  def search_booths
-    @booths = ::Poll::Booth.search(@search)
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def search_questions
     @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search({search: @search}).order(title: :asc)
     respond_to do |format|
