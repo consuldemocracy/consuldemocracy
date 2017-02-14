@@ -5,7 +5,9 @@
   <div class="row">
     <div class="small-12 column padding">
       <h1 class="inline-block"><%= t("polls.index.title") %></h1>
-      <div class="float-right margin-top">
+      <br>
+      ¿Quieres votar? <%= link_to "Te explicamos cómo", "https://diario.madrid.es/decidemadrid/2017/02/14/quieres-votar-en-decidemadrid-es-te-explicamos-como/", target: "_blank", title: "(se abre en ventana nueva)" %>
+      <div class="float-right">
         <%= link_to t("polls.index.more_info"), more_info_polls_path %>
       </div>
     </div>
