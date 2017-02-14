@@ -7,7 +7,7 @@
   <div class="small-4 large-4 columns">
     <div class="float-right">
       <%= t("moderation.investments.index.order") %>
-      <%# render 'shared/order_selector', i18n_namespace: "moderation.budget_investments.index" %>
+      <%= render 'shared/order_selector', i18n_namespace: "moderation.budget_investments.index" %>
     </div>
   </div>
 </div>
@@ -34,7 +34,8 @@
       <tr id="budget_investment_<%= budget_investment.id %>">
         <td>
           <%= render 'budgets/investments/investment_simple', investment: budget_investment %>
-        </td>
+          <%= text_field_tag "budget_investment[#{budget_investment.id}]moderation_text", budget_investment.moderation_text %>
+         </td>
         <td class="text-center">
           <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
         </td>
@@ -61,6 +62,6 @@
     %>
   </div>
 
-  <%# paginate @budget_investments %>
+  <%= paginate @budget_investmens %>
 
 <% end %>

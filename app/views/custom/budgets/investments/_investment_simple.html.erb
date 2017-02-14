@@ -44,9 +44,10 @@
             </p>
             <div class="investment-project-description">
               <p><%= investment.description %></p>
-              <div class="truncate"></div>
+              <!-- <div class="truncate"></div> -->
             </div>
-            <%# render "shared/tags", taggable: investment, limit: 5 %>
+            <% @budget = investment.budget %>
+            <%= render "shared/tags", taggable: investment, limit: 5 %>
           <% end %>
         </div>
       </div>
