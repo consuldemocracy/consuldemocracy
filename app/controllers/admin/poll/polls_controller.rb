@@ -8,12 +8,8 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def show
-    @poll = Poll.includes(:questions,
-                          booth_assignments: [:booth,
-                                              :final_recounts,
-                                              :recounts],
-                          officers: [:user]).
-                          order('poll_questions.title', 'poll_booths.name', 'users.username').
+    @poll = Poll.includes(:questions).
+                          order('poll_questions.title').
                           find(params[:id])
   end
 
@@ -48,7 +44,7 @@ class Admin::Poll::PollsController < Admin::BaseController
     else
       notice = t("admin.polls.flash.error_on_question_added")
     end
-    redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
+    redirect_to admin_poll_path(@poll), notice: notice
   end
 
   def remove_question
@@ -60,26 +56,11 @@ class Admin::Poll::PollsController < Admin::BaseController
     else
       notice = t("admin.polls.flash.error_on_question_removed")
     end
-    redirect_to admin_poll_path(@poll, anchor: 'tab-questions'), notice: notice
-  end
-
-  def search_booths
-    @booths = ::Poll::Booth.search(@search)
-    respond_to do |format|
-      format.js
-    end
+    redirect_to admin_poll_path(@poll), notice: notice
   end
 
   def search_questions
     @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search({search: @search}).order(title: :asc)
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def search_officers
-    @officers = User.joins(:poll_officer).search(@search).order(username: :asc)
-
     respond_to do |format|
       format.js
     end

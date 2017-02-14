@@ -1,44 +1,8 @@
-<%= link_to t("admin.actions.edit"),
-            edit_admin_poll_path(@poll),
-            class: "button hollow float-right" %>
+<%= render "poll_header" %>
 
-<h2 class="inline-block">
-  <%= @poll.name %>
-</h2>
-<br>
-<span>
-  (<%= l @poll.starts_at.to_date %> - <%= l @poll.ends_at.to_date %>)
-</span>
-<% if @poll.geozone_restricted %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <span>
-    <%= @poll.geozones.pluck(:name).to_sentence %>
-  <span>
-<% end %>
+<div id="poll-resources">
+  <%= render "subnav" %>
 
-<div id="poll-resources" class="tabs-content" data-tabs-content="assigned-resources-tabs">
-  <%= render "filter_subnav" %>
-
-  <div class="tabs-panel is-active" id="tab-questions">
-    <%= render "search_questions" %>
-    <%= render "questions" %>
-  </div>
-
-  <div class="tabs-panel" id="tab-booths">
-    <%= render "search_booths" %>
-    <%= render "booths" %>
-  </div>
-
-  <div class="tabs-panel" id="tab-officers">
-    <%= render "search_officers" %>
-    <%= render 'officers' %>
-  </div>
-
-  <div class="tabs-panel" id="tab-recounts">
-    <%= render 'recounting' %>
-  </div>
-
-  <div class="tabs-panel" id="tab-results">
-    <%= render 'results' %>
-  </div>
+  <%= render "search_questions" %>
+  <%= render "questions" %>
 </div>

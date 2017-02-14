@@ -208,13 +208,21 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
-        get :search_booths, on: :member
-        get :search_officers, on: :member
         get :search_questions, on: :member
         patch :add_question, on: :member
         patch :remove_question, on: :member
 
-        resources :booth_assignments, only: :show
+        resources :booth_assignments, only: [:index, :show, :create, :destroy] do
+          get :search_booths, on: :collection
+        end
+
+        resources :officer_assignments, only: [:index, :create, :destroy] do
+          get :search_officers, on: :collection
+          get :by_officer, on: :collection
+        end
+
+        resources :recounts, only: :index
+        resources :results, only: :index
       end
 
       resources :officers do
@@ -222,8 +230,6 @@ Rails.application.routes.draw do
       end
 
       resources :booths
-      resources :booth_assignments, only: [:create, :destroy]
-      resources :officer_assignments, only: [:index, :create, :destroy]
       resources :questions
     end
 

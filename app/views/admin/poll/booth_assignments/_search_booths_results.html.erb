@@ -1,18 +1,18 @@
 <% if @booths.blank? %>
   <div class="callout alert margin-bottom">
-    <%= t('admin.polls.show.no_search_results') %>
+    <%= t('admin.shared.no_search_results') %>
   </div>
 <% else %>
-  <h3><%= t('admin.polls.show.search_results') %></h3>
+  <h3><%= t('admin.shared.search_results') %></h3>
 <% end %>
 
 <% if @booths.any? %>
   <table>
     <thead>
       <tr>
-        <th><%= t("admin.polls.show.table_name") %></th>
-        <th><%= t("admin.polls.show.table_location") %></th>
-        <th class="text-center"><%= t("admin.polls.show.table_assignment") %></th>
+        <th><%= t("admin.poll_booth_assignments.index.table_name") %></th>
+        <th><%= t("admin.poll_booth_assignments.index.table_location") %></th>
+        <th class="text-center"><%= t("admin.poll_booth_assignments.index.table_assignment") %></th>
       </tr>
     </thead>
     <tbody>
@@ -26,13 +26,12 @@
         </td>
         <td class="text-center">
           <% if @poll.booth_ids.include?(booth.id) %>
-            <%= link_to t("admin.polls.show.remove_booth"),
-                          admin_booth_assignment_path(poll: @poll, booth: booth),
+            <%= link_to t("admin.poll_booth_assignments.index.remove_booth"),
                           method: :delete,
                           class: "button hollow alert" %>
           <% else %>
-            <%= link_to t("admin.polls.show.add_booth"),
-                          admin_booth_assignments_path(poll: @poll, booth: booth),
+            <%= link_to t("admin.poll_booth_assignments.index.add_booth"),
+                          admin_poll_booth_assignments_path(poll: @poll, booth: booth),
                           method: :post,
                           class: "button hollow" %>
           <% end %>
