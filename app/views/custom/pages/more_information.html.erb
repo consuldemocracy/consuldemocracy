@@ -3,13 +3,13 @@
 <div class="row">
   <div class="small-12 large-3 columns">
     <ul class="menu vertical margin-top">
-      <% (1..10).each do |i| %>
+      <% (1..9).each do |i| %>
         <li><a href="#item_<%= i %>"><strong><%= t("pages.more_information.item_#{i}.title") %></strong></a></li>
       <% end %>
     </ul>
   </div>
   <div class="small-12 large-9 columns">
-    <% (1..10).each do |i| %>
+    <% (1..9).each do |i| %>
       <div class="row">
         <div class="small-12 large-12 columns">
           <h1 id="item_<%= i %>" class="more_information_item custom_item_<%= i %>_title"><%= t("pages.more_information.item_#{i}.title") %></h1>
