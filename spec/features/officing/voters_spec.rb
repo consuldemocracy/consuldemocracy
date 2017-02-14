@@ -13,8 +13,10 @@ feature 'Voters' do
   end
 
   scenario "Can vote", :js do
-    poll = create(:poll_officer_assignment, officer: officer).booth_assignment.poll
+    officer_assignment = create(:poll_officer_assignment, officer: officer)
+    poll = officer_assignment.booth_assignment.poll
 
+    set_officing_booth(officer_assignment.booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -64,10 +66,14 @@ feature 'Voters' do
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
-    ba1 = create(:poll_booth_assignment, poll: poll1)
-    ba2 = create(:poll_booth_assignment, poll: poll2)
+    booth = create(:poll_booth)
+
+    ba1 = create(:poll_booth_assignment, poll: poll1, booth: booth )
+    ba2 = create(:poll_booth_assignment, poll: poll2, booth: booth )
     oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
     oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
+
+    set_officing_booth(booth)
 
     validate_officer
     visit new_officing_residence_path
