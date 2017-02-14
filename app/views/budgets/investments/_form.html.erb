@@ -13,12 +13,15 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, :value => "<h1>Point de départ</h1> <p>Le besoin, la difficulté à résoudre, etc.</p>
+      <%= f.cktext_area :description, :value => "<h1>Description du projet</h1>
+      <h1>Point de départ</h1>
+      <p>Le besoin, la difficulté à résoudre, etc.</p>
 <p>La solution que vous proposez</p>
 <h1>Qui va réaliser ?</h1>
-<p>Moi, avec un collectif d’autres locataires, avec l’appui d’une association de locataires, avec le gardien d’immeuble…</p>
-<h1>Estimation du cout</h1>
-<p>A combien se chiffrerait la mise en œuvre de votre solution ? Est ce que ça supposerait des moyens pour faire vivre votre projet dans la durée ?</p>", maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
+<p>Moi / avec un collectif d’autres locataires / avec l’appui d’une association de locataires / avec le gardien d’immeuble / … (ne garder que la solution retenue)</p>
+<h1>Estimation du coût</h1>
+<p>A combien se chiffrerait la mise en œuvre de votre solution ?<p>
+<p>Est-ce que des moyens supplémentaires seront nécessaires pour faire vivre votre projet dans la durée ?</p>", maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">
