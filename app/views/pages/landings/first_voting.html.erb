@@ -236,6 +236,15 @@
         <li>¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</li>
       </ul>
     </div>
+    <div class="small-12 column block-districts">
+      <div class="small-12 medium-6 large-4 small-centered">
+        <% if user_signed_in? %>
+          <%= link_to "VOTA", polls_path, class: "button expanded" %>
+        <% else %>
+          <%= link_to "VOTA", new_user_session_path, class: "button expanded" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="block">
