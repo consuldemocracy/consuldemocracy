@@ -1,5 +1,6 @@
 class Officing::BaseController < ApplicationController
   layout 'admin'
+  helper_method :current_booth
 
   before_action :authenticate_user!
   before_action :verify_officer

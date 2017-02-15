@@ -14,6 +14,8 @@ en:
       unmark_featured: Unmark featured
       edit: Edit
       configure: Configure
+    officing_booth:
+      title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
       index:
         title: Banners
