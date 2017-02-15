@@ -77,6 +77,11 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
+
+    def aviso_moderacion
+      Mailer.budget_investment_moderated_hide(self).deliver
+    end
+
     def self.filter_params(params)
       params.select{|x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
     end

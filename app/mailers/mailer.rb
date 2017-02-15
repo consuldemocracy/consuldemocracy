@@ -4,10 +4,11 @@ class Mailer < ApplicationMailer
   helper :text_with_links
   helper :mailer
   helper :users
+  helper :application
 
   def prueba
     mail(to: 'ffaubell@fadrell.com', subject: 'pruebas')
-  end 
+  end
 
   def comment(comment)
     @comment = comment
@@ -127,6 +128,14 @@ class Mailer < ApplicationMailer
 
     with_user(@author) do
       mail(to: @email_to, subject: t('mailers.budget_investment_unselected.subject', code: @investment.code))
+    end
+  end
+
+  def budget_investment_moderated_hide(investment)
+    @investment = investment
+    @author = investment.author
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.budget_investment_moderate_hide.subject', title: @investment.title))
     end
   end
 

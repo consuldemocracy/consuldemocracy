@@ -1,0 +1,2876 @@
+---
+va:
+  account:
+    show:
+      change_credentials_link: Canviar les meues dades d'accés
+      email_on_comment_label: Rebre un email quan algú comenta en les meues propostes o debats
+      email_on_comment_reply_label: Rebre un email quan algú contesta als meus comentaris
+      erase_account_link: "Donar-me de baixa"
+      finish_verification: "Finalitzar verificació"
+      notifications: "Notificacions"
+      organization_name_label: "Nom de l'associació"
+      organization_responsible_name_placeholder: "Representant de l'associació"
+      personal: "Dades personals"
+      phone_number_label: "Telèfon"
+      public_activity_label: "Mostrar públicament la meua llista d'activitats"
+      save_changes_submit: "Guardar canvis"
+      subscription_to_website_newsletter_label: "Rebre emails amb informació interessant sobre la web"
+      email_on_direct_message_label: "Rebre emails amb missatges privats"
+      email_digest_label: "Rebre resum de notificacions sobre propostes"
+      official_position_badge_label: "Mostrar etiqueta de tipus d'usuari"
+      title: "El meu compte"
+      user_permission_debates: "Participar en debats"
+      user_permission_info: "Amb el teu compte ja pots..."
+      user_permission_proposal: "Crear noves propostes"
+      user_permission_support_proposal: Recolzar propostes*
+      user_permission_title: "Participació"
+      user_permission_verify: "Per a poder realitzar totes les accions verifica el teu compte."
+      user_permission_verify_info: "* Només usuaris empadronats."
+      user_permission_votes: Participar en les votacions finals*
+      username_label: "Nom d'usuari"
+      verified_account: "Compte verificat"
+      verify_my_account: "Verificar el meu compte"
+  activemodel:
+    models:
+      verification:
+        residence: "Residència"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipus document"
+          document_number: "Nombre de document (inclosa lletra)"
+          date_of_birth: "Data de naixement"
+          postal_code: "Codi postal"
+        sms:
+          phone: "Teléfono"
+          confirmation_code: "Codi de confirmació"
+        email:
+          recipient: "Email"
+  activerecord:
+    models:
+      activity:
+        one: "activitat"
+        other: "activitats"
+      budget:
+        one: "Pressupost participatiu"
+        other: "Pressupostos participatius"
+      budget/investment:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
+      comment:
+        one: "Comentari"
+        other: "Comentaris"
+      debate:
+        one: "Debat"
+        other: "Debats"
+      tag:
+        one: "Tema"
+        other: "Temes"
+      user:
+        one: "Usuari"
+        other: "Usuaris"
+      moderator:
+        one: "Moderador"
+        other: "Moderadors"
+      administrator:
+        one: "Administrador"
+        other: "Administradors"
+      vote:
+        one: "Vot"
+        other: "Vots"
+      organization:
+        one: "Associació"
+        other: "Associacions"
+      proposal:
+        one: "Proposta ciutadana"
+        other: "Propostes ciutadanes"
+      spending_proposal:
+        one: "Proposta d'inversió"
+        other: "Propostes d'inversió"
+    attributes:
+      budget:
+        name: "Nom"
+        description_accepting: "Descripció durant la fase d'aceptació"
+        description_reviewing: "Descripció durant la fase de revisió"
+        description_selecting: "Descripció durant la fase de selecció"
+        description_valuating: "Descripció durant la fase de evaluació"
+        description_balloting: "Descripció durant la fase de votació"
+        description_reviewing_ballots: "Descripció durant la fase de revisió de vots"
+        description_finished: "Descripció quan el pressupost ha finalitzat"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        administrator_id: "Administrador"
+        description: "Descripció"
+        external_url: "Enllaç a documentació addicional"
+        heading_id: "Partida pressupostària"
+        title: "Títol"
+        location: "Ubicació"
+        organization_name: "Si estàs proposant en nom d'una associació, escriu el seu nom"
+      comment:
+        body: "Comentari"
+        user: "Usuari"
+      debate:
+        author: "Autor"
+        description: "Opinió"
+        terms_of_service: "Termes de servei"
+        title: "Títol"
+      proposal:
+        author: "Autor"
+        title: "Títol"
+        question: "Pregunta"
+        description: "Descripció"
+        terms_of_service: "Termes de servei"
+      user:
+        email: "Correu electrònic"
+        username: "Nom d'usuari"
+        password_confirmation: "Confirmació de contrasenya"
+        password: "Contrasenya"
+        current_password: "Contrasenya actual"
+        phone_number: "Telèfon"
+        official_position: "Càrrec públic"
+        official_level: "Nivell del càrrec"
+        redeemable_code: "Codi de verificació per carta (opcional)"
+      organization:
+        name: "Nom de l'associació"
+        responsible_name: "Persona responsable de l'associació"
+      spending_proposal:
+        administrator_id: "Administrador"
+        association_name: "Nom de l'associació"
+        description: "Descripció"
+        external_url: "Enllaç a documentació addicional"
+        geozone_id: "Àmbit d'actuació"
+        title: "Títol"
+      signature_sheet:
+        signable_type: "Tipus de fulla de signatures"
+        signable_id: "ID Proposta ciutadana/Proposada inversió"
+        document_numbers: "Nombres de documents"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Aquest usuari ja té una clau associada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Has arribat al nombre màxim de missatges privats per dia"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "els temes han de ser menor o igual que %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Has d'esperar un mínim de %{interval} dies entre notificacions"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificat per Padró'
+              already_voted: 'Ja ha votat aquesta proposta'
+  admin:
+    actions:
+      confirm: "¿Estás seguro?"
+      confirm_hide: Confirmar
+      hide: Ocultar
+      hide_author: Bloquear al autor
+      restore: Volver a mostrar
+      mark_featured: Destacar
+      unmark_featured: Quitar destacado
+    banners:
+      index:
+        title: Banners
+        create: Crear un banner
+        edit: Editar banner
+        delete: Eliminar banner
+        filters:
+          all: Todos
+          with_active: Activos
+          with_inactive: Inactivos
+      banner:
+        title: Título
+        description:  Descripción
+        target_url:  Enlace
+        style: Estilo
+        image: Imagen
+        post_started_at: Inicio de publicación
+        post_ended_at: Fin de publicación
+      edit:
+        back: Volver
+        editing: Editar el banner
+        form:
+          submit_button: Guardar Cambios
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el banner"
+            other: "errores impidieron guardar el banner."
+      new:
+        back: Volver
+        creating: Crear banner
+    activity:
+      show:
+        action: Acción
+        actions:
+          block: Bloqueado
+          hide: Ocultado
+          restore: Restaurado
+        by: Moderado por
+        content: Contenido
+        filter: Mostrar
+        filters:
+          all: Todo
+          on_comments: Comentarios
+          on_debates: Debates
+          on_proposals: Propuestas
+          on_users: Usuarios
+        title: Actividad de los Moderadores
+        type: Tipo
+    budgets:
+      index:
+        title: Presupuestos participativos
+        new_link: Crear nuevo presupuesto
+        filters:
+          current: Abiertos
+          finished: Terminados
+        budget_investments: Ver propuestas de inversión
+        table_name: Nombre
+        table_phase: Fase
+        table_investments: Propuestas de inversión
+        table_edit_groups: Grupos de partidas
+        table_edit_budget: Editar
+        edit_groups: Editar grupos de partidas
+        edit_budget: Editar presupuesto
+      create:
+        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+      update:
+        notice: Campaña de presupuestos participativos actualizada
+      edit:
+        title: Editar campaña de presupuestos participativos
+      new:
+        title: Nuevo presupuesto ciudadano
+      show:
+        groups:
+          one: 1 Grupo de partidas presupuestarias
+          other: "%{count} Grupos de partidas presupuestarias"
+      form:
+        group: Nombre del grupo
+        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
+        add_group: Añadir nuevo grupo
+        create_group: Crear grupo
+        heading: Nombre de la partida
+        add_heading: Añadir partida
+        amount: Cantidad
+        save_heading: Guardar partida
+        no_heading: Este grupo no tiene ninguna partida asignada.
+        table_heading: Partida
+        table_amount: Cantidad
+    budget_investments:
+      index:
+        heading_filter_all: Todas las partidas
+        administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
+        tags_filter_all: Todas las etiquetas
+        filters:
+          valuation_open: Abiertas
+          without_admin: Sin administrador
+          managed: Gestionando
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+          valuation_finished_feasible: Viables
+          selected: Seleccionadas
+          all: Todas
+        title: Propuestas de inversión
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sin admin asignado
+        no_valuators_assigned: Sin evaluador
+        feasibility:
+          feasible: "Viable (%{price})"
+          unfeasible: "Inviable"
+          undecided: "Sin decidir"
+        selected: "Seleccionada"
+        select: "Seleccionar"
+        table_id: "ID"
+        table_title: "Título"
+        table_admin: "Administrador"
+        table_valuator: "Evaluador"
+        table_geozone: "Ámbito de actuación"
+        table_feasibility: "Viabilidad"
+        table_valuation_finished: "Ev. Fin."
+        table_selection: "Selección"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        classification: Clasificación
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        edit: Editar
+        edit_classification: Editar clasificación
+        by: Autor
+        sent: Fecha
+        group: Grupo
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        select_heading: Seleccionar partida
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
+    comments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        hidden_debate: Debate oculto
+        hidden_proposal: Propuesta oculta
+        title: Comentarios ocultos
+    dashboard:
+      index:
+        back: Volver a
+        title: Administración
+    debates:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Debates ocultos
+    managers:
+      index:
+        title: Gestores
+      manager:
+        add: Añadir como Gestor
+        delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
+    menu:
+      activity: Actividad de moderadores
+      admin: Menú de administración
+      banner: Gestionar banners
+      budgets: Presupuestos participativos
+      debate_topics: Temas de debate
+      geozones: Gestionar distritos
+      hidden_comments: Comentarios ocultos
+      hidden_debates: Debates ocultos
+      hidden_proposals: Propuestas ocultas
+      hidden_users: Usuarios bloqueados
+      incomplete_verifications: Verificaciones incompletas
+      managers: Gestores
+      moderators: Moderadores
+      valuators: Evaluadores
+      officials: Cargos públicos
+      organizations: Organizaciones
+      settings: Configuración global
+      spending_proposals: Propuestas de inversión
+      stats: Estadísticas
+      signature_sheets: Hojas de firmas
+    moderators:
+      index:
+        title: Moderadores
+      moderator:
+        add: Añadir como Moderador
+        delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
+    valuators:
+      index:
+        title: Evaluadores
+      valuator:
+        description_placeholder: "Descripción (opcional)"
+        user_found: Usuario encontrado
+        add: Añadir como evaluador
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
+      summary:
+        title: Resumen de evaluación de propuestas de inversión
+        valuator_name: Evaluador
+        finished_and_feasible_count: Finalizadas viables
+        finished_and_unfeasible_count: Finalizadas inviables
+        finished_count: Finalizadas
+        in_evaluation_count: En evaluación
+        total_count: Total
+        cost: Coste total
+    officials:
+      edit:
+        destroy: Eliminar condición de 'Cargo Público'
+        title: 'Cargos Públicos: Editar usuario'
+      flash:
+        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+        official_updated: Datos del cargo público guardados
+      index:
+        title: Cargos Públicos
+      level_0: No es cargo público
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
+      search:
+        edit_official: Editar cargo público
+        make_official: Convertir en cargo público
+        title: 'Cargos Públicos: Búsqueda de usuarios'
+    organizations:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          pending: Pendientes
+          rejected: Rechazadas
+          verified: Verificadas
+        hidden_count_html:
+          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
+          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
+        reject: Rechazar
+        rejected: Rechazada
+        search: Buscar
+        search_placeholder: Nombre, email o teléfono
+        title: Organizaciones
+        verified: Verificada
+        verify: Verificar
+      search:
+        title: Buscar Organizaciones
+    proposals:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendientes
+        title: Propuestas ocultas
+    settings:
+      flash:
+        updated: Valor actualizado
+      index:
+        banners: Banner style
+        banner_imgs: Banner images
+        title: Configuración global
+        update_setting: Actualizar
+        feature_flags: Funcionalidades
+        features:
+          enabled: "Funcionalidad activada"
+          disabled: "Funcionalidad desactivada"
+          enable: "Activar"
+          disable: "Desactivar"
+    shared:
+      proposal_search:
+        button: Buscar
+        placeholder: Buscar propuestas por título, código, descripción o pregunta
+      spending_proposal_search:
+        button: Buscar
+        placeholder: Buscar propuestas por título o descripción
+      user_search:
+        button: Buscar
+        placeholder: Buscar usuario por nombre o email
+    spending_proposals:
+      index:
+        geozone_filter_all: Todos los ámbitos de actuación
+        administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
+        tags_filter_all: Todas las etiquetas
+        filters:
+          valuation_open: Abiertas
+          without_admin: Sin administrador
+          managed: Gestionando
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+          all: Todas
+        title: Propuestas de inversión para presupuestos participativos
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sin admin asignado
+        no_valuators_assigned: Sin evaluador
+        summary_link: "Resumen de propuestas"
+        valuator_summary_link: "Resumen de evaluadores"
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sin definir"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        back: Volver
+        classification: Clasificación
+        heading: Propuesta de inversión %{id}
+        edit: Editar
+        edit_classification: Editar clasificación
+        association_name: Asociación
+        by: Autor
+        sent: Fecha
+        geozone: Ámbito
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
+      summary:
+        title: Resumen de propuestas de inversión
+        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
+        geozone_name: Ámbito de ciudad
+        finished_and_feasible_count: Finalizadas viables
+        finished_and_unfeasible_count: Finalizadas inviables
+        finished_count: Finalizadas
+        in_evaluation_count: En evaluación
+        total_count: Total
+        cost_for_geozone: Coste total
+    geozones:
+      index:
+        title: Distritos
+        create: Crear un distrito
+        edit: Editar
+        delete: Borrar
+      geozone:
+        name: Nombre
+        external_code: Código externo
+        census_code: Código del censo
+        coordinates: Coordenadas
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el distrito"
+            other: "errores impidieron guardar el distrito."
+      edit:
+        form:
+          submit_button: Guardar cambios
+        editing: Editando distrito
+        back: Volver
+      new:
+        back: Volver
+        creating: Crear distrito
+      delete:
+        success: Distrito borrado correctamente
+        error: No se puede borrar el distrito porque ya tiene elementos asociados
+    signature_sheets:
+      author: Autor
+      created_at: Fecha de creación
+      name: Nombre
+      no_signature_sheets: "No existen hojas de firmas"
+      index:
+        title: Hojas de firmas
+        new: Nueva hoja de firmas
+      new:
+        title: Nueva hoja de firmas
+        document_numbers_note: "Introduce los números separados por comas (,)"
+        submit: Crear hoja de firmas
+      show:
+        created_at: Creado
+        author: Autor
+        documents: Documentos
+        document_count: "Número de documentos:"
+        verified:
+          one: "Hay %{count} firma válida"
+          other: "Hay %{count} firmas válidas"
+        unverified:
+          one: "Hay %{count} firma inválida"
+          other: "Hay %{count} firmas inválidas"
+        unverified_error: (No verificadas por el Padrón)
+        loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
+    stats:
+      show:
+        stats_title: Estadísticas
+        summary:
+          comment_votes: Votos en comentarios
+          comments: Comentarios
+          debate_votes: Votos en debates
+          debates: Debates
+          proposal_votes: Votos en propuestas
+          proposals: Propuestas
+          spending_proposals: Propuestas de inversión
+          unverified_users: Usuarios sin verificar
+          user_level_three: Usuarios de nivel tres
+          user_level_two: Usuarios de nivel dos
+          users: Usuarios
+          verified_users: Usuarios verificados
+          verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
+          visits: Visitas
+          votes: Votos
+        spending_proposals_title: Propuestas de inversión
+        visits_title: Visitas
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+      direct_messages:
+        title: Mensajes directos
+        total: Total
+        users_who_have_sent_message: Usuarios que han enviado un mensaje privado
+      proposal_notifications:
+        title: Notificaciones de propuestas
+        total: Total
+        proposals_with_notifications: Propuestas con notificaciones
+    tags:
+      create: Crear Tema
+      destroy: Eliminar Tema
+      index:
+        add_tag: Añade un nuevo tema de debate
+        title: Temas de debate
+      mark_as_featured: Proponer tema al crear debate
+      name:
+        placeholder: Escribe el nombre del tema
+      update: Actualizar Tema
+    users:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Usuarios bloqueados
+      show:
+        email: 'Email:'
+        hidden_at: 'Bloqueado:'
+        registered_at: 'Fecha de alta:'
+        title: Actividad del usuario (%{user})
+    verifications:
+      index:
+        phone_not_given: No ha dado su teléfono
+        sms_code_not_confirmed: No ha introducido su código de seguridad
+        title: Verificaciones incompletas
+  budgets:
+    button_text: Participa als pressupostos de la teva ciutat
+    ballots:
+      show:
+        title: Els meus vots
+        amount_spent: Cost total
+        remaining: "Et queden <span>%{amount}</span> per a invertir"
+        remove: Llevar vot
+        voted_html:
+          one: "Has votat <span>una</span> proposta."
+          other: "Has votat <span>%{count}</span> propostes."
+        voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
+        zero: "Encara no has votat cap proposta d'inversió."
+      reasons_for_not_balloting:
+        not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+        not_verified: Les propostes d'inversió només poden ser recolzades per usuaris verificats, %{verify_account}.
+        organization: Les organitzacions no poden votar.
+        not_selected: No es poden votar propostes inviables.
+        not_enough_money: No hi ha fons suficients.
+        no_ballots_allowed: El període de votació està tancat.
+        different_heading_assigned: Ja vas votar en una secció diferent del pressupost.
+    groups:
+      show:
+        title: Selecciona una opció
+        unfeasible_title: Propostes inviables
+        unfeasible: Veure propostes inviables
+    phase:
+      accepting: Acceptant propostes
+      reviewing: Revisant propostes
+      selecting: Selecció de propostes
+      valuating: Avaluació de propostes
+      balloting: Votació de propostes
+      reviewing_ballots: Contant resultats
+      finished: Presupost finalitzat
+    index:
+      title: Pressupostos participatius
+    investments:
+      form:
+        tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
+        tags_label: Temes
+        tag_category_label: "Categories"
+        tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
+      index:
+        title: Pressupostos participatius
+        unfeasible: Propostes d'inversió no viables
+        unfeasible_text: Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, ser competència de l'Ajuntament, no superar el límit del pressupost; %{definitions}) per a ser declarades viables i arribar fins a la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat.
+        unfeasible_text_definitions: veure definicions ací
+        by_heading: "Propostes d'inversió amb àmbit: %{heading}"
+        search_form:
+          button: Cercar
+          placeholder: Cercar propostes d'inversió...
+          title: Cercar
+        search_results:
+          one: " que conté '%{search_term}'"
+          other: " que contenen '%{search_term}'"
+        sidebar:
+          my_ballot: Els meus vots
+          voted_html:
+            one: "<strong>Has votat una proposta per un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votat %{count} propostes per un valor de %{amount_spent}</strong>"
+          voted_info: Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
+          zero: "Encara no has votat cap proposta d'inversió."
+          verified_only: "Per a crear una nova proposta d'inversió %{verify}."
+          verify_account: "verifica el teu compte"
+          create: "Crear proposta d'inversió"
+          not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
+          sign_in: "iniciar sessió"
+          sign_up: "registrar-te"
+          by_feasibility: Per viabilitat
+          feasible: Veure les propostes d'inversió viables
+          unfeasible: Veure les propostes d'inversió inviables
+          already_created: Ja ha creat les Propostes d'Inversió permeses
+          association_not_verified: La seua associació no ha sigut verificada encara
+        orders:
+          random: Aleatòries
+          confidence_score: Millor valorades
+          price: Per cost
+      show:
+        author_deleted: Usuari eliminat
+        price_explanation: Informe de cost
+        unfeasibility_explanation: Informe de inviabilitat
+        code_html: "Codi proposta d'inversió: <strong>%{code}</strong>"
+        location_html: 'Ubicació: <strong>%{location}</strong>'
+        organization_name_html: 'Associació: <strong>%{name}</strong>'
+        share: Compartir
+        title: Proposta d'inversió
+        supports: Recolzaments
+        votes: Vots
+      wrong_price_format: Solament pot incloure caràcters numèrics
+      investment:
+        title: Proposta d'inversió
+        add: Afegir
+        already_added: "Ja has afegit aquesta proposta d'inversió"
+        already_supported: Ja has recolzat aquesta proposta. Comparteix-ho!
+        support_title: Recolzar aquesta proposta
+        confirm_group: "Recorde que pot recolzar un màxim de tres propostes. Estàs segur?"
+        supports:
+          one: 1 recolzament
+          other: "%{count} recolzaments"
+          zero: Sense recolzaments
+        give_support: Recolzar
+      header:
+        check_ballot: Revisar els meus vots
+        different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
+    progress_bar:
+      available: "Disponible: "
+    show:
+      group: Grup
+      phase: Fase actual
+      unfeasible_title: Propostes inviables
+      unfeasible: Veure les propostes inviables
+
+    index_title: Presenta la teua proposta d'inversió
+    index_timeline: Els pressupostos participatius en 2 minuts
+
+    header_title: Pressupostos participatius
+    header_body_principal_1: |-
+      Els pressupostos participatius són un mecanisme de participació ciutadana que permet que les veïnes i veïns de la ciutat s’involucren en la presa de decisions respecte a l’execució del pressupost municipal. Tu decideixes en què invertir 1.650.000 euros.
+
+    header_body_principal_2: |-
+      Els pressupostos participatius estan circumscrits al capítol d'inversió del pressupost de l'Ajuntament. Les despeses d'inversió inclouen les infraestructures- ”obres”, tant noves com de manteniment de les que ja hi existeixen (per exemple, itineraris accessibles de voreres i vials o la millora d'un parc). També contemplen les adquisicions de béns permanents de l'Ajuntament, com per exemple, la compra de jocs infantils).
+
+    header_body_secondary: |-
+      No seria una proposta d'inversió, per exemple:
+      * activitats, (programes culturals, festejos...)
+      * serveis locals (augmentar el servei de neteja, incrementar la freqüència d'autobusos).
+      * subvencions, premis
+      * lloguers
+
+    fases:
+      fase_1: Presentació de propostes
+      fase_1_subtitle: Del 15 de febrer al 5 de març de 2017.
+      fase_1_timeline_title: Presentació de propostes
+      fase_1_timeline_body: |-
+        Les persones majors de 16 anys empadronades a Castelló de la Plana poden proposar alguna inversió per a la ciutat. També totes aquelles entitats ciutadanes que tinguen el seu domicili social i àmbit territorial a la ciutat.
+
+        Les propostes de projectes d'inversió s'hi presentaran de forma individual, o en representació de una organització, grup o col·lectiu. Cada persona o entitat podrà presentar-hi una única proposta.
+
+        Les propostes es faran preferiblement mitjançant la pàgina web decidim.castello.es i excepcionalment es podran presentar a les Tinències d'Alcaldia de l'Ajuntament.
+
+      fase_2: Suport de les propostes
+      fase_2_subtitle: Del 6 al 31 de març de 2017.
+      fase_2_timeline_title: Suport de les propostes
+      fase_2_timeline_body: |-
+        Les propostes presentades hauran de comptar amb el suport de 25 vots, per a passar a la fase següent. El suport de les propostes es recollirà a través de la plataforma web decidim.castello.es.
+
+        La ciutadania empadronada té la possibilitat de donar suport amb el seu vot a fins a un màxim de 3 propostes de projectes d'inversió.
+
+      fase_3: Avaluació de les propostes
+      fase_3_subtitle: De l’1 al 30 d’abril de 2017.
+      fase_3_timeline_title: Avaluació de les propostes
+      fase_3_timeline_body: |-
+        Les propostes amb suports suficients seran estudiades pels diferents serveis tècnics de l’Ajuntament, els quals valoraran que cada una complisca amb els requisits necessaris perquè siguen propostes d’inversió viables i legals, i pressupostaran el cost de portar-les a terme.
+
+      fase_4: Votació ciutadana
+      fase_4_subtitle: De l’1 al 15 de maig de 2017.
+      fase_4_timeline_title: Votació ciutadana
+      fase_4_timeline_body: |-
+        Podran votar totes les persones majors de 16 anys i empadronades al municipi de Castelló de la Plana. Es podran votar totes les propostes que es crega oportú mentre es tinga pressupost disponible, encara que no farà falta gastar-ho tot.
+
+        La votació es farà de manera telemàtica a través de la plataforma web: decidim.castello.es. S’habilitaran uns “punts de votació”, amb accés a Internet on es donarà suport presencial a aquelles persones que vulguen votar i així ho sol·liciten. Es publicitarà en la plataforma web el llistat de seus de “punts de votació” en dates pròximes a la fase de votació.
+
+      results: Resultats
+      results_body: |-
+        El resultat del procés consultiu s’obtindrà, una vegada finalitzada la votació, ordenant les propostes de major a menor votació, sempre que el cost total de les propostes no supere el pressupost de 1.650.000 euros.
+
+        Pots consultar tota la informació del procés participatiu en la pàgina web  decidim.castello.es.
+  pages:
+    more_information:
+      item_1:
+        title: 1.- Què són els pressupostos participatius?
+        subt: ''
+        text: |-
+          Els pressupostos participatius són una ferramenta de democràcia directa que permet a la ciutadania incidir o prendre decisions referents als pressupostos públics.
+
+          La corporació municipal treballa perquè els veïns i veïnes d’aquesta ciutat puguen donar a conéixer la seua opinió sobre les polítiques i els projectes més importants que s’estan duent a terme des de l’Ajuntament i tinguen capacitat de decisió sobre aquests. Per això és voluntat de l’equip de govern posar en marxa una primera experiència, en línia, de pressupostos participatius a través de la plataforma web decidim.castello.es en què la ciutadania puga decidir en què invertir 1.650.000 euros.
+
+
+      item_2:
+        title: 2.- Sobre la plataforma decidim.castello.es
+        subt: ''
+        text: |-
+          La plataforma web decidim.castello.es és un instrument de participació promogut per les regidories de Transparència, Modernització i Participació Ciutadana, per a conéixer l’opinió de les veïnes i veïns de la ciutat, mitjançant un sistema de votació en línia, sobre assumptes d’interés públic de caràcter local que els afecten i que són de competència municipal.
+
+          Depositar en la ciutadania la capacitat de decidir sobre l’entorn en què desenvolupen les seues vides, incrementa la qualitat democràtica de les institucions públiques i suposa una millora en la gestió institucional, ja que permet construir en comú i decidir el que volem conjuntament per a la nostra ciutat.
+
+          És important assenyalar que aquest projecte de pressupostos participatius és un projecte experimental amb què iniciar un procés de diàleg de l’Administració municipal amb la ciutadania, que afavoreix el protagonisme de les ciutadanes i ciutadans en la presa de decisions respecte al seu entorn directe i promou la modernització de la gestió pública. Per tant, el procés en si mateix suposa una oportunitat d’aprenentatge compartit entre l’Ajuntament i les veïnes i veïns del municipi.
+
+      item_3:
+        title: 3.- Què és una proposta de projecte d’inversió?
+        subt: ''
+        text: |-
+          Les despeses d’inversió d’un municipi són aquelles derivades de la creació d’infraestructures i de la creació o adquisició de béns de naturalesa inventariable necessaris per al funcionament dels serveis i aquelles altres despeses que tinguen el caràcter d’amortitzables.
+          Les inversions han de reunir les característiques següents:
+          <ol class="ordered_alpha">
+            <li>Que no siguen béns fungibles, és a dir, que no es consumisquen amb l’ús.</li>
+            <li>Que tinguen una duració superior a l’exercici pressupostari, 12 mesos.</li>
+            <li>Que siguen susceptibles d’inclusió en inventari, sent aquest una relació detallada, ordenada i valorada dels elements que componen el patrimoni.</li>
+          </ol>
+
+          Exemples d’inversions:
+
+          * Creació de noves infraestructures o obres: construir itineraris de voreres i vials, enllumenat, senyalització viària, parcs, jardins, clavegueram, etc.
+          * Reposició d’infraestructures: reforma d’enllumenat, remodelació de parcs, zones verdes, remodelació de vials i de la seua senyalització.
+          * Construcció o reforma d’edificis.
+          * Adquisició d’elements de transport (autobusos, vehicle de bombers..) o de mobiliari infantil per a zones de jocs infantils (engronsadores, tobogans, palanques…)
+          * Aplicacions informàtiques: desenvolupament d’aplicacions, web, etc.
+
+          Per tant NO són inversions:
+
+          * Activitats: programes culturals, campanyes de dinamització comercial, activitats esportives, de festes…
+          * Lloguer d’edificis, vehicles, mobiliari, maquinària.
+          * Subministraments: combustibles, energia elèctrica, gas, aliments
+          * Servei de neteja
+          * Incrementar la freqüència de les línies d’autobusos o modificar les seues rutes.
+          * Despeses de personal.
+          * Subvencions i ajudes.
+          * Concessió de beques, premis.
+          * Els projectes d'inversió han d'estar vinculats a les competències municipals assenyalades en els articles 25.2 i 26 de la Llei 7/1985, de 2 d'abril, reguladora de las bases de règim local.
+
+      item_4:
+        title: 4.- Qui pot presentar propostes de projectes d’inversió?
+        subt: ''
+        text: |-
+          <ol class="ordered_alpha">
+            <li>Qualsevol veïna o veí, a títol individual, empadronada a la ciutat de Castelló de la Plana en el moment de la inscripció, major de 16 anys.
+            <li>Qualsevol entitat ciutadana amb personalitat jurídica, que tinga el seu domicili social i el seu àmbit d’actuació territorial a la ciutat de Castelló de la Plana, i que es trobe inscrita en el Registre d’Associacions.</li>
+          </ol>
+
+          Per a acreditar-se com a proponent de projectes d’inversió, cal fer-ho via telemàtica a través del formulari que a aquest efecte es disposarà en la pàgina web decidim.castello.es
+
+          Les dades que se sol·liciten per a acreditar-se com a proponent de projectes d’inversió són:
+
+          Persones físiques
+
+          * Nom usuari
+          * DNI/NIE/passaport
+          * codi postal
+          * Data de naixement
+          * Adreça electrònica
+          * Contrasenya
+
+          Persones jurídiques
+
+          * Nom de l’entitat ciutadana
+          * Nom i cognoms de la persona que realitza la proposta
+          * Telèfon
+          * Adreça electrònica
+          * Contrasenya
+
+          Una vegada acreditat es podrà accedir a omplir el formulari de projecte/proposta d’inversió. Cada persona o entitat podrà presentar una única proposta.
+
+          S’invita a presentar projectes d’inversió que redunden en la millora de la qualitat de vida de la ciutat. Les propostes de projectes d’inversió hauran de complir els requisits recollits en aquestes Bases Reguladores.
+
+
+      item_5:
+        title: 5.- Com presentar propostes de projectes d’inversió?
+        subt: 'Desde el 15 de febrero hasta el 5 de marzo de 2017'
+        text: |-
+          Les propostes de projectes d’inversió es presentaran principalment via telemàtica a través de la plataforma web decidim.castello.es i excepcionalment de forma presencial utilitzant una instància de sol·licitud general a la qual se li adjuntarà el formulari per a presentar propostes de projectes d’inversió, en qualsevol de les tinències d’Alcaldia.
+
+          El model estandarditzat per a la presentació de projectes d’inversió es pot consultar en <a href='http://www.castello.es/decidim/BASES_PRESSUPOSTOS_PARTICIPATIUS_VALENCIA.pdf' target='_blank'>aquestes Bases</a>. Vegeu Annex 1 (persones físiques)  Annex 2 (entitats).
+
+          El període per a presentar projectes d’inversió és del 15 de febrer al 5 de març de 2017 fins a les 23:59 hores.
+
+      item_6:
+        title: 6.-  Qui pot donar suport a les propostes de projectes d’inversió?
+        subt: 'Del 6 al 31 de marzo de 2017'
+        text: |-
+          Qualsevol persona major de 16 anys empadronada podrà donar suport fins a un màxim de 3 propostes de projectes d’inversió. Pot, indistintament, donar suport a propostes individuals o d’entitats ciutadanes.
+
+          Les propostes de projectes d’inversió hauran de comptar amb un mínim de 25 suports de les veïnes i veïns per a poder passar a la fase següent i ser valorades pels serveis tècnics de l’Ajuntament de Castelló de la Plana. El suport de les propostes es realitzarà a través de la plataforma decidim.castello.es, on estaran exposades les propostes presentades.
+
+          El període de suport de les propostes va del 6 al 31 de març de 2017 fins a les 23:59:hores.
+
+      item_7:
+        title: 7.- Validació i estudi de viabilitat dels projectes d’inversió.
+        subt: 'Del 1 al 30 de abril'
+        text: |-
+          Finalitzat el període de suport de les propostes, des del Negociat de Participació Ciutadana de l’Ajuntament es realitzarà un procés de validació de les propostes realitzades amb l’objectiu de comprovar que totes les propostes presentades compleixen amb els requisits establits en aquestes Bases Reguladores, admetent o no motivadament les propostes presentades.
+
+          A títol d’exemple, seran motius d'inadmissió:
+
+          No ser un projecte d’inversió
+
+          * No ser competència municipal
+          * La no disponibilitat de terrenys.
+          * Que per a la seua execució siga necessari implicar altres administracions
+          * Que la seua execució ja estiga prevista i pressupostada per l’Ajuntament
+          * Qualssevol altres anàlegs als anteriors
+
+          Superada la validació, passaran a ser estudiades pels Serveis Tècnics de l’Ajuntament implicats en la seua execució, que seran els que emetran un informe sobre la seua viabilitat jurídica, tècnica i/o pressupostària.
+
+          Els Serveis Tècnics de l’Ajuntament, en emetre un informe sobre la viabilitat jurídica, tècnica i pressupostària del projecte d’inversió, hauran de:
+
+          * Comprovar que la proposta siga competència de l’Ajuntament i que no depenga d’altres administracions.
+          * Estudiar si hi ha alguna normativa que siga contrària a dur a terme la proposta.
+          * Estimar el cost econòmic de la proposta.
+          * Estudiar si la proposta és viable tècnicament i no es preveu cap impediment perquè puga executar-se en el 2017.
+
+          Les propostes de projectes d’inversió que tinguen informes favorable dels Serveis Tècnics seran les que passaran a la fase de votació final.
+
+          Aquest procés de validació i estudi de viabilitat tècnica de les propostes es realitzarà en el període comprés entre l’1 i el 30 d’abril de 2017 fins a les 23:59 hores.
+
+      item_8:
+        title: 8. Sobre la votació ciutadana.
+        subt: 'Del 1 al 15 de mayo'
+        text: |-
+          Totes les persones majors de 16 anys, que estiguen empadronades a la ciutat de Castelló de la Plana i s’hagen inscrit en la plataforma web decidim.castello.es, podran participar-hi amb el seu vot.
+
+          Es podran votar totes les propostes que es creguen oportunes fins a arribar a la quantitat de  1.650.000 euros.
+
+          La votació es farà de manera telemàtica a través de la plataforma web decidim.castello.es  S’habilitaran uns “punts de votació” amb accés a Internet on es donarà suport presencial a les persones que vulguen votar i així ho sol·liciten. En dates pròximes a la fase de votació, es publicarà en la plataforma web decidim.castello.es els “punts de votació” habilitats a aquest efecte.
+
+          El període de les votacions serà de l’1 al 15 de maig fins a les 23:59 hores.
+
+      item_9:
+        title: 9.  Sobre els resultats de la votació.
+        subt: ''
+        text: |-
+          El resultat final del procés consultiu s’obtindrà una vegada finalitzada la votació, i totes les propostes s'ordenaran de major a menor votació, tenint en compte que cada proposta inclosa no supere el pressupost de 1.650.000 euros S'acceptaran propostes fins a arribar a l’import total. Si en acceptar una proposta se supera l’import total, s´ignora i es passarà a seleccionar la següent.
+
+          Respecte a la proposta o propostes descartades, l'equip de Govern estudiarà la possibilitat d'incorporar-la o incorporar-les en el Pressupost Municipal del 2018.
+
+          El Govern municipal es compromet a dur a terme l’execució de les inversions seleccionades, tenint en compte els resultats d'aquesta consulta ciutadana, sempre que s’atenga als criteris tècnics de viabilitat dels projectes i els límits econòmics disponibles.
+
+          Es podrà seguir el procés a través de la plataforma web decidim.castello.es
+  devise:
+    password_expired:
+      expire_password: "Contrasenya caducada"
+      change_required: "La teua contrasenya ha caducat"
+      change_password: "Canvia la teua contrasenya"
+      new_password: "Nova contrasenya"
+      updated: "Contrasenya actualitzada amb èxit"
+    confirmations:
+      confirmed: "El teu compte ha sigut confirmat. Per favor autentica't amb el teu usuari i contrasenya"
+      send_instructions: "Rebràs un correu electrònic en uns minuts amb instruccions sobre com restablir la teua contrasenya."
+      send_paranoid_instructions: "Si el teu correu electrònic existeix en la nostra base de dades rebràs un correu electrònic en uns minuts amb instruccions sobre com restablir la teua contrasenya."
+    failure:
+      already_authenticated: "Ja has iniciat sessió."
+      inactive: "El teu compte encara no ha sigut activat."
+      invalid: "%{authentication_keys} o contrasenya invàlids."
+      locked: "El teu compte ha sigut bloquejat."
+      last_attempt: "Tens un últim intent abans que el teu compte siga bloquejat."
+      not_found_in_database: "%{authentication_keys} o contrasenya invàlids."
+      timeout: "La teua sessió ha expirat, per favor inicia sessió novament per a continuar."
+      unauthenticated: "Necessites iniciar sessió o registrar-te per a continuar."
+      unconfirmed: "Per a continuar, per favor prem en l'enllaç de confirmació que hem enviat al teu compte de correu."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruccions de confirmació"
+      reset_password_instructions:
+        subject: "Instruccions per a restablir la teua contrasenya"
+      unlock_instructions:
+        subject: "Instruccions de desbloqueig"
+    omniauth_callbacks:
+      failure: "No se t'ha pogut identificar via %{kind} pel següent motiu: \"%{reason}\"."
+      success: "Identificat correctament via %{kind}."
+    passwords:
+      no_token: "No pots accedir a aquesta pàgina si no és a través d'un enllaç per a restablir la contrasenya. Si has accedit des de l'enllaç per a restablir la contrasenya, assegura't que la URL estiga completa."
+      send_instructions: "Rebràs un correu electrònic amb instruccions sobre com restablir la teua contrasenya en uns minuts."
+      send_paranoid_instructions: "Si el teu correu electrònic existeix en la nostra base de dades, rebràs un enllaç per a restablir la contrasenya en uns minuts."
+      updated: "La teua contrasenya ha canviat correctament. Has sigut identificat correctament."
+      updated_not_active: "La teua contrasenya s'ha canviat correctament."
+    registrations:
+      destroyed:
+        Adéu! El teu compte ha sigut cancel·lat. Esperem tornar a veure't prompte. Li informem que de conformitat amb la seua petició, les seues dades personals registrades com a usuari de la Web i que formen part del fitxer 'DADES PERSONALS WEB' el responsable de la qual és l'Ajuntament de Castelló de la Plana, han sigut cancel·lats en els termes del previst en l'article 16 de la Llei Orgànica 15/1999 de Protecció de Dades de Caràcter Personal i de l'article 31 del seu Reglament de desenvolupament (RD 1720/2007).
+      signed_up: "Benvingut! Has sigut identificat."
+      signed_up_but_inactive: "Te has registrado correctamente, pero no has podido iniciar sesión porque tu cuenta no ha sido activada."
+      signed_up_but_locked: "T'has registrat correctament, però no has pogut iniciar sessió perquè el teu compte està bloquejat."
+      signed_up_but_unconfirmed: "Se t'ha enviat un missatge amb un enllaç de confirmació. Per favor visita l'enllaç per a activar el teu compte."
+      update_needs_confirmation: "Has actualitzat el teu compte correctament, no obstant açò necessitem verificar el teu nou compte de correu. Per favor revisa el teu correu electrònic i visita l'enllaç per a finalitzar la confirmació de la teua nova adreça de correu electrònica."
+      updated: "Has actualitzat el teu compte correctament."
+    sessions:
+      signed_in: "Has iniciat sessió correctament."
+      signed_out: "Has tancat la sessió correctament."
+      already_signed_out: "Has tancat la sessió correctament."
+    unlocks:
+      send_instructions: "Rebràs un correu electrònic en uns minuts amb instruccions sobre com desbloquejar el teu compte."
+      send_paranoid_instructions: "Si el teu compte existeix, rebràs un correu electrònic en uns minuts amb instruccions sobre com desbloquejar el teu compte."
+      unlocked: "El teu compte ha sigut desbloquejat. Per favor inicia sessió per a continuar."
+  errors:
+    messages:
+      already_confirmed: "ja has sigut confirmat, per favor intenta iniciar sessió."
+      confirmation_period_expired: "necessites ser confirmat en %{period}, per favor torna a sol·licitar-la."
+      expired: "ha expirat, per favor torna a sol·licitar-la."
+      not_found: "no s'ha trobat."
+      not_locked: "no estava bloquejat."
+      not_saved:
+        one: "1 error va impedir que aquest %{resource} fóra guardat:"
+        other: "%{count} errors van impedir que aquest %{resource} fóra guardat:"
+      equal_to_current_password: "ha de ser diferent a la contrasenya actual"
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Reenviar instruccions
+        title: Reenviar instruccions de confirmació
+      show:
+        instructions_html: Anem a procedir a confirmar el compte amb l'email <b>%{email}</b>
+        new_password_confirmation_label: Repeteix la clau de nou
+        new_password_label: Nova clau d'accés
+        please_set_password: Per favor introdueix una nova clau d'accés per al seu compte (et permetrà fer login amb l'email de més amunt)
+        submit: Confirmar
+        title: Confirmar el meu compte
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmar el meu compte
+        text: 'Pots confirmar el teu compte de correu electrònic en el següent enllaç:'
+        title: Et donem la benvinguda al Portal de Participació Ciutadana
+        welcome: Benvingut/a
+      reset_password_instructions:
+        change_link: Canviar la meua contrasenya
+        hello: Hola
+        ignore_text: Si tu no ho has sol·licitat, pots ignorar aquest email.
+        info_text: La teua contrasenya no canviarà fins que no accedisques a l'enllaç i la modifiques.
+        text: "S'ha sol·licitat canviar la teua contrasenya, pots fer-ho en el següent enllaç:"
+        title: Canvia la teua contrasenya
+      unlock_instructions:
+        hello: Hola
+        info_text: El teu compte ha sigut bloquejat a causa d'un excessiu nombre d'intents fallits d'alta.
+        instructions_text: 'Segueix el següent enllaç per a desbloquejar el teu compte:'
+        title: El teu compte ha sigut bloquejat
+        unlock_link: Desbloquejar el meu compte
+    menu:
+      login_items:
+        login: Entrar
+        logout: Eixir
+        signup: Registrar-se
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Nom de l'associació
+          password_confirmation_label: Confirmar contrasenya
+          password_label: Contrasenya
+          phone_number_label: Telèfon
+          responsible_name_label: Nom i cognoms de la persona responsable de l'associació
+          responsible_name_note: Serà la persona representant de l'associació en el nom de la qual es presenten les propostes
+          submit: Registrar-se
+          title: Registrar-se com associació
+          permission_warning: En el procés de pressupostos participatius podran participar totes aquelles associacions que tinguen el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que és troben inscrites en el Registre d'Associacions.
+        success:
+          back_to_index: Entès, tornar a la pàgina principal
+          instructions_1_html: En breu <b>ens posarem en contacte amb tu</b> per a verificar que realment representes a aquesta associació.
+          instructions_2_html: Mentre <b>revisas el teu correu electrònic</b>, t'hem enviat un <b>enllaç per a confirmar el teu compte</b>.
+          instructions_3_html: Una vegada confirmat, podràs començar a participar com a associació no verificada.
+          thank_you_html: Gràcies per registrar la teua associació en la web. Ara està <b>pendent de verificació</b>.
+          title: Registre d'associació
+    passwords:
+      edit:
+        change_submit: Canviar la meua contrasenya
+        password_confirmation_label: Confirmar contrasenya nova
+        password_label: Contrasenya nova
+        title: Canvia la teua contrasenya
+      new:
+        email_label: Email
+        send_submit: Rebre instruccions
+        title: "Has oblidat la teua contrasenya?"
+    sessions:
+      new:
+        email_label: Email
+        password_label: Contrasenya
+        remember_em: Recordar-me
+        submit: Entrar
+        title: Entrar
+    shared:
+      links:
+        login: Entrar
+        new_confirmation: "No has rebut instruccions per a confirmar el teu compte?"
+        new_password: "Has oblidat la teua contrasenya?"
+        new_unlock: "No has rebut instruccions per a desbloquejar?"
+        signin_with_provider: Entrar amb %{provider}
+        signup: "No tens un compte? %{signup_link}"
+        signup_link: Registra't
+    unlocks:
+      new:
+        email_label: Email
+        submit: Reexpedir instruccions per a desbloquejar
+        title: Reexpedir instruccions per a desbloquejar
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Raó de la baixa
+          info: Aquesta acció no es pot desfer. Una vegada que dónes de baixa el teu compte, no podràs tornar a fer login amb ell.
+          info_reason: Si vols, escriu el motiu pel qual et dónes de baixa (opcional).
+          submit: Esborrar el meu compte
+          title: Donar-me de baixa
+        edit:
+          current_password_label: Contrasenya actual
+          edit: Editar
+          email_label: Email
+          leave_blank: Deixar en blanc si no desitges canviar-la
+          need_current: Necessitem la teua contrasenya actual per a confirmar els canvis
+          password_confirmation_label: Confirmar contrasenya nova
+          password_label: Contrasenya nova
+          update_submit: Actualitzar
+          waiting_for: 'Esperant confirmació de:'
+        new:
+          cancel: Cancel·lar login
+          email_label: El teu correu electrònic
+          organization_signup: "Representes a una associació? %{signup_link}"
+          organization_signup_link: Registra't ací
+          password_confirmation_label: Repeteix la contrasenya anterior
+          password_label: Contrasenya que utilitzaràs per a accedir a aquesta web
+          redeemable_code: El teu codi de verificació (si has rebut una carta amb ell)
+          submit: Registrar-se
+          terms: En registrar-te acceptes les %{terms}.
+          terms_link: condicions d'ús
+          terms_title: En registrar-te acceptes les condicions d'ús
+          terms_censed: Per a participar en el procés de pressupostos participatius ha de ser major de 16 anys i ha d'estar empadronat en la ciutat de Castelló de la Plana
+          title: Registrar-se
+          username_is_available: "Nom d'usuari disponible"
+          username_is_not_available: "Nom d'usuari ja existent"
+          username_label: "Nom d'usuari"
+          username_note: Nom públic que apareixerà en les teues publicacions
+        success:
+          back_to_index: Entès, tornar a la pàgina principal
+          instructions_1_html: Per favor <b>revisa el teu correu electrònic</b> - te hem enviat un <b>enllaç per a confirmar el teu compte</b>.
+          instructions_2_html: Una vegada confirmat, podràs començar a participar.
+          thank_you_html: Gràcies per registrar-te en la web. Ara has de <b>confirmar el teu correu</b>.
+          title: Revisa el teu correu
+  helpers:
+    page_entries_info:
+      entry:
+        one: entrada
+        other: entrades
+        zero: entrades
+      more_pages:
+        display_entries: "Mostrant <b>%{first}&nbsp;-&nbsp;%{last}</b> d'un total de <b>%{total}</b> %{entry_name}"
+      one_page:
+        display_entries:
+          one: Hi ha <b>1</b> %{entry_name}
+          other: Hi ha <b> %{count}</b> %{entry_name}
+          zero: No s'han trobat %{entry_name}
+  views:
+    pagination:
+      first: Primera
+      last: Última
+      next: Següent
+      previous: Anterior
+      truncate: "&hellip;"
+      current: Estàs a la pàgina
+  mailers:
+    no_reply: "Aquest missatge s'ha enviat des d'una adreça de correu electrònic que no admet respostes."
+    comment:
+      hi: Hola
+      new_comment_by_html: Hi ha un nou comentari de <b>%{commenter}</b> en
+      subject: Algú ha comentat en el teu %{commentable}
+      title: Nou comentari
+    config:
+      manage_email_subscriptions: Pots deixar de rebre aquests emails canviant la teua configuració en
+    email_verification:
+      click_here_to_verify: en aquest enllaç
+      instructions_2_html: Aquest email és per a verificar el teu compte amb <b>%{document_type} %{document_number}</b>. Si aquestes no són les teues dades, per favor no premes l'enllaç anterior i ignora aquest email.
+      instructions_html: Per a acabar de verificar el teu compte d'usuari en el Portal Decidim Castelló, necessitem que premes %{verification_link}.
+      subject: Verifica el teu email
+      thanks: Moltes gràcies.
+      title: Verifica el teu compte amb el següent enllaç
+    reply:
+      hi: Hola
+      new_reply_by_html: Hi ha una nova resposta de <b>%{commenter}</b> al teu comentari en
+      subject: Algú ha respost al teu comentari
+      title: Nova resposta al teu comentari
+    unfeasible_spending_proposal:
+      hi: "Benvolgut usuari,"
+      new_html: "Per tot açò, et convidem al fet que elabores una <strong>nova proposta</strong> que s'ajuste a les condicions d'aquest procés. Açò el pots fer en aquest enllaç: %{url}."
+      new_href: "nova proposta d'inversió"
+      reconsider_html: "Si consideres que la proposta rebutjada compleix els requisits per a mantenir-la com a proposta d'inversió, podràs comunicar-ho, en el termini de 48 hores, al correu decicim@castello.es, indicant necessàriament per a la seua tramitació el codi %{code} com a assumpte del correu, corresponent a la teua proposta."
+      sincerely: "Atentament"
+      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
+      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
+      unfeasible_html: "Des de l'Ajuntament volem agrair la teua participació en els <strong>Presupostos Participatius</strong>. Lamentem informar-te que la teua proposta <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
+    proposal_notification_digest:
+      info: "A continuació et mostrem les noves notificacions que han publicat els autors de les propostes que estàs recolzant en %{org_name}."
+      title: "Notificacions de propostes en %{org_name}"
+      share: Compartir proposta
+      comment: Comentar proposta
+      unsubscribe: "Si no vols rebre notificacions de propostes, pots entrar en %{account} i desmarcar l'opció 'Rebre resum de notificacions sobre propostes'."
+      unsubscribe_account: El meu compte
+    direct_message_for_receiver:
+      subject: "Has rebut un nou missatge privat"
+      reply: Respondre a %{sender}
+      unsubscribe: "Si no vols rebre missatges privats, pots entrar en %{account} i desmarcar l'opció 'Rebre emails amb missatges privats'."
+      unsubscribe_account: El meu compte
+    direct_message_for_sender:
+      subject: "Has enviat un nou missatge privat"
+      title_html: "Has enviat un nou missatge privat a <strong>%{receiver}</strong> amb el següent contingut:"
+    user_invite:
+      ignore: "Si no has sol·licitat aquesta invitació no et preocupes, pots ignorar aquest correu."
+      text: "Gràcies per sol·licitar unir-te a %{org}! En uns segons podràs començar a decidir la ciutat que vols, només has d'emplenar el següent formulari:"
+      thanks: "Moltes gràcies."
+      title: "Benvingut a %{org}"
+      button: Completar registre
+      subject: "Invitació a %{org_name}"
+    budget_investment_created:
+      subject: "Gràcies per crear una proposta d'inversió!"
+      title: "Gràcies per crear una proposta d'inversió!"
+      intro_html: "Hola <strong>%{author}</strong>,"
+      text_html: "Moltes gràcies per crear la teua proposta d'inversió <strong>%{investment}</strong> per als Pressupostos Participatius <strong>%{budget}</strong>."
+      follow_html: "T'informarem de com avança el procés, que també pots seguir en la pàgina de <strong>%{link}</strong>."
+      follow_link: "Pressupostos participatius"
+      sincerely: "Atentament,"
+      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
+      share: "Comparteix la teua proposta d'inversió"
+    budget_investment_unfeasible:
+      hi: "Benvolgut usuari,"
+      new_html: "Per tot açò, et convidem al fet que elabores una <strong>nova proposta d'inversió</strong> que s'ajuste a les condicions d'aquest procés. Açò el pots fer en aquest enllaç: %{url}."
+      new_href: "nova proposta d'inversió"
+      reconsider_html: "Si consideres que la proposta d'inversió rebutjada compleix els requisits per a mantenir-la com a proposta d'inversió, podràs comunicar-ho, en el termini de 48 hores, al correu decidim@castello.es, indicant necessàriament per a la seua tramitació el codi %{code} com a assumpte del correu, corresponent a la teua proposta d'inversió."
+      sincerely: "Atentament"
+      signatory: "DIRECCIÓ GENERAL DE PARTICIPACIÓ CIUTADANA"
+      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
+      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
+      unfeasible_html: "es de l'Ajuntament volem agrair la teua participació en els <strong>Pressupostos Participatius</strong>. Lamentem informar-te que la teua proposta d'inversió <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
+  management:
+    organization_verifications:
+      title: Utilizar la aplicación en nombre de una Asociación
+      verify: Comprobar
+    account:
+      alert:
+        unverified_user: Solo se pueden editar cuentas de usuarios verificados
+      show:
+        title: Cuenta de usuario
+    account_info:
+      change_user: Cambiar usuario
+      document_number_label: 'Número de documento:'
+      document_type_label: 'Tipo de documento:'
+      email_label: 'Email:'
+      identified_label: 'Identificado como:'
+      username_label: 'Usuario:'
+    check: Comprobar
+    dashboard:
+      index:
+        title: Gestión
+        info: Desde aquí puedes gestionar usuarios a través de las acciones listadas en el menú de la izquierda.
+    document_number: Número de documento
+    document_type_label: Tipo de documento
+    document_verifications:
+      already_verified: Esta cuenta de usuario ya está verificada.
+      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
+      link: Consul
+      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      not_in_census: Este documento no está registrado.
+      not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
+      title: Gestión de usuarios
+      under_age: No tienes edad suficiente para verificar tu cuenta.
+      verify: Verificar usuario
+    email_label: Email
+    email_verifications:
+      already_verified: Esta cuenta de usuario ya está verificada.
+      choose_options: 'Elige una de las opciones siguientes:'
+      document_found_in_census: Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada.
+      document_mismatch: Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})
+      email_placeholder: Introduce el email de registro
+      email_sent_instructions: Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya.
+      if_existing_account: Si la persona ya ha creado una cuenta de usuario en la web
+      if_no_existing_account: Si la persona todavía no ha creado una cuenta de usuario en la web
+      introduce_email: 'Introduce el email con el que creó la cuenta:'
+      send_email: Enviar email de verificación
+    menu:
+      create_proposal: Crear propuesta
+      print_proposals: Imprimir propuestas
+      support_proposals: Apoyar propuestas
+      create_spending_proposal: Crear propuesta de inversión
+      print_spending_proposals: Imprimir propts. de inversión
+      support_spending_proposals: Apoyar propts. de inversión
+      create_budget_investment: Crear propuestas de inversión
+      print_budget_investments: Imprimir propuestas de inversión
+      support_budget_investments: Apoyar propuestas de inversión
+      users: Usuarios
+      edit_user_accounts: Editar cuenta de usuario
+      user_invites: Invitacions a usuaris
+      user_new: Nou usuari
+      use_organization: Utilitzar com Associació
+    permissions:
+      create_proposals: Crear nuevas propuestas
+      debates: Participar en debates
+      support_proposals: Apoyar propuestas
+      vote_proposals: Participar en las votaciones finales
+    print:
+      proposals_info: Haz tu propuesta en http://url.consul
+      proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
+      proposals_title: 'Propuestas:'
+      spending_proposals_info: Participa en http://url.consul
+      spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
+      budget_investments_info: Participa en http://url.consul
+      budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
+    print_info: Imprimir esta información
+    proposals:
+      alert:
+        unverified_user: Este usuario no está verificado
+      create_proposal: Crear propuesta
+      print:
+        print_button: Imprimir
+    budgets:
+      create_new_investment: Crear nueva propuesta de inversión
+      print_investments: Imprimir propuestas de inversión
+      support_investments: Apoyar propuestas de inversión
+    budget_investments:
+      alert:
+        unverified_user: Usuario no verificado
+      create: Crear nueva propuesta de inversión
+      filters:
+        heading: Concepto
+        unfeasible: Propuestas de inversión no factibles
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " contiene el término '%{search_term}'"
+        other: " contienen el término '%{search_term}'"
+    spending_proposals:
+      alert:
+        unverified_user: Este usuario no está verificado
+      create: Crear propuesta de inversión
+      filters:
+        unfeasible: Propuestas de inversión no viables
+        by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " que contiene '%{search_term}'"
+        other: " que contienen '%{search_term}'"
+    sessions:
+      signed_out: Has cerrado la sesión correctamente.
+      signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
+    username_label: Nombre de usuario
+    users:
+      create_user: Crear nueva cuenta de usuario
+      create_user_info: 'Procedemos a crear un usuario con la siguiente información:'
+      create_user_submit: Crear usuario
+      create_user_success_html: Hemos enviado un correo electrónico a <b>%{email}</b> para verificar que es suya. El correo enviado contiene un link que el usuario deberá pulsar. Entonces podrá seleccionar una clave de acceso, y entrar en la web de participación.
+      erased_notice: Cuenta de usuario borrada.
+      erased_by_manager: "Borrada por el manager: %{manager}"
+      erase_account_link: Borrar cuenta
+      erase_account_confirm: ¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer
+      erase_warning: Esta acción no se puede deshacer. Por favor asegurese de que quiere eliminar esta cuenta.
+      erase_submit: Borrar cuenta
+    user_invites:
+      new:
+        label: Emails
+        info: "Introduce los emails separados por ','"
+        submit: Enviar invitaciones
+        title: Invitaciones para usuarios
+      create:
+        success_html: Se han enviado <strong>%{count} invitaciones</strong>.
+        title: Invitaciones para usuarios
+  moderation:
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: "¿Estás seguro?"
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          comment: Comentario
+          moderate: Moderar
+        hide_comments: Ocultar comentarios
+        ignore_flags: Marcar como revisados
+        order: Orden
+        orders:
+          flags: Más denunciados
+          newest: Más nuevos
+        title: Comentarios
+    dashboard:
+      index:
+        title: Moderación
+    debates:
+      index:
+        block_authors: Bloquear autores
+        confirm: "¿Estás seguro?"
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          debate: Debate
+          moderate: Moderar
+        hide_debates: Ocultar debates
+        ignore_flags: Marcar como revisados
+        order: Orden
+        orders:
+          created_at: Más nuevos
+          flags: Más denunciados
+        title: Debates
+    menu:
+      flagged_comments: Comentarios
+      flagged_debates: Debates
+      proposals: Propuestas
+      users: Bloquear usuarios
+    proposals:
+      index:
+        block_authors: Bloquear autores
+        confirm: "¿Estás seguro?"
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_flag_review: Pendientes de revisión
+          with_ignored_flag: Marcadas como revisadas
+        headers:
+          moderate: Moderar
+          proposal: Propuesta
+        hide_proposals: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Propuestas
+    investments:
+      index:
+        title: Moderación de Propuestas de Inversión
+        block_authors: Bloquear autores
+        confirm: "¿Estás seguro?"
+        filter: Filtro
+        filters:
+          all: Todas
+          pending_flag_review: Pendientes de revisión
+          with_ignored_flag: Marcadas como revisadas
+        headers:
+          moderate: Moderar
+          proposal: Propuesta
+        hide_proposals: Ocultar Propuestas
+        ignore_flags: Marcar como revisadas
+        order: Ordenar por
+        orders:
+          created_at: Más recientes
+          flags: Más denunciadas
+        title: Propuestas
+    users:
+      index:
+        hidden: Bloqueado
+        hide: Bloquear
+        search: Buscar
+        search_placeholder: email o nombre de usuario
+        title: Bloquear usuarios
+      notice_hide: Usuario bloqueado. Se han ocultado todos sus debates y comentarios.
+  pages:
+    priv:
+      title: "Política de Privadesa"
+      subtitle: "AVÍS DE PROTECCIÓ DE DADES"
+      body: |-
+        1. La navegació per la informació disponible al Portal de Govern Obert és anònima.
+        2. Per a utilitzar els serveis continguts en el Portal de Govern Obert l'usuari haurà de donar-se d'alta i proporcionar prèviament les dades de caràcter personal segun la informació específica que consta en cada tipus d'alta.
+        3. Les dades aportades seran incorporades i tractades per l'Ajuntament d'acord amb la descripció del fitxer següent:
+          * __Nom del fitxer/tractament:__ DATOS PERSONALES WEB
+          * __Finalitat del fitxer/tractament:__ Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana
+          * __Òrgan responsable:__ AYUNTAMIENTO DE CASTELLÓN
+        4. L'interessat podrà exercir els drets d'accés, rectificació, cancel·lació i oposició, davant l'òrgan responsable indicat tot la qual cosa s'informa en el compliment de l'article 5 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+        5. Com a principi general, aquest lloc web no comparteix ni revela informació obtinguda, excepte quan haja sigut autoritzada per l'usuari, o la informació siga requerida per l'autoritat judicial, ministeri fiscal o la policia judicial, o se de algun dels supòsits regulats en l'article 11 de la Llei Orgànica 15/1999, de 13 de desembre, de Protecció de Dades de Caràcter Personal.
+
+    census_terms: "Per a verificar el compte cal tenir 16 anys o més i estar empadronat aportant les dades indicades anteriorment, els quals seran contrastats. Acceptant el procés de verificació accepta donar el seu consentiment per a contrastar aquesta informació, així com mitjans de contacte que figuren en aquests fitxers. Les dades aportades seran incorporats i tractats en un fitxer indicat anteriorment en les condicions d'ús del portal."
+    conditions: "Condicions d'ús"
+    conditions_body: |-
+      ## AVÍS LEGAL SOBRE LES CONDICIONS D'ÚS, PRIVACITAT I PROTECCIÓ DE DADES PERSONALS DEL PORTAL DE PARTICIPACIÓ CIUTADANA DE L'AJUNTAMENT DE CASTELLÓ DE LA PLANA
+
+      ### 1.- Àmbit d'aplicació de les condicions d'ús
+
+      La participació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana Decidim Castelló es regula per les present condicions d'ús que vinculen totes les persones que participen en aquest lloc web. Qualsevol persona que desitge participar-hi haurà de registrar-se i acceptar les condicions d'ús.
+      L'Ajuntament de Castelló de la Plana es reserva la facultat de modificar les presents condicions d'ús del Portal de Participació Ciutadana (decidim.castello.es), l'última versió de les quals es publicarà en aquest lloc web.
+
+      ### 2. Objectiu de la iniciativa
+
+      A través del Portal de Participació Ciutadana, l'Ajuntament de Castelló de la Plana vol fomentar la participació dels ciutadans en la gestió de la ciutat, implicant-los en la generació d'idees i propostes noves i viables, amb l'objectiu de millorar la seua qualitat de vida. És una aposta decidida per una gestió més pròxima als ciutadans que permetrà rebre les seues propostes i, a més, crear canals directes de comunicació amb el Govern municipal, contribuint a prendre les decisions més encertades per a l'interés general.
+
+      ### 3. Qüestions generals sobre la participació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana
+
+      Podrà participar-hi qualsevol persona física a partir dels 16 anys que s'haja registrat prèviament. Per mitjà de l'acceptació d'aquestes condicions d'ús, es declara tindre 16 anys o més. Existeix la possibilitat de presentar una proposta i recolzar un màxim de tres propostes per cada participant.
+
+      En introduir el títol de les propostes, es recomana escriure una descripció breu i precisa amb un màxim de 2.000 caràcters.
+
+      ### 4.- Obligacions dels usuaris del Portal de Participació Ciutadana
+
+      Com que Decidim Castellón és un punt de trobada, l'objectiu del qual és debatre, compartir i valorar propostes relacionades amb la millora de la ciutat, els usuaris estan obligats a fer un ús diligent i concorde amb aquest objectiu.
+
+      L'Ajuntament de Castelló de la Plana no és responsable de l'ús incorrecte del Portal de Participació Ciutadana pels usuaris o dels continguts localitzats en aquest, i cada usuari serà responsable del seu ús correcte i de la legalitat dels continguts i opinions que haja compartit.
+
+      L'Ajuntament de Castelló de la Plana es reserva, per tant, el dret a limitar l'accés al Portal de Participació Ciutadana d'opinions, informacions, comentaris o documents que els usuaris vulguen incorporar, podent instal·lar filtres a aquest efecte. Tot això es realitzarà únicament mentre tinga el fi de preservar l'objectiu fonamental del Portal de Participació Ciutadana.
+
+      D'acord amb la normativa legal vigent queda prohibida la utilització del Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana amb fins diferents dels de debatre, compartir i valorar propostes, i específicament queda prohibit:
+
+      Compartir qualsevol contingut que puga ser considerat com una vulneració en qualsevol forma dels drets fonamentals a l'honor, imatge i intimitat personal i familiar de tercers o contra la dignitat de les persones.
+      Compartir imatges o fotografies que arrepleguen imatges o dades personals de tercers sense haver obtingut l'oportú consentiment dels seus titulars.
+      Compartir qualsevol contingut que vulnere el secret en les comunicacions, la infracció de drets de propietat industrial i intel·lectual o de les normes reguladores de la protecció de dades de caràcter personal.
+      Reproduir, distribuir i compartir continguts, informacions o imatges que hagen sigut posades a disposició per altres usuaris sense l'autorització expressa d'estos.
+      La seua utilització amb fins de publicitat.
+
+      La realització de qualsevol dels anteriors comportaments permetrà a l'Ajuntament de Castelló de la Plana suspendre temporalment l'activitat d'un participant, inhabilitar el seu compte o esborrar el seu contingut, sense perjuí d'altres responsabilitats que puguen ser reclamades.
+
+      En el cas que el contingut introduït pels usuaris incorpore un enllaç a un altre lloc web, l'Ajuntament de Castelló de la Plana no serà responsable pels danys o perjuís derivats de l'accés a l'enllaç o als seus continguts.
+
+      En cas de litigi de qualsevol classe o per qualsevol motiu entre els participants en el lloc web i/o un tercer, l'Ajuntament de Castelló de la Plana quedarà exempt de qualsevol responsabilitat per reclamacions, demandes o danys de qualsevol naturalesa relacionats o derivats del litigi.
+
+      ### 5. Ús del Portal de Participació Ciutadana
+
+      Els participants podran accedir i navegar pel Portal de Participació Ciutadana lliurement i de forma anònima. Només quan vulguen realitzar alguna acció que implique la creació, suport o comentari d'una proposta, o la participació en un debat, se li sol·licitarà que introduïsca les seues credencials, per a l'obtenció de les quals serà necessari registrar-se prèviament. El registre que permetrà participar comentant en qualsevol de les seccions o propostes es realitzarà introduint les dades següents:
+
+      * Nom d'usuari
+      * Adreça electrònica
+      * Acceptació de les condicions d'ús del Portal de Participació Ciutadana
+
+      Per a participar proposant o donant suport a propostes, a l'usuari se li requerirà que verifique el seu compte, per a la qual cosa es comprovarà que és major de 16 anys i que està empadronat a Castelló de la Plana. Es requerirà el DNI, la data de naixement i el codi postal. Per mitjà d'aquest procés de verificació s'autoritza expressament aquesta comprovació a l'Ajuntament de Castelló de la Plana.
+
+      ### 6. Condicions per al tractament dels continguts proporcionats pels usuaris
+
+      Les presents condicions regulen els termes aplicables al contingut remés pels usuaris d'aquesta plataforma a través del formulari corresponent (d'ara en avant, el contingut). Aquestes condicions s'apliquen tant al contingut inicialment remés al Portal de Participació Ciutadana com a qualsevol contingut que s'envie amb posterioritat o es manifeste a l'Ajuntament de Castelló de la Plana, cosa que implica el següent:
+
+      <ol class="ordered_alpha_up">
+        <li>
+          <p>No-confidencialitat: Tot el contingut remés per l'usuari a l'Ajuntament de Castelló de la Plana haurà de ser susceptible de ser conegut pel públic en general. Per tant, l'Ajuntament de Castelló de la Plana tractarà l'esmentat contingut com a informació no confidencial.</p>
+        </li>
+        <li>
+          <p>Procediment: En el cas que l'Ajuntament de Castelló de la Plana estiga interessat a ampliar o reduir el contingut remés per l'usuari, es posarà en contacte amb ell per a sol·licitar-li informació addicional. Aquesta informació tindrà, així mateix, caràcter de no confidencial, sense perjuí que en el cas que les parts consideren la necessitat d'intercanviar-se informació de caràcter confidencial se signe el corresponent Acord de Confidencialitat.</p>
+          <p>L'Ajuntament de Castelló de la Plana es reserva el dret de no contactar amb els usuaris que li hagueren remés el contingut. Tot això sense perjuí del que estableix l'apartat relatiu a "Drets de Propietat Intel·lectual i Industrial”.</p>
+          <p>En el supòsit que l'Ajuntament de Castelló de la Plana, a la seua sencera discreció, decidira contactar amb determinats usuaris, aquests coneixen i accepten que per això l'Ajuntament de Castelló de la Plana no adquireix cap compromís en relació amb la proposta d'inversió.</p>
+        </li>
+        <li>
+          <p>Publicitat o difusió dels continguts presentats: Els participants en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana declaren conéixer i acceptar que la informació aportada puga ser publicada en el web www.castello.es, així com a través d'altres mitjans que l'organització considere oportuns per a donar a conéixer aquesta iniciativa.</p>
+        </li>
+        <li>
+          <p>No devolució de material: L'Ajuntament de Castelló de la Plana no té cap obligació de tornar el Contingut remés pels usuaris.</p>
+        </li>
+        <li>
+          <p>Procediment d'avís i retirada: L'Ajuntament de Castelló de la Plana processarà les peticions d'eliminació o retirada de continguts que incomplisquen les condicions d'ús que hagen afegit els participants. Així mateix, qualsevol persona, amb motius raonats si hi ha incompliment de les presents condicions d'ús, podrà sol·licitar la retirada de continguts a l'Ajuntament de Castelló de la Plana. L'Ajuntament de Castelló de la Plana es reserva el dret de fer les comprovacions o verificacions oportunes amb caràcter previ a la retirada de qualsevol contingut.</p>
+        </li>
+      </ol>
+
+      ### 7. Política de privacitat i protecció de dades
+
+      <ol class="ordered_alpha_up">
+        <li>
+          <p>Titularitat dels drets de propietat intel·lectual i industrial: L'usuari que aporta el Contingut declara, amb l'acceptació de les presents Condicions, ser titular dels drets de propietat intel·lectual i/o industrial o ostentar drets suficients sobre el contingut i que, a més, el remet a l'Ajuntament de Castelló de la Plana de forma voluntària per a la seua divulgació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana.</p>
+          <p>La titularitat de tots i cada un dels Continguts presentats que es troben protegits o siguen susceptibles de trobar-se protegits, pel Dret de la Propietat Industrial i Intel·lectual, correspon als autors i/o titulars dels mencionats Continguts.</p>
+          <p>L'Ajuntament de Castelló de la Plana no assumix cap responsabilitat, ja siga directa o indirecta, respecte de qualsevol tipus de controvèrsia, disputa i/o litigi que poguera derivar-se de la publicació, divulgació i/o difusió dels continguts aportats sense el preceptiu consentiment dels seus legítims titulars.</p>
+          <p>L'Ajuntament de Castelló de la Plana respectarà tots els Drets de Propietat Intel·lectual o Industrial sobre el contingut remés pels usuaris. Qualsevol vulneració dels Drets de Propietat Intel·lectual o Industrial serà responsabilitat de la persona que aporte el contingut.</p>
+          <p>L'Ajuntament de Castelló de la Plana, per la mera recepció del contingut, no rep de l'usuari cap llicència de propietat intel·lectual o industrial, per la qual cosa no farà ús del contingut excepte acceptació expressa del seu titular.</p>
+        </li>
+        <li>
+          <p>Protecció de dades: Les dades personals aportades pels usuaris que es registren en el Portal de Participació Ciutadana, seran tractades d'acord amb allò que s'ha exposat en l'apartat de Política de Privacitat.</p>
+          <p>Com a principi general, les dades personals no seran comunicades a tercers, excepte quan la comunicació haja sigut autoritzada per l'usuari, o la informació siga requerida per l'autoritat judicial, ministeri fiscal o policia judicial, o es done algun dels supòsits regulats en l'article 11 de la Llei orgànica 15/1999, de 13 de desembre, de protecció de dades de caràcter personal.</p>
+          <p>Els drets d'accés, rectificació, cancel·lació i oposició es podran exercitar dirigint una comunicació per escrit a l'Ajuntament de Castelló de la Plana, Participació Ciutadana.</p>
+        </li>
+      </ol>
+
+      ### 8. Normativa aplicable
+
+      Les normes de l'ordenament jurídic espanyol regixen de manera exclusiva aquestes condicions d'ús. Qualsevol disputa, controvèrsia o reclamació derivada d'aquestes condicions d'ús, o l'incompliment, rescissió o invalidació d'aquestes, es resoldrà exclusivament davant dels jutjats competents.
+
+      ### 9. Revisió de les condicions d'ús
+
+      L'Ajuntament de Castelló de la Plana es reserva el dret de revisar les presents condicions d'ús i la política de privacitat en qualsevol moment i per qualsevol raó. En aquest cas, els usuaris registrats seran avisats a través d'aquest espai en línia i, si continuen utilitzant el Portal de Participació Ciutadana, s'entendran acceptades les modificacions introduïdes.
+    general_terms: "Termes i Condicions"
+    more_information:
+      description:
+        faq: "Preguntes freqüents sobre problemes tècnics"
+        how_it_works: "Descobreix tot el que pots fer en aquesta web"
+        how_to_use: "Utilitza-ho lliurement o ajuda'ns a millorar-ho, és programari lliure"
+        participation: "Participació Ciutadana, Transparència i Govern Obert"
+        participation_facts: "Per a perdre-li la por"
+        participation_world: "Sistemes de participació ciutadana que ja existeixen al món"
+        proposals_info: "Crea les teues pròpies propostes"
+        signature_sheet: "Fulls de signatures per a arreplegar recolzaments"
+        spending_proposals_info: "Envia les teues propostes d'inversió"
+      how_it_works:
+        i: "Participació"
+        i1: "Espai de debat"
+        i2: "Espai de propostes"
+        text: |-
+          El nou Portal de Govern Obert està dividit en tres parts: Participació, Transparència i Dades Obertes (veuràs els enllaços en la part superior dreta).
+          >**I. Participació:** On poder decidir què ciutat volem tenir (a través de propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, i molts altres processos que anirem implementant).
+           **II. Transparència:** En aquest espai es publicaran totes les dades relatives a qui i com es gestiona la ciutat (noms dels responsables, càrrecs, sous, plans de govern, contractes, agendes dels responsables...). A més és l'espai on exercir el dret d'accés a la informació, podent sol·licitar qualsevol informació sobre l'Ajuntament de manera fàcil i ràpida.
+           **III. Dades Obertes:** En aquest espai es pengen les bases de dades que té l'Ajuntament, perquè qualsevol puga usar tota la informació directament, sense necessitat ni tan sols de preguntar. També es pot sol·licitar la publicació de més bases de dades.
+
+
+          Inaugurem el nou portal amb la nova secció de Participació, i en breu afegirem les noves seccions de Transparència i Dades Obertes (així que mantenim de moment els enllaços a les pàgines sobre aquest tema que ja existien).
+          ## <a id='i'></a> I. Participació
+          L'apartat de participació comprendrà diferents mecanismes de participació: propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, entre molts uns altres. De moment presentem l'espai de debat, i molt ràpid les propostes ciutadanes.
+          ## <a id='i1'></a>I.I. Espai de debat
+          En aquest espai, qualsevol persona pot obrir un fil de discussió sobre qualsevol tema, creant un espai independent on la gent podrà debatre sobre el tema proposat. D'aquesta manera, en aquest espai digital conviuran cada dia centenars d'espais de debat diferents entre els quals la ciutadania podrà passejar-se, sumant-se als quals més els interesse.
+
+          Tant els fils, com els comentaris podran ser valorats per qualsevol, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són els temes més importants a cada moment. Aquests seran presentats en la portada de l'espai, podent per descomptat accedir-se a tots els altres temes en pàgines posteriors, o usant altres criteris d'ordenació (els temes amb més comentaris, els més nous, els més controvertits, etc.).
+
+          Cadascun dels treballadors de l'Ajuntament té un usuari propi, que serà ressaltat com a tal, permetent que participen en els debats al mateix nivell que tots els altres ciutadans. Açò permetrà crear espais de comunicació directes entre els uns i els altres, evitant els inconvenients que implica la comunicació intervinguda, i responent a un plantejament clar per part del nou govern pel qual l'Ajuntament treballa per a la ciutadania, i davant ella ha de respondre.
+          ## <a id='i2'></a> I.I. Espai de propostes
+          En aquest espai, qualsevol persona pot proposar una iniciativa amb la intenció de recaptar els suficients recolzaments com perquè la idea passe a ser consultada a tota la ciutadania amb caràcter vinculant.
+
+          Les propostes poden ser recolzades per ciutadans empadronats que hagen verificat el seu compte en la plataforma de participació, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són les propostes que mereixen la pena ser dutes a terme.
+
+          Una vegada que una proposta aconseguisca una quantitat de 25 recolzaments, automàticament passa a ser estudiada per un grup de treball de l'Ajuntament i passarà a la següent fase de consulta popular, en la qual la ciutadania votarà si es duu a terme o no. El termini màxim per a recaptar els recolzaments necessaris serà d'un mes.
+      how_to_use:
+        text: |-
+          Utilitza-ho en el teu municipi lliurement o ajuda'ns a millorar-ho, és programari lliure.
+
+          Aquest Portal de Govern Obert usa la [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul') que és programari lliure, amb [llicència AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que qualsevol pugues lliurement usar el codi, copiar-ho, veure-ho detalladament, modificar-ho, i redistribuir-ho al món amb les modificacions que vulga (mantenint el que uns altres puguen al seu torn fer el mateix). Perquè creiem que la cultura és millor i més rica quan s'allibera
+
+          Si eres programador, pots veure el codi i ajudar-nos a millorar-ho en [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul').
+      titles:
+        faq: "Solucions a problemes tècnics (FAQ)"
+        how_it_works: "Com funciona aquest Portal de Govern Obert?"
+        how_to_use: "Utilitza-ho al teu municipi"
+        participation: "Participació i Transparència - Pròximes novetats"
+        participation_facts: "Fets sobre participació ciutadana i democràcia directa"
+        participation_world: Participació ciutadana directa al món
+        proposals_info: "Com funcionen les propostes ciutadanes?"
+        signature_sheet: Fulls de signatures
+        spending_proposals_info: "Com funcionen els pressupostos participatius?"
+    opendata:
+      slogan: "Informació sobre Dades obertes."
+      title: Dades obertes
+    privacy: "Política de Privadesa"
+    titles:
+      accessibility: Accessibilitat
+      conditions: "Condicions d'ús"
+      more_information: Més informació
+      opendata: Dades obertes
+      privacy: Política de Privadesa
+    verify:
+      code: Codi que has rebut en la teua carta
+      email: Email
+      info: "Per a verificar el teu compte introdueix les dades amb els quals et vas registrar:"
+      info_code: "Ara introdueix el codi que has rebut en la teua carta:"
+      password: Contrasenya
+      submit: Verificar el meu compte
+      title: Verificar el teu compte
+    faq:
+      title: "Preguntes freqüents (FAQ)"
+      body: "Et presentem una llista de les solucions als problemes i dubtes més freqüents del Portal decidim.castello.es. Si açò no resol el teu problema, pots enviar un correu electrònic a decidim@castello.es"
+      quest_1:
+        title: No em funciona la verificació de residència.
+        response: |-
+          Comprova les següents possibilitats:
+
+          * Has posat el DNI o document amb tots els caràcters junts, incloent la lletra al final?
+          * Estàs segur que estàs empadronat al municipi de Castelló de la Plana?
+          * Pot ser que hi haja algun problema en el registre d'empadronament amb les teues dades. Per a qualsevol incidència en la verificació del seu compte pot contactar amb la Unitat d'Estadística - Gestió Padró (Telèfon 964 355 185) e-mail: padronhabitantes@castello.es
+
+      quest_2:
+        title: "Per a què serveix verificar el meu compte?"
+        response: |-
+          Per a utilitzar la web necessitem un compte d'usuari i verificar-ho. Amb la verificació de compte es podrà:
+
+          Presentar propostes
+
+          Recolzar propostes
+
+          Votar propostes
+
+      quest_3:
+        title: "Com puc crear i verificar el meu compte?"
+        response: |-
+          El primer és crear un compte. Per a açò fem clic sobre l'enllaç Registrar-se i emplenem les dades que ens demanen. És un requisit marcar la casella d'acceptació de les condicions d'ús. En crear un compte ens arribarà un correu electrònic a l'adreça que hàgem especificat, i haurem de fer clic en l'enllaç que conté ( l'enllaç que posa "Confirmar el meu compte") per a acabar la crear el compte. Si no ens arriba aquest correu, hem de comprovar si s'ha guardat en la carpeta de correu no desitjat o spam.
+
+          Una vegada creat el compte i després d'entrar amb el nostre correu i contrasenya, el sistema donarà l'opció de realitzar una verificació del mateix per a comprovar que estem empadronats en la ciutat de Castelló de la Plana i que som majors de 16 anys. Una vegada verificat el compte ja podrem participar en el procés de pressupostos participatius
+
+      quest_4:
+        title: "M'he oblidat de la meua contrasenya o no em funciona, què puc fer?"
+        response: |-
+          A través de l'enllaç Has oblidat la teua contrasenya? que apareix en el formulari d'accés a la web, pots sol·licitar que se t'envie un correu electrònic amb les instruccions per a recuperar la teua contrasenya
+
+      quest_5:
+        title: "No aconseguisc crear el meu compte correctament."
+        response: |-
+          Revisa per favor la secció "No em funciona la verificació de residència", per si el problema estiguera en aqueix pas, que sol ser el problema més freqüent.
+
+          Si no s'ha solucionat, revisa la secció "Com puc crear i verificar el meu compte?", per a assegurar-te que estàs seguint els passos adequadament.
+
+      quest_6:
+        title: "Com puc canviar el meu correu electrònic, el meu nom d'usuari, la meua contrasenya, donar-me de baixa o activar/desactivar les notificacions que m'arriben al correu electrònic?"
+        response: |-
+          Fes clic sobre l'enllaç "entrar", introdueix el teu correu electrònic i la teua contrasenya, i prem el botó "entrar" Una vegada fet açò, fes clic sobre l'enllaç "el meu compte" on trobaràs totes les opcions que et permetran canviar el teu correu electrònic , nom d'usuari, contrasenya, donar-te de baixa o activar/desactivar les notificacions. Una vegada realitzat el canvi adequat asegurate de fer clic sobre el botó "Guardar canvis".
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'La validació ha fallat: %{errors}'
+  date:
+    abbr_day_names:
+    - Dg
+    - Dl
+    - Dm
+    - Dc
+    - Dj
+    - Dv
+    - Ds
+    abbr_month_names:
+    -
+    - Gen
+    - Feb
+    - Mar
+    - Abr
+    - Mai
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Oct
+    - Nov
+    - Des
+    day_names:
+    - Diumenge
+    - Dilluns
+    - Dimarts
+    - Dimecres
+    - Dijous
+    - Divendres
+    - Dissabte
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
+    month_names:
+    -
+    - Gener
+    - Febrer
+    - Març
+    - Abril
+    - Maig
+    - Juny
+    - Juliol
+    - Agost
+    - Setembre
+    - Octubre
+    - Novembre
+    - Desembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximadament 1 hora
+        other: aproximadament %{count} hores
+      about_x_months:
+        one: aproximadament 1 mes
+        other: aproximadament %{count} mesos
+      about_x_years:
+        one: aproximadament 1 any
+        other: aproximadament %{count} anys
+      almost_x_years:
+        one: quasi 1 any
+        other: quasi %{count} anys
+      half_a_minute: mig minut
+      less_than_x_minutes:
+        one: menys d'1 minut
+        other: menys de %{count} minuts
+      less_than_x_seconds:
+        one: menys d'1 segon
+        other: menys de %{count} segons
+      over_x_years:
+        one: més d'1 any
+        other: més de %{count} anys
+      x_days:
+        one: 1 dia
+        other: "%{count} dies"
+      x_minutes:
+        one: 1 minut
+        other: "%{count} minuts"
+      x_months:
+        one: 1 mes
+        other: "%{count} mesos"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+      x_seconds:
+        one: 1 segon
+        other: "%{count} segons"
+    prompts:
+      day: dia
+      hour: hora
+      minute: minut
+      month: mes
+      second: segon
+      year: any
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: ha de ser acceptat
+      blank: no pot estar en blanc
+      confirmation: no coincideix
+      empty: no pot estar buit
+      equal_to: ha de ser igual a %{count}
+      even: ha de ser parell
+      exclusion: està reservat
+      greater_than: ha de ser més gran que %{count}
+      greater_than_or_equal_to: ha de ser més gran o igual a %{count}
+      inclusion: no està inclós a la llista
+      invalid: no és vàlid
+      less_than: ha de ser menor que %{count}
+      less_than_or_equal_to: ha de ser menor o igual a %{count}
+      not_a_number: no és un número
+      not_an_integer: ha de ser un enter
+      odd: ha de ser senar
+      taken: no està disponible
+      too_long: és massa llarg (%{count} caràcters màxim)
+      too_short: és massa curt (%{count} caràcters mínim)
+      wrong_length: no té la longitud correcta (%{count} caràcters exactament)
+    template:
+      body: 'Hi ha hagut problemes amb els següents camps:'
+      header:
+        one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
+        other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
+  helpers:
+    select:
+      prompt: Si us plau tria
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualitzar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: mil milions
+          million: milió
+          quadrillion: quadrilió
+          thousand: mil
+          trillion: trilió
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ", i "
+      two_words_connector: " i "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d de %b %H:%M"
+      datetime: "%d/%m/%Y %H:%M:%S"
+    pm: pm
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creat correctament."
+        debate: "Debat creat correctament."
+        direct_message: "El teu missatge ha sigut enviat correctament."
+        proposal: "Proposta creada correctament."
+        proposal_notification: "El teu message ha sigut enviat correctament."
+        spending_proposal: "Proposta d'inversió creada correctament. Pots accedir a ella des de %{activity}"
+        budget_investment: "Proposta d'inversió creada correctament."
+        signature_sheet: "Fulla de signatures creada correctament"
+      save_changes:
+        notice: Canvis guardats
+      update:
+        notice: "%{resource_name} actualitzat correctament."
+        debate: "Debat actualitzat correctament."
+        proposal: "Proposta actualitzada correctament."
+        spending_proposal: "Proposta d'inversió actualitzada correctament."
+        budget_investment: "Proposta d'inversió actualitzada correctament"
+      destroy:
+        spending_proposal: "Proposta d'inversió eliminada."
+        budget_investment: "Proposta d'inversió eliminada."
+  settings:
+    comments_body_max_length: "Longitud máxima de los comentarios"
+    official_level_1_name: "Cargos públicos de nivel 1"
+    official_level_2_name: "Cargos públicos de nivel 2"
+    official_level_3_name: "Cargos públicos de nivel 3"
+    official_level_4_name: "Cargos públicos de nivel 4"
+    official_level_5_name: "Cargos públicos de nivel 5"
+    max_ratio_anon_votes_on_debates: "Porcentaje máximo de votos anónimos por Debate"
+    max_votes_for_proposal_edit: "Número de votos en que una Propuesta deja de poderse editar"
+    max_votes_for_debate_edit: "Número de votos en que un Debate deja de poderse editar"
+    proposal_code_prefix: "Prefijo para los códigos de Propuestas"
+    votes_for_proposal_success: "Número de votos necesarios para aprobar una Propuesta"
+    months_to_archive_proposals: "Meses para archivar las Propuestas"
+    email_domain_for_officials: "Dominio de email para cargos públicos"
+    per_page_code: "Código a incluir en cada página"
+    twitter_handle: "Usuario de Twitter"
+    twitter_hashtag: "Hashtag para Twitter"
+    facebook_handle: "Identificador de Facebook"
+    youtube_handle: "Usuario de Youtube"
+    blog_url: "URL del blog"
+    url: "URL general de la web"
+    org_name: "Ajuntament de Castelló"
+    place_name: "Decide Castellón"
+    feature:
+      budgets: Presupuestos participativos
+      twitter_login: Registro con Twitter
+      facebook_login: Registro con Facebook
+      google_login: Registro con Google
+      debates: Debates
+      signature_sheets: Hojas de firmas
+      spending_proposals: Propuestas de inversión
+      spending_proposal_features:
+        voting_allowed: Votaciones sobre propuestas de inversión
+    mailer_from_name: Nombre email remitente
+    mailer_from_address: Dirección email remitente
+    meta_description: "Descripción del sitio (SEO)"
+    meta_keywords: "Palabras clave (SEO)"
+    verification_offices_url: URL oficinas verificación
+    min_age_to_participate: Edad mínima para participar
+  social_share_button:
+    share_to: "Compartir a %{name}"
+    weibo: "Sina Weibo"
+    twitter: "Twitter"
+    facebook: "Facebook"
+    douban: "Douban"
+    qq: "Qzone"
+    tqq: "Tqq"
+    delicious: "Delicious"
+    baidu: "Baidu.com"
+    kaixin001: "Kaixin001.com"
+    renren: "Renren.com"
+    google_plus: "Google+"
+    google_bookmark: "Google Bookmark"
+    tumblr: "Tumblr"
+    plurk: "Plurk"
+    pinterest: "Pinterest"
+    email: "Correu electrònic"
+  valuation:
+    menu:
+      title: Evaluación
+      budgets: Presupuestos participativos
+      spending_proposals: Propuestas de inversión
+    budgets:
+      index:
+        title: Presupuestos participativos
+        filters:
+          current: Abiertos
+          finished: Terminados
+        table_name: Nombre
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
+        table_actions: Acciones
+        evaluate: Evaluar
+    budget_investments:
+      index:
+        headings_filter_all: Todas las partidas
+        filters:
+          valuation_open: Abiertas
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+        title: Propuestas de inversión
+        assigned_to: "Asignadas a %{valuator}"
+        edit: Editar informe
+        valuators_assigned:
+          one: Evaluador asignado
+          other: "%{count} evaluadores asignados"
+        no_valuators_assigned: Sin evaluador
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nombre de la partida
+        table_actions: Acciones
+      show:
+        back: Volver
+        title: Propuesta de inversión
+        info: Datos de envío
+        by: Enviada por
+        sent: Fecha de creación
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        currency: "€"
+        feasibility: Viabilidad
+        feasible: Viable
+        unfeasible: Inviable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        duration: Plazo de ejecución
+        internal_comments: Comentarios internos
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        price_html: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, privado)</small>"
+        price_explanation_html: "Informe de coste <small>(opcional, dato público)</small>"
+        feasibility: Viabilidad
+        feasible: Viable
+        unfeasible: Inviable
+        undefined_feasible: Sin decidir
+        feasible_explanation_html: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
+        valuation_finished: Informe finalizado
+        duration_html: "Plazo de ejecución <small>(opcional, dato no público)</small>"
+        internal_comments_html: "Comentarios y observaciones <small>(para responsables internos, dato no público)</small>"
+        save: Guardar cambios
+      notice:
+        valuate: "Dossier actualizado"
+    spending_proposals:
+      index:
+        geozone_filter_all: Todos los ámbitos de actuación
+        filters:
+          valuation_open: Abiertas
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+        title: Propuestas de inversión para presupuestos participativos
+        edit: Editar
+      show:
+        back: Volver
+        heading: Propuesta de inversión
+        info: Datos de envío
+        association_name: Asociación
+        by: Enviada por
+        sent: Fecha de creación
+        geozone: Ámbito
+        dossier: Informe
+        edit_dossier: Editar informe
+        price: Coste
+        price_first_year: Coste en el primer año
+        currency: "€"
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: No viable
+        undefined: Sin definir
+        valuation_finished: Informe finalizado
+        time_scope: Plazo de ejecución
+        internal_comments: Comentarios internos
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+      edit:
+        dossier: Informe
+        price_html: "Coste (%{currency}) <small>(dato público)</small>"
+        price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, privado)</small>"
+        currency: "€"
+        price_explanation_html: "Informe de coste <small>(opcional, dato público)</small>"
+        feasibility: Viabilidad
+        feasible: Viable
+        not_feasible: Inviable
+        undefined_feasible: Sin decidir
+        feasible_explanation_html: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
+        valuation_finished: Informe finalizado
+        time_scope_html: "Plazo de ejecución <small>(opcional, dato no público)</small>"
+        internal_comments_html: "Comentarios y observaciones <small>(para responsables internos, dato no público)</small>"
+        save: Guardar cambios
+      notice:
+        valuate: "Informe actualizado"
+  i18n:
+    language:
+      name: "Valencià"
+  application:
+    close: Tancar
+    menu: Menú
+  comments:
+    comment:
+      admin: Administrador
+      author: Autor
+      deleted: "Aquest comentari ha sigut eliminat"
+      moderator: Moderador
+      responses:
+        one: "1 Resposta"
+        other: "%{count} Respostes"
+        zero: Sense respostes
+      user_deleted: "Usuari eliminat"
+      votes:
+        one: 1 vot
+        other: "%{count} vots"
+        zero: Sense vots
+    form:
+      comment_as_admin: Comentar com a administrador
+      comment_as_moderator: Comentar com a moderador
+      leave_comment: Deixa el teu comentari
+    orders:
+      most_voted: "Més votats"
+      newest: Més nous primer
+      oldest: Més antics primer
+    select_order: Ordenar per
+    show:
+      return_to_commentable: 'Tornar a '
+  comments_helper:
+    comment_button: Publicar comentari
+    comment_link: Comentar
+    reply_button: Publicar resposta
+    reply_link: Respondre
+  debates:
+    create:
+      form:
+        submit_button: "Comença un debat"
+    debate:
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      debate: Debat
+      votes:
+        one: 1 vot
+        other: "%{count} vots"
+        zero: Sense vots
+    edit:
+      editing: Editar debat
+      form:
+        submit_button: Guardar canvis
+      show_link: Veure debat
+    form:
+      debate_text: Text inicial del debat
+      debate_title: Títol del debat
+      tags_instructions: Etiqueta aquest debat.
+      tags_label: Temes
+      tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
+    index:
+      featured_debates: Destacats
+      filter_topic:
+        one: " amb el tema '%{topic}'"
+        other: " amb el tema '%{topic}'"
+      orders:
+        confidence_score: Millor valorats
+        created_at: Nous
+        hot_score: Més actius avui
+        most_commented: Més comentats
+        relevance: Més rellevants
+      search_form:
+        button: Cercar
+        placeholder: Cercar debats...
+        title: Cercar
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+      select_order: Ordenar per
+      start_debate: "Comença un debat"
+      title: Debats
+    new:
+      form:
+        submit_button: "Comença un debat"
+      info: Si el que vols és fer una proposta, aquesta és la secció incorrecta, entra en %{info_link}.
+      info_link: crear nova proposta
+      more_info: Més informació
+      recommendation_four: Gaudeix d'aquest espai, de les veus que ho omplen, també és teu.
+      recommendation_one: "No escrigues el títol del debat o frases senceres en majúscules. En internet açò es considera cridar. I a ningú li agrada que li criden."
+      recommendation_three: "Les crítiques despietades són molt benvingudes. Aquest és un espai de pensament. Però et recomanem conservar l'elegància i la intel·ligència."
+      recommendation_two: "Qualsevol proposta o comentari que implique una acció il·legal serà eliminada, també les que tinguen la intenció de sabotejar els espais de proposta, tota la resta està permès."
+    show:
+      author_deleted: Usuari eliminat
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      comments_title: Comentaris
+      edit_debate_link: Editar debat
+      flag: Aquest debat ha sigut marcat com a inadequat per diversos usuaris.
+      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
+      share: Compartir
+    update:
+      form:
+        submit_button: Guardar canvis
+  errors:
+    messages:
+      user_not_found: "No es va trobar l'usuari"
+  form:
+    accept_terms: Accepte la %{policy} i les %{conditions}
+    accept_terms_title: "Accepte la Política de privacitat i les Condicions d'ús"
+    conditions: "Condicions d'ús"
+    debate: el debat
+    direct_message: el missatge privat
+    error: error
+    errors: errors
+    not_saved: 'van impedir guardar %{resource}:'
+    policy: Política de privacitat
+    proposal: la proposta
+    proposal_notification: "la notificació"
+    spending_proposal: "la proposta d'inversió"
+    budget/investment: "la proposta d'inversió"
+    user: el compte
+    verification/sms: el telèfon
+    signature_sheet: la fulla de signatures
+  geozones:
+    none: Tota la ciutat
+    all: Tots els àmbits d'actuació
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: "Hem detectat que estàs navegant des d'Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}."
+      ie_title: "Aquesta web no està optimitzada per al teu navegador"
+    footer:
+      accessibility: Accessibilitat
+      conditions: "Condicions d'ús"
+      consul: "aplicació Consul"
+      consul_url: https://github.com/consul/consul
+      contact_us: "Pots consultar les preguntes més freqüents sobre l'ús d'aquest portal"
+      copyright: Ajuntament de Castelló de la Plana, %{year}
+      description: "Aquest portal és una adaptació de la plataforma de %{open_source} %{consul} desenvolupada per l'Ajuntament de Madrid i adaptada per l'Ajuntament de Castelló de la Plana."
+      faq: açí
+      more_info: Més informació
+      open_data_text: "Totes les dades de l'Ajuntament són teues."
+      open_data_title: Dades Obertes.
+      open_source: programari lliure
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decideix com ha de ser la ciutat que vols.
+      participation_title: Participació
+      privacy: Política de privacitat
+      transparency_text: Obtén qualsevol informació sobre la ciutat.
+      transparency_title: Transparència
+      transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=DCD
+    header:
+      administration: Administrar
+      available_locales: Idiomes disponibles
+      debates: Debats
+      external_link_blog: Blog
+      external_link_opendata: Dades obertes
+      external_link_opendata_url: http://www.castello.es/web20/archivos/contenidos/370/Observatorio_Urbano.php?src=DCD
+      external_link_transparency: Transparència
+      external_link_transparency_url: https://www.castello.es/archivos/802/TRP/trp30/pages/index.php?src=DCD
+      locale: 'Idioma:'
+      logo: Consul
+      management: Gestió
+      moderation: Moderar
+      valuation: Avaluació
+      more_information: Més informació
+      my_account_link: El meu compte
+      my_activity_link: La meua activitat
+      notifications: Notificacions
+      new_notifications:
+        one: Tens una nova notificació
+        other: Tens %{count} notificacions noves
+      no_notifications: No tens notificacions noves
+      open: obert
+      open_city_slogan_html: "Existeixen ciutats governades directament pels seus habitants, que <strong>debaten</strong> sobre temes que els preocupen, <strong>proposen</strong> idees per a millorar les seues vides i <strong>decideixen </strong> entre totes i tots les que es duen a terme."
+      open_city_title: "Participa i decideix sobre la teua ciutat!"
+      open_date: A partir del 15 de febrer
+      open_gov: Govern %{open}
+      proposals: Propostes
+      proposal_ballot: Votacions
+      see_all: Veure propostes
+      budgets: Pressupostos ciutadans
+      spending_proposals: "Propostes d'inversió"
+  legislation:
+    help:
+      alt: "Selecciona el text que vols comentar i prem en el botó amb el llapis."
+      text: "Per a comentar aquest document has de %{sign_in} o %{sign_up}. Després selecciona el text que vols comentar i prem en el botó amb el llapis."
+      text_sign_in: iniciar sessió
+      text_sign_up: registrar-te
+      title: "Com puc comentar aquest document?"
+  locale: Valencià
+  notifications:
+    index:
+      comments_on:
+        one: Hi ha un nou comentari en
+        other: Hi ha %{count} comentaris nous en
+      empty_notifications: No tens notificacions noves.
+      mark_all_as_read: Marcar totes com llegides
+      proposal_notification:
+        one: Hi ha una nova notificació en
+        other: Hi ha %{count} noves notificacions en
+      replies_to:
+        one: Hi ha una resposta nova al teu comentari en
+        other: Hi ha %{count} noves respostes al teu comentari en
+      title: Notificacions
+  map:
+    title: "Districtes"
+    proposal_for_district: "Crea una proposta per al teu districte"
+    select_district: "Àmbit d'actuació"
+    start_proposal: Crea una proposta
+  omniauth:
+    facebook:
+      sign_in: Entra amb Facebook
+      sign_up: "Registra't amb Facebook"
+      name: Facebook
+    finish_signup:
+      title: Afig el teu email
+    google_oauth2:
+      sign_in: Entra amb Google
+      sign_up: "Registra't amb Google"
+      name: Google
+    twitter:
+      sign_in: Entra amb Twitter
+      sign_up: "Registra't amb Twitter"
+      name: Twitter
+    info_sign_in: "Entra amb:"
+    info_sign_up: "Registra't amb:"
+    or_fill: "O emplena el següent formulari:"
+    finish_signup:
+      title: "Detalls addicionals del teu compte"
+      username_warning: "A causa que hem canviat la forma en la qual ens connectem amb xarxes socials i és possible que el teu nom d'usuari aparega com 'ja en ús', fins i tot si abans podies accedir amb ell. Si és el teu cas, per favor tria un nom d'usuari diferent."
+  proposals:
+    create:
+      form:
+        submit_button: Crear proposta
+    edit:
+      editing: Editar proposta
+      form:
+        submit_button: Guardar canvis
+      show_link: Veure proposta
+    retire_form:
+      title: Retirar proposta
+      warning: "Si segueixes endavant, la teua proposta podrà seguir rebent recolzaments, però deixarà de ser llistada en la llista principal, i apareixerà un missatge per a tots els usuaris avisant-los que l'autor considera que aquesta proposta no ha de seguir arreplegant recolzaments."
+      retired_reason_label: Raó per la qual es retira la proposta
+      retired_reason_blank: Selecciona una opció
+      retired_explanation_label: Explicació
+      retired_explanation_placeholder: "Explica breument per que consideres que aquesta proposta no ha d'arreplegar més recolzaments"
+      submit_button: Retirar proposta
+    retire_options:
+      duplicated: Duplicada
+      started: En execució
+      unfeasible: Inviable
+      done: Realitzada
+      other: Una altra
+    form:
+      geozone: "Àmbit d'actuació"
+      proposal_external_url: Enllaç a documentació addicional
+      proposal_question: Pregunta de la proposta
+      proposal_question_example_html: "Ha de ser resumida en una pregunta la resposta de la qual siga Sí o No. <em>Ex. 'Està vostè d'acord en peatonalizar el carrer Major?'</em>"
+      proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
+      proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu; no es mostrarà públicament)"
+      proposal_summary: Resum de la proposta
+      proposal_summary_note: "(màxim 200 caràcters)"
+      proposal_text: Text desenvolupat de la proposta
+      proposal_title: Títol de la proposta
+      proposal_video_url: "Enllaç a vídeo extern"
+      proposal_video_url_note: "Pots afegir un enllaç a YouTube o Vimeo"
+      tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
+      tags_label: Temes
+      tag_category_label: "Categories"
+      tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
+    index:
+      featured_proposals: Destacades
+      filter_topic:
+        one: " amb el tema '%{topic}'"
+        other: " amb el tema '%{topic}'"
+      orders:
+        confidence_score: Més recolzades
+        created_at: Noves
+        hot_score: Més actives avui
+        most_commented: Més comentades
+        relevance: Més rellevants
+        archival_date: Arxivades
+      retired_proposals: Propostes retirades
+      retired_proposals_link: "Propostes retirades pels seus autors"
+      retired_links:
+        all: Totes
+        duplicated: Duplicades
+        started: En execució
+        unfeasible: Inviables
+        done: Realitzades
+        other: Unes altres
+      search_form:
+        button: Cercar
+        placeholder: Cercar propostes...
+        title: Cercar
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen  '%{search_term}'"
+      select_order: Ordenar per
+      select_order_long: Estàs veient les propostes
+      start_proposal: Crea una proposta
+      title: Propostes ciutadanes
+      top: Top setmanal
+      top_link_proposals: Propostes més recolzades per categoria
+    new:
+      form:
+        submit_button: Crear proposta
+      more_info: "Com funcionen les propostes ciutadanes?"
+      recommendation_one: "No escrigues el títol de la proposta o frases senceres en majúscules. En internet açò es considera cridar. I a ningú li agrada que li criden."
+      recommendation_three: "Gaudeix d'aquest espai, de les veus que ho omplen, també és teu."
+      recommendation_two: "Qualsevol proposta o comentari que implique una acció il·legal serà eliminada, també les que tinguen la intenció de sabotejar els espais de proposta, tota la resta està permès."
+      recommendations_title: Recomanacions per a crear una proposta
+      start_new: Crear una proposta
+    notice:
+      retired: Proposta retirada
+    proposal:
+      already_supported: "Ja has recolzat aquesta proposta, comparteix-la!"
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      proposal: Proposta
+      reason_for_supports_necessary: "1% del Cens"
+      support: Recolzar
+      support_title: Recolzar aquesta proposta
+      supports:
+        one: 1 recolzament
+        other: "%{count} recolzaments"
+        zero: Sense recolzaments
+      supports_necessary: "%{number} recolzaments necessaris"
+      total_percent: 100%
+      archived: "Aquesta proposta ha sigut arxivada i ja no pot arreplegar recolzaments."
+    show:
+      author_deleted: Usuari eliminat
+      code: 'Codi de la proposta:'
+      comments:
+        one: 1 Comentari
+        other: "%{count} Comentaris"
+        zero: Sense comentaris
+      comments_tab: Comentaris
+      edit_proposal_link: Editar proposta
+      flag: "Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris."
+      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
+      notifications_tab: Notificacions
+      retired_warning: "L'autor d'aquesta proposta considera que ja no ha de seguir arreplegant recolzaments."
+      retired_warning_link_to_explanation: "Revisa la seua explicació abans de recolzar-la."
+      retired: "Proposta retirada per l'autor"
+      send_notification: Enviar notificació
+      share: Compartir
+      no_notifications: "Aquesta proposta no té notificacions."
+    update:
+      form:
+        submit_button: Guardar canvis
+  proposal_ballots:
+    title: "Votacions"
+    description_html: "Les següents propostes ciutadanes han aconseguit el <strong>nombre de recolzaments necessaris</strong> i passaran a votació."
+    date_title: "Dates de participació"
+    date: "En breu anunciarem la data de votació d'aquestes propostes."
+    successfull: "Aquesta proposta ha aconseguit els recolzaments necessaris i passarà a la %{voting}."
+    voting: "propera votació"
+    featured_title: "#ProperaVotació"
+    nothing_to_vote: "No hi ha res a votar en aquest moment."
+    info: "Noves propostes ciutadanes han arribat a la fase de votació."
+    button: "Vull decidir"
+  proposal_notifications:
+    new:
+      title: "Enviar missatge"
+      title_label: "Títol"
+      body_label: "Missatge"
+      submit_button: "Enviar Missatge"
+      info_about_receivers_html: "Aquest missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.El missatge no s'enviarà immediatament, els usuaris rebran periòdicament un email amb totes les notificacions de propostes."
+      proposal_page: "la pàgina de la proposta"
+    show:
+      back: "Tornar a la meua activitat"
+  shared:
+    "yes": "Sí"
+    "no": "No"
+    advanced_search:
+      author_type: "Per categoria d'autor"
+      author_type_blank: 'Tria una categoria'
+      date: 'Per data'
+      date_placeholder: 'DD/MM/AAAA'
+      date_range_blank: 'Tria una data'
+      date_1: 'Darreres 24 hores'
+      date_2: 'Darrera setmana'
+      date_3: 'Darrer mes'
+      date_4: 'Darrer any'
+      date_5: 'Personalitzada'
+      from: 'Des de'
+      general: 'Amb el text'
+      general_placeholder: 'Escriu el text'
+      search: 'Filtrar'
+      title: 'Cerca avançada'
+      to: 'Fins a'
+    author_info:
+      author_deleted: Usuari eliminat
+    back: Tornar
+    check: Seleccionar
+    check_all: Tots
+    check_none: Cap
+    collective: Associació
+    flag: Denunciar com a inadequat
+    hide: Ocultar
+    print:
+      print_button: Imprimir aquesta informació
+    search: Cercar
+    show: Mostrar
+    suggest:
+      debate:
+        found:
+          one: "Existeix un debat amb el terme '%{query}', pots participar en ell en comptes d'obrir un de nou."
+          other: "Existeixen debats amb el terme '%{query}', pots participar en ells en comptes d'obrir un de nou."
+        message: "Estàs veient %{limit} de %{count} debats que contenen el terme '%{query}'"
+        see_all: "Veure tots"
+      proposal:
+        found:
+          one: "Existeix una proposta amb el terme '%{query}', pots participar en ella en comptes d'obrir una nova."
+          other: "Existeixen propostes amb el terme '%{query}', pots participar en elles en comptes d'obrir una nova."
+        message: "Estàs veient %{limit} de %{count} propostes que contenen el terme '%{query}'"
+        see_all: "Veure totes"
+    tags_cloud:
+      tags: Tendències
+      districts: "Districtes"
+      districts_list: "Llistat de districtes"
+      categories: "Categories"
+    target_blank_html: " (s'obri en finestra nova) "
+    you_are_in: "Estàs en"
+    unflag: Desfer denúncia
+    outline:
+      debates: Debats
+      proposals: Propostes
+      budget: Pressupostos participatius
+      searcher: Cercador
+  social:
+    blog: Blog
+    facebook: Facebook
+    twitter: Twitter
+    youtube: YouTube
+  spending_proposals:
+    form:
+      association_name_label: "Si proposes en nom d'una associació afig el nom ací"
+      association_name: "Nom de l'associació"
+      description: Descripció detallada
+      external_url: "Enllaç a documentació addicional"
+      geozone: "Àmbit d'actuació"
+      submit_buttons:
+        create: Crear
+        new: Crear
+      title: "Títol de la proposta d'inversió"
+    index:
+      title: Pressupostos participatius
+      unfeasible: "Propostes d'inversió no viables"
+      by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
+      search_form:
+        button: Cercar
+        placeholder: Propostes d'inversió...
+        title: Cercar
+      search_results:
+        one: " que conté '%{search_term}'"
+        other: " que contenen '%{search_term}'"
+      sidebar:
+        geozones: Àmbits d'actuació
+        feasibility: Viabilitat
+        unfeasible: No viables
+      start_spending_proposal: "Crea una proposta d'inversió"
+    new:
+      more_info: "Com funcionen els pressupostos participatius?"
+      recommendation_one: "És fonamental que faça referència a una actuació pressupostària."
+      recommendation_three: "Intenta detallar el màxim possible la proposta perquè l'equip de govern encarregat d'estudiar-la tinga els menors dubtes possibles."
+      recommendation_two: "Qualsevol proposta o comentari que implique accions il·legals serà eliminada."
+      recommendations_title: "Com crear una proposta d'inversió"
+      start_new: "Crear una proposta d'inversió"
+    show:
+      author_deleted: Usuari eliminat
+      code: 'Codi de la proposta:'
+      share: Compartir
+    wrong_price_format: "Solament pot incloure caràcters numèrics"
+    spending_proposal:
+      spending_proposal: "Proposta d'inversió"
+      already_supported: "Ja has recolzat aquesta proposta d'inversió. Comparteix-ho!"
+      support: Recolzar
+      support_title: "Recolzar aquesta proposta d'inversió"
+      supports:
+        one: 1 recolzament
+        other: "%{count} recolzaments"
+        zero: Sense recolzaments
+  stats:
+    index:
+      visits: Visites
+      debates: Debats
+      proposals: Propostes ciutadanes
+      comments: Comentaris
+      proposal_votes: Vots en propostes
+      debate_votes: Vots en debats
+      comment_votes: Vots en comentario
+      votes: Vots
+      verified_users: Usuaris verificats
+      unverified_users: Usuaris sense verificar
+  unauthorized:
+    default: "No tens permís per a accedir a aquesta pàgina."
+    manage:
+      all: "No tens permís per a realitzar l'acció '%{action}' sobre %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: "Missatge"
+        direct_messages_bloqued: "Aquest usuari ha decidit no rebre missatges privats"
+        submit_button: "Enviar missatge"
+        title: Enviar missatge privat a %{receiver}
+        title_label: "Títol"
+        verified_only: Per a enviar un missatge privat %{verify_account}
+        verify_account: verifica el teu compte
+        authenticate: Necessites %{signin} o %{signup}.
+        signin: iniciar sessió
+        signup: registrar-te
+      show:
+        receiver: Missatge enviat a %{receiver}
+    show:
+      deleted: Eliminat
+      deleted_debate: Aquest debat ha sigut eliminat
+      deleted_proposal: Aquesta proposta ha sigut eliminada
+      deleted_budget_investment: Aquesta proposta d'inversió ha sigut eliminada
+      filters:
+        comments:
+          one: 1 Comentari
+          other: "%{count} Comentaris"
+        debates:
+          one: 1 Debat
+          other: "%{count} Debats"
+        proposals:
+          one: 1 Proposta
+          other: "%{count} Propostas"
+        budget_investments:
+          one: "1 Proposta d'inversió"
+          other: "%{count} Propostes d'inversió"
+      no_activity: Usuari sense activitat pública
+      no_private_messages: "Este usuario no acepta mensajes privados."
+      private_activity: "Aquest usuari ha decidit mantenir en privat la seua llista d'activitats"
+      send_private_message: "Enviar un missatge privat"
+    proposals:
+      send_notification: "Enviar notificació"
+      retire: "Retirar"
+      retired: "Retirada"
+  votes:
+    agree: "Estic d'acord"
+    anonymous: "Massa vots anònims, per a poder votar %{verify_account}."
+    comment_unauthenticated: "Necessites %{signin} o %{signup} per a poder votar."
+    disagree: "No estic d'acord"
+    organizations: "Les associacions no poden votar"
+    signin: iniciar sessió
+    signup: "registrar-te"
+    supports: Recolzaments
+    unauthenticated: Necessites %{signin} o %{signup} per a continuar.
+    verified_only: "Les propostes només poden ser votades per usuaris verificats, %{verify_account}."
+    verify_account: verifica el teu compte
+    spending_proposals:
+      not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+      not_verified: "Les propostes d'inversió només poden ser recolzades per usuaris verificats, %{verify_account}."
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: "Les associacions no poden votar"
+      unfeasible: No es poden votar propostes inviables.
+      not_voting_allowed: El període de votació està tancat.
+      different_heading_assigned: Només pots recolzar propostes en un districte
+  welcome:
+    debates:
+      description: Trobar-nos, debatre i compartir el que ens sembla important en la nostra ciutat.
+      title: Debats
+    decide:
+      description: La ciutadania decideix si accepta o rebutja les propostes més recolzades.
+      title: Decideixes
+    do:
+      description: Si la proposta és acceptada majoritàriament, l'Ajuntament l'assumeix com a pròpia i es fa.
+      title: Es fa
+    proposal:
+      description: Espai obert per a propostes ciutadanes sobre el tipus de ciutat en el qual volem viure.
+      title: Proposes
+    verification:
+      i_dont_have_an_account: "No tinc compte, vull crear un i verificar-ho"
+      i_have_an_account: "Ja tinc un compte que vull verificar"
+      question: "Tens ja un compte en %{org_name}?"
+      title: Verificació de compte
+    welcome:
+      terms_censed: Per a poder participar en el proces de pressupostos participatius ha de ser major de 16 anys i ha d'estar empadronat en la ciutat de Castelló de la Plana
+      verify_account: Per favor, fes click sobre el botó "Verificar el meu compte" per a realitzar aquesta comprovació.
+      go_to_index: "Ara no, veure propostes"
+      title: "Comença a participar"
+      user_permission_debates: Participar en debats
+      user_permission_info: Amb el teu compte ja pots...
+      user_permission_proposal: Crear noves propostes
+      user_permission_support_proposal: Recolzar propostes*
+      user_permission_verify: "Per a poder realitzar totes les accions, verifica el teu compte."
+      user_permission_verify_info: "* Només usuaris empadronats."
+      user_permission_verify_my_account: Verificar el meu compte
+      user_permission_votes: Participar en les votacions finals*
+  legislation:
+    help:
+      title: "Com puc comentar aquest document?"
+      text: "Per a comentar aquest document has de %{sign_in} o %{sign_up}. Després selecciona el text que vols comentar i prem en el botó amb el llapis."
+      text_sign_in: "iniciar sessió"
+      text_sign_up: "registrar-te"
+      alt: "Selecciona el text que vols comentar i prem en el botó amb el llapis."
+  invisible_captcha:
+    sentence_for_humans: "Si eres humà, per favor ignora aquest camp"
+    timestamp_error_message: "Açò ha sigut massa ràpid. Per favor, reenvía el formulari."
+  verification:
+    alert:
+      lock: "Has arribat al màxim nombre d'intents. Per favor intenta-ho de nou més tard."
+    back: Tornar al meu compte
+    email:
+      create:
+        alert:
+          failure: Va haver-hi un problema enviant-te un email al teu compte
+        flash:
+          success: "T'hem enviat un email de confirmació al teu compte: %{email}"
+      show:
+        alert:
+          failure: Codi de verificació incorrecte
+        flash:
+          success: Eres un usuari verificat
+    letter:
+      alert:
+        unconfirmed_code: Encara no has introduït el codi de confirmació
+      create:
+        flash:
+          offices: "Oficines d'Atenció al Ciutadà"
+          success_html: "Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.Recorda que pots estalviar l'enviament verificant-te presencialment en qualsevol de les %{offices}."
+      edit:
+        see_all: Veure propostes
+        title: "Carta sol·licitada"
+      errors:
+        incorrect_code: 'Codi de verificació incorrecte'
+      new:
+        explanation: 'Per a participar en les votacions finals pots:'
+        go_to_index: Veure propostes
+        office: Verificar-te presencialment en qualsevol %{office}
+        offices: "Oficina d'Atenció al Ciutadà"
+        send_letter: "Sol·licitar una carta per correu postal"
+        title: "Felicitats!"
+        user_permission_info: Amb el teu compte ja pots...
+      update:
+        flash:
+          success: El teu compte ja està verificat
+    redirect_notices:
+      already_verified: El teu compte ja està verificat
+      email_already_sent: "Ja t'enviem un email amb un enllaç de confirmació, si no ho trobes pots sol·licitar ací que t'ho reexpedim"
+    residence:
+      permission_warning: "Per a poder participar en el procés de pressupostos participatius és necessari comprovar que vostè és major de 16 anys i que està empadronat en la ciutat de Castelló de la Plana. Per favor, faça clic en el botó 'Verificar el meu compte' per a realitzar aquesta comprovació."
+      permission_success: "Amb el teu compte ja pots participar en el procés de pressupostos participatius.Amb el teu compte ja pots participar en el procés de pressupostos participatius."
+      alert:
+        unconfirmed_residency: Encara no has verificat la teua residència
+      create:
+        flash:
+          success: Residència verificada
+      new:
+        accept_terms_text: "Accepte %{terms_url} al Padró"
+        accept_terms_text_title: "Accepte els termes d'accés al Padró"
+        date_of_birth: Data de naixement
+        document_number: Nombre de document
+        document_number_help_title: Ajuda
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P"
+        document_type:
+          passport: Passaport
+          residence_card: Targeta de residència
+          spanish_id: DNI
+        document_type_label: Tipus de document
+        error_not_allowed_age: "No tens l'edat mínima per a participar"
+        error_not_allowed_postal_code: "Per a verificar-te has d'estar empadronat"
+        error_verifying_census: "Segons les dades que consten en el Padró Municipal, vostè no consta com empadronat/da a Castelló de la Plana. Per a qualsevol incidència en la verificació del seu compte, pot contactar amb la Unitat d'Estadística-Gestió de Padró (Telèfon: 964 355 185; E-mail: padronhabitantes@castello.es)"
+        error_verifying_census_offices: "oficina d'Atenció al ciutadà"
+        form_errors: 'van evitar verificar la teua residència'
+        postal_code: Codi postal
+        postal_code_note: "Per a verificar les teues dades has d'estar empadronat"
+        terms: "els termes d'accés"
+        title: Verificar residència
+        verify_residence: Verificar residència
+    sms:
+      create:
+        flash:
+          success: "Introdueix el codi de confirmació que t'hem enviat per missatge de text"
+      edit:
+        confirmation_code: "Introdueix el codi que has rebut en el teu mòbil"
+        resend_sms_link: "Sol·licitar un nou codi"
+        resend_sms_text: "No has rebut un missatge de text amb el teu codi de confirmació?"
+        submit_button: Enviar
+        title: SMS de confirmación
+      new:
+        phone: "Introduce tu teléfono móvil para recibir el código"
+        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
+        phone_note: "Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos."
+        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
+        submit_button: Enviar
+        title: SMS de confirmació
+      update:
+        error: Codi de confirmació incorrecte
+        flash:
+          level_three:
+            success: Codi correcte. El teu compte ja està verificat
+          level_two:
+            success: Codi correcte
+    step_1: Residència
+    step_2: SMS de confirmació
+    step_3: Verificació final
+    user_permission_debates: Participar en debats
+    user_permission_info: En verificar les teues dades podràs...
+    user_permission_proposal: Crear noves propostes
+    user_permission_support_proposal: Recolzar propostes
+    user_permission_votes: Participar en les votacions finals
+    verified_user:
+      form:
+        submit_button: Enviar codi
+      show:
+        email_title: Emails
+        explanation: "Actualment disposem de les següents dades en el Padró, selecciona on vols que enviem el codi de confirmació."
+        phone_title: Telèfons
+        title: Informació disponible
+        use_another_phone: Utilitzar un altre telèfon
+    organization:
+      not_verified: "Per a poder participar en el procés de pressupostos participatius és necessari comprovar que l'associació te el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que és troba inscrita en el Registre d'Associacions."
+
+  'Urbanismo': 'Urbanisme'
+  'Cultura': 'Cultura'
+  'Deportes': 'Esports'
+  'Agricultura': 'Agricultura'
+  'Comercio y consumo': 'Comerç i consum'
+  'Juventud': 'Joventut'
+  'Turismo': 'Turisme'
+  'Igualdad': 'Igualtat'
+  'Gente Mayor': 'Gent Gran'
+  'Bienestar Social': 'Benestar Social'
+  'Seguridad ciudadana': 'Seguretat ciutadana'
+  'Mercados': 'Mercats'
+  'Fiestas': 'Festes'
+  'Servicios Públicos': 'Serveis Públics'
+  'Nuevas tecnologías': 'Noves tecnologies'
+  'Atención y Participación ciudadana': 'Atenció i Participació ciutadana'
+  'Desarrollo Sostenible': 'Desenvolupament Sostenible'
+  'Distrito Norte': 'Districte Nord'
+  'Distrito Sur': 'Districte Sud'
+  'Distrito Este': 'Districte Est'
+  'Distrito Oeste': 'Districte Oest'
+  'Distrito Centro': 'Districte Centre'
+  'Distrito Grao': 'Districte Grau'

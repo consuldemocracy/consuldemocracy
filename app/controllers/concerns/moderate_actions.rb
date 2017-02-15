@@ -42,6 +42,7 @@ module ModerateActions
     def hide_resource(resource)
       if resource.respond_to?(:moderation_text)
         resource.moderation_text =  params[:moderation_texts][resource.id.to_s][:moderation_text]
+        resource.aviso_moderacion
         resource.save
       end
       resource.hide
