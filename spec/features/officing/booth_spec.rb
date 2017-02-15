@@ -30,7 +30,7 @@ feature 'Booth' do
 
     login_through_form_as(officer.user)
 
-    expect(page).to have_content "You are officing the booth located at #{booth.name}."
+    expect(page).to have_content "You are officing the booth located at #{booth.location}."
   end
 
   scenario 'Officer with multiple booth assignments today' do
@@ -51,13 +51,13 @@ feature 'Booth' do
     expect(page).to have_content 'You have been signed in successfully.'
     expect(page).to have_content 'Choose your booth'
 
-    select booth2.name, from: 'booth_id'
+    select booth2.location, from: 'booth_id'
     click_button 'Enter'
 
-    expect(page).to have_content "You are officing the booth located at #{booth2.name}."
+    expect(page).to have_content "You are officing the booth located at #{booth2.location}."
   end
 
-  scenario "Display single booth for any number of polls" do
+  scenario "Display single booth for any number of polls", :focus do
     officer = create(:poll_officer)
 
     booth1 = create(:poll_booth)
@@ -79,7 +79,7 @@ feature 'Booth' do
     expect(page).to have_content 'You have been signed in successfully.'
     expect(page).to have_content 'Choose your booth'
 
-    expect(page).to have_select("booth_id", options: [booth1.name, booth2.name])
+    expect(page).to have_select("booth_id", options: [booth1.location, booth2.location])
   end
 
 end
