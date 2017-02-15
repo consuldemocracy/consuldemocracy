@@ -38,8 +38,4 @@ class Officing::VotersController < Officing::BaseController
                              .first
     end
 
-    def current_booth
-      Poll::Booth.find(session[:booth_id])
-    end
-
 end

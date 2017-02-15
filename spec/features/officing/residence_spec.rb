@@ -25,7 +25,7 @@ feature "Residence", :with_frozen_time do
 
     background do
       create(:poll_officer_assignment, officer: officer)
-      login_as(officer.user)
+      login_through_form_as(officer.user)
       visit officing_root_path
     end
 

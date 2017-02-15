@@ -59,6 +59,10 @@ feature "Voters" do
     user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
     expect(user).not_to be_level_two_verified
 
+    visit root_path
+    click_link "Sign out"
+    login_through_form_as(officer.user)
+
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -97,7 +101,7 @@ feature "Voters" do
   end
 
   scenario "Store officer and booth information", :js do
-    create(:user, :in_census, id: rand(9999))
+    create(:user, :in_census, id: rand(9999999))
     poll1 = create(:poll, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, name: "Pregunta de votación de prueba")
 

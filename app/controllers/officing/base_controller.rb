@@ -26,9 +26,13 @@ class Officing::BaseController < ApplicationController
     end
 
     def verify_booth
-      if session[:booth_id].blank?
+      if current_booth.blank?
         redirect_to new_officing_booth_path
       end
+    end
+
+    def current_booth
+      Poll::Booth.where(id: session[:booth_id]).first
     end
 
 end
