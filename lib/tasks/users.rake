@@ -61,7 +61,7 @@ namespace :users do
 
   desc "Updates document_number with the ones returned by the Census API, if they exist"
   task assign_census_document_number: :environment do
-    User.residence_verified.find_each do |u|
+    User.residence_verified.order(id: :desc).find_each do |u|
       begin
         response = CensusApi.new.call(u.document_type, u.document_number)
         if response.valid?
