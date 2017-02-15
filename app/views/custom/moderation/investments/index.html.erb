@@ -22,29 +22,40 @@
 
   <table>
     <tr>
-      <th>
+      <th colspan="2">
         <%= t("moderation.investments.index.headers.investment") %>
       </th>
-      <th>
-       <%= t("moderation.investments.index.headers.moderate") %>
-      </th>
+      <!-- <th>
+       <% t("moderation.investments.index.headers.moderate") %>
+      </th> -->
     </tr>
 
     <% @budget_investmens.each do |budget_investment| %>
-      <tr id="budget_investment_<%= budget_investment.id %>">
-        <td>
+      <tr>
+        <td colspan="2">
           <%= render 'budgets/investments/investment_simple', investment: budget_investment %>
+        </td>
+      </tr>
+
+      <tr id="budget_investment_<%= budget_investment.id %>">
+        <td class="text-center large-1">
+          <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
+         </td>
+        <td>
+          <%= label_tag "budget_investment[#{budget_investment.id}]moderation_text", t('moderation.investments.index.moderation_text_label') %>
           <%= text_field_tag "budget_investment[#{budget_investment.id}]moderation_text", budget_investment.moderation_text %>
          </td>
-        <td class="text-center">
-          <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
-        </td>
       </tr>
     <% end %>
   </table>
 
-  <%= submit_tag t('moderation.investments.index.block_authors'),
+  <!-- <% submit_tag t('moderation.investments.index.block_authors'),
     name: "block_authors",
+    class: "button hollow alert",
+    data: {confirm: t('moderation.budget_investments.index.confirm')}
+  %> -->
+  <%= submit_tag t('moderation.investments.index.unfeasible'),
+    name: "mark_unfeasible",
     class: "button hollow alert",
     data: {confirm: t('moderation.budget_investments.index.confirm')}
   %>

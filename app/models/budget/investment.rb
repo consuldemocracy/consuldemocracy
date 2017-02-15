@@ -77,6 +77,15 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
+    def mark_unfeasible
+      feasibility = 'unfeasible'
+      valuation_finished = true
+      save
+    end
+
+    def aviso_inviable
+      Mailer.budget_investment_moderated_hide(self).deliver
+    end
 
     def aviso_moderacion
       Mailer.budget_investment_moderated_hide(self).deliver
