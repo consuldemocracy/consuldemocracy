@@ -24,7 +24,7 @@
 // -----------------
 
 ::selection {
-  color: white;
+  color: black;
   background-color: $brand;
 }
 
@@ -44,7 +44,7 @@ p {
 }
 
 a {
-  color: $link;
+  color: black;
 
   &:hover, &:active {
     color: $link-hover;
