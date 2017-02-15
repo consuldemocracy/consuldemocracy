@@ -73,7 +73,7 @@ class CensusApi
     end
 
     def document_number
-      str = datos_habitante[:identificador_documento]
+      "#{datos_habitante[:identificador_documento]}#{datos_habitante[:letra_documento_string]}"
     end
 
     private
@@ -153,7 +153,7 @@ class CensusApi
     end
 
     def stubbed_valid_response
-      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678Z", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
+      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678", letra_documento_string: "Z", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
     end
 
     def stubbed_invalid_response

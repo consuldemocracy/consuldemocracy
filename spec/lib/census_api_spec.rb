@@ -80,6 +80,16 @@ describe CensusApi do
         expect(make_response_with_date('potato').date_of_birth).to be_nil
       end
     end
+
+    describe '#document_number' do
+      def make_response_with_dni(number, letter)
+        CensusApi::Response.new(get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {item: {identificador_documento: number, letra_documento_string: letter}}}})
+      end
+      it "gets the number gluing the number and letter from the api" do
+        expect(make_response_with_dni('12345678', 'Z').document_number).to eq('12345678Z')
+        expect(make_response_with_dni('66666666', 'Q').document_number).to eq('66666666Q')
+      end
+    end
   end
 
 end
