@@ -122,7 +122,9 @@ feature 'Residence' do
     # set_officing_booth(booth)
 
     visit new_officing_residence_path
-    expect(page).to have_content "You are officing booth #{booth.name}"
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    end
 
     visit new_officing_residence_path
     officing_verify_residence
