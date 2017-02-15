@@ -98,9 +98,6 @@ en:
         next_question: Next question
         first_question: First question
         share: Share
-        share_twitter: Share on Twitter
-        share_facebook: Share on Facebook
-        share_gplus: Share on Google+
         title: Collaborative legislation process
       participation:
         phase_not_open: This phase is not open
@@ -111,3 +108,7 @@ en:
         verified_only: Only verified users can participate, %{verify_account}.
         verify_account: verify your account
         debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
+    shared:
+      share_twitter: Share on Twitter
+      share_facebook: Share on Facebook
+      share_gplus: Share on Google+

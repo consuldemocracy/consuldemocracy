@@ -525,7 +525,15 @@ $epigraph-line-height: rem-calc(22);
 }
 
 .draft-panels {
+  position: relative;
   padding: 2rem 0;
+  
+  aside.absolute {
+    @include breakpoint(medium) {
+      position: absolute;
+      right: 0;
+    }
+  }
 
   .draft-chooser {
     margin-bottom: 2rem;
