@@ -77,7 +77,7 @@ fr:
       finished: Fin du budget
     groups:
       show:
-        title: Sélectionnez une option
+        title: Sélectionnez un site
         unfeasible_title: Propositions invalides
         unfeasible: Voir les propositions invalides
 
@@ -131,6 +131,9 @@ fr:
           title: Micro aménagements
           description: Abr vélo / Equipements mobiles pour livres / CD / magazines / jardinières
           img: custom/micro_development.svg
+    ballots:
+      show:
+        remove: Annulez votre vote pour cette proposition
 # ok jusqu'à là
 
     # ballots:
