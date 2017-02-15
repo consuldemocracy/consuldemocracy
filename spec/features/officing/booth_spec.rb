@@ -30,7 +30,7 @@ feature 'Booth' do
 
     login_through_form_as(officer.user)
 
-    expect(page).to have_content "You are officing booth #{booth.name}"
+    expect(page).to have_content "You are officing the booth located at #{booth.name}."
   end
 
   scenario 'Officer with multiple booth assignments today' do
@@ -54,7 +54,7 @@ feature 'Booth' do
     select booth2.name, from: 'booth_id'
     click_button 'Enter'
 
-    expect(page).to have_content "You are officing booth #{booth2.name}"
+    expect(page).to have_content "You are officing the booth located at #{booth2.name}."
   end
 
 end
