@@ -19,7 +19,6 @@ en:
     booth:
       new:
         title: "Choose your booth"
-        success: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     results:
       flash:
         create: "Results saved"
