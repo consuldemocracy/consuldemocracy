@@ -179,10 +179,7 @@ feature 'Voters' do
     expect(page).to have_content poll2.name
 
     within("#poll_#{poll2.id}") do
-      expect {
-        click_button "Confirm vote"
-        expect(page).to have_content "wait for capybara to load page"}.
-      to raise_exception(ActiveRecord::RecordInvalid)
+      expect(page).to_not have_content "Vote introduced!"
     end
   end
 
