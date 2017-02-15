@@ -1,5 +1,8 @@
 ---
 es:
+  i18n:
+    language:
+      name: "Español"
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
