@@ -1884,7 +1884,7 @@ es:
       subject: "Tu propuesta '%{title}' ha sido exluida"
       content: |-
         Estimado usuario,
-        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión %{title} quedará excluido de este proceso participativo por el siguiente motivo:
+        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
 
         %{moderation_text}
 
@@ -1894,8 +1894,10 @@ es:
       subject: "Tu propuesta '%{title}' ha sido marcada como inviable"
       content: |-
         Estimado usuario,
-        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión 'TITULO DE LA PROPUESTA' quedará excluido de este proceso participativo por el siguiente motivo:
-        #{descripcion}
+        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+
+        %{moderation_text}
+
         Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
         Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
 
@@ -2037,6 +2039,8 @@ es:
       budget_investments: Propuestas de Inversión
     investments:
       index:
+        moderation_text_label: Motivo
+        unfeasible: Marcar como inviable
         title: Moderación de Propuestas de Inversión
         block_authors: Bloquear autores
         hide_investments: Ocultar propuestas

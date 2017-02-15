@@ -1263,6 +1263,27 @@ va:
       sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
       subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
       unfeasible_html: "es de l'Ajuntament volem agrair la teua participació en els <strong>Pressupostos Participatius</strong>. Lamentem informar-te que la teua proposta d'inversió <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
+
+    budget_investment_moderate_hide:
+      subject: "La teua proposta '%{title}' ha segut exluída"
+      content: |-
+        Estimat usuari,
+        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+
+        %{moderation_text}
+
+        Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
+        Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
+    budget_investment_moderate_unfeasible:
+      subject: "Tu propuesta '%{title}' ha sido marcada como inviable"
+      content: |-
+        Estimado usuario,
+        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+
+        %{moderation_text}
+
+        Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
+        Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
   management:
     organization_verifications:
       title: Utilizar la aplicación en nombre de una Asociación
@@ -1443,6 +1464,7 @@ va:
       flagged_debates: Debates
       proposals: Propuestas
       users: Bloquear usuarios
+      budget_investments: Propostes d'Inversió
     proposals:
       index:
         block_authors: Bloquear autores
@@ -1464,6 +1486,8 @@ va:
         title: Propuestas
     investments:
       index:
+        unfeasible: Marcar com inviable
+        moderation_text_label: Motiu
         title: Moderación de Propuestas de Inversión
         block_authors: Bloquear autores
         confirm: "¿Estás seguro?"
