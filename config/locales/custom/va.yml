@@ -3,6 +3,11 @@ va:
   i18n:
     language:
       name: "Valencià"
+  date:
+    order:
+    - :day
+    - :month
+    - :year
   account:
     show:
       change_credentials_link: Canviar les meues dades d'accés
