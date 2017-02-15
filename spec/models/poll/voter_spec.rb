@@ -122,9 +122,10 @@ describe :voter do
 
     describe "#web" do
       it "returns voters with a web origin" do
+        oa = create(:poll_officer_assignment)
         voter1 = create(:poll_voter, origin: "web")
         voter2 = create(:poll_voter, origin: "web")
-        voter3 = create(:poll_voter, origin: "booth")
+        voter3 = create(:poll_voter, origin: "booth", officer_assignment: oa)
 
         web_voters = Poll::Voter.web
 
@@ -137,8 +138,9 @@ describe :voter do
 
     describe "#booth" do
       it "returns voters with a booth origin" do
-        voter1 = create(:poll_voter, origin: "booth")
-        voter2 = create(:poll_voter, origin: "booth")
+        oa = create(:poll_officer_assignment)
+        voter1 = create(:poll_voter, origin: "booth", officer_assignment: oa)
+        voter2 = create(:poll_voter, origin: "booth", officer_assignment: oa)
         voter3 = create(:poll_voter, origin: "web")
 
         booth_voters = Poll::Voter.booth
