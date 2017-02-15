@@ -59,6 +59,27 @@ namespace :users do
     end
   end
 
+  desc "Updates document_number with the ones returned by the Census API, if they exist"
+  task assign_census_document_number: :environment do
+    User.residence_verified.order(id: :desc).find_each do |u|
+      begin
+        response = CensusApi.new.call(u.document_type, u.document_number)
+        if response.valid?
+          u.document_number = response.document_number
+          if u.save
+            print "."
+          else
+            print "\n\nUpdate error for user: #{u.id}. Old doc:#{u.document_number_was}, new doc: #{u.document_number}. Errors: #{u.errors.full_messages} \n\n"
+          end
+        else
+          print "X"
+        end
+      rescue StandardError => e
+        print "\n\nError for user: #{u.id} - #{e} \n\n"
+      end
+    end
+  end
+
   desc "Makes duplicate username users change their username"
   task social_network_reset: :environment do
     duplicated_usernames = User.all.select(:username).group(:username).having('count(username) > 1').pluck(:username)

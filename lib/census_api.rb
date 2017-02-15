@@ -41,7 +41,7 @@ class CensusApi
     end
 
     def date_of_birth
-      str = data[:datos_habitante][:item][:fecha_nacimiento_string]
+      str = datos_habitante[:fecha_nacimiento_string]
       day, month, year = str.match(DDMMYYYY_REGEX).try(:[], 1..3)
       date = extract_date(year, month, day) || extract_date(year, day, month)
       unless date
@@ -60,7 +60,7 @@ class CensusApi
     end
 
     def gender
-      case data[:datos_habitante][:item][:descripcion_sexo]
+      case datos_habitante[:descripcion_sexo]
       when "Varón"
         "male"
       when "Mujer"
@@ -69,11 +69,11 @@ class CensusApi
     end
 
     def name
-      "#{data[:datos_habitante][:item][:nombre]} #{data[:datos_habitante][:item][:apellido1]}"
+      "#{datos_habitante[:nombre]} #{datos_habitante[:apellido1]}"
     end
 
     def document_number
-      str = data[:datos_habitante][:item][:identificador_documento]
+      "#{datos_habitante[:identificador_documento]}#{datos_habitante[:letra_documento_string]}"
     end
 
     private
@@ -87,11 +87,27 @@ class CensusApi
       end
 
       def datos_habitante
-        (data[:datos_habitante] && data[:datos_habitante][:item]) || {}
+        return {} if (data[:datos_habitante].blank? || data[:datos_habitante][:item].blank?)
+        case data[:datos_habitante][:item].class.name
+          when 'Hash'
+            data[:datos_habitante][:item]
+          when 'Array'
+            data[:datos_habitante][:item].last
+          else
+            {}
+        end
       end
 
       def datos_vivienda
-        (data[:datos_vivienda] && data[:datos_vivienda][:item]) || {}
+        return {} if (data[:datos_vivienda].blank? && data[:datos_vivienda][:item].blank?)
+        case data[:datos_vivienda][:item].class.name
+          when 'Hash'
+            data[:datos_vivienda][:item]
+          when 'Array'
+            data[:datos_vivienda][:item].last
+          else
+            {}
+        end
       end
 
       def data
@@ -137,7 +153,7 @@ class CensusApi
     end
 
     def stubbed_valid_response
-      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678Z", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
+      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678", letra_documento_string: "Z", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
     end
 
     def stubbed_invalid_response

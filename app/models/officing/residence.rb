@@ -21,6 +21,8 @@ class Officing::Residence
   def save
     return false unless valid?
 
+    self.document_number = @census_api_response.document_number
+
     if user_exists?
       self.user = find_user_by_document
       self.user.update(verified_at: Time.current)
