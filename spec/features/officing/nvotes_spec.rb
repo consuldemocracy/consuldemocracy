@@ -8,6 +8,7 @@ feature 'Officing Nvotes', :selenium do
     login_as(officer.user)
     create(:geozone, census_code: "01")
     use_digital_booth
+    set_officing_booth
   end
 
   scenario "Send vote for single poll" do
@@ -80,10 +81,14 @@ feature 'Officing Nvotes', :selenium do
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
-    ba1 = create(:poll_booth_assignment, poll: poll1)
-    ba2 = create(:poll_booth_assignment, poll: poll2)
+    booth = create(:poll_booth)
+
+    ba1 = create(:poll_booth_assignment, poll: poll1, booth: booth)
+    ba2 = create(:poll_booth_assignment, poll: poll2, booth: booth)
     oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
     oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
+
+    set_officing_booth(booth)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -104,6 +109,38 @@ feature 'Officing Nvotes', :selenium do
     nvote2 = Poll::Nvote.last
     expect(nvote2.booth_assignment).to eq(ba2)
     expect(nvote2.officer_assignment).to eq(oa2)
+  end
+
+  scenario "Store officer and booth information (two booths in one day)" do
+    user  = create(:user, :in_census, id: rand(9999))
+    poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
+
+    booth1 = create(:poll_booth)
+    booth2 = create(:poll_booth)
+
+    ba1 = create(:poll_booth_assignment, poll: poll1, booth: booth1)
+    ba2 = create(:poll_booth_assignment, poll: poll1, booth: booth2)
+
+    oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
+    oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
+
+    set_officing_booth(booth2)
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    click_link "Vote on tablet"
+
+    nvotes = find(".agoravoting-voting-booth-iframe")
+    within_frame(nvotes) do
+      expect(page).to have_content "¿Quieres que XYZ sea aprobado?"
+    end
+
+    expect(Poll::Nvote.count).to eq(1)
+
+    nvote = Poll::Nvote.first
+    expect(nvote.booth_assignment).to eq(ba2)
+    expect(nvote.officer_assignment).to eq(oa2)
   end
 
   scenario "Validate next document" do

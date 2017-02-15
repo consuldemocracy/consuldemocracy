@@ -2,6 +2,10 @@ class Officing::VotersController < Officing::BaseController
   respond_to :html, :js
   helper_method :physical_booth?
 
+  before_action :load_officer_assignment
+  before_action :verify_officer_assignment
+  before_action :verify_booth
+
   def new
     @user = User.find(params[:id])
     @polls = Poll.answerable_by(@user)
@@ -49,8 +53,13 @@ class Officing::VotersController < Officing::BaseController
     def officer_assignment(poll)
       Poll::OfficerAssignment.by_officer(current_user.poll_officer)
                              .by_poll(poll)
+                             .by_booth(current_booth)
                              .by_date(Date.current)
                              .first
+    end
+
+    def current_booth
+      Poll::Booth.find(session[:booth_id])
     end
 
     def physical_booth?
@@ -60,4 +69,5 @@ class Officing::VotersController < Officing::BaseController
 
       officer_assignment.booth_assignment.booth.physical?
     end
+
 end

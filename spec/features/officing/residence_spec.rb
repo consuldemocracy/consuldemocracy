@@ -93,4 +93,28 @@ feature 'Residence' do
 
   end
 
+  scenario "Verify booth", :js do
+    booth = create(:poll_booth)
+    poll = create(:poll)
+
+    ba = create(:poll_booth_assignment, poll: poll, booth: booth )
+    oa = create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+
+    login_as(officer.user)
+
+    # User somehow skips setting session[:booth_id]
+    # set_officing_booth(booth)
+
+    visit new_officing_residence_path
+    expect(page).to have_content "You are officing booth #{booth.name}"
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+    click_button "Confirm vote"
+
+    expect(page).to have_content "Vote introduced!"
+  end
+
 end
