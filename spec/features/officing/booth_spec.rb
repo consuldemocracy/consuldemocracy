@@ -57,4 +57,29 @@ feature 'Booth' do
     expect(page).to have_content "You are officing the booth located at #{booth2.name}."
   end
 
+  scenario "Display single booth for any number of polls" do
+    officer = create(:poll_officer)
+
+    booth1 = create(:poll_booth)
+    booth2 = create(:poll_booth)
+
+    poll1 = create(:poll)
+    poll2 = create(:poll)
+
+    ba1 = create(:poll_booth_assignment, poll: poll1, booth: booth1)
+    ba2 = create(:poll_booth_assignment, poll: poll2, booth: booth2)
+    ba3 = create(:poll_booth_assignment, poll: poll2, booth: booth2)
+
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.today)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.today)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba3, date: Date.today)
+
+    login_through_form_as(officer.user)
+
+    expect(page).to have_content 'You have been signed in successfully.'
+    expect(page).to have_content 'Choose your booth'
+
+    expect(page).to have_select("booth_id", options: [booth1.name, booth2.name])
+  end
+
 end

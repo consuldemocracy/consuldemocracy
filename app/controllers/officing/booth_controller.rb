@@ -27,7 +27,7 @@ class Officing::BoothController < Officing::BaseController
 
   def load_booths
     officer = current_user.poll_officer
-    @booths = officer.officer_assignments.by_date(Date.today).map(&:booth)
+    @booths = officer.officer_assignments.by_date(Date.today).map(&:booth).uniq
   end
 
   def only_one_booth?
