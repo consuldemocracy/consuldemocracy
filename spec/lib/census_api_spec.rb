@@ -50,6 +50,16 @@ describe CensusApi do
 
       expect(response).to_not be_valid
     end
+
+    it "accepts response with array of items" do
+      item_array = {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {item:[{whatever: ""},{nombre: "Marie", apellido1: "Curie"}] }}}}
+
+      expect(api).to receive(:get_response_body).with(1, "123456").and_return(item_array)
+
+      response = api.call(1, "123456")
+      expect(response).to be_valid
+      expect(response.name).to eq("Marie Curie")
+    end
   end
 
   describe 'Response' do
