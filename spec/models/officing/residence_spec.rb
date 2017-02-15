@@ -103,6 +103,13 @@ describe Officing::Residence do
       expect(user.reload).to be_level_three_verified
     end
 
+    it "takes the document number from the census API" do
+      residence = build(:officing_residence, document_number: "000012345678Z", year_of_birth: 1980)
+      residence.save
+      expect(residence.document_number).to eq("12345678Z")
+      expect(residence.user.document_number).to eq("12345678Z")
+    end
+
     it "stores failed census calls" do
       residence = build(:officing_residence, :invalid, document_number: "12345678Z")
       residence.save
