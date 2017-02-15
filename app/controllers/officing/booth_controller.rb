@@ -9,14 +9,14 @@ class Officing::BoothController < Officing::BaseController
 
     if only_one_booth?
       set_booth(@booths.first)
-      redirect_to officing_root_path, notice: t("officing.booth.new.success", booth: @booths.first.location)
+      redirect_to officing_root_path
     end
   end
 
   def create
     find_booth
     set_booth(@booth)
-    redirect_to officing_root_path, notice: t("officing.booth.new.success", booth: @booth.location)
+    redirect_to officing_root_path
   end
 
   private

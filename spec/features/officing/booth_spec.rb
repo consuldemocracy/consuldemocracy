@@ -30,7 +30,9 @@ feature 'Booth' do
 
     login_through_form_as(officer.user)
 
-    expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    end
   end
 
   scenario 'Officer with multiple booth assignments today' do
@@ -54,10 +56,12 @@ feature 'Booth' do
     select booth2.location, from: 'booth_id'
     click_button 'Enter'
 
-    expect(page).to have_content "You are officing the booth located at #{booth2.location}."
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth2.location}."
+    end
   end
 
-  scenario "Display single booth for any number of polls", :focus do
+  scenario "Display single booth for any number of polls" do
     officer = create(:poll_officer)
 
     booth1 = create(:poll_booth)
