@@ -46,6 +46,22 @@ feature 'Residence' do
       expect(page).to have_content 'Document verified with Census'
     end
 
+    scenario "Document number is copied from the census API" do
+      within("#side_menu") do
+        click_link "Validate document"
+      end
+
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "00012345678Z"
+      fill_in 'residence_year_of_birth', with: '1980'
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Document verified with Census'
+
+      expect(User.last.document_number).to eq('12345678Z')
+    end
+
     scenario "Error on verify" do
       within("#side_menu") do
         click_link "Validate document"
