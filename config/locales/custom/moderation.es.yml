@@ -1,5 +1,5 @@
 ---
-va:
+es:
   moderation:
     comments:
       index:
@@ -66,27 +66,6 @@ va:
           created_at: Más recientes
           flags: Más denunciadas
         title: Propuestas
-    investments:
-      index:
-        block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
-        filter: Filtro
-        filters:
-          all: Todas
-          pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcadas como revisadas
-        headers:
-          moderate: Moderar
-          proposal: Propuesta
-        hide_proposals: Ocultar Propuestas
-        ignore_flags: Marcar como revisadas
-        order: Ordenar por
-        orders:
-          created_at: Más recientes
-          flags: Más denunciadas
-        title: Propuestas
-
-
     users:
       index:
         hidden: Bloqueado

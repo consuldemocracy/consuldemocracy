@@ -18,6 +18,7 @@ module ModerateActions
     set_resource_params
     @resources = @resources.where(id: params[:resource_ids])
 
+
     if params[:hide_resources].present?
       @resources.accessible_by(current_ability, :hide).each {|resource| hide_resource resource}
 
@@ -39,6 +40,10 @@ module ModerateActions
     end
 
     def hide_resource(resource)
+      if resource.respond_to?(:moderation_text)
+        resource.moderation_text =  params[:moderation_texts][resource.id.to_s][:moderation_text]
+        resource.save
+      end
       resource.hide
       Activity.log(current_user, :hide, resource)
     end
@@ -52,7 +57,6 @@ module ModerateActions
       params[:resource_ids] = params["#{resource_name.gsub('::', '_')}_ids"]
       params[:hide_resources] = params["hide_#{resource_name.pluralize.gsub('::', '_')}"]
       params[:moderation_texts] = params["#{resource_name.gsub('::', '_')}"]
-      raise params[:moderation_texts].inspect
     end
 
     def author_id
