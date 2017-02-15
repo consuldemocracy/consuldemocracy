@@ -5,7 +5,7 @@ feature "Voter" do
   context "Origin" do
 
     scenario "Voting in web" do
-      user  = create(:user, :in_census, id: rand(9999))
+      user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll)
       nvote = create(:poll_nvote, user: user, poll: poll)
 
@@ -23,8 +23,7 @@ feature "Voter" do
       officer = create(:poll_officer)
       create(:poll_officer_assignment, officer: officer)
 
-      login_as(officer.user)
-      validate_officer
+      login_through_form_as(officer.user)
 
       visit new_officing_residence_path
       officing_verify_residence

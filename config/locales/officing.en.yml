@@ -23,6 +23,10 @@ en:
         select_poll: Select poll
         add_recount: Add final recount
         add_results: Add results
+    booth:
+      new:
+        title: "Choose your booth"
+        success: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     sessions:
       create:
         flash:

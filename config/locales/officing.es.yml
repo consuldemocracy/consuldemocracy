@@ -23,6 +23,10 @@ es:
         select_poll: "Selecciona votación"
         add_recount: "Añadir recuentos finales"
         add_results: "Añadir resultados"
+    booth:
+      new:
+        title: "Escoge tu urna"
+        success: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     sessions:
       create:
         flash:

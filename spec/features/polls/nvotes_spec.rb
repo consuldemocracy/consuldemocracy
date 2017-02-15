@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Nvotes' do
 
   scenario "Send vote", :selenium do
-    user = create(:user, :level_two, id: rand(9999))
+    user = create(:user, :level_two, id: rand(9999999))
     poll = create(:poll, published: true, nvotes_poll_id: 128)
     officer = create(:poll_officer)
 
@@ -32,6 +32,7 @@ feature 'Nvotes' do
 
     login_as(officer.user)
 
+    set_officing_booth(officer_assignment.booth)
     visit new_officing_voter_path(id: user.id)
 
     within("#poll_#{poll.id}") do
@@ -43,7 +44,7 @@ feature 'Nvotes' do
   context "Store voter" do
 
     scenario "Valid signature" do
-      user  = create(:user, :in_census, id: rand(9999))
+      user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
       nvote = create(:poll_nvote, user: user, poll: poll)
@@ -63,7 +64,7 @@ feature 'Nvotes' do
     end
 
     scenario "Invalid signature" do
-      user  = create(:user, :in_census, id: rand(9999))
+      user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
       nvote = create(:poll_nvote, user: user, poll: poll)
       nvote.update(voter_hash: "33333333")
@@ -82,7 +83,7 @@ feature 'Nvotes' do
     end
 
     scenario "Officer information" do
-      user  = create(:user, :in_census, id: rand(9999))
+      user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
       booth_assignment = create(:poll_booth_assignment, poll: poll)
