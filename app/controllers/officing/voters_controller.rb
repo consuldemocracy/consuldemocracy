@@ -58,10 +58,6 @@ class Officing::VotersController < Officing::BaseController
                              .first
     end
 
-    def current_booth
-      Poll::Booth.find(session[:booth_id])
-    end
-
     def physical_booth?
       officer_assignment = ::Poll::OfficerAssignment.by_officer(current_user.poll_officer)
                                                     .by_date(Date.current)

@@ -7,12 +7,13 @@ feature 'Officing Nvotes', :selenium do
     validate_officer
     login_as(officer.user)
     create(:geozone, census_code: "01")
+
     use_digital_booth
     set_officing_booth
   end
 
   scenario "Send vote for single poll" do
-    user = create(:user, :in_census, id: rand(9999))
+    user = create(:user, :in_census, id: rand(9999999))
     poll = create(:poll)
 
     visit new_officing_residence_path
@@ -43,7 +44,7 @@ feature 'Officing Nvotes', :selenium do
   end
 
   scenario "Send vote for all votable polls" do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
@@ -77,7 +78,7 @@ feature 'Officing Nvotes', :selenium do
   end
 
   scenario "Store officer and booth information" do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
@@ -112,7 +113,7 @@ feature 'Officing Nvotes', :selenium do
   end
 
   scenario "Store officer and booth information (two booths in one day)" do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
 
     booth1 = create(:poll_booth)
@@ -144,7 +145,7 @@ feature 'Officing Nvotes', :selenium do
   end
 
   scenario "Validate next document" do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll = create(:poll)
 
     visit new_officing_residence_path
@@ -172,7 +173,7 @@ feature 'Officing Nvotes', :selenium do
   end
 
   scenario "Error on validate next document" do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll = create(:poll)
 
     visit new_officing_residence_path
@@ -198,7 +199,7 @@ feature 'Officing Nvotes', :selenium do
   end
 
   scenario "Trying to access unauthorized urls as a voter" do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll = create(:poll)
 
     visit new_officing_residence_path

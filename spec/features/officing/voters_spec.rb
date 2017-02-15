@@ -43,6 +43,8 @@ feature 'Voters' do
     voter = create(:poll_voter, poll: poll1, user: user)
 
     use_physical_booth
+    set_officing_booth
+    validate_officer
     visit new_officing_voter_path(id: voter.user.id)
 
     within("#poll_#{poll1.id}") do
@@ -62,7 +64,7 @@ feature 'Voters' do
   end
 
   scenario "Store officer and booth information", :js do
-    user  = create(:user, :in_census, id: rand(9999))
+    user  = create(:user, :in_census, id: rand(9999999))
     poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
@@ -112,6 +114,10 @@ feature 'Voters' do
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
+      visit root_path
+      click_link "Sign out"
+      login_through_form_as(officer.user)
+
       visit new_officing_residence_path
       officing_verify_residence
 
@@ -126,6 +132,10 @@ feature 'Voters' do
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
+      visit root_path
+      click_link "Sign out"
+      login_through_form_as(officer.user)
+
       visit new_officing_residence_path
       officing_verify_residence
 
@@ -139,6 +149,10 @@ feature 'Voters' do
     user = create(:user, residence_verified_at: Time.current, document_type: "1", document_number: "12345678Z")
     expect(user).to_not be_level_two_verified
     poll = create(:poll_officer_assignment, officer: officer).booth_assignment.poll
+
+    visit root_path
+    click_link "Sign out"
+    login_through_form_as(officer.user)
 
     visit new_officing_residence_path
     officing_verify_residence

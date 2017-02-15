@@ -193,14 +193,14 @@ module CommonActions
   end
 
   def validate_officer
-    allow_any_instance_of(Officing::ResidenceController).
+    allow_any_instance_of(Officing::BaseController).
     to receive(:verify_officer_assignment).and_return(true)
   end
 
   def set_officing_booth(booth=nil)
     booth = create(:poll_booth) if booth.blank?
 
-    allow_any_instance_of(Officing::VotersController).
+    allow_any_instance_of(Officing::BaseController).
     to receive(:current_booth).and_return(booth)
   end
 
