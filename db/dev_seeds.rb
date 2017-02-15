@@ -832,7 +832,7 @@ end
 puts " ✅"
 print "Creating Poll Booths"
 30.times.each_with_index do |i|
-  Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
+  Poll::Booth.create(name: "Booth #{i}", location: "Street #{i}", polls: [Poll.all.sample])
 end
 
 puts " ✅"
