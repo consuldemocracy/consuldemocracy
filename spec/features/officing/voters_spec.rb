@@ -161,6 +161,31 @@ feature 'Voters' do
     expect(page).to have_content poll.name
   end
 
+  scenario "No officer assignment for a poll", :js do
+    poll1 = create(:poll)
+    poll2 = create(:poll)
+
+    ba = create(:poll_booth_assignment, poll: poll1)
+    oa = create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+
+    visit root_path
+    click_link "Sign out"
+    login_through_form_as(officer.user)
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll1.name
+    expect(page).to have_content poll2.name
+
+    within("#poll_#{poll2.id}") do
+      expect {
+        click_button "Confirm vote"
+        expect(page).to have_content "wait for capybara to load page"}.
+      to raise_exception(ActiveRecord::RecordInvalid)
+    end
+  end
+
   #Fix and use answerable_by(user)
   xscenario "Display only answerable polls"
 end
