@@ -1,0 +1,20 @@
+
+---
+va:
+  activemodel:
+    models:
+      verification:
+        residence: "Residència"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tipus document"
+          document_number: "Nombre de document (inclosa lletra)"
+          date_of_birth: "Data de naixement"
+          postal_code: "Codi postal"
+        sms:
+          phone: "Teléfono"
+          confirmation_code: "Codi de confirmació"
+        email:
+          recipient: "Email"
