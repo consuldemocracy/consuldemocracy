@@ -25,6 +25,12 @@
         <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"), class: "title", rel: "nofollow" %>
         <p><%= t("layouts.footer.transparency_text") %></p>
       </div>
+      <div class="small-12 medium-4 column">
+        <h2>
+          <%= link_to t("layouts.footer.pla_de_govern_title"), "http://www.castello.es/frontal/transparencia/pages/index.php" %>
+        </h2>
+        <p><%= t("layouts.footer.pla_de_govern_text") %></p>
+      </div>
 
       <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"), class: "title", rel: "nofollow" %>
