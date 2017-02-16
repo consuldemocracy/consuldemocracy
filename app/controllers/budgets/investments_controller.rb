@@ -135,7 +135,7 @@ module Budgets
       end
 
       def locate(tag_string)
-        array_tags = tag_string.split(',').collect(&:strip)
+        array_tags = tag_string.split(',').collect(&:strip).select(&:present?)
         array_tags.collect! { |t| I18n.translate(t, locale: :es, default: t)}
         array_tags.join(',')
       end
