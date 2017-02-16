@@ -80,6 +80,7 @@ va:
           unfeasible: Inviables
           pending_flag_review: Pendents de revisió
           with_ignored_flag: Marcades com revisades
+          hidden: Ocultes
         headers:
           moderate: Moderar
           proposal: Proposta d'Inversió
