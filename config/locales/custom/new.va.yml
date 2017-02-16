@@ -1494,6 +1494,7 @@ va:
         filter: Filtro
         filters:
           all: Todas
+          unfeasible: Inviables
           pending_flag_review: Pendientes de revisión
           with_ignored_flag: Marcadas como revisadas
         headers:
