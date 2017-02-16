@@ -2045,7 +2045,7 @@ es:
         block_authors: Bloquear autores
         hide_investments: Ocultar propuestas
         ignore_flags: Marcar como revisadas
-
+        confirm: ¿Estás seguro?
         headers:
           investment: Propuesta de Inversión
           moderate: Moderar

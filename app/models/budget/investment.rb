@@ -3,7 +3,6 @@ class Budget
 
     include Flaggable
 
-    scope :flagged, -> { where("flags_count >= 0") }
 
     include Measurable
     include Sanitizable
@@ -70,7 +69,12 @@ class Budget
     scope :by_tag,      ->(tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
-    scope :for_render, -> { includes(:heading) }
+    scope :hidden, -> { unscoped.where.not(hidden_at: nil) }
+
+    scope :flagged, -> { where("flags_count >= 0") }
+    scope :pendientes_moderacion, -> { where(ignored_flag_at: nil).not_unfeasible }
+
+    scope :for_render,             -> { includes(:heading) }
 
     before_save :calculate_confidence_score
     after_save :recalculate_heading_winners if :incompatible_changed?
