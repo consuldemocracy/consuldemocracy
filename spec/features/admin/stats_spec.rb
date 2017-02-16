@@ -398,8 +398,9 @@ feature 'Stats' do
   context "Polls" do
 
     scenario "Total votes by origin" do
+      oa = create(:poll_officer_assignment)
       3.times { create(:poll_voter, origin: "web") }
-      5.times { create(:poll_voter, origin: "booth") }
+      5.times { create(:poll_voter, origin: "booth", officer_assignment: oa) }
 
       visit admin_stats_path
 
@@ -433,14 +434,16 @@ feature 'Stats' do
     end
 
     scenario "Votes by poll" do
+      oa = create(:poll_officer_assignment)
+
       poll1 = create(:poll)
       poll2 = create(:poll)
 
       1.times { create(:poll_voter, poll: poll1, origin: "web") }
       2.times { create(:poll_voter, poll: poll2, origin: "web") }
 
-      3.times { create(:poll_voter, poll: poll1, origin: "booth") }
-      4.times { create(:poll_voter, poll: poll2, origin: "booth") }
+      3.times { create(:poll_voter, poll: poll1, origin: "booth", officer_assignment: oa) }
+      4.times { create(:poll_voter, poll: poll2, origin: "booth", officer_assignment: oa) }
 
       visit admin_stats_path
 
