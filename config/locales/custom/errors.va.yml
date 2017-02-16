@@ -1,0 +1,13 @@
+---
+va:
+  errors:
+    messages:
+      already_confirmed: "ja has sigut confirmat, per favor intenta iniciar sessió."
+      confirmation_period_expired: "necessites ser confirmat en %{period}, per favor torna a sol·licitar-la."
+      expired: "ha expirat, per favor torna a sol·licitar-la."
+      not_found: "no s'ha trobat."
+      not_locked: "no estava bloquejat."
+      not_saved:
+        one: "1 error va impedir que aquest %{resource} fóra guardat:"
+        other: "%{count} errors van impedir que aquest %{resource} fóra guardat:"
+      equal_to_current_password: "ha de ser diferent a la contrasenya actual"
