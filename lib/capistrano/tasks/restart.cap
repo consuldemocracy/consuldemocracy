@@ -3,7 +3,7 @@ namespace :deploy do
   desc 'Reinicio de la aplicación'
   task :restart do
     on roles(:app) do
-      execute "touch #{fetch(:full_app_name)}/tmp/restart.txt"
+      execute "touch #{fetch(:release_path)}/tmp/restart.txt"
     end
   end
 
