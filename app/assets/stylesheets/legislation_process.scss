@@ -527,13 +527,6 @@ $epigraph-line-height: rem-calc(22);
 .draft-panels {
   position: relative;
   padding: 2rem 0;
-  
-  aside.absolute {
-    @include breakpoint(medium) {
-      position: absolute;
-      right: 0;
-    }
-  }
 
   .draft-chooser {
     margin-bottom: 2rem;
@@ -1118,6 +1111,10 @@ $epigraph-line-height: rem-calc(22);
 // 10. Legislation draft comment
 // -----------------
 .legislation-comment {
+  
+  .annotation-share-comment {
+    margin-bottom: 2rem;
+  }
 
   .pull-right {
     float: right;
