@@ -25,27 +25,38 @@
       <th colspan="2">
         <%= t("moderation.investments.index.headers.investment") %>
       </th>
-      <!-- <th>
-       <% t("moderation.investments.index.headers.moderate") %>
-      </th> -->
     </tr>
 
     <% @budget_investmens.each do |budget_investment| %>
       <tr>
         <td colspan="2">
           <%= render 'budgets/investments/investment_simple', investment: budget_investment %>
+
+          <% if params[:filter] == "unfeasible" %>
+            <p>
+              <strong><%= t('moderation.investments.index.moderation_text_label') %></strong>
+              <%= budget_investment.unfeasibility_explanation %>
+            </p>
+          <% elsif params[:filter] == "hidden" %>
+            <p>
+              <strong><%= t('moderation.investments.index.moderation_text_label') %></strong>
+              <%= budget_investment.moderation_text %>
+            </p>
+          <% end %>
         </td>
       </tr>
 
-      <tr id="budget_investment_<%= budget_investment.id %>">
-        <td class="text-center large-1">
-          <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
-         </td>
-        <td>
-          <%= label_tag "budget_investment[#{budget_investment.id}]moderation_text", t('moderation.investments.index.moderation_text_label') %>
-          <%= text_field_tag "budget_investment[#{budget_investment.id}]moderation_text", budget_investment.moderation_text %>
-         </td>
-      </tr>
+      <% if params[:filter] == "pendientes_moderacion" || params[:filter].nil? %>
+        <tr id="budget_investment_<%= budget_investment.id %>">
+          <td class="text-center large-1">
+            <%= check_box_tag "budget_investment_ids[]", budget_investment.id, nil, id: "#{dom_id(budget_investment)}_check" %>
+           </td>
+          <td>
+            <%= label_tag "budget_investment[#{budget_investment.id}]moderation_text", t('moderation.investments.index.moderation_text_label') %>
+            <%= text_field_tag "budget_investment[#{budget_investment.id}]moderation_text", budget_investment.moderation_text %>
+           </td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 
@@ -54,24 +65,26 @@
     class: "button hollow alert",
     data: {confirm: t('moderation.budget_investments.index.confirm')}
   %> -->
-  <%= submit_tag t('moderation.investments.index.unfeasible'),
-    name: "mark_unfeasible",
-    class: "button hollow alert",
-    data: {confirm: t('moderation.investments.index.confirm')}
-  %>
-
-  <div class="float-right">
-    <%= submit_tag t('moderation.investments.index.hide_investments'),
-      name: "hide_budget_investments",
+  <% if params[:filter] == "pendientes_moderacion" || params[:filter].nil? %>
+    <%= submit_tag t('moderation.investments.index.unfeasible'),
+      name: "mark_unfeasible",
       class: "button hollow alert",
       data: {confirm: t('moderation.investments.index.confirm')}
     %>
-    <%= submit_tag t('moderation.investments.index.ignore_flags'),
-      name: "ignore_flags",
-      class: "button hollow",
-      data: {confirm: t('moderation.investments.index.confirm')}
-    %>
-  </div>
+
+    <div class="float-right">
+      <%= submit_tag t('moderation.investments.index.hide_investments'),
+        name: "hide_budget_investments",
+        class: "button hollow alert",
+        data: {confirm: t('moderation.investments.index.confirm')}
+      %>
+      <%= submit_tag t('moderation.investments.index.ignore_flags'),
+        name: "ignore_flags",
+        class: "button hollow",
+        data: {confirm: t('moderation.investments.index.confirm')}
+      %>
+    </div>
+  <% end %>
 
   <%= paginate @budget_investmens %>
 
