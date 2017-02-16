@@ -52,9 +52,10 @@ module Abilities
            .budget_investments
            .includes(:budget)
            .where(budgets: { phase: 'accepting'})
-           .where(budget_investments: { hidden_at: nil}).count < 1
+           .where(budget_investments: { feasibility: ['undecided', 'feasible']}).count < 1
+          #  .where(budget_investments: { hidden_at: nil }).count < 1
 
-          can :create, Budget::Investment,               budget: { phase: "accepting" }
+          can :create, Budget::Investment, budget: { phase: "accepting" }
 
           if user.organization? && !user.organization.verified?
             cannot :create, Budget::Investment
