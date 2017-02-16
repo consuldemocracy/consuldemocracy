@@ -9,4 +9,11 @@ class Ahoy::Store < Ahoy::Stores::ActiveRecordStore
       event.ip = request.ip
     end
   end
+
+  def track_visit(options)
+    super do |visit|
+      visit.user_id = nil
+    end
+  end
+
 end
