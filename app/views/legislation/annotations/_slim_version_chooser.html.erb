@@ -17,7 +17,7 @@
     <div class="sidebar-divider"></div>
     <h2>Compartir</h2>
     <div class="social-share-full">
-      <%= render '/legislation/shared/share_buttons', title: @draft_version.title %>
+      <%= render '/legislation/shared/share_buttons', title: t('legislation.shared.share_comment', version_name: @draft_version.title.downcase, process_name: @process.title) %>
     </div>
   </aside>
 </div>
