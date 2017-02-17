@@ -83,7 +83,7 @@ va:
         T'informem que la teua proposta d'inversió __%{title}__ ha sigut exclosa d'aquest procés
         participatiu pel següent motiu:
 
-        %{moderation_text}
+        *%{moderation_text}*
 
         Pots consultar les normes d'ús en aquest enllaç <a href="https://decidim.castello.es/conditions">Condicions</a>.
         Atentament,
@@ -92,7 +92,7 @@ va:
         REGIDORIA DE PARTICIPACIÓ CIUTADANA
 
     budget_investment_moderate_unfeasible:
-      subject: "La teua proposta '%{title}' ha sido marcada com inviable"
+      subject: "La teua proposta '%{title}' ha segut marcada com inviable"
       content: |-
         Benvolgut usuari,
 
@@ -100,9 +100,9 @@ va:
 
         T'informem que la teua proposta d'inversió __%{title}__ quedarà exclosa d'aquest procés participatiu pel següent motiu:
 
-        %{moderation_text}
+        *%{moderation_text}*
 
-        Per tot açò, et convidem al fet que elabores una nova proposta d'inversió que s'ajuste a les condicions d'aquest procés Açò ho pots fer en aquest enllaç: nova proposta d'inversió. Has de tenir en compte que el termini per fer propostes d'inversió noves finalitza el dia 5 de març.
+        Per tot açò, et convidem al fet que elabores una nova proposta d'inversió que s'ajuste a les condicions d'aquest procés Açò ho pots fer en aquest enllaç: <a href="https://decidim.castello.es/budgets/1/investments/new">nova proposta d'inversió</a>. Has de tenir en compte que el termini per fer propostes d'inversió noves finalitza el dia 5 de març.
 
         Si consideres que la proposta d'inversió rebutjada compleix els requisits per a mantenir-la com a proposta d'inversió, podràs comunicar-ho com més aviat millor al correu decidim@castello.es, indicant necessàriament per a la seua tramitació el codi de la proposta d’inversió %{code} com assumpte del correu, així com la justificació i el teu telèfon.
 
