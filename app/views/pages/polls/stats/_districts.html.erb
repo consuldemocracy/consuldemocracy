@@ -1,0 +1,243 @@
+<h3 id="12">Participación por distritos</h4>
+
+<div class="show-for-medium medium-6 column small-centered margin">
+  <%= image_tag("map.jpg", usemap: "#map", alt: "Mapa de distritos de Madrid") %>
+</div>
+
+<map name="map" id="html_map">
+  <% Geozone.all.each do |geozone| %>
+    <area shape="poly"
+          coords="<%= geozone.html_map_coordinates %>"
+          href="#<%= geozone.name.parameterize %>"
+          title="<%= geozone.name %>"
+          alt="<%= geozone.name %>">
+  <% end %>
+</map>
+
+<table class="polls-participation-district">
+  <thead>
+    <tr>
+      <th class="border-right district">DISTRITO</th>
+      <th>WEB</th>
+      <th>URNAS</th>
+      <th>CORREOS</th>
+      <th class="border-left">TOTAL</th>
+      <th>% PARTICIPACIÓN POBLACIÓN DEL DISTRITO</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr id="arganzuela">
+    <td class="border-right">
+      <span class="label large"><strong>Arganzuela</strong></span>
+    </td>
+    <td>2200 <small><em>(3,14%)</em></small></td>
+    <td>200 <small><em>(8,25%)</em></small></td>
+    <td>400 <small><em>(16,46%)</em></small></td>
+    <td class="border-left">2800 <small><em>(5,31%)</em></small></td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="barajas">
+    <td class="border-right">
+      <span class="label large"><strong>Barajas</strong></span>
+    </td>
+    <td>257</td>
+    <td>0,96%</td>
+    <td>0,55%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="carabanchel">
+    <td class="border-right">
+      <span class="label large"><strong>Carabanchel</strong></span>
+    </td>
+    <td>1287</td>
+    <td>4,79%</td>
+    <td>0,52%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="centro">
+    <td class="border-right">
+      <span class="label large"><strong>Centro</strong></span>
+    </td>
+    <td>4534</td>
+    <td>16,88%</td>
+    <td>3,41%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="chamartin">
+    <td class="border-right">
+      <span class="label large"><strong>Chamartín</strong></span>
+    </td>
+    <td>1410</td>
+    <td>5,25%</td>
+    <td>0,98%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="chamberi">
+    <td class="border-right">
+      <span class="label large"><strong>Chamberí</strong></span>
+    </td>
+    <td>1740</td>
+    <td>6,48%</td>
+    <td>1,26%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="ciudad-lineal">
+    <td class="border-right">
+      <span class="label large"><strong>Ciudad Lineal</strong></span>
+    </td>
+    <td>1181</td>
+    <td>4,40%</td>
+    <td>0,55%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="fuencarral-el-pardo">
+    <td class="border-right">
+      <span class="label large"><strong>Fuencarral - El Pardo</strong></span>
+    </td>
+    <td>1617</td>
+    <td>6,02%</td>
+    <td>0,68%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="hortaleza">
+    <td class="border-right">
+      <span class="label large"><strong>Hortaleza</strong></span>
+    </td>
+    <td>1100</td>
+    <td>4,10%</td>
+    <td>0,62%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="latina">
+    <td class="border-right">
+      <span class="label large"><strong>Latina</strong></span>
+    </td>
+    <td>1677</td>
+    <td>6,24%</td>
+    <td>0,71%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="moncloa-aravaca">
+    <td class="border-right">
+      <span class="label large"><strong>Moncloa - Aravaca</strong></span>
+    </td>
+    <td>1610</td>
+    <td>5,99%</td>
+    <td>1,37%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="moratalaz">
+    <td class="border-right">
+      <span class="label large"><strong>Moratalaz</strong></span>
+    </td>
+    <td>548</td>
+    <td>2,04%</td>
+    <td>0,57%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="puente-de-vallecas">
+    <td class="border-right">
+      <span class="label large"><strong>Puente de Vallecas</strong></span>
+    </td>
+    <td>1028</td>
+    <td>3,83%</td>
+    <td>0,45%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="retiro">
+    <td class="border-right">
+      <span class="label large"><strong>Retiro</strong></span>
+    </td>
+    <td>1283</td>
+    <td>4,78%</td>
+    <td>1,07%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="san-blas-canillejas">
+    <td class="border-right">
+      <span class="label large"><strong>San Blas - Canillejas</strong></span>
+    </td>
+    <td>746</td>
+    <td>2,78%</td>
+    <td>0,48%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="salamanca">
+    <td class="border-right">
+      <span class="label large"><strong>Salamanca</strong></span>
+    </td>
+    <td>1212</td>
+    <td>4,51%</td>
+    <td>0,84%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="tetuan">
+    <td class="border-right">
+      <span class="label large"><strong>Tetuán</strong></td></span>
+      <td>1288</td>
+      <td>4,80%</td>
+      <td>0,84%</td>
+      <td class="border-left">8,19%</td>
+      <td>1,44%</td>
+    </td>
+  </tr>
+  <tr id="usera">
+    <td class="border-right">
+      <span class="label large"><strong>Usera</strong></span>
+    </td>
+    <td>584</td>
+    <td>2,17%</td>
+    <td>0,43%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="vicalvaro">
+    <td class="border-right">
+      <span class="label large"><strong>Vicálvaro</strong></span>
+    </td>
+    <td>310</td>
+    <td>1,15%</td>
+    <td>0,44%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="villaverde">
+    <td class="border-right">
+      <span class="label large"><strong>Villaverde</strong></span>
+    </td>
+    <td>594</td>
+    <td>2,21%</td>
+    <td>0,41%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  <tr id="villa-de-vallecas">
+    <td class="border-right">
+      <span class="label large"><strong>Villa de Vallecas</strong></span>
+    </td>
+    <td>654</td>
+    <td>2,43%</td>
+    <td>0,64%</td>
+    <td class="border-left">8,19%</td>
+    <td>1,44%</td>
+  </tr>
+  </tbody>
+</table>
+<p>
+  <em>* No se dispone de los datos demográficos de 100 participantes.</em>
+</p>
