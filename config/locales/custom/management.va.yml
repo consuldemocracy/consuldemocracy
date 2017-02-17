@@ -82,7 +82,7 @@ va:
       print:
         print_button: Imprimir
     budgets:
-      create_new_investment: Crear nueva propuesta de inversión
+      create_new_investment: Crear nova proposta d'inversió
       print_investments: Imprimir propuestas de inversión
       support_investments: Apoyar propuestas de inversión
     budget_investments:
