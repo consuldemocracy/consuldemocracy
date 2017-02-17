@@ -64,9 +64,10 @@ module Abilities
 
         budgets_current = Budget.includes(:investments).where(phase: 'selecting')
         investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
-        if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size < 3
+        if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size < 3 
           can :vote,   Budget::Investment,               budget: { phase: "selecting" }
         end
+
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 

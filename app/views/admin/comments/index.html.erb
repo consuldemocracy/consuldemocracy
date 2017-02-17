@@ -12,6 +12,7 @@
         <% if comment.commentable.hidden? %>
           (<%= t("admin.comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
         <% else %>
+
           <%= link_to comment.commentable.title, comment.commentable %>
         <% end %>
       </td>
