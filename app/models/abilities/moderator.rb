@@ -7,6 +7,8 @@ module Abilities
 
       can :comment_as_moderator, [Debate, Comment, Proposal, Budget::Investment, Poll::Question,
                                   Legislation::Question, Legislation::Annotation]
+      can [:valuate], Budget::Investment
+      can [:hide], Budget::Investment
     end
   end
 end

@@ -22,7 +22,8 @@ module ModerateActions
       @resources.accessible_by(current_ability, :valuate).each {|resource| mark_unfeasible_resource resource}
     else
       if params[:hide_resources].present?
-        @resources.accessible_by(current_ability, :hide).each {|resource| hide_resource resource}
+        a = @resources.accessible_by(current_ability, :hide)
+        a.each {|resource| hide_resource resource}
 
       elsif params[:ignore_flags].present?
         @resources.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
