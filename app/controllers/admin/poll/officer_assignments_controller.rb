@@ -36,7 +36,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     @officer_assignment = ::Poll::OfficerAssignment.new(booth_assignment: @booth_assignment,
                                                         officer_id: create_params[:officer_id],
                                                         date: create_params[:date])
-    @officer_assignment.final = true if @officer_assignment.date > @booth_assignment.poll.ends_at
+    @officer_assignment.final = true if @officer_assignment.date > @booth_assignment.poll.ends_at.to_date
 
     if @officer_assignment.save
       notice = t("admin.poll_officer_assignments.flash.create")
