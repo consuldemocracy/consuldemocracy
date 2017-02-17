@@ -471,7 +471,7 @@ en:
       more_info: "More information"
       already_voted: "You already have participated in this poll."
       polls: "Polls"
-      more_polls: "Keep voting"
+      more_polls: "Go to other polls"
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"

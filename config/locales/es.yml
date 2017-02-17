@@ -471,7 +471,7 @@ es:
       more_info: "Más información"
       already_voted: "Ya has participado en esta votación."
       polls: "Votaciones"
-      more_polls: "Seguir votando"
+      more_polls: "Ir a otras votaciones"
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
