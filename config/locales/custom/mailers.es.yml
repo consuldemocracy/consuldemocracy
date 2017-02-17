@@ -79,8 +79,8 @@ es:
         Estimado usuario,
 
         desde el Ayuntamiento queremos agradecer tu participación en los __Presupuestos Participativos__.
-        Te informamos que tu propuesta de inversión __%{title}__ ha sido excluida de este proceso
-        participativo por el siguiente motivo:
+
+        Te informamos que tu propuesta de inversión __%{title}__ ha sido excluida de este proceso participativo por el siguiente motivo:
 
         *%{moderation_text}*
 
@@ -106,6 +106,7 @@ es:
         Tienes que tener en cuenta que el plazo para hacer propuestas de inversión nuevas finaliza el día 5 de marzo.
 
         Si consideras que la propuesta de inversión rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo lo antes posible al correo decidim@castello.es, indicando necesariamente para su tramitación el código de la propuesta de inversión %{code} como asunto del correo, así como la justificación y tu teléfono.
+        
         Atentamente,
 
         ÁREA DE GOBIERNO ABIERTO
