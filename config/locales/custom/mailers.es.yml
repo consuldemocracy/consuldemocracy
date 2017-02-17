@@ -77,19 +77,36 @@ es:
       subject: "Tu propuesta '%{title}' ha sido exluida"
       content: |-
         Estimado usuario,
-        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+
+        desde el Ayuntamiento queremos agradecer tu participación en los __Presupuestos Participativos__.
+        Te informamos que tu propuesta de inversión __%{title}__ ha sido excluida de este proceso
+        participativo por el siguiente motivo:
 
         %{moderation_text}
 
-        Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
-        Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
+        Puedes consultar las normas de uso en el siguiente enlace <a href="https://decidim.castello.es/conditions">Condicions</a>.
+
+        Atentament,
+
+        ÀREA DE GOVERN OBERT
+        REGIDORIA DE PARTICIPACIÓ CIUTADANA
     budget_investment_moderate_unfeasible:
       subject: "Tu propuesta '%{title}' ha sido marcada como inviable"
       content: |-
         Estimado usuario,
-        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+
+        desde el Ayuntamiento queremos agradecer tu participación en los __Presupuestos Participativos__.
+
+        Te informamos que tu propuesta de inversión __%{title}__ quedará excluida de este proceso participativo por el siguiente motivo:
 
         %{moderation_text}
 
-        Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
-        Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
+        Por todo esto, te invitamos a que elaboras una nueva propuesta de inversión que se ajuste a las condiciones de este proceso Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
+
+        Tienes que tener en cuenta que el plazo para hacer propuestas de inversión nuevas finaliza el día 5 de marzo.
+
+        Si consideras que la propuesta de inversión rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo lo antes posible al correo decidim@castello.es, indicando necesariamente para su tramitación el código de la propuesta de inversión %{code} como asunto del correo, así como la justificación y tu teléfono.
+        Atentamente,
+
+        ÁREA DE GOBIERNO ABIERTO
+        CONCEJALÍA DE PARTICIPACIÓN CIUDADANA

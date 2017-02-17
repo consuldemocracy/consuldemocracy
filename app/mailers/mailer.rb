@@ -104,18 +104,6 @@ class Mailer < ApplicationMailer
   def budget_investment_unfeasible(investment)
     @investment = investment
     @author = investment.author
-    @email_to = @author.email
-
-    with_user(@author) do
-      mail(to: @email_to, subject: t('mailers.budget_investment_unfeasible.subject', code: @investment.code))
-    end
-  end
-
-  def budget_investment_selected(investment)
-    @investment = investment
-    @author = investment.author
-    @email_to = @author.email
-
     with_user(@author) do
       mail(to: @email_to, subject: t('mailers.budget_investment_selected.subject', code: @investment.code))
     end
@@ -136,6 +124,14 @@ class Mailer < ApplicationMailer
     @author = investment.author
     with_user(@author) do
       mail(to: @author.email, subject: t('mailers.budget_investment_moderate_hide.subject', title: @investment.title))
+    end
+  end
+
+  def budget_investment_moderated_unfeasible(investment)
+    @investment = investment
+    @author = investment.author
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.budget_investment_moderate_unfeasible.subject', title: @investment.title))
     end
   end
 

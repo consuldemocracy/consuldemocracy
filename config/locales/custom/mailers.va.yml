@@ -75,22 +75,38 @@ va:
       unfeasible_html: "Des de l'Ajuntament volem agrair la teua participació en els <strong>Pressupostos Participatius</strong>. Lamentem informar-te que la teua proposta d'inversió <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
 
     budget_investment_moderate_hide:
-      subject: "La teua proposta '%{title}' ha segut exluída"
+      subject: "La teua proposta '%{title}' ha segut exclosa"
       content: |-
-        Estimat usuari,
-        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+        Benvolgut usuari,
+
+        des de l'Ajuntament volem agrair la teua participació en els __Pressupostos Participatius__.
+        T'informem que la teua proposta d'inversió __%{title}__ ha sigut exclosa d'aquest procés
+        participatiu pel següent motiu:
 
         %{moderation_text}
 
-        Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
-        Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
+        Pots consultar les normes d'ús en aquest enllaç <a href="https://decidim.castello.es/conditions">Condicions</a>.
+        Atentament,
+
+        ÀREA DE GOVERN OBERT
+        REGIDORIA DE PARTICIPACIÓ CIUTADANA
+
     budget_investment_moderate_unfeasible:
-      subject: "Tu propuesta '%{title}' ha sido marcada como inviable"
+      subject: "La teua proposta '%{title}' ha sido marcada com inviable"
       content: |-
-        Estimado usuario,
-        Desde el Ayuntamiento queremos agradecer tu participación en los Presupuestos Participativos. Lamentamos informarte de que tu propuesta de inversión "%{title}" quedará excluido de este proceso participativo por el siguiente motivo:
+        Benvolgut usuari,
+
+        des de l'Ajuntament volem agrair la teua participació en els __Pressupostos Participatius__.
+
+        T'informem que la teua proposta d'inversió __%{title}__ quedarà exclosa d'aquest procés participatiu pel següent motiu:
 
         %{moderation_text}
 
-        Por todo ello, te invitamos a que elabores una nueva propuesta de inversión que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
-        Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. "
+        Per tot açò, et convidem al fet que elabores una nova proposta d'inversió que s'ajuste a les condicions d'aquest procés Açò ho pots fer en aquest enllaç: nova proposta d'inversió. Has de tenir en compte que el termini per fer propostes d'inversió noves finalitza el dia 5 de març.
+
+        Si consideres que la proposta d'inversió rebutjada compleix els requisits per a mantenir-la com a proposta d'inversió, podràs comunicar-ho com més aviat millor al correu decidim@castello.es, indicant necessàriament per a la seua tramitació el codi de la proposta d’inversió %{code} com assumpte del correu, així com la justificació i el teu telèfon.
+
+        Atentament,
+
+        ÀREA DE GOVERN OBERT
+        REGIDORIA DE PARTICIPACIÓ CIUTADANA

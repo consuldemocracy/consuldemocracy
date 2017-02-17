@@ -88,7 +88,7 @@ class Budget
     end
 
     def aviso_inviable
-      Mailer.budget_investment_moderated_hide(self).deliver
+      Mailer.budget_investment_moderated_unfeasible(self).deliver
     end
 
     def aviso_moderacion
