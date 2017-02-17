@@ -480,5 +480,6 @@ Rails.application.routes.draw do
   get 'mas-informacion',             to: 'pages#show', id: 'more_information',       as: 'more_info'
   get 'mas-informacion/votaciones',  to: 'pages#show', id: 'more_information/polls', as: 'more_info_polls'
 
+  get 'votaciones-resultados', to: 'pages#show',   id: 'polls/results', as: 'poll_results'
   resources :pages, path: '/', only: [:show]
 end
