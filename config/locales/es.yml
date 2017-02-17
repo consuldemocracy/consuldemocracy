@@ -228,7 +228,7 @@ es:
       privacy: Política de privacidad
       transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_title: Transparencia
-      transparency_url: http://www.madrid.es/portaldetransparencia
+      transparency_url: http://transparencia.madrid.es
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
@@ -237,7 +237,7 @@ es:
       external_link_opendata: Datos abiertos
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
-      external_link_transparency_url: http://www.madrid.es/portaldetransparencia
+      external_link_transparency_url: http://transparencia.madrid.es
       help_translate: Ayúdanos a traducir
       help_translate_info: Cómo ayudar
       locale: 'Idioma:'
@@ -471,7 +471,7 @@ es:
       more_info: "Más información"
       already_voted: "Ya has participado en esta votación."
       polls: "Votaciones"
-      more_polls: "Seguir votando"
+      more_polls: "Ir a otras votaciones"
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
