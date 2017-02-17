@@ -1,5 +1,5 @@
 ---
-es:
+va:
   management:
     organization_verifications:
       title: Utilizar la aplicación en nombre de una Asociación
@@ -74,7 +74,7 @@ es:
       spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
       budget_investments_info: Participa en http://url.consul
       budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
-    print_info: Imprimir esta información
+    print_info: Imprimir aquesta informació
     proposals:
       alert:
         unverified_user: Este usuario no está verificado
@@ -114,16 +114,16 @@ es:
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
     username_label: Nombre de usuario
     users:
-      create_user: Crear nueva cuenta de usuario
+      create_user: Crear nou compte d'usuari
       create_user_info: 'Procedemos a crear un usuario con la siguiente información:'
-      create_user_submit: Crear usuario
+      create_user_submit: Crear usuari
       create_user_success_html: Hemos enviado un correo electrónico a <b>%{email}</b> para verificar que es suya. El correo enviado contiene un link que el usuario deberá pulsar. Entonces podrá seleccionar una clave de acceso, y entrar en la web de participación.
       erased_notice: Cuenta de usuario borrada.
       erased_by_manager: "Borrada por el manager: %{manager}"
-      erase_account_link: Borrar cuenta
+      erase_account_link: Borrar compte
       erase_account_confirm: ¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer
       erase_warning: Esta acción no se puede deshacer. Por favor asegurese de que quiere eliminar esta cuenta.
-      erase_submit: Borrar cuenta
+      erase_submit: Borrar compte
     user_invites:
       new:
         label: Emails

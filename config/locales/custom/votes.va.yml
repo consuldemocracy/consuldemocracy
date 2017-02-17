@@ -1,0 +1,27 @@
+---
+va:
+  votes:
+    agree: "Estic d'acord"
+    anonymous: "Massa vots anònims, per a poder votar %{verify_account}."
+    comment_unauthenticated: "Necessites %{signin} o %{signup} per a poder votar."
+    disagree: "No estic d'acord"
+    organizations: "Les associacions no poden votar"
+    signin: iniciar sessió
+    signup: "registrar-te"
+    supports: Recolzaments
+    unauthenticated: Necessites %{signin} o %{signup} per a continuar.
+    verified_only: "Les propostes només poden ser votades per usuaris verificats, %{verify_account}."
+    verify_account: verifica el teu compte
+    spending_proposals:
+      not_logged_in: Necessites %{signin} o %{signup} per a continuar.
+      not_verified: "Les propostes d'inversió només poden ser recolzades per usuaris verificats, %{verify_account}."
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: "Les associacions no poden votar"
+      unfeasible: No es poden votar propostes inviables.
+      not_voting_allowed: El període de votació està tancat.
+      different_heading_assigned: Només pots recolzar propostes en un districte
