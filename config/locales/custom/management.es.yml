@@ -88,7 +88,7 @@ es:
     budget_investments:
       alert:
         unverified_user: Usuario no verificado
-      create: Crear nueva propuesta de inversión
+      create: "Crear nueva propuesta de inversión"
       filters:
         heading: Concepto
         unfeasible: Propuestas de inversión no factibles
@@ -100,9 +100,9 @@ es:
     spending_proposals:
       alert:
         unverified_user: Este usuario no está verificado
-      create: Crear propuesta de inversión
+      create: "Crear propuesta de inversión"
       filters:
-        unfeasible: Propuestas de inversión no viables
+        unfeasible: "Propuestas de inversión no viables"
         by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       print:
         print_button: Imprimir

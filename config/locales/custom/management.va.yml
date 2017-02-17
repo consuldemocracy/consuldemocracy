@@ -88,7 +88,7 @@ va:
     budget_investments:
       alert:
         unverified_user: Usuario no verificado
-      create: Crear nueva propuesta de inversión
+      create: "Crear nueva propuesta de inversión"
       filters:
         heading: Concepto
         unfeasible: Propuestas de inversión no factibles
