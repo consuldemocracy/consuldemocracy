@@ -80,12 +80,13 @@ va:
         Benvolgut usuari,
 
         des de l'Ajuntament volem agrair la teua participació en els __Pressupostos Participatius__.
-        T'informem que la teua proposta d'inversió __%{title}__ ha sigut exclosa d'aquest procés
-        participatiu pel següent motiu:
+
+        T'informem que la teua proposta d'inversió __%{title}__ ha sigut exclosa d'aquest procés participatiu pel següent motiu:
 
         *%{moderation_text}*
 
         Pots consultar les normes d'ús en aquest enllaç <a href="https://decidim.castello.es/conditions">Condicions</a>.
+        
         Atentament,
 
         ÀREA DE GOVERN OBERT
