@@ -82,7 +82,7 @@ es:
         Te informamos que tu propuesta de inversión __%{title}__ ha sido excluida de este proceso
         participativo por el siguiente motivo:
 
-        %{moderation_text}
+        *%{moderation_text}*
 
         Puedes consultar las normas de uso en el siguiente enlace <a href="https://decidim.castello.es/conditions">Condicions</a>.
 
@@ -99,9 +99,9 @@ es:
 
         Te informamos que tu propuesta de inversión __%{title}__ quedará excluida de este proceso participativo por el siguiente motivo:
 
-        %{moderation_text}
+        *%{moderation_text}*
 
-        Por todo esto, te invitamos a que elaboras una nueva propuesta de inversión que se ajuste a las condiciones de este proceso Esto lo puedes hacer en este enlace: nueva propuesta de inversión.
+        Por todo esto, te invitamos a que elaboras una nueva propuesta de inversión que se ajuste a las condiciones de este proceso Esto lo puedes hacer en este enlace: <a href="https://decidim.castello.es/budgets/1/investments/new">nueva propuesta de inversión</a>.
 
         Tienes que tener en cuenta que el plazo para hacer propuestas de inversión nuevas finaliza el día 5 de marzo.
 

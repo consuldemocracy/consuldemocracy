@@ -1,4 +1,4 @@
 
 <td style="padding-bottom: 20px; padding-left: 10px;">
-  <%= markdown t("mailers.budget_investment_moderate_unfeasible.content", title: @investment.title, moderation_text: @investment.unfeasibility_explanation, code: "2017-#{@investment.id}") %>
+  <%= markdown t("mailers.budget_investment_moderate_unfeasible.content", title: @investment.title, moderation_text: @investment.unfeasibility_explanation, code: @investment.id) %>
 </td>
