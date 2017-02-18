@@ -86,13 +86,13 @@ class Officing::ResultsController < Officing::BaseController
 
     def build_null_results
       if results_params[:nulls].present?
-        white_result = ::Poll::WhiteResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+        null_result = ::Poll::NullResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
                                                   date: results_params[:date])
-        white_result.officer_assignment_id = @officer_assignment.id
-        white_result.amount = results_params[:nulls].to_i
-        white_result.author = current_user
-        white_result.origin = 'booth'
-        @results << white_result
+        null_result.officer_assignment_id = @officer_assignment.id
+        null_result.amount = results_params[:nulls].to_i
+        null_result.author = current_user
+        null_result.origin = 'booth'
+        @results << null_result
       end
     end
 
