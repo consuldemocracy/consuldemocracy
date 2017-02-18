@@ -73,7 +73,6 @@ en:
         booth: "Booth"
         date: "Date"
         select_booth: "Select booth"
-        select_date: "Select date"
         ballots_white: "Blank ballots"
         ballots_null: "Invalid ballots"
         submit: "Save"

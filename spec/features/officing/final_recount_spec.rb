@@ -139,7 +139,6 @@ feature 'Officing Final Recount' do
     expected_path = new_officing_poll_result_path(poll, oa: final_recount.officer_assignment.id, d: I18n.l(final_recount.date.to_date))
     expect(page).to have_current_path(expected_path)
     expect(page).to have_select('officer_assignment_id', selected: final_recount.booth_assignment.booth.name)
-    expect(page).to have_select('date', selected: I18n.l(final_recount.date.to_date, format: :long))
   end
 
 end

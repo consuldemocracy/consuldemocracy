@@ -73,7 +73,6 @@ es:
         booth: "Urna"
         date: "Día"
         select_booth: "Elige urna"
-        select_date: "Elige día"
         ballots_white: "Papeletas en blanco"
         ballots_null: "Papeletas nulas"
         submit: "Guardar"
