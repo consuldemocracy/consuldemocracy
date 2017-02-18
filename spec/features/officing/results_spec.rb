@@ -99,6 +99,8 @@ feature 'Officing Results' do
 
     fill_in "questions[#{@question_1.id}][0]", with: '5555'
     fill_in "questions[#{@question_1.id}][1]", with: '200'
+    fill_in "whites", with: '6'
+    fill_in "nulls",  with: '7'
 
     click_button 'Save'
 
@@ -109,6 +111,8 @@ feature 'Officing Results' do
     end
 
     expect(page).to_not have_content('7777')
+    within("#white_results") { expect(page).to have_content('6') }
+    within("#null_results")  { expect(page).to have_content('7') }
     within("#question_#{@question_1.id}_0_result") { expect(page).to have_content('5555') }
     within("#question_#{@question_1.id}_1_result") { expect(page).to have_content('200') }
   end
