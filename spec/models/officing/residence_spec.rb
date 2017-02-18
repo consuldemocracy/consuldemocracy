@@ -47,10 +47,26 @@ describe Officing::Residence do
         expect(residence).to_not be_valid
       end
 
-      it "should be valid without a date of birth if validating a letter vote" do
+      it "should be valid without a year of birth if validating a letter vote" do
         residence.letter = true
-        residence.date_of_birth = nil
+        residence.postal_code = "28013"
+        residence.year_of_birth = nil
         expect(residence).to be_valid
+      end
+
+      it "should not be valid if already voted" do
+        residence.letter = true
+        residence.document_number = "12345678Z"
+
+        poll = create(:poll)
+        user = create(:user, document_number: "12345678Z")
+        create(:poll_voter, user: user, poll: poll)
+
+        allow_any_instance_of(Officing::Residence).
+        to receive(:letter_poll).and_return(poll)
+
+        expect(residence).to_not be_valid
+        expect(residence.errors[:document_number]).to eq(["Vote Reformulated"])
       end
     end
 

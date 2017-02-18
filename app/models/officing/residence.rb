@@ -13,6 +13,7 @@ class Officing::Residence
 
   validate :allowed_age
   validate :residence_in_madrid
+  validate :not_voted, if: :letter?
 
   def initialize(attrs={})
     super
@@ -23,7 +24,7 @@ class Officing::Residence
   def save
     return false unless valid?
 
-    self.document_number = @census_api_response.document_number
+    self.document_number = census_document_number
 
     if user_exists?
       self.user = find_user_by_document
@@ -105,6 +106,10 @@ class Officing::Residence
     @census_api_response.date_of_birth
   end
 
+  def letter_poll
+    Poll.find(2)
+  end
+
   private
 
     def call_census_api
@@ -124,12 +129,26 @@ class Officing::Residence
       @census_api_response.date_of_birth.year
     end
 
+    def census_document_number
+      @census_api_response.document_number
+    end
+
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
     end
 
     def letter?
       @letter.present?
+    end
+
+    def not_voted
+      if already_voted?
+        errors.add(:document_number, I18n.t('officing.letter.new.alredy_voted'))
+      end
+    end
+
+    def already_voted?
+      Poll::Voter.where(poll: letter_poll, document_number: census_document_number).exists?
     end
 
     def random_password

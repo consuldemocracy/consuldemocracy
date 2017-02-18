@@ -2,20 +2,31 @@ require 'rails_helper'
 
 feature 'Letters' do
   let(:officer) { create(:poll_officer) }
+  let(:poll)    { create(:poll) }
 
   background do
     login_as(officer.user)
-    visit new_envelope_path
+    visit new_officing_letter_path
+
+    allow_any_instance_of(Officing::Residence).
+    to receive(:letter_poll).and_return(poll)
   end
 
-  scenario "Verify voter" do
+  scenario "Verify and store voter" do
     select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28013'
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'Document verified with Census'
+    expect(page).to have_content 'Valid vote'
+
+    voters = Poll::Voter.all
+    expect(voters.count).to eq(1)
+    expect(voters.first.origin).to eq("letter")
+    expect(voters.first.document_number).to eq("12345678Z")
+    expect(voters.first.document_type).to eq("1")
+    expect(voters.first.poll).to eq(poll)
   end
 
   scenario "Error on verify" do
@@ -25,7 +36,7 @@ feature 'Letters' do
 
   scenario "Error on Census (document number)" do
     initial_failed_census_calls_count = officer.failed_census_calls_count
-    visit new_envelope_path
+    visit new_officing_letter_path
 
     select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "9999999A"
@@ -51,6 +62,25 @@ feature 'Letters' do
     click_button 'Validate document'
 
     expect(page).to have_content 'The Census was unable to verify this document'
+  end
+
+  scenario "Error already voted" do
+    poll = create(:poll)
+    user = create(:user, document_number: "12345678Z")
+    create(:poll_voter, user: user, poll: poll)
+
+    allow_any_instance_of(Officing::Residence).
+    to receive(:letter_poll).and_return(poll)
+
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_postal_code', with: '28013'
+
+    click_button 'Validate document'
+
+    expect(page).to_not have_content 'The Census was unable to verify this document'
+    expect(page).to have_content '1 error prevented the verification of this document'
+    expect(page).to have_content 'Vote Reformulated'
   end
 
 end

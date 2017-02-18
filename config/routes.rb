@@ -406,6 +406,7 @@ Rails.application.routes.draw do
 
     resource :booth, controller: "booth", only: [:new, :create]
     resource :residence, controller: "residence", only: [:new, :create]
+    resources :letters
     resources :voters, only: [:new, :create] do
       get :vote_with_tablet, on: :member
     end
@@ -413,8 +414,6 @@ Rails.application.routes.draw do
     resource :session, only: [:new, :create]
     root to: "dashboard#index"
   end
-
-  resources :envelopes
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

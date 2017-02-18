@@ -20,3 +20,4 @@ es:
         document_type: "Tipo documento"
         document_number: "Numero de documento (incluida letra)"
         year_of_birth: "Año de nacimiento"
+        postal_code: "Código postal"
