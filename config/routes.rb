@@ -414,6 +414,8 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
   end
 
+  resources :envelopes
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

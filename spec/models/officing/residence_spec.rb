@@ -40,6 +40,20 @@ describe Officing::Residence do
       end
     end
 
+    describe "letter" do
+      it "should not be valid without a postal code if validating a letter vote" do
+        residence.letter = true
+        residence.postal_code = nil
+        expect(residence).to_not be_valid
+      end
+
+      it "should be valid without a date of birth if validating a letter vote" do
+        residence.letter = true
+        residence.date_of_birth = nil
+        expect(residence).to be_valid
+      end
+    end
+
   end
 
   describe "new" do
