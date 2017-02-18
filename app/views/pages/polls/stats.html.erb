@@ -30,6 +30,14 @@
 
   <div class="row">
     <div class="small-12 medium-3 column sidebar">
+      <p>Participación</p>
+      <ul class="menu vertical margin-top">
+        <li><a href="#9">Participación total</a></li>
+        <li><a href="#10">Participación por sexo</a></li>
+        <li><a href="#11">Participación por grupos de edad</a></li>
+        <li><a href="#12">Participación por distrito</a></li>
+      </ul>
+
       <p>Votaciones</p>
       <ul class="menu vertical margin-top">
          <li><a href="#1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
@@ -41,17 +49,23 @@
         <li><a href="#7">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
         <li><a href="#8">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
       </ul>
-
-      <p>Participación</p>
-      <ul class="menu vertical margin-top">
-        <li><a href="#9">Participación total</a></li>
-        <li><a href="#10">Participación por sexo</a></li>
-        <li><a href="#11">Participación por grupos de edad</a></li>
-        <li><a href="#12">Participación por distrito</a></li>
-      </ul>
     </div>
 
     <div class="small-12 medium-9 column">
+      <h2 class="sr-only">PARTICIPACIÓN</h2>
+
+      <!-- Participación total -->
+      <%= render "pages/polls/stats/total" %>
+
+      <!-- Participación por sexo -->
+      <%= render "pages/polls/stats/sex" %>
+
+      <!-- Participación por grupos de edad -->
+      <%= render "pages/polls/stats/age" %>
+
+      <!-- Participación por distrito -->
+      <%= render "pages/polls/stats/districts" %>
+
       <h2 class="sr-only">VOTACIONES</h2>
 
       <!-- Propuestas y Plaza de España -->
@@ -77,20 +91,6 @@
 
       <!-- Vicálvaro -->
       <%= render "pages/polls/stats/poll_8" %>
-
-      <h2 class="sr-only">PARTICIPACIÓN</h2>
-
-      <!-- Participación total -->
-      <%= render "pages/polls/stats/total" %>
-
-      <!-- Participación por sexo -->
-      <%= render "pages/polls/stats/sex" %>
-
-      <!-- Participación por grupos de edad -->
-      <%= render "pages/polls/stats/age" %>
-
-      <!-- Participación por distrito -->
-      <%= render "pages/polls/stats/districts" %>
     </div>
   </div>
 </div>
