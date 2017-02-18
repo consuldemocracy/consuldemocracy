@@ -20,11 +20,11 @@ class Officing::FinalRecountsController < Officing::BaseController
     @final_recount.count = final_recount_params[:count]
 
     if @final_recount.save
-      notice = t("officing.final_recounts.flash.create")
+      msg = { notice: t("officing.final_recounts.flash.create") }
     else
-      notice = t("officing.final_recounts.flash.error_create")
+      msg = { alert: t("officing.final_recounts.flash.error_create") }
     end
-    redirect_to new_officing_poll_final_recount_path(@poll), notice: notice
+    redirect_to new_officing_poll_final_recount_path(@poll), msg
   end
 
   private
@@ -36,7 +36,7 @@ class Officing::FinalRecountsController < Officing::BaseController
       @officer_assignment = current_user.poll_officer.
                             officer_assignments.final.find_by(id: final_recount_params[:officer_assignment_id])
       if @officer_assignment.blank?
-        redirect_to new_officing_poll_final_recount_path(@poll), notice: t("officing.final_recounts.flash.error_create")
+        redirect_to new_officing_poll_final_recount_path(@poll), alert: t("officing.final_recounts.flash.error_create")
       end
     end
 
