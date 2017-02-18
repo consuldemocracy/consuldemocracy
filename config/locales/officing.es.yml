@@ -51,6 +51,7 @@ es:
         error_create: "Recuento final NO añadido. Error en los datos"
       new:
         title: "%{poll} - Añadir recuento final"
+        intro_html: "Junte los sobres de votación de <strong>todos</strong> los días e introduzca la siguiente información:"
         not_allowed: "No tienes permiso para introducir recountos finales"
         booth: "Urna"
         date: "Día"
@@ -69,11 +70,11 @@ es:
         error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
+        intro_html: "Junte los sobres de votación de <strong>todos</strong> los días e introduzca la siguiente información:"
         not_allowed: "No tienes permiso para introducir resultados"
         booth: "Urna"
         date: "Día"
         select_booth: "Elige urna"
-        select_date: "Elige día"
         ballots_white: "Papeletas en blanco"
         ballots_null: "Papeletas nulas"
         submit: "Guardar"
