@@ -317,6 +317,8 @@ en:
         count_by_officer: "Daily recount (by officer)"
         count_final: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
+        total_daily: Total daily recounts
+        total_system: Total votes (automatic)
       index:
         booths_title: "List of booths"
         no_booths: "There are no booths assigned to this poll."
