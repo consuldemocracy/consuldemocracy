@@ -55,7 +55,6 @@ es:
         booth: "Urna"
         date: "Día"
         select_booth: "Elige urna"
-        select_date: "Elige día"
         count: "Recuento final"
         count_placeholder: "Número final de votos"
         submit: "Guardar"

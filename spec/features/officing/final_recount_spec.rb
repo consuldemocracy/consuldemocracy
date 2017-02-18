@@ -51,9 +51,8 @@ feature 'Officing Final Recount' do
     expect(page).to_not have_content('Your recounts')
 
     booth_name = @officer_assignment.booth_assignment.booth.name
-    date = I18n.l(@poll.starts_at.to_date, format: :long)
+    date = I18n.l(@poll.ends_at.to_date, format: :long)
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
     fill_in :count, with: '33'
     click_button 'Save'
 
@@ -70,7 +69,7 @@ feature 'Officing Final Recount' do
     final_recount = create(:poll_final_recount,
                     officer_assignment: @officer_assignment,
                     booth_assignment: @officer_assignment.booth_assignment,
-                    date: @poll.starts_at,
+                    date: @poll.ends_at,
                     count: 100)
 
     booth_name = @officer_assignment.booth_assignment.booth.name
@@ -87,7 +86,6 @@ feature 'Officing Final Recount' do
     end
 
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
     fill_in :count, with: '42'
     click_button 'Save'
 
