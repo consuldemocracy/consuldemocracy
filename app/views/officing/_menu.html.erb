@@ -1,6 +1,6 @@
 <div class="admin-sidebar" data-equalizer-watch>
   <ul id="officing_menu">
-    <% if letter? %>
+    <% if try(:letter?) %>
 
       <li class="active">
         <%= link_to new_officing_letter_path do %>

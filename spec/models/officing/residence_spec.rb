@@ -41,6 +41,13 @@ describe Officing::Residence do
     end
 
     describe "letter" do
+      let(:poll) { create(:poll) }
+
+      before(:each) do
+        allow_any_instance_of(Officing::Residence).
+        to receive(:letter_poll).and_return(poll)
+      end
+
       it "should not be valid without a postal code if validating a letter vote" do
         residence.letter = true
         residence.postal_code = nil
@@ -58,7 +65,6 @@ describe Officing::Residence do
         residence.letter = true
         residence.document_number = "12345678Z"
 
-        poll = create(:poll)
         user = create(:user, document_number: "12345678Z")
         create(:poll_voter, user: user, poll: poll)
 
