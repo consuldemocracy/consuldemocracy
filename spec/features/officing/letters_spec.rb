@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Letters' do
-  let(:officer) { create(:poll_officer) }
+  let(:officer) { create(:poll_officer, letter_officer: true) }
   let(:poll)    { create(:poll) }
 
   background do
@@ -81,6 +81,46 @@ feature 'Letters' do
     expect(page).to_not have_content 'The Census was unable to verify this document'
     expect(page).to have_content '1 error prevented the verification of this document'
     expect(page).to have_content 'Vote Reformulated'
+  end
+
+  context "Permissions" do
+
+    scenario "Non officers can not access letter interface" do
+      user = create(:user)
+
+      login_as(user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content "You do not have permission to access this page"
+    end
+
+    scenario "Standard officers can not access letter interface" do
+      officer = create(:poll_officer)
+
+      login_as(officer.user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content "You do not have permission to access this page"
+    end
+
+    scenario "Letter officers can access letter interface" do
+      officer = create(:poll_officer, letter_officer: true)
+
+      login_as(officer.user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content 'Validate document'
+    end
+
+    scenario "Admins can access letter interface" do
+      admin = create(:administrator)
+
+      login_as(admin.user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content 'Validate document'
+    end
+
   end
 
 end
