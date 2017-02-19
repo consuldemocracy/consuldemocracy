@@ -436,8 +436,8 @@ es:
         submit_button: Guardar cambios
   polls:
     all: "Todas"
-    #no_dates: "sin fecha asignada"
-    #dates: "Desde el %{open_at} hasta el %{closed_at}"
+    no_dates: "sin fecha asignada"
+    dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
       filters:

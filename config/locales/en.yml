@@ -436,8 +436,8 @@ en:
         submit_button: Save changes
   polls:
     all: "All"
-    #no_dates: "no date assigned"
-    #dates: "From %{open_at} to %{closed_at}"
+    no_dates: "no date assigned"
+    dates: "From %{open_at} to %{closed_at}"
     final_date: "Final recounts/Results"
     index:
       filters:
