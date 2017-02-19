@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212154916) do
+ActiveRecord::Schema.define(version: 20170219202846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -507,6 +507,7 @@ ActiveRecord::Schema.define(version: 20170212154916) do
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "failed_census_calls_count", default: 0
+    t.boolean "letter_officer",            default: false
   end
 
   add_index "poll_officers", ["user_id"], name: "index_poll_officers_on_user_id", using: :btree
