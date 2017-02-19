@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219205604) do
+ActiveRecord::Schema.define(version: 20170219212453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -462,9 +462,11 @@ ActiveRecord::Schema.define(version: 20170219205604) do
   add_index "poll_final_recounts", ["officer_assignment_id"], name: "index_poll_final_recounts_on_officer_assignment_id", using: :btree
 
   create_table "poll_letter_officer_logs", force: :cascade do |t|
-    t.string  "document_number"
-    t.string  "message"
-    t.integer "user_id"
+    t.string   "document_number"
+    t.string   "message"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "poll_null_results", force: :cascade do |t|
