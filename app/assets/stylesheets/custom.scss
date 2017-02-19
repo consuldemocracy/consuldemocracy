@@ -3372,3 +3372,15 @@ p.can-participate-info {
 .auth-form p, .auth-form p a {
   font-size: $base-font-size;
 }
+
+.has_voted {
+  @extend .warning;
+}
+
+.ok {
+  @extend .success;
+}
+
+.census_failed {
+  @extend .alert;
+}
