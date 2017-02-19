@@ -1049,6 +1049,9 @@ en:
       index:
         title: "Recounts"
         no_recounts: "There is nothing to be recounted"
+        all_booths_total: "Cumulative total from all booths:"
+        total_final: "Final recounts"
+        total_system: "Votes (automatic)"
         table_booth_name: "Booth"
         table_total_recount: "Total recount (by officer)"
         table_system_count: "Votes (automatic)"
