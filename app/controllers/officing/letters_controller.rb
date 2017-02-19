@@ -15,9 +15,16 @@ class Officing::LettersController < Officing::BaseController
                               user: @residence.user,
                               poll: @residence.letter_poll,
                               origin: "letter")
-      voter.save!
+
+      if voter.save
+        ::Poll::LetterOfficerLog.log(current_user, voter.document_number, :ok)
+      else
+        ::Poll::LetterOfficerLog.log(current_user, voter.document_number, :has_voted)
+      end
+
       redirect_to new_officing_letter_path, notice: t("officing.letter.flash.create")
     else
+      ::Poll::LetterOfficerLog.log(current_user, voter.document_number, :census_failed)
       render :new
     end
   end
