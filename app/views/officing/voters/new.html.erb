@@ -33,10 +33,16 @@
 
 <% else %>
 
-  <div class="small-12 medium-6 large-4">
-    <%= link_to t("nvotes.tablet"),
-                  vote_with_tablet_officing_voter_path(@user),
-                  class: "button expanded" %>
-  </div>
+  <% if Poll.votable_by(@user).any? %>
+    <div class="small-12 medium-6 large-4">
+      <%= link_to t("nvotes.tablet"),
+                    vote_with_tablet_officing_voter_path(@user),
+                    class: "button expanded" %>
+    </div>
+  <% else %>
+    <div class="small-12 medium-6 large-4">
+      Ya ha participado en todas las votaciones.
+    </div>
+  <% end %>
 
 <% end %>
