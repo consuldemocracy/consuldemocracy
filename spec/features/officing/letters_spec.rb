@@ -27,6 +27,12 @@ feature 'Letters' do
     expect(voters.first.document_number).to eq("12345678Z")
     expect(voters.first.document_type).to eq("1")
     expect(voters.first.poll).to eq(poll)
+
+    logs = Poll::LetterOfficerLog.all
+    expect(logs.count).to eq(1)
+    expect(logs.first.user_id).to eq(officer.user_id)
+    expect(logs.first.document_number).to eq("12345678Z")
+    expect(logs.first.message).to eq("Document OK")
   end
 
   scenario "Error on verify" do
@@ -62,6 +68,12 @@ feature 'Letters' do
     click_button 'Validate document'
 
     expect(page).to have_content 'The Census was unable to verify this document'
+
+    logs = Poll::LetterOfficerLog.all
+    expect(logs.count).to eq(1)
+    expect(logs.first.user_id).to eq(officer.user_id)
+    expect(logs.first.document_number).to eq("12345678Z")
+    expect(logs.first.message).to eq("Document not in census")
   end
 
   scenario "Error already voted" do
@@ -81,6 +93,12 @@ feature 'Letters' do
     expect(page).to_not have_content 'The Census was unable to verify this document'
     expect(page).to have_content '1 error prevented the verification of this document'
     expect(page).to have_content 'Vote Reformulated'
+
+    logs = Poll::LetterOfficerLog.all
+    expect(logs.count).to eq(1)
+    expect(logs.first.reload.user_id).to eq(officer.user_id)
+    expect(logs.first.document_number).to eq("12345678Z")
+    expect(logs.first.message).to eq("Document already voted")
   end
 
   context "Permissions" do

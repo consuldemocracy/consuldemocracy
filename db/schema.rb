@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219202846) do
+ActiveRecord::Schema.define(version: 20170219212453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -248,25 +248,26 @@ ActiveRecord::Schema.define(version: 20170219202846) do
     t.string   "title",                        limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                             default: 0
-    t.integer  "cached_votes_total",                      default: 0
-    t.integer  "cached_votes_up",                         default: 0
-    t.integer  "cached_votes_down",                       default: 0
+    t.integer  "flags_count",                              default: 0
+    t.integer  "cached_votes_total",                       default: 0
+    t.integer  "cached_votes_up",                          default: 0
+    t.integer  "cached_votes_down",                        default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "comments_count",                          default: 0
+    t.integer  "comments_count",                           default: 0
     t.datetime "confirmed_hide_at"
-    t.integer  "cached_anonymous_votes_total",            default: 0
-    t.integer  "cached_votes_score",                      default: 0
-    t.integer  "hot_score",                    limit: 8,  default: 0
-    t.integer  "confidence_score",                        default: 0
+    t.integer  "cached_anonymous_votes_total",             default: 0
+    t.integer  "cached_votes_score",                       default: 0
+    t.integer  "hot_score",                    limit: 8,   default: 0
+    t.integer  "confidence_score",                         default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
+    t.string   "comment_kind",                             default: "comment"
     t.datetime "featured_at"
-    t.string   "comment_kind",                            default: "comment"
+    t.string   "external_link",                limit: 100
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -276,6 +277,7 @@ ActiveRecord::Schema.define(version: 20170219202846) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -458,6 +460,14 @@ ActiveRecord::Schema.define(version: 20170219202846) do
 
   add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
   add_index "poll_final_recounts", ["officer_assignment_id"], name: "index_poll_final_recounts_on_officer_assignment_id", using: :btree
+
+  create_table "poll_letter_officer_logs", force: :cascade do |t|
+    t.string   "document_number"
+    t.string   "message"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "poll_null_results", force: :cascade do |t|
     t.integer "author_id"
@@ -688,6 +698,7 @@ ActiveRecord::Schema.define(version: 20170219202846) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -864,9 +875,9 @@ ActiveRecord::Schema.define(version: 20170219202846) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                                             default: true
-    t.boolean  "newsletter",                                                  default: true
     t.integer  "notifications_count",                                         default: 0
     t.boolean  "registering_with_oauth",                                      default: false
+    t.boolean  "newsletter",                                                  default: true
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
@@ -882,7 +893,7 @@ ActiveRecord::Schema.define(version: 20170219202846) do
     t.boolean  "email_digest",                                                default: true
     t.boolean  "email_on_direct_message",                                     default: true
     t.boolean  "official_position_badge",                                     default: false
-    t.datetime "password_changed_at",                                         default: '2016-12-21 17:55:08', null: false
+    t.datetime "password_changed_at",                                         default: '2016-11-03 12:11:02', null: false
     t.boolean  "created_from_signature",                                      default: false
     t.boolean  "officing_voter",                                              default: false
     t.text     "former_users_data_log",                                       default: ""
@@ -1033,14 +1044,14 @@ ActiveRecord::Schema.define(version: 20170219202846) do
   add_foreign_key "moderators", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "organizations", "users"
-  add_foreign_key "poll_nvotes", "poll_booth_assignments", column: "booth_assignment_id"
-  add_foreign_key "poll_nvotes", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_booth_assignments", "polls"
   add_foreign_key "poll_final_recounts", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_final_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_null_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_null_results", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "poll_nvotes", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_nvotes", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_officer_assignments", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_partial_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"
@@ -1049,12 +1060,12 @@ ActiveRecord::Schema.define(version: 20170219202846) do
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
-  add_foreign_key "probe_options", "debates"
   add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "probe_options", "debates"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end
