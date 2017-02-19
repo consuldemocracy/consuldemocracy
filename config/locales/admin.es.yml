@@ -317,8 +317,8 @@ es:
         count_by_officer: "Recuento diario (presidente de mesa)"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
-        total_daily: "Total recuentos diarios (presidentes de mesa)"
-        total_system: "Votos totales (automático)"
+        total_daily: "Recuentos diarios acumulados (presidentes de mesa)"
+        total_system: "Votos totales acumulados(automático)"
       index:
         booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
@@ -387,6 +387,10 @@ es:
       index:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
+        all_booths_total: "Acumulado en todas las urnas:"
+        total_daily: Recuentos diarios
+        total_final: Recuentos finales
+        total_system: Votos (automático)
         table_booth_name: "Urna"
         table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
         table_final_recount: "Recuento final (presidente de mesa)"
