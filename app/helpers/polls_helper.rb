@@ -13,11 +13,12 @@ module PollsHelper
   end
 
   def poll_dates(poll)
-    if poll.starts_at.blank? || poll.ends_at.blank?
-      I18n.t("polls.no_dates")
-    else
-      I18n.t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
-    end
+    "Desde el 13/02/2017 hasta el 19/02/2017"
+    # if poll.starts_at.blank? || poll.ends_at.blank?
+    #   I18n.t("polls.no_dates")
+    # else
+    #   I18n.t("polls.dates", open_at: l(poll.starts_at.to_date), closed_at: l(poll.ends_at.to_date))
+    # end
   end
 
   def poll_dates_select_options(poll)
