@@ -24,7 +24,12 @@ class Officing::LettersController < Officing::BaseController
 
       redirect_to new_officing_letter_path, notice: t("officing.letter.flash.create")
     else
-      ::Poll::LetterOfficerLog.log(current_user, voter.document_number, :census_failed)
+      if @residence.errors[:residence_in_madrid].present?
+        ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, :census_failed)
+      elsif @residence.errors[:document_number].present?
+        ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, :has_voted)
+      end
+
       render :new
     end
   end
