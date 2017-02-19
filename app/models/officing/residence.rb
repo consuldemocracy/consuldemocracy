@@ -107,7 +107,7 @@ class Officing::Residence
   end
 
   def letter_poll
-    Poll.find(2)
+    Poll.find(1)
   end
 
   private
