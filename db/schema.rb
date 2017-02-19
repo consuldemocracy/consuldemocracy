@@ -515,6 +515,7 @@ ActiveRecord::Schema.define(version: 20170219205604) do
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "failed_census_calls_count", default: 0
+    t.boolean "letter_officer",            default: false
   end
 
   add_index "poll_officers", ["user_id"], name: "index_poll_officers_on_user_id", using: :btree

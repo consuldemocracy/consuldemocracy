@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Letters' do
-  let(:officer) { create(:poll_officer) }
+  let(:officer) { create(:poll_officer, letter_officer: true) }
   let(:poll)    { create(:poll) }
 
   background do
@@ -99,6 +99,46 @@ feature 'Letters' do
     expect(logs.first.reload.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
     expect(logs.first.message).to eq("Document already voted")
+  end
+
+  context "Permissions" do
+
+    scenario "Non officers can not access letter interface" do
+      user = create(:user)
+
+      login_as(user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content "You do not have permission to access this page"
+    end
+
+    scenario "Standard officers can not access letter interface" do
+      officer = create(:poll_officer)
+
+      login_as(officer.user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content "You do not have permission to access this page"
+    end
+
+    scenario "Letter officers can access letter interface" do
+      officer = create(:poll_officer, letter_officer: true)
+
+      login_as(officer.user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content 'Validate document'
+    end
+
+    scenario "Admins can access letter interface" do
+      admin = create(:administrator)
+
+      login_as(admin.user)
+      visit new_officing_letter_path
+
+      expect(page).to have_content 'Validate document'
+    end
+
   end
 
 end

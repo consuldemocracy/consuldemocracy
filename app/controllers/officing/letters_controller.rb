@@ -1,6 +1,8 @@
 class Officing::LettersController < Officing::BaseController
   skip_authorization_check
   helper_method :letter?
+  before_action :verify_letter_officer
+
   layout 'letter_officer'
 
   def new
@@ -36,6 +38,10 @@ class Officing::LettersController < Officing::BaseController
 
   private
 
+    def verify_letter_officer
+      raise CanCan::AccessDenied unless current_user.try(:poll_officer).try(:letter_officer?) || current_user.try(:administrator?)
+    end
+
     def residence_params
       params.require(:residence).permit(:document_number, :document_type, :postal_code)
     end
@@ -43,4 +49,5 @@ class Officing::LettersController < Officing::BaseController
     def letter?
       true
     end
+
 end
