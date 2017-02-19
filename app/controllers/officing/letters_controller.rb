@@ -1,6 +1,7 @@
 class Officing::LettersController < Officing::BaseController
   skip_authorization_check
   helper_method :letter?
+  layout 'letter_officer'
 
   def new
     @residence = Officing::Residence.new(letter: true)

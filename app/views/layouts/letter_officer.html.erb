@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= content_for?(:title) ? yield(:title) : "Admin" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= content_for :head %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+  </head>
+
+  <body class="admin">
+    <header>
+      <div class="expanded row">
+        <div class="top-bar">
+
+          <%= link_to setting['org_name'], namespaced_root_path, class: "logo show-for-small-only" %>
+
+          <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+            <span class="menu-icon dark" data-toggle></span>
+            <%= t("application.menu")%>
+          </span>
+
+          <div id="responsive-menu">
+            <div class="top-bar-title">
+              <h1>
+                <%= link_to namespaced_root_path, class: "hide-for-small-only" do %>
+                  <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+                  <%= setting['org_name'] %>
+                  &nbsp;|&nbsp;<%= namespaced_header_title %>
+                <% end %>
+              </h1>
+            </div>
+
+            <div class="top-bar-right">
+              <ul class="menu">
+                <% if user_signed_in? %>
+                  <% if try(:letter?) %>
+                    <li>
+                      <%= link_to t("officing.menu.letters"), new_officing_letter_path %>
+                    </li>
+                  <% end %>
+                  <li>
+                    <%= link_to(t("devise_views.menu.login_items.logout"), destroy_user_session_path, method: :delete) %>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to(t("devise_views.menu.login_items.login"), new_user_session_path)  %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="no-margin-top row no-max-width collapse" data-equalizer>
+      <div class="admin-content small-12 medium-9 large-6 small-centered column" data-equalizer-watch>
+        <%= render 'layouts/flash' %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -9,7 +9,7 @@ es:
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
       voters: "Validar documento y votar"
-      letters: "Validar carta"
+      letters: "Validar documento"
       recounts: "Recuento diario"
       final_recounts: "Recuento final y escrutinio"
     polls:
