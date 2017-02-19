@@ -5,7 +5,7 @@
     <%= form_for @residence, as: "residence", url: officing_letters_path do |f| %>
       <%= render "errors" %>
 
-      <%= f.select :document_type, document_types, prompt: "" %>
+      <%= f.select :document_type, document_types, prompt: "", selected: "1" %>
       <%= f.text_field :document_number, autocomplete: "off" %>
 
       <%= f.text_field :postal_code, type: "number", autocomplete: "off" %>
