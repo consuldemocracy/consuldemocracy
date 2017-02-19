@@ -143,6 +143,27 @@ feature 'Voters' do
       expect(page).to     have_link "Vote on tablet"
     end
 
+    scenario "Digital booth (already voted)", :js do
+      user = create(:user, :in_census)
+      poll = create(:poll)
+
+      create(:poll_voter, poll: poll, user: user)
+
+      booth = create(:poll_booth, physical: false)
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+      visit root_path
+      click_link "Sign out"
+      login_through_form_as(officer.user)
+
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to_not have_link "Vote on tablet"
+      expect(page).to     have_content "Ya ha participado en todas las votaciones."
+    end
+
   end
 
   scenario "Had already verified his residence, but is not level 2 yet", :js do
