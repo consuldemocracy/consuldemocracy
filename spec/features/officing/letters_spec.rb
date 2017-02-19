@@ -19,7 +19,7 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'voto VÁLIDO'
+    expect(page).to have_content 'Voto VÁLIDO'
     expect(page).to have_content '12345678Z'
     expect(page).to have_content '28013'
 
@@ -35,13 +35,13 @@ feature 'Letters' do
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
     expect(logs.first.postal_code).to eq("28013")
-    expect(logs.first.message).to eq("voto VÁLIDO")
+    expect(logs.first.message).to eq("Voto VÁLIDO")
   end
 
   scenario "Error on verify (everything blank)" do
     click_button 'Validate document'
 
-    expect(page).to have_content 'voto NO VÁLIDO'
+    expect(page).to have_content 'Voto NO VÁLIDO'
     expect(Poll::Voter.count).to eq(0)
 
     logs = Poll::LetterOfficerLog.all
@@ -49,7 +49,7 @@ feature 'Letters' do
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("")
     expect(logs.first.postal_code).to eq("")
-    expect(logs.first.message).to eq("voto NO VÁLIDO")
+    expect(logs.first.message).to eq("Voto NO VÁLIDO")
   end
 
   scenario "Error on Census (document number)" do
@@ -62,7 +62,7 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'voto NO VÁLIDO'
+    expect(page).to have_content 'Voto NO VÁLIDO'
     expect(page).to have_content '9999999A'
     expect(page).to have_content '28013'
 
@@ -81,7 +81,7 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'voto NO VÁLIDO'
+    expect(page).to have_content 'Voto NO VÁLIDO'
     expect(page).to have_content '12345678Z'
     expect(page).to have_content '28014'
 
@@ -90,7 +90,7 @@ feature 'Letters' do
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
     expect(logs.first.postal_code).to eq("28014")
-    expect(logs.first.message).to eq("voto NO VÁLIDO")
+    expect(logs.first.message).to eq("Voto NO VÁLIDO")
   end
 
   scenario "Error already voted" do
@@ -107,7 +107,7 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'voto REFORMULADO'
+    expect(page).to have_content 'Voto REFORMULADO'
     expect(page).to have_content '12345678Z'
     expect(page).to have_content '28013'
 
@@ -118,7 +118,7 @@ feature 'Letters' do
     expect(logs.first.reload.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
     expect(logs.first.postal_code).to eq("28013")
-    expect(logs.first.message).to eq("voto REFORMULADO")
+    expect(logs.first.message).to eq("Voto REFORMULADO")
   end
 
   scenario "Validate next letter" do
@@ -127,7 +127,7 @@ feature 'Letters' do
     fill_in 'residence_postal_code', with: '28013'
 
     click_button 'Validate document'
-    expect(page).to have_content 'voto VÁLIDO'
+    expect(page).to have_content 'Voto VÁLIDO'
 
     click_link "Introducir nuevo documento"
     expect(page).to have_content "Validate document"
