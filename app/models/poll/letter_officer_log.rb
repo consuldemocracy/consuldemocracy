@@ -1,8 +1,8 @@
 class Poll
   class LetterOfficerLog < ActiveRecord::Base
-    VALID_MESSAGES = { ok: "voto VÁLIDO",
-                       has_voted: "voto REFORMULADO",
-                       census_failed: "voto NO VÁLIDO" }
+    VALID_MESSAGES = { ok: "Voto VÁLIDO",
+                       has_voted: "Voto REFORMULADO",
+                       census_failed: "Voto NO VÁLIDO" }
 
     belongs_to :user
 
