@@ -466,6 +466,8 @@ ActiveRecord::Schema.define(version: 20170219213227) do
     t.string  "message"
     t.integer "user_id"
     t.string  "postal_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "poll_null_results", force: :cascade do |t|
@@ -516,6 +518,7 @@ ActiveRecord::Schema.define(version: 20170219213227) do
   create_table "poll_officers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "failed_census_calls_count", default: 0
+    t.boolean "letter_officer",            default: false
   end
 
   add_index "poll_officers", ["user_id"], name: "index_poll_officers_on_user_id", using: :btree
