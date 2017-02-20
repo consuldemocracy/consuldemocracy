@@ -19,7 +19,9 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'Valid vote'
+    expect(page).to have_content 'Voto VÁLIDO'
+    expect(page).to have_content '12345678Z'
+    expect(page).to have_content '28013'
 
     voters = Poll::Voter.all
     expect(voters.count).to eq(1)
@@ -32,12 +34,22 @@ feature 'Letters' do
     expect(logs.count).to eq(1)
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
-    expect(logs.first.message).to eq("Document OK")
+    expect(logs.first.postal_code).to eq("28013")
+    expect(logs.first.message).to eq("Voto VÁLIDO")
   end
 
-  scenario "Error on verify" do
+  scenario "Error on verify (everything blank)" do
     click_button 'Validate document'
-    expect(page).to have_content(/\d errors? prevented the verification of this document/)
+
+    expect(page).to have_content 'Voto NO VÁLIDO'
+    expect(Poll::Voter.count).to eq(0)
+
+    logs = Poll::LetterOfficerLog.all
+    expect(logs.count).to eq(1)
+    expect(logs.first.user_id).to eq(officer.user_id)
+    expect(logs.first.document_number).to eq("")
+    expect(logs.first.postal_code).to eq("")
+    expect(logs.first.message).to eq("Voto NO VÁLIDO")
   end
 
   scenario "Error on Census (document number)" do
@@ -50,7 +62,9 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'The Census was unable to verify this document'
+    expect(page).to have_content 'Voto NO VÁLIDO'
+    expect(page).to have_content '9999999A'
+    expect(page).to have_content '28013'
 
     officer.reload
     fcc = FailedCensusCall.last
@@ -67,13 +81,16 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to have_content 'The Census was unable to verify this document'
+    expect(page).to have_content 'Voto NO VÁLIDO'
+    expect(page).to have_content '12345678Z'
+    expect(page).to have_content '28014'
 
     logs = Poll::LetterOfficerLog.all
     expect(logs.count).to eq(1)
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
-    expect(logs.first.message).to eq("Document not in census")
+    expect(logs.first.postal_code).to eq("28014")
+    expect(logs.first.message).to eq("Voto NO VÁLIDO")
   end
 
   scenario "Error already voted" do
@@ -90,15 +107,30 @@ feature 'Letters' do
 
     click_button 'Validate document'
 
-    expect(page).to_not have_content 'The Census was unable to verify this document'
-    expect(page).to have_content '1 error prevented the verification of this document'
-    expect(page).to have_content 'Vote Reformulated'
+    expect(page).to have_content 'Voto REFORMULADO'
+    expect(page).to have_content '12345678Z'
+    expect(page).to have_content '28013'
+
+    expect(Poll::Voter.count).to eq(1)
 
     logs = Poll::LetterOfficerLog.all
     expect(logs.count).to eq(1)
     expect(logs.first.reload.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
-    expect(logs.first.message).to eq("Document already voted")
+    expect(logs.first.postal_code).to eq("28013")
+    expect(logs.first.message).to eq("Voto REFORMULADO")
+  end
+
+  scenario "Validate next letter" do
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_postal_code', with: '28013'
+
+    click_button 'Validate document'
+    expect(page).to have_content 'Voto VÁLIDO'
+
+    click_link "Introducir nuevo documento"
+    expect(page).to have_content "Validate document"
   end
 
   context "Permissions" do
