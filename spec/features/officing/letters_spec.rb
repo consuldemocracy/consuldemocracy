@@ -180,4 +180,11 @@ feature 'Letters' do
     expect(page).to have_current_path(new_officing_letter_path)
   end
 
+  scenario "Going back after getting lost" do
+    visit root_path
+    click_link "Polling officers"
+
+    expect(page).to have_current_path(new_officing_letter_path)
+  end
+
 end
