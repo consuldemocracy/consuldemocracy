@@ -12,8 +12,7 @@
 // 10. Processes
 // 11. Spending proposals votes
 // 12. Collaborative legislation
-// 13. Counter
-// 14. Proposal Ballots
+// 13. Jumbo brand
 // 15. Welcome
 // 16. Si te sientes gato
 // 17. Blas Bonilla
@@ -2163,11 +2162,11 @@ ul.ballot-list {
   padding: $line-height/2;
 }
 
-// 13. Counter
+// 13. Jumbo brand
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.jumbo-counter, .jumbo-brand {
-  background: $budget;
+.jumbo-brand {
+  background: $brand;
   text-align: center;
 
   h2, h3 {
@@ -2204,29 +2203,6 @@ ul.ballot-list {
         }
       }
     }
-  }
-}
-
-.jumbo-brand {
-  background: $brand;
-}
-
-.featured-brand-banner {
-  background: $brand image-url("plaza_banner_small.jpg") no-repeat;
-  background-position: 100% 0;
-  position: relative;
-
-  h2, a:hover h2 {
-    color: #FFF !important;
-  }
-
-  p {
-    color: white;
-  }
-
-  @include breakpoint(medium) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
 
@@ -2272,50 +2248,6 @@ ul.ballot-list {
       position: absolute;
       top: 0;
     }
-  }
-}
-
-// 14. Proposal Ballots
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.jumbo-proposal-ballots {
-  background: #2D3E50;
-  text-align: center;
-
-  h2 {
-    color: #FFD200;
-  }
-
-  h3 {
-    color: white;
-    margin-bottom: $line-height;
-  }
-
-  .button {
-    background: #FFD200;
-    color: $text;
-  }
-}
-
-.jumbo-proposal-ballots-small {
-  @extend .jumbo-proposal-ballots;
-  color: white;
-
-  h2 {
-    font-size: rem-calc(24);
-  }
-
-  h2, p {
-    margin-bottom: 0;
-  }
-
-  a {
-    color: #FFD200;
-    text-decoration: underline;
-  }
-
-  .banner-text {
-    padding: $line-height/4;
   }
 }
 
