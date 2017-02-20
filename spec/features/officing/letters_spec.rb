@@ -45,7 +45,7 @@ feature 'Letters' do
     expect(Poll::Voter.count).to eq(0)
 
     logs = Poll::LetterOfficerLog.all
-    expect(logs.count).to eq(1)
+    expect(logs.count).to eq(3)
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("")
     expect(logs.first.postal_code).to eq("")
@@ -71,7 +71,7 @@ feature 'Letters' do
     expect(fcc).to be
     expect(fcc.poll_officer).to eq(officer)
     expect(officer.failed_census_calls.last).to eq(fcc)
-    expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 1)
+    expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 3)
   end
 
   scenario "Error on Census (postal code)" do
@@ -86,7 +86,7 @@ feature 'Letters' do
     expect(page).to have_content '28014'
 
     logs = Poll::LetterOfficerLog.all
-    expect(logs.count).to eq(1)
+    expect(logs.count).to eq(3)
     expect(logs.first.user_id).to eq(officer.user_id)
     expect(logs.first.document_number).to eq("12345678Z")
     expect(logs.first.postal_code).to eq("28014")
@@ -185,6 +185,62 @@ feature 'Letters' do
     click_link "Polling officers"
 
     expect(page).to have_current_path(new_officing_letter_path)
+  end
+
+  context "Checks all document types" do
+
+    scenario "Passport" do
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "12345678A"
+      fill_in 'residence_postal_code', with: '28013'
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Voto VÁLIDO'
+      expect(page).to have_content '12345678A'
+      expect(page).to have_content '28013'
+
+      voters = Poll::Voter.all
+      expect(voters.count).to eq(1)
+      expect(voters.first.origin).to eq("letter")
+      expect(voters.first.document_number).to eq("12345678A")
+      expect(voters.first.document_type).to eq("2")
+      expect(voters.first.poll).to eq(poll)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(2)
+      expect(logs.first.user_id).to eq(officer.user_id)
+      expect(logs.first.document_number).to eq("12345678A")
+      expect(logs.first.postal_code).to eq("28013")
+      expect(logs.first.message).to eq("Voto NO VÁLIDO")
+
+      expect(logs.last.user_id).to eq(officer.user_id)
+      expect(logs.last.document_number).to eq("12345678A")
+      expect(logs.last.postal_code).to eq("28013")
+      expect(logs.last.message).to eq("Voto VÁLIDO")
+    end
+
+    scenario "Foreign resident" do
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "12345678B"
+      fill_in 'residence_postal_code', with: '28013'
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Voto VÁLIDO'
+      expect(page).to have_content '12345678B'
+      expect(page).to have_content '28013'
+
+      voters = Poll::Voter.all
+      expect(voters.count).to eq(1)
+      expect(voters.first.origin).to eq("letter")
+      expect(voters.first.document_number).to eq("12345678B")
+      expect(voters.first.document_type).to eq("3")
+      expect(voters.first.poll).to eq(poll)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(3)
+    end
   end
 
 end

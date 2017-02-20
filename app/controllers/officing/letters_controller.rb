@@ -11,24 +11,28 @@ class Officing::LettersController < Officing::BaseController
 
   def create
     @residence = Officing::Residence.new(residence_params.merge(officer: current_user.poll_officer, letter: true))
-    if @residence.save
-      voter = Poll::Voter.new(document_type:   @residence.document_type,
-                              document_number: @residence.document_number,
-                              user: @residence.user,
-                              poll: @residence.letter_poll,
-                              origin: "letter")
-      if voter.save
-        log = ::Poll::LetterOfficerLog.log(current_user, voter.document_number, @residence.postal_code, :ok)
+    ["1", "2", "3"].each do |document_type|
+      @residence.document_type = document_type
+      if @residence.save
+        voter = Poll::Voter.new(document_type:   @residence.document_type,
+                                document_number: @residence.document_number,
+                                user: @residence.user,
+                                poll: @residence.letter_poll,
+                                origin: "letter")
+        if voter.save
+          @log = ::Poll::LetterOfficerLog.log(current_user, voter.document_number, @residence.postal_code, :ok)
+        end
+      else
+        if @residence.errors[:postal_code].present? || @residence.errors[:residence_in_madrid].present?
+          @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :census_failed)
+        elsif @residence.errors[:document_number].present?
+          @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :has_voted)
+        end
       end
-    else
-      if @residence.errors[:postal_code].present? || @residence.errors[:residence_in_madrid].present?
-        log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :census_failed)
-      elsif @residence.errors[:document_number].present?
-        log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :has_voted)
-      end
-    end
 
-    redirect_to officing_letter_path(id: log.id)
+      break if @log.message == "Voto VÁLIDO" || @log.message == "Voto REFORMULADO"
+    end
+    redirect_to officing_letter_path(id: @log.id)
   end
 
   def show
