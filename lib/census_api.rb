@@ -145,8 +145,25 @@ class CensusApi
     end
 
     def stubbed_response(document_type, document_number)
-      if document_number == "12345678Z" && document_type == "1"
-        stubbed_valid_response
+      case document_type
+      when "1"
+        if document_number == "12345678Z"
+          stubbed_valid_response
+        else
+          stubbed_invalid_response
+        end
+      when "2"
+        if document_number == "12345678A"
+          stubbed_valid_passport_response
+        else
+          stubbed_invalid_response
+        end
+      when "3"
+        if document_number == "12345678B"
+          stubbed_valid_foreign_resident_response
+        else
+          stubbed_invalid_response
+        end
       else
         stubbed_invalid_response
       end
@@ -154,6 +171,14 @@ class CensusApi
 
     def stubbed_valid_response
       {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678", letra_documento_string: "Z", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
+    end
+
+    def stubbed_valid_passport_response
+      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678", letra_documento_string: "A", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
+    end
+
+    def stubbed_valid_foreign_resident_response
+      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: { item: {fecha_nacimiento_string: "31-12-1980", identificador_documento: "12345678", letra_documento_string: "B", descripcion_sexo: "Varón", nombre: "José", apellido1: "García" }}, datos_vivienda: {item: {codigo_postal: "28013", codigo_distrito: "01"}}}}}
     end
 
     def stubbed_invalid_response
