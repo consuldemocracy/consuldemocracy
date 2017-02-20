@@ -13,7 +13,6 @@ feature 'Letters' do
   end
 
   scenario "Verify and store voter" do
-    select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28013'
 
@@ -56,7 +55,6 @@ feature 'Letters' do
     initial_failed_census_calls_count = officer.failed_census_calls_count
     visit new_officing_letter_path
 
-    select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "9999999A"
     fill_in 'residence_postal_code', with: '28013'
 
@@ -75,7 +73,6 @@ feature 'Letters' do
   end
 
   scenario "Error on Census (postal code)" do
-    select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28014'
 
@@ -101,7 +98,6 @@ feature 'Letters' do
     allow_any_instance_of(Officing::Residence).
     to receive(:letter_poll).and_return(poll)
 
-    select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28013'
 
@@ -122,7 +118,6 @@ feature 'Letters' do
   end
 
   scenario "Validate next letter" do
-    select 'DNI', from: 'residence_document_type'
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28013'
 
@@ -190,7 +185,6 @@ feature 'Letters' do
   context "Checks all document types" do
 
     scenario "Passport" do
-      select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678A"
       fill_in 'residence_postal_code', with: '28013'
 
@@ -221,7 +215,6 @@ feature 'Letters' do
     end
 
     scenario "Foreign resident" do
-      select 'DNI', from: 'residence_document_type'
       fill_in 'residence_document_number', with: "12345678B"
       fill_in 'residence_postal_code', with: '28013'
 
