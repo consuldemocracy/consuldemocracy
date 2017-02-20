@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
         current_user.update(locale: locale)
       end
 
-      I18n.locale = locale
+      I18n.locale = "fr"
     end
 
     def set_layout
