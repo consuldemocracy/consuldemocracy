@@ -101,37 +101,43 @@ fr:
         unfeasible: Voir les propositions invalides
 
     home_rivp:
-      title: Les étapes du budget participatif
+      title: "Les étapes du budget participatif"
       steps_cards:
         accepting:
-          title: Déposez vos idées
-          dates: Du X au X
-          description: Vous avez une idée ? Décrivez votre idée et déposez-la sur la plateforme.
+          title: "Informez vous et déposez vos idées"
+          dates: "mi-mars – fin juin"
+          description: "Participez aux réunions en pied d’immeuble (dates entre 20 et 31 mars) et déposez vos idées jusqu’à fin juin"
+          more_info: "Plus d'information"
           img: custom/accepting.svg
         reviewing:
-          title: Contribuez aux idées
-          dates: Du X au X
-          description: Contribuez à améliorer les idées déposées en échangeant sur la plateforme.
+          title: Echangez sur les idées et enrichissez les !
+          dates: mi-mars – fin juin
+          description: "Participez aux ateliers de co-construction sur le terrain (entre le 15 et 19 mai) et continuez à enrichir les idées déposées par les locataires en apportant vos commentaires"
+          more_info: "Plus d'information"
           img: custom/reviewing.svg
         selecting:
-          title: Soutenez les idées
-          dates: Du X au X
-          description: Parmi les idées proposées, soutenez celles qui vous plaisent.
+          title: Soutenez les idées !
+          dates: fin juin
+          description: "Accédez à toutes les idées des locataires et soutenez celles qui vous plaisent."
+          more_info: "Plus d'information"
           img: custom/selecting.svg
         valuating:
-          title: Evaluation de la RIVP
-          dates: Du X au X
-          description: La RIVP contrôle que les idées répondent aux critères, puis les chiffre.
+          title: Etude des projets
+          dates: juillet
+          description: "Les idées qui auront été soutenues par les locataires  seront examinées par une commission pour s’assurer de leur faisabilité et préciser le cout des projets"
+          more_info: "Plus d'information"
           img: custom/valuating.svg
         balloting:
           title: Vote final
-          dates: Du X au X
-          description: Soutenez les propositions qui auront été validées et qui vous plaisent, dans la limite de l’enveloppe alouée pour votre site.
+          dates: septembre-octobre
+          description: "Votez pour les projets que vous préférez (directement sur le site ou par vote papier). Les projets qui auront obtenu le plus de voix seront retenus dans la limite de l’enveloppe du budget participatif"
+          more_info: "Plus d'information"
           img: balloting.svg
         finished:
           title: Résultats
-          dates: Du X au X
-          description: Les résultats seront publiés de manière transparente à l’issue du vote.
+          dates: novembre
+          description: "A l’issue du vote et du dépouillement, les résultats seront communiqués à tous. Les projets retenus seront mis en œuvre par les locataires lauréats à partir de janvier 2018."
+          more_info: "Plus d'information"
           img: custom/finished.svg
       theme_cards:
         living_environment:
