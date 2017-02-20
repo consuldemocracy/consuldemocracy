@@ -26,10 +26,6 @@ module BudgetsHelper
     end
   end
 
-  def display_budget_countdown?(budget)
-    budget.balloting?
-  end
-
   def css_for_ballot_heading(heading)
     return '' unless current_ballot.present?
     current_ballot.has_lines_in_heading?(heading) ? 'active' : ''

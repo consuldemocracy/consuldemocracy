@@ -2204,47 +2204,11 @@ ul.ballot-list {
         }
       }
     }
-
-    .countdown {
-      background: none;
-    }
   }
 }
 
 .jumbo-brand {
   background: $brand;
-}
-
-.countdown {
-  background: #e6434d;
-  border-radius: rem-calc(6);
-  color: white;
-  display: inline-block;
-  font-weight: bold;
-  text-align: center;
-  font-size: rem-calc(30);
-
-  .number {
-    display: inline-block;
-    padding: $line-height/2;
-
-    .value {
-      background: #dc2d43;
-      border-radius: rem-calc(3);
-      display: inline-block;
-      padding: $line-height/2;
-
-      @include breakpoint(medium) {
-        width: rem-calc(60);
-      }
-    }
-  }
-
-  .counter-text {
-    font-size: $small-font-size;
-    text-transform: uppercase;
-    padding-top: $line-height/4;
-  }
 }
 
 .featured-brand-banner {
