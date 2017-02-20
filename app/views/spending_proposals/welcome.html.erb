@@ -5,32 +5,7 @@
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
-<% if display_budget_countdown? %>
-  <div class="expanded no-margin-top jumbo-counter padding">
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <h2 class="margin-top"><%= t("shared.counter.budget_text_html") %></h2>
-      </div>
-      <div class="small-12 medium-6 column margin-bottom">
-        <%= render "shared/budget_counter" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-<% if @proposal_successfull_exists %>
-  <div class="expanded jumbo-proposal-ballots-small no-margin-top">
-    <div class="row">
-      <div class="small-12 column">
-        <div class="banner-text inline-block">
-          <h2 class="inline-block"><%= t("poll_questions.banner.featured_title") %></h2>&nbsp;
-          <p class="inline-block"><%= t("poll_questions.banner.info") %></p>
-          <%= link_to t("poll_questions.banner.button"), first_voting_path %>
-        </div>
-        <%= image_tag ("ballot_tiny.gif"), class: "float-right", alt: "" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+
 <div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
   <div class="row" data-equalizer>
     <div class="small-12 large-7 column content" data-equalizer-watch>

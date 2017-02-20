@@ -481,10 +481,6 @@ es:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       poll: "Votación"
-    banner:
-      featured_title: "PRIMERA VOTACIÓN CIUDADANA"
-      info: "VOTA DEL 13 AL 19 DE FEBRERO"
-      button: "VOTA"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -532,13 +528,6 @@ es:
     check_all: Todos
     check_none: Ninguno
     collective: Colectivo
-    counter:
-      budget_title: Presupuestos participativos
-      budget_text_html: "¡Participa hasta el <span>30 de junio</span>!"
-      days: "Días"
-      hours: Horas
-      minutes: Minutos
-      seconds: Segundos
     flag: Denunciar como inapropiado
     hide: Ocultar
     print:

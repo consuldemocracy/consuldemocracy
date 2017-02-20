@@ -37,19 +37,11 @@
         <% end %>
       </div>
 
-      <% if display_budget_countdown? %>
-        <%= render "shared/budget_counter_banner" %>
-      <% end %>
-
       <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if feature?("probe.plaza") %>
-        <%= render "custom/probes/plaza/banner" %>
-      <% elsif @proposal_successful_exists %>
-        <%= render "successful_banner" %>
-      <% elsif @featured_proposals.present? %>
+      <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>

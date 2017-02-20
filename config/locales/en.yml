@@ -481,10 +481,6 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       poll: "Poll"
-    banner:
-      featured_title: "FIRST CITIZEN VOTING"
-      info: "VOTE FROM FEBRUARY 13 TO 19"
-      button: "VOTE"
   proposal_notifications:
     new:
       title: "Send message"
@@ -532,13 +528,6 @@ en:
     check_all: All
     check_none: None
     collective: Collective
-    counter:
-      budget_title: Participatory budgets
-      budget_text_html: "Participates until <span>June 30</span>!"
-      days: Days
-      hours: Hours
-      minutes: Minutes
-      seconds: Seconds
     flag: Flag as inappropriate
     hide: Hide
     print:

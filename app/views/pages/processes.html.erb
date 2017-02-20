@@ -3,21 +3,6 @@
 <% provide :meta_keywords, t("meta_tags.processes.keywords") %>
 <% provide :tracking_page_number, "32" %>
 
-<% if @proposal_successfull_exists %>
-  <div class="expanded jumbo-proposal-ballots-small no-margin-top">
-    <div class="row">
-      <div class="small-12 column">
-        <div class="banner-text inline-block">
-          <h2 class="inline-block"><%= t("poll_questions.banner.featured_title") %></h2>&nbsp;
-          <p class="inline-block"><%= t("poll_questions.banner.info") %></p>
-          <%= link_to t("poll_questions.banner.button"), first_voting_path %>
-        </div>
-        <%= image_tag ("ballot_tiny.gif"), class: "float-right", alt: "" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <div class="expanded processes no-margin-top <%= css_for_human_rights_phase("accepting") %>">
   <div class="row padding">
     <div class="small-12 column">

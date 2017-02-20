@@ -50,7 +50,6 @@
 //= require embed_video
 //= require fixed_bar
 //= require banners
-//= require countdown
 //= require probe
 //= require social_share
 //= require checkbox_toggle
@@ -78,7 +77,6 @@ var initialize_modules = function() {
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
-  App.Countdown.initialize();
   App.SocialShare.initialize();
   App.CheckboxToggle.initialize();
 };
