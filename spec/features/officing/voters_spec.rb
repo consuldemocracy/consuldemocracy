@@ -7,9 +7,6 @@ feature 'Voters' do
   background do
     login_as(officer.user)
     create(:geozone, :in_census)
-
-    #remove once foundation.equalizer js error has been fixed
-    Capybara.current_driver = :poltergeist_no_js_errors
   end
 
   scenario "Can vote", :js do
