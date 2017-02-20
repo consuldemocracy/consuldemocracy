@@ -11,10 +11,30 @@ fr:
     max_votes_for_debate_edit: "Nombre de votes à partir duquel un débat ne peut plus être modifié"
     proposal_code_prefix: "Préfixe pour les codes de proposition"
     votes_for_proposal_success: "Nombre de votes nécessaires pour l'approbation d'une proposition"
+    months_to_archive_proposals: "Mois d'archivage des propositions"
     email_domain_for_officials: "Nom de domaine officiel pour la collectivité"
     per_page_code: "Code à inclure sur chaque page"
+    twitter_handle: "Twitter handle"
+    twitter_hashtag: "Twitter hashtag"
+    facebook_handle: "Facebook handle"
+    youtube_handle: "Youtube handle"
+    blog_url: "Blog URL"
+    url: "URL"
+    org_name: "Organisation"
+    place_name: "Place"
     feature:
+      budgets: Budget participatif
+      twitter_login: Twitter login
+      facebook_login: Facebook login
+      google_login: Google login
       debates: Débats
+      signature_sheets: Feuille de signature
       spending_proposals: Projets d'investissement
       spending_proposal_features:
         voting_allowed: Voter sur les projets d'investissement
+    mailer_from_name: Nom d'origine du mail
+    mailer_from_address: Adresse mail d'origine
+    meta_description: TODO - "Site description (SEO)"
+    meta_keywords: TODO - "Keywords (SEO)"
+    verification_offices_url: TODO - Verification offices URL
+    min_age_to_participate: Age minimum pour participer

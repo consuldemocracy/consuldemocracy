@@ -217,11 +217,11 @@ fr:
         new_link  : Créer un nouveau budget participatif
         table_name  : Nom du BP
         table_phase : Phase actuelle du BP
-        table_investments : Investissements
+        table_investments : Les propositions
         table_edit_groups : Zones
         table_edit_budget : Modifier
-        budget_investments  : Voir les investissements budgétaires
-        edit_groups : Modifier les groupes de titres
+        budget_investments  : Voir les propositions
+        edit_groups : Modifier les zones du BP
         edit_budget : Modifier le budget
         filters:
           current : Budgets participatifs en cours
@@ -347,26 +347,26 @@ fr:
     #     email_placeholder: Search user by email
     #     search: Search
     #     user_not_found: User not found
-    # valuators:
-    #   index:
-    #     title: Valuators
-    #   valuator:
-    #     description_placeholder: 'Description (optional)'
-    #     user_found: User found
-    #     add: Add to valuators
-    #   search:
-    #     email_placeholder: Search user by email
-    #     search: Search
-    #     user_not_found: User not found
-    #   summary:
-    #     title: Valuator summary for investment projects
-    #     valuator_name: Valuator
-    #     finished_and_feasible_count: Finished and feasible
-    #     finished_and_unfeasible_count: Finished and unfeasible
-    #     finished_count: Finished
-    #     in_evaluation_count: In evaluation
-    #     total_count: Total
-    #     cost: Cost
+    valuators:
+      index:
+        title: "Evaluateurs"
+      valuator:
+        description_placeholder: "Description (option)"
+        user_found: "Utilisateur trouvé"
+        add: "Ajouter à la liste des évaluateurs"
+      search:
+        email_placeholder: "Rechercher un utilisateur par son adresse mail"
+        search: "Rechercher"
+        user_not_found: "Utilisateur non trouvé"
+      summary:
+        title: "Sommaire des évaluateurs de budgets participatifs"
+        valuator_name: "Evaluateur"
+        finished_and_feasible_count: "Fini et faisable"
+        finished_and_unfeasible_count: "Fini et infaisable"
+        finished_count: "Fini"
+        in_evaluation_count: "En évaluation"
+        total_count: "Total"
+        cost: "Coût"
     # officials:
     #   edit:
     #     destroy: Remove 'Official' status
@@ -544,29 +544,30 @@ fr:
     #     sms_code_not_confirmed: Has not confirmed the sms code
     #     title: Incomplete verifications
 
-    # geozones:
-    #   delete.success : La zone géographique a été supprimée avec succès
-    #   delete.error : Cette zone géographique ne peut pas être supprimée car il ya des éléments qui y sont attachés
-    #   errors.form.error  :
-    #     one: "empêchait cette zone géographique d'être enregistré"
-    #     other: "empêchait cette zone géographique d'être enregistrés"
-    #   geozone:
-    #     name : Nom
-    #     coordinates  : Coordonnées
-    #     external_code  : Code externe
-    #     census_code  : Code de recensement
-    #   edit:
-    #     form.submit_button  : Sauvegarder les modifications
-    #     back  : Retour
-    #     editing : Modification de la zone géographique
-    #   index:
-    #     create : Créer une zone géographique
-    #     title  : Zone géographique
-    #     edit : Modifier
-    #     delete : Effacer
-    #   new:
-    #     back : Retour
-    #     creating : Créer un district
+    geozones:
+      delete.success : La zone géographique a été supprimée avec succès
+      delete.error : Cette zone géographique ne peut pas être supprimée car il ya des éléments qui y sont attachés
+      errors.form.error  :
+        one: "empêchait cette zone géographique d'être enregistré"
+        other: "empêchait cette zone géographique d'être enregistrés"
+      geozone:
+        name : Nom
+        coordinates  : Coordonnées
+        external_code  : Code externe
+        census_code  : Code de recensement
+      edit:
+        form:
+          submit_button  : Sauvegarder les modifications
+        back  : Retour
+        editing : Modification de la zone géographique
+      index:
+        create : Créer une zone géographique
+        title  : Zone géographique
+        edit : Modifier
+        delete : Effacer
+      new:
+        back : Retour
+        creating : Créer un district
     # menu:
     #   budgets: Budgets participatifs
     #   signature_sheets : Feuilles de signature
