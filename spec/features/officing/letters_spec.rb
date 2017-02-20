@@ -173,4 +173,11 @@ feature 'Letters' do
 
   end
 
+  scenario "Sign in" do
+    click_link 'Sign out'
+    login_through_form_as(officer.user)
+
+    expect(page).to have_current_path(new_officing_letter_path)
+  end
+
 end

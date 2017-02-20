@@ -5,7 +5,11 @@ class Users::SessionsController < Devise::SessionsController
 
     def after_sign_in_path_for(resource)
       if current_user.poll_officer?
-        new_officing_booth_path
+        if current_user.poll_officer.letter_officer?
+          new_officing_letter_path
+        else
+          new_officing_booth_path
+        end
       elsif !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
