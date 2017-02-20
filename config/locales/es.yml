@@ -529,8 +529,6 @@ es:
     check_none: Ninguno
     collective: Colectivo
     counter:
-      budget_title: Presupuestos participativos
-      budget_text_html: "¡Participa hasta el <span>30 de junio</span>!"
       days: "Días"
       hours: Horas
       minutes: Minutos

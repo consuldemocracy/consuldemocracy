@@ -529,8 +529,6 @@ en:
     check_none: None
     collective: Collective
     counter:
-      budget_title: Participatory budgets
-      budget_text_html: "Participates until <span>June 30</span>!"
       days: Days
       hours: Hours
       minutes: Minutes
