@@ -25,6 +25,19 @@ body.admin {
   .top-bar {
     background: $admin-color !important;
     height: auto;
+    ul {
+      &.menu > li {
+        a{
+          color: black;
+        }
+      }
+    }
+    .top-bar-title{
+      a{
+        color: black;
+      }
+
+    }
   }
 
   form {
