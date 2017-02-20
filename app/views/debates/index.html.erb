@@ -42,8 +42,6 @@
 
       <% if feature?("probe.plaza") %>
         <%= render "custom/probes/plaza/banner" %>
-      <% elsif @proposal_successful_exists %>
-        <%= render "proposals/successful_banner" %>
       <% end %>
 
       <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists || feature?("probe.plaza") %>

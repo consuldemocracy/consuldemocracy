@@ -99,8 +99,6 @@ en:
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
     letter:
-      flash:
-        create: "Valid vote"
       new:
         alredy_voted: "Vote Reformulated"
     voters:

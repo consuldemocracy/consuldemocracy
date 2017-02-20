@@ -481,10 +481,6 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       poll: "Poll"
-    banner:
-      featured_title: "FIRST CITIZEN VOTING"
-      info: "VOTE FROM FEBRUARY 13 TO 19"
-      button: "VOTE"
   proposal_notifications:
     new:
       title: "Send message"

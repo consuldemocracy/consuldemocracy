@@ -481,10 +481,6 @@ es:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       poll: "Votación"
-    banner:
-      featured_title: "PRIMERA VOTACIÓN CIUDADANA"
-      info: "VOTA DEL 13 AL 19 DE FEBRERO"
-      button: "VOTA"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
