@@ -528,11 +528,6 @@ es:
     check_all: Todos
     check_none: Ninguno
     collective: Colectivo
-    counter:
-      days: "Días"
-      hours: Horas
-      minutes: Minutos
-      seconds: Segundos
     flag: Denunciar como inapropiado
     hide: Ocultar
     print:
