@@ -147,23 +147,25 @@ class CensusApi
     def stubbed_response(document_type, document_number)
       case document_type
       when "1"
-        if document_number == "12345678Z" && document_type == "1"
+        if document_number == "12345678Z"
           stubbed_valid_response
         else
           stubbed_invalid_response
         end
       when "2"
-        if document_number == "12345678A" && document_type == "2"
+        if document_number == "12345678A"
           stubbed_valid_passport_response
         else
           stubbed_invalid_response
         end
       when "3"
-        if document_number == "12345678B" && document_type == "3"
+        if document_number == "12345678B"
           stubbed_valid_foreign_resident_response
         else
           stubbed_invalid_response
         end
+      else
+        stubbed_invalid_response
       end
     end
 
