@@ -19,10 +19,10 @@
     <div class="small-12 column">
       <ul class="tabs">
         <li class="tabs-title">
-          <%= link_to "Resultados", poll_results_path %>
+          <%= link_to "Resultados", gran_votacion_results_path %>
         </li>
         <li class="tabs-title is-active">
-          <%= link_to "Estadísticas", poll_stats_path %>
+          <%= link_to "Estadísticas", gran_votacion_stats_path %>
         </li>
       </ul>
     </div>
@@ -55,42 +55,42 @@
       <h2 class="sr-only">PARTICIPACIÓN</h2>
 
       <!-- Participación total -->
-      <%= render "pages/polls/stats/total" %>
+      <%= render "polls/stats_2017/total" %>
 
       <!-- Participación por sexo -->
-      <%= render "pages/polls/stats/sex" %>
+      <%= render "polls/stats_2017/sex" %>
 
       <!-- Participación por grupos de edad -->
-      <%= render "pages/polls/stats/age" %>
+      <%= render "polls/stats_2017/age" %>
 
       <!-- Participación por distrito -->
-      <%= render "pages/polls/stats/districts" %>
+      <%= render "polls/stats_2017/districts" %>
 
       <h2 class="sr-only">VOTACIONES</h2>
 
       <!-- Propuestas y Plaza de España -->
-      <%= render "pages/polls/stats/poll_1" %>
+      <%= render "polls/stats_2017/poll_1" %>
 
       <!-- Gran Vía -->
-      <%= render "pages/polls/stats/poll_2" %>
+      <%= render "polls/stats_2017/poll_2" %>
 
       <!-- Barajas -->
-      <%= render "pages/polls/stats/poll_3" %>
+      <%= render "polls/stats_2017/poll_3" %>
 
       <!-- San Blas - Canillejas -->
-      <%= render "pages/polls/stats/poll_4" %>
+      <%= render "polls/stats_2017/poll_4" %>
 
       <!-- Hortaleza -->
-      <%= render "pages/polls/stats/poll_5" %>
+      <%= render "polls/stats_2017/poll_5" %>
 
       <!-- Retiro -->
-      <%= render "pages/polls/stats/poll_6" %>
+      <%= render "polls/stats_2017/poll_6" %>
 
       <!-- Salamanca -->
-      <%= render "pages/polls/stats/poll_7" %>
+      <%= render "polls/stats_2017/poll_7" %>
 
       <!-- Vicálvaro -->
-      <%= render "pages/polls/stats/poll_8" %>
+      <%= render "polls/stats_2017/poll_8" %>
     </div>
   </div>
 </div>

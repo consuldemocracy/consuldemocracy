@@ -20,4 +20,9 @@ class PollsController < ApplicationController
     end
   end
 
+  def results_2017
+  end
+
+  def stats_2017
+  end
 end
