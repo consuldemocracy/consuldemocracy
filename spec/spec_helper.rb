@@ -118,13 +118,12 @@ end
 Knapsack::Adapters::RSpecAdapter.bind
 
 Capybara.register_driver :selenium do |app|
-      Capybara::Selenium::Driver.new(
-        app,
-        browser: :firefox,
-        desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
-      )
-    end
-Capybara.default_max_wait_time = 10
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :firefox,
+    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
+  )
+end
 
 options = {js_errors: false}
 Capybara.register_driver :poltergeist_no_js_errors do |app|
