@@ -20,9 +20,6 @@ es:
     not_logged_in: Necesitas %{signin} o %{signup} para participar.
     signin: iniciar sesión
     signup: registrarte
-    plaza_banner:
-      title: '#RemodelaciónPlazaEspaña'
-      date_html: '¡Participa hasta el <u>28 de octubre</u>!'
     plaza:
       selecting:
         code_html: '<abbr title="Referencia">REF.</abbr> %{code}'

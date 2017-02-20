@@ -40,11 +40,7 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if feature?("probe.plaza") %>
-        <%= render "custom/probes/plaza/banner" %>
-      <% end %>
-
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists || feature?("probe.plaza") %>
+      <% unless @tag_filter || @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
 

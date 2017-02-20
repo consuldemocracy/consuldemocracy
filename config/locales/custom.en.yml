@@ -20,9 +20,6 @@ en:
     not_logged_in: You must %{signin} or %{signup} to participate.
     signin: Sign in
     signup: Sign up
-    plaza_banner:
-      title: '#RemodelingPlazaEspaña'
-      date_html: 'Participate until <u>October 28</u>!'
     plaza:
       selecting:
         code_html: '<abbr title="Reference">REF.</abbr> %{code}'
