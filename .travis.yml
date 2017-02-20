@@ -1,15 +1,12 @@
 language: ruby
 addons:
   postgresql: "9.4"
-  firefox: "47.0.1"
 rvm:
  - "2.3.2"
 cache: bundler
 before_script:
   - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
   - bundle exec rake db:setup
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
 script:
   - "bundle exec rake knapsack:rspec SPEC_OPTS=\"--tag ~selenium\""
 env:
