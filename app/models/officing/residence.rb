@@ -2,26 +2,29 @@ class Officing::Residence
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth
+  attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth, :postal_code, :letter
 
   before_validation :call_census_api
 
   validates_presence_of :document_number
   validates_presence_of :document_type
-  validates_presence_of :year_of_birth
+  validates_presence_of :postal_code,   if:     :letter?
+  validates_presence_of :year_of_birth, unless: :letter?
 
   validate :allowed_age
   validate :residence_in_madrid
+  validate :not_voted, if: :letter?
 
   def initialize(attrs={})
     super
     clean_document_number
+    @letter = attrs[:letter]
   end
 
   def save
     return false unless valid?
 
-    self.document_number = @census_api_response.document_number
+    self.document_number = census_document_number
 
     if user_exists?
       self.user = find_user_by_document
@@ -54,7 +57,6 @@ class Officing::Residence
       year_of_birth:   year_of_birth,
       poll_officer:    officer
     })
-
   end
 
   def user_exists?
@@ -104,6 +106,10 @@ class Officing::Residence
     @census_api_response.date_of_birth
   end
 
+  def letter_poll
+    Poll.find(1)
+  end
+
   private
 
     def call_census_api
@@ -111,16 +117,38 @@ class Officing::Residence
     end
 
     def residency_valid?
-      @census_api_response.valid? &&
-      @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
+      return false unless @census_api_response.valid?
+      if letter?
+        @census_api_response.postal_code == postal_code
+      else
+        @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
+      end
     end
 
     def census_year_of_birth
       @census_api_response.date_of_birth.year
     end
 
+    def census_document_number
+      @census_api_response.document_number
+    end
+
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+    end
+
+    def letter?
+      @letter.present?
+    end
+
+    def not_voted
+      if already_voted?
+        errors.add(:document_number, I18n.t('officing.letter.new.alredy_voted'))
+      end
+    end
+
+    def already_voted?
+      Poll::Voter.where(poll: letter_poll, document_number: census_document_number).exists?
     end
 
     def random_password

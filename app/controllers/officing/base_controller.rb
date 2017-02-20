@@ -36,4 +36,8 @@ class Officing::BaseController < ApplicationController
       Poll::Booth.where(id: session[:booth_id]).first
     end
 
+    def letter?
+      false
+    end
+
 end

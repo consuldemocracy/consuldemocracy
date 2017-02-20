@@ -152,6 +152,21 @@ describe :voter do
       end
     end
 
+    describe "#letter" do
+      it "returns voters with a letter origin" do
+        voter1 = create(:poll_voter, origin: "letter")
+        voter2 = create(:poll_voter, origin: "letter")
+        voter3 = create(:poll_voter, origin: "web")
+
+        letter_voters = Poll::Voter.letter
+
+        expect(letter_voters.count).to eq(2)
+        expect(letter_voters).to     include(voter1)
+        expect(letter_voters).to     include(voter2)
+        expect(letter_voters).to_not include(voter3)
+      end
+    end
+
   end
 
 
