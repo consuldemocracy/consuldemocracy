@@ -3,21 +3,6 @@ require 'rails_helper'
 
 feature 'Proposal ballots' do
 
-  scenario 'Banner shows in proposal index' do
-    create_featured_proposals
-
-    visit proposals_path
-    expect(page).to_not have_css("#next-voting")
-    expect(page).to have_css("#featured-proposals")
-
-    create_successful_proposals
-
-    visit proposals_path
-
-    expect(page).to have_css("#next-voting")
-    expect(page).to_not have_css("#featured-proposals")
-  end
-
   scenario 'Successful proposals do not show support buttons in index' do
     successful_proposals = create_successful_proposals
 
