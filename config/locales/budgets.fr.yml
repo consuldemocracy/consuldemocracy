@@ -93,7 +93,7 @@ fr:
       valuating: Cotation des propositions
       balloting: Vote des propositions
       reviewing_ballots: Décompte des votes
-      finished: Fin du budget
+      finished: Budget participatif terminé
     groups:
       show:
         title: Sélectionnez un site
@@ -104,15 +104,15 @@ fr:
       title: "Les étapes du budget participatif"
       steps_cards:
         accepting:
-          title: "Informez vous et déposez vos idées"
+          title: "Informez-vous et déposez vos idées"
           dates: "mi-mars – fin juin"
-          description: "Participez aux réunions en pied d’immeuble (dates entre 20 et 31 mars) et déposez vos idées jusqu’à fin juin"
+          description: "Participez aux réunions en pied d’immeuble (dates entre 20 et 31 mars) et déposez vos idées jusqu’à fin juin."
           more_info: "Plus d'information"
           img: custom/accepting.svg
         reviewing:
           title: Echangez sur les idées et enrichissez les !
           dates: mi-mars – fin juin
-          description: "Participez aux ateliers de co-construction sur le terrain (entre le 15 et 19 mai) et continuez à enrichir les idées déposées par les locataires en apportant vos commentaires"
+          description: "Participez aux ateliers de co-construction sur le terrain (entre le 15 et 19 mai) et continuez à enrichir les idées déposées par les locataires en apportant vos commentaires."
           more_info: "Plus d'information"
           img: custom/reviewing.svg
         selecting:
@@ -124,13 +124,13 @@ fr:
         valuating:
           title: Etude des projets
           dates: juillet
-          description: "Les idées qui auront été soutenues par les locataires  seront examinées par une commission pour s’assurer de leur faisabilité et préciser le cout des projets"
+          description: "Les idées qui auront été soutenues par les locataires  seront examinées par une commission pour s’assurer de leur faisabilité et préciser le coût des projets."
           more_info: "Plus d'information"
           img: custom/valuating.svg
         balloting:
           title: Vote final
           dates: septembre-octobre
-          description: "Votez pour les projets que vous préférez (directement sur le site ou par vote papier). Les projets qui auront obtenu le plus de voix seront retenus dans la limite de l’enveloppe du budget participatif"
+          description: "Votez pour les projets que vous préférez (directement sur le site ou par vote papier). Les projets qui auront obtenu le plus de voix seront retenus dans la limite de l’enveloppe du budget participatif."
           more_info: "Plus d'information"
           img: balloting.svg
         finished:
@@ -154,7 +154,7 @@ fr:
           img: custom/social_link.svg
         micro_development:
           title: Micro aménagements
-          description: Abr vélo / Equipements mobiles pour livres / CD / magazines / jardinières
+          description: Abri vélo / Equipements mobiles pour livres / CD / Magazines / Jardinières
           img: custom/micro_development.svg
     ballots:
       show:
@@ -180,7 +180,7 @@ fr:
     progress_bar:
       available  : "Disponible :"
     show:
-      phase  : Phase actuelle
+      phase: "Phase actuelle :"
       group  : Groupe
       unfeasible_title: Propositions invalides
       unfeasible: Voir les propositions invalides
