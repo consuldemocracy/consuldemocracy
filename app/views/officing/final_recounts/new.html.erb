@@ -44,26 +44,18 @@
 
   <table>
     <thead>
-      <th><%= t("officing.final_recounts.new.date")  %></th>
       <th><%= t("officing.final_recounts.new.booth") %></th>
       <th><%= t("officing.final_recounts.new.count") %></th>
-      <th><%= t("officing.final_recounts.new.system_count") %></th>
       <th>&nbsp;</th>
     </thead>
     <tbody>
       <% @final_recounts.each do |final_recount| %>
         <tr id="<%= dom_id(final_recount) %>">
           <td>
-            <%= l(final_recount.date.to_date, format: :long) %>
-          </td>
-          <td>
             <%= final_recount.booth_assignment.booth.name %>
           </td>
           <td>
             <strong><%= final_recount.count %></strong>
-          </td>
-          <td>
-            <strong><%= system_recount_to_compare_with_final_recount final_recount %></strong>
           </td>
           <td>
             <%= link_to t("officing.final_recounts.new.add_results"), new_officing_poll_result_path(@poll, oa: final_recount.officer_assignment.id, d: l(final_recount.date.to_date) )%>

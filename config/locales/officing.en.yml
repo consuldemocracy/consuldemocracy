@@ -55,13 +55,11 @@ en:
         intro_html: "Put together <strong>all daily envelopes</strong> and complete the following info:"
         not_allowed: "You are allowed to add final recounts for this poll"
         booth: "Booth"
-        date: "Date"
         select_booth: "Select booth"
         count: "Final vote count"
         count_placeholder: "Final vote count"
         submit: Save
         final_recount_list: "Your final recounts"
-        system_count: "System recount"
         add_results: "Add results"
     results:
       flash:
