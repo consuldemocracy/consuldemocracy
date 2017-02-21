@@ -12,7 +12,7 @@ module Budgets
     before_action -> { flash.now[:notice] = flash[:notice].html_safe if flash[:html_safe] && flash[:notice] }
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
-    before_action :set_random_seed, only: :index
+    # before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
 
@@ -28,13 +28,16 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments
-                     .includes([{ author: :organization }, :tags])
-                     .apply_filters_and_search(@budget, params)
-                     .send("sort_by_#{@current_order}")
-                     .page(params[:page])
-                     .per(2)
-                     .for_render
+      Budget::Investment.transaction do
+        set_random_seed
+        @investments = @investments
+                       .includes([{ author: :organization }, :tags])
+                       .apply_filters_and_search(@budget, params)
+                       .send("sort_by_#{@current_order}")
+                       .page(params[:page])
+                       .per(2)
+                       .for_render
+      end
 
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
