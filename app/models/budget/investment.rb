@@ -74,7 +74,7 @@ class Budget
     scope :flagged, -> { where("flags_count >= 0") }
     scope :pendientes_moderacion, -> { where(ignored_flag_at: nil).not_unfeasible }
 
-    scope :for_render,             -> { includes(:heading) }
+    scope :for_render, -> { includes(:heading) }
 
     before_save :calculate_confidence_score
     after_save :recalculate_heading_winners if :incompatible_changed?
