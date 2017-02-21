@@ -23,6 +23,7 @@ class Moderation::InvestmentsController < Moderation::BaseController
 
     def set_resources_instance
       instance_variable_set("@budget_investmens", @resources)
+      @investment_votes = current_user ? current_user.budget_investment_votes(@budget_investmens) : {}  
     end
 
 end

@@ -30,7 +30,7 @@
     <% @budget_investmens.each do |budget_investment| %>
       <tr>
         <td colspan="2">
-          <%= render 'budgets/investments/investment_simple', investment: budget_investment %>
+          <%= render 'budgets/investments/investment_simple', investment: budget_investment, investment_votes: @investment_votes %>
 
           <% if params[:filter] == "unfeasible" %>
             <p>
