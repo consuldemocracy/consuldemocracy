@@ -2619,3 +2619,11 @@ p.can-participate-info {
 .census_failed {
   @extend .alert;
 }
+
+.no_postal_code {
+  @extend .primary;
+}
+
+.verify-name h3 span {
+  text-transform: uppercase;
+}
