@@ -55,13 +55,11 @@ es:
         intro_html: "Junte los sobres de votación de <strong>todos</strong> los días e introduzca la siguiente información:"
         not_allowed: "No tienes permiso para introducir recountos finales"
         booth: "Urna"
-        date: "Día"
         select_booth: "Elige urna"
         count: "Recuento final"
         count_placeholder: "Número final de votos"
         submit: "Guardar"
         final_recount_list: "Tus recuentos finales"
-        system_count: "Recuento del sistema"
         add_results: "Añadir resultados"
     results:
       flash:

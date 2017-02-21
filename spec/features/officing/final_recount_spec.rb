@@ -59,7 +59,6 @@ feature 'Officing Final Recount' do
     expect(page).to have_content('Your final recounts')
 
     within("#poll_final_recount_#{@officer_assignment.booth_assignment.final_recounts.first.id}") do
-      expect(page).to have_content(date)
       expect(page).to have_content(booth_name)
       expect(page).to have_content('33')
     end
@@ -80,7 +79,6 @@ feature 'Officing Final Recount' do
     expect(page).to have_content('Your final recounts')
 
     within("#poll_final_recount_#{final_recount.id}") do
-      expect(page).to have_content(date)
       expect(page).to have_content(booth_name)
       expect(page).to have_content('100')
     end
@@ -92,34 +90,10 @@ feature 'Officing Final Recount' do
     expect(page).to have_content "Data added"
 
     within("#poll_final_recount_#{final_recount.id}") do
-      expect(page).to have_content(date)
       expect(page).to have_content(booth_name)
       expect(page).to have_content('42')
     end
     expect(page).to_not have_content('100')
-  end
-
-  scenario 'Show final and system recounts to compare' do
-    final_officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
-    poll = final_officer_assignment.booth_assignment.poll
-    poll.update(ends_at: 1.day.ago)
-    final_recount = create(:poll_final_recount,
-                    officer_assignment: final_officer_assignment,
-                    booth_assignment: final_officer_assignment.booth_assignment,
-                    date: 7.days.ago,
-                    count: 100)
-    33.times { create(:poll_voter, :valid_document,
-                      poll: poll,
-                      booth_assignment: final_officer_assignment.booth_assignment,
-                      created_at: final_recount.date) }
-
-    visit new_officing_poll_final_recount_path(poll)
-    within("#poll_final_recount_#{final_recount.id}") do
-      expect(page).to have_content(I18n.l(final_recount.date.to_date, format: :long))
-      expect(page).to have_content(final_officer_assignment.booth_assignment.booth.name)
-      expect(page).to have_content('100')
-      expect(page).to have_content('33')
-    end
   end
 
   scenario "Show link to add results for same booth/date" do
