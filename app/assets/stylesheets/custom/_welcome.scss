@@ -1,0 +1,158 @@
+// Welcome page
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.welcome {
+
+  .header {
+    background: #FFDB19;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    padding: $line-height*2 0;
+
+    h1 {
+      font-family: 'Franklin Gothic' !important;
+      font-weight: normal;
+      font-size: rem-calc(200);
+      line-height: rem-calc(200);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(270);
+        line-height: rem-calc(240);
+      }
+    }
+
+    a.decoration-none {
+      text-decoration: none !important;
+    }
+
+    p.lead {
+      font-size: rem-calc(24);
+      line-height: $line-height*1.5;
+    }
+
+    a:not(.button) {
+      color: black;
+      text-decoration: underline;
+    }
+
+    .button {
+      background: black;
+      color: white;
+      font-family: 'Franklin Gothic' !important;
+      font-weight: normal;
+      font-size: rem-calc(36);
+      line-height: $line-height*1.5;
+      padding-bottom: $line-height/2;
+      padding-top: $line-height/2;
+    }
+  }
+
+  h2 {
+
+    &.title {
+      border-left: 1px solid $brand;
+      color: $brand;
+      padding-left: $line-height/2;
+    }
+  }
+
+  .cards {
+    background: #fafafa;
+
+    .panel {
+
+      [class^="icon-"] {
+        left: 0;
+        position: absolute;
+        top: 2px;
+      }
+
+      &.dark {
+        background: #2D3E50;
+
+        h3, p.info-date {
+          color: #FFD200;
+        }
+
+        p {
+          color: white;
+        }
+
+        .button {
+          background: #FFD200;
+          color: $text;
+        }
+      }
+    }
+
+    p {
+
+      &.info {
+        min-height: rem-calc(140);
+      }
+
+      &.info-date {
+        color: $brand;
+        font-size: $small-font-size;
+        padding-left: rem-calc(16);
+        position: relative;
+      }
+    }
+  }
+
+  .features {
+    padding: $line-height*2 0;
+
+    .panel {
+      border: 0;
+      margin-bottom: $line-height;
+      padding-left: 0;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .slogan {
+    background: #E23135 image-url('home_page_bg_slogan.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: rem-calc(-$line-height*2);
+    padding: $line-height*2 0;
+
+    p {
+      font-size: rem-calc(30);
+      line-height: rem-calc(48);
+    }
+
+    strong {
+      background: #F4FB2D;
+    }
+  }
+}
+
+.budgets-module {
+  background: $budget;
+
+  .module {
+    display: table;
+  }
+
+  .module-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .button {
+    background: black;
+    color: white;
+  }
+
+  a:not(.button) {
+    text-decoration: underline;
+  }
+}
