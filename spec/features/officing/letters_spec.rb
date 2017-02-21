@@ -72,17 +72,6 @@ feature 'Letters' do
     expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 3)
   end
 
-  scenario "Error on Census (document number wrong, postal code blank)" do
-    visit new_officing_letter_path
-
-    fill_in 'residence_document_number', with: "9999999A"
-
-    click_button 'Validate document'
-
-    expect(page).to have_content 'Voto NO VÁLIDO'
-    expect(page).to have_content '9999999A'
-  end
-
   scenario "Error on Census (postal code)" do
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28014'
@@ -355,6 +344,17 @@ feature 'Letters' do
       expect(logs.first.postal_code).to eq("")
       expect(logs.first.message).to eq("Voto REFORMULADO")
     end
-  end
 
+    scenario "Document number not in Census" do
+      visit new_officing_letter_path
+
+      fill_in 'residence_document_number', with: "9999999A"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Voto NO VÁLIDO'
+      expect(page).to have_content '9999999A'
+    end
+
+  end
 end
