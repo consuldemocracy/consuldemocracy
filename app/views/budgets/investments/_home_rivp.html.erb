@@ -10,7 +10,7 @@
       </p>
       <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
-      <% if @budget.accepting? %>
+      <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
         <% if current_user %>
           <% if current_user.level_two_or_three_verified? %>
             <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
