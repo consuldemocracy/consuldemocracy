@@ -31,7 +31,6 @@ module Budgets
       Budget::Investment.transaction do
         set_random_seed
         @investments = @investments
-                       .includes([{ author: :organization }, :tags])
                        .apply_filters_and_search(@budget, params)
                        .send("sort_by_#{@current_order}")
                        .page(params[:page])
