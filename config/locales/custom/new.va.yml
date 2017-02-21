@@ -21,34 +21,6 @@ va:
       previous: Anterior
       truncate: "&hellip;"
       current: Estàs a la pàgina
-  errors:
-    format: "%{attribute} %{message}"
-    messages:
-      accepted: ha de ser acceptat
-      blank: no pot estar en blanc
-      confirmation: no coincideix
-      empty: no pot estar buit
-      equal_to: ha de ser igual a %{count}
-      even: ha de ser parell
-      exclusion: està reservat
-      greater_than: ha de ser més gran que %{count}
-      greater_than_or_equal_to: ha de ser més gran o igual a %{count}
-      inclusion: no està inclós a la llista
-      invalid: no és vàlid
-      less_than: ha de ser menor que %{count}
-      less_than_or_equal_to: ha de ser menor o igual a %{count}
-      not_a_number: no és un número
-      not_an_integer: ha de ser un enter
-      odd: ha de ser senar
-      taken: no està disponible
-      too_long: és massa llarg (%{count} caràcters màxim)
-      too_short: és massa curt (%{count} caràcters mínim)
-      wrong_length: no té la longitud correcta (%{count} caràcters exactament)
-    template:
-      body: 'Hi ha hagut problemes amb els següents camps:'
-      header:
-        one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
-        other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
   helpers:
     select:
       prompt: Si us plau tria
