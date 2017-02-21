@@ -34,7 +34,7 @@ module Budgets
                        .apply_filters_and_search(@budget, params)
                        .send("sort_by_#{@current_order}")
                        .page(params[:page])
-                       .per(2)
+                       .per(10)
                        .for_render
       end
 
