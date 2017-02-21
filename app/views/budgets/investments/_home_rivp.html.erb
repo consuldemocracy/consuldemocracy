@@ -1,6 +1,4 @@
-
-
-
+<img src="http://karenmenezes.com/comment.svg" width="30" alt="color" class="color">
 
 
 <div class="container home">
@@ -9,9 +7,11 @@
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-4 column text-center">
         <div class="card">
-          <div class="card-img" style="">
-          <%= image_tag(card[1][:img], size: 32, class: "") %>
+          <div class="card-img " style="">
+          <%= image_tag(card[1][:img], size: 32, class: "color-1") %>
           </div>
+          <%= image_tag(card[1][:img], size: 32, class: "color-1") %>
+
 
           <div class="card-description">
             <h3><%= card[1][:title] %></h2>
