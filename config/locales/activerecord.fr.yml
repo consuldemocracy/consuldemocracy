@@ -47,7 +47,7 @@ fr:
         description_balloting: "Description de la phase de vote des propositions"
         description_reviewing_ballots: "Description de la phase de décompte des votes"
         description_finished: "Description de la phase BP terminé"
-        phase: "Phase"
+        phase: "Phase actuelle"
         currency_symbol: "Currency"
       budget/investment:
         heading_id: "Section du budget"
