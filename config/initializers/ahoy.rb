@@ -5,14 +5,14 @@ class Ahoy::Store < Ahoy::Stores::ActiveRecordStore
   # Track user IP
   def track_event(name, properties, options)
     super do |event|
-      event.user_id = nil
+      event.user = nil
       event.ip = request.ip
     end
   end
 
   def track_visit(options)
     super do |visit|
-      visit.user_id = nil
+      visit.user = nil
     end
   end
 
