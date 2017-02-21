@@ -45,8 +45,8 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
-        can :create, Budget::Investment,               budget: { phase: "accepting" }
-        can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+        can :create, Budget::Investment,               budget: { phase: ["accepting", "selecting", "reviewing"] }
+        can :vote,   Budget::Investment,               budget: { phase: ["accepting", "selecting", "reviewing"] }
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
