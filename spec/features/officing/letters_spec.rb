@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Letters', :focus do
+feature 'Letters' do
   let(:officer) { create(:poll_officer, letter_officer: true) }
   let(:poll)    { create(:poll) }
 
@@ -70,6 +70,17 @@ feature 'Letters', :focus do
     expect(fcc.poll_officer).to eq(officer)
     expect(officer.failed_census_calls.last).to eq(fcc)
     expect(officer.failed_census_calls_count).to eq(initial_failed_census_calls_count + 3)
+  end
+
+  scenario "Error on Census (document number wrong, postal code blank)" do
+    visit new_officing_letter_path
+
+    fill_in 'residence_document_number', with: "9999999A"
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Voto NO VÁLIDO'
+    expect(page).to have_content '9999999A'
   end
 
   scenario "Error on Census (postal code)" do
@@ -268,7 +279,7 @@ feature 'Letters', :focus do
 
   context "No postal code" do
 
-    scenario "Correct name", :focus do
+    scenario "Correct name" do
       fill_in 'residence_document_number', with: "12345678Z"
 
       click_button 'Validate document'
@@ -294,7 +305,7 @@ feature 'Letters', :focus do
       expect(page).to have_content '28013'
     end
 
-    scenario "Incorrect name", :focus do
+    scenario "Incorrect name" do
       fill_in 'residence_document_number', with: "12345678Z"
 
       click_button 'Validate document'
@@ -320,7 +331,7 @@ feature 'Letters', :focus do
       expect(page).to have_content 'Nombre: Incorrecto'
     end
 
-    scenario "Already voted", :focus do
+    scenario "Already voted" do
       poll = create(:poll)
       user = create(:user, document_number: "12345678Z")
       create(:poll_voter, user: user, poll: poll)
