@@ -109,11 +109,15 @@ class Officing::Residence
     Poll.find(1)
   end
 
-  private
+  def call_census_api
+    @census_api_response = CensusApi.new.call(document_type, document_number)
+  end
 
-    def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
-    end
+  def census_name
+    @census_api_response.name
+  end
+
+  private
 
     def residency_valid?
       return false unless @census_api_response.valid?

@@ -2,7 +2,12 @@
 
 <div class="callout">
   <p>Documento: <strong><%= @log.document_number %></strong>
-  <br>Código Postal: <strong><%= @log.postal_code %></strong></p>
+
+  <% if @log.postal_code == "-1" %>
+    <br>Nombre: <strong>Incorrecto</strong></p>
+  <% else %>
+    <br>Código Postal: <strong><%= @log.postal_code %></strong></p>
+  <% end %>
 </div>
 
 <div class="callout text-center <%= ::Poll::LetterOfficerLog::VALID_MESSAGES.invert[@log.message] %>">

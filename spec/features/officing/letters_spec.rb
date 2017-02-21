@@ -266,4 +266,61 @@ feature 'Letters' do
     end
   end
 
+  context "No postal code" do
+
+    scenario "Correct name", :focus do
+      fill_in 'residence_document_number', with: "12345678Z"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Verifica EL NOMBRE'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content 'José García'
+
+      voters = Poll::Voter.all
+      expect(voters.count).to eq(0)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(1)
+      expect(logs.first.document_number).to eq("12345678Z")
+      expect(logs.first.postal_code).to eq("")
+      expect(logs.first.census_postal_code).to eq("28013")
+      expect(logs.first.message).to eq("Verifica EL NOMBRE")
+
+      click_button "Nombre igual"
+
+      expect(page).to have_content 'Voto VÁLIDO'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content '28013'
+    end
+
+    scenario "Incorrect name", :focus do
+      fill_in 'residence_document_number', with: "12345678Z"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Verifica EL NOMBRE'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content 'José García'
+
+      voters = Poll::Voter.all
+      expect(voters.count).to eq(0)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(1)
+      expect(logs.first.document_number).to eq("12345678Z")
+      expect(logs.first.postal_code).to eq("")
+      expect(logs.first.census_postal_code).to eq("28013")
+      expect(logs.first.message).to eq("Verifica EL NOMBRE")
+
+      click_button "Nombre distinto"
+
+      expect(page).to have_content 'Voto NO VÁLIDO'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content 'Nombre: Incorrecto'
+    end
+
+    scenario "Already voted"
+  end
+
 end

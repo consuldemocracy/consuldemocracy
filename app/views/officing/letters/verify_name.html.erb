@@ -1,0 +1,30 @@
+<h2><%= t("officing.residence.new.title") %></h2>
+
+<div class="callout">
+  <p>Documento: <strong><%= @log.document_number %></strong>
+  <br>Nombre: <strong><%= @log.census_name %></strong>
+</p>
+</div>
+
+<div class="callout text-center
+  <%= ::Poll::LetterOfficerLog::VALID_MESSAGES.invert[@log.message] %>">
+  <h3><%= @log.message %></h3>
+</div>
+
+<%= form_for @residence, as: "residence", url: officing_letters_path do |f| %>
+  <div class="small-12 medium-8 large-6 small-centered">
+    <%= f.hidden_field :document_number, value: @log.document_number %>
+    <%= f.hidden_field :postal_code, value: @log.census_postal_code %>
+
+    <%= f.submit "Nombre igual", class: "button expanded" %>
+  </div>
+<% end %>
+
+<%= form_for @residence, as: "residence", url: officing_letters_path do |f| %>
+  <div class="small-12 medium-8 large-6 small-centered">
+    <%= f.hidden_field :document_number, value: @log.document_number %>
+    <%= f.hidden_field :postal_code, value: -1 %>
+
+    <%= f.submit "Nombre distinto", class: "button expanded" %>
+  </div>
+<% end %>
