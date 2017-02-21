@@ -117,6 +117,10 @@ class Officing::Residence
     @census_api_response.name
   end
 
+  def already_voted?
+    Poll::Voter.where(poll: letter_poll, document_number: census_document_number).exists?
+  end
+
   private
 
     def residency_valid?
@@ -148,10 +152,6 @@ class Officing::Residence
       if already_voted?
         errors.add(:document_number, I18n.t('officing.letter.new.alredy_voted'))
       end
-    end
-
-    def already_voted?
-      Poll::Voter.where(poll: letter_poll, document_number: census_document_number).exists?
     end
 
     def random_password

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Letters' do
+feature 'Letters', :focus do
   let(:officer) { create(:poll_officer, letter_officer: true) }
   let(:poll)    { create(:poll) }
 
@@ -320,7 +320,30 @@ feature 'Letters' do
       expect(page).to have_content 'Nombre: Incorrecto'
     end
 
-    scenario "Already voted"
+    scenario "Already voted", :focus do
+      poll = create(:poll)
+      user = create(:user, document_number: "12345678Z")
+      create(:poll_voter, user: user, poll: poll)
+
+      allow_any_instance_of(Officing::Residence).
+      to receive(:letter_poll).and_return(poll)
+
+      fill_in 'residence_document_number', with: "12345678Z"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Voto REFORMULADO'
+      expect(page).to have_content '12345678Z'
+
+      expect(Poll::Voter.count).to eq(1)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(1)
+      expect(logs.first.reload.user_id).to eq(officer.user_id)
+      expect(logs.first.document_number).to eq("12345678Z")
+      expect(logs.first.postal_code).to eq("")
+      expect(logs.first.message).to eq("Voto REFORMULADO")
+    end
   end
 
 end
