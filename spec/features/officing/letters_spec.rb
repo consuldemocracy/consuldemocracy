@@ -117,6 +117,36 @@ feature 'Letters' do
     expect(logs.first.message).to eq("Voto REFORMULADO")
   end
 
+  scenario "Error underage" do
+    poll = create(:poll)
+    user = create(:user, document_number: "12345678Z")
+    create(:poll_voter, user: user, poll: poll)
+
+    allow_any_instance_of(Officing::Residence).
+    to receive(:letter_poll).and_return(poll)
+
+    allow_any_instance_of(Officing::Residence).
+    to receive(:date_of_birth).and_return(13.years.ago)
+
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_postal_code', with: '28013'
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Voto NO VÁLIDO'
+    expect(page).to have_content '12345678Z'
+    expect(page).to have_content '28013'
+
+    expect(Poll::Voter.count).to eq(1)
+
+    logs = Poll::LetterOfficerLog.all
+    expect(logs.count).to eq(3)
+    expect(logs.first.reload.user_id).to eq(officer.user_id)
+    expect(logs.first.document_number).to eq("12345678Z")
+    expect(logs.first.postal_code).to eq("28013")
+    expect(logs.first.message).to eq("Voto NO VÁLIDO")
+  end
+
   scenario "Validate next letter" do
     fill_in 'residence_document_number', with: "12345678Z"
     fill_in 'residence_postal_code', with: '28013'

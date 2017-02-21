@@ -78,7 +78,6 @@ class Officing::Residence
   end
 
   def allowed_age
-    return if errors[:year_of_birth].any?
     return unless @census_api_response.valid?
 
     unless allowed_age?
