@@ -166,17 +166,17 @@ fr:
     footer:
       accessibility: Accessibilité
       conditions: Conditions d'utilisation
-      consul: Application Consul
+      consul: Consul
       consul_url: https://github.com/consul/consul
       contact_us: Pour l'assistance technique cliquez
-      copyright: Consul, %{year}
-      description: Ce portail utilise %{consul} qui est un %{open_source}.
+      copyright: RIVP, %{year}
+      description: Ce portail utilise la plateforme libre %{consul} déployée par %{open_source}.
       faq: ici
-      more_info: Plus d'information
+      more_info: Mode d'emploi
       open_data_text: Vous pouvez accéder à un compte-rendu détaillé des conseils municipaux
       open_data_title: Open data
-      open_source: logiciel libre
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      open_source: Open Source Politics
+      open_source_url: http://www.opensourcepolitics.eu/
       participation_text: Modelez la ville dans laquelle vous voulez vivre.
       participation_title: Participation
       privacy: Vie privée
