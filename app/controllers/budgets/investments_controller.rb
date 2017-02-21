@@ -30,7 +30,7 @@ module Budgets
                      .apply_filters_and_search(@budget, params)
                      .send("sort_by_#{@current_order}")
                      .page(params[:page])
-                     .per(10)
+                     .per(2)
                      .for_render
 
       @investment_ids = @investments.pluck(:id)
@@ -128,6 +128,7 @@ module Budgets
         array_tags << 'Asociaciones' unless array_tags.include?('Asociaciones')
         array_tags.join(',')
       end
+
   end
 
 end
