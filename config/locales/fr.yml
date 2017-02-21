@@ -195,7 +195,7 @@ fr:
       moderation: Modération
       more_information: Mode d'emploi
       my_account_link: Mon compte
-      my_activity_link: Mon activité
+      my_activity_link: Mes projets
       new_notifications:
         one: Vous avez une nouvelle notification
         other: Vous avez %{count} nouvelles notifications
