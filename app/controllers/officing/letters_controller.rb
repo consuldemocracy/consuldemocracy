@@ -23,7 +23,7 @@ class Officing::LettersController < Officing::BaseController
           @log = ::Poll::LetterOfficerLog.log(current_user, voter.document_number, @residence.postal_code, :ok)
         end
       else
-        if @residence.errors[:postal_code].present? || @residence.errors[:residence_in_madrid].present?
+        if @residence.errors[:postal_code].present? || @residence.errors[:year_of_birth].present? || @residence.errors[:residence_in_madrid].present?
           @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :census_failed)
         elsif @residence.errors[:document_number].present?
           @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :has_voted)
@@ -46,7 +46,7 @@ class Officing::LettersController < Officing::BaseController
     end
 
     def residence_params
-      params.require(:residence).permit(:document_number, :document_type, :postal_code)
+      params.require(:residence).permit(:document_number, :postal_code)
     end
 
     def letter?
