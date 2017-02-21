@@ -266,4 +266,95 @@ feature 'Letters' do
     end
   end
 
+  context "No postal code" do
+
+    scenario "Correct name" do
+      fill_in 'residence_document_number', with: "12345678Z"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Verifica EL NOMBRE'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content 'José García'
+
+      voters = Poll::Voter.all
+      expect(voters.count).to eq(0)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(1)
+      expect(logs.first.document_number).to eq("12345678Z")
+      expect(logs.first.postal_code).to eq("")
+      expect(logs.first.census_postal_code).to eq("28013")
+      expect(logs.first.message).to eq("Verifica EL NOMBRE")
+
+      click_button "Nombre igual"
+
+      expect(page).to have_content 'Voto VÁLIDO'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content '28013'
+    end
+
+    scenario "Incorrect name" do
+      fill_in 'residence_document_number', with: "12345678Z"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Verifica EL NOMBRE'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content 'José García'
+
+      voters = Poll::Voter.all
+      expect(voters.count).to eq(0)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(1)
+      expect(logs.first.document_number).to eq("12345678Z")
+      expect(logs.first.postal_code).to eq("")
+      expect(logs.first.census_postal_code).to eq("28013")
+      expect(logs.first.message).to eq("Verifica EL NOMBRE")
+
+      click_button "Nombre distinto"
+
+      expect(page).to have_content 'Voto NO VÁLIDO'
+      expect(page).to have_content '12345678Z'
+      expect(page).to have_content 'Nombre: Incorrecto'
+    end
+
+    scenario "Already voted" do
+      poll = create(:poll)
+      user = create(:user, document_number: "12345678Z")
+      create(:poll_voter, user: user, poll: poll)
+
+      allow_any_instance_of(Officing::Residence).
+      to receive(:letter_poll).and_return(poll)
+
+      fill_in 'residence_document_number', with: "12345678Z"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Voto REFORMULADO'
+      expect(page).to have_content '12345678Z'
+
+      expect(Poll::Voter.count).to eq(1)
+
+      logs = Poll::LetterOfficerLog.all
+      expect(logs.count).to eq(1)
+      expect(logs.first.reload.user_id).to eq(officer.user_id)
+      expect(logs.first.document_number).to eq("12345678Z")
+      expect(logs.first.postal_code).to eq("")
+      expect(logs.first.message).to eq("Voto REFORMULADO")
+    end
+
+    scenario "Document number not in Census" do
+      visit new_officing_letter_path
+
+      fill_in 'residence_document_number', with: "9999999A"
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Voto NO VÁLIDO'
+      expect(page).to have_content '9999999A'
+    end
+
+  end
 end

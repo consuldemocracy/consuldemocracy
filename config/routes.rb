@@ -406,7 +406,9 @@ Rails.application.routes.draw do
 
     resource :booth, controller: "booth", only: [:new, :create]
     resource :residence, controller: "residence", only: [:new, :create]
-    resources :letters, only: [:new, :create, :show]
+    resources :letters, only: [:new, :create, :show] do
+      get :verify_name, on: :member
+    end
     resources :voters, only: [:new, :create] do
       get :vote_with_tablet, on: :member
     end
