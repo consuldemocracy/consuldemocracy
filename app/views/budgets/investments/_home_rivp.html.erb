@@ -1,3 +1,4 @@
+<img src="http://karenmenezes.com/comment.svg" width="30" alt="color" class="color">
 <div class="expanded budget no-margin-top">
   <% @budget = Budget.find(1)%>
   <div class="row" data-equalizer data-equalizer-on="medium">
@@ -33,27 +34,34 @@
 </div>
 
 
-
-
 <div class="container home">
 <h1>Les étapes du budget participatif</h1>
   <div class="row">
+    <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-4 column text-center">
         <div class="card">
-          <div class="card-img" style="">
-          <%= image_tag(card[1][:img], size: 32, class: "") %>
+          <div class="item-1" style="color-1">
+          <%= image_tag(card[1][:img], size: 32, class: "color-1") %>
           </div>
-
-          <div class="card-description">
-            <h3><%= card[1][:title] %></h2>
-            <p><%= card[1][:dates] %><p>
+          <div class="item-2">
+            <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
+          </div>
+          <div class="item-3">
+            <strong><%= card[1][:dates] %></strong>
+          </div>
+          <div class="item-4">
             <p><%= card[1][:description] %><p>
+          </div>
+          <div class="item-5">
             <p><%= link_to card[1][:more_info], "/more_information", class: "" %></p>
+          </div>
+          <div class="item-6 background-<%=i%>">
           </div>
         </div>
 
       </div>
+      <% i+=1 %>
     <% end%>
   </div>
 <h1>Proposez vos projets sur les thèmes suivants</h1>
