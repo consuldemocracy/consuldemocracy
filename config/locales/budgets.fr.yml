@@ -38,7 +38,7 @@ fr:
           one: " contenant le terme '%{search_term}'"
           other: " contenant le terme '%{search_term}'"
         sidebar:
-          create: Proposer un projet
+          create: Proposez une idée
           verified_only: Pour créer un nouveau budget d'investissement %{verify}
           verify_account: Vérifier votre compte
           my_ballot: Mon bulletin
