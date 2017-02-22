@@ -35,11 +35,11 @@
 
 <div class="container home">
 <h1>Les étapes du budget participatif</h1>
-  <div class="row">
+  <div class="row ">
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-4 column text-center">
-        <div class="card">
+        <div class="card card1">
           <div class="item-1" style="color-1">
           <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
           </div>
@@ -64,21 +64,26 @@
     <% end%>
   </div>
 <h1>Proposez vos projets sur les thèmes suivants</h1>
-  <div class="row">
+  <div class="row center">
+    <% i=1%>
     <% t("budgets.home_rivp.theme_cards").each do |card| %>
-      <div class="small-12 medium-6 column text-center theme-cards">
-        <div class="card ">
-          <div class="card-img" style="">
+      <div class="small-12 medium-3 column text-center theme-cards">
+        <div class="card card2">
+          <div class="item-1" style="color-1">
           <%= image_tag(card[1][:img], size: 32, class: "") %>
           </div>
-
-          <div class="card-description">
-            <h3><%= card[1][:title] %></h2>
+          <div class="item-2">
+            <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
+          </div>
+          <div class="item-3">
             <p><%= card[1][:description] %><p>
+          </div>
+          <div class="item-6 background-<%=i%>">
           </div>
         </div>
 
       </div>
+      <% i+=1 %>
     <% end%>
   </div>
 
