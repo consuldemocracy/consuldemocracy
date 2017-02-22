@@ -9,7 +9,7 @@
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
-      <% if @budget.phase == "accepting" or "reviewing" or "selecting" %>
+      <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
         <h2>dépôt, échange et soutien des idées</h2>
       <% else %>
         <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
@@ -44,7 +44,22 @@
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-4 column text-center">
-        <div class="card card1">
+
+        <% if @budget.phase == card[1][:name] %>
+          <% active = "active" %>
+        <% else %>
+          <% if (card[1][:name] == "accepting") or (card[1][:name] == "reviewing") or (card[1][:name] == "selecting") %>
+            <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
+              <% active = "active" %>
+            <% else %>
+              <% active = "" %>
+            <% end %>
+          <% else %>
+            <% active = "" %>
+          <% end %>
+        <% end %>
+
+        <div class="card card1 <%= active %>">
           <div class="item-1" style="color-1">
           <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
           </div>

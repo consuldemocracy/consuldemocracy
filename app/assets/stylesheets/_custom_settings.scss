@@ -18,7 +18,7 @@ $sixth-color: #FF9200;
 }
 
 .card {
-  background-color: white;
+
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -45,8 +45,11 @@ $sixth-color: #FF9200;
   .color-6{color: $sixth-color;}
   .background-6{background-color: $sixth-color;}
 }
-
+.active{
+     background-color: white;
+   }
 .card1{
+
   width: 350px;
   .item-1{
     img{
@@ -77,6 +80,7 @@ $sixth-color: #FF9200;
 }
 
 .card2{
+  background-color: white;
   width: 90%;
   .item-1{
     img{
