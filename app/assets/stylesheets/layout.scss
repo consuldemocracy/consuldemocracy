@@ -156,7 +156,7 @@ a {
 
 .footer, .push {
   clear: both;
-  min-height: $line-height*12;
+  min-height: $line-height*6;
 }
 
 .ie-callout {
@@ -614,7 +614,7 @@ h2.sidebar-title {
   background-size: cover;
 
   @include breakpoint(medium) {
-    min-height: $line-height*42;
+    min-height: $line-height*10;
   }
 
   h1 {
