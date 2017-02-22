@@ -7,12 +7,12 @@ fr:
     more_information:
       description:
         faq: Frecuently asked question about tecnical problems
-        how_it_works: Find out all you can do with this web site
-        how_to_use: Use it freely or help us to improve it, it is free software
-        participation: Citizen participation, transparency and open government
+        how_it_works: Tout savoir pour participer et connaître les règles du jeu
+        how_to_use: Du dépôt des idées à la publication des résultats
+        participation: Une plateforme transparente et collaborative faite pour vous
         participation_facts: To lose your fear
         participation_world: Systems of citizen participation that exist in the world
-        proposals_info: Create your own proposals
+        proposals_info: Des supports à diffuser, des contacts pour vous aider
         signature_sheet: Sheet collecting signatures for support
         spending_proposals_info: Create your own spending proposals
       how_it_works:
@@ -51,12 +51,12 @@ fr:
           If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/ayuntamientomadrid 'consul github ' ).
       titles:
         faq: Solution to tecnical problemas (FAQ)
-        how_it_works: How does this Open Government Portal work?
-        how_to_use: Use it in your local government
-        participation: Madrid Participation and Transparency y Transparencia - coming news
+        how_it_works: L’essentiel du budget participatif de la RIVP
+        how_to_use: Zoom sur les étapes clés
+        participation: Le site internet dédié au budget participatif de la RIVP
         participation_facts: Facts about citizen participation and direct democracy
         participation_world: Direct citizen participation in the world
-        proposals_info: How does citizen proposals work?
+        proposals_info: Ressources et contacts utiles
         signature_sheet: Signature sheet
         spending_proposals_info: How does participatory budgeting work?
     opendata:
@@ -67,7 +67,7 @@ fr:
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_information: More information
+      more_information: Mode d'emploi
       opendata: Open Data
       privacy: Privacy Policy
     verify:
