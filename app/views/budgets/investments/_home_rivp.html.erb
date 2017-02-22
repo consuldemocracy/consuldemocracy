@@ -1,4 +1,3 @@
-<img src="http://karenmenezes.com/comment.svg" width="30" alt="color" class="color">
 <div class="expanded budget no-margin-top">
   <% @budget = Budget.find(1)%>
   <div class="row" data-equalizer data-equalizer-on="medium">
@@ -42,7 +41,7 @@
       <div class="small-12 medium-4 column text-center">
         <div class="card">
           <div class="item-1" style="color-1">
-          <%= image_tag(card[1][:img], size: 32, class: "color-1") %>
+          <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
           </div>
           <div class="item-2">
             <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>

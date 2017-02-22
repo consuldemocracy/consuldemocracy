@@ -3,6 +3,12 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+$first-color: #EB003B;
+$second-color: #217ABF;
+$third-color: #48B700;
+$fourth-color: #B900A2;
+$fifth-color: #9FC800;
+$sixth-color: #FF9200;
 .translation_missing{
   background-color: red;
 }
@@ -13,7 +19,7 @@
 .card {
   background-color: white;
   border-radius: 5px;
-
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   width: 350px;
   padding: 20px;
   margin: 20px;
@@ -24,6 +30,8 @@
     }
   }
   .item-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: 70px;
   }
   .item-3{
@@ -37,25 +45,28 @@
   }
   .item-6{
     height: 10px;
-    background-color: red;
+    margin: -20px;
+    margin-top: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
-  .color-1{color:red;}
-  .background-1{background-color: red;}
+  .color-1{color:$first-color;}
+  .background-1{background-color: $first-color;}
 
-  .color-2{color: #FF8000;}
-  .background-2{background-color: #FF8000;}
+  .color-2{color: $second-color;}
+  .background-2{background-color: $second-color;}
 
-  .color-3{color: #00FF80;}
-  .background-3{background-color: #00FF80;}
+  .color-3{color: $third-color;}
+  .background-3{background-color: $third-color;}
 
-  .color-4{color: #0080FF;}
-  .background-4{background-color: #0080FF;}
+  .color-4{color: $fourth-color;}
+  .background-4{background-color: $fourth-color;}
 
-  .color-5{color: #8000FF;}
-  .background-5{background-color: #8000FF;}
+  .color-5{color: $fifth-color;}
+  .background-5{background-color: $fifth-color;}
 
-  .color-6{color: #800000;}
-  .background-6{background-color: #800000;}
+  .color-6{color: $sixth-color;}
+  .background-6{background-color: $sixth-color;}
 }
 .color {
   fill: red;
@@ -76,3 +87,4 @@
       text-align: right;
   }
 }
+
