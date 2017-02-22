@@ -32,5 +32,15 @@ class PollsController < ApplicationController
   end
 
   def stats_2017
+    @participantes_totales = ::Poll::Voter.select(:user_id).distinct.count
+    @votos_totales = ::Poll::Voter.count
+
+    @votos_total_web = ::Poll::Voter.web.count
+    @votos_total_booth = ::Poll::Voter.booth.count
+    @votos_total_letter = ::Poll::Voter.letter.count
+
+    @participantes_total_web = ::Poll::Voter.web.select(:user_id).distinct.count
+    @participantes_total_booth = ::Poll::Voter.booth.select(:user_id).distinct.count
+    @participantes_total_letter = ::Poll::Voter.letter.select(:user_id).distinct.count
   end
 end
