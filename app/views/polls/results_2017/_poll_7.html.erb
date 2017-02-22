@@ -1,21 +1,31 @@
 <h3 id="7">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</h3>
 
 <table>
+  <% question = @poll_7.questions.first %>
   <caption>
-    ¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?
+    <%= question.title %>
   </caption>
+  <% answers_votes = {} %>
+  <% max_i = 0 %>
+  <% question.valid_answers.each_with_index do |answer, i| %>
+    <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
+    <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
+  <% end %>
+
   <thead>
     <tr>
-      <th class="win">SÍ</th>
-      <th>NO</th>
+      <% answers_votes.keys.each_with_index do |answer, i| %>
+        <th class="<%= 'win' if max_i == i %>"><%= answer %></th>
+      <% end %>
       <th>EN BLANCO</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="win">10000</td>
-      <td>10000</td>
-      <td>10000</td>
+      <% answers_votes.values.each_with_index do |votes, i| %>
+        <td  class="<%= 'win' if max_i == i %>"><%= votes %></td>
+      <% end %>
+      <td><%= total_votes_for_poll(@poll_7) - answers_votes.values.sum %></td>
     </tr>
   </tbody>
 </table>
