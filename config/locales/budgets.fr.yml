@@ -105,19 +105,19 @@ fr:
       steps_cards:
         accepting:
           title: "Informez-vous et déposez vos idées"
-          dates: "mi-mars – fin juin"
+          dates: "15 mars - 15 juin"
           description: "Participez aux réunions en pied d’immeuble (dates entre 20 et 31 mars) et déposez vos idées jusqu’à fin juin."
           more_info: "Plus d'information"
           img: custom/accepting.svg
         reviewing:
           title: Echangez sur les idées et enrichissez les !
-          dates: mi-mars – fin juin
+          dates: 15 mars - 15 juin
           description: "Participez aux ateliers de co-construction sur le terrain (entre le 15 et 19 mai) et continuez à enrichir les idées déposées par les locataires en apportant vos commentaires."
           more_info: "Plus d'information"
           img: custom/reviewing.svg
         selecting:
           title: Soutenez les idées !
-          dates: fin juin
+          dates: 15 mars - 15 juin
           description: "Accédez à toutes les idées des locataires et soutenez celles qui vous plaisent."
           more_info: "Plus d'information"
           img: custom/selecting.svg
