@@ -9,7 +9,11 @@
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
-      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <% if @budget.phase == "accepting" or "reviewing" or "selecting" %>
+        <h2>dépôt, échange et soutien des idées</h2>
+      <% else %>
+        <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <% end %>
 
       <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
         <% if current_user %>
