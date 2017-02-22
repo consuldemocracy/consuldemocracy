@@ -131,3 +131,16 @@ $sixth-color: #FF9200;
   background-color: #BFBFBF;
 }
 
+.list-group {
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  // padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #ecf0f1;
+}
+
