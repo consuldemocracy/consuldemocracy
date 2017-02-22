@@ -43,7 +43,7 @@
   <div class="row ">
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
-      <div class="small-12 medium-4 column text-center">
+      <div class="small-12 medium-6 large-4 column text-center">
 
         <% if @budget.phase == card[1][:name] %>
           <% active = "active" %>
@@ -83,9 +83,9 @@
       <% i+=1 %>
     <% end%>
   </div>
-<h1>Proposez vos projets sur les thèmes suivants</h1>
+<h1>Proposer vos idées sur les thèmes suivants</h1>
   <div class="row center">
-    <% i=1%>
+    <% i=3%>
     <% t("budgets.home_rivp.theme_cards").each do |card| %>
       <div class="small-12 medium-3 column text-center theme-cards">
         <div class="card card2">
@@ -111,10 +111,10 @@
 
 <h1>Consultez les propositions des différents sites</h1>
 <div class="row margin-top">
-  <div id="select-district" class="small-12 medium-7 column select-district list-group">
+  <div id="select-district" class="small-12 medium-6 column select-district list-group">
     <div class="row">
       <% Budget.find(1).headings.each_slice(12) do |slice| %>
-        <div class="small-6 medium-6 column end ">
+        <div class="small-12 medium-offset-3 medium-6 column end ">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %> list-group-item">
@@ -130,7 +130,7 @@
     </div>
   </div>
 
-  <div class="medium-5 column show-for-medium text-center">
+  <div class="medium-6 column show-for-medium text-left">
     <%= image_tag "custom/citymap.png" %>
   </div>
 </div>
