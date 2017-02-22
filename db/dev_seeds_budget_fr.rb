@@ -44,7 +44,9 @@ Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion
 Setting.create(key: 'min_age_to_participate', value: '16')
 
 puts "Creating Geozones"
-['La Grange aux Belles', 'Bd Macdonald', "Elie Faure / Cdt l'Herminier", "Les Cardeurs - Mouraud", "Bisson Ramponneau", "La Chapelle Evangile", "Scotto Reverdy", "Cité Beauharnais", "Porte de Vanves"].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
+# ['La Grange aux Belles', 'Bd Macdonald', "Elie Faure / Cdt l'Herminier", "Les Cardeurs - Mouraud", "Bisson Ramponneau", "La Chapelle Evangile", "Scotto Reverdy", "Cité Beauharnais", "Porte de Vanves"].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
+['La Granges aux belles, 10ème', 'La Chapelle Evangile, 18ème', 'Porte de Vanves, 14ème', 'Les Cardeurs-Mouraud, 20ème', 'Bisson Ramponneau-Piat, 20ème' , 'Bd Macdonald, 19ème', 'Elie Faure-Commandant l’Herminier, 20ème', 'Jean Bouton-place Henri Frenay, 12ème', 'Zac Vaugirard, 15ème', 'National, 13ème'].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
+
 
 puts "Creating Users"
 
@@ -157,31 +159,34 @@ puts budget.name
 
 puts "Creating Groups"
 group = budget.groups.create!(name: "Choisissez votre résidence")
-group.headings << group.headings.create!(name: 'La Grange aux Belles',
+group.headings << group.headings.create!(name: 'La Granges aux belles, 10ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: 'Bd Macdonald',
+group.headings << group.headings.create!(name: 'La Chapelle Evangile, 18ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "Elie Faure / Cdt l'Herminier",
+group.headings << group.headings.create!(name: 'Porte de Vanves, 14ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "Les Cardeurs - Mouraud",
+group.headings << group.headings.create!(name: 'Les Cardeurs-Mouraud, 20ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "Bisson Ramponneau",
+group.headings << group.headings.create!(name: 'Bisson Ramponneau-Piat, 20ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "La Chapelle Evangile",
+group.headings << group.headings.create!(name: 'Bd Macdonald, 19ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "Scotto Reverdy",
+group.headings << group.headings.create!(name: 'Elie Faure-Commandant l’Herminier, 20ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "Cité Beauharnais",
+group.headings << group.headings.create!(name: 'Jean Bouton-place Henri Frenay, 12ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
-group.headings << group.headings.create!(name: "Porte de Vanves",
+group.headings << group.headings.create!(name: 'Zac Vaugirard, 15ème',
+                                        # geozone: geozone,
+                                        price: rand(1 .. 100) * 100000)
+group.headings << group.headings.create!(name: 'National, 13ème',
                                         # geozone: geozone,
                                         price: rand(1 .. 100) * 100000)
 
