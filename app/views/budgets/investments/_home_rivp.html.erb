@@ -3,13 +3,17 @@
   <div class="row" data-equalizer data-equalizer-on="medium">
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
       <h1>Donnez vie à vos idées !</h1>
-      <p class="text-right">Grâce au budget alloué par la RIVP pour vos projet et dont vous décidez de son utilisation.</p>
+      <p class="text-right">Vous avez un projet en tête pour rendre plus agréable la vie dans votre immeuble ? <br> Participez ! <br> Présentez votre projet seul ou avec vos voisins <br> Votez <br> Les idées que vous aurez choisies seront financées par la RIVP et réalisées avec vous.</p>
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
-      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
+        <h2>dépôt, échange et soutien des idées</h2>
+      <% else %>
+        <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <% end %>
 
       <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
         <% if current_user %>
@@ -39,8 +43,23 @@
   <div class="row ">
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
-      <div class="small-12 medium-4 column text-center">
-        <div class="card card1">
+      <div class="small-12 medium-6 large-4 column text-center">
+
+        <% if @budget.phase == card[1][:name] %>
+          <% active = "active" %>
+        <% else %>
+          <% if (card[1][:name] == "accepting") or (card[1][:name] == "reviewing") or (card[1][:name] == "selecting") %>
+            <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
+              <% active = "active" %>
+            <% else %>
+              <% active = "" %>
+            <% end %>
+          <% else %>
+            <% active = "" %>
+          <% end %>
+        <% end %>
+
+        <div class="card card1 <%= active %>">
           <div class="item-1" style="color-1">
           <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
           </div>
@@ -64,9 +83,9 @@
       <% i+=1 %>
     <% end%>
   </div>
-<h1>Proposez vos projets sur les thèmes suivants</h1>
+<h1>Proposer vos idées sur les thèmes suivants</h1>
   <div class="row center">
-    <% i=1%>
+    <% i=3%>
     <% t("budgets.home_rivp.theme_cards").each do |card| %>
       <div class="small-12 medium-3 column text-center theme-cards">
         <div class="card card2">
@@ -92,10 +111,10 @@
 
 <h1>Consultez les propositions des différents sites</h1>
 <div class="row margin-top">
-  <div id="select-district" class="small-12 medium-7 column select-district list-group">
+  <div id="select-district" class="small-12 medium-6 column select-district list-group">
     <div class="row">
       <% Budget.find(1).headings.each_slice(12) do |slice| %>
-        <div class="small-6 medium-6 column end ">
+        <div class="small-12 medium-offset-3 medium-6 column end ">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %> list-group-item">
@@ -111,7 +130,7 @@
     </div>
   </div>
 
-  <div class="medium-5 column show-for-medium text-center">
+  <div class="medium-6 column show-for-medium text-left">
     <%= image_tag "custom/citymap.png" %>
   </div>
 </div>
