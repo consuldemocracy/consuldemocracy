@@ -30,6 +30,9 @@ fr:
       user_permission_votes: Participer au vote final
       verified_account: Compte vérifié
       verify_my_account: Vérifier mon compte
+      email_digest_label : Recevoir un résumé des notifications de propositions
+      email_on_direct_message_label  : Recevoir des emails concernant les messages instantanés
+      official_position_badge_label  : "Monter le badge de position officielle"
   application:
     close: Fermer
     menu: Menu
@@ -1568,11 +1571,7 @@ fr:
       send_notification : Envoyer une notification
       retired : Retirée
       retire  : Retirer
-  account:
-    show:
-      email_digest_label : Recevoir un résumé des notifications de propositions
-      email_on_direct_message_label  : Recevoir des emails concernant les messages instantanés
-      official_position_badge_label  : "Monter le badge de position officielle"
+
   votes:
     comment_unauthenticated : Vous devez %{signin} ou %{signup} pour voter.
     spending_proposals:
