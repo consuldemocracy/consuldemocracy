@@ -1,16 +1,11 @@
 <h3 id="9">Participación total</h3>
 
 <p class="stat-number margin-top">
-  Nº total de participantes<br>
-  <span><%= @participantes_totales %></span>
-</p>
-
-<p class="stat-number margin-top">
   Nº total de votos emitidos<br>
   <span><%= @votos_totales %></span>
 </p>
 
-<h4>Canales de participación :: VOTOS</h4>
+<h4>Canales de participación (Votos emitidos)</h4>
 
 <table class="polls-participation">
   <thead>
@@ -29,7 +24,12 @@
   </tbody>
 </table>
 
-<h4>Canales de participación :: USUARIOS</h4>
+<p class="stat-number margin-top">
+  Nº total de participantes<br>
+  <span><%= @participantes_totales %></span>
+</p>
+
+<h4>Canales de participación (Participantes)</h4>
 
 <table class="polls-participation">
   <thead>
