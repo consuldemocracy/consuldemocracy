@@ -1,8 +1,18 @@
 <h3 id="3">Prioriza el Plan Participativo de Actuación Territorial de Barajas</h3>
 
+<%
+  question = @poll_3.questions.first
+  answers_votes = {}
+  question.valid_answers.each_with_index do |answer, i|
+    answers_votes[answer] = total_votes_for_answer(question, answer)
+  end
+  results_ordered = answers_votes.keys.sort { |x, y| answers_votes[x] <=> answers_votes[y] }
+  winners = results_ordered.shift(10)
+%>
+
 <table>
   <caption>
-    Prioriza el Plan Participativo de Actuación Territorial de Barajas
+    <%= question.title %>
   </caption>
   <thead>
     <tr>
@@ -11,46 +21,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>2. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>3. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>4. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>5. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>6. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>7. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>8. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>9. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>10. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
+    <% winners.each do |winner| %>
+      <tr>
+        <td><%= barajas_questions_valid_answers_mappings(winner) %></td>
+        <td><%= answers_votes[winner] %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 <table class="poll-3-discarded" style="display:none">
@@ -61,222 +37,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>11. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>12. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>13. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>14. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>15. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>16. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>17. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>18. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>19. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>20. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>21. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>22. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>23. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>24. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>25. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>26. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>27. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>28. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>29. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>30. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>31. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>32. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>33. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>34. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>35. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>36. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>37. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>38. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>39. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>40. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>41. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>42. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>43. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>44. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>45. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>46. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>47. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>48. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>49. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>50. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>51. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>52. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>53. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>54. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>55. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>56. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>57. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>58. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>59. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>60. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>61. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>62. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>63. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
-    <tr>
-      <td>64. Opción que se ha priorizado aquí</td>
-      <td>12564</td>
-    </tr>
+    <% results_ordered.each do |result| %>
+      <tr>
+        <td><%= barajas_questions_valid_answers_mappings(result) %></td>
+        <td><%= answers_votes[result] %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
