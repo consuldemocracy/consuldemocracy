@@ -27,14 +27,14 @@ $sixth-color: #FF9200;
   border: 1px solid rgba(0, 0, 0, 0.1);
 
 
-  .color-1{color:$first-color;}
-  .background-1{background-color: $first-color;}
+  .color-1{color:$second-color;}
+  .background-1{background-color: $second-color;}
 
   .color-2{color: $second-color;}
   .background-2{background-color: $second-color;}
 
-  .color-3{color: $third-color;}
-  .background-3{background-color: $third-color;}
+  .color-3{color: $second-color;}
+  .background-3{background-color: $second-color;}
 
   .color-4{color: $fourth-color;}
   .background-4{background-color: $fourth-color;}
