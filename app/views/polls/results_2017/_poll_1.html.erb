@@ -1,61 +1,32 @@
 <h3 id="1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</h3>
 
-<table>
-  <caption>
-    ¿Estás de acuerdo con la propuesta “Billete único para el transporte público”?
-  </caption>
-  <thead>
-    <tr>
-      <th class="win">SÍ</th>
-      <th>NO</th>
-      <th>EN BLANCO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="win">10000</td>
-      <td>8000</td>
-      <td>2000</td>
-    </tr>
-  </tbody>
-</table>
+<% @poll_1.questions.order(id: :asc).each do |question| %>
+  <table>
+    <caption>
+      <%= question.title %>
+    </caption>
+    <% answers_votes = {} %>
+    <% max_i = 0 %>
+    <% question.valid_answers.each_with_index do |answer, i| %>
+      <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
+      <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
+    <% end %>
 
-<table>
-  <caption>
-    ¿Estás de acuerdo con la propuesta “Madrid 100% Sostenible”?
-  </caption>
-  <thead>
-    <tr>
-      <th class="win">SÍ</th>
-      <th>NO</th>
-      <th>EN BLANCO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="win">10000</td>
-      <td>8000</td>
-      <td>2000</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <caption>
-    De los dos proyectos finalistas para reformar la Plaza de España ¿cuál prefieres que se lleve a cabo?
-  </caption>
-  <thead>
-    <tr>
-      <th>PROYECTO X</th>
-      <th class="win">PROYECTO Y</th>
-      <th>EN BLANCO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>10000</td>
-      <td class="win">8000</td>
-      <td>2000</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <% answers_votes.keys.each_with_index do |answer, i| %>
+          <th class="<%= 'win' if max_i == i %>"><%= answer %></th>
+        <% end %>
+        <th>EN BLANCO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% answers_votes.values.each_with_index do |votes, i| %>
+          <td  class="<%= 'win' if max_i == i %>"><%= votes %></td>
+        <% end %>
+        <td><%= total_votes_for_poll(@poll_1) - answers_votes.values.sum %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

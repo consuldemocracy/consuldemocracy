@@ -21,6 +21,8 @@ class PollsController < ApplicationController
   end
 
   def results_2017
+    @poll_1 = ::Poll.where("name ILIKE ?", "%Billete único%").first
+    @poll_2 = ::Poll.where("name ILIKE ?", "%Gran Vía%").first
   end
 
   def stats_2017
