@@ -95,7 +95,7 @@
 <div class="row margin-top">
   <div id="select-district" class="small-12 medium-7 column select-district">
     <div class="row">
-      <% Budget.find(1).headings.each_slice(7) do |slice| %>
+      <% Budget.find(1).headings.each_slice(12) do |slice| %>
         <div class="small-6 medium-4 column end">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
