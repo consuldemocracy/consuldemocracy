@@ -482,5 +482,9 @@ Rails.application.routes.draw do
   get 'mas-informacion',             to: 'pages#show', id: 'more_information',       as: 'more_info'
   get 'mas-informacion/votaciones',  to: 'pages#show', id: 'more_information/polls', as: 'more_info_polls'
 
+  #Polls 2017 results & stats
+  get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'
+  get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
+
   resources :pages, path: '/', only: [:show]
 end

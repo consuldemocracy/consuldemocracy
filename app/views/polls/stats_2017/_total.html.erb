@@ -1,0 +1,49 @@
+<h3 id="9">Participación total</h3>
+
+<p class="stat-number margin-top">
+  Nº total de votos emitidos<br>
+  <span><%= @votos_totales %></span>
+</p>
+
+<h4>Canales de participación (Votos emitidos)</h4>
+
+<table class="polls-participation">
+  <thead>
+    <tr>
+      <th>WEB</th>
+      <th>URNAS</th>
+      <th>CORREOS</th>
+      <th class="border-left">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td><%= @votos_total_web %> <small><em>(<%= @votos_total_web.percent_of(@votos_totales) rescue 0 %>%)</em></small></td>
+    <td><%= @votos_total_booth %> <small><em>(<%= @votos_total_booth.percent_of(@votos_totales) rescue 0 %>%)</em></small></td>
+    <td><%= @votos_total_letter %> <small><em>(<%= @votos_total_letter.percent_of(@votos_totales) rescue 0 %>%)</em></small></td>
+    <td class="border-left"><strong><%= @votos_totales %></strong></td>
+  </tbody>
+</table>
+
+<p class="stat-number margin-top">
+  Nº total de participantes<br>
+  <span><%= @participantes_totales %></span>
+</p>
+
+<h4>Canales de participación (Participantes)</h4>
+
+<table class="polls-participation">
+  <thead>
+    <tr>
+      <th>WEB</th>
+      <th>URNAS</th>
+      <th>CORREOS</th>
+      <th class="border-left">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <td><%= @participantes_total_web %> <small><em>(<%= @participantes_total_web.percent_of(@participantes_totales) rescue 0 %>%)</em></small></td>
+    <td><%= @participantes_total_booth %> <small><em>(<%= @participantes_total_booth.percent_of(@participantes_totales) rescue 0 %>%)</em></small></td>
+    <td><%= @participantes_total_letter %> <small><em>(<%= @participantes_total_letter.percent_of(@participantes_totales) rescue 0 %>%)</em></small></td>
+    <td class="border-left"><strong><%= @participantes_total_web + @participantes_total_booth + @participantes_total_letter %></strong></td>
+  </tbody>
+</table>
