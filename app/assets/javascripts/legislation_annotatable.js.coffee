@@ -57,11 +57,7 @@ App.LegislationAnnotatable =
 
     $('[data-annotation-id]').removeClass('current-annotation')
 
-    parent = $(this).parents('[data-annotation-id]:eq(0)')
-    if parent.length
-      target = parent
-    else
-      target = $(this)
+    target = $(this)
     annotation_id = target.data('annotation-id')
     $('[data-annotation-id="'+annotation_id+'"]').addClass('current-annotation')
 
@@ -69,9 +65,9 @@ App.LegislationAnnotatable =
     $("#comments-box").show()
     $.event.trigger
       type: "renderLegislationAnnotation"
-      annotation_id: $(event.target).data("annotation-id")
-      annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-      offset: $(event.target).offset()["top"]
+      annotation_id: target.data("annotation-id")
+      annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+      offset: target.offset()["top"]
 
   isMobile: () ->
     return window.innerWidth <= 652
