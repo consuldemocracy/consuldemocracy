@@ -56,7 +56,15 @@ fr:
         external_url: "URL externe"
         location: "Localisation exacte"
         administrator_id: "Administrateur"
-        description: "Description"
+        description: "Description du projet
+          <br><p>Point de départ
+          <br>Le besoin, la difficulté à résoudre, etc.
+          <br>La solution que vous proposez
+          <br>Qui va réaliser ?
+          <br>Moi / avec un collectif d’autres locataires / avec l’appui d’une association de locataires / avec le gardien d’immeuble / … (ne garder que la solution retenue)
+          <br>Estimation du coût
+          <br>A combien se chiffrerait la mise en œuvre de votre solution ?
+          <br>Est-ce que des moyens supplémentaires seront nécessaires pour faire vivre votre projet dans la durée ?<p>"
         external_url: "Lien vers une documentation externe"
         heading_id: "Site concerné"
         organization_name: "Si vous représentez un collectif ou une organisation, écrivez son nom"
