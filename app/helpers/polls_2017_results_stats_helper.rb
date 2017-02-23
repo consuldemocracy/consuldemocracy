@@ -8,6 +8,12 @@ module Polls2017ResultsStatsHelper
     ::Poll::FinalRecount.where(booth_assignment_id: poll.booth_assignment_ids).sum(:count)
   end
 
+  def percent_stat(num, denom)
+    return "0" if num == 0
+    return "-" if denom == 0
+    "%g" % ("%.2f" % (num*100.0/denom))
+  end
+
   def poll_stats(poll)
     ba_ids = poll.booth_assignment_ids
     total = Poll::Voter.where(poll_id: poll.id).count
