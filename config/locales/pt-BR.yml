@@ -40,7 +40,7 @@ pt-BR:
           recipient: Email
         residence:
           date_of_birth: Data de nascimento
-          document_number: Número do documento (incluindo letras)
+          document_number: Número do documento
           document_type: Tipo de documento
           postal_code: Código postal
         sms:
