@@ -161,34 +161,34 @@ puts "Creating Groups"
 group = budget.groups.create!(name: "Choisissez votre résidence")
 group.headings << group.headings.create!(name: 'La Granges aux belles, 10ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'La Chapelle Evangile, 18ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Porte de Vanves, 14ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Les Cardeurs-Mouraud, 20ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Bisson Ramponneau-Piat, 20ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Bd Macdonald, 19ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Elie Faure-Commandant l’Herminier, 20ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Jean Bouton-place Henri Frenay, 12ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'Zac Vaugirard, 15ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 group.headings << group.headings.create!(name: 'National, 13ème',
                                         # geozone: geozone,
-                                        price: rand(1 .. 100) * 100000)
+                                        price: 20000)
 
 
 
