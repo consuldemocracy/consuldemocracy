@@ -9,17 +9,18 @@ module Polls2017ResultsStatsHelper
   end
 
   def poll_stats(poll)
+    ba_ids = poll.booth_assignment_ids
     total = Poll::Voter.where(poll_id: poll.id).count
     web = Poll::Voter.web.where(poll_id: poll.id).count
     booth = Poll::Voter.booth.where(poll_id: poll.id).count
     letter = Poll::Voter.letter.where(poll_id: poll.id).count
 
     white_web = 0
-    white_booth = Poll::WhiteResult.all.sum(:amount)
+    white_booth = Poll::WhiteResult.where(booth_assignment_id: ba_ids).sum(:amount)
     white_letter = 0
 
     null_web = 0
-    null_booth = Poll::NullResult.all.sum(:amount)
+    null_booth = Poll::NullResult.where(booth_assignment_id: ba_ids).sum(:amount)
     null_letter = 0
 
     poll_stats = {
