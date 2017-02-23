@@ -1587,7 +1587,7 @@ fr:
     budget/investment  : Investissement
     verification/sms : téléphone
     signature_sheet  : feuille de signature
-    accept_terms: J'accepte le %{policy} et les %{conditions}
+    accept_terms: J'accepte les conditions de %{policy} et les %{conditions}
     conditions: Conditions légales
     debate: Débat
     error: erreur
