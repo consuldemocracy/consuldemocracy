@@ -121,14 +121,21 @@ App.LegislationAnnotatable =
       anchor = $(location).attr('hash')
       if anchor && anchor.startsWith('#annotation')
         ann_id = anchor.split("-")[-1..]
-        el = $("span[data-annotation-id='" + ann_id + "']")
-        App.LegislationAllegations.show_comments()
-        $('html,body').animate({scrollTop: el.offset().top})
-        $.event.trigger
-          type: "renderLegislationAnnotation"
-          annotation_id: ann_id
-          annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-          offset: el.offset()["top"]
+
+        checkExist = setInterval((->
+          if $("span[data-annotation-id='" + ann_id + "']").length
+            el = $("span[data-annotation-id='" + ann_id + "']")
+            el.addClass('current-annotation')
+            App.LegislationAllegations.show_comments()
+            $('html,body').animate({scrollTop: el.offset().top})
+            $.event.trigger
+              type: "renderLegislationAnnotation"
+              annotation_id: ann_id
+              annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+              offset: el.offset()["top"]
+            clearInterval checkExist
+          return
+        ), 100)
 
   initialize: ->
     $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
