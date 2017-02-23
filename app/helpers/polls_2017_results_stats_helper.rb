@@ -8,6 +8,48 @@ module Polls2017ResultsStatsHelper
     ::Poll::FinalRecount.where(booth_assignment_id: poll.booth_assignment_ids).sum(:count)
   end
 
+  def poll_stats(poll)
+    total = Poll::Voter.where(poll_id: poll.id).count
+    web = Poll::Voter.web.where(poll_id: poll.id).count
+    booth = Poll::Voter.booth.where(poll_id: poll.id).count
+    letter = Poll::Voter.letter.where(poll_id: poll.id).count
+
+    white_web = 0
+    white_booth = Poll::WhiteResult.all.sum(:amount)
+    white_letter = 0
+
+    null_web = 0
+    null_booth = Poll::NullResult.all.sum(:amount)
+    null_letter = 0
+
+    poll_stats = {
+      poll: poll,
+
+      total_votes: total,
+
+      web_votes: web,
+      booth_votes: booth,
+      letter_votes: letter,
+      total_valid_votes: web + booth + letter,
+
+      white_web_votes: white_web,
+      white_booth_votes: white_booth,
+      white_letter_votes: white_letter,
+      total_white_votes: white_web + white_booth + white_letter,
+
+      null_web_votes: null_web,
+      null_booth_votes: null_booth,
+      null_letter_votes: null_letter,
+      total_null_votes: null_web + null_booth + null_letter,
+
+      total_web: web + white_web + null_web,
+      total_booth: booth + white_booth + null_booth,
+      total_letter: letter + white_letter + null_letter,
+
+      total_total: web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter
+    }
+  end
+
   def barajas_questions_valid_answers_mappings(answer)
     @barajas_questions_valid_answers_mapping ||= {
       "1" => "(NO ES COMPETENCIA MUNICIPAL) Garantizar las plazas necesarias de Secundaria y Bachillerato para todos los alumnos de los centros públicos del distrito. Construcción de un nuevo instituto",
