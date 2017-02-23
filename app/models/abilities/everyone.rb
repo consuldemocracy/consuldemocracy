@@ -12,8 +12,6 @@ module Abilities
 
       can :read, Poll
       can :read, Poll::Question
-      can :results_2017, Poll
-      can :stats_2017, Poll
 
       can [:read, :welcome], Budget
       can [:read, :print], Budget::Investment
