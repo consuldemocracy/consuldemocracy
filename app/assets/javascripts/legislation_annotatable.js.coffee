@@ -57,11 +57,7 @@ App.LegislationAnnotatable =
 
     $('[data-annotation-id]').removeClass('current-annotation')
 
-    parent = $(this).parents('[data-annotation-id]:eq(0)')
-    if parent.length
-      target = parent
-    else
-      target = $(this)
+    target = $(this)
     annotation_id = target.data('annotation-id')
     $('[data-annotation-id="'+annotation_id+'"]').addClass('current-annotation')
 
@@ -69,9 +65,9 @@ App.LegislationAnnotatable =
     $("#comments-box").show()
     $.event.trigger
       type: "renderLegislationAnnotation"
-      annotation_id: $(event.target).data("annotation-id")
-      annotation_url: $(event.target).closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-      offset: $(event.target).offset()["top"]
+      annotation_id: target.data("annotation-id")
+      annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+      offset: target.offset()["top"]
 
   isMobile: () ->
     return window.innerWidth <= 652
@@ -101,6 +97,7 @@ App.LegislationAnnotatable =
           $('#comments-box textarea').focus()
 
           $("#new_legislation_annotation").on("ajax:complete", (e, data, status, xhr) ->
+            App.LegislationAnnotatable.app.destroy()
             if data.status == 200
               App.LegislationAnnotatable.remove_highlight()
               $("#comments-box").html("").hide()
@@ -124,14 +121,21 @@ App.LegislationAnnotatable =
       anchor = $(location).attr('hash')
       if anchor && anchor.startsWith('#annotation')
         ann_id = anchor.split("-")[-1..]
-        el = $("span[data-annotation-id='" + ann_id + "']")
-        App.LegislationAllegations.show_comments()
-        $('html,body').animate({scrollTop: el.offset().top})
-        $.event.trigger
-          type: "renderLegislationAnnotation"
-          annotation_id: ann_id
-          annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
-          offset: el.offset()["top"]
+
+        checkExist = setInterval((->
+          if $("span[data-annotation-id='" + ann_id + "']").length
+            el = $("span[data-annotation-id='" + ann_id + "']")
+            el.addClass('current-annotation')
+            App.LegislationAllegations.show_comments()
+            $('html,body').animate({scrollTop: el.offset().top})
+            $.event.trigger
+              type: "renderLegislationAnnotation"
+              annotation_id: ann_id
+              annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
+              offset: el.offset()["top"]
+            clearInterval checkExist
+          return
+        ), 100)
 
   initialize: ->
     $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
@@ -152,7 +156,7 @@ App.LegislationAnnotatable =
       ann_id         = $this.data("legislation-draft-version-id")
       base_url       = $this.data("legislation-annotatable-base-url")
 
-      app = new annotator.App()
+      App.LegislationAnnotatable.app = new annotator.App()
         .include ->
           beforeAnnotationCreated: (ann) ->
             ann["legislation_draft_version_id"] = ann_id
@@ -166,9 +170,9 @@ App.LegislationAnnotatable =
         .include(App.LegislationAnnotatable.scrollToAnchor)
         .include(annotator.storage.http, { prefix: base_url, urls: { search: "/annotations/search" } })
 
-      app.start().then ->
-        app.ident.identity = current_user_id
+      App.LegislationAnnotatable.app.start().then ->
+        App.LegislationAnnotatable.app.ident.identity = current_user_id
 
         options = {}
         options["legislation_draft_version_id"] = ann_id
-        app.annotations.load(options)
+        App.LegislationAnnotatable.app.annotations.load(options)
