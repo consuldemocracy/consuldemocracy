@@ -77,9 +77,9 @@ class PollsController < ApplicationController
       ::Poll::AGE_STEPS.each do |age|
         percents[age] = {}
         ::Poll::Voter::VALID_ORIGINS.each do |origin|
-          percents[age][origin] = counts[age][origin] / (counts[age]['total'].nonzero? || 1) * 100
+          percents[age][origin] = (counts[age][origin].to_f / (counts[age]['total'].nonzero? || 1)) * 100
         end
-        percents[age]['total'] = counts[age]['total'] / (counts['total'].nonzero? || 1) * 100
+        percents[age]['total'] = (counts[age]['total'].to_f / (counts['total'].nonzero? || 1)) * 100
       end
 
       {counts: counts, percents: percents}
