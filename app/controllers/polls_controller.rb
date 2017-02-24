@@ -52,7 +52,7 @@ class PollsController < ApplicationController
     @poll_7 = ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").first
     @poll_8 = ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
 
-    load_demographic_stats
+    #load_demographic_stats
   end
 
   private
