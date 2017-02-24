@@ -784,6 +784,18 @@ end
 puts " ✅"
 print "Creating polls"
 
+puts "Madrid polls"
+
+[ 'Billete único', 'Gran Vía', 'Territorial de Barajas', 'Territorial de San Blas',
+  'Hortaleza', 'culturales en Retiro', 'Distrito de Salamanca', 'Distrito de Vicálvaro'
+].each do |name|
+  poll = Poll.create(name: name,
+                     starts_at: 1.month.ago,
+                     ends_at:   1.month.from_now,
+                     nvotes_poll_id: 128,
+                     geozone_restricted: false)
+end
+
 puts " ✅"
 print "Active Polls"
 (1..3).each do |i|
