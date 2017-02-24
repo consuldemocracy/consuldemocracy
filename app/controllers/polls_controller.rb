@@ -52,37 +52,46 @@ class PollsController < ApplicationController
     @poll_7 = ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").first
     @poll_8 = ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
 
-    @age_stats = age_stats_2017
+    load_demographic_stats
   end
 
   private
 
-    def age_stats_2017
-      counts = {}
-      count_total = 0
-      ::Poll::AGE_STEPS.each_with_index do |age, i|
-        next_age = ::Poll::AGE_STEPS[i+1]
-        counts[age] = {}
-        age_total = 0
-        ::Poll::Voter::VALID_ORIGINS.each do |origin|
-          query = ::Poll::Voter.where(origin: origin).where("age >= ?", age)
-          query = query.where("age <= ?", next_age - 1) if next_age.present?
-          counts[age][origin] = query.select(:user_id).distinct.count
-          age_total += counts[age][origin]
+    def age_group(age)
+      age_group = ::Poll::AGE_STEPS.first
+      ::Poll::AGE_STEPS.each do |step|
+        if age >= step
+          age_group = step
         end
-        counts[age]['total'] = age_total
-        count_total += age_total
+      end
+      age_group
+    end
+
+    def load_demographic_stats
+      @age_stats = {}
+
+      ::Poll::AGE_STEPS.each do |age_step|
+        @age_stats[age_step] = {}
+        @age_stats[age_step]['total'] = 0
+        @age_stats['total'] = 0
+        ::Poll::Voter::VALID_ORIGINS.each { |valid_origin| @age_stats[age_step][valid_origin] = 0 }
       end
 
-      percents = {}
-      ::Poll::AGE_STEPS.each do |age|
-        percents[age] = {}
-        ::Poll::Voter::VALID_ORIGINS.each do |origin|
-          percents[age][origin] = (counts[age][origin].to_f / (count_total.nonzero? || 1)) * 100
+      user_ids = ::Poll::Voter.pluck(:user_id)
+
+      ::Poll::Voter.find_each do |voter|
+        if user_ids.include?(voter.user_id)
+          user_ids.delete(voter.user_id)
+          origin = voter.origin
+
+          if voter.age.present?
+            voter_age_group = age_group(voter.age)
+            @age_stats[voter_age_group][origin] += 1
+            @age_stats[voter_age_group]['total'] += 1
+            @age_stats['total'] += 1
+          end
         end
-        percents[age]['total'] = (counts[age]['total'].to_f / (count_total.nonzero? || 1)) * 100
       end
 
-      {counts: counts, percents: percents}
     end
 end

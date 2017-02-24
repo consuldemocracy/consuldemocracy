@@ -27,13 +27,13 @@
         <% ::Poll::Voter::VALID_ORIGINS.each do |origin| %>
           <td>
             <div class="progress" role="progressbar" tabindex="0"
-                 aria-valuenow="<%= @age_stats[:percents][age][origin] %>"
-                 aria-valuetext="<%= number_to_percentage(@age_stats[:percents][age][origin]) %>"
+                 aria-valuenow="<%= percent_stat(@age_stats[age][origin], @age_stats['total']) %>"
+                 aria-valuetext="<%= percent_stat(@age_stats[age][origin], @age_stats['total']) %>%"
                  aria-valuemin="0" aria-valuemax="100">
-              <span class="progress-meter <%= origin %>" style="width: <%= @age_stats[:percents][age][origin] %>%">
+              <span class="progress-meter <%= origin %>" style="width: <%= percent_stat(@age_stats[age][origin], @age_stats['total']) %>%">
                 <p class="progress-meter-text">
-                  <%= @age_stats[:counts][age][origin] %>
-                  (<%= number_to_percentage(@age_stats[:percents][age][origin]) %>)
+                  <%= @age_stats[age][origin] %>
+                  (<%=  percent_stat(@age_stats[age][origin], @age_stats['total']) %>%)
                 </p>
               </span>
             </div>
@@ -42,14 +42,14 @@
 
         <td class="border-left">
           <strong>
-            <%= @age_stats[:counts][age]['total'] %>
-            (<%= number_to_percentage(@age_stats[:percents][age]['total']) %>)
+            <%= @age_stats[age]['total'] %>
+            (<%= percent_stat(@age_stats[age]['total'], @age_stats['total']) %>%)
           </strong>
           <div class="progress" role="progressbar" tabindex="0"
-               aria-valuenow="<%= @age_stats[:percents][age]['total'] %>"
-               aria-valuetext="<%= number_to_percentage(@age_stats[:percents][age]['total']) %>"
+               aria-valuenow="<%= percent_stat(@age_stats[age]['total'], @age_stats['total']) %>"
+               aria-valuetext="<%= percent_stat(@age_stats[age]['total'], @age_stats['total']) %>%"
                aria-valuemin="0" aria-valuemax="100">
-            <span class="progress-meter" style="width: <%= @age_stats[:percents][age]['total'] %>%"></span>
+            <span class="progress-meter" style="width: <%= percent_stat(@age_stats[age]['total'], @age_stats['total']) %>%"></span>
           </div>
         </td>
 
