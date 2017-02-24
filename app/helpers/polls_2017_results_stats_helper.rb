@@ -16,23 +16,23 @@ module Polls2017ResultsStatsHelper
 
   def poll_stats(poll)
     ba_ids = poll.booth_assignment_ids
-    total = Poll::Voter.where(poll_id: poll.id).count
+
     web = Poll::Voter.web.where(poll_id: poll.id).count
     booth = Poll::Voter.booth.where(poll_id: poll.id).count
     letter = Poll::Voter.letter.where(poll_id: poll.id).count
 
-    white_web = 0
-    white_booth = Poll::WhiteResult.where(booth_assignment_id: ba_ids).sum(:amount)
-    white_letter = 0
+    white_web = Poll::WhiteResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
+    white_booth = Poll::WhiteResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
+    white_letter = Poll::WhiteResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
 
-    null_web = 0
-    null_booth = Poll::NullResult.where(booth_assignment_id: ba_ids).sum(:amount)
-    null_letter = 0
+    null_web = Poll::NullResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
+    null_booth = Poll::NullResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
+    null_letter = Poll::NullResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
 
     poll_stats = {
       poll: poll,
 
-      total_votes: total,
+      total_votes: web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter
 
       web_votes: web,
       booth_votes: booth,
