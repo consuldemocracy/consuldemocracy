@@ -43,7 +43,7 @@ class PollsController < ApplicationController
     # @participantes_total_booth = ::Poll::Voter.booth.select(:user_id).distinct.count
     # @participantes_total_letter = ::Poll::Voter.letter.select(:user_id).distinct.count
 
-    #@poll_1 = ::Poll.where("name ILIKE ?", "%Billete único%").first
+    @poll_1 = ::Poll.where("name ILIKE ?", "%Billete único%").first
     @poll_2 = ::Poll.where("name ILIKE ?", "%Gran Vía%").first
     @poll_3 = ::Poll.where("name ILIKE ?", "%Territorial de Barajas%").first
     @poll_4 = ::Poll.where("name ILIKE ?", "%Territorial de San Blas%").first
