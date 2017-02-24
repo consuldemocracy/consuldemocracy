@@ -7,7 +7,7 @@
   question.valid_answers.each_with_index do |answer, i|
     answers_votes[answer] = total_votes_for_answer(question, answer)
   end
-  results_ordered = answers_votes.keys.sort { |x, y| answers_votes[x] <=> answers_votes[y] }
+  results_ordered = answers_votes.keys.sort { |x, y| answers_votes[y] <=> answers_votes[x] }
   winner = results_ordered.shift
 %>
 <table>
