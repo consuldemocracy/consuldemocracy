@@ -73,7 +73,7 @@ class Legislation::AnnotationsController < ApplicationController
     end
 
     respond_to do |format|
-      format.js { render :comments }
+      format.js { render :new_comment }
     end
   end
 
