@@ -32,7 +32,7 @@ module Polls2017ResultsStatsHelper
     poll_stats = {
       poll: poll,
 
-      total_votes: web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter
+      total_votes: web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter,
 
       web_votes: web,
       booth_votes: booth,
