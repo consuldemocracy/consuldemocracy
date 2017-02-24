@@ -2,31 +2,37 @@
 
 <div class="row">
   <div class="small-12 column text-center margin-top">
-    <%= image_tag ("polls/stats_man.png") %>
-    <%= image_tag ("polls/stats_man.png") %>
-    <%= image_tag ("polls/stats_man.png") %>
-    <%= image_tag ("polls/stats_man.png") %>
-    <%= image_tag ("polls/stats_man.png") %>
-    <%= image_tag ("polls/stats_woman.png") %>
-    <%= image_tag ("polls/stats_woman.png") %>
-    <%= image_tag ("polls/stats_woman.png") %>
-    <%= image_tag ("polls/stats_woman.png") %>
-    <%= image_tag ("polls/stats_woman.png") %>
+    <%
+      total = @gender_stats['male']['total'] + @gender_stats['female']['total']
+      m = 10
+      h = @gender_stats['male']['total']*100.0/total
+      while h >= 10 do
+    %>
+      <%= image_tag ("polls/stats_man.png") %>
+    <%
+      m -= 1
+      h -= 10
+      end
+    %>
+    <% m.times do %>
+      <%= image_tag ("polls/stats_woman.png") %>
+    <% end %>
   </div>
 </div>
 
 <div class="row">
   <div class="small-12 medium-6 column text-right">
     <p class="stat-number margin-top">
-      Hombres (50,00%)<br>
-      <span>5000</span>
+
+      Hombres (<%= percent_stat(@gender_stats['male']['total'], total)%>%)<br>
+      <span><%= @gender_stats['male']['total'] %></span>
     </p>
   </div>
   <div class="small-12 medium-6 column">
 
     <p class="stat-number margin-top">
-      Mujeres (50,00%)<br>
-      <span>5000</span>
+      Mujeres (<%= percent_stat(@gender_stats['female']['total'], total)%>%)<br>
+      <span><%= @gender_stats['female']['total'] %></span>
     </p>
   </div>
 </div>
@@ -44,17 +50,17 @@
   <tbody>
     <tr>
       <th class="text-left border-right">Hombres</th>
-      <td>2000 <small><em>(40,00%)</em></small></td>
-      <td>1000 <small><em>(20,00%)</em></small></td>
-      <td>2000 <small><em>(40,00%)</em></small></td>
-      <td class="border-left"><strong>5000</strong></td>
+      <td><%= @gender_stats['male']['web'] %> <small><em>(<%= percent_stat(@gender_stats['male']['web'], @gender_stats['male']['total'])%>%)</em></small></td>
+      <td><%= @gender_stats['male']['booth'] %> <small><em>(<%= percent_stat(@gender_stats['male']['booth'], @gender_stats['male']['total'])%>%)</em></small></td>
+      <td><%= @gender_stats['male']['letter'] %> <small><em>(<%= percent_stat(@gender_stats['male']['letter'], @gender_stats['male']['total'])%>%)</em></small></td>
+      <td class="border-left"><strong><%= @gender_stats['male']['total'] %></strong></td>
     </tr>
     <tr>
       <th class="text-left border-right">Mujeres</th>
-      <td>1500 <small><em>(30,00%)</em></small></td>
-      <td>2000 <small><em>(40,00%)</em></small></td>
-      <td>1500 <small><em>(30,00%)</em></small></td>
-      <td class="border-left"><strong>5000</strong></td>
+      <td><%= @gender_stats['female']['web'] %> <small><em>(<%= percent_stat(@gender_stats['female']['web'], @gender_stats['female']['total'])%>%)</em></small></td>
+      <td><%= @gender_stats['female']['booth'] %> <small><em>(<%= percent_stat(@gender_stats['female']['booth'], @gender_stats['female']['total'])%>%)</em></small></td>
+      <td><%= @gender_stats['female']['letter'] %> <small><em>(<%= percent_stat(@gender_stats['female']['letter'], @gender_stats['female']['total'])%>%)</em></small></td>
+      <td class="border-left"><strong><%= @gender_stats['female']['total'] %></strong></td>
     </tr>
   </tbody>
 </table>
