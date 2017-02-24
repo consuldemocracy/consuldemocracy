@@ -58,28 +58,26 @@ class PollsController < ApplicationController
   private
 
     def age_stats_2017
-      counts = {'total' => 0}
+      counts = {}
+      total_count = 0
       ::Poll::AGE_STEPS.each_with_index do |age, i|
         next_age = ::Poll::AGE_STEPS[i+1]
         counts[age] = {}
-        step_total = 0
         ::Poll::Voter::VALID_ORIGINS.each do |origin|
           query = ::Poll::Voter.where(origin: origin).where("age >= ?", age)
           query = query.where("age <= ?", next_age - 1) if next_age.present?
           counts[age][origin] = query.count
-          step_total += counts[age][origin]
+          total_count += counts[age][origin]
         end
-        counts[age]['total'] = step_total
-        counts['total'] += step_total
       end
 
       percents = {}
       ::Poll::AGE_STEPS.each do |age|
         percents[age] = {}
         ::Poll::Voter::VALID_ORIGINS.each do |origin|
-          percents[age][origin] = (counts[age][origin].to_f / (counts[age]['total'].nonzero? || 1)) * 100
+          percents[age][origin] = (counts[age][origin].to_f / (total_count.nonzero? || 1)) * 100
         end
-        percents[age]['total'] = (counts[age]['total'].to_f / (counts['total'].nonzero? || 1)) * 100
+        percents[age]['total'] = (counts[age]['total'].to_f / (total_count.nonzero? || 1)) * 100
       end
 
       {counts: counts, percents: percents}
