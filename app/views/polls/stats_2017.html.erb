@@ -40,7 +40,7 @@
 
       <p>Votaciones</p>
       <ul class="menu vertical margin-top">
-        <!-- <li><a href="#<%# @poll_1.id %>">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li> -->
+        <li><a href="#<%= @poll_1.id %>">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
         <li><a href="#<%= @poll_2.id %>">Gran Vía</a></li>
         <li><a href="#<%= @poll_3.id %>">Nombres de centros culturales en Retiro</a></li>
         <li><a href="#<%= @poll_4.id %>">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
@@ -69,7 +69,7 @@
       <h2 class="sr-only">VOTACIONES</h2>
 
       <!-- Propuestas y Plaza de España -->
-      <%# render "polls/stats_2017/poll_with_letter", stats: poll_stats(@poll_1) %>
+      <%= render "polls/stats_2017/poll_with_letter", stats: poll_stats(@poll_1) %>
 
       <!-- Gran Vía -->
       <%= render "polls/stats_2017/poll", stats: poll_stats(@poll_2) %>
