@@ -620,6 +620,11 @@ namespace :polls do
     end
   end
 
+  desc "Prints all voter hashes"
+  task voter_hashes: :environment do
+    puts Poll::Nvote.pluck(:voter_hash)
+  end
+
   desc "Temporarily adds a valid nvotes_election_id to all polls"
   task add_tmp_nvotes_poll_id: :environment do
     Poll.all.each do |poll|
