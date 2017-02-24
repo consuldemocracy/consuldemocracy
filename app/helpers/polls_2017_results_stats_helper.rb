@@ -11,7 +11,8 @@ module Polls2017ResultsStatsHelper
   def percent_stat(num, denom)
     return "0" if num == 0
     return "-" if denom == 0
-    "%g" % ("%.2f" % (num*100.0/denom))
+    #"%g" % ("%.2f" % (num*100.0/denom))
+    number_to_percentage(num*100.0/denom, precision: 2, significant: true, strip_insignificant_zeros: true, format: "%n")
   end
 
   def poll_stats(poll)
