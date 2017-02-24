@@ -67,7 +67,7 @@ class PollsController < ApplicationController
         ::Poll::Voter::VALID_ORIGINS.each do |origin|
           query = ::Poll::Voter.where(origin: origin).where("age >= ?", age)
           query = query.where("age <= ?", next_age - 1) if next_age.present?
-          counts[age][origin] = query.count
+          counts[age][origin] = query.select(:user_id).distinct.count
           age_total += counts[age][origin]
         end
         counts[age]['total'] = age_total
