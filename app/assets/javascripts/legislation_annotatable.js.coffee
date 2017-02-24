@@ -141,6 +141,7 @@ App.LegislationAnnotatable =
           if $("span[data-annotation-id='" + ann_id + "']").length
             el = $("span[data-annotation-id='" + ann_id + "']")
             el.addClass('current-annotation')
+            $('#comments-box').html('')
             App.LegislationAllegations.show_comments()
             $('html,body').animate({scrollTop: el.offset().top})
             $.event.trigger
