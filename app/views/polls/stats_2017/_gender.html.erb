@@ -3,7 +3,7 @@
 <div class="row">
   <div class="small-12 column text-center margin-top">
     <%
-      total = @gender_stats['male']['total'] + @gender_stats['female']['total']
+      total = @gender_stats['all']['total']
       m = 10
       h = @gender_stats['male']['total']*100.0/total
       while h >= 10 do

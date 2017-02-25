@@ -53,5 +53,6 @@ class PollsController < ApplicationController
     @poll_8 = ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
 
     @age_stats = Stat.hash("polls_2017_age")
+    @gender_stats = Stat.hash("polls_2017_gender")
   end
 end

@@ -33,9 +33,9 @@
       <p>Participación</p>
       <ul class="menu vertical margin-top">
         <li><a href="#9">Participación total</a></li>
-        <!--<li><a href="#10">Participación por sexo</a></li>
+        <li><a href="#10">Participación por sexo</a></li>
         <li><a href="#11">Participación por grupos de edad</a></li>
-        <li><a href="#12">Participación por distrito</a></li>-->
+        <!--<li><a href="#12">Participación por distrito</a></li>-->
       </ul>
 
       <p>Votaciones</p>
@@ -61,7 +61,7 @@
       <%= render "polls/stats_2017/gender" if @gender_stats.present? %>
 
       <!-- Participación por grupos de edad -->
-      <%# render "polls/stats_2017/age" %>
+      <%= render "polls/stats_2017/age" if @age_stats.present? %>
 
       <!-- Participación por distrito -->
       <%# render "polls/stats_2017/districts" %>
