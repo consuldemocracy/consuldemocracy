@@ -222,4 +222,29 @@ module Polls2017ResultsStatsHelper
     }
     @san_blas_questions_valid_answers_mapping[answer]
   end
+
+  def population_by_geozone(geozone_name)
+    geozones_population = { "Arganzuela" => 152116,
+                            "Barajas" => 45417,
+                            "Carabanchel" => 244471,
+                            "Centro" => 135842,
+                            "Chamartín" => 141018,
+                            "Chamberí" => 134143,
+                            "Ciudad Lineal" => 211241,
+                            "Fuencarral-El Pardo" => 233791,
+                            "Hortaleza" => 176052,
+                            "Latina" => 231645,
+                            "Moncloa-Aravaca" => 112939,
+                            "Moratalaz" => 92764,
+                            "Puente de Vallecas" => 224655,
+                            "Retiro" => 114439,
+                            "Salamanca" => 139428,
+                            "San Blas-Canillejas" => 151965,
+                            "Tetuán" => 152742,
+                            "Usera" => 135368,
+                            "Vicálvaro" => 71111,
+                            "Villa de Vallecas" => 110063,
+                            "Villaverde" => 141569 }
+    geozones_population[geozone_name]
+  end
 end
