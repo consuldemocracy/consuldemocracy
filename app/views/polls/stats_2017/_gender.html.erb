@@ -4,17 +4,13 @@
   <div class="small-12 column text-center margin-top">
     <%
       total = @gender_stats['all']['total']
-      m = 10
-      h = @gender_stats['male']['total']*100.0/total
-      while h >= 10 do
+
+      h = (total > 0 ? (@gender_stats['male']['total']*10.0/total).round : 0)
+      h.times do
     %>
       <%= image_tag ("polls/stats_man.png") %>
-    <%
-      m -= 1
-      h -= 10
-      end
-    %>
-    <% m.times do %>
+    <% end %>
+    <% (10 - h).times do %>
       <%= image_tag ("polls/stats_woman.png") %>
     <% end %>
   </div>
