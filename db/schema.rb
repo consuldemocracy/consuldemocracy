@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224205112) do
+ActiveRecord::Schema.define(version: 20170225091223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -466,9 +466,9 @@ ActiveRecord::Schema.define(version: 20170224205112) do
     t.string   "document_number"
     t.string   "message"
     t.integer  "user_id"
-    t.string   "postal_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "postal_code"
     t.string   "census_name"
     t.string   "census_postal_code"
   end
@@ -783,6 +783,18 @@ ActiveRecord::Schema.define(version: 20170224205112) do
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
   add_index "spending_proposals", ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
   add_index "spending_proposals", ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+
+  create_table "stats", force: :cascade do |t|
+    t.string   "namespace"
+    t.string   "group"
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stats", ["namespace", "group"], name: "index_stats_on_namespace_and_group", using: :btree
+  add_index "stats", ["namespace"], name: "index_stats_on_namespace", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
