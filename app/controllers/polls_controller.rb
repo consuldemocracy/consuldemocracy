@@ -52,62 +52,7 @@ class PollsController < ApplicationController
     @poll_7 = ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").first
     @poll_8 = ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
 
-    #load_demographic_stats
+    @age_stats = Stat.hash("polls_2017_age")
+    @gender_stats = Stat.hash("polls_2017_gender")
   end
-
-  private
-
-    def age_group(age)
-      age_group = ::Poll::AGE_STEPS.first
-      ::Poll::AGE_STEPS.each do |step|
-        if age >= step
-          age_group = step
-        end
-      end
-      age_group
-    end
-
-    def initialize_demographic_stats
-      @age_stats = {}
-      ::Poll::AGE_STEPS.each do |age_step|
-        @age_stats[age_step] = {}
-        @age_stats[age_step]['total'] = 0
-        @age_stats['total'] = 0
-        ::Poll::Voter::VALID_ORIGINS.each { |valid_origin| @age_stats[age_step][valid_origin] = 0 }
-      end
-
-      @gender_stats = {}
-        ['male', 'female'].each do |gender|
-        @gender_stats[gender] = {}
-        @gender_stats[gender]['total'] = 0
-        ::Poll::Voter::VALID_ORIGINS.each { |valid_origin| @gender_stats[gender][valid_origin] = 0 }
-      end
-    end
-
-    def load_demographic_stats
-      initialize_demographic_stats
-
-      user_ids = ::Poll::Voter.pluck(:user_id)
-
-      ::Poll::Voter.find_each do |voter|
-        if user_ids.include?(voter.user_id)
-          user_ids.delete(voter.user_id)
-          origin = voter.origin
-
-          if voter.age.present? && origin.present?
-            voter_age_group = age_group(voter.age)
-            @age_stats[voter_age_group][origin] += 1
-            @age_stats[voter_age_group]['total'] += 1
-            @age_stats['total'] += 1
-          end
-
-          if voter.gender.present? && origin.present?
-            voter_gender = voter.gender
-            @gender_stats[voter_gender][origin] += 1
-            @gender_stats[voter_gender]['total'] += 1
-          end
-        end
-      end
-
-    end
 end
