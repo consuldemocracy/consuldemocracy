@@ -47,7 +47,7 @@ namespace :stats do
         district_total += district_origin
         Stat.named(namespace, "#{geozone_id}", origin).set_value district_origin
       end
-      all_genders_total += district_total
+      all_district_total += district_total
       Stat.named(namespace, "#{geozone_id}", 'total').set_value district_total
     end
     Stat.named(namespace, "all", 'total').set_value all_district_total
