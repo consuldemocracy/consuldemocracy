@@ -36,6 +36,21 @@ namespace :stats do
       Stat.named(namespace, "#{gender}", 'total').set_value gender_total
     end
     Stat.named(namespace, "all", 'total').set_value all_genders_total
+
+    namespace = "polls_2017_district"
+    all_district_total = 0
+    Geozone.pluck(:id).each do |geozone_id|
+      district_total = 0
+      ::Poll::Voter::VALID_ORIGINS.each do |origin|
+        district_query = polls_query.where(origin: origin).where(geozone_id: geozone_id)
+        district_origin = district_query.select(:user_id).distinct.count
+        district_total += district_origin
+        Stat.named(namespace, "#{geozone_id}", origin).set_value district_origin
+      end
+      all_genders_total += district_total
+      Stat.named(namespace, "#{geozone_id}", 'total').set_value district_total
+    end
+    Stat.named(namespace, "all", 'total').set_value all_district_total
   end
 
   def polls_2017_ids
