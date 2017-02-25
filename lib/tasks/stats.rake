@@ -51,18 +51,64 @@ namespace :stats do
       Stat.named(namespace, "#{geozone_id}", 'total').set_value district_total
     end
     Stat.named(namespace, "all", 'total').set_value all_district_total
+
+    namespace = "polls_2017_polls"
+    poll_ids.each do |poll_id|
+      poll = Poll.find(poll_id)
+      ba_ids = poll.booth_assignment_ids
+
+      web = Poll::Voter.web.where(poll_id: poll_id).count
+      booth = Poll::Voter.booth.where(poll_id: poll_id).count
+      letter = Poll::Voter.letter.where(poll_id: poll_id).count
+
+      white_web = Poll::WhiteResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
+      white_booth = Poll::WhiteResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
+      white_letter = Poll::WhiteResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
+
+      null_web = Poll::NullResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
+      null_booth = Poll::NullResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
+      null_letter = Poll::NullResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
+
+      Stat.named(namespace, "#{poll_id}", 'total_votes').set_value(web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter)
+      Stat.named(namespace, "#{poll_id}", 'web_votes').set_value(web)
+      Stat.named(namespace, "#{poll_id}", 'booth_votes').set_value(booth)
+      Stat.named(namespace, "#{poll_id}", 'letter_votes').set_value(letter)
+      Stat.named(namespace, "#{poll_id}", 'total_valid_votes').set_value(web + booth + letter)
+      Stat.named(namespace, "#{poll_id}", 'white_web_votes').set_value(white_web)
+      Stat.named(namespace, "#{poll_id}", 'white_booth_votes').set_value(white_booth)
+      Stat.named(namespace, "#{poll_id}", 'white_letter_votes').set_value(white_letter)
+      Stat.named(namespace, "#{poll_id}", 'total_white_votes').set_value(white_web + white_booth + white_letter)
+      Stat.named(namespace, "#{poll_id}", 'null_web_votes').set_value(null_web)
+      Stat.named(namespace, "#{poll_id}", 'null_booth_votes').set_value(null_booth)
+      Stat.named(namespace, "#{poll_id}", 'null_letter_votes').set_value(null_letter)
+      Stat.named(namespace, "#{poll_id}", 'total_null_votes').set_value(null_web + null_booth + null_letter)
+      Stat.named(namespace, "#{poll_id}", 'total_web').set_value(web + white_web + null_web)
+      Stat.named(namespace, "#{poll_id}", 'total_booth').set_value(booth + white_booth + null_booth)
+      Stat.named(namespace, "#{poll_id}", 'total_letter').set_value(letter + white_letter + null_letter)
+      Stat.named(namespace, "#{poll_id}", 'total_total').set_value(web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter)
+    end
+
+    namespace = "polls_2017_participation"
+    Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'votos_totales').set_value  polls_query.count
+    Stat.named(namespace, "totals", 'votos_total_web').set_value  polls_query.web.count
+    Stat.named(namespace, "totals", 'votos_total_booth').set_value  polls_query.booth.count
+    Stat.named(namespace, "totals", 'votos_total_letter').set_value  polls_query.letter.count
+    Stat.named(namespace, "totals", 'participantes_total_web').set_value  polls_query.web.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'participantes_total_booth').set_value  polls_query.booth.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'participantes_total_letter').set_value  polls_query.letter.select(:user_id).distinct.count
   end
 
   def polls_2017_ids
     ids = []
     ids << ::Poll.where("name ILIKE ?", "%Billete único%").pluck(:id)
-    ids << ::Poll.where("name ILIKE ?", "%Gran Vía%").first
-    ids << ::Poll.where("name ILIKE ?", "%Territorial de Barajas%").first
-    ids << ::Poll.where("name ILIKE ?", "%Territorial de San Blas%").first
-    ids << ::Poll.where("name ILIKE ?", "%Hortaleza%").first
-    ids << ::Poll.where("name ILIKE ?", "%culturales en Retiro%").first
-    ids << ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").first
-    ids << ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
+    ids << ::Poll.where("name ILIKE ?", "%Gran Vía%").pluck(:id)
+    ids << ::Poll.where("name ILIKE ?", "%Territorial de Barajas%").pluck(:id)
+    ids << ::Poll.where("name ILIKE ?", "%Territorial de San Blas%").pluck(:id)
+    ids << ::Poll.where("name ILIKE ?", "%Hortaleza%").pluck(:id)
+    ids << ::Poll.where("name ILIKE ?", "%culturales en Retiro%").pluck(:id)
+    ids << ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").pluck(:id)
+    ids << ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").pluck(:id)
     ids.flatten
   end
 end

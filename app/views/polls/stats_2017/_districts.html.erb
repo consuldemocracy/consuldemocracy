@@ -38,7 +38,7 @@
         <td><%= @district_stats[geozone.id.to_s]['letter'] %>
           <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['letter'], @district_stats[geozone.id.to_s]['total'])%>%)</em></small></td>
         <td class="border-left"><%= @district_stats[geozone.id.to_s]['total'] %>
-          <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['total'], @district_stats[geozone.id.to_s]['total'])%>%)</em></small></td>
+          <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['total'], @district_stats['all']['total'])%>%)</em></small></td>
         <td><%= percent_stat(@district_stats[geozone.id.to_s]['total'], population_by_geozone(geozone.name))%>%</td>
       </tr>
     <% end %>

@@ -14,49 +14,6 @@ module Polls2017ResultsStatsHelper
     number_to_percentage(num*100.0/denom, precision: 2, strip_insignificant_zeros: true, format: "%n")
   end
 
-  def poll_stats(poll)
-    ba_ids = poll.booth_assignment_ids
-
-    web = Poll::Voter.web.where(poll_id: poll.id).count
-    booth = Poll::Voter.booth.where(poll_id: poll.id).count
-    letter = Poll::Voter.letter.where(poll_id: poll.id).count
-
-    white_web = Poll::WhiteResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
-    white_booth = Poll::WhiteResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
-    white_letter = Poll::WhiteResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
-
-    null_web = Poll::NullResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
-    null_booth = Poll::NullResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
-    null_letter = Poll::NullResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
-
-    poll_stats = {
-      poll: poll,
-
-      total_votes: web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter,
-
-      web_votes: web,
-      booth_votes: booth,
-      letter_votes: letter,
-      total_valid_votes: web + booth + letter,
-
-      white_web_votes: white_web,
-      white_booth_votes: white_booth,
-      white_letter_votes: white_letter,
-      total_white_votes: white_web + white_booth + white_letter,
-
-      null_web_votes: null_web,
-      null_booth_votes: null_booth,
-      null_letter_votes: null_letter,
-      total_null_votes: null_web + null_booth + null_letter,
-
-      total_web: web + white_web + null_web,
-      total_booth: booth + white_booth + null_booth,
-      total_letter: letter + white_letter + null_letter,
-
-      total_total: web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter
-    }
-  end
-
   def barajas_questions_valid_answers_mappings(answer)
     @barajas_questions_valid_answers_mapping ||= {
       "1" => "(NO ES COMPETENCIA MUNICIPAL) Garantizar las plazas necesarias de Secundaria y Bachillerato para todos los alumnos de los centros públicos del distrito. Construcción de un nuevo instituto",

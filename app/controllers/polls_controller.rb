@@ -32,16 +32,7 @@ class PollsController < ApplicationController
   end
 
   def stats_2017
-    @participantes_totales = ::Poll::Voter.select(:user_id).distinct.count
-    @votos_totales = ::Poll::Voter.count
-
-    @votos_total_web = ::Poll::Voter.web.count
-    @votos_total_booth = ::Poll::Voter.booth.count
-    @votos_total_letter = ::Poll::Voter.letter.count
-
-    @participantes_total_web = ::Poll::Voter.web.select(:user_id).distinct.count
-    @participantes_total_booth = ::Poll::Voter.booth.select(:user_id).distinct.count
-    @participantes_total_letter = ::Poll::Voter.letter.select(:user_id).distinct.count
+    @totals = Stat.hash("polls_2017_participation")['totals']
 
     @poll_1 = ::Poll.where("name ILIKE ?", "%Billete único%").first
     @poll_2 = ::Poll.where("name ILIKE ?", "%Gran Vía%").first
@@ -51,6 +42,8 @@ class PollsController < ApplicationController
     @poll_6 = ::Poll.where("name ILIKE ?", "%culturales en Retiro%").first
     @poll_7 = ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").first
     @poll_8 = ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
+
+    @poll_stats = Stat.hash("polls_2017_polls")
 
     @age_stats = Stat.hash("polls_2017_age")
     @gender_stats = Stat.hash("polls_2017_gender")

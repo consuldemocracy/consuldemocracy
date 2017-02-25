@@ -2,7 +2,7 @@
 
 <p class="stat-number margin-top">
   Nº total de votos emitidos<br>
-  <span><%= @votos_totales %></span>
+  <span><%= @totals['votos_totales'] %></span>
 </p>
 
 <h4>Canales de participación (Votos emitidos)</h4>
@@ -17,16 +17,16 @@
     </tr>
   </thead>
   <tbody>
-    <td><%= @votos_total_web %> <small><em>(<%= @votos_total_web.percent_of(@votos_totales) rescue 0 %>%)</em></small></td>
-    <td><%= @votos_total_booth %> <small><em>(<%= @votos_total_booth.percent_of(@votos_totales) rescue 0 %>%)</em></small></td>
-    <td><%= @votos_total_letter %> <small><em>(<%= @votos_total_letter.percent_of(@votos_totales) rescue 0 %>%)</em></small></td>
-    <td class="border-left"><strong><%= @votos_totales %></strong></td>
+    <td><%= @totals['votos_total_web'] %> <small><em>(<%= @totals['votos_total_web'].percent_of(@totals['votos_totales']) rescue 0 %>%)</em></small></td>
+    <td><%= @totals['votos_total_booth'] %> <small><em>(<%= @totals['votos_total_booth'].percent_of(@totals['votos_totales']) rescue 0 %>%)</em></small></td>
+    <td><%= @totals['votos_total_letter'] %> <small><em>(<%= @totals['votos_total_letter'].percent_of(@totals['votos_totales']) rescue 0 %>%)</em></small></td>
+    <td class="border-left"><strong><%= @totals['votos_totales'] %></strong></td>
   </tbody>
 </table>
 
 <p class="stat-number margin-top">
   Nº total de participantes<br>
-  <span><%= @participantes_totales %></span>
+  <span><%= @totals['participantes_totales'] %></span>
 </p>
 
 <h4>Canales de participación (Participantes)</h4>
@@ -41,9 +41,9 @@
     </tr>
   </thead>
   <tbody>
-    <td><%= @participantes_total_web %> <small><em>(<%= @participantes_total_web.percent_of(@participantes_totales) rescue 0 %>%)</em></small></td>
-    <td><%= @participantes_total_booth %> <small><em>(<%= @participantes_total_booth.percent_of(@participantes_totales) rescue 0 %>%)</em></small></td>
-    <td><%= @participantes_total_letter %> <small><em>(<%= @participantes_total_letter.percent_of(@participantes_totales) rescue 0 %>%)</em></small></td>
-    <td class="border-left"><strong><%= @participantes_total_web + @participantes_total_booth + @participantes_total_letter %></strong></td>
+    <td><%= @totals['participantes_total_web'] %> <small><em>(<%= @totals['participantes_total_web'].percent_of(@totals['participantes_totales']) rescue 0 %>%)</em></small></td>
+    <td><%= @totals['participantes_total_booth'] %> <small><em>(<%= @totals['participantes_total_booth'].percent_of(@totals['participantes_totales']) rescue 0 %>%)</em></small></td>
+    <td><%= @totals['participantes_total_letter'] %> <small><em>(<%= @totals['participantes_total_letter'].percent_of(@totals['participantes_totales']) rescue 0 %>%)</em></small></td>
+    <td class="border-left"><strong><%= @totals['participantes_total_web'] + @totals['participantes_total_booth'] + @totals['participantes_total_letter'] %></strong></td>
   </tbody>
 </table>
