@@ -49,7 +49,7 @@
                aria-valuenow="<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>"
                aria-valuetext="<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%"
                aria-valuemin="0" aria-valuemax="100">
-            <span class="progress-meter" style="width: <%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%"></span>
+            <span class="progress-meter" style="width: <%= @age_stats[age.to_s]['total']*100/@age_stats['all']['total'] rescue 0 %>%"></span>
           </div>
         </td>
 
