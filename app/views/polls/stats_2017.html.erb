@@ -55,7 +55,7 @@
       <h2 class="sr-only">PARTICIPACIÓN</h2>
 
       <!-- Participación total -->
-      <%= render "polls/stats_2017/total" %>
+      <%= render "polls/stats_2017/total" if @totals.present?%>
 
       <!-- Participación por sexo -->
       <%= render "polls/stats_2017/gender" if @gender_stats.present? %>
