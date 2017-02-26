@@ -49,4 +49,7 @@ class PollsController < ApplicationController
     @gender_stats = Stat.hash("polls_2017_gender")
     @district_stats = Stat.hash("polls_2017_district")
   end
+
+  def info_2017
+  end
 end
