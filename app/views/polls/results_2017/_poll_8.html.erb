@@ -23,7 +23,7 @@
   <tbody>
     <tr>
       <td><%= winner %></td>
-      <td><%= answers_votes[winner] %></td>
+      <td><%= answers_votes[winner] %> (<%= percent_stat(answers_votes[winner], total_votes_for_poll(@poll_8)) %>%)</td>
     </tr>
   </tbody>
 </table>
@@ -39,7 +39,7 @@
     <% results_ordered.each do |result| %>
       <tr>
         <td><%= result %></td>
-        <td><%= answers_votes[result] %></td>
+        <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_8)) %>%)</td>
       </tr>
     <% end %>
   </tbody>

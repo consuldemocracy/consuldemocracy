@@ -25,6 +25,9 @@
           <li class="tabs-title is-active">
             <%= link_to "Estadísticas", primera_votacion_stats_path %>
           </li>
+          <li class="tabs-title">
+            <%= link_to "Información", primera_votacion_info_path %>
+          </li>
         </ul>
       </div>
     </div>
@@ -43,12 +46,12 @@
         <ul class="menu vertical margin-top">
           <li><a href="#<%= @poll_1.try(:id) %>">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
           <li><a href="#<%= @poll_2.try(:id) %>">Gran Vía</a></li>
-          <li><a href="#<%= @poll_3.try(:id) %>">Nombres de centros culturales en Retiro</a></li>
-          <li><a href="#<%= @poll_4.try(:id) %>">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
-          <li><a href="#<%= @poll_5.try(:id) %>">Prioriza el Plan Participativo de Actuación Territorial de Barajas</a></li>
-          <li><a href="#<%= @poll_6.try(:id) %>">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</a></li>
-          <li><a href="#<%= @poll_7.try(:id) %>">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
-          <li><a href="#<%= @poll_8.try(:id) %>">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
+          <li><a href="#<%= @poll_3.try(:id) %>">Prioriza el Plan Participativo de Actuación Territorial de Barajas</a></li>
+          <li><a href="#<%= @poll_4.try(:id) %>">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</a></li>
+          <li><a href="#<%= @poll_5.try(:id) %>">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
+          <li><a href="#<%= @poll_6.try(:id) %>">Nombres de centros culturales en Retiro</a></li>
+          <li><a href="#<%= @poll_7.try(:id) %>">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
+          <li><a href="#<%= @poll_8.try(:id) %>">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
         </ul>
       </div>
 
@@ -94,6 +97,9 @@
           <!-- Vicálvaro -->
           <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_8.id.to_s], poll: @poll_8}) if @poll_8.present? %>
         <% end %>
+      <p>
+        <em>** En el canal web no se presenta el número de papeletas en blanco ya que por anonimización de los votantes no se dispone de esta información</em>
+      </p>
       </div>
     </div>
   </div>
