@@ -17,6 +17,18 @@
       </div>
     </div>
 
+    <% if current_user.administrator? %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <label>Origen</label>
+          <%= select_tag :origin,
+                          options_for_select([["Urna", "booth"], ["Ágora", "web"], ["Correo", "letter"]]),
+                          { prompt: "Elige origen",
+                            label: false } %>
+        </div>
+      </div>
+    <% end %>
+
     <div class="row">
       <div class="small-12 medium-6 large-4 column">
         <label><%= t("officing.final_recounts.new.count") %></label>

@@ -59,8 +59,8 @@ namespace :stats do
       ba_ids = poll.booth_assignment_ids
 
       web = Poll::PartialResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
-      booth = Poll::Voter.booth.where(poll_id: poll_id).count
-      letter = Poll::Voter.letter.where(poll_id: poll_id).count
+      booth = Poll::PartialResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
+      letter = Poll::PartialResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
 
       white_web = Poll::WhiteResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
       white_booth = Poll::WhiteResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
@@ -100,6 +100,9 @@ namespace :stats do
     Stat.named(namespace, "totals", 'participantes_total_web').set_value polls_query.web.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'participantes_total_booth').set_value polls_query.booth.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'participantes_total_letter').set_value polls_query.letter.select(:user_id).distinct.count
+
+    namespace = "polls_2017_cache"
+    Stat.named(namespace, "keys", 'stats').set_value(Stat.named(namespace, "keys", 'stats').value.to_i + 1)
   end
 
   def polls_2017_ids
