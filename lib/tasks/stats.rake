@@ -55,9 +55,6 @@ namespace :stats do
     Stat.named(namespace, "all", 'total').set_value all_district_total
 
     namespace = "polls_2017_polls"
-    total_web_votes = 0
-    total_booth_votes = 0
-    total_letter_votes = 0
     poll_ids.each do |poll_id|
       poll = Poll.find(poll_id)
       ba_ids = poll.booth_assignment_ids
@@ -73,10 +70,6 @@ namespace :stats do
       null_web = Poll::NullResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
       null_booth = Poll::NullResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
       null_letter = Poll::NullResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
-
-      total_web_votes += web
-      total_booth_votes += booth
-      total_letter_votes += letter
 
       valid_web_votes = web - white_web - null_web
       valid_booth_votes = booth - white_booth - null_booth
@@ -102,6 +95,9 @@ namespace :stats do
     end
 
     namespace = "polls_2017_participation"
+    total_web_votes = Poll::PartialResult.web.sum(:amount) + Poll::WhiteResult.web.sum(:amount) + Poll::NullResult.web.sum(:amount)
+    total_booth_votes = Poll::PartialResult.booth.sum(:amount) + Poll::WhiteResult.booth.sum(:amount) + Poll::NullResult.booth.sum(:amount)
+    total_letter_votes = Poll::PartialResult.letter.sum(:amount) + Poll::WhiteResult.letter.sum(:amount) + Poll::NullResult.letter.sum(:amount)
     Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'votos_totales').set_value(total_web_votes + total_booth_votes + total_letter_votes)
     Stat.named(namespace, "totals", 'votos_total_web').set_value total_web_votes
