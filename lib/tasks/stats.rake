@@ -93,13 +93,13 @@ namespace :stats do
 
     namespace = "polls_2017_participation"
     Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
-    Stat.named(namespace, "totals", 'votos_totales').set_value  total_web_votes
-    Stat.named(namespace, "totals", 'votos_total_web').set_value  polls_query.web.count
-    Stat.named(namespace, "totals", 'votos_total_booth').set_value  polls_query.booth.count
-    Stat.named(namespace, "totals", 'votos_total_letter').set_value  polls_query.letter.count
-    Stat.named(namespace, "totals", 'participantes_total_web').set_value  polls_query.web.select(:user_id).distinct.count
-    Stat.named(namespace, "totals", 'participantes_total_booth').set_value  polls_query.booth.select(:user_id).distinct.count
-    Stat.named(namespace, "totals", 'participantes_total_letter').set_value  polls_query.letter.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'votos_totales').set_value(polls_query.booth.count + polls_query.letter.count + total_web_votes)
+    Stat.named(namespace, "totals", 'votos_total_web').set_value total_web_votes
+    Stat.named(namespace, "totals", 'votos_total_booth').set_value polls_query.booth.count
+    Stat.named(namespace, "totals", 'votos_total_letter').set_value polls_query.letter.count
+    Stat.named(namespace, "totals", 'participantes_total_web').set_value polls_query.web.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'participantes_total_booth').set_value polls_query.booth.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'participantes_total_letter').set_value polls_query.letter.select(:user_id).distinct.count
   end
 
   def polls_2017_ids
