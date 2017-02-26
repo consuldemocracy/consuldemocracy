@@ -5,7 +5,7 @@
     <%
       total = @gender_stats['all']['total']
 
-      h = (total > 0 ? (@gender_stats['male']['total']*10.0/total).round : 0)
+      h = (total > 0 ? (@gender_stats['male']['uniq_total']*10.0/total).round : 0)
       h.times do
     %>
       <%= image_tag ("polls/stats_man.png") %>
@@ -19,16 +19,15 @@
 <div class="row">
   <div class="small-12 medium-6 column text-right">
     <p class="stat-number margin-top">
-
-      Hombres (<%= percent_stat(@gender_stats['male']['total'], total)%>%)<br>
-      <span><%= @gender_stats['male']['total'] %></span>
+      Hombres (<%= percent_stat(@gender_stats['male']['uniq_total'], total)%>%)<br>
+      <span><%= @gender_stats['male']['uniq_total'] %></span>
     </p>
   </div>
   <div class="small-12 medium-6 column">
 
     <p class="stat-number margin-top">
-      Mujeres (<%= percent_stat(@gender_stats['female']['total'], total)%>%)<br>
-      <span><%= @gender_stats['female']['total'] %></span>
+      Mujeres (<%= percent_stat(@gender_stats['female']['uniq_total'], total)%>%)<br>
+      <span><%= @gender_stats['female']['uniq_total'] %></span>
     </p>
   </div>
 </div>

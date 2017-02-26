@@ -32,8 +32,10 @@ namespace :stats do
         gender_total += gender_origin
         Stat.named(namespace, "#{gender}", origin).set_value gender_origin
       end
-      all_genders_total += gender_total
       Stat.named(namespace, "#{gender}", 'total').set_value gender_total
+      gender_uniq_total = polls_query.where(gender: gender).select(:user_id).distinct.count
+      Stat.named(namespace, "#{gender}", 'uniq_total').set_value gender_uniq_total
+      all_genders_total += gender_uniq_total
     end
     Stat.named(namespace, "all", 'total').set_value all_genders_total
 
