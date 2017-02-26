@@ -8,6 +8,10 @@ module Polls2017ResultsStatsHelper
     ::Poll::FinalRecount.where(booth_assignment_id: poll.booth_assignment_ids).sum(:count)
   end
 
+  def total_white_votes_for_poll(poll)
+    ::Poll::WhiteResult.where(booth_assignment_id: poll.booth_assignment_ids).sum(:amount)
+  end
+
   def percent_stat(num, denom)
     return "0" if num == 0
     return "-" if denom == 0
