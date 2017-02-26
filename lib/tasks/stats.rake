@@ -54,6 +54,8 @@ namespace :stats do
 
     namespace = "polls_2017_polls"
     total_web_votes = 0
+    total_booth_votes = 0
+    total_letter_votes = 0
     poll_ids.each do |poll_id|
       poll = Poll.find(poll_id)
       ba_ids = poll.booth_assignment_ids
@@ -71,8 +73,10 @@ namespace :stats do
       null_letter = Poll::NullResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
 
       total_web_votes += web + white_web + null_web
+      total_booth_votes += booth + white_booth + null_booth
+      total_letter_votes += letter + white_letter + null_letter
 
-      Stat.named(namespace, "#{poll_id}", 'total_votes').set_value(web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter)
+      Stat.named(namespace, "#{poll_id}", 'total_votes').set_value(total_web_votes + total_booth_votes + total_letter_votes)
       Stat.named(namespace, "#{poll_id}", 'web_votes').set_value(web)
       Stat.named(namespace, "#{poll_id}", 'booth_votes').set_value(booth)
       Stat.named(namespace, "#{poll_id}", 'letter_votes').set_value(letter)
@@ -85,18 +89,18 @@ namespace :stats do
       Stat.named(namespace, "#{poll_id}", 'null_booth_votes').set_value(null_booth)
       Stat.named(namespace, "#{poll_id}", 'null_letter_votes').set_value(null_letter)
       Stat.named(namespace, "#{poll_id}", 'total_null_votes').set_value(null_web + null_booth + null_letter)
-      Stat.named(namespace, "#{poll_id}", 'total_web').set_value(web + white_web + null_web)
-      Stat.named(namespace, "#{poll_id}", 'total_booth').set_value(booth + white_booth + null_booth)
-      Stat.named(namespace, "#{poll_id}", 'total_letter').set_value(letter + white_letter + null_letter)
-      Stat.named(namespace, "#{poll_id}", 'total_total').set_value(web + booth + letter + white_web + white_booth + white_letter + null_web + null_booth + null_letter)
+      Stat.named(namespace, "#{poll_id}", 'total_web').set_value(total_web_votes)
+      Stat.named(namespace, "#{poll_id}", 'total_booth').set_value(total_booth_votes)
+      Stat.named(namespace, "#{poll_id}", 'total_letter').set_value(total_letter_votes)
+      Stat.named(namespace, "#{poll_id}", 'total_total').set_value(total_web_votes + total_booth_votes + total_letter_votes)
     end
 
     namespace = "polls_2017_participation"
     Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
-    Stat.named(namespace, "totals", 'votos_totales').set_value(polls_query.booth.count + polls_query.letter.count + total_web_votes)
+    Stat.named(namespace, "totals", 'votos_totales').set_value(total_web_votes + total_booth_votes + total_letter_votes)
     Stat.named(namespace, "totals", 'votos_total_web').set_value total_web_votes
-    Stat.named(namespace, "totals", 'votos_total_booth').set_value polls_query.booth.count
-    Stat.named(namespace, "totals", 'votos_total_letter').set_value polls_query.letter.count
+    Stat.named(namespace, "totals", 'votos_total_booth').set_value total_booth_votes
+    Stat.named(namespace, "totals", 'votos_total_letter').set_value total_letter_votes
     Stat.named(namespace, "totals", 'participantes_total_web').set_value polls_query.web.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'participantes_total_booth').set_value polls_query.booth.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'participantes_total_letter').set_value polls_query.letter.select(:user_id).distinct.count
