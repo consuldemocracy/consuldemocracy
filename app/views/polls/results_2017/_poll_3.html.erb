@@ -43,6 +43,11 @@
         <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_3)) %>%)</td>
       </tr>
     <% end %>
+    <tr>
+      <td>En BLANCO</td>
+      <% whites = total_white_votes_for_poll(@poll_3) %>
+      <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_3)) %>%)</td>
+    </tr>
   </tbody>
 </table>
 

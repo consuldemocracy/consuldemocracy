@@ -25,7 +25,8 @@
       <% answers_votes.values.each_with_index do |votes, i| %>
         <td  class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_7)) %>%)</td>
       <% end %>
-      <td><%= total_votes_for_poll(@poll_7) - answers_votes.values.sum %></td>
+      <% whites = total_votes_for_poll(@poll_7) - answers_votes.values.sum %>
+        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_7)) %>%)</td>
     </tr>
   </tbody>
 </table>
