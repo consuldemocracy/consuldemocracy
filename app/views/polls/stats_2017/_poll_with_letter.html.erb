@@ -1,7 +1,7 @@
 <h3 id="<%= poll.id %>"><%= poll.name %></h3>
 
 <p class="stat-number margin-top">
-  Nº TOTAL DE PAPELETAS<br>
+  Nº TOTAL DE VOTOS<br>
   <span><%= stats['total_votes'] %></span>
 </p>
 
@@ -17,21 +17,21 @@
   </thead>
   <tbody>
     <tr>
-      <th class="text-left border-right">Papeletas válidas</th>
+      <th class="text-left border-right">Válidos</th>
       <td><%= stats['web_votes'] %> <small><em>(<%= percent_stat(stats['web_votes'], stats['total_valid_votes']) %>%)</em></small></td>
       <td><%= stats['booth_votes'] %> <small><em>(<%= percent_stat(stats['booth_votes'], stats['total_valid_votes']) %>%)</em></small></td>
       <td><%= stats['letter_votes'] %> <small><em>(<%= percent_stat(stats['letter_votes'], stats['total_valid_votes']) %>%)</em></small></td>
       <td class="border-left"><%= stats['total_valid_votes'] %> <small><em>(<%= percent_stat(stats['total_valid_votes'], stats['total_total']) %>%)</em></small></td>
     </tr>
     <tr>
-      <th class="text-left border-right">Papeletas en blanco</th>
+      <th class="text-left border-right">En blanco</th>
       <td><%= stats['white_web_votes'] %> <small><em>(<%= percent_stat(stats['white_web_votes'], stats['total_white_votes']) %>%)</em></small></td>
       <td><%= stats['white_booth_votes'] %> <small><em>(<%= percent_stat(stats['white_booth_votes'], stats['total_white_votes']) %>%)</em></small></td>
       <td><%= stats['white_letter_votes'] %> <small><em>(<%= percent_stat(stats['white_letter_votes'], stats['total_white_votes']) %>%)</em></small></td>
       <td class="border-left"><%= stats['total_white_votes'] %> <small><em>(<%= percent_stat(stats['total_white_votes'], stats['total_total']) %>%)</em></small></td>
     </tr>
     <tr>
-      <th class="text-left border-right">Papeletas nulas</th>
+      <th class="text-left border-right">Nulos</th>
       <td><%= stats['null_web_votes'] %> <small><em>(<%= percent_stat(stats['null_web_votes'], stats['total_null_votes']) %>%)</em></small></td>
       <td><%= stats['null_booth_votes'] %> <small><em>(<%= percent_stat(stats['null_booth_votes'], stats['total_null_votes']) %>%)</em></small></td>
       <td><%= stats['null_letter_votes'] %> <small><em>(<%= percent_stat(stats['null_letter_votes'], stats['total_null_votes']) %>%)</em></small></td>
