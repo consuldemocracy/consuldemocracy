@@ -57,7 +57,7 @@ namespace :stats do
       poll = Poll.find(poll_id)
       ba_ids = poll.booth_assignment_ids
 
-      web = Poll::Voter.web.where(poll_id: poll_id).count
+      web = Poll::PartialResults.web.where(question_id: poll.question_ids).sum(:amount)
       booth = Poll::Voter.booth.where(poll_id: poll_id).count
       letter = Poll::Voter.letter.where(poll_id: poll_id).count
 
