@@ -39,7 +39,6 @@
       <th>WEB</th>
       <th>URNAS</th>
       <th>CORREO</th>
-      <th class="border-left">TOTAL</th>
     </tr>
   </thead>
   <tbody>
@@ -48,14 +47,12 @@
       <td><%= @gender_stats['male']['web'] %> <small><em>(<%= percent_stat(@gender_stats['male']['web'], @gender_stats['male']['total'])%>%)</em></small></td>
       <td><%= @gender_stats['male']['booth'] %> <small><em>(<%= percent_stat(@gender_stats['male']['booth'], @gender_stats['male']['total'])%>%)</em></small></td>
       <td><%= @gender_stats['male']['letter'] %> <small><em>(<%= percent_stat(@gender_stats['male']['letter'], @gender_stats['male']['total'])%>%)</em></small></td>
-      <td class="border-left"><strong><%= @gender_stats['male']['total'] %></strong></td>
     </tr>
     <tr>
       <th class="text-left border-right">Mujeres</th>
       <td><%= @gender_stats['female']['web'] %> <small><em>(<%= percent_stat(@gender_stats['female']['web'], @gender_stats['female']['total'])%>%)</em></small></td>
       <td><%= @gender_stats['female']['booth'] %> <small><em>(<%= percent_stat(@gender_stats['female']['booth'], @gender_stats['female']['total'])%>%)</em></small></td>
       <td><%= @gender_stats['female']['letter'] %> <small><em>(<%= percent_stat(@gender_stats['female']['letter'], @gender_stats['female']['total'])%>%)</em></small></td>
-      <td class="border-left"><strong><%= @gender_stats['female']['total'] %></strong></td>
     </tr>
   </tbody>
 </table>
