@@ -1,84 +1,86 @@
-<div class="polls-results">
-  <div class="header no-margin-top">
-    <div class="row">
-      <div class="small-12 column">
-        <h1 class="inline-block">
-          RESULTADOS
-          <span>PRIMERA VOTACIÓN CIUDADANA</span>
-          <span>13-19 DE FEBRERO 2017</span>
-        </h1>
+<% cache ["results:polls_2017:rake_task:#{Stat.named('polls_2017_cache', 'keys', 'stats').value}"] do %>
+  <div class="polls-results">
+    <div class="header no-margin-top">
+      <div class="row">
+        <div class="small-12 column">
+          <h1 class="inline-block">
+            RESULTADOS
+            <span>PRIMERA VOTACIÓN CIUDADANA</span>
+            <span>13-19 DE FEBRERO 2017</span>
+          </h1>
 
-        <div class="more-info">
-          <%= link_to "Más información sobre las votaciones", more_info_polls_path %>
+          <div class="more-info">
+            <%= link_to "Más información sobre las votaciones", more_info_polls_path %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="row margin-top">
-    <div class="small-12 column">
-      <ul class="tabs">
-        <li class="tabs-title is-active">
-          <%= link_to "Resultados", primera_votacion_results_path %>
-        </li>
-        <li class="tabs-title">
-          <%= link_to "Estadísticas", primera_votacion_stats_path %>
-        </li>
-        <li class="tabs-title">
-          <%= link_to "Información", primera_votacion_info_path %>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-3 column sidebar">
-      <p>TODA LA CIUDAD</p>
-
-      <ul class="menu vertical margin-top">
-        <li><a href="#1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
-        <li><a href="#2">Gran Vía</a></li>
-      </ul>
-
-      <p>DISTRITOS</p>
-      <ul class="menu vertical margin-top">
-        <li><a href="#3">Prioriza el Plan Participativo de Actuación Territorial de Barajas</a></li>
-        <li><a href="#4">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</a></li>
-        <li><a href="#5">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
-        <li><a href="#6">Nombres de centros culturales en Retiro</a></li>
-        <li><a href="#7">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
-        <li><a href="#8">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
-      </ul>
+    <div class="row margin-top">
+      <div class="small-12 column">
+        <ul class="tabs">
+          <li class="tabs-title is-active">
+            <%= link_to "Resultados", primera_votacion_results_path %>
+          </li>
+          <li class="tabs-title">
+            <%= link_to "Estadísticas", primera_votacion_stats_path %>
+          </li>
+          <li class="tabs-title">
+            <%= link_to "Información", primera_votacion_info_path %>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="small-12 medium-9 column">
-      <h2 class="sr-only">TODA LA CIUDAD</h2>
+    <div class="row">
+      <div class="small-12 medium-3 column sidebar">
+        <p>TODA LA CIUDAD</p>
 
-      <!-- Propuestas y Plaza de España -->
-      <%= render "polls/results_2017/poll_1" %>
+        <ul class="menu vertical margin-top">
+          <li><a href="#1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
+          <li><a href="#2">Gran Vía</a></li>
+        </ul>
 
-      <!-- Gran Vía -->
-      <%= render "polls/results_2017/poll_2" %>
+        <p>DISTRITOS</p>
+        <ul class="menu vertical margin-top">
+          <li><a href="#3">Prioriza el Plan Participativo de Actuación Territorial de Barajas</a></li>
+          <li><a href="#4">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</a></li>
+          <li><a href="#5">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
+          <li><a href="#6">Nombres de centros culturales en Retiro</a></li>
+          <li><a href="#7">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
+          <li><a href="#8">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
+        </ul>
+      </div>
 
-      <h2 class="sr-only">DISTRITOS</h2>
+      <div class="small-12 medium-9 column">
+        <h2 class="sr-only">TODA LA CIUDAD</h2>
 
-      <!-- Barajas -->
-      <%= render "polls/results_2017/poll_3" %>
+        <!-- Propuestas y Plaza de España -->
+        <%= render "polls/results_2017/poll_1" %>
 
-      <!-- San Blas - Canillejas -->
-      <%= render "polls/results_2017/poll_4" %>
+        <!-- Gran Vía -->
+        <%= render "polls/results_2017/poll_2" %>
 
-      <!-- Hortaleza -->
-      <%= render "polls/results_2017/poll_5" %>
+        <h2 class="sr-only">DISTRITOS</h2>
 
-      <!-- Retiro -->
-      <%= render "polls/results_2017/poll_6" %>
+        <!-- Barajas -->
+        <%= render "polls/results_2017/poll_3" %>
 
-      <!-- Salamanca -->
-      <%= render "polls/results_2017/poll_7" %>
+        <!-- San Blas - Canillejas -->
+        <%= render "polls/results_2017/poll_4" %>
 
-      <!-- Vicálvaro -->
-      <%= render "polls/results_2017/poll_8" %>
+        <!-- Hortaleza -->
+        <%= render "polls/results_2017/poll_5" %>
+
+        <!-- Retiro -->
+        <%= render "polls/results_2017/poll_6" %>
+
+        <!-- Salamanca -->
+        <%= render "polls/results_2017/poll_7" %>
+
+        <!-- Vicálvaro -->
+        <%= render "polls/results_2017/poll_8" %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
