@@ -62,9 +62,9 @@ namespace :stats do
       poll = Poll.find(poll_id)
       ba_ids = poll.booth_assignment_ids
 
-      web = Poll::PartialResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
-      booth = Poll::PartialResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
-      letter = Poll::PartialResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
+      web = Poll::FinalRecount.web.where(booth_assignment_id: ba_ids).sum(:count)
+      booth = Poll::FinalRecount.booth.where(booth_assignment_id: ba_ids).sum(:count)
+      letter = Poll::FinalRecount.letter.where(booth_assignment_id: ba_ids).sum(:count)
 
       white_web = Poll::WhiteResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
       white_booth = Poll::WhiteResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
@@ -74,15 +74,19 @@ namespace :stats do
       null_booth = Poll::NullResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
       null_letter = Poll::NullResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
 
-      total_web_votes += web + white_web + null_web
-      total_booth_votes += booth + white_booth + null_booth
-      total_letter_votes += letter + white_letter + null_letter
+      total_web_votes += web
+      total_booth_votes += booth
+      total_letter_votes += letter
 
-      Stat.named(namespace, "#{poll_id}", 'total_votes').set_value(total_web_votes + total_booth_votes + total_letter_votes)
-      Stat.named(namespace, "#{poll_id}", 'web_votes').set_value(web)
-      Stat.named(namespace, "#{poll_id}", 'booth_votes').set_value(booth)
-      Stat.named(namespace, "#{poll_id}", 'letter_votes').set_value(letter)
-      Stat.named(namespace, "#{poll_id}", 'total_valid_votes').set_value(web + booth + letter)
+      valid_web_votes = web - white_web - null_web
+      valid_booth_votes = booth - white_booth - null_booth
+      valid_letter_votes = letter - white_letter - null_letter
+
+      Stat.named(namespace, "#{poll_id}", 'total_votes').set_value(web + booth + letter)
+      Stat.named(namespace, "#{poll_id}", 'web_votes').set_value(valid_web_votes)
+      Stat.named(namespace, "#{poll_id}", 'booth_votes').set_value(valid_booth_votes)
+      Stat.named(namespace, "#{poll_id}", 'letter_votes').set_value(valid_letter_votes)
+      Stat.named(namespace, "#{poll_id}", 'total_valid_votes').set_value(valid_web_votes + valid_booth_votes + valid_letter_votes)
       Stat.named(namespace, "#{poll_id}", 'white_web_votes').set_value(white_web)
       Stat.named(namespace, "#{poll_id}", 'white_booth_votes').set_value(white_booth)
       Stat.named(namespace, "#{poll_id}", 'white_letter_votes').set_value(white_letter)
@@ -91,10 +95,10 @@ namespace :stats do
       Stat.named(namespace, "#{poll_id}", 'null_booth_votes').set_value(null_booth)
       Stat.named(namespace, "#{poll_id}", 'null_letter_votes').set_value(null_letter)
       Stat.named(namespace, "#{poll_id}", 'total_null_votes').set_value(null_web + null_booth + null_letter)
-      Stat.named(namespace, "#{poll_id}", 'total_web').set_value(total_web_votes)
-      Stat.named(namespace, "#{poll_id}", 'total_booth').set_value(total_booth_votes)
-      Stat.named(namespace, "#{poll_id}", 'total_letter').set_value(total_letter_votes)
-      Stat.named(namespace, "#{poll_id}", 'total_total').set_value(total_web_votes + total_booth_votes + total_letter_votes)
+      Stat.named(namespace, "#{poll_id}", 'total_web').set_value(web)
+      Stat.named(namespace, "#{poll_id}", 'total_booth').set_value(booth)
+      Stat.named(namespace, "#{poll_id}", 'total_letter').set_value(letter)
+      Stat.named(namespace, "#{poll_id}", 'total_total').set_value(web + booth + letter)
     end
 
     namespace = "polls_2017_participation"
