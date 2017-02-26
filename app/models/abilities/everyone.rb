@@ -22,6 +22,10 @@ module Abilities
       can [:search, :read], Annotation
 
       can :new, DirectMessage
+
+      can :results_2017, Poll
+      can :stats_2017, Poll
+      can :info_2017, Poll
     end
   end
 end
