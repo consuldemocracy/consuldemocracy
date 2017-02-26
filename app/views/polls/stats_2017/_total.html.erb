@@ -13,14 +13,12 @@
       <th>WEB</th>
       <th>URNAS</th>
       <th>CORREO</th>
-      <th class="border-left">TOTAL</th>
     </tr>
   </thead>
   <tbody>
     <td><%= @totals['votos_total_web'] %> <small><em>(<%= percent_stat(@totals['votos_total_web'], @totals['votos_totales']) %>%)</em></small></td>
     <td><%= @totals['votos_total_booth'] %> <small><em>(<%= percent_stat(@totals['votos_total_booth'], @totals['votos_totales']) %>%)</em></small></td>
     <td><%= @totals['votos_total_letter'] %> <small><em>(<%= percent_stat(@totals['votos_total_letter'], @totals['votos_totales']) %>%)</em></small></td>
-    <td class="border-left"><strong><%= @totals['votos_totales'] %></strong></td>
   </tbody>
 </table>
 
@@ -37,13 +35,11 @@
       <th>WEB</th>
       <th>URNAS</th>
       <th>CORREO</th>
-      <th class="border-left">TOTAL</th>
     </tr>
   </thead>
   <tbody>
     <td><%= @totals['participantes_total_web'] %> <small><em>(<%= percent_stat(@totals['participantes_total_web'], @totals['participantes_totales']) %>%)</em></small></td>
     <td><%= @totals['participantes_total_booth'] %> <small><em>(<%= percent_stat(@totals['participantes_total_booth'], @totals['participantes_totales']) %>%)</em></small></td>
     <td><%= @totals['participantes_total_letter'] %> <small><em>(<%= percent_stat(@totals['participantes_total_letter'], @totals['participantes_totales']) %>%)</em></small></td>
-    <td class="border-left"><strong><%= @totals['participantes_total_web'] + @totals['participantes_total_booth'] + @totals['participantes_total_letter'] %></strong></td>
   </tbody>
 </table>
