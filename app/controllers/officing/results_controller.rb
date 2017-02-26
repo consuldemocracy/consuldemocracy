@@ -62,7 +62,7 @@ class Officing::ResultsController < Officing::BaseController
             partial_result.officer_assignment_id = @officer_assignment.id
             partial_result.amount = count.to_i
             partial_result.author = current_user
-            partial_result.origin = results_params[:origin]
+            partial_result.origin = results_params[:origin].presence || 'booth'
             @results << partial_result
           end
         end
@@ -79,7 +79,7 @@ class Officing::ResultsController < Officing::BaseController
         white_result.officer_assignment_id = @officer_assignment.id
         white_result.amount = results_params[:whites].to_i
         white_result.author = current_user
-        white_result.origin = results_params[:origin]
+        white_result.origin = results_params[:origin].presence || 'booth'
         @results << white_result
       end
     end
@@ -91,7 +91,7 @@ class Officing::ResultsController < Officing::BaseController
         null_result.officer_assignment_id = @officer_assignment.id
         null_result.amount = results_params[:nulls].to_i
         null_result.author = current_user
-        null_result.origin = results_params[:origin]
+        null_result.origin = results_params[:origin].presence || 'booth'
         @results << null_result
       end
     end
