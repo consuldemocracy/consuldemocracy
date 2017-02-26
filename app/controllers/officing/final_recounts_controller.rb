@@ -18,6 +18,7 @@ class Officing::FinalRecountsController < Officing::BaseController
     @final_recount = ::Poll::FinalRecount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id, date: final_recount_params[:date])
     @final_recount.officer_assignment_id = @officer_assignment.id
     @final_recount.count = final_recount_params[:count]
+    @final_recount.origin = final_recount_params[:origin].presence || 'booth'
 
     if @final_recount.save
       msg = { notice: t("officing.final_recounts.flash.create") }
@@ -41,7 +42,7 @@ class Officing::FinalRecountsController < Officing::BaseController
     end
 
     def final_recount_params
-      params.permit(:officer_assignment_id, :count, :date)
+      params.permit(:officer_assignment_id, :count, :date, :origin)
     end
 
 end
