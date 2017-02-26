@@ -24,7 +24,7 @@
     <% winners.each do |winner| %>
       <tr>
         <td><%= barajas_questions_valid_answers_mappings(winner) %></td>
-        <td><%= answers_votes[winner] %></td>
+        <td><%= answers_votes[winner] %> (<%= percent_stat(answers_votes[winner], total_votes_for_poll(@poll_3)) %>%)</td>
       </tr>
     <% end %>
   </tbody>
@@ -40,7 +40,7 @@
     <% results_ordered.each do |result| %>
       <tr>
         <td><%= barajas_questions_valid_answers_mappings(result) %></td>
-        <td><%= answers_votes[result] %></td>
+        <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_3)) %>%)</td>
       </tr>
     <% end %>
   </tbody>
