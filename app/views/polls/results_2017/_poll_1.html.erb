@@ -23,7 +23,7 @@
     <tbody>
       <tr>
         <% answers_votes.values.each_with_index do |votes, i| %>
-          <td  class="<%= 'win' if max_i == i %>"><%= votes %></td>
+          <td  class="<%= 'win' if max_i == i %>"><%= votes %> (<%= votes*100/total_votes_for_poll(@poll_1) %>%)</td>
         <% end %>
         <td><%= total_votes_for_poll(@poll_1) - answers_votes.values.sum %></td>
       </tr>
