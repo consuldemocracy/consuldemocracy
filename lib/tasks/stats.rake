@@ -100,6 +100,9 @@ namespace :stats do
     Stat.named(namespace, "totals", 'participantes_total_web').set_value polls_query.web.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'participantes_total_booth').set_value polls_query.booth.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'participantes_total_letter').set_value polls_query.letter.select(:user_id).distinct.count
+
+    namespace = "polls_2017_cache"
+    Stat.named(namespace, "keys", 'stats').set_value(Stat.named(namespace, "keys", 'stats').value.to_i + 1)
   end
 
   def polls_2017_ids
