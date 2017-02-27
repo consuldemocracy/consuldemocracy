@@ -10,7 +10,7 @@
   results_ordered = answers_votes.keys.sort { |x, y| answers_votes[y] <=> answers_votes[x] }
   winner = results_ordered.shift
 %>
-<table>
+<table class="polls-stats-district">
   <caption>
     <%= question.title %>
   </caption>

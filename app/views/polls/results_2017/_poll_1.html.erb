@@ -1,7 +1,7 @@
 <h3 id="1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</h3>
 
 <% @poll_1.questions.order(id: :asc).each do |question| %>
-  <table>
+  <table class="polls-participation">
     <caption>
       <%= question.title %>
     </caption>
