@@ -65,10 +65,6 @@ module Abilities
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
       can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
-
-      can :results_2017, Poll
-      can :stats_2017, Poll
-      can :info_2017, Poll
     end
   end
 end
