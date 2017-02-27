@@ -76,6 +76,10 @@ es:
       title: "Votaciones ciudadanas en Decide Madrid"
       description: "Vota las propuestas ciudadanas para mejorar la ciudad en la web Decide Madrid. Del 13 al 19 de febrero de 2017 tú decides cómo quieres que sea Madrid."
       keywords: "votación ciudadana, votaciones ciudadanas, Decide Madrid, participación Madrid, Alianza por el Clima, Madrid sostenible, billete único"
+    polls_results:
+      title: "Resultados de la primera votación ciudadana"
+      description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
+      keywords: "votación ciudadana, consulta ciudadana Madrid, consulta ciudadana, Madrid 100% sostenible, billete intermodal, Ayuntamiento de Madrid, Decide Madrid"
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"

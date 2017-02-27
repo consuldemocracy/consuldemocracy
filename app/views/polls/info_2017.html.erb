@@ -1,3 +1,19 @@
+<% provide :title,             t("meta_tags.polls_results.title") %>
+<% provide :meta_description,  t("meta_tags.polls_results.description") %>
+<% provide :meta_keywords,     t("meta_tags.polls_results.keywords") %>
+<% provide :social_media_meta_tags do %>
+  <!-- Facebook -->
+  <meta property="og:url"            content="<%= primera_votacion_info_url %>" />
+  <meta property="og:title"          content="<%= t("meta_tags.polls_results.title") %>" />
+  <meta property="og:image"          content="<%= image_url '/social_media_polls_results.png' %>" />
+  <meta property="og:description"    content="<%= t("meta_tags.polls_results.description") %>" />
+  <!-- Twitter -->
+  <meta name="twitter:card"          content="summary" />
+  <meta name="twitter:site"          content="@DecideMadrid" />
+  <meta name="twitter:title"         content="<%= t("meta_tags.polls_results.title") %>" />
+  <meta name="twitter:image"         content="<%= image_url '/social_media_polls_results_twitter.png' %>" />
+  <meta name="twitter:description"   content="<%= t("meta_tags.polls_results.description") %>" />
+<% end %>
 <div class="polls-results">
   <div class="header no-margin-top">
     <div class="row">
