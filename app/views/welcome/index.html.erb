@@ -3,12 +3,14 @@
 <% provide :meta_keywords, t("meta_tags.welcome_index.keywords") %>
 <% provide :tracking_page_number, "23" %>
 
-<% cache ["welcome_index_20170220", user_signed_in?] do %>
+<% cache ["welcome_index_20170227", user_signed_in?] do %>
   <div class="welcome">
 
     <div class="no-margin-top">
-      <%= render "budgets_module" %>
+      <%= render "polls_results" %>
     </div>
+
+    <%= render "budgets_module" %>
 
     <%= render "cards" %>
 
