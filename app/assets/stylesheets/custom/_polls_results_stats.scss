@@ -27,6 +27,16 @@
       text-decoration: underline;
     }
 
+    .more-info p {
+      color: white;
+      margin-bottom: 0;
+      margin-top: $line-height;
+
+      @include breakpoint(medium) {
+        margin-top: 0;
+      }
+    }
+
     @include breakpoint(medium) {
 
       .more-info {
