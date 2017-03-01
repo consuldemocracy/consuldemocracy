@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
-         authentication_keys: [:login]
+         :timeoutable, authentication_keys: [:login]
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -291,6 +291,10 @@ class User < ActiveRecord::Base
     @ability ||= Ability.new(self)
   end
   delegate :can?, :cannot?, to: :ability
+
+  def timeout_in
+    30.minutes
+  end
 
   def public_proposals
     public_activity? ? proposals : User.none
