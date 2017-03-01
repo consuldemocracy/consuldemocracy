@@ -1,5 +1,5 @@
 <%= paginator.render do -%>
-  <div class="pagination-centered">
+  <div class="pagination-centered show-for-large-only">
     <ul class="pagination text-center margin-top" aria-label="Pagination">
       <%= first_page_tag unless current_page.first? %>
       <%= prev_page_tag unless current_page.first? %>
@@ -14,6 +14,13 @@
 
       <%= next_page_tag unless current_page.last? %>
       <%= last_page_tag unless current_page.last? %>
+    </ul>
+  </div>
+  <div class="pagination-centered hide-for-large-only">
+    <ul class="pagination text-center margin-top" aria-label="Pagination">
+      <%= prev_page_tag unless current_page.first? %>
+      <%= page_tag current_page %>
+      <%= next_page_tag unless current_page.last? %>
     </ul>
   </div>
 <% end -%>
