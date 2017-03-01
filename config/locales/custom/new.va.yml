@@ -370,7 +370,7 @@ va:
     notice:
       retired: Proposta retirada
     proposal:
-      already_supported: "Ja has recolzat aquesta proposta, comparteix-la!"
+      already_supported: "Ja has recolzat aquesta proposta."
       comments:
         one: 1 Comentari
         other: "%{count} Comentaris"
