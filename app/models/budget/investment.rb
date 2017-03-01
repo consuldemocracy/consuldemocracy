@@ -26,6 +26,8 @@ class Budget
     has_many :comments, as: :commentable
     has_many :milestones
 
+    has_many :lines, class_name: "Budget::Ballot::Line"
+
     validates :title, presence: true
     validates :author, presence: true
     validates :description, presence: true
@@ -279,6 +281,17 @@ class Budget
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
+    end
+
+    def update_cached_ballots_up
+      self.cached_ballots_up = lines.size
+      save
+    end
+
+    def self.regenerate_cached_ballots_up
+      includes(:lines).each do |i|
+        i.update_cached_ballots_up
+      end
     end
 
     private
