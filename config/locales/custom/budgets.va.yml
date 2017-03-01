@@ -93,7 +93,7 @@ va:
         title: Proposta d'inversió
         add: Afegir
         already_added: "Ja has afegit aquesta proposta d'inversió"
-        already_supported: Ja has recolzat aquesta proposta. Comparteix-ho!
+        already_supported: Ja has recolzat aquesta proposta.
         support_title: Recolzar aquesta proposta
         confirm_group: "Recorde que pot recolzar un màxim de tres propostes. Estàs segur?"
         supports:
