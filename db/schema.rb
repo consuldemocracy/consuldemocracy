@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214123038) do
+ActiveRecord::Schema.define(version: 20170301080132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
   enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(version: 20170214123038) do
     t.datetime "ignored_flag_at"
     t.text     "moderation_text"
     t.integer  "flags_count",                           default: 0
+    t.integer  "cached_ballots_up",                     default: 0,           null: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -581,7 +582,7 @@ ActiveRecord::Schema.define(version: 20170214123038) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-01-12 08:57:57', null: false
+    t.datetime "password_changed_at",                       default: '2017-01-20 11:34:56', null: false
     t.boolean  "created_from_signature",                    default: false
   end
 

@@ -2,6 +2,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
+  helper_method :sort_column, :sort_direction
+
   has_filters(%w{valuation_open without_admin managed valuating valuation_finished
                  valuation_finished_feasible selected all},
               only: [:index, :toggle_selection])
@@ -44,8 +46,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   private
 
     def load_investments
+                                       #.order(cached_votes_up: :desc, created_at: :desc)
       @investments = Budget::Investment.scoped_filter(params, @current_filter)
-                                       .order(cached_votes_up: :desc, created_at: :desc)
+                                       .order("#{sort_column} #{sort_direction}")
                                        .page(params[:page])
     end
 
@@ -83,4 +86,13 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
       params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
     end
+
+    def sort_column
+      %w(cached_votes_up cached_ballots_up).include?(params[:sort]) ? params[:sort] : 'created_at'
+    end
+
+    def sort_direction
+      %w(asc desc).include?(params[:direction]) ? params[:direction] : 'desc'
+    end
+
 end
