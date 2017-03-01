@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable
+         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
+         :timeoutable
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -260,6 +261,10 @@ class User < ActiveRecord::Base
     @ability ||= Ability.new(self)
   end
   delegate :can?, :cannot?, to: :ability
+
+  def timeout_in
+    30.minutes
+  end
 
   private
 
