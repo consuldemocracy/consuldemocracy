@@ -51,4 +51,8 @@ class Legislation::Annotation < ActiveRecord::Base
   def title
     text[0..50]
   end
+
+  def weight
+    comments_count + comments.sum(:cached_votes_total)
+  end
 end

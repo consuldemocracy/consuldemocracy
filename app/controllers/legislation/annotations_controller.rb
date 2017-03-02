@@ -50,7 +50,7 @@ class Legislation::AnnotationsController < ApplicationController
   def search
     @annotations = @draft_version.annotations.order("LENGTH(quote) DESC")
     annotations_hash = { total: @annotations.size, rows: @annotations }
-    render json: annotations_hash.to_json
+    render json: annotations_hash.to_json(methods: :weight)
   end
 
   def comments

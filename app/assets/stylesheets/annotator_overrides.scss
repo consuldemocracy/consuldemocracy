@@ -103,6 +103,22 @@
   background: rgba(255, 255, 10, 0.2);
 }
 
+.annotator-hl.weight-1 {
+  background: rgba(255, 255, 10, 0.2);
+}
+.annotator-hl.weight-2 {
+  background: rgba(255, 255, 10, 0.4);
+}
+.annotator-hl.weight-3 {
+  background: rgba(255, 255, 10, 0.6);
+}
+.annotator-hl.weight-4 {
+  background: rgba(255, 255, 10, 0.8);
+}
+.annotator-hl.weight-5 {
+  background: rgba(255, 255, 10, 1);
+}
+
 .current-annotation {
   text-decoration: underline;
 }
