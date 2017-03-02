@@ -580,11 +580,11 @@ footer {
 }
 
 .categories a, .geozone a {
-  background: $highlight;
+  background: $link-hover;
   color: $link;
 
   &:hover {
-    background: $brand;
+    background: $highlight;
     color: white;
   }
 }

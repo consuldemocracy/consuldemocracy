@@ -68,7 +68,7 @@ fr:
       wrong_price_format  : Seulement des nombres entiers
       header:
         check_ballot : "Voir mon bulletin"
-        different_heading_assigned_html  : 'Vous avez des votes actifs dans un autre en-tête : %{en-tête_lien}'
+        different_heading_assigned_html  : 'Vous ne pouvez pas voter pour ce site car vous avez déjà voté pour un autre site'
       investment:
         already_added: Vous avez déjà ajouté ce projet d'investissement
         already_supported: Vous soutenez déjà ce projet. Partagez-le !
