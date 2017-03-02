@@ -1332,7 +1332,7 @@ fr:
       deleted_proposal: Cette proposition a été effacée
       filters:
         comments:
-          one: 1 Commentaire
+          one: "1 Commentaire"
           other: "%{count} Commentaires"
         debates:
           one: 1 Débat
@@ -1340,8 +1340,34 @@ fr:
         proposals:
           one: 1 Proposition
           other: "%{count} Propositions"
+        budget_investments :
+          one: "1 Investissement"
+          other: "%{count} Investissements"
       no_activity: L'utilisateur n'a pas d'activité publique
       private_activity: Cet utilisateur a choisi de garder privée sa liste d'activités
+      deleted_budget_investment  : Cet investissement a été supprimé
+      send_private_message : Envoyer un message privé
+      no_private_messages  : Cet utilisateur n'accepte pas les messages privés
+    direct_messages:
+      new:
+        title : Envoyer un message privé à %{receiver}
+        authenticate  : Vous devez %{signin} ou %{signup} pour continuer
+        signin  : Identification
+        signup  : Inscription
+        direct_messages_bloqued : Cet utilisateur a décidé de ne pas recevoir de message instantanés
+        title_label : Titre
+        body_label  : Message
+        submit_button : Envoyer un message
+        verified_only : Pour envoyer un message privé %{verify_account}
+        verify_account  : Vérifier votre compte
+      show.receiver : Message envoyé à %{receiver}
+    proposals:
+      send_notification : Envoyer une notification
+      retired : Retirée
+      retire  : Retirer
+
+
+
   verification:
     alert:
       lock: Vous avez atteint le nombre maximum de tentatives. Merci de réessayer
@@ -1545,32 +1571,7 @@ fr:
 
 
 
-  users:
-    show:
-      deleted_budget_investment  : Cet investissement a été supprimé
-      send_private_message : Envoyer un message privé
-      no_private_messages  : Cet utilisateur n'accepte pas les messages privés
-      filters:
-        budget_investments :
-          one: "1 Investissement"
-          other: "%{count} Investissements"
-    direct_messages:
-      new:
-        title : Envoyer un message privé à %{receiver}
-        authenticate  : Vous devez %{signin} ou %{signup} pour continuer
-        signin  : Identification
-        signup  : Inscription
-        direct_messages_bloqued : Cet utilisateur a décidé de ne pas recevoir de message instantanés
-        title_label : Titre
-        body_label  : Message
-        submit_button : Envoyer un message
-        verified_only : Pour envoyer un message privé %{verify_account}
-        verify_account  : Vérifier votre compte
-      show.receiver : Message envoyé à %{receiver}
-    proposals:
-      send_notification : Envoyer une notification
-      retired : Retirée
-      retire  : Retirer
+
 
   votes:
     comment_unauthenticated : Vous devez %{signin} ou %{signup} pour voter.

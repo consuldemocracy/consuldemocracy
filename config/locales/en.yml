@@ -558,16 +558,16 @@ en:
       deleted_budget_investment: This investment has been deleted
       filters:
         comments:
-          one: 1 Comment
+          one: "1 Comment"
           other: "%{count} Comments"
         debates:
-          one: 1 Debate
+          one: "1 Debate"
           other: "%{count} Debates"
         proposals:
-          one: 1 Proposal
+          one: "1 Proposal"
           other: "%{count} Proposals"
         budget_investments:
-          one: 1 Investment
+          one: "1 Investment"
           other: "%{count} Investments"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
