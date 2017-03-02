@@ -192,8 +192,10 @@ fr:
         sms_code_not_confirmed: Code SMS non confirmé
         title: Vérifications incomplètes
     budgets:
-      update.notice: Budget participatif mis à jour avec succès
-      create.notice : Nouveau budget participatif créé avec succès!
+      update:
+        notice: Budget participatif mis à jour avec succès
+      create:
+        notice : Nouveau budget participatif créé avec succès!
       form:
         add_heading  : Ajouter un site
         no_heading : Ce groupe n'a pas de rubrique affectée.

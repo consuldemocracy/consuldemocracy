@@ -49,7 +49,7 @@
           <% active = "active" %>
         <% else %>
           <% if (card[1][:name] == "accepting") or (card[1][:name] == "reviewing") or (card[1][:name] == "selecting") %>
-            <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
+            <% if (@budget.phase == "accepting") or (@budget.phase == "reviewing") or (@budget.phase == "selecting") %>
               <% active = "active" %>
             <% else %>
               <% active = "" %>
@@ -83,7 +83,7 @@
       <% i+=1 %>
     <% end%>
   </div>
-<h1>Proposer vos idées sur les thèmes suivants</h1>
+<h1>Proposez vos idées sur les thèmes suivants</h1>
   <div class="row center">
     <% i=3%>
     <% t("budgets.home_rivp.theme_cards").each do |card| %>

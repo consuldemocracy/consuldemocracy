@@ -194,7 +194,7 @@ a {
 
     &.active {
       border-bottom: 2px solid $brand;
-      color: $brand;
+      color: black;
     }
   }
 }
@@ -580,11 +580,11 @@ footer {
 }
 
 .categories a, .geozone a {
-  background: $highlight;
+  background: $link-hover;
   color: $link;
 
   &:hover {
-    background: $brand;
+    background: $highlight;
     color: white;
   }
 }

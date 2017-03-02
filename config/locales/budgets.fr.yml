@@ -4,20 +4,21 @@ fr:
       show:
         title: Votre bulletin
         voted_html:
-          # one: "Vous avez voté sur <span>une</span> proposition."
-          # ohter: "Vous avez voté sur <span>%{count}</span> propositions"
+          one: "Vous avez voté sur <span>une</span> proposition."
+          ohter: "Vous avez voté sur <span>%{count}</span> propositions"
         voted_info_html: Vous pouvez modifier votre vote à tout moment, jusqu'à la fin de cette phase.<br> Pas besoin d'investir tout l'argent disponible.
         amount_spent: "Montant dépensé"
         zero: Vous n'avez voté sur aucun projet d'investissement
-        # remaining: "Vous avez encore <span>%{amount}</span> à investir"
+        remaining: "Vous avez encore <span>%{amount}</span> à investir"
         remove: Retirer le vote
+        remove: Annulez votre vote pour cette proposition
       reasons_for_not_balloting:
         # not_logged_in: "Vous devez %{signin} ou %{signup} pour contiuer"
         not_verified: "Seul les utilisateurs enregistrés peuvent voter sur les propositions; %{verify_account}."
-        organization: Les organisations ne sont pas autorisées à voter
-        not_selected: Les projets d'investissement non séléctionnés ne peuvent pas être soutenus.
-        not_enough_money: Le prix est plus élevé que le montant disponible
-        no_ballots_allowed: La phase de sélection est close
+        organization: "Les organisations ne sont pas autorisées à voter"
+        not_selected: "Les projets d'investissement non séléctionnés ne peuvent pas être soutenus."
+        not_enough_money: "Le prix est plus élevé que le montant disponible"
+        no_ballots_allowed: "La phase de sélection est close"
         different_heading_assigned: Vous avez déjà voté sur un en-tête différent
     investments:
       index:
@@ -67,7 +68,7 @@ fr:
       wrong_price_format  : Seulement des nombres entiers
       header:
         check_ballot : "Voir mon bulletin"
-        different_heading_assigned_html  : 'Vous avez des votes actifs dans un autre en-tête : %{en-tête_lien}'
+        different_heading_assigned_html  : 'Vous ne pouvez pas voter pour ce site car vous avez déjà voté pour un autre site'
       investment:
         already_added: Vous avez déjà ajouté ce projet d'investissement
         already_supported: Vous soutenez déjà ce projet. Partagez-le !
@@ -162,9 +163,7 @@ fr:
           title: Micro aménagements
           description: Abri vélo / Equipements mobiles pour livres / CD / Magazines / Jardinières
           img: custom/micro_development.svg
-    ballots:
-      show:
-        remove: Annulez votre vote pour cette proposition
+
 # ok jusqu'à là
 
     #
