@@ -49,7 +49,7 @@
           <% active = "active" %>
         <% else %>
           <% if (card[1][:name] == "accepting") or (card[1][:name] == "reviewing") or (card[1][:name] == "selecting") %>
-            <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
+            <% if (@budget.phase == "accepting") or (@budget.phase == "reviewing") or (@budget.phase == "selecting") %>
               <% active = "active" %>
             <% else %>
               <% active = "" %>
