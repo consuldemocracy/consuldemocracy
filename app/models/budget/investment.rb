@@ -236,14 +236,6 @@ class Budget
 
     def enough_money?(ballot)
       available_money = ballot.amount_available(self.heading)
-      puts "@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@"
-      puts available_money.inspect
-      puts price.to_i
-      puts "@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@"
-      puts "@@@@@@@@@@@@@@@@@@@"
       price.to_i <= available_money
     end
 
