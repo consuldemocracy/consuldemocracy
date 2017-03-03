@@ -33,6 +33,9 @@ es:
         budget_investments:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
+        votes:
+          one: 1 Aval
+          other: "%{count} Avales"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades

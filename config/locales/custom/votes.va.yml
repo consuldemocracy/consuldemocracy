@@ -8,21 +8,21 @@ va:
     organizations: "Les associacions no poden votar"
     signin: iniciar sessió
     signup: "registrar-te"
-    supports: Recolzaments
+    supports: Avals
     unauthenticated: Necessites %{signin} o %{signup} per a continuar.
     verified_only: "Les propostes només poden ser votades per usuaris verificats, %{verify_account}."
     verify_account: verifica el teu compte
     spending_proposals:
       not_logged_in: Necessites %{signin} o %{signup} per a continuar.
-      not_verified: "Les propostes d'inversió només poden ser recolzades per usuaris verificats, %{verify_account}."
-      organization: Les associacions no poden recolzar
-      unfeasible: No es poden recolzar propostes inviables
-      not_voting_allowed: El periode de recolzaments esta tancat.
+      not_verified: "Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}."
+      organization: Les associacions no poden avalar
+      unfeasible: No es poden avalar propostes inviables
+      not_voting_allowed: El periode de recollida d'avals esta tancat.
     budget_investments:
       not_logged_in: Necessites %{signin} o %{signup} per a continuar.
-      not_verified: Les propostes d'inversió sols poden ser recolzades per usuaris verificats, %{verify_account}.
+      not_verified: Les propostes d'inversió sols poden ser avalades per usuaris verificats, %{verify_account}.
       organization: "Les associacions no poden votar"
-      unfeasible: No es poden recolzar propostes inviables
-      not_voting_allowed: El període de recolzaments està tancat.
-      different_heading_assigned: Només pots recolzar propostes en un districte
-      quota_exeeded: Ha arribat al limit de recolzaments
+      unfeasible: No es poden avalar propostes inviables
+      not_voting_allowed: El període de recollida d'avals està tancat.
+      different_heading_assigned: Només pots avalar propostes en un districte
+      quota_exeeded: Ha arribat al limit d'avalaments

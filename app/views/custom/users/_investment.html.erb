@@ -1,0 +1,57 @@
+<div id="<%= dom_id(investment) %>" class="budget-investment clear">
+  <div class="panel">
+    <div class="row">
+
+      <div class="small-12 medium-9 column">
+        <div class="budget-investment-content">
+
+          <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
+            <span class="label-budget-investment float-left"><%= t("budgets.investments.investment.title") %></span>
+            <span class="icon-budget"></span>
+            <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+            <p class="investment-project-info">
+
+              <%= l investment.created_at.to_date %>
+
+              <% if investment.author.hidden? || investment.author.erased? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= t("budgets.investments.show.author_deleted") %>
+                </span>
+              <% else %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= investment.author.name %>
+                </span>
+                <% if investment.respond_to?(:organization_name) && investment.organization_name.present? %>
+                  <span class="label round is-association">
+                    <%= t("shared.author_info.representa_a") %>
+                  </span>
+                  <span>
+                    <%= "(#{investment.organization_name})" %>
+                  </span>
+                <% end %>
+                <% if investment.author.official? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-<%= investment.author.official_level %>">
+                    <%= investment.author.official_position %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= investment.heading.name %>
+            </p>
+            <div class="investment-project-description">
+              <p><%= investment.description %></p>
+              <!-- <div class="truncate"></div> -->
+            </div>
+            <% @budget = investment.budget %>
+            <%= render "shared/tags", taggable: investment, limit: 5 %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

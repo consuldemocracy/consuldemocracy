@@ -357,7 +357,7 @@ va:
         undefined: Sin definir
       summary:
         title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
+        title_proposals_with_supports: Resumen para propuestas que han superado la fase de avales
         geozone_name: Ámbito de ciudad
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables

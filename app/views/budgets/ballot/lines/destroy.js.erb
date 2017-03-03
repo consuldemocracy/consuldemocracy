@@ -7,7 +7,6 @@ $("#<%= dom_id(@investment) %>_ballot").html('<%= j render("/budgets/investments
                                                             investment_ids: @investment_ids,
                                                             ballot: @ballot) %>');
 
-console.log("<%= @investment_ids %>")
 <%= render 'refresh_ballots',
             investment: @investment,
             investment_ids: @investments.map(&:id),

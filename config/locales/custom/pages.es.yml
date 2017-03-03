@@ -105,15 +105,15 @@ es:
         text: |-
           Cada persona mayor de 16 años empadronada, podrá apoyar hasta un máximo de 3 propuestas de proyectos de inversión. Puede apoyar, indistintamente, propuestas individuales o de entidades ciudadanas.
 
-          Las propuestas de proyectos de inversión deberán contar con un mínimo de 25 apoyos de las vecinas y vecinos para poder pasar a la siguiente fase y ser valoradas por los servicios técnicos del ayuntamiento de Castellón de la Plana.  El apoyo de las propuestas se realizará a través de la plataforma decidim.castello.es , donde estarán expuestas las propuestas presentadas.
+          Las propuestas de proyectos de inversión deberán contar con un mínimo de 25 avales de las vecinas y vecinos para poder pasar a la siguiente fase y ser valoradas por los servicios técnicos del ayuntamiento de Castellón de la Plana. El aval de las propuestas se realizará a través de la plataforma decidim.castello.es , donde estarán expuestas las propuestas presentadas.
 
-          El período de apoyo de las propuestas va desde el 6 de hasta el 31 de marzo de 2017 hasta las 23:59:horas.
+          El período de recogida de avales de las propuestas va desde el 6 de hasta el 31 de marzo de 2017 hasta las 23:59:horas.
 
       item_7:
         title: 7.- Validación y estudio de viabiliad de los proyectos de inversión.
         subt: 'Del 1 al 30 de abril'
         text: |-
-          Finalizado el período de apoyo de las propuestas, desde el Negociado de Participación Ciudadana del ayuntamiento se realizará un proceso de validación de las propuestas realizadas con el objetivo de comprobar que todas las propuestas presentadas cumplen los con requisitos establecidos en las presentes Bases Reguladoras, admitiendo o inadmitiendo motivadamente las propuestas presentadas.
+          Finalizado el período de recogida de avales de las propuestas, desde el Negociado de Participación Ciudadana del ayuntamiento se realizará un proceso de validación de las propuestas realizadas con el objetivo de comprobar que todas las propuestas presentadas cumplen los con requisitos establecidos en las presentes Bases Reguladoras, admitiendo o inadmitiendo motivadamente las propuestas presentadas.
 
           A título de ejemplo, serán motivos de inadmisión:
 
@@ -168,7 +168,7 @@ es:
         participation_facts: Para perderle el miedo
         participation_world: Sistemas de participación ciudadana que ya existen en el mundo
         proposals_info: Crea tus propias propuestas
-        signature_sheet: Hojas de firmas para recoger apoyos
+        signature_sheet: Hojas de firmas para recoger avales
         spending_proposals_info: Envía tus propuestas de gasto
       how_it_works:
         i: Participación
@@ -190,11 +190,11 @@ es:
 
           Cada uno de los trabajadores del Ayuntamiento tiene un usuario propio, que será resaltado como tal, permitiendo que participen en los debates al mismo nivel que todos los demás ciudadanos. Esto permitirá crear espacios de comunicación directos entre unos y otros, evitando los inconvenientes que implica la comunicación mediada, y respondiendo a un planteamiento claro por parte del nuevo gobierno por el cual el Ayuntamiento trabaja para la ciudadanía, y ante ella debe responder.
           ## <a id='i2'></a> I.I. Espacio de propuestas
-          En este espacio, cualquier persona puede proponer una iniciativa con la intención de recabar los suficientes apoyos como para que la idea pase a ser consultada a toda la ciudadanía con carácter vinculante.
+          En este espacio, cualquier persona puede proponer una iniciativa con la intención de recabar los suficientes avales como para que la idea pase a ser consultada a toda la ciudadanía con carácter vinculante.
 
           Las propuestas pueden ser apoyadas por ciudadanos empadronados que hayan verificado su cuenta en la plataforma de participación, de tal manera que será la propia ciudadanía, y nadie en su nombre, la que decida cuáles son las propuestas que merecen la pena ser llevadas a cabo.
 
-          Una vez que una propuesta alcance 25 apoyos, automáticamente pasa a ser estudiada por un grupo de trabajo del Ayuntamiento y pasará a la siguiente fase de consulta popular, en la que la ciudadanía votará si se lleva a cabo o no.
+          Una vez que una propuesta alcance 25 avales, automáticamente pasa a ser estudiada por un grupo de trabajo del Ayuntamiento y pasará a la siguiente fase de consulta popular, en la que la ciudadanía votará si se lleva a cabo o no.
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
@@ -274,7 +274,7 @@ es:
 
       ### 5. Uso del Portal de Participación Ciudadana
 
-      Los participantes podrán acceder y navegar por el Portal de Participación Ciudadana libremente y de forma anónima. Sólo cuando quieran realizar alguna acción que implique la creación, apoyo o comentario de una propuesta, o la participación en un debate, se le solicitará que introduzca sus credenciales, para cuya obtención será necesario registrarse previamente. El registro que permitirá participar comentando en cualquiera de las secciones o propuestas, se realizará introduciendo los siguientes datos:
+      Los participantes podrán acceder y navegar por el Portal de Participación Ciudadana libremente y de forma anónima. Sólo cuando quieran realizar alguna acción que implique la creación, aval o comentario de una propuesta, o la participación en un debate, se le solicitará que introduzca sus credenciales, para cuya obtención será necesario registrarse previamente. El registro que permitirá participar comentando en cualquiera de las secciones o propuestas, se realizará introduciendo los siguientes datos:
 
       * Nombre de usuario
       * Correo electrónico

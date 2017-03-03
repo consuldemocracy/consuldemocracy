@@ -130,7 +130,7 @@ es:
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
-        table_supports: "Apoyos"
+        table_supports: "Avales"
         table_ballots: "Votos"
       show:
         assigned_admin: Administrador asignado
@@ -357,7 +357,7 @@ es:
         undefined: Sin definir
       summary:
         title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
+        title_proposals_with_supports: Resumen para propuestas que han superado la fase de avales
         geozone_name: Ámbito de ciudad
         finished_and_feasible_count: Finalizadas viables
         finished_and_unfeasible_count: Finalizadas inviables

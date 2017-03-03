@@ -45,6 +45,6 @@ es:
       support: Apoyar
       support_title: Apoyar esta propuesta de inversión
       supports:
-        one: 1 apoyo
-        other: "%{count} apoyos"
-        zero: Sin apoyos
+        one: 1 aval
+        other: "%{count} avales"
+        zero: Sin avales

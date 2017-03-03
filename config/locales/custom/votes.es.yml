@@ -8,7 +8,7 @@ es:
     organizations: Las organizaciones no pueden votar
     signin: iniciar sesión
     signup: registrarte
-    supports: Apoyos
+    supports: Avales
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
@@ -25,4 +25,4 @@ es:
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
-      quota_exeeded: Ha llegado al límite de apoyos
+      quota_exeeded: Ha llegado al límite de avales

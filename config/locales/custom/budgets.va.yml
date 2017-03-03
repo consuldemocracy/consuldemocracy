@@ -15,7 +15,7 @@ va:
         zero: "Encara no has votat cap proposta d'inversió."
       reasons_for_not_balloting:
         not_logged_in: Necessites %{signin} o %{signup} per a continuar.
-        not_verified: Les propostes d'inversió només poden ser recolzades per usuaris verificats, %{verify_account}.
+        not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
         organization: Les organitzacions no poden votar.
         not_selected: No es poden votar propostes inviables.
         not_enough_money: No hi ha fons suficients.
@@ -86,24 +86,24 @@ va:
         organization_name_html: 'Associació: <strong>%{name}</strong>'
         share: Compartir
         title: Proposta d'inversió
-        supports: Recolzaments
+        supports: Avals
         votes: Vots
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:
         title: Proposta d'inversió
         add: Afegir
         already_added: "Ja has afegit aquesta proposta d'inversió"
-        already_supported: Ja has recolzat aquesta proposta.
-        support_title: Recolzar aquesta proposta
-        confirm_group: "Recorde que pot recolzar un màxim de tres propostes. Estàs segur?"
+        already_supported: Ja has avalat aquesta proposta.
+        support_title: Avalar aquesta proposta
+        confirm_group: "Recorde que pot avalar un màxim de tres propostes. Estàs segur?"
         supports:
-          one: 1 recolzament
-          other: "%{count} recolzaments"
-          zero: Sense recolzaments
-        give_support: Recolzar
+          one: 1 aval
+          other: "%{count} avals"
+          zero: Sense avals
+        give_support: Avalar
       header:
         check_ballot: Revisar els meus vots
-        different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
+        different_heading_assigned_html: "Ja vas avalar propostes d'una altra secció del pressupost: %{heading_link}"
     progress_bar:
       available: "Disponible: "
     show:
