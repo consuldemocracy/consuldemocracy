@@ -107,6 +107,9 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find(params[:heading_id])
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+        else
+          @heading = @budget.headings.last
+          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
         end
       end
 
