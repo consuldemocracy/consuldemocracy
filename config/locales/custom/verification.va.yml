@@ -101,7 +101,7 @@ va:
     user_permission_debates: Participar en debats
     user_permission_info: En verificar les teues dades podràs...
     user_permission_proposal: Crear noves propostes
-    user_permission_support_proposal: Recolzar propostes
+    user_permission_support_proposal: Avalar propostes
     user_permission_votes: Participar en les votacions finals
     verified_user:
       form:

@@ -30,7 +30,7 @@ va:
 
       ### 3. Qüestions generals sobre la participació en el Portal de Participació Ciutadana de l'Ajuntament de Castelló de la Plana
 
-      Podrà participar-hi qualsevol persona física a partir dels 16 anys que s'haja registrat prèviament. Per mitjà de l'acceptació d'aquestes condicions d'ús, es declara tindre 16 anys o més. Existeix la possibilitat de presentar una proposta i recolzar un màxim de tres propostes per cada participant.
+      Podrà participar-hi qualsevol persona física a partir dels 16 anys que s'haja registrat prèviament. Per mitjà de l'acceptació d'aquestes condicions d'ús, es declara tindre 16 anys o més. Existeix la possibilitat de presentar una proposta i avalar un màxim de tres propostes per cada participant.
 
       En introduir el títol de les propostes, es recomana escriure una descripció breu i precisa amb un màxim de 2.000 caràcters.
 
@@ -124,7 +124,7 @@ va:
         participation_facts: "Per a perdre-li la por"
         participation_world: "Sistemes de participació ciutadana que ja existeixen al món"
         proposals_info: "Crea les teues pròpies propostes"
-        signature_sheet: "Fulls de signatures per a arreplegar recolzaments"
+        signature_sheet: "Fulls de signatures per a arreplegar avals"
         spending_proposals_info: "Envia les teues propostes d'inversió"
       how_it_works:
         i: "Participació"
@@ -147,11 +147,11 @@ va:
 
           Cadascun dels treballadors de l'Ajuntament té un usuari propi, que serà ressaltat com a tal, permetent que participen en els debats al mateix nivell que tots els altres ciutadans. Açò permetrà crear espais de comunicació directes entre els uns i els altres, evitant els inconvenients que implica la comunicació intervinguda, i responent a un plantejament clar per part del nou govern pel qual l'Ajuntament treballa per a la ciutadania, i davant ella ha de respondre.
           ## <a id='i2'></a> I.I. Espai de propostes
-          En aquest espai, qualsevol persona pot proposar una iniciativa amb la intenció de recaptar els suficients recolzaments com perquè la idea passe a ser consultada a tota la ciutadania amb caràcter vinculant.
+          En aquest espai, qualsevol persona pot proposar una iniciativa amb la intenció de recaptar els suficients avals com perquè la idea passe a ser consultada a tota la ciutadania amb caràcter vinculant.
 
-          Les propostes poden ser recolzades per ciutadans empadronats que hagen verificat el seu compte en la plataforma de participació, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són les propostes que mereixen la pena ser dutes a terme.
+          Les propostes poden ser avalades per ciutadans empadronats que hagen verificat el seu compte en la plataforma de participació, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són les propostes que mereixen la pena ser dutes a terme.
 
-          Una vegada que una proposta aconseguisca una quantitat de 25 recolzaments, automàticament passa a ser estudiada per un grup de treball de l'Ajuntament i passarà a la següent fase de consulta popular, en la qual la ciutadania votarà si es duu a terme o no. El termini màxim per a recaptar els recolzaments necessaris serà d'un mes.
+          Una vegada que una proposta aconseguisca una quantitat de 25 avals, automàticament passa a ser estudiada per un grup de treball de l'Ajuntament i passarà a la següent fase de consulta popular, en la qual la ciutadania votarà si es duu a terme o no. El termini màxim per a recaptar els avals necessaris serà d'un mes.
       how_to_use:
         text: |-
           Utilitza-ho en el teu municipi lliurement o ajuda'ns a millorar-ho, és programari lliure.
@@ -206,7 +206,7 @@ va:
 
           Presentar propostes
 
-          Recolzar propostes
+          Avalar propostes
 
           Votar propostes
 

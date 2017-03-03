@@ -86,7 +86,7 @@ es:
         organization_name_html: 'Asociación: <strong>%{name}</strong>'
         share: Compartir
         title: Propuesta de inversión
-        supports: Apoyos
+        supports: Avales
         votes: Votos
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
@@ -97,10 +97,10 @@ es:
         support_title: Apoyar esta propuesta
         confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
-          one: 1 apoyo
-          other: "%{count} apoyos"
-          zero: Sin apoyos
-        give_support: Apoyar
+          one: 1 aval
+          other: "%{count} avales"
+          zero: Sin avales
+        give_support: Avalar
       header:
         check_ballot: Revisar mis votos
         different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
@@ -139,19 +139,19 @@ es:
 
         Las propuestas se harán preferiblemente a través de la web decidim.castello.es. y   excepcionalmente se podrán presentar en las Tenencias de Alcaldía del Ayuntamiento.
 
-      fase_2: Apoyo de las propuestas
+      fase_2: Recogida de avales de las propuestas
       fase_2_subtitle: Del 6 al 31 de marzo de 2017
-      fase_2_timeline_title: Apoyo de las propuestas
+      fase_2_timeline_title: Aval de las propuestas
       fase_2_timeline_body: |-
-        Las propuestas presentadas deberán contar con el apoyo de 25 votos, para pasar a la siguiente fase. El apoyo de las propuestas se recogerá a través de la plataforma web decidim.castello.es
+        Las propuestas presentadas deberán contar con el apoyo de 25 avales, para pasar a la siguiente fase. Los avales de las propuestas se recogerá a través de la plataforma web decidim.castello.es
 
-        La ciudadanía empadronada tienen la posibilidad de apoyar con su voto hasta un máximo de 3 propuestas.
+        La ciudadanía empadronada tienen la posibilidad de apoyar con su aval hasta un máximo de 3 propuestas.
 
       fase_3: Evaluación de las propuestas
       fase_3_subtitle: Del 1 al 30 de abril de 2017
       fase_3_timeline_title: Evaluación de las propuestas
       fase_3_timeline_body: |-
-        Las propuestas con apoyos suficientes, serán estudiadas por los servicios técnicos del Ayuntamiento, quienes valorarán que cada una cumpla con los requisitos necesarios para que sean propuestas de inversión viables, legales y presupuestarán el coste de llevarlas a cabo.
+        Las propuestas con avales suficientes, serán estudiadas por los servicios técnicos del Ayuntamiento, quienes valorarán que cada una cumpla con los requisitos necesarios para que sean propuestas de inversión viables, legales y presupuestarán el coste de llevarlas a cabo.
 
       fase_4: Votación ciudadana
       fase_4_subtitle: Del 1 al 15 de mayo 2017.

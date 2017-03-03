@@ -32,7 +32,7 @@ va:
       subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
       unfeasible_html: "Des de l'Ajuntament volem agrair la teua participació en els <strong>Presupostos Participatius</strong>. Lamentem informar-te que la teua proposta <strong>'%{title}'</strong> quedarà exclosa d'aquest procés participatiu pel següent motiu:"
     proposal_notification_digest:
-      info: "A continuació et mostrem les noves notificacions que han publicat els autors de les propostes que estàs recolzant en %{org_name}."
+      info: "A continuació et mostrem les noves notificacions que han publicat els autors de les propostes que estàs avalant en %{org_name}."
       title: "Notificacions de propostes en %{org_name}"
       share: Compartir proposta
       comment: Comentar proposta
@@ -86,7 +86,7 @@ va:
         *%{moderation_text}*
 
         Pots consultar les normes d'ús en aquest enllaç <a href="https://decidim.castello.es/conditions">Condicions</a>.
-        
+
         Atentament,
 
         ÀREA DE GOVERN OBERT

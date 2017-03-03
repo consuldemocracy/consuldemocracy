@@ -295,11 +295,11 @@ va:
       show_link: Veure proposta
     retire_form:
       title: Retirar proposta
-      warning: "Si segueixes endavant, la teua proposta podrà seguir rebent recolzaments, però deixarà de ser llistada en la llista principal, i apareixerà un missatge per a tots els usuaris avisant-los que l'autor considera que aquesta proposta no ha de seguir arreplegant recolzaments."
+      warning: "Si segueixes endavant, la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la llista principal, i apareixerà un missatge per a tots els usuaris avisant-los que l'autor considera que aquesta proposta no ha de seguir arreplegant avals."
       retired_reason_label: Raó per la qual es retira la proposta
       retired_reason_blank: Selecciona una opció
       retired_explanation_label: Explicació
-      retired_explanation_placeholder: "Explica breument per que consideres que aquesta proposta no ha d'arreplegar més recolzaments"
+      retired_explanation_placeholder: "Explica breument per que consideres que aquesta proposta no ha d'arreplegar més avals"
       submit_button: Retirar proposta
     retire_options:
       duplicated: Duplicada
@@ -330,7 +330,7 @@ va:
         one: " amb el tema '%{topic}'"
         other: " amb el tema '%{topic}'"
       orders:
-        confidence_score: Més recolzades
+        confidence_score: Més avalades
         created_at: Noves
         hot_score: Més actives avui
         most_commented: Més comentades
@@ -357,7 +357,7 @@ va:
       start_proposal: Crea una proposta
       title: Propostes ciutadanes
       top: Top setmanal
-      top_link_proposals: Propostes més recolzades per categoria
+      top_link_proposals: Propostes més avalades per categoria
     new:
       form:
         submit_button: Crear proposta
@@ -370,22 +370,22 @@ va:
     notice:
       retired: Proposta retirada
     proposal:
-      already_supported: "Ja has recolzat aquesta proposta."
+      already_supported: "Ja has avalat aquesta proposta."
       comments:
         one: 1 Comentari
         other: "%{count} Comentaris"
         zero: Sense comentaris
       proposal: Proposta
       reason_for_supports_necessary: "1% del Cens"
-      support: Recolzar
-      support_title: Recolzar aquesta proposta
+      support: Avalar
+      support_title: Avalar aquesta proposta
       supports:
-        one: 1 recolzament
-        other: "%{count} recolzaments"
-        zero: Sense recolzaments
-      supports_necessary: "%{number} recolzaments necessaris"
+        one: 1 aval
+        other: "%{count} avals"
+        zero: Sense avals
+      supports_necessary: "%{number} avals necessaris"
       total_percent: 100%
-      archived: "Aquesta proposta ha sigut arxivada i ja no pot arreplegar recolzaments."
+      archived: "Aquesta proposta ha sigut arxivada i ja no pot arreplegar avals."
     show:
       author_deleted: Usuari eliminat
       code: 'Codi de la proposta:'
@@ -398,8 +398,8 @@ va:
       flag: "Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris."
       login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       notifications_tab: Notificacions
-      retired_warning: "L'autor d'aquesta proposta considera que ja no ha de seguir arreplegant recolzaments."
-      retired_warning_link_to_explanation: "Revisa la seua explicació abans de recolzar-la."
+      retired_warning: "L'autor d'aquesta proposta considera que ja no ha de seguir arreplegant avals."
+      retired_warning_link_to_explanation: "Revisa la seua explicació abans d'avalar-la."
       retired: "Proposta retirada per l'autor"
       send_notification: Enviar notificació
       share: Compartir
@@ -409,10 +409,10 @@ va:
         submit_button: Guardar canvis
   proposal_ballots:
     title: "Votacions"
-    description_html: "Les següents propostes ciutadanes han aconseguit el <strong>nombre de recolzaments necessaris</strong> i passaran a votació."
+    description_html: "Les següents propostes ciutadanes han aconseguit el <strong>nombre d'avals necessaris</strong> i passaran a votació."
     date_title: "Dates de participació"
     date: "En breu anunciarem la data de votació d'aquestes propostes."
-    successfull: "Aquesta proposta ha aconseguit els recolzaments necessaris i passarà a la %{voting}."
+    successfull: "Aquesta proposta ha aconseguit els avals necessaris i passarà a la %{voting}."
     voting: "propera votació"
     featured_title: "#ProperaVotació"
     nothing_to_vote: "No hi ha res a votar en aquest moment."
@@ -533,13 +533,13 @@ va:
     wrong_price_format: "Solament pot incloure caràcters numèrics"
     spending_proposal:
       spending_proposal: "Proposta d'inversió"
-      already_supported: "Ja has recolzat aquesta proposta d'inversió. Comparteix-ho!"
-      support: Recolzar
-      support_title: "Recolzar aquesta proposta d'inversió"
+      already_supported: "Ja has avalat aquesta proposta d'inversió."
+      support: Avalar
+      support_title: "Avalar aquesta proposta d'inversió"
       supports:
-        one: 1 recolzament
-        other: "%{count} recolzaments"
-        zero: Sense recolzaments
+        one: 1 aval
+        other: "%{count} avals"
+        zero: Sense avals
   stats:
     index:
       visits: Visites
@@ -556,47 +556,6 @@ va:
     default: "No tens permís per a accedir a aquesta pàgina."
     manage:
       all: "No tens permís per a realitzar l'acció '%{action}' sobre %{subject}."
-  users:
-    direct_messages:
-      new:
-        body_label: "Missatge"
-        direct_messages_bloqued: "Aquest usuari ha decidit no rebre missatges privats"
-        submit_button: "Enviar missatge"
-        title: Enviar missatge privat a %{receiver}
-        title_label: "Títol"
-        verified_only: Per a enviar un missatge privat %{verify_account}
-        verify_account: verifica el teu compte
-        authenticate: Necessites %{signin} o %{signup}.
-        signin: iniciar sessió
-        signup: registrar-te
-      show:
-        receiver: Missatge enviat a %{receiver}
-    show:
-      deleted: Eliminat
-      deleted_debate: Aquest debat ha sigut eliminat
-      deleted_proposal: Aquesta proposta ha sigut eliminada
-      deleted_budget_investment: Aquesta proposta d'inversió ha sigut eliminada
-      filters:
-        comments:
-          one: 1 Comentari
-          other: "%{count} Comentaris"
-        debates:
-          one: 1 Debat
-          other: "%{count} Debats"
-        proposals:
-          one: 1 Proposta
-          other: "%{count} Propostas"
-        budget_investments:
-          one: "1 Proposta d'inversió"
-          other: "%{count} Propostes d'inversió"
-      no_activity: Usuari sense activitat pública
-      no_private_messages: "Este usuario no acepta mensajes privados."
-      private_activity: "Aquest usuari ha decidit mantenir en privat la seua llista d'activitats"
-      send_private_message: "Enviar un missatge privat"
-    proposals:
-      send_notification: "Enviar notificació"
-      retire: "Retirar"
-      retired: "Retirada"
   legislation:
     help:
       title: "Com puc comentar aquest document?"

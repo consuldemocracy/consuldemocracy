@@ -1,0 +1,9 @@
+<table class="clear activity-votes">
+  <% @votes.each do |vote| %>
+    <tr id="comment_<%= vote.id %>">
+      <td>
+        <%= render "investment", investment: vote.votable %>
+      </td>
+    </tr>
+  <% end %>
+</table>
