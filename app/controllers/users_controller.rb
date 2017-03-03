@@ -57,15 +57,17 @@ class UsersController < ApplicationController
     end
 
     def votes_count
-        budgets_current = Budget.includes(:investments).where(phase: 'selecting')
-        investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
-        @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size
+      return 0 if @user != current_user
+      budgets_current = Budget.includes(:investments).where(phase: 'selecting')
+      investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
+      @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size
     end
 
     def load_votes
-        budgets_current = Budget.includes(:investments).where(phase: 'selecting')
-        investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
-        @votes = @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids)
+      return [] if @user != current_user
+      budgets_current = Budget.includes(:investments).where(phase: 'selecting')
+      investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
+      @votes = @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids)
     end
 
     def load_proposals
