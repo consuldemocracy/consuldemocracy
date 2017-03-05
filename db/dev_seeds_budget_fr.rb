@@ -45,7 +45,7 @@ Setting.create(key: 'min_age_to_participate', value: '16')
 
 puts "Creating Geozones"
 # ['La Grange aux Belles', 'Bd Macdonald', "Elie Faure / Cdt l'Herminier", "Les Cardeurs - Mouraud", "Bisson Ramponneau", "La Chapelle Evangile", "Scotto Reverdy", "Cité Beauharnais", "Porte de Vanves"].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
-['La Granges aux belles, 10ème', 'La Chapelle Evangile, 18ème', 'Porte de Vanves, 14ème', 'Les Cardeurs-Mouraud, 20ème', 'Bisson Ramponneau-Piat, 20ème' , 'Bd Macdonald, 19ème', 'Elie Faure-Commandant l’Herminier, 20ème', 'Jean Bouton-place Henri Frenay, 12ème', 'Zac Vaugirard, 15ème', 'National, 13ème'].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
+['La Grange aux belles, 10ème', 'La Chapelle Evangile, 18ème', 'Porte de Vanves, 14ème', 'Les Cardeurs-Mouraud, 20ème', 'Bisson Ramponneau-Piat, 20ème' , 'Bd Macdonald, 19ème', 'Elie Faure-Commandant l’Herminier, 20ème', 'Jean Bouton-place Henri Frenay, 12ème', 'Zac Vaugirard, 15ème', 'Nationale, 13ème'].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
 
 
 puts "Creating Users"

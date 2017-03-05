@@ -61,7 +61,7 @@ fr:
       oldest: Plus ancien en premier
     select_order: Trier par
     show:
-      return_to_commentable: Revenir à
+      return_to_commentable: "Revenir à "
   comments_helper:
     comment_button: Publier un commentaire
     comment_link: Commentaire
