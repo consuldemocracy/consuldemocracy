@@ -13,6 +13,18 @@
   </div>
 
   <div class="row" data-equalizer>
+    <!-- Rehabilitación edificios -->
+    <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.buildings.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.buildings.date_html") %></p>
+        <p class="info">
+          <%= t("cards.buildings.text") %>
+        </p>
+        <%= link_to t("cards.buildings.button"), buildings_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
     <!-- Nueva ordenanza movilidad -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>

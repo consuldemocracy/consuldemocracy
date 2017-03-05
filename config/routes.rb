@@ -456,16 +456,17 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
 
   #Processes
-  get 'procesos',                                   to: 'pages#show', id: 'processes',                        as: 'processes'
-  get 'proceso/licencias-urbanisticas',             to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
-  get 'proceso/alianza-gobierno-abierto',           to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
-  get 'proceso/alianza-gobierno-abierto-borrador',  to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
-  get 'proceso/ordenanza-subvenciones',             to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
-  get 'proceso/plan-calidad-aire',                  to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
-  get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
-  get 'proceso/distrito-villa-de-vallecas',         to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
-  get 'proceso/linea-madrid',                       to: 'pages#show', id: 'processes/linea_madrid/index',     as: 'linea_madrid'
-  get 'proceso/nueva-ordenanza-movilidad',          to: 'pages#show', id: 'processes/movilidad/index',        as: 'movilidad'
+  get 'procesos',                                       to: 'pages#show', id: 'processes',                        as: 'processes'
+  get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
+  get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
+  get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
+  get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
+  get 'proceso/plan-calidad-aire',                      to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
+  get 'proceso/rotulacion-vias',                        to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
+  get 'proceso/distrito-villa-de-vallecas',             to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
+  get 'proceso/linea-madrid',                           to: 'pages#show', id: 'processes/linea_madrid/index',     as: 'linea_madrid'
+  get 'proceso/nueva-ordenanza-movilidad',              to: 'pages#show', id: 'processes/movilidad/index',        as: 'movilidad'
+  get 'proceso/conservacion-rehabilitacion-edificios',  to: 'pages#show', id: 'processes/buildings/index',        as: 'buildings'
 
   #Budgets meetings
   get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
