@@ -5,7 +5,7 @@ module Flaggable
     has_many :flags, as: :flaggable
     scope :flagged, -> { where("flags_count > 0") }
     scope :pending_flag_review, -> { flagged.where(ignored_flag_at: nil, hidden_at: nil) }
-    scope :with_ignored_flag, -> { flagged.where.not(ignored_flag_at: nil).where(hidden_at: nil) }
+    scope :with_ignored_flag, -> { flagged.where.not(ignored_flag_at: nil).where(hidden_at: nil).where.not(feasibility: 'unfeasible') }
   end
 
   def ignored_flag?
