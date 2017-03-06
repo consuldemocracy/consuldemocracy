@@ -12,11 +12,7 @@
   <div class="row">
     <div class="top-bar">
 
-      <% if user_signed_in? %>
-        <%= link_to setting['org_name'], root_path, class: "logo show-for-small-only" %>
-      <% else %>
-        <%= link_to setting['org_name'], first_voting_path, class: "logo show-for-small-only" %>
-      <% end %>
+      <%= link_to setting['org_name'], root_path, class: "logo show-for-small-only" %>
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
@@ -25,16 +21,9 @@
 
       <div id="responsive-menu">
         <div class="top-bar-title">
-          <% if user_signed_in? %>
-            <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
-              <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
-              <%= setting['org_name'] %>
-            <% end %>
-          <% else %>
-            <%= link_to first_voting_path, class: "hide-for-small-only", accesskey: "/" do %>
-              <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
-              <%= setting['org_name'] %>
-            <% end %>
+          <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
+            <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+            <%= setting['org_name'] %>
           <% end %>
         </div>
 
