@@ -472,6 +472,7 @@ es:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'

@@ -47,7 +47,7 @@
         <% if browser.device.mobile? %>
           <a href="whatsapp://send?text=<%= @spending_proposal.title %> <%= spending_proposal_url(@spending_proposal) %>" data-action="share/whatsapp/share">
             <span class="icon-whatsapp whatsapp"></span>
-            <span class="sr-only"><%= t("social_share_button.whatsapp") %></span>
+            <span class="sr-only"><%= t("social.whatsapp") %></span>
           </a>
         <% end %>
       </div>
