@@ -1,6 +1,6 @@
 namespace :budgets do
 
-  describe "resends all unfeasible emails with a correction in the subject"
+  desc "resends all unfeasible emails with a correction in the subject"
   task :resend_unfeasible_emails do
     valid_emails = []
     invalid_emails = []
