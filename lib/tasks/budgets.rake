@@ -1,7 +1,7 @@
 namespace :budgets do
 
   desc "resends all unfeasible emails with a correction in the subject"
-  task :resend_unfeasible_emails do
+  task resend_unfeasible_emails: :environment do
     valid_emails = []
     invalid_emails = []
 
