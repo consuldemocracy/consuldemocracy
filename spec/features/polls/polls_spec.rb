@@ -22,18 +22,21 @@ feature 'Polls' do
 
       visit polls_path
       expect(page).to have_content('Current poll')
+      expect(page).to have_link('Participate in this poll')
       expect(page).to_not have_content('Incoming poll')
       expect(page).to_not have_content('Expired poll')
 
       visit polls_path(filter: 'incoming')
       expect(page).to_not have_content('Current poll')
       expect(page).to have_content('Incoming poll')
+      expect(page).to have_link('More information')
       expect(page).to_not have_content('Expired poll')
 
       visit polls_path(filter: 'expired')
       expect(page).to_not have_content('Current poll')
       expect(page).to_not have_content('Incoming poll')
       expect(page).to have_content('Expired poll')
+      expect(page).to have_link('Poll ended')
     end
 
     scenario "Current filter is properly highlighted" do

@@ -60,10 +60,15 @@
         </ul>
       </div>
       <div class="small-12 medium-6 large-4 column end">
-        <%= link_to t("polls.index.participate_button"),
-                    poll_path(poll, anchor: "questions"),
-                    class: "button expanded",
-                    data: { no_turbolink: true } %>
+        <%= link_to poll_path(poll, anchor: "questions"), class: "button expanded", data: { no_turbolink: true } do %>
+          <% if poll.expired? %>
+            <%= t("polls.index.participate_button_expired") %>
+          <% elsif poll.incoming? %>
+            <%=  t("polls.index.participate_button_incoming") %>
+          <% else %>
+            <%= t("polls.index.participate_button") %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
