@@ -403,6 +403,8 @@ es:
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
+      participate_button_incoming: "Más información"
+      participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
       geozone_info: "Pueden participar las personas empadronadas en: "
