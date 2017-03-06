@@ -4,6 +4,11 @@
       <td>
         <%= link_to budget_investment.title, budget_investment_path(budget_investment.budget, budget_investment) %>
       </td>
+      <td>
+        <% if can? :destroy, budget_investment %>
+          <%= link_to t('shared.delete'), budget_investment_path(budget_investment.budget, budget_investment), method: :delete %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
