@@ -7,23 +7,24 @@
       </th>
     </tr>
 
-    <% if headings.blank? %>
-      <tbody>
-        <tr>
-          <td colspan="3">
-            <div class="callout primary">
-              <%= t("admin.budgets.form.no_heading") %>
-            </div>
-          </td>
-        </tr>
-    <% else %>
-          <tr>
-            <th><%= t("admin.budgets.form.table_heading") %></th>
-            <th><%= t("admin.budgets.form.table_amount") %></th>
-          </tr>
-        </thead>
-      <tbody>
-    <% end %>
+  <% if headings.blank? %>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="3">
+        <div class="callout primary">
+          <%= t("admin.budgets.form.no_heading") %>
+        </div>
+      </td>
+    </tr>
+  <% else %>
+    <tr>
+      <th><%= t("admin.budgets.form.table_heading") %></th>
+      <th><%= t("admin.budgets.form.table_amount") %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% end %>
 
     <!-- new heading form -->
     <tr id="group-<%= group.id %>-new-heading-form" style="display:none">
@@ -52,16 +53,15 @@
     <!-- /. new heading form -->
     <!-- headings list -->
     <% headings.each do |heading| %>
-      <tr>
-        <td>
-          <%= heading.name %>
-        </td>
-        <td>
-          <%= heading.price %>
-        </td>
-      </tr>
+    <tr>
+      <td>
+        <%= heading.name %>
+      </td>
+      <td>
+        <%= heading.price %>
+      </td>
+    </tr>
     <% end %>
     <!-- /. headings list -->
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>
