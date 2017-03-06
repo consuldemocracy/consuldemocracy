@@ -246,14 +246,14 @@
     </div>
 
     <div class="show-for-medium medium-6 column small-centered text-center margin-top">
-      <%= image_tag("map.jpg", usemap: "#map", alt: "Mapa de distritos de Madrid") %>
+      <%= image_tag("map.jpg", usemap: "#map_preselection", alt: "Mapa de distritos de Madrid") %>
     </div>
 
-    <map name="map" id="html_map">
+    <map name="map_preselection" id="html_map_preselection">
       <% Geozone.all.each do |geozone| %>
         <area shape="poly"
               coords="<%= geozone.html_map_coordinates %>"
-              href="#<%= geozone.name.parameterize %>"
+              href="#<%= geozone.name.parameterize %>-preselection"
               title="<%= geozone.name %>"
               alt="<%= geozone.name %>">
       <% end %>
@@ -270,7 +270,7 @@
           </tr>
         </thead>
         <tbody>
-        <tr id="arganzuela">
+        <tr id="arganzuela-preselection">
           <td>
             <span class="label large"><strong>Arganzuela</strong></span>
           </td>
@@ -278,7 +278,7 @@
           <td class="text-center">5,00%</td>
           <td class="text-center">0,44%</td>
         </tr>
-        <tr id="barajas">
+        <tr id="barajas-preselection">
           <td>
             <span class="label large"><strong>Barajas</strong></span>
           </td>
@@ -286,7 +286,7 @@
           <td class="text-center">1,37%</td>
           <td class="text-center">0,22%</td>
         </tr>
-        <tr id="carabanchel">
+        <tr id="carabanchel-preselection">
           <td>
             <span class="label large"><strong>Carabanchel</strong></span>
           </td>
@@ -294,7 +294,7 @@
           <td class="text-center">4,48%</td>
           <td class="text-center">0,14%</td>
         </tr>
-        <tr id="centro">
+        <tr id="centro-preselection">
           <td>
             <span class="label large"><strong>Centro</strong></span>
           </td>
@@ -302,7 +302,7 @@
           <td class="text-center">13,79%</td>
           <td class="text-center">0,79%</td>
         </tr>
-        <tr id="chamartin">
+        <tr id="chamartin-preselection">
           <td>
             <span class="label large"><strong>Chamartín</strong></span>
           </td>
@@ -310,7 +310,7 @@
           <td class="text-center">4,97%</td>
           <td class="text-center">0,26%</td>
         </tr>
-        <tr id="chamberi">
+        <tr id="chamberi-preselection">
           <td>
             <span class="label large"><strong>Chamberí</strong></span>
           </td>
@@ -318,7 +318,7 @@
           <td class="text-center">6,66%</td>
           <td class="text-center">0,37%</td>
         </tr>
-        <tr id="ciudad-lineal">
+        <tr id="ciudad-lineal-preselection">
           <td>
             <span class="label large"><strong>Ciudad Lineal</strong></span>
           </td>
@@ -326,7 +326,7 @@
           <td class="text-center">4,87%</td>
           <td class="text-center">0,17%</td>
         </tr>
-        <tr id="fuencarral-el-pardo">
+        <tr id="fuencarral-el-pardo-preselection">
           <td>
             <span class="label large"><strong>Fuencarral - El Pardo</strong></span>
           </td>
@@ -334,7 +334,7 @@
           <td class="text-center">5,98%</td>
           <td class="text-center">0,19%</td>
         </tr>
-        <tr id="hortaleza">
+        <tr id="hortaleza-preselection">
           <td>
             <span class="label large"><strong>Hortaleza</strong></span>
           </td>
@@ -342,7 +342,7 @@
           <td class="text-center">4,70%</td>
           <td class="text-center">0,20%</td>
         </tr>
-        <tr id="latina">
+        <tr id="latina-preselection">
           <td>
             <span class="label large"><strong>Latina</strong></span>
           </td>
@@ -350,7 +350,7 @@
           <td class="text-center">5,81%</td>
           <td class="text-center">0,19%</td>
         </tr>
-        <tr id="moncloa-aravaca">
+        <tr id="moncloa-aravaca-preselection">
           <td>
             <span class="label large"><strong>Moncloa - Aravaca</strong></span>
           </td>
@@ -358,7 +358,7 @@
           <td class="text-center">7,63%</td>
           <td class="text-center">0,50%</td>
         </tr>
-        <tr id="moratalaz">
+        <tr id="moratalaz-preselection">
           <td>
             <span class="label large"><strong>Moratalaz</strong></span>
           </td>
@@ -366,7 +366,7 @@
           <td class="text-center">2,05%</td>
           <td class="text-center">0,17%</td>
         </tr>
-        <tr id="puente-de-vallecas">
+        <tr id="puente-de-vallecas-preselection">
           <td>
             <span class="label large"><strong>Puente de Vallecas</strong></span>
           </td>
@@ -374,7 +374,7 @@
           <td class="text-center">3,31%</td>
           <td class="text-center">0,11%</td>
         </tr>
-        <tr id="retiro">
+        <tr id="retiro-preselection">
           <td>
             <span class="label large"><strong>Retiro</strong></span>
           </td>
@@ -382,7 +382,7 @@
           <td class="text-center">5,53%</td>
           <td class="text-center">0,35%</td>
         </tr>
-        <tr id="salamanca">
+        <tr id="salamanca-preselection">
           <td>
             <span class="label large"><strong>Salamanca</strong></span>
           </td>
@@ -390,7 +390,7 @@
           <td class="text-center">4,89%</td>
           <td class="text-center">0,26%</td>
         </tr>
-        <tr id="san-blas-canillejas">
+        <tr id="san-blas-canillejas-preselection">
           <td>
             <span class="label large"><strong>San Blas - Canillejas</strong></span>
           </td>
@@ -398,7 +398,7 @@
           <td class="text-center">2,97%</td>
           <td class="text-center">0,15%</td>
         </tr>
-        <tr id="tetuan">
+        <tr id="tetuan-preselection">
           <td>
             <span class="label large"><strong>Tetuán</strong></td></span>
            </td>
@@ -407,7 +407,7 @@
             <td class="text-center">0,19%</td>
           </td>
         </tr>
-        <tr id="usera">
+        <tr id="usera-preselection">
           <td>
             <span class="label large"><strong>Usera</strong></span>
           </td>
@@ -415,7 +415,7 @@
           <td class="text-center">2,29%</td>
           <td class="text-center">0,13%</td>
         </tr>
-        <tr id="vicalvaro">
+        <tr id="vicalvaro-preselection">
           <td>
             <span class="label large"><strong>Vicálvaro</strong></span>
           </td>
@@ -423,7 +423,7 @@
           <td class="text-center">1,33%</td>
           <td class="text-center">0,14%</td>
         </tr>
-        <tr id="villaverde">
+        <tr id="villaverde-preselection">
           <td>
             <span class="label large"><strong>Villaverde</strong></span>
           </td>
@@ -431,7 +431,7 @@
           <td class="text-center">1,90%</td>
           <td class="text-center">0,10%</td>
         </tr>
-        <tr id="villa-de-vallecas">
+        <tr id="villa-de-vallecas-preselection">
           <td>
             <span class="label large"><strong>Villa de Vallecas</strong></span>
           </td>
