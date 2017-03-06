@@ -29,7 +29,7 @@
     <% Geozone.all.order(name: :asc).each do |geozone| %>
       <tr id="<%= geozone.name.parameterize %>">
         <td class="border-right">
-          <span class="label large"><strong><%= geozone.name %></strong></span>
+          <strong><%= geozone.name %></strong>
         </td>
         <td><%= @district_stats[geozone.id.to_s]['web'] %>
           <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['web'], @district_stats[geozone.id.to_s]['total'])%>%)</em></small></td>
