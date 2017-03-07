@@ -200,7 +200,7 @@ es:
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
-      logo: Consul
+      logo: Consul logo
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -435,6 +435,7 @@ es:
       search: 'Filtrar'
       title: 'Búsqueda avanzada'
       to: 'Hasta'
+    delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
@@ -479,6 +480,7 @@ es:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'

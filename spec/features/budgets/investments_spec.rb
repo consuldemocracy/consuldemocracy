@@ -315,6 +315,20 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario "Author can destroy while on the accepting phase" do
+      user = create(:user, :level_two)
+      sp1 = create(:budget_investment, heading: heading, price: 10000, author: user)
+
+      login_as(user)
+      visit user_path(user, tab: :budget_investments)
+
+      within("#budget_investment_#{sp1.id}") do
+        expect(page).to have_content(sp1.title)
+        click_link('Delete')
+      end
+
+      visit user_path(user, tab: :budget_investments)
+    end
   end
 
   context "Selecting Phase" do
@@ -475,6 +489,8 @@ feature 'Budget Investments' do
 
       expect(page).to have_content "€10,000"
     end
+
+
 
     scenario "Sidebar in show should display vote text" do
       investment = create(:budget_investment, :selected, budget: budget)
