@@ -6,6 +6,6 @@
   <% @categories.each do |category| %>
     <li class="inline-block">
       <%= link_to t(category.name),
-                  budget_investments_path(@budget, search: category.name) %></li>
+                  budget_investments_path(@budget, search: category.name, unfeasible: params[:unfeasible]) %></li>
   <% end %>
 </ul>
