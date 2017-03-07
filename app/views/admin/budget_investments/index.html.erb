@@ -28,7 +28,7 @@
 
     <div class="small-12 medium-3 column">
       <%= select_tag :tag_name,
-                     options_for_select(spending_proposal_tags_select_options, params[:tag_name]),
+                     options_for_select(investment_tags_select_options, params[:tag_name]),
                      { prompt: t("admin.budget_investments.index.tags_filter_all"),
                        label: false,
                        class: "js-submit-on-change" } %>
