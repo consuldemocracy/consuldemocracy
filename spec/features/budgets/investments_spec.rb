@@ -315,9 +315,9 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Author can destroy while on the selecting phase" do
+    scenario "Author can destroy while on the accepting phase" do
       user = create(:user, :level_two)
-      sp1 = create(:budget_investment, :selected, heading: heading, price: 10000, author: user)
+      sp1 = create(:budget_investment, heading: heading, price: 10000, author: user)
 
       login_as(user)
       visit user_path(user, tab: :budget_investments)
