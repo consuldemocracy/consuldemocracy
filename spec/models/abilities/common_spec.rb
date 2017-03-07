@@ -15,12 +15,18 @@ describe "Abilities::Common" do
   let(:own_proposal) { create(:proposal, author: user) }
 
   let(:accepting_budget) { create(:budget, phase: 'accepting') }
+  let(:reviewing_budget) { create(:budget, phase: 'reviewing') }
   let(:selecting_budget) { create(:budget, phase: 'selecting') }
   let(:balloting_budget) { create(:budget, phase: 'balloting') }
 
   let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
+  let(:investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget) }
   let(:investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget) }
   let(:investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget) }
+  let(:own_investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget, author: user) }
+  let(:own_investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget, author: user) }
+  let(:own_investment_in_selecting_budget) { create(:budget_investment, budget: selecting_budget, author: user) }
+  let(:own_investment_in_balloting_budget) { create(:budget_investment, budget: balloting_budget, author: user) }
   let(:ballot_in_accepting_budget) { create(:budget_ballot, budget: accepting_budget) }
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
@@ -217,8 +223,21 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
       it { should be_able_to(:create, ballot_in_balloting_budget) }
-    end
 
+      it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
+      it { should_not be_able_to(:destroy, investment_in_reviewing_budget) }
+      it { should_not be_able_to(:destroy, investment_in_selecting_budget) }
+      it { should_not be_able_to(:destroy, investment_in_balloting_budget) }
+
+      it { should be_able_to(:destroy, own_investment_in_accepting_budget) }
+      it { should be_able_to(:destroy, own_investment_in_reviewing_budget) }
+      it { should_not be_able_to(:destroy, own_investment_in_selecting_budget) }
+      it { should_not be_able_to(:destroy, investment_in_balloting_budget) }
+
+      it { should_not be_able_to(:create, ballot_in_accepting_budget) }
+      it { should_not be_able_to(:create, ballot_in_selecting_budget) }
+      it { should be_able_to(:create, ballot_in_balloting_budget) }
+    end
 
     describe "when not old enough to vote" do
       before(:each) { user.date_of_birth = Setting['min_age_to_participate'].to_i.years.ago + 1.year }

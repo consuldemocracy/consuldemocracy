@@ -522,6 +522,7 @@ es:
       search: 'Filtrar'
       title: 'Búsqueda avanzada'
       to: 'Hasta'
+    delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
       forum: Espacio de debate distrital

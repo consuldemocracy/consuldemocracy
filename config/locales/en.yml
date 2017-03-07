@@ -522,6 +522,7 @@ en:
       search: 'Filter'
       title: 'Advanced search'
       to: 'To'
+    delete: Delete
     author_info:
       author_deleted: User deleted
       forum: District discussion space
