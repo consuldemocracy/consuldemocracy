@@ -20,7 +20,7 @@
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
               <%= t("budgets.investments.index.unfeasible_text",
-              definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
+              definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/presupuestos/faq#10")).html_safe %>
           </div>
         <% else %>
           <%= content_tag(:h2, t("budgets.investments.index.by_heading", heading: @heading.name)) if @heading.present? %>
