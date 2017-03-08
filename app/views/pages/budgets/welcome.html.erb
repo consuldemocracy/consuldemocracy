@@ -11,9 +11,13 @@
       <div class="small-12 medium-6 column">
         <h1>Tú decides cómo invertir<br><span>100 millones de euros</span><br>para Madrid</h1>
         <div class="small-12 medium-6 margin-top">
-          <%= link_to "Presenta tu proyecto",
-                      budget_path(Budget.last),
-                      class: "button expanded" %>
+          <%= link_to budget_path(Budget.last), class: "button expanded" do %>
+            <% if Budget.accepting.any? %>
+              Presenta tu proyecto
+            <% else %>
+              Ver proyectos
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div class="small-12 medium-6 column margin-top">
