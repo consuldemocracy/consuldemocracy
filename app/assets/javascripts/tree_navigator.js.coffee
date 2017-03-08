@@ -1,5 +1,5 @@
 App.TreeNavigator =
-  closeNodes: (nodes) ->
+  setNodes: (nodes) ->
     children = nodes.children('ul')
 
     if(children.length == 0)
@@ -7,9 +7,8 @@ App.TreeNavigator =
 
     children.each ->
       link = $(this).prev('a')
-      $('<span class="closed"></span>').insertBefore(link)
-      $(this).hide()
-      App.TreeNavigator.closeNodes($(this).children())
+      $('<span class="open"></span>').insertBefore(link)
+      App.TreeNavigator.setNodes($(this).children())
 
   initialize: ->
     elem = $('[data-tree-navigator]')
@@ -18,7 +17,7 @@ App.TreeNavigator =
 
     ul = elem.find('ul:eq(0)')
     if(ul.length && ul.children().length)
-      App.TreeNavigator.closeNodes(ul.children())
+      App.TreeNavigator.setNodes(ul.children())
 
     $('[data-tree-navigator] span').on
       click: (e) ->
