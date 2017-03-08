@@ -771,8 +771,8 @@ es:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
         budget_investments:
-          one: 1 Propuesta de inversión
-          other: "%{count} Propuestas de inversión"
+          one: 1 Proyecto de presupuestos participativos
+          other: "%{count} Proyectos de presupuestos participativos"
         ballot: Presupuestos participativos
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
