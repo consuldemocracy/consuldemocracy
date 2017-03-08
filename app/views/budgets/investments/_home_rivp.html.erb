@@ -1,5 +1,21 @@
+<% @budget = Budget.find(1)%>
+<% case @budget.phase %>
+<% when "accepting" %>
+  <% banner_color = "background-1" %>
+<% when "reviewing" %>
+  <% banner_color = "background-2" %>
+<% when "selecting" %>
+  <% banner_color = "background-3" %>
+<% when "valuating" %>
+  <% banner_color = "background-4" %>
+<% when "balloting" %>
+  <% banner_color = "background-5" %>
+<% when "finished" %>
+  <% banner_color = "background-6" %>
+<% end %>
+
 <div class="expanded budget no-margin-top">
-  <% @budget = Budget.find(1)%>
+
   <div class="row" data-equalizer data-equalizer-on="medium">
     <div class="small-12 medium-2 column padding picto_ampoule">
       <%= image_tag "custom/ampoule.png" %>
@@ -8,7 +24,7 @@
       <h1>Donnez vie à vos idées !</h1>
       <p class="text-right">Vous avez un projet en tête pour rendre plus agréable la vie dans votre immeuble ? <br> Participez ! <br> Présentez votre projet seul ou avec vos voisins <br> Votez <br> Les idées que vous aurez choisies seront financées par la RIVP et réalisées avec vous.</p>
     </div>
-    <div class="small-12 medium-3 column info padding" data-equalizer-watch>
+    <div class="small-12 medium-3 column padding <%= banner_color %>" data-equalizer-watch>
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
