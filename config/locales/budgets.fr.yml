@@ -137,7 +137,7 @@ fr:
           dates: septembre-octobre
           description: "Votez pour les projets que vous préférez (directement sur le site ou par vote papier). Les projets qui auront obtenu le plus de voix seront retenus dans la limite de l’enveloppe du budget participatif."
           more_info: "Plus d'information"
-          img: balloting.svg
+          img: custom/balloting.svg
           name: balloting
         finished:
           title: Résultats
