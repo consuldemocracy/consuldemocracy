@@ -24,6 +24,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       notice= t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
       redirect_to management_budget_investment_path(@budget, @investment), notice: notice
     else
+      load_categories
       render :new
     end
   end
