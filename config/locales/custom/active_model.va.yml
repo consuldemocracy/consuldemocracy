@@ -10,7 +10,7 @@ va:
       verification:
         residence:
           document_type: "Tipus document"
-          document_number: "Nombre de document (inclosa lletra)"
+          document_number: "Número de document (inclosa lletra)"
           date_of_birth: "Data de naixement"
           postal_code: "Codi postal"
         sms:

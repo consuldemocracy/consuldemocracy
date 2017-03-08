@@ -53,7 +53,7 @@ va:
         accept_terms_text: "Accepte %{terms_url} al Padró"
         accept_terms_text_title: "Accepte els termes d'accés al Padró"
         date_of_birth: Data de naixement
-        document_number: Nombre de document
+        document_number: Número de document
         document_number_help_title: Ajuda
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P"
         document_type:
