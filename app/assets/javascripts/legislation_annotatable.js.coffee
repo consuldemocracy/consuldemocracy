@@ -153,6 +153,26 @@ App.LegislationAnnotatable =
           return
         ), 100)
 
+  propotionalWeight: (v, max) ->
+    Math.floor(v*5/(max+1)) + 1
+
+  addWeightClasses: ->
+    annotationsLoaded: (annotations) ->
+      return if annotations.length == 0
+      weights = annotations.map (ann) -> ann.weight
+      max_weight = Math.max.apply(null, weights)
+      last_annotation = annotations[annotations.length - 1]
+
+      checkExist = setInterval((->
+        if $("span[data-annotation-id='" + last_annotation.id + "']").length
+          for annotation in annotations
+            ann_weight = App.LegislationAnnotatable.propotionalWeight(annotation.weight, max_weight)
+            el = $("span[data-annotation-id='" + annotation.id + "']")
+            el.addClass('weight-' + ann_weight)
+          clearInterval checkExist
+        return
+      ), 100)
+
   initialize: ->
     $(document).off("renderLegislationAnnotation").on("renderLegislationAnnotation", App.LegislationAnnotatable.renderAnnotationComments)
     $(document).off('click', '[data-annotation-id]').on('click', '[data-annotation-id]', App.LegislationAnnotatable.onClick)
@@ -184,6 +204,7 @@ App.LegislationAnnotatable =
           editorExtensions: [App.LegislationAnnotatable.editorExtension]
         })
         .include(App.LegislationAnnotatable.scrollToAnchor)
+        .include(App.LegislationAnnotatable.addWeightClasses)
         .include(annotator.storage.http, { prefix: base_url, urls: { search: "/annotations/search" } })
 
       App.LegislationAnnotatable.app.start().then ->
