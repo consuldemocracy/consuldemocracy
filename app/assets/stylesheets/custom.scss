@@ -2440,6 +2440,11 @@ $campaign-yellow:  #FFDB19;
     color: $text;
   }
 
+  a {
+    color: $link;
+    text-decoration: none;
+  }
+
   a.button, &.button {
     background: black;
     color: white;

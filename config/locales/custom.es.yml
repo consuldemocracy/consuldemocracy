@@ -153,3 +153,4 @@ es:
     form_submit: "Añadir a mi lista"
     table_head: "Título del proyecto de gasto"
     delete: "Eliminar de mi lista"
+    list_title: "Proyectos de gasto seleccionados por:"
