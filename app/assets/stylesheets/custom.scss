@@ -96,6 +96,16 @@
   }
 }
 
+// Delegation
+// - - - - - -
+
+.activity {
+
+  .button.float-right ~ .callout {
+    margin-right: $line-height/2;
+  }
+}
+
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

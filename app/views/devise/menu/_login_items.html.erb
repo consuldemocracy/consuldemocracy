@@ -12,6 +12,11 @@
     <% end %>
   </li>
   <li>
+    <!-- Change link to delegation page -->
+    <%= link_to(t("layouts.header.delegation"), user_path(current_user), accesskey: "d") %>
+    <!-- /. Change link to delegation page -->
+  </li>
+  <li>
     <%= link_to(t("layouts.header.my_activity_link"), user_path(current_user), accesskey: "a") %>
   </li>
   <li>
