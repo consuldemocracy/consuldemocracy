@@ -59,7 +59,7 @@ en:
           residence_card: Residence card
           spanish_id: DNI
         document_type_label: Document type
-        error_not_allowed_age: You must be at least 16 years old
+        error_not_allowed_age: You don't have the required age to participate
         error_not_allowed_postal_code: In order to be verified, you must be registered.
         error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one %{offices}.
         error_verifying_census_offices: Citizen Support Office

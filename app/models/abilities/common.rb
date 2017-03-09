@@ -18,8 +18,6 @@ module Abilities
       end
       can [:retire_form, :retire], Proposal, author_id: user.id
 
-      can :read, SpendingProposal
-
       can :create, Comment
       can :create, Debate
       can :create, Proposal
@@ -46,6 +44,13 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
       end

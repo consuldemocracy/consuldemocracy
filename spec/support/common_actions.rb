@@ -180,6 +180,17 @@ module CommonActions
     expect(page).to_not have_selector('.in-favor a')
   end
 
+  def expect_message_selecting_not_allowed
+    expect(page).to have_content 'No Selecting Allowed'
+    expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_organizations_cannot_vote
+    #expect(page).to have_content 'Organisations are not permitted to vote.'
+    expect(page).to have_content 'Organization'
+    expect(page).to have_selector('.in-favor a', visible: false)
+  end
+
   def create_featured_proposals
     [create(:proposal, :with_confidence_score, cached_votes_up: 100),
      create(:proposal, :with_confidence_score, cached_votes_up: 90),
@@ -252,6 +263,13 @@ module CommonActions
     within("##{resource_name}_#{resource.id}") do
       expect(page).to_not have_css ".label.round"
       expect(page).to_not have_content "Employee"
+    end
+  end
+
+  def add_to_ballot(budget_investment)
+    within("#budget_investment_#{budget_investment.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
     end
   end
 

@@ -94,10 +94,6 @@ class Proposal < ActiveRecord::Base
     summary
   end
 
-  def description
-    super.try :html_safe
-  end
-
   def total_votes
     cached_votes_up
   end

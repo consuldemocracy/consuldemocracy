@@ -58,6 +58,102 @@ es:
           on_users: Usuarios
         title: Actividad de los Moderadores
         type: Tipo
+    budgets:
+      index:
+        title: Presupuestos participativos
+        new_link: Crear nuevo presupuesto
+        filters:
+          current: Abiertos
+          finished: Terminados
+        budget_investments: Ver propuestas de inversión
+        table_name: Nombre
+        table_phase: Fase
+        table_investments: Propuestas de inversión
+        table_edit_groups: Grupos de partidas
+        table_edit_budget: Editar
+        edit_groups: Editar grupos de partidas
+        edit_budget: Editar presupuesto
+      create:
+        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+      update:
+        notice: Campaña de presupuestos participativos actualizada
+      edit:
+        title: Editar campaña de presupuestos participativos
+      new:
+        title: Nuevo presupuesto ciudadano
+      show:
+        groups:
+          one: 1 Grupo de partidas presupuestarias
+          other: "%{count} Grupos de partidas presupuestarias"
+      form:
+        group: Nombre del grupo
+        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
+        add_group: Añadir nuevo grupo
+        create_group: Crear grupo
+        heading: Nombre de la partida
+        add_heading: Añadir partida
+        amount: Cantidad
+        save_heading: Guardar partida
+        no_heading: Este grupo no tiene ninguna partida asignada.
+        table_heading: Partida
+        table_amount: Cantidad
+    budget_investments:
+      index:
+        heading_filter_all: Todas las partidas
+        administrator_filter_all: Todos los administradores
+        valuator_filter_all: Todos los evaluadores
+        tags_filter_all: Todas las etiquetas
+        filters:
+          valuation_open: Abiertas
+          without_admin: Sin administrador
+          managed: Gestionando
+          valuating: En evaluación
+          valuation_finished: Evaluación finalizada
+          valuation_finished_feasible: Viables
+          selected: Seleccionadas
+          all: Todas
+        title: Propuestas de inversión
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sin admin asignado
+        no_valuators_assigned: Sin evaluador
+        feasibility:
+          feasible: "Viable (%{price})"
+          unfeasible: "Inviable"
+          undecided: "Sin decidir"
+        selected: "Seleccionada"
+        select: "Seleccionar"
+        table_id: "ID"
+        table_title: "Título"
+        table_admin: "Administrador"
+        table_valuator: "Evaluador"
+        table_geozone: "Ámbito de actuación"
+        table_feasibility: "Viabilidad"
+        table_valuation_finished: "Ev. Fin."
+        table_selection: "Selección"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Evaluadores asignados
+        classification: Clasificación
+        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        edit: Editar
+        edit_classification: Editar clasificación
+        by: Autor
+        sent: Fecha
+        group: Grupo
+        heading: Partida
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sin definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Evaluadores
+        select_heading: Seleccionar partida
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
+        undefined: Sin definir
+      search_unfeasible: Buscar inviables
     comments:
       index:
         filter: Filtro
@@ -94,6 +190,7 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      budgets: Presupuestos participativos
       debate_topics: Temas de debate
       geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos

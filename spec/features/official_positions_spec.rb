@@ -73,6 +73,7 @@ feature 'Official positions' do
     context "Spending proposals" do
 
       background do
+        Setting["feature.spending_proposals"] = true
         @spending_proposal1 = create(:spending_proposal, author: @user1)
         @spending_proposal2 = create(:spending_proposal, author: @user2)
       end

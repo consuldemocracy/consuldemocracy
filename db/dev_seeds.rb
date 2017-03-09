@@ -25,8 +25,9 @@ Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Consul')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
-Setting.create(key: 'feature.spending_proposals', value: "true")
-Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: "true")
+Setting.create(key: 'feature.spending_proposals', value: nil)
+Setting.create(key: 'feature.spending_proposal_features.voting_allowed', value: nil)
+Setting.create(key: 'feature.budgets', value: "true")
 Setting.create(key: 'feature.twitter_login', value: "true")
 Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
@@ -38,6 +39,7 @@ Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
 Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
+Setting.create(key: 'min_age_to_participate', value: '16')
 
 puts "Creating Geozones"
 ('A'..'Z').each { |i| Geozone.create(name: "District #{i}", external_code: i.ord, census_code: i.ord) }
@@ -52,9 +54,13 @@ end
 
 admin = create_user('admin@consul.dev', 'admin')
 admin.create_administrator
+admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
 
 moderator = create_user('mod@consul.dev', 'mod')
 moderator.create_moderator
+
+manager = create_user('manager@consul.dev', 'manager')
+manager.create_manager
 
 valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
@@ -321,6 +327,73 @@ puts "Creating Valuation Assignments"
 (1..17).to_a.sample.times do
   SpendingProposal.reorder("RANDOM()").first.valuators << valuator.valuator
 end
+
+
+puts "Creating Budgets"
+
+Budget::PHASES.each_with_index do |phase, i|
+  descriptions = Hash[Budget::PHASES.map{ |p| ["description_#{p}",
+                                               "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"] }]
+  budget = Budget.create!(
+    descriptions.merge(
+      name: (Date.current - 10 + i).to_s,
+      currency_symbol: "€",
+      phase: phase
+    )
+  )
+
+  puts budget.name
+
+  (1..([1, 2, 3].sample)).each do
+    group = budget.groups.create!(name: Faker::StarWars.planet)
+
+    geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
+    geozones.each do |geozone|
+      group.headings << group.headings.create!(name: geozone.name,
+                                               #geozone: geozone,
+                                               price: rand(1 .. 100) * 100000)
+
+    end
+    print "#{group.name} "
+  end
+  puts ""
+end
+
+
+puts "Creating Investments"
+tags = Faker::Lorem.words(10)
+(1..100).each do |i|
+  heading = Budget::Heading.reorder("RANDOM()").first
+
+  investment = Budget::Investment.create!(
+    author: User.reorder("RANDOM()").first,
+    heading: heading,
+    group: heading.group,
+    budget: heading.group.budget,
+    title: Faker::Lorem.sentence(3).truncate(60),
+    external_url: Faker::Internet.url,
+    description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+    created_at: rand((Time.now - 1.week) .. Time.now),
+    feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
+    unfeasibility_explanation: Faker::Lorem.paragraph,
+    valuation_finished: [false, true].sample,
+    tag_list: tags.sample(3).join(','),
+    price: rand(1 .. 100) * 100000,
+    terms_of_service: "1")
+  puts "    #{investment.title}"
+end
+
+puts "Selecting Investments"
+Budget.balloting.reorder("RANDOM()").limit(3).each do |budget|
+  budget.investments.feasible.reorder("RANDOM()").limit(10).update_all(selected: true)
+end
+
+puts "Creating Valuation Assignments"
+
+(1..17).to_a.sample.times do
+  Budget::Investment.reorder("RANDOM()").first.valuators << valuator.valuator
+end
+
 
 puts "Creating Legislation"
 

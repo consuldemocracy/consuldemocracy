@@ -35,6 +35,14 @@
       </li>
     <% end %>
 
+    <% if feature?(:budgets) %>
+      <li <%= "class=active" if controller_name == "budgets" %>>
+        <%= link_to admin_budgets_path do %>
+          <span class="icon-budget"></span><%= t("admin.menu.budgets") %>
+        <% end %>
+      </li>
+    <% end %>
+
     <% if feature?(:signature_sheets) %>
       <li <%= "class=active" if controller_name == "signature_sheets" %>>
         <%= link_to admin_signature_sheets_path do %>

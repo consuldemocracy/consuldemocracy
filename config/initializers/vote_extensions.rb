@@ -13,6 +13,10 @@ ActsAsVotable::Vote.class_eval do
     where(votable_type: 'SpendingProposal', votable_id: spending_proposals)
   end
 
+  def self.for_budget_investments(budget_investments)
+    where(votable_type: 'Budget::Investment', votable_id: budget_investments)
+  end
+
   def value
     vote_flag
   end

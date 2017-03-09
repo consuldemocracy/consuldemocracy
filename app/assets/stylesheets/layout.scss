@@ -70,6 +70,11 @@ a {
   }
 }
 
+.button.hollow {
+  border: 1px solid $link;
+  color: $link;
+}
+
 .postfix.button {
   padding: 0;
 }
@@ -374,6 +379,24 @@ header {
 
   ul {
     margin-bottom: 0;
+
+    li {
+      display: block;
+    }
+
+    @include breakpoint(medium) {
+      li {
+        display: inline-block;
+
+        &:after {
+          content: "|";
+        }
+
+        &:last-child:after {
+          content: none;
+        }
+      }
+    }
   }
 }
 
@@ -600,12 +623,28 @@ h2.sidebar-title {
 // --------------
 
 .auth-page {
+
+  .wrapper {
+    margin: 0 auto (-$line-height)*14;
+  }
+}
+
+.auth-image {
   background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
-  h1:not(.logo) {
-    @include logo;
+  @include breakpoint(medium) {
+    min-height: $line-height*42;
+  }
+
+  h1 {
+    margin-top: $line-height;
+
+    img {
+      height: rem-calc(80);
+      width: rem-calc(80);
+    }
 
     a {
       color: white;
@@ -621,15 +660,27 @@ h2.sidebar-title {
   }
 }
 
-.auth {
+.auth-form {
+
+  @include breakpoint(medium) {
+    padding-top: $line-height*4;
+  }
 
   p, a, .checkbox {
     font-size: $small-font-size;
   }
+}
 
-  .panel {
+.auth-divider {
+  border-bottom: 1px solid $border;
+  height: rem-calc(14);
+  margin: $line-height 0;
+  text-align: center;
+
+  span {
     background: white;
-    border: 0;
+    font-weight: bold;
+    padding: 0 $line-height/2;
   }
 }
 
@@ -805,6 +856,11 @@ form {
 .callout {
   font-size: $small-font-size;
 
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
@@ -821,12 +877,6 @@ form {
     background-color: $warning-bg;
     border-color: $warning-border;
     color: $color-warning;
-
-    a {
-      color: $color-warning;
-      font-weight: bold;
-      text-decoration: underline;
-    }
   }
 
   &.alert, &.error {

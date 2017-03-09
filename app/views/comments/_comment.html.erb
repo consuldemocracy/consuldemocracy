@@ -1,5 +1,6 @@
-<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (@comment_flags[comment.id] if @comment_flags)] do %>
-	<ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
+<% comment_flags ||= @comment_flags %>
+<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
+  <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
       <% if comment.hidden? || comment.user.hidden? %>
         <% if comment.children.size > 0 %>

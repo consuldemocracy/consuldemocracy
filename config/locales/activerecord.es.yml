@@ -4,6 +4,12 @@ es:
       activity:
         one: "actividad"
         other: "actividades"
+      budget:
+        one: "Presupuesto participativo"
+        other: "Presupuestos participativos"
+      budget/investment:
+        one: "Propuesta de inversión"
+        other: "Propuestas de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -35,6 +41,25 @@ es:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
     attributes:
+      budget:
+        name: "Nombre"
+        description_accepting: "Descripción durante la fase de aceptación"
+        description_reviewing: "Descripción durante la fase de revisión"
+        description_selecting: "Descripción durante la fase de selección"
+        description_valuating: "Descripción durante la fase de evaluación"
+        description_balloting: "Descripción durante la fase de votación"
+        description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
+        description_finished: "Descripción cuando el presupuesto ha finalizado"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        administrator_id: "Administrador"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        heading_id: "Partida presupuestaria"
+        title: "Título"
+        location: "Ubicación"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
       comment:
         body: "Comentario"
         user: "Usuario"

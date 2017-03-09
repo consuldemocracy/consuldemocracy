@@ -23,6 +23,7 @@ en:
     org_name: "Organization"
     place_name: "Place"
     feature:
+      budgets: Participatory budgeting
       twitter_login: Twitter login
       facebook_login: Facebook login
       google_login: Google login
@@ -36,3 +37,4 @@ en:
     meta_description: "Site description (SEO)"
     meta_keywords: "Keywords (SEO)"
     verification_offices_url: Verification offices URL
+    min_age_to_participate: Minimum age needed to participate

@@ -63,13 +63,13 @@ feature 'DocumentVerifications' do
   end
 
   scenario 'User age is checked' do
-    expect_any_instance_of(Verification::Management::Document).to receive(:under_sixteen?).and_return(true)
+    expect_any_instance_of(Verification::Management::Document).to receive(:under_age?).and_return(true)
 
     visit management_document_verifications_path
     fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
-    expect(page).to have_content "You must be over 16 to verify your account."
+    expect(page).to have_content "You don't have the required age to verify your account."
   end
 
 end

@@ -152,12 +152,13 @@ es:
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
+    budget/investment: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos
+    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -194,7 +195,7 @@ es:
       external_link_transparency: Transparencia
       external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
-      logo: Consul
+      logo: Consul logo
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -213,7 +214,8 @@ es:
       proposals: Propuestas
       proposal_ballot: Votaciones
       see_all: Ver propuestas
-      spending_proposals: Presupuestos participativos
+      budgets: Presupuestos ciudadanos
+      spending_proposals: "Propuestas de inversión"
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -245,14 +247,23 @@ es:
     facebook:
       sign_in: Entra con Facebook
       sign_up: Regístrate con Facebook
+      name: Facebook
     finish_signup:
       title: Añade tu email
     google_oauth2:
       sign_in: Entra con Google
       sign_up: Regístrate con Google
+      name: Google
     twitter:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
+      name: Twitter
+    info_sign_in: "Entra con:"
+    info_sign_up: "Regístrate con:"
+    or_fill: "O rellena el siguiente formulario:"
+    finish_signup:
+      title: "Detalles adicionales de tu cuenta"
+      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
   proposals:
     create:
       form:
@@ -398,14 +409,11 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    "yes": "Sí"
+    "no": "No"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
-      author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
-      author_type_3: 'Director general'
-      author_type_4: 'Concejal'
-      author_type_5: 'Alcaldesa'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
@@ -420,6 +428,7 @@ es:
       search: 'Filtrar'
       title: 'Búsqueda avanzada'
       to: 'Hasta'
+    delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
@@ -431,6 +440,7 @@ es:
     hide: Ocultar
     print:
       print_button: Imprimir esta información
+    search: Buscar
     show: Mostrar
     suggest:
       debate:
@@ -463,6 +473,7 @@ es:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
@@ -546,8 +557,7 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
+      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
       filters:
         comments:
           one: 1 Comentario
@@ -558,9 +568,9 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
-        spending_proposals:
-          one: 1 Propuesta de inversión
-          other: "%{count} Propuestas de inversión"
+        budget_investments:
+          one: 1 Proyecto de presupuestos participativos
+          other: "%{count} Proyectos de presupuestos participativos"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
@@ -587,6 +597,13 @@ es:
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
     debates:
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
@@ -616,19 +633,6 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
-  omniauth:
-    finish_signup:
-      title: "Detalles adicionales de tu cuenta"
-      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
-    twitter:
-      sign_in: "Entra con Twitter"
-      sign_up: "Regístrate con Twitter"
-    facebook:
-      sign_in: "Entra con Facebook"
-      sign_up: "Regístrate con Facebook"
-    google_oauth2:
-      sign_in: "Entra con Google"
-      sign_up: "Regístrate con Google"
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"

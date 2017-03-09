@@ -29,8 +29,7 @@ pt-BR:
       user_permission_support_proposal: Apoiar propostas
       user_permission_title: Participação
       user_permission_verify: Para realizar todas as ações verifique sua conta.
-      user_permission_verify_info: "* Somente para usuários no Censo da Cidade de
-        Madrid."
+      user_permission_verify_info: "* Somente para usuários no Censo da Cidade de Madrid."
       user_permission_votes: Participar da votação final
       verified_account: Conta verificada
       verify_my_account: Verificar minha conta
@@ -363,6 +362,7 @@ pt-BR:
     - Sex
     - Sab
     abbr_month_names:
+    -
     - Jan
     - Fev
     - Mar
@@ -384,9 +384,9 @@ pt-BR:
     - Sexta
     - Sábado
     formats:
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
-      short: "%b %d"
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %b"
     month_names:
     - Janeiro
     - Fevereiro
@@ -401,9 +401,9 @@ pt-BR:
     - Novembro
     - Dezembro
     order:
-    - ano
-    - mês
-    - dia
+    - :day
+    - :month
+    - :year
   datetime:
     distance_in_words:
       about_x_hours:
@@ -628,8 +628,7 @@ pt-BR:
           email.
         info_text: Sua senha não será alterada, a menos que você acesse o link e edite
           a mesma.
-        text: 'Nós recebemos uma solicitação para alteração de sua senha. Você poderá
-          realizar isto, seguindo este link:'
+        text: 'Nós recebemos uma solicitação para alteração de sua senha. Você poderá realizar isto, seguindo este link:'
         title: Alterar sua senha
       unlock_instructions:
         hello: Olá
@@ -652,20 +651,15 @@ pt-BR:
           password_label: Senha
           phone_number_label: Número de telefone
           responsible_name_label: Nome completo da pessoa responsável pelo coletivo
-          responsible_name_note: Esta será a pessoa representando a associação/coletivo
-            na qual será identificada as propostas apresentadas
+          responsible_name_note: Esta será a pessoa representando a associação/coletivo na qual será identificada as propostas apresentadas
           submit: Registrar
           title: Registrar como uma organização ou coletivo
         success:
           back_to_index: Eu compreendo; voltar para a página principal
-          instructions_1_html: "<b>Entraremos em contato brevemente</b> para verificar
-            que você de fato representa este coletivo."
-          instructions_2_html: Enquanto seu <b>email é verificado</b>, nós lhe enviamos
-            um <b>link para confirmar sua conta</b>.
-          instructions_3_html: Depois de confirmado, você poderá iniciar a participação
-            como um coletivo sem verificação
-          thank_you_html: Obrigado por registrar seu coletivo no website. Ele está
-            agora <b>pendente de verificação</b>.
+          instructions_1_html: "<b>Entraremos em contato brevemente</b> para verificar que você de fato representa este coletivo."
+          instructions_2_html: Enquanto seu <b>email é verificado</b>, nós lhe enviamos um <b>link para confirmar sua conta</b>.
+          instructions_3_html: Depois de confirmado, você poderá iniciar a participação como um coletivo sem verificação
+          thank_you_html: Obrigado por registrar seu coletivo no website. Ele está agora <b>pendente de verificação</b>.
           title: Registro de organização/coletivo
     passwords:
       edit:
@@ -866,7 +860,7 @@ pt-BR:
       external_link_transparency: Transparência
       external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
-      logo: Consul
+      logo: Consul logotipo
       moderation: Moderação
       more_information: Mais informações
       my_account_link: Minha conta
@@ -925,8 +919,7 @@ pt-BR:
     document_type_label: Tipo do documento
     document_verifications:
       already_verified: Esta conta de usuário já foi verificada.
-      has_no_account_html: No sentido de criar uma conta, vá para %{link} e clique
-        em <b>'Register'</b> na parte superior esquerda de sua tela/janela.
+      has_no_account_html: No sentido de criar uma conta, vá para %{link} e clique em <b>'Register'</b> na parte superior esquerda de sua tela/janela.
       in_census_has_following_permissions: 'Este usuário pode participar no website
         com as seguintes permissões:'
       not_in_census: Este documento não está registrado.
@@ -1383,11 +1376,6 @@ pt-BR:
   shared:
     advanced_search:
       author_type: Por categoria de autor
-      author_type_1: Servidor público
-      author_type_2: Organização municipal
-      author_type_3: Diretor geral
-      author_type_4: Conselheiro municipal
-      author_type_5: Prefeita
       author_type_blank: Selecione um categoria
       date: Por data
       date_1: "Últimas 24 horas"
@@ -1454,8 +1442,7 @@ pt-BR:
     new:
       back_link: Voltar
       more_info: Como funciona o orçamento participativo?
-      recommendation_one: "É mandatório que a proposta faça referência a uma ação
-        orçamentária."
+      recommendation_one: "É mandatório que a proposta faça referência a uma ação orçamentária."
       recommendations_title: Como criar uma proposta de despesa
       recommendation_three: Tente descer aos detalhes quando descrever sua proposta
         de despesa de maneira a ajudar a equipe de revisão entender seu argumento.
@@ -1470,15 +1457,15 @@ pt-BR:
   time:
     am: am
     formats:
-      datetime: "%Y-%m-%d %H:%M:%S"
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      long: "%d de %B de %Y %H:%M"
+      short: "%d de %b %H:%M"
+      datetime: "%d/%m/%Y %H:%M:%S"
     pm: pm
   unauthorized:
     default: Você não possui permissão de acesso a esta página.
     manage:
-      all: Você não possui permissão para executar esta ação '%{action}' em %{subject}.
+      all: "Você não possui permissão para executar esta ação '%{action}' em %{subject}."
   users:
     show:
       deleted: Apagado
@@ -1611,8 +1598,7 @@ pt-BR:
         submit_button: Enviar código
       show:
         email_title: Emails
-        explanation: 'Nós atualmente possuímos os seguintes detalhes no Registro:
-          por favor selecione um método para o envio de seu código de confirmação.'
+        explanation: 'Nós atualmente possuímos os seguintes detalhes no Registro: por favor selecione um método para o envio de seu código de confirmação.'
         phone_title: Números de telefone
         title: Informação disponível
         use_another_phone: Usar outro telefone
@@ -1657,8 +1643,7 @@ pt-BR:
     more_information: Mais informações sobre esta página
     proposal:
       alt: "Ícone proposta"
-      description: Espaço aberto para propostas cidadãs sobre o tipo de cidade dentro
-        da qual nós queremos viver.
+      description: Espaço aberto para propostas cidadãs sobre o tipo de cidade dentro da qual nós queremos viver.
       title: Sua proposta
     welcome:
       go_to_index: Veja propostas e debates

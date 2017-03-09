@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
+  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
   has_many :comments, -> { with_hidden }
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
@@ -92,9 +93,18 @@ class User < ActiveRecord::Base
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def budget_investment_votes(budget_investments)
+    voted = votes.for_budget_investments(budget_investments)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
+  end
+
+  def voted_in_group?(group)
+    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
   end
 
   def administrator?
@@ -188,6 +198,10 @@ class User < ActiveRecord::Base
 
   def self.username_max_length
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60
+  end
+
+  def self.minimum_required_age
+    (Setting['min_age_to_participate'] || 16).to_i
   end
 
   def show_welcome_screen?
