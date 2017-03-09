@@ -37,7 +37,9 @@ App.LegislationAnnotatable =
     return
 
   renderAnnotationComments: (event) ->
-    $('#comments-box').css({top: event.offset - $('.calc-comments').offset().top})
+    if event.offset
+      $("#comments-box").css({top: event.offset - $('.calc-comments').offset().top})
+
     if App.LegislationAnnotatable.isMobile()
       return
 
@@ -58,16 +60,29 @@ App.LegislationAnnotatable =
     $('[data-annotation-id]').removeClass('current-annotation')
 
     target = $(this)
+
+    parents = target.parents('.annotator-hl')
+    parents_ids = parents.map (_, elem) ->
+      $(elem).data("annotation-id")
+
     annotation_id = target.data('annotation-id')
     $('[data-annotation-id="'+annotation_id+'"]').addClass('current-annotation')
 
+    $('#comments-box').html('')
     App.LegislationAllegations.show_comments()
     $("#comments-box").show()
+
     $.event.trigger
       type: "renderLegislationAnnotation"
       annotation_id: target.data("annotation-id")
       annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
       offset: target.offset()["top"]
+
+    parents_ids.each (i, pid) ->
+      $.event.trigger
+        type: "renderLegislationAnnotation"
+        annotation_id: pid
+        annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
 
   isMobile: () ->
     return window.innerWidth <= 652
@@ -126,6 +141,7 @@ App.LegislationAnnotatable =
           if $("span[data-annotation-id='" + ann_id + "']").length
             el = $("span[data-annotation-id='" + ann_id + "']")
             el.addClass('current-annotation')
+            $('#comments-box').html('')
             App.LegislationAllegations.show_comments()
             $('html,body').animate({scrollTop: el.offset().top})
             $.event.trigger

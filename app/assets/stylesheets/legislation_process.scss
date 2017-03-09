@@ -827,14 +827,18 @@ $epigraph-line-height: rem-calc(22);
         display: none;
       }
 
+      #comments-box {
+        position: absolute;
+        top: 230px;
+      }
+
       .comment-box {
         width: 375px;
         padding: 1rem;
         background: #F9F9F9;
         border: 1px solid $border;
         display: block;
-        position: absolute;
-        top: 230px;
+        margin-bottom: 2rem;
 
         .button {
           font-size: $small-font-size;
@@ -984,14 +988,6 @@ $epigraph-line-height: rem-calc(22);
             }
           }
         }
-      }
-
-      .comment-box:nth-child(4) {
-        top: 838px;
-      }
-
-      .comment-box:nth-child(5) {
-        top: 2035px;
       }
 
       .draft-panel {
