@@ -149,7 +149,7 @@ fr:
       theme_cards:
         living_environment:
           title: Cadre de vie
-          description: "Actions propreté / Végétalisation / Compostage collectif / Jardin partagé / Lutte contre les incivilités"
+          description: Actions propreté / Végétalisation / Compostage collectif / Jardin partagé / Lutte contre les incivilités
           img: custom/living_environment.svg
         solidarity:
           title: Solidarité
