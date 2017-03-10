@@ -7,7 +7,7 @@
         <%= t("delegation.list_title") %>&nbsp;<%= link_to @user.name, user_path(@user.id) %>
       </h1>
 
-      <%= link_to(t("delegation.header_button"), new_budget_recommendation_path(budget_id: Budget.last.id), class: "button margin-top") %>
+      <%= link_to(t("delegation.header_button"), new_budget_recommendation_path(budget_id: Budget.current.last.slug), class: "button margin-top") %>
     </div>
   </div>
 </div>
