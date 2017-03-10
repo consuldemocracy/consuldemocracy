@@ -22,6 +22,24 @@ $sixth-color: #FF9200;
   weight: 200px;
 }
 
+.color-1{color:$second-color;}
+.background-1{background-color: $second-color;}
+
+.color-2{color: $second-color;}
+.background-2{background-color: $second-color;}
+
+.color-3{color: $second-color;}
+.background-3{background-color: $second-color;}
+
+.color-4{color: $fourth-color;}
+.background-4{background-color: $fourth-color;}
+
+.color-5{color: $fifth-color;}
+.background-5{background-color: $fifth-color;}
+
+.color-6{color: $sixth-color;}
+.background-6{background-color: $sixth-color;}
+
 .card {
 
   border-radius: 5px;

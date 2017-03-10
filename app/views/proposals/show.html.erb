@@ -121,16 +121,7 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
-        <div id="social-share" class="sidebar-divider"></div>
-        <h2><%= t("proposals.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @proposal.title %> <%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
-        </div>
+
       </aside>
     </div>
   </div>
