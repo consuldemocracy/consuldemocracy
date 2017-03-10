@@ -2535,6 +2535,14 @@ ul.ballot-list {
   background: #5A6175;
 }
 
+.investment-project, .investment-project-show,
+.budget-investment, .budget-investment-show {
+
+  .total-supports {
+    color: #5A6175 !important;
+  }
+}
+
 .budget-investment .participation-not-allowed {
   height: auto;
 }
