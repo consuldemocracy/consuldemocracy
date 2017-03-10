@@ -1104,11 +1104,12 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // --------------------
 
 [class^="level-"] {
-  color: white;
+  color: black;
 }
 
 .is-author {
-  background: #008CCF;
+  background: #00A5F1;
+  color: black;
 }
 
 .is-association {
