@@ -1,0 +1,98 @@
+<% if @heading.present? %>
+  <section class="no-margin-top margin-bottom">
+    <div class="expanded budget jumbo-budget budget-heading">
+
+      <div class="row">
+        <div class="small-12 large-9 column padding">
+          <% if @heading.group.headings.count == 1 %>
+            <%= back_link_to budget_path(@budget, unfeasible: params[:unfeasible]) %>
+          <% else %>
+            <%= back_link_to budget_group_path(@budget,
+                    @heading.group,
+                    unfeasible: params[:unfeasible]) %>
+          <% end %>
+          <% if can? :show, @ballot %>
+            <%= link_to t("budgets.investments.header.check_ballot"),
+                        budget_ballot_path(@budget),
+                        class: "button small float-right" %>
+          <% end %>
+          <h1><%= @budget.name %></h1>
+          <% if cannot? :show, @ballot %>
+            <h2><%= @heading.name %> <%= @budget.formatted_heading_price(@heading) %></h2>
+          <% end %>
+
+        </div>
+        <div class="small-12 large-3 info padding column">
+          <p>
+            <strong><%= t('budgets.show.phase') %></strong>
+          </p>
+          <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+
+          <% if @budget.accepting? %>
+            <% if current_user %>
+              <% if current_user.level_two_or_three_verified? %>
+                <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+              <% else %>
+                <div class="callout warning margin-top">
+                  <%= t("budgets.investments.index.sidebar.verified_only",
+                      verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="callout primary margin-top">
+                <%= t("budgets.investments.index.sidebar.not_logged_in",
+                      sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
+                      sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
+      </div>
+
+
+
+      <div class="row progress-votes">
+        <div class="small-12 column">
+          <% if can? :show, @ballot %>
+            <div id="check-ballot" style="display: none;">
+              <%= link_to t("budgets.investments.header.check_ballot"),
+                          budget_ballot_path(@budget) %>
+            </div>
+            <% if @ballot.valid_heading?(@heading) %>
+              <div class="progress-bar-nav" data-fixed-bar>
+                <h2><%= @heading.name %></h2>
+                <div id="progress_bar" class="no-margin-top">
+                  <%= render 'budgets/ballot/progress_bar' %>
+                </div>
+              </div>
+            <% else %>
+              <h2><%= @heading.name %></h2>
+              <div class="small-12 medium-9">
+                <div class="callout warning">
+                  <%= t("budgets.investments.header.different_heading_assigned_html",
+                        heading_link: link_to(
+                          @assigned_heading.name,
+                          budget_investments_path(@budget, heading: @assigned_heading))
+                       ) %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <!-- <h1 class="margin-top"><%= @heading.name %></h1>
+            <h2><%= @budget.formatted_heading_price(@heading) %></h2> -->
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% else %>
+  <div class="expanded jumbo-budget padding no-margin-top margin-bottom">
+    <div class="row">
+      <div class="small-12 column">
+        <%= back_link_to budget_path(@budget) %>
+        <h1><%= t('budgets.investments.index.title') %></h1>
+      </div>
+    </div>
+  </div>
+<% end %>
