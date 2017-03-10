@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="small-12 column">
+    <h1><%= t("delegation.title") %></h1>
+    <p>
+      <%= t("delegation.text") %><br>
+      <%= t("delegation.help_html") %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <form>
+      <label>ID de proyecto de gasto</label>
+      <span class="note"><%= t("delegation.form_label_note") %></span>
+      <textarea></textarea>
+      <input type="submit" value="<%= t('delegation.form_submit') %>" class="button">
+    </form>
+  </div>
+  <div class="small-12 column">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">
+            <%= t("delegation.table_head") %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- each investment project do -->
+        <tr>
+          <td>
+            <%= link_to "Título de la propuesta", "#" %>
+          </td>
+          <td class="text-right">
+            <%= link_to "Eliminar de mi lista", "#", class: "delete" %>
+          </td>
+        </tr>
+        <!-- /. each investment project do -->
+      </tbody>
+    </table>
+  </div>
+</div>
