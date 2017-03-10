@@ -8,16 +8,10 @@
     <div class="small-12 medium-7 column module" data-equalizer-watch>
       <div class="module-content">
         <h1>Presupuestos participativos 2017</h1>
-        <p>Apoya proyectos para los <strong>100 millones de euros</strong> de presupuestos participativos. Tú decides cómo gastarlos.</p>
-        <% if user_signed_in? %>
-          <div class="small-12 medium-6 large-4">
-            <%= link_to("Envía tu proyecto", budget_path(Budget.last), class: "button expanded") if Budget.last %>
-          </div>
-        <% else %>
-          <div class="small-12 medium-6 large-4">
-            <%= link_to "Participa", budgets_welcome_path, class: "button expanded" %>
-          </div>
-        <% end %>
+        <p>Apoya proyectos para los <strong>100 millones de euros</strong> de presupuestos participativos.<br> Tú decides cómo gastarlos.</p>
+        <div class="small-12 medium-6 large-4">
+          <%= link_to "Apoyar proyectos", budgets_welcome_path, class: "button expanded" %>
+        </div>
       </div>
     </div>
   </div>
