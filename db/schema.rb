@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225091223) do
+ActiveRecord::Schema.define(version: 20170310113522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -182,6 +182,16 @@ ActiveRecord::Schema.define(version: 20170225091223) do
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+
+  create_table "budget_recommendations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "investment_id"
+    t.integer  "budget_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "budget_recommendations", ["user_id"], name: "index_budget_recommendations_on_user_id", using: :btree
 
   create_table "budget_valuator_assignments", force: :cascade do |t|
     t.integer  "valuator_id"
@@ -1049,6 +1059,7 @@ ActiveRecord::Schema.define(version: 20170225091223) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "budget_recommendations", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
