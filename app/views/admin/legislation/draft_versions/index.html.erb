@@ -41,7 +41,7 @@
           </td>
           <td><%= draft_version.created_at.to_date %></td>
           <td><%= draft_version.status %> <%= link_to "(#{t('.preview')})", legislation_process_draft_version_path(@process, draft_version) if draft_version.status == 'draft' %></td>
-          <td><%#= draft_version.comments %></td>
+          <td><%= draft_version.total_comments %></td>
           <td><%= draft_version.final_version %></td>
         </tr>
       <% end %>
