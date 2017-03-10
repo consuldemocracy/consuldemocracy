@@ -349,6 +349,7 @@ feature 'Budget Investments' do
         carabanchel_investment = create(:budget_investment, :selected, heading: carabanchel)
         salamanca_investment   = create(:budget_investment, :selected, heading: salamanca)
 
+        login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
         within("#budget_investment_#{carabanchel_investment.id}") do
@@ -374,19 +375,33 @@ feature 'Budget Investments' do
       end
 
       scenario "When supporting in another group", :js do
-        carabanchel     = create(:budget_heading, group: group)
-        another_heading = create(:budget_heading, group: create(:budget_group, budget: budget))
+        carabanchel = create(:budget_heading, group: group)
+
+        group2 = create(:budget_group, budget: budget)
+        another_heading1 = create(:budget_heading, group: group2)
+        another_heading2 = create(:budget_heading, group: group2)
 
         carabanchel_investment   = create(:budget_investment, heading: carabanchel)
-        another_group_investment = create(:budget_investment, heading: another_heading)
+        another_group_investment = create(:budget_investment, heading: another_heading1)
 
         create(:vote, votable: carabanchel_investment, voter: author)
 
         login_as(author)
-        visit budget_investments_path(budget, heading_id: another_heading.id)
+        visit budget_investments_path(budget, heading_id: another_heading1.id)
 
         within("#budget_investment_#{another_group_investment.id}") do
           expect(page).to have_css(".in-favor a[data-confirm]")
+        end
+      end
+
+      scenario "When supporting in a group with a single heading", :js do
+        all_city_investment = create(:budget_investment, heading: heading)
+
+        login_as(author)
+        visit budget_investments_path(budget, heading_id: heading.id)
+
+        within("#budget_investment_#{all_city_investment.id}") do
+          expect(page).to_not have_css(".in-favor a[data-confirm]")
         end
       end
     end
@@ -573,6 +588,23 @@ feature 'Budget Investments' do
       within('#sidebar') do
         expect(page).to have_content('My ballot')
       end
+    end
+
+  end
+
+  context "Navigation" do
+
+    scenario "Back from show" do
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading2)
+
+      visit budget_investment_path(budget, investment1)
+      click_link "Go back"
+
+      expect(page).to     have_content investment1.title
+      expect(page).to_not have_content investment2.title
     end
 
   end

@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="small-12 medium-9 column">
-      <%= back_link_to budget_investments_path(investment.budget) %>
+      <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
       <h1><%= investment.title %></h1>
 

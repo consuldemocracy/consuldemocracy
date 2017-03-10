@@ -63,8 +63,6 @@ es:
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Estimado usuario,"
-      new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nueva propuesta de inversión"
       reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, al correo preparticipativos@madrid.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
       sincerely: "Atentamente"
       signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"

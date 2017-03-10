@@ -2521,6 +2521,24 @@ ul.ballot-list {
   }
 }
 
+.investment-project .supports .total-supports,
+.investment-project-show .supports .total-supports,
+.budget-investment .supports .total-supports,
+.budget-investment-show .supports .total-supports {
+  color: #5A6175;
+}
+
+.investment-project .supports .button-support,
+.investment-project-show .supports .button-support,
+.budget-investment .supports .button-support,
+.budget-investment-show .supports .button-support {
+  background: #5A6175;
+}
+
+.budget-investment .participation-not-allowed {
+  height: auto;
+}
+
 // 12. Nvotes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
