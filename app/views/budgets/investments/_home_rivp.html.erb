@@ -1,3 +1,4 @@
+<div class="home">
 <% @budget = Budget.find(1)%>
 <% case @budget.phase %>
 <% when "accepting" %>
@@ -17,12 +18,16 @@
 <div class="expanded budget no-margin-top">
 
   <div class="row" data-equalizer data-equalizer-on="medium">
-    <div class="small-12 medium-2 column padding picto_ampoule">
+    <div class="small-12 medium-2 column padding picto_ampoule" data-equalizer-watch>
       <%= image_tag "custom/ampoule.png" %>
     </div>
     <div class="small-12 medium-7 column padding" data-equalizer-watch>
-      <h1>Donnez vie à vos idées !</h1>
-      <p class="text-right">Vous avez un projet en tête pour rendre plus agréable la vie dans votre immeuble ? <br> Participez ! <br> Présentez votre projet seul ou avec vos voisins <br> Votez <br> Les idées que vous aurez choisies seront financées par la RIVP et réalisées avec vous.</p>
+      <h1 style="text-align: center">Donnez vie à vos idées !</h1>
+      <p class="text-center">Vous avez un projet en tête pour rendre plus agréable la vie dans votre immeuble ?<br> </p>
+      <h3><strong>PARTICIPEZ !</strong></h3>
+      <p class="text-center">Présentez votre projet seul ou avec vos voisins.</p>
+      <h3><strong>VOTEZ !</strong></h3>
+      <p class="text-center">Les idées que vous aurez choisies seront financées par la RIVP et réalisées avec vous.</p>
     </div>
     <div class="small-12 medium-3 column padding <%= banner_color %>" data-equalizer-watch>
       <p>
@@ -154,4 +159,5 @@
   </div>
 </div>
 
+</div>
 </div>
