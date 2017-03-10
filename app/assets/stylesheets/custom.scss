@@ -254,21 +254,6 @@ table {
   }
 }
 
-.button {
-
-  &.button-twitter {
-    background: #40A2D1;
-  }
-
-  &.button-facebook {
-    background: #354F88;
-  }
-
-  &.button-google {
-    background: #CE3E26;
-  }
-}
-
 @import 'motion-ui/motion-ui';
 @include foundation-orbit;
 @include motion-ui-transitions;
