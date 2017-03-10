@@ -332,6 +332,12 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
   end
 
+  factory :budget_recommendation, class: 'Budget::Recommendation' do
+    budget
+    association :investment, factory: :budget_investment
+    user
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
