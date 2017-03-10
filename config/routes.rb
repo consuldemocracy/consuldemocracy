@@ -83,7 +83,7 @@ Rails.application.routes.draw do
     resource :ballot, only: :show, controller: "budgets/ballots" do
       resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
     end
-    resources :recommendations, controller: "budgets/recommendations", only: [:index]
+    resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
   end
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
   get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'

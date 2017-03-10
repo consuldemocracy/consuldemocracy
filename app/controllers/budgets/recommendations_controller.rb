@@ -17,6 +17,24 @@ module Budgets
       load_investment_votes(@investments)
     end
 
+    def new
+      @recommendations = current_user.budget_recommendations.includes(:investment).by_budget(@budget.id)
+    end
+
+    def create
+      investment = ::Budget::Investment.find(recommendation_params[:investment_id]) rescue nil
+      if investment
+        ::Budget::Recommendation.create(user: current_user, investment_id: investment.id, budget_id: investment.budget_id)
+      end
+      redirect_to new_budget_recommendation_path(budget_id: @budget.id)
+    end
+
+    def destroy
+      recommendation = current_user.budget_recommendations.find(params[:id])
+      recommendation.destroy
+      redirect_to new_budget_recommendation_path(budget_id: @budget.id)
+    end
+
     private
 
       def load_user
@@ -34,6 +52,10 @@ module Budgets
 
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
+      end
+
+      def recommendation_params
+        params.require(:recommendation).permit(:investment_id)
       end
   end
 end
