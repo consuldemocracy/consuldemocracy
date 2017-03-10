@@ -96,6 +96,16 @@
   }
 }
 
+// Delegation
+// - - - - - -
+
+.activity {
+
+  .button.float-right ~ .callout {
+    margin-right: $line-height/2;
+  }
+}
+
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -251,21 +261,6 @@ table {
     &.success {
       background: $success-bg;
     }
-  }
-}
-
-.button {
-
-  &.button-twitter {
-    background: #40A2D1;
-  }
-
-  &.button-facebook {
-    background: #354F88;
-  }
-
-  &.button-google {
-    background: #CE3E26;
   }
 }
 
@@ -2430,6 +2425,11 @@ $campaign-yellow:  #FFDB19;
     color: $text;
   }
 
+  a {
+    color: $link;
+    text-decoration: none;
+  }
+
   a.button, &.button {
     background: black;
     color: white;
@@ -2519,6 +2519,24 @@ ul.ballot-list {
     border: 1px solid white;
     margin-right: $line-height/2;
   }
+}
+
+.investment-project .supports .total-supports,
+.investment-project-show .supports .total-supports,
+.budget-investment .supports .total-supports,
+.budget-investment-show .supports .total-supports {
+  color: #5A6175;
+}
+
+.investment-project .supports .button-support,
+.investment-project-show .supports .button-support,
+.budget-investment .supports .button-support,
+.budget-investment-show .supports .button-support {
+  background: #5A6175;
+}
+
+.budget-investment .participation-not-allowed {
+  height: auto;
 }
 
 // 12. Nvotes
