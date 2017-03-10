@@ -96,6 +96,16 @@
   }
 }
 
+// Delegation
+// - - - - - -
+
+.activity {
+
+  .button.float-right ~ .callout {
+    margin-right: $line-height/2;
+  }
+}
+
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -2413,6 +2423,11 @@ $campaign-yellow:  #FFDB19;
 
   h1, h2, p, a.back, .icon-angle-left {
     color: $text;
+  }
+
+  a {
+    color: $link;
+    text-decoration: none;
   }
 
   a.button, &.button {

@@ -49,6 +49,7 @@ module Abilities
         can :vote,   Budget::Investment,               budget: { phase: "selecting" }
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Recommendation
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
