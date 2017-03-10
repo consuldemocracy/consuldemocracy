@@ -26,4 +26,8 @@ class Legislation::DraftVersion < ActiveRecord::Base
   def display_title
     status == 'draft' ? "#{title} *" : title
   end
+
+  def total_comments
+    annotations.sum(:comments_count)
+  end
 end
