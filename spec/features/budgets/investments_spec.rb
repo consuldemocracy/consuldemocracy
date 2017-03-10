@@ -591,4 +591,21 @@ feature 'Budget Investments' do
     end
 
   end
+
+  context "Navigation" do
+
+    scenario "Back from show" do
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading)
+      investment2 = create(:budget_investment, heading: heading2)
+
+      visit budget_investment_path(budget, investment1)
+      click_link "Go back"
+
+      expect(page).to     have_content investment1.title
+      expect(page).to_not have_content investment2.title
+    end
+
+  end
 end
