@@ -1,6 +1,11 @@
 <div class="row">
   <div class="small-12 column">
-    <h1><%= t("delegation.title") %></h1>
+    <% if Budget.current.present? %>
+      <%= link_to t("delegation.view_list"),
+                  budget_recommendations_path(budget_id: Budget.current.last.slug, user_id: @current_user.id),
+                  class: "float-right" %>
+    <% end %>
+    <h1 class="inline-block"><%= t("delegation.title") %></h1>
     <p>
       <%= t("delegation.text") %><br>
       <%= t("delegation.help_html") %>

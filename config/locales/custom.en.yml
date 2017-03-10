@@ -153,4 +153,7 @@ en:
     form_submit: "Add to my list"
     table_head: "Investment project's title"
     delete: "Delete of my list"
-    list_title: "Investment projects selected by:"    no_recommendations: "You have not selected any investment project yet."    header_button: "Add investment projects to my list"
+    list_title: "Investment projects selected by:"
+    no_recommendations: "You have not selected any investment project yet."
+    header_button: "Add investment projects to my list"
+    view_list: "View my investment projects list"
