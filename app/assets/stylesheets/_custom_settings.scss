@@ -46,15 +46,6 @@ $sixth-color: #FF9200;
 .background-6{background-color: $sixth-color;}
 
 .card {
-
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-
-
   .color-1{color:$second-color;}
   .background-1{background-color: $second-color;}
 
@@ -77,37 +68,59 @@ $sixth-color: #FF9200;
      background-color: white;
    }
 .card1{
-
-  width: 350px;
+  border-radius: 3px;
+  box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  margin: 0px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  // width: 150px;
+  padding-left: -0.9375rem;
+  padding-right: -0.9375rem;
+margin: -10px;
   .item-1{
     img{
-    height: 150px;
+    margin-top:10px;
+    height: 100px;
     }
+
   }
   .item-2{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
     height: 70px;
+    p{
+      font-size: 0.8rem;
+    }
+
   }
   .item-3{
     height: 30px;
+
   }
   .item-4{
-    height: 150px;
+    height: 100px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
+
   .item-5{
-    height: 30px;
-  }
-  .item-6{
     height: 10px;
-    margin: -20px;
+
     margin-top: 20px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 }
 
 .card2{
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: white;
   width: 90%;
   .item-1{
@@ -149,6 +162,16 @@ $sixth-color: #FF9200;
     font-color: #F8BA2B;
   }
   background-color: #F5F5F5;
+  .actu{
+    background: #CD2B33;
+    color: white;
+    p{
+      margin-top: 15px;
+    }
+  }
+  p {
+    text-align: center;
+  }
 }
 
 

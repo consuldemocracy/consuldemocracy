@@ -59,15 +59,22 @@
       <% end %>
     </div>
   </div>
-</div>
 
+</div>
+<div class="actu">
+  <div class="row">
+  <p><strong>ACTU !</strong> 8 réunions d'information (17h à 19h) : lundi 20 et mercredi 23 mars / lundi 3, mercredi 5, mardi 18, mercredi 19, jeudi 20 et vendredi 21 avril</p>
+  </div>
+</div>
 
 <div class="container home">
 <h1>Les étapes du budget participatif</h1>
-  <div class="row ">
+<p style="padding-bottom: 15px; font-style: italic"><%= link_to "Consultez le mode d'emploi pour plus de détails", "/more_information", class: "" %></p>
+<p></p>
+  <div class="row">
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
-      <div class="small-12 medium-6 large-4 column text-center">
+      <div class="small-12 medium-6 large-2 column text-center">
 
         <% if @budget.phase == card[1][:name] %>
           <% active = "active" %>
@@ -96,10 +103,7 @@
           <div class="item-4">
             <p><%= card[1][:description] %><p>
           </div>
-          <div class="item-5">
-            <p><%= link_to card[1][:more_info], "/more_information", class: "" %></p>
-          </div>
-          <div class="item-6 background-<%=i%>">
+          <div class="item-5 background-<%=i%>">
           </div>
         </div>
 

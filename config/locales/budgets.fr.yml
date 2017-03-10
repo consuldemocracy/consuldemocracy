@@ -105,22 +105,22 @@ fr:
       title: "Les étapes du budget participatif"
       steps_cards:
         accepting:
-          title: "Informez-vous et déposez vos idées"
-          dates: "15 mars - 15 juin"
-          description: "Participez aux réunions en pied d’immeuble (dates entre 20 et 31 mars) et déposez vos idées jusqu’à fin juin."
+          title: "Déposez vos idées"
+          dates: "fin mars - 15 juin"
+          description: "Participez aux réunions en pied d’immeuble et déposez vos idées sur la plateforme."
           more_info: "Plus d'information"
           img: custom/accepting.svg
           name: accepting
         reviewing:
-          title: Echangez sur les idées et enrichissez les !
-          dates: 15 mars - 15 juin
-          description: "Participez aux ateliers de co-construction sur le terrain (entre le 15 et 19 mai) et continuez à enrichir les idées déposées par les locataires en apportant vos commentaires."
+          title: Enrichissez les autres
+          dates: fin mars - 15 juin
+          description: "Rejoignez les ateliers de co-construction sur le terrain et commentez les idées de vos voisins."
           more_info: "Plus d'information"
           img: custom/reviewing.svg
           name: reviewing
         selecting:
-          title: Soutenez les idées !
-          dates: 15 mars - 15 juin
+          title: Soutenez les meilleures
+          dates: fin mars - 15 juin
           description: "Accédez à toutes les idées des locataires et soutenez celles qui vous plaisent."
           more_info: "Plus d'information"
           img: custom/selecting.svg
@@ -128,21 +128,21 @@ fr:
         valuating:
           title: Etude des projets
           dates: juillet
-          description: "Les idées qui auront été soutenues par les locataires  seront examinées par une commission pour s’assurer de leur faisabilité et préciser le coût des projets."
+          description: "Examen de la faisabilité et du coût des projets par une commission organisée par COPAS."
           more_info: "Plus d'information"
           img: custom/valuating.svg
           name: valuating
         balloting:
-          title: Vote final
+          title: Votez en ligne ou par papier
           dates: septembre-octobre
-          description: "Votez pour les projets que vous préférez (directement sur le site ou par vote papier). Les projets qui auront obtenu le plus de voix seront retenus dans la limite de l’enveloppe du budget participatif."
+          description: "Votez pour les projets que vous préférez dans la limite de l’enveloppe du budget participatif."
           more_info: "Plus d'information"
           img: custom/balloting.svg
           name: balloting
         finished:
-          title: Résultats
+          title: Annonce des résultats
           dates: novembre
-          description: "A l’issue du vote et du dépouillement, les résultats seront communiqués à tous. Les projets retenus seront mis en œuvre par les locataires lauréats à partir de janvier 2018."
+          description: "Les projets retenus seront communiqués à tous et mis en œuvre par les lauréats en 2018."
           more_info: "Plus d'information"
           img: custom/finished.svg
           name: finished
