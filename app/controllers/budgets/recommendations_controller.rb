@@ -23,16 +23,18 @@ module Budgets
 
     def create
       investment = ::Budget::Investment.find(recommendation_params[:investment_id]) rescue nil
+      feedback = { alert: I18n.t("delegation.create_error") }
       if investment
         ::Budget::Recommendation.create(user: current_user, investment_id: investment.id, budget_id: investment.budget_id)
+        feedback = { notice: I18n.t("delegation.create_ok") }
       end
-      redirect_to new_budget_recommendation_path(budget_id: @budget.id)
+      redirect_to new_budget_recommendation_path(budget_id: @budget.id), feedback
     end
 
     def destroy
       recommendation = current_user.budget_recommendations.find(params[:id])
       recommendation.destroy
-      redirect_to new_budget_recommendation_path(budget_id: @budget.id)
+      redirect_to new_budget_recommendation_path(budget_id: @budget.id), notice: I18n.t("delegation.deleted")
     end
 
     private

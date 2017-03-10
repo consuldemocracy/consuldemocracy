@@ -157,3 +157,6 @@ es:
     no_recommendations: "Todavía no has seleccionado ningún proyecto de gasto."
     header_button: "Añadir proyectos de gasto a mi lista"
     view_list: "Ver mi lista de proyectos de gasto"
+    create_ok: "Proyecto de gasto añadido"
+    create_error: "El identificador no es válido"
+    deleted: "Proyecto eliminado de la lista"

@@ -6,7 +6,7 @@ class Budget
 
     validates :budget_id, presence: true
     validates :user_id, presence: true
-    validates :investment_id, presence: true
+    validates :investment_id, presence: true, uniqueness: {scope: :user_id}
 
     scope :by_budget, ->(b_id) { where(budget_id: b_id) }
   end
