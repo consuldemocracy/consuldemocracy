@@ -64,20 +64,6 @@
             <p><%= t("pages.processes.index.process_15_description") %></p>
             <%= link_to t("pages.processes.index.process_15_button"), movilidad_path, class: "button hollow" %>
           </div>
-
-          <!-- Línea Madrid -->
-          <div class="panel">
-            <h3><%= t("pages.processes.index.process_14_title") %></h3>
-            <p><%= t("pages.processes.index.process_14_description") %></p>
-            <%= link_to t("pages.processes.index.process_14_button"), linea_madrid_path, class: "button hollow" %>
-          </div>
-
-          <!-- Remodelación de Plaza España -->
-          <div class="panel">
-            <h3><%= t("pages.processes.index.process_2_title") %></h3>
-            <p><%= t("pages.processes.index.process_2_description_close") %></p>
-            <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "button hollow" %>
-          </div>
         </div>
 
         <!-- Procesos próximamente -->
@@ -92,6 +78,20 @@
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Línea Madrid -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_14_title") %></h3>
+            <p><%= t("pages.processes.index.process_14_description") %></p>
+            <%= link_to t("pages.processes.index.process_14_button"), linea_madrid_path, class: "button hollow" %>
+          </div>
+
+          <!-- Remodelación de Plaza España -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_2_title") %></h3>
+            <p><%= t("pages.processes.index.process_2_description_close") %></p>
+            <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "button hollow" %>
+          </div>
 
           <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
           <div id="air_quality_plan" class="panel">

@@ -46,16 +46,6 @@ es:
       text: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
       date_html: "Participa hasta el <strong>15 de marzo</strong>"
       button: "Más información"
-    linea_madrid:
-      title: "Atención a la ciudadanía de Línea Madrid"
-      text: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
-      date_html: "Participa hasta el <strong>10 de marzo</strong>"
-      button: "Más información"
-    plaza:
-      title: "Proyecto de remodelación de Plaza España"
-      text: "La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados."
-      date_html: "Resultados <strong>disponibles</strong>"
-      button: "Ver finalistas"
   meta_tags:
     welcome_index:
       title: "Decide Madrid - Participación del Ayuntamiento de Madrid"
