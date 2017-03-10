@@ -870,6 +870,25 @@ $epigraph-line-height: rem-calc(22);
             float: right;
           }
         }
+        
+        .comments-wrapper {
+          position: relative;
+          
+          .participation-not-allowed {
+            padding: 1.25rem 0.5rem;
+          }
+        }
+        
+        .comment-footer {
+          position: relative;
+          
+          .participation-not-allowed {
+            font-size: 0.875rem;
+            height: 50px;
+            padding: .85rem 0.75rem;
+            top: -18px;
+          }
+        }
 
         .comment-input {
           padding-bottom: 4rem;
