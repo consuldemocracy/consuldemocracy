@@ -6,7 +6,7 @@
 	 style="enable-background:new 0 0 141.7 141.7;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#B900A2;}
-	.st1{font-family:'MyriadPro-Regular';}
+	.st1{font-family:'SourceSansPro-Semibold';}
 	.st2{font-size:31px;}
 </style>
 <g transform="translate(0,-952.36218)">
@@ -39,6 +39,6 @@
 	<path class="st0" d="M103.9,1034.8c14.3,0,25.9,11.6,25.9,25.9s-11.6,25.9-25.9,25.9S78,1075,78,1060.7
 		C77.9,1046.4,89.6,1034.8,103.9,1034.8z M103.9,1037.7c-12.7,0-23,10.3-23,23s10.3,23,23,23s23-10.3,23-23
 		S116.6,1037.7,103.9,1037.7z"/>
-	<text transform="matrix(1 0 0 1 93.9485 1070.0792)" class="st0 st1 st2">€</text>
+	<text transform="matrix(1 0 0 1 93.9485 1071.0792)" class="st0 st1 st2">€</text>
 </g>
 </svg>

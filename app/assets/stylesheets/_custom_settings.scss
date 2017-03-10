@@ -17,9 +17,14 @@ $sixth-color: #FF9200;
   justify-content: space-around;
 }
 
+
+
 .picto_ampoule img{
-  height: 200px;
-  weight: 200px;
+  // height: 200px;
+  margin-top: 10%;
+  weight: 100%;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .color-1{color:$second-color;}
@@ -140,7 +145,8 @@ $sixth-color: #FF9200;
 .home{
   h1 {
     text-align: center;
-    padding-top:25px;
+    padding-top: 25px;
+    font-color: #F8BA2B;
   }
   background-color: #F5F5F5;
 }
@@ -150,7 +156,10 @@ $sixth-color: #FF9200;
 .expanded.budget{
     h1 {
       text-align: right;
+      font-color: #F8BA2B;
   }
+
+
 }
 
 
