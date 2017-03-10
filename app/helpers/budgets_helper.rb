@@ -38,4 +38,10 @@ module BudgetsHelper
   def investment_tags_select_options
     Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
+
+  def display_support_alert?(investment)
+    current_user &&
+    !current_user.voted_in_group?(investment.group) &&
+    investment.group.headings.count > 1
+  end
 end
