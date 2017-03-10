@@ -16,29 +16,35 @@
     <% end %>
   </div>
   <div class="small-12 column">
-    <table>
-      <thead>
-        <tr>
-          <th colspan="2">
-            <%= t("delegation.table_head") %>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @recommendations.each do |recommendation| %>
+    <% if @recommendations.any? %>
+      <table>
+        <thead>
           <tr>
-            <td>
-              <%= link_to recommendation.investment.title, budget_investment_path(recommendation.budget, recommendation.investment) %>
-            </td>
-            <td class="text-right">
-              <%= link_to "Eliminar de mi lista",
-                          budget_recommendation_path(budget_id: recommendation.budget, id: recommendation.id),
-                          method: :delete,
-                          class: "delete" %>
-            </td>
+            <th colspan="2">
+              <%= t("delegation.table_head") %>
+            </th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @recommendations.each do |recommendation| %>
+            <tr>
+              <td>
+                <%= link_to recommendation.investment.title, budget_investment_path(recommendation.budget, recommendation.investment) %>
+              </td>
+              <td class="text-right">
+                <%= link_to "Eliminar de mi lista",
+                            budget_recommendation_path(budget_id: recommendation.budget, id: recommendation.id),
+                            method: :delete,
+                            class: "delete" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="callout primary">
+        <%= t("delegation.no_recommendations") %>
+      </div>
+    <% end %>
   </div>
 </div>
