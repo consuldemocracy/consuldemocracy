@@ -104,8 +104,7 @@ feature 'Budget Investments' do
     before(:each) { budget.update(phase: 'selecting') }
 
     scenario "Default order is random" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 100).times { create(:budget_investment) }
+      10.times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect {|i| i.text }
@@ -117,8 +116,7 @@ feature 'Budget Investments' do
     end
 
     scenario "Random order after another order" do
-      per_page = Kaminari.config.default_per_page
-      (per_page + 2).times { create(:budget_investment) }
+      10.times { create(:budget_investment) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
       click_link "highest rated"
