@@ -134,15 +134,36 @@
       <% i+=1 %>
     <% end%>
   </div>
+  <div class="row center">
+    <% i=6%>
+    <% t("budgets.home_rivp.theme_cards").each do |card| %>
+      <div class="small-12 medium-6">
+        <div class="row">
+          <div class="small-12 medium-6">
+            <div class="card3">
+              Logo
+            </div>
+          </div>
+          <div class="small-12 medium-6">
+            <div class="card3">
+              Titre
+              Texte
+            </div>
+          </div>
+          <% i-=1 %>
+        </div>
+      </div>
+    <% end%>
+  </div>
 
 
 
 <h1>Consultez les propositions des différents sites</h1>
 <div class="row margin-top">
-  <div id="select-district" class="small-12 medium-6 column select-district list-group">
+  <div id="select-district" class="small-12 medium-3 column select-district list-group">
     <div class="row">
       <% Budget.find(1).headings.each_slice(12) do |slice| %>
-        <div class="small-12 medium-offset-3 medium-6 column end ">
+        <div class="small-12 medium-12 column end ">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %> list-group-item">
@@ -158,7 +179,7 @@
     </div>
   </div>
 
-  <div class="medium-6 column show-for-medium text-left">
+  <div class="medium-9 column show-for-medium text-left">
     <%= image_tag "custom/citymap.png" %>
   </div>
 </div>

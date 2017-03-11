@@ -151,6 +151,43 @@ margin: -10px;
   }
 }
 
+.card3{
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 90%;
+  .item-1{
+    img{
+    height: 100px;
+    }
+  }
+  .item-2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 60px;
+  }
+  .item-3{
+    height: 120px;
+  }
+  .item-4{
+    height: 150px;
+  }
+  .item-5{
+    height: 30px;
+  }
+  .item-6{
+    height: 10px;
+    margin: -20px;
+    margin-top: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
 .color {
   fill: red;
 }

@@ -173,7 +173,7 @@ fr:
       consul_url: https://github.com/consul/consul
       contact_us: Pour l'assistance technique cliquez
       copyright: RIVP, %{year}
-      description: "Ce portail utilise la plateforme libre %{consul} déployée par %{open_source}. Pour l'assistance, contactez : contact@copas.coop"
+      description: "Ce portail utilise la plateforme libre %{consul} déployée par %{open_source}. Pour l'assistance, écrivez à contact@copas.coop."
       faq: ici
       more_info: Mode d'emploi
       open_data_text: Vous pouvez accéder à un compte-rendu détaillé des conseils municipaux
