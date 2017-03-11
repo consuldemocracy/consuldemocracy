@@ -92,7 +92,7 @@ feature 'Recommendations' do
     click_link "Delegation"
 
     expect(page).to have_content investment.title
-    click_link "Eliminar de mi lista"
+    click_link "Delete from my list"
 
     expect(page).to have_content "Investment project removed from the list"
     expect(page).to_not have_content investment.title

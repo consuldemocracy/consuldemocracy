@@ -306,9 +306,6 @@ feature 'Tracking' do
       visit "proposals/new"
       expect(page.html).to have_content "weboConv(30);"
 
-      visit "vota"
-      expect(page.html).to have_content "weboConv(31);"
-
       visit "procesos"
       expect(page.html).to have_content "weboConv(32);"
 

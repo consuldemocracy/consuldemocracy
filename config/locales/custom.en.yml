@@ -141,7 +141,7 @@ en:
     help_html: "<small><em>The ID is the number that appear in the URL of each investment project, for example:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
     form_submit: "Add to my list"
     table_head: "Investment project's title"
-    delete: "Delete of my list"
+    delete: "Delete from my list"
     list_title: "Investment projects selected by:"
     no_recommendations: "You have not selected any investment project yet."
     header_button: "Add investment projects to my list"
