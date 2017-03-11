@@ -34,8 +34,6 @@ en:
           submit_button: Save changes
       errors:
         form:
-      errors:
-        form:
           error:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
@@ -60,6 +58,102 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+    budgets:
+      index:
+        title: Participatory budgets
+        new_link: Create new budget
+        filters:
+          current: Open
+          finished: Finished
+        budget_investments: See budget investments
+        table_name: Name
+        table_phase: Phase
+        table_investments: Investments
+        table_edit_groups: Headings groups
+        table_edit_budget: Edit
+        edit_groups: Edit headings groups
+        edit_budget: Edit budget
+      create:
+        notice: New participatory budget created successfully!
+      update:
+        notice: Participatory budget updated successfully
+      edit:
+        title: Edit Participatory budget
+      new:
+        title: New participatory budget
+      show:
+        groups:
+          one: 1 Group of budget headings
+          other: "%{count} Groups of budget headings"
+      form:
+        group: Group name
+        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
+        add_group: Add new group
+        create_group: Create group
+        heading: Heading name
+        add_heading: Add heading
+        amount: Amount
+        save_heading: Save heading
+        no_heading: This group has no assigned heading.
+        table_heading: Heading
+        table_amount: Amount
+    budget_investments:
+      index:
+        heading_filter_all: All headings
+        administrator_filter_all: All administrators
+        valuator_filter_all: All valuators
+        tags_filter_all: All tags
+        filters:
+          valuation_open: Open
+          without_admin: Without assigned admin
+          managed: Managed
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          valuation_finished_feasible: Val. fin. Feasible
+          selected: Selected
+          all: All
+        title: Investment projects
+        assigned_admin: Assigned administrator
+        no_admin_assigned: No admin assigned
+        no_valuators_assigned: No valuators assigned
+        feasibility:
+          feasible: "Feasible (%{price})"
+          unfeasible: "Unfeasible"
+          undecided: "Undecided"
+        selected: "Selected"
+        select: "Select"
+        table_id: "ID"
+        table_title: "Title"
+        table_admin: "Administrator"
+        table_valuator: "Valuator"
+        table_geozone: "Scope of operation"
+        table_feasibility: "Feasibility"
+        table_valuation_finished: "Val. Fin."
+        table_selection: "Selection"
+      show:
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
+        classification: Clasification
+        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
+        edit: Edit
+        edit_classification: Edit classification
+        by: By
+        sent: Sent
+        group: Grupo
+        heading: Partida
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        tags: Tags
+        undefined: Undefined
+      edit:
+        classification: Clasification
+        assigned_valuators: Valuators
+        select_heading: Select heading
+        submit_button: Update
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
+      search_unfeasible: Search unfeasible
     comments:
       index:
         filter: Filter
@@ -96,7 +190,9 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
+      budgets: Participatory budgets
       debate_topics: Debate topics
+      geozones: Manage geozones
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
@@ -110,6 +206,7 @@ en:
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
+      signature_sheets: Signature Sheets
     moderators:
       index:
         title: Moderators
@@ -267,6 +364,58 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost_for_geozone: Cost
+    geozones:
+      index:
+        title: Geozone
+        create: Create geozone
+        edit: Edit
+        delete: Delete
+      geozone:
+        name: Name
+        external_code: External code
+        census_code: Census code
+        coordinates: Coordinates
+      errors:
+        form:
+          error:
+            one: "prevented this geozone from being saved"
+            other: 'prevented this geozone from being saved'
+      edit:
+        form:
+          submit_button: Save changes
+        editing: Editing geozone
+        back: Go back
+      new:
+        back: Go back
+        creating: Create district
+      delete:
+        success: Geozone successfully deleted
+        error: This geozone can't be deleted since there are elements attached to it
+    signature_sheets:
+      author: Author
+      created_at: Creation date
+      name: Name
+      no_signature_sheets: "There are not signature_sheets"
+      index:
+        title: Signature sheets
+        new: New signature sheets
+      new:
+        title: New signature sheets
+        document_numbers_note: "Write the numbers separated by commas (,)"
+        submit: Create signature sheet
+      show:
+        created_at: Created
+        author: Author
+        documents: Documents
+        document_count: "Number of documents:"
+        verified:
+          one: "There is %{count} valid signature"
+          other: "There are %{count} valid signatures"
+        unverified:
+          one: "There is %{count} invalid signature"
+          other: "There are %{count} invalid signatures"
+        unverified_error: (Not verified by Census)
+        loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:
         stats_title: Stats

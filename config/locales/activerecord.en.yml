@@ -4,6 +4,12 @@ en:
       activity:
         one: "activity"
         other: "activities"
+      budget:
+        one: "Participatory budget"
+        other: "Participatory budgets"
+      budget/investment:
+        one: "Investment"
+        other: "Investments"
       comment:
         one: "Comment"
         other: "Comments"
@@ -35,6 +41,30 @@ en:
         one: "Spending proposal"
         other: "Spending proposals"
     attributes:
+      budget:
+        name: "Name"
+        description_accepting: "Description during Accepting phase"
+        description_reviewing: "Description during Reviewing phase"
+        description_selecting: "Description during Selecting phase"
+        description_valuating: "Description during Valuating phase"
+        description_balloting: "Description during Balloting phase"
+        description_reviewing_ballots: "Description during Reviewing Ballots phase"
+        description_finished: "Description when the budget is finished"
+        phase: "Phase"
+        currency_symbol: "Currency"
+      budget/investment:
+        heading_id: "Sección de presupuesto"
+        title: "Title"
+        description: "Description"
+        external_url: "External url"
+        location: "Location"
+        administrator_id: "Administrator"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        heading_id: "Heading"
+        title: "Title"
+        location: "Location"
+        organization_name: "If you are proposing in the name of a collective/organization, write its name"
       comment:
         body: "Comment"
         user: "User"
@@ -69,6 +99,10 @@ en:
         external_url: "Link to additional documentation"
         geozone_id: "Scope of operation"
         title: "Title"
+      signature_sheet:
+        signable_type: "Signable type"
+        signable_id: "Signable ID"
+        document_numbers: "Documents numbers"
     errors:
       models:
         user:
@@ -87,7 +121,16 @@ en:
           attributes:
             tag_list:
               less_than_or_equal_to: "tags must be less than or equal to %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "tags must be less than or equal to %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
               invalid: "You have to wait a minium of %{interval} days between notifications"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Not verified by Census'
+              already_voted: 'Already voted this proposal'

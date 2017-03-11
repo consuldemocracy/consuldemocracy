@@ -1,14 +1,19 @@
 <%- limit ||= nil %>
 
 <% if taggable.tags.any? %>
-  <span id="tags" class='tags'>
+  <ul id="tags_<%= dom_id(taggable) %>" class="no-bullet tags">
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
-      <%= link_to sanitize(tag.name), send("#{taggable.class.name.underscore.pluralize}_path", search: tag.name) %>
+      <li class="inline-block">
+        <%= link_to sanitize(tag.name),
+                    taggables_path(taggable.class.name.underscore, tag.name),
+                    search: tag.name %></li>
     <% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>
-      <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
-                  send("#{taggable.class.name.underscore}_path", taggable) %>
+      <li class="inline-block">
+        <%= link_to "#{taggable.tags_count_out_of_limit(limit)}+",
+                    taggable_path(taggable) %>
+      </li>
     <% end %>
-  </span>
+  </ul>
 <% end %>

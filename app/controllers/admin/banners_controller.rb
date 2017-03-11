@@ -2,7 +2,6 @@ class Admin::BannersController < Admin::BaseController
 
   has_filters %w{all with_active with_inactive}, only: :index
 
-  before_action :find_banner, only: [:edit, :update, :destroy]
   before_action :banner_styles, only: [:edit, :new, :create, :update]
   before_action :banner_imgs, only: [:edit, :new, :create, :update]
 
@@ -24,7 +23,6 @@ class Admin::BannersController < Admin::BaseController
   end
 
   def update
-    @banner.assign_attributes(banner_params)
     if @banner.update(banner_params)
       redirect_to admin_banners_path
     else
@@ -41,10 +39,6 @@ class Admin::BannersController < Admin::BaseController
 
     def banner_params
       params.require(:banner).permit(:title, :description, :target_url, :style, :image, :post_started_at, :post_ended_at)
-    end
-
-    def find_banner
-      @banner = Banner.find(params[:id])
     end
 
     def banner_styles

@@ -156,7 +156,7 @@ module CommonActions
 
   def expect_message_you_need_to_sign_in
     expect(page).to have_content 'You must Sign in or Sign up to continue'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_you_need_to_sign_in_to_vote_comments
@@ -172,12 +172,23 @@ module CommonActions
 
   def expect_message_only_verified_can_vote_proposals
     expect(page).to have_content 'Only verified users can vote on proposals'
-    expect(page).to have_selector('.in-favor a', visible: false)
+    expect(page).to have_selector('.in-favor', visible: false)
   end
 
   def expect_message_voting_not_allowed
     expect(page).to have_content 'Voting phase is closed'
     expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_selecting_not_allowed
+    expect(page).to have_content 'No Selecting Allowed'
+    expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_organizations_cannot_vote
+    #expect(page).to have_content 'Organisations are not permitted to vote.'
+    expect(page).to have_content 'Organization'
+    expect(page).to have_selector('.in-favor a', visible: false)
   end
 
   def create_featured_proposals
@@ -252,6 +263,13 @@ module CommonActions
     within("##{resource_name}_#{resource.id}") do
       expect(page).to_not have_css ".label.round"
       expect(page).to_not have_content "Employee"
+    end
+  end
+
+  def add_to_ballot(budget_investment)
+    within("#budget_investment_#{budget_investment.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
     end
   end
 

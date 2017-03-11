@@ -192,6 +192,102 @@ FactoryGirl.define do
     association :author, factory: :user
   end
 
+  factory :budget do
+    sequence(:name) { |n| "Budget #{n}" }
+    currency_symbol "€"
+    phase 'accepting'
+    description_accepting "This budget is accepting"
+    description_reviewing "This budget is reviewing"
+    description_selecting "This budget is selecting"
+    description_valuating "This budget is valuating"
+    description_balloting "This budget is balloting"
+    description_reviewing_ballots "This budget is reviewing ballots"
+    description_finished "This budget is finished"
+
+    trait :accepting do
+      phase 'accepting'
+    end
+
+    trait :reviewing do
+      phase 'reviewing'
+    end
+
+    trait :selecting do
+      phase 'selecting'
+    end
+
+    trait :valuating do
+      phase 'valuating'
+    end
+
+    trait :balloting do
+      phase 'balloting'
+    end
+
+    trait :reviewing_ballots do
+      phase 'reviewing_ballots'
+    end
+
+    trait :finished do
+      phase 'finished'
+    end
+  end
+
+  factory :budget_group, class: 'Budget::Group' do
+    budget
+    sequence(:name) { |n| "Group #{n}" }
+  end
+
+  factory :budget_heading, class: 'Budget::Heading' do
+    association :group, factory: :budget_group
+    sequence(:name) { |n| "Heading #{n}" }
+    price 1000000
+  end
+
+  factory :budget_investment, class: 'Budget::Investment' do
+    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    association :heading, factory: :budget_heading
+    association :author, factory: :user
+    description          'Spend money on this'
+    price                10
+    unfeasibility_explanation ''
+    external_url         'http://external_documention.org'
+    terms_of_service     '1'
+
+    trait :with_confidence_score do
+      before(:save) { |i| i.calculate_confidence_score }
+    end
+
+    trait :feasible do
+      feasibility "feasible"
+    end
+
+    trait :unfeasible do
+      feasibility "unfeasible"
+      unfeasibility_explanation "set to unfeasible on creation"
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+
+    trait :selected do
+      selected true
+      feasibility "feasible"
+      valuation_finished true
+    end
+  end
+
+  factory :budget_ballot, class: 'Budget::Ballot' do
+    association :user, factory: :user
+    budget
+  end
+
+  factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
+    association :ballot, factory: :budget_ballot
+    association :investment, factory: :budget_investment
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -317,7 +413,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    census_code { '01' }
+    sequence(:external_code) { |n| "#{n}" }
+    sequence(:census_code) { |n| "#{n}" }
   end
 
   factory :banner do
@@ -341,5 +438,16 @@ FactoryGirl.define do
     body     "How are You doing?"
     association :sender,   factory: :user
     association :receiver, factory: :user
+  end
+
+  factory :signature_sheet do
+    association :signable, factory: :proposal
+    association :author, factory: :user
+    document_numbers "123A, 456B, 789C"
+  end
+
+  factory :signature do
+    signature_sheet
+    sequence(:document_number) { |n| "#{n}A" }
   end
 end

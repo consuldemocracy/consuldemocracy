@@ -33,8 +33,9 @@
               terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title: t('shared.target_blank_html'), target: "_blank")).html_safe %></span>
       <% end %>
 
-
-      <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>
+      </div>
     </div>
   </div>
 <% end %>

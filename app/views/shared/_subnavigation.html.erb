@@ -2,22 +2,39 @@
   <ul>
     <% if feature?(:debates) %>
       <li>
-        <%= link_to t("layouts.header.debates"), debates_path, class: ("active" if controller_name == "debates"), accesskey: "d" %>
+        <%= layout_menu_link_to t("layouts.header.debates"),
+                                debates_path,
+                                controller_name == 'debates',
+                                accesskey: "d" %>
       </li>
     <% end %>
     <li>
-      <%= link_to t("layouts.header.proposals"), proposals_path, class: ("active" if  controller_name == "proposals"), accesskey: "p" %>
+      <%= layout_menu_link_to t("layouts.header.proposals"),
+                                proposals_path,
+                                controller_name == 'proposals',
+                                accesskey: "p" %>
     </li>
     <li>
-      <%= link_to t("layouts.header.proposal_ballot"), proposal_ballots_path, class: ("active" if  controller_name == "proposal_ballots"), accesskey: "v" %>
+      <%= layout_menu_link_to t("layouts.header.proposal_ballot"),
+                                proposal_ballots_path,
+                                controller_name == 'proposal_ballots',
+                                accesskey: "v" %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
-        <%= link_to t("layouts.header.spending_proposals"), spending_proposals_path, class: ("active" if controller_name == "spending_proposals"), accesskey: "s" %>
+        <%= layout_menu_link_to t("layouts.header.spending_proposals"),
+                                  spending_proposals_path,
+                                  controller_name == 'spending_proposals',
+                                  accesskey: "s" %>
       </li>
     <% end %>
-    <li>
-      <%= link_to t("layouts.header.more_information"), page_path('more_information'), class: ("active" if current_page?("/more_information")), accesskey: "i"  %>
-    </li>
+    <% if feature?(:budgets) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.budgets"),
+                                  budgets_path,
+                                  controller_name == "budgets" || controller_name == "investments",
+                                  accesskey: "b" %>
+      </li>
+    <% end %>
   </ul>
 </div>

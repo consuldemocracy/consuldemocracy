@@ -874,7 +874,7 @@ fr:
       external_link_transparency: Transparence
       external_link_transparency_url: https://transparency.consul
       locale: 'Langue :'
-      logo: Consul
+      logo: Consul logo
       moderation: Modération
       more_information: Plus d'information
       my_account_link: Mon compte
@@ -1361,11 +1361,6 @@ fr:
   shared:
     advanced_search:
       author_type: Par catégorie d'auteur
-      author_type_1: Fonctionnaire
-      author_type_2: Organisation municipale
-      author_type_3: Directeur général
-      author_type_4: Conseiller municipal
-      author_type_5: Maire
       author_type_blank: Sélectionner une catégorie
       date: Par date
       date_1: Dernières 24 heures
@@ -1497,7 +1492,6 @@ fr:
       create:
         flash:
           offices: Bureaux de soutien aux citoyens
-          offices_url: http://offices.consul
           success_html: Merci d'avoir demandé votre <b>code de sécurité maximum (uniquement
             requis pour le vote final)</b>.  Dans quelques jours, nous vous enverrons
             un courrier vers votre adresse postale. Vous pouvez le réclamer dans n'importe
@@ -1512,7 +1506,6 @@ fr:
         go_to_index: Voir les propositions
         office: Vérifier dans n'importe quel %{office}
         offices: Bureaux de soutien aux citoyens
-        offices_url: http://offices.consul
         send_letter: Envoyer une lettre avec le code
         title: Félicitations
         user_permission_info: Avec votre compte, vous pouvez

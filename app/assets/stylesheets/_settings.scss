@@ -57,15 +57,15 @@ $brand:             #004A83;
 $dark:              darken($brand, 10%);
 
 $text:              #222222;
-$text-medium:       #999999;
-$text-light:        #CCCCCC;
+$text-medium:       #515151;
+$text-light:        #BFBFBF;
 
 $border:            #DEE0E3;
 
-$link:              #2895F1;
+$link:              $brand;
 $link-hover:        darken($link, 20%);
 
-$debates:           #008CCF;
+$debates:           $brand;
 
 $like:              #7BD2A8;
 $unlike:            #EF8585;
@@ -74,8 +74,9 @@ $delete:            #F04124;
 $check:             #46DB91;
 
 $proposals:         #FFA42D;
+$proposals-dark:    #794500;
 
-$budget:            #454372;
+$budget:            #7E328A;
 $budget-hover:      #7571BF;
 
 $highlight:         #E7F2FC;

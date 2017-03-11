@@ -1,0 +1,20 @@
+<%= form_for [:admin, @budget] do |f| %>
+
+  <%= f.text_field :name, maxlength: Budget.title_max_length %>
+
+  <% Budget::PHASES.each do |phase| %>
+    <div class="margin-top">
+      <%= f.cktext_area "description_#{phase}", maxlength: Budget.description_max_length, ckeditor: { language: I18n.locale } %>
+    </div>
+  <% end %>
+
+  <div class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <%= f.select :phase, budget_phases_select_options %>
+    </div>
+    <div class="small-12 medium-3 column">
+      <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
+    </div>
+  </div>
+  <%= f.submit nil, class: "button success" %>
+<% end %>

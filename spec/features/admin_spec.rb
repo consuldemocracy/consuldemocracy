@@ -55,6 +55,8 @@ feature 'Admin' do
   end
 
   scenario "Admin access links" do
+    Setting["feature.spending_proposals"] = true
+
     login_as(administrator)
     visit root_path
 

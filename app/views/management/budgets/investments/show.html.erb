@@ -1,0 +1,8 @@
+<% provide :title do %><%= @investment.title %><% end %>
+
+<%= render '/shared/print' %>
+
+<%= render partial: '/budgets/investments/investment_show', locals: {
+  investment: @investment,
+  investment_votes: @investment_votes
+} %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102133838) do
+ActiveRecord::Schema.define(version: 20170114154421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,103 @@ ActiveRecord::Schema.define(version: 20161102133838) do
 
   add_index "banners", ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
 
+  create_table "budget_ballot_lines", force: :cascade do |t|
+    t.integer  "ballot_id"
+    t.integer  "investment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "budget_id"
+    t.integer  "group_id"
+    t.integer  "heading_id"
+  end
+
+  add_index "budget_ballot_lines", ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id", using: :btree
+  add_index "budget_ballot_lines", ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
+
+  create_table "budget_ballots", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "budget_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "budget_groups", force: :cascade do |t|
+    t.integer "budget_id"
+    t.string  "name",      limit: 50
+  end
+
+  add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
+
+  create_table "budget_headings", force: :cascade do |t|
+    t.integer "group_id"
+    t.string  "name",     limit: 50
+    t.integer "price",    limit: 8
+  end
+
+  add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
+
+  create_table "budget_investments", force: :cascade do |t|
+    t.integer  "author_id"
+    t.integer  "administrator_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "external_url"
+    t.integer  "price",                      limit: 8
+    t.string   "feasibility",                limit: 15, default: "undecided"
+    t.text     "price_explanation"
+    t.text     "unfeasibility_explanation"
+    t.text     "internal_comments"
+    t.boolean  "valuation_finished",                    default: false
+    t.integer  "valuator_assignments_count",            default: 0
+    t.integer  "price_first_year",           limit: 8
+    t.string   "duration"
+    t.datetime "hidden_at"
+    t.integer  "cached_votes_up",                       default: 0
+    t.integer  "comments_count",                        default: 0
+    t.integer  "confidence_score",                      default: 0,           null: false
+    t.integer  "physical_votes",                        default: 0
+    t.tsvector "tsv"
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
+    t.integer  "heading_id"
+    t.string   "responsible_name"
+    t.integer  "budget_id"
+    t.integer  "group_id"
+    t.boolean  "selected",                              default: false
+    t.string   "location"
+    t.string   "organization_name"
+    t.datetime "unfeasible_email_sent_at"
+  end
+
+  add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
+  add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+  add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
+  add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+
+  create_table "budget_valuator_assignments", force: :cascade do |t|
+    t.integer  "valuator_id"
+    t.integer  "investment_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
+
+  create_table "budgets", force: :cascade do |t|
+    t.string   "name",                          limit: 30
+    t.string   "currency_symbol",               limit: 10
+    t.string   "phase",                         limit: 40, default: "accepting"
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
+    t.text     "description_accepting"
+    t.text     "description_reviewing"
+    t.text     "description_selecting"
+    t.text     "description_valuating"
+    t.text     "description_balloting"
+    t.text     "description_reviewing_ballots"
+    t.text     "description_finished"
+  end
+
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
     t.string   "track_id"
@@ -123,10 +220,10 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -145,7 +242,6 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
-  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -298,7 +394,6 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.string   "responsible_name",    limit: 60
     t.text     "summary"
     t.string   "video_url"
-    t.integer  "physical_votes",                 default: 0
     t.tsvector "tsv"
     t.integer  "geozone_id"
     t.datetime "retired_at"
@@ -310,7 +405,6 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
-  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -325,6 +419,25 @@ ActiveRecord::Schema.define(version: 20161102133838) do
   end
 
   add_index "settings", ["key"], name: "index_settings_on_key", using: :btree
+
+  create_table "signature_sheets", force: :cascade do |t|
+    t.integer  "signable_id"
+    t.string   "signable_type"
+    t.text     "document_numbers"
+    t.boolean  "processed",        default: false
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "signatures", force: :cascade do |t|
+    t.integer  "signature_sheet_id"
+    t.integer  "user_id"
+    t.string   "document_number"
+    t.boolean  "verified",           default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spending_proposals", force: :cascade do |t|
     t.string   "title"
@@ -378,6 +491,7 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
     t.string  "kind"
+    t.integer "budget/investments_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
@@ -465,6 +579,7 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
     t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
+    t.boolean  "created_from_signature",                    default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -486,6 +601,7 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.integer "user_id"
     t.string  "description"
     t.integer "spending_proposals_count", default: 0
+    t.integer "budget_investments_count", default: 0
   end
 
   add_index "valuators", ["user_id"], name: "index_valuators_on_user_id", using: :btree
@@ -544,8 +660,10 @@ ActiveRecord::Schema.define(version: 20161102133838) do
     t.integer  "vote_weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "signature_id"
   end
 
+  add_index "votes", ["signature_id"], name: "index_votes_on_signature_id", using: :btree
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 

@@ -1,6 +1,6 @@
 <% provide :title do %><%= @debate.title %><% end %>
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
-  <section class="debate-show">
+  <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
         <%= render "shared/back_link" %>
@@ -44,22 +44,24 @@
 
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
+        <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render 'debates/votes', debate: @debate %>
         </div>
         <div class="sidebar-divider"></div>
-        <h3><%= t("debates.show.share") %></h3>
+        <h2><%= t("debates.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
           <% if browser.device.mobile? %>
             <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>
+              <span class="sr-only"><%= t("social.whatsapp") %></span>
             </a>
           <% end %>
         </div>
+      </aside>
     </div>
-  </section>
+  </div>
 <% end %>
 
 <%= render "comments" %>

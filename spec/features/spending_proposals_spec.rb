@@ -4,6 +4,11 @@ feature 'Spending proposals' do
 
   let(:author) { create(:user, :level_two, username: 'Isabel') }
 
+  background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
   scenario 'Index' do
     spending_proposals = [create(:spending_proposal), create(:spending_proposal), create(:spending_proposal, feasible: true)]
     unfeasible_spending_proposal = create(:spending_proposal, feasible: false)
@@ -159,14 +164,6 @@ feature 'Spending proposals' do
 
     expect(page).to have_content 'Spending proposal created successfully'
     expect(page).to have_content 'You can access it from My activity'
-
-    within "#notice" do
-      click_link 'My activity'
-    end
-
-    expect(current_url).to eq(user_url(author, filter: :spending_proposals))
-    expect(page).to have_content "1 Spending proposal"
-    expect(page).to have_content "Build a skyscraper"
   end
 
   scenario 'Errors on create' do
@@ -192,28 +189,6 @@ feature 'Spending proposals' do
     within("#spending_proposal_code") do
       expect(page).to have_content(spending_proposal.id)
     end
-  end
-
-  context "Destroy" do
-
-    scenario "Admin can destroy owned spending proposals" do
-      admin = create(:administrator)
-      user = create(:user, :level_two)
-      spending_proposal = create(:spending_proposal, author: user)
-
-      login_as(admin.user)
-
-      visit user_path(user)
-      within("#spending_proposal_#{spending_proposal.id}") do
-        click_link "Delete"
-      end
-
-      expect(page).to have_content("Spending proposal deleted succesfully.")
-
-      visit user_path(user)
-      expect(page).not_to have_css("spending_proposal_list")
-    end
-
   end
 
 end

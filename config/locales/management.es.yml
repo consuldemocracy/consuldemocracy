@@ -29,7 +29,7 @@ es:
       not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
       please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
       title: Gestión de usuarios
-      under_age: Debes ser mayor de 16 años para verificar tu cuenta.
+      under_age: No tienes edad suficiente para verificar tu cuenta.
       verify: Verificar usuario
     email_label: Email
     email_verifications:
@@ -50,6 +50,9 @@ es:
       create_spending_proposal: Crear propuesta de inversión
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
+      create_budget_investment: Crear proyectos de inversión
+      print_budget_investments: Imprimir proyectos de inversión
+      support_budget_investments: Apoyar proyectos de inversión
       users: Usuarios
       edit_user_accounts: Editar cuenta de usuario
       user_invites: Invitaciones para usuarios
@@ -64,6 +67,8 @@ es:
       proposals_title: 'Propuestas:'
       spending_proposals_info: Participa en http://url.consul
       spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
+      budget_investments_info: Participa en http://url.consul
+      budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
     print_info: Imprimir esta información
     proposals:
       alert:
@@ -71,6 +76,22 @@ es:
       create_proposal: Crear propuesta
       print:
         print_button: Imprimir
+    budgets:
+      create_new_investment: Crear nuevo proyecto
+      print_investments: Imprimir proyectos
+      support_investments: Apoyar proyectos
+    budget_investments:
+      alert:
+        unverified_user: Usuario no verificado
+      create: Crear nuevo proyecto
+      filters:
+        heading: Concepto
+        unfeasible: Proyectos no factibles
+      print:
+        print_button: Imprimir
+      search_results:
+        one: " contiene el término '%{search_term}'"
+        other: " contienen el término '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Este usuario no está verificado

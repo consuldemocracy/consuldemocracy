@@ -10,7 +10,7 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true
   validates :user, presence: true
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal"]
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "Budget::Investment"]
 
   validate :validate_body_length
 

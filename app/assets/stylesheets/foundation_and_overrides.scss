@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 @import 'settings';
+@import 'custom_settings';
 @import 'foundation';
 
 @include foundation-global-styles;
@@ -34,3 +35,4 @@
 @include foundation-thumbnail;
 @include foundation-title-bar;
 @include foundation-top-bar;
+@include foundation-menu-icon;

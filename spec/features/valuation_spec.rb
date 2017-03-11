@@ -3,6 +3,11 @@ require 'rails_helper'
 feature 'Valuation' do
   let(:user) { create(:user) }
 
+  background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
   scenario 'Access as regular user is not authorized' do
     login_as(user)
     visit root_path

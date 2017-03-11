@@ -30,6 +30,7 @@ set :keep_releases, 5
 set :local_user, ENV['USER']
 
 set :delayed_job_workers, 2
+set :delayed_job_roles, :background
 
 set(:config_files, %w(
   log_rotation
@@ -38,7 +39,7 @@ set(:config_files, %w(
   unicorn.rb
 ))
 
-set :whenever_roles, -> { :cron }
+set :whenever_roles, -> { :app }
 
 namespace :deploy do
   before :starting, 'rvm1:install:rvm'  # install/update RVM

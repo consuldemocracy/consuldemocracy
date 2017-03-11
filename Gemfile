@@ -7,20 +7,20 @@ gem 'pg', '~> 0.19.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 3.0.3'
+gem 'uglifier', '>= 3.0.4'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 4.2.1'
+gem 'jquery-rails', '~> 4.2.2'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '~> 5.0.1'
 
 # Fix sprockets on the
-gem 'sprockets', '~> 3.7.0'
+gem 'sprockets', '~> 3.7.1'
 
 gem 'devise', '~> 4.2.0'
 gem 'devise_security_extension'
@@ -38,25 +38,25 @@ gem 'responders', '~> 2.3.0'
 gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
-gem 'ckeditor', '~> 4.2.0'
-gem 'invisible_captcha', github: 'markets/invisible_captcha' # update once a version > 0.9.1 is released
+gem 'delayed_job_active_record', '~> 4.1.1'
+gem 'ckeditor', '~> 4.2.2'
+gem 'invisible_captcha', '~> 0.9.2'
 gem 'cancancan'
 gem 'social-share-button'
 gem 'initialjs-rails', '0.2.0.4'
-gem 'unicorn', '~> 5.1.0'
-gem 'paranoia', "~> 2.2.0.pre"
+gem 'unicorn', '~> 5.2.0'
+gem 'paranoia', '~> 2.2.0'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.13.3'
-gem 'delayed_job_active_record', '~> 4.1.1'
+gem 'rollbar', '~> 2.14.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.17.0.325'
+gem 'newrelic_rpm', '~> 3.17.2.327'
 gem 'whenever', require: false
 gem 'pg_search'
-
-gem 'ahoy_matey', '~> 1.5.2'
+gem 'sitemap_generator'
+gem 'ahoy_matey', '~> 1.5.3'
 gem 'groupdate', '~> 3.1.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 gem 'browser'

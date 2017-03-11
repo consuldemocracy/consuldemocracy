@@ -10,7 +10,7 @@ class Verification::Management::Document
   delegate :username, :email, to: :user, allow_nil: true
 
   def user
-    @user = User.by_document(document_type, document_number).first
+    @user = User.active.by_document(document_type, document_number).first
   end
 
   def user?
@@ -23,7 +23,7 @@ class Verification::Management::Document
   end
 
   def valid_age?(response)
-    if under_sixteen?(response)
+    if under_age?(response)
       errors.add(:age, true)
       return false
     else
@@ -31,8 +31,8 @@ class Verification::Management::Document
     end
   end
 
-  def under_sixteen?(response)
-    16.years.ago.beginning_of_day < response.date_of_birth.beginning_of_day
+  def under_age?(response)
+    User.minimum_required_age.years.ago.beginning_of_day < response.date_of_birth.beginning_of_day
   end
 
   def verified?

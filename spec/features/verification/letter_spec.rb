@@ -20,6 +20,7 @@ feature 'Verify Letter' do
   end
 
   scenario 'Go to office instead of send letter' do
+    Setting["verification_offices_url"] = "http://offices.consul"
     user = create(:user, residence_verified_at: Time.current,
                          confirmed_phone:       "611111111")
 

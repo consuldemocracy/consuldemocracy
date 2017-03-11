@@ -1,0 +1,70 @@
+<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)), class: 'back' do %>
+  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<% end %>
+
+<%= form_for @investment,
+             url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
+
+  <% Budget::Investment.filter_params(params).each do |filter_name, filter_value| %>
+   <%= hidden_field_tag filter_name, filter_value %>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
+    </div>
+
+    <div class="ckeditor small-12 column">
+      <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.text_field :external_url %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
+    </div>
+  </div>
+
+  <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>
+
+  <div class="row">
+
+    <div class="small-12 column">
+      <%= f.select(:administrator_id,
+                     @admins.collect{ |a| [a.name_and_email, a.id ] },
+                     { include_blank: t("admin.budget_investments.edit.undefined") }) %>
+    </div>
+
+
+    <div class="small-12 column">
+      <%= f.label :tag_list, t("admin.budget_investments.edit.tags") %>
+      <div class="tags">
+        <% @tags.each do |tag| %>
+          <a class="js-add-tag-link"><%= tag.name %></a>
+        <% end %>
+      </div>
+      <%= f.text_field :valuation_tag_list,
+                        value: @investment.tag_list_on(:valuation).sort.join(','),
+                        label: false,
+                        placeholder: t("admin.budget_investments.edit.tags_placeholder"),
+                        class: 'js-tag-list' %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :valuator_ids, t("admin.budget_investments.edit.assigned_valuators") %>
+
+      <%= f.collection_check_boxes :valuator_ids, @valuators, :id, :email do |b| %>
+          <%= b.label(title: valuator_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %>
+      <% end %>
+    </div>
+  </div>
+
+  <p class="clear">
+    <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>
+  </p>
+<% end %>
+
+<hr>
+<%# render 'valuation/budget_investments/written_by_valuators' %>

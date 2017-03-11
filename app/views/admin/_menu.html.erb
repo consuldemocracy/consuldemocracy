@@ -35,6 +35,22 @@
       </li>
     <% end %>
 
+    <% if feature?(:budgets) %>
+      <li <%= "class=active" if controller_name == "budgets" %>>
+        <%= link_to admin_budgets_path do %>
+          <span class="icon-budget"></span><%= t("admin.menu.budgets") %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <% if feature?(:signature_sheets) %>
+      <li <%= "class=active" if controller_name == "signature_sheets" %>>
+        <%= link_to admin_signature_sheets_path do %>
+          <span class="icon-budget"></span><%= t("admin.menu.signature_sheets") %>
+        <% end %>
+      </li>
+    <% end %>
+
     <li <%= "class=active" if controller_name == "banners" %>>
       <%= link_to admin_banners_path do %>
         <span class="icon-eye"></span><%= t("admin.menu.banner") %>
@@ -80,6 +96,12 @@
     <li <%= 'class=active' if controller_name == 'managers' %>>
       <%= link_to admin_managers_path do %>
         <span class="icon-user"></span><%= t('admin.menu.managers') %>
+      <% end %>
+    </li>
+
+    <li <%= 'class=active' if controller_name == 'geozones' %>>
+      <%= link_to admin_geozones_path do %>
+        <span class="icon-settings"></span><%= t('admin.menu.geozones') %>
       <% end %>
     </li>
 
