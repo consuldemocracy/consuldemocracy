@@ -139,7 +139,6 @@ en:
     title: List of investment projects
     text: Select the investment projects to add to your list by entering their ID
     help_html: "<small><em>The ID is the number that appear in the URL of each investment project, for example:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
-    form_label_note: "You can enter several separated by commas (',')"
     form_submit: "Add to my list"
     table_head: "Investment project's title"
     delete: "Delete of my list"

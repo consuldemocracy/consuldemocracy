@@ -68,7 +68,7 @@ describe Debate do
     end
 
     it "should not be valid when very long" do
-      debate.description = "a" * 6001
+      debate.description = "a" * 20001
       expect(debate).to_not be_valid
     end
   end

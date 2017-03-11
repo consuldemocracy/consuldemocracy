@@ -139,7 +139,6 @@ es:
     title: Lista de proyectos de gasto
     text: Selecciona los proyectos de gasto para añadir a tu lista introduciendo su ID
     help_html: "<small><em>El ID es el número que aparece en la URL de cada proyecto de gasto, por ejemplo:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
-    form_label_note: "Puedes introducir varios separados por comas (',')"
     form_submit: "Añadir a mi lista"
     table_head: "Título del proyecto de gasto"
     delete: "Eliminar de mi lista"

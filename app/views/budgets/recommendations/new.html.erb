@@ -37,7 +37,7 @@
                 <%= link_to recommendation.investment.title, budget_investment_path(recommendation.budget, recommendation.investment) %>
               </td>
               <td class="text-right">
-                <%= link_to "Eliminar de mi lista",
+                <%= link_to t("delegation.delete"),
                             budget_recommendation_path(budget_id: recommendation.budget, id: recommendation.id),
                             method: :delete,
                             class: "delete" %>
