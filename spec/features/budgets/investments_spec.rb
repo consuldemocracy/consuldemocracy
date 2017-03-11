@@ -150,6 +150,20 @@ feature 'Budget Investments' do
       expect(order).to eq(new_order)
     end
 
+    scenario 'Random order maintained when going back from show' do
+      10.times { |i| create(:budget_investment, heading: heading) }
+
+      visit budget_investments_path(budget, heading_id: heading.id)
+
+      order = all(".budget-investment h3").collect {|i| i.text }
+
+      click_link Budget::Investment.first.title
+      click_link "Go back"
+
+      new_order = all(".budget-investment h3").collect {|i| i.text }
+      expect(order).to eq(new_order)
+    end
+
     scenario 'Proposals are ordered by confidence_score', :js do
       create(:budget_investment, heading: heading, title: 'Best proposal').update_column(:confidence_score, 10)
       create(:budget_investment, heading: heading, title: 'Worst proposal').update_column(:confidence_score, 2)

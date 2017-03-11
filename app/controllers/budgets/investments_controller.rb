@@ -77,11 +77,9 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99)/100.0
-          seed = Float(params[:random_seed]) rescue 0
+          session[:random_seed] ||= rand(99)/100.0
+          seed = Float(session[:random_seed]) rescue 0
           Budget::Investment.connection.execute("select setseed(#{seed})")
-        else
-          params[:random_seed] = nil
         end
       end
 
@@ -96,9 +94,22 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find_by(slug: params[:heading_id]) || @budget.headings.find_by(id: params[:heading_id])
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          load_heading_from_slug
+          load_assigned_heading
+          set_heading_id_from_slug
         end
+      end
+
+      def load_heading_from_slug
+        @heading = @budget.headings.find_by(slug: params[:heading_id]) || @budget.headings.find_by(id: params[:heading_id])
+      end
+
+      def load_assigned_heading
+        @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+      end
+
+      def set_heading_id_from_slug
+        params[:heading_id] = @heading.try(:id)
       end
 
       def load_categories
