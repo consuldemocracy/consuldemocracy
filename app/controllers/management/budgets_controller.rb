@@ -6,7 +6,7 @@ class Management::BudgetsController < Management::BaseController
   before_action :only_verified_users, except: :print_investments
 
   def create_investments
-    @budgets = Budget.accepting.order(created_at: :desc) + Budget.reviewing.order(created_at: :desc)
+    @budgets = Budget.accepting.order(created_at: :desc) + Budget.selecting.order(created_at: :desc)
   end
 
   def support_investments
