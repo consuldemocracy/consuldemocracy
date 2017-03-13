@@ -678,7 +678,7 @@ en:
         users_both_total:  Users who voted for BOTH
       budget_investments:
         title: Participatory Budgets
-        districts: District
+        groups: Groups
         users: Users
         users_city_total: Users who voted for city-wide proposals
         users_district_total: Users who voted for district-wide proposals

@@ -678,7 +678,7 @@ es:
         users_both_total: Usuarios que han votado AMBAS
       budget_investments:
         title: Presupuestos participativos 2017
-        districts: Distrito
+        groups: Grupo
         users: Usuarios
         users_city_total: Usuarios que han votado propuestas de ciudad
         users_district_total: Usuarios que han votado propuestas de distrito
