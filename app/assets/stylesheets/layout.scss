@@ -209,6 +209,7 @@ a {
 
 .logo {
   @include logo;
+  color: black;
 }
 
 .close-button {
