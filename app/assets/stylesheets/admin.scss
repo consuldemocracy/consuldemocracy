@@ -403,3 +403,13 @@ table.investment-projects-summary {
     white-space: nowrap;
   }
 }
+
+// 05. CMS
+// --------------
+.cms_page_list {
+  
+  [class^="icon-"] {
+    padding-right: $menu-icon-spacing;
+    vertical-align: middle;
+  }
+}
