@@ -1451,6 +1451,7 @@ es:
           visits: Visitas
           votes: Votos
         budgets_title: Presupuestos participativos
+        participatory_budgets: Presupuestos Participativos
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas
@@ -1461,6 +1462,11 @@ es:
         visit: Visitas
         level_2_user: Usuarios nivel 2
         proposal_created: Propuestas Ciudadanas
+      budget_investments:
+        groups: Grupo
+        users: Usuarios
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensajes directos
         total: Total
