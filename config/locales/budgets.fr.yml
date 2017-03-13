@@ -63,8 +63,8 @@ fr:
         price_explanation: Explication du prix
         share: Partager
         title: Projet d'investissement
-        supports: TODO - Apoyos
-        votes: TODO - Votos
+        supports: ""
+        votes: ""
       wrong_price_format  : Seulement des nombres entiers
       header:
         check_ballot : "Voir mon bulletin"
@@ -75,6 +75,7 @@ fr:
         give_support: Soutenir
         add: Ajouter
         support_title: Soutenir ce projet
+        confirm_group: "Vous ne pouvez soutenir que les investissements de votre site."
         title: Projet d'investissement
         supports:
           one: "1 soutien"
