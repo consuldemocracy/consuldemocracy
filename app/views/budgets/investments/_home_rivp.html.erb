@@ -68,14 +68,13 @@
 </div>
 
 <div class="container home">
-<h1>Les étapes du budget participatif</h1>
-<p style="padding-bottom: 15px; font-style: italic"><%= link_to "Consultez le mode d'emploi pour plus de détails", "/more_information", class: "" %></p>
-<p></p>
+  <h1>Les étapes du budget participatif</h1>
+  <p style="padding-bottom: 15px; font-style: italic"><%= link_to "Consultez le mode d'emploi pour plus de détails", "/more_information", class: "" %></p>
   <div class="row">
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-6 large-2 column text-center">
-
+        <!-- card color if active phase -->
         <% if @budget.phase == card[1][:name] %>
           <% active = "active" %>
         <% else %>
@@ -92,7 +91,7 @@
 
         <div class="card card1 <%= active %>">
           <div class="item-1" style="color-1">
-          <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
+            <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
           </div>
           <div class="item-2">
             <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
@@ -109,7 +108,7 @@
 
       </div>
       <% i+=1 %>
-    <% end%>
+    <% end %>
   </div>
 <h1>Proposez vos idées sur les thèmes suivants</h1>
   <div class="row center">
@@ -129,33 +128,49 @@
           <div class="item-6 background-<%=i%>">
           </div>
         </div>
+      </div>
+      <% i+=1 %>
+    <% end %>
+  </div>
+<h1>Proposez vos idées sur les thèmes suivants</h1>
+  <div class="row">
+    <% i=6%>
+    <% t("budgets.home_rivp.theme_cards").each do |card| %>
 
+        <div class="large-2 small-12 medium-6 card3">
+          <div class="item-1">
+            <%= image_tag(card[1][:img], size: 32, class: "") %>
+          </div>
+        </div>
+        <div class="large-4 small-12 medium-6 card3">
+          <div class="item-2">
+            <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
+            <p><%= card[1][:description] %><p>
+          </div>
+        </div>
+      <% i-=1 %>
+
+    <% end%>
+  </div>
+
+  <h1>Test</h1>
+  <div class="row">
+    <% i=3%>
+    <% t("budgets.home_rivp.theme_cards").each do |card| %>
+      <div class="large-2 small-4 columns card3">
+        <div class="item-1">
+          <%= image_tag(card[1][:img], size: 32, class: "") %>
+        </div>
+      </div>
+      <div class="large-4 small-12 columns card3">
+        <div class="item-2">
+          <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
+          <p><%= card[1][:description] %><p>
+        </div>
       </div>
       <% i+=1 %>
     <% end%>
   </div>
-  <div class="row center">
-    <% i=6%>
-    <% t("budgets.home_rivp.theme_cards").each do |card| %>
-      <div class="small-12 medium-6">
-        <div class="row">
-          <div class="small-12 medium-6">
-            <div class="card3">
-              Logo
-            </div>
-          </div>
-          <div class="small-12 medium-6">
-            <div class="card3">
-              Titre
-              Texte
-            </div>
-          </div>
-          <% i-=1 %>
-        </div>
-      </div>
-    <% end%>
-  </div>
-
 
 
 <h1>Consultez les propositions des différents sites</h1>
@@ -186,3 +201,5 @@
 
 </div>
 </div>
+
+
