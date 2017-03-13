@@ -101,7 +101,7 @@ feature 'Stats' do
       end
 
       visit admin_stats_path
-      click_link "Participatory Budget"
+      click_link "Participatory Budget 2016"
 
       within("#geozone_#{california.id}") do
         expect(page).to have_content california.name
@@ -119,7 +119,7 @@ feature 'Stats' do
 
 
       visit admin_stats_path
-      click_link "Participatory Budget"
+      click_link "Participatory Budget 2016"
 
       within("#city_voters") {expect(page).to have_content 2}
       within("#district_voters") {expect(page).to have_content 2}
