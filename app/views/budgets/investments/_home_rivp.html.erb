@@ -174,7 +174,33 @@
 
 
 <h1>Consultez les propositions des différents sites</h1>
-<div class="row margin-top">
+<div class="row margin-top show-for-medium ">
+  <div class="medium-12 column show-for-medium text-left point-relatif">
+    <%= image_tag "custom/citymap2.png" %>
+  </div>
+  <div id="select-district" class="large-2 medium-6 column select-district list-group point-absolu">
+    <div class="row">
+      <% Budget.find(1).headings.each_slice(12) do |slice| %>
+        <div class="small-12 medium-12 column end ">
+          <% slice.each do |heading| %>
+            <span id="<%= dom_id(heading) %>"
+                  class="<%= css_for_ballot_heading(heading) %> list-group-item">
+              <%= link_to heading.name,
+                          budget_investments_path(heading_id: heading.id,
+                                                  unfeasible: params[:unfeasible],
+                                                  budget_id: 1),
+                          data: { no_turbolink: true } %><br>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="show-for-small-only">
   <div id="select-district" class="small-12 medium-3 column select-district list-group">
     <div class="row">
       <% Budget.find(1).headings.each_slice(12) do |slice| %>
@@ -194,7 +220,7 @@
     </div>
   </div>
 
-  <div class="medium-9 column show-for-medium text-left">
+  <div class="small-12 column">
     <%= image_tag "custom/citymap.png" %>
   </div>
 </div>
