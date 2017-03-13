@@ -24,6 +24,16 @@ $sixth-color: #FF9200;
   margin: 10px;
  }
 }
+.point-relatif{
+  position: relative;
+}
+.point-absolu{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  // top: 20px;
+  // left: 20px;
+}
 
 .picto_ampoule img{
   // height: 200px;
