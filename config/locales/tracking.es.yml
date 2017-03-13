@@ -42,8 +42,6 @@ es:
         start_phone_verification: Inicio verificación de teléfono
         residence_verified: Residencia verificada
       name:
-        landing_joaquin_reyes: "Landing Joaquin Reyes"
-        home_joaquin_reyes: "Home Joaquin Reyes"
         "yes": "Positivo"
         "no": "Negativo"
       dimension_value:
