@@ -62,11 +62,14 @@ a {
 }
 
 .button {
-  background: $dark;
+  background: #44A6D2;
+  color: white;
+  border: white;
   font-size: $base-font-size;
 
   &:hover {
     text-decoration: none !important;
+    background-color: #1C6890;
   }
 }
 
@@ -584,11 +587,11 @@ footer {
 }
 
 .categories a, .geozone a {
-  background: #37CDFC;
-  color: $link;
+  background: #1C6890;
+  color: white;
 
   &:hover {
-    background: $link-hover;
+    background: #44A6D2;
     color: white;
   }
 }
