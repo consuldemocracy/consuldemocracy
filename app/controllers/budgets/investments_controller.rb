@@ -77,9 +77,10 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= (session[:random_seed] || rand(99)/100.0)
-          seed = Float(params[:random_seed]) rescue 0
+          seed = params[:random_seed] || session[:random_seed] || (rand(99)/100.0)
+          seed = Float(seed) rescue 0
           session[:random_seed] = seed
+          params[:random_seed] = seed
           Budget::Investment.connection.execute("select setseed(#{seed})")
         end
       end
