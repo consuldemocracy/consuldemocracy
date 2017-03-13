@@ -33,8 +33,8 @@
       <p>
         <strong><%= t('budgets.show.phase') %></strong>
       </p>
-      <% if @budget.phase == ("accepting" or "reviewing" or "selecting") %>
-        <h2>dépôt, échange et soutien des idées</h2>
+      <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
+        <h2>Dépôt, échange et soutien des idées</h2>
       <% else %>
         <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
       <% end %>
@@ -52,7 +52,7 @@
         <% else %>
           <div class="callout primary margin-top">
             <%= t("budgets.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
+                  sign_in: link_to('extranet RIVP', 'https://extranet-rivp.fr/'),
                   sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
           </div>
         <% end %>
@@ -68,14 +68,13 @@
 </div>
 
 <div class="container home">
-<h1>Les étapes du budget participatif</h1>
-<p style="padding-bottom: 15px; font-style: italic"><%= link_to "Consultez le mode d'emploi pour plus de détails", "/more_information", class: "" %></p>
-<p></p>
+  <h1>Les étapes du budget participatif</h1>
+  <p style="padding-bottom: 15px; font-style: italic"><%= link_to "Consultez le mode d'emploi pour plus de détails", "/more_information", class: "" %></p>
   <div class="row">
     <% i=1%>
     <% t("budgets.home_rivp.steps_cards").each do |card| %>
       <div class="small-12 medium-6 large-2 column text-center">
-
+        <!-- card color if active phase -->
         <% if @budget.phase == card[1][:name] %>
           <% active = "active" %>
         <% else %>
@@ -92,7 +91,7 @@
 
         <div class="card card1 <%= active %>">
           <div class="item-1" style="color-1">
-          <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
+            <%= image_tag(card[1][:img], size: 32, class: "color-1 svg-inject iconic-1") %>
           </div>
           <div class="item-2">
             <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
@@ -109,7 +108,7 @@
 
       </div>
       <% i+=1 %>
-    <% end%>
+    <% end %>
   </div>
 <h1>Proposez vos idées sur les thèmes suivants</h1>
   <div class="row center">
@@ -129,20 +128,57 @@
           <div class="item-6 background-<%=i%>">
           </div>
         </div>
+      </div>
+      <% i+=1 %>
+    <% end %>
+  </div>
+<h1>Proposez vos idées sur les thèmes suivants</h1>
+  <div class="row">
+    <% i=6%>
+    <% t("budgets.home_rivp.theme_cards").each do |card| %>
 
+        <div class="large-2 small-12 medium-6 card3">
+          <div class="item-1">
+            <%= image_tag(card[1][:img], size: 32, class: "") %>
+          </div>
+        </div>
+        <div class="large-4 small-12 medium-6 card3">
+          <div class="item-2">
+            <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
+            <p><%= card[1][:description] %><p>
+          </div>
+        </div>
+      <% i-=1 %>
+
+    <% end%>
+  </div>
+
+  <h1>Test</h1>
+  <div class="row">
+    <% i=3%>
+    <% t("budgets.home_rivp.theme_cards").each do |card| %>
+      <div class="large-2 small-4 columns card3">
+        <div class="item-1">
+          <%= image_tag(card[1][:img], size: 32, class: "") %>
+        </div>
+      </div>
+      <div class="large-4 small-12 columns card3">
+        <div class="item-2">
+          <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
+          <p><%= card[1][:description] %><p>
+        </div>
       </div>
       <% i+=1 %>
     <% end%>
   </div>
 
 
-
 <h1>Consultez les propositions des différents sites</h1>
 <div class="row margin-top">
-  <div id="select-district" class="small-12 medium-6 column select-district list-group">
+  <div id="select-district" class="small-12 medium-3 column select-district list-group">
     <div class="row">
       <% Budget.find(1).headings.each_slice(12) do |slice| %>
-        <div class="small-12 medium-offset-3 medium-6 column end ">
+        <div class="small-12 medium-12 column end ">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %> list-group-item">
@@ -158,10 +194,12 @@
     </div>
   </div>
 
-  <div class="medium-6 column show-for-medium text-left">
+  <div class="medium-9 column show-for-medium text-left">
     <%= image_tag "custom/citymap.png" %>
   </div>
 </div>
 
 </div>
 </div>
+
+

@@ -48,7 +48,7 @@ fr:
             other: "<strong>Vous avez voté %{count} propositions avec un coût de %{amount_spent}</strong>"
           zero  : Vous n'avez voter sur aucun projet d'investissement
           voted_info  : "Vous pouvez changer votre vote à tout moment jusqu'à la fin de cette phase. Pas besoin de dépenser l'intégralité de votre argent."
-          not_logged_in : Pour créer un nouveau budget d'investissement vous devez %{sign_in} ou %{sign_up}
+          not_logged_in : Pour participer au budget participatif vous devez vous connecter via l'%{sign_in}
           sign_in : Identification
           sign_up : Inscription
           by_feasibility: TODO - Por viabilidad

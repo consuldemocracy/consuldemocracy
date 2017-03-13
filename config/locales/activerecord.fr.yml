@@ -51,23 +51,20 @@ fr:
         currency_symbol: "Currency"
       budget/investment:
         heading_id: "Section du budget"
-        title: "Nom du projet"
+        title: "Nom du projet
+        <br><p>Donnez un nom à votre proposition. Choisissez un titre qui soit court et précis car c’est la première chose que verront les locataires</p>"
         description: "Description du projet"
         external_url: "URL externe"
-        location: "Localisation exacte"
+        location: "Localisation exacte
+        <br><p>Votre proposition concerne la cage d’escalier de votre résidence, les espaces communs, les espaces verts, un local, le pied d’immeuble, une façade d’immeuble…</p>"
         administrator_id: "Administrateur"
         description: "Description du projet
-          <br><p>Point de départ
-          <br>Le besoin, la difficulté à résoudre, etc.
-          <br>La solution que vous proposez
-          <br>Qui va réaliser ?
-          <br>Moi / avec un collectif d’autres locataires / avec l’appui d’une association de locataires / avec le gardien d’immeuble / … (ne garder que la solution retenue)
-          <br>Estimation du coût
-          <br>A combien se chiffrerait la mise en œuvre de votre solution ?
-          <br>Est-ce que des moyens supplémentaires seront nécessaires pour faire vivre votre projet dans la durée ?<p>"
-        external_url: "Lien vers une documentation externe"
+          <br><p>Pour présenter votre idée, nous vous conseillons d’indiquer quel est le besoin et de présenter votre solution. Vous pouvez également estimer le coût de la mise en oeuvre (ce n’est toutefois pas obligatoire)<p>"
+        external_url: "Lien vers une documentation externe
+        <br><p>Si vous le souhaitez vous pouvez ajouter le lien internet d’une vidéo qui présente votre idée, de photos pour mieux comprendre, un document texte…</p>"
         heading_id: "Site concerné"
-        organization_name: "Si vous représentez un collectif ou une organisation, écrivez son nom"
+        organization_name: "Si vous représentez un collectif ou une organisation, écrivez son nom
+        <br><p>Si votre proposition implique d’autres locataires, une association de locataires, le gardien d’immeuble… donnez un nom à ce collectif</p>"
 
       comment:
         body: "Commentaire"
