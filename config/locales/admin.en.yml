@@ -629,7 +629,8 @@ en:
     stats:
       show:
         stats_title: Stats
-        participatory_budget: Participatory Budget
+        participatory_budget_2016: Participatory Budget 2016
+        participatory_budget_2017: Participatory Budget 2017
         polls: Polls
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
@@ -664,6 +665,7 @@ en:
         proposal_created: Citizen proposals
         participatory_budget: Participatory Budget
         user_voted_budgets: Users that have voted
+        user_supported_budgets: Users that have voted
         unverified_users: Unverified users
       spending_proposals:
         title: Participatory Budgets
@@ -674,6 +676,17 @@ en:
         users_city_only: Users who voted ONLY for city-wide proposals
         users_district_only: Users who voted ONLY for district-wide proposals
         users_both_total:  Users who voted for BOTH
+      budget_investments:
+        title: Participatory Budgets
+        groups: Groups
+        users: Users
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        users_city_only: Users who voted ONLY for city-wide proposals
+        users_district_only: Users who voted ONLY for district-wide proposals
+        users_both_total:  Users who voted for BOTH
+        vote_count: Votes
+        participant_count: Participants
       direct_messages:
         title: Direct messages
         total: Total

@@ -6,7 +6,8 @@ class Admin::Api::StatsController < Admin::Api::BaseController
            params[:visits].present? ||
            params[:unverified_users].present? ||
            params[:spending_proposals].present? ||
-           params[:user_voted_budgets].present?
+           params[:user_voted_budgets].present? ||
+           params[:user_supported_budgets].present?
       return render json: {}, status: :bad_request
     end
 
@@ -30,6 +31,10 @@ class Admin::Api::StatsController < Admin::Api::BaseController
 
     if params[:user_voted_budgets].present?
       ds.add "User voted budgets", Ballot.where('ballot_lines_count > ?', 0).group_by_day(:updated_at).count
+    end
+
+    if params[:user_supported_budgets].present?
+      ds.add "User supported budgets", Vote.where(votable_type: 'Budget::Investment').group_by_day(:updated_at).count
     end
     render json: ds.build
   end

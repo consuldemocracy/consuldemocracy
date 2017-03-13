@@ -481,6 +481,10 @@ Budget::PHASES.each_with_index do |phase, i|
   end
 end
 
+puts " ✅"
+print "Creating City Heading"
+Budget.first.groups.first.headings.create(name: "Toda la ciudad", price: 100000000)
+
 
 puts " ✅"
 print "Creating Investments"

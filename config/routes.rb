@@ -272,6 +272,7 @@ Rails.application.routes.draw do
 
     resource :stats, only: :show do
       get :spending_proposals, on: :collection
+      get :budget_investments, on: :collection
       get :graph, on: :member
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection

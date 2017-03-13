@@ -629,7 +629,8 @@ es:
     stats:
       show:
         stats_title: Estadísticas
-        participatory_budget: Presupuestos Participativos
+        participatory_budget_2016: Presupuestos Participativos 2016
+        participatory_budget_2017: Presupuestos Participativos 2017
         polls: Votaciones
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -664,6 +665,7 @@ es:
         proposal_created: Propuestas Ciudadanas
         participatory_budget: Presupuestos Participativos
         user_voted_budgets: Usuarios que han votado
+        user_supported_budgets: Usuarios que han votado
         unverified_users: Usuarios sin verificar
       spending_proposals:
         title: Presupuestos participativos
@@ -674,6 +676,17 @@ es:
         users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
         users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
+      budget_investments:
+        title: Presupuestos participativos 2017
+        groups: Grupo
+        users: Usuarios
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han votado AMBAS
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensajes directos
         total: Total
