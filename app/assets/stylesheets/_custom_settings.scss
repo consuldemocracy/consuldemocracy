@@ -17,7 +17,13 @@ $sixth-color: #FF9200;
   justify-content: space-around;
 }
 
-
+@media screen and (max-width: 650px) {
+ .card.card1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: 10px;
+ }
+}
 
 .picto_ampoule img{
   // height: 200px;
@@ -76,7 +82,7 @@ $sixth-color: #FF9200;
   // width: 150px;
   padding-left: -0.9375rem;
   padding-right: -0.9375rem;
-margin: -10px;
+  margin: -10px;
   .item-1{
     img{
     margin-top:10px;
@@ -113,6 +119,8 @@ margin: -10px;
     border-bottom-right-radius: 3px;
   }
 }
+
+
 
 .card2{
   border-radius: 5px;
