@@ -76,7 +76,7 @@ feature 'Stats' do
     expect(page).to have_content "Level two users 1"
   end
 
-  context "Participatory Budgets" do
+  context "Spending Proposals" do
 
     scenario "Number of users that have voted a investment project" do
       spending_proposal = create(:spending_proposal, :feasible)
@@ -133,6 +133,122 @@ feature 'Stats' do
       visit admin_stats_path
       expect(page).to have_content "Votes in investment projects 3"
     end
+  end
+
+  feature "Budget investments" do
+
+    background do
+      budget = create(:budget)
+      group_all_city   = create(:budget_group, budget: budget)
+      heading_all_city = create(:budget_heading, group: group_all_city)
+
+      allow_any_instance_of(Admin::StatsController).
+      to receive(:city_heading).and_return(heading_all_city)
+    end
+
+    scenario "Number of supports in investment projects" do
+      investment1 = create(:budget_investment)
+      investment2 = create(:budget_investment)
+
+      1.times { create(:vote, votable: investment1) }
+      2.times { create(:vote, votable: investment2) }
+
+      visit admin_stats_path
+      click_link "Participatory Budget 2017"
+
+      expect(page).to have_content "Votes 3"
+    end
+
+    scenario "Number of users that have voted a investment project" do
+      user1 = create(:user, :level_two)
+      user2 = create(:user, :level_two)
+      user3 = create(:user, :level_two)
+
+      investment1 = create(:budget_investment)
+      investment2 = create(:budget_investment)
+
+      create(:vote, votable: investment1, voter: user1)
+      create(:vote, votable: investment1, voter: user2)
+      create(:vote, votable: investment2, voter: user1)
+
+      visit admin_stats_path
+      click_link "Participatory Budget 2017"
+
+      expect(page).to have_content "Participants 2"
+    end
+
+    scenario "Number of users that have voted a investment project per geozone" do
+      budget = create(:budget)
+
+      group_all_city  = create(:budget_group, budget: budget)
+      group_districts = create(:budget_group, budget: budget)
+
+      all_city    = create(:budget_heading, group: group_all_city)
+      carabanchel = create(:budget_heading, group: group_districts)
+      barajas     = create(:budget_heading, group: group_districts)
+
+      all_city_investment = create(:budget_investment, heading: all_city)
+      carabanchel_investment = create(:budget_investment, heading: carabanchel)
+      carabanchel_investment = create(:budget_investment, heading: carabanchel)
+
+      Budget::Investment.all.each do |investment|
+        create(:vote, votable: investment)
+      end
+
+      visit admin_stats_path
+      click_link "Participatory Budget 2017"
+
+      within("#budget_heading_#{all_city.id}") do
+        expect(page).to have_content all_city.name
+        expect(page).to have_content 1
+      end
+
+      within("#budget_heading_#{carabanchel.id}") do
+        expect(page).to have_content carabanchel.name
+        expect(page).to have_content 2
+      end
+
+      within("#budget_heading_#{barajas.id}") do
+        expect(page).to have_content barajas.name
+        expect(page).to have_content 0
+      end
+    end
+
+    scenario "Number of users that have voted geozone/no-geozone wide proposals" do
+      budget = create(:budget)
+
+      group_all_city  = create(:budget_group, budget: budget)
+      group_districts = create(:budget_group, budget: budget)
+
+      all_city    = create(:budget_heading, group: group_all_city)
+      carabanchel = create(:budget_heading, group: group_districts)
+
+      allow_any_instance_of(Admin::StatsController).
+      to receive(:city_heading).and_return(all_city)
+
+      all_city_investment = create(:budget_investment, heading: all_city)
+      district_investment = create(:budget_investment, heading: carabanchel)
+
+      user_both = create(:user, :level_two)
+      user_city = create(:user, :level_two)
+      user_district = create(:user, :level_two)
+
+      create(:vote, voter: user_both, votable: all_city_investment)
+      create(:vote, voter: user_both, votable: district_investment)
+
+      create(:vote, voter: user_city, votable: all_city_investment)
+      create(:vote, voter: user_district, votable: district_investment)
+
+      visit admin_stats_path
+      click_link "Participatory Budget 2017"
+
+      within("#city_voters") {expect(page).to have_content 2}
+      within("#district_voters") {expect(page).to have_content 2}
+      within("#in_both_voters") {expect(page).to have_content 1}
+      within("#only_district_voters") {expect(page).to have_content 1}
+      within("#only_city_voters") {expect(page).to have_content 1}
+    end
+
   end
 
   context "graphs" do

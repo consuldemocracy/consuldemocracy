@@ -8,7 +8,9 @@
                     setting['analytics_url'].try(:html_safe), target: '_blank', class: "button hollow" %>
         <%= link_to t("admin.stats.show.polls"),
                     polls_admin_stats_path, class: "button hollow" %>
-        <%= link_to t("admin.stats.show.participatory_budget"),
+        <%= link_to t("admin.stats.show.participatory_budget_2017"),
+                    budget_investments_admin_stats_path, class: "button hollow" %>
+        <%= link_to t("admin.stats.show.participatory_budget_2016"),
                     spending_proposals_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.user_invites"),
                     user_invites_admin_stats_path, class: "button hollow" %>
