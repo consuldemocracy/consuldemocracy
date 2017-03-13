@@ -65,7 +65,6 @@ fr:
         heading_id: "Site concerné"
         organization_name: "Si vous représentez un collectif ou une organisation, écrivez son nom
         <br><p>Si votre proposition implique d’autres locataires, une association de locataires, le gardien d’immeuble… donnez un nom à ce collectif</p>"
-
       comment:
         body: "Commentaire"
         user: "Utilisateur"
