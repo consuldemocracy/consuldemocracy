@@ -51,6 +51,9 @@ module Abilities
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
       can [:index, :create, :edit, :update, :destroy], Geozone
+
+      can :create, DirectMessage
+      can :show, DirectMessage, sender_id: user.id
     end
   end
 end
