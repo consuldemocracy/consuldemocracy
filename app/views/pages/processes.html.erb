@@ -58,11 +58,11 @@
         <div class="tabs-panel is-active" id="panel1v">
           <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
 
-          <!-- Nueva Ordenanza Movilidad -->
+          <!-- Rehabilitación edificios -->
           <div class="panel">
-            <h3><%= t("pages.processes.index.process_15_title") %></h3>
-            <p><%= t("pages.processes.index.process_15_description") %></p>
-            <%= link_to t("pages.processes.index.process_15_button"), movilidad_path, class: "button hollow" %>
+            <h3><%= t("pages.processes.index.process_16_title") %></h3>
+            <p><%= t("pages.processes.index.process_16_description") %></p>
+            <%= link_to t("pages.processes.index.process_16_button"), buildings_path, class: "button hollow" %>
           </div>
         </div>
 
@@ -78,6 +78,13 @@
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Nueva Ordenanza Movilidad -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_15_title") %></h3>
+            <p><%= t("pages.processes.index.process_15_description") %></p>
+            <%= link_to t("pages.processes.index.process_15_button"), movilidad_path, class: "button hollow" %>
+          </div>
 
           <!-- Línea Madrid -->
           <div class="panel">
