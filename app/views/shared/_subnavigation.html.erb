@@ -3,32 +3,29 @@
     <% if feature?(:debates) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
-                                  debates_path,
-                                  controller_name == 'debates',
-                                  accesskey: "d" %>
+                                debates_path,
+                                controller_name == 'debates',
+                                accesskey: "1" %>
       </li>
     <% end %>
     <li>
       <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
                                 controller_name == 'proposals',
-                                accesskey: "p" %>
+                                accesskey: "2" %>
     </li>
-
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
                                   first_voting_path,
                                   controller_name == 'pages' &&
                                   params[:id] == 'landings/first_voting',
-                                  accesskey: "v" %>
+                                  accesskey: "3" %>
       </li>
     <% end %>
-
     <li>
-      <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "o"  %>
+      <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "4"  %>
     </li>
-
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),
@@ -42,7 +39,7 @@
         <%= layout_menu_link_to t("layouts.header.budgets"),
                                   budgets_welcome_path,
                                   controller_name == "budgets" || controller_name == "investments" || current_page?(budgets_welcome_path),
-                                  accesskey: "b" %>
+                                  accesskey: "5" %>
       </li>
     <% end %>
   </ul>
