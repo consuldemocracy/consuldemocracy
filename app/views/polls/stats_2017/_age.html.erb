@@ -27,7 +27,6 @@
         <% ::Poll::Voter::VALID_ORIGINS.each do |origin| %>
           <td>
             <div class="progress" role="progressbar" tabindex="0"
-                 aria-valuenow="<%= percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>"
                  aria-valuetext="<%= percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%"
                  aria-valuemin="0" aria-valuemax="100">
               <span class="progress-meter <%= origin %>" style="width: <%= @age_stats[age.to_s][origin]*100*6/@age_stats['all']['total'] rescue 0 %>%">
@@ -46,7 +45,6 @@
             (<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%)
           </strong>
           <div class="progress" role="progressbar" tabindex="0"
-               aria-valuenow="<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>"
                aria-valuetext="<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%"
                aria-valuemin="0" aria-valuemax="100">
             <span class="progress-meter" style="width: <%= @age_stats[age.to_s]['total']*100*6/@age_stats['all']['total'] rescue 0 %>%"></span>
