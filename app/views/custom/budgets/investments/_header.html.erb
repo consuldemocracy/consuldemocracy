@@ -3,7 +3,7 @@
     <div class="expanded budget jumbo-budget budget-heading">
 
       <div class="row">
-        <div class="small-12 large-9 column padding">
+        <div id="columna_1" class="small-12 large-9 column padding">
           <% if @heading.group.headings.count == 1 %>
             <%= back_link_to budget_path(@budget, unfeasible: params[:unfeasible]) %>
           <% else %>
@@ -23,7 +23,7 @@
           <% end %>
 
         </div>
-        <div class="small-12 large-3 info padding column">
+        <div id="columna_2" class="small-12 large-3 info padding column">
           <p>
             <strong><%= t('budgets.show.phase') %></strong>
           </p>
