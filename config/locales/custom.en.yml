@@ -136,16 +136,19 @@ en:
     tablet: "Vote on tablet"
     are_you_sure: "Are you sure you're done?"
   delegation:
-    title: List of investment projects
-    text: Select the investment projects to add to your list by entering their ID
+    title: List of recommendations
+    info: Here you can create a list of your favorite investment projects, to help them support and vote.
+    instructions: "Instructions:"
+    text_html: Select the investment projects to add to your list by entering their ID
     help_html: "<small><em>The ID is the number that appear in the URL of each investment project, for example:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
     form_submit: "Add to my list"
     table_head: "Investment project's title"
     delete: "Delete from my list"
-    list_title: "Investment projects selected by:"
+    list_title: "Investment projects recommended by:"
     no_recommendations: "You have not selected any investment project yet."
     header_button: "Add investment projects to my list"
     view_list: "View my investment projects list"
     create_ok: "Investment project added to the list"
     create_error: "Invalid ID"
     deleted: "Investment project removed from the list"
+    share: "Share your list of your recommended investment projects with this link:"

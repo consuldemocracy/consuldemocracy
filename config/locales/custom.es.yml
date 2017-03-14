@@ -136,16 +136,19 @@ es:
     tablet: "Votar en tablet"
     are_you_sure: "¿Estás seguro de que has terminado?"
   delegation:
-    title: Lista de proyectos de gasto
-    text: Selecciona los proyectos de gasto para añadir a tu lista introduciendo su ID
+    title: Lista de recomendaciones
+    info: Aquí puedes crear una lista con tus proyectos favoritos, para ayudar a que se apoyen y voten.
+    instructions: "Instrucciones:"
+    text_html: Selecciona los proyectos de gasto para añadir a tu lista introduciendo su ID
     help_html: "<small><em>El ID es el número que aparece en la URL de cada proyecto de gasto, por ejemplo:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
     form_submit: "Añadir a mi lista"
     table_head: "Título del proyecto de gasto"
     delete: "Eliminar de mi lista"
-    list_title: "Proyectos de gasto seleccionados por:"
+    list_title: "Proyectos de gasto recomendados por:"
     no_recommendations: "Todavía no has seleccionado ningún proyecto de gasto."
     header_button: "Añadir proyectos de gasto a mi lista"
     view_list: "Ver mi lista de proyectos de gasto"
     create_ok: "Proyecto de gasto añadido"
     create_error: "El identificador no es válido"
     deleted: "Proyecto eliminado de la lista"
+    share: "Comparte tu lista de proyectos recomendados con este enlace:"

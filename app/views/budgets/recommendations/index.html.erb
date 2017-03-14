@@ -6,9 +6,6 @@
       <h1 class="margin-top">
         <%= t("delegation.list_title") %>&nbsp;<%= link_to @user.name, user_path(@user.id) %>
       </h1>
-      <% if current_user %>
-        <%= link_to(t("delegation.header_button"), new_budget_recommendation_path(budget_id: Budget.current.last.slug), class: "button margin-top") %>
-      <% end %>
     </div>
   </div>
 </div>

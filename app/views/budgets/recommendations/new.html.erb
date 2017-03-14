@@ -6,8 +6,10 @@
                   class: "float-right" %>
     <% end %>
     <h1 class="inline-block"><%= t("delegation.title") %></h1>
+    <p><%= t("delegation.info") %></p>
     <p>
-      <%= t("delegation.text") %><br>
+      <strong><%= t("delegation.instructions") %></strong><br>
+      <%= t("delegation.text_html") %><br>
       <%= t("delegation.help_html") %>
     </p>
   </div>
@@ -51,5 +53,13 @@
         <%= t("delegation.no_recommendations") %>
       </div>
     <% end %>
+    <div class="margin-top">
+     <p>
+        <%= t("delegation.share") %><br>
+        <strong>
+          <%= link_to budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id),
+                      budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id) %>
+        </strong>
+      </p>
   </div>
 </div>
