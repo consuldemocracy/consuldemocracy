@@ -94,6 +94,9 @@ var initialize_modules = function() {
     App.LegislationAnnotatable.initialize();
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
+
+
+  $("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
 };
 
 $(function(){
@@ -102,4 +105,6 @@ $(function(){
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);
   $(document).on('ajax:complete', initialize_modules);
+
+
 });
