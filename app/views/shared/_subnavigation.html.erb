@@ -24,7 +24,8 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),
                                   spending_proposals_path,
-                                  controller_name == 'spending_proposals' %>
+                                  controller_name == 'spending_proposals',
+                                  accesskey: "s" %>
       </li>
     <% end %>
     <% if feature?(:budgets) %>
