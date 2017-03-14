@@ -3,11 +3,11 @@
 <table class="polls-participation-age margin-top">
   <thead>
     <tr>
-      <th class="border-right">EDAD</th>
-      <th>WEB</th>
-      <th>URNAS</th>
-      <th>CORREO</th>
-      <th class="border-left">TOTAL</th>
+      <th scope="col" class="border-right">EDAD</th>
+      <th scope="col">WEB</th>
+      <th scope="col">URNAS</th>
+      <th scope="col">CORREO</th>
+      <th scope="col" class="border-left">TOTAL</th>
     </tr>
   </thead>
   <tbody>
@@ -50,7 +50,6 @@
             <span class="progress-meter" style="width: <%= @age_stats[age.to_s]['total']*100*6/@age_stats['all']['total'] rescue 0 %>%"></span>
           </div>
         </td>
-
       </tr>
     <% end %>
 
