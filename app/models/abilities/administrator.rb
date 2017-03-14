@@ -55,7 +55,8 @@ module Abilities
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:index, :create, :edit, :update, :destroy], Geozone
-
+      can :create, DirectMessage
+      can :show, DirectMessage, sender_id: user.id
       can [:read, :create, :update, :destroy, :add_question, :remove_question, :search_booths, :search_questions, :search_officers], Poll
       can [:read, :create, :update, :destroy], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer

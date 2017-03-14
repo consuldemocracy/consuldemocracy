@@ -17,6 +17,7 @@
                         class: "button small float-right" %>
           <% end %>
           <h1><%= @budget.name %></h1>
+          <%= safe_html_with_links @budget.description %>
           <% if cannot? :show, @ballot %>
             <h2><%= @heading.name %> <%= @budget.formatted_heading_price(@heading) %></h2>
           <% end %>
