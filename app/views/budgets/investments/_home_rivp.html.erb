@@ -1,42 +1,44 @@
 <div class="home">
-  <% @budget = Budget.find(1)%>
-  <% case @budget.phase %>
-  <% when "accepting" %>
-    <% banner_color = "background-1" %>
-  <% when "reviewing" %>
-    <% banner_color = "background-2" %>
-  <% when "selecting" %>
-    <% banner_color = "background-3" %>
-  <% when "valuating" %>
-    <% banner_color = "background-4" %>
-  <% when "balloting" %>
-    <% banner_color = "background-5" %>
-  <% when "finished" %>
-    <% banner_color = "background-6" %>
-  <% end %>
+<% @budget = Budget.find(1)%>
+<% case @budget.phase %>
+<% when "accepting" %>
+  <% banner_color = "background-1" %>
+<% when "reviewing" %>
+  <% banner_color = "background-2" %>
+<% when "selecting" %>
+  <% banner_color = "background-3" %>
+<% when "valuating" %>
+  <% banner_color = "background-4" %>
+<% when "balloting" %>
+  <% banner_color = "background-5" %>
+<% when "finished" %>
+  <% banner_color = "background-6" %>
+<% end %>
 
-  <div class="expanded budget no-margin-top">
-    <div class="row" data-equalizer data-equalizer-on="medium">
-     <div class="small-12 medium-2 column padding picto_ampoule show-for-large-only" data-equalizer-watch>
-      <%= image_tag "custom/ampoule.png" %>
-      </div>
-      <div class="small-12 medium-7 column padding" data-equalizer-watch>
-        <h1 style="text-align: center">Donnez vie à vos idées !</h1>
-        <h4 class="text-center">Vous avez un projet en tête pour rendre plus agréable la vie dans votre immeuble ?<br> </h4>
-        <h3><strong>PARTICIPEZ !</strong></h3>
-        <p class="text-center">Présentez votre projet seul ou avec vos voisins.</p>
-        <h3><strong>VOTEZ !</strong></h3>
-        <p class="text-center">Les idées que vous aurez choisies seront financées par la RIVP et réalisées avec vous.</p>
-      </div>
-      <div class="small-12 medium-3 column padding <%= banner_color %>" data-equalizer-watch>
-        <p>
-          <strong><%= t('budgets.show.phase') %></strong>
-        </p>
-        <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
-          <h2>Dépôt, échange et soutien des idées</h2>
-        <% else %>
-          <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
-        <% end %>
+<div class="expanded budget no-margin-top">
+
+  <div class="row" data-equalizer data-equalizer-on="medium">
+    <div class="small-12 medium-2 column padding picto_ampoule" data-equalizer-watch>
+      <%= image_tag "custom/ampoule2.png" %>
+    </div>
+    <div class="small-12 medium-7 column padding" data-equalizer-watch>
+      <h1 style="text-align: center">Donnez vie à vos idées !</h1>
+      <p class="text-center">Vous avez un projet en tête pour rendre plus agréable la vie dans votre immeuble ?<br> </p>
+      <h3><strong>PARTICIPEZ !</strong></h3>
+      <p class="text-center">Présentez votre projet seul ou avec vos voisins.</p>
+      <h3><strong>VOTEZ !</strong></h3>
+      <p class="text-center">Les idées que vous aurez choisies seront financées par la RIVP et réalisées avec vous.</p>
+    </div>
+    <div class="small-12 medium-3 column padding <%= banner_color %>" data-equalizer-watch>
+      <p>
+        <strong><%= t('budgets.show.phase') %></strong>
+      </p>
+      <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
+        <h2>Dépôt, échange et soutien des idées</h2>
+      <% else %>
+        <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+      <% end %>
+
 
         <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
           <% if current_user %>
