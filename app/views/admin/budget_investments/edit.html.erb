@@ -25,6 +25,10 @@
     <div class="small-12 column">
       <%= f.select :heading_id, budget_heading_select_options(@budget), include_blank: t("admin.budget_investments.edit.select_heading") %>
     </div>
+
+    <div class="small-12 column">
+      <%= f.text_field :organization_name %>
+    </div>
   </div>
 
   <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>

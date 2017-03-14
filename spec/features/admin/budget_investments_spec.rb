@@ -277,7 +277,8 @@ feature 'Admin budget investments' do
                                 price_first_year: 1000,
                                 feasibility: "unfeasible",
                                 unfeasibility_explanation: 'It is impossible',
-                                administrator: administrator)
+                                administrator: administrator,
+                                organization_name: "ACME")
     budget_investment.valuators << valuator
 
     visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -293,6 +294,7 @@ feature 'Admin budget investments' do
     expect(page).to have_content('Unfeasible')
     expect(page).to have_content('It is impossible')
     expect(page).to have_content('Ana (ana@admins.org)')
+    expect(page).to have_content('Representing: ACME')
 
     within('#assigned_valuators') do
       expect(page).to have_content('Rachel (rachel@valuators.org)')
@@ -301,7 +303,7 @@ feature 'Admin budget investments' do
 
   context "Edit" do
 
-    scenario "Change title, description or heading" do
+    scenario "Change title, description, organization name or heading" do
       budget_investment = create(:budget_investment)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
 
@@ -311,12 +313,14 @@ feature 'Admin budget investments' do
       fill_in 'budget_investment_title', with: 'Potatoes'
       fill_in 'budget_investment_description', with: 'Carrots'
       select "#{budget_investment.group.name}: Barbate", from: 'budget_investment[heading_id]'
+      fill_in 'budget_investment_organization_name', with: 'Vegetables'
 
       click_button 'Update'
 
       expect(page).to have_content 'Potatoes'
       expect(page).to have_content 'Carrots'
       expect(page).to have_content 'Barbate'
+      expect(page).to have_content 'Representing: Vegetables'
     end
 
     scenario "Add administrator" do
