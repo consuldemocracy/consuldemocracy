@@ -458,6 +458,8 @@ GEM
       railties (>= 4.2)
     websocket (1.2.3)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.6.5)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     whenever (0.9.7)
       chronic (>= 0.6.3)
@@ -482,7 +484,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.2.3)
   capistrano3-delayed-job (~> 1.7.3)
   capybara (~> 2.12.1)
-  ckeditor (~> 4.2.2)
+  ckeditor!
   coffee-rails (~> 4.2.1)
   coveralls (~> 0.8.19)
   daemons
@@ -495,7 +497,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails (~> 4.8.0)
   faker (~> 1.7.3)
-  foundation-rails (~> 6.2.4.0)
+  foundation-rails (= 6.2.3.0)
   foundation_rails_helper (~> 2.0.0)
   fuubar
   groupdate (~> 3.2.0)
@@ -524,12 +526,12 @@ DEPENDENCIES
   rinku (~> 2.0.2)
   rollbar (~> 2.14.0)
   rspec-rails (~> 3.5)
-  rubyzip
-  selenium-webdriver
   rubocop (~> 0.47.1)
+  rubyzip
   rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.4)
   savon
+  selenium-webdriver
   sitemap_generator (~> 5.3.1)
   social-share-button
   spring
