@@ -15,9 +15,9 @@
     <thead>
       <tr>
         <% answers_votes.keys.each_with_index do |answer, i| %>
-          <th class="<%= 'win' if max_i == i %>"><%= answer %></th>
+          <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
         <% end %>
-        <th>EN BLANCO</th>
+        <th scope="col">EN BLANCO</th>
       </tr>
     </thead>
     <tbody>
