@@ -23,7 +23,7 @@
     </li>
   <% end %>
 
-  <% if current_user.administrator? || current_user.poll_officer? %>
+  <% if (current_user.administrator? || current_user.poll_officer?) && Poll.current.any? %>
     <% if current_user.try(:poll_officer).try(:letter_officer?) %>
       <li>
         <%= link_to t("layouts.header.officing"), new_officing_letter_path %>

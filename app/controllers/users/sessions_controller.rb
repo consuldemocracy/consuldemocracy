@@ -4,7 +4,7 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      if current_user.poll_officer?
+      if false #current_user.poll_officer? && current_user.has_poll_active?
         if current_user.poll_officer.letter_officer?
           new_officing_letter_path
         else
