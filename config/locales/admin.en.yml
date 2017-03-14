@@ -146,6 +146,7 @@ en:
         edit_classification: Edit classification
         by: By
         organization_name: Representing
+        label: Label (public visibility)
         sent: Sent
         group: Grupo
         heading: Partida
@@ -158,6 +159,7 @@ en:
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
+        label: Label (public visibility)
         user_tags: User assigned tags
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"

@@ -36,6 +36,11 @@
     <div class="small-12 column">
       <%= f.text_field :organization_name %>
     </div>
+
+    <div class="small-12 column">
+      <%= f.label :label, t("admin.budget_investments.edit.label") %>
+      <%= f.text_field :label, label: false %>
+    </div>
   </div>
 
   <h2 id="classification"><%= t("admin.budget_investments.edit.classification") %></h2>

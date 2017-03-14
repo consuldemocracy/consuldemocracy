@@ -146,6 +146,7 @@ es:
         edit_classification: Editar clasificación
         by: Autor
         organization_name: En nombre de
+        label: Chapa (visible públicamente)
         sent: Fecha
         group: Grupo
         heading: Partida
@@ -158,6 +159,7 @@ es:
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
+        label: Chapa (visible públicamente)
         user_tags: Etiquetas asignadas por el usuario
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
