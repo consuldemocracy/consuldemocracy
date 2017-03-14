@@ -691,11 +691,12 @@
     }
 
     .button-support {
-      background: $budget;
+      background: #F0A400;
       color: white;
+      border: white;
 
       &:hover {
-        background: $budget-hover;
+        background: #F2BF52;
         color: white;
         cursor: pointer;
       }
@@ -895,8 +896,12 @@
   }
 
   .button {
-    background: white;
-    color: $budget;
+    background: #F0A400;
+    color: white;
+    border: white;
+    &:hover{
+      background-color: #F2BF52;
+    }
   }
 
   .info {

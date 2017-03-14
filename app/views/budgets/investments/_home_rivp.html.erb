@@ -39,32 +39,33 @@
         <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
       <% end %>
 
-      <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
-        <% if current_user %>
-          <% if current_user.level_two_or_three_verified? %>
-            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+
+        <% if @budget.accepting? or @budget.selecting? or @budget.reviewing? %>
+          <% if current_user %>
+            <% if current_user.level_two_or_three_verified? %>
+              <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+            <% else %>
+              <div class="callout warning margin-top">
+                <%= t("budgets.investments.index.sidebar.verified_only",
+                    verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+              </div>
+            <% end %>
           <% else %>
-            <div class="callout warning margin-top">
-              <%= t("budgets.investments.index.sidebar.verified_only",
-                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+            <div class="callout primary margin-top">
+              <%= t("budgets.investments.index.sidebar.not_logged_in",
+                    sign_in: link_to('extranet RIVP', 'https://extranet-rivp.fr/'),
+                    sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
             </div>
           <% end %>
-        <% else %>
-          <div class="callout primary margin-top">
-            <%= t("budgets.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to('extranet RIVP', 'https://extranet-rivp.fr/'),
-                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
-          </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-
-</div>
-<div class="actu">
-  <div class="row">
-  <p><strong>ACTU !</strong> 8 réunions d'information (17h à 19h) : lundi 20 et mercredi 23 mars / lundi 3, mercredi 5, mardi 18, mercredi 19, jeudi 20 et vendredi 21 avril</p>
-  </div>
+  <div class="actu">
+     <div class="row">
+     <p><strong>ACTU !</strong> 8 réunions d'information (17h à 19h) : lundi 20 et mercredi 23 mars / lundi 3, mercredi 5, mardi 18, mercredi 19, jeudi 20 etvendredi 21 avril</p>
+     </div>
+   </div>
 </div>
 
 <div class="container home">
@@ -102,7 +103,8 @@
           <div class="item-4">
             <p><%= card[1][:description] %><p>
           </div>
-          <div class="item-5 background-<%=i%>">
+          <div class="item-5 <%= if active == "active" then p "active" else "inactive" end %> ">
+              <p>en cours<p>
           </div>
         </div>
 
@@ -110,14 +112,17 @@
       <% i+=1 %>
     <% end %>
   </div>
-<h1>Proposez vos idées sur les thèmes suivants</h1>
-  <div class="row center">
+</div>
+<br>
+<div class="blue-body">
+  <h1 class="text-center" style="padding-top: 25px">Proposez vos idées sur les thèmes suivants</h1>
+  <div class="row center blue-body">
     <% i=3%>
     <% t("budgets.home_rivp.theme_cards").each do |card| %>
       <div class="small-12 medium-3 column text-center theme-cards">
         <div class="card card2">
           <div class="item-1" style="color-1">
-          <%= image_tag(card[1][:img], size: 32, class: "") %>
+            <%= image_tag(card[1][:img], size: 32, class: "") %>
           </div>
           <div class="item-2">
             <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
@@ -132,74 +137,62 @@
       <% i+=1 %>
     <% end %>
   </div>
-<h1>Proposez vos idées sur les thèmes suivants</h1>
-  <div class="row">
-    <% i=6%>
-    <% t("budgets.home_rivp.theme_cards").each do |card| %>
+</div>
 
-        <div class="large-2 small-12 medium-6 card3">
-          <div class="item-1">
-            <%= image_tag(card[1][:img], size: 32, class: "") %>
-          </div>
-        </div>
-        <div class="large-4 small-12 medium-6 card3">
-          <div class="item-2">
-            <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
-            <p><%= card[1][:description] %><p>
-          </div>
-        </div>
-      <% i-=1 %>
 
-    <% end%>
+<div class="container home">
+  <h1>Consultez les propositions des différents sites</h1>
+  <div class="row margin-top show-for-medium ">
+    <div class="medium-12 column show-for-medium text-left point-relatif" style="padding-bottom: 60px">
+      <%= image_tag "custom/citymap2.png" %>
+    </div>
+    <div id="select-district" class="large-3 medium-6 column select-district list-group point-absolu">
+      <div class="row">
+        <% Budget.find(1).headings.each_slice(12) do |slice| %>
+          <div class="small-12 medium-12 column end ">
+            <% slice.each do |heading| %>
+              <span id="<%= dom_id(heading) %>"
+                    class="<%= css_for_ballot_heading(heading) %> list-group-item">
+                <%= link_to heading.name,
+                            budget_investments_path(heading_id: heading.id,
+                                                    unfeasible: params[:unfeasible],
+                                                    budget_id: 1),
+                            data: { no_turbolink: true } %><br>
+              </span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
   </div>
 
-  <h1>Test</h1>
-  <div class="row">
-    <% i=3%>
-    <% t("budgets.home_rivp.theme_cards").each do |card| %>
-      <div class="large-2 small-4 columns card3">
-        <div class="item-1">
-          <%= image_tag(card[1][:img], size: 32, class: "") %>
-        </div>
+  <div class="show-for-small-only">
+    <div id="select-district" class="small-12 medium-3 column select-district list-group">
+      <div class="row">
+        <% Budget.find(1).headings.each_slice(12) do |slice| %>
+          <div class="small-12 medium-12 column end ">
+            <% slice.each do |heading| %>
+              <span id="<%= dom_id(heading) %>"
+                    class="<%= css_for_ballot_heading(heading) %> list-group-item">
+                <%= link_to heading.name,
+                            budget_investments_path(heading_id: heading.id,
+                                                    unfeasible: params[:unfeasible],
+                                                    budget_id: 1),
+                            data: { no_turbolink: true } %><br>
+              </span>
+            <% end %>
+          </div>
+        <% end %>
       </div>
-      <div class="large-4 small-12 columns card3">
-        <div class="item-2">
-          <h3 class="color-<%=i%>"><%= card[1][:title] %></h2>
-          <p><%= card[1][:description] %><p>
-        </div>
-      </div>
-      <% i+=1 %>
-    <% end%>
-  </div>
+    </div>
 
-
-<h1>Consultez les propositions des différents sites</h1>
-<div class="row margin-top">
-  <div id="select-district" class="small-12 medium-3 column select-district list-group">
-    <div class="row">
-      <% Budget.find(1).headings.each_slice(12) do |slice| %>
-        <div class="small-12 medium-12 column end ">
-          <% slice.each do |heading| %>
-            <span id="<%= dom_id(heading) %>"
-                  class="<%= css_for_ballot_heading(heading) %> list-group-item">
-              <%= link_to heading.name,
-                          budget_investments_path(heading_id: heading.id,
-                                                  unfeasible: params[:unfeasible],
-                                                  budget_id: 1),
-                          data: { no_turbolink: true } %><br>
-            </span>
-          <% end %>
-        </div>
-      <% end %>
+    <div class="small-12 column">
+      <%= image_tag "custom/citymap.png" %>
     </div>
   </div>
 
-  <div class="medium-9 column show-for-medium text-left">
-    <%= image_tag "custom/citymap.png" %>
-  </div>
-</div>
-
-</div>
 </div>
 
 

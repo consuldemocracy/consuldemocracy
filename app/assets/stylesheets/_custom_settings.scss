@@ -24,6 +24,16 @@ $sixth-color: #FF9200;
   margin: 10px;
  }
 }
+.point-relatif{
+  position: relative;
+}
+.point-absolu{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  // top: 20px;
+  // left: 20px;
+}
 
 .picto_ampoule img{
   // height: 200px;
@@ -73,6 +83,9 @@ $sixth-color: #FF9200;
 .active{
      background-color: white;
    }
+.blue-body{
+  background-color: #44A6D2;
+}
 .card1{
   border-radius: 3px;
   box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.1);
@@ -112,11 +125,20 @@ $sixth-color: #FF9200;
   }
 
   .item-5{
-    height: 10px;
+    height: 25px;
 
     margin-top: 20px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+
+  }
+  .active{
+    color: white;
+    background-color: #1C6890;
+    }
+  .inactive{
+    color: #878786;
+    background-color: #878786;
   }
 }
 
@@ -220,6 +242,13 @@ $sixth-color: #FF9200;
     h1 {
       text-align: right;
       font-color: #F8BA2B;
+  }
+  h4 {
+    color: white;
+    font-size: 28px;
+  }
+  p {
+    font-size: 18px;
   }
 
 
