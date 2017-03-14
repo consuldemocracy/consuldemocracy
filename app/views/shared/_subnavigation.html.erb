@@ -5,20 +5,20 @@
         <%= layout_menu_link_to t("layouts.header.debates"),
                                 debates_path,
                                 controller_name == 'debates',
-                                accesskey: "d" %>
+                                accesskey: "1" %>
       </li>
     <% end %>
     <li>
       <%= layout_menu_link_to t("layouts.header.proposals"),
                                 proposals_path,
                                 controller_name == 'proposals',
-                                accesskey: "p" %>
+                                accesskey: "2" %>
     </li>
     <li>
       <%= layout_menu_link_to t("layouts.header.proposal_ballot"),
                                 proposal_ballots_path,
                                 controller_name == 'proposal_ballots',
-                                accesskey: "v" %>
+                                accesskey: "3" %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
@@ -33,7 +33,7 @@
         <%= layout_menu_link_to t("layouts.header.budgets"),
                                   budgets_path,
                                   controller_name == "budgets" || controller_name == "investments",
-                                  accesskey: "b" %>
+                                  accesskey: "4" %>
       </li>
     <% end %>
   </ul>
