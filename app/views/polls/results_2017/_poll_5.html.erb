@@ -15,15 +15,15 @@
     <thead>
       <tr>
         <% answers_votes.keys.each_with_index do |answer, i| %>
-          <th class="<%= 'win' if max_i == i %>"><%= answer %></th>
+          <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
         <% end %>
-        <th>EN BLANCO</th>
+        <th scope="col">EN BLANCO</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <% answers_votes.values.each_with_index do |votes, i| %>
-          <td  class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_5)) %>%)</td>
+          <td class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_5)) %>%)</td>
         <% end %>
         <% whites = total_votes_for_poll(@poll_5) - answers_votes.values.sum %>
         <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_5)) %>%)</td>

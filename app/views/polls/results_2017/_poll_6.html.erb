@@ -15,8 +15,8 @@
     </caption>
     <thead>
       <tr>
-        <th>NOMBRE</th>
-        <th>VOTOS</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">VOTOS</th>
       </tr>
     </thead>
     <tbody>
@@ -30,8 +30,8 @@
   <table class="poll-6-<%= question.id%>-discarded" style="display:none">
     <thead>
       <tr>
-        <th>NOMBRE</th>
-        <th>VOTOS</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">VOTOS</th>
       </tr>
     </thead>
     <tbody>
@@ -55,5 +55,3 @@
               data: {'toggle-selector' => ".poll-6-#{question.id}-discarded", 'toggle-text' => "Ver solo respuestas ganadoras"} %>
   </div>
 <% end %>
-
-
