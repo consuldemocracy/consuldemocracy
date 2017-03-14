@@ -146,7 +146,6 @@ en:
     delete: "Delete from my list"
     list_title: "Investment projects recommended by:"
     no_recommendations: "You have not selected any investment project yet."
-    header_button: "Add investment projects to my list"
     view_list: "View my investment projects list"
     create_ok: "Investment project added to the list"
     create_error: "Invalid ID"
