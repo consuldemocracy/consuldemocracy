@@ -779,7 +779,7 @@ en:
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private
       send_private_message: "Send private message"
-      delegation: List of selected investments projects
+      delegation: List of recommended investments projects
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
