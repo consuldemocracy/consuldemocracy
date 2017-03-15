@@ -363,7 +363,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    rubyzip (1.2.0)
+    rubyzip (1.2.1)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
