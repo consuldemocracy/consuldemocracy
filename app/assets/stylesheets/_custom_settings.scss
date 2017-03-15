@@ -43,6 +43,12 @@ $sixth-color: #FF9200;
   vertical-align: middle;
 }
 
+.expanded.budget.banner-background-image{
+  background-image: linear-gradient(135deg, rgba(62, 152, 210, 0.6) 40%, rgba(62, 152, 210, 0.6) 30%), image-url("custom/bannerbackground.png");
+  background-size: cover;
+  background-position: 0% 30%;
+}
+
 .color-1{color:$second-color;}
 .background-1{background-color: $second-color;}
 
