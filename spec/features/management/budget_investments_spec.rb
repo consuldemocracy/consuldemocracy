@@ -137,6 +137,61 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Listing - managers can see budgets in accepting phase" do
+    accepting_budget = create(:budget, phase: "accepting")
+    reviewing_budget = create(:budget, phase: "reviewing")
+    selecting_budget = create(:budget, phase: "selecting")
+    valuating_budget = create(:budget, phase: "valuating")
+    balloting_budget = create(:budget, phase: "balloting")
+    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
+    finished = create(:budget, phase: "finished")
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+
+    click_link "Create budget investment"
+
+    expect(page).to have_content(accepting_budget.name)
+
+    expect(page).to_not have_content(reviewing_budget.name)
+    expect(page).to_not have_content(selecting_budget.name)
+    expect(page).to_not have_content(valuating_budget.name)
+    expect(page).to_not have_content(balloting_budget.name)
+    expect(page).to_not have_content(reviewing_ballots_budget.name)
+    expect(page).to_not have_content(finished.name)
+  end
+
+  scenario "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
+    accepting_budget = create(:budget, phase: "accepting")
+    reviewing_budget = create(:budget, phase: "reviewing")
+    selecting_budget = create(:budget, phase: "selecting")
+    valuating_budget = create(:budget, phase: "valuating")
+    balloting_budget = create(:budget, phase: "balloting")
+    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
+    finished = create(:budget, phase: "finished")
+
+    visit root_path
+    click_link "Sign out"
+
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+    visit management_sign_in_path
+
+    click_link "Create budget investment"
+
+    expect(page).to have_content(accepting_budget.name)
+    expect(page).to have_content(reviewing_budget.name)
+    expect(page).to have_content(selecting_budget.name)
+
+    expect(page).to_not have_content(valuating_budget.name)
+    expect(page).to_not have_content(balloting_budget.name)
+    expect(page).to_not have_content(reviewing_ballots_budget.name)
+    expect(page).to_not have_content(finished.name)
+  end
+
   context "Supporting" do
 
     scenario 'Supporting budget investments on behalf of someone in index view', :js do
