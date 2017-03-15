@@ -89,9 +89,7 @@ $sixth-color: #FF9200;
 .active{
      background-color: white;
    }
-.blue-body{
-  background-color: #44A6D2;
-}
+
 .card1{
   border-radius: 3px;
   box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.1);
@@ -224,10 +222,11 @@ $sixth-color: #FF9200;
 }
 
 .home{
+  // padding-bottom: 10px;
   h1 {
     text-align: center;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     font-color: #F8BA2B;
   }
   background-color: #F5F5F5;
@@ -245,15 +244,17 @@ $sixth-color: #FF9200;
 
 .blue-body{
   h1{
-    margin-top: 60px;
+    margin-top: -25px;
     padding-bottom: 30px;
   }
+  background-color: #44A6D2;
 }
 
 .expanded.budget{
     h1 {
       text-align: right;
       font-color: #F8BA2B;
+      padding-top: 20px;
   }
   h4 {
     color: white;
