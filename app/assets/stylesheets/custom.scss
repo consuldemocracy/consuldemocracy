@@ -264,6 +264,23 @@ table {
   }
 }
 
+.callout.success.tip {
+  border-radius: 0;
+  border-bottom: 0;
+  border-left-width: 6px;
+  border-right: 0;
+  border-top: 0;
+
+  h2 {
+    font-size: rem-calc(24);
+    line-height: $line-height;
+  }
+
+  a {
+    color: $color-success;
+  }
+}
+
 @import 'motion-ui/motion-ui';
 @include foundation-orbit;
 @include motion-ui-transitions;
