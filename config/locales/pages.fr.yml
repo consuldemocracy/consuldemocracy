@@ -16,14 +16,21 @@ fr:
         signature_sheet: Sheet collecting signatures for support
         spending_proposals_info: Create your own spending proposals
       how_it_works:
-        i: Participation
-        i1: Debates area
-        i2: Proposals area
+        i: 1. Un Budget participatif, c’est quoi ?
+        i1: 2. Pourquoi la RIVP a décidé de lancer son budget participatif et quel est le but ?
+        i2: "3. Pour qui et avec qui ? : les locataires, acteurs du Budget participatif"
+        i3: 4. Où ? Les sites et résidences concernées en 2017
+        i4: 5. Quoi ? Les types de projets recevables
+        i5: 6. Des thématiques liées à l’amélioration de la qualité de vie dans les résidences
+        i6: 7. Combien ? L’enveloppe dédiée en 2017 pour le Budget participatif de la RIVP
+        i7: Un Budget participatif, c’est quoi ?
+        i8: Proposals area
         text: |-
+
           The new Open Government Portal is divided in three parts: Participation, Transparency and Open Data (you can see the links in the upper right-hand part).
           >**I. Participation:** In this part we can decide which city we want (using citizen proposals, debate areas, participatory budgets , collaborative legislation, and many others we will implement).
           **II. Transparency:** In this part information about how Madrid is managed will be published every day: name, position, salary, contracts, agenda,... of the persons in charge. It is also the place where exercise your right to access information, having the chance to request any information about Madrid City Council easily and rapidly.
-          **III. Open data:** In this part the city council databases are posted, so that anyone can use information directly, without having to ask. It can also be requested the publication of more databases.
+          **III. Open data:** In1 this part the city council databases are posted, so that anyone can use information directly, without having to ask. It can also be requested the publication of more databases.
 
           We have opened the new Participation portal and we will open the new Transparency and Open Data seccion shortly (meanwhile the links to existing sites are kept).
           ## <a id='i'></a> I. Participation
