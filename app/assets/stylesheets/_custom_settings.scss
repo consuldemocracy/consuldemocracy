@@ -226,7 +226,8 @@ $sixth-color: #FF9200;
 .home{
   h1 {
     text-align: center;
-    padding-top: 25px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     font-color: #F8BA2B;
   }
   background-color: #F5F5F5;
@@ -242,7 +243,12 @@ $sixth-color: #FF9200;
   }
 }
 
-
+.blue-body{
+  h1{
+    margin-top: 60px;
+    padding-bottom: 30px;
+  }
+}
 
 .expanded.budget{
     h1 {
