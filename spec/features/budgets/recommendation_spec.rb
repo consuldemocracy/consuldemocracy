@@ -50,9 +50,9 @@ feature 'Recommendations' do
 
     login_as(user2)
     visit user_path(user1)
-    click_link "List of selected investments projects"
+    click_link "List of recommended investments projects"
 
-    expect(page).to have_content "Investment projects selected by: #{user1.username}"
+    expect(page).to have_content "Investment projects recommended by: #{user1.username}"
 
     expect(page).to have_content recommendation1.investment.title
     expect(page).to have_content recommendation2.investment.title
@@ -71,7 +71,7 @@ feature 'Recommendations' do
     login_as(user2)
     visit user_path(user1)
 
-    click_link "List of selected investments projects"
+    click_link "List of recommended investments projects"
 
     within('.supports') do
       find('.in-favor a').click
