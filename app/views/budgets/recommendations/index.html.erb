@@ -14,7 +14,7 @@
   <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
 <% end %>
 <meta property="og:type" content="article"/>
-<meta id="ogurl" property="og:url" content="<%= budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @current_user.id) %>"/>
+<meta id="ogurl" property="og:url" content="<%= budget_recommendations_url(budget_id: Budget.current.last.slug, user_id: @user.id) %>"/>
 <meta id="ogimage" property="og:image" content="<%= image_url '/social_media_budgets.png' %>"/>
 <meta property="og:site_name" content="Decide Madrid"/>
 <meta id="ogdescription" property="og:description" content="Proyectos de gasto recomendados por <%= @user.name %>"/>
