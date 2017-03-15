@@ -284,3 +284,47 @@ $sixth-color: #FF9200;
   border: 1px solid #ecf0f1;
 }
 
+.mode-demploi{
+  h2{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  h3{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  li{
+    padding-top: 10px;
+    font-weight: bold;
+    li{
+      font-weight: normal;
+      p{
+      font-weight: normal;
+      }
+    }
+    p{
+      font-weight: normal;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  th {
+    text-align: left;
+  }
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .table > tbody > tr > th,
+  .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+  }
+  .table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+}
+
