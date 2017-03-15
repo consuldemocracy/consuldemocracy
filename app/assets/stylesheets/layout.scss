@@ -159,7 +159,7 @@ a {
 
 .footer, .push {
   clear: both;
-  min-height: $line-height*6;
+  min-height: $line-height*3;
 }
 
 .ie-callout {
@@ -558,9 +558,9 @@ footer {
 
 .footer {
   background: $border;
-  border-top: 6px solid $brand;
-  margin-top: $line-height*2;
-  padding-top: $line-height;
+  // border-top: 6px solid $brand;
+  margin-top: $line-height*5;
+  padding-top: $line-height*1;
 }
 
 .subfooter {
