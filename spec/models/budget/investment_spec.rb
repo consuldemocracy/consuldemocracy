@@ -285,6 +285,45 @@ describe Budget::Investment do
 
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
+
+      it "allows votes in a group with a single heading" do
+        all_city_investment = create(:budget_investment, heading: heading)
+        expect(all_city_investment.valid_heading?(user)).to eq(true)
+      end
+
+      it "allows votes in a group with a single heading after voting in that heading" do
+        all_city_investment1 = create(:budget_investment, heading: heading)
+        all_city_investment2 = create(:budget_investment, heading: heading)
+
+        create(:vote, votable: all_city_investment1, voter: user)
+
+        expect(all_city_investment2.valid_heading?(user)).to eq(true)
+      end
+
+      it "allows votes in a group with a single heading after voting in another group" do
+        districts = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        all_city_investment    = create(:budget_investment, heading: heading)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        expect(all_city_investment.valid_heading?(user)).to eq(true)
+      end
+
+      it "allows votes in a group with multiple headings after voting in group with a single heading" do
+        districts = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca   = create(:budget_heading, group: districts)
+
+        all_city_investment    = create(:budget_investment, heading: heading)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: all_city_investment, voter: user)
+
+        expect(carabanchel_investment.valid_heading?(user)).to eq(true)
+      end
     end
   end
 
