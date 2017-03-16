@@ -26,7 +26,7 @@ fr:
         unfeasible: Projets d'investissement infaisable
         unfeasible_text: La proposition doit remplir plusieurs conditions (légalité, être concrete, être la responsabilité de la ville, ne pas exceder la limite du budget; %"{definitions}) pour être déclarée viable et atteindre la phase finale de vote. Toute proposition ne remplissant pas ces conditions est marquée comme "infaisable" et publiée dans la liste ci-contre, avec son rapport d'infaisablité.
         unfeasible_text_definitions: Voir définition ci-contre
-        by_heading: "Projets d'investissement avec visibilité : %{heading}"
+        by_heading: "Liste des projets du site : %{heading}"
         orders:
           random: "aléatoire"
           confidence_score: "meilleur classement"

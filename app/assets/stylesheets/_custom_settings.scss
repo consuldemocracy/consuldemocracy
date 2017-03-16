@@ -89,9 +89,7 @@ $sixth-color: #FF9200;
 .active{
      background-color: white;
    }
-.blue-body{
-  background-color: #44A6D2;
-}
+
 .card1{
   border-radius: 3px;
   box-shadow: 0.5px 0.5px 1.5px rgba(0, 0, 0, 0.1);
@@ -224,10 +222,11 @@ $sixth-color: #FF9200;
 }
 
 .home{
+  // padding-bottom: 10px;
   h1 {
     text-align: center;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     font-color: #F8BA2B;
   }
   background-color: #F5F5F5;
@@ -245,15 +244,17 @@ $sixth-color: #FF9200;
 
 .blue-body{
   h1{
-    margin-top: 60px;
+    margin-top: -25px;
     padding-bottom: 30px;
   }
+  background-color: #44A6D2;
 }
 
 .expanded.budget{
     h1 {
       text-align: right;
       font-color: #F8BA2B;
+      padding-top: 20px;
   }
   h4 {
     color: white;
@@ -282,5 +283,85 @@ $sixth-color: #FF9200;
   margin-bottom: -1px;
   background-color: #ffffff;
   border: 1px solid #ecf0f1;
+}
+
+.mode-demploi{
+  h2{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  h3{
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  li{
+    padding-top: 10px;
+    font-weight: bold;
+    li{
+      font-weight: normal;
+      p{
+      font-weight: normal;
+      }
+    }
+    p{
+      font-weight: normal;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  th {
+    text-align: left;
+  }
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .table > tbody > tr > th,
+  .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+  }
+  .table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+}
+#budget-investments-main{
+  background-color: #F5F5F5;
+}
+.wrapper{
+  background-color: #F5F5F5;
+}
+.expanded.comments{
+  background-color: #F5F5F5;
+}
+.invest-description{
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.no-bullet.submenu{
+  .inline-block{
+    h2{
+      color: black;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    :hover{
+        color: #1C6890;
+      }
+
+  }
+}
+.js-participation{
+  background-color: #44A6D2;
+  border-radius: 5px;
+  padding: 10px;
+  .button.expanded{
+    width: 70%;
+  }
 }
 
