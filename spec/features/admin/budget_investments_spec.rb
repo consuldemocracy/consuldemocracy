@@ -323,6 +323,20 @@ feature 'Admin budget investments' do
       expect(page).to have_content 'Representing: Vegetables'
     end
 
+    scenario "Change visible label" do
+      budget_investment = create(:budget_investment)
+      create(:budget_heading, group: budget_investment.group, name: "Patroclo")
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit'
+
+      fill_in 'budget_investment_label', with: 'Heroe'
+      click_button 'Update'
+
+      visit budget_investment_path(budget_investment.budget, budget_investment)
+      expect(page).to have_content 'Heroe'
+    end
+
     scenario "Add administrator" do
       budget_investment = create(:budget_investment)
       administrator = create(:administrator, user: create(:user, username: 'Marta', email: 'marta@admins.org'))

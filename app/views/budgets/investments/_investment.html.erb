@@ -30,6 +30,10 @@
                     <%= investment.author.official_position %>
                   </span>
                 <% end %>
+                <% if investment.label.present? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round is-author"><%= investment.label %></span>
+                <% end %>
               <% end %>
 
               <span class="bullet">&nbsp;&bull;&nbsp;</span>

@@ -4,6 +4,13 @@
 
 <%= render 'written_by_author' %>
 
+<% if @investment.label.present? %>
+  <p id="label">
+    <strong><%= t("admin.budget_investments.show.label") %>:</strong>
+    <%= @investment.label %>
+  </p>
+<% end %>
+
 <%= link_to t("admin.budget_investments.show.edit"),
             edit_admin_budget_budget_investment_path(@budget, @investment,
                                                 Budget::Investment.filter_params(params)) %>
