@@ -679,6 +679,7 @@ es:
         users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
       budget_investments:
+        title: Presupuestos participativos 2017
         groups: Grupo
         users: Usuarios
         users_city_total: Usuarios que han votado propuestas de ciudad
