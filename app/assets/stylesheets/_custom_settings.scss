@@ -328,4 +328,31 @@ $sixth-color: #FF9200;
   background-color: #f5f5f5;
 }
 }
+#budget-investments-main{
+  background-color: #F5F5F5;
+}
+.wrapper{
+  background-color: #F5F5F5;
+}
+.expanded.comments{
+  background-color: #F5F5F5;
+}
+.invest-description{
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.no-bullet.submenu{
+  .inline-block{
+    h2{
+      color: black;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    :hover{
+        color: #1C6890;
+      }
 
+  }
+}
