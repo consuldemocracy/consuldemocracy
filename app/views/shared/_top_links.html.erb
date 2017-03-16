@@ -2,8 +2,7 @@
   <li>
     <%= link_to t("layouts.header.more_information"),
                 page_path('more_information'),
-                class: ("selected" if current_page?("/more_information")),
-                accesskey: "i"  %>
+                class: ("selected" if current_page?("/more_information")) %>
   </li>
   <li>
     <%= link_to t("layouts.header.external_link_transparency"),
