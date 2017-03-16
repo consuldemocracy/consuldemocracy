@@ -161,7 +161,7 @@ puts budget.name
 
 puts "Creating Groups"
 group = budget.groups.create!(name: "Choisissez votre résidence")
-group.headings << group.headings.create!(name: 'La Granges aux belles, 10ème',
+group.headings << group.headings.create!(name: 'La Granges aux Belles, 10ème',
                                         # geozone: geozone,
                                         price: 20000)
 group.headings << group.headings.create!(name: 'La Chapelle Evangile, 18ème',
@@ -188,7 +188,7 @@ group.headings << group.headings.create!(name: 'Jean Bouton-place Henri Frenay, 
 group.headings << group.headings.create!(name: 'Zac Vaugirard, 15ème',
                                         # geozone: geozone,
                                         price: 20000)
-group.headings << group.headings.create!(name: 'National, 13ème',
+group.headings << group.headings.create!(name: 'Nationale, 13ème',
                                         # geozone: geozone,
                                         price: 20000)
 
