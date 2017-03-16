@@ -259,7 +259,7 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id ||= self.heading.try(:group_id)
+        self.group_id = self.heading.try(:group_id) if self.heading_id_changed?
         self.budget_id ||= self.heading.try(:group).try(:budget_id)
       end
   end

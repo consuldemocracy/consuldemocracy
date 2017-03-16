@@ -35,6 +35,25 @@ describe Budget::Investment do
     expect(investment.description).to eq("alert('danger');")
   end
 
+  it "set correct group and budget ids" do
+    budget = create(:budget)
+    group_1 = create(:budget_group, budget: budget)
+    group_2 = create(:budget_group, budget: budget)
+
+    heading_1 = create(:budget_heading, group: group_1)
+    heading_2 = create(:budget_heading, group: group_2)
+
+    investment = create(:budget_investment, heading: heading_1)
+
+    expect(investment.budget_id).to eq budget.id
+    expect(investment.group_id).to eq group_1.id
+
+    investment.update(heading: heading_2)
+
+    expect(investment.budget_id).to eq budget.id
+    expect(investment.group_id).to eq group_2.id
+  end
+
   describe "#unfeasibility_explanation" do
     it "should be valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
