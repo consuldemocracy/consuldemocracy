@@ -1370,7 +1370,8 @@ pt-BR:
     official_level_3_name: Nível 3 coordenador público
     official_level_4_name: Nível 4 coordenador público
     official_level_5_name: Nível 5 coordenador público
-    per_page_code: Código a ser incluído em cada página
+    per_page_code_head: "Código a ser incluído em cada página (<head>)"
+    per_page_code_body: "Código a ser incluído em cada página (<body>)"
     proposal_code_prefix: Prefixo para códigos de Proposta
     votes_for_proposal_success: Número de votos necessários para aprovar uma Proposta
   shared:
