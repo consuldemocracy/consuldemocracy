@@ -189,7 +189,7 @@ fr:
     header:
       administration: Administration
       debates: Débats
-      external_link_blog: Extranet RIVP
+      external_link_blog: Mon espace locataire
       external_link_opendata: FAQ
       external_link_transparency: Actualité
       external_link_transparency_url: https://transparency.consul
@@ -990,7 +990,7 @@ fr:
         other: Entrées
         zero: Entrées
       more_pages:
-        display_entries: Affichage <b>%{first}&nbsp;-&nbsp;%{last}</b> de <b>%{total}</b>
+        display_entries: Liste des projets <b>%{first}&nbsp; à &nbsp;%{last}</b> (sur <b>%{total}</b>)
           %{entry_name}
       one_page:
         display_entries:
@@ -1497,6 +1497,7 @@ fr:
   votes:
     agree: Je suis d'accord
     anonymous: Trop de votes anonymes pour accepter le vote %{verify_account}.
+    comment_unauthenticated: Vous devez vous %{signin} ou %{signup} pour voter.
     disagree: Je ne suis pas d'accord
     organizations: Les organisations ne sont pas autorisées à voter
     signin: Se connecter
@@ -1505,6 +1506,19 @@ fr:
     unauthenticated: Merci de vous %{signin} ou %{signup} pour continuer.
     verified_only: "Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}."
     verify_account: Vérifier votre compte
+    spending_proposals:
+      not_logged_in: Vous devez vous %{signin} ou %{signup} pour continuer.
+      not_verified: Seulement les utilisateurs connectés peuvent voter pour une proposition; %{verify_account}.
+      organization: Les organisations ne sont pas authorisée à voter
+      unfeasible: Les projets infaisables ne peuvent pas être supportés.
+      not_voting_allowed: La phase de vote est terminée
+    budget_investments:
+      not_logged_in: Vous devez vous %{signin} ou %{signup} pour continuer.
+      not_verified: Seulement les utilisateurs connectés peuvent voter pour une proposition; %{verify_account}.
+      organization: Les organisations ne sont pas authorisée à voter
+      unfeasible: Les projets infaisables ne peuvent pas être supportés.
+      not_voting_allowed: La phase de vote est terminée
+      different_heading_assigned: Vous ne pouvez voter que pour votre site de résidence
   welcome:
     debates:
       alt: Icone "débats"
@@ -1573,14 +1587,7 @@ fr:
 
 
 
-  votes:
-    comment_unauthenticated : Vous devez %{signin} ou %{signup} pour voter.
-    spending_proposals:
-      not_logged_in  : Vous devez %{signinr} ou %{signup} pour continuer.
-      not_verified : Seul les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
-      organization : Les organisations ne peuvent pas voter
-      unfeasible : Les projets d'investissement infaisables ne peuvent être soutenus
-      not_voting_allowed : La phase de vote est close
+
   form:
     accept_terms_title : J'accepte la politique de confidentialité et les termes des conditions d'utilisation
     direct_message : message privé
@@ -1589,7 +1596,7 @@ fr:
     verification/sms : téléphone
     signature_sheet  : feuille de signature
     accept_terms: J'accepte les conditions de %{policy} et les %{conditions}
-    conditions: Conditions légales
+    conditions: Conditions Générales d'Utilisation
     debate: Débat
     error: erreur
     errors: erreurs
