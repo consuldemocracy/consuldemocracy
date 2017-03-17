@@ -165,7 +165,7 @@ $sixth-color: #FF9200;
   .item-2{
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 30px;
+    // height: 30px;
   }
   .item-3{
     // height: 120px;
@@ -251,7 +251,10 @@ $sixth-color: #FF9200;
     padding-bottom: 10px;
     color: white;
   }
-  background-color: #44A6D2;
+  h3{
+    font-size: 34px;
+  }
+  background-color: #4F98CC;
 }
 
 .expanded.budget{
