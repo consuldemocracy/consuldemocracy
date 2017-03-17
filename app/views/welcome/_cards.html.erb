@@ -5,10 +5,9 @@
       <h2 class="title inline-block">
         <%= t("welcome.featured.title") %>
       </h2>
-      <small>
-        <%= link_to t("welcome.featured.see_all"),
-                    processes_path, class: "float-right margin-top" %>
-      </small>
+      <%= link_to processes_path, class: "float-right margin-top" do %>
+        <small><%= t("welcome.featured.see_all") %></small>
+      <% end %>
     </div>
   </div>
 

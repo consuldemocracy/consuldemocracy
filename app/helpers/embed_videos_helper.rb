@@ -21,7 +21,7 @@ module EmbedVideosHelper
     end
 
     if match and match[2]
-      '<iframe src="' + src + match[2] + '" frameborder="0" allowfullscreen></iframe>'
+      '<iframe src="' + src + match[2] + '" style="border:0" allowfullscreen></iframe>'
     else
       ''
     end

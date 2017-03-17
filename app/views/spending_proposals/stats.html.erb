@@ -177,10 +177,10 @@
       <hr class="double">
 
       <div class="show-for-medium medium-6 column small-centered">
-        <%= image_tag("map.jpg", usemap: "#map", alt: "Mapa de distritos de Madrid") %>
+        <%= image_tag("map.jpg", usemap: "#html_map", alt: "Mapa de distritos de Madrid") %>
       </div>
 
-      <map name="map" id="html_map">
+      <map name="html_map" id="html_map">
         <% @geozones.each do |geozone| %>
           <area shape="poly"
                 coords="<%= geozone.html_map_coordinates %>"

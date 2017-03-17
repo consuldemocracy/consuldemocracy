@@ -1,4 +1,4 @@
-<h3 id="11">Participación por grupos de edad</h4>
+<h3 id="11">Participación por grupos de edad</h3>
 
 <table class="polls-participation-age margin-top">
   <thead>
@@ -30,10 +30,10 @@
                  aria-valuetext="<%= percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%"
                  aria-valuemin="0" aria-valuemax="100">
               <span class="progress-meter <%= origin %>" style="width: <%= @age_stats[age.to_s][origin]*100*6/@age_stats['all']['total'] rescue 0 %>%">
-                <p class="progress-meter-text">
+                <span class="progress-meter-text">
                   <%= @age_stats[age.to_s][origin] %>
                   (<%=  percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%)
-                </p>
+                </span>
               </span>
             </div>
           </td>
