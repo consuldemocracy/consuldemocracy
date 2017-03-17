@@ -38,8 +38,11 @@ Setting["months_to_archive_proposals"] = 12
 # Emails under the domain's subdomains will also be included
 Setting["email_domain_for_officials"] = ''
 
-# Code to be included at the top (header) of every page (useful for tracking)
-Setting['per_page_code'] =  ''
+# Code to be included at the top (inside <head>) of every page (useful for tracking)
+Setting['per_page_code_head'] =  ''
+
+# Code to be included at the top (inside <body>) of every page
+Setting['per_page_code_body'] =  ''
 
 # Social settings
 Setting["twitter_handle"] = nil
