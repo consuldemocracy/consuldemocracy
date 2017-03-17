@@ -450,4 +450,22 @@ FactoryGirl.define do
     signature_sheet
     sequence(:document_number) { |n| "#{n}A" }
   end
+
+  factory :site_customization_page, class: 'SiteCustomization::Page' do
+    slug "example-page"
+    title "Example page"
+    subtitle "About an example"
+    content "This page is about..."
+    more_info_flag false
+    print_content_flag false
+    status 'draft'
+
+    trait :published do
+      status "published"
+    end
+
+    trait :display_in_more_info do
+      more_info_flag true
+    end
+  end
 end

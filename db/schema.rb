@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114154421) do
+ActiveRecord::Schema.define(version: 20170316174351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -437,6 +437,18 @@ ActiveRecord::Schema.define(version: 20170114154421) do
     t.boolean  "verified",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "site_customization_pages", force: :cascade do |t|
+    t.string   "slug",                                 null: false
+    t.string   "title",                                null: false
+    t.string   "subtitle"
+    t.text     "content"
+    t.boolean  "more_info_flag"
+    t.boolean  "print_content_flag"
+    t.string   "status",             default: "draft"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "spending_proposals", force: :cascade do |t|

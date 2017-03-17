@@ -207,6 +207,8 @@ en:
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
+      site_customization:
+        pages: Custom Pages
     moderators:
       index:
         title: Moderators
@@ -475,3 +477,34 @@ en:
         phone_not_given: Phone not given
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
+    site_customization:
+      pages:
+        create:
+          notice: 'Page created successfully.'
+          error: Process couldn't be created
+        update:
+          notice: 'Page updated successfully.'
+          error: Page couldn't be updated
+        destroy:
+          notice: Page deleted successfully
+        edit:
+          title: Editing %{page_title}
+          back: Back
+        errors:
+          form:
+            error: Error
+        form:
+          options: Options
+        index:
+          create: Create new page
+          delete: Delete
+          title: Custom Pages
+          see_page: See page
+        new:
+          back: Back
+          title: Create new custom page
+        page:
+          created_at: Created at
+          status: Status
+          title: Title
+          updated_at: Updated at

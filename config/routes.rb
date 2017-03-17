@@ -222,6 +222,10 @@ Rails.application.routes.draw do
     end
 
     resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
+
+    namespace :site_customization do
+      resources :pages
+    end
   end
 
   namespace :moderation do

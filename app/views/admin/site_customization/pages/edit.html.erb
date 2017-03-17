@@ -1,0 +1,15 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.site_customization.pages") %> - <%= @page.title %>
+<% end %>
+
+<%= link_to admin_site_customization_pages_path, class: "back" do %>
+  <span class="icon-angle-left"></span>
+  <%= t("admin.site_customization.pages.edit.back") %>
+<% end %>
+
+<%= button_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(@page), method: :delete, class: "button hollow alert float-right margin-right" %>
+
+<div class="row margin-top">
+  <h2><%= t("admin.site_customization.pages.edit.title", page_title: @page.title) %></h2>
+  <%= render 'form' %>
+</div>

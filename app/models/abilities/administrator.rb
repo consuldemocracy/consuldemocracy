@@ -51,6 +51,8 @@ module Abilities
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
       can [:index, :create, :edit, :update, :destroy], Geozone
+
+      can :manage, SiteCustomization::Page
     end
   end
 end

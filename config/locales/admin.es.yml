@@ -207,6 +207,8 @@ es:
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
       signature_sheets: Hojas de firmas
+      site_customization:
+        pages: Páginas
     moderators:
       index:
         title: Moderadores
@@ -475,3 +477,34 @@ es:
         phone_not_given: No ha dado su teléfono
         sms_code_not_confirmed: No ha introducido su código de seguridad
         title: Verificaciones incompletas
+    site_customization:
+      pages:
+        create:
+          notice: 'Página creada correctamente.'
+          error: No se ha podido crear la página
+        update:
+          notice: 'Página actualizada correctamente.s'
+          error: No se ha podido actualizar la página
+        destroy:
+          notice: Página eliminada correctamente
+        edit:
+          title: Editar %{page_title}
+          back: Volver
+        errors:
+          form:
+            error: Error
+        form:
+          options: Opciones
+        index:
+          create: Crear nueva página
+          delete: Borrar
+          title: Páginas
+          see_page: Ver página
+        new:
+          back: Back
+          title: Página nueva
+        page:
+          created_at: Creada
+          status: Estado
+          title: Título
+          updated_at: Última actualización

@@ -122,5 +122,11 @@
         <span class="icon-stats"></span><%= t("admin.menu.stats") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "pages" %>>
+      <%= link_to admin_site_customization_pages_path do %>
+        <span class="icon-settings"></span><%= t("admin.menu.site_customization.pages") %>
+      <% end %>
+    </li>
   </ul>
 </nav>
