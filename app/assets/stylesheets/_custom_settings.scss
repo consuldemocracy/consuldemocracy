@@ -149,14 +149,14 @@ $sixth-color: #FF9200;
 
 
 .card2{
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  // border-radius: 5px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 
-  padding: 20px;
+  // padding: 20px;
   margin: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: white;
-  width: 90%;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+  // background-color: white;
+  width: 100%;
   .item-1{
     img{
     height: 100px;
@@ -165,10 +165,13 @@ $sixth-color: #FF9200;
   .item-2{
     margin-top: 20px;
     margin-bottom: 20px;
-    height: 60px;
+    // height: 30px;
   }
   .item-3{
-    height: 120px;
+    // height: 120px;
+        p{
+    color: white;
+    }
   }
   .item-4{
     height: 150px;
@@ -245,9 +248,14 @@ $sixth-color: #FF9200;
 .blue-body{
   h1{
     margin-top: -25px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
+    color: white;
   }
-  background-color: #44A6D2;
+  h3{
+    font-size: 34px;
+    line-height: 32px;
+  }
+  background-color: #4F98CC;
 }
 
 .expanded.budget{
