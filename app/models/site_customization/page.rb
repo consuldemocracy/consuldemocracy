@@ -7,6 +7,7 @@ class SiteCustomization::Page < ActiveRecord::Base
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
   scope :published, -> { where(status: 'published').order('id DESC') }
+  scope :with_more_info_flag, -> { where(status: 'published', more_info_flag: true).order('id ASC') }
 
   def url
     "/#{slug}"

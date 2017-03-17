@@ -2,19 +2,12 @@
   Admin - <%= t("admin.menu.site_customization.pages") %>
 <% end %>
 
-<div class="legislation-admin legislation-process-index">
-  <div class="row">
-    <div class="small-12 medium-9 column">
-      <h2 class="inline-block"><%= t("admin.site_customization.pages.index.title") %></h2>
-    </div>
-    <div class="small-12 medium-3 column legislation-process-new">
-      <%= link_to t("admin.site_customization.pages.index.create"), new_admin_site_customization_page_path, class: "button" %>
-    </div>
-  </div>
+<%= link_to t("admin.site_customization.pages.index.create"), new_admin_site_customization_page_path, class: "button float-right margin-right" %>
+<h2 class="inline-block"><%= t("admin.site_customization.pages.index.title") %></h2>
 
   <h3><%= page_entries_info @pages %></h3>
 
-  <table class="stack">
+  <table class="cms_page_list">
     <thead>
       <tr>
         <th><%= t("admin.site_customization.pages.page.title") %></th>
@@ -33,7 +26,7 @@
         </td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
-        <td><%= t("admin.legislation.processes.process.status_#{page.status}") %></td>
+        <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
         <td class="small">
           <span class="icon-eye"></span>
           <%= link_to t("admin.site_customization.pages.index.see_page"), page.url %>
@@ -48,5 +41,3 @@
   </table>
 
   <%= paginate @pages %>
-
-</div>

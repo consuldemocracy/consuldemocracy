@@ -1,0 +1,15 @@
+<% provide :title do %><%= @custom_page.title %><% end %>
+
+<div class="row margin-top">
+
+  <div class="small-12 medium-9 column">
+    <h1><%= @custom_page.title %></h1>
+    <h2><%= @custom_page.subtitle %></h2>
+
+    <%= raw @custom_page.content %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <%= render '/shared/print' if @custom_page.print_content_flag %>
+  </div>
+</div>

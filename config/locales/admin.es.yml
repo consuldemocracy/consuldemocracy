@@ -508,3 +508,5 @@ es:
           status: Estado
           title: Título
           updated_at: Última actualización
+          status_draft: Borrador
+          status_published: Publicada

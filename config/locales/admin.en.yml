@@ -508,3 +508,5 @@ en:
           status: Status
           title: Title
           updated_at: Updated at
+          status_draft: Draft
+          status_published: Published
