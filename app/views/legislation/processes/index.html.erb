@@ -2,16 +2,6 @@
   <%= t("layouts.header.collaborative_legislation") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
 <% end %>
 
-<div class="legislation-hero no-margin-top brand-heading">
-  <div class="row">
-    <div class="small-12 medium-12 column padding">
-      <h4>
-        <%= t('.hightlighted_processes') %>
-      </h4>
-    </div>
-  </div>
-</div>
-
 <div class="row">
   <div class="legislation-categories small-12 medium-3 column">
     <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
