@@ -62,8 +62,8 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def create_a_new_user
-      user = User.create!(username: Faker::Name.name,
-        email: Faker::Internet.email,
+      user = User.create!(username: "habitant du esi %{@esi} appartement n° %{@apartment_number}",
+        email: @email,
         password: "12345678",
         password_confirmation: "12345678",
         confirmed_at: Time.current,
