@@ -64,6 +64,7 @@ gem 'tolk', '~> 2.0.0' # Web interface for translations
 gem 'browser'
 gem 'turnout', '~> 2.4.0'
 gem 'redcarpet'
+gem 'pry-byebug'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
