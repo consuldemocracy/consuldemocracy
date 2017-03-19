@@ -8,17 +8,19 @@ class Users::SessionsController < Devise::SessionsController
 
         sign_out(current_user)
         parsing_of_decrypt(@decrypt)
-
-        sign_in(User.find(@user_id)) if only_one_contract_on_apartment?
-
-        if new_user_but_a_contract_exists?
-          create_a_new_user
+        # binding.pry
+        if only_one_contract_on_apartment?
+          sign_in(User.find(@user_id))
         else
-          create_a_new_user
+          if new_user_but_a_contract_exists?
+            create_a_new_user
+          else
+            create_a_new_user
+          end
         end
-
-        @coucou = @email
+        @email = @email
     end
+    redirect_to root_path
   end
 
   private
@@ -62,15 +64,15 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def create_a_new_user
-      user = User.create!(username: "habitant du esi %{@esi} appartement n° %{@apartment_number}",
+      user = User.create!(username: "esi n°#{@esi} appart n° #{@apartment_number}",
         email: @email,
         password: "12345678",
         password_confirmation: "12345678",
         confirmed_at: Time.current,
         terms_of_service: "1",
-        # esi: @esi,
-        # contract: @contract,
-        # apartment: @apartment_number
+        esi: @esi,
+        contract: @contract,
+        apartment: @apartment_number
         )
       user.save
       user.update(verified_at: Time.current)
