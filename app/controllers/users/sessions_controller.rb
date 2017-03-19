@@ -5,8 +5,8 @@ class Users::SessionsController < Devise::SessionsController
 
     # test format
     if regex?
-      binding.pry
-        sign_out
+
+        sign_out(current_user)
         parsing_of_decrypt(@decrypt)
 
         sign_in(User.find(@user_id)) if only_one_contract_on_apartment?
