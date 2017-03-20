@@ -9,4 +9,7 @@ namespace :db do
   task dev_seed_budget_fr: :environment do
     load(Rails.root.join("db", "dev_seeds_budget_fr.rb"))
   end
+  task prod_seed_budget_fr: :environment do
+    load(Rails.root.join("db", "prod_seeds_budget_fr.rb"))
+  end
 end
