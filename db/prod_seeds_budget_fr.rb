@@ -4,17 +4,17 @@ require "csv"
 DatabaseCleaner.clean_with :truncation
 
 puts "Creating Settings"
-Setting.create(key: 'official_level_1_name', value: 'Employés publics')
-Setting.create(key: 'official_level_2_name', value: 'Organisation municipale')
-Setting.create(key: 'official_level_3_name', value: 'Directeur général')
+Setting.create(key: 'official_level_1_name', value: 'COPAS')
+Setting.create(key: 'official_level_2_name', value: 'Employé RIVP')
+Setting.create(key: 'official_level_3_name', value: 'Responsable RIVP')
 Setting.create(key: 'official_level_4_name', value: 'Conseiller municipal')
 Setting.create(key: 'official_level_5_name', value: 'Le Maire')
 
 Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
 Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
-Setting.create(key: 'proposal_code_prefix', value: 'MAD')
-Setting.create(key: 'votes_for_proposal_success', value: '5')
+Setting.create(key: 'proposal_code_prefix', value: 'RIVP')
+Setting.create(key: 'votes_for_proposal_success', value: '3')
 Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
@@ -36,16 +36,25 @@ Setting.create(key: 'feature.budgets', value: "true")
 Setting.create(key: 'feature.signature_sheets', value: "true")
 Setting.create(key: 'per_page_code', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
-Setting.create(key: 'mailer_from_name', value: 'Consul')
-Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
-Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
-Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
-Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
+Setting.create(key: 'mailer_from_name', value: 'Budget Participatif RIVP')
+Setting.create(key: 'mailer_from_address', value: 'contact@copas.coop')
+Setting.create(key: 'meta_description', value: 'Budget participatif de la RIVP')
+Setting.create(key: 'meta_keywords', value: 'Budget participatif, RIVP')
+Setting.create(key: 'verification_offices_url', value: 'http://copas.coop/')
 Setting.create(key: 'min_age_to_participate', value: '16')
 
 puts "Creating Geozones"
 # ['La Grange aux Belles', 'Bd Macdonald', "Elie Faure / Cdt l'Herminier", "Les Cardeurs - Mouraud", "Bisson Ramponneau", "La Chapelle Evangile", "Scotto Reverdy", "Cité Beauharnais", "Porte de Vanves"].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
-['La Grange aux Belles, 10ème', 'La Chapelle Evangile, 18ème', 'Porte de Vanves, 14ème', 'Les Cardeurs-Mouraud, 20ème', 'Bisson Ramponneau-Piat, 20ème' , 'Bd Macdonald, 19ème', 'Elie Faure-Commandant l’Herminier, 20ème', 'Jean Bouton-place Henri Frenay, 12ème', 'Zac Vaugirard, 15ème', 'Nationale, 13ème'].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
+['La Grange aux Belles, 10ème',
+  'La Chapelle Evangile, 18ème',
+  'Porte de Vanves, 14ème',
+  'Les Cardeurs-Mouraud, 20ème',
+  'Bisson Ramponneau-Piat, 20ème' ,
+  'Bd Macdonald, 19ème',
+  'Elie Faure-Commandant l’Herminier, 20ème',
+  'Jean Bouton-place Henri Frenay, 12ème',
+  'Zac Vaugirard, 15ème',
+  'Nationale, 13ème'].each { |i| Geozone.create(name: "#{i}", external_code: i.ord, census_code: i.ord) }
 
 
 puts "Creating Users"
@@ -198,7 +207,7 @@ with_investments = "yes"
 if with_investments = "yes"
   print "Creating Investments"
   tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-  file = File.expand_path('../dev_seeds_fr.csv', __FILE__)
+  file = File.expand_path('../prod_seeds_fr.csv', __FILE__)
   CSV.foreach(file, :headers => true) do |row|
     heading = Budget::Heading.reorder("RANDOM()").first
     investment = Budget::Investment.create!(
