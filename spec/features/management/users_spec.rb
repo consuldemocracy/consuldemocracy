@@ -18,6 +18,7 @@ feature 'Users' do
 
     fill_in 'user_username', with: 'pepe'
     fill_in 'user_email', with: 'pepe@gmail.com'
+    select_date '31-December-1980', from: 'user_date_of_birth'
 
     click_button 'Create user'
 
@@ -28,6 +29,7 @@ feature 'Users' do
     expect(user).to be_level_three_verified
     expect(user).to be_residence_verified
     expect(user).to_not be_confirmed
+    expect(user.date_of_birth).to have_content (Date.new(1980,12,31))
 
     sent_token = /.*confirmation_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
     visit user_confirmation_path(confirmation_token: sent_token)
