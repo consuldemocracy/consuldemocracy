@@ -113,7 +113,7 @@ feature 'Voters' do
 
       visit root_path
       click_link "Sign out"
-      login_through_form_as(officer.user)
+      login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -131,7 +131,7 @@ feature 'Voters' do
 
       visit root_path
       click_link "Sign out"
-      login_through_form_as(officer.user)
+      login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -152,7 +152,7 @@ feature 'Voters' do
 
       visit root_path
       click_link "Sign out"
-      login_through_form_as(officer.user)
+      login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
       officing_verify_residence
@@ -170,7 +170,7 @@ feature 'Voters' do
 
     visit root_path
     click_link "Sign out"
-    login_through_form_as(officer.user)
+    login_through_form_as_officer(officer.user)
 
     visit new_officing_residence_path
     officing_verify_residence
@@ -188,7 +188,7 @@ feature 'Voters' do
 
     visit root_path
     click_link "Sign out"
-    login_through_form_as(officer.user)
+    login_through_form_as_officer(officer.user)
 
     visit new_officing_residence_path
     officing_verify_residence

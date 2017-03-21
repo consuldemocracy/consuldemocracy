@@ -45,6 +45,17 @@ module CommonActions
     click_button 'Enter'
   end
 
+  def login_through_form_as_officer(user)
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Enter'
+    visit new_officing_booth_path
+  end
+
   def login_as_authenticated_manager
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
     allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)

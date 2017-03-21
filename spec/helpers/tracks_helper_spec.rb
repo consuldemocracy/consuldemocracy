@@ -10,7 +10,7 @@ describe TracksHelper do
       user.date_of_birth = nil
       expect(age(user)).to eq('Desconocida')
 
-      user.date_of_birth = 25.years.ago
+      user.date_of_birth = 25.years.ago.beginning_of_year
       expect(age(user)).to eq(25)
     end
 

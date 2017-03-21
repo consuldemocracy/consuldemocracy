@@ -28,7 +28,7 @@ feature 'Residence' do
 
     background do
       create(:poll_officer_assignment, officer: officer)
-      login_through_form_as(officer.user)
+      login_through_form_as_officer(officer.user)
       visit officing_root_path
     end
 
