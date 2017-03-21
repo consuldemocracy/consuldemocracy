@@ -1,5 +1,4 @@
-![Logo of Consul]
-(https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![Logo of Consul](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
 # Consul
 
