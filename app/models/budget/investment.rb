@@ -184,7 +184,11 @@ class Budget
     end
 
     def valid_heading?(user)
-      !different_heading_assigned?(user)
+      reclasification?(user) || !different_heading_assigned?(user)
+    end
+
+    def reclasification?(user)
+      headings_voted_by_user(user).count > 1
     end
 
     def different_heading_assigned?(user)
@@ -197,8 +201,11 @@ class Budget
     end
 
     def heading_voted_by_user?(user)
-      user.votes.for_budget_investments(budget.investments.where(group: group)).
-      votables.map(&:heading_id).first
+      headings_voted_by_user(user).first
+    end
+
+    def headings_voted_by_user(user)
+      user.votes.for_budget_investments(budget.investments.where(group: group)).votables.map(&:heading_id)
     end
 
     def ballotable_by?(user)
