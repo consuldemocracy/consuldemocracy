@@ -384,6 +384,7 @@ en:
       share: Share
       send_notification: Send notification
       no_notifications: "This proposal has any notifications."
+      embed_video_title: "Video on %{proposal}"
     update:
       form:
         submit_button: Save changes
