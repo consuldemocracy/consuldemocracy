@@ -343,6 +343,30 @@ describe Budget::Investment do
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
+
+      it "allows voting in any investment due to a reclasification" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca   = create(:budget_heading, group: districts)
+        latina      = create(:budget_heading, group: districts)
+
+        all_city_investment    = create(:budget_investment, heading: heading)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        latina_investment      = create(:budget_investment, heading: latina)
+
+        create(:vote, votable: all_city_investment, voter: user)
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        all_city_investment.group_id = districts.id
+        all_city_investment.heading_id = salamanca.id
+        all_city_investment.save
+
+        expect(all_city_investment.valid_heading?(user)).to eq(true)
+        expect(carabanchel_investment.valid_heading?(user)).to eq(true)
+        expect(salamanca_investment.valid_heading?(user)).to eq(true)
+        expect(latina_investment.valid_heading?(user)).to eq(true)
+      end
     end
   end
 
