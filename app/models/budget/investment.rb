@@ -205,8 +205,7 @@ class Budget
     end
 
     def headings_voted_by_user(user)
-      user.votes.for_budget_investments(budget.investments.where(group: group)).
-      votables.map(&:heading_id)
+      user.votes.for_budget_investments(budget.investments.where(group: group)).votables.map(&:heading_id)
     end
 
     def ballotable_by?(user)
