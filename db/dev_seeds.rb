@@ -61,26 +61,26 @@ Setting.create(key: 'meta_keywords', value: 'citizen participation, open governm
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
 
-piwik_tracking_code_head = "<!-- Piwik -->
-<script type='text/javascript'>
-  var _paq = _paq || [];
-  _paq.push(['setDomains', ['*.decidedesa.madrid.es']]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u='//webanalytics01.madrid.es/';
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '6']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Piwik Code -->"
-piwik_tracking_code_body = "<!-- Piwik -->
-<noscript><p><img src='//webanalytics01.madrid.es/piwik.php?idsite=6' style='border:0;' alt=' /></p></noscript>
-<!-- End Piwik Code -->"
-Setting[:per_page_code_head] = piwik_tracking_code_head
-Setting[:per_page_code_body] = piwik_tracking_code_body
+# piwik_tracking_code_head = "<!-- Piwik -->
+# <script type='text/javascript'>
+#   var _paq = _paq || [];
+#   _paq.push(['setDomains', ['*.decidedesa.madrid.es']]);
+#   _paq.push(['trackPageView']);
+#   _paq.push(['enableLinkTracking']);
+#   (function() {
+#     var u='//webanalytics01.madrid.es/';
+#     _paq.push(['setTrackerUrl', u+'piwik.php']);
+#     _paq.push(['setSiteId', '6']);
+#     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+#     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+#   })();
+# </script>
+# <!-- End Piwik Code -->"
+# piwik_tracking_code_body = "<!-- Piwik -->
+# <noscript><p><img src='//webanalytics01.madrid.es/piwik.php?idsite=6' style='border:0;' alt=' /></p></noscript>
+# <!-- End Piwik Code -->"
+# Setting[:per_page_code_head] = piwik_tracking_code_head
+# Setting[:per_page_code_body] = piwik_tracking_code_body
 Setting.create(key: 'analytics_url', value: "")
 
 puts " ✅"
