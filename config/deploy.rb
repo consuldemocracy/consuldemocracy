@@ -17,7 +17,6 @@ set :server_name, deploysecret(:server_name)
 # If ssh access is restricted, probably you need to use https access
 set :repo_url, 'https://github.com/AyuntamientoMadrid/consul.git'
 
-set :scm, :git
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
 set :log_level, :info
