@@ -9,6 +9,8 @@ Citizen Participation and Open Government Application
 [![Code Climate](https://codeclimate.com/github/AyuntamientoMadrid/consul/badges/gpa.svg)](https://codeclimate.com/github/AyuntamientoMadrid/consul)
 [![Dependency Status](https://gemnasium.com/AyuntamientoMadrid/consul.svg)](https://gemnasium.com/AyuntamientoMadrid/consul)
 [![Coverage Status](https://coveralls.io/repos/github/AyuntamientoMadrid/consul/badge.svg?branch=master)](https://coveralls.io/github/AyuntamientoMadrid/consul?branch=master)
+[![Accessibility issues](https://rocketvalidator.com/badges/a11y_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=a11y)
+[![HTML issues](https://rocketvalidator.com/badges/html_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=html)
 
 This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
 
