@@ -189,7 +189,8 @@ class Budget
     end
 
     def reclasification?(user)
-      headings_voted_by_user(user).count > 1
+      headings_voted_by_user(user).count > 1 &&
+      headings_voted_by_user(user).include?(heading_id)
     end
 
     def different_heading_assigned?(user)
