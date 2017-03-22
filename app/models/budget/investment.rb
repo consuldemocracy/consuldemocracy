@@ -55,9 +55,10 @@ class Budget
 
     scope :for_render,             -> { includes(:heading) }
 
-    before_save :calculate_confidence_score
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+    before_save :calculate_confidence_score
+    before_save :log_reclasification
 
     def self.filter_params(params)
       params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
@@ -277,6 +278,12 @@ class Budget
       def set_denormalized_ids
         self.group_id = self.heading.try(:group_id) if self.heading_id_changed?
         self.budget_id ||= self.heading.try(:group).try(:budget_id)
+      end
+
+      def log_reclasification
+        if heading_id_changed?
+          self.previous_heading_id = self.heading_id_was
+        end
       end
   end
 end
