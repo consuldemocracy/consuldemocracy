@@ -381,7 +381,59 @@ describe Budget::Investment do
         expect(latina_investment.valid_heading?(user)).to eq(true)
       end
     end
+
+    describe "reclasification" do
+
+      it "returns false if I have not voted" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        investment = create(:budget_investment, heading: carabanchel)
+
+        expect(investment.reclasification?(user)).to eq(false)
+      end
+
+      it "returns false if I have voted once in a single heading of a group" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        investment = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: investment, voter: user)
+
+        expect(investment.reclasification?(user)).to eq(false)
+      end
+
+      it "returns false if I have voted twice in a single heading of a group" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        investment1 = create(:budget_investment, heading: carabanchel)
+        investment2 = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: investment1, voter: user)
+        create(:vote, votable: investment2, voter: user)
+
+        expect(investment1.reclasification?(user)).to eq(false)
+      end
+
+      it "returns true if I have voted in two headings of the same group" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca = create(:budget_heading, group: districts)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+        create(:vote, votable: salamanca_investment, voter: user)
+
+        expect(carabanchel_investment.reclasification?(user)).to eq(true)
+      end
+    end
   end
+
+
 
   describe "Order" do
     describe "#sort_by_confidence_score" do
