@@ -25,7 +25,7 @@ feature "Voter" do
       ba = create(:poll_booth_assignment, poll: poll)
       create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
 
-      login_through_form_as(officer.user)
+      login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
       officing_verify_residence
