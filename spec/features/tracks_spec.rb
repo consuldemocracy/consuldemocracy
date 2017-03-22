@@ -278,7 +278,7 @@ feature 'Tracking' do
   context "Tracking pages" do
 
     background do
-      Setting['per_page_code'] = '<script type="text/javascript">function weboConv(idConv){}</script>'
+      Setting['per_page_code_head'] = '<script type="text/javascript">function weboConv(idConv){}</script>'
     end
 
     scenario "Codes", :js do

@@ -61,7 +61,7 @@ Setting.create(key: 'meta_keywords', value: 'citizen participation, open governm
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
 
-piwik_tracking_code = "<!-- Piwik -->
+piwik_tracking_code_head = "<!-- Piwik -->
 <script type='text/javascript'>
   var _paq = _paq || [];
   _paq.push(['setDomains', ['*.decidedesa.madrid.es']]);
@@ -75,10 +75,12 @@ piwik_tracking_code = "<!-- Piwik -->
     g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<!-- End Piwik Code -->"
+piwik_tracking_code_body = "<!-- Piwik -->
 <noscript><p><img src='//webanalytics01.madrid.es/piwik.php?idsite=6' style='border:0;' alt=' /></p></noscript>
 <!-- End Piwik Code -->"
-Setting[:per_page_code] = piwik_tracking_code
-Setting.create(key: 'per_page_code', value: "")
+Setting[:per_page_code_head] = piwik_tracking_code_head
+Setting[:per_page_code_body] = piwik_tracking_code_body
 Setting.create(key: 'analytics_url', value: "")
 
 puts " ✅"
