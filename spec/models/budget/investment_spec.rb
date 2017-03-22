@@ -54,6 +54,19 @@ describe Budget::Investment do
     expect(investment.group_id).to eq group_2.id
   end
 
+  it "logs previous heading value if it is changed" do
+    heading_1 = create(:budget_heading)
+    heading_2 = create(:budget_heading)
+
+    investment = create(:budget_investment, heading: heading_1)
+
+    expect(investment.previous_heading_id).to eq nil
+
+    investment.update(heading: heading_2)
+
+    expect(investment.previous_heading_id).to eq heading_1.id
+  end
+
   describe "#unfeasibility_explanation" do
     it "should be valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
