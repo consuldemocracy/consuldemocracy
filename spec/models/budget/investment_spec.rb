@@ -273,7 +273,6 @@ describe Budget::Investment do
 
   end
 
-
   describe 'Permissions' do
     let(:budget)      { create(:budget) }
     let(:group)       { create(:budget_group, budget: budget) }
@@ -357,7 +356,7 @@ describe Budget::Investment do
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
 
-      it "allows voting in any investment due to a reclasification" do
+      it "allows voting in investments of headings where I have already voted due to a reclasification" do
         districts   = create(:budget_group, budget: budget)
         carabanchel = create(:budget_heading, group: districts)
         salamanca   = create(:budget_heading, group: districts)
@@ -378,7 +377,7 @@ describe Budget::Investment do
         expect(all_city_investment.valid_heading?(user)).to eq(true)
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
         expect(salamanca_investment.valid_heading?(user)).to eq(true)
-        expect(latina_investment.valid_heading?(user)).to eq(true)
+        expect(latina_investment.valid_heading?(user)).to eq(false)
       end
     end
 
@@ -417,23 +416,39 @@ describe Budget::Investment do
         expect(investment1.reclasification?(user)).to eq(false)
       end
 
-      it "returns true if I have voted in two headings of the same group" do
+      it "returns false if I have voted in two headings of the same group but I am voting in a different heading" do
+        districts   = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca = create(:budget_heading, group: districts)
+        latina      = create(:budget_heading, group: districts)
+
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        latina_investment   = create(:budget_investment, heading: latina)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+        create(:vote, votable: salamanca_investment, voter: user)
+
+        expect(latina_investment.reclasification?(user)).to eq(false)
+      end
+
+      it "returns true if I have voted in two headings of the same group and I am voting in one of those headings" do
         districts   = create(:budget_group, budget: budget)
         carabanchel = create(:budget_heading, group: districts)
         salamanca = create(:budget_heading, group: districts)
 
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
         salamanca_investment   = create(:budget_investment, heading: salamanca)
+        salamanca_investment2  = create(:budget_investment, heading: salamanca)
 
         create(:vote, votable: carabanchel_investment, voter: user)
         create(:vote, votable: salamanca_investment, voter: user)
 
-        expect(carabanchel_investment.reclasification?(user)).to eq(true)
+        expect(salamanca_investment2.reclasification?(user)).to eq(true)
       end
+
     end
   end
-
-
 
   describe "Order" do
     describe "#sort_by_confidence_score" do
