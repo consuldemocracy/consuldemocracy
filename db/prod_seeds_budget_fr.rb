@@ -203,7 +203,7 @@ group.headings << group.headings.create!(name: 'Nationale, 13ème',
 
 print "Creating Groups & geozon"
 file = File.expand_path('../prod_geozone.csv', __FILE__)
-CSV.foreach(file, :headers => true) do |row|
+CSV.foreach(file, {:headers => true, col_sep:';'}) do |row|
   puts row[0]
   # puts row[1],
   # puts row[2]
