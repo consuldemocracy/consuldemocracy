@@ -7,7 +7,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
 
   def create
     if @page.save
-      redirect_to admin_site_customization_pages_path, notice: t('admin.site_customization.pages.create.notice', link: @page.slug.html_safe)
+      redirect_to admin_site_customization_pages_path, notice: t('admin.site_customization.pages.create.notice')
     else
       flash.now[:error] = t('admin.site_customization.pages.create.error')
       render :new
@@ -16,7 +16,7 @@ class Admin::SiteCustomization::PagesController < Admin::SiteCustomization::Base
 
   def update
     if @page.update(page_params)
-      redirect_to admin_site_customization_pages_path, notice: t('admin.site_customization.pages.update.notice', link: @page.slug.html_safe)
+      redirect_to admin_site_customization_pages_path, notice: t('admin.site_customization.pages.update.notice')
     else
       flash.now[:error] = t('admin.site_customization.pages.update.error')
       render :edit

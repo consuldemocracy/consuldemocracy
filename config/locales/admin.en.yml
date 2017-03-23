@@ -209,6 +209,7 @@ en:
       signature_sheets: Signature Sheets
       site_customization:
         pages: Custom Pages
+        images: Custom Images
     moderators:
       index:
         title: Moderators
@@ -478,12 +479,23 @@ en:
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
     site_customization:
+      images:
+        index:
+          title: Custom images
+          update: Update
+          delete: Delete
+        update:
+          notice: Image updated successfully
+          error: Image couldn't be updated
+        destroy:
+          notice: Image deleted successfully
+          error: Image couldn't be deleted
       pages:
         create:
-          notice: 'Page created successfully.'
+          notice: Page created successfully
           error: Process couldn't be created
         update:
-          notice: 'Page updated successfully.'
+          notice: Page updated successfully
           error: Page couldn't be updated
         destroy:
           notice: Page deleted successfully

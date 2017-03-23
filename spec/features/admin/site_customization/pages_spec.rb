@@ -39,7 +39,7 @@ feature "Admin custom pages" do
 
   context "Update" do
     scenario "Valid custom page" do
-      custom_page = create(:site_customization_page, title: "An example custom page")
+      create(:site_customization_page, title: "An example custom page")
       visit admin_root_path
 
       within("#side_menu") do
@@ -58,7 +58,7 @@ feature "Admin custom pages" do
     end
   end
 
-  scenario "Index" do
+  scenario "Delete" do
     custom_page = create(:site_customization_page, title: "An example custom page")
     visit edit_admin_site_customization_page_path(custom_page)
 

@@ -238,6 +238,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -277,6 +278,12 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     paranoia (2.2.1)
       activerecord (>= 4.0, < 5.1)
     parser (2.4.0.0)
@@ -504,6 +511,7 @@ DEPENDENCIES
   omniauth-facebook (~> 4.0.0)
   omniauth-google-oauth2 (~> 0.4.0)
   omniauth-twitter
+  paperclip
   paranoia (~> 2.2.1)
   pg (~> 0.20.0)
   pg_search
@@ -533,4 +541,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.13.7
+   1.14.6

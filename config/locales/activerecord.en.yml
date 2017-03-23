@@ -43,6 +43,9 @@ en:
       site_customization/page:
         one: Custom page
         other: Custom pages
+      site_customization/image:
+        one: Custom image
+        other: Custom images
     attributes:
       budget:
         name: "Name"
@@ -151,3 +154,8 @@ en:
           attributes:
             slug:
               slug_format: "must be letters, numbers, _ and -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"

@@ -225,6 +225,7 @@ Rails.application.routes.draw do
 
     namespace :site_customization do
       resources :pages, except: [:show]
+      resources :images, only: [:index, :update, :destroy]
     end
   end
 

@@ -208,7 +208,8 @@ es:
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
-        pages: Páginas
+        pages: Personalizar páginas
+        images: Personalizar imágenes
     moderators:
       index:
         title: Moderadores
@@ -478,12 +479,23 @@ es:
         sms_code_not_confirmed: No ha introducido su código de seguridad
         title: Verificaciones incompletas
     site_customization:
+      images:
+        index:
+          title: Personalizar imágenes
+          update: Actualizar
+          delete: Borrar
+        update:
+          notice: Imagen actualizada correctamente
+          error: No se ha podido actualizar la imagen
+        destroy:
+          notice: Imagen borrada correctamente
+          error: No se ha podido borrar la imagen
       pages:
         create:
-          notice: 'Página creada correctamente.'
+          notice: Página creada correctamente
           error: No se ha podido crear la página
         update:
-          notice: 'Página actualizada correctamente.s'
+          notice: Página actualizada correctamente
           error: No se ha podido actualizar la página
         destroy:
           notice: Página eliminada correctamente

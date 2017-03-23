@@ -53,6 +53,7 @@ module Abilities
       can [:index, :create, :edit, :update, :destroy], Geozone
 
       can :manage, SiteCustomization::Page
+      can :manage, SiteCustomization::Image
     end
   end
 end

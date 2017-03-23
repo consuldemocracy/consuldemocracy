@@ -128,5 +128,11 @@
         <span class="icon-settings"></span><%= t("admin.menu.site_customization.pages") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "images" %>>
+      <%= link_to admin_site_customization_images_path do %>
+        <span class="icon-settings"></span><%= t("admin.menu.site_customization.images") %>
+      <% end %>
+    </li>
   </ul>
 </nav>
