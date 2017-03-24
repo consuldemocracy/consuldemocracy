@@ -72,14 +72,14 @@ group :development, :test do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.5'
-  gem 'capybara', '~> 2.12.1'
+  gem 'capybara', '~> 2.13.0'
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'i18n-tasks', '~> 0.9.12'
-  gem 'capistrano', '~> 3.7.2',           require: false
+  gem 'capistrano', '~> 3.8.0',           require: false
   gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '~> 1.2.3',     require: false
   gem 'rvm1-capistrano3',              require: false
@@ -92,7 +92,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'poltergeist', '~> 1.13.0'
+  gem 'poltergeist', '~> 1.14.0'
   gem 'coveralls', '~> 0.8.19', require: false
   gem 'email_spec'
 end

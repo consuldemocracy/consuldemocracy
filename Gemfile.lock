@@ -72,23 +72,21 @@ GEM
       uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
     cancancan (1.16.0)
-    capistrano (3.7.2)
+    capistrano (3.8.0)
       airbrussh (>= 1.0.0)
-      capistrano-harrow
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
     capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-harrow (0.5.3)
     capistrano-rails (1.2.3)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano3-delayed-job (1.7.3)
       capistrano (~> 3.0, >= 3.0.0)
       daemons (~> 1.2.4)
-    capybara (2.12.1)
+    capybara (2.13.0)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -222,7 +220,7 @@ GEM
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
     kgio (2.11.0)
-    knapsack (1.13.1)
+    knapsack (1.13.2)
       rake
       timecop (>= 0.1.0)
     launchy (2.4.3)
@@ -288,7 +286,7 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
       arel (>= 6)
-    poltergeist (1.13.0)
+    poltergeist (1.14.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
@@ -392,7 +390,8 @@ GEM
       builder (~> 3.0)
     social-share-button (0.10.0)
       coffee-rails
-    spring (1.7.2)
+    spring (2.0.1)
+      activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.7.1)
@@ -469,11 +468,11 @@ DEPENDENCIES
   bullet (~> 5.5.1)
   byebug
   cancancan (~> 1.16.0)
-  capistrano (~> 3.7.2)
+  capistrano (~> 3.8.0)
   capistrano-bundler (~> 1.2)
   capistrano-rails (~> 1.2.3)
   capistrano3-delayed-job (~> 1.7.3)
-  capybara (~> 2.12.1)
+  capybara (~> 2.13.0)
   ckeditor (~> 4.2.2)
   coffee-rails (~> 4.2.1)
   coveralls (~> 0.8.19)
@@ -508,7 +507,7 @@ DEPENDENCIES
   paranoia (~> 2.2.1)
   pg (~> 0.20.0)
   pg_search
-  poltergeist (~> 1.13.0)
+  poltergeist (~> 1.14.0)
   quiet_assets
   rails (= 4.2.8)
   redcarpet (~> 3.4.0)
@@ -528,7 +527,7 @@ DEPENDENCIES
   tolk (~> 2.0.0)
   turbolinks
   turnout (~> 2.4.0)
-  uglifier (~> 3.1.6)
+  uglifier (~> 3.1.9)
   unicorn (~> 5.2.0)
   web-console (= 3.3.0)
   whenever
