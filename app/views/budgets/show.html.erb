@@ -45,7 +45,9 @@
     <% end %>
     <table class="table-fixed">
       <thead>
-        <th scope="col"><%= t('budgets.show.group') %></th>
+        <tr>
+          <th scope="col"><%= t('budgets.show.group') %></th>
+        </tr>
       </thead>
       <tbody>
         <% @budget.groups.each do |group| %>
@@ -64,7 +66,6 @@
                         group,
                         unfeasible: params[:unfeasible]) %>
               <% end %>
-              <br>
             </td>
           </tr>
         <% end %>
