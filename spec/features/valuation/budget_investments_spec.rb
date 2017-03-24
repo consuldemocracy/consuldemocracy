@@ -13,6 +13,12 @@ feature 'Valuation budget investments' do
     expect{ visit valuation_budget_budget_investments_path(create(:budget)) }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
+  scenario 'Display link to valuation section' do
+    Setting['feature.budgets'] = true
+    visit root_path
+    expect(page).to have_link "Valuation", href: valuation_root_path
+  end
+
   scenario 'Index shows budget investments assigned to current valuator' do
     investment1 = create(:budget_investment, budget: @budget)
     investment2 = create(:budget_investment, budget: @budget)
@@ -52,6 +58,33 @@ feature 'Valuation budget investments' do
 
     expect(investment100.title).to appear_before(investment10.title)
     expect(investment10.title).to appear_before(investment1.title)
+  end
+
+  scenario 'Index displays a maximum of 5 investments and no pagination' do
+    investment10  = create(:budget_investment,  budget: @budget, cached_votes_up: 10)
+    investment100 = create(:budget_investment,  budget: @budget, cached_votes_up: 100)
+    investment1   = create(:budget_investment,  budget: @budget, cached_votes_up: 1)
+    investment50   = create(:budget_investment, budget: @budget, cached_votes_up: 50)
+    investment30   = create(:budget_investment, budget: @budget, cached_votes_up: 30)
+    investment20   = create(:budget_investment, budget: @budget, cached_votes_up: 20)
+
+    investment1.valuators   << @valuator
+    investment10.valuators  << @valuator
+    investment100.valuators << @valuator
+    investment50.valuators  << @valuator
+    investment30.valuators  << @valuator
+    investment20.valuators  << @valuator
+
+    visit valuation_budget_budget_investments_path(@budget)
+
+    expect(page).to have_content(investment100.title)
+    expect(page).to have_content(investment50.title)
+    expect(page).to have_content(investment30.title)
+    expect(page).to have_content(investment20.title)
+    expect(page).to have_content(investment10.title)
+
+    expect(page).to_not have_content(investment1.title)
+    expect(page).to_not have_content("Next")
   end
 
   scenario "Index filtering by heading", :js do
