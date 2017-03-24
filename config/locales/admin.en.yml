@@ -210,6 +210,7 @@ en:
       site_customization:
         pages: Custom Pages
         images: Custom Images
+        content_blocks: Custom content blocks
     moderators:
       index:
         title: Moderators
@@ -479,6 +480,31 @@ en:
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
     site_customization:
+      content_blocks:
+        create:
+          notice: Content block created successfully
+          error: Content block couldn't be created
+        update:
+          notice: Content block updated successfully
+          error: Content block couldn't be updated
+        destroy:
+          notice: Content block deleted successfully
+        edit:
+          title: Editing content block
+          back: Back
+        errors:
+          form:
+            error: Error
+        index:
+          create: Create new content block
+          delete: Delete
+          title: Content blocks
+        new:
+          back: Back
+          title: Create new content block
+        content_block:
+          body: Body
+          name: Name
       images:
         index:
           title: Custom images
@@ -493,7 +519,7 @@ en:
       pages:
         create:
           notice: Page created successfully
-          error: Process couldn't be created
+          error: Page couldn't be created
         update:
           notice: Page updated successfully
           error: Page couldn't be updated

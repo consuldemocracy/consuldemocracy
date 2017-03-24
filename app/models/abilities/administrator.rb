@@ -54,6 +54,7 @@ module Abilities
 
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
+      can :manage, SiteCustomization::ContentBlock
     end
   end
 end

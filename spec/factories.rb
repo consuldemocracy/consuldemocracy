@@ -468,4 +468,10 @@ FactoryGirl.define do
       more_info_flag true
     end
   end
+
+  factory :site_customization_content_block, class: 'SiteCustomization::ContentBlock' do
+    name "top_links"
+    locale "en"
+    body "Some top links content"
+  end
 end

@@ -134,5 +134,11 @@
         <span class="icon-settings"></span><%= t("admin.menu.site_customization.images") %>
       <% end %>
     </li>
+
+    <li <%= "class=active" if controller_name == "content_blocks" %>>
+      <%= link_to admin_site_customization_content_blocks_path do %>
+        <span class="icon-settings"></span><%= t("admin.menu.site_customization.content_blocks") %>
+      <% end %>
+    </li>
   </ul>
 </nav>

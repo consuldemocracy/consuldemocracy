@@ -1,0 +1,34 @@
+<%= form_for [:admin, @content_block], html: {class: "edit_page", data: {watch_changes: true}} do |f| %>
+
+  <% if @content_block.errors.any? %>
+
+  <div id="error_explanation" data-alert class="callout alert" data-closable>
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <strong>
+      <%= @content_block.errors.count %>
+      <%= t("admin.site_customization.content_blocks.errors.form.error", count: @content_block.errors.count) %>
+    </strong>
+  </div>
+
+  <% end %>
+
+
+  <div class="small-12 medium-6 column">
+    <%= f.label :name %>
+    <%= f.select :name, SiteCustomization::ContentBlock::VALID_BLOCKS, label: false %>
+  </div>
+  <div class="small-12 medium-6 column">
+    <%= f.label :locale %>
+    <%= f.select :locale, I18n.available_locales, label: false %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.label :body %>
+    <%= f.text_area :body, label: false, rows: 10 %>
+    <%= f.submit class: "button success" %>
+  </div>
+
+<% end %>

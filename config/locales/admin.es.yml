@@ -210,6 +210,7 @@ es:
       site_customization:
         pages: Personalizar páginas
         images: Personalizar imágenes
+        content_blocks: Personalizar bloques
     moderators:
       index:
         title: Moderadores
@@ -479,6 +480,31 @@ es:
         sms_code_not_confirmed: No ha introducido su código de seguridad
         title: Verificaciones incompletas
     site_customization:
+      content_blocks:
+        create:
+          notice: Bloque creado correctamente
+          error: No se ha podido crear el bloque
+        update:
+          notice: Bloque actualizado correctamente
+          error: No se ha podido actualizar el bloque
+        destroy:
+          notice: Bloque borrado correctamente
+        edit:
+          title: Editar bloque
+          back: Volver
+        errors:
+          form:
+            error: Error
+        index:
+          create: Crear nuevo bloque
+          delete: Borrar
+          title: Bloques
+        new:
+          back: Volver
+          title: Crear nuevo bloque
+        content_block:
+          body: Contenido
+          name: Nombre
       images:
         index:
           title: Personalizar imágenes

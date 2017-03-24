@@ -1,0 +1,14 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.site_customization.content_blocks") %> - <%= t("admin.site_customization.content_blocks.new.title") %>
+<% end %>
+
+<%= link_to admin_site_customization_content_blocks_path, class: "back" do %>
+  <span class="icon-angle-left"></span>
+  <%= t("admin.site_customization.content_blocks.new.back") %>
+<% end %>
+
+<div class="row margin-top">
+  <h2><%= t("admin.site_customization.content_blocks.new.title") %></h2>
+  <%= render 'form' %>
+</div>
+
