@@ -60,7 +60,7 @@ puts "Creating Geozones"
 puts "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
-  pwd = '12345678'
+  pwd = Rails.application.secrets.user_pw
   puts "    #{username}"
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
 end
@@ -170,7 +170,7 @@ puts budget.name
 
 puts "Creating Groups"
 group = budget.groups.create!(name: "Choisissez votre résidence")
-group.headings << group.headings.create!(name: 'La Granges aux Belles, 10ème',
+group.headings << group.headings.create!(name: 'La Grange aux Belles, 10ème',
                                         # geozone: geozone,
                                         price: 20000)
 group.headings << group.headings.create!(name: 'La Chapelle Evangile, 18ème',
@@ -201,40 +201,40 @@ group.headings << group.headings.create!(name: 'Nationale, 13ème',
                                         # geozone: geozone,
                                         price: 20000)
 
-print "Creating Groups & geozon"
-file = File.expand_path('../prod_geozone.csv', __FILE__)
-CSV.foreach(file, {:headers => true, col_sep:';'}) do |row|
-  puts row[0]
-  # puts row[1],
-  # puts row[2]
-  # if new budget group
-  # =>
-  # else
+# print "Creating Groups & geozon"
+# file = File.expand_path('../prod_geozone.csv', __FILE__)
+# CSV.foreach(file, {:headers => true, col_sep:';'}) do |row|
+#   puts row[0]
+#   # puts row[1],
+#   # puts row[2]
+#   # if new budget group
+#   # =>
+#   # else
 
-end
+# end
 
-with_investments = "yes"
-if with_investments = "yes"
-  print "Creating Investments"
-  tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-  file = File.expand_path('../prod_seeds_fr.csv', __FILE__)
-  CSV.foreach(file, :headers => true) do |row|
-    heading = Budget::Heading.reorder("RANDOM()").first
-    investment = Budget::Investment.create!(
-      author: User.reorder("RANDOM()").first,
-      heading: heading,
-      group: heading.group,
-      budget: heading.group.budget,
-      title: row[0],
-      external_url: Faker::Internet.url,
-      description: row[3],
-      created_at: rand((Time.now - 1.week) .. Time.now),
-      feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
-      unfeasibility_explanation: Faker::Lorem.paragraph,
-      valuation_finished: [false, true].sample,
-      tag_list: tags.sample(3).join(','),
-      price: rand(1 .. 100) * 1000,
-      terms_of_service: "1")
-    puts "    #{investment.title}"
-  end
-end
+# with_investments = "yes"
+# if with_investments = "yes"
+#   print "Creating Investments"
+#   tags = ActsAsTaggableOn::Tag.where(kind: 'category')
+#   file = File.expand_path('../prod_seeds_fr.csv', __FILE__)
+#   CSV.foreach(file, :headers => true) do |row|
+#     heading = Budget::Heading.reorder("RANDOM()").first
+#     investment = Budget::Investment.create!(
+#       author: User.reorder("RANDOM()").first,
+#       heading: heading,
+#       group: heading.group,
+#       budget: heading.group.budget,
+#       title: row[0],
+#       external_url: Faker::Internet.url,
+#       description: row[3],
+#       created_at: rand((Time.now - 1.week) .. Time.now),
+#       feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
+#       unfeasibility_explanation: Faker::Lorem.paragraph,
+#       valuation_finished: [false, true].sample,
+#       tag_list: tags.sample(3).join(','),
+#       price: rand(1 .. 100) * 1000,
+#       terms_of_service: "1")
+#     puts "    #{investment.title}"
+#   end
+# end
