@@ -13,6 +13,12 @@ feature 'Valuation budget investments' do
     expect{ visit valuation_budget_budget_investments_path(create(:budget)) }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
+  scenario 'Display link to valuation section' do
+    Setting['feature.budgets'] = true
+    visit root_path
+    expect(page).to have_link "Valuation", href: valuation_root_path
+  end
+
   scenario 'Index shows budget investments assigned to current valuator' do
     investment1 = create(:budget_investment, budget: @budget)
     investment2 = create(:budget_investment, budget: @budget)
