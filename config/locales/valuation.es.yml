@@ -20,6 +20,7 @@ es:
         evaluate: Evaluar
     budget_investments:
       index:
+        count: "Hay %{count} propuestas de gasto"
         headings_filter_all: Todas las partidas
         filters:
           valuation_open: Abiertos
