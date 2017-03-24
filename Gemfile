@@ -3,18 +3,18 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 # Use PostgreSQL
-gem 'pg', '~> 0.19.0'
+gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.1.6'
+gem 'uglifier', '~> 3.1.9'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 4.2.2'
+gem 'jquery-rails', '~> 4.3.1'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -28,10 +28,10 @@ gem 'devise_security_extension'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-facebook', '~> 3.0.0'
+gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
-gem 'kaminari'
+gem 'kaminari', '~> 1.0.1'
 gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.3.0'
@@ -48,16 +48,16 @@ gem 'paranoia', '~> 2.2.1'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.14.0'
+gem 'rollbar', '~> 2.14.1'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.18.1.330'
+gem 'newrelic_rpm', '~> 4.0.0.332'
 gem 'whenever', require: false
 gem 'pg_search'
 gem 'sitemap_generator', '~> 5.3.1'
 
-gem 'ahoy_matey', '~> 1.5.3'
+gem 'ahoy_matey', '~> 1.5.5'
 gem 'groupdate', '~> 3.2.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
