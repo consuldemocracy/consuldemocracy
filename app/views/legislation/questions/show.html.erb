@@ -38,9 +38,7 @@
     <aside class="small-12 medium-3 column">
       <div id="social-share" class="sidebar-divider"></div>
       <h3><%= t('.share') %></h3>
-      <div class="social-share-full">
-        <%= render '/legislation/shared/share_buttons', title: @question.title %>
-      </div>
+      <%= render '/legislation/shared/share_buttons', title: @question.title, url: legislation_process_question_url(@question.process, @question) %>
     </aside>
   </div>
 

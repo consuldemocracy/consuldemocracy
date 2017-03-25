@@ -1,5 +1,9 @@
-<div class="social-share-button" data-title="<%= title.truncate(115) %>" data-img="" data-url="" data-desc="" data-via="">
-  <a rel="nofollow " data-site="twitter" class="ssb-icon ssb-twitter" onclick="return SocialShareButton.share(this);" title="<%= t('legislation.shared.share_twitter') %>" href="#"><span class="sr-only">twitter</span></a>
-  <a rel="nofollow " data-site="facebook" class="ssb-icon ssb-facebook" onclick="return SocialShareButton.share(this);" title="<%= t('legislation.shared.share_facebook') %>" href="#"><span class="sr-only">facebook</span></a>
-  <a rel="nofollow " data-site="google_plus" class="ssb-icon ssb-google_plus" onclick="return SocialShareButton.share(this);" title="<%= t('legislation.shared.share_gplus') %>" href="#"><span class="sr-only">google_plus</span></a>
+<div class="social-share-full">
+  <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}") %>
+  <% if browser.device.mobile? %>
+    <a href="whatsapp://send?text=<%= title %> <%= url %>" data-action="share/whatsapp/share">
+      <span class="icon-whatsapp whatsapp"></span>
+      <span class="sr-only"><%= t("social.whatsapp") %></span>
+    </a>
+  <% end %>
 </div>

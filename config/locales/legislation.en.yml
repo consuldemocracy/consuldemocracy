@@ -108,7 +108,5 @@ en:
         verify_account: verify your account
         debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
     shared:
-      share_twitter: Share on Twitter
-      share_facebook: Share on Facebook
-      share_gplus: Share on Google+
+      share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}

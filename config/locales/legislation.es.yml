@@ -108,7 +108,5 @@ es:
         verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
     shared:
-      share_twitter: Compartir en Twitter
-      share_facebook: Compartir en Facebook
-      share_gplus: Compartir en Google+
+      share: Compartir
       share_comment: Comentario sobre la %{version_name} del borrador del proceso %{process_name}
