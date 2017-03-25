@@ -1,5 +1,5 @@
 <% if session[:event].present? %>
-  <%= content_tag("span",
+  <%= content_tag(:span, "",
           id:   "tracking_events",
           data: { track_event_category:        event_data_for(:category),
                   track_event_action:          event_data_for(:action),
