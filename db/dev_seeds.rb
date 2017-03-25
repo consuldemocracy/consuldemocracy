@@ -392,7 +392,7 @@ end
 
 puts "Creating Valuation Assignments"
 
-(1..17).to_a.sample.times do
+(1..50).to_a.sample.times do
   Budget::Investment.reorder("RANDOM()").first.valuators << valuator.valuator
 end
 
