@@ -15,15 +15,6 @@
   <% end %>
 <% end %>
 
-<div class="callout success tip">
-  <h2>Más proyectos</h2>
-  <% if @heading == Budget::Heading.where(name: "Toda la ciudad").last %>
-    <p>También puedes apoyar proyectos de <%= link_to "un distrito", "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/distritos" %></p>
-  <% else %>
-    <p>También puedes apoyar proyectos de <%= link_to "toda la ciudad", "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad" %></p>
-  <% end %>
-</div>
-
 <%= render 'budgets/investments/categories' %>
 
 <% if @heading && can?(:show, @ballot) %>
