@@ -12,8 +12,20 @@
   </div>
 
   <div class="row" data-equalizer>
-    <!-- Rehabilitación edificios -->
+    <!-- Publicidad exterior -->
     <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.publicity.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.publicity.date_html") %></p>
+        <p class="info">
+          <%= t("cards.publicity.text") %>
+        </p>
+        <%= link_to t("cards.publicity.button"), publicity_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
+    <!-- Rehabilitación edificios -->
+    <div class="small-12 medium-4 column margin-top end">
       <div class="panel" data-equalizer-watch>
         <h3><%= t("cards.buildings.title") %></h3>
         <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.buildings.date_html") %></p>
