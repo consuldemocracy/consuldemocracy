@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Budget::Investment do
+describe Budget::Investment, :focus do
   let(:investment) { build(:budget_investment) }
 
   it "should be valid" do
@@ -67,7 +67,7 @@ describe Budget::Investment do
     expect(investment.previous_heading_id).to eq heading_1.id
   end
 
-  describe "#unfeasibility_explanation" do
+  describe "#unfeasibility_explanation blank" do
     it "should be valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
       investment.valuation_finished = false
@@ -84,6 +84,29 @@ describe Budget::Investment do
     it "should not be valid if valuation finished and unfeasible" do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "unfeasible"
+      investment.valuation_finished = true
+      expect(investment).to_not be_valid
+    end
+  end
+
+  describe "#price blank" do
+    it "should be valid if valuation not finished" do
+      investment.price = ""
+      investment.valuation_finished = false
+      expect(investment).to be_valid
+    end
+
+    it "should be valid if valuation finished and unfeasible" do
+      investment.price = ""
+      investment.unfeasibility_explanation = "reason"
+      investment.feasibility = "unfeasible"
+      investment.valuation_finished = true
+      expect(investment).to be_valid
+    end
+
+    it "should not be valid if valuation finished and feasible" do
+      investment.price = ""
+      investment.feasibility = "feasible"
       investment.valuation_finished = true
       expect(investment).to_not be_valid
     end
