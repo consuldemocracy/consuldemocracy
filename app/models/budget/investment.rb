@@ -25,6 +25,7 @@ class Budget
     validates :description, presence: true
     validates :heading_id, presence: true
     validates_presence_of :unfeasibility_explanation, if: :unfeasibility_explanation_required?
+    validates_presence_of :price, if: :price_required?
 
     validates :title, length: { in: 4..Budget::Investment.title_max_length }
     validates :description, length: { maximum: Budget::Investment.description_max_length }
@@ -134,6 +135,10 @@ class Budget
 
     def unfeasibility_explanation_required?
       unfeasible? && valuation_finished?
+    end
+
+    def price_required?
+      feasible? && valuation_finished?
     end
 
     def unfeasible_email_pending?
