@@ -129,16 +129,16 @@ module CommentableActions
       when '4'
         1.year.ago
       else
-        Date.parse(params[:advanced_search][:date_min]) rescue nil
+        Date.parse(params[:advanced_search][:date_min]) rescue 100.years.ago
       end
     end
 
     def search_finish_date
-      params[:advanced_search][:date_max].try(:to_date) || Date.today
+      (params[:advanced_search][:date_max].to_date rescue Date.today) || Date.today
     end
 
     def search_date_range
-      search_start_date.beginning_of_day..search_finish_date.end_of_day
+      [100.years.ago, search_start_date].max.beginning_of_day..[search_finish_date, Date.today].min.end_of_day
     end
 
     def set_search_order
