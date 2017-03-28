@@ -1306,11 +1306,11 @@ table {
 
 .button.button-telegram {
   background: #ECF7FC;
-  border-left: 3px solid #45B0E3;
+  border-left: 3px solid #0088cc;
 
   &:before {
-    color: #45B0E3;
-    content: "t";
+    color: #0088cc;
+    content: "1";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1322,7 +1322,7 @@ table {
 }
 
 .ssb-telegram {
-  background: #45B0E3;
+  background: #0088cc;
   background-image: none !important;
   color: white;
   height: $line-height*2 !important;
@@ -1330,7 +1330,7 @@ table {
   width: $line-height*2 !important;
 
   &:before {
-    content: "t";
+    content: "1";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1439,7 +1439,7 @@ table {
   }
 
   .ssb-telegram {
-    background: #45B0E3;
+    background: #0088cc;
     color: white;
     height: $line-height;
     position: relative;
