@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Budget::Investment, :focus do
+describe Budget::Investment do
   let(:investment) { build(:budget_investment) }
 
   it "should be valid" do

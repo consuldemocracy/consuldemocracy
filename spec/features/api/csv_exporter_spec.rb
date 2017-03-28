@@ -453,20 +453,40 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(spending_proposal_tagging.taggable_type)
     end
 
-    scenario "Do not include taggings for hidden taggables" do
-      visible_proposal = create(:proposal)
+    scenario "Do not include taggings for hidden debates" do
+      visible_debate = create(:debate)
       hidden_debate = create(:debate, hidden_at: Time.now)
 
-      visible_proposal_tagging = create(:tagging, taggable: visible_proposal)
-      hidden_debate_tagging    = create(:tagging, taggable: hidden_debate)
+      visible_debate_tagging = create(:tagging, taggable: visible_debate)
+      hidden_debate_tagging  = create(:tagging, taggable: hidden_debate)
 
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html).flatten
+      csv = CSV.parse(page.html)
 
-      expect(csv).to include(visible_proposal_tagging.taggable_type)
-      expect(csv).to_not include(hidden_debate_tagging.taggable_type)
+      taggable_ids = csv.collect {|element| element[1]}
+
+      expect(taggable_ids).to include(visible_debate_tagging.taggable_id.to_s)
+      expect(taggable_ids).to_not include(hidden_debate_tagging.taggable_id.to_s)
+    end
+
+    scenario "Do not include taggings for hidden proposals" do
+      visible_proposal = create(:proposal)
+      hidden_proposal  = create(:proposal, hidden_at: Time.now)
+
+      visible_proposal_tagging = create(:tagging, taggable: visible_proposal)
+      hidden_proposal_tagging  = create(:tagging, taggable: hidden_proposal)
+
+      @csv_exporter.export
+
+      visit csv_path_for("taggings")
+      csv = CSV.parse(page.html)
+
+      taggable_ids = csv.collect {|element| element[1]}
+
+      expect(taggable_ids).to include(visible_proposal_tagging.taggable_id.to_s)
+      expect(taggable_ids).to_not include(hidden_proposal_tagging.taggable_id.to_s)
     end
 
     scenario "Do not display taggings for hidden tags" do
@@ -529,7 +549,24 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(spending_proposal_vote.votable_type)
     end
 
-    scenario "Do not include votes of a hidden votable" do
+    scenario "Do not include votes of a hidden debates" do
+      visible_debate = create(:debate)
+      hidden_debate  = create(:debate, hidden_at: Time.now)
+
+      visible_debate_vote = create(:vote, votable: visible_debate)
+      hidden_debate_vote  = create(:vote, votable: hidden_debate)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to include(visible_debate_vote.votable_id.to_s)
+      expect(votable_ids).to_not include(hidden_debate_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of a hidden proposals" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, hidden_at: Time.now)
 
@@ -538,10 +575,69 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html).flatten
+      csv = CSV.parse(page.html)
 
-      expect(csv).to include(visible_proposal_vote.votable_id.to_s)
-      expect(csv).to_not include(hidden_proposal_vote.votable_id.to_s)
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to include(visible_proposal_vote.votable_id.to_s)
+      expect(votable_ids).to_not include(hidden_proposal_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of a hidden comments" do
+      visible_comment = create(:comment)
+      hidden_comment  = create(:comment, hidden_at: Time.now)
+
+      visible_comment_vote = create(:vote, votable: visible_comment)
+      hidden_comment_vote  = create(:vote, votable: hidden_comment)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to include(visible_comment_vote.votable_id.to_s)
+      expect(votable_ids).to_not include(hidden_comment_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of comments from a hidden proposal" do
+      visible_proposal = create(:proposal)
+      hidden_proposal  = create(:proposal, hidden_at: Time.now)
+
+      visible_proposal_comment = create(:comment, commentable: visible_proposal)
+      hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
+
+      visible_proposal_comment_vote = create(:vote, votable: visible_proposal_comment)
+      hidden_proposal_comment_vote  = create(:vote, votable: hidden_proposal_comment)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to include(visible_proposal_comment_vote.votable_id.to_s)
+      expect(votable_ids).to_not include(hidden_proposal_comment_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of comments from a hidden debate" do
+      visible_debate = create(:debate)
+      hidden_debate  = create(:debate, hidden_at: Time.now)
+
+      visible_debate_comment = create(:comment, commentable: visible_debate)
+      hidden_debate_comment  = create(:comment, commentable: hidden_debate)
+
+      visible_debate_comment_vote = create(:vote, votable: visible_debate_comment)
+      hidden_debate_comment_vote  = create(:vote, votable: hidden_debate_comment)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to include(visible_debate_comment_vote.votable_id.to_s)
+      expect(votable_ids).to_not include(hidden_debate_comment_vote.votable_id.to_s)
     end
 
     scenario "Only display date and hour for created_at" do
