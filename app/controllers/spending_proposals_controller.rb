@@ -1,5 +1,4 @@
 class SpendingProposalsController < ApplicationController
-  include FeatureFlags
   include CommentableActions
   include FlagActions
 
@@ -14,8 +13,6 @@ class SpendingProposalsController < ApplicationController
 
   load_and_authorize_resource
 
-  feature_flag :spending_proposals
-
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   respond_to :html, :js
@@ -26,7 +23,7 @@ class SpendingProposalsController < ApplicationController
   end
 
   def welcome
-    @proposal_successfull_exists = Proposal.successfull.exists?
+    @proposal_successfull_exists = Proposal.successful.exists?
   end
 
   def select_district
@@ -140,7 +137,8 @@ class SpendingProposalsController < ApplicationController
     def set_random_seed
       if params[:order] == 'random' || params[:order].blank?
         params[:random_seed] ||= rand(99)/100.0
-        SpendingProposal.connection.execute "select setseed(#{params[:random_seed]})"
+        seed = Float(params[:random_seed]) rescue 0
+        SpendingProposal.connection.execute "select setseed(#{seed})"
       else
         params[:random_seed] = nil
       end

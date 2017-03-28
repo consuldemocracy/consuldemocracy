@@ -10,6 +10,10 @@ module Verification
     scope :incomplete_verification, -> { where("(users.residence_verified_at IS NULL AND users.failed_census_calls_count > ?) OR (users.residence_verified_at IS NOT NULL AND (users.unconfirmed_phone IS NULL OR users.confirmed_phone IS NULL))", 0)  }
   end
 
+  def old_enough_to_participate?
+    age.present? && age >= User.minimum_required_age
+  end
+
   def verification_email_sent?
     email_verification_token.present?
   end

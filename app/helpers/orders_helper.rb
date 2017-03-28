@@ -1,3 +1,4 @@
+#Removed in upstream...
 module OrdersHelper
 
   def valid_orders

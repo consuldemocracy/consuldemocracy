@@ -70,6 +70,11 @@ a {
   }
 }
 
+.button.hollow {
+  border: 1px solid $link;
+  color: $link;
+}
+
 .postfix.button {
   padding: 0;
 }
@@ -139,6 +144,10 @@ a {
   padding-top: $line-height;
 }
 
+.light {
+  background: $light;
+}
+
 .highlight {
   background: $highlight;
 }
@@ -190,6 +199,30 @@ a {
 
     a {
       color: $text-medium;
+    }
+
+    &.active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+    }
+  }
+}
+
+.menu.vertical {
+  background: white;
+  margin: $line-height 0;
+  padding: $line-height;
+
+  li {
+    margin-bottom: $line-height;
+
+    a {
+      color: $text-medium;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: $base-font-size;
     }
 
     &.active {
@@ -374,6 +407,24 @@ header {
 
   ul {
     margin-bottom: 0;
+
+    li {
+      display: block;
+    }
+
+    @include breakpoint(medium) {
+      li {
+        display: inline-block;
+
+        &:after {
+          content: "|";
+        }
+
+        &:last-child:after {
+          content: none;
+        }
+      }
+    }
   }
 }
 
@@ -439,6 +490,7 @@ header {
 
   .input-group-button {
     line-height: $line-height*1.5;
+    padding-bottom: 0;
 
     button {
       background: $border;
@@ -460,7 +512,6 @@ header {
 }
 
 .submenu {
-  background: white;
   border-bottom: 1px solid $border;
   clear: both;
   margin-bottom: $line-height/2;
@@ -562,7 +613,8 @@ footer {
 // 04. Tags
 // --------
 
-.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a {
+.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a,
+.tags span {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -600,12 +652,28 @@ h2.sidebar-title {
 // --------------
 
 .auth-page {
+
+  .wrapper {
+    margin: 0 auto (-$line-height)*14;
+  }
+}
+
+.auth-image {
   background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
-  h1:not(.logo) {
-    @include logo;
+  @include breakpoint(medium) {
+    min-height: $line-height*42;
+  }
+
+  h1 {
+    margin-top: $line-height;
+
+    img {
+      height: rem-calc(80);
+      width: rem-calc(80);
+    }
 
     a {
       color: white;
@@ -621,15 +689,27 @@ h2.sidebar-title {
   }
 }
 
-.auth {
+.auth-form {
+
+  @include breakpoint(medium) {
+    padding-top: $line-height*4;
+  }
 
   p, a, .checkbox {
     font-size: $small-font-size;
   }
+}
 
-  .panel {
+.auth-divider {
+  border-bottom: 1px solid $border;
+  height: rem-calc(14);
+  margin: $line-height 0;
+  text-align: center;
+
+  span {
     background: white;
-    border: 0;
+    font-weight: bold;
+    padding: 0 $line-height/2;
   }
 }
 
@@ -805,6 +885,11 @@ form {
 .callout {
   font-size: $small-font-size;
 
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
@@ -821,12 +906,6 @@ form {
     background-color: $warning-bg;
     border-color: $warning-border;
     color: $color-warning;
-
-    a {
-      color: $color-warning;
-      font-weight: bold;
-      text-decoration: underline;
-    }
   }
 
   &.alert, &.error {
@@ -901,16 +980,12 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .author-deleted, .user-deleted {
-  background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
-  font-size: rem-calc(40);
-  left: 11px;
-  position: absolute;
-  top: 72px;
-}
-
-.user-deleted {
-  top: -4px;
+  display: inline-block;
+  font-size: rem-calc(32);
+  line-height: rem-calc(32);
+  height: rem-calc(32);
+  vertical-align: top;
 }
 
 .user-permissions {
@@ -1058,19 +1133,16 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // --------------------
 
 [class^="level-"] {
-  color: white;
+  color: black;
 }
 
 .is-author {
-  background: #008CCF;
+  background: #00A5F1;
+  color: black;
 }
 
 .is-association {
   background: #C0392B;
-}
-
-.is-deleted {
-  background: #E7E7E7;
 }
 
 .level-1 {
@@ -1125,6 +1197,9 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google {
+  background: white;
+  color: $text;
+  font-weight: bold;
   height: $line-height*2;
   line-height: $line-height*2;
   padding: 0;
@@ -1132,9 +1207,11 @@ table {
 }
 
 .button.button-twitter {
-  background: #45B0E3;
+  background: #ECF7FC;
+  border-left: 3px solid #45B0E3;
 
   &:before {
+    color: #45B0E3;
     content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1172,9 +1249,11 @@ table {
 }
 
 .button.button-facebook {
-  background: #3B5998;
+  background: #EBEEF4;
+  border-left: 3px solid #3B5998;
 
   &:before {
+    color: #3B5998;
     content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1212,9 +1291,11 @@ table {
 }
 
 .button.button-google {
-  background: #DE4C34;
+  background: #FCEDEA;
+  border-left: 3px solid #DE4C34;
 
   &:before {
+    color: #DE4C34;
     content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1601,7 +1682,10 @@ table {
     }
 
     .comment-body {
-      margin-left: rem-calc(42);
+
+      img {
+        margin-right: $line-height/2;
+      }
 
       .reply {
         background: white;
@@ -1609,19 +1693,27 @@ table {
         border-left: 0;
         border-right: 0;
         font-size: $small-font-size;
-        margin: rem-calc(6) 0;
-        padding: rem-calc(6);
+        margin: $line-height/4 0;
+        padding: $line-height/4;
         position: relative;
 
+        a.relative, [class^="icon-arrow"] {
+          padding-left: $line-height/2;
+        }
+
         [class^="icon-arrow"] {
-          font-size: rem-calc(18);
+          font-size: $base-font-size;
           left: -20px;
           position: absolute;
-          top: 0;
+          top: -1px;
         }
 
         .divider {
           color: $text-light;
+        }
+
+        form {
+          margin-top: $line-height/2;
         }
       }
 
@@ -1650,27 +1742,19 @@ table {
       }
     }
 
-    .is-deleted {
-      background: #E7E7E7;
-      margin-left: rem-calc(42);
-      padding: $line-height/4 $line-height/2;
-    }
-
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: rem-calc(42);
-      padding-left: $line-height/4;
-
-      @media only screen and (max-width: 40em) {
-        margin-left: rem-calc(16);
-      }
+      display: inline-block;
+      margin-left: rem-calc(16);
+      padding-left: rem-calc(8);
+      width: 100%;
     }
 
     .comment-info {
       color: $text-medium;
+      display: inline-block;
       font-size: $small-font-size;
-      margin-top: $line-height/4;
-      vertical-align: middle;
+      line-height: rem-calc(32); // Same as avatar height
 
       span.user-name {
         color: $text;
@@ -1701,6 +1785,11 @@ table {
       float: right;
     }
   }
+}
+
+.comment-form {
+  display: inline-block;
+  width: 100%;
 }
 
 // 16. Flags

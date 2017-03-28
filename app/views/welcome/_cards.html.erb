@@ -5,51 +5,34 @@
       <h2 class="title inline-block">
         <%= t("welcome.featured.title") %>
       </h2>
-      <small>
-        <%= link_to t("welcome.featured.see_all"),
-                    processes_path, class: "float-right margin-top" %>
-      </small>
+      <%= link_to processes_path, class: "float-right margin-top" do %>
+        <small><%= t("welcome.featured.see_all") %></small>
+      <% end %>
     </div>
   </div>
 
   <div class="row" data-equalizer>
-
-    <!-- Próxima votación -->
-    <% if @proposal_successfull_exists %>
-      <div class="small-12 medium-4 column margin-top">
-        <div class="panel dark" data-equalizer-watch>
-          <h3><%= t("cards.proposal_ballots.title") %></h3>
-          <p class="info-date">
-            <span class="icon-calendar"></span>&nbsp;<strong><%= t("cards.proposal_ballots.date_html") %></strong></p>
-          <p class="info">
-            <%= t("cards.proposal_ballots.text") %>
-          </p>
-          <%= link_to t("cards.proposal_ballots.button"), proposal_ballots_index_path, class: "button expanded margin-top" %>
-        </div>
-      </div>
-    <% end %>
-
-    <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
+    <!-- Publicidad exterior -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
-        <h3><%= t("cards.air_quality_plan.title_html") %></h3>
-        <p class="info-date"><span class="icon-calendar"></span>&nbsp;<%= t("cards.air_quality_plan.date_html") %></p>
+        <h3><%= t("cards.publicity.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.publicity.date_html") %></p>
         <p class="info">
-          <%= t("cards.air_quality_plan.text") %>
+          <%= t("cards.publicity.text") %>
         </p>
-        <%= link_to t("cards.air_quality_plan.button"), air_quality_plan_path, class: "button expanded margin-top" %>
+        <%= link_to t("cards.publicity.button"), publicity_path, class: "button expanded margin-top" %>
       </div>
     </div>
 
-    <!-- Remodelación Plaza España -->
-    <div class="small-12 medium-4 column margin-top">
+    <!-- Rehabilitación edificios -->
+    <div class="small-12 medium-4 column margin-top end">
       <div class="panel" data-equalizer-watch>
-        <h3><%= t("cards.plaza.title") %></h3>
-        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.plaza.date_html") %></p>
+        <h3><%= t("cards.buildings.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.buildings.date_html") %></p>
         <p class="info">
-          <%= t("cards.plaza.text") %>
+          <%= t("cards.buildings.text") %>
         </p>
-        <%= link_to t("cards.plaza.button"), plaza_path, class: "button expanded margin-top" %>
+        <%= link_to t("cards.buildings.button"), buildings_path, class: "button expanded margin-top" %>
       </div>
     </div>
   </div>

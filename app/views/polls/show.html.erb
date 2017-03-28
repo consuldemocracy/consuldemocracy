@@ -1,0 +1,96 @@
+<% provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
+<% provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
+<% provide :meta_keywords,    t("social_share.polls_show.keywords_#{@poll.id}") %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: first_voting_url,
+              social_title: t("social_share.polls_show.title_#{@poll.id}"),
+              social_description: t("social_share.polls_show.facebook_#{@poll.id}") %>
+<% end %>
+
+<% content_for :wrapper_class, "light" %>
+
+<div class="polls-show">
+  <div id="polls-show-header" class="expanded no-margin-top dark-heading polls-show-header">
+    <div class="row">
+      <div class="small-12 medium-9 column padding">
+        <%= back_link_to polls_path %>
+
+        <% if @questions.count == 1 %>
+          <% question = @questions.first %>
+          <h2><%= question.title %></h2>
+        <% else %>
+          <h2><%= @poll.name %></h2>
+        <% end %>
+
+        <% if @poll.votable_by?(current_user) || @poll.voted_by?(current_user) %>
+          <ol class="margin-top">
+            <% @questions.each do |question| %>
+              <li><%= link_to question.title, question_path(question) %></li>
+            <%end %>
+          </ol>
+        <% end %>
+
+        <ul class="no-bullet margin-top tags">
+          <% @poll.geozones.each do |g| %>
+            <li class="inline-block"><span><%= g.name %></span></li>
+          <% end %>
+        </ul>
+
+        <% unless can?(:answer, @poll) %>
+          <%= render 'reasons_for_not_answering', poll: @poll %>
+        <% end %>
+      </div>
+      <div class="small-12 medium-3 column">
+        <div class="info">
+          <p>
+            <span class="title">
+              <strong><%= t("polls.show.dates_title") %></strong>
+            </span>
+            <br>
+            <%= poll_dates(@poll) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="questions" class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <% if @poll.votable_by?(current_user) %>
+        <%= render "polls/nvotes/iframe" %>
+      <% elsif @poll.voted_by?(current_user) %>
+        <div class="callout warning">
+          <%= t("polls.show.already_voted") %>
+        </div>
+      <% else %>
+        <% @questions.each do |question| %>
+          <%= render 'polls/questions/question', question: question %>
+        <% end %>
+      <% end %>
+      <% if @questions.count == 1 %>
+        <% question = @questions.first %>
+        <h3 class="margin-top"><%= t('polls.show.more_info') %></h3>
+        <%= question.description %>
+      <% end %>
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("polls.show.polls") %></h2>
+      <%= link_to t("polls.show.more_polls"), polls_path, class: "button hollow expanded" %>
+      <div id="social-share" class="sidebar-divider"></div>
+      <h2><%= t("proposals.show.share") %></h2>
+      <div class="social-share-full">
+        <%= social_share_button_tag(t("social_share.polls_show.twitter_#{@poll.id}"), url: first_voting_url) %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @poll.name %> <%= poll_url %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+            <span class="sr-only"><%= t("social.whatsapp") %></span>
+          </a>
+        <% end %>
+      </div>
+    </aside>
+  </div>
+</div>

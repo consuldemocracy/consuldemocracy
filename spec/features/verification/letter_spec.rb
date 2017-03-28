@@ -7,12 +7,11 @@ feature 'Verify Letter' do
                          confirmed_phone:       "611111111")
 
     login_as(user)
-    visit new_letter_path
+    visit account_path
 
-    click_link "Send me a letter with the code"
+    click_link "Add a double verification check to your account"
 
-    expect(page).to have_content "Thank you for requesting your maximum security code (only required for the final votes). In a few days we will send it to the address featuring in the data we have on file."
-
+    expect(page).to have_content "Thank you for requesting your security code. We will send it to you soon to the address featuring in the data we have on file."
     user.reload
 
     expect(user.letter_requested_at).to be
@@ -20,13 +19,14 @@ feature 'Verify Letter' do
   end
 
   scenario 'Go to office instead of send letter' do
+    Setting["verification_offices_url"] = "http://offices.consul"
     user = create(:user, residence_verified_at: Time.current,
                          confirmed_phone:       "611111111")
 
     login_as(user)
-    visit new_letter_path
+    visit letter_path
 
-    expect(page).to have_link "Citizen Support Offices", href: "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD"
+    expect(page).to have_link "Citizen Support Offices", href: "http://offices.consul"
   end
 
   scenario "Deny access unless verified residence" do

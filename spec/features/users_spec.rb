@@ -8,7 +8,8 @@ feature 'Users' do
       @user = create(:user)
       1.times {create(:debate, author: @user)}
       2.times {create(:proposal, author: @user)}
-      3.times {create(:comment, user: @user)}
+      3.times {create(:budget_investment, author: @user)}
+      4.times {create(:comment, user: @user)}
 
       visit user_path(@user)
     end
@@ -16,7 +17,8 @@ feature 'Users' do
     scenario 'shows user public activity' do
       expect(page).to have_content('1 Debate')
       expect(page).to have_content('2 Proposals')
-      expect(page).to have_content('3 Comments')
+      expect(page).to have_content('3 Investments')
+      expect(page).to have_content('4 Comments')
     end
 
     scenario 'shows only items where user has activity' do
@@ -24,7 +26,8 @@ feature 'Users' do
 
       expect(page).to_not have_content('0 Proposals')
       expect(page).to have_content('1 Debate')
-      expect(page).to have_content('3 Comments')
+      expect(page).to have_content('3 Investments')
+      expect(page).to have_content('4 Comments')
     end
 
     scenario 'default filter is proposals' do
@@ -48,9 +51,18 @@ feature 'Users' do
       expect(page).to have_content(@user.debates.first.title)
     end
 
-    scenario 'shows comments by default if user has no proposals nor debates' do
+    scenario 'shows investments by default if user has no proposals nor debates' do
       @user.proposals.destroy_all
       @user.debates.destroy_all
+      visit user_path(@user)
+
+      expect(page).to have_content(@user.budget_investments.first.title)
+    end
+
+    scenario 'shows comments by default if user has no proposals nor debates nor investments' do
+      @user.proposals.destroy_all
+      @user.debates.destroy_all
+      @user.budget_investments.destroy_all
       visit user_path(@user)
 
       @user.comments.each do |comment|
@@ -73,7 +85,7 @@ feature 'Users' do
         expect(page).to_not have_content(comment.body)
       end
 
-      click_link '3 Comments'
+      click_link '4 Comments'
 
       @user.comments.each do |comment|
         expect(page).to have_content(comment.body)
@@ -228,19 +240,19 @@ feature 'Users' do
         expect(page).to_not have_content('Build a school')
       end
 
-      scenario 'is shown if logged in user is admin' do
+      xscenario 'is shown if logged in user is admin' do
         login_as(create(:administrator).user)
         visit user_path(@author)
         expect(page).to have_content('Build a school')
       end
 
-      scenario 'is shown if logged in user is author' do
+      xscenario 'is shown if logged in user is author' do
         login_as(@author)
         visit user_path(@author)
         expect(page).to have_content('Build a school')
       end
 
-      scenario 'delete button is not shown if logged in user is author' do
+      xscenario 'delete button is not shown if logged in user is author' do
         login_as(@author)
         visit user_path(@author)
         within("#spending_proposal_#{@spending_proposal.id}") do
@@ -248,7 +260,7 @@ feature 'Users' do
         end
       end
 
-      scenario 'delete button is not shown if logged in user is admin' do
+      xscenario 'delete button is not shown if logged in user is admin' do
         login_as(create(:administrator).user)
         visit user_path(@author)
         within("#spending_proposal_#{@spending_proposal.id}") do
@@ -293,7 +305,7 @@ feature 'Users' do
         expect(page).to_not have_content('You voted one proposal')
       end
 
-      scenario 'is shown if logged in user is author' do
+      xscenario 'is shown if logged in user is author' do
         login_as(@author)
         visit user_path(@author)
 
@@ -336,6 +348,24 @@ feature 'Users' do
       visit user_path(admin)
       expect(page).to have_content(comment.body)
       expect(page).to_not have_content(admin_comment.body)
+    end
+
+    scenario 'shows only comments from active features' do
+      user = create(:user)
+      1.times {create(:comment, user: user, commentable: create(:debate))}
+      2.times {create(:comment, user: user, commentable: create(:budget_investment))}
+      4.times {create(:comment, user: user, commentable: create(:proposal))}
+
+      visit user_path(user)
+      expect(page).to have_content('7 Comments')
+
+      Setting['feature.debates'] = nil
+      visit user_path(user)
+      expect(page).to have_content('6 Comments')
+
+      Setting['feature.budgets'] = nil
+      visit user_path(user)
+      expect(page).to have_content('4 Comments')
     end
   end
 

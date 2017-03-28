@@ -1,0 +1,11 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("budgets.investments.index.sidebar.by_feasibility") %></h2>
+<br>
+
+<% if params[:unfeasible].present? %>
+  <%= link_to t("budgets.investments.index.sidebar.feasible"),
+            budget_investments_path(@budget, heading_id: @heading, unfeasible: nil) %>
+<% else %>
+  <%= link_to t("budgets.investments.index.sidebar.unfeasible"),
+            budget_investments_path(@budget, heading_id: @heading, unfeasible: 1) %>
+<% end %>

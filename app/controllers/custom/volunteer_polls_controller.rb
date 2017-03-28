@@ -22,7 +22,7 @@ class VolunteerPollsController < ApplicationController
   private
 
     def volunteer_poll_params
-      fields = [:email, :availability_week, :availability_weekend, :turns] + VolunteerPoll::DISTRICTS
+      fields = [:email, :first_name, :last_name, :document_number, :phone, :turns] + VolunteerPoll::VALID_DAYS + VolunteerPoll::DISTRICTS
       params.require(:volunteer_poll).permit(*fields)
     end
 

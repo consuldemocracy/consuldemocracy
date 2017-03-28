@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.5.0'
+lock '3.7.2'
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
@@ -17,7 +17,6 @@ set :server_name, deploysecret(:server_name)
 # If ssh access is restricted, probably you need to use https access
 set :repo_url, 'https://github.com/AyuntamientoMadrid/consul.git'
 
-set :scm, :git
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
 set :log_level, :info
@@ -32,6 +31,7 @@ set :keep_releases, 5
 set :local_user, ENV['USER']
 
 set :delayed_job_workers, 2
+set :delayed_job_roles, :background
 
 set(:config_files, %w(
   log_rotation
@@ -43,9 +43,9 @@ set(:config_files, %w(
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  before :starting, 'rvm1:install:rvm'  # install/update RVM
-  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
-  before :starting, 'install_bundler_gem' # install bundler gem
+  #before :starting, 'rvm1:install:rvm'  # install/update RVM
+  #before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  #before :starting, 'install_bundler_gem' # install bundler gem
 
   after :publishing, 'deploy:restart'
   after :published, 'delayed_job:restart'

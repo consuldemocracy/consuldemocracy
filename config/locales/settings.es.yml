@@ -13,7 +13,8 @@ es:
     votes_for_proposal_success: "Número de votos necesarios para aprobar una Propuesta"
     months_to_archive_proposals: "Meses para archivar las Propuestas"
     email_domain_for_officials: "Dominio de email para cargos públicos"
-    per_page_code: "Código a incluir en cada página"
+    per_page_code_head: "Código a incluir en cada página (<head>)"
+    per_page_code_body: "Código a incluir en cada página (<body>)"
     analytics_url: "URL de estadísticas externas"
     twitter_handle: "Usuario de Twitter"
     twitter_hashtag: "Hashtag para Twitter"
@@ -24,10 +25,12 @@ es:
     org_name: "Nombre de la organización"
     place_name: "Nombre del lugar"
     feature:
+      budgets: Presupuestos participativos
       twitter_login: Registro con Twitter
       facebook_login: Registro con Facebook
       google_login: Registro con Google
       debates: Debates
+      polls: Votaciones
       signature_sheets: Hojas de firmas
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
@@ -41,3 +44,8 @@ es:
         plaza: "Sondeo Plaza España"
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
+    meta_description: "Descripción del sitio (SEO)"
+    meta_keywords: "Palabras clave (SEO)"
+    verification_offices_url: URL oficinas verificación
+    min_age_to_participate: Edad mínima para participar
+

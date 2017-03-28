@@ -1,11 +1,11 @@
 <div class="relative">
-  <%= link_to t("shared.advanced_search.title"), "#",
+  <%= link_to t("shared.advanced_search.title"), "#advanced_search_form",
               id: 'js-advanced-search-title',
               class: "advanced-search small" %>
 </div>
 
 <div class="row advanced-search-form">
-  <%= form_tag search_path, method: :get do %>
+  <%= form_tag search_path, id: "advanced_search_form", method: :get do %>
     <div id='js-advanced-search'
          data-advanced-search-terms=<%= @advanced_search_terms.present? %>
          style="display: none">
@@ -40,7 +40,6 @@
               </label>
               <%= text_field_tag 'advanced_search[date_min]',
                                   params[:advanced_search].try(:[], :date_min),
-                                  placeholder: t("shared.advanced_search.date_placeholder"),
                                   class: 'js-calendar' %>
             </div>
             <div class='small-12 large-6 column'>
@@ -49,7 +48,6 @@
               </label>
               <%= text_field_tag 'advanced_search[date_max]',
                                   params[:advanced_search].try(:[], :date_max),
-                                  placeholder: t("shared.advanced_search.date_placeholder"),
                                   class: 'js-calendar' %>
             </div>
           </div>

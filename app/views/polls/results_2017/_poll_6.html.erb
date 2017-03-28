@@ -1,0 +1,57 @@
+<h3 id="6">Nombres de centros culturales en Retiro</h3>
+
+<% @poll_6.questions.order(id: :asc).each do |question| %>
+  <%
+    answers_votes = {}
+    question.valid_answers.each_with_index do |answer, i|
+      answers_votes[answer] = total_votes_for_answer(question, answer)
+    end
+    results_ordered = answers_votes.keys.sort { |x, y| answers_votes[y] <=> answers_votes[x] }
+    winner = results_ordered.shift
+  %>
+  <table>
+    <caption>
+      <%= question.title %>
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">VOTOS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= winner %></td>
+        <td><%= answers_votes[winner] %> (<%= percent_stat(answers_votes[winner], total_votes_for_poll(@poll_6)) %>%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="poll-6-<%= question.id%>-discarded" style="display:none">
+    <thead>
+      <tr>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">VOTOS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% results_ordered.each do |result| %>
+        <tr>
+          <td><%= result %></td>
+          <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_6)) %>%)</td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>En BLANCO</td>
+        <% whites = total_white_votes_for_poll(@poll_6) %>
+        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_6)) %>%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="margin text-right">
+  <%= link_to "Ver resultados de todas las respuestas", "#",
+              class: "js-toggle-link",
+              data: {'toggle-selector' => ".poll-6-#{question.id}-discarded", 'toggle-text' => "Ver solo respuestas ganadoras"} %>
+  </div>
+<% end %>

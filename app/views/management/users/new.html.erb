@@ -4,7 +4,7 @@
       message: t("management.document_verifications.in_census_has_following_permissions"),
       permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
 
-<div class="row">
+<div class="row verification account">
   <div class="small-12 medium-6 column">
     <%= form_for @user, url: management_users_path do |f| %>
       <%= f.hidden_field :document_type %>
@@ -15,7 +15,13 @@
       <%= f.text_field :email,
           label: t('management.email_label'),
           placeholder: t('management.email_label') %>
-
+      <div class="date-of-birth">
+        <%= f.label t("management.date_of_birth") %>
+        <%= f.date_select :date_of_birth,
+                          prompt: true,
+                          start_year: 1900, end_year: 16.years.ago.year,
+                          label: false %>
+      </div>
       <%= f.submit t("management.users.create_user_submit"), class: "button success" %>
     <% end %>
   </div>

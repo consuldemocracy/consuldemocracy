@@ -1,0 +1,84 @@
+<div class="expanded budget no-margin-top">
+  <div class="row" data-equalizer data-equalize-on="medium">
+    <div class="small-12 medium-9 column padding" data-equalizer-watch>
+      <%= back_link_to budgets_path %>
+
+      <h1><%= @budget.name %></h1>
+
+      <%= safe_html_with_links @budget.description %>
+    </div>
+    <div class="small-12 medium-3 column info padding" data-equalizer-watch>
+      <p>
+        <strong><%= t('budgets.show.phase') %></strong>
+      </p>
+      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+
+      <% if @budget.accepting? %>
+        <% if current_user %>
+          <% if current_user.level_two_or_three_verified? %>
+            <%= link_to t("budgets.investments.index.sidebar.create"),
+                        new_budget_investment_path(@budget),
+                        class: "button margin-top expanded",
+                        data: { no_turbolink: true } %>
+          <% else %>
+            <div class="callout warning margin-top">
+              <%= t("budgets.investments.index.sidebar.verified_only",
+                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="callout primary margin-top">
+            <%= t("budgets.investments.index.sidebar.not_logged_in",
+                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
+                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <% if params[:unfeasible] %>
+      <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
+    <% end %>
+    <table class="table-fixed">
+      <thead>
+        <tr>
+          <th scope="col"><%= t('budgets.show.group') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @budget.groups.each do |group| %>
+          <tr>
+            <td>
+              <% if group.headings.count == 1 %>
+                <%= link_to group.name,
+                      custom_budget_investments_path(@budget,
+                        group,
+                        heading_id: group.headings.first.to_param,
+                        unfeasible: params[:unfeasible]),
+                        data: { no_turbolink: true } %>
+              <% else %>
+                <%= link_to group.name,
+                      custom_budget_group_path(@budget,
+                        group,
+                        unfeasible: params[:unfeasible]) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% unless params[:unfeasible] %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.show.unfeasible"),
+                  budget_path(@budget, unfeasible: 1) %></small>
+    </div>
+  </div>
+<% end %>

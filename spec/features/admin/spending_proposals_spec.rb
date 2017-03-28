@@ -3,6 +3,8 @@ require 'rails_helper'
 feature 'Admin spending proposals' do
 
   background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -96,11 +98,11 @@ feature 'Admin spending proposals' do
       expect(page).to have_button("Update")
       click_link("Back")
       expect(page).to_not have_button("Update")
+      expect(page).to have_link("Back")
       click_link("Back")
 
       expect(page).to_not have_link("Destroy the city")
       expect(page).to have_link("Realocate visitors")
-
     end
 
     scenario "Filtering by admin", :js do
@@ -138,8 +140,10 @@ feature 'Admin spending proposals' do
       click_link("Realocate visitors")
       click_link("Edit classification")
       expect(page).to have_button("Update")
+      expect(page).to have_link("Back")
       click_link("Back")
       expect(page).to_not have_button("Update")
+      expect(page).to have_link("Back")
       click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')
@@ -185,8 +189,10 @@ feature 'Admin spending proposals' do
       click_link("Realocate visitors")
       click_link("Edit classification")
       expect(page).to have_button("Update")
+      expect(page).to have_link("Back")
       click_link("Back")
       expect(page).to_not have_button("Update")
+      expect(page).to have_link("Back")
       click_link("Back")
 
       expect(page).to have_content('There is 1 investment project')

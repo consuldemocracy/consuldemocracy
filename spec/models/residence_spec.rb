@@ -27,7 +27,7 @@ describe Verification::Residence do
     it "should validate user has allowed age" do
       residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.year.ago.year}"})
       expect(residence).to_not be_valid
-      expect(residence.errors[:date_of_birth]).to include("You must be at least 16 years old")
+      expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
 
     describe "postal code" do
@@ -110,6 +110,15 @@ describe Verification::Residence do
 
       user.reload
       expect(user).to be_level_three_verified
+    end
+
+    it "updates the document number with the Census API number" do
+      user = create(:user)
+      residence.user = user
+      residence.document_number = '00012345678Z'
+      residence.save
+      expect(residence.document_number).to eq('12345678Z')
+      expect(user.reload.document_number).to eq('12345678Z')
     end
 
   end

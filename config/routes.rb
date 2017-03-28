@@ -63,8 +63,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :proposal_ballots, only: [:index]
-
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote
@@ -72,6 +70,23 @@ Rails.application.routes.draw do
       put :unflag
     end
   end
+
+  get 'presupuestos/faq',     to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
+  get 'presupuestos',         to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
+  get 'participatory_budget', to: 'pages#show', id: 'budgets/welcome',  as: 'participatory_budget'
+  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'budgets/welcome'
+  resources :budgets, only: [:show, :index], path: 'presupuestos' do
+    resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
+    resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
+      member { post :vote }
+    end
+    resource :ballot, only: :show, controller: "budgets/ballots" do
+      resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
+    end
+    resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
+  end
+  get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
+  get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
 
   scope '/participatory_budget' do
     resources :spending_proposals, only: [:index, :show, :destroy], path: 'investment_projects' do #[:new, :create] temporary disabled
@@ -97,6 +112,16 @@ Rails.application.routes.draw do
   resources :annotations do
     get :search, on: :collection
   end
+
+  resources :polls, only: [:show, :index], path: 'votaciones' do
+    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
+      post :answer, on: :member
+    end
+    resources :nvotes, only: [:new], controller: 'polls/nvotes' do
+      get :token, on: :collection
+    end
+  end
+  post "/polls/nvotes/success" => "polls/nvotes#success", as: :polls_nvotes_success
 
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
@@ -165,6 +190,18 @@ Rails.application.routes.draw do
     end
 
     resources :probes, only: [:index, :show]
+
+    resources :budgets do
+      resources :budget_groups do
+        resources :budget_headings do
+        end
+      end
+
+      resources :budget_investments, only: [:index, :show, :edit, :update] do
+        member { patch :toggle_selection }
+      end
+    end
+
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
@@ -197,6 +234,33 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
+    scope module: :poll do
+      resources :polls do
+        get :search_questions, on: :member
+        patch :add_question, on: :member
+        patch :remove_question, on: :member
+
+        resources :booth_assignments, only: [:index, :show, :create, :destroy] do
+          get :search_booths, on: :collection
+        end
+
+        resources :officer_assignments, only: [:index, :create, :destroy] do
+          get :search_officers, on: :collection
+          get :by_officer, on: :collection
+        end
+
+        resources :recounts, only: :index
+        resources :results, only: :index
+      end
+
+      resources :officers do
+        get :search, on: :collection
+      end
+
+      resources :booths
+      resources :questions
+    end
+
     resources :verifications, controller: :verifications, only: :index do
       get :search, on: :collection
     end
@@ -208,11 +272,13 @@ Rails.application.routes.draw do
 
     resource :stats, only: :show do
       get :spending_proposals, on: :collection
+      get :budget_investments, on: :collection
       get :graph, on: :member
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
       get :redeemable_codes, on: :collection
       get :user_invites, on: :collection
+      get :polls, on: :collection
     end
 
     namespace :api do
@@ -249,10 +315,16 @@ Rails.application.routes.draw do
   end
 
   namespace :valuation do
-    root to: "spending_proposals#index"
+    root to: "budgets#index"
 
     resources :spending_proposals, only: [:index, :show, :edit] do
       patch :valuate, on: :member
+    end
+
+    resources :budgets, only: :index do
+      resources :budget_investments, only: [:index, :show, :edit] do
+        patch :valuate, on: :member
+      end
     end
   end
 
@@ -289,6 +361,17 @@ Rails.application.routes.draw do
       get :print, on: :collection
     end
 
+    resources :budgets, only: :index do
+      collection do
+        get :create_investments
+        get :support_investments
+        get :print_investments
+      end
+      resources :investments, only: [:index, :new, :create, :show, :destroy], controller: 'budgets/investments' do
+        post :vote, on: :member
+        get :print, on: :collection
+      end
+    end
   end
 
   resources :forums, only: [:index, :create, :show]
@@ -310,6 +393,32 @@ Rails.application.routes.draw do
     get :thanks, on: :collection
   end
 
+  namespace :officing do
+    resources :polls, only: [:index] do
+      get :final, on: :collection
+
+      resources :recounts, only: [:new, :create]
+      resources :final_recounts, only: [:new, :create]
+      resources :results, only: [:new, :create, :index]
+
+      resources :nvotes, only: :new do
+        get :thanks, on: :collection
+      end
+    end
+
+    resource :booth, controller: "booth", only: [:new, :create]
+    resource :residence, controller: "residence", only: [:new, :create]
+    resources :letters, only: [:new, :create, :show] do
+      get :verify_name, on: :member
+    end
+    resources :voters, only: [:new, :create] do
+      get :vote_with_tablet, on: :member
+    end
+
+    resource :session, only: [:new, :create]
+    root to: "dashboard#index"
+  end
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
@@ -318,17 +427,14 @@ Rails.application.routes.draw do
 
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
-  get '/blog' => redirect('http://diario.madrid.es/participa/')
-  get 'participatory_budget', to: 'spending_proposals#welcome', as: 'participatory_budget'
+  get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
   get 'noticias', to: 'pages#show', id: 'news'
-  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'participatory_budget/in_two_minutes'
-
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
-  get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
+  #get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
 
   #Probes
   get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
@@ -352,16 +458,38 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
 
   #Processes
-  get 'procesos',                                   to: 'pages#show', id: 'processes',                        as: 'processes'
-  get 'proceso/licencias-urbanisticas',             to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
-  get 'proceso/alianza-gobierno-abierto',           to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
-  get 'proceso/alianza-gobierno-abierto-borrador',  to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
-  get 'proceso/ordenanza-subvenciones',             to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
-  get 'proceso/plan-calidad-aire',                  to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
-  get 'proceso/rotulacion-vias',                    to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
+  get 'procesos',                                       to: 'pages#show', id: 'processes',                        as: 'processes'
+  get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
+  get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
+  get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
+  get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
+  get 'proceso/plan-calidad-aire',                      to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
+  get 'proceso/rotulacion-vias',                        to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
+  get 'proceso/distrito-villa-de-vallecas',             to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
+  get 'proceso/linea-madrid',                           to: 'pages#show', id: 'processes/linea_madrid/index',     as: 'linea_madrid'
+  get 'proceso/nueva-ordenanza-movilidad',              to: 'pages#show', id: 'processes/movilidad/index',        as: 'movilidad'
+  get 'proceso/conservacion-rehabilitacion-edificios',  to: 'pages#show', id: 'processes/buildings/index',        as: 'buildings'
+  get 'proceso/ordenanza-publicidad-exterior',          to: 'pages#show', id: 'processes/publicity/index',        as: 'publicity'
+
+  #Budgets meetings
+  get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
+  get 'budgets/meetings/2017', to: 'pages#show', id: 'budgets/meetings/2017', as: 'budgets_meetings_2017'
 
   #Campaña Blas Bonilla
   get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
+
+  #Landings
+  get 'vota',  to: 'polls#results_2017',  as: 'first_voting'
+  get 'g1000', to: 'pages#show', id: 'landings/g1000',        as: 'g1000'
+
+  #More information pages
+  get 'mas-informacion',             to: 'pages#show', id: 'more_information',       as: 'more_info'
+  get 'mas-informacion/votaciones',  to: 'pages#show', id: 'more_information/polls', as: 'more_info_polls'
+
+  #Polls 2017 results & stats
+  get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'
+  get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
+  get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
 
   resources :pages, path: '/', only: [:show]
 end

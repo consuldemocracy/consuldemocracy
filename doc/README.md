@@ -139,8 +139,8 @@ Desde aquí puedes gestionar usuarios a través de las siguientes acciones:
 * Editar cuenta de usuario.
 * Crear propuesta.
 * Apoyar propuestas.
-* Crear propuesta de inversión.
-* Apoyar propts. de inversión.
+* Crear proyecto de gasto.
+* Apoyar proyectos de gasto.
 * Imprimir propuestas.
-* Imprimir propts. de inversión.
+* Imprimir proyectos de gasto.
 * Invitaciones para usuarios.

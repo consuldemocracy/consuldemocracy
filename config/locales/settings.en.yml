@@ -13,7 +13,8 @@ en:
     votes_for_proposal_success: "Number of votes necessary for approval of a Proposal"
     months_to_archive_proposals: "Months to archive Proposals"
     email_domain_for_officials: "Email domain for public officials"
-    per_page_code: "Code to be included on every page"
+    per_page_code_head: "Code to be included on every page (<head>)"
+    per_page_code_body: "Code to be included on every page (<body>)"
     analytics_url: "Analytics URL"
     twitter_handle: "Twitter handle"
     twitter_hashtag: "Twitter hashtag"
@@ -24,10 +25,12 @@ en:
     org_name: "Organization"
     place_name: "Place"
     feature:
+      budgets: Participatory budgeting
       twitter_login: Twitter login
       facebook_login: Facebook login
       google_login: Google login
       debates: Debates
+      polls: Polls
       signature_sheets: Signature sheets
       spending_proposals: Investment projects
       spending_proposal_features:
@@ -41,3 +44,7 @@ en:
         plaza: "Plaza España Probe"
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
+    meta_description: "Site description (SEO)"
+    meta_keywords: "Keywords (SEO)"
+    verification_offices_url: Verification offices URL
+    min_age_to_participate: Minimum age needed to participate

@@ -1,18 +1,7 @@
-<% provide :title do %><%= t("pages.processes.index.title") %><% end %>
-<% if @proposal_successfull_exists %>
-  <div class="expanded jumbo-proposal-ballots-small no-margin-top">
-    <div class="row">
-      <div class="small-12 column">
-        <div class="banner-text inline-block">
-          <h2 class="inline-block"><%= t("proposal_ballots.featured_title") %></h2>&nbsp;
-          <p class="inline-block"><%= t("proposal_ballots.info") %></p>
-          <%= link_to t("proposal_ballots.button"), proposal_ballots_index_path %>
-        </div>
-        <%= image_tag ("ballot_tiny.gif"), class: "float-right", alt: "" %>
-      </div>
-    </div>
-  </div>
-<% end %>
+<% provide :title, t("meta_tags.processes.title") %>
+<% provide :meta_description, t("meta_tags.processes.description") %>
+<% provide :meta_keywords, t("meta_tags.processes.keywords") %>
+<% provide :tracking_page_number, "32" %>
 
 <div class="expanded processes no-margin-top <%= css_for_human_rights_phase("accepting") %>">
   <div class="row padding">
@@ -26,12 +15,12 @@
     <div class="row">
       <div class="small-12 column">
         <div class="small-12 medium-9 column">
-          <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
-          <h3><%= t("pages.processes.index.process_11_title") %></h3>
-          <p><%= t("pages.processes.index.process_11_description") %></p>
+          <!-- PROCESO DESTACADO (Publicidad exterior) -->
+          <h3><%= t("pages.processes.index.process_17_title") %></h3>
+          <p><%= t("pages.processes.index.process_17_description") %></p>
           <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_11_button"),
-                        air_quality_plan_path, class: "button expanded" %>
+            <%= link_to t("pages.processes.index.process_17_button"),
+                        publicity_path, class: "button expanded" %>
           </div>
         </div>
       </div>
@@ -43,19 +32,19 @@
 
   <div class="row">
     <div class="small-12 medium-3 column">
-      <ul class="tabs vertical" id="processes-tab" data-tabs>
+      <ul class="tabs vertical" id="processes-tab" data-tabs role="tablist">
         <li class="tabs-title is-active">
-          <a href="#panel1v" aria-selected="true">
+          <a href="#panel1v" aria-selected="true" role="tab">
             <%= t("pages.processes.menu.open") %>
           </a>
         </li>
         <li class="tabs-title">
-          <a href="#panel2v">
+          <a href="#panel2v" role="tab">
             <%= t("pages.processes.menu.coming_soon") %>
           </a>
         </li>
         <li class="tabs-title">
-          <a href="#panel3v">
+          <a href="#panel3v" role="tab">
             <%= t("pages.processes.menu.finished") %>
           </a>
         </li>
@@ -69,11 +58,11 @@
         <div class="tabs-panel is-active" id="panel1v">
           <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
 
-          <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
-          <div id="air_quality_plan" class="panel">
-            <h3><%= t("pages.processes.index.process_11_title") %></h3>
-            <p><%= t("pages.processes.index.process_11_description") %></p>
-            <%= link_to t("pages.processes.index.process_11_button"), air_quality_plan_path, class: "button hollow" %>
+          <!-- Rehabilitación edificios -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_16_title") %></h3>
+            <p><%= t("pages.processes.index.process_16_description") %></p>
+            <%= link_to t("pages.processes.index.process_16_button"), buildings_path, class: "button hollow" %>
           </div>
         </div>
 
@@ -81,18 +70,49 @@
         <div class="tabs-panel" id="panel2v">
           <h2 class="sr-only"><%= t("pages.processes.menu.coming_soon") %></h2>
 
-          <!-- Remodelación Plaza España -->
-          <div class="panel">
-            <h3><%= t("pages.processes.index.process_2_title") %></h3>
-            <p><%= t("pages.processes.index.process_2_description_close") %></p>
-            <%= link_to t("pages.processes.index.process_2_button"),
-                        plaza_path, class: "button hollow" %>
+          <div class="callout primary">
+            <small>No hay procesos próximamente.</small>
           </div>
         </div>
 
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Nueva Ordenanza Movilidad -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_15_title") %></h3>
+            <p><%= t("pages.processes.index.process_15_description") %></p>
+            <%= link_to t("pages.processes.index.process_15_button"), movilidad_path, class: "button hollow" %>
+          </div>
+
+          <!-- Línea Madrid -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_14_title") %></h3>
+            <p><%= t("pages.processes.index.process_14_description") %></p>
+            <%= link_to t("pages.processes.index.process_14_button"), linea_madrid_path, class: "button hollow" %>
+          </div>
+
+          <!-- Remodelación de Plaza España -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_2_title") %></h3>
+            <p><%= t("pages.processes.index.process_2_description_close") %></p>
+            <%= link_to t("pages.processes.index.process_2_button"), plaza_path, class: "button hollow" %>
+          </div>
+
+          <!-- Borrador de Plan de Calidad de Aire y Cambio Climático -->
+          <div id="air_quality_plan" class="panel">
+            <h3><%= t("pages.processes.index.process_11_title") %></h3>
+            <p><%= t("pages.processes.index.process_11_description") %></p>
+            <%= link_to t("pages.processes.index.process_11_button"), air_quality_plan_path, class: "button hollow" %>
+          </div>
+
+          <!-- Nuevo barrio distrito Villa de Vallecas -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_13_title") %></h3>
+            <p><%= t("pages.processes.index.process_13_description") %></p>
+            <%= link_to t("pages.processes.index.process_13_button"), vallecas_path, class: "button hollow" %>
+          </div>
 
           <!-- Rotulación de vías -->
           <div class="panel">

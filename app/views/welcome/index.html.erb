@@ -1,29 +1,27 @@
-<% cache ["welcome_index_20161129", display_budget_countdown?] do %>
+<% provide :title, t("meta_tags.welcome_index.title") %>
+<% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% provide :meta_keywords, t("meta_tags.welcome_index.keywords") %>
+<% provide :tracking_page_number, "23" %>
+
+<% cache ["welcome_index_20170328", user_signed_in?] do %>
   <div class="welcome">
-    <div class="expanded no-margin-top header">
-      <div class="row">
-        <div class="small-12 medium-8 column small-centered text-center">
-          <h1>
-            <%= link_to t("layouts.header.open_city_title"), blas_bonilla_path, class: "decoration-none" %>
-          </h1>
-          <p class="lead"><%= t("layouts.header.open_city_slogan_short_html") %></p>
-          <%= link_to t("layouts.header.sign_up"), blas_bonilla_path , class: "button" %>
-          <p><%= t("layouts.header.sign_in",
-              login: link_to(t("layouts.header.sign_in_link"), new_user_session_path)).html_safe %></p>
-        </div>
-      </div>
+
+    <div class="no-margin-top">
+      <%= render "budgets_module" %>
     </div>
+
+    <%= render "polls_results" %>
 
     <%= render "cards" %>
 
     <%= render "features" %>
 
-    <div class="row padding slogan">
-      <div class="small-12 medium-8 column small-centered text-center">
-        <p><%= t("layouts.header.open_city_slogan_html") %></p>
-        <div class="small-12 medium-6 small-centered padding">
-          <%= link_to t("welcome.more_information", org_name: setting['org_name']),
-                      page_path('more_information'), class: "button hollow expanded" %>
+    <div class="slogan">
+      <div class="row padding">
+        <div class="small-12 medium-8 column small-centered text-center">
+          <p><%= t("layouts.header.open_city_slogan_html") %></p>
+            <%= link_to t("welcome.more_information", org_name: setting['org_name']),
+                        page_path('more_information'), class: "button" %>
         </div>
       </div>
     </div>

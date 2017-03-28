@@ -1,39 +1,116 @@
 // Overrides and adds customized styles
 //
+// 00. Others
 // 01. Global styles
 // 02. Header
 // 03. Alerts
-// 04. Tables
-// 05. Social
-// 06. Choose proposal type
-// 07. Surveys
-// 08. Spending proposals
-// 09. Featured
-// 10. Processes
-// 11. Spending proposals votes
-// 12. Collaborative legislation
-// 13. Counter
-// 14. Proposal Ballots
-// 15. Welcome
-// 16. Si te sientes gato
-// 17. Blas Bonilla
-// 18. Voluntarios mesas presenciales
+// 04. Surveys
+// 05. Spending proposals
+// 06. Featured
+// 07. Processes
+// 08. Spending proposals votes
+// 09. Collaborative legislation
+// 10. Jumbo brand
+// 11. Budgets custom
+// 12. Nvotes
 //
+
+// 00. Others
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Choose proposal type
+// - - - - - - - - - - -
+
+.choose-proposal-type {
+  min-height: $line-height*25;
+
+  .panel {
+
+    &.proposal, &.participatory-budget {
+      border: 0;
+      color: white;
+      position: relative;
+    }
+
+    &.proposal {
+      background: $proposals;
+    }
+
+    &.participatory-budget {
+      background: $budget;
+    }
+
+    .icon-proposals,
+    .icon-budget {
+      font-size: rem-calc(60);
+    }
+
+    p a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .button {
+      background: white;
+      color: $text;
+    }
+  }
+}
+
+// Voluntarios mesas presenciales
+// - - - - - - - - - - - - - - - -
+
+.volunteer-poll-districts {
+
+  .any_district {
+    background: $highlight;
+    padding-top: rem-calc(6);
+  }
+}
+
+// News page
+// - - - - - -
+
+.news-page {
+
+  .row.expanded {
+    background: $brand;
+
+    h1, h2 {
+      color: white;
+    }
+
+    h2 {
+      font-weight: normal;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .row.expanded.banner {
+    background: #FFDC00;
+    margin-bottom: rem-calc(-48);
+    padding-top: $line-height;
+  }
+}
+
+// Delegation
+// - - - - - -
+
+.activity {
+
+  .button.float-right ~ .callout {
+    margin-right: $line-height/2;
+  }
+}
 
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .absolute {
   position: absolute;
-}
-
-.absolute-survey {
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 9;
 }
 
 .highlight {
@@ -57,20 +134,6 @@
   background: white;
   border: 1px solid $border;
   padding: $line-height;
-}
-
-blockquote.featured {
-  border-left: 0;
-  border-top: 2px solid $brand;
-  color: $text;
-  display: inline-block;
-  padding-left: 0;
-  padding-right: 0;
-  text-transform: uppercase;
-}
-
-blockquote p {
-  font-size: rem-calc(24);
 }
 
 @include breakpoint(medium down) {
@@ -128,14 +191,6 @@ blockquote p {
   }
 }
 
-.geozone a.featured-link {
-  display: block;
-  font-size: $base-font-size;
-  margin-bottom: $line-height;
-  text-align: center;
-  width: 100%;
-}
-
 .pagination li {
   display: inline-block;
 }
@@ -152,11 +207,84 @@ blockquote p {
   padding-left: 0;
 }
 
+ul.menu > li > a {
+  line-height: $line-height;
+  padding: $line-height/2 $line-height/2 $line-height 0;
+}
+
 .tabs li.is-active a {
   color: $brand;
   border-bottom: 2px solid $brand;
   font-weight: bold;
 }
+
+.sticky-bottom {
+  margin-bottom: rem-calc(-$line-height*2);
+
+  &.highlight {
+    border-bottom: $line-height/2 solid $highlight;
+  }
+}
+
+.padding-bottom {
+  padding-bottom: $line-height;
+}
+
+.padding-top {
+  padding-top: $line-height;
+}
+
+.more-info-text {
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+table {
+  border: $border;
+
+  th {
+    background: #F8F9FB;
+  }
+
+  tr {
+
+    &:nth-child(odd) {
+      background: white;
+    }
+
+    &:nth-child(even) {
+      background: #FAFCFB;
+    }
+
+    &.success {
+      background: $success-bg;
+    }
+  }
+}
+
+.callout.success.tip {
+  border-radius: 0;
+  border-bottom: 0;
+  border-left-width: 6px;
+  border-right: 0;
+  border-top: 0;
+
+  h2 {
+    font-size: rem-calc(24);
+    line-height: $line-height;
+  }
+
+  a {
+    color: $color-success;
+  }
+}
+
+@import 'motion-ui/motion-ui';
+@include foundation-orbit;
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -254,6 +382,16 @@ form.locale-form select {
   background-position: rem-calc(48);
 }
 
+.orbit-bullets button {
+  background-color: #ccc;
+  height: $line-height/2;
+  width: $line-height/2;
+
+  &.is-active {
+    background-color: $brand;
+  }
+}
+
 // 03. Alerts
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -288,88 +426,7 @@ form.locale-form select {
   color: #343d47;
 }
 
-// 04. Tables
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-table {
-  border: $border;
-
-  th {
-    background: #f8f9fb;
-  }
-
-  tr {
-
-    &:nth-child(odd) {
-      background: white;
-    }
-
-    &:nth-child(even) {
-      background: #fafcfb;
-    }
-
-    &.success {
-      background: $success-bg;
-    }
-  }
-}
-
-// 05. Social
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.button.button-twitter {
-  background: #40A2D1;
-}
-
-.button.button-facebook {
-  background: #354F88;
-}
-
-.button.button-google {
-  background: #CE3E26;
-}
-
-
-// 06. Choose proposal type
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.choose-proposal-type {
-  min-height: $line-height*25;
-
-  .panel {
-
-    &.proposal, &.participatory-budget {
-      border: 0;
-      color: white;
-      position: relative;
-    }
-
-    &.proposal {
-      background: $proposals;
-    }
-
-    &.participatory-budget {
-      background: $budget;
-    }
-
-    .icon-proposals,
-    .icon-budget {
-      font-size: rem-calc(60);
-    }
-
-    p a {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .button {
-      background: white;
-      color: $text;
-    }
-  }
-}
-
-// 07. Surveys
+// 04. Surveys
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .jumbo {
@@ -743,7 +800,7 @@ table {
       }
     }
 
-    th.question-subtitle {
+    td.question-subtitle {
       background: #9af6f9;
     }
 
@@ -763,13 +820,22 @@ table {
   }
 }
 
-.menu.border-bottom {
-  border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
-  padding-bottom: $line-height/4;
+.menu {
+
+  &.border-bottom {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+    padding-bottom: $line-height/4;
+  }
+
+  &.border-top {
+    border-top: 1px solid $border;
+    margin-top: $line-height;
+    padding-top: $line-height/4;
+  }
 }
 
-.section-title {
+.section-title-stats {
   background: $brand;
   color: white;
   margin-bottom: $line-height*2;
@@ -857,7 +923,7 @@ table.age-groups {
   }
 }
 
-// 08. Spending proposals
+// 05. Spending proposals
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .spending-proposals {
@@ -1130,14 +1196,14 @@ table.age-groups {
   }
 
   h1 {
-    color: $budget;
+    color: #7E328A;
   }
 
   .button.budget {
-    background: $budget;
+    background: #7E328A !important;
 
     &:hover {
-      background: $budget-hover;
+      background: #7571BF;
     }
   }
 }
@@ -1155,7 +1221,7 @@ table.age-groups {
 }
 
 .jumbo-delegation {
-  background: $budget image-url('investment_project_delegation.jpg');
+  background: #7E328A image-url('investment_project_delegation.jpg');
   margin-bottom: rem-calc(-96);
 
   @include breakpoint(medium) {
@@ -1173,7 +1239,7 @@ table.age-groups {
 
   .button {
     background: white;
-    color: $budget;
+    color: #7E328A;
   }
 }
 
@@ -1195,7 +1261,7 @@ table.age-groups-investment-projects {
   }
 }
 
-// 09. Featured
+// 06. Featured
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .featured-process {
@@ -1250,7 +1316,7 @@ table.age-groups-investment-projects {
   }
 }
 
-// 10. Processes
+// 07. Processes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .processes {
@@ -1313,6 +1379,10 @@ tr td, tr th {
 
 .processes-show {
   @extend .processes;
+
+  .back, .icon-angle-left {
+    color: white;
+  }
 
   @include breakpoint(large) {
     background: $brand;
@@ -1819,7 +1889,7 @@ a.show-hidden-projects {
   }
 }
 
-// 11. Spending proposals votes
+// 08. Spending proposals votes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .progress-votes {
@@ -1882,7 +1952,7 @@ a.show-hidden-projects {
 }
 
 .big-number {
-  color: $budget;
+  color: #7E328A;
   font-size: rem-calc(60);
   line-height: rem-calc(120);
 
@@ -2004,34 +2074,6 @@ ul.ballot-list {
   }
 }
 
-// News page
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.news-page {
-
-  .row.expanded {
-    background: $brand;
-
-    h1, h2 {
-      color: white;
-    }
-
-    h2 {
-      font-weight: normal;
-
-      span {
-        font-weight: bold;
-      }
-    }
-  }
-
-  .row.expanded.banner {
-    background: #FFDC00;
-    margin-bottom: rem-calc(-48);
-    padding-top: $line-height;
-  }
-}
-
 // Animaton on progress bar
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -2073,7 +2115,7 @@ ul.ballot-list {
   }
 }
 
-// 12. Collaborative legislation
+// 09. Collaborative legislation
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .legislation {
@@ -2102,11 +2144,11 @@ ul.ballot-list {
   padding: $line-height/2;
 }
 
-// 13. Counter
+// 10. Jumbo brand
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.jumbo-counter, .jumbo-brand {
-  background: $budget;
+.jumbo-brand {
+  background: $brand;
   text-align: center;
 
   h2, h3 {
@@ -2143,65 +2185,6 @@ ul.ballot-list {
         }
       }
     }
-
-    .countdown {
-      background: none;
-    }
-  }
-}
-
-.jumbo-brand {
-  background: $brand;
-}
-
-.countdown {
-  background: #e6434d;
-  border-radius: rem-calc(6);
-  color: white;
-  display: inline-block;
-  font-weight: bold;
-  text-align: center;
-  font-size: rem-calc(30);
-
-  .number {
-    display: inline-block;
-    padding: $line-height/2;
-
-    .value {
-      background: #dc2d43;
-      border-radius: rem-calc(3);
-      display: inline-block;
-      padding: $line-height/2;
-
-      @include breakpoint(medium) {
-        width: rem-calc(60);
-      }
-    }
-  }
-
-  .counter-text {
-    font-size: $small-font-size;
-    text-transform: uppercase;
-    padding-top: $line-height/4;
-  }
-}
-
-.featured-brand-banner {
-  background: $brand image-url("plaza_banner_small.jpg") no-repeat;
-  background-position: 100% 0;
-  position: relative;
-
-  h2, a:hover h2 {
-    color: #FFF !important;
-  }
-
-  p {
-    color: white;
-  }
-
-  @include breakpoint(medium) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 }
 
@@ -2250,346 +2233,440 @@ ul.ballot-list {
   }
 }
 
-// 14. Proposal Ballots
+// 11. Budgets custom
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.jumbo-proposal-ballots {
-  background: #2D3E50;
-  text-align: center;
+$campaign-black:   #605F5D;
+$campaign-blue:    #009FDE;
+$campaign-brown:   #EFEDE7;
+$campaign-red:     #E23135;
+$campaign-yellow:  #FFDB19;
 
-  h2 {
-    color: #FFD200;
+.budgets-welcome {
+
+  .header {
+    background: $campaign-brown;
+
+    h1 {
+      color: black;
+
+      span {
+        background: black;
+        color: $campaign-yellow;;
+        padding: 0 $line-height/2;
+      }
+    }
+
+    ul.info li {
+      color: black;
+      margin-bottom: $line-height;
+    }
   }
 
-  h3 {
-    color: white;
-    margin-bottom: $line-height;
+  .budgets-timeline {
+
+    h3 {
+      background: $campaign-red;
+      color: white;
+      padding: $line-height/4 $line-height/2;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
+    }
   }
 
   .button {
-    background: #FFD200;
-    color: $text;
-  }
-}
-
-.jumbo-proposal-ballots-small {
-  @extend .jumbo-proposal-ballots;
-  color: white;
-
-  h2 {
-    font-size: rem-calc(24);
-  }
-
-  h2, p {
-    margin-bottom: 0;
-  }
-
-  a {
-    color: #FFD200;
-    text-decoration: underline;
-  }
-
-  .banner-text {
-    padding: $line-height/4;
-  }
-}
-
-// 15. Welcome
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.welcome {
-
-  .header {
-    background: $brand image-url('home_page_bg.gif');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: black;
     color: white;
-    height: rem-calc(450);
-    padding-top: $line-height;
+  }
+
+  @include breakpoint(large) {
+    .block-border-left {
+      border-left: 3px solid $campaign-red;
+    }
+
+    .block-border-right {
+      border-right: 3px solid $campaign-red;
+    }
+  }
+
+  img {
+    margin-top: -1px;
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+
+  table {
+
+    th {
+      background: black;
+      color: white;
+    }
 
     @include breakpoint(medium) {
-      height: rem-calc(562);
-      padding-top: rem-calc(225);
 
-      h1 {
-        font-size: rem-calc(40);
-        line-height: $line-height*2;
-      }
-    }
-
-    a.decoration-none {
-      text-decoration: none !important;
-    }
-
-    p.lead {
-      font-size: rem-calc(24);
-      line-height: $line-height*1.5;
-    }
-
-    a:not(.button) {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .button {
-      background: white;
-      color: $brand;
-    }
-  }
-
-  .cards {
-    background: #fafafa;
-
-    h2 {
-
-      &.title {
-        border-left: 1px solid $brand;
-        color: $brand;
-        padding-left: $line-height/2;
-      }
-    }
-
-    .panel {
-
-      [class^="icon-"] {
-        left: 0;
-        position: absolute;
-        top: 2px;
-      }
-
-      &.dark {
-        background: #2D3E50;
-
-        h3, p.info-date {
-          color: #FFD200;
-        }
-
-        p {
-          color: white;
-        }
-
-        .button {
-          background: #FFD200;
-          color: $text;
-        }
-      }
-    }
-
-    p {
-
-      &.info {
-        min-height: rem-calc(140);
-      }
-
-      &.info-date {
-        color: $brand;
-        font-size: $small-font-size;
-        padding-left: rem-calc(16);
-        position: relative;
+      .budget-big-number {
+        font-size: rem-calc(36);
+        padding: $line-height;
       }
     }
   }
 
-  .features {
-    border-bottom: 1px solid $border;
-
-    .panel {
-      border: 0;
-      margin-bottom: $line-height;
-
-      .button {
-        color: white;
-      }
-    }
-  }
-
-  .slogan {
-    padding-top: $line-height*2;
-
-    p {
-      font-size: rem-calc(30);
-      line-height: rem-calc(48);
-    }
-
-    strong {
-      background: #F4FB2D;
-    }
+  .note {
+    background: $campaign-yellow;
+    display: inline-block;
+    font-weight: bold;
   }
 }
 
-// 16. Si te sientes gato
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+.block-black , .block-yellow {
+  padding-bottom: $line-height*2;
+  padding-top: $line-height*2;
+}
 
-.si-te-sientes-gato {
-  font-family: 'Rubik', $body-font-family;
-  letter-spacing: 0.9px;
-  font-smoothing: subpixel-antialiased;
-  -moz-font-smoothing: subpixel-antialiased;
-  -webkit-font-smoothing: subpixel-antialiased;
+.block-black {
+  background: black;
+  padding-left: 0;
 
-  h1, h2, p, a {
-    font-family: 'Rubik', $body-font-family;
-  }
-
-  h1, h2, h3 {
-    color: #1d1d1d;
-  }
-
-  h1 {
-    font-size: rem-calc(54);
-    font-weight: 300;
-  }
-
-  h2 {
-    font-size: rem-calc(26);
-    font-weight: normal;
-  }
-
-  p {
-    color: #696969;
-    font-weight: 300;
-  }
-
-  ul li {
-    font-size: $small-font-size;
-    font-weight: 300;
-    line-height: rem-calc(28);
-  }
-
-  .header-gato {
-    position: relative;
-
-    .main-button {
-      background: rgba(0,74,131,.8) !important;
-      left: 50%;
-      margin-left: rem-calc(-72);
-      position: absolute;
-      top: 110%;
-
-      @include breakpoint(medium) {
-        top: 50%;
-      }
-    }
-  }
-
-  .info {
-    color: #696969;
-    font-size: rem-calc(15);
-    font-weight: 300;
-    line-height: rem-calc(28);
-  }
-
-  .green-link {
-    text-decoration: underline;
-  }
-
-  .lead {
+  h3, p, a {
     color: white;
-    font-size: rem-calc(26);
-    font-style: italic;
-    padding-top: $line-height*3;
-
-    span {
-      font-style: normal;
-    }
   }
-
-  .big-lead {
-    padding: $line-height*4 0 $line-height*6;
-  }
-
-  .section {
-    min-height: $line-height*10;
-    padding: $line-height*2 0;
-  }
-
-  .header {
-    background: #FFBD7A;
-  }
-
-  .section-1 {
-    background: #FF7EA3;
-  }
-
-  .section-2 {
-    background: #20D7C8;
-  }
-
-  .section-3 {
-    background: #FFBC79;
-  }
-
-  .social {
-
-    a {
-      display: inline-block;
-      height: 48px;
-      width: 48px;
-
-      &:hover {
-        opacity: .5;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-// 17. Blas Bonilla
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.blas-bonilla {
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+  }
+}
+
+.block-yellow {
+  background: $campaign-yellow;
+  padding-right: 0;
+
+  h3, p, a {
+    color: black;
   }
 
-  .header {
-    background: $brand image-url('header_blas_bonilla.jpg');
-    background-position: 50% 50%;
-    background-size: cover;
-    min-height: $line-height*12;
+  a {
+    text-decoration: none;
+  }
+}
 
-    h1 {
-      color: white;
-      padding: $line-height*2 0 $line-height;
-    }
+.budgets-calendar {
+  background: $campaign-yellow;
+  color: black;
 
-    a {
-      color: white;
-    }
+  ul {
+    margin-bottom: 0;
+    padding: $line-height/2 0;
 
-    .button {
-      font-size: rem-calc(24);
+    li {
+      border-top: 1px solid $campaign-black;
+      padding: $line-height/2 0;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      @include breakpoint(medium) {
+        border-left: 1px solid $campaign-black;
+        border-top: 0;
+        display: inline-block;
+        padding: $line-height/2 $line-height;
+        width: 24%;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
     }
   }
+}
 
-  .button, .video-thumbnail {
+.previous-budgets {
+  border-top: 1px solid $border;
+  padding: $line-height*2 0;
+}
+
+.type-selection {
+  margin-top: $line-height*2;
+
+  .callout {
+
+    a, a h3 {
+      color: $text;
+      text-decoration: none;
+
+      &:hover {
+        border-color: $brand;
+        color: $brand;
+      }
+    }
+  }
+}
+
+.type-selection-proposal .type-proposal,
+.type-selection-investment .type-investment {
+
+  .callout {
+    background: $highlight;
+    border-color: $brand;
+    color: $brand;
+    position: relative;
+
+    &:after {
+      background: $brand;
+      border-radius: rem-calc(40);
+      color: white;
+      content: "\6c";
+      font-family: 'icons';
+      font-size: rem-calc(16);
+      height: rem-calc(24);
+      padding: 0 $line-height/6;
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      width: rem-calc(24);
+    }
+  }
+}
+
+// Overrides budgets default colors
+// -------------------------------
+
+.expanded.budget, .jumbo-budget {
+
+  h1, h2, p, a.back, .icon-angle-left {
+    color: $text;
+  }
+
+  a {
+    color: $link;
     text-decoration: none;
   }
 
-  .video-thumbnail {
-    color: $text;
-    font-size: $small-font-size;
+  a.button, &.button {
+    background: black;
+    color: white;
+  }
 
-    a {
-      color: $text;
-      text-decoration: none;
+  .info {
+    background: $campaign-yellow;
+
+    p {
+      color: black;
+      margin-bottom: 0;
+      text-transform: uppercase;
     }
 
-    img {
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid $campaign-yellow;
+    }
+  }
+}
+
+.budget-investment .panel .label-budget-investment,
+.budget-investment .panel .icon-budget,
+.budget-investment-show .label-budget-investment,
+.budget-investment-show .icon-budget {
+  color: #5A6175;
+}
+
+.progress-votes {
+
+  .progress {
+    background: #212033;
+  }
+
+  .progress-meter {
+    background: #fdcb10;
+  }
+
+  .spent-amount-text:before {
+    color: #a5a1ff;
+  }
+
+  .total-amount {
+    color: white;
+  }
+}
+
+.ballot {
+
+  h2, h3 {
+
+    span {
+      color: $budget;
+    }
+  }
+
+  h3.subtitle {
+    border-bottom: 3px solid $budget;
+  }
+}
+
+ul.ballot-list {
+
+  li:hover {
+    background: $budget;
+    color: white;
+
+    a, span {
+      color: white;
+    }
+
+    .remove-investment-project .icon-x {
+      color: white;
+    }
+  }
+}
+
+.select-district .active a {
+  background: $budget;
+  color: $text;
+}
+
+.dark-heading {
+
+  .button.hollow {
+    background: none;
+    color: white;
+    border: 1px solid white;
+    margin-right: $line-height/2;
+  }
+}
+
+.investment-project .supports .total-supports,
+.investment-project-show .supports .total-supports,
+.budget-investment .supports .total-supports,
+.budget-investment-show .supports .total-supports {
+  color: #5A6175;
+}
+
+.investment-project .supports .button-support,
+.investment-project-show .supports .button-support,
+.budget-investment .supports .button-support,
+.budget-investment-show .supports .button-support {
+  background: #5A6175;
+}
+
+.investment-project, .investment-project-show,
+.budget-investment, .budget-investment-show {
+
+  .total-supports {
+    color: #5A6175 !important;
+  }
+}
+
+.budget-investment .participation-not-allowed {
+  height: auto;
+}
+
+// 12. Nvotes
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.polls-show {
+
+  ol {
+    margin: $line-height 0 $line-height $line-height/2;
+
+    li {
+      font-size: $base-font-size;
       margin-bottom: $line-height/2;
     }
   }
 }
 
-// 18. Voluntarios mesas presenciales
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+.poll-question h3 {
+  margin-bottom: 0;
+}
 
-.volunteer-poll-districts {
+.booth-container {
 
-  .any_district {
-    background: $highlight;
-    padding-top: rem-calc(6);
+  iframe {
+    height: 100vh !important;
   }
+}
+
+p.can-participate-info {
+  background: white;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding: $line-height/2;
+  padding-top: $line-height;
+}
+
+.nvotes .panel {
+  border: 0
+}
+
+.nvotes-tablet-sidebar {
+  background: white;
+}
+
+.nvotes ul.tabs {
+  border: 0;
+  margin-bottom: 0;
+
+  li {
+    border: 1px solid $border;
+    margin: $line-height/2 $line-height/2 0;
+    position: relative;
+
+    a {
+      display: block;
+      padding: $line-height/2;
+    }
+
+    &:after {
+      content: "\63";
+      font-family: 'icons';
+      right: 12px;
+      position: absolute;
+      top: 12px;
+    }
+
+    &.is-active {
+      background: $info-bg;
+
+      &:after {
+        color: $brand;
+        content: "\61";
+      }
+
+      a {
+        border: 0;
+      }
+    }
+
+    &:not(.is-active) a {
+      color: $text;
+    }
+  }
+}
+
+.auth-form p, .auth-form p a {
+  font-size: $base-font-size;
+}
+
+.has_voted {
+  @extend .warning;
+}
+
+.ok {
+  @extend .success;
+}
+
+.census_failed {
+  @extend .alert;
+}
+
+.no_postal_code {
+  @extend .primary;
+}
+
+.verify-name h3 span {
+  text-transform: uppercase;
 }

@@ -6,7 +6,7 @@ feature "Home" do
     scenario 'Welcome message' do
       visit root_path
 
-      expect(page).to have_content "In Madrid it is the people who decide how is the city they want to live"
+      expect(page).to have_content "Participatory budgeting"
     end
   end
 
@@ -43,7 +43,7 @@ feature "Home" do
     end
 
     def ie_alert_box_xpath
-      "/html/body/div[@class='wrapper']/comment()[contains(.,'ie-callout')]"
+      "/html/body/div[@class='wrapper ']/comment()[contains(.,'ie-callout')]"
     end
   end
 end

@@ -1,9 +1,14 @@
-<% provide :title do %><%= t('debates.index.title') %><% end %>
+<% provide :title, t("meta_tags.debates.title") %>
+<% provide :meta_description, t("meta_tags.debates.description") %>
+<% provide :meta_keywords, t("meta_tags.debates.keywords") %>
+<% provide :tracking_page_number, "27" %>
+
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: debates_path(page: 1),
              i18n_namespace: "debates.index.search_form" %>
 <% end %>
+
 
 <main>
   <h1 class="sr-only"><%= t("shared.outline.debates") %></h1>
@@ -27,22 +32,11 @@
         <% end %>
       </div>
 
-      <% if display_budget_countdown? %>
-        <%= render "shared/budget_counter_banner" %>
-      <% end %>
-
       <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-
-      <% if feature?("probe.plaza") %>
-        <%= render "custom/probes/plaza/banner" %>
-      <% elsif @proposal_successfull_exists %>
-        <%= render "proposals/proposal_ballots_banner" %>
-      <% end %>
-
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_ballots.present? || @proposal_successfull_exists || feature?("probe.plaza") %>
+      <% unless @tag_filter || @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
 

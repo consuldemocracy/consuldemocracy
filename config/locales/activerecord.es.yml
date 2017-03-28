@@ -4,6 +4,12 @@ es:
       activity:
         one: "actividad"
         other: "actividades"
+      budget:
+        one: "Presupuesto participativo"
+        other: "Presupuestos participativos"
+      budget/investment:
+        one: "Proyecto de gasto"
+        other: "Proyectos de gasto"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -31,14 +37,38 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      poll/booth:
+        one: "urna"
+        other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
     attributes:
       volunteer_poll:
         email: "Email"
-        availability_week: "De lunes a viernes"
-        availability_weekend: "Sábados y domingos"
+        first_name: "Nombre"
+        last_name: "Apellidos"
+        document_number: "Número de documento"
+        phone: "Número de teléfono de contacto (preferiblemente móvil)"
+        monday_13_morning: Lunes 13 feb mañana
+        monday_13_afternoon: Lunes 13 feb tarde
+        tuesday_14_morning: Martes 14 feb mañana
+        tuesday_14_afternoon: Martes 14 feb tarde
+        wednesday_15_morning: Miércoles 15 feb mañana
+        wednesday_15_afternoon: Miércoles 15 feb tarde
+        thursday_16_morning: Jueves 16 feb mañana
+        thursday_16_afternoon: Jueves 16 feb tarde
+        friday_17_morning: Viernes 17 feb mañana
+        friday_17_afternoon: Viernes 17 feb tarde
+        saturday_18_morning: Sábado 18 feb mañana
+        saturday_18_afternoon: Sábado 18 feb tarde
+        sunday_19_morning: Domingo 19 feb mañana
+        sunday_19_afternoon: Domingo 19 feb tarde
+        monday_20_morning: Lunes 20 feb mañana
+        monday_20_afternoon: Lunes 20 feb tarde
         turns: "turnos"
         any_district: "En cualquier distrito"
         arganzuela: "Arganzuela"
@@ -62,7 +92,25 @@ es:
         vicalvaro: "Vicálvaro"
         villa_de_vallecas: "Villa de Vallecas"
         villaverde: "Villaverde"
-
+      budget:
+        name: "Nombre"
+        description_accepting: "Descripción durante la fase de presentación de proyectos"
+        description_reviewing: "Descripción durante la fase de revisión interna"
+        description_selecting: "Descripción durante la fase de apoyos"
+        description_valuating: "Descripción durante la fase de evaluación"
+        description_balloting: "Descripción durante la fase de votación"
+        description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
+        description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        administrator_id: "Administrador"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        heading_id: "¿Tu proyecto es para toda la ciudad o está ubicado en un distrito en concreto?"
+        title: "Título"
+        location: "Ubicación (opcional)"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -97,6 +145,17 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      poll:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
+      poll/question:
+        title: "Pregunta"
+        valid_answers: "Posibles respuestas"
+        summary: "Resumen"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
@@ -115,6 +174,11 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
         proposal:
           attributes:
             tag_list:

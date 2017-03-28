@@ -222,10 +222,10 @@
     </div>
 
     <div class="show-for-medium medium-6 column small-centered text-center margin-top">
-      <%= image_tag("map.jpg", usemap: "#map", alt: "Mapa de distritos de Madrid") %>
+      <%= image_tag("map.jpg", usemap: "#html_map", alt: "Mapa de distritos de Madrid") %>
     </div>
 
-    <map name="map" id="html_map">
+    <map name="html_map" id="html_map">
       <% Geozone.all.each do |geozone| %>
         <area shape="poly"
               coords="<%= geozone.html_map_coordinates %>"
@@ -248,7 +248,7 @@
         <tbody>
         <tr id="arganzuela">
           <td>
-            <span class="label large"><strong>Arganzuela</strong></span>
+            <strong>Arganzuela</strong>
           </td>
           <td class="text-center">2623</td>
           <td class="text-center">8,26%</td>
@@ -256,7 +256,7 @@
         </tr>
         <tr id="barajas">
           <td>
-            <span class="label large"><strong>Barajas</strong></span>
+            <strong>Barajas</strong>
           </td>
           <td class="text-center">338</td>
           <td class="text-center">1,06%</td>
@@ -264,7 +264,7 @@
         </tr>
         <tr id="carabanchel">
           <td>
-            <span class="label large"><strong>Carabanchel</strong></span>
+            <strong>Carabanchel</strong>
           </td>
           <td class="text-center">1484</td>
           <td class="text-center">4,67%</td>
@@ -272,7 +272,7 @@
         </tr>
         <tr id="centro">
           <td>
-            <span class="label large"><strong>Centro</strong></span>
+            <strong>Centro</strong>
           </td>
           <td class="text-center">5049</td>
           <td class="text-center">15,90%</td>
@@ -280,7 +280,7 @@
         </tr>
         <tr id="chamartin">
           <td>
-            <span class="label large"><strong>Chamartín</strong></span>
+            <strong>Chamartín</strong>
           </td>
           <td class="text-center">1662</td>
           <td class="text-center">5,23%</td>
@@ -288,7 +288,7 @@
         </tr>
         <tr id="chamberi">
           <td>
-            <span class="label large"><strong>Chamberí</strong></span>
+            <strong>Chamberí</strong>
           </td>
           <td class="text-center">2070</td>
           <td class="text-center">6,52%</td>
@@ -296,7 +296,7 @@
         </tr>
         <tr id="ciudad-lineal">
           <td>
-            <span class="label large"><strong>Ciudad Lineal</strong></span>
+            <strong>Ciudad Lineal</strong>
           </td>
           <td class="text-center">1427</td>
           <td class="text-center">4,49%</td>
@@ -304,7 +304,7 @@
         </tr>
         <tr id="fuencarral-el-pardo">
           <td>
-            <span class="label large"><strong>Fuencarral - El Pardo</strong></span>
+            <strong>Fuencarral - El Pardo</strong>
           </td>
           <td class="text-center">1930</td>
           <td class="text-center">6,08%</td>
@@ -312,7 +312,7 @@
         </tr>
         <tr id="hortaleza">
           <td>
-            <span class="label large"><strong>Hortaleza</strong></span>
+            <strong>Hortaleza</strong>
           </td>
           <td class="text-center">1345</td>
           <td class="text-center">4,23%</td>
@@ -320,7 +320,7 @@
         </tr>
         <tr id="latina">
           <td>
-            <span class="label large"><strong>Latina</strong></span>
+            <strong>Latina</strong>
           </td>
           <td class="text-center">1922</td>
           <td class="text-center">5,05%</td>
@@ -328,7 +328,7 @@
         </tr>
         <tr id="moncloa-aravaca">
           <td>
-            <span class="label large"><strong>Moncloa - Aravaca</strong></span>
+            <strong>Moncloa - Aravaca</strong>
           </td>
           <td class="text-center">1950</td>
           <td class="text-center">6,14%</td>
@@ -336,7 +336,7 @@
         </tr>
         <tr id="moratalaz">
           <td>
-            <span class="label large"><strong>Moratalaz</strong></span>
+            <strong>Moratalaz</strong>
           </td>
           <td class="text-center">648</td>
           <td class="text-center">2,04%</td>
@@ -344,7 +344,7 @@
         </tr>
         <tr id="puente-de-vallecas">
           <td>
-            <span class="label large"><strong>Puente de Vallecas</strong></span>
+            <strong>Puente de Vallecas</strong>
           </td>
           <td class="text-center">1184</td>
           <td class="text-center">3,73%</td>
@@ -352,7 +352,7 @@
         </tr>
         <tr id="retiro">
           <td>
-            <span class="label large"><strong>Retiro</strong></span>
+            <strong>Retiro</strong>
           </td>
           <td class="text-center">1594</td>
           <td class="text-center">5,02%</td>
@@ -360,7 +360,7 @@
         </tr>
         <tr id="salamanca">
           <td>
-            <span class="label large"><strong>Salamanca</strong></span>
+            <strong>Salamanca</strong>
           </td>
           <td class="text-center">1481</td>
           <td class="text-center">4,66%</td>
@@ -368,7 +368,7 @@
         </tr>
         <tr id="san-blas-canillejas">
           <td>
-            <span class="label large"><strong>San Blas - Canillejas</strong></span>
+            <strong>San Blas - Canillejas</strong>
           </td>
           <td class="text-center">902</td>
           <td class="text-center">2,84%</td>
@@ -376,7 +376,7 @@
         </tr>
         <tr id="tetuan">
           <td>
-            <span class="label large"><strong>Tetuán</strong></td></span>
+            <strong>Tetuán</strong></td>
            </td>
             <td class="text-center">1482</td>
             <td class="text-center">4,67%</td>
@@ -385,7 +385,7 @@
         </tr>
         <tr id="usera">
           <td>
-            <span class="label large"><strong>Usera</strong></span>
+            <strong>Usera</strong>
           </td>
           <td class="text-center">690</td>
           <td class="text-center">2,17%</td>
@@ -393,7 +393,7 @@
         </tr>
         <tr id="vicalvaro">
           <td>
-            <span class="label large"><strong>Vicálvaro</strong></span>
+            <strong>Vicálvaro</strong>
           </td>
           <td class="text-center">388</td>
           <td class="text-center">1,22%</td>
@@ -401,7 +401,7 @@
         </tr>
         <tr id="villaverde">
           <td>
-            <span class="label large"><strong>Villaverde</strong></span>
+            <strong>Villaverde</strong>
           </td>
           <td class="text-center">742</td>
           <td class="text-center">2,34%</td>
@@ -409,7 +409,7 @@
         </tr>
         <tr id="villa-de-vallecas">
           <td>
-            <span class="label large"><strong>Villa de Vallecas</strong></span>
+            <strong>Villa de Vallecas</strong>
           </td>
           <td class="text-center">719</td>
           <td class="text-center">2,26%</td>

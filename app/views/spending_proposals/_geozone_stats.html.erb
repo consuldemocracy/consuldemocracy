@@ -25,9 +25,7 @@
       <% @geozones.each do |geozone| %>
         <tr id="<%= geozone.name.parameterize %>">
           <td>
-            <span class="label large">
-              <strong><%= geozone.name %></strong>
-            </span>
+            <strong><%= geozone.name %></strong>
           </td>
           <td id="total_spending_proposals_geozone_<%= geozone.id %>"
               class="text-center border-left-success border-right-success success">

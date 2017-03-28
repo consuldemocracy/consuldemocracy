@@ -1,10 +1,10 @@
 <div class="row">
   <div class="small-12 column">
-    <h2>Voluntarios para las mesas presenciales de votación de Decide Madrid</h2>
+    <h2>Inscripción final de colaboradores voluntarios para las mesas presenciales de votación de Decide Madrid</h2>
     <p>Del <strong>lunes 13 al domingo 19 de febrero</strong> tendrá lugar un gran proceso participativo en Madrid (puedes ver las <a href="https://decide.madrid.es/vota">propuestas
     que se votarán</a>).</p>
-    <p><strong>¿Quieres formar parte de la primera votación de propuestas ciudadanas en todo Madrid de la historia?</strong></p>
-    <p>Apúntate aquí para ser parte de las <strong>mesas presenciales de votación</strong> que habrá por toda la ciudad. <strong>En enero escribiremos</strong> a las personas que os inscribáis para confirmar vuestra participación. ¡Muchas gracias por ayudar a que todo el mundo pueda decidir!</p>
+    <p><strong>¿Quieres formar parte de la primera votación de propuestas ciudadanas de la historia en Madrid?</strong></p>
+    <p>Apúntate aquí para ser parte de las <strong>mesas presenciales de votación</strong> que habrá por toda la ciudad. Apuntándote en este formulario confirmas que podrás participar en una mesa en los horarios y distritos que selecciones. ¡Muchas gracias por ayudar a que todo el mundo pueda decidir!</p>
   </div>
 </div>
 
@@ -19,23 +19,65 @@
         </div>
       </div>
 
-      <p>
-        <strong>¿En qué franjas horarias crees que estarás disponible durante la semana de votación?</strong><br>
-        <em>(independientemente de si puedes participar un único día o varios)</em>
-      </p>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :first_name %>
+        </div>
+      </div>
 
       <div class="row">
-        <div class="small-12 medium-6 large-4 column">
-          <%= f.collection_select :availability_week, VolunteerPoll::VALID_AVAILABILITY_WEEKS, :to_s, :to_s, include_blank: true %>
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :last_name %>
         </div>
-        <div class="small-12 medium-6 large-4 column end">
-          <%= f.collection_select :availability_weekend, VolunteerPoll::VALID_AVAILABILITY_WEEKENDS, :to_s, :to_s, include_blank: true %>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :document_number %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :phone %>
         </div>
       </div>
 
       <p>
-        <strong>¿En cuántos turnos crees que podrías participar?</strong><br>
-        <em>(un turno es una mañana o una tarde)</em>
+        <strong>¿En qué horarios podrás participar?</strong><br>
+        <em>(marca todos los que estés disponible independientemente de que luego quieras participar en un único turno o en varios)</em>
+      </p>
+
+      <div class="row">
+        <div class="small-12 medium-6 large-4 column">
+          <%= f.check_box :monday_13_morning %>
+          <%= f.check_box :monday_13_afternoon %>
+
+          <%= f.check_box :tuesday_14_morning %>
+          <%= f.check_box :tuesday_14_afternoon %>
+
+          <%= f.check_box :wednesday_15_morning %>
+          <%= f.check_box :wednesday_15_afternoon %>
+
+          <%= f.check_box :thursday_16_morning %>
+          <%= f.check_box :thursday_16_afternoon %>
+
+          <%= f.check_box :friday_17_morning %>
+          <%= f.check_box :friday_17_afternoon %>
+
+          <%= f.check_box :saturday_18_morning %>
+          <%= f.check_box :saturday_18_afternoon %>
+
+          <%= f.check_box :sunday_19_morning %>
+          <%= f.check_box :sunday_19_afternoon %>
+
+          <%= f.check_box :monday_20_morning %>
+        </div>
+      </div>
+
+      <p>
+        <strong>¿En cuántos turnos quieres participar?</strong><br>
+        <em>(un turno es estar una mañana o una tarde en una mesa de votación)</em>
       </p>
 
       <div class="row">
@@ -59,6 +101,8 @@
           <% end %>
         </div>
       </div>
+
+      <p class="margin-top"><strong>La confirmación de la mesa que te toque, en el distrito y horario seleccionado, te llegará por correo electrónico en próximos días.<br> Se desarrollará una sesión de formación presencial a la que deberás asistir, previsiblemente el fin de semana del 4-5 de febrero.</strong></p>
 
       <div class="small-12 medium-6 large-4 margin-top">
         <%= f.submit "Enviar", class: "button expanded" %>

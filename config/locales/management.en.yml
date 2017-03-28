@@ -28,9 +28,10 @@ en:
       not_in_census_info: 'Citizens not in the Census can participate in the website with the following permissions:'
       please_check_account_data: Please check that the account data above are correct.
       title: User management
-      under_age: You must be over 16 to verify your account.
+      under_age: "You don't have the required age to verify your account."
       verify: Verify
     email_label: Email
+    date_of_birth: Date of birth
     email_verifications:
       already_verified: This user account is already verified.
       choose_options: 'Please choose one of the following options:'
@@ -49,6 +50,9 @@ en:
       create_spending_proposal: Create spending proposal
       print_spending_proposals: Print spending proposals
       support_spending_proposals: Support spending proposals
+      create_budget_investment: Create budget investment
+      print_budget_investments: Print Budget Investments
+      support_budget_investments: Support Budget Investments
       users: Users
       edit_user_accounts: Edit user account
       user_invites: User's invites
@@ -63,6 +67,8 @@ en:
       proposals_title: 'Proposals:'
       spending_proposals_info: Participate at http://decide.madrid.es
       spending_proposals_note: Participatory budget will be assigned to the most votes spending proposals.
+      budget_investments_info: Participate at http://decide.madrid.es
+      budget_investments_note: Participatory budget will be assigned to the most voted budget investment.
     print_info: Print this info
     proposals:
       alert:
@@ -70,6 +76,22 @@ en:
       create_proposal: Create proposal
       print:
         print_button: Print
+    budgets:
+      create_new_investment: Create New Investment
+      print_investments: Print Budget Investments
+      support_investments: Support Budget Investments
+    budget_investments:
+      alert:
+        unverified_user: User is not verified
+      create: Create budget investment
+      filters:
+        heading: Concepto
+        unfeasible: Unfeasible investment
+      print:
+        print_button: Print
+      search_results:
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: User is not verified

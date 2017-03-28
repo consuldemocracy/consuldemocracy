@@ -256,83 +256,6 @@ feature 'Tracking' do
     end
   end
 
-  context "Joaquin Reyes Landing" do
-
-    context "Logged in user" do
-
-      scenario 'Clicks on register' do
-        user = create(:user)
-        login_as(user)
-
-        visit blas_bonilla_path
-        click_link "Quiero registrarme"
-
-        expect(current_path).to eq(blas_bonilla_path)
-        expect(page).to have_css("span[data-track-event-category='Registro']")
-        expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
-        expect(page).to have_css("span[data-track-event-name='Landing Joaquin Reyes']")
-      end
-
-    end
-
-    context "Not logged in user" do
-
-      scenario 'Clicks on register' do
-        visit blas_bonilla_path
-        click_link "Quiero registrarme"
-
-        expect(current_path).to eq(new_user_registration_path)
-        expect(page).to have_css("span[data-track-event-category='Registro']")
-        expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
-        expect(page).to have_css("span[data-track-event-name='Landing Joaquin Reyes']")
-      end
-
-      scenario 'Registers successfully' do
-        visit blas_bonilla_path
-        click_link "Quiero registrarme"
-
-        fill_in_signup_form
-        click_button "Register"
-
-        expect(page).to have_content "Thank you for registering"
-        expect(page).to have_css("span[data-track-event-category='Registro']")
-        expect(page).to have_css("span[data-track-event-action='Registrar']")
-        expect(page).to have_css("span[data-track-event-name='Landing Joaquin Reyes']")
-      end
-
-    end
-  end
-
-  context "Home with Joaquin Reyes" do
-
-    context "Not logged in user" do
-
-      scenario 'Clicks on register', :js do
-        visit root_path
-
-        click_link "Register"
-
-        expect(page).to have_css("span[data-track-event-category='Registro']")
-        expect(page).to have_css("span[data-track-event-action='Ver formulario registro']")
-        expect(page).to have_css("span[data-track-event-name='Home Joaquin Reyes']")
-      end
-
-      scenario 'Registers successfully', :js do
-        visit root_path
-        click_link "Register"
-
-        fill_in_signup_form
-        click_button "Register"
-
-        expect(page).to have_content "Thank you for registering"
-        expect(page).to have_css("span[data-track-event-category='Registro']")
-        expect(page).to have_css("span[data-track-event-action='Registrar']")
-        expect(page).to have_css("span[data-track-event-name='Home Joaquin Reyes']")
-      end
-
-    end
-  end
-
   #Requires testing outgoing _paq.push call from track.js.coffee
   xscenario 'Track events on ajax call'
 
@@ -352,4 +275,59 @@ feature 'Tracking' do
     end
   end
 
+  context "Tracking pages" do
+
+    background do
+      Setting['per_page_code_head'] = '<script type="text/javascript">function weboConv(idConv){}</script>'
+    end
+
+    scenario "Codes", :js do
+      visit root_path
+      expect(page.html).to have_content "weboConv(23);"
+
+      visit "users/sign_up"
+      expect(page.html).to have_content "weboConv(24);"
+
+      visit "users/sign_up/success"
+      expect(page.html).to have_content "weboConv(26);"
+
+      visit "debates"
+      expect(page.html).to have_content "weboConv(27);"
+
+      user = create(:user, :level_two)
+      login_as(user)
+
+      visit "debates/new"
+      expect(page.html).to have_content "weboConv(28);"
+
+      visit "proposals"
+      expect(page.html).to have_content "weboConv(29);"
+
+      visit "proposals/new"
+      expect(page.html).to have_content "weboConv(30);"
+
+      visit "procesos"
+      expect(page.html).to have_content "weboConv(32);"
+
+      budget = create(:budget)
+      visit "participatory_budget"
+      expect(page.html).to have_content "weboConv(33);"
+
+      visit "presupuestos"
+      expect(page.html).to have_content "weboConv(33);"
+
+      visit "more_information"
+      expect(page.html).to have_content "weboConv(34);"
+    end
+
+    scenario "codes with turbolinks", :js do
+      visit "debates"
+      expect(page.html).to have_content "weboConv(27);"
+
+      first(:link, "Proposals").click
+      expect(page).to have_content "Create proposal"
+      expect(page.html).to have_content "weboConv(29);"
+    end
+
+  end
 end

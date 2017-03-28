@@ -39,7 +39,7 @@ module ProposalsHelper
   end
 
   def css_for_successfull_proposal(proposal)
-    "successfull" if proposal.total_votes > Proposal.votes_needed_for_success
+    "successful" if proposal.total_votes > Proposal.votes_needed_for_success
   end
 
   def path_to_search_proposals

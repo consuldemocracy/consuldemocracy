@@ -5,6 +5,11 @@ feature 'Commenting spending_proposals' do
   let(:user)   { create :user }
   let(:spending_proposal) { create :spending_proposal }
 
+  background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
   scenario 'Index' do
     3.times { create(:comment, commentable: spending_proposal) }
 

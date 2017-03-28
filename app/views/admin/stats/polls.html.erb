@@ -1,0 +1,55 @@
+<%= render 'shared/back_link' %>
+
+<h2><%= t("admin.stats.polls.title")%></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.polls.web_votes") %><br>
+        <span id="web_votes" class="number">
+          <%= @voters.web.count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column end">
+      <p class="featured">
+        <%= t("admin.stats.polls.booth_votes") %><br>
+        <span id="booth_votes" class="number">
+          <%= @voters.booth.count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column end">
+      <p class="featured">
+        <%= t("admin.stats.polls.participants") %><br>
+        <span id="participants" class="number">
+          <%= @participants %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<h2><%= t("admin.stats.polls.table.title") %></h2>
+<table id="polls">
+  <th><%= t("admin.stats.polls.table.poll_name") %></th>
+  <th><%= t("admin.stats.polls.table.origin_web") %></th>
+  <th><%= t("admin.stats.polls.table.origin_booth") %></th>
+
+  <% @polls.each do |poll| %>
+    <tr id="<%= dom_id(poll) %>">
+      <td class="name">
+        <%= poll.name.truncate(100) %>
+      </td>
+      <td id="<%= dom_id(poll) %>_web" class="name">
+        <%= poll.voters.web.count %>
+      </td>
+      <td id="<%= dom_id(poll) %>_booth" class="name">
+        <%= poll.voters.booth.count %>
+      </td>
+    </tr>
+  <% end %>
+</table>

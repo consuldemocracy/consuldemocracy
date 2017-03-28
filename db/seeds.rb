@@ -38,8 +38,11 @@ Setting["months_to_archive_proposals"] = 12
 # Emails under the domain's subdomains will also be included
 Setting["email_domain_for_officials"] = ''
 
-# Code to be included at the top (header) of every page (useful for tracking)
-Setting['per_page_code'] =  ''
+# Code to be included at the top (inside <head>) of every page (useful for tracking)
+Setting['per_page_code_head'] =  ''
+
+# Code to be included at the top (inside <body>) of every page
+Setting['per_page_code_body'] =  ''
 
 # Social settings
 Setting["twitter_handle"] = "abriendomadrid"
@@ -57,20 +60,26 @@ Setting["org_name"] = "Decide Madrid"
 # Consul installation place name (City, Country...)
 Setting["place_name"] = "Madrid"
 
+# Meta tags for SEO
+Setting["meta_description"] = nil
+Setting["meta_keywords"] = nil
+
 # Feature flags
 Setting['feature.debates'] = true
-Setting['feature.spending_proposals'] = true
+Setting['feature.spending_proposals'] = nil
+Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = true
 Setting['feature.facebook_login'] = true
 Setting['feature.google_login'] = true
 Setting['feature.public_stats'] = true
+Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.phase1'] = true
 Setting['feature.spending_proposal_features.phase2'] = nil
 Setting['feature.spending_proposal_features.phase3'] = nil
-Setting['feature.spending_proposal_features.voting_allowed'] = true
+Setting['feature.spending_proposal_features.voting_allowed'] = nil
 Setting['feature.spending_proposal_features.final_voting_allowed'] = true
 Setting['feature.spending_proposal_features.open_results_page'] = nil
 Setting['feature.spending_proposal_features.valuation_allowed'] = nil
@@ -92,3 +101,8 @@ Setting['direct_message_max_per_day'] = 3
 # Email settings
 Setting['mailer_from_name'] = 'Consul'
 Setting['mailer_from_address'] = 'noreply@consul.dev'
+
+# Verification settings
+Setting['verification_offices_url'] = 'http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD'
+Setting['min_age_to_participate'] = 16
+Setting['min_age_to_verify'] = 16

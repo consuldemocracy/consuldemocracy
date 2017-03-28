@@ -2,7 +2,7 @@
   <%= render "probe_options/plaza/header" %>
 <% end %>
 
-<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1"] do %>
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_31012017"] do %>
   <div class="probe-show">
     <div class="row">
       <div class="small-12 medium-9 column">
@@ -12,14 +12,30 @@
         <% end %>
 
         <h1>
+          <% if project_x?(@probe_option) %>
+            Proyecto X:
+          <% elsif project_y?(@probe_option) %>
+            Proyecto Y:
+          <% end %>
           <%= @probe_option.name %>
           <span>(<%= t("probes.show.code_html", code: @probe_option.code) %>)</span>
         </h1>
         <h2 class="codename"><%= t("probes.codenames.#{@probe.codename}") %></h2>
 
-        <div class="margin">
-          <%= image_tag @probe_option.original_image_url, alt: @probe_option.name %>
-        </div>
+        <% if project_x?(@probe_option) %>
+          <%= render "probe_options/plaza/project_x" %>
+        <% elsif project_y?(@probe_option) %>
+          <%= render "probe_options/plaza/project_y" %>
+        <% end %>
+
+        <% if finalist?(@probe_option) %>
+          <%= render "probe_options/plaza/video_#{@probe_option.code}" %>
+          <%= render "probe_options/plaza/finalist_docs" %>
+        <% else %>
+          <div class="margin">
+            <%= image_tag @probe_option.original_image_url, alt: @probe_option.name %>
+          </div>
+        <% end %>
       </div>
 
       <aside class="small-12 medium-3 column">
@@ -66,8 +82,34 @@
         <% end %>
       <% end %>
 
-<% cache ["plaza", "probe_option", @probe_option.id, "fragment_2"] do %>
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_2_31012017"] do %>
         <div class="sidebar-divider"></div>
+        <% if finalist?(@probe_option) %>
+          <h3><%= t("probes.show.documents_finalist") %></h3>
+          <% if external_pdf?(@probe_option) %>
+            <%= link_to "https://decide.madrid.es/system/30_memoria_finalista_welcome_mother_nature_good_bye_mr_ford.pdf",
+                      title: "PDF #{@probe_option.name} finalista | (165Mb)",
+                      target: "_blank", class: "button hollow expanded" do %>
+                      <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                      <%= "<small>Memoria Final (165Mb)</small>".html_safe %>
+            <% end %>
+          <% else %>
+            <%= link_to @probe_option.file_path('memoria_finalista', 'pdf'),
+                        title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('memoria_finalista', 'pdf')}",
+                        target: "_blank", class: "button hollow expanded" do %>
+                        <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                        <%= "<small>Memoria Final (#{@probe_option.file_size('memoria_finalista', 'pdf')})</small>".html_safe %>
+            <% end %>
+          <% end %>
+          <%= link_to @probe_option.file_path('dossier_finalista', 'pdf'),
+                      title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('dossier_finalista', 'pdf')}",
+                      target: "_blank", class: "button hollow expanded" do %>
+                      <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                      <%= "<small>Imágenes Finales  (#{@probe_option.file_size('dossier_finalista', 'pdf')})</small>".html_safe %>
+          <% end %>
+          <br>
+        <% end %>
+
         <h3><%= t("probes.show.documents") %></h3>
         <%= link_to @probe_option.file_path('memoria', 'pdf'),
                     title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
@@ -89,6 +131,7 @@
           <% if browser.device.mobile? %>
             <a href="whatsapp://send?text=<%= @probe_option.name %> <%= plaza_probe_option_url(@probe_option) %>" data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>
+              <span class="sr-only"><%= t("social.whatsapp") %></span>
             </a>
           <% end %>
         </div>

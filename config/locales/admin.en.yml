@@ -1,7 +1,10 @@
 ---
 en:
   admin:
+    header:
+      title: Administration
     actions:
+      actions: Actions
       confirm: Are you sure?
       confirm_hide: Confirm
       hide: Hide
@@ -9,6 +12,10 @@ en:
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
+      edit: Edit
+      configure: Configure
+    officing_booth:
+      title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
       index:
         title: Banners
@@ -32,8 +39,6 @@ en:
         editing: Edit banner
         form:
           submit_button: Save changes
-      errors:
-        form:
       errors:
         form:
           error:
@@ -60,6 +65,106 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+    budgets:
+      index:
+        title: Participatory budgets
+        new_link: Create new budget
+        filters:
+          current: Open
+          finished: Finished
+        budget_investments: See budget investments
+        table_name: Name
+        table_phase: Phase
+        table_investments: Investments
+        table_edit_groups: Headings groups
+        table_edit_budget: Edit
+        edit_groups: Edit headings groups
+        edit_budget: Edit budget
+      create:
+        notice: New participatory budget created successfully!
+      update:
+        notice: Participatory budget updated successfully
+      edit:
+        title: Edit Participatory budget
+      new:
+        title: New participatory budget
+      show:
+        groups:
+          one: 1 Group of budget headings
+          other: "%{count} Groups of budget headings"
+      form:
+        group: Group name
+        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
+        add_group: Add new group
+        create_group: Create group
+        heading: Heading name
+        add_heading: Add heading
+        amount: Amount
+        save_heading: Save heading
+        no_heading: This group has no assigned heading.
+        table_heading: Heading
+        table_amount: Amount
+    budget_investments:
+      index:
+        heading_filter_all: All headings
+        administrator_filter_all: All administrators
+        valuator_filter_all: All valuators
+        tags_filter_all: All tags
+        filters:
+          valuation_open: Open
+          without_admin: Without assigned admin
+          managed: Managed
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          valuation_finished_feasible: Val. fin. Feasible
+          selected: Selected
+          all: All
+        title: Investment projects
+        assigned_admin: Assigned administrator
+        no_admin_assigned: No admin assigned
+        no_valuators_assigned: No valuators assigned
+        feasibility:
+          feasible: "Feasible (%{price})"
+          unfeasible: "Unfeasible"
+          undecided: "Undecided"
+        selected: "Selected"
+        select: "Select"
+        table_id: "ID"
+        table_title: "Title"
+        table_admin: "Administrator"
+        table_valuator: "Valuator"
+        table_geozone: "Scope of operation"
+        table_feasibility: "Feasibility"
+        table_valuation_finished: "Val. Fin."
+        table_selection: "Selection"
+      show:
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
+        classification: Clasification
+        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
+        edit: Edit
+        edit_classification: Edit classification
+        by: By
+        organization_name: Representing
+        label: Label (public visibility)
+        sent: Sent
+        group: Grupo
+        heading: Partida
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        tags: Tags
+        undefined: Undefined
+      edit:
+        classification: Clasification
+        assigned_valuators: Valuators
+        select_heading: Select heading
+        submit_button: Update
+        label: Label (public visibility)
+        user_tags: User assigned tags
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
+      search_unfeasible: Search unfeasible
     comments:
       index:
         filter: Filter
@@ -96,23 +201,33 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
-      debate_topics: Debate topics
+      poll_questions: Poll questions
+      proposals_topics: Proposals topics
+      budgets: Participatory budgets
       geozones: Manage geozones
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
-      incomplete_verifications: Incomplete verifications
       managers: Managers
       moderators: Moderators
       newsletter: Newsletters
       valuators: Valuators
+      poll_officers: Poll officers
+      polls: Polls
+      poll_booths: Booths location
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
+      title_categories: Categories
+      title_moderated_content: Moderated content
+      title_budgets: Budgets
+      title_polls: Polls
+      title_profiles: Profiles
+      title_banners: Banners
     moderators:
       index:
         title: Moderators
@@ -147,6 +262,169 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost: Cost
+    poll_officers:
+      index:
+        title: Poll officers
+      officer:
+        add: Add
+        delete: Delete position
+        name: Name
+        email: Email
+        entry_name: officer
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
+    poll_officer_assignments:
+      flash:
+        destroy: "Officing shift removed"
+        create: "Officing shift added"
+        error_destroy: "An error ocurred when removing officer assignment"
+        error_create: "An error ocurred when adding officer assignment"
+      index:
+        officers_title: "List of officers"
+        no_officers: "There are no officers assigned to this poll."
+        table_name: "Name"
+        table_email: "Email"
+        add_officer_assignments: "Add shifts as officer"
+        edit_officer_assignments: "Edit officing shifts"
+      by_officer:
+        new_assignment: "New shift"
+        date: "Date"
+        booth: "Booth"
+        assignment: "Assignment"
+        select_date: "Select day"
+        select_booth: "Select booth"
+        add_assignment: "Add shift"
+        remove_assignment: "Remove"
+        assignments: "Officing shifts in this poll"
+        no_assignments: "This user has no officing shifts in this poll."
+        recounts: "Daily recounts"
+        recount: "Daily recount (by officer)"
+        final_recounts: "Final recounts"
+        final_recount: "Final recount (by officer)"
+    poll_booth_assignments:
+      flash:
+        destroy: "Booth not assigned anymore"
+        create: "Booth assigned"
+        error_destroy: "An error ocurred when removing booth assignment"
+        error_create: "An error ocurred when assigning booth to the poll"
+      show:
+        location: "Location"
+        officers: "Officers"
+        officers_list: "Officer list for this booth"
+        no_officers: "There are no officers for this booth"
+        recounts: "Recounts"
+        recounts_list: "Recount list for this booth"
+        no_recounts: "There are not daily recounts of this booth yet"
+        date: "Date"
+        count_by_officer: "Daily recount (by officer)"
+        count_final: "Final recount (by officer)"
+        count_by_system:  "Votes (automatic)"
+        total_daily: Total daily recounts
+        total_system: Total votes (automatic)
+      index:
+        booths_title: "List of booths"
+        no_booths: "There are no booths assigned to this poll."
+        table_name: "Name"
+        table_location: "Location"
+        table_assignment: "Assignment"
+        remove_booth: "Remove booth from poll"
+        add_booth: "Assign booth"
+    polls:
+      index:
+        title: "List of polls"
+        no_polls: "There are no polls."
+        create: "Create poll"
+        name: "Name"
+        dates: "Dates"
+      new:
+        title: "New poll"
+        submit_button: "Create poll"
+      edit:
+        title: "Edit poll"
+        submit_button: "Update poll"
+      show:
+        questions_tab: Questions
+        booths_tab: Booths
+        officers_tab: Officers
+        recounts_tab: Recounting
+        results_tab: Results
+        no_questions: "There are no questions assigned to this poll."
+        questions_title: "List of questions"
+        remove_question: "Remove question from poll"
+        add_question: "Include question"
+        table_title: "Title"
+        table_assignment: "Assignment"
+        table_name: "Name"
+      flash:
+        question_added: "Question added to this poll"
+        error_on_question_added: "Question could not be assigned to this poll"
+        question_removed: "Question removed from this poll"
+        error_on_question_removed: "Question could not be removed from this poll"
+    questions:
+      index:
+        title: "Questions"
+        create: "Create question"
+        no_questions: "There are no questions."
+        filter_poll: Filter by Poll
+        select_poll: Select Poll
+        questions_tab: "Questions"
+        successful_proposals_tab: "Successful proposals"
+        create_question: "Create question"
+        table_proposal: "Proposal"
+        table_question: "Question"
+      edit:
+        title: "Edit Question"
+      new:
+        title: "Create Question"
+        poll_label: "Poll"
+        valid_answers_note: "Enter the answers separated by commas (,)"
+      show:
+        proposal: Original proposal
+        author: Author
+        title: Title
+        valid_answers: Valid answers
+        description: Description
+        preview: View on website
+    recounts:
+      index:
+        title: "Recounts"
+        no_recounts: "There is nothing to be recounted"
+        all_booths_total: "Cumulative total from all booths:"
+        total_daily: Daily recounts
+        total_final: Final recounts
+        total_system: Votes (automatic)
+        table_booth_name: "Booth"
+        table_recounts: "Accumulated daily recounts (by officer)"
+        table_final_recount: "Final recount (by officer)"
+        table_system_count: "Votes (automatic)"
+    results:
+      index:
+        title: "Results"
+        no_results: "There are no results"
+        table_whites: "Blank ballots"
+        table_nulls: "Invalid ballots"
+        table_answer: Answer
+        table_votes: Votes
+    booths:
+      index:
+        title: "List of booths"
+        no_booths: "There are no booths."
+        add_booth: "Add booth"
+        name: "Name"
+        location: "Location"
+      new:
+        title: "New booth"
+        name: "Name"
+        location: "Location"
+        physical: "Physical booth"
+        submit_button: "Create booth"
+      edit:
+        title: "Edit booth"
+        submit_button: "Update booth"
+      show:
+        location: "Location"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -209,6 +487,15 @@ en:
           enable: "Enable"
           disable: "Disable"
     shared:
+      booths_search:
+        button: Search
+        placeholder: Search booth by name
+      poll_officers_search:
+        button: Search
+        placeholder: Search poll officers
+      poll_questions_search:
+        button: Search
+        placeholder: Search poll questions
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
@@ -218,6 +505,8 @@ en:
       user_search:
         button: Search
         placeholder: Search user by name or email'
+      search_results: "Search results"
+      no_search_results: "No results found."
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -344,12 +633,15 @@ en:
     stats:
       show:
         stats_title: Stats
-        participatory_budget: Participatory Budget
+        participatory_budget_2016: Participatory Budget 2016
+        participatory_budget_2017: Participatory Budget 2017
+        polls: Polls
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         redeemable_codes: Redeemable codes
         user_invites: Invitations
         external_stats: External stats
+        incomplete_verifications: Incomplete verifications
         summary:
           ballot_line_votes: Votes in investment projects
           ballot_votes: Budgets voted
@@ -377,6 +669,7 @@ en:
         proposal_created: Citizen proposals
         participatory_budget: Participatory Budget
         user_voted_budgets: Users that have voted
+        user_supported_budgets: Users that have voted
         unverified_users: Unverified users
       spending_proposals:
         title: Participatory Budgets
@@ -387,10 +680,31 @@ en:
         users_city_only: Users who voted ONLY for city-wide proposals
         users_district_only: Users who voted ONLY for district-wide proposals
         users_both_total:  Users who voted for BOTH
+      budget_investments:
+        title: Participatory Budgets
+        groups: Groups
+        users: Users
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        users_city_only: Users who voted ONLY for city-wide proposals
+        users_district_only: Users who voted ONLY for district-wide proposals
+        users_both_total:  Users who voted for BOTH
+        vote_count: Votes
+        participant_count: Participants
       direct_messages:
         title: Direct messages
         total: Total
         users_who_have_sent_message: Users that have sent a private message
+      polls:
+        title: Poll February 13th to 19th
+        web_votes: Web votes
+        booth_votes: Booth votes
+        participants: Participants
+        table:
+          title: Votes by poll
+          poll_name: Poll
+          origin_web: Web
+          origin_booth: Booth
       proposal_notifications:
         title: Proposal notifications
         total: Total
@@ -409,9 +723,9 @@ en:
       create: Create Topic
       destroy: Destroy Topic
       index:
-        add_tag: Add a new debate topic
-        title: Debate topics
-      mark_as_featured: Propose topic upon creating debate
+        add_tag: Add a new proposal topic
+        title: Proposal topics
+      mark_as_featured: Propose topic upon creating proposal
       name:
         placeholder: Type the name of the topic
       update: Update Topic

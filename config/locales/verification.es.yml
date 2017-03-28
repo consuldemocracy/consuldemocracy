@@ -22,20 +22,14 @@ es:
         flash:
           offices: Oficinas de Atención al Ciudadano
           offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
-          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
+          success_html: Próximamente recibirás una carta por correo postal con las instrucciones para añadir un doble comprobación a tu cuenta.<br> Recuerda que puedes ahorrar el envío acudiendo presencialmente a cualquiera de las %{offices}.
       edit:
-        see_all: Ver propuestas
-        title: Carta solicitada
+        see_all: Empezar a participar
+        title: Doble comprobación de verificación
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        already_received: "Ya he recibido una carta con mi código de verificación"
-        explanation: 'Para participar en las votaciones finales puedes:'
-        go_to_index: Ver propuestas
-        office: Verificarte presencialmente en cualquier %{office}
-        offices: Oficina de Atención al Ciudadano
-        offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
-        send_letter: Solicitar una carta por correo postal
+        go_to_index: Empezar a participar
         title: "¡Felicidades!"
         user_permission_info: Con tu cuenta ya puedes...
       update:
@@ -86,8 +80,8 @@ es:
           residence_card: Tarjeta de residencia
           spanish_id: DNI
         document_type_label: Tipo de documento
+        error_not_allowed_age: No tienes la edad mínima para participar
         error_can_not_redeem_code: No se pudo validar el código. Por favor asegúrese de que es correcto. Si aun así no es correcto, déjelo en blanco (puede rellenarlo más tarde).
-        error_not_allowed_age: Hay que tener al menos 16 años
         error_not_allowed_postal_code: Para verificarte debes estar empadronado en el municipio de Madrid.
         error_verifying_census: El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al 010 (o a su versión gratuita 915298210) o visita cualquiera de las %{offices}.
         error_verifying_census_offices: 26 Oficinas de Atención al Ciudadano

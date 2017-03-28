@@ -23,7 +23,7 @@ class Verification::Management::Document
   end
 
   def valid_age?(response)
-    if under_sixteen?(response)
+    if under_age?(response)
       errors.add(:age, true)
       return false
     else
@@ -31,8 +31,8 @@ class Verification::Management::Document
     end
   end
 
-  def under_sixteen?(response)
-    16.years.ago.beginning_of_day < response.date_of_birth.beginning_of_day
+  def under_age?(response)
+    response.date_of_birth.blank? || Age.in_years(response.date_of_birth) < User.minimum_required_age
   end
 
   def verified?

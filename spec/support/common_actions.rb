@@ -45,6 +45,17 @@ module CommonActions
     click_button 'Enter'
   end
 
+  def login_through_form_as_officer(user)
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Enter'
+    visit new_officing_booth_path
+  end
+
   def login_as_authenticated_manager
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
     allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
@@ -182,6 +193,74 @@ module CommonActions
     expect(page).to have_content 'Residence verified'
   end
 
+  def officing_verify_residence
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: "1980"
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Document verified with Census'
+  end
+
+  def validate_officer
+    allow_any_instance_of(Officing::BaseController).
+    to receive(:verify_officer_assignment).and_return(true)
+  end
+
+  def set_officing_booth(booth=nil)
+    booth = create(:poll_booth) if booth.blank?
+
+    allow_any_instance_of(Officing::BaseController).
+    to receive(:current_booth).and_return(booth)
+  end
+
+  def vote_for_poll(poll)
+    expect(page).to have_content poll.name
+
+    first(".opt.ng-binding").click
+
+    click_button "Continuar"
+
+    if poll.nvotes_poll_id == "128"
+      expect(page).to have_content "La opción que seleccionaste es: Sí"
+    elsif poll.nvotes_poll_id == "136"
+      expect(page).to have_content "La opción que seleccionaste es: A"
+    end
+
+    click_button "Enviar el voto"
+
+    expect(page).to have_content "Voto emitido con éxito"
+  end
+
+  def valid_authorization_hash(nvote)
+    message = "1:AuthEvent:1:RegisterSuccessfulLogin:1"
+    signature = Poll::Nvote.generate_hash(message)
+
+    "khmac:///sha-256;#{signature}/#{message}"
+  end
+
+  def simulate_nvotes_callback(nvote, poll)
+    message = "#{nvote.voter_hash}:AuthEvent:#{poll.nvotes_poll_id}:RegisterSuccessfulLogin:#{Time.now.to_i}"
+    signature = Poll::Nvote.generate_hash(message)
+
+    authorization_hash = "khmac:///sha-256;#{signature}/#{message}"
+
+    page.driver.header 'Authorization', authorization_hash
+    page.driver.header 'ACCEPT', "application/json"
+    page.driver.post polls_nvotes_success_path
+  end
+
+  def use_digital_booth
+    allow_any_instance_of(Officing::VotersController).
+    to receive(:physical_booth?).and_return(false)
+  end
+
+  def use_physical_booth
+    allow_any_instance_of(Officing::VotersController).
+    to receive(:physical_booth?).and_return(true)
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
@@ -237,6 +316,16 @@ module CommonActions
 
   def expect_message_insufficient_funds
     expect(page).to have_content "This proposal's price is more than the available amount left"
+  end
+
+  def expect_message_selecting_not_allowed
+    expect(page).to have_content 'No Selecting Allowed'
+    expect(page).to_not have_selector('.in-favor a')
+  end
+
+  def expect_message_organizations_cannot_vote
+    #expect(page).to have_content 'Organisations are not permitted to vote.'
+    expect(page).to have_content 'Organization'
     expect(page).to have_selector('.in-favor a', visible: false)
   end
 
@@ -251,7 +340,7 @@ module CommonActions
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
   end
 
-  def create_successfull_proposals
+  def create_successful_proposals
     [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
      create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end
@@ -364,7 +453,22 @@ module CommonActions
     expect(page).to have_content "3 invitations have been sent."
   end
 
+  def add_spending_proposal_to_ballot(spending_proposal)
+    within("#spending_proposal_#{spending_proposal.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
+    end
+  end
+
+  def add_to_ballot(budget_investment)
+    within("#budget_investment_#{budget_investment.id}") do
+      find('.add a').trigger('click')
+      expect(page).to have_content "Remove"
+    end
+  end
+
   def csv_path_for(table)
     "api/#{table}.csv"
   end
+
 end

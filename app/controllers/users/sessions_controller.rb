@@ -4,7 +4,13 @@ class Users::SessionsController < Devise::SessionsController
   private
 
     def after_sign_in_path_for(resource)
-      if !verifying_via_email? && resource.show_welcome_screen?
+      if false #current_user.poll_officer? && current_user.has_poll_active?
+        if current_user.poll_officer.letter_officer?
+          new_officing_letter_path
+        else
+          new_officing_booth_path
+        end
+      elsif !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
         super

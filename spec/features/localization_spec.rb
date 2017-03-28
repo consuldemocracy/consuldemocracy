@@ -6,7 +6,7 @@ feature 'Localization' do
     visit root_path(locale: :es)
     visit root_path(locale: :klingon)
 
-    expect(page).to have_text('En Madrid es la gente la que decide cómo es la ciudad en la que quiere vivir')
+    expect(page).to have_text('Presupuestos participativos 2017')
   end
 
   scenario 'Available locales appear in the locale switcher' do

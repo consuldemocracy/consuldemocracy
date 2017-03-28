@@ -1,0 +1,16 @@
+<% content_for :wrapper_class, "light" %>
+
+<%= render "layouts/nvotes_sidebar" %>
+
+<div id="nvotes-main" class="small-12 medium-8 column">
+  <div class="panel text-center">
+    <h1><%= t("nvotes.thanks") %></h1>
+
+    <div class="small-12 medium-6 large-4 small-centered margin-top">
+      <p><%= t("nvotes.are_you_sure") %></p>
+      <%= link_to t("nvotes.finish"),
+                  new_officing_session_path,
+                  class: "button alert" %>
+    </div>
+  </div>
+</div>

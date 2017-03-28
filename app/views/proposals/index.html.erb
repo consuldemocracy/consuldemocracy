@@ -1,6 +1,7 @@
-<% provide :title do %>
-  <%= t('proposals.index.title') %>
-<% end %>
+<% provide :title, t("meta_tags.proposals.title") %>
+<% provide :meta_description, t("meta_tags.proposals.description") %>
+<% provide :meta_keywords, t("meta_tags.proposals.keywords") %>
+<% provide :tracking_page_number, "29" %>
 
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
@@ -36,19 +37,11 @@
         <% end %>
       </div>
 
-      <% if display_budget_countdown? %>
-        <%= render "shared/budget_counter_banner" %>
-      <% end %>
-
       <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if feature?("probe.plaza") %>
-        <%= render "custom/probes/plaza/banner" %>
-      <% elsif @proposal_successfull_exists %>
-        <%= render "proposal_ballots_banner" %>
-      <% elsif @featured_proposals.present? %>
+      <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>

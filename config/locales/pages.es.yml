@@ -24,6 +24,7 @@ es:
         proposals_info: Crea tus propias propuestas
         signature_sheet: Hojas de firmas para recoger apoyos
         spending_proposals_info: Envía tus propuestas de presupuesto
+        polls: "Primera votación de propuestas ciudadanas del Ayuntamiento de Madrid"
       how_it_works:
         i: Participación
         i1: Espacio de debate
@@ -57,7 +58,7 @@ es:
 
           Este Portal de Gobierno Abierto usa la [aplicación Consul](https://github.com/consul/consul 'github consul' ) que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
 
-          No sólo puedes utilizar libremente este portal en tu municipio, sino que desde el Ayuntamiento de Madrid vamos a ayudarte todo lo posible a que lo hagas, así que si estás interesado, escríbenos a <a href='mailto:extension.institucional@madrid.es'>extension.institucional@madrid.es</a>
+          No sólo puedes utilizar libremente este portal en tu municipio, sino que desde el Ayuntamiento de Madrid vamos a ayudarte todo lo posible a que lo hagas, así que si estás interesado, escríbenos <a href='mailto:extension.institucional@madrid.es'>un correo electrónico</a>.
 
           Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación Consul](https://github.com/consul/consul 'github consul' ).
       titles:
@@ -72,6 +73,7 @@ es:
         proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
         signature_sheet: Hojas de firmas
         spending_proposals_info: "¿Qué son los presupuestos participativos?"
+        polls: "Información sobre las votaciones"
     privacy: Política de Privacidad
     processes:
       back: Volver
@@ -86,7 +88,7 @@ es:
         process_1_button: Más información sobre la Ordenanza
         process_2_title: Remodelación de Plaza España
         process_2_description_close: La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
-        process_2_button: Más información
+        process_2_button: Ver resultados
         process_3_title: "Pleno Abierto"
         process_3_description: Apoya las propuestas y preguntas enviadas. Las cinco más votadas serán formuladas en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
         process_3_button: Ver propuestas y preguntas
@@ -116,6 +118,21 @@ es:
         process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
         process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
         process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        process_14_title: "Atención a la ciudadanía de Línea Madrid"
+        process_14_description: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+        process_14_button: "Más información"
+        process_15_title: "Nueva ordenanza de movilidad"
+        process_15_description: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
+        process_15_button: "Más información"
+        process_16_title: "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones"
+        process_16_description: "El Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial."
+        process_16_button: "Más información"
+        process_17_title: "Modificación de la ordenanza reguladora de la publicidad exterior"
+        process_17_description: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
+        process_17_button: "Más información"
         title: Procesos
         process_plaza_title: Remodelación de Plaza España
         process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.

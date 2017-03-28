@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :forum
   has_one :lock
@@ -22,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
+  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
+  has_many :budget_recommendations, class_name: 'Budget::Recommendation'
   has_many :comments, -> { with_hidden }
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
@@ -60,6 +63,7 @@ class User < ActiveRecord::Base
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
+  scope :erased,         -> { where.not(erased_at: nil) }
 
   before_validation :clean_document_number
 
@@ -102,6 +106,11 @@ class User < ActiveRecord::Base
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
+  def budget_investment_votes(budget_investments)
+    voted = votes.for_budget_investments(budget_investments)
+    voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
+  end
+
   def comment_flags(comments)
     comment_flags = flags.for_comments(comments)
     comment_flags.each_with_object({}){ |f, h| h[f.flaggable_id] = true }
@@ -109,6 +118,10 @@ class User < ActiveRecord::Base
 
   def voted_for_any?(class_name)
     votes.for_type(class_name).any?
+  end
+
+  def voted_in_group?(group)
+    votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
   end
 
   def administrator?
@@ -125,6 +138,14 @@ class User < ActiveRecord::Base
 
   def manager?
     manager.present?
+  end
+
+  def poll_officer?
+    poll_officer.present?
+  end
+
+  def officing_voter?
+    officing_voter.present?
   end
 
   def organization?
@@ -204,6 +225,22 @@ class User < ActiveRecord::Base
     erased_at.present?
   end
 
+  def take_votes_if_erased_document(document_number, document_type)
+    erased_user = User.erased.where(document_number: document_number).where(document_type: document_type).first
+    if erased_user.present?
+      self.take_votes_from(erased_user)
+      erased_user.update(document_number: nil, document_type: nil)
+    end
+  end
+
+  def take_votes_from(other_user)
+    return if other_user.blank?
+    Poll::Voter.where(user_id: other_user.id).update_all(user_id: self.id)
+    Budget::Ballot.where(user_id: other_user.id).update_all(user_id: self.id)
+    Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: self.id)
+    self.update(former_users_data_log: "#{self.former_users_data_log} | id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}")
+  end
+
   def locked?
     Lock.find_or_create_by(user: self).locked?
   end
@@ -214,6 +251,14 @@ class User < ActiveRecord::Base
 
   def self.username_max_length
     @@username_max_length ||= self.columns.find { |c| c.name == 'username' }.limit || 60
+  end
+
+  def self.minimum_required_age
+    (Setting['min_age_to_participate'] || 16).to_i
+  end
+
+  def self.minimum_required_age_for_verification
+    (Setting['min_age_to_verify'] || 16).to_i
   end
 
   def show_welcome_screen?
@@ -253,6 +298,10 @@ class User < ActiveRecord::Base
     "#{name} (#{email})"
   end
 
+  def age
+    Age.in_years(date_of_birth)
+  end
+
   def save_requiring_finish_signup
     begin
       self.registering_with_oauth = true
@@ -275,6 +324,19 @@ class User < ActiveRecord::Base
     @ability ||= Ability.new(self)
   end
   delegate :can?, :cannot?, to: :ability
+
+  def get_or_create_nvote(poll, officer_assignment = nil)
+    nvote = Poll::Nvote.new(poll: poll,
+                            user: self,
+                            officer_assignment: officer_assignment)
+
+    if Poll::Nvote.find_by_voter_hash(nvote.generate_message)
+      nvote
+    else
+      nvote.save
+      nvote
+    end
+  end
 
   private
 

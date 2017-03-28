@@ -55,6 +55,22 @@ class Admin::StatsController < Admin::BaseController
     @user_count = Ballot.where('ballot_lines_count > ?', 0).count
   end
 
+  def budget_investments
+    votes = Vote.for_budget_investments(Budget::Investment.all)
+    @vote_count = votes.count
+    @participant_count = votes.select(:voter_id).distinct.count
+
+    @voters_in_city = voters_in_heading(city_heading)
+    @voters_in_district = voters_in_districts
+    @user_count = voters
+
+    @voters_in_heading = {}
+    budget = Budget.last
+    budget.headings.each do |heading|
+      @voters_in_heading[heading] = voters_in_heading(heading)
+    end
+  end
+
   def redeemable_codes
     @users = User.where.not(redeemable_code: nil)
     @users_after_campaign = @users.where("verified_at >= ?", Date.new(2016, 6, 17).beginning_of_day).count
@@ -65,6 +81,36 @@ class Admin::StatsController < Admin::BaseController
     @user_invites = Ahoy::Event.where(name: :user_invite).count
     @clicked_email_link = Ahoy::Event.where(name: user_invites_campaign.name).count
     @clicked_signup_button = Ahoy::Event.where(name: :clicked_signup_button).count
+  end
+
+  def polls
+    @polls = ::Poll.all
+    @voters = ::Poll::Voter.all
+    @participants = ::Poll::Voter.select(:user_id).distinct.count
+  end
+
+  private
+
+  def voters_in_heading(heading)
+    Vote.where(votable_type: 'Budget::Investment').
+    includes(:budget_investment).
+    where(budget_investments: {heading_id: heading.id}).
+    select("votes.voter_id").distinct.count
+  end
+
+  def voters_in_districts
+    Vote.where(votable_type: 'Budget::Investment').
+    includes(:budget_investment).
+    where.not(budget_investments: {heading_id: city_heading.id}).
+    select("votes.voter_id").distinct.count
+  end
+
+  def voters
+    Vote.where(votable_type: 'Budget::Investment').select(:voter_id).distinct.count
+  end
+
+  def city_heading
+    Budget::Heading.where(name: "Toda la ciudad").first
   end
 
 end

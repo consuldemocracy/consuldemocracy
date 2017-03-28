@@ -1,6 +1,13 @@
 <header>
 
-  <%= render "shared/top_links" %>
+  <div class="top-links">
+    <div class="row">
+      <%= render "shared/locale_switcher" %>
+      <div class="hide-for-small-only">
+        <%= render "shared/top_links" %>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <div class="top-bar">
@@ -14,7 +21,7 @@
 
       <div id="responsive-menu">
         <div class="top-bar-title">
-          <%= link_to root_path, class: "hide-for-small-only", accesskey: "/" do %>
+          <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
             <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
             <%= setting['org_name'] %>
           <% end %>
@@ -29,6 +36,9 @@
           <div class="show-for-small-only">
             <div class="subnavigation row">
               <%= render "shared/subnavigation" %>
+              <div class="small-12 column">
+                <%= render "shared/top_links" %>
+              </div>
             </div>
           </div>
         </div>

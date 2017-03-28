@@ -136,6 +136,7 @@ feature 'Proposals' do
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
@@ -147,6 +148,8 @@ feature 'Proposals' do
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
     expect(page).to have_content author.name
+    expect(page).to have_content 'Refugees'
+    expect(page).to have_content 'Solidarity'
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
@@ -545,35 +548,6 @@ feature 'Proposals' do
     expect(page).to have_content error_message
   end
 
-  describe 'Limiting tags shown' do
-    scenario 'Index page shows up to 5 tags per proposal' do
-      create_featured_proposals
-      tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-      create :proposal, tag_list: tag_list
-
-      visit proposals_path
-
-      within('.proposal .tags') do
-        expect(page).to have_content '1+'
-      end
-    end
-
-    scenario 'Index page shows 3 tags with no plus link' do
-      create_featured_proposals
-      tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-      create :proposal, tag_list: tag_list
-
-      visit proposals_path
-
-      within('.proposal .tags') do
-        tag_list.each do |tag|
-          expect(page).to have_content tag
-        end
-        expect(page).not_to have_content '+'
-      end
-    end
-  end
-
   feature 'Proposal index order filters' do
 
     scenario 'Default order is hot_score', :js do
@@ -825,7 +799,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -848,7 +822,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "Municipal Organization", from: "advanced_search_official_level"
+          select Setting['official_level_2_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -871,7 +845,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "General director", from: "advanced_search_official_level"
+          select Setting['official_level_3_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -894,7 +868,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "City councillor", from: "advanced_search_official_level"
+          select Setting['official_level_4_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -917,7 +891,7 @@ feature 'Proposals' do
           visit proposals_path
 
           click_link "Advanced search"
-          select "Mayoress", from: "advanced_search_official_level"
+          select Setting['official_level_5_name'], from: "advanced_search_official_level"
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -1039,6 +1013,28 @@ feature 'Proposals' do
           end
         end
 
+        scenario "Search by custom invalid date range", :js do
+          proposal1 = create(:proposal, created_at: 2.days.ago)
+          proposal2 = create(:proposal, created_at: 3.days.ago)
+          proposal3 = create(:proposal, created_at: 9.days.ago)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "Customized", from: "js-advanced-search-date-min"
+          fill_in "advanced_search_date_min", with: 4000.years.ago
+          fill_in "advanced_search_date_max", with: "wrong date"
+          click_button "Filter"
+
+          expect(page).to have_content("There are 3 citizen proposals")
+
+          within("#proposals") do
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to have_content(proposal3.title)
+          end
+        end
+
         scenario "Search by multiple filters", :js do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
@@ -1051,7 +1047,7 @@ feature 'Proposals' do
 
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           select "Last 24 hours",   from: "js-advanced-search-date-min"
 
           click_button "Filter"
@@ -1068,7 +1064,7 @@ feature 'Proposals' do
           click_link "Advanced search"
 
           fill_in "Write the text", with: "Schwifty"
-          select "Public employee", from: "advanced_search_official_level"
+          select Setting['official_level_1_name'], from: "advanced_search_official_level"
           select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
@@ -1077,7 +1073,7 @@ feature 'Proposals' do
 
           within "#js-advanced-search" do
             expect(page).to have_selector("input[name='search'][value='Schwifty']")
-            expect(page).to have_select('advanced_search[official_level]', selected: 'Public employee')
+            expect(page).to have_select('advanced_search[official_level]', selected: Setting['official_level_1_name'])
             expect(page).to have_select('advanced_search[date_min]', selected: 'Last 24 hours')
           end
         end
@@ -1157,16 +1153,6 @@ feature 'Proposals' do
 
   end
 
-  scenario 'Index tag does not show featured proposals' do
-    featured_proposals = create_featured_proposals
-    proposal = create(:proposal, tag_list: "123")
-
-    visit proposals_path(tag: "123")
-
-    expect(page).to_not have_selector('#proposals .proposal-featured')
-    expect(page).to_not have_selector('#featured-proposals')
-  end
-
   scenario 'Conflictive' do
     good_proposal = create(:proposal)
     conflictive_proposal = create(:proposal, :conflictive)
@@ -1231,25 +1217,6 @@ feature 'Proposals' do
   end
 
   context "Filter" do
-
-    scenario "By category" do
-      education = create(:tag, name: 'Education', kind: 'category')
-      health    = create(:tag, name: 'Health',    kind: 'category')
-
-      proposal1 = create(:proposal, tag_list: education.name)
-      proposal2 = create(:proposal, tag_list: health.name)
-
-      visit proposals_path
-
-      within "#categories" do
-        click_link "Education"
-      end
-
-      within("#proposals") do
-        expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal1.title)
-      end
-    end
 
     context "By geozone" do
 
@@ -1437,4 +1404,55 @@ feature 'Proposals' do
 
   end
 
+end
+
+feature 'Successful proposals' do
+
+  scenario 'Successful proposals do not show support buttons in index' do
+    successful_proposals = create_successful_proposals
+
+    visit proposals_path
+
+    successful_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_css(".supports")
+        expect(page).to have_content "This proposal has reached the required supports"
+      end
+    end
+  end
+
+  scenario 'Successful proposals do not show support buttons in show' do
+    successful_proposals = create_successful_proposals
+
+    successful_proposals.each do |proposal|
+      visit proposal_path(proposal)
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_css(".supports")
+        expect(page).to have_content "This proposal has reached the required supports"
+      end
+    end
+  end
+
+  scenario 'Successful proposals show create question button to admin users' do
+    successful_proposals = create_successful_proposals
+
+    visit proposals_path
+
+    successful_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_link "Create question"
+      end
+    end
+
+    login_as(create(:administrator).user)
+
+    visit proposals_path
+
+    successful_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to have_link "Create question"
+      end
+    end
+
+  end
 end

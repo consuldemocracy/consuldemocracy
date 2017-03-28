@@ -13,5 +13,14 @@
       </li>
     <% end %>
 
+    <% if feature?(:budgets) %>
+      <li <%= "class=active" if controller_name == "budget_investments" %>>
+        <%= link_to valuation_budgets_path do %>
+          <span class="icon-budget"></span>
+          <%= t("valuation.menu.budgets") %>
+        <% end %>
+      </li>
+    <% end %>
+
   </ul>
 </nav>

@@ -13,6 +13,12 @@ describe Signature do
     it "should not be valid without a document number" do
       signature.document_number = nil
       expect(signature).to_not be_valid
+
+      signature.document_number = ""
+      expect(signature).to_not be_valid
+
+      signature.document_number = " "
+      expect(signature).to_not be_valid
     end
 
     it "should not be valid without an associated signature sheet" do
@@ -20,6 +26,24 @@ describe Signature do
       expect(signature).to_not be_valid
     end
 
+  end
+
+  describe "#clean_document_number" do
+    it "removes non alphanumeric characters" do
+      signature = create(:signature, document_number: "123-[;,9]")
+      expect(signature.document_number).to eq("1239")
+    end
+
+    it "upcases letter in document number" do
+      signature = create(:signature, document_number: "123a")
+      expect(signature.document_number).to eq("123A")
+    end
+
+    it "deals gracefully with empty document numbers" do
+      signature = build(:signature, document_number: "")
+      signature.clean_document_number
+      expect(signature.document_number).to eq("")
+    end
   end
 
   describe "#verified?" do

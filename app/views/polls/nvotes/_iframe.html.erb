@@ -1,0 +1,25 @@
+<script>
+  function getCastHmac(auth_data, callback) {
+  // auth_data is of type:
+  // {
+  //   permission: "vote",
+  //   object_type: "election",
+  //   object_id: 110
+  // }
+  $.ajax("<%= token_poll_nvotes_path(@poll) %>")
+    .done(function(data) {callback("khmac:///sha-256;"+data);})
+    .fail(function(jqXHR) {window.location.href=jqXHR.responseText});
+  }
+</script>
+
+<div class="booth-container">
+  <div class="agoravoting-voting-booth"
+    href="<%= Poll.server_url %>booth/<%= @poll.nvotes_poll_id %>/vote"
+    data-authorization-funcname="getCastHmac">
+    Ha habido un problema con la detección de javascript en tu dispositivo, por favor vuelve a intentarlo en unos instantes.
+  </div>
+
+  <script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="<%= Poll.server_url %>admin/avWidgets.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","agoravoting-widgets-js");
+  </script>
+</div>

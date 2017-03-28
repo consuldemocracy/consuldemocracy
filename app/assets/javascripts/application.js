@@ -37,6 +37,7 @@
 //= require tags
 //= require users
 //= require votes
+//= require allow_participation
 //= require annotatable
 //= require advanced_search
 //= require registration_form
@@ -44,19 +45,21 @@
 //= require suggest
 //= require forms
 //= require tracks
+//= require valuation_budget_investment_form
 //= require valuation_spending_proposal_form
 //= require embed_video
 //= require fixed_bar
 //= require banners
-//= require countdown
 //= require probe
 //= require social_share
+//= require checkbox_toggle
 //= require custom
 
 var initialize_modules = function() {
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
+  App.AllowParticipation.initialize();
   App.Tags.initialize();
   App.Dropdown.initialize();
   App.LocationChanger.initialize();
@@ -69,12 +72,13 @@ var initialize_modules = function() {
   App.Suggest.initialize();
   App.Forms.initialize();
   App.Tracks.initialize();
+  App.ValuationBudgetInvestmentForm.initialize();
   App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
-  App.Countdown.initialize();
   App.SocialShare.initialize();
+  App.CheckboxToggle.initialize();
 };
 
 $(function(){

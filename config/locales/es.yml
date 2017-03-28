@@ -7,7 +7,7 @@ es:
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
-      finish_verification: Finalizar verificación
+      finish_verification: "Añade una doble comprobación de verificación a tu cuenta"
       notifications: Notificaciones
       organization_name_label: Nombre de la organización
       organization_responsible_name_placeholder: Representante de la asociación/colectivo
@@ -27,6 +27,7 @@ es:
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_create_budget_investments: Crear proyectos de gasto*
       user_permission_votes: Participar en todas las consultas*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
@@ -59,6 +60,7 @@ es:
       comment_as_admin: Comentar como administrador
       comment_as_moderator: Comentar como moderador
       leave_comment: Deja tu comentario
+      leave_reply: Deja tu respuesta
     orders:
       most_voted: Más votados
       newest: Más nuevos primero
@@ -129,7 +131,6 @@ es:
         other: " que contienen '%{search_term}'"
       select_order: Ordenar por
       start_debate: Empieza un debate
-      title: Debates
       top: Destacados
       top_link_debates: '#TúPreguntas'
     new:
@@ -166,6 +167,7 @@ es:
   errors:
     messages:
       user_not_found: No se encontró el usuario
+      invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
@@ -180,6 +182,7 @@ es:
     signature_sheet: la hoja de firmas
     spending_proposal: la propuesta de inversión
     proposal_notification: "la notificación"
+    budget/investment: el proyecto de gasto
     user: la cuenta
     verification/sms: el teléfono
   forums:
@@ -193,10 +196,10 @@ es:
       delegate_button: "Delegar en %{forum}"
       sign_in_to_delegate: "Debes estar idenficado para delegar"
       verify_accont_to_delegate: "Debes estar verificado para delegar"
-      no_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta
-      no_city_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta de ciudad
-      no_district_votes: Este espacio de debate distrital aún no ha apoyado ninguna propuesta de distrito
-      confirm: Ya has votado algunas propuestas de inversión. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
+      no_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto
+      no_city_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de ciudad
+      no_district_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de distrito
+      confirm: Ya has votado algunos proyectos de gasto. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
   geozones:
     none: Toda la ciudad
   layouts:
@@ -225,7 +228,7 @@ es:
       privacy: Política de privacidad
       transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_title: Transparencia
-      transparency_url: http://www.madrid.es/portaldetransparencia
+      transparency_url: http://transparencia.madrid.es
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
@@ -234,7 +237,7 @@ es:
       external_link_opendata: Datos abiertos
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
-      external_link_transparency_url: http://www.madrid.es/portaldetransparencia
+      external_link_transparency_url: http://transparencia.madrid.es
       help_translate: Ayúdanos a traducir
       help_translate_info: Cómo ayudar
       locale: 'Idioma:'
@@ -242,6 +245,7 @@ es:
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
+      officing: Presidentes de mesa
       more_information: Más información
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
@@ -252,16 +256,21 @@ es:
       no_notifications: No tienes notificaciones nuevas
       open: abierto
       open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
-      open_city_slogan_short_html: "Blas Bonilla ha hecho sus propuestas en <u>decide.madrid.es </u><br>¡Regístrate y haz las tuyas!"
-      open_city_title:  '"En Madrid es la gente la que decide cómo es la ciudad en la que quiere vivir"'
       open_gov: Gobierno %{open}
       proposals: Propuestas
       processes: Procesos
       spending_proposals: Presupuestos participativos
-      proposal_ballot: Votaciones
-      sign_up: Ver el vídeo de Blas Bonilla
-      sign_in: Si ya tienes una cuenta %{login}.
-      sign_in_link: entra ahora
+      poll_questions: Votaciones
+      see_all: Ver propuestas
+      budgets: Presupuestos participativos
+      delegation: Delegación
+  legislation:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: "¿Cómo puedo comentar este documento?"
   locale: Español
   notifications:
     index:
@@ -286,14 +295,23 @@ es:
     facebook:
       sign_in: Entra con Facebook
       sign_up: Regístrate con Facebook
+      name: Facebook
     finish_signup:
       title: Añade tu email
     google_oauth2:
       sign_in: Entra con Google
       sign_up: Regístrate con Google
+      name: Google
     twitter:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
+      name: Twitter
+    info_sign_in: "Entra con:"
+    info_sign_up: "Regístrate con:"
+    or_fill: "O rellena el siguiente formulario:"
+    finish_signup:
+      title: "Detalles adicionales de tu cuenta"
+      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
   proposals:
     create:
       form:
@@ -364,7 +382,6 @@ es:
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
-      title: Propuestas ciudadanas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
     new:
@@ -395,6 +412,8 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -413,20 +432,59 @@ es:
       send_notification: Enviar notificación
       share: Compartir
       no_notifications: "Esta propuesta no tiene notificaciones."
+      embed_video_title: "Vídeo en %{proposal}"
     update:
       form:
         submit_button: Guardar cambios
-  proposal_ballots:
-    title: "Votaciones"
-    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación. Antes de la votación publicaremos en esta misma web toda la información al respecto."
-    date_title: "Fechas de participación"
-    date: "Del 13 al 19 de febrero"
-    successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
-    voting: "próxima votación"
-    featured_title: "#PróximaVotación"
-    nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
-    button: "Quiero decidir"
+  polls:
+    all: "Todas"
+    no_dates: "sin fecha asignada"
+    dates: "Desde el %{open_at} hasta el %{closed_at}"
+    final_date: "Recuento final/Resultados"
+    index:
+      filters:
+        current: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
+      title: "Votaciones"
+      participate_button: "Participar en esta votación"
+      participate_button_incoming: "Más información"
+      participate_button_expired: "Votación terminada"
+      no_geozone_restricted: "Toda la ciudad"
+      geozone_restricted: "Distritos"
+      geozone_info: "Pueden participar las personas empadronadas en: "
+      can_answer: "¡Puedes participar en esta votación!"
+      cant_answer: "Esta votación no está disponible en tu zona"
+      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
+      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
+      already_answer: "Ya has participado en esta votación"
+      more_info: "Más información sobre las votaciones"
+    show:
+      dates_title: "Fechas de votación"
+      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
+      more_info: "Más información"
+      already_voted: "Ya has participado en esta votación."
+      polls: "Votaciones"
+      more_polls: "Ir a otras votaciones"
+  poll_questions:
+    create_question: "Crear pregunta para votación"
+    default_valid_answers: "Sí, No"
+    show:
+      answer_this_question: "Ir a la página de votación"
+      original_proposal: "Ver el texto de la propuesta"
+      author: "Creado por"
+      dates_title: "Fechas de votación"
+      more_info: "Más información"
+      vote_answer: "Votar %{answer}"
+      voted: "Has votado %{answer}"
+      poll: "Votación"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -438,17 +496,20 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
+    "yes": "Sí"
+    "no": "No"
     comments:
       title: "Comentarios"
       login_to_comment: "Debes iniciar sesión para comentar"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
-      author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
-      author_type_3: 'Director general'
-      author_type_4: 'Concejal'
-      author_type_5: 'Alcaldesa'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
@@ -463,6 +524,7 @@ es:
       search: 'Filtrar'
       title: 'Búsqueda avanzada'
       to: 'Hasta'
+    delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
       forum: Espacio de debate distrital
@@ -471,17 +533,11 @@ es:
     check_all: Todos
     check_none: Ninguno
     collective: Colectivo
-    counter:
-      budget_title: Presupuestos participativos
-      budget_text_html: "¡Participa hasta el <span>30 de junio</span>!"
-      days: "Días"
-      hours: Horas
-      minutes: Minutos
-      seconds: Segundos
     flag: Denunciar como inapropiado
     hide: Ocultar
     print:
       print_button: Imprimir esta información
+    search: Buscar
     show: Mostrar
     suggest:
       debate:
@@ -515,6 +571,7 @@ es:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
@@ -575,7 +632,6 @@ es:
       districts_link: Votar propuestas de distrito
       districts_link_close: Propuestas de distrito
       in_two_minutes: Toda la información sobre los presupuestos participativos
-      page_title: Presupuestos participativos
       title: "Ya puedes votar las propuestas"
       title_close: "Presupuestos participativos"
       title_results: "Presupuestos participativos"
@@ -694,12 +750,13 @@ es:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
       delete_spending_proposal: Eliminar
       confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
       ballot_link_text:
-        zero: Todavía no has votado por ninguna propuesta.
-        one: "Has votado sólo una propuesta por un valor de %{amount_spent}."
-        other: "Has votado %{count} propuestas por un valor de %{amount_spent}."
+        zero: Todavía no has votado por ningún proyecto.
+        one: "Has votado un proyecto por un valor de %{amount_spent}."
+        other: "Has votado %{count} proyectos por un valor de %{amount_spent}."
       ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
       verify_account: verifica tu cuenta
       filters:
@@ -715,11 +772,15 @@ es:
         spending_proposals:
           one: 1 Propuesta de inversión
           other: "%{count} Propuestas de inversión"
+        budget_investments:
+          one: 1 Proyecto de presupuestos participativos
+          other: "%{count} Proyectos de presupuestos participativos"
         ballot: Presupuestos participativos
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
       send_private_message: "Enviar un mensaje privado"
+      delegation: Lista de proyectos de gasto recomendados
     proposals:
       send_notification: "Enviar notificación"
       retire: "Retirar"
@@ -750,20 +811,26 @@ es:
       confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
       confirm_discard_delegation: "Si votas dejarás de delegar. "
       no_ballots_allowed: No se puede votar
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
     featured:
       title: Procesos abiertos
       see_all: Ver todos los procesos
+      features: "Participa en %{org_name}"
       proposals:
-        link: Ver propuestas
-        text: Crear tus propias propuestas y apoya las de otros ciudadanos.
-        title: Propuestas ciudadanas
-      spending_proposals:
-        link: Participa en la votación final
-        link_close: Ver propuestas de inversión
-        see_results: Ver resultados
-        text: Tú decides cómo invertir 60 millones de euros para tu ciudad.
+        title: Crea propuestas ciudadanas
+        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
+        link: Ver propuestas ciudadanas
+      budgets:
         title: Presupuestos participativos
+        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
+        link: Ver proyectos de gasto
     more_information: Más información sobre %{org_name}
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
@@ -771,7 +838,7 @@ es:
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      go_to_index: Ahora no, ver propuestas
+      go_to_index: Ahora no, empezar a participar
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
@@ -781,19 +848,13 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
-  omniauth:
-    finish_signup:
-      title: "Detalles adicionales de tu cuenta"
-      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
-    twitter:
-      sign_in: "Entra con Twitter"
-      sign_up: "Regístrate con Twitter"
-    facebook:
-      sign_in: "Entra con Facebook"
-      sign_up: "Regístrate con Facebook"
-    google_oauth2:
-      sign_in: "Entra con Google"
-      sign_up: "Regístrate con Google"
+  legislation:
+    help:
+      title: "¿Cómo puedo comentar este documento?"
+      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
+      text_sign_in: "iniciar sesión"
+      text_sign_up: "registrarte"
+      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

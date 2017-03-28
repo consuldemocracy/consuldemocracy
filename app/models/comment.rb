@@ -10,14 +10,13 @@ class Comment < ActiveRecord::Base
 
   validates :body, presence: true
   validates :user, presence: true
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "ProbeOption", "SpendingProposal"]
+
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "Poll::Question", "ProbeOption", "SpendingProposal", "Budget::Investment"]
 
   validate :validate_body_length
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
   belongs_to :user, -> { with_hidden }
-
-  delegate :commentable_title, :commentable_path, to: :commentable
 
   before_save :calculate_confidence_score
 

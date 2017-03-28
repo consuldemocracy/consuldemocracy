@@ -31,8 +31,8 @@ class ProposalsController < ApplicationController
     discard_archived
     load_retired
     hide_advanced_search if custom_search?
-    load_proposal_ballots
-    load_featured unless @proposal_successfull_exists
+    load_successful_proposals
+    load_featured unless @proposal_successful_exists
   end
 
   def vote
@@ -127,8 +127,8 @@ class ProposalsController < ApplicationController
       params[:custom_search].present?
     end
 
-    def load_proposal_ballots
-      @proposal_successfull_exists = Proposal.successfull.exists?
+    def load_successful_proposals
+      @proposal_successful_exists = Proposal.successful.exists?
     end
 
     def load_rank

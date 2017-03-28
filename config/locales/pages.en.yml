@@ -24,6 +24,7 @@ en:
         proposals_info: Create your own proposals
         signature_sheet: Sheet collecting signatures for support
         spending_proposals_info: Create your own spending proposals
+        polls: "First vote of citizen proposals of the City of Madrid"
       how_it_works:
         i: Participation
         i1: Debates area
@@ -55,7 +56,7 @@ en:
 
           This Open Government Portal use the [Consul app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
 
-          Not only can you use freely this portal in yout local government, but you also will be helped by Madrid city council as much as possible to do it, so if you are interested write us: <a href='mailto:extension.institucional@madrid.es'>extension.institucional@madrid.es</a>
+          Not only can you use freely this portal in yout local government, but you also will be helped by Madrid city council as much as possible to do it, so if you are interested <a href='mailto:extension.institucional@madrid.es'>write us an email</a>.
 
           If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/consul/consul 'consul github ' ).
       titles:
@@ -70,6 +71,7 @@ en:
           proposals_info: How does citizen proposals work?
           signature_sheet: Signature sheet
           spending_proposals_info: What is participatory budgeting?
+          polls: "Information about voting"
     privacy: Privacy Policy
     processes:
       back: Back
@@ -114,6 +116,21 @@ en:
         process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
         process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
         process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        process_14_title: "Atención a la ciudadanía de Línea Madrid"
+        process_14_description: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+        process_14_button: "Más información"
+        process_15_title: "Nueva ordenanza de movilidad"
+        process_15_description: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
+        process_15_button: "Más información"
+        process_16_title: "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones"
+        process_16_description: "El Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial."
+        process_16_button: "Más información"
+        process_17_title: "Modificación de la ordenanza reguladora de la publicidad exterior"
+        process_17_description: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
+        process_17_button: "Más información"
         title: Processes
         process_plaza_title: Remodeling of the Plaza España
         process_plaza_description: Select the project that you like for this new space in your city.

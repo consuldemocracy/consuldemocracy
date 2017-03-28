@@ -33,6 +33,8 @@ data:
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
     - config/locales/custom.%{locale}.yml
+    - config/locales/officing.%{locale}.yml
+    - config/locales/budgets.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -112,6 +114,8 @@ ignore_missing:
 
 ## Consider these keys used:
 ignore_unused:
+  - 'budgets.phase.*'
+  - 'budgets.investments.index.orders.*'
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
@@ -120,12 +124,16 @@ ignore_unused:
   - 'admin.banners.index.filters.*'
   - 'admin.debates.index.filter*'
   - 'admin.proposals.index.filter*'
+  - 'admin.budgets.index.filter*'
+  - 'admin.budget_investments.index.filter*'
   - 'admin.spending_proposals.index.filter*'
   - 'admin.organizations.index.filter*'
   - 'admin.users.index.filter*'
   - 'admin.activity.show.filter*'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
+  - 'admin.polls.*.submit_button'
+  - 'admin.booths.*.submit_button'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'
   - 'moderation.debates.index.filter*'
@@ -134,20 +142,21 @@ ignore_unused:
   - 'moderation.debates.index.filter*'
   - 'moderation.debates.index.order*'
   - 'valuation.spending_proposals.index.filter*'
+  - 'valuation.budgets.index.filter*'
+  - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
+  - 'polls.index.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
-  - 'debates.index.search_form.*'
   - 'proposals.index.select_order'
   - 'proposals.index.orders.*'
   - 'spending_proposals.index.select_order'
   - 'spending_proposals.index.orders.*'
-  - 'proposals.index.search_form.*'
-  - 'spending_proposals.index.search_form.*'
   - 'debates.show.comments*'
   - 'debates.show.questions*'
   - 'comments_helper.*'
   - 'questions_helper.*'
+  - '*.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'notifications.index.proposal_notification*'
@@ -156,10 +165,23 @@ ignore_unused:
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
   - 'probes.codenames.*' # custom probes names
+  - 'social_share.polls_show.*' # SEO for polls
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
+#### Review unused keys after merge with Budgest (both en and es)
+  - layouts.header.see_all
+  - legislation.help.alt
+  - legislation.help.text
+  - legislation.help.text_sign_in
+  - legislation.help.text_sign_up
+  - legislation.help.title
+  - users.show.confirm_deletion_spending_proposal
+  - users.show.delete_spending_proposal
+  - verification.letter.create.flash.offices_url
+  - verification.letter.new.offices_url
+####
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

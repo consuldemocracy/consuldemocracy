@@ -28,6 +28,15 @@ describe UsersHelper do
 
       expect(comment_commentable_title(comment)).to eq "<abbr title='This proposal has been deleted'>#{comment.commentable.title}</abbr>"
     end
+
+    it "should return the appropriate message for deleted budget investment" do
+      investment = create(:budget_investment)
+      comment = create(:comment, commentable: investment)
+
+      investment.hide
+
+      expect(comment_commentable_title(comment)).to eq "<abbr title='This investment project has been deleted'>#{comment.commentable.title}</abbr>"
+    end
   end
 
   describe '#comment_commentable_title' do

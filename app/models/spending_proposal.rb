@@ -3,7 +3,6 @@ class SpendingProposal < ActiveRecord::Base
   include Sanitizable
   include Taggable
   include Searchable
-  include Commentable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -15,6 +14,7 @@ class SpendingProposal < ActiveRecord::Base
   has_many :valuation_assignments, dependent: :destroy
   has_many :valuators, through: :valuation_assignments
   has_many :ballot_lines, dependent: :destroy
+  has_many :comments, as: :commentable
 
   validates :title, presence: true
   validates :author, presence: true

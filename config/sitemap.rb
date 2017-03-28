@@ -27,7 +27,9 @@ SitemapGenerator::Sitemap.create do
     add proposal_path(proposal), lastmod: proposal.updated_at
   end
 
-  add proposal_ballots_path
+  add budgets_welcome_path
+  add participatory_budget_path
+  add polls_path
 
   add spending_proposals_path, priority: 0.7, changefreq: "daily"
   SpendingProposal.find_each do |spending_proposal|

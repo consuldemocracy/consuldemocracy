@@ -24,7 +24,7 @@ class DebatesController < ApplicationController
 
   def index_customization
     @featured_debates = @debates.featured
-    @proposal_successfull_exists = Proposal.successfull.exists?
+    @proposal_successfull_exists = Proposal.successful.exists?
     discard_probe_debates
   end
 

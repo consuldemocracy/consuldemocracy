@@ -20,12 +20,14 @@
 
 <table id="spending-proposals-results">
   <thead>
-    <th><%= t("admin.spending_proposals.results.spending_proposal") %></th>
-    <th><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
-    <th><%= t("admin.spending_proposals.results.price") %></th>
-    <th title="<%= t("admin.spending_proposals.results.amount_available") %>">
-      <%= format_price(@initial_budget) %>
-    </th>
+    <tr>
+      <th scope="col"><%= t("admin.spending_proposals.results.spending_proposal") %></th>
+      <th scope="col"><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
+      <th scope="col"><%= t("admin.spending_proposals.results.price") %></th>
+      <th scope="col" title="<%= t("admin.spending_proposals.results.amount_available") %>">
+        <%= format_price(@initial_budget) %>
+      </th>
+    </tr>
   </thead>
   <tbody>
     <% winners = [] %>
@@ -82,9 +84,11 @@
 
     <table id="incompatible-spending-proposals">
       <thead>
-        <th><%= t("admin.spending_proposals.results.spending_proposal") %></th>
-        <th class="text-center"><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
-        <th class="text-center"><%= t("admin.spending_proposals.results.price") %></th>
+        <tr>
+          <th><%= t("admin.spending_proposals.results.spending_proposal") %></th>
+          <th class="text-center"><%= t("admin.spending_proposals.results.ballot_lines_count") %></th>
+          <th class="text-center"><%= t("admin.spending_proposals.results.price") %></th>
+        </tr>
       </thead>
       <tbody>
         <% @incompatibles.each do |spending_proposal| %>

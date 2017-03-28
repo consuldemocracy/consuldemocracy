@@ -1,4 +1,6 @@
 <% provide :title do %><%= t('pages.titles.more_information') %><% end %>
+<% provide :tracking_page_number, "34" %>
+
 <div class="row">
   <div class="more-information small-12 medium-9 large-7 column">
     <h1><%= t('pages.titles.more_information') %></h1>
@@ -32,18 +34,25 @@
       <% end %>
       </li>
       <li>
-      <%= link_to page_path('participatory_budget_info') do %>
+      <%= link_to budgets_faq_path do %>
           <%= t('pages.more_information.titles.spending_proposals_info') %>
           <br>
           <span><%= t('pages.more_information.description.spending_proposals_info') %></span>
       <% end %>
       </li>
       <li>
-      <%= link_to page_path('participatory_budget_meetings') do %>
+      <%= link_to budgets_meetings_2016_path do %>
           <%= t('pages.more_information.titles.meetings') %>
           <br>
           <span><%= t('pages.more_information.description.meetings') %></span>
       <% end %>
+      </li>
+      <li>
+        <%= link_to more_info_polls_path do %>
+          <%= t('pages.more_information.titles.polls') %>
+          <br>
+          <span><%= t('pages.more_information.description.polls') %></span>
+        <% end %>
       </li>
       <li>
       <%= link_to page_path('human_rights_info') do %>

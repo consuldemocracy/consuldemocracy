@@ -28,6 +28,11 @@ class Verification::Residence
 
   def save
     return false unless valid?
+
+    self.document_number = @census_api_response.document_number
+
+    user.take_votes_if_erased_document(document_number, document_type)
+
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 geozone:               self.geozone,
@@ -43,11 +48,11 @@ class Verification::Residence
 
   def allowed_age
     return if errors[:date_of_birth].any?
-    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless self.date_of_birth <= 16.years.ago
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless Age.in_years(self.date_of_birth) >= User.minimum_required_age_for_verification
   end
 
   def document_number_uniqueness
-    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.where(document_number: document_number).any?
+    errors.add(:document_number, I18n.t('errors.messages.taken')) if User.active.where(document_number: document_number).any?
   end
 
   def redeemable_code_is_redeemable

@@ -7,7 +7,6 @@ class Debate < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
-  include Commentable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -16,6 +15,7 @@ class Debate < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_one :probe_option
+  has_many :comments, as: :commentable
 
   validates :title, presence: true
   validates :description, presence: true
@@ -61,10 +61,6 @@ class Debate < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title}".parameterize
-  end
-
-  def description
-    super.try :html_safe
   end
 
   def likes
