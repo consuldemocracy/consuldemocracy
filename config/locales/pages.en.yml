@@ -5,6 +5,14 @@ en:
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
     more_information:
+      title: "Discover %{org_name}"
+      subtitle: "Learn everything you can do on this website."
+      guide: This guide explains each of the sections of %{org_name}. You can expand the information on "Detailed information" links.'
+      menu:
+        debates: "Debates"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        other: "Other information of interest"
       description:
         faq: Frecuently asked question about tecnical problems
         how_it_works: Find out all you can do with this web site
@@ -64,7 +72,7 @@ en:
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_information: More information
+      more_information: "More information about %{org_name}"
       opendata: Open Data
       privacy: Privacy Policy
     verify:
