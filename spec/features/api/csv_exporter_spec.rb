@@ -263,6 +263,32 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_debate_comment.body)
     end
 
+    scenario "Do not include comments of debates that are not public" do
+      not_public_debate = create(:debate)
+      allow_any_instance_of(Debate).to receive(:public_for_api?).and_return(false)
+
+      not_public_debate_comment = create(:comment, commentable: not_public_debate)
+
+      @csv_exporter.export
+      visit csv_path_for("comments")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to_not include(not_public_debate_comment.body)
+    end
+
+    scenario "Do not include comments of proposals that are not public" do
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
+      not_public_proposal_comment = create(:comment, commentable: not_public_proposal)
+
+      @csv_exporter.export
+      visit csv_path_for("comments")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to_not include(not_public_proposal_comment.body)
+    end
+
     scenario "Only display date and hour for created_at" do
       created_at = Time.new(2017, 12, 31, 9, 0, 0).in_time_zone(Time.zone)
       create(:comment, created_at: created_at)
@@ -332,6 +358,19 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_proposal_notification.title)
     end
 
+    scenario "Do not include proposal notifications for proposals that are not public" do
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
+      not_public_proposal_notification = create(:proposal_notification, proposal: not_public_proposal)
+
+      @csv_exporter.export
+      visit csv_path_for("proposal_notifications")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to_not include(not_public_proposal_notification.title)
+    end
+
     scenario "Only display date and hour for created_at" do
       created_at = Time.new(2017, 12, 31, 9, 0, 0).in_time_zone(Time.zone)
       create(:proposal_notification, created_at: created_at)
@@ -357,6 +396,7 @@ feature 'CSV Exporter' do
       csv = CSV.parse(page.html)
 
       columns = [
+        "id",
         "name",
         "taggings_count",
         "kind"]
@@ -410,6 +450,32 @@ feature 'CSV Exporter' do
 
       expect(csv).to include("Health")
       expect(csv).to_not include("SPAM")
+    end
+
+    scenario "Do not display tags for proceeding's proposals" do
+      valid_proceeding_proposal = create(:proposal, proceeding: "Derechos Humanos", sub_proceeding: "Right to a Home", tag_list: "Health")
+      invalid_proceeding_proposal = create(:proposal, tag_list: "Animals")
+      invalid_proceeding_proposal.update_attribute('proceeding', "Random")
+
+      @csv_exporter.export
+
+      visit csv_path_for("tags")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to include("Health")
+      expect(csv).to_not include("Animals")
+    end
+
+    scenario "Do not display tags for taggings that are not public" do
+      proposal = create(:proposal, tag_list: "Health")
+      allow_any_instance_of(ActsAsTaggableOn::Tagging).to receive(:public_for_api?).and_return(false)
+
+      @csv_exporter.export
+
+      visit csv_path_for("tags")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to_not include("Health")
     end
 
   end
@@ -489,7 +555,7 @@ feature 'CSV Exporter' do
       expect(taggable_ids).to_not include(hidden_proposal_tagging.taggable_id.to_s)
     end
 
-    scenario "Do not display taggings for hidden tags" do
+    scenario "Only display tagging for a tag kind nil or category" do
       category_tag  = create(:tag, name: "Health",    kind: "category")
       admin_tag     = create(:tag, name: "Admin tag", kind: "admin")
 
@@ -638,6 +704,51 @@ feature 'CSV Exporter' do
 
       expect(votable_ids).to include(visible_debate_comment_vote.votable_id.to_s)
       expect(votable_ids).to_not include(hidden_debate_comment_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of debates that are not public" do
+      not_public_debate = create(:debate)
+      allow_any_instance_of(Debate).to receive(:public_for_api?).and_return(false)
+
+      not_public_debate_vote = create(:vote, votable: not_public_debate)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to_not include(not_public_debate_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of a hidden proposals" do
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
+      not_public_proposal_vote = create(:vote, votable: not_public_proposal)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to_not include(not_public_proposal_vote.votable_id.to_s)
+    end
+
+    scenario "Do not include votes of a hidden comments" do
+      not_public_comment = create(:comment)
+      allow_any_instance_of(Comment).to receive(:public_for_api?).and_return(false)
+
+      not_public_comment_vote = create(:vote, votable: not_public_comment)
+
+      @csv_exporter.export
+      visit csv_path_for("votes")
+      csv = CSV.parse(page.html)
+
+      votable_ids = csv.collect {|element| element[0]}
+
+      expect(votable_ids).to_not include(not_public_comment_vote.votable_id.to_s)
     end
 
     scenario "Only display date and hour for created_at" do

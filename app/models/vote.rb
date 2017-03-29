@@ -12,6 +12,7 @@ class Vote < ActsAsVotable::Vote
     return false unless votable.present?
     return false if votable.hidden?
     return false if votable_type == "Comment" && votable.commentable.hidden?
+    return false unless votable.public_for_api?
     return true
   end
 
