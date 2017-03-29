@@ -405,7 +405,7 @@ feature 'Budget Investments' do
       budget.update(phase: "valuating")
     end
 
-    scenario "Sidebar in show should display supports text and supports" do
+    scenario "Sidebar in show should display support text and count" do
       investment = create(:budget_investment, :selected, budget: budget)
       create(:vote, votable: investment)
 
@@ -417,13 +417,25 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Index should display supports" do
-      investment = create(:budget_investment, :selected, budget: budget, heading: heading)
+    scenario "Index should display support count" do
+      investment = create(:budget_investment, budget: budget, heading: heading)
       create(:vote, votable: investment)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "1 support"
+      end
+    end
+
+    scenario "Show should display support text and count" do
+      investment = create(:budget_investment, budget: budget, heading: heading)
+      create(:vote, votable: investment)
+
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "Supports"
         expect(page).to have_content "1 support"
       end
     end
