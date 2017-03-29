@@ -359,7 +359,8 @@ he:
         title_proposals_with_supports: סיכום פרויקטים להשקעה שזכו בתמיכה
         geozone_name: הקף הפרויקט
         finished_and_feasible_count: הסתיים ובר ביצוע
-        finished_and_unfeasible_count: הסתיים ואינו בר ביצוע        finished_count: הסתיים
+        finished_and_unfeasible_count: הסתיים ואינו בר ביצוע        
+        finished_count: הסתיים
         in_evaluation_count: עדיין בשלב הערכה
         total_count: סך הכל
         cost_for_geozone: עלות הפרויקט
@@ -441,7 +442,7 @@ he:
       direct_messages:
         title: הודעות ישירות
         total: סך הכל
-        users_who_have_sent_message:משתמשים/ות ששלחו הודעות פרטיות
+        users_who_have_sent_message: משתמשים/ות ששלחו הודעות פרטיות
       proposal_notifications:
         title: הצעת התראות
         total: סך הכל
@@ -452,7 +453,7 @@ he:
       index:
         add_tag: הצעה לנושא לדיון חדש
         title: נושאים לדיון
-      mark_as_featured:נושא מומלץ עבור הצעת הדיון
+      mark_as_featured: נושא מומלץ עבור הצעת הדיון
       name:
         placeholder: הקלד/י את שם הנושא
       update: נושא מעודכן
