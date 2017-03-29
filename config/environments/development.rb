@@ -14,13 +14,22 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.asset_host = "http://localhost:3000"
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'smtp.mailgun.org', port: 2525 }
+  config.action_mailer.asset_host = "http://smtp.mailgun.org:2525"
 
   # Deliver emails to a development mailbox at /letter_opener
-  config.action_mailer.delivery_method = :letter_opener
-
+  config.action_mailer.asset_host = "http://postmaster@sandbox5dde5b9b64e84ff194257e41b6495c81.mailgun.org"
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "postmaster@sandbox5dde5b9b64e84ff194257e41b6495c81.mailgun.org",
+   :port                 => 587,
+   :user_name            => "smtp.mailgun.org",
+   :password             => "97816ccf3aa3cc8a57d8ccd57381db7b",
+   :authentication       => "plain",
+  :enable_starttls_auto => true
+  }
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

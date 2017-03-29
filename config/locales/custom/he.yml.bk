@@ -1,8 +1,8 @@
 ---
-en:
+he:
   account:
     show:
-      change_credentials_link: Change my credentials
+      change_credentials_link: שנה הגדרות אבטחה
       email_on_comment_label: Notify me by email when someone comments on my proposals or debates
       email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
@@ -10,7 +10,7 @@ en:
       notifications: Notifications
       organization_name_label: Name of organization
       organization_responsible_name_placeholder: Representative of the organization/collective
-      personal: Personal details
+      personal: פרטים אישיים
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
       save_changes_submit: Save changes
@@ -31,8 +31,8 @@ en:
       verified_account: Account verified
       verify_my_account: Verify my account
   application:
-    close: Close
-    menu: Menu
+    close: סגור
+    menu: תפריט
   comments:
     comment:
       admin: Administrator
@@ -58,7 +58,7 @@ en:
       oldest: Oldest first
     select_order: Sort by
     show:
-      return_to_commentable: 'Go back to '
+      return_to_commentable: 'חזור ל- '
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
@@ -135,7 +135,7 @@ en:
       share: Share
     update:
       form:
-        submit_button: Save changes
+        submit_button: שמור שינויים
   errors:
     messages:
       user_not_found: User not found
@@ -188,8 +188,8 @@ en:
     header:
       administration: Administration
       available_locales: Available languages
-      debates: Debates
-      external_link_blog: Blog
+      debates: דיונים
+      external_link_blog: בלוג
       external_link_opendata: Open data
       external_link_opendata_url: "/opendata"
       external_link_transparency: Transparency
@@ -207,14 +207,14 @@ en:
         one: You have a new notification
         other: You have %{count} new notifications
       no_notifications: "You don't have new notifications"
-      open: open
+      open: פתוח
       open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love.
-      open_gov: Open government
-      proposals: Proposals
-      proposal_ballot: Voting
-      see_all: See proposals
-      budgets: Participatory budgeting
+      open_gov: ממשל פתוח
+      proposals: הצעות
+      proposal_ballot: הצבעות
+      see_all: כל ההצעות
+      budgets: תקציב שיתופי
       spending_proposals: Spending Proposals
   legislation:
     help:
@@ -223,7 +223,7 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
-  locale: English
+  locale: עברית
   notifications:
     index:
       comments_on:
