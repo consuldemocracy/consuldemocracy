@@ -174,7 +174,6 @@ es:
       copyright: Consul, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       faq: Asistencia técnica
-      more_info: Más información
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
       open_source: software libre
