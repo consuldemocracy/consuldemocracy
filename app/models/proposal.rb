@@ -223,7 +223,6 @@ class Proposal < ActiveRecord::Base
   def public_for_api?
     return false if hidden?
     return false unless ["Derechos Humanos", nil].include?(proceeding)
-    return false unless author.public_activity?
     return true
   end
 

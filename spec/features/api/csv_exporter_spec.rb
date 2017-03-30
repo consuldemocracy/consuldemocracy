@@ -68,7 +68,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(other_proceeding_proposal.title)
     end
 
-    scenario "Only displays proposals of authors with public activity" do
+    scenario "Displays proposals of authors even if public activity is set to false", :focus do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -80,7 +80,7 @@ feature 'CSV Exporter' do
       csv = CSV.parse(page.html).flatten
 
       expect(csv).to include(visible_proposal.title)
-      expect(csv).to_not include(hidden_proposal.title)
+      expect(csv).to include(hidden_proposal.title)
     end
 
     scenario "Only display date and hour for created_at" do
@@ -136,7 +136,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_debate.title)
     end
 
-    scenario "Only display debates of authors with public activity" do
+    scenario "Displays debates of authors even if public activity is set to false", :focus do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -148,7 +148,7 @@ feature 'CSV Exporter' do
       csv = CSV.parse(page.html).flatten
 
       expect(csv).to include(visible_debate.title)
-      expect(csv).to_not include(hidden_debate.title)
+      expect(csv).to include(hidden_debate.title)
     end
 
     scenario "Only display date and hour for created_at" do
@@ -206,7 +206,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(spending_proposal_comment.body)
     end
 
-    scenario "Only displays comments of authors with public activity" do
+    scenario "Displays comments of authors even if public activity is set to false", :focus do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -218,7 +218,7 @@ feature 'CSV Exporter' do
       csv = CSV.parse(page.html).flatten
 
       expect(csv).to include(visible_comment.body)
-      expect(csv).to_not include(hidden_comment.body)
+      expect(csv).to include(hidden_comment.body)
     end
 
     scenario "Do not include hidden comments" do
