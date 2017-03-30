@@ -29,6 +29,7 @@ module ActsAsTaggableOn
       return false if taggable.hidden?
       return false unless tag.present?
       return false unless [nil, "category"].include? tag.kind
+      return false unless taggable.public_for_api?
       return true
     end
   end

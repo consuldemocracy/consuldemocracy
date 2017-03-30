@@ -571,6 +571,38 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_tag_tagging.taggable_type)
     end
 
+    scenario "Do not include taggings for proposals that are not public" do
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
+      not_public_proposal_tagging = create(:tagging, taggable: not_public_proposal)
+
+      @csv_exporter.export
+
+      visit csv_path_for("taggings")
+      csv = CSV.parse(page.html)
+
+      taggable_ids = csv.collect {|element| element[1]}
+
+      expect(taggable_ids).to_not include(not_public_proposal_tagging.taggable_id.to_s)
+    end
+
+    scenario "Do not include taggings for debates that are not public" do
+      not_public_debate = create(:debate)
+      allow_any_instance_of(Debate).to receive(:public_for_api?).and_return(false)
+
+      not_public_debate_tagging = create(:tagging, taggable: not_public_debate)
+
+      @csv_exporter.export
+
+      visit csv_path_for("taggings")
+      csv = CSV.parse(page.html)
+
+      taggable_ids = csv.collect {|element| element[1]}
+
+      expect(taggable_ids).to_not include(not_public_debate_tagging.taggable_id.to_s)
+    end
+
   end
 
   context "Votes" do
