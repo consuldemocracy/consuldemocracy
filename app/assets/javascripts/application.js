@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-es
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-es
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
