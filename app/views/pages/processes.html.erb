@@ -14,13 +14,22 @@
 
     <div class="row">
       <div class="small-12 column">
-        <div class="small-12 medium-9 column">
-          <!-- PROCESO DESTACADO (Publicidad exterior) -->
-          <h3><%= t("pages.processes.index.process_17_title") %></h3>
-          <p><%= t("pages.processes.index.process_17_description") %></p>
+        <div class="small-12 medium-6 column">
+          <!-- PROCESO DESTACADO (Vicálvaro) -->
+          <h3><%= t("pages.processes.index.process_18_title") %></h3>
+          <p><%= t("pages.processes.index.process_18_description") %></p>
           <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_17_button"),
-                        publicity_path, class: "button expanded" %>
+            <%= link_to t("pages.processes.index.process_18_button"),
+                        vicalvaro_path, class: "button expanded" %>
+          </div>
+        </div>
+        <div class="small-12 medium-6 column">
+          <!-- PROCESO DESTACADO (Villaverde) -->
+          <h3><%= t("pages.processes.index.process_19_title") %></h3>
+          <p><%= t("pages.processes.index.process_19_description") %></p>
+          <div class="small-12 medium-6 large-4">
+            <%= link_to t("pages.processes.index.process_19_button"),
+                        villaverde_path, class: "button expanded" %>
           </div>
         </div>
       </div>
@@ -57,6 +66,13 @@
         <!-- Procesos abiertos -->
         <div class="tabs-panel is-active" id="panel1v">
           <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
+
+          <!-- Publicidad exterior -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_17_title") %></h3>
+            <p><%= t("pages.processes.index.process_17_description") %></p>
+            <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow" %>
+          </div>
 
           <!-- Rehabilitación edificios -->
           <div class="panel">
