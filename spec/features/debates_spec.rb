@@ -640,6 +640,28 @@ feature 'Debates' do
           end
         end
 
+        scenario "Search by custom invalid date range", :js do
+          debate1 = create(:debate, created_at: 2.years.ago)
+          debate2 = create(:debate, created_at: 3.days.ago)
+          debate3 = create(:debate, created_at: 9.days.ago)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "Customized", from: "js-advanced-search-date-min"
+          fill_in "advanced_search_date_min", with: "9"
+          fill_in "advanced_search_date_max", with: "444444444"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 3)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to have_content(debate3.title)
+          end
+        end
+
         scenario "Search by multiple filters", :js do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
