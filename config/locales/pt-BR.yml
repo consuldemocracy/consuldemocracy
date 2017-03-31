@@ -841,7 +841,6 @@ pt-BR:
       description: Este portal usa o %{consul} que é %{open_source}. De Madrid para
         o mundo.
       faq: suporte técnico
-      more_info: Mais informações
       open_data_text: Todos os detalhes sobre a Câmara estão disponíveis para acesso.
       open_data_title: Dados abertos
       open_source: programa de código aberto
