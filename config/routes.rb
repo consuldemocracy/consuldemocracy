@@ -495,6 +495,7 @@ Rails.application.routes.draw do
   get 'mas-informacion/espacios-presenciales-2016',  to: 'pages#show', id: 'more_info/budgets/meetings_2016', as: 'budgets_meetings_2016'
   get 'mas-informacion/espacios-presenciales-2017',  to: 'pages#show', id: 'more_info/budgets/meetings_2017', as: 'budgets_meetings_2017'
   get 'mas-informacion/derechos-humanos',            to: 'pages#show', id: 'more_info/participation/ddhh',    as: 'more_info_human_rights'
+  get 'mas-informacion/gobierno-abierto',            to: 'pages#show', id: 'more_info/participation/open',    as: 'participation_open_government'
 
   resources :pages, path: '/', only: [:show]
 end
