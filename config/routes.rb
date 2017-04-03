@@ -498,6 +498,7 @@ Rails.application.routes.draw do
   get 'mas-informacion/participation/facts', to: 'pages#show', id: 'more_info/participation/facts',  as: 'participation_facts'
   get 'mas-informacion/participation/world', to: 'pages#show', id: 'more_info/participation/world',  as: 'participation_world'
   get 'mas-informacion/votaciones',          to: 'pages#show', id: 'more_information/polls',         as: 'more_info_polls'
+  get 'mas-informacion/kit-decide',          to: 'pages#show', id: 'more_info/kit_decide/index',     as: 'kit_decide'
 
   resources :pages, path: '/', only: [:show]
 end

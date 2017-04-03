@@ -13,6 +13,7 @@
 // 10. Jumbo brand
 // 11. Budgets custom
 // 12. Nvotes
+// 13. Kit Decide
 //
 
 // 00. Others
@@ -2669,4 +2670,105 @@ p.can-participate-info {
 
 .verify-name h3 span {
   text-transform: uppercase;
+}
+
+// 13. Kit Decide
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.kit-decide {
+
+  h3 {
+    color: black;
+    font-family: 'Franklin Gothic' !important;
+  }
+
+  img {
+    border: 1px solid $border;
+    box-shadow: 2px 2px 2px #ccc;
+  }
+}
+
+.kit-decide-header {
+  background: #003df6;
+  color: white;
+
+  h1, h2 {
+    color: white;
+    font-family: 'Franklin Gothic' !important;
+  }
+
+  @include breakpoint(medium) {
+
+    h1 {
+      font-size: rem-calc(100);
+      line-height: rem-calc(100);
+    }
+
+    h2 {
+     font-size: rem-calc(40);
+      line-height: rem-calc(40);
+    }
+  }
+
+  a, .icon-angle-left {
+    color: white;
+
+    span.underline {
+      text-decoration: underline;
+    }
+
+    &.button.hollow {
+      color: white;
+      border-color: white;
+    }
+  }
+}
+
+.number-list {
+  background: white;
+  border-bottom: 4px solid black;
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: $line-height;
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    background: white;
+    border: 4px solid #003df6;
+    border-radius: rem-calc(100);
+    color: black;
+    display: inline-block;
+    font-family: "Franklin gothic";
+    font-size: rem-calc(40);
+    height: rem-calc(60);
+    line-height: rem-calc(50);
+    margin: $line-height/4;
+    padding: 0;
+    text-align: center;
+    width: rem-calc(60);
+
+    &.active {
+      background: #003df6;
+      color: white;
+    }
+  }
+}
+
+h3.kit-decide {
+  text-transform: uppercase;
+  font-size: rem-calc(30);
+
+  .number {
+    border: 4px solid #003df6;
+    border-radius: rem-calc(100);
+    display: inline-block;
+    height: rem-calc(60);
+    line-height: rem-calc(50);
+    margin-right: $line-height/2;
+    text-align: center;
+    width: rem-calc(60);
+  }
 }

@@ -119,6 +119,7 @@ en:
       conditions: Terms of use
       more_information: "More information about %{org_name}"
       privacy: Privacy Policy
+      kit_decide: "Kit Decide (to make your communication campaigns after you create a proposal)"
     verify:
       code: Code you received in letter
       email: Email
