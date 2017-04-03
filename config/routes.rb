@@ -490,15 +490,15 @@ Rails.application.routes.draw do
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
 
   # more information pages
-  get 'mas-informacion',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'
-  get 'mas-informacion/how-to-use',          to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
-  get 'mas-informacion/faq',                 to: 'pages#show', id: 'more_info/faq/index',            as: 'faq'
-  get 'mas-informacion/proposals',           to: 'pages#show', id: 'more_info/proposals/index',      as: 'more_info_proposals'
-  get 'mas-informacion/budgets',             to: 'pages#show', id: 'more_info/budgets/index',        as: 'more_info_budgets'
-  get 'mas-informacion/participation/facts', to: 'pages#show', id: 'more_info/participation/facts',  as: 'participation_facts'
-  get 'mas-informacion/participation/world', to: 'pages#show', id: 'more_info/participation/world',  as: 'participation_world'
-  get 'mas-informacion/votaciones',          to: 'pages#show', id: 'more_information/polls',         as: 'more_info_polls'
-  get 'mas-informacion/kit-decide',          to: 'pages#show', id: 'more_info/kit_decide/index',     as: 'kit_decide'
+  get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',               as: 'more_info'
+  get 'mas-informacion/como-usar',                   to: 'pages#show', id: 'more_info/how_to_use/index',    as: 'how_to_use'
+  get 'mas-informacion/faq',                         to: 'pages#show', id: 'more_info/faq/index',           as: 'faq'
+  get 'mas-informacion/propuestas',                  to: 'pages#show', id: 'more_info/proposals/index',     as: 'more_info_proposals'
+  get 'mas-informacion/presupuestos-participativos', to: 'pages#show', id: 'more_info/budgets/index',       as: 'more_info_budgets'
+  get 'mas-informacion/participacion/hechos',        to: 'pages#show', id: 'more_info/participation/facts', as: 'participation_facts'
+  get 'mas-informacion/participacion/mundo',         to: 'pages#show', id: 'more_info/participation/world', as: 'participation_world'
+  get 'mas-informacion/votaciones',                  to: 'pages#show', id: 'more_info/polls/index',         as: 'more_info_polls'
+  get 'mas-informacion/kit-decide',                  to: 'pages#show', id: 'more_info/kit_decide/index',    as: 'kit_decide'
 
   resources :pages, path: '/', only: [:show]
 end

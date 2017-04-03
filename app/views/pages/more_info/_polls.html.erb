@@ -1,0 +1,19 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="budgets" data-magellan-target="budgets">Votaciones</h3>
+    <p>
+      <%= link_to "Información detallada de Votaciones", more_info_polls_path, class: "small" %>
+    </p>
+    <p>Las propuestas ciudadanas que alcancen el 1% de apoyos en Decide Madrid pasarán a votación.</p>
+    <ul class="features">
+      <li>Para participar en la próxima votación tienes que <%= link_to "registrarte en " + setting['org_name'], new_user_registration_path %> y verificar tu cuenta.</li>
+      <li>Pueden votar todas las personas empadronadas en Madrid mayores de 16 años. </li>
+      <li>Los resultados de todas las votaciones serán vinculantes para el gobierno.</li>
+    </ul>
+
+    <figure>
+      <%= image_tag "more_info/vota.jpg", alt: "Primera votación ciudadana" %>
+      <figcaption>Imagen de campaña de la Primera Votación Ciudadana en febrero de 2017.</figcaption>
+    </figure>
+  </div>
+</div>
