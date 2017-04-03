@@ -217,7 +217,6 @@ es:
       copyright: Ayuntamiento de Madrid, %{year}
       description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
       faq: Asistencia técnica
-      more_info: Más información
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
       opendata_url: http://datos.madrid.es

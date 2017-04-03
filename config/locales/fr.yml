@@ -854,7 +854,6 @@ fr:
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid
         ouvert sur le monde.
       faq: assistance technique
-      more_info: Plus d'information
       open_data_text: Tout les détails de la Mairie sont vôtre pour accès
       open_data_title: Open data
       open_source: logiciel libre
