@@ -490,7 +490,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.2.3)
   capistrano3-delayed-job (~> 1.7.3)
   capybara (~> 2.13.0)
-  ckeditor (~> 4.2.2)
+  ckeditor!
   coffee-rails (~> 4.2.1)
   coveralls (~> 0.8.19)
   daemons
