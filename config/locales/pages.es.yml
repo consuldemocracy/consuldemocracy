@@ -125,7 +125,7 @@ es:
       conditions: Condiciones de uso
       more_information: "Más información sobre %{org_name}"
       privacy: Política de Privacidad
-      kit_decide: "Kit Decide (para hacer tus campañas de comunicación después de crear una propuesta)"
+      kit_decide: "Kit Decide: para hacer tus campañas de comunicación después de crear una propuesta"
     verify:
       code: Código que has recibido en tu carta
       email: Email
