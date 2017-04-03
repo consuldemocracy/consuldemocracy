@@ -78,7 +78,7 @@ module CommonActions
 
   def fill_in_proposal
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
@@ -465,6 +465,10 @@ module CommonActions
       find('.add a').trigger('click')
       expect(page).to have_content "Remove"
     end
+  end
+
+  def csv_path_for(table)
+    "api/#{table}.csv"
   end
 
 end

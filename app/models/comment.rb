@@ -104,6 +104,27 @@ class Comment < ActiveRecord::Base
                                                              cached_votes_up)
   end
 
+  def self.public_columns_for_api
+    ["id",
+     "commentable_id",
+     "commentable_type",
+     "body",
+     "created_at",
+     "cached_votes_total",
+     "cached_votes_up",
+     "cached_votes_down",
+     "ancestry",
+     "confidence_score"]
+  end
+
+  def public_for_api?
+    return false unless commentable.present?
+    return false if commentable.hidden?
+    return false unless ["Proposal", "Debate"].include? commentable_type
+    return false unless commentable.public_for_api?
+    return true
+  end
+
   private
 
     def validate_body_length

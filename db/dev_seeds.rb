@@ -297,6 +297,15 @@ tags = Faker::Lorem.words(25)
                               cached_votes_up: Setting["votes_for_proposal_success"])
 end
 
+puts "Creating Proposal Notifications"
+(1..5).each do
+  title = Faker::Lorem.sentence(3).truncate(60)
+  body = Faker::Lorem.sentence(3)
+  proposal = Proposal.reorder("RANDOM()").first
+  proposal_notificaition = ProposalNotification.create!(title: title,
+                                                        body: body,
+                                                        proposal: proposal)
+end
 
 tags = ActsAsTaggableOn::Tag.where(kind: 'category')
 (1..30).each do

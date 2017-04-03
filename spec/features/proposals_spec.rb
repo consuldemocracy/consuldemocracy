@@ -131,7 +131,7 @@ feature 'Proposals' do
     expect(current_path).to eq(new_proposal_path)
 
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
@@ -143,7 +143,7 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Help refugees'
-    expect(page).to have_content 'In summary, what we want is...'
+    expect(page).to have_content 'In summary what we want is...'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
@@ -226,7 +226,7 @@ feature 'Proposals' do
     expect(page).to_not have_selector('#proposal_responsible_name')
 
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     check 'proposal_terms_of_service'
@@ -295,6 +295,69 @@ feature 'Proposals' do
     expect(current_path).to eq edit_proposal_path(Proposal.last)
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
+  end
+
+  context 'Tagging' do
+    let(:author) { create(:user) }
+
+    background do
+      login_as(author)
+    end
+
+    scenario 'Category tags', :js do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
+
+      visit new_proposal_path
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_summary', with: 'In summary what we want is...'
+      fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      check 'proposal_terms_of_service'
+
+      find('.js-add-tag-link', text: 'Education').click
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+
+      within "#tags_proposal_#{Proposal.last.id}" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
+    end
+
+    scenario 'Custom tags' do
+      visit new_proposal_path
+
+      fill_in_proposal
+      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      within "#tags_proposal_#{Proposal.last.id}" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
+      end
+    end
+
+    scenario 'using dangerous strings' do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+      fill_in_proposal
+      fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      expect(page).to have_content 'user_id1'
+      expect(page).to have_content 'a3'
+      expect(page).to have_content 'scriptalert("hey");script'
+      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    end
   end
 
   context 'Geozones' do
