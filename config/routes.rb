@@ -425,7 +425,6 @@ Rails.application.routes.draw do
 
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
-<<<<<<< HEAD
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
