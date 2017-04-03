@@ -4,27 +4,28 @@ class API::CSVExporter
     def initialize
     end
 
-    def tables
-      ["proposals",
-       "debates",
-       "comments",
-       "geozones",
-       "proposal_notifications",
-       "tags",
-       "taggings",
-       "votes"]
+    def models
+      [Proposal,
+       Debate,
+       Comment,
+       Geozone,
+       ProposalNotification,
+       ActsAsTaggableOn::Tag,
+       ActsAsTaggableOn::Tagging,
+       Vote]
     end
 
     def export(options = {})
-      tables.each do |table|
-        generate_csv(table)
+      models.each do |model|
+        export_model(model)
       end
     end
 
-    def generate_csv(table)
-      CSV.open(filename(table), "w") do |csv|
-        csv << columns(table)
-        model(table).all.each do |record|
+    def export_model(model)
+      puts "Exporting #{model.model_name.human} ..."
+      CSV.open(filename(model), "w") do |csv|
+        csv << model.public_columns_for_api
+        model.all.each do |record|
           if record.public_for_api?
             csv << public_attributes(record)
           end
@@ -32,34 +33,14 @@ class API::CSVExporter
       end
     end
 
-    def columns(table)
-      model_name(table).constantize.public_columns_for_api
-    end
-
-    def model(table)
-      "::#{model_name(table)}".constantize
-    end
-
-    def model_name(table)
-      table.camelcase.singularize
-    end
-
     def public_attributes(record)
-      attrs = record.attributes
-
-      if attrs["created_at"]
-        attrs["created_at"] = I18n.l(record.created_at, format: :api)
+      record.attributes.values_at(*record.class.public_columns_for_api).map do |value|
+        value.is_a?(DateTime) ? I18n.l(record.created_at, format: :api) : value
       end
-
-      attrs.values_at(*columns(record_model(record)))
     end
 
-    def record_model(record)
-      record.class.name.demodulize.underscore.pluralize
-    end
-
-    def filename(table)
-      [folder, table, '.csv'].join
+    def filename(model)
+      [folder, model.table_name, '.csv'].join
     end
 
     def folder
