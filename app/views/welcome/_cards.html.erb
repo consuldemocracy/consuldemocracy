@@ -12,6 +12,30 @@
   </div>
 
   <div class="row" data-equalizer>
+    <!-- Vicálvaro -->
+    <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.vicalvaro.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.vicalvaro.date_html") %></p>
+        <p class="info">
+          <%= t("cards.vicalvaro.text") %>
+        </p>
+        <%= link_to t("cards.button"), vicalvaro_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
+    <!-- Villaverde -->
+    <div class="small-12 medium-4 column margin-top">
+      <div class="panel" data-equalizer-watch>
+        <h3><%= t("cards.villaverde.title") %></h3>
+        <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("cards.villaverde.date_html") %></p>
+        <p class="info">
+          <%= t("cards.villaverde.text") %>
+        </p>
+        <%= link_to t("cards.button"), villaverde_path, class: "button expanded margin-top" %>
+      </div>
+    </div>
+
     <!-- Publicidad exterior -->
     <div class="small-12 medium-4 column margin-top">
       <div class="panel" data-equalizer-watch>
@@ -20,7 +44,7 @@
         <p class="info">
           <%= t("cards.publicity.text") %>
         </p>
-        <%= link_to t("cards.publicity.button"), publicity_path, class: "button expanded margin-top" %>
+        <%= link_to t("cards.button"), publicity_path, class: "button expanded margin-top" %>
       </div>
     </div>
 
@@ -32,7 +56,7 @@
         <p class="info">
           <%= t("cards.buildings.text") %>
         </p>
-        <%= link_to t("cards.buildings.button"), buildings_path, class: "button expanded margin-top" %>
+        <%= link_to t("cards.button"), buildings_path, class: "button expanded margin-top" %>
       </div>
     </div>
   </div>
