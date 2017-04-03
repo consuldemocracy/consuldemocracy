@@ -11,7 +11,7 @@ class Vote < ActsAsVotable::Vote
     return false unless ["Proposal", "Debate", "Comment"].include? votable_type
     return false unless votable.present?
     return false if votable.hidden?
-    return false if votable_type == "Comment" && votable.commentable.hidden?
+    return false if votable_type == "Comment" && (votable.commentable.blank? || votable.commentable.hidden?)
     return false unless votable.public_for_api?
     return true
   end
