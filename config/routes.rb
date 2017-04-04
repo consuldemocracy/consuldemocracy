@@ -246,7 +246,7 @@ Rails.application.routes.draw do
   end
 
   namespace :valuation do
-    root to: "budgets#index"
+    root to: "budgets#index", as: "root"
 
     resources :spending_proposals, only: [:index, :show, :edit] do
       patch :valuate, on: :member
