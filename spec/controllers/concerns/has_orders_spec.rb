@@ -29,7 +29,7 @@ describe HasOrders do
   end
 
   it "displays relevance when searching" do
-    get :index, search: "ipsum"
+    get :index, params: { search: "ipsum" }
     expect(response.body).to eq("created_at (created_at votes_count flags_count relevance)")
   end
 
@@ -37,7 +37,7 @@ describe HasOrders do
     get :index
     # Since has_orders did valid_options.delete, the first call to :index might remove 'relevance' from
     # the list by mistake.
-    get :index, search: "ipsum"
+    get :index, params: { search: "ipsum" }
     expect(response.body).to eq("created_at (created_at votes_count flags_count relevance)")
   end
 
