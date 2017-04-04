@@ -68,7 +68,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(other_proceeding_proposal.title)
     end
 
-    scenario "Displays proposals of authors even if public activity is set to false", :focus do
+    scenario "Displays proposals of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -136,7 +136,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_debate.title)
     end
 
-    scenario "Displays debates of authors even if public activity is set to false", :focus do
+    scenario "Displays debates of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -206,7 +206,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(spending_proposal_comment.body)
     end
 
-    scenario "Displays comments of authors even if public activity is set to false", :focus do
+    scenario "Displays comments of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
