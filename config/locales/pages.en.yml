@@ -4,7 +4,7 @@ en:
     census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
-    more_information:
+    more_info:
       title: "Discover %{org_name}"
       subtitle: "Learn everything you can do on this website."
       guide: This guide explains each of the sections of %{org_name}. You can expand the information on "Detailed information" links.'
@@ -26,7 +26,7 @@ en:
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_information: "More information about %{org_name}"
+      more_info: "More information about %{org_name}"
       privacy: Privacy Policy
     verify:
       code: Code you received in letter
