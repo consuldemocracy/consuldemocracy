@@ -73,13 +73,6 @@
             <p><%= t("pages.processes.index.process_17_description") %></p>
             <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow" %>
           </div>
-
-          <!-- Rehabilitación edificios -->
-          <div class="panel">
-            <h3><%= t("pages.processes.index.process_16_title") %></h3>
-            <p><%= t("pages.processes.index.process_16_description") %></p>
-            <%= link_to t("pages.processes.index.process_16_button"), buildings_path, class: "button hollow" %>
-          </div>
         </div>
 
         <!-- Procesos próximamente -->
@@ -94,6 +87,13 @@
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Rehabilitación edificios -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_16_title") %></h3>
+            <p><%= t("pages.processes.index.process_16_description") %></p>
+            <%= link_to t("pages.processes.index.process_16_button"), buildings_path, class: "button hollow" %>
+          </div>
 
           <!-- Nueva Ordenanza Movilidad -->
           <div class="panel">
