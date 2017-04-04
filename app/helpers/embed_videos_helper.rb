@@ -2,6 +2,7 @@ module EmbedVideosHelper
 
   def embedded_video_code
     link = @proposal.video_url
+    title = t('proposals.show.embed_video_title', proposal: @proposal.title)
     if link.match(/vimeo.*/)
       server = "Vimeo"
     elsif link.match(/youtu*.*/)
@@ -21,7 +22,7 @@ module EmbedVideosHelper
     end
 
     if match and match[2]
-      '<iframe src="' + src + match[2] + '" frameborder="0" allowfullscreen></iframe>'
+      '<iframe src="' + src + match[2] + '" style="border:0;" allowfullscreen title="' + title + '"></iframe>'
     else
       ''
     end

@@ -25,13 +25,13 @@ es:
         unfeasible_title: Propuestas inviables
         unfeasible: Ver propuestas inviables
     phase:
-      accepting: Aceptando propuestas
-      reviewing: Revisando propuestas
-      selecting: Selección de propuestas
-      valuating: Evaluación de propuestas
-      balloting: Votación de propuestas
-      reviewing_ballots: Contando resultados
-      finished: Presupuesto terminado
+      accepting: Presentación de proyectos
+      reviewing: Revisión interna de proyectos
+      selecting: Fase de apoyos
+      valuating: Evaluación de proyectos
+      balloting: Votación final
+      reviewing_ballots: Votación finalizada
+      finished: Resultados
     index:
       title: Presupuestos participativos
     investments:

@@ -25,11 +25,11 @@ en:
         unfeasible_title: Unfeasible investments
         unfeasible: See unfeasible investments
     phase:
-      accepting: Accepting proposals
-      reviewing: Reviewing proposals
-      selecting: Selecting proposals
-      valuating: Valuating proposals
-      balloting: Balloting proposals
+      accepting: Accepting projects
+      reviewing: Reviewing projects
+      selecting: Selecting projects
+      valuating: Valuating projects
+      balloting: Balloting projects
       reviewing_ballots: Reviewing Ballots
       finished: Finished budget
     index:

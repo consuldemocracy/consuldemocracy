@@ -32,6 +32,7 @@ en:
       under_age: "You don't have the required age to verify your account."
       verify: Verify
     email_label: Email
+    date_of_birth: Date of birth
     email_verifications:
       already_verified: This user account is already verified.
       choose_options: 'Please choose one of the following options:'

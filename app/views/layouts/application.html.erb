@@ -20,9 +20,11 @@
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= setting['per_page_code'].try(:html_safe) %>
+    <%= setting['per_page_code_head'].try(:html_safe) %>
   </head>
   <body>
+    <%= setting['per_page_code_body'].try(:html_safe) %>
+
     <h1 class="sr-only"><%= setting['org_name'] %></h1>
 
     <div class="wrapper">
