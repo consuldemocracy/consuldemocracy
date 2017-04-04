@@ -68,7 +68,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(other_proceeding_proposal.title)
     end
 
-    scenario "Displays proposals of authors even if public activity is set to false", :focus do
+    scenario "Displays proposals of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -93,6 +93,19 @@ feature 'CSV Exporter' do
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
+    end
+
+    scenario "Leave dates other than created_at untouched" do
+      created_at = Time.new(2016, 12, 31, 9, 0, 0).in_time_zone(Time.zone)
+      retired_at = Time.new(2017, 12, 31, 9, 0, 0).in_time_zone(Time.zone)
+      create(:proposal, created_at: created_at, retired_at: retired_at)
+
+      @csv_exporter.export
+      visit csv_path_for("proposals")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to include(/#{created_at.strftime("%Y-%m-%d %H")}/)
+      expect(csv).to include(/#{retired_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
   end
@@ -136,7 +149,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(hidden_debate.title)
     end
 
-    scenario "Displays debates of authors even if public activity is set to false", :focus do
+    scenario "Displays debates of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 
@@ -206,7 +219,7 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(spending_proposal_comment.body)
     end
 
-    scenario "Displays comments of authors even if public activity is set to false", :focus do
+    scenario "Displays comments of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
 

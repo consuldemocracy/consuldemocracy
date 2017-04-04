@@ -41,9 +41,9 @@ class API::CSVExporter
     end
 
     def public_attributes(record)
-      record.attributes.values_at(*record.class.public_columns_for_api).map do |value|
-        value.is_a?(DateTime) ? I18n.l(record.created_at, format: :api) : value
-      end
+      attrs = record.attributes.dup
+      attrs["created_at"] = I18n.l(attrs["created_at"], format: :api) if attrs["created_at"]
+      attrs.values_at(*record.class.public_columns_for_api)
     end
 
     def filename(model)
