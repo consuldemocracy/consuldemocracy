@@ -60,25 +60,35 @@ feature 'Valuation budget investments' do
     expect(investment10.title).to appear_before(investment1.title)
   end
 
-  scenario 'Index displays a maximum of 5 investments and no pagination' do
+  scenario 'Index displays a maximum of 10 investments and no pagination' do
     investment10  = create(:budget_investment,  budget: @budget, cached_votes_up: 10)
     investment100 = create(:budget_investment,  budget: @budget, cached_votes_up: 100)
+    investment90  = create(:budget_investment,  budget: @budget, cached_votes_up: 90)
+    investment80  = create(:budget_investment,  budget: @budget, cached_votes_up: 80)
+    investment70  = create(:budget_investment,  budget: @budget, cached_votes_up: 70)
+    investment60  = create(:budget_investment,  budget: @budget, cached_votes_up: 60)
     investment1   = create(:budget_investment,  budget: @budget, cached_votes_up: 1)
-    investment50   = create(:budget_investment, budget: @budget, cached_votes_up: 50)
-    investment30   = create(:budget_investment, budget: @budget, cached_votes_up: 30)
-    investment20   = create(:budget_investment, budget: @budget, cached_votes_up: 20)
+    investment50  = create(:budget_investment, budget: @budget, cached_votes_up: 50)
+    investment40  = create(:budget_investment, budget: @budget, cached_votes_up: 40)
+    investment30  = create(:budget_investment, budget: @budget, cached_votes_up: 30)
+    investment20  = create(:budget_investment, budget: @budget, cached_votes_up: 20)
 
-    investment1.valuators   << @valuator
-    investment10.valuators  << @valuator
-    investment100.valuators << @valuator
-    investment50.valuators  << @valuator
-    investment30.valuators  << @valuator
-    investment20.valuators  << @valuator
+
+
+    [investment100, investment90, investment80, investment70, investment60, investment50,
+     investment40, investment30, investment20, investment10, investment1].each do |i|
+      i.valuators << @valuator
+    end
 
     visit valuation_budget_budget_investments_path(@budget)
 
     expect(page).to have_content(investment100.title)
+    expect(page).to have_content(investment90.title)
+    expect(page).to have_content(investment80.title)
+    expect(page).to have_content(investment70.title)
+    expect(page).to have_content(investment60.title)
     expect(page).to have_content(investment50.title)
+    expect(page).to have_content(investment40.title)
     expect(page).to have_content(investment30.title)
     expect(page).to have_content(investment20.title)
     expect(page).to have_content(investment10.title)
