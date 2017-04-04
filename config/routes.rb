@@ -71,9 +71,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'presupuestos/faq',     to: 'pages#show', id: 'budgets/faq',      as: 'budgets_faq'
-  get 'presupuestos',         to: 'pages#show', id: 'budgets/welcome',  as: 'budgets_welcome'
-  get 'participatory_budget', to: 'pages#show', id: 'budgets/welcome',  as: 'participatory_budget'
+  get 'presupuestos',                        to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
+  get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
   get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'budgets/welcome'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
@@ -473,25 +472,30 @@ Rails.application.routes.draw do
   get 'proceso/distrito-vicalvaro',                     to: 'pages#show', id: 'processes/vicalvaro/index',        as: 'vicalvaro'
   get 'proceso/distrito-villaverde',                    to: 'pages#show', id: 'processes/villaverde/index',       as: 'villaverde'
 
-  #Budgets meetings
-  get 'budgets/meetings/2016', to: 'pages#show', id: 'budgets/meetings/2016', as: 'budgets_meetings_2016'
-  get 'budgets/meetings/2017', to: 'pages#show', id: 'budgets/meetings/2017', as: 'budgets_meetings_2017'
-
-  #Campaña Blas Bonilla
-  get 'haz-propuestas',                             to: 'pages#show', id: 'blas_bonilla', as: 'blas_bonilla'
-
   #Landings
-  get 'vota',  to: 'polls#results_2017',  as: 'first_voting'
-  get 'g1000', to: 'pages#show', id: 'landings/g1000',        as: 'g1000'
-
-  #More information pages
-  get 'mas-informacion',             to: 'pages#show', id: 'more_information',       as: 'more_info'
-  get 'mas-informacion/votaciones',  to: 'pages#show', id: 'more_information/polls', as: 'more_info_polls'
+  get 'g1000',            to: 'pages#show',         id: 'landings/g1000', as: 'g1000'
+  get 'haz-propuestas',   to: 'pages#show',         id: 'blas_bonilla',   as: 'blas_bonilla'
 
   #Polls 2017 results & stats
   get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
+  get 'vota',                                    to: 'polls#results_2017',  as: 'first_voting'
+
+  # more information pages
+  get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',                 as: 'more_info'
+  get 'mas-informacion/como-usar',                   to: 'pages#show', id: 'more_info/how_to_use/index',      as: 'how_to_use'
+  get 'mas-informacion/faq',                         to: 'pages#show', id: 'more_info/faq/index',             as: 'faq'
+  get 'mas-informacion/propuestas',                  to: 'pages#show', id: 'more_info/proposals/index',       as: 'more_info_proposals'
+  get 'mas-informacion/presupuestos-participativos', to: 'pages#show', id: 'more_info/budgets/index',         as: 'more_info_budgets'
+  get 'mas-informacion/participacion/hechos',        to: 'pages#show', id: 'more_info/participation/facts',   as: 'participation_facts'
+  get 'mas-informacion/participacion/mundo',         to: 'pages#show', id: 'more_info/participation/world',   as: 'participation_world'
+  get 'mas-informacion/votaciones',                  to: 'pages#show', id: 'more_info/polls/index',           as: 'more_info_polls'
+  get 'mas-informacion/kit-decide',                  to: 'pages#show', id: 'more_info/kit_decide/index',      as: 'kit_decide'
+  get 'mas-informacion/espacios-presenciales-2016',  to: 'pages#show', id: 'more_info/budgets/meetings_2016', as: 'budgets_meetings_2016'
+  get 'mas-informacion/espacios-presenciales-2017',  to: 'pages#show', id: 'more_info/budgets/meetings_2017', as: 'budgets_meetings_2017'
+  get 'mas-informacion/derechos-humanos',            to: 'pages#show', id: 'more_info/participation/ddhh',    as: 'more_info_human_rights'
+  get 'mas-informacion/gobierno-abierto',            to: 'pages#show', id: 'more_info/participation/open',    as: 'participation_open_government'
 
   resources :pages, path: '/', only: [:show]
 end

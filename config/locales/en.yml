@@ -217,7 +217,6 @@ en:
       copyright: Ayuntamiento de Madrid, %{year}
       description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
       faq: technical assistance
-      more_info: More information
       open_data_text: Every detail about the City Council is yours to access.
       open_data_title: Open data
       opendata_url: http://datos.madrid.es

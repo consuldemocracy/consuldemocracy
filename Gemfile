@@ -3,19 +3,19 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 # Use PostgreSQL
-gem 'pg', '~> 0.19.0'
+gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem "animate-rails"
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 3.1.6'
+gem 'uglifier', '~> 3.1.9'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 4.2.2'
+gem 'jquery-rails', '~> 4.3.1'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -29,10 +29,10 @@ gem 'devise_security_extension'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-facebook', '~> 3.0.0'
+gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
-gem 'kaminari'
+gem 'kaminari', '~> 1.0.1'
 gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.3.0'
@@ -49,16 +49,16 @@ gem 'paranoia', '~> 2.2.1'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
-gem 'rollbar', '~> 2.14.0'
+gem 'rollbar', '~> 2.14.1'
 gem 'delayed_job_active_record', '~> 4.1.0'
 gem 'daemons'
 gem 'devise-async'
-gem 'newrelic_rpm', '~> 3.18.1.330'
+gem 'newrelic_rpm', '~> 4.0.0.332'
 gem 'whenever', require: false
 gem 'pg_search'
 gem 'sitemap_generator', '~> 5.3.1'
 
-gem 'ahoy_matey', '~> 1.5.3'
+gem 'ahoy_matey', '~> 1.5.5'
 gem 'groupdate', '~> 3.2.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
@@ -74,14 +74,14 @@ group :development, :test do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.5'
-  gem 'capybara', '~> 2.12.1'
+  gem 'capybara', '~> 2.13.0'
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'i18n-tasks', '~> 0.9.12'
-  gem 'capistrano', '~> 3.7.2',           require: false
+  gem 'capistrano', '~> 3.8.0',           require: false
   gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '~> 1.2.3',     require: false
   gem 'rvm1-capistrano3',              require: false
@@ -94,7 +94,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'poltergeist', '~> 1.13.0'
+  gem 'poltergeist', '~> 1.14.0'
   gem 'coveralls', '~> 0.8.19', require: false
   gem 'email_spec'
   gem 'timecop'
