@@ -95,6 +95,19 @@ feature 'CSV Exporter' do
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
     end
 
+    scenario "Leave dates other than created_at untouched" do
+      created_at = Time.new(2016, 12, 31, 9, 0, 0).in_time_zone(Time.zone)
+      retired_at = Time.new(2017, 12, 31, 9, 0, 0).in_time_zone(Time.zone)
+      create(:proposal, created_at: created_at, retired_at: retired_at)
+
+      @csv_exporter.export
+      visit csv_path_for("proposals")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to include(/#{created_at.strftime("%Y-%m-%d %H")}/)
+      expect(csv).to include(/#{retired_at.strftime("%Y-%m-%d %H:%M")}/)
+    end
+
   end
 
   context "Debates" do
