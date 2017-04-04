@@ -861,7 +861,7 @@ pt-BR:
       locale: 'Idioma:'
       logo: Consul logotipo
       moderation: Moderação
-      more_information: Mais informações
+      more_info: Mais informações
       my_account_link: Minha conta
       my_activity_link: Minha atividade
       new_notifications:
@@ -1148,7 +1148,7 @@ pt-BR:
       mencionado previamente nos termos e condições de uso deste Portal.
     conditions: Termos e condições de uso
     general_terms: Termos e condições
-    more_information:
+    more_info:
       description:
         faq: Perguntas frequentes feitas sobre problemas técnicos
         how_it_works: Descubra tudo que você pode fazer com este website.
@@ -1247,7 +1247,7 @@ pt-BR:
     titles:
       accessibility: Acessibilidade
       conditions: Termos de uso
-      more_information: Mais informações
+      more_info: Mais informações
       opendata: Dados abertos
       privacy: Política de privacidade
     verify:
@@ -1640,7 +1640,7 @@ pt-BR:
         link: Mostrar propostas
         text: Criar suas próprias propostas e apoiar aquelas de outros cidadãos
         title: Propostas cidadãs
-    more_information: Mais informações sobre esta página
+    more_info: Mais informações sobre esta página
     proposal:
       alt: "Ícone proposta"
       description: Espaço aberto para propostas cidadãs sobre o tipo de cidade dentro da qual nós queremos viver.

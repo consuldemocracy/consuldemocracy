@@ -31,7 +31,7 @@ describe PagesController do
 
   describe 'More info pages' do
 
-    it 'should include a more_information page' do
+    it 'should include a more info page' do
       get :show, id: 'more_info/index'
       expect(response).to be_ok
     end
