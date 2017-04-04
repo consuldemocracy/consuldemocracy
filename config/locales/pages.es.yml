@@ -7,12 +7,49 @@ es:
     more_info:
       title: "Descubre %{org_name}"
       subtitle: "Aprende todo lo que puedes hacer en esta web."
-      guide: 'Esta guía explica de cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
       menu:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
         other: "Otra información de interés"
+      debates:
+        title: "Debates"
+        description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de gente de tu ciudad."
+        feature_1: "Para crear un debate tienes que %{link}"
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Los debates pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
+        image_alt: "Botones para valorar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
+      proposals:
+        title: "Propuestas"
+        description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
+        detail: "Información detallada de Propuestas"
+        feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en Madrid; 27.064 apoyos) pasan a votación."
+        feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
+        image_alt: "Botón para apoyar una propuesta"
+        figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
+      budgets:
+        title: "Presupuestos participativos"
+        description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
+        detail: "Información detallada de Presupuestos participativos"
+        feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "En primer lugar empieza la <strong>fase de aceptación</strong> de proyectos de gasto."
+        feature_3_html: "Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen."
+        feature_4_html: "Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto."
+        image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lee las preguntas frecuentes y resuelve tus dudas."
+        button: "Ver preguntas frecuentes"
+      other:
+        how_to_use: "Utiliza %{org_name} en tu municipio"
+        world: "Participación ciudadana directa en el mundo"
+        facts: "Hechos sobre participación ciudadana y democracia directa"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.

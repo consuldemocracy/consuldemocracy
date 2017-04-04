@@ -1,20 +1,26 @@
 <div class="row section-content">
   <div class="small-12 column">
-    <h3 id="budgets" data-magellan-target="budgets">Presupuestos participativos</h3>
+    <h3 id="budgets" data-magellan-target="budgets">
+      <%= t("pages.more_info.budgets.title") %>
+    </h3>
     <p>
-      <%= link_to "Información detallada de Presupuestos participativos", more_info_budgets_path, class: "small" %>
+      <%= link_to t("pages.more_info.budgets.detail"), more_info_budgets_path, class: "small" %>
     </p>
-    <p>Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto.</p>
+    <p><%= t("pages.more_info.budgets.description") %></p>
     <ul class="features">
-      <li>Para crear un proyecto de gasto tienes que <%= link_to "registrarte en " + setting['org_name'], new_user_registration_path %> y verificar tu cuenta.</li>
-      <li>En primer lugar empieza la <strong>fase de aceptación</strong> de proyectos de gasto.</li>
-      <li>Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen.</li>
-      <li>Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto.</li>
+      <li>
+        <%= t("pages.more_info.budgets.feature_1",
+              link: link_to(t("pages.more_info.budgets.feature_1_link", org_name: setting['org_name']),
+                               new_user_registration_path)).html_safe %>
+      </li>
+      <li><%= t("pages.more_info.budgets.feature_2_html") %></li>
+      <li><%= t("pages.more_info.budgets.feature_3_html") %></li>
+      <li><%= t("pages.more_info.budgets.feature_4_html") %></li>
     </ul>
 
     <figure>
-      <%= image_tag "more_info/budgets.png", alt: "Diferentes fases de un presupuesto participativo" %>
-      <figcaption>Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.</figcaption>
+      <%= image_tag "more_info/budgets.png", alt: t("pages.more_info.budgets.image_alt") %>
+      <figcaption><%= t("pages.more_info.budgets.figcaption_html") %></figcaption>
     </figure>
   </div>
 </div>
