@@ -430,8 +430,9 @@ Rails.application.routes.draw do
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
-  get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
-  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
+  get 'presupuestos-participativos-resultados',   to: 'spending_proposals#results',                    as: 'participatory_budget_results'
+  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats',                      as: 'participatory_budget_stats'
+  get 'participatory_budget_info',                to: 'pages#show', id: 'more_info/budgets/info_2016', as: 'more_info_budgets_2016'
 
   #Probes
   get 'processes/urbanismo-bancos',         to: 'probes#show',    id: 'town_planning',   as: 'town_planning'
