@@ -456,7 +456,7 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
 
   #Processes
-  get 'procesos',                                       to: 'pages#show', id: 'processes',                        as: 'processes'
+  get 'procesos',                                       to: 'pages#show', id: 'processes/index',                  as: 'processes'
   get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
   get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
   get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
