@@ -56,7 +56,7 @@ class Admin::StatsController < Admin::BaseController
   end
 
   def budget_investments
-    votes = Vote.for_budget_investments(Budget::Investment.all)
+    votes = Vote.where(votable_type: 'Budget::Investment').count
     @vote_count = votes.count
     @participant_count = votes.select(:voter_id).distinct.count
 
