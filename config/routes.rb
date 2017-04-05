@@ -432,25 +432,25 @@ Rails.application.routes.draw do
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
-  #get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
 
   #Probes
-  get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
-  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
-  get 'proceso/plaza-espana-resultados', to: 'probes#show', id: 'plaza', as: 'plaza'
-  get 'proceso/plaza-espana',            to: 'probes#show', id: 'plaza'
-  get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
-  get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza', as: 'plaza_probe_option'
+  get 'processes/urbanismo-bancos',         to: 'probes#show',    id: 'town_planning',   as: 'town_planning'
+  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks',  id: 'town_planning',   as: 'town_planning_thanks'
 
-  get 'proceso/plaza-espana-informacion',  to: 'pages#show',   id: 'processes_plaza_espana',            as: 'remodeling_plaza'
-  get 'proceso/plaza-espana-estadisticas', to: 'pages#show',   id: 'encuesta-plaza-espana-resultados',  as: 'survey_plaza'
+  get 'proceso/plaza-espana-resultados',    to: 'probes#show',    id: 'plaza',                   as: 'plaza'
+  get 'proceso/plaza-espana',               to: 'probes#show',    id: 'plaza'
+  get 'proceso/plaza-espana-gracias',       to: 'probes#thanks',  id: 'plaza',                   as: 'plaza_thanks'
+  get 'proceso/plaza-espana-informacion',   to: 'pages#show',     id: 'plaza_espana/info',       as: 'remodeling_plaza'
+  get 'proceso/plaza-espana-debates',       to: 'pages#show',     id: 'plaza_espana/debates',    as: 'plaza_debates'
+  get 'proceso/plaza-espana-faq',           to: 'pages#show',     id: 'plaza_espana/faq',        as: 'plaza_faq'
+  get 'proceso/plaza-espana-estadisticas',  to: 'pages#show',     id: 'plaza_espana/results',    as: 'survey_plaza'
+  get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza',         as: 'plaza_probe_option'
 
   #Human Rights
   get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',      as: 'human_rights_page'
   get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan', as: 'human_rights_plan'
   get 'derechos-humanos/medidas',          to: 'human_rights#index',                            as: 'human_rights_proposals'
   get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                             as: 'human_rights_proposal'
-
   get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2'
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3'
 
