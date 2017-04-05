@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"
