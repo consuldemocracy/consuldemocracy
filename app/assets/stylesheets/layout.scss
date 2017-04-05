@@ -1167,7 +1167,8 @@ table {
 
 .button.button-twitter,
 .button.button-facebook,
-.button.button-google {
+.button.button-google,
+.button.button-telegram {
   background: white;
   color: $text;
   font-weight: bold;
@@ -1303,6 +1304,48 @@ table {
   }
 }
 
+.button.button-telegram {
+  background: #ECF7FC;
+  border-left: 3px solid #0088cc;
+
+  &:before {
+    color: #0088cc;
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.ssb-telegram {
+  background: #0088cc;
+  background-image: none !important;
+  color: white;
+  height: $line-height*2 !important;
+  position: relative;
+  width: $line-height*2 !important;
+
+  &:before {
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover, &:focus {
+    background: white;
+    color: #40A2D1;
+  }
+}
+
 .social {
 
   a {
@@ -1392,6 +1435,30 @@ table {
     &:hover, &:focus {
       background: white;
       color: #CE3E26;
+    }
+  }
+
+  .ssb-telegram {
+    background: #0088cc;
+    color: white;
+    height: $line-height;
+    position: relative;
+    width: $line-height*2;
+
+    &:before {
+      content: "A";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover, &:focus {
+      background: white;
+      color: #40A2D1;
     }
   }
 }

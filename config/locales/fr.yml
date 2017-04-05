@@ -1395,6 +1395,8 @@ fr:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
+    telegram: Telegram
   social_share_button:
     baidu: Baidu.com
     delicious: Delicious
@@ -1413,6 +1415,7 @@ fr:
     tumblr: Tumblr
     twitter: Twitter
     weibo: Sina Weibo
+    telegram: Telegram
   spending_proposals:
     form:
       description: Description
