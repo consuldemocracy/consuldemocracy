@@ -430,7 +430,6 @@ Rails.application.routes.draw do
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
   get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
-  get 'noticias', to: 'pages#show', id: 'news'
   get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
   #get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
@@ -479,8 +478,10 @@ Rails.application.routes.draw do
   get 'proceso/cartas-de-servicios/5',                  to: 'pages#show', id: 'processes/service_letters/5',      as: 'service_letters_5'
 
   #Landings
-  get 'g1000',            to: 'pages#show',         id: 'landings/g1000', as: 'g1000'
-  get 'haz-propuestas',   to: 'pages#show',         id: 'blas_bonilla',   as: 'blas_bonilla'
+  get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'
+  get 'haz-propuestas',  to: 'pages#show', id: 'landings/blas_bonilla',     as: 'blas_bonilla'
+  get 'sitesientesgato', to: 'pages#show', id: 'landings/sitesientesgato'
+  get 'noticias',        to: 'pages#show', id: 'landings/news'
 
   #Polls 2017 results & stats
   get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'
