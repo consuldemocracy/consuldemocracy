@@ -429,7 +429,6 @@ Rails.application.routes.draw do
   get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
-  get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
   get 'presupuestos-participativos-resultados',   to: 'spending_proposals#results',                    as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats',                      as: 'participatory_budget_stats'
   get 'participatory_budget_info',                to: 'pages#show', id: 'more_info/budgets/info_2016', as: 'more_info_budgets_2016'
@@ -457,10 +456,10 @@ Rails.application.routes.draw do
 
   #Processes
   get 'procesos',                                       to: 'pages#show', id: 'processes/index',                  as: 'processes'
-  get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
-  get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
-  get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
-  get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
+  get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic/index',       as: 'urbanistic_licenses'
+  get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government/index',  as: 'open_government'
+  get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government/doc',    as: 'open_government_doc'
+  get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention/index',       as: 'subvention_ordinance'
   get 'proceso/plan-calidad-aire',                      to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
   get 'proceso/rotulacion-vias',                        to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
   get 'proceso/distrito-villa-de-vallecas',             to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
@@ -476,6 +475,9 @@ Rails.application.routes.draw do
   get 'proceso/cartas-de-servicios/3',                  to: 'pages#show', id: 'processes/service_letters/3',      as: 'service_letters_3'
   get 'proceso/cartas-de-servicios/4',                  to: 'pages#show', id: 'processes/service_letters/4',      as: 'service_letters_4'
   get 'proceso/cartas-de-servicios/5',                  to: 'pages#show', id: 'processes/service_letters/5',      as: 'service_letters_5'
+  get 'proceso/pleno-abierto',                          to: 'pages#show', id: 'processes/open_plenary/index',     as: 'open_plenary'
+  get 'proceso/ordenanza-de-transparencia',             to: 'pages#show', id: 'processes/transparency/index',     as: 'transparency_ordinance'
+  get 'proceso/ordenanza-de-transparencia/borrador',    to: 'pages#show', id: 'processes/transparency/draft',     as: 'transparency_ordinance_draft'
 
   #Landings
   get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'

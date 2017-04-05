@@ -8,10 +8,10 @@
 
 <% if Time.now.in_time_zone <= DateTime.new(2016,4,21) %>
 
-  <%= render "open_plenary_active" %>
+  <%= render "pages/processes/open_plenary/active" %>
 
 <% else %>
 
-  <%= render "open_plenary_closed" %>
+  <%= render "pages/processes/open_plenary/closed" %>
 
 <% end %>
