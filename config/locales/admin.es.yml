@@ -110,6 +110,7 @@ es:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
+        max_per_heading: Corte por partida
         filters:
           valuation_open: Abiertos
           without_admin: Sin administrador
