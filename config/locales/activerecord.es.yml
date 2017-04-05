@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -113,6 +113,10 @@ es:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
         proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        budget/investment:
           attributes:
             tag_list:
               less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
