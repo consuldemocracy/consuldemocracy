@@ -26,7 +26,7 @@ class Signature < ActiveRecord::Base
   def assign_vote
     if user_exists?
       assign_vote_to_user
-    else
+    elsif in_census?
       create_user
       assign_vote_to_user
     end
@@ -55,7 +55,10 @@ class Signature < ActiveRecord::Base
       erased_at: Time.now,
       password: random_password,
       terms_of_service: '1',
-      email: nil
+      email: nil,
+      date_of_birth: @census_api_response.date_of_birth,
+      gender: @census_api_response.gender,
+      geozone: Geozone.where(census_code: @census_api_response.district_code).first
     }
     User.create!(user_params)
   end
@@ -70,10 +73,17 @@ class Signature < ActiveRecord::Base
   end
 
   def in_census?
-    response = document_types.detect do |document_type|
-      CensusApi.new.call(document_type, document_number).valid?
+    document_types.detect do |document_type|
+      response = CensusApi.new.call(document_type, document_number)
+      if response.valid?
+        @census_api_response = response
+        true
+      else
+        false
+      end
     end
-    response.present?
+
+    @census_api_response.present?
   end
 
   def set_user

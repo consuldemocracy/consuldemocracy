@@ -118,6 +118,7 @@ describe Signature do
     describe "inexistent user" do
 
       it "creates a user with that document number" do
+        create(:geozone, census_code: "01")
         signature = create(:signature, document_number: "12345678Z")
         proposal = signature.signable
 
@@ -128,6 +129,9 @@ describe Signature do
         expect(user.created_from_signature).to eq(true)
         expect(user.verified_at).to be
         expect(user.erased_at).to be
+        expect(user.geozone).to be
+        expect(user.gender).to be
+        expect(user.date_of_birth).to be
       end
 
       it "assign the vote to newly created user" do
