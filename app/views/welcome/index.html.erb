@@ -3,7 +3,7 @@
 <% provide :meta_keywords, t("meta_tags.welcome_index.keywords") %>
 <% provide :tracking_page_number, "23" %>
 
-<% cache ["welcome_index_20170404", user_signed_in?] do %>
+<% cache ["welcome_index_20170405", user_signed_in?] do %>
   <div class="welcome">
     <div class="no-margin-top">
       <%= render "budgets_module" %>
@@ -20,7 +20,7 @@
         <div class="small-12 medium-8 column small-centered text-center">
           <p><%= t("layouts.header.open_city_slogan_html") %></p>
             <%= link_to t("welcome.more_information", org_name: setting['org_name']),
-                        page_path('more_information'), class: "button" %>
+                        more_info_path, class: "button" %>
         </div>
       </div>
     </div>
