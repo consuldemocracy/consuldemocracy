@@ -1,8 +1,9 @@
 class SiteCustomization::Page < ActiveRecord::Base
   VALID_STATUSES = %w(draft published)
 
-  validates :slug, uniqueness: { case_sensitive: false },
-                 format: { with: /\A[0-9a-zA-Z\-_]*\Z/, message: :slug_format }
+  validates :slug, presence: true,
+                   uniqueness: { case_sensitive: false },
+                   format: { with: /\A[0-9a-zA-Z\-_]*\Z/, message: :slug_format }
   validates :title, presence: true
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
