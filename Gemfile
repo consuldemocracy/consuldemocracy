@@ -83,6 +83,7 @@ group :development, :test do
   gem "capistrano-rails", '~> 1.2.3',     require: false
   gem 'rvm1-capistrano3',              require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
+  gem 'selenium-webdriver', require: false
   gem "bullet", '~> 5.5.1'
   gem "faker", '~> 1.7.3'
   gem 'rubocop', '~> 0.47.1', require: false
