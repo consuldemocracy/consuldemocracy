@@ -471,6 +471,12 @@ Rails.application.routes.draw do
   get 'proceso/ordenanza-publicidad-exterior',          to: 'pages#show', id: 'processes/publicity/index',        as: 'publicity'
   get 'proceso/distrito-vicalvaro',                     to: 'pages#show', id: 'processes/vicalvaro/index',        as: 'vicalvaro'
   get 'proceso/distrito-villaverde',                    to: 'pages#show', id: 'processes/villaverde/index',       as: 'villaverde'
+  get 'proceso/cartas-de-servicios',                    to: 'pages#show', id: 'processes/service_letters/index',  as: 'service_letters'
+  get 'proceso/cartas-de-servicios/1',                  to: 'pages#show', id: 'processes/service_letters/1',      as: 'service_letters_1'
+  get 'proceso/cartas-de-servicios/2',                  to: 'pages#show', id: 'processes/service_letters/2',      as: 'service_letters_2'
+  get 'proceso/cartas-de-servicios/3',                  to: 'pages#show', id: 'processes/service_letters/3',      as: 'service_letters_3'
+  get 'proceso/cartas-de-servicios/4',                  to: 'pages#show', id: 'processes/service_letters/4',      as: 'service_letters_4'
+  get 'proceso/cartas-de-servicios/5',                  to: 'pages#show', id: 'processes/service_letters/5',      as: 'service_letters_5'
 
   #Landings
   get 'g1000',            to: 'pages#show',         id: 'landings/g1000', as: 'g1000'
