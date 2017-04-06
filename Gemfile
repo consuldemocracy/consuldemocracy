@@ -52,7 +52,6 @@ gem 'savon'
 gem 'dalli'
 gem 'rollbar', '~> 2.14.1'
 gem 'daemons'
-#gem 'devise-async'# , '~> 0.10',git: 'git@github.com:swapnilchincholkar/devise-async.git', branch: 'devise4x'
 gem 'newrelic_rpm', '~> 4.0.0.332'
 gem 'whenever', require: false
 gem 'pg_search'
