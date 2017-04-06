@@ -20,6 +20,8 @@ es:
     facebook_handle: "Identificador de Facebook"
     youtube_handle: "Usuario de Youtube"
     blog_url: "URL del blog"
+    transparency_url: "URL de transparencia"
+    opendata_url: "URL de open data"
     url: "URL general de la web"
     org_name: "Nombre de la organización"
     place_name: "Nombre del lugar"

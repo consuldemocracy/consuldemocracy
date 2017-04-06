@@ -20,6 +20,8 @@ en:
     facebook_handle: "Facebook handle"
     youtube_handle: "Youtube handle"
     blog_url: "Blog URL"
+    transparency_url: "Transparency URL"
+    opendata_url: "Open Data URL"
     url: "Main URL"
     org_name: "Organization"
     place_name: "Place"
