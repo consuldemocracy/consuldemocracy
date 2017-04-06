@@ -62,7 +62,7 @@ class Budget
     before_validation :set_denormalized_ids
 
     def self.filter_params(params)
-      params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
+      params.permit(%i(heading_id group_id administrator_id tag_name valuator_id))
     end
 
     def self.scoped_filter(params, current_filter)
