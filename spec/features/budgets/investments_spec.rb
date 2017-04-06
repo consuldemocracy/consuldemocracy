@@ -315,6 +315,20 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario "Author can destroy while on the accepting phase" do
+      user = create(:user, :level_two)
+      sp1 = create(:budget_investment, heading: heading, price: 10000, author: user)
+
+      login_as(user)
+      visit user_path(user, tab: :budget_investments)
+
+      within("#budget_investment_#{sp1.id}") do
+        expect(page).to have_content(sp1.title)
+        click_link('Delete')
+      end
+
+      visit user_path(user, tab: :budget_investments)
+    end
   end
 
   context "Selecting Phase" do
@@ -391,7 +405,7 @@ feature 'Budget Investments' do
       budget.update(phase: "valuating")
     end
 
-    scenario "Sidebar in show should display supports text and supports" do
+    scenario "Sidebar in show should display support text and count" do
       investment = create(:budget_investment, :selected, budget: budget)
       create(:vote, votable: investment)
 
@@ -403,13 +417,25 @@ feature 'Budget Investments' do
       end
     end
 
-    scenario "Index should display supports" do
-      investment = create(:budget_investment, :selected, budget: budget, heading: heading)
+    scenario "Index should display support count" do
+      investment = create(:budget_investment, budget: budget, heading: heading)
       create(:vote, votable: investment)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "1 support"
+      end
+    end
+
+    scenario "Show should display support text and count" do
+      investment = create(:budget_investment, budget: budget, heading: heading)
+      create(:vote, votable: investment)
+
+      visit budget_investment_path(budget, investment)
+
+      within("#budget_investment_#{investment.id}") do
+        expect(page).to have_content "Supports"
         expect(page).to have_content "1 support"
       end
     end
@@ -475,6 +501,8 @@ feature 'Budget Investments' do
 
       expect(page).to have_content "€10,000"
     end
+
+
 
     scenario "Sidebar in show should display vote text" do
       investment = create(:budget_investment, :selected, budget: budget)

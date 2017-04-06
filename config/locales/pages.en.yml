@@ -4,42 +4,52 @@ en:
     census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
     conditions: Terms and conditions of use
     general_terms: Terms and Conditions
-    more_information:
-      description:
-        faq: Frecuently asked question about tecnical problems
-        how_it_works: Find out all you can do with this web site
-        how_to_use: Use it freely or help us to improve it, it is free software
-        participation: Citizen participation, transparency and open government
-        participation_facts: To lose your fear
-        participation_world: Systems of citizen participation that exist in the world
-        proposals_info: Create your own proposals
-        signature_sheet: Sheet collecting signatures for support
-        spending_proposals_info: Create your own spending proposals
-      how_it_works:
-        i: Participation
-        i1: Debates area
-        i2: Proposals area
-        text: |-
-          The new Open Government Portal is divided in three parts: Participation, Transparency and Open Data (you can see the links in the upper right-hand part).
-          >**I. Participation:** In this part we can decide which city we want (using citizen proposals, debate areas, participatory budgets , collaborative legislation, and many others we will implement).
-          **II. Transparency:** In this part information about how the city is managed will be published every day: name, position, salary, contracts, agenda,... of the persons in charge. It is also the place where exercise your right to access information, having the chance to request any information about City Council easily and rapidly.
-          **III. Open data:** In this part the city council databases are posted, so that anyone can use information directly, without having to ask. It can also be requested the publication of more databases.
-
-          We have opened the new Participation portal and we will open the new Transparency and Open Data seccion shortly (meanwhile the links to existing sites are kept).
-          ## <a id='i'></a> I. Participation
-          The participation section will have different ways to participate: citizen proposals, debate areas, participatory budgets , collaborative legislation, and many others. You can currently visit the debate area and the citizen proposals will be ready very soon.
-          ## <a id='i1'></a>I.I. Debates area
-          In the debates area everyone can open a discussion thread about any topic, creating an independent space where people could debate about the proposed topic. In this way, in this digital space there will be hundreds of different debate spaces which citizens could see, joining the ones they find more interesting.
-
-          Both threads and comments could be valued by anyone, so the citizenship, and not someone in its name, will decide which are the most important issues in every moment. These will be showed in the main page of the space, being able to access also the rest of issues in following pages, or using others order criteria (the most commented, the newst, the most controversial, etc.).
-
-          Every city council employee has its own user, which will be designated as such, allowing them to participate in debates at the same level than the rest of citizens. That will allow creating direct communication spaces between them, avoiding the problems that implies the measured communication, and following clear approach of the new City Council by virtue of which the city council works for the citizenship.
-          ## <a id='i2'></a> I.I. Proposals area
-          In the proposals area everyone can propose an initiative with the intention of collecting support enough for the idea being consulting to the whole citizenship with binding effect.
-
-          The proposals can be supported by every citizen registered that has verified their account in the participation platform. In this way, the citizenship, and not someone in its name, will decide which are the proposals that are worthwhile to carry out.
-
-          One that the proposal has achive support of 1% census, it will be studied by a city council group and to move beyond the popular referendum phase, in which citizenship will vote if it is carried out or not. The maximum period to obtain support enough is 12 months.
+    more_info:
+      title: "Discover %{org_name}"
+      subtitle: "Learn everything you can do on this website."
+      guide: 'This guide explains each section of %{org_name}. You can expand the information on "Detailed information" links.'
+      menu:
+        debates: "Debates"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        other: "Other information of interest"
+      debates:
+        title: "Debates"
+        description: "Create a thread where you can discuss any topic you want to share with other people in your city."
+        feature_1: "To create a debate you have to %{link}"
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "Debates can be rated using the <strong>I agree</strong> or <strong>I disagree</strong> buttons you'll find on each of them."
+        image_alt: "Buttons to rate the debates"
+        figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
+      proposals:
+        title: "Proposals"
+        description: "Propose what you want the City Council to carry out and support proposals from other people."
+        detail: "Detailed information of proposals"
+        feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
+        feature_3_html: "If there are more people in favor of against, <strong>the City Council assumes the proposal and it is done</strong>."
+        image_alt: "Button to support a proposal"
+        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
+      budgets:
+        title: "Participatory Budgeting"
+        description: "The first six months of each year you can decide how to spend part of the budget."
+        detail: "Detailed information of Participatory Budgeting"
+        feature_1: "To create an investment project you have to %{link} and verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "The first is the <strong>accepting phase</strong> of investment projects."
+        feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
+        feature_4_html: "At the end there is a <strong>voting phase </strong> where it is decided on which part of the budget is spent."
+        image_alt: "Different phases of a participatory budget"
+        figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
+      faq:
+        title: "Technical problems?"
+        description: "Read the FAQs and solve your questions."
+        button: "View frequently asked questions"
+      other:
+        how_to_use: "Use %{org_name} in your city"
+        world: "Citizen participation in the world"
+        facts: "Facts about citizen participation and direct democracy"
       how_to_use:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
@@ -48,24 +58,12 @@ en:
 
           If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/ayuntamientomadrid 'consul github').
       titles:
-        faq: Solution to tecnical problemas (FAQ)
-        how_it_works: How does this Open Government Portal work?
         how_to_use: Use it in your local government
-        participation: Participation and Transparency y Transparencia - coming news
-        participation_facts: Facts about citizen participation and direct democracy
-        participation_world: Direct citizen participation in the world
-        proposals_info: How does citizen proposals work?
-        signature_sheet: Signature sheet
-        spending_proposals_info: How does participatory budgeting work?
-    opendata:
-      slogan: "Information about Open Data."
-      title: Open Data
     privacy: Privacy Policy
     titles:
       accessibility: Accessibility
       conditions: Terms of use
-      more_information: More information
-      opendata: Open Data
+      more_info: "More information about %{org_name}"
       privacy: Privacy Policy
     verify:
       code: Code you received in letter

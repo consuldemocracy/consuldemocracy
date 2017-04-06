@@ -11,7 +11,8 @@
     </li>
   <% end %>
 
-  <% if feature?(:spending_proposals) && (current_user.administrator? || current_user.valuator?) %>
+  <% if (feature?(:spending_proposals) || feature?(:budgets)) &&
+        (current_user.administrator? || current_user.valuator?) %>
     <li>
       <%= link_to t("layouts.header.valuation"), valuation_root_path %>
     </li>

@@ -1,0 +1,39 @@
+<% provide :title do %><%= t("pages.titles.more_info", org_name: setting['org_name']) %><% end %>
+
+<div class="jumbo light">
+  <div class="row">
+    <div class="small-12 column">
+      <h2><%= t("pages.more_info.title", org_name: setting['org_name']) %></h2>
+      <p class="lead"><%= t("pages.more_info.subtitle") %></p>
+      <p><%= t("pages.more_info.guide", org_name: setting['org_name']) %></p>
+    </div>
+  </div>
+
+  <%= render "pages/more_info/menu" %>
+</div>
+
+<div id="more-info" class="more-info-content">
+  <div class="row">
+    <div class="small-12 medium-7 large-8 column">
+      <% if feature?(:debates) %>
+        <%= render "pages/more_info/debates" %>
+      <% end %>
+
+      <%= render "pages/more_info/proposals" %>
+
+      <% if feature?(:budgets) %>
+        <%= render "pages/more_info/budgets" %>
+      <% end %>
+    </div>
+    <div class="small-12 medium-4 large-3 column more-info-sidebar">
+      <%= render "pages/more_info/sidebar" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <hr>
+    <div class="small-12 column">
+      <%= render "pages/more_info/other" %>
+    </div>
+  </div>
+</div>

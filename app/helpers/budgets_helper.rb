@@ -38,4 +38,8 @@ module BudgetsHelper
   def current_ballot
     Budget::Ballot.where(user: current_user, budget: @budget).first
   end
+
+  def investment_tags_select_options
+    Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
+  end
 end

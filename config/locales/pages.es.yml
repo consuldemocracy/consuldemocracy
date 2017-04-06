@@ -4,42 +4,52 @@ es:
     census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
-    more_information:
-      description:
-        faq: Preguntas frecuentes sobre problemas técnicos
-        how_it_works: Descubre todo lo que puedes hacer en esta web
-        how_to_use: Utilízalo libremente o ayúdanos a mejorarlo, es software libre
-        participation: Participación Ciudadana, Transparencia y Gobierno Abierto
-        participation_facts: Para perderle el miedo
-        participation_world: Sistemas de participación ciudadana que ya existen en el mundo
-        proposals_info: Crea tus propias propuestas
-        signature_sheet: Hojas de firmas para recoger apoyos
-        spending_proposals_info: Envía tus propuestas de gasto
-      how_it_works:
-        i: Participación
-        i1: Espacio de debate
-        i2: Espacio de propuestas
-        text: |-
-          El nuevo Portal de Gobierno Abierto está dividido en tres partes: Participación, Transparencia y Datos Abiertos (verás los enlaces en la parte superior derecha).
-          >**I. Participación:** Donde poder decidir qué ciudad queremos tener (a través de propuestas ciudadanas, espacios de debate, presupuestos participativos, legislación colaborativa, y muchos otros procesos que iremos implementando).
-          **II. Transparencia:** En este espacio se publicarán todos los datos relativos a quién y cómo se gestiona la ciudad (nombres de los responsables, cargos, sueldos, planes de gobierno, contratos, agendas de los responsables...). Además es el espacio donde ejercer el derecho de acceso a la información, pudiendo solicitar cualquier información sobre el Ayuntamiento de manera fácil y rápida.
-          **III. Datos Abiertos:** En este espacio se cuelgan las bases de datos que tiene el Ayuntamiento, para que cualquiera pueda usar toda la información directamente, sin necesidad ni siquiera de preguntar. También se puede solicitar la publicación de más bases de datos.
-
-          Inauguramos el nuevo portal con la nueva sección de Participación, y en breve añadiremos las nuevas secciones de Transparencia y Datos Abiertos (así que mantenemos por el momento los enlaces a las páginas al respecto que ya existían).
-          ## <a id='i'></a> I. Participación
-          El apartado de participación comprenderá diferentes mecanismos de participación: propuestas ciudadanas, espacios de debate, presupuestos participativos, legislación colaborativa, entre muchos otros. Por el momento presentamos el espacio de debate, y muy pronto las propuestas ciudadanas.
-          ## <a id='i1'></a>I.I. Espacio de debate
-          En este espacio, cualquier persona puede abrir un hilo de discusión sobre cualquier tema, creando un espacio independiente donde la gente podrá debatir sobre el tema propuesto. De esta manera, en este espacio digital convivirán cada día cientos de espacios de debate distintos entre los que la ciudadanía podrá pasearse, sumándose a los que más les interese.
-
-          Tanto los hilos, como los comentarios podrán ser valorados por cualquiera, de tal manera que será la propia ciudadanía, y nadie en su nombre, la que decida cuáles son los temas más importantes en cada momento. Estos serán presentados en la portada del espacio, pudiendo por supuesto accederse a todos los demás temas en páginas posteriores, o usando otros criterios de ordenación (los temas con más comentarios, los más nuevos, los más controvertidos, etc.).
-
-          Cada uno de los trabajadores del Ayuntamiento tiene un usuario propio, que será resaltado como tal, permitiendo que participen en los debates al mismo nivel que todos los demás ciudadanos. Esto permitirá crear espacios de comunicación directos entre unos y otros, evitando los inconvenientes que implica la comunicación mediada, y respondiendo a un planteamiento claro por parte del nuevo gobierno por el cual el Ayuntamiento trabaja para la ciudadanía, y ante ella debe responder.
-          ## <a id='i2'></a> I.I. Espacio de propuestas
-          En este espacio, cualquier persona puede proponer una iniciativa con la intención de recabar los suficientes apoyos como para que la idea pase a ser consultada a toda la ciudadanía con carácter vinculante.
-
-          Las propuestas pueden ser apoyadas por ciudadanos empadronados que hayan verificado su cuenta en la plataforma de participación, de tal manera que será la propia ciudadanía, y nadie en su nombre, la que decida cuáles son las propuestas que merecen la pena ser llevadas a cabo.
-
-          Una vez que una propuesta alcance una cantidad de apoyos equivalente al 1% del censo, automáticamente pasa a ser estudiada por un grupo de trabajo del Ayuntamiento y pasará a la siguiente fase de consulta popular, en la que la ciudadanía votará si se lleva a cabo o no. El plazo máximo para recabar los apoyos necesarios será de 12 meses.
+    more_info:
+      title: "Descubre %{org_name}"
+      subtitle: "Aprende todo lo que puedes hacer en esta web."
+      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      menu:
+        debates: "Debates"
+        proposals: "Propuestas"
+        budgets: "Presupuestos participativos"
+        other: "Otra información de interés"
+      debates:
+        title: "Debates"
+        description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de gente de tu ciudad."
+        feature_1: "Para crear un debate tienes que %{link}"
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Los debates pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
+        image_alt: "Botones para valorar los debates"
+        figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
+      proposals:
+        title: "Propuestas"
+        description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
+        detail: "Información detallada de Propuestas"
+        feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en Madrid; 27.064 apoyos) pasan a votación."
+        feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
+        image_alt: "Botón para apoyar una propuesta"
+        figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
+      budgets:
+        title: "Presupuestos participativos"
+        description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
+        detail: "Información detallada de Presupuestos participativos"
+        feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "En primer lugar empieza la <strong>fase de aceptación</strong> de proyectos de gasto."
+        feature_3_html: "Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen."
+        feature_4_html: "Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto."
+        image_alt: "Diferentes fases de un presupuesto participativo"
+        figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
+      faq:
+        title: "¿Problemas técnicos?"
+        description: "Lee las preguntas frecuentes y resuelve tus dudas."
+        button: "Ver preguntas frecuentes"
+      other:
+        how_to_use: "Utiliza %{org_name} en tu municipio"
+        world: "Participación ciudadana directa en el mundo"
+        facts: "Hechos sobre participación ciudadana y democracia directa"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
@@ -48,24 +58,12 @@ es:
 
           Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación Consul](https://github.com/ayuntamientomadrid 'github consul').
       titles:
-        faq: Soluciones a problemas técnicos (FAQ)
-        how_it_works: "¿Cómo funciona este Portal de Gobierno Abierto?"
         how_to_use: Utilízalo en tu municipio
-        participation: Participación y Transparencia - Próximas novedades
-        participation_facts: Hechos sobre participación ciudadana y democracia directa
-        participation_world: Participación ciudadana directa en el mundo
-        proposals_info: "¿Cómo funcionan las propuestas ciudadanas?"
-        signature_sheet: Hojas de firmas
-        spending_proposals_info: "¿Cómo funcionan los presupuestos participativos?"
-    opendata:
-      slogan: "Información sobre Datos abiertos."
-      title: Datos abiertos
     privacy: Política de Privacidad
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      more_information: Más información
-      opendata: Datos abiertos
+      more_info: "Más información sobre %{org_name}"
       privacy: Política de Privacidad
     verify:
       code: Código que has recibido en tu carta

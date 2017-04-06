@@ -43,7 +43,6 @@
     <div class="small-12 medium-8 column">
       <%= t("layouts.footer.copyright", year: Time.current.year) %>&nbsp;|
       <ul class="no-bullet inline-block">
-        <li class="inline-block"><%= link_to t("layouts.footer.more_info"), page_path('more_information') %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.privacy"), page_path('privacy') %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.conditions"), page_path('conditions') %>&nbsp;|</li>
         <li class="inline-block"><%= link_to t("layouts.footer.accessibility"), page_path('accessibility') %></li>
@@ -82,6 +81,14 @@
               <%= link_to "https://www.youtube.com/#{setting['youtube_handle']}", target: "_blank", title: t("social.youtube") + t('shared.target_blank_html') do %>
                 <span class="sr-only"><%= t("social.youtube") %></span>
                 <span class="icon-youtube" aria-hidden="true"></span>
+              <% end %>
+            </li>
+          <% end %>
+          <% if setting['telegram_handle'] %>
+            <li class="inline-block">
+              <%= link_to "https://www.telegram.me/#{setting['telegram_handle']}", target: "_blank", title: t("social.telegram") + t('shared.target_blank_html') do %>
+                <span class="sr-only"><%= t("social.telegram") %></span>
+                <span class="icon-telegram" aria-hidden="true"></span>
               <% end %>
             </li>
           <% end %>

@@ -54,7 +54,7 @@ feature 'Debates' do
     expect(page.html).to include "<title>#{debate.title}</title>"
 
     within('.social-share-button') do
-      expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
+      expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram
     end
   end
 
@@ -637,6 +637,28 @@ feature 'Debates' do
             expect(page).to have_content(debate1.title)
             expect(page).to have_content(debate2.title)
             expect(page).to_not have_content(debate3.title)
+          end
+        end
+
+        scenario "Search by custom invalid date range", :js do
+          debate1 = create(:debate, created_at: 2.years.ago)
+          debate2 = create(:debate, created_at: 3.days.ago)
+          debate3 = create(:debate, created_at: 9.days.ago)
+
+          visit debates_path
+
+          click_link "Advanced search"
+          select "Customized", from: "js-advanced-search-date-min"
+          fill_in "advanced_search_date_min", with: "9"
+          fill_in "advanced_search_date_max", with: "444444444"
+          click_button "Filter"
+
+          within("#debates") do
+            expect(page).to have_css('.debate', count: 3)
+
+            expect(page).to have_content(debate1.title)
+            expect(page).to have_content(debate2.title)
+            expect(page).to have_content(debate3.title)
           end
         end
 

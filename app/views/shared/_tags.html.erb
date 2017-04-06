@@ -5,8 +5,7 @@
     <% taggable.tag_list_with_limit(limit).each do |tag| %>
       <li class="inline-block">
         <%= link_to sanitize(tag.name),
-                    taggables_path(taggable.class.name.underscore, tag.name),
-                    search: tag.name %></li>
+                    taggables_path(taggable.class.name.underscore, tag.name) %></li>
     <% end %>
 
     <% if taggable.tags_count_out_of_limit(limit) > 0 %>

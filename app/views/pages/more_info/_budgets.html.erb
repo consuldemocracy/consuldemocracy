@@ -1,0 +1,26 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="budgets" data-magellan-target="budgets">
+      <%= t("pages.more_info.budgets.title") %>
+    </h3>
+    <p>
+      <%= link_to t("pages.more_info.budgets.detail"), more_info_budgets_path, class: "small" %>
+    </p>
+    <p><%= t("pages.more_info.budgets.description") %></p>
+    <ul class="features">
+      <li>
+        <%= t("pages.more_info.budgets.feature_1",
+              link: link_to(t("pages.more_info.budgets.feature_1_link", org_name: setting['org_name']),
+                               new_user_registration_path)).html_safe %>
+      </li>
+      <li><%= t("pages.more_info.budgets.feature_2_html") %></li>
+      <li><%= t("pages.more_info.budgets.feature_3_html") %></li>
+      <li><%= t("pages.more_info.budgets.feature_4_html") %></li>
+    </ul>
+
+    <figure>
+      <%= image_tag "more_info/budgets_#{I18n.locale}.png", alt: t("pages.more_info.budgets.image_alt") %>
+      <figcaption><%= t("pages.more_info.budgets.figcaption_html") %></figcaption>
+    </figure>
+  </div>
+</div>

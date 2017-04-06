@@ -175,7 +175,6 @@ en:
       copyright: Consul, %{year}
       description: This portal uses the %{consul} which is %{open_source}.
       faq: technical assistance
-      more_info: More information
       open_data_text: Every detail about the City Council is yours to access.
       open_data_title: Open data
       open_source: open-source software
@@ -192,16 +191,16 @@ en:
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
-      external_link_opendata_url: "/opendata"
+      external_link_opendata_url: https://opendata.consul
       external_link_transparency: Transparency
       external_link_transparency_url: https://transparency.consul
       locale: 'Language:'
-      logo: Consul
+      logo: Consul logo
       management: Management
       moderation: Moderation
       valuation: Valuation
       officing: Polling officers
-      more_information: More information
+      more_info: More information
       my_account_link: My account
       my_activity_link: My activity
       notifications: Notifications
@@ -388,6 +387,7 @@ en:
       share: Share
       send_notification: Send notification
       no_notifications: "This proposal has any notifications."
+      embed_video_title: "Video on %{proposal}"
     update:
       form:
         submit_button: Save changes
@@ -481,6 +481,7 @@ en:
       search: 'Filter'
       title: 'Advanced search'
       to: 'To'
+    delete: Delete
     author_info:
       author_deleted: User deleted
     back: Go back
@@ -525,6 +526,8 @@ en:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
+    telegram: Telegram
   spending_proposals:
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'

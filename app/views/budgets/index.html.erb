@@ -10,8 +10,10 @@
   <div class="small-12 medium-9 column">
     <table>
       <thead>
-        <th><%= Budget.human_attribute_name(:name) %></th>
-        <th><%= Budget.human_attribute_name(:phase) %></th>
+        <tr>
+          <th scope="col"><%= Budget.human_attribute_name(:name) %></th>
+          <th scope="col"><%= Budget.human_attribute_name(:phase) %></th>
+        </tr>
       </thead>
       <tbody>
       <% @budgets.each do |budget| %>

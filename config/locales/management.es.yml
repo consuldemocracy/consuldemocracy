@@ -32,6 +32,7 @@ es:
       under_age: No tienes edad suficiente para verificar tu cuenta.
       verify: Verificar usuario
     email_label: Email
+    date_of_birth: Fecha de nacimiento
     email_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
       choose_options: 'Elige una de las opciones siguientes:'
