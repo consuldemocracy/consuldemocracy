@@ -439,6 +439,34 @@ feature 'CSV Exporter' do
       expect(csv).to_not include("Admin tag")
     end
 
+    scenario "Uppercase and lowercase tags work ok together for proposals" do
+      create(:tag, name: "Health")
+      create(:tag, name: "health")
+      create(:proposal, tag_list: "health")
+      create(:proposal, tag_list: "Health")
+      @csv_exporter.export
+
+      visit csv_path_for("tags")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to include("health")
+      expect(csv).to include("Health")
+    end
+
+    scenario "Uppercase and lowercase tags work ok together for debates" do
+      create(:tag, name: "Health")
+      create(:tag, name: "health")
+      create(:debate, tag_list: "Health")
+      create(:debate, tag_list: "health")
+      @csv_exporter.export
+
+      visit csv_path_for("tags")
+      csv = CSV.parse(page.html).flatten
+
+      expect(csv).to include("health")
+      expect(csv).to include("Health")
+    end
+
     scenario "Do not display tags for hidden proposals" do
       proposal = create(:proposal, tag_list: "Health")
       hidden_proposal = create(:proposal, tag_list: "SPAM", hidden_at: Time.now)
@@ -453,7 +481,7 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not display tags for hidden debates" do
-      debate = create(:debate, tag_list: "Health")
+      debate = create(:debate, tag_list: "Health, Transportation")
       hidden_debate = create(:debate, tag_list: "SPAM", hidden_at: Time.now)
 
       @csv_exporter.export

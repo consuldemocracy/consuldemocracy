@@ -36,6 +36,9 @@ module ActsAsTaggableOn
 
   Tag.class_eval do
 
+    has_many :proposals, through: :taggings, source: :taggable, source_type: 'Proposal'
+    has_many :debates, through: :taggings, source: :taggable, source_type: 'Debate'
+
     def increment_custom_counter_for(taggable_type)
       Tag.increment_counter(custom_counter_field_name_for(taggable_type), id)
     end
@@ -67,8 +70,8 @@ module ActsAsTaggableOn
 
     def public_for_api?
       return false unless [nil, "category"].include? kind
-      return false unless Proposal.tagged_with(self).any? {|proposal| proposal.public_for_api? } || Debate.tagged_with(self).any? {|debate| debate.public_for_api? }
-      return false unless self.taggings.any? {|tagging| tagging.public_for_api? }
+      return false unless proposals.any?(&:public_for_api?) || debates.any?(&:public_for_api?)
+      return false unless self.taggings.any?(&:public_for_api?)
       return true
     end
 
