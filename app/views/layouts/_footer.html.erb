@@ -32,7 +32,7 @@
 
       <div class="small-12 medium-4 column">
         <h2>
-          <%= link_to t("layouts.footer.open_data_title"), "/opendata" %>
+          <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url") %>
         </h2>
         <p><%= t("layouts.footer.open_data_text") %></p>
       </div>
