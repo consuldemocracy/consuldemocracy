@@ -447,10 +447,10 @@ Rails.application.routes.draw do
   get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza',         as: 'plaza_probe_option'
 
   #Human Rights
-  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',      as: 'human_rights_page'
-  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan', as: 'human_rights_plan'
-  get 'derechos-humanos/medidas',          to: 'human_rights#index',                            as: 'human_rights_proposals'
-  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                             as: 'human_rights_proposal'
+  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',    as: 'human_rights_page'
+  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan',     as: 'human_rights_plan'
+  get 'derechos-humanos/medidas',          to: 'human_rights#index',                                as: 'human_rights_proposals'
+  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                                 as: 'human_rights_proposal'
   get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2'
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3'
 
