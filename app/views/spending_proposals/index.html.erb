@@ -46,7 +46,7 @@
           <h2><%= t("spending_proposals.index.unfeasible") %></h2>
           <p>
               <%= t("spending_proposals.index.unfeasible_text",
-              definitions: link_to(t("spending_proposals.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
+              definitions: link_to(t("spending_proposals.index.unfeasible_text_definitions"), more_info_budgets_2016_path(anchor:"20"))).html_safe %>
           </p>
         <% end %>
 

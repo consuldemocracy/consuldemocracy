@@ -10,7 +10,7 @@ feature 'Open Plenary' do
     question2 = create(:comment, commentable: debate)
 
     login_as(author)
-    visit "processes_open_plenary"
+    visit open_plenary_path
 
     click_link "See the most voted proposals and questions"
     click_link "See all questions"
@@ -28,7 +28,7 @@ feature 'Open Plenary' do
       proposal2 = create(:proposal, title: "Feed the children", tag_list: 'plenoabierto')
       proposal3 = create(:proposal, title: "Take care of the rich")
 
-      visit "processes_open_plenary"
+      visit open_plenary_path
 
       click_link "See all proposals"
 
@@ -46,7 +46,7 @@ feature 'Open Plenary' do
     Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
       proposal = create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
 
-      visit "processes_open_plenary"
+      visit open_plenary_path
 
       click_link "See all proposals"
 
@@ -79,7 +79,7 @@ feature 'Open Plenary' do
     Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
       create(:proposal, title: "Plant more trees",  tag_list: 'plenoabierto')
 
-      visit "processes_open_plenary"
+      visit open_plenary_path
       click_link "See all proposals"
 
       within("#proposals") do
@@ -94,7 +94,7 @@ feature 'Open Plenary' do
     proposal1 = create(:proposal, title: "Before start date",  tag_list: 'plenoabierto', created_at: Date.parse('17-04-2016'))
     proposal2 = create(:proposal, title: "After start date",   tag_list: 'plenoabierto', created_at: Date.parse('18-04-2016'))
 
-    visit "processes_open_plenary"
+    visit open_plenary_path
     click_link "See the most voted proposals and questions"
     click_link "See all proposals"
 
@@ -108,12 +108,12 @@ feature 'Open Plenary' do
 
     scenario "Display different text after official end time" do
       Timecop.freeze(DateTime.new(2016,4,21).beginning_of_day) do
-        visit "processes_open_plenary"
+        visit open_plenary_path
         expect(page).to_not have_content("Apoya las propuestas y preguntas que más te gusten.")
       end
 
       Timecop.freeze(DateTime.new(2016,4,22).beginning_of_day) do
-        visit "processes_open_plenary"
+        visit open_plenary_path
         expect(page).to have_content("Apoya las propuestas y preguntas que más te gusten.")
       end
     end
@@ -124,7 +124,7 @@ feature 'Open Plenary' do
       proposal3 = create(:proposal, title: "During official dates",   tag_list: 'plenoabierto', created_at: Date.parse('19-04-2016'))
       proposal4 = create(:proposal, title: "After start date",        tag_list: 'plenoabierto', created_at: Date.parse('22-04-2016'))
 
-      visit "processes_open_plenary"
+      visit open_plenary_path
       click_link "See the most voted proposals and questions"
       click_link "See all proposals"
 

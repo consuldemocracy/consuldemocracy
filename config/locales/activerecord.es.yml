@@ -92,6 +92,15 @@ es:
         vicalvaro: "Vicálvaro"
         villa_de_vallecas: "Villa de Vallecas"
         villaverde: "Villaverde"
+      budget_poll:
+        name: "Nomre y apellidos"
+        email: "Email (opcional)"
+        preferred_subject: "Tema preferido"
+        collective: "Colectivo"
+        public_worker: "Empleado público"
+        proposal_author: "Autor de propuesta"
+        selected_proposal_author: "Autor de propuesta seleccionado"
+        help: "Quiero ayudar"
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"

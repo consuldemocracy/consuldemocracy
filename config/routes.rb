@@ -73,7 +73,7 @@ Rails.application.routes.draw do
 
   get 'presupuestos',                        to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
-  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'budgets/welcome'
+  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'more_info/budgets/in_two_minutes'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
@@ -429,39 +429,37 @@ Rails.application.routes.draw do
   get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')
   get 'participatory_budget/select_district', to: 'spending_proposals#select_district', as: 'select_district'
   get 'delegacion', to: 'forums#index', as: 'delegation'
-  get 'plenoabierto', to: 'pages#show', id: 'processes_open_plenary'
-  get 'noticias', to: 'pages#show', id: 'news'
-  get 'presupuestos-participativos-resultados', to: 'spending_proposals#results', as: 'participatory_budget_results'
-  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats', as: 'participatory_budget_stats'
-  #get 'vota', to: 'proposal_ballots#index', as: 'proposal_ballots_index'
+  get 'presupuestos-participativos-resultados',   to: 'spending_proposals#results',                    as: 'participatory_budget_results'
+  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats',                      as: 'participatory_budget_stats'
+  get 'participatory_budget_info',                to: 'pages#show', id: 'more_info/budgets/info_2016', as: 'more_info_budgets_2016'
 
   #Probes
-  get 'processes/urbanismo-bancos', to: 'probes#show', id: 'town_planning', as: 'town_planning'
-  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks', id: 'town_planning', as: 'town_planning_thanks'
-  get 'proceso/plaza-espana-resultados', to: 'probes#show', id: 'plaza', as: 'plaza'
-  get 'proceso/plaza-espana',            to: 'probes#show', id: 'plaza'
-  get 'proceso/plaza-espana-gracias', to: 'probes#thanks', id: 'plaza', as: 'plaza_thanks'
-  get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza', as: 'plaza_probe_option'
+  get 'processes/urbanismo-bancos',         to: 'probes#show',    id: 'town_planning',   as: 'town_planning'
+  get 'processes/urbanismo-bancos-gracias', to: 'probes#thanks',  id: 'town_planning',   as: 'town_planning_thanks'
 
-  get 'proceso/plaza-espana-informacion',  to: 'pages#show',   id: 'processes_plaza_espana',            as: 'remodeling_plaza'
-  get 'proceso/plaza-espana-estadisticas', to: 'pages#show',   id: 'encuesta-plaza-espana-resultados',  as: 'survey_plaza'
+  get 'proceso/plaza-espana-resultados',    to: 'probes#show',    id: 'plaza',                   as: 'plaza'
+  get 'proceso/plaza-espana',               to: 'probes#show',    id: 'plaza'
+  get 'proceso/plaza-espana-gracias',       to: 'probes#thanks',  id: 'plaza',                   as: 'plaza_thanks'
+  get 'proceso/plaza-espana-informacion',   to: 'pages#show',     id: 'plaza_espana/info',       as: 'remodeling_plaza'
+  get 'proceso/plaza-espana-debates',       to: 'pages#show',     id: 'plaza_espana/debates',    as: 'plaza_debates'
+  get 'proceso/plaza-espana-faq',           to: 'pages#show',     id: 'plaza_espana/faq',        as: 'plaza_faq'
+  get 'proceso/plaza-espana-estadisticas',  to: 'pages#show',     id: 'plaza_espana/results',    as: 'survey_plaza'
+  get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza',         as: 'plaza_probe_option'
 
   #Human Rights
-  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights',      as: 'human_rights_page'
-  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights_plan', as: 'human_rights_plan'
-  get 'derechos-humanos/medidas',          to: 'human_rights#index',                            as: 'human_rights_proposals'
-  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                             as: 'human_rights_proposal'
-
-  get 'processes/human_rights_question_1', to: 'pages#show', id: 'processes/human_rights_question_1'
-  get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights_question_2'
-  get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights_question_3'
+  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',    as: 'human_rights_page'
+  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan',     as: 'human_rights_plan'
+  get 'derechos-humanos/medidas',          to: 'human_rights#index',                                as: 'human_rights_proposals'
+  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                                 as: 'human_rights_proposal'
+  get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2'
+  get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3'
 
   #Processes
-  get 'procesos',                                       to: 'pages#show', id: 'processes',                        as: 'processes'
-  get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic_licenses',    as: 'urbanistic_licenses'
-  get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government',        as: 'open_government'
-  get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government_doc',    as: 'open_government_doc'
-  get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention_ordinance',   as: 'subvention_ordinance'
+  get 'procesos',                                       to: 'pages#show', id: 'processes/index',                  as: 'processes'
+  get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic/index',       as: 'urbanistic_licenses'
+  get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government/index',  as: 'open_government'
+  get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government/doc',    as: 'open_government_doc'
+  get 'proceso/ordenanza-subvenciones',                 to: 'pages#show', id: 'processes/subvention/index',       as: 'subvention_ordinance'
   get 'proceso/plan-calidad-aire',                      to: 'pages#show', id: 'processes/air_quality_plan/index', as: 'air_quality_plan'
   get 'proceso/rotulacion-vias',                        to: 'pages#show', id: 'processes/label_streets/index',    as: 'label_streets'
   get 'proceso/distrito-villa-de-vallecas',             to: 'pages#show', id: 'processes/vallecas/index',         as: 'vallecas'
@@ -471,10 +469,21 @@ Rails.application.routes.draw do
   get 'proceso/ordenanza-publicidad-exterior',          to: 'pages#show', id: 'processes/publicity/index',        as: 'publicity'
   get 'proceso/distrito-vicalvaro',                     to: 'pages#show', id: 'processes/vicalvaro/index',        as: 'vicalvaro'
   get 'proceso/distrito-villaverde',                    to: 'pages#show', id: 'processes/villaverde/index',       as: 'villaverde'
+  get 'proceso/cartas-de-servicios',                    to: 'pages#show', id: 'processes/service_letters/index',  as: 'service_letters'
+  get 'proceso/cartas-de-servicios/1',                  to: 'pages#show', id: 'processes/service_letters/1',      as: 'service_letters_1'
+  get 'proceso/cartas-de-servicios/2',                  to: 'pages#show', id: 'processes/service_letters/2',      as: 'service_letters_2'
+  get 'proceso/cartas-de-servicios/3',                  to: 'pages#show', id: 'processes/service_letters/3',      as: 'service_letters_3'
+  get 'proceso/cartas-de-servicios/4',                  to: 'pages#show', id: 'processes/service_letters/4',      as: 'service_letters_4'
+  get 'proceso/cartas-de-servicios/5',                  to: 'pages#show', id: 'processes/service_letters/5',      as: 'service_letters_5'
+  get 'proceso/pleno-abierto',                          to: 'pages#show', id: 'processes/open_plenary/index',     as: 'open_plenary'
+  get 'proceso/ordenanza-de-transparencia',             to: 'pages#show', id: 'processes/transparency/index',     as: 'transparency_ordinance'
+  get 'proceso/ordenanza-de-transparencia/borrador',    to: 'pages#show', id: 'processes/transparency/draft',     as: 'transparency_ordinance_draft'
 
   #Landings
-  get 'g1000',            to: 'pages#show',         id: 'landings/g1000', as: 'g1000'
-  get 'haz-propuestas',   to: 'pages#show',         id: 'blas_bonilla',   as: 'blas_bonilla'
+  get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'
+  get 'haz-propuestas',  to: 'pages#show', id: 'landings/blas_bonilla',     as: 'blas_bonilla'
+  get 'sitesientesgato', to: 'pages#show', id: 'landings/sitesientesgato'
+  get 'noticias',        to: 'pages#show', id: 'landings/news'
 
   #Polls 2017 results & stats
   get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'

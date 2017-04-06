@@ -13,7 +13,7 @@
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.process_5_title") %>
       </h1>
-      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <%= link_to "enfoque transversal", page_path('human_rights_info', anchor: '3'), class: "white" %> que afecte a toda la actuación municipal. <%= link_to "Más información", page_path('human_rights_info'), class: 'white' %>
+      <p>El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan que será el instrumento para el desarrollo de sus políticas públicas con un <%= link_to "enfoque transversal", human_rights_page_path(anchor: "3"), class: "white" %> que afecte a toda la actuación municipal. <%= link_to "Más información", human_rights_page_path, class: "white" %>
       </p>
     </div>
 
@@ -48,7 +48,7 @@
     <% elsif feature?("human_rights.voting") %>
       <p>Tras un amplio proceso de diagnóstico y consulta con diversos actores (ciudadanía, personal del Ayuntamiento, entidades y organizaciones sociales, grupos políticos municipales...) para la elaboración del Plan de Derechos Humanos de la ciudad de Madrid, ponemos a disposición de todo el mundo el primer borrador del mismo para su socialización y contraste.</p>
 
-      <p>Puedes priorizar cuáles deben ser las líneas de acción prioritarias por las que el Ayuntamiento debería comenzar la implementación del Plan o acceder al borrador completo del mismo y realizar comentarios de modo directo y transparente en la web. <%= link_to "Más información", page_path('human_rights_info', anchor: '4') %>.
+      <p>Puedes priorizar cuáles deben ser las líneas de acción prioritarias por las que el Ayuntamiento debería comenzar la implementación del Plan o acceder al borrador completo del mismo y realizar comentarios de modo directo y transparente en la web. <%= link_to "Más información", human_rights_page_path(anchor: "4") %>.
       </p>
 
       <div class="row">

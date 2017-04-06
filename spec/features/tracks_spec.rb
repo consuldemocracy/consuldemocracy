@@ -310,13 +310,10 @@ feature 'Tracking' do
       expect(page.html).to have_content "weboConv(32);"
 
       budget = create(:budget)
-      visit "participatory_budget"
-      expect(page.html).to have_content "weboConv(33);"
-
       visit "presupuestos"
       expect(page.html).to have_content "weboConv(33);"
 
-      visit "more_information"
+      visit "mas-informacion"
       expect(page.html).to have_content "weboConv(34);"
     end
 
