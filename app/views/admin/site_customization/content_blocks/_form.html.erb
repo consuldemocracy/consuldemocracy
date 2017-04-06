@@ -15,7 +15,6 @@
 
   <% end %>
 
-
   <div class="small-12 medium-6 column">
     <%= f.label :name %>
     <%= f.select :name, SiteCustomization::ContentBlock::VALID_BLOCKS, label: false %>
@@ -32,3 +31,17 @@
   </div>
 
 <% end %>
+
+<h4><%= t('.content_blocks_information') %></h4>
+
+<p><%= t('.content_block_about') %></p>
+
+<p><%= t('.content_block_top_links_html') %></p>
+<pre>
+&lt;li&gt;&lt;a href=&quot;http://site1.com&quot;&gt;Site 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://site2.com&quot;&gt;Site 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://site3.com&quot;&gt;Site 3&lt;/a&gt;&lt;/li&gt;
+</pre>
+<br>
+
+<p><%= t('.content_block_footer_html') %></p>

@@ -481,6 +481,11 @@ en:
         title: Incomplete verifications
     site_customization:
       content_blocks:
+        form:
+          content_blocks_information: Information about content blocks
+          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
+          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
+          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
         create:
           notice: Content block created successfully
           error: Content block couldn't be created
