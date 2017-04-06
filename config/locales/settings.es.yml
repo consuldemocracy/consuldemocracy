@@ -19,6 +19,7 @@ es:
     twitter_hashtag: "Hashtag para Twitter"
     facebook_handle: "Identificador de Facebook"
     youtube_handle: "Usuario de Youtube"
+    telegram_handle: "Usuario de Telegram"
     blog_url: "URL del blog"
     url: "URL general de la web"
     org_name: "Nombre de la organización"
