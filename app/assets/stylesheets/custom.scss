@@ -2356,19 +2356,22 @@ $campaign-yellow:  #FFDB19;
 }
 
 .budgets-calendar {
-  background: $campaign-yellow;
+  background: #F9F8F5;
   color: black;
 
   ul {
     margin-bottom: 0;
-    padding: $line-height/2 0;
 
     li {
       border-top: 1px solid $campaign-black;
-      padding: $line-height/2 0;
+      padding: $line-height/2;
 
       &:first-child {
         border-top: 0;
+      }
+
+      &.active {
+        background: $campaign-yellow;
       }
 
       @include breakpoint(medium) {

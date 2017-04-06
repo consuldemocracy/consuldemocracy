@@ -9,7 +9,7 @@
   <div class="expanded header">
     <div class="row no-margin-top padding">
       <div class="small-12 medium-6 column">
-        <h1>Tú decides cómo invertir<br><span>100 millones de euros</span><br>para Madrid</h1>
+        <h1>Tú decides cómo invertir<br> <span>100 millones de euros</span><br> para Madrid</h1>
         <div class="small-12 medium-6 margin-top">
           <%= link_to budget_path(Budget.last), class: "button expanded" do %>
             <% if Budget.accepting.any? %>
@@ -35,22 +35,9 @@
       <div class="row">
         <div class="small-12 column">
           <ul class="no-bullet">
-            <li>
-              <strong>Envío de proyectos</strong>
-              <br>18 enero - 8 marzo
-            </li>
-            <li>
-              <strong>Apoyos</strong>
-              <br>11 marzo - 25 marzo
-            </li>
-            <li>
-              <strong>Evaluación</strong>
-              <br>26 marzo - 14 mayo
-            </li>
-            <li>
-              <strong>Votación final</strong>
-              <br>15 mayo - 30 junio
-            </li>
+            <li><br><strong>Envío de proyectos</strong><br>18 enero - 8 marzo</li>
+            <li><br><strong>Apoyos</strong><br>11 marzo - 25 marzo</li>
+            <li class="active"><span class="small"><strong>FASE ACTUAL</strong></span><br><strong>Evaluación</strong><br>26 marzo - 14 mayo</li><li><br><strong>Votación final</strong><br>15 mayo - 30 junio</li>
           </ul>
         </div>
       </div>
