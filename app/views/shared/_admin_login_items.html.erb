@@ -23,4 +23,10 @@
       <%= link_to t("layouts.header.management"), management_sign_in_path %>
     </li>
   <% end %>
+
+  <% if current_user.administrator? || current_user.poll_officer? %>
+    <li>
+      <%= link_to t("layouts.header.officing"), officing_root_path %>
+    </li>
+  <% end %>
 <% end %>

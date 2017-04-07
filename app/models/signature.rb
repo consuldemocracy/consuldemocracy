@@ -46,8 +46,8 @@ class Signature < ActiveRecord::Base
     user_params = {
       document_number: document_number,
       created_from_signature: true,
-      verified_at: Time.now,
-      erased_at: Time.now,
+      verified_at: Time.current,
+      erased_at: Time.current,
       password: random_password,
       terms_of_service: '1',
       email: nil,

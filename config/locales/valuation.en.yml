@@ -1,6 +1,8 @@
 ---
 en:
   valuation:
+    header:
+      title: Valuation
     menu:
       title: Valuation
       budgets: Participatory budgets

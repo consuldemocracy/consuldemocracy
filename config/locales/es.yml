@@ -139,6 +139,7 @@ es:
   errors:
     messages:
       user_not_found: No se encontró el usuario
+      invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
@@ -198,6 +199,7 @@ es:
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
+      officing: Presidentes de mesa
       more_info: Más información
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
@@ -211,7 +213,7 @@ es:
       open_city_title: La ciudad que quieres será la ciudad que quieras.
       open_gov: Gobierno %{open}
       proposals: Propuestas
-      proposal_ballot: Votaciones
+      poll_questions: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos ciudadanos
       spending_proposals: "Propuestas de inversión"
@@ -365,6 +367,8 @@ es:
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -387,17 +391,60 @@ es:
     update:
       form:
         submit_button: Guardar cambios
-  proposal_ballots:
-    title: "Votaciones"
-    description_html: "Las siguientes propuestas ciudadanas han alcanzado el <strong>número de apoyos necesarios</strong> y pasarán a votación."
-    date_title: "Fechas de participación"
-    date: "En breve anunciaremos la fecha de votación de estas propuestas."
-    successfull: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
-    voting: "próxima votación"
-    featured_title: "#PróximaVotación"
-    nothing_to_vote: "No hay nada que votar en este momento."
-    info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
-    button: "Quiero decidir"
+  polls:
+    all: "Todas"
+    no_dates: "sin fecha asignada"
+    dates: "Desde el %{open_at} hasta el %{closed_at}"
+    final_date: "Recuento final/Resultados"
+    index:
+      filters:
+        current: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
+      title: "Votaciones"
+      participate_button: "Participar en esta votación"
+      participate_button_incoming: "Más información"
+      participate_button_expired: "Votación terminada"
+      no_geozone_restricted: "Toda la ciudad"
+      geozone_restricted: "Distritos"
+      geozone_info: "Pueden participar las personas empadronadas en: "
+      can_answer: "¡Puedes participar en esta votación!"
+      cant_answer: "Esta votación no está disponible en tu zona"
+      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
+      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
+      already_answer: "Ya has participado en esta votación"
+    show:
+      dates_title: "Fechas de participación"
+      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+  poll_questions:
+    create_question: "Crear pregunta para votación"
+    default_valid_answers: "Sí, No"
+    show:
+      answer_this_question: "Responder a esta pregunta"
+      original_proposal: "Propuesta original"
+      author: "Creado por"
+      dates_title: "Fechas de participación"
+      more_info: "Más información"
+      not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
+      vote_answer: "Votar %{answer}"
+      voted: "Has votado %{answer}"
+      poll: "Votación"
+    banner:
+      featured_title: "#PróximaVotación"
+      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -409,6 +456,12 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
     advanced_search:

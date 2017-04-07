@@ -22,6 +22,9 @@ FactoryGirl.define do
       sms_confirmation_code "1234"
       document_type "1"
       document_number
+      date_of_birth Date.new(1980, 12, 31)
+      gender "female"
+      geozone
     end
 
     trait :level_three do
@@ -37,6 +40,7 @@ FactoryGirl.define do
     trait :with_confirmed_hide do
       confirmed_hide_at Time.current
     end
+
   end
 
   factory :identity do
@@ -180,6 +184,10 @@ FactoryGirl.define do
         Flag.flag(FactoryGirl.create(:user), debate)
         4.times { create(:vote, votable: debate) }
       end
+    end
+
+    trait :successful do
+      cached_votes_up { Proposal.votes_needed_for_success + 100 }
     end
   end
 
@@ -359,6 +367,127 @@ FactoryGirl.define do
     user
   end
 
+  factory :poll_officer, class: 'Poll::Officer' do
+    user
+  end
+
+  factory :poll do
+    sequence(:name) { |n| "Poll #{n}" }
+
+    starts_at { 1.month.ago }
+    ends_at { 1.month.from_now }
+
+    trait :incoming do
+      starts_at { 2.days.from_now }
+      ends_at { 1.month.from_now }
+    end
+
+    trait :expired do
+      starts_at { 1.month.ago }
+      ends_at { 15.days.ago }
+    end
+
+    trait :published do
+      published true
+    end
+  end
+
+  factory :poll_question, class: 'Poll::Question' do
+    poll
+    association :author, factory: :user
+    sequence(:title) { |n| "Question title #{n}" }
+    sequence(:description) { |n| "Question description #{n}" }
+    valid_answers { Faker::Lorem.words(3).join(', ') }
+  end
+
+  factory :poll_booth, class: 'Poll::Booth' do
+    sequence(:name) { |n| "Booth #{n}" }
+    sequence(:location) { |n| "Street #{n}" }
+  end
+
+  factory :poll_booth_assignment, class: 'Poll::BoothAssignment' do
+    poll
+    association :booth, factory: :poll_booth
+  end
+
+  factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do
+    association :officer, factory: :poll_officer
+    association :booth_assignment, factory: :poll_booth_assignment
+    date Time.current.to_date
+
+    trait :final do
+      final true
+    end
+  end
+
+  factory :poll_recount, class: 'Poll::Recount' do
+    association :officer_assignment, factory: :poll_officer_assignment
+    association :booth_assignment, factory: :poll_booth_assignment
+    count (1..100).to_a.sample
+    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
+  end
+
+  factory :poll_final_recount, class: 'Poll::FinalRecount' do
+    association :officer_assignment, factory: [:poll_officer_assignment, :final]
+    association :booth_assignment, factory: :poll_booth_assignment
+    count (1..100).to_a.sample
+    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
+  end
+
+  factory :poll_voter, class: 'Poll::Voter' do
+    poll
+    association :user, :level_two
+
+    trait :from_booth do
+      association :booth_assignment, factory: :poll_booth_assignment
+    end
+
+    trait :valid_document do
+      document_type   "1"
+      document_number "12345678Z"
+    end
+
+    trait :invalid_document do
+      document_type   "1"
+      document_number "99999999A"
+    end
+  end
+
+  factory :poll_answer, class: 'Poll::Answer' do
+    association :question, factory: :poll_question
+    association :author, factory: [:user, :level_two]
+    answer { question.valid_answers.sample }
+  end
+
+  factory :poll_partial_result, class: 'Poll::PartialResult' do
+    association :question, factory: :poll_question
+    association :author, factory: :user
+    origin { 'web' }
+    answer { question.valid_answers.sample }
+  end
+
+  factory :poll_white_result, class: 'Poll::WhiteResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
+  factory :poll_null_result, class: 'Poll::NullResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
+  factory :officing_residence, class: 'Officing::Residence' do
+    user
+    association :officer, factory: :poll_officer
+    document_number
+    document_type    "1"
+    year_of_birth    "1980"
+
+    trait :invalid do
+      year_of_birth Time.current.year
+    end
+  end
+
   factory :organization do
     user
     responsible_name "Johnny Utah"
@@ -415,6 +544,10 @@ FactoryGirl.define do
     sequence(:name) { |n| "District #{n}" }
     sequence(:external_code) { |n| "#{n}" }
     sequence(:census_code) { |n| "#{n}" }
+
+    trait :in_census do
+      census_code "01"
+    end
   end
 
   factory :banner do

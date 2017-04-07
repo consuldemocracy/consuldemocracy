@@ -14,12 +14,14 @@
                                 controller_name == 'proposals',
                                 accesskey: "2" %>
     </li>
-    <li>
-      <%= layout_menu_link_to t("layouts.header.proposal_ballot"),
-                                proposal_ballots_path,
-                                controller_name == 'proposal_ballots',
-                                accesskey: "3" %>
-    </li>
+    <% if feature?(:polls) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.poll_questions"),
+                                  polls_path,
+                                  controller_name == "polls",
+                                  accesskey: "3" %>
+      </li>
+    <% end %>
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),

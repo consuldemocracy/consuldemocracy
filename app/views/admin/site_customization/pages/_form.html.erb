@@ -41,7 +41,7 @@
       <h4><%= f.label :status %></h4>
       <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
         <%= f.radio_button :status, status, label: false %>
-        <%= f.label "status_#{status}", t("admin.site_customization.pages.status_#{status}") %>
+        <%= f.label "status_#{status}", t("admin.site_customization.pages.page.status_#{status}") %>
         <br/>
       <% end %>
 

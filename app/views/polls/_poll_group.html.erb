@@ -1,0 +1,75 @@
+<% poll_group.each do |poll| %>
+  <div class="poll">
+    <% if poll.answerable_by?(current_user) && poll.votable_by?(current_user) %>
+      <%= link_to poll,
+              class: "icon-poll-answer can-answer",
+              title: t("polls.index.can_answer") do %>
+          <span class="sr-only">
+            <%= t("polls.index.can_answer") %>
+          </span>
+      <% end %>
+    <% elsif current_user.nil? %>
+      <%= link_to new_user_session_path,
+              class: "icon-poll-answer not-logged-in",
+              title: t("polls.index.cant_answer_not_logged_in") do %>
+          <span class="sr-only">
+            <%= t("polls.index.cant_answer_not_logged_in") %>
+          </span>
+      <% end %>
+    <% elsif current_user.unverified? %>
+      <%= link_to verification_path,
+                  class: "icon-poll-answer unverified",
+                  title: t("polls.index.cant_answer_verify") do %>
+          <span class="sr-only">
+            <%= t("polls.index.cant_answer_verify") %>
+          </span>
+      <% end %>
+    <% elsif !poll.votable_by?(current_user) %>
+      <div class="icon-poll-answer already-answer" title="<%= t("polls.index.already_answer") %>">
+        <span class="sr-only"><%= t("polls.index.already_answer") %></span>
+      </div>
+    <% else %>
+      <div class="icon-poll-answer cant-answer" title="<%= t("polls.index.cant_answer") %>">
+        <span class="sr-only"><%= t("polls.index.cant_answer") %></span>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="small-12 column">
+        <div class="dates"><%= poll_dates(poll) %></div>
+        <% if poll.questions.count == 1 %>
+          <% poll.questions.each do |question| %>
+            <h4 class="inline-block"><%= link_to question.title, poll %></h4>
+          <% end %>
+        <% else %>
+          <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
+          <ul>
+            <% poll.questions.each do |question| %>
+              <li><%= link_to question.title, question_path(question) %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <% if poll.geozones.any? %>
+          <p class="inline-block">
+            <small><%= t("polls.index.geozone_info") %></small>
+          </p>
+        <% end %>
+        <ul class="no-bullet inline-block tags">
+          <% poll.geozones.each do |g| %>
+            <li class="inline-block"><span><%= g.name %></span></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="small-12 medium-6 large-4 column end">
+        <%= link_to poll, class: "button expanded" do %>
+          <% if poll.expired? %>
+            <%= t("polls.index.participate_button_expired") %>
+          <% elsif poll.incoming? %>
+            <%=  t("polls.index.participate_button_incoming") %>
+          <% else %>
+            <%= t("polls.index.participate_button") %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

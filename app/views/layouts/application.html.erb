@@ -27,7 +27,7 @@
 
     <h1 class="sr-only"><%= setting['org_name'] %></h1>
 
-    <div class="wrapper">
+    <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render 'layouts/header' %>
 
       <!--[if lt IE 9]>
