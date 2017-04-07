@@ -24,7 +24,10 @@
       </li>
     <% end %>
     <li>
-      <%= link_to t("layouts.header.processes"), processes_path, class: ("active" if current_page?(processes_path)), accesskey: "4"  %>
+      <%= link_to t("layouts.header.processes"),
+                    processes_path,
+                    class: ("active" if current_page?(processes_path)),
+                    accesskey: "4"  %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
