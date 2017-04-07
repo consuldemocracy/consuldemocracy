@@ -32,7 +32,7 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Budget::Investment]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment]
 
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
@@ -50,7 +50,16 @@ module Abilities
       can :create, Budget::ValuatorAssignment
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
+
       can [:index, :create, :edit, :update, :destroy], Geozone
+
+      can [:read, :create, :update, :destroy, :add_question, :remove_question, :search_booths, :search_questions, :search_officers], Poll
+      can [:read, :create, :update, :destroy], Poll::Booth
+      can [:search, :create, :index, :destroy], ::Poll::Officer
+      can [:create, :destroy], ::Poll::BoothAssignment
+      can [:create, :destroy], ::Poll::OfficerAssignment
+      can [:read, :create, :update], Poll::Question
+      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
     end
   end
 end

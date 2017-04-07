@@ -5,6 +5,7 @@
 // 03. List elements
 // 04. Stats
 // 05. Management
+// 06. Polls
 //
 
 // 01. Global styles
@@ -20,6 +21,11 @@ body.admin {
     .top-links {
       background: darken($admin-color, 15%);
     }
+
+    .back-web {
+      padding-top: $line-height/4;
+      text-decoration: underline;
+    }
   }
 
   .top-bar {
@@ -27,19 +33,37 @@ body.admin {
     height: auto;
   }
 
+  .top-bar-title {
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
   form {
 
     .button {
       margin-top: 0;
+
+      &.margin-top {
+        margin-top: $line-height;
+      }
     }
 
     input[type="text"], textarea {
       width: 100%;
     }
 
-    .input-group input[type="text"] {
-      border-radius: 0;
-      margin-bottom: 0 !important;
+    .fieldset {
+
+      select {
+        height: $line-height*2;
+      }
+
+      .input-group input[type="text"] {
+        border-radius: 0;
+        margin-bottom: 0 !important;
+      }
     }
   }
 
@@ -47,6 +71,15 @@ body.admin {
 
     th {
       text-align: left;
+
+      &.text-center {
+        text-align: center;
+      }
+
+      &.text-right {
+        padding-right: $line-height;
+        text-align: right;
+      }
 
       &.with-button {
         line-height: $line-height*2;
@@ -62,9 +95,20 @@ body.admin {
       }
     }
 
+    &.fixed {
+      table-layout: fixed;
+    }
+
     input[type="submit"] ~ a, a ~ a {
-      margin-left: $line-height/2;
-      margin-right: $line-height/2;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: $line-height/2;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height/2;
+        margin-right: $line-height/2;
+        margin-top: 0;
+      }
     }
   }
 
@@ -75,6 +119,11 @@ body.admin {
   .menu.simple li.active {
     border-bottom: 2px solid $admin-color;
     color: $admin-color;
+  }
+
+  .tabs-panel {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   #proposals {
@@ -148,6 +197,13 @@ body.admin {
   }
 }
 
+.input-group {
+
+  .input-group-button {
+    padding-bottom: rem-calc(16);
+  }
+}
+
 // 02. Sidebar
 // -----------
 
@@ -155,7 +211,7 @@ body.admin {
   border-right: 1px solid $border;
 
   @include breakpoint(medium) {
-    padding-bottom: $line-height*3;
+    min-height: rem-calc(1100);
   }
 
   ul {
@@ -165,10 +221,12 @@ body.admin {
     padding: 0;
 
     [class^="icon-"] {
+      color: $admin-color;
       display: inline-block;
       font-size: rem-calc(24);
-      padding-right: rem-calc(12);
-      padding-top: rem-calc(4);
+      line-height: $line-height;
+      padding: $line-height/2 $line-height/4;
+      padding-left: 0;
       vertical-align: middle;
     }
 
@@ -177,17 +235,24 @@ body.admin {
       margin: 0;
       outline: 0;
 
+      ul {
+        margin-left: $line-height/1.5;
+        border-left: 1px solid $border;
+        padding-left: $line-height/2;
+      }
+
+      &.section-title {
+        border-bottom: 1px solid $border;
+      }
+
       &.active a {
         background: #f3f6f7;
+        border-radius: rem-calc(6);
+        -moz-border-radius: rem-calc(6);
+        -webkit-border-radius: rem-calc(6);
         color: $admin-color;
         font-weight: bold;
       }
-    }
-
-    li.section {
-      border-bottom: 1px dotted #d5d5d5;
-      border-top: 1px dotted #d5d5d5;
-      height: $line-height/2;
     }
 
     li a {
@@ -199,8 +264,36 @@ body.admin {
 
       &:hover {
         background: #f3f6f7;
+        border-radius: rem-calc(6);
+        -moz-border-radius: rem-calc(6);
+        -webkit-border-radius: rem-calc(6);
+        color: $admin-color;
         text-decoration: none;
       }
+    }
+  }
+
+  .is-accordion-submenu-parent {
+
+    & > a::after {
+      border-color: $admin-color transparent transparent;
+    }
+  }
+
+  .submenu {
+    border-bottom: 0;
+    margin-left: $line-height;
+
+    li:first-child {
+      padding-top: $line-height/2;
+    }
+
+    li:last-child {
+      padding-bottom: $line-height/2;
+    }
+
+    a {
+      font-weight: normal;
     }
   }
 }
@@ -401,5 +494,38 @@ table.investment-projects-summary {
 
   td.total-price {
     white-space: nowrap;
+  }
+}
+
+.geozone {
+  background: #ececec;
+  border-radius: rem-calc(6);
+  color: $text;
+  display: inline-block;
+  font-size: $small-font-size;
+  margin-bottom: $line-height/3;
+  padding: $line-height/4 $line-height/3;
+  text-decoration: none;
+
+  &:hover {
+    background: #e0e0e0;
+  }
+}
+
+// 06. Polls
+// -----------------
+
+.count-error {
+  background: $alert-bg !important;
+  color: $color-alert;
+  font-weight: bold;
+}
+
+table {
+
+  .callout {
+    height: $line-height*2;
+    line-height: $line-height*2;
+    padding: 0 $line-height/2;
   }
 }

@@ -1,14 +1,16 @@
 <header>
-  <section class="top-links">
+  <div class="top-links">
     <div class="expanded row">
       <%= render 'shared/locale_switcher' %>
+      <%= link_to t("admin.dashboard.index.back") + " " + setting['org_name'],
+                  root_path, class: "float-right back-web" %>
     </div>
-  </section>
+  </div>
 
   <div class="expanded row">
     <div class="top-bar">
 
-      <%= link_to setting['org_name'], admin_root_path, class: "logo show-for-small-only" %>
+      <%= link_to setting['org_name'], namespaced_root_path, class: "logo show-for-small-only" %>
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
@@ -17,11 +19,13 @@
 
       <div id="responsive-menu">
         <div class="top-bar-title">
-          <%= link_to admin_root_path, class: "hide-for-small-only" do %>
-            <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
-            <%= setting['org_name'] %>
-            &nbsp;|&nbsp;<%= t("admin.dashboard.index.title") %>
-          <% end %>
+          <h1>
+            <%= link_to namespaced_root_path, class: "hide-for-small-only" do %>
+              <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+              <%= setting['org_name'] %>
+              &nbsp;|&nbsp;<%= namespaced_header_title %>
+            <% end %>
+          </h1>
         </div>
 
         <div class="top-bar-right">

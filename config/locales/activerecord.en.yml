@@ -34,6 +34,12 @@ en:
       organization:
         one: "Organisation"
         other: "Organisations"
+      poll/booth:
+        one: "booth"
+        other: "booths"
+      poll/officer:
+        one: "officer"
+        other: "officers"
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
@@ -99,6 +105,17 @@ en:
         external_url: "Link to additional documentation"
         geozone_id: "Scope of operation"
         title: "Title"
+      poll:
+        name: "Name"
+        starts_at: "Start Date"
+        ends_at: "Closing Date"
+        geozone_restricted: "Restricted by geozone"
+      poll/question:
+        title: "Question"
+        valid_answers: "Posibles answers"
+        summary: "Summary"
+        description: "Description"
+        external_url: "Link to additional documentation"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -117,6 +134,11 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Document not in census"
+              has_voted: "User has already voted"
         proposal:
           attributes:
             tag_list:

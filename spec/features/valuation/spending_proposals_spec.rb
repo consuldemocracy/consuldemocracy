@@ -83,6 +83,8 @@ feature 'Valuation spending proposals' do
   end
 
   scenario "Index filtering by geozone", :js do
+    Capybara.current_driver = :poltergeist_no_js_errors
+
     geozone = create(:geozone, name: "District 9")
     spending_proposal1 = create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
     spending_proposal2 = create(:spending_proposal, title: "Destroy the city")

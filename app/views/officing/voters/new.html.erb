@@ -1,0 +1,30 @@
+<%= back_link_to new_officing_residence_path %>
+
+<h2><%= t("officing.voters.new.title") %></h2>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("officing.voters.new.table_poll") %></th>
+        <th><%= t("officing.voters.new.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @polls.each do |poll| %>
+      <tr id="<%= dom_id(poll) %>">
+        <td>
+          <%= poll.name %>
+        </td>
+        <td id="actions">
+          <% if poll.votable_by?(@user) %>
+            <%= render "can_vote", poll: poll %>
+          <% else %>
+            <%= render "already_voted" %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

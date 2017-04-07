@@ -30,6 +30,7 @@ es:
       facebook_login: Registro con Facebook
       google_login: Registro con Google
       debates: Debates
+      polls: Votaciones
       signature_sheets: Hojas de firmas
       spending_proposals: Propuestas de inversión
       spending_proposal_features:

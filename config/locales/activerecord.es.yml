@@ -37,6 +37,12 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      poll/booth:
+        one: "urna"
+        other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
@@ -94,6 +100,17 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      poll:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
+      poll/question:
+        title: "Pregunta"
+        valid_answers: "Posibles respuestas"
+        summary: "Resumen"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
@@ -112,6 +129,11 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
         proposal:
           attributes:
             tag_list:

@@ -6,7 +6,8 @@
 // 04. List participation
 // 05. Featured
 // 06. Budget
-// 07. Proposals successfull
+// 07. Proposals successful
+// 08. Polls
 //
 
 // 01. Votes and supports
@@ -297,7 +298,8 @@
 .debate-show,
 .proposal-show,
 .investment-project-show,
-.budget-investment-show {
+.budget-investment-show,
+.polls-show {
 
   p {
     word-wrap: break-word;
@@ -769,7 +771,7 @@
 // ------------
 
 .featured-debates, .featured-proposals,
-.proposals-ballot, .proposals-ballot-list {
+.enquiries-list {
   padding: $line-height/2 0;
 
   @include breakpoint(medium) {
@@ -1206,7 +1208,7 @@ ul.ballot-list {
   }
 }
 
-// 07. Proposals successfull
+// 07. Proposals successful
 // -------------------------
 
 .dark-heading {
@@ -1239,7 +1241,7 @@ ul.ballot-list {
   }
 }
 
-.featured-proposals-ballot-banner {
+.featured-proposals-ballot-banner, .sucessfull-proposals-banner {
   background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;
   background-position: 75% 0;
   position: relative;
@@ -1263,10 +1265,10 @@ ul.ballot-list {
   }
 }
 
-.featured-proposals-ballot-banner,
-.successfull .panel {
+.sucessfull-proposals-banner,
+.successful .panel {
 
-  .icon-successfull {
+  .icon-successful {
     border-right: 60px solid #FFD200;
     border-top: 0;
     border-bottom: 60px solid transparent;
@@ -1287,17 +1289,7 @@ ul.ballot-list {
   }
 }
 
-.proposals-ballot-list {
-
-  .proposal-sucessfull {
-    background: white;
-    border-top: 1px solid $border;
-    padding: $line-height 0;
-    position: relative;
-  }
-}
-
-.successfull {
+.successful {
 
   .panel {
     position: relative;
@@ -1315,6 +1307,202 @@ ul.ballot-list {
     @include breakpoint(medium) {
       border-left: 1px solid $border;
       margin: $line-height rem-calc(-25) 0 rem-calc(12);
+    }
+  }
+}
+
+// 08. Polls
+// ----------------------
+
+.dark-heading {
+  background: #2D3E50;
+  color: white;
+
+  .title {
+    color: #92BA48;
+  }
+
+  .button {
+    background: white;
+    color: $brand;
+  }
+
+  .callout {
+
+    &.warning a {
+      color: $color-warning;
+    }
+
+    &.primary a {
+      color: $color-info;
+    }
+
+    &.alert a {
+      color: $color-alert;
+    }
+  }
+
+  .info {
+    background: #314253;
+    padding: $line-height;
+
+    @include breakpoint(medium) {
+      border-top: rem-calc(6) solid #92BA48;
+    }
+  }
+
+  a:not(.button) {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .back, .icon-angle-left {
+    color: white;
+  }
+
+  &.polls-show-header {
+    min-height: $line-height*8;
+  }
+}
+
+.poll, .poll-question {
+  background: white;
+  border-radius: rem-calc(6);
+  margin-bottom: $line-height/2;
+}
+
+.poll {
+  padding: $line-height;
+  position: relative;
+
+  .icon-poll-answer {
+    border-top: 0;
+    border-bottom: 60px solid transparent;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+
+    &.can-answer:after,
+    &.cant-answer:after,
+    &.not-logged-in:after,
+    &.already-answer:after,
+    &.unverified:after {
+      font-family: "icons" !important;
+      left: 34px;
+      position: absolute;
+      top: 5px;
+    }
+
+    &.can-answer {
+      border-right: 60px solid $info-bg;
+
+      &:after {
+        color: $color-info;
+        content: "\6c";
+      }
+    }
+
+    &.cant-answer {
+      border-right: 60px solid $alert-bg;
+
+      &:after {
+        color: $color-alert;
+        content: "\74";
+      }
+    }
+
+    &.not-logged-in {
+      border-right: 60px solid $info-bg;
+
+      &:after {
+        color: $color-info;
+        content: "\6f";
+      }
+    }
+
+    &.unverified {
+      border-right: 60px solid $warning-bg;
+
+      &:after {
+        color: $color-warning;
+        content: "\6f";
+      }
+    }
+
+    &.already-answer {
+      border-right: 60px solid $success-bg;
+
+      &:after {
+        color: $color-success;
+        content: "\59";
+      }
+    }
+  }
+
+  .dates {
+    color: $text-medium;
+    font-size: $small-font-size;
+    margin-bottom: $line-height/2;
+  }
+
+  h4 {
+    font-size: rem-calc(30);
+    line-height: $line-height*1.5;
+
+    a {
+      color: $text;
+    }
+  }
+}
+
+h2.questions-callout {
+  font-size: $base-font-size;
+}
+
+h3.section-title-divider {
+  border-bottom: 2px solid $brand;
+  color: $brand;
+  margin-bottom: $line-height;
+}
+
+.poll-question {
+  padding: 0 $line-height;
+
+  h3 {
+    padding-top: $line-height;
+
+    a {
+      color: $text;
+    }
+  }
+}
+
+.poll-question-answers {
+
+  .button {
+    margin-right: $line-height/4;
+    min-width: rem-calc(168);
+
+    &.answered {
+      background: #F4F8EC;
+      border: 2px solid #92BA48;
+      color: $text;
+      position: relative;
+
+      &:after {
+        background: #92BA48;
+        border-radius: rem-calc(20);
+        content: "\6c";
+        color: white;
+        font-family: "icons" !important;
+        font-size: rem-calc(12);
+        padding: $line-height/4;
+        position: absolute;
+        right: -6px;
+        top: -6px;
+      }
     }
   }
 }

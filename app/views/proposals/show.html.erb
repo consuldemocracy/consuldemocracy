@@ -102,13 +102,19 @@
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@proposal) %>_votes">
-          <% if @proposal.successfull? %>
-            <div class="padding text-center">
-              <p>
-                <%= t("proposal_ballots.successfull",
-                    voting: link_to(t("proposal_ballots.voting"), proposal_ballots_path)).html_safe %>
+
+          <% if @proposal.successful? %>
+            <p>
+              <%= t("proposals.proposal.successful",
+                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+            </p>
+            <% if can? :create, Poll::Question %>
+              <p class="text-center">
+                <%= link_to t('poll_questions.create_question'),
+                            new_admin_question_path(proposal_id: @proposal.id),
+                            class: "button hollow expanded" %>
               </p>
-            </div>
+            <% end %>
           <% elsif @proposal.archived? %>
             <div class="padding text-center">
               <p>

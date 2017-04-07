@@ -1,7 +1,10 @@
 ---
 es:
   admin:
+    header:
+      title: Administración
     actions:
+      actions: Acciones
       confirm: "¿Estás seguro?"
       confirm_hide: Confirmar
       hide: Ocultar
@@ -9,6 +12,8 @@ es:
       restore: Volver a mostrar
       mark_featured: Destacar
       unmark_featured: Quitar destacado
+      edit: Editar
+      configure: Configurar
     banners:
       index:
         title: Banners
@@ -190,23 +195,32 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      proposals_topics: Temas de propuestas
+      poll_questions: Preguntas ciudadanas
       budgets: Presupuestos participativos
-      debate_topics: Temas de debate
       geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
-      incomplete_verifications: Verificaciones incompletas
       managers: Gestores
       moderators: Moderadores
       valuators: Evaluadores
+      poll_officers: Presidentes de mesa
+      polls: Votaciones
+      poll_booths: Ubicación de urnas
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
       signature_sheets: Hojas de firmas
+      title_categories: Categorías
+      title_moderated_content: Contenido moderado
+      title_budgets: Presupuestos
+      title_polls: Votaciones
+      title_profiles: Perfiles
+      title_banners: Banners
     moderators:
       index:
         title: Moderadores
@@ -237,6 +251,162 @@ es:
         in_evaluation_count: En evaluación
         total_count: Total
         cost: Coste total
+    poll_officers:
+      index:
+        title: Presidentes de mesa
+      officer:
+        add: Añadir como Presidente de mesa
+        delete: Eliminar cargo
+        name: Nombre
+        email: Email
+        entry_name: presidente de mesa
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
+    poll_officer_assignments:
+      flash:
+        destroy: "Eliminado turno de presidente de mesa"
+        create: "Añadido turno de presidente de mesa"
+        error_destroy: "Se ha producido un error al eliminar el turno"
+        error_create: "Se ha producido un error al intentar crear el turno"
+      index:
+        officers_title: "Listado de presidentes de mesa asignados"
+        no_officers: "No hay presidentes de mesa asignados a esta votación."
+        table_name: "Nombre"
+        table_email: "Email"
+        add_officer_assignments: "Añadir turnos como presidente de mesa"
+        edit_officer_assignments: "Editar turnos"
+      by_officer:
+        new_assignment: "Nuevo turno"
+        date: "Fecha"
+        booth: "Urna"
+        assignment: "Asignación"
+        select_date: "Seleccionar día"
+        select_booth: "Seleccionar urna"
+        add_assignment: "Añadir turno"
+        remove_assignment: "Eliminar turno"
+        assignments: "Turnos como presidente de mesa en esta votación"
+        no_assignments: "No tiene turnos como presidente de mesa en esta votación."
+        recounts: "Recuentos diarios"
+        recount: "Recuento diario (presidente de mesa)"
+        final_recounts: "Recuentos finales"
+        final_recount: "Recuento final (presidente de mesa)"
+    poll_booth_assignments:
+      flash:
+        destroy: "Urna desasignada"
+        create: "Urna asignada"
+        error_destroy: "Se ha producido un error al desasignar la urna"
+        error_create: "Se ha producido un error al intentar asignar la urna"
+      show:
+        location: "Ubicación"
+        officers: "Presidentes de mesa"
+        officers_list: "Lista de presidentes de mesa asignados a esta urna"
+        no_officers: "No hay presidentes de mesa para esta urna"
+        recounts: "Recuentos"
+        recounts_list: "Lista de recuentos de esta urna"
+        no_recounts: "No hay recuentos diarios de esta urna"
+        date: "Fecha"
+        count_by_officer: "Recuento diario (presidente de mesa)"
+        count_final: "Recuento final (presidente de mesa)"
+        count_by_system:  "Votos (automático)"
+      index:
+        booths_title: "Listado de urnas asignadas"
+        no_booths: "No hay urnas asignadas a esta votación."
+        table_name: "Nombre"
+        table_location: "Ubicación"
+        table_assignment: "Asignación"
+        remove_booth: "Desasignar urna"
+        add_booth: "Asignar urna"
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "No hay ninguna votación."
+        create: "Crear votación"
+        name: "Nombre"
+        dates: "Fechas"
+      new:
+        title: "Nueva votación"
+        submit_button: "Crear votación"
+      edit:
+        title: "Editar votación"
+        submit_button: "Actualizar votación"
+      show:
+        questions_tab: Preguntas
+        booths_tab: Urnas
+        officers_tab: Presidentes de mesa
+        recounts_tab: Recuentos
+        results_tab: Resultados
+        no_questions: "No hay preguntas asignadas a esta votación."
+        questions_title: "Listado de preguntas asignadas"
+        remove_question: "Desasignar pregunta"
+        add_question: "Incluir pregunta"
+        table_title: "Título"
+        table_assignment: "Asignación"
+        table_name: "Nombre"
+      flash:
+        question_added: "Pregunta añadida a esta votación"
+        error_on_question_added: "No se pudo asignar la pregunta"
+        question_removed: "Pregunta eliminada de esta votación"
+        error_on_question_removed: "No se pudo quitar la pregunta"
+    questions:
+      index:
+        title: "Preguntas ciudadanas"
+        create: "Crear pregunta ciudadana"
+        no_questions: "No hay ninguna pregunta ciudadana."
+        filter_poll: "Filtrar por votación"
+        select_poll: "Seleccionar votación"
+        questions_tab: "Preguntas ciudadanas"
+        successful_proposals_tab: "Propuestas que han superado el umbral"
+        create_question: "Crear pregunta para votación"
+        table_proposal: "Propuesta"
+        table_question: "Pregunta"
+      edit:
+        title: "Editar pregunta ciudadana"
+      new:
+        title: "Crear pregunta ciudadana"
+        poll_label: "Votación"
+        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
+      show:
+        proposal: Propuesta ciudadana original
+        author: Autor
+        title: Título
+        valid_answers: Respuestas válidas
+        description: Descripción
+        preview: Ver en la web
+    recounts:
+      index:
+        title: "Recuentos"
+        no_recounts: "No hay nada de lo que hacer recuento"
+        table_booth_name: "Urna"
+        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
+        table_final_recount: "Recuento final (presidente de mesa)"
+        table_system_count: "Votos (automático)"
+    results:
+      index:
+        title: "Resultados"
+        no_results: "No hay resultados"
+        table_whites: Papeletas en blanco
+        table_nulls: Papeletas nulas
+        table_answer: Respuesta
+        table_votes: Votos
+    booths:
+      index:
+        title: "Lista de urnas"
+        no_booths: "No hay urnas."
+        add_booth: "Añadir urna"
+        name: "Nombre"
+        location: "Ubicación"
+      new:
+        title: "Nueva urna"
+        name: "Nombre"
+        location: "Ubicación"
+        submit_button: "Crear urna"
+      edit:
+        title: "Editar urna"
+        submit_button: "Actualizar urna"
+      show:
+        location: "Ubicación"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -299,6 +469,15 @@ es:
           enable: "Activar"
           disable: "Desactivar"
     shared:
+      booths_search:
+        button: Buscar
+        placeholder: Buscar urna por nombre
+      poll_officers_search:
+        button: Buscar
+        placeholder: Buscar presidentes de mesa
+      poll_questions_search:
+        button: Buscar
+        placeholder: Buscar preguntas
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
@@ -308,6 +487,8 @@ es:
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
+      search_results: "Resultados de la búsqueda"
+      no_search_results: "No se han encontrado resultados."
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -439,6 +620,7 @@ es:
         visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
+        incomplete_verifications: Verificaciones incompletas
       direct_messages:
         title: Mensajes directos
         total: Total
@@ -451,9 +633,9 @@ es:
       create: Crear Tema
       destroy: Eliminar Tema
       index:
-        add_tag: Añade un nuevo tema de debate
-        title: Temas de debate
-      mark_as_featured: Proponer tema al crear debate
+        add_tag: Añade un nuevo tema de propuesta
+        title: Temas de propuesta
+      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
