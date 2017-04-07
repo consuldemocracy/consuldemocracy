@@ -62,7 +62,7 @@ feature 'Proposals' do
     expect(page).to have_title proposal.title
 
     within('.social-share-button') do
-      expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
+      expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram
     end
   end
 

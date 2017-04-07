@@ -571,6 +571,7 @@ en:
     twitter: Twitter
     youtube: YouTube
     whatsapp: WhatsApp
+    telegram: Telegram
   spending_proposals:
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'

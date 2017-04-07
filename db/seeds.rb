@@ -49,6 +49,7 @@ Setting["twitter_handle"] = "abriendomadrid"
 Setting["twitter_hashtag"] = "#decidemadrid"
 Setting["facebook_handle"] = "Abriendo-Madrid-1475577616080350"
 Setting["youtube_handle"] = "channel/UCFmaChI9quIY7lwHplnacfg"
+Setting["telegram_handle"] = nil
 Setting["blog_url"] = "/blog"
 
 # Public-facing URL of the app.

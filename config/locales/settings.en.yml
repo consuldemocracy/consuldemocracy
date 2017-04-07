@@ -20,6 +20,7 @@ en:
     twitter_hashtag: "Twitter hashtag"
     facebook_handle: "Facebook handle"
     youtube_handle: "Youtube handle"
+    telegram_handle: "Telegram handle"
     blog_url: "Blog URL"
     url: "Main URL"
     org_name: "Organization"

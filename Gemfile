@@ -42,7 +42,7 @@ gem 'acts_as_votable'
 gem 'ckeditor', git: "https://github.com/galetahub/ckeditor.git"
 gem 'invisible_captcha', '~> 0.9.2'
 gem 'cancancan', '~> 1.16.0'
-gem 'social-share-button'
+gem 'social-share-button', '~> 0.10'
 gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.2.0'
 gem 'paranoia', '~> 2.2.1'
