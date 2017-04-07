@@ -110,6 +110,7 @@ en:
         administrator_filter_all: All administrators
         valuator_filter_all: All valuators
         tags_filter_all: All tags
+        max_per_heading: Max per heading
         filters:
           valuation_open: Open
           without_admin: Without assigned admin

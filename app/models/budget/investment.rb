@@ -68,17 +68,19 @@ class Budget
     def self.scoped_filter(params, current_filter)
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.where(budget_id: budget.id)
-      results = results.where(group_id: params[:group_id])          if params[:group_id].present?
-      results = results.by_heading(params[:heading_id])             if params[:heading_id].present?
-      results = results.by_admin(params[:administrator_id])         if params[:administrator_id].present?
-      results = results.by_tag(params[:tag_name])                   if params[:tag_name].present?
-      results = results.by_valuator(params[:valuator_id])           if params[:valuator_id].present?
-      results = results.send(current_filter)                        if current_filter.present?
+      results = limit_results(results, budget, params)      if params[:max_per_heading].present?
+      results = results.where(group_id: params[:group_id])  if params[:group_id].present?
+      results = results.by_heading(params[:heading_id])     if params[:heading_id].present?
+      results = results.by_admin(params[:administrator_id]) if params[:administrator_id].present?
+      results = results.by_tag(params[:tag_name])           if params[:tag_name].present?
+      results = results.by_valuator(params[:valuator_id])   if params[:valuator_id].present?
+      results = results.send(current_filter)                if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
     end
 
-    def self.limit_results(results, budget, max_per_heading, max_for_no_heading)
-      return results if max_per_heading <= 0 && max_for_no_heading <= 0
+    def self.limit_results(results, budget, params)
+      max_per_heading = params[:max_per_heading].to_i
+      return results if max_per_heading <= 0
 
       ids = []
       if max_per_heading > 0
@@ -87,22 +89,7 @@ class Budget
         end
       end
 
-      if max_for_no_heading > 0
-        ids += Investment.no_heading.order(confidence_score: :desc).limit(max_for_no_heading).pluck(:id)
-      end
-
-      conditions = ["investments.id IN (?)"]
-      values = [ids]
-
-      if max_per_heading == 0
-        conditions << "investments.heading_id IS NOT ?"
-        values << nil
-      elsif max_for_no_heading == 0
-        conditions << "investments.heading_id IS ?"
-        values << nil
-      end
-
-      results.where(conditions.join(' OR '), *values)
+      results.where("budget_investments.id IN (?)", ids)
     end
 
     def searchable_values
