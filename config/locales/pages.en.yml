@@ -24,7 +24,6 @@ en:
       proposals:
         title: "Proposals"
         description: "Propose what you want the City Council to carry out and support proposals from other people."
-        detail: "Detailed information of proposals"
         feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
         feature_1_link: "sign up on %{org_name}"
         feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
@@ -34,7 +33,6 @@ en:
       budgets:
         title: "Participatory Budgeting"
         description: "The first six months of each year you can decide how to spend part of the budget."
-        detail: "Detailed information of Participatory Budgeting"
         feature_1: "To create an investment project you have to %{link} and verify your account."
         feature_1_link: "sign up on %{org_name}"
         feature_2_html: "The first is the <strong>accepting phase</strong> of investment projects."
@@ -42,6 +40,13 @@ en:
         feature_4_html: "At the end there is a <strong>voting phase </strong> where it is decided on which part of the budget is spent."
         image_alt: "Different phases of a participatory budget"
         figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
+      polls:
+        title: "Polls"
+        description: "Citizen proposals that reach 1% of support will be put to a vote."
+        feature_1: "To participate in the next poll you have to %{link} and verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2: "All verified users over 16 years old can vote."
+        feature_3: "The results of all votes shall be binding on the government."
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."

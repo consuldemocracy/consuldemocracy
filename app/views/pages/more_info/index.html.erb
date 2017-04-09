@@ -24,6 +24,10 @@
       <% if feature?(:budgets) %>
         <%= render "pages/more_info/budgets" %>
       <% end %>
+
+      <% if feature?(:polls) %>
+        <%= render "pages/more_info/polls" %>
+      <% end %>
     </div>
     <div class="small-12 medium-4 large-3 column more-info-sidebar">
       <%= render "pages/more_info/sidebar" %>

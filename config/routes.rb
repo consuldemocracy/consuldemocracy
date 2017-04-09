@@ -359,8 +359,6 @@ Rails.application.routes.draw do
   get 'more-information',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'
   get 'more-information/how-to-use',          to: 'pages#show', id: 'more_info/how_to_use/index',     as: 'how_to_use'
   get 'more-information/faq',                 to: 'pages#show', id: 'more_info/faq/index',            as: 'faq'
-  get 'more-information/proposals',           to: 'pages#show', id: 'more_info/proposals/index',      as: 'more_info_proposals'
-  get 'more-information/budgets',             to: 'pages#show', id: 'more_info/budgets/index',        as: 'more_info_budgets'
   get 'more-information/participation/facts', to: 'pages#show', id: 'more_info/participation/facts',  as: 'participation_facts'
   get 'more-information/participation/world', to: 'pages#show', id: 'more_info/participation/world',  as: 'participation_world'
 
