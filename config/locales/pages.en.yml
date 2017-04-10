@@ -31,6 +31,7 @@ en:
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
       proposals:
         title: "Proposals"
+        detail: "Detailed proposals information"
         description: "Propose what you want the City Council to carry out and support proposals from other people."
         feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
         feature_1_link: "sign up on %{org_name}"
@@ -40,6 +41,7 @@ en:
         figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
       budgets:
         title: "Participatory Budgeting"
+        detail: "Detailed budgets information"
         description: "The first six months of each year you can decide how to spend part of the budget."
         feature_1: "To create an investment project you have to %{link} and verify your account."
         feature_1_link: "sign up on %{org_name}"
@@ -50,11 +52,14 @@ en:
         figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
       polls:
         title: "Polls"
+        detail: "Detailed polls information"
         description: "Citizen proposals that reach 1% of support will be put to a vote."
         feature_1: "To participate in the next poll you have to %{link} and verify your account."
         feature_1_link: "sign up on %{org_name}"
         feature_2: "All verified users over 16 years old can vote."
         feature_3: "The results of all votes shall be binding on the government."
+        image_alt: "First citizen vote"
+        figcaption: "Campaign image of the First Citizen Vote in February 2017."
       faq:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
