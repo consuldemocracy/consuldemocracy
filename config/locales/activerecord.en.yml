@@ -46,6 +46,15 @@ en:
       spending_proposal:
         one: "Spending proposal"
         other: "Spending proposals"
+      site_customization/page:
+        one: Custom page
+        other: Custom pages
+      site_customization/image:
+        one: Custom image
+        other: Custom images
+      site_customization/content_block:
+        one: Custom content block
+        other: Custom content blocks
     attributes:
       budget:
         name: "Name"
@@ -120,6 +129,23 @@ en:
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
+      site_customization/page:
+        content: Content
+        created_at: Created at
+        subtitle: Subtitle
+        slug: Slug
+        status: Status
+        title: Title
+        updated_at: Updated at
+        more_info_flag: Show in more information page
+        print_content_flag: Print content button
+      site_customization/image:
+        name: Name
+        image: Image
+      site_customization/content_block:
+        name: Name
+        locale: locale
+        body: Body
     errors:
       models:
         user:
@@ -156,3 +182,12 @@ en:
             document_number:
               not_in_census: 'Not verified by Census'
               already_voted: 'Already voted this proposal'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "must be letters, numbers, _ and -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"

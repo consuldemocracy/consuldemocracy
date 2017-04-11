@@ -248,6 +248,12 @@ Rails.application.routes.draw do
     end
 
     resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
+
+    namespace :site_customization do
+      resources :pages, except: [:show]
+      resources :images, only: [:index, :update, :destroy]
+      resources :content_blocks, except: [:show]
+    end
   end
 
   namespace :moderation do

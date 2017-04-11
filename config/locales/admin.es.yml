@@ -215,12 +215,17 @@ es:
       spending_proposals: Propuestas de inversión
       stats: Estadísticas
       signature_sheets: Hojas de firmas
+      site_customization:
+        pages: Personalizar páginas
+        images: Personalizar imágenes
+        content_blocks: Personalizar bloques
       title_categories: Categorías
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles
       title_banners: Banners
+      title_site_customization: Personalizar sitio
     moderators:
       index:
         title: Moderadores
@@ -657,3 +662,77 @@ es:
         phone_not_given: No ha dado su teléfono
         sms_code_not_confirmed: No ha introducido su código de seguridad
         title: Verificaciones incompletas
+    site_customization:
+      content_blocks:
+        form:
+          content_blocks_information: Información sobre los bloques de texto
+          content_block_about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu Cónsul.
+          content_block_top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
+          content_block_footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+        create:
+          notice: Bloque creado correctamente
+          error: No se ha podido crear el bloque
+        update:
+          notice: Bloque actualizado correctamente
+          error: No se ha podido actualizar el bloque
+        destroy:
+          notice: Bloque borrado correctamente
+        edit:
+          title: Editar bloque
+          back: Volver
+        errors:
+          form:
+            error: Error
+        index:
+          create: Crear nuevo bloque
+          delete: Borrar
+          title: Bloques
+        new:
+          back: Volver
+          title: Crear nuevo bloque
+        content_block:
+          body: Contenido
+          name: Nombre
+      images:
+        index:
+          title: Personalizar imágenes
+          update: Actualizar
+          delete: Borrar
+        update:
+          notice: Imagen actualizada correctamente
+          error: No se ha podido actualizar la imagen
+        destroy:
+          notice: Imagen borrada correctamente
+          error: No se ha podido borrar la imagen
+      pages:
+        create:
+          notice: Página creada correctamente
+          error: No se ha podido crear la página
+        update:
+          notice: Página actualizada correctamente
+          error: No se ha podido actualizar la página
+        destroy:
+          notice: Página eliminada correctamente
+        edit:
+          title: Editar %{page_title}
+          back: Volver
+        errors:
+          form:
+            error: Error
+        form:
+          options: Opciones
+        index:
+          create: Crear nueva página
+          delete: Borrar
+          title: Páginas
+          see_page: Ver página
+        new:
+          back: Back
+          title: Página nueva
+        page:
+          created_at: Creada
+          status: Estado
+          title: Título
+          updated_at: Última actualización
+          status_draft: Borrador
+          status_published: Publicada

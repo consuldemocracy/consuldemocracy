@@ -46,6 +46,15 @@ es:
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
+      site_customization/page:
+        one: Página
+        other: Páginas
+      site_customization/image:
+        one: Imagen
+        other: Imágenes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
     attributes:
       budget:
         name: "Nombre"
@@ -115,6 +124,23 @@ es:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
         document_numbers: "Números de documentos"
+      site_customization/page:
+        content: Contenido
+        created_at: Creada
+        subtitle: Subtítulo
+        slug: Slug
+        status: Estado
+        title: Título
+        updated_at: última actualización
+        more_info_flag: Mostrar en la página de más información
+        print_content_flag: Botón de imprimir contenido
+      site_customization/image:
+        name: Nombre
+        image: Imagen
+      site_customization/content_block:
+        name: Nombre
+        locale: Idioma
+        body: Contenido
     errors:
       models:
         user:
@@ -151,3 +177,12 @@ es:
             document_number:
               not_in_census: 'No verificado por Padrón'
               already_voted: 'Ya ha votado esta propuesta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "deber ser letras, números, _ y -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Debe tener %{required_width}px de ancho"
+              image_height: "Debe tener %{required_height}px de alto"

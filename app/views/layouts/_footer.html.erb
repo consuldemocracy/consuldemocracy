@@ -1,5 +1,5 @@
 <footer>
-	<div class="row">
+  <div class="row">
     <div class="small-12 large-4 column">
       <h1 class="logo">
         <%= link_to t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
@@ -25,14 +25,14 @@
 
       <div class="small-12 medium-4 column">
         <h2>
-          <%= link_to t("layouts.footer.transparency_title"), t("layouts.footer.transparency_url") %>
+          <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url") %>
         </h2>
         <p><%= t("layouts.footer.transparency_text") %></p>
       </div>
 
       <div class="small-12 medium-4 column">
         <h2>
-          <%= link_to t("layouts.footer.open_data_title"), "/opendata" %>
+          <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url") %>
         </h2>
         <p><%= t("layouts.footer.open_data_text") %></p>
       </div>
@@ -95,5 +95,9 @@
         </ul>
       </div>
     </div>
+  </div>
+
+  <div class="row">
+    <%= raw content_block("footer", I18n.locale) %>
   </div>
 </footer>

@@ -60,6 +60,10 @@ module Abilities
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
       can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+
+      can :manage, SiteCustomization::Page
+      can :manage, SiteCustomization::Image
+      can :manage, SiteCustomization::ContentBlock
     end
   end
 end

@@ -142,5 +142,25 @@
         <% end %>
       </li>
     <% end %>
+
+    <li class="section-title">
+      <a href="#">
+        <span class="icon-settings"></span>
+        <strong><%= t("admin.menu.title_site_customization") %></strong>
+      </a>
+      <ul <%= "class=is-active" if menu_profiles? %>>
+        <li <%= "class=active" if controller_name == "pages" %>>
+          <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
+        </li>
+
+        <li <%= "class=active" if controller_name == "images" %>>
+          <%= link_to t("admin.menu.site_customization.images"), admin_site_customization_images_path %>
+        </li>
+
+        <li <%= 'class=active' if controller_name == 'content_blocks' %>>
+          <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>

@@ -21,6 +21,8 @@ en:
     youtube_handle: "Youtube handle"
     telegram_handle: "Telegram handle"
     blog_url: "Blog URL"
+    transparency_url: "Transparency URL"
+    opendata_url: "Open Data URL"
     url: "Main URL"
     org_name: "Organization"
     place_name: "Place"

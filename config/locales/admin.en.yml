@@ -215,12 +215,17 @@ en:
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
+      site_customization:
+        pages: Custom Pages
+        images: Custom Images
+        content_blocks: Custom content blocks
       title_categories: Categories
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
       title_profiles: Profiles
       title_banners: Banners
+      title_site_customization: Site customization
     moderators:
       index:
         title: Moderators
@@ -657,3 +662,77 @@ en:
         phone_not_given: Phone not given
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
+    site_customization:
+      content_blocks:
+        form:
+          content_blocks_information: Information about content blocks
+          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
+          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
+          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        create:
+          notice: Content block created successfully
+          error: Content block couldn't be created
+        update:
+          notice: Content block updated successfully
+          error: Content block couldn't be updated
+        destroy:
+          notice: Content block deleted successfully
+        edit:
+          title: Editing content block
+          back: Back
+        errors:
+          form:
+            error: Error
+        index:
+          create: Create new content block
+          delete: Delete
+          title: Content blocks
+        new:
+          back: Back
+          title: Create new content block
+        content_block:
+          body: Body
+          name: Name
+      images:
+        index:
+          title: Custom images
+          update: Update
+          delete: Delete
+        update:
+          notice: Image updated successfully
+          error: Image couldn't be updated
+        destroy:
+          notice: Image deleted successfully
+          error: Image couldn't be deleted
+      pages:
+        create:
+          notice: Page created successfully
+          error: Page couldn't be created
+        update:
+          notice: Page updated successfully
+          error: Page couldn't be updated
+        destroy:
+          notice: Page deleted successfully
+        edit:
+          title: Editing %{page_title}
+          back: Back
+        errors:
+          form:
+            error: Error
+        form:
+          options: Options
+        index:
+          create: Create new page
+          delete: Delete
+          title: Custom Pages
+          see_page: See page
+        new:
+          back: Back
+          title: Create new custom page
+        page:
+          created_at: Created at
+          status: Status
+          title: Title
+          updated_at: Updated at
+          status_draft: Draft
+          status_published: Published
