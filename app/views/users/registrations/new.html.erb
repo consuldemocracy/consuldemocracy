@@ -19,7 +19,7 @@
 
       <%= f.label :username %>
       <p class="note"><%= t("devise_views.users.registrations.new.username_note") %></p>
-      <%= f.text_field  :username, maxlength: User.username_max_length, placeholder: t("devise_views.users.registrations.new.username_label"), label: false %>
+      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length, placeholder: t("devise_views.users.registrations.new.username_label"), label: false %>
 
       <%= f.invisible_captcha :family_name %>
 

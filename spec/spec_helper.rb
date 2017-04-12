@@ -106,3 +106,8 @@ end
 
 # Parallel build helper configuration for travis
 Knapsack::Adapters::RSpecAdapter.bind
+
+options = {js_errors: false}
+Capybara.register_driver :poltergeist_no_js_errors do |app|
+  Capybara::Poltergeist::Driver.new(app, options)
+end

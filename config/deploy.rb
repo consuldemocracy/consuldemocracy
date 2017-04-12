@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.5.0'
+lock '3.8.0'
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
@@ -15,7 +15,6 @@ set :full_app_name, deploysecret(:full_app_name)
 set :server_name, deploysecret(:server_name)
 set :repo_url, 'https://github.com/consul/consul.git'
 
-set :scm, :git
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
 set :log_level, :info

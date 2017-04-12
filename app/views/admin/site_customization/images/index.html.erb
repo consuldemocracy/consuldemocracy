@@ -1,0 +1,25 @@
+<h2><%= t("admin.site_customization.images.index.title") %></h2>
+
+<table>
+  <tbody>
+    <% @images.each do |image| %>
+      <tr class="<%= image.name %>">
+        <td class="small-12 medium-4">
+          <strong><%= image.name %></strong> (<%= image.required_width %>x<%= image.required_height %>)
+        </td>
+        <td class="small-12 medium-8">
+          <%= form_for([:admin, image], html: { id: "edit_#{dom_id(image)}"}) do |f| %>
+            <div class="small-12 medium-6 large-6 column">
+              <%= image_tag image.image.url if image.image.exists? %>
+              <%= f.file_field :image, label: false %>
+            </div>
+            <div class="small-12 medium-6 large-6 column">
+              <%= f.submit(t('admin.site_customization.images.index.update'), class: "button hollow") %>
+              <%= link_to t('admin.site_customization.images.index.delete'), admin_site_customization_image_path(image), method: :delete, class: "button hollow alert" if image.image.exists? %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

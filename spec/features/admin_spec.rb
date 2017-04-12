@@ -16,7 +16,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as a moderator is not authorized' do
+  scenario 'Access as moderator is not authorized' do
     create(:moderator, user: user)
     login_as(user)
     visit admin_root_path
@@ -26,7 +26,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as a valuator is not authorized' do
+  scenario 'Access as valuator is not authorized' do
     create(:valuator, user: user)
     login_as(user)
     visit admin_root_path
@@ -36,7 +36,7 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as a manager is not authorized' do
+  scenario 'Access as manager is not authorized' do
     create(:manager, user: user)
     login_as(user)
     visit admin_root_path
@@ -46,7 +46,17 @@ feature 'Admin' do
     expect(page).to have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as an administrator is authorized' do
+  scenario 'Access as poll officer is not authorized' do
+    create(:poll_officer, user: user)
+    login_as(user)
+    visit admin_root_path
+
+    expect(current_path).not_to eq(admin_root_path)
+    expect(current_path).to eq(proposals_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
+  scenario 'Access as administrator is authorized' do
     login_as(administrator)
     visit admin_root_path
 

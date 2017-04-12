@@ -1,0 +1,28 @@
+<h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
+
+<%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path,
+            class: "button success float-right" %>
+
+<% if @booths.empty? %>
+  <div class="callout primary">
+    <%= t("admin.booths.index.no_booths") %>
+  </div>
+<% end %>
+
+<% if @booths.any? %>
+  <h3><%= page_entries_info @booths %></h3>
+  <table>
+    <thead>
+      <th><%= t("admin.booths.index.name") %></th>
+      <th><%= t("admin.booths.index.location") %></th>
+      <th>&nbsp;</th>
+    </thead>
+    <tbody>
+    <% @booths.each do |booth| %>
+      <%= render partial: "booth", locals: { booth: booth } %>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @booths %>
+<% end %>

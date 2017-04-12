@@ -31,6 +31,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#side_menu') do
+      expect(page).not_to have_link "Budgets"
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -45,6 +46,7 @@ feature 'Admin feature flags' do
     visit admin_root_path
 
     within('#side_menu') do
+      expect(page).not_to have_link "Budgets"
       expect(page).not_to have_link "Spending proposals"
     end
 
