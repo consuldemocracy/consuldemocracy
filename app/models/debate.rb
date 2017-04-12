@@ -1,5 +1,5 @@
 require 'numeric'
-class Debate < ActiveRecord::Base
+class Debate < ApplicationRecord
   include Flaggable
   include Taggable
   include Conflictable

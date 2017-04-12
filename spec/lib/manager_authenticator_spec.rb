@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ManagerAuthenticator do
+describe 'ManagerAuthenticator' do
   describe 'initialization params' do
     it 'should cause auth to return false if blank login' do
       authenticator = ManagerAuthenticator.new({login: "", clave_usuario: "31415926", fecha_conexion: "20151031135905"})

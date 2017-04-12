@@ -1,4 +1,4 @@
-class Organization < ActiveRecord::Base
+class Organization < ApplicationRecord
   belongs_to :user, touch: true
 
   validates :name, presence: true
