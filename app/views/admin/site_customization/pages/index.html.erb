@@ -1,0 +1,43 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.site_customization.pages") %>
+<% end %>
+
+<%= link_to t("admin.site_customization.pages.index.create"), new_admin_site_customization_page_path, class: "button float-right margin-right" %>
+<h2 class="inline-block"><%= t("admin.site_customization.pages.index.title") %></h2>
+
+  <h3><%= page_entries_info @pages %></h3>
+
+  <table class="cms_page_list">
+    <thead>
+      <tr>
+        <th><%= t("admin.site_customization.pages.page.title") %></th>
+        <th><%= t("admin.site_customization.pages.page.created_at") %></th>
+        <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
+        <th><%= t("admin.site_customization.pages.page.status") %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @pages.each do |page| %>
+      <tr id="<%= dom_id(page) %>">
+        <td>
+          <%= link_to page.title, edit_admin_site_customization_page_path(page) %>
+        </td>
+        <td><%= I18n.l page.created_at, format: :short %></td>
+        <td><%= I18n.l page.created_at, format: :short %></td>
+        <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
+        <td class="small">
+          <span class="icon-eye"></span>
+          <%= link_to t("admin.site_customization.pages.index.see_page"), page.url %>
+        </td>
+        <td class="small">
+          <span class="icon-x"></span>
+          <%= link_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(page), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @pages %>

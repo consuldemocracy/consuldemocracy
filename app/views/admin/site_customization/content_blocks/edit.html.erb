@@ -1,0 +1,15 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.site_customization.content_blocks") %> - <%= @content_block.name %> (<%= @content_block.locale %>)
+<% end %>
+
+<%= link_to admin_site_customization_content_blocks_path, class: "back" do %>
+  <span class="icon-angle-left"></span>
+  <%= t("admin.site_customization.content_blocks.edit.back") %>
+<% end %>
+
+<%= button_to t("admin.site_customization.content_blocks.index.delete"), admin_site_customization_content_block_path(@content_block), method: :delete, class: "button hollow alert float-right margin-right" %>
+
+<div class="row margin-top">
+  <h2><%= t("admin.site_customization.content_blocks.edit.title") %></h2>
+  <%= render 'form' %>
+</div>
