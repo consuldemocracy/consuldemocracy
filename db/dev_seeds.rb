@@ -539,6 +539,12 @@ print "Creating Valuation Assignments"
   Budget::Investment.reorder("RANDOM()").first.valuators << valuator.valuator
 end
 
+puts " ✅"
+print "Marking investments as visible to valuators"
+
+(1..50).to_a.sample.times do
+  Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
+end
 
 puts " ✅"
 print "Creating Legislation"

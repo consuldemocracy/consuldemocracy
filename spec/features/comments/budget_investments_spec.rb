@@ -129,7 +129,7 @@ feature 'Commenting Budget::Investments' do
   end
 
   scenario 'Paginated comments' do
-    per_page = 10
+    per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:comment, commentable: investment)}
 
     visit budget_investment_path(investment.budget, investment)

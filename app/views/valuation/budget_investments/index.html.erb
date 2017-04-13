@@ -18,10 +18,7 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "valuation.budget_investments.index" %>
 
-<h3>
-  <%= t("valuation.budget_investments.index.count",
-      count: @investments.count)  %>
-</h3>
+<h3><%= page_entries_info @investments %></h3>
 
 <table>
   <thead>
@@ -34,7 +31,7 @@
   </thead>
   <tbody>
     <% @investments.each do |investment| %>
-      <tr id="<%= dom_id(investment) %>">
+      <tr id="<%= dom_id(investment) %>" class="budget_investment">
         <td>
           <strong><%= investment.id %></strong>
         </td>
@@ -53,3 +50,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @investments %>
