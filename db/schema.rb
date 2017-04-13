@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322164633) do
+ActiveRecord::Schema.define(version: 20170412181545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 20170322164633) do
     t.datetime "unfeasible_email_sent_at"
     t.string   "label"
     t.integer  "previous_heading_id"
+    t.boolean  "visible_to_valuators",                  default: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree

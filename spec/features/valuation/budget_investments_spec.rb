@@ -20,8 +20,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows budget investments assigned to current valuator' do
-    investment1 = create(:budget_investment, budget: @budget)
-    investment2 = create(:budget_investment, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
 
     investment1.valuators << @valuator
 
@@ -32,8 +32,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index shows no budget investment to admins no valuators' do
-    investment1 = create(:budget_investment, budget: @budget)
-    investment2 = create(:budget_investment, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, budget: @budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, budget: @budget)
 
     investment1.valuators << @valuator
 
@@ -46,9 +46,9 @@ feature 'Valuation budget investments' do
   end
 
   scenario 'Index orders budget investments by votes' do
-    investment10  = create(:budget_investment, budget: @budget, cached_votes_up: 10)
-    investment100 = create(:budget_investment, budget: @budget, cached_votes_up: 100)
-    investment1   = create(:budget_investment, budget: @budget, cached_votes_up: 1)
+    investment10  = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 10)
+    investment100 = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 100)
+    investment1   = create(:budget_investment, :visible_to_valuators, budget: @budget, cached_votes_up: 1)
 
     investment1.valuators << @valuator
     investment10.valuators << @valuator
@@ -60,49 +60,32 @@ feature 'Valuation budget investments' do
     expect(investment10.title).to appear_before(investment1.title)
   end
 
-  scenario 'Index displays a maximum of 10 investments and no pagination' do
-    investment10  = create(:budget_investment,  budget: @budget, cached_votes_up: 10)
-    investment100 = create(:budget_investment,  budget: @budget, cached_votes_up: 100)
-    investment90  = create(:budget_investment,  budget: @budget, cached_votes_up: 90)
-    investment80  = create(:budget_investment,  budget: @budget, cached_votes_up: 80)
-    investment70  = create(:budget_investment,  budget: @budget, cached_votes_up: 70)
-    investment60  = create(:budget_investment,  budget: @budget, cached_votes_up: 60)
-    investment1   = create(:budget_investment,  budget: @budget, cached_votes_up: 1)
-    investment50  = create(:budget_investment, budget: @budget, cached_votes_up: 50)
-    investment40  = create(:budget_investment, budget: @budget, cached_votes_up: 40)
-    investment30  = create(:budget_investment, budget: @budget, cached_votes_up: 30)
-    investment20  = create(:budget_investment, budget: @budget, cached_votes_up: 20)
-
-
-
-    [investment100, investment90, investment80, investment70, investment60, investment50,
-     investment40, investment30, investment20, investment10, investment1].each do |i|
-      i.valuators << @valuator
+  scenario 'Index displays investments paginated' do
+    per_page = Kaminari.config.default_per_page
+    (per_page + 2).times do
+      investment = create(:budget_investment, :visible_to_valuators, budget: @budget)
+      investment.valuators << @valuator
     end
 
     visit valuation_budget_budget_investments_path(@budget)
 
-    expect(page).to have_content(investment100.title)
-    expect(page).to have_content(investment90.title)
-    expect(page).to have_content(investment80.title)
-    expect(page).to have_content(investment70.title)
-    expect(page).to have_content(investment60.title)
-    expect(page).to have_content(investment50.title)
-    expect(page).to have_content(investment40.title)
-    expect(page).to have_content(investment30.title)
-    expect(page).to have_content(investment20.title)
-    expect(page).to have_content(investment10.title)
+    expect(page).to have_css('.budget_investment', count: per_page)
+    within("ul.pagination") do
+      expect(page).to have_content("1")
+      expect(page).to have_content("2")
+      expect(page).to_not have_content("3")
+      click_link "Next", exact: false
+    end
 
-    expect(page).to_not have_content(investment1.title)
-    expect(page).to_not have_content("Next")
+    expect(page).to have_css('.budget_investment', count: 2)
   end
 
   scenario "Index filtering by heading", :js do
     group = create(:budget_group, budget: @budget)
     heading1 = create(:budget_heading, name: "District 9", group: group)
     heading2 = create(:budget_heading, name: "Down to the river", group: group)
-    investment1 = create(:budget_investment, title: "Realocate visitors", heading: heading1, group: group, budget: @budget)
-    investment2 = create(:budget_investment, title: "Destroy the city", heading: heading2, group: group, budget: @budget)
+    investment1 = create(:budget_investment, :visible_to_valuators, title: "Realocate visitors", heading: heading1, group: group, budget: @budget)
+    investment2 = create(:budget_investment, :visible_to_valuators, title: "Destroy the city", heading: heading2, group: group, budget: @budget)
     investment1.valuators << @valuator
     investment2.valuators << @valuator
 
@@ -152,8 +135,8 @@ feature 'Valuation budget investments' do
   end
 
   scenario "Index filtering by valuation status" do
-    valuating = create(:budget_investment, budget: @budget, title: "Ongoing valuation")
-    valuated  = create(:budget_investment, budget: @budget, title: "Old idea", valuation_finished: true)
+    valuating = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Ongoing valuation")
+    valuated  = create(:budget_investment, :visible_to_valuators, budget: @budget, title: "Old idea", valuation_finished: true)
     valuating.valuators << @valuator
     valuated.valuators << @valuator
 
@@ -178,6 +161,7 @@ feature 'Valuation budget investments' do
       administrator = create(:administrator, user: create(:user, username: 'Ana', email: 'ana@admins.org'))
       valuator2 = create(:valuator, user: create(:user, username: 'Rick', email: 'rick@valuators.org'))
       investment = create(:budget_investment,
+                           :visible_to_valuators,
                            budget: @budget,
                            price: 1234,
                            feasibility: 'unfeasible',
@@ -256,6 +240,7 @@ feature 'Valuation budget investments' do
   feature 'Valuate' do
     background do
       @investment = create(:budget_investment,
+                           :visible_to_valuators,
                             budget: @budget,
                             price: nil,
                             administrator: create(:administrator))
