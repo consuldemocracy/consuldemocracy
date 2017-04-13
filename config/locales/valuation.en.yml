@@ -20,7 +20,6 @@ en:
         evaluate: Evaluate
     budget_investments:
       index:
-        count: "There are %{count} investments"
         headings_filter_all: All headings
         filters:
           valuation_open: Open
