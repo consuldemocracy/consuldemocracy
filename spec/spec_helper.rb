@@ -64,6 +64,10 @@ RSpec.configure do |config|
     Capybara.current_driver = Capybara.default_driver
   end
 
+  config.after(:each, :nvotes) do
+    page.driver.reset!
+  end
+
   config.before(:each) do
     DatabaseCleaner.start
   end

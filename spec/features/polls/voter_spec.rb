@@ -4,7 +4,7 @@ feature "Voter" do
 
   context "Origin" do
 
-    scenario "Voting in web" do
+    scenario "Voting in web", :nvotes do
       user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll)
       nvote = create(:poll_nvote, user: user, poll: poll)
