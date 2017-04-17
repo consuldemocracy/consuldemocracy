@@ -267,7 +267,6 @@ es:
       see_all: Ver propuestas
       budgets: Presupuestos participativos
       delegation: Delegación
-  legislation:
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
   legacy_legislation:
