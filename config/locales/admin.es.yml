@@ -727,7 +727,6 @@ es:
         new:
           title: Página nueva
         page:
-          actions: Acciones
           created_at: Creada
           status: Estado
           title: Título
