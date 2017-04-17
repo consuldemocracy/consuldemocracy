@@ -77,7 +77,7 @@ class CommentsController < ApplicationController
       notifiable = comment.reply? ? comment.parent : comment.commentable
       notifiable_author_id = notifiable.try(:author_id)
       if notifiable_author_id.present? && notifiable_author_id != comment.author_id
-        Notification.add(notifiable_author_id, notifiable)
+        Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
       end
     end
 
@@ -88,7 +88,6 @@ class CommentsController < ApplicationController
       else
         log_event("proposal", "comment_reply")
       end
-      Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
     end
 
     def verify_resident_for_commentable!
