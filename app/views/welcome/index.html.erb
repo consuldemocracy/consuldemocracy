@@ -3,10 +3,13 @@
 <% provide :meta_keywords, t("meta_tags.welcome_index.keywords") %>
 <% provide :tracking_page_number, "23" %>
 
-<% cache ["welcome_index_20170406", user_signed_in?] do %>
+<% cache ["welcome_index_20170407", user_signed_in?] do %>
   <div class="welcome">
     <div class="no-margin-top">
       <%= render "budgets_module" %>
+
+    <div class="hide-for-small-only small-12 medium-5 column text-center">
+      <%= image_tag(image_path_for("icon_home.png"), size: "330x240", alt:"") %>
     </div>
 
     <%= render "polls_results" %>

@@ -97,3 +97,28 @@
     }
   }
 }
+
+.annotator-hl {
+  cursor: pointer;
+  background: rgba(255, 255, 10, 0.2);
+}
+
+.annotator-hl.weight-1 {
+  background: #FFF9DA;
+}
+.annotator-hl.weight-2 {
+  background: #FFF5BC;
+}
+.annotator-hl.weight-3 {
+  background: #FFF1A2;
+}
+.annotator-hl.weight-4 {
+  background: #FFEF8C;
+}
+.annotator-hl.weight-5 {
+  background: #FFE95F;
+}
+
+.current-annotation {
+  text-decoration: underline;
+}

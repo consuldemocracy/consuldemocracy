@@ -14,6 +14,7 @@
                                 controller_name == 'proposals',
                                 accesskey: "2" %>
     </li>
+
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
@@ -21,14 +22,24 @@
                                   controller_name == 'pages' &&
                                   params[:id] == 'landings/first_voting',
                                   accesskey: "3" %>
+    <% end %>
+
+    <% if feature?(:legislation) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
+                                legislation_processes_path,
+                                controller.class.parent == Legislation,
+                                accesskey: "l" %>
       </li>
     <% end %>
+
     <li>
       <%= link_to t("layouts.header.processes"),
                     processes_path,
                     class: ("active" if current_page?(processes_path)),
                     accesskey: "4"  %>
     </li>
+
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),
@@ -37,6 +48,7 @@
                                   accesskey: "s" %>
       </li>
     <% end %>
+
     <% if feature?(:budgets) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.budgets"),
@@ -45,6 +57,7 @@
                                   accesskey: "5" %>
       </li>
     <% end %>
+
     <li>
       <%= link_to t("layouts.header.more_info"),
                     more_info_path,

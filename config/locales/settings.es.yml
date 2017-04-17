@@ -35,6 +35,7 @@ es:
       debates: Debates
       polls: Votaciones
       signature_sheets: Hojas de firmas
+      legislation: Legislación
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
         phase1: "Prespuestos participativos: Fase 1 - Aceptar propuestas"
@@ -45,10 +46,10 @@ es:
         final_voting_allowed: Votaciones finales en propuestas de inversión.
       probe:
         plaza: "Sondeo Plaza España"
+        voting_allowed: Votaciones sobre propuestas de inversión
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     verification_offices_url: URL oficinas verificación
     min_age_to_participate: Edad mínima para participar
-

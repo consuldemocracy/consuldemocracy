@@ -299,7 +299,10 @@
 .proposal-show,
 .investment-project-show,
 .budget-investment-show,
-.polls-show {
+.polls-show,
+.debate-quiz,
+.budget-investment-show,
+.draft-panels {
 
   p {
     word-wrap: break-word;
@@ -492,7 +495,7 @@
   }
 }
 
-.debate, .proposal, .investment-project, .budget-investment {
+.debate, .proposal, .investment-project, .budget-investment, .legislation {
   margin: $line-height/4 0;
 
   .panel {

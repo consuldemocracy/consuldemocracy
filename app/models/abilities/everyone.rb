@@ -16,8 +16,8 @@ module Abilities
       can [:read, :welcome], Budget
       can [:read, :print], Budget::Investment
       can [:read], Budget::Group
-
-      can :read, Legislation
+      can :read, SpendingProposal
+      can :read, LegacyLegislation
       can :read, User
       can [:search, :read], Annotation
 
@@ -26,6 +26,12 @@ module Abilities
       can :results_2017, Poll
       can :stats_2017, Poll
       can :info_2017, Poll
+
+      can [:read, :debate, :draft_publication, :allegations, :final_version_publication], Legislation::Process
+      can [:read, :changes, :go_to_version], Legislation::DraftVersion
+      can [:read], Legislation::Question
+      can [:create], Legislation::Answer
+      can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
     end
   end
 end

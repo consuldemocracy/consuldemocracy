@@ -35,6 +35,7 @@ en:
       debates: Debates
       polls: Polls
       signature_sheets: Signature sheets
+      legislation: Legislation
       spending_proposals: Investment projects
       spending_proposal_features:
         phase1: "Participatory budget: Phase 1 - Accept proposals"
@@ -45,6 +46,7 @@ en:
         final_voting_allowed: Voting on investment projects - Final phase
       probe:
         plaza: "Plaza España Probe"
+        voting_allowed: Voting on investment projects
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"

@@ -115,6 +115,25 @@
           <%= link_to t('admin.menu.managers'), admin_managers_path %>
         </li>
       </ul>
+
+    <% if feature?(:legislation) %>
+      <li <%= "class=active" if controller.class.parent == Admin::Legislation %>>
+        <%= link_to admin_legislation_processes_path do %>
+          <span class="icon-budget"></span><%= t("admin.menu.legislation") %>
+        <% end %>
+      </li>
+    <% end %>
+
+    <li <%= "class=active" if controller_name == "banners" %>>
+      <%= link_to admin_banners_path do %>
+        <span class="icon-eye"></span><%= t("admin.menu.banner") %>
+      <% end %>
+    </li>
+
+    <li <%= "class=active" if controller_name == "users" %>>
+      <%= link_to admin_users_path do %>
+        <span class="icon-eye"></span><%= t("admin.menu.hidden_users") %>
+      <% end %>
     </li>
 
     <li class="section-title">
@@ -187,5 +206,6 @@
         </li>
       </ul>
     </li>
+
   </ul>
 </div>
