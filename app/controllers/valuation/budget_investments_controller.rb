@@ -26,6 +26,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
         @investment.send_unfeasible_email
       end
 
+      Activity.log(current_user, :valuate, @investment)
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: t('valuation.budget_investments.notice.valuate')
     else
       render action: :edit

@@ -1,0 +1,61 @@
+
+<a href="admin_cms.html">
+  <span class="icon-angle-left"></span>
+  Volver
+</a>
+
+<button type="button" name="button" class="button hollow alert float-right margin-right">Borrar página</button>
+
+<div class="row margin-top">
+  
+  <div class="small-12 medium-9 column">
+    <h2>Editar Política de privacidad</h2>
+    
+    <form id="edit_page_1" class="edit_page">
+      <label for="page_title">Título</label>
+      <input maxlength="80" size="80" value="Política de privacidad" name="page[title]" id="page_title" type="text">
+      
+      <label for="page_subtitle">Subtítulo</label>
+      <input maxlength="80" size="80" value="Estas son las condiciones que aceptas si participas en este sitio web" name="page[subtitle]" id="page_subtitle" type="text">
+      
+      <label for="page_slug">Slug</label>
+      <input maxlength="80" size="80" value="politica-de-privacidad" name="page[subtitle]" id="page_slug" type="text">
+      
+      <div class="margin-top">
+        <label for="page_content">Contenido</label>
+        <textarea cols="80" id="page_content" name="page_content" rows="10">Voluptas quasi exercitationem. Ipsa nobis ab sit maxime. Natus non perspiciatis distinctio odit aspernatur. Minima debitis deserunt. Perferendis qui libero velit est et non eaque. Voluptas minus molestiae autem blanditiis non et qui. Unde autem at architecto perferendis officiis.</textarea>
+      </div>
+    </form>
+  </div>
+  <div class="small-12 medium-3 column">
+    <div class="page_edit">
+      <h4>Opciones</h4>
+      <label><input type="checkbox" name="mas-info" checked="true"> Mostrar en Más información</label>
+      <label><input type="checkbox" name="imprimir"> Imprimir contenido</label>
+      
+      <hr>
+      
+      <h4>Estado</h4>
+      <input name="page_visible" value="" type="hidden">
+      
+      <div class="page_status">
+        <input value="draft" name="page_visible" id="page_draft" type="radio">
+        <label for="page_draft">Borrador</label>
+      </div>
+
+      <div class="page_status">
+        <input value="active" checked="checked" name="page_visible" id="page_published" type="radio">
+        <label for="page_published">Publicada</label>
+      </div>
+      
+      <button type="button" name="button" class="button success">Actualizar página</button>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  CKEDITOR.replace('page_content', {
+    height: 500
+  });
+</script>

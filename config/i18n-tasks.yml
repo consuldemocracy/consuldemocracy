@@ -168,6 +168,8 @@ ignore_unused:
   - 'invisible_captcha.*'
   - 'probes.codenames.*' # custom probes names
   - 'social_share.polls_show.*' # SEO for polls
+  - 'admin.site_customization.pages.page.status_*'
+
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

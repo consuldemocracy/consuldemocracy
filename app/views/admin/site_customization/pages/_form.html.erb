@@ -1,0 +1,52 @@
+<%= form_for [:admin, @page], html: {class: "edit_page", data: {watch_changes: true}} do |f| %>
+
+  <% if @page.errors.any? %>
+
+  <div id="error_explanation" data-alert class="callout alert" data-closable>
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <strong>
+      <%= @page.errors.count %>
+      <%= t("admin.site_customization.pages.errors.form.error", count: @page.errors.count) %>
+    </strong>
+  </div>
+
+  <% end %>
+
+  <div class="small-12 medium-9 column">
+
+      <%= f.label :title %>
+      <%= f.text_field :title, label: false %>
+
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle, label: false, size: 80, maxlength: 80 %>
+
+      <%= f.label :slug %>
+      <%= f.text_field :slug, label: false, size: 80, maxlength: 80 %>
+
+      <div class="ckeditor margin-top">
+        <%= f.label :content %>
+        <%= f.cktext_area :content, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+  </div>
+  <div class="small-12 medium-3 column">
+    <div class="page_edit">
+      <h4><%= t("admin.site_customization.pages.form.options") %></h4>
+      <%= f.check_box :more_info_flag %>
+      <%= f.check_box :print_content_flag %>
+      <hr>
+
+      <h4><%= f.label :status %></h4>
+      <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
+        <%= f.radio_button :status, status, label: false %>
+        <%= f.label "status_#{status}", t("admin.site_customization.pages.page.status_#{status}") %>
+        <br/>
+      <% end %>
+
+      <%= f.submit class: "button success" %>
+    </div>
+
+  </div>
+<% end %>
