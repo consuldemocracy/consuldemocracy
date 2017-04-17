@@ -1,21 +1,25 @@
 <ul class="no-bullet external-links">
   <li>
     <%= link_to t("layouts.header.external_link_transparency"),
-                t("layouts.header.external_link_transparency_url"),
+                setting['transparency_url'].presence || t("layouts.header.external_link_transparency_url"),
                 target: "_blank",
                 title: t('shared.target_blank_html') %>
   </li>
   <li>
     <%= link_to t("layouts.header.external_link_opendata"),
-                t("layouts.header.external_link_opendata_url"),
+                setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"),
                 target: "_blank",
                 title: t('shared.target_blank_html') %>
   </li>
+
   <% if setting['blog_url'] %>
     <li>
-      <%= link_to setting['blog_url'], title: t('shared.target_blank_html'), target: "_blank" do %>
-        <%= t("layouts.header.external_link_blog") %>
-      <% end %>
+      <%= link_to t("layouts.header.external_link_blog"),
+                  setting['blog_url'],
+                  target: "_blank",
+                  title: t('shared.target_blank_html') %>
     </li>
   <% end %>
+
+  <%= raw content_block("top_links", I18n.locale) %>
 </ul>

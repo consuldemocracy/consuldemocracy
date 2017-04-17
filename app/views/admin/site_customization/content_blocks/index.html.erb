@@ -1,0 +1,29 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.site_customization.content_blocks") %>
+<% end %>
+
+<%= link_to t("admin.site_customization.content_blocks.index.create"), new_admin_site_customization_content_block_path, class: "button float-right margin-right" %>
+<h2 class="inline-block"><%= t("admin.site_customization.content_blocks.index.title") %></h2>
+
+  <table class="cms_page_list">
+    <thead>
+      <tr>
+        <th><%= t("admin.site_customization.content_blocks.content_block.name") %></th>
+        <th><%= t("admin.site_customization.content_blocks.content_block.body") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @content_blocks.each do |content_block| %>
+      <tr id="<%= dom_id(content_block) %>">
+        <td><%= link_to "#{content_block.name} (#{content_block.locale})", edit_admin_site_customization_content_block_path(content_block) %></td>
+        <td><%= content_block.body %></td>
+        <td>
+          <%= button_to t("admin.site_customization.content_blocks.index.delete"),
+                        admin_site_customization_content_block_path(content_block),
+                        method: :delete, class: "button hollow alert" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
