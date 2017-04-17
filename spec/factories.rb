@@ -672,30 +672,6 @@ FactoryGirl.define do
     turns "3 turnos"
   end
 
-  factory :site_customization_page, class: 'SiteCustomization::Page' do
-    slug "example-page"
-    title "Example page"
-    subtitle "About an example"
-    content "This page is about..."
-    more_info_flag false
-    print_content_flag false
-    status 'draft'
-
-    trait :published do
-      status "published"
-    end
-
-    trait :display_in_more_info do
-      more_info_flag true
-    end
-  end
-
-  factory :site_customization_content_block, class: 'SiteCustomization::ContentBlock' do
-    name "top_links"
-    locale "en"
-    body "Some top links content"
-  end
-
   factory :legislation_process, class: 'Legislation::Process' do
     title "A collaborative legislation process"
     description "Description of the process"
@@ -800,6 +776,30 @@ LOREM_IPSUM
     question factory: :legislation_question
     question_option factory: :legislation_question_option
     user
+  end
+
+  factory :site_customization_page, class: 'SiteCustomization::Page' do
+    slug "example-page"
+    title "Example page"
+    subtitle "About an example"
+    content "This page is about..."
+    more_info_flag false
+    print_content_flag false
+    status 'draft'
+
+    trait :published do
+      status "published"
+    end
+
+    trait :display_in_more_info do
+      more_info_flag true
+    end
+  end
+
+  factory :site_customization_content_block, class: 'SiteCustomization::ContentBlock' do
+    name "top_links"
+    locale "en"
+    body "Some top links content"
   end
 
 end

@@ -48,8 +48,10 @@ Setting.create(key: 'feature.human_rights.accepting', value: 'true')
 Setting.create(key: 'feature.human_rights.voting', value: 'true')
 Setting.create(key: 'feature.human_rights.closed', value: 'true')
 Setting.create(key: 'feature.signature_sheets', value: "true")
+
 Setting.create(key: 'mailer_from_name', value: 'Decide Madrid')
 Setting.create(key: 'mailer_from_address', value: 'noreply@madrid.es')
+
 Setting.create(key: 'feature.legislation', value: "true")
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")

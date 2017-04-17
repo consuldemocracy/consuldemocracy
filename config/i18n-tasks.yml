@@ -177,7 +177,6 @@ ignore_unused:
   - 'admin.site_customization.pages.page.status_*'
   - 'admin.legislation.processes.process.*'
   - 'legislation.processes.index.*'
-
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

@@ -47,6 +47,7 @@ es:
       probe:
         plaza: "Sondeo Plaza España"
         voting_allowed: Votaciones sobre propuestas de inversión
+      legislation: Legislación
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
     meta_description: "Descripción del sitio (SEO)"

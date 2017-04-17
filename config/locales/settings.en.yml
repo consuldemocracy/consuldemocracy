@@ -47,6 +47,7 @@ en:
       probe:
         plaza: "Plaza España Probe"
         voting_allowed: Voting on investment projects
+      legislation: Legislation
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"

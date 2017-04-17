@@ -148,6 +148,27 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :legislation do
+    resources :processes, only: [:index, :show] do
+      get :debate
+      get :draft_publication
+      get :allegations
+      get :final_version_publication
+      resources :questions, only: [:show] do
+        resources :answers, only: [:create]
+      end
+      resources :draft_versions, only: [:show] do
+        get :go_to_version, on: :collection
+        get :changes
+        resources :annotations do
+          get :search, on: :collection
+          get :comments
+          post :new_comment
+        end
+      end
+    end
+  end
+
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
   end
@@ -304,6 +325,13 @@ Rails.application.routes.draw do
       get :redeemable_codes, on: :collection
       get :user_invites, on: :collection
       get :polls, on: :collection
+    end
+
+    namespace :legislation do
+      resources :processes do
+        resources :questions
+        resources :draft_versions
+      end
     end
 
     namespace :legislation do

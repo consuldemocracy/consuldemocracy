@@ -59,6 +59,29 @@ feature "Notifications" do
     expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
   end
 
+  scenario "User commented on my legislation question", :js do
+    verified_user = create(:user, :level_two)
+    login_as verified_user
+    visit legislation_process_question_path legislation_question.process, legislation_question
+
+    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I answered your question"
+    click_button "Publish answer"
+    within "#comments" do
+      expect(page).to have_content "I answered your question"
+    end
+
+    logout
+    login_as administrator
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+
+    expect(page).to have_content "Someone commented on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
   scenario "Multiple comments on my proposal", :js do
     login_as user
     visit proposal_path proposal
