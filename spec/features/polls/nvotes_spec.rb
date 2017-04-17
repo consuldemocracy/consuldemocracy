@@ -43,7 +43,7 @@ feature 'Nvotes' do
 
   context "Store voter" do
 
-    scenario "Valid signature" do
+    scenario "Valid signature", :nvotes do
       user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
@@ -63,7 +63,7 @@ feature 'Nvotes' do
       expect(Poll::Voter.count).to eq(1)
     end
 
-    scenario "Invalid signature" do
+    scenario "Invalid signature", :nvotes do
       user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
       nvote = create(:poll_nvote, user: user, poll: poll)
@@ -82,7 +82,7 @@ feature 'Nvotes' do
       expect(Poll::Voter.count).to eq(0)
     end
 
-    scenario "Officer information" do
+    scenario "Officer information", :nvotes do
       user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll, :incoming, published: true, nvotes_poll_id: 128)
 
