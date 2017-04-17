@@ -679,16 +679,14 @@ es:
           notice: Bloque borrado correctamente
         edit:
           title: Editar bloque
-          back: Volver
         errors:
           form:
             error: Error
         index:
           create: Crear nuevo bloque
-          delete: Borrar
+          delete: Borrar bloque
           title: Bloques
         new:
-          back: Volver
           title: Crear nuevo bloque
         content_block:
           body: Contenido
@@ -698,6 +696,7 @@ es:
           title: Personalizar imágenes
           update: Actualizar
           delete: Borrar
+          image: Imagen
         update:
           notice: Imagen actualizada correctamente
           error: No se ha podido actualizar la imagen
@@ -715,7 +714,6 @@ es:
           notice: Página eliminada correctamente
         edit:
           title: Editar %{page_title}
-          back: Volver
         errors:
           form:
             error: Error
@@ -723,13 +721,13 @@ es:
           options: Opciones
         index:
           create: Crear nueva página
-          delete: Borrar
+          delete: Borrar página
           title: Páginas
           see_page: Ver página
         new:
-          back: Back
           title: Página nueva
         page:
+          actions: Acciones
           created_at: Creada
           status: Estado
           title: Título
