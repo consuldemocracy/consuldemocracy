@@ -245,6 +245,12 @@ class Budget
       budget.balloting?
     end
 
+    def should_show_price_info?
+      feasible? &&
+      price_explanation.present? &&
+      (budget.balloting? || budget.reviewing_ballots? || budget.finished?)
+    end
+
     def formatted_price
       budget.formatted_amount(price)
     end
