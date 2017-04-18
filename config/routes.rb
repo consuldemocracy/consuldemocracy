@@ -512,5 +512,10 @@ Rails.application.routes.draw do
   get 'mas-informacion/derechos-humanos',            to: 'pages#show', id: 'more_info/participation/ddhh',    as: 'more_info_human_rights'
   get 'mas-informacion/gobierno-abierto',            to: 'pages#show', id: 'more_info/participation/open',    as: 'participation_open_government'
 
+  #static pages
+  get 'accesibilidad',          to: 'pages#show', id: 'accessibility', as: 'accessibility'
+  get 'condiciones-de-uso',     to: 'pages#show', id: 'conditions',    as: 'conditions'
+  get 'politica-de-privacidad', to: 'pages#show', id: 'privacy',       as: 'privacy'
+
   resources :pages, path: '/', only: [:show]
 end
