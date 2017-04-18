@@ -1,6 +1,12 @@
 <h2><%= t("admin.site_customization.images.index.title") %></h2>
 
 <table>
+  <thead>
+    <tr>
+      <th><%= t("admin.site_customization.images.index.image") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @images.each do |image| %>
       <tr class="<%= image.name %>">

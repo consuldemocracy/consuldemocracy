@@ -62,7 +62,7 @@ feature "Admin custom pages" do
     custom_page = create(:site_customization_page, title: "An example custom page")
     visit edit_admin_site_customization_page_path(custom_page)
 
-    click_button "Delete"
+    click_button "Delete page"
 
     expect(page).to_not have_content("An example custom page")
   end
