@@ -32,7 +32,7 @@ en:
       proposals:
         title: "Proposals"
         detail: "Detailed proposals information"
-        description: "Propose what you want the City Council to carry out and support proposals from other people."
+        description: "Propose what you want the City Council to do and support proposals from other people."
         feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
         feature_1_link: "sign up on %{org_name}"
         feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
