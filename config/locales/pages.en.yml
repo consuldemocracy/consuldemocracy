@@ -157,10 +157,7 @@ en:
                 You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
         button: See ordinance
       process_3:
-        send_proposal: Send a proposal
-        send_question: Make a question
         view_all: See the most voted proposals and questions
-        view_proposals: See all proposals
         view_questions: See all questions
     titles:
       accessibility: Accessibility

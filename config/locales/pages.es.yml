@@ -162,10 +162,7 @@ es:
 
         button: Ver borrador
       process_3:
-        send_proposal: Enviar una propuesta
-        send_question: Hacer una pregunta
         view_all: Ver propuestas y preguntas más votadas
-        view_proposals: Ver todas las propuestas enviadas
         view_questions: Ver todas las preguntas enviadas
     titles:
       accessibility: Accesibilidad
