@@ -92,7 +92,7 @@ feature 'Open Plenary' do
 
   scenario "Displays proposals created after official start date (April 18th)" do
     proposal1 = create(:proposal, title: "Before start date",  tag_list: 'plenoabierto', created_at: Date.parse('17-04-2016'))
-    proposal2 = create(:proposal, title: "After start date",   tag_list: 'plenoabierto', created_at: Date.parse('18-04-2016'))
+    proposal2 = create(:proposal, title: "After start date",   tag_list: 'plenoabierto', created_at: Date.parse('19-04-2016'))
 
     visit open_plenary_path
     click_link "See the most voted proposals and questions"

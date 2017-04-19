@@ -19,6 +19,17 @@
 // 00. Others
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Display tables correctly on mobile (admin)
+
+.table-for-mobile {
+
+  @include breakpoint(medium down) {
+    th, td  {
+      display: block;
+    }
+  }
+}
+
 // Choose proposal type
 // - - - - - - - - - - -
 
