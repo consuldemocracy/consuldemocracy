@@ -29,7 +29,7 @@ describe PagesController do
     end
   end
 
-  describe 'More info pages', :focus do
+  describe 'More info pages' do
 
     it 'should include a more infor page' do
       get :show, params: { id: 'more_info/index' }
