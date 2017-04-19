@@ -133,6 +133,6 @@ feature 'Account' do
 
     login_through_form_as(@user)
 
-    expect(page).to have_content "Invalid email or password"
+    expect(page).to have_content "Invalid Email or password"
   end
 end
