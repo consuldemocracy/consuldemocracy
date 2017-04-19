@@ -6,12 +6,4 @@
           social_description: t("pages.processes.index.process_3_description") %>
 <% end %>
 
-<% if Time.now.in_time_zone <= DateTime.new(2016,4,21) %>
-
-  <%= render "pages/processes/open_plenary/active" %>
-
-<% else %>
-
-  <%= render "pages/processes/open_plenary/closed" %>
-
-<% end %>
+<%= render "pages/processes/open_plenary/closed" %>
