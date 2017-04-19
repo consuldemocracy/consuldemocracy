@@ -50,7 +50,7 @@ Setting["twitter_hashtag"] = "#decidemadrid"
 Setting["facebook_handle"] = "Abriendo-Madrid-1475577616080350"
 Setting["youtube_handle"] = "channel/UCFmaChI9quIY7lwHplnacfg"
 Setting["telegram_handle"] = nil
-Setting["blog_url"] = "/blog"
+Setting["blog_url"] = "https://diario.madrid.es/decidemadrid/"
 Setting["transparency_url"] = "http://transparencia.madrid.es/"
 Setting["opendata_url"] = "http://datos.madrid.es/"
 
