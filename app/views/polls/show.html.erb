@@ -1,7 +1,5 @@
 <% provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
 <% provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
-<% provide :meta_keywords,    t("social_share.polls_show.keywords_#{@poll.id}") %>
-
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: first_voting_url,
