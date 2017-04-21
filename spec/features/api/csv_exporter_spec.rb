@@ -3,6 +3,10 @@ require 'csv'
 
 feature 'CSV Exporter' do
 
+  def parse_csv(str)
+    CSV.parse(str, col_sep: ';', force_quotes: true, encoding: 'ISO-8859-1')
+  end
+
   background do
     @csv_exporter = API::CSVExporter.new
   end
@@ -14,7 +18,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposals")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "id",
@@ -35,10 +39,8 @@ feature 'CSV Exporter' do
         "proceeding",
         "sub_proceeding"]
 
-      proposal_line = CSV.parse(@csv_exporter.public_attributes(proposal).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(proposal_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(proposal).map(&:to_s))
     end
 
     scenario "Do not include hidden proposals" do
@@ -47,7 +49,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposals")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal.title)
       expect(csv).to_not include(hidden_proposal.title)
@@ -61,7 +63,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposals")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(proposal.title)
       expect(csv).to include(human_rights_proposal.title)
@@ -77,7 +79,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposals")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal.title)
       expect(csv).to include(hidden_proposal.title)
@@ -89,7 +91,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposals")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
@@ -102,7 +104,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposals")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to include(/#{retired_at.strftime("%Y-%m-%d %H:%M")}/)
@@ -117,7 +119,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("debates")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "id",
@@ -131,10 +133,8 @@ feature 'CSV Exporter' do
         "hot_score",
         "confidence_score"]
 
-      debate_line = CSV.parse(@csv_exporter.public_attributes(debate).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(debate_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(debate).map(&:to_s))
     end
 
     scenario "Do not include hidden debates" do
@@ -143,7 +143,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("debates")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_debate.title)
       expect(csv).to_not include(hidden_debate.title)
@@ -158,7 +158,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("debates")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_debate.title)
       expect(csv).to include(hidden_debate.title)
@@ -170,7 +170,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("debates")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
@@ -185,7 +185,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "id",
@@ -199,10 +199,8 @@ feature 'CSV Exporter' do
         "ancestry",
         "confidence_score"]
 
-      comment_line = CSV.parse(@csv_exporter.public_attributes(comment).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(comment_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(comment).map(&:to_s))
     end
 
     scenario "Only include comments from proposals and debates" do
@@ -212,7 +210,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(proposal_comment.body)
       expect(csv).to include(debate_comment.body)
@@ -228,7 +226,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_comment.body)
       expect(csv).to include(hidden_comment.body)
@@ -240,7 +238,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_comment.body)
       expect(csv).to_not include(hidden_comment.body)
@@ -255,7 +253,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal_comment.body)
       expect(csv).to_not include(hidden_proposal_comment.body)
@@ -270,7 +268,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_debate_comment.body)
       expect(csv).to_not include(hidden_debate_comment.body)
@@ -284,7 +282,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to_not include(not_public_debate_comment.body)
     end
@@ -297,7 +295,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to_not include(not_public_proposal_comment.body)
     end
@@ -308,7 +306,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("comments")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
@@ -323,14 +321,12 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("geozones")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = ["id", "name"]
 
-      geozone_line = CSV.parse(@csv_exporter.public_attributes(geozone).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(geozone_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(geozone).map(&:to_s))
     end
 
   end
@@ -342,7 +338,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("proposal_notifications")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "title",
@@ -350,10 +346,8 @@ feature 'CSV Exporter' do
         "proposal_id",
         "created_at"]
 
-      proposal_notification_line = CSV.parse(@csv_exporter.public_attributes(proposal_notification).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(proposal_notification_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(proposal_notification).map(&:to_s))
     end
 
     scenario "Do not include proposal notifications for hidden proposals" do
@@ -365,7 +359,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposal_notifications")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_proposal_notification.title)
       expect(csv).to_not include(hidden_proposal_notification.title)
@@ -379,7 +373,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposal_notifications")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to_not include(not_public_proposal_notification.title)
     end
@@ -390,7 +384,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("proposal_notifications")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
@@ -406,7 +400,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "id",
@@ -414,10 +408,8 @@ feature 'CSV Exporter' do
         "taggings_count",
         "kind"]
 
-      tag_line = CSV.parse(@csv_exporter.public_attributes(Tag.first).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(tag_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(Tag.first).map(&:to_s))
     end
 
     scenario "Only display tags with kind nil or category" do
@@ -432,7 +424,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Parks")
       expect(csv).to include("Health")
@@ -447,7 +439,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include("health")
       expect(csv).to include("Health")
@@ -461,7 +453,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include("health")
       expect(csv).to include("Health")
@@ -474,7 +466,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Health")
       expect(csv).to_not include("SPAM")
@@ -487,7 +479,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Health")
       expect(csv).to_not include("SPAM")
@@ -501,7 +493,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include("Health")
       expect(csv).to_not include("Animals")
@@ -514,7 +506,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("tags")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to_not include("Health")
     end
@@ -528,17 +520,15 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "tag_id",
         "taggable_id",
         "taggable_type"]
 
-      tagging_line = CSV.parse(@csv_exporter.public_attributes(tagging).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(tagging_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(tagging).map(&:to_s))
     end
 
     scenario "Only include taggings for proposals and debates" do
@@ -553,7 +543,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(proposal_tagging.taggable_type)
       expect(csv).to include(debate_tagging.taggable_type)
@@ -570,7 +560,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       taggable_ids = csv.collect {|element| element[1]}
 
@@ -588,7 +578,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       taggable_ids = csv.collect {|element| element[1]}
 
@@ -606,7 +596,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(visible_tag_tagging.taggable_type)
       expect(csv).to_not include(hidden_tag_tagging.taggable_type)
@@ -621,7 +611,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       taggable_ids = csv.collect {|element| element[1]}
 
@@ -637,7 +627,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("taggings")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       taggable_ids = csv.collect {|element| element[1]}
 
@@ -653,7 +643,7 @@ feature 'CSV Exporter' do
       @csv_exporter.export
 
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       columns = [
         "votable_id",
@@ -661,10 +651,8 @@ feature 'CSV Exporter' do
         "vote_flag",
         "created_at"]
 
-      vote_line = CSV.parse(@csv_exporter.public_attributes(vote).join(',')).first
-
       expect(csv.first).to eq(columns)
-      expect(csv).to include(vote_line)
+      expect(csv.last).to eq(@csv_exporter.public_attributes(vote).map(&:to_s))
     end
 
     scenario "Only include votes from proposals, debates and comments" do
@@ -680,7 +668,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to include(proposal_vote.votable_type)
       expect(csv).to include(debate_vote.votable_type)
@@ -697,7 +685,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -714,7 +702,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -731,7 +719,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -751,7 +739,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -771,7 +759,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -787,7 +775,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -802,7 +790,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -817,7 +805,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html)
+      csv = parse_csv(page.html)
 
       votable_ids = csv.collect {|element| element[0]}
 
@@ -830,7 +818,7 @@ feature 'CSV Exporter' do
 
       @csv_exporter.export
       visit csv_path_for("votes")
-      csv = CSV.parse(page.html).flatten
+      csv = parse_csv(page.html).flatten
 
       expect(csv).to     include(/#{created_at.strftime("%Y-%m-%d %H")}/)
       expect(csv).to_not include(/#{created_at.strftime("%Y-%m-%d %H:%M")}/)
