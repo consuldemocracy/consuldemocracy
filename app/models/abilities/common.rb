@@ -1,3 +1,8 @@
+# Fixes rails autoloading errors related with having two models named the same under
+# different namespaces (Ballot vs Budget::Ballot) during development
+require_dependency Rails.root.join('app', 'models', 'budget', 'ballot')
+require_dependency Rails.root.join('app', 'models', 'ballot')
+
 module Abilities
   class Common
     include CanCan::Ability
