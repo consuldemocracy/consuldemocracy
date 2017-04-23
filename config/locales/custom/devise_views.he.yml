@@ -118,8 +118,8 @@ he:
           Terms_link: תנאים והתניות לשימוש באתר 
           terms_title: בהרשמה את/ה מסכים/ה לתנאים והתניות השימוש באתר 
           title: הרשמה
-          username_is_available: "שם משתמש/ת קיים"
-          username_is_not_available: "שם משתמש/ת בשימוש"
+          username_is_available: "שם משתמש זמין"
+          username_is_not_available: "שם משתמש לא זמין"
           username_label: שם משתמש/ת
           username_note: השם שיופיע ליד הפוסטים שלך 
         success:
