@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_one :moderator
   has_one :valuator
   has_one :manager
+  has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
   has_one :lock
   has_many :flags
@@ -55,6 +56,7 @@ class User < ActiveRecord::Base
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
+  scope :erased,         -> { where.not(erased_at: nil) }
 
   before_validation :clean_document_number
 
@@ -123,6 +125,10 @@ class User < ActiveRecord::Base
     manager.present?
   end
 
+  def poll_officer?
+    poll_officer.present?
+  end
+
   def organization?
     organization.present?
   end
@@ -188,6 +194,22 @@ class User < ActiveRecord::Base
     erased_at.present?
   end
 
+  def take_votes_if_erased_document(document_number, document_type)
+    erased_user = User.erased.where(document_number: document_number).where(document_type: document_type).first
+    if erased_user.present?
+      self.take_votes_from(erased_user)
+      erased_user.update(document_number: nil, document_type: nil)
+    end
+  end
+
+  def take_votes_from(other_user)
+    return if other_user.blank?
+    Poll::Voter.where(user_id: other_user.id).update_all(user_id: self.id)
+    Budget::Ballot.where(user_id: other_user.id).update_all(user_id: self.id)
+    Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: self.id)
+    self.update(former_users_data_log: "#{self.former_users_data_log} | id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}")
+  end
+
   def locked?
     Lock.find_or_create_by(user: self).locked?
   end
@@ -239,6 +261,10 @@ class User < ActiveRecord::Base
 
   def name_and_email
     "#{name} (#{email})"
+  end
+
+  def age
+    Age.in_years(date_of_birth)
   end
 
   def save_requiring_finish_signup

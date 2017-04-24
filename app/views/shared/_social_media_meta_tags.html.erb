@@ -3,7 +3,7 @@
 <meta name="twitter:site" content="@consul_dev" />
 <meta name="twitter:title" content="<%= social_title %>" />
 <meta name="twitter:description" content="<%= social_description %>" />
-<meta name="twitter:image" content="<%= image_url '/social-media-icon.png' %>" />
+<meta name="twitter:image" content="<%= image_url image_path_for('social-media-icon.png') %>" />
 <!-- Facebook OG -->
 <meta id="ogtitle" property="og:title" content="<%= social_title %>"/>
 <% if setting['url'] %>
@@ -14,7 +14,7 @@
 <% end %>
 <meta property="og:type" content="article"/>
 <meta id="ogurl" property="og:url" content="<%= social_url %>"/>
-<meta id="ogimage" property="og:image" content="<%= image_url '/social-media-icon.png' %>"/>
+<meta id="ogimage" property="og:image" content="<%= image_url image_path_for('social-media-icon.png') %>"/>
 <meta property="og:site_name" content="<%= setting['org_name'] %>"/>
 <meta id="ogdescription" property="og:description" content="<%= social_description %>"/>
 <meta property="fb:app_id" content="<%= Rails.application.secrets.facebook_key %>"/>

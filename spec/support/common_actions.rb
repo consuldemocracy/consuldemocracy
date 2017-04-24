@@ -141,6 +141,16 @@ module CommonActions
     expect(page).to have_content 'Residence verified'
   end
 
+  def officing_verify_residence
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: "1980"
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Document verified with Census'
+  end
+
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
@@ -203,7 +213,7 @@ module CommonActions
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
   end
 
-  def create_successfull_proposals
+  def create_successful_proposals
     [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
      create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end

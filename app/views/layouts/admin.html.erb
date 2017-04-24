@@ -30,7 +30,7 @@
         <div class="off-canvas-content" data-off-canvas-content>
           <%= render 'layouts/admin_header' %>
 
-          <main class="no-margin-top row no-max-width collapse">
+          <div class="no-margin-top row no-max-width collapse" data-equalizer>
             <div class="small-12 medium-3 column">
 
               <div class="show-for-small-only">
@@ -42,11 +42,11 @@
               </div>
             </div>
 
-            <div class="admin-content small-12 medium-9 column">
+            <div class="admin-content small-12 medium-9 column" data-equalizer-watch>
               <%= render 'layouts/flash' %>
               <%= yield %>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </div>

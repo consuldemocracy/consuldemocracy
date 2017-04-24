@@ -144,6 +144,10 @@ a {
   padding-top: $line-height;
 }
 
+.light {
+  background: $light;
+}
+
 .highlight {
   background: $highlight;
 }
@@ -195,6 +199,30 @@ a {
 
     a {
       color: $text-medium;
+    }
+
+    &.active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+    }
+  }
+}
+
+.menu.vertical {
+  background: white;
+  margin: $line-height 0;
+  padding: $line-height;
+
+  li {
+    margin-bottom: $line-height;
+
+    a {
+      color: $text-medium;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: $base-font-size;
     }
 
     &.active {
@@ -462,6 +490,7 @@ header {
 
   .input-group-button {
     line-height: $line-height*1.5;
+    padding-bottom: 0;
 
     button {
       background: $border;
@@ -483,7 +512,6 @@ header {
 }
 
 .submenu {
-  background: white;
   border-bottom: 1px solid $border;
   clear: both;
   margin-bottom: $line-height/2;
@@ -585,7 +613,8 @@ footer {
 // 04. Tags
 // --------
 
-.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a {
+.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a,
+.tags span {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -1167,7 +1196,8 @@ table {
 
 .button.button-twitter,
 .button.button-facebook,
-.button.button-google {
+.button.button-google,
+.button.button-telegram {
   background: white;
   color: $text;
   font-weight: bold;
@@ -1303,6 +1333,48 @@ table {
   }
 }
 
+.button.button-telegram {
+  background: #ECF7FC;
+  border-left: 3px solid #0088cc;
+
+  &:before {
+    color: #0088cc;
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.ssb-telegram {
+  background: #0088cc;
+  background-image: none !important;
+  color: white;
+  height: $line-height*2 !important;
+  position: relative;
+  width: $line-height*2 !important;
+
+  &:before {
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover, &:focus {
+    background: white;
+    color: #40A2D1;
+  }
+}
+
 .social {
 
   a {
@@ -1392,6 +1464,30 @@ table {
     &:hover, &:focus {
       background: white;
       color: #CE3E26;
+    }
+  }
+
+  .ssb-telegram {
+    background: #0088cc;
+    color: white;
+    height: $line-height;
+    position: relative;
+    width: $line-height*2;
+
+    &:before {
+      content: "A";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover, &:focus {
+      background: white;
+      color: #40A2D1;
     }
   }
 }

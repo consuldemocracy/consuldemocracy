@@ -61,6 +61,10 @@ class CensusApi
       end
     end
 
+    def name
+      "#{data[:datos_habitante][:item][:nombre]} #{data[:datos_habitante][:item][:apellido1]}"
+    end
+
     private
 
       def data

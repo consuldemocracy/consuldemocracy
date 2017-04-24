@@ -188,7 +188,7 @@ feature 'Budget Investments' do
       expect(current_path).to eq(budget_investments_path(budget_id: budget.id))
     end
 
-    scenario 'Create spending proposal too fast' do
+    scenario 'Create budget investment too fast' do
       allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
 
       login_as(author)
@@ -263,26 +263,40 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Show (feasible spending proposal)" do
-    user = create(:user)
-    login_as(user)
+  context "Show (feasible budget investment)" do
+    let(:investment) { create(:budget_investment,
+                          :feasible,
+                          :finished,
+                          budget: budget,
+                          group: group,
+                          heading: heading,
+                          price: 16,
+                          price_explanation: 'Every wheel is 4 euros, so total is 16')}
 
-    investment = create(:budget_investment,
-                        :feasible,
-                        :finished,
-                        budget: budget,
-                        group: group,
-                        heading: heading,
-                        price: 16,
-                        price_explanation: 'Every wheel is 4 euros, so total is 16')
+    background do
+      user = create(:user)
+      login_as(user)
+    end
 
-    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    scenario "Budget in selecting phase" do
+      budget.update(phase: "selecting")
+      visit budget_investment_path(budget_id: budget.id, id: investment.id)
 
-    expect(page).to have_content("Price explanation")
-    expect(page).to have_content(investment.price_explanation)
+      expect(page).to_not have_content("Unfeasibility explanation")
+      expect(page).to_not have_content("Price explanation")
+      expect(page).to_not have_content(investment.price_explanation)
+    end
+
+    scenario "Budget in balloting phase" do
+      budget.update(phase: "balloting")
+      visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+      expect(page).to have_content("Price explanation")
+      expect(page).to have_content(investment.price_explanation)
+    end
   end
 
-  scenario "Show (unfeasible spending proposal)" do
+  scenario "Show (unfeasible budget investment)" do
     user = create(:user)
     login_as(user)
 
@@ -302,7 +316,7 @@ feature 'Budget Investments' do
 
   context "Destroy" do
 
-    scenario "Admin cannot destroy spending proposals" do
+    scenario "Admin cannot destroy budget investments" do
       admin = create(:administrator)
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
