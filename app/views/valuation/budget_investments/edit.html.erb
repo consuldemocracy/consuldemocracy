@@ -8,7 +8,7 @@
 <%= form_for(@investment, url: valuate_valuation_budget_budget_investment_path(@budget, @investment), html: {id: "valuation_budget_investment_edit_form"}) do |f| %>
   <%= render 'shared/errors', resource: @investment %>
   <div class="row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 column">
       <fieldset class="fieldset">
         <legend><%= t('valuation.budget_investments.edit.feasibility') %></legend>
         <div class="small-4 column">
@@ -38,7 +38,7 @@
   <div id="unfeasible_fields" >
 
     <div class="row">
-      <div class="small-12 medium-8 column">
+      <div class="small-12 column">
         <%= f.label :unfeasibility_explanation, t("valuation.budget_investments.edit.feasible_explanation_html") %>
         <%= f.text_area :unfeasibility_explanation, label: false, rows: 3 %>
       </div>
@@ -49,26 +49,26 @@
   <div id="feasible_fields">
 
     <div class="row">
-      <div class="small-12 medium-4 column">
+      <div class="small-12 medium-6 column">
         <%= f.label :price, "#{t('valuation.budget_investments.edit.price_html', currency: @budget.currency_symbol)}" %>
         <%= f.number_field :price, label: false, max: 1000000000000000 %>
       </div>
 
-      <div class="small-12 medium-4 column end">
+      <div class="small-12 medium-6 column end">
         <%= f.label :price_first_year, "#{t('valuation.budget_investments.edit.price_first_year_html', currency:  @budget.currency_symbol)}" %>
         <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
       </div>
     </div>
 
     <div class="row">
-      <div class="small-12 medium-8 column">
+      <div class="small-12 column">
         <%= f.label :price_explanation, t("valuation.budget_investments.edit.price_explanation_html") %>
         <%= f.text_area :price_explanation, label: false, rows: 3 %>
       </div>
     </div>
 
     <div class="row">
-      <div class="small-12 medium-8 column">
+      <div class="small-12 medium-6 column">
         <%= f.label :duration, t("valuation.budget_investments.edit.duration_html") %>
         <%= f.text_field :duration, label: false %>
       </div>
@@ -86,7 +86,7 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-8 column">
+    <div class="small-12 column">
       <%= f.label :internal_comments, t("valuation.budget_investments.edit.internal_comments_html") %>
       <%= f.text_area :internal_comments, label: false, rows: 3 %>
     </div>

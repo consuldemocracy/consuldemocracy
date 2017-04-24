@@ -61,7 +61,7 @@ es:
       edit:
         dossier: Informe
         price_html: "Coste (%{currency}) <small>(dato público)</small>"
-        price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, privado)</small>"
+        price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
         price_explanation_html: "Informe de coste <small>(opcional, dato público)</small>"
         feasibility: Viabilidad
         feasible: Viable
