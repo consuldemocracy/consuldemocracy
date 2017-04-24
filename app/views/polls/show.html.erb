@@ -1,0 +1,53 @@
+<% provide :title do %><%= @poll.name %><% end %>
+<% content_for :wrapper_class, "light" %>
+
+<div class="polls-show">
+  <div class="expanded no-margin-top dark-heading polls-show-header">
+    <div class="row">
+      <div class="small-12 medium-9 column padding">
+        <%= back_link_to polls_path %>
+
+        <h2><%= @poll.name %></h2>
+        <ul class="no-bullet margin-top tags">
+          <% @poll.geozones.each do |g| %>
+            <li class="inline-block"><span><%= g.name %></span></li>
+          <% end %>
+        </ul>
+
+        <%= render "callout" %>
+      </div>
+      <div class="small-12 medium-3 column">
+        <div class="info">
+          <p>
+            <span class="title">
+              <strong><%= t("polls.show.dates_title") %></strong>
+            </span>
+            <br>
+            <%= poll_dates(@poll) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <% @questions.each do |question| %>
+        <%= render 'polls/questions/question', question: question %>
+      <% end %>
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <div id="social-share" class="sidebar-divider"></div>
+      <h2><%= t("proposals.show.share") %></h2>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{@poll.name} #{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @poll.name %> <%= poll_url %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+    </aside>
+  </div>
+</div>

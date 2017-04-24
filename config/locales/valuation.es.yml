@@ -1,6 +1,8 @@
 ---
 es:
   valuation:
+    header:
+      title: Evaluación
     menu:
       title: Evaluación
       budgets: Presupuestos participativos

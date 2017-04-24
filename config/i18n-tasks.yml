@@ -22,6 +22,8 @@ data:
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
     - config/locales/%{locale}.yml
+    - config/locales/activerecord.%{locale}.yml
+    - config/locales/activemodel.%{locale}.yml
     - config/locales/admin.%{locale}.yml
     - config/locales/moderation.%{locale}.yml
     - config/locales/valuation.%{locale}.yml
@@ -32,6 +34,7 @@ data:
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
+    - config/locales/officing.%{locale}.yml
     - config/locales/budgets.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
@@ -126,6 +129,8 @@ ignore_unused:
   - 'admin.activity.show.filter*'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
+  - 'admin.polls.*.submit_button'
+  - 'admin.booths.*.submit_button'
   - 'moderation.comments.index.filter*'
   - 'moderation.comments.index.order*'
   - 'moderation.debates.index.filter*'
@@ -137,6 +142,7 @@ ignore_unused:
   - 'valuation.budgets.index.filter*'
   - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
+  - 'polls.index.filters.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
   - 'proposals.index.select_order'
@@ -150,6 +156,7 @@ ignore_unused:
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
+  - 'admin.site_customization.pages.page.status_*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

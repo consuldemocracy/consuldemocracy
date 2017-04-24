@@ -31,11 +31,11 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successfull_exists %>
-        <%= render "proposals/proposal_ballots_banner" %>
+      <% if @proposal_successful_exists %>
+        <%= render "proposals/successful_banner" %>
       <% end %>
 
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_ballots.present? || @proposal_successfull_exists %>
+      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists %>
         <%= render "featured_debates" %>
       <% end %>
 

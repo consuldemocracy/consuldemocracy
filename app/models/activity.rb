@@ -2,7 +2,7 @@ class Activity < ActiveRecord::Base
   belongs_to :actionable,  -> { with_hidden }, polymorphic: true
   belongs_to :user, -> { with_hidden }
 
-  VALID_ACTIONS = %w( hide block restore )
+  VALID_ACTIONS = %w( hide block restore valuate )
 
   validates :action, inclusion: {in: VALID_ACTIONS}
 
@@ -10,6 +10,7 @@ class Activity < ActiveRecord::Base
   scope :on_debates, -> { where(actionable_type: 'Debate') }
   scope :on_users, -> { where(actionable_type: 'User') }
   scope :on_comments, -> { where(actionable_type: 'Comment') }
+  scope :on_budget_investments, -> { where(actionable_type: 'Budget::Investment') }
   scope :for_render, -> { includes(user: [:moderator, :administrator]).includes(:actionable) }
 
   def self.log(user, action, actionable)

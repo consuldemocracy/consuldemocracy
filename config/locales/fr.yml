@@ -854,7 +854,6 @@ fr:
       description: Ce portail utiliser %{consul} qui est %{open_source}. De Madrid
         ouvert sur le monde.
       faq: assistance technique
-      more_info: Plus d'information
       open_data_text: Tout les détails de la Mairie sont vôtre pour accès
       open_data_title: Open data
       open_source: logiciel libre
@@ -876,7 +875,7 @@ fr:
       locale: 'Langue :'
       logo: Consul
       moderation: Modération
-      more_information: Plus d'information
+      more_info: Plus d'information
       my_account_link: Mon compte
       my_activity_link: Mon activité
       new_notifications:
@@ -1167,7 +1166,7 @@ fr:
       mentionnées dans les conditions d'utilisation de ce portail."
     conditions: Conditions d'utilisation
     general_terms: Conditions d'utilisation
-    more_information:
+    more_info:
       description:
         faq: Questions fréquentes sur les problèmes techniques
         how_it_works: Découvrez tout ce qui est possible de faire avec ce site
@@ -1232,7 +1231,7 @@ fr:
     titles:
       accessibility: Accessibilité
       conditions: Conditions d'utilisation
-      more_information: Plus d'informations
+      more_info: Plus d'informations
       opendata: Open Data
       privacy: Vie privée
     verify:
@@ -1395,6 +1394,8 @@ fr:
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
+    telegram: Telegram
   social_share_button:
     baidu: Baidu.com
     delicious: Delicious
@@ -1413,6 +1414,7 @@ fr:
     tumblr: Tumblr
     twitter: Twitter
     weibo: Sina Weibo
+    telegram: Telegram
   spending_proposals:
     form:
       description: Description
@@ -1629,7 +1631,7 @@ fr:
         link: Voir les propositions
         text: Créez vos propres propositions et soutenez celles d'autres citoyens.
         title: Propositions citoyennes
-    more_information: Plus d'information sur cette page
+    more_info: Plus d'information sur cette page
     proposal:
       alt: Icône Proposez
       description: Espace ouvert aux propositions sur le type de ville que nous voulons
