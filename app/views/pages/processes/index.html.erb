@@ -8,21 +8,7 @@
       <h1 class="margin-bottom">
         <%= t("pages.processes.index.title") %>
       </h1>
-      <h2 class="label"><%= t("pages.processes.index.featured") %></h2>
-    </div>
-
-    <div class="row">
-      <div class="small-12 column">
-        <div class="small-12 medium-9 column">
-          <!-- PROCESO DESTACADO (Publicidad exterior) -->
-          <h3><%= t("pages.processes.index.process_17_title") %></h3>
-          <p><%= t("pages.processes.index.process_17_description") %></p>
-          <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_17_button"),
-                        publicity_path, class: "button expanded" %>
-          </div>
-        </div>
-      </div>
+      <!-- PROCESO DESTACADO <h2 class="label"><%# t("pages.processes.index.featured") %></h2> -->
     </div>
   </div>
 </div>
@@ -32,8 +18,8 @@
   <div class="row">
     <div class="small-12 medium-3 column">
       <ul class="tabs vertical" id="processes-tab" data-tabs role="tablist">
-        <li class="tabs-title is-active">
-          <a href="#panel1v" aria-selected="true" role="tab">
+        <li class="tabs-title">
+          <a href="#panel1v" role="tab">
             <%= t("pages.processes.menu.open") %>
           </a>
         </li>
@@ -42,8 +28,8 @@
             <%= t("pages.processes.menu.coming_soon") %>
           </a>
         </li>
-        <li class="tabs-title">
-          <a href="#panel3v" role="tab">
+        <li class="tabs-title is-active">
+          <a href="#panel3v" aria-selected="true" role="tab">
             <%= t("pages.processes.menu.finished") %>
           </a>
         </li>
@@ -54,14 +40,11 @@
       <div class="tabs-content vertical" data-tabs-content="processes-tab">
 
         <!-- Procesos abiertos -->
-        <div class="tabs-panel is-active" id="panel1v">
+        <div class="tabs-panel" id="panel1v">
           <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
 
-          <!-- Publicidad exterior -->
-          <div class="panel">
-            <h3><%= t("pages.processes.index.process_17_title") %></h3>
-            <p><%= t("pages.processes.index.process_17_description") %></p>
-            <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow" %>
+          <div class="callout primary">
+            <small>En estos momentos no hay procesos abiertos.</small>
           </div>
         </div>
 
@@ -75,8 +58,15 @@
         </div>
 
         <!-- Procesos terminados -->
-        <div class="tabs-panel" id="panel3v">
+        <div class="tabs-panel is-active" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Publicidad exterior -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_17_title") %></h3>
+            <p><%= t("pages.processes.index.process_17_description") %></p>
+            <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow" %>
+          </div>
 
           <!-- Villaverde -->
           <div class="panel">
