@@ -25,7 +25,7 @@ class API::CSVExporter
     def export_model(model)
       print "\nExporting #{model.model_name.human}" if @print_log
       counter = 0
-      CSV.open(filename(model), "w", col_sep: ';', force_quotes: true, encoding: "UTF-8:ISO-8859-1") do |csv|
+      CSV.open(filename(model), "w", col_sep: ';', force_quotes: true, encoding: "ISO-8859-1") do |csv|
         csv << model.public_columns_for_api
         model.find_each do |record|
           if record.public_for_api?
