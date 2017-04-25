@@ -612,6 +612,8 @@ es:
           debates: Debates
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          budgets: Presupuestos abiertos
+          budget_investments: Propuestas de inversión
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -622,6 +624,7 @@ es:
           visits: Visitas
           votes: Votos
         spending_proposals_title: Propuestas de inversión
+        budgets_title: Presupuestos participativos
         visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas

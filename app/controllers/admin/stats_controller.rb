@@ -21,6 +21,8 @@ class Admin::StatsController < Admin::BaseController
     @user_ids_who_voted_proposals = ActsAsVotable::Vote.where(votable_type: 'Proposal').distinct.count(:voter_id)
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
+    @budgets = Budget.where.not(phase: 'finished').count
+    @investments = Budget.where.not(phase: 'finished').collect(&:investments).flatten.count
   end
 
   def proposal_notifications

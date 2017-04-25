@@ -91,5 +91,24 @@ describe Admin::Api::StatsController do
         expect(data).to eq "x"=>["2015-01-01", "2015-01-02"], "Foo"=>[1, 2], "Visits"=>[2, 1]
       end
     end
+
+    context 'budget investments present' do
+      it 'should return budget investments formated for working with c3.js' do
+        time_1 = DateTime.parse("2017-04-01")
+        time_2 = DateTime.parse("2017-04-02")
+
+        budget_investment1 = create(:budget_investment, budget: @budget, created_at: time_1)
+        budget_investment2 = create(:budget_investment, budget: @budget, created_at: time_2)
+        budget_investment3 = create(:budget_investment, budget: @budget, created_at: time_2)
+
+        sign_in user
+        get :show, budget_investments: true
+
+        expect(response).to be_ok
+
+        data = JSON.parse(response.body)
+        expect(data).to eq "x"=>["2017-04-01", "2017-04-02"], "Budget Investments"=>[1, 2]
+      end
+    end
   end
 end
