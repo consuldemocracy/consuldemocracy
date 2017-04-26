@@ -36,7 +36,7 @@
             <%= t "admin.stats.show.summary.comments" %><br>
             <span class="number"><%= number_with_delimiter(@comments) %></span>
           </p>
-          <% if feature?(:polls) %>
+          <% if feature?(:budgets) %>
             <p>
               <%= t "admin.stats.show.summary.budgets" %><br>
               <span class="number"><%= number_with_delimiter(@budgets) %></span>
@@ -135,7 +135,7 @@
         </div>
       <% end %>
 
-      <% if feature?(:polls) %>
+      <% if feature?(:budgets) %>
         <div class="small-12 column">
           <h2><%= t "admin.stats.show.budgets_title" %></h2>
           <%= budget_investments_chart_tag id: "budget_investments" %>
