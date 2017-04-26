@@ -37,7 +37,7 @@ en:
         feature_1_link: "sign up on %{org_name}"
         feature_2_html: "The first is the <strong>submit phase</strong> of investment projects."
         feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
-        feature_4_html: "At the end there is a <strong>vote phase </strong> where it is decided on which part of the budget is spent."
+        feature_4_html: "At the end there is a <strong>vote phase </strong> and you decide which of the approved projects to spend the budget on."
         image_alt: "Different phases of a participatory budget"
         figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
       polls:
