@@ -9,4 +9,3 @@ Disallow: /comments/
 
 Disallow: /*?*locale
 Disallow: /*?*order
-Disallow: /*?*search
