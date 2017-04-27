@@ -317,6 +317,11 @@ ol.ordered_alpha_up {
     color: white;
   }
 
+  a {
+  	color: white;
+  	text-decoration: underline;
+  }
+
   .button {
     background: white;
     color: $budget;
@@ -334,9 +339,4 @@ ol.ordered_alpha_up {
       border-top: rem-calc(6) solid darken($budget, 30%);
     }
   }
-}
-
-.budget a {
-	color: white;
-	text-decoration: underline;
 }
