@@ -9,10 +9,13 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = Dir.entries(File.join(Rails.root,"app","views","pages"))
+  pages = ["accessibility",
+           "census_terms",
+           "conditions",
+           "general_terms",
+           "privacy"]
   pages.each do |page|
-    page_name = page.split(".").first
-    add page_name if page_name.present?
+    add page_path(id: page)
   end
 
   add more_info_path

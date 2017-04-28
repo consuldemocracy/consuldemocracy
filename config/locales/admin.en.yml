@@ -26,6 +26,7 @@ en:
           all: All
           with_active: Active
           with_inactive: Inactive
+        preview: Preview
       banner:
         title: Title
         description:  Description
@@ -35,7 +36,6 @@ en:
         post_started_at: Post started at
         post_ended_at: Post ended at
       edit:
-        back: Back
         editing: Edit banner
         form:
           submit_button: Save changes
@@ -45,7 +45,6 @@ en:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
       new:
-        back: Back
         creating: Create banner
     activity:
       show:
@@ -132,6 +131,7 @@ en:
         select: "Select"
         table_id: "ID"
         table_title: "Title"
+        table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
         table_geozone: "Scope of operation"
@@ -660,6 +660,8 @@ en:
           proposals: Proposals
           spending_proposal_votes: Investment project votes
           spending_proposals: Investment projects
+          budgets: Open budgets
+          budget_investments: Investment projects
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users
@@ -668,6 +670,12 @@ en:
           verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
           visits: Visits
           votes: Total votes
+        spending_proposals_title: Spending Proposals
+        budgets_title: Participatory budgeting
+        visits_title: Visits
+        direct_messages: Direct messages
+        proposal_notifications: Proposal notifications
+        incomplete_verifications: Incomplete verifications
       graph:
         debate_created: Debates
         spending_proposals: Investment projects

@@ -44,6 +44,10 @@ class Budget < ActiveRecord::Base
     2000
   end
 
+  def self.title_max_length
+    80
+  end
+
   def accepting?
     phase == "accepting"
   end
