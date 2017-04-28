@@ -59,7 +59,7 @@ module ModerateActions
         resource.feasibility = 'unfeasible'
         resource.valuation_finished = true
         resource.save
-        resource.aviso_inviable
+        #resource.aviso_inviable
       # end
       Activity.log(current_user, :hide, resource)
     end
