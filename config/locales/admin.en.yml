@@ -24,6 +24,7 @@ en:
           all: All
           with_active: Active
           with_inactive: Inactive
+        preview: Preview
       banner:
         title: Title
         description:  Description
@@ -33,7 +34,6 @@ en:
         post_started_at: Post started at
         post_ended_at: Post ended at
       edit:
-        back: Back
         editing: Edit banner
         form:
           submit_button: Save changes
@@ -43,7 +43,6 @@ en:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
       new:
-        back: Back
         creating: Create banner
     activity:
       show:
