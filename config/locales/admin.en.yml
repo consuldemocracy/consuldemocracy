@@ -128,6 +128,7 @@ en:
         select: "Select"
         table_id: "ID"
         table_title: "Title"
+        table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
         table_geozone: "Scope of operation"
