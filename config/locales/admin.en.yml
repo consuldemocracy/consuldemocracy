@@ -24,6 +24,7 @@ en:
           all: All
           with_active: Active
           with_inactive: Inactive
+        preview: Preview
       banner:
         title: Title
         description:  Description
