@@ -5,6 +5,7 @@
     <tr>
       <th><%= t("admin.budget_investments.index.table_id") %></th>
       <th><%= t("admin.budget_investments.index.table_title") %></th>
+      <th><%= t("admin.budget_investments.index.table_supports") %></th>
       <th><%= t("admin.budget_investments.index.table_admin") %></th>
       <th><%= t("admin.budget_investments.index.table_valuator") %></th>
       <th><%= t("admin.budget_investments.index.table_geozone") %></th>
@@ -21,6 +22,9 @@
       </td>
       <td>
         <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params)) %>
+      </td>
+      <td class="text-center">
+        <%= investment.total_votes %>
       </td>
       <td class="small">
         <% if investment.administrator.present? %>

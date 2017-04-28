@@ -129,6 +129,7 @@ es:
         select: "Seleccionar"
         table_id: "ID"
         table_title: "Título"
+        table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
         table_geozone: "Ámbito de actuación"
