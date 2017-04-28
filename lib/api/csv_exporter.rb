@@ -26,10 +26,10 @@ class API::CSVExporter
       print "\nExporting #{model.model_name.human}" if @print_log
       counter = 0
       CSV.open(filename(model), "w", col_sep: ';', force_quotes: true, encoding: "ISO-8859-1") do |csv|
-        csv << encode_columns(model.public_columns_for_api)
+        csv << encode_array(model.public_columns_for_api)
         model.find_each do |record|
           if record.public_for_api?
-            csv << public_attributes(record)
+            csv << encode_array(public_attributes(record))
             counter += 1
             if counter == 1000
               counter = 0
@@ -40,8 +40,8 @@ class API::CSVExporter
       end
     end
 
-    def encode_columns(columns)
-      columns.map{|c| c.to_str.encode("ISO-8859-1", invalid: :replace, undef: :replace, replace: '')}
+    def encode_array(values)
+      values.map{|v| v.to_str.encode("ISO-8859-1", invalid: :replace, undef: :replace, replace: '')}
     end
 
     def public_attributes(record)
