@@ -41,7 +41,7 @@ class API::CSVExporter
     end
 
     def encode_array(values)
-      values.map{|v| v.to_str.encode("ISO-8859-1", invalid: :replace, undef: :replace, replace: '')}
+      values.map{|v| v.to_s.encode("ISO-8859-1", invalid: :replace, undef: :replace, replace: '')}
     end
 
     def public_attributes(record)
