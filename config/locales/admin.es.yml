@@ -34,7 +34,6 @@ es:
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
       edit:
-        back: Volver
         editing: Editar el banner
         form:
           submit_button: Guardar Cambios
@@ -44,7 +43,6 @@ es:
             one: "error impidió guardar el banner"
             other: "errores impidieron guardar el banner."
       new:
-        back: Volver
         creating: Crear banner
     activity:
       show:
