@@ -25,8 +25,8 @@ class API::CSVExporter
     def export_model(model)
       print "\nExporting #{model.model_name.human}" if @print_log
       counter = 0
-      CSV.open(filename(model), "w", col_sep: ';', force_quotes: true, encoding: "UTF-8:ISO-8859-1") do |csv|
-        csv << model.public_columns_for_api
+      CSV.open(filename(model), "w", col_sep: ';', force_quotes: true, encoding: "ISO-8859-1") do |csv|
+        csv << encode_columns(model.public_columns_for_api)
         model.find_each do |record|
           if record.public_for_api?
             csv << public_attributes(record)
@@ -38,6 +38,10 @@ class API::CSVExporter
           end
         end
       end
+    end
+
+    def encode_columns(columns)
+      columns.map{|c| c.to_str.encode("ISO-8859-1", invalid: :replace, replace: '')}
     end
 
     def public_attributes(record)
