@@ -497,18 +497,21 @@ table.investment-projects-summary {
   }
 }
 
-.geozone {
-  background: #ececec;
-  border-radius: rem-calc(6);
-  color: $text;
-  display: inline-block;
-  font-size: $small-font-size;
-  margin-bottom: $line-height/3;
-  padding: $line-height/4 $line-height/3;
-  text-decoration: none;
+body.admin {
 
-  &:hover {
-    background: #e0e0e0;
+  .geozone {
+    background: #ececec;
+    border-radius: rem-calc(6);
+    color: $text;
+    display: inline-block;
+    font-size: $small-font-size;
+    margin-bottom: $line-height/3;
+    padding: $line-height/4 $line-height/3;
+    text-decoration: none;
+
+    &:hover {
+      background: #e0e0e0;
+    }
   }
 }
 
