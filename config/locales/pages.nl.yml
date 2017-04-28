@@ -1,0 +1,80 @@
+---
+nl:
+  pages:
+    census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
+    conditions: Terms and conditions of use
+    general_terms: Terms and Conditions
+    more_info:
+      title: "Discover %{org_name}"
+      subtitle: "Learn everything you can do on this website."
+      guide: 'This guide explains each section of %{org_name}. You can expand the information on "Detailed information" links.'
+      menu:
+        debates: "Debates"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        other: "Other information of interest"
+      debates:
+        title: "Debates"
+        description: "Create a thread where you can discuss any topic you want to share with other people in your city."
+        feature_1: "To create a debate you have to %{link}"
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "Debates can be rated using the <strong>I agree</strong> or <strong>I disagree</strong> buttons you'll find on each of them."
+        image_alt: "Buttons to rate the debates"
+        figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
+      proposals:
+        title: "Proposals"
+        description: "Propose what you want the City Council to do and support proposals from other people."
+        feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
+        feature_3_html: "If there are more people in favor than against, <strong>the City Council will publish their plan to accomplish</strong> the proposal and you can track its progress."
+        image_alt: "Button to support a proposal"
+        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
+      budgets:
+        title: "Participatory Budgeting"
+        description: "The first six months of each year you can decide how to spend part of the budget."
+        feature_1: "To submit an investment project you have to %{link} and verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "The first is the <strong>submit phase</strong> of investment projects."
+        feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
+        feature_4_html: "At the end there is a <strong>vote phase </strong> where it is decided on which part of the budget is spent."
+        image_alt: "Different phases of a participatory budget"
+        figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
+      polls:
+        title: "Polls"
+        description: "Citizen proposals that reach 1% of support will be put to a vote."
+        feature_1: "To participate in the next poll you have to %{link} and verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2: "All verified users over 16 years old can vote."
+        feature_3: "The results of all votes shall be binding on the government."
+      faq:
+        title: "Technical problems?"
+        description: "Read the FAQs and solve your questions."
+        button: "View frequently asked questions"
+      other:
+        how_to_use: "Use %{org_name} in your city"
+        world: "Citizen participation in the world"
+        facts: "Facts about citizen participation and direct democracy"
+      how_to_use:
+        text: |-
+          Use it in your local government or help us to improve it, it is free software.
+
+          This Open Government Portal use the [Consul app](https://github.com/ayuntamientomadrid 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
+
+          If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/ayuntamientomadrid 'consul github').
+      titles:
+        how_to_use: Use it in your local government
+    privacy: Privacy Policy
+    titles:
+      accessibility: Accessibility
+      conditions: Terms of use
+      more_info: "More information about %{org_name}"
+      privacy: Privacy Policy
+    verify:
+      code: Code you received in letter
+      email: Email
+      info: 'For verufy your account introduce your access data:'
+      info_code: 'Now introduce the code you received in letter:'
+      password: Password
+      submit: Verify my account
+      title: Verify your account
