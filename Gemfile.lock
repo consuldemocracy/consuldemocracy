@@ -110,7 +110,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    coveralls (0.8.20)
+    coveralls (0.8.21)
       json (>= 1.8, < 3)
       simplecov (~> 0.14.1)
       term-ansicolor (~> 1.3)
@@ -205,7 +205,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    json (2.0.4)
+    json (2.1.0)
     jwt (1.5.6)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
@@ -284,8 +284,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    paranoia (2.3.0)
-      activerecord (>= 4.0, < 5.1)
+    paranoia (2.3.1)
+      activerecord (>= 4.0, < 5.2)
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.20.0)
@@ -338,8 +338,9 @@ GEM
     redcarpet (3.4.0)
     referer-parser (0.3.0)
     request_store (1.3.2)
-    responders (2.3.0)
-      railties (>= 4.2.0, < 5.1)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     rinku (2.0.2)
     rollbar (2.14.1)
       multi_json
@@ -435,7 +436,7 @@ GEM
       rack (>= 1.3, < 3)
       rack-accept (~> 0.4)
       tilt (>= 1.4, < 3)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -482,7 +483,7 @@ DEPENDENCIES
   capybara (~> 2.13.0)
   ckeditor (~> 4.2.2)
   coffee-rails (~> 4.2.1)
-  coveralls (~> 0.8.20)
+  coveralls (~> 0.8.21)
   daemons
   dalli
   database_cleaner
@@ -512,14 +513,14 @@ DEPENDENCIES
   omniauth-google-oauth2 (~> 0.4.0)
   omniauth-twitter
   paperclip
-  paranoia (~> 2.3.0)
+  paranoia (~> 2.3.1)
   pg (~> 0.20.0)
   pg_search
   poltergeist (~> 1.14.0)
   quiet_assets
   rails (= 4.2.8)
   redcarpet (~> 3.4.0)
-  responders (~> 2.3.0)
+  responders (~> 2.4.0)
   rinku (~> 2.0.2)
   rollbar (~> 2.14.1)
   rspec-rails (~> 3.5)

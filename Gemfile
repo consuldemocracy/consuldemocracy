@@ -34,7 +34,7 @@ gem 'omniauth-google-oauth2', '~> 0.4.0'
 gem 'kaminari', '~> 1.0.1'
 gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
-gem 'responders', '~> 2.3.0'
+gem 'responders', '~> 2.4.0'
 gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
@@ -44,7 +44,7 @@ gem 'cancancan', '~> 1.16.0'
 gem 'social-share-button', '~> 0.10'
 gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.3.0'
-gem 'paranoia', '~> 2.3.0'
+gem 'paranoia', '~> 2.3.1'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
@@ -95,7 +95,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'poltergeist', '~> 1.14.0'
-  gem 'coveralls', '~> 0.8.20', require: false
+  gem 'coveralls', '~> 0.8.21', require: false
   gem 'email_spec'
 end
 
