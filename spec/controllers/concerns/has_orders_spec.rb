@@ -14,7 +14,7 @@ describe HasOrders do
     end
 
     def new
-      render text: "#{@current_order} (#{@valid_orders.join(" ")})"
+      render plain: "#{@current_order} (#{@valid_orders.join(" ")})"
     end
   end
 
