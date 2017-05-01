@@ -40,7 +40,7 @@ GEM
     acts_as_votable (0.10.0)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
-    ahoy_matey (1.5.5)
+    ahoy_matey (1.6.0)
       addressable
       browser (~> 2.0)
       geocoder
@@ -470,7 +470,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   acts_as_votable
-  ahoy_matey (~> 1.5.5)
+  ahoy_matey (~> 1.6.0)
   ancestry (~> 2.2.2)
   browser
   bullet (~> 5.5.1)

@@ -57,7 +57,7 @@ gem 'whenever', require: false
 gem 'pg_search'
 gem 'sitemap_generator', '~> 5.3.1'
 
-gem 'ahoy_matey', '~> 1.5.5'
+gem 'ahoy_matey', '~> 1.6.0'
 gem 'groupdate', '~> 3.2.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
