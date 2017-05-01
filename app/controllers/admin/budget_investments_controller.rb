@@ -26,7 +26,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   def update
     set_valuation_tags
     if @investment.update(budget_investment_params)
-      redirect_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)),
+      redirect_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params).to_h),
                   notice: t("flash.actions.update.budget_investment")
     else
       load_admins
