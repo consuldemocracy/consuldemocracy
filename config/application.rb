@@ -55,9 +55,6 @@ module Consul
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
-
     # Add lib to the autoload path
     config.autoload_paths << Rails.root.join("lib")
     config.time_zone = "Madrid"
