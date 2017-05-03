@@ -276,7 +276,8 @@ class Budget
     def self.apply_filters_and_search(budget, params)
       investments = all
       if budget.balloting?
-        investments = investments.selected
+        #investments = investments.selected
+        investments = params[:unfeasible].present? ? investments.unfeasible : investments.selected
       else
         investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
       end
