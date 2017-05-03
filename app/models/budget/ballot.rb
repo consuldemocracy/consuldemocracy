@@ -21,7 +21,6 @@ class Budget
     end
 
     def formatted_amount_spent(heading)
-debugger
       budget.formatted_amount(amount_spent(heading))
     end
 
