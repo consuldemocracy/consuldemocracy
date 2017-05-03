@@ -135,11 +135,11 @@ ActiveRecord::Schema.define(version: 20170428111355) do
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
+    t.integer  "ballot_lines_count",                    default: 0
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
-    t.integer  "ballot_lines_count",                    default: 0
   end
 
   create_table "budget_valuator_assignments", force: :cascade do |t|
@@ -269,6 +269,8 @@ ActiveRecord::Schema.define(version: 20170428111355) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "district_code"
+    t.integer  "year_of_birth"
+    t.integer  "poll_officer_id"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
   end
 
@@ -757,6 +759,8 @@ ActiveRecord::Schema.define(version: 20170428111355) do
     t.boolean  "official_position_badge",                   default: false
     t.datetime "password_changed_at",                       default: '2016-11-02 13:51:14', null: false
     t.boolean  "created_from_signature",                    default: false
+    t.integer  "failed_email_digests_count",                default: 0
+    t.text     "former_users_data_log",                     default: ""
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
@@ -764,8 +768,6 @@ ActiveRecord::Schema.define(version: 20170428111355) do
     t.index ["password_changed_at"], name: "index_users_on_password_changed_at", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", using: :btree
-    t.integer  "failed_email_digests_count",                default: 0
-    t.text     "former_users_data_log",                     default: ""
   end
 
   create_table "valuation_assignments", force: :cascade do |t|
@@ -844,6 +846,7 @@ ActiveRecord::Schema.define(version: 20170428111355) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
   add_foreign_key "geozones_polls", "polls"
