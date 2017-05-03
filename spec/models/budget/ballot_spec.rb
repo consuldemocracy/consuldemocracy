@@ -79,7 +79,7 @@ describe Budget::Ballot do
 
   describe "#heading_for_group" do
 
-    it "returns the heading with investments for a group" do
+    it "returns the heading with balloted investments for a group" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
 
@@ -93,6 +93,18 @@ describe Budget::Ballot do
       ballot.investments << inv2
 
       expect(ballot.heading_for_group(group)).to eq heading2
+    end
+
+    it "returns nil if there are no headings with balloted investments in a group" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+
+      heading1 = create(:budget_heading, group: group)
+      heading2 = create(:budget_heading, group: group)
+
+      ballot = create(:budget_ballot, budget: budget)
+
+      expect(ballot.heading_for_group(group)).to eq nil
     end
 
   end
