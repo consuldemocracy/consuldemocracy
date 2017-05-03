@@ -2,6 +2,29 @@ require 'rails_helper'
 
 describe Budget::Ballot do
 
+  describe "validations" do
+
+    it "should be valid" do
+      budget = create(:budget)
+      ballot = create(:budget_ballot, budget: budget)
+
+      expect(ballot).to be_valid
+    end
+
+    it "should not be valid with the same investment twice" do
+      budget = create(:budget)
+      group  = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      investment = create(:budget_investment, :selected, heading: heading)
+
+      ballot = create(:budget_ballot, budget: budget)
+      ballot.investments << investment
+
+      expect { ballot.investments << investment }.to raise_error(ActiveRecord::RecordNotUnique)
+    end
+
+  end
+
   describe "#amount_spent" do
     it "returns the total amount spent in investments" do
       budget = create(:budget)
