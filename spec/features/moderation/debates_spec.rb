@@ -91,8 +91,6 @@ feature 'Moderate debates' do
       end
 
       scenario "select all/none", :js do
-        Capybara.current_driver = :poltergeist_no_js_errors
-
         create_list(:debate, 2)
 
         visit moderation_debates_path
