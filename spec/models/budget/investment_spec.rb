@@ -144,6 +144,76 @@ describe Budget::Investment do
     end
   end
 
+  describe "#should_show_vote_count?" do
+    it "returns true in valuating phase" do
+      budget = create(:budget, phase: "valuating")
+      investment = create(:budget_investment, budget: budget)
+
+      expect(investment.should_show_vote_count?).to eq(true)
+    end
+
+    it "returns false in any other phase" do
+      Budget::PHASES.reject {|phase| phase == "valuating"}.each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, budget: budget)
+
+        expect(investment.should_show_vote_count?).to eq(false)
+      end
+    end
+  end
+
+  describe "#should_show_ballots?" do
+    it "returns true in balloting phase" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, budget: budget)
+
+      expect(investment.should_show_ballots?).to eq(true)
+    end
+
+    it "returns false in any other phase" do
+      Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, budget: budget)
+
+        expect(investment.should_show_ballots?).to eq(false)
+      end
+    end
+  end
+
+  describe "#should_show_price_info?" do
+    it "returns true for feasibles if phase is balloting or later and price_explanation is present" do
+      ["balloting", "reviewing_ballots", "finished"].each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+
+        expect(investment.should_show_price_info?).to eq(true)
+      end
+    end
+
+    it "returns false in any other phase" do
+      (Budget::PHASES - ["balloting", "reviewing_ballots", "finished"]).each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+
+        expect(investment.should_show_price_info?).to eq(false)
+      end
+    end
+
+    it "returns false if investment is unfeasible" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "price explanation")
+
+      expect(investment.should_show_price_info?).to eq(false)
+    end
+
+    it "returns false if price_explanation is blank" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "")
+
+      expect(investment.should_show_price_info?).to eq(false)
+    end
+  end
+
   describe "by_admin" do
     it "should return investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)

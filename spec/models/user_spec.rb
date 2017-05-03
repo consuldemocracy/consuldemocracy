@@ -65,6 +65,13 @@ describe User do
     end
   end
 
+  describe "#age" do
+    it "is the rounded integer age based on the date_of_birth" do
+      user = create(:user, date_of_birth: 33.years.ago)
+      expect(user.age).to eq(33)
+    end
+  end
+
   describe 'preferences' do
     describe 'email_on_comment' do
       it 'should be false by default' do
@@ -148,6 +155,18 @@ describe User do
       subject.save
       create(:manager, user: subject)
       expect(subject.manager?).to be true
+    end
+  end
+
+  describe "poll_officer?" do
+    it "is false when the user is not a poll officer" do
+      expect(subject.poll_officer?).to be false
+    end
+
+    it "is true when the user is a poll officer" do
+      subject.save
+      create(:poll_officer, user: subject)
+      expect(subject.poll_officer?).to be true
     end
   end
 
@@ -351,6 +370,20 @@ describe User do
       end
 
     end
+
+    describe "erased" do
+
+      it "returns users that have been erased" do
+        user1 = create(:user, erased_at: Time.current)
+        user2 = create(:user, erased_at: Time.current)
+        user3 = create(:user, erased_at: nil)
+
+        expect(User.erased).to include(user1)
+        expect(User.erased).to include(user2)
+        expect(User.erased).to_not include(user3)
+      end
+
+    end
   end
 
   describe "self.search" do
@@ -465,6 +498,136 @@ describe User do
       user.erase('an identity test')
 
       expect(Identity.exists?(identity.id)).to_not be
+    end
+
+  end
+
+  describe "#take_votes_from" do
+    it "logs info of previous users" do
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+      another_user = create(:user)
+
+      expect(user.former_users_data_log).to be_blank
+
+      user.take_votes_from other_user
+
+      expect(user.former_users_data_log).to include("id: #{other_user.id}")
+
+      user.take_votes_from another_user
+
+      expect(user.former_users_data_log).to include("id: #{other_user.id}")
+      expect(user.former_users_data_log).to include("| id: #{another_user.id}")
+    end
+
+    it "reassigns votes from other user" do
+      other_user = create(:user, :level_three)
+      user = create(:user, :level_three)
+
+      v1 = create(:vote, voter: other_user, votable: create(:debate))
+      v2 = create(:vote, voter: other_user, votable: create(:proposal))
+      v3 = create(:vote, voter: other_user, votable: create(:comment))
+
+      create(:vote)
+
+      expect(other_user.votes.count).to eq(3)
+      expect(user.votes.count).to eq(0)
+
+      user.take_votes_from other_user
+
+      expect(other_user.votes.count).to eq(0)
+      expect(user.vote_ids.sort).to eq([v1.id, v2.id, v3.id].sort)
+    end
+
+    it "reassigns budget ballots from other user" do
+      other_user = create(:user, :level_three)
+      user = create(:user, :level_three)
+
+      b1 = create(:budget_ballot, user: other_user)
+      b2 = create(:budget_ballot, user: other_user)
+
+      create(:budget_ballot)
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq(2)
+      expect(Budget::Ballot.where(user: user).count).to eq(0)
+
+      user.take_votes_from other_user
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq(0)
+      expect(Budget::Ballot.where(user: user).sort).to eq([b1, b2].sort)
+    end
+
+    it "reassigns poll voters from other user" do
+      other_user = create(:user, :level_three)
+      user = create(:user, :level_three)
+
+      v1 = create(:poll_voter, user: other_user)
+      v2 = create(:poll_voter, user: other_user)
+
+      create(:poll_voter)
+
+      expect(Poll::Voter.where(user: other_user).count).to eq(2)
+      expect(Poll::Voter.where(user: user).count).to eq(0)
+
+      user.take_votes_from other_user
+
+      expect(Poll::Voter.where(user: other_user).count).to eq(0)
+      expect(Poll::Voter.where(user: user).sort).to eq([v1, v2].sort)
+    end
+  end
+
+  describe "#take_votes_if_erased_document" do
+    it "does nothing if no erased user with received document" do
+      user_1 = create(:user, :level_three)
+      user_2 = create(:user, :level_three)
+
+      create(:vote, voter: user_1)
+      create(:budget_ballot, user: user_1)
+      create(:poll_voter, user: user_1)
+
+      user_2.take_votes_if_erased_document(111, 1)
+
+      expect(user_1.votes.count).to eq(1)
+      expect(user_2.votes.count).to eq(0)
+
+      expect(Budget::Ballot.where(user: user_1).count).to eq(1)
+      expect(Budget::Ballot.where(user: user_2).count).to eq(0)
+
+      expect(Poll::Voter.where(user: user_1).count).to eq(1)
+      expect(Poll::Voter.where(user: user_2).count).to eq(0)
+    end
+
+    it "takes votes from erased user with received document" do
+      user_1 = create(:user, :level_two, document_number: "12345777", document_type: "1")
+      user_2 = create(:user)
+
+      create(:vote, voter: user_1)
+      create(:budget_ballot, user: user_1)
+      create(:poll_voter, user: user_1)
+
+      user_1.erase
+
+      user_2.take_votes_if_erased_document("12345777", "1")
+
+      expect(user_1.votes.count).to eq(0)
+      expect(user_2.votes.count).to eq(1)
+
+      expect(Budget::Ballot.where(user: user_1).count).to eq(0)
+      expect(Budget::Ballot.where(user: user_2).count).to eq(1)
+
+      expect(Poll::Voter.where(user: user_1).count).to eq(0)
+      expect(Poll::Voter.where(user: user_2).count).to eq(1)
+    end
+
+    it "removes document from erased user and logs info" do
+      user_1 = create(:user, document_number: "12345777", document_type: "1")
+      user_2 = create(:user)
+      user_1.erase
+
+      user_2.take_votes_if_erased_document("12345777", "1")
+
+      expect(user_2.reload.former_users_data_log).to include("id: #{user_1.id}")
+      expect(user_1.reload.document_number).to be_blank
     end
 
   end

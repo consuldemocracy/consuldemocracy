@@ -14,7 +14,7 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
-    <%= favicon_link_tag "apple-touch-icon-200.png",
+    <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
                      rel: "icon apple-touch-icon",
                      sizes: "200x200",
                      type: "image/png" %>
@@ -27,7 +27,7 @@
 
     <h1 class="sr-only"><%= setting['org_name'] %></h1>
 
-    <div class="wrapper">
+    <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render 'layouts/header' %>
 
       <!--[if lt IE 9]>

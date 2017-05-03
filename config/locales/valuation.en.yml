@@ -1,6 +1,8 @@
 ---
 en:
   valuation:
+    header:
+      title: Valuation
     menu:
       title: Valuation
       budgets: Participatory budgets
@@ -59,7 +61,7 @@ en:
       edit:
         dossier: Dossier
         price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency})"
+        price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
         price_explanation_html: Price explanation
         feasibility: Feasibility
         feasible: Feasible

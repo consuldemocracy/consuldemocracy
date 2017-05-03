@@ -1,7 +1,10 @@
 ---
 en:
   admin:
+    header:
+      title: Administration
     actions:
+      actions: Actions
       confirm: Are you sure?
       confirm_hide: Confirm
       hide: Hide
@@ -9,6 +12,8 @@ en:
       restore: Restore
       mark_featured: Featured
       unmark_featured: Unmark featured
+      edit: Edit
+      configure: Configure
     banners:
       index:
         title: Banners
@@ -19,6 +24,7 @@ en:
           all: All
           with_active: Active
           with_inactive: Inactive
+        preview: Preview
       banner:
         title: Title
         description:  Description
@@ -28,7 +34,6 @@ en:
         post_started_at: Post started at
         post_ended_at: Post ended at
       edit:
-        back: Back
         editing: Edit banner
         form:
           submit_button: Save changes
@@ -38,7 +43,6 @@ en:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
       new:
-        back: Back
         creating: Create banner
     activity:
       show:
@@ -124,6 +128,7 @@ en:
         select: "Select"
         table_id: "ID"
         table_title: "Title"
+        table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
         table_geozone: "Scope of operation"
@@ -190,23 +195,37 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
+      poll_questions: Poll questions
+      proposals_topics: Proposals topics
       budgets: Participatory budgets
-      debate_topics: Debate topics
       geozones: Manage geozones
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
-      incomplete_verifications: Incomplete verifications
       managers: Managers
       moderators: Moderators
       valuators: Valuators
+      poll_officers: Poll officers
+      polls: Polls
+      poll_booths: Booths location
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
+      site_customization:
+        pages: Custom Pages
+        images: Custom Images
+        content_blocks: Custom content blocks
+      title_categories: Categories
+      title_moderated_content: Moderated content
+      title_budgets: Budgets
+      title_polls: Polls
+      title_profiles: Profiles
+      title_banners: Banners
+      title_site_customization: Site customization
     moderators:
       index:
         title: Moderators
@@ -237,6 +256,162 @@ en:
         in_evaluation_count: In evaluation
         total_count: Total
         cost: Cost
+    poll_officers:
+      index:
+        title: Poll officers
+      officer:
+        add: Add
+        delete: Delete position
+        name: Name
+        email: Email
+        entry_name: officer
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
+    poll_officer_assignments:
+      flash:
+        destroy: "Officing shift removed"
+        create: "Officing shift added"
+        error_destroy: "An error ocurred when removing officer assignment"
+        error_create: "An error ocurred when adding officer assignment"
+      index:
+        officers_title: "List of officers"
+        no_officers: "There are no officers assigned to this poll."
+        table_name: "Name"
+        table_email: "Email"
+        add_officer_assignments: "Add shifts as officer"
+        edit_officer_assignments: "Edit officing shifts"
+      by_officer:
+        new_assignment: "New shift"
+        date: "Date"
+        booth: "Booth"
+        assignment: "Assignment"
+        select_date: "Select day"
+        select_booth: "Select booth"
+        add_assignment: "Add shift"
+        remove_assignment: "Remove"
+        assignments: "Officing shifts in this poll"
+        no_assignments: "This user has no officing shifts in this poll."
+        recounts: "Daily recounts"
+        recount: "Daily recount (by officer)"
+        final_recounts: "Final recounts"
+        final_recount: "Final recount (by officer)"
+    poll_booth_assignments:
+      flash:
+        destroy: "Booth not assigned anymore"
+        create: "Booth assigned"
+        error_destroy: "An error ocurred when removing booth assignment"
+        error_create: "An error ocurred when assigning booth to the poll"
+      show:
+        location: "Location"
+        officers: "Officers"
+        officers_list: "Officer list for this booth"
+        no_officers: "There are no officers for this booth"
+        recounts: "Recounts"
+        recounts_list: "Recount list for this booth"
+        no_recounts: "There are not daily recounts of this booth yet"
+        date: "Date"
+        count_by_officer: "Daily recount (by officer)"
+        count_final: "Final recount (by officer)"
+        count_by_system:  "Votes (automatic)"
+      index:
+        booths_title: "List of booths"
+        no_booths: "There are no booths assigned to this poll."
+        table_name: "Name"
+        table_location: "Location"
+        table_assignment: "Assignment"
+        remove_booth: "Remove booth from poll"
+        add_booth: "Assign booth"
+    polls:
+      index:
+        title: "List of polls"
+        no_polls: "There are no polls."
+        create: "Create poll"
+        name: "Name"
+        dates: "Dates"
+      new:
+        title: "New poll"
+        submit_button: "Create poll"
+      edit:
+        title: "Edit poll"
+        submit_button: "Update poll"
+      show:
+        questions_tab: Questions
+        booths_tab: Booths
+        officers_tab: Officers
+        recounts_tab: Recounting
+        results_tab: Results
+        no_questions: "There are no questions assigned to this poll."
+        questions_title: "List of questions"
+        remove_question: "Remove question from poll"
+        add_question: "Include question"
+        table_title: "Title"
+        table_assignment: "Assignment"
+        table_name: "Name"
+      flash:
+        question_added: "Question added to this poll"
+        error_on_question_added: "Question could not be assigned to this poll"
+        question_removed: "Question removed from this poll"
+        error_on_question_removed: "Question could not be removed from this poll"
+    questions:
+      index:
+        title: "Questions"
+        create: "Create question"
+        no_questions: "There are no questions."
+        filter_poll: Filter by Poll
+        select_poll: Select Poll
+        questions_tab: "Questions"
+        successful_proposals_tab: "Successful proposals"
+        create_question: "Create question"
+        table_proposal: "Proposal"
+        table_question: "Question"
+      edit:
+        title: "Edit Question"
+      new:
+        title: "Create Question"
+        poll_label: "Poll"
+        valid_answers_note: "Enter the answers separated by commas (,)"
+      show:
+        proposal: Original proposal
+        author: Author
+        title: Title
+        valid_answers: Valid answers
+        description: Description
+        preview: View on website
+    recounts:
+      index:
+        title: "Recounts"
+        no_recounts: "There is nothing to be recounted"
+        table_booth_name: "Booth"
+        table_recounts: "Accumulated daily recounts (by officer)"
+        table_final_recount: "Final recount (by officer)"
+        table_system_count: "Votes (automatic)"
+    results:
+      index:
+        title: "Results"
+        no_results: "There are no results"
+        table_whites: "Blank ballots"
+        table_nulls: "Invalid ballots"
+        table_answer: Answer
+        table_votes: Votes
+    booths:
+      index:
+        title: "List of booths"
+        no_booths: "There are no booths."
+        add_booth: "Add booth"
+        name: "Name"
+        location: "Location"
+      new:
+        title: "New booth"
+        name: "Name"
+        location: "Location"
+        submit_button: "Create booth"
+      edit:
+        title: "Edit booth"
+        submit_button: "Update booth"
+      show:
+        location: "Location"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -299,6 +474,15 @@ en:
           enable: "Enable"
           disable: "Disable"
     shared:
+      booths_search:
+        button: Search
+        placeholder: Search booth by name
+      poll_officers_search:
+        button: Search
+        placeholder: Search poll officers
+      poll_questions_search:
+        button: Search
+        placeholder: Search poll questions
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
@@ -308,6 +492,8 @@ en:
       user_search:
         button: Search
         placeholder: Search user by name or email'
+      search_results: "Search results"
+      no_search_results: "No results found."
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -426,6 +612,8 @@ en:
           debates: Debates
           proposal_votes: Proposal votes
           proposals: Proposals
+          budgets: Open budgets
+          budget_investments: Investment projects
           spending_proposals: Spending Proposals
           unverified_users: Unverified users
           user_level_three: Level three users
@@ -436,9 +624,11 @@ en:
           visits: Visits
           votes: Total votes
         spending_proposals_title: Spending Proposals
+        budgets_title: Participatory budgeting
         visits_title: Visits
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
+        incomplete_verifications: Incomplete verifications
       direct_messages:
         title: Direct messages
         total: Total
@@ -451,9 +641,9 @@ en:
       create: Create Topic
       destroy: Destroy Topic
       index:
-        add_tag: Add a new debate topic
-        title: Debate topics
-      mark_as_featured: Propose topic upon creating debate
+        add_tag: Add a new proposal topic
+        title: Proposal topics
+      mark_as_featured: Propose topic upon creating proposal
       name:
         placeholder: Type the name of the topic
       update: Update Topic
@@ -475,3 +665,74 @@ en:
         phone_not_given: Phone not given
         sms_code_not_confirmed: Has not confirmed the sms code
         title: Incomplete verifications
+    site_customization:
+      content_blocks:
+        form:
+          content_blocks_information: Information about content blocks
+          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
+          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
+          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        create:
+          notice: Content block created successfully
+          error: Content block couldn't be created
+        update:
+          notice: Content block updated successfully
+          error: Content block couldn't be updated
+        destroy:
+          notice: Content block deleted successfully
+        edit:
+          title: Editing content block
+        errors:
+          form:
+            error: Error
+        index:
+          create: Create new content block
+          delete: Delete block
+          title: Content blocks
+        new:
+          title: Create new content block
+        content_block:
+          body: Body
+          name: Name
+      images:
+        index:
+          title: Custom images
+          update: Update
+          delete: Delete
+          image: Image
+        update:
+          notice: Image updated successfully
+          error: Image couldn't be updated
+        destroy:
+          notice: Image deleted successfully
+          error: Image couldn't be deleted
+      pages:
+        create:
+          notice: Page created successfully
+          error: Page couldn't be created
+        update:
+          notice: Page updated successfully
+          error: Page couldn't be updated
+        destroy:
+          notice: Page deleted successfully
+        edit:
+          title: Editing %{page_title}
+        errors:
+          form:
+            error: Error
+        form:
+          options: Options
+        index:
+          create: Create new page
+          delete: Delete page
+          title: Custom Pages
+          see_page: See page
+        new:
+          title: Create new custom page
+        page:
+          created_at: Created at
+          status: Status
+          title: Title
+          updated_at: Updated at
+          status_draft: Draft
+          status_published: Published

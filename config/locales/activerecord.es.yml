@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -37,9 +37,24 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      poll/booth:
+        one: "urna"
+        other: "urnas"
+      poll/officer:
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
+      site_customization/page:
+        one: Página
+        other: Páginas
+      site_customization/image:
+        one: Imagen
+        other: Imágenes
+      site_customization/content_block:
+        one: Bloque
+        other: Bloques
     attributes:
       budget:
         name: "Nombre"
@@ -94,10 +109,38 @@ es:
         external_url: "Enlace a documentación adicional"
         geozone_id: "Ámbito de actuación"
         title: "Título"
+      poll:
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
+      poll/question:
+        title: "Pregunta"
+        valid_answers: "Posibles respuestas"
+        summary: "Resumen"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
         document_numbers: "Números de documentos"
+      site_customization/page:
+        content: Contenido
+        created_at: Creada
+        subtitle: Subtítulo
+        slug: Slug
+        status: Estado
+        title: Título
+        updated_at: última actualización
+        more_info_flag: Mostrar en la página de más información
+        print_content_flag: Botón de imprimir contenido
+      site_customization/image:
+        name: Nombre
+        image: Imagen
+      site_customization/content_block:
+        name: Nombre
+        locale: Idioma
+        body: Contenido
     errors:
       models:
         user:
@@ -112,7 +155,16 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
         proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        budget/investment:
           attributes:
             tag_list:
               less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
@@ -125,3 +177,12 @@ es:
             document_number:
               not_in_census: 'No verificado por Padrón'
               already_voted: 'Ya ha votado esta propuesta'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "deber ser letras, números, _ y -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Debe tener %{required_width}px de ancho"
+              image_height: "Debe tener %{required_height}px de alto"

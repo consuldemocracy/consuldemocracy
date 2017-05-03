@@ -29,12 +29,12 @@
         <% end %>
       </div>
 
-      <% if has_banners %>
+      <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successfull_exists %>
-        <%= render "proposal_ballots_banner" %>
+      <% if @proposal_successful_exists %>
+        <%= render "successful_banner" %>
       <% elsif @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
