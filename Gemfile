@@ -18,11 +18,10 @@ gem 'coffee-rails', '~> 4.2.1'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '2.5.3'
+gem 'turbolinks', '~> 5.0.1'
 
 # Fix sprockets on the
 gem 'sprockets', '~> 3.7.1'
-
 gem 'devise', '~> 4.2.0'
 gem 'devise_security_extension', '~> 0.10'
 # Use ActiveModel has_secure_password

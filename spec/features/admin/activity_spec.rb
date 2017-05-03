@@ -145,6 +145,7 @@ feature 'Admin activity' do
         click_link 'Hide'
         expect(page).to have_css(".faded")
       end
+      expect(page).to have_css('.faded')
 
       visit admin_activity_path
 
