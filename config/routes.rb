@@ -352,7 +352,7 @@ Rails.application.routes.draw do
     end
     resource :residence, controller: "residence", only: [:new, :create]
     resources :voters, only: [:new, :create]
-    root to: "dashboard#index"
+    root to: "dashboard#index", as: "root"
   end
 
   if Rails.env.development?
