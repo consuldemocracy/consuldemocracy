@@ -66,7 +66,7 @@ class Budget
     end
 
     def heading_for_group(group)
-      self.headings.where(group: group).first
+      self.investments.where(group: group).first.heading
     end
 
   end
