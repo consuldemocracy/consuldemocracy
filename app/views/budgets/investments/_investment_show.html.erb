@@ -102,7 +102,7 @@
       <h2><%= t("budgets.investments.show.share") %></h2>
       <div class="social-share-full">
         <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
-        <a href="whatsapp://send?text=<%= investment.title.gsub(/\s/, '&nbsp;') %>&nbsp;<%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>"
+        <a href="whatsapp://send?text=<%= investment.title.gsub(/\s/, '%20') %>&nbsp;<%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>"
            class="show-for-small-only" data-action="share/whatsapp/share">
           <span class="icon-whatsapp whatsapp"></span>
           <span class="sr-only"><%= t("social.whatsapp") %></span>

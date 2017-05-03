@@ -52,7 +52,7 @@
         <h2><%= t("debates.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
-          <a href="whatsapp://send?text=<%= @debate.title.gsub(/\s/, '&nbsp;') %>&nbsp;<%= debate_url(@debate) %>"
+          <a href="whatsapp://send?text=<%= @debate.title.gsub(/\s/, '%20') %>&nbsp;<%= debate_url(@debate) %>"
              class="show-for-small-only" data-action="share/whatsapp/share">
             <span class="icon-whatsapp whatsapp"></span>
             <span class="sr-only"><%= t("social.whatsapp") %></span>
