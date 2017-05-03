@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <li>
-    <%= link_to notifications_path, class: "notifications" do %>
+    <%= link_to notifications_path, rel: "nofollow", class: "notifications" do %>
       <span class="sr-only"><%= t("layouts.header.notifications") %></span>
       <% if current_user.notifications_count > 0 %>
         <span class="icon-circle" aria-hidden="true"></span>
@@ -12,19 +12,24 @@
     <% end %>
   </li>
   <li>
-    <%= link_to t("layouts.header.my_activity_link"), user_path(current_user) %>
+    <%= link_to t("layouts.header.my_activity_link"),
+                user_path(current_user), rel: "nofollow" %>
   </li>
   <li>
-    <%= link_to t("layouts.header.my_account_link"), account_path %>
+    <%= link_to t("layouts.header.my_account_link"),
+                account_path, rel: "nofollow" %>
   </li>
   <li>
-    <%= link_to t("devise_views.menu.login_items.logout"), destroy_user_session_path, method: :delete %>
+    <%= link_to t("devise_views.menu.login_items.logout"),
+                destroy_user_session_path, rel: "nofollow", method: :delete %>
   </li>
 <% else %>
   <li>
-    <%= link_to t("devise_views.menu.login_items.login"), new_user_session_path %>
+    <%= link_to t("devise_views.menu.login_items.login"),
+                new_user_session_path, rel: "nofollow" %>
   </li>
   <li>
-    <%= link_to t("devise_views.menu.login_items.signup"), new_user_registration_path, class: "button" %>
+    <%= link_to t("devise_views.menu.login_items.signup"),
+                new_user_registration_path, rel: "nofollow", class: "button" %>
   </li>
 <% end %>

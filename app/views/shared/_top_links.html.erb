@@ -3,12 +3,14 @@
     <%= link_to t("layouts.header.external_link_transparency"),
                 setting['transparency_url'].presence || t("layouts.header.external_link_transparency_url"),
                 target: "_blank",
+                rel: "nofollow",
                 title: t('shared.target_blank_html') %>
   </li>
   <li>
     <%= link_to t("layouts.header.external_link_opendata"),
                 setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"),
                 target: "_blank",
+                rel: "nofollow",
                 title: t('shared.target_blank_html') %>
   </li>
 
@@ -17,6 +19,7 @@
       <%= link_to t("layouts.header.external_link_blog"),
                   setting['blog_url'],
                   target: "_blank",
+                  rel: "nofollow",
                   title: t('shared.target_blank_html') %>
     </li>
   <% end %>

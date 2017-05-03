@@ -129,20 +129,6 @@
       </ul>
     </li>
 
-    <li class="section-title" <%= 'class=active' if controller_name == 'geozones' %>>
-      <%= link_to admin_geozones_path do %>
-        <strong><%= t('admin.menu.geozones') %></strong>
-      <% end %>
-    </li>
-
-    <% if feature?(:signature_sheets) %>
-      <li class="section-title" <%= "class=active" if controller_name == "signature_sheets" %>>
-        <%= link_to admin_signature_sheets_path do %>
-          <strong><%= t("admin.menu.signature_sheets") %></strong>
-        <% end %>
-      </li>
-    <% end %>
-
     <li class="section-title">
       <a href="#">
         <span class="icon-settings"></span>
@@ -162,5 +148,19 @@
         </li>
       </ul>
     </li>
+
+    <li class="section-title" <%= 'class=active' if controller_name == 'geozones' %>>
+      <%= link_to admin_geozones_path do %>
+        <strong><%= t('admin.menu.geozones') %></strong>
+      <% end %>
+    </li>
+
+    <% if feature?(:signature_sheets) %>
+      <li class="section-title" <%= "class=active" if controller_name == "signature_sheets" %>>
+        <%= link_to admin_signature_sheets_path do %>
+          <strong><%= t("admin.menu.signature_sheets") %></strong>
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </div>

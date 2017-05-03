@@ -24,6 +24,7 @@ es:
           all: Todos
           with_active: Activos
           with_inactive: Inactivos
+        preview: Vista previa
       banner:
         title: Título
         description:  Descripción
@@ -33,7 +34,6 @@ es:
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
       edit:
-        back: Volver
         editing: Editar el banner
         form:
           submit_button: Guardar Cambios
@@ -43,7 +43,6 @@ es:
             one: "error impidió guardar el banner"
             other: "errores impidieron guardar el banner."
       new:
-        back: Volver
         creating: Crear banner
     activity:
       show:
@@ -129,6 +128,7 @@ es:
         select: "Seleccionar"
         table_id: "ID"
         table_title: "Título"
+        table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
         table_geozone: "Ámbito de actuación"
@@ -612,6 +612,8 @@ es:
           debates: Debates
           proposal_votes: Votos en propuestas
           proposals: Propuestas
+          budgets: Presupuestos abiertos
+          budget_investments: Propuestas de inversión
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
@@ -622,6 +624,7 @@ es:
           visits: Visitas
           votes: Votos
         spending_proposals_title: Propuestas de inversión
+        budgets_title: Presupuestos participativos
         visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -679,16 +682,14 @@ es:
           notice: Bloque borrado correctamente
         edit:
           title: Editar bloque
-          back: Volver
         errors:
           form:
             error: Error
         index:
           create: Crear nuevo bloque
-          delete: Borrar
+          delete: Borrar bloque
           title: Bloques
         new:
-          back: Volver
           title: Crear nuevo bloque
         content_block:
           body: Contenido
@@ -698,6 +699,7 @@ es:
           title: Personalizar imágenes
           update: Actualizar
           delete: Borrar
+          image: Imagen
         update:
           notice: Imagen actualizada correctamente
           error: No se ha podido actualizar la imagen
@@ -715,7 +717,6 @@ es:
           notice: Página eliminada correctamente
         edit:
           title: Editar %{page_title}
-          back: Volver
         errors:
           form:
             error: Error
@@ -723,11 +724,10 @@ es:
           options: Opciones
         index:
           create: Crear nueva página
-          delete: Borrar
+          delete: Borrar página
           title: Páginas
           see_page: Ver página
         new:
-          back: Back
           title: Página nueva
         page:
           created_at: Creada

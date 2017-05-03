@@ -76,34 +76,6 @@ class Budget
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
     end
 
-    def self.limit_results(results, budget, max_per_heading, max_for_no_heading)
-      return results if max_per_heading <= 0 && max_for_no_heading <= 0
-
-      ids = []
-      if max_per_heading > 0
-        budget.headings.pluck(:id).each do |hid|
-          ids += Investment.where(heading_id: hid).order(confidence_score: :desc).limit(max_per_heading).pluck(:id)
-        end
-      end
-
-      if max_for_no_heading > 0
-        ids += Investment.no_heading.order(confidence_score: :desc).limit(max_for_no_heading).pluck(:id)
-      end
-
-      conditions = ["investments.id IN (?)"]
-      values = [ids]
-
-      if max_per_heading == 0
-        conditions << "investments.heading_id IS NOT ?"
-        values << nil
-      elsif max_for_no_heading == 0
-        conditions << "investments.heading_id IS ?"
-        values << nil
-      end
-
-      results.where(conditions.join(' OR '), *values)
-    end
-
     def searchable_values
       { title              => 'A',
         author.username    => 'B',
@@ -243,6 +215,12 @@ class Budget
 
     def should_show_ballots?
       budget.balloting?
+    end
+
+    def should_show_price_info?
+      feasible? &&
+      price_explanation.present? &&
+      (budget.balloting? || budget.reviewing_ballots? || budget.finished?)
     end
 
     def formatted_price

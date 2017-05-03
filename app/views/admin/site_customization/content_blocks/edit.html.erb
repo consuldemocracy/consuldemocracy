@@ -2,14 +2,13 @@
   Admin - <%= t("admin.menu.site_customization.content_blocks") %> - <%= @content_block.name %> (<%= @content_block.locale %>)
 <% end %>
 
-<%= link_to admin_site_customization_content_blocks_path, class: "back" do %>
-  <span class="icon-angle-left"></span>
-  <%= t("admin.site_customization.content_blocks.edit.back") %>
-<% end %>
+<%= back_link_to admin_site_customization_content_blocks_path %>
 
-<%= button_to t("admin.site_customization.content_blocks.index.delete"), admin_site_customization_content_block_path(@content_block), method: :delete, class: "button hollow alert float-right margin-right" %>
+<%= button_to t("admin.site_customization.content_blocks.index.delete"), admin_site_customization_content_block_path(@content_block), method: :delete, class: "button hollow alert float-right small" %>
 
-<div class="row margin-top">
-  <h2><%= t("admin.site_customization.content_blocks.edit.title") %></h2>
-  <%= render 'form' %>
+<div class="row">
+  <div class="small-12 column">
+    <h2><%= t("admin.site_customization.content_blocks.edit.title") %></h2>
+    <%= render 'form' %>
+  </div>
 </div>

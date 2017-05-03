@@ -587,12 +587,8 @@ footer {
     padding-left: 0;
   }
 
-  h2 a {
-    border-bottom: 1px solid $text-light;
-    display: block;
-    font-size: rem-calc(24);
-    line-height: rem-calc(31);
-    padding-bottom: $line-height/4;
+  a.title {
+    font-weight: bold;
     text-decoration: none;
   }
 }
@@ -1375,6 +1371,13 @@ table {
   }
 }
 
+@include breakpoint(medium) {
+
+  .button.button-telegram, .ssb-telegram {
+    display: none !important;
+  }
+}
+
 .social {
 
   a {
@@ -1475,7 +1478,7 @@ table {
     width: $line-height*2;
 
     &:before {
-      content: "A";
+      content: "1";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;

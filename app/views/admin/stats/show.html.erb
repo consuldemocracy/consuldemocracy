@@ -36,6 +36,16 @@
             <%= t "admin.stats.show.summary.comments" %><br>
             <span class="number"><%= number_with_delimiter(@comments) %></span>
           </p>
+          <% if feature?(:budgets) %>
+            <p>
+              <%= t "admin.stats.show.summary.budgets" %><br>
+              <span class="number"><%= number_with_delimiter(@budgets) %></span>
+            </p>
+            <p class="featured">
+              <%= t "admin.stats.show.summary.budget_investments" %><br>
+              <span class="number"><%= number_with_delimiter(@investments) %></span>
+            </p>
+          <% end %>
         </div>
 
         <div class="small-12 medium-3 column">
@@ -96,12 +106,14 @@
           </p>
         </div>
 
-        <div class="small-12 medium-3 column">
-          <p class="featured">
-            <%= t "admin.stats.show.summary.spending_proposals" %><br>
-            <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
-          </p>
-        </div>
+        <% if feature?(:spending_proposals) %>
+          <div class="small-12 medium-3 column">
+            <p class="featured">
+              <%= t "admin.stats.show.summary.spending_proposals" %><br>
+              <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
+            </p>
+          </div>
+        <% end %>
       </div>
 
       <div class="small-12 column">
@@ -116,11 +128,19 @@
         <% end %>
       </div>
 
-      <div class="small-12 column">
-        <h2><%= t "admin.stats.show.spending_proposals_title" %></h2>
-        <%= spending_proposals_chart_tag id: "spending_proposals" %>
-      </div>
+      <% if feature?(:spending_proposals) %>
+        <div class="small-12 column">
+          <h2><%= t "admin.stats.show.spending_proposals_title" %></h2>
+          <%= spending_proposals_chart_tag id: "spending_proposals" %>
+        </div>
+      <% end %>
 
+      <% if feature?(:budgets) %>
+        <div class="small-12 column">
+          <h2><%= t "admin.stats.show.budgets_title" %></h2>
+          <%= budget_investments_chart_tag id: "budget_investments" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
