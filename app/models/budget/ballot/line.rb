@@ -2,7 +2,7 @@ class Budget
   class Ballot
     class Line < ActiveRecord::Base
       belongs_to :ballot
-      belongs_to :investment
+      belongs_to :investment, counter_cache: :ballot_lines_count
       belongs_to :heading
       belongs_to :group
       belongs_to :budget
