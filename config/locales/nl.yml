@@ -297,8 +297,8 @@ nl:
       proposal_responsible_name_note: "(individueel of als vertegenwoordiger van een collectief; niet publiek zichtbaar)"
       proposal_summary: Samenvatting voorstel
       proposal_summary_note: "(max is 200 letters)"
-      proposal_text: Tekst voorstel
-      proposal_title: Titel voorstel
+      proposal_text: Beschrijving van het voorstel
+      proposal_title: Titel van het voorstel
       proposal_video_url: Link naar video
       proposal_video_url_note: U kunt een link naar YouTube of Vimeo toevoegen
       tag_category_label: "Categorieën"
