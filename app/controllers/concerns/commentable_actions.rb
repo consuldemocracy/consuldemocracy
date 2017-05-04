@@ -1,6 +1,7 @@
 module CommentableActions
   extend ActiveSupport::Concern
   include Polymorphic
+  include Search
 
   def index
     @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
