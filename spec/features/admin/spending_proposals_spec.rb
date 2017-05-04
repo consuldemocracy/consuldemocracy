@@ -59,47 +59,6 @@ feature 'Admin spending proposals' do
       end
     end
 
-    scenario "Filtering by geozone", :js do
-      geozone = create(:geozone, name: "District 9")
-      create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
-      create(:spending_proposal, title: "Destroy the city")
-
-      visit admin_spending_proposals_path
-      expect(page).to have_link("Realocate visitors")
-      expect(page).to have_link("Destroy the city")
-
-      select "All city", from: "geozone_id"
-
-      expect(page).to have_link("Destroy the city")
-      expect(page).to_not have_link("Realocate visitors")
-
-      select "All zones", from: "geozone_id"
-      expect(page).to have_link("Realocate visitors")
-      expect(page).to have_link("Destroy the city")
-
-      select "District 9", from: "geozone_id"
-
-      expect(page).to_not have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      click_link("Realocate visitors")
-      click_link("Back")
-
-      expect(page).to_not have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-
-      click_link("Realocate visitors")
-      click_link("Edit classification")
-      expect(page).to have_button("Update")
-      click_link("Back")
-      expect(page).to_not have_button("Update")
-      expect(page).to have_link("Back")
-      click_link("Back")
-
-      expect(page).to_not have_link("Destroy the city")
-      expect(page).to have_link("Realocate visitors")
-    end
-
     scenario "Filtering by admin", :js do
       user = create(:user, username: 'Admin 1')
       administrator = create(:administrator, user: user)
