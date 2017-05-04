@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe SpendingProposalsImporter do
+describe MigrateSpendingProposalsToInvestments do
 
-  let(:importer) { SpendingProposalsImporter.new }
+  let(:importer) { MigrateSpendingProposalsToInvestments.new }
 
   describe '#import' do
 
