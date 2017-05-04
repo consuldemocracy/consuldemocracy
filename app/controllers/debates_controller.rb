@@ -2,11 +2,9 @@ class DebatesController < ApplicationController
   include FeatureFlags
   include CommentableActions
   include FlagActions
+  include Search
 
-  before_action :parse_search_terms, only: [:index, :suggest]
-  before_action :parse_advanced_search_terms, only: :index
   before_action :parse_tag_filter, only: :index
-  before_action :set_search_order, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
 
   feature_flag :debates
