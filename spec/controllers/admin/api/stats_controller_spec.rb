@@ -102,7 +102,7 @@ describe Admin::Api::StatsController do
         budget_investment3 = create(:budget_investment, budget: @budget, created_at: time_2)
 
         sign_in user
-        get :show, budget_investments: true
+        get :show, params: { budget_investments: true }
 
         expect(response).to be_ok
 
