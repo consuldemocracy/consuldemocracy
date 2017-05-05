@@ -13,9 +13,15 @@
       <h3><%= t("budgets.groups.show.unfeasible_title") %></h3>
     </div>
   </div>
+<% elsif params[:unselected] %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h3><%= t("budgets.groups.show.unselected_title") %></h3>
+    </div>
+  </div>
 <% end %>
 
-<div class="row margin-top">
+<div class="row margin">
   <div id="select-district" class="small-12 medium-7 column select-district">
     <div class="row">
       <% @group.headings.each_slice(7) do |slice| %>
@@ -25,7 +31,8 @@
                   class="<%= css_for_ballot_heading(heading) %>">
               <%= link_to heading.name,
                           budget_investments_path(heading_id: heading.id,
-                                                  unfeasible: params[:unfeasible]),
+                                                  unfeasible: params[:unfeasible],
+                                                  unselected: params[:unselected]),
                           data: { no_turbolink: true } %><br>
             </span>
           <% end %>
@@ -40,10 +47,19 @@
 </div>
 
 <% if params[:unfeasible].blank? %>
-  <div class="row margin-top">
+  <div class="row">
     <div class="small-12 column">
       <small><%= link_to t("budgets.groups.show.unfeasible"),
                  budget_path(@budget, unfeasible: 1) %></small>
+    </div>
+  </div>
+<% end %>
+
+<% if params[:unselected].blank? %>
+  <div class="row">
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.groups.show.unselected"),
+                 budget_path(@budget, unselected: 1) %></small>
     </div>
   </div>
 <% end %>

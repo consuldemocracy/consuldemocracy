@@ -35,10 +35,12 @@
   </div>
 </div>
 
-<div class="row margin-top">
+<div class="row margin">
   <div class="small-12 medium-9 column">
     <% if params[:unfeasible] %>
       <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
+    <% elsif params[:unselected] %>
+      <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
     <% end %>
     <table class="table-fixed">
       <thead>
@@ -52,12 +54,14 @@
                 <%= link_to group.name,
                             budget_investments_path(@budget,
                               heading_id: group.headings.first.id,
-                              unfeasible: params[:unfeasible]),
+                              unfeasible: params[:unfeasible],
+                              unselected: params[:unselected]),
                             data: { no_turbolink: true } %>
               <% else %>
                 <%= link_to group.name,
                             budget_group_path(@budget, group,
-                              unfeasible: params[:unfeasible]) %>
+                              unfeasible: params[:unfeasible],
+                              unselected: params[:unselected]) %>
               <% end %>
               <br>
             </td>
@@ -69,10 +73,19 @@
 </div>
 
 <% unless params[:unfeasible] %>
-  <div class="row margin-top">
+  <div class="row">
     <div class="small-12 column">
       <small><%= link_to t("budgets.show.unfeasible"),
                   budget_path(@budget, unfeasible: 1) %></small>
+    </div>
+  </div>
+<% end %>
+
+<% unless params[:unselected] %>
+  <div class="row">
+    <div class="small-12 column">
+      <small><%= link_to t("budgets.show.unselected"),
+                budget_path(@budget, unselected: 1) %></small>
     </div>
   </div>
 <% end %>

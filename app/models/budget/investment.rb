@@ -47,6 +47,7 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { where(selected: true) }
+    scope :unselected,                  -> { where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
@@ -235,11 +236,15 @@ class Budget
 
     def self.apply_filters_and_search(budget, params)
       investments = all
-      if budget.balloting?
+
+      if budget.balloting? && params[:unfeasible].blank? && params[:unselected].blank?
         investments = investments.selected
+      elsif budget.balloting? && params[:unfeasible].blank?
+        investments = investments.feasible.unselected
       else
         investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
       end
+
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
