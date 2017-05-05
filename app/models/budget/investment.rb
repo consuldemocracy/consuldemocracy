@@ -217,6 +217,12 @@ class Budget
       budget.balloting?
     end
 
+    def should_show_price?
+      feasible? &&
+      selected? &&
+      (budget.reviewing_ballots? || budget.finished?)
+    end
+
     def should_show_price_info?
       feasible? &&
       price_explanation.present? &&

@@ -84,6 +84,7 @@ es:
         title: Propuesta de inversión
         supports: Apoyos
         votes: Votos
+        price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión

@@ -84,6 +84,7 @@ en:
         title: Investment project
         supports: Supports
         votes: Votes
+        price: Price
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project
