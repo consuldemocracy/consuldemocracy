@@ -1,4 +1,4 @@
-class SpendingProposalsImporter
+class MigrateSpendingProposalsToInvestments
 
   def import(sp)
     budget = Budget.last || Budget.create!(name: Date.today.year.to_s, currency_symbol: "€")
