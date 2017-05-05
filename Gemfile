@@ -38,7 +38,7 @@ gem 'responders', '~> 2.4.0'
 gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
-gem 'ckeditor', '~> 4.2.2'
+gem 'ckeditor', '~> 4.2.3'
 gem 'invisible_captcha', '~> 0.9.2'
 gem 'cancancan', '~> 1.16.0'
 gem 'social-share-button', '~> 0.10'
@@ -73,14 +73,14 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.5'
-  gem 'capybara', '~> 2.13.0'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'capybara', '~> 2.14.0'
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.1'
-  gem 'i18n-tasks', '~> 0.9.13'
+  gem 'i18n-tasks', '~> 0.9.15'
   gem 'capistrano', '~> 3.8.1',           require: false
   gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '~> 1.2.3',     require: false
@@ -94,7 +94,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'poltergeist', '~> 1.14.0'
+  gem 'poltergeist', '~> 1.15.0'
   gem 'coveralls', '~> 0.8.21', require: false
   gem 'email_spec'
 end
