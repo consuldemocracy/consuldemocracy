@@ -239,7 +239,7 @@ class Budget
 
       if budget.balloting? && params[:unfeasible].blank? && params[:unselected].blank?
         investments = investments.selected
-      elsif budget.balloting? && params[:unfeasible].blank?
+      elsif budget.balloting? && params[:unfeasible].blank? && params[:unselected].present?
         investments = investments.feasible.unselected
       else
         investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
