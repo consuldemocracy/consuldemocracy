@@ -73,7 +73,7 @@ describe Admin::Api::StatsController do
         create :visit, started_at: time_2
 
         sign_in user
-        get :show, events: 'foo', visits: true
+        get :show, event: 'foo', visits: true
 
         expect(response).to be_ok
 
