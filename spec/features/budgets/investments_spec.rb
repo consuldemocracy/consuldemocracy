@@ -8,10 +8,14 @@ feature 'Budget Investments' do
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
-    investments = [create(:budget_investment, heading: heading), create(:budget_investment, heading: heading), create(:budget_investment, :feasible, heading: heading)]
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, :feasible, heading: heading)]
+
     unfeasible_investment = create(:budget_investment, :unfeasible, heading: heading)
 
-    visit budget_investments_path(budget, heading_id: heading.id)
+    visit budget_path(budget)
+    click_link "Health"
 
     expect(page).to have_selector('#budget-investments .budget-investment', count: 3)
     investments.each do |investment|
@@ -56,7 +60,7 @@ feature 'Budget Investments' do
       investment3 = create(:budget_investment, heading: heading)
       investment4 = create(:budget_investment, :feasible, heading: heading)
 
-      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, unfeasible: 1)
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unfeasible")
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
@@ -77,7 +81,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, unfeasible: 1)
+      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -93,7 +97,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, unfeasible: 1)
+      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
   end
@@ -516,8 +520,6 @@ feature 'Budget Investments' do
       expect(page).to have_content "€10,000"
     end
 
-
-
     scenario "Sidebar in show should display vote text" do
       investment = create(:budget_investment, :selected, budget: budget)
       visit budget_investment_path(budget, investment)
@@ -536,7 +538,6 @@ feature 'Budget Investments' do
 
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York")
-
 
       sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)
       sp2 = create(:budget_investment, :selected, price:     10, heading: global_heading)
@@ -603,12 +604,12 @@ feature 'Budget Investments' do
     end
 
     scenario 'Show unselected budget investments' do
-      investment1 = create(:budget_investment, :feasible, heading: heading, valuation_finished: true)
-      investment2 = create(:budget_investment, :selected, :feasible, heading: heading, valuation_finished: true)
-      investment3 = create(:budget_investment, :selected, :feasible, heading: heading, valuation_finished: true)
-      investment4 = create(:budget_investment, :selected, :feasible, heading: heading, valuation_finished: true)
+      investment1 = create(:budget_investment, :unselected, :feasible, heading: heading, valuation_finished: true)
+      investment2 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
+      investment3 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
+      investment4 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
 
-      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, unselected: 1)
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
@@ -629,7 +630,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, unselected: 1)
+      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -645,7 +646,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, unselected: 1)
+      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
