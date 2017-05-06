@@ -24,6 +24,8 @@ es:
         title: Selecciona una opción
         unfeasible_title: Propuestas inviables
         unfeasible: Ver propuestas inviables
+        unselected_title: Propuestas que no pasan a la votación final
+        unselected: Ver las propuestas que no pasan a la votación final
     phase:
       accepting: Presentación de proyectos
       reviewing: Revisión interna de proyectos
@@ -84,6 +86,7 @@ es:
         title: Propuesta de inversión
         supports: Apoyos
         votes: Votos
+        price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión
@@ -107,3 +110,5 @@ es:
       phase: Fase actual
       unfeasible_title: Propuestas inviables
       unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas que no pasan a la votación final
+      unselected: Ver las propuestas que no pasan a la votación final

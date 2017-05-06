@@ -24,6 +24,8 @@ en:
         title: Select an option
         unfeasible_title: Unfeasible investments
         unfeasible: See unfeasible investments
+        unselected_title: Investments not selected for balloting phase
+        unselected: See investments not selected for balloting phase
     phase:
       accepting: Accepting projects
       reviewing: Reviewing projects
@@ -84,6 +86,7 @@ en:
         title: Investment project
         supports: Supports
         votes: Votes
+        price: Price
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project
@@ -107,3 +110,5 @@ en:
       phase: Actual phase
       unfeasible_title: Unfeasible investments
       unfeasible: See unfeasible investments
+      unselected_title: Investments not selected for balloting phase
+      unselected: See investments not selected for balloting phase

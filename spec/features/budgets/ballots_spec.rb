@@ -469,10 +469,12 @@ feature 'Ballots' do
     end
 
     scenario 'Unselected investments' do
-      investment = create(:budget_investment, heading: new_york)
+      investment = create(:budget_investment, heading: new_york, title: "WTF asdfasfd")
 
       login_as(user)
-      visit budget_investments_path(budget, heading_id: new_york.id, unfeasible: 1)
+      visit budget_path(budget)
+      click_link states.name
+      click_link new_york.name
 
       expect(page).to_not have_css("#budget_investment_#{investment.id}")
     end
@@ -481,7 +483,9 @@ feature 'Ballots' do
       investment = create(:budget_investment, feasibility: "undecided", heading: new_york)
 
       login_as(user)
-      visit budget_investments_path(budget, heading_id: new_york.id)
+      visit budget_path(budget)
+      click_link states.name
+      click_link new_york.name
 
       within("#budget-investments") do
         expect(page).to_not have_css("div.ballot")

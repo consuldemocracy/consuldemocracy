@@ -46,7 +46,8 @@ class Budget
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
-    scope :selected,                    -> { where(selected: true) }
+    scope :selected,                    -> { feasible.where(selected: true) }
+    scope :unselected,                  -> { feasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
@@ -217,6 +218,12 @@ class Budget
       budget.balloting?
     end
 
+    def should_show_price?
+      feasible? &&
+      selected? &&
+      (budget.reviewing_ballots? || budget.finished?)
+    end
+
     def should_show_price_info?
       feasible? &&
       price_explanation.present? &&
@@ -227,13 +234,9 @@ class Budget
       budget.formatted_amount(price)
     end
 
-    def self.apply_filters_and_search(budget, params)
+    def self.apply_filters_and_search(budget, params, current_filter=nil)
       investments = all
-      if budget.balloting?
-        investments = investments.selected
-      else
-        investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
-      end
+      investments = investments.send(current_filter)            if current_filter.present?
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
@@ -245,5 +248,6 @@ class Budget
         self.group_id = self.heading.try(:group_id) if self.heading_id_changed?
         self.budget_id ||= self.heading.try(:group).try(:budget_id)
       end
+
   end
 end

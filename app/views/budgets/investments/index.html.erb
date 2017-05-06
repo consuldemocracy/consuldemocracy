@@ -16,7 +16,7 @@
 
       <div class="small-12 search-results margin-bottom">
 
-        <% if params[:unfeasible].present? %>
+        <% if @current_filter == "unfeasible" %>
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
               <%= t("budgets.investments.index.unfeasible_text",
@@ -34,7 +34,7 @@
         <% end %>
       </div>
 
-      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless params[:unfeasible].present? %>
+      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
       <% @investments.each do |investment| %>
         <%= render partial: '/budgets/investments/investment', locals: {
