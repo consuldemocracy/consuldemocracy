@@ -337,6 +337,92 @@ describe Budget::Investment do
     end
   end
 
+  describe "apply_filters_and_search" do
+
+    let(:budget) { create(:budget) }
+
+    it "returns feasible investments" do
+      investment1 = create(:budget_investment, :feasible,   budget: budget)
+      investment2 = create(:budget_investment, :feasible,   budget: budget)
+      investment3 = create(:budget_investment, :unfeasible, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :feasible)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns unfeasible investments" do
+      investment1 = create(:budget_investment, :unfeasible, budget: budget)
+      investment2 = create(:budget_investment, :unfeasible, budget: budget)
+      investment3 = create(:budget_investment, :feasible,   budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :unfeasible)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns selected investments" do
+      budget.update(phase: "balloting")
+
+      investment1 = create(:budget_investment, :feasible, :selected,   budget: budget)
+      investment2 = create(:budget_investment, :feasible, :selected,   budget: budget)
+      investment3 = create(:budget_investment, :feasible, :unselected, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :selected)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns unselected investments" do
+      budget.update(phase: "balloting")
+
+      investment1 = create(:budget_investment, :feasible, :unselected, budget: budget)
+      investment2 = create(:budget_investment, :feasible, :unselected, budget: budget)
+      investment3 = create(:budget_investment, :feasible, :selected,   budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :unselected)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns investmens by heading" do
+      group = create(:budget_group, budget: budget)
+
+      heading1 = create(:budget_heading, group: group)
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading1, budget: budget)
+      investment2 = create(:budget_investment, heading: heading1, budget: budget)
+      investment3 = create(:budget_investment, heading: heading2, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, heading_id: heading1.id)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns investments by search string" do
+      investment1 = create(:budget_investment, title: "health for all",  budget: budget)
+      investment2 = create(:budget_investment, title: "improved health", budget: budget)
+      investment3 = create(:budget_investment, title: "finance",         budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, search: "health")
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+  end
+
   describe "search" do
 
     context "tags" do
