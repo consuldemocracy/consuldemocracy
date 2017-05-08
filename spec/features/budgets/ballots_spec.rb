@@ -297,7 +297,7 @@ feature 'Ballots' do
 
       expect(page).to_not have_css "#progressbar"
       expect(page).to have_content "You have active votes in another heading:"
-      expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california)
+      expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
     end
 
   end
