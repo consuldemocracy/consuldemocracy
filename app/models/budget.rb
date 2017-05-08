@@ -118,6 +118,10 @@ class Budget < ActiveRecord::Base
     end
   end
 
+  def beta_testing?
+    Rails.env.preproduction?
+  end
+
   private
 
     def sanitize_descriptions
