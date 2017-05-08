@@ -1,4 +1,7 @@
 <% provide :title do %><%= t("pages.titles.more_info", org_name: setting['org_name']) %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_url %>
+<% end %>
 
 <div class="jumbo light">
   <div class="row">
