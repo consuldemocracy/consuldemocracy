@@ -35,8 +35,8 @@ gem 'omniauth-google-oauth2', '~> 0.4.0'
 gem 'kaminari', '~> 1.0.1'
 gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
-gem 'responders', '~> 2.3.0'
-gem 'foundation-rails', '6.2.3.0'
+gem 'responders', '~> 2.4.0'
+gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
 gem 'acts_as_votable'
 gem 'ckeditor', git: "https://github.com/galetahub/ckeditor.git"
@@ -45,7 +45,7 @@ gem 'cancancan', '~> 1.16.0'
 gem 'social-share-button', '~> 0.10'
 gem 'initialjs-rails', '0.2.0.4'
 gem 'unicorn', '~> 5.3.0'
-gem 'paranoia', '~> 2.3.0'
+gem 'paranoia', '~> 2.3.1'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
@@ -58,7 +58,7 @@ gem 'whenever', require: false
 gem 'pg_search'
 gem 'sitemap_generator', '~> 5.3.1'
 
-gem 'ahoy_matey', '~> 1.5.5'
+gem 'ahoy_matey', '~> 1.6.0'
 gem 'groupdate', '~> 3.2.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
@@ -83,7 +83,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'i18n-tasks', '~> 0.9.13'
-  gem 'capistrano', '~> 3.8.0',           require: false
+  gem 'capistrano', '~> 3.8.1',           require: false
   gem 'capistrano-bundler', '~> 1.2',  require: false
   gem "capistrano-rails", '~> 1.2.3',     require: false
   gem 'rvm1-capistrano3',              require: false
@@ -97,7 +97,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'poltergeist', '~> 1.14.0'
-  gem 'coveralls', '~> 0.8.20', require: false
+  gem 'coveralls', '~> 0.8.21', require: false
   gem 'email_spec'
   gem 'timecop'
   gem 'selenium-webdriver'

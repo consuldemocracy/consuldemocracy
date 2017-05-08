@@ -2111,7 +2111,7 @@ ul.ballot-list {
       height: $line-height*6;
       left: 0;
       padding: rem-calc(24);
-      padding-bottom: 0;
+      padding-bottom: $line-height*6;
       position: fixed;
       top: 0;
       width: 100%;
@@ -2451,6 +2451,8 @@ $campaign-yellow:  #FFDB19;
 // Overrides budgets default colors
 // -------------------------------
 
+$budget-custom: #5A6175 !important;
+
 .expanded.budget, .jumbo-budget {
 
   h1, h2, p, a.back, .icon-angle-left {
@@ -2465,6 +2467,10 @@ $campaign-yellow:  #FFDB19;
   a.button, &.button {
     background: black;
     color: white;
+  }
+
+  &.budget-heading {
+    min-height: $line-height*11;
   }
 
   .info {
@@ -2482,11 +2488,21 @@ $campaign-yellow:  #FFDB19;
   }
 }
 
-.budget-investment .panel .label-budget-investment,
-.budget-investment .panel .icon-budget,
-.budget-investment-show .label-budget-investment,
-.budget-investment-show .icon-budget {
-  color: #5A6175;
+.budget-investment {
+
+  .panel {
+
+    .label-budget-investment, .icon-budget {
+      color: $budget-custom;
+    }
+  }
+}
+
+.budget-investment-show {
+
+  .label-budget-investment, .icon-budget {
+    color: $budget-custom;
+  }
 }
 
 .progress-votes {
@@ -2496,11 +2512,12 @@ $campaign-yellow:  #FFDB19;
   }
 
   .progress-meter {
-    background: #fdcb10;
+    background: #FDCB10;
   }
 
   .spent-amount-text:before {
-    color: #a5a1ff;
+    color: #A5A1FF;
+    right: -7px;
   }
 
   .total-amount {
@@ -2553,30 +2570,40 @@ ul.ballot-list {
   }
 }
 
-.investment-project .supports .total-supports,
-.investment-project-show .supports .total-supports,
-.budget-investment .supports .total-supports,
-.budget-investment-show .supports .total-supports {
-  color: #5A6175;
+.budget-investment .participation-not-allowed {
+  height: auto;
 }
 
-.investment-project .supports .button-support,
-.investment-project-show .supports .button-support,
-.budget-investment .supports .button-support,
-.budget-investment-show .supports .button-support {
-  background: #5A6175;
-}
-
-.investment-project, .investment-project-show,
-.budget-investment, .budget-investment-show {
+.budget-investment, .budget-investment-show,
+.investment-project, .investment-project-show {
 
   .total-supports {
-    color: #5A6175 !important;
+    color: $budget-custom;
+  }
+
+  .supports {
+
+    .button-support {
+      background: $budget-custom;
+    }
+
+    .budget-investment-amount,
+    .investment-project-amount,
+    .total-supports {
+      color: $budget-custom;
+    }
+
+    .remove .icon-check-circle {
+      color: $budget-custom;
+    }
   }
 }
 
-.budget-investment .participation-not-allowed {
-  height: auto;
+.progress-votes {
+
+  .total-amount, .spent-amount-text {
+    color: $budget-custom;
+  }
 }
 
 // 12. Nvotes
