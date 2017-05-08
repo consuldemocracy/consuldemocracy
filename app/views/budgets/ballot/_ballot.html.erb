@@ -20,7 +20,7 @@
 
 <div class="row ballot">
   <div class="margin-top">
-    <% @ballot.groups.each do |group| %>
+    <% @ballot.groups.order(name: :asc).each do |group| %>
       <div id="<%= dom_id(group) %>"
           class="small-12 medium-6 column">
         <h3 class="subtitle">
