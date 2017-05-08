@@ -4,6 +4,9 @@
              search_path: proposals_path(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposals_url %>
+<% end %>
 
 <main>
   <h1 class="sr-only"><%= t("shared.outline.proposals") %></h1>

@@ -1,5 +1,8 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
 <% content_for :wrapper_class, "light" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: polls_url %>
+<% end %>
 
 <div class="expanded no-margin-top dark-heading">
   <div class="row">
