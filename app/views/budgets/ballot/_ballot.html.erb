@@ -19,13 +19,19 @@
 </div>
 
 <div class="row ballot">
-  <div class="margin-top">
-    <% @ballot.groups.order(name: :asc).each do |group| %>
-      <div id="<%= dom_id(group) %>"
-          class="small-12 medium-6 column">
-        <h3 class="subtitle">
-          <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
-        </h3>
+  <% @ballot.groups.order(name: :asc).each do |group| %>
+    <div id="<%= dom_id(group) %>"
+        class="small-12 medium-6 column end">
+      <div class="margin-top ballot-content">
+        <div class="subtitle">
+          <h3>
+            <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
+          </h3>
+          <strong>
+            <%= t("budgets.ballots.show.remaining",
+                  amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe %>
+          </strong>
+        </div>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
             <%= t("budgets.ballots.show.amount_spent") %>
@@ -43,12 +49,7 @@
           <%= render partial: 'budgets/ballot/investment',
                      collection: @ballot.investments.by_group(group.id) %>
         </ul>
-
-        <h4>
-          <%= t("budgets.ballots.show.remaining",
-                amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe %>
-        </h4>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
