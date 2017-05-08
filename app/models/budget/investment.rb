@@ -164,6 +164,8 @@ class Budget
 
     def permission_problem(user)
       return :not_logged_in unless user
+      return nil if budget.beta_testing?
+
       return :organization  if user.organization?
       return :not_verified  unless user.can?(:vote, Budget::Investment)
       return nil
