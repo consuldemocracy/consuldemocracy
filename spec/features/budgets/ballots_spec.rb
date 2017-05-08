@@ -313,12 +313,14 @@ feature 'Ballots' do
       expect(current_path).to eq(budget_investments_path(budget))
     end
 
-    scenario 'Displaying the correct count & amount' do
+    scenario 'Displaying the correct group, heading, count & amount' do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
+      create(:budget_heading, name: "District A", group: group1, price: 100)
       heading1 = create(:budget_heading, name: "District 1", group: group1, price: 100)
       heading2 = create(:budget_heading, name: "District 2", group: group2, price: 50)
+      create(:budget_heading, name: "District Z", group: group1, price: 100)
 
       investment1 = create(:budget_investment, :selected, price: 10, heading: heading1)
       investment2 = create(:budget_investment, :selected, price: 10, heading: heading1)

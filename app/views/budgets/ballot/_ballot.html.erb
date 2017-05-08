@@ -24,7 +24,7 @@
       <div id="<%= dom_id(group) %>"
           class="small-12 medium-6 column">
         <h3 class="subtitle">
-          <%= group.name %> - <%= group.headings.first.name %>
+          <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
         </h3>
         <% if @ballot.has_lines_in_group?(group) %>
           <h4 class="amount-spent text-right">
