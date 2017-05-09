@@ -36,7 +36,7 @@
 
     <div class="small-12 medium-3 column float-right">
       <%= select_tag :max_per_heading,
-                      numeric_range_options((1..200), 1, params[:max_per_heading]),
+                      numeric_range_options((1..300), 1, params[:max_per_heading]),
                      { prompt: t("admin.budget_investments.index.max_per_heading"),
                        label: false,
                        class: "js-submit-on-change" } %>
