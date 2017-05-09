@@ -8,14 +8,57 @@ feature 'Budgets' do
     budgets.each {|budget| expect(page).to have_link(budget.name)}
   end
 
-  scenario 'Show' do
-    budget = create(:budget)
-    group1 = create(:budget_group, budget: budget)
-    group2 = create(:budget_group, budget: budget)
+  context 'Show' do
 
-    visit budget_path(budget)
+    scenario "List all groups" do
+      budget = create(:budget)
+      group1 = create(:budget_group, budget: budget)
+      group2 = create(:budget_group, budget: budget)
 
-    budget.groups.each {|group| expect(page).to have_link(group.name)}
+      visit budget_path(budget)
+
+      budget.groups.each {|group| expect(page).to have_link(group.name)}
+    end
+
+    scenario "Links to unfeasible and selected if balloting or later" do
+      budget = create(:budget, :selecting)
+      group = create(:budget_group, budget: budget)
+
+      visit budget_path(budget)
+
+      expect(page).to_not have_link "See unfeasible investments"
+      expect(page).to_not have_link "See investments not selected for balloting phase"
+
+      click_link group.name
+
+      expect(page).to_not have_link "See unfeasible investments"
+      expect(page).to_not have_link "See investments not selected for balloting phase"
+
+      budget.update(phase: :balloting)
+
+      visit budget_path(budget)
+
+      expect(page).to have_link "See unfeasible investments"
+      expect(page).to have_link "See investments not selected for balloting phase"
+
+      click_link group.name
+
+      expect(page).to have_link "See unfeasible investments"
+      expect(page).to have_link "See investments not selected for balloting phase"
+
+      budget.update(phase: :finished)
+
+      visit budget_path(budget)
+
+      expect(page).to have_link "See unfeasible investments"
+      expect(page).to have_link "See investments not selected for balloting phase"
+
+      click_link group.name
+
+      expect(page).to have_link "See unfeasible investments"
+      expect(page).to have_link "See investments not selected for balloting phase"
+    end
+
   end
 
   context 'Accepting' do

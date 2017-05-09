@@ -70,24 +70,26 @@
   </div>
 </div>
 
-<% unless @current_filter == "unfeasible" %>
-  <div class="row">
-    <div class="small-12 column">
-      <small>
-        <%= link_to t("budgets.show.unfeasible"),
-                    budget_path(@budget, filter: "unfeasible") %>
-      </small>
+<% if @budget.balloting_or_later? %>
+  <% unless @current_filter == "unfeasible" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.show.unfeasible"),
+                      budget_path(@budget, filter: "unfeasible") %>
+        </small>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
-<% unless @current_filter == "unselected" %>
-  <div class="row">
-    <div class="small-12 column">
-      <small>
-        <%= link_to t("budgets.show.unselected"),
-                    budget_path(@budget, filter: "unselected") %>
-      </small>
+  <% unless @current_filter == "unselected" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.show.unselected"),
+                      budget_path(@budget, filter: "unselected") %>
+        </small>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
