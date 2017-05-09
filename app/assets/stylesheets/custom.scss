@@ -1996,7 +1996,6 @@ a.show-hidden-projects {
 
   .amount-spent {
     background: $success-bg;
-    color: $success-color;
     font-weight: normal;
     padding: $line-height/2;
 
@@ -2023,7 +2022,6 @@ ul.ballot-list {
     }
 
     span {
-      color: #9f9f9f;
       display: block;
       font-style: italic;
     }
@@ -2527,15 +2525,8 @@ $budget-custom: #5A6175 !important;
 
 .ballot {
 
-  h2, h3 {
-
-    span {
-      color: $budget;
-    }
-  }
-
-  h3.subtitle {
-    border-bottom: 3px solid $budget;
+  .subtitle {
+    border-left: 2px solid $budget-custom;
   }
 }
 
@@ -2543,14 +2534,14 @@ ul.ballot-list {
 
   li:hover {
     background: $budget;
-    color: white;
+    color: $text;
 
     a, span {
-      color: white;
+      color: $text;
     }
 
     .remove-investment-project .icon-x {
-      color: white;
+      color: $text;
     }
   }
 }
