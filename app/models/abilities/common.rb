@@ -52,7 +52,7 @@ module Abilities
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
 
-        if user.old_enough_to_participate?
+        if user.old_enough_to_participate? || Budget.beta_testing?
           can :vote, Proposal
           can :vote_featured, Proposal
           can :vote, SpendingProposal
