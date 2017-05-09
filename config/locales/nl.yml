@@ -33,6 +33,14 @@ nl:
   application:
     close: Afsluiten
     menu: Menu
+  ckeditor:
+    buttons:
+      cancel: Sluit
+      delete: Verwijder
+      next: Volgende
+      upload: Upload
+    confirm_delete: Zeker?
+    page_title: CKEditor File Manager
   comments:
     comment:
       admin: Admin
