@@ -67,6 +67,10 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def balloting_or_later?
+    balloting? || reviewing_ballots? || finished?
+  end
+
   def on_hold?
     reviewing? || valuating? || reviewing_ballots?
   end
