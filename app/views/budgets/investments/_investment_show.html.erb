@@ -102,6 +102,15 @@
         </div>
         <br>
       <% end %>
+      <% if investment.should_show_price? %>
+        <div class="sidebar-divider"></div>
+        <h2><%= t("budgets.investments.show.price") %></h2>
+        <div class="supports text-center">
+          <p class="investment-project-amount">
+            <%= investment.formatted_price %>
+          </p>
+        </div>
+      <% end %>
       <div id="social-share" class="sidebar-divider"></div>
       <h2><%= t("budgets.investments.show.share") %></h2>
       <div class="social-share-full">

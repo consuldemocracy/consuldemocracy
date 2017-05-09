@@ -297,7 +297,6 @@ feature 'Ballots' do
 
       expect(page).to_not have_css "#progressbar"
       expect(page).to have_content "You have active votes in another heading:"
-
       expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
     end
 
@@ -314,12 +313,14 @@ feature 'Ballots' do
       expect(current_path).to eq(custom_budget_investments_path(budget, group, heading))
     end
 
-    scenario 'Displaying the correct count & amount' do
+    scenario 'Displaying the correct group, heading, count & amount' do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
 
+      create(:budget_heading, name: "District A", group: group1, price: 100)
       heading1 = create(:budget_heading, name: "District 1", group: group1, price: 100)
       heading2 = create(:budget_heading, name: "District 2", group: group2, price: 50)
+      create(:budget_heading, name: "District Z", group: group1, price: 100)
 
       investment1 = create(:budget_investment, :selected, price: 10, heading: heading1)
       investment2 = create(:budget_investment, :selected, price: 10, heading: heading1)
@@ -351,7 +352,7 @@ feature 'Ballots' do
 
   end
 
-  scenario 'Removing spending proposals from ballot', :js do
+  scenario 'Removing investments from ballot', :js do
     investment = create(:budget_investment, :selected, price: 10, heading: new_york)
     ballot = create(:budget_ballot, user: user, budget: budget)
     ballot.investments << investment
@@ -369,7 +370,7 @@ feature 'Ballots' do
     expect(page).to have_content("You have voted 0 investments")
   end
 
-  scenario 'Removing spending proposals from ballot (sidebar)', :js do
+  scenario 'Removing investments from ballot (sidebar)', :js do
     investment1 = create(:budget_investment, :selected, price: 10000, heading: new_york)
     investment2 = create(:budget_investment, :selected, price: 20000, heading: new_york)
 
@@ -404,6 +405,28 @@ feature 'Ballots' do
       expect(page).to have_content investment2.title
       expect(page).to have_content "€20,000"
     end
+  end
+
+  scenario 'Back link after removing an investment from Ballot', :js do
+    investment = create(:budget_investment, :selected, heading: new_york, price: 10)
+
+    login_as(user)
+    visit budget_investments_path(budget, heading_id: new_york.id)
+    add_to_ballot(investment)
+
+    click_link "Check my ballot"
+
+    expect(page).to have_content("You have voted one proposal")
+
+    within("#budget_investment_#{investment.id}") do
+      find(".remove-investment-project").trigger('click')
+    end
+
+    expect(page).to have_content("You have voted 0 proposals")
+
+    click_link "Go back"
+
+    expect(page).to have_current_path(budget_investments_path(budget, heading_id: new_york.id))
   end
 
   context 'Permissions' do
@@ -448,10 +471,12 @@ feature 'Ballots' do
     end
 
     scenario 'Unselected investments' do
-      investment = create(:budget_investment, heading: new_york)
+      investment = create(:budget_investment, heading: new_york, title: "WTF asdfasfd")
 
       login_as(user)
-      visit budget_investments_path(budget, heading_id: new_york.id, unfeasible: 1)
+      visit budget_path(budget)
+      click_link states.name
+      click_link new_york.name
 
       expect(page).to_not have_css("#budget_investment_#{investment.id}")
     end
@@ -460,7 +485,9 @@ feature 'Ballots' do
       investment = create(:budget_investment, feasibility: "undecided", heading: new_york)
 
       login_as(user)
-      visit budget_investments_path(budget, heading_id: new_york.id)
+      visit budget_path(budget)
+      click_link states.name
+      click_link new_york.name
 
       within("#budget-investments") do
         expect(page).to_not have_css("div.ballot")
