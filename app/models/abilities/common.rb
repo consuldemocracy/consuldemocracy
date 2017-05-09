@@ -41,7 +41,7 @@ module Abilities
         can :vote, Comment
       end
 
-      if user.level_two_or_three_verified?
+      if user.level_two_or_three_verified? || Budget.beta_testing?
         can :create, SpendingProposal
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
