@@ -30,14 +30,9 @@
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %>">
               <%= link_to heading.name,
-<<<<<<< HEAD
-                    custom_budget_investments_path(heading_id: heading.to_param, unfeasible: params[:unfeasible]),
+                    custom_budget_investments_path(heading_id: heading.to_param,
+                      filter: @current_filter),
                       data: { no_turbolink: true } %><br>
-=======
-                          budget_investments_path(heading_id: heading.id,
-                                                  filter: @current_filter),
-                          data: { no_turbolink: true } %><br>
->>>>>>> upstream/master
             </span>
           <% end %>
         </div>
