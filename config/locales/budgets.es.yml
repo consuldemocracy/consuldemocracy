@@ -5,6 +5,7 @@ es:
         title: Mis votos
         amount_spent: Coste total
         remaining: "Te quedan <span>%{amount}</span> para invertir"
+        no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
         voted_html:
           one: "Has votado <span>una</span> propuesta."
