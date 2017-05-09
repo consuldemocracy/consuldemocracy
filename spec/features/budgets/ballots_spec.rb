@@ -340,7 +340,7 @@ feature 'Ballots' do
       within("#budget_group_#{group1.id}") do
         expect(page).to have_content "#{group1.name} - #{heading1.name}"
         expect(page).to have_content "Amount spent €20"
-        expect(page).to have_content "You still have €80 to invest"
+        expect(page).to have_link "You still have €80 to invest.", href: budget_group_path(budget, group1)
       end
 
       within("#budget_group_#{group2.id}") do
