@@ -19,17 +19,18 @@
 </div>
 
 <div class="row ballot">
-  <% @ballot.groups.order(name: :asc).each do |group| %>
-    <div id="<%= dom_id(group) %>"
-        class="small-12 medium-6 column end">
+  <% ballot_groups = @ballot.groups.order(name: :asc) %>
+  <% ballot_groups.each do |group| %>
+    <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end">
       <div class="margin-top ballot-content">
         <div class="subtitle">
           <h3>
             <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
           </h3>
           <strong>
-            <%= t("budgets.ballots.show.remaining",
-                  amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe %>
+            <%= link_to t("budgets.ballots.show.remaining",
+                        amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe,
+                        budget_group_path(@budget, group) %>
           </strong>
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
@@ -52,4 +53,21 @@
       </div>
     </div>
   <% end %>
+
+  <% no_balloted_groups = @budget.groups.order(name: :asc) - ballot_groups %>
+  <% no_balloted_groups.each do |group| %>
+    <div id="<%= dom_id(group) %>" class="small-12 medium-6 column end">
+      <div class="margin-top ballot-content">
+        <div class="subtitle">
+          <h3>
+            <%= group.name %>
+          </h3>
+          <strong>
+            <%= link_to t("budgets.ballots.show.no_balloted_group_yet"), budget_group_path(@budget, group) %>
+          </strong>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
 </div>

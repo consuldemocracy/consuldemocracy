@@ -5,6 +5,7 @@ en:
         title: Your ballot
         amount_spent: Amount spent
         remaining: "You still have <span>%{amount}</span> to invest."
+        no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
         voted_html:
           one: "You have voted <span>one</span> investment."

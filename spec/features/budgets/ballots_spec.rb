@@ -340,7 +340,7 @@ feature 'Ballots' do
       within("#budget_group_#{group1.id}") do
         expect(page).to have_content "#{group1.name} - #{heading1.name}"
         expect(page).to have_content "Amount spent €20"
-        expect(page).to have_content "You still have €80 to invest"
+        expect(page).to have_link "You still have €80 to invest.", href: budget_group_path(budget, group1)
       end
 
       within("#budget_group_#{group2.id}") do
@@ -348,6 +348,18 @@ feature 'Ballots' do
         expect(page).to have_content "Amount spent €15"
         expect(page).to have_content "You still have €35 to invest"
       end
+    end
+
+    scenario 'Display links to vote on groups with no investments voted yet' do
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, name: "District 1", group: group, price: 100)
+
+      ballot = create(:budget_ballot, user: user, budget: budget)
+
+      login_as(user)
+      visit budget_ballot_path(budget)
+
+      expect(page).to have_link "You have not voted on this group yet, go vote!", href: budget_group_path(budget, group)
     end
 
   end
