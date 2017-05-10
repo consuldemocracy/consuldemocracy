@@ -101,7 +101,7 @@ feature 'Ballots' do
 
     context "Adding and Removing Investments" do
 
-      scenario "Add a proposal", :js do
+      scenario "Add a investment", :js do
         investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
         investment2 = create(:budget_investment, :selected, heading: new_york, price: 20000)
 
@@ -130,7 +130,7 @@ feature 'Ballots' do
         end
       end
 
-      scenario "Removing a proposal", :js do
+      scenario "Removing a investment", :js do
         investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
         ballot = create(:budget_ballot, user: user, budget: budget)
         ballot.investments << investment
@@ -335,7 +335,7 @@ feature 'Ballots' do
       login_as(user)
       visit budget_ballot_path(budget)
 
-      expect(page).to have_content("You have voted 5 proposals")
+      expect(page).to have_content("You have voted 5 investments")
 
       within("#budget_group_#{group1.id}") do
         expect(page).to have_content "#{group1.name} - #{heading1.name}"
@@ -372,14 +372,14 @@ feature 'Ballots' do
     login_as(user)
     visit budget_ballot_path(budget)
 
-    expect(page).to have_content("You have voted one proposal")
+    expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
       find(".remove-investment-project").trigger('click')
     end
 
     expect(current_path).to eq(budget_ballot_path(budget))
-    expect(page).to have_content("You have voted 0 proposals")
+    expect(page).to have_content("You have voted 0 investments")
   end
 
   scenario 'Removing investments from ballot (sidebar)', :js do
@@ -428,13 +428,13 @@ feature 'Ballots' do
 
     click_link "Check my ballot"
 
-    expect(page).to have_content("You have voted one proposal")
+    expect(page).to have_content("You have voted one investment")
 
     within("#budget_investment_#{investment.id}") do
       find(".remove-investment-project").trigger('click')
     end
 
-    expect(page).to have_content("You have voted 0 proposals")
+    expect(page).to have_content("You have voted 0 investments")
 
     click_link "Go back"
 
@@ -464,7 +464,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
-        expect(page).to have_content 'Only verified users can vote on proposals'
+        expect(page).to have_content 'Only verified users can vote on investments'
         expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
