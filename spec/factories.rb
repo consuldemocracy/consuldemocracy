@@ -1,15 +1,5 @@
 FactoryGirl.define do
 
-  factory :problem do
-    title "MyString"
-    description "MyText"
-    budget "MyString"
-    restriction "MyText"
-    summary "MyText"
-    starts_at "2017-05-10 17:13:01"
-    ends_at "2017-05-10 17:13:01"
-    geozone_restricted false
-  end
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -147,6 +137,18 @@ FactoryGirl.define do
         4.times { create(:vote, votable: debate) }
       end
     end
+  end
+
+  factory :problem do
+    title "Problem title"
+    description "Problem description"
+    budget "Problem budget"
+    restriction "Problem restriction"
+    summary "Problem summare"
+    starts_at { 1.month.ago }
+    ends_at { 1.month.from_now }
+    geozone_restricted false
+    association :author, factory: user
   end
 
   factory :proposal do
