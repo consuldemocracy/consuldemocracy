@@ -84,6 +84,7 @@ feature 'Moderate comments' do
       end
 
       scenario "select all/none", :js do
+        skip
         create_list(:comment, 2)
 
         visit moderation_comments_path

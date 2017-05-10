@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428111355) do
+ActiveRecord::Schema.define(version: 20170510203817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -319,6 +319,11 @@ ActiveRecord::Schema.define(version: 20170428111355) do
   add_index "geozones_polls", ["geozone_id"], name: "index_geozones_polls_on_geozone_id", using: :btree
   add_index "geozones_polls", ["poll_id"], name: "index_geozones_polls_on_poll_id", using: :btree
 
+  create_table "geozones_problems", id: false, force: :cascade do |t|
+    t.integer "problem_id", null: false
+    t.integer "geozone_id", null: false
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -555,6 +560,22 @@ ActiveRecord::Schema.define(version: 20170428111355) do
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
+
+  create_table "problems", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "budget"
+    t.text     "restriction"
+    t.text     "summary"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "geozone_restricted"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+  end
+
+  add_index "problems", ["user_id"], name: "index_problems_on_user_id", using: :btree
 
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"
@@ -927,6 +948,7 @@ ActiveRecord::Schema.define(version: 20170428111355) do
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "problems", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

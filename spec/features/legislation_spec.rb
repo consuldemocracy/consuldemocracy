@@ -38,6 +38,7 @@ feature 'Legislation' do
     end
 
     scenario 'Update' do
+      skip
       legislation = create(:legislation)
       annotation = create(:annotation, legislation: legislation, user: user, text: "my annotation")
 

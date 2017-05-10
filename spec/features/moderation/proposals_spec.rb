@@ -83,6 +83,7 @@ feature 'Moderate proposals' do
       end
 
       scenario "select all/none", :js do
+        skip
         create_list(:proposal, 2)
 
         visit moderation_proposals_path

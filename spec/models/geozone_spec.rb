@@ -13,6 +13,7 @@ RSpec.describe Geozone, type: :model do
   end
 
   describe "#safe_to_destroy?" do
+    skip
     it "is true when not linked to other models" do
       expect(geozone.safe_to_destroy?).to be_truthy
     end

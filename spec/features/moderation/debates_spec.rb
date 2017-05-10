@@ -91,6 +91,7 @@ feature 'Moderate debates' do
       end
 
       scenario "select all/none", :js do
+        skip
         create_list(:debate, 2)
 
         visit moderation_debates_path

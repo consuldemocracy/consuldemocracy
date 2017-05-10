@@ -1,4 +1,15 @@
 FactoryGirl.define do
+
+  factory :problem do
+    title "MyString"
+    description "MyText"
+    budget "MyString"
+    restriction "MyText"
+    summary "MyText"
+    starts_at "2017-05-10 17:13:01"
+    ends_at "2017-05-10 17:13:01"
+    geozone_restricted false
+  end
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do

@@ -83,6 +83,7 @@ feature 'Valuation spending proposals' do
   end
 
   scenario "Index filtering by geozone", :js do
+    skip
     geozone = create(:geozone, name: "District 9")
     spending_proposal1 = create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
     spending_proposal2 = create(:spending_proposal, title: "Destroy the city")
@@ -287,6 +288,7 @@ feature 'Valuation spending proposals' do
     end
 
     scenario 'Feasibility can be marked as pending' do
+      skip
       visit valuation_spending_proposal_path(@spending_proposal)
       click_link 'Edit dossier'
 
@@ -306,6 +308,7 @@ feature 'Valuation spending proposals' do
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
+      skip
       feasible_true_fields  = ['Price (€)','Cost during the first year (€)','Price explanation','Time scope']
       feasible_false_fields = ['Feasibility explanation']
       feasible_any_fields   = ['Valuation finished','Internal comments']
