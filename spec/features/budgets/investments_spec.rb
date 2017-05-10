@@ -657,7 +657,7 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading.to_param, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
@@ -673,7 +673,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
+      expected_path = custom_budget_investments_path(budget, group, heading_id: heading1.to_param, filter: "unselected")
       expect(page).to have_current_path(expected_path)
     end
 
