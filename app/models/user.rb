@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
+  has_many :problems, -> { with_hidden }, foreign_key: :author_id
   has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
   has_many :comments, -> { with_hidden }
   has_many :spending_proposals, foreign_key: :author_id

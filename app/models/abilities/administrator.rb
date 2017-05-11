@@ -40,6 +40,8 @@ module Abilities
 
       can :manage, Annotation
 
+      can [:index, :show, :create, :edit, :update, :destroy], Problem
+
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
       can [:index, :read, :new, :create, :update, :destroy], Budget

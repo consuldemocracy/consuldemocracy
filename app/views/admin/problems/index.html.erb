@@ -1,0 +1,22 @@
+<h2 class="inline-block"><%= t("admin.problems.index.title") %></h2>
+
+<%= link_to t("admin.problems.index.create"),
+            new_admin_problem_path,
+            class: "button success float-right" %>
+
+<% if @problems.any? %>
+  <table class="fixed">
+    <thead>
+      <th><%= t("admin.problems.index.name") %></th>
+      <th><%= t("admin.problems.index.brief") %></th>
+      <th><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+      <%= render @problems %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.problems.index.no_problems") %>
+  </div>
+<% end %>

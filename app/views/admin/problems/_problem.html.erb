@@ -1,0 +1,20 @@
+<tr id="<%= dom_id(problem) %>" class="problem">
+  <td>
+    <strong>
+      <%= link_to problem.title, edit_admin_problem_path(problem) %>
+    </strong>
+  </td>
+  <td>
+    <%= problem.summary %>
+  </td>
+  <td>
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_problem_path(problem),
+                class: "button hollow" %>
+    <%= link_to t("admin.actions.destroy"),
+          admin_problem_path(problem),
+          method: :delete,
+          class: "button hollow warning" %>
+  </td>
+
+</tr>

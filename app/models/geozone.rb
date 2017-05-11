@@ -3,6 +3,7 @@ class Geozone < ActiveRecord::Base
   has_many :spending_proposals
   has_many :debates
   has_many :users
+  has_and_belongs_to_many :problems
   validates :name, presence: true
 
   def self.names

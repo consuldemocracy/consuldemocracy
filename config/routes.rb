@@ -133,6 +133,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :problems, only: [:index, :new, :create, :destroy, :edit, :update]
+
     resources :users, only: [:index, :show] do
       member do
         put :restore
