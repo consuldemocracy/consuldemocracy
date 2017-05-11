@@ -10,7 +10,7 @@ es:
         voted_html:
           one: "Has votado <span>una</span> propuesta."
           other: "Has votado <span>%{count}</span> propuestas."
-        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: "Todavía no has votado ninguna propuesta de inversión."
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
