@@ -1,8 +1,8 @@
 <div id="<%= dom_id(proposal) %>"
-     class="proposal clear <%= ("successfull" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
   <div class="panel">
-    <div class="icon-successfull"></div>
+    <div class="icon-successful"></div>
     <div class="row">
 
       <div class="small-12 medium-9 column">
@@ -53,13 +53,21 @@
       </div>
 
       <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container">
-        <% if proposal.successfull? %>
+        <% if proposal.successful? %>
           <div class="padding text-center">
+
             <p>
-              <%= t("proposal_ballots.successfull",
-                  voting: link_to(t("proposal_ballots.voting"), proposal_ballots_path)).html_safe %>
+              <%= t("proposals.proposal.successful",
+                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
             </p>
           </div>
+          <% if can? :create, Poll::Question %>
+            <p class="text-center">
+              <%= link_to t('poll_questions.create_question'),
+                          new_admin_question_path(proposal_id: proposal.id),
+                          class: "button hollow" %>
+            </p>
+          <% end %>
         <% elsif proposal.archived? %>
           <div class="padding text-center">
             <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>

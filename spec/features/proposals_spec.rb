@@ -63,7 +63,7 @@ feature 'Proposals' do
     expect(page.html).to include "<title>#{proposal.title}</title>"
 
     within('.social-share-button') do
-      expect(page.all('a').count).to be(3) # Twitter, Facebook, Google+
+      expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram
     end
   end
 
@@ -980,6 +980,28 @@ feature 'Proposals' do
           end
         end
 
+        scenario "Search by custom invalid date range", :js do
+          proposal1 = create(:proposal, created_at: 2.days.ago)
+          proposal2 = create(:proposal, created_at: 3.days.ago)
+          proposal3 = create(:proposal, created_at: 9.days.ago)
+
+          visit proposals_path
+
+          click_link "Advanced search"
+          select "Customized", from: "js-advanced-search-date-min"
+          fill_in "advanced_search_date_min", with: 4000.years.ago
+          fill_in "advanced_search_date_max", with: "wrong date"
+          click_button "Filter"
+
+          expect(page).to have_content("There are 3 citizen proposals")
+
+          within("#proposals") do
+            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content(proposal2.title)
+            expect(page).to have_content(proposal3.title)
+          end
+        end
+
         scenario "Search by multiple filters", :js do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
@@ -1349,4 +1371,70 @@ feature 'Proposals' do
 
   end
 
+end
+
+feature 'Successful proposals' do
+
+  scenario 'Banner shows in proposal index' do
+    create_featured_proposals
+
+    visit proposals_path
+    expect(page).to_not have_css("#next-voting")
+    expect(page).to have_css("#featured-proposals")
+
+    create_successful_proposals
+
+    visit proposals_path
+
+    expect(page).to have_css("#next-voting")
+    expect(page).to_not have_css("#featured-proposals")
+  end
+
+  scenario 'Successful proposals do not show support buttons in index' do
+    successful_proposals = create_successful_proposals
+
+    visit proposals_path
+
+    successful_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_css(".supports")
+        expect(page).to have_content "This proposal has reached the required supports"
+      end
+    end
+  end
+
+  scenario 'Successful proposals do not show support buttons in show' do
+    successful_proposals = create_successful_proposals
+
+    successful_proposals.each do |proposal|
+      visit proposal_path(proposal)
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_css(".supports")
+        expect(page).to have_content "This proposal has reached the required supports"
+      end
+    end
+  end
+
+  scenario 'Successful proposals show create question button to admin users' do
+    successful_proposals = create_successful_proposals
+
+    visit proposals_path
+
+    successful_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to_not have_link "Create question"
+      end
+    end
+
+    login_as(create(:administrator).user)
+
+    visit proposals_path
+
+    successful_proposals.each do |proposal|
+      within("#proposal_#{proposal.id}_votes") do
+        expect(page).to have_link "Create question"
+      end
+    end
+
+  end
 end

@@ -84,7 +84,7 @@ feature 'Admin budgets' do
 
       fill_in 'budget_name', with: 'M30 - Summer campaign'
       fill_in 'budget_description_accepting', with: 'Budgeting for summer 2017 maintenance and improvements of the road M-30'
-      select 'Accepting proposals', from: 'budget[phase]'
+      select 'Accepting projects', from: 'budget[phase]'
 
       click_button 'Create Participatory budget'
 

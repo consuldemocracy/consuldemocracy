@@ -34,12 +34,27 @@ en:
       organization:
         one: "Organisation"
         other: "Organisations"
+      poll/booth:
+        one: "booth"
+        other: "booths"
+      poll/officer:
+        one: "officer"
+        other: "officers"
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
         one: "Spending proposal"
         other: "Spending proposals"
+      site_customization/page:
+        one: Custom page
+        other: Custom pages
+      site_customization/image:
+        one: Custom image
+        other: Custom images
+      site_customization/content_block:
+        one: Custom content block
+        other: Custom content blocks
     attributes:
       budget:
         name: "Name"
@@ -99,10 +114,38 @@ en:
         external_url: "Link to additional documentation"
         geozone_id: "Scope of operation"
         title: "Title"
+      poll:
+        name: "Name"
+        starts_at: "Start Date"
+        ends_at: "Closing Date"
+        geozone_restricted: "Restricted by geozone"
+      poll/question:
+        title: "Question"
+        valid_answers: "Posibles answers"
+        summary: "Summary"
+        description: "Description"
+        external_url: "Link to additional documentation"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
+      site_customization/page:
+        content: Content
+        created_at: Created at
+        subtitle: Subtitle
+        slug: Slug
+        status: Status
+        title: Title
+        updated_at: Updated at
+        more_info_flag: Show in more information page
+        print_content_flag: Print content button
+      site_customization/image:
+        name: Name
+        image: Image
+      site_customization/content_block:
+        name: Name
+        locale: locale
+        body: Body
     errors:
       models:
         user:
@@ -117,6 +160,11 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Document not in census"
+              has_voted: "User has already voted"
         proposal:
           attributes:
             tag_list:
@@ -134,3 +182,12 @@ en:
             document_number:
               not_in_census: 'Not verified by Census'
               already_voted: 'Already voted this proposal'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "must be letters, numbers, _ and -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Width must be %{required_width}px"
+              image_height: "Height must be %{required_height}px"

@@ -35,6 +35,10 @@ class Budget < ActiveRecord::Base
     2000
   end
 
+  def self.title_max_length
+    80
+  end
+
   def accepting?
     phase == "accepting"
   end
@@ -61,6 +65,10 @@ class Budget < ActiveRecord::Base
 
   def finished?
     phase == "finished"
+  end
+
+  def balloting_or_later?
+    balloting? || reviewing_ballots? || finished?
   end
 
   def on_hold?

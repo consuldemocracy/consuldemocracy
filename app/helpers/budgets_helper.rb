@@ -10,7 +10,7 @@ module BudgetsHelper
 
   def namespaced_budget_investment_path(investment, options={})
     case namespace
-    when "management::budgets"
+    when "management/budgets"
       management_budget_investment_path(investment.budget, investment, options)
     else
       budget_investment_path(investment.budget, investment, options)
@@ -19,7 +19,7 @@ module BudgetsHelper
 
   def namespaced_budget_investment_vote_path(investment, options={})
     case namespace
-    when "management::budgets"
+    when "management/budgets"
       vote_management_budget_investment_path(investment.budget, investment, options)
     else
       vote_budget_investment_path(investment.budget, investment, options)
@@ -37,5 +37,9 @@ module BudgetsHelper
 
   def current_ballot
     Budget::Ballot.where(user: current_user, budget: @budget).first
+  end
+
+  def investment_tags_select_options
+    Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
 end

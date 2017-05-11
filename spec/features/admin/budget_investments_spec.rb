@@ -21,9 +21,12 @@ feature 'Admin budget investments' do
   context "Index" do
 
     scenario 'Displaying investmentss' do
-      budget_investment = create(:budget_investment, budget: @budget)
+      budget_investment = create(:budget_investment, budget: @budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
       expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content(budget_investment.id)
+      expect(page).to have_content(budget_investment.total_votes)
     end
 
     scenario 'Displaying assignments info' do
@@ -250,6 +253,21 @@ feature 'Admin budget investments' do
       expect(page).to have_css(".budget_investment", count: 2)
       expect(page).to have_content("Educate the children")
       expect(page).to have_content("More schools")
+    end
+
+    scenario "Filtering by tag, display only valuation tags" do
+      investment1 = create(:budget_investment, budget: @budget, tag_list: 'Education')
+      investment2 = create(:budget_investment, budget: @budget, tag_list: 'Health')
+
+      investment1.set_tag_list_on(:valuation, 'Teachers')
+      investment2.set_tag_list_on(:valuation, 'Hospitals')
+
+      investment1.save
+      investment2.save
+
+      visit admin_budget_budget_investments_path(budget_id: @budget.id)
+
+      expect(page).to have_select("tag_name", options: ["All tags", "Hospitals", "Teachers"])
     end
 
   end

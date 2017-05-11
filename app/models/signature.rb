@@ -12,35 +12,30 @@ class Signature < ActiveRecord::Base
 
   before_validation :clean_document_number
 
-  def verified?
-    user_exists? || in_census?
-  end
-
   def verify
-    if verified?
-      assign_vote
-      mark_as_verified
-    end
-  end
-
-  def assign_vote
     if user_exists?
       assign_vote_to_user
-    else
+      mark_as_verified
+    elsif in_census?
       create_user
       assign_vote_to_user
+      mark_as_verified
     end
   end
 
   def assign_vote_to_user
     set_user
-    signable.register_vote(user, "yes")
+    if signable.is_a? Budget::Investment
+      signable.vote_by(voter: user, vote: 'yes') if [nil, :no_selecting_allowed].include?(signable.reason_for_not_being_selectable_by(user))
+    else
+      signable.register_vote(user, "yes")
+    end
     assign_signature_to_vote
   end
 
   def assign_signature_to_vote
     vote = Vote.where(votable: signable, voter: user).first
-    vote.update(signature: self)
+    vote.update(signature: self) if vote
   end
 
   def user_exists?
@@ -51,11 +46,14 @@ class Signature < ActiveRecord::Base
     user_params = {
       document_number: document_number,
       created_from_signature: true,
-      verified_at: Time.now,
-      erased_at: Time.now,
+      verified_at: Time.current,
+      erased_at: Time.current,
       password: random_password,
       terms_of_service: '1',
-      email: nil
+      email: nil,
+      date_of_birth: @census_api_response.date_of_birth,
+      gender: @census_api_response.gender,
+      geozone: Geozone.where(census_code: @census_api_response.district_code).first
     }
     User.create!(user_params)
   end
@@ -70,10 +68,17 @@ class Signature < ActiveRecord::Base
   end
 
   def in_census?
-    response = document_types.detect do |document_type|
-      CensusApi.new.call(document_type, document_number).valid?
+    document_types.detect do |document_type|
+      response = CensusApi.new.call(document_type, document_number)
+      if response.valid?
+        @census_api_response = response
+        true
+      else
+        false
+      end
     end
-    response.present?
+
+    @census_api_response.present?
   end
 
   def set_user

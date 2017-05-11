@@ -46,12 +46,19 @@ module Abilities
         can :create, SpendingProposal
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can :vote,   Budget::Investment,               budget: { phase: "selecting" }
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+        can :answer, Poll do |poll|
+          poll.answerable_by?(user)
+        end
+        can :answer, Poll::Question do |question|
+          question.answerable_by?(user)
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }

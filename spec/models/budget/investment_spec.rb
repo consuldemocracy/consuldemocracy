@@ -35,7 +35,26 @@ describe Budget::Investment do
     expect(investment.description).to eq("alert('danger');")
   end
 
-  describe "#unfeasibility_explanation" do
+  it "set correct group and budget ids" do
+    budget = create(:budget)
+    group_1 = create(:budget_group, budget: budget)
+    group_2 = create(:budget_group, budget: budget)
+
+    heading_1 = create(:budget_heading, group: group_1)
+    heading_2 = create(:budget_heading, group: group_2)
+
+    investment = create(:budget_investment, heading: heading_1)
+
+    expect(investment.budget_id).to eq budget.id
+    expect(investment.group_id).to eq group_1.id
+
+    investment.update(heading: heading_2)
+
+    expect(investment.budget_id).to eq budget.id
+    expect(investment.group_id).to eq group_2.id
+  end
+
+  describe "#unfeasibility_explanation blank" do
     it "should be valid if valuation not finished" do
       investment.unfeasibility_explanation = ""
       investment.valuation_finished = false
@@ -52,6 +71,29 @@ describe Budget::Investment do
     it "should not be valid if valuation finished and unfeasible" do
       investment.unfeasibility_explanation = ""
       investment.feasibility = "unfeasible"
+      investment.valuation_finished = true
+      expect(investment).to_not be_valid
+    end
+  end
+
+  describe "#price blank" do
+    it "should be valid if valuation not finished" do
+      investment.price = ""
+      investment.valuation_finished = false
+      expect(investment).to be_valid
+    end
+
+    it "should be valid if valuation finished and unfeasible" do
+      investment.price = ""
+      investment.unfeasibility_explanation = "reason"
+      investment.feasibility = "unfeasible"
+      investment.valuation_finished = true
+      expect(investment).to be_valid
+    end
+
+    it "should not be valid if valuation finished and feasible" do
+      investment.price = ""
+      investment.feasibility = "feasible"
       investment.valuation_finished = true
       expect(investment).to_not be_valid
     end
@@ -99,6 +141,76 @@ describe Budget::Investment do
 
         expect(investment.should_show_votes?).to eq(false)
       end
+    end
+  end
+
+  describe "#should_show_vote_count?" do
+    it "returns true in valuating phase" do
+      budget = create(:budget, phase: "valuating")
+      investment = create(:budget_investment, budget: budget)
+
+      expect(investment.should_show_vote_count?).to eq(true)
+    end
+
+    it "returns false in any other phase" do
+      Budget::PHASES.reject {|phase| phase == "valuating"}.each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, budget: budget)
+
+        expect(investment.should_show_vote_count?).to eq(false)
+      end
+    end
+  end
+
+  describe "#should_show_ballots?" do
+    it "returns true in balloting phase" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, budget: budget)
+
+      expect(investment.should_show_ballots?).to eq(true)
+    end
+
+    it "returns false in any other phase" do
+      Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, budget: budget)
+
+        expect(investment.should_show_ballots?).to eq(false)
+      end
+    end
+  end
+
+  describe "#should_show_price_info?" do
+    it "returns true for feasibles if phase is balloting or later and price_explanation is present" do
+      ["balloting", "reviewing_ballots", "finished"].each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+
+        expect(investment.should_show_price_info?).to eq(true)
+      end
+    end
+
+    it "returns false in any other phase" do
+      (Budget::PHASES - ["balloting", "reviewing_ballots", "finished"]).each do |phase|
+        budget = create(:budget, phase: phase)
+        investment = create(:budget_investment, :feasible, budget: budget, price_explanation: "price explanation")
+
+        expect(investment.should_show_price_info?).to eq(false)
+      end
+    end
+
+    it "returns false if investment is unfeasible" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "price explanation")
+
+      expect(investment.should_show_price_info?).to eq(false)
+    end
+
+    it "returns false if price_explanation is blank" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, :unfeasible, budget: budget, price_explanation: "")
+
+      expect(investment.should_show_price_info?).to eq(false)
     end
   end
 
@@ -225,6 +337,92 @@ describe Budget::Investment do
     end
   end
 
+  describe "apply_filters_and_search" do
+
+    let(:budget) { create(:budget) }
+
+    it "returns feasible investments" do
+      investment1 = create(:budget_investment, :feasible,   budget: budget)
+      investment2 = create(:budget_investment, :feasible,   budget: budget)
+      investment3 = create(:budget_investment, :unfeasible, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :feasible)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns unfeasible investments" do
+      investment1 = create(:budget_investment, :unfeasible, budget: budget)
+      investment2 = create(:budget_investment, :unfeasible, budget: budget)
+      investment3 = create(:budget_investment, :feasible,   budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :unfeasible)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns selected investments" do
+      budget.update(phase: "balloting")
+
+      investment1 = create(:budget_investment, :feasible, :selected,   budget: budget)
+      investment2 = create(:budget_investment, :feasible, :selected,   budget: budget)
+      investment3 = create(:budget_investment, :feasible, :unselected, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :selected)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns unselected investments" do
+      budget.update(phase: "balloting")
+
+      investment1 = create(:budget_investment, :feasible, :unselected, budget: budget)
+      investment2 = create(:budget_investment, :feasible, :unselected, budget: budget)
+      investment3 = create(:budget_investment, :feasible, :selected,   budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :unselected)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns investmens by heading" do
+      group = create(:budget_group, budget: budget)
+
+      heading1 = create(:budget_heading, group: group)
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading1, budget: budget)
+      investment2 = create(:budget_investment, heading: heading1, budget: budget)
+      investment3 = create(:budget_investment, heading: heading2, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, heading_id: heading1.id)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns investments by search string" do
+      investment1 = create(:budget_investment, title: "health for all",  budget: budget)
+      investment2 = create(:budget_investment, title: "improved health", budget: budget)
+      investment3 = create(:budget_investment, title: "finance",         budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, search: "health")
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+  end
+
   describe "search" do
 
     context "tags" do
@@ -284,6 +482,45 @@ describe Budget::Investment do
         create(:vote, votable: carabanchel_investment, voter: user)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
+      end
+
+      it "allows votes in a group with a single heading" do
+        all_city_investment = create(:budget_investment, heading: heading)
+        expect(all_city_investment.valid_heading?(user)).to eq(true)
+      end
+
+      it "allows votes in a group with a single heading after voting in that heading" do
+        all_city_investment1 = create(:budget_investment, heading: heading)
+        all_city_investment2 = create(:budget_investment, heading: heading)
+
+        create(:vote, votable: all_city_investment1, voter: user)
+
+        expect(all_city_investment2.valid_heading?(user)).to eq(true)
+      end
+
+      it "allows votes in a group with a single heading after voting in another group" do
+        districts = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+
+        all_city_investment    = create(:budget_investment, heading: heading)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: carabanchel_investment, voter: user)
+
+        expect(all_city_investment.valid_heading?(user)).to eq(true)
+      end
+
+      it "allows votes in a group with multiple headings after voting in group with a single heading" do
+        districts = create(:budget_group, budget: budget)
+        carabanchel = create(:budget_heading, group: districts)
+        salamanca   = create(:budget_heading, group: districts)
+
+        all_city_investment    = create(:budget_investment, heading: heading)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+
+        create(:vote, votable: all_city_investment, voter: user)
+
+        expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
     end
   end

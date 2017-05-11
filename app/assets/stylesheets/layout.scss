@@ -70,6 +70,11 @@ a {
   }
 }
 
+.button.hollow {
+  border: 1px solid $link;
+  color: $link;
+}
+
 .postfix.button {
   padding: 0;
 }
@@ -139,6 +144,10 @@ a {
   padding-top: $line-height;
 }
 
+.light {
+  background: $light;
+}
+
 .highlight {
   background: $highlight;
 }
@@ -190,6 +199,30 @@ a {
 
     a {
       color: $text-medium;
+    }
+
+    &.active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+    }
+  }
+}
+
+.menu.vertical {
+  background: white;
+  margin: $line-height 0;
+  padding: $line-height;
+
+  li {
+    margin-bottom: $line-height;
+
+    a {
+      color: $text-medium;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: $base-font-size;
     }
 
     &.active {
@@ -374,6 +407,24 @@ header {
 
   ul {
     margin-bottom: 0;
+
+    li {
+      display: block;
+    }
+
+    @include breakpoint(medium) {
+      li {
+        display: inline-block;
+
+        &:after {
+          content: "|";
+        }
+
+        &:last-child:after {
+          content: none;
+        }
+      }
+    }
   }
 }
 
@@ -439,6 +490,7 @@ header {
 
   .input-group-button {
     line-height: $line-height*1.5;
+    padding-bottom: 0;
 
     button {
       background: $border;
@@ -460,7 +512,6 @@ header {
 }
 
 .submenu {
-  background: white;
   border-bottom: 1px solid $border;
   clear: both;
   margin-bottom: $line-height/2;
@@ -536,12 +587,8 @@ footer {
     padding-left: 0;
   }
 
-  h2 a {
-    border-bottom: 1px solid $text-light;
-    display: block;
-    font-size: rem-calc(24);
-    line-height: rem-calc(31);
-    padding-bottom: $line-height/4;
+  a.title {
+    font-weight: bold;
     text-decoration: none;
   }
 }
@@ -562,7 +609,8 @@ footer {
 // 04. Tags
 // --------
 
-.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a {
+.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a,
+.tags span {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -1081,11 +1129,12 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // --------------------
 
 [class^="level-"] {
-  color: white;
+  color: black;
 }
 
 .is-author {
-  background: #008CCF;
+  background: #00A5F1;
+  color: black;
 }
 
 .is-association {
@@ -1143,7 +1192,11 @@ table {
 
 .button.button-twitter,
 .button.button-facebook,
-.button.button-google {
+.button.button-google,
+.button.button-telegram {
+  background: white;
+  color: $text;
+  font-weight: bold;
   height: $line-height*2;
   line-height: $line-height*2;
   padding: 0;
@@ -1151,9 +1204,11 @@ table {
 }
 
 .button.button-twitter {
-  background: #45B0E3;
+  background: #ECF7FC;
+  border-left: 3px solid #45B0E3;
 
   &:before {
+    color: #45B0E3;
     content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1191,9 +1246,11 @@ table {
 }
 
 .button.button-facebook {
-  background: #3B5998;
+  background: #EBEEF4;
+  border-left: 3px solid #3B5998;
 
   &:before {
+    color: #3B5998;
     content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1231,9 +1288,11 @@ table {
 }
 
 .button.button-google {
-  background: #DE4C34;
+  background: #FCEDEA;
+  border-left: 3px solid #DE4C34;
 
   &:before {
+    color: #DE4C34;
     content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1267,6 +1326,55 @@ table {
   &:hover, &:focus {
     background: white;
     color: #CE3E26;
+  }
+}
+
+.button.button-telegram {
+  background: #ECF7FC;
+  border-left: 3px solid #0088cc;
+
+  &:before {
+    color: #0088cc;
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.ssb-telegram {
+  background: #0088cc;
+  background-image: none !important;
+  color: white;
+  height: $line-height*2 !important;
+  position: relative;
+  width: $line-height*2 !important;
+
+  &:before {
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover, &:focus {
+    background: white;
+    color: #40A2D1;
+  }
+}
+
+@include breakpoint(medium) {
+
+  .button.button-telegram, .ssb-telegram {
+    display: none !important;
   }
 }
 
@@ -1359,6 +1467,30 @@ table {
     &:hover, &:focus {
       background: white;
       color: #CE3E26;
+    }
+  }
+
+  .ssb-telegram {
+    background: #0088cc;
+    color: white;
+    height: $line-height;
+    position: relative;
+    width: $line-height*2;
+
+    &:before {
+      content: "1";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover, &:focus {
+      background: white;
+      color: #40A2D1;
     }
   }
 }

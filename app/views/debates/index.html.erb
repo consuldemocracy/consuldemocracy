@@ -4,6 +4,9 @@
              search_path: debates_path(page: 1),
              i18n_namespace: "debates.index.search_form" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debates_url %>
+<% end %>
 
 <main>
   <h1 class="sr-only"><%= t("shared.outline.debates") %></h1>
@@ -27,15 +30,15 @@
         <% end %>
       </div>
 
-      <% if has_banners %>
+      <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successfull_exists %>
-        <%= render "proposals/proposal_ballots_banner" %>
+      <% if @proposal_successful_exists %>
+        <%= render "proposals/successful_banner" %>
       <% end %>
 
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_ballots.present? || @proposal_successfull_exists %>
+      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists %>
         <%= render "featured_debates" %>
       <% end %>
 

@@ -4,6 +4,9 @@
              search_path: proposals_path(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposals_url %>
+<% end %>
 
 <main>
   <h1 class="sr-only"><%= t("shared.outline.proposals") %></h1>
@@ -29,12 +32,12 @@
         <% end %>
       </div>
 
-      <% if has_banners %>
+      <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successfull_exists %>
-        <%= render "proposal_ballots_banner" %>
+      <% if @proposal_successful_exists %>
+        <%= render "successful_banner" %>
       <% elsif @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">

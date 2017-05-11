@@ -22,38 +22,37 @@ describe PagesController do
       get :show, id: :census_terms
       expect(response).to be_ok
     end
-  end
 
-  describe 'Provisional pages' do
-    it 'should include a opendata page' do
-      get :show, id: :opendata
+    it 'should include a accessibility page' do
+      get :show, id: :accessibility
       expect(response).to be_ok
     end
   end
 
-  describe 'Info pages' do
-    it 'should include a how_it_works page' do
-      get :show, id: :how_it_works
+  describe 'More info pages' do
+
+    it 'should include a more info page' do
+      get :show, id: 'more_info/index'
       expect(response).to be_ok
     end
 
     it 'should include a how_to_use page' do
-      get :show, id: :how_to_use
+      get :show, id: 'more_info/how_to_use/index'
       expect(response).to be_ok
     end
 
-    it 'should include a more_information page' do
-      get :show, id: :more_information
+    it 'should include a faq page' do
+      get :show, id: 'more_info/faq/index'
       expect(response).to be_ok
     end
 
-    it 'should include a participation page' do
-      get :show, id: :participation
+    it 'should include a participation facts page' do
+      get :show, id: 'more_info/participation/facts'
       expect(response).to be_ok
     end
 
-    it 'should include a accessibility page' do
-      get :show, id: :accessibility
+    it 'should include a participation world page' do
+      get :show, id: 'more_info/participation/world'
       expect(response).to be_ok
     end
   end

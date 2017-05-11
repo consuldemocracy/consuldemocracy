@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="small-12 column">
+    <ul class="menu-pages" data-magellan>
+      <% if feature?(:debates) %>
+      <li>
+        <%= link_to t("pages.more_info.menu.debates"), "#debates", class: "button hollow expanded" %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to t("pages.more_info.menu.proposals"), "#proposals", class: "button hollow expanded" %>
+      </li>
+      <% if feature?(:budgets) %>
+      <li>
+        <%= link_to t("pages.more_info.menu.budgets"), "#budgets", class: "button hollow expanded" %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to t("pages.more_info.menu.other"), "#other", class: "button hollow expanded" %>
+      </li>
+    </ul>
+  </div>
+</div>

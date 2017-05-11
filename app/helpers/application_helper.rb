@@ -47,4 +47,12 @@ module ApplicationHelper
       "<span class='icon-angle-left'></span>".html_safe + t("shared.back")
     end
   end
+
+  def image_path_for(filename)
+    SiteCustomization::Image.image_path_for(filename) || filename
+  end
+
+  def content_block(name, locale)
+    SiteCustomization::ContentBlock.block_for(name, locale)
+  end
 end
