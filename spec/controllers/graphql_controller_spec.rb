@@ -2,6 +2,12 @@ require 'rails_helper'
 
 # Useful resource: http://graphql.org/learn/serving-over-http/
 
+def parser_error_raised?(response)
+  data_is_empty = response['data'].nil?
+  error_is_present = (JSON.parse(response.body)['errors'].first['message'] =~ /^Parse error on/)
+  data_is_empty && error_is_present
+end
+
 describe GraphqlController, type: :request do
   let(:proposal) { create(:proposal) }
 
@@ -16,8 +22,8 @@ describe GraphqlController, type: :request do
     specify "with malformed query string" do
       get '/graphql', query: 'Malformed query string'
 
-      expect(response).to have_http_status(:bad_request)
-      expect(JSON.parse(response.body)['message']).to eq('Query string is not valid JSON')
+      expect(response).to have_http_status(:ok)
+      expect(parser_error_raised?(response)).to be_truthy
     end
 
     specify "without query string" do
@@ -49,8 +55,8 @@ describe GraphqlController, type: :request do
     specify "with malformed query string" do
       post '/graphql', { query: "Malformed query string" }.to_json, json_headers
 
-      expect(response).to have_http_status(:bad_request)
-      expect(JSON.parse(response.body)['message']).to eq('Query string is not valid JSON')
+      expect(response).to have_http_status(:ok)
+      expect(parser_error_raised?(response)).to be_truthy
     end
 
     it "without query string" do
