@@ -50,7 +50,7 @@
       </table>
     <% else %>
       <div class="callout primary">
-        <%= t("delegation.no_recommendations") %>
+        <%= t("delegation.no_recommendations", phase: t("delegation.phase.#{@phase}")) %>
       </div>
     <% end %>
     <div class="margin-top">

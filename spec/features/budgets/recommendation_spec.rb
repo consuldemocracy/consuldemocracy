@@ -2,20 +2,49 @@ require 'rails_helper'
 
 feature 'Recommendations' do
 
-  scenario "Create" do
-    investment = create(:budget_investment)
+  scenario "Create by phase" do
+    heading = create(:budget_heading)
+    budget = heading.budget
+
+    investment_to_select = create(:budget_investment, :feasible, heading: heading)
+    investment_to_ballot = create(:budget_investment, :selected, heading: heading)
 
     user = create(:user)
     login_as(user)
 
+    budget.update!(phase: 'selecting')
     visit root_path
     click_link "Delegation"
 
-    fill_in "recommendation_investment_id", with: investment.id
+    expect(page).to have_content "You have not selected any investment project for the selecting phase."
+    fill_in "recommendation_investment_id", with: investment_to_select.id
     click_button "Add to my list"
 
     expect(page).to have_content "Investment project added to the list"
-    expect(page).to have_link(investment.title, href: budget_investment_path(investment.budget, investment))
+    expect(page).to have_link(investment_to_select.title, href: budget_investment_path(budget, investment_to_select))
+
+    budget.update!(phase: 'balloting')
+    visit root_path
+    click_link "Delegation"
+
+    expect(page).to have_content "You have not selected any investment project for the final voting phase."
+    fill_in "recommendation_investment_id", with: investment_to_ballot.id
+    click_button "Add to my list"
+
+    expect(page).to have_content "Investment project added to the list"
+    expect(page).to have_link(investment_to_ballot.title, href: budget_investment_path(budget, investment_to_ballot))
+
+    budget.update!(phase: 'selecting')
+    visit budget_recommendations_path(budget, user_id: user.id)
+
+    expect(page).to have_content investment_to_select.title
+    expect(page).to_not have_content investment_to_ballot.title
+
+    budget.update!(phase: 'balloting')
+    visit budget_recommendations_path(budget, user_id: user.id)
+
+    expect(page).to have_content investment_to_ballot.title
+    expect(page).to_not have_content investment_to_select.title
   end
 
   scenario "Create (errors)" do
@@ -64,8 +93,8 @@ feature 'Recommendations' do
     user1 = create(:user)
     user2 = create(:user, :level_two)
 
-    investment = create(:budget_investment)
-    create(:budget_recommendation, investment: investment, user: user1)
+    investment = create(:budget_investment, :feasible)
+    create(:budget_recommendation, budget_id: investment.budget_id, investment: investment, user: user1)
     investment.budget.update(phase: 'selecting')
 
     login_as(user2)
@@ -78,6 +107,27 @@ feature 'Recommendations' do
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this. Share it!"
+    end
+  end
+
+  scenario "Balloting another person's recommendation", :js do
+    user1 = create(:user)
+    user2 = create(:user, :level_two)
+
+    investment = create(:budget_investment, :selected)
+    budget = investment.budget
+    budget.update!(phase: 'balloting')
+    create(:budget_recommendation, budget_id: investment.budget_id, investment: investment, user: user1, phase: 'balloting')
+
+    login_as(user2)
+    visit user_path(user1)
+
+    click_link "List of recommended investments projects"
+
+    within('.ballot') do
+      find('.in-favor a').click
+
+      expect(page).to have_content "Remove vote"
     end
   end
 
