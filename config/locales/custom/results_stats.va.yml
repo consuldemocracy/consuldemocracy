@@ -3,6 +3,9 @@ va:
   results:
     button_title: Resultats
     results_link: Resultats
+    show_all_link: Mostrar totes
+    hide_discarded_link: Ocultar descartades
+    heading_selection_title: Ámbit d'actuació
     investment:
       suports: Avals
       ballots: Vots
