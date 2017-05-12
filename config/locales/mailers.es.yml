@@ -76,9 +76,8 @@ es:
     budget_investment_selected:
       subject: "Tu propuesta de inversión '%{code}' ha sido seleccionada"
       hi: "Estimado/a usuario/a"
-      selected_html: "Desde el Ayuntamiento de Madrid agradecemos que hayas participado con tu idea en los <strong>Presupuestos Participativos</strong>. Te invitamos de que tu proyecto <strong>'%{title}'</strong> ha sido seleccionado y pasa a la fase de votación final que tiene lugar desde el <strong>15 de mayo hasta el 30 de junio de 2017</strong>. Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
-      share: "Te invitamos a que %{url} en redes sociales para promocionarlo y conseguir más votos."
-      share_url: "compartas tu proyecto de gasto"
+      selected_html: "Desde el Ayuntamiento de Madrid agradecemos que hayas participado con tu idea en los <strong>Presupuestos Participativos</strong>. Te informamos de que tu proyecto <strong>'%{title}'</strong> ha sido seleccionado y pasa a la fase de votación final que tiene lugar desde el <strong>15 de mayo hasta el 30 de junio de 2017</strong>."
+      share: "Empieza ya a conseguir votos, comparte tu proyecto de gasto en redes sociales. La difusión es fundamental para conseguir que se haga realidad."
       share_button: "Comparte tu proyecto"
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
