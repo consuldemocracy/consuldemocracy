@@ -6,8 +6,8 @@ module Budgets
       before_action :load_budget
       before_action :load_ballot
       before_action :load_categories
-
       before_action :load_investments
+      before_action :load_ballot_referer
 
       load_and_authorize_resource :budget
       load_and_authorize_resource :ballot, class: "Budget::Ballot", through: :budget
@@ -66,6 +66,10 @@ module Budgets
 
         def load_categories
           @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        end
+
+        def load_ballot_referer
+          @ballot_referer = session[:ballot_referer]
         end
 
     end

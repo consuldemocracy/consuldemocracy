@@ -6,6 +6,7 @@ feature 'Valuation budget investments' do
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
     @budget = create(:budget, :valuating)
+    Setting['feature.budgets.valuators_allowed'] = true
   end
 
   scenario 'Disabled with a feature flag' do
@@ -233,6 +234,41 @@ feature 'Valuation budget investments' do
       investment.valuators << [@valuator, valuator2]
 
       expect { visit valuation_budget_budget_investment_path(@budget, investment) }.to raise_error "Not Found"
+    end
+
+    scenario 'not visible to valuators unless setting enabled' do
+      Setting['feature.budgets.valuators_allowed'] = nil
+
+      investment = create(:budget_investment,
+                           :visible_to_valuators,
+                           budget: @budget)
+      investment.valuators << [@valuator]
+
+      login_as(@valuator.user)
+      visit valuation_budget_budget_investments_path(@budget)
+
+      expect{ click_link investment.title }.
+      to raise_error( ActionController::RoutingError)
+    end
+
+    scenario 'visible to admins regardless of setting enabled' do
+      Setting['feature.budgets.valuators_allowed'] = nil
+
+      user = create(:user)
+      admin = create(:administrator, user: user)
+      valuator = create(:valuator, user: user)
+
+      investment = create(:budget_investment,
+                           :visible_to_valuators,
+                           budget: @budget)
+      investment.valuators << [valuator]
+
+
+      login_as(admin.user)
+      visit valuation_budget_budget_investments_path(@budget)
+      click_link investment.title
+
+      expect(page).to have_content investment.title
     end
 
   end

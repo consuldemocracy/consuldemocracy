@@ -3,6 +3,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   feature_flag :budgets
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
+  before_action :restrict_access, only: [:show, :edit, :valuate]
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
@@ -59,11 +60,15 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-        Budget::Investment.filter_params(params).merge({valuator_id: current_user.valuator.id, budget_id: @budget.id})
+      Budget::Investment.filter_params(params).merge({valuator_id: current_user.valuator.id, budget_id: @budget.id})
     end
 
     def valuation_params
       params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasibility, :unfeasibility_explanation, :duration, :valuation_finished, :internal_comments)
+    end
+
+    def restrict_access
+      raise ActionController::RoutingError.new('Not Found') unless current_user.administrator? || Setting['feature.budgets.valuators_allowed'].present?
     end
 
     def restrict_access_to_assigned_items

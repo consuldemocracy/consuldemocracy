@@ -5,11 +5,12 @@ es:
         title: Mis votos
         amount_spent: Coste total
         remaining: "Te quedan <span>%{amount}</span> para invertir"
+        no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
         voted_html:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
-        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: "Todavía no has votado ningún proyecto de gasto."
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
@@ -24,6 +25,8 @@ es:
         title: Selecciona una opción
         unfeasible_title: Propuestas inviables
         unfeasible: Ver propuestas inviables
+        unselected_title: Propuestas que no pasan a la votación final
+        unselected: Ver las propuestas que no pasan a la votación final
     phase:
       accepting: Presentación de proyectos
       reviewing: Revisión interna de proyectos
@@ -60,7 +63,8 @@ es:
           voted_html:
             one: "<strong>Has votado una proyecto por un valor de %{amount_spent}</strong>"
             other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
-          voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          voted_info_link: cambiar tus votos
           zero: "Todavía no has votado ningún proyecto de gasto."
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           verify_account: "verifica tu cuenta"
@@ -86,10 +90,11 @@ es:
         title: Proyecto de gasto
         supports: Apoyos
         votes: Votos
+        price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Proyecto de gasto
-        add: Añadir
+        add: Votar
         already_added: "Ya has añadido este proyecto de gasto"
         already_supported: Ya has apoyado este proyecto. ¡Compártelo!
         support_title: Apoyar este proyecto
@@ -109,3 +114,5 @@ es:
       phase: Fase actual
       unfeasible_title: Propuestas inviables
       unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas que no pasan a la votación final
+      unselected: Ver las propuestas que no pasan a la votación final

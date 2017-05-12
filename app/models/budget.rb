@@ -76,6 +76,10 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def balloting_or_later?
+    balloting? || reviewing_ballots? || finished?
+  end
+
   def on_hold?
     reviewing? || valuating? || reviewing_ballots?
   end
@@ -116,6 +120,14 @@ class Budget < ActiveRecord::Base
     else
       %w{random confidence_score}
     end
+  end
+
+  def beta_testing?
+    Rails.env.preproduction?
+  end
+
+  def self.beta_testing?
+    Rails.env.preproduction?
   end
 
   private

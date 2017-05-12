@@ -324,6 +324,12 @@ FactoryGirl.define do
     trait :visible_to_valuators do
       visible_to_valuators true
     end
+
+    trait :unselected do
+      selected false
+      feasibility "feasible"
+      valuation_finished true
+    end
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do
