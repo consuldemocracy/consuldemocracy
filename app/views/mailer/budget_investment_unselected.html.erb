@@ -9,22 +9,14 @@
         title: @investment.title) %>
   </p>
 
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; padding-left: 12px; border-left: 2px solid #ccc;">
-    <%= @investment.unfeasibility_explanation %>
-  </p>
-
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-  <%= t("mailers.budget_investment_unselected.new_html",
-      url: link_to(t("mailers.budget_investment_unselected.new_href"),
+  <%= t("mailers.budget_investment_unselected.participate",
+      url: link_to(t("mailers.budget_investment_unselected.participate_url"),
       new_budget_investment_url(@investment.budget), style: "color: #2895F1; text-decoration: underline;")) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_unselected.reconsider_html", code: @investment.code) %>
-  </p>
-
-  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_unselected.sorry") %>
+    <%= t("mailers.budget_investment_unselected.thanks") %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
