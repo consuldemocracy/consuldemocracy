@@ -15,6 +15,15 @@
   <% end %>
 <% end %>
 
+<% if @heading && can?(:show, @ballot) %>
+  <p class="callout">
+    <%= t("budgets.investments.index.sidebar.voted_info",
+        link: link_to(t("budgets.investments.index.sidebar.voted_info_link"),
+            budget_ballot_path(@budget))).html_safe %>
+  </p>
+<% end %>
+
+<%= render "shared/tag_cloud", taggable: 'budget/investment' %>
 <%= render 'budgets/investments/categories' %>
 
 <% if @heading && can?(:show, @ballot) %>
@@ -46,8 +55,4 @@
       <% end %>
     <% end %>
   </ul>
-
-  <p class="callout primary">
-    <%= t("budgets.investments.index.sidebar.voted_info") %>
-  </p>
 <% end %>

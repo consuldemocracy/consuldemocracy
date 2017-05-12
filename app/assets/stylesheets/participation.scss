@@ -1096,7 +1096,7 @@ ul.ballot-list {
     background: #f9f9f9;
     line-height: $line-height;
     margin-bottom: $line-height/4;
-    padding: $line-height/2;
+    padding: $line-height $line-height/2;
     position: relative;
 
     a {

@@ -10,7 +10,7 @@ en:
         voted_html:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
-        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to invest all the money available."
+        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
         not_logged_in: You must %{signin} or %{signup} to continue.
@@ -61,9 +61,10 @@ en:
         sidebar:
           my_ballot: My ballot
           voted_html:
-            one: "<strong>You voted one investment with a cost of %{amount_spent}</strong>"
-            other: "<strong>You voted %{count} investments with a cost of %{amount_spent}</strong>"
-          voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
+            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+          voted_info: You can %{link} at any time until the close of this phase. No need to spend all the money available.
+          voted_info_link: change your vote
           zero: You have not voted any investment project.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
@@ -93,7 +94,7 @@ en:
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project
-        add: Add
+        add: Vote
         already_added: You have already added this investment project
         already_supported: You have already supported this. Share it!
         support_title: Support this project
