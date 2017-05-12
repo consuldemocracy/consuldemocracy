@@ -1,0 +1,12 @@
+---
+va:
+  results:
+    button_title: Resultats
+    results_link: Resultats
+    investment:
+      suports: Avals
+      ballots: Vots
+      price: Cost
+
+  stats:
+    stats_link: Estadístiques

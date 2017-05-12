@@ -72,6 +72,10 @@ Rails.application.routes.draw do
   end
 
   resources :budgets, only: [:show, :index] do
+    member do
+      get :results
+      get :stats
+    end
     resources :groups, controller: "budgets/groups", only: [:show]
     resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
       member { post :vote }
@@ -323,4 +327,8 @@ Rails.application.routes.draw do
   # static pages
   get '/blog' => redirect("http://blog.consul/")
   resources :pages, path: '/', only: [:show]
+
+  get 'presupuestos-participativos-resultados',   to: 'spending_proposals#results', as: 'participatory_budget_results'
+  get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats',   as: 'participatory_budget_stats'
+
 end
