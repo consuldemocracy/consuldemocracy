@@ -63,7 +63,8 @@ es:
             other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
-          zero: "Todavía no has votado ninguna propuesta de inversión."
+          different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+          zero: "Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto."
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
           create: "Crear propuesta de inversión"
