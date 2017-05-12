@@ -96,7 +96,7 @@ en:
       subject: "Your investment project '%{code}' has not been selected"
       hi: "Dear user,"
       unselected_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment project <strong>'%{title}'</strong> has not been selected for the final voting phase."
-      participate: "You can continue participating in the final voting phase voting for investments projects from <strong>May 15th to June 30th</strong>."
+      participate_html: "You can continue participating in the final voting phase voting for investments projects from <strong>May 15th to June 30th</strong>."
       participate_url: "participate in the final voting"
       thanks: "Thank you again for participating."
       sincerely: "Sincererly"
