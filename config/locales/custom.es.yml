@@ -124,7 +124,10 @@ es:
     table_head: "Título del proyecto de gasto"
     delete: "Eliminar de mi lista"
     list_title: "Proyectos de gasto recomendados por:"
-    no_recommendations: "Todavía no has seleccionado ningún proyecto de gasto."
+    no_recommendations: "Todavía no has añadido ningún proyecto de gasto para la fase de %{phase}."
+    phase:
+      selecting: preselección
+      balloting: votación final
     view_list: "Ver mi lista de proyectos de gasto"
     create_ok: "Proyecto de gasto añadido"
     create_error: "El identificador no es válido"
