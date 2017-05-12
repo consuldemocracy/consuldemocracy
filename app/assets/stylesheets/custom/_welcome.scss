@@ -137,6 +137,11 @@
 
 .budgets-module {
   background: $budget;
+  padding: $line-height*2 0;
+
+  @include breakpoint(medium) {
+    padding: $line-height*4 0;
+  }
 
   h2 {
     font-family: 'Franklin Gothic' !important;
