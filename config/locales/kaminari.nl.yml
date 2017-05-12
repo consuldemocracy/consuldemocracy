@@ -12,7 +12,7 @@ nl:
         display_entries:
           one: Er is <b>1</b> %{entry_name}
           other: Er zijn <b> %{count}</b> %{entry_name}
-          zero: "%{entry_name} is niet gevonden"
+          zero: "%{entry_name} -- niet gevonden"
   views:
     pagination:
       first: Eerste

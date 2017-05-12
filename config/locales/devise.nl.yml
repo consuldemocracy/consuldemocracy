@@ -1,71 +1,67 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
 nl:
   devise:
     password_expired:
-      expire_password: "Password expired"
-      change_required: "Your password is expired"
-      change_password: "Change your password"
-      new_password: "New password"
-      updated: "Password successfully updated"
+      expire_password: "Wachtwoord is verlopen"
+      change_required: "Uw wachtwoord is verlopen"
+      change_password: "Pas wachtwoord aan"
+      new_password: "Nieuw wachtwoord"
+      updated: "Wachtwoord is aangepast"
     confirmations:
-      confirmed: "Your account has been confirmed."
-      send_instructions: "In a few minutes you will receive an email containing instructions on how to reset your password."
-      send_paranoid_instructions: "If your email address is in our database, in a few minutes you will receive an email containing instructions on how to reset your password."
+      confirmed: "Uw account is bevestigd."
+      send_instructions: "U ontvangt via e-mail instructies om uw account te bevestigen."
+      send_paranoid_instructions: "Als uw e-mailadres bestaat in de database, ontvangt u via e-mail instructies hoe u uw account kunt bevestigen."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account has not yet been activated."
-      invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account has been locked."
-      last_attempt: "You have one more attempt remaining before your account is blocked."
-      not_found_in_database: "Invalid %{authentication_keys} or password."
-      timeout: "Your session has expired. Please sign in again to continue."
-      unauthenticated: "You must sign in or register to continue."
-      unconfirmed: "To continue, please click on the confirmation link that we have sent you via email"
+      already_authenticated: 'U bent al ingelogd.'
+      unauthenticated: 'U dient in te loggen of u in te schrijven.'
+      unconfirmed: 'U dient eerst uw account te bevestigen.'
+      locked: 'Uw account is vergrendeld.'
+      invalid: 'Ongeldig e-mail of wachtwoord.'
+      invalid_token: 'Ongeldig authenticatie token.'
+      timeout: 'Uw sessie is verlopen, log a.u.b. opnieuw in.'
+      inactive: 'Uw account is nog niet geactiveerd.'
+      last_attempt: 'U hebt nog één poging over voordat uw account wordt geblokkeerd.'
+      not_found_in_database: "Ongeldig e-mail of wachtwoord."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Bevestiging mailadres"
       reset_password_instructions:
-        subject: "Instructions for resetting your password"
+        subject: "Wachtwoord resetten"
       unlock_instructions:
-        subject: "Unlocking instructions"
+        subject: "Instructies voor ontgrendelen"
     omniauth_callbacks:
-      failure: "It has not been possible to authorise you as %{kind} because \"%{reason}\"."
-      success: "Successfully identified as %{kind}."
+      success: 'Successvol aangemeld met uw %{kind} account.'
+      failure: 'Kon niet aanmelden met uw %{kind} account, omdat "%{reason}".'
     passwords:
-      no_token: "You cannot access this page except through a password reset link. If you have accessed it through a password reset link, please check that the URL is complete."
-      send_instructions: "In a few minutes, you will receive an email containing instructions on resetting your password."
-      send_paranoid_instructions: "If your email address is in our database, in a few minutes you will receive a link to use to reset your password."
-      updated: "Your password has been changed successfully. Authentication successful."
-      updated_not_active: "Your password has been changed successfully."
+      no_token: 'U kunt deze pagina niet benaderen zonder een "wachtwoord reset e-mail".' 
+      send_instructions: "U ontvangt via e-mail instructies hoe u uw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u via e-mail instructies hoe u uw account kan ontgrendelen."
+      updated: "Uw wachtwoord is gewijzigd. U bent nu ingelogd."
+      updated_not_active: "Uw wachtwoord is gewijzigd."
     registrations:
-      destroyed:
-        "Goodbye! Your account has been cancelled. We hope to see you again soon. In accordance with your request, personal data registered as
-        a user of the site and form part of the file 'File' under the responsibility of the
-        'Responsible', they have been canceled under the terms of the provisions of Article 16 of the
-        Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal and Article 31 of its Reglamento de desarrollo (RD 1720/2007)."
-      signed_up: "Welcome! You have been authenticated."
-      signed_up_but_inactive: "Your registration was successful, but you could not be signed in because your account has not been activated."
-      signed_up_but_locked: "Your registration was successful, but you could not be signed in because your account is locked."
-      signed_up_but_unconfirmed: "You have been sent a message containing a verification link. Please click on this link to activate your account."
-      update_needs_confirmation: "Your account has been updated successfully; however, we need to verify your new email address. Please check your email and click on the link to complete the confirmation of your new email address."
-      updated: "Your account has been updated successfully."
+      signed_up_but_unconfirmed: 'U ontvangt via e-mail instructies hoe u uw account kunt activeren.'
+      signed_up_but_inactive: 'U bent inschreven. U kon alleen niet automatisch ingelogd worden omdat uw account nog niet geactiveerd is.'
+      signed_up_but_locked: 'U bent inschreven. U kon alleen niet automatisch ingelogd worden omdat uw account geblokkeerd is.'
+      signed_up: 'U bent inschreven.'
+      update_needs_confirmation: 'U hebt uw e-mailadres succesvol gewijzigd, maar we moeten uw nieuwe mailadres nog verifiëren. Controleer uw e-mail en klik op de link in de mail om uw mailadres te verifiëren.'
+      updated: 'Uw accountgegevens zijn opgeslagen.'
+      destroyed: 'Uw account is verwijderd, wellicht tot ziens!'
     sessions:
-      signed_in: "You have been signed in successfully."
-      signed_out: "You have been signed out successfully."
-      already_signed_out: "You have been signed out successfully."
+      signed_in: "U bent ingelogd."
+      signed_out: "U bent uitgelogd."
+      already_signed_out: "U bent uitgelogd."
     unlocks:
-      send_instructions: "In a few minutes, you will receive an email containing instructions on unlocking your account."
-      send_paranoid_instructions: "If you have an account, in a few minutes you will receive an email containing instructions on unlocking your account."
-      unlocked: "Your account has been unlocked. Please sign in to continue."
+      send_instructions: "U ontvangt via e-mail instructies hoe u uw account kunt ontgrendelen."
+      send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u via e-mail instructies hoe u uw account kan ontgrendelen."
+      unlocked: "uw account is ontgrendeld. U kunt nu weer inloggen."
   errors:
     messages:
-      already_confirmed: "You have already been verified; please attempt to sign in."
-      confirmation_period_expired: "You need to be verified within %{period}; please make a repeat request."
-      expired: "has expired; please make a repeat request."
-      not_found: "not found."
-      not_locked: "was not locked."
+      already_confirmed: "is reeds bevestigd"
+      confirmation_period_expired: "moet worden bevestigd binnen %{period}, probeer het a.u.b. nog een keer"
+      expired: is verlopen, vraag een nieuwe aan"
+      not_found: "niet gevonden"
+      not_locked: "is niet gesloten"
       not_saved:
-        one: "1 error prevented this %{resource} from being saved:"
-        other: "%{count} errors prevented this %{resource} from being saved:"
-      equal_to_current_password: "must be different than the current password."
+        one: "Kon de %{resource} niet opslaan:"
+        other: "Kon de %{resource} niet opslaan:"
+      equal_to_current_password: "moet anders zijn dan het vorige wachtwoord"

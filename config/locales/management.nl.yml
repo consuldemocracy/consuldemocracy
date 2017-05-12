@@ -51,7 +51,7 @@ nl:
       create_spending_proposal: Create spending proposal
       print_spending_proposals: Print spending proposals
       support_spending_proposals: Support spending proposals
-      create_budget_investment: Create budget investment
+      create_budget_investment: Nieuw begrotingsvoorstel
       print_budget_investments: Print Budget Investments
       support_budget_investments: Support Budget Investments
       users: Users
@@ -84,7 +84,7 @@ nl:
     budget_investments:
       alert:
         unverified_user: User is not verified
-      create: Create budget investment
+      create: Nieuw begrotingsvoorstel
       filters:
         heading: Concepto
         unfeasible: Unfeasible investment

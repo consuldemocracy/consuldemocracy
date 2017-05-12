@@ -2,108 +2,107 @@ nl:
   budgets:
     ballots:
       show:
-        title: Your ballot
-        amount_spent: Amount spent
-        remaining: "You still have <span>%{amount}</span> to invest."
-        remove: Remove vote
+        title: Uw keuze
+        amount_spent: Uitgegeven
+        remaining: "U heeft nog <span>%{amount}</span> te spenderen."
+        remove: Verwijder keuze
         voted_html:
-          one: "You have voted <span>one</span> proposal."
-          other: "You have voted <span>%{count}</span> proposals."
-        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to invest all the money available."
-        zero: You have not voted any investment project.
+          one: "U heeft op <span>één</span> voorstel gestemd."
+          other: "U heeft op <span>%{count}</span> voorstellen gestemd."
+        voted_info_html: "U te allen tijde uw stem wijzigen, tot de sluiting van deze fase.<br> U hoeft niet het héle bedrag uit te geven."
+        zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
-        not_logged_in: You must %{signin} or %{signup} to continue.
-        not_verified: Only verified users can vote on proposals; %{verify_account}.
-        organization: Organizations are not permitted to vote
-        not_selected: Unselected investment projects can not be supported
-        not_enough_money: "Price is higher than the available amount left."
-        no_ballots_allowed: Selecting phase is closed
+        not_verified: Alleen geverrifieerde deelnemers kunnen op voorstellen stemmen; %{verify_account}.
+        organization: Organisaties kunnen niet stemmen
+        not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
+        not_enough_money: "Niet genoed budget."
+        no_ballots_allowed: De selectiefase is voorbij
         different_heading_assigned: You have already voted a different heading
     groups:
       show:
-        title: Select an option
-        unfeasible_title: Unfeasible investments
-        unfeasible: See unfeasible investments
+        title: Kies een mogelijkheid
+        unfeasible_title: Onhaalbare voorstellen
+        unfeasible: Zie onhaalbare voorstellen
     phase:
-      accepting: Accepting projects
-      reviewing: Reviewing projects
-      selecting: Selecting projects
-      valuating: Valuating projects
-      balloting: Balloting projects
-      reviewing_ballots: Reviewing Ballots
-      finished: Finished budget
+      accepting: Voorstellen doen
+      reviewing: Voorstellen beoordelen
+      selecting: Voorstellen selecteren
+      valuating: Voorstellen waarderen
+      balloting: Voorstellen in stemming
+      reviewing_ballots: Beoordelen stemuitslag
+      finished: Afronden budgetvoorstel
     index:
-      title: Participatory budgets
+      title: Begrotingsvoorstellen
     investments:
       form:
-        tag_category_label: "Categories"
-        tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
-        tags_label: Tags
-        tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+        tag_category_label: "Categorieën"
+        tags_instructions: "Label dit voorstel. U kunt uw eigen categorie kiezen of één van de bestaande."
+        tags_label: Labels
+        tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
       index:
-        title: Participatory budgeting
-        unfeasible: Unfeasible investment projects
-        unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
-        unfeasible_text_definitions: see definitions here
-        by_heading: "Investment projects with scope: %{heading}"
+        title: Begrotingsvoorstellen
+        unfeasible: Onhaalbare begrotingsvoorstellen
+        unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen in 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
+        unfeasible_text_definitions: zie de voorwaarden hier
+        by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
         search_form:
-          button: Search
-          placeholder: Search investment projects...
-          title: Search
+          button: Zoeken
+          placeholder: Zoek begrotingsvoorstellen...
+          title: Zoeken
         search_results:
-          one: " containing the term '%{search_term}'"
-          other: " containing the term '%{search_term}'"
+          one: " met de term '%{search_term}'"
+          other: " met de term '%{search_term}'"
         sidebar:
-          my_ballot: My ballot
+          my_ballot: Mijn stemmen
           voted_html:
-            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
-            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
-          voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
-          zero: You have not voted any investment project.
-          verified_only: "To create a new budget investment %{verify}."
-          verify_account: "verify your account"
-          create: "Create budget investment"
-          not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
-          sign_in: "sign in"
-          sign_up: "sign up"
-          by_feasibility: By feasibility
-          feasible: Feasible projects
-          unfeasible: Unfeasible projects
+            one: "<strong>U heeft gestemd op een voorstel dat %{amount_spent} kost</strong>"
+            other: "<strong>U heeft gestemd op %{count} voorstellen met een prijs van %{amount_spent}</strong>"
+          voted_info: Tot de fase eindigt kunt u uw stem altijd wijzigen. Het budget hoeft niet per sé op.
+          zero: U hebt op geen enkel begrotingsvoorstel gestemd.
+          verified_only: "Verifieer uw account om een nieuw begrotingsvoorstel te doen."
+          verify_account: "verifieer uw account"
+          create: "Nieuw begrotingsvoorstel"
+          not_logged_in: "Log in om een nieuw begrotingsvoorstel te doen."
+          sign_in: "log in"
+          sign_up: "registreer"
+          by_feasibility: Op haalbaarheid
+          feasible: Haalbare voorstellen
+          unfeasible: Onhaalbare voorstellen
         orders:
-          random: random
-          confidence_score: highest rated
-          price: by price
+          random: willekeurig
+          confidence_score: best gescored
+          price: op bedrag
       show:
-        author_deleted: User deleted
-        price_explanation: Price explanation
-        unfeasibility_explanation: Unfeasibility explanation
-        code_html: 'Investment project code: <strong>%{code}</strong>'
-        location_html: 'Location: <strong>%{location}</strong>'
-        organization_name_html: 'Organization: <strong>%{name}</strong>'
-        share: Share
-        title: Investment project
-        supports: Supports
-        votes: Votes
-      wrong_price_format: Only integer numbers
+        author_deleted: Deelnemer verwijderd
+        price_explanation: Uitleg bedrag
+        unfeasibility_explanation: Uitleg haalbaarheid
+        code_html: 'Begrotingsvoorstel code: <strong>%{code}</strong>'
+        location_html: 'Plaats: <strong>%{location}</strong>'
+        organization_name_html: 'Organisatie: <strong>%{name}</strong>'
+        share: Delen
+        title: Begrotingsvoorstel
+        supports: Steunt
+        votes: Stemmen
+      wrong_price_format: Alleen hele nummers
       investment:
-        title: Investment project
-        add: Add
-        already_added: You have already added this investment project
-        already_supported: You have already supported this. Share it!
-        support_title: Support this project
-        confirm_group: "You can only support investments in one district. If you continue you cannot change your decision. Are you sure?"
+        title: Begrotingsvoorstel
+        add: Voeg toe
+        already_added: U heeft dit voorstel al toegevoegd
+        already_supported: U heeft dit al gestuend. Deel 't!
+        support_title: Steun dit voorstel
+        confirm_group: "U kunt maar in één district voorstellen steunen. Als u verder gaat is dat definitief. Bent u zeker?"
         supports:
-          one: 1 support
-          other: "%{count} supports"
-          zero: No supports
-        give_support: Support
+          one: 1 steunbetuiging
+          other: "%{count} steunbetuigingen"
+          zero: Geen steunbetuigingen
+        give_support: Steun
       header:
-        check_ballot: Check my ballot
-        different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+        check_ballot: Check mijn stemmen
+        different_heading_assigned_html: "U steunt al vanuit een ander deel van het voorstel: %{heading_link}"
     progress_bar:
-      available: "Available: "
+      available: "Beschikbaar: "
     show:
-      group: Group
-      phase: Actual phase
-      unfeasible_title: Unfeasible investments
-      unfeasible: See unfeasible investments
+      group: Groep
+      phase: Huidige fase
+      unfeasible_title: Onhaalbare voorstellen
+      unfeasible: Bekijk onhaalbare voorstellen
