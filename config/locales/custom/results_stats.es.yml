@@ -1,8 +1,11 @@
 ---
-va:
+es:
   results:
     button_title: Resultados
     results_link: Resultados
+    show_all_link: Mostrar todas
+    hide_discarded_link: Ocultar descartadas
+    heading_selection_title: Ámbito de actuación
     investment:
       suports: Avales
       ballots: Votos

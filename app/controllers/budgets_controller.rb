@@ -17,10 +17,11 @@ class BudgetsController < ApplicationController
   def results
     if params[:heading_id].present?
       parent = @budget.headings.find(params[:heading_id])
-      @total_price = parent.price
+      @heading = parent
+      @initial_budget = parent.price
     else
       parent = @budget
-      @total_price = parent.headings.sum(:price)
+      @initial_budget = parent.headings.sum(:price)
     end
     @investments_selected = parent.investments.selected.order(cached_ballots_up: :desc)
   end

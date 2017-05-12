@@ -23,7 +23,7 @@
 <div class="row">
       <div class="small-12 medium-2 column">
         <ul class="menu vertical no-padding">
-          <!-- <li><strong><%= t("spending_proposals.results.geozone_selection_title") %></strong></li> -->
+          <li><strong><%= t("results.heading_selection_title") %></strong></li>
 
           <% @budget.headings.each do |heading| %>
             <li><%= link_to heading.name, results_budget_path(@budget, heading_id: heading.id) %></li>
@@ -35,43 +35,52 @@
         </ul>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="small-12 medium-10 column">
-    <% restante = @total_price %>
+
+    <h2 class="inline-block"><%= @heading.nil? ? t('geozones.none') : @heading.name %></h2>
+
+    <span class="float-right">
+      <%= link_to t("results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("results.hide_discarded_link")} %>
+    </span>
+
+
     <table class="hover">
       <thead>
         <tr>
           <th></th>
           <th><%= t("budgets.investments.investment.title") %></th>
-          <th class="text-right"><%= t("results.investment.suports") %></th>
           <th class="text-right"><%= t("results.investment.ballots") %></th>
           <th class="text-right nowrap"><%= t("results.investment.price") %></th>
-          <th class="text-right nowrap"><%= number_to_currency(@total_price) %></th>
+          <th class="text-right nowrap"><%= number_to_currency(@initial_budget) %></th>
         </tr>
       </thead>
       <tbody>
+        <% available_budget = @initial_budget.to_i %>
         <% @investments_selected.each do |investment_selected| %>
-          <tr class="success">
-            <td><span class="icon-check"></span></td>
-            <td><%= link_to investment_selected.title, budget_investment_path(@budget, investment_selected), target: '_blank' %></td>
-            <td class="text-right"><%= investment_selected.cached_votes_up %></td>
+          <% initial_budget = available_budget
+              budget = available_budget - investment_selected.price
+              available_budget = budget if budget >= 0 %>
+          <% if budget >= 0 %>
+            <tr id="<%= dom_id(investment_selected) %>" class="spending_proposal success">
+          <% else %>
+            <tr id="<%= dom_id(investment_selected) %>" class="spending_proposal js-discarded" style="display:none">
+          <% end %>
+            <td>
+              <% if budget >= 0 %>
+                <span class="icon-check">
+                  <span class="sr-only"><%= t("spending_proposals.results.accepted") %></span>
+                </span>
+              <% else %>
+                <span class="icon-x">
+                  <span class="sr-only"><%= t("spending_proposals.results.discarded") %></span>
+                </span>
+              <% end %>
+            </td>
+            <td><%= link_to investment_selected.title, budget_investment_path(@budget, investment_selected) %></td>
             <td class="text-right"><%= investment_selected.cached_ballots_up %></td>
             <td class="text-right nowrap"><%= number_to_currency(investment_selected.price) %></td>
             <td class="text-right nowrap">
-              <% restante -=  investment_selected.price %>
-              <%= number_to_currency(restante) %>
+              <%= number_to_currency(budget) %>
             </td>
 
           </tr>
