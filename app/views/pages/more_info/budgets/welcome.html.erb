@@ -12,11 +12,7 @@
         <h2><span>Votación final de</span><br><span> presupuestos participativos 2017</span></h2>
         <div class="small-12 medium-6 margin-top">
           <%= link_to budget_path(Budget.last), class: "button expanded" do %>
-            <% if Budget.balloting.any? %>
-              Votar proyectos
-            <% else %>
-              Ver proyectos
-            <% end %>
+            Votar proyectos
           <% end %>
         </div>
       </div>
