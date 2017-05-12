@@ -1,0 +1,87 @@
+<div class="expanded no-margin-top padding">
+  <div class="row">
+    <div class="small-12 column">
+      <h1><%= t('budgets.index.title') %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title is-active">
+        <span class="sr-only"><%= t("shared.you_are_in") %></span>
+        <%= link_to t("results.results_link"), results_budget_path(@budget), class: "is-active" %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to t("stats.stats_link"), stats_budget_path(@budget) %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+      <div class="small-12 medium-2 column">
+        <ul class="menu vertical no-padding">
+          <!-- <li><strong><%= t("spending_proposals.results.geozone_selection_title") %></strong></li> -->
+
+          <% @budget.headings.each do |heading| %>
+            <li><%= link_to heading.name, results_budget_path(@budget, heading_id: heading.id) %></li>
+          <% end %>
+
+          <!-- <% geozone_select_options.each do |geozone| %>
+            <li><%= link_to content_tag(:strong, geozone[0]), participatory_budget_results_path(geozone_id: geozone[1]) %></li>
+          <% end %> -->
+        </ul>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="small-12 medium-10 column">
+    <% restante = @total_price %>
+    <table class="hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th><%= t("budgets.investments.investment.title") %></th>
+          <th class="text-right"><%= t("results.investment.suports") %></th>
+          <th class="text-right"><%= t("results.investment.ballots") %></th>
+          <th class="text-right nowrap"><%= t("results.investment.price") %></th>
+          <th class="text-right nowrap"><%= number_to_currency(@total_price) %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @investments_selected.each do |investment_selected| %>
+          <tr class="success">
+            <td><span class="icon-check"></span></td>
+            <td><%= link_to investment_selected.title, budget_investment_path(@budget, investment_selected), target: '_blank' %></td>
+            <td class="text-right"><%= investment_selected.cached_votes_up %></td>
+            <td class="text-right"><%= investment_selected.cached_ballots_up %></td>
+            <td class="text-right nowrap"><%= number_to_currency(investment_selected.price) %></td>
+            <td class="text-right nowrap">
+              <% restante -=  investment_selected.price %>
+              <%= number_to_currency(restante) %>
+            </td>
+
+          </tr>
+
+
+        <% end %>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
