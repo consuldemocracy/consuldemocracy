@@ -138,21 +138,57 @@
 .budgets-module {
   background: $budget;
 
-  .module {
-    display: table;
+  h2 {
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+    }
   }
 
-  .module-content {
-    display: table-cell;
-    vertical-align: middle;
+  .budgets-date {
+    background: $campaign-red;
+    color: white;
+    display: inline-block;
+    font-size: rem-calc(24);
+    line-height: $line-height;
+    margin-bottom: $line-height/2;
+    padding: $line-height/4 $line-height/2;
   }
 
   .button {
     background: black;
     color: white;
+    font-weight: bold;
   }
 
   a:not(.button) {
     text-decoration: underline;
+  }
+}
+
+@include breakpoint(medium) {
+  .typewriter h2 {
+    overflow: hidden;
+    border-right: 2px solid #5A6175;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation:
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #5A6175; }
   }
 }
