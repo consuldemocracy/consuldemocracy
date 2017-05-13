@@ -3,7 +3,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   feature_flag :budgets
 
   before_action :restrict_access_to_assigned_items, only: [:show, :edit, :valuate]
-  before_action :restrict_access, only: [:show, :edit, :valuate]
+  before_action :restrict_access, only: [:edit, :valuate]
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
