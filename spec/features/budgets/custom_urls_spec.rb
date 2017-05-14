@@ -10,14 +10,14 @@ feature 'Custom urls' do
 
   scenario "budgets" do
     visit budgets_path
-    click_link "Presenta tu proyecto"
+    click_link "Votar proyectos"
 
     expect(current_path).to eq("/presupuestos/big-budget")
   end
 
   scenario "groups" do
     visit budgets_path
-    click_link "Presenta tu proyecto"
+    click_link "Votar proyectos"
     click_link "Health"
 
     expect(current_path).to eq("/presupuestos/big-budget/health")
@@ -25,7 +25,7 @@ feature 'Custom urls' do
 
   scenario "headings" do
     visit budgets_path
-    click_link "Presenta tu proyecto"
+    click_link "Votar proyectos"
     click_link "Health"
     click_link "More hospitals"
 
@@ -36,7 +36,7 @@ feature 'Custom urls' do
     heading2.destroy
 
     visit budgets_path
-    click_link "Presenta tu proyecto"
+    click_link "Votar proyectos"
     click_link "Health"
 
     expect(current_path).to eq("/presupuestos/big-budget/health/more-hospitals")
@@ -44,7 +44,7 @@ feature 'Custom urls' do
 
   scenario "investments" do
     visit budgets_path
-    click_link "Presenta tu proyecto"
+    click_link "Votar proyectos"
     click_link "Health"
     click_link "More hospitals"
     click_link "Pediatric's hospital"
