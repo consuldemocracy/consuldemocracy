@@ -289,7 +289,7 @@ class Budget
     end
 
     def log_reclassification
-      self.previous_heading_id = self.heading_id_was
+      update_column(:previous_heading_id, heading_id_was)
     end
 
     def remove_reclassified_votes
