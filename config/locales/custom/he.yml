@@ -1,7 +1,9 @@
+---
 he:
   account:
     show:
       change_credentials_link: שינוי ההרשאות שלי
+
       email_on_comment_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מעיר להצעות או לדיונים שלי
       email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מגיב על ההערות שלי
       erase_account_link: מחק את החשבון שלי
@@ -33,7 +35,7 @@ he:
 
       verified_account: החשבון זוהה בהצלחה
 
-      verify_my_account: נא לוודא החשבון שלי
+      verify_my_account: אימות חשבון
 
   application:
     close: סגירה
@@ -193,14 +195,14 @@ he:
       description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
       faq: לעזרה טכנית
       more_info: למידע נוסף
-      open_data_text: כל מידע בקשר למועצת העיר נגיש עבורך
+      open_data_text: כלההצעת והמידע נגיש עבורך
       open_data_title: מידע נגיש
       open_source: תוכנת קוד פתוח
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: אתם/ן קובעים/ות איך תתנהל העיר בה אתם/ן גרים/ות
+      participation_text: אתם/ן קובעים/ות איך תתנהל המדינה בה אתם/ן גרים/ות
       participation_title: השתתפות
       privacy: מדיניות הפרטיות
-      transparency_text: גלו כל מה שמעניין לדעת על העיר
+      transparency_text: גלו כל מה שמעניין לדעת על מה אפשר לעשות במדינה
       transparency_title: שקיפות
       transparency_url: https://transparency.consul
     header:
@@ -221,13 +223,14 @@ he:
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
       notifications: התראות
+      more_info: עוד מידע
       new_notifications:
         one: יש לך התראה חדשה
         other: יש לך %{count} התראות חדשות
       no_notifications: "אין לך התראות חדשות"
       open: פתיחה
-      open_city_slogan_html: יש ערים וישובים שמנוהלים באופן ישיר בידי התושבים בהם, שיכולים <b>לדון</b> בנושאים שמדאיגים אותם או חשובים להם, <b>להציע</b> תכניות ורעיונות שישפרו את חייהם ואז <b>לקבוע</b> בעצמם מה ההצעות שיבוצעו בשטח.
-      open_city_title: נאהב את העיר, והיא תהפוך למקום שנאהב
+      open_city_slogan_html:  ערים ומדינות בעולם מתנהלות באופן ישיר בידי התושבים בהם, שיכולים <b>לדון</b> בנושאים שמדאיגים אותם או חשובים להם, <b>להציע</b> תכניות ורעיונות שישפרו את חייהם ואז <b>לקבוע</b> בעצמם מה ההצעות שיבוצעו בשטח.</b> עכשיו גם בישראל
+      open_city_title:  קול העם מזמינה אתכם לכתוב ולהחליט על העתיד שלנו ביחד
       open_gov: ממשל פתוח
       proposals: הצעות
       proposal_ballot: הצבעה
@@ -366,6 +369,8 @@ he:
       recommendation_four: אנו מזמינים אותך ליהנות מהמקום הזה והקולות הממלאים אותו. הוא שייך גם לך.
       recommendation_one: בכתיבה באנגלית, נבקש להימנע מכתיבת כותרת הדיון או משפטים שלמים בו באותיות ראשיות. כאן באינטרנט, זה נחשב לצעוק. ואיש לא אוהב שצועקים עליו.
       recommendation_three: ביקורת חריפה תתקבל בברכה - כאן בדיוק המקום לחשוב לעומק. אבל נבקש ממך לשמור על הנימוס ועל השכל הישר. העולם הוא מקום טוב יותר כשיש בו אותם.
+      
+
       start_new: הצעה חדשה
     notice:
       retired: ההצעה הוסרה
@@ -603,14 +608,14 @@ he:
       retire: "לפרוש"
       retired: "פרשת מזה"
   votes:
-    agree: אני מסכים/ה
+    agree: הסכמה
     anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
     comment_unauthenticated: חובה %{signin} או %{signup} להצבעה.
-    disagree: אני לא מסכים/ה
+    disagree: התנגדות
     organizations: ארגונים אינם רשאים להצביע
-    signin: לחץ/י לכניסת התחברות
-    signup: לחץ/י להרשמה
-    supports: לחץ’י לתמיכה
+    signin: לחיצה לכניסת התחברות
+    signup: לחיצה  להרשמה
+    supports: לחיצה לתמיכה
     unauthenticated: חובה %{signin} כניסות או %{signup} נרשמים, כדי להמשיך
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
     verify_account: אימות חשבונך
@@ -629,17 +634,17 @@ he:
       different_heading_assigned: ניתן לתמוך בהצעות באיזור אחד בלבד
   welcome:
     debates:
-      description: לפגישות, דיונים ושיתוף הדברים שחשובים לנו בעירנו
+      description: לפגישות, דיונים ודיוק הצעות לקראת הצעה סופית
       title: דיונים
     decide:
-      description: העם מחליט אם הוא מקבל או דוחה את ההצעות הנתמכות ביותר
-      title: ההחלטה שלך
+      description: חברי התנועה מחליטים  אם הוא מקבל או דוחה את ההצעות הנתמכות ביותר
+      title: ההצבעות שלך
     do:
-      description: אם ההצעה מקובלת על הרוב, מועצת העיר מקבלת אותה וזה נעשה
-      title: זה נעשה
+      description: אם ההצעה מקובלת על הרוב, היא תעלה למצע התנועה ותקודם על ידי חבריה  
+      title: זה יעשה
     proposal:
-      description: פתיחת מקום להצעות האזרחים/ות על סוג העיר שבה אנו רוצים/ות לחיות 
-      title: ההצעה שלך
+      description: מקום להצעות האזרחים/ות על סוג המדינה שבה אנו רוצים/ות לחיות 
+      title: ההצעות שלך
     verification:
       i_dont_have_an_account: אין לי חשבון
       i_have_an_account: כבר יש לי חשבון

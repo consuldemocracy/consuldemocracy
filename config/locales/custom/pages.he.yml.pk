@@ -1,0 +1,157 @@
+---
+he:
+  pages:
+    census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
+    conditions: Terms and conditions of use
+    general_terms: Terms and Conditions
+    more_info:
+      title: "Discover %{org_name}"
+      subtitle: "Learn everything you can do on this website."
+      guide: 'This guide explains each section of %{org_name}. You can expand the information on "Detailed information" links.'
+      menu:
+        debates: "Debates"
+        proposals: "Proposals"
+        budgets: "Participatory budgets"
+        other: "Other information of interest"
+      debates:
+        title: "Debates"
+        description: "Create a thread where you can discuss any topic you want to share with other people in your city."
+        feature_1: "To create a debate you have to %{link}"
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "Debates can be rated using the <strong>I agree</strong> or <strong>I disagree</strong> buttons you'll find on each of them."
+        image_alt: "Buttons to rate the debates"
+        figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
+      proposals:
+        title: "Proposals"
+        description: "Propose what you want the City Council to do and support proposals from other people."
+        feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
+        feature_3_html: "If there are more people in favor than against, <strong>the City Council will publish their plan to accomplish</strong> the proposal and you can track its progress."
+        image_alt: "Button to support a proposal"
+        figcaption_html: 'Button to "Support" a proposal.<br>When it reaches the number of supports will go to vote.'
+      budgets:
+        title: "Participatory Budgeting"
+        description: "The first six months of each year you can decide how to spend part of the budget."
+        feature_1: "To submit an investment project you have to %{link} and verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2_html: "The first is the <strong>submit phase</strong> of investment projects."
+        feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
+        feature_4_html: "At the end there is a <strong>vote phase </strong> where it is decided on which part of the budget is spent."
+        image_alt: "Different phases of a participatory budget"
+        figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
+      polls:
+        title: "Polls"
+        description: "Citizen proposals that reach 1% of support will be put to a vote."
+        feature_1: "To participate in the next poll you have to %{link} and verify your account."
+        feature_1_link: "sign up on %{org_name}"
+        feature_2: "All verified users over 16 years old can vote."
+        feature_3: "The results of all votes shall be binding on the government."
+      faq:
+        title: "Technical problems?"
+        description: "Read the FAQs and solve your questions."
+        button: "View frequently asked questions"
+      other:
+        how_to_use: "Use %{org_name} in your city"
+        world: "Citizen participation in the world"
+        facts: "Facts about citizen participation and direct democracy"
+      how_to_use:
+        text: |-
+          Use it in your local government or help us to improve it, it is free software.
+
+          This Open Government Portal use the [Consul app](https://github.com/ayuntamientomadrid 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
+    debate: 
+      titles:
+        how_to_use: Use it in your local government
+    privacy: Privacy Policy
+    titles:
+      accessibility: Accessibility
+      conditions: Terms of use
+      more_info: "More information about %{org_name}"
+      privacy: Privacy Policy
+    verify:
+      code: Code you received in letter
+      email: Email
+      info: 'For verufy your account introduce your access data:'
+      info_code: 'Now introduce the code you received in letter:'
+      password: Password
+      submit: Verify my account
+      title: Verify your account
+
+    census_terms: בכדי לאשר את חשבונך, עליך להיות בגיל 16 ומעלה ולהירשם כמשתמש/ת, לאחר שמסרת את כל הפרטים שביקשנו למעלה, יתבצע אימות חשבון. בהסכמתך לתהליך האימות, הנך מסכימ/ה גם לבדיקת כל המידע והפרטים שנמסרו, כולל דרכי ההתקשרות שנבחרו בקבצים אלה. המידע והפרטים שנמסרו למעלה יועתקו ויעובדו לקובץ שעליו הוסבר לך בדף תנאי וכללי השימוש של אתר זה.
+    conditions: תנאי וכללי השימוש
+    general_terms: תנאים וכללים
+    more_information:
+      description:
+        faq: תשובות לשאלות נפוצות בנושא בעיות טכניות
+        how_it_works: גלו כל מה שתוכלו לעשות בעזרת אתר זה
+        how_to_use: זוהי תוכנה חופשית בקוד פתוח. מותר להשתמש חופשי באתר זה, או לעזור לנו לשפר אותו.
+        participation: שקיפות, שיתוף אזרחי וממשל פתוח
+        participation_facts: להתגבר על פחדים וחששות
+        participation_world: שיטות שיתוף אזרחי שכבר עובדות ברחבי העולם
+        proposals_info: ליצירת הצעות משלך
+        signature_sheet: דף איסוף חתימות לתמיכה
+        spending_proposals_info: ליצירת הצעה משלך להקצאת תקציבים
+      how_it_works:
+        i: השתתפות
+        i1: אזור הדיונים
+        i2: אזור ההצעות
+        text: |-
+          האתר החדש לממשל פתוח מחולק לשלושה חלקים: השתתפות, שקיפות, ומידע נגיש (בקישורים ניתן לצפות למעלה מימין).
+          >**I. השתתפות:** בחלק זה אפשר לראות מה ההצעות לשיפור העיר (דרך הצעות התושבים, אזורי דיון, תקצוב השתתפותי, חקיקה משתפת, ודרכים רבות שאותן עוד נפתח)
+          **II. שקיפות:** Iבחלק הזה, יפורסם בכל יום מידע על איך העיר מנוהלת: שם, תפקיד, שכר, קשרים, חוזים, תוכניות, ועוד… של כל מי שמנהל תחום. זהו גם אזור שבו תוכלו לממש את זכותכם לקבלת מידע, ותוכלו לבקש בקלות ובמהירות כל מידע שתרצו לדעת על העירייה/המועצה.
+          **III. מידע נגיש:** בחלק הזה מפורסמים בגלוי מאגרי המידע של העירייה/המועצה, כדי שהמידע יהיה נגיש ופתוח לכל מי שרוצה להשתמש בו, בלי שתצטרכו לבקש ולהתחנן. תוכלו לבקש גם עוד מאגרי מידע שתרצו שנפרסם.
+
+          פתחנו את אתר ההשתתפות החדש, ובקרוב נפתח את אזור המידע הנגיש המחודש (בינתיים הקישורים ימשיכו להוביל לדף הקיים).
+          ## <a id='i'></a> I. השתתפות
+          באזור ההשתתפות תמצאו מגוון דרכים להיות שותפים לניהול העיר: הצעות תושבים, אזורי דיון, תקצוב השתתפותי, חקיקה משתפת, ועוד. כרגע תוכלו לבקר ולהשתתף בדיונים השונים, ואזור הצעות התושבים ייפתח בקרוב.
+          ## <a id='i1'></a>I.I. אזור הדיונים
+          באזור הדיונים כל אחד ואחת יכולים לפתוח דיון בכל תחום ונושא, כדי ליצור מרחב עצמאי שבו התושבים יכולים לקיים דיון בעד ונגד או איך לשפר כל נושא שיעלה. וכך, במרחב הרשת הזה יתקיימו מאות דיונים שונים שכל תושב יוכל לצפות בהם, ולהצטרף לאלה שבהם הוא או היא מתעניינים או רוצים לעזור.
+
+          את שרשור ההודעות וגם את ההערות והתגובות כל אחד יכול לראות, כך שהציבור, ולא מישהו שמחליט בשמו, יהיה זה שיקבע מה הם הנושאים הכי חשובים, דחופים, או מציקים בכל רגע ורגע. נושאים כאלה יוצגו בעמוד הראשי של אזור הדיונים, ואת שאר הנושאים עדיין אפשר יהיה לראות בדפים הבאים, או למצוא בעזרת שיטת הצגה (שתסדר הדיונים לפי הכי חדש, הכי הרבה תגובות, הכי קשה להסכמה, וכן הלאה).
+
+          לכל עובד/ת בעירייה או במועצה יש חשבון משתמש שהוקצה להם, מסומן בהתאם, שנותן להם להשתתף בדיונים באותו מעמד כמו של תושב רגיל. כך נוצר מרחב לתקשורת ישירה בין העירייה/המועצה והציבור, בלי בעיות של מידור תקשורת, בו השלטון שומע רק את מי שקרוב. כך יתממש החזון של עירייה חדשה, בה העירייה/המועצה פועלים אך ורק לטובת התושבים.
+          ## <a id='i2'></a> I.I. אזור ההצעות
+          באזור ההצעות כל אחד ואחת יכולים להציע יוזמה בכדי לצבור תומכים לרעיון, ויוזמות שצברו די תמיכה יעלו להצבעה בפני כלל התושבים להחלטה שתחייב את כלל התושבים.
+
+          בהצעות יכולים לתמוך כל אזרח ואזרחית שנרשמו במערכת, אחרי שביצעו אימות לחשבון המשתמש שלהם. באופן זה, התושבים, ולא מישהו שמחליט בשמם, הם אלה שיקבעו מי מההצעות הן טובות וחשובות מספיק כדי שיתבצעו.
+
+          ברגע שהצעה צברה תמיכה של 1% מהקהילה, היא תעלה לבדיקה בפני הצוות המתאים בעירייה/מועצה ותמשיך משם לשלב משאל הציבור, בו התושבים יצביעו אם לבצע את ההצעה או לא. את התמיכה הנדרשת צריך לצבור תוך 12 חודשים לכל היותר.
+      how_to_use:
+        text: |-
+          תוכלו להשתמש בתוכנה לטובת השלטון המקומי שלכם, או לעזור לנו לשפר אותה. היא תוכנה חופשית.
+
+          אתר זה לממשל בקוד פתוח משתמש בתוכנת [Consul app] (https://github.com/ayuntamientomadrid 'consul github') שהיא תוכנה חופשית, תחת רישיון [licence AGPLv3] (http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ובמילים פשוטות זה אומר שכל אחד רשאי להשתמש בקוד בחינם, להעתיק אותו, לצפות בו בפירוט, לשנות אותו ולהפיץ אותו בעולם עם השינויים שעשה (ולהרשות בכך לאחרים לעשות זאת גם כן). מפני שלדעתנו לשחרר את הקוד יהפוך את החברה לטובה ועשירה יותר.
+
+          אם את/ה מתכנת/ת, תוכלו לעיין בקוד ולעזור לנו לשפר אותו. בכתובת [Consul app](https://github.com/ayuntamientomadrid 'consul github').
+
+      titles:
+        faq: תשובות לשאלות טכניות נפוצות (FAQ)
+        how_it_works: איך עובד האתר הזה לממשל פתוח?
+        how_to_use: תשתמשו בו לשיפור השלטון המקומי שלכם
+        participation: שקיפות והשתתפות - חדשות אחרונות
+        participation_facts: מידע על שיתוף האזרח בשלטון ועל דמוקרטיה ישירה
+        participation_world: שיתוף אזרחי ברחבי העולם
+        proposals_info: איך עובדת הצעה אזרחית?
+        signature_sheet: דף חתימות
+        spending_proposals_info: איך עובד תקצוב שיתופי?
+    opendata:
+      slogan: "מידע חופשי הוא כוח"
+      title: מידע נגיש
+    privacy: מדיניות הפרטיות
+    titles:
+      accessibility: נגישות
+      conditions: תנאי השימוש
+      more_information: פרטים נוספים
+      opendata: מידע נגיש
+      privacy: מדיניות הפרטיות
+    verify:
+      code: הקוד שקיבלת במכתב
+      email: דואר אלקטרוני
+      info: 'הכנסת פרטי הגישה לאימות החשבון שלך:'
+      info_code: 'כעת הכנס/י הקוד שקיבלת בהודעה:'
+      password: סיסמה
+      submit: נא לאמת החשבון שלי
+      title: אימות החשבון
+
+
