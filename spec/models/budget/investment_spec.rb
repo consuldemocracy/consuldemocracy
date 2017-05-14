@@ -180,17 +180,24 @@ describe Budget::Investment do
   end
 
   describe "#should_show_ballots?" do
-    it "returns true in balloting phase" do
+    it "returns true in balloting phase for selected investments" do
       budget = create(:budget, phase: "balloting")
-      investment = create(:budget_investment, budget: budget)
+      investment = create(:budget_investment, :selected, budget: budget)
 
       expect(investment.should_show_ballots?).to eq(true)
+    end
+
+    it "returns false for unselected investments" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, :unselected, budget: budget)
+
+      expect(investment.should_show_ballots?).to eq(false)
     end
 
     it "returns false in any other phase" do
       Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
         budget = create(:budget, phase: phase)
-        investment = create(:budget_investment, budget: budget)
+        investment = create(:budget_investment, :selected, budget: budget)
 
         expect(investment.should_show_ballots?).to eq(false)
       end
