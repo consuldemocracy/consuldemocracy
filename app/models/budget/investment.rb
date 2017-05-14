@@ -61,7 +61,7 @@ class Budget
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
     before_save :calculate_confidence_score
-    before_save :log_reclasification
+    after_save :check_for_reclassification
 
     def self.filter_params(params)
       params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
@@ -165,8 +165,6 @@ class Budget
 
     def permission_problem(user)
       return :not_logged_in unless user
-      return nil if budget.beta_testing?
-
       return :organization  if user.organization?
       return :not_verified  unless user.can?(:vote, Budget::Investment)
       return nil
@@ -181,10 +179,10 @@ class Budget
     end
 
     def valid_heading?(user)
-      reclasification?(user) || !different_heading_assigned?(user)
+      reclassification?(user) || !different_heading_assigned?(user)
     end
 
-    def reclasification?(user)
+    def reclassification?(user)
       headings_voted_by_user(user).count > 1 &&
       headings_voted_by_user(user).include?(heading_id)
     end
@@ -277,17 +275,30 @@ class Budget
       where(heading_id: heading_ids)
     end
 
+    def check_for_reclassification
+      if reclassified?
+        log_reclassification
+        remove_reclassified_votes
+      end
+    end
+
+    def reclassified?
+      budget.balloting? && heading_id_changed?
+    end
+
+    def log_reclassification
+      update_column(:previous_heading_id, heading_id_was)
+    end
+
+    def remove_reclassified_votes
+      Budget::Ballot::Line.where(investment: self).destroy_all
+    end
+
     private
 
       def set_denormalized_ids
         self.group_id = self.heading.try(:group_id) if self.heading_id_changed?
         self.budget_id ||= self.heading.try(:group).try(:budget_id)
-      end
-
-      def log_reclasification
-        if heading_id_changed?
-          self.previous_heading_id = self.heading_id_was
-        end
       end
 
   end

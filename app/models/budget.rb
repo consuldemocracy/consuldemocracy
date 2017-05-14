@@ -122,12 +122,16 @@ class Budget < ActiveRecord::Base
     end
   end
 
-  def beta_testing?
-    Rails.env.preproduction?
+  def email_selected
+    investments.selected.each do |investment|
+      Mailer.budget_investment_selected(investment).deliver_later
+    end
   end
 
-  def self.beta_testing?
-    Rails.env.preproduction?
+  def email_unselected
+    investments.unselected.each do |investment|
+      Mailer.budget_investment_unselected(investment).deliver_later
+    end
   end
 
   private
