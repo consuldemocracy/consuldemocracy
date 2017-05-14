@@ -64,7 +64,7 @@ describe "Budget::Ballot::Line" do
       ballot = create(:budget_ballot, user: user, budget: investment.budget)
 
       allow_any_instance_of(Budget::Ballot::Line).
-      to receive(:city_heading).and_return(investment.heading.id)
+      to receive(:city_heading_id).and_return(investment.heading.id)
 
       create(:budget_ballot_line, ballot: ballot, investment: investment)
 
