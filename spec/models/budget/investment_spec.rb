@@ -55,8 +55,12 @@ describe Budget::Investment do
   end
 
   it "logs previous heading value if it is changed" do
-    heading_1 = create(:budget_heading)
-    heading_2 = create(:budget_heading)
+    budget = create(:budget, phase: "balloting")
+
+    group = create(:budget_group, budget: budget)
+
+    heading_1 = create(:budget_heading, group: group)
+    heading_2 = create(:budget_heading, group: group)
 
     investment = create(:budget_investment, heading: heading_1)
 
