@@ -1456,6 +1456,7 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
+    t.integer  "balloted_heading_id"
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
