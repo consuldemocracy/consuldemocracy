@@ -677,6 +677,24 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(expected_path)
     end
 
+    scenario "Do not display vote button for unselected investments in index" do
+      investment = create(:budget_investment, :unselected, heading: heading)
+
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
+
+      expect(page).to have_content investment.title
+      expect(page).to_not have_link("Vote")
+    end
+
+    scenario "Do not display vote button for unselected investments in show" do
+      investment = create(:budget_investment, :unselected, heading: heading)
+
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_content investment.title
+      expect(page).to_not have_link("Vote")
+    end
+
     scenario "Reclassification" do
       user = create(:user, :level_two)
       investment = create(:budget_investment, :selected, heading: heading)
