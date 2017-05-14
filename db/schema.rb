@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514082037) do
+ActiveRecord::Schema.define(version: 20170514192303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -964,6 +964,7 @@ ActiveRecord::Schema.define(version: 20170514082037) do
     t.boolean  "officing_voter",                                              default: false
     t.text     "former_users_data_log",                                       default: ""
     t.integer  "failed_email_digests_count",                                  default: 0
+    t.integer  "balloted_heading_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
