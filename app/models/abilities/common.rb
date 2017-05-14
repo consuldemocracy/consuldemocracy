@@ -41,7 +41,7 @@ module Abilities
         can :vote, Comment
       end
 
-      if user.level_two_or_three_verified? || Budget.beta_testing?
+      if user.level_two_or_three_verified?
         can :create, SpendingProposal
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
@@ -52,7 +52,7 @@ module Abilities
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
 
-        if user.old_enough_to_participate? || Budget.beta_testing?
+        if user.old_enough_to_participate?
           can :vote, Proposal
           can :vote_featured, Proposal
           can :vote, SpendingProposal
