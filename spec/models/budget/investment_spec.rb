@@ -715,9 +715,13 @@ describe Budget::Investment do
       it "stores the previous heading before being reclassified" do
         investment = create(:budget_investment, heading: heading1)
 
+        expect(investment.heading_id).to eq(heading1.id)
+        expect(investment.previous_heading_id).to eq(nil)
+
         investment.heading = heading2
         investment.save
 
+        investment.reload
         expect(investment.heading_id).to eq(heading2.id)
         expect(investment.previous_heading_id).to eq(heading1.id)
       end
