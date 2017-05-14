@@ -535,7 +535,7 @@ describe Budget::Investment do
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
 
-      it "allows voting in investments of headings where I have already voted due to a reclasification" do
+      it "allows voting in investments of headings where I have already voted due to a reclassification" do
         districts   = create(:budget_group, budget: budget)
         carabanchel = create(:budget_heading, group: districts)
         salamanca   = create(:budget_heading, group: districts)
@@ -560,7 +560,7 @@ describe Budget::Investment do
       end
     end
 
-    describe "reclasification" do
+    describe "reclassification" do
 
       it "returns false if I have not voted" do
         districts   = create(:budget_group, budget: budget)
@@ -568,7 +568,7 @@ describe Budget::Investment do
 
         investment = create(:budget_investment, heading: carabanchel)
 
-        expect(investment.reclasification?(user)).to eq(false)
+        expect(investment.reclassification?(user)).to eq(false)
       end
 
       it "returns false if I have voted once in a single heading of a group" do
@@ -579,7 +579,7 @@ describe Budget::Investment do
 
         create(:vote, votable: investment, voter: user)
 
-        expect(investment.reclasification?(user)).to eq(false)
+        expect(investment.reclassification?(user)).to eq(false)
       end
 
       it "returns false if I have voted twice in a single heading of a group" do
@@ -592,7 +592,7 @@ describe Budget::Investment do
         create(:vote, votable: investment1, voter: user)
         create(:vote, votable: investment2, voter: user)
 
-        expect(investment1.reclasification?(user)).to eq(false)
+        expect(investment1.reclassification?(user)).to eq(false)
       end
 
       it "returns false if I have voted in two headings of the same group but I am voting in a different heading" do
@@ -608,7 +608,7 @@ describe Budget::Investment do
         create(:vote, votable: carabanchel_investment, voter: user)
         create(:vote, votable: salamanca_investment, voter: user)
 
-        expect(latina_investment.reclasification?(user)).to eq(false)
+        expect(latina_investment.reclassification?(user)).to eq(false)
       end
 
       it "returns true if I have voted in two headings of the same group and I am voting in one of those headings" do
@@ -623,7 +623,7 @@ describe Budget::Investment do
         create(:vote, votable: carabanchel_investment, voter: user)
         create(:vote, votable: salamanca_investment, voter: user)
 
-        expect(salamanca_investment2.reclasification?(user)).to eq(true)
+        expect(salamanca_investment2.reclassification?(user)).to eq(true)
       end
 
     end
@@ -773,9 +773,116 @@ describe Budget::Investment do
         end
 
       end
+    end
+  end
+
+  describe "Reclassification" do
+
+    let(:budget)   { create(:budget, phase: "balloting")   }
+    let(:group)    { create(:budget_group, budget: budget) }
+    let(:heading1) { create(:budget_heading, group: group) }
+    let(:heading2) { create(:budget_heading, group: group) }
+
+    describe "reclassified?" do
+
+      it "returns true if budget is in balloting phase and heading has changed" do
+        investment = create(:budget_investment, heading: heading1)
+        investment.heading = heading2
+
+        expect(investment.reclassified?).to eq(true)
+      end
+
+      it "returns false if heading has not changed" do
+        investment = create(:budget_investment)
+        investment.heading = investment.heading
+
+        expect(investment.reclassified?).to eq(false)
+      end
+
+      it "returns false if budget is not balloting phase" do
+        Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+          budget.update(phase: phase)
+          investment = create(:budget_investment, budget: budget)
+
+          investment.heading = heading2
+
+          expect(investment.reclassified?).to eq(false)
+        end
+      end
+
+    end
+
+    describe "log_reclassification" do
+
+      it "stores the previous heading before being reclassified" do
+        investment = create(:budget_investment, heading: heading1)
+
+        investment.heading = heading2
+        investment.save
+
+        expect(investment.heading_id).to eq(heading2.id)
+        expect(investment.previous_heading_id).to eq(heading1.id)
+      end
+
+    end
+
+    describe "remove_reclassified_votes" do
+
+      it "removes votes from invesment" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.heading = heading2
+        investment.remove_reclassified_votes
+
+        investment.reload
+        expect(investment.ballot_lines_count).to eq(0)
+      end
+
+    end
+
+    describe "check_for_reclassification" do
+
+      it "removes votes if an investment has been reclassified" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.heading = heading2
+        investment.save
+        investment.reload
+
+        expect(investment.ballot_lines_count).to eq(0)
+      end
+
+      it "does not remove votes if the investment has not been reclassifed" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.save
+        investment.reload
+
+        expect(investment.ballot_lines_count).to eq(3)
+      end
 
     end
 
   end
-
 end

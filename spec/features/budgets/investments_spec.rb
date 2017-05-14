@@ -677,6 +677,26 @@ feature 'Budget Investments' do
       expect(page).to have_current_path(expected_path)
     end
 
+    scenario "Reclassification" do
+      user = create(:user, :level_two)
+      investment = create(:budget_investment, :selected, heading: heading)
+      heading2 = create(:budget_heading, group: group)
+
+      ballot = create(:budget_ballot, user: user, budget: budget)
+      ballot.investments << investment
+
+      login_as(user)
+      visit budget_ballot_path(budget)
+
+      expect(page).to have_content("You have voted one investment")
+
+      investment.heading = heading2
+      investment.save
+
+      visit budget_ballot_path(budget)
+
+      expect(page).to have_content("You have voted 0 investment")
+    end
   end
 
   context "Navigation" do

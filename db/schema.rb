@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 20170514082037) do
     t.string   "label"
     t.boolean  "visible_to_valuators",                  default: false
     t.integer  "ballot_lines_count",                    default: 0
+    t.integer  "previous_heading_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree

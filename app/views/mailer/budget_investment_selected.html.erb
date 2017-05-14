@@ -1,0 +1,38 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.budget_investment_selected.hi") %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.budget_investment_selected.selected_html",
+        title: @investment.title) %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.budget_investment_selected.share") %>
+  </p>
+
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="padding-bottom: 12px; text-align: center;">
+          <%= link_to budget_investment_url(@investment.budget, @investment, anchor: "social-share"), style: "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; background: #f7f5f2; border-radius: 6px; color: #3d3d66 !important; font-weight: bold; margin: 0px; padding: 10px 15px; text-align: center; text-decoration: none; min-width: 160px; display: inline-block;" do %>
+              <%= image_tag('icon_mailer_share.png',  style: "border: 0; display: inline-block; width: 100%; max-width: 16px", alt: "") %>
+              <%= t('mailers.budget_investment_selected.share_button') %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.budget_investment_selected.thanks") %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.budget_investment_selected.sincerely") %><br>
+  <span style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 12px;font-weight: normal;line-height: 24px; color: #ccc;">
+    <%= t("mailers.budget_investment_selected.signatory") %></span>
+  </p>
+</td>
