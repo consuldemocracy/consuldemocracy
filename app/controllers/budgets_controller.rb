@@ -212,8 +212,9 @@ class BudgetsController < ApplicationController
     end
 
     def district_population
-        { "Tota la ciutat" => 140000 }
-      end
+      { "Tota la ciutat" => 140000 }
+    end
+
     def total_unknown_gender_or_age
       stats_cache('total_unknown_gender_or_age') {
         participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count

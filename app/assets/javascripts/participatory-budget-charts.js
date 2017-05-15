@@ -1,22 +1,22 @@
 // Chart sex
-var doughnutDataSex = [
+var load_charts = function(){
+  var sex = document.getElementById("sps-chart-sex").getContext("2d");
+
+  var doughnutDataSex = [
     {
-      value: 23038,
+      value: $("#sps-chart-sex").data('malescount'),
       color:"#FF6600",
       highlight: "#fc9550",
-      label: "Hombres"
+      label: $("#sps-chart-sex").data('maleslabel')
     },
     {
-      value: 22244,
+      value: $("#sps-chart-sex").data('femalescount'),
       color: "#FF9E01",
       highlight: "#fbc56d",
-      label: "Mujeres"
+      label: $("#sps-chart-sex").data('femaleslabel')
     },
   ];
 
-
-var load_charts = function(){
-  var sex = document.getElementById("sps-chart-sex").getContext("2d");
   window.myDoughnut = new Chart(sex).Doughnut(doughnutDataSex, {responsive : true});
 };
 

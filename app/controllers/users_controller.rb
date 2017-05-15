@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w{proposals debates budget_investments comments votes}, only: :show
+  has_filters %w{proposals debates budget_investments comments votes ballot_lines}, only: :show
 
   load_and_authorize_resource
   helper_method :author?
@@ -16,7 +16,8 @@ class UsersController < ApplicationController
                           debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
-                          votes: votes_count)
+                          votes: votes_count,
+                          ballot_lines: ballot_lines_count)
     end
 
     def load_filtered_activity
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
       when "budget_investments" then load_budget_investments
       when "comments"  then load_comments
       when "votes"  then load_votes
+      when "ballot_lines"  then load_ballot_lines
       else load_available_activity
       end
     end
@@ -47,6 +49,9 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:votes] > 0
         load_votes
         @current_filter = "votes"
+      elsif  @activity_counts[:ballot_lines] > 0
+        load_ballot_lines
+        @current_filter = "ballot_lines"
       end
     end
 
@@ -57,11 +62,23 @@ class UsersController < ApplicationController
       @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size
     end
 
+    def ballot_lines_count
+      return 0 if @user != current_user
+      ballot = Budget::Ballot.includes(:lines).where(user_id: @user.id).last
+      ballot.present? ? ballot.lines.count : 0
+    end
+
     def load_votes
       return [] if @user != current_user
       budgets_current = Budget.includes(:investments).where(phase: 'selecting')
       investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
       @votes = @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids)
+    end
+
+    def load_ballot_lines
+      return [] if @user != current_user
+      @ballot_lines = Budget::Ballot.includes(:lines).where(user_id: @user.id).last.lines
+      # @ballot_lines = @user.votes.for_type(Budget::Investment).where(votable_id: investment_ids)
     end
 
     def load_proposals

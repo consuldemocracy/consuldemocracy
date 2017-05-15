@@ -1,33 +1,16 @@
-<!-- <div class="expanded no-margin-top padding">
+<div class="expanded no-margin-top padding">
   <div class="row">
     <div class="small-12 column">
       <h1><%= t('budgets.index.title') %></h1>
     </div>
   </div>
-</div> -->
-
-
+</div>
 <% cache [@stats, @geozones] do %>
-  <% provide :title, t("spending_proposals.stats.page_title") %>
-  <!-- <%# provide :social_media_meta_tags do %>
-    <%# render "shared/social_media_meta_tags_participatory_budget" %>
-  <%# end %> -->
+  <% provide :title, t("stats.page_title") %>
 
   <%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "participatory-budget-charts", 'data-turbolinks-track' => true %>
 
-  <!-- <div class="expanded spending-proposals results no-margin-top">
-    <div class="row">
-      <div class="small-12 column padding text-center">
-        <%# link_to participatory_budget_path, class: "left back" do %>
-          <i class="icon-angle-left"></i>
-          <%# t("pages.processes.back") %>
-        <%# end %>
-
-        <h1 class="title"><%= t("spending_proposals.stats.heading") %></h1>
-      </div>
-    </div>
-  </div> -->
 
   <div class="row margin-top">
     <div class="small-12 column">
@@ -49,7 +32,7 @@
     <div class="row">
       <div class="small-12 column">
         <div class="panel purple text-center">
-          <p>TOTAL PARTICIPANTES</p>
+          <p><%= t('stats.total_participants') %></p>
           <p id="total_participants" class="big-number-stat">
             <%= @stats[:total_participants] %>
           </p>
@@ -63,7 +46,7 @@
       <!-- Resultados generales -->
       <div class="small-12 medium-6 column text-right">
         <div class="panel light-green" data-equalizer-watch>
-          <p>TOTAL PROPUESTAS ENVIADAS</p>
+          <p><%= t('stats.total_budgets_investments_send') %></p>
           <p id="total_spending_proposals" class="big-number-stat">
             <%= @stats[:total_budgets_investmens] + @stats[:paper_budgets_invesments] %>
           </p>
@@ -74,47 +57,47 @@
         <p class="chart-legend" data-equalizer-watch>
           <span class="label" style="background: #9CC56A"></span>&nbsp;
           <span id="total_feasible_spending_proposals">
-            <strong>PROPUESTAS EN LA FASE FINAL</strong>:
+            <strong><%= t('stats.budget_investments_final_phase') %></strong>:
             <%= @stats[:total_feasible_budgets_investments] %><br>
           </span>
 
           <span class="label" style="background: #E87461"></span>&nbsp;
           <span id="total_unfeasible_spending_proposals">
-            <strong>PROPUESTAS INVIABLES</strong>:
+            <strong><%= t('stats.budget_investments_unfeasibles') %></strong>:
             <%= @stats[:total_unfeasible_budgets_investments] %><br>
           </span>
 
           <br>
 
           <span class="label" style="background: #d0cef6"></span>&nbsp;
-          <strong>FASE DE APOYOS</strong>:
+          <strong><%= t('stats.support_phase') %></strong>:
           <span id="total_participants_support_phase">
-            <%= @stats[:total_participants_support_phase] %> <em>Participantes</em>,
+            <%= @stats[:total_participants_support_phase] %> <em><%= t('stats.participantes') %></em>,
           </span>
           <span id="total_supports">
-            <%= @stats[:total_supports] %> <em>Apoyos</em><br>
+            <%= @stats[:total_supports] %> <em><%= t('stats.supports') %></em><br>
           </span>
 
           <span class="label" style="background: #454372"></span>&nbsp;
-          <strong>FASE DE VOTACIÓN</strong>:
+          <strong><%= t('stats.ballot_phase') %></strong>:
           <span id="total_participants_vote_phase">
-            <%= @stats[:total_participants_vote_phase] %> <em>Participantes</em>,
+            <%= @stats[:total_participants_vote_phase] %> <em><%= t('stats.participantes') %></em>,
           </span>
           <span id="total_votes">
-            <%= @stats[:total_votes] %> <em>Votos</em><br>
+            <%= @stats[:total_votes] %> <em><%= t('stats.ballots') %></em><br>
           </span>
         </p>
       </div>
     </div>
 
     <div class="clear"></div>
-    <hr class="double">
+    <!-- <hr class="double"> -->
 
     <div class="row" data-equalizer>
 
       <!-- Participación por sexo -->
       <div class="small-12 column">
-        <h2 class="subtitle">Participación<br>por sexo</h2>
+        <h2 class="subtitle"><%= t('stats.sex_participation') %></h2>
       </div>
 
       <hr>
@@ -124,7 +107,13 @@
           <%= image_tag ('participatory_budget_stats/sex.png') %>
           <br>
           <div class="large-offset-3 large-5 padding">
-            <canvas id="sps-chart-sex" width="300" height="300"></canvas>
+            <canvas id="sps-chart-sex" width="300" height="300"
+                    data-maleslabel='<%= t('stats.males')%>'
+                    data-femaleslabel='<%= t('stats.females')%>'
+                    data-malescount='<%= @stats[:total_male_participants] %>'
+                    data-femalescount='<%= @stats[:total_female_participants] %>'
+                    >
+            </canvas>
           </div>
         </div>
       </div>
@@ -134,7 +123,7 @@
           <div class="panel text-right chart-legend">
             <p id="male_percentage" >
               <span class="label" style="background: #FF6600"></span>
-              &nbsp;HOMBRES
+              &nbsp;<%= t('stats.males') %>
               (<%= number_to_percentage(@stats[:male_percentage],
                                         strip_insignificant_zeros: true,
                                         precision: 2) %>)
@@ -149,7 +138,7 @@
           <div class="panel text-left chart-legend">
             <p id="female_percentage">
               <span class="label" style="background: #FF9E01"></span>
-              &nbsp;MUJERES
+              &nbsp;<%= t('stats.females') %>
               (<%= number_to_percentage(@stats[:female_percentage],
                                         strip_insignificant_zeros: true,
                                         precision: 2) %>)
@@ -166,10 +155,10 @@
 
       <!-- Participación por grupos de edad -->
       <div class="small-12 column margin-top">
-        <h2 class="subtitle">Participación por<br> grupos de edad</h2>
+        <h2 class="subtitle"><%= t('stats.age_participation') %></h2>
       </div>
 
-      <hr class="double">
+      <!-- <hr class="double"> -->
 
       <%= render 'budgets_investments_results_age' %>
     </div>
