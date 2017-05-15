@@ -66,7 +66,7 @@ class BudgetsController < ApplicationController
   end
 
   def stats_cache(key, &block)
-    Rails.cache.fetch("budget_investmens_stats/201705152240/#{key}", &block)
+    Rails.cache.fetch("budget_investmens_stats/201705152241/#{key}", &block)
   end
 
   def authors
