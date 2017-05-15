@@ -3,3 +3,4 @@
 <%= render "budget_investments" if @budget_investments.present? && feature?(:budgets) %>
 <%= render "comments" if @comments.present? %>
 <%= render "votes" if @votes.present? %>
+<%= render "ballot_lines" if @ballot_lines.present? %>

@@ -36,6 +36,9 @@ va:
         votes:
           one: "1 Aval"
           other: "%{count} Avals"
+        ballot_lines:
+          one: 1 Vot
+          other: "%{count} Vots"
       no_activity: Usuari sense activitat pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: "Aquest usuari ha decidit mantenir en privat la seua llista d'activitats"

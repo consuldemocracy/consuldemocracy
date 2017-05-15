@@ -36,6 +36,9 @@ es:
         votes:
           one: 1 Aval
           other: "%{count} Avales"
+        ballot_lines:
+          one: 1 Voto
+          other: "%{count} Votos"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
