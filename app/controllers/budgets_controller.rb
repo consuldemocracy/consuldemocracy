@@ -215,7 +215,7 @@ class BudgetsController < ApplicationController
     end
 
     def district_population
-        { "Tota la ciutat" => 170990 }
+        { "Tota la ciutat" => 140000 }
       end
     def total_unknown_gender_or_age
       stats_cache('total_unknown_gender_or_age') {
