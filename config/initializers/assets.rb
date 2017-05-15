@@ -16,6 +16,9 @@ Rails.application.config.assets.precompile += %w( stat_graphs.js )
 Rails.application.config.assets.precompile += %w( print.css )
 Rails.application.config.assets.precompile += %w( ie.css )
 
+Rails.application.config.assets.precompile += %w( chart.js )
+Rails.application.config.assets.precompile += %w( participatory-budget-charts.js )
+
 # Loads app/assets/images/custom before app/assets/images
 images_path = Rails.application.config.assets.paths
 images_path = images_path.insert(0, Rails.root.join("app", "assets", "images", "custom").to_s)

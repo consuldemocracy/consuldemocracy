@@ -38,4 +38,9 @@ module BudgetsHelper
   def current_ballot
     Budget::Ballot.where(user: current_user, budget: @budget).first
   end
+
+  def css_for_highlight_investment_stat(phase)
+    phase == "all" ? "success" : ""
+  end
+
 end
