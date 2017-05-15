@@ -2,24 +2,22 @@ User:
   fields:
     id:                 integer
     username:           string
-    debates:            [Debate]
-    proposals:          [Proposal]
-    comments:           [Comment]
-    organization:       Organization
+    public_debates:     [Debate]
+    public_proposals:   [Proposal]
+    public_comments:    [Comment]
+#    organization:       Organization
 Debate:
   fields:
     id:                 integer
     title:              string
     description:        string
-    created_at:         string
+    public_created_at:  string
     cached_votes_total: integer
     cached_votes_up:    integer
     cached_votes_down:  integer
     comments_count:     integer
     hot_score:          integer
     confidence_score:   integer
-    geozone_id:         integer
-    geozone:            Geozone
     comments:           [Comment]
     public_author:      User
     votes_for:          [Vote]
@@ -34,7 +32,7 @@ Proposal:
     comments_count:       integer
     hot_score:            integer
     confidence_score:     integer
-    created_at:           string
+    public_created_at:    string
     summary:              string
     video_url:            string
     geozone_id:           integer
@@ -53,7 +51,7 @@ Comment:
     commentable_id:     integer
     commentable_type:   string
     body:               string
-    created_at:         string
+    public_created_at:  string
     cached_votes_total: integer
     cached_votes_up:    integer
     cached_votes_down:  integer
@@ -67,11 +65,11 @@ Geozone:
     name:             string
 ProposalNotification:
   fields:
-    title:            string
-    body:             string
-    proposal_id:      integer
-    created_at:       string
-    proposal:         Proposal
+    title:             string
+    body:              string
+    proposal_id:       integer
+    public_created_at: string
+    proposal:          Proposal
 ActsAsTaggableOn::Tag:
   fields:
     id:               integer
@@ -80,12 +78,12 @@ ActsAsTaggableOn::Tag:
     kind:             string
 Vote:
   fields:
-    votable_id:       integer
-    votable_type:     string
-    public_timestamp: string
-    vote_flag:        boolean
-Organization:
-  fields:
-    id:               integer
-    user_id:          integer
-    name:             string
+    votable_id:        integer
+    votable_type:      string
+    public_created_at: string
+    vote_flag:         boolean
+# Organization:
+#   fields:
+#     id:               integer
+#     user_id:          integer
+#     name:             string

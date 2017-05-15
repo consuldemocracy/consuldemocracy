@@ -286,6 +286,18 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
+  def public_proposals
+    public_activity? ? proposals : []
+  end
+
+  def public_debates
+    public_activity? ? debates : []
+  end
+
+  def public_comments
+    public_activity? ? comments : []
+  end
+
   private
 
     def clean_document_number

@@ -84,18 +84,33 @@ describe 'Vote' do
       expect(Vote.public_for_api).not_to include(vote)
     end
 
+    it 'blocks votes on comments on hidden proposals' do
+      hidden_proposal = create(:proposal, :hidden)
+      comment_on_hidden_proposal = create(:comment, commentable: hidden_proposal)
+      vote = create(:vote, votable: comment_on_hidden_proposal)
+
+      expect(Vote.public_for_api).to_not include(vote)
+    end
+
+    it 'blocks votes on comments on hidden debates' do
+      hidden_debate = create(:debate, :hidden)
+      comment_on_hidden_debate = create(:comment, commentable: hidden_debate)
+      vote = create(:vote, votable: comment_on_hidden_debate)
+
+      expect(Vote.public_for_api).to_not include(vote)
+    end
+
     it 'blocks any other kind of votes' do
       spending_proposal = create(:spending_proposal)
       vote = create(:vote, votable: spending_proposal)
 
       expect(Vote.public_for_api).not_to include(vote)
     end
-  end
 
-  describe '#public_timestamp' do
-    it "truncates created_at timestamp up to minutes" do
-      vote = create(:vote, created_at: Time.zone.parse('2016-02-10 15:30:45'))
-      expect(vote.public_timestamp).to eq(Time.zone.parse('2016-02-10 15:00:00'))
+    it 'blocks votes without votable' do
+      vote = build(:vote, votable: nil).save!(validate: false)
+
+      expect(Vote.public_for_api).not_to include(vote)
     end
   end
 end

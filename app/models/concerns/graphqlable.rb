@@ -29,4 +29,8 @@ module Graphqlable
 
   end
 
+  def public_created_at
+    self.created_at.change(min: 0)
+  end
+
 end

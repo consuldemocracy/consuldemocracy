@@ -44,11 +44,7 @@ module GraphQL
             field(field_name, -> { created_types[field_type] }) do
               resolve -> (object, arguments, context) do
                 association_target = object.send(field_name)
-                if association_target.nil?
-                  nil
-                else
-                  field_type.public_for_api.find_by(id: association_target.id)
-                end
+                association_target.present? ? field_type.public_for_api.find_by(id: association_target.id) : nil
               end
             end
           when :multiple_association
