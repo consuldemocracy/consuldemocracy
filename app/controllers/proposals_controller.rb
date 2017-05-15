@@ -22,6 +22,11 @@ class ProposalsController < ApplicationController
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
+  def new
+    @proposal = Proposal.new
+    # @proposal.build_problem
+  end
+
   def index_customization
     discard_archived
     load_retired
