@@ -42,4 +42,9 @@ module BudgetsHelper
   def investment_tags_select_options
     Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
+
+  def css_for_highlight_investment_stat(phase)
+    phase == "all" ? "success" : ""
+  end
+
 end
