@@ -124,9 +124,19 @@ en:
     table_head: "Investment project's title"
     delete: "Delete from my list"
     list_title: "Investment projects recommended by:"
-    no_recommendations: "You have not selected any investment project yet."
+    no_recommendations: "You have not selected any investment project for the %{phase} phase."
+    phase:
+      selecting: selecting
+      balloting: final voting
     view_list: "View my investment projects list"
     create_ok: "Investment project added to the list"
     create_error: "Invalid ID"
     deleted: "Investment project removed from the list"
     share: "Share your list of your recommended investment projects with this link:"
+  welcome:
+    budgets:
+      title: "100 million to make Madrid"
+      text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
+      date: "From May 15 to June 30"
+      button: "Vote projects"
+      more_info: "More information about participatory budgets"
