@@ -6,26 +6,27 @@ module Budgets
     before_action :authenticate_user!, except: [:index]
 
     before_action :load_budget
+    before_action :load_phase
     before_action :load_user, only: [:index]
     before_action :load_ballot, only: [:index]
 
     load_and_authorize_resource :budget
 
     def index
-      @investments = @user.budget_recommendations.includes(:investment).by_budget(@budget.id).map(&:investment)
+      @investments = @user.budget_recommendations.includes(:investment).by_budget(@budget.id).by_phase(@phase).map(&:investment)
       @investment_ids = @investments.map(&:id)
       load_investment_votes(@investments)
     end
 
     def new
-      @recommendations = current_user.budget_recommendations.includes(:investment).by_budget(@budget.id)
+      @recommendations = current_user.budget_recommendations.includes(:investment).by_budget(@budget.id).by_phase(@phase)
     end
 
     def create
       investment = ::Budget::Investment.find(recommendation_params[:investment_id]) rescue nil
       feedback = { alert: I18n.t("delegation.create_error") }
       if investment
-        ::Budget::Recommendation.create(user: current_user, investment_id: investment.id, budget_id: investment.budget_id)
+        ::Budget::Recommendation.create(user: current_user, investment_id: investment.id, budget_id: investment.budget_id, phase: @phase)
         feedback = { notice: I18n.t("delegation.create_ok") }
       end
       redirect_to new_budget_recommendation_path(budget_id: @budget.id), feedback
@@ -45,6 +46,10 @@ module Budgets
 
       def load_budget
         @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      end
+
+      def load_phase
+        @phase = @budget.balloting_or_later? ? "balloting" : "selecting"
       end
 
       def load_ballot

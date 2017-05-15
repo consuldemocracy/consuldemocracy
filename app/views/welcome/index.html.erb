@@ -2,13 +2,13 @@
 <% provide :meta_description, t("meta_tags.welcome_index.description") %>
 <% provide :tracking_page_number, "23" %>
 
-<% cache ["welcome_index_20170509", user_signed_in?] do %>
+<% cache ["welcome_index_20170515", user_signed_in?] do %>
   <div class="welcome">
     <div class="no-margin-top">
       <%= render "budgets_module" %>
     </div>
 
-    <%= render "polls_results" %>
+    <%# render "polls_results" %>
 
     <%# render "cards" %>
 

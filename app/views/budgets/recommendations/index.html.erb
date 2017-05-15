@@ -23,7 +23,7 @@
 <div class="expanded jumbo-budget padding no-margin-top margin-bottom">
   <div class="row">
     <div class="small-12 column">
-      <%= back_link_to budget_path(@budget) %>
+      <%= link_to @budget.name, budget_path(@budget) %>
 
       <h1 class="margin-top">
         <%= t("delegation.list_title") %>&nbsp;<%= link_to @user.name, user_path(@user.id) %>
