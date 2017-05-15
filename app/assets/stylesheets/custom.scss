@@ -2014,7 +2014,6 @@ ul.ballot-list {
     background: #f9f9f9;
     line-height: $line-height;
     margin-bottom: $line-height/4;
-    padding: $line-height/2;
     position: relative;
 
     a {
@@ -2504,6 +2503,7 @@ $budget-custom: #5A6175 !important;
 }
 
 .progress-votes {
+  z-index: 3;
 
   .progress {
     background: #212033;
@@ -2559,10 +2559,6 @@ ul.ballot-list {
     border: 1px solid white;
     margin-right: $line-height/2;
   }
-}
-
-.budget-investment .participation-not-allowed {
-  height: auto;
 }
 
 .budget-investment, .budget-investment-show,
