@@ -30,7 +30,7 @@ class BudgetsController < ApplicationController
   end
 
   def stats
-    @headings = @budget.headings
+    # @headings = @budget.headings
     stats = {}
     stats[:total_participants] = total_participants
     stats[:total_participants_support_phase] = total_participants_support_phase
@@ -47,7 +47,7 @@ class BudgetsController < ApplicationController
     stats[:female_percentage] = female_percentage
     stats[:total_unknown_gender_or_age] = total_unknown_gender_or_age
     stats[:age_groups] = age_groups
-    stats[:headings] = headings
+    # stats[:headings] = headings
     #
     @stats = stats
   end
