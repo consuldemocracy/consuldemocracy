@@ -50,6 +50,7 @@ Setting["twitter_hashtag"] = nil
 Setting["facebook_handle"] = nil
 Setting["youtube_handle"] = nil
 Setting["telegram_handle"] = nil
+Setting["instagram_handle"] = nil
 Setting["blog_url"] = nil
 Setting["transparency_url"] = nil
 Setting["opendata_url"] = "/opendata"
