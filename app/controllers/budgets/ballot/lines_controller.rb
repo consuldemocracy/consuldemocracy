@@ -18,9 +18,7 @@ module Budgets
         load_investment
         load_heading
 
-        unless @ballot.add_investment(@investment)
-          head :bad_request
-        end
+        @ballot.add_investment(@investment)
       end
 
       def destroy
