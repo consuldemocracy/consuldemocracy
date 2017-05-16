@@ -68,6 +68,10 @@ a {
   &:hover {
     text-decoration: none !important;
   }
+
+  &.warning, &.warning:hover {
+    color: black;
+  }
 }
 
 .button.hollow {
