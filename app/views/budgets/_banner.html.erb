@@ -1,0 +1,16 @@
+<div class="budgets-banner">
+  <span class="budgets-date">
+    <strong><%= t("budgets_banner.date") %></strong>
+  </span>
+  <%= link_to budget_path(Budget.last) do %>
+    <h2><%= t("budgets_banner.title") %></h2>
+  <% end %>
+
+  <%= link_to budget_path(Budget.last) do %>
+    <div class="arrow-link bounce-arrow">
+      <span class="icon-angle-right">
+        <span class="sr-only"><%= t("budgets_banner.button") %></span>
+      </span>
+    </div>
+  <% end %>
+</div>
