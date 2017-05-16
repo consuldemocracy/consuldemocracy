@@ -528,6 +528,7 @@ es:
     youtube: YouTube
     whatsapp: WhatsApp
     telegram: Telegram
+    instagram: Instagram
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
