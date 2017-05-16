@@ -37,6 +37,9 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
+      problem:
+        one: "Problema"
+        other: "Problemas"
       poll/booth:
         one: "urna"
         other: "urnas"
@@ -89,6 +92,11 @@ es:
         question: "Pregunta"
         description: "Descripción"
         terms_of_service: "Términos de servicio"
+        problem: "Problema"
+      problem:
+        title: "Título"
+        summary: "Resumen"
+        description: "Descripción"
       user:
         email: "Correo electrónico"
         username: "Nombre de usuario"
