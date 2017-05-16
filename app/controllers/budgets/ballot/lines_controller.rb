@@ -27,7 +27,6 @@ module Budgets
 
         @line.destroy
         load_investments
-        #@ballot.reset_geozone
       end
 
       private
