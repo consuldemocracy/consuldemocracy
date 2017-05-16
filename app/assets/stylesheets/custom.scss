@@ -2593,6 +2593,65 @@ ul.ballot-list {
   }
 }
 
+.budgets-banner {
+  background: black;
+  padding: $line-height/2;
+  position: relative;
+
+  .budgets-date {
+    background: $campaign-red;
+    color: white;
+    display: inline-block;
+    margin-bottom: $line-height/2;
+    padding: 0 $line-height/4;
+  }
+
+  h2 {
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+  }
+
+  a h2 {
+    color: white;
+  }
+
+  a:hover, a:hover h2 {
+    text-decoration: none !important;
+  }
+
+  .arrow-link {
+    color: white;
+    font-size: rem-calc(48);
+    line-height: rem-calc(48);
+    margin-top: rem-calc(-24);
+    position: absolute;
+    right: 12px;
+    top: 50%;
+  }
+}
+
+@-webkit-keyframes bounce-arrow {
+  0%, 20%, 50%, 80%, 100% {transform: translate(0, 0);}
+  40% {transform: translate(-60px, 0);}
+  60% {transform: translate(-24px, 0);}
+}
+
+@keyframes bounce-arrow {
+  0%, 20%, 50%, 80%, 100% {transform: translate(0, 0);}
+  40% {transform: translate(-60px, 0);}
+  60% {transform: translate(-24px, 0);}
+}
+
+@include breakpoint(medium) {
+
+  .bounce-arrow {
+    -webkit-animation: bounce-arrow 2s infinite;
+    animation: bounce-arrow 2s infinite;
+  }
+}
+
 // 12. Nvotes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
