@@ -68,6 +68,10 @@ a {
   &:hover {
     text-decoration: none !important;
   }
+
+  &.warning, &.warning:hover {
+    color: black;
+  }
 }
 
 .button.hollow {
@@ -1132,13 +1136,16 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   color: black;
 }
 
-.is-author {
-  background: #00A5F1;
+.is-author, .is-association {
   color: black;
 }
 
+.is-author {
+  background: #00A5F1;
+}
+
 .is-association {
-  background: #C0392B;
+  background: #E38D83;
 }
 
 .level-1 {
