@@ -1,6 +1,9 @@
 <% provide :title, t("meta_tags.welcome_index.title") %>
 <% provide :meta_description, t("meta_tags.welcome_index.description") %>
 <% provide :tracking_page_number, "23" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
 
 <% cache ["welcome_index_20170515", user_signed_in?] do %>
   <div class="welcome">

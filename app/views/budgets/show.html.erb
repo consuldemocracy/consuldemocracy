@@ -1,3 +1,7 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_url(@budget, filter: @current_filter) %>
+<% end %>
+
 <div class="expanded budget no-margin-top">
   <div class="row" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-9 column padding" data-equalizer-watch>
