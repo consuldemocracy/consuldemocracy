@@ -342,6 +342,46 @@ describe Budget::Investment do
         expect(Budget::Investment.unfeasible).to eq [unfeasible_investment]
       end
     end
+
+    describe "not_unfeasible" do
+      it "should return all feasible and undecided investments" do
+        unfeasible_investment = create(:budget_investment, :unfeasible)
+        undecided_investment = create(:budget_investment, :undecided)
+        feasible_investment = create(:budget_investment, :feasible)
+
+        expect(Budget::Investment.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
+      end
+    end
+
+    describe "undecided" do
+      it "should return all undecided investments" do
+        unfeasible_investment = create(:budget_investment, :unfeasible)
+        undecided_investment = create(:budget_investment, :undecided)
+        feasible_investment = create(:budget_investment, :feasible)
+
+        expect(Budget::Investment.undecided).to eq [undecided_investment]
+      end
+    end
+
+    describe "selected" do
+      it "should return all selected investments" do
+        selected_investment = create(:budget_investment, :selected)
+        unselected_investment = create(:budget_investment, :unselected)
+
+        expect(Budget::Investment.selected).to eq [selected_investment]
+      end
+    end
+
+    describe "unselected" do
+      it "should return all unselected not_unfeasible investments" do
+        selected_investment = create(:budget_investment, :selected)
+        unselected_unfeasible_investment = create(:budget_investment, :unselected, :unfeasible)
+        unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
+        unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
+
+        expect(Budget::Investment.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
+      end
+    end
   end
 
   describe "apply_filters_and_search" do

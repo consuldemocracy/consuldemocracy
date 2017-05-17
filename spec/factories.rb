@@ -275,6 +275,10 @@ FactoryGirl.define do
       unfeasibility_explanation "set to unfeasible on creation"
     end
 
+    trait :undecided do
+      feasibility "undecided"
+    end
+
     trait :finished do
       valuation_finished true
     end
