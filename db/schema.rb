@@ -63,12 +63,6 @@ ActiveRecord::Schema.define(version: 20170517123042) do
   add_index "annotations", ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
   add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "banners", force: :cascade do |t|
     t.string   "title",           limit: 80
     t.string   "description"

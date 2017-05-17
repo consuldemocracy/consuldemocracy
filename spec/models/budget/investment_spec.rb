@@ -681,7 +681,7 @@ describe Budget::Investment do
 
   end
 
-  describe "Reclassification", :focus do
+  describe "Reclassification" do
 
     let(:budget)   { create(:budget, phase: "balloting")   }
     let(:group)    { create(:budget_group, budget: budget) }
@@ -737,7 +737,7 @@ describe Budget::Investment do
 
     describe "store_reclassified_votes" do
 
-      it "stores the votes for a reclassified investment", :focus do
+      it "stores the votes for a reclassified investment" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times do
@@ -780,7 +780,7 @@ describe Budget::Investment do
 
     end
 
-    describe "check_for_reclassification", :focus do
+    describe "check_for_reclassification" do
 
       it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
         investment = create(:budget_investment, :selected, heading: heading1)

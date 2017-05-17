@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Budget::ReclassifiedVote do
 
-  describe "Validations", :focus do
+  describe "Validations" do
     let(:reclassified_vote) { build(:budget_reclassified_vote) }
 
     it "should be valid" do

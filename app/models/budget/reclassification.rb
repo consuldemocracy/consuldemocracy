@@ -21,17 +21,20 @@ class Budget
       budget.balloting? && heading_id_changed?
     end
 
-    def log_heading_change
-      update_column(:previous_heading_id, heading_id_was)
-    end
-
     def marked_as_unfeasible?
       budget.balloting? && feasibility_changed? && unfeasible?
     end
 
+    def log_heading_change
+      update_column(:previous_heading_id, heading_id_was)
+    end
+
     def store_reclassified_votes(reason)
       ballot_lines_for_investment.each do |line|
-        Budget::ReclassifiedVote.create!(user: line.ballot.user, investment: self, reason: reason)
+        attrs = { user: line.ballot.user,
+                  investment: self,
+                  reason: reason }
+        Budget::ReclassifiedVote.create!(attrs)
       end
     end
 
