@@ -1,4 +1,8 @@
 <% provide :title do %><%= t('pages.titles.accessibility') %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: page_url("accessibility") %>
+<% end %>
+
 <div class="row">
 <div class="small-12 column">
   <h1>Accesibilidad</h1>
