@@ -9,6 +9,9 @@ Disallow: /comments/
 
 Disallow: /*?*locale
 Disallow: /*?*order
+Disallow: /*?*search
+Disallow: /*?*locale-switcher
+Disallow: user_id
 
 # Allow search by category
 Allow: /*?*search=Asociaciones
