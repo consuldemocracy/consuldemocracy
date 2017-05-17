@@ -173,18 +173,6 @@ en:
       password: Password
       submit: Verify my account
       title: Verify your account
-  participatory_budget:
-    in_two_minutes:
-      date_1: February 22 to March 31
-      date_1_info: Collecting proposals
-      date_2: April 1 to April 15
-      date_2_info: Support
-      date_3: April 16 to May 14
-      date_3_info: Evaluation
-      date_4: May 15 to June 30
-      date_4_info: Final vote
-      title_html: You decide how to invest 60 million euros<br> to your city
-      title_page: Participatory budgeting
   annotator:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
