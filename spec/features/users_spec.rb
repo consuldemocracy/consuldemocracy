@@ -75,6 +75,7 @@ feature 'Users' do
 
       @user.debates.each do |debate|
         expect(page).to have_content(debate.title)
+        expect(page).to have_content(debate.total_votes)
       end
 
       @user.proposals.each do |proposal|
@@ -89,6 +90,7 @@ feature 'Users' do
 
       @user.comments.each do |comment|
         expect(page).to have_content(comment.body)
+        expect(page).to have_content(comment.total_votes)
       end
 
       @user.proposals.each do |proposal|

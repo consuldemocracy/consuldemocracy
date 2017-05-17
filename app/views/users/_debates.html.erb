@@ -4,6 +4,13 @@
       <td>
         <%= link_to debate.title, debate %>
       </td>
+      <td>
+      	 <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
+            <span class="total-votes">
+    			<%= t("debates.debate.votes", count: debate.total_votes) %>
+  			</span>
+        </div>
+      </td>
     </tr>
   <% end %>
 </table>
