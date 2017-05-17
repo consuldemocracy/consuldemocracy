@@ -88,6 +88,14 @@
               <% end %>
             </li>
           <% end %>
+          <% if setting['instagram_handle'] %>
+            <li class="inline-block">
+              <%= link_to "https://www.instagram.com/#{setting['instagram_handle']}", target: "_blank", title: t("social.instagram") + t('shared.target_blank_html'), rel: "nofollow" do %>
+                <span class="sr-only"><%= t("social.instagram") %></span>
+                <span class="icon-instagram" aria-hidden="true"></span>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

@@ -17,12 +17,15 @@ Setting.create(key: 'votes_for_proposal_success', value: '100')
 Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
+
 Setting.create(key: 'twitter_handle', value: '@decidemadrid')
 Setting.create(key: 'twitter_hashtag', value: '#decidemadrid')
 Setting.create(key: 'facebook_handle', value: 'decidemadrid')
 Setting.create(key: 'youtube_handle', value: 'decidemadrid')
 Setting.create(key: 'telegram_handle', value: 'decidemadrid')
+Setting.create(key: 'instagram_handle', value: 'decidemadrid')
 Setting.create(key: 'blog_url', value: 'https://diario.madrid.es/decidemadrid/')
+
 Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Decide Madrid')
 Setting.create(key: 'place_name', value: 'City')

@@ -38,6 +38,10 @@
         <%= render "shared/banner" %>
       <% end %>
 
+      <% if Budget.balloting.any? %>
+        <%= render "budgets/banner" %>
+      <% end %>
+
       <% unless @tag_filter || @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>

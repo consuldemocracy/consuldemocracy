@@ -43,6 +43,10 @@
         <%= render "shared/banner" %>
       <% end %>
 
+      <% if Budget.balloting.any? %>
+        <%= render "budgets/banner" %>
+      <% end %>
+
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
