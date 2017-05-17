@@ -173,9 +173,6 @@ en:
       password: Password
       submit: Verify my account
       title: Verify your account
-  participatory_budget:
-    in_two_minutes:
-      title_page: Participatory budgeting
   annotator:
     help:
       alt: Select the text you want to comment and press the button with the pencil.

@@ -178,9 +178,6 @@ es:
       password: Contraseña
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
-  participatory_budget:
-    in_two_minutes:
-      title_page: Presupuestos participativos
   annotator:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
