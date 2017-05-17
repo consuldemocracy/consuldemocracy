@@ -592,7 +592,7 @@ feature 'Ballots' do
       end
     end
 
-    scenario 'Insufficient functs (removed after destroying from sidebar)', :js do
+    scenario 'Insufficient funds (removed after destroying from sidebar)', :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
 
@@ -618,6 +618,29 @@ feature 'Ballots' do
         find("div.ballot").hover
         expect(page).to_not have_content('Price is higher than the available amount left')
         expect(page).to have_selector('.in-favor a', visible: true)
+      end
+    end
+
+    scenario "Edge case voting a non-elegible investment", :js do
+      investment1 = create(:budget_investment, :selected, heading: new_york, price: 10000)
+
+      login_as(user)
+      visit budget_path(budget)
+      click_link "States"
+      click_link "New York"
+
+      new_york.update(price: 10)
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_selector('.in-favor a', visible: true)
+        find('.add a').trigger('click')
+
+        expect(page.status_code).to eq(200)
+        expect(page).to_not have_content "Remove"
+        expect(page).to have_selector('.participation-not-allowed', visible: false)
+        find("div.ballot").hover
+        expect(page).to have_selector('.participation-not-allowed', visible: true)
+        expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
 
