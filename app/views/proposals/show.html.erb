@@ -5,6 +5,10 @@
             social_title: @proposal.title,
             social_description: @proposal.summary %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+<% end %>
+
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">

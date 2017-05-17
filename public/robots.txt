@@ -10,3 +10,5 @@ Disallow: /comments/
 Disallow: /*?*locale
 Disallow: /*?*order
 Disallow: /*?*search
+Disallow: /*?*locale-switcher
+Disallow: user_id
