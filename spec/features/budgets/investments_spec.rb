@@ -670,7 +670,7 @@ feature 'Budget Investments' do
       expect(page).to_not have_link("Vote")
     end
 
-    scenario "Reclassification" do
+    scenario "Reclassification", :focus do
       user = create(:user, :level_two)
       investment = create(:budget_investment, :selected, heading: heading)
       heading2 = create(:budget_heading, group: group)
