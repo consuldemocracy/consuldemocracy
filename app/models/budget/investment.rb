@@ -244,22 +244,40 @@ class Budget
     end
 
     def check_for_reclassification
-      if reclassified?
-        log_reclassification
-        remove_reclassified_votes
-      end
+     if heading_changed?
+       log_heading_change
+       store_reclassified_votes("heading_changed")
+       remove_reclassified_votes
+     elsif marked_as_unfeasible?
+       store_reclassified_votes("unfeasible")
+       remove_reclassified_votes
+     end
     end
 
-    def reclassified?
+    def heading_changed?
       budget.balloting? && heading_id_changed?
     end
 
-    def log_reclassification
+    def log_heading_change
       update_column(:previous_heading_id, heading_id_was)
     end
 
+    def marked_as_unfeasible?
+      budget.balloting? && feasibility_changed? && unfeasible?
+    end
+
+    def store_reclassified_votes(reason)
+      ballot_lines_for_investment.each do |line|
+        Budget::ReclassifiedVote.create!(user: line.ballot.user, investment: self, reason: reason)
+      end
+    end
+
     def remove_reclassified_votes
-      Budget::Ballot::Line.where(investment: self).destroy_all
+      ballot_lines_for_investment.destroy_all
+    end
+
+    def ballot_lines_for_investment
+      Budget::Ballot::Line.by_investment(self.id)
     end
 
     private
