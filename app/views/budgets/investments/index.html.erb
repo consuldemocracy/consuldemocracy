@@ -5,7 +5,11 @@
              i18n_namespace: "budgets.investments.index.search_form" %>
 <% end %>
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: budget_investments_url(@budget, heading_id: @heading.id, filter: @current_filter) %>
+  <% if @heading.present? %>
+    <%= render "shared/canonical", href: budget_investments_url(@budget, heading_id: @heading.id, filter: @current_filter) %>
+  <% else %>
+    <%= render "shared/canonical", href: budget_investments_url(@budget) %>
+  <% end %>
 <% end %>
 
 <main id="budget-investments-main">
