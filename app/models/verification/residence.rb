@@ -31,9 +31,9 @@ class Verification::Residence
 
     user.update(document_number:       document_number,
                 document_type:         document_type,
-                geozone:               self.geozone,
+                geozone:               nil,
                 date_of_birth:         date_of_birth.to_datetime,
-                gender:                gender,
+                gender:                nil,
                 residence_verified_at: Time.current)
   end
 
