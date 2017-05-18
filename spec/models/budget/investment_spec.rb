@@ -728,20 +728,20 @@ describe Budget::Investment do
     let(:heading1) { create(:budget_heading, group: group) }
     let(:heading2) { create(:budget_heading, group: group) }
 
-    describe "reclassified?" do
+    describe "heading_changed?" do
 
       it "returns true if budget is in balloting phase and heading has changed" do
         investment = create(:budget_investment, heading: heading1)
         investment.heading = heading2
 
-        expect(investment.reclassified?).to eq(true)
+        expect(investment.heading_changed?).to eq(true)
       end
 
       it "returns false if heading has not changed" do
         investment = create(:budget_investment)
         investment.heading = investment.heading
 
-        expect(investment.reclassified?).to eq(false)
+        expect(investment.heading_changed?).to eq(false)
       end
 
       it "returns false if budget is not balloting phase" do
@@ -751,13 +751,13 @@ describe Budget::Investment do
 
           investment.heading = heading2
 
-          expect(investment.reclassified?).to eq(false)
+          expect(investment.heading_changed?).to eq(false)
         end
       end
 
     end
 
-    describe "log_reclassification" do
+    describe "log_heading_change" do
 
       it "stores the previous heading before being reclassified" do
         investment = create(:budget_investment, heading: heading1)
@@ -773,6 +773,30 @@ describe Budget::Investment do
         expect(investment.previous_heading_id).to eq(heading1.id)
       end
 
+    end
+
+    describe "store_reclassified_votes" do
+
+      it "stores the votes for a reclassified investment" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.heading = heading2
+        investment.store_reclassified_votes("heading_changed")
+
+        reclassified_vote = Budget::ReclassifiedVote.first
+
+        expect(Budget::ReclassifiedVote.count).to eq(3)
+        expect(reclassified_vote.investment_id).to eq(investment.id)
+        expect(reclassified_vote.user_id).to eq(Budget::Ballot.first.user.id)
+        expect(reclassified_vote.reason).to eq("heading_changed")
+      end
     end
 
     describe "remove_reclassified_votes" do
@@ -798,7 +822,7 @@ describe Budget::Investment do
 
     describe "check_for_reclassification" do
 
-      it "removes votes if an investment has been reclassified" do
+      it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times do
@@ -813,9 +837,10 @@ describe Budget::Investment do
         investment.reload
 
         expect(investment.ballot_lines_count).to eq(0)
+        expect(Budget::ReclassifiedVote.count).to eq(3)
       end
 
-      it "does not remove votes if the investment has not been reclassifed" do
+      it "does not store reclassified votes nor remove actual votes if the investment has not been reclassifed" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
         3.times do
@@ -829,6 +854,7 @@ describe Budget::Investment do
         investment.reload
 
         expect(investment.ballot_lines_count).to eq(3)
+        expect(Budget::ReclassifiedVote.count).to eq(0)
       end
 
     end

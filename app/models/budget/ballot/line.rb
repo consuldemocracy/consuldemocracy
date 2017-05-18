@@ -13,6 +13,8 @@ class Budget
       validate :check_sufficient_funds
       validate :check_valid_heading
 
+      scope :by_investment, -> (investment_id) { where(investment_id: investment_id) }
+
       before_validation :set_denormalized_ids
 
       def check_sufficient_funds

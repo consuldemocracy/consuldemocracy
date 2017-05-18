@@ -306,6 +306,12 @@ FactoryGirl.define do
     association :investment, factory: :budget_investment
   end
 
+  factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
+    user
+    association :investment, factory: :budget_investment
+    reason "unfeasible"
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user

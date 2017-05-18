@@ -5,6 +5,7 @@ class Budget
     include Sanitizable
     include Taggable
     include Searchable
+    include Reclassification
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
@@ -61,7 +62,6 @@ class Budget
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
-    after_save :check_for_reclassification
 
     def self.filter_params(params)
       params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
@@ -241,25 +241,6 @@ class Budget
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
-    end
-
-    def check_for_reclassification
-      if reclassified?
-        log_reclassification
-        remove_reclassified_votes
-      end
-    end
-
-    def reclassified?
-      budget.balloting? && heading_id_changed?
-    end
-
-    def log_reclassification
-      update_column(:previous_heading_id, heading_id_was)
-    end
-
-    def remove_reclassified_votes
-      Budget::Ballot::Line.where(investment: self).destroy_all
     end
 
     private
