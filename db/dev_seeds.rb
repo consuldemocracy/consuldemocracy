@@ -21,6 +21,7 @@ Setting.create(key: 'twitter_hashtag', value: '#consul_dev')
 Setting.create(key: 'facebook_handle', value: 'consul')
 Setting.create(key: 'youtube_handle', value: 'consul')
 Setting.create(key: 'telegram_handle', value: 'consul')
+Setting.create(key: 'instagram_handle', value: 'consul')
 Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Consul')
@@ -416,9 +417,9 @@ tags = Faker::Lorem.words(10)
 end
 
 puts " ✅"
-print "Selecting Investments"
-Budget.balloting.reorder("RANDOM()").limit(3).each do |budget|
-  budget.investments.feasible.reorder("RANDOM()").limit(10).update_all(selected: true)
+print "Balloting Investments"
+Budget.balloting.last.investments.each do |investment|
+  investment.update(selected: true, feasibility: "feasible")
 end
 
 puts " ✅"

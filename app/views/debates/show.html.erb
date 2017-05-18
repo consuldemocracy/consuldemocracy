@@ -1,4 +1,8 @@
 <% provide :title do %><%= @debate.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debate_url(@debate) %>
+<% end %>
+
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
   <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
@@ -52,12 +56,11 @@
         <h2><%= t("debates.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @debate.title.gsub(/\s/, '&nbsp;') %>&nbsp;<%= debate_url(@debate) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-              <span class="sr-only"><%= t("social.whatsapp") %></span>
-            </a>
-          <% end %>
+          <a href="whatsapp://send?text=<%= @debate.title.gsub(/\s/, '%20') %>&nbsp;<%= debate_url(@debate) %>"
+             class="show-for-small-only" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+            <span class="sr-only"><%= t("social.whatsapp") %></span>
+          </a>
         </div>
       </aside>
     </div>

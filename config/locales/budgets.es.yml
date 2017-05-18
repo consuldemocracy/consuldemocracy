@@ -5,11 +5,12 @@ es:
         title: Mis votos
         amount_spent: Coste total
         remaining: "Te quedan <span>%{amount}</span> para invertir"
+        no_balloted_group_yet: "Todavía no has votado proyectos de este grupo, ¡vota!"
         remove: Quitar voto
         voted_html:
           one: "Has votado <span>una</span> propuesta."
           other: "Has votado <span>%{count}</span> propuestas."
-        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que inviertas todo el dinero disponible."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: "Todavía no has votado ninguna propuesta de inversión."
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup} para continuar.
@@ -24,6 +25,8 @@ es:
         title: Selecciona una opción
         unfeasible_title: Propuestas inviables
         unfeasible: Ver propuestas inviables
+        unselected_title: Propuestas no seleccionadas para la votación final
+        unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
       accepting: Presentación de proyectos
       reviewing: Revisión interna de proyectos
@@ -58,8 +61,10 @@ es:
           voted_html:
             one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
             other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
-          voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
-          zero: "Todavía no has votado ninguna propuesta de inversión."
+          voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          voted_info_link: cambiar tus votos
+          different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+          zero: "Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto."
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
           create: "Crear propuesta de inversión"
@@ -84,10 +89,11 @@ es:
         title: Propuesta de inversión
         supports: Apoyos
         votes: Votos
+        price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         title: Propuesta de inversión
-        add: Añadir
+        add: Votar
         already_added: "Ya has añadido esta propuesta de inversión"
         already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
         support_title: Apoyar esta propuesta
@@ -107,3 +113,5 @@ es:
       phase: Fase actual
       unfeasible_title: Propuestas inviables
       unfeasible: Ver las propuestas inviables
+      unselected_title: Propuestas no seleccionadas para la votación final
+      unselected: Ver las propuestas no seleccionadas para la votación final

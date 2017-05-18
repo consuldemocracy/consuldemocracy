@@ -20,6 +20,7 @@ es:
     facebook_handle: "Identificador de Facebook"
     youtube_handle: "Usuario de Youtube"
     telegram_handle: "Usuario de Telegram"
+    instagram_handle: "Usuario de Instagram"
     blog_url: "URL del blog"
     transparency_url: "URL de transparencia"
     opendata_url: "URL de open data"

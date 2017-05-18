@@ -1,4 +1,7 @@
 <% provide :title do %><%= @investment.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_investment_url %>
+<% end %>
 
 <%= render partial: '/budgets/investments/investment_show', locals: {
   investment: @investment,

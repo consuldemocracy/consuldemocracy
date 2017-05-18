@@ -4,6 +4,13 @@
              search_path: budget_investments_path(budget_id: @budget.id, page: 1),
              i18n_namespace: "budgets.investments.index.search_form" %>
 <% end %>
+<% content_for :canonical do %>
+  <% if @heading.present? %>
+    <%= render "shared/canonical", href: budget_investments_url(@budget, heading_id: @heading.id, filter: @current_filter) %>
+  <% else %>
+    <%= render "shared/canonical", href: budget_investments_url(@budget) %>
+  <% end %>
+<% end %>
 
 <main id="budget-investments-main">
 
@@ -16,7 +23,7 @@
 
       <div class="small-12 search-results margin-bottom">
 
-        <% if params[:unfeasible].present? %>
+        <% if @current_filter == "unfeasible" %>
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
               <%= t("budgets.investments.index.unfeasible_text",
@@ -34,7 +41,7 @@
         <% end %>
       </div>
 
-      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless params[:unfeasible].present? %>
+      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
       <% @investments.each do |investment| %>
         <%= render partial: '/budgets/investments/investment', locals: {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428111355) do
+ActiveRecord::Schema.define(version: 20170517123042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,10 @@ ActiveRecord::Schema.define(version: 20170428111355) do
     t.index ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
   end
 
+  add_index "budget_ballot_lines", ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true, using: :btree
+  add_index "budget_ballot_lines", ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id", using: :btree
+  add_index "budget_ballot_lines", ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
+
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
@@ -136,10 +140,20 @@ ActiveRecord::Schema.define(version: 20170428111355) do
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
     t.integer  "ballot_lines_count",                    default: 0
-    t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
-    t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
-    t.index ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
-    t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+    t.integer  "previous_heading_id"
+  end
+
+  add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
+  add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+  add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
+  add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+
+  create_table "budget_reclassified_votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "investment_id"
+    t.string   "reason"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "budget_valuator_assignments", force: :cascade do |t|

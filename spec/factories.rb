@@ -275,12 +275,22 @@ FactoryGirl.define do
       unfeasibility_explanation "set to unfeasible on creation"
     end
 
+    trait :undecided do
+      feasibility "undecided"
+    end
+
     trait :finished do
       valuation_finished true
     end
 
     trait :selected do
       selected true
+      feasibility "feasible"
+      valuation_finished true
+    end
+
+    trait :unselected do
+      selected false
       feasibility "feasible"
       valuation_finished true
     end
@@ -294,6 +304,12 @@ FactoryGirl.define do
   factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
     association :ballot, factory: :budget_ballot
     association :investment, factory: :budget_investment
+  end
+
+  factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
+    user
+    association :investment, factory: :budget_investment
+    reason "unfeasible"
   end
 
   factory :vote do

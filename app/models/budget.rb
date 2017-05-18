@@ -67,6 +67,10 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def balloting_or_later?
+    balloting? || reviewing_ballots? || finished?
+  end
+
   def on_hold?
     reviewing? || valuating? || reviewing_ballots?
   end
@@ -106,6 +110,18 @@ class Budget < ActiveRecord::Base
       %w{random price}
     else
       %w{random confidence_score}
+    end
+  end
+
+  def email_selected
+    investments.selected.each do |investment|
+      Mailer.budget_investment_selected(investment).deliver_later
+    end
+  end
+
+  def email_unselected
+    investments.unselected.each do |investment|
+      Mailer.budget_investment_unselected(investment).deliver_later
     end
   end
 

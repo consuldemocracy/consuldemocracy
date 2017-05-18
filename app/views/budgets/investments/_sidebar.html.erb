@@ -13,6 +13,14 @@
   <% end %>
 <% end %>
 
+<% if @heading && can?(:show, @ballot) %>
+  <p class="callout">
+    <%= t("budgets.investments.index.sidebar.voted_info",
+        link: link_to(t("budgets.investments.index.sidebar.voted_info_link"),
+            budget_ballot_path(@budget))).html_safe %>
+  </p>
+<% end %>
+
 <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
 <%= render 'budgets/investments/categories' %>
 
@@ -32,6 +40,12 @@
             amount_spent: @ballot.formatted_amount_spent(@heading)) %>
       </em>
     </p>
+  <% elsif @assigned_heading.present? %>
+    <p><%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
+              heading_link: link_to(
+                @assigned_heading.name,
+                budget_investments_path(@budget, heading_id: @assigned_heading.try(:id)))
+            ) %></p>
   <% else %>
     <p><strong><%= t("budgets.investments.index.sidebar.zero") %></strong></p>
   <% end %>
@@ -45,8 +59,4 @@
       <% end %>
     <% end %>
   </ul>
-
-  <p class="callout primary">
-    <%= t("budgets.investments.index.sidebar.voted_info") %>
-  </p>
 <% end %>

@@ -14,18 +14,20 @@ module Budgets
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
+    before_action :set_default_budget_filter, only: :index
 
     feature_flag :budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
+    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
@@ -107,6 +109,7 @@ module Budgets
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
       end
+
   end
 
 end

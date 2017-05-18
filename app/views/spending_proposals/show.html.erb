@@ -44,12 +44,11 @@
       <h3><%= t("spending_proposals.show.share") %></h3>
       <div class="social-share-full">
         <%= social_share_button_tag("#{@spending_proposal.title} #{setting['twitter_hashtag']}") %>
-        <% if browser.device.mobile? %>
-          <a href="whatsapp://send?text=<%= @spending_proposal.title.gsub(/\s/, '&nbsp;') %>&nbsp;<%= spending_proposal_url(@spending_proposal) %>" data-action="share/whatsapp/share">
-            <span class="icon-whatsapp whatsapp"></span>
-            <span class="sr-only"><%= t("social.whatsapp") %></span>
-          </a>
-        <% end %>
+        <a href="whatsapp://send?text=<%= @spending_proposal.title.gsub(/\s/, '%20') %>&nbsp;<%= spending_proposal_url(@spending_proposal) %>"
+           class="show-for-small-only" data-action="share/whatsapp/share">
+          <span class="icon-whatsapp whatsapp"></span>
+          <span class="sr-only"><%= t("social.whatsapp") %></span>
+        </a>
       </div>
     </aside>
 

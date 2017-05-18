@@ -114,4 +114,10 @@ class ApplicationController < ActionController::Base
         store_location_for(:user, request.path)
       end
     end
+
+    def set_default_budget_filter
+      if @budget.try(:balloting?)
+        params[:filter] ||= "selected"
+      end
+    end
 end

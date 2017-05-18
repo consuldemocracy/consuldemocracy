@@ -73,6 +73,13 @@
                   ballot: ballot
                 } %>
           </div>
+        <% elsif investment.should_show_price? %>
+          <div id="<%= dom_id(investment) %>_price"
+               class="supports small-12 medium-3 column text-center">
+            <p class="investment-project-amount margin-top">
+              <%= investment.formatted_price %>
+            </p>
+          </div>
         <% end %>
 
       <% end %>

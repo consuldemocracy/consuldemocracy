@@ -5,6 +5,10 @@
             social_title: @proposal.title,
             social_description: @proposal.summary %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+<% end %>
+
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
@@ -131,12 +135,11 @@
         <h2><%= t("proposals.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @proposal.title.gsub(/\s/, '&nbsp;') %>&nbsp;<%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-              <span class="sr-only"><%= t("social.whatsapp") %></span>
-            </a>
-          <% end %>
+          <a href="whatsapp://send?text=<%= @proposal.title.gsub(/\s/, '%20') %>&nbsp;<%= proposal_url(@proposal) %>"
+             class="show-for-small-only" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+            <span class="sr-only"><%= t("social.whatsapp") %></span>
+          </a>
         </div>
       </aside>
     </div>
