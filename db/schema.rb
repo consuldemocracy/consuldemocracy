@@ -80,13 +80,11 @@ ActiveRecord::Schema.define(version: 20170517123042) do
     t.integer  "budget_id"
     t.integer  "group_id"
     t.integer  "heading_id"
+    t.index ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true, using: :btree
     t.index ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id", using: :btree
     t.index ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
   end
 
-  add_index "budget_ballot_lines", ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true, using: :btree
-  add_index "budget_ballot_lines", ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id", using: :btree
-  add_index "budget_ballot_lines", ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
 
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
