@@ -1,31 +1,28 @@
-<div class="small-12 medium-10 column" id="results-container">
-  <h2 class="inline-block">
+<div class="small-12 medium-9 column" id="results-container">
+  <h3 class="inline-block">
     <%= heading.name %>
-  </h2>
+  </h3>
 
-  <span class="float-right">
-    <%= link_to t("budgets.results.show_all_link"), "#",
-                class: "js-toggle-link button hollow margin-bottom",
-                data: {'toggle-selector' => '.js-discarded',
-                       'toggle-text' => t("budgets.results.hide_discarded_link")} %>
-  </span>
+  <%= link_to t("budgets.results.show_all_link"), "#",
+              class: "js-toggle-link button hollow margin-bottom float-right",
+              data: {'toggle-selector' => '.js-discarded',
+                     'toggle-text' => t("budgets.results.hide_discarded_link")} %>
 
-  <table id="budget-investments-results">
+  <table id="budget-investments-results" class="table-for-mobile">
     <thead>
       <tr>
         <th scope="col">
           <%= t("budgets.results.spending_proposal") %>
         </th>
-        <th scope="col" class="text-right">
+        <th scope="col" class="text-center">
           <%= t("budgets.results.ballot_lines_count") %>
         </th>
-        <th scope="col" class="text-right">
+        <th scope="col" class="text-center">
           <%= t("budgets.results.price") %>
         </th>
-        <th scope="col" class="text-right"
-            title="<%= t("budgets.results.amount_available") %>"
-            style="width:120px">
-          <%= format_price(heading.price) %>
+        <th scope="col" class="text-right">
+          <%= format_price(heading.price) %><br>
+          <small><%= t("budgets.results.amount_available") %></small>
         </th>
       </tr>
     </thead>
@@ -48,7 +45,7 @@
                   </span>
                 </span>
               <% else %>
-                <span class="icon-x">
+                <span class="icon-x delete">
                   <span class="sr-only">
                     <%= t("budgets.results.discarded") %>
                   </span>
@@ -57,10 +54,10 @@
               <%= link_to investment.title,
                           budget_investment_path(@budget, investment) %>
             </td>
-            <td class="text-right">
+            <td class="text-center">
               <%= investment.ballot_lines_count %>
             </td>
-            <td class="text-right" style="width:100px">
+            <td class="text-center">
               <%= format_price investment.price %>
             </td>
             <td class="small text-right"
@@ -72,5 +69,4 @@
       <% end %>
     </tbody>
   </table>
-
 </div>
