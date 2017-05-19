@@ -423,6 +423,31 @@ Budget.balloting.last.investments.each do |investment|
 end
 
 puts " ✅"
+print "Winner Investments"
+
+budget = Budget.where(phase: "finished").last
+(1..100).each do |i|
+  heading = budget.headings.reorder("RANDOM()").first
+  investment = Budget::Investment.create!(
+    author: User.reorder("RANDOM()").first,
+    heading: heading,
+    group: heading.group,
+    budget: heading.group.budget,
+    title: Faker::Lorem.sentence(3).truncate(60),
+    external_url: Faker::Internet.url,
+    description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+    created_at: rand((Time.now - 1.week) .. Time.now),
+    feasibility: "feasible",
+    valuation_finished: true,
+    selected: true,
+    price: rand(10000 .. heading.price),
+    terms_of_service: "1")
+end
+budget.headings.each do |heading|
+  Budget::Result.new(budget, heading).calculate_winners
+end
+
+puts " ✅"
 print "Creating Valuation Assignments"
 
 (1..50).to_a.sample.times do
