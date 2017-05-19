@@ -15,7 +15,7 @@ feature 'Results' do
 
   scenario "Diplays winner investments" do
     visit budget_path(budget)
-    click_link "Results"
+    click_link "See results"
 
     within("#budget-investments-results") do
       expect(page).to have_content investment1.title
@@ -30,7 +30,7 @@ feature 'Results' do
 
   scenario "Displays non winner investments", :js do
     visit budget_path(budget)
-    click_link "Results"
+    click_link "See results"
     click_link "Show all"
 
     within("#budget-investments-results") do
