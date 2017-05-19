@@ -13,7 +13,7 @@ feature 'Results' do
 
   let!(:results) { Budget::Result.new(budget, heading).calculate_winners }
 
-  scenario "Diplays winner investments", :focus do
+  scenario "Diplays winner investments" do
     visit budget_path(budget)
     click_link "Results"
 
@@ -28,7 +28,7 @@ feature 'Results' do
     end
   end
 
-  scenario "Displays non winner investments", :js, :focus do
+  scenario "Displays non winner investments", :js do
     visit budget_path(budget)
     click_link "Results"
     click_link "Show all"

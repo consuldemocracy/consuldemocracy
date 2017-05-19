@@ -113,12 +113,8 @@ es:
       phase: Fase actual
       unfeasible_title: Propuestas inviables
       unfeasible: Ver las propuestas inviables
-<<<<<<< f0d7acd087346edce149efed36e057eb4b792a4c
       unselected_title: Propuestas no seleccionadas para la votación final
       unselected: Ver las propuestas no seleccionadas para la votación final
-=======
-      unselected_title: Propuestas que no pasan a la votación final
-      unselected: Ver las propuestas que no pasan a la votación final
     results:
       page_title: "Presupuestos participativos | Resultados"
       heading: "PRESUPUESTOS PARTICIPATIVOS"
@@ -134,4 +130,3 @@ es:
       incompatible: Incompatibles
       accepted: "Propuesta de inversión aceptada: "
       discarded: "Propuesta de inversión descartada: "
->>>>>>> adds budget results

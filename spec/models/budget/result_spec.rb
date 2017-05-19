@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Budget::Result, :focus do
+describe Budget::Result do
 
   describe "calculate_winners" do
     let(:budget) { create(:budget) }
