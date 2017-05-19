@@ -1,6 +1,9 @@
 <% provide :title, t("meta_tags.processes.title") %>
 <% provide :meta_description, t("meta_tags.processes.description") %>
 <% provide :tracking_page_number, "32" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: processes_url %>
+<% end %>
 
 <div class="expanded processes no-margin-top <%= css_for_human_rights_phase("accepting") %>">
   <div class="row padding">

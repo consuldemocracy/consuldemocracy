@@ -1,4 +1,8 @@
 <% provide :title, "Si te sientes gato" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: sitesientesgato_url %>
+<% end %>
+
 <div class="si-te-sientes-gato">
   <div class="expanded header no-margin-top">
     <div class="row header-gato">

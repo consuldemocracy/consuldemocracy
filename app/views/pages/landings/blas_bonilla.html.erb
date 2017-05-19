@@ -1,4 +1,7 @@
 <% provide :title, "Haz propuestas en Decide Madrid" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: blas_bonilla_url %>
+<% end %>
 <% provide :social_media_meta_tags do %>
 <!-- Facebook OG -->
 <meta property="og:url"           content="https://decide.madrid.es/haz-propuestas" />
