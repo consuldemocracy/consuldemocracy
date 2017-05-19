@@ -35,6 +35,13 @@
           </div>
         <% end %>
       <% end %>
+
+      <% if @budget.finished? %>
+        <div>
+          <%= link_to "Results",
+                      budget_results_path(@budget, heading_id: @budget.headings.first) %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
