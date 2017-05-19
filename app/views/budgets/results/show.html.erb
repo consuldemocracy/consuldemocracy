@@ -1,0 +1,50 @@
+<% provide :title, t("budgets.results.page_title") %>
+
+<div class="expanded spending-proposals results no-margin-top">
+  <div class="row">
+    <div class="small-12 column padding text-center">
+      <%= link_to budgets_path, class: "left back" do %>
+        <i class="icon-angle-left"></i>
+        <%= t("shared.back") %>
+      <% end %>
+
+      <h1 class="title">
+        <%= t("budgets.results.heading") %>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title is-active">
+        <span class="sr-only">
+          <%= t("shared.you_are_in") %>
+        </span>
+        <%= link_to t("budgets.results.results_link"), "#", class: "is-active" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-2 column">
+    <ul class="menu vertical no-padding">
+      <li>
+        <strong>
+          <%= t("budgets.results.geozone_selection_title") %>
+        </strong>
+      </li>
+
+      <% @budget.headings.each do |heading| %>
+        <li>
+          <%= link_to content_tag(:strong, heading.name),
+                      budget_results_path(@budget, heading_id: heading.id) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= render 'results_table', heading: @result.heading %>
+</div>

@@ -115,3 +115,18 @@ en:
       unfeasible: See unfeasible investments
       unselected_title: Investments not selected for balloting phase
       unselected: See investments not selected for balloting phase
+    results:
+      page_title: "Participatory budget | Results"
+      heading: "PARTICIPATORY BUDGET"
+      results_link: Results
+      stats_link: "Participation stats"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      incompatible: Incompatibles
+      accepted: "Accepted spending proposal: "
+      discarded: "Discarded spending proposal: "
