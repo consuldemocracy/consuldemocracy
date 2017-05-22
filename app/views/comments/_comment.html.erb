@@ -81,7 +81,7 @@
             <%= t("comments.comment.responses", count: 0) %>
           <% end %>
 
-          <% if user_signed_in? %>
+          <% if user_signed_in? && !comments_closed_for_commentable?(comment.commentable) && !require_verified_resident_for_commentable?(comment.commentable, current_user) %>
             <span class="divider">&nbsp;|&nbsp;</span>
             <%= link_to(comment_link_text(comment), "",
                         class: "js-add-comment-link", data: {'id': dom_id(comment)}) %>

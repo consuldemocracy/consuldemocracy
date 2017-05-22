@@ -34,6 +34,9 @@ es:
     close: Cerrar
     menu: Menú
   comments:
+    comments_closed: Los comentarios están cerrados
+    verified_only: Para participar %{verify_account}
+    verify_account: verifica tu cuenta
     comment:
       admin: Administrador
       author: Autor
@@ -62,6 +65,7 @@ es:
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
+    comments_title: Comentarios
     reply_button: Publicar respuesta
     reply_link: Responder
   debates:
@@ -188,6 +192,7 @@ es:
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
+      collaborative_legislation: Procesos legislativos
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
@@ -217,7 +222,9 @@ es:
       see_all: Ver propuestas
       budgets: Presupuestos participativos
       spending_proposals: "Propuestas de inversión"
-  legislation:
+    admin:
+      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
+  legacy_legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -688,13 +695,6 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
-  legislation:
-    help:
-      title: "¿Cómo puedo comentar este documento?"
-      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text_sign_in: "iniciar sesión"
-      text_sign_up: "registrarte"
-      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

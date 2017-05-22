@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  if Rails.env.development? || Rails.env.staging?
+    get '/sandbox' => 'sandbox#index'
+    get '/sandbox/*template' => 'sandbox#show'
+  end
+
   devise_for :users, controllers: {
                        registrations: 'users/registrations',
                        sessions: 'users/sessions',
@@ -88,7 +93,7 @@ Rails.application.routes.draw do
 
   resources :stats, only: [:index]
 
-  resources :legislations, only: [:show]
+  resources :legacy_legislations, only: [:show], path: 'legislations'
 
   resources :annotations do
     get :search, on: :collection
@@ -97,6 +102,27 @@ Rails.application.routes.draw do
   resources :polls, only: [:show, :index] do
     resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
       post :answer, on: :member
+    end
+  end
+
+  namespace :legislation do
+    resources :processes, only: [:index, :show] do
+      get :debate
+      get :draft_publication
+      get :allegations
+      get :final_version_publication
+      resources :questions, only: [:show] do
+        resources :answers, only: [:create]
+      end
+      resources :draft_versions, only: [:show] do
+        get :go_to_version, on: :collection
+        get :changes
+        resources :annotations do
+          get :search, on: :collection
+          get :comments
+          post :new_comment
+        end
+      end
     end
   end
 
@@ -242,6 +268,13 @@ Rails.application.routes.draw do
     resource :stats, only: :show do
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
+    end
+
+    namespace :legislation do
+      resources :processes do
+        resources :questions
+        resources :draft_versions
+      end
     end
 
     namespace :api do

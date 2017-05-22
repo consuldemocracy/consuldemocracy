@@ -18,6 +18,8 @@ module ApplicationHelper
   end
 
   def markdown(text)
+    return text if text.blank?
+
     # See https://github.com/vmg/redcarpet for options
     render_options = {
       filter_html:     false,

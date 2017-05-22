@@ -38,6 +38,7 @@ en:
       spending_proposals: Investment projects
       spending_proposal_features:
         voting_allowed: Voting on investment projects
+      legislation: Legislation
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"
