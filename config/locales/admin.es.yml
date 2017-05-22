@@ -178,6 +178,10 @@ es:
       index:
         no_problems: "No hay desafíos agregados"
         create: "Crear desafío"
+      new:
+        submit_button: "Crear desafío"
+      edit:
+        submit_button: "Editar desafío"
     debates:
       index:
         filter: Filtro
