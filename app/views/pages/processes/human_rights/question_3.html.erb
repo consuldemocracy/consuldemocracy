@@ -5,6 +5,9 @@
           social_title: t("pages.processes.index.process_5_title"),
           social_description: t("pages.processes.index.process_5_description") %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: human_rights_question_3_url %>
+<% end %>
 
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">

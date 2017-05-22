@@ -1,3 +1,7 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_human_rights_url %>
+<% end %>
+
 <div class="row">
   <div class="menu small-12 medium-3 column">
     <%= back_link_to more_info_path %>
