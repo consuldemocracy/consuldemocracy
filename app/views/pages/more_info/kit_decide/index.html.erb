@@ -5,6 +5,9 @@
           social_title: "KIT DECIDE",
           social_description: "Crea tu propia campaña" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: kit_decide_url %>
+<% end %>
 
 <div class="kit-decide-header no-margin-top margin-bottom padding">
   <div class="row">
