@@ -1,3 +1,7 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: plaza_probe_option_url %>
+<% end %>
+
 <% cache ["plaza", "header", "probe_option", @probe_option.id] do %>
   <%= render "probe_options/plaza/header" %>
 <% end %>

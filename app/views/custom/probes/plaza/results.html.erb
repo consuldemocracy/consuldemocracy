@@ -1,3 +1,7 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: plaza_url %>
+<% end %>
+
 <%= render "probes/#{@probe.codename}/header" %>
 
 <%= render "shared/plaza_espana_header" %>

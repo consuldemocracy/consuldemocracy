@@ -2,6 +2,9 @@
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags_plaza_espana" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: remodeling_plaza_url %>
+<% end %>
 
 <%= render "shared/plaza_espana_header" %>
 

@@ -5,6 +5,9 @@
           social_title: t("pages.processes.index.process_11_title"),
           social_description: t("pages.processes.index.process_11_description") %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: air_quality_plan_url %>
+<% end %>
 
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">

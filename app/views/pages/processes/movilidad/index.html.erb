@@ -5,6 +5,9 @@
           social_title: t("pages.processes.index.process_15_title"),
           social_description: t("pages.processes.index.process_15_description") %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: movilidad_url %>
+<% end %>
 
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">
