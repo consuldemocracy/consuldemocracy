@@ -2,17 +2,10 @@
   <%= render 'shared/errors', resource: @proposal %>
 
   <div class="row">
-    <div class="small-12 column">
-      <%= f.label :title, t("proposals.form.proposal_title") %>
-      <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
-    </div>
-    <div id="js-suggest"></div>
-
-    <%= f.invisible_captcha :subtitle %>
 
     <div id="select-problem" class="small-12 medium-6 column" >
-      <%= f.label :problem,  t("proposals.form.proposal_problem") %>
-      <%= f.select :problem, valid_problems.collect {|p| [ p.title, p.id ] }, {include_blank: t("problems.form.blank"), label: false},  {:onchange=> "jsProblemChanged()"} %>
+      <%= f.label :problem_id,  t("proposals.form.proposal_problem") %>
+      <%= f.select :problem_id, valid_problems.collect {|p| [ p.title, p.id ] }, {include_blank: t("problems.form.blank"), label: false},  {:onchange=> "jsProblemChanged()"} %>
     </div>
 
     <div class="small-12 column" id="problem-hidden">
@@ -21,7 +14,7 @@
         <%= f.fields_for :problem do |prob| %>
           <div class="row">
             <div class="small-12 medium-6 column">
-              <%= prob.text_field :title %>
+              <%= prob.text_field :title%>
             </div>
           </div>
           <div class="row">
@@ -34,6 +27,7 @@
               <%= prob.text_area :description %>
             </div>
           </div>
+          <%= prob.hidden_field :user_id, :value => @current_user.id %>
          <% end %>
       </div>
     </div>
@@ -43,6 +37,14 @@
         <h5>Problema a resolver</h5>
       </div>
     </div>
+
+    <div class="small-12 column">
+      <%= f.label :title, t("proposals.form.proposal_title") %>
+      <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+    </div>
+
+    <div id="js-suggest"></div>
+
 
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
@@ -119,6 +121,8 @@
         <% end %>
       <% end %>
     </div>
+
+
 
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>

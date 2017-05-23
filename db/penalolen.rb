@@ -11,7 +11,7 @@ Setting.create(key: 'official_level_5_name', value: 'Alcaldesa')
 Setting.create(key: 'max_ratio_anon_votes_on_debates', value: '50')
 Setting.create(key: 'max_votes_for_debate_edit', value: '1000')
 Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
-Setting.create(key: 'proposal_code_prefix', value: 'MAD')
+Setting.create(key: 'proposal_code_prefix', value: 'PROP')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
 Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
@@ -68,18 +68,6 @@ Geozone.create(name: "Peñalolen Alto", external_code: 35, census_code: 35)
 Geozone.create(name: "Peñalolen Nuevo", external_code: 36, census_code: 36)
 
 
-
-puts " ✅"
-print "Creating Problems"
-
-problem = Problem.create(title: "Mejoramiento sector la Capilla",
-  description: "La idea es levantar propuestas de mejoramiento de ...",
-  id: 3,
-  budget: "42000000",
-  restriction: nil,
-  summary: "Se busca mejorar la plaza que esta frente a La Capilla",
-  starts_at: "2017-03-28 22:00:00",
-  ends_at: "2017-06-24 22:00:00")
 
 puts " ✅"
 print "Creating Users"
@@ -192,6 +180,23 @@ ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "ca
 #                           geozone: Geozone.reorder("RANDOM()").first,
 #                           terms_of_service: "1")
 # end
+
+
+
+
+
+puts " ✅"
+print "Creating Problems"
+
+problem = Problem.create(title: "Mejoramiento sector la Capilla",
+  description: "La idea es levantar propuestas de mejoramiento de ...",
+  id: 3,
+  budget: "42000000",
+  restriction: nil,
+  summary: "Se busca mejorar la plaza que esta frente a La Capilla",
+  starts_at: "2017-03-28 22:00:00",
+  ends_at: "2017-06-24 22:00:00",
+  user: level_2)
 
 
 puts " ✅"

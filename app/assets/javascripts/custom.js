@@ -6,14 +6,14 @@
 //
 
 function jsProblemChanged(){
-  var selected = $("#select-problem option:selected").text();
-  if (selected != 'Blank'){
+  var selected = $("#select-problem option:selected").val();
+  if (selected != ''){
     document.getElementById("problem-hidden").style.display = "none";
     document.getElementById("problem-display").style.display = "block";
-    console.log('Se ha seleccionado crear el problema');
+    console.log(selected);
   } else {
     document.getElementById("problem-hidden").style.display = "block";
     document.getElementById("problem-display").style.display = "none";
-    console.log('Se ha seleccionado un problema conocido');
+    console.log(selected);
   }
 }

@@ -24,7 +24,9 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
-    # @proposal.build_problem
+    if (!params[:problem_id])
+      @proposal.build_problem
+    end
   end
 
   def index_customization
@@ -63,7 +65,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :user_id])
     end
 
     def retired_params

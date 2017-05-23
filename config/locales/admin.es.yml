@@ -173,6 +173,15 @@ es:
       index:
         back: Volver a
         title: Administración
+    problems:
+      title: "Desafíos"
+      index:
+        no_problems: "No hay desafíos agregados"
+        create: "Crear desafío"
+      new:
+        submit_button: "Crear desafío"
+      edit:
+        submit_button: "Editar desafío"
     debates:
       index:
         filter: Filtro
@@ -221,6 +230,8 @@ es:
         content_blocks: Personalizar bloques
       title_categories: Categorías
       title_moderated_content: Contenido moderado
+      title_problems: Desafíos
+      view_problems: Ver desafíos
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles
