@@ -646,7 +646,8 @@ table {
 
 .legislation-draft-versions-index {
 
-  .legislation-process-question {
+  .legislation-process-question,
+  .legislation-process-version {
     @include breakpoint(medium) {
       text-align: right;
     }
