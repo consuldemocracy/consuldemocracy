@@ -147,7 +147,7 @@ es:
   processes:
     lobbies:
       title: "Registro de lobbies del Ayuntamiento de Madrid"
-      description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies"
+      description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
       date_html: "Participa hasta el <strong>4 de junio</strong>"
     shared:
       more_info: "Más información"
