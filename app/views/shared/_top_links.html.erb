@@ -1,4 +1,7 @@
 <ul class="no-bullet external-links">
+
+<% 
+=begin %> the following is commented out. seems not relevant to Kol Haam - Ouri 23/05/17
   <li>
     <%= link_to t("layouts.header.external_link_transparency"),
                 setting['transparency_url'].presence || t("layouts.header.external_link_transparency_url"),
@@ -11,6 +14,8 @@
                 target: "_blank",
                 title: t('shared.target_blank_html') %>
   </li>
+<% 
+=end %>
 
   <% if setting['blog_url'] %>
     <li>
