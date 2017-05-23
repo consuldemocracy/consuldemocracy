@@ -19,7 +19,9 @@
         <span><%= t('legislation.draft_versions.show.updated_at', date: format_date(@draft_version.updated_at)) %></span>
       </div>
       <div class="small-12 medium-3 column">
-        <%= link_to t('.see_text'), legislation_process_draft_version_path(@process, @draft_version), title: t('.see_text'), class: "button strong" %>
+        <%= link_to legislation_process_draft_version_path(@process, @draft_version), title: t('.see_text'), class: "button" do %>
+          <strong><%= t('.see_text') %></strong>
+        <% end %>
       </div>
     </div>
 

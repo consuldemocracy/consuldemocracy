@@ -10,11 +10,11 @@
 .brand-heading {
   background: $brand;
   margin-bottom: 5rem;
-  
+
   .column {
     padding-top: 10rem;
     padding-bottom: 10rem;
-    
+
     h4 {
       font-weight: 400;
       text-align: center;
@@ -26,29 +26,29 @@
 // 02. Sidebar menu
 // -----------------
 .legislation-categories {
-  
+
   .menu.simple {
     border-bottom: none;
     list-style: none;
     padding-left: 0;
     margin-left: 0;
     margin-top: 0;
-    
+
     @include breakpoint(medium) {
       margin: 1.5rem 0;
     }
-    
+
     li {
       display: block;
       cursor: pointer;
       margin-bottom: 1rem;
-      
+
       @include breakpoint(medium) {
         margin-bottom: 2rem;
         max-width: 80%;
       }
     }
-    
+
     li.active {
       font-weight: 700;
     }
@@ -68,33 +68,9 @@
   padding: 2rem 0 0 0;
 }
 
-.button-legislation {
-  background: white;
-  border: 1px solid #2C9BE5;
-  color: #2C9BE5;
-  display: inline-block;
-  font-weight: 700;
-  margin-top: rem-calc(12);
-  
-  .icon-comments {
-    margin-right: 0.5rem;
-    color: $text-medium;
-    transition: color 0.25s ease-out, color 0.25s ease-out;
-  }
-
-  &:hover, &:active {
-    border: 1px solid lighten(#2C9BE5, 25%);
-    cursor: pointer;
-  }
-  
-  &:hover .icon-comments, &:active .icon-comments {
-    color: white;
-  }
-}
-
 .legislation-text {
   margin-bottom: 1rem;
-  
+
   h3 a {
     color: $black;
   }
@@ -109,21 +85,21 @@
 .legislation-calendar {
   background: #E5ECF2;
   padding-top: 1rem;
-  
+
   h5 {
     margin-left: 0.25rem;
     margin-bottom: 0;
     color: #61686E;
-    
+
     @include breakpoint(medium) {
       margin-left: 0;
     }
   }
-  
+
   p {
     margin-left: 0.25rem;
     font-size: $small-font-size;
-    
+
     @include breakpoint(medium) {
       margin-left: 0;
     }
