@@ -214,6 +214,7 @@ es:
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
       managers: Gestores
+      administrators: Administradores
       moderators: Moderadores
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
