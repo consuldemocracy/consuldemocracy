@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2.1'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.5.3'
 
 # Fix sprockets on the
 gem 'sprockets', '~> 3.7.1'
@@ -33,7 +33,7 @@ gem 'omniauth-google-oauth2', '~> 0.4.0'
 
 gem 'kaminari', '~> 1.0.1'
 gem 'ancestry', '~> 2.2.2'
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 4.0.0'
 gem 'responders', '~> 2.4.0'
 gem 'foundation-rails', '~> 6.2.4.0'
 gem 'foundation_rails_helper', '~> 2.0.0'
@@ -61,7 +61,7 @@ gem 'ahoy_matey', '~> 1.6.0'
 gem 'groupdate', '~> 3.2.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
 
-gem 'browser'
+gem 'browser', '~> 2.3.0'
 gem 'turnout', '~> 2.4.0'
 gem 'redcarpet', '~> 3.4.0'
 gem 'rubyzip', '~> 1.2.0'
@@ -72,7 +72,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 2.0.1'
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.6'
   gem 'capybara', '~> 2.14.0'
@@ -94,10 +94,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner'
+  gem 'database_cleaner', '~> 1.5.3'
   gem 'poltergeist', '~> 1.15.0'
   gem 'coveralls', '~> 0.8.21', require: false
-  gem 'email_spec'
+  gem 'email_spec', '~> 2.1.0'
 end
 
 group :development do
