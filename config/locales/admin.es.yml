@@ -181,6 +181,16 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    administrators:
+      index:
+        title: Administradores
+      manager:
+        add: Añadir como Administrador
+        delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
     managers:
       index:
         title: Gestores
