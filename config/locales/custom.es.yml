@@ -36,10 +36,6 @@ es:
       title: "#PlanDerechosHumanos"
       text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
   cards:
-    publicity:
-      title: "Modificación de la ordenanza reguladora de la publicidad exterior"
-      text: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
-      date_html: "Participa hasta el <strong>25 de abril</strong>"
     button: "Más información"
   meta_tags:
     welcome_index:
