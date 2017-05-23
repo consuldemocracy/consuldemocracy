@@ -64,6 +64,9 @@ es:
     comment_link: Comentar
     reply_button: Publicar respuesta
     reply_link: Responder
+  problems:
+    form:
+      blank: "Definir un problema"
   debates:
     create:
       form:

@@ -27,6 +27,7 @@
               <%= prob.text_area :description %>
             </div>
           </div>
+          <%= prob.hidden_field :user_id, :value => @current_user.id %>
          <% end %>
       </div>
     </div>
@@ -120,6 +121,8 @@
         <% end %>
       <% end %>
     </div>
+
+
 
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>

@@ -97,6 +97,8 @@ es:
         title: "Título"
         summary: "Resumen"
         description: "Descripción"
+        budget: "Presupuesto máximo"
+        restriction: "Restricciones"
       user:
         email: "Correo electrónico"
         username: "Nombre de usuario"
