@@ -8,10 +8,9 @@ feature 'Users' do
       click_link 'Register'
 
       fill_in 'user_username',              with: 'Manuela Carmena'
-      fill_in 'user_email',                 with: 'manuela@madrid.es'
+      fill_in 'user_email',                 with: 'manuela@consul.dev'
       fill_in 'user_password',              with: 'judgementday'
       fill_in 'user_password_confirmation', with: 'judgementday'
-      fill_in 'user_captcha',               with: correct_captcha_text
       check 'user_terms_of_service'
 
       click_button 'Register'
@@ -32,11 +31,11 @@ feature 'Users' do
     end
 
     scenario 'Sign in' do
-      create(:user, email: 'manuela@madrid.es', password: 'judgementday')
+      create(:user, email: 'manuela@consul.dev', password: 'judgementday')
 
       visit '/'
       click_link 'Sign in'
-      fill_in 'user_email',    with: 'manuela@madrid.es'
+      fill_in 'user_email',    with: 'manuela@consul.dev'
       fill_in 'user_password', with: 'judgementday'
       click_button 'Enter'
 
@@ -52,7 +51,6 @@ feature 'Users' do
       let(:twitter_hash_with_verified_email){ {provider: 'twitter',
                                                uid: '12345',
                                                info: {name: 'manuela', email: 'manuelacarmena@example.com', verified: '1'}} }
-
 
       scenario 'Sign up when Oauth provider has a verified email' do
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
@@ -141,7 +139,7 @@ feature 'Users' do
       end
 
       scenario 'Sign in, user was already signed up with OAuth' do
-        user = create(:user, email: 'manuela@madrid.es', password: 'judgementday')
+        user = create(:user, email: 'manuela@consul.dev', password: 'judgementday')
         create(:identity, uid: '12345', provider: 'twitter', user: user)
         OmniAuth.config.add_mock(:twitter, twitter_hash)
 
@@ -160,7 +158,7 @@ feature 'Users' do
       end
 
       scenario 'Try to register with the username of an already existing user' do
-        create(:user, username: 'manuela', email: 'manuela@madrid.es', password: 'judgementday')
+        create(:user, username: 'manuela', email: 'manuela@consul.dev', password: 'judgementday')
         OmniAuth.config.add_mock(:twitter, twitter_hash_with_verified_email)
 
         visit '/'
@@ -168,6 +166,12 @@ feature 'Users' do
         click_link 'Sign up with Twitter'
 
         expect(current_path).to eq(finish_signup_path)
+
+        expect(page).to have_field('user_username', with: 'manuela')
+
+        click_button 'Register'
+
+        expect(current_path).to eq(do_finish_signup_path)
 
         fill_in 'user_username', with: 'manuela2'
         click_button 'Register'
@@ -260,13 +264,13 @@ feature 'Users' do
   end
 
   scenario 'Reset password' do
-    create(:user, email: 'manuela@madrid.es')
+    create(:user, email: 'manuela@consul.dev')
 
     visit '/'
     click_link 'Sign in'
     click_link 'Forgotten your password?'
 
-    fill_in 'user_email', with: 'manuela@madrid.es'
+    fill_in 'user_email', with: 'manuela@consul.dev'
     click_button 'Send instructions'
 
     expect(page).to have_content "In a few minutes, you will receive an email containing instructions on resetting your password."
@@ -280,4 +284,59 @@ feature 'Users' do
 
     expect(page).to have_content "Your password has been changed successfully."
   end
+
+  scenario 'Sign in, admin with password expired' do
+    user = create(:user, password_changed_at: Time.current - 1.year)
+    admin = create(:administrator, user: user)
+
+    login_as(admin.user)
+    visit root_path
+
+    expect(page).to have_content "Your password is expired"
+
+    fill_in 'user_current_password', with: 'judgmentday'
+    fill_in 'user_password', with: '123456789'
+    fill_in 'user_password_confirmation', with: '123456789'
+
+    click_button 'Change your password'
+
+    expect(page).to have_content "Password successfully updated"
+  end
+
+  scenario 'Sign in, admin without password expired' do
+    user = create(:user, password_changed_at: Time.current - 360.days)
+    admin = create(:administrator, user: user)
+
+    login_as(admin.user)
+    visit root_path
+
+    expect(page).to_not have_content "Your password is expired"
+  end
+
+  scenario 'Sign in, user with password expired' do
+    user = create(:user, password_changed_at: Time.current - 1.year)
+
+    login_as(user)
+    visit root_path
+
+    expect(page).to_not have_content "Your password is expired"
+  end
+
+  scenario 'Admin with password expired trying to use same password' do
+    user = create(:user, password_changed_at: Time.current - 1.year, password: '123456789')
+    admin = create(:administrator, user: user)
+
+    login_as(admin.user)
+    visit root_path
+
+    expect(page).to have_content "Your password is expired"
+
+    fill_in 'user_current_password', with: 'judgmentday'
+    fill_in 'user_password', with: '123456789'
+    fill_in 'user_password_confirmation', with: '123456789'
+    click_button 'Change your password'
+
+    expect(page).to have_content "must be different than the current password."
+  end
+
 end

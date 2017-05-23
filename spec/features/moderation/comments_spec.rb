@@ -170,9 +170,9 @@ feature 'Moderate comments' do
     end
 
     scenario "sorting comments" do
-      create(:comment, body: "Flagged comment", created_at: Time.now - 1.day, flags_count: 5)
-      create(:comment, body: "Flagged newer comment", created_at: Time.now - 12.hours, flags_count: 3)
-      create(:comment, body: "Newer comment", created_at: Time.now)
+      create(:comment, body: "Flagged comment", created_at: Time.current - 1.day, flags_count: 5)
+      create(:comment, body: "Flagged newer comment", created_at: Time.current - 12.hours, flags_count: 3)
+      create(:comment, body: "Newer comment", created_at: Time.current)
 
       visit moderation_comments_path(order: 'newest')
 

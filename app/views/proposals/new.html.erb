@@ -1,10 +1,8 @@
-<div class="proposal-new row">
+<div class="proposal-form row">
 
   <div class="small-12 medium-9 column">
-    <%= link_to proposals_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("proposals.new.back_link") %>
-    <% end %>
+    <%= render "shared/back_link" %>
+
     <h1><%= t("proposals.new.start_new") %></h1>
     <div data-alert class="callout primary">
       <%= link_to "/proposals_info",title: t('shared.target_blank_html'), target: "_blank" do %>

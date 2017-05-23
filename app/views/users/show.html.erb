@@ -2,7 +2,19 @@
   <div class="activity row margin-top">
     <div class="small-12 column">
 
-      <h2>
+      <% if @user != current_user %>
+        <% if @user.email_on_direct_message? %>
+          <%= link_to t("users.show.send_private_message"),
+                      new_user_direct_message_path(@user),
+                      class: "button hollow float-right" %>
+        <% else %>
+          <div class="callout primary float-right">
+            <%= t("users.show.no_private_messages") %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <h2 class="inline-block">
         <%= avatar_image(@user, seed: @user.id, size: 60) %>
         <%= @user.name %>
         <% if current_administrator? %>
@@ -14,17 +26,15 @@
         <ul class="menu simple margin-top">
           <% @valid_filters.each do |filter| %>
             <% if @activity_counts[filter] > 0 %>
-              <% if authorized_for_filter?(filter) %>
-                <% if @current_filter == filter %>
-                  <li class="active">
-                    <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %>
-                  </li>
-                <% else %>
-                  <li>
-                    <%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
-                                current_path_with_query_params(filter: filter, page: 1) %>
-                  </li>
-                <% end %>
+              <% if @current_filter == filter %>
+                <li class="active">
+                  <%= t("users.show.filters.#{filter}", count: @activity_counts[filter]) %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to t("users.show.filters.#{filter}", count: @activity_counts[filter]),
+                              current_path_with_query_params(filter: filter, page: 1) %>
+                </li>
               <% end %>
             <% end %>
           <% end %>

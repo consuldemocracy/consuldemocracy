@@ -42,6 +42,73 @@ class Mailer < ApplicationMailer
     end
   end
 
+  def direct_message_for_receiver(direct_message)
+    @direct_message = direct_message
+    @receiver = @direct_message.receiver
+
+    with_user(@receiver) do
+      mail(to: @receiver.email, subject: t('mailers.direct_message_for_receiver.subject'))
+    end
+  end
+
+  def direct_message_for_sender(direct_message)
+    @direct_message = direct_message
+    @sender = @direct_message.sender
+
+    with_user(@sender) do
+      mail(to: @sender.email, subject: t('mailers.direct_message_for_sender.subject'))
+    end
+  end
+
+  def proposal_notification_digest(user, notifications)
+    @notifications = notifications
+
+    with_user(user) do
+      mail(to: user.email, subject: t('mailers.proposal_notification_digest.title', org_name: Setting['org_name']))
+    end
+  end
+
+  def user_invite(email)
+    I18n.with_locale(I18n.default_locale) do
+      mail(to: email, subject: t('mailers.user_invite.subject', org_name: Setting["org_name"]))
+    end
+  end
+
+  def budget_investment_created(investment)
+    @investment = investment
+
+    with_user(@investment.author) do
+      mail(to: @investment.author.email, subject: t('mailers.budget_investment_created.subject'))
+    end
+  end
+
+  def budget_investment_unfeasible(investment)
+    @investment = investment
+    @author = investment.author
+
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.budget_investment_unfeasible.subject', code: @investment.code))
+    end
+  end
+
+  def budget_investment_selected(investment)
+    @investment = investment
+    @author = investment.author
+
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.budget_investment_selected.subject', code: @investment.code))
+    end
+  end
+
+  def budget_investment_unselected(investment)
+    @investment = investment
+    @author = investment.author
+
+    with_user(@author) do
+      mail(to: @author.email, subject: t('mailers.budget_investment_unselected.subject', code: @investment.code))
+    end
+  end
+
   private
 
   def with_user(user, &block)

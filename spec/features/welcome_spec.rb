@@ -45,7 +45,7 @@ feature "Welcome screen" do
   end
 
   scenario 'it is not shown to level-2 users' do
-    user = create(:user, residence_verified_at: Time.now, confirmed_phone: "123")
+    user = create(:user, residence_verified_at: Time.current, confirmed_phone: "123")
 
     login_through_form_as(user)
 
@@ -53,7 +53,7 @@ feature "Welcome screen" do
   end
 
   scenario 'it is not shown to level-3 users' do
-    user = create(:user, verified_at: Time.now)
+    user = create(:user, verified_at: Time.current)
 
     login_through_form_as(user)
 

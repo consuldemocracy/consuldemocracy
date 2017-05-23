@@ -1,12 +1,14 @@
 <% provide :title do %><%= @debate.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debate_url(@debate) %>
+<% end %>
+
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
-  <section class="debate-show">
+  <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= link_to :back, class: "back" do %>
-          <span class="icon-angle-left"></span>
-          <%= t("debates.show.back_link") %>
-        <% end %>
+        <%= render "shared/back_link" %>
+
         <% if current_user && @debate.editable_by?(current_user) %>
           <%= link_to edit_debate_path(@debate), class: 'edit-debate button success small float-right' do %>
             <span class="icon-edit"></span>
@@ -46,24 +48,23 @@
 
       <aside class="small-12 medium-3 column">
         <div class="sidebar-divider"></div>
-        <h3><%= t("votes.supports") %></h3>
-        <div class="text-center">
-          <div id="<%= dom_id(@debate) %>_votes">
-           <%= render 'debates/votes', debate: @debate %>
-          </div>
+        <h2><%= t("votes.supports") %></h2>
+        <div id="<%= dom_id(@debate) %>_votes">
+          <%= render 'debates/votes', debate: @debate %>
         </div>
         <div class="sidebar-divider"></div>
-        <h3><%= t("debates.show.share") %></h3>
+        <h2><%= t("debates.show.share") %></h2>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.mobile? %>
-            <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
+          <a href="whatsapp://send?text=<%= @debate.title.gsub(/\s/, '%20') %>&nbsp;<%= debate_url(@debate) %>"
+             class="show-for-small-only" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+            <span class="sr-only"><%= t("social.whatsapp") %></span>
+          </a>
         </div>
+      </aside>
     </div>
-  </section>
+  </div>
 <% end %>
 
 <%= render "comments" %>

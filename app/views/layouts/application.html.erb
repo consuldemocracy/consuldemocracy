@@ -4,21 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <%= render "layouts/tracking_data" %>
+    <%= render "layouts/meta_tags" %>
     <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
+    <%= content_for :canonical %>
     <%= stylesheet_link_tag    "application" %>
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag "ie" %>
+    <![endif]-->
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
-    <%= favicon_link_tag "apple-touch-icon-200.png",
-                     rel: "apple-touch-icon",
+    <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
+                     rel: "icon apple-touch-icon",
                      sizes: "200x200",
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= setting['per_page_code'].try(:html_safe) %>
+    <%= setting['per_page_code_head'].try(:html_safe) %>
   </head>
   <body>
-    <div class="wrapper">
+    <%= setting['per_page_code_body'].try(:html_safe) %>
+
+    <h1 class="sr-only"><%= setting['org_name'] %></h1>
+
+    <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render 'layouts/header' %>
 
       <!--[if lt IE 9]>
@@ -41,27 +51,7 @@
       <% end %>
       <![endif]-->
 
-      <% if notice %>
-      <div id="notice" data-alert class="row" data-closable>
-        <div class="callout success">
-          <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= notice %>
-        </div>
-      </div>
-      <% end %>
-
-      <% if alert %>
-      <div id="alert" data-alert class="row" data-closable>
-        <div class="callout alert">
-          <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= alert %>
-        </div>
-      </div>
-      <% end %>
+      <%= render 'layouts/flash' %>
 
       <%= yield %>
       <div class="push"></div>

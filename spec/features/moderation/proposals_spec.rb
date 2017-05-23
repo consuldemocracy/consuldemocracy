@@ -169,9 +169,9 @@ feature 'Moderate proposals' do
     end
 
     scenario "sorting proposals" do
-      create(:proposal, title: "Flagged proposal", created_at: Time.now - 1.day, flags_count: 5)
-      create(:proposal, title: "Flagged newer proposal", created_at: Time.now - 12.hours, flags_count: 3)
-      create(:proposal, title: "Newer proposal", created_at: Time.now)
+      create(:proposal, title: "Flagged proposal", created_at: Time.current - 1.day, flags_count: 5)
+      create(:proposal, title: "Flagged newer proposal", created_at: Time.current - 12.hours, flags_count: 3)
+      create(:proposal, title: "Newer proposal", created_at: Time.current)
 
       visit moderation_proposals_path(order: 'created_at')
 

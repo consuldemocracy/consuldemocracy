@@ -1,0 +1,35 @@
+<table id="spending_proposals" class="investment-projects-summary">
+  <th><%= t("admin.spending_proposals.summary.geozone_name") %></th>
+  <th><%= t("admin.spending_proposals.summary.finished_and_feasible_count") %></th>
+  <th><%= t("admin.spending_proposals.summary.finished_and_unfeasible_count") %></th>
+  <th><%= t("admin.spending_proposals.summary.finished_count") %></th>
+  <th><%= t("admin.spending_proposals.summary.in_evaluation_count") %></th>
+  <th><%= t("admin.spending_proposals.summary.total_count") %></th>
+  <th><%= t("admin.spending_proposals.summary.cost_for_geozone") %></th>
+
+  <% spending_proposals.each do |geozone, price| %>
+    <tr id="<%= geozone.present? ? dom_id(geozone) : 'geozone_all_city' %>">
+      <td class="name">
+        <%= geozone.present? ? geozone.name : t("geozones.none") %>
+      </td>
+      <td class="finished-and-feasible-count">
+        <%= spending_proposal_count_for_geozone("finished_and_feasible", geozone, second_scope) %>
+      </td>
+      <td class="finished-and-unfeasible-count">
+        <%= spending_proposal_count_for_geozone("finished_and_unfeasible", geozone, second_scope) %>
+      </td>
+      <td class="finished-count">
+        <%= spending_proposal_count_for_geozone("valuation_finished", geozone, second_scope) %>
+      </td>
+      <td class="in-evaluation-count">
+        <%= spending_proposal_count_for_geozone("valuating", geozone, second_scope) %>
+      </td>
+      <td class="total-count">
+        <%= spending_proposal_count_for_geozone("all", geozone, second_scope) %>
+      </td>
+      <td class="total-price text-center">
+        <%= number_to_currency(price) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

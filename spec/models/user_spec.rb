@@ -65,6 +65,13 @@ describe User do
     end
   end
 
+  describe "#age" do
+    it "is the rounded integer age based on the date_of_birth" do
+      user = create(:user, date_of_birth: 33.years.ago)
+      expect(user.age).to eq(33)
+    end
+  end
+
   describe 'preferences' do
     describe 'email_on_comment' do
       it 'should be false by default' do
@@ -79,8 +86,26 @@ describe User do
     end
 
     describe 'subscription_to_website_newsletter' do
+      it 'should be true by default' do
+        expect(subject.newsletter).to eq(true)
+      end
+    end
+
+    describe 'email_digest' do
+      it 'should be true by default' do
+        expect(subject.email_digest).to eq(true)
+      end
+    end
+
+    describe 'email_on_direct_message' do
+      it 'should be true by default' do
+        expect(subject.email_on_direct_message).to eq(true)
+      end
+    end
+
+    describe 'official_position_badge' do
       it 'should be false by default' do
-        expect(subject.newsletter).to eq(false)
+        expect(subject.official_position_badge).to eq(false)
       end
     end
   end
@@ -118,6 +143,30 @@ describe User do
       subject.save
       create(:valuator, user: subject)
       expect(subject.valuator?).to be true
+    end
+  end
+
+  describe "manager?" do
+    it "is false when the user is not a manager" do
+      expect(subject.manager?).to be false
+    end
+
+    it "is true when the user is a manager" do
+      subject.save
+      create(:manager, user: subject)
+      expect(subject.manager?).to be true
+    end
+  end
+
+  describe "poll_officer?" do
+    it "is false when the user is not a poll officer" do
+      expect(subject.poll_officer?).to be false
+    end
+
+    it "is true when the user is a poll officer" do
+      subject.save
+      create(:poll_officer, user: subject)
+      expect(subject.poll_officer?).to be true
     end
   end
 
@@ -244,10 +293,10 @@ describe User do
       # Subdomains are also accepted
 
       Setting['email_domain_for_officials'] = 'officials.madrid.es'
-      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.now)
-      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.now)
-      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.now)
-      user4 = create(:user, email: "john@example.org", confirmed_at: Time.now)
+      user1 = create(:user, email: "john@officials.madrid.es", confirmed_at: Time.current)
+      user2 = create(:user, email: "john@yes.officials.madrid.es", confirmed_at: Time.current)
+      user3 = create(:user, email: "john@unofficials.madrid.es", confirmed_at: Time.current)
+      user4 = create(:user, email: "john@example.org", confirmed_at: Time.current)
 
       expect(user1.has_official_email?).to eq(true)
       expect(user2.has_official_email?).to eq(true)
@@ -259,11 +308,89 @@ describe User do
     end
   end
 
+  describe "official_position_badge" do
+
+    describe "Users of level 1" do
+
+      it "displays the badge if set in preferences" do
+        user = create(:user, official_level: 1, official_position_badge: true)
+
+        expect(user.display_official_position_badge?).to eq true
+      end
+
+      it "does not display the badge if set in preferences" do
+        user = create(:user, official_level: 1, official_position_badge: false)
+
+        expect(user.display_official_position_badge?).to eq false
+      end
+
+    end
+
+    describe "Users higher than level 1" do
+
+      it "displays the badge regardless of preferences" do
+        user1 = create(:user, official_level: 2, official_position_badge: false)
+        user2 = create(:user, official_level: 3, official_position_badge: false)
+        user3 = create(:user, official_level: 4, official_position_badge: false)
+        user4 = create(:user, official_level: 5, official_position_badge: false)
+
+        expect(user1.display_official_position_badge?).to eq true
+        expect(user2.display_official_position_badge?).to eq true
+        expect(user3.display_official_position_badge?).to eq true
+        expect(user4.display_official_position_badge?).to eq true
+      end
+
+    end
+
+  end
+
+  describe "scopes" do
+
+    describe "active" do
+
+      it "returns users that have not been erased" do
+        user1 = create(:user, erased_at: nil)
+        user2 = create(:user, erased_at: nil)
+        user3 = create(:user, erased_at: Time.current)
+
+        expect(User.active).to include(user1)
+        expect(User.active).to include(user2)
+        expect(User.active).to_not include(user3)
+      end
+
+      it "returns users that have not been blocked" do
+        user1 = create(:user)
+        user2 = create(:user)
+        user3 = create(:user)
+        user3.block
+
+        expect(User.active).to include(user1)
+        expect(User.active).to include(user2)
+        expect(User.active).to_not include(user3)
+      end
+
+    end
+
+    describe "erased" do
+
+      it "returns users that have been erased" do
+        user1 = create(:user, erased_at: Time.current)
+        user2 = create(:user, erased_at: Time.current)
+        user3 = create(:user, erased_at: nil)
+
+        expect(User.erased).to include(user1)
+        expect(User.erased).to include(user2)
+        expect(User.erased).to_not include(user3)
+      end
+
+    end
+  end
+
   describe "self.search" do
     it "find users by email" do
-      user1 = create(:user, email: "larry@madrid.es")
-      create(:user, email: "bird@madrid.es")
-      search = User.search("larry@madrid.es")
+      user1 = create(:user, email: "larry@consul.dev")
+      create(:user, email: "bird@consul.dev")
+      search = User.search("larry@consul.dev")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)
     end
@@ -321,39 +448,188 @@ describe User do
   end
 
   describe "#erase" do
-    it "anonymizes a user and marks him as hidden" do
+    it "erases user information and marks him as erased" do
       user = create(:user,
                      username: "manolo",
+                     email: "a@a.com",
                      unconfirmed_email: "a@a.com",
-                     document_number: "1234",
                      phone_number: "5678",
+                     confirmed_phone: "5678",
+                     unconfirmed_phone: "5678",
                      encrypted_password: "foobar",
                      confirmation_token: "token1",
                      reset_password_token: "token2",
-                     email_verification_token: "token3",
-                     confirmed_phone:"5678",
-                     unconfirmed_phone:"5678")
+                     email_verification_token: "token3")
+
       user.erase('a test')
       user.reload
 
       expect(user.erase_reason).to eq('a test')
-      expect(user.erased_at).to be
+      expect(user.erased_at).to    be
 
       expect(user.username).to be_nil
-
       expect(user.email).to be_nil
       expect(user.unconfirmed_email).to be_nil
-      expect(user.document_number).to be_nil
       expect(user.phone_number).to be_nil
       expect(user.confirmed_phone).to be_nil
       expect(user.unconfirmed_phone).to be_nil
-
       expect(user.encrypted_password).to be_empty
-
       expect(user.confirmation_token).to be_nil
       expect(user.reset_password_token).to be_nil
       expect(user.email_verification_token).to be_nil
     end
+
+    it "maintains associated identification document" do
+      user = create(:user,
+                     document_number: "1234",
+                     document_type:   "1")
+      user.erase
+      user.reload
+
+      expect(user.erased_at).to be
+      expect(user.document_number).to be
+      expect(user.document_type).to be
+    end
+
+    it "destroys associated social network identities" do
+      user = create(:user)
+      identity = create(:identity, user: user)
+
+      user.erase('an identity test')
+
+      expect(Identity.exists?(identity.id)).to_not be
+    end
+
+  end
+
+  describe "#take_votes_from" do
+    it "logs info of previous users" do
+      user = create(:user, :level_three)
+      other_user = create(:user, :level_three)
+      another_user = create(:user)
+
+      expect(user.former_users_data_log).to be_blank
+
+      user.take_votes_from other_user
+
+      expect(user.former_users_data_log).to include("id: #{other_user.id}")
+
+      user.take_votes_from another_user
+
+      expect(user.former_users_data_log).to include("id: #{other_user.id}")
+      expect(user.former_users_data_log).to include("| id: #{another_user.id}")
+    end
+
+    it "reassigns votes from other user" do
+      other_user = create(:user, :level_three)
+      user = create(:user, :level_three)
+
+      v1 = create(:vote, voter: other_user, votable: create(:debate))
+      v2 = create(:vote, voter: other_user, votable: create(:proposal))
+      v3 = create(:vote, voter: other_user, votable: create(:comment))
+
+      create(:vote)
+
+      expect(other_user.votes.count).to eq(3)
+      expect(user.votes.count).to eq(0)
+
+      user.take_votes_from other_user
+
+      expect(other_user.votes.count).to eq(0)
+      expect(user.vote_ids.sort).to eq([v1.id, v2.id, v3.id].sort)
+    end
+
+    it "reassigns budget ballots from other user" do
+      other_user = create(:user, :level_three)
+      user = create(:user, :level_three)
+
+      b1 = create(:budget_ballot, user: other_user)
+      b2 = create(:budget_ballot, user: other_user)
+
+      create(:budget_ballot)
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq(2)
+      expect(Budget::Ballot.where(user: user).count).to eq(0)
+
+      user.take_votes_from other_user
+
+      expect(Budget::Ballot.where(user: other_user).count).to eq(0)
+      expect(Budget::Ballot.where(user: user).sort).to eq([b1, b2].sort)
+    end
+
+    it "reassigns poll voters from other user" do
+      other_user = create(:user, :level_three)
+      user = create(:user, :level_three)
+
+      v1 = create(:poll_voter, user: other_user)
+      v2 = create(:poll_voter, user: other_user)
+
+      create(:poll_voter)
+
+      expect(Poll::Voter.where(user: other_user).count).to eq(2)
+      expect(Poll::Voter.where(user: user).count).to eq(0)
+
+      user.take_votes_from other_user
+
+      expect(Poll::Voter.where(user: other_user).count).to eq(0)
+      expect(Poll::Voter.where(user: user).sort).to eq([v1, v2].sort)
+    end
+  end
+
+  describe "#take_votes_if_erased_document" do
+    it "does nothing if no erased user with received document" do
+      user_1 = create(:user, :level_three)
+      user_2 = create(:user, :level_three)
+
+      create(:vote, voter: user_1)
+      create(:budget_ballot, user: user_1)
+      create(:poll_voter, user: user_1)
+
+      user_2.take_votes_if_erased_document(111, 1)
+
+      expect(user_1.votes.count).to eq(1)
+      expect(user_2.votes.count).to eq(0)
+
+      expect(Budget::Ballot.where(user: user_1).count).to eq(1)
+      expect(Budget::Ballot.where(user: user_2).count).to eq(0)
+
+      expect(Poll::Voter.where(user: user_1).count).to eq(1)
+      expect(Poll::Voter.where(user: user_2).count).to eq(0)
+    end
+
+    it "takes votes from erased user with received document" do
+      user_1 = create(:user, :level_two, document_number: "12345777", document_type: "1")
+      user_2 = create(:user)
+
+      create(:vote, voter: user_1)
+      create(:budget_ballot, user: user_1)
+      create(:poll_voter, user: user_1)
+
+      user_1.erase
+
+      user_2.take_votes_if_erased_document("12345777", "1")
+
+      expect(user_1.votes.count).to eq(0)
+      expect(user_2.votes.count).to eq(1)
+
+      expect(Budget::Ballot.where(user: user_1).count).to eq(0)
+      expect(Budget::Ballot.where(user: user_2).count).to eq(1)
+
+      expect(Poll::Voter.where(user: user_1).count).to eq(0)
+      expect(Poll::Voter.where(user: user_2).count).to eq(1)
+    end
+
+    it "removes document from erased user and logs info" do
+      user_1 = create(:user, document_number: "12345777", document_type: "1")
+      user_2 = create(:user)
+      user_1.erase
+
+      user_2.take_votes_if_erased_document("12345777", "1")
+
+      expect(user_2.reload.former_users_data_log).to include("id: #{user_1.id}")
+      expect(user_1.reload.document_number).to be_blank
+    end
+
   end
 
 end

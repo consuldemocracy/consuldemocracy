@@ -9,7 +9,7 @@ class NotificationsController < ApplicationController
 
   def show
     @notification = current_user.notifications.find(params[:id])
-    redirect_to url_for(@notification.notifiable)
+    redirect_to url_for(@notification.linkable_resource)
   end
 
   def mark_all_as_read

@@ -13,7 +13,7 @@
 </div>
 
 <%= form_tag moderate_moderation_comments_path(request.query_parameters), method: :put do %>
-  <p class="float-right js-check">
+  <p class="js-check">
     <%= t('shared.check') %>:
     <%= link_to t('shared.check_all'), '#', data: {check_all: "comment_ids[]"} %>
     |
@@ -55,19 +55,19 @@
 
   <%= submit_tag t('moderation.comments.index.block_authors'),
     name: "block_authors",
-    class: "button alert",
+    class: "button hollow alert",
     data: {confirm: t('moderation.comments.index.confirm')}
   %>
 
   <div class="float-right">
     <%= submit_tag t('moderation.comments.index.hide_comments'),
       name: "hide_comments",
-      class: "button alert",
+      class: "button hollow alert",
       data: {confirm: t('moderation.comments.index.confirm')}
     %>
     <%= submit_tag t('moderation.comments.index.ignore_flags'),
       name: "ignore_flags",
-      class: "button success",
+      class: "button hollow",
       data: {confirm: t('moderation.comments.index.confirm')}
     %>
   </div>

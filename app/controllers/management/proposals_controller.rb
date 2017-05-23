@@ -2,7 +2,7 @@ class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
 
-  before_action :check_verified_user, except: :print
+  before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
   before_action :parse_search_terms, only: :index
   before_action :load_categories, only: [:new, :edit]
@@ -13,11 +13,12 @@ class Management::ProposalsController < Management::BaseController
 
   def show
     super
+    @notifications = @proposal.notifications
     redirect_to management_proposal_path(@proposal), status: :moved_permanently if request.path != management_proposal_path(@proposal)
   end
 
   def vote
-    @proposal.register_vote(current_user, 'yes')
+    @proposal.register_vote(managed_user, 'yes')
     set_proposal_votes(@proposal)
   end
 
@@ -33,31 +34,23 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :captcha, :captcha_key)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
     end
 
     def resource_model
       Proposal
     end
 
-    def check_verified_user
-      unless current_user.level_two_or_three_verified?
-        redirect_to management_document_verifications_path, alert: t("management.proposals.alert.unverified_user")
-      end
+    def only_verified_users
+      check_verified_user t("management.proposals.alert.unverified_user")
     end
 
-    def current_user
-      managed_user
-    end
-
-    ### Duplicated in application_controller. Move to a concern.
     def set_proposal_votes(proposals)
-      @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
+      @proposal_votes = managed_user ? managed_user.proposal_votes(proposals) : {}
     end
 
     def set_comment_flags(comments)
-      @comment_flags = current_user ? current_user.comment_flags(comments) : {}
+      @comment_flags = managed_user ? managed_user.comment_flags(comments) : {}
     end
-    ###
 
 end

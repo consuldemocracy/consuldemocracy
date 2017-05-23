@@ -17,15 +17,14 @@
 
       <%= f.text_field  :phone_number,  placeholder: t("devise_views.organizations.registrations.new.phone_number_label") %>
 
+      <%= f.invisible_captcha :address %>
+
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.organizations.registrations.new.password_label") %>
 
       <%= f.password_field :password_confirmation, autocomplete: "off",
                            label: t("devise_views.organizations.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
-
-      <%= f.simple_captcha input_html: {required: false} %>
-
 
       <%= f.label :terms_of_service do %>
         <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
@@ -34,8 +33,9 @@
               terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title: t('shared.target_blank_html'), target: "_blank")).html_safe %></span>
       <% end %>
 
-
-      <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>
+      <div class="small-12 medium-6 small-centered">
+        <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>
+      </div>
     </div>
   </div>
 <% end %>

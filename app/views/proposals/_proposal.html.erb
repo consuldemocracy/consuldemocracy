@@ -1,10 +1,12 @@
-<div id="<%= dom_id(proposal) %>" class="proposal clear" data-type="proposal">
+<div id="<%= dom_id(proposal) %>"
+     class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     data-type="proposal">
   <div class="panel">
+    <div class="icon-successful"></div>
     <div class="row">
 
       <div class="small-12 medium-9 column">
         <div class="proposal-content">
-
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
             <span class="label-proposal float-left"><%= t("proposals.proposal.proposal") %></span>
             <span class="icon-proposals"></span>
@@ -26,7 +28,7 @@
                 <span class="author">
                   <%= proposal.author.name %>
                 </span>
-                <% if proposal.author.official? %>
+                <% if proposal.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= proposal.author.official_level %>">
                     <%= proposal.author.official_position %>
@@ -42,7 +44,7 @@
               <% end %>
             </p>
             <div class="proposal-description">
-              <p><%= link_to proposal.summary, namespaced_proposal_path(proposal) %></p>
+              <p><%= proposal.summary %></p>
               <div class="truncate"></div>
             </div>
           <% end %>
@@ -50,11 +52,32 @@
         </div>
       </div>
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column text-center">
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container">
+        <% if proposal.successful? %>
+          <div class="padding text-center">
+
+            <p>
+              <%= t("proposals.proposal.successful",
+                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+            </p>
+          </div>
+          <% if can? :create, Poll::Question %>
+            <p class="text-center">
+              <%= link_to t('poll_questions.create_question'),
+                          new_admin_question_path(proposal_id: proposal.id),
+                          class: "button hollow" %>
+            </p>
+          <% end %>
+        <% elsif proposal.archived? %>
+          <div class="padding text-center">
+            <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+            <p><%= t("proposals.proposal.archived") %></p>
+          </div>
+        <% else %>
           <%= render 'votes',
                     { proposal: proposal, vote_url: vote_proposal_path(proposal, value: 'yes') } %>
+        <% end %>
       </div>
-
     </div>
   </div>
 </div>

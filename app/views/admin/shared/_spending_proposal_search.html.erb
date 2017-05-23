@@ -1,0 +1,10 @@
+<%= form_for(SpendingProposal.new, url: url, as: :spending_proposal, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :search, "", placeholder: t("admin.shared.spending_proposal_search.placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-3 column end">
+      <%= f.submit t("admin.shared.spending_proposal_search.button"), class: "button" %>
+    </div>
+  </div>
+<% end %>

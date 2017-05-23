@@ -1,0 +1,13 @@
+<% provide :title do %><%= @investment.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_investment_url %>
+<% end %>
+
+<%= render partial: '/budgets/investments/investment_show', locals: {
+  investment: @investment,
+  investment_ids: @investment_ids,
+  investment_votes: @investment_votes,
+  ballot: @ballot
+} %>
+
+<%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree, comment_flags: @comment_flags } %>

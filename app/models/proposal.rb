@@ -7,14 +7,16 @@ class Proposal < ActiveRecord::Base
   include Searchable
   include Filterable
 
-  apply_simple_captcha
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
+
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
+  has_many :proposal_notifications
 
   validates :title, presence: true
   validates :question, presence: true
@@ -26,6 +28,7 @@ class Proposal < ActiveRecord::Base
   validates :description, length: { maximum: Proposal.description_max_length }
   validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
+  validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -41,7 +44,13 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
+  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
+  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :retired,                  -> { where.not(retired_at: nil) }
+  scope :not_retired,              -> { where(retired_at: nil) }
+  scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -85,12 +94,12 @@ class Proposal < ActiveRecord::Base
     summary
   end
 
-  def description
-    super.try :html_safe
+  def total_votes
+    cached_votes_up
   end
 
-  def total_votes
-    cached_votes_up + physical_votes
+  def voters
+    User.active.where(id: votes_for.voters)
   end
 
   def editable?
@@ -105,8 +114,12 @@ class Proposal < ActiveRecord::Base
     user && user.level_two_or_three_verified?
   end
 
+  def retired?
+    retired_at.present?
+  end
+
   def register_vote(user, vote_value)
-    if votable_by?(user)
+    if votable_by?(user) && !archived?
       vote_by(voter: user, vote: vote_value)
     end
   end
@@ -140,6 +153,18 @@ class Proposal < ActiveRecord::Base
 
   def self.votes_needed_for_success
     Setting['votes_for_proposal_success'].to_i
+  end
+
+  def successful?
+    total_votes >= Proposal.votes_needed_for_success
+  end
+
+  def archived?
+    self.created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
+  end
+
+  def notifications
+    proposal_notifications
   end
 
   protected

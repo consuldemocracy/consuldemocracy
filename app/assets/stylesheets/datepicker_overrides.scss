@@ -51,7 +51,7 @@
       border-right: 1px solid $dark;
 
       tr th {
-        color: white;
+        color: $dark;     
       }
     }
 
@@ -85,7 +85,7 @@
         background: white;
 
         .ui-state-default {
-          background: $input-bg;
+          background: #F8F8F8;
           color: $text-medium;
         }
       }

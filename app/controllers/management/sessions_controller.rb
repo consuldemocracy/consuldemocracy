@@ -4,11 +4,10 @@ class Management::SessionsController < ActionController::Base
 
   def create
     destroy_session
-    if manager = ManagerAuthenticator.new(params).auth
-      session[:manager] = manager
+    if admin? || manager? || authenticated_manager?
       redirect_to management_root_path
     else
-      raise ActionController::RoutingError.new('Not Found')
+      raise CanCan::AccessDenied
     end
   end
 
@@ -23,6 +22,24 @@ class Management::SessionsController < ActionController::Base
       session[:manager] = nil
       session[:document_type] =   nil
       session[:document_number] = nil
+    end
+
+    def admin?
+      if current_user.try(:administrator?)
+        session[:manager] = {login: "admin_user_#{current_user.id}"}
+      end
+    end
+
+    def manager?
+      if current_user.try(:manager?)
+        session[:manager] = {login: "manager_user_#{current_user.id}"}
+      end
+    end
+
+    def authenticated_manager?
+      if manager = ManagerAuthenticator.new(params).auth
+        session[:manager] = manager
+      end
     end
 
 end

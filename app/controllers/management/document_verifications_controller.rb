@@ -33,17 +33,17 @@ class Management::DocumentVerificationsController < Management::BaseController
 
   private
 
-  def document_verification_params
-    params.require(:document_verification).permit(:document_type, :document_number)
-  end
+    def document_verification_params
+      params.require(:document_verification).permit(:document_type, :document_number)
+    end
 
-  def set_document
-    session[:document_type] = params[:document_verification][:document_type]
-    session[:document_number] = params[:document_verification][:document_number]
-  end
+    def set_document
+      session[:document_type] = params[:document_verification][:document_type]
+      session[:document_number] = params[:document_verification][:document_number]
+    end
 
-  def clean_document_number
-    params[:document_verification][:document_number] = params[:document_verification][:document_number].gsub(/[^a-z0-9]+/i, "").upcase unless params[:document_verification][:document_number].blank?
-  end
+    def clean_document_number
+      params[:document_verification][:document_number] = params[:document_verification][:document_number].gsub(/[^a-z0-9]+/i, "").upcase unless params[:document_verification][:document_number].blank?
+    end
 
 end

@@ -1,10 +1,21 @@
 <% content_for :head do %>
   <%= javascript_include_tag "stat_graphs", 'data-turbolinks-track' => true %>
 <% end %>
-<div class="stats row-full">
+<div class="stats">
   <div class="row">
     <div class="small-12 column">
-      <h1><%= t "admin.stats.show.stats_title" %></h1>
+      <h1 class="inline-block"><%= t "admin.stats.show.stats_title" %></h1>
+
+      <div class="float-right clear">
+        <%= link_to t("admin.stats.show.direct_messages"),
+                    direct_messages_admin_stats_path, class: "button hollow" %>
+        <%= link_to t("admin.stats.show.proposal_notifications"),
+                    proposal_notifications_admin_stats_path, class: "button hollow" %>
+        <%= link_to t("admin.stats.show.incomplete_verifications"),
+                     admin_verifications_path, class: "button hollow" %>
+      </div>
+
+      <div class="clear"></div>
 
       <div class="row stats-numbers">
         <div class="small-12 medium-3 column">
@@ -25,6 +36,16 @@
             <%= t "admin.stats.show.summary.comments" %><br>
             <span class="number"><%= number_with_delimiter(@comments) %></span>
           </p>
+          <% if feature?(:budgets) %>
+            <p>
+              <%= t "admin.stats.show.summary.budgets" %><br>
+              <span class="number"><%= number_with_delimiter(@budgets) %></span>
+            </p>
+            <p class="featured">
+              <%= t "admin.stats.show.summary.budget_investments" %><br>
+              <span class="number"><%= number_with_delimiter(@investments) %></span>
+            </p>
+          <% end %>
         </div>
 
         <div class="small-12 medium-3 column">
@@ -76,14 +97,23 @@
             <%= t "admin.stats.show.summary.user_level_three" %><br>
             <span class="number"><%= number_with_delimiter(@user_level_three) %></span>
           </p>
+
+          <p>
+            <%= t "admin.stats.show.summary.verified_users_who_didnt_vote_proposals" %><br>
+            <span class="number">
+              <%=number_with_delimiter(@user_ids_who_didnt_vote_proposals)%>
+            </span>
+          </p>
         </div>
 
-        <div class="small-12 medium-3 column">
-          <p class="featured">
-            <%= t "admin.stats.show.summary.spending_proposals" %><br>
-            <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
-          </p>
-        </div>        
+        <% if feature?(:spending_proposals) %>
+          <div class="small-12 medium-3 column">
+            <p class="featured">
+              <%= t "admin.stats.show.summary.spending_proposals" %><br>
+              <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
+            </p>
+          </div>
+        <% end %>
       </div>
 
       <div class="small-12 column">
@@ -98,17 +128,19 @@
         <% end %>
       </div>
 
-      <div class="small-12 column">
-        <h2><%= t "admin.stats.show.spending_proposals_title" %></h2>
-        <%= spending_proposals_chart_tag id: "spending_proposals" %>
-      </div>
+      <% if feature?(:spending_proposals) %>
+        <div class="small-12 column">
+          <h2><%= t "admin.stats.show.spending_proposals_title" %></h2>
+          <%= spending_proposals_chart_tag id: "spending_proposals" %>
+        </div>
+      <% end %>
 
-      <div class="small-12 column">
-        <% @event_types.each do |event, count| %>
-          <h2><%= event.titleize %> (<%= count %>)</h2>
-          <%= events_chart_tag event %>
-        <% end %>
-      </div>
+      <% if feature?(:budgets) %>
+        <div class="small-12 column">
+          <h2><%= t "admin.stats.show.budgets_title" %></h2>
+          <%= budget_investments_chart_tag id: "budget_investments" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

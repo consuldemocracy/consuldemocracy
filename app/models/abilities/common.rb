@@ -16,8 +16,7 @@ module Abilities
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
       end
-
-      can :read, SpendingProposal
+      can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :create, Comment
       can :create, Debate
@@ -45,11 +44,27 @@ module Abilities
         can :vote_featured, Proposal
         can :vote, SpendingProposal
         can :create, SpendingProposal
+
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+
+        can :create, DirectMessage
+        can :show, DirectMessage, sender_id: user.id
+        can :answer, Poll do |poll|
+          poll.answerable_by?(user)
+        end
+        can :answer, Poll::Question do |question|
+          question.answerable_by?(user)
+        end
       end
+
+      can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
 
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
-
     end
   end
 end

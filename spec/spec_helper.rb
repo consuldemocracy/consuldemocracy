@@ -2,6 +2,7 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'email_spec'
 require 'devise'
+require 'knapsack'
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
@@ -9,7 +10,7 @@ RSpec.configure do |config|
 
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, type: :controller
   config.include FactoryGirl::Syntax::Methods
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
@@ -63,6 +64,7 @@ RSpec.configure do |config|
 
   config.before(:each, type: :feature) do
     Bullet.start_request
+    allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(0)
   end
 
   config.after(:each, type: :feature) do
@@ -100,6 +102,7 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
-
-
 end
+
+# Parallel build helper configuration for travis
+Knapsack::Adapters::RSpecAdapter.bind

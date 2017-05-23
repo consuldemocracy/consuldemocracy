@@ -15,18 +15,24 @@
   <h3><%= page_entries_info @users %></h3>
 <% end %>
 
-<ul class="admin-list">
-  <% @users.each do |user| %>
-    <li>
-      <%= user.name %>
-      <span class="bullet">&nbsp;&bull;&nbsp;</span>
-      <% if user.hidden? %>
-        <%= t("moderation.users.index.hidden") %>
-      <% else %>
-        <%= link_to t("moderation.users.index.hide"), hide_in_moderation_screen_moderation_user_path(user, request.query_parameters), method: :put, class: "delete" %>
+<table id="moderation_users">
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.name %>
+        </td>
+        <td class="text-right">
+          <% if user.hidden? %>
+            <%= t("moderation.users.index.hidden") %>
+          <% else %>
+          <%= link_to t("moderation.users.index.hide"), hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
+                      method: :put, class: "button hollow alert" %>
+        </td>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= paginate @users %>

@@ -9,6 +9,7 @@ class Verification::VerifiedUserController < ApplicationController
   end
 
   private
+
     def user_data_present?
       return false if @verified_users.blank?
 

@@ -9,8 +9,9 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
   load_and_authorize_resource
 
   def index
+    @geozone_filters = geozone_filters
     if current_user.valuator?
-      @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(created_at: :desc).page(params[:page])
+      @spending_proposals = SpendingProposal.scoped_filter(params_for_current_valuator, @current_filter).order(cached_votes_up: :desc).page(params[:page])
     else
       @spending_proposals = SpendingProposal.none.page(params[:page])
     end
@@ -31,6 +32,25 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
 
   private
 
+    def geozone_filters
+      spending_proposals = SpendingProposal.by_valuator(current_user.valuator.try(:id)).valuation_open.all.to_a
+
+      [ { name: t('valuation.spending_proposals.index.geozone_filter_all'),
+          id: nil,
+          pending_count: spending_proposals.size
+        },
+        { name: t('geozones.none'),
+          id: 'all',
+          pending_count: spending_proposals.count{|x| x.geozone_id.nil?}
+        }
+      ] + Geozone.all.order(name: :asc).collect do |g|
+        { name: g.name,
+          id: g.id,
+          pending_count: spending_proposals.count{|x| x.geozone_id == g.id}
+        }
+      end.select{ |x| x[:pending_count] > 0 }
+    end
+
     def valuation_params
       params[:spending_proposal][:feasible] = nil if params[:spending_proposal][:feasible] == 'nil'
 
@@ -38,7 +58,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-        params.merge({valuator_id: current_user.valuator.id})
+      params.merge({valuator_id: current_user.valuator.id})
     end
 
     def restrict_access_to_assigned_items

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'SMS Verification' do
 
   scenario 'Verify' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -21,7 +21,7 @@ feature 'SMS Verification' do
   end
 
   scenario 'Errors on phone number' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -32,7 +32,7 @@ feature 'SMS Verification' do
   end
 
   scenario 'Errors on verification code' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path
@@ -58,7 +58,7 @@ feature 'SMS Verification' do
   end
 
   scenario '5 tries allowed' do
-    user = create(:user, residence_verified_at: Time.now)
+    user = create(:user, residence_verified_at: Time.current)
     login_as(user)
 
     visit new_sms_path

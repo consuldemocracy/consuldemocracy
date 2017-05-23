@@ -17,15 +17,15 @@
   <body class="admin">
     <header>
       <section class="top-links">
-        <div class="row">
+        <div class="expanded row">
           <%= render 'shared/locale_switcher' %>
         </div>
       </section>
 
-      <div class="row">
+      <div class="expanded row">
         <div class="top-bar">
 
-          <%= link_to Setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
+          <%= link_to setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
 
           <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
             <span class="menu-icon dark" data-toggle></span>
@@ -35,8 +35,8 @@
           <div id="responsive-menu">
             <div class="top-bar-title">
               <%= link_to management_root_path, class: "hide-for-small-only" do %>
-                <%= image_tag('header_logo_madrid.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
-                <%= Setting['org_name'] %>
+                <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+                <%= setting['org_name'] %>
                 &nbsp;|&nbsp;<%= t("management.dashboard.index.title") %>
               <% end %>
             </div>
@@ -45,36 +45,18 @@
       </div>
     </header>
 
-    <div class="row expanded">
-      <main>
-        <div class="small-12 medium-3 column">
-          <%= render "/management/menu" %>
-        </div>
+    <main class="no-margin-top row no-max-width collapse">
+      <div class="small-12 medium-3 column">
+        <%= render "/management/menu" %>
+      </div>
 
-        <%= render "management/account_info" %>
+      <%= render "management/account_info" %>
 
-        <div class="admin-content small-12 medium-9 column">
-          <% if notice %>
-            <div data-alert class="callout success" data-closable>
-              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <%= notice %>
-            </div>
-          <% end %>
+      <div class="admin-content small-12 medium-9 column">
+        <%= render 'layouts/flash' %>
+        <%= yield %>
+      </div>
+    </main>
 
-          <% if alert %>
-            <div data-alert class="callout alert" data-closable>
-              <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <%= alert %>
-            </div>
-          <% end %>
-
-          <%= yield %>
-        </div>
-      </main>
-    </div>
   </body>
 </html>

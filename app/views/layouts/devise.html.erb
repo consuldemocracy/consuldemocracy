@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title><%= content_for?(:title) ? yield(:title) : "Gobierno abierto" %></title>
+    <%= render "layouts/meta_tags" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -12,43 +13,28 @@
   </head>
 
   <body class="auth-page">
-    <div class="wrapper margin-top">
-      <div class="row">
-        <div class="small-12 medium-8 large-5 column small-centered margin-top">
-          <h1>
-            <%= link_to root_path do %>
-              <%= image_tag('header_logo_madrid.png', class: 'show-for-medium float-left', size: '96x96', alt: t("layouts.header.logo")) %>
-              <%= t("layouts.header.open_gov", open: "#{t('layouts.header.open')}").html_safe %>
-            <% end %>
-          </h1>
+    <div class="wrapper">
+      <div class="auth-image small-12 medium-3 column">
+        <h1 class="logo margin">
+          <%= link_to root_path do %>
+            <%= image_tag(image_path_for('logo_header.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
+            <%= setting['org_name'] %>
+          <% end %>
+        </h1>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <div class="row">
+          <div class="small-12 medium-9 large-7 small-centered column">
+            <div class="auth-form margin">
+              <%= render 'layouts/flash' %>
+
+              <%= yield %>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="row auth">
-        <main>
-          <div class="small-12 medium-8 large-5 column small-centered panel padding margin-bottom">
-            <% if notice %>
-              <div data-alert class="callout success" data-closable>
-                <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <%= notice %>
-              </div>
-            <% end %>
-
-            <% if alert %>
-              <div data-alert class="callout warning" data-closable>
-                <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <%= alert %>
-              </div>
-            <% end %>
-
-            <%= yield %>
-          </div>
-        </main>
-      </div>
       <div class="push"></div>
     </div>
 

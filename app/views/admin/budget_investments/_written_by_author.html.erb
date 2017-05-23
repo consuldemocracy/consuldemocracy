@@ -1,0 +1,36 @@
+<div class="callout primary float-right">
+  <%= t "admin.budget_investments.show.info", budget_name: @budget.name, group_name: @investment.group.name, id: @investment.id %>
+</div>
+
+<br>
+<h1 class="inline-block"><%= @investment.title %></h1>
+
+<div class="row small-collapse spending-proposal-info">
+  <div class="small-12 medium-4 column">
+    <p title="<%= t("admin.budget_investments.show.group") %>: <%= @investment.group.name %>">
+      <strong><%= t("admin.budget_investments.show.heading") %>:</strong>
+      <%= @investment.heading.name %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <p>
+      <strong><%= t("admin.budget_investments.show.by") %>:</strong>
+      <%= link_to @investment.author.name, admin_user_path(@investment.author) %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <p>
+      <strong><%= t("admin.budget_investments.show.sent") %>:</strong>
+      <%= l @investment.created_at, format: :datetime %>
+    </p>
+  </div>
+
+</div>
+
+<% if @investment.external_url.present? %>
+  <p><%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span></p>
+<% end %>
+
+<%= safe_html_with_links @investment.description %>

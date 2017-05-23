@@ -3,13 +3,15 @@ require 'rails_helper'
 feature 'Admin feature flags' do
 
   background do
+    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposal_features.voting_allowed'] = true
     login_as(create(:administrator).user)
   end
 
   scenario 'Enabled features are listed on menu' do
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).to have_link "Spending proposals"
       expect(page).to have_link "Hidden debates"
     end
@@ -28,7 +30,8 @@ feature 'Admin feature flags' do
 
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
+      expect(page).not_to have_link "Budgets"
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -42,7 +45,8 @@ feature 'Admin feature flags' do
 
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
+      expect(page).not_to have_link "Budgets"
       expect(page).not_to have_link "Spending proposals"
     end
 
@@ -56,8 +60,9 @@ feature 'Admin feature flags' do
 
     visit admin_root_path
 
-    within('#admin_menu') do
+    within('#side_menu') do
       expect(page).to have_link "Spending proposals"
     end
   end
+
 end

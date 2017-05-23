@@ -8,7 +8,7 @@ feature 'EmailVerifications' do
     user = create(:user)
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '1234'
+    fill_in 'document_verification_document_number', with: '12345678Z'
     click_button 'Check'
 
     expect(page).to have_content "Please introduce the email used on the account"
@@ -30,7 +30,7 @@ feature 'EmailVerifications' do
     expect(page).to_not have_link "Verify my account"
     expect(page).to have_content "Account verified"
 
-    expect(user.reload.document_number).to eq('1234')
+    expect(user.reload.document_number).to eq('12345678Z')
     expect(user).to be_level_three_verified
   end
 

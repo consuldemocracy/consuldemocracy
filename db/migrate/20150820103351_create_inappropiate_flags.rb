@@ -1,12 +1,12 @@
 class CreateInappropiateFlags < ActiveRecord::Migration
   def change
-     create_table :inappropiate_flags do |t|
-       t.belongs_to :user, index: true, foreign_key: true
+    create_table :inappropiate_flags do |t|
+      t.belongs_to :user, index: true, foreign_key: true
 
-       t.string :flaggable_type
-       t.integer :flaggable_id
+      t.string :flaggable_type
+      t.integer :flaggable_id
 
-       t.timestamps
+      t.timestamps
     end
 
     add_index :inappropiate_flags, [:flaggable_type, :flaggable_id]

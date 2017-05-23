@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <%= link_to user_path(@direct_message.receiver), class: "back" do %>
+      <span class="icon-angle-left"></span>
+      <%= t("shared.back") %>
+    <% end %>
+
+    <div class="clear"></div>
+
+    <div class="margin-top">
+      <span><strong><%= t("users.direct_messages.show.receiver",
+      receiver: @direct_message.receiver.name) %></strong></span>
+    </div>
+
+    <h1><%= @direct_message.title %></h1>
+    <p><%= simple_format text_with_links(@direct_message.body), {}, sanitize: false  %></p>
+  </div>
+</div>

@@ -4,7 +4,6 @@ module Abilities
 
     def initialize(user)
       self.merge Abilities::Moderation.new(user)
-      self.merge Abilities::Valuator.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -30,14 +29,41 @@ module Abilities
       can :confirm_hide, User
       cannot :confirm_hide, User, hidden_at: nil
 
-      can :comment_as_administrator, [Debate, Comment, Proposal]
+      can :mark_featured, Debate
+      can :unmark_featured, Debate
+
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment]
 
       can [:search, :create, :index, :destroy], ::Moderator
-      can [:search, :create, :index], ::Valuator
+      can [:search, :create, :index, :summary], ::Valuator
+      can [:search, :create, :index, :destroy], ::Manager
 
       can :manage, Annotation
 
-      can [:read, :update, :destroy], SpendingProposal
+      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+
+      can [:index, :read, :new, :create, :update, :destroy], Budget
+      can [:read, :create, :update, :destroy], Budget::Group
+      can [:read, :create, :update, :destroy], Budget::Heading
+      can [:hide, :update, :toggle_selection], Budget::Investment
+      can :valuate, Budget::Investment
+      can :create, Budget::ValuatorAssignment
+
+      can [:search, :edit, :update, :create, :index, :destroy], Banner
+
+      can [:index, :create, :edit, :update, :destroy], Geozone
+
+      can [:read, :create, :update, :destroy, :add_question, :remove_question, :search_booths, :search_questions, :search_officers], Poll
+      can [:read, :create, :update, :destroy], Poll::Booth
+      can [:search, :create, :index, :destroy], ::Poll::Officer
+      can [:create, :destroy], ::Poll::BoothAssignment
+      can [:create, :destroy], ::Poll::OfficerAssignment
+      can [:read, :create, :update], Poll::Question
+      can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
+
+      can :manage, SiteCustomization::Page
+      can :manage, SiteCustomization::Image
+      can :manage, SiteCustomization::ContentBlock
     end
   end
 end

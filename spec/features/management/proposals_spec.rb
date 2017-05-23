@@ -27,7 +27,6 @@ feature 'Proposals' do
       fill_in 'proposal_description', with: 'This is very important because...'
       fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
       fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_captcha', with: correct_captcha_text
       check 'proposal_terms_of_service'
 
       click_button 'Create proposal'
@@ -101,9 +100,9 @@ feature 'Proposals' do
     within("#proposals") do
       expect(page).to have_css('.proposal', count: 1)
       expect(page).to have_content(proposal1.title)
+      expect(page).to have_content(proposal1.summary)
       expect(page).to_not have_content(proposal2.title)
       expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
-      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.summary)
     end
   end
 
@@ -128,9 +127,9 @@ feature 'Proposals' do
     within("#proposals") do
       expect(page).to have_css('.proposal', count: 2)
       expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
-      expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.summary)
+      expect(page).to have_content(proposal1.summary)
       expect(page).to have_css("a[href='#{management_proposal_path(proposal2)}']", text: proposal2.title)
-      expect(page).to have_css("a[href='#{management_proposal_path(proposal2)}']", text: proposal2.summary)
+      expect(page).to have_content(proposal2.summary)
     end
   end
 
@@ -185,7 +184,7 @@ feature 'Proposals' do
 
   context "Printing" do
 
-    scenario 'Printing proposals', :js do
+    scenario 'Printing proposals' do
       6.times { create(:proposal) }
 
       click_link "Print proposals"

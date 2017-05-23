@@ -1,5 +1,7 @@
 <%= form_for(@debate) do |f| %>
+
   <%= render 'shared/errors', resource: @debate %>
+
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
@@ -10,6 +12,8 @@
       <%= f.label :description, t("debates.form.debate_text") %>
       <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
+
+    <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
@@ -30,10 +34,6 @@
           </span>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.simple_captcha input_html: { required: false } %>
     </div>
 
     <div class="actions small-12 column">

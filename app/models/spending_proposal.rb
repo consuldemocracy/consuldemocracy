@@ -4,7 +4,6 @@ class SpendingProposal < ActiveRecord::Base
   include Taggable
   include Searchable
 
-  apply_simple_captcha
   acts_as_votable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
@@ -16,6 +15,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :description, presence: true
+  validates_presence_of :feasible_explanation, if: :feasible_explanation_required?
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: SpendingProposal.description_max_length }
@@ -29,12 +29,15 @@ class SpendingProposal < ActiveRecord::Base
   scope :feasible,               -> { where(feasible: true) }
   scope :unfeasible,             -> { where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
+  scope :with_supports,          -> { where('cached_votes_up > 0') }
 
   scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
   scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
   scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
   scope :for_render,             -> { includes(:geozone) }
+
+  before_validation :set_responsible_name
 
   def description
     super.try :html_safe
@@ -97,8 +100,12 @@ class SpendingProposal < ActiveRecord::Base
     valuation_finished
   end
 
+  def feasible_explanation_required?
+    valuation_finished? && unfeasible?
+  end
+
   def total_votes
-    cached_votes_up
+    cached_votes_up + physical_votes
   end
 
   def code
@@ -107,17 +114,37 @@ class SpendingProposal < ActiveRecord::Base
 
   def send_unfeasible_email
     Mailer.unfeasible_spending_proposal(self).deliver_later
-    update(unfeasible_email_sent_at: Time.now)
+    update(unfeasible_email_sent_at: Time.current)
+  end
+
+  def reason_for_not_being_votable_by(user)
+    return :not_voting_allowed if Setting["feature.spending_proposal_features.voting_allowed"].blank?
+    return :not_logged_in unless user
+    return :not_verified  unless user.can?(:vote, SpendingProposal)
+    return :unfeasible    if unfeasible?
+    return :organization  if user.organization?
   end
 
   def votable_by?(user)
-    user && user.level_two_or_three_verified?
+    reason_for_not_being_votable_by(user).blank?
   end
 
   def register_vote(user, vote_value)
     if votable_by?(user)
       vote_by(voter: user, vote: vote_value)
     end
+  end
+
+  def set_responsible_name
+    self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
+  end
+
+  def self.finished_and_feasible
+    valuation_finished.feasible
+  end
+
+  def self.finished_and_unfeasible
+    valuation_finished.unfeasible
   end
 
 end

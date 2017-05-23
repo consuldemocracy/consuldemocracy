@@ -42,6 +42,28 @@ describe SpendingProposal do
     end
   end
 
+  describe "#feasible_explanation" do
+    it "should be valid if valuation not finished" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.valuation_finished = false
+      expect(spending_proposal).to be_valid
+    end
+
+    it "should be valid if valuation finished and feasible" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.feasible = true
+      spending_proposal.valuation_finished = true
+      expect(spending_proposal).to be_valid
+    end
+
+    it "should not be valid if valuation finished and unfeasible" do
+      spending_proposal.feasible_explanation = ""
+      spending_proposal.feasible = false
+      spending_proposal.valuation_finished = true
+      expect(spending_proposal).to_not be_valid
+    end
+  end
+
   describe "dossier info" do
     describe "#feasibility" do
       it "can be feasible" do
@@ -152,7 +174,7 @@ describe SpendingProposal do
       by_valuator = SpendingProposal.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
-      expect(by_valuator.sort).to eq([spending_proposal1,spending_proposal3].sort)
+      expect(by_valuator.sort).to eq([spending_proposal1, spending_proposal3].sort)
     end
   end
 
@@ -258,6 +280,94 @@ describe SpendingProposal do
         expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_1)).to eq(true)
         expect(not_unfeasibles.include?(not_unfeasible_spending_proposal_2)).to eq(true)
       end
+    end
+  end
+
+  describe 'Supports' do
+    let(:user)        { create(:user, :level_two) }
+    let(:luser)       { create(:user) }
+    let(:district)    { create(:geozone) }
+    let(:city_sp)     { create(:spending_proposal) }
+    let(:district_sp) { create(:spending_proposal, geozone: district) }
+
+    before(:each) do
+      Setting["feature.spending_proposals"] = true
+      Setting['feature.spending_proposal_features.voting_allowed'] = true
+    end
+
+    describe '#reason_for_not_being_votable_by' do
+      it "rejects not logged in users" do
+        expect(city_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+        expect(district_sp.reason_for_not_being_votable_by(nil)).to eq(:not_logged_in)
+      end
+
+      it "rejects not verified users" do
+        expect(city_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+        expect(district_sp.reason_for_not_being_votable_by(luser)).to eq(:not_verified)
+      end
+
+      it "rejects unfeasible spending proposals" do
+        unfeasible = create(:spending_proposal, feasible: false, valuation_finished: true)
+        expect(unfeasible.reason_for_not_being_votable_by(user)).to eq(:unfeasible)
+      end
+
+      it "rejects organizations" do
+        create(:organization, user: user)
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:organization)
+      end
+
+      it "rejects votes when voting is not allowed (via admin setting)" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = nil
+        expect(city_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+        expect(district_sp.reason_for_not_being_votable_by(user)).to eq(:not_voting_allowed)
+      end
+
+      it "accepts valid votes when voting is allowed" do
+        Setting["feature.spending_proposal_features.voting_allowed"] = true
+        expect(city_sp.reason_for_not_being_votable_by(user)).to be_nil
+        expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+      end
+    end
+  end
+
+  describe "responsible_name" do
+    let(:user) { create(:user, document_number: "123456") }
+    let!(:spending_proposal) { create(:spending_proposal, author: user) }
+
+    it "gets updated with the document_number" do
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+
+    it "does not get updated if the user is erased" do
+      user.erase
+      expect(user.erased_at).to be
+      spending_proposal.touch
+      expect(spending_proposal.responsible_name).to eq("123456")
+    end
+  end
+
+  describe "total votes" do
+    it "takes into account physical votes in addition to web votes" do
+      Setting["feature.spending_proposals"] = true
+      Setting['feature.spending_proposal_features.voting_allowed'] = true
+
+      sp = create(:spending_proposal)
+      sp.register_vote(create(:user, :level_two), true)
+      expect(sp.total_votes).to eq(1)
+      sp.physical_votes = 10
+      expect(sp.total_votes).to eq(11)
+    end
+  end
+
+  describe "#with_supports" do
+    it "should return proposals with supports" do
+      sp1 = create(:spending_proposal)
+      sp2 = create(:spending_proposal)
+      create(:vote, votable: sp1)
+
+      expect(SpendingProposal.with_supports).to include(sp1)
+      expect(SpendingProposal.with_supports).to_not include(sp2)
     end
   end
 

@@ -1,11 +1,7 @@
 <main>
-  <div class="wrap row proposals-summary">
+  <div class="row proposals-summary">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
-
-      <%= link_to :back, class: 'back left' do %>
-        <span class="icon-angle-left left"></span>
-        <%= t("proposals.show.back_link") %>
-      <% end %>
+      <%= render "shared/back_link" %>
 
       <% @proposals.each do |group_name, proposals| %>
         <div id="<%= group_name.parameterize %>">
@@ -24,7 +20,7 @@
                           <span class="author"><%= t("proposals.show.author_deleted") %></span>
                         <% else %>
                           <span class="author"><%= proposal.author.name %></span>
-                          <% if proposal.author.official? %>
+                          <% if proposal.author.display_official_position_badge? %>
                             <span class="label round level-<%= proposal.author.official_level %>">
                               <%= proposal.author.official_position %>
                             </span>

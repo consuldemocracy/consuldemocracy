@@ -27,30 +27,7 @@ describe Verification::Residence do
     it "should validate user has allowed age" do
       residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.year.ago.year}"})
       expect(residence).to_not be_valid
-      expect(residence.errors[:date_of_birth]).to include("You must be at least 16 years old")
-    end
-
-    describe "postal code" do
-      it "should be valid with postal codes starting with 280" do
-        residence.postal_code = "28012"
-        residence.valid?
-        expect(residence.errors[:postal_code].size).to eq(0)
-
-        residence.postal_code = "28023"
-        residence.valid?
-        expect(residence.errors[:postal_code].size).to eq(0)
-      end
-
-      it "should not be valid with postal codes not starting with 280" do
-        residence.postal_code = "12345"
-        residence.valid?
-        expect(residence.errors[:postal_code].size).to eq(1)
-
-        residence.postal_code = "13280"
-        residence.valid?
-        expect(residence.errors[:postal_code].size).to eq(1)
-        expect(residence.errors[:postal_code]).to include("In order to be verified, you must be registered in the municipality of Madrid.")
-      end
+      expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
 
     it "should validate uniquness of document_number" do
@@ -85,7 +62,7 @@ describe Verification::Residence do
 
   describe "save" do
 
-    it "should store document number, document type, and geozone" do
+    it "should store document number, document type, geozone, date of birth and gender" do
       user = create(:user)
       residence.user = user
       residence.save
@@ -93,6 +70,10 @@ describe Verification::Residence do
       user.reload
       expect(user.document_number).to eq('12345678Z')
       expect(user.document_type).to eq("1")
+      expect(user.date_of_birth.year).to eq(1980)
+      expect(user.date_of_birth.month).to eq(12)
+      expect(user.date_of_birth.day).to eq(31)
+      expect(user.gender).to eq('male')
       expect(user.geozone).to eq(geozone)
     end
 

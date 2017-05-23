@@ -1,0 +1,36 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budgets_url %>
+<% end %>
+
+<div class="expanded budget no-margin-top padding">
+  <div class="row">
+    <div class="small-12 column">
+      <h1><%= t('budgets.index.title') %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><%= Budget.human_attribute_name(:name) %></th>
+          <th scope="col"><%= Budget.human_attribute_name(:phase) %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @budgets.each do |budget| %>
+        <tr>
+          <td>
+            <%= link_to budget.name, budget %>
+          </td>
+          <td>
+            <%= budget.translated_phase %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

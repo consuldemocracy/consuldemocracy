@@ -8,7 +8,6 @@ class Debate < ActiveRecord::Base
   include Searchable
   include Filterable
 
-  apply_simple_captcha
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -29,14 +28,15 @@ class Debate < ActiveRecord::Base
   before_save :calculate_hot_score, :calculate_confidence_score
 
   scope :for_render,               -> { includes(:tags) }
-  scope :sort_by_hot_score ,       -> { reorder(hot_score: :desc) }
+  scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,            -> { where("created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
+  scope :featured,                 -> { where("featured_at is not null")}
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
@@ -57,10 +57,6 @@ class Debate < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title}".parameterize
-  end
-
-  def description
-    super.try :html_safe
   end
 
   def likes
@@ -130,6 +126,10 @@ class Debate < ActiveRecord::Base
 
   def after_restore
     self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+  end
+
+  def featured?
+    self.featured_at.present?
   end
 
 end

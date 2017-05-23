@@ -1,5 +1,4 @@
-<div class="supports">
-
+<div class="supports text-center">
   <div class="progress small-12 round">
     <span class="meter" style="width: <%= progress_bar_percentage(proposal) %>%;"></span>
     <span class="percentage">
@@ -18,37 +17,45 @@
 
   <div class="in-favor">
     <% if voted_for?(@proposal_votes, proposal) %>
-      <div class="supported">
+      <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
-    <% else %>
+    <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
           title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
+    <% else %>
+      <div class="button button-support small expanded">
+        <%= t("proposals.proposal.support") %>
+      </div>
     <% end %>
   </div>
 
   <% if user_signed_in? && current_user.organization? %>
-  <div class="organizations-votes" style='display:none'>
-    <p>
-      <%= t("votes.organizations") %>
-    </p>
-  </div>
-  <% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
-  <div class="anonymous-votes" style='display:none'>
-    <p>
-      <%= t("votes.verified_only",
-          verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
-    </p>
-  </div>
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <p>
+        <%= t("votes.organizations") %>
+      </p>
+    </div>
+  <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
+    <div tabindex="0">
+      <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+        <p>
+          <%= t("votes.verified_only",
+              verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+        </p>
+      </div>
+    </div>
   <% elsif !user_signed_in? %>
-  <div class="not-logged" style='display:none'>
-    <%= t("votes.unauthenticated",
-      signin: link_to(t("votes.signin"), new_user_session_path),
-      signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
-  </div>
+    <div tabindex="0">
+      <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+        <%= t("votes.unauthenticated",
+          signin: link_to(t("votes.signin"), new_user_session_path),
+          signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+      </div>
+    </div>
   <% end %>
 
   <% if voted_for?(@proposal_votes, proposal) && setting['twitter_handle'] %>

@@ -15,6 +15,9 @@ es:
       public_activity_label: Mostrar públicamente mi lista de actividades
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
+      email_on_direct_message_label: Recibir emails con mensajes privados
+      email_digest_label: Recibir resumen de notificaciones sobre propuestas
+      official_position_badge_label: Mostrar etiqueta de tipo de usuario
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
@@ -22,7 +25,7 @@ es:
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar en las votaciones finales*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
@@ -76,7 +79,6 @@ es:
         other: "%{count} votos"
         zero: Sin votos
     edit:
-      back_link: Volver
       editing: Editar debate
       form:
         submit_button: Guardar cambios
@@ -109,7 +111,6 @@ es:
       start_debate: Empieza un debate
       title: Debates
     new:
-      back_link: Volver
       form:
         submit_button: Empieza un debate
       info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
@@ -123,7 +124,6 @@ es:
       start_new: Empezar un debate
     show:
       author_deleted: Usuario eliminado
-      back_link: Volver
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
@@ -139,27 +139,32 @@ es:
   errors:
     messages:
       user_not_found: No se encontró el usuario
+      invalid_date_range: "El rango de fechas no es válido"
   form:
     accept_terms: Acepto la %{policy} y las %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
     debate: el debate
+    direct_message: el mensaje privado
     error: error
     errors: errores
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
+    proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
+    budget/investment: la propuesta de inversión
     user: la cuenta
     verification/sms: el teléfono
+    signature_sheet: la hoja de firmas
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos
+    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
       firefox: Firefox
-      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{chrome} o %{firefox}.
+      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
       ie_title: Esta web no está optimizada para tu navegador
     footer:
       accessibility: Accesibilidad
@@ -167,47 +172,51 @@ es:
       consul: aplicación Consul
       consul_url: https://github.com/consul/consul
       contact_us: Para asistencia técnica entra en
-      copyright: Ayuntamiento de Madrid, %{year}
-      description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
+      copyright: Consul, %{year}
+      description: Este portal usa la %{consul} que es %{open_source}.
       faq: Asistencia técnica
-      more_info: Más información
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
+      participation_text: Decide cómo debe ser la ciudad que quieres.
       participation_title: Participación
       privacy: Política de privacidad
-      transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
+      transparency_text: Obtén cualquier información sobre la ciudad.
       transparency_title: Transparencia
-      transparency_url: https://transparencia.madrid.es
+      transparency_url: https://transparency.consul
     header:
       administration: Administrar
+      available_locales: Idiomas disponibles
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
-      external_link_opendata_url: http://datos.madrid.es
+      external_link_opendata_url: https://opendata.consul
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparencia.madrid.es
+      external_link_transparency_url: https://transparency.consul
       locale: 'Idioma:'
-      logo: Madrid
+      logo: Consul logo
+      management: Gestión
       moderation: Moderar
       valuation: Evaluación
-      more_information: Más información
+      officing: Presidentes de mesa
+      more_info: Más información
       my_account_link: Mi cuenta
       my_activity_link: Mi actividad
+      notifications: Notificaciones
       new_notifications:
         one: Tienes una nueva notificación
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo. Madrid ya es una de ellas.
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
-      open_data: Datos abiertos
       open_gov: Gobierno %{open}
       proposals: Propuestas
+      poll_questions: Votaciones
       see_all: Ver propuestas
-      spending_proposals: Presupuestos ciudadanos
+      budgets: Presupuestos participativos
+      spending_proposals: "Propuestas de inversión"
   legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -223,6 +232,9 @@ es:
         other: Hay %{count} comentarios nuevos en
       empty_notifications: No tienes notificaciones nuevas.
       mark_all_as_read: Marcar todas como leídas
+      proposal_notification:
+        one: Hay una nueva notificación en
+        other: Hay %{count} nuevas notificaciones en
       replies_to:
         one: Hay una respuesta nueva a tu comentario en
         other: Hay %{count} nuevas respuestas a tu comentario en
@@ -236,25 +248,48 @@ es:
     facebook:
       sign_in: Entra con Facebook
       sign_up: Regístrate con Facebook
+      name: Facebook
     finish_signup:
       title: Añade tu email
     google_oauth2:
       sign_in: Entra con Google
       sign_up: Regístrate con Google
+      name: Google
     twitter:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
+      name: Twitter
+    info_sign_in: "Entra con:"
+    info_sign_up: "Regístrate con:"
+    or_fill: "O rellena el siguiente formulario:"
+    finish_signup:
+      title: "Detalles adicionales de tu cuenta"
+      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
   proposals:
     create:
       form:
         submit_button: Crear propuesta
     edit:
-      back_link: Volver
       editing: Editar propuesta
       form:
         submit_button: Guardar cambios
       show_link: Ver propuesta
+    retire_form:
+      title: Retirar propuesta
+      warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
+      retired_reason_label: Razón por la que se retira la propuesta
+      retired_reason_blank: Selecciona una opción
+      retired_explanation_label: Explicación
+      retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
+      submit_button: Retirar propuesta
+    retire_options:
+      duplicated: Duplicada
+      started: En ejecución
+      unfeasible: Inviable
+      done: Realizada
+      other: Otra
     form:
+      geozone: "Ámbito de actuación"
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
@@ -281,6 +316,16 @@ es:
         hot_score: Más activas hoy
         most_commented: Más comentadas
         relevance: Más relevantes
+        archival_date: Archivadas
+      retired_proposals: Propuestas retiradas
+      retired_proposals_link: "Propuestas retiradas por sus autores"
+      retired_links:
+        all: Todas
+        duplicated: Duplicadas
+        started: En ejecución
+        unfeasible: Inviables
+        done: Realizadas
+        other: Otras
       search_form:
         button: Buscar
         placeholder: Buscar propuestas...
@@ -295,7 +340,6 @@ es:
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
     new:
-      back_link: Volver
       form:
         submit_button: Crear propuesta
       more_info: "¿Cómo funcionan las propuestas ciudadanas?"
@@ -304,6 +348,8 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
+    notice:
+      retired: Propuesta retirada
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -311,7 +357,7 @@ es:
         other: "%{count} Comentarios"
         zero: Sin comentarios
       proposal: Propuesta
-      reason_for_supports_necessary: 2% del Censo
+      reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:
@@ -320,31 +366,107 @@ es:
         zero: Sin apoyos
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
+      archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
+      successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
-      back_link: Volver
       code: 'Código de la propuesta:'
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      comments_title: Comentarios
+      comments_tab: Comentarios
       edit_proposal_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      notifications_tab: Notificaciones
+      retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
+      retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
+      retired: Propuesta retirada por el autor
+      send_notification: Enviar notificación
       share: Compartir
+      no_notifications: "Esta propuesta no tiene notificaciones."
+      embed_video_title: "Vídeo en %{proposal}"
     update:
       form:
         submit_button: Guardar cambios
+  polls:
+    all: "Todas"
+    no_dates: "sin fecha asignada"
+    dates: "Desde el %{open_at} hasta el %{closed_at}"
+    final_date: "Recuento final/Resultados"
+    index:
+      filters:
+        current: "Abiertas"
+        incoming: "Próximamente"
+        expired: "Terminadas"
+      title: "Votaciones"
+      participate_button: "Participar en esta votación"
+      participate_button_incoming: "Más información"
+      participate_button_expired: "Votación terminada"
+      no_geozone_restricted: "Toda la ciudad"
+      geozone_restricted: "Distritos"
+      geozone_info: "Pueden participar las personas empadronadas en: "
+      can_answer: "¡Puedes participar en esta votación!"
+      cant_answer: "Esta votación no está disponible en tu zona"
+      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
+      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
+      already_answer: "Ya has participado en esta votación"
+    show:
+      dates_title: "Fechas de participación"
+      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+  poll_questions:
+    create_question: "Crear pregunta para votación"
+    default_valid_answers: "Sí, No"
+    show:
+      answer_this_question: "Responder a esta pregunta"
+      original_proposal: "Propuesta original"
+      author: "Creado por"
+      dates_title: "Fechas de participación"
+      more_info: "Más información"
+      not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      signin: iniciar sesión
+      signup: registrarte
+      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
+      verify_link: "verifica tu cuenta"
+      cant_answer_incoming: "Esta votación todavía no ha comenzado."
+      cant_answer_expired: "Esta votación ha terminado."
+      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
+      vote_answer: "Votar %{answer}"
+      voted: "Has votado %{answer}"
+      poll: "Votación"
+    banner:
+      featured_title: "#PróximaVotación"
+      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
+  proposal_notifications:
+    new:
+      title: "Enviar mensaje"
+      title_label: "Título"
+      body_label: "Mensaje"
+      submit_button: "Enviar mensaje"
+      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
+      proposal_page: "la página de la propuesta"
+    show:
+      back: "Volver a mi actividad"
   shared:
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
+    "yes": "Sí"
+    "no": "No"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
-      author_type_1: 'Empleado público'
-      author_type_2: 'Organización Municipal'
-      author_type_3: 'Director general'
-      author_type_4: 'Concejal'
-      author_type_5: 'Alcaldesa'
       date: 'Por fecha'
       date_placeholder: 'DD/MM/AAAA'
       date_range_blank: 'Elige una fecha'
@@ -359,15 +481,20 @@ es:
       search: 'Filtrar'
       title: 'Búsqueda avanzada'
       to: 'Hasta'
+    delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
+    back: Volver
     check: Seleccionar
     check_all: Todos
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
+    hide: Ocultar
     print:
       print_button: Imprimir esta información
+    search: Buscar
+    show: Mostrar
     suggest:
       debate:
         found:
@@ -384,23 +511,24 @@ es:
     tags_cloud:
       tags: Tendencias
       districts: "Distritos"
+      districts_list: "Listado de distritos"
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
+    you_are_in: "Estás en"
     unflag: Deshacer denuncia
-  simple_captcha:
-    label: Introduce el texto de la imagen en la siguiente caja
-    message:
-      debate: el código secreto no coincide con la imagen
-      proposal: el código secreto no coincide con la imagen
-      spendingproposal: el código secreto no coincide con la imagen
-      user: el código secreto no coincide con la imagen
-    placeholder: Introduce el texto de la imagen
-    refresh_button_text: Refrescar
+    outline:
+      debates: Debates
+      proposals: Propuestas
+      budget: Presupuestos participativos
+      searcher: Buscador
   social:
     blog: Blog
     facebook: Facebook
     twitter: Twitter
     youtube: YouTube
+    whatsapp: WhatsApp
+    telegram: Telegram
+    instagram: Instagram
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
@@ -435,7 +563,6 @@ es:
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
       recommendations_title: Cómo crear una propuesta de gasto
       start_new: Crear una propuesta de gasto
-      back_link: Volver
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -467,12 +594,25 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: "Mensaje"
+        direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
+        submit_button: "Enviar mensaje"
+        title: Enviar mensaje privado a %{receiver}
+        title_label: "Título"
+        verified_only: Para enviar un mensaje privado %{verify_account}
+        verify_account: verifica tu cuenta
+        authenticate: Necesitas %{signin} o %{signup}.
+        signin: iniciar sesión
+        signup: registrarte
+      show:
+        receiver: Mensaje enviado a %{receiver}
     show:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Este propuesta ha sido eliminada
-      delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
+      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
       filters:
         comments:
           one: 1 Comentario
@@ -483,11 +623,17 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
-        spending_proposals:
-          one: 1 Propuesta de inversión
-          other: "%{count} Propuestas de inversión"
+        budget_investments:
+          one: 1 Proyecto de presupuestos participativos
+          other: "%{count} Proyectos de presupuestos participativos"
       no_activity: Usuario sin actividad pública
+      no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+      send_private_message: "Enviar un mensaje privado"
+    proposals:
+      send_notification: "Enviar notificación"
+      retire: "Retirar"
+      retired: "Retirada"
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
@@ -500,21 +646,30 @@ es:
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
+    spending_proposals:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+    budget_investments:
+      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+      different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
     debates:
-      alt: Icono debates
       description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
       title: Debates
     decide:
-      alt: Icono decides
       description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
       title: Decides
     do:
-      alt: Icono se hace
       description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
       title: Se hace
     proposal:
-      alt: Icono propones
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
     verification:
@@ -530,21 +685,9 @@ es:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
-  omniauth:
-    finish_signup:
-      title: "Detalles adicionales de tu cuenta"
-    twitter:
-      sign_in: "Entra con Twitter"
-      sign_up: "Regístrate con Twitter"
-    facebook:
-      sign_in: "Entra con Facebook"
-      sign_up: "Regístrate con Facebook"
-    google_oauth2:
-      sign_in: "Entra con Google"
-      sign_up: "Regístrate con Google"
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"
@@ -552,3 +695,6 @@ es:
       text_sign_in: "iniciar sesión"
       text_sign_up: "registrarte"
       alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
+  invisible_captcha:
+    sentence_for_humans: "Si eres humano, por favor ignora este campo"
+    timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

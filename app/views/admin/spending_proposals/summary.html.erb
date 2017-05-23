@@ -1,0 +1,18 @@
+<%= link_to admin_spending_proposals_path, class: "back" do %>
+  <span class="icon-angle-left"></span>
+  <%= t("shared.back") %>
+<% end %>
+
+<h2><%= t("admin.spending_proposals.summary.title") %></h2>
+  <div id="all-proposals">
+    <%= render 'summary_table',
+             spending_proposals: @spending_proposals,
+             second_scope: 'all' %>
+</div>
+
+<div id="proposals-with-votes">
+  <h2><%= t("admin.spending_proposals.summary.title_proposals_with_supports") %></h2>
+  <%= render 'summary_table',
+            spending_proposals: @spending_proposals_with_supports,
+            second_scope: 'with_supports' %>
+</div>

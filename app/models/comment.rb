@@ -10,7 +10,8 @@ class Comment < ActiveRecord::Base
 
   validates :body, presence: true
   validates :user, presence: true
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal"]
+
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "Budget::Investment", "Poll::Question"]
 
   validate :validate_body_length
 
@@ -24,8 +25,8 @@ class Comment < ActiveRecord::Base
   scope :not_as_admin_or_moderator, -> { where("administrator_id IS NULL").where("moderator_id IS NULL")}
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
-  scope :sort_by_most_voted , -> { order(confidence_score: :desc, created_at: :desc) }
-  scope :sort_descendants_by_most_voted , -> { order(confidence_score: :desc, created_at: :asc) }
+  scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }
+  scope :sort_descendants_by_most_voted, -> { order(confidence_score: :desc, created_at: :asc) }
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_descendants_by_newest, -> { order(created_at: :desc) }
@@ -95,7 +96,7 @@ class Comment < ActiveRecord::Base
   end
 
   def self.body_max_length
-    Setting['comments_body_max_length'].to_i 
+    Setting['comments_body_max_length'].to_i
   end
 
   def calculate_confidence_score

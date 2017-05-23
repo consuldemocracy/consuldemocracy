@@ -1,0 +1,13 @@
+<h2><%= t("devise.password_expired.expire_password") %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => [resource_name, :password_expired], :html => { :method => :put }) do |f| %>
+
+  <%= f.password_field :current_password %></p>
+
+  <%= f.label t("devise.password_expired.new_password") %> 
+  <%= f.password_field :password, label: false %></p>
+ 
+  <%= f.password_field :password_confirmation %></p>
+
+  <p><%= f.submit t("devise.password_expired.change_password") %></p>
+<% end %> 

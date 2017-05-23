@@ -1,7 +1,6 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  include SimpleCaptcha::ControllerHelpers
   include HasFilters
   include HasOrders
 
@@ -116,4 +115,9 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def set_default_budget_filter
+      if @budget.try(:balloting?)
+        params[:filter] ||= "selected"
+      end
+    end
 end

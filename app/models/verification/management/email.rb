@@ -27,8 +27,8 @@ class Verification::Management::Email
 
     user.update(document_type: document_type,
                 document_number: document_number,
-                residence_verified_at: Time.now,
-                level_two_verified_at: Time.now,
+                residence_verified_at: Time.current,
+                level_two_verified_at: Time.current,
                 email_verification_token: plain_token)
 
     Mailer.email_verification(user, email, encrypted_token, document_type, document_number).deliver_later

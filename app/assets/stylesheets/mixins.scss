@@ -1,24 +1,19 @@
 // Table of Contents
 //
-// 01. Mixins
+// 01. Logo
 //
 
-// 01. Mixins
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-@mixin back {
-  clear: both;
-  color: $text-medium;
-  float: left;
-}
+// 01. Logo
+// --------
 
 @mixin logo {
   color: white;
-  font-family: $font-logo;
-  font-size: $h3-font-size;
+  display: inline-block;
+  font-family: 'Lato' !important;
+  font-size: rem-calc(24);
   font-weight: lighter;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     line-height: $line-height*2;
     margin-top: 0;
   }
@@ -27,67 +22,11 @@
     height: 48px;
     width: 48px;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       height: 80px;
       margin-right: $line-height/2;
       margin-top: 0;
       width: 80px;
     }
   }
-}
-
-@mixin h1 {
-  font-size: $h2-font-size;
-  line-height: $h2-line-height;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h1-font-size;
-    line-height: $h1-line-height;
-  }
-}
-
-@mixin h2 {
-  font-size: $h3-font-size;
-  line-height: $h3-line-height;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h2-font-size;
-    line-height: $h2-line-height;
-  }
-}
-
-@mixin h3 {
-  font-size: $h4-font-size;
-  line-height: $h4-line-height;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h3-font-size;
-    line-height: $h3-line-height;
-  }
-}
-
-@mixin h4 {
-  font-size: $h5-font-size;
-  line-height: $h5-line-height;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h4-font-size;
-    line-height: $h4-line-height;
-  }
-}
-
-@mixin h5 {
-  font-size: $h6-font-size;
-  line-height: $h6-line-height;
-
-  @media (min-width: $small-breakpoint) {
-    font-size: $h5-font-size;
-    line-height: $h5-line-height;
-  }
-}
-
-@mixin h6 {
-  font-size: $h6-font-size;
-  line-height: $h6-line-height;
-  text-transform: uppercase;
 }

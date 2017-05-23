@@ -129,12 +129,12 @@ describe Debate do
     end
 
     it "should be true for level two verified users" do
-      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+      user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
       expect(debate.votable_by?(user)).to be true
     end
 
     it "should be true for level three verified users" do
-      user = create(:user, verified_at: Time.now)
+      user = create(:user, verified_at: Time.current)
       expect(debate.votable_by?(user)).to be true
     end
 
@@ -166,24 +166,24 @@ describe Debate do
 
     describe "from level two verified users" do
       it "should register vote" do
-        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect {debate.register_vote(user, 'yes')}.to change{debate.reload.votes_for.size}.by(1)
       end
 
       it "should not increase anonymous votes counter " do
-        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect {debate.register_vote(user, 'yes')}.to_not change{debate.reload.cached_anonymous_votes_total}
       end
     end
 
     describe "from level three verified users" do
       it "should register vote" do
-        user = create(:user, verified_at: Time.now)
+        user = create(:user, verified_at: Time.current)
         expect {debate.register_vote(user, 'yes')}.to change{debate.reload.votes_for.size}.by(1)
       end
 
       it "should not increase anonymous votes counter " do
-        user = create(:user, verified_at: Time.now)
+        user = create(:user, verified_at: Time.current)
         expect {debate.register_vote(user, 'yes')}.to_not change{debate.reload.cached_anonymous_votes_total}
       end
     end
@@ -225,7 +225,7 @@ describe Debate do
   end
 
   describe '#hot_score' do
-    let(:now) { Time.now }
+    let(:now) { Time.current }
 
     it "increases for newer debates" do
       old = create(:debate, :with_hot_score, created_at: now - 1.day)
@@ -611,7 +611,7 @@ describe Debate do
 
       it "should be able to reorder by created_at after searching" do
         recent  = create(:debate,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
-        newest  = create(:debate,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.now)
+        newest  = create(:debate,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.current)
         oldest  = create(:debate,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
 
         results = Debate.search('stop corruption')

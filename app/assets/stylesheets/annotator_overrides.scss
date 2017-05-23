@@ -24,7 +24,7 @@
   border-radius: 0;
   bottom: $line-height;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
-  font-family: $font-sans;
+  font-family: $body-font-family;
   font-size: $base-font-size;
   line-height: $line-height;
   min-width: $line-height*13;
@@ -57,7 +57,7 @@
   border: none;
   box-shadow: none;
   color: $link;
-  font-family: $font-sans;
+  font-family: $body-font-family;
   font-size: $base-font-size;
   font-weight: normal;
   text-shadow: none;

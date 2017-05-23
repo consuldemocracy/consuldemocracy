@@ -32,7 +32,7 @@ feature 'Commenting debates' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{debate.title}", debate_path(debate)
+    expect(page).to have_link "Go back to #{debate.title}", href: debate_path(debate)
   end
 
   scenario 'Collapsable comments', :js do
@@ -62,9 +62,9 @@ feature 'Commenting debates' do
   end
 
   scenario 'Comment order' do
-    c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.now - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.now - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.now)
+    c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.current - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.current - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.current)
 
     visit debate_path(debate, order: :most_voted)
 
@@ -83,10 +83,10 @@ feature 'Commenting debates' do
   end
 
   scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
-    old_root = create(:comment, commentable: debate, created_at: Time.now - 10)
-    new_root = create(:comment, commentable: debate, created_at: Time.now)
-    old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.now - 10)
-    new_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.now)
+    old_root = create(:comment, commentable: debate, created_at: Time.current - 10)
+    new_root = create(:comment, commentable: debate, created_at: Time.current)
+    old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.current - 10)
+    new_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.current)
 
     visit debate_path(debate, order: :most_voted)
 
@@ -118,13 +118,13 @@ feature 'Commenting debates' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://madrid.es"
+    create :comment, commentable: debate, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit debate_path(debate)
 
     within first('.comment') do
-      expect(page).to have_content "click me http://madrid.es"
-      expect(page).to have_link('http://madrid.es', href: 'http://madrid.es')
+      expect(page).to have_content "click me http://www.url.com"
+      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
       expect(page).not_to have_link('click me')
     end
   end
@@ -418,7 +418,7 @@ feature 'Commenting debates' do
 
   feature 'Voting comments' do
     background do
-      @manuela = create(:user, verified_at: Time.now)
+      @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @debate = create(:debate)
       @comment = create(:comment, commentable: @debate)

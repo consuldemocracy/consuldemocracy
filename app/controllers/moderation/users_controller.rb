@@ -21,13 +21,13 @@ class Moderation::UsersController < Moderation::BaseController
 
   private
 
-  def load_users
-    @users = User.with_hidden.search(params[:name_or_email]).page(params[:page]).for_render
-  end
+    def load_users
+      @users = User.with_hidden.search(params[:name_or_email]).page(params[:page]).for_render
+    end
 
-  def block_user
-    @user.block
-    Activity.log(current_user, :block, @user)
-  end
+    def block_user
+      @user.block
+      Activity.log(current_user, :block, @user)
+    end
 
 end

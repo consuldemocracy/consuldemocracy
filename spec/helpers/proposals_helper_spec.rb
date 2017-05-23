@@ -13,11 +13,6 @@ describe ProposalsHelper do
       expect(progress_bar_percentage(proposal)).to eq 50
     end
 
-    it "should take into account the physical votes" do
-      proposal = create(:proposal, cached_votes_up: ((Proposal.votes_needed_for_success/2)-100), physical_votes: 100)
-      expect(progress_bar_percentage(proposal)).to eq 50
-    end
-
     it "should be 100 if there are more votes than needed" do
       proposal = create(:proposal, cached_votes_up: Proposal.votes_needed_for_success*2)
       expect(progress_bar_percentage(proposal)).to eq 100
@@ -45,10 +40,6 @@ describe ProposalsHelper do
       expect(supports_percentage(proposal)).to eq "100%"
     end
 
-    it "should take into account the physical votes" do
-      proposal = create(:proposal, physical_votes: Proposal.votes_needed_for_success/2)
-      expect(supports_percentage(proposal)).to eq "50%"
-    end
   end
 
 end

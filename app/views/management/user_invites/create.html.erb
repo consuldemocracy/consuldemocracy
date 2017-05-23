@@ -1,0 +1,9 @@
+<div class="small-12 medium-8 column">
+  <%= render 'shared/back_link' %>
+
+  <h1><%= t('management.user_invites.create.title') %></h1>
+
+  <div class="callout success">
+    <%= t('management.user_invites.create.success_html', count: @emails.count) %>
+  </div>
+</div>

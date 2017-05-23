@@ -2,36 +2,36 @@ require 'rails_helper'
 
 describe Verification::Management::Document do
   describe "#valid_age?" do
-    it "returns false when the user is younger than sixteen years old" do
-      census_response = double(date_of_birth: "31-12-#{16.years.ago.year}")
+    it "returns false when the user is younger than the user's minimum required age" do
+      census_response = double(date_of_birth: Date.new(User.minimum_required_age.years.ago.year, 12, 31))
       expect(Verification::Management::Document.new.valid_age?(census_response)).to be false
     end
 
-    it "returns true when the user is sixteen years old" do
-      census_response = double(date_of_birth: 16.years.ago.strftime("%d-%m-%Y"))
+    it "returns true when the user has the user's minimum required age" do
+      census_response = double(date_of_birth: Date.new(User.minimum_required_age.years.ago.year, 16.years.ago.month, 16.years.ago.day))
       expect(Verification::Management::Document.new.valid_age?(census_response)).to be true
     end
 
-    it "returns true when the user is older than sixteen years old" do
-      census_response = double(date_of_birth: "31-12-#{33.years.ago.year}")
+    it "returns true when the user is older than the user's minimum required age" do
+      census_response = double(date_of_birth: Date.new((User.minimum_required_age + 10).years.ago.year, 12, 31))
       expect(Verification::Management::Document.new.valid_age?(census_response)).to be true
     end
   end
 
-  describe "#under_sixteen?" do
-    it "returns true when the user is younger than sixteen years old" do
-      census_response = double(date_of_birth: "31-12-#{16.years.ago.year}")
-      expect(Verification::Management::Document.new.under_sixteen?(census_response)).to be true
+  describe "#under_age?" do
+    it "returns true when the user is younger than the user's minimum required age" do
+      census_response = double(date_of_birth: Date.new(User.minimum_required_age.years.ago.year, 12, 31))
+      expect(Verification::Management::Document.new.under_age?(census_response)).to be true
     end
 
-    it "returns false when the user is sixteen years old" do
-      census_response = double(date_of_birth: 16.years.ago.strftime("%d-%m-%Y"))
-      expect(Verification::Management::Document.new.under_sixteen?(census_response)).to be false
+    it "returns false when the user is user's minimum required age" do
+      census_response = double(date_of_birth: Date.new(User.minimum_required_age.years.ago.year, User.minimum_required_age.years.ago.month, User.minimum_required_age.years.ago.day))
+      expect(Verification::Management::Document.new.under_age?(census_response)).to be false
     end
 
-    it "returns false when the user is older than sixteen years old" do
-      census_response = double(date_of_birth: "31-12-#{33.years.ago.year}")
-      expect(Verification::Management::Document.new.under_sixteen?(census_response)).to be false
+    it "returns false when the user is older than user's minimum required age" do
+      census_response = double(date_of_birth: Date.new((User.minimum_required_age + 10).years.ago.year, 12, 31))
+      expect(Verification::Management::Document.new.under_age?(census_response)).to be false
     end
   end
 end

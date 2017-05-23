@@ -17,7 +17,7 @@ class Verification::Letter
   end
 
   def letter_requested!
-    user.update(letter_requested_at: Time.now, letter_verification_code: generate_verification_code)
+    user.update(letter_requested_at: Time.current, letter_verification_code: generate_verification_code)
   end
 
   def validate_existing_user

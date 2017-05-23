@@ -4,9 +4,9 @@ module ModerateActions
 
   def index
     @resources = @resources.send(@current_filter)
-                       .send("sort_by_#{@current_order}")
-                       .page(params[:page])
-                       .per(50)
+                           .send("sort_by_#{@current_order}")
+                           .page(params[:page])
+                           .per(50)
     set_resources_instance
   end
 

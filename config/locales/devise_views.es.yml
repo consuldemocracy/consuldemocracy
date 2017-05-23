@@ -17,7 +17,7 @@ es:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
         text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
-        title: Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Madrid
+        title: Te damos la bienvenida al Portal de Gobierno Abierto
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña
@@ -96,7 +96,6 @@ es:
           submit: Borrar mi cuenta
           title: Darme de baja
         edit:
-          back_link: Atrás
           current_password_label: Contraseña actual
           edit: Editar
           email_label: Email

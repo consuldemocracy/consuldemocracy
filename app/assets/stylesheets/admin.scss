@@ -5,70 +5,133 @@
 // 03. List elements
 // 04. Stats
 // 05. Management
+// 06. Polls
 //
 
 // 01. Global styles
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------------
+
+$admin-color: #CF3638;
 
 body.admin {
 
+  header {
+    border: 0;
+
+    .top-links {
+      background: darken($admin-color, 15%);
+    }
+
+    .back-web {
+      padding-top: $line-height/4;
+      text-decoration: underline;
+    }
+  }
+
+  .top-bar {
+    background: $admin-color !important;
+    height: auto;
+  }
+
+  .top-bar-title {
+
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
   form {
+
     .button {
       margin-top: 0;
+
+      &.margin-top {
+        margin-top: $line-height;
+      }
     }
 
     input[type="text"], textarea {
-      height: 48px\9;
-      line-height: 48px\9;
-      margin-bottom: 24px\9;
       width: 100%;
+    }
+
+    .fieldset {
+
+      select {
+        height: $line-height*2;
+      }
+
+      .input-group input[type="text"] {
+        border-radius: 0;
+        margin-bottom: 0 !important;
+      }
     }
   }
 
   table {
 
+    th {
+      text-align: left;
+
+      &.text-center {
+        text-align: center;
+      }
+
+      &.text-right {
+        padding-right: $line-height;
+        text-align: right;
+      }
+
+      &.with-button {
+        line-height: $line-height*2;
+      }
+    }
+
     tr {
-      background: #f4f4f4;
+      background: white;
+      border: 1px solid $border;
 
-      &:nth-child(odd) {
-        background: white;
-      }
-
-      &:nth-child(even) {
-        background: #f0f0f0;
+      &:hover {
+        background: #f3f6f7;
       }
     }
 
-    td.small {
-      font-size: $small-font-size;
+    &.fixed {
+      table-layout: fixed;
     }
+
+    input[type="submit"] ~ a, a ~ a {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: $line-height/2;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height/2;
+        margin-right: $line-height/2;
+        margin-top: 0;
+      }
+    }
+  }
+
+  hr {
+    max-width: none;
+  }
+
+  .menu.simple li.active {
+    border-bottom: 2px solid $admin-color;
+    color: $admin-color;
+  }
+
+  .tabs-panel {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   #proposals {
     width: 100% !important;
   }
 
-  .dashboard {
-    margin-bottom: rem-calc(48);
-
-    ul, ol {
-      margin-left: rem-calc(12);
-
-      li {
-        font-size: rem-calc(15);
-        line-height: rem-calc(30);
-        margin-bottom: rem-calc(12);
-      }
-    }
-
-    p {
-      font-size: rem-calc(15);
-      line-height: rem-calc(30);
-    }
-
-    h3 {
-      font-weight: bold;
-    }
+  .accordion-title {
+    font-size: $base-font-size;
   }
 
   .button.secondary {
@@ -77,7 +140,7 @@ body.admin {
 
   .admin-content {
 
-    .proposal-new, .proposal-edit {
+    .proposal-form {
       padding-top: 0;
     }
 
@@ -99,104 +162,144 @@ body.admin {
   display: none;
 }
 
+.admin-content {
+  padding: $line-height !important;
+}
+
+@include breakpoint(medium) {
+
+  tr {
+
+    .on-hover-block {
+      display: none;
+    }
+
+    &:hover .on-hover-block {
+      display: block;
+      margin: 0;
+      margin-top: $line-height/2;
+      width: 100%;
+    }
+  }
+}
+
+@include breakpoint(medium) {
+
+  tr {
+
+    .on-hover {
+      display: none;
+    }
+
+    &:hover .on-hover {
+      display: inline;
+    }
+  }
+}
+
+.input-group {
+
+  .input-group-button {
+    padding-bottom: rem-calc(16);
+  }
+}
+
 // 02. Sidebar
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------
 
 .admin-sidebar {
+  border-right: 1px solid $border;
 
-  a {
-    color: white\9 !important;
+  @include breakpoint(medium) {
+    min-height: rem-calc(1100);
   }
 
   ul {
     list-style-type: none;
+    margin-bottom: 0;
     margin-left: 0;
     padding: 0;
 
     [class^="icon-"] {
+      color: $admin-color;
       display: inline-block;
       font-size: rem-calc(24);
-      padding-right: rem-calc(24);
-      padding-top: rem-calc(4);
-      padding-left: 12px\9 !important;
-      padding-right: 12px\9 !important;
+      line-height: $line-height;
+      padding: $line-height/2 $line-height/4;
+      padding-left: 0;
+      vertical-align: middle;
     }
 
     li {
-      background: #2E343F;
-      border-bottom: 1px solid #292f39;
-      border-top: 1px solid #353c49;
+      background: white;
       margin: 0;
       outline: 0;
 
-      &:first-child {
-        font-weight: bold;
-        text-transform: uppercase;
+      ul {
+        margin-left: $line-height/1.5;
+        border-left: 1px solid $border;
+        padding-left: $line-height/2;
       }
 
-      &.active{
-        background: #373D47;
+      &.section-title {
+        border-bottom: 1px solid $border;
+      }
 
-        a:not(.button) {
-          color: white;
-        }
+      &.active a {
+        background: #f3f6f7;
+        border-radius: rem-calc(6);
+        -moz-border-radius: rem-calc(6);
+        -webkit-border-radius: rem-calc(6);
+        color: $admin-color;
+        font-weight: bold;
       }
     }
 
-    li a:not(.button) {
-      color: rgba(255,255,255,0.3);
+    li a {
+      color: $text;
+      display: block;
       line-height: rem-calc(48);
       padding-left: rem-calc(12);
       vertical-align: top;
 
       &:hover {
-        color: white;
+        background: #f3f6f7;
+        border-radius: rem-calc(6);
+        -moz-border-radius: rem-calc(6);
+        -webkit-border-radius: rem-calc(6);
+        color: $admin-color;
+        text-decoration: none;
       }
+    }
+  }
+
+  .is-accordion-submenu-parent {
+
+    & > a::after {
+      border-color: $admin-color transparent transparent;
+    }
+  }
+
+  .submenu {
+    border-bottom: 0;
+    margin-left: $line-height;
+
+    li:first-child {
+      padding-top: $line-height/2;
+    }
+
+    li:last-child {
+      padding-bottom: $line-height/2;
+    }
+
+    a {
+      font-weight: normal;
     }
   }
 }
 
 // 03. List elements
-// - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.admin-list {
-  list-style-type: none;
-  margin: 0;
-  margin-bottom: rem-calc(48);
-
-  form {
-    clear: both;
-
-    .checkbox {
-      font-size: $small-font-size;
-    }
-  }
-
-  li {
-    border-bottom: 1px solid #E7E9EC;
-    font-size: rem-calc(14);
-    min-height: rem-calc(72);
-    padding: rem-calc(12);
-
-    &:first-child {
-      border-top: 1px solid #E7E9EC;
-    }
-
-    &:nth-child(odd) {
-      background: #F0F2F6;
-    }
-  }
-
-  .tag {
-    float: left;
-    font-size: rem-calc(18);
-    padding: 0;
-  }
-
-  .button {
-    margin: 0;
-  }
-}
+// -----------------
 
 .delete {
   border-bottom: 1px dotted #CF2A0E;
@@ -207,6 +310,11 @@ body.admin {
     border-bottom: 1px dotted white;
     color: #cf2a0e;
   }
+}
+
+[class^="icon-"].delete {
+  border: 0;
+  font-size: $base-font-size;
 }
 
 .verified {
@@ -239,14 +347,9 @@ body.admin {
   font-style: italic;
 }
 
-.level {
-  font-size: rem-calc(12);
-}
-
 .official {
   background-color: #e7e7e7;
   border-radius: rem-calc(3);
-  font-size: rem-calc(12);
   font-weight: normal;
   padding: rem-calc(6) rem-calc(12);
 }
@@ -262,13 +365,10 @@ body.admin {
 .moderation-description {
   max-height: rem-calc(65);
   overflow: hidden;
-  max-width: rem-calc(590);
+  max-width: rem-calc(700);
 
   &:hover {
-    cursor: text;
     max-height: rem-calc(1000);
-    outline: 3px solid #ffbf47;
-    padding: rem-calc(12);
     transition: max-height 0.9s;
     -moz-transition: max-height 0.9s;
     -webkit-transition: max-height 0.9s;
@@ -276,7 +376,7 @@ body.admin {
 }
 
 // 04. Stats
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ---------
 
 .stats {
   background: white;
@@ -304,7 +404,7 @@ body.admin {
 }
 
 // 05. Management
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------
 
 .user-permissions {
 
@@ -337,8 +437,8 @@ body.admin {
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
-  margin-bottom: rem-calc(12);
-  padding: rem-calc(6) rem-calc(12);
+  margin: $line-height;
+  padding: $line-height/2;
 
   strong {
     font-size: rem-calc(18);
@@ -349,3 +449,101 @@ body.admin {
   margin-bottom: 0;
 }
 
+body.admin {
+
+  .investment-projects-list.medium-9 {
+    width: 100%;
+  }
+
+  .investment-projects-summary {
+
+    th, td {
+      text-align: center;
+
+      &:first-child {
+        font-weight: bold;
+        text-align: left;
+      }
+
+      &:last-child {
+        font-weight: bold;
+      }
+    }
+
+    tr {
+      &:nth-child(even) td:last-child {
+        background: $success-border;
+      }
+
+      &:nth-child(odd) td:last-child {
+        background: $success-bg;
+      }
+    }
+  }
+}
+
+.admin-content .select-geozone, .admin-content .select-heading {
+
+  a {
+    display: block;
+
+    &.active {
+      color: $brand;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
+table.investment-projects-summary {
+
+  td.total-price {
+    white-space: nowrap;
+  }
+}
+
+body.admin {
+
+  .geozone {
+    background: #ececec;
+    border-radius: rem-calc(6);
+    color: $text;
+    display: inline-block;
+    font-size: $small-font-size;
+    margin-bottom: $line-height/3;
+    padding: $line-height/4 $line-height/3;
+    text-decoration: none;
+
+    &:hover {
+      background: #e0e0e0;
+    }
+  }
+}
+
+// 06. Polls
+// -----------------
+
+.count-error {
+  background: $alert-bg !important;
+  color: $color-alert;
+  font-weight: bold;
+}
+
+table {
+
+  .callout {
+    height: $line-height*2;
+    line-height: $line-height*2;
+    padding: 0 $line-height/2;
+  }
+}
+
+// 07. CMS
+// --------------
+.cms_page_list {
+
+  [class^="icon-"] {
+    padding-right: $menu-icon-spacing;
+    vertical-align: middle;
+  }
+}

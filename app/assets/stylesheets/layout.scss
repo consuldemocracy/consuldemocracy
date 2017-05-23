@@ -6,73 +6,41 @@
 // 04. Tags
 // 05. Auth pages
 // 06. Forms
-// 07. Alerts
+// 07. Callout
 // 08. User account
 // 09. Search
 // 10. Official levels
-// 12. Tables
-// 13. Social
-// 14. Pages
-// 15. Verification
-// 16. Comments
-// 17. Flags
-// 18. Activity
+// 11. Tables
+// 12. Social
+// 13. Pages
+// 14. Verification
+// 15. Comments
+// 16. Flags
+// 17. Activity
+// 18. Banners
 //
 
 // 01. Global styles
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// -----------------
 
-*, html {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
+::selection {
+  color: white;
+  background-color: $brand;
 }
 
 body {
-  background: white;
-  color: $text;
-  font-family: $font-sans;
   font-size: $base-font-size;
 }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: $font-sans;
-  font-weight: $font-bold;
-}
-
-h1 {
-  @include h1();
-}
-
-h2 {
-  @include h2();
-}
-
-h3 {
-  @include h3();
-}
-
-h4 {
-  @include h4();
-}
-
-h5 {
-  @include h5();
-}
-
-h6 {
-  @include h6();
-  font-weight: $font-normal;
+  font-weight: 700;
 }
 
 p {
   font-size: $base-font-size;
-  font-weight: $font-normal;
-  line-height: $base-line-height;
+  font-weight: 400;
+  line-height: $base-line;
 }
 
 a {
@@ -88,7 +56,8 @@ a {
   }
 
   &:focus {
-    outline: 0;
+    color: $link-hover;
+    outline: 3px solid #ffbf47;
   }
 }
 
@@ -99,6 +68,15 @@ a {
   &:hover {
     text-decoration: none !important;
   }
+
+  &.warning, &.warning:hover {
+    color: black;
+  }
+}
+
+.button.hollow {
+  border: 1px solid $link;
+  color: $link;
 }
 
 .postfix.button {
@@ -157,13 +135,21 @@ a {
   margin-bottom: $line-height;
 }
 
+.margin-right {
+  margin-right: $line-height;
+}
+
 .no-margin-top {
   margin-top: rem-calc(-24);
 }
 
-.padding  {
+.padding {
   padding-bottom: $line-height;
   padding-top: $line-height;
+}
+
+.light {
+  background: $light;
 }
 
 .highlight {
@@ -181,10 +167,6 @@ a {
   height: 100%;
 }
 
-.wrap {
-  background: white;
-}
-
 .footer, .push {
   clear: both;
   min-height: $line-height*12;
@@ -196,7 +178,7 @@ a {
   width: 100%;
 
   a.close {
-    font-size: $h2-font-size;
+    font-size: rem-calc(34);
     top: 20%;
   }
 }
@@ -210,13 +192,6 @@ a {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-#drop-help.f-dropdown.content {
-
-  @media (min-width: $small-breakpoint) {
-    max-width: $line-height*15;
-  }
 }
 
 .menu.simple {
@@ -237,6 +212,38 @@ a {
   }
 }
 
+.menu.vertical {
+  background: white;
+  margin: $line-height 0;
+  padding: $line-height;
+
+  li {
+    margin-bottom: $line-height;
+
+    a {
+      color: $text-medium;
+      padding: 0;
+    }
+
+    h2 {
+      font-size: $base-font-size;
+    }
+
+    &.active {
+      border-bottom: 2px solid $brand;
+      color: $brand;
+    }
+  }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
+}
+
 .small {
   font-size: $small-font-size;
 }
@@ -254,11 +261,55 @@ a {
 }
 
 .back, .icon-angle-left {
-  @include back;
+  clear: both;
+  color: $text-medium;
+  float: left;
+}
+
+.tabs-content {
+  border: 0;
+}
+
+.tabs {
+  border: {
+    left: 0;
+    right: 0;
+    top: 0;
+  };
+  margin-bottom: $line-height;
+
+  .tabs-title > a {
+    color: $text-medium;
+    margin-bottom: rem-calc(-1);
+    margin-right: $line-height;
+
+    &[aria-selected='true'],
+    &.is-active {
+      color: $brand;
+      border-bottom: 2px solid $brand;
+      font-weight: bold;
+    }
+  }
+
+  h2, h3 {
+    font-size: $base-font-size;
+  }
+}
+
+.no-max-width {
+  max-width: none;
+}
+
+.button.float-right ~ .button.float-right {
+  margin: 0 $line-height/2;
+}
+
+.pagination .current {
+  background: $brand;
 }
 
 // 02. Header
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
 header {
   background: $brand;
@@ -270,13 +321,9 @@ header {
   }
 
   .locale {
-    float: none;
+    float: left;
     height: $line-height*1.5;
-
-    @media (min-width: $small-breakpoint) {
-      float: left;
-      margin-left: $line-height/2;
-    }
+    margin-left: $line-height/2;
   }
 
   .external-links {
@@ -284,7 +331,7 @@ header {
     padding: rem-calc(6) 0;
     text-align: center;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       float: right;
     }
   }
@@ -298,7 +345,7 @@ header {
   padding-bottom: 0;
   padding-top: 0;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     padding: 0;
   }
 
@@ -318,7 +365,7 @@ header {
     &.menu > li {
       display: block;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         display: table-cell;
         height: $line-height*3.5;
       }
@@ -327,7 +374,7 @@ header {
         color: white;
         padding-left: 0;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(medium) {
           font-size: $small-font-size;
           padding: rem-calc(11) rem-calc(16);
         }
@@ -335,7 +382,7 @@ header {
         &.button {
           text-align: left;
 
-          @media (min-width: $small-breakpoint) {
+          @include breakpoint(medium) {
             background: white;
             color: $brand;
             text-align: center;
@@ -369,11 +416,33 @@ header {
       text-decoration: underline;
     }
   }
+
+  ul {
+    margin-bottom: 0;
+
+    li {
+      display: block;
+    }
+
+    @include breakpoint(medium) {
+      li {
+        display: inline-block;
+
+        &:after {
+          content: "|";
+        }
+
+        &:last-child:after {
+          content: none;
+        }
+      }
+    }
+  }
 }
 
 .subnavigation {
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     background: white;
     padding-bottom: 0;
   }
@@ -383,7 +452,7 @@ header {
     margin: 0;
 
     li {
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         display: inline-block;
         margin-right: rem-calc(36);
       }
@@ -396,12 +465,10 @@ header {
         text-align: left;
         width: 100%;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(medium) {
           color: $text;
           display: block;
           font-weight: bold;
-          margin-left: 18px\9;
-          margin-right: 18px\9;
           width: auto;
 
           &:hover {
@@ -412,7 +479,7 @@ header {
         &.active {
           color: white;
 
-          @media (min-width: $small-breakpoint) {
+          @include breakpoint(medium) {
             border-bottom: 2px solid $brand;
             color: $brand;
           }
@@ -424,7 +491,7 @@ header {
   .input-group {
     padding-top: $line-height/4;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       margin-bottom: 0;
     }
   }
@@ -435,6 +502,7 @@ header {
 
   .input-group-button {
     line-height: $line-height*1.5;
+    padding-bottom: 0;
 
     button {
       background: $border;
@@ -456,7 +524,6 @@ header {
 }
 
 .submenu {
-  background: white;
   border-bottom: 1px solid $border;
   clear: both;
   margin-bottom: $line-height/2;
@@ -469,7 +536,7 @@ header {
     position: relative;
     text-align: left;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       margin-right: $line-height*1.5;
     }
 
@@ -480,18 +547,30 @@ header {
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 }
 
+.search-form-header input[type=text] {
+  max-width: none;
+}
+
 // 03. Footer
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
 footer {
-  color: $footer-color;
+  color: $text;
 
   .logo a {
-    font-family: $font-logo;
+    font-family: 'Lato' !important;
     text-decoration: none;
 
     &:hover {
@@ -502,16 +581,17 @@ footer {
   p {
     font-size: $small-font-size;
 
-    .info a {
+    &.info a {
       text-decoration: underline;
     }
   }
 
   a, a:active, a:focus {
-    color: $footer-link;
+    color: $text;
+    text-decoration: underline;
 
     &:hover {
-      color: $footer-color;
+      color: $text-medium;
     }
   }
 
@@ -519,32 +599,30 @@ footer {
     padding-left: 0;
   }
 
-  h2 a {
-
-    border-bottom: 1px solid $footer-border;
-    display: block;
-    font-size: $h3-font-size;
-    line-height: $h3-line-height;
-    padding-bottom: $line-height/4;
+  a.title {
+    font-weight: bold;
     text-decoration: none;
   }
 }
 
 .footer {
-  background: $footer-bg;
+  background: $border;
   border-top: 6px solid $brand;
+  margin-top: $line-height*2;
   padding-top: $line-height;
 }
 
 .subfooter {
-  border-top: 1px solid $footer-border;
+  border-top: 1px solid $text-light;
+  font-size: $small-font-size;
   padding-top: $line-height/2;
 }
 
 // 04. Tags
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------
 
-.tags a , .tag-cloud a, .categories a, .geozone a {
+.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a,
+.tags span {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
@@ -564,12 +642,12 @@ footer {
   color: $link;
 
   &:hover {
-    background: $highlight;
-    color: $link-hover;
+    background: $brand;
+    color: white;
   }
 }
 
-h3.sidebar-title {
+h2.sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
   font-size: rem-calc(16);
@@ -579,15 +657,31 @@ h3.sidebar-title {
 }
 
 // 05. Auth pages
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------
 
 .auth-page {
+
+  .wrapper {
+    margin: 0 auto (-$line-height)*14;
+  }
+}
+
+.auth-image {
   background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
-  h1:not(.logo) {
-    @include logo;
+  @include breakpoint(medium) {
+    min-height: $line-height*42;
+  }
+
+  h1 {
+    margin-top: $line-height;
+
+    img {
+      height: rem-calc(80);
+      width: rem-calc(80);
+    }
 
     a {
       color: white;
@@ -595,7 +689,7 @@ h3.sidebar-title {
       line-height: rem-calc(80); // Same as logo image height
       text-align: center;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         display: inline-block;
         text-align: left;
       }
@@ -603,20 +697,32 @@ h3.sidebar-title {
   }
 }
 
-.auth {
+.auth-form {
+
+  @include breakpoint(medium) {
+    padding-top: $line-height*4;
+  }
 
   p, a, .checkbox {
     font-size: $small-font-size;
   }
+}
 
-  .panel {
+.auth-divider {
+  border-bottom: 1px solid $border;
+  height: rem-calc(14);
+  margin: $line-height 0;
+  text-align: center;
+
+  span {
     background: white;
-    border: 0;
+    font-weight: bold;
+    padding: 0 $line-height/2;
   }
 }
 
 // 06. Forms
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ---------
 
 form.locale-form {
   display: inline-block;
@@ -651,12 +757,15 @@ form.locale-form {
       padding-left: rem-calc(3);
       padding-right: $line-height;
       width: auto;
+
+      &:focus {
+        outline: 3px solid #ffbf47;
+      }
     }
   }
 }
 
 form {
-  font-family: $font-sans;
 
   label {
     font-size: $base-font-size;
@@ -668,24 +777,9 @@ form {
     font-weight: bold;
   }
 
-  input, textarea {
-    height: 48px\9;
-    line-height: 48px\9;
-    margin-bottom: 24px\9;
-    width: 100%\9;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    height: auto\9;
-    line-height: inherit\9;
-    width: auto\9;
-  }
-
   input[type="radio"] {
     height: $line-height !important;
     vertical-align: top;
-    width: 18px\9;
 
     + label {
       font-weight: normal;
@@ -697,7 +791,7 @@ form {
   }
 
   input[type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
-    background: $input-bg;
+    background: #F8F8F8;
     height: $line-height*2;
     margin-bottom: rem-calc(16);
 
@@ -741,63 +835,91 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
+}
 
-  .captcha {
-    border: 0;
-    padding: $line-height/2 0;
+// 07. Callout
+// -----------
 
-    input {
-      margin-bottom: 0 !important;
+.callout-slide {
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-name: slide;
+  -webkit-animation-name: slide;
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.notice-container {
+  min-width: $line-height*12;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+
+  .notice {
+    height: $line-height*4;
+
+    .notice-text {
+      width: 95%;
     }
   }
-
-  .button.margin-top {
-    margin-top: $line-height;
-  }
 }
-
-.captcha {
-
-  label {
-    display: none;
-  }
-}
-
-// 07. Alerts
-// - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .callout {
-  font-family: $font-sans;
   font-size: $small-font-size;
 
-  &.success {
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &.success, &.notice {
     background-color: $success-bg;
     border-color: $success-border;
-    color: $success-color;
+    color: $color-success;
   }
 
   &.primary {
     background-color: $info-bg;
     border-color: $info-border;
-    color: $info-color;
+    color: $color-info;
   }
 
   &.warning {
     background-color: $warning-bg;
     border-color: $warning-border;
-    color: $warning-color;
-
-    a {
-      color: $warning-color;
-      font-weight: bold;
-      text-decoration: underline;
-    }
+    color: $color-warning;
   }
 
-  &.alert {
+  &.alert, &.error {
     background-color: $alert-bg;
     border-color: $alert-border;
-    color: $alert-color;
+    color: $color-alert;
   }
 
   .close {
@@ -807,27 +929,27 @@ form {
 
 span.error, small.error {
   background: $alert-bg;
-  color: $alert-color;
+  color: $color-alert;
 }
 
 span.no-error, small.no-error {
   background: $success-bg;
-  color: $success-color;
+  color: $color-success;
 }
 
 .error small.error {
   background: $alert-bg;
-  color: $alert-color;
+  color: $color-alert;
   display: inline-block;
   margin: 0 $line-height/4;
 }
 
 label.error, label.error a {
-  color: $alert-color;
+  color: $color-alert;
 }
 
 // 08. User account
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------------
 
 .account {
 
@@ -843,7 +965,7 @@ label.error, label.error a {
   .final-votes-info {
     background: $warning-bg;
     border: 1px solid $warning-border;
-    color: $warning-color;
+    color: $color-warning;
     margin-top: $line-height;
     padding: $line-height/2;
 
@@ -866,16 +988,12 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .author-deleted, .user-deleted {
-  background-color: rgba(255,255,255,.5);
   color: rgba(0,0,0,.4);
-  font-size: rem-calc(40);
-  left: 11px;
-  position: absolute;
-  top: 72px;
-}
-
-.user-deleted {
-  top: -4px;
+  display: inline-block;
+  font-size: rem-calc(32);
+  line-height: rem-calc(32);
+  height: rem-calc(32);
+  vertical-align: top;
 }
 
 .user-permissions {
@@ -920,16 +1038,16 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 
   [class^="icon-"] {
-    font-size: $h4-font-size;
+    font-size: rem-calc(19);
     vertical-align: middle;
   }
 
   .icon-circle {
     color: #ecf00b;
-    font-size: $tiny-font-size;
+    font-size: rem-calc(10);
     position: absolute;
-    right: 4px;
-    top: -6px;
+    right: 8px;
+    top: 6px;
   }
 }
 
@@ -937,9 +1055,9 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   background: $border;
   content: '';
   height: 100%;
-  left: 28px;
+  left: 22px;
   position: absolute;
-  top: 84px;
+  top: 60px;
   width: 2px;
 }
 
@@ -968,7 +1086,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     color: $brand;
     content: "\4d";
     font-family: "icons" !important;
-    left: 6px;
+    left: 0;
     position: absolute;
   }
 
@@ -984,32 +1102,18 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 // 09. Search
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// ----------
 
-.search-form {
-
-  h3 {
-    border-top: 1px solid $votes-border;
-    display: inline-block;
-    font-size: rem-calc(16);
-    margin: -1px 0 $line-height/2;
-    padding-top: $line-height/4;
-    text-transform: uppercase;
-  }
-}
-
-.search-results {
-
-  h2 {
-    margin-bottom: 0;
-  }
+.search-results h2 {
+  margin-bottom: 0;
 }
 
 .advanced-search {
   float: left;
   margin: $line-height 0;
+  position: inherit;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     float: right;
     margin-bottom: 0;
     margin-top: rem-calc(28);
@@ -1026,55 +1130,46 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     height: $line-height*2;
   }
 
-  @media (max-width: $medium-breakpoint) {
-
-    .column {
+  @include breakpoint(medium) {
+    & > .column {
       padding: 0;
     }
   }
 }
 
 // 10. Officials levels
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// --------------------
 
 [class^="level-"] {
-  color: white;
+  color: black;
+}
+
+.is-author, .is-association {
+  color: black;
 }
 
 .is-author {
-  background: $author;
+  background: #00A5F1;
 }
 
 .is-association {
-  background: $association;
-}
-
-.is-deleted {
-  background: $deleted;
+  background: #E38D83;
 }
 
 .level-1 {
-  background: $level-1;
+  background: #1ABC9C;
 }
 
-.level-2 {
-  background: $level-2;
-}
-
-.level-3 {
-  background: $level-3;
-}
-
-.level-4 {
-  background: $level-4;
+.level-2, .level-3, .level-4 {
+  background: #43AC6A;
 }
 
 .level-5 {
-  background: $level-5;
+  background: #F08A24;
 }
 
-// 12. Tables
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 11. Tables
+// ----------
 
 table {
   border: $border;
@@ -1107,12 +1202,26 @@ table {
   }
 }
 
-// 13. Social
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+.table-for-mobile {
+
+  @include breakpoint(medium down) {
+    th, td  {
+      display: block;
+      text-align: left;
+    }
+  }
+}
+
+// 12. Social
+// ----------
 
 .button.button-twitter,
 .button.button-facebook,
-.button.button-google {
+.button.button-google,
+.button.button-telegram {
+  background: white;
+  color: $text;
+  font-weight: bold;
   height: $line-height*2;
   line-height: $line-height*2;
   padding: 0;
@@ -1120,9 +1229,11 @@ table {
 }
 
 .button.button-twitter {
-  background: #45B0E3;
+  background: #ECF7FC;
+  border-left: 3px solid #45B0E3;
 
   &:before {
+    color: #45B0E3;
     content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1134,12 +1245,13 @@ table {
   }
 }
 
-.social-share-button-twitter {
+.ssb-twitter {
   background: #45B0E3;
+  background-image: none !important;
   color: white;
-  height: $line-height*2;
+  height: $line-height*2 !important;
   position: relative;
-  width: $line-height*2;
+  width: $line-height*2 !important;
 
   &:before {
     content: "f";
@@ -1152,16 +1264,18 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #40A2D1;
   }
 }
 
 .button.button-facebook {
-  background: #3B5998;
+  background: #EBEEF4;
+  border-left: 3px solid #3B5998;
 
   &:before {
+    color: #3B5998;
     content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1173,12 +1287,13 @@ table {
   }
 }
 
-.social-share-button-facebook {
+.ssb-facebook {
   background: #3B5998;
+  background-image: none !important;
   color: white;
-  height: rem-calc(48);
+  height: rem-calc(48) !important;
   position: relative;
-  width: rem-calc(48);
+  width: rem-calc(48) !important;
 
   &:before {
     content: "A";
@@ -1191,16 +1306,18 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #354F88;
   }
 }
 
 .button.button-google {
-  background: #DE4C34;
+  background: #FCEDEA;
+  border-left: 3px solid #DE4C34;
 
   &:before {
+    color: #DE4C34;
     content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
@@ -1212,12 +1329,13 @@ table {
   }
 }
 
-.social-share-button-google_plus {
+.ssb-google_plus {
   background: #DE4C34;
+  background-image: none !important;
   color: white;
-  height: $line-height*2;
+  height: $line-height*2 !important;
   position: relative;
-  width: $line-height*2;
+  width: $line-height*2 !important;
 
   &:before {
     content: "B";
@@ -1230,16 +1348,65 @@ table {
     top: 0;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background: white;
     color: #CE3E26;
+  }
+}
+
+.button.button-telegram {
+  background: #ECF7FC;
+  border-left: 3px solid #0088cc;
+
+  &:before {
+    color: #0088cc;
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.ssb-telegram {
+  background: #0088cc;
+  background-image: none !important;
+  color: white;
+  height: $line-height*2 !important;
+  position: relative;
+  width: $line-height*2 !important;
+
+  &:before {
+    content: "1";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+
+  &:hover, &:focus {
+    background: white;
+    color: #40A2D1;
+  }
+}
+
+@include breakpoint(medium) {
+
+  .button.button-telegram, .ssb-telegram {
+    display: none !important;
   }
 }
 
 .social {
 
   a {
-    font-size: $h3-font-size;
+    font-size: rem-calc(24);
     margin: 0 $line-height/2;
     text-decoration: none;
 
@@ -1250,13 +1417,14 @@ table {
 }
 
 .share-supported {
+  text-align: center;
 
   .social-share-button {
     display: inline-block;
   }
 
-  .social-share-button-twitter {
-    background: none;
+  .ssb-twitter {
+    background: #45B0E3;
     color: white;
     height: $line-height;
     position: relative;
@@ -1273,13 +1441,14 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #40A2D1;
     }
   }
 
-  .social-share-button-facebook {
-    background: none;
+  .ssb-facebook {
+    background: #3B5998;
     color: white;
     height: rem-calc(24);
     position: relative;
@@ -1296,13 +1465,14 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #354F88;
     }
   }
 
-  .social-share-button-google_plus {
-    background: none;
+  .ssb-google_plus {
+    background: #DE4C34;
     color: white;
     height: rem-calc(24);
     position: relative;
@@ -1319,14 +1489,39 @@ table {
       top: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
+      background: white;
       color: #CE3E26;
+    }
+  }
+
+  .ssb-telegram {
+    background: #0088cc;
+    color: white;
+    height: $line-height;
+    position: relative;
+    width: $line-height*2;
+
+    &:before {
+      content: "1";
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 50%;
+      line-height: $line-height*2;
+      margin-left: rem-calc(-11);
+      position: absolute;
+      top: 0;
+    }
+
+    &:hover, &:focus {
+      background: white;
+      color: #40A2D1;
     }
   }
 }
 
-// 14. Pages
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 13. Pages
+// ---------
 
 .more-information {
 
@@ -1365,7 +1560,7 @@ table {
         right: 0;
         top: 24px;
 
-        @media (min-width: $small-breakpoint) {
+        @include breakpoint(medium) {
           content: 'c';
         }
       }
@@ -1373,12 +1568,12 @@ table {
   }
 }
 
-// 15. Verification
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 14. Verification
+// ----------------
 
 .verification {
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     .left + .left {
       margin-left: $line-height/2;
     }
@@ -1390,7 +1585,7 @@ table {
       float: left;
       width: 30%;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         width: 25%;
       }
     }
@@ -1399,7 +1594,7 @@ table {
   .progress {
     height: $line-height*3;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       height: $line-height*2;
     }
 
@@ -1416,7 +1611,7 @@ table {
     text-transform: uppercase;
     vertical-align: top;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       line-height: $line-height*2;
       padding: 0;
     }
@@ -1424,7 +1619,7 @@ table {
     .number {
       display: block;
 
-      @media (min-width: $small-breakpoint) {
+      @include breakpoint(medium) {
         background-color: white;
         border-radius: rem-calc(30);
         color: #43AC6A;
@@ -1514,7 +1709,7 @@ table {
 
     .icon-letter {
       background: white;
-      color: $info-color;
+      color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
       padding: 0 $line-height/2;
@@ -1524,13 +1719,12 @@ table {
   }
 }
 
-// 16. Comments
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 15. Comments
+// ------------
 
 .comments {
   background: $white;
   background-repeat: repeat-x;
-  padding-top: $line-height;
   padding-bottom: $line-height*4;
 
   h2 {
@@ -1554,7 +1748,6 @@ table {
 
     .comment-votes {
       color: $text-medium;
-      font-family: $font-sans;
       font-size: $small-font-size;
       line-height: $line-height;
 
@@ -1565,17 +1758,29 @@ table {
 
         &:hover {
           color: $text-medium;
+          text-decoration: none;
+
+          .icon-like {
+            color: $like;
+          }
+
+          .icon-unlike {
+            color: $unlike;
+          }
         }
       }
 
       [class^="icon-"] {
-        font-size: rem-calc(20);
-        vertical-align: middle;
+        font-size: $base-font-size;
+        vertical-align: sub;
       }
     }
 
     .comment-body {
-      margin-left: rem-calc(42);
+
+      img {
+        margin-right: $line-height/2;
+      }
 
       .reply {
         background: white;
@@ -1583,11 +1788,27 @@ table {
         border-left: 0;
         border-right: 0;
         font-size: $small-font-size;
-        margin: rem-calc(6) 0;
-        padding: rem-calc(6);
+        margin: $line-height/4 0;
+        padding: $line-height/4;
+        position: relative;
+
+        a.relative, [class^="icon-arrow"] {
+          padding-left: $line-height/2;
+        }
+
+        [class^="icon-arrow"] {
+          font-size: $base-font-size;
+          left: -20px;
+          position: absolute;
+          top: -1px;
+        }
 
         .divider {
           color: $text-light;
+        }
+
+        form {
+          margin-top: $line-height/2;
         }
       }
 
@@ -1596,62 +1817,39 @@ table {
         padding: $line-height/4 0;
         overflow: hidden;
 
-        @each $n in ("1", "2", "3","4", "5") {
-          &.level-#{$n} {
-            @if $n == "5" {
-              background: $comment-level-5;
-              padding: $line-height/4 $line-height/2;
-            }
-            @elseif $n == "1" {
-              background: none;
-              padding: $line-height/4 $line-height/2;
-            }
-            @else {
-              background: $comment-official;
-              padding: $line-height/4 $line-height/2;
-            }
-          }
-        }
-
-        &.is-author {
-          background: $comment-author;
+        &.level-1, &.level-2, &.level-3, &.level-4, &.level-5,
+        &.is-author, &.is-admin, &.is-moderator {
+          background: rgba(70,219,145,.3);
           padding: $line-height/4 $line-height/2;
         }
 
-        &.is-admin, &.is-moderator {
-          background: $comment-admin;
-          padding: $line-height/4 $line-height/2;
+        &.level-1 {
+          background: none;
         }
 
         &.level-5 {
-          background: $comment-level-5;
-          padding: $line-height/4 $line-height/2;
+          background: rgba(255,241,204,1);
+        }
+
+        &.is-author, &.is-admin, &.is-moderator {
+          background: rgba(45,144,248,.15);
         }
       }
-    }
-
-    .is-deleted {
-      background: $deleted;
-      margin-left: rem-calc(42);
-      padding: $line-height/4 $line-height/2;
     }
 
     .comment-children {
       border-left: 1px dashed $border;
-      margin-left: rem-calc(42);
-      padding-left: $line-height/4;
-
-      @media only screen and (max-width: 40em) {
-        margin-left: rem-calc(16);
-      }
+      display: inline-block;
+      margin-left: rem-calc(16);
+      padding-left: rem-calc(8);
+      width: 100%;
     }
 
     .comment-info {
       color: $text-medium;
-      font-family: $font-sans;
+      display: inline-block;
       font-size: $small-font-size;
-      margin-top: $line-height/4;
-      vertical-align: middle;
+      line-height: rem-calc(32); // Same as avatar height
 
       span.user-name {
         color: $text;
@@ -1669,7 +1867,7 @@ table {
   float: none;
   margin-top: 0;
 
-  @media (min-width: $small-breakpoint) {
+  @include breakpoint(medium) {
     float: right;
     margin-top: rem-calc(-24);
   }
@@ -1678,14 +1876,19 @@ table {
     padding-right: $line-height/2;
     float: none;
 
-    @media (min-width: $small-breakpoint) {
+    @include breakpoint(medium) {
       float: right;
     }
   }
 }
 
-// 17. Flags
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+.comment-form {
+  display: inline-block;
+  width: 100%;
+}
+
+// 16. Flags
+// ---------
 
 .flag-content {
 
@@ -1697,7 +1900,8 @@ table {
 }
 
 .flag-disable, .flag-active {
-  vertical-align: middle;
+  line-height: 0;
+  vertical-align: sub;
 }
 
 .flag-disable {
@@ -1712,8 +1916,8 @@ table {
   color: $text-medium;
 }
 
-// 18. Activity
-// - - - - - - - - - - - - - - - - - - - - - - - - -
+// 17. Activity
+// ------------
 
 .activity {
   margin-bottom: $line-height*2;
@@ -1722,9 +1926,12 @@ table {
     border: 0;
 
     td {
-      padding-left: $line-height*1.5;
       position: relative;
-      word-break: break-all;
+
+      &:first-child {
+        padding-left: $line-height*1.5;
+        width: 75%;
+      }
 
       &:before {
         color: $brand;
@@ -1735,19 +1942,97 @@ table {
       }
     }
 
-    &.activity-comments td:before {
+    &.activity-comments td:first-child:before {
       content: "e";
       top: 18px;
     }
 
-    &.activity-debates td:before {
+    &.activity-debates td:first-child:before {
       content: "i";
       top: 14px;
     }
 
-    &.activity-proposals td:before {
-      content: "h";
-      top: 18px;
+    &.activity-proposals {
+
+      td:first-child:before {
+        content: "h";
+        top: 18px;
+      }
+
+      .retired {
+        text-decoration: line-through;
+      }
+    }
+
+    &.activity-investment-projects td:first-child:before, &.activity-ballot td:first-child:before {
+      content: "\53";
+      top: 10px;
+    }
+  }
+}
+
+// 18. Banners
+// -----------
+
+.banner-style-one {
+  background-color: $brand;
+}
+
+.banner-style-two {
+  background-color: $budget;
+}
+
+.banner-style-three {
+  background-color: #33DADF;
+}
+
+@include breakpoint(large) {
+
+  .banner-img-one {
+    background-image: image-url('banners/banner1.png');
+  }
+
+  .banner-img-two {
+    background-image: image-url('banners/banner2.png');
+  }
+
+  .banner-img-three {
+    background-image: image-url('banners/banner3.png');
+  }
+}
+
+.banner-img-one, .banner-img-two, .banner-img-three {
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.banner-style-one, .banner-style-two, .banner-style-three {
+  margin: 0;
+  margin-bottom: $line-height;
+
+  h2, h3, a {
+    color: #eaeaf2;
+  }
+
+  h2 {
+    padding: $line-height/2;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    padding: $line-height/2;
+    padding-top: 0;
+  }
+
+  a:hover h2, a:hover h3 {
+    color: #eaeaf2 !important;
+    text-decoration: none;
+  }
+
+  @include breakpoint(large) {
+
+    h3 {
+      width: 80%;
     }
   }
 }

@@ -8,6 +8,8 @@
     </div>
     <div id="js-suggest"></div>
 
+    <%= f.invisible_captcha :subtitle %>
+
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
       <span class="note-marked">
@@ -41,7 +43,7 @@
     </div>
 
     <div class="small-12 medium-6 column">
-      <%= f.label :geozone_id,  t("spending_proposals.form.geozone") %>
+      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
       <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
     </div>
 
@@ -82,10 +84,6 @@
           </span>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.simple_captcha input_html: { required: false } %>
     </div>
 
     <div class="actions small-12 column">

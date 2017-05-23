@@ -12,6 +12,8 @@
 
 #print_link { display: none !important; }
 
+#responsive-menu { display: none !important; }
+
 .admin-sidebar { display: none !important; }
 
 img.left { display: none !important; }
@@ -23,8 +25,6 @@ img.left { display: none !important; }
 .menu-icon { display: none !important; }
 
 .icon-proposals { display: none !important; }
-
-.captcha { display: none !important; }
 
 li.name  { display: none !important; }
 

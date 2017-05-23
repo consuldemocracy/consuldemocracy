@@ -4,9 +4,14 @@
              search_path: debates_path(page: 1),
              i18n_namespace: "debates.index.search_form" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debates_url %>
+<% end %>
 
 <main>
-  <div class="wrap row">
+  <h1 class="sr-only"><%= t("shared.outline.debates") %></h1>
+
+  <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
       <div class="small-12 search-results">
@@ -25,8 +30,16 @@
         <% end %>
       </div>
 
-      <% unless @tag_filter || @search_terms %>
-        <%= render "featured_debates_static" %>
+      <% if has_banners? %>
+        <%= render "shared/banner" %>
+      <% end %>
+
+      <% if @proposal_successful_exists %>
+        <%= render "proposals/successful_banner" %>
+      <% end %>
+
+      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists %>
+        <%= render "featured_debates" %>
       <% end %>
 
       <%= render "shared/advanced_search", search_path: debates_path(page: 1) %>

@@ -123,7 +123,7 @@ describe Proposal do
       expect(proposal).to_not be_valid
     end
 
-    it "should be valid with a tag list of more than 6 elements" do
+    it "should be valid with a tag list of up to 6 elements" do
       proposal.tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
       expect(proposal).to be_valid
     end
@@ -166,12 +166,12 @@ describe Proposal do
     let(:proposal) { create(:proposal) }
 
     it "should be true for level two verified users" do
-      user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+      user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
       expect(proposal.votable_by?(user)).to be true
     end
 
     it "should be true for level three verified users" do
-      user = create(:user, verified_at: Time.now)
+      user = create(:user, verified_at: Time.current)
       expect(proposal.votable_by?(user)).to be true
     end
 
@@ -186,14 +186,14 @@ describe Proposal do
 
     describe "from level two verified users" do
       it "should register vote" do
-        user = create(:user, residence_verified_at: Time.now, confirmed_phone: "666333111")
+        user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
     end
 
     describe "from level three verified users" do
       it "should register vote" do
-        user = create(:user, verified_at: Time.now)
+        user = create(:user, verified_at: Time.current)
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(1)
       end
     end
@@ -203,6 +203,13 @@ describe Proposal do
         user = create(:user)
         expect {proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
       end
+    end
+
+    it "should not register vote for archived proposals" do
+      user = create(:user, verified_at: Time.current)
+      archived_proposal = create(:proposal, :archived)
+
+      expect {archived_proposal.register_vote(user, 'yes')}.to change{proposal.reload.votes_for.size}.by(0)
     end
   end
 
@@ -223,7 +230,7 @@ describe Proposal do
   end
 
   describe '#hot_score' do
-    let(:now) { Time.now }
+    let(:now) { Time.current }
 
     it "increases for newer proposals" do
       old = create(:proposal, :with_hot_score, created_at: now - 1.day)
@@ -260,7 +267,7 @@ describe Proposal do
 
       it "increases with votes" do
         previous = proposal.hot_score
-        5.times { proposal.register_vote(create(:user, verified_at: Time.now), true) }
+        5.times { proposal.register_vote(create(:user, verified_at: Time.current), true) }
         expect(previous).to be < proposal.reload.hot_score
       end
 
@@ -310,7 +317,7 @@ describe Proposal do
 
       it "increases with like" do
         previous = proposal.confidence_score
-        5.times { proposal.register_vote(create(:user, verified_at: Time.now), true) }
+        5.times { proposal.register_vote(create(:user, verified_at: Time.current), true) }
         expect(previous).to be < proposal.confidence_score
       end
     end
@@ -365,6 +372,50 @@ describe Proposal do
       expect { proposal.author.organization.verify }
       .to change { [proposal.reload.updated_at, proposal.author.updated_at] }
     end
+  end
+
+  describe "voters" do
+
+    it "returns users that have voted for the proposal" do
+      proposal = create(:proposal)
+      voter1 = create(:user, :level_two)
+      voter2 = create(:user, :level_two)
+      voter3 = create(:user, :level_two)
+
+      create(:vote, voter: voter1, votable: proposal)
+      create(:vote, voter: voter2, votable: proposal)
+
+      expect(proposal.voters).to include(voter1)
+      expect(proposal.voters).to include(voter2)
+      expect(proposal.voters).to_not include(voter3)
+    end
+
+    it "does not return users that have been erased" do
+      proposal = create(:proposal)
+      voter1 = create(:user, :level_two)
+      voter2 = create(:user, :level_two)
+
+      create(:vote, voter: voter1, votable: proposal)
+      create(:vote, voter: voter2, votable: proposal)
+      voter2.erase
+
+      expect(proposal.voters).to include(voter1)
+      expect(proposal.voters).to_not include(voter2)
+    end
+
+    it "does not return users that have been blocked" do
+      proposal = create(:proposal)
+      voter1 = create(:user, :level_two)
+      voter2 = create(:user, :level_two)
+
+      create(:vote, voter: voter1, votable: proposal)
+      create(:vote, voter: voter2, votable: proposal)
+      voter2.block
+
+      expect(proposal.voters).to include(voter1)
+      expect(proposal.voters).to_not include(voter2)
+    end
+
   end
 
   describe "search" do
@@ -561,7 +612,7 @@ describe Proposal do
 
       it "should be able to reorder by created_at after searching" do
         recent  = create(:proposal,  title: 'stop corruption', cached_votes_up: 1, created_at: 1.week.ago)
-        newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.now)
+        newest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 2, created_at: Time.current)
         oldest  = create(:proposal,  title: 'stop corruption', cached_votes_up: 3, created_at: 1.month.ago)
 
         results = Proposal.search('stop corruption')
@@ -600,28 +651,28 @@ describe Proposal do
     context "no results" do
 
       it "no words match" do
-        proposal = create(:proposal, title: 'save world')
+        create(:proposal, title: 'save world')
 
         results = Proposal.search('destroy planet')
         expect(results).to eq([])
       end
 
       it "too many typos" do
-        proposal = create(:proposal, title: 'fantastic')
+        create(:proposal, title: 'fantastic')
 
         results = Proposal.search('frantac')
         expect(results).to eq([])
       end
 
       it "too much stemming" do
-        proposal = create(:proposal, title: 'reloj')
+        create(:proposal, title: 'reloj')
 
         results = Proposal.search('superrelojimetro')
         expect(results).to eq([])
       end
 
       it "empty" do
-        proposal = create(:proposal, title: 'great')
+        create(:proposal, title: 'great')
 
         results = Proposal.search('')
         expect(results).to eq([])
@@ -738,6 +789,54 @@ describe Proposal do
   describe "#to_param" do
     it "should return a friendly url" do
       expect(proposal.to_param).to eq "#{proposal.id} #{proposal.title}".parameterize
+    end
+  end
+
+  describe "retired" do
+    let!(:proposal1) { create(:proposal) }
+    let!(:proposal2) { create(:proposal, retired_at: Time.current) }
+
+    it "retired? is true" do
+      expect(proposal1.retired?).to eq false
+      expect(proposal2.retired?).to eq true
+    end
+
+    it "scope retired" do
+      retired = Proposal.retired
+
+      expect(retired.size).to eq(1)
+      expect(retired.first).to eq(proposal2)
+    end
+
+    it "scope not_retired" do
+      not_retired = Proposal.not_retired
+
+      expect(not_retired.size).to eq(1)
+      expect(not_retired.first).to eq(proposal1)
+    end
+  end
+
+  describe "archived" do
+    let!(:new_proposal)      { create(:proposal) }
+    let!(:archived_proposal) { create(:proposal, :archived) }
+
+    it "archived? is true only for proposals created more than n (configured months) ago" do
+      expect(new_proposal.archived?).to eq false
+      expect(archived_proposal.archived?).to eq true
+    end
+
+    it "scope archived" do
+      archived = Proposal.archived
+
+      expect(archived.size).to eq(1)
+      expect(archived.first).to eq(archived_proposal)
+    end
+
+    it "scope archived" do
+      not_archived = Proposal.not_archived
+
+      expect(not_archived.size).to eq(1)
+      expect(not_archived.first).to eq(new_proposal)
     end
   end
 

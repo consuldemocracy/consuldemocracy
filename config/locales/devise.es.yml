@@ -1,5 +1,11 @@
 es:
   devise:
+    password_expired:
+      expire_password: "Contraseña caducada"
+      change_required: "Tu contraseña ha caducado"
+      change_password: "Cambia tu contraseña"
+      new_password: "Nueva contraseña"
+      updated: "Contraseña actualizada con éxito"
     confirmations:
       confirmed: "Tu cuenta ha sido confirmada. Por favor autentifícate con tu red social o tu usuario y contraseña"
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo restablecer tu contraseña."
@@ -33,8 +39,8 @@ es:
     registrations:
       destroyed:
         "¡Adiós! Tu cuenta ha sido cancelada. Esperamos volver a verte pronto. Le informamos que de conformidad con su petición,
-        sus datos personales registrados como usuario de la Web decide.madrid.es y que forman parte del fichero 'Gestión de procesos participativos'
-        cuyo responsable es la Dirección General de Participación Ciudadana, han sido cancelados en los términos de lo previsto en el artículo 16 de la
+        sus datos personales registrados como usuario de la Web y que forman parte del fichero 'Fichero'
+        cuyo responsable es 'Responsable', han sido cancelados en los términos de lo previsto en el artículo 16 de la
         Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal y del artículo 31 de su Reglamento de desarrollo (RD 1720/2007)."
       signed_up: "¡Bienvenido! Has sido identificado."
       signed_up_but_inactive: "Te has registrado correctamente, pero no has podido iniciar sesión porque tu cuenta no ha sido activada."
@@ -60,3 +66,4 @@ es:
       not_saved:
         one: "1 error impidió que este %{resource} fuera guardado:"
         other: "%{count} errores impidieron que este %{resource} fuera guardado:"
+      equal_to_current_password: "debe ser diferente a la contraseña actual"

@@ -177,9 +177,9 @@ feature 'Moderate debates' do
     end
 
     scenario "sorting debates" do
-      create(:debate, title: "Flagged debate", created_at: Time.now - 1.day, flags_count: 5)
-      create(:debate, title: "Flagged newer debate", created_at: Time.now - 12.hours, flags_count: 3)
-      create(:debate, title: "Newer debate", created_at: Time.now)
+      create(:debate, title: "Flagged debate", created_at: Time.current - 1.day, flags_count: 5)
+      create(:debate, title: "Flagged newer debate", created_at: Time.current - 12.hours, flags_count: 3)
+      create(:debate, title: "Newer debate", created_at: Time.current)
 
       visit moderation_debates_path(order: 'created_at')
 

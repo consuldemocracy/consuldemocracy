@@ -24,7 +24,7 @@
                 <span class="author">
                   <%= debate.author.name %>
                 </span>
-                <% if debate.author.official? %>
+                <% if debate.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= debate.author.official_level %>">
                     <%= debate.author.official_position %>
@@ -41,14 +41,14 @@
 
             </p>
             <div class="debate-description">
-              <%= link_to debate.description, debate %>
+              <%= debate.description %>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: debate, limit: 5 %>
           </div>
         </div>
 
-        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column text-center">
+        <div id="<%= dom_id(debate) %>_votes" class="small-12 medium-3 column">
             <%= render 'debates/votes', debate: debate %>
         </div>
 
