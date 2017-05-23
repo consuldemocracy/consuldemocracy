@@ -457,12 +457,6 @@ end
 
 
 puts " ✅"
-print "Creating Legislation"
-
-Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
-
-
-puts " ✅"
 print "Ignoring flags in Debates, comments & proposals"
 
 
@@ -651,7 +645,6 @@ print "Creating legislation processes"
                                            allegations_end_date: Date.current + 3.days,
                                            final_publication_date: Date.current + 4.days
   )
-  puts "    #{process.title}"
 end
 
 ::Legislation::Process.all.each do |process|
@@ -659,7 +652,6 @@ end
     version = process.draft_versions.create!(title: "Version #{i}",
                                              body: Faker::Lorem.paragraphs.join("\n\n")
     )
-    puts "    #{version.title}"
   end
 end
 
