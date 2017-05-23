@@ -100,6 +100,12 @@ brew install ghostscript
 brew install phantomjs
 ```
 
+## Imagemagick
+
+```
+brew install imagemagick
+```
+
 ## Clonar el repositorio
 
 Ahora que ya tenemos todas las dependencias instalado podemos bajarnos el proyecto:
