@@ -184,7 +184,7 @@ es:
     administrators:
       index:
         title: Administradores
-      manager:
+      administrator:
         add: Añadir como Administrador
         delete: Borrar
       search:

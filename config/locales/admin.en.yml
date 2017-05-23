@@ -229,7 +229,7 @@ en:
     administrators:
       index:
         title: Administrators
-      moderator:
+      administrator:
         add: Add
         delete: Delete
       search:
