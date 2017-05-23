@@ -14,9 +14,6 @@
 
 // 01. Utils
 // -----------------
-.grey {
-  color: #878787;
-}
 
 .grey-heading {
   background: #E6E6E6;
@@ -47,9 +44,7 @@ $epigraph-line-height: rem-calc(22);
   }
 
   h4 {
-    color: #878787;
     text-transform: uppercase;
-    font-weight: 400;
   }
 
   ul {
