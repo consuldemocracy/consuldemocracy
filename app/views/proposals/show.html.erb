@@ -55,7 +55,10 @@
           <%= t("proposals.show.code") %>
           <strong><%= @proposal.code %></strong>
         </p>
-
+        <p>
+          <%= t("proposals.show.problem_title") %>
+          <strong><%= link_to @proposal.problem.title, problem_path(@proposal.problem) %></strong>
+        </p>
         <blockquote><%= @proposal.summary %></blockquote>
 
         <% if @proposal.video_url.present? %>

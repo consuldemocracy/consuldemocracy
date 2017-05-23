@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :problems
+
   resources :comments, only: [:create, :show], shallow: true do
     member do
       post :vote

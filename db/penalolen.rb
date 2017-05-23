@@ -70,18 +70,6 @@ Geozone.create(name: "Peñalolen Nuevo", external_code: 36, census_code: 36)
 
 
 puts " ✅"
-print "Creating Problems"
-
-problem = Problem.create(title: "Mejoramiento sector la Capilla",
-  description: "La idea es levantar propuestas de mejoramiento de ...",
-  id: 3,
-  budget: "42000000",
-  restriction: nil,
-  summary: "Se busca mejorar la plaza que esta frente a La Capilla",
-  starts_at: "2017-03-28 22:00:00",
-  ends_at: "2017-06-24 22:00:00")
-
-puts " ✅"
 print "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
@@ -192,6 +180,23 @@ ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "ca
 #                           geozone: Geozone.reorder("RANDOM()").first,
 #                           terms_of_service: "1")
 # end
+
+
+
+
+
+puts " ✅"
+print "Creating Problems"
+
+problem = Problem.create(title: "Mejoramiento sector la Capilla",
+  description: "La idea es levantar propuestas de mejoramiento de ...",
+  id: 3,
+  budget: "42000000",
+  restriction: nil,
+  summary: "Se busca mejorar la plaza que esta frente a La Capilla",
+  starts_at: "2017-03-28 22:00:00",
+  ends_at: "2017-06-24 22:00:00",
+  user: level_2)
 
 
 puts " ✅"
