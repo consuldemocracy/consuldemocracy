@@ -270,7 +270,9 @@ Rails.application.routes.draw do
 
     resource :stats, only: :show do
       get :spending_proposals, on: :collection
-      get :budget_investments, on: :collection
+      get :budgets, on: :collection
+      get :budget_supporting, on: :member
+      get :budget_balloting, on: :member
       get :graph, on: :member
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
@@ -485,6 +487,7 @@ Rails.application.routes.draw do
   get 'proceso/ordenanza-de-transparencia/borrador',    to: 'pages#show', id: 'processes/transparency/draft',     as: 'transparency_ordinance_draft'
   get 'proceso/registro-de-lobbies',                    to: 'pages#show', id: 'processes/lobbies/index',          as: 'lobbies'
   get 'proceso/registro-de-lobbies/borrador',           to: 'pages#show', id: 'processes/lobbies/draft',          as: 'lobbies_draft'
+  get 'proceso/parque-lineal-manzanares',               to: 'pages#show', id: 'processes/manzanares/index',       as: 'manzanares'
 
   #Landings
   get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'
