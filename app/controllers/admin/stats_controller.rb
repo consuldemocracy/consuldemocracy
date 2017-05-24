@@ -90,13 +90,13 @@ class Admin::StatsController < Admin::BaseController
 
     @vote_count_by_heading = @budget.lines.group(:heading_id).count.collect {|k,v| [Budget::Heading.find(k).name, v]}.sort
 
-    @user_count_in_city = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: 1).exists?}.count
+    @user_count_in_city = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: city_heading(@budget).id).exists?}.count
 
-    @user_count_in_district = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: [2..23]).exists?}.count
+    @user_count_in_district = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: (@budget.heading_ids - [city_heading(@budget).id])).exists?}.count
 
     @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.collect {|k,v| [Budget::Heading.find(k).name, v]}.sort
 
-    @user_count_in_city_and_district = (@budget.ballots.select {|ballot| ballot.lines.where(heading_id: 1).exists?}.map(&:id) & @budget.ballots.select {|ballot| ballot.lines.where(heading_id: [2..23]).exists?}.map(&:id)).count
+    @user_count_in_city_and_district = (@budget.ballots.select {|ballot| ballot.lines.where(heading_id: city_heading(@budget).id).exists?}.map(&:id) & @budget.ballots.select {|ballot| ballot.lines.where(heading_id: (@budget.heading_ids - [city_heading(@budget).id])).exists?}.map(&:id)).count
   end
 
   def redeemable_codes
