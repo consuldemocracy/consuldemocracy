@@ -257,7 +257,7 @@ $epigraph-line-height: rem-calc(22);
 
     .debate-type {
       text-transform: uppercase;
-      color: #178DCC;
+      color: $brand;
       font-weight: 700;
       font-size: $small-font-size;
 
@@ -308,7 +308,6 @@ $epigraph-line-height: rem-calc(22);
       .quiz-header-title {
         margin-bottom: 0;
         text-transform: uppercase;
-        color: #979B9F;
         font-weight: 700;
         font-size: $small-font-size;
       }
