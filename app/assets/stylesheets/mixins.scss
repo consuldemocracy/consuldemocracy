@@ -20,13 +20,13 @@
 
   img {
     height: 48px;
-    width: 48px;
+    width: 111px;
 
     @include breakpoint(medium) {
       height: 80px;
       margin-right: $line-height/2;
-      margin-top: 0;
-      width: 80px;
+      margin-top: 7px;
+      width: 185px;
     }
   }
 }

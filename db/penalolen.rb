@@ -56,7 +56,7 @@ Setting['feature.budgets'] = false
 Setting['feature.signature_sheets'] = false
 
 puts " ✅"
-print "Creating Geozones"
+print "Creando unidades vecinales y zonas"
 
 Geozone.create(name: "city")
 Geozone.create(name: "Existent District", census_code: "01")
@@ -70,12 +70,16 @@ Geozone.create(name: "Peñalolen Nuevo", external_code: 36, census_code: 36)
 
 
 puts " ✅"
-print "Creating Users"
+print "Creando usuarios"
 
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
 end
+
+dani = create_user('daquiroz@abre.org', 'daquiroz')
+dani.create_administrator
+dani.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
 
 admin = create_user('admin@consul.dev', 'admin')
 admin.create_administrator
@@ -151,44 +155,11 @@ ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "cat
 ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
 
-# puts " ✅"
-# print "Creating Debates"
-#
-# tags = Faker::Lorem.words(25)
-# (1..30).each do
-#   author = User.reorder("RANDOM()").first
-#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-#   debate = Debate.create!(author: author,
-#                           title: Faker::Lorem.sentence(3).truncate(60),
-#                           created_at: rand((Time.current - 1.week) .. Time.current),
-#                           description: description,
-#                           tag_list: tags.sample(3).join(','),
-#                           geozone: Geozone.reorder("RANDOM()").first,
-#                           terms_of_service: "1")
-# end
-
-
-# tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-# (1..30).each do
-#   author = User.reorder("RANDOM()").first
-#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-#   debate = Debate.create!(author: author,
-#                           title: Faker::Lorem.sentence(3).truncate(60),
-#                           created_at: rand((Time.current - 1.week) .. Time.current),
-#                           description: description,
-#                           tag_list: tags.sample(3).join(','),
-#                           geozone: Geozone.reorder("RANDOM()").first,
-#                           terms_of_service: "1")
-# end
-
-
-
-
 
 puts " ✅"
 print "Creating Problems"
 
-problem = Problem.create(title: "Mejoramiento sector la Capilla",
+problem = Problem.create(title: "Mejoramiento plaza San Luis",
   description: "La idea es levantar propuestas de mejoramiento de ...",
   id: 3,
   budget: "42000000",
@@ -280,20 +251,6 @@ end
 #                               terms_of_service: "1")
 # end
 #
-#
-# puts " ✅"
-# print "Commenting Debates"
-#
-# (1..100).each do
-#   author = User.reorder("RANDOM()").first
-#   debate = Debate.reorder("RANDOM()").first
-#   Comment.create!(user: author,
-#                   created_at: rand(debate.created_at .. Time.current),
-#                   commentable: debate,
-#                   body: Faker::Lorem.sentence)
-# end
-#
-#
 # puts " ✅"
 # print "Commenting Proposals"
 #
@@ -307,19 +264,7 @@ end
 # end
 #
 #
-# puts " ✅"
-# print "Commenting Comments"
-#
-# (1..200).each do
-#   author = User.reorder("RANDOM()").first
-#   parent = Comment.reorder("RANDOM()").first
-#   Comment.create!(user: author,
-#                   created_at: rand(parent.created_at .. Time.current),
-#                   commentable_id: parent.commentable_id,
-#                   commentable_type: parent.commentable_type,
-#                   body: Faker::Lorem.sentence,
-#                   parent: parent)
-# end
+
 #
 #
 # puts " ✅"
@@ -498,7 +443,7 @@ end
 # puts " ✅"
 # print "Creating banners"
 
-Proposal.last(2).each do |proposal|
+Proposal.last(1).each do |proposal|
   title = Faker::Lorem.sentence(word_count = 3)
   description = Faker::Lorem.sentence(word_count = 12)
   banner = Banner.create!(title: title,

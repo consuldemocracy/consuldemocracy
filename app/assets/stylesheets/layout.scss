@@ -300,7 +300,7 @@ a {
 // ----------
 
 header {
-  background: $brand;
+  background: $white;
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
 
@@ -326,7 +326,7 @@ header {
 }
 
 .top-bar {
-  background: $brand !important;
+  background: $white !important;
   color: white;
   height: $line-height*2;
   line-height: $line-height*2;
@@ -359,7 +359,7 @@ header {
       }
 
       a {
-        color: white;
+        color: black;
         padding-left: 0;
 
         @include breakpoint(medium) {
@@ -384,7 +384,7 @@ header {
     height: 20px;
 
     &::after, &:hover::after {
-      background: white;
+      background: $brand;
       box-shadow: 0 7px 0 white, 0 14px 0 white;
     }
   }
