@@ -7,7 +7,7 @@
         <%= link_to t("admin.stats.show.polls"),
                     polls_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.participatory_budgets"),
-                    budget_investments_admin_stats_path, class: "button hollow" %>
+                    budgets_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.direct_messages"),
                     direct_messages_admin_stats_path, class: "button hollow" %>
         <%= link_to t("admin.stats.show.proposal_notifications"),
@@ -22,7 +22,7 @@
         <div class="small-12 medium-3 column">
           <p class="featured">
             <%= link_to t("admin.stats.show.summary.visits"),
-                        graph_admin_stats_path(id: "visits", count: @visits) %><br>
+                        graph_admin_stats_path(id: "visits", count: @visits) %> <br>
             <span class="number"><%= number_with_delimiter(@visits) %></span>
           </p>
 

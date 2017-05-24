@@ -195,7 +195,8 @@ namespace :admin do
 
   resource :stats, only: :show do
     get :graph, on: :member
-    get :budget_investments, on: :collection
+    get :budgets, on: :collection
+    get :budget_supporting, on: :member
     get :proposal_notifications, on: :collection
     get :direct_messages, on: :collection
     get :polls, on: :collection

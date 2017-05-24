@@ -1462,7 +1462,12 @@ es:
         visit: Visitas
         level_2_user: Usuarios nivel 2
         proposal_created: Propuestas Ciudadanas
-      budget_investments:
+      budgets:
+        title: "Presupuestos participativos - Estadisticas de participación"
+        supporting_phase: Fase de apoyos
+        balloting_phase: Votación final
+      budget_supporting:
+        title: "Estadísticas fase de apoyos"
         groups: Grupo
         users: Usuarios
         vote_count: Votos

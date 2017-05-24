@@ -52,14 +52,24 @@ class Admin::StatsController < Admin::BaseController
     @users_who_have_sent_message = DirectMessage.select(:sender_id).distinct.count
   end
 
-  def budget_investments
-    votes = Vote.for_budget_investments(Budget::Investment.all)
+
+  def budgets
+    @budgets = Budget.all
+  end
+
+  def budget_supporting
+    @budget = Budget.find(params[:budget_id])
+    heading_ids = @budget.heading_ids
+
+    votes = Vote.where(votable_type: "Budget::Investment").
+            includes(:budget_investment).
+            where(budget_investments: { heading_id: heading_ids })
+
     @vote_count = votes.count
-    @participant_count = votes.select(:voter_id).distinct.count
+    @user_count = votes.select(:voter_id).distinct.count
 
     @voters_in_heading = {}
-    budget = Budget.last
-    budget.headings.each do |heading|
+    @budget.headings.each do |heading|
       @voters_in_heading[heading] = voters_in_heading(heading)
     end
   end

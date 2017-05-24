@@ -105,20 +105,24 @@ feature "Stats" do
   describe "Budget investments" do
 
     background do
-      budget = create(:budget)
-      group_all_city   = create(:budget_group, budget: budget)
-      heading_all_city = create(:budget_heading, group: group_all_city)
+      @budget = create(:budget)
+      @group_all_city   = create(:budget_group, budget: @budget)
+      @heading_all_city = create(:budget_heading, group: @group_all_city)
     end
 
     scenario "Number of supports in investment projects" do
-      investment1 = create(:budget_investment)
-      investment2 = create(:budget_investment)
+      group_2 = create(:budget_group, budget: @budget)
+      investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
+      investment2 = create(:budget_investment, heading: @heading_all_city)
 
       1.times { create(:vote, votable: investment1) }
       2.times { create(:vote, votable: investment2) }
 
       visit admin_stats_path
       click_link "Participatory Budgets"
+      within("#budget_#{@budget.id}") do
+        click_link "Supporting phase"
+      end
 
       expect(page).to have_content "Votes 3"
     end
@@ -128,8 +132,9 @@ feature "Stats" do
       user2 = create(:user, :level_two)
       user3 = create(:user, :level_two)
 
-      investment1 = create(:budget_investment)
-      investment2 = create(:budget_investment)
+      group_2 = create(:budget_group, budget: @budget)
+      investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
+      investment2 = create(:budget_investment, heading: @heading_all_city)
 
       create(:vote, votable: investment1, voter: user1)
       create(:vote, votable: investment1, voter: user2)
@@ -137,6 +142,9 @@ feature "Stats" do
 
       visit admin_stats_path
       click_link "Participatory Budgets"
+      within("#budget_#{@budget.id}") do
+        click_link "Supporting phase"
+      end
 
       expect(page).to have_content "Participants 2"
     end
@@ -161,6 +169,9 @@ feature "Stats" do
 
       visit admin_stats_path
       click_link "Participatory Budgets"
+      within("#budget_#{budget.id}") do
+        click_link "Supporting phase"
+      end
 
       within("#budget_heading_#{all_city.id}") do
         expect(page).to have_content all_city.name

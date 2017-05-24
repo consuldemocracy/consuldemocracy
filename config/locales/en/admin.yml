@@ -1463,7 +1463,12 @@ en:
         visit: Visits
         level_2_user: Level 2 users
         proposal_created: Citizen proposals
-      budget_investments:
+      budgets:
+        title: "Participatory Budgets - Participation stats"
+        supporting_phase: Supporting phase
+        balloting_phase: Final voting
+      budget_supporting:
+        title: "Supporting phase stats"
         groups: Group
         users: Users
         vote_count: Votes
