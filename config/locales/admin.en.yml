@@ -641,7 +641,7 @@ en:
       show:
         stats_title: Stats
         participatory_budget_2016: Participatory Budget 2016
-        participatory_budget_2017: Participatory Budget 2017
+        participatory_budgets: Participatory Budgets
         polls: Polls
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
@@ -694,8 +694,12 @@ en:
         users_city_only: Users who voted ONLY for city-wide proposals
         users_district_only: Users who voted ONLY for district-wide proposals
         users_both_total:  Users who voted for BOTH
-      budget_investments:
-        title: Participatory Budgets
+      budgets:
+        title: "Participatory Budgets - Participation stats"
+        supporting_phase: Supporting phase
+        balloting_phase: Final voting
+      budget_supporting:
+        title: "Supporting phase stats"
         groups: Groups
         users: Users
         users_city_total: Users who voted for city-wide proposals
