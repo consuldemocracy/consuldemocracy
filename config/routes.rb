@@ -496,7 +496,7 @@ Rails.application.routes.draw do
   get 'noticias',        to: 'pages#show', id: 'landings/news'
 
   #Polls 2017 results & stats
-  get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'
+  get 'primera-votacion-ciudadana-resultados' => redirect('/vota')
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
   get 'vota',                                    to: 'polls#results_2017',  as: 'first_voting'
