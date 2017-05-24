@@ -191,26 +191,28 @@ feature "Stats" do
     end
 
     context "Balloting phase" do
+      background do
+        @budget = create(:budget, :balloting)
+        @group = create(:budget_group, budget: @budget)
+        @heading = create(:budget_heading, group: @group)
+        @investment = create(:budget_investment, :feasible, :selected, heading: @heading)
+      end
+
       scenario "Number of votes in investment projects" do
-        budget = create(:budget, :balloting)
-        ballot_1 = create(:budget_ballot, budget: budget)
-        ballot_2 = create(:budget_ballot, budget: budget)
+        ballot_1 = create(:budget_ballot, budget: @budget)
+        ballot_2 = create(:budget_ballot, budget: @budget)
 
-        group_1 = create(:budget_group, budget: budget)
-        heading_1 = create(:budget_heading, group: group_1)
-        investment_1 = create(:budget_investment, :feasible, :selected, heading: heading_1)
-
-        group_2 = create(:budget_group, budget: budget)
+        group_2 = create(:budget_group, budget: @budget)
         heading_2 = create(:budget_heading, group: group_2)
         investment_2 = create(:budget_investment, :feasible, :selected, heading: heading_2)
 
-        create(:budget_ballot_line, ballot: ballot_1, investment: investment_1)
+        create(:budget_ballot_line, ballot: ballot_1, investment: @investment)
         create(:budget_ballot_line, ballot: ballot_1, investment: investment_2)
         create(:budget_ballot_line, ballot: ballot_2, investment: investment_2)
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{budget.id}") do
+        within("#budget_#{@budget.id}") do
           click_link "Final voting"
         end
 
@@ -222,21 +224,16 @@ feature "Stats" do
         user_2 = create(:user, :level_two)
         user_3 = create(:user, :level_two)
 
-        budget = create(:budget, :balloting)
-        ballot_1 = create(:budget_ballot, budget: budget, user: user_1)
-        ballot_2 = create(:budget_ballot, budget: budget, user: user_2)
-        ballot_3 = create(:budget_ballot, budget: budget, user: user_3)
+        ballot_1 = create(:budget_ballot, budget: @budget, user: user_1)
+        ballot_2 = create(:budget_ballot, budget: @budget, user: user_2)
+        ballot_3 = create(:budget_ballot, budget: @budget, user: user_3)
 
-        group = create(:budget_group, budget: budget)
-        heading = create(:budget_heading, group: group)
-        investment = create(:budget_investment, :feasible, :selected, heading: heading)
-
-        create(:budget_ballot_line, ballot: ballot_1, investment: investment)
-        create(:budget_ballot_line, ballot: ballot_2, investment: investment)
+        create(:budget_ballot_line, ballot: ballot_1, investment: @investment)
+        create(:budget_ballot_line, ballot: ballot_2, investment: @investment)
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{budget.id}") do
+        within("#budget_#{@budget.id}") do
           click_link "Final voting"
         end
 
