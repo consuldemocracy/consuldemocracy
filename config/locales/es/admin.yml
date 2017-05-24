@@ -1466,9 +1466,15 @@ es:
         title: "Presupuestos participativos - Estadisticas de participación"
         supporting_phase: Fase de apoyos
         balloting_phase: Votación final
+      budget_balloting:
+        title: "Estadísticas votación final"
+        vote_count: Votos
+        participant_count: Participantes
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por distrito
       budget_supporting:
         title: "Estadísticas fase de apoyos"
-        groups: Grupo
+        headings: Partidas
         users: Usuarios
         vote_count: Votos
         participant_count: Participantes
