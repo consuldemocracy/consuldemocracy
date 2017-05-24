@@ -702,8 +702,9 @@ es:
         title: "Estadísticas votación final"
         vote_count: Votos
         participant_count: Participantes
-        users_city_total: Usuarios que han apoyado propuestas de ciudad
-        users_district_total: Usuarios que han apoyado propuestas de distrito
+        users_city_total: Usuarios que han votado propuestas de ciudad
+        users_district_total: Usuarios que han votado propuestas de distrito
+        users_both_total: Usuarios que han votado AMBAS
         votes_per_heading: Votos por partida
         participants_per_district: Participantes por distrito
       budget_supporting:

@@ -704,6 +704,7 @@ en:
         participant_count: Participants
         users_city_total: Users who voted for city-wide proposals
         users_district_total: Users who voted for district-wide proposals
+        users_both_total:  Users who voted for BOTH
         votes_per_heading: Votes per heading
         participants_per_district: Participants per district
       budget_supporting:
