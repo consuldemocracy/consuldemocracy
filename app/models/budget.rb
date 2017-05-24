@@ -13,6 +13,7 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :lines, through: :ballots, class_name: 'Budget::Ballot::Line'
 
   before_validation :sanitize_descriptions
   before_save :set_slug

@@ -136,117 +136,186 @@ feature 'Stats' do
   end
 
   feature "Budget investments" do
+    context "Supporting phase" do
+      background do
+        @budget = create(:budget)
+        @group_all_city   = create(:budget_group, budget: @budget)
+        @heading_all_city = create(:budget_heading, group: @group_all_city)
 
-    background do
-      budget = create(:budget)
-      group_all_city   = create(:budget_group, budget: budget)
-      heading_all_city = create(:budget_heading, group: group_all_city)
-
-      allow_any_instance_of(Admin::StatsController).
-      to receive(:city_heading).and_return(heading_all_city)
-    end
-
-    scenario "Number of supports in investment projects" do
-      investment1 = create(:budget_investment)
-      investment2 = create(:budget_investment)
-
-      1.times { create(:vote, votable: investment1) }
-      2.times { create(:vote, votable: investment2) }
-
-      visit admin_stats_path
-      click_link "Participatory Budget 2017"
-
-      expect(page).to have_content "Votes 3"
-    end
-
-    scenario "Number of users that have voted a investment project" do
-      user1 = create(:user, :level_two)
-      user2 = create(:user, :level_two)
-      user3 = create(:user, :level_two)
-
-      investment1 = create(:budget_investment)
-      investment2 = create(:budget_investment)
-
-      create(:vote, votable: investment1, voter: user1)
-      create(:vote, votable: investment1, voter: user2)
-      create(:vote, votable: investment2, voter: user1)
-
-      visit admin_stats_path
-      click_link "Participatory Budget 2017"
-
-      expect(page).to have_content "Participants 2"
-    end
-
-    scenario "Number of users that have voted a investment project per geozone" do
-      budget = create(:budget)
-
-      group_all_city  = create(:budget_group, budget: budget)
-      group_districts = create(:budget_group, budget: budget)
-
-      all_city    = create(:budget_heading, group: group_all_city)
-      carabanchel = create(:budget_heading, group: group_districts)
-      barajas     = create(:budget_heading, group: group_districts)
-
-      all_city_investment = create(:budget_investment, heading: all_city)
-      carabanchel_investment = create(:budget_investment, heading: carabanchel)
-      carabanchel_investment = create(:budget_investment, heading: carabanchel)
-
-      Budget::Investment.all.each do |investment|
-        create(:vote, votable: investment)
+        allow_any_instance_of(Admin::StatsController).
+        to receive(:city_heading).and_return(@heading_all_city)
       end
 
-      visit admin_stats_path
-      click_link "Participatory Budget 2017"
+      scenario "Number of supports in investment projects" do
+        group_2 = create(:budget_group, budget: @budget)
+        investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
+        investment2 = create(:budget_investment, heading: @heading_all_city)
 
-      within("#budget_heading_#{all_city.id}") do
-        expect(page).to have_content all_city.name
-        expect(page).to have_content 1
+        1.times { create(:vote, votable: investment1) }
+        2.times { create(:vote, votable: investment2) }
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{@budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        expect(page).to have_content "Votes 3"
       end
 
-      within("#budget_heading_#{carabanchel.id}") do
-        expect(page).to have_content carabanchel.name
-        expect(page).to have_content 2
+      scenario "Number of users that have supported an investment project" do
+        user1 = create(:user, :level_two)
+        user2 = create(:user, :level_two)
+        user3 = create(:user, :level_two)
+
+        group_2 = create(:budget_group, budget: @budget)
+        investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
+        investment2 = create(:budget_investment, heading: @heading_all_city)
+
+        create(:vote, votable: investment1, voter: user1)
+        create(:vote, votable: investment1, voter: user2)
+        create(:vote, votable: investment2, voter: user1)
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{@budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        expect(page).to have_content "Participants 2"
       end
 
-      within("#budget_heading_#{barajas.id}") do
-        expect(page).to have_content barajas.name
-        expect(page).to have_content 0
+      scenario "Number of users that have supported investments projects per geozone" do
+        budget = create(:budget)
+
+        group_all_city  = create(:budget_group, budget: budget)
+        group_districts = create(:budget_group, budget: budget)
+
+        all_city    = create(:budget_heading, group: group_all_city)
+        carabanchel = create(:budget_heading, group: group_districts)
+        barajas     = create(:budget_heading, group: group_districts)
+
+        all_city_investment = create(:budget_investment, heading: all_city)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+
+        Budget::Investment.all.each do |investment|
+          create(:vote, votable: investment)
+        end
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        within("#budget_heading_#{all_city.id}") do
+          expect(page).to have_content all_city.name
+          expect(page).to have_content 1
+        end
+
+        within("#budget_heading_#{carabanchel.id}") do
+          expect(page).to have_content carabanchel.name
+          expect(page).to have_content 2
+        end
+
+        within("#budget_heading_#{barajas.id}") do
+          expect(page).to have_content barajas.name
+          expect(page).to have_content 0
+        end
+      end
+
+      scenario "Number of users that have supported geozone/no-geozone wide proposals" do
+        budget = create(:budget)
+
+        group_all_city  = create(:budget_group, budget: budget)
+        group_districts = create(:budget_group, budget: budget)
+
+        all_city    = create(:budget_heading, group: group_all_city)
+        carabanchel = create(:budget_heading, group: group_districts)
+
+        allow_any_instance_of(Admin::StatsController).
+        to receive(:city_heading).and_return(all_city)
+
+        all_city_investment = create(:budget_investment, heading: all_city)
+        district_investment = create(:budget_investment, heading: carabanchel)
+
+        user_both = create(:user, :level_two)
+        user_city = create(:user, :level_two)
+        user_district = create(:user, :level_two)
+
+        create(:vote, voter: user_both, votable: all_city_investment)
+        create(:vote, voter: user_both, votable: district_investment)
+
+        create(:vote, voter: user_city, votable: all_city_investment)
+        create(:vote, voter: user_district, votable: district_investment)
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{budget.id}") do
+          click_link "Supporting phase"
+        end
+
+        within("#city_voters") {expect(page).to have_content 2}
+        within("#district_voters") {expect(page).to have_content 2}
+        within("#in_both_voters") {expect(page).to have_content 1}
+        within("#only_district_voters") {expect(page).to have_content 1}
+        within("#only_city_voters") {expect(page).to have_content 1}
       end
     end
 
-    scenario "Number of users that have voted geozone/no-geozone wide proposals" do
-      budget = create(:budget)
+    context "Balloting phase" do
+      background do
+        @budget = create(:budget, :balloting)
+        @group = create(:budget_group, budget: @budget)
+        @heading = create(:budget_heading, group: @group)
+        @investment = create(:budget_investment, :feasible, :selected, heading: @heading)
 
-      group_all_city  = create(:budget_group, budget: budget)
-      group_districts = create(:budget_group, budget: budget)
+        allow_any_instance_of(Admin::StatsController).
+        to receive(:city_heading).and_return(@heading)
+      end
 
-      all_city    = create(:budget_heading, group: group_all_city)
-      carabanchel = create(:budget_heading, group: group_districts)
+      scenario "Number of votes in investment projects" do
+        ballot_1 = create(:budget_ballot, budget: @budget)
+        ballot_2 = create(:budget_ballot, budget: @budget)
 
-      allow_any_instance_of(Admin::StatsController).
-      to receive(:city_heading).and_return(all_city)
+        group_2 = create(:budget_group, budget: @budget)
+        heading_2 = create(:budget_heading, group: group_2)
+        investment_2 = create(:budget_investment, :feasible, :selected, heading: heading_2)
 
-      all_city_investment = create(:budget_investment, heading: all_city)
-      district_investment = create(:budget_investment, heading: carabanchel)
+        create(:budget_ballot_line, ballot: ballot_1, investment: @investment)
+        create(:budget_ballot_line, ballot: ballot_1, investment: investment_2)
+        create(:budget_ballot_line, ballot: ballot_2, investment: investment_2)
 
-      user_both = create(:user, :level_two)
-      user_city = create(:user, :level_two)
-      user_district = create(:user, :level_two)
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{@budget.id}") do
+          click_link "Final voting"
+        end
 
-      create(:vote, voter: user_both, votable: all_city_investment)
-      create(:vote, voter: user_both, votable: district_investment)
+        expect(page).to have_content "Votes 3"
+      end
 
-      create(:vote, voter: user_city, votable: all_city_investment)
-      create(:vote, voter: user_district, votable: district_investment)
+      scenario "Number of users that have voted a investment project" do
+        user_1 = create(:user, :level_two)
+        user_2 = create(:user, :level_two)
+        user_3 = create(:user, :level_two)
 
-      visit admin_stats_path
-      click_link "Participatory Budget 2017"
+        ballot_1 = create(:budget_ballot, budget: @budget, user: user_1)
+        ballot_2 = create(:budget_ballot, budget: @budget, user: user_2)
+        ballot_3 = create(:budget_ballot, budget: @budget, user: user_3)
 
-      within("#city_voters") {expect(page).to have_content 2}
-      within("#district_voters") {expect(page).to have_content 2}
-      within("#in_both_voters") {expect(page).to have_content 1}
-      within("#only_district_voters") {expect(page).to have_content 1}
-      within("#only_city_voters") {expect(page).to have_content 1}
+        create(:budget_ballot_line, ballot: ballot_1, investment: @investment)
+        create(:budget_ballot_line, ballot: ballot_2, investment: @investment)
+
+        visit admin_stats_path
+        click_link "Participatory Budgets"
+        within("#budget_#{@budget.id}") do
+          click_link "Final voting"
+        end
+
+        expect(page).to have_content "Participants 2"
+      end
     end
 
   end

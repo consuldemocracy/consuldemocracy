@@ -641,7 +641,7 @@ es:
       show:
         stats_title: Estadísticas
         participatory_budget_2016: Presupuestos Participativos 2016
-        participatory_budget_2017: Presupuestos Participativos 2017
+        participatory_budgets: Presupuestos Participativos
         polls: Votaciones
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -694,15 +694,28 @@ es:
         users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
         users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
-      budget_investments:
-        title: Presupuestos participativos 2017
-        groups: Grupo
-        users: Usuarios
+      budgets:
+        title: "Presupuestos participativos - Estadisticas de participación"
+        supporting_phase: Fase de apoyos
+        balloting_phase: Votación final
+      budget_balloting:
+        title: "Estadísticas votación final"
+        vote_count: Votos
+        participant_count: Participantes
         users_city_total: Usuarios que han votado propuestas de ciudad
         users_district_total: Usuarios que han votado propuestas de distrito
-        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
-        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por distrito
+      budget_supporting:
+        title: "Estadísticas fase de apoyos"
+        headings: Partidas
+        users: Usuarios
+        users_city_total: Usuarios que han apoyado propuestas de ciudad
+        users_district_total: Usuarios que han apoyado propuestas de distrito
+        users_city_only: Usuarios que han apoyado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han apoyado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han apoyado AMBAS
         vote_count: Votos
         participant_count: Participantes
       direct_messages:
