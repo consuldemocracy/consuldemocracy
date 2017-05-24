@@ -5,7 +5,7 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% cache ["welcome_index_20170523b", user_signed_in?] do %>
+<% cache ["welcome_index_20170524b", user_signed_in?] do %>
   <div class="welcome">
     <div class="no-margin-top">
       <%= render "budgets_module" %>
@@ -13,7 +13,7 @@
 
     <%# render "polls_results" %>
 
-    <%# render "cards" %>
+    <%= render "cards" %>
 
     <%= render "features" %>
 

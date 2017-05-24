@@ -145,5 +145,9 @@ es:
       title: "Registro de lobbies del Ayuntamiento de Madrid"
       description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
       date_html: "Participa hasta el <strong>4 de junio</strong>"
+    manzanares:
+      title: "Parque Lineal del Manzanares"
+      description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."
+      date_html: "Proceso abierto"
     shared:
       more_info: "Más información"
