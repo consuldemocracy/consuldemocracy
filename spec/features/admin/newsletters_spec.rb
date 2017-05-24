@@ -6,6 +6,8 @@ feature 'Admin newsletters emails' do
 
   background do
     @admin = create(:administrator)
+    @newsletter_user = create(:user, newsletter: true)
+    @non_newsletter_user = create(:user, newsletter: false)
     login_as(@admin.user)
     visit admin_newsletters_path
   end
@@ -16,7 +18,9 @@ feature 'Admin newsletters emails' do
 
   scenario 'Download newsletter email zip' do
     click_link download_button_text
-    expect( Zip::InputStream.open(StringIO.new(page.body)).get_next_entry.get_input_stream {|is| is.read } ).to include @admin.user.email
+    downloaded_file_content = Zip::InputStream.open(StringIO.new(page.body)).get_next_entry.get_input_stream {|is| is.read }
+    expect(downloaded_file_content).to include(@admin.user.email, @newsletter_user.email)
+    expect(downloaded_file_content).not_to include(@non_newsletter_user.email)
   end
 end
 
