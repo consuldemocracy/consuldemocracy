@@ -82,6 +82,23 @@ class Admin::StatsController < Admin::BaseController
     end
   end
 
+  def budget_balloting
+    @budget = Budget.find(params[:budget_id])
+    @user_count = @budget.ballots.select {|ballot| ballot.lines.any? }.count
+
+    @vote_count = @budget.lines.count
+
+    @vote_count_by_heading = @budget.lines.group(:heading_id).count.collect {|k,v| [Budget::Heading.find(k).name, v]}.sort
+
+    @user_count_in_city = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: 1).exists?}.count
+
+    @user_count_in_district = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: [2..23]).exists?}.count
+
+    @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.collect {|k,v| [Budget::Heading.find(k).name, v]}.sort
+
+    @user_count_in_city_and_district = (@budget.ballots.select {|ballot| ballot.lines.where(heading_id: 1).exists?}.map(&:id) & @budget.ballots.select {|ballot| ballot.lines.where(heading_id: [2..23]).exists?}.map(&:id)).count
+  end
+
   def redeemable_codes
     @users = User.where.not(redeemable_code: nil)
     @users_after_campaign = @users.where("verified_at >= ?", Date.new(2016, 6, 17).beginning_of_day).count

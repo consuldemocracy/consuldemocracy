@@ -698,9 +698,17 @@ en:
         title: "Participatory Budgets - Participation stats"
         supporting_phase: Supporting phase
         balloting_phase: Final voting
+      budget_balloting:
+        title: "Final voting stats"
+        vote_count: Votes
+        participant_count: Participants
+        users_city_total: Users who voted for city-wide proposals
+        users_district_total: Users who voted for district-wide proposals
+        votes_per_heading: Votes per heading
+        participants_per_district: Participants per district
       budget_supporting:
         title: "Supporting phase stats"
-        groups: Groups
+        headings: Headings
         users: Users
         users_city_total: Users who voted for city-wide proposals
         users_district_total: Users who voted for district-wide proposals

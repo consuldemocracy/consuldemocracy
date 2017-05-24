@@ -272,6 +272,7 @@ Rails.application.routes.draw do
       get :spending_proposals, on: :collection
       get :budgets, on: :collection
       get :budget_supporting, on: :member
+      get :budget_balloting, on: :member
       get :graph, on: :member
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
