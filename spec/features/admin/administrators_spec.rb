@@ -33,5 +33,13 @@ feature 'Admin administrators' do
       expect(page).to_not have_content @administrator.name
     end
   end
+
+  scenario 'Delete Administrator when its the current user' do
+    find(:xpath, "//tr[contains(.,'#{@admin.name}')]/td/a", text: 'Delete').click
+
+    within("#error") do
+      expect(page).to have_content I18n.t("admin.administrators.administrator.restricted_removal")
+    end
+  end
 end
 
