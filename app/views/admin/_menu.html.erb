@@ -33,8 +33,8 @@
           <%= link_to t("admin.menu.hidden_comments"), admin_comments_path %>
         </li>
 
-        <li <%= "class=active" if controller_name == "users" %>>
-          <%= link_to t("admin.menu.hidden_users"), admin_users_path %>
+        <li <%= "class=active" if controller_name == "hidden_users" %>>
+          <%= link_to t("admin.menu.hidden_users"), admin_hidden_users_path %>
         </li>
       </ul>
     </li>

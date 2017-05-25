@@ -1,11 +1,11 @@
 <%= render 'shared/back_link' %>
 
-<h2><%= t("admin.users.show.title", user: @user.name) %></h2>
+<h2><%= t("admin.hidden_users.show.title", user: @user.name) %></h2>
 
 <p>
-  <strong><%= t("admin.users.show.email") %></strong> <%= @user.email %> |
-  <strong><%= t("admin.users.show.registered_at") %></strong> <%= @user.confirmed_at %> |
-  <strong><%= t("admin.users.show.hidden_at") %></strong> <%= @user.hidden_at %>
+  <strong><%= t("admin.hidden_users.show.email") %></strong> <%= @user.email %> |
+  <strong><%= t("admin.hidden_users.show.registered_at") %></strong> <%= @user.confirmed_at %> |
+  <strong><%= t("admin.hidden_users.show.hidden_at") %></strong> <%= @user.hidden_at %>
 </p>
 
 <% if @debates.present? %>

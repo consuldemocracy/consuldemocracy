@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Admin users' do
+feature 'Admin hidden users' do
 
   background do
     admin = create(:administrator)
@@ -15,7 +15,7 @@ feature 'Admin users' do
     comment1 = create(:comment, :hidden, user: user, commentable: debate2, body: "You have the manners of a beggar")
     comment2 = create(:comment, user: user, commentable: debate2, body: 'Not Spam')
 
-    visit admin_user_path(user)
+    visit admin_hidden_user_path(user)
 
     expect(page).to have_content(debate1.title)
     expect(page).to have_content(debate2.title)
@@ -25,7 +25,7 @@ feature 'Admin users' do
 
   scenario 'Restore' do
     user = create(:user, :hidden)
-    visit admin_users_path
+    visit admin_hidden_users_path
 
     click_link 'Restore'
 
@@ -36,7 +36,7 @@ feature 'Admin users' do
 
   scenario 'Confirm hide' do
     user = create(:user, :hidden)
-    visit admin_users_path
+    visit admin_hidden_users_path
 
     click_link 'Confirm'
 
@@ -48,22 +48,22 @@ feature 'Admin users' do
   end
 
   scenario "Current filter is properly highlighted" do
-    visit admin_users_path
+    visit admin_hidden_users_path
     expect(page).to_not have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
-    visit admin_users_path(filter: 'Pending')
+    visit admin_hidden_users_path(filter: 'Pending')
     expect(page).to_not have_link('Pending')
     expect(page).to have_link('All')
     expect(page).to have_link('Confirmed')
 
-    visit admin_users_path(filter: 'all')
+    visit admin_hidden_users_path(filter: 'all')
     expect(page).to have_link('Pending')
     expect(page).to_not have_link('All')
     expect(page).to have_link('Confirmed')
 
-    visit admin_users_path(filter: 'with_confirmed_hide')
+    visit admin_hidden_users_path(filter: 'with_confirmed_hide')
     expect(page).to have_link('All')
     expect(page).to have_link('Pending')
     expect(page).to_not have_link('Confirmed')
@@ -73,11 +73,11 @@ feature 'Admin users' do
     create(:user, :hidden, username: "Unconfirmed")
     create(:user, :hidden, :with_confirmed_hide, username: "Confirmed user")
 
-    visit admin_users_path(filter: 'all')
+    visit admin_hidden_users_path(filter: 'all')
     expect(page).to have_content('Unconfirmed')
     expect(page).to have_content('Confirmed user')
 
-    visit admin_users_path(filter: 'with_confirmed_hide')
+    visit admin_hidden_users_path(filter: 'with_confirmed_hide')
     expect(page).to_not have_content('Unconfirmed')
     expect(page).to have_content('Confirmed user')
   end
@@ -86,7 +86,7 @@ feature 'Admin users' do
     per_page = Kaminari.config.default_per_page
     (per_page + 2).times { create(:user, :hidden, :with_confirmed_hide) }
 
-    visit admin_users_path(filter: 'with_confirmed_hide', page: 2)
+    visit admin_hidden_users_path(filter: 'with_confirmed_hide', page: 2)
 
     click_on('Restore', match: :first, exact: true)
 

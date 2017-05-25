@@ -181,6 +181,19 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
+      show:
+        email: 'Email:'
+        hidden_at: 'Hidden at:'
+        registered_at: 'Registered at:'
+        title: Activity of user (%{user})
     legislation:
       processes:
         create:
@@ -803,19 +816,6 @@ en:
       name:
         placeholder: Type the name of the topic
       update: Update Topic
-    users:
-      index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        title: Hidden users
-      show:
-        email: 'Email:'
-        hidden_at: 'Hidden at:'
-        registered_at: 'Registered at:'
-        title: Activity of user (%{user})
     verifications:
       index:
         phone_not_given: Phone not given

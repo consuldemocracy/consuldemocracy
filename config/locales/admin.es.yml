@@ -181,6 +181,19 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    hidden_users:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Usuarios bloqueados
+      show:
+        email: 'Email:'
+        hidden_at: 'Bloqueado:'
+        registered_at: 'Fecha de alta:'
+        title: Actividad del usuario (%{user})
     legislation:
       processes:
         create:
@@ -803,19 +816,6 @@ es:
       name:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
-    users:
-      index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        title: Usuarios bloqueados
-      show:
-        email: 'Email:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
-        title: Actividad del usuario (%{user})
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

@@ -161,7 +161,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :users, only: [:index, :show] do
+    resources :hidden_users, only: [:index, :show] do
       member do
         put :restore
         put :confirm_hide

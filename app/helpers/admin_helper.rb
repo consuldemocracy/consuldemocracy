@@ -17,7 +17,7 @@ module AdminHelper
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "users"].include? controller_name
+    ["proposals", "debates", "comments", "hidden_users"].include? controller_name
   end
 
   def menu_budget?
