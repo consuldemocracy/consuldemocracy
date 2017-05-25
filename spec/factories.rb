@@ -1,4 +1,12 @@
 FactoryGirl.define do
+  factory :project do
+    neighbour_id 1
+    responsible_id 1
+    name "MyString"
+    description "MyText"
+    starts_at "2017-05-25 10:20:45"
+    ends_at "2017-05-25 10:20:45"
+  end
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 

@@ -42,6 +42,8 @@ module Abilities
 
       can [:index, :show, :create, :edit, :update, :destroy], Problem
 
+      can [:index, :show, :create, :edit, :update, :destroy], Project
+
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
       can [:index, :read, :new, :create, :update, :destroy], Budget

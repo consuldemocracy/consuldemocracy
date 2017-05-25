@@ -32,4 +32,9 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
+  #TODO: Filtrar por las propuestas ganadoras
+  def valid_proposals
+    Proposal.all
+  end
+
 end
