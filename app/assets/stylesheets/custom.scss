@@ -224,10 +224,21 @@ ul.menu > li > a {
   padding: $line-height/2 $line-height/2 $line-height 0;
 }
 
-.tabs li.is-active a {
-  color: $brand;
-  border-bottom: 2px solid $brand;
-  font-weight: bold;
+.tabs li.is-active {
+
+  a, span.is-active {
+    color: $brand;
+    border-bottom: 2px solid $brand;
+    font-weight: bold;
+  }
+
+  span.is-active {
+    display: block;
+    line-height: 1;
+    margin-bottom: -1px;
+    margin-right: $line-height;
+    padding: $line-height/2 0;
+  }
 }
 
 .sticky-bottom {
