@@ -187,6 +187,7 @@ es:
       administrator:
         add: Añadir como Administrador
         delete: Borrar
+        restricted_removal: "Lo sentimos, no puedes te eliminar a ti mismo de la lista"
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar

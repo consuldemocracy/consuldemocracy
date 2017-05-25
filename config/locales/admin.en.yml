@@ -233,6 +233,7 @@ en:
       administrator:
         add: Add
         delete: Delete
+        restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         email_placeholder: Search user by email
         search: Search
