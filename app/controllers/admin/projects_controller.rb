@@ -23,6 +23,11 @@ class Admin::ProjectsController < Admin::BaseController
   end
 
   def update
+    if @project.update(project_params)
+      redirect_to admin_projects_url, notice: t("flash.actions.update.project")
+    else
+      render :edit
+    end
   end
 
   def destroy

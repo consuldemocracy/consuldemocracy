@@ -44,6 +44,8 @@ module Abilities
 
       can [:index, :show, :create, :edit, :update, :destroy], Project
 
+      can [:index, :show, :create, :edit, :update, :destroy], DesignPhase
+
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
       can [:index, :read, :new, :create, :update, :destroy], Budget

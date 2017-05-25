@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :design_phase do
+    
+  end
   factory :project do
     neighbour_id 1
     responsible_id 1
