@@ -60,6 +60,7 @@ GEM
       activerecord (>= 3.0.0)
     arel (6.0.4)
     ast (2.3.0)
+    awesome_print (1.7.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -472,6 +473,7 @@ DEPENDENCIES
   acts_as_votable
   ahoy_matey (~> 1.6.0)
   ancestry (~> 2.2.2)
+  awesome_print
   browser
   bullet (~> 5.5.1)
   byebug
@@ -542,4 +544,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
