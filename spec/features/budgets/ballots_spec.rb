@@ -536,7 +536,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to have_content('Price is higher than the available amount left')
+        expect(page).to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
     end
@@ -550,7 +550,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi1.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content('Price is higher than the available amount left')
+        expect(page).to_not have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
 
@@ -558,7 +558,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").trigger("mouseover")
-        expect(page).to have_content('Price is higher than the available amount left')
+        expect(page).to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
 
@@ -576,7 +576,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to have_content('Price is higher than the available amount left')
+        expect(page).to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
 
@@ -587,7 +587,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content('Price is higher than the available amount left')
+        expect(page).to_not have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end
@@ -604,7 +604,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to have_content('Price is higher than the available amount left')
+        expect(page).to have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: false)
       end
 
@@ -616,7 +616,7 @@ feature 'Ballots' do
 
       within("#budget_investment_#{bi2.id}") do
         find("div.ballot").hover
-        expect(page).to_not have_content('Price is higher than the available amount left')
+        expect(page).to_not have_content('You have already assigned the available budget')
         expect(page).to have_selector('.in-favor a', visible: true)
       end
     end

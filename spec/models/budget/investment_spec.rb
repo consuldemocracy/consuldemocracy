@@ -712,7 +712,7 @@ describe Budget::Investment do
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1
 
-          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money_html)
         end
 
       end

@@ -42,6 +42,12 @@
                           @assigned_heading.name,
                           budget_investments_path(@budget, heading_id: @assigned_heading.try(:id)))
                        ) %>
+                  <br>
+                  <small>
+                    <%= t("budgets.investments.header.change_ballot",
+                        check_ballot: link_to(t("budgets.investments.header.check_ballot_link"),
+                                      budget_ballot_path(@budget))).html_safe %>
+                  </small>
                 </div>
               </div>
             <% end %>
