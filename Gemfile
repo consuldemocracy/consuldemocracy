@@ -66,6 +66,7 @@ gem 'browser'
 gem 'turnout', '~> 2.4.0'
 gem 'rubyzip'
 gem 'redcarpet', '~> 3.4.0'
+gem 'rubyzip', '~> 1.2.0'
 
 gem 'paperclip'
 

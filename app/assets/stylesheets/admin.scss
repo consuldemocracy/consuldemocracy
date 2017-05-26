@@ -99,6 +99,10 @@ body.admin {
       }
     }
 
+    td.break {
+      word-break: break-word;
+    }
+
     &.fixed {
       table-layout: fixed;
     }
@@ -318,6 +322,11 @@ a.delete {
     border-bottom: 1px dotted white;
     color: #cf2a0e;
   }
+}
+
+[class^="icon-"].delete {
+  border: 0;
+  font-size: $base-font-size;
 }
 
 .verified {

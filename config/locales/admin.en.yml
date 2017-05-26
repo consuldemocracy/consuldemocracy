@@ -511,7 +511,7 @@ en:
         placeholder: Search spending proposals by title or description
       user_search:
         button: Search
-        placeholder: Search user by name or email'
+        placeholder: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
     spending_proposals:

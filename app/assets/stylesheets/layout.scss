@@ -234,6 +234,14 @@ a {
       color: $brand;
     }
   }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
 }
 
 .small {
@@ -1191,6 +1199,16 @@ table {
 
   .button {
     margin: 0;
+  }
+}
+
+.table-for-mobile {
+
+  @include breakpoint(medium down) {
+    th, td  {
+      display: block;
+      text-align: left;
+    }
   }
 }
 

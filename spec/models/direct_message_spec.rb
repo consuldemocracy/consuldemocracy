@@ -65,9 +65,9 @@ describe DirectMessage do
 
     describe "today" do
       it "should return direct messages created today" do
-        direct_message1 = create(:direct_message, created_at: Time.zone.now.beginning_of_day + 3.hours)
-        direct_message2 = create(:direct_message, created_at: Time.zone.now)
-        direct_message3 = create(:direct_message, created_at: Time.zone.now.end_of_day)
+        direct_message1 = create(:direct_message, created_at: Time.current.beginning_of_day + 3.hours)
+        direct_message2 = create(:direct_message, created_at: Time.current)
+        direct_message3 = create(:direct_message, created_at: Time.current.end_of_day)
 
         expect(DirectMessage.today.count).to eq 3
       end
