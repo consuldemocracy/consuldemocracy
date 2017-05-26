@@ -162,7 +162,7 @@ class Budget
       return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless ballot.valid_heading?(heading)
-      return :not_enough_money           if ballot.present? && !enough_money?(ballot)
+      return :not_enough_money_html      if ballot.present? && !enough_money?(ballot)
     end
 
     def permission_problem(user)
