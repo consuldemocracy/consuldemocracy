@@ -538,7 +538,7 @@ DEPENDENCIES
   rollbar (~> 2.14.1)
   rspec-rails (~> 3.6)
   rubocop (~> 0.48.1)
-  rubyzip
+  rubyzip (~> 1.2.0)
   rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.4)
   savon
@@ -558,4 +558,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
