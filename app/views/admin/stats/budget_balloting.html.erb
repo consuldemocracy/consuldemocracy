@@ -59,7 +59,7 @@
 <table class="investment-projects-summary">
   <th colspan="2"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
 
-  <% @vote_count_by_heading.each do |heading_name, count| %>
+  <% @vote_count_by_heading.each_pair do |heading_name, count| %>
     <tr id="vote_count_<%= heading_name.parameterize %>">
       <td class="name">
         <%= heading_name %>
@@ -74,7 +74,7 @@
 <table class="investment-projects-summary">
   <th colspan="2"><%= t("admin.stats.budget_balloting.participants_per_district") %></th>
 
-  <% @user_count_by_district.each do |heading_name, count| %>
+  <% @user_count_by_district.each_pair do |heading_name, count| %>
     <tr id="user_count_<%= heading_name.parameterize %>">
       <td class="name">
         <%= heading_name %>
