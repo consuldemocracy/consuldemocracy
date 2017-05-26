@@ -66,7 +66,7 @@ es:
             other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
-          different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+          different_heading_assigned_html: "Ya apoyaste propuestas de otro distrito: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar mis votos"
           zero: "Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto."
@@ -110,7 +110,7 @@ es:
         give_support: Apoyar
       header:
         check_ballot: Revisar mis votos
-        different_heading_assigned_html: "Ya apoyaste propuestas de otro sección del presupuesto: %{heading_link}"
+        different_heading_assigned_html: "Ya apoyaste propuestas de otro distrito: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
     progress_bar:
