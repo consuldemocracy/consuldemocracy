@@ -84,19 +84,16 @@ class Admin::StatsController < Admin::BaseController
 
   def budget_balloting
     @budget = Budget.find(params[:budget_id])
-    @user_count = @budget.ballots.select {|ballot| ballot.lines.any? }.count
 
-    @vote_count = @budget.lines.count
+    budget_stats = Stat.hash("budget_#{@budget.id}_balloting_stats")
+    @user_count = budget_stats['stats']['user_count']
+    @vote_count = budget_stats['stats']['vote_count']
+    @user_count_in_city = budget_stats['stats']['user_count_in_city']
+    @user_count_in_district = budget_stats['stats']['user_count_in_district']
+    @user_count_in_city_and_district = budget_stats['stats']['user_count_in_city_and_district']
 
-    @vote_count_by_heading = @budget.lines.group(:heading_id).count.collect {|k,v| [Budget::Heading.find(k).name, v]}.sort
-
-    @user_count_in_city = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: city_heading(@budget).id).exists?}.count
-
-    @user_count_in_district = @budget.ballots.select {|ballot| ballot.lines.where(heading_id: (@budget.heading_ids - [city_heading(@budget).id])).exists?}.count
-
-    @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.collect {|k,v| [Budget::Heading.find(k).name, v]}.sort
-
-    @user_count_in_city_and_district = (@budget.ballots.select {|ballot| ballot.lines.where(heading_id: city_heading(@budget).id).exists?}.map(&:id) & @budget.ballots.select {|ballot| ballot.lines.where(heading_id: (@budget.heading_ids - [city_heading(@budget).id])).exists?}.map(&:id)).count
+    @vote_count_by_heading = budget_stats['vote_count_by_heading']
+    @user_count_by_district = budget_stats['user_count_by_district']
   end
 
   def redeemable_codes
@@ -121,20 +118,19 @@ class Admin::StatsController < Admin::BaseController
 
   def voters_in_heading(heading)
     Vote.where(votable_type: 'Budget::Investment').
-    includes(:budget_investment).
-    where(budget_investments: {heading_id: heading.id}).
-    select("votes.voter_id").distinct.count
+        includes(:budget_investment).
+        where(budget_investments: {heading_id: heading.id}).
+        select("votes.voter_id").distinct.count
   end
 
   def voters_in_districts(budget)
     Vote.where(votable_type: 'Budget::Investment').
-    includes(:budget_investment).
-    where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) }).
-    select("votes.voter_id").distinct.count
+        includes(:budget_investment).
+        where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) }).
+        select("votes.voter_id").distinct.count
   end
 
   def city_heading(budget)
     budget.headings.where(name: "Toda la ciudad").first
   end
-
 end
