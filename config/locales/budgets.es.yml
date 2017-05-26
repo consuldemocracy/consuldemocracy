@@ -17,9 +17,10 @@ es:
         not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
         not_selected: No se pueden votar propuestas inviables.
-        not_enough_money: No hay fondos suficientes.
+        not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        change_ballot: cambiar tus votos
     groups:
       show:
         title: Selecciona una opción
