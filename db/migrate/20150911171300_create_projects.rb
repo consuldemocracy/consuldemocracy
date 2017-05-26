@@ -1,7 +1,6 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-      t.belongs_to :proposal, index: true
       t.integer :neighbour_id
       t.integer :responsible_id
       t.string :name

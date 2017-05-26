@@ -16,9 +16,10 @@ class Proposal < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   belongs_to :problem
+
   has_many :comments, as: :commentable
   has_many :proposal_notifications
-  has_one :project
+  belongs_to :project
 
   accepts_nested_attributes_for :problem
 

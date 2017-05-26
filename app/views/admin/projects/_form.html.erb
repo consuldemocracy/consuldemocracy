@@ -1,52 +1,91 @@
 <%= form_for [:admin, @project] do |f| %>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :name %>
-    </div>
-  </div>
 
-  <div id="select-proposal" class="row" >
-    <div class="small-12 medium-6 column">
-      <%= f.label :proposal_id,  t("projects.form.project_proposal") %>
-      <%= f.select :proposal_id, valid_proposals.collect {|p| [ p.title, p.id ] }, {include_blank: t("projects.form.blank"), label: false},  {:onchange=> "jsProblemChanged()"} %>
-    </div>
-  </div>
+  <%= f.hidden_field :user_id, :value => @current_user.id %>
 
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.text_area :description %>
-    </div>
-  </div>
+  <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500" data-tabs id="deeplinked-tabs">
+    <li class="tabs-title is-active"><a href="#panel1d" aria-selected="true"> <%= t("admin.projects.edit.menu.proposal") %> </a></li>
+    <li class="tabs-title"><a href="#panel2d"><%= t("admin.projects.edit.menu.design") %></a></li>
+    <li class="tabs-title"><a href="#panel3d"><%= t("admin.projects.edit.menu.implementation") %></a></li>
+    <li class="tabs-title"><a href="#panel4d"><%= t("admin.projects.edit.menu.evaluation") %></a></li>
+  </ul>
 
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :starts_at,
-                        value: @project.starts_at.present? ? l(@project.starts_at.to_date) : nil,
-                        class: "js-calendar-full" %>
-    </div>
+  <div class="tabs-content" data-tabs-content="deeplinked-tabs">
+    <div class="tabs-panel is-active" id="panel1d">
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :name %>
+        </div>
+      </div>
 
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :ends_at,
-                        value: @project.ends_at.present? ? l(@project.ends_at.to_date) : nil,
-                        class: "js-calendar-full" %>
-    </div>
-  </div>
+      <div id="select-proposal" class="row" >
+        <div class="small-12 medium-6 column">
+          <%= f.collection_select :proposal, valid_proposals, :id, :title %>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="small-6 medium-6 column">
-      <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
-    </div>
-  </div>
+      <div class="row">
+        <div class="small-12 medium-12 column">
+          <%= f.text_area :description %>
+        </div>
+      </div>
 
-  <div id="geozones" style="<%= @project.geozone_restricted? ? '' : 'display:none' %>">
-    <div class="row">
-      <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
-        <div class="small-6 medium-3 column">
-          <%= b.label do %>
-            <%= b.check_box + b.text %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :starts_at,
+                            value: @project.starts_at.present? ? l(@project.starts_at.to_date) : nil,
+                            class: "js-calendar-full" %>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <%= f.text_field :ends_at,
+                            value: @project.ends_at.present? ? l(@project.ends_at.to_date) : nil,
+                            class: "js-calendar-full" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-6 medium-6 column">
+          <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
+        </div>
+      </div>
+
+      <div id="geozones" style="<%= @project.geozone_restricted? ? '' : 'display:none' %>">
+        <div class="row">
+          <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
+            <div class="small-6 medium-3 column">
+              <%= b.label do %>
+                <%= b.check_box + b.text %>
+              <% end %>
+            </div>
           <% end %>
         </div>
-      <% end %>
+      </div>
+    </div>
+
+    <div class="tabs-panel" id="panel2d">
+      <div class="row">
+      <div class="small-12 medium-12 column" >
+        <%= f.fields_for :design_phase do |dp| %>
+          <div class="row">
+            <div class="small-12 medium-6 column">
+              <%= dp.text_field :name%>
+            </div>
+          </div>
+         <% end %>
+       </div>
+      </div>
+
+
+      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+    </div>
+
+    <div class="tabs-panel" id="panel3d">
+
+    </div>
+
+    <div class="tabs-panel" id="panel4d">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
     </div>
   </div>
 

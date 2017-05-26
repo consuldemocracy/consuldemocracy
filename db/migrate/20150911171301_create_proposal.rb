@@ -14,6 +14,8 @@ class CreateProposal < ActiveRecord::Migration
       t.datetime "confirmed_hide_at"
       t.integer  "hot_score",        limit: 8, default: 0
       t.integer  "confidence_score", default: 0
+      t.belongs_to :project, index: true
+
 
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
