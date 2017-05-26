@@ -85,8 +85,6 @@ class Admin::StatsController < Admin::BaseController
   def budget_balloting
     @budget = Budget.find(params[:budget_id])
 
-    Delayed::Job.enqueue ::BudgetStatsJob.new(@budget, city_heading(@budget))
-
     budget_stats = Stat.hash("budget_#{@budget.id}_balloting_stats")
     @user_count = budget_stats['stats']['user_count']
     @vote_count = budget_stats['stats']['vote_count']
