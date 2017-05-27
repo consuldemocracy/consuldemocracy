@@ -118,6 +118,10 @@
         <li <%= "class=active" if controller_name == "managers" %>>
           <%= link_to t('admin.menu.managers'), admin_managers_path %>
         </li>
+
+        <li <%= 'class=active' if controller_name == 'users' %>>
+          <%= link_to t('admin.menu.users'), admin_users_path %>
+        </li>
       </ul>
     </li>
 

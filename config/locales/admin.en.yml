@@ -380,6 +380,7 @@ en:
       title_banners: Banners
       title_site_customization: Site customization
       legislation: Collaborative Legislation
+      users: Users
     administrators:
       index:
         title: Administrators
@@ -816,6 +817,19 @@ en:
       name:
         placeholder: Type the name of the topic
       update: Update Topic
+    users:
+      fields:
+        name: Name
+        email: Email
+        document_number: Document number
+        verification_level: Verification level
+      index:
+        title: User
+      user:
+        verify: Verify
+      search:
+        placeholder: Search user by email, name or document number
+        search: Search
     verifications:
       index:
         phone_not_given: Phone not given

@@ -238,6 +238,8 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
+    resources :users, only: [:index, :show]
+
     scope module: :poll do
       resources :polls do
         get :search_questions, on: :member

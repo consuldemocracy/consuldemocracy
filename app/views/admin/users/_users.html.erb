@@ -1,0 +1,22 @@
+<h3><%= page_entries_info @users %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t('admin.users.fields.name') %></th>
+        <th><%= t('admin.users.fields.email') %></th>
+        <th><%= t('admin.users.fields.document_number') %></th>
+        <th><%= t('admin.users.fields.verification_level') %></th>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.document_number %></td>
+        <td><%= user.user_type %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<%= paginate @users %>
