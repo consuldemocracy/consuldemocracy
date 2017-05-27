@@ -19,7 +19,7 @@ es:
         not_selected: No se pueden votar proyectos inviables.
         not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
-        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        different_heading_assigned: Ya has votado proyectos de otro distrito.
         change_ballot: cambiar tus votos
     groups:
       show:
@@ -110,7 +110,7 @@ es:
         give_support: Apoyar
       header:
         check_ballot: Revisar mis votos
-        different_heading_assigned_html: "Ya apoyaste propuestas de otro distrito: %{heading_link}"
+        different_heading_assigned_html: "Ya has votado proyectos de otro distrito: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
     progress_bar:
