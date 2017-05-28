@@ -64,6 +64,7 @@ gem 'tolk', '~> 2.0.0' # Web interface for translations
 gem 'browser'
 gem 'turnout', '~> 2.4.0'
 gem 'redcarpet', '~> 3.4.0'
+gem 'rubyzip', '~> 1.2.0'
 
 gem 'paperclip'
 

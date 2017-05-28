@@ -205,6 +205,7 @@ en:
       hidden_users: Hidden users
       managers: Managers
       moderators: Moderators
+      newsletter: Newsletters
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
@@ -236,6 +237,10 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+    newsletters:
+      index:
+        title: Newsletters
+        button: Download zip with users list
     valuators:
       index:
         title: Valuators
@@ -491,7 +496,7 @@ en:
         placeholder: Search spending proposals by title or description
       user_search:
         button: Search
-        placeholder: Search user by name or email'
+        placeholder: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
     spending_proposals:

@@ -206,9 +206,9 @@
 .participation-not-allowed {
   background: $warning-bg;
   color: $color-warning;
-  height: 100%;
   left: 0;
   line-height: $line-height;
+  min-height: 100%;
   padding: $line-height $line-height/2;
   position: absolute;
   text-align: center;

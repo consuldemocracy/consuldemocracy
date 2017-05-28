@@ -162,5 +162,12 @@
         <% end %>
       </li>
     <% end %>
+
+    <li <%= "class=active" if controller_name == "newsletter" %>>
+      <%= link_to admin_newsletters_path do %>
+        <span class="icon-zip"></span>
+        <%= t("admin.menu.newsletter") %>
+      <% end %>
+    </li>
   </ul>
 </div>
