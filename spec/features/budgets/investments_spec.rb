@@ -283,9 +283,6 @@ feature 'Budget Investments' do
     visit budget_investment_path(budget, investment)
 
     expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: heading.id)
-
-    click_link 'Go back'
-    expected_path = budget_investments_path(budget, heading_id: heading.id)
   end
 
   context "Show (feasible budget investment)" do
