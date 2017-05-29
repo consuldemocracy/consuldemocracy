@@ -295,7 +295,7 @@ feature 'Budget Investments' do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, investment)
 
-    expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: heading.id)
+    expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: investment.heading)
   end
 
   context "Show (feasible budget investment)" do
