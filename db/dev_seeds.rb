@@ -51,11 +51,11 @@ Setting.create(key: 'feature.human_rights.accepting', value: 'true')
 Setting.create(key: 'feature.human_rights.voting', value: 'true')
 Setting.create(key: 'feature.human_rights.closed', value: 'true')
 Setting.create(key: 'feature.signature_sheets', value: "true")
+Setting.create(key: 'feature.legislation', value: "true")
 
 Setting.create(key: 'mailer_from_name', value: 'Decide Madrid')
 Setting.create(key: 'mailer_from_address', value: 'noreply@madrid.es')
 
-Setting.create(key: 'feature.legislation', value: "true")
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
 
@@ -87,10 +87,6 @@ Setting.create(key: 'min_age_to_participate', value: '16')
 # Setting[:per_page_code_head] = piwik_tracking_code_head
 # Setting[:per_page_code_body] = piwik_tracking_code_body
 Setting.create(key: 'analytics_url', value: "")
-
-puts " ✅"
-print "Creating Legislations"
-6.times {|i| Legislation.create!(title: "Legislation #{i+1}")}
 
 puts " ✅"
 print "Creating Geozones"
@@ -576,11 +572,6 @@ print "Marking investments as visible to valuators"
 end
 
 puts " ✅"
-print "Creating Legislation"
-
-Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
-
-puts " ✅"
 print "Ignoring flags in Debates, comments & proposals"
 
 Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
@@ -964,7 +955,7 @@ print "Creating Poll Voters"
 end
 
 puts " ✅"
-pring "Creating legislation processes"
+print "Creating legislation processes"
 
 (1..5).each do |i|
   process = ::Legislation::Process.create!(title: Faker::Lorem.sentence(3).truncate(60),
@@ -981,7 +972,6 @@ pring "Creating legislation processes"
                                            allegations_end_date: Date.current + 3.days,
                                            final_publication_date: Date.current + 4.days
   )
-  puts "    #{process.title}"
 end
 
 ::Legislation::Process.all.each do |process|
@@ -989,8 +979,8 @@ end
     version = process.draft_versions.create!(title: "Version #{i}",
                                              body: Faker::Lorem.paragraphs.join("\n\n")
     )
-    puts "    #{version.title}"
   end
 end
 
+puts " ✅"
 puts "All dev seeds created successfuly 👍"
