@@ -3,10 +3,11 @@
   <table>
     <thead>
       <tr>
-        <th><%= t('admin.users.fields.name') %></th>
-        <th><%= t('admin.users.fields.email') %></th>
-        <th><%= t('admin.users.fields.document_number') %></th>
-        <th><%= t('admin.users.fields.verification_level') %></th>
+        <th><%= t('admin.users.columns.name') %></th>
+        <th><%= t('admin.users.columns.email') %></th>
+        <th><%= t('admin.users.columns.document_number') %></th>
+        <th><%= t('admin.users.columns.roles') %></th>
+        <th><%= t('admin.users.columns.verification_level') %></th>
       </tr>
     </thead>
     <% @users.each do |user| %>
@@ -14,6 +15,7 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.document_number %></td>
+        <td><%= display_user_roles(user) %></td>
         <td><%= user.user_type %></td>
       </tr>
     <% end %>

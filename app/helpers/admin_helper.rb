@@ -52,6 +52,22 @@ module AdminHelper
     resource.persisted? ? "edit" : "new"
   end
 
+  def user_roles(user)
+    roles = []
+    roles << :admin if user.administrator?
+    roles << :moderator if user.moderator?
+    roles << :valuator if user.valuator?
+    roles << :manager if user.manager?
+    roles << :poll_officer if user.poll_officer?
+    roles << :official if user.official?
+    roles << :organization if user.organization?
+    roles
+  end
+
+  def display_user_roles(user)
+    user_roles(user).join(", ")
+  end
+
   private
 
     def namespace

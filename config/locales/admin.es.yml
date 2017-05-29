@@ -818,15 +818,14 @@ es:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
     users:
-      fields:
+      columns:
         name: Nombre
         email: Correo electrónico
         document_number: DNI/Pasaporte/Tarjeta de residencia
+        roles: Roles
         verification_level: Nivel de verficación
       index:
         title: Usuarios
-      user:
-        verify: Verificar
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar

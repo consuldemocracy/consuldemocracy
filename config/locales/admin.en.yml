@@ -818,15 +818,14 @@ en:
         placeholder: Type the name of the topic
       update: Update Topic
     users:
-      fields:
+      columns:
         name: Name
         email: Email
         document_number: Document number
+        roles: Roles
         verification_level: Verification level
       index:
         title: User
-      user:
-        verify: Verify
       search:
         placeholder: Search user by email, name or document number
         search: Search
