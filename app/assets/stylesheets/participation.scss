@@ -206,9 +206,9 @@
 .participation-not-allowed {
   background: $warning-bg;
   color: $color-warning;
-  height: 100%;
   left: 0;
   line-height: $line-height;
+  min-height: 100%;
   padding: $line-height $line-height/2;
   position: absolute;
   text-align: center;
@@ -404,6 +404,7 @@
   }
 
   blockquote {
+    color: #4C4C4C;
     margin-top: rem-calc(12);
     padding-top: 0;
     font-size: rem-calc(15);
@@ -1067,13 +1068,16 @@
     }
   }
 
-  h3.subtitle {
-    border-bottom: 3px solid $budget;
+  .ballot-content {
+    border: 2px solid #F9F9F9;
+    border-radius: rem-calc(6);
+    padding: $line-height/2;
+  }
 
-    span {
-      font-size: $base-font-size;
-      font-weight: normal;
-    }
+  .subtitle {
+    border-left: 2px solid $budget;
+    margin: $line-height/2 0;
+    padding-left: $line-height/2;
   }
 
   .amount-spent {
@@ -1096,7 +1100,7 @@ ul.ballot-list {
     background: #f9f9f9;
     line-height: $line-height;
     margin-bottom: $line-height/4;
-    padding: $line-height/2;
+    padding: $line-height $line-height/2;
     position: relative;
 
     a {
@@ -1104,7 +1108,6 @@ ul.ballot-list {
     }
 
     span {
-      color: #9f9f9f;
       display: block;
       font-style: italic;
     }

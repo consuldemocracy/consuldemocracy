@@ -21,9 +21,12 @@ feature 'Admin budget investments' do
   context "Index" do
 
     scenario 'Displaying investmentss' do
-      budget_investment = create(:budget_investment, budget: @budget)
+      budget_investment = create(:budget_investment, budget: @budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
       expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content(budget_investment.id)
+      expect(page).to have_content(budget_investment.total_votes)
     end
 
     scenario 'Displaying assignments info' do
@@ -665,6 +668,8 @@ feature 'Admin budget investments' do
     end
 
     scenario "Unmark as visible to valuator", :js do
+      Setting['feature.budgets.valuators_allowed'] = true
+
       valuator = create(:valuator)
 
       investment1 = create(:budget_investment, budget: @budget, visible_to_valuators: true)

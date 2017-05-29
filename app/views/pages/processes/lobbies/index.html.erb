@@ -1,0 +1,41 @@
+<% provide :title do %><%= t("processes.lobbies.title") %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: lobbies_url,
+          social_title: t("processes.lobbies.title"),
+          social_description: t("processes.lobbies.description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: lobbies_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to processes_path %>
+      <h1>Registro de lobbies del Ayuntamiento de Madrid</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <h3>Introducción</h3>
+
+    <p>El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies.</p>
+
+    <p>La Ordenanza de Transparencia de la Ciudad de Madrid, aprobada el 27 de julio de 2016 por el Pleno del Ayuntamiento y publicada en el Boletín Oficial de la Comunidad de Madrid el 17 de agosto de 2016, regula en su capítulo VI un Registro de lobbies.</p>
+
+    <p>La ordenanza se limita a una regulación mínima de los aspectos sustantivos, remitiendo a una mayor concreción de sus aspectos técnicos y auxiliares mediante directrices de la Junta de Gobierno de la Ciudad de Madrid en su disposición final quinta, que prevé además que la aprobación de estas directrices se efectuará en el plazo de seis meses desde la adopción de un acuerdo por el Pleno en el que se establezcan las líneas básicas del Registro.</p>
+
+    <p>Es este acuerdo el que se somete a consulta. Cualquier persona puede enviar sus comentarios incorporándolos directamente en el borrador que se publica en la web de Decide Madrid o mandando un correo a <a href="mailto:sgtransparencia@madrid.es">sgtransparencia@madrid.es</a></p>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <div class="callout success">
+      <p><strong>Puedes enviar tus comentarios hasta el día 4 de junio</strong></p>
+    </div>
+
+    <%= link_to "Comentar borrador", lobbies_draft_path, class: "button large expanded" %>
+  </div>
+</div>

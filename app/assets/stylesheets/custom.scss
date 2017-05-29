@@ -19,6 +19,17 @@
 // 00. Others
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Display tables correctly on mobile (admin)
+
+.table-for-mobile {
+
+  @include breakpoint(medium down) {
+    th, td  {
+      display: block;
+    }
+  }
+}
+
 // Choose proposal type
 // - - - - - - - - - - -
 
@@ -213,10 +224,21 @@ ul.menu > li > a {
   padding: $line-height/2 $line-height/2 $line-height 0;
 }
 
-.tabs li.is-active a {
-  color: $brand;
-  border-bottom: 2px solid $brand;
-  font-weight: bold;
+.tabs li.is-active {
+
+  a, span.is-active {
+    color: $brand;
+    border-bottom: 2px solid $brand;
+    font-weight: bold;
+  }
+
+  span.is-active {
+    display: block;
+    line-height: 1;
+    margin-bottom: -1px;
+    margin-right: $line-height;
+    padding: $line-height/2 0;
+  }
 }
 
 .sticky-bottom {
@@ -1985,7 +2007,6 @@ a.show-hidden-projects {
 
   .amount-spent {
     background: $success-bg;
-    color: $success-color;
     font-weight: normal;
     padding: $line-height/2;
 
@@ -2004,7 +2025,6 @@ ul.ballot-list {
     background: #f9f9f9;
     line-height: $line-height;
     margin-bottom: $line-height/4;
-    padding: $line-height/2;
     position: relative;
 
     a {
@@ -2012,7 +2032,6 @@ ul.ballot-list {
     }
 
     span {
-      color: #9f9f9f;
       display: block;
       font-style: italic;
     }
@@ -2100,7 +2119,7 @@ ul.ballot-list {
       height: $line-height*6;
       left: 0;
       padding: rem-calc(24);
-      padding-bottom: 0;
+      padding-bottom: $line-height*6;
       position: fixed;
       top: 0;
       width: 100%;
@@ -2248,7 +2267,7 @@ $campaign-yellow:  #FFDB19;
   .header {
     background: $campaign-brown;
 
-    h1 {
+    h2 {
       color: black;
 
       span {
@@ -2440,6 +2459,8 @@ $campaign-yellow:  #FFDB19;
 // Overrides budgets default colors
 // -------------------------------
 
+$budget-custom: #5A6175 !important;
+
 .expanded.budget, .jumbo-budget {
 
   h1, h2, p, a.back, .icon-angle-left {
@@ -2454,6 +2475,10 @@ $campaign-yellow:  #FFDB19;
   a.button, &.button {
     background: black;
     color: white;
+  }
+
+  &.budget-heading {
+    min-height: $line-height*11;
   }
 
   .info {
@@ -2471,25 +2496,37 @@ $campaign-yellow:  #FFDB19;
   }
 }
 
-.budget-investment .panel .label-budget-investment,
-.budget-investment .panel .icon-budget,
-.budget-investment-show .label-budget-investment,
-.budget-investment-show .icon-budget {
-  color: #5A6175;
+.budget-investment {
+
+  .panel {
+
+    .label-budget-investment, .icon-budget {
+      color: $budget-custom;
+    }
+  }
+}
+
+.budget-investment-show {
+
+  .label-budget-investment, .icon-budget {
+    color: $budget-custom;
+  }
 }
 
 .progress-votes {
+  z-index: 3;
 
   .progress {
     background: #212033;
   }
 
   .progress-meter {
-    background: #fdcb10;
+    background: #FDCB10;
   }
 
   .spent-amount-text:before {
-    color: #a5a1ff;
+    color: #A5A1FF;
+    right: -7px;
   }
 
   .total-amount {
@@ -2499,15 +2536,8 @@ $campaign-yellow:  #FFDB19;
 
 .ballot {
 
-  h2, h3 {
-
-    span {
-      color: $budget;
-    }
-  }
-
-  h3.subtitle {
-    border-bottom: 3px solid $budget;
+  .subtitle {
+    border-left: 2px solid $budget-custom;
   }
 }
 
@@ -2515,14 +2545,14 @@ ul.ballot-list {
 
   li:hover {
     background: $budget;
-    color: white;
+    color: $text;
 
     a, span {
-      color: white;
+      color: $text;
     }
 
     .remove-investment-project .icon-x {
-      color: white;
+      color: $text;
     }
   }
 }
@@ -2542,30 +2572,100 @@ ul.ballot-list {
   }
 }
 
-.investment-project .supports .total-supports,
-.investment-project-show .supports .total-supports,
-.budget-investment .supports .total-supports,
-.budget-investment-show .supports .total-supports {
-  color: #5A6175;
-}
-
-.investment-project .supports .button-support,
-.investment-project-show .supports .button-support,
-.budget-investment .supports .button-support,
-.budget-investment-show .supports .button-support {
-  background: #5A6175;
-}
-
-.investment-project, .investment-project-show,
-.budget-investment, .budget-investment-show {
+.budget-investment, .budget-investment-show,
+.investment-project, .investment-project-show {
 
   .total-supports {
-    color: #5A6175 !important;
+    color: $budget-custom;
+  }
+
+  .supports {
+
+    .button-support {
+      background: $budget-custom;
+    }
+
+    .budget-investment-amount,
+    .investment-project-amount,
+    .total-supports {
+      color: $budget-custom;
+    }
+
+    .remove .icon-check-circle {
+      color: $budget-custom;
+    }
   }
 }
 
-.budget-investment .participation-not-allowed {
-  height: auto;
+.progress-votes {
+
+  .total-amount, .spent-amount-text {
+    color: $budget-custom;
+  }
+}
+
+.budgets-banner {
+  background: black;
+  padding: $line-height/2;
+  position: relative;
+
+  .budgets-date {
+    background: $campaign-red;
+    color: white;
+    display: inline-block;
+    margin-bottom: $line-height/2;
+    padding: 0 $line-height/4;
+  }
+
+  h2 {
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+  }
+
+  a h2 {
+    color: white;
+  }
+
+  a:hover, a:hover h2 {
+    text-decoration: none !important;
+  }
+
+  .arrow-link {
+    color: white;
+    font-size: rem-calc(48);
+    line-height: rem-calc(48);
+    margin-top: rem-calc(-24);
+    position: absolute;
+    right: 12px;
+    top: 50%;
+  }
+}
+
+@-webkit-keyframes bounce-arrow {
+  0%, 20%, 50%, 80%, 100% {transform: translate(0, 0);}
+  40% {transform: translate(-60px, 0);}
+  60% {transform: translate(-24px, 0);}
+}
+
+@keyframes bounce-arrow {
+  0%, 20%, 50%, 80%, 100% {transform: translate(0, 0);}
+  40% {transform: translate(-60px, 0);}
+  60% {transform: translate(-24px, 0);}
+}
+
+@include breakpoint(medium) {
+
+  .bounce-arrow {
+    -webkit-animation: bounce-arrow 2s infinite;
+    animation: bounce-arrow 2s infinite;
+  }
+}
+
+h2.map-title {
+  font-size: rem-calc(24);
+  line-height: $line-height;
 }
 
 // 12. Nvotes

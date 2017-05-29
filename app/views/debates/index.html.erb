@@ -1,12 +1,14 @@
 <% provide :title, t("meta_tags.debates.title") %>
 <% provide :meta_description, t("meta_tags.debates.description") %>
-<% provide :meta_keywords, t("meta_tags.debates.keywords") %>
 <% provide :tracking_page_number, "27" %>
 
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: debates_path(page: 1),
              i18n_namespace: "debates.index.search_form" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debates_url %>
 <% end %>
 
 
@@ -34,6 +36,10 @@
 
       <% if has_banners? %>
         <%= render "shared/banner" %>
+      <% end %>
+
+      <% if Budget.balloting.any? %>
+        <%= render "budgets/banner" %>
       <% end %>
 
       <% unless @tag_filter || @search_terms || !has_featured? %>

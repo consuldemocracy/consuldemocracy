@@ -9,7 +9,7 @@ es:
       text: |-
         Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
 
-        Escríbenos a <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> para que te demos acceso al sistema de traducción colaborativo.
+        Escríbenos a ag.gobiernoabierto@madrid.es para que te demos acceso al sistema de traducción colaborativo.
         Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     more_info:
       title: "Descubre %{org_name}"
@@ -162,10 +162,7 @@ es:
 
         button: Ver borrador
       process_3:
-        send_proposal: Enviar una propuesta
-        send_question: Hacer una pregunta
         view_all: Ver propuestas y preguntas más votadas
-        view_proposals: Ver todas las propuestas enviadas
         view_questions: Ver todas las preguntas enviadas
     titles:
       accessibility: Accesibilidad
@@ -181,18 +178,6 @@ es:
       password: Contraseña
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
-  participatory_budget:
-    in_two_minutes:
-      date_1: 22 febrero - 31 marzo
-      date_1_info: Recogida de propuestas
-      date_2: 1 abril - 15 abril
-      date_2_info: Apoyos
-      date_3: 16 abril - 14 mayo
-      date_3_info: Evaluación
-      date_4: 15 mayo - 30 junio
-      date_4_info: Votación final
-      title_html: Tú decides cómo invertir 60 millones de euros<br> para tu ciudad
-      title_page: Presupuestos participativos
   annotator:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.

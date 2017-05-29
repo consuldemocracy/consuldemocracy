@@ -5,6 +5,7 @@ class Budget
     include Sanitizable
     include Taggable
     include Searchable
+    include Reclassification
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
@@ -32,6 +33,7 @@ class Budget
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
+    scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
     scope :sort_by_random,           -> { reorder("RANDOM()") }
 
@@ -47,7 +49,8 @@ class Budget
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
-    scope :selected,                    -> { where(selected: true) }
+    scope :selected,                    -> { feasible.where(selected: true) }
+    scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
     scope :by_group,    -> (group_id)    { where(group_id: group_id) }
@@ -59,8 +62,8 @@ class Budget
 
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+
     before_save :calculate_confidence_score
-    before_save :log_reclasification
 
     def self.filter_params(params)
       params.select{|x,_| %w{heading_id group_id administrator_id tag_name valuator_id}.include? x.to_s }
@@ -159,7 +162,7 @@ class Budget
       return :not_selected               unless selected?
       return :no_ballots_allowed         unless budget.balloting?
       return :different_heading_assigned unless ballot.valid_heading?(heading)
-      return :not_enough_money           if ballot.present? && !enough_money?(ballot)
+      return :not_enough_money_html      if ballot.present? && !enough_money?(ballot)
     end
 
     def permission_problem(user)
@@ -178,10 +181,10 @@ class Budget
     end
 
     def valid_heading?(user)
-      reclasification?(user) || !different_heading_assigned?(user)
+      reclassification?(user) || !different_heading_assigned?(user)
     end
 
-    def reclasification?(user)
+    def reclassification?(user)
       headings_voted_by_user(user).count > 1 &&
       headings_voted_by_user(user).include?(heading_id)
     end
@@ -239,7 +242,13 @@ class Budget
     end
 
     def should_show_ballots?
-      budget.balloting?
+      budget.balloting? && selected?
+    end
+
+    def should_show_price?
+      feasible? &&
+      selected? &&
+      (budget.reviewing_ballots? || budget.finished?)
     end
 
     def should_show_price_info?
@@ -252,14 +261,9 @@ class Budget
       budget.formatted_amount(price)
     end
 
-    def self.apply_filters_and_search(budget, params)
+    def self.apply_filters_and_search(budget, params, current_filter=nil)
       investments = all
-      if budget.balloting?
-        investments = investments.selected
-      else
-        investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
-      end
-
+      investments = investments.send(current_filter)            if current_filter.present?
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
@@ -280,10 +284,5 @@ class Budget
         self.budget_id ||= self.heading.try(:group).try(:budget_id)
       end
 
-      def log_reclasification
-        if heading_id_changed?
-          self.previous_heading_id = self.heading_id_was
-        end
-      end
   end
 end

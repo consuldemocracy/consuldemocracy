@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170412181545) do
+ActiveRecord::Schema.define(version: 20170519084239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20170412181545) do
     t.integer  "heading_id"
   end
 
+  add_index "budget_ballot_lines", ["ballot_id", "investment_id"], name: "index_budget_ballot_lines_on_ballot_id_and_investment_id", unique: true, using: :btree
   add_index "budget_ballot_lines", ["ballot_id"], name: "index_budget_ballot_lines_on_ballot_id", using: :btree
   add_index "budget_ballot_lines", ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
 
@@ -177,8 +178,10 @@ ActiveRecord::Schema.define(version: 20170412181545) do
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
     t.string   "label"
-    t.integer  "previous_heading_id"
     t.boolean  "visible_to_valuators",                  default: false
+    t.integer  "ballot_lines_count",                    default: 0
+    t.integer  "previous_heading_id"
+    t.boolean  "winner",                                default: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -192,9 +195,18 @@ ActiveRecord::Schema.define(version: 20170412181545) do
     t.integer  "budget_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phase",         default: "selecting"
   end
 
   add_index "budget_recommendations", ["user_id"], name: "index_budget_recommendations_on_user_id", using: :btree
+
+  create_table "budget_reclassified_votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "investment_id"
+    t.string   "reason"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "budget_valuator_assignments", force: :cascade do |t|
     t.integer  "valuator_id"
@@ -206,7 +218,7 @@ ActiveRecord::Schema.define(version: 20170412181545) do
   add_index "budget_valuator_assignments", ["investment_id"], name: "index_budget_valuator_assignments_on_investment_id", using: :btree
 
   create_table "budgets", force: :cascade do |t|
-    t.string   "name",                          limit: 50
+    t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10
     t.string   "phase",                         limit: 40, default: "accepting"
     t.datetime "created_at",                                                     null: false
@@ -1068,8 +1080,9 @@ ActiveRecord::Schema.define(version: 20170412181545) do
     t.datetime "password_changed_at",                                         default: '2016-11-03 12:11:02', null: false
     t.boolean  "created_from_signature",                                      default: false
     t.boolean  "officing_voter",                                              default: false
-    t.integer  "failed_email_digests_count",                                  default: 0
     t.text     "former_users_data_log",                                       default: ""
+    t.integer  "failed_email_digests_count",                                  default: 0
+    t.integer  "balloted_heading_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

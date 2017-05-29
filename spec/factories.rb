@@ -311,6 +311,10 @@ FactoryGirl.define do
       unfeasibility_explanation "set to unfeasible on creation"
     end
 
+    trait :undecided do
+      feasibility "undecided"
+    end
+
     trait :finished do
       valuation_finished true
     end
@@ -323,6 +327,12 @@ FactoryGirl.define do
 
     trait :visible_to_valuators do
       visible_to_valuators true
+    end
+
+    trait :unselected do
+      selected false
+      feasibility "feasible"
+      valuation_finished true
     end
   end
 
@@ -340,6 +350,12 @@ FactoryGirl.define do
     budget
     association :investment, factory: :budget_investment
     user
+  end
+
+  factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
+    user
+    association :investment, factory: :budget_investment
+    reason "unfeasible"
   end
 
   factory :vote do
@@ -418,7 +434,7 @@ FactoryGirl.define do
   end
 
   factory :poll do
-    sequence(:name) { |n| "Poll #{n}" }
+    sequence(:name) { |n| "Poll #{Faker::StarWars.character}" }
     nvotes_poll_id "128"
 
     starts_at { 1.month.ago }

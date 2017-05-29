@@ -6,8 +6,8 @@ module Budgets
       before_action :load_budget
       before_action :load_ballot
       before_action :load_categories
-
       before_action :load_investments
+      before_action :load_ballot_referer
 
       load_and_authorize_resource :budget
       load_and_authorize_resource :ballot, class: "Budget::Ballot", through: :budget
@@ -17,9 +17,7 @@ module Budgets
         load_investment
         load_heading
 
-        unless @ballot.add_investment(@investment)
-          head :bad_request
-        end
+        @ballot.add_investment(@investment)
       end
 
       def destroy
@@ -28,7 +26,6 @@ module Budgets
 
         @line.destroy
         load_investments
-        #@ballot.reset_geozone
       end
 
       private
@@ -55,7 +52,7 @@ module Budgets
 
         def load_investments
           if params[:investments_ids].present?
-            @investment_ids = params[:investment_ids]
+            @investment_ids = params[:investments_ids]
             @investments = Budget::Investment.where(id: params[:investments_ids])
           end
         end
@@ -66,6 +63,10 @@ module Budgets
 
         def load_categories
           @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        end
+
+        def load_ballot_referer
+          @ballot_referer = session[:ballot_referer]
         end
 
     end

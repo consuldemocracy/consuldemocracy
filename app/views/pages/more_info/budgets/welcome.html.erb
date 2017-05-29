@@ -1,4 +1,4 @@
-<% provide :title do %><%= t('participatory_budget.in_two_minutes.title_page') %><% end %>
+<% provide :title do %><%= t('pages.more_info.budgets.title') %><% end %>
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
@@ -9,24 +9,16 @@
   <div class="expanded header">
     <div class="row no-margin-top padding">
       <div class="small-12 medium-6 column">
-        <h1>Tú decides cómo invertir<br> <span>100 millones de euros</span><br> para Madrid</h1>
+        <h2><span>Votación final de</span><br><span> presupuestos participativos 2017</span></h2>
         <div class="small-12 medium-6 margin-top">
           <%= link_to budget_path(Budget.last), class: "button expanded" do %>
-            <% if Budget.accepting.any? %>
-              Presenta tu proyecto
-            <% elsif Budget.selecting.any? %>
-              Apoyar proyectos
-            <% else %>
-              Ver proyectos
-            <% end %>
+            Votar proyectos
           <% end %>
         </div>
       </div>
       <div class="small-12 medium-6 column margin-top">
         <ul class="info">
-          <li>Los habitantes de Madrid deciden a qué proyectos irán destinados <strong>100 millones de euros</strong> del presupuesto del Ayuntamiento para 2018.</li>
-          <li>La gente puede proponer proyectos de gasto, apoyar y votar.</li>
-          <li>El Gobierno asume la decisión como vinculante y la ejecuta a partir del 1 de enero de 2018.</li>
+          <li>Tú decides a qué proyectos ciudadanos se destinarán 100 millones de euros de los presupuestos municipales en la ciudad y en los distritos.</li>
         </ul>
       </div>
     </div>
@@ -37,14 +29,23 @@
           <ul class="no-bullet">
             <li><br><strong>Envío de proyectos</strong><br>18 enero - 8 marzo</li>
             <li><br><strong>Apoyos</strong><br>11 marzo - 25 marzo</li>
-            <li class="active"><span class="small"><strong>FASE ACTUAL</strong></span><br><strong>Evaluación</strong><br>26 marzo - 14 mayo</li><li><br><strong>Votación final</strong><br>15 mayo - 30 junio</li>
+            <li><br><strong>Evaluación</strong><br>26 marzo - 14 mayo</li>
+            <li class="active"><span class="small"><strong>FASE ACTUAL</strong></span><br><strong>Votación final</strong><br>15 mayo - 30 junio</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="budgets-timeline margin">
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h2 class="map-title text-center margin-bottom">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1lf155NMY1TmVElqka-UEw5qrvEo" height="480" style="border:0; width:100%;" allowfullscreen title="Mapa de propuestas localizables geográficamente de los presupuestos participativos 2017"></iframe>
+      <%= link_to "Ver lista completa de propuestas", "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017" %>
+    </div>
+  </div>
+
+  <div class="budgets-timeline margin-top">
     <div class="row">
       <div class="small-12 column text-center">
         <h2>Los presupuestos participativos en 2 minutos</h2>

@@ -5,25 +5,29 @@ en:
         title: Your ballot
         amount_spent: Amount spent
         remaining: "You still have <span>%{amount}</span> to invest."
+        no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Remove vote
         voted_html:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
-        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to invest all the money available."
+        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:
         not_logged_in: You must %{signin} or %{signup} to continue.
         not_verified: Only verified users can vote on investments; %{verify_account}.
         organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
-        not_enough_money: "Price is higher than the available amount left."
+        not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned: You have already voted a different heading
+        change_ballot: change your votes
     groups:
       show:
         title: Select an option
         unfeasible_title: Unfeasible investments
         unfeasible: See unfeasible investments
+        unselected_title: Investments not selected for balloting phase
+        unselected: See investments not selected for balloting phase
     phase:
       accepting: Accepting projects
       reviewing: Reviewing projects
@@ -58,10 +62,14 @@ en:
         sidebar:
           my_ballot: My ballot
           voted_html:
-            one: "<strong>You voted one investment with a cost of %{amount_spent}</strong>"
-            other: "<strong>You voted %{count} investments with a cost of %{amount_spent}</strong>"
-          voted_info: You can change your vote at any time until the close of this phase. No need to spend all the money available.
-          zero: You have not voted any investment project.
+            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+          voted_info: You can %{link} at any time until the close of this phase. No need to spend all the money available.
+          voted_info_link: change your vote
+          different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+          check_ballot_link: "check my ballot"
+          zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
           create: "Create budget investment"
@@ -86,10 +94,11 @@ en:
         title: Investment project
         supports: Supports
         votes: Votes
+        price: Price
       wrong_price_format: Only integer numbers
       investment:
         title: Investment project
-        add: Add
+        add: Vote
         already_added: You have already added this investment project
         already_supported: You have already supported this. Share it!
         support_title: Support this project
@@ -102,6 +111,8 @@ en:
       header:
         check_ballot: Check my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+        check_ballot_link: "check my ballot"
     progress_bar:
       available: "Available: "
     show:
@@ -109,3 +120,18 @@ en:
       phase: Actual phase
       unfeasible_title: Unfeasible investments
       unfeasible: See unfeasible investments
+      unselected_title: Investments not selected for balloting phase
+      unselected: See investments not selected for balloting phase
+      see_results: See results
+    results:
+      page_title: "%{budget} - Results"
+      heading: "Participatory budget results"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      accepted: "Accepted spending proposal: "
+      discarded: "Discarded spending proposal: "

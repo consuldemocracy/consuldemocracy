@@ -1,7 +1,9 @@
 <% provide :title, t("meta_tags.processes.title") %>
 <% provide :meta_description, t("meta_tags.processes.description") %>
-<% provide :meta_keywords, t("meta_tags.processes.keywords") %>
 <% provide :tracking_page_number, "32" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: processes_url %>
+<% end %>
 
 <div class="expanded processes no-margin-top <%= css_for_human_rights_phase("accepting") %>">
   <div class="row padding">
@@ -10,29 +12,10 @@
         <%= t("pages.processes.index.title") %>
       </h1>
       <h2 class="label"><%= t("pages.processes.index.featured") %></h2>
-    </div>
-
-    <div class="row">
-      <div class="small-12 column">
-        <div class="small-12 medium-6 column">
-          <!-- PROCESO DESTACADO (Vicálvaro) -->
-          <h3><%= t("pages.processes.index.process_18_title") %></h3>
-          <p><%= t("pages.processes.index.process_18_description") %></p>
-          <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_18_button"),
-                        vicalvaro_path, class: "button expanded" %>
-          </div>
-        </div>
-        <div class="small-12 medium-6 column">
-          <!-- PROCESO DESTACADO (Villaverde) -->
-          <h3><%= t("pages.processes.index.process_19_title") %></h3>
-          <p><%= t("pages.processes.index.process_19_description") %></p>
-          <div class="small-12 medium-6 large-4">
-            <%= link_to t("pages.processes.index.process_19_button"),
-                        villaverde_path, class: "button expanded" %>
-          </div>
-        </div>
-      </div>
+      <!-- PROCESO DESTACADO (Registro de lobbies) -->
+      <h3><%= t("processes.lobbies.title") %></h3>
+      <p><%= t("processes.lobbies.description") %></p>
+      <%= link_to t("processes.shared.more_info"), lobbies_path, class: "button" %>
     </div>
   </div>
 </div>
@@ -43,7 +26,7 @@
     <div class="small-12 medium-3 column">
       <ul class="tabs vertical" id="processes-tab" data-tabs role="tablist">
         <li class="tabs-title is-active">
-          <a href="#panel1v" aria-selected="true" role="tab">
+          <a href="#panel1v" role="tab">
             <%= t("pages.processes.menu.open") %>
           </a>
         </li>
@@ -53,7 +36,7 @@
           </a>
         </li>
         <li class="tabs-title">
-          <a href="#panel3v" role="tab">
+          <a href="#panel3v" aria-selected="true" role="tab">
             <%= t("pages.processes.menu.finished") %>
           </a>
         </li>
@@ -67,11 +50,18 @@
         <div class="tabs-panel is-active" id="panel1v">
           <h2 class="sr-only"><%= t("pages.processes.menu.open") %></h2>
 
-          <!-- Publicidad exterior -->
+          <!-- Parque Manzanares -->
           <div class="panel">
-            <h3><%= t("pages.processes.index.process_17_title") %></h3>
-            <p><%= t("pages.processes.index.process_17_description") %></p>
-            <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow" %>
+            <h3><%= t("processes.manzanares.title") %></h3>
+            <p><%= t("processes.manzanares.description") %></p>
+            <%= link_to t("processes.shared.more_info"), manzanares_path, class: "button hollow" %>
+          </div>
+
+          <!-- Registro de lobbies -->
+          <div class="panel">
+            <h3><%= t("processes.lobbies.title") %></h3>
+            <p><%= t("processes.lobbies.description") %></p>
+            <%= link_to t("processes.shared.more_info"), lobbies_path, class: "button hollow" %>
           </div>
         </div>
 
@@ -87,6 +77,27 @@
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Publicidad exterior -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_17_title") %></h3>
+            <p><%= t("pages.processes.index.process_17_description") %></p>
+            <%= link_to t("pages.processes.index.process_17_button"), publicity_path, class: "button hollow" %>
+          </div>
+
+          <!-- Villaverde -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_19_title") %></h3>
+            <p><%= t("pages.processes.index.process_19_description") %></p>
+            <%= link_to t("pages.processes.index.process_19_button"), villaverde_path, class: "button hollow" %>
+          </div>
+
+          <!-- Vicálvaro -->
+          <div class="panel">
+            <h3><%= t("pages.processes.index.process_18_title") %></h3>
+            <p><%= t("pages.processes.index.process_18_description") %></p>
+            <%= link_to t("pages.processes.index.process_18_button"), vicalvaro_path, class: "button hollow" %>
+          </div>
 
           <!-- Rehabilitación edificios -->
           <div class="panel">

@@ -5,6 +5,9 @@
           social_title: t("pages.processes.index.process_17_title"),
           social_description: t("pages.processes.index.process_17_description") %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: publicity_url %>
+<% end %>
 
 <div class="expanded processes-show no-margin-top">
   <div class="row padding">
@@ -50,7 +53,7 @@
 <div class="process-debates">
   <div class="row">
     <div class="small-12 column">
-      <h3>Preguntas del debate (<u>participa hasta el 25 de abril</u>)</h3>
+      <h3>Preguntas del debate</h3>
 
       <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
 

@@ -13,6 +13,7 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :lines, through: :ballots, class_name: 'Budget::Ballot::Line'
 
   before_validation :sanitize_descriptions
   before_save :set_slug
@@ -44,6 +45,10 @@ class Budget < ActiveRecord::Base
     2000
   end
 
+  def self.title_max_length
+    80
+  end
+
   def accepting?
     phase == "accepting"
   end
@@ -70,6 +75,10 @@ class Budget < ActiveRecord::Base
 
   def finished?
     phase == "finished"
+  end
+
+  def balloting_or_later?
+    balloting? || reviewing_ballots? || finished?
   end
 
   def on_hold?
@@ -111,6 +120,18 @@ class Budget < ActiveRecord::Base
       %w{random price}
     else
       %w{random confidence_score}
+    end
+  end
+
+  def email_selected
+    investments.selected.each do |investment|
+      Mailer.budget_investment_selected(investment).deliver_later
+    end
+  end
+
+  def email_unselected
+    investments.unselected.each do |investment|
+      Mailer.budget_investment_unselected(investment).deliver_later
     end
   end
 

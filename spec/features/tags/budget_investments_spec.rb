@@ -230,7 +230,8 @@ feature 'Tags' do
       Budget::PHASES.each do |phase|
         budget.update(phase: phase)
 
-        visit budget_investments_path(budget, heading_id: heading.id)
+        visit budget_path(budget)
+        click_link group.name
 
         expect(page).to_not have_css("#tag-cloud")
       end
@@ -266,11 +267,12 @@ feature 'Tags' do
 
         if budget.balloting?
           [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true)
+            investment.update(selected: true, feasibility: "feasible")
           end
         end
 
-        visit budget_investments_path(budget, heading_id: heading.id, search: 'Economía')
+        visit budget_path(budget)
+        click_link group.name
 
         within "#categories" do
           click_link "Medio Ambiente"

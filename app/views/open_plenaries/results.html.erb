@@ -13,14 +13,6 @@
 <div class="row margin-top plenaries">
   <div class="small-12 column">
     <h2>Propuestas más votadas</h2>
-    <p>
-      <% open_plenary_debate = Debate.where(comment_kind: 'question').first %>
-      <%= link_to t("pages.processes.process_3.view_proposals"),
-                    proposals_path(search: 'plenoabierto',
-                                   order: :confidence_score,
-                                   custom_search: true,
-                                   advanced_search: {date_min: "18-04-2016", date_max: "21-04-2016"}) %>
-    </p>
 
     <ul class="no-bullet">
       <li class="margin-bottom">
@@ -49,6 +41,7 @@
   <div class="small-12 column">
     <h2>Preguntas más votadas</h2>
     <p>
+      <% open_plenary_debate = Debate.where(comment_kind: 'question').first %>
       <%= link_to t("pages.processes.process_3.view_questions"),
                     debate_path(open_plenary_debate) %>
     </p>

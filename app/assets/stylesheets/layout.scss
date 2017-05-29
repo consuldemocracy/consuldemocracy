@@ -68,6 +68,10 @@ a {
   &:hover {
     text-decoration: none !important;
   }
+
+  &.warning, &.warning:hover {
+    color: black;
+  }
 }
 
 .button.hollow {
@@ -230,6 +234,14 @@ a {
       color: $brand;
     }
   }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+
+  &.no-padding-top {
+    padding-top: 0;
+  }
 }
 
 .small {
@@ -245,6 +257,7 @@ a {
 }
 
 .close-button {
+  color: $text;
   top: $line-height/2;
 }
 
@@ -587,12 +600,8 @@ footer {
     padding-left: 0;
   }
 
-  h2 a {
-    border-bottom: 1px solid $text-light;
-    display: block;
-    font-size: rem-calc(24);
-    line-height: rem-calc(31);
-    padding-bottom: $line-height/4;
+  a.title {
+    font-weight: bold;
     text-decoration: none;
   }
 }
@@ -1132,17 +1141,18 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // 10. Officials levels
 // --------------------
 
-[class^="level-"] {
+.level-1, .level-2, .level-3,
+.level-4, .level-5,
+.is-author, .is-association {
   color: black;
 }
 
 .is-author {
   background: #00A5F1;
-  color: black;
 }
 
 .is-association {
-  background: #C0392B;
+  background: #E38D83;
 }
 
 .level-1 {
@@ -1188,6 +1198,16 @@ table {
 
   .button {
     margin: 0;
+  }
+}
+
+.table-for-mobile {
+
+  @include breakpoint(medium down) {
+    th, td  {
+      display: block;
+      text-align: left;
+    }
   }
 }
 
@@ -1375,6 +1395,13 @@ table {
   }
 }
 
+@include breakpoint(medium) {
+
+  .button.button-telegram, .ssb-telegram {
+    display: none !important;
+  }
+}
+
 .social {
 
   a {
@@ -1475,7 +1502,7 @@ table {
     width: $line-height*2;
 
     &:before {
-      content: "A";
+      content: "1";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;

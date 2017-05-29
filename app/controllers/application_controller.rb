@@ -126,4 +126,10 @@ class ApplicationController < ActionController::Base
       end
     end
 
+    def set_default_budget_filter
+      if @budget.try(:balloting?)
+        params[:filter] ||= "selected"
+      end
+    end
+
 end

@@ -9,13 +9,21 @@ SitemapGenerator::Sitemap.default_host = Setting["url"]
 
 # sitemap generator
 SitemapGenerator::Sitemap.create do
-  pages = Dir.entries(File.join(Rails.root,"app","views","pages"))
+  pages = ["accessibility",
+           "census_terms",
+           "conditions",
+           "general_terms",
+           "privacy"]
   pages.each do |page|
-    page_name = page.split(".").first
-    add page_name if page_name.present?
+    add page_path(id: page)
   end
 
-  add "help_translate"
+  add more_info_path
+  add how_to_use_path
+  add faq_path
+  add participation_facts_path
+  add participation_world_path
+  add budgets_welcome_path
 
   add debates_path, priority: 0.7, changefreq: "daily"
   Debate.find_each do |debate|
@@ -27,12 +35,13 @@ SitemapGenerator::Sitemap.create do
     add proposal_path(proposal), lastmod: proposal.updated_at
   end
 
-  add budgets_welcome_path
-  add participatory_budget_path
-  add polls_path
+  add budgets_path, priority: 0.7, changefreq: "daily"
+  Budget.find_each do |budget|
+    add budget_path(budget), lastmod: budget.updated_at
+  end
 
-  add spending_proposals_path, priority: 0.7, changefreq: "daily"
-  SpendingProposal.find_each do |spending_proposal|
-    add spending_proposal_path(spending_proposal), lastmod: spending_proposal.updated_at
+  add polls_path, priority: 0.7, changefreq: "daily"
+  Poll.find_each do |poll|
+    add poll_path(poll), lastmod: poll.starts_at
   end
 end

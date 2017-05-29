@@ -9,7 +9,7 @@ en:
       text: |-
         If you speak other languages please help us translate this website and the software behind it.
 
-        Contact us at <a href="mailto:ag.gobiernoabierto@madrid.es">ag.gobiernoabierto@madrid.es</a> We'll give you access to the collaborative translation tool.
+        Contact us at ag.gobiernoabierto@madrid.es We'll give you access to the collaborative translation tool.
         Together we can make this open government tool available to any country. Thanks a million!
     more_info:
       title: "Discover %{org_name}"
@@ -32,7 +32,7 @@ en:
       proposals:
         title: "Proposals"
         detail: "Detailed proposals information"
-        description: "Propose what you want the City Council to carry out and support proposals from other people."
+        description: "Propose what you want the City Council to do and support proposals from other people."
         feature_1: "To create a proposal you have to %{link}, in addition to support you must verify your account."
         feature_1_link: "sign up on %{org_name}"
         feature_2_html: "Proposals that get <strong>support from 1% of people</strong> will be voted on."
@@ -47,7 +47,7 @@ en:
         feature_1_link: "sign up on %{org_name}"
         feature_2_html: "The first is the <strong>submit phase</strong> of investment projects."
         feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
-        feature_4_html: "At the end there is a <strong>vote phase </strong> where it is decided on which part of the budget is spent."
+        feature_4_html: "At the end there is a <strong>vote phase </strong> and you decide which of the approved projects to spend the budget on."
         image_alt: "Different phases of a participatory budget"
         figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
       polls:
@@ -157,10 +157,7 @@ en:
                 You can now see the [final draft Transparency Ordinance of the City of Madrid](/docs/ordenanza_de_transparencia_de_la_ciudad_de_madrid.doc 'Transparency Ordinance of the City of Madrid')."
         button: See ordinance
       process_3:
-        send_proposal: Send a proposal
-        send_question: Make a question
         view_all: See the most voted proposals and questions
-        view_proposals: See all proposals
         view_questions: See all questions
     titles:
       accessibility: Accessibility
@@ -176,18 +173,6 @@ en:
       password: Password
       submit: Verify my account
       title: Verify your account
-  participatory_budget:
-    in_two_minutes:
-      date_1: February 22 to March 31
-      date_1_info: Collecting proposals
-      date_2: April 1 to April 15
-      date_2_info: Support
-      date_3: April 16 to May 14
-      date_3_info: Evaluation
-      date_4: May 15 to June 30
-      date_4_info: Final vote
-      title_html: You decide how to invest 60 million euros<br> to your city
-      title_page: Participatory budgeting
   annotator:
     help:
       alt: Select the text you want to comment and press the button with the pencil.

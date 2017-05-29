@@ -1,12 +1,14 @@
 <% provide :title, t("meta_tags.proposals.title") %>
 <% provide :meta_description, t("meta_tags.proposals.description") %>
-<% provide :meta_keywords, t("meta_tags.proposals.keywords") %>
 <% provide :tracking_page_number, "29" %>
 
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: current_path_with_query_params(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposals_url %>
 <% end %>
 
 <main>
@@ -39,6 +41,10 @@
 
       <% if has_banners? %>
         <%= render "shared/banner" %>
+      <% end %>
+
+      <% if Budget.balloting.any? %>
+        <%= render "budgets/banner" %>
       <% end %>
 
       <% if @featured_proposals.present? %>

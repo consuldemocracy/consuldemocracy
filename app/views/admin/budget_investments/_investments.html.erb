@@ -1,16 +1,17 @@
 <h3><%= page_entries_info @investments %></h3>
 
-<table>
+<table class="table-for-mobile">
   <thead>
     <tr>
       <th><%= t("admin.budget_investments.index.table_id") %></th>
       <th><%= t("admin.budget_investments.index.table_title") %></th>
+      <th><%= t("admin.budget_investments.index.table_supports") %></th>
       <th><%= t("admin.budget_investments.index.table_admin") %></th>
       <th><%= t("admin.budget_investments.index.table_valuator") %></th>
       <th><%= t("admin.budget_investments.index.table_geozone") %></th>
       <th><%= t("admin.budget_investments.index.table_feasibility") %></th>
-      <th class="text-center"><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
-      <th class="text-center">
+      <th><%= t("admin.budget_investments.index.table_valuation_finished") %></th>
+      <th>
         <% if params[:filter] == "valuating" %>
           <%= t("admin.budget_investments.index.table_evaluation") %>
         <% else %>
@@ -27,6 +28,9 @@
       </td>
       <td>
         <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params)), target: "_blank" %>
+      </td>
+      <td class="text-center">
+        <%= investment.total_votes %>
       </td>
       <td class="small">
         <% if investment.administrator.present? %>
@@ -50,7 +54,7 @@
               price: investment.formatted_price)
         %>
       </td>
-      <td class="small text-center">
+      <td class="small">
         <%= investment.valuation_finished? ? t('shared.yes'): t('shared.no') %>
       </td>
       <td class="small">

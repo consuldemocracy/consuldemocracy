@@ -1,4 +1,8 @@
 <% provide :title do %><%= t('pages.titles.accessibility') %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: page_url("accessibility") %>
+<% end %>
+
 <div class="row">
 
 <div class="small-12 column">
@@ -48,8 +52,6 @@
           <td class="text-center">4</td>
           <td>Presupuestos participativos</td>
         </tr>
-<<<<<<< HEAD
-=======
         <tr>
           <td class="text-center">5</td>
           <td>Procesos legislativos</td>
@@ -86,11 +88,6 @@
           <td>Safari</td>
           <td>ALT + atajo (si es un MAC, CMD + atajo)</td>
         </tr>
->>>>>>> upstream/legislations
-        <tr>
-          <td class="text-center">5</td>
-          <td>Procesos legislativos</td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -111,7 +108,7 @@
         <%= image_tag "marca_aenor.png", alt: "Logo de certificación TIC AENOR" %>
       </div>
       <div class="small-12 medium-9 column margin">
-        <p>Este sitio web ha obtenido la <strong>certificación en accesibilidad TIC de AENOR</strong>, según la Norma <abbr title="Una Norma Española">UNE</abbr> 139803, "Aplicaciones informáticas para personas con discapacidad. Requisitos de accesibilidad para contenidos en la Web".</p>
+        <p>Este sitio web ha obtenido la <a href="/docs/certificado_aenor_web_decide_madrid.pdf" target="_blank" title="Se abre en ventana nueva. PDF 539Kb"><strong>certificación en accesibilidad TIC de AENOR</strong></a>, según la Norma <abbr title="Una Norma Española">UNE</abbr> 139803, "Aplicaciones informáticas para personas con discapacidad. Requisitos de accesibilidad para contenidos en la Web".</p>
 
         <p>Esta certificación acredita el cumplimiento del nivel AA (doble-A) en las Pautas de Accesibilidad, recomendadas por el grupo de trabajo <abbr title="Web Accessibility Initiative" lang="en" xml:lang="en">WAI</abbr> del <a title="Enlace externo en nueva ventana: World Wide Web Consortium" href="http://www.w3.org/" hreflang="en" target="_blank">W3C</a>.</p>
 

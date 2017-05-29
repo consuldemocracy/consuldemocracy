@@ -76,9 +76,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'presupuestos',                        to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
-  get 'participatory_budget/in_two_minutes', to: 'pages#show', id: 'more_info/budgets/in_two_minutes'
+  get 'presupuestos', to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
@@ -87,7 +86,10 @@ Rails.application.routes.draw do
     resource :ballot, only: :show, controller: "budgets/ballots" do
       resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
     end
+
     resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
+
+    resource :results, only: :show, controller: "budgets/results"
   end
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
   get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
@@ -318,7 +320,9 @@ Rails.application.routes.draw do
 
     resource :stats, only: :show do
       get :spending_proposals, on: :collection
-      get :budget_investments, on: :collection
+      get :budgets, on: :collection
+      get :budget_supporting, on: :member
+      get :budget_balloting, on: :member
       get :graph, on: :member
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
@@ -514,12 +518,12 @@ Rails.application.routes.draw do
   get 'proceso/plaza-espana/proyectos/:id', to: 'probe_options#show', probe_id: 'plaza',         as: 'plaza_probe_option'
 
   #Human Rights
-  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',    as: 'human_rights_page'
-  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan',     as: 'human_rights_plan'
-  get 'derechos-humanos/medidas',          to: 'human_rights#index',                                as: 'human_rights_proposals'
-  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                                 as: 'human_rights_proposal'
-  get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2'
-  get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3'
+  get 'derechos-humanos',                  to: 'pages#show', id: 'processes/human_rights/index',      as: 'human_rights_page'
+  get 'derechos-humanos/plan',             to: 'pages#show', id: 'processes/human_rights/plan',       as: 'human_rights_plan'
+  get 'derechos-humanos/medidas',          to: 'human_rights#index',                                  as: 'human_rights_proposals'
+  get 'derechos-humanos/medidas/:id',      to: 'human_rights#show',                                   as: 'human_rights_proposal'
+  get 'processes/human_rights_question_2', to: 'pages#show', id: 'processes/human_rights/question_2', as: 'human_rights_question_2'
+  get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3', as: 'human_rights_question_3'
 
   #Processes
   get 'procesos',                                       to: 'pages#show', id: 'processes/index',                  as: 'processes'
@@ -545,15 +549,17 @@ Rails.application.routes.draw do
   get 'proceso/pleno-abierto',                          to: 'pages#show', id: 'processes/open_plenary/index',     as: 'open_plenary'
   get 'proceso/ordenanza-de-transparencia',             to: 'pages#show', id: 'processes/transparency/index',     as: 'transparency_ordinance'
   get 'proceso/ordenanza-de-transparencia/borrador',    to: 'pages#show', id: 'processes/transparency/draft',     as: 'transparency_ordinance_draft'
+  get 'proceso/registro-de-lobbies',                    to: 'pages#show', id: 'processes/lobbies/index',          as: 'lobbies'
+  get 'proceso/registro-de-lobbies/borrador',           to: 'pages#show', id: 'processes/lobbies/draft',          as: 'lobbies_draft'
+  get 'proceso/parque-lineal-manzanares',               to: 'pages#show', id: 'processes/manzanares/index',       as: 'manzanares'
 
   #Landings
   get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'
   get 'haz-propuestas',  to: 'pages#show', id: 'landings/blas_bonilla',     as: 'blas_bonilla'
-  get 'sitesientesgato', to: 'pages#show', id: 'landings/sitesientesgato'
+  get 'sitesientesgato', to: 'pages#show', id: 'landings/sitesientesgato',  as: 'sitesientesgato'
   get 'noticias',        to: 'pages#show', id: 'landings/news'
 
   #Polls 2017 results & stats
-  get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'primera_votacion_results'
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
   get 'vota',                                    to: 'polls#results_2017',  as: 'first_voting'
@@ -572,6 +578,11 @@ Rails.application.routes.draw do
   get 'mas-informacion/espacios-presenciales-2017',  to: 'pages#show', id: 'more_info/budgets/meetings_2017', as: 'budgets_meetings_2017'
   get 'mas-informacion/derechos-humanos',            to: 'pages#show', id: 'more_info/participation/ddhh',    as: 'more_info_human_rights'
   get 'mas-informacion/gobierno-abierto',            to: 'pages#show', id: 'more_info/participation/open',    as: 'participation_open_government'
+
+  #static pages
+  get 'accesibilidad',          to: 'pages#show', id: 'accessibility', as: 'accessibility'
+  get 'condiciones-de-uso',     to: 'pages#show', id: 'conditions',    as: 'conditions'
+  get 'politica-de-privacidad', to: 'pages#show', id: 'privacy',       as: 'privacy'
 
   resources :pages, path: '/', only: [:show]
 end

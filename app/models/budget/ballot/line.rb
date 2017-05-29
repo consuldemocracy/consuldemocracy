@@ -2,7 +2,7 @@ class Budget
   class Ballot
     class Line < ActiveRecord::Base
       belongs_to :ballot
-      belongs_to :investment
+      belongs_to :investment, counter_cache: :ballot_lines_count
       belongs_to :heading
       belongs_to :group
       belongs_to :budget
@@ -13,7 +13,10 @@ class Budget
       validate :check_sufficient_funds
       validate :check_valid_heading
 
+      scope :by_investment, -> (investment_id) { where(investment_id: investment_id) }
+
       before_validation :set_denormalized_ids
+      after_save :store_user_heading
 
       def check_sufficient_funds
         errors.add(:money, "insufficient funds") if ballot.amount_available(investment.heading) < investment.price.to_i
@@ -33,6 +36,15 @@ class Budget
           self.heading_id ||= self.investment.try(:heading_id)
           self.group_id   ||= self.investment.try(:group_id)
           self.budget_id  ||= self.investment.try(:budget_id)
+        end
+
+        def store_user_heading
+          return if heading.id == city_heading_id
+          ballot.user.update(balloted_heading_id: heading.id)
+        end
+
+        def city_heading_id
+          1
         end
     end
   end

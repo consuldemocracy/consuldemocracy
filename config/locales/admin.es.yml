@@ -26,6 +26,7 @@ es:
           all: Todos
           with_active: Activos
           with_inactive: Inactivos
+        preview: Vista previa
       banner:
         title: Título
         description:  Descripción
@@ -35,7 +36,6 @@ es:
         post_started_at: Inicio de publicación
         post_ended_at: Fin de publicación
       edit:
-        back: Volver
         editing: Editar el banner
         form:
           submit_button: Guardar Cambios
@@ -45,7 +45,6 @@ es:
             one: "error impidió guardar el banner"
             other: "errores impidieron guardar el banner."
       new:
-        back: Volver
         creating: Crear banner
     activity:
       show:
@@ -132,6 +131,7 @@ es:
         select: "Seleccionar"
         table_id: "ID"
         table_title: "Título"
+        table_supports: "Apoyos"
         table_admin: "Administrador"
         table_valuator: "Evaluador"
         table_geozone: "Ámbito de actuación"
@@ -779,7 +779,7 @@ es:
       show:
         stats_title: Estadísticas
         participatory_budget_2016: Presupuestos Participativos 2016
-        participatory_budget_2017: Presupuestos Participativos 2017
+        participatory_budgets: Presupuestos Participativos
         polls: Votaciones
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
@@ -798,6 +798,8 @@ es:
           proposals: Propuestas
           spending_proposal_votes: Votos Propuesta Inversión
           spending_proposals: Propuestas de inversión
+          budgets: Presupuestos abiertos
+          budget_investments: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
@@ -806,6 +808,11 @@ es:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
+        spending_proposals_title: Propuestas de inversión
+        budgets_title: Presupuestos participativos
+        direct_messages: Mensajes directos
+        proposal_notifications: Notificaciones de propuestas
+        incomplete_verifications: Verificaciones incompletas
       graph:
         debate_created: Debates
         spending_proposals: Propuestas de inversión
@@ -825,15 +832,28 @@ es:
         users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
         users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
-      budget_investments:
-        title: Presupuestos participativos 2017
-        groups: Grupo
-        users: Usuarios
+      budgets:
+        title: "Presupuestos participativos - Estadisticas de participación"
+        supporting_phase: Fase de apoyos
+        balloting_phase: Votación final
+      budget_balloting:
+        title: "Estadísticas votación final"
+        vote_count: Votos
+        participant_count: Participantes
         users_city_total: Usuarios que han votado propuestas de ciudad
         users_district_total: Usuarios que han votado propuestas de distrito
-        users_city_only: Usuarios que han votado SOLO propuestas de CIUDAD
-        users_district_only: Usuarios que han votado SOLO propuestas de DISTRITO
         users_both_total: Usuarios que han votado AMBAS
+        votes_per_heading: Votos por partida
+        participants_per_district: Participantes por distrito
+      budget_supporting:
+        title: "Estadísticas fase de apoyos"
+        headings: Partidas
+        users: Usuarios
+        users_city_total: Usuarios que han apoyado propuestas de ciudad
+        users_district_total: Usuarios que han apoyado propuestas de distrito
+        users_city_only: Usuarios que han apoyado SOLO propuestas de CIUDAD
+        users_district_only: Usuarios que han apoyado SOLO propuestas de DISTRITO
+        users_both_total: Usuarios que han apoyado AMBAS
         vote_count: Votos
         participant_count: Participantes
       direct_messages:
@@ -910,16 +930,14 @@ es:
           notice: Bloque borrado correctamente
         edit:
           title: Editar bloque
-          back: Volver
         errors:
           form:
             error: Error
         index:
           create: Crear nuevo bloque
-          delete: Borrar
+          delete: Borrar bloque
           title: Bloques
         new:
-          back: Volver
           title: Crear nuevo bloque
         content_block:
           body: Contenido
@@ -929,6 +947,7 @@ es:
           title: Personalizar imágenes
           update: Actualizar
           delete: Borrar
+          image: Imagen
         update:
           notice: Imagen actualizada correctamente
           error: No se ha podido actualizar la imagen
@@ -946,7 +965,6 @@ es:
           notice: Página eliminada correctamente
         edit:
           title: Editar %{page_title}
-          back: Volver
         errors:
           form:
             error: Error
@@ -954,11 +972,10 @@ es:
           options: Opciones
         index:
           create: Crear nueva página
-          delete: Borrar
+          delete: Borrar página
           title: Páginas
           see_page: Ver página
         new:
-          back: Back
           title: Página nueva
         page:
           created_at: Creada

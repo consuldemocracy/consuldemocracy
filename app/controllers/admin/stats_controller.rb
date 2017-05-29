@@ -25,6 +25,9 @@ class Admin::StatsController < Admin::BaseController
     @user_ids_who_didnt_vote_proposals = @verified_users - @user_ids_who_voted_proposals
     @spending_proposals = SpendingProposal.count
     @ballots_with_votes = Ballot.where("ballot_lines_count > ?", 0).count
+    budgets_ids = Budget.where.not(phase: 'finished').pluck(:id)
+    @budgets = budgets_ids.size
+    @investments = Budget::Investment.where(budget_id: budgets_ids).count
   end
 
   def graph
@@ -55,20 +58,42 @@ class Admin::StatsController < Admin::BaseController
     @user_count = Ballot.where('ballot_lines_count > ?', 0).count
   end
 
-  def budget_investments
-    votes = Vote.where(votable_type: 'Budget::Investment')
-    @vote_count = votes.count
-    @participant_count = votes.select(:voter_id).distinct.count
+  def budgets
+    @budgets = Budget.all
+  end
 
-    @voters_in_city = voters_in_heading(city_heading)
-    @voters_in_district = voters_in_districts
-    @user_count = voters
+  def budget_supporting
+    @budget = Budget.find(params[:budget_id])
+    heading_ids = @budget.heading_ids
+
+    votes = Vote.where(votable_type: 'Budget::Investment').
+            includes(:budget_investment).
+            where(budget_investments: {heading_id: heading_ids})
+
+    @vote_count = votes.count
+    @user_count = votes.select(:voter_id).distinct.count
+
+    @voters_in_city = voters_in_heading(city_heading(@budget)) rescue 0
+    @voters_in_district = voters_in_districts(@budget) rescue 0
 
     @voters_in_heading = {}
-    budget = Budget.last
-    budget.headings.each do |heading|
+    @budget.headings.each do |heading|
       @voters_in_heading[heading] = voters_in_heading(heading)
     end
+  end
+
+  def budget_balloting
+    @budget = Budget.find(params[:budget_id])
+
+    budget_stats = Stat.hash("budget_#{@budget.id}_balloting_stats")
+    @user_count = budget_stats['stats']['user_count']
+    @vote_count = budget_stats['stats']['vote_count']
+    @user_count_in_city = budget_stats['stats']['user_count_in_city']
+    @user_count_in_district = budget_stats['stats']['user_count_in_district']
+    @user_count_in_city_and_district = budget_stats['stats']['user_count_in_city_and_district']
+
+    @vote_count_by_heading = budget_stats['vote_count_by_heading']
+    @user_count_by_district = budget_stats['user_count_by_district']
   end
 
   def redeemable_codes
@@ -93,24 +118,19 @@ class Admin::StatsController < Admin::BaseController
 
   def voters_in_heading(heading)
     Vote.where(votable_type: 'Budget::Investment').
-    includes(:budget_investment).
-    where(budget_investments: {heading_id: heading.id}).
-    select("votes.voter_id").distinct.count
+        includes(:budget_investment).
+        where(budget_investments: {heading_id: heading.id}).
+        select("votes.voter_id").distinct.count
   end
 
-  def voters_in_districts
+  def voters_in_districts(budget)
     Vote.where(votable_type: 'Budget::Investment').
-    includes(:budget_investment).
-    where.not(budget_investments: {heading_id: city_heading.id}).
-    select("votes.voter_id").distinct.count
+        includes(:budget_investment).
+        where(budget_investments: { heading_id: (budget.heading_ids - [city_heading(budget).id]) }).
+        select("votes.voter_id").distinct.count
   end
 
-  def voters
-    Vote.where(votable_type: 'Budget::Investment').select(:voter_id).distinct.count
+  def city_heading(budget)
+    budget.headings.where(name: "Toda la ciudad").first
   end
-
-  def city_heading
-    Budget::Heading.where(name: "Toda la ciudad").first
-  end
-
 end
