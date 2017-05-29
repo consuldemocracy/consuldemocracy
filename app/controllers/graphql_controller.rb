@@ -29,7 +29,8 @@ class GraphqlController < ApplicationController
 
       GraphQL::Schema.define do
         query query_type
-        max_depth 12
+        max_depth 8
+        max_complexity 2500
       end
     end
 

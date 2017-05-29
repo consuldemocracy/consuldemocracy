@@ -18,7 +18,7 @@ module GraphQL
             end
           end
 
-          connection model.graphql_pluralized_field_name, created_type.connection_type do
+          connection(model.graphql_pluralized_field_name, created_type.connection_type, max_page_size: 50, complexity: 1000) do
             description model.graphql_pluralized_field_description
             resolve -> (object, arguments, context) { model.public_for_api }
           end
