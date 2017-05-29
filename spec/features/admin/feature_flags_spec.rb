@@ -3,10 +3,16 @@ require 'rails_helper'
 feature 'Admin feature flags' do
 
   background do
-    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposals'] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
     login_as(create(:administrator).user)
   end
+
+  after do
+    Setting['feature.spending_proposals'] = nil
+    Setting['feature.spending_proposal_features.voting_allowed'] = nil
+  end
+
 
   scenario 'Enabled features are listed on menu' do
     visit admin_root_path

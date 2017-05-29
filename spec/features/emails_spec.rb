@@ -148,6 +148,8 @@ feature 'Emails' do
     expect(email).to have_body_text(spending_proposal.title)
     expect(email).to have_body_text(spending_proposal.code)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
+
+    Setting["feature.spending_proposals"] = nil
   end
 
   context "Direct Message" do
