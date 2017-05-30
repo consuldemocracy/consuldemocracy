@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  include Graphqlable
+
   has_one :administrator
   has_one :moderator
   has_one :valuator
@@ -336,6 +338,18 @@ class User < ActiveRecord::Base
       nvote.save
       nvote
     end
+  end
+
+  def public_proposals
+    public_activity? ? proposals : []
+  end
+
+  def public_debates
+    public_activity? ? debates : []
+  end
+
+  def public_comments
+    public_activity? ? comments : []
   end
 
   private
