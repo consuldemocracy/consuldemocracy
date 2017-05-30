@@ -734,6 +734,7 @@ describe Debate do
 
       expect(Debate.not_probe).to include(debate3)
       expect(Debate.not_probe).to_not include(debate1, debate2)
+    end
   end
 
   describe 'public_for_api scope' do
