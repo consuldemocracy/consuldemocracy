@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 5.0.1'
 # Fix sprockets on the
 gem 'sprockets', '~> 3.7.1'
 gem 'devise', '~> 4.3.0'
-gem 'devise_security_extension', '~> 0.10'
+gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git' #, '~> 0.10'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
