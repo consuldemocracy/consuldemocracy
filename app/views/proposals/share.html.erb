@@ -1,0 +1,42 @@
+<% provide :title do %><%= @proposal.title %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: proposal_url(@proposal),
+            social_title: @proposal.title,
+            social_description: @proposal.summary %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+<% end %>
+
+<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+  <div class="proposal-show">
+    <div id="<%= dom_id(@proposal) %>" class="row">
+      <div class="small-12 medium-9 column">
+
+        <h1><%= t("proposals.proposal.created") %></h1>
+
+        <h2><%= @proposal.title %></h2>
+        <p>
+          <%= t("proposals.show.code") %>
+          <strong><%= @proposal.code %></strong>
+        </p>
+
+
+        <p><%= t("proposals.proposal.share.guide").html_safe %></p>
+
+        <%= render partial: 'shared/social_share', locals: {
+          title: @proposal.title,
+          url: proposal_url(@proposal)
+        } %>
+
+        <!-- <p>También puedes ver más información de como mejorar tu campaña.</p> -->
+
+        <%= link_to proposal_path(@proposal), class: 'proposal button hollow float-right' do %>
+          <%= t("proposals.proposal.share.view_proposal") %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+<% end %>
