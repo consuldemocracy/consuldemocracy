@@ -19,7 +19,7 @@ class Proposal < ActiveRecord::Base
 
   has_many :comments, as: :commentable
   has_many :proposal_notifications
-  belongs_to :project
+  has_one :project
 
   accepts_nested_attributes_for :problem
 

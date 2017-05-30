@@ -41,7 +41,7 @@ private
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :starts_at, :ends_at, :proposal, :proposal_id, :geozone_restricted, geozone_ids: [])
+    params.require(:project).permit(:name, :description, :starts_at, :ends_at, :proposal_id, :geozone_restricted, geozone_ids: [])
   end
 
 end

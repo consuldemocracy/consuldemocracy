@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.datetime :starts_at
       t.datetime :ends_at
       t.boolean :geozone_restricted
+      t.belongs_to :proposal, index: true
 
       t.timestamps null: false
     end
