@@ -351,6 +351,12 @@ en:
     notice:
       retired: Proposal retired
     proposal:
+      created: "You've created a new proposal!"
+      share:
+        guide: "Now you can share it through Twitter, Facebook, Google+, Telegram or Whatsapp (if you're using a mobile device) so people can start supporting.<br><br>Before it gets shared you'll be able to change the text as you like."
+        view_proposal: Not now, go to my proposal
+      improve_info: "You can also %{improve_info_link} about improving your campaign"
+      improve_info_link: see more information
       already_supported: You have already supported this proposal. Share it!
       comments:
         one: 1 comment
