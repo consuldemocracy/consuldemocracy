@@ -57,6 +57,9 @@ class ProposalsController < ApplicationController
   end
 
   def share
+    if Setting['proposal_improvement_url'].present?
+      @proposal_improvement_url = root_url + Setting['proposal_improvement_url']
+    end
   end
 
   def vote_featured
