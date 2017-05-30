@@ -34,6 +34,7 @@ module Abilities
 
       can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment]
 
+      can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager

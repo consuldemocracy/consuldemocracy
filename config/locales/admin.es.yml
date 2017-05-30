@@ -181,6 +181,17 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    administrators:
+      index:
+        title: Administradores
+      administrator:
+        add: Añadir como Administrador
+        delete: Borrar
+        restricted_removal: "Lo sentimos, no puedes te eliminar a ti mismo de la lista"
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
     managers:
       index:
         title: Gestores
@@ -204,6 +215,7 @@ es:
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
       managers: Gestores
+      administrators: Administradores
       moderators: Moderadores
       newsletter: Envío de Newsletters
       valuators: Evaluadores
