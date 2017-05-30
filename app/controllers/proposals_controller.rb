@@ -3,7 +3,7 @@ class ProposalsController < ApplicationController
   include FlagActions
 
   before_action :parse_tag_filter, only: :index
-  before_action :load_categories, only: [:index, :new, :edit, :map, :summary]
+  before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
 
@@ -20,6 +20,17 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+  end
+
+  def create
+    @proposal = Proposal.new(proposal_params)
+    @proposal.author = current_user
+
+    if @proposal.save
+      redirect_to share_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
+    else
+      render :new
+    end
   end
 
   def index_customization
