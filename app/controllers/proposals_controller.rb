@@ -45,6 +45,9 @@ class ProposalsController < ApplicationController
   def retire_form
   end
 
+  def share
+  end
+
   def vote_featured
     @proposal.register_vote(current_user, 'yes')
     set_featured_proposal_votes(@proposal)

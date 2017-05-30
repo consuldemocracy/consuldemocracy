@@ -52,6 +52,7 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
       get :retire_form
+      get :share
       patch :retire
     end
     collection do
