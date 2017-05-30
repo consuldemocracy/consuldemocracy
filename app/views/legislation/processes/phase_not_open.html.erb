@@ -4,16 +4,11 @@
 
 <%= render 'legislation/processes/key_dates', process: @process, phase: @phase %>
 
-<div class="row">
-  <div class="debate-chooser">
-    <div class="row">
-      <div class="debate-draft">
-        <div class="small-12 medium-7 column">
-          <h3><%= t('.not_open') %></h3>
-        </div>
-
-        <div class="small-12 medium-5 column">
-        </div>
+<div class="debate-chooser">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="callout primary">
+        <p><%= t('.not_open') %></p>
       </div>
     </div>
   </div>

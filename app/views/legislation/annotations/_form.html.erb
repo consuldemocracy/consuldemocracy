@@ -16,7 +16,9 @@
 
           <div class="comment-actions">
             <a class="cancel-comment" href="#" data-cancel-annotation><%= t('legislation.annotations.comments.cancel') %></a>
-            <%= f.submit t('legislation.annotations.comments.publish_comment'), class: 'button strong publish-comment' %>
+            <%= f.submit class: 'button publish-comment' do %>
+              <strong><%= t('legislation.annotations.comments.publish_comment') %></strong>
+            <% end %>
           </div>
 
           <%= f.hidden_field :quote %>
@@ -32,4 +34,3 @@
     </div>
   </div>
 </div>
-

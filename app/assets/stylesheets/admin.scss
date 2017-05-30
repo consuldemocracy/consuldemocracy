@@ -6,8 +6,8 @@
 // 04. Stats
 // 05. Management
 // 06. Polls
-// 07. CMS
-// 08. Legislation
+// 07. Legislation
+// 08. CMS
 //
 
 // 01. Global styles
@@ -552,15 +552,8 @@ table {
   }
 }
 
-// 07. CMS
+// 07. Legislation
 // --------------
-.cms_page_list {
-
-  [class^="icon-"] {
-    padding-right: $menu-icon-spacing;
-    vertical-align: middle;
-  }
-}
 
 // Markdown Editor
 // ---------------
@@ -596,11 +589,10 @@ table {
   height: 99%;
 }
 
-// 08. Legislation
-// --------------
 .edit_legislation_draft_version .row {
   margin-bottom: 2rem;
 }
+
 .legislation-admin {
   .menu .active > a {
     background: none;
@@ -625,6 +617,16 @@ table {
     @include breakpoint(medium) {
       text-align: right;
     }
+  }
+}
+
+// 08. CMS
+// --------------
+.cms_page_list {
+
+  [class^="icon-"] {
+    padding-right: $menu-icon-spacing;
+    vertical-align: middle;
   }
 }
 
@@ -656,7 +658,8 @@ table {
 
 .legislation-draft-versions-index {
 
-  .legislation-process-question {
+  .legislation-process-question,
+  .legislation-process-version {
     @include breakpoint(medium) {
       text-align: right;
     }

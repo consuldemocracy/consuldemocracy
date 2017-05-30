@@ -13,7 +13,9 @@
         <%= render @processes %>
         <%= paginate @processes %>
       <% else %>
-        <%= t(".no_#{@current_filter}_processes") %>
+        <div class="callout primary margin-top">
+          <%= t(".no_#{@current_filter}_processes") %>
+        </div>
       <% end %>
     </div>
   </div>

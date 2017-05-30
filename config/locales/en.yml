@@ -267,6 +267,7 @@ en:
       see_all: See proposals
       budgets: Participatory budgeting
       delegation: Delegation
+      spending_proposals: Spending Proposals
     admin:
       watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
   legacy_legislation:

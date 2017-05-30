@@ -12,8 +12,10 @@ describe "Abilities::Administrator" do
   let(:debate) { create(:debate) }
   let(:comment) { create(:comment) }
   let(:proposal) { create(:proposal) }
+
   let(:probe_option) { create(:probe_option) }
   let(:spending_proposal) { create(:spending_proposal) }
+
   let(:legislation_question) { create(:legislation_question) }
 
   let(:hidden_debate) { create(:debate, :hidden) }

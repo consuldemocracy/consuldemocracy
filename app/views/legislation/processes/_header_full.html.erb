@@ -1,12 +1,10 @@
 <div class="legislation-hero no-margin-top grey-heading" style="display:<%= hidden ? 'none' : 'block' %>" data-target="legislation-header-full">
   <div class="row headline">
-    <div class="small-12 medium-7 column">
-      <p class="grey"><%= t('.title') %></p>
+    <div class="small-12 medium-8 column">
+      <p><%= t('.title') %></p>
       <h2>
         <%= process.title %>
       </h2>
-    </div>
-    <div class="small-12 medium-4 column right">
     </div>
   </div>
 
@@ -39,9 +37,9 @@
   </div>
 
   <% if process.additional_info.present? %>
-    <div class="center half-gradient">
-      <a id="js-toggle-debate" class="button big center strong" title="Más información y contexto">
-        <%= t('.more_info') %>
+    <div class="text-center half-gradient">
+      <a id="js-toggle-debate" class="button big text-center" title="<%= t('.more_info') %>">
+        <strong><%= t('.more_info') %></strong>
       </a>
     </div>
   <% end %>

@@ -23,7 +23,9 @@
 
       <% unless @draft_version.final_version? %>
         <div class="small-12 medium-3 column">
-          <%= link_to t('.see_comments'), legislation_process_draft_version_annotations_path(@process, @draft_version), title: t('.see_comments'), class: "button strong" %>
+          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t('.see_comments'), class: "button" do %>
+            <strong><%= t('.see_comments') %></strong>
+          <% end %>
         </div>
       <% end %>
 
@@ -37,7 +39,7 @@
           </div>
         </div>
 
-        <div class="draft-index-rotated center">
+        <div class="draft-index-rotated text-center">
           <span class="panel-title"><%= t('.text_toc') %></span>
         </div>
 
@@ -74,5 +76,4 @@
 
     </div>
   </div>
-
 </div>
