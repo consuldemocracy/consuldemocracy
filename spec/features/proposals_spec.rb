@@ -90,6 +90,7 @@ feature 'Proposals' do
   end
 
   context "Embedded video"  do
+
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
       visit proposal_path(proposal)
@@ -135,11 +136,13 @@ feature 'Proposals' do
     fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+    expect(page).to have_content 'Help refugees'
+    expect(page).not_to have_content 'You can also see more information about improving your campaign'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Help refugees'
     expect(page).to have_content '¿Would you like to give assistance to war refugees?'
@@ -151,6 +154,34 @@ feature 'Proposals' do
     expect(page).to have_content 'Refugees'
     expect(page).to have_content 'Solidarity'
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
+  end
+
+  scenario 'Create with proposal improvement info link' do
+    Setting['proposal_improvement_url'] = 'more-information/proposal-improvement'
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_video_url', with: 'http://youtube.com'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+    check 'proposal_terms_of_service'
+
+    click_button 'Create proposal'
+
+    expect(page).to have_content 'Proposal created successfully.'
+    expect(page).to have_content 'You can also see more information about improving your campaign'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(page).to have_content 'Help refugees'
+
+    Setting['proposal_improvement_url'] = nil
   end
 
   scenario 'Create with invisible_captcha honeypot field' do
@@ -167,7 +198,7 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Some other robot'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page.status_code).to eq(200)
     expect(page.html).to be_empty
@@ -189,7 +220,7 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Some other robot'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
 
@@ -210,11 +241,11 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
   end
@@ -233,10 +264,10 @@ feature 'Proposals' do
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(Proposal.last.responsible_name).to eq(author.document_number)
   end
@@ -246,7 +277,7 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content error_message
   end
@@ -264,11 +295,11 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
@@ -288,11 +319,11 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
@@ -310,11 +341,11 @@ feature 'Proposals' do
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('http://example.org', href: 'http://example.org')
@@ -345,11 +376,11 @@ feature 'Proposals' do
       fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
       check 'proposal_terms_of_service'
 
-      click_button I18n.t('proposals.new.form.submit_button')
+      click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
 
-      click_link I18n.t('proposals.proposal.share.view_proposal')
+      click_link 'Not now, go to my proposal'
 
       within "#geozone" do
         expect(page).to have_content 'All city'
@@ -374,11 +405,11 @@ feature 'Proposals' do
       check 'proposal_terms_of_service'
 
       select('California', from: 'proposal_geozone_id')
-      click_button I18n.t('proposals.new.form.submit_button')
+      click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
 
-      click_link I18n.t('proposals.proposal.share.view_proposal')
+      click_link 'Not now, go to my proposal'
 
       within "#geozone" do
         expect(page).to have_content 'California'

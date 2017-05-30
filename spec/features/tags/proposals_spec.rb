@@ -77,11 +77,11 @@ feature 'Tags' do
     fill_in 'proposal_tag_list', with: 'Economía, Hacienda'
     check 'proposal_terms_of_service'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Economía'
     expect(page).to have_content 'Hacienda'
@@ -106,11 +106,11 @@ feature 'Tags' do
     check 'proposal_terms_of_service'
 
     find('.js-add-tag-link', text: 'Education').click
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content 'Education'
@@ -129,7 +129,7 @@ feature 'Tags' do
 
     fill_in 'proposal_tag_list', with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content error_message
     expect(page).to have_content 'tags must be less than or equal to 6'
@@ -151,11 +151,11 @@ feature 'Tags' do
 
     fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
 
-    click_button I18n.t('proposals.new.form.submit_button')
+    click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
 
-    click_link I18n.t('proposals.proposal.share.view_proposal')
+    click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'user_id1'
     expect(page).to have_content 'a3'
