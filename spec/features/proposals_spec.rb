@@ -230,6 +230,8 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    expect(Proposal.last.responsible_name).to eq(author.document_number)
   end
 
   scenario 'Errors on create' do
