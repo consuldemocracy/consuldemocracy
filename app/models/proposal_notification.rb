@@ -1,4 +1,7 @@
 class ProposalNotification < ActiveRecord::Base
+
+  include Graphqlable
+  
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :proposal
 
@@ -6,6 +9,10 @@ class ProposalNotification < ActiveRecord::Base
   validates :body, presence: true
   validates :proposal, presence: true
   validate :minimum_interval
+
+  def self.public_for_api
+    joins(:proposal).where("proposals.hidden_at IS NULL")
+  end
 
   def minimum_interval
     return true if proposal.try(:notifications).blank?
