@@ -40,16 +40,11 @@
                       { spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: 'yes') } %>
         </div>
       </div>
-      <div class="sidebar-divider"></div>
-      <h3><%= t("spending_proposals.show.share") %></h3>
-      <div class="social-share-full">
-        <%= social_share_button_tag("#{@spending_proposal.title} #{setting['twitter_hashtag']}") %>
-        <a href="whatsapp://send?text=<%= @spending_proposal.title.gsub(/\s/, '%20') %>&nbsp;<%= spending_proposal_url(@spending_proposal) %>"
-           class="show-for-small-only" data-action="share/whatsapp/share">
-          <span class="icon-whatsapp whatsapp"></span>
-          <span class="sr-only"><%= t("social.whatsapp") %></span>
-        </a>
-      </div>
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("spending_proposals.show.share"),
+        title: @spending_proposal.title,
+        url: spending_proposal_url(@spending_proposal)
+      } %>
     </aside>
 
   </div>

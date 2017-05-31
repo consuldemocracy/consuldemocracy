@@ -107,16 +107,11 @@
           </p>
         </div>
       <% end %>
-      <div id="social-share" class="sidebar-divider"></div>
-      <h2><%= t("budgets.investments.show.share") %></h2>
-      <div class="social-share-full">
-        <%= social_share_button_tag("#{investment.title} #{setting['twitter_hashtag']}") %>
-        <a href="whatsapp://send?text=<%= investment.title.gsub(/\s/, '%20') %>&nbsp;<%= budget_investment_url(budget_id: investment.budget_id, id: investment.id) %>"
-           class="show-for-small-only" data-action="share/whatsapp/share">
-          <span class="icon-whatsapp whatsapp"></span>
-          <span class="sr-only"><%= t("social.whatsapp") %></span>
-        </a>
-      </div>
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("budgets.investments.show.share"),
+        title: investment.title,
+        url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
+      } %>
      </aside>
   </div>
 </section>
