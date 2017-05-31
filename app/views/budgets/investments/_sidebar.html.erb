@@ -41,11 +41,19 @@
       </em>
     </p>
   <% elsif @assigned_heading.present? %>
-    <p><%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
+    <p>
+      <%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
               heading_link: link_to(
                 @assigned_heading.name,
                 budget_investments_path(@budget, heading_id: @assigned_heading.try(:id)))
-            ) %></p>
+            ) %>
+      <br>
+      <small>
+        <%= t("budgets.investments.index.sidebar.change_ballot",
+            check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
+                          budget_ballot_path(@budget))).html_safe %>
+      </small>
+    </p>
   <% else %>
     <p><strong><%= t("budgets.investments.index.sidebar.zero") %></strong></p>
   <% end %>

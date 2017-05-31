@@ -388,7 +388,7 @@ FactoryGirl.define do
   end
 
   factory :poll do
-    sequence(:name) { |n| "Poll #{n}" }
+    sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
 
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }

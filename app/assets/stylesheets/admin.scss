@@ -97,6 +97,10 @@ body.admin {
       }
     }
 
+    td.break {
+      word-break: break-word;
+    }
+
     &.fixed {
       table-layout: fixed;
     }

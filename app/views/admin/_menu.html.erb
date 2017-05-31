@@ -95,6 +95,10 @@
         <strong><%= t("admin.menu.title_profiles") %></strong>
       </a>
       <ul <%= "class=is-active" if menu_profiles? %>>
+        <li <%= "class=active" if controller_name == "administrators" %>>
+          <%= link_to t("admin.menu.administrators"), admin_administrators_path %>
+        </li>
+
         <li <%= "class=active" if controller_name == "organizations" %>>
           <%= link_to t("admin.menu.organizations"), admin_organizations_path %>
         </li>
@@ -171,5 +175,12 @@
         <% end %>
       </li>
     <% end %>
+
+    <li <%= "class=active" if controller_name == "newsletter" %>>
+      <%= link_to admin_newsletters_path do %>
+        <span class="icon-zip"></span>
+        <%= t("admin.menu.newsletter") %>
+      <% end %>
+    </li>
   </ul>
 </div>

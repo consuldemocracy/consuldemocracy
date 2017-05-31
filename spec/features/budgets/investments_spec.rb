@@ -278,6 +278,13 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Show back link contains heading id" do
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget, investment)
+
+    expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: investment.heading)
+  end
+
   context "Show (feasible budget investment)" do
     let(:investment) { create(:budget_investment,
                           :feasible,

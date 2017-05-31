@@ -318,6 +318,17 @@ es:
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Eliminar
+    administrators:
+      index:
+        title: Administradores
+      administrator:
+        add: Añadir como Administrador
+        delete: Borrar
+        restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
     managers:
       index:
         title: Gestores
@@ -341,7 +352,9 @@ es:
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
       managers: Gestores
+      administrators: Administradores
       moderators: Moderadores
+      newsletter: Envío de Newsletters
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
       polls: Votaciones
@@ -374,6 +387,10 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado
+    newsletters:
+      index:
+        title: Envío de newsletters
+        button: Descargar zip con lista de usuarios
     valuators:
       index:
         title: Evaluadores

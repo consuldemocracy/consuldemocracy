@@ -233,6 +233,10 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
+    resources :administrators, only: [:index, :create, :destroy] do
+      get :search, on: :collection
+    end
+
     scope module: :poll do
       resources :polls do
         get :search_questions, on: :member
@@ -265,6 +269,9 @@ Rails.application.routes.draw do
     end
 
     resource :activity, controller: :activity, only: :show
+    resources :newsletters, only: :index do
+      get :users, on: :collection
+    end
     resource :stats, only: :show do
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
