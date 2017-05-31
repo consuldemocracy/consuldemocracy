@@ -157,7 +157,7 @@ feature 'Proposals' do
   end
 
   scenario 'Create with proposal improvement info link' do
-    Setting['proposal_improvement_url'] = 'more-information/proposal-improvement'
+    Setting['proposal_improvement_path'] = 'more-information/proposal-improvement'
     author = create(:user)
     login_as(author)
 
@@ -181,7 +181,7 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Help refugees'
 
-    Setting['proposal_improvement_url'] = nil
+    Setting['proposal_improvement_path'] = nil
   end
 
   scenario 'Create with invisible_captcha honeypot field' do

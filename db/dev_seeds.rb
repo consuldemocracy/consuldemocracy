@@ -44,7 +44,7 @@ Setting.create(key: 'meta_description', value: 'Citizen Participation and Open G
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
-Setting.create(key: 'proposal_improvement_url', value: nil)
+Setting.create(key: 'proposal_improvement_path', value: nil)
 
 puts " ✅"
 print "Creating Geozones"
