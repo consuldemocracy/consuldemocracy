@@ -648,11 +648,12 @@ footer {
   }
 }
 
-h2.sidebar-title {
+.sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
   font-size: rem-calc(16);
-  margin: -1px 0 rem-calc(12);
+  font-weight: bold;
+  margin: -1px 0 $line-height/2;
   padding-top: $line-height/4;
   text-transform: uppercase;
 }

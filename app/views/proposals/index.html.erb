@@ -69,8 +69,8 @@
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
         <% if params[:retired].blank? %>
-            <%= render "shared/tag_cloud", taggable: 'proposal' %>
             <%= render 'categories' %>
+            <%= render "shared/tag_cloud", taggable: 'proposal' %>
             <%= render 'geozones' %>
             <%= render 'popular' %>
           <% end %>

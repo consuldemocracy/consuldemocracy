@@ -527,14 +527,15 @@ en:
       proposals: Proposals
       budget: Participatory budget
       searcher: Searcher
+    go_to_page: "Go to page of "
   social:
-    blog: Blog
-    facebook: Facebook
-    twitter: Twitter
-    youtube: YouTube
+    blog: "%{org} Blog"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
     whatsapp: WhatsApp
-    telegram: Telegram
-    instagram: Instagram
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'
