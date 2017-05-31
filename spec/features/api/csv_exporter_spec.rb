@@ -275,7 +275,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include comments of debates that are not public" do
-      not_public_debate = create(:debate, hidden_at: 1.month.ago)
+      not_public_debate = create(:debate)
+      allow_any_instance_of(Debate).to receive(:public_for_api?).and_return(false)
+
       not_public_debate_comment = create(:comment, commentable: not_public_debate)
 
       @csv_exporter.export
@@ -286,7 +288,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include comments of proposals that are not public" do
-      not_public_proposal = create(:proposal, hidden_at: 1.month.ago)
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
       not_public_proposal_comment = create(:comment, commentable: not_public_proposal)
 
       @csv_exporter.export
@@ -362,7 +366,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include proposal notifications for proposals that are not public" do
-      not_public_proposal = create(:proposal, hidden_at: 1.month.ago)
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
       not_public_proposal_notification = create(:proposal_notification, proposal: not_public_proposal)
 
       @csv_exporter.export
@@ -494,24 +500,15 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not display tags for taggings that are not public" do
-      create(:tag, name: 'Special', kind: 'special')
-      create(:tag, name: 'Category', kind: 'category')
-      create(:proposal, tag_list: "Hidden", hidden_at: 1.month.ago)
-      create(:proposal, tag_list: "Ok")
-      create(:proposal, tag_list: "Special")
-      create(:proposal, tag_list: "Category")
-      create(:spending_proposal, tag_list: "NotPorD")
+      proposal = create(:proposal, tag_list: "Health")
+      allow_any_instance_of(ActsAsTaggableOn::Tagging).to receive(:public_for_api?).and_return(false)
 
       @csv_exporter.export
 
       visit csv_path_for("tags")
       csv = parse_csv(page.html).flatten
 
-      expect(csv).to_not include("Hidden") # Used only on a hidden proposal
-      expect(csv).to include("Ok") # Used on a public proposal, nil kind
-      expect(csv).to_not include("Special") # Used on a public proposal, special kind
-      expect(csv).to include("Category") # Used on a public proposal, category kind
-      expect(csv).to_not include("NotPorD") # Not used on proposals or debates
+      expect(csv).to_not include("Health")
     end
 
   end
@@ -606,7 +603,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include taggings for proposals that are not public" do
-      not_public_proposal = create(:proposal, hidden_at: 1.month.ago)
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
       not_public_proposal_tagging = create(:tagging, taggable: not_public_proposal)
 
       @csv_exporter.export
@@ -620,7 +619,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include taggings for debates that are not public" do
-      not_public_debate = create(:debate, hidden_at: 1.month.ago)
+      not_public_debate = create(:debate)
+      allow_any_instance_of(Debate).to receive(:public_for_api?).and_return(false)
+
       not_public_debate_tagging = create(:tagging, taggable: not_public_debate)
 
       @csv_exporter.export
@@ -767,7 +768,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include votes of debates that are not public" do
-      not_public_debate = create(:debate, hidden_at: 1.month.ago)
+      not_public_debate = create(:debate)
+      allow_any_instance_of(Debate).to receive(:public_for_api?).and_return(false)
+
       not_public_debate_vote = create(:vote, votable: not_public_debate)
 
       @csv_exporter.export
@@ -780,7 +783,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include votes of a hidden proposals" do
-      not_public_proposal = create(:proposal, hidden_at: 1.month.ago)
+      not_public_proposal = create(:proposal)
+      allow_any_instance_of(Proposal).to receive(:public_for_api?).and_return(false)
+
       not_public_proposal_vote = create(:vote, votable: not_public_proposal)
 
       @csv_exporter.export
@@ -793,7 +798,9 @@ feature 'CSV Exporter' do
     end
 
     scenario "Do not include votes of a hidden comments" do
-      not_public_comment = create(:comment, hidden_at: 1.month.ago)
+      not_public_comment = create(:comment)
+      allow_any_instance_of(Comment).to receive(:public_for_api?).and_return(false)
+
       not_public_comment_vote = create(:vote, votable: not_public_comment)
 
       @csv_exporter.export
