@@ -52,16 +52,11 @@
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render 'debates/votes', debate: @debate %>
         </div>
-        <div class="sidebar-divider"></div>
-        <h2><%= t("debates.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
-          <a href="whatsapp://send?text=<%= @debate.title.gsub(/\s/, '%20') %>&nbsp;<%= debate_url(@debate) %>"
-             class="show-for-small-only" data-action="share/whatsapp/share">
-            <span class="icon-whatsapp whatsapp"></span>
-            <span class="sr-only"><%= t("social.whatsapp") %></span>
-          </a>
-        </div>
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("debates.show.share"),
+          title: @debate.title,
+          url: debate_url(@debate)
+        } %>
       </aside>
     </div>
   </div>
