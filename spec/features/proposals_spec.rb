@@ -144,14 +144,12 @@ feature 'Proposals' do
 
     expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Help refugees'
-    expect(page).to have_content 'In summary what we want is...'
     expect(page).not_to have_content 'You can also see more information about improving your campaign'
 
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Help refugees'
-    expect(page).to have_content '¿Would you like to give assistance to war refugees?'
-    expect(page).to have_content 'In summary, what we want is...'
+    expect(page).to have_content 'In summary what we want is...'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
@@ -170,6 +168,8 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
     within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content "open-plenary"
     end
@@ -182,7 +182,6 @@ feature 'Proposals' do
 
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
@@ -293,6 +292,7 @@ feature 'Proposals' do
 
     visit new_proposal_path
     fill_in_proposal
+    fill_in 'proposal_title', with: 'Testing an attack'
     fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
 
     click_button 'Create proposal'
@@ -313,6 +313,7 @@ feature 'Proposals' do
 
     visit new_proposal_path
     fill_in_proposal
+    fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
 
     click_button 'Create proposal'
@@ -331,6 +332,7 @@ feature 'Proposals' do
 
     visit new_proposal_path
     fill_in_proposal
+    fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
 
     click_button 'Create proposal'
@@ -376,6 +378,8 @@ feature 'Proposals' do
 
       expect(page).to have_content 'Proposal created successfully.'
 
+      click_link 'Not now, go to my proposal'
+
       within "#tags_proposal_#{Proposal.last.id}" do
         expect(page).to have_content 'Education'
         expect(page).to_not have_content 'Health'
@@ -390,6 +394,9 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
       within "#tags_proposal_#{Proposal.last.id}" do
         expect(page).to have_content 'Refugees'
         expect(page).to have_content 'Solidarity'
@@ -407,6 +414,9 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
       expect(page).to have_content 'user_id1'
       expect(page).to have_content 'a3'
       expect(page).to have_content 'scriptalert("hey");script'
