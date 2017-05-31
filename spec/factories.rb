@@ -434,7 +434,7 @@ FactoryGirl.define do
   end
 
   factory :poll do
-    sequence(:name) { |n| "Poll #{Faker::StarWars.character}" }
+    sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
     nvotes_poll_id "128"
 
     starts_at { 1.month.ago }

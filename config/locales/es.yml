@@ -395,6 +395,12 @@ es:
     notice:
       retired: Propuesta retirada
     proposal:
+      created: "¡Has creado una nueva propuesta!"
+      share:
+        guide: "Ahora puedes compartirla en Twitter, Facebook, Google+, Telegram o Whatsapp (si utilizas un dispositivo móvil) para que la gente empieze a apoyarla.<br><br>Antes de que se publique el texto en las redes sociales podrás modificarlo a tu gusto"
+        view_proposal: "Ahora no, ver mi propuesta"
+      improve_info: "También puedes %{improve_info_link} de como mejorar tu campaña"
+      improve_info_link: ver más información
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
         one: 1 Comentario
@@ -565,14 +571,15 @@ es:
       proposals: Propuestas
       budget: Presupuestos participativos
       searcher: Buscador
+    go_to_page: "Ir a la página de "
   social:
-    blog: Blog
-    facebook: Facebook
-    twitter: Twitter
-    youtube: YouTube
+    blog: "Blog de %{org}"
+    facebook: "Facebook de %{org}"
+    twitter: "Twitter de %{org}"
+    youtube: "YouTube de %{org}"
     whatsapp: WhatsApp
-    telegram: Telegram
-    instagram: Instagram
+    telegram: "Telegram de %{org}"
+    instagram: "Instagram de %{org}"
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'

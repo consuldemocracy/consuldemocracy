@@ -54,6 +54,7 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
       get :retire_form
+      get :share
       patch :retire
     end
     collection do
@@ -232,6 +233,10 @@ Rails.application.routes.draw do
     end
 
     resources :managers, only: [:index, :create, :destroy] do
+      get :search, on: :collection
+    end
+
+    resources :administrators, only: [:index, :create, :destroy] do
       get :search, on: :collection
     end
 

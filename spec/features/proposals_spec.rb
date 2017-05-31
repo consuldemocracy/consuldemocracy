@@ -89,6 +89,7 @@ feature 'Proposals' do
   end
 
   context "Embedded video"  do
+
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
       visit proposal_path(proposal)
@@ -144,6 +145,13 @@ feature 'Proposals' do
     expect(page).to have_content 'Proposal created successfully.'
     expect(page).to have_content 'Help refugees'
     expect(page).to have_content 'In summary what we want is...'
+    expect(page).not_to have_content 'You can also see more information about improving your campaign'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(page).to have_content 'Help refugees'
+    expect(page).to have_content '¿Would you like to give assistance to war refugees?'
+    expect(page).to have_content 'In summary, what we want is...'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
@@ -165,6 +173,34 @@ feature 'Proposals' do
     within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content "open-plenary"
     end
+  end
+
+  scenario 'Create with proposal improvement info link' do
+    Setting['proposal_improvement_path'] = 'more-information/proposal-improvement'
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_video_url', with: 'http://youtube.com'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+    check 'proposal_terms_of_service'
+
+    click_button 'Create proposal'
+
+    expect(page).to have_content 'Proposal created successfully.'
+    expect(page).to have_content 'You can also see more information about improving your campaign'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(page).to have_content 'Help refugees'
+
+    Setting['proposal_improvement_path'] = nil
   end
 
   scenario 'Create with invisible_captcha honeypot field' do
@@ -199,7 +235,6 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
-
     expect(current_path).to eq(new_proposal_path)
   end
 
@@ -215,6 +250,9 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
     expect(Proposal.last.responsible_name).to eq('Isabel Garcia')
   end
 
@@ -232,8 +270,11 @@ feature 'Proposals' do
     check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
-
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(Proposal.last.responsible_name).to eq(author.document_number)
   end
 
   scenario 'Errors on create' do
@@ -242,6 +283,7 @@ feature 'Proposals' do
 
     visit new_proposal_path
     click_button 'Create proposal'
+
     expect(page).to have_content error_message
   end
 
@@ -256,6 +298,10 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(page).to have_content 'Testing an attack'
     expect(page.html).to include '<p>This is alert("an attack");</p>'
     expect(page.html).to_not include '<script>alert("an attack");</script>'
     expect(page.html).to_not include '&lt;p&gt;This is'
@@ -272,6 +318,10 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('www.example.org', href: 'http://www.example.org')
   end
 
@@ -286,6 +336,10 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
+    expect(page).to have_content 'Testing auto link'
     expect(page).to have_link('http://example.org', href: 'http://example.org')
     expect(page).not_to have_link('click me')
     expect(page.html).to_not include "<script>alert('hey')</script>"
@@ -372,6 +426,9 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
       within "#geozone" do
         expect(page).to have_content 'All city'
       end
@@ -389,6 +446,9 @@ feature 'Proposals' do
       click_button 'Create proposal'
 
       expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
       within "#geozone" do
         expect(page).to have_content 'California'
       end
