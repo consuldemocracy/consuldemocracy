@@ -527,6 +527,7 @@ en:
       proposals: Proposals
       budget: Participatory budget
       searcher: Searcher
+    go_to_page: "Go to page of "
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

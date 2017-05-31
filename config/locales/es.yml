@@ -527,6 +527,7 @@ es:
       proposals: Propuestas
       budget: Presupuestos participativos
       searcher: Buscador
+    go_to_page: "Ir a la página de "
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
