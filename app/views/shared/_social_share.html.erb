@@ -1,5 +1,7 @@
+<% if local_assigns[:share_title].present? %>
 <div id="social-share" class="sidebar-divider"></div>
 <h2><%= share_title %></h2>
+<% end %>
 <div class="social-share-full">
   <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}") %>
   <a href="whatsapp://send?text=<%= title.gsub(/\s/, '%20') %>&nbsp;<%= url %>"
