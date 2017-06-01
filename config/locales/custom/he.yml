@@ -393,6 +393,8 @@ he:
       supports_necessary: “נדרשים %{number} תומכים"
       total_percent: 100%
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
+      successful: "הצעה זו הגיעה לתמיכה הנדרשת ותעלה להצבעה ב%{voting}."
+      voting: "הצבעה הבאה"
     show:
       author_deleted: משתמש זה נמחק
       code: 'קוד ההצעה:'
