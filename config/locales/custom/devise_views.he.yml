@@ -34,7 +34,7 @@ he:
         unlock_link: שחררו את נעילת חשבוני
     menu:
       login_items:
-        login: כניסה
+        login: התחברות
         logout: יציאה
         signup: הרשמה
     organizations:
@@ -72,7 +72,7 @@ he:
         password_label: סיסמה
         remember_me: זכור אותי
         submit: הקש/י לאישור
-        title: הרשמה
+        title: התחברות
     shared:
       links:
         login: הקש/י לאישור
