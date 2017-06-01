@@ -44,7 +44,7 @@ module ActsAsTaggableOn
       ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
     end
 
-    def self.public_for_api
+    scope :public_for_api, -> do
       find_by_sql(%|
         SELECT *
         FROM tags

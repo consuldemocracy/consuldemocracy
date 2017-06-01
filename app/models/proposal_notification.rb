@@ -10,9 +10,7 @@ class ProposalNotification < ActiveRecord::Base
   validates :proposal, presence: true
   validate :minimum_interval
 
-  def self.public_for_api
-    joins(:proposal).where("proposals.hidden_at IS NULL")
-  end
+  scope :public_for_api, ->  { joins(:proposal).where("proposals.hidden_at IS NULL") }
 
   def minimum_interval
     return true if proposal.try(:notifications).blank?
