@@ -30,6 +30,31 @@
   }
 }
 
+.budgets-videos-2017 {
+
+  a {
+    text-decoration: underline;
+  }
+
+  .header {
+    background: $budget;
+    padding: $line-height 0;
+
+    h1 {
+      color: $text;
+      text-transform: uppercase
+    }
+
+    a {
+      color: $brand;
+    }
+
+    .button {
+      font-size: rem-calc(24);
+    }
+  }
+}
+
 // Choose proposal type
 // - - - - - - - - - - -
 
@@ -2610,8 +2635,8 @@ ul.ballot-list {
   position: relative;
 
   .budgets-date {
-    background: $campaign-red;
-    color: white;
+    background: $campaign-yellow;
+    color: black;
     display: inline-block;
     margin-bottom: $line-height/2;
     padding: 0 $line-height/4;

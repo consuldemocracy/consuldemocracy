@@ -89,10 +89,10 @@
         <% end %>
 
         <% if params[:retired].blank? %>
-          <% if request.path != human_rights_proposals_path %>
-            <%= render "shared/tag_cloud", taggable: 'proposal' %>
-          <% end %>
             <%= render 'categories' %>
+            <% if request.path != human_rights_proposals_path %>
+              <%= render "shared/tag_cloud", taggable: 'proposal' %>
+            <% end %>
             <%= render 'geozones' %>
             <%= render 'popular' %>
           <% end %>

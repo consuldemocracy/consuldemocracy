@@ -461,7 +461,7 @@ Style/Lambda:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Exclude:
     - 'app/controllers/management/document_verifications_controller.rb'
 

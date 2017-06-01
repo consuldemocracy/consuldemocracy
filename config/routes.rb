@@ -54,6 +54,7 @@ Rails.application.routes.draw do
       put :flag
       put :unflag
       get :retire_form
+      get :share
       patch :retire
     end
     collection do
@@ -232,6 +233,10 @@ Rails.application.routes.draw do
     end
 
     resources :managers, only: [:index, :create, :destroy] do
+      get :search, on: :collection
+    end
+
+    resources :administrators, only: [:index, :create, :destroy] do
       get :search, on: :collection
     end
 
@@ -497,6 +502,7 @@ Rails.application.routes.draw do
   get 'haz-propuestas',  to: 'pages#show', id: 'landings/blas_bonilla',     as: 'blas_bonilla'
   get 'sitesientesgato', to: 'pages#show', id: 'landings/sitesientesgato',  as: 'sitesientesgato'
   get 'noticias',        to: 'pages#show', id: 'landings/news'
+  get 'presupuestos-participativos-2017-videos', to: 'pages#show', id: 'landings/budgets_videos_2017',  as: 'budgets_videos_2017'
 
   #Polls 2017 results & stats
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
