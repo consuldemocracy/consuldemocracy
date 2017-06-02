@@ -165,9 +165,9 @@ he:
     conditions: כללים ותנאי שימוש
     debate: דיון
     direct_message: פנייה פרטית
-    error: שגיאה זו
-    errors: שגיאות אלו
-    not_saved: 'מפריעה/ות להצעה זו %{resource} לבצע את פעולת השמירה'   
+    error: שגיאה זו מונעת
+    errors: שגיאות אלו מונעות
+    not_saved: 'מ%{resource} זו לבצע את פעולת השמירה'   
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
