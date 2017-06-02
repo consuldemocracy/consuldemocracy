@@ -2642,18 +2642,18 @@ ul.ballot-list {
     padding: 0 $line-height/4;
   }
 
-  h2 {
+  p.budgets-lead-title {
     font-family: 'Franklin Gothic' !important;
     font-size: rem-calc(40);
     line-height: rem-calc(40);
     text-transform: uppercase;
   }
 
-  a h2 {
+  a .budgets-lead-title {
     color: white;
   }
 
-  a:hover, a:hover h2 {
+  a:hover, a:hover .budgets-lead-title {
     text-decoration: none !important;
   }
 
