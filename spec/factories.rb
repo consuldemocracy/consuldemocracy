@@ -1,7 +1,11 @@
 FactoryGirl.define do
-  factory :design_phase do
-    
+  factory :design_event do
+    name "MyString"
+    date "2017-05-31 11:33:15"
+    place "MyString"
+    pax 1
   end
+
   factory :project do
     neighbour_id 1
     responsible_id 1

@@ -9,7 +9,6 @@ class Admin::ProjectsController < Admin::BaseController
   end
 
   def new
-    @project.build_design_phase
   end
 
   def create
@@ -21,7 +20,7 @@ class Admin::ProjectsController < Admin::BaseController
   end
 
   def edit
-    @project.build_design_phase
+    @project.design_events.build
   end
 
   def update
@@ -41,7 +40,7 @@ private
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :starts_at, :ends_at, :proposal_id, :geozone_restricted, geozone_ids: [])
+    params.require(:project).permit(:name, :description, :starts_at, :ends_at, :proposal_id, :geozone_restricted, geozone_ids: [], design_events_attributes: [:starts_at, :name, :place] )
   end
 
 end

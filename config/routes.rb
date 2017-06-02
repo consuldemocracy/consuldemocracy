@@ -45,6 +45,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :projects
+  
   resources :proposals do
     member do
       post :vote

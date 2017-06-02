@@ -1,6 +1,5 @@
 <%= form_for [:admin, @project] do |f| %>
 
-  <%= f.hidden_field :user_id, :value => @current_user.id %>
 
   <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500" data-tabs id="deeplinked-tabs">
     <li class="tabs-title is-active"><a href="#panel1d" aria-selected="true"> <%= t("admin.projects.edit.menu.proposal") %> </a></li>
@@ -64,19 +63,28 @@
 
     <div class="tabs-panel" id="panel2d">
       <div class="row">
-      <div class="small-12 medium-12 column" >
-        <%= f.fields_for :design_phase do |dp| %>
-          <div class="row">
-            <div class="small-12 medium-6 column">
-              <%= dp.text_field :name%>
-            </div>
+      <div class="small-12 medium-12 column" id="add-event">
+        <%= f.fields_for :design_events do |e| %>
+        <div class="row">
+          <div class="small-12 medium-6 column">
+            <%= e.text_field :name%>
           </div>
-         <% end %>
+          <div class="small-12 medium-6 column">
+            <%= e.text_field :place%>
+          </div>
+        </div>
+        <div class="row" >
+          <div class="small-12 medium-6 column">
+            <%= e.text_field :starts_at,
+                      class: "js-calendar-full" %>
+          </div>
+        </div>
+        <% end %>
+
+        <button type="button" class="button secondary" id="add-design-event" onClick="addDesignEvent()" >Agregar Evento</button>
+
        </div>
       </div>
-
-
-      <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
     </div>
 
     <div class="tabs-panel" id="panel3d">

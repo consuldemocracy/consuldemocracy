@@ -1,0 +1,26 @@
+<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500" data-tabs id="deeplinked-tabs">
+  <li class="tabs-title is-active"><a href="#panel1d" aria-selected="true"> Propuesta inicial </a></li>
+  <li class="tabs-title"><a href="#panel2d">Propuesta inicial</a></li>
+  <li class="tabs-title"><a href="#panel3d"><%= t("admin.projects.edit.menu.implementation") %></a></li>
+  <li class="tabs-title"><a href="#panel4d"><%= t("admin.projects.edit.menu.evaluation") %></a></li>
+</ul>
+
+<div class="tabs-content" data-tabs-content="deeplinked-tabs">
+  <div class="tabs-panel is-active" id="panel1d">
+    <h3><%= project.name %></h3>
+  </div>
+
+  <div class="tabs-panel" id="panel2d">
+    <div class="row">
+      <p>Propuesta con más apoyo: <%= project.proposal.title %></p>
+    </div>
+  </div>
+
+  <div class="tabs-panel" id="panel3d">
+  </div>
+
+  <div class="tabs-panel" id="panel4d">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+</div>

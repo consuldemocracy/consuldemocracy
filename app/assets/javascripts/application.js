@@ -52,6 +52,7 @@
 //= require checkbox_toggle
 //= require custom
 
+
 var initialize_modules = function() {
   App.Comments.initialize();
   App.Users.initialize();

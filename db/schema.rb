@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525142508) do
+ActiveRecord::Schema.define(version: 20170531153458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -265,15 +265,17 @@ ActiveRecord::Schema.define(version: 20170525142508) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "design_phases", force: :cascade do |t|
+  create_table "design_events", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "activated"
+    t.datetime "starts_at"
+    t.string   "place"
+    t.integer  "pax"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
-  add_index "design_phases", ["project_id"], name: "index_design_phases_on_project_id", using: :btree
+  add_index "design_events", ["project_id"], name: "index_design_events_on_project_id", using: :btree
 
   create_table "direct_messages", force: :cascade do |t|
     t.integer  "sender_id"
@@ -854,7 +856,7 @@ ActiveRecord::Schema.define(version: 20170525142508) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-05-30 19:56:46', null: false
+    t.datetime "password_changed_at",                       default: '2017-05-31 16:56:18', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
@@ -948,7 +950,7 @@ ActiveRecord::Schema.define(version: 20170525142508) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
-  add_foreign_key "design_phases", "projects"
+  add_foreign_key "design_events", "projects"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
