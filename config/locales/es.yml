@@ -86,7 +86,8 @@ es:
     form:
       debate_text: Texto inicial del debate
       debate_title: Título del debate
-      tags_instructions: Etiqueta este debate.
+      tag_featured_label: Temas propuestos
+      tags_instructions: Etiqueta este debate. Puedes elegir entre los temas propuestos o introducir los que desees
       tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:

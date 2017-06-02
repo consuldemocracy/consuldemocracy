@@ -663,6 +663,7 @@ es:
       mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
+      proposals_category: Usar como Categoría en Propuestas
       update: Actualizar Tema
     users:
       index:

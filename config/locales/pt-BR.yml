@@ -291,6 +291,7 @@ pt-BR:
       mark_as_featured: Propor tópico na criação do debate
       name:
         placeholder: Digitar  o nome do tópico
+      proposals_category: Use como Categoria no Propostas
       update: Atualizar tópico
     users:
       index:
@@ -469,7 +470,8 @@ pt-BR:
     form:
       debate_text: Texto inicial do debate
       debate_title: Título do debate
-      tags_instructions: Marcar este debate.
+      tag_featured_label: Tópicos propostos
+      tags_instructions: Marcar este debate. Você pode escolher entre os tópicos propostos ou adicionar seu próprio
       tags_label: Tópicos
       tags_placeholder: Entrar com as marcações que deseja usar, separadas por vírgulas
         (',')

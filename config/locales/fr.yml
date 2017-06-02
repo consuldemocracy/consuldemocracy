@@ -291,6 +291,7 @@ fr:
       mark_as_featured: Proposer un sujet après création d'un débat
       name:
         placeholder: "Écrire le nom du sujet"
+      proposals_category: Utiliser comme catégorie dans les propositions
       update: Mettre à jour le sujet
     users:
       index:
@@ -470,7 +471,8 @@ fr:
     form:
       debate_text: Texte initial du debat
       debate_title: Titre du débat
-      tags_instructions: "Étiquetter ce débat"
+      tag_featured_label: Sujets proposées
+      tags_instructions: "Étiquetter ce débat. Vous pouvez choisir parmi les sujets proposées ou ajouter les vôtres"
       tags_label: Sujets
       tags_placeholder: Entrez les étiquettes que vous voulez utiliser, séparées par
         des virgules (',')
