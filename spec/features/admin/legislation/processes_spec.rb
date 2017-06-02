@@ -71,7 +71,7 @@ feature 'Admin legislation processes' do
 
       click_link "An example legislation process"
 
-      expect(page).to have_selector("h1", text: "An example legislation process")
+      expect(page).to have_selector("h2", text: "An example legislation process")
       expect(find("#debate_phase_active")).to be_checked
 
       uncheck "debate_phase_active"
