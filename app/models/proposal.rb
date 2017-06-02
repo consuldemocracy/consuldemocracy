@@ -228,6 +228,11 @@ class Proposal < ActiveRecord::Base
     return true
   end
 
+  def self.public_for_api
+    where(hidden_at: nil)
+      .where(['proposals.proceeding IS NULL or proposals.proceeding = ?', 'Derechos Humanos'])
+  end
+
   protected
 
     def set_responsible_name
