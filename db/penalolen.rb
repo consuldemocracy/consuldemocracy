@@ -215,9 +215,9 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
 
 
 proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
-                            title: "Cercar el Parque",
-                            question: "¿Te gustaría cercar el Parque San Luis?",
-                            summary: "Al cercar el Parque (dando acceso a todos) se genera un sentido de seguridad mayor",
+                            title: "Crear un espacio cultural en el espacio del Parque",
+                            question: "¿Te gustaría crear un espacio culturan?",
+                            summary: "La finalidad es que el Parque pueda ser utilizado en todo momento, incluso cuando llueve. Generando este espacio se podría tener esto, y potenciar las actividades culturales organizadas por los vecinos",
                             responsible_name: Faker::Name.name,
                             external_url: Faker::Internet.url,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
