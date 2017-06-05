@@ -35,8 +35,6 @@ class ProposalsController < ApplicationController
   def index_customization
     discard_archived
     load_retired
-    load_successful_proposals
-    load_featured unless @proposal_successful_exists
   end
 
   def vote
@@ -115,9 +113,4 @@ class ProposalsController < ApplicationController
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
       end
     end
-
-    def load_successful_proposals
-      @proposal_successful_exists = Proposal.successful.exists?
-    end
-
 end

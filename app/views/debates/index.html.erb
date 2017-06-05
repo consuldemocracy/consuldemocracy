@@ -42,11 +42,7 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successful_exists %>
-        <%= render "proposals/successful_banner" %>
-      <% end %>
-
-      <% unless @tag_filter || @search_terms || !has_featured? || @proposal_successful_exists %>
+      <% unless @tag_filter || @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
       <% end %>
 

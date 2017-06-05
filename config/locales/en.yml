@@ -448,9 +448,6 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       poll: "Poll"
-    banner:
-      featured_title: "#NextVoting"
-      info: "New proposals that have reached the voting phase."
   proposal_notifications:
     new:
       title: "Send message"

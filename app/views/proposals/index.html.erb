@@ -44,9 +44,7 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successful_exists %>
-        <%= render "successful_banner" %>
-      <% elsif @featured_proposals.present? %>
+      <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>

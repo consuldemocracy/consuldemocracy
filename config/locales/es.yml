@@ -448,9 +448,6 @@ es:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       poll: "Votación"
-    banner:
-      featured_title: "#PróximaVotación"
-      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
