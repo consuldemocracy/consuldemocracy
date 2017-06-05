@@ -1106,10 +1106,6 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 // 09. Search
 // ----------
 
-.search-results h2 {
-  margin-bottom: 0;
-}
-
 .advanced-search {
   float: left;
   margin: $line-height 0;
@@ -1118,7 +1114,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   @include breakpoint(medium) {
     float: right;
     margin-bottom: 0;
-    margin-top: rem-calc(28);
+    margin-top: $line-height/4;
     position: absolute;
     right: 0;
     z-index: 2;
@@ -1126,7 +1122,6 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 }
 
 .advanced-search-form {
-  margin-top: $line-height;
 
   select {
     height: $line-height*2;
