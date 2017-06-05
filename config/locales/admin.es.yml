@@ -192,6 +192,12 @@ es:
           evaluation: "Evaluación"
     problems:
       title: "Desafíos"
+      edit:
+        tip_cause: ""
+        tip_consequences: ""
+        tip_restrictions: ""
+        tip_budget: ""
+        tip_summary: ""
       index:
         no_problems: "No hay desafíos agregados"
         create: "Crear desafío"
@@ -199,6 +205,7 @@ es:
       new:
         submit_button: "Crear desafío"
         title: "Desafíos"
+        tip_description: ""
       edit:
         submit_button: "Editar desafío"
     debates:

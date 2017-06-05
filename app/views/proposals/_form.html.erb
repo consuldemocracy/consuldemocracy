@@ -12,21 +12,26 @@
       <div class="panel callout radius">
         <h5>Definir el problema</h5>
         <%= f.fields_for :problem do |prob| %>
-          <div class="row">
-            <div class="small-12 medium-6 column">
-              <%= prob.text_field :title%>
-            </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_field :title, label: "Problema que afecta a tu comunidad y crees que se debería solucionar"%>
           </div>
-          <div class="row">
-            <div class="small-12 medium-12 column">
-              <%= prob.text_area :summary %>
-            </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_area :cause, label: t("proposals.create.form.label_problem_cause") %>
           </div>
-          <div class="row">
-            <div class="small-12 medium-12 column">
-              <%= prob.text_area :description %>
-            </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_area :consequence,  label: t("proposals.create.form.label_problem_consequence") %>
           </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_area :prioritize,  label: t("proposals.create.form.label_problem_prioritize") %>
+          </div>
+        </div>
           <%= prob.hidden_field :user_id, :value => @current_user.id %>
          <% end %>
       </div>

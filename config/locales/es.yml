@@ -272,6 +272,15 @@ es:
     create:
       form:
         submit_button: Crear propuesta
+        label_problem_title: "Problema que afecta a tu comunidad y crees que se debería solucionar"
+        label_problem_cause: "¿Cuáles son las causas de este problema? Nombra al menos tres."
+        label_problem_consequence: "¿Cuáles son las consecuencias de este problema? Nombra al menos tres."
+        label_problem_prioritize: "Basándote en tus respuestas de los pasos anteriores ¿Cuáles crees que son la causa y consecuencia más importantes en relación al problema?"
+        label_description: "Redacta tu propuesta.
+Intenta que ataque directamente a la causa que definiste como más importante para que pueda resolver la principal consecuencia. Recuerda que tu propuesta debe ser una medida concreta que se pueda implementar para acabar con el problema."
+        label_deadline: "¿En qué plazo se debería llegar al resultado de la propuesta?"
+        label_title: "Título de la propuesta"
+        label_question: "Pregunta de la propuesta"
     edit:
       editing: Editar propuesta
       form:
