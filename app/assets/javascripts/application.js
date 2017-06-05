@@ -51,6 +51,7 @@
 //= require social_share
 //= require checkbox_toggle
 //= require custom
+//= require cocoon
 
 
 var initialize_modules = function() {

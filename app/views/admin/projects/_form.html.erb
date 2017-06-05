@@ -1,5 +1,4 @@
-<%= form_for [:admin, @project] do |f| %>
-
+<%= simple_form_for (@project) do |f| %>
 
   <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500" data-tabs id="deeplinked-tabs">
     <li class="tabs-title is-active"><a href="#panel1d" aria-selected="true"> <%= t("admin.projects.edit.menu.proposal") %> </a></li>
@@ -12,35 +11,32 @@
     <div class="tabs-panel is-active" id="panel1d">
       <div class="row">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :name %>
+          <%= f.input :name %>
         </div>
       </div>
 
       <div id="select-proposal" class="row" >
         <div class="small-12 medium-6 column">
-          <%= f.collection_select :proposal_id, valid_proposals, :id, :title %>
+          <%= f.association :proposal, as: :select, collection: Proposal.all %>
         </div>
       </div>
 
       <div class="row">
         <div class="small-12 medium-12 column">
-          <%= f.text_area :description %>
+          <%= f.input :description %>
         </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="small-12 medium-6 column">
-          <%= f.text_field :starts_at,
-                            value: @project.starts_at.present? ? l(@project.starts_at.to_date) : nil,
-                            class: "js-calendar-full" %>
+          <%= f.input :starts_at, input_html: {value: @project.starts_at.present? ? l(@project.starts_at.to_date) : nil} %>
         </div>
 
+
         <div class="small-12 medium-6 column">
-          <%= f.text_field :ends_at,
-                            value: @project.ends_at.present? ? l(@project.ends_at.to_date) : nil,
-                            class: "js-calendar-full" %>
+          <%= f.input :ends_at, input_html: {value: @project.ends_at.present? ? l(@project.ends_at.to_date) : nil} %>
         </div>
-      </div>
+      </div> -->
 
       <div class="row">
         <div class="small-6 medium-6 column">
@@ -61,29 +57,12 @@
       </div>
     </div>
 
-    <div class="tabs-panel" id="panel2d">
-      <div class="row">
-      <div class="small-12 medium-12 column" id="add-event">
-        <%= f.fields_for :design_events do |e| %>
-        <div class="row">
-          <div class="small-12 medium-6 column">
-            <%= e.text_field :name%>
-          </div>
-          <div class="small-12 medium-6 column">
-            <%= e.text_field :place%>
-          </div>
-        </div>
-        <div class="row" >
-          <div class="small-12 medium-6 column">
-            <%= e.text_field :starts_at,
-                      class: "js-calendar-full" %>
-          </div>
-        </div>
+    <div class="tab-panel" id="panel2d">
+      <div class="form-input">
+        <%= f.fields_for :design_events do |de| %>
+          <%= render 'design_event_fields' %>
         <% end %>
-
-        <button type="button" class="button secondary" id="add-design-event" onClick="addDesignEvent()" >Agregar Evento</button>
-
-       </div>
+          <%= link_to_add_association 'Agregar taller de diseño', f, :design_events %>
       </div>
     </div>
 
@@ -95,14 +74,16 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
     </div>
+
   </div>
 
-
+  
   <div class="row">
     <div class="small-12 medium-4 column">
       <%= f.submit t("admin.projects.#{admin_submit_action(@project)}.submit_button"),
                    class: "button success expanded" %>
     </div>
   </div>
+
 
 <% end %>
