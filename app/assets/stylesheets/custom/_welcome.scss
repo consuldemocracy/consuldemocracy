@@ -143,9 +143,10 @@
     padding: $line-height*4 0;
   }
 
-  h2 {
+  .lead-title {
     font-family: 'Franklin Gothic' !important;
     font-size: rem-calc(40);
+    font-weight: bold;
     line-height: rem-calc(40);
     text-transform: uppercase;
 
@@ -177,7 +178,7 @@
 }
 
 @include breakpoint(medium) {
-  .typewriter h2 {
+  .typewriter p.lead-title {
     overflow: hidden;
     border-right: 2px solid #5A6175;
     white-space: nowrap;
