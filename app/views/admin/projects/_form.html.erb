@@ -32,7 +32,6 @@
           <%= f.input :starts_at, input_html: {value: @project.starts_at.present? ? l(@project.starts_at.to_date) : nil} %>
         </div>
 
-
         <div class="small-12 medium-6 column">
           <%= f.input :ends_at, input_html: {value: @project.ends_at.present? ? l(@project.ends_at.to_date) : nil} %>
         </div>
@@ -77,7 +76,7 @@
 
   </div>
 
-  
+
   <div class="row">
     <div class="small-12 medium-4 column">
       <%= f.submit t("admin.projects.#{admin_submit_action(@project)}.submit_button"),

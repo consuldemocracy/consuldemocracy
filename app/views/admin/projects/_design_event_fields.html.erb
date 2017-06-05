@@ -1,6 +1,8 @@
 <div class="design-event-nested">
+  <% if f.object.id.nil? %>
     <%= f.input :name %>
     <%= f.input :place %>
     <%= f.input :pax %>
     <%= link_to_remove_association "Eliminar taller de diseño", f, {wrapper_class: 'design-event-nested'} %>
+  <% end %>
 </div>
