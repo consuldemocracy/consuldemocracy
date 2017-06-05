@@ -173,6 +173,23 @@ es:
       index:
         back: Volver a
         title: Administración
+    projects:
+      title: "Proyecto"
+      index:
+        no_projects: "No hay proyectos activos"
+        create: "Crear proyecto"
+        title: "Proyectos"
+      new:
+        submit_button: "Crear proyecto"
+        title: "Proyectos"
+      edit:
+        submit_button: "Guardar"
+        title: "Configurar proyecto"
+        menu:
+          proposal: "Propuesta ganadora"
+          design: "Talleres de diseño"
+          implementation: "Implementación"
+          evaluation: "Evaluación"
     problems:
       title: "Desafíos"
       index:
@@ -233,7 +250,9 @@ es:
       title_categories: Categorías
       title_moderated_content: Contenido moderado
       title_problems: Desafíos
+      title_projects: Proyectos
       view_problems: Ver desafíos
+      view_projects: Ver proyectos
       title_budgets: Presupuestos
       title_polls: Votaciones
       title_profiles: Perfiles

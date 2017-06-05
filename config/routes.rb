@@ -45,6 +45,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :projects
+  
   resources :proposals do
     member do
       post :vote
@@ -136,6 +138,8 @@ Rails.application.routes.draw do
     end
 
     resources :problems, only: [:index, :new, :create, :destroy, :edit, :update]
+
+    resources :projects, only: [:index, :new, :create, :destroy, :edit, :update]
 
     resources :users, only: [:index, :show] do
       member do

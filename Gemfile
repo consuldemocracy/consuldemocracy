@@ -56,7 +56,7 @@ gem 'newrelic_rpm', '~> 4.1.0.333'
 gem 'whenever', require: false
 gem 'pg_search'
 gem 'sitemap_generator', '~> 5.3.1'
-
+gem 'cocoon'
 gem 'ahoy_matey', '~> 1.6.0'
 gem 'groupdate', '~> 3.2.0' # group temporary data
 gem 'tolk', '~> 2.0.0' # Web interface for translations
@@ -66,6 +66,8 @@ gem 'turnout', '~> 2.4.0'
 gem 'redcarpet', '~> 3.4.0'
 
 gem 'paperclip'
+gem 'simple_form'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

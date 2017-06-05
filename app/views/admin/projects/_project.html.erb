@@ -1,0 +1,20 @@
+<tr id="<%= dom_id(project) %>" class="project">
+  <td>
+    <strong>
+      <%= link_to project.name, edit_admin_project_path(project) %>
+    </strong>
+  </td>
+  <td>
+    <%= project.proposal.title %>
+  </td>
+  <td>
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_project_path(project),
+                class: "button hollow" %>
+    <%= link_to t("admin.actions.destroy"),
+          admin_project_path(project),
+          method: :delete,
+          class: "button hollow warning" %>
+  </td>
+
+</tr>
