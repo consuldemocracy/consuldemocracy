@@ -95,7 +95,6 @@ es:
         price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
-        title: Propuesta de inversión
         add: Votar
         already_added: "Ya has añadido esta propuesta de inversión"
         already_supported: Ya has apoyado esta propuesta. ¡Compártelo!

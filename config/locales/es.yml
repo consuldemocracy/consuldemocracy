@@ -73,7 +73,6 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      debate: Debate
       votes:
         one: 1 voto
         other: "%{count} votos"
@@ -362,7 +361,6 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      proposal: Propuesta
       reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta

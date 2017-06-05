@@ -95,7 +95,6 @@ en:
         price: Price
       wrong_price_format: Only integer numbers
       investment:
-        title: Investment project
         add: Vote
         already_added: You have already added this investment project
         already_supported: You have already supported this. Share it!
