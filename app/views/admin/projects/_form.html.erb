@@ -1,4 +1,4 @@
-<%= simple_form_for (@project) do |f| %>
+<%= simple_form_for [:admin, @project] do |f| %>
 
   <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500" data-tabs id="deeplinked-tabs">
     <li class="tabs-title is-active"><a href="#panel1d" aria-selected="true"> <%= t("admin.projects.edit.menu.proposal") %> </a></li>
@@ -39,7 +39,7 @@
 
       <div class="row">
         <div class="small-6 medium-6 column">
-          <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
+          <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %><%= f.label "Restringido por área" %>
         </div>
       </div>
 
@@ -59,23 +59,20 @@
     <div class="tab-panel" id="panel2d">
       <div class="form-input">
         <%= f.fields_for :design_events do |de| %>
-          <%= render 'design_event_fields' %>
+          <%= render 'design_event_fields', f: de  %>
         <% end %>
           <%= link_to_add_association 'Agregar taller de diseño', f, :design_events %>
       </div>
     </div>
 
     <div class="tabs-panel" id="panel3d">
-
     </div>
 
     <div class="tabs-panel" id="panel4d">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
     </div>
 
   </div>
-
 
   <div class="row">
     <div class="small-12 medium-4 column">
