@@ -2,43 +2,18 @@ require 'rails_helper'
 
 feature 'Tags' do
 
-  scenario 'Index' do
+  scenario 'Does not show on index' do
     earth = create(:debate, tag_list: 'Medio Ambiente')
     money = create(:debate, tag_list: 'Economía')
 
     visit debates_path
 
     within "#debate_#{earth.id}" do
-      expect(page).to have_content "Medio Ambiente"
+      expect(page).to_not have_content "Medio Ambiente"
     end
 
     within "#debate_#{money.id}" do
-      expect(page).to have_content "Economía"
-    end
-  end
-
-  scenario 'Index shows up to 5 tags per proposal' do
-    tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-    create :debate, tag_list: tag_list
-
-    visit debates_path
-
-    within('.debate .tags') do
-      expect(page).to have_content '1+'
-    end
-  end
-
-  scenario 'Index shows 3 tags with no plus link' do
-    tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-    create :debate, tag_list: tag_list
-
-    visit debates_path
-
-    within('.debate .tags') do
-      tag_list.each do |tag|
-        expect(page).to have_content tag
-      end
-      expect(page).not_to have_content '+'
+      expect(page).to_not have_content "Economía"
     end
   end
 
@@ -151,19 +126,18 @@ feature 'Tags' do
 
   context "Filter" do
 
-    scenario "From index" do
+    scenario "Does not from index" do
       debate1 = create(:debate, tag_list: 'Education')
       debate2 = create(:debate, tag_list: 'Health')
 
       visit debates_path
 
       within "#debate_#{debate1.id}" do
-        click_link "Education"
+        expect(page).to_not have_link('Education')
       end
 
-      within("#debates") do
-        expect(page).to have_css('.debate', count: 1)
-        expect(page).to have_content(debate1.title)
+      within "#debate_#{debate2.id}" do
+        expect(page).to_not have_link('Health')
       end
     end
 

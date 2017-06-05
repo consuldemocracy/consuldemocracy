@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Tags' do
 
-  scenario 'Index' do
+  scenario 'Does not show on index' do
     create_featured_proposals
     earth = create(:proposal, tag_list: 'Medio Ambiente')
     money = create(:proposal, tag_list: 'Economía')
@@ -10,23 +10,11 @@ feature 'Tags' do
     visit proposals_path
 
     within "#proposal_#{earth.id}" do
-      expect(page).to have_content "Medio Ambiente"
+      expect(page).to_not have_content "Medio Ambiente"
     end
 
     within "#proposal_#{money.id}" do
-      expect(page).to have_content "Economía"
-    end
-  end
-
-  scenario 'Index shows up to 5 tags per proposal' do
-    create_featured_proposals
-    tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
-    create :proposal, tag_list: tag_list
-
-    visit proposals_path
-
-    within('.proposal .tags') do
-      expect(page).to have_content '1+'
+      expect(page).to_not have_content "Economía"
     end
   end
 
@@ -38,21 +26,6 @@ feature 'Tags' do
 
     expect(page).to_not have_selector('#proposals .proposal-featured')
     expect(page).to_not have_selector('#featured-proposals')
-  end
-
-  scenario 'Index shows 3 tags with no plus link' do
-    create_featured_proposals
-    tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
-    create :proposal, tag_list: tag_list
-
-    visit proposals_path
-
-    within('.proposal .tags') do
-      tag_list.each do |tag|
-        expect(page).to have_content tag
-      end
-      expect(page).not_to have_content '+'
-    end
   end
 
   scenario 'Show' do
@@ -196,7 +169,7 @@ feature 'Tags' do
 
   context "Filter" do
 
-    scenario "From index" do
+    scenario "Does not from index" do
       create_featured_proposals
       proposal1 = create(:proposal, tag_list: 'Education')
       proposal2 = create(:proposal, tag_list: 'Health')
@@ -204,12 +177,11 @@ feature 'Tags' do
       visit proposals_path
 
       within "#proposal_#{proposal1.id}" do
-        click_link "Education"
+        expect(page).to_not have_link('Education')
       end
 
-      within("#proposals") do
-        expect(page).to have_css('.proposal', count: 1)
-        expect(page).to have_content(proposal1.title)
+      within "#proposal_#{proposal2.id}" do
+        expect(page).to_not have_link('Health')
       end
     end
 
