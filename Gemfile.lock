@@ -181,6 +181,8 @@ GEM
     hashie (3.5.5)
     highline (1.7.8)
     htmlentities (4.3.4)
+    httparty (0.15.5)
+      multi_xml (>= 0.5.2)
     httpi (2.4.1)
       rack
     i18n (0.8.1)
@@ -498,6 +500,7 @@ DEPENDENCIES
   foundation_rails_helper (~> 2.0.0)
   fuubar
   groupdate (~> 3.2.0)
+  httparty
   i18n-tasks (~> 0.9.15)
   initialjs-rails (= 0.2.0.4)
   invisible_captcha (~> 0.9.2)
@@ -542,4 +545,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
