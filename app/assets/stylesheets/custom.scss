@@ -2292,8 +2292,9 @@ $campaign-yellow:  #FFDB19;
   .header {
     background: $campaign-brown;
 
-    h2 {
+    h1 {
       color: black;
+      font-size: rem-calc(36);
 
       span {
         background: black;
@@ -2310,7 +2311,7 @@ $campaign-yellow:  #FFDB19;
 
   .budgets-timeline {
 
-    h3 {
+    h4 {
       background: $campaign-red;
       color: white;
       padding: $line-height/4 $line-height/2;
@@ -2377,7 +2378,7 @@ $campaign-yellow:  #FFDB19;
   background: black;
   padding-left: 0;
 
-  h3, p, a {
+  h4, p, a {
     color: white;
   }
 
@@ -2390,7 +2391,7 @@ $campaign-yellow:  #FFDB19;
   background: $campaign-yellow;
   padding-right: 0;
 
-  h3, p, a {
+  h4, p, a {
     color: black;
   }
 
@@ -2642,18 +2643,18 @@ ul.ballot-list {
     padding: 0 $line-height/4;
   }
 
-  h2 {
+  p.budgets-lead-title {
     font-family: 'Franklin Gothic' !important;
     font-size: rem-calc(40);
     line-height: rem-calc(40);
     text-transform: uppercase;
   }
 
-  a h2 {
+  a .budgets-lead-title {
     color: white;
   }
 
-  a:hover, a:hover h2 {
+  a:hover, a:hover .budgets-lead-title {
     text-decoration: none !important;
   }
 

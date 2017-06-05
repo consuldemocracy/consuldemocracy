@@ -30,7 +30,8 @@
       <%= link_to t("layouts.header.processes"),
                     processes_path,
                     class: ("active" if current_page?(processes_path)),
-                    accesskey: "4"  %>
+                    accesskey: "4",
+                    title: t("shared.go_to_page") + t("layouts.header.processes") %>
     </li>
     <% if feature?(:spending_proposals) %>
       <li>
