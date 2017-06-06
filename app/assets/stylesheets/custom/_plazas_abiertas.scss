@@ -1,0 +1,133 @@
+// Plazas abiertas landing
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.plazas-abiertas {
+
+  h2 {
+    color: #0054A1;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .header {
+    background: #EEEEF8;
+    position: relative;
+    margin-bottom: $line-height*2;
+
+    &:after {
+      border-left: 1000px solid #EEEEF8;
+      border-top: 24px solid transparent;
+      border-bottom: 24px solid transparent;
+      display: block;
+      content: "";
+      width: 100%;
+      position: absolute;
+      margin-left: 0;
+      z-index: -1;
+    }
+
+    h1 {
+      color: $text;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+      text-transform: uppercase;
+    }
+
+    a {
+      color: $brand;
+    }
+
+    .lead {
+      font-size: rem-calc(24);
+      font-weight: bold;
+      line-height: rem-calc(36);
+    }
+
+    .button {
+      font-size: rem-calc(24);
+    }
+  }
+
+  .share {
+    background: #F1F6F8;
+    padding: $line-height/2;
+    border-radius: rem-calc(4);
+    position: relative;
+
+    h3 {
+      font-size: rem-calc(22);
+    }
+
+    &:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-top-color: #F1F6F8;
+      border-width: 10px;
+      margin-left: -100px;
+    }
+  }
+
+  span.hashtag {
+    background: #10D4AB;
+    color: black;
+    display: inline-block;
+    font-size: $small-font-size;
+    margin: $line-height/4 0;
+    padding: 0 $line-height/6;
+
+    &.big {
+      padding: 0 $line-height/2;
+      position: relative;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(30);
+
+        &:after {
+          top: 100%;
+          left: 50%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+
+        &:after {
+          border-top-color: #10D4AB;
+          border-width: 10px;
+          margin-left: -100px;
+        }
+      }
+    }
+  }
+
+  .how-works {
+    background: #F1F6F8;
+  }
+
+  .step {
+
+    span {
+      background: #10D4AB;
+      color: black;
+      display: inline-block;
+      font-size: rem-calc(24);
+      font-weight: bold;
+      margin-bottom: $line-height/2;
+      padding: $line-height/4 $line-height/2;
+    }
+  }
+}

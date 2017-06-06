@@ -2434,6 +2434,17 @@ $campaign-yellow:  #FFDB19;
   }
 }
 
+.budget-video-container {
+  background: #EEEFF9;
+  height: 480px;
+  margin-top: $line-height*2;
+}
+
+.budget-video-info {
+  margin-top: -2px;
+  padding: $line-height;
+}
+
 .previous-budgets {
   border-top: 1px solid $border;
   padding: $line-height*2 0;
