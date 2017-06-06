@@ -54,3 +54,6 @@ Layout/SpaceInsideBlockBraces:
 
 Layout/TrailingBlankLines:
   Enabled: false
+
+Rails/ApplicationRecord:
+  Enabled: false
