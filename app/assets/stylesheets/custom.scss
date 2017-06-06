@@ -32,21 +32,17 @@
 
 .budgets-videos-2017 {
 
-  a {
-    text-decoration: underline;
-  }
-
   .header {
     background: $budget;
     padding: $line-height 0;
 
     h1 {
       color: $text;
-      text-transform: uppercase
-    }
-
-    a {
-      color: $brand;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(40);
+      line-height: rem-calc(40);
+      margin-top: $line-height*2;
+      text-transform: uppercase;
     }
 
     .button {

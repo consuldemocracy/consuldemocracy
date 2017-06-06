@@ -136,6 +136,16 @@ es:
       date: "Del 15 de mayo al 30 de junio"
       button: "Votar proyectos"
       more_info: "Más información sobre los presupuestos participativos"
+      plazas_abiertas:
+        label: "Evento"
+        title: "Plazas abiertas"
+        text: "El domingo 18 de junio, de 11 a 13 horas, debatimos los presupuestos participativos en plazas de los 21 distritos de Madrid."
+        link: "Más información sobre Plazas Abiertas"
+      videos:
+        label: "Vídeos"
+        title: "Presupuestos participativos"
+        text: "Las personas que han propuesto proyectos en los presupuestos participativos nos cuentan en vídeo en qué consiste su idea."
+        link: "Ver vídeos de Presupuestos participativos"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
@@ -145,7 +155,6 @@ es:
     lobbies:
       title: "Registro de lobbies del Ayuntamiento de Madrid"
       description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
-      date_html: "Participa hasta el <strong>4 de junio</strong>"
     manzanares:
       title: "Parque Lineal del Manzanares"
       description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."

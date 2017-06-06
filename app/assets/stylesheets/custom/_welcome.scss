@@ -52,9 +52,7 @@
   h2 {
 
     &.title {
-      border-left: 1px solid $brand;
       color: $brand;
-      padding-left: $line-height/2;
     }
   }
 
@@ -139,10 +137,6 @@
   background: $budget;
   padding: $line-height*2 0;
 
-  @include breakpoint(medium) {
-    padding: $line-height*4 0;
-  }
-
   .lead-title {
     font-family: 'Franklin Gothic' !important;
     font-size: rem-calc(40);
@@ -196,5 +190,36 @@
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #5A6175; }
+  }
+}
+
+.budgets-extra-module {
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    position: relative;
+
+    figcaption {
+      bottom: 0;
+      color: white;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(36);
+      line-height: rem-calc(36);
+      text-transform: uppercase;
+      padding: $line-height/4 $line-height/2;
+      position: absolute;
+      width: 100%;
+
+      span {
+        background: white;
+        border-radius: rem-calc(4);
+        color: black;
+        display: inline;
+        font-size: $base-font-size;
+        padding: rem-calc(4) rem-calc(8);
+      }
+    }
   }
 }

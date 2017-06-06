@@ -12,10 +12,10 @@
         <%= t("pages.processes.index.title") %>
       </h1>
       <h2 class="label"><%= t("pages.processes.index.featured") %></h2>
-      <!-- PROCESO DESTACADO (Registro de lobbies) -->
-      <h3><%= t("processes.lobbies.title") %></h3>
-      <p><%= t("processes.lobbies.description") %></p>
-      <%= link_to t("processes.shared.more_info"), lobbies_path, class: "button" %>
+      <!-- PROCESO DESTACADO (Parque Manzanares) -->
+      <h3><%= t("processes.manzanares.title") %></h3>
+      <p><%= t("processes.manzanares.description") %></p>
+      <%= link_to t("processes.shared.more_info"), manzanares_path, class: "button" %>
     </div>
   </div>
 </div>
@@ -57,14 +57,6 @@
             <%= link_to t("processes.shared.more_info"), manzanares_path, class: "button hollow",
                         title: t("pages.processes.index.more_info_title") + t("processes.manzanares.title") %>
           </div>
-
-          <!-- Registro de lobbies -->
-          <div class="panel">
-            <h3><%= t("processes.lobbies.title") %></h3>
-            <p><%= t("processes.lobbies.description") %></p>
-            <%= link_to t("processes.shared.more_info"), lobbies_path, class: "button hollow",
-                        title: t("pages.processes.index.more_info_title") + t("processes.lobbies.title") %>
-          </div>
         </div>
 
         <!-- Procesos próximamente -->
@@ -79,6 +71,14 @@
         <!-- Procesos terminados -->
         <div class="tabs-panel" id="panel3v">
           <h2 class="sr-only"><%= t("pages.processes.menu.finished") %></h2>
+
+          <!-- Registro de lobbies -->
+          <div class="panel">
+            <h3><%= t("processes.lobbies.title") %></h3>
+            <p><%= t("processes.lobbies.description") %></p>
+            <%= link_to t("processes.shared.more_info"), lobbies_path, class: "button hollow",
+                        title: t("pages.processes.index.more_info_title") + t("processes.lobbies.title") %>
+          </div>
 
           <!-- Publicidad exterior -->
           <div class="panel">
