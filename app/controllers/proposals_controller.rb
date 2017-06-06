@@ -23,11 +23,23 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @proposal = Proposal.new
-    if (!params[:problem_id])
-      @proposal.build_problem
-    end
+    @proposal.build_problem
   end
+
+  # def create
+  #   if !proposal_params[:problem_id].blank?
+  #     p proposal_params
+  #     params[:proposal].delete :problem_attributes
+  #     p proposal_params
+  #   end
+  #   @proposal = Proposal.new(proposal_params)
+  #   @proposal.save
+  #   # if @proposal.save
+  #   #   redirect_to proposal_path(@proposal)
+  #   # else
+  #   #   render :new
+  #   # end
+  # end
 
   def index_customization
     discard_archived
@@ -65,7 +77,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :user_id])
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :cause, :consequence, :prioritize, :user_id])
     end
 
     def retired_params

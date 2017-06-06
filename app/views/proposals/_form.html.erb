@@ -8,6 +8,10 @@
       <%= f.select :problem_id, valid_problems.collect {|p| [ p.title, p.id ] }, {include_blank: t("problems.form.blank"), label: false},  {:onchange=> "jsProblemChanged()"} %>
     </div>
 
+    <div id="show-problem">
+      <!-- TODO: Acá se debe mostrar el problema elegido -->
+    </div>
+
     <div class="small-12 column" id="problem-hidden">
       <div class="panel callout radius">
         <h5>Definir el problema</h5>
