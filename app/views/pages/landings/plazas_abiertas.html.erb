@@ -44,6 +44,17 @@
       <div class="share">
         <h3>¡Ven a 'Plazas Abiertas'!</h3>
         <p>Ayúdanos a difundir en redes sociales usando las etiquetas:<br><span class="hashtag"><strong>#PlazasAbiertas18J</strong></span><br><span class="hashtag"><strong>#VotaPresupuestosParticipativos</strong></span></p>
+
+        <div class="text-center margin">
+          <%= image_tag "landings/plazas_abiertas.jpg", alt: "Imagen del cartel de Plazas Abiertas" %>
+        </div>
+
+        <p>
+          <small>También puedes descargar una imagen del cartel para compartirla.</small><br>
+          <%= link_to "Descargar cartel Plazas Abiertas".html_safe,
+                      "/docs/plazas_abiertas.jpg", target: "_blank",
+                      title: "Cartel Plazas Abiertas JPG - 335Kb "+ t("shared.target_blank_html") %>
+        </p>
       </div>
     </div>
   </div>
