@@ -136,6 +136,16 @@ en:
       date: "From May 15 to June 30"
       button: "Vote projects"
       more_info: "More information about participatory budgets"
+      plazas_abiertas:
+        label: "Event"
+        title: "Plazas abiertas"
+        text: "On Sunday 18 June, from 11 am to 1 pm, we discussed participatory budgets in squares of the 21 districts of Madrid."
+        link: "More information about Plazas Abiertas"
+      videos:
+        label: "Videos"
+        title: "Participatory budgets"
+        text: "The people who have proposed projects in participatory budgets tell us in video what their idea is."
+        link: "Watch videos of Participatory budgets"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
