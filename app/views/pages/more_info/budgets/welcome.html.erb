@@ -38,10 +38,19 @@
   </div>
 
   <div class="row margin-top">
-    <div class="small-12 column">
-      <h2 class="map-title text-center margin-bottom">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>
+    <div class="small-12 medium-9 column">
+      <h2 class="map-title margin-bottom">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>
       <iframe src="https://www.google.com/maps/d/embed?mid=1lf155NMY1TmVElqka-UEw5qrvEo" height="480" style="border:0; width:100%;" allowfullscreen title="Mapa de propuestas localizables geográficamente de los presupuestos participativos 2017"></iframe>
       <%= link_to "Ver lista completa de propuestas", "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017" %>
+    </div>
+    <div class="small-12 medium-3 column">
+      <div class="budget-video-container">
+        <%= image_tag "budget_welcome/videos_info.png", alt:"100 millones para hacer Madrid" %>
+        <div class="budget-video-info">
+          <p>Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final, nos explican de primera mano en qué consisten sus propuestas.</p>
+          <%= link_to "Ver vídeos de proyectos", budgets_videos_2017_path ,class: "button expanded" %>
+        </div>
+      </div>
     </div>
   </div>
 
