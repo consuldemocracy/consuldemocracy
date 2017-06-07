@@ -94,6 +94,7 @@ group :development, :test do
   gem "faker", '~> 1.7.3'
   gem 'rubocop', '~> 0.49.1', require: false
   gem 'knapsack'
+  gem 'awesome_print'
 end
 
 group :test do
