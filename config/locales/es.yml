@@ -832,6 +832,7 @@ es:
       title: Procesos participativos
       see_all: Ver todos los procesos
       features: "Participa en %{org_name}"
+      label: "Participa"
       proposals:
         title: Crea propuestas ciudadanas
         text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."

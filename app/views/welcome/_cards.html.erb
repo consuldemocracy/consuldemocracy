@@ -5,17 +5,19 @@
       <h2 class="title inline-block">
         <%= t("welcome.featured.title") %>
       </h2>
-      <%= link_to processes_path, class: "float-right margin-top" do %>
-        <small><%= t("welcome.featured.see_all") %></small>
-      <% end %>
+      <div class="float-right see-all">
+        <%= link_to processes_path do %>
+          <small><%= t("welcome.featured.see_all") %></small><span class="icon-angle-right"></span>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div class="row" data-equalizer>
+  <div class="row">
 
     <!-- Parque Manzanares -->
     <div class="small-12 medium-4 column margin-top end">
-      <div class="panel" data-equalizer-watch>
+      <div class="panel">
         <h3><%= t("processes.manzanares.title") %></h3>
         <p class="info-date"><span class="icon-document"></span>&nbsp;<%= t("processes.manzanares.date_html") %></p>
         <p class="info">
