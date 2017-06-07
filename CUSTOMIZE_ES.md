@@ -68,7 +68,7 @@ Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en
   background: red;
 }
 ```
-Si quieres cambiar alguna variable de foundation puedes hacerlo en el fichero `app/assets/stylesheets/_custom_settings.scss`. Por ejemplo para cambiar el color general de la aplicación puedes hacerlo agregando:
+Si quieres cambiar alguna variable de [foundation](http://foundation.zurb.com/) puedes hacerlo en el fichero `app/assets/stylesheets/_custom_settings.scss`. Por ejemplo para cambiar el color general de la aplicación puedes hacerlo agregando:
 
 ```css
 $brand:             #446336;
