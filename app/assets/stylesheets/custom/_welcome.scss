@@ -115,11 +115,8 @@
   }
 
   .slogan {
-    background: #E23135 image-url('home_page_bg_slogan.jpg');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: rem-calc(-$line-height*2);
+    border-bottom: 1px solid $border;
+    border-top: 1px solid $border;
     padding: $line-height*2 0;
 
     p {
@@ -193,7 +190,17 @@
   }
 }
 
-.budgets-extra-module {
+.see-all {
+  margin-top: $line-height/2;
+
+  .icon-angle-right {
+    display: inline-block;
+    height: rem-calc(17);
+    vertical-align: middle;
+  }
+}
+
+.welcome {
 
   figure {
     margin-left: 0;
@@ -211,6 +218,12 @@
       padding: $line-height/4 $line-height/2;
       position: absolute;
       width: 100%;
+
+      h3 {
+        font-family: 'Franklin Gothic' !important;
+        font-size: rem-calc(36);
+        line-height: rem-calc(36);
+      }
 
       span {
         background: white;

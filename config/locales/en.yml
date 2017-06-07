@@ -831,6 +831,7 @@ en:
       title: Participatory processes
       see_all: See all processes
       features: "Participate on %{org_name}"
+      label: "Participate"
       proposals:
         title: Create citizen proposals
         text: "Do you have an idea for Madrid? Propose it. If 1% of the people of Madrid support it, we will vote to make it out."
