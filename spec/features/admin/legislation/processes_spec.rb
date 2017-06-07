@@ -61,7 +61,7 @@ feature 'Admin legislation processes' do
   end
 
   context 'Update' do
-    scenario 'Deactivate debate phase', js: true do
+    scenario 'Deactivate debate phase', :js do
       process = create(:legislation_process, title: 'An example legislation process')
       visit admin_root_path
 
@@ -71,7 +71,7 @@ feature 'Admin legislation processes' do
 
       click_link "An example legislation process"
 
-      expect(page).to have_selector("h1", text: "An example legislation process")
+      expect(page).to have_selector("h2", text: "An example legislation process")
       expect(find("#debate_phase_active")).to be_checked
 
       uncheck "debate_phase_active"
