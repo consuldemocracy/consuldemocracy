@@ -30,28 +30,24 @@
       </tr>
     </tbody>
   </table>
+
+  <p>
+    <% if question.id == 1 %>
+      <%= link_to "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" do %>
+        Ir a la propuesta "Billete único para el transporte público"
+      <% end %>
+    <% elsif question.id == 2 %>
+      <%= link_to "https://decide.madrid.es/proposals/199-madrid-100-sostenible" do %>
+        Ir a la propuesta "Madrid 100% Sostenible"
+      <% end %>
+    <% elsif question.id == 3 %>
+      <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/38" do %>
+        Ir a "Proyecto X: Welcome mother Nature"
+      <% end %>
+      <br>
+      <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/22" do %>
+        Ir a "Proyecto Y: UN PASEO POR LA CORNISA"
+      <% end %>
+    <% end %>
+  </p>
 <% end %>
-
-<p>
-  <%= link_to "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" do %>
-    Ir a la propuesta "Billete único para el transporte público"
-  <% end %>
-</p>
-
-<p>
-  <%= link_to "https://decide.madrid.es/proposals/199-madrid-100-sostenible" do %>
-    Ir a la propuesta "Madrid 100% Sostenible"
-  <% end %>
-</p>
-
-<p>
-  <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/38" do %>
-    Ir a "Proyecto X: Welcome mother Nature"
-  <% end %>
-</p>
-
-<p>
-  <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/22" do %>
-    Ir a "Proyecto Y: UN PASEO POR LA CORNISA"
-  <% end %>
-</p>

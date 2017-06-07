@@ -1,3 +1,7 @@
+<% provide :title do %>
+  <%= @budget.name + ": " + @group.name %>
+<% end %>
+<% provide :meta_description, t("meta_tags.budget.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_group_url(filter: @current_filter) %>
 <% end %>

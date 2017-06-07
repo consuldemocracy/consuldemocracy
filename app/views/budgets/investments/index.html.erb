@@ -1,4 +1,13 @@
-<% provide :title do %><%= t('budgets.investments.index.title') %><% end %>
+<% provide :title do %>
+  <% if @heading.present? %>
+    <%= @budget.name + ": " + @heading.name %>
+  <% else %>
+    <%= t("meta_tags.budget.title") %>
+  <% end %>
+<% end %>
+
+<% provide :meta_description, t("meta_tags.budget.description") %>
+
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
              search_path: budget_investments_path(budget_id: @budget.id, page: 1),

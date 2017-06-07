@@ -23,13 +23,13 @@
 
       <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.transparency_title"), setting['transparency_url'].presence || t("layouts.footer.transparency_url"),
-                    target: "_blank", title: t('shared.target_blank_html'), class: "title", rel: "nofollow" %>
+                    target: "_blank", title: t('shared.target_blank_html'), class: "title" %>
         <p><%= t("layouts.footer.transparency_text") %></p>
       </div>
 
       <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"),
-                    target: "_blank", title: t('shared.target_blank_html'), class: "title", rel: "nofollow" %>
+                    target: "_blank", title: t('shared.target_blank_html'), class: "title" %>
         <p><%= t("layouts.footer.open_data_text") %></p>
       </div>
     </div>
