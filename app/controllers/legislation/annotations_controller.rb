@@ -8,7 +8,7 @@ class Legislation::AnnotationsController < ApplicationController
   load_and_authorize_resource :draft_version, through: :process
   load_and_authorize_resource
 
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w{most_voted newest}, only: :show
 
   def index
     @annotations = @draft_version.annotations
@@ -16,7 +16,15 @@ class Legislation::AnnotationsController < ApplicationController
 
   def show
     @commentable = @annotation
-    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+
+    if params[:sub_annotation_ids].present?
+      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(','))
+      annotations = [@commentable, @sub_annotations]
+    else
+      annotations = [@commentable]
+    end
+
+    @comment_tree = MergedCommentTree.new(annotations, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
   end
 

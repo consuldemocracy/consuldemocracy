@@ -144,7 +144,7 @@ feature 'Legislation Draft Versions' do
       page.find(:css, ".legislation-annotatable").double_click
       page.find(:css, ".annotator-adder button").click
       expect(page).to_not have_css('#legislation_annotation_text')
-      expect(page).to have_content "ou must Sign in or Sign up to leave a comment."
+      expect(page).to have_content "You must Sign in or Sign up to leave a comment."
     end
 
     scenario 'Create' do
@@ -201,6 +201,30 @@ feature 'Legislation Draft Versions' do
       click_button "Publish comment"
       expect(page).to have_content "My interesting comment"
     end
+  end
+
+  context "Merged annotations", :js do
+
+    let(:user) { create(:user) }
+    background { login_as user }
+
+    scenario 'View annotations and comments in an included range' do
+      draft_version = create(:legislation_draft_version, :published)
+      annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>5}])
+      annotation2 = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>10}])
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+
+      within(".comment-box") do
+        expect(page).to have_content "2 comment"
+        expect(page).to have_content "my annotation"
+        expect(page).to have_content "my other annotation"
+      end
+    end
+
   end
 
   context "Annotations page" do
