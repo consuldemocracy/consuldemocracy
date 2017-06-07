@@ -69,8 +69,9 @@ But for some actions like voting, you will need a verified user, the seeds file 
  **pass:** 12345678
 
 ### Customization
-
-See [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
+Read more on documentation: 
+* English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
+* Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 
 ### OAuth
 
