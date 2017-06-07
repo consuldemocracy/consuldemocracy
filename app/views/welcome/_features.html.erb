@@ -9,25 +9,29 @@
     </div>
   </div>
 
-  <div class="row margin-top" data-equalizer>
+  <div class="row margin-top">
     <div class="small-12 medium-6 column">
-      <%= image_tag "welcome_featured_proposals.png", alt: t("welcome.featured.proposals.alt_image") %>
-      <div class="panel" data-equalizer-watch>
-        <h3><%= t('welcome.featured.proposals.title') %></h3>
-        <p>
-          <%= t('welcome.featured.proposals.text') %>
-        </p>
-        <%= link_to t('welcome.featured.proposals.link'), proposals_path %>
-      </div>
+      <figure>
+        <%= image_tag "welcome_featured_proposals.png", alt: t("welcome.featured.proposals.alt_image") %>
+        <figcaption>
+          <span><%= t("welcome.featured.label") %></span><br>
+          <h3><%= t('welcome.featured.proposals.title') %></h3>
+        </figcaption>
+      </figure>
+      <p><%= t('welcome.featured.proposals.text') %></p>
+      <%= link_to t("welcome.featured.proposals.link"), proposals_path %>
     </div>
 
     <div class="small-12 medium-6 column">
-      <%= image_tag "welcome_featured_budgets.png", alt: t("welcome.featured.budgets.alt_image") %>
-      <div class="panel" data-equalizer-watch>
-        <h3><%= t('welcome.featured.budgets.title') %></h3>
-        <p><%= t('welcome.featured.budgets.text') %></p>
-        <%= link_to t('welcome.featured.budgets.link'), budgets_welcome_path %>
-      </div>
+      <figure>
+        <%= image_tag "welcome_featured_budgets.png", alt: t("welcome.featured.budgets.alt_image") %>
+        <figcaption>
+          <span><%= t("welcome.featured.label") %></span><br>
+          <h3><%= t('welcome.featured.budgets.title') %></h3>
+        </figcaption>
+      </figure>
+      <p><%= t('welcome.featured.budgets.text') %></p>
+      <%= link_to t("welcome.featured.budgets.link"), budgets_welcome_path %>
     </div>
   </div>
 </div>
