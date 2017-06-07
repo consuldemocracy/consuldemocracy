@@ -59,8 +59,6 @@ es:
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
-        world: "Participación ciudadana directa en el mundo"
-        facts: "Hechos sobre participación ciudadana y democracia directa"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
