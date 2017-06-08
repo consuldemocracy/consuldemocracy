@@ -119,5 +119,4 @@ class ProposalsController < ApplicationController
     def load_successful_proposals
       @proposal_successful_exists = Proposal.successful.exists?
     end
-
 end

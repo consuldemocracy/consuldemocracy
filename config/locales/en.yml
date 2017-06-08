@@ -77,7 +77,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      debate: Debate
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -108,9 +107,9 @@ en:
         button: Search
         placeholder: Search debates...
         title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       start_debate: Start a debate
       title: Debates
@@ -337,9 +336,9 @@ en:
         button: Search
         placeholder: Search proposals...
         title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create a proposal
@@ -369,7 +368,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      proposal: Proposal
       reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
@@ -455,9 +453,6 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       poll: "Poll"
-    banner:
-      featured_title: "#NextVoting"
-      info: "New proposals that have reached the voting phase."
   proposal_notifications:
     new:
       title: "Send message"
@@ -477,6 +472,7 @@ en:
       login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     "yes": "Yes"
     "no": "No"
+    search_results: "Search results"
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'

@@ -6,8 +6,6 @@
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
-            <span class="label-budget-investment float-left"><%= t("budgets.investments.investment.title") %></span>
-            <span class="icon-budget"></span>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
             <p class="investment-project-info">
 

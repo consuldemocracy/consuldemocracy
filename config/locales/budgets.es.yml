@@ -54,9 +54,9 @@ es:
           button: Buscar
           placeholder: Buscar propuestas de inversión...
           title: Buscar
-        search_results:
-          one: " que contiene '%{search_term}'"
-          other: " que contienen '%{search_term}'"
+        search_results_html:
+          one: " que contiene <strong>'%{search_term}'</strong>"
+          other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
           voted_html:
@@ -95,7 +95,6 @@ es:
         price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
-        title: Propuesta de inversión
         add: Votar
         already_added: "Ya has añadido esta propuesta de inversión"
         already_supported: Ya has apoyado esta propuesta. ¡Compártelo!

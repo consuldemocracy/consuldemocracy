@@ -18,28 +18,36 @@
     <%= render '/budgets/investments/header' %>
   <% end %>
 
-  <div class="wrap row">
+  <% if params[:search].present? %>
+    <div class="highlight no-margin-top padding margin-bottom">
+      <div class="row">
+        <div class="small-12 column">
+          <h2><%= t("shared.search_results") %></h2>
+          <p>
+            <%= page_entries_info @investments %>
+            <%= t("budgets.investments.index.search_results_html", count: @investments.size, search_term: params[:search]) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
     <div id="budget-investments" class="budget-investments-list small-12 medium-9 column">
 
-      <div class="small-12 search-results margin-bottom">
-
-        <% if @current_filter == "unfeasible" %>
+      <% if @current_filter == "unfeasible" %>
+        <div class="small-12 margin-bottom">
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
               <%= t("budgets.investments.index.unfeasible_text",
               definitions: link_to(t("budgets.investments.index.unfeasible_text_definitions"), "https://decide.madrid.es/participatory_budget_info#20")).html_safe %>
           </div>
-        <% else %>
-          <%= content_tag(:h2, t("budgets.investments.index.by_heading", heading: @heading.name)) if @heading.present? %>
-        <% end %>
-
-        <% if params[:search].present? %>
-          <h2>
-            <%= page_entries_info @investments %>
-            <%= t("budgets.investments.index.search_results", count: @investments.size, search_term: params[:search]) %>
-          </h2>
-        <% end %>
-      </div>
+        </div>
+      <% elsif @heading.present? %>
+        <div class="small-12 margin-bottom">
+          <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
+        </div>
+      <% end %>
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
