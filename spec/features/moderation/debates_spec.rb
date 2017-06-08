@@ -8,6 +8,8 @@ feature 'Moderate debates' do
     login_as(moderator.user)
 
     expect{ visit moderation_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.debates'] = true
   end
 
   scenario 'Hide', :js do

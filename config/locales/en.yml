@@ -97,7 +97,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      debate: Debate
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -130,9 +129,9 @@ en:
         button: Search
         placeholder: Search debates...
         title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       start_debate: Start a debate
       top: Featured
@@ -382,9 +381,9 @@ en:
         button: Search
         placeholder: Search proposals...
         title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create proposal
@@ -402,12 +401,17 @@ en:
     notice:
       retired: Proposal retired
     proposal:
+      created: "You've created a new proposal!"
+      share:
+        guide: "Now you can share it through Twitter, Facebook, Google+, Telegram or Whatsapp (if you're using a mobile device) so people can start supporting.<br><br>Before it gets shared you'll be able to change the text as you like."
+        view_proposal: Not now, go to my proposal
+      improve_info: "You can also %{improve_info_link} about improving your campaign"
+      improve_info_link: see more information
       already_supported: You have already supported this proposal. Share it!
       comments:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      proposal: Proposal
       reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
@@ -510,9 +514,7 @@ en:
       login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     "yes": "Yes"
     "no": "No"
-    comments:
-      title: "Comments"
-      login_to_comment: "You must sign in in order to comment"
+    search_results: "Search results"
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
@@ -572,14 +574,15 @@ en:
       proposals: Proposals
       budget: Participatory budget
       searcher: Searcher
+    go_to_page: "Go to page of "
   social:
-    blog: Blog
-    facebook: Facebook
-    twitter: Twitter
-    youtube: YouTube
+    blog: "%{org} Blog"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
     whatsapp: WhatsApp
-    telegram: Telegram
-    instagram: Instagram
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
     form:
       association_name_label: 'If you propose in name of an assocation or collective add the name here'

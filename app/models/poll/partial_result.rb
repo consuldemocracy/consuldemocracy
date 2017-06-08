@@ -13,8 +13,8 @@ class Poll::PartialResult < ActiveRecord::Base
   validates :answer, inclusion: {in: ->(a) { a.question.valid_answers }}
   validates :origin, inclusion: {in: VALID_ORIGINS}
 
-  scope :by_author, -> (author_id) { where(author_id: author_id) }
-  scope :by_question, -> (question_id) { where(question_id: question_id) }
+  scope :by_author, ->(author_id) { where(author_id: author_id) }
+  scope :by_question, ->(question_id) { where(question_id: question_id) }
 
   scope :web,    -> { where(origin: 'web') }
   scope :booth,  -> { where(origin: 'booth') }

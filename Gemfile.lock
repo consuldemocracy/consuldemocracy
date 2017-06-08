@@ -290,6 +290,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    parallel (1.11.2)
     paranoia (2.3.1)
       activerecord (>= 4.0, < 5.2)
     parser (2.4.0.0)
@@ -369,7 +370,8 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
-    rubocop (0.48.1)
+    rubocop (0.49.1)
+      parallel (~> 1.10)
       parser (>= 2.3.3.1, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
@@ -542,7 +544,7 @@ DEPENDENCIES
   rinku (~> 2.0.2)
   rollbar (~> 2.14.1)
   rspec-rails (~> 3.6)
-  rubocop (~> 0.48.1)
+  rubocop (~> 0.49.1)
   rubyzip (~> 1.2.0)
   rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.4)

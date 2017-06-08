@@ -74,6 +74,8 @@ feature 'Admin' do
     expect(page).to have_link('Moderation')
     expect(page).to have_link('Valuation')
     expect(page).to have_link('Management')
+
+    Setting['feature.spending_proposals'] = nil
   end
 
   scenario 'Admin dashboard' do

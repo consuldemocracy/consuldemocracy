@@ -434,7 +434,7 @@ FactoryGirl.define do
   end
 
   factory :poll do
-    sequence(:name) { |n| "Poll #{Faker::StarWars.character}" }
+    sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
     nvotes_poll_id "128"
 
     starts_at { 1.month.ago }
@@ -691,6 +691,7 @@ FactoryGirl.define do
   factory :legislation_process, class: 'Legislation::Process' do
     title "A collaborative legislation process"
     description "Description of the process"
+    summary "Summary of the process"
     target "Who will affected by this law?"
     how_to_participate "You can participate by answering some questions"
     start_date Date.current - 5.days

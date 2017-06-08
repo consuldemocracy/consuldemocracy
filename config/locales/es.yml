@@ -97,7 +97,6 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      debate: Debate
       votes:
         one: 1 voto
         other: "%{count} votos"
@@ -130,9 +129,9 @@ es:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
+      search_results_html:
+        one: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       start_debate: Empieza un debate
       top: Destacados
@@ -382,9 +381,9 @@ es:
         button: Buscar
         placeholder: Buscar propuestas...
         title: Buscar
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
+      search_results_html:
+        one: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
@@ -402,12 +401,17 @@ es:
     notice:
       retired: Propuesta retirada
     proposal:
+      created: "¡Has creado una nueva propuesta!"
+      share:
+        guide: "Ahora puedes compartirla en Twitter, Facebook, Google+, Telegram o Whatsapp (si utilizas un dispositivo móvil) para que la gente empieze a apoyarla.<br><br>Antes de que se publique el texto en las redes sociales podrás modificarlo a tu gusto"
+        view_proposal: "Ahora no, ver mi propuesta"
+      improve_info: "También puedes %{improve_info_link} de como mejorar tu campaña"
+      improve_info_link: ver más información
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      proposal: Propuesta
       reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
@@ -510,9 +514,7 @@ es:
       login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
-    comments:
-      title: "Comentarios"
-      login_to_comment: "Debes iniciar sesión para comentar"
+    search_results: "Resultados de búsqueda"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
@@ -572,14 +574,15 @@ es:
       proposals: Propuestas
       budget: Presupuestos participativos
       searcher: Buscador
+    go_to_page: "Ir a la página de "
   social:
-    blog: Blog
-    facebook: Facebook
-    twitter: Twitter
-    youtube: YouTube
+    blog: "Blog de %{org}"
+    facebook: "Facebook de %{org}"
+    twitter: "Twitter de %{org}"
+    youtube: "YouTube de %{org}"
     whatsapp: WhatsApp
-    telegram: Telegram
-    instagram: Instagram
+    telegram: "Telegram de %{org}"
+    instagram: "Instagram de %{org}"
   spending_proposals:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'

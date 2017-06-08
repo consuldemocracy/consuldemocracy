@@ -35,8 +35,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
     def process_params
       params.require(:legislation_process).permit(
         :title,
-        :description_summary,
-        :target_summary,
+        :summary,
         :description,
         :target,
         :how_to_participate,

@@ -65,6 +65,7 @@ Setting.create(key: 'meta_description', value: 'Citizen Participation and Open G
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
+Setting.create(key: 'proposal_improvement_path', value: nil)
 
 # piwik_tracking_code_head = "<!-- Piwik -->
 # <script type='text/javascript'>
@@ -960,6 +961,7 @@ print "Creating legislation processes"
 (1..5).each do |i|
   process = ::Legislation::Process.create!(title: Faker::Lorem.sentence(3).truncate(60),
                                            description: Faker::Lorem.paragraphs.join("\n\n"),
+                                           summary: Faker::Lorem.paragraph,
                                            target: Faker::Lorem.paragraphs.join("\n\n"),
                                            how_to_participate: Faker::Lorem.paragraphs.join("\n\n"),
                                            additional_info: Faker::Lorem.paragraphs.join("\n\n"),

@@ -214,6 +214,7 @@ en:
           end: End
           use_markdown: Use Markdown to format the text
           title_placeholder: The title of the process
+          summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
           target_placeholder: Describe who is the target of the process
           how_to_participate_placeholder: Describe how to participate
@@ -348,6 +349,7 @@ en:
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
+      administrators: Administrators
       managers: Managers
       moderators: Moderators
       newsletter: Newsletters
@@ -373,6 +375,17 @@ en:
       title_banners: Banners
       title_site_customization: Site customization
       legislation: Collaborative Legislation
+    administrators:
+      index:
+        title: Administrators
+      administrator:
+        add: Add
+        delete: Delete
+        restricted_removal: "Sorry, you can't remove yourself from the administrators"
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     moderators:
       index:
         title: Moderators

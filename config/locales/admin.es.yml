@@ -214,6 +214,7 @@ es:
           end: Fin
           use_markdown: Usa Markdown para formatear el texto
           title_placeholder: Escribe el título del proceso
+          summary_placeholder: Resumen corto de la descripción
           description_placeholder: Añade una descripción del proceso
           target_placeholder: Describe a quién va dirigido
           how_to_participate_placeholder: Describe cómo participar
@@ -326,6 +327,17 @@ es:
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Eliminar
+    administrators:
+      index:
+        title: Administradores
+      administrator:
+        add: Añadir como Administrador
+        delete: Borrar
+        restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
+      search:
+        email_placeholder: Buscar usuario por email
+        search: Buscar
+        user_not_found: Usuario no encontrado
     managers:
       index:
         title: Gestores
@@ -349,6 +361,7 @@ es:
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
       managers: Gestores
+      administrators: Administradores
       moderators: Moderadores
       newsletter: Envío de Newsletters
       valuators: Evaluadores

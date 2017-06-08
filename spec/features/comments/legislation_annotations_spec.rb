@@ -12,7 +12,7 @@ feature 'Commenting legislation questions' do
 
     expect(page).to have_css('.comment', count: 4)
 
-    comment = Comment.last
+    comment = Comment.first
     within first('.comment') do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -82,7 +82,7 @@ feature 'Commenting legislation questions' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
+  xscenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
     old_root = create(:comment, commentable: legislation_annotation, created_at: Time.current - 10)
     new_root = create(:comment, commentable: legislation_annotation, created_at: Time.current)
     old_child = create(:comment, commentable: legislation_annotation, parent_id: new_root.id, created_at: Time.current - 10)
@@ -109,7 +109,7 @@ feature 'Commenting legislation questions' do
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
 
-    within first('.comment') do
+    within all('.comment').last do
       expect(page).to have_content 'Built with http://rubyonrails.org/'
       expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
       expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
@@ -122,7 +122,7 @@ feature 'Commenting legislation questions' do
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
 
-    within first('.comment') do
+    within all('.comment').last do
       expect(page).to have_content "click me http://www.url.com"
       expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
       expect(page).not_to have_link('click me')
@@ -506,6 +506,107 @@ feature 'Commenting legislation questions' do
         expect(page).to have_content "1 vote"
       end
     end
+  end
+
+  feature "Merged comment threads", :js do
+    let!(:draft_version) { create(:legislation_draft_version, :published) }
+    let!(:annotation1) { create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>5}]) }
+    let!(:annotation2) { create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>10}]) }
+
+    background do
+      login_as user
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+
+      within(".comment-box") do
+        expect(page).to have_content "my annotation"
+        expect(page).to have_content "my other annotation"
+      end
+    end
+
+    scenario 'View comments of annotations in an included range' do
+      within("#annotation-link") do
+        first(:css, "a").trigger('click')
+      end
+
+      expect(page).to have_css(".comment", count: 2)
+      expect(page).to have_content("my annotation")
+      expect(page).to have_content("my other annotation")
+    end
+
+    scenario "Reply on a single annotation thread and display it in the merged annotation thread" do
+      within(".comment-box #annotation-#{annotation1.id}-comments") do
+        first(:link, "0 replies").click
+      end
+
+      comment = annotation1.comments.first
+      click_link "Reply"
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment-body-comment_#{comment.id}", with: 'replying in single annotation thread'
+        click_button 'Publish reply'
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content 'replying in single annotation thread'
+      end
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+
+      within(".comment-box") do
+        expect(page).to have_content "my annotation"
+        expect(page).to have_content "my other annotation"
+      end
+
+      within("#annotation-link") do
+        first(:css, "a").trigger('click')
+      end
+
+      expect(page).to have_css(".comment", count: 3)
+      expect(page).to have_content("my annotation")
+      expect(page).to have_content("my other annotation")
+      expect(page).to have_content("replying in single annotation thread")
+    end
+
+    scenario "Reply on a multiple annotation thread and display it in the single annotation thread" do
+      within("#annotation-link") do
+        first(:css, "a").trigger('click')
+      end
+
+      comment = annotation2.comments.first
+      within("#comment_#{comment.id}") do
+        click_link "Reply"
+      end
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment-body-comment_#{comment.id}", with: 'replying in multiple annotation thread'
+        click_button 'Publish reply'
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content 'replying in multiple annotation thread'
+      end
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css ".annotator-hl"
+      first(:css, ".annotator-hl").click
+
+      within(".comment-box #annotation-#{annotation2.id}-comments") do
+        first(:link, "1 reply").click
+      end
+
+      expect(page).to have_css(".comment", count: 2)
+      expect(page).to have_content("my other annotation")
+      expect(page).to have_content("replying in multiple annotation thread")
+    end
+
   end
 
 end
