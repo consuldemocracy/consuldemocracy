@@ -13,7 +13,7 @@
     </div>
 
     <div class="small-12 medium-11 column end">
-      <%= markdown(first_paragraph(process.description)) %>
+      <%= markdown(process.summary.present? ? process.summary : first_paragraph(process.description)) %>
     </div>
   </div>
 

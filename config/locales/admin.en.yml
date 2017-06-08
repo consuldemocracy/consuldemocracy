@@ -206,6 +206,7 @@ en:
           end: End
           use_markdown: Use Markdown to format the text
           title_placeholder: The title of the process
+          summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
           target_placeholder: Describe who is the target of the process
           how_to_participate_placeholder: Describe how to participate
