@@ -39,23 +39,23 @@ es:
     button: "Más información"
   meta_tags:
     welcome_index:
-      title: "Decide Madrid - Participación del Ayuntamiento de Madrid"
-      description: "Decide Madrid. Web de participación ciudadana del Ayuntamiento de Madrid. Haz, apoya y vota propuestas, decide en qué gasta el Ayuntamiento su presupuesto."
+      title: "Decide Madrid: portal de participación ciudadana de Madrid"
+      description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
     debates:
-      title: "Debates ciudadanos en Decide Madrid"
-      description: "Debate con otros habitantes de Madrid los temas de la ciudad que te preocupan y envía tus preguntas a los concejales del Ayuntamiento para que te respondan."
+      title: "Debates ciudadanos de Madrid - Decide Madrid"
+      description: "En el espacio de debates ciudadanos de Decide Madrid podrás compartir con otros habitantes de Madrid los temas de la ciudad que más te preocupan."
     proposals:
-      title: "Propuestas ciudadanas en Decide Madrid"
-      description: "Haz una propuesta, tienes un plazo de un año para conseguir 27.000 apoyos y que los habitantes de Madrid la voten. El Ayuntamiento de Madrid la realizará."
+      title: "Propuestas ciudadanas de Madrid - Decide Madrid"
+      description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."
     processes:
-      title: "Procesos de participación en Decide Madrid"
-      description: "Haz tus sugerencias en la elaboración de ordenanzas municipales, consultas previas y en los proyectos en los que el Ayuntamiento quiere saber tu opinión."
+      title: "Procesos participativos de Madrid - Decide Madrid"
+      description: "En el espacio de procesos participativos podrás participar en la elaboración de ordenanzas municipales y otros proyectos del Ayuntamiento de Madrid."
     budget:
-      title: "Presupuestos participativos en Decide Madrid"
-      description: "Tú decides en qué invierte parte de sus presupuestos el Ayuntamiento de Madrid. Haz una propuesta, consigue los apoyos y el proyecto se llevará a cabo."
+      title: "Presupuestos participativos de Madrid"
+      description: "Participa y crea un proyecto de gasto para decidir a qué proyectos destina el Ayuntamiento de Madrid su presupuesto participativo."
     first_voting:
-      title: "Votaciones ciudadanas en Decide Madrid"
-      description: "Vota las propuestas ciudadanas para mejorar la ciudad en la web Decide Madrid. Del 13 al 19 de febrero de 2017 tú decides cómo quieres que sea Madrid."
+      title: "Votaciones ciudadanas de Madrid - Decide Madrid"
+      description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
     polls_results:
       title: "Resultados de la primera votación ciudadana"
       description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
@@ -136,15 +136,25 @@ es:
       date: "Del 15 de mayo al 30 de junio"
       button: "Votar proyectos"
       more_info: "Más información sobre los presupuestos participativos"
+      plazas_abiertas:
+        label: "Evento"
+        title: "Plazas abiertas"
+        text: "El domingo 18 de junio, de 11 a 13 horas, debatimos los presupuestos participativos en plazas de los 21 distritos de Madrid."
+        link: "Más información sobre Plazas Abiertas"
+      videos:
+        label: "Vídeos"
+        title: "Presupuestos participativos"
+        text: "Las personas que han propuesto proyectos en los presupuestos participativos nos cuentan en vídeo en qué consiste su idea."
+        link: "Ver vídeos de Presupuestos participativos"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
     button: "Votar proyectos"
+    alt: "Ir a la página de presupuestos participativos 2017"
   processes:
     lobbies:
       title: "Registro de lobbies del Ayuntamiento de Madrid"
       description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
-      date_html: "Participa hasta el <strong>4 de junio</strong>"
     manzanares:
       title: "Parque Lineal del Manzanares"
       description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."
