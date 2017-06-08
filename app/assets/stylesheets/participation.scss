@@ -519,6 +519,17 @@
       }
     }
 
+    .debate-content, .proposal-content,
+    .investment-project-content, .budget-investment-content {
+      margin: 0;
+      min-height: rem-calc(180);
+      position: relative;
+
+      .tags {
+        display: block;
+      }
+    }
+
     .icon-debates, .icon-proposals, .icon-budget {
       font-size: rem-calc(18);
       line-height: $line-height;

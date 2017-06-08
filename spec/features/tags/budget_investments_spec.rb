@@ -7,18 +7,44 @@ feature 'Tags' do
   let(:group)   { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
-  scenario 'Does not show on index' do
+  scenario 'Index' do
     earth = create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente')
     money = create(:budget_investment, heading: heading, tag_list: 'Economía')
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within "#budget_investment_#{earth.id}" do
-      expect(page).to_not have_content "Medio Ambiente"
+      expect(page).to have_content "Medio Ambiente"
     end
 
     within "#budget_investment_#{money.id}" do
-      expect(page).to_not have_content "Economía"
+      expect(page).to have_content "Economía"
+    end
+  end
+
+  scenario 'Index shows 3 tags with no plus link' do
+    tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
+    create :budget_investment, heading: heading, tag_list: tag_list
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within('.budget-investment .tags') do
+      tag_list.each do |tag|
+        expect(page).to have_content tag
+      end
+      expect(page).not_to have_content '+'
+    end
+  end
+
+  scenario 'Index shows up to 5 tags per proposal' do
+    create_featured_proposals
+    tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
+    create :budget_investment, heading: heading, tag_list: tag_list
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within('.budget-investment .tags') do
+      expect(page).to have_content '1+'
     end
   end
 
@@ -114,18 +140,21 @@ feature 'Tags' do
   end
 
   context "Filter" do
-    scenario "Does not from index" do
+
+    scenario "From index" do
+
       investment1 = create(:budget_investment, heading: heading, tag_list: 'Education')
       investment2 = create(:budget_investment, heading: heading, tag_list: 'Health')
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within "#budget_investment_#{investment1.id}" do
-        expect(page).to_not have_link('Education')
+        click_link "Education"
       end
 
-      within "#budget_investment_#{investment2.id}" do
-        expect(page).to_not have_link('Health')
+      within("#budget-investments") do
+        expect(page).to have_css('.budget-investment', count: 1)
+        expect(page).to have_content(investment1.title)
       end
     end
 

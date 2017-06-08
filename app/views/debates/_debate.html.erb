@@ -42,6 +42,7 @@
               <%= debate.description %>
               <div class="truncate"></div>
             </div>
+            <%= render "shared/tags", taggable: debate, limit: 5 %>
           </div>
         </div>
 

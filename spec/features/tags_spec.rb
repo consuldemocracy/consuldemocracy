@@ -2,18 +2,18 @@ require 'rails_helper'
 
 feature 'Tags' do
 
-  scenario 'Does not show on Index' do
+  scenario 'Index' do
     earth = create(:debate, tag_list: 'Medio Ambiente')
     money = create(:debate, tag_list: 'Economía')
 
     visit debates_path
 
     within "#debate_#{earth.id}" do
-      expect(page).to_not have_content "Medio Ambiente"
+      expect(page).to have_content "Medio Ambiente"
     end
 
     within "#debate_#{money.id}" do
-      expect(page).to_not have_content "Economía"
+      expect(page).to have_content "Economía"
     end
   end
 
