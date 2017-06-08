@@ -21,8 +21,6 @@ SitemapGenerator::Sitemap.create do
   add more_info_path
   add how_to_use_path
   add faq_path
-  add participation_facts_path
-  add participation_world_path
 
   add debates_path, priority: 0.7, changefreq: "daily"
   Debate.find_each do |debate|
