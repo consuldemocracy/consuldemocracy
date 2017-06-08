@@ -100,6 +100,9 @@ level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::Phon
 verified = create_user('verified@consul.dev', 'verified')
 verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
 
+verified2 = create_user('unverified@consul.dev', 'unverified')
+
+
 (1..10).each do |i|
   org_name = Faker::Company.name
   org_user = create_user("org#{i}@consul.dev", org_name)

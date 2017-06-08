@@ -3,15 +3,28 @@
 
   <div class="row">
 
-    <div id="select-problem" class="small-12 medium-6 column" >
+    <div class="callout municipality-challenge">
+      <div class="small-12 column">
+        <h4 class="text-center"> Problema a resolver: <%= challenge.title%> </h4>
+        <%= f.hidden_field :problem_id, :value => challenge.id %>
+        <hr/>
+      </div>
+      <br></br>
+      <%= challenge.summary%>
+      <div class="small-12 medium-6 column">
+        <%= challenge.cause%>
+      </div>
+      <div class="small-12 medium-6 column">
+        <%= challenge.consequence%>
+      </div>
+      <p class="text-center"> ¡Crea tus propuestas! </p>
+    </div>
+
+    <!-- <div id="select-problem" class="small-12 medium-6 column" >
       <%= f.label :problem_id,  t("proposals.form.proposal_problem") %>
       <%= f.select :problem_id, valid_problems.collect {|p| [ p.title, p.id ] }, {include_blank: t("problems.form.blank"), label: false},  {:onchange=> "jsProblemChanged()"} %>
-    </div>
-
-    <div id="show-problem">
-      <!-- TODO: Acá se debe mostrar el problema elegido -->
-    </div>
-
+    </div> -->
+<!--
     <div class="small-12 column" id="problem-hidden">
       <div class="panel callout radius">
         <h5>Definir el problema</h5>
@@ -39,11 +52,11 @@
           <%= prob.hidden_field :user_id, :value => @current_user.id %>
          <% end %>
       </div>
-    </div>
+    </div> -->
 
     <div class="small-12 column" id="problem-display" style="display:none">
       <div class="panel callout radius">
-        <h5>Problema a resolver</h5>
+        <!-- TODO: Acá se debe mostrar el problema elegido -->
       </div>
     </div>
 
@@ -53,7 +66,6 @@
     </div>
 
     <div id="js-suggest"></div>
-
 
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
