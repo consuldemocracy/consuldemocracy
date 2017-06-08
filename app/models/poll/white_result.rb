@@ -1,6 +1,6 @@
 class Poll::WhiteResult < ActiveRecord::Base
 
-  VALID_ORIGINS = %w{ web booth }
+  VALID_ORIGINS = %w{web booth}
 
   belongs_to :author, ->   { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :booth_assignment
@@ -9,7 +9,7 @@ class Poll::WhiteResult < ActiveRecord::Base
   validates :author, presence: true
   validates :origin, inclusion: {in: VALID_ORIGINS}
 
-  scope :by_author, -> (author_id) { where(author_id: author_id) }
+  scope :by_author, ->(author_id) { where(author_id: author_id) }
 
   before_save :update_logs
 
