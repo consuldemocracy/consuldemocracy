@@ -138,11 +138,14 @@ describe Proposal do
     Setting["proposal_code_prefix"] = "TEST"
     proposal = create(:proposal)
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
+
+    Setting["proposal_code_prefix"] = "MAD"
   end
 
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
     before(:each) {Setting["max_votes_for_proposal_edit"] = 5}
+    after(:each) {Setting["max_votes_for_proposal_edit"] = 1000}
 
     it "should be true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)

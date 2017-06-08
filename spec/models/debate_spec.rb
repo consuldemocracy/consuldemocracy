@@ -84,6 +84,7 @@ describe Debate do
   describe "#editable?" do
     let(:debate) { create(:debate) }
     before(:each) { Setting["max_votes_for_debate_edit"] = 3 }
+    after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
 
     it "should be true if debate has no votes yet" do
       expect(debate.total_votes).to eq(0)
@@ -106,6 +107,7 @@ describe Debate do
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
     before(:each) { Setting["max_votes_for_debate_edit"] = 1 }
+    after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
 
     it "should be true if user is the author and debate is editable" do
       expect(debate.editable_by?(debate.author)).to be true
