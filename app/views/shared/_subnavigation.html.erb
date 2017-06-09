@@ -15,14 +15,6 @@
                                 accesskey: "2" %>
     </li>
 
-    <li>
-      <%= layout_menu_link_to t("layouts.header.projects"),
-                                projects_path,
-                                controller_name == 'projects',
-                                accesskey: "6" %>
-    </li>
-
-
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
@@ -31,6 +23,14 @@
                                   accesskey: "3" %>
       </li>
     <% end %>
+
+    <li>
+      <%= layout_menu_link_to t("layouts.header.projects"),
+                                projects_path,
+                                controller_name == 'projects',
+                                accesskey: "6" %>
+    </li>
+
     <% if feature?(:spending_proposals) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.spending_proposals"),

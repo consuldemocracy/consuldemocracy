@@ -5,7 +5,6 @@ class CreateProblems < ActiveRecord::Migration
       t.text :description
       t.text :cause
       t.text :consequence
-      t.text :prioritize
       t.string :budget
       t.text :restriction
       t.text :summary

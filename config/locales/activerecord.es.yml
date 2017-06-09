@@ -93,6 +93,7 @@ es:
         description: "Descripción"
         terms_of_service: "Términos de servicio"
         problem: "Problema"
+        prioritize: "Priorización"
       problem:
         title: "Título"
         summary: "Resumen"
@@ -101,7 +102,6 @@ es:
         restriction: "Restricciones"
         cause: "Causas"
         consequence: "Consecuencias"
-        prioritize: "Priorización"
         starts_at: "Fecha de inicio de recepción de propuestas"
         ends_at: "Fecha de término de recepción de propuestas"
         geozone_restricted: "Restringido por unidad vecinal/zonas"
