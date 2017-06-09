@@ -18,13 +18,6 @@ SitemapGenerator::Sitemap.create do
     add page_path(id: page)
   end
 
-  add more_info_path
-  add how_to_use_path
-  add faq_path
-  add participation_facts_path
-  add participation_world_path
-  add budgets_welcome_path
-
   add debates_path, priority: 0.7, changefreq: "daily"
   Debate.find_each do |debate|
     add debate_path(debate), lastmod: debate.updated_at
@@ -44,4 +37,62 @@ SitemapGenerator::Sitemap.create do
   Poll.find_each do |poll|
     add poll_path(poll), lastmod: poll.starts_at
   end
+
+  #Budgets
+  add budgets_welcome_path
+
+  #Processes
+  add processes_path
+  add urbanistic_licenses_path
+  add open_government_path
+  add open_government_doc_path
+  add subvention_ordinance_path
+  add air_quality_plan_path
+  add label_streets_path
+  add vallecas_path
+  add linea_madrid_path
+  add movilidad_path
+  add buildings_path
+  add publicity_path
+  add vicalvaro_path
+  add villaverde_path
+  add service_letters_path
+  add service_letters_1_path
+  add service_letters_2_path
+  add service_letters_3_path
+  add service_letters_4_path
+  add service_letters_5_path
+  add open_plenary_path
+  add transparency_ordinance_path
+  add transparency_ordinance_draft_path
+  add lobbies_path
+  add lobbies_draft_path
+  add manzanares_path
+
+  #Landings
+  add g1000_path
+  add blas_bonilla_path
+  add sitesientesgato_path
+  add plazas_abiertas_path
+  add budgets_videos_2017_path
+
+  #Polls 2017 results & stats
+  add primera_votacion_stats_path
+  add primera_votacion_info_path
+  add first_voting_path
+
+  # more information pages
+  add more_info_path
+  add how_to_use_path
+  add faq_path
+  add more_info_proposals_path
+  add more_info_budgets_path
+  add participation_facts_path
+  add participation_world_path
+  add more_info_polls_path
+  add kit_decide_path
+  add budgets_meetings_2016_path
+  add budgets_meetings_2017_path
+  add more_info_human_rights_path
+  add participation_open_government_path
 end

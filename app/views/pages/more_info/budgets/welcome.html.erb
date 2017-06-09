@@ -1,4 +1,5 @@
-<% provide :title do %><%= t('pages.more_info.budgets.title') %><% end %>
+<% provide :title, t("meta_tags.budget.title") %>
+<% provide :meta_description, t("meta_tags.budget.description") %>
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
@@ -9,7 +10,7 @@
   <div class="expanded header">
     <div class="row no-margin-top padding">
       <div class="small-12 medium-6 column">
-        <h2><span>Votación final de</span><br><span> presupuestos participativos 2017</span></h2>
+        <h1><span>Votación final de</span><br><span> presupuestos participativos 2017</span></h1>
         <div class="small-12 medium-6 margin-top">
           <%= link_to budget_path(Budget.last), class: "button expanded" do %>
             Votar proyectos
@@ -38,17 +39,27 @@
   </div>
 
   <div class="row margin-top">
-    <div class="small-12 column">
-      <h2 class="map-title text-center margin-bottom">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>
+    <div class="small-12 medium-9 column">
+      <h2 class="map-title margin-bottom">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>
       <iframe src="https://www.google.com/maps/d/embed?mid=1lf155NMY1TmVElqka-UEw5qrvEo" height="480" style="border:0; width:100%;" allowfullscreen title="Mapa de propuestas localizables geográficamente de los presupuestos participativos 2017"></iframe>
       <%= link_to "Ver lista completa de propuestas", "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017" %>
+    </div>
+    <div class="small-12 medium-3 column">
+      <div class="budget-video-container">
+        <%= image_tag "budget_welcome/videos_info.png", alt:"100 millones para hacer Madrid" %>
+        <%= image_tag "budget_welcome/videos_thumb.gif", alt:"Personas que han planteado proyectos en los presupuestos participativos 2017 del Ayuntamiento de Madrid." %>
+        <div class="budget-video-info">
+          <p>Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final, nos explican de primera mano en qué consisten sus propuestas.</p>
+          <%= link_to "Ver vídeos de proyectos", budgets_videos_2017_path ,class: "button expanded" %>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="budgets-timeline margin-top">
     <div class="row">
       <div class="small-12 column text-center">
-        <h2>Los presupuestos participativos en 2 minutos</h2>
+        <h3>Los presupuestos participativos en 2 minutos</h3>
         <p>
           Si tienes alguna duda del proceso puedes <%= link_to "consultar las preguntas frecuentes", more_info_budgets_path %> o enviarnos un email a <%= link_to "preparticipativos@madrid.es", "mailto:preparticipativos@madrid.es" %>
         </p>
@@ -60,7 +71,7 @@
         <%= image_tag "budget_welcome/step_1.gif", alt:"" %>
       </div>
       <div class="small-12 large-5 column block-border-left">
-        <h3>Envío de proyectos</h3>
+        <h4>Envío de proyectos</h4>
         <p>Del <strong>18 de enero al 8 de marzo</strong>, cualquier persona empadronada en Madrid puede crear un proyecto de gasto para toda la ciudad o para un distrito concreto. Los <strong>100 millones</strong> se repartirán en una bolsa para proyectos para toda la ciudad, y una para cada distrito.</p>
 
         <p>En cada distrito hay espacios donde debatir, pensar y trabajar juntos sobre los proyectos, que se dejan en la web de Decide Madrid o en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">26 Oficinas de Atención a la Ciudadanía</a> que están por todo Madrid.</p>
@@ -69,7 +80,7 @@
 
     <div class="row">
       <div class="small-12 large-5 column large-text-right block-border-right">
-        <h3>Apoyos y evaluación de proyectos</h3>
+        <h4>Apoyos y evaluación de proyectos</h4>
         <p>Del <strong>11 al 25 de marzo</strong> los usuarios verificados de Decide Madrid pueden apoyar proyectos de gasto para toda la ciudad y para el distrito que elijan. Los proyectos más apoyados pasan a la votación final.</p>
 
         <p>El Ayuntamiento estudia hasta el 14 de mayo que cada uno de esos proyectos cumple los requisitos de que sean viables y legales. El Ayuntamiento dice si todo esto se cumple y tasa cuánto costaría llevar los proyectos a cabo.</p>
@@ -84,7 +95,7 @@
         <%= image_tag "budget_welcome/step_3.gif", alt:"" %>
       </div>
       <div class="small-12 large-5 column block-border-left">
-        <h3>Votación final</h3>
+        <h4>Votación final</h4>
         <p>Del <strong>15 de mayo al 30 de junio</strong> tú decides qué proyectos finalistas de toda la ciudad y los distritos recibirán <strong>100 millones de euros</strong>. Conviértete en alcalde o alcaldesa y elige todas las propuestas que quieras hasta gastar el presupuesto.</p>
 
         <p>Las propuestas más votadas que completen los 100 millones serán las seleccionadas y se incluirán en el Proyecto Inicial del Presupuesto General del Ayuntamiento de Madrid.</p>
@@ -98,11 +109,11 @@
     </div>
   </div>
 
-  <div class="padding margin" data-equalizer>
+  <!-- <div class="padding margin" data-equalizer>
     <div class="small-12 medium-6 column block-black" data-equalizer-watch>
       <div class="row">
         <div class="small-12 medium-8 medium-offset-4 column">
-          <h3>Espacios presenciales de debate y propuesta</h3>
+          <h4>Espacios presenciales de debate y propuesta</h4>
           <p>Aquí publicaremos la información de los encuentros presenciales para debatir los presupuestos participativos.</p>
         </div>
       </div>
@@ -111,13 +122,13 @@
     <div class="small-12 medium-6 column block-yellow" data-equalizer-watch>
       <div class="row">
         <div class="small-12 medium-8 column">
-          <h3>Si te sientes gato</h3>
+          <h4>Si te sientes gato</h4>
           <p>Si eres docente o responsable de un grupo de jóvenes puedes implicar a los votantes de menor edad en esta iniciativa didáctica sobre los presupuestos participativos.</p>
-          <%= link_to "Visitar Si te sientes gato", "https://decide.madrid.es/sitesientesgato", target: "_blank" %>
+          <%# link_to "Visitar Si te sientes gato", "https://decide.madrid.es/sitesientesgato", target: "_blank" %>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="small-12 column text-center margin">

@@ -52,9 +52,7 @@
   h2 {
 
     &.title {
-      border-left: 1px solid $brand;
       color: $brand;
-      padding-left: $line-height/2;
     }
   }
 
@@ -117,11 +115,8 @@
   }
 
   .slogan {
-    background: #E23135 image-url('home_page_bg_slogan.jpg');
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: rem-calc(-$line-height*2);
+    border-bottom: 1px solid $border;
+    border-top: 1px solid $border;
     padding: $line-height*2 0;
 
     p {
@@ -139,13 +134,10 @@
   background: $budget;
   padding: $line-height*2 0;
 
-  @include breakpoint(medium) {
-    padding: $line-height*4 0;
-  }
-
-  h2 {
+  .lead-title {
     font-family: 'Franklin Gothic' !important;
     font-size: rem-calc(40);
+    font-weight: bold;
     line-height: rem-calc(40);
     text-transform: uppercase;
 
@@ -177,7 +169,7 @@
 }
 
 @include breakpoint(medium) {
-  .typewriter h2 {
+  .typewriter p.lead-title {
     overflow: hidden;
     border-right: 2px solid #5A6175;
     white-space: nowrap;
@@ -195,5 +187,52 @@
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #5A6175; }
+  }
+}
+
+.see-all {
+  margin-top: $line-height/2;
+
+  .icon-angle-right {
+    display: inline-block;
+    height: rem-calc(17);
+    vertical-align: middle;
+  }
+}
+
+.welcome {
+
+  figure {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    position: relative;
+
+    figcaption {
+      bottom: 0;
+      color: white;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(36);
+      line-height: rem-calc(36);
+      text-transform: uppercase;
+      padding: $line-height/4 $line-height/2;
+      position: absolute;
+      width: 100%;
+
+      h3 {
+        font-family: 'Franklin Gothic' !important;
+        font-size: rem-calc(36);
+        line-height: rem-calc(36);
+      }
+
+      span {
+        background: white;
+        border-radius: rem-calc(4);
+        color: black;
+        display: inline;
+        font-size: $base-font-size;
+        padding: rem-calc(4) rem-calc(8);
+      }
+    }
   }
 }

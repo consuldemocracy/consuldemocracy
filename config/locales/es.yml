@@ -239,7 +239,7 @@ es:
       help_translate: Ayúdanos a traducir
       help_translate_info: Cómo ayudar
       locale: 'Idioma:'
-      logo: Madrid
+      logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -827,18 +827,22 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
+    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
     featured:
-      title: Procesos abiertos
+      title: Procesos participativos
       see_all: Ver todos los procesos
       features: "Participa en %{org_name}"
+      label: "Participa"
       proposals:
         title: Crea propuestas ciudadanas
         text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
         link: Ver propuestas ciudadanas
+        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
       budgets:
-        title: Presupuestos participativos
+        title: "Decide a qué proyectos se destina el presupuesto participativo"
         text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
         link: Ver proyectos de gasto
+        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
     more_information: Más información sobre %{org_name}
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla

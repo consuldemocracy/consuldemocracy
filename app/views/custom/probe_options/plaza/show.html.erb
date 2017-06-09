@@ -6,7 +6,7 @@
   <%= render "probe_options/plaza/header" %>
 <% end %>
 
-<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_20170419"] do %>
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_20170602"] do %>
   <div class="probe-show">
     <div class="row">
       <div class="small-12 medium-9 column">
@@ -37,7 +37,8 @@
           <%= render "probe_options/plaza/finalist_docs" %>
         <% else %>
           <div class="margin">
-            <%= image_tag @probe_option.original_image_url, alt: @probe_option.name %>
+            <%= image_tag @probe_option.original_image_url,
+                          alt: "Proyecto #{@probe_option.code} para la Remodelación de Plaza España: #{@probe_option.name}" %>
           </div>
         <% end %>
       </div>
