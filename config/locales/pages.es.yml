@@ -84,10 +84,6 @@ es:
     privacy: Política de Privacidad
     processes:
       back: Volver
-      menu:
-        open: "Abiertos"
-        coming_soon: "Próximamente"
-        finished: "Terminados"
       index:
         featured: Destacado
         process_1_title: Ordenanza de Transparencia

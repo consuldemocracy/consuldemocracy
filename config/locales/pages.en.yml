@@ -84,10 +84,6 @@ en:
     privacy: Privacy Policy
     processes:
       back: Back
-      menu:
-        open: "Open"
-        coming_soon: "Coming soon"
-        finished: "Finished"
       index:
         featured: Featured
         process_1_title: Transparency Ordinance
