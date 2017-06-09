@@ -11,6 +11,7 @@ feature 'Human Rights' do
     scenario 'Home' do
       visit "/"
       first(:link, "Processes").click
+      click_link "Past"
 
       within("#dd-hh") do
         click_link "Más información"
