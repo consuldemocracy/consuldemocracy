@@ -233,7 +233,7 @@ en:
     header:
       administration: Administration
       available_locales: Available languages
-      collaborative_legislation: Legislation processes
+      collaborative_legislation: Processes
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
@@ -260,7 +260,6 @@ en:
       open_city_slogan_html: In Madrid their inhabitants, <strong>discuss the topics</strong> they are concerned about, <strong>propose ideas</strong> to improve their lives and <strong>decide among themselves</strong> which ones will be carried out.
       open_gov: Open government
       proposals: Proposals
-      processes: Processes
       spending_proposals: Participatory budgeting
       poll_questions: Voting
       see_all: See proposals

@@ -33,17 +33,10 @@
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
                                 legislation_processes_path,
                                 controller.class.parent == Legislation,
-                                accesskey: "l" %>
+                                accesskey: "4",
+                                title: t("shared.go_to_page") + t("layouts.header.collaborative_legislation") %>
       </li>
     <% end %>
-
-    <li>
-      <%= link_to t("layouts.header.processes"),
-                    processes_path,
-                    class: ("active" if current_page?(processes_path)),
-                    accesskey: "4",
-                    title: t("shared.go_to_page") + t("layouts.header.processes") %>
-    </li>
 
     <% if feature?(:spending_proposals) %>
       <li>

@@ -233,7 +233,7 @@ es:
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
-      collaborative_legislation: Procesos legislativos
+      collaborative_legislation: Procesos
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
@@ -260,7 +260,6 @@ es:
       open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
       open_gov: Gobierno %{open}
       proposals: Propuestas
-      processes: Procesos
       spending_proposals: Presupuestos participativos
       poll_questions: Votaciones
       see_all: Ver propuestas
