@@ -439,6 +439,9 @@ Rails.application.routes.draw do
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
+  unless Rails.env.production?
     mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   end
 
