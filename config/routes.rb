@@ -161,7 +161,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :users, only: [:index, :show] do
+    resources :hidden_users, only: [:index, :show] do
       member do
         put :restore
         put :confirm_hide
@@ -237,6 +237,8 @@ Rails.application.routes.draw do
     resources :administrators, only: [:index, :create, :destroy] do
       get :search, on: :collection
     end
+
+    resources :users, only: [:index, :show]
 
     scope module: :poll do
       resources :polls do

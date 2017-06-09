@@ -314,7 +314,7 @@ feature 'Admin activity' do
     scenario "Shows admin restores" do
       user = create(:user, :hidden)
 
-      visit admin_users_path
+      visit admin_hidden_users_path
 
       within("#user_#{user.id}") do
         click_on "Restore"
