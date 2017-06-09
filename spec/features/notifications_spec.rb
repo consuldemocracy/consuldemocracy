@@ -48,6 +48,7 @@ feature "Notifications" do
     end
 
     logout
+    administrator.reload
     login_as administrator
     visit root_path
 
@@ -71,6 +72,7 @@ feature "Notifications" do
     end
 
     logout
+    administrator.reload
     login_as administrator
     visit root_path
 
@@ -94,6 +96,7 @@ feature "Notifications" do
     end
 
     logout
+    administrator.reload
     login_as administrator
     visit root_path
 
