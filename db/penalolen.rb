@@ -58,14 +58,13 @@ Setting['feature.signature_sheets'] = false
 puts " ✅"
 print "Creando unidades vecinales y zonas"
 
-Geozone.create(name: "city")
-Geozone.create(name: "Existent District", census_code: "01")
-(1..31).each { |i| Geozone.create(name: "Unidad Vecinal #{i}", external_code: i.ord, census_code: i.ord) }
-Geozone.create(name: "La Faena", external_code: 32, census_code: 32)
-Geozone.create(name: "Lo Hermida", external_code: 33, census_code: 33)
-Geozone.create(name: "San Luis", external_code: 34, census_code: 34)
-Geozone.create(name: "Peñalolen Alto", external_code: 35, census_code: 35)
-Geozone.create(name: "Peñalolen Nuevo", external_code: 36, census_code: 36)
+
+(1..31).each { |i| Geozone.create(name: "Unidad Vecinal #{i}", population: 3000, external_code: i.ord, census_code: i.ord) }
+Geozone.create(name: "La Faena", population: 15000, external_code: 32, census_code: 32)
+Geozone.create(name: "Lo Hermida", population: 45000, external_code: 33, census_code: 33)
+Geozone.create(name: "San Luis", population: 44000, external_code: 34, census_code: 34)
+Geozone.create(name: "Peñalolen Alto", population: 57000, external_code: 35, census_code: 35)
+Geozone.create(name: "Peñalolen Nuevo", population: 70000, external_code: 36, census_code: 36)
 
 
 

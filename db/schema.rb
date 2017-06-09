@@ -317,6 +317,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.string   "name"
     t.string   "html_map_coordinates"
     t.string   "external_code"
+    t.integer  "population"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "census_code"
@@ -860,7 +861,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-09 15:10:49', null: false
+    t.datetime "password_changed_at",                       default: '2017-06-09 16:43:32', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
