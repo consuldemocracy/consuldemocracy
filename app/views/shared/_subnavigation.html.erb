@@ -31,7 +31,7 @@
     <% if feature?(:legislation) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.collaborative_legislation"),
-                                legislation_processes_path,
+                                processes_path,
                                 controller.class.parent == Legislation,
                                 accesskey: "4",
                                 title: t("shared.go_to_page") + t("layouts.header.collaborative_legislation") %>

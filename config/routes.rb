@@ -193,6 +193,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'procesos',  to: 'legislation/processes#index', as: 'processes'
+
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
   end
@@ -559,7 +561,6 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3', as: 'human_rights_question_3'
 
   #Processes
-  get 'procesos',                                       to: 'pages#show', id: 'processes/index',                  as: 'processes'
   get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic/index',       as: 'urbanistic_licenses'
   get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government/index',  as: 'open_government'
   get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government/doc',    as: 'open_government_doc'
