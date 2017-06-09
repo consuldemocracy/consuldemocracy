@@ -23,11 +23,34 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @proposal = Proposal.new
-    if (!params[:problem_id])
-      @proposal.build_problem
-    end
+    @proposal.build_problem
   end
+
+  # def create
+  #   if !proposal_params[:problem_id].blank?
+  #     p "PARAMETROS DE PROPUESTAS ANTES DE CREAR"
+  #     p proposal_params
+  #     params[:proposal].delete :problem_attributes
+  #     p proposal_params
+  #     p "user id"
+  #     p params[:user_id]
+  #     p proposal_params[:user_id]
+  #     userid = params[:proposal][:user_id]
+  #     params[:proposal][:author_id] = userid
+  #     params[:proposal].merge(:author_id => params[:user_id])
+  #     p "PARAMETROS DE PROPUESTAS DESPUES DEL IF"
+  #     p proposal_params
+  #   end
+  #   @proposal = Proposal.new(proposal_params)
+  #   p "PARAMETROS DE PROPUESTAS DESPUES DEL NEW"
+  #   p proposal_params
+  #   if @proposal.save
+  #     redirect_to proposal_path(@proposal)
+  #   else
+  #     p @proposal.errors
+  #     render :new
+  #   end
+  # end
 
   def index_customization
     discard_archived
@@ -65,7 +88,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :user_id])
+      params.require(:proposal).permit(:title, :responsible_name, :author_id, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :prioritize, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :cause, :consequence, :user_id])
     end
 
     def retired_params

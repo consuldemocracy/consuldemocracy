@@ -37,4 +37,8 @@ module ProposalsHelper
     Proposal.all
   end
 
+  def challenge
+    Problem.last
+  end
+
 end

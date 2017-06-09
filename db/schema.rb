@@ -580,6 +580,8 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   create_table "problems", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.text     "cause"
+    t.text     "consequence"
     t.string   "budget"
     t.text     "restriction"
     t.text     "summary"
@@ -620,10 +622,12 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   create_table "proposals", force: :cascade do |t|
     t.string   "title",               limit: 80
     t.text     "description"
+    t.string   "deadline"
     t.string   "question"
     t.string   "external_url"
     t.integer  "author_id"
     t.datetime "hidden_at"
+    t.text     "prioritize"
     t.integer  "flags_count",                    default: 0
     t.datetime "ignored_flag_at"
     t.integer  "cached_votes_up",                default: 0
@@ -856,7 +860,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-05 17:44:14', null: false
+    t.datetime "password_changed_at",                       default: '2017-06-09 15:10:49', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

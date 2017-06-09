@@ -201,6 +201,7 @@ es:
       logo: Consul logo
       management: Gestión
       moderation: Moderar
+      projects: Proyectos
       valuation: Evaluación
       officing: Presidentes de mesa
       more_info: Más información
@@ -272,6 +273,15 @@ es:
     create:
       form:
         submit_button: Crear propuesta
+        label_problem_title: "Problema que afecta a tu comunidad y crees que se debería solucionar"
+        label_problem_cause: "¿Cuáles son las causas de este problema? Nombra al menos tres."
+        label_problem_consequence: "¿Cuáles son las consecuencias de este problema? Nombra al menos tres."
+        label_prioritize: "Basándote en tus respuestas de los pasos anteriores ¿Cuáles crees que son la causa y consecuencia más importantes en relación al problema?"
+        label_description: "Redacta tu propuesta.
+Intenta que ataque directamente a la causa que definiste como más importante para que pueda resolver la principal consecuencia. Recuerda que tu propuesta debe ser una medida concreta que se pueda implementar para acabar con el problema."
+        label_deadline: "¿En qué plazo se debería llegar al resultado de la propuesta?"
+        label_title: "Título de la propuesta"
+        label_question: "Pregunta de la propuesta"
     edit:
       editing: Editar propuesta
       form:
@@ -298,11 +308,14 @@ es:
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      proposal_summary: Resumen de la propuesta
+      proposal_summary: Resume tu propuesta en 140 carácteres
       proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: Texto desarrollado de la propuesta
+      proposal_text: Redacta tu propuesta
+      proposal_deadline: ¿En qué plazo se debería llegar al resultado de la propuesta?
+      proposal_description_note: Intenta que ataque directamente a la causa que definiste como más importante para que pueda resolver la principal consecuencia. Recuerda que tu propuesta debe ser una medida concreta que se pueda implementar para acabar con el problema.
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
+      proposal_prioritize: ¿Cuáles crees que son la causa y consecuencia más importantes en relación al desafío planteado?
       proposal_problem: Seleccionar desafío o definir un problema a solucionar
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"

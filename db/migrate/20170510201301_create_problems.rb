@@ -3,6 +3,8 @@ class CreateProblems < ActiveRecord::Migration
     create_table :problems do |t|
       t.string :title
       t.text :description
+      t.text :cause
+      t.text :consequence
       t.string :budget
       t.text :restriction
       t.text :summary
