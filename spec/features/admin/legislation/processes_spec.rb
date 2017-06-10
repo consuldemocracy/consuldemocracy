@@ -63,14 +63,12 @@ feature 'Admin legislation processes' do
       expect(page).to have_content 'An example legislation process'
       expect(page).not_to have_content 'Summary of the process'
       expect(page).to have_content 'Describing the process'
-      expect(page).to have_content 'This thing affects people'
 
       visit legislation_processes_path
 
       expect(page).to have_content 'An example legislation process'
       expect(page).to have_content 'Summary of the process'
       expect(page).not_to have_content 'Describing the process'
-      expect(page).not_to have_content 'This thing affects people'
     end
   end
 
