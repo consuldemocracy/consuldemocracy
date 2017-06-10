@@ -635,7 +635,6 @@ print "Creating legislation processes"
   process = ::Legislation::Process.create!(title: Faker::Lorem.sentence(3).truncate(60),
                                            description: Faker::Lorem.paragraphs.join("\n\n"),
                                            summary: Faker::Lorem.paragraph,
-                                           target: Faker::Lorem.paragraphs.join("\n\n"),
                                            additional_info: Faker::Lorem.paragraphs.join("\n\n"),
                                            start_date: Date.current - 3.days,
                                            end_date: Date.current + 3.days,

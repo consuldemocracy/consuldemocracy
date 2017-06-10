@@ -221,7 +221,6 @@ en:
           title_placeholder: The title of the process
           summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
-          target_placeholder: Describe who is the target of the process
           additional_info_placeholder: Add an additional information you consider useful
         index:
           create: New process

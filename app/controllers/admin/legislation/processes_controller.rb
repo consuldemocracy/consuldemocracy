@@ -37,7 +37,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :title,
         :summary,
         :description,
-        :target,
         :additional_info,
         :start_date,
         :end_date,

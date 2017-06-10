@@ -167,7 +167,6 @@ en:
       legislation/process:
         title: Process Title
         description: Description
-        target: Target
         additional_info: Additional info
         start_date: Start date
         end_date: End date

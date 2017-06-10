@@ -55,7 +55,6 @@ en:
       header_full:
         title: Participate
         description: Description
-        target: Target
         more_info: More information and context
       index:
         filters:

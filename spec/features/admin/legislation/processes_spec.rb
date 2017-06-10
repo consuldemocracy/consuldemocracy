@@ -41,7 +41,6 @@ feature 'Admin legislation processes' do
       fill_in 'legislation_process_title', with: 'An example legislation process'
       fill_in 'legislation_process_summary', with: 'Summary of the process'
       fill_in 'legislation_process_description', with: 'Describing the process'
-      fill_in 'legislation_process_target', with: 'This thing affects people'
 
       base_date = Date.current
       fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
