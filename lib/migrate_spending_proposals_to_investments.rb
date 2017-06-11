@@ -1,7 +1,7 @@
 class MigrateSpendingProposalsToInvestments
 
   def import(sp)
-    budget = Budget.last || Budget.create!(name: Date.today.year.to_s, currency_symbol: "€")
+    budget = Budget.last || Budget.create!(name: Date.current.year.to_s, currency_symbol: "€")
 
     group = nil
     heading = nil
