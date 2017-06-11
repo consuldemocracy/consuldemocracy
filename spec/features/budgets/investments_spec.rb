@@ -4,6 +4,7 @@ feature 'Budget Investments' do
 
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
+  let(:other_budget) { create(:budget, name: "What a Budget!") }
   let(:group)   { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
@@ -246,6 +247,56 @@ feature 'Budget Investments' do
       visit new_budget_investment_path(budget_id: budget.id)
       click_button 'Create Investment'
       expect(page).to have_content error_message
+    end
+
+    context 'Suggest' do
+      factory = :budget_investment
+
+      scenario 'Show up to 5 suggestions', :js do
+        login_as(author)
+
+        %w(first second third fourth fifth sixth).each do |ordinal|
+          create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
+        end
+        create(factory, title: "This is the last #{factory}", budget: budget)
+
+        visit new_budget_investment_path(budget)
+        fill_in "budget_investment_title", with: "search"
+
+        within("div#js-suggest") do
+          expect(page).to have_content ("You are seeing 5 of 6 investments containing the term 'search'")
+        end
+      end
+
+      scenario 'No found suggestions', :js do
+        login_as(author)
+
+        %w(first second third fourth fifth sixth).each do |ordinal|
+          create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
+        end
+
+        visit new_budget_investment_path(budget)
+        fill_in "budget_investment_title", with: "item"
+
+        within('div#js-suggest') do
+          expect(page).to_not have_content ('You are seeing')
+        end
+      end
+
+      scenario "Don't show suggestions from a different budget", :js do
+        login_as(author)
+
+        %w(first second third fourth fifth sixth).each do |ordinal|
+          create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
+        end
+
+        visit new_budget_investment_path(other_budget)
+        fill_in "budget_investment_title", with: "search"
+
+        within('div#js-suggest') do
+          expect(page).to_not have_content ('You are seeing')
+        end
+      end
     end
 
     scenario 'Ballot is not visible' do
