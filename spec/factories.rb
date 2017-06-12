@@ -538,6 +538,10 @@ FactoryGirl.define do
     trait :unfeatured do
       featured false
     end
+
+    factory :category do
+      kind "category"
+    end
   end
 
   factory :setting do
