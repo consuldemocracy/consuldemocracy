@@ -185,6 +185,7 @@ proposal1 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
+                            for_challenge: true,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
 proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
@@ -196,6 +197,7 @@ proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
+                            for_challenge: true,
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem)
@@ -210,6 +212,7 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
                             geozone: Geozone.reorder("RANDOM()").first,
+                            for_challenge: true,
                             terms_of_service: "1",
                             problem: problem,
                             cached_votes_up: Setting["votes_for_proposal_success"])
@@ -227,7 +230,8 @@ proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             tag_list: tags.sample(3).join(','),
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
-                            problem: problem)
+                            problem: problem,
+                            for_challenge: true)
 
 
 
@@ -243,6 +247,7 @@ proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
+                            for_challenge: true,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
 
