@@ -42,11 +42,11 @@ feature 'Moderate users' do
     visit root_path
 
     click_link 'Sign in'
-    fill_in 'user_email',    with: citizen.email
+    fill_in 'user_login',    with: citizen.email
     fill_in 'user_password', with: citizen.password
     click_button 'Enter'
 
-    expect(page).to have_content 'Invalid email or password'
+    expect(page).to have_content 'Invalid login or password'
     expect(current_path).to eq(new_user_session_path)
   end
 
