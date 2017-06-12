@@ -19,7 +19,7 @@
       <% if @processes.any? %>
         <%= render @processes %>
         <%= paginate @processes %>
-      <% else %>
+      <% elsif @current_filter != "past" %>
         <div class="callout primary margin-top">
           <%= t(".no_#{@current_filter}_processes") %>
         </div>
