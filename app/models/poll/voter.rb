@@ -25,7 +25,7 @@ class Poll
     scope :letter, -> { where(origin: 'letter') }
 
     def set_demographic_info
-      return unless user.present?
+      return if user.blank?
 
       self.gender  = user.gender
       self.age     = user.age
@@ -33,7 +33,7 @@ class Poll
     end
 
     def set_document_info
-      return unless user.present?
+      return if user.blank?
 
       self.document_type   = user.document_type
       self.document_number = user.document_number
@@ -66,7 +66,7 @@ class Poll
           nil
         else
           now = Time.current.to_date
-          now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+          now.year - dob.year - (now.month > dob.month || (now.month == dob.month && now.day >= dob.day) ? 0 : 1)
         end
       end
 

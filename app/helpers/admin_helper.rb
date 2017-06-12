@@ -17,7 +17,7 @@ module AdminHelper
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "users"].include? controller_name
+    ["proposals", "debates", "comments", "hidden_users"].include? controller_name
   end
 
   def menu_budget?
@@ -29,7 +29,7 @@ module AdminHelper
   end
 
   def menu_profiles?
-    ["administrators", "organizations", "officials", "moderators", "valuators", "managers"].include? controller_name
+    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users"].include? controller_name
   end
 
   def menu_banners?
@@ -50,6 +50,22 @@ module AdminHelper
 
   def admin_submit_action(resource)
     resource.persisted? ? "edit" : "new"
+  end
+
+  def user_roles(user)
+    roles = []
+    roles << :admin if user.administrator?
+    roles << :moderator if user.moderator?
+    roles << :valuator if user.valuator?
+    roles << :manager if user.manager?
+    roles << :poll_officer if user.poll_officer?
+    roles << :official if user.official?
+    roles << :organization if user.organization?
+    roles
+  end
+
+  def display_user_roles(user)
+    user_roles(user).join(", ")
   end
 
   private

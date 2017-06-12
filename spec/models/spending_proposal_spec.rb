@@ -325,9 +325,14 @@ describe SpendingProposal do
     let(:city_sp)     { create(:spending_proposal) }
     let(:district_sp) { create(:spending_proposal, geozone: district) }
 
-    before(:each) do
+    before do
       Setting["feature.spending_proposals"] = true
       Setting['feature.spending_proposal_features.voting_allowed'] = true
+    end
+
+    after do
+      Setting["feature.spending_proposals"] = nil
+      Setting['feature.spending_proposal_features.voting_allowed'] = nil
     end
 
     describe '#reason_for_not_being_votable_by' do
@@ -357,6 +362,8 @@ describe SpendingProposal do
         Setting["feature.spending_proposal_features.voting_allowed"] = true
         expect(city_sp.reason_for_not_being_votable_by(user)).to be_nil
         expect(district_sp.reason_for_not_being_votable_by(user)).to be_nil
+
+        Setting["feature.spending_proposal_features.voting_allowed"] = nil
       end
 
       it "rejects city wide votes if no votes left for the user"  do
@@ -488,9 +495,14 @@ describe SpendingProposal do
   end
 
   describe "total votes" do
-    before(:each) do
+    before do
       Setting["feature.spending_proposals"] = true
-      Setting["feature.spending_proposal_features.voting_allowed"] = true
+      Setting['feature.spending_proposal_features.voting_allowed'] = true
+    end
+
+    after do
+      Setting["feature.spending_proposals"] = nil
+      Setting['feature.spending_proposal_features.voting_allowed'] = nil
     end
 
     it "takes into account physical votes in addition to web votes" do

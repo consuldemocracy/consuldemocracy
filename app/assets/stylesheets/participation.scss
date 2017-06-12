@@ -16,14 +16,13 @@
 @mixin votes {
   border-top: 1px solid $border;
   margin-top: $line-height;
-  padding: $line-height 0;
+  padding: $line-height/2 0;
   position: relative;
 
   @include breakpoint(medium) {
     border-left: 1px solid $border;
     border-top: 0;
     margin-top: 0;
-    padding-top: $line-height*2;
   }
 
   .icon-like, .icon-unlike {
@@ -299,7 +298,10 @@
 .proposal-show,
 .investment-project-show,
 .budget-investment-show,
-.polls-show {
+.polls-show,
+.debate-quiz,
+.budget-investment-show,
+.draft-panels {
 
   p {
     word-wrap: break-word;
@@ -493,7 +495,7 @@
   }
 }
 
-.debate, .proposal, .investment-project, .budget-investment {
+.debate, .proposal, .investment-project, .budget-investment, .legislation {
   margin: $line-height/4 0;
 
   .panel {
@@ -511,45 +513,17 @@
       padding-bottom: rem-calc(12);
     }
 
-    .label-debate, .label-proposal, .label-investment-project, .label-budget-investment {
-      background: none;
-      clear: both;
-      display: block;
-      font-size: rem-calc(12);
-      font-weight: bold;
-      line-height: $line-height;
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-top: 0;
-      text-transform: uppercase;
-    }
-
-    .label-debate {
-      color: $debates;
-    }
-
-    .label-proposal {
-      color: $proposals-dark;
-    }
-
-    .label-investment-project {
-      color: $budget;
-    }
-
-    .label-budget-investment {
-      color: $budget;
-    }
-
     h3 {
       font-weight: bold;
-      margin: 0;
+      margin-top: $line-height/2;
 
       a {
         color: $text;
       }
     }
 
-    .debate-content, .proposal-content, .investment-project-content, .budget-investment-content {
+    .debate-content, .proposal-content,
+    .investment-project-content, .budget-investment-content {
       margin: 0;
       min-height: rem-calc(180);
       position: relative;

@@ -141,7 +141,7 @@ class Officing::Residence
     end
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
     end
 
     def letter?

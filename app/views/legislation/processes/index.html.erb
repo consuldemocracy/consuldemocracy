@@ -1,0 +1,34 @@
+<% provide :title do %>
+  <%= t("meta_tags.processes.title") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
+<% end %>
+<% provide :meta_description, t("meta_tags.processes.description") %>
+<% provide :tracking_page_number, "32" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: legislation_processes_url %>
+<% end %>
+
+<%= render "custom/legislation/processes_header" %>
+
+<div class="row">
+  <div class="legislation-categories small-12 medium-3 column">
+    <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
+  </div>
+
+  <div id="legislation" class="legislation-list small-12 medium-9 column">
+    <div id="legislation-list">
+      <% if @processes.any? %>
+        <%= render @processes %>
+        <%= paginate @processes %>
+      <% elsif @current_filter != "past" %>
+        <div class="callout primary margin-top">
+          <%= t(".no_#{@current_filter}_processes") %>
+        </div>
+      <% end %>
+      <% if @current_filter == "past" %>
+        <%= render "custom/legislation/processes_archived" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

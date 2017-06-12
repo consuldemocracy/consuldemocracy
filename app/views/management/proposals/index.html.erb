@@ -9,7 +9,7 @@
           <% if @search_terms %>
             <h2>
               <%= page_entries_info @proposals %>
-              <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
+              <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
             </h2>
           <% end %>
         </div>

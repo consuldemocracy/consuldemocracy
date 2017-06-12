@@ -1,6 +1,5 @@
 <% provide :title do %><%= @proposal.title %><% end %>
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
-
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: proposal_url(@proposal),

@@ -7,14 +7,14 @@ class Budget
     end
 
     def check_for_reclassification
-     if heading_changed?
-       log_heading_change
-       store_reclassified_votes("heading_changed")
-       remove_reclassified_votes
-     elsif marked_as_unfeasible?
-       store_reclassified_votes("unfeasible")
-       remove_reclassified_votes
-     end
+      if heading_changed?
+        log_heading_change
+        store_reclassified_votes("heading_changed")
+        remove_reclassified_votes
+      elsif marked_as_unfeasible?
+        store_reclassified_votes("unfeasible")
+        remove_reclassified_votes
+      end
     end
 
     def heading_changed?

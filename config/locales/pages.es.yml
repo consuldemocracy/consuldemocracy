@@ -65,6 +65,7 @@ es:
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
         button: "Ver preguntas frecuentes"
       other:
+        title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
         world: "Participación ciudadana directa en el mundo"
         facts: "Hechos sobre participación ciudadana y democracia directa"
@@ -83,10 +84,6 @@ es:
     privacy: Política de Privacidad
     processes:
       back: Volver
-      menu:
-        open: "Abiertos"
-        coming_soon: "Próximamente"
-        finished: "Terminados"
       index:
         featured: Destacado
         process_1_title: Ordenanza de Transparencia

@@ -11,7 +11,7 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "Poll::Question", "ProbeOption", "SpendingProposal", "Budget::Investment"]
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "SpendingProposal", "ProbeOption", "Poll::Question", "Budget::Investment", "Legislation::Question", "Legislation::Annotation"]
 
   validate :validate_body_length
 

@@ -584,6 +584,7 @@ feature 'Proposals' do
     expect(current_path).not_to eq(edit_proposal_path(proposal))
     expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content 'You do not have permission'
+    Setting["max_votes_for_proposal_edit"] = 1000
   end
 
   scenario 'Update should be posible for the author of an editable proposal' do

@@ -9,6 +9,11 @@ feature 'Admin spending proposals' do
     login_as(admin.user)
   end
 
+  after do
+    Setting['feature.spending_proposals'] = nil
+    Setting['feature.spending_proposal_features.voting_allowed'] = nil
+  end
+
   context "Feature flag" do
 
     scenario 'Disabled with a feature flag' do
