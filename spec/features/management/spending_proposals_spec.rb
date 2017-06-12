@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Spending Proposals' do
 
   background do
-    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposals'] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
     login_as_manager
   end

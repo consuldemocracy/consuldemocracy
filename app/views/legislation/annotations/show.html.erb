@@ -1,0 +1,47 @@
+<% provide :title do %><%= "#{t('.title')} - #{@draft_version.title} - #{@process.title}" %><% end %>
+
+<%= render 'legislation/processes/header', process: @process, header: :small %>
+
+<%= render 'legislation/processes/key_dates', process: @process, phase: :allegations %>
+
+<div class="column row">
+  <div class="draft-panels small-12 column row">
+    <%= render 'version_chooser', process: @process, draft_version: @draft_version %>
+
+    <div class="legislation-comment">
+      <div class="annotation-comment">
+        <div class="row annotation-share-comment">
+          <div class="small-12 medium-9 column">
+            <strong><%= t('legislation.annotations.index.comments_about') %></strong>
+
+            <div class="comment-section">
+              <div class="row">
+                <div class="small-12 medium-9 column legislation-comment">
+                  <%= @annotation.context.try(:html_safe).presence || @annotation.quote %>
+                </div>
+                <div class="small-12 medium-3 column legislation-comment">
+                  <span class="pull-right">
+                    <%= link_to legislation_process_draft_version_path(@process, @draft_version, anchor: "annotation-id-#{@annotation.id}") do %>
+                      <span><%= t('legislation.annotations.index.see_in_context') %></span> <span class="icon-expand" aria-hidden="true"></span>
+                    <% end %>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="small-12 medium-3 column">
+            <div class="sidebar-divider"></div>
+            <h2><%= t('legislation.shared.share') %></h2>
+            <%= render '/legislation/shared/share_buttons',
+                       title: t('legislation.shared.share_comment', version_name: @draft_version.title.downcase, process_name: @process.title),
+                       url: legislation_process_draft_version_annotations_path(@process, @draft_version)
+            %>
+          </aside>
+        </div>
+
+      <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree, comment_flags: @comment_flags } %>
+      </div>
+    </div>
+  </div>
+</div>

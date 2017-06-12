@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   has_many :notifications
   has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
   has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
+  has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
   belongs_to :geozone
   belongs_to :representative, class_name: "Forum"
 
@@ -183,7 +184,7 @@ class User < ActiveRecord::Base
 
   def has_official_email?
     domain = Setting['email_domain_for_officials']
-    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+    email.present? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
   def display_official_position_badge?
@@ -341,7 +342,7 @@ class User < ActiveRecord::Base
   private
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
     end
 
     def validate_username_length

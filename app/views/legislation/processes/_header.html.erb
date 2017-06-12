@@ -1,0 +1,37 @@
+<% if header == :small %>
+  <div class="legislation-hero legislation-allegation no-margin-top grey-heading" data-target="legislation-header-small">
+    <div class="row headline">
+      <div class="small-12 medium-8 column">
+        <h3 class="headline-small"><%= process.title %></h3>
+      </div>
+    </div>
+
+    <div id="debate-show" class="row description">
+      <div class="small-12 column">
+        <% if process.description.present? %>
+          <h4><%= t('legislation.processes.header_full.description') %></h4>
+          <%= markdown process.description %>
+        <% end %>
+      </div>
+      <% if process.additional_info.present? %>
+        <div class="small-12 column debate-add-info">
+          <div class="debate-info-wrapper">
+            <%= markdown process.additional_info if process.additional_info %>
+          </div>
+        </div>
+       <% end %>
+    </div>
+
+    <% if process.description.present? || process.additional_info.present? %>
+      <div class="text-center half-gradient">
+        <a class="button big text-center button-circle" title="<%= t('.view_process_information') %>" id="js-toggle-small-debate">
+          <span class="icon-angle-down" aria-hidden="true"></span>
+        </a>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render 'legislation/processes/header_full', process: @process, hidden: true %>
+<% else %>
+  <%= render 'legislation/processes/header_full', process: @process, hidden: false %>
+<% end %>

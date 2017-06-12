@@ -12,6 +12,8 @@ feature 'Valuation budget investments' do
   scenario 'Disabled with a feature flag' do
     Setting['feature.budgets'] = nil
     expect{ visit valuation_budget_budget_investments_path(create(:budget)) }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.budgets'] = true
   end
 
   scenario 'Display link to valuation section' do

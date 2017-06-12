@@ -37,6 +37,7 @@ data:
     - config/locales/custom.%{locale}.yml
     - config/locales/officing.%{locale}.yml
     - config/locales/budgets.%{locale}.yml
+    - config/locales/legislation.%{locale}.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -130,8 +131,12 @@ ignore_unused:
   - 'admin.budget_investments.index.filter*'
   - 'admin.spending_proposals.index.filter*'
   - 'admin.organizations.index.filter*'
-  - 'admin.users.index.filter*'
+  - 'admin.hidden_users.index.filter*'
   - 'admin.activity.show.filter*'
+  - 'admin.legislation.processes.index.filter*'
+  - 'admin.legislation.processes.*.submit_button'
+  - 'admin.legislation.draft_versions.*.submit_button'
+  - 'admin.legislation.questions.*.submit_button'
   - 'admin.comments.index.hidden_*'
   - 'admin.settings.index.features.*'
   - 'admin.polls.*.submit_button'
@@ -162,6 +167,7 @@ ignore_unused:
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'notifications.index.proposal_notification*'
+  - 'legislation.processes.index.filter*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
@@ -169,7 +175,8 @@ ignore_unused:
   - 'probes.codenames.*' # custom probes names
   - 'social_share.polls_show.*' # SEO for polls
   - 'admin.site_customization.pages.page.status_*'
-
+  - 'admin.legislation.processes.process.*'
+  - 'legislation.processes.index.*'
 # - '{devise,kaminari,will_paginate}.*'
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'

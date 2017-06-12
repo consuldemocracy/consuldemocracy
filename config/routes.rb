@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  if Rails.env.development? || Rails.env.staging?
+    get '/sandbox' => 'sandbox#index'
+    get '/sandbox/*template' => 'sandbox#show'
+  end
+
   devise_for :users, controllers: {
                        registrations: 'users/registrations',
                        sessions: 'users/sessions',
@@ -109,7 +114,7 @@ Rails.application.routes.draw do
 
   resources :stats, only: [:index]
 
-  resources :legislations, only: [:show]
+  resources :legacy_legislations, only: [:show], path: 'legislations'
 
   resources :annotations do
     get :search, on: :collection
@@ -124,6 +129,71 @@ Rails.application.routes.draw do
     end
   end
   post "/polls/nvotes/success" => "polls/nvotes#success", as: :polls_nvotes_success
+
+  namespace :legislation do
+    resources :processes, only: [:index, :show] do
+      get :debate
+      get :draft_publication
+      get :allegations
+      get :final_version_publication
+      resources :questions, only: [:show] do
+        resources :answers, only: [:create]
+      end
+      resources :draft_versions, only: [:show] do
+        get :go_to_version, on: :collection
+        get :changes
+        resources :annotations do
+          get :search, on: :collection
+          get :comments
+          post :new_comment
+        end
+      end
+    end
+  end
+
+  namespace :legislation do
+    resources :processes, only: [:index, :show] do
+      get :debate
+      get :draft_publication
+      get :allegations
+      get :final_version_publication
+      resources :questions, only: [:show] do
+        resources :answers, only: [:create]
+      end
+      resources :draft_versions, only: [:show] do
+        get :go_to_version, on: :collection
+        get :changes
+        resources :annotations do
+          get :search, on: :collection
+          get :comments
+          post :new_comment
+        end
+      end
+    end
+  end
+
+  namespace :legislation do
+    resources :processes, only: [:index, :show] do
+      get :debate
+      get :draft_publication
+      get :allegations
+      get :final_version_publication
+      resources :questions, only: [:show] do
+        resources :answers, only: [:create]
+      end
+      resources :draft_versions, only: [:show] do
+        get :go_to_version, on: :collection
+        get :changes
+        resources :annotations do
+          get :search, on: :collection
+          get :comments
+          post :new_comment
+        end
+      end
+    end
+  end
+
+  get 'procesos',  to: 'legislation/processes#index', as: 'processes'
 
   resources :users, only: [:show] do
     resources :direct_messages, only: [:new, :create, :show]
@@ -160,7 +230,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :users, only: [:index, :show] do
+    resources :hidden_users, only: [:index, :show] do
       member do
         put :restore
         put :confirm_hide
@@ -240,6 +310,8 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
+    resources :users, only: [:index, :show]
+
     scope module: :poll do
       resources :polls do
         get :search_questions, on: :member
@@ -287,6 +359,27 @@ Rails.application.routes.draw do
       get :redeemable_codes, on: :collection
       get :user_invites, on: :collection
       get :polls, on: :collection
+    end
+
+    namespace :legislation do
+      resources :processes do
+        resources :questions
+        resources :draft_versions
+      end
+    end
+
+    namespace :legislation do
+      resources :processes do
+        resources :questions
+        resources :draft_versions
+      end
+    end
+
+    namespace :legislation do
+      resources :processes do
+        resources :questions
+        resources :draft_versions
+      end
     end
 
     namespace :api do
@@ -470,7 +563,6 @@ Rails.application.routes.draw do
   get 'processes/human_rights_question_3', to: 'pages#show', id: 'processes/human_rights/question_3', as: 'human_rights_question_3'
 
   #Processes
-  get 'procesos',                                       to: 'pages#show', id: 'processes/index',                  as: 'processes'
   get 'proceso/licencias-urbanisticas',                 to: 'pages#show', id: 'processes/urbanistic/index',       as: 'urbanistic_licenses'
   get 'proceso/alianza-gobierno-abierto',               to: 'pages#show', id: 'processes/open_government/index',  as: 'open_government'
   get 'proceso/alianza-gobierno-abierto-borrador',      to: 'pages#show', id: 'processes/open_government/doc',    as: 'open_government_doc'

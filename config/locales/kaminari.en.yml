@@ -7,11 +7,11 @@ en:
         other: Entries
         zero: Entries
       more_pages:
-        display_entries: Displaying <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> %{entry_name}
+        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
-          one: There is <b>1</b> %{entry_name}
-          other: There are <b> %{count}</b> %{entry_name}
+          one: There is <strong>1 %{entry_name}</strong>
+          other: There are <strong>%{count} %{entry_name}</strong>
           zero: "%{entry_name} cannot be found"
   views:
     pagination:
