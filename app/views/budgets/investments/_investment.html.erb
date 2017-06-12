@@ -43,6 +43,12 @@
 
       <% unless investment.unfeasible? %>
 
+        <% if investment.image.exists? %>
+          <div class="small-12 medium-3 column">
+            <%= image_tag investment.image.url(:medium) %>
+          </div>
+        <% end %>
+
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center">

@@ -32,6 +32,10 @@
         </p>
       <% end %>
 
+      <% if investment.image.exists? %>
+        <%= image_tag investment.image.url(:large) %>
+      <% end %>
+
       <%= render 'shared/tags', taggable: investment %>
 
       <%= safe_html_with_links investment.description.html_safe %>
