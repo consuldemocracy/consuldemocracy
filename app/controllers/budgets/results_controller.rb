@@ -4,6 +4,7 @@ module Budgets
     load_and_authorize_resource :budget
 
     def show
+      authorize! :read_results, @budget
       @result = load_result
     end
 

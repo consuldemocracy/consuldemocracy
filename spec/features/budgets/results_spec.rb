@@ -45,4 +45,13 @@ feature 'Results' do
     end
   end
 
+  scenario "If budget is in a phase different from finished results can't be accessed" do
+    budget.update phase: (Budget::PHASES - ["finished"]).sample
+    visit budget_path(budget)
+    expect(page).not_to have_link "See results"
+
+    visit budget_results_path(budget, heading_id: budget.headings.first)
+    expect(page).to have_content "You do not have permission to carry out the action"
+  end
+
 end
