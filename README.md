@@ -19,7 +19,7 @@ This is the opensource code repository of the eParticipation website originally 
 
 ## Current state
 
-Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in [features]( http://www.decide.es/en/) or [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues).
+Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in [features]( http://www.decide.es/en/) or [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues). For current status on upcoming features go to [Roadmap](https://github.com/consul/consul/projects/6)
 
 ## Tech stack
 
@@ -69,7 +69,7 @@ But for some actions like voting, you will need a verified user, the seeds file 
  **pass:** 12345678
 
 ### Customization
-Read more on documentation: 
+Read more on documentation:
 * English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
 * Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 
