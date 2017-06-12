@@ -29,6 +29,12 @@ module ActsAsTaggableOn
 
   Tag.class_eval do
 
+    scope :category, -> { where(kind: "category") }
+
+    def category?
+      kind == "category"
+    end
+
     include Graphqlable
 
     scope :public_for_api, -> do
