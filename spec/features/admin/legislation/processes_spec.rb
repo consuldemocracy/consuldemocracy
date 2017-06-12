@@ -41,8 +41,6 @@ feature 'Admin legislation processes' do
       fill_in 'legislation_process_title', with: 'An example legislation process'
       fill_in 'legislation_process_summary', with: 'Summary of the process'
       fill_in 'legislation_process_description', with: 'Describing the process'
-      fill_in 'legislation_process_target', with: 'This thing affects people'
-      fill_in 'legislation_process_how_to_participate', with: 'You can partipate in this thing by doing...'
 
       base_date = Date.current
       fill_in 'legislation_process[start_date]', with: base_date.strftime("%d/%m/%Y")
@@ -65,14 +63,12 @@ feature 'Admin legislation processes' do
       expect(page).to have_content 'An example legislation process'
       expect(page).not_to have_content 'Summary of the process'
       expect(page).to have_content 'Describing the process'
-      expect(page).to have_content 'This thing affects people'
 
       visit legislation_processes_path
 
       expect(page).to have_content 'An example legislation process'
       expect(page).to have_content 'Summary of the process'
       expect(page).not_to have_content 'Describing the process'
-      expect(page).not_to have_content 'This thing affects people'
     end
   end
 

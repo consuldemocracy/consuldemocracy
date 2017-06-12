@@ -162,8 +162,6 @@ es:
       legislation/process:
         title: Título del proceso
         description: En qué consiste
-        target: A quién afecta
-        how_to_participate: Cómo participar
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso
         end_date: Fecha de fin del proceso

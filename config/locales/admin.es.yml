@@ -221,8 +221,6 @@ es:
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
           description_placeholder: Añade una descripción del proceso
-          target_placeholder: Describe a quién va dirigido
-          how_to_participate_placeholder: Describe cómo participar
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso

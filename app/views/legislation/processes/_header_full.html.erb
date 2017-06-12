@@ -9,22 +9,10 @@
   </div>
 
   <div class="row description">
-    <div class="small-12 medium-4 column">
+    <div class="small-12 column">
       <% if process.description.present? %>
         <h4><%= t('.description') %></h4>
         <%= markdown process.description %>
-      <% end %>
-    </div>
-    <div class="small-12 medium-4 column">
-      <% if process.target.present? %>
-        <h4><%= t('.target') %></h4>
-        <%= markdown process.target %>
-      <% end %>
-    </div>
-    <div class="small-12 medium-4 column">
-      <% if process.how_to_participate.present? %>
-        <h4><%= t('.how_to_participate') %></h4>
-        <%= markdown process.how_to_participate %>
       <% end %>
     </div>
     <% if process.additional_info.present? %>
