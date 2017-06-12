@@ -27,12 +27,14 @@ class API::CSVExporter
       counter = 0
       CSV.open(filename(model), "w", col_sep: ';', force_quotes: true, encoding: "ISO-8859-1") do |csv|
         csv << encode_array(model.public_columns_for_api)
-        model.public_for_api.order(:id).find_each do |record|
-          csv << encode_array(public_attributes(record))
-          counter += 1
-          if counter == 1000
-            counter = 0
-            print('.') if @print_log
+        model.order(:id).find_each do |record|
+          if model.public_for_api?
+            csv << encode_array(public_attributes(record))
+            counter += 1
+            if counter == 1000
+              counter = 0
+              print('.') if @print_log
+            end
           end
         end
       end
