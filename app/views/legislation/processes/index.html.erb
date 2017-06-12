@@ -24,10 +24,11 @@
           <%= t(".no_#{@current_filter}_processes") %>
         </div>
       <% end %>
+      <% if @current_filter == "past" %>
+        <%= render "custom/legislation/processes_archived" %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<% if @current_filter == "past" %>
-  <%= render "custom/legislation/processes_archived" %>
-<% end %>
+
