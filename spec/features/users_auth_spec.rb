@@ -35,7 +35,19 @@ feature 'Users' do
 
       visit '/'
       click_link 'Sign in'
-      fill_in 'user_email',    with: 'manuela@consul.dev'
+      fill_in 'user_login',    with: 'manuela@consul.dev'
+      fill_in 'user_password', with: 'judgementday'
+      click_button 'Enter'
+
+      expect(page).to have_content 'You have been signed in successfully.'
+    end
+
+    scenario 'Sign in with username' do
+      create(:user, username: 'larry', email: 'manuela@consul.dev', password: 'judgementday')
+
+      visit '/'
+      click_link 'Sign in'
+      fill_in 'user_login',    with: 'larry'
       fill_in 'user_password', with: 'judgementday'
       click_button 'Enter'
 
