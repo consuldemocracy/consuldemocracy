@@ -38,6 +38,7 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
+      can [:search, :index], ::User
 
       can :manage, Annotation
       can [:read, :stats, :results, :summary, :edit, :update], SpendingProposal

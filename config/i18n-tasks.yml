@@ -131,7 +131,7 @@ ignore_unused:
   - 'admin.budget_investments.index.filter*'
   - 'admin.spending_proposals.index.filter*'
   - 'admin.organizations.index.filter*'
-  - 'admin.users.index.filter*'
+  - 'admin.hidden_users.index.filter*'
   - 'admin.activity.show.filter*'
   - 'admin.legislation.processes.index.filter*'
   - 'admin.legislation.processes.*.submit_button'

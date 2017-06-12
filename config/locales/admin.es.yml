@@ -189,6 +189,19 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    hidden_users:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Usuarios bloqueados
+      show:
+        email: 'Email:'
+        hidden_at: 'Bloqueado:'
+        registered_at: 'Fecha de alta:'
+        title: Actividad del usuario (%{user})
     legislation:
       processes:
         create:
@@ -216,8 +229,6 @@ es:
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
           description_placeholder: Añade una descripción del proceso
-          target_placeholder: Describe a quién va dirigido
-          how_to_participate_placeholder: Describe cómo participar
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
         index:
           create: Nuevo proceso
@@ -386,6 +397,7 @@ es:
       title_banners: Banners
       title_site_customization: Personalizar sitio
       legislation: Legislación colaborativa
+      users: Usuarios
     moderators:
       index:
         title: Moderadores
@@ -908,19 +920,28 @@ es:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
     users:
+      columns:
+        name: Nombre
+        email: Correo electrónico
+        document_number: DNI/Pasaporte/Tarjeta de residencia
+        roles: Roles
+        verification_level: Nivel de verficación
       index:
         filter: Filtro
         filters:
           all: Todos
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
-        title: Usuarios bloqueados
+        title: Usuarios
       show:
         email: 'Email:'
         phone: Teléfono
         hidden_at: 'Bloqueado:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
+      search:
+        placeholder: Buscar usuario por email, nombre o DNI
+        search: Buscar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

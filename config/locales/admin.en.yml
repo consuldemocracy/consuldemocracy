@@ -189,6 +189,19 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
+      show:
+        email: 'Email:'
+        hidden_at: 'Hidden at:'
+        registered_at: 'Registered at:'
+        title: Activity of user (%{user})
     legislation:
       processes:
         create:
@@ -216,8 +229,6 @@ en:
           title_placeholder: The title of the process
           summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
-          target_placeholder: Describe who is the target of the process
-          how_to_participate_placeholder: Describe how to participate
           additional_info_placeholder: Add an additional information you consider useful
         index:
           create: New process
@@ -375,6 +386,7 @@ en:
       title_banners: Banners
       title_site_customization: Site customization
       legislation: Collaborative Legislation
+      users: Users
     administrators:
       index:
         title: Administrators
@@ -908,6 +920,12 @@ en:
         placeholder: Type the name of the topic
       update: Update Topic
     users:
+      columns:
+        name: Name
+        email: Email
+        document_number: Document number
+        roles: Roles
+        verification_level: Verification level
       index:
         filter: Filter
         filters:
@@ -921,6 +939,9 @@ en:
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
+      search:
+        placeholder: Search user by email, name or document number
+        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
