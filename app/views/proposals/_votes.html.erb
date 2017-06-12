@@ -7,10 +7,10 @@
   </div>
 
   <span class="total-supports">
-    <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp;
+    <!-- <%= t("proposals.proposal.supports", count: proposal.total_votes) %>&nbsp; -->
     <span>
       <abbr title="<%= t("proposals.proposal.reason_for_supports_necessary") %>">
-        <%= t("proposals.proposal.supports_necessary", number: number_with_delimiter(Proposal.votes_needed_for_success)) %>
+          <%= t("proposals.proposal.supports", count: proposal.total_votes) %> de <%= t("proposals.proposal.supports_necessary", number: number_with_delimiter(Proposal.votes_needed_for_success)) %>
       </abbr>
     </span>
   </span>
@@ -22,7 +22,7 @@
       </div>
     <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
       <%= link_to vote_url,
-          class: "button button-support small expanded",
+          class: "button button-support small",
           title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
