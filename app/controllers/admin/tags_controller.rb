@@ -4,12 +4,12 @@ class Admin::TagsController < Admin::BaseController
   respond_to :html, :js
 
   def index
-    @tags = ActsAsTaggableOn::Tag.order(featured: :desc).page(params[:page])
-    @tag  = ActsAsTaggableOn::Tag.new
+    @tags = ActsAsTaggableOn::Tag.category.order(featured: :desc).page(params[:page])
+    @tag  = ActsAsTaggableOn::Tag.category.new
   end
 
   def create
-    ActsAsTaggableOn::Tag.create(tag_params)
+    ActsAsTaggableOn::Tag.category.create(tag_params)
     redirect_to admin_tags_path
   end
 
@@ -30,7 +30,7 @@ class Admin::TagsController < Admin::BaseController
     end
 
     def find_tag
-      @tag = ActsAsTaggableOn::Tag.find(params[:id])
+      @tag = ActsAsTaggableOn::Tag.category.find(params[:id])
     end
 
 end
