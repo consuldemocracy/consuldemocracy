@@ -364,13 +364,17 @@ feature 'Votes' do
 
   feature 'Spending Proposals' do
     background do
-     Setting["feature.spending_proposals"] = true
+     Setting['feature.spending_proposals'] = true
      Setting['feature.spending_proposal_features.voting_allowed'] = true
      login_as(@manuela)
     end
 
-    context "Verified User" do
+    after do
+      Setting['feature.spending_proposals'] = nil
+      Setting['feature.spending_proposal_features.voting_allowed'] = nil
+    end
 
+    context "Verified User" do
       background do
         login_as(@manuela)
         Setting["feature.spending_proposal_features.phase2"] = true

@@ -1,0 +1,56 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.legislation") %> - <%= t("admin.legislation.processes.index.filters.#{@current_filter}") %>
+<% end %>
+
+<div class="legislation-admin legislation-process-index">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <h2 class="inline-block"><%= t("admin.legislation.processes.index.title") %></h2>
+    </div>
+    <div class="small-12 medium-3 column legislation-process-new">
+      <%= link_to t("admin.legislation.processes.index.create"), new_admin_legislation_process_path, class: "button" %>
+    </div>
+  </div>
+
+  <%= render 'shared/filter_subnav', i18n_namespace: "admin.legislation.processes.index" %>
+
+  <% if @processes.any? %>
+    <h3><%= page_entries_info @processes %></h3>
+
+    <table class="stack">
+      <thead>
+        <tr>
+          <th><%= t("admin.legislation.processes.process.title") %></th>
+          <th><%= t("admin.legislation.processes.process.status") %></th>
+          <th><%= t("admin.legislation.processes.process.creation_date") %></th>
+          <th><%= t("admin.legislation.processes.process.comments") %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @processes.each do |process| %>
+        <tr id="<%= dom_id(process) %>">
+          <td class="small-12 medium-8">
+            <%= link_to process.title, edit_admin_legislation_process_path(process) %>
+          </td>
+          <td><%= t("admin.legislation.processes.process.status_#{process.status}") %></td>
+          <td><%= I18n.l process.created_at.to_date %></td>
+          <td><%= process.total_comments %></td>
+          <td>
+            <%= link_to t("admin.legislation.processes.index.delete"), admin_legislation_process_path(process),
+                        method: :delete,
+                        class: 'button hollow alert' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @processes %>
+  <% else %>
+    <div class="callout primary">
+      <%= page_entries_info @processes %>
+    </div>
+  <% end %>
+
+</div>

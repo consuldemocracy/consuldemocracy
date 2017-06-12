@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
+  include CustomUrlsHelper
+
   before_action :authenticate_user!, only: :create
   before_action :load_commentable, only: :create
+  before_action :verify_resident_for_commentable!, only: :create
+  before_action :verify_comments_open!, only: [:create, :vote]
   before_action :build_comment, only: :create
 
   load_and_authorize_resource
@@ -73,7 +77,7 @@ class CommentsController < ApplicationController
       notifiable = comment.reply? ? comment.parent : comment.commentable
       notifiable_author_id = notifiable.try(:author_id)
       if notifiable_author_id.present? && notifiable_author_id != comment.author_id
-        Notification.add(notifiable_author_id, notifiable)
+        Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
       end
     end
 
@@ -83,6 +87,22 @@ class CommentsController < ApplicationController
         log_event("proposal", "comment")
       else
         log_event("proposal", "comment_reply")
+      end
+    end
+
+    def verify_resident_for_commentable!
+      return if current_user.administrator? || current_user.moderator?
+
+      if @commentable.respond_to?(:comments_for_verified_residents_only?) && @commentable.comments_for_verified_residents_only?
+        verify_resident!
+      end
+    end
+
+    def verify_comments_open!
+      return if current_user.administrator? || current_user.moderator?
+
+      if @commentable.respond_to?(:comments_closed?) && @commentable.comments_closed?
+        redirect_to @commentable, alert: t('comments.comments_closed')
       end
     end
 

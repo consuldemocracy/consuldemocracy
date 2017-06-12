@@ -8,7 +8,7 @@
   <% @users.each do |user| %>
     <tr id="<%= dom_id(user) %>">
       <td>
-        <%= link_to user.name, admin_user_path(user) %>
+        <%= link_to user.name, admin_hidden_user_path(user) %>
       </td>
       <td>
         <%= render "pending_step", user: user %>

@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @font-face {
   font-family: 'icons';
   src: font-url('icons.eot');
@@ -10,7 +9,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 [data-icon]:before {
   font-family: "icons" !important;
   content: attr(data-icon);
@@ -23,7 +21,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "icons" !important;
@@ -36,7 +33,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-angle-down:before {
   content: "\61";
 }
@@ -184,11 +180,17 @@
 .icon-arrow-top:before {
   content: "\57";
 }
-.icon-help-1:before {
-  content: "\58";
-}
 .icon-checkmark-circle:before {
   content: "\59";
+}
+.icon-minus-square:before {
+  content: "\58";
+}
+.icon-plus-square:before {
+  content: "\5a";
+}
+.icon-expand:before {
+  content: "\30";
 }
 .icon-telegram:before {
   content: "\31";

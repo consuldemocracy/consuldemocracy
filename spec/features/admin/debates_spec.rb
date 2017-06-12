@@ -8,6 +8,8 @@ feature 'Admin debates' do
     login_as(admin.user)
 
     expect{ visit admin_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.debates'] = true
   end
 
   background do
