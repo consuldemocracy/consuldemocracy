@@ -2,13 +2,14 @@
 
 class Legislation::Process::Phase
 
-  def initialize(start_date, end_date)
+  def initialize(start_date, end_date, enabled)
     @start_date = start_date
     @end_date = end_date
+    @enabled = enabled
   end
 
   def enabled?
-    @start_date.present? && @end_date.present?
+    @enabled
   end
 
   def started?

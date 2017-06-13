@@ -2,12 +2,13 @@
 
 class Legislation::Process::Publication
 
-  def initialize(publication_date)
+  def initialize(publication_date, enabled)
     @publication_date = publication_date
+    @enabled = enabled
   end
 
   def enabled?
-    @publication_date.present?
+    @enabled
   end
 
   def started?
