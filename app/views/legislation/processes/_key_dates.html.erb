@@ -8,7 +8,7 @@
 
     <ul>
       <% if process.debate_phase.enabled? %>
-        <li <%= "class=active" if phase == :debate %>>
+        <li <%= "class=active" if phase == :debate_phase %>>
           <%= link_to legislation_process_debate_path(process) do %>
             <h4><%= t('legislation.processes.shared.debate_dates') %></h4>
             <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
@@ -26,7 +26,7 @@
       <% end %>
 
       <% if process.allegations_phase.enabled? %>
-        <li <%= "class=active" if phase == :allegations %>>
+        <li <%= "class=active" if phase == :allegations_phase %>>
           <%= link_to legislation_process_allegations_path(process) do %>
             <h4><%= t('legislation.processes.shared.allegations_dates') %></h4>
             <p><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></p>
