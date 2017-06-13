@@ -59,7 +59,17 @@ print "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
-  User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
+  User.create!(
+    username:               username,
+    email:                  email,
+    password:               pwd,
+    password_confirmation:  pwd,
+    confirmed_at:           Time.current,
+    terms_of_service:       "1",
+    gender:                 ['Male', 'Female'].sample,
+    date_of_birth:          rand((Time.current - 80.years) .. (Time.current - 16.years)),
+    public_activity:        (rand(1..100) > 30)
+  )
 end
 
 admin = create_user('admin@consul.dev', 'admin')
@@ -103,11 +113,11 @@ end
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
-(1..40).each do |i|
+(1..100).each do |i|
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
   if level >= 2
-    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
+    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1", geozone:  Geozone.reorder("RANDOM()").first)
   end
   if level == 3
     user.update(verified_at: Time.current, document_number: Faker::Number.number(10) )
@@ -292,7 +302,7 @@ puts " ✅"
 print "Voting Debates, Proposals & Comments"
 
 (1..100).each do
-  voter  = not_org_users.reorder("RANDOM()").first
+  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
   vote   = [true, false].sample
   debate = Debate.reorder("RANDOM()").first
   debate.vote_by(voter: voter, vote: vote)
@@ -306,7 +316,7 @@ end
 end
 
 (1..100).each do
-  voter  = User.level_two_or_three_verified.reorder("RANDOM()").first
+  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
   proposal = Proposal.reorder("RANDOM()").first
   proposal.vote_by(voter: voter, vote: true)
 end
@@ -497,6 +507,16 @@ Proposal.last(3).each do |proposal|
                           post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
                           post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
                           created_at: rand((Time.current - 1.week) .. Time.current))
+end
+
+puts " ✅"
+puts "Creating proposal notifications"
+
+100.times do |i|
+  ProposalNotification.create!(title: "Proposal notification title #{i}",
+                               body: "Proposal notification body #{i}",
+                               author: User.reorder("RANDOM()").first,
+                               proposal: Proposal.reorder("RANDOM()").first)
 end
 
 puts " ✅"

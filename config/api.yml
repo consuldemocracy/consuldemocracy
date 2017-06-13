@@ -1,0 +1,89 @@
+User:
+  fields:
+    id:                 integer
+    username:           string
+    public_debates:     [Debate]
+    public_proposals:   [Proposal]
+    public_comments:    [Comment]
+#    organization:       Organization
+Debate:
+  fields:
+    id:                 integer
+    title:              string
+    description:        string
+    public_created_at:  string
+    cached_votes_total: integer
+    cached_votes_up:    integer
+    cached_votes_down:  integer
+    comments_count:     integer
+    hot_score:          integer
+    confidence_score:   integer
+    comments:           [Comment]
+    public_author:      User
+    votes_for:          [Vote]
+    tags:               ["ActsAsTaggableOn::Tag"]
+Proposal:
+  fields:
+    id:                   integer
+    title:                string
+    description:          string
+    external_url:         string
+    cached_votes_up:      integer
+    comments_count:       integer
+    hot_score:            integer
+    confidence_score:     integer
+    public_created_at:    string
+    summary:              string
+    video_url:            string
+    geozone_id:           integer
+    retired_at:           string
+    retired_reason:       string
+    retired_explanation:  string
+    geozone:              Geozone
+    comments:             [Comment]
+    proposal_notifications: [ProposalNotification]
+    public_author:        User
+    votes_for:            [Vote]
+    tags:                 ["ActsAsTaggableOn::Tag"]
+Comment:
+  fields:
+    id:                 integer
+    commentable_id:     integer
+    commentable_type:   string
+    body:               string
+    public_created_at:  string
+    cached_votes_total: integer
+    cached_votes_up:    integer
+    cached_votes_down:  integer
+    ancestry:           string
+    confidence_score:   integer
+    public_author:      User
+    votes_for:          [Vote]
+Geozone:
+  fields:
+    id:               integer
+    name:             string
+ProposalNotification:
+  fields:
+    title:             string
+    body:              string
+    proposal_id:       integer
+    public_created_at: string
+    proposal:          Proposal
+ActsAsTaggableOn::Tag:
+  fields:
+    id:               integer
+    name:             string
+    taggings_count:   integer
+    kind:             string
+Vote:
+  fields:
+    votable_id:        integer
+    votable_type:      string
+    public_created_at: string
+    vote_flag:         boolean
+# Organization:
+#   fields:
+#     id:               integer
+#     user_id:          integer
+#     name:             string
