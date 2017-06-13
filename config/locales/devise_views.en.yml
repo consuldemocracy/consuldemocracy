@@ -68,7 +68,7 @@ en:
         title: Forgotten password?
     sessions:
       new:
-        email_label: Email
+        login_label: Email or username
         password_label: Password
         remember_me: Remember me
         submit: Enter

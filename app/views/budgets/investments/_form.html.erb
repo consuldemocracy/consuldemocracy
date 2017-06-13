@@ -7,8 +7,9 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>
     </div>
+    <div id="js-suggest"></div>
 
     <%= f.invisible_captcha :subtitle %>
 
