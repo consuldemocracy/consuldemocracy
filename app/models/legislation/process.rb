@@ -30,7 +30,7 @@ class Legislation::Process < ActiveRecord::Base
     when :allegations
       active_phase?(:allegations) && today >= allegations_start_date && today <= allegations_end_date
     when :result_publication
-      active_phase?(:result_publication) && today >= final_publication_date
+      active_phase?(:result_publication) && today >= result_publication_date
     end
   end
 
@@ -46,7 +46,7 @@ class Legislation::Process < ActiveRecord::Base
     when :allegations
       active_phase?(:allegations) && today >= allegations_start_date
     when :result_publication
-      active_phase?(:result_publication) && today >= final_publication_date
+      active_phase?(:result_publication) && today >= result_publication_date
     end
   end
 
@@ -59,8 +59,24 @@ class Legislation::Process < ActiveRecord::Base
     when :allegations
       allegations_start_date.present? && allegations_end_date.present?
     when :result_publication
-      final_publication_date.present?
+      result_publication_date.present?
     end
+  end
+
+  def debate_phase
+    Legislation::Process::Phase.new(debate_start_date, debate_end_date)
+  end
+
+  def allegations_phase
+    Legislation::Process::Phase.new(allegations_start_date, allegations_end_date)
+  end
+
+  def draft_publication
+    Legislation::Process::Publication.new(draft_publication_date)
+  end
+
+  def result_publication
+    Legislation::Process::Publication.new(result_publication_date)
   end
 
   def total_comments
