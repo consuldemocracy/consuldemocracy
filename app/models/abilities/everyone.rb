@@ -14,17 +14,15 @@ module Abilities
       can :read, Poll::Question
 
       can [:read, :welcome], Budget
+      can :read_results, Budget, phase: "finished"
       can [:read, :print], Budget::Investment
       can [:read], Budget::Group
+
       can :read, SpendingProposal
       can :read, LegacyLegislation
       can :read, User
       can [:search, :read], Annotation
 
-      can [:read], Budget
-      can [:read], Budget::Group
-      can [:read, :print], Budget::Investment
-      can :read_results, Budget, phase: "finished"
       can :new, DirectMessage
 
       can :results_2017, Poll

@@ -200,6 +200,7 @@ es:
       show:
         email: 'Email:'
         hidden_at: 'Bloqueado:'
+        phone: 'Teléfono:'
         registered_at: 'Fecha de alta:'
         title: Actividad del usuario (%{user})
     legislation:
@@ -927,18 +928,7 @@ es:
         roles: Roles
         verification_level: Nivel de verficación
       index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
         title: Usuarios
-      show:
-        email: 'Email:'
-        phone: Teléfono
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
-        title: Actividad del usuario (%{user})
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar

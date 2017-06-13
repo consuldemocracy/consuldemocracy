@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   require 'date'
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable
+         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
+         authentication_keys: [:login]
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -55,6 +56,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :skip_password_validation
   attr_accessor :use_redeemable_code
+  attr_accessor :login
 
   scope :administrators, -> { joins(:administrator) }
   scope :moderators,     -> { joins(:moderator) }
@@ -352,6 +354,14 @@ class User < ActiveRecord::Base
 
   def public_comments
     public_activity? ? comments : User.none
+  end
+
+  # overwritting of Devise method to allow login using email OR username
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    login = conditions.delete(:login)
+    where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
+    where(conditions.to_hash).where(["username = ?", login]).first
   end
 
   private

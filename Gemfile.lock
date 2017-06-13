@@ -241,7 +241,7 @@ GEM
       railties (>= 3.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.6.rc1)
+    mail (2.6.6)
       mime-types (>= 1.16, < 4)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -569,4 +569,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.15.0
+   1.15.1

@@ -200,6 +200,7 @@ en:
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
+        phone: 'Phone:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
     legislation:
@@ -927,18 +928,7 @@ en:
         roles: Roles
         verification_level: Verification level
       index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
         title: Hidden users
-      show:
-        email: 'Email:'
-        phone: Phone
-        hidden_at: 'Hidden at:'
-        registered_at: 'Registered at:'
-        title: Activity of user (%{user})
       search:
         placeholder: Search user by email, name or document number
         search: Search

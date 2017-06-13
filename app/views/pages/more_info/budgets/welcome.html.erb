@@ -11,16 +11,22 @@
     <div class="row no-margin-top padding">
       <div class="small-12 medium-6 column">
         <h1><span>Votación final de</span><br><span> presupuestos participativos 2017</span></h1>
+        <p class="margin-top">
+          Tú decides a qué proyectos ciudadanos se destinarán 100 millones de euros de los presupuestos municipales en la ciudad y en los distritos.
+        </p>
         <div class="small-12 medium-6 margin-top">
-          <%= link_to budget_path(Budget.last), class: "button expanded" do %>
+          <%= link_to budget_path(Budget.last), class: "button expanded large" do %>
             Votar proyectos
           <% end %>
         </div>
       </div>
-      <div class="small-12 medium-6 column margin-top">
-        <ul class="info">
-          <li>Tú decides a qué proyectos ciudadanos se destinarán 100 millones de euros de los presupuestos municipales en la ciudad y en los distritos.</li>
-        </ul>
+      <div class="small-12 medium-6 large-4 column">
+        <div class="materials-block">
+          <p class="lead">
+            <strong>¿Quieres apoyar y ayudar a difundir los presupuestos participativos?</strong>
+          </p>
+          <%= link_to "Ver materiales de difusión para descargar", budgets_materials_2017_path %>
+        </div>
       </div>
     </div>
 
