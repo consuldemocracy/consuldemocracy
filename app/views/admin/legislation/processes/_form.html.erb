@@ -70,8 +70,7 @@
                         id: "debate_end_date" %>
     </div>
     <div class="small-12 medium-2 column">
-      <%= check_box_tag :debate_phase_active, @process.debate_phase.enabled?, @process.new_record? || @process.debate_phase.enabled?, data: {disable_date: "debate"} %>
-      <%= label_tag :debate_phase_active, t('admin.legislation.processes.form.active') %>
+      <%= f.check_box :debate_phase_enabled, checked: @process.debate_phase.enabled?, label: t('admin.legislation.processes.form.active') %>
     </div>
 
     <div class="small-12 column">
@@ -104,8 +103,7 @@
                         id: "allegations_end_date" %>
     </div>
     <div class="small-12 medium-2 column">
-      <%= check_box_tag :allegations_phase_active, @process.allegations_phase.enabled?, @process.new_record? || @process.allegations_phase.enabled?, data: {disable_date: "allegations"} %>
-      <%= label_tag :allegations_phase_active, t('admin.legislation.processes.form.active') %>
+      <%= f.check_box :allegations_phase_enabled, checked: @process.allegations_phase.enabled?, label: t('admin.legislation.processes.form.active') %>
     </div>
 
     <div class="small-12 column">
@@ -125,8 +123,7 @@
                         id: "draft_publication_date" %>
     </div>
     <div class="small-12 medium-2 column">
-      <%= check_box_tag :draft_publication_phase_active, @process.draft_publication.enabled?, @process.new_record? || @process.draft_publication.enabled?, data: {disable_date: "draft_publication"} %>
-      <%= label_tag :draft_publication_phase_active, t('admin.legislation.processes.form.active') %>
+      <%= f.check_box :draft_publication_enabled, checked: @process.draft_publication.enabled?, label: t('admin.legislation.processes.form.active') %>
     </div>
     <div class="small-12 column">
       <hr>
@@ -145,8 +142,7 @@
                         id: "result_publication_date" %>
     </div>
     <div class="small-12 medium-2 column">
-      <%= check_box_tag :result_publication_phase_active, @process.result_publication.enabled?, @process.new_record? || @process.result_publication.enabled?, data: {disable_date: "final_publication"} %>
-      <%= label_tag :result_publication_phase_active, t('admin.legislation.processes.form.active') %>
+      <%= f.check_box :result_publication_enabled, checked: @process.result_publication.enabled?, label: t('admin.legislation.processes.form.active') %>
     </div>
     <div class="small-12 column">
       <hr>
