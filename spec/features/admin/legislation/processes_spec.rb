@@ -73,7 +73,7 @@ feature 'Admin legislation processes' do
   end
 
   context 'Update' do
-    scenario 'Deactivate debate phase', js: true do
+    scenario 'Remove summary text', js: true do
       process = create(:legislation_process,
                        title: 'An example legislation process',
                        summary: 'Summarizing the process',
@@ -89,17 +89,41 @@ feature 'Admin legislation processes' do
       expect(page).to have_selector("h2", text: "An example legislation process")
       expect(find("#legislation_process_debate_phase_enabled")).to be_checked
 
-      uncheck "legislation_process_debate_phase_enabled"
       fill_in 'legislation_process_summary', with: ''
+      click_button "Save changes"
+
+      expect(page).to have_content "Process updated successfully"
+
+      visit legislation_processes_path
+      expect(page).not_to have_content 'Summarizing the process'
+      expect(page).to have_content 'Description of the process'
+    end
+
+    scenario 'Deactivate draft publication', js: true do
+      process = create(:legislation_process,
+                       title: 'An example legislation process',
+                       summary: 'Summarizing the process',
+                       description: 'Description of the process')
+      visit admin_root_path
+
+      within('#side_menu') do
+        click_link "Collaborative Legislation"
+      end
+
+      click_link "An example legislation process"
+
+      expect(find("#legislation_process_draft_publication_enabled")).to be_checked
+
+      uncheck "legislation_process_draft_publication_enabled"
       click_button "Save changes"
 
       expect(page).to have_content "Process updated successfully"
       expect(find("#debate_start_date").value).not_to be_blank
       expect(find("#debate_end_date").value).not_to be_blank
 
-      visit legislation_processes_path
-      expect(page).not_to have_content 'Summarizing the process'
-      expect(page).to have_content 'Description of the process'
+      click_link 'Click to visit'
+
+      expect(page).not_to have_content 'Draft publication'
     end
   end
 end
