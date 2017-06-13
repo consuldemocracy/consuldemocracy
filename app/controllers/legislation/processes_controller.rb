@@ -8,19 +8,17 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def show
-    if @process.active_phase?(:allegations) && @process.show_phase?(:allegations) && draft_version = @process.draft_versions.published.last
-      redirect_to legislation_process_draft_version_path(@process, draft_version)
-    elsif @process.active_phase?(:debate)
-      redirect_to legislation_process_debate_path(@process)
+    if process.active_phase?(:allegations) && process.allegations_phase.started? && draft_version = process.draft_versions.published.last
+      redirect_to legislation_process_draft_version_path(process, draft_version)
+    elsif process.active_phase?(:debate)
+      redirect_to legislation_process_debate_path(process)
     else
-      redirect_to legislation_process_allegations_path(@process)
+      redirect_to legislation_process_allegations_path(process)
     end
   end
 
   def debate
-    phase :debate
-
-    if @process.show_phase?(:debate)
+    if process.debate_phase.started?
       render :debate
     else
       render :phase_not_open
@@ -28,11 +26,9 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def draft_publication
-    phase :draft_publication
-
-    if @process.show_phase?(@phase)
-      if draft_version = @process.draft_versions.published.last
-        redirect_to legislation_process_draft_version_path(@process, draft_version)
+    if process.draft_publication.started?
+      if draft_version = process.draft_versions.published.last
+        redirect_to legislation_process_draft_version_path(process, draft_version)
       else
         render :phase_empty
       end
@@ -42,11 +38,9 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def allegations
-    phase :allegations
-
-    if @process.show_phase?(@phase)
-      if draft_version = @process.draft_versions.published.last
-        redirect_to legislation_process_draft_version_path(@process, draft_version)
+    if process.allegations_phase.started?
+      if draft_version = process.draft_versions.published.last
+        redirect_to legislation_process_draft_version_path(process, draft_version)
       else
         render :phase_empty
       end
@@ -56,11 +50,9 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def result_publication
-    phase :result_publication
-
-    if @process.show_phase?(@phase)
-      if final_version = @process.final_draft_version
-        redirect_to legislation_process_draft_version_path(@process, final_version)
+    if process.result_publication.started?
+      if final_version = process.final_draft_version
+        redirect_to legislation_process_draft_version_path(process, final_version)
       else
         render :phase_empty
       end
@@ -71,8 +63,7 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   private
 
-    def phase(phase)
-      @process = ::Legislation::Process.find(params[:process_id])
-      @phase = phase
+    def process
+      @process ||= ::Legislation::Process.find(params[:process_id])
     end
 end
