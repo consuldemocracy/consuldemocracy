@@ -87,15 +87,15 @@ feature 'Admin legislation processes' do
       click_link "An example legislation process"
 
       expect(page).to have_selector("h2", text: "An example legislation process")
-      expect(find("#debate_phase_active")).to be_checked
+      expect(find("#legislation_process_debate_phase_enabled")).to be_checked
 
-      uncheck "debate_phase_active"
+      uncheck "legislation_process_debate_phase_enabled"
       fill_in 'legislation_process_summary', with: ''
       click_button "Save changes"
 
       expect(page).to have_content "Process updated successfully"
-      expect(find("#debate_start_date").value).to be_blank
-      expect(find("#debate_end_date").value).to be_blank
+      expect(find("#debate_start_date").value).not_to be_blank
+      expect(find("#debate_end_date").value).not_to be_blank
 
       visit legislation_processes_path
       expect(page).not_to have_content 'Summarizing the process'
