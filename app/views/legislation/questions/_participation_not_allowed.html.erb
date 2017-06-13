@@ -17,7 +17,7 @@
       signin: link_to(t("legislation.questions.participation.signin"), new_user_session_path),
       signup: link_to(t("legislation.questions.participation.signup"), new_user_registration_path)).html_safe %>
   </div>
-<% elsif !@process.open_phase?(:debate) %>
+<% elsif !@process.debate_phase.open? %>
   <div class="participation-not-allowed" style='display:none' aria-hidden="false">
     <%= t("legislation.questions.participation.debate_phase_not_open") %>
   </div>

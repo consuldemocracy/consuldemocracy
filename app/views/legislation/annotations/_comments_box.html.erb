@@ -15,12 +15,12 @@
       <% end %>
     <% end %>
 
-    <% if @process.open_phase?(:allegations) %>
+    <% if @process.allegations_phase.open? %>
       <a class="button publish-comment" href="#"><strong><%= t('legislation.annotations.comments.publish_comment') %></strong></a>
       &nbsp;
     <% end %>
 
-    <% if @process.open_phase?(:allegations) %>
+    <% if @process.allegations_phase.open? %>
       <% if user_signed_in? %>
         <% css_id = parent_or_commentable_dom_id(nil, annotation) %>
         <div id="js-comment-form-annotation-<%= annotation.id %>" style="display:none" class="comment-form js-comment-form-annotation">
