@@ -5,6 +5,15 @@ module ActsAsTaggableOn
     after_create :increment_tag_custom_counter
     after_destroy :touch_taggable, :decrement_tag_custom_counter
 
+    scope :public_for_api, -> do
+      where(%{taggings.tag_id in (?) and
+              (taggings.taggable_type = 'Debate' and taggings.taggable_id in (?)) or
+              (taggings.taggable_type = 'Proposal' and taggings.taggable_id in (?))},
+            Tag.where('kind IS NULL or kind = ?', 'category').pluck(:id),
+            Debate.public_for_api.pluck(:id),
+            Proposal.public_for_api.pluck(:id))
+    end
+
     def touch_taggable
       taggable.touch if taggable.present?
     end
@@ -21,6 +30,12 @@ module ActsAsTaggableOn
   Tag.class_eval do
 
     include Graphqlable
+
+    scope :public_for_api, -> do
+      where('(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)',
+            'category',
+            Tagging.public_for_api.pluck('DISTINCT taggings.tag_id'))
+    end
 
     def increment_custom_counter_for(taggable_type)
       Tag.increment_counter(custom_counter_field_name_for(taggable_type), id)
@@ -42,23 +57,6 @@ module ActsAsTaggableOn
 
     def self.spending_proposal_tags
       ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
-    end
-
-    scope :public_for_api, -> do
-      find_by_sql(%|
-        SELECT *
-        FROM tags
-        WHERE (tags.kind IS NULL OR tags.kind = 'category') AND tags.id IN (
-          SELECT tag_id
-          FROM (
-            SELECT COUNT(taggings.id) AS taggings_count, tag_id
-            FROM ((taggings FULL OUTER JOIN proposals ON taggable_type = 'Proposal' AND taggable_id = proposals.id) FULL OUTER JOIN debates ON taggable_type = 'Debate' AND taggable_id = debates.id)
-            WHERE (taggable_type = 'Proposal' AND proposals.hidden_at IS NULL) OR (taggable_type = 'Debate' AND debates.hidden_at IS NULL)
-            GROUP BY tag_id
-          ) AS tag_taggings_count_relation
-          WHERE taggings_count > 0
-        )
-      |)
     end
 
     def self.graphql_field_name
