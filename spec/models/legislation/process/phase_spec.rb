@@ -7,14 +7,14 @@ RSpec.describe Legislation::Process::Phase, type: :model do
     it "checks debate phase" do
       expect(process.debate_phase.enabled?).to be true
 
-      process.update_attributes(debate_start_date: nil, debate_end_date: nil)
+      process.update_attributes(debate_phase_enabled: false)
       expect(process.debate_phase.enabled?).to be false
     end
 
     it "checks allegations phase" do
       expect(process.allegations_phase.enabled?).to be true
 
-      process.update_attributes(allegations_start_date: nil, allegations_end_date: nil)
+      process.update_attributes(allegations_phase_enabled: false)
       expect(process.allegations_phase.enabled?).to be false
     end
   end
