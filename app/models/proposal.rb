@@ -53,6 +53,7 @@ class Proposal < ActiveRecord::Base
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
+  scope :public_for_api            -> { all }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -167,48 +168,6 @@ class Proposal < ActiveRecord::Base
 
   def notifications
     proposal_notifications
-  end
-
-  def self.rank(proposal)
-    return 0 if proposal.blank?
-    connection.select_all(<<-SQL).first['rank']
-      SELECT ranked.rank FROM (
-        SELECT id, rank() OVER (ORDER BY confidence_score DESC)
-        FROM proposals
-      ) AS ranked
-      WHERE id = #{proposal.id}
-      SQL
-  end
-
-  def self.public_columns_for_api
-    ["id",
-     "title",
-     "description",
-     "external_url",
-     "cached_votes_up",
-     "comments_count",
-     "hot_score",
-     "confidence_score",
-     "created_at",
-     "summary",
-     "video_url",
-     "geozone_id",
-     "retired_at",
-     "retired_reason",
-     "retired_explanation",
-     "proceeding",
-     "sub_proceeding"]
-  end
-
-  def public_for_api?
-    return false if hidden?
-    return false unless ["Derechos Humanos", nil].include?(proceeding)
-    return true
-  end
-
-  def self.public_for_api
-    where(hidden_at: nil)
-      .where(['proposals.proceeding IS NULL or proposals.proceeding = ?', 'Derechos Humanos'])
   end
 
   protected
