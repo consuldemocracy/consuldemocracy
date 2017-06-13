@@ -19,50 +19,6 @@ class Legislation::Process < ActiveRecord::Base
   scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
-  def open_phase?(phase)
-    today = Date.current
-
-    case phase
-    when :debate
-      active_phase?(:debate) && today >= debate_start_date && today <= debate_end_date
-    when :draft_publication
-      active_phase?(:draft_publication) && today >= draft_publication_date
-    when :allegations
-      active_phase?(:allegations) && today >= allegations_start_date && today <= allegations_end_date
-    when :result_publication
-      active_phase?(:result_publication) && today >= result_publication_date
-    end
-  end
-
-  def show_phase?(phase)
-    # show past phases even if they're finished
-    today = Date.current
-
-    case phase
-    when :debate
-      active_phase?(:debate) && today >= debate_start_date
-    when :draft_publication
-      active_phase?(:draft_publication) && today >= draft_publication_date
-    when :allegations
-      active_phase?(:allegations) && today >= allegations_start_date
-    when :result_publication
-      active_phase?(:result_publication) && today >= result_publication_date
-    end
-  end
-
-  def active_phase?(phase)
-    case phase
-    when :debate
-      debate_start_date.present? && debate_end_date.present?
-    when :draft_publication
-      draft_publication_date.present?
-    when :allegations
-      allegations_start_date.present? && allegations_end_date.present?
-    when :result_publication
-      result_publication_date.present?
-    end
-  end
-
   def debate_phase
     Legislation::Process::Phase.new(debate_start_date, debate_end_date)
   end
