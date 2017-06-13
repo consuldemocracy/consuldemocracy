@@ -3,6 +3,11 @@
     <% if voted_for?(@featured_proposals_votes, proposal) %>
       <div class="supported">
         <%= t("proposals.proposal.already_supported") %>
+        <% if setting['twitter_handle'] %>
+          <div class="share-supported">
+            <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
+          </div>
+        <% end %>
       </div>
     <% else %>
       <%= link_to vote_featured_proposal_path(proposal, value: 'yes'),
@@ -34,11 +39,5 @@
     </div>
   <% end %>
 
-  <% if voted_for?(@featured_proposals_votes, proposal) %>
-    <% if setting['twitter_handle'] %>
-      <div class="share-supported">
-        <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
-      </div>
-    <% end %>
-  <% end %>
+
 </div>

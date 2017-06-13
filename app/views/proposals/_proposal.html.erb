@@ -8,16 +8,14 @@
       <div class="small-12 medium-12 column">
         <div class="proposal-content">
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
-            <span class="label-proposal float-left"><%= t("proposals.proposal.proposal") %></span>
+            <span class="label-proposal float-left"><%= t("proposals.proposal.proposal") %> para <%= proposal.geozone.name%></span>
             <span class="icon-proposals"></span>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
               <span class="icon-comments"></span>&nbsp;
               <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), namespaced_proposal_path(proposal, anchor: "comments") %>
-
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= l proposal.created_at.to_date %>
-
               <% if proposal.author.hidden? || proposal.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">
@@ -28,21 +26,36 @@
                 <span class="author">
                   <%= proposal.author.name %>
                 </span>
-                <% if proposal.author.display_official_position_badge? %>
+                <!-- <% if proposal.author.display_official_position_badge? %>
                   <span class="bullet">&nbsp;&bull;&nbsp;</span>
                   <span class="label round level-<%= proposal.author.official_level %>">
                     <%= proposal.author.official_position %>
                   </span>
-                <% end %>
+                <% end %> -->
               <% end %>
-
-              <% if proposal.author.verified_organization? %>
+              <!-- <% if proposal.author.verified_organization? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="label round is-association">
                   <%= t("shared.collective") %>
                 </span>
-              <% end %>
+              <% end %> -->
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <span class="label round tag-votes">
+                <%= proposal.total_votes %> votos
+              </span>
             </p>
+           <% if !proposal.for_challenge %>
+            <div class="supports">
+              <abbr title= "<%= proposal.total_votes %> votos">
+                <div class="progress small-12 round">
+                  <span class="meter" style="width: <%= progress_bar_percentage(proposal) %>%;"></span>
+                  <span class="percentage">
+                    <%= supports_percentage(proposal) %>&nbsp;/&nbsp;<%= t("proposals.proposal.total_percent") %>
+                  </span>
+                </div>
+            </abbr>
+            </div>
+            <% end %>
             <div class="proposal-description">
               <p><%= proposal.summary %></p>
               <div class="truncate"></div>
@@ -79,6 +92,7 @@
           </div>
           <% else %>
           <div class="small-12 medium-12 column ">
+
             <%= render 'votes',
                       { proposal: proposal, vote_url: vote_proposal_path(proposal, value: 'yes') } %>
             </div>

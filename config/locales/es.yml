@@ -354,6 +354,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
+      remaining_time: Quedan %{days} para crear propuestas
       title: Propuestas ciudadanas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
@@ -367,7 +368,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
     notice:
-      retired: Propuesta retirada
+      retired: Propuesta retiradadays
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -528,7 +529,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
         see_all: "Ver todas"
     tags_cloud:
       tags: Tendencias
-      districts: "Distritos"
+      districts: "Unidades vecinales"
       districts_list: "Listado de distritos"
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"

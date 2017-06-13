@@ -6,6 +6,7 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include ProposalsHelper
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -163,7 +164,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def successful?
-    total_votes >= Proposal.votes_needed_for_success
+    if !self.for_challenge
+      total_votes >= Proposal.votes_needed_for_success
+    else
+      winning_proposal?(self) && Date.today > self.problem.ends_at
+    end
   end
 
   def archived?
