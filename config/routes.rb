@@ -79,10 +79,12 @@ Rails.application.routes.draw do
 
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
   get 'presupuestos', to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
-  resources :budgets, only: [:show, :index], path: 'presupuestos' do
-    resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
-    resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
-      member { post :vote }
+
+  resources :budgets, only: [:show, :index] do
+    resources :groups, controller: "budgets/groups", only: [:show]
+    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
+      member     { post :vote }
+      collection { get :suggest }
     end
     resource :ballot, only: :show, controller: "budgets/ballots" do
       resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
@@ -92,6 +94,7 @@ Rails.application.routes.draw do
 
     resource :results, only: :show, controller: "budgets/results"
   end
+
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
   get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
 

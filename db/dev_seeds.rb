@@ -674,7 +674,6 @@ Proposal.last(3).each do |proposal|
 end
 
 puts " ✅"
-<<<<<<< HEAD
 print "Creating Probe and ProbeOptions for Town Planning project"
 town_planning = Probe.create(codename: "town_planning")
 town_planning_options = [
@@ -838,7 +837,7 @@ tags = Faker::Lorem.words(25)
                               terms_of_service: "1",
                               proceeding: "Derechos Humanos",
                               sub_proceeding: subproceedings.sample)
-=======
+
 puts "Creating proposal notifications"
 
 100.times do |i|
@@ -846,7 +845,6 @@ puts "Creating proposal notifications"
                                body: "Proposal notification body #{i}",
                                author: User.reorder("RANDOM()").first,
                                proposal: Proposal.reorder("RANDOM()").first)
->>>>>>> 18db68a4305cd07b68476a7ca4f0346a70673c0f
 end
 
 puts " ✅"

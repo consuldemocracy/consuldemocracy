@@ -148,7 +148,7 @@ feature 'Admin booths assignments' do
       poll = create(:poll)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      today = Time.current.to_date
+      today = Date.current
       officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: today)
 
       recount = create(:poll_recount,

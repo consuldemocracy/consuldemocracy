@@ -10,9 +10,7 @@ class ProposalNotification < ActiveRecord::Base
   validates :proposal, presence: true
   validate :minimum_interval
 
-  def self.public_for_api
-    where(proposal_id: Proposal.public_for_api.pluck(:id))
-  end
+  scope :public_for_api, -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
 
   def minimum_interval
     return true if proposal.try(:notifications).blank?

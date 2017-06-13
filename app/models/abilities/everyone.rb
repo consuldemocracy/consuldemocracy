@@ -21,6 +21,10 @@ module Abilities
       can :read, User
       can [:search, :read], Annotation
 
+      can [:read], Budget
+      can [:read], Budget::Group
+      can [:read, :print], Budget::Investment
+      can :read_results, Budget, phase: "finished"
       can :new, DirectMessage
 
       can :results_2017, Poll

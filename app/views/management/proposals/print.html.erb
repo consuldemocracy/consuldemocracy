@@ -8,7 +8,7 @@
       <%= image_tag "header_print_proposals.jpg", class: "for-print-only" %>
 
       <div class="filters">
-        <span class="for-print-only date-for-print"><%= l Date.today, format: :long %></span>
+        <span class="for-print-only date-for-print"><%= l Date.current, format: :long %></span>
 
         <h2 class="inline-block">
           <span class="not-print"><%= t("proposals.index.select_order_long") %></span>

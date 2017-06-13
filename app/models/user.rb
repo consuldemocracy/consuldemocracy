@@ -67,6 +67,7 @@ class User < ActiveRecord::Base
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
+  scope :public_for_api, -> { all }
 
   before_validation :clean_document_number
 
@@ -342,15 +343,15 @@ class User < ActiveRecord::Base
   end
 
   def public_proposals
-    public_activity? ? proposals : []
+    public_activity? ? proposals : User.none
   end
 
   def public_debates
-    public_activity? ? debates : []
+    public_activity? ? debates : User.none
   end
 
   def public_comments
-    public_activity? ? comments : []
+    public_activity? ? comments : User.none
   end
 
   private

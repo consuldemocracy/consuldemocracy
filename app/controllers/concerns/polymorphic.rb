@@ -10,6 +10,10 @@ module Polymorphic
       @resource_name ||= resource_model.to_s.downcase
     end
 
+    def resource_relation
+      @resource_relation ||= resource_model.all
+    end
+
     def set_resource_instance
       instance_variable_set("@#{resource_name}", @resource)
     end

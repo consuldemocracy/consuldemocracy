@@ -759,12 +759,13 @@ $epigraph-line-height: rem-calc(22);
 
       .draft-index-rotated {
         @include breakpoint(medium) {
+          line-height: 1;
           display: block;
           font-size: $small-font-size;
           text-transform: uppercase;
           font-weight: 700;
           color: #696969;
-          margin-top: 1rem;
+          margin-top: $line-height;
           -webkit-transform: rotate(-90deg);
           -moz-transform: rotate(-90deg);
           -ms-transform: rotate(-90deg);

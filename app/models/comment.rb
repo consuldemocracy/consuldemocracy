@@ -27,11 +27,11 @@ class Comment < ActiveRecord::Base
   scope :not_as_admin_or_moderator, -> { where("administrator_id IS NULL").where("moderator_id IS NULL")}
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
 
-  def self.public_for_api
-    where( %{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
-             (comments.commentable_type = 'Proposal' and comments.commentable_id in (?))},
-           Debate.public_for_api.pluck(:id),
-           Proposal.public_for_api.pluck(:id))
+  scope :public_for_api, -> do
+    where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
+            (comments.commentable_type = 'Proposal' and comments.commentable_id in (?))},
+          Debate.public_for_api.pluck(:id),
+          Proposal.public_for_api.pluck(:id))
   end
 
   scope :sort_by_most_voted, -> { order(confidence_score: :desc, created_at: :desc) }

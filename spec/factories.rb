@@ -477,7 +477,7 @@ FactoryGirl.define do
   factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do
     association :officer, factory: :poll_officer
     association :booth_assignment, factory: :poll_booth_assignment
-    date Time.current.to_date
+    date Date.current
 
     trait :final do
       final true

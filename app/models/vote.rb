@@ -18,18 +18,13 @@ class Vote < ActsAsVotable::Vote
     return true
   end
 
-  def self.public_for_api
-    joins("FULL OUTER JOIN debates ON votable_type = 'Debate' AND votable_id = debates.id").
-    joins("FULL OUTER JOIN proposals ON votable_type = 'Proposal' AND votable_id = proposals.id").
-    joins("FULL OUTER JOIN comments ON votable_type = 'Comment' AND votable_id = comments.id").
-    where("(votable_type = 'Proposal' AND proposals.hidden_at IS NULL) OR      \
-           (votable_type = 'Debate'   AND debates.hidden_at   IS NULL) OR      \
-           (                                                                   \
-             (votable_type = 'Comment'  AND comments.hidden_at IS NULL) AND    \
-             (                                                                 \
-               (comments.commentable_type = 'Proposal' AND (comments.commentable_id IN (SELECT id FROM proposals WHERE hidden_at IS NULL GROUP BY id))) OR \
-               (comments.commentable_type = 'Debate'   AND (comments.commentable_id IN (SELECT id FROM debates   WHERE hidden_at IS NULL GROUP BY id)))    \
-             )                                                                 \
-           )")
+  scope :public_for_api, -> do
+    where(%{(votes.votable_type = 'Debate' and votes.votable_id in (?)) or
+            (votes.votable_type = 'Proposal' and votes.votable_id in (?)) or
+            (votes.votable_type = 'Comment' and votes.votable_id in (?))},
+          Debate.public_for_api.pluck(:id),
+          Proposal.public_for_api.pluck(:id),
+          Comment.public_for_api.pluck(:id))
   end
+
 end
