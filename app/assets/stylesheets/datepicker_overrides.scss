@@ -3,7 +3,7 @@
 
 .ui-datepicker-header {
   background: $brand;
-  color: white;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -14,9 +14,17 @@
     color: $text;
   }
 
-  .ui-state-hover, .ui-state-active {
+  .ui-state-hover,
+  .ui-state-active {
     background: $brand;
-    color: white;
+    color: #fff;
+  }
+
+  thead {
+
+    tr th {
+      color: $dark;
+    }
   }
 }
 
@@ -32,8 +40,9 @@
     right: 12px;
   }
 
-  .ui-datepicker-prev, .ui-datepicker-next {
-    color: white;
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    color: #fff;
     cursor: pointer;
     font-weight: normal;
     font-size: $small-font-size;
@@ -44,51 +53,42 @@
   table {
     border: 1px solid $border;
     border-top: 0;
+  }
 
-    thead {
-      background: $dark;
-      border-left: 1px solid $dark;
-      border-right: 1px solid $dark;
+  tr {
+    border-bottom: 1px solid $border;
 
-      tr th {
-        color: $dark;     
-      }
+    &:last-child {
+      border-bottom: 0;
     }
 
-    tr {
-      border-bottom: 1px solid $border;
+    &:nth-child(odd) {
+      background: none;
+    }
+  }
 
-      &:last-child {
-        border-bottom: 0px;
-      }
+  td {
+    padding: 0;
+    border-right: 1px solid $border;
 
-      &:nth-child(odd) {
-        background: none;
-      }
+    &:last-child {
+      border-right: 0;
     }
 
-    td {
-      padding: 0;
-      border-right: 1px solid $border;
-
-      &:last-child {
-        border-right: 0px;
-      }
-
-      span, a {
-        text-align: center;
-        line-height: $line-height;
-        color: $text;
-      }
-
-      &.ui-datepicker-unselectable.ui-state-disabled {
-        background: white;
-
-        .ui-state-default {
-          background: #F8F8F8;
-          color: $text-medium;
-        }
-      }
+    span,
+    a {
+      text-align: center;
+      line-height: $line-height;
+      color: $text;
     }
+  }
+}
+
+.ui-datepicker-unselectable.ui-state-disabled {
+  background: #fff;
+
+  .ui-state-default {
+    background: #f8f8f8;
+    color: $text-medium;
   }
 }

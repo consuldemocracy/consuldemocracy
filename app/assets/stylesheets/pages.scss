@@ -16,7 +16,7 @@
   padding-top: $line-height;
 
   &.light {
-    background: #ECF0F1;
+    background: #ecf0f1;
   }
 }
 
@@ -36,7 +36,7 @@
 
     @include breakpoint(medium) {
       display: inline-block;
-      margin-right: $line-height/2;
+      margin-right: $line-height / 2;
     }
   }
 }
@@ -50,7 +50,7 @@
     color: $brand;
   }
 
-  .additional-info {
+  .additional-info {
     margin-bottom: $line-height;
   }
 
@@ -68,23 +68,23 @@
     }
   }
 
-  ul.features {
+  .features {
     list-style-type: circle;
     margin-left: $line-height;
 
     @include breakpoint(medium) {
-      margin: $line-height 0 $line-height $line-height*2.5;
+      margin: $line-height 0 $line-height $line-height * 2.5;
     }
 
     li {
-      margin-bottom: $line-height
+      margin-bottom: $line-height;
     }
   }
 
   .section-content {
     border-top: 1px solid $medium-gray;
-    padding-bottom: $line-height*2;
-    padding-top: $line-height*2;
+    padding-bottom: $line-height * 2;
+    padding-top: $line-height * 2;
 
     &:first-child {
       border-top: 0;
@@ -101,10 +101,10 @@
   .sidebar-card {
     border: 1px solid $border;
     margin-bottom: $line-height;
-    padding: $line-height/2;
+    padding: $line-height / 2;
 
     &.light {
-      background: #ECF0F1;
+      background: #ecf0f1;
       border: 0;
     }
   }

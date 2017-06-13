@@ -94,7 +94,7 @@ linters:
 
   NestingDepth:
     enabled: true
-    max_depth: 1
+    max_depth: 4
 
   PlaceholderInExtend:
     enabled: true
@@ -127,12 +127,11 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 5
 
   SelectorFormat:
     enabled: true
     convention: hyphenated_lowercase
-    class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
 
   Shorthand:
     enabled: true
