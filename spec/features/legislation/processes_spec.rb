@@ -106,7 +106,7 @@ feature 'Legislation' do
       scenario 'not open' do
         process = create(:legislation_process, result_publication_date: Date.current + 1.day)
 
-        visit legislation_process_final_version_publication_path(process)
+        visit legislation_process_result_publication_path(process)
 
         expect(page).to have_content("This phase is not open yet")
       end
@@ -114,7 +114,7 @@ feature 'Legislation' do
       scenario 'open' do
         process = create(:legislation_process, result_publication_date: Date.current)
 
-        visit legislation_process_final_version_publication_path(process)
+        visit legislation_process_result_publication_path(process)
 
         expect(page).to have_content("Nothing published yet")
       end

@@ -34,9 +34,9 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:final_version_publication) %>
-        <li <%= "class=active" if phase == :final_version_publication %>>
-          <%= link_to legislation_process_final_version_publication_path(process) do %>
+      <% if process.active_phase?(:result_publication) %>
+        <li <%= "class=active" if phase == :result_publication %>>
+          <%= link_to legislation_process_result_publication_path(process) do %>
             <h4><%= t('legislation.processes.shared.result_publication_date') %></h4>
             <p><%= format_date(process.result_publication_date) %></p>
           <% end %>

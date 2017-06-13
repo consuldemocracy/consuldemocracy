@@ -29,8 +29,8 @@ class Legislation::Process < ActiveRecord::Base
       active_phase?(:draft_publication) && today >= draft_publication_date
     when :allegations
       active_phase?(:allegations) && today >= allegations_start_date && today <= allegations_end_date
-    when :final_version_publication
-      active_phase?(:final_version_publication) && today >= final_publication_date
+    when :result_publication
+      active_phase?(:result_publication) && today >= final_publication_date
     end
   end
 
@@ -45,8 +45,8 @@ class Legislation::Process < ActiveRecord::Base
       active_phase?(:draft_publication) && today >= draft_publication_date
     when :allegations
       active_phase?(:allegations) && today >= allegations_start_date
-    when :final_version_publication
-      active_phase?(:final_version_publication) && today >= final_publication_date
+    when :result_publication
+      active_phase?(:result_publication) && today >= final_publication_date
     end
   end
 
@@ -58,7 +58,7 @@ class Legislation::Process < ActiveRecord::Base
       draft_publication_date.present?
     when :allegations
       allegations_start_date.present? && allegations_end_date.present?
-    when :final_version_publication
+    when :result_publication
       final_publication_date.present?
     end
   end

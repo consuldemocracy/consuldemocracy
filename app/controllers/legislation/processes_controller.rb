@@ -55,8 +55,8 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
   end
 
-  def final_version_publication
-    phase :final_version_publication
+  def result_publication
+    phase :result_publication
 
     if @process.show_phase?(@phase)
       if final_version = @process.final_draft_version

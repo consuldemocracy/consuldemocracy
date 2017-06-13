@@ -145,8 +145,8 @@
                         id: "result_publication_date" %>
     </div>
     <div class="small-12 medium-2 column">
-      <%= check_box_tag :final_version_publication_phase_active, @process.active_phase?(:final_version_publication), @process.new_record? || @process.active_phase?(:final_version_publication), data: {disable_date: "final_publication"} %>
-      <%= label_tag :final_version_publication_phase_active, t('admin.legislation.processes.form.active') %>
+      <%= check_box_tag :result_publication_phase_active, @process.active_phase?(:result_publication), @process.new_record? || @process.active_phase?(:result_publication), data: {disable_date: "final_publication"} %>
+      <%= label_tag :result_publication_phase_active, t('admin.legislation.processes.form.active') %>
     </div>
     <div class="small-12 column">
       <hr>
