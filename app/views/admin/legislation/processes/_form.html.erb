@@ -135,14 +135,14 @@
 
   <div class="row">
     <div class="small-12 medium-4 column">
-      <%= f.label :final_publication_date %>
+      <%= f.label :result_publication_date %>
     </div>
     <div class="small-12 medium-2 column end">
-      <%= f.text_field :final_publication_date,
+      <%= f.text_field :result_publication_date,
                         label: false,
-                        value: format_date_for_calendar_form(@process.final_publication_date),
+                        value: format_date_for_calendar_form(@process.result_publication_date),
                         class: "js-calendar-full",
-                        id: "final_publication_date" %>
+                        id: "result_publication_date" %>
     </div>
     <div class="small-12 medium-2 column">
       <%= check_box_tag :final_version_publication_phase_active, @process.active_phase?(:final_version_publication), @process.new_record? || @process.active_phase?(:final_version_publication), data: {disable_date: "final_publication"} %>

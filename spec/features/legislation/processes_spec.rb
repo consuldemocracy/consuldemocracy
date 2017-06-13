@@ -104,7 +104,7 @@ feature 'Legislation' do
 
     context 'final version publication phase' do
       scenario 'not open' do
-        process = create(:legislation_process, final_publication_date: Date.current + 1.day)
+        process = create(:legislation_process, result_publication_date: Date.current + 1.day)
 
         visit legislation_process_final_version_publication_path(process)
 
@@ -112,7 +112,7 @@ feature 'Legislation' do
       end
 
       scenario 'open' do
-        process = create(:legislation_process, final_publication_date: Date.current)
+        process = create(:legislation_process, result_publication_date: Date.current)
 
         visit legislation_process_final_version_publication_path(process)
 

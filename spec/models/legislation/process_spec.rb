@@ -154,15 +154,15 @@ RSpec.describe Legislation::Process, type: :model do
 
     it "checks final version publication phase" do
       # future
-      process.update_attributes(final_publication_date: Date.current + 2.days)
+      process.update_attributes(result_publication_date: Date.current + 2.days)
       expect(process.open_phase?(:final_version_publication)).to be false
 
       # past
-      process.update_attributes(final_publication_date: Date.current - 2.days)
+      process.update_attributes(result_publication_date: Date.current - 2.days)
       expect(process.open_phase?(:final_version_publication)).to be true
 
       # starts today
-      process.update_attributes(final_publication_date: Date.current)
+      process.update_attributes(result_publication_date: Date.current)
       expect(process.open_phase?(:final_version_publication)).to be true
     end
   end
@@ -220,15 +220,15 @@ RSpec.describe Legislation::Process, type: :model do
 
     it "checks final version publication phase" do
       # future
-      process.update_attributes(final_publication_date: Date.current + 2.days)
+      process.update_attributes(result_publication_date: Date.current + 2.days)
       expect(process.show_phase?(:final_version_publication)).to be false
 
       # past
-      process.update_attributes(final_publication_date: Date.current - 2.days)
+      process.update_attributes(result_publication_date: Date.current - 2.days)
       expect(process.show_phase?(:final_version_publication)).to be true
 
       # starts today
-      process.update_attributes(final_publication_date: Date.current)
+      process.update_attributes(result_publication_date: Date.current)
       expect(process.show_phase?(:final_version_publication)).to be true
     end
   end

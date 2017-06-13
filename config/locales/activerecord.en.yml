@@ -176,7 +176,7 @@ en:
         draft_publication_date: Draft publication date
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
-        final_publication_date: Final result publication date
+        result_publication_date: Final result publication date
       legislation/draft_version:
         title: Version title
         body: Text
