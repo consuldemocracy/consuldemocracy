@@ -2,6 +2,8 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase draft_publication result_publication).freeze
+
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id', dependent: :destroy
   has_one :final_draft_version, -> { where final_version: true, status: 'published' }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
   has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
@@ -35,6 +37,8 @@ class Legislation::Process < ActiveRecord::Base
     Legislation::Process::Publication.new(result_publication_date, result_publication_enabled)
   end
 
+  def enabled_phases_and_publications_count
+    PHASES_AND_PUBLICATIONS.count { |process| send(process).enabled? }
   end
 
   def total_comments
