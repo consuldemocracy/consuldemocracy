@@ -183,17 +183,6 @@ a {
   }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 .menu.simple {
   border-bottom: 1px solid $border;
   margin: $line-height 0;
