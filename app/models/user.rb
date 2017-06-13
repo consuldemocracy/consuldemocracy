@@ -291,12 +291,9 @@ class User < ActiveRecord::Base
   # overwritting of Devise method to allow login using email OR username
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
-      where(conditions.to_hash).where(["username = ?", login]).first
-    elsif conditions.has_key?(:username) || conditions.has_key?(:email)
-      where(conditions.to_hash).first
-    end
+    login = conditions.delete(:login)
+    where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
+    where(conditions.to_hash).where(["username = ?", login]).first
   end
 
   private
