@@ -34,6 +34,9 @@ en:
     close: Close
     menu: Menu
   comments:
+    comments_closed: Comments are closed
+    verified_only: To participate %{verify_account}
+    verify_account: verify your account
     comment:
       admin: Administrator
       author: Author
@@ -62,6 +65,7 @@ en:
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
+    comments_title: Comments
     reply_button: Publish reply
     reply_link: Reply
   debates:
@@ -73,7 +77,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      debate: Debate
       votes:
         one: 1 vote
         other: "%{count} votes"
@@ -104,9 +107,9 @@ en:
         button: Search
         placeholder: Search debates...
         title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       start_debate: Start a debate
       title: Debates
@@ -188,6 +191,7 @@ en:
     header:
       administration: Administration
       available_locales: Available languages
+      collaborative_legislation: Legislation processes
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Open data
@@ -217,7 +221,9 @@ en:
       see_all: See proposals
       budgets: Participatory budgeting
       spending_proposals: Spending Proposals
-  legislation:
+    admin:
+      watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
+  legacy_legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
@@ -330,9 +336,9 @@ en:
         button: Search
         placeholder: Search proposals...
         title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
+      search_results_html:
+        one: " containing the term <strong>'%{search_term}'</strong>"
+        other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
       select_order_long: 'You are viewing proposals according to:'
       start_proposal: Create a proposal
@@ -362,7 +368,6 @@ en:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
-      proposal: Proposal
       reason_for_supports_necessary: 1% of Census
       support: Support
       support_title: Support this proposal
@@ -448,9 +453,6 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       poll: "Poll"
-    banner:
-      featured_title: "#NextVoting"
-      info: "New proposals that have reached the voting phase."
   proposal_notifications:
     new:
       title: "Send message"
@@ -470,6 +472,7 @@ en:
       login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     "yes": "Yes"
     "no": "No"
+    search_results: "Search results"
     advanced_search:
       author_type: 'By author category'
       author_type_blank: 'Select a category'
@@ -508,6 +511,12 @@ en:
           other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
         message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'"
         see_all: "Ver todos"
+      budget_investment:
+        found:
+          one: "There is an investment with the term '%{query}', you can participate in it instead of opening a new one."
+          other: "There are investments with the term '%{query}', you can participate in them instead of opening a new one."
+        message: "You are seeing %{limit} of %{count} investments containing the term '%{query}'"
+        see_all: "See all"
       proposal:
         found:
           one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
@@ -695,13 +704,6 @@ en:
       user_permission_verify_info: "* Only for users on Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
-  legislation:
-    help:
-      title: "How I can comment this document?"
-      text: "To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil."
-      text_sign_in: "login"
-      text_sign_up: "sign up"
-      alt: "Select the text you want to comment and press the button with the pencil."
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."

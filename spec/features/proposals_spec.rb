@@ -536,6 +536,7 @@ feature 'Proposals' do
     expect(current_path).not_to eq(edit_proposal_path(proposal))
     expect(current_path).to eq(proposals_path)
     expect(page).to have_content 'You do not have permission'
+    Setting["max_votes_for_proposal_edit"] = 1000
   end
 
   scenario 'Update should be posible for the author of an editable proposal' do
@@ -1430,21 +1431,6 @@ feature 'Proposals' do
 end
 
 feature 'Successful proposals' do
-
-  scenario 'Banner shows in proposal index' do
-    create_featured_proposals
-
-    visit proposals_path
-    expect(page).to_not have_css("#next-voting")
-    expect(page).to have_css("#featured-proposals")
-
-    create_successful_proposals
-
-    visit proposals_path
-
-    expect(page).to have_css("#next-voting")
-    expect(page).to_not have_css("#featured-proposals")
-  end
 
   scenario 'Successful proposals do not show support buttons in index' do
     successful_proposals = create_successful_proposals

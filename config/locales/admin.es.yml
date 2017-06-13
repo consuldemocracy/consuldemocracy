@@ -181,6 +181,155 @@ es:
           with_confirmed_hide: Confirmados
           without_confirmed_hide: Pendientes
         title: Debates ocultos
+    hidden_users:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendientes
+        title: Usuarios bloqueados
+      show:
+        email: 'Email:'
+        hidden_at: 'Bloqueado:'
+        registered_at: 'Fecha de alta:'
+        title: Actividad del usuario (%{user})
+    legislation:
+      processes:
+        create:
+          notice: 'Proceso creado correctamente. <a href="%{link}">Haz click para verlo</a>'
+          error: No se ha podido crear el proceso
+        update:
+          notice: 'Proceso actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
+          error: No se ha podido actualizar el proceso
+        destroy:
+          notice: Proceso eliminado correctamente
+        edit:
+          back: Volver
+          submit_button: Guardar cambios
+        errors:
+          form:
+            error: Error
+        form:
+          active: Activa
+          process: Proceso
+          debate_phase: Fase previa
+          allegations_phase: Fase de alegaciones
+          start: Inicio
+          end: Fin
+          use_markdown: Usa Markdown para formatear el texto
+          title_placeholder: Escribe el título del proceso
+          summary_placeholder: Resumen corto de la descripción
+          description_placeholder: Añade una descripción del proceso
+          additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
+        index:
+          create: Nuevo proceso
+          delete: Borrar
+          title: Procesos de legislación colaborativa
+          filters:
+            open: Abiertos
+            next: Próximamente
+            past: Pasados
+            all: Todos
+        new:
+          back: Volver
+          title: Crear nuevo proceso de legislación colaborativa
+          submit_button: Crear proceso
+        process:
+          title: Proceso
+          comments: Comentarios
+          status: Estado
+          creation_date: Fecha creación
+          status_open: Abierto
+          status_closed: Cerrado
+          status_planned: Próximamente
+        subnav:
+          info: Información
+          draft_texts: Texto
+          questions: Debate
+      draft_versions:
+        create:
+          notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
+          error: No se ha podido crear el borrador
+        update:
+          notice: 'Borrador actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
+          error: No se ha podido actualizar el borrador
+        destroy:
+          notice: Borrador eliminado correctamente
+        edit:
+          back: Volver
+          submit_button: Guardar cambios
+          warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
+        errors:
+          form:
+            error: Error
+        form:
+          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
+          launch_text_editor: Lanzar editor de texto
+          close_text_editor: Cerrar editor de texto
+          use_markdown: Usa Markdown para formatear el texto
+          hints:
+            final_version: Será la versión que se publique en Publicación de Resultados. Esta versión no se podrá comentar
+            status:
+              draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
+              published: Será visible para todo el mundo
+          title_placeholder: Escribe el título de esta versión del borrador
+          changelog_placeholder: Describe cualquier cambio relevante con la versión anterior
+          body_placeholder: Escribe el texto del borrador
+        index:
+          title: Versiones del borrador
+          create: Crear versión
+          delete: Borrar
+          preview: Previsualizar
+        new:
+          back: Volver
+          title: Crear nueva versión
+          submit_button: Crear versión
+        statuses:
+          draft: Borrador
+          published: Publicado
+        table:
+          title: Título
+          created_at: Creado
+          comments: Comentarios
+          final_version: Versión final
+          status: Estado
+      questions:
+        create:
+          notice: 'Pregunta creada correctamente. <a href="%{link}">Haz click para verla</a>'
+          error: No se ha podido crear la pregunta
+        update:
+          notice: 'Pregunta actualizada correctamente. <a href="%{link}">Haz click para verla</a>'
+          error: No se ha podido actualizar la pregunta
+        destroy:
+          notice: Pregunta eliminada correctamente
+        edit:
+          back: Volver
+          title: "Editar “%{question_title}”"
+          submit_button: Guardar cambios
+        errors:
+          form:
+            error: Error
+        form:
+          add_option: +Añadir respuesta cerrada
+          title_placeholder: Escribe un título a la pregunta
+          value_placeholder: Escribe una respuesta cerrada
+        index:
+          back: Volver
+          title: Preguntas asociadas a este proceso
+          create: Crear pregunta
+          delete: Borrar
+        new:
+          back: Volver
+          title: Crear nueva pregunta
+          submit_button: Crear pregunta
+        table:
+          title: Título
+          question_options: Opciones de respuesta
+          answers_count: Número de respuestas
+          comments_count: Número de comentarios
+        question_option_fields:
+          remove_option: Eliminar
     administrators:
       index:
         title: Administradores
@@ -239,6 +388,8 @@ es:
       title_profiles: Perfiles
       title_banners: Banners
       title_site_customization: Personalizar sitio
+      legislation: Legislación colaborativa
+      users: Usuarios
     moderators:
       index:
         title: Moderadores
@@ -665,18 +816,17 @@ es:
         placeholder: Escribe el nombre del tema
       update: Actualizar Tema
     users:
+      columns:
+        name: Nombre
+        email: Correo electrónico
+        document_number: DNI/Pasaporte/Tarjeta de residencia
+        roles: Roles
+        verification_level: Nivel de verficación
       index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        title: Usuarios bloqueados
-      show:
-        email: 'Email:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
-        title: Actividad del usuario (%{user})
+        title: Usuarios
+      search:
+        placeholder: Buscar usuario por email, nombre o DNI
+        search: Buscar
     verifications:
       index:
         phone_not_given: No ha dado su teléfono

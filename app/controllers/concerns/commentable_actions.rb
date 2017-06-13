@@ -34,7 +34,7 @@ module CommentableActions
 
   def suggest
     @limit = 5
-    @resources = @search_terms.present? ? resource_model.search(@search_terms) : nil
+    @resources = @search_terms.present? ? resource_relation.search(@search_terms) : nil
   end
 
   def create

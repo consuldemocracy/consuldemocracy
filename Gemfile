@@ -67,6 +67,9 @@ gem 'redcarpet', '~> 3.4.0'
 gem 'rubyzip', '~> 1.2.0'
 
 gem 'paperclip'
+gem 'rails-assets-markdown-it', source: 'https://rails-assets.org'
+
+gem 'cocoon'
 
 gem 'graphql', '~> 1.5.12'
 
@@ -91,7 +94,7 @@ group :development, :test do
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem "bullet", '~> 5.5.1'
   gem "faker", '~> 1.7.3'
-  gem 'rubocop', '~> 0.48.1', require: false
+  gem 'rubocop', '~> 0.49.1', require: false
   gem 'knapsack'
 end
 

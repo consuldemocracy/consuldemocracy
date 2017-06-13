@@ -1,0 +1,211 @@
+<%= form_for [:admin, @process], html: {data: {watch_changes: true}} do |f| %>
+
+  <% if @process.errors.any? %>
+
+  <div id="error_explanation" data-alert class="callout alert" data-closable>
+    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <strong>
+      <%= @process.errors.count %>
+      <%= t("admin.legislation.processes.errors.form.error", count: @process.errors.count) %>
+    </strong>
+  </div>
+
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <label><%= t('admin.legislation.processes.form.process') %></label>
+    </div>
+    <div class="small-12 medium-1 column legislation-process-start">
+      <%= t('admin.legislation.processes.form.start') %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= f.text_field :start_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.start_date),
+                        class: "js-calendar-full",
+                        id: "start_date" %>
+    </div>
+    <div class="small-12 medium-1 column legislation-process-end">
+      <%= t('admin.legislation.processes.form.end') %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= f.text_field :end_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.end_date),
+                        class: "js-calendar-full",
+                        id: "end_date" %>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <label><%= t('admin.legislation.processes.form.debate_phase') %></label>
+    </div>
+    <div class="small-12 medium-1 column legislation-process-start">
+      <%= t('admin.legislation.processes.form.start') %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= f.text_field :debate_start_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.debate_start_date),
+                        class: "js-calendar-full",
+                        id: "debate_start_date" %>
+    </div>
+    <div class="small-12 medium-1 column legislation-process-end">
+      <%= t('admin.legislation.processes.form.end') %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= f.text_field :debate_end_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.debate_end_date),
+                        class: "js-calendar-full",
+                        id: "debate_end_date" %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= check_box_tag :debate_phase_active, @process.active_phase?(:debate), @process.new_record? || @process.active_phase?(:debate), data: {disable_date: "debate"} %>
+      <%= label_tag :debate_phase_active, t('admin.legislation.processes.form.active') %>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <label><%= t('admin.legislation.processes.form.allegations_phase') %></label>
+    </div>
+    <div class="small-12 medium-1 column legislation-process-start">
+      <%= t('admin.legislation.processes.form.start') %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= f.text_field :allegations_start_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.allegations_start_date),
+                        class: "js-calendar-full",
+                        id: "allegations_start_date" %>
+    </div>
+    <div class="small-12 medium-1 column legislation-process-end">
+      <%= t('admin.legislation.processes.form.end') %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= f.text_field :allegations_end_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.allegations_end_date),
+                        class: "js-calendar-full",
+                        id: "allegations_end_date" %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= check_box_tag :allegations_phase_active, @process.active_phase?(:allegations), @process.new_record? || @process.active_phase?(:allegations), data: {disable_date: "allegations"} %>
+      <%= label_tag :allegations_phase_active, t('admin.legislation.processes.form.active') %>
+    </div>
+
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :draft_publication_date %>
+    </div>
+    <div class="small-12 medium-2 column end">
+      <%= f.text_field :draft_publication_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.draft_publication_date),
+                        class: "js-calendar-full",
+                        id: "draft_publication_date" %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= check_box_tag :draft_publication_phase_active, @process.active_phase?(:draft_publication), @process.new_record? || @process.active_phase?(:draft_publication), data: {disable_date: "draft_publication"} %>
+      <%= label_tag :draft_publication_phase_active, t('admin.legislation.processes.form.active') %>
+    </div>
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :final_publication_date %>
+    </div>
+    <div class="small-12 medium-2 column end">
+      <%= f.text_field :final_publication_date,
+                        label: false,
+                        value: format_date_for_calendar_form(@process.final_publication_date),
+                        class: "js-calendar-full",
+                        id: "final_publication_date" %>
+    </div>
+    <div class="small-12 medium-2 column">
+      <%= check_box_tag :final_version_publication_phase_active, @process.active_phase?(:final_version_publication), @process.new_record? || @process.active_phase?(:final_version_publication), data: {disable_date: "final_publication"} %>
+      <%= label_tag :final_version_publication_phase_active, t('admin.legislation.processes.form.active') %>
+    </div>
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :title %>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.text_field :title,
+                       label: false,
+                       placeholder: t('admin.legislation.processes.form.title_placeholder') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :summary %>
+      <small><%= t('admin.legislation.processes.form.use_markdown') %></small>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.text_area :summary,
+                       label: false,
+                       rows: 2,
+                       placeholder: t('admin.legislation.processes.form.summary_placeholder') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :description %>
+      <small><%= t('admin.legislation.processes.form.use_markdown') %></small>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.text_area :description,
+                       label: false,
+                       rows: 5,
+                       placeholder: t('admin.legislation.processes.form.description_placeholder') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :additional_info %>
+      <small><%= t('admin.legislation.processes.form.use_markdown') %></small>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.text_area :additional_info,
+                       label: false,
+                       rows: 10,
+                       placeholder: t('admin.legislation.processes.form.additional_info_placeholder') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="actions small-12 medium-3 column legislation-process-save">
+      <%= f.submit(class: "button expanded", value: t("admin.legislation.processes.#{admin_submit_action(@process)}.submit_button")) %>
+    </div>
+  </div>
+<% end %>

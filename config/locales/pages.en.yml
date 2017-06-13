@@ -51,10 +51,14 @@ en:
         title: "Technical problems?"
         description: "Read the FAQs and solve your questions."
         button: "View frequently asked questions"
+        page:
+          title: "Frequently Asked Questions"
+          description: "Use this page to resolve the common FAQs to the users of site."
+          faq_1_title: "Question 1"
+          faq_1_description: "This is an example for the description of question one."
       other:
+        title: "Other information of interest"
         how_to_use: "Use %{org_name} in your city"
-        world: "Citizen participation in the world"
-        facts: "Facts about citizen participation and direct democracy"
       how_to_use:
         text: |-
           Use it in your local government or help us to improve it, it is free software.

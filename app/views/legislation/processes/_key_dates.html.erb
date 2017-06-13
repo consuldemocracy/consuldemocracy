@@ -1,0 +1,47 @@
+<nav class="legislation-process-categories">
+  <div class="legislation-process-list">
+    <div class="row">
+      <div class="small-12 column">
+        <h3><%= t("legislation.processes.shared.key_dates") %></h3>
+      </div>
+    </div>
+
+    <ul>
+      <% if process.active_phase?(:debate) %>
+        <li <%= "class=active" if phase == :debate %>>
+          <%= link_to legislation_process_debate_path(process) do %>
+            <h4><%= t('legislation.processes.shared.debate_dates') %></h4>
+            <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if process.active_phase?(:draft_publication) %>
+        <li <%= "class=active" if phase == :draft_publication %>>
+          <%= link_to legislation_process_draft_publication_path(process) do %>
+            <h4><%= t('legislation.processes.shared.draft_publication_date') %></h4>
+            <p><%= format_date(process.draft_publication_date) %></p>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if process.active_phase?(:allegations) %>
+        <li <%= "class=active" if phase == :allegations %>>
+          <%= link_to legislation_process_allegations_path(process) do %>
+            <h4><%= t('legislation.processes.shared.allegations_dates') %></h4>
+            <p><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></p>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if process.active_phase?(:final_version_publication) %>
+        <li <%= "class=active" if phase == :final_version_publication %>>
+          <%= link_to legislation_process_final_version_publication_path(process) do %>
+            <h4><%= t('legislation.processes.shared.final_publication_date') %></h4>
+            <p><%= format_date(process.final_publication_date) %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

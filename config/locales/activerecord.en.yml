@@ -55,6 +55,24 @@ en:
       site_customization/content_block:
         one: Custom content block
         other: Custom content blocks
+      legislation/process:
+        one: "Process"
+        other: "Processes"
+      legislation/draft_versions:
+        one: "Draft version"
+        other: "Draft versions"
+      legislation/draft_texts:
+          one: "Draft"
+          other: "Drafts"
+      legislation/questions:
+        one: "Question"
+        other: "Questions"
+      legislation/question_options:
+        one: "Question option"
+        other: "Question options"
+      legislation/answers:
+        one: "Answer"
+        other: "Answers"
     attributes:
       budget:
         name: "Name"
@@ -95,6 +113,7 @@ en:
         description: "Description"
         terms_of_service: "Terms of service"
       user:
+        login: "Email or username"
         email: "Email"
         username: "Username"
         password_confirmation: "Password confirmation"
@@ -146,6 +165,31 @@ en:
         name: Name
         locale: locale
         body: Body
+      legislation/process:
+        title: Process Title
+        description: Description
+        additional_info: Additional info
+        start_date: Start date
+        end_date: End date
+        debate_start_date: Debate start date
+        debate_end_date: Debate end date
+        draft_publication_date: Draft publication date
+        allegations_start_date: Allegations start date
+        allegations_end_date: Allegations end date
+        final_publication_date: Final result publication date
+      legislation/draft_version:
+        title: Version title
+        body: Text
+        changelog: Changes
+        status: Status
+        final_version: Final version
+      legislation/question:
+        title: Title
+        question_options: Options
+      legislation/question_option:
+        value: Value
+      legislation/annotation:
+        text: Comment
     errors:
       models:
         user:
@@ -165,6 +209,14 @@ en:
             document_number:
               not_in_census: "Document not in census"
               has_voted: "User has already voted"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: must be on or after the start date
+            debate_end_date:
+              invalid_date_range: must be on or after the debate start date
+            allegations_end_date:
+              invalid_date_range: must be on or after the allegations start date
         proposal:
           attributes:
             tag_list:

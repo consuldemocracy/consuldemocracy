@@ -34,6 +34,9 @@ es:
     close: Cerrar
     menu: Menú
   comments:
+    comments_closed: Los comentarios están cerrados
+    verified_only: Para participar %{verify_account}
+    verify_account: verifica tu cuenta
     comment:
       admin: Administrador
       author: Autor
@@ -62,6 +65,7 @@ es:
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
+    comments_title: Comentarios
     reply_button: Publicar respuesta
     reply_link: Responder
   debates:
@@ -73,7 +77,6 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      debate: Debate
       votes:
         one: 1 voto
         other: "%{count} votos"
@@ -104,9 +107,9 @@ es:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
+      search_results_html:
+        one: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
@@ -188,6 +191,7 @@ es:
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
+      collaborative_legislation: Procesos legislativos
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
@@ -217,7 +221,9 @@ es:
       see_all: Ver propuestas
       budgets: Presupuestos participativos
       spending_proposals: "Propuestas de inversión"
-  legislation:
+    admin:
+      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
+  legacy_legislation:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
@@ -330,9 +336,9 @@ es:
         button: Buscar
         placeholder: Buscar propuestas...
         title: Buscar
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
+      search_results_html:
+        one: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
@@ -362,7 +368,6 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
-      proposal: Propuesta
       reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
@@ -448,9 +453,6 @@ es:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       poll: "Votación"
-    banner:
-      featured_title: "#PróximaVotación"
-      info: "Nuevas propuestas ciudadanas han llegado a la fase de votación."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -470,6 +472,7 @@ es:
       login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
+    search_results: "Resultados de búsqueda"
     advanced_search:
       author_type: 'Por categoría de autor'
       author_type_blank: 'Elige una categoría'
@@ -508,6 +511,12 @@ es:
           other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
         message: "Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'"
         see_all: "Ver todos"
+      budget_investment:
+        found:
+          one: "Existe una propuesta de inversión con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
+          other: "Existen propuestas de inversión con el término '%{query}', puedes participar en ellas en vez de abrir una nueva."
+        message: "Estás viendo %{limit} de %{count} propuestas de inversión que contienen el término '%{query}'"
+        see_all: "Ver todas"
       proposal:
         found:
           one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
@@ -695,13 +704,6 @@ es:
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
-  legislation:
-    help:
-      title: "¿Cómo puedo comentar este documento?"
-      text: "Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
-      text_sign_in: "iniciar sesión"
-      text_sign_up: "registrarte"
-      alt: "Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz."
   invisible_captcha:
     sentence_for_humans: "Si eres humano, por favor ignora este campo"
     timestamp_error_message: "Eso ha sido demasiado rápido. Por favor, reenvía el formulario."

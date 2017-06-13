@@ -1,0 +1,134 @@
+<div class="legislation-admin legislation-process-edit row">
+  <div class="small-12 column">
+    <a class="back" href="/admin/legislation/processes">
+      <span class="icon-angle-left"></span>
+      Volver
+    </a>
+    <h1>Licencias urbanísticas, declaraciones responsables y comunicaciones previas</h1>
+
+    <ul class="menu simple clear">
+      <li class="active">
+        <a href="/sandbox/admin_legislation_info.html">Información</a>
+      </li>
+      <li >
+        <a href="/sandbox/admin_legislation_debate.html">Debate</a>
+      </li>
+      <li >
+        <a href="/sandbox/admin_legislation_draft.html">Texto</a>
+      </li>
+    </ul>
+
+    <form class="edit_legislation_process" id="edit_legislation_process_1" action="/admin/legislation/processes/1" accept-charset="UTF-8" method="post">
+
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_debate_start_date">Proceso</label>
+        </div>
+        <div class="small-12 medium-1 column legislation-process-start">
+          Inicio
+        </div>
+        <div class="small-12 medium-2 column">
+          <input class="js-calendar-full" id="debate_start_date" type="text" value="2016-12-15" name="legislation_process[debate_start_date]" />
+        </div>
+        <div class="small-12 medium-1 column legislation-process-end">
+          Fin
+        </div>
+        <div class="small-12 medium-2 column">
+          <input class="js-calendar-full" id="debate_end_date" type="text" value="2016-12-21" name="legislation_process[debate_end_date]" />
+        </div>
+
+
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_debate_start_date">Fase previa</label>
+        </div>
+        <div class="small-12 medium-1 column legislation-process-start">
+          Inicio
+        </div>
+        <div class="small-12 medium-2 column">
+          <input class="js-calendar-full" id="debate_start_date" type="text" value="2016-12-15" name="legislation_process[debate_start_date]" />
+        </div>
+        <div class="small-12 medium-1 column legislation-process-end">
+          Fin
+        </div>
+        <div class="small-12 medium-2 column">
+          <input class="js-calendar-full" id="debate_end_date" type="text" value="2016-12-21" name="legislation_process[debate_end_date]" />
+        </div>
+
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_debate_start_date">Fase alegaciones</label>
+        </div>
+        <div class="small-12 medium-1 column legislation-process-start">
+          Inicio
+        </div>
+        <div class="small-12 medium-2 column">
+          <input class="js-calendar-full" id="debate_start_date" type="text" value="2016-12-15" name="legislation_process[debate_start_date]" />
+        </div>
+        <div class="small-12 medium-1 column legislation-process-end">
+          Fin
+        </div>
+        <div class="small-12 medium-2 column">
+          <input class="js-calendar-full" id="debate_end_date" type="text" value="2016-12-21" name="legislation_process[debate_end_date]" />
+        </div>
+
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_final_publication_date">Publicación de resultados</label>
+        </div>
+        <div class="small-12 medium-2 column end">
+          <input class="js-calendar-full" id="final_publication_date" type="text" value="2016-12-30" name="legislation_process[final_publication_date]" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_title">Título del proceso</label>
+        </div>
+        <div class="small-12 medium-8 column">
+          <input type="text" value="Licencias urbanísticas, declaraciones responsables y comunicaciones previas" name="legislation_process[title]" id="legislation_process_title" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_description">En qué consiste</label>
+        </div>
+        <div class="small-12 medium-8 column">
+          <textarea rows="5" name="legislation_process[description]" id="legislation_process_description">Se va a modificar la regulación del procedimiento para la autorización de obras y la apertura de locales comerciales o empresariales para simplificar y agilizar trámites.
+          </textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_additional_info">Información adicional</label>
+          <small>Usa Markdown para formatear el texto</small>
+        </div>
+        <div class="small-12 medium-8 column">
+          <textarea rows="10" name="legislation_process[additional_info]" id="legislation_process_additional_info">Ducimus eaque et autem sed consectetur eos beatae. Dolorum nostrum eveniet amet sed quidem. Repellendus laudantium cum. Provident ut nemo minima dolores distinctio. Deserunt consequatur magnam. Ea quibusdam voluptatibus molestiae corrupti inventore est nesciunt. Aut sed vero autem ab nisi. Quis doloribus explicabo qui ea non consequatur. Molestiae aut repellendus aliquid quo ut impedit. Odit pariatur quis quis molestiae a possimus reiciendis. Voluptatem inventore fugiat et temporibus necessitatibus ab. Quod consequuntur quaerat inventore impedit. Animi quaerat id.
+          </textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_start_date">Fecha de inicio del proceso</label>
+        </div>
+        <div class="small-12 medium-8 column">
+          <input class="js-calendar-full" id="start_date" type="text" value="2016-12-15" name="legislation_process[start_date]" />
+        </div>
+        <div class="small-12 medium-4 column">
+          <label for="legislation_process_end_date">Fecha de fin del proceso</label>
+        </div>
+        <div class="small-12 medium-8 column">
+          <input class="js-calendar-full" id="end_date" type="text" value="2017-01-15" name="legislation_process[end_date]" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="actions small-12 medium-3 column legislation-process-save">
+          <input type="submit" name="commit" value="Guardar cambios" class="button expanded" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -108,7 +108,7 @@ class Officing::Residence
 
     def residency_valid?
       @census_api_response.valid? &&
-      @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
+        @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
     end
 
     def census_year_of_birth
@@ -116,7 +116,7 @@ class Officing::Residence
     end
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
     end
 
     def random_password

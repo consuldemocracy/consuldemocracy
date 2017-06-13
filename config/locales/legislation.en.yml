@@ -1,0 +1,110 @@
+---
+en:
+  legislation:
+    annotations:
+      comments:
+        see_all: See all
+        see_complete: See complete
+        comments_count:
+          one: "%{count} comment"
+          other: "%{count} comments"
+        replies_count:
+          one: "%{count} reply"
+          other: "%{count} replies"
+        cancel: Cancel
+        publish_comment: Publish Comment
+      form:
+        phase_not_open: This phase is not open
+        login_to_comment: You must %{signin} or %{signup} to leave a comment.
+        signin: Sign in
+        signup: Sign up
+      index:
+        title: Comments
+        comments_about: Comments about
+        see_in_context: See in context
+        comments_count:
+          one: "%{count} comment"
+          other: "%{count} comments"
+      show:
+        title: Comment
+      version_chooser:
+        seeing_version: Commments for version
+        see_text: See text draft
+    draft_versions:
+      changes:
+        title: Changes
+        seeing_changelog_version: Revision changes summary
+        see_text: See text draft
+      show:
+        loading_comments: Loading comments
+        seeing_version: You're seeing draft version
+        select_draft_version: Select draft
+        select_version_submit: see
+        updated_at: updated at %{date}
+        see_changes: see changes summary
+        see_comments: See all comments
+        text_toc: Table of contents
+        text_body: Text
+        text_comments: Comments
+    processes:
+      header:
+        view_process_information: View process information
+      debate:
+        empty_questions: There aren't any questions
+        participate: Participate in the debate
+      header_full:
+        title: Participate
+        description: Description
+        more_info: More information and context
+      index:
+        filters:
+          open: Open processes
+          next: Next
+          past: Past
+        no_open_processes: There aren't open processes
+        no_next_processes: There aren't planned processes
+        no_past_processes: There aren't past processes
+      phase_not_open:
+        not_open: This phase is not open yet
+      phase_empty:
+          empty: Nothing published yet
+      process:
+        see_latest_comments: See latest comments
+        see_latest_comments_title: Comment on this process
+      shared:
+        key_dates: Key dates
+        debate_dates: Debate
+        draft_publication_date: Draft publication
+        allegations_dates: Allegations
+        final_publication_date: Final result publication
+    questions:
+      comments:
+        comment_button: Publish answer
+        comments_title: Open answers
+        comments_closed: Closed phase
+        form:
+          leave_comment: Leave your answer
+      question:
+        comments:
+          zero: No comments
+          one: "%{count} comment"
+          other: "%{count} comments"
+        debate: Debate
+      show:
+        answer_question: Submit answer
+        next_question: Next question
+        first_question: First question
+        share: Share
+        title: Collaborative legislation process
+      participation:
+        phase_not_open: This phase is not open
+        organizations: Organisations are not permitted to participate in the debate
+        signin: Sign in
+        signup: Sign up
+        unauthenticated: You must %{signin} or %{signup} to participate.
+        verified_only: Only verified users can participate, %{verify_account}.
+        verify_account: verify your account
+        debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
+    shared:
+      share: Share
+      share_comment: Comment on %{version_name} from process draft %{process_name}

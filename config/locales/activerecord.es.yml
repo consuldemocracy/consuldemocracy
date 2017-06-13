@@ -55,6 +55,24 @@ es:
       site_customization/content_block:
         one: Bloque
         other: Bloques
+      legislation/process:
+          one: "Proceso"
+          other: "Procesos"
+      legislation/draft_versions:
+          one: "Versión borrador"
+          other: "Versiones borrador"
+      legislation/draft_texts:
+        one: "Borrador"
+        other: "Borradores"
+      legislation/questions:
+        one: "Pregunta"
+        other: "Preguntas"
+      legislation/question_options:
+        one: "Opción de respuesta cerrada"
+        other: "Opciones de respuesta cerrada"
+      legislation/answers:
+        one: "Respuesta"
+        other: "Respuestas"
     attributes:
       budget:
         name: "Nombre"
@@ -90,6 +108,7 @@ es:
         description: "Descripción"
         terms_of_service: "Términos de servicio"
       user:
+        login: Email o nombre de usuario
         email: "Correo electrónico"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
@@ -141,6 +160,31 @@ es:
         name: Nombre
         locale: Idioma
         body: Contenido
+      legislation/process:
+        title: Título del proceso
+        description: En qué consiste
+        additional_info: Información adicional
+        start_date: Fecha de inicio del proceso
+        end_date: Fecha de fin del proceso
+        debate_start_date: Fecha de inicio del debate
+        debate_end_date: Fecha de fin del debate
+        draft_publication_date: Fecha de publicación del borrador
+        allegations_start_date: Fecha de inicio de alegaciones
+        allegations_end_date: Fecha de fin de alegaciones
+        final_publication_date: Fecha de publicación del resultado final
+      legislation/draft_version:
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
+        status: Estado
+        final_version: Versión final
+      legislation/question:
+        title: Título
+        question_options: Respuestas
+      legislation/question_option:
+        value: Valor
+      legislation/annotation:
+        text: Comentario
     errors:
       models:
         user:
@@ -160,6 +204,14 @@ es:
             document_number:
               not_in_census: "Este documento no aparece en el censo"
               has_voted: "Este usuario ya ha votado"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
+            debate_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
+            allegations_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
         proposal:
           attributes:
             tag_list:

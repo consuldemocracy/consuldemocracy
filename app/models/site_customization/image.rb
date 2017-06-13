@@ -9,7 +9,7 @@ class SiteCustomization::Image < ActiveRecord::Base
   has_attached_file :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
-  validates_attachment_content_type :image, :content_type => ["image/png"]
+  validates_attachment_content_type :image, content_type: ["image/png"]
   validate :check_image
 
   def self.all_images

@@ -33,8 +33,8 @@
           <%= link_to t("admin.menu.hidden_comments"), admin_comments_path %>
         </li>
 
-        <li <%= "class=active" if controller_name == "users" %>>
-          <%= link_to t("admin.menu.hidden_users"), admin_users_path %>
+        <li <%= "class=active" if controller_name == "hidden_users" %>>
+          <%= link_to t("admin.menu.hidden_users"), admin_hidden_users_path %>
         </li>
       </ul>
     </li>
@@ -61,7 +61,7 @@
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
         <ul id="polls_menu" <%= "class=is-active" if menu_polls? %>>
-          <li <%= 'class=active' if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name  %>>
+          <li <%= "class=active" if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name  %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
 
@@ -69,11 +69,11 @@
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
-          <li <%= 'class=active' if controller_name == 'officers' %>>
+          <li <%= "class=active" if controller_name == "officers" %>>
             <%= link_to t('admin.menu.poll_officers'), admin_officers_path %>
           </li>
 
-          <li <%= 'class=active' if controller_name == 'booths' %>>
+          <li <%= "class=active" if controller_name == "booths" %>>
             <%= link_to t('admin.menu.poll_booths'), admin_booths_path %>
           </li>
         </ul>
@@ -81,7 +81,7 @@
     <% end %>
 
     <% if feature?(:budgets) %>
-      <li class="section-title" <%= "class=active" if controller_name == "budgets" %>>
+      <li class="section-title <%= "active" if controller_name == "budgets" %>">
         <%= link_to admin_budgets_path do %>
           <span class="icon-budget"></span>
           <strong><%= t("admin.menu.budgets") %></strong>
@@ -107,19 +107,32 @@
           <%= link_to t("admin.menu.officials"), admin_officials_path %>
         </li>
 
-        <li <%= 'class=active' if controller_name == 'moderators' %>>
+        <li <%= "class=active" if controller_name == "moderators" %>>
           <%= link_to t('admin.menu.moderators'), admin_moderators_path%>
         </li>
 
-        <li <%= 'class=active' if controller_name == 'valuators' %>>
+        <li <%= "class=active" if controller_name == "valuators" %>>
           <%= link_to t('admin.menu.valuators'), admin_valuators_path %>
         </li>
 
-        <li <%= 'class=active' if controller_name == 'managers' %>>
+        <li <%= "class=active" if controller_name == "managers" %>>
           <%= link_to t('admin.menu.managers'), admin_managers_path %>
+        </li>
+
+        <li <%= 'class=active' if controller_name == 'users' %>>
+          <%= link_to t('admin.menu.users'), admin_users_path %>
         </li>
       </ul>
     </li>
+
+    <% if feature?(:legislation) %>
+      <li class="section-title <%= "active" if controller.class.parent == Admin::Legislation %>">
+        <%= link_to admin_legislation_processes_path do %>
+          <span class="icon-edit"></span>
+          <strong><%= t("admin.menu.legislation") %></strong>
+        <% end %>
+      </li>
+    <% end %>
 
     <li class="section-title">
       <a href="#">
@@ -147,20 +160,20 @@
           <%= link_to t("admin.menu.site_customization.images"), admin_site_customization_images_path %>
         </li>
 
-        <li <%= 'class=active' if controller_name == 'content_blocks' %>>
+        <li <%= "class=active" if controller_name == "content_blocks" %>>
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
         </li>
       </ul>
     </li>
 
-    <li class="section-title" <%= 'class=active' if controller_name == 'geozones' %>>
+    <li class="section-title <%= "active" if controller_name == "geozones" %>">
       <%= link_to admin_geozones_path do %>
         <strong><%= t('admin.menu.geozones') %></strong>
       <% end %>
     </li>
 
     <% if feature?(:signature_sheets) %>
-      <li class="section-title" <%= "class=active" if controller_name == "signature_sheets" %>>
+      <li class="section-title <%= "active" if controller_name == "signature_sheets" %>">
         <%= link_to admin_signature_sheets_path do %>
           <strong><%= t("admin.menu.signature_sheets") %></strong>
         <% end %>

@@ -32,12 +32,13 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment, Legislation::Question, Legislation::Annotation]
 
       can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :create, :index, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
+      can [:search, :index], ::User
 
       can :manage, Annotation
 
@@ -65,6 +66,12 @@ module Abilities
       can :manage, SiteCustomization::Page
       can :manage, SiteCustomization::Image
       can :manage, SiteCustomization::ContentBlock
+
+      can [:manage], ::Legislation::Process
+      can [:manage], ::Legislation::DraftVersion
+      can [:manage], ::Legislation::Question
+      cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation]
+
     end
   end
 end

@@ -41,11 +41,11 @@ module Search
   end
 
   def search_finish_date
-    (params[:advanced_search][:date_max].to_date rescue Date.today) || Date.today
+    (params[:advanced_search][:date_max].to_date rescue Date.current) || Date.current
   end
 
   def search_date_range
-    [100.years.ago, search_start_date].max.beginning_of_day..[search_finish_date, Date.today].min.end_of_day
+    [100.years.ago, search_start_date].max.beginning_of_day..[search_finish_date, Date.current].min.end_of_day
   end
 
   def set_search_order

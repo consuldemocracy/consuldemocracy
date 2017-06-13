@@ -7,22 +7,15 @@
     <%= render "shared/back_link" %>
 
     <ul class="menu vertical margin-top">
-      <li><a href="#1"><strong>Pregunta frecuente 1</strong></a></li>
-      <li><a href="#2"><strong>Pregunta frecuente 2</strong></a></li>
-      <li><a href="#3"><strong>Pregunta frecuente 3</strong></a></li>
+      <li><a href="#1"><strong><%= t("pages.more_info.faq.page.faq_1_title") %></strong></a></li>
     </ul>
   </div>
 
   <div class="text small-12 medium-9 column">
-    <h1 class="clear">Preguntas Frecuentes (FAQ)</h1>
+    <h1 class="clear"><%= t("pages.more_info.faq.page.title") %></h1>
+    <p><%= t("pages.more_info.faq.page.description") %></p>
 
-    <h2 id="1">Pregunta frecuente 1</h2>
-    <p>Texto de respuesta para la pregunta frecuente 1.</p>
-
-    <h2 id="2">Pregunta frecuente 2</h2>
-    <p>Texto de respuesta para la pregunta frecuente 2.</p>
-
-    <h2 id="3">Pregunta frecuente 3</h2>
-    <p>Texto de respuesta para la pregunta frecuente 3.</p>
+    <h2 id="1"><%= t("pages.more_info.faq.page.faq_1_title") %></h2>
+    <p><%= t("pages.more_info.faq.page.faq_1_description") %></p>
   </div>
 </div>
