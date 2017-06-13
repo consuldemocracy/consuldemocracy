@@ -7,7 +7,7 @@
     </div>
 
     <ul>
-      <% if process.active_phase?(:debate) %>
+      <% if process.debate_phase.enabled? %>
         <li <%= "class=active" if phase == :debate %>>
           <%= link_to legislation_process_debate_path(process) do %>
             <h4><%= t('legislation.processes.shared.debate_dates') %></h4>
@@ -16,7 +16,7 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:draft_publication) %>
+      <% if process.draft_publication.enabled? %>
         <li <%= "class=active" if phase == :draft_publication %>>
           <%= link_to legislation_process_draft_publication_path(process) do %>
             <h4><%= t('legislation.processes.shared.draft_publication_date') %></h4>
@@ -25,7 +25,7 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:allegations) %>
+      <% if process.allegations_phase.enabled? %>
         <li <%= "class=active" if phase == :allegations %>>
           <%= link_to legislation_process_allegations_path(process) do %>
             <h4><%= t('legislation.processes.shared.allegations_dates') %></h4>
@@ -34,7 +34,7 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:result_publication) %>
+      <% if process.result_publication.enabled? %>
         <li <%= "class=active" if phase == :result_publication %>>
           <%= link_to legislation_process_result_publication_path(process) do %>
             <h4><%= t('legislation.processes.shared.result_publication_date') %></h4>

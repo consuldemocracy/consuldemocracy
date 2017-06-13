@@ -8,9 +8,9 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def show
-    if process.active_phase?(:allegations) && process.allegations_phase.started? && draft_version = process.draft_versions.published.last
+    if process.allegations_phase.enabled? && process.allegations_phase.started? && draft_version = process.draft_versions.published.last
       redirect_to legislation_process_draft_version_path(process, draft_version)
-    elsif process.active_phase?(:debate)
+    elsif process.debate_phase.enabled?
       redirect_to legislation_process_debate_path(process)
     else
       redirect_to legislation_process_allegations_path(process)
