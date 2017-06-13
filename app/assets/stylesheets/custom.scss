@@ -2288,7 +2288,7 @@ $campaign-yellow:  #FFDB19;
 
     h4 {
       background: $campaign-red;
-      color: white;
+      color: black;
       padding: $line-height/4 $line-height/2;
 
       @include breakpoint(medium) {
@@ -2342,6 +2342,11 @@ $campaign-yellow:  #FFDB19;
     display: inline-block;
     font-weight: bold;
   }
+
+  .materials-block {
+    background: #fffdf7;
+    padding: $line-height/2;
+  }
 }
 
 .block-black , .block-yellow {
@@ -2392,6 +2397,10 @@ $campaign-yellow:  #FFDB19;
 
       &.active {
         background: $campaign-yellow;
+
+        @include breakpoint(medium) {
+          width: 27%;
+        }
       }
 
       @include breakpoint(medium) {
