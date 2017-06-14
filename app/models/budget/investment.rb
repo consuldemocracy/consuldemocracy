@@ -17,6 +17,8 @@ class Budget
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
 
+    has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }
+
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
     belongs_to :group
@@ -28,9 +30,6 @@ class Budget
     has_many :comments, as: :commentable
     has_many :milestones
 
-    has_attached_file :image, styles: { large: "600x600>"  ,medium: "300x300>", thumb: "100x100>" }
-    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-
     validates :title, presence: true
     validates :author, presence: true
     validates :description, presence: true
@@ -41,6 +40,7 @@ class Budget
     validates :title, length: { in: 4..Budget::Investment.title_max_length }
     validates :description, length: { maximum: Budget::Investment.description_max_length }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
+    validates_attachment :image, content_type: { content_type: ["image/jpeg"] }
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }

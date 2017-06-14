@@ -29,6 +29,30 @@ describe Budget::Investment do
     end
   end
 
+  describe "#image" do
+
+    describe "extesion" do
+      it "should not be valid with '.png' extension" do
+        investment.image = File.new("spec/fixtures/files/logo_header.png")
+
+        expect(investment).to_not be_valid
+      end
+
+      it "should not be valid with '.gif' extension" do
+        investment.image = File.new("spec/fixtures/files/logo_header.gif")
+
+        expect(investment).to_not be_valid
+      end
+
+      it "should be valid with '.jpg' extension" do
+        investment.image = File.new("spec/fixtures/files/logo_header.jpg")
+
+        expect(investment).to be_valid
+      end
+    end
+
+  end
+
   it "sanitizes description" do
     investment.description = "<script>alert('danger');</script>"
     investment.valid?
