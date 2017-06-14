@@ -77,7 +77,7 @@
       </div>
 
       <div class="small-12 medium-9 column">
-        <h2 class="sr-only">PARTICIPACIÓN</h2>
+        <h2 class="show-for-sr">PARTICIPACIÓN</h2>
 
         <!-- Participación total -->
         <%= render "polls/stats_2017/total" if @totals.present?%>
@@ -91,7 +91,7 @@
         <!-- Participación por distrito -->
         <%= render "polls/stats_2017/districts" if @district_stats.present? %>
 
-        <h2 class="sr-only">VOTACIONES</h2>
+        <h2 class="show-for-sr">VOTACIONES</h2>
 
         <% if @poll_stats.present? %>
           <!-- Propuestas y Plaza de España -->

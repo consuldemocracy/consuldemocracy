@@ -141,7 +141,7 @@
           <% if browser.device.mobile? %>
             <a href="whatsapp://send?text=<%= @probe_option.name %> <%= plaza_probe_option_url(@probe_option) %>" data-action="share/whatsapp/share">
               <span class="icon-whatsapp whatsapp"></span>
-              <span class="sr-only"><%= t("social.whatsapp") %></span>
+              <span class="show-for-sr"><%= t("social.whatsapp") %></span>
             </a>
           <% end %>
         </div>

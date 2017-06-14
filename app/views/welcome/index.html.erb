@@ -8,7 +8,7 @@
 <% cache ["welcome_index_20170613", user_signed_in?] do %>
   <div class="welcome">
 
-    <h1 class="sr-only"><%= t("welcome.title") %></h1>
+    <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
 
     <div class="no-margin-top">
       <%= render "budgets_module" %>
