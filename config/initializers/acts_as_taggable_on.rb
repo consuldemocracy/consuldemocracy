@@ -32,15 +32,6 @@ module ActsAsTaggableOn
        "taggable_type"]
     end
 
-    def self.public_for_api
-      where( %{ taggings.tag_id in (?) and
-                (taggings.taggable_type = 'Debate' and taggings.taggable_id in (?)) or
-                (taggings.taggable_type = 'Proposal' and taggings.taggable_id in (?)) },
-             Tag.where('kind IS NULL or kind = ?', 'category').pluck(:id),
-             Debate.public_for_api.pluck(:id),
-             Proposal.public_for_api.pluck(:id))
-    end
-
     def public_for_api?
       return false unless ["Proposal", "Debate"].include? (taggable_type)
       return false unless taggable.present?
