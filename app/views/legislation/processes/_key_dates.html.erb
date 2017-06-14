@@ -7,8 +7,8 @@
     </div>
 
     <ul>
-      <% if process.active_phase?(:debate) %>
-        <li <%= "class=active" if phase == :debate %>>
+      <% if process.debate_phase.enabled? %>
+        <li <%= "class=active" if phase == :debate_phase %>>
           <%= link_to legislation_process_debate_path(process) do %>
             <h4><%= t('legislation.processes.shared.debate_dates') %></h4>
             <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
@@ -16,7 +16,7 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:draft_publication) %>
+      <% if process.draft_publication.enabled? %>
         <li <%= "class=active" if phase == :draft_publication %>>
           <%= link_to legislation_process_draft_publication_path(process) do %>
             <h4><%= t('legislation.processes.shared.draft_publication_date') %></h4>
@@ -25,8 +25,8 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:allegations) %>
-        <li <%= "class=active" if phase == :allegations %>>
+      <% if process.allegations_phase.enabled? %>
+        <li <%= "class=active" if phase == :allegations_phase %>>
           <%= link_to legislation_process_allegations_path(process) do %>
             <h4><%= t('legislation.processes.shared.allegations_dates') %></h4>
             <p><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></p>
@@ -34,11 +34,11 @@
         </li>
       <% end %>
 
-      <% if process.active_phase?(:final_version_publication) %>
-        <li <%= "class=active" if phase == :final_version_publication %>>
-          <%= link_to legislation_process_final_version_publication_path(process) do %>
-            <h4><%= t('legislation.processes.shared.final_publication_date') %></h4>
-            <p><%= format_date(process.final_publication_date) %></p>
+      <% if process.result_publication.enabled? %>
+        <li <%= "class=active" if phase == :result_publication %>>
+          <%= link_to legislation_process_result_publication_path(process) do %>
+            <h4><%= t('legislation.processes.shared.result_publication_date') %></h4>
+            <p><%= format_date(process.result_publication_date) %></p>
           <% end %>
         </li>
       <% end %>

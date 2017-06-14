@@ -76,7 +76,7 @@ en:
         debate_dates: Debate
         draft_publication_date: Draft publication
         allegations_dates: Allegations
-        final_publication_date: Final result publication
+        result_publication_date: Final result publication
     questions:
       comments:
         comment_button: Publish answer

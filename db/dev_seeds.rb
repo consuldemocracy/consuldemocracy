@@ -988,7 +988,11 @@ print "Creating legislation processes"
                                            draft_publication_date: Date.current + 1.day,
                                            allegations_start_date: Date.current + 2.days,
                                            allegations_end_date: Date.current + 3.days,
-                                           final_publication_date: Date.current + 4.days
+                                           result_publication_date: Date.current + 4.days,
+                                           debate_phase_enabled: true,
+                                           allegations_phase_enabled: true,
+                                           draft_publication_enabled: true,
+                                           result_publication_enabled: true
   )
 end
 

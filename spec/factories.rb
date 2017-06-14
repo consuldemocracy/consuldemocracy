@@ -700,7 +700,11 @@ FactoryGirl.define do
     draft_publication_date Date.current - 1.day
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
-    final_publication_date Date.current + 5.days
+    result_publication_date Date.current + 5.days
+    debate_phase_enabled true
+    allegations_phase_enabled true
+    draft_publication_enabled true
+    result_publication_enabled true
 
     trait :next do
       start_date Date.current + 2.days
@@ -710,7 +714,7 @@ FactoryGirl.define do
       draft_publication_date Date.current + 5.day
       allegations_start_date Date.current + 5.days
       allegations_end_date Date.current + 7.days
-      final_publication_date Date.current + 8.days
+      result_publication_date Date.current + 8.days
     end
 
     trait :past do
@@ -721,7 +725,7 @@ FactoryGirl.define do
       draft_publication_date Date.current - 8.day
       allegations_start_date Date.current - 8.days
       allegations_end_date Date.current - 4.days
-      final_publication_date Date.current - 2.days
+      result_publication_date Date.current - 2.days
     end
 
     trait :in_debate_phase do
@@ -732,7 +736,7 @@ FactoryGirl.define do
       draft_publication_date Date.current + 1.day
       allegations_start_date Date.current + 2.days
       allegations_end_date Date.current + 3.days
-      final_publication_date Date.current + 5.days
+      result_publication_date Date.current + 5.days
     end
   end
 
