@@ -43,6 +43,12 @@
               <span class="label round tag-votes">
                 <%= proposal.total_votes %> votos
               </span>
+              <% if proposal.for_challenge && proposal.successful? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round tag-succesful">
+                  <%= t("proposals.show.tag_succesful") %>
+                </span>
+              <% end %>
             </p>
            <% if !proposal.for_challenge %>
             <div class="supports">
@@ -66,14 +72,26 @@
 
         <div class="row">
           <% if proposal.successful? %>
+          <% if proposal.for_challenge %>
           <div class="small-9 medium-9 column ">
             <div class="padding text-left">
               <p>
-                <%= t("proposals.proposal.successful",
-                    voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+                <%= t("proposals.proposal.successful_for_challenge",
+                    voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe  %>
               </p>
             </div>
           </div>
+          <% else %>
+            <div class="small-9 medium-9 column ">
+              <div class="padding text-left">
+                <p>
+                  <%= t("proposals.proposal.successful",
+                      voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+
           <div class="small-3 medium-3 column ">
             <% if can? :create, Poll::Question %>
               <p class="text-center">

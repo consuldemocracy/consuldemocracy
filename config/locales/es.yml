@@ -387,9 +387,11 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      successful_for_challenge: 'Ha finalizado el tiempo de recepción de propuestas, y esta propuesta ha estado dentro de las 3 más votadas y pasará a la %{voting}.'
       voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
+      tag_succesful: "Dentro de las 3 propuestas más votadas"
       code: 'Código de la propuesta:'
       comments:
         one: 1 Comentario

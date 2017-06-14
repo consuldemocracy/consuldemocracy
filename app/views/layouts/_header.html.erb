@@ -42,7 +42,17 @@
             </div>
           </div>
         </div>
+
+        <div class="top-bar-title top-bar-title-right">
+          <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
+            <%= image_tag(image_path_for('logo_pena.png'), class: 'hide-for-small-only float-right', size: '80x300', alt: t("layouts.header.logo")) %>
+            <!-- <%= setting['org_name'] %> -->
+          <% end %>
+        </div>
+
       </div>
+
+
     </div>
   </div>
 
