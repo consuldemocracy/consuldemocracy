@@ -19,12 +19,13 @@
 
     <% if feature?(:polls) %>
       <li>
-        <%= layout_menu_link_to t("layouts.header.poll_questions"),
-                                  first_voting_path,
-                                  controller_name == 'pages' &&
-                                  params[:id] == 'landings/first_voting',
-                                  accesskey: "3",
-                                  title: t("shared.go_to_page") + t("layouts.header.poll_questions") %>
+        <%= link_to t("layouts.header.poll_questions"),
+                      first_voting_path,
+                      class: ("active" if current_page?(first_voting_path) ||
+                                          current_page?(primera_votacion_info_path) ||
+                                          current_page?(primera_votacion_stats_path)),
+                      accesskey: "3",
+                      title: t("shared.go_to_page") + t("layouts.header.poll_questions") %>
       </li>
     <% end %>
 
