@@ -171,7 +171,7 @@ es:
         draft_publication_date: Fecha de publicación del borrador
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
-        final_publication_date: Fecha de publicación del resultado final
+        result_publication_date: Fecha de publicación del resultado final
       legislation/draft_version:
         title: Título de la version
         body: Texto

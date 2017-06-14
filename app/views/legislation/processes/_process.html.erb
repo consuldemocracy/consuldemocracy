@@ -17,28 +17,42 @@
     </div>
   </div>
 
-  <div class="column row">
-    <div class="small-12 column legislation-calendar-info">
-      <p><%= t('legislation.processes.shared.key_dates') %></p>
+  <% if process.enabled_phases_and_publications_count.positive? %>
+    <% column_width = 12 / process.enabled_phases_and_publications_count %>
+    <div class="column row">
+      <div class="small-12 column legislation-calendar-info">
+        <p><%= t('legislation.processes.shared.key_dates') %></p>
+      </div>
     </div>
-  </div>
 
-  <div class="column row small-collapse medium-uncollapse legislation-calendar">
-    <div class="small-6 medium-3 column">
-        <h5><%= t('legislation.processes.shared.debate_dates') %></h5>
-        <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
+    <div class="column row small-collapse medium-uncollapse legislation-calendar">
+      <% if process.debate_phase.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column">
+            <h5><%= t('legislation.processes.shared.debate_dates') %></h5>
+            <p><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></p>
+        </div>
+      <% end %>
+
+      <% if process.draft_publication.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column">
+            <h5><%= t('legislation.processes.shared.draft_publication_date') %></h5>
+            <p><%= format_date(process.draft_publication_date) %></p>
+        </div>
+      <% end %>
+
+      <% if process.allegations_phase.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column">
+            <h5><%= t('legislation.processes.shared.allegations_dates') %></h5>
+            <p><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></p>
+        </div>
+      <% end %>
+
+      <% if process.result_publication.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column">
+            <h5><%= t('legislation.processes.shared.result_publication_date') %></h5>
+            <p><%= format_date(process.result_publication_date) %></p>
+        </div>
+      <% end %>
     </div>
-    <div class="small-6 medium-3 column">
-        <h5><%= t('legislation.processes.shared.draft_publication_date') %></h5>
-        <p><%= format_date(process.draft_publication_date) %></p>
-    </div>
-    <div class="small-6 medium-3 column">
-        <h5><%= t('legislation.processes.shared.allegations_dates') %></h5>
-        <p><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></p>
-    </div>
-    <div class="small-6 medium-3 column">
-        <h5><%= t('legislation.processes.shared.final_publication_date') %></h5>
-        <p><%= format_date(process.final_publication_date) %></p>
-    </div>
-  </div>
+  <% end %>
 </div>

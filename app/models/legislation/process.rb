@@ -2,6 +2,8 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase draft_publication result_publication).freeze
+
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id', dependent: :destroy
   has_one :final_draft_version, -> { where final_version: true, status: 'published' }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
   has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
@@ -19,48 +21,24 @@ class Legislation::Process < ActiveRecord::Base
   scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
-  def open_phase?(phase)
-    today = Date.current
-
-    case phase
-    when :debate
-      active_phase?(:debate) && today >= debate_start_date && today <= debate_end_date
-    when :draft_publication
-      active_phase?(:draft_publication) && today >= draft_publication_date
-    when :allegations
-      active_phase?(:allegations) && today >= allegations_start_date && today <= allegations_end_date
-    when :final_version_publication
-      active_phase?(:final_version_publication) && today >= final_publication_date
-    end
+  def debate_phase
+    Legislation::Process::Phase.new(debate_start_date, debate_end_date, debate_phase_enabled)
   end
 
-  def show_phase?(phase)
-    # show past phases even if they're finished
-    today = Date.current
-
-    case phase
-    when :debate
-      active_phase?(:debate) && today >= debate_start_date
-    when :draft_publication
-      active_phase?(:draft_publication) && today >= draft_publication_date
-    when :allegations
-      active_phase?(:allegations) && today >= allegations_start_date
-    when :final_version_publication
-      active_phase?(:final_version_publication) && today >= final_publication_date
-    end
+  def allegations_phase
+    Legislation::Process::Phase.new(allegations_start_date, allegations_end_date, allegations_phase_enabled)
   end
 
-  def active_phase?(phase)
-    case phase
-    when :debate
-      debate_start_date.present? && debate_end_date.present?
-    when :draft_publication
-      draft_publication_date.present?
-    when :allegations
-      allegations_start_date.present? && allegations_end_date.present?
-    when :final_version_publication
-      final_publication_date.present?
-    end
+  def draft_publication
+    Legislation::Process::Publication.new(draft_publication_date, draft_publication_enabled)
+  end
+
+  def result_publication
+    Legislation::Process::Publication.new(result_publication_date, result_publication_enabled)
+  end
+
+  def enabled_phases_and_publications_count
+    PHASES_AND_PUBLICATIONS.count { |process| send(process).enabled? }
   end
 
   def total_comments

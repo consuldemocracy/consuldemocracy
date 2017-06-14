@@ -60,7 +60,7 @@
           <section class="legislation-annotatable"
                    data-legislation-draft-version-id="<%= @draft_version.id %>"
                    data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
-                   data-legislation-open-phase="<%= @process.open_phase?(:allegations) %>"
+                   data-legislation-open-phase="<%= @process.allegations_phase.open? %>"
                    >
           <% end %>
             <%= @draft_version.body_html.html_safe %>

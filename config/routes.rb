@@ -112,7 +112,7 @@ Rails.application.routes.draw do
       get :debate
       get :draft_publication
       get :allegations
-      get :final_version_publication
+      get :result_publication
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
       end
