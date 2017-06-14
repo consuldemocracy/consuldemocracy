@@ -632,4 +632,29 @@ describe User do
 
   end
 
+  describe "email_required?" do
+    it "is true for regular users" do
+      expect(subject.email_required?).to eq(true)
+      expect(create(:user, :hidden).email_required?).to eq(true)
+    end
+
+    it "is false for erased users" do
+      user = create(:user)
+      user.erase
+      user.reload
+
+      expect(user.email_required?).to eq(false)
+    end
+
+    it "is false for verified users with no email" do
+      user = create(:user,
+                     username: "Lois",
+                     email: "",
+                     verified_at: Time.current)
+
+      expect(user).to be_valid
+      expect(user.email_required?).to eq(false)
+    end
+  end
+
 end
