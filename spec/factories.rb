@@ -318,6 +318,11 @@ FactoryGirl.define do
       feasibility "feasible"
       valuation_finished true
     end
+
+    trait :with_descriptive_image do
+      image { File.new("spec/fixtures/files/logo_header.jpg") }
+      image_description "Lorem ipsum dolor sit amet"
+    end
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do
