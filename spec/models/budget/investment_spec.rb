@@ -30,25 +30,59 @@ describe Budget::Investment do
   end
 
   describe "#image" do
+    let(:investment_with_image) { build(:budget_investment, :with_descriptive_image) }
 
-    describe "extesion" do
+    it "should be valid" do
+      expect(investment_with_image).to be_valid
+    end
+
+    describe "file extension" do
       it "should not be valid with '.png' extension" do
-        investment.image = File.new("spec/fixtures/files/logo_header.png")
+        investment_with_image.image = File.new("spec/fixtures/files/logo_header.png")
 
-        expect(investment).to_not be_valid
+        expect(investment_with_image).to_not be_valid
       end
 
       it "should not be valid with '.gif' extension" do
-        investment.image = File.new("spec/fixtures/files/logo_header.gif")
+        investment_with_image.image = File.new("spec/fixtures/files/logo_header.gif")
 
-        expect(investment).to_not be_valid
+        expect(investment_with_image).to_not be_valid
       end
 
       it "should be valid with '.jpg' extension" do
-        investment.image = File.new("spec/fixtures/files/logo_header.jpg")
+        investment_with_image.image = File.new("spec/fixtures/files/logo_header.jpg")
 
-        expect(investment).to be_valid
+        expect(investment_with_image).to be_valid
       end
+    end
+
+    describe "description" do
+
+      it "should be valid when image and image_description are not defined" do
+        investment_with_image.image = nil
+        investment_with_image.image_description = nil
+
+        expect(investment_with_image).to be_valid
+      end
+
+      it "should not be valid when correct image attached but no image description provided" do
+        investment_with_image.image_description = ''
+
+        expect(investment_with_image).to_not be_valid
+      end
+
+      it "should not be valid when image description is too short" do
+        investment_with_image.image_description = 'a'*3
+
+        expect(investment_with_image).to_not be_valid
+      end
+
+      it "should not be valid when image description is too long" do
+        investment_with_image.image_description = 'a'*81
+
+        expect(investment_with_image).to_not be_valid
+      end
+
     end
 
   end
