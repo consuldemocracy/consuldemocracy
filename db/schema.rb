@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610211027) do
+ActiveRecord::Schema.define(version: 20170613203256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -467,11 +467,15 @@ ActiveRecord::Schema.define(version: 20170610211027) do
     t.date     "draft_publication_date"
     t.date     "allegations_start_date"
     t.date     "allegations_end_date"
-    t.date     "final_publication_date"
+    t.date     "result_publication_date"
     t.datetime "hidden_at"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.text     "summary"
+    t.boolean  "debate_phase_enabled",       default: false
+    t.boolean  "allegations_phase_enabled",  default: false
+    t.boolean  "draft_publication_enabled",  default: false
+    t.boolean  "result_publication_enabled", default: false
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -480,8 +484,8 @@ ActiveRecord::Schema.define(version: 20170610211027) do
   add_index "legislation_processes", ["debate_start_date"], name: "index_legislation_processes_on_debate_start_date", using: :btree
   add_index "legislation_processes", ["draft_publication_date"], name: "index_legislation_processes_on_draft_publication_date", using: :btree
   add_index "legislation_processes", ["end_date"], name: "index_legislation_processes_on_end_date", using: :btree
-  add_index "legislation_processes", ["final_publication_date"], name: "index_legislation_processes_on_final_publication_date", using: :btree
   add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
+  add_index "legislation_processes", ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree
   add_index "legislation_processes", ["start_date"], name: "index_legislation_processes_on_start_date", using: :btree
 
   create_table "legislation_question_options", force: :cascade do |t|

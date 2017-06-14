@@ -9,7 +9,7 @@ class Legislation::AnswersController < Legislation::BaseController
   respond_to :html, :js
 
   def create
-    if @process.open_phase?(:debate)
+    if @process.debate_phase.open?
       @answer.user = current_user
       @answer.save
       track_event
