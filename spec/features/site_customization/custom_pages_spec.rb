@@ -99,4 +99,36 @@ feature "Custom Pages" do
       end
     end
   end
+
+  context "Override more-information/faq" do
+    scenario "See default content when custom page is not published" do
+      custom_page = create(:site_customization_page,
+        slug: "more-information/faq",
+        title: "Custom FAQ",
+        content: "New text for FAQ page",
+        print_content_flag: true
+      )
+
+      visit custom_page.url
+
+      expect(page).to have_title("Frequently Asked Questions")
+      expect(page).to have_selector("h1", text: "Frequently Asked Questions")
+      expect(page).to have_content("Use this page to resolve the common FAQs to the users of site.")
+    end
+
+    scenario "See custom content when custom page is published" do
+      custom_page = create(:site_customization_page, :published,
+        slug: "more-information/faq",
+        title: "Custom FAQ",
+        content: "New text for FAQ page",
+        print_content_flag: true
+      )
+
+      visit custom_page.url
+
+      expect(page).to have_title("Custom FAQ")
+      expect(page).to have_selector("h1", text: "Custom FAQ")
+      expect(page).to have_content("New text for FAQ page")
+    end
+  end
 end
