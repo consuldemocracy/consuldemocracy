@@ -57,7 +57,7 @@ class Proposal < ActiveRecord::Base
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
-  scope :public_for_api,           -> { all }
+  scope :public_for_api,           -> { where('proposals.proceeding IS NULL or proposals.proceeding = ?', 'Derechos Humanos') }
 
   def to_param
     "#{id}-#{title}".parameterize
