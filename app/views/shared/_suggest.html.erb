@@ -9,7 +9,7 @@
 
       <ul>
         <% @resources.limit(@limit).each do |resource| %>
-          <li><%= link_to resource.title, resource %></li>
+          <li><%= link_to resource.title, @resource_path_method.present? ? send(@resource_path_method, resource) : resource  %></li>
         <% end %>
       </ul>
 

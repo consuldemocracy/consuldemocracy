@@ -161,3 +161,12 @@ en:
       date_html: "Open process"
     shared:
       more_info: "More information"
+  polls_reports:
+    label: "Technical report"
+    button: "Download technical report"
+    title_1: "Madrid 100% sostenible"
+    img_alt_1: "Generic image related to the proposal Madrid 100% sostenible"
+    description_1_html: "Technical report of the proposal <strong>Madrid 100% sostenible</strong>."
+    title_2: "Billete único para el transporte público"
+    img_alt_2: "Generic image related to the proposal Billete único para el transporte público"
+    description_2_html: "Technical report on the competition, legality, feasibility and cost of the proposal <strong>Billete único para el transporte público</strong>."
