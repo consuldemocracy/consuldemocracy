@@ -7,14 +7,14 @@ RSpec.describe Legislation::Process::Publication, type: :model do
     it "checks draft publication" do
       expect(process.draft_publication.enabled?).to be true
 
-      process.update_attributes(draft_publication_date: nil)
+      process.update_attributes(draft_publication_enabled: false)
       expect(process.draft_publication.enabled?).to be false
     end
 
     it "checks result publication" do
       expect(process.result_publication.enabled?).to be true
 
-      process.update_attributes(result_publication_date: nil)
+      process.update_attributes(result_publication_enabled: false)
       expect(process.result_publication.enabled?).to be false
     end
   end

@@ -211,7 +211,7 @@ es:
           form:
             error: Error
         form:
-          active: Activa
+          enabled: Habilitado
           process: Proceso
           debate_phase: Fase previa
           allegations_phase: Fase de alegaciones

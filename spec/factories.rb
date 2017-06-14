@@ -612,6 +612,10 @@ FactoryGirl.define do
     allegations_start_date Date.current
     allegations_end_date Date.current + 3.days
     result_publication_date Date.current + 5.days
+    debate_phase_enabled true
+    allegations_phase_enabled true
+    draft_publication_enabled true
+    result_publication_enabled true
 
     trait :next do
       start_date Date.current + 2.days

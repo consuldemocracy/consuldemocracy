@@ -2,6 +2,8 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase draft_publication result_publication).freeze
+
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id', dependent: :destroy
   has_one :final_draft_version, -> { where final_version: true, status: 'published' }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
   has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
@@ -20,19 +22,23 @@ class Legislation::Process < ActiveRecord::Base
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
   def debate_phase
-    Legislation::Process::Phase.new(debate_start_date, debate_end_date)
+    Legislation::Process::Phase.new(debate_start_date, debate_end_date, debate_phase_enabled)
   end
 
   def allegations_phase
-    Legislation::Process::Phase.new(allegations_start_date, allegations_end_date)
+    Legislation::Process::Phase.new(allegations_start_date, allegations_end_date, allegations_phase_enabled)
   end
 
   def draft_publication
-    Legislation::Process::Publication.new(draft_publication_date)
+    Legislation::Process::Publication.new(draft_publication_date, draft_publication_enabled)
   end
 
   def result_publication
-    Legislation::Process::Publication.new(result_publication_date)
+    Legislation::Process::Publication.new(result_publication_date, result_publication_enabled)
+  end
+
+  def enabled_phases_and_publications_count
+    PHASES_AND_PUBLICATIONS.count { |process| send(process).enabled? }
   end
 
   def total_comments
