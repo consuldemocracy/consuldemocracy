@@ -19,48 +19,20 @@ class Legislation::Process < ActiveRecord::Base
   scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
-  def open_phase?(phase)
-    today = Date.current
-
-    case phase
-    when :debate
-      active_phase?(:debate) && today >= debate_start_date && today <= debate_end_date
-    when :draft_publication
-      active_phase?(:draft_publication) && today >= draft_publication_date
-    when :allegations
-      active_phase?(:allegations) && today >= allegations_start_date && today <= allegations_end_date
-    when :final_version_publication
-      active_phase?(:final_version_publication) && today >= final_publication_date
-    end
+  def debate_phase
+    Legislation::Process::Phase.new(debate_start_date, debate_end_date)
   end
 
-  def show_phase?(phase)
-    # show past phases even if they're finished
-    today = Date.current
-
-    case phase
-    when :debate
-      active_phase?(:debate) && today >= debate_start_date
-    when :draft_publication
-      active_phase?(:draft_publication) && today >= draft_publication_date
-    when :allegations
-      active_phase?(:allegations) && today >= allegations_start_date
-    when :final_version_publication
-      active_phase?(:final_version_publication) && today >= final_publication_date
-    end
+  def allegations_phase
+    Legislation::Process::Phase.new(allegations_start_date, allegations_end_date)
   end
 
-  def active_phase?(phase)
-    case phase
-    when :debate
-      debate_start_date.present? && debate_end_date.present?
-    when :draft_publication
-      draft_publication_date.present?
-    when :allegations
-      allegations_start_date.present? && allegations_end_date.present?
-    when :final_version_publication
-      final_publication_date.present?
-    end
+  def draft_publication
+    Legislation::Process::Publication.new(draft_publication_date)
+  end
+
+  def result_publication
+    Legislation::Process::Publication.new(result_publication_date)
   end
 
   def total_comments

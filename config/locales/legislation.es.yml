@@ -76,7 +76,7 @@ es:
         debate_dates: Debate previo
         draft_publication_date: Publicación borrador
         allegations_dates: Alegaciones
-        final_publication_date: Publicación resultados
+        result_publication_date: Publicación resultados
     questions:
       comments:
         comment_button: Publicar respuesta

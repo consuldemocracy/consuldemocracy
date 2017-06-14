@@ -45,7 +45,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :draft_publication_date,
         :allegations_start_date,
         :allegations_end_date,
-        :final_publication_date
+        :result_publication_date
       )
     end
 end
