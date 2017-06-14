@@ -110,7 +110,7 @@
     </div>
 
     <div class="small-12 medium-9 column">
-      <h2 class="sr-only">TODA LA CIUDAD</h2>
+      <h2 class="show-for-sr">TODA LA CIUDAD</h2>
 
       <% cache ["results:polls_2017:rake_task:#{Stat.named('polls_2017_cache', 'keys', 'stats').value}"] do %>
         <!-- Propuestas y Plaza de España -->
@@ -119,7 +119,7 @@
         <!-- Gran Vía -->
         <%= render "polls/results_2017/poll_2" %>
 
-        <h2 class="sr-only">DISTRITOS</h2>
+        <h2 class="show-for-sr">DISTRITOS</h2>
 
         <!-- Barajas -->
         <%= render "polls/results_2017/poll_3" %>
