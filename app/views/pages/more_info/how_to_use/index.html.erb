@@ -2,12 +2,31 @@
   <%= render "shared/canonical", href: how_to_use_url %>
 <% end %>
 
-<div class="row margin-top">
-  <div class="text small-12 column">
-    <%= render "shared/back_link" %>
+<% if custom_page = SiteCustomization::Page.published.find_by(slug: 'more-information/how-to-use') %>
+  <% provide :title do %><%= custom_page.title %><% end %>
 
-    <h1><%= t('pages.more_info.titles.how_to_use') %></h1>
+  <div class="row margin-top">
+    <div class="text small-12 column">
+      <%= render "shared/back_link" %>
 
-    <%= markdown t('pages.more_info.how_to_use.text') %>
+      <h1><%= custom_page.title %></h1>
+      <%= "<h2>#{custom_page.subtitle}</h2>" if custom_page.subtitle %>
+
+      <%= raw custom_page.content %>
+    </div>
   </div>
-</div>
+
+<% else %>
+  <% provide :title do %><%= t('pages.more_info.titles.how_to_use') %><% end %>
+
+  <div class="row margin-top">
+    <div class="text small-12 column">
+      <%= render "shared/back_link" %>
+
+      <h1><%= t('pages.more_info.titles.how_to_use') %></h1>
+
+      <%= markdown t('pages.more_info.how_to_use.text') %>
+    </div>
+  </div>
+
+<% end %>

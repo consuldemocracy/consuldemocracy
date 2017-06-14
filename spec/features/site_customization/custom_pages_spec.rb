@@ -131,4 +131,36 @@ feature "Custom Pages" do
       expect(page).to have_content("New text for FAQ page")
     end
   end
+
+  context "Override more-information/how-to-use" do
+    scenario "See default content when custom page is not published" do
+      custom_page = create(:site_customization_page,
+        slug: "more-information/how-to-use",
+        title: "Custom How to use",
+        content: "New text for How to use page",
+        print_content_flag: true
+      )
+
+      visit custom_page.url
+
+      expect(page).to have_title("Use it in your local government")
+      expect(page).to have_selector("h1", text: "Use it in your local government")
+      expect(page).to have_content("Use it in your local government or help us to improve it, it is free software.")
+    end
+
+    scenario "See custom content when custom page is published" do
+      custom_page = create(:site_customization_page, :published,
+        slug: "more-information/how-to-use",
+        title: "Custom How to use",
+        content: "New text for How to use page",
+        print_content_flag: true
+      )
+
+      visit custom_page.url
+
+      expect(page).to have_title("Custom How to use")
+      expect(page).to have_selector("h1", text: "Custom How to use")
+      expect(page).to have_content("New text for How to use page")
+    end
+  end
 end
