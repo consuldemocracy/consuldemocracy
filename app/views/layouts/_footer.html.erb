@@ -50,7 +50,7 @@
             <li class="inline-block">
               <%= link_to "https://twitter.com/#{setting['twitter_handle']}", target: "_blank",
                            title: t("shared.go_to_page") + t("social.twitter", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                              <span class="sr-only"><%= t("social.twitter", org: setting['org_name']) %></span>
+                              <span class="show-for-sr"><%= t("social.twitter", org: setting['org_name']) %></span>
                               <span class="icon-twitter" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -59,7 +59,7 @@
             <li class="inline-block">
               <%= link_to "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank",
                           title: t("shared.go_to_page") + t("social.facebook", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                          <span class="sr-only"><%= t("social.facebook", org: setting['org_name']) %></span>
+                          <span class="show-for-sr"><%= t("social.facebook", org: setting['org_name']) %></span>
                           <span class="icon-facebook" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -68,7 +68,7 @@
             <li class="inline-block">
               <%= link_to setting['blog_url'], target: "_blank",
                           title: t("shared.go_to_page") + t("social.blog", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                          <span class="sr-only"><%= t("social.blog", org: setting['org_name']) %></span>
+                          <span class="show-for-sr"><%= t("social.blog", org: setting['org_name']) %></span>
                           <span class="icon-blog" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -77,7 +77,7 @@
             <li class="inline-block">
               <%= link_to "https://www.youtube.com/#{setting['youtube_handle']}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.youtube", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                          <span class="sr-only"><%= t("social.youtube", org: setting['org_name']) %></span>
+                          <span class="show-for-sr"><%= t("social.youtube", org: setting['org_name']) %></span>
                           <span class="icon-youtube" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -86,7 +86,7 @@
             <li class="inline-block">
               <%= link_to "https://www.telegram.me/#{setting['telegram_handle']}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.telegram", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                          <span class="sr-only"><%= t("social.telegram", org: setting['org_name']) %></span>
+                          <span class="show-for-sr"><%= t("social.telegram", org: setting['org_name']) %></span>
                           <span class="icon-telegram" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -95,7 +95,7 @@
             <li class="inline-block">
               <%= link_to "https://www.instagram.com/#{setting['instagram_handle']}", target: "_blank",
                           title: t("shared.go_to_page") + t("social.instagram", org: setting['org_name']) + t('shared.target_blank_html') do %>
-                          <span class="sr-only"><%= t("social.instagram", org: setting['org_name']) %></span>
+                          <span class="show-for-sr"><%= t("social.instagram", org: setting['org_name']) %></span>
                           <span class="icon-instagram" aria-hidden="true"></span>
               <% end %>
             </li>

@@ -42,7 +42,11 @@ feature 'Stats' do
       expect(page).to have_content "Total votes 6"
     end
 
-    scenario 'Users' do
+  end
+
+  context "Users" do
+
+    scenario 'Summary' do
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
       3.times { create(:user) }
@@ -56,18 +60,46 @@ feature 'Stats' do
       expect(page).to have_content "Total users 7"
     end
 
-  end
+    scenario "Do not count erased users" do
+      1.times { create(:user, :level_three, erased_at: Time.current) }
+      2.times { create(:user, :level_two, erased_at: Time.current) }
+      3.times { create(:user, erased_at: Time.current) }
 
-  scenario 'Level 2 user' do
-    create(:geozone)
-    visit account_path
-    click_link 'Verify my account'
-    verify_residence
-    confirm_phone
+      visit admin_stats_path
 
-    visit admin_stats_path
+      expect(page).to have_content "Level three users 0"
+      expect(page).to have_content "Level two users 0"
+      expect(page).to have_content "Verified users 0"
+      expect(page).to have_content "Unverified users 1"
+      expect(page).to have_content "Total users 1"
+    end
 
-    expect(page).to have_content "Level 2 User (1)"
+    scenario "Do not count hidden users" do
+      1.times { create(:user, :level_three, hidden_at: Time.current) }
+      2.times { create(:user, :level_two, hidden_at: Time.current) }
+      3.times { create(:user, hidden_at: Time.current) }
+
+      visit admin_stats_path
+
+      expect(page).to have_content "Level three users 0"
+      expect(page).to have_content "Level two users 0"
+      expect(page).to have_content "Verified users 0"
+      expect(page).to have_content "Unverified users 1"
+      expect(page).to have_content "Total users 1"
+    end
+
+    scenario 'Level 2 user Graph' do
+      create(:geozone)
+      visit account_path
+      click_link 'Verify my account'
+      verify_residence
+      confirm_phone
+
+      visit admin_stats_path
+
+      expect(page).to have_content "Level 2 User (1)"
+    end
+
   end
 
   context "Proposal notifications" do
