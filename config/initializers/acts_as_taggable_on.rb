@@ -100,12 +100,6 @@ module ActsAsTaggableOn
       return true
     end
 
-    def self.public_for_api
-      where('(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)',
-            'category',
-            Tagging.public_for_api.pluck('DISTINCT taggings.tag_id'))
-    end
-
     def self.graphql_field_name
       :tag
     end
