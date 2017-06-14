@@ -37,6 +37,6 @@ class Legislation::Question < ActiveRecord::Base
   end
 
   def comments_open?
-    process.open_phase?(:debate)
+    process.debate_phase.open?
   end
 end

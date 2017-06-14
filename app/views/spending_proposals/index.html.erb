@@ -5,9 +5,8 @@
              i18n_namespace: "spending_proposals.index.search_form" %>
 <% end %>
 
-<main id="investment-projects-main">
-
-  <h1 class="sr-only"><%= t("shared.outline.budget") %></h1>
+<main>
+  <h1 class="show-for-sr"><%= t("shared.outline.budget") %></h1>
 
   <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
     <%= render 'header' %>
