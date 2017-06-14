@@ -14,6 +14,7 @@
 // 11. Budgets custom
 // 12. Nvotes
 // 13. Kit Decide
+// 14. Figure cards style
 //
 
 // 00. Others
@@ -2894,5 +2895,52 @@ h3.kit-decide {
     margin-right: $line-height/2;
     text-align: center;
     width: rem-calc(60);
+  }
+}
+
+// 14. Figure cards style
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  position: relative;
+
+  &.pdf:after {
+    background: image-url("icon_pdf_white.png");
+    content: "";
+    height: 48px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 48px;
+  }
+
+  figcaption {
+    bottom: 0;
+    color: white;
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(36);
+    line-height: rem-calc(36);
+    text-transform: uppercase;
+    padding: $line-height/4 $line-height/2;
+    position: absolute;
+    width: 100%;
+
+    h3, p.title {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(36);
+      line-height: rem-calc(36);
+    }
+
+    span {
+      background: white;
+      border-radius: rem-calc(4);
+      color: black;
+      display: inline;
+      font-size: $base-font-size;
+      padding: rem-calc(4) rem-calc(8);
+    }
   }
 }

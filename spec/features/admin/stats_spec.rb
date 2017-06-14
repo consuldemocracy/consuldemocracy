@@ -97,17 +97,6 @@ feature 'Stats' do
       expect(page).to have_content "Total users 1"
     end
 
-    scenario 'Level 2 user Graph' do
-      create(:geozone)
-      visit account_path
-      click_link 'Verify my account'
-      verify_residence
-      confirm_phone
-
-      visit admin_stats_path
-
-      expect(page).to have_content "Level two users 1"
-    end
   end
 
   context "Spending Proposals" do

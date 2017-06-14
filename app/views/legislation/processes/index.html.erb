@@ -19,9 +19,18 @@
       <% if @processes.any? %>
         <%= render @processes %>
         <%= paginate @processes %>
-      <% elsif @current_filter != "past" %>
+      <% elsif @current_filter == "next" %>
         <div class="callout primary margin-top">
           <%= t(".no_#{@current_filter}_processes") %>
+        </div>
+      <% end %>
+      <% if @current_filter == "open" %>
+        <!-- Parque Manzanares -->
+        <div class="panel margin-bottom">
+          <h3><%= link_to t("processes.manzanares.title"), manzanares_path %></h3>
+          <p><%= t("processes.manzanares.description") %></p>
+          <%= link_to t("processes.shared.more_info"), manzanares_path, class: "button hollow",
+                      title: t("pages.processes.index.more_info_title") + t("processes.manzanares.title") %>
         </div>
       <% end %>
       <% if @current_filter == "past" %>
@@ -30,5 +39,3 @@
     </div>
   </div>
 </div>
-
-
