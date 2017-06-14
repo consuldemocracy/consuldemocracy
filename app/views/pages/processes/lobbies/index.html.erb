@@ -19,7 +19,7 @@
 </div>
 
 <div class="row margin-top">
-  <div class="small-12 medium-9 column">
+  <div class="small-12 medium-8 column">
     <h2>Introducción</h2>
 
     <p>El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies.</p>
@@ -31,11 +31,27 @@
     <p>Es este acuerdo el que se somete a consulta. Cualquier persona puede enviar sus comentarios incorporándolos directamente en el borrador que se publica en la web de Decide Madrid o mandando un correo a <a href="mailto:sgtransparencia@madrid.es">sgtransparencia@madrid.es</a></p>
   </div>
 
-  <div class="small-12 medium-3 column">
-    <div class="callout success">
-      <p><strong>Puedes enviar tus comentarios hasta el día 4 de junio</strong></p>
-    </div>
-
-    <%= link_to "Comentar borrador", lobbies_draft_path, class: "button large expanded" %>
+  <div class="small-12 medium-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li class="margin-bottom">
+        <%= link_to "/docs/procesos/acuerdo_de_pleno_registro_de_lobbies.pdf", target: "_blank",
+                    title: "Descargar Acuerdo del Pleno del Ayuntamiento de Madrid (se abre en ventana nueva)" do %>
+                    <strong>Acuerdo del Pleno del Ayuntamiento</strong><br><small>(PDF 126Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/docs/procesos/contestacion_alegaciones_registro_de_lobbies.xls", target: "_blank",
+                    title: "Descargar Acuerdo del Pleno del Ayuntamiento de Madrid (se abre en ventana nueva)" do %>
+                    <strong>Contestación alegaciones</strong><br><small>(XLS 44Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to lobbies_draft_path, class: "margin-top button expanded",
+                    title: "Ver borrador Registro de lobbies del Ayuntamiento de Madrid" do %>
+                    <strong>Ver borrador</strong>
+        <% end %>
+      </li>
+    </ul>
   </div>
 </div>
