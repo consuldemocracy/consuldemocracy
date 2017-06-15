@@ -2272,6 +2272,10 @@ $campaign-yellow:  #FFDB19;
       color: black;
       font-size: rem-calc(36);
 
+      @include breakpoint(medium) {
+        font-size: rem-calc(48);
+      }
+
       span {
         background: black;
         color: $campaign-yellow;;
@@ -2317,11 +2321,6 @@ $campaign-yellow:  #FFDB19;
     margin-top: -1px;
   }
 
-  .margin {
-    margin-bottom: $line-height*2;
-    margin-top: $line-height*2;
-  }
-
   table {
 
     th {
@@ -2342,11 +2341,6 @@ $campaign-yellow:  #FFDB19;
     background: $campaign-yellow;
     display: inline-block;
     font-weight: bold;
-  }
-
-  .materials-block {
-    background: #fffdf7;
-    padding: $line-height/2;
   }
 }
 
@@ -2381,7 +2375,8 @@ $campaign-yellow:  #FFDB19;
   }
 }
 
-.budgets-calendar {
+.budgets-calendar,
+.budgets-calendar-minimal, {
   background: #F9F8F5;
   color: black;
 
@@ -2419,13 +2414,41 @@ $campaign-yellow:  #FFDB19;
   }
 }
 
-.budget-video-container {
-  background: #EEEFF9;
-  height: 480px;
-  margin-top: $line-height*2;
+.budgets-calendar-minimal li {
+  border-left: 0 !important;
+
+  &.active {
+    width: 100% !important;
+  }
 }
 
-.budget-video-info {
+.budget-video-container {
+  background: #fffdf7;
+}
+
+.budget-materials-container {
+  background: #eeeff9;
+}
+
+.banner-budgets-remember {
+  background: #f1f6f8;
+
+  .title {
+    color: #0054a1;
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .lead {
+    color: #5c6b7e;
+    margin-bottom: 0;
+  }
+}
+
+.budget-info {
   margin-top: -2px;
   padding: $line-height;
 }
