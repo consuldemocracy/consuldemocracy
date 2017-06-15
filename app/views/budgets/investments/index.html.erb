@@ -69,10 +69,12 @@
         } %>
       <% end %>
 
-      <% if @heading.group.name == "All city" %>
-        <%= render "banner_city" %>
-      <% else %>
-        <%= render "banner_district" %>
+      <% if @heading.present? %>
+        <% if @heading.group.headings.count == 1 %>
+          <%= render "banner_city" %>
+        <% else %>
+          <%= render "banner_district" %>
+        <% end %>
       <% end %>
 
       <%= paginate @investments %>
