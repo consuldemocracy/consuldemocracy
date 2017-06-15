@@ -45,6 +45,7 @@ RAILS_ENV=test rake db:setup
 ```
 
 Run the app locally:
+
 ```
 bin/rails s
 

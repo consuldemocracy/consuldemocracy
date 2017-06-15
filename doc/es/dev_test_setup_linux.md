@@ -21,6 +21,7 @@ El método recomendado es via rvm:
 ```
 curl -L https://get.rvm.io | bash -s stable
 ```
+
 ### Para todos los usuarios del sistema:
 
 ```

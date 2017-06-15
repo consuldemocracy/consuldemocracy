@@ -68,6 +68,7 @@ In order to make changes to any CSS selector (custom style sheets), you can add 
   background: red;
 }
 ```
+
 If you want to change any [foundation](http://foundation.zurb.com/) variable, you can do it at the `app/assets/stylesheets/_custom_settings.scss` file. For example to change the main application color just add:
 
 ```css

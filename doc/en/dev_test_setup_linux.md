@@ -21,6 +21,7 @@ The preferred method is via rvm:
 ```
 curl -L https://get.rvm.io | bash -s stable
 ```
+
 ### For all system users
 
 ```
@@ -102,6 +103,7 @@ bundle install
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
 ```
+
 Perhaps it's needed to create a superuser rol with password in postgresql, and write it in */config/database.yml* 'user:' and 'password:' fields.
 
 Also, it seems that postgresql use as default an unix socket for localhost communications. If we encounter problems creating database (connection problems) we can change in */config/database.yml* the line:
