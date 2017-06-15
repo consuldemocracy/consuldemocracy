@@ -151,6 +151,12 @@ en:
     date: "From May 15 to June 30"
     button: "Vote projects"
     alt: "Go to participatory budgets 2017 page"
+    city_title: "VOTE PROJECTS OF ALL CITY"
+    city_text_html: "Remember you can also vote projects of <strong>all city</strong>."
+    city_button: "Vote projects of all city"
+    district_title: "VOTE PROJECTS OF ONE DISTRICT"
+    district_text_html: "Remember you can also vote projects of <strong>one district</strong>."
+    district_button: "Vote projects of one district"
   processes:
     lobbies:
       title: "Registration of lobbies of the City of Madrid"

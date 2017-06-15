@@ -151,6 +151,12 @@ es:
     date: "Del 15 de mayo al 30 de junio"
     button: "Votar proyectos"
     alt: "Ir a la página de presupuestos participativos 2017"
+    city_title: "VOTA PROYECTOS DE TODA LA CIUDAD"
+    city_text_html: "Recuerda que puedes votar también proyectos de <strong>toda la ciudad</strong>."
+    city_button: "Votar proyectos de toda la ciudad"
+    district_title: "VOTA PROYECTOS DE UN DISTRITO"
+    district_text_html: "Recuerda que puedes votar también proyectos de <strong>uno de los distritos</strong>."
+    district_button: "Votar proyectos de un distrito"
   processes:
     lobbies:
       title: "Registro de lobbies del Ayuntamiento de Madrid"
