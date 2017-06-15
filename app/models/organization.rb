@@ -1,4 +1,6 @@
 class Organization < ApplicationRecord
+  include Graphqlable
+  
   belongs_to :user, touch: true
 
   validates :name, presence: true

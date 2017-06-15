@@ -8,6 +8,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.3)
       actionpack (= 5.0.3)
@@ -115,6 +116,7 @@ GEM
     cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.9)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -184,8 +186,10 @@ GEM
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.4.1)
+      rails
+    graphql (1.6.3)
     groupdate (3.2.0)
-      activesupport (>= 3)
     gyoku (1.3.1)
       builder (>= 2.1.2)
     hashie (3.5.5)
@@ -243,7 +247,7 @@ GEM
       railties (>= 3.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.5)
+    mail (2.6.6)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)
@@ -296,6 +300,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    parallel (1.11.2)
     paranoia (2.3.1)
       activerecord (>= 4.0, < 5.2)
     parser (2.4.0.0)
@@ -333,6 +338,9 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-assets-markdown-it (8.2.1)
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (5.0.3)
@@ -371,7 +379,8 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
-    rubocop (0.48.1)
+    rubocop (0.49.1)
+      parallel (~> 1.10)
       parser (>= 2.3.3.1, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
@@ -501,6 +510,7 @@ DEPENDENCIES
   capistrano3-delayed-job (~> 1.7.3)
   capybara (~> 2.14.0)
   ckeditor (~> 4.2.3)
+  cocoon
   coffee-rails (~> 4.2.1)
   coveralls (~> 0.8.21)
   daemons
@@ -516,6 +526,8 @@ DEPENDENCIES
   foundation-rails (~> 6.2.4.0)
   foundation_rails_helper (~> 2.0.0)
   fuubar
+  graphiql-rails (~> 1.4.1)
+  graphql (~> 1.6.3)
   groupdate (~> 3.2.0)
   i18n-tasks (~> 0.9.15)
   initialjs-rails (= 0.2.0.4)
@@ -542,7 +554,8 @@ DEPENDENCIES
   rinku (~> 2.0.2)
   rollbar (~> 2.14.1)
   rspec-rails (~> 3.6)
-  rubocop (~> 0.48.1)
+  rubocop (~> 0.49.1)
+  rubyzip (~> 1.2.0)
   rvm1-capistrano3
   sass-rails (~> 5.0, >= 5.0.6)
   savon
@@ -561,4 +574,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.15.0
+   1.15.1

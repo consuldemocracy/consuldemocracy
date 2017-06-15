@@ -80,6 +80,9 @@ feature 'Tags' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
     expect(page).to have_content 'Economía'
     expect(page).to have_content 'Hacienda'
   end
@@ -106,6 +109,8 @@ feature 'Tags' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
 
     within "#tags_proposal_#{Proposal.last.id}" do
       expect(page).to have_content 'Education'
@@ -149,6 +154,9 @@ feature 'Tags' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+
     expect(page).to have_content 'user_id1'
     expect(page).to have_content 'a3'
     expect(page).to have_content 'scriptalert("hey");script'

@@ -46,15 +46,6 @@ describe PagesController do
       expect(response).to be_ok
     end
 
-    it 'should include a participation facts page' do
-      get :show, params: { id: 'more_info/participation/facts' }
-      expect(response).to be_ok
-    end
-
-    it 'should include a participation world page' do
-      get :show, params: { id: 'more_info/participation/world' }
-      expect(response).to be_ok
-    end
   end
 
   describe 'Not found pages' do

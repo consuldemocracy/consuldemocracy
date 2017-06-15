@@ -17,9 +17,10 @@ es:
         not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
         organization: Las organizaciones no pueden votar.
         not_selected: No se pueden votar propuestas inviables.
-        not_enough_money: No hay fondos suficientes.
+        not_enough_money_html: "Ya has asignado el presupuesto disponible.<br><small>Recuerda que puedes %{change_ballot} en cualquier momento</small>"
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+        change_ballot: cambiar tus votos
     groups:
       show:
         title: Selecciona una opción
@@ -53,9 +54,9 @@ es:
           button: Buscar
           placeholder: Buscar propuestas de inversión...
           title: Buscar
-        search_results:
-          one: " que contiene '%{search_term}'"
-          other: " que contienen '%{search_term}'"
+        search_results_html:
+          one: " que contiene <strong>'%{search_term}'</strong>"
+          other: " que contienen <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mis votos
           voted_html:
@@ -64,6 +65,8 @@ es:
           voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
           voted_info_link: cambiar tus votos
           different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+          change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
+          check_ballot_link: "revisar mis votos"
           zero: "Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto."
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
           verify_account: "verifica tu cuenta"
@@ -92,7 +95,6 @@ es:
         price: Coste
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
-        title: Propuesta de inversión
         add: Votar
         already_added: "Ya has añadido esta propuesta de inversión"
         already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
@@ -106,6 +108,8 @@ es:
       header:
         check_ballot: Revisar mis votos
         different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+        change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
+        check_ballot_link: "revisar mis votos"
     progress_bar:
       available: "Disponible: "
     show:
@@ -115,3 +119,16 @@ es:
       unfeasible: Ver las propuestas inviables
       unselected_title: Propuestas no seleccionadas para la votación final
       unselected: Ver las propuestas no seleccionadas para la votación final
+      see_results: Ver resultados
+    results:
+      page_title: "%{budget} - Resultados"
+      heading: "Resultados presupuestos participativos"
+      geozone_selection_title: "Ámbito de actuación"
+      spending_proposal: Título
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Coste
+      amount_available: Presupuesto disponible
+      accepted: "Propuesta de inversión aceptada: "
+      discarded: "Propuesta de inversión descartada: "

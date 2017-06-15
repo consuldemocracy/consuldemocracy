@@ -17,9 +17,10 @@ en:
         not_verified: Only verified users can vote on investments; %{verify_account}.
         organization: Organizations are not permitted to vote
         not_selected: Unselected investment projects can not be supported
-        not_enough_money: "Price is higher than the available amount left."
+        not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned: You have already voted a different heading
+        change_ballot: change your votes
     groups:
       show:
         title: Select an option
@@ -53,9 +54,9 @@ en:
           button: Search
           placeholder: Search investment projects...
           title: Search
-        search_results:
-          one: " containing the term '%{search_term}'"
-          other: " containing the term '%{search_term}'"
+        search_results_html:
+          one: " containing the term <strong>'%{search_term}'</strong>"
+          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: My ballot
           voted_html:
@@ -64,6 +65,8 @@ en:
           voted_info: You can %{link} at any time until the close of this phase. No need to spend all the money available.
           voted_info_link: change your vote
           different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+          check_ballot_link: "check my ballot"
           zero: You have not voted any investment project in this group.
           verified_only: "To create a new budget investment %{verify}."
           verify_account: "verify your account"
@@ -92,7 +95,6 @@ en:
         price: Price
       wrong_price_format: Only integer numbers
       investment:
-        title: Investment project
         add: Vote
         already_added: You have already added this investment project
         already_supported: You have already supported this. Share it!
@@ -106,6 +108,8 @@ en:
       header:
         check_ballot: Check my ballot
         different_heading_assigned_html: "You have active votes in another heading: %{heading_link}"
+        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+        check_ballot_link: "check my ballot"
     progress_bar:
       available: "Available: "
     show:
@@ -115,3 +119,16 @@ en:
       unfeasible: See unfeasible investments
       unselected_title: Investments not selected for balloting phase
       unselected: See investments not selected for balloting phase
+      see_results: See results
+    results:
+      page_title: "%{budget} - Results"
+      heading: "Participatory budget results"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      accepted: "Accepted spending proposal: "
+      discarded: "Discarded spending proposal: "

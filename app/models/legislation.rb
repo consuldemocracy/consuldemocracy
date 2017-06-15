@@ -1,3 +1,5 @@
-class Legislation < ApplicationRecord
-  has_many :annotations
+module Legislation
+  def self.table_name_prefix
+    'legislation_'
+  end
 end

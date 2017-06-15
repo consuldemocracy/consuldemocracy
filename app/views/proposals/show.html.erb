@@ -1,4 +1,5 @@
 <% provide :title do %><%= @proposal.title %><% end %>
+<% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
             social_url: proposal_url(@proposal),
@@ -131,16 +132,11 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
-        <div id="social-share" class="sidebar-divider"></div>
-        <h2><%= t("proposals.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-          <a href="whatsapp://send?text=<%= @proposal.title.gsub(/\s/, '%20') %>&nbsp;<%= proposal_url(@proposal) %>"
-             class="show-for-small-only" data-action="share/whatsapp/share">
-            <span class="icon-whatsapp whatsapp"></span>
-            <span class="sr-only"><%= t("social.whatsapp") %></span>
-          </a>
-        </div>
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("proposals.show.share"),
+          title: @proposal.title,
+          url: proposal_url(@proposal)
+        } %>
       </aside>
     </div>
   </div>

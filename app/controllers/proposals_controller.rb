@@ -3,7 +3,7 @@ class ProposalsController < ApplicationController
   include FlagActions
 
   before_action :parse_tag_filter, only: :index
-  before_action :load_categories, only: [:index, :new, :edit, :map, :summary]
+  before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
   before_action :authenticate_user!, except: [:index, :show, :map, :summary]
 
@@ -20,6 +20,16 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+  end
+
+  def create
+    @proposal = Proposal.new(proposal_params.merge(author: current_user))
+
+    if @proposal.save
+      redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
+    else
+      render :new
+    end
   end
 
   def index_customization
@@ -43,6 +53,12 @@ class ProposalsController < ApplicationController
   end
 
   def retire_form
+  end
+
+  def share
+    if Setting['proposal_improvement_path'].present?
+      @proposal_improvement_url = root_url + Setting['proposal_improvement_path']
+    end
   end
 
   def vote_featured
@@ -103,5 +119,4 @@ class ProposalsController < ApplicationController
     def load_successful_proposals
       @proposal_successful_exists = Proposal.successful.exists?
     end
-
 end

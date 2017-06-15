@@ -20,10 +20,11 @@ module Budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show]
+    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
+    helper_method :resource_model, :resource_name
     respond_to :html, :js
 
     def index
@@ -70,7 +71,21 @@ module Budgets
       end
     end
 
+    def suggest
+      @resource_path_method = :namespaced_budget_investment_path
+      @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
+      super
+    end
+
     private
+
+      def resource_model
+        Budget::Investment
+      end
+
+      def resource_name
+        "budget_investment"
+      end
 
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}

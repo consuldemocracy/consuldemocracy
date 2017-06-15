@@ -22,6 +22,10 @@ describe DebatesController do
   end
 
   describe "Vote with too many anonymous votes" do
+    after do
+      Setting['max_ratio_anon_votes_on_debates'] = 50
+    end
+
     it 'should allow vote if user is allowed' do
       Setting["max_ratio_anon_votes_on_debates"] = 100
       debate = create(:debate)

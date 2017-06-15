@@ -63,8 +63,15 @@ gem 'tolk', '~> 2.0.0' # Web interface for translations
 gem 'browser'
 gem 'turnout', '~> 2.4.0'
 gem 'redcarpet', '~> 3.4.0'
+gem 'rubyzip', '~> 1.2.0'
 
 gem 'paperclip'
+gem 'rails-assets-markdown-it', source: 'https://rails-assets.org'
+
+gem 'cocoon'
+
+gem 'graphql', '~> 1.6.3'
+gem 'graphiql-rails', '~> 1.4.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -87,7 +94,7 @@ group :development, :test do
   gem 'selenium-webdriver', require: false
   gem "bullet", '~> 5.5.1'
   gem "faker", '~> 1.7.3'
-  gem 'rubocop', '~> 0.48.1', require: false
+  gem 'rubocop', '~> 0.49.1', require: false
   gem 'knapsack'
 end
 

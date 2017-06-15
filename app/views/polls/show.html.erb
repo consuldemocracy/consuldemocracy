@@ -38,16 +38,11 @@
     </div>
 
     <aside class="small-12 medium-3 column">
-      <div id="social-share" class="sidebar-divider"></div>
-      <h2><%= t("proposals.show.share") %></h2>
-      <div class="social-share-full">
-        <%= social_share_button_tag("#{@poll.name} #{setting['twitter_hashtag']}") %>
-        <% if browser.device.mobile? %>
-          <a href="whatsapp://send?text=<%= @poll.name %> <%= poll_url %>" data-action="share/whatsapp/share">
-            <span class="icon-whatsapp whatsapp"></span>
-          </a>
-        <% end %>
-      </div>
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("proposals.show.share"),
+        title: @poll.name,
+        url: poll_url
+      } %>
     </aside>
   </div>
 </div>

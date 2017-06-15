@@ -18,6 +18,8 @@ module ApplicationHelper
   end
 
   def markdown(text)
+    return text if text.blank?
+
     # See https://github.com/vmg/redcarpet for options
     render_options = {
       filter_html:     false,
@@ -54,5 +56,9 @@ module ApplicationHelper
 
   def content_block(name, locale)
     SiteCustomization::ContentBlock.block_for(name, locale)
+  end
+
+  def format_price(number)
+    number_to_currency(number, precision: 0, locale: I18n.default_locale)
   end
 end
