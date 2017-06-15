@@ -176,3 +176,6 @@ es:
     title_2: "Billete único para el transporte público"
     img_alt_2: "Imagen genérica relacionada con la propuesta Billete único para el transporte público"
     description_2_html: "Informe técnico sobre la competencia, legalidad, viabilidad y coste de la propuesta <strong>Billete único para el transporte público</strong>."
+  budgets_minimal_selector:
+    cards: "Mostrar modo tarjetas"
+    list:  "Mostrar modo lista"

@@ -54,20 +54,38 @@
         </div>
       <% elsif @heading.present? %>
         <div class="small-12 margin-bottom">
-          <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
+          <div class="row">
+            <div class="small-12 medium-9 column">
+              <h2><%= t("budgets.investments.index.by_heading", heading: @heading.name) %></h2>
+            </div>
+            <div class="small-12 medium-3 column">
+              <%= render "minimal_selector" %>
+            </div>
+          </div>
         </div>
       <% end %>
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
-      <% @investments.each do |investment| %>
-        <%= render partial: '/budgets/investments/investment', locals: {
-          investment: investment,
-          investment_ids: @investment_ids,
-          investment_votes: @investment_votes,
-          ballot: @ballot
-        } %>
-      <% end %>
+      <!-- if NORMAL (cards) view -->
+        <% @investments.each do |investment| %>
+          <%= render partial: '/budgets/investments/investment', locals: {
+            investment: investment,
+            investment_ids: @investment_ids,
+            investment_votes: @investment_votes,
+            ballot: @ballot
+          } %>
+        <% end %>
+      <!-- elsif MINIMAL view -->
+        <% @investments.each do |investment| %>
+          <%= render partial: '/budgets/investments/investment_minimal', locals: {
+            investment: investment,
+            investment_ids: @investment_ids,
+            investment_votes: @investment_votes,
+            ballot: @ballot
+          } %>
+        <% end %>
+      <!-- end -->
 
       <% if @heading.present? %>
         <% if @heading.group.headings.count == 1 %>
@@ -77,7 +95,7 @@
         <% end %>
       <% end %>
 
-      <%= paginate @investments %>
+      <%#paginate @investments %>
     </div>
 
     <div class="small-12 medium-3 column">
