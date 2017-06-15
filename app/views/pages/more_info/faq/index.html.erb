@@ -2,20 +2,41 @@
   <%= render "shared/canonical", href: faq_url %>
 <% end %>
 
-<div class="row margin-top">
-  <div class="menu small-12 medium-3 column">
-    <%= render "shared/back_link" %>
+<% if custom_page = SiteCustomization::Page.published.find_by(slug: 'more-information/faq') %>
+  <% provide :title do %><%= custom_page.title %><% end %>
 
-    <ul class="menu vertical margin-top">
-      <li><a href="#1"><strong><%= t("pages.more_info.faq.page.faq_1_title") %></strong></a></li>
-    </ul>
+  <div class="row margin-top">
+    <div class="menu small-12 medium-3 column">
+      <%= render "shared/back_link" %>
+    </div>
+
+    <div class="text small-12 medium-9 column">
+      <h1 class="clear"><%= custom_page.title %></h1>
+      <%= "<h2>#{custom_page.subtitle}</h2>" if custom_page.subtitle %>
+
+      <%= raw custom_page.content %>
+    </div>
   </div>
 
-  <div class="text small-12 medium-9 column">
-    <h1 class="clear"><%= t("pages.more_info.faq.page.title") %></h1>
-    <p><%= t("pages.more_info.faq.page.description") %></p>
+<% else %>
+  <% provide :title do %><%= t("pages.more_info.faq.page.title") %><% end %>
 
-    <h2 id="1"><%= t("pages.more_info.faq.page.faq_1_title") %></h2>
-    <p><%= t("pages.more_info.faq.page.faq_1_description") %></p>
+  <div class="row margin-top">
+    <div class="menu small-12 medium-3 column">
+      <%= render "shared/back_link" %>
+
+      <ul class="menu vertical margin-top">
+        <li><a href="#1"><strong><%= t("pages.more_info.faq.page.faq_1_title") %></strong></a></li>
+      </ul>
+    </div>
+
+    <div class="text small-12 medium-9 column">
+      <h1 class="clear"><%= t("pages.more_info.faq.page.title") %></h1>
+      <p><%= t("pages.more_info.faq.page.description") %></p>
+
+      <h2 id="1"><%= t("pages.more_info.faq.page.faq_1_title") %></h2>
+      <p><%= t("pages.more_info.faq.page.faq_1_description") %></p>
+    </div>
   </div>
-</div>
+
+<% end %>
