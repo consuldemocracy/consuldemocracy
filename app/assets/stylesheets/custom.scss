@@ -2269,19 +2269,47 @@ $campaign-yellow:  #FFDB19;
     background: $campaign-brown;
 
     h1 {
-      color: black;
+      color: #000;
+      font-family: 'Franklin Gothic' !important;
       font-size: rem-calc(36);
+      text-transform: uppercase;
 
-      span {
-        background: black;
-        color: $campaign-yellow;;
-        padding: 0 $line-height/2;
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
       }
     }
 
     ul.info li {
       color: black;
       margin-bottom: $line-height;
+    }
+
+    .button {
+      background: none;
+      border: 1px solid #000;
+      color: #000;
+
+      &.city {
+        background: #000;
+        border: 0;
+        color: #fff;
+      }
+    }
+  }
+
+  .budgets-calendar-minimal {
+    background: $campaign-red;
+    color: #000;
+
+    @include breakpoint(medium) {
+      margin-top: rem-calc(-48);
+    }
+
+    .day {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(30);
+      line-height: rem-calc(30);
+      text-transform: uppercase;
     }
   }
 
@@ -2317,11 +2345,6 @@ $campaign-yellow:  #FFDB19;
     margin-top: -1px;
   }
 
-  .margin {
-    margin-bottom: $line-height*2;
-    margin-top: $line-height*2;
-  }
-
   table {
 
     th {
@@ -2343,10 +2366,23 @@ $campaign-yellow:  #FFDB19;
     display: inline-block;
     font-weight: bold;
   }
+}
 
-  .materials-block {
-    background: #fffdf7;
-    padding: $line-height/2;
+.banner-budgets-remember {
+  background: #f1f6f8;
+  padding: $line-height;
+
+  .title {
+    color: #0054a1;
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .lead {
+    color: #5c6b7e;
   }
 }
 
@@ -2417,17 +2453,6 @@ $campaign-yellow:  #FFDB19;
       }
     }
   }
-}
-
-.budget-video-container {
-  background: #EEEFF9;
-  height: 480px;
-  margin-top: $line-height*2;
-}
-
-.budget-video-info {
-  margin-top: -2px;
-  padding: $line-height;
 }
 
 .previous-budgets {
