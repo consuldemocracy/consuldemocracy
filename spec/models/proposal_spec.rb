@@ -99,7 +99,7 @@ describe Proposal do
 
       expect(proposal).to be_valid
       proposal.responsible_name = "12345678Z"
-    end
+     end
 
     it "should not be updated when the author is deleted" do
       author = create(:user, :level_three, document_number: "12345678Z")
