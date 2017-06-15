@@ -281,7 +281,7 @@ class User < ActiveRecord::Base
   end
 
   def email_required?
-    !erased?
+    !erased? && unverified?
   end
 
   def locale
