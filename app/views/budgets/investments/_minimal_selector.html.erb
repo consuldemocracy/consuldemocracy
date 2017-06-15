@@ -1,8 +1,5 @@
 <div class="float-right budgets-minimal-selector">
-  <%= link_to "#", class: "button", title: t("budgets_minimal_selector.list") do %>
-    <%= image_tag "budget_icon_list.png" %>
-  <% end %>
-  <%= link_to "#", class: "button", title: t("budgets_minimal_selector.cards") do %>
-    <%= image_tag "budget_icon_cards.png" %>
+  <%= link_to "#", class: "button", title: t("budgets_minimal_selector.view"), data: {toggle: 'cardView minimalView'} do %>
+    <%= image_tag "budget_icon_minimal_selector.png" %>
   <% end %>
 </div>

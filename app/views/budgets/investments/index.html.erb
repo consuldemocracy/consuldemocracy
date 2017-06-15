@@ -67,7 +67,7 @@
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
-      <!-- if NORMAL (cards) view -->
+      <div id="cardView" data-toggler=".hide">
         <% @investments.each do |investment| %>
           <%= render partial: '/budgets/investments/investment', locals: {
             investment: investment,
@@ -76,7 +76,13 @@
             ballot: @ballot
           } %>
         <% end %>
-      <!-- elsif MINIMAL view -->
+
+        <%= render "banners" %>
+
+        <%= paginate @investments %>
+      </div>
+
+      <div id="minimalView" class="hide" data-toggler=".hide">
         <% @investments_minimal.each do |investment| %>
           <%= render partial: '/budgets/investments/investment_minimal', locals: {
             investment: investment,
@@ -85,17 +91,10 @@
             ballot: @ballot
           } %>
         <% end %>
-      <!-- end -->
 
-      <% if @heading.present? %>
-        <% if @heading.group.headings.count == 1 %>
-          <%= render "banner_city" %>
-        <% else %>
-          <%= render "banner_district" %>
-        <% end %>
-      <% end %>
+        <%= render "banners" %>
+      </div>
 
-      <%= paginate @investments %>
     </div>
 
     <div class="small-12 medium-3 column">
