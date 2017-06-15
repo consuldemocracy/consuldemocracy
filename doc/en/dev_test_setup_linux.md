@@ -112,8 +112,8 @@ host: localhost
 
 for:
 
-```  
-host: /var/run/postgresql  
+```
+host: /var/run/postgresql
 ```
 
 After this:

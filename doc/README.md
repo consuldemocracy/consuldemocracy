@@ -54,7 +54,7 @@ Dentro de su perfil ("Mi cuenta" en el menú superior) cada usuario puede config
 
 # Perfiles de administrador, moderador y gestor
 
-Consul cuenta con tres perfiles de usuario para administrar contenidos de la web: administrador, moderador y gestor. Además tiene otros dos perfiles para gestión de procesos participativos: [evaluador y presidente de mesa](#perfiles_de_evaluador,_gestor_y_presidente_de_mesa), que se detallan más abajo. 
+Consul cuenta con tres perfiles de usuario para administrar contenidos de la web: administrador, moderador y gestor. Además tiene otros dos perfiles para gestión de procesos participativos: [evaluador y presidente de mesa](#perfiles_de_evaluador,_gestor_y_presidente_de_mesa), que se detallan más abajo.
 
 Los usuarios con perfil de administrador pueden asignar cualquier tipo de perfil a cualquier tipo de usuario. Sin embargo, todos los perfiles tienen que ser usuarios verificados (contrastados con el padrón municipal) para poder realizar ciertas acciones (por ejemplo, los gestores necesitan estar verificados para crear propuestas de inversión).
 
@@ -68,7 +68,7 @@ Desde aquí puedes administrar el sistema, a través de los siguientes menús:
 
 #### Temas de debates/propuestas
 
-Los temas (también llamados tags, o etiquetas) son palabras que definen los usuarios al crear debates o propuestas para facilitar su catalogación (ej: sanidad, movilidad, arganzuela, ...). Desde aquí el administrador tiene las siguientes opciones: 
+Los temas (también llamados tags, o etiquetas) son palabras que definen los usuarios al crear debates o propuestas para facilitar su catalogación (ej: sanidad, movilidad, arganzuela, ...). Desde aquí el administrador tiene las siguientes opciones:
 
 * Crear temas nuevos
 * Eliminar temas inapropiados
@@ -141,7 +141,7 @@ El cargo público se diferencia del usuario individual únicamente en que al lad
 
 Cualquier usuario registrado en la web puede convertirse en moderador. Para asignarle ese rol se introduce su email en el campo de búsqueda y una vez encontrado se asigna con "Añadir como Moderador". Cuando los moderadores acceden a la web con su usuario ven en la parte superior una nueva sección llamada "Moderar".
 
-Al seleccionar "Actividad de moderadores" aparece un listado de todas las acciones que realizan los moderadores: ocultar/mostrar Propuestas/Debates/Comentarios y bloquear usuarios. En la columna "Acción" comprobamos si la acción corresponde con ocultar o con volver a mostrar (restaurar) elementos o con bloquear usuarios. En las demás columnas tenemos el tipo de elemento, el contenido del elemento y el moderador o administrador que ha realizado la acción. 
+Al seleccionar "Actividad de moderadores" aparece un listado de todas las acciones que realizan los moderadores: ocultar/mostrar Propuestas/Debates/Comentarios y bloquear usuarios. En la columna "Acción" comprobamos si la acción corresponde con ocultar o con volver a mostrar (restaurar) elementos o con bloquear usuarios. En las demás columnas tenemos el tipo de elemento, el contenido del elemento y el moderador o administrador que ha realizado la acción.
 
 Esta sección permite que los administradores detecten comportamientos irregulares por parte de moderadores específicos y que por lo tanto puedan corregirlos.
 
