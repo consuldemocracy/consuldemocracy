@@ -14,6 +14,7 @@ Lint/InheritException:
   Exclude:
     - 'app/controllers/concerns/feature_flags.rb'
 
+<<<<<<< HEAD
 # Offense count: 13
 Lint/ParenthesesAsGroupedExpression:
   Exclude:
@@ -27,6 +28,8 @@ Lint/UnderscorePrefixedVariableName:
   Exclude:
     - 'lib/manager_authenticator.rb'
 
+=======
+>>>>>>> 0da0d145c... Fix Lint/UnderscorePrefixedVariableName issue and remove it from rubocop_todo file
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
