@@ -537,10 +537,7 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  unless Rails.env.production?
-    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-  end
-
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
