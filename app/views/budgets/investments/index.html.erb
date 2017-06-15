@@ -81,4 +81,9 @@
     </div>
 
   </div>
+  <% if @heading.group.name == "All city" %>
+    <%= render "banner_city" %>
+  <% else %>
+    <%= render "banner_district" %>
+  <% end %>
 </main>
