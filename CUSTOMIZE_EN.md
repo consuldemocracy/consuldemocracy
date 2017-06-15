@@ -125,7 +125,6 @@ end
 
 Do not forget to cover your changes with a test at the `spec/models/custom` folder. Following the example we could create `spec/models/custom/residence_spec.rb`:
 
-
 ```ruby
 require 'rails_helper'
 
@@ -180,7 +179,6 @@ And then just do the classic Ruby on Rails flow `bundle install` and following a
 ### application.rb
 
 If you need to extend or modify the `config/application.rb` just do it at the `config/application_custom.rb` file. For example if you want to change de default language to English, just add:
-
 
 ```ruby
 module Consul

@@ -74,7 +74,6 @@ Los temas (también llamados tags, o etiquetas) son palabras que definen los usu
 * Eliminar temas inapropiados
 * Marcar temas para que aparezcan como sugerencia al crear debates/propuestas. Cada usuario puede crear los que quiera, pero el administrador puede sugerir algunos que le parezcan útiles como catalogación por defecto. Marcando "Proponer tema al crear la propuesta" en cada tema, establece cuáles se sugieren.
 
-
 ### Contenido moderado ![contenido moderado](imgs/icon_moderated_content.png?raw=true "contenido moderado")
 
 #### Propuestas/Debates/Comentarios ocultos
@@ -87,7 +86,6 @@ Cuando un administrador o moderador oculta una Propuesta/Debate/Comentario desde
 Para facilitar la gestión, arriba encontramos un filtro con las secciones: "Pendientes" (los elementos sobre los que todavía no se ha pulsado "Confirmar" o "Volver a mostrar", que deberían ser revisados todavía), "Confirmadas" y "Todas".
 
 Es recomendable revisar regularmente la sección "Pendientes".
-
 
 ### Usuarios bloqueados
 
@@ -103,23 +101,19 @@ Los usuarios tienen que estar verificados para poder participar en la votación.
 
 Una vez que se ha creado la votación, se definen y se agregan sus componentes. Las votaciones tienen tres componentes: Preguntas ciudadanas, Presidentes de mesa y Ubicación de las urnas.
 
-
 #### Preguntas ciudadanas
 
 Se puede crear una pregunta ciudadana o buscar una existente. Al crear la pregunta se puede asignar a una votación determinada. También se puede modificar la asignación a una pregunta existente pulsando el ella y seleccionando "Editar".
 
 Desde el apartado de Preguntas ciudadanas también se pueden asignar a una votación aquellas Propuestas ciudadanas que han superado el umbral de apoyos. Se pueden seleccionar desde la pestaña "Propuestas que han superado el umbral".
 
-
 #### Presidentes de mesa
 
 Cualquier usuario registrado en la web puede convertirse en Presidente de mesa. Para asignarle ese rol se introduce su email en el campo de búsqueda y una vez encontrado se asigna con "Añadir como Presidente de mesa". Cuando los presidentes acceden a la web con su usuario ven en la parte superior una nueva sección llamada "Presidentes de mesa".
 
-
 #### Ubicación de las urnas
 
 Para añadir una urna a la lista, seleccionar "Añadir urna" y a continuación completar los datos de nombre de la urna y ubicación.
-
 
 ### Presupuestos participativos ![presupuestos participativos](imgs/icon_participatory_budgeting.png?raw=true "presupuestos participativos")
 
@@ -137,13 +131,11 @@ Las organizaciones que no aparecen en la lista pueden ser encontradas para actua
 
 Es recomendable revisar regularmente la sección "pendientes".
 
-
 #### Cargos Públicos
 
 La condición de cargo público no se puede elegir en el registro que se hace desde la web: se asigna directamente desde esta sección. El administrador busca un usuario introduciendo su email en el campo de búsqueda y le asigna el rol de Cargo público.
 
 El cargo público se diferencia del usuario individual únicamente en que al lado de su nombre aparece una etiqueta que le identifica, y cambia ligeramente el estilo de sus comentarios. Esto permite que los usuarios le identifiquen más fácilmente. Al lado de cada cargo vemos la identificación que aparece en su etiqueta, y su nivel (la manera que internamente usa la web para diferenciar entre un tipo de cargos y otros). Pulsando el botón "Editar" al lado del usuario, se puede modificar su información. Los cargos públicos que no aparecen en la lista pueden ser encontrados para actuar sobre ellos por medio del buscador en la parte superior.
-
 
 #### Moderadores
 
