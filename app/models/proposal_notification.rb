@@ -1,4 +1,7 @@
 class ProposalNotification < ActiveRecord::Base
+
+  include Graphqlable
+
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   belongs_to :proposal
 
@@ -6,6 +9,8 @@ class ProposalNotification < ActiveRecord::Base
   validates :body, presence: true
   validates :proposal, presence: true
   validate :minimum_interval
+
+  scope :public_for_api, -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
 
   def minimum_interval
     return true if proposal.try(:notifications).blank?

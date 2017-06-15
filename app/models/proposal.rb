@@ -7,6 +7,8 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include HasPublicAuthor
+  include Graphqlable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -55,6 +57,7 @@ class Proposal < ActiveRecord::Base
   scope :proceedings,              -> { where.not(proceeding: nil) }
   scope :not_proceedings,          -> { where(proceeding: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
+  scope :public_for_api,           -> { where('proposals.proceeding IS NULL or proposals.proceeding = ?', 'Derechos Humanos') }
 
   def to_param
     "#{id}-#{title}".parameterize

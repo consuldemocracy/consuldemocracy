@@ -71,6 +71,9 @@ gem 'paperclip'
 gem 'rails-assets-markdown-it', source: 'https://rails-assets.org'
 gem 'cocoon'
 
+gem 'graphql', '~> 1.5.12'
+gem 'graphiql-rails', '~> 1.4.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

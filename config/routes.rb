@@ -79,6 +79,7 @@ Rails.application.routes.draw do
 
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
   get 'presupuestos', to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
+
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
@@ -93,6 +94,7 @@ Rails.application.routes.draw do
 
     resource :results, only: :show, controller: "budgets/results"
   end
+
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
   get "presupuestos/:budget_id/:id", to: "budgets/groups#show", as: 'custom_budget_group'
 
@@ -527,8 +529,16 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
   end
 
+  # GraphQL
+  get '/graphql', to: 'graphql#query'
+  post '/graphql', to: 'graphql#query'
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
+  unless Rails.env.production?
+    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   end
 
   mount Tolk::Engine => '/translate', :as => 'tolk'

@@ -3,6 +3,7 @@ require 'database_cleaner'
 require 'email_spec'
 require 'devise'
 require 'knapsack'
+Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|

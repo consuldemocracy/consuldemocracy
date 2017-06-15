@@ -127,7 +127,17 @@ print "Creating Users"
 
 def create_user(email, username = Faker::Name.name)
   pwd = '12345678'
-  User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, date_of_birth: (16..100).to_a.sample.years.ago, terms_of_service: "1")
+  User.create!(
+    username:               username,
+    email:                  email,
+    password:               pwd,
+    password_confirmation:  pwd,
+    confirmed_at:           Time.current,
+    terms_of_service:       "1",
+    gender:                 ['Male', 'Female'].sample,
+    date_of_birth:          rand((Time.current - 80.years) .. (Time.current - 16.years)),
+    public_activity:        (rand(1..100) > 30)
+  )
 end
 
 admin = create_user('admin@madrid.es', 'admin')
@@ -176,7 +186,7 @@ end
   user = create_user("user#{i}@madrid.es")
   level = [1,2,3].sample
   if level >= 2
-    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
+    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1", geozone:  Geozone.reorder("RANDOM()").first)
   end
   if level == 3
     user.update(verified_at: Time.current, document_number: Faker::Number.number(10) )
@@ -371,7 +381,7 @@ puts " ✅"
 print "Voting Debates, Proposals & Comments"
 
 (1..100).each do
-  voter  = not_org_users.reorder("RANDOM()").first
+  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
   vote   = [true, false].sample
   debate = Debate.reorder("RANDOM()").first
   debate.vote_by(voter: voter, vote: vote)
@@ -385,7 +395,7 @@ end
 end
 
 (1..100).each do
-  voter  = User.level_two_or_three_verified.reorder("RANDOM()").first
+  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
   proposal = Proposal.reorder("RANDOM()").first
   proposal.vote_by(voter: voter, vote: true)
 end
@@ -827,6 +837,14 @@ tags = Faker::Lorem.words(25)
                               terms_of_service: "1",
                               proceeding: "Derechos Humanos",
                               sub_proceeding: subproceedings.sample)
+
+puts "Creating proposal notifications"
+
+100.times do |i|
+  ProposalNotification.create!(title: "Proposal notification title #{i}",
+                               body: "Proposal notification body #{i}",
+                               author: User.reorder("RANDOM()").first,
+                               proposal: Proposal.reorder("RANDOM()").first)
 end
 
 puts " ✅"
