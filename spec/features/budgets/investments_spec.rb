@@ -28,6 +28,21 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Index should show investment descriptive image only when is defined' do
+    investment = create(:budget_investment, heading: heading)
+    investment_with_image = create(:budget_investment, :with_descriptive_image, heading: heading)
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within("#budget_investment_#{investment.id}") do
+      expect(page).not_to have_css("img.th")
+    end
+
+    within("#budget_investment_#{investment_with_image.id}") do
+      expect(page).to have_css("img.th[alt='#{investment_with_image.image_description}'][title='#{investment_with_image.image_description}']")
+    end
+  end
+
   context("Search") do
 
     scenario 'Search by text' do
@@ -327,6 +342,16 @@ feature 'Budget Investments' do
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
+  end
+
+  scenario "Show descriptive image when exists" do
+    user = create(:user)
+    login_as(user)
+    investment_with_image = create(:budget_investment, :with_descriptive_image, heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment_with_image.id)
+
+    expect(page).to have_css("img[alt='#{investment_with_image.image_description}'][title='#{investment_with_image.image_description}']")
   end
 
   scenario "Show back link contains heading id" do

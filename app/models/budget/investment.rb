@@ -11,6 +11,7 @@ class Budget
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
 
+    # TODO: ROCK&ROR: Set image versions sizes acordingly to enhance page load
     has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'

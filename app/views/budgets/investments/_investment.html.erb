@@ -2,7 +2,18 @@
   <div class="panel">
     <div class="row">
 
-      <div class="small-12 medium-9 column">
+      <!-- TODO: ROCK&ROR: Temporal markup. Place it as needed to reflect mockup -->
+      <div class="small-2 medium-2 large-2 column">
+        <% if investment.image.exists? %>
+          <%= image_tag investment.image.url(:thumb),
+                        title: investment.image_description,
+                        alt: investment.image_description, class: "th" %>
+        <% else %>
+          <!-- TODO: ROCK&ROR: Create colored placeholder or default image -->
+        <% end %>
+      </div>
+
+      <div class="small-10 medium-7 large-10 column">
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
@@ -42,12 +53,6 @@
       </div>
 
       <% unless investment.unfeasible? %>
-
-        <% if investment.image.exists? %>
-          <div class="small-12 medium-3 column">
-            <%= image_tag investment.image.url(:medium) %>
-          </div>
-        <% end %>
 
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"

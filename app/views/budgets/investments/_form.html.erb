@@ -47,8 +47,12 @@
                         class: 'js-tag-list' %>
     </div>
 
-    <div class="budget_investment_image">
-      <%= f.file_field :image %>
+    <div class="small-12 column">
+      <%= f.file_field :image, accept: 'image/jpeg' %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.text_field :image_description %>
     </div>
 
     <% unless current_user.manager? %>
