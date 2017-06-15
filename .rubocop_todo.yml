@@ -155,14 +155,6 @@ Rails/PluralizationGrammar:
     - 'spec/features/proposals_spec.rb'
     - 'spec/models/residence_spec.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: referer, referrer
-Rails/RequestReferer:
-  Exclude:
-    - 'app/controllers/users/sessions_controller.rb'
-
 # Offense count: 11
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: strict, flexible
