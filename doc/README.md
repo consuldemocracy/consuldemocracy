@@ -90,6 +90,7 @@ Es recomendable revisar regularmente la sección "Pendientes".
 #### Usuarios bloqueados
 
 Cuando un moderador o un administrador bloquea a un usuario desde la web aparecerá en esta lista. Cuando un usuario está bloqueado no puede realizar acciones en la web, y todas sus Propuestas/Debates/Comentarios dejaran de ser visibles.
+
 * Al pulsar "Confirmar" se acepta el bloqueo; se considera que se ha hecho correctamente.
 * Si se considera que el bloqueo ha sido erróneo, al pulsar "Volver a mostrar" se revierte el bloqueo y el usuario vuelve a estar activo.
 

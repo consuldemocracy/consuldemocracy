@@ -72,6 +72,7 @@ But for some actions like voting, you will need a verified user, the seeds file 
 ### Customization
 
 Read more on documentation:
+
 * English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
 * Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 
