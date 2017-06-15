@@ -17,7 +17,9 @@ class Notification < ActiveRecord::Base
   end
 
   def self.add(user_id, notifiable)
-    if notification = Notification.find_by(user_id: user_id, notifiable: notifiable)
+    notification = Notification.find_by(user_id: user_id, notifiable: notifiable)
+
+    if notification.present?
       Notification.increment_counter(:counter, notification.id)
     else
       Notification.create!(user_id: user_id, notifiable: notifiable)
