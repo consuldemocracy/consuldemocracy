@@ -7,12 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 3
-Lint/AmbiguousRegexpLiteral:
-  Exclude:
-    - 'app/helpers/verification_helper.rb'
-    - 'spec/features/verification/residence_spec.rb'
-
-# Offense count: 3
 # Configuration parameters: AllowSafeAssignment.
 Lint/AssignmentInCondition:
   Exclude:
