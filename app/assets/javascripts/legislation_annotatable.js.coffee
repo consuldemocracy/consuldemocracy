@@ -84,7 +84,7 @@ App.LegislationAnnotatable =
         annotation_id: pid
         annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
 
-  isMobile: () ->
+  isMobile: ->
     return window.innerWidth <= 652
 
   viewerExtension: (viewer) ->
