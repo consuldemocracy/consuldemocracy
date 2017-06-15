@@ -104,6 +104,8 @@ en:
         title: "Title"
         location: "Location"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        image: "Proposal descriptive image"
+        image_description: "Image description"        
       budget/investment/milestone:
         title: "Title"
         description: "Description"
