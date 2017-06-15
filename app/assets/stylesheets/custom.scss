@@ -2432,6 +2432,7 @@ $campaign-yellow:  #FFDB19;
 
 .banner-budgets-remember {
   background: #f1f6f8;
+  padding: $line-height;
 
   .title {
     color: #0054a1;
@@ -2444,7 +2445,6 @@ $campaign-yellow:  #FFDB19;
 
   .lead {
     color: #5c6b7e;
-    margin-bottom: 0;
   }
 }
 
