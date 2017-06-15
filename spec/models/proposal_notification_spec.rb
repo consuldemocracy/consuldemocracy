@@ -22,6 +22,28 @@ describe ProposalNotification do
     expect(notification).to_not be_valid
   end
 
+  describe "public_for_api scope" do
+    it "returns proposal notifications" do
+      proposal = create(:proposal)
+      notification = create(:proposal_notification, proposal: proposal)
+
+      expect(ProposalNotification.public_for_api).to include(notification)
+    end
+
+    it "blocks proposal notifications whose proposal is hidden" do
+      proposal = create(:proposal, :hidden)
+      notification = create(:proposal_notification, proposal: proposal)
+
+      expect(ProposalNotification.public_for_api).not_to include(notification)
+    end
+
+    it "blocks proposal notifications without proposal" do
+      proposal = build(:proposal_notification, proposal: nil).save!(validate: false)
+
+      expect(ProposalNotification.public_for_api).not_to include(notification)
+    end
+  end
+
   describe "minimum interval between notifications" do
 
     before(:each) do
