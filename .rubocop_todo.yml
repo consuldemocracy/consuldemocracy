@@ -14,11 +14,6 @@ Lint/InheritException:
   Exclude:
     - 'app/controllers/concerns/feature_flags.rb'
 
-# Offense count: 7
-Lint/NestedMethodDefinition:
-  Exclude:
-    - 'lib/acts_as_paranoid_aliases.rb'
-
 # Offense count: 13
 Lint/ParenthesesAsGroupedExpression:
   Exclude:
