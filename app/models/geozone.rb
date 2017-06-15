@@ -1,9 +1,14 @@
 class Geozone < ActiveRecord::Base
+
+  include Graphqlable
+  
   has_many :proposals
   has_many :spending_proposals
   has_many :debates
   has_many :users
   validates :name, presence: true
+
+  scope :public_for_api, -> { all }
 
   def self.names
     Geozone.pluck(:name)

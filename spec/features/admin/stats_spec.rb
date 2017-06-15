@@ -399,7 +399,6 @@ feature 'Stats' do
         expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
       end
     end
-
   end
 
   context "Proposal notifications" do
