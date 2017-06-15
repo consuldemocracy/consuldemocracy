@@ -208,7 +208,7 @@ TODO
 Te recomendamos que agregues el remote de consul para facilitar este proceso de merge:
 
 ```
-$ git remote add consul https://github.com/consul/consul
+git remote add consul https://github.com/consul/consul
 ```
 
 Con esto puedes actualizarte con

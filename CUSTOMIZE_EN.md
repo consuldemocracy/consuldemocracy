@@ -208,7 +208,7 @@ TODO
 We recommend you to add consul as remote:
 
 ```
-$ git remote add consul https://github.com/consul/consul
+git remote add consul https://github.com/consul/consul
 ```
 
 And then just grab lastest changes on to a branch of your own repo with:
