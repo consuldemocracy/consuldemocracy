@@ -120,7 +120,7 @@
               <%= t("account.show.user_permission_support_proposal") %>
             </li>
             <li>
-              <% if current_user.level_three_verified? %>
+              <% if current_user.level_two_or_three_verified? %>
                 <span class="icon-check"></span>
               <% else %>
                 <span class="icon-x"></span>
@@ -144,7 +144,10 @@
                     <%= t("account.show.verified_account") %>
                   </p>
                 <% elsif current_user.level_two_verified? %>
-                  <%= link_to t("account.show.finish_verification"), verification_path, class: "button success" %>
+                  <p class="already-verified">
+                    <span class="icon-check"></span>
+                    <%= t("account.show.verified_account") %>
+                  </p>
                 <% else %>
                   <%= link_to t("account.show.verify_my_account"), verification_path, class: "button success" %>
                 <% end %>

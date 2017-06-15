@@ -3,6 +3,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
+  include ApplicationHelper
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
