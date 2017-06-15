@@ -69,13 +69,13 @@
         } %>
       <% end %>
 
-      <%= paginate @investments %>
-
       <% if @heading.group.name == "All city" %>
         <%= render "banner_city" %>
       <% else %>
         <%= render "banner_district" %>
       <% end %>
+
+      <%= paginate @investments %>
     </div>
 
     <div class="small-12 medium-3 column">
