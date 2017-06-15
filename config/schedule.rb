@@ -30,3 +30,7 @@ end
 every 29.minutes do
   rake "-s budgets:stats:balloting"
 end
+
+every 1.day, at: '4:00 am', roles: [:db] do
+  rake "csv:export"
+end
