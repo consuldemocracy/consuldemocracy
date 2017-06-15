@@ -16,7 +16,7 @@ The preferred method is via rvm:
 
 (only the multi user option installs all dependencies automatically, as we use 'sudo'.)
 
-### As local user:
+### As local user
 
 ```
 curl -L https://get.rvm.io | bash -s stable
