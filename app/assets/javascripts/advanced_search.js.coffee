@@ -22,7 +22,7 @@ App.AdvancedSearch =
 
     $('.js-calendar').datepicker
       regional: locale
-      maxDate:  "+0d"
+      maxDate: "+0d"
     $('.js-calendar-full').datepicker
       regional: locale
 
