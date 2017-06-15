@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Debate do
   let(:debate) { build(:debate) }
 
+  it_behaves_like "has_public_author"
+
   it "should be valid" do
     expect(debate).to be_valid
   end
@@ -734,6 +736,18 @@ describe Debate do
 
       expect(Debate.not_probe).to include(debate3)
       expect(Debate.not_probe).to_not include(debate1, debate2)
+    end
+  end
+
+  describe 'public_for_api scope' do
+    it 'returns debates' do
+      debate = create(:debate)
+      expect(Debate.public_for_api).to include(debate)
+    end
+
+    it 'does not return hidden debates' do
+      debate = create(:debate, :hidden)
+      expect(Debate.public_for_api).to_not include(debate)
     end
   end
 
