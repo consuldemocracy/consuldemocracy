@@ -69,6 +69,14 @@
         } %>
       <% end %>
 
+      <% if @heading.present? %>
+        <% if @heading.group.headings.count == 1 %>
+          <%= render "banner_city" %>
+        <% else %>
+          <%= render "banner_district" %>
+        <% end %>
+      <% end %>
+
       <%= paginate @investments %>
     </div>
 
@@ -79,6 +87,5 @@
         </div>
       </aside>
     </div>
-
   </div>
 </main>

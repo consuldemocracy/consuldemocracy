@@ -9,23 +9,20 @@ feature 'Custom urls' do
   let!(:investment) { create(:budget_investment, title: "Pediatric's hospital", heading: heading1) }
 
   scenario "budgets" do
-    visit budgets_path
-    click_link "Votar proyectos"
+    visit budget_path(budget)
 
     expect(current_path).to eq("/presupuestos/big-budget")
   end
 
   scenario "groups" do
-    visit budgets_path
-    click_link "Votar proyectos"
+    visit budget_path(budget)
     click_link "Health"
 
     expect(current_path).to eq("/presupuestos/big-budget/health")
   end
 
   scenario "headings" do
-    visit budgets_path
-    click_link "Votar proyectos"
+    visit budget_path(budget)
     click_link "Health"
     click_link "More hospitals"
 
@@ -35,16 +32,14 @@ feature 'Custom urls' do
   scenario "group with single heading" do
     heading2.destroy
 
-    visit budgets_path
-    click_link "Votar proyectos"
+    visit budget_path(budget)
     click_link "Health"
 
     expect(current_path).to eq("/presupuestos/big-budget/health/more-hospitals")
   end
 
   scenario "investments" do
-    visit budgets_path
-    click_link "Votar proyectos"
+    visit budget_path(budget)
     click_link "Health"
     click_link "More hospitals"
     click_link "Pediatric's hospital"
