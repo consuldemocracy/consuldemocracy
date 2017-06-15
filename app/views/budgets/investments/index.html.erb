@@ -77,7 +77,7 @@
           } %>
         <% end %>
       <!-- elsif MINIMAL view -->
-        <% @investments.each do |investment| %>
+        <% @investments_minimal.each do |investment| %>
           <%= render partial: '/budgets/investments/investment_minimal', locals: {
             investment: investment,
             investment_ids: @investment_ids,
@@ -95,7 +95,7 @@
         <% end %>
       <% end %>
 
-      <%#paginate @investments %>
+      <%= paginate @investments %>
     </div>
 
     <div class="small-12 medium-3 column">

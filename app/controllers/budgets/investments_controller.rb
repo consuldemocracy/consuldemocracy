@@ -30,6 +30,7 @@ module Budgets
 
     def index
       @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments_minimal = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}")
       @investment_ids = @investments.map(&:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
