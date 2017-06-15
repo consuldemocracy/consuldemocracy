@@ -71,7 +71,7 @@ gem 'paperclip'
 gem 'rails-assets-markdown-it', source: 'https://rails-assets.org'
 gem 'cocoon'
 
-gem 'graphql', '~> 1.5.12'
+gem 'graphql', '~> 1.6.3'
 gem 'graphiql-rails', '~> 1.4.1'
 
 group :development, :test do
