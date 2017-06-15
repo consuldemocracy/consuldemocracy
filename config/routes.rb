@@ -406,9 +406,9 @@ Rails.application.routes.draw do
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
-    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   end
 
+  mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
   mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # more info pages
