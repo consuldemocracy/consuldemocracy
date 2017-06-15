@@ -16,12 +16,12 @@ The preferred method is via rvm:
 
 (only the multi user option installs all dependencies automatically, as we use 'sudo'.)
 
-###as local user:
+### As local user:
 
 ```
 curl -L https://get.rvm.io | bash -s stable
 ```
-###for all system users
+### For all system users
 
 ```
 curl -L https://get.rvm.io | sudo bash -s stable
