@@ -18,7 +18,7 @@
     h4 {
       font-weight: 400;
       text-align: center;
-      color: white;
+      color: #fff;
     }
   }
 }
@@ -28,7 +28,7 @@
 .legislation-categories {
 
   .menu.simple {
-    border-bottom: none;
+    border-bottom: 0;
     list-style: none;
     padding-left: 0;
     margin-left: 0;
@@ -37,19 +37,19 @@
     @include breakpoint(medium) {
       margin: 1.5rem 0;
     }
+  }
 
-    li {
-      display: block;
-      cursor: pointer;
-      margin-bottom: 1rem;
+  li {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 1rem;
 
-      @include breakpoint(medium) {
-        margin-bottom: 2rem;
-        max-width: 80%;
-      }
+    @include breakpoint(medium) {
+      margin-bottom: 2rem;
+      max-width: 80%;
     }
 
-    li.active {
+    &.active {
       font-weight: 700;
     }
   }
@@ -58,14 +58,14 @@
 // 03. Legislation cards
 // -----------------
 .legislation {
-  margin: 0 0 $line-height 0;
-  background: white;
+  margin: 0 0 $line-height;
+  background: #fff;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
   border-radius: 0;
-  box-shadow: 0px 1px 3px 0 #DEE0E3;
+  box-shadow: 0 1px 3px 0 #dee0e3;
   min-height: 12rem;
-  padding: 2rem 0 0 0;
+  padding: 2rem 0 0;
 }
 
 .legislation-text {
@@ -83,13 +83,13 @@
 }
 
 .legislation-calendar {
-  background: #E5ECF2;
+  background: #e5ecf2;
   padding-top: 1rem;
 
   h5 {
     margin-left: 0.25rem;
     margin-bottom: 0;
-    color: #61686E;
+    color: #61686e;
 
     @include breakpoint(medium) {
       margin-left: 0;
