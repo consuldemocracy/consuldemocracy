@@ -69,6 +69,7 @@ es:
         how_to_use: "Utiliza %{org_name} en tu municipio"
         world: "Participación ciudadana directa en el mundo"
         facts: "Hechos sobre participación ciudadana y democracia directa"
+        forums: "Foros Locales"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.

@@ -1,6 +1,7 @@
 <h3 id="other" data-magellan-target="other"><%= t("pages.more_info.other.title") %></h3>
 
 <ul class="features">
+  <li><%= link_to t("pages.more_info.other.forums"), participation_forums_path %></li>
   <li><%= link_to t("pages.titles.kit_decide"), kit_decide_path %></li>
   <li><%= link_to "Hojas de firmas para recoger apoyos", more_info_proposals_path(anchor: "iii") %></li>
   <li><%= link_to t("pages.more_info.other.how_to_use", org_name: setting['org_name']), faq_path %></li>

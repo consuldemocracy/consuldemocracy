@@ -240,6 +240,7 @@ en:
       external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparency
       external_link_transparency_url: http://transparencia.madrid.es
+      forums: "Local Forums"
       help_translate: Help us translate
       help_translate_info: How to help
       locale: 'Language:'
