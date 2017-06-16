@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.index ["investment_id"], name: "index_budget_ballot_lines_on_investment_id", using: :btree
   end
 
-
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
@@ -140,12 +139,11 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.integer  "ballot_lines_count",                    default: 0
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
+    t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
+    t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+    t.index ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
+    t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
   end
-
-  add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
-  add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
-  add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
-  add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
   create_table "budget_reclassified_votes", force: :cascade do |t|
     t.integer  "user_id"
@@ -222,10 +220,10 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.string   "visit_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                             default: 0
-    t.datetime "ignored_flag_at"
     t.integer  "cached_votes_total",                      default: 0
     t.integer  "cached_votes_up",                         default: 0
     t.integer  "cached_votes_down",                       default: 0
+    t.datetime "ignored_flag_at"
     t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
     t.integer  "cached_anonymous_votes_total",            default: 0
@@ -242,6 +240,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.index ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
     t.index ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
     t.index ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+    t.index ["description"], name: "index_debates_on_description", using: :btree
     t.index ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -282,8 +281,8 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "district_code"
-    t.integer  "year_of_birth"
     t.integer  "poll_officer_id"
+    t.integer  "year_of_birth"
     t.index ["user_id"], name: "index_failed_census_calls_on_user_id", using: :btree
   end
 
@@ -345,12 +344,11 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.string   "range_end"
     t.integer  "range_end_offset"
     t.text     "context"
+    t.index ["author_id"], name: "index_legislation_annotations_on_author_id", using: :btree
+    t.index ["hidden_at"], name: "index_legislation_annotations_on_hidden_at", using: :btree
+    t.index ["legislation_draft_version_id"], name: "index_legislation_annotations_on_legislation_draft_version_id", using: :btree
+    t.index ["range_start", "range_end"], name: "index_legislation_annotations_on_range_start_and_range_end", using: :btree
   end
-
-  add_index "legislation_annotations", ["author_id"], name: "index_legislation_annotations_on_author_id", using: :btree
-  add_index "legislation_annotations", ["hidden_at"], name: "index_legislation_annotations_on_hidden_at", using: :btree
-  add_index "legislation_annotations", ["legislation_draft_version_id"], name: "index_legislation_annotations_on_legislation_draft_version_id", using: :btree
-  add_index "legislation_annotations", ["range_start", "range_end"], name: "index_legislation_annotations_on_range_start_and_range_end", using: :btree
 
   create_table "legislation_answers", force: :cascade do |t|
     t.integer  "legislation_question_id"
@@ -359,12 +357,11 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.datetime "hidden_at"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.index ["hidden_at"], name: "index_legislation_answers_on_hidden_at", using: :btree
+    t.index ["legislation_question_id"], name: "index_legislation_answers_on_legislation_question_id", using: :btree
+    t.index ["legislation_question_option_id"], name: "index_legislation_answers_on_legislation_question_option_id", using: :btree
+    t.index ["user_id"], name: "index_legislation_answers_on_user_id", using: :btree
   end
-
-  add_index "legislation_answers", ["hidden_at"], name: "index_legislation_answers_on_hidden_at", using: :btree
-  add_index "legislation_answers", ["legislation_question_id"], name: "index_legislation_answers_on_legislation_question_id", using: :btree
-  add_index "legislation_answers", ["legislation_question_option_id"], name: "index_legislation_answers_on_legislation_question_option_id", using: :btree
-  add_index "legislation_answers", ["user_id"], name: "index_legislation_answers_on_user_id", using: :btree
 
   create_table "legislation_draft_versions", force: :cascade do |t|
     t.integer  "legislation_process_id"
@@ -378,11 +375,10 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.datetime "updated_at",                               null: false
     t.text     "body_html"
     t.text     "toc_html"
+    t.index ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
+    t.index ["legislation_process_id"], name: "index_legislation_draft_versions_on_legislation_process_id", using: :btree
+    t.index ["status"], name: "index_legislation_draft_versions_on_status", using: :btree
   end
-
-  add_index "legislation_draft_versions", ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
-  add_index "legislation_draft_versions", ["legislation_process_id"], name: "index_legislation_draft_versions_on_legislation_process_id", using: :btree
-  add_index "legislation_draft_versions", ["status"], name: "index_legislation_draft_versions_on_status", using: :btree
 
   create_table "legislation_processes", force: :cascade do |t|
     t.string   "title"
@@ -397,24 +393,23 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.date     "allegations_end_date"
     t.date     "result_publication_date"
     t.datetime "hidden_at"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.text     "summary"
     t.boolean  "debate_phase_enabled",       default: false
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
+    t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
+    t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date", using: :btree
+    t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date", using: :btree
+    t.index ["debate_start_date"], name: "index_legislation_processes_on_debate_start_date", using: :btree
+    t.index ["draft_publication_date"], name: "index_legislation_processes_on_draft_publication_date", using: :btree
+    t.index ["end_date"], name: "index_legislation_processes_on_end_date", using: :btree
+    t.index ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
+    t.index ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree
+    t.index ["start_date"], name: "index_legislation_processes_on_start_date", using: :btree
   end
-
-  add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
-  add_index "legislation_processes", ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date", using: :btree
-  add_index "legislation_processes", ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date", using: :btree
-  add_index "legislation_processes", ["debate_start_date"], name: "index_legislation_processes_on_debate_start_date", using: :btree
-  add_index "legislation_processes", ["draft_publication_date"], name: "index_legislation_processes_on_draft_publication_date", using: :btree
-  add_index "legislation_processes", ["end_date"], name: "index_legislation_processes_on_end_date", using: :btree
-  add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
-  add_index "legislation_processes", ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree
-  add_index "legislation_processes", ["start_date"], name: "index_legislation_processes_on_start_date", using: :btree
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
@@ -423,10 +418,9 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.datetime "hidden_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["hidden_at"], name: "index_legislation_question_options_on_hidden_at", using: :btree
+    t.index ["legislation_question_id"], name: "index_legislation_question_options_on_legislation_question_id", using: :btree
   end
-
-  add_index "legislation_question_options", ["hidden_at"], name: "index_legislation_question_options_on_hidden_at", using: :btree
-  add_index "legislation_question_options", ["legislation_question_id"], name: "index_legislation_question_options_on_legislation_question_id", using: :btree
 
   create_table "legislation_questions", force: :cascade do |t|
     t.integer  "legislation_process_id"
@@ -437,10 +431,9 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.datetime "updated_at",                         null: false
     t.integer  "comments_count",         default: 0
     t.integer  "author_id"
+    t.index ["hidden_at"], name: "index_legislation_questions_on_hidden_at", using: :btree
+    t.index ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
   end
-
-  add_index "legislation_questions", ["hidden_at"], name: "index_legislation_questions_on_hidden_at", using: :btree
-  add_index "legislation_questions", ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
 
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
@@ -682,6 +675,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.index ["author_id"], name: "index_proposals_on_author_id", using: :btree
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
     t.index ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+    t.index ["description"], name: "index_proposals_on_description", using: :btree
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -882,7 +876,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-12-21 17:55:08', null: false
+    t.datetime "password_changed_at",                       default: '2016-11-23 10:59:20', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
@@ -974,6 +968,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
+  add_foreign_key "geozones_polls", "geozones"
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
@@ -992,7 +987,10 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_foreign_key "poll_partial_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
+  add_foreign_key "poll_partial_results", "users", column: "author_id"
   add_foreign_key "poll_questions", "polls"
+  add_foreign_key "poll_questions", "proposals"
+  add_foreign_key "poll_questions", "users", column: "author_id"
   add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
