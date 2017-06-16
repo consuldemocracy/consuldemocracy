@@ -24,7 +24,7 @@
 // -----------------
 
 ::selection {
-  color: white;
+  color: #fff;
   background-color: $brand;
 }
 
@@ -32,7 +32,12 @@ body {
   font-size: $base-font-size;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both;
   font-weight: 700;
 }
@@ -46,11 +51,17 @@ p {
 a {
   color: $link;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     color: $link-hover;
     text-decoration: underline;
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       color: $link-hover;
     }
   }
@@ -69,8 +80,9 @@ a {
     text-decoration: none !important;
   }
 
-  &.warning, &.warning:hover {
-    color: black;
+  &.warning,
+  &.warning:hover {
+    color: #000;
   }
 }
 
@@ -113,8 +125,9 @@ a {
     }
   }
 
-  li:hover, .f-dropdown li:focus {
-    background: white;
+  li:hover,
+  .f-dropdown li:focus {
+    background: #fff;
   }
 
   &.open {
@@ -162,14 +175,15 @@ a {
 
 .wrapper {
   min-height: 100%;
-  margin: 0 auto (-$line-height)*12;
+  margin: 0 auto (-$line-height) * 12;
   height: auto !important;
   height: 100%;
 }
 
-.footer, .push {
+.footer,
+.push {
   clear: both;
-  min-height: $line-height*12;
+  min-height: $line-height * 12;
 }
 
 .ie-callout {
@@ -177,7 +191,7 @@ a {
   top: 0;
   width: 100%;
 
-  a.close {
+  .close {
     font-size: rem-calc(34);
     top: 20%;
   }
@@ -202,7 +216,7 @@ a {
 }
 
 .menu.vertical {
-  background: white;
+  background: #fff;
   margin: $line-height 0;
   padding: $line-height;
 
@@ -247,10 +261,11 @@ a {
 
 .close-button {
   color: $text;
-  top: $line-height/2;
+  top: $line-height / 2;
 }
 
-.back, .icon-angle-left {
+.back,
+.icon-angle-left {
   clear: both;
   color: $text-medium;
   float: left;
@@ -281,7 +296,8 @@ a {
     }
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     font-size: $base-font-size;
   }
 }
@@ -291,7 +307,7 @@ a {
 }
 
 .button.float-right ~ .button.float-right {
-  margin: 0 $line-height/2;
+  margin: 0 $line-height / 2;
 }
 
 .pagination .current {
@@ -307,13 +323,13 @@ header {
   margin-bottom: $line-height;
 
   .selected {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fff;
   }
 
   .locale {
     float: left;
-    height: $line-height*1.5;
-    margin-left: $line-height/2;
+    height: $line-height * 1.5;
+    margin-left: $line-height / 2;
   }
 
   .external-links {
@@ -329,9 +345,9 @@ header {
 
 .top-bar {
   background: $brand !important;
-  color: white;
-  height: $line-height*2;
-  line-height: $line-height*2;
+  color: #fff;
+  height: $line-height * 2;
+  line-height: $line-height * 2;
   padding-bottom: 0;
   padding-top: 0;
 
@@ -351,33 +367,33 @@ header {
   ul {
     background: none;
     padding-right: rem-calc(15);
+  }
 
-    &.menu > li {
-      display: block;
+  .menu > li {
+    display: block;
+
+    @include breakpoint(medium) {
+      display: table-cell;
+      height: $line-height * 3.5;
+    }
+
+    a {
+      color: #fff;
+      padding-left: 0;
 
       @include breakpoint(medium) {
-        display: table-cell;
-        height: $line-height*3.5;
+        font-size: $small-font-size;
+        padding: rem-calc(11) rem-calc(16);
       }
+    }
 
-      a {
-        color: white;
-        padding-left: 0;
+    .button {
+      text-align: left;
 
-        @include breakpoint(medium) {
-          font-size: $small-font-size;
-          padding: rem-calc(11) rem-calc(16);
-        }
-
-        &.button {
-          text-align: left;
-
-          @include breakpoint(medium) {
-            background: white;
-            color: $brand;
-            text-align: center;
-          }
-        }
+      @include breakpoint(medium) {
+        background: #fff;
+        color: $brand;
+        text-align: center;
       }
     }
   }
@@ -385,21 +401,22 @@ header {
   .menu-icon.dark {
     height: 20px;
 
-    &::after, &:hover::after {
-      background: white;
-      box-shadow: 0 7px 0 white, 0 14px 0 white;
+    &::after,
+    &:hover::after {
+      background: #fff;
+      box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
   }
 }
 
 .top-links {
   background: $dark;
-  color: white;
+  color: #fff;
   font-size: $small-font-size;
-  padding-right: $line-height/2;
+  padding-right: $line-height / 2;
 
   a {
-    color: white;
+    color: #fff;
     margin: 0 rem-calc(6);
 
     &:hover {
@@ -409,22 +426,20 @@ header {
 
   ul {
     margin-bottom: 0;
+  }
 
-    li {
-      display: block;
-    }
+  li {
+    display: block;
 
     @include breakpoint(medium) {
-      li {
-        display: inline-block;
+      display: inline-block;
 
-        &:after {
-          content: "|";
-        }
+      &::after {
+        content: '|';
+      }
 
-        &:last-child:after {
-          content: none;
-        }
+      &:last-child::after {
+        content: none;
       }
     }
   }
@@ -433,7 +448,7 @@ header {
 .subnavigation {
 
   @include breakpoint(medium) {
-    background: white;
+    background: #fff;
     padding-bottom: 0;
   }
 
@@ -446,40 +461,40 @@ header {
         display: inline-block;
         margin-right: rem-calc(20);
       }
+    }
+  }
 
-      a {
-        color: white;
-        display: inline-block;
-        line-height: $line-height*2;
-        position: relative;
-        text-align: left;
-        width: 100%;
+  a {
+    color: #fff;
+    display: inline-block;
+    line-height: $line-height * 2;
+    position: relative;
+    text-align: left;
+    width: 100%;
 
-        @include breakpoint(medium) {
-          color: $text;
-          display: block;
-          font-weight: bold;
-          width: auto;
+    @include breakpoint(medium) {
+      color: $text;
+      display: block;
+      font-weight: bold;
+      width: auto;
 
-          &:hover {
-            color: $link;
-          }
-        }
+      &:hover {
+        color: $link;
+      }
+    }
 
-        &.active {
-          color: white;
+    &.active {
+      color: #fff;
 
-          @include breakpoint(medium) {
-            border-bottom: 2px solid $brand;
-            color: $brand;
-          }
-        }
+      @include breakpoint(medium) {
+        border-bottom: 2px solid $brand;
+        color: $brand;
       }
     }
   }
 
   .input-group {
-    padding-top: $line-height/4;
+    padding-top: $line-height / 4;
 
     @include breakpoint(medium) {
       margin-bottom: 0;
@@ -491,7 +506,7 @@ header {
   }
 
   .input-group-button {
-    line-height: $line-height*1.5;
+    line-height: $line-height * 1.5;
     padding-bottom: 0;
 
     button {
@@ -499,14 +514,14 @@ header {
       border: 1px solid #ccc;
       border-left: 0;
       color: $text;
-      height: $line-height*1.5;
-      line-height: $line-height*1.5;
+      height: $line-height * 1.5;
+      line-height: $line-height * 1.5;
       padding-top: 0;
     }
   }
 
   input {
-    height: $line-height*1.5 !important;
+    height: $line-height * 1.5 !important;
     margin-bottom: 0;
     margin-right: 0;
     width: 100%;
@@ -516,31 +531,31 @@ header {
 .submenu {
   border-bottom: 1px solid $border;
   clear: both;
-  margin-bottom: $line-height/2;
+  margin-bottom: $line-height / 2;
 
   a {
     color: $text;
     display: inline-block;
     font-weight: bold;
-    margin-right: $line-height/2;
+    margin-right: $line-height / 2;
     position: relative;
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: $line-height*1.5;
+      margin-right: $line-height * 1.5;
     }
 
     &:hover {
       color: $link;
     }
+  }
 
-    &.active {
-      border-bottom: 2px solid $brand;
-      color: $brand;
+  .active {
+    border-bottom: 2px solid $brand;
+    color: $brand;
 
-      &:hover {
-        text-decoration: none;
-      }
+    &:hover {
+      text-decoration: none;
     }
   }
 
@@ -549,7 +564,7 @@ header {
   }
 }
 
-.search-form-header input[type=text] {
+.search-form-header [type=text] {
   max-width: none;
 }
 
@@ -576,7 +591,9 @@ footer {
     }
   }
 
-  a, a:active, a:focus {
+  a,
+  a:active,
+  a:focus {
     color: $text;
     text-decoration: underline;
 
@@ -589,7 +606,7 @@ footer {
     padding-left: 0;
   }
 
-  a.title {
+  .title {
     font-weight: bold;
     text-decoration: none;
   }
@@ -598,28 +615,32 @@ footer {
 .footer {
   background: $border;
   border-top: 6px solid $brand;
-  margin-top: $line-height*2;
+  margin-top: $line-height * 2;
   padding-top: $line-height;
 }
 
 .subfooter {
   border-top: 1px solid $text-light;
   font-size: $small-font-size;
-  padding-top: $line-height/2;
+  padding-top: $line-height / 2;
 }
 
 // 04. Tags
 // --------
 
-.tags a , .tag-cloud a, .categories a, .geozone a, .sidebar-links a,
+.tags a ,
+.tag-cloud a,
+.categories a,
+.geozone a,
+.sidebar-links a,
 .tags span {
   background: #ececec;
   border-radius: rem-calc(6);
   color: $text;
   display: inline-block;
   font-size: $small-font-size;
-  margin-bottom: $line-height/3;
-  padding: $line-height/4 $line-height/3;
+  margin-bottom: $line-height / 3;
+  padding: $line-height / 4 $line-height / 3;
   text-decoration: none;
 
   &:hover {
@@ -627,13 +648,14 @@ footer {
   }
 }
 
-.categories a, .geozone a {
+.categories a,
+.geozone a {
   background: $highlight;
   color: $link;
 
   &:hover {
     background: $brand;
-    color: white;
+    color: #fff;
   }
 }
 
@@ -642,8 +664,8 @@ footer {
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
-  margin: -1px 0 $line-height/2;
-  padding-top: $line-height/4;
+  margin: -1px 0 $line-height / 2;
+  padding-top: $line-height / 4;
   text-transform: uppercase;
 }
 
@@ -653,17 +675,17 @@ footer {
 .auth-page {
 
   .wrapper {
-    margin: 0 auto (-$line-height)*14;
+    margin: 0 auto (-$line-height) * 14;
   }
 }
 
 .auth-image {
-  background: $brand image-url("auth_bg.jpg");
+  background: $brand image-url('auth_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
   @include breakpoint(medium) {
-    min-height: $line-height*42;
+    min-height: $line-height * 42;
   }
 
   h1 {
@@ -675,7 +697,7 @@ footer {
     }
 
     a {
-      color: white;
+      color: #fff;
       display: block;
       line-height: rem-calc(80); // Same as logo image height
       text-align: center;
@@ -691,10 +713,12 @@ footer {
 .auth-form {
 
   @include breakpoint(medium) {
-    padding-top: $line-height*4;
+    padding-top: $line-height * 4;
   }
 
-  p, a, .checkbox {
+  p,
+  a,
+  .checkbox {
     font-size: $small-font-size;
   }
 }
@@ -706,52 +730,52 @@ footer {
   text-align: center;
 
   span {
-    background: white;
+    background: #fff;
     font-weight: bold;
-    padding: 0 $line-height/2;
+    padding: 0 $line-height / 2;
   }
 }
 
 // 06. Forms
 // ---------
 
-form.locale-form {
+.locale-form {
   display: inline-block;
   position: relative;
 
   label {
-    color: white;
+    color: #fff;
     font-size: $small-font-size;
     font-weight: normal;
   }
 
   select {
-    background-image: image-url("language_select.png");
+    background-image: image-url('language_select.png');
     background-origin: border-box;
     background-position: right;
     background-size: 24px 24px;
 
     option {
-      background: white;
+      background: #fff;
       color: $text;
       border: 0;
       outline: none;
     }
+  }
 
-    &.locale-switcher {
-      background-color: transparent;
-      border: 0;
-      color: white;
-      font-size: $small-font-size;
-      margin-bottom: 0;
-      outline: none;
-      padding-left: rem-calc(3);
-      padding-right: $line-height;
-      width: auto;
+  .locale-switcher {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: $small-font-size;
+    margin-bottom: 0;
+    outline: none;
+    padding-left: rem-calc(3);
+    padding-right: $line-height;
+    width: auto;
 
-      &:focus {
-        outline: 3px solid #ffbf47;
-      }
+    &:focus {
+      outline: 3px solid #ffbf47;
     }
   }
 }
@@ -768,7 +792,7 @@ form {
     font-weight: bold;
   }
 
-  input[type="radio"] {
+  [type="radio"] {
     height: $line-height !important;
     vertical-align: top;
 
@@ -781,9 +805,9 @@ form {
     }
   }
 
-  input[type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
-    background: #F8F8F8;
-    height: $line-height*2;
+  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
+    background: #f8f8f8;
+    height: $line-height * 2;
     margin-bottom: rem-calc(16);
 
     &.error {
@@ -791,36 +815,38 @@ form {
     }
   }
 
-  input[type="checkbox"] + label,
-  input[type="radio"] + label {
+  [type="checkbox"] + label,
+  [type="radio"] + label {
     margin-right: 0;
   }
 
-  input[type=file] {
-    margin: $line-height/2 0 $line-height/2 $line-height/4;
+  [type=file] {
+    margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .note, .note-marked {
+  .note,
+  .note-marked {
     display: block;
     font-size: rem-calc(13);
-    margin-bottom: $line-height/2;
+    margin-bottom: $line-height / 2;
   }
 
   .note-marked {
-    background: yellow;
+    background: #ff0;
     display: inline-block;
 
     em {
-      background: white;
+      background: #fff;
       display: block;
     }
   }
 
   .ckeditor {
-    min-height: $line-height*13;
+    min-height: $line-height * 13;
   }
 
-  .checkbox, .radio {
+  .checkbox,
+  .radio {
     display: inline-block;
     font-weight: normal;
     line-height: $line-height;
@@ -833,47 +859,29 @@ form {
 
 .callout-slide {
   animation-duration: 1s;
-  -webkit-animation-duration: 1s;
   animation-fill-mode: both;
-  -webkit-animation-fill-mode: both;
   animation-name: slide;
-  -webkit-animation-name: slide;
-}
-
-@-webkit-keyframes slide {
-  from {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    visibility: visible;
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 @keyframes slide {
   from {
-    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     visibility: visible;
   }
 
   to {
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 
 .notice-container {
-  min-width: $line-height*12;
+  min-width: $line-height * 12;
   position: absolute;
   right: 24px;
   top: 24px;
 
   .notice {
-    height: $line-height*4;
+    height: $line-height * 4;
 
     .notice-text {
       width: 95%;
@@ -889,7 +897,8 @@ form {
     text-decoration: underline;
   }
 
-  &.success, &.notice {
+  &.success,
+  &.notice {
     background-color: $success-bg;
     border-color: $success-border;
     color: $color-success;
@@ -907,7 +916,8 @@ form {
     color: $color-warning;
   }
 
-  &.alert, &.error {
+  &.alert,
+  &.error {
     background-color: $alert-bg;
     border-color: $alert-border;
     color: $color-alert;
@@ -918,25 +928,20 @@ form {
   }
 }
 
-span.error, small.error {
-  background: $alert-bg;
-  color: $color-alert;
-}
-
-span.no-error, small.no-error {
+.no-error {
   background: $success-bg;
   color: $color-success;
 }
 
-.error small.error {
+.error {
   background: $alert-bg;
   color: $color-alert;
   display: inline-block;
-  margin: 0 $line-height/4;
-}
+  margin: 0 $line-height / 4;
 
-label.error, label.error a {
-  color: $color-alert;
+  a {
+    color: $color-alert;
+  }
 }
 
 // 08. User account
@@ -945,12 +950,12 @@ label.error, label.error a {
 .account {
 
   select {
-    height: $line-height*2;
-    margin-right: $line-height/2;
+    height: $line-height * 2;
+    margin-right: $line-height / 2;
   }
 
   .verify-account {
-    padding-right: $line-height/2;
+    padding-right: $line-height / 2;
   }
 
   .final-votes-info {
@@ -958,14 +963,14 @@ label.error, label.error a {
     border: 1px solid $warning-border;
     color: $color-warning;
     margin-top: $line-height;
-    padding: $line-height/2;
+    padding: $line-height / 2;
 
     ul li {
-      margin: $line-height/2 0;
+      margin: $line-height / 2 0;
     }
 
     .icon-box {
-      color: #D4A26D;
+      color: #d4a26d;
       font-size: rem-calc(120);
       line-height: rem-calc(120);
       vertical-align: top;
@@ -973,13 +978,17 @@ label.error, label.error a {
   }
 }
 
-img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
+.avatar,
+.admin-avatar,
+.moderator-avatar,
+.initialjs-avatar {
   border-radius: rem-calc(1000);
   position: relative;
 }
 
-.author-deleted, .user-deleted {
-  color: rgba(0,0,0,.4);
+.author-deleted,
+.user-deleted {
+  color: rgba(0, 0, 0, 0.4);
   display: inline-block;
   font-size: rem-calc(32);
   line-height: rem-calc(32);
@@ -1000,23 +1009,23 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
     list-style-type: none;
     margin-bottom: 0;
     margin-left: 0;
+  }
 
-    li {
-      font-size: $small-font-size;
-      margin-bottom: $line-height/2;
+  li {
+    font-size: $small-font-size;
+    margin-bottom: $line-height / 2;
 
-      span {
-        color: $text-medium;
-        font-size: rem-calc(12);
-      }
+    span {
+      color: $text-medium;
+      font-size: rem-calc(12);
+    }
 
-      .icon-check {
-        color: $check;
-      }
+    .icon-check {
+      color: $check;
+    }
 
-      .icon-x {
-        color: $delete;
-      }
+    .icon-x {
+      color: $delete;
     }
   }
 }
@@ -1042,7 +1051,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   }
 }
 
-.notifications-list:before {
+.notifications-list::before {
   background: $border;
   content: '';
   height: 100%;
@@ -1054,7 +1063,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 
 .notification {
   display: block;
-  padding: $line-height/2 0 $line-height/2 $line-height*1.5;
+  padding: $line-height / 2 0 $line-height / 2 $line-height * 1.5;
   position: relative;
 
   &:hover {
@@ -1067,15 +1076,15 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
       color: $link;
     }
 
-    &:before {
-      content: "\43";
+    &::before {
+      content: '\43';
     }
   }
 
-  &:before {
-    background: white;
+  &::before {
+    background: #fff;
     color: $brand;
-    content: "\4d";
+    content: '\4d';
     font-family: "icons" !important;
     left: 0;
     position: absolute;
@@ -1103,7 +1112,7 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
   @include breakpoint(medium) {
     float: right;
     margin-bottom: 0;
-    margin-top: $line-height/4;
+    margin-top: $line-height / 4;
     position: absolute;
     right: 0;
     z-index: 2;
@@ -1112,44 +1121,50 @@ img.avatar, img.admin-avatar, img.moderator-avatar, img.initialjs-avatar {
 
 .advanced-search-form {
 
-  select {
-    height: $line-height*2;
-  }
-
   @include breakpoint(medium) {
-    & > .column {
+    > .column {
       padding: 0;
     }
+  }
+
+  select {
+    height: $line-height * 2;
   }
 }
 
 // 10. Officials levels
 // --------------------
 
-.level-1, .level-2, .level-3,
-.level-4, .level-5,
-.is-author, .is-association {
-  color: black;
+.level-1,
+.level-2,
+.level-3,
+.level-4,
+.level-5,
+.is-author,
+.is-association {
+  color: #000;
 }
 
 .is-author {
-  background: #00A5F1;
+  background: #00a5f1;
 }
 
 .is-association {
-  background: #E38D83;
+  background: #e38d83;
 }
 
 .level-1 {
-  background: #1ABC9C;
+  background: #1abc9c;
 }
 
-.level-2, .level-3, .level-4 {
-  background: #43AC6A;
+.level-2,
+.level-3,
+.level-4 {
+  background: #43ac6a;
 }
 
 .level-5 {
-  background: #F08A24;
+  background: #f08a24;
 }
 
 // 11. Tables
@@ -1169,11 +1184,11 @@ table {
 
     td {
       line-height: $line-height;
-      padding: $line-height/2 $line-height/4;
+      padding: $line-height / 2 $line-height / 4;
     }
 
     &:nth-child(odd) {
-      background: white;
+      background: #fff;
     }
 
     &:nth-child(even) {
@@ -1189,7 +1204,8 @@ table {
 .table-for-mobile {
 
   @include breakpoint(medium down) {
-    th, td  {
+    th,
+    td {
       display: block;
       text-align: left;
     }
@@ -1203,26 +1219,26 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-telegram {
-  background: white;
+  background: #fff;
   color: $text;
   font-weight: bold;
-  height: $line-height*2;
-  line-height: $line-height*2;
+  height: $line-height * 2;
+  line-height: $line-height * 2;
   padding: 0;
   position: relative;
 }
 
 .button.button-twitter {
-  background: #ECF7FC;
-  border-left: 3px solid #45B0E3;
+  background: #ecf7fc;
+  border-left: 3px solid #45b0e3;
 
-  &:before {
-    color: #45B0E3;
-    content: "f";
+  &::before {
+    color: #45b0e3;
+    content: 'f';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     padding: 0 rem-calc(20);
     position: absolute;
     top: 0;
@@ -1230,41 +1246,42 @@ table {
 }
 
 .ssb-twitter {
-  background: #45B0E3;
+  background: #45b0e3;
   background-image: none !important;
-  color: white;
-  height: $line-height*2 !important;
+  color: #fff;
+  height: $line-height * 2 !important;
   position: relative;
-  width: $line-height*2 !important;
+  width: $line-height * 2 !important;
 
-  &:before {
-    content: "f";
+  &::before {
+    content: 'f';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     margin-left: rem-calc(-11);
     position: absolute;
     top: 0;
   }
 
-  &:hover, &:focus {
-    background: white;
-    color: #40A2D1;
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: #40a2d1;
   }
 }
 
 .button.button-facebook {
-  background: #EBEEF4;
-  border-left: 3px solid #3B5998;
+  background: #ebeef4;
+  border-left: 3px solid #3b5998;
 
-  &:before {
-    color: #3B5998;
-    content: "A";
+  &::before {
+    color: #3b5998;
+    content: 'A';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     padding: 0 rem-calc(20);
     position: absolute;
     top: 0;
@@ -1272,83 +1289,85 @@ table {
 }
 
 .ssb-facebook {
-  background: #3B5998;
+  background: #3b5998;
   background-image: none !important;
-  color: white;
+  color: #fff;
   height: rem-calc(48) !important;
   position: relative;
   width: rem-calc(48) !important;
 
-  &:before {
-    content: "A";
+  &::before {
+    content: 'A';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     margin-left: rem-calc(-11);
     position: absolute;
     top: 0;
   }
 
-  &:hover, &:focus {
-    background: white;
-    color: #354F88;
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: #354f88;
   }
 }
 
 .button.button-google {
-  background: #FCEDEA;
-  border-left: 3px solid #DE4C34;
+  background: #fcedea;
+  border-left: 3px solid #de4c34;
 
-  &:before {
-    color: #DE4C34;
-    content: "B";
+  &::before {
+    color: #de4c34;
+    content: 'B';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     padding: 0 rem-calc(20);
     position: absolute;
     top: 0;
   }
 }
 
-.ssb-google_plus {
-  background: #DE4C34;
+[class^="ssb-icon ssb-google"] {
+  background: #de4c34;
   background-image: none !important;
-  color: white;
-  height: $line-height*2 !important;
+  color: #fff;
+  height: $line-height * 2 !important;
   position: relative;
-  width: $line-height*2 !important;
+  width: $line-height * 2 !important;
 
-  &:before {
-    content: "B";
+  &::before {
+    content: 'B';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     margin-left: rem-calc(-11);
     position: absolute;
     top: 0;
   }
 
-  &:hover, &:focus {
-    background: white;
-    color: #CE3E26;
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: #ce3e26;
   }
 }
 
 .button.button-telegram {
-  background: #ECF7FC;
-  border-left: 3px solid #0088cc;
+  background: #ecf7fc;
+  border-left: 3px solid #08c;
 
-  &:before {
-    color: #0088cc;
-    content: "1";
+  &::before {
+    color: #08c;
+    content: '1';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     padding: 0 rem-calc(20);
     position: absolute;
     top: 0;
@@ -1356,33 +1375,35 @@ table {
 }
 
 .ssb-telegram {
-  background: #0088cc;
+  background: #08c;
   background-image: none !important;
-  color: white;
-  height: $line-height*2 !important;
+  color: #fff;
+  height: $line-height * 2 !important;
   position: relative;
-  width: $line-height*2 !important;
+  width: $line-height * 2 !important;
 
-  &:before {
-    content: "1";
+  &::before {
+    content: '1';
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     margin-left: rem-calc(-11);
     position: absolute;
     top: 0;
   }
 
-  &:hover, &:focus {
-    background: white;
-    color: #40A2D1;
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: #40a2d1;
   }
 }
 
 @include breakpoint(medium) {
 
-  .button.button-telegram, .ssb-telegram {
+  .button.button-telegram,
+  .ssb-telegram {
     display: none !important;
   }
 }
@@ -1391,7 +1412,7 @@ table {
 
   a {
     font-size: rem-calc(24);
-    margin: 0 $line-height/2;
+    margin: 0 $line-height / 2;
     text-decoration: none;
 
     &:hover {
@@ -1408,98 +1429,102 @@ table {
   }
 
   .ssb-twitter {
-    background: #45B0E3;
-    color: white;
+    background: #45b0e3;
+    color: #fff;
     height: $line-height;
     position: relative;
-    width: $line-height*2;
+    width: $line-height * 2;
 
-    &:before {
-      content: "f";
+    &::before {
+      content: 'f';
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
-      line-height: $line-height*2;
+      line-height: $line-height * 2;
       margin-left: rem-calc(-11);
       position: absolute;
       top: 0;
     }
 
-    &:hover, &:focus {
-      background: white;
-      color: #40A2D1;
+    &:hover,
+    &:focus {
+      background: #fff;
+      color: #40a2d1;
     }
   }
 
   .ssb-facebook {
-    background: #3B5998;
-    color: white;
+    background: #3b5998;
+    color: #fff;
     height: rem-calc(24);
     position: relative;
     width: rem-calc(48);
 
-    &:before {
-      content: "A";
+    &::before {
+      content: 'A';
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
-      line-height: $line-height*2;
+      line-height: $line-height * 2;
       margin-left: rem-calc(-11);
       position: absolute;
       top: 0;
     }
 
-    &:hover, &:focus {
-      background: white;
-      color: #354F88;
+    &:hover,
+    &:focus {
+      background: #fff;
+      color: #354f88;
     }
   }
 
-  .ssb-google_plus {
-    background: #DE4C34;
-    color: white;
+  [class^="ssb-icon ssb-google"] {
+    background: #de4c34;
+    color: #fff;
     height: rem-calc(24);
     position: relative;
     width: rem-calc(48);
 
-    &:before {
-      content: "B";
+    &::before {
+      content: 'B';
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
-      line-height: $line-height*2;
+      line-height: $line-height * 2;
       margin-left: rem-calc(-11);
       position: absolute;
       top: 0;
     }
 
-    &:hover, &:focus {
-      background: white;
-      color: #CE3E26;
+    &:hover,
+    &:focus {
+      background: #fff;
+      color: #ce3e26;
     }
   }
 
   .ssb-telegram {
-    background: #0088cc;
-    color: white;
+    background: #08c;
+    color: #fff;
     height: $line-height;
     position: relative;
-    width: $line-height*2;
+    width: $line-height * 2;
 
-    &:before {
-      content: "1";
+    &::before {
+      content: '1';
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
-      line-height: $line-height*2;
+      line-height: $line-height * 2;
       margin-left: rem-calc(-11);
       position: absolute;
       top: 0;
     }
 
-    &:hover, &:focus {
-      background: white;
-      color: #40A2D1;
+    &:hover,
+    &:focus {
+      background: #fff;
+      color: #40a2d1;
     }
   }
 }
@@ -1509,45 +1534,42 @@ table {
 
 .more-information {
 
-  ul {
+  li {
+    border-bottom: 1px solid $border;
+    font-weight: bold;
+    margin-left: rem-calc(-12);
+    position: relative;
 
-    li {
-      border-bottom: 1px solid $border;
-      font-weight: bold;
-      margin-left: rem-calc(-12);
-      position: relative;
+    span {
+      color: $text;
+      display: inline-block;
+      font-weight: normal;
+    }
 
-      span {
-        color: $text;
-        display: inline-block;
-        font-weight: normal;
+    &::after {
+      content: none;
+      color: $text-medium;
+      font-family: "icons" !important;
+      position: absolute;
+      right: 0;
+      top: 24px;
+
+      @include breakpoint(medium) {
+        content: 'c';
       }
+    }
+  }
 
-      a {
-        display: block;
-        padding: $line-height/2;
+  a {
+    display: block;
+    padding: $line-height / 2;
+  }
 
-        &:hover {
-          background: $highlight;
+  a:hover {
+    background: $highlight;
 
-          span {
-            text-decoration: none;
-          }
-        }
-      }
-
-      &:after {
-        content: none;
-        color: $text-medium;
-        font-family: "icons" !important;
-        position: absolute;
-        right: 0;
-        top: 24px;
-
-        @include breakpoint(medium) {
-          content: 'c';
-        }
-      }
+    span {
+      text-decoration: none;
     }
   }
 }
@@ -1559,7 +1581,7 @@ table {
 
   @include breakpoint(medium) {
     .left + .left {
-      margin-left: $line-height/2;
+      margin-left: $line-height / 2;
     }
   }
 
@@ -1576,10 +1598,10 @@ table {
   }
 
   .progress {
-    height: $line-height*3;
+    height: $line-height * 3;
 
     @include breakpoint(medium) {
-      height: $line-height*2;
+      height: $line-height * 2;
     }
 
     &.success .meter {
@@ -1591,12 +1613,12 @@ table {
     background: #f6f6f6;
     font-weight: bold;
     line-height: rem-calc(20);
-    padding-top: $line-height/4;
+    padding-top: $line-height / 4;
     text-transform: uppercase;
     vertical-align: top;
 
     @include breakpoint(medium) {
-      line-height: $line-height*2;
+      line-height: $line-height * 2;
       padding: 0;
     }
 
@@ -1604,9 +1626,9 @@ table {
       display: block;
 
       @include breakpoint(medium) {
-        background-color: white;
+        background-color: #fff;
         border-radius: rem-calc(30);
-        color: #43AC6A;
+        color: #43ac6a;
         display: inline-block;
         height: rem-calc(30);
         line-height: rem-calc(30);
@@ -1616,17 +1638,8 @@ table {
     }
 
     &.active {
-      background: #43AC6A;
-      color: white;
-    }
-
-    &.completed {
-      background: #43AC6A;
-      color: rgba(255,255,255,.5);
-
-      .number {
-        opacity: .5;
-      }
+      background: #43ac6a;
+      color: #fff;
     }
   }
 
@@ -1641,7 +1654,7 @@ table {
 
   .button + form {
     display: inline-block;
-    margin-left: $line-height/2;
+    margin-left: $line-height / 2;
   }
 
   .verification-list {
@@ -1651,17 +1664,26 @@ table {
 
     span {
       display: inline-block;
-      min-width: $line-height*12;
+      min-width: $line-height * 12;
     }
   }
 }
 
+.verification-step .completed {
+  background: #43ac6a;
+  color: rgba(255, 255, 255, 0.5);
+
+  .number {
+    opacity: 0.5;
+  }
+}
+
 .verify-account {
-  padding-right: $line-height/2;
+  padding-right: $line-height / 2;
 
   .already-verified {
     color: $check;
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
 
     .icon-check {
       font-size: rem-calc(24);
@@ -1672,7 +1694,7 @@ table {
 }
 
 .verify {
-  margin-bottom: $line-height*2;
+  margin-bottom: $line-height * 2;
   margin-top: $line-height;
 
   h1 {
@@ -1685,18 +1707,18 @@ table {
   }
 
   .letter-divider {
-    border-top: 1px solid #DDDDDD;
+    border-top: 1px solid #ddd;
     clear: both;
     height: 0;
     margin: rem-calc(24) 0;
     position: relative;
 
     .icon-letter {
-      background: white;
+      background: #fff;
       color: $color-info;
       font-size: rem-calc(24);
       margin-left: -27px;
-      padding: 0 $line-height/2;
+      padding: 0 $line-height / 2;
       position: absolute;
       top: -12px;
     }
@@ -1707,9 +1729,9 @@ table {
 // ------------
 
 .comments {
-  background: $white;
+  background: #fff;
   background-repeat: repeat-x;
-  padding-bottom: $line-height*4;
+  padding-bottom: $line-height * 4;
 
   h2 {
     margin: 0;
@@ -1718,127 +1740,133 @@ table {
     span {
       font-size: rem-calc(18);
       font-weight: normal;
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 
   .comment {
-    margin: $line-height/4 0;
+    margin: $line-height / 4 0;
     position: relative;
 
     p {
       margin-bottom: 0;
     }
 
-    .comment-votes {
-      color: $text-medium;
-      font-size: $small-font-size;
-      line-height: $line-height;
+    [class^="icon-"] {
+      font-size: $base-font-size;
+      vertical-align: sub;
+    }
+  }
+}
 
-      a {
-        color: $text-light;
-        display: inline-block;
-        vertical-align: top;
+.comment-body {
 
-        &:hover {
-          color: $text-medium;
-          text-decoration: none;
+  img {
+    margin-right: $line-height / 2;
+  }
 
-          .icon-like {
-            color: $like;
-          }
+  .reply {
+    background: #fff;
+    border: 1px solid $border;
+    border-left: 0;
+    border-right: 0;
+    font-size: $small-font-size;
+    margin: $line-height / 4 0;
+    padding: $line-height / 4;
+    position: relative;
 
-          .icon-unlike {
-            color: $unlike;
-          }
-        }
-      }
-
-      [class^="icon-"] {
-        font-size: $base-font-size;
-        vertical-align: sub;
-      }
+    .relative,
+    [class^="icon-arrow"] {
+      padding-left: $line-height / 2;
     }
 
-    .comment-body {
-
-      img {
-        margin-right: $line-height/2;
-      }
-
-      .reply {
-        background: white;
-        border: 1px solid $border;
-        border-left: 0;
-        border-right: 0;
-        font-size: $small-font-size;
-        margin: $line-height/4 0;
-        padding: $line-height/4;
-        position: relative;
-
-        a.relative, [class^="icon-arrow"] {
-          padding-left: $line-height/2;
-        }
-
-        [class^="icon-arrow"] {
-          font-size: $base-font-size;
-          left: -20px;
-          position: absolute;
-          top: -1px;
-        }
-
-        .divider {
-          color: $text-light;
-        }
-
-        form {
-          margin-top: $line-height/2;
-        }
-      }
-
-      .comment-user {
-        margin-top: $line-height/4;
-        padding: $line-height/4 0;
-        overflow: hidden;
-
-        &.level-1, &.level-2, &.level-3, &.level-4, &.level-5,
-        &.is-author, &.is-admin, &.is-moderator {
-          background: rgba(70,219,145,.3);
-          padding: $line-height/4 $line-height/2;
-        }
-
-        &.level-1 {
-          background: none;
-        }
-
-        &.level-5 {
-          background: rgba(255,241,204,1);
-        }
-
-        &.is-author, &.is-admin, &.is-moderator {
-          background: rgba(45,144,248,.15);
-        }
-      }
+    [class^="icon-arrow"] {
+      font-size: $base-font-size;
+      left: -20px;
+      position: absolute;
+      top: -1px;
     }
 
-    .comment-children {
-      border-left: 1px dashed $border;
-      display: inline-block;
-      margin-left: rem-calc(16);
-      padding-left: rem-calc(8);
-      width: 100%;
+    .divider {
+      color: $text-light;
     }
 
-    .comment-info {
-      color: $text-medium;
-      display: inline-block;
-      font-size: $small-font-size;
-      line-height: rem-calc(32); // Same as avatar height
+    form {
+      margin-top: $line-height / 2;
+    }
+  }
 
-      span.user-name {
-        color: $text;
-        font-weight: bold;
-      }
+  .comment-user {
+    margin-top: $line-height / 4;
+    padding: $line-height / 4 0;
+    overflow: hidden;
+
+    &.level-1,
+    &.level-2,
+    &.level-3,
+    &.level-4,
+    &.level-5,
+    &.is-author,
+    &.is-admin,
+    &.is-moderator {
+      background: rgba(70, 219, 145, 0.3);
+      padding: $line-height / 4 $line-height / 2;
+    }
+
+    &.level-1 {
+      background: none;
+    }
+
+    &.level-5 {
+      background: rgba(255, 241, 204, 1);
+    }
+
+    &.is-author,
+    &.is-admin,
+    &.is-moderator {
+      background: rgba(45, 144, 248, 0.15);
+    }
+  }
+}
+
+.comment-children {
+  border-left: 1px dashed $border;
+  display: inline-block;
+  margin-left: rem-calc(16);
+  padding-left: rem-calc(8);
+  width: 100%;
+}
+
+.comment-info {
+  color: $text-medium;
+  display: inline-block;
+  font-size: $small-font-size;
+  line-height: rem-calc(32); // Same as avatar height
+
+  .user-name {
+    color: $text;
+    font-weight: bold;
+  }
+}
+
+.comment-votes {
+
+  a {
+    color: $text-light;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  a:hover {
+    color: $text-medium;
+    text-decoration: none;
+
+    .icon-like {
+      color: $like;
+    }
+
+    .icon-unlike {
+      color: $unlike;
     }
   }
 }
@@ -1857,7 +1885,7 @@ table {
   }
 
   label {
-    padding-right: $line-height/2;
+    padding-right: $line-height / 2;
     float: none;
 
     @include breakpoint(medium) {
@@ -1883,7 +1911,8 @@ table {
   }
 }
 
-.flag-disable, .flag-active {
+.flag-disable,
+.flag-active {
   line-height: 0;
   vertical-align: sub;
 }
@@ -1904,54 +1933,55 @@ table {
 // ------------
 
 .activity {
-  margin-bottom: $line-height*2;
+  margin-bottom: $line-height * 2;
 
   table {
     border: 0;
+  }
 
-    td {
-      position: relative;
+  td {
+    position: relative;
 
-      &:first-child {
-        padding-left: $line-height*1.5;
-        width: 75%;
-      }
-
-      &:before {
-        color: $brand;
-        font-family: "icons" !important;
-        font-size: rem-calc(24);
-        left: 4px;
-        position: absolute;
-      }
+    &:first-child {
+      padding-left: $line-height * 1.5;
+      width: 75%;
     }
 
-    &.activity-comments td:first-child:before {
-      content: "e";
+    &::before {
+      color: $brand;
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: 4px;
+      position: absolute;
+    }
+  }
+
+  .activity-comments td:first-child::before {
+    content: 'e';
+    top: 18px;
+  }
+
+  .activity-debates td:first-child::before {
+    content: 'i';
+    top: 14px;
+  }
+
+  .activity-proposals {
+
+    td:first-child::before {
+      content: 'h';
       top: 18px;
     }
 
-    &.activity-debates td:first-child:before {
-      content: "i";
-      top: 14px;
+    .retired {
+      text-decoration: line-through;
     }
+  }
 
-    &.activity-proposals {
-
-      td:first-child:before {
-        content: "h";
-        top: 18px;
-      }
-
-      .retired {
-        text-decoration: line-through;
-      }
-    }
-
-    &.activity-investment-projects td:first-child:before, &.activity-ballot td:first-child:before {
-      content: "\53";
-      top: 10px;
-    }
+  .activity-investment-projects td:first-child::before,
+  .activity-ballot td:first-child::before {
+    content: '\53';
+    top: 10px;
   }
 }
 
@@ -1967,7 +1997,7 @@ table {
 }
 
 .banner-style-three {
-  background-color: #33DADF;
+  background-color: #33dadf;
 }
 
 @include breakpoint(large) {
@@ -1985,38 +2015,45 @@ table {
   }
 }
 
-.banner-img-one, .banner-img-two, .banner-img-three {
+.banner-img-one,
+.banner-img-two,
+.banner-img-three {
   background-position: bottom right;
   background-repeat: no-repeat;
 }
 
-.banner-style-one, .banner-style-two, .banner-style-three {
+.banner-style-one,
+.banner-style-two,
+.banner-style-three {
   margin: 0;
   margin-bottom: $line-height;
-
-  h2, h3, a {
-    color: #eaeaf2;
-  }
-
-  h2 {
-    padding: $line-height/2;
-    padding-bottom: 0;
-  }
-
-  h3 {
-    padding: $line-height/2;
-    padding-top: 0;
-  }
-
-  a:hover h2, a:hover h3 {
-    color: #eaeaf2 !important;
-    text-decoration: none;
-  }
 
   @include breakpoint(large) {
 
     h3 {
       width: 80%;
     }
+  }
+
+  h2,
+  h3,
+  a {
+    color: #eaeaf2;
+  }
+
+  h2 {
+    padding: $line-height / 2;
+    padding-bottom: 0;
+  }
+
+  h3 {
+    padding: $line-height / 2;
+    padding-top: 0;
+  }
+
+  a:hover h2,
+  a:hover h3 {
+    color: #eaeaf2 !important;
+    text-decoration: none;
   }
 }
