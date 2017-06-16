@@ -2715,6 +2715,26 @@ h2.map-title {
   line-height: $line-height;
 }
 
+.budgets-minimal-selector {
+
+  .button {
+    background: #eee;
+    margin-left: $line-height / 4;
+    padding: $line-height / 4;
+  }
+}
+
+.budget-investment.minimal {
+
+  .panel, .budget-investment-content {
+    min-height: 0;
+  }
+
+  .panel h3 {
+    margin: 0;
+  }
+}
+
 // 12. Nvotes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

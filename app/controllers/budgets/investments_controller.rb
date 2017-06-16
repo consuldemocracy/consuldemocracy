@@ -16,6 +16,7 @@ module Budgets
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
+    before_action :set_view, only: :index
 
     feature_flag :budgets
 
@@ -29,10 +30,9 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      load_investments
       @investment_ids = @investments.map(&:id)
       load_investment_votes(@investments)
-      @tag_cloud = tag_cloud
     end
 
     def new
@@ -88,6 +88,13 @@ module Budgets
         "budget_investment"
       end
 
+      def load_investments
+        @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}")
+        if @view == "default"
+          @investments = @investments.page(params[:page]).per(10).for_render
+        end
+      end
+
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
@@ -141,6 +148,14 @@ module Budgets
 
       def load_budget
         @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      end
+
+      def set_view
+        if params[:view] == "minimal"
+          @view = "minimal"
+        else
+          @view = "default"
+        end
       end
 
   end
