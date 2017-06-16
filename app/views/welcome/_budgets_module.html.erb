@@ -13,11 +13,8 @@
         <p><%= t("welcome.budgets.text_html") %></p>
       </div>
       <div class="small-12 medium-6 large-4 small-centered">
-        <%= link_to t("welcome.budgets.button"), "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017", class: "button expanded large" %>
+        <%= link_to t("welcome.budgets.button"), budgets_welcome_path, class: "button expanded large" %>
       </div>
-      <%= link_to budgets_welcome_path do %>
-        <small><%= t("welcome.budgets.more_info") %></small>
-      <% end %>
     </div>
   </div>
 </div>
