@@ -67,33 +67,35 @@
 
       <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
 
-      <div id="cardView" data-toggler=".hide">
-        <% @investments.each do |investment| %>
-          <%= render partial: '/budgets/investments/investment', locals: {
-            investment: investment,
-            investment_ids: @investment_ids,
-            investment_votes: @investment_votes,
-            ballot: @ballot
-          } %>
-        <% end %>
+      <% if investments_default_view? %>
 
-        <%= render "banners" %>
+        <div>
+          <% @investments.each do |investment| %>
+            <%= render partial: '/budgets/investments/investment',
+                       locals: {
+                         investment: investment,
+                         investment_ids: @investment_ids,
+                         investment_votes: @investment_votes,
+                         ballot: @ballot
+                       } %>
+          <% end %>
 
-        <%= paginate @investments %>
-      </div>
+          <%= render "banners" %>
+          <%= paginate @investments %>
+        </div>
 
-      <div id="minimalView" class="hide" data-toggler=".hide">
-        <% @investments_minimal.each do |investment| %>
-          <%= render partial: '/budgets/investments/investment_minimal', locals: {
-            investment: investment,
-            investment_ids: @investment_ids,
-            investment_votes: @investment_votes,
-            ballot: @ballot
-          } %>
-        <% end %>
+      <% else %>
 
-        <%= render "banners" %>
-      </div>
+        <div>
+          <% @investments.each do |investment| %>
+            <%= render partial: '/budgets/investments/investment_minimal',
+                       locals: { investment: investment } %>
+          <% end %>
+
+          <%= render "banners" %>
+        </div>
+
+      <% end %>
 
     </div>
 
