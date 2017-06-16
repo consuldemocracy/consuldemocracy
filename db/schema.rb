@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.datetime "updated_at",            null: false
     t.integer  "user_id"
     t.integer  "legacy_legislation_id"
-    t.index ["legislation_id"], name: "index_annotations_on_legislation_id", using: :btree
+    t.index ["legacy_legislation_id"], name: "index_annotations_on_legacy_legislation_id", using: :btree
     t.index ["user_id"], name: "index_annotations_on_user_id", using: :btree
   end
-  
+
   create_table "banners", force: :cascade do |t|
     t.string   "title",           limit: 80
     t.string   "description"
