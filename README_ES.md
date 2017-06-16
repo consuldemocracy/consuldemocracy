@@ -58,6 +58,12 @@ Para ejecutar los tests:
 bin/rspec
 ```
 
+Si añades código SCSS puedes revisarlo con:
+
+```
+scss-lint
+```
+
 Puedes usar el usuario administrador por defecto del fichero seeds:
 
  **user:** admin@consul.dev
