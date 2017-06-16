@@ -14,7 +14,7 @@ describe CommentsController do
       sign_in @user
 
       expect do
-        xhr :post, :create, comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}
+        post :create, params: {comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}}, xhr: true
       end.to change { @question.reload.comments_count }.by(1)
     end
 
@@ -23,7 +23,7 @@ describe CommentsController do
       @process.update_attribute(:debate_end_date, Date.current - 1.day)
 
       expect do
-        xhr :post, :create, comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}
+        post :create, params: {comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}}, xhr: true
       end.not_to change { @question.reload.comments_count }
     end
 
@@ -31,7 +31,7 @@ describe CommentsController do
       sign_in @unverified_user
 
       expect do
-        xhr :post, :create, comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}
+        post :create, params: {comment: {commentable_id: @question.id, commentable_type: "Legislation::Question", body: "a comment"}}, xhr: true
       end.not_to change { @question.reload.comments_count }
     end
   end
