@@ -291,6 +291,10 @@ class User < ApplicationRecord
   end
   delegate :can?, :cannot?, to: :ability
 
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
   def public_proposals
     public_activity? ? proposals : User.none
   end
