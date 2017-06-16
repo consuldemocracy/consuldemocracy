@@ -402,13 +402,13 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 2.4)
       wasabi (~> 3.4)
+    scss_lint (0.53.0)
+      rake (>= 0.9, < 13)
+      sass (~> 3.4.20)
     selenium-webdriver (3.0.5)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
-    scss_lint (0.53.0)
-      rake (>= 0.9, < 13)
-      sass (~> 3.4.20)
     simplecov (0.14.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -557,6 +557,7 @@ DEPENDENCIES
   sass-rails (~> 5.0, >= 5.0.4)
   savon
   scss_lint
+  selenium-webdriver
   sitemap_generator (~> 5.3.1)
   social-share-button (~> 0.10)
   spring
