@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Proposal do
   let(:proposal) { build(:proposal) }
 
+  it_behaves_like "has_public_author"
+
   it "should be valid" do
     expect(proposal).to be_valid
   end
@@ -840,6 +842,18 @@ describe Proposal do
 
       expect(not_archived.size).to eq(1)
       expect(not_archived.first).to eq(new_proposal)
+    end
+  end
+
+  describe 'public_for_api scope' do
+    it 'returns proposals' do
+      proposal = create(:proposal)
+      expect(Proposal.public_for_api).to include(proposal)
+    end
+
+    it 'does not return hidden proposals' do
+      proposal = create(:proposal, :hidden)
+      expect(Proposal.public_for_api).to_not include(proposal)
     end
   end
 

@@ -97,7 +97,7 @@ feature 'Proposals' do
 
     expect(current_path).to eq(management_proposals_path)
 
-    within("#proposals") do
+    within(".proposals-list") do
       expect(page).to have_css('.proposal', count: 1)
       expect(page).to have_content(proposal1.title)
       expect(page).to have_content(proposal1.summary)
@@ -124,7 +124,7 @@ feature 'Proposals' do
       expect(page).to have_content "#{user.document_number}"
     end
 
-    within("#proposals") do
+    within(".proposals-list") do
       expect(page).to have_css('.proposal', count: 2)
       expect(page).to have_css("a[href='#{management_proposal_path(proposal1)}']", text: proposal1.title)
       expect(page).to have_content(proposal1.summary)
@@ -143,7 +143,7 @@ feature 'Proposals' do
 
       click_link "Support proposals"
 
-      within("#proposals") do
+      within(".proposals-list") do
         find('.in-favor a').click
 
         expect(page).to have_content "1 support"
@@ -160,7 +160,7 @@ feature 'Proposals' do
 
       click_link "Support proposals"
 
-      within("#proposals") do
+      within(".proposals-list") do
         click_link proposal.title
       end
 
@@ -205,7 +205,7 @@ feature 'Proposals' do
 
       expect(page).to have_selector('.js-order-selector[data-order="confidence_score"]')
 
-      within '#proposals' do
+      within(".proposals-list") do
         expect('Best proposal').to appear_before('Medium proposal')
         expect('Medium proposal').to appear_before('Worst proposal')
       end
@@ -217,7 +217,7 @@ feature 'Proposals' do
       expect(current_url).to include('order=created_at')
       expect(current_url).to include('page=1')
 
-      within '#proposals' do
+      within(".proposals-list") do
         expect('Medium proposal').to appear_before('Best proposal')
         expect('Best proposal').to appear_before('Worst proposal')
       end

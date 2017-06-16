@@ -47,7 +47,6 @@ RAILS_ENV=test rake db:setup
 Run the app locally:
 ```
 bin/rails s
-
 ```
 
 Prerequisites for testing: install PhantomJS >= 1.9.8
@@ -58,7 +57,13 @@ Run the tests with:
 bin/rspec
 ```
 
-Run the [coffeelint](http://www.coffeelint.org/) linter for coffeescript (install with `npm install -g coffeelint`) :
+If you add SCSS code you can check it with:
+
+```
+scss-lint
+```
+
+If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
 
 ```
 coffeelint .

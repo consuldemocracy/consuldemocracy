@@ -71,6 +71,9 @@ gem 'rails-assets-markdown-it', source: 'https://rails-assets.org'
 
 gem 'cocoon'
 
+gem 'graphql', '~> 1.6.3'
+gem 'graphiql-rails', '~> 1.4.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -105,7 +108,9 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'scss_lint', require: false
   gem 'web-console', '3.3.0'
+
 end
 
 eval_gemfile './Gemfile_custom'

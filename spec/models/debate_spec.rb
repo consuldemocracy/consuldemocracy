@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Debate do
   let(:debate) { build(:debate) }
 
+  it_behaves_like "has_public_author"
+
   it "should be valid" do
     expect(debate).to be_valid
   end
@@ -697,6 +699,18 @@ describe Debate do
   describe "#to_param" do
     it "should return a friendly url" do
       expect(debate.to_param).to eq "#{debate.id} #{debate.title}".parameterize
+    end
+  end
+
+  describe 'public_for_api scope' do
+    it 'returns debates' do
+      debate = create(:debate)
+      expect(Debate.public_for_api).to include(debate)
+    end
+
+    it 'does not return hidden debates' do
+      debate = create(:debate, :hidden)
+      expect(Debate.public_for_api).to_not include(debate)
     end
   end
 

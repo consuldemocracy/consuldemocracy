@@ -13,21 +13,21 @@
 // 01. Global styles
 // -----------------
 
-$admin-color: #CF3638;
+$admin-color: #cf3638;
 
-body.admin {
+.admin {
 
-  header {
+  .header {
     border: 0;
+  }
 
-    .top-links {
-      background: darken($admin-color, 15%);
-    }
+  .top-links {
+    background: darken($admin-color, 15%);
+  }
 
-    .back-web {
-      padding-top: $line-height/4;
-      text-decoration: underline;
-    }
+  .back-web {
+    padding-top: $line-height / 4;
+    text-decoration: underline;
   }
 
   .top-bar {
@@ -42,62 +42,46 @@ body.admin {
     }
   }
 
-  form {
+  .fieldset {
 
-    .button {
-      margin-top: 0;
-
-      &.margin-top {
-        margin-top: $line-height;
-      }
+    select {
+      height: $line-height * 2;
     }
 
-    input[type="text"], textarea {
-      width: 100%;
+    [type="text"] {
+      border-radius: 0;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  th {
+    text-align: left;
+
+    &.text-center {
+      text-align: center;
     }
 
-    .fieldset {
+    &.text-right {
+      padding-right: $line-height;
+      text-align: right;
+    }
 
-      select {
-        height: $line-height*2;
-      }
+    &.with-button {
+      line-height: $line-height * 2;
+    }
+  }
 
-      .input-group input[type="text"] {
-        border-radius: 0;
-        margin-bottom: 0 !important;
-      }
+  tr {
+    background: #fff;
+    border: 1px solid $border;
+
+    &:hover {
+      background: #f3f6f7;
     }
   }
 
   table {
-
-    th {
-      text-align: left;
-
-      &.text-center {
-        text-align: center;
-      }
-
-      &.text-right {
-        padding-right: $line-height;
-        text-align: right;
-      }
-
-      &.with-button {
-        line-height: $line-height*2;
-      }
-    }
-
-    tr {
-      background: white;
-      border: 1px solid $border;
-
-      &:hover {
-        background: #f3f6f7;
-      }
-    }
-
-    td.break {
+    .break {
       word-break: break-word;
     }
 
@@ -105,14 +89,15 @@ body.admin {
       table-layout: fixed;
     }
 
-    input[type="submit"] ~ a, a ~ a {
+    [type="submit"] ~ a,
+    a ~ a {
       margin-left: 0;
       margin-right: 0;
-      margin-top: $line-height/2;
+      margin-top: $line-height / 2;
 
       @include breakpoint(medium) {
-        margin-left: $line-height/2;
-        margin-right: $line-height/2;
+        margin-left: $line-height / 2;
+        margin-right: $line-height / 2;
         margin-top: 0;
       }
     }
@@ -122,7 +107,7 @@ body.admin {
     max-width: none;
   }
 
-  .menu.simple li.active {
+  .menu.simple .active {
     border-bottom: 2px solid $admin-color;
     color: $admin-color;
   }
@@ -130,10 +115,6 @@ body.admin {
   .tabs-panel {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  #proposals {
-    width: 100% !important;
   }
 
   .accordion-title {
@@ -183,7 +164,7 @@ body.admin {
     &:hover .on-hover-block {
       display: block;
       margin: 0;
-      margin-top: $line-height/2;
+      margin-top: $line-height / 2;
       width: 100%;
     }
   }
@@ -231,57 +212,53 @@ body.admin {
       display: inline-block;
       font-size: rem-calc(24);
       line-height: $line-height;
-      padding: $line-height/2 $line-height/4;
+      padding: $line-height / 2 $line-height / 4;
       padding-left: 0;
       vertical-align: middle;
     }
+  }
 
-    li {
-      background: white;
-      margin: 0;
-      outline: 0;
+  li {
+    background: #fff;
+    margin: 0;
+    outline: 0;
 
-      ul {
-        margin-left: $line-height/1.5;
-        border-left: 1px solid $border;
-        padding-left: $line-height/2;
-      }
-
-      &.section-title {
-        border-bottom: 1px solid $border;
-      }
-
-      &.active a {
-        background: #f3f6f7;
-        border-radius: rem-calc(6);
-        -moz-border-radius: rem-calc(6);
-        -webkit-border-radius: rem-calc(6);
-        color: $admin-color;
-        font-weight: bold;
-      }
+    ul {
+      margin-left: $line-height / 1.5;
+      border-left: 1px solid $border;
+      padding-left: $line-height / 2;
     }
 
-    li a {
-      color: $text;
-      display: block;
-      line-height: rem-calc(48);
-      padding-left: rem-calc(12);
-      vertical-align: top;
+    &.section-title {
+      border-bottom: 1px solid $border;
+    }
 
-      &:hover {
-        background: #f3f6f7;
-        border-radius: rem-calc(6);
-        -moz-border-radius: rem-calc(6);
-        -webkit-border-radius: rem-calc(6);
-        color: $admin-color;
-        text-decoration: none;
-      }
+    &.active a {
+      background: #f3f6f7;
+      border-radius: rem-calc(6);
+      color: $admin-color;
+      font-weight: bold;
+    }
+  }
+
+  li a {
+    color: $text;
+    display: block;
+    line-height: rem-calc(48);
+    padding-left: rem-calc(12);
+    vertical-align: top;
+
+    &:hover {
+      background: #f3f6f7;
+      border-radius: rem-calc(6);
+      color: $admin-color;
+      text-decoration: none;
     }
   }
 
   .is-accordion-submenu-parent {
 
-    & > a::after {
+    > a::after {
       border-color: $admin-color transparent transparent;
     }
   }
@@ -291,11 +268,11 @@ body.admin {
     margin-left: $line-height;
 
     li:first-child {
-      padding-top: $line-height/2;
+      padding-top: $line-height / 2;
     }
 
     li:last-child {
-      padding-bottom: $line-height/2;
+      padding-bottom: $line-height / 2;
     }
 
     a {
@@ -308,12 +285,14 @@ body.admin {
 // -----------------
 
 .delete {
-  border-bottom: 1px dotted #CF2A0E;
+  border-bottom: 1px dotted #cf2a0e;
   color: $delete;
   font-size: $small-font-size;
 
-  &:hover, &:active, &:focus {
-    border-bottom: 1px dotted white;
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px dotted #fff;
     color: #cf2a0e;
   }
 }
@@ -376,8 +355,6 @@ body.admin {
   &:hover {
     max-height: rem-calc(1000);
     transition: max-height 0.9s;
-    -moz-transition: max-height 0.9s;
-    -webkit-transition: max-height 0.9s;
   }
 }
 
@@ -385,7 +362,7 @@ body.admin {
 // ---------
 
 .stats {
-  background: white;
+  background: #fff;
 }
 
 .stats-numbers {
@@ -417,34 +394,36 @@ body.admin {
   ul {
     list-style-type: none;
     margin-left: 0;
+  }
 
-    li {
-      font-size: rem-calc(14);
-      margin-bottom: rem-calc(12);
+  li {
+    font-size: rem-calc(14);
+    margin-bottom: rem-calc(12);
 
-      span {
-        color: $text-medium;
-        font-size: rem-calc(12);
-      }
+    span {
+      color: $text-medium;
+      font-size: rem-calc(12);
+    }
 
-      .icon-check {
-        color: $check;
-      }
+    .icon-check {
+      color: $check;
+    }
 
-      .icon-x {
-        color: $delete;
-      }
+    .icon-x {
+      color: $delete;
     }
   }
 }
 
-.account-info, .login-as, .spending-proposal-info {
+.account-info,
+.login-as,
+.spending-proposal-info {
   background-color: #e7e7e7;
   border-radius: rem-calc(3);
   font-size: rem-calc(16);
   font-weight: normal;
   margin: $line-height;
-  padding: $line-height/2;
+  padding: $line-height / 2;
 
   strong {
     font-size: rem-calc(18);
@@ -455,40 +434,42 @@ body.admin {
   margin-bottom: 0;
 }
 
-body.admin {
+.admin {
 
   .investment-projects-list.medium-9 {
     width: 100%;
   }
+}
 
-  .investment-projects-summary {
+.investment-projects-summary {
 
-    th, td {
-      text-align: center;
+  th,
+  td {
+    text-align: center;
 
-      &:first-child {
-        font-weight: bold;
-        text-align: left;
-      }
-
-      &:last-child {
-        font-weight: bold;
-      }
+    &:first-child {
+      font-weight: bold;
+      text-align: left;
     }
 
-    tr {
-      &:nth-child(even) td:last-child {
-        background: $success-border;
-      }
+    &:last-child {
+      font-weight: bold;
+    }
+  }
 
-      &:nth-child(odd) td:last-child {
-        background: $success-bg;
-      }
+  tr {
+    &:nth-child(even) td:last-child {
+      background: $success-border;
+    }
+
+    &:nth-child(odd) td:last-child {
+      background: $success-bg;
     }
   }
 }
 
-.admin-content .select-geozone, .admin-content .select-heading {
+.admin-content .select-geozone,
+.admin-content .select-heading {
 
   a {
     display: block;
@@ -501,14 +482,14 @@ body.admin {
   }
 }
 
-table.investment-projects-summary {
+.investment-projects-summary {
 
-  td.total-price {
+  .total-price {
     white-space: nowrap;
   }
 }
 
-body.admin {
+.admin {
 
   .geozone {
     background: #ececec;
@@ -516,8 +497,8 @@ body.admin {
     color: $text;
     display: inline-block;
     font-size: $small-font-size;
-    margin-bottom: $line-height/3;
-    padding: $line-height/4 $line-height/3;
+    margin-bottom: $line-height / 3;
+    padding: $line-height / 4 $line-height / 3;
     text-decoration: none;
 
     &:hover {
@@ -538,9 +519,9 @@ body.admin {
 table {
 
   .callout {
-    height: $line-height*2;
-    line-height: $line-height*2;
-    padding: 0 $line-height/2;
+    height: $line-height * 2;
+    line-height: $line-height * 2;
+    padding: 0 $line-height / 2;
   }
 }
 
@@ -551,15 +532,15 @@ table {
 // ---------------
 
 .markdown-editor {
-  background-color: white;
+  background-color: #fff;
 
   .markdown-area,
-  #markdown-preview {
+  .markdown-preview {
     display: none;
   }
 }
 
-.markdown-editor #markdown-preview {
+.markdown-editor .markdown-preview {
   overflow-y: auto;
   height: 15em;
 }
@@ -577,11 +558,11 @@ table {
   left: 0;
 }
 
-.markdown-editor.fullscreen #markdown-preview {
+.markdown-editor.fullscreen .markdown-preview {
   height: 99%;
 }
 
-.edit_legislation_draft_version .row {
+.edit-legislation-draft-version .row {
   margin-bottom: 2rem;
 }
 
@@ -614,7 +595,7 @@ table {
 
 // 08. CMS
 // --------------
-.cms_page_list {
+.cms-page-list {
 
   [class^="icon-"] {
     padding-right: $menu-icon-spacing;
@@ -624,17 +605,18 @@ table {
 
 .legislation-process-edit {
 
-  .edit_legislation_process {
+  .edit-legislation-process {
 
     small {
       color: $text-medium;
     }
 
-    input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+    [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
       background: $white;
     }
 
-    .legislation-process-start, .legislation-process-end {
+    .legislation-process-start,
+    .legislation-process-end {
       @include breakpoint(medium) {
         line-height: 3rem;
       }
@@ -664,7 +646,7 @@ table {
 
 .legislation-questions-form {
 
-  input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+  [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
     background: $white;
     margin-bottom: 0;
 
@@ -673,52 +655,112 @@ table {
     }
   }
 
-  input::-webkit-input-placeholder {
-    font-style: italic;
-  }
-
-  input:-moz-placeholder { /* Firefox 18- */
-    font-style: italic;
-  }
-
-  input::-moz-placeholder {  /* Firefox 19+ */
-    font-style: italic;
-  }
-
-  input:-ms-input-placeholder {
+  input::placeholder {
     font-style: italic;
   }
 
   .legislation-questions-answers {
     margin-bottom: 1rem;
   }
+}
 
-  .field {
-    margin-bottom: 1rem;
+.field {
+  margin-bottom: 1rem;
 
-    @include breakpoint(medium) {
-      margin-bottom: 0;
+  @include breakpoint(medium) {
+    margin-bottom: 0;
+  }
+
+  a {
+    line-height: 3rem;
+    color: $delete;
+
+    span {
+      text-decoration: underline;
     }
+
+    .icon-x {
+      vertical-align: sub;
+      text-decoration: none;
+      line-height: 0;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.fullscreen-container {
+
+  a {
+    line-height: 8rem;
+
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.fullscreen {
+
+  .fullscreen-container {
 
     a {
       line-height: 3rem;
-      color: $delete;
 
-      span {
-        text-decoration: underline;
+      @include breakpoint(medium) {
+        float: right;
       }
+    }
 
-      .icon-x {
-        vertical-align: sub;
-        text-decoration: none;
-        line-height: 0;
-      }
+    .markdown-editor-header {
+      vertical-align: top;
+      display: inline-block;
+      color: $white;
 
-      &:active,
-      &:focus,
-      &:hover {
-        text-decoration: none;
+      @include breakpoint(medium) {
+        line-height: 3rem;
       }
+    }
+
+    .truncate {
+      @include breakpoint(medium) {
+        width: 40vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .markdown-editor-buttons {
+      display: block;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+        float: right;
+        padding-left: 1rem;
+      }
+    }
+
+    input {
+      font-size: $small-font-size;
+      padding: 0.5em 1em;
+      margin-left: 0;
+      margin-bottom: 0;
+      margin-top: 1rem;
+
+      @include breakpoint(medium) {
+        margin: 0.5rem;
+      }
+    }
+
+    a {
+      color: $white;
     }
   }
 }
@@ -731,7 +773,7 @@ table {
     }
   }
 
-  input[type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
+  [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
     background: $white;
   }
 
@@ -761,30 +803,20 @@ table {
       display: none;
     }
 
-    a {
-      line-height: 8rem;
+    span {
+      text-decoration: none;
+      font-size: $small-font-size;
+    }
 
-      span {
-        text-decoration: none;
-        font-size: $small-font-size;
-      }
-
-      .icon-expand {
-        margin-left: 0.25rem;
-        vertical-align: sub;
-        text-decoration: none;
-        line-height: 0;
-      }
-
-      &:active,
-      &:focus,
-      &:hover {
-        text-decoration: none;
-      }
+    .icon-expand {
+      margin-left: 0.25rem;
+      vertical-align: sub;
+      text-decoration: none;
+      line-height: 0;
     }
   }
 
-  #legislation_draft_version_body {
+  .legislation-draft-version-body {
     font-family: $font-family-serif;
     background: #f5f5f5;
     height: 16em;
@@ -795,12 +827,17 @@ table {
     }
   }
 
-  #markdown-preview {
+  .markdown-preview {
     font-family: $font-family-serif;
     border: 1px solid #cacaca;
     margin-bottom: 2rem;
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: $font-family-serif !important;
       font-size: 1rem;
       line-height: 1.625rem;
@@ -816,7 +853,7 @@ table {
   .fullscreen {
 
     .markdown-area,
-    #markdown-preview {
+    .markdown-preview {
       display: block;
     }
 
@@ -829,82 +866,31 @@ table {
       background: $admin-color;
       padding: 0.5rem 1rem;
       margin-bottom: 0;
-
-        a {
-          line-height: 3rem;
-
-          @include breakpoint(medium) {
-            float: right;
-          }
-        }
-
-      .markdown-editor-header {
-        vertical-align: top;
-        display: inline-block;
-        color: $white;
-
-        @include breakpoint(medium) {
-          line-height: 3rem;
-        }
-      }
-
-      .truncate {
-        @include breakpoint(medium) {
-          width: 40vw;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
-
-      .markdown-editor-buttons {
-        display: block;
-
-        @include breakpoint(medium) {
-          display: inline-block;
-          float: right;
-          padding-left: 1rem;
-        }
-
-        input {
-          font-size: $small-font-size;
-          padding: 0.5em 1em;
-          margin-left: 0;
-          margin-bottom: 0;
-          margin-top: 1rem;
-
-          @include breakpoint(medium) {
-            margin: 0.5rem;
-          }
-        }
-      }
-
-      a {
-        color: $white;
-      }
     }
 
-    #legislation_draft_version_body {
+    .legislation-draft-version-body {
       border-radius: 0;
       padding: 1rem;
-      border: none;
+      border: 0;
 
       @include breakpoint(medium) {
         padding: 1rem 2rem;
       }
-
-      &:focus {
-        border: none;
-      }
     }
 
-    #markdown-preview {
+    .markdown-preview {
       padding: 1rem;
-      border: none;
+      border: 0;
 
       @include breakpoint(medium) {
         padding: 1rem 2rem;
       }
     }
+  }
+}
+
+.legislation-draft-version-body {
+  &:focus {
+    border: 0;
   }
 }

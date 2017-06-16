@@ -58,7 +58,13 @@ Para ejecutar los tests:
 bin/rspec
 ```
 
-Usa el linter coffeescript [coffeelint](http://www.coffeelint.org/) (puedes instalaro con `npm install -g coffeelint`) :
+Si añades código SCSS puedes revisarlo con:
+
+```
+scss-lint
+```
+
+Si trabajas en código coffeescript puedes revisarlo con [coffeelint](http://www.coffeelint.org/) (instalalo con `npm install -g coffeelint`) :
 
 ```
 coffeelint .
