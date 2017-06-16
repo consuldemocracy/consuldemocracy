@@ -1,7 +1,8 @@
 module BudgetInvestmentsHelper
 
   def investments_minimal_view_path
-    custom_budget_investments_path(heading_id: @heading.to_param,
+    custom_budget_investments_path(id: @heading.group.to_param,
+                                   heading_id: @heading.to_param,
                                    filter: @current_filter,
                                    view: investments_secondary_view)
   end
