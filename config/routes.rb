@@ -627,6 +627,7 @@ Rails.application.routes.draw do
   get 'mas-informacion/espacios-presenciales-2017',  to: 'pages#show', id: 'more_info/budgets/meetings_2017', as: 'budgets_meetings_2017'
   get 'mas-informacion/derechos-humanos',            to: 'pages#show', id: 'more_info/participation/ddhh',    as: 'more_info_human_rights'
   get 'mas-informacion/gobierno-abierto',            to: 'pages#show', id: 'more_info/participation/open',    as: 'participation_open_government'
+  get 'mas-informacion/foros-locales',               to: 'pages#show', id: 'more_info/participation/forums',  as: 'participation_forums'
 
   #static pages
   get 'accesibilidad',          to: 'pages#show', id: 'accessibility', as: 'accessibility'

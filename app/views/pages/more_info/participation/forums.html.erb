@@ -1,0 +1,26 @@
+<% provide :title, "Foros locales" %>
+<% provide :meta_description do %>
+  Espacios de participación en los que todas las vecinas y vecinos de lucro se pueden reunir para debatir y trabajar en iniciativas que mejoren la ciudad.
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: participation_forums_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <%= back_link_to more_info_path %>
+
+    <h1>Foros locales</h1>
+    <p>Los Foros Locales son los espacios de participación en los que todas las vecinas y vecinos y las entidades sin ánimo de lucro se pueden reunir para debatir y trabajar en iniciativas que mejoren la ciudad desde la perspectiva de sus barrios y distritos. Hay un Foro Local en cada uno de los 21 distritos de la ciudad.</p>
+
+    <p><strong>Tienen dos objetivos fundamentales</strong>:</p>
+
+    <ol>
+      <li class="margin-bottom">Impulsar la participación ciudadana y la implicación activa de la ciudadanía y de las entidades sin ánimo de lucro en el diseño, desarrollo y evaluación de las políticas municipales desde la perspectiva de los Distritos.</li>
+      <li>Fomentar el diálogo abierto entre la ciudadanía, las entidades sin ánimo de lucro y las Juntas Municipales de Distrito. Los Foros Locales son, además, un espacio de rendición de cuentas de las Presidencias de distrito ante la ciudadanía.</li>
+    </ol>
+  </div>
+  <div class="small-12 medium-3 column download">
+    <p><strong>Más información en:</strong><br> <a href="https://foroslocales.madrid.es" target="_blank" title="Visitar página de Foros locales de Madrid (se abre en ventana nueva">foroslocales.madrid.es</a></p>
+  </div>
+</div>
