@@ -58,6 +58,12 @@ Run the tests with:
 bin/rspec
 ```
 
+Run the [coffeelint](http://www.coffeelint.org/) linter for coffeescript (install with `npm install -g coffeelint`) :
+
+```
+coffeelint .
+```
+
 You can use the default admin user from the seeds file:
 
  **user:** admin@consul.dev

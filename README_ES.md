@@ -58,6 +58,12 @@ Para ejecutar los tests:
 bin/rspec
 ```
 
+Usa el linter coffeescript [coffeelint](http://www.coffeelint.org/) (puedes instalaro con `npm install -g coffeelint`) :
+
+```
+coffeelint .
+```
+
 Puedes usar el usuario administrador por defecto del fichero seeds:
 
  **user:** admin@consul.dev
