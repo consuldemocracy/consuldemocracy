@@ -309,7 +309,7 @@ feature 'Ballots' do
       visit budget_path(budget)
       click_link group.name
       # No need to click on the heading name
-      expect(page).to have_content("Investment projects with scope: #{heading.name}")
+      expect(page).to have_content("Investment projects with scope:#{heading.name}")
       expect(current_path).to eq(custom_budget_investments_path(budget, group, heading))
     end
 

@@ -826,4 +826,56 @@ feature 'Budget Investments' do
     end
 
   end
+
+  context "Minimal view" do
+    let!(:investment1) { create(:budget_investment, heading: heading, tag_list: "Parks") }
+    let!(:investment2) { create(:budget_investment, heading: heading, tag_list: "Parks") }
+    let!(:investment3) { create(:budget_investment, heading: heading, tag_list: "Parks") }
+
+    background do
+      visit budget_path(budget)
+      click_link "Health"
+    end
+
+    scenario "Change to mininal view" do
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_css(".budget-investment.minimal", count: 3)
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content investment1.title
+
+        expect(page).to_not have_content investment1.author.username
+        expect(page).to_not have_content investment1.description
+        expect(page).to_not have_content investment1.heading.name
+        expect(page).to_not have_content investment1.tag_list.first
+      end
+    end
+
+    scenario "Switch between minimal and default views" do
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_css(".budget-investment.minimal", count: 3)
+
+      within(".budgets-minimal-selector") do
+        first("a").click
+      end
+
+      expect(page).to have_css(".budget-investment.minimal", count: 0)
+
+      within("#budget_investment_#{investment1.id}") do
+        expect(page).to have_content investment1.title
+
+        expect(page).to have_content investment1.author.username
+        expect(page).to have_content investment1.description
+        expect(page).to have_content investment1.heading.name
+        expect(page).to have_content investment1.tag_list.first
+      end
+    end
+
+  end
 end
