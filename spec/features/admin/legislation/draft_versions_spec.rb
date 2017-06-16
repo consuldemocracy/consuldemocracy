@@ -86,14 +86,17 @@ feature 'Admin legislation draft versions' do
 
       click_link 'Version 1'
 
+      fill_in 'legislation_draft_version_title', with: 'Version 1b'
+
       click_link 'Launch text editor'
 
-      fill_in 'legislation_draft_version_title', with: 'Version 1b'
       fill_in 'legislation_draft_version_body', with: '# Version 1 body\r\n\r\nParagraph\r\n\r\n>Quote'
 
       within('.fullscreen') do
-        click_button 'Save changes'
+        click_link 'Close text editor'
       end
+
+      click_button 'Save changes'
 
       expect(page).to have_content 'Version 1b'
     end
