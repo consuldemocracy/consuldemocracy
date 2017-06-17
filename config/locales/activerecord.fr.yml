@@ -1,0 +1,193 @@
+fr:
+  activerecord:
+    models:
+      activity:
+        one: "activité"
+        other: "activités"
+      budget:
+        one: "Budget participatif"
+        other: "Budgets participatifs"
+      budget/investment:
+        one: "Projet d'investissement"
+        other: "Projets d'investissement"
+      comment:
+        one: "Commentaire"
+        other: "Commentaires"
+      debate:
+        one: "Débat"
+        other: "Débats"
+      tag:
+        one: "Étiquette"
+        other: "Étiquettes"
+      user:
+        one: "Utilisateur"
+        other: "Utilisateurs"
+      moderator:
+        one: "Modérateur"
+        other: "Modérateurs"
+      administrator:
+        one: "Administrateur"
+        other: "Administrateurs"
+      vote:
+        one: "Vote"
+        other: "Votes"
+      organization:
+        one: "Organisation"
+        other: "Organisations"
+      poll/booth:
+        one: "bureau de vote"
+        other: "bureaux de vote"
+      poll/officer:
+        one: "président"
+        other: "présidents"
+      proposal:
+        one: "Proposition citoyenne"
+        other: "Propositions citoyennes"
+      spending_proposal:
+        one: "Proposition d'investissement"
+        other: "Propositions d'investissement"
+      site_customization/page:
+        one: Page personnalisée
+        other: Pages personnalisées
+      site_customization/image:
+        one: Image personnalisée
+        other: Images personnalisées
+      site_customization/content_block:
+        one: Bloc de contenu personnalisé
+        other: Blocs de contenu personnalisés
+    attributes:
+      budget:
+        name: "Nom"
+        description_accepting: "Description durant la phase d'acceptation"
+        description_reviewing: "Description durant la phase de revue" 
+        description_selecting: "Description durant la phase de sélection"
+        description_valuating: "Description durant la phase d'évaluation"
+        description_balloting: "Description durant la phase de vote"
+        description_reviewing_ballots: "Description durant la phase de revue des votes"
+        description_finished: "Description quand le budget est finalisé"
+        phase: "Phase"
+        currency_symbol: "Devise"
+      budget/investment:
+        heading_id: "Rubrique du budget"
+        title: "Titre"
+        description: "Description"
+        external_url: "Lien externe"
+        location: "Lieu"
+        administrator_id: "Administrateur"
+        description: "Description"
+        external_url: "Lien vers la documentation complémentaire"
+        heading_id: "Rubrique du budget"
+        title: "Titre"
+        location: "Lieu"
+        organization_name: "Si votre proposition concerne un collectif ou une organisation, renseignez leur nom"
+      comment:
+        body: "Commentaire"
+        user: "Utilisateur"
+      debate:
+        author: "Auteur"
+        description: "Opinion"
+        terms_of_service: "Conditions d'utilisation"
+        title: "Titre"
+      proposal:
+        author: "Auteur"
+        title: "Titre"
+        question: "Question"
+        description: "Description"
+        terms_of_service: "Conditions d'utilisation"
+      user:
+        email: "Courriel"
+        username: "Nom d'utilisateur"
+        password_confirmation: "Confirmation du mot de passe"
+        password: "Mot de passe"
+        current_password: "Mot de passe actuel"
+        phone_number: "Téléphone"
+        official_position: "Position officielle"
+        official_level: "Niveau officiel"
+        redeemable_code: "Vérification du code reçu par courriel"
+      organization:
+        name: "Nom de l'organisation"
+        responsible_name: "Personne responsable pour le groupe"
+      spending_proposal:
+        administrator_id: "Administrateur"
+        association_name: "Nom de l'association"
+        description: "Description"
+        external_url: "Lien vers la documentation complémentaire"
+        geozone_id: "Périmètre de l'opération"
+        title: "Titre"
+      poll:
+        name: "Nom"
+        starts_at: "Date de début"
+        ends_at: "Date de fin"
+        geozone_restricted: "Restreint selon la zone géographique"
+      poll/question:
+        title: "Question"
+        valid_answers: "Réponses possibles"
+        summary: "Résumé"
+        description: "Description"
+        external_url: "Lien vers la documentation complémentaire"
+      signature_sheet:
+        signable_type: "Type de signature"
+        signable_id: "Identifiant de la signature"
+        document_numbers: "Nombre de documents"
+      site_customization/page:
+        content: Contenu
+        created_at: Créé le
+        subtitle: Sous-titres
+        slug: Slug
+        status: Statut
+        title: Titre
+        updated_at: Mis-à-jour le
+        more_info_flag: Montrer dans la page Plus d'informations
+        print_content_flag: Bouton impression du contenu
+      site_customization/image:
+        name: Nom
+        image: Image
+      site_customization/content_block:
+        name: Nom
+        locale: Langue
+        body: Contenu
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Cet utilisateur a déjà un mot de passe"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Vous avez atteint le nombre maximum de message privés par jour"
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Ce document n'est pas dans le recensement"
+              has_voted: "L'utilisateur a déjà voté"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Vous devez attendre un minimum de %{interval} jours entre les avis de proposition"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'Non vérifié par recensement'
+              already_voted: 'Cette proposition a déjà été votée'
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "doit être des lettres, des nombres, _ et -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "La largeur doit être de %{required_width}px"
+              image_height: "La hauteur doit être de %{required_height}px"

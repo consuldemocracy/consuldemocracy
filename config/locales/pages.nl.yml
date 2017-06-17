@@ -1,0 +1,81 @@
+---
+nl:
+  pages:
+    census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
+    conditions: Gebruiksvoorwaarden
+    general_terms: Gebruiksvoorwaarden
+    more_info:
+      title: "Ontdek %{org_name}"
+      subtitle: "Ontdek wat u allemaal op deze site kunt doen."
+      guide: 'Deze uitleg behandeld ieder onderdeel van %{org_name}. Meer info door te klikken op de onderstaande links.'
+      menu:
+        debates: "Discussies"
+        proposals: "Voorstellen"
+        budgets: "Burgerbegrotingen"
+        other: "Verdere informatie"
+      debates:
+        title: "Discussies"
+        description: "Start een discussie waarin u een onderwerp kunt bespreken met anderen in uw gemeente."
+        feature_1: "Om een discussie te starten klikt u %{link}"
+        feature_1_link: "registreer bij %{org_name}"
+        feature_2_html: "Discussies kunt u scoren via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen."
+        image_alt: "Knoppen om een discussie te scoren"
+        figcaption: '"Eens" en "Oneens" knoppen om discussie te scoren.'
+      proposals:
+        title: "Voorstellen"
+        description: "Doe een voorstel aan de gemeente, en steun voorstellen van anderen."
+        feature_1: "Om een voorstel te doen klikt u %{link}; om er één te steunen moet uw account bovendien geverifieerd zijn."
+        feature_1_link: "registreer bij %{org_name}"
+        feature_2_html: "Voorstellen die <strong>steun krijgen van 1% van de mensen</strong> worden in stemming gebracht."
+        feature_3_html: "Als er meer mensen voor zijn dan tegen, <strong>werkt de gemeente een plan ter implementatie uit</strong> en kunt u de voortgang bewaken."
+        image_alt: "Knop om een voorstel te steunen"
+        figcaption_html: 'Knop om een voorstel te "Steunen".<br>Als het mimimum aantal steunbetuigingen is bereikt wordt het in stemming gebracht.'
+      budgets:
+        title: "Burgerbegroting"
+        description: "Gedurende de eerste zes maanden van ieder jaar kan er een deel van de gemeentelijke begroting mede door u worden bepaald."
+        feature_1: "Om een uitgave voor te stellen klikt u %{link} (en verifieert u uw account)."
+        feature_1_link: "registreer bij %{org_name}"
+        feature_2_html: "Als eerste is er een ronde waarin <strong>voorstellen</strong> gedaan kunnen worden voor uitgaven."
+        feature_3_html: "Vervolgens is er een ronde voor <strong> steun </strong> waarmee de meest interessante boven komen. De meest gesteunde worden door de gemeente beoordeeld op haalbaarheid, en er wordt een budget vastgesteld."
+        feature_4_html: "Tenslotte komt het voorstel <strong>in stemming</strong> om te beslissen waar daadwerkelijk budget aan wordt toegekend."
+        image_alt: "Verschillende fasen in de burgerbegroting"
+        figcaption_html: '"Steun" fase en "Stem" fase in de burgerbegroting.'
+      polls:
+        title: "Peilingen"
+        description: "Burgervoorstellen met 1% steun worden in stemming gebracht."
+        feature_1: "Om deel te nemen in de volgende peiling klikt u %{link} verifieert u uw account."
+        feature_1_link: "registreer bij %{org_name}"
+        feature_2: "Alle geverifieerde deelnemers boven de 16 kunnen stemmen."
+        feature_3: "De uitslag zal door de gemeente in overweging worden genomen."
+      faq:
+        title: "Technische problemen?"
+        description: "Lees de FAQs en kijk of dat helpt."
+        button: "Bekijk de meest gestelde vragen"
+      other:
+        title: "Verdere informatie"
+        how_to_use: "Gebruik %{org_name} in uw gemeente"
+        world: "Burgerparticipatie in de wereld"
+        facts: "Feiten over burgerparticipatie en directe democratie"
+      how_to_use:
+        text: |-
+          Gebruik het in uw gemeente en help ons het te verbeteren, het is gratis software.
+
+          Deze Open Overheid site gebruikt de [Consul web-app](https://github.com/ayuntamientomadrid 'consul github'). Gratis software, onder de [AGPLv3 Licentie](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ). Simpel gezegd betekend dit dat u de app kunt inspecteren, gebruiken, aanpassen en herdistribueren (onder voorwaarde dat anderen hetzelfde kunnen doen met uw versie).
+
+          Voor programmeurs: help ons het te verbeteren via [Consul app](https://github.com/ayuntamientomadrid 'consul github').
+      titles:
+        how_to_use: Gebruik het in uw gemeente
+    privacy: Privacy Verklaring
+    titles:
+      accessibility: Toegankelijkheid
+      conditions: Gebruiksvoorwaarden
+      more_info: "Meer informatie over %{org_name}"
+      privacy: Privacy Verklaring
+    verify:
+      code: Code die u in een brief heeft ontvangen
+      email: Email
+      info: 'Vul uw toegangsgegevens in om uw account te verifieren:'
+      info_code: 'en de code die u heeft ontvangen:'
+      password: Wachtwoord
+      submit: Verifieer mijn account
+      title: Verifieer uw account
