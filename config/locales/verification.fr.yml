@@ -1,0 +1,112 @@
+---
+fr:
+  verification:
+    alert:
+      lock: Vous avez atteint le nombre maximum de tentatives. Merci de réessayer plus tard.
+    back: Revenir à mon compte
+    email:
+      create:
+        alert:
+          failure: Un problème est survenu dans l'envoi de courriel à votre adresse.
+        flash:
+          success: 'Nous avons envoyé un courriel de confirmation à votre adresse %{email}'
+      show:
+        alert:
+          failure: Code de vérification incorrect
+        flash:
+          success: Vous êtes un utilisateur vérifié
+    letter:
+      alert:
+        unconfirmed_code: "Vous n'avez pas encore renseigné votre code de confirmation"
+      create:
+        flash:
+          offices: Bureaux de conseil aux citoyens
+          success_html: "Merci d'avoir demandé votre <b>code de sécurité maximum (uniquement requis pour les votes finaux)</b>.  Dans quelques jours, nous vous enverrons un courrier vers votre adresse postale. Si vous le préférez, vous pouvez récupérer votre code dans n'importe quel %{offices}."
+      edit:
+        see_all: Voir les propositions
+        title: Lettre requise
+      errors:
+        incorrect_code: Code de vérification incorrect
+      new:
+        explanation: "Pour participer au vote final, vous pouvez :"
+        go_to_index: Voir les propositions
+        office: Vérifier dans n'importe quel %{office}
+        offices: Bureaux de conseil aux citoyens
+        send_letter: Envoyer une lettre avec le code
+        title: "Félicitations !"
+        user_permission_info: Avec votre compte, vous pouvez...
+      update:
+        flash:
+          success: Votre compte est vérifié
+    redirect_notices:
+      already_verified: Votre compte est déjà vérifié
+      email_already_sent: Nous vous avons envoyé un courriel avec un lien de confirmation. Si vous ne l'avez pas reçu, vous pouvez demander qu'on vous le renvoie ici.
+    residence:
+      alert:
+        unconfirmed_residency: Vous n'avez pas encore confirmé votre résidence
+      create:
+        flash:
+          success: Résidence vérifiée
+      new:
+        accept_terms_text: "J'accepte %{terms_url} du recensement."
+        accept_terms_text_title: J'accepte les termes et conditions d'accès au recensement
+        date_of_birth: Date de naissance
+        document_number: Numéro de document
+        document_number_help_title: Aide
+        document_number_help_text_html: "<strong>Carte d'identité</strong>: 12345678A<br> <strong>Passeport</strong>: AAA000001<br> <strong>Carte de résident</strong>: X1234567P"
+        document_type:
+          passport: Passeport
+          residence_card: Carte de résident
+          spanish_id: Carte d'identité
+        document_type_label: Type de document
+        error_not_allowed_age: Vous n'avez pas l'âge requis pour participer
+        error_not_allowed_postal_code: Vous devez être enregistré pour être vérifié.
+        error_verifying_census: Le recensement n'a pas pu vérifier vos informations. Merci de confirmer que vos informations sont correctes en appelant la mairie ou en visitant n'importe quel %{offices}.
+        error_verifying_census_offices: Bureaux de conseil aux citoyens 
+        form_errors: ont empêché la vérification de votre résidence
+        postal_code: Code postal
+        postal_code_note: Pour vérifier votre compte, vous devez être enregistrés.
+        terms: les termes et conditions d'accès 
+        title: Vérifier la résidence
+        verify_residence: Vérifier la résidence
+    sms:
+      create:
+        flash:
+          success: Entrer le code de confirmation envoyé par texto
+      edit:
+        confirmation_code: Entrer le code reçu sur votre mobile
+        resend_sms_link: Cliquer ici pour le renvoyer
+        resend_sms_text: Le code de confirmation n'a pas encore été reçu ?
+        submit_button: Envoyer
+        title: Confirmation du code de sécurité
+      new:
+        phone: Entrez votre numéro de téléphone mobile pour recevoir le code
+        phone_format_html: "<strong><em>(Exemple: 612345678 or +34612345678)</em></strong>"
+        phone_note: Nous utiliserons uniquement votre numéro de téléphone pour vous envoyer ce code, sans jamais vous recontacter par la suite.
+        phone_placeholder: "Exemple: 612345678 or +34612345678"
+        submit_button: Envoyer
+        title: Envoyer le code de confirmation
+      update:
+        error: Code de vérification incorrect
+        flash:
+          level_three:
+            success: Code correct. Votre compte est maintenant vérifié.
+          level_two:
+            success: Code correct
+    step_1: Résidence
+    step_2: Code de confirmation
+    step_3: Vérification finale
+    user_permission_debates: Participer aux débats
+    user_permission_info: En vérifiant votre compte vous pourrez...
+    user_permission_proposal: Créer de nouvelles propositions 
+    user_permission_support_proposal: Soutenir des propositions
+    user_permission_votes: Participer au vote final*
+    verified_user:
+      form:
+        submit_button: Envoyer le code
+      show:
+        email_title: Courriels
+        explanation: Nous disposons actuellement des informations suivantes dans notre base de données. Merci de sélectionner une méthode pour l'envoi de votre code de confirmation.
+        phone_title: Numéros de téléphone
+        title: Informations disponibles
+        use_another_phone: Utiliser un autre téléphone
