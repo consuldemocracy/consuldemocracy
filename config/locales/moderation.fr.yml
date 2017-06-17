@@ -1,0 +1,78 @@
+---
+fr:
+  moderation:
+    header:
+      title: Modération
+    comments:
+      index:
+        block_authors: Bloquer un auteur
+        confirm: "Êtes-vous sûr(e) ?"
+        filter: Filtrer
+        filters:
+          all: Tous
+          pending_flag_review: En attente
+          with_ignored_flag: Marqué comme vu
+        headers:
+          comment: Commentaire
+          moderate: Modérer
+        hide_comments: Masquer les commentaires
+        ignore_flags: Marqué comme vu
+        order: Ordre
+        orders:
+          flags: Les plus signalés
+          newest: Les plus récents
+        title: Commentaires
+    dashboard:
+      index:
+        title: Modération
+    debates:
+      index:
+        block_authors: Bloquer un auteur
+        confirm: "Êtes-vous sûr(e) ?"
+        filter: Filtrer
+        filters:
+          all: Tous
+          pending_flag_review: En attente
+          with_ignored_flag: Marqué comme vu
+        headers:
+          debate: Débat
+          moderate: Modérer
+        hide_debates: Masquer les débats
+        ignore_flags: Marqué comme vu
+        order: Ordre
+        orders:
+          created_at: Les plus récents
+          flags: Les plus signalés
+        title: Débats
+    menu:
+      flagged_comments: Commentaires
+      flagged_debates: Débats
+      proposals: Propositions
+      users: Bloquer les utilisateurs
+    proposals:
+      index:
+        block_authors: Bloquer un auteur
+        confirm: "Êtes-vous sûr(e) ?"
+        filter: Filtrer
+        filters:
+          all: Tous
+          pending_flag_review: En attente de revue
+          with_ignored_flag: Marqué comme vu
+        headers:
+          moderate: Modérer
+          proposal: Proposition
+        hide_proposals: Masquer les propositions
+        ignore_flags: Marqué comme vu
+        order: Trier par
+        orders:
+          created_at: Les plus récents
+          flags: Les plus signalés
+        title: Propositions
+    users:
+      index:
+        hidden: Bloqué
+        hide: Bloquer
+        search: Rechercher
+        search_placeholder: courriel ou nom de l'utilisateur
+        title: Bloquer les utilisateurs 
+      notice_hide: Utilisateur bloqué. Tous les débats et les propositions de cet utilisateur ont été masqués.

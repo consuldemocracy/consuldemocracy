@@ -1,0 +1,46 @@
+fr:
+  settings:
+    comments_body_max_length: "Longueur maximum des commentaires"
+    official_level_1_name: "Personne officielle de niveau 1"
+    official_level_2_name: "Personne officielle de niveau 2"
+    official_level_3_name: "Personne officielle de niveau 3"
+    official_level_4_name: "Personne officielle de niveau 4"
+    official_level_5_name: "Personne officielle de niveau 5"
+    max_ratio_anon_votes_on_debates: "Pourcentage maximum de votes anonymes par débat"
+    max_votes_for_proposal_edit: "Nombre de votes maximum à partir duquel une proposition ne peut plus être éditée"
+    max_votes_for_debate_edit: "Nombre de votes à partir duquel un débat ne peut plus être édité"
+    proposal_code_prefix: "Préfixe pour les codes des propositions"
+    votes_for_proposal_success: "Nombre de votes nécessaires pour l'approbation d'une proposition"
+    months_to_archive_proposals: "Mois pour archiver les propositions"
+    email_domain_for_officials: "Domaine du courriel pour les personnes officielles"
+    per_page_code_head: "Code à inclure dans chaque page (<head>)"
+    per_page_code_body: "Code à inclure dans chaque page (<body>)"
+    twitter_handle: "Nom d'utilisateur Twitter"
+    twitter_hashtag: "Hashtag Twitter"
+    facebook_handle: "Nom d'utilisateur Facebook"
+    youtube_handle: "Nom d'utilisateur Youtube"
+    telegram_handle: "Nom d'utilisateur Telegram"
+    instagram_handle: "Nom d'utilisateur Instagram"
+    blog_url: "URL du blog"
+    transparency_url: "URL de transparence"
+    opendata_url: "URL d'Open Data"
+    url: "URL principale"
+    org_name: "Nom de l'organisation"
+    place_name: "Nom du lieu"
+    feature:
+      budgets: Budgets participatifs
+      twitter_login: Se connecter avec Twitter
+      facebook_login: Se connecter avec Facebook
+      google_login: Se connecter avec Google 
+      debates: Débats
+      polls: Votes
+      signature_sheets: Feuilles de signature
+      spending_proposals: Propositions d'investissement
+      spending_proposal_features:
+        voting_allowed: Vote sur les propositions d'investissement
+    mailer_from_name: Nom de l'expéditeur
+    mailer_from_address: Courriel de l'expéditeur
+    meta_description: "Description du site (SEO)"
+    meta_keywords: "Mots-clés (SEO)"
+    verification_offices_url: URL des bureaux de vérification
+    min_age_to_participate: Âge minimum de participation
