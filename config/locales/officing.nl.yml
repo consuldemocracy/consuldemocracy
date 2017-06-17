@@ -1,0 +1,103 @@
+---
+nl:
+  officing:
+    header:
+      title: Polling
+    dashboard:
+      index:
+        title: Poll officing
+        info: Here you can validate user documents and store voting results
+    menu:
+      voters: Validate document
+      recounts: Store recount
+      final_recounts: Final recounts and results
+    polls:
+      index:
+        title: Poll list
+        no_polls: You are not officing in any active poll
+        select_poll: Select poll
+        add_recount: Add recount
+      final:
+        title: Polls ready for final recounting
+        no_polls: You are not officing final recounts in any active poll
+        select_poll: Select poll
+        add_recount: Add final recount
+        add_results: Add results
+    recounts:
+      flash:
+        create: "Data added"
+        error_create: "Count NOT added. Error in data."
+      new:
+        title: "%{poll} - Add daily recount"
+        not_allowed: "You are not a poll officer for this poll"
+        booth_date: "Booth and date"
+        select_booth_date: "Select booth and date"
+        count: "Vote count"
+        count_placeholder: "Vote count"
+        submit: Save
+        recount_list: "Your recounts"
+        booth: "Booth"
+        date: "Date"
+    final_recounts:
+      flash:
+        create: "Data added"
+        error_create: "Final counts NOT added. Error in data."
+      new:
+        title: "%{poll} - Add final recount"
+        not_allowed: "You are allowed to add final recounts for this poll"
+        booth: "Booth"
+        date: "Date"
+        select_booth: "Select booth"
+        select_date: "Select date"
+        count: "Final vote count"
+        count_placeholder: "Final vote count"
+        submit: Save
+        final_recount_list: "Your final recounts"
+        system_count: "System recount"
+        add_results: "Add results"
+    results:
+      flash:
+        create: "Results saved"
+        error_create: "Results NOT saved. Error in data."
+        error_wrong_booth: "Wrong booth. Results NOT saved."
+        error_wrong_date: "Wrong date. Results NOT saved."
+      new:
+        title: "%{poll} - Add results"
+        not_allowed: "You are allowed to add results for this poll"
+        booth: "Booth"
+        date: "Date"
+        select_booth: "Select booth"
+        select_date: "Select date"
+        ballots_white: "Blank ballots"
+        ballots_null: "Invalid ballots"
+        submit: "Save"
+        results_list: "Your results"
+        see_results: "See results"
+      index:
+        no_results: "No results"
+        results: Results
+        table_answer: Answer
+        table_votes: Votes
+        table_whites: "Blank ballots"
+        table_nulls: "Invalid ballots"
+    residence:
+      flash:
+        create: "Document verified with Census"
+        not_allowed: "You don't have officing shifts today"
+      new:
+        title: Validate document
+        document_number: "Document number (including letters)"
+        submit: Validate document
+        error_verifying_census: "The Census was unable to verify this document."
+        form_errors: prevented the verification of this document
+        no_assignments: "You don't have officing shifts today"
+    voters:
+      new:
+        title: Polls
+        table_poll: Poll
+        table_actions: Polls status
+      show:
+        can_vote: Can vote
+        error_already_voted: Has already participated in this poll
+        submit: Confirm vote
+        success: "Vote introduced!"
