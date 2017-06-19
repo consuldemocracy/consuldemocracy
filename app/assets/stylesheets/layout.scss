@@ -1203,7 +1203,8 @@ table {
   font-weight: bold;
   height: $line-height*2;
   line-height: $line-height*2;
-  padding: 0;
+  padding: 0 0 0 rem-calc(32);
+  box-sizing: content-box;
   position: relative;
 }
 
@@ -1218,7 +1219,7 @@ table {
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height*2;
-    padding: 0 rem-calc(20);
+    padding: 0 rem-calc(8);
     position: absolute;
     top: 0;
   }
@@ -1260,7 +1261,7 @@ table {
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height*2;
-    padding: 0 rem-calc(20);
+    padding: 0 rem-calc(8);
     position: absolute;
     top: 0;
   }
@@ -1302,7 +1303,7 @@ table {
     font-size: rem-calc(24);
     left: 0;
     line-height: $line-height*2;
-    padding: 0 rem-calc(20);
+    padding: 0 rem-calc(8);
     position: absolute;
     top: 0;
   }
