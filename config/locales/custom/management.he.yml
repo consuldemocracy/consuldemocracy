@@ -8,8 +8,8 @@ he:
         title: "חשבון משתמש/ת"
     account_info:
       change_user: "שינוי חשבון משתמש/ת"
-      document_number_label: "מספר מסמך"
-      document_type_label: "סוג מסמך"
+      document_number_label: "מספר תעודה מזהה"
+      document_type_label: "סוג תעודה מזהה"
       email_label: "דואר אלקטרוני"
       identified_label: "זוהה כ"
       username_label: "שם משתמש/ת"
@@ -18,14 +18,14 @@ he:
       index:
         title: "הנהלה"
         info: "כאן ניתן לנהל משתמשים לפי כל הנושאים המופיעים בתפריט משמאל"
-    document_number: "מספר מסמך"
-    document_type_label: "סוג מסמך"
+    document_number: "מספר תעודה מזהה"
+    document_type_label: "סוג תעודה מזהה"
     document_verifications:
       already_verified: "חשבון משתמש זה אושר"
       has_no_account_html: " כדי ליצור חשבון  %{link} נא ללחוץ על<b>'Register'</b> בחלק השמאלי העליון של המסך"
       link: "מנהל מערכת"
       in_census_has_following_permissions: "משתמשים/ות אלו יכולים/ות להשתתף במערכת עם ההרשאות הבאות"
-      not_in_census: "מסמך זה לא נרשם"
+      not_in_census: "תעודה מזהה זו לא רשומה"
       not_in_census_info: " אזרחים/ות שאינם/ן מתפקדים/ות יכולים/ות להשתתף באתר עם ההרשאות הבאות :"
       please_check_account_data: "נא לבדוק בבקשה שהנתונים מעל מדויקים"
       title: " ניהול חשבון"

@@ -51,14 +51,14 @@ he:
        accept_terms_text: אני מסכים/ה על %{terms_url} תנאי מפקד האוכלוסין
        accept_terms_text_title: אני מסכים/ה על התנאים וכללי השימוש במפקד האוכלוסין
        date_of_birth: תאריך לידה
-       document_number: מספר מסמך
+       document_number: מספר תעודה מזהה
        document_number_help_title: עזרה
        document_number_help_text_html: '<strong>תעודת זהות</strong>: 12345678A<br> <strong>דרכון</strong>: AAA000001<br> <strong>כרטיס תושב</strong>: X1234567P'
        document_type:
          passport: דרכון
          residence_card: כרטיס תושב
          spanish_id: תעודת זהות
-       document_type_label: סוג מסמך
+       document_type_label: סוג תעודה מזהה
        error_not_allowed_age: אינך בגיל הנדרש כדי להשתתף
        error_not_allowed_postal_code: מיקוד לא מאושר
        error_verifying_census: מפקד האוכלוסין לא הצליח לאמת את המידע שלך נא לוודא שמלאת את פרטיך נכון על ידי התקשרות עם משרד הסיוע לאזרחים, מועצת העיר או כניסה לאחד מהמשרדים %{offices}.
@@ -96,11 +96,11 @@ he:
    step_1: כתובת מגורים
    step_2: אישור קוד האבטחה
    step_3: אימות נתונים סופית
-   user_permission_debates: להשתתף בדיונים על
+   user_permission_debates: להשתתף בדיונים
    user_permission_info: אנו מאמתים את הפרטים שלך כדי שתוכל/י ...
    user_permission_proposal: ליצור הצעות חדשות
-   user_permission_support_proposal: לתמוך בהצעות*
-   user_permission_votes: להשתתף בהצבעות (למתפקדים בלבד).*
+   user_permission_support_proposal: לתמוך בהצעות
+   user_permission_votes: להשתתף בהצבעות (למתפקדים בלבד).
    verified_user:
      form:
        submit_button: שליחת הקוד
