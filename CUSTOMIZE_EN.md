@@ -68,6 +68,7 @@ In order to make changes to any CSS selector (custom style sheets), you can add 
   background: red;
 }
 ```
+
 If you want to change any [foundation](http://foundation.zurb.com/) variable, you can do it at the `app/assets/stylesheets/_custom_settings.scss` file. For example to change the main application color just add:
 
 ```css
@@ -125,7 +126,6 @@ end
 
 Do not forget to cover your changes with a test at the `spec/models/custom` folder. Following the example we could create `spec/models/custom/residence_spec.rb`:
 
-
 ```ruby
 require 'rails_helper'
 
@@ -181,7 +181,6 @@ And then just do the classic Ruby on Rails flow `bundle install` and following a
 
 If you need to extend or modify the `config/application.rb` just do it at the `config/application_custom.rb` file. For example if you want to change de default language to English, just add:
 
-
 ```ruby
 module Consul
   class Application < Rails::Application
@@ -210,7 +209,7 @@ TODO
 We recommend you to add consul as remote:
 
 ```
-$ git remote add consul https://github.com/consul/consul
+git remote add consul https://github.com/consul/consul
 ```
 
 And then just grab lastest changes on to a branch of your own repo with:

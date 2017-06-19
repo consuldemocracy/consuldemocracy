@@ -46,6 +46,7 @@ RAILS_ENV=test rake db:setup
 ```
 
 Run the app locally:
+
 ```
 bin/rails s
 ```
@@ -81,7 +82,9 @@ But for some actions like voting, you will need a verified user, the seeds file 
  **pass:** 12345678
 
 ### Customization
+
 Read more on documentation:
+
 * English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
 * Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 
