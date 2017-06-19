@@ -1,19 +1,28 @@
 <div class="expanded padding budgets-module">
   <div class="row">
-    <div class="small-12 medium-9 column small-centered text-center">
+    <div class="small-12 medium-6 column">
       <span class="budgets-date">
         <strong><%= t("welcome.budgets.date") %></strong>
       </span>
       <br>
-      <div class="typewriter inline-block">
-        <p class="lead-title"><%= t("welcome.budgets.title") %></p>
-      </div>
-
-      <div class="small-12 medium-9 small-centered text-center">
-        <p><%= t("welcome.budgets.text_html") %></p>
-      </div>
-      <div class="small-12 medium-6 large-4 small-centered">
+      <p class="lead-title"><%= t("welcome.budgets.title_html") %></p>
+      <p><%= t("welcome.budgets.text_html") %></p>
+      <div class="small-12 medium-8">
         <%= link_to t("welcome.budgets.button"), budgets_welcome_path, class: "button expanded large" %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <div class="responsive-embed widescreen">
+        <figure>
+          <%= link_to "https://www.youtube.com/watch?v=W4yR_Ww5TB8", rel: "nofollow", target: "_blank", title: t("welcome.budgets.chincheto.title") do %>
+            <%= image_tag "welcome_video_chincheto.jpg", alt: t("welcome.budgets.chincheto.alt") %>
+          <% end %>
+          <br>
+          <p class="text-right">
+            <small><%= t("welcome.budgets.chincheto.alt") %></small>
+          </p>
+        </figure>
       </div>
     </div>
   </div>
