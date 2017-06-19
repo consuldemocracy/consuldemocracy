@@ -12,7 +12,7 @@ App.Tags =
           current_tags = $tag_input.val().split(',').filter(Boolean)
 
           if $.inArray(name, current_tags) >= 0
-            current_tags.splice($.inArray(name, current_tags), 1);
+            current_tags.splice($.inArray(name, current_tags), 1)
           else
             current_tags.push name
 

@@ -64,6 +64,12 @@ If you add SCSS code you can check it with:
 scss-lint
 ```
 
+If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
+
+```
+coffeelint .
+```
+
 You can use the default admin user from the seeds file:
 
  **user:** admin@consul.dev

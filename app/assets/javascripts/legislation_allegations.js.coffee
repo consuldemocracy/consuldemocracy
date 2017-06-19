@@ -11,15 +11,15 @@ App.LegislationAllegations =
 
   initialize: ->
     $('.js-toggle-allegations .draft-panel').on
-        click: (e) ->
-          e.preventDefault()
-          e.stopPropagation()
-          if !App.LegislationAnnotatable.isMobile()
-            App.LegislationAllegations.toggle_comments()
+      click: (e) ->
+        e.preventDefault()
+        e.stopPropagation()
+        if !App.LegislationAnnotatable.isMobile()
+          App.LegislationAllegations.toggle_comments()
 
     $('.js-toggle-allegations').on
-        click: (e) ->
-          # Toggle comments when the section title is visible
-          if !App.LegislationAnnotatable.isMobile()
-            if $(this).find('.draft-panel .panel-title:visible').length == 0
-              App.LegislationAllegations.toggle_comments()
+      click: (e) ->
+        # Toggle comments when the section title is visible
+        if !App.LegislationAnnotatable.isMobile()
+          if $(this).find('.draft-panel .panel-title:visible').length == 0
+            App.LegislationAllegations.toggle_comments()

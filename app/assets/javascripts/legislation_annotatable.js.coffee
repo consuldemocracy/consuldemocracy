@@ -66,7 +66,7 @@ App.LegislationAnnotatable =
       $(elem).data("annotation-id")
 
     annotation_id = target.data('annotation-id')
-    $('[data-annotation-id="'+annotation_id+'"]').addClass('current-annotation')
+    $('[data-annotation-id="' + annotation_id + '"]').addClass('current-annotation')
 
     $('#comments-box').html('')
     App.LegislationAllegations.show_comments()
@@ -84,7 +84,7 @@ App.LegislationAnnotatable =
         annotation_id: pid
         annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url")
 
-  isMobile: () ->
+  isMobile: ->
     return window.innerWidth <= 652
 
   viewerExtension: (viewer) ->
@@ -154,7 +154,7 @@ App.LegislationAnnotatable =
         ), 100)
 
   propotionalWeight: (v, max) ->
-    Math.floor(v*5/(max+1)) + 1
+    Math.floor(v * 5 / (max + 1)) + 1
 
   addWeightClasses: ->
     annotationsLoaded: (annotations) ->

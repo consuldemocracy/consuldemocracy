@@ -1,13 +1,13 @@
 App.Tracks =
-  
-  tracking_enabled: -> 
+
+  tracking_enabled: ->
     _paq?
 
-  set_custom_var: (id, name, value, scope) -> 
+  set_custom_var: (id, name, value, scope) ->
     _paq.push(['setCustomVariable', id, name, value, scope])
     _paq.push(['trackPageView'])
 
-  track_event: ($this) -> 
+  track_event: ($this) ->
     category = $this.data('track-event-category')
     action   = $this.data('track-event-action')
     _paq.push(['trackEvent', category, action])
@@ -17,9 +17,9 @@ App.Tracks =
       $('[data-track-usertype]').each ->
         $this = $(this)
         usertype = $this.data('track-usertype')
-        App.Tracks.set_custom_var(1, "usertype", usertype, "visit")      
+        App.Tracks.set_custom_var(1, "usertype", usertype, "visit")
 
-      $('[data-track-event-category]').each ->  
+      $('[data-track-event-category]').each ->
         $this = $(this)
         App.Tracks.track_event($this)
 

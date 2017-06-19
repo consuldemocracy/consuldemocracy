@@ -65,6 +65,12 @@ Si añades código SCSS puedes revisarlo con:
 scss-lint
 ```
 
+Si trabajas en código coffeescript puedes revisarlo con [coffeelint](http://www.coffeelint.org/) (instalalo con `npm install -g coffeelint`) :
+
+```
+coffeelint .
+```
+
 Puedes usar el usuario administrador por defecto del fichero seeds:
 
  **user:** admin@consul.dev
