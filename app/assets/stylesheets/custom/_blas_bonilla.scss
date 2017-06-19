@@ -11,15 +11,15 @@
     background: $brand image-url('header_blas_bonilla.jpg');
     background-position: 50% 50%;
     background-size: cover;
-    min-height: $line-height*12;
+    min-height: $line-height * 12;
 
     h1 {
-      color: white;
-      padding: $line-height*2 0 $line-height;
+      color: #fff;
+      padding: $line-height * 2 0 $line-height;
     }
 
     a {
-      color: white;
+      color: #fff;
     }
 
     .button {
@@ -27,7 +27,8 @@
     }
   }
 
-  .button, .video-thumbnail {
+  .button,
+  .video-thumbnail {
     text-decoration: none;
   }
 
@@ -41,7 +42,7 @@
     }
 
     img {
-      margin-bottom: $line-height/2;
+      margin-bottom: $line-height / 2;
     }
   }
 }
