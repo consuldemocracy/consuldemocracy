@@ -131,3 +131,20 @@ ul, ol, dl {
 .top-bar-title-right{
   float: right;
 }
+
+.header-title{
+  color: $gray2;
+  font-size: 0.95rem;
+}
+
+.subnavigation ul li a {
+  line-height: 2rem;
+}
+
+li {
+  font-size: 0.9em;
+}
+
+.submenu h2 {
+    font-size: 0.9rem;
+}

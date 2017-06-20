@@ -70,6 +70,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+          <%= yield :header_addon %>
         <% if params[:retired].blank? %>
             <%= render "shared/tag_cloud", taggable: 'proposal' %>
             <%= render 'categories' %>

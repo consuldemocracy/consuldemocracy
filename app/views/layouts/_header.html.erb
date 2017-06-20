@@ -1,14 +1,5 @@
 <header>
 
-  <!-- <div class="top-links">
-    <div class="row">
-      <%= render "shared/locale_switcher" %>
-      <div class="hide-for-small-only">
-        <%= render "shared/top_links" %>
-      </div>
-    </div>
-  </div> -->
-
   <div class="row">
     <div class="top-bar">
 
@@ -22,33 +13,22 @@
       <div id="responsive-menu">
         <div class="top-bar-title">
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
-            <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
-            <!-- <%= setting['org_name'] %> -->
+            <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', alt: t("layouts.header.logo")) %>
           <% end %>
+          <span class="header-title"> Peñalolen </span>
         </div>
 
         <div class="top-bar-right">
-          <ul class="menu">
-            <%= render "shared/admin_login_items" %>
-            <%= render "devise/menu/login_items" %>
-          </ul>
-
-          <div class="show-for-small-only">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
-              <div class="small-12 column">
-                <%= render "shared/top_links" %>
-              </div>
-            </div>
+          <div class="top-bar-title">
+            <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
+              <%= image_tag(image_path_for('logo_pena.png'), class: 'hide-for-small-only float-left pena') %>
+              <!-- <%= setting['org_name'] %> -->
+            <% end %>
           </div>
         </div>
 
-        <div class="top-bar-title top-bar-title-right">
-          <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
-            <%= image_tag(image_path_for('logo_pena.png'), class: 'hide-for-small-only float-right', size: '80x300', alt: t("layouts.header.logo")) %>
-            <!-- <%= setting['org_name'] %> -->
-          <% end %>
-        </div>
+
+
 
       </div>
 
@@ -59,12 +39,31 @@
   <div class="subnavigation expanded">
     <div class="row">
       <div class="hide-for-small-only">
-        <%= render "shared/subnavigation" %>
+        <div class="small-12 medium-12 column">
+          <ul>
+            <%= render "shared/subnavigation" %>
+            <div class="top-bar-right">
+              <%= render "devise/menu/login_items" %>
+              <%= render "shared/admin_login_items" %>
+            </div>
+          </ul>
+        </div>
       </div>
-      <div class="small-12 medium-3 column">
-        <%= yield :header_addon %>
+
+      <div class="top-bar-right">
+        <div class="show-for-small-only">
+          <div class="subnavigation row">
+            <%= render "shared/subnavigation" %>
+            <div class="small-12 column">
+              <%= render "shared/top_links" %>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
+
+
 
 </header>

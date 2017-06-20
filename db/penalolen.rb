@@ -167,7 +167,7 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
   budget: "$60.000.000",
   restriction: nil,
   starts_at: 1.day.ago,
-  ends_at: 1.month.ago,
+  ends_at: 10.day.from_now,
   active: true,
   user: verified)
 
@@ -339,17 +339,17 @@ project = Project.create(name: "Mejoramiento plaza San Luis con Quinchos",
 
 
 puts " ✅"
-# print "Creating polls"
-#
-# puts " ✅"
-# print "Active Polls"
-# (1..2).each do |i|
-#   poll = Poll.create(name: "Active Poll #{i}",
-#                      starts_at: 1.month.ago,
-#                      ends_at:   1.month.from_now,
-#                      geozone_restricted: false)
-# end
-#
+print "Creating polls"
+
+puts " ✅"
+print "Active Polls"
+(1..2).each do |i|
+  poll = Poll.create(name: "Active Poll #{i}",
+                     starts_at: 1.month.ago,
+                     ends_at:   1.month.from_now,
+                     geozone_restricted: false)
+end
+
 # (3..4).each do |i|
 #   poll = Poll.create(name: "Active Poll #{i}",
 #                      starts_at: 1.month.ago,
