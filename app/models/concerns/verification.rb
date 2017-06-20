@@ -24,14 +24,16 @@ module Verification
 
   def residence_verified?
     residence_verified_at.present?
+    # true
   end
 
   def sms_verified?
     confirmed_phone.present?
+    # true
   end
 
   def level_two_verified?
-    level_two_verified_at.present? || (residence_verified? && sms_verified?)
+    level_two_verified_at.present? || (residence_verified? && sms_verified?) || residence_verified?
   end
 
   def level_three_verified?
@@ -68,4 +70,9 @@ module Verification
   def sms_code_not_confirmed?
     !sms_verified?
   end
+
+  def rut_verified?
+    rut_verified_at.present?
+  end
+
 end

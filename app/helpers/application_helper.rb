@@ -55,4 +55,9 @@ module ApplicationHelper
   def content_block(name, locale)
     SiteCustomization::ContentBlock.block_for(name, locale)
   end
+
+  def abre_log(text = nil)
+    p 'abre_log : ' + (text.nil? ? caller[0].to_s : text.to_s)
+  end
+
 end

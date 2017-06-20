@@ -66,6 +66,7 @@ gem 'turnout', '~> 2.4.0'
 gem 'redcarpet', '~> 3.4.0'
 
 gem 'paperclip'
+gem 'httparty'
 gem 'simple_form'
 
 
