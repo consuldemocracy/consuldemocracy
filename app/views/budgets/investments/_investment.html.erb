@@ -6,8 +6,8 @@
       <div class="small-2 medium-2 large-2 column">
         <% if investment.image.exists? %>
           <%= image_tag investment.image.url(:thumb),
-                        title: investment.image_description,
-                        alt: investment.image_description, class: "th" %>
+                        title: investment.image_title,
+                        alt: investment.image_title, class: "th" %>
         <% else %>
           <!-- TODO: ROCK&ROR: Create colored placeholder or default image -->
         <% end %>
