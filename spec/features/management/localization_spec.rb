@@ -28,7 +28,9 @@ feature 'Localization' do
     expect(page).to have_text('Management')
   end
 
+  # Se elimina esta opción
   scenario 'Changing the locale', :js do
+    skip
     visit management_root_path
     expect(page).to have_content('Language')
 

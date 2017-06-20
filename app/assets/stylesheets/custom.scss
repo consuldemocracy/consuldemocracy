@@ -3,3 +3,148 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.cd-horizontal-timeline .events-content {
+  position: relative;
+}
+.cd-horizontal-timeline .events-content li {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+}
+.cd-horizontal-timeline .events-content li.selected {
+  /* visible event content */
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(0);
+}
+.cd-horizontal-timeline .events-content li.enter-right,
+.cd-horizontal-timeline .events-content li.leave-right {
+  animation-name: cd-enter-right;
+}
+.cd-horizontal-timeline .events-content li.enter-left,
+.cd-horizontal-timeline .events-content li.leave-left {
+  animation-name: cd-enter-left;
+}
+.cd-horizontal-timeline .events-content li.leave-right,
+.cd-horizontal-timeline .events-content li.leave-left {
+  animation-direction: reverse;
+}
+@keyframes cd-enter-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes cd-enter-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.active-problem{
+  background: $orange;
+  background-position: 75% 0;
+  position: relative;
+
+  h4, a:hover h4 {
+    color: white !important
+  }
+
+  p {
+    color: white;
+  }
+
+  @include breakpoint(medium) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+}
+
+.button{
+  border-radius: 2rem;
+}
+
+.button-proposal{
+  background: white;
+  color: black;
+}
+
+.in-favor{
+  text-align: -webkit-right;
+}
+
+
+.proposal .supports .button-support {
+  background: $brand;
+  color: white;
+  display: inline-block;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}
+
+.p-small{
+  font-size: 0.92rem;
+}
+
+.meter{
+  background: $light-blue !important;
+}
+
+.progress{
+  background: $gray3 !important;
+  margin-top: 1rem;
+}
+
+.proposal .supports {
+  padding: inherit;
+  position: relative;
+}
+
+ul, ol, dl {
+    line-height: 1.6;
+    margin-bottom: 0rem;
+    list-style-position: outside;
+}
+
+.tag-votes{
+  background: $light-blue;
+}
+
+.top-bar-title-right{
+  float: right;
+}
+
+.header-title{
+  color: $gray2;
+  font-size: 0.95rem;
+}
+
+.subnavigation ul li a {
+  line-height: 2rem;
+}
+
+li {
+  font-size: 0.9em;
+}
+
+.submenu h2 {
+    font-size: 0.9rem;
+}

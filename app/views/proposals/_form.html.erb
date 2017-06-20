@@ -3,39 +3,74 @@
 
   <div class="row">
 
-    <div id="select-problem" class="small-12 medium-6 column" >
+<!-- TODO: Por ahora solo se mostrará un problema/desafío -->
+
+    <!-- <div id="select-problem" class="small-12 medium-6 column" >
       <%= f.label :problem_id,  t("proposals.form.proposal_problem") %>
       <%= f.select :problem_id, valid_problems.collect {|p| [ p.title, p.id ] }, {include_blank: t("problems.form.blank"), label: false},  {:onchange=> "jsProblemChanged()"} %>
-    </div>
-
+    </div> -->
+<!--
     <div class="small-12 column" id="problem-hidden">
       <div class="panel callout radius">
         <h5>Definir el problema</h5>
         <%= f.fields_for :problem do |prob| %>
-          <div class="row">
-            <div class="small-12 medium-6 column">
-              <%= prob.text_field :title%>
-            </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_field :title, label: "Problema que afecta a tu comunidad y crees que se debería solucionar"%>
           </div>
-          <div class="row">
-            <div class="small-12 medium-12 column">
-              <%= prob.text_area :summary %>
-            </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_area :cause, label: t("proposals.create.form.label_problem_cause") %>
           </div>
-          <div class="row">
-            <div class="small-12 medium-12 column">
-              <%= prob.text_area :description %>
-            </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-12 column">
+            <%= prob.text_area :consequence,  label: t("proposals.create.form.label_problem_consequence") %>
           </div>
+        </div>
           <%= prob.hidden_field :user_id, :value => @current_user.id %>
          <% end %>
       </div>
+    </div> -->
+
+    <div class="small-12 column" id="problem-display">
+      <div class="panel callout radius">
+        <!-- TODO: Acá se debe mostrar el problema elegido -->
+        <div class="small-12 column">
+          <h4 class="text-center"> Problema a resolver: <%= challenge.title%> </h4>
+          <%= f.hidden_field :problem_id, :value => challenge.id %>
+          <hr/>
+        </div>
+        <br></br>
+        <%= challenge.summary%>
+        <div class="small-12 medium-6 column">
+          <%= challenge.cause%>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= challenge.consequence%>
+        </div>
+        <p class="text-center"> ¡Crea tus propuestas! </p>
+      </div>
     </div>
 
-    <div class="small-12 column" id="problem-display" style="display:none">
-      <div class="panel callout radius">
-        <h5>Problema a resolver</h5>
-      </div>
+    <%= f.hidden_field :for_challenge, :value => true %>
+
+    <div class="small-12 column">
+      <%= f.label :prioritize, t("proposals.form.proposal_prioritize") %>
+      <%= f.text_area :prioritize, rows: 2, label: false,
+                      placeholder: "" %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :description, t("proposals.form.proposal_text") %>
+      <p class="note"><%= t("proposals.form.proposal_description_note") %></p>
+      <%= f.text_area :description, rows: 5, maxlength: Proposal.description_max_length, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :deadline, t("proposals.form.proposal_deadline") %>
+      <%= f.text_field :deadline, label: false %>
     </div>
 
     <div class="small-12 column">
@@ -44,7 +79,6 @@
     </div>
 
     <div id="js-suggest"></div>
-
 
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
@@ -56,17 +90,10 @@
 
     <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <p class="note"><%= t("proposals.form.proposal_summary_note") %></p>
-      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t('proposals.form.proposal_summary') %>
+      <%= f.text_area :summary, rows: 3, maxlength: 140, label: false %>
     </div>
 
-    <div class="ckeditor small-12 column">
-      <%= f.label :description, t("proposals.form.proposal_text") %>
-      <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
-    </div>
-
-
+  <!--
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="note"><%= t("proposals.form.proposal_video_url_note") %></p>
@@ -77,6 +104,7 @@
       <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
+  -->
 
     <div class="small-12 medium-6 column">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>

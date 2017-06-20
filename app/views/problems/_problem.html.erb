@@ -1,0 +1,44 @@
+<% provide :title do %><%= @problem.title %><% end %>
+
+
+<div class="proposal-show">
+  <div id="<%= dom_id(@problem) %>" class="row">
+    <div class="small-12 medium-9 column">
+      <%= render "shared/back_link" %>
+
+      <h1><%= @problem.title %></h1>
+
+      <div class="proposal-info">
+        <%= l @problem.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @problem.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <span class="icon-comments">
+        </span>&nbsp;
+      </div>
+
+      <br>
+      <p>
+        <%= t("proposals.show.code") %>
+        <strong><%= @problem.summary %></strong>
+      </p>
+
+      <blockquote><%= @problem.summary %></blockquote>
+
+      <%= safe_html_with_links @problem.description %>
+
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("votes.supports") %></h2>
+      <div id="<%= dom_id(@problem) %>_votes">
+        <p>
+          <%= t("proposals.show.code") %>
+          <strong><%= @problem.starts_at %></strong>
+          <strong><%= @problem.ends_at %></strong>
+        </p>
+      </div>
+    </aside>
+  </div>
+</div>

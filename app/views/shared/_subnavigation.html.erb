@@ -1,48 +1,54 @@
-<div class="small-12 medium-9 column">
-  <ul>
-    <% if feature?(:debates) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.debates"),
-                                debates_path,
-                                controller_name == 'debates',
-                                accesskey: "1" %>
-      </li>
-    <% end %>
+
+  <% if feature?(:debates) %>
     <li>
-      <%= layout_menu_link_to t("layouts.header.proposals"),
-                                proposals_path,
-                                controller_name == 'proposals',
-                                accesskey: "2" %>
+      <%= layout_menu_link_to t("layouts.header.debates"),
+                              debates_path,
+                              controller_name == 'debates',
+                              accesskey: "1" %>
     </li>
-    <% if feature?(:polls) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.poll_questions"),
-                                  polls_path,
-                                  controller_name == "polls",
-                                  accesskey: "3" %>
-      </li>
-    <% end %>
-    <% if feature?(:spending_proposals) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.spending_proposals"),
-                                  spending_proposals_path,
-                                  controller_name == 'spending_proposals',
-                                  accesskey: "s" %>
-      </li>
-    <% end %>
-    <% if feature?(:budgets) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.budgets"),
-                                  budgets_path,
-                                  controller_name == "budgets" || controller_name == "investments",
-                                  accesskey: "4" %>
-      </li>
-    <% end %>
+  <% end %>
+  <li>
+    <%= layout_menu_link_to t("layouts.header.proposals"),
+                              proposals_path,
+                              controller_name == 'proposals',
+                              accesskey: "2" %>
+  </li>
+
+  <% if feature?(:polls) %>
     <li>
-      <%= link_to t("layouts.header.more_info"),
-                    more_info_path,
-                    accesskey: "5",
-                    class: ("active" if current_page?(more_info_path)) %>
+      <%= layout_menu_link_to t("layouts.header.poll_questions"),
+                                polls_path,
+                                controller_name == "polls",
+                                accesskey: "3" %>
     </li>
-  </ul>
-</div>
+  <% end %>
+
+  <li>
+    <%= layout_menu_link_to t("layouts.header.projects"),
+                              projects_path,
+                              controller_name == 'projects',
+                              accesskey: "6" %>
+  </li>
+
+  <% if feature?(:spending_proposals) %>
+    <li>
+      <%= layout_menu_link_to t("layouts.header.spending_proposals"),
+                                spending_proposals_path,
+                                controller_name == 'spending_proposals',
+                                accesskey: "s" %>
+    </li>
+  <% end %>
+  <% if feature?(:budgets) %>
+    <li>
+      <%= layout_menu_link_to t("layouts.header.budgets"),
+                                budgets_path,
+                                controller_name == "budgets" || controller_name == "investments",
+                                accesskey: "4" %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t("layouts.header.more_info"),
+                  more_info_path,
+                  accesskey: "5",
+                  class: ("active" if current_page?(more_info_path)) %>
+  </li>

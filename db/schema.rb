@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510203817) do
+ActiveRecord::Schema.define(version: 20170531153458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -265,6 +265,18 @@ ActiveRecord::Schema.define(version: 20170510203817) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "design_events", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "starts_at"
+    t.string   "place"
+    t.integer  "pax"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
+  end
+
+  add_index "design_events", ["project_id"], name: "index_design_events_on_project_id", using: :btree
+
   create_table "direct_messages", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "receiver_id"
@@ -305,6 +317,7 @@ ActiveRecord::Schema.define(version: 20170510203817) do
     t.string   "name"
     t.string   "html_map_coordinates"
     t.string   "external_code"
+    t.integer  "population"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "census_code"
@@ -320,6 +333,11 @@ ActiveRecord::Schema.define(version: 20170510203817) do
 
   create_table "geozones_problems", id: false, force: :cascade do |t|
     t.integer "problem_id", null: false
+    t.integer "geozone_id", null: false
+  end
+
+  create_table "geozones_projects", id: false, force: :cascade do |t|
+    t.integer "project_id", null: false
     t.integer "geozone_id", null: false
   end
 
@@ -563,18 +581,36 @@ ActiveRecord::Schema.define(version: 20170510203817) do
   create_table "problems", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.text     "cause"
+    t.text     "consequence"
     t.string   "budget"
     t.text     "restriction"
     t.text     "summary"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "geozone_restricted"
+    t.boolean  "active"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
   end
 
   add_index "problems", ["user_id"], name: "index_problems_on_user_id", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "neighbour_id"
+    t.integer  "responsible_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "geozone_restricted"
+    t.integer  "proposal_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "projects", ["proposal_id"], name: "index_projects_on_proposal_id", using: :btree
 
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"
@@ -588,19 +624,22 @@ ActiveRecord::Schema.define(version: 20170510203817) do
   create_table "proposals", force: :cascade do |t|
     t.string   "title",               limit: 80
     t.text     "description"
+    t.string   "deadline"
     t.string   "question"
     t.string   "external_url"
     t.integer  "author_id"
     t.datetime "hidden_at"
+    t.text     "prioritize"
     t.integer  "flags_count",                    default: 0
     t.datetime "ignored_flag_at"
     t.integer  "cached_votes_up",                default: 0
     t.integer  "comments_count",                 default: 0
     t.datetime "confirmed_hide_at"
+    t.boolean  "for_challenge",                  default: false
     t.integer  "hot_score",           limit: 8,  default: 0
     t.integer  "confidence_score",               default: 0
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "responsible_name",    limit: 60
     t.text     "summary"
     t.string   "video_url"
@@ -824,7 +863,7 @@ ActiveRecord::Schema.define(version: 20170510203817) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-05-16 16:56:54', null: false
+    t.datetime "password_changed_at",                       default: '2017-06-14 19:37:08', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
@@ -918,6 +957,7 @@ ActiveRecord::Schema.define(version: 20170510203817) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "design_events", "projects"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"

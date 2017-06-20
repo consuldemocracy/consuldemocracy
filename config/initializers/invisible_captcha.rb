@@ -1,4 +1,5 @@
 InvisibleCaptcha.setup do |config|
+  # TODO: Actualmente no esta revisando si una acción ocurre muy rapido
   config.visual_honeypots        = false
   config.timestamp_threshold     = 4.seconds
   config.timestamp_enabled = false

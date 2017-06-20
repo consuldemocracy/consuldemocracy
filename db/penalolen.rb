@@ -58,14 +58,13 @@ Setting['feature.signature_sheets'] = false
 puts " ✅"
 print "Creando unidades vecinales y zonas"
 
-Geozone.create(name: "city")
-Geozone.create(name: "Existent District", census_code: "01")
-(1..31).each { |i| Geozone.create(name: "Unidad Vecinal #{i}", external_code: i.ord, census_code: i.ord) }
-Geozone.create(name: "La Faena", external_code: 32, census_code: 32)
-Geozone.create(name: "Lo Hermida", external_code: 33, census_code: 33)
-Geozone.create(name: "San Luis", external_code: 34, census_code: 34)
-Geozone.create(name: "Peñalolen Alto", external_code: 35, census_code: 35)
-Geozone.create(name: "Peñalolen Nuevo", external_code: 36, census_code: 36)
+
+(1..31).each { |i| Geozone.create(name: "Unidad Vecinal #{i}", population: 3000, external_code: i.ord, census_code: i.ord) }
+Geozone.create(name: "La Faena", population: 15000, external_code: 32, census_code: 32)
+Geozone.create(name: "Lo Hermida", population: 45000, external_code: 33, census_code: 33)
+Geozone.create(name: "San Luis", population: 44000, external_code: 34, census_code: 34)
+Geozone.create(name: "Peñalolen Alto", population: 57000, external_code: 35, census_code: 35)
+Geozone.create(name: "Peñalolen Nuevo", population: 70000, external_code: 36, census_code: 36)
 
 
 
@@ -77,9 +76,6 @@ def create_user(email, username = Faker::Name.name)
   User.create!(username: username, email: email, password: pwd, password_confirmation: pwd, confirmed_at: Time.current, terms_of_service: "1")
 end
 
-dani = create_user('daquiroz@abre.org', 'daquiroz')
-dani.create_administrator
-dani.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
 
 admin = create_user('admin@consul.dev', 'admin')
 admin.create_administrator
@@ -103,6 +99,9 @@ level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::Phon
 verified = create_user('verified@consul.dev', 'verified')
 verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
 
+verified2 = create_user('unverified@consul.dev', 'unverified')
+
+
 (1..10).each do |i|
   org_name = Faker::Company.name
   org_user = create_user("org#{i}@consul.dev", org_name)
@@ -117,12 +116,12 @@ verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::Pho
   end
 end
 
-(1..5).each do |i|
+(1..3).each do |i|
   official = create_user("official#{i}@consul.dev")
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
-(1..40).each do |i|
+(1..3).each do |i|
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
   if level >= 2
@@ -157,306 +156,187 @@ ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "ca
 
 
 puts " ✅"
-print "Creating Problems"
+print "Creando desafío"
 
-problem = Problem.create(title: "Mejoramiento plaza San Luis",
-  description: "La idea es levantar propuestas de mejoramiento de ...",
+problem = Problem.create(title: "Mejoramiento Parque San Luis",
+  summary: "Actualmente el Parque San Luis no está siendo útil para los vecinos ya que no cumple con las necesidades y expectativas de estos.",
+  cause: "Estas son las cauas",
+  consequence: "Estas son las consecuencias",
+  description: "El Parque San Luis, ubicado en la Unidad Vecinal 23, ha sido desde hace muchos años un lugar donde los vecinos de la comuna se congregan. Pero, a pesar de ello, no esta satisfaciendo las necesidades actuales de los vecinos, que a través de las mesas barriales han manifestado su interés por mejorar este, con la finalidad que las familias se puedan congregar en este espacio.",
   id: 3,
-  budget: "42000000",
+  budget: "$60.000.000",
   restriction: nil,
-  summary: "Se busca mejorar la plaza que esta frente a La Capilla",
-  starts_at: "2017-03-28 22:00:00",
-  ends_at: "2017-06-24 22:00:00",
-  user: level_2)
+  starts_at: 1.day.ago,
+  ends_at: 10.day.from_now,
+  active: true,
+  user: verified)
+
+
+  problem2 = Problem.create(title: "Muchos perros callejeros en mi barrio",
+  cause: "Las causas de que haya muchos perros callejeros son:
+1.- Poca capacidad en perreras municipales
+2.- Muchos perros no esterilizados
+3.- Poca educación sobre tenencia responsable de animales",
+  consequence: "1.- Plazas con perros agresivos que pueden morder a niños
+2.- Mi barrio está sucio y poco salubre con fecas
+3.- Perros sufren y tienen muy mala salud por tener que vivir en la calle",
+  user: admin)
+
+puts " ✅"
+print "Creando propuestas"
+
+tags = Faker::Lorem.words(25)
+
+proposal0 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            question: "¿Quieres que se promueva la tenencia resonsable?",
+                            summary: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "Para que haya menos perros callejeros se debe partir por tener más educación sobre tenencia responsable de animales. Es por esto que creo que la municipalidad se debe coordinar con las juntas de vecinos para que les haga talleres de tenencia responsable de animales, junto con hacer esterilizaciones masivas y gratis. Esto ayudará a que los barrios no estén llenos de fecas de perro y perros callejeros teniendo espacios más limpios y seguros para los niños y niñas de Peñalolén.",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem2,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+proposal0b = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            question: "¿Quieres que se promueva la tenencia resonsable?",
+                            summary: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "Para que haya menos perros callejeros se debe partir por tener más educación sobre tenencia responsable de animales. Es por esto que creo que la municipalidad se debe coordinar con las juntas de vecinos para que les haga talleres de tenencia responsable de animales, junto con hacer esterilizaciones masivas y gratis. Esto ayudará a que los barrios no estén llenos de fecas de perro y perros callejeros teniendo espacios más limpios y seguros para los niños y niñas de Peñalolén.",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem2)
+
+
+proposal1 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Quinchos en el Parque San Luis",
+                            question: "¿Quieres agregar quinchos al Parque San Luis?",
+                            summary: "Agregar al menos 5 quinchos con mesas para que los vecinos puedan juntarse a compartir",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem,
+                            for_challenge: true,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Mejorar la cancha",
+                            question: "¿Quieres mejorar la cancha?",
+                            summary: "Se busca comprar arcos de fútbol y mejorar la cancha para que esta sea realmente útil",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            for_challenge: true,
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem)
+
+proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Crear un huerto",
+                            question: "¿Quieres crear un huerto en el Parque?",
+                            summary: "La idea es crear un huerto, donde todos puedan tener un espacio donde plantar",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            for_challenge: true,
+                            terms_of_service: "1",
+                            problem: problem,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+
+
+proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Crear un espacio cultural en el espacio del Parque",
+                            question: "¿Te gustaría crear un espacio culturan?",
+                            summary: "La finalidad es que el Parque pueda ser utilizado en todo momento, incluso cuando llueve. Generando este espacio se podría tener esto, y potenciar las actividades culturales organizadas por los vecinos",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem,
+                            for_challenge: true)
+
+
+
+proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Crear una zona de juegos para perros",
+                            question: "¿Quieres crear una zona para ir con tu perro?",
+                            summary: "Crear un espacio donde uno pueda ir con su perro y practicar con él. Esto crea un espacio donde muchos pueden compartir un gusto en común.",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem,
+                            for_challenge: true,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+
+proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "PASADA - Crear una zona de juegos para perros",
+                            question: "¿Quieres crear una zona para ir con tu perro?",
+                            summary: "Crear un espacio donde uno pueda ir con su perro y practicar con él. Esto crea un espacio donde muchos pueden compartir un gusto en común.",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem,
+                            for_challenge: true,
+                            created_at: 20.month.ago,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+
+# Proposal.last(1).each do |proposal|
+#   title = Faker::Lorem.sentence(word_count = 3)
+#   description = Faker::Lorem.sentence(word_count = 12)
+#   banner = Banner.create!(title: title,
+#                           description: description,
+#                           style: ["banner-style banner-style-one", "banner-style banner-style-two",
+#                                   "banner-style banner-style-three"].sample,
+#                           image: ["banner-img banner-img-one", "banner-img banner-img-two",
+#                                   "banner-img banner-img-three"].sample,
+#                           target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
+#                           post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
+#                           post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
+#                           created_at: rand((Time.current - 1.week) .. Time.current))
+# end
 
 
 puts " ✅"
-print "Creating Proposals"
+print "Creando Proyecto"
 
-tags = Faker::Lorem.words(25)
-(1..5).each do |i|
-  author = User.reorder("RANDOM()").first
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  proposal = Proposal.create!(author: author,
-                              title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3) + "?",
-                              summary: Faker::Lorem.sentence(3),
-                              responsible_name: Faker::Name.name,
-                              external_url: Faker::Internet.url,
-                              description: description,
-                              created_at: rand((Time.current - 1.week) .. Time.current),
-                              tag_list: tags.sample(3).join(','),
-                              geozone: Geozone.reorder("RANDOM()").first,
-                              terms_of_service: "1",
-                              problem: problem)
-end
-#
-# puts " ✅"
-# print "Creating Archived Proposals"
-#
-# tags = Faker::Lorem.words(25)
-# (1..5).each do
-#   author = User.reorder("RANDOM()").first
-#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-#   proposal = Proposal.create!(author: author,
-#                               title: Faker::Lorem.sentence(3).truncate(60),
-#                               question: Faker::Lorem.sentence(3) + "?",
-#                               summary: Faker::Lorem.sentence(3),
-#                               responsible_name: Faker::Name.name,
-#                               external_url: Faker::Internet.url,
-#                               description: description,
-#                               tag_list: tags.sample(3).join(','),
-#                               geozone: Geozone.reorder("RANDOM()").first,
-#                               terms_of_service: "1",
-#                               created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
-# end
-#
-# puts " ✅"
-# print "Creating Successful Proposals"
-#
-tags = Faker::Lorem.words(25)
-(1..2).each do |i|
-  author = User.reorder("RANDOM()").first
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  proposal = Proposal.create!(author: author,
-                              title: Faker::Lorem.sentence(3).truncate(60),
-                              question: Faker::Lorem.sentence(3) + "?",
-                              summary: Faker::Lorem.sentence(3),
-                              responsible_name: Faker::Name.name,
-                              external_url: Faker::Internet.url,
-                              description: description,
-                              created_at: rand((Time.current - 1.week) .. Time.current),
-                              tag_list: tags.sample(3).join(','),
-                              geozone: Geozone.reorder("RANDOM()").first,
-                              terms_of_service: "1",
-                              problem: problem,
-                              cached_votes_up: Setting["votes_for_proposal_success"])
-end
+project = Project.create(name: "Mejoramiento plaza San Luis con Quinchos",
+  description: "Durante 3 semanas los vecinos de Peñalolen, de la unidad vecinal de la Unidad Vecinal 23, levantaron propuestas para mejorar el parque San Luis. Durante este tiempo los vecinos también tuvieron la posibilidad de apoyar diferentes propuestas. La",
+  id: 3,
+  starts_at: "2017-03-28 22:00:00",
+  ends_at: "2017-06-24 22:00:00",
+  proposal: proposal1)
 
-#
-# tags = ActsAsTaggableOn::Tag.where(kind: 'category')
-# (1..30).each do
-#   author = User.reorder("RANDOM()").first
-#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-#   proposal = Proposal.create!(author: author,
-#                               title: Faker::Lorem.sentence(3).truncate(60),
-#                               question: Faker::Lorem.sentence(3) + "?",
-#                               summary: Faker::Lorem.sentence(3),
-#                               responsible_name: Faker::Name.name,
-#                               external_url: Faker::Internet.url,
-#                               description: description,
-#                               created_at: rand((Time.current - 1.week) .. Time.current),
-#                               tag_list: tags.sample(3).join(','),
-#                               geozone: Geozone.reorder("RANDOM()").first,
-#                               terms_of_service: "1")
-# end
-#
-# puts " ✅"
-# print "Commenting Proposals"
-#
-# (1..100).each do |i|
-#   author = User.reorder("RANDOM()").first
-#   proposal = Proposal.reorder("RANDOM()").first
-#   Comment.create!(user: author,
-#                   created_at: rand(proposal.created_at .. Time.current),
-#                   commentable: proposal,
-#                   body: Faker::Lorem.sentence)
-# end
-#
-#
 
-#
-#
-# puts " ✅"
-# print "Voting Debates, Proposals & Comments"
-#
-# (1..100).each do
-#   voter  = not_org_users.reorder("RANDOM()").first
-#   vote   = [true, false].sample
-#   debate = Debate.reorder("RANDOM()").first
-#   debate.vote_by(voter: voter, vote: vote)
-# end
-#
-# (1..100).each do |i|
-#   voter  = not_org_users.reorder("RANDOM()").first
-#   vote   = [true, false].sample
-#   comment = Comment.reorder("RANDOM()").first
-#   comment.vote_by(voter: voter, vote: vote)
-# end
-#
-# (1..100).each do
-#   voter  = User.level_two_or_three_verified.reorder("RANDOM()").first
-#   proposal = Proposal.reorder("RANDOM()").first
-#   proposal.vote_by(voter: voter, vote: true)
-# end
-#
-#
-# puts " ✅"
-# print "Flagging Debates & Comments"
-#
-# (1..40).each do
-#   debate = Debate.reorder("RANDOM()").first
-#   flagger = User.where(["users.id <> ?", debate.author_id]).reorder("RANDOM()").first
-#   Flag.flag(flagger, debate)
-# end
-#
-# (1..40).each do
-#   comment = Comment.reorder("RANDOM()").first
-#   flagger = User.where(["users.id <> ?", comment.user_id]).reorder("RANDOM()").first
-#   Flag.flag(flagger, comment)
-# end
-#
-# (1..40).each do
-#   proposal = Proposal.reorder("RANDOM()").first
-#   flagger = User.where(["users.id <> ?", proposal.author_id]).reorder("RANDOM()").first
-#   Flag.flag(flagger, proposal)
-# end
-#
-# puts " ✅"
-# print "Creating Spending Proposals"
-#
-# tags = Faker::Lorem.words(10)
-#
-# (1..60).each do
-#   geozone = Geozone.reorder("RANDOM()").first
-#   author = User.reorder("RANDOM()").first
-#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-#   feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-#   valuation_finished = [true, false].sample
-#   feasible = [true, false].sample
-#   spending_proposal = SpendingProposal.create!(author: author,
-#                               title: Faker::Lorem.sentence(3).truncate(60),
-#                               external_url: Faker::Internet.url,
-#                               description: description,
-#                               created_at: rand((Time.current - 1.week) .. Time.current),
-#                               geozone: [geozone, nil].sample,
-#                               feasible: feasible,
-#                               feasible_explanation: feasible_explanation,
-#                               valuation_finished: valuation_finished,
-#                               tag_list: tags.sample(3).join(','),
-#                               price: rand(1000000),
-#                               terms_of_service: "1")
-# end
-#
-# puts " ✅"
-# print "Creating Valuation Assignments"
-#
-# (1..17).to_a.sample.times do
-#   SpendingProposal.reorder("RANDOM()").first.valuators << valuator.valuator
-# end
-#
-#
-# puts " ✅"
-# print "Creating Budgets"
-#
-# Budget::PHASES.each_with_index do |phase, i|
-#   descriptions = Hash[Budget::PHASES.map{ |p| ["description_#{p}",
-#                                                "<p>#{Faker::Lorem.paragraphs(2).join('</p><p>')}</p>"] }]
-#   budget = Budget.create!(
-#     descriptions.merge(
-#       name: (Date.current - 10 + i).to_s,
-#       currency_symbol: "€",
-#       phase: phase
-#     )
-#   )
-#
-#   (1..([1, 2, 3].sample)).each do
-#     group = budget.groups.create!(name: Faker::StarWars.planet)
-#
-#     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
-#     geozones.each do |geozone|
-#       group.headings << group.headings.create!(name: geozone.name,
-#                                                #geozone: geozone,
-#                                                price: rand(1 .. 100) * 100000)
-#
-#     end
-#   end
-# end
-#
-#
-# puts " ✅"
-# print "Creating Investments"
-# tags = Faker::Lorem.words(10)
-# (1..100).each do |i|
-#   heading = Budget::Heading.reorder("RANDOM()").first
-#
-#   investment = Budget::Investment.create!(
-#     author: User.reorder("RANDOM()").first,
-#     heading: heading,
-#     group: heading.group,
-#     budget: heading.group.budget,
-#     title: Faker::Lorem.sentence(3).truncate(60),
-#     external_url: Faker::Internet.url,
-#     description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
-#     created_at: rand((Time.now - 1.week) .. Time.now),
-#     feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
-#     unfeasibility_explanation: Faker::Lorem.paragraph,
-#     valuation_finished: [false, true].sample,
-#     tag_list: tags.sample(3).join(','),
-#     price: rand(1 .. 100) * 100000,
-#     terms_of_service: "1")
-# end
-#
-# puts " ✅"
-# print "Selecting Investments"
-# Budget.balloting.reorder("RANDOM()").limit(3).each do |budget|
-#   budget.investments.feasible.reorder("RANDOM()").limit(10).update_all(selected: true)
-# end
-#
-# puts " ✅"
-# print "Creating Valuation Assignments"
-#
-# (1..50).to_a.sample.times do
-#   Budget::Investment.reorder("RANDOM()").first.valuators << valuator.valuator
-# end
-#
-#
-# puts " ✅"
-# print "Creating Legislation"
-#
-# Legislation.create!(title: 'Participatory Democracy', body: 'In order to achieve...')
-#
-#
-# puts " ✅"
-# print "Ignoring flags in Debates, comments & proposals"
-#
-# Debate.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
-# Comment.flagged.reorder("RANDOM()").limit(30).each(&:ignore_flag)
-# Proposal.flagged.reorder("RANDOM()").limit(10).each(&:ignore_flag)
-#
-#
-# puts " ✅"
-# print "Hiding debates, comments & proposals"
-#
-# Comment.with_hidden.flagged.reorder("RANDOM()").limit(30).each(&:hide)
-# Debate.with_hidden.flagged.reorder("RANDOM()").limit(5).each(&:hide)
-# Proposal.with_hidden.flagged.reorder("RANDOM()").limit(10).each(&:hide)
-#
-#
-# puts " ✅"
-# print "Confirming hiding in debates, comments & proposals"
-#
-# Comment.only_hidden.flagged.reorder("RANDOM()").limit(10).each(&:confirm_hide)
-# Debate.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
-# Proposal.only_hidden.flagged.reorder("RANDOM()").limit(5).each(&:confirm_hide)
-#
-# puts " ✅"
-# print "Creating banners"
-
-Proposal.last(1).each do |proposal|
-  title = Faker::Lorem.sentence(word_count = 3)
-  description = Faker::Lorem.sentence(word_count = 12)
-  banner = Banner.create!(title: title,
-                          description: description,
-                          style: ["banner-style banner-style-one", "banner-style banner-style-two",
-                                  "banner-style banner-style-three"].sample,
-                          image: ["banner-img banner-img-one", "banner-img banner-img-two",
-                                  "banner-img banner-img-three"].sample,
-                          target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
-                          post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
-                          post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
-                          created_at: rand((Time.current - 1.week) .. Time.current))
-end
 
 puts " ✅"
 print "Creating polls"
@@ -469,14 +349,15 @@ print "Active Polls"
                      ends_at:   1.month.from_now,
                      geozone_restricted: false)
 end
-(3..4).each do |i|
-  poll = Poll.create(name: "Active Poll #{i}",
-                     starts_at: 1.month.ago,
-                     ends_at:   1.month.from_now,
-                     geozone_restricted: true,
-                     geozones: Geozone.reorder("RANDOM()").limit(3)
-                    )
-end
+
+# (3..4).each do |i|
+#   poll = Poll.create(name: "Active Poll #{i}",
+#                      starts_at: 1.month.ago,
+#                      ends_at:   1.month.from_now,
+#                      geozone_restricted: true,
+#                      geozones: Geozone.reorder("RANDOM()").limit(3)
+#                     )
+# end
 #
 #
 #
@@ -494,20 +375,21 @@ end
 #                      starts_at: 2.months.ago,
 #                      ends_at:   1.months.ago)
 #
-puts " ✅"
-print "Creating Poll Questions"
+# puts " ✅"
 
-(1..10).each do |i|
-  poll = Poll.reorder("RANDOM()").first
-  author = User.reorder("RANDOM()").first
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  open_at = rand(2.months.ago .. 2.months.from_now)
-  question = Poll::Question.create!(author: author,
-                                    title: Faker::Lorem.sentence(3).truncate(60),
-                                    description: description,
-                                    valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
-                                    poll: poll)
-end
+# print "Creating Poll Questions"
+#
+# (1..10).each do |i|
+#   poll = Poll.reorder("RANDOM()").first
+#   author = User.reorder("RANDOM()").first
+#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+#   open_at = rand(2.months.ago .. 2.months.from_now)
+#   question = Poll::Question.create!(author: author,
+#                                     title: Faker::Lorem.sentence(3).truncate(60),
+#                                     description: description,
+#                                     valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
+#                                     poll: poll)
+# end
 
 # puts " ✅"
 # print "Creating Poll Booths"
@@ -587,5 +469,5 @@ end
 #   Poll::Voter.create(poll: poll, user: user)
 # end
 
-puts " ✅"
+# puts " ✅"
 puts "All dev seeds created successfuly 👍"

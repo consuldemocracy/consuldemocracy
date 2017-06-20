@@ -32,4 +32,22 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
+  #TODO: Filtrar por las propuestas ganadoras
+  def valid_proposals
+    Proposal.all
+  end
+
+  #TODO: Tomar el desafío activo (debe ser solo uno)
+  def challenge
+    Problem.last
+  end
+
+  def most_voted_proposals
+    Proposal.all.reorder(cached_votes_up: :desc).first(3)
+  end
+
+  def winning_proposal?(proposal)
+    most_voted_proposals.select{ |p| p.id == proposal.id}.any?
+  end
+
 end

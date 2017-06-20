@@ -6,6 +6,7 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include ProposalsHelper
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -16,8 +17,10 @@ class Proposal < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   belongs_to :problem
+
   has_many :comments, as: :commentable
   has_many :proposal_notifications
+  has_one :project
 
   accepts_nested_attributes_for :problem
 
@@ -48,7 +51,9 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
+  scope :sort_by_data_challenges,   -> { proposals_for_challenges.sort_by_created_at }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
+  scope :proposals_for_challenges,  -> { where(for_challenge: true) }
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
@@ -159,7 +164,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def successful?
-    total_votes >= Proposal.votes_needed_for_success
+    if !self.for_challenge
+      total_votes >= Proposal.votes_needed_for_success
+    else
+      winning_proposal?(self) && Date.today > self.problem.ends_at
+    end
   end
 
   def archived?
