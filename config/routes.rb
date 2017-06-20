@@ -596,6 +596,7 @@ Rails.application.routes.draw do
   get 'proceso/registro-de-lobbies',                    to: 'pages#show', id: 'processes/lobbies/index',          as: 'lobbies'
   get 'proceso/registro-de-lobbies/borrador',           to: 'pages#show', id: 'processes/lobbies/draft',          as: 'lobbies_draft'
   get 'proceso/parque-lineal-manzanares',               to: 'pages#show', id: 'processes/manzanares/index',       as: 'manzanares'
+  get 'proceso/once-plazas',                            to: 'pages#show', id: 'processes/once_plazas/index',      as: 'once_plazas'
 
   #Landings
   get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'
