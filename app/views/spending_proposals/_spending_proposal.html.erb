@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-3 column supports-container">
+      <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-12 column supports-container">
           <%= render 'votes',
                     { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
       </div>

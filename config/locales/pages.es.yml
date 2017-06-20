@@ -14,7 +14,14 @@ es:
         challenges: "Desafíos"
         polls: "Votaciones"
         budgets: "Presupuestos participativos"
+        design_phase: "Talleres de Diseño"
         other: "Otra información de interés"
+      design_phase:
+        title: "Talleres de Diseño"
+        description: "La comunidad se reunirá para agregar sus ideas a la propuesta, definir tareas para su implementación y conformar un equipo que supervise estas tareas:"
+        feature_1: "Vecinas y vecinos proponen lo que les gustaría agregar a la propuesta ganadora."
+        feature_2: "Se define en conjunto un plan de trabajo, con tareas tanto del municipio como de la comunidad."
+        feature_3: "Municipio y vecinos adquieren compromisos y crean una estrategia de seguimiento para la propuesta."
       challenges:
         title: "Desafíos"
         description: "ABRE permite a la comunidad participar de las soluciones para los problemas que la afectan. El municipio propondrá desafíos a resolver en conjunto con la comunidad, para construir soluciones participativas:"
