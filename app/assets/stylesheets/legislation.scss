@@ -37,20 +37,20 @@
     @include breakpoint(medium) {
       margin: 1.5rem 0;
     }
-  }
 
-  li {
-    display: block;
-    cursor: pointer;
-    margin-bottom: 1rem;
+    li {
+      display: block;
+      cursor: pointer;
+      margin-bottom: 1rem;
 
-    @include breakpoint(medium) {
-      margin-bottom: 2rem;
-      max-width: 80%;
-    }
+      @include breakpoint(medium) {
+        margin-bottom: 2rem;
+        max-width: 80%;
+      }
 
-    &.active {
-      font-weight: 700;
+      &.active {
+        font-weight: 700;
+      }
     }
   }
 }

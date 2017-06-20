@@ -135,9 +135,6 @@ en:
       text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
       date: "From May 15 to June 30"
       button: "Vote projects"
-      chincheto:
-        title: "Watch SrChincheto77 video on YouTube (opens in new tab)"
-        alt: "SrChincheto77 accompanies us for the Madrid that decides the citizenship!"
       plazas_abiertas:
         label: "Event"
         title: "Plazas abiertas"
@@ -148,6 +145,9 @@ en:
         title: "Participatory budgets"
         text: "The people who have proposed projects in participatory budgets tell us in video what their idea is."
         link: "Watch videos of Participatory budgets"
+      chincheto:
+        title: "Watch SrChincheto77 video on YouTube (opens in new tab)"
+        alt: "SrChincheto77 accompanies us for the Madrid that decides the citizenship!"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

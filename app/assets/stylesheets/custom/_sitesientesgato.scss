@@ -8,11 +8,16 @@
   -moz-font-smoothing: subpixel-antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
 
-  h1, h2, p, a {
+  h1,
+  h2,
+  p,
+  a {
     font-family: 'Rubik', $body-font-family;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     color: #1d1d1d;
   }
 
@@ -41,7 +46,7 @@
     position: relative;
 
     .main-button {
-      background: rgba(0,74,131,.8) !important;
+      background: rgba(0, 74, 131, 0.8) !important;
       left: 50%;
       margin-left: rem-calc(-72);
       position: absolute;
@@ -65,10 +70,10 @@
   }
 
   .lead {
-    color: black;
+    color: #000;
     font-size: rem-calc(26);
     font-style: italic;
-    padding-top: $line-height*3;
+    padding-top: $line-height * 3;
 
     span {
       font-style: normal;
@@ -76,28 +81,28 @@
   }
 
   .big-lead {
-    padding: $line-height*4 0 $line-height*6;
+    padding: $line-height * 4 0 $line-height * 6;
   }
 
   .section {
-    min-height: $line-height*10;
-    padding: $line-height*2 0;
+    min-height: $line-height * 10;
+    padding: $line-height * 2 0;
   }
 
   .header {
-    background: #FFBD7A;
+    background: #ffbd7a;
   }
 
   .section-1 {
-    background: #FF7EA3;
+    background: #ff7ea3;
   }
 
   .section-2 {
-    background: #20D7C8;
+    background: #20d7c8;
   }
 
   .section-3 {
-    background: #FFBC79;
+    background: #ffbc79;
   }
 
   .social {
@@ -108,7 +113,7 @@
       width: 48px;
 
       &:hover {
-        opacity: .5;
+        opacity: 0.5;
         text-decoration: none;
       }
     }
