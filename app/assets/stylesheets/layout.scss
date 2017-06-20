@@ -339,7 +339,7 @@ header {
 
   .top-bar-title a {
     @include logo;
-    line-height: rem-calc(80) !important;
+    line-height: rem-calc(0) !important;
 
     &:hover {
       text-decoration: none;
@@ -454,7 +454,7 @@ header {
         width: 100%;
 
         @include breakpoint(medium) {
-          color: $text;
+          color: $gray1;
           display: block;
           font-weight: bold;
           width: auto;

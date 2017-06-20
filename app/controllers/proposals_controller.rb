@@ -9,7 +9,7 @@ class ProposalsController < ApplicationController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
-  has_orders %w{hot_score confidence_score created_at relevance archival_date}, only: :index
+  has_orders %w{data_challenges hot_score confidence_score created_at relevance archival_date}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
@@ -88,7 +88,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :responsible_name, :author_id, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :prioritize, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :cause, :consequence, :user_id])
+      params.require(:proposal).permit(:title, :responsible_name, :author_id, :question, :summary, :description, :external_url, :video_url, :for_challenge, :responsible_name, :tag_list, :prioritize, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :cause, :consequence, :user_id])
     end
 
     def retired_params
@@ -132,6 +132,11 @@ class ProposalsController < ApplicationController
 
     def load_successful_proposals
       @proposal_successful_exists = Proposal.successful.exists?
+    end
+
+    # TODO:
+    def load_municipality_proposals
+      @proposal_municipality = Proposal.where(problem.user.administrator != nil)
     end
 
 end

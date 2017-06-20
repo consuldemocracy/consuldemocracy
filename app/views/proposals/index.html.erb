@@ -32,12 +32,14 @@
         <% end %>
       </div>
 
-      <% if has_banners? %>
+      <!-- <% if has_banners? %>
         <%= render "shared/banner" %>
+      <% end %> -->
+      <% if has_active_problem? %>
+        <%= render "problem", problem: active_problem %>
       <% end %>
-
       <% if @proposal_successful_exists %>
-        <%= render "successful_banner" %>
+        <!-- <%= render "successful_banner" %> -->
       <% elsif @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
@@ -68,6 +70,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+          <%= yield :header_addon %>
         <% if params[:retired].blank? %>
             <%= render "shared/tag_cloud", taggable: 'proposal' %>
             <%= render 'categories' %>

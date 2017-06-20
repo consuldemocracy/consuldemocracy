@@ -4,4 +4,12 @@ module ProblemsHelper
     Problem.all.where('"starts_at" < ? AND "ends_at" > ?', Date.today, Date.today)
   end
 
+  def has_active_problem?
+    Problem.all.where("active").any? && active_problem.ends_at > Date.today
+  end
+
+  def active_problem
+    Problem.all.where("active").first
+  end
+
 end

@@ -58,14 +58,13 @@ Setting['feature.signature_sheets'] = false
 puts " ✅"
 print "Creando unidades vecinales y zonas"
 
-Geozone.create(name: "city")
-Geozone.create(name: "Existent District", census_code: "01")
-(1..31).each { |i| Geozone.create(name: "Unidad Vecinal #{i}", external_code: i.ord, census_code: i.ord) }
-Geozone.create(name: "La Faena", external_code: 32, census_code: 32)
-Geozone.create(name: "Lo Hermida", external_code: 33, census_code: 33)
-Geozone.create(name: "San Luis", external_code: 34, census_code: 34)
-Geozone.create(name: "Peñalolen Alto", external_code: 35, census_code: 35)
-Geozone.create(name: "Peñalolen Nuevo", external_code: 36, census_code: 36)
+
+(1..31).each { |i| Geozone.create(name: "Unidad Vecinal #{i}", population: 3000, external_code: i.ord, census_code: i.ord) }
+Geozone.create(name: "La Faena", population: 15000, external_code: 32, census_code: 32)
+Geozone.create(name: "Lo Hermida", population: 45000, external_code: 33, census_code: 33)
+Geozone.create(name: "San Luis", population: 44000, external_code: 34, census_code: 34)
+Geozone.create(name: "Peñalolen Alto", population: 57000, external_code: 35, census_code: 35)
+Geozone.create(name: "Peñalolen Nuevo", population: 70000, external_code: 36, census_code: 36)
 
 
 
@@ -161,18 +160,60 @@ print "Creando desafío"
 
 problem = Problem.create(title: "Mejoramiento Parque San Luis",
   summary: "Actualmente el Parque San Luis no está siendo útil para los vecinos ya que no cumple con las necesidades y expectativas de estos.",
+  cause: "Estas son las cauas",
+  consequence: "Estas son las consecuencias",
   description: "El Parque San Luis, ubicado en la Unidad Vecinal 23, ha sido desde hace muchos años un lugar donde los vecinos de la comuna se congregan. Pero, a pesar de ello, no esta satisfaciendo las necesidades actuales de los vecinos, que a través de las mesas barriales han manifestado su interés por mejorar este, con la finalidad que las familias se puedan congregar en este espacio.",
   id: 3,
   budget: "$60.000.000",
   restriction: nil,
-  starts_at: "2017-03-28 22:00:00",
-  ends_at: "2017-06-24 22:00:00",
+  starts_at: 1.day.ago,
+  ends_at: 10.day.from_now,
+  active: true,
+  user: verified)
+
+
+  problem2 = Problem.create(title: "Muchos perros callejeros en mi barrio",
+  cause: "Las causas de que haya muchos perros callejeros son:
+1.- Poca capacidad en perreras municipales
+2.- Muchos perros no esterilizados
+3.- Poca educación sobre tenencia responsable de animales",
+  consequence: "1.- Plazas con perros agresivos que pueden morder a niños
+2.- Mi barrio está sucio y poco salubre con fecas
+3.- Perros sufren y tienen muy mala salud por tener que vivir en la calle",
   user: admin)
 
 puts " ✅"
 print "Creando propuestas"
 
 tags = Faker::Lorem.words(25)
+
+proposal0 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            question: "¿Quieres que se promueva la tenencia resonsable?",
+                            summary: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "Para que haya menos perros callejeros se debe partir por tener más educación sobre tenencia responsable de animales. Es por esto que creo que la municipalidad se debe coordinar con las juntas de vecinos para que les haga talleres de tenencia responsable de animales, junto con hacer esterilizaciones masivas y gratis. Esto ayudará a que los barrios no estén llenos de fecas de perro y perros callejeros teniendo espacios más limpios y seguros para los niños y niñas de Peñalolén.",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem2,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+proposal0b = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            question: "¿Quieres que se promueva la tenencia resonsable?",
+                            summary: "Tenencia responsable de animales para ambientes más sanos y seguros",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "Para que haya menos perros callejeros se debe partir por tener más educación sobre tenencia responsable de animales. Es por esto que creo que la municipalidad se debe coordinar con las juntas de vecinos para que les haga talleres de tenencia responsable de animales, junto con hacer esterilizaciones masivas y gratis. Esto ayudará a que los barrios no estén llenos de fecas de perro y perros callejeros teniendo espacios más limpios y seguros para los niños y niñas de Peñalolén.",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem2)
+
 
 proposal1 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Quinchos en el Parque San Luis",
@@ -186,6 +227,7 @@ proposal1 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
+                            for_challenge: true,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
 proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
@@ -197,6 +239,7 @@ proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
+                            for_challenge: true,
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem)
@@ -211,6 +254,7 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
                             geozone: Geozone.reorder("RANDOM()").first,
+                            for_challenge: true,
                             terms_of_service: "1",
                             problem: problem,
                             cached_votes_up: Setting["votes_for_proposal_success"])
@@ -228,7 +272,8 @@ proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             tag_list: tags.sample(3).join(','),
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
-                            problem: problem)
+                            problem: problem,
+                            for_challenge: true)
 
 
 
@@ -244,6 +289,24 @@ proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
+                            for_challenge: true,
+                            cached_votes_up: Setting["votes_for_proposal_success"])
+
+
+proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
+                            title: "PASADA - Crear una zona de juegos para perros",
+                            question: "¿Quieres crear una zona para ir con tu perro?",
+                            summary: "Crear un espacio donde uno pueda ir con su perro y practicar con él. Esto crea un espacio donde muchos pueden compartir un gusto en común.",
+                            responsible_name: Faker::Name.name,
+                            external_url: Faker::Internet.url,
+                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            created_at: rand((Time.current - 1.week) .. Time.current),
+                            tag_list: tags.sample(3).join(','),
+                            geozone: Geozone.reorder("RANDOM()").first,
+                            terms_of_service: "1",
+                            problem: problem,
+                            for_challenge: true,
+                            created_at: 20.month.ago,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
 
@@ -286,14 +349,15 @@ print "Active Polls"
                      ends_at:   1.month.from_now,
                      geozone_restricted: false)
 end
-(3..4).each do |i|
-  poll = Poll.create(name: "Active Poll #{i}",
-                     starts_at: 1.month.ago,
-                     ends_at:   1.month.from_now,
-                     geozone_restricted: true,
-                     geozones: Geozone.reorder("RANDOM()").limit(3)
-                    )
-end
+
+# (3..4).each do |i|
+#   poll = Poll.create(name: "Active Poll #{i}",
+#                      starts_at: 1.month.ago,
+#                      ends_at:   1.month.from_now,
+#                      geozone_restricted: true,
+#                      geozones: Geozone.reorder("RANDOM()").limit(3)
+#                     )
+# end
 #
 #
 #
@@ -311,20 +375,21 @@ end
 #                      starts_at: 2.months.ago,
 #                      ends_at:   1.months.ago)
 #
-puts " ✅"
-print "Creating Poll Questions"
+# puts " ✅"
 
-(1..10).each do |i|
-  poll = Poll.reorder("RANDOM()").first
-  author = User.reorder("RANDOM()").first
-  description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-  open_at = rand(2.months.ago .. 2.months.from_now)
-  question = Poll::Question.create!(author: author,
-                                    title: Faker::Lorem.sentence(3).truncate(60),
-                                    description: description,
-                                    valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
-                                    poll: poll)
-end
+# print "Creating Poll Questions"
+#
+# (1..10).each do |i|
+#   poll = Poll.reorder("RANDOM()").first
+#   author = User.reorder("RANDOM()").first
+#   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
+#   open_at = rand(2.months.ago .. 2.months.from_now)
+#   question = Poll::Question.create!(author: author,
+#                                     title: Faker::Lorem.sentence(3).truncate(60),
+#                                     description: description,
+#                                     valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
+#                                     poll: poll)
+# end
 
 # puts " ✅"
 # print "Creating Poll Booths"
@@ -404,5 +469,5 @@ end
 #   Poll::Voter.create(poll: poll, user: user)
 # end
 
-puts " ✅"
+# puts " ✅"
 puts "All dev seeds created successfuly 👍"

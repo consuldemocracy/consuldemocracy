@@ -14,6 +14,7 @@ class CreateProposal < ActiveRecord::Migration
       t.integer   "cached_votes_up",  default: 0
       t.integer   "comments_count",   default: 0
       t.datetime  "confirmed_hide_at"
+      t.boolean   "for_challenge",    default: false
       t.integer   "hot_score",        limit: 8, default: 0
       t.integer   "confidence_score", default: 0
 

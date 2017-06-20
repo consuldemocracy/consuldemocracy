@@ -44,6 +44,6 @@ class Admin::GeozonesController < Admin::BaseController
   private
 
     def geozone_params
-      params.require(:geozone).permit(:name, :external_code, :census_code, :html_map_coordinates)
+      params.require(:geozone).permit(:name, :population, :external_code, :census_code, :html_map_coordinates)
     end
 end

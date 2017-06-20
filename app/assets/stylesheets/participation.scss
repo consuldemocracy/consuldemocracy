@@ -596,7 +596,7 @@
     .debate-description, .proposal-description, .investment-project-description, .budget-investment-description {
       color: $text;
       font-size: rem-calc(13);
-      height: rem-calc(72);
+      height: rem-calc(48);
       line-height: $line-height;
       margin-bottom: rem-calc(12);
       margin-top: 0;
@@ -1242,6 +1242,7 @@ ul.ballot-list {
     }
   }
 }
+
 
 .featured-proposals-ballot-banner, .sucessfull-proposals-banner {
   background: #2D3E50 image-url("ballot_tiny.gif") no-repeat;

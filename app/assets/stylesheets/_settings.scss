@@ -53,8 +53,15 @@ $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
-$brand:             #DF0101;
+$brand:             #D80017;
 $dark:              darken($brand, 10%);
+
+$light-blue:        #3FA9F5;
+$orange:            #FF5722;
+$light-orange:      #FF8964;
+$gray1:             #2D4059;
+$gray2:             #6C798A;
+$gray3:             #B1BBC9;
 
 $text:              #222222;
 $text-medium:       #515151;
@@ -74,7 +81,7 @@ $delete:            #F04124;
 $check:             #46DB91;
 
 $proposals:         #FFA42D;
-$proposals-dark:    #794500;
+$proposals-dark:    $gray2;
 
 $budget:            #7E328A;
 $budget-hover:      #7571BF;
@@ -109,7 +116,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
+  primary: $light-blue,
   secondary: #777,
   success: #3adb76,
   warning: #ffae00,
@@ -122,7 +129,8 @@ $black: #222222;
 $white: #ffffff;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-family: 'Fira sans', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-family-title: 'Dosis', 'Helvetica', 'Arial', sans-serif !important;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;

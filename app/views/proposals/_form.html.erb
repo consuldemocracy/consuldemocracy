@@ -54,6 +54,8 @@
       </div>
     </div>
 
+    <%= f.hidden_field :for_challenge, :value => true %>
+
     <div class="small-12 column">
       <%= f.label :prioritize, t("proposals.form.proposal_prioritize") %>
       <%= f.text_area :prioritize, rows: 2, label: false,

@@ -334,6 +334,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
+        data_challenges: Desafíos
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -353,6 +354,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
+      remaining_time: Quedan %{days} para crear propuestas
       title: Propuestas ciudadanas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
@@ -366,7 +368,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
     notice:
-      retired: Propuesta retirada
+      retired: Propuesta retiradadays
     proposal:
       already_supported: "¡Ya has apoyado esta propuesta, compártela!"
       comments:
@@ -375,7 +377,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
         zero: Sin comentarios
       proposal: Propuesta
       reason_for_supports_necessary: 1% del Censo
-      support: Apoyar
+      support: Apoyar esta propuesta
       support_title: Apoyar esta propuesta
       supports:
         one: 1 apoyo
@@ -385,9 +387,11 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios y pasará a la %{voting}."
+      successful_for_challenge: 'Ha finalizado el tiempo de recepción de propuestas, y esta propuesta ha estado dentro de las 3 más votadas y pasará a la %{voting}.'
       voting: "próxima votación"
     show:
       author_deleted: Usuario eliminado
+      tag_succesful: "Dentro de las 3 propuestas más votadas"
       code: 'Código de la propuesta:'
       comments:
         one: 1 Comentario
@@ -527,7 +531,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
         see_all: "Ver todas"
     tags_cloud:
       tags: Tendencias
-      districts: "Distritos"
+      districts: "Unidades vecinales"
       districts_list: "Listado de distritos"
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
