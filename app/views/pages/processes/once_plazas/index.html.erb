@@ -68,8 +68,8 @@
           <figure class="figure-card">
             <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
             <figcaption>
-              <span class="background-<%= slug %>">ONCE PLAZAS</span><br>
-              <h3 class="color-<%= slug %>"><%= name %></h3>
+              <span>ONCE PLAZAS</span><br>
+              <h3><%= name %></h3>
             </figcaption>
           </figure>
           <ul class="no-bullet">
@@ -83,7 +83,7 @@
               <%= link_to "https://decide.madrid.es/legislation/processes/#{process_id}/allegations",
                           class: "button hollow expanded text-center margin-top",
                           title: "Ver proceso de #{name}" do %>
-                  Ver proceso <%= name %></span>
+                  Ver proceso <%= name %>
               <% end %>
             </li>
           </ul>
