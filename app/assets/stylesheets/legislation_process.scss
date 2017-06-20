@@ -69,15 +69,6 @@ $epigraph-line-height: rem-calc(22);
           float: left;
         }
       }
-
-      p {
-        font-size: $epigraph-font-size;
-        line-height: $epigraph-line-height;
-
-        @include breakpoint(medium) {
-          margin-left: 25%;
-        }
-      }
     }
   }
 
