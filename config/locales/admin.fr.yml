@@ -135,6 +135,7 @@ fr:
         table_feasibility: "Faisabilité"
         table_valuation_finished: "Ev. Ter."
         table_selection: "Sélection"
+        table_winner: "Winner"
       show:
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateur assigné
