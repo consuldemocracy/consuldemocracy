@@ -653,7 +653,8 @@ footer {
   background: $highlight;
   color: $link;
 
-  &:hover {
+  &:hover,
+  &.active {
     background: $brand;
     color: #fff;
   }
