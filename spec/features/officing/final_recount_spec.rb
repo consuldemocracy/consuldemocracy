@@ -110,10 +110,12 @@ feature 'Officing Final Recount' do
                     booth_assignment: final_officer_assignment.booth_assignment,
                     date: 7.days.ago,
                     count: 100)
-    33.times { create(:poll_voter, :valid_document,
-                      poll: poll,
-                      booth_assignment: final_officer_assignment.booth_assignment,
-                      created_at: final_recount.date) }
+    33.times do
+      create(:poll_voter, :valid_document,
+             poll: poll,
+             booth_assignment: final_officer_assignment.booth_assignment,
+             created_at: final_recount.date)
+    end
 
     visit new_officing_poll_final_recount_path(poll)
     within("#poll_final_recount_#{final_recount.id}") do
