@@ -486,7 +486,6 @@ describe Budget::Investment do
 
   end
 
-
   describe 'Permissions' do
     let(:budget)      { create(:budget) }
     let(:group)       { create(:budget_group, budget: budget) }

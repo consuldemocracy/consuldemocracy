@@ -322,6 +322,12 @@ FactoryGirl.define do
     reason "unfeasible"
   end
 
+  factory :budget_investment_checkpoint, class: 'Budget::Investment::Checkpoint' do
+    association :investment, factory: :budget_investment
+    sequence(:title)     { |n| "Budget Investment Checkpoint #{n} title" }
+    description          'Checkpoint description'
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
