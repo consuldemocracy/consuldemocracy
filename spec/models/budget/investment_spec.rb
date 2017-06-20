@@ -58,27 +58,27 @@ describe Budget::Investment do
 
     describe "description" do
 
-      it "should be valid when image and image_description are not defined" do
+      it "should be valid when image and image_title are not defined" do
         investment_with_image.image = nil
-        investment_with_image.image_description = nil
+        investment_with_image.image_title = nil
 
         expect(investment_with_image).to be_valid
       end
 
       it "should not be valid when correct image attached but no image description provided" do
-        investment_with_image.image_description = ''
+        investment_with_image.image_title = ''
 
         expect(investment_with_image).to_not be_valid
       end
 
       it "should not be valid when image description is too short" do
-        investment_with_image.image_description = 'a'*3
+        investment_with_image.image_title = 'a'*3
 
         expect(investment_with_image).to_not be_valid
       end
 
       it "should not be valid when image description is too long" do
-        investment_with_image.image_description = 'a'*81
+        investment_with_image.image_title = 'a'*81
 
         expect(investment_with_image).to_not be_valid
       end

@@ -100,7 +100,7 @@ es:
         location: "Ubicación"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
         image: "Imagen descriptiva de la propueta"
-        image_description: "Texto descriptivo de la imagen"
+        image_title: "Texto descriptivo de la imagen"
       comment:
         body: "Comentario"
         user: "Usuario"

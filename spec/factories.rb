@@ -321,7 +321,7 @@ FactoryGirl.define do
 
     trait :with_descriptive_image do
       image { File.new("spec/fixtures/files/logo_header.jpg") }
-      image_description "Lorem ipsum dolor sit amet"
+      image_title "Lorem ipsum dolor sit amet"
     end
   end
 

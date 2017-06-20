@@ -40,8 +40,8 @@
       <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
       <% if investment.image.exists? %>
         <%= image_tag investment.image.url(:medium),
-                      title: investment.image_description,
-                      alt: investment.image_description %>
+                      title: investment.image_title,
+                      alt: investment.image_title %>
       <% end %>
 
       <%= render 'shared/tags', taggable: investment %>

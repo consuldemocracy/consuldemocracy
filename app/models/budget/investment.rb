@@ -42,8 +42,8 @@ class Budget
     validates :description, length: { maximum: Budget::Investment.description_max_length }
     validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
     validates_attachment :image, content_type: { content_type: ["image/jpeg"] }
-    validates :image_description, presence: true, if: -> { image.present? }
-    validates :image_description, length: { in: 4..Budget::Investment.title_max_length }, if: -> { image.present? }
+    validates :image_title, presence: true, if: -> { image.present? }
+    validates :image_title, length: { in: 4..Budget::Investment.title_max_length }, if: -> { image.present? }
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }

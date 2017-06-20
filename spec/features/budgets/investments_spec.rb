@@ -39,7 +39,7 @@ feature 'Budget Investments' do
     end
 
     within("#budget_investment_#{investment_with_image.id}") do
-      expect(page).to have_css("img.th[alt='#{investment_with_image.image_description}'][title='#{investment_with_image.image_description}']")
+      expect(page).to have_css("img.th[alt='#{investment_with_image.image_title}'][title='#{investment_with_image.image_title}']")
     end
   end
 
@@ -377,7 +377,7 @@ feature 'Budget Investments' do
 
     visit budget_investment_path(budget_id: budget.id, id: investment_with_image.id)
 
-    expect(page).to have_css("img[alt='#{investment_with_image.image_description}'][title='#{investment_with_image.image_description}']")
+    expect(page).to have_css("img[alt='#{investment_with_image.image_title}'][title='#{investment_with_image.image_title}']")
   end
 
   scenario "Show back link contains heading id" do
