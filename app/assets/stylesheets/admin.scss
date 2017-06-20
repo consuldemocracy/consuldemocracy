@@ -278,6 +278,10 @@ $admin-color: #cf3638;
     a {
       font-weight: normal;
     }
+
+    .active {
+      border-bottom: 0;
+    }
   }
 }
 
