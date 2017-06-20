@@ -25,7 +25,9 @@
 .table-for-mobile {
 
   @include breakpoint(medium down) {
-    th, td  {
+
+    th,
+    td {
       display: block;
     }
   }
@@ -35,13 +37,14 @@
 // - - - - - - - - - - -
 
 .choose-proposal-type {
-  min-height: $line-height*25;
+  min-height: $line-height * 25;
 
   .panel {
 
-    &.proposal, &.participatory-budget {
+    &.proposal,
+    &.participatory-budget {
       border: 0;
-      color: white;
+      color: #fff;
       position: relative;
     }
 
@@ -59,25 +62,14 @@
     }
 
     p a {
-      color: white;
+      color: #fff;
       text-decoration: underline;
     }
 
     .button {
-      background: white;
+      background: #fff;
       color: $text;
     }
-  }
-}
-
-// Voluntarios mesas presenciales
-// - - - - - - - - - - - - - - - -
-
-.volunteer-poll-districts {
-
-  .any_district {
-    background: $highlight;
-    padding-top: rem-calc(6);
   }
 }
 
@@ -89,8 +81,9 @@
   .row.expanded {
     background: $brand;
 
-    h1, h2 {
-      color: white;
+    h1,
+    h2 {
+      color: #fff;
     }
 
     h2 {
@@ -103,7 +96,7 @@
   }
 
   .row.expanded.banner {
-    background: #FFDC00;
+    background: #ffdc00;
     margin-bottom: rem-calc(-48);
     padding-top: $line-height;
   }
@@ -115,7 +108,7 @@
 .activity {
 
   .button.float-right ~ .callout {
-    margin-right: $line-height/2;
+    margin-right: $line-height / 2;
   }
 }
 
@@ -128,7 +121,7 @@
 
 .highlight {
   background: $highlight;
-  padding: $line-height/2;
+  padding: $line-height / 2;
 
   .callout.info {
     border: 1px solid $color-info;
@@ -144,7 +137,7 @@
 }
 
 .panel {
-  background: white;
+  background: #fff;
   border: 1px solid $border;
   padding: $line-height;
 }
@@ -157,7 +150,7 @@
 }
 
 .panel.white {
-  background: white;
+  background: #fff;
 }
 
 .jumbo {
@@ -167,27 +160,33 @@
     padding: rem-calc(24) 0;
   }
 
-  h1, p {
+  h1,
+  p {
     color: $text;
   }
 }
 
 .jumbo-survey {
-  background: #33DADF;
-  border-bottom: 1px solid #33DADF;
+  background: #33dadf;
+  border-bottom: 1px solid #33dadf;
 
   @include breakpoint(medium) {
     padding-top: $line-height;
   }
 
   h1 {
-    border-left: 2px solid black;
+    border-left: 2px solid #000;
     display: inline-block;
     padding-left: $line-height;
   }
 
-  h1, h2, .back, .icon-angle-left, .p, a {
-    color: black;
+  h1,
+  h2,
+  a,
+  p,
+  .back,
+  .icon-angle-left {
+    color: #000;
   }
 }
 
@@ -199,8 +198,13 @@
     padding-top: $line-height;
   }
 
-  h1, h2, .back, .icon-angle-left, .p, a {
-    color: black;
+  h1,
+  h2,
+  a,
+  p,
+  .back,
+  .icon-angle-left {
+    color: #000;
   }
 }
 
@@ -216,18 +220,19 @@
   text-align: center !important;
 }
 
-.menu.no-padding>li>a {
+.menu.no-padding > li > a {
   padding-left: 0;
 }
 
 ul.menu > li > a {
   line-height: $line-height;
-  padding: $line-height/2 $line-height/2 $line-height 0;
+  padding: $line-height / 2 $line-height / 2 $line-height 0;
 }
 
 .tabs li.is-active {
 
-  a, span.is-active {
+  a,
+  span.is-active {
     color: $brand;
     border-bottom: 2px solid $brand;
     font-weight: bold;
@@ -238,15 +243,15 @@ ul.menu > li > a {
     line-height: 1;
     margin-bottom: -1px;
     margin-right: $line-height;
-    padding: $line-height/2 0;
+    padding: $line-height / 2 0;
   }
 }
 
 .sticky-bottom {
-  margin-bottom: rem-calc(-$line-height*2);
+  margin-bottom: rem-calc(-$line-height * 2);
 
   &.highlight {
-    border-bottom: $line-height/2 solid $highlight;
+    border-bottom: $line-height / 2 solid $highlight;
   }
 }
 
@@ -269,17 +274,17 @@ table {
   border: $border;
 
   th {
-    background: #F8F9FB;
+    background: #f8f9fb;
   }
 
   tr {
 
     &:nth-child(odd) {
-      background: white;
+      background: #fff;
     }
 
     &:nth-child(even) {
-      background: #FAFCFB;
+      background: #fafcfb;
     }
 
     &.success {
@@ -313,10 +318,17 @@ table {
 // 02. Header
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.jumbo-survey, .jumbo-featured, .jumbo-investment-project {
+.jumbo-survey,
+.jumbo-featured,
+.jumbo-investment-project {
 
-  h1, h2, .back, .icon-angle-left, p, a {
-    color: black;
+  h1,
+  h2,
+  a,
+  p,
+  .back,
+  .icon-angle-left {
+    color: #000;
   }
 
   a {
@@ -324,25 +336,25 @@ table {
   }
 
   a.button {
-    background: white;
+    background: #fff;
     color: $brand;
     margin-bottom: rem-calc(3);
     text-decoration: none;
   }
 
   .social-share-button a {
-    color: white;
+    color: #fff;
 
     &.social-share-button-twitter:hover {
-      color: #40A2D1;
+      color: #40a2d1;
     }
 
     &.social-share-button-facebook:hover {
-      color: #354F88;
+      color: #354f88;
     }
 
-    &.social-share-button-google_plus:hover {
-      color: #CE3E26;
+    &[class^="ssb-icon ssb-google"]:hover {
+      color: #ce3e26;
     }
   }
 }
@@ -350,14 +362,16 @@ table {
 .jumbo-brand {
   background: $brand;
 
-  h1, p, a {
-    color: white;
+  h1,
+  p,
+  a {
+    color: #fff;
   }
 }
 
 .jumbo-survey {
-  background: #33DADF;
-  border-bottom: 1px solid #33DADF;
+  background: #33dadf;
+  border-bottom: 1px solid #33dadf;
 }
 
 .jumbo-featured {
@@ -370,15 +384,20 @@ table {
   border-bottom: 1px solid $budget;
 
   &.investment-project-geozone {
-    min-height: $line-height*10;
+    min-height: $line-height * 10;
   }
 
   h1 {
     margin-bottom: 0;
   }
 
-  h1, h2, .back, .icon-angle-left, p, a {
-    color: white;
+  h1,
+  h2,
+  a,
+  p,
+  .back,
+  .icon-angle-left {
+    color: #fff;
   }
 
   &.welcome {
@@ -392,7 +411,7 @@ table {
 
       ul li {
         margin-right: $line-height;
-        padding-top: $line-height/2;
+        padding-top: $line-height / 2;
 
         .icon-calendar {
           display: none;
@@ -408,8 +427,8 @@ form.locale-form select {
 
 .orbit-bullets button {
   background-color: #ccc;
-  height: $line-height/2;
-  width: $line-height/2;
+  height: $line-height / 2;
+  width: $line-height / 2;
 
   &.is-active {
     background-color: $brand;
@@ -422,18 +441,18 @@ form.locale-form select {
 .callout.featured {
   background-color: $featured;
   border-color: $warning-border;
-  color: black;
+  color: #000;
 
   a {
-    color: black;
+    color: #000;
     font-weight: bold;
 
     &:hover {
-      color: black;
+      color: #000;
       text-decoration: none;
 
       h3 {
-        color: black;
+        color: #000;
       }
     }
   }
@@ -460,7 +479,8 @@ form.locale-form select {
     padding: rem-calc(24) 0;
   }
 
-  h1, p {
+  h1,
+  p {
     color: $text;
   }
 }
@@ -492,7 +512,7 @@ form.locale-form select {
     }
 
     &:last-of-type {
-      border-bottom: none;
+      border-bottom: 0;
     }
   }
 
@@ -507,15 +527,15 @@ form.locale-form select {
   background-color: #f2f2f2;
 
   ul {
-    height: $line-height*2;
-    margin: $line-height/4 0;
+    height: $line-height * 2;
+    margin: $line-height / 4 0;
 
     li {
       counter-increment: articles;
       display: inline-block;
-      height: $line-height*2;
+      height: $line-height * 2;
       list-style-type: none;
-      margin: 0 $line-height/4;
+      margin: 0 $line-height / 4;
       width: rem-calc(36);
 
       &:last-of-type a::after {
@@ -538,22 +558,17 @@ form.locale-form select {
     transform: translateY(-50%);
     height: rem-calc(36);
     line-height: rem-calc(36);
-    margin-top: $line-height/4;
+    margin-top: $line-height / 4;
     text-align: center;
     top: 50%;
     transition: background-color 0.3s, color 0.3s;
-    -webkit-transition: background-color 0.3s, color 0.3s;
-    -moz-transition: background-color 0.3s, color 0.3s;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     width: rem-calc(36);
   }
 
   &.read::before {
     background-color: $brand;
-    color: white;
+    color: #fff;
   }
 
   &.reading {
@@ -563,7 +578,7 @@ form.locale-form select {
     }
 
     &::before {
-      background-color: White;
+      background-color: #fff;
       color: $text;
     }
   }
@@ -572,16 +587,12 @@ form.locale-form select {
 .survey-timeline svg {
   bottom: auto;
   display: none;
-  margin-top: $line-height/4;
+  margin-top: $line-height / 4;
   position: absolute;
   stroke: $brand;
   top: 50%;
   transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transition: all 0.5s ease
+  transition: all 0.5s ease;
 }
 
 @include breakpoint(large) {
@@ -607,9 +618,9 @@ form.locale-form select {
   }
 
   .comment-body {
-    margin-left: $line-height/2 !important;
-    padding-left: $line-height/2 !important;
-    padding-right: $line-height/2 !important;
+    margin-left: $line-height / 2 !important;
+    padding-left: $line-height / 2 !important;
+    padding-right: $line-height / 2 !important;
   }
 
   .reply {
@@ -620,8 +631,8 @@ form.locale-form select {
 }
 
 .survey-timeline-line {
-  background: #2D3E50;
-  color: white;
+  background: #2d3e50;
+  color: #fff;
 
   ul {
     border-left: 1px solid $border;
@@ -630,7 +641,7 @@ form.locale-form select {
 
     li {
       border-top: 1px solid $border;
-      padding: $line-height/2 $line-height;
+      padding: $line-height / 2 $line-height;
 
       @include breakpoint(medium) {
         border-right: 1px solid $border;
@@ -670,7 +681,7 @@ form.locale-form select {
     font-size: rem-calc(40);
     line-height: rem-calc(40);
     margin-bottom: rem-calc(40);
-    padding-left: $line-height/2;
+    padding-left: $line-height / 2;
   }
 
   .panel {
@@ -680,10 +691,11 @@ form.locale-form select {
       background: #58ff87;
     }
 
-    &.purple, &.light-green {
+    &.purple,
+    &.light-green {
 
       p {
-        color: white;
+        color: #fff;
         margin-bottom: 0;
       }
     }
@@ -693,7 +705,7 @@ form.locale-form select {
     }
 
     &.light-green {
-      background: #9CC56A;
+      background: #9cc56a;
     }
   }
 
@@ -716,7 +728,7 @@ form.locale-form select {
     border: 0;
 
     &.double {
-      height: $line-height*2;
+      height: $line-height * 2;
     }
   }
 
@@ -726,7 +738,7 @@ form.locale-form select {
 
   .progress-meter {
     background: #00dae0;
-    height: $line-height/2;
+    height: $line-height / 2;
 
     &.web {
       background: #00ad51;
@@ -745,26 +757,14 @@ form.locale-form select {
     color: #000201;
     font-weight: normal;
     left: 0;
-    top: $line-height/2;
+    top: $line-height / 2;
     transform: initial;
   }
 
   table {
-    margin-top: $line-height*1.5;
+    margin-top: $line-height * 1.5;
 
     &.questions-table {
-
-      tr.empty td {
-        border: 0 !important;
-      }
-
-      td:first-child, th:first-child {
-        border-right: 1px solid $border;
-      }
-
-      td:last-child, th:last-child {
-        border-left: 1px solid $border;
-      }
 
       @include breakpoint(medium) {
 
@@ -776,13 +776,28 @@ form.locale-form select {
           width: auto;
         }
       }
+
+      tr.empty td {
+        border: 0 !important;
+      }
+
+      td:first-child,
+      th:first-child {
+        border-right: 1px solid $border;
+      }
+
+      td:last-child,
+      th:last-child {
+        border-left: 1px solid $border;
+      }
     }
 
-    tr td, tr th {
+    tr td,
+    tr th {
       text-align: left;
 
       @include breakpoint(medium) {
-        padding: $line-height/2 $line-height;
+        padding: $line-height / 2 $line-height;
       }
 
       &.border-left {
@@ -795,14 +810,14 @@ form.locale-form select {
     }
 
     tr.empty {
-      background: white;
-      border-left: 1px solid white;
-      border-right: 1px solid white;
+      background: #fff;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
       border-top: 1px solid $border;
       height: $line-height;
 
       @include breakpoint(medium) {
-        height: $line-height*1.5;
+        height: $line-height * 1.5;
       }
     }
 
@@ -813,7 +828,8 @@ form.locale-form select {
       }
     }
 
-    .question, caption {
+    .question,
+    caption {
       background: #fff7b4;
       border: 2px solid #fae100;
       text-align: left;
@@ -837,7 +853,8 @@ form.locale-form select {
         background: #c1fdd2;
       }
 
-      td:first-child, td:last-child {
+      td:first-child,
+      td:last-child {
         font-weight: bold;
       }
     }
@@ -849,20 +866,20 @@ form.locale-form select {
   &.border-bottom {
     border-bottom: 1px solid $border;
     margin-bottom: $line-height;
-    padding-bottom: $line-height/4;
+    padding-bottom: $line-height / 4;
   }
 
   &.border-top {
     border-top: 1px solid $border;
     margin-top: $line-height;
-    padding-top: $line-height/4;
+    padding-top: $line-height / 4;
   }
 }
 
 .section-title-stats {
   background: $brand;
-  color: white;
-  margin-bottom: $line-height*2;
+  color: #fff;
+  margin-bottom: $line-height * 2;
   padding: $line-height 0;
   text-align: center;
 }
@@ -957,19 +974,19 @@ table.age-groups {
   background-size: cover;
 
   h1 {
-    color: white;
+    color: #fff;
     margin: $line-height 0;
   }
 
   .button {
-    background: white;
+    background: #fff;
     color: $budget;
   }
 
   &.results {
 
     .back {
-      color: white;
+      color: #fff;
     }
   }
 }
@@ -984,7 +1001,7 @@ table.age-groups {
     }
 
     p {
-      color: white;
+      color: #fff;
 
       &.title {
         font-size: rem-calc(24);
@@ -994,16 +1011,16 @@ table.age-groups {
 
 
     li {
-      padding-top: $line-height*1.5;
+      padding-top: $line-height * 1.5;
       position: relative;
 
       @include breakpoint(medium) {
         display: inline-block;
-        margin-right: $line-height*2.5;
+        margin-right: $line-height * 2.5;
       }
 
       .icon-calendar {
-        background: white;
+        background: #fff;
         border: 1px solid $border;
         border-radius: rem-calc(30);
         color: $budget;
@@ -1022,15 +1039,17 @@ table.age-groups {
           margin-top: rem-calc(-1);
         }
 
-        .icon-calendar, h3, p {
+        h3,
+        p,
+        .icon-calendar {
           color: $featured;
         }
 
         .icon-calendar {
           background: $featured;
-          border: none;
+          border: 0;
           box-shadow: 0 0 rem-calc(10) $featured;
-          color: black;
+          color: #000;
         }
       }
     }
@@ -1038,6 +1057,12 @@ table.age-groups {
 }
 
 .spending-proposals-text {
+
+  @include breakpoint(medium down) {
+    .text-right {
+      text-align: left !important;
+    }
+  }
 
   table {
 
@@ -1052,21 +1077,15 @@ table.age-groups {
   }
 
   .margin {
-    margin-bottom: $line-height*2;
-    margin-top: $line-height*2;
-  }
-
-  @include breakpoint(medium down) {
-    .text-right {
-      text-align: left !important;
-    }
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height * 2;
   }
 }
 
 .investment-project-sidebar-votes {
 
   .sticky {
-    background: rgba(255,255,255,.85);
+    background: rgba(255, 255, 255, 0.85);
 
     @include breakpoint(medium down) {
       margin-top: $line-height;
@@ -1078,14 +1097,14 @@ table.age-groups {
 
     .callout {
       float: left;
-      margin-right: $line-height/4;
+      margin-right: $line-height / 4;
       min-height: rem-calc(130);
-      padding: $line-height/2 0;
+      padding: $line-height / 2 0;
       width: rem-calc(125);
     }
 
     .callout.warning.unverified {
-      padding: $line-height/2;
+      padding: $line-height / 2;
       width: 100%;
     }
 
@@ -1111,13 +1130,13 @@ table.age-groups {
 .investment-projects-scope {
 
   .callout {
-    background: white;
+    background: #fff;
     border-color: $border;
     border-radius: 0;
     color: $text;
 
     @include breakpoint(medium) {
-      height: $line-height*17;
+      height: $line-height * 17;
     }
 
     a {
@@ -1145,7 +1164,7 @@ table.age-groups {
     }
 
     .accordion {
-      background: white;
+      background: #fff;
       border: 0;
     }
 
@@ -1154,11 +1173,14 @@ table.age-groups {
       color: $text;
       padding: 0;
 
-      &:before {
+      &::before {
         content: none;
       }
 
-      &:hover, &:focus, &:hover h2, &:focus h2 {
+      &:hover,
+      &:focus,
+      &:hover h2,
+      &:focus h2 {
         background: none;
         color: $text;
         text-decoration: none;
@@ -1199,19 +1221,19 @@ table.age-groups {
     padding: rem-calc(6) rem-calc(12);
   }
 
-  &:after {
+  &::after {
     color: $check;
-    content: "\6c";
+    content: '\6c';
     font-family: 'icons';
     margin-left: rem-calc(6);
   }
 }
 
 .jumbo-investment-project-votes {
-  background: #F6F5F8;
+  background: #f6f5f8;
 
   .content {
-    background: #F6F5F8;
+    background: #f6f5f8;
 
     @include breakpoint(large) {
       padding-bottom: $line-height;
@@ -1220,14 +1242,14 @@ table.age-groups {
   }
 
   h1 {
-    color: #7E328A;
+    color: #7e328a;
   }
 
   .button.budget {
-    background: #7E328A !important;
+    background: #7e328a !important;
 
     &:hover {
-      background: #7571BF;
+      background: #7571bf;
     }
   }
 }
@@ -1240,44 +1262,46 @@ table.age-groups {
 .investment-projects-scope {
 
   a {
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
   }
 }
 
 .jumbo-delegation {
-  background: #7E328A image-url('investment_project_delegation.jpg');
+  background: #7e328a image-url('investment_project_delegation.jpg');
   margin-bottom: rem-calc(-96);
 
   @include breakpoint(medium) {
-    min-height: $line-height*15;
+    min-height: $line-height * 15;
   }
 
-  h2, h3, p {
-    color: white;
+  h2,
+  h3,
+  p {
+    color: #fff;
   }
 
   h3 a {
-    color: white;
+    color: #fff;
     text-decoration: underline;
   }
 
   .button {
-    background: white;
-    color: #7E328A;
+    background: #fff;
+    color: #7e328a;
   }
 }
 
 .investment-project .supports .total-supports.no-button,
 .investment-project-show .supports .total-supports.no-button {
   display: block;
-  margin-top: $line-height*1.5;
+  margin-top: $line-height * 1.5;
 }
 
 table.age-groups-investment-projects {
 
   .progress {
     background: #dad9e3;
-    height: $line-height/2;
+    height: $line-height / 2;
   }
 
   .progress-meter {
@@ -1289,22 +1313,25 @@ table.age-groups-investment-projects {
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .featured-process {
-  background: #33DADF;
-  padding: $line-height/2;
+  background: #33dadf;
+  padding: $line-height / 2;
 
   @include breakpoint(medium) {
-    background: #33DADF image-url('processes_plaza_espana_small.gif') no-repeat;
+    background: #33dadf image-url('processes_plaza_espana_small.gif') no-repeat;
     background-position: right;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
 
-  h2, h3, a {
+  h2,
+  h3,
+  a {
     color: #eaeaf2;
     margin: 0;
   }
 
-  a:hover h2, a:hover h3 {
+  a:hover h2,
+  a:hover h3 {
     color: #eaeaf2 !important;
     text-decoration: none;
   }
@@ -1312,7 +1339,7 @@ table.age-groups-investment-projects {
 
 .featured-spending-proposals {
   background: $budget;
-  padding: $line-height/2;
+  padding: $line-height / 2;
 
   @include breakpoint(medium) {
     background: $budget image-url('featured_spending_proposals.png') no-repeat;
@@ -1321,19 +1348,22 @@ table.age-groups-investment-projects {
     margin-right: 0 !important;
   }
 
-  h2, h3, a {
-    color: white;
+  h2,
+  h3,
+  a {
+    color: #fff;
     margin: 0;
   }
 
-  a:hover h2, a:hover h3 {
-    color: white !important;
+  a:hover h2,
+  a:hover h3 {
+    color: #fff !important;
     text-decoration: none;
   }
 }
 
 .process {
-  min-height: $line-height*15;
+  min-height: $line-height * 15;
 
   p {
     margin: $line-height 0;
@@ -1343,7 +1373,8 @@ table.age-groups-investment-projects {
 // 07. Processes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.processes {
+.processes,
+%processes {
   background: $brand;
 
   &.show {
@@ -1352,16 +1383,20 @@ table.age-groups-investment-projects {
   }
 
   h1 {
-    border-left: 2px solid white;
+    border-left: 2px solid #fff;
     padding-left: $line-height;
   }
 
-  h1, h2, h3, p, h3 a {
-    color: white
+  h1,
+  h2,
+  h3,
+  p,
+  h3 a {
+    color: #fff;
   }
 
   .button {
-    background: white;
+    background: #fff;
     color: $brand;
   }
 
@@ -1372,7 +1407,8 @@ table.age-groups-investment-projects {
   }
 }
 
-tr td, tr th {
+tr td,
+tr th {
 
   &.border-left {
     border-left: 1px solid $border;
@@ -1391,8 +1427,8 @@ tr td, tr th {
   }
 
   a.button.hollow {
-    height: $line-height*2;
-    line-height: $line-height*2;
+    height: $line-height * 2;
+    line-height: $line-height * 2;
     padding-top: 0;
 
     img {
@@ -1402,11 +1438,7 @@ tr td, tr th {
 }
 
 .processes-show {
-  @extend .processes;
-
-  .back, .icon-angle-left {
-    color: white;
-  }
+  @extend %processes;
 
   @include breakpoint(large) {
     background: $brand;
@@ -1423,25 +1455,30 @@ tr td, tr th {
     }
   }
 
+  .back,
+  .icon-angle-left {
+    color: #fff;
+  }
+
   a.white {
-    color: white;
+    color: #fff;
     text-decoration: underline;
   }
 
   .button.hollow {
     background: none;
-    border-color: white;
-    color: white;
+    border-color: #fff;
+    color: #fff;
 
     &:hover {
-      background: white;
+      background: #fff;
       color: $brand;
     }
   }
 }
 
 .supports-open-plenary-title {
-  color: white !important;
+  color: #fff !important;
   font-size: rem-calc(12);
   font-weight: bold;
   text-transform: uppercase;
@@ -1450,11 +1487,11 @@ tr td, tr th {
 .supports-open-plenary-number {
   font-size: rem-calc(18) !important;
   font-weight: bold;
-  padding: $line-height/2;
+  padding: $line-height / 2;
 }
 
 .supports-human-rights-title {
-  color: white !important;
+  color: #fff !important;
   font-size: rem-calc(12);
   font-weight: bold;
   text-transform: uppercase;
@@ -1463,7 +1500,7 @@ tr td, tr th {
 .supports-human-rights-number {
   font-size: rem-calc(18) !important;
   font-weight: bold;
-  padding: $line-height/2;
+  padding: $line-height / 2;
 }
 
 .plenaries {
@@ -1479,7 +1516,7 @@ tr td, tr th {
 
 .quoted .panel {
   border: 0;
-  padding:0;
+  padding: 0;
 
   @include breakpoint(medium) {
     padding: $line-height;
@@ -1487,9 +1524,9 @@ tr td, tr th {
     h4 {
       position: relative;
 
-      &:before {
+      &::before {
         color: #ddd;
-        content: "\201C";
+        content: '\201C';
         font-size: rem-calc(60);
         left: -40px;
         position: absolute;
@@ -1509,7 +1546,7 @@ tr td, tr th {
   border-bottom: 1px solid $border;
   border-top: 1px solid $border;
   margin: $line-height 0;
-  padding: $line-height/2 0;
+  padding: $line-height / 2 0;
 }
 
 .process-collection {
@@ -1520,28 +1557,28 @@ tr td, tr th {
     background: #ececec;
     border: 0;
     border-radius: rem-calc(6);
-    margin: $line-height/2 $line-height/4;
-    min-height: $line-height*5;
+    margin: $line-height / 2 $line-height / 4;
+    min-height: $line-height * 5;
     padding: 0;
     position: relative;
     vertical-align: top;
 
     @include breakpoint(medium) {
-      min-height: $line-height*7;
+      min-height: $line-height * 7;
     }
 
     @include breakpoint(large) {
-      min-height: $line-height*6;
+      min-height: $line-height * 6;
     }
 
     &:hover {
       background: $highlight;
       position: relative;
 
-      &:before {
+      &::before {
         color: $brand;
-        content: "\56";
-        font-family: "icons";
+        content: '\56';
+        font-family: 'icons';
         position: absolute;
         right: -6px;
         top: -12px;
@@ -1560,7 +1597,8 @@ tr td, tr th {
   }
 }
 
-.proposal-new, .proposal-show {
+.proposal-new,
+.proposal-show {
 
   h2.proceeding {
     color: #cacaca;
@@ -1571,13 +1609,13 @@ tr td, tr th {
     border-radius: rem-calc(6);
     color: $brand;
     font-size: rem-calc(18);
-    padding: $line-height/2;
+    padding: $line-height / 2;
     position: relative;
 
-    &:after {
+    &::after {
       color: $brand;
-      content: "\56";
-      font-family: "icons";
+      content: '\56';
+      font-family: 'icons';
       position: absolute;
       right: -6px;
       top: -12px;
@@ -1587,16 +1625,16 @@ tr td, tr th {
 
 .timeline {
   border-bottom: 1px solid #d8d8d8;
-  padding-bottom: $line-height/2;
+  padding-bottom: $line-height / 2;
 
   @include breakpoint(medium) {
-    margin-bottom: $line-height*2.5;
+    margin-bottom: $line-height * 2.5;
     padding-top: $line-height;
   }
 
   span {
     display: block;
-    padding: $line-height/2 0;
+    padding: $line-height / 2 0;
     position: relative;
 
     @include breakpoint(medium) {
@@ -1604,7 +1642,7 @@ tr td, tr th {
       padding: 0;
     }
 
-    &:after {
+    &::after {
       background: $border;
       border-radius: rem-calc(20);
       bottom: -24px;
@@ -1616,14 +1654,14 @@ tr td, tr th {
       width: rem-calc(20);
 
       @include breakpoint(medium) {
-        content: " ";
+        content: ' ';
       }
     }
 
     &.active {
       font-weight: bold;
 
-      &:after {
+      &::after {
         background: $brand;
       }
     }
@@ -1635,7 +1673,7 @@ tr td, tr th {
   form {
 
     label {
-      padding: $line-height/2 0;
+      padding: $line-height / 2 0;
       text-align: center;
 
       &:hover {
@@ -1643,7 +1681,7 @@ tr td, tr th {
       }
 
       span {
-        color: #004A83;
+        color: #004a83;
         padding: rem-calc(12) rem-calc(3) 0;
 
         &.selected {
@@ -1662,18 +1700,18 @@ tr td, tr th {
         border: 4px solid #fcbc41;
       }
 
-      &:checked ~ span.selected:after {
+      &:checked ~ span.selected::after {
         color: #fbfbfb;
-        content: "\56";
-        font-family: "icons";
+        content: '\56';
+        font-family: 'icons';
         font-size: rem-calc(30);
         position: absolute;
         right: 50px;
         top: -40px;
       }
 
-      & + img {
-        cursor:pointer;
+      img {
+        cursor: pointer;
         border: 4px solid transparent;
       }
     }
@@ -1682,7 +1720,9 @@ tr td, tr th {
 
 table.probe-results {
 
-  tr:nth-child(1), tr:nth-child(2), tr:nth-child(3) {
+  tr:nth-child(1),
+  tr:nth-child(2),
+  tr:nth-child(3) {
     background: $success-bg;
 
     td:last-child {
@@ -1692,10 +1732,10 @@ table.probe-results {
 }
 
 .project {
-  background: #F3F3F3;
+  background: #f3f3f3;
   border-bottom: 2px solid #e0e0e0;
   margin-bottom: $line-height;
-  padding: 0 $line-height/2 $line-height;
+  padding: 0 $line-height / 2 $line-height;
   position: relative;
   text-align: center;
 
@@ -1716,7 +1756,7 @@ table.probe-results {
   border-bottom: 1px solid #e0e0e0;
   font-size: $small-font-size;
   margin-bottom: 0;
-  padding-bottom: $line-height/2;
+  padding-bottom: $line-height / 2;
   padding-top: $line-height;
 
   @include breakpoint(medium) {
@@ -1735,7 +1775,7 @@ table.probe-results {
 
   a:not(.probe-message) {
     display: inline-block;
-    margin-top: $line-height/2;
+    margin-top: $line-height / 2;
 
     :first-child {
       margin-top: 0;
@@ -1749,7 +1789,7 @@ table.probe-results {
 
 .callout-small {
   margin-bottom: 0;
-  padding: $line-height/4;
+  padding: $line-height / 4;
 }
 
 .probe-option {
@@ -1758,13 +1798,13 @@ table.probe-results {
 }
 
 .probe-banner {
-  border: 1px solid black;
-  color: black;
-  padding: $line-height/2;
+  border: 1px solid #000;
+  color: #000;
+  padding: $line-height / 2;
   text-align: center;
 
   a {
-    color: black;
+    color: #000;
   }
 }
 
@@ -1804,9 +1844,9 @@ aside {
   display: inline-block;
 }
 
-.whatsapp:before {
+.whatsapp::before {
   background-color: #43d854;
-  color: white;
+  color: #fff;
   font-size: 1.7em;
   margin-left: rem-calc(0.5);
   padding: rem-calc(9.5) rem-calc(9.8);
@@ -1825,9 +1865,9 @@ aside {
     top: 0;
     width: 0;
 
-    &:after {
-      color: #FFF;
-      content: "\73";
+    &::after {
+      color: #fff;
+      content: '\73';
       font-family: "icons" !important;
       right: 24px;
       position: absolute;
@@ -1848,8 +1888,8 @@ aside {
       color: $brand;
       padding-top: $line-height;
 
-      &:after {
-        content: " equipo derechos humanos"
+      &::after {
+        content: ' equipo derechos humanos';
       }
     }
 
@@ -1876,9 +1916,9 @@ a.show-hidden-projects {
   padding-right: rem-calc(16);
   position: relative;
 
-  &:before {
-    background: image-url("icon_eye.png") no-repeat;
-    content: " ";
+  &::before {
+    background: image-url('icon_eye.png') no-repeat;
+    content: ' ';
     height: 24px;
     left: -26px;
     position: absolute;
@@ -1909,7 +1949,7 @@ a.show-hidden-projects {
   }
 
   .panel {
-    margin-bottom: $line-height/4;
+    margin-bottom: $line-height / 4;
   }
 }
 
@@ -1927,7 +1967,6 @@ a.show-hidden-projects {
   .progress-meter {
     background: #fdcb10;
     border-radius: 0;
-    -webkit-transition: width 2s;
     transition: width 2s;
   }
 
@@ -1937,7 +1976,7 @@ a.show-hidden-projects {
   }
 
   .spent-amount-text {
-    color: white;
+    color: #fff;
     font-size: $base-font-size;
     font-weight: normal;
     position: absolute;
@@ -1946,9 +1985,9 @@ a.show-hidden-projects {
     top: 16px;
     width: 100%;
 
-    &:before {
+    &::before {
       color: #a5a1ff;
-      content: "\57";
+      content: '\57';
       font-family: 'icons';
       font-size: $small-font-size;
       position: absolute;
@@ -1958,7 +1997,7 @@ a.show-hidden-projects {
   }
 
   .total-amount {
-    color: white;
+    color: #fff;
     font-size: rem-calc(18);
     font-weight: bold;
     float: right;
@@ -1976,7 +2015,7 @@ a.show-hidden-projects {
 }
 
 .big-number {
-  color: #7E328A;
+  color: #7e328a;
   font-size: rem-calc(60);
   line-height: rem-calc(120);
 
@@ -1988,7 +2027,8 @@ a.show-hidden-projects {
 
 .ballot {
 
-  h2, h3 {
+  h2,
+  h3 {
     font-weight: normal;
 
     span {
@@ -2009,7 +2049,7 @@ a.show-hidden-projects {
   .amount-spent {
     background: $success-bg;
     font-weight: normal;
-    padding: $line-height/2;
+    padding: $line-height / 2;
 
     span {
       font-size: rem-calc(24);
@@ -2025,7 +2065,7 @@ ul.ballot-list {
   li {
     background: #f9f9f9;
     line-height: $line-height;
-    margin-bottom: $line-height/4;
+    margin-bottom: $line-height / 4;
     position: relative;
 
     a {
@@ -2044,7 +2084,7 @@ ul.ballot-list {
       .icon-x {
         color: #9f9f9f;
         font-size: rem-calc(24);
-        line-height: $line-height/2;
+        line-height: $line-height / 2;
         position: absolute;
         right: 6px;
         text-decoration: none;
@@ -2058,16 +2098,17 @@ ul.ballot-list {
 
     &:hover {
       background: $budget;
-      color: white;
+      color: #fff;
 
-      a, span {
-        color: white;
+      a,
+      span {
+        color: #fff;
         outline: 0;
         text-decoration: none;
       }
 
       .remove-investment-project .icon-x {
-        color: white;
+        color: #fff;
       }
     }
   }
@@ -2078,11 +2119,11 @@ ul.ballot-list {
   border-radius: rem-calc(3);
   color: $budget;
   font-weight: bold;
-  padding: $line-height/4;
+  padding: $line-height / 4;
 
-  &:after {
-    content: "\56";
-    font-family: "icons";
+  &::after {
+    content: '\56';
+    font-family: 'icons';
     font-size: $small-font-size;
     font-weight: normal;
     line-height: $line-height;
@@ -2105,22 +2146,18 @@ ul.ballot-list {
   @include breakpoint(large) {
     background-color: $budget;
     height: rem-calc(100);
-    -webkit-transition: height 0.3s;
-    -moz-transition: height 0.3s;
     transition: height 0.3s;
     z-index: 1;
 
     h1 {
-      -webkit-transition: font-size 0.3s;
-      -moz-transition: font-size 0.3s;
       transition: font-size 0.3s;
     }
 
     &.is-fixed {
-      height: $line-height*6;
+      height: $line-height * 6;
       left: 0;
       padding: rem-calc(24);
-      padding-bottom: $line-height*6;
+      padding-bottom: $line-height * 6;
       position: fixed;
       top: 0;
       width: 100%;
@@ -2128,8 +2165,6 @@ ul.ballot-list {
       h1 {
         font-size: rem-calc(24);
         line-height: rem-calc(31);
-        -webkit-transition: font-size 0.3s;
-        -moz-transition: font-size 0.3s;
         transition: font-size 0.3s;
       }
     }
@@ -2141,15 +2176,21 @@ ul.ballot-list {
 
 .legislation {
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: $brand;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin-bottom: $line-height;
 
     li {
-      padding: $line-height/4 0;
+      padding: $line-height / 4 0;
     }
 
     li ul {
@@ -2162,7 +2203,7 @@ ul.ballot-list {
   background: $highlight;
   border-radius: rem-calc(6);
   margin-bottom: $line-height;
-  padding: $line-height/2;
+  padding: $line-height / 2;
 }
 
 // 10. Jumbo brand
@@ -2172,8 +2213,9 @@ ul.ballot-list {
   background: $brand;
   text-align: center;
 
-  h2, h3 {
-    color: white;
+  h2,
+  h3 {
+    color: #fff;
 
     span {
       text-decoration: underline;
@@ -2181,7 +2223,7 @@ ul.ballot-list {
   }
 
   .button {
-    background: white;
+    background: #fff;
     color: $budget;
   }
 
@@ -2201,8 +2243,9 @@ ul.ballot-list {
         background: #363559;
         display: block;
 
-        h2, h3 {
-          color: white;
+        h2,
+        h3 {
+          color: #fff;
         }
       }
     }
@@ -2210,26 +2253,27 @@ ul.ballot-list {
 }
 
 .human-rights-banner {
-  background: #08819A;
-  margin-bottom: $line-height/2;
+  background: #08819a;
+  margin-bottom: $line-height / 2;
   position: relative;
-
-  h3, a:hover h3 {
-    color: white !important;
-  }
-
-  h3 {
-    margin-bottom: 0;
-    padding: $line-height/2 0;
-
-    small {
-      color: white;
-    }
-  }
 
   @include breakpoint(medium) {
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  h3,
+  a:hover h3 {
+    color: #fff !important;
+  }
+
+  h3 {
+    margin-bottom: 0;
+    padding: $line-height / 2 0;
+
+    small {
+      color: #fff;
+    }
   }
 
   .icon-human-rights {
@@ -2242,9 +2286,9 @@ ul.ballot-list {
     top: 0;
     width: 0;
 
-    &:after {
-      color: white;
-      content: "\73";
+    &::after {
+      color: #fff;
+      content: '\73';
       font-family: "icons" !important;
       font-size: rem-calc(20);
       left: 30px;
@@ -2257,13 +2301,23 @@ ul.ballot-list {
 // 11. Budgets custom
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$campaign-black:   #605F5D;
-$campaign-blue:    #009FDE;
-$campaign-brown:   #EFEDE7;
-$campaign-red:     #E23135;
-$campaign-yellow:  #FFDB19;
+$campaign-black:   #605f5d;
+$campaign-blue:    #009fde;
+$campaign-brown:   #efede7;
+$campaign-red:     #e23135;
+$campaign-yellow:  #ffdb19;
 
 .budgets-welcome {
+
+  @include breakpoint(large) {
+    .block-border-left {
+      border-left: 3px solid $campaign-red;
+    }
+
+    .block-border-right {
+      border-right: 3px solid $campaign-red;
+    }
+  }
 
   .header {
     background: $campaign-brown;
@@ -2280,7 +2334,7 @@ $campaign-yellow:  #FFDB19;
     }
 
     ul.info li {
-      color: black;
+      color: #000;
       margin-bottom: $line-height;
     }
 
@@ -2317,8 +2371,8 @@ $campaign-yellow:  #FFDB19;
 
     h4 {
       background: $campaign-red;
-      color: black;
-      padding: $line-height/4 $line-height/2;
+      color: #000;
+      padding: $line-height / 4 $line-height / 2;
 
       @include breakpoint(medium) {
         display: inline-block;
@@ -2327,18 +2381,8 @@ $campaign-yellow:  #FFDB19;
   }
 
   .button {
-    background: black;
-    color: white;
-  }
-
-  @include breakpoint(large) {
-    .block-border-left {
-      border-left: 3px solid $campaign-red;
-    }
-
-    .block-border-right {
-      border-right: 3px solid $campaign-red;
-    }
+    background: #000;
+    color: #fff;
   }
 
   img {
@@ -2347,17 +2391,17 @@ $campaign-yellow:  #FFDB19;
 
   table {
 
-    th {
-      background: black;
-      color: white;
-    }
-
     @include breakpoint(medium) {
 
       .budget-big-number {
         font-size: rem-calc(36);
         padding: $line-height;
       }
+    }
+
+    th {
+      background: #000;
+      color: #fff;
     }
   }
 
@@ -2386,17 +2430,20 @@ $campaign-yellow:  #FFDB19;
   }
 }
 
-.block-black , .block-yellow {
-  padding-bottom: $line-height*2;
-  padding-top: $line-height*2;
+.block-black,
+.block-yellow {
+  padding-bottom: $line-height * 2;
+  padding-top: $line-height * 2;
 }
 
 .block-black {
-  background: black;
+  background: #000;
   padding-left: 0;
 
-  h4, p, a {
-    color: white;
+  h4,
+  p,
+  a {
+    color: #fff;
   }
 
   a {
@@ -2408,8 +2455,10 @@ $campaign-yellow:  #FFDB19;
   background: $campaign-yellow;
   padding-right: 0;
 
-  h4, p, a {
-    color: black;
+  h4,
+  p,
+  a {
+    color: #000;
   }
 
   a {
@@ -2418,15 +2467,27 @@ $campaign-yellow:  #FFDB19;
 }
 
 .budgets-calendar {
-  background: #F9F8F5;
-  color: black;
+  background: #f9f8f5;
+  color: #000;
 
   ul {
     margin-bottom: 0;
 
     li {
       border-top: 1px solid $campaign-black;
-      padding: $line-height/2;
+      padding: $line-height / 2;
+
+      @include breakpoint(medium) {
+        border-left: 1px solid $campaign-black;
+        border-top: 0;
+        display: inline-block;
+        padding: $line-height / 2 $line-height;
+        width: 24%;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
 
       &:first-child {
         border-top: 0;
@@ -2439,33 +2500,22 @@ $campaign-yellow:  #FFDB19;
           width: 27%;
         }
       }
-
-      @include breakpoint(medium) {
-        border-left: 1px solid $campaign-black;
-        border-top: 0;
-        display: inline-block;
-        padding: $line-height/2 $line-height;
-        width: 24%;
-
-        &:last-child {
-          border-right: 0;
-        }
-      }
     }
   }
 }
 
 .previous-budgets {
   border-top: 1px solid $border;
-  padding: $line-height*2 0;
+  padding: $line-height * 2 0;
 }
 
 .type-selection {
-  margin-top: $line-height*2;
+  margin-top: $line-height * 2;
 
   .callout {
 
-    a, a h3 {
+    a,
+    a h3 {
       color: $text;
       text-decoration: none;
 
@@ -2486,15 +2536,15 @@ $campaign-yellow:  #FFDB19;
     color: $brand;
     position: relative;
 
-    &:after {
+    &::after {
       background: $brand;
       border-radius: rem-calc(40);
-      color: white;
-      content: "\6c";
+      color: #fff;
+      content: '\6c';
       font-family: 'icons';
       font-size: rem-calc(16);
       height: rem-calc(24);
-      padding: 0 $line-height/6;
+      padding: 0 $line-height / 6;
       position: absolute;
       right: -6px;
       top: -6px;
@@ -2506,11 +2556,16 @@ $campaign-yellow:  #FFDB19;
 // Overrides budgets default colors
 // -------------------------------
 
-$budget-custom: #5A6175 !important;
+$budget-custom: #5a6175 !important;
 
-.expanded.budget, .jumbo-budget {
+.expanded.budget,
+.jumbo-budget {
 
-  h1, h2, p, a.back, .icon-angle-left {
+  h1,
+  h2,
+  p,
+  .back,
+  .icon-angle-left {
     color: $text;
   }
 
@@ -2519,26 +2574,27 @@ $budget-custom: #5A6175 !important;
     text-decoration: none;
   }
 
-  a.button, &.button {
-    background: black;
-    color: white;
+  a.button,
+  &.button {
+    background: #000;
+    color: #fff;
   }
 
   &.budget-heading {
-    min-height: $line-height*11;
+    min-height: $line-height * 11;
   }
 
   .info {
     background: $campaign-yellow;
 
-    p {
-      color: black;
-      margin-bottom: 0;
-      text-transform: uppercase;
-    }
-
     @include breakpoint(medium) {
       border-top: rem-calc(6) solid $campaign-yellow;
+    }
+
+    p {
+      color: #000;
+      margin-bottom: 0;
+      text-transform: uppercase;
     }
   }
 }
@@ -2547,7 +2603,8 @@ $budget-custom: #5A6175 !important;
 
   .panel {
 
-    .label-budget-investment, .icon-budget {
+    .label-budget-investment,
+    .icon-budget {
       color: $budget-custom;
     }
   }
@@ -2555,7 +2612,8 @@ $budget-custom: #5A6175 !important;
 
 .budget-investment-show {
 
-  .label-budget-investment, .icon-budget {
+  .label-budget-investment,
+  .icon-budget {
     color: $budget-custom;
   }
 }
@@ -2568,16 +2626,16 @@ $budget-custom: #5A6175 !important;
   }
 
   .progress-meter {
-    background: #FDCB10;
+    background: #fdcb10;
   }
 
-  .spent-amount-text:before {
-    color: #A5A1FF;
+  .spent-amount-text::before {
+    color: #a5a1ff;
     right: -7px;
   }
 
   .total-amount {
-    color: white;
+    color: #fff;
   }
 }
 
@@ -2594,7 +2652,8 @@ ul.ballot-list {
     background: $budget;
     color: $text;
 
-    a, span {
+    a,
+    span {
       color: $text;
     }
 
@@ -2613,14 +2672,16 @@ ul.ballot-list {
 
   .button.hollow {
     background: none;
-    color: white;
-    border: 1px solid white;
-    margin-right: $line-height/2;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-right: $line-height / 2;
   }
 }
 
-.budget-investment, .budget-investment-show,
-.investment-project, .investment-project-show {
+.budget-investment,
+.budget-investment-show,
+.investment-project,
+.investment-project-show {
 
   .total-supports {
     color: $budget-custom;
@@ -2646,22 +2707,23 @@ ul.ballot-list {
 
 .progress-votes {
 
-  .total-amount, .spent-amount-text {
+  .total-amount,
+  .spent-amount-text {
     color: $budget-custom;
   }
 }
 
 .budgets-banner {
-  background: black;
-  padding: $line-height/2;
+  background: #000;
+  padding: $line-height / 2;
   position: relative;
 
   .budgets-date {
     background: $campaign-yellow;
-    color: black;
+    color: #000;
     display: inline-block;
-    margin-bottom: $line-height/2;
-    padding: 0 $line-height/4;
+    margin-bottom: $line-height / 2;
+    padding: 0 $line-height / 4;
   }
 
   p.budgets-lead-title {
@@ -2672,15 +2734,16 @@ ul.ballot-list {
   }
 
   a .budgets-lead-title {
-    color: white;
+    color: #fff;
   }
 
-  a:hover, a:hover .budgets-lead-title {
+  a:hover,
+  a:hover .budgets-lead-title {
     text-decoration: none !important;
   }
 
   .arrow-link {
-    color: white;
+    color: #fff;
     font-size: rem-calc(48);
     line-height: rem-calc(48);
     margin-top: rem-calc(-24);
@@ -2690,22 +2753,24 @@ ul.ballot-list {
   }
 }
 
-@-webkit-keyframes bounce-arrow {
-  0%, 20%, 50%, 80%, 100% {transform: translate(0, 0);}
-  40% {transform: translate(-60px, 0);}
-  60% {transform: translate(-24px, 0);}
-}
-
 @keyframes bounce-arrow {
-  0%, 20%, 50%, 80%, 100% {transform: translate(0, 0);}
-  40% {transform: translate(-60px, 0);}
-  60% {transform: translate(-24px, 0);}
+
+  0%, 20%, 50%, 80%, 100% {
+    transform: translate(0, 0);
+  }
+
+  40% {
+    transform: translate(-60px, 0);
+  }
+
+  60% {
+    transform: translate(-24px, 0);
+  }
 }
 
 @include breakpoint(medium) {
 
   .bounce-arrow {
-    -webkit-animation: bounce-arrow 2s infinite;
     animation: bounce-arrow 2s infinite;
   }
 }
@@ -2726,7 +2791,8 @@ h2.map-title {
 
 .budget-investment.minimal {
 
-  .panel, .budget-investment-content {
+  .panel,
+  .budget-investment-content {
     min-height: 0;
   }
 
@@ -2741,11 +2807,11 @@ h2.map-title {
 .polls-show {
 
   ol {
-    margin: $line-height 0 $line-height $line-height/2;
+    margin: $line-height 0 $line-height $line-height / 2;
 
     li {
       font-size: $base-font-size;
-      margin-bottom: $line-height/2;
+      margin-bottom: $line-height / 2;
     }
   }
 }
@@ -2762,19 +2828,19 @@ h2.map-title {
 }
 
 p.can-participate-info {
-  background: white;
+  background: #fff;
   font-weight: bold;
   margin-bottom: 0;
-  padding: $line-height/2;
+  padding: $line-height / 2;
   padding-top: $line-height;
 }
 
 .nvotes .panel {
-  border: 0
+  border: 0;
 }
 
 .nvotes-tablet-sidebar {
-  background: white;
+  background: #fff;
 }
 
 .nvotes ul.tabs {
@@ -2783,16 +2849,16 @@ p.can-participate-info {
 
   li {
     border: 1px solid $border;
-    margin: $line-height/2 $line-height/2 0;
+    margin: $line-height / 2 $line-height / 2 0;
     position: relative;
 
     a {
       display: block;
-      padding: $line-height/2;
+      padding: $line-height / 2;
     }
 
-    &:after {
-      content: "\63";
+    &::after {
+      content: '\63';
       font-family: 'icons';
       right: 12px;
       position: absolute;
@@ -2802,9 +2868,9 @@ p.can-participate-info {
     &.is-active {
       background: $info-bg;
 
-      &:after {
+      &::after {
         color: $brand;
-        content: "\61";
+        content: '\61';
       }
 
       a {
@@ -2818,7 +2884,8 @@ p.can-participate-info {
   }
 }
 
-.auth-form p, .auth-form p a {
+.auth-form p,
+.auth-form p a {
   font-size: $base-font-size;
 }
 
@@ -2848,7 +2915,7 @@ p.can-participate-info {
 .kit-decide {
 
   h3 {
-    color: black;
+    color: #000;
     font-family: 'Franklin Gothic' !important;
   }
 
@@ -2860,12 +2927,7 @@ p.can-participate-info {
 
 .kit-decide-header {
   background: #003df6;
-  color: white;
-
-  h1, h2 {
-    color: white;
-    font-family: 'Franklin Gothic' !important;
-  }
+  color: #fff;
 
   @include breakpoint(medium) {
 
@@ -2875,28 +2937,35 @@ p.can-participate-info {
     }
 
     h2 {
-     font-size: rem-calc(40);
+      font-size: rem-calc(40);
       line-height: rem-calc(40);
     }
   }
 
-  a, .icon-angle-left {
-    color: white;
+  h1,
+  h2 {
+    color: #fff;
+    font-family: 'Franklin Gothic' !important;
+  }
+
+  .icon-angle-left,
+  a {
+    color: #fff;
 
     span.underline {
       text-decoration: underline;
     }
 
     &.button.hollow {
-      color: white;
-      border-color: white;
+      color: #fff;
+      border-color: #fff;
     }
   }
 }
 
 .number-list {
-  background: white;
-  border-bottom: 4px solid black;
+  background: #fff;
+  border-bottom: 4px solid #000;
   list-style-type: none;
   margin: 0;
   padding-bottom: $line-height;
@@ -2906,23 +2975,23 @@ p.can-participate-info {
   }
 
   a {
-    background: white;
+    background: #fff;
     border: 4px solid #003df6;
     border-radius: rem-calc(100);
-    color: black;
+    color: #000;
     display: inline-block;
-    font-family: "Franklin gothic";
+    font-family: 'Franklin gothic';
     font-size: rem-calc(40);
     height: rem-calc(60);
     line-height: rem-calc(50);
-    margin: $line-height/4;
+    margin: $line-height / 4;
     padding: 0;
     text-align: center;
     width: rem-calc(60);
 
     &.active {
       background: #003df6;
-      color: white;
+      color: #fff;
     }
   }
 }
@@ -2937,7 +3006,7 @@ h3.kit-decide {
     display: inline-block;
     height: rem-calc(60);
     line-height: rem-calc(50);
-    margin-right: $line-height/2;
+    margin-right: $line-height / 2;
     text-align: center;
     width: rem-calc(60);
   }
@@ -2946,15 +3015,15 @@ h3.kit-decide {
 // 14. Figure cards style
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-figure {
+.figure-card {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   position: relative;
 
-  &.pdf:after {
-    background: image-url("icon_pdf_white.png");
-    content: "";
+  &.pdf::after {
+    background: image-url('icon_pdf_white.png');
+    content: '';
     height: 48px;
     position: absolute;
     right: 10px;
@@ -2964,25 +3033,26 @@ figure {
 
   figcaption {
     bottom: 0;
-    color: white;
+    color: #fff;
     font-family: 'Franklin Gothic' !important;
     font-size: rem-calc(36);
     line-height: rem-calc(36);
     text-transform: uppercase;
-    padding: $line-height/4 $line-height/2;
+    padding: $line-height / 4 $line-height / 2;
     position: absolute;
     width: 100%;
 
-    h3, p.title {
+    h3,
+    p.title {
       font-family: 'Franklin Gothic' !important;
       font-size: rem-calc(36);
       line-height: rem-calc(36);
     }
 
     span {
-      background: white;
+      background: #fff;
       border-radius: rem-calc(4);
-      color: black;
+      color: #000;
       display: inline;
       font-size: $base-font-size;
       padding: rem-calc(4) rem-calc(8);

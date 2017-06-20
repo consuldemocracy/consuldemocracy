@@ -18,7 +18,7 @@
       font-family: 'Franklin Gothic' !important;
       font-size: rem-calc(40);
       line-height: rem-calc(40);
-      margin-top: $line-height*2;
+      margin-top: $line-height * 2;
       text-transform: uppercase;
     }
 
@@ -31,27 +31,27 @@
 // 02. Budgets materials 2017
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$arganzuela:        #B89774;
-$barajas:           #F70918;
-$carabanchel:       #A0A0AA;
-$centro :           #F88278;
-$chamartin:         #DA4980;
-$chamberi:          #8339B4;
-$ciudad-lineal:     #B77DE1;
-$fuencarral:        #FB9BF2;
-$hortaleza:         #191B72;
-$latina:            #1934DB;
-$moncloa:           #009FE3;
-$moratalaz:         #7BEDED;
-$puente-vallecas:   #46C1A4;
-$retiro:            #326B00;
-$salamanca:         #7BCC18;
-$san-blas:          #C4D400;
-$tetuan:            #F7EB35;
-$usera:             #F6D32D;
-$vicalvaro:         #F77924;
-$villa-vallecas:    #A70500;
-$villaverde:        #8E4E28;
+$arganzuela:        #b89774;
+$barajas:           #f70918;
+$carabanchel:       #a0a0aa;
+$centro:            #f88278;
+$chamartin:         #da4980;
+$chamberi:          #8339b4;
+$ciudad-lineal:     #b77de1;
+$fuencarral:        #fb9bf2;
+$hortaleza:         #191b72;
+$latina:            #1934db;
+$moncloa:           #009fe3;
+$moratalaz:         #7beded;
+$puente-vallecas:   #46c1a4;
+$retiro:            #326b00;
+$salamanca:         #7bcc18;
+$san-blas:          #c4d400;
+$tetuan:            #f7eb35;
+$usera:             #f6d32d;
+$vicalvaro:         #f77924;
+$villa-vallecas:    #a70500;
+$villaverde:        #8e4e28;
 
 .budgets-materials-2017 {
 
@@ -84,17 +84,17 @@ $villaverde:        #8E4E28;
 
     figcaption {
       bottom: 0;
-      color: white;
+      color: #fff;
       font-family: 'Franklin Gothic' !important;
       font-size: rem-calc(36);
       line-height: rem-calc(36);
       text-transform: uppercase;
-      padding: $line-height/4 $line-height/2;
+      padding: $line-height / 4 $line-height / 2;
       position: absolute;
       width: 100%;
 
       h3 {
-        color: black;
+        color: #000;
         font-family: 'Franklin Gothic' !important;
         font-size: rem-calc(36);
         line-height: rem-calc(36);
@@ -102,7 +102,7 @@ $villaverde:        #8E4E28;
 
       span {
         border-radius: rem-calc(4);
-        color: white;
+        color: #fff;
         display: inline;
         font-size: $base-font-size;
         padding: rem-calc(4) rem-calc(8);
@@ -118,52 +118,176 @@ $villaverde:        #8E4E28;
       margin-bottom: $line-height;
     }
 
-    .background-arganzuela          { background: $arganzuela;}
-    .background-barajas             { background: $barajas;}
-    .background-carabanchel         { background: $carabanchel;}
-    .background-centro              { background: $centro;}
-    .background-chamartin           { background: $chamartin;}
-    .background-chamberi            { background: $chamberi;}
-    .background-ciudad_lineal       { background: $ciudad-lineal;}
-    .background-fuencarral_pardo    { background: $fuencarral;}
-    .background-hortaleza           { background: $hortaleza;}
-    .background-latina              { background: $latina;}
-    .background-moncloa_aravaca     { background: $moncloa;}
-    .background-moratalaz           { background: $moratalaz;}
-    .background-puente_vallecas     { background: $puente-vallecas;}
-    .background-retiro              { background: $retiro;}
-    .background-salamanca           { background: $salamanca;}
-    .background-san_blas_canillejas { background: $san-blas;}
-    .background-tetuan              { background: $tetuan;}
-    .background-usera               { background: $usera;}
-    .background-vicalvaro           { background: $vicalvaro;}
-    .background-villa_vallecas      { background: $villa-vallecas;}
-    .background-villaverde          { background: $villaverde;}
+    .background-arganzuela {
+      background: $arganzuela;
+    }
 
-    .color-arganzuela           { color: $arganzuela;}
-    .color-barajas              { color: $barajas;}
-    .color-carabanchel          { color: $carabanchel;}
-    .color-centro               { color: $centro;}
-    .color-chamartin            { color: $chamartin;}
-    .color-chamberi             { color: $chamberi;}
-    .color-ciudad_lineal        { color: $ciudad-lineal;}
-    .color-fuencarral_pardo     { color: $fuencarral;}
-    .color-hortaleza            { color: $hortaleza;}
-    .color-latina               { color: $latina;}
-    .color-moncloa_aravaca      { color: $moncloa;}
-    .color-moratalaz            { color: $moratalaz;}
-    .color-puente_vallecas      { color: $puente-vallecas;}
-    .color-retiro               { color: $retiro;}
-    .color-salamanca            { color: $salamanca;}
-    .color-san_blas_canillejas  { color: $san-blas;}
-    .color-tetuan               { color: $tetuan;}
-    .color-usera                { color: $usera;}
-    .color-vicalvaro            { color: $vicalvaro;}
-    .color-villa_vallecas       { color: $villa-vallecas;}
-    .color-villaverde           { color: $villaverde;}
+    .background-barajas {
+      background: $barajas;
+    }
+
+    .background-carabanchel {
+      background: $carabanchel;
+    }
+
+    .background-centro {
+      background: $centro;
+    }
+
+    .background-chamartin {
+      background: $chamartin;
+    }
+
+    .background-chamberi {
+      background: $chamberi;
+    }
+
+    .background-ciudad_lineal {
+      background: $ciudad-lineal;
+    }
+
+    .background-fuencarral_pardo {
+      background: $fuencarral;
+    }
+
+    .background-hortaleza {
+      background: $hortaleza;
+    }
+
+    .background-latina {
+      background: $latina;
+    }
+
+    .background-moncloa_aravaca {
+      background: $moncloa;
+    }
+
+    .background-moratalaz {
+      background: $moratalaz;
+    }
+
+    .background-puente_vallecas {
+      background: $puente-vallecas;
+    }
+
+    .background-retiro {
+      background: $retiro;
+    }
+
+    .background-salamanca {
+      background: $salamanca;
+    }
+
+    .background-san_blas_canillejas {
+      background: $san-blas;
+    }
+
+    .background-tetuan {
+      background: $tetuan;
+    }
+
+    .background-usera {
+      background: $usera;
+    }
+
+    .background-vicalvaro {
+      background: $vicalvaro;
+    }
+
+    .background-villa_vallecas {
+      background: $villa-vallecas;
+    }
+
+    .background-villaverde {
+      background: $villaverde;
+    }
+
+    .color-arganzuela {
+      color: $arganzuela;
+    }
+
+    .color-barajas {
+      color: $barajas;
+    }
+
+    .color-carabanchel {
+      color: $carabanchel;
+    }
+
+    .color-centro {
+      color: $centro;
+    }
+
+    .color-chamartin {
+      color: $chamartin;
+    }
+
+    .color-chamberi {
+      color: $chamberi;
+    }
+
+    .color-ciudad_lineal {
+      color: $ciudad-lineal;
+    }
+
+    .color-fuencarral_pardo {
+      color: $fuencarral;
+    }
+
+    .color-hortaleza {
+      color: $hortaleza;
+    }
+
+    .color-latina {
+      color: $latina;
+    }
+
+    .color-moncloa_aravaca {
+      color: $moncloa;
+    }
+
+    .color-moratalaz {
+      color: $moratalaz;
+    }
+
+    .color-puente_vallecas {
+      color: $puente-vallecas;
+    }
+
+    .color-retiro {
+      color: $retiro;
+    }
+
+    .color-salamanca {
+      color: $salamanca;
+    }
+
+    .color-san_blas_canillejas {
+      color: $san-blas;
+    }
+
+    .color-tetuan {
+      color: $tetuan;
+    }
+
+    .color-usera {
+      color: $usera;
+    }
+
+    .color-vicalvaro {
+      color: $vicalvaro;
+    }
+
+    .color-villa_vallecas {
+      color: $villa-vallecas;
+    }
+
+    .color-villaverde {
+      color: $villaverde;
+    }
 
     ul {
-      padding: $line-height/2;
+      padding: $line-height / 2;
 
       &.no-district {
         padding: 0;
@@ -171,22 +295,21 @@ $villaverde:        #8E4E28;
 
       li {
         font-size: $small-font-size;
-        margin-bottom: $line-height/2;
+        margin-bottom: $line-height / 2;
       }
     }
 
     a {
-      color: black;
+      color: #000;
 
       span {
-        display: inline-block;
         line-height: rem-calc(20);
-        margin-left: $line-height/4;
+        margin-left: $line-height / 4;
         vertical-align: middle;
+      }
 
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
