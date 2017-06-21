@@ -248,11 +248,13 @@
 .debate-form,
 .proposal-form,
 .budget-investment-form,
-.spending-proposal-form {
+.spending-proposal-form,
+.budget-investment-image-form {
 
   .icon-debates,
   .icon-proposals,
-  .icon-budget {
+  .icon-budget,
+  .icon-budget-investment-image {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
@@ -268,6 +270,10 @@
 
   .icon-budget {
     color: $budget;
+  }
+
+  .icon-budget-investment-image {
+    color: $budget-investment-image;
   }
 }
 
@@ -298,6 +304,13 @@
 
   .recommendations li::before {
     color: $proposals;
+  }
+}
+
+.budget-investment-image-form {
+
+  .recommendations li::before {
+    color: $budget-investment-image;
   }
 }
 

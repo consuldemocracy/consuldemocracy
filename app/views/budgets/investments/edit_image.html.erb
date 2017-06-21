@@ -1,10 +1,19 @@
-<div class="budget-investment-image-edit row">
+<div class="budget-investment-image-form row">
 
-  <div class="small-12 column">
+  <div class="small-12 medium-9 column">
     <%= render "shared/back_link" %>
 
     <h1><%= t("budgets.investments.edit_image.title") %></h1>
 
     <%= render "image_form" %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <span class="icon-budget-investment-image float-right"></span>
+    <h2><%= t("budgets.investments.edit_image.recommendation_title") %></h2>
+    <ul class="recommendations">
+      <li><%= t("budgets.investments.edit_image.recommendation_one") %></li>
+      <li><%= t("budgets.investments.edit_image.recommendation_two") %></li>
+    </ul>
   </div>
 </div>
