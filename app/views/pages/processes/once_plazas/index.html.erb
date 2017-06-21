@@ -66,17 +66,23 @@
       <div class="small-12 medium-6 large-4 column figure-box end">
         <div class="figure-container-card" data-equalizer-watch>
           <figure class="figure-card">
-            <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
+            <%= link_to "https://decide.madrid.es/legislation/processes/#{process_id}/debate",
+                         title: "Ver proceso de #{name}" do %>
+              <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
+            <% end %>
             <figcaption>
-              <span><%= district %></span><br>
-              <h3><%= name %></h3>
+              <%= link_to "https://decide.madrid.es/legislation/processes/#{process_id}/debate",
+                         title: "Ver proceso de #{name}" do %>
+                <span><%= district %></span><br>
+                <h3><%= name %></h3>
+              <% end %>
             </figcaption>
           </figure>
           <ul class="no-bullet">
             <li>
               <%= link_to "/docs/procesos/once_plazas/#{slug}.pdf", target: "_blank",
                           title: "Descargar mapa informativo de #{name} PDF - #{pdf_size}Kb (se abre en ventana nueva)" do %>
-                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span>Mapa de <%= name %></span>
+                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span class="attachment">Mapa de <%= name %></span>
               <% end %>
             </li>
             <li>

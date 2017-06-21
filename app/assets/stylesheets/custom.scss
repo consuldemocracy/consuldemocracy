@@ -3031,6 +3031,18 @@ h3.kit-decide {
     width: 48px;
   }
 
+  a {
+
+    h3,
+    .title {
+      color: #fff;
+    }
+
+    &:hover {
+     text-decoration: none;
+    }
+  }
+
   figcaption {
     bottom: 0;
     color: #fff;
@@ -3043,7 +3055,7 @@ h3.kit-decide {
     width: 100%;
 
     h3,
-    p.title {
+    .title {
       font-family: 'Franklin Gothic' !important;
       font-size: rem-calc(36);
       line-height: rem-calc(36);
