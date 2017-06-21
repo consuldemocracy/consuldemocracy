@@ -1,6 +1,6 @@
 module ScoreCalculator
 
-  EPOC           = Time.new(2015, 6, 15)
+  EPOC           = Time.new(2015, 6, 15).in_time_zone
   COMMENT_WEIGHT = 1.0/5 # 1 positive vote / x comments
   TIME_UNIT      = 24.hours.to_f
 
