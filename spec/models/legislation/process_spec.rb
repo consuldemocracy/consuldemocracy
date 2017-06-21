@@ -71,7 +71,7 @@ RSpec.describe Legislation::Process, type: :model do
   describe "filter scopes" do
     before(:each) do
       @process_1 = create(:legislation_process, start_date: Date.current - 2.days, end_date: Date.current + 1.day)
-      @process_2 = create(:legislation_process, start_date: Date.current + 1.days, end_date: Date.current + 3.days)
+      @process_2 = create(:legislation_process, start_date: Date.current + 1.day, end_date: Date.current + 3.days)
       @process_3 = create(:legislation_process, start_date: Date.current - 4.days, end_date: Date.current - 3.days)
     end
 
