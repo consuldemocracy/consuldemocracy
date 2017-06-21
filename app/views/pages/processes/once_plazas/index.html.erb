@@ -49,26 +49,26 @@
   </div>
 
   <% once_plazas = [
-    ["Plaza de la Remonta",            "1_plaza_remonta",                    "15", "363"],
-    ["Plaza de la Vaguada",            "2_plaza_vaguada",                    "16", "265"],
-    ["Plaza Cívica Lucero",            "3_plaza_civica_lucero",              "7",  "281"],
-    ["Plaza de la Emperatriz",         "4_plaza_emperatriz",                 "10", "317"],
-    ["Plaza Puerto Canfranc",          "5_plaza_puerto_canfranc",            "14", "361"],
-    ["Plaza del Encuentro" ,           "6_plaza_encuentro",                  "12", "350"],
-    ["Plaza de los Misterios" ,        "7_plaza_misterios",                  "11", "343"],
-    ["Plaza Cívica Mar de cristal",    "8_plaza_civica_mar_cristal",         "8",  "495"],
-    ["Plaza Mayor Villaverde",         "9_plaza_conjunto_plazas_villaverde", "6",  "312"],
-    ["Plaza Cívica de San Blas",       "10_plaza_civica_san_blas",           "9",  "321"],
-    ["Plaza Duquesa de Osuna Barajas", "11_plaza_duquesa_osuna",             "13", "272"]] %>
+    ["Plaza de la Remonta",            "1_plaza_remonta",                    "Tetuán",                "15", "363"],
+    ["Plaza de la Vaguada",            "2_plaza_vaguada",                    "Fuencarral - El Pardo", "16", "265"],
+    ["Plaza Cívica Lucero",            "3_plaza_civica_lucero",              "Latina",                "7",  "281"],
+    ["Plaza de la Emperatriz",         "4_plaza_emperatriz",                 "Carabanchel",           "10", "317"],
+    ["Plaza Puerto Canfranc",          "5_plaza_puerto_canfranc",            "Puente de Vallecas",    "14", "361"],
+    ["Plaza del Encuentro" ,           "6_plaza_encuentro",                  "Moratalaz",             "12", "350"],
+    ["Plaza de los Misterios" ,        "7_plaza_misterios",                  "Ciudad Lineal",         "11", "343"],
+    ["Plaza Cívica Mar de cristal",    "8_plaza_civica_mar_cristal",         "Hortaleza",             "8",  "495"],
+    ["Plaza Mayor Villaverde",         "9_plaza_conjunto_plazas_villaverde", "Villaverde",            "6",  "312"],
+    ["Plaza Cívica de San Blas",       "10_plaza_civica_san_blas",           "San Blas - Canillejas", "9",  "321"],
+    ["Plaza Duquesa de Osuna Barajas", "11_plaza_duquesa_osuna",             "Barajas",               "13", "272"]] %>
 
   <div class="row" data-equalizer>
-    <% once_plazas.each do |name, slug, process_id, pdf_size| %>
+    <% once_plazas.each do |name, slug, district, process_id, pdf_size| %>
       <div class="small-12 medium-6 large-4 column figure-box end">
         <div class="figure-container-card" data-equalizer-watch>
           <figure class="figure-card">
             <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
             <figcaption>
-              <span>ONCE PLAZAS</span><br>
+              <span><%= district %></span><br>
               <h3><%= name %></h3>
             </figcaption>
           </figure>
