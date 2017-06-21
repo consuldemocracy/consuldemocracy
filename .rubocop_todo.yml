@@ -130,17 +130,6 @@ Rails/OutputSafety:
     - 'app/helpers/users_helper.rb'
     - 'app/helpers/valuation_helper.rb'
 
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/Validation:
-  Exclude:
-    - 'app/models/comment.rb'
-    - 'app/models/spending_proposal.rb'
-    - 'app/models/verification/residence.rb'
-    - 'app/models/verification/sms.rb'
-
 # Offense count: 9
 Style/AccessorMethodName:
   Exclude:

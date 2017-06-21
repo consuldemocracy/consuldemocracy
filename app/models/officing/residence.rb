@@ -6,9 +6,9 @@ class Officing::Residence
 
   before_validation :call_census_api
 
-  validates_presence_of :document_number
-  validates_presence_of :document_type
-  validates_presence_of :year_of_birth
+  validates :document_number, presence: true
+  validates :document_type, presence: true
+  validates :year_of_birth, presence: true
 
   validate :allowed_age
   validate :residence_in_madrid
