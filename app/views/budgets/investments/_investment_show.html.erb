@@ -120,6 +120,7 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
+        image_url: investment.image.exists? ? URI(request.url) + investment.image.url(:thumb) : '',
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
 
