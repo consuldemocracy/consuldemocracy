@@ -110,11 +110,14 @@ en:
         milestone_publish_date: "Published %{publish_date}"
         edit_image: Edit image
       edit_image:
-        title: Change your investment project image
+        title: Change your project image
         note: 'You are changing investment project image of: %{title}'
         form:
           image_title: Image title
           submit_button: Save image
+        recommendation_title: Image recomendations
+        recommendation_one: Projects that have images attract more attention than those that do not. If you have a picture suitable for your project upload.
+        recommendation_two: Give a descriptive title to the image.
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
