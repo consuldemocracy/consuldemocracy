@@ -1,27 +1,27 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
   <div class="panel">
     <div class="row">
-
-      <!-- TODO: ROCK&ROR: Temporal markup. Place it as needed to reflect mockup -->
-      <div class="small-2 medium-2 large-2 column">
+      <div class="small-12 medium-3 large-2 column">
         <% if investment.image.exists? %>
-          <%= image_tag investment.image.url(:thumb),
-                        title: investment.image_title,
-                        alt: investment.image_title, class: "th" %>
+          <picture>
+            <source srcset="<%= investment.image.url(:medium) %>"
+                    alt="<%= investment.image_description %>"
+                    title= "<%= investment.image_description %>"
+                    media="(max-width: 640px)">
+            <img    srcset="<%= investment.image.url(:thumb) %>"
+                    alt="<%= investment.image_description %>"
+                    title="<%= investment.image_description %>">
+          </picture>
         <% else %>
-          <!-- TODO: ROCK&ROR: Create colored placeholder or default image -->
+
         <% end %>
       </div>
-
-      <div class="small-10 medium-7 large-10 column">
+      <div class="small-12 medium-6 large-7 column">
         <div class="budget-investment-content">
-
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
             <p class="investment-project-info">
-
               <%= l investment.created_at.to_date %>
-
               <% if investment.author.hidden? || investment.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
                 <span class="author">
@@ -39,7 +39,6 @@
                   </span>
                 <% end %>
               <% end %>
-
               <span class="bullet">&nbsp;&bull;&nbsp;</span>
               <%= investment.heading.name %>
             </p>
@@ -53,7 +52,6 @@
       </div>
 
       <% unless investment.unfeasible? %>
-
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center">
@@ -90,7 +88,6 @@
             </p>
           </div>
         <% end %>
-
       <% end %>
     </div>
   </div>

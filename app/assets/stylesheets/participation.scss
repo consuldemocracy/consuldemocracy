@@ -653,6 +653,44 @@
   }
 }
 
+.budget-investments-list {
+  .budget-investment{
+    @include breakpoint(medium) {
+      .panel{
+        padding:0 0.75rem 0 0;
+      }
+      h3{
+        font-size: 1.4rem;
+      }
+      .column:first-child{
+        overflow: hidden;
+      }
+      .column:nth-child(2){
+        float: left;
+      }
+      .column:last-child:not(:first-child){
+        padding-top:0.75rem;
+      }
+      img{
+        max-width: 12rem;
+      }
+      .budget-investment-content{
+        ul{
+          margin-bottom:0;
+        }
+      }
+    }
+    @include breakpoint(small) {
+      h3{
+        font-size: 1.3rem;
+      }
+      .column:first-child{
+        text-align: center;
+      }
+    }
+  }
+}
+
 .debate,
 .proposal,
 .investment-project,
