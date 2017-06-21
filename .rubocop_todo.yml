@@ -165,13 +165,6 @@ Layout/AlignParameters:
     - 'spec/models/user_spec.rb'
     - 'spec/rails_helper.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/BlockEndNewline:
-  Exclude:
-    - 'app/models/banner.rb'
-    - 'spec/features/users_auth_spec.rb'
-
 # Offense count: 19
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
