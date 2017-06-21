@@ -59,7 +59,7 @@ fr:
       budget:
         name: "Nom"
         description_accepting: "Description durant la phase d'acceptation"
-        description_reviewing: "Description durant la phase de revue" 
+        description_reviewing: "Description durant la phase de revue"
         description_selecting: "Description durant la phase de sélection"
         description_valuating: "Description durant la phase d'évaluation"
         description_balloting: "Description durant la phase de vote"
