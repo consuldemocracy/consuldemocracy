@@ -578,12 +578,6 @@ Layout/SpaceAfterComma:
     - 'spec/models/abilities/moderator_spec.rb'
     - 'spec/models/verification/management/email_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/SpaceAfterNot:
-  Exclude:
-    - 'app/models/flag.rb'
-
 # Offense count: 20
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
