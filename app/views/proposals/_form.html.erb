@@ -41,10 +41,8 @@
             <h3 class="title-challenge white"><%= challenge.title%> </h3>
             <%= f.hidden_field :problem_id, :value => challenge.id %>
             <p class="white"> <%= challenge.summary%> </p>
-            <p class="white"> Presupuesto máximo: <%= challenge.budget%> </br>
-            <% if challenge.geozones.ids.any? %>
-              Comunidad afectada: <%= challenge.geozones.ids %>
-            <% end %>
+            <p class="white"> <%= t("proposals.form.problem.budget") %> <%= challenge.budget%> </br>
+            <%= t("proposals.form.problem.community") %> <%= challenge.geozones_name %>
             </p>
           </div>
           <div class="deadline-problem float-right">
@@ -109,10 +107,6 @@
       </div>
     -->
 
-      <!-- <div class="small-12 medium-6 column">
-        <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-        <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
-      </div> -->
 
       <div class="small-12 column">
         <%= f.label :tag_list, t("proposals.form.tags_label") %>

@@ -15,7 +15,7 @@ class Proposal < ActiveRecord::Base
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone
+  has_and_belongs_to_many :geozones
   belongs_to :problem
 
   has_many :comments, as: :commentable
@@ -69,7 +69,7 @@ class Proposal < ActiveRecord::Base
       question           => 'B',
       author.username    => 'B',
       tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
+      geozones.try(:name) => 'B',
       summary            => 'C',
       description        => 'D'
     }
@@ -179,6 +179,18 @@ class Proposal < ActiveRecord::Base
     proposal_notifications
   end
 
+  def geozones_name
+    if self.geozones.any?
+      names = ''
+      self.geozones.each do |g|
+        names += g.name + ' | '
+      end
+      return names
+    else
+      return 'Toda la comuna'
+    end
+  end
+  
   protected
 
     def set_responsible_name

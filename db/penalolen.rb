@@ -169,8 +169,10 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
   starts_at: 1.day.ago,
   ends_at: 10.day.from_now,
   active: true,
-  user: verified)
+  geozones: Geozone.reorder("RANDOM()").limit(3),
+  user: admin )
 
+  print "Creando desafío 1"
 
   problem2 = Problem.create(title: "Muchos perros callejeros en mi barrio",
   cause: "Las causas de que haya muchos perros callejeros son:
@@ -180,7 +182,12 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
   consequence: "1.- Plazas con perros agresivos que pueden morder a niños
 2.- Mi barrio está sucio y poco salubre con fecas
 3.- Perros sufren y tienen muy mala salud por tener que vivir en la calle",
-  user: admin)
+  user: admin,
+  geozones: Geozone.reorder("RANDOM()").limit(1) )
+
+  print "Creando desafío 2"
+
+puts ""
 
 puts " ✅"
 print "Creando propuestas"
@@ -196,10 +203,11 @@ proposal0 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "Para que haya menos perros callejeros se debe partir por tener más educación sobre tenencia responsable de animales. Es por esto que creo que la municipalidad se debe coordinar con las juntas de vecinos para que les haga talleres de tenencia responsable de animales, junto con hacer esterilizaciones masivas y gratis. Esto ayudará a que los barrios no estén llenos de fecas de perro y perros callejeros teniendo espacios más limpios y seguros para los niños y niñas de Peñalolén.",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem2,
+                            geozones: problem2.geozones,
                             cached_votes_up: Setting["votes_for_proposal_success"])
+
 
 proposal0b = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Tenencia responsable de animales para ambientes más sanos y seguros",
@@ -210,8 +218,8 @@ proposal0b = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "Para que haya menos perros callejeros se debe partir por tener más educación sobre tenencia responsable de animales. Es por esto que creo que la municipalidad se debe coordinar con las juntas de vecinos para que les haga talleres de tenencia responsable de animales, junto con hacer esterilizaciones masivas y gratis. Esto ayudará a que los barrios no estén llenos de fecas de perro y perros callejeros teniendo espacios más limpios y seguros para los niños y niñas de Peñalolén.",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
+                            geozones: problem2.geozones,
                             problem: problem2)
 
 
@@ -224,9 +232,9 @@ proposal1 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
+                            geozones: problem.geozones,
                             for_challenge: true,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
@@ -240,7 +248,7 @@ proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
                             for_challenge: true,
-                            geozone: Geozone.reorder("RANDOM()").first,
+                            geozones: problem.geozones,
                             terms_of_service: "1",
                             problem: problem)
 
@@ -253,10 +261,10 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             for_challenge: true,
                             terms_of_service: "1",
                             problem: problem,
+                            geozones: problem.geozones,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
 
@@ -270,7 +278,6 @@ proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
                             for_challenge: true)
@@ -286,9 +293,9 @@ proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
                             created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
+                            geozones: problem.geozones,
                             for_challenge: true,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
@@ -300,30 +307,13 @@ proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             responsible_name: Faker::Name.name,
                             external_url: Faker::Internet.url,
                             description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
-                            created_at: rand((Time.current - 1.week) .. Time.current),
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
                             for_challenge: true,
+                            geozones: problem.geozones,
                             created_at: 20.month.ago,
                             cached_votes_up: Setting["votes_for_proposal_success"])
-
-
-# Proposal.last(1).each do |proposal|
-#   title = Faker::Lorem.sentence(word_count = 3)
-#   description = Faker::Lorem.sentence(word_count = 12)
-#   banner = Banner.create!(title: title,
-#                           description: description,
-#                           style: ["banner-style banner-style-one", "banner-style banner-style-two",
-#                                   "banner-style banner-style-three"].sample,
-#                           image: ["banner-img banner-img-one", "banner-img banner-img-two",
-#                                   "banner-img banner-img-three"].sample,
-#                           target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
-#                           post_started_at: rand((Time.current - 1.week) .. (Time.current - 1.day)),
-#                           post_ended_at:   rand((Time.current  - 1.day) .. (Time.current + 1.week)),
-#                           created_at: rand((Time.current - 1.week) .. Time.current))
-# end
 
 
 puts " ✅"

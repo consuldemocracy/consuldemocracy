@@ -1,7 +1,7 @@
 module GeozonesHelper
 
   def geozone_name(geozonable)
-    geozonable.geozone ? geozonable.geozone.name : t("geozones.none")
+    geozonable.geozones ? geozonable.geozones_name : t("geozones.none")
   end
 
   def geozone_select_options

@@ -88,7 +88,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :responsible_name, :author_id, :question, :summary, :description, :external_url, :video_url, :for_challenge, :responsible_name, :tag_list, :prioritize, :what, :why, :terms_of_service, :geozone_id, :problem_id, problem_attributes: [:id, :title, :summary, :description, :cause, :consequence, :user_id])
+      params.require(:proposal).permit(:title, :responsible_name, :author_id, :question, :summary, :description, :external_url, :video_url, :for_challenge, :responsible_name, :tag_list, :prioritize, :what, :why, :terms_of_service,  :problem_id, problem_attributes: [:id, :title, :summary, :description, :cause, :consequence, :user_id], geozone_ids: [])
     end
 
     def retired_params

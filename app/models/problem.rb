@@ -8,4 +8,17 @@ class Problem < ActiveRecord::Base
   belongs_to :user
   has_many :proposals
 
+  def geozones_name
+    if self.geozones.any?
+      names = ''
+      self.geozones.each do |g|
+        names += g.name + ' | '
+      end
+      return names
+    else
+      return 'Toda la comuna'
+    end
+  end
+
+
 end

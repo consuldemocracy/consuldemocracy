@@ -67,6 +67,7 @@ es:
   problems:
     form:
       blank: "Definir un problema"
+    whole_area: "Toda la comuna"
   debates:
     create:
       form:
@@ -302,6 +303,9 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       done: Realizada
       other: Otra
     form:
+      problem:
+        budget: "Presupuesto máximo: "
+        community: "Comunidad afectada: "
       geozone: "Ámbito de actuación"
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
