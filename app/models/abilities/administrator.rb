@@ -44,7 +44,7 @@ module Abilities
 
       can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
 
-      can [:index, :read, :new, :create, :update, :destroy], Budget
+      can [:index, :read, :new, :create, :update, :destroy, :calculate_winners], Budget
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
       can [:hide, :update, :toggle_selection], Budget::Investment
