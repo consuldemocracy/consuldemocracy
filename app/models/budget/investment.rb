@@ -49,6 +49,7 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { feasible.where(selected: true) }
+    scope :winners,                     -> { selected.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 

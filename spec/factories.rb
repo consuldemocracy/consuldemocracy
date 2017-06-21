@@ -291,6 +291,12 @@ FactoryGirl.define do
       selected true
       feasibility "feasible"
       valuation_finished true
+
+    end
+
+    trait :winner do
+      selected
+      winner true
     end
 
     trait :unselected do
