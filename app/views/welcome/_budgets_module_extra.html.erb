@@ -1,10 +1,14 @@
 <div class="row margin">
   <div class="small-12 medium-6 column">
     <figure class="figure-card">
-      <%= image_tag "welcome_once_plazas.jpg", alt: "" %>
+      <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
+        <%= image_tag "welcome_once_plazas.jpg", alt: "" %>
+      <% end %>
       <figcaption>
-        <span><%= t("welcome.budgets.once_plazas.label") %></span><br>
-        <%= t("welcome.budgets.once_plazas.title") %>
+        <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
+          <span><%= t("welcome.budgets.once_plazas.label") %></span><br>
+          <p class="title"><%= t("welcome.budgets.once_plazas.title") %></p>
+        <% end %>
       </figcaption>
     </figure>
     <p><%= t("welcome.budgets.once_plazas.text") %></p>
@@ -14,10 +18,14 @@
   </div>
   <div class="small-12 medium-6 column">
     <figure class="figure-card">
-      <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
+      <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
+        <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
+      <% end %>
       <figcaption>
-        <span><%= t("welcome.budgets.videos.label") %></span><br>
-        <%= t("welcome.budgets.videos.title") %>
+        <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
+          <span><%= t("welcome.budgets.videos.label") %></span><br>
+          <p class="title"><%= t("welcome.budgets.videos.title") %></p>
+        <% end %>
       </figcaption>
     </figure>
     <p><%= t("welcome.budgets.videos.text") %></p>

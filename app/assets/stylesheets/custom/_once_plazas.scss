@@ -57,10 +57,21 @@
     }
   }
 
+  a {
+
+    h3 {
+      color: #fff;
+    }
+
+    &:hover {
+     text-decoration: none;
+    }
+  }
+
   a:not(.button) {
     color: #000;
 
-    span {
+    .attachment {
       display: inline-block;
       line-height: rem-calc(20);
       margin-left: $line-height / 4;
