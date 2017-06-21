@@ -5,7 +5,7 @@
 <% end %>
 <% provide :social_media_meta_tags do %>
 <!-- Facebook OG -->
-<meta property="og:url"           content="https://decide.madrid.es/proceso/once-plazas" />
+<meta property="og:url"           content="<%= once_plazas_url %>" />
 <meta property="og:title"         content="Plan MAD-RE: Remodelación de 11 plazas en la periferia de Madrid" />
 <meta property="og:image"         content="<%= image_url '/social_media_once_plazas.png' %>" />
 <meta property="og:description"   content="Participa en el debate del concurso de ideas previo a la remodelación de 11 plazas públicas en los distritos de la periferia de Madrid." />
@@ -66,17 +66,23 @@
       <div class="small-12 medium-6 large-4 column figure-box end">
         <div class="figure-container-card" data-equalizer-watch>
           <figure class="figure-card">
-            <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
+            <%= link_to "https://decide.madrid.es/legislation/processes/#{process_id}/debate",
+                         title: "Ver proceso de #{name}" do %>
+              <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
+            <% end %>
             <figcaption>
-              <span><%= district %></span><br>
-              <h3><%= name %></h3>
+              <%= link_to "https://decide.madrid.es/legislation/processes/#{process_id}/debate",
+                         title: "Ver proceso de #{name}" do %>
+                <span><%= district %></span><br>
+                <h3><%= name %></h3>
+              <% end %>
             </figcaption>
           </figure>
           <ul class="no-bullet">
             <li>
               <%= link_to "/docs/procesos/once_plazas/#{slug}.pdf", target: "_blank",
                           title: "Descargar mapa informativo de #{name} PDF - #{pdf_size}Kb (se abre en ventana nueva)" do %>
-                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span>Mapa de <%= name %></span>
+                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span class="attachment">Mapa de <%= name %></span>
               <% end %>
             </li>
             <li>
