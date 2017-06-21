@@ -653,15 +653,6 @@ Layout/SpaceInsidePercentLiteralDelimiters:
   Exclude:
     - 'app/models/activity.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiteralsInInterpolation:
-  Exclude:
-    - 'app/controllers/stats_controller.rb'
-    - 'app/models/proposal.rb'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoredMethods.
