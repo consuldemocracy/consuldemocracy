@@ -2,36 +2,38 @@ module ActsAsParanoidAliases
 
   def self.included(base)
     base.extend(ClassMethods)
+    self.class_eval do
 
-    def hide
-      return false if hidden?
-      update_attribute(:hidden_at, Time.current)
-      after_hide
-    end
+      def hide
+        return false if hidden?
+        update_attribute(:hidden_at, Time.current)
+        after_hide
+      end
 
-    def hidden?
-      deleted?
-    end
+      def hidden?
+        deleted?
+      end
 
-    def after_hide
-    end
+      def after_hide
+      end
 
-    def confirmed_hide?
-      confirmed_hide_at.present?
-    end
+      def confirmed_hide?
+        confirmed_hide_at.present?
+      end
 
-    def confirm_hide
-      update_attribute(:confirmed_hide_at, Time.current)
-    end
+      def confirm_hide
+        update_attribute(:confirmed_hide_at, Time.current)
+      end
 
-    def restore(opts={})
-      return false unless hidden?
-      super(opts)
-      update_attribute(:confirmed_hide_at, nil)
-      after_restore
-    end
+      def restore(opts={})
+        return false unless hidden?
+        super(opts)
+        update_attribute(:confirmed_hide_at, nil)
+        after_restore
+      end
 
-    def after_restore
+      def after_restore
+      end
     end
   end
 

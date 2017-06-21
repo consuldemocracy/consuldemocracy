@@ -8,13 +8,13 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
 [![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
 [![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana Consul, creada originariamente por el Ayuntamiento de Madrid.
 
@@ -46,6 +46,7 @@ RAILS_ENV=test rake db:setup
 ```
 
 Para ejecutar la aplicación en local:
+
 ```
 bin/rails s
 ```
@@ -56,6 +57,18 @@ Para ejecutar los tests:
 
 ```
 bin/rspec
+```
+
+Si añades código SCSS puedes revisarlo con:
+
+```
+scss-lint
+```
+
+Si trabajas en código coffeescript puedes revisarlo con [coffeelint](http://www.coffeelint.org/) (instalalo con `npm install -g coffeelint`) :
+
+```
+coffeelint .
 ```
 
 Puedes usar el usuario administrador por defecto del fichero seeds:

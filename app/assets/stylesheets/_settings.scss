@@ -53,53 +53,53 @@ $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
-$brand:             #004A83;
+$brand:             #004a83;
 $dark:              darken($brand, 10%);
 
-$text:              #222222;
+$text:              #222;
 $text-medium:       #515151;
-$text-light:        #BFBFBF;
+$text-light:        #bfbfbf;
 
-$border:            #DEE0E3;
+$border:            #dee0e3;
 
 $link:              $brand;
 $link-hover:        darken($link, 20%);
 
 $debates:           $brand;
 
-$like:              #7BD2A8;
-$unlike:            #EF8585;
+$like:              #7bd2a8;
+$unlike:            #ef8585;
 
-$delete:            #F04124;
-$check:             #46DB91;
+$delete:            #f04124;
+$check:             #46db91;
 
-$proposals:         #FFA42D;
+$proposals:         #ffa42d;
 $proposals-dark:    #794500;
 
-$budget:            #7E328A;
-$budget-hover:      #7571BF;
+$budget:            #7e328a;
+$budget-hover:      #7571bf;
 
-$highlight:         #E7F2FC;
-$light:             #F5F7FA;
-$featured:          #FFDC5C;
+$highlight:         #e7f2fc;
+$light:             #f5f7fa;
+$featured:          #ffdc5c;
 
-$footer-border:     #BFC1C3;
+$footer-border:     #bfc1c3;
 
-$success-bg:        #DFF0D8;
-$success-border:    #D6E9C6;
-$color-success:     #3C763D;
+$success-bg:        #dff0d8;
+$success-border:    #d6e9c6;
+$color-success:     #3c763d;
 
-$info-bg:           #D9EDF7;
-$info-border:       #BCE8F1;
-$color-info:        #31708F;
+$info-bg:           #d9edf7;
+$info-border:       #bce8f1;
+$color-info:        #31708f;
 
-$warning-bg:        #FCF8E3;
-$warning-border:    #FAEBCC;
-$color-warning:     #8A6D3B;
+$warning-bg:        #fcf8e3;
+$warning-border:    #faebcc;
+$color-warning:     #8a6d3b;
 
-$alert-bg:          #F2DEDE;
-$alert-border:      #EBCCD1;
-$color-alert:       #A94442;
+$alert-bg:          #f2dede;
+$alert-border:      #ebccd1;
+$color-alert:       #a94442;
 
 
 // 1. Global
@@ -118,8 +118,8 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #222222;
-$white: #ffffff;
+$black: #222;
+$white: #fff;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
@@ -573,7 +573,7 @@ $tab-background: $white;
 $tab-background-active: $white;
 $tab-item-font-size: $base-font-size;
 $tab-item-background-hover: $white;
-$tab-item-padding: $line-height/2  0;
+$tab-item-padding: $line-height / 2  0;
 $tab-expand-max: 6;
 $tab-content-background: $white;
 $tab-content-border: $border;

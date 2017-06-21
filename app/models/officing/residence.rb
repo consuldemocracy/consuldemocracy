@@ -62,7 +62,7 @@ class Officing::Residence
                document_type:   document_type).first
   end
 
-   def residence_in_madrid
+  def residence_in_madrid
     return if errors.any?
 
     unless residency_valid?

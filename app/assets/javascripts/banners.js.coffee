@@ -5,7 +5,7 @@ App.Banners =
 
   update_style: (selector, style) ->
     $(selector).removeClass($(selector).attr("class"), true)
-               .addClass(style, true)
+      .addClass(style, true)
 
   initialize: ->
     $('[data-js-banner-title]').on

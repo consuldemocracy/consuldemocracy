@@ -42,6 +42,9 @@ FactoryGirl.define do
       confirmed_hide_at Time.current
     end
 
+    trait :verified do
+      verified_at Time.current
+    end
   end
 
   factory :identity do

@@ -337,14 +337,16 @@ feature 'Budget Investments' do
   end
 
   context "Show (feasible budget investment)" do
-    let(:investment) { create(:budget_investment,
-                          :feasible,
-                          :finished,
-                          budget: budget,
-                          group: group,
-                          heading: heading,
-                          price: 16,
-                          price_explanation: 'Every wheel is 4 euros, so total is 16')}
+    let(:investment) do
+      create(:budget_investment,
+             :feasible,
+             :finished,
+             budget: budget,
+             group: group,
+             heading: heading,
+             price: 16,
+             price_explanation: 'Every wheel is 4 euros, so total is 16')
+    end
 
     background do
       user = create(:user)
