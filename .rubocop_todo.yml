@@ -612,14 +612,6 @@ Layout/SpaceAroundEqualsInParameterDefault:
 Layout/SpaceAroundOperators:
   Enabled: false
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Layout/SpaceBeforeComma:
-  Exclude:
-    - 'app/models/proposal.rb'
-    - 'spec/controllers/management/sessions_controller_spec.rb'
-    - 'spec/controllers/management/users_controller_spec.rb'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
