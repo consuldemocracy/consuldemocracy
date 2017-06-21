@@ -44,7 +44,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def self.filter_params(params)
-    params.select{|x,_| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
+    params.select{|x, _| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
   end
 
   def self.scoped_filter(params, current_filter)

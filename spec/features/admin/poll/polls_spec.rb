@@ -356,7 +356,7 @@ feature 'Admin polls' do
         question_2.valid_answers.each_with_index do |answer, i|
           within("#question_#{question_2.id}_#{i}_result") do
             expect(page).to have_content(answer)
-            expect(page).to have_content([0,15][i])
+            expect(page).to have_content([0, 15][i])
           end
         end
 

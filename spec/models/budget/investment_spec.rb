@@ -249,7 +249,7 @@ describe Budget::Investment do
       by_valuator = Budget::Investment.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
-      expect(by_valuator.sort).to eq([investment1,investment3].sort)
+      expect(by_valuator.sort).to eq([investment1, investment3].sort)
     end
   end
 

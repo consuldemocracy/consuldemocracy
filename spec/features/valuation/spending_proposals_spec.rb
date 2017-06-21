@@ -311,9 +311,9 @@ feature 'Valuation spending proposals' do
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
-      feasible_true_fields  = ['Price (€)','Cost during the first year (€)','Price explanation','Time scope']
+      feasible_true_fields  = ['Price (€)', 'Cost during the first year (€)', 'Price explanation', 'Time scope']
       feasible_false_fields = ['Feasibility explanation']
-      feasible_any_fields   = ['Valuation finished','Internal comments']
+      feasible_any_fields   = ['Valuation finished', 'Internal comments']
       feasible_nil_fields   = feasible_true_fields + feasible_false_fields + feasible_any_fields
 
       visit edit_valuation_spending_proposal_path(@spending_proposal)

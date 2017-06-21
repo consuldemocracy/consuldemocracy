@@ -48,7 +48,7 @@ describe "Abilities::Moderator" do
   describe "hiding, reviewing and restoring" do
     let(:ignored_comment)  { create(:comment, :with_ignored_flag) }
     let(:ignored_debate)   { create(:debate,  :with_ignored_flag) }
-    let(:ignored_proposal) { create(:proposal,:with_ignored_flag) }
+    let(:ignored_proposal) { create(:proposal, :with_ignored_flag) }
 
     it { should be_able_to(:hide, comment) }
     it { should be_able_to(:hide_in_moderation_screen, comment) }
