@@ -35,11 +35,11 @@ feature 'Budget Investments' do
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).not_to have_css("img.th")
+      expect(page).not_to have_css("picture")
     end
 
     within("#budget_investment_#{investment_with_image.id}") do
-      expect(page).to have_css("img.th[alt='#{investment_with_image.image_title}'][title='#{investment_with_image.image_title}']")
+      expect(page).to have_css("picture img[alt='#{investment_with_image.image_title}'][title='#{investment_with_image.image_title}']")
     end
   end
 
@@ -387,7 +387,7 @@ feature 'Budget Investments' do
     expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: investment.heading)
   end
 
-  context "Edit image button" do
+  context "Show edit image button" do
     scenario "should not be shown for anonymous users" do
       investment = create(:budget_investment, heading: heading)
       visit budget_investment_path(budget, investment)
@@ -409,16 +409,25 @@ feature 'Budget Investments' do
 
       expect(page).to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
     end
+
+    scenario "should be shown when current user is administrator" do
+      administrator = create(:administrator).user
+      investment = create(:budget_investment, heading: heading, author: author)
+      login_as(administrator)
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
+    end
   end
 
-  scenario "edit page should not be accesible when there is no logged user" do
+  scenario "Edit image page should not be accesible when there is no logged user" do
     investment = create(:budget_investment, heading: heading, author: author)
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_content "You must sign in or register to continue"
   end
 
-  scenario "edit page should redirect to investment show page if logged user is not the author" do
+  scenario "Edit image page should redirect to investment show page if logged user is not the author" do
     other_author = create(:user, :level_two, username: 'Manuel')
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(other_author)
@@ -427,7 +436,24 @@ feature 'Budget Investments' do
     expect(page).to have_content "You do not have permission to carry out the action 'edit_image' on budget/investment."
   end
 
-  scenario "Update image should not be posible if logged user is not the author" do
+  scenario "Edit image page should be accesible when author is currently logged" do
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(author)
+    visit edit_image_budget_investment_path(budget, investment)
+
+    expect(page).to have_content "Change your project image"
+  end
+
+  scenario "Edit image page should be accesible when there is logged any administrator" do
+    administrator = create(:administrator).user
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(administrator)
+    visit edit_image_budget_investment_path(budget, investment)
+
+    expect(page).to have_content "Change your project image"
+  end
+
+  scenario "Update image should not be possible if logged user is not the author" do
     other_author = create(:user, :level_two, username: 'Manuel')
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(other_author)
@@ -437,9 +463,24 @@ feature 'Budget Investments' do
     expect(page).to have_content 'You do not have permission'
   end
 
-  scenario "Update image should be posible for authors" do
+  scenario "Update image should be possible for authors" do
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(author)
+
+    visit edit_image_budget_investment_path(investment.budget, investment)
+    fill_in :budget_investment_image_title, with: "New image title"
+    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
+    click_on "Save image"
+    within ".budget-investment-show" do
+      expect(page).to have_css("img[src*='logo_header.jpg']")
+    end
+    expect(page).to have_content 'Investment project image updated succesfully. '
+  end
+
+  scenario "Update image should be possible for authors" do
+    administrator = create(:administrator).user
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(administrator)
 
     visit edit_image_budget_investment_path(investment.budget, investment)
     fill_in :budget_investment_image_title, with: "New image title"
@@ -551,12 +592,12 @@ feature 'Budget Investments' do
   context "Destroy" do
 
     scenario "Admin cannot destroy budget investments" do
-      admin = create(:administrator)
+      administrator = create(:administrator).user
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
 
-      login_as(admin.user)
-      visit user_path(user)
+      login_as(administrator)
+      visit user_path(administrator)
 
       within("#budget_investment_#{investment.id}") do
         expect(page).to_not have_link "Delete"
