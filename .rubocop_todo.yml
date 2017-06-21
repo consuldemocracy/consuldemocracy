@@ -246,12 +246,6 @@ Layout/EmptyLines:
     - 'spec/features/verification/verified_user_spec.rb'
     - 'spec/support/verifiable.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/EmptyLinesAroundAccessModifier:
-  Exclude:
-    - 'app/controllers/users_controller.rb'
-
 # Offense count: 29
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.

@@ -26,6 +26,7 @@ class Legislation::AnswersController < Legislation::BaseController
   end
 
   private
+
     def answer_params
       params.require(:legislation_answer).permit(
         :legislation_question_option_id,
