@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20170621180611) do
     t.integer "group_id"
     t.string  "name",     limit: 50
     t.integer "price",    limit: 8
-    t.integer "population",            default: 0
+    t.integer "population"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
