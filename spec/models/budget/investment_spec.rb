@@ -591,10 +591,10 @@ describe Budget::Investment do
         least_voted2 = create(:budget_investment, cached_votes_up: 1)
 
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to  eq most_voted2
-        expect(Budget::Investment.sort_by_confidence_score.second).to  eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.third).to  eq least_voted2
-        expect(Budget::Investment.sort_by_confidence_score.fourth).to  eq least_voted
+        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted2
+        expect(Budget::Investment.sort_by_confidence_score.second).to eq most_voted
+        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted2
+        expect(Budget::Investment.sort_by_confidence_score.fourth).to eq least_voted
       end
     end
   end

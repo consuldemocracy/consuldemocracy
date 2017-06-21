@@ -99,7 +99,7 @@ FactoryGirl.define do
 
   factory :verified_user do
     document_number
-    document_type    'dni'
+    document_type 'dni'
   end
 
   factory :debate do
