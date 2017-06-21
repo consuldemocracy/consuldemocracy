@@ -77,6 +77,18 @@ module Budgets
       super
     end
 
+    def edit_image
+    end
+
+    def update_image
+      if @investment.update(investment_params)
+        redirect_to budget_investment_path(@investment.budget, @investment),
+                    notice: t("flash.actions.update_image.budget_investment")
+      else
+        render :edit_image
+      end
+    end
+
     private
 
       def resource_model
@@ -105,7 +117,7 @@ module Budgets
         params.require(:budget_investment)
               .permit(:title, :description, :external_url, :heading_id,
                       :tag_list, :organization_name, :location, :terms_of_service,
-                      :image, :image_title)
+                      :image_title, :image)
       end
 
       def load_ballot

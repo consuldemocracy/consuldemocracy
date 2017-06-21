@@ -4,6 +4,12 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
+      <% if author_of?(investment, current_user) %>
+        <%= link_to t("budgets.investments.show.edit_image"),
+                    edit_image_budget_investment_path(investment.budget, investment),
+                    class: 'button hollow float-right' %>
+      <% end %>
+
       <h1><%= investment.title %></h1>
 
       <div class="budget-investment-info">

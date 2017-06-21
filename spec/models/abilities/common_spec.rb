@@ -197,7 +197,7 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:vote, investment_in_accepting_budget) }
       it { should be_able_to(:vote, investment_in_selecting_budget) }
       it { should_not be_able_to(:vote, investment_in_balloting_budget) }
-      
+
       it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
       it { should_not be_able_to(:destroy, investment_in_reviewing_budget) }
       it { should_not be_able_to(:destroy, investment_in_selecting_budget) }
@@ -211,6 +211,24 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
       it { should be_able_to(:create, ballot_in_balloting_budget) }
+
+      it { should be_able_to(:edit_image, own_investment_in_accepting_budget) }
+      it { should be_able_to(:edit_image, own_investment_in_reviewing_budget) }
+      it { should be_able_to(:edit_image, own_investment_in_selecting_budget) }
+      it { should be_able_to(:edit_image, own_investment_in_balloting_budget) }
+      it { should be_able_to(:update_image, own_investment_in_accepting_budget) }
+      it { should be_able_to(:update_image, own_investment_in_reviewing_budget) }
+      it { should be_able_to(:update_image, own_investment_in_selecting_budget) }
+      it { should be_able_to(:update_image, own_investment_in_balloting_budget) }
+
+      it { should_not be_able_to(:edit_image, investment_in_accepting_budget) }
+      it { should_not be_able_to(:edit_image, investment_in_reviewing_budget) }
+      it { should_not be_able_to(:edit_image, investment_in_selecting_budget) }
+      it { should_not be_able_to(:edit_image, investment_in_balloting_budget) }
+      it { should_not be_able_to(:update_image, investment_in_accepting_budget) }
+      it { should_not be_able_to(:update_image, investment_in_reviewing_budget) }
+      it { should_not be_able_to(:update_image, investment_in_selecting_budget) }
+      it { should_not be_able_to(:update_image, investment_in_balloting_budget) }
     end
   end
 
