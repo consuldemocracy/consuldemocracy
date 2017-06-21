@@ -71,4 +71,6 @@ describe "Abilities::Administrator" do
 
   it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: 'valuating'))) }
   it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: 'finished'))) }
+  it { should be_able_to(:edit_image, create(:budget_investment, budget: create(:budget))) }
+  it { should be_able_to(:update_image, create(:budget_investment, budget: create(:budget))) }
 end

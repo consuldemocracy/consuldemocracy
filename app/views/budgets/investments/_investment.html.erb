@@ -5,12 +5,12 @@
         <% if investment.image.exists? %>
           <picture>
             <source srcset="<%= investment.image.url(:medium) %>"
-                    alt="<%= investment.image_description %>"
-                    title= "<%= investment.image_description %>"
+                    alt="<%= investment.image_title %>"
+                    title= "<%= investment.image_title %>"
                     media="(max-width: 640px)">
             <img    srcset="<%= investment.image.url(:thumb) %>"
-                    alt="<%= investment.image_description %>"
-                    title="<%= investment.image_description %>">
+                    alt="<%= investment.image_title %>"
+                    title="<%= investment.image_title %>">
           </picture>
         <% else %>
 
