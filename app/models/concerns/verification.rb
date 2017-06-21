@@ -47,7 +47,7 @@ module Verification
   end
 
   def failed_residence_verification?
-    !residence_verified? && failed_census_calls.size > 0
+    !residence_verified? && !failed_census_calls.empty?
   end
 
   def no_phone_available?

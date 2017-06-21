@@ -706,9 +706,3 @@ Style/VariableNumber:
 Style/WordArray:
   EnforcedStyle: percent
   MinSize: 3
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/ZeroLengthPredicate:
-  Exclude:
-    - 'app/models/concerns/verification.rb'
