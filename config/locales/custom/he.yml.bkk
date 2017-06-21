@@ -1,0 +1,655 @@
+---
+he:
+  account:
+    show:
+      change_credentials_link: שינוי ההרשאות שלי
+      email_on_comment_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מעיר להצעות או לדיונים שלי
+      email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מגיב על ההערות שלי
+      erase_account_link: מחק את החשבון שלי
+      finish_verification: נא לוודא החשבון
+      notifications: התראות
+      organization_name_label: שם הארגון
+      organization_responsible_name_placeholder: נציג הארגון/ההתאגדות
+      personal: פרטים אישיים
+      phone_number_label: מספר טלפון
+      public_activity_label: השאר את פירוט הפעילויות שלי גלוי לציבור
+      save_changes_submit: שמירת השינויים
+      subscription_to_website_newsletter_label: ארצה לקבל בדואר אלקטרוני מידע מהאתר
+      email_on_direct_message_label: לקבל בדואר אלקטרוני על פניות אישיות
+      email_digest_label: לקבל סיכום של ההודעות על הצעות חדשות
+      official_position_badge_label: הצג את אות הדירוג הרשמי שלי
+      title: החשבון שלי
+      user_permission_debates: להשתתף בדיונים
+      user_permission_info: ...עם החשבון שלך תוכל/י
+      user_permission_proposal: ליצור הצעות חדשות
+      user_permission_support_proposal: לתמוך בהצעות
+      user_permission_title: השתתפות
+      user_permission_verify: לבצע את כל הפעולות הדרושות לווידוא החשבון 
+      user_permission_verify_info: “* רק למשתמשים ב-Census"
+      user_permission_votes: להשתתף בהצבעות הסופיות
+      username_label: שם משתמש/ת
+      verified_account: החשבון זוהה בהצלחה
+      verify_my_account: אימות חשבון
+  application:
+    close: סגירה
+    menu: תפריט
+  comments:
+    comment:
+      admin: מנהל/ת
+      author: מחבר/ת
+      deleted: תגובה זו נמחקה
+      moderator: מנחה דיון
+      responses:
+        one: תגובה 1
+        other: “%{count} תגובות"
+        zero: אין תגובות
+      user_deleted: משתמש זה נמחק
+      votes:
+        one: הצבעה 1
+        other: “%{count} הצבעות"
+        zero: אין הצבעות
+    form:
+      comment_as_admin: הגב כמנהל
+      comment_as_moderator: הגב/י כמנחה דיון
+      leave_comment: להשארת תגובה
+    orders:
+      most_voted: הכי הרבה הצבעות
+      newest: הכי חדשות
+      oldest: הכי מוקדמות
+    select_order: סדר לפי
+    show:
+      return_to_commentable: ' חזור אל'
+  comments_helper:
+    comment_button: פרסום התגובה
+    comment_link: כתיבת תגובה
+    reply_button: פירסום התגובה
+    reply_link: מענה לתגובה 
+  debates:
+    create:
+      form:
+        submit_button: פתיחת דיון חדש
+    debate:
+      comments:
+        one: תגובה 1
+        other: "“%{count} תגובות"
+        zero: אין תגובות
+      debate: דיון
+      votes:
+        one: הצבעה 1
+        other: “%{count} הצבעות"
+        zero: אין הצבעות
+    edit:
+      editing: עריכת הדיון
+      form:
+        submit_button: שמירת שינויים
+      show_link: לצפייה בדיון
+    form:
+      debate_text: מלל הדיון החדש
+      debate_title: כותרת הדיון
+      tags_instructions: סימון תגיות נושא בדיון זה
+      tags_label: נושאים
+      tags_placeholder: “נא לרשום את כל התגיות שברצונך להשתמש, עם פסיק (',') מפריד ביניהן"
+    index:
+      featured_debates: מוצע
+      filter_topic:
+        one: “בנושא '%{topic}'"
+        other: “בנושאים '%{topic}'"
+      orders:
+        confidence_score: הכי מוערך
+        created_at: הכי חדש
+        hot_score: הכי פעיל
+        most_commented: עם הכי הרבה תגובות
+        relevance: שייך לעניין
+      search_form:
+        button: חיפוש
+        placeholder: חיפוש דיונים...
+        title: חיפוש
+      search_results:
+        one: “הכוללים את הנושא '%{search_term}'"
+        other: “הכוללים את הנושאים '%{search_term}'"
+      select_order: סדר לפי
+      start_debate: פתיחת דיון חדש
+      title: דיונים
+    new:
+      form:
+        submit_button: פתיחת דיון חדש
+      info: אם ברצונך להציע הצעה, לא כאן המקום. עבר/י ל-%{info_link}. "
+      info_link: הצעה חדשה
+      more_info: למידע נוסף
+      recommendation_four: אנו מזמינים אותך ליהנות מהמקום הזה והקולות הממלאים אותו. הוא שייך גם לך.
+      recommendation_one: בכתיבה נבקשך להימנע מהקלדת סימני קריאה מרובים. כאן במרשתת, זה נחשב לצעוק. ואף אחד לא אוהב שצועקים עליו.
+      recommendation_three: ביקורת חריפה תתקבל בברכה - כאן בדיוק המקום לחשוב לעומק. אבל נבקש ממך לשמור על הנימוס ועל השכל הישר. העולם הוא מקום טוב יותר כשיש בו אותם.
+      recommendation_two: כל דיון או הצעה שיופיע בו קריאה לפעילות בלתי-חוקית יימחקו מיד כשיתגלו, ואיתן גם כל דיון או הצעה שבאו בכוונה להכפיש או לחבל במרחב הדיונים. חוץ מזה הכל מותר.
+      recommendations_title: המלצות ליצירת דיון
+      start_new: פתיחת דיון חדש
+    show:
+      author_deleted: המשתמש/ת נמחק/ה
+      comments:
+        one: תגובה 1
+        other: “%{count} תגובות"
+        zero: אין תגובות
+      comments_title: תגובות
+      edit_debate_link: עריכה
+      flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
+      login_to_comment: עליך %{signin} או %{signup} כדי להשאיר תגובה
+      share: שיתוף
+    update:
+      form:
+        submit_button: שמירת השינויים
+  errors:
+    messages:
+      user_not_found: משתמש/ת לא נמצא/ה
+  form:
+    accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
+    accept_terms_title: אני מאשר/ת את תנאי מדיניות הפרטיות וכללי השימוש באתר זה
+    conditions: תנאים וכללי השימוש
+    debate: דיון
+    direct_message: פנייה פרטית
+    error: שגיאה
+    errors: שגיאות
+    not_saved: 'מונעות מדף זה %{resource} את הצלחת פעולת השמירה:'
+    policy: מדיניות הפרטיות
+    proposal: הצעה
+    proposal_notification: "התראות"
+    spending_proposal: הצעת הוצאת כספים
+    budget/investment: השקעה
+    user: חשבון משתמש/ת
+    verification/sms: מספר טלפון
+    signature_sheet: גיליון חתימה
+  geozones:
+    none: כל הישובים
+    all: כל התחומים
+  layouts:
+    application:
+      chrome:  גוגל כרום Google Chrome
+      firefox: Firefox פיירפוקס
+      ie: שמנו לב שהדפדפן שלך הוא אינטרנט אקספלורר. למען חוויה טובה יותר, אנו ממליצים להשתמש בגוגל כרום -%{chrome} או בפיירפוקס %{firefox}
+      ie_title: אתר זה אינו מותאם לדפדפן שלך
+    footer:
+      accessibility: נגישות
+      conditions: תנאים וכללי השימוש
+      consul: ישראל קובעת
+      consul_url: https://github.com/consul/consul
+      contact_us: לתמיכה טכנית עברו אל
+      copyright: Consul, %{year}
+      description: פורטל זה משתמש בפלטפורמת %{consul} שהיא %{open_source}.
+      faq: לעזרה טכנית
+      more_info: למידע נוסף
+      open_data_text: כל ההצעות והמידע נגיש עבורך
+      open_data_title: מידע נגיש
+      open_source: תוכנת קוד פתוח
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: אתם/ן קובעים/ות איך תתנהל המדינה בה אתם/ן גרים/ות
+      participation_title: השתתפות
+      privacy: מדיניות הפרטיות
+      transparency_text: לגלות את כל מה שמעניין לדעת על שניתן לעשות במדינה
+      transparency_title: שקיפות
+      transparency_url: https://transparency.consul
+    header:
+      administration: מנהל/ת
+      available_locales: שפות לבחירה
+      debates: דיונים
+      external_link_blog: בלוג
+      external_link_opendata: מידע נגיש
+      external_link_opendata_url: "/opendata"
+      external_link_transparency: שקיפות
+      external_link_transparency_url: https://transparency.consul
+      locale: 'שפה:'
+      logo: Consul logo לוגו
+      management: ניהול
+      moderation: הנחיה
+      valuation: הערכה
+      more_information: מידע נוסף
+      my_account_link: החשבון שלי
+      my_activity_link: הפעילות שלי
+      notifications: התראות
+      new_notifications:
+        one: יש לך התראה חדשה
+        other: יש לך %{count} התראות חדשות
+      no_notifications: "אין לך התראות חדשות"
+      open: פתיחה
+      open_city_slogan_html:  ערים ומדינות בעולם מתנהלות באופן ישיר בידי תושביהן, שיכולים <b>לדון</b> בנושאים שמדאיגים אותם או חשובים להם, <b>להציע</b> תכניות ורעיונות שישפרו את חייהם ואז <b>לקבוע</b> בעצמם אילו מההצעות יבוצעו בפועל בשטח.</b> עכשיו גם בישראל
+      open_city_title:  קול העם מזמינה אותך לכתוב ולהחליט על העתיד שלנו ביחד
+      open_gov: ממשל פתוח
+      proposals: הצעות
+      proposal_ballot: הצבעה
+      see_all: לצפייה בהצעות
+      budgets: מימון השתתפותי
+      spending_proposals: הצעות לתקצוב כספי של ההצעה
+  legislation:
+    help:
+      alt: נא לבחור את מקטע המלל עליו ברצונך להגיב, ואחר כך ללחוץ על כפתור העיפרון
+      text: בכדי להגיב על מסמך זה עליך תחילה %{sign_in} או %{sign_up}. ואז לבחור את קטע המלל עליו ברצונך להגיב ואחר כך ללחוץ על כפתור העיפרון.
+      text_sign_in: להתחברות
+      text_sign_up: לרישום
+      title: איך אוכל להגיב על מסמך זה?
+  locale: עברית
+  notifications:
+    index:
+      comments_on:
+        one: יש תגובה אחת על 
+        other: ישנן %{count} תגובות חדשות על 
+      empty_notifications: אין לך תגובות חדשות
+      mark_all_as_read: סימון נקראו על כל התגובות
+      proposal_notification:
+        one: יש התרעה חדשה אחת על
+        other: יש %{count} התראות חדשות פעילות על
+      replies_to:
+        one: מישהו השיב לתגובה שלך על
+        other: יש %{count} תשובות חדשות לתגובה שלך על
+      title: התראות
+  map:
+    title: "שכונות"
+    proposal_for_district: "העלאת הצעה בקשר לשכונה שלך"
+    select_district: היקף הפעילות
+    start_proposal: הצעה חדשה
+  omniauth:
+    facebook:
+      sign_in: התחברות באמצעות פייסבוק
+      sign_up: רישום באמצעות פייסבוק
+      name: Facebook פייסבוק
+    finish_signup:
+      title: נא להוסיף את כתובת הדואר אלקטרוני שלך
+    google_oauth2:
+      sign_in:  התחבר/י באמצעות גוגל  Google
+      sign_up: רישום באמצעות גוגל Google
+      name: Google גוגל
+    twitter:
+      sign_in: התחבר/י באמצעות טוויטר
+      sign_up: רישום באמצעות טוויטר
+      name: Twitter טוויטר
+    info_sign_in: "התחברות באמצעות:"
+    info_sign_up: "רישום באמצעות:"
+    or_fill: "או דרך מילוי הטופס הבא:"
+    finish_signup:
+      title: "פרטים נוספים"
+      username_warning: “שם המשתמש/ת שבחרת כרגע כבר בשימוש, נא לבחור שם משתמש/ת אחר"
+  proposals:
+    create:
+      form:
+        submit_button: העלאת הצעה חדשה
+    edit:
+      editing: עריכת ההצעה
+      form:
+        submit_button: שמירת השינויים
+      show_link: צפייה בהצעה
+    retire_form:
+      title: להסרת ההצעה
+      warning: “הסרת ההצעה שלך היא לא מחיקה. ההצעה עדיין תוכל לצבור תמיכה, אך היא תוסר מהרשימה הראשית ולכל המשתמשים שצופים בה תוצג ההודעה שלדעת מציע/ת ההצעה, לא כדאי לתמוך בהצעה הזו יותר."
+      retired_reason_label: הסיבה להסרת ההצעה
+      retired_reason_blank: בחר/י אפשרות
+      retired_explanation_label: הסבר
+      retired_explanation_placeholder: הסבר/י בקיצור מדוע לדעתך לא כדאי לתמוך בהצעה זו כבר
+      submit_button: הסרת הצעה
+    retire_options:
+      duplicated: הוצעה פעמיים
+      started: כבר בביצוע
+      unfeasible: אינה ברת-ביצוע
+      done: הבעיה נפתרה
+      other: סיבה אחרת
+    form:
+      geozone: היקף הפעילות
+      proposal_external_url: קישור למידע נוסף
+      proposal_question: השאלה המוצעת
+      proposal_question_example_html: את ההצעה חייבים לסכם בצורה שהתשובה עליה תהיה [כן] או [לא]. <em>- למשל 'האם לדעתך צריך להפוך את רחוב קפלן למדרחוב?'</em>
+      proposal_responsible_name: שם ושם משפחה של מציע/ת ההצעה
+      proposal_responsible_name_note: “(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם יישמר חסוי מפני שאר המשתמשים)"
+      proposal_summary: תקציר ההצעה
+      proposal_summary_note: "(200 תווים לכל היותר)"
+      proposal_text: מלל ההצעה
+      proposal_title: כותרת ההצעה
+      proposal_video_url: קישור לוידאו חיצוני
+      proposal_video_url_note: ניתן להדביק קישור ל-YouTube או Vimeo
+      tag_category_label: "הוספת תגית"
+      tags_instructions: “תייג/י את התחומים והנושאים בהם עוסקת הצעה זו. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
+      tags_label: תגיות
+      tags_placeholder: "רשמ/י את התגיות שלדעתך ההצעה קשורה אליהן, עם פסיק (',') מפריד ביניהן"
+    index:
+      featured_proposals: מוצע
+      filter_topic:
+        one: " בנושא '%{topic}'"
+        other: " בנושאים '%{topic}'"
+      orders:
+        confidence_score: הכי מוערך
+        created_at: הכי חדש
+        hot_score: הכי פעיל
+        most_commented: עם הכי הרבה תגובות
+        relevance: נוגע לעניין
+        archival_date: הועבר לגניזה
+      retired_proposals: הצעות שהוסרו
+      retired_proposals_link: "הצעות שהוסרו על-ידי המחבר/ת"
+      retired_links:
+        all: הכל
+        duplicated: כפולות
+        started: בביצוע
+        unfeasible: אינו בר-יישום
+        done: נפתר
+        other: אחר
+      search_form:
+        button: חפש
+        placeholder: חיפוש הצעות ...
+        title: חיפוש
+      search_results:
+        one: " כולל את הנושא '%{search_term}'"
+        other: " כולל את הנושאים '%{search_term}'"
+      select_order: סדר לפי
+      select_order_long: 'ההצעות מוצגות לך על-פי סדר:'
+      start_proposal: העל/י הצעה חדשה
+      title: הצעות
+      top: בראש סדר-היום השבוע
+      top_link_proposals: ההצעות שצברו הכי הרבה תמיכה, לפי נושא
+    new:
+      form:
+        submit_button: פרסום ההצעה
+      more_info: כיצד עובדות הצעות האזרחים?
+      recommendation_three: אנו מזמינים אותך ליהנות מהמקום הזה והקולות הממלאים אותו. הוא שייך גם לך.
+      recommendation_two: כל דיון או הצעה, שמופיעה בו קריאה לפעילות בלתי-חוקית, יימחקו מיד כשיתגלו, ואיתם גם כל דיון או הצעה שבתוכן כוונה להכפיש או לחבל במרחב הדיונים. חוץ מזה הכל מותר.
+      recommendations_title: המלצות ליצירת הצעה חדשה
+      recommendation_four: אנו מזמינים אותך ליהנות מהמקום הזה והקולות הממלאים אותו. הוא שייך גם לך.
+      recommendation_one: בכתיבה נבקשך להימנע מהקלדת סימני קריאה מרובים. כאן במרשתת, זה נחשב לצעוק. ואף אחד לא אוהב שצועקים עליו.
+      recommendation_three: ביקורת חריפה תתקבל בברכה - כאן בדיוק המקום לחשוב לעומק. אבל נבקש ממך לשמור על הנימוס ועל השכל הישר. העולם הוא מקום טוב יותר כשיש בו אותם.
+      
+
+      start_new: הצעה חדשה
+    notice:
+      retired: ההצעה הוסרה
+    proposal:
+      already_supported: תודה שתמכת בהצעה הזו. תוכל/י לשתף
+      comments:
+        one: 1 תגובה
+        other: "%{count} תגובות"
+        zero: אין תגובות עדיין
+      proposal: הצעה
+      reason_for_supports_necessary: 1% מהמשאל
+      support: בעד
+      support_title: לתמיכה בהצעה זו
+      supports:
+        one: 1 תומך
+        other: "%{count} תומכים"
+        zero: אין תמיכה
+      supports_necessary: “נדרשים %{number} תומכים"
+      total_percent: 100%
+      archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה"
+    show:
+      author_deleted: משתמש זה נמחק
+      code: 'קוד ההצעה:'
+      comments:
+        one: 1 תגובה
+        other: "%{count} תגובות"
+        zero: אין תגובות
+      comments_tab: תגובות
+      edit_proposal_link: עריכה
+      flag: הצעה זו סומנה כבלתי ראויה בידי מספר משתמשים
+      login_to_comment: בכדי להשאיר תגובה, עליך תחילה %{signin} או %{signup}
+      notifications_tab: התראות
+      retired_warning: "מחבר/ת ההצעה הזו הסיר/ה את ההצעה ומבקש/ת שלא לתמוך בה יותר."
+      retired_warning_link_to_explanation: יש לקרוא את ההסבר לפני שמצביעים.
+      retired: ההצעה הוסרה על-ידי המחבר/ת
+      share: שיתוף
+      send_notification: שלח/י התראה
+      no_notifications: "להצעה זו אין התראות."
+    update:
+      form:
+        submit_button: שמירת השינויים
+  proposal_ballots:
+    title: "הצבעות"
+    description_html: “הנה הצעות התושבים שהשיגו את <strong>התמיכה הנדרשת</strong> והגיעו להצבעה"
+    date_title: "תאריכים להשתתפות"
+    date: "בקרוב נפרסם את תאריך ההצבעה על ההצעות."
+    successfull: "הצעה זו השיגה את התמיכה הנדרשת ותעלה להצבעה %{voting}."
+    voting: "בהצבעה הקרובה"
+    featured_title: "#בהצבעה הבאה"
+    nothing_to_vote: "אין כרגע על מה להצביע."
+    info: "הצעות חדשות שהגיעו לשלב ההצבעה."
+    button: "תנו לי להחליט"
+  proposal_notifications:
+    new:
+      title: "שליחת הודעה"
+      title_label: "כותרת"
+      body_label: "הודעה"
+      submit_button: "שלח"
+      info_about_receivers_html: “הודעה זו תישלח אל <strong> %{count} אנשים</strong> ותוצג בדף%{proposal_page}.<br> ההודעות אינן מתקבלות מיד, אלא נשלחות למשתמשים בדואר אלקטרוני תקופתי ובו סיכום כל ההתרעות על ההצעות שהם עוקבים אחריהן."
+      proposal_page: "דף ההצעה"
+    show:
+      back: "חזרה לפעילות שלי"
+  shared:
+    "yes": "כן"
+    "no": "לא"
+    advanced_search:
+      author_type: 'לפי סוג המחבר'
+      author_type_blank: 'בחר סוג'
+      date: 'לפי תאריך'
+      date_placeholder: 'יום/חודש/שנה'
+      date_range_blank: 'בחירת תאריך'
+      date_1: '24 השעות האחרונות'
+      date_2: 'בשבוע האחרון'
+      date_3: 'בחודש האחרון'
+      date_4: 'בשנה האחרונה'
+      date_5: 'התאמה אישית'
+      from: 'מאת'
+      general: 'כולל את מלל
+      general_placeholder: 'כתב/י מלל
+      search: 'סינון'
+      title: 'חיפוש מתקדם'
+      to: 'אל'
+    delete: מחק
+    author_info:
+      author_deleted: משתמש זה נמחק
+    back: חזרה
+    check: בחר
+    check_all: הכל
+    check_none: שום דבר
+    collective: התאגדות
+    flag: סמן כתוכן לא-ראוי
+    hide: הסתר
+    print:
+      print_button: הדפס
+    search: חיפוש
+    show: הצג
+    suggest:
+      debate:
+        found:
+          one: “כבר קיים דיון בנושא '%{query}', תוכל/י להצטרף אליו במקום לפתוח דיון מקביל חדש."
+          other:  “כבר קיימים דיונים בנושא '%{query}', תוכל/י להצטרף אליהם במקום לפתוח עוד דיון מקביל."
+
+        message: “מציג %{limit} מתוך %{count} דיונים הכוללים את המונח '%{query}'"
+        see_all: "הצג הכל"
+      proposal:
+        found:
+          one: “כבר קיימת הצעה הכוללת את המונח '%{query}'. תוכל/י להוסיף את דעתך שם במקום ליצור הצעה חדשה."
+          other: “כבר קיימות הצעות הכוללות את המונח '%{query}'. תוכל/י להוסיף את דעתך שם במקום ליצור הצעה חדשה."
+
+        message: “מציג %{limit} מתוך %{count} הצעות הכוללות את המונח '%{query}'"
+
+        see_all: "הצג הכל"
+    tags_cloud:
+      tags: נושאים חמים
+      districts: "באזור הגאוגרפי שלי"
+      districts_list: "רשימת אזורים גאוגרפים"
+      categories: "תחומים"
+    target_blank_html: " (הקישור ייפתר בחלון חדש)"
+    you_are_in: "את/ה נמצא/ת ב-"
+    unflag: הסר סימן
+    outline:
+      debates: דיונים
+      proposals: הצעות
+      budget: מימון השתתפותי
+      searcher: מחפש
+  social:
+    blog: בלוג
+    facebook: פייסבוק
+    twitter: טוויטר
+    youtube:  יוטיוב YouTube
+    whatsapp: WhatsApp מהנשמע
+  spending_proposals:
+    form:
+      association_name_label: 'אם הצעתך היא בשם ארגון או התאגדות, נא לרשום שם הארגון/ההתאגדות'
+      association_name: 'שם הארגון/התאגדות'
+      description: תיאור
+      external_url: קישור למסמכים נוספים
+      geozone: היקף הפעילות
+      submit_buttons:
+        create: יצירת תקציב
+        new: חדש
+      title: כותרת הצעה לתקציב כספי
+    index:
+      title: מימון השתתפותי
+      unfeasible: פרויקטים שהשקעה בהם אינה ברת ביצוע
+      by_geozone: "פרויקט השקעה בתחומי: %{geozone}"
+      search_form:
+        button: חפש
+        placeholder: פרויקטים להשקעה...
+        title: חיפוש
+      search_results:
+        one: " הכולל את המונח '%{search_term}'"
+        other: " הכוללים את המונח '%{search_term}'"
+      sidebar:
+        geozones: היקף הפעילות
+        feasibility: סבירות לביצוע
+        unfeasible: אינו בר-ביצוע
+      start_spending_proposal: התחל/י פרוייקט השקעה
+    new:
+      more_info: איך עובד מימון השתתפותי?
+      recommendation_one: חובה שהצעה זו תתיחס לפעולה שאפשר לקבוע לה תקציב לביצוע.
+      recommendation_three: נסה/י לתאר בפרטים מלאים את הפעולות להן את/ה מבקש/ת להוציא כסף, כדי שהצוות הבוחן את הבקשה יבין את כוונתך.
+      recommendation_two: כל הצעה או תגובה הקוראת לפעילות בלתי-חוקית תימחק.
+      recommendations_title: כיצד ליצור הצעה להוצאה כספית
+      start_new: פתח/י הצעה להוצאה כספית
+    show:
+      author_deleted: משתמש זה נמחק
+      code: 'קוד ההצעה:'
+      share: שיתוף
+    wrong_price_format: נא לרשום סכום בשקלים שלמים
+    spending_proposal:
+      spending_proposal: פרויקט להשקעה
+      already_supported: תודה שתמכת בהצעה זו. תוכל/י לשתף
+      support: בעד
+      support_title: תמוך בפרויקט זה
+      supports:
+        one: 1 תומך
+        other: "%{count} תומכים"
+        zero: אין תומכים עדיין
+  stats:
+    index:
+      visits: ביקורים
+      debates: דיונים
+      proposals: הצעות
+      comments: תגובות
+      proposal_votes: הצבעות על הצעות
+      debate_votes: הצבעות על דיונים
+      comment_votes: הצבעות על תגובות
+      votes: סך הכל הצבעות
+      verified_users: משתמשים מאושרים
+      unverified_users: משתמשים שלא נבדקו
+  unauthorized:
+    default: אין לך הרשאה להיכנס לדף זה.
+    manage:
+      all: "אין לך הרשאה לבצע פעולת '%{action}' על %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: תוכן ההודעה
+        direct_messages_bloqued: "משתמש/ת זה/ו בחר/ה שלא לקבל הודעות ופניות ישירות"
+        submit_button: שלח
+        title: שלח הודעה פרטית אל %{receiver}
+        title_label: כותרת
+        verified_only: כדי שתוכל/י לשלוח הודעה פרטית %{verify_account}
+        verify_account: נא לאמת חשבון
+        authenticate: חובה %{signin} כניסות או %{signup} נרשמים, בכדי להמשיך.
+        signin: להתחבר
+        signup: להירשם
+      show:
+        receiver: ההודעה נשלחה אל %{receiver}
+    show:
+      deleted: נמחק
+      deleted_debate: דיון זה נמחק
+      deleted_proposal: הצעה זו נמחקה
+      deleted_budget_investment: השקעה זו נמחקה
+      filters:
+        comments:
+          one: 1 תגובה
+          other: "%{count} תגובות"
+        debates:
+          one: 1 דיון
+          other: "%{count} דיונים"
+        proposals:
+          one: 1 הצעה
+          other: "%{count} הצעות"
+        budget_investments:
+          one: 1 השקעה
+          other: "%{count} השקעות"
+      no_activity: למשתמש/ת זה/ו אין פעילות ציבורית
+      no_private_messages: "משתמש/ת זה/נ אינו/ה מקבל/ת הודעות פרטיות."
+      private_activity: משתמש/ת זה/ו בחר/ה לשמור בסוד את רשימת הפעילויות שלו/ה
+      send_private_message: "שליחת הודעה פרטית"
+    proposals:
+      send_notification: "שליחת הודעה"
+      retire: "לפרוש"
+      retired: "פרשת מזה"
+  votes:
+    agree:  אני מסכים/ה
+    anonymous: יותר מדי קולות אנונימיים לאמת את ההצבעה %{verify_account}.
+    comment_unauthenticated: חובה %{signin} או %{signup} להצבעה.
+    disagree: אני לא מסכים/ה
+    organizations: ארגונים אינם רשאים להצביע
+    signin: לחץ/י לכניסת התחברות
+    signup: לחץ/י להרשמה
+    supports: לחץ’י לתמיכה
+    unauthenticated: חובה %{signin} כניסות או %{signup} נרשמים, כדי להמשיך
+    verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
+    verify_account: אימות חשבונך
+    spending_proposals:
+      not_logged_in: חובה %{signin} כניסות או%{signup} נרשמים, בכדי להמשיך
+      not_verified: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
+      organization: ארגונים אינם רשאים להצביע
+      unfeasible: לא ניתן לתמוך עם השקעה כספית בפרויקטים שאינם ברי ביצוע
+      not_voting_allowed: שלב ההצבעות נסגר
+    budget_investments:
+      not_logged_in: חובה %{signin} כניסות או %{signup} נרשמים, בכדי להמשיך
+      not_verified: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
+      organization: ארגונים אינם רשאים להצביע
+      unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
+      not_voting_allowed: שלב ההצבעות נסגר
+      different_heading_assigned: ניתן לתמוך בהצעות באיזור אחד בלבד
+  welcome:
+    debates:
+      description: לפגישות, דיונים ודיוק הצעות לקראת הצעה סופית
+      title: דיונים
+    decide:
+      description: חברי התנועה מחליטים  אם הוא מקבל או דוחה את ההצעות הנתמכות ביותר
+      title: ההצבעות שלך
+    do:
+      description: אם ההצעה מקובלת על הרוב, היא תעלה למצע התנועה ותקודם על ידי חבריה  
+      title: זה יעשה
+    proposal:
+      description: מקום להצעות האזרחים/ות על סוג המדינה שבה אנו רוצים/ות לחיות 
+      title: ההצעות שלך
+    verification:
+      i_dont_have_an_account: אין לי חשבון
+      i_have_an_account: כבר יש לי חשבון
+      question: האם כבר יש לך חשבון ב %{org_name}?
+      title: אימות החשבון
+    welcome:
+      go_to_index: לצפייה בהצעות ובדיונים
+      title: רוצה להשתתף בזה
+      user_permission_debates: רוצה לשתתף בדיונים
+      user_permission_info: עם החשבון שלך אפשר ...
+      user_permission_proposal: ליצירת הצעות חדשות
+      user_permission_support_proposal: הצעות תמיכה*
+      user_permission_verify: כדי לבצע את כל הפעולות, עליך לאמת את חשבונך
+      user_permission_verify_info: "* רק עבור משתמשים/ות במפקד אוכלוסין."
+      user_permission_verify_my_account: אמת את החשבון שלי
+      user_permission_votes: השתתפות בהצבעה הסופית
+  legislation:
+    help:
+      title: "כיצד אוכל להגיב על מסמך זה?"
+      text: "כדי להגיב על מסמך נדרש %{sign_in} כניסות או%{sign_up}. נרשמים, לאחר מכן לבחור את המלל שברצונך להגיב עליו ולהקיש על הלחצן עם העיפרון"
+      text_sign_in: "התחברות"
+      text_sign_up: "הרשמה"
+      alt: "נא לבחור את המלל שברצונך להגיב עליו ולהקיש על הלחצן עם העיפרון"
+  invisible_captcha:
+    sentence_for_humans: "אם אינך רובוט/ית, אפשר בבקשה להתעלם מהשדה הזה"
+    timestamp_error_message: "מצטערים, זה היה מהיר מדי - נא לשלוח שוב"
+
+
+

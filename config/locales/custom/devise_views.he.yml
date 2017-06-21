@@ -41,7 +41,7 @@ he:
       registrations:
         new:
           email_label: דואר אלקטרוני
-          Organization_name_label: שם הארגון
+          organization_name_label: שם הארגון
           password_confirmation_label: אישור הסיסמה
           password_label: סיסמה
           phone_number_label: מספר טלפון
@@ -50,11 +50,11 @@ he:
           submit: הרשמה
           title: הרשמה כארגון או כקבוצה
         success:
-          Back_to_index: אני מבין/ה ; חזרה לדף הראשי
+          back_to_index: חזרה לדף הראשי
           instructions_1_html: "<b>ניצור איתך קשר בקרוב</b>כדי לוודא שאת/ה מייצג/ת את הקבוצה"
           instructions_2_html: אנו בודקים  <b>את הדואר האלקטרוני שלך</b>, שלחנו לך <b>קישור לאימות חשבונך</b>.
           instructions_3_html: לאחר האישור, ניתן להתחיל להשתתף כקבוצה לא מאושרת
-          Thank_you_html: תודה על הרשמת קבוצתך באתר. הקבוצה <b>ממתינה לאישור</b>.
+          thank_you_html: תודה על הרשמת קבוצתך באתר. הקבוצה <b>ממתינה לאישור</b>.
           title: הרשמה של ארגונים וקבוצות
     passwords:
       edit:
@@ -106,16 +106,20 @@ he:
           update_submit: עודכן
           waiting_for: ‘הסיבה ממתין לאישור של:’
         new:
+          back_to_index: חזרה לדף הראשי
+          instructions_1_html: "<b>ניצור איתך קשר בקרוב</b>כדי לוודא שאת/ה מייצג/ת את הקבוצה"
+          instructions_2_html: אנו בודקים  <b>את הדואר האלקטרוני שלך</b>, שלחנו לך <b>קישור לאימות חשבונך</b>.
+          instructions_3_html: לאחר האישור, ניתן להתחיל להשתתף כקבוצה לא מאושרת
           cancel: הכניסה בוטלה
           email_label: דואר אלקטרוני
-          Organization_signup: האם את/ה מייצג קבוצה או ארגון? %{signup_link}
+          organization_signup: האם את/ה מייצג קבוצה או ארגון? %{signup_link}
           organization_signup_link: הרשם/י כאן
           password_confirmation_label: אשר/י סיסמה
           password_label: סיסמה
           redeemable_code: (קבלת קוד אימות בדואר אלקטרוני (אופציה 
           submit: הרשמה
           terms: בהרשמה הנך מסכים/ה ל %{terms}
-          Terms_link: תנאים והתניות לשימוש באתר 
+          terms_link: תנאים והתניות לשימוש באתר 
           terms_title: בהרשמה את/ה מסכים/ה לתנאים והתניות השימוש באתר 
           title: הרשמה
           username_is_available: "שם משתמש זמין"
@@ -123,10 +127,10 @@ he:
           username_label: שם משתמש/ת
           username_note: השם שיופיע ליד הפוסטים שלך 
         success:
-          Back_to_index: הבנתי ; חזור לדף הבית
+          back_to_index: הבנתי ; חזור לדף הבית
           instructions_1_html: בבקשה <b>בדוק/י את הדואר האלקטרוני</b> - שלחנו לך <b>קישור לאישור חשבונך</b>.
-          Instructions_2_html: לאחר האישור, יהיה אפשרי להתחיל להשתתף.
+          instructions_2_html: לאחר האישור, יהיה אפשרי להתחיל להשתתף.
           thank_you_html: תודה על הרשמתך לאתר. בבקשה <b>לאשר את כתובת הדואר האלקטרוני שלך</b>.
-          title: נא לעדכן את הדואר האלקטרוני שלך
+          title: נא לבדוק את הדואר האלקטרוני שלך
 
 
