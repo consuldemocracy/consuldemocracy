@@ -557,12 +557,6 @@ Style/RescueModifier:
     - 'app/controllers/concerns/commentable_actions.rb'
     - 'app/controllers/verification/sms_controller.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/SpaceAfterColon:
-  Exclude:
-    - 'spec/models/user_spec.rb'
-
 # Offense count: 14
 # Cop supports --auto-correct.
 Layout/SpaceAfterComma:
