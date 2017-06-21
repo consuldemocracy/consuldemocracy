@@ -10,6 +10,12 @@
                     class: 'button hollow float-right' %>
       <% end %>
 
+      <% if author_of?(investment, current_user) %>
+        <%= link_to t("budgets.investments.show.edit_image"),
+                    edit_image_budget_investment_path(investment.budget, investment),
+                    class: 'button hollow float-right' %>
+      <% end %>
+
       <h1><%= investment.title %></h1>
 
       <div class="budget-investment-info">

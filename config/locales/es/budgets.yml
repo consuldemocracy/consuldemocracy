@@ -108,6 +108,13 @@ es:
         milestones_tab: Seguimiento
         no_milestones: No hay hitos definidos
         milestone_publish_date: "Publicado el %{publish_date}"
+        edit_image: Editar imagen
+      edit_image:
+        title: Cambia la imagen de tu proyecto de inversión
+        note: 'Estas cambiando la imagen del proyecto de inversión: %{title}'
+        form:
+          image_title: 'Título de la imagen'
+          submit_button: Guardar imagen
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar

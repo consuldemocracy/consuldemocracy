@@ -80,6 +80,18 @@ module Budgets
       super
     end
 
+    def edit_image
+    end
+
+    def update_image
+      if @investment.update(investment_params)
+        redirect_to budget_investment_path(@investment.budget, @investment),
+                    notice: t("flash.actions.update_image.budget_investment")
+      else
+        render :edit_image
+      end
+    end
+
     private
 
       def resource_model
