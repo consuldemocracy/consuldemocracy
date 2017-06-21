@@ -97,10 +97,12 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
+        population: Población
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
         table_amount: Cantidad
+        table_population: Población
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
