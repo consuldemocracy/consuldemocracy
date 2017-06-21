@@ -9,7 +9,7 @@ App.RegistrationForm =
       $("small").remove()
 
     showUsernameMessage = (response) ->
-      klass = if response.available then "error no-error" else "error error"
+      klass = if response.available then "no-error" else "error"
       usernameInput.after $("<small class=\"#{klass}\" style=\"margin-top: -16px;\">#{response.message}</small>")
 
     validateUsername = (username) ->
