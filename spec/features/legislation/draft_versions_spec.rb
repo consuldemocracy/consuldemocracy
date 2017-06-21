@@ -175,12 +175,14 @@ feature 'Legislation Draft Versions' do
       draft_version = create(:legislation_draft_version, :published)
       annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>5, "end"=>"/p[1]", "endOffset"=>10}])
       annotation2 = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>12, "end"=>"/p[1]", "endOffset"=>19}])
+      comment = create(:comment, commentable: annotation1)
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
       expect(page).to have_css ".annotator-hl"
       first(:css, ".annotator-hl").click
       expect(page).to have_content "my annotation"
+      expect(page).to have_content comment.body
 
       all(".annotator-hl")[1].trigger('click')
       expect(page).to have_content "my other annotation"
