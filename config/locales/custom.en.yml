@@ -135,11 +135,11 @@ en:
       text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
       date: "From May 15 to June 30"
       button: "Vote projects"
-      plazas_abiertas:
-        label: "Event"
-        title: "Plazas abiertas"
-        text: "On Sunday 18 June, from 11 am to 1 pm, we discussed participatory budgets in squares of the 21 districts of Madrid."
-        link: "More information about Plazas Abiertas"
+      once_plazas:
+        label: "Process"
+        title: "Once Plazas"
+        text: "Participate in the discussion of ideas before the remodeling of 11 public squares in the outskirts districts of Madrid."
+        link: "More information about Once Plazas"
       videos:
         label: "Videos"
         title: "Participatory budgets"
