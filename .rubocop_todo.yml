@@ -674,12 +674,6 @@ Style/SymbolProc:
     - 'lib/manager_authenticator.rb'
     - 'spec/factories.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/TrailingWhitespace:
-  Exclude:
-    - 'app/controllers/admin/api/stats_controller.rb'
-
 # Offense count: 31
 # Cop supports --auto-correct.
 Style/UnneededInterpolation:
