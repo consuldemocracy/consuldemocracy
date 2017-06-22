@@ -6,7 +6,7 @@
 <div class="social-share-full">
   <%= social_share_button_tag("#{title} #{setting['twitter_hashtag']}",
                               :url => local_assigns[:url],
-                              :image => local_assigns[:image_url].present? ? local_assigns[:image_url] : '' %>
+                              :image => local_assigns[:image_url].present? ? local_assigns[:image_url] : '') %>
   <a href="whatsapp://send?text=<%= title.gsub(/\s/, '%20') %>&nbsp;<%= url %>"
      class="show-for-small-only" data-action="share/whatsapp/share">
     <span class="icon-whatsapp whatsapp"></span>
