@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/xuanxu/invisible_captcha.git
-  revision: 0389aad81d46a24755665ab941044c95bcf93762
+  revision: f2f8148733286436e0bd6a2d70ab90a5f75a767e
   branch: rails5
   specs:
     invisible_captcha (0.9.2)
