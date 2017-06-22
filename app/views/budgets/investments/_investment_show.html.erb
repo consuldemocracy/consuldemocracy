@@ -11,7 +11,8 @@
       <% end %>
 
       <% if author_of?(investment, current_user) || (current_user && current_user.administrator?) %>
-        <%= link_to t("budgets.investments.show.edit_image"),
+        <% button_text = investment.image.exists? ? t("budgets.investments.show.edit_image") : t("budgets.investments.show.add_image") %>
+        <%= link_to button_text,
                     edit_image_budget_investment_path(investment.budget, investment),
                     class: 'button hollow float-right' %>
       <% end %>
@@ -45,7 +46,7 @@
 
       <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
       <% if investment.image.exists? %>
-        <%= image_tag investment.image.url(:medium),
+        <%= image_tag investment.image.url(:large),
                       title: investment.image_title,
                       alt: investment.image_title %>
       <% end %>

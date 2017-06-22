@@ -387,7 +387,24 @@ feature 'Budget Investments' do
     expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: investment.heading)
   end
 
-  context "Show edit image button" do
+  context "Show investment image button" do
+
+    scenario "should show add text when investment has not image" do
+      investment = create(:budget_investment, heading: heading, author: author)
+      login_as(author)
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_link "Add image"
+    end
+
+    scenario "should show edit text when investment has already an image" do
+      investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
+      login_as(author)
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_link "Edit image"
+    end
+
     scenario "should not be shown for anonymous users" do
       investment = create(:budget_investment, heading: heading)
       visit budget_investment_path(budget, investment)
@@ -407,7 +424,7 @@ feature 'Budget Investments' do
       login_as(author)
       visit budget_investment_path(budget, investment)
 
-      expect(page).to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
+      expect(page).to have_link "Add image", href: edit_image_budget_investment_path(budget, investment)
     end
 
     scenario "should be shown when current user is administrator" do
@@ -416,7 +433,7 @@ feature 'Budget Investments' do
       login_as(administrator)
       visit budget_investment_path(budget, investment)
 
-      expect(page).to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
+      expect(page).to have_link "Add image", href: edit_image_budget_investment_path(budget, investment)
     end
   end
 
@@ -592,12 +609,12 @@ feature 'Budget Investments' do
   context "Destroy" do
 
     scenario "Admin cannot destroy budget investments" do
-      administrator = create(:administrator).user
+      admin = create(:administrator)
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
 
-      login_as(administrator)
-      visit user_path(administrator)
+      login_as(admin.user)
+      visit user_path(user)
 
       within("#budget_investment_#{investment.id}") do
         expect(page).to_not have_link "Delete"
