@@ -93,6 +93,9 @@ en:
         supports: Supports
         votes: Votes
         price: Price
+        comments_tab: Comments
+        milestones_tab: Milestones
+        no_milestones: Don't have defined milestones
       wrong_price_format: Only integer numbers
       investment:
         add: Vote

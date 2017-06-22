@@ -389,6 +389,38 @@ feature 'Budget Investments' do
     expect(page).to have_content(investment.unfeasibility_explanation)
   end
 
+  scenario "Show milestones", :js do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment)
+    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
+
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content(milestone.title)
+      expect(page).to have_content(milestone.description)
+    end
+  end
+
+  scenario "Show no_milestones text", :js do
+    user = create(:user)
+    login_as(user)
+
+    investment = create(:budget_investment)
+
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content("Don't have defined milestones")
+    end
+  end
+
   context "Destroy" do
 
     scenario "Admin cannot destroy budget investments" do

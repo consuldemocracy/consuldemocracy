@@ -93,6 +93,9 @@ es:
         supports: Apoyos
         votes: Votos
         price: Coste
+        comments_tab: Comentarios
+        milestones_tab: Seguimiento
+        no_milestones: No hay hitos definidos
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
