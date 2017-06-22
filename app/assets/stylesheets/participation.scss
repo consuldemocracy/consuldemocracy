@@ -655,9 +655,16 @@
 
 .budget-investments-list {
   .budget-investment{
+    .no-image{
+      background: $brand;
+    }
     @include breakpoint(medium) {
       .panel{
         padding:0 0.75rem 0 0;
+        .no-image{
+          height: 245px;
+          width: 140px;
+        }
       }
       h3{
         font-size: 1.4rem;
@@ -681,6 +688,16 @@
       }
     }
     @include breakpoint(small) {
+      .no-image{
+        width: 100%;
+        max-width: 300px;
+        margin:0 auto;
+        &:before {
+          content: "";
+        	display: block;
+        	padding-top: 100%;
+        }
+      }
       h3{
         font-size: 1.3rem;
       }
