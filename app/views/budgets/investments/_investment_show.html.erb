@@ -1,5 +1,4 @@
 <section class="budget-investment-show" id="<%= dom_id(investment) %>">
-
   <div class="row">
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
@@ -18,7 +17,6 @@
       <% end %>
 
       <h1><%= investment.title %></h1>
-
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -27,7 +25,6 @@
         <%= investment.heading.name %>
       </div>
       <br>
-      <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
       <% if investment.image.exists? %>
       <div class="row">
         <div class="small-12 column text-center">
@@ -46,19 +43,16 @@
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
-
       <% if investment.location.present? %>
         <p>
           <%= t("budgets.investments.show.location_html", location: investment.location) %>
         </p>
       <% end %>
-
       <% if investment.organization_name.present? %>
         <p>
           <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
         </p>
       <% end %>
-
       <%= render 'shared/tags', taggable: investment %>
 
       <%= safe_html_with_links investment.description.html_safe %>
@@ -68,12 +62,10 @@
           <%= text_with_links investment.external_url %>
         </div>
       <% end %>
-
       <% if investment.unfeasible? && investment.unfeasibility_explanation.present? %>
         <h2><%= t('budgets.investments.show.unfeasibility_explanation') %></h2>
         <p><%= investment.unfeasibility_explanation %></p>
       <% end %>
-
       <% if investment.should_show_price_info? %>
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
