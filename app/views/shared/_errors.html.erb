@@ -10,6 +10,9 @@
       <% if local_assigns[:message].present? %>
         <%= message %>
       <% else %>
+        <%= resource.errors.messages %>
+        <%= resource.errors %>
+
         <%= t("form.not_saved", resource: t("form.#{resource.class.to_s.underscore}")) %>
       <% end %>
     </strong>
