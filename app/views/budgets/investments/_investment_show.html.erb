@@ -21,13 +21,25 @@
 
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
-
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= l investment.created_at.to_date %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>
       <br>
+
+      <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
+      <% if investment.image.exists? %>
+        <div class="row columns image">
+            <%= image_tag investment.image.url(:large),
+                          title: investment.image_title,
+                          alt: investment.image_title %>
+        </div>
+        <p class="text-right title-image">
+          <em><%= investment.image_title %></em>
+        </p>
+        <hr>
+      <% end %>
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
@@ -42,13 +54,6 @@
         <p>
           <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
         </p>
-      <% end %>
-
-      <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
-      <% if investment.image.exists? %>
-        <%= image_tag investment.image.url(:large),
-                      title: investment.image_title,
-                      alt: investment.image_title %>
       <% end %>
 
       <%= render 'shared/tags', taggable: investment %>

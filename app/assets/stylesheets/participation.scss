@@ -927,6 +927,23 @@
   }
 }
 
+.budget-investment-show{
+  .image{
+    text-align: center;
+  }
+  p.title-image{
+    font-size: 1rem;
+    margin-top:1.25rem;
+    margin-bottom:0;
+  }
+}
+
+.edit_budget_investment{
+  .note-marked p{
+    margin-bottom:0;
+  }
+}
+
 .investment-project-show .supports,
 .budget-investment-show .supports {
   border: 0;
