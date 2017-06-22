@@ -602,6 +602,7 @@ Rails.application.routes.draw do
   get 'g1000',           to: 'pages#show', id: 'landings/g1000',            as: 'g1000'
   get 'haz-propuestas',  to: 'pages#show', id: 'landings/blas_bonilla',     as: 'blas_bonilla'
   get 'sitesientesgato', to: 'pages#show', id: 'landings/sitesientesgato',  as: 'sitesientesgato'
+  get 'haz-madrid',      to: 'pages#show', id: 'landings/geocraft',         as: 'geocraft'
   get 'noticias',        to: 'pages#show', id: 'landings/news'
 
   # Budgets 2017
