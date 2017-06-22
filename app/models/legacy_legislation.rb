@@ -1,3 +1,3 @@
-class LegacyLegislation < ActiveRecord::Base
+class LegacyLegislation < ApplicationRecord
   has_many :annotations
 end

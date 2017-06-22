@@ -1,5 +1,5 @@
 class Budget
-  class Group < ActiveRecord::Base
+  class Group < ApplicationRecord
     belongs_to :budget
 
     has_many :headings, dependent: :destroy

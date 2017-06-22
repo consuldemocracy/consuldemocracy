@@ -1,5 +1,5 @@
 class Budget
-  class Investment < ActiveRecord::Base
+  class Investment < ApplicationRecord
 
     include Measurable
     include Sanitizable

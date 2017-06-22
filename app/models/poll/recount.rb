@@ -1,5 +1,5 @@
 class Poll
-  class Recount < ActiveRecord::Base
+  class Recount < ApplicationRecord
     belongs_to :booth_assignment, class_name: "Poll::BoothAssignment"
     belongs_to :officer_assignment, class_name: "Poll::OfficerAssignment"
 

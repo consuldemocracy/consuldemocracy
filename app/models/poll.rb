@@ -1,4 +1,4 @@
-class Poll < ActiveRecord::Base
+class Poll < ApplicationRecord
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
   has_many :partial_results, through: :booth_assignments

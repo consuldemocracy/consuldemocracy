@@ -1,6 +1,6 @@
 class Budget
   class Ballot
-    class Line < ActiveRecord::Base
+    class Line < ApplicationRecord
       belongs_to :ballot
       belongs_to :investment, counter_cache: :ballot_lines_count
       belongs_to :heading

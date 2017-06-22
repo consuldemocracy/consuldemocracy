@@ -1,4 +1,4 @@
-class Poll::WhiteResult < ActiveRecord::Base
+class Poll::WhiteResult < ApplicationRecord
 
   VALID_ORIGINS = %w{web booth}
 

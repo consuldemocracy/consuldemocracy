@@ -1,5 +1,5 @@
 class Budget
-  class Ballot < ActiveRecord::Base
+  class Ballot < ApplicationRecord
     belongs_to :user
     belongs_to :budget
 
