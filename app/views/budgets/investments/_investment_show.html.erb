@@ -20,9 +20,7 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>
-
       <br>
-
       <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
       <% if investment.image.exists? %>
       <div class="row">
@@ -38,8 +36,6 @@
           <hr>
         </div>
       </div>
-
-
       <% end %>
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
