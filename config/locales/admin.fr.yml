@@ -135,6 +135,7 @@ fr:
         table_feasibility: "Faisabilité"
         table_valuation_finished: "Ev. Ter."
         table_selection: "Sélection"
+        table_winner: "Winner"
       show:
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateur assigné
@@ -502,7 +503,7 @@ fr:
         tags_filter_all: Toutes les étiquettes
         filters:
           valuation_open: Ouvert
-          without_admin: Sans administrateur affecté 
+          without_admin: Sans administrateur affecté
           managed: Géré
           valuating: Sous évaluation
           valuation_finished: Évaluation terminée
@@ -588,7 +589,7 @@ fr:
       new:
         title: Nouvelle feuilles de signature
         document_numbers_note: "Saisir les numéros séparés par des virgules (,)"
-        submit: Créer la feuille de signature 
+        submit: Créer la feuille de signature
       show:
         created_at: Créé le
         author: Auteur
@@ -627,18 +628,18 @@ fr:
         budgets_title: Budgets participatifs
         visits_title: Visites
         direct_messages: Messages privés
-        proposal_notifications: Notifications des propositions 
-        incomplete_verifications: Vérifications incomplètes 
+        proposal_notifications: Notifications des propositions
+        incomplete_verifications: Vérifications incomplètes
       direct_messages:
         title: Messages privés
         total: Total
         users_who_have_sent_message: Utilisateurs ayant envoyé un message privé
       proposal_notifications:
-        title: Notifications des propositions 
+        title: Notifications des propositions
         total: Total
         proposals_with_notifications: Propositions avec notifications
     tags:
-      create: Créer un sujet 
+      create: Créer un sujet
       destroy: Supprimer un sujet
       index:
         add_tag: Ajouter un nouveau sujet de proposition
@@ -677,7 +678,7 @@ fr:
           error: Le bloc de contenu n'a pas pu être créé
         update:
           notice: Bloc de contenu mis-à-jour avec succès
-          error: Le bloc de contenu n'a pas pu être mis-à-jour 
+          error: Le bloc de contenu n'a pas pu être mis-à-jour
         destroy:
           notice: Bloc de contenu supprimé avec succès
         edit:
@@ -709,7 +710,7 @@ fr:
       pages:
         create:
           notice: Page créée avec succès
-          error: La page n'a pas pu être créée 
+          error: La page n'a pas pu être créée
         update:
           notice: Page mise-à-jour avec succès
           error: La page n'a pas pu être mise-à-jour

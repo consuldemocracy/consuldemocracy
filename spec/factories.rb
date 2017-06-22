@@ -44,13 +44,13 @@ FactoryGirl.define do
     end
 
     trait :verified do
-      verified_at Time.now
+      verified_at Time.current
     end
 
     trait :in_census do
       document_number "12345678Z"
       document_type "1"
-      verified_at Time.now
+      verified_at Time.current
     end
   end
 
@@ -324,6 +324,12 @@ FactoryGirl.define do
       selected true
       feasibility "feasible"
       valuation_finished true
+
+    end
+
+    trait :winner do
+      selected
+      winner true
     end
 
     trait :visible_to_valuators do

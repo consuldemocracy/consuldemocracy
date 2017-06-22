@@ -135,6 +135,7 @@ nl:
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
         table_selection: "Selection"
+        table_winner: "Winner"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators

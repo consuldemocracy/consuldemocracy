@@ -16,12 +16,13 @@ El método recomendado es via rvm:
 
 (sólo la opción multiusuario instala todas las dependencias automáticamente, al usar 'sudo'.)
 
-###como usuario local:
+### Como usuario local
 
 ```
 curl -L https://get.rvm.io | bash -s stable
 ```
-###para todos los usuarios del sistema:
+
+### Para todos los usuarios del sistema
 
 ```
 curl -L https://get.rvm.io | sudo bash -s stable

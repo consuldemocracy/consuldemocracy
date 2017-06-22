@@ -21,9 +21,8 @@ class SiteCustomization::Image < ActiveRecord::Base
   def self.image_path_for(filename)
     image_name = filename.split(".").first
 
-    if i = find_by(name: image_name)
-      i.image.exists? ? i.image.url : nil
-    end
+    imageable = find_by(name: image_name)
+    imageable.present? && imageable.image.exists? ? imageable.image.url : nil
   end
 
   def required_width
