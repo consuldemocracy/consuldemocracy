@@ -5,13 +5,16 @@
 
     <div class="small-12 column">
       <span class="note-marked">
-        <%= t("budgets.investments.edit_image.note", title: @investment.title) %></p>
+        <% note_key = @investment.image.exists? ? "edit_note" : "add_note" %>
+        <%= t("budgets.investments.edit_image.#{note_key}", title: @investment.title) %></p>
       </span>
     </div>
 
-    <div class="small-12 column">
-      <%= image_tag @investment.image.url(:large) %>
-    </div>
+    <% if @investment.image.exists? %>
+      <div class="small-12 column">
+        <%= image_tag @investment.image.url(:large) %>
+      </div>
+    <% end %>
 
     <div class="small-12 column">
       <%= f.file_field :image, accept: 'image/jpeg' %>
