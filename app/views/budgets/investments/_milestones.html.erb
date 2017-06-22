@@ -6,11 +6,19 @@
           <%= t('budgets.investments.show.no_milestones') %>
         </div>
       <% end %>
-
-      <% @investment.milestones.each do |milestone| %>
-        <h3><%= milestone.title %></h3>
-        <p><%= milestone.description %></p>
-      <% end %>
+      <section class="timeline">
+        <ul>
+          <% @investment.milestones.each do |milestone| %>
+            <li>
+              <div>
+                <h3><%= milestone.title %></h3>
+                <strong>Publicado el <%= milestone.created_at.strftime("%d/%m/%Y") %></strong>
+                <p><%= milestone.description %></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </section>
     </div>
   </div>
 </div>

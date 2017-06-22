@@ -494,6 +494,59 @@
   }
 }
 
+#tab-milestones{
+  .timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 1px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: #dfe2e5;
+    &:before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top:0;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: inherit;
+      background: #179c87;
+    }
+    &:nth-child(odd) div {
+      text-align: right;
+      left: -515px;
+      top:-20px;
+      &:before {
+        left: -15px;
+      }
+    }
+    &:nth-child(even) div {
+      left: 15px;
+      top:-20px;
+      &:before {
+        right: -15px;
+      }
+    }
+    div {
+      position: relative;
+
+      padding: 10px;
+      width: 30vw;
+      width: 500px;
+      h3{
+        font-size: 1.2rem;
+        margin-bottom:0;
+      }
+      strong{
+        color:#c9c9c9;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
 // 04. List participation
 // ----------------------
 
