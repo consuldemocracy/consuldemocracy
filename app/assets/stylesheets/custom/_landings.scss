@@ -1,8 +1,18 @@
 // Custom styles for landings
 //
+// 00. Common styles for landings
 // 01. Budgets videos 2017
 // 02. Budgets materials 2017
+// 03. Geocraft
 //
+
+// 00. Budgets videos 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.franklin-title {
+  font-family: 'Franklin Gothic' !important;
+  text-transform: uppercase;
+}
 
 // 01. Budgets videos 2017
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -311,6 +321,124 @@ $villaverde:        #8e4e28;
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+// 03. Geocraft
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$geocraft: #61b74a;
+
+.geocraft {
+
+  .header {
+    background: $brand image-url('landings/header_geocraft.jpg');
+    background-position: 50% 90%;
+    background-size: cover;
+    min-height: $line-height * 20;
+
+    h1 {
+      color: #fff;
+
+      span {
+        display: block;
+      }
+
+      .word {
+        font-size: rem-calc(80);
+        line-height: $line-height * 2;
+      }
+    }
+
+    .button {
+      background: #61b74a;
+      color: #fff;
+      font-size: rem-calc(24);
+      text-transform: uppercase;
+    }
+
+    .content {
+      color: #fff;
+      padding: $line-height;
+
+      a:not(.button) {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .quote {
+    color: $geocraft;
+    font-size: rem-calc(36);
+    font-style: italic;
+    font-weight: bold;
+    line-height: $line-height * 2;
+    margin-top: $line-height * 2;
+  }
+
+  .section-white,
+  .section-green {
+    padding: $line-height * 2 0;
+
+    .text {
+      font-size: rem-calc(20);
+      line-height: $line-height * 1.5;
+    }
+  }
+
+  .section-green {
+    background: $geocraft;
+    color: #fff;
+
+    h2 {
+      color: #fff;
+    }
+
+    .button {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+
+  .screenshot {
+    margin-top: $line-height * 3;
+  }
+
+  h2 {
+    color: $geocraft;
+    text-transform: uppercase;
+  }
+
+  ol {
+    position: relative;
+    margin-left: $line-height * 3;
+
+    li {
+      line-height: $line-height * 2;
+      margin-bottom: $line-height;
+      word-break: break-all;
+
+      &::before {
+        content: image-url('landings/icon_minecraft.png');
+        left: -72px;
+        position: absolute;
+      }
+    }
+  }
+
+  .cta {
+    color: $geocraft;
+    border-radius: rem-calc(4);
+    padding: $line-height;
+
+    a {
+      color: $geocraft;
+      font-weight: bold;
+      text-decoration: underline;
     }
   }
 }
