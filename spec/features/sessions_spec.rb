@@ -16,7 +16,7 @@ feature 'Sessions' do
     click_link 'Sign out'
 
     expect(page).to have_content('You have been signed out successfully')
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(debate_path(debate))
   end
 
 end
