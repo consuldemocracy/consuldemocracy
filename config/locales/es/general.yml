@@ -184,6 +184,8 @@ es:
   geozones:
     none: Toda la ciudad
     all: Todos los ámbitos de actuación
+  images:
+    upload_image: Subir una imagen
   layouts:
     application:
       chrome: Google Chrome

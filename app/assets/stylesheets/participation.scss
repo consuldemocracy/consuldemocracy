@@ -942,6 +942,15 @@
   .note-marked p{
     margin-bottom:0;
   }
+  .image-upload{
+    .button, p{
+      float: left;
+    }
+    p{
+      margin-left:1rem;
+      margin-top: 0.8rem;
+    }
+  }
 }
 
 .investment-project-show .supports,

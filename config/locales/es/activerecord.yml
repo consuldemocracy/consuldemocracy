@@ -99,7 +99,7 @@ es:
         title: "Título"
         location: "Ubicación"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
-        image: "Imagen descriptiva de la propueta"
+        image: "Imagen descriptiva de la propuesta"
         image_title: "Título de la imagen"
       comment:
         body: "Comentario"
