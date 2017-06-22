@@ -928,13 +928,13 @@
 }
 
 .budget-investment-show{
-  .image{
-    text-align: center;
-  }
-  p.title-image{
-    font-size: 1rem;
-    margin-top:1.25rem;
-    margin-bottom:0;
+  figure{
+    margin: 1em 0 0;
+    display: inline-block;
+    figcaption{
+      font-size: $small-font-size;
+      margin-top:1rem;
+    }
   }
 }
 

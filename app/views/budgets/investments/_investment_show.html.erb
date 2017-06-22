@@ -30,15 +30,21 @@
 
       <!-- TODO: ROCK&ROR: Markup rework accordingly to mockup definition -->
       <% if investment.image.exists? %>
-        <div class="row columns image">
-            <%= image_tag investment.image.url(:large),
+      <div class="row">
+        <div class="small-12 column text-center">
+          <figure>
+            <%= image_tag investment.image.url(),
                           title: investment.image_title,
                           alt: investment.image_title %>
+            <figcaption class="text-right">
+              <em><%= investment.image_title %></em>
+            </figcaption>
+          </figure>
+          <hr>
         </div>
-        <p class="text-right title-image">
-          <em><%= investment.image_title %></em>
-        </p>
-        <hr>
+      </div>
+
+
       <% end %>
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
