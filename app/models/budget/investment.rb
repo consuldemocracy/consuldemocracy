@@ -1,5 +1,5 @@
 class Budget
-  class Investment < ActiveRecord::Base
+  class Investment < ApplicationRecord
     SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
     include Rails.application.routes.url_helpers

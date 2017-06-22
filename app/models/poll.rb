@@ -1,4 +1,4 @@
-class Poll < ActiveRecord::Base
+class Poll < ApplicationRecord
   include Imageable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

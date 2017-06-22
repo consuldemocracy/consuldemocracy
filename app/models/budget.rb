@@ -1,4 +1,4 @@
-class Budget < ActiveRecord::Base
+class Budget < ApplicationRecord
 
   include Measurable
   include Sluggable

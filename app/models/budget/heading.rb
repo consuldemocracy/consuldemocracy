@@ -1,5 +1,5 @@
 class Budget
-  class Heading < ActiveRecord::Base
+  class Heading < ApplicationRecord
     OSM_DISTRICT_LEVEL_ZOOM = 12.freeze
 
     include Sluggable

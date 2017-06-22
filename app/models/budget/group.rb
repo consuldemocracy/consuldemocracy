@@ -1,5 +1,5 @@
 class Budget
-  class Group < ActiveRecord::Base
+  class Group < ApplicationRecord
     include Sluggable
 
     translates :name, touch: true
