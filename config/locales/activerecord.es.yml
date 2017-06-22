@@ -11,8 +11,8 @@ es:
         one: "Proyecto de inversión"
         other: "Proyectos de inversión"
       budget/investment/milestone:
-        one: "seguimiento"
-        other: "seguimientos"
+        one: "hito"
+        other: "hitos"
       comment:
         one: "Comentario"
         other: "Comentarios"

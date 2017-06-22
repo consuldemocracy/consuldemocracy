@@ -152,7 +152,7 @@ es:
         tags: Etiquetas
         undefined: Sin definir
         milestone: Seguimiento
-        new_milestone: Crear nuevo seguimiento
+        new_milestone: Crear nuevo hito
       edit:
         classification: Clasificación
         assigned_valuators: Evaluadores
@@ -168,17 +168,17 @@ es:
         table_title: "Título"
         table_description: "Descripción"
         table_actions: "Acciones"
-        delete: "Eliminar seguimiento"
+        delete: "Eliminar hito"
       new:
-        creating: Crear seguimiento
+        creating: Crear hito
       edit:
-        title: Editar seguimiento
+        title: Editar hito
       create:
-        notice: Nuevo seguimiento creado con éxito!
+        notice: Nuevo hito creado con éxito!
       update:
-        notice: Seguimiento actualizado
+        notice: Hito actualizado
       delete:
-        notice: Seguimiento borrado correctamente
+        notice: Hito borrado correctamente
     comments:
       index:
         filter: Filtro
