@@ -1,0 +1,32 @@
+<% if @investment.milestones.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("admin.milestones.index.table_id") %></th>
+        <th><%= t("admin.milestones.index.table_title") %></th>
+        <th><%= t("admin.milestones.index.table_description") %></th>
+        <th><%= t("admin.milestones.index.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @investment.milestones.each do |milestone| %>
+        <tr id="<%= dom_id(milestone) %>" class="milestone">
+          <td>
+            <%= milestone.id %>
+          </td>
+          <td>
+            <%= link_to milestone.title, edit_admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget, @investment, milestone) %>
+          </td>
+          <td class="small">
+            <%= milestone.description %>
+          </td>
+          <td>
+            <%= link_to t("admin.milestones.index.delete"), admin_budget_budget_investment_budget_investment_milestone_path(@investment.budget, @investment, milestone),
+                        method: :delete,
+                        class: 'button hollow alert expanded' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

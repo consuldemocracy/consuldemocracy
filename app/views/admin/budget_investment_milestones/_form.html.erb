@@ -1,0 +1,7 @@
+<%= form_for [:admin, @investment.budget, @investment, @milestone] do |f| %>
+
+  <%= f.text_field :title, maxlength: Budget::Investment::Milestone.title_max_length %>
+  <%= f.text_area :description %>
+
+  <%= f.submit nil, class: "button success" %>
+<% end %>

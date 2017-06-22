@@ -322,10 +322,10 @@ FactoryGirl.define do
     reason "unfeasible"
   end
 
-  factory :budget_investment_checkpoint, class: 'Budget::Investment::Checkpoint' do
+  factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
     association :investment, factory: :budget_investment
-    sequence(:title)     { |n| "Budget Investment Checkpoint #{n} title" }
-    description          'Checkpoint description'
+    sequence(:title)     { |n| "Budget Investment Milestone #{n} title" }
+    description          'Milestone description'
   end
 
   factory :vote do

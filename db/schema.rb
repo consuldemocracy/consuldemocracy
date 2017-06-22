@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20170620132731) do
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
 
-  create_table "budget_investment_checkpoints", force: :cascade do |t|
+  create_table "budget_investment_milestones", force: :cascade do |t|
     t.integer  "investment_id"
     t.string   "title",         limit: 80
     t.text     "description"
@@ -932,7 +932,7 @@ ActiveRecord::Schema.define(version: 20170620132731) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-20 13:30:34', null: false
+    t.datetime "password_changed_at",                       default: '2017-06-22 11:21:30', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

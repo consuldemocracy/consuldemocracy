@@ -151,6 +151,8 @@ en:
         edit_dossier: Edit dossier
         tags: Tags
         undefined: Undefined
+        milestone: Milestone
+        new_milestone: Create new milestone
       edit:
         classification: Clasification
         assigned_valuators: Valuators
@@ -160,6 +162,23 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
       search_unfeasible: Search unfeasible
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Title"
+        table_description: "Description"
+        table_actions: "Actions"
+        delete: "Delete milestone"
+      new:
+        creating: Create milestone
+      edit:
+        title: Edit milestone
+      create:
+        notice: New milestone created successfully!
+      update:
+        notice: Milestone updated successfully
+      delete:
+        notice: Milestone successfully deleted
     comments:
       index:
         filter: Filter

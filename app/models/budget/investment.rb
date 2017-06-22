@@ -20,7 +20,7 @@ class Budget
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
     has_many :comments, as: :commentable
-    has_many :checkpoints
+    has_many :milestones
 
     validates :title, presence: true
     validates :author, presence: true
