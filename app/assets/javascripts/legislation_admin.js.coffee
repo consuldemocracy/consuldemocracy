@@ -6,7 +6,7 @@ App.LegislationAdmin =
         checkbox = $(this)
         parent = $(this).parents('.row:eq(0)')
         date_selector = $(this).data('disable-date')
-        parent.find("input[type='text'][id^='"+date_selector+"']").each ->
+        parent.find("input[type='text'][id^='" + date_selector + "']").each ->
           if checkbox.is(':checked')
             $(this).removeAttr("disabled")
           else

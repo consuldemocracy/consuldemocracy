@@ -21,5 +21,5 @@ App.RegistrationForm =
     if registrationForm.length > 0
       usernameInput.on "focusout", ->
         clearUsernameMessage()
-        username = usernameInput.val();
+        username = usernameInput.val()
         validateUsername(username) if username != ""

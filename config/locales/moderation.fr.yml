@@ -74,5 +74,5 @@ fr:
         hide: Bloquer
         search: Rechercher
         search_placeholder: courriel ou nom de l'utilisateur
-        title: Bloquer les utilisateurs 
+        title: Bloquer les utilisateurs
       notice_hide: Utilisateur bloqué. Tous les débats et les propositions de cet utilisateur ont été masqués.

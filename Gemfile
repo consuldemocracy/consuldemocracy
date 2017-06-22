@@ -109,6 +109,7 @@ group :test do
 end
 
 group :development do
+  gem 'mdl', require: false
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'scss_lint', require: false
   gem 'web-console', '3.3.0'

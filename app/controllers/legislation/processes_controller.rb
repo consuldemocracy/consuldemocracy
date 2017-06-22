@@ -8,7 +8,9 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def show
-    if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version = @process.draft_versions.published.last
+    draft_version = @process.draft_versions.published.last
+
+    if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to legislation_process_debate_path(@process)
@@ -33,7 +35,9 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :draft_publication
 
     if @process.draft_publication.started?
-      if draft_version = @process.draft_versions.published.last
+      draft_version = @process.draft_versions.published.last
+
+      if draft_version.present?
         redirect_to legislation_process_draft_version_path(@process, draft_version)
       else
         render :phase_empty
@@ -48,7 +52,9 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :allegations_phase
 
     if @process.allegations_phase.started?
-      if draft_version = @process.draft_versions.published.last
+      draft_version = @process.draft_versions.published.last
+
+      if draft_version.present?
         redirect_to legislation_process_draft_version_path(@process, draft_version)
       else
         render :phase_empty
@@ -63,7 +69,9 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :result_publication
 
     if @process.result_publication.started?
-      if final_version = @process.final_draft_version
+      final_version = @process.final_draft_version
+
+      if final_version.present?
         redirect_to legislation_process_draft_version_path(@process, final_version)
       else
         render :phase_empty

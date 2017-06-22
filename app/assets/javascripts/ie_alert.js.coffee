@@ -1,7 +1,7 @@
 App.IeAlert =
   set_cookie_and_hide: (event) ->
     event.preventDefault()
-    $.cookie('ie_alert_closed', 'true', { path: '/', expires: 365 });
+    $.cookie('ie_alert_closed', 'true', { path: '/', expires: 365 })
     $('.ie-callout').remove()
 
   initialize: ->

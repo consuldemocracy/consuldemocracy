@@ -8,6 +8,7 @@ Citizen Participation and Open Government Application
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
 [![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
@@ -47,6 +48,7 @@ RAILS_ENV=test rake db:setup
 ```
 
 Run the app locally:
+
 ```
 bin/rails s
 ```
@@ -65,6 +67,12 @@ If you add SCSS code you can check it with:
 scss-lint
 ```
 
+If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
+
+```
+coffeelint .
+```
+
 You can use the default admin user from the seeds file:
 
  **user:** admin@consul.dev
@@ -76,7 +84,9 @@ But for some actions like voting, you will need a verified user, the seeds file 
  **pass:** 12345678
 
 ### Customization
+
 Read more on documentation:
+
 * English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
 * Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 

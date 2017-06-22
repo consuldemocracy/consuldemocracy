@@ -18,6 +18,7 @@
           <%= t("admin.budget_investments.index.table_selection") %>
         <% end %>
       </th>
+      <th class="text-center"><%= t("admin.budget_investments.index.table_winner") %></th>
     </tr>
   </thead>
 
@@ -89,6 +90,9 @@
             <% end %>
           <% end %>
         <% end %>
+      </td>
+      <td class="small text-center">
+        <%= investment.winner? ? t('shared.yes'): t('shared.no') %>
       </td>
     </tr>
   <% end %>
