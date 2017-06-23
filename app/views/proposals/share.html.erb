@@ -31,8 +31,8 @@
 
         <br/>
 
-        <% if @proposal_improvement_url.present? %>
-        <p><%= t('proposals.proposal.improve_info', improve_info_link: link_to(t('proposals.proposal.improve_info_link'), @proposal_improvement_url)).html_safe %></p>
+        <% if @proposal_improvement_path.present? %>
+        <p><%= t('proposals.proposal.improve_info', improve_info_link: link_to(t('proposals.proposal.improve_info_link'), @proposal_improvement_path)).html_safe %></p>
         <% end %>
 
         <p>

@@ -105,5 +105,5 @@ Setting['mailer_from_address'] = 'noreply@consul.dev'
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'
 Setting['min_age_to_participate'] = 16
 
-# Proposal improvement url path ('more-information/proposal-improvement')
+# Proposal improvement url path ('/more-information/proposal-improvement')
 Setting['proposal_improvement_path'] = nil
