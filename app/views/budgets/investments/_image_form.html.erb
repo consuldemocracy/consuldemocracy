@@ -22,7 +22,7 @@
     <% if @investment.errors.has_key?(:image) %>
       <div class="small-12 column">
         <div class="image-errors">
-          <p><%= errors_on_image(@investment)%></p>
+          <small class="error"><%= errors_on_image(@investment)%></small>
         </div>
       </div>
     <% end %>
