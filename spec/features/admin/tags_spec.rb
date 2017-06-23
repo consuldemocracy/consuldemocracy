@@ -8,16 +8,12 @@ feature 'Admin tags' do
   end
 
   scenario 'Index' do
-    create(:debate, tag_list: 'supertag')
-    debate_tag = ActsAsTaggableOn::Tag.find_by(name: "supertag")
+    debate = create(:debate)
+    debate.tag_list.add(create(:tag, :category, name: "supertag"))
     visit admin_tags_path
 
     expect(page).to have_content @tag1.name
-    if debate_tag.category?
-      expect(page).to have_content 'supertag'
-    else
-      expect(page).to_not have_content 'supertag'
-    end
+    expect(page).to have_content 'supertag'
   end
 
   scenario 'Create' do
