@@ -30,3 +30,17 @@
     }
   }
 }
+
+@mixin image-upload {
+  .image-upload {
+    .button,
+    p {
+      float: left;
+    }
+
+    p {
+      margin-left: 1rem;
+      margin-top: 0.8rem;
+    }
+  }
+}
