@@ -58,7 +58,7 @@ module ActsAsTaggableOn
     end
 
     def self.category_names
-      Tag.where("kind = 'category'").pluck(:name)
+      Tag.category.pluck(:name)
     end
 
     def self.spending_proposal_tags
