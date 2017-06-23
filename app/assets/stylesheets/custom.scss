@@ -203,6 +203,7 @@ li {
   padding-left: 2rem;
   padding-top: 5rem;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .home-subtitle{
@@ -262,7 +263,45 @@ li {
   font-weight: bold;
 }
 
-.button-home-proposals{
-  min-width: 200px;
+.home-proposals{
   margin: 0 auto !important;
+}
+
+.button-home-proposals{
+  max-width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+
+.home-proposal-color{
+  color: $gray2;
+}
+
+.proposal-type{
+  font-family: $body-font-family-title;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.most-voted{
+  color: $orange;
+}
+
+.most-activated{
+  color: $light-blue;
+}
+
+.newest{
+  color: $orange;
+}
+
+.all-screen{
+  max-width: none;
+}
+
+.home-proposal-subtitle{
+  font-size: 0.9rem;
 }

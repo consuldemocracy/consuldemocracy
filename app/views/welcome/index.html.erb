@@ -1,5 +1,5 @@
 <div class="no-margin-top">
-  <div class="row">
+  <div class="row all-screen">
 
     <div class="small-12 medium-8 column home-quote">
       <h1 class="home-quote-font"> <%= t("welcome.welcome.quote") %> </h1>
@@ -26,7 +26,9 @@
 
   <main>
 
-    <h1 class="text-center home-title"> <%= t("welcome.how_work") %> </h1>
+    <h1 class="text-center home-title">
+      <%= t("welcome.how_work") %>
+    </h1>
     <div class="row text-center margin">
       <div class="small-12 medium-3 column">
         <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.proposal.title"))  %>
@@ -76,8 +78,22 @@
       </div>
     </div>
 
-    <div class="large-centered">
+    <div class="home-proposals">
       <h1 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h1>
       <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button button-home-proposals text-center' %>
+      <div class="row">
+        <div class="small-12 medium-4 column">
+          <%= render "proposal", proposal: most_voted_proposals.first, proposal_type: "Más votadas", proposal_class: "proposal-type most-voted" %>
+        </div>
+        <div class="small-12 medium-4 column">
+          <%= render "proposal", proposal: Proposal.sort_by_created_at.first, proposal_type: "Más activas", proposal_class: "proposal-type most-activated" %>
+        </div>
+        <div class="small-12 medium-4 column">
+          <%= render "proposal", proposal: Proposal.sort_by_most_commented.first, proposal_type: "Más nuevas", proposal_class: "proposal-type newest" %>
+        </div>
+
+      </div>
+
     </div>
+
 </main>
