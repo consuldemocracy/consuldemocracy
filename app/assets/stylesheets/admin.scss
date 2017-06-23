@@ -78,6 +78,10 @@ $admin-color: #cf3638;
     &:hover {
       background: #f3f6f7;
     }
+
+    &.success {
+      background: $success-bg;
+    }
   }
 
   table {

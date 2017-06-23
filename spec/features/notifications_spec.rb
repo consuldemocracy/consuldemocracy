@@ -25,7 +25,7 @@ feature "Notifications" do
     end
 
     logout
-    login_as author
+    login_as author.reload
     visit root_path
 
     find(".icon-notification").click
@@ -48,6 +48,55 @@ feature "Notifications" do
     end
 
     logout
+    administrator.reload
+    login_as administrator
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+
+    expect(page).to have_content "Someone commented on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
+  scenario "User commented on my legislation question", :js do
+    verified_user = create(:user, :level_two)
+    login_as verified_user
+    visit legislation_process_question_path legislation_question.process, legislation_question
+
+    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I answered your question"
+    click_button "Publish answer"
+    within "#comments" do
+      expect(page).to have_content "I answered your question"
+    end
+
+    logout
+    administrator.reload
+    login_as administrator
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+
+    expect(page).to have_content "Someone commented on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
+  scenario "User commented on my legislation question", :js do
+    verified_user = create(:user, :level_two)
+    login_as verified_user
+    visit legislation_process_question_path legislation_question.process, legislation_question
+
+    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I answered your question"
+    click_button "Publish answer"
+    within "#comments" do
+      expect(page).to have_content "I answered your question"
+    end
+
+    logout
+    administrator.reload
     login_as administrator
     visit root_path
 
@@ -80,7 +129,7 @@ feature "Notifications" do
     end
 
     logout
-    login_as author
+    login_as author.reload
     visit root_path
 
     find(".icon-notification").click
@@ -107,7 +156,7 @@ feature "Notifications" do
     end
 
     logout
-    login_as author
+    login_as author.reload
     visit root_path
 
     find(".icon-notification").click
@@ -135,7 +184,7 @@ feature "Notifications" do
       logout
     end
 
-    login_as author
+    login_as author.reload
     visit root_path
 
     find(".icon-notification").click
@@ -161,7 +210,7 @@ feature "Notifications" do
 
   scenario "Author replied to his own comment", :js do
     comment = create :comment, commentable: debate, user: author
-    login_as author
+    login_as author.reload
     visit debate_path debate
 
     click_link "Reply"
@@ -194,7 +243,7 @@ feature "Notifications" do
       create(:vote, voter: user1, votable: proposal, vote_flag: true)
       create(:vote, voter: user2, votable: proposal, vote_flag: true)
 
-      login_as(author)
+      login_as author.reload
       visit root_path
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -206,7 +255,7 @@ feature "Notifications" do
       expect(page).to have_content "Your message has been sent correctly."
 
       logout
-      login_as user1
+      login_as user1.reload
       visit root_path
 
       find(".icon-notification").click
@@ -217,7 +266,7 @@ feature "Notifications" do
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
 
       logout
-      login_as user2
+      login_as user2.reload
       visit root_path
 
       find(".icon-notification").click
@@ -228,7 +277,7 @@ feature "Notifications" do
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
 
       logout
-      login_as user3
+      login_as user3.reload
       visit root_path
 
       find(".icon-no-notification").click

@@ -41,8 +41,8 @@ en:
     registrations:
       destroyed:
         "Goodbye! Your account has been cancelled. We hope to see you again soon. In accordance with your request, personal data registered as
-        a user of the site and form part of the file 'File' under the responsibility of the
-        'Responsible', they have been canceled under the terms of the provisions of Article 16 of the
+        a user of the site decide.madrid.es and form part of the file 'Gestión de procesos participativos' under the responsibility of the
+        Dirección General de Participación Ciudadana, they have been canceled under the terms of the provisions of Article 16 of the
         Ley Orgánica 15/1999 de Protección de Datos de Carácter Personal and Article 31 of its Reglamento de desarrollo (RD 1720/2007)."
       signed_up: "Welcome! You have been authenticated."
       signed_up_but_inactive: "Your registration was successful, but you could not be signed in because your account has not been activated."

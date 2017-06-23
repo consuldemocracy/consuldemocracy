@@ -28,6 +28,5 @@ feature 'Admin valuators' do
       expect(page).to have_content 'environmental expert'
     end
   end
-
 end
 

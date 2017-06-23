@@ -13,8 +13,10 @@ class Budget < ActiveRecord::Base
   has_many :ballots, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :headings, through: :groups
+  has_many :lines, through: :ballots, class_name: 'Budget::Ballot::Line'
 
   before_validation :sanitize_descriptions
+  before_save :set_slug
 
   scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
   scope :accepting, -> { where(phase: "accepting") }
@@ -26,6 +28,14 @@ class Budget < ActiveRecord::Base
   scope :finished,  -> { where(phase: "finished") }
 
   scope :current,   -> { where.not(phase: "finished") }
+
+  def to_param
+    name.parameterize
+  end
+
+  def set_slug
+    self.slug = name.parameterize
+  end
 
   def description
     self.send("description_#{self.phase}").try(:html_safe)

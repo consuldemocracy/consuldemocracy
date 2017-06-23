@@ -1,3 +1,7 @@
+<% provide :title do %>
+  <%= @budget.name + ": " + @group.name %>
+<% end %>
+<% provide :meta_description, t("meta_tags.budget.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_group_url(filter: @current_filter) %>
 <% end %>
@@ -34,9 +38,9 @@
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %>">
               <%= link_to heading.name,
-                          budget_investments_path(heading_id: heading.id,
-                                                  filter: @current_filter),
-                          data: { no_turbolink: true } %><br>
+                    custom_budget_investments_path(heading_id: heading.to_param,
+                      filter: @current_filter),
+                      data: { no_turbolink: true } %><br>
             </span>
           <% end %>
         </div>

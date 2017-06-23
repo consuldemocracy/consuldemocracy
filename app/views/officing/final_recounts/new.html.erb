@@ -1,6 +1,10 @@
 <% if @officer_assignments.any? %>
   <h2><%= t("officing.final_recounts.new.title", poll: @poll.name) %></h2>
 
+  <div class="callout primary">
+    <%= t("officing.final_recounts.new.intro_html")%>
+  </div>
+
   <%= form_tag(officing_poll_final_recounts_path(@poll), {id: "officer_assignment_form"}) do %>
     <div class="row">
       <div class="small-12 medium-6 column">
@@ -9,18 +13,21 @@
                         booths_for_officer_select_options(@officer_assignments),
                         { prompt: t("officing.final_recounts.new.select_booth"),
                           label: false } %>
+        <%= hidden_field_tag :date, l(@poll.ends_at.to_date) %>
       </div>
     </div>
 
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <label><%= t("officing.final_recounts.new.date") %></label>
-        <%= select_tag :date,
-                        poll_dates_select_options(@poll),
-                        { prompt: t("officing.final_recounts.new.select_date"),
-                          label: false } %>
+    <% if current_user.administrator? %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <label>Origen</label>
+          <%= select_tag :origin,
+                          options_for_select([["Urna", "booth"], ["Ágora", "web"], ["Correo", "letter"]]),
+                          { prompt: "Elige origen",
+                            label: false } %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <div class="row">
       <div class="small-12 medium-6 large-4 column">
@@ -49,26 +56,18 @@
 
   <table>
     <thead>
-      <th><%= t("officing.final_recounts.new.date")  %></th>
       <th><%= t("officing.final_recounts.new.booth") %></th>
       <th><%= t("officing.final_recounts.new.count") %></th>
-      <th><%= t("officing.final_recounts.new.system_count") %></th>
       <th>&nbsp;</th>
     </thead>
     <tbody>
       <% @final_recounts.each do |final_recount| %>
         <tr id="<%= dom_id(final_recount) %>">
           <td>
-            <%= l(final_recount.date.to_date, format: :long) %>
-          </td>
-          <td>
             <%= final_recount.booth_assignment.booth.name %>
           </td>
           <td>
             <strong><%= final_recount.count %></strong>
-          </td>
-          <td>
-            <strong><%= system_recount_to_compare_with_final_recount final_recount %></strong>
           </td>
           <td>
             <%= link_to t("officing.final_recounts.new.add_results"), new_officing_poll_result_path(@poll, oa: final_recount.officer_assignment.id, d: l(final_recount.date.to_date) )%>

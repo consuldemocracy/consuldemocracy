@@ -1,0 +1,27 @@
+<tr>
+  <td>
+    <div class="thumbnail">
+      <%= link_to town_planning_option.original_image_url, target: '_blank' do %>
+        <%= image_tag town_planning_option.thumb_image_url, alt: town_planning_option.name %>
+      <% end %>
+    </div>
+  </td>
+
+  <td>
+    <strong><%= town_planning_option.name %></strong>
+    <br>
+    <%= link_to "Ver detalle", town_planning_option.original_image_url,
+                  title: t("shared.target_blank_html"), target: "_blank" %>
+  </td>
+
+  <td>
+    <%= link_to "Descargar dossier <small>(PDF | #{town_planning_option.file_size('dossier', 'pdf')})</small>".html_safe,
+                  town_planning_option.file_path('dossier', 'pdf'),
+                  title: "PDF #{town_planning_option.name} | #{town_planning_option.file_size('dossier', 'pdf')}",
+                  target: "_blank" %>
+  </td>
+
+  <td class="text-center">
+    <%= number_with_delimiter(town_planning_option.probe_selections_count) %>
+  </td>
+</tr>

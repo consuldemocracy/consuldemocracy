@@ -1,0 +1,57 @@
+<% provide :title do %><%= t("processes.lobbies.title") %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: lobbies_url,
+          social_title: t("processes.lobbies.title"),
+          social_description: t("processes.lobbies.description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: lobbies_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to processes_path %>
+      <h1>Registro de lobbies del Ayuntamiento de Madrid</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-8 column">
+    <h2>Introducción</h2>
+
+    <p>El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies.</p>
+
+    <p>La Ordenanza de Transparencia de la Ciudad de Madrid, aprobada el 27 de julio de 2016 por el Pleno del Ayuntamiento y publicada en el Boletín Oficial de la Comunidad de Madrid el 17 de agosto de 2016, regula en su capítulo VI un Registro de lobbies.</p>
+
+    <p>La ordenanza se limita a una regulación mínima de los aspectos sustantivos, remitiendo a una mayor concreción de sus aspectos técnicos y auxiliares mediante directrices de la Junta de Gobierno de la Ciudad de Madrid en su disposición final quinta, que prevé además que la aprobación de estas directrices se efectuará en el plazo de seis meses desde la adopción de un acuerdo por el Pleno en el que se establezcan las líneas básicas del Registro.</p>
+
+    <p>Es este acuerdo el que se somete a consulta. Cualquier persona puede enviar sus comentarios incorporándolos directamente en el borrador que se publica en la web de Decide Madrid o mandando un correo a <a href="mailto:sgtransparencia@madrid.es">sgtransparencia@madrid.es</a></p>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li class="margin-bottom">
+        <%= link_to "/docs/procesos/acuerdo_de_pleno_registro_de_lobbies.pdf", target: "_blank",
+                    title: "Descargar Propuesta de acuerdo del Pleno del Ayuntamiento de Madrid (se abre en ventana nueva)" do %>
+                    <strong>Propuesta de acuerdo del Pleno</strong><br><small>(PDF 126Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/docs/procesos/contestacion_alegaciones_registro_de_lobbies.xls", target: "_blank",
+                    title: "Descargar Acuerdo del Pleno del Ayuntamiento de Madrid (se abre en ventana nueva)" do %>
+                    <strong>Contestación alegaciones</strong><br><small>(XLS 44Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to lobbies_draft_path, class: "margin-top button expanded",
+                    title: "Ver borrador Registro de lobbies del Ayuntamiento de Madrid" do %>
+                    <strong>Ver borrador</strong>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

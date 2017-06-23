@@ -1,0 +1,182 @@
+---
+es:
+  admin:
+    probes:
+      index:
+        title: Sondeos
+        no_results: No se creado ningún sondeo
+        status:
+          selecting: Votación en curso
+          results: Resultados publicados
+      show:
+        option: Opción
+        selects: Número de votos
+  probes:
+    codenames:
+      town_planning: 'Planificación urbana - Bancos'
+      plaza: 'Remodelación de Plaza España'
+    verified_only: La participación en este proceso está restringida a usuarios verificados, %{verify_account}.
+    verify_account: verifica tu cuenta
+    not_logged_in: Necesitas %{signin} o %{signup} para participar.
+    signin: iniciar sesión
+    signup: registrarte
+    plaza:
+      selecting:
+        code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
+    back: "Volver al listado"
+    show:
+      vote: "Votar"
+      documents: "Documentación"
+      documents_finalist: "Documentación finalista"
+      share: "Compartir"
+      button: "Votar"
+      code_html: '<abbr title="Referencia">REF.</abbr> %{code}'
+  human_rights:
+    banner:
+      title: "#PlanDerechosHumanos"
+      text_html: "¡Participa hasta el <u>4 de noviembre</u>!"
+  cards:
+    button: "Más información"
+  meta_tags:
+    welcome_index:
+      title: "Decide Madrid: portal de participación ciudadana de Madrid"
+      description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
+    debates:
+      title: "Debates ciudadanos de Madrid - Decide Madrid"
+      description: "En el espacio de debates ciudadanos de Decide Madrid podrás compartir con otros habitantes de Madrid los temas de la ciudad que más te preocupan."
+    proposals:
+      title: "Propuestas ciudadanas de Madrid - Decide Madrid"
+      description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."
+    processes:
+      title: "Procesos participativos de Madrid - Decide Madrid"
+      description: "En el espacio de procesos participativos podrás participar en la elaboración de ordenanzas municipales y otros proyectos del Ayuntamiento de Madrid."
+    budget:
+      title: "Presupuestos participativos de Madrid"
+      description: "Participa y crea un proyecto de gasto para decidir a qué proyectos destina el Ayuntamiento de Madrid su presupuesto participativo."
+    first_voting:
+      title: "Votaciones ciudadanas de Madrid - Decide Madrid"
+      description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
+    polls_results:
+      title: "Resultados de la primera votación ciudadana"
+      description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
+    polls_stats:
+      title: "Estadísticas de la primera votación ciudadana"
+      description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
+  social_share:
+    polls_show:
+      title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
+      twitter_1: "He votado Madrid 100% sostenible, billete intermodal y la remodelación de Plaza España. ¡Vota tú también!"
+      facebook_1: "He votado las propuestas ciudadanas 'Madrid 100% sostenible' y 'Billete único para el transporte público' y el proyecto final para remodelar la Plaza de España en Decide Madrid. ¡Vota tú también!"
+      description_1: "Decide la remodelación de Plaza de España y di sí o no a las propuestas ciudadanas Madrid 100% sostenible y Billete único para el transporte público en Madrid."
+      title_2: "Votación del futuro de la Gran Vía - Decide Madrid"
+      twitter_2: "He respondido a las preguntas sobre el futuro de la Gran Vía en @DecideMadrid ¡Tú también puedes responder!"
+      facebook_2: "He respondido a las preguntas sobre el futuro de la Gran Vía en Decide Madrid. ¡Tú también puedes responder!"
+      description_2: "Tú decides cómo será la Gran Vía en el futuro. Contesta las cuatro preguntas sobre la Gran Vía en Decide Madrid."
+      title_3: "Votación del distrito de Barajas - Decide Madrid"
+      twitter_3: "He opinado sobre el Plan participativo de actuación territorial de @JMDBarajas ¡Opina tú también!"
+      facebook_3: "He opinado sobre el Plan participativo de actuación territorial de la Junta Municipal de Distrito de Barajas. ¡Opina tú también!"
+      description_3: "Decide si quieres que mejore la limpieza en Barajas y se peatonalice la Plaza Mayor. Tú decides el futuro de Barajas."
+      title_4: "Votación del distrito de San Blas-Canillejas"
+      twitter_4: "He opinado sobre el Plan participativo de actuación territorial de @JMD_SanBlas ¡Opina tú también!"
+      facebook_4: "He opinado sobre el Plan participativo de actuación territorial de la Junta Municipal de Distrito de SanBlas y Canillejas. ¡Opina tú también!"
+      description_4: "Decide si quieres que en San Blas-Canillejas se cree una oficina de empleo y que haya más atención a domicilio. Tú decides el futuro de San Blas-Canillejas."
+      title_5: "Votación del distrito de Hortaleza - Decide Madrid"
+      twitter_5: "He votado la propuesta de cambio de nombre del @JMDhortaleza en @DecideMadrid ¡Vota tú también!"
+      facebook_5: "He votado la propuesta de cambio de nombre de la Junta Municipal de Distrito de Hortaleza en Decide Madrid. ¡Vota tú también!"
+      description_5: "Vota la propuesta de cambiar el nombre de la Junta Municipal de Distrito de Hortaleza por Hortaleza-Canillas. Decide si quieres cambiar el nombre del parque Felipe VI por el de Parque Forestal de Valdebebas en Decide Madrid."
+      title_6: "Votación del distrito de Retiro - Decide Madrid"
+      twitter_6: "He votado la propuesta para dar nombre a los Centros Culturales de @JMDretiro ¡Vota tú también!"
+      facebook_6: "He votado la propuesta para dar nombre a los Centros Culturales de la Junta Municipal de Distrito de Retiro en Decide Madrid. ¡Vota tú también!"
+      description_6: "Tú decides los nombres de tres centros culturales del distrito Retiro. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_7: "Votación del distrito de Salamanca - Decide Madrid"
+      twitter_7: "He votado la propuesta de la @JMDSalamanca de protección de edificios históricos en @DecideMadrid ¡Vota tú también!"
+      facebook_7: "He votado la propuesta de la Junta Municipal de Distrito de Salamanca de protección de edificios históricos en Decide Madrid. ¡Vota tú también!"
+      description_7: "Tú decides si quieres que se protejan más edificios históricos en el distrito de Salamanca. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_8: "Votación del distrito de Vicálvaro - Decide Madrid"
+      twitter_8: "He votado la propuesta para dar nombre al Espacio de Igualdad del @jmdvicalvaro en @DecideMadrid. ¡Vota tú también!"
+      facebook_8: "He votado la propuesta para dar nombre al Espacio de Igualdad de la Junta Municipal de Distrito de Vicálvaro en Decide Madrid. ¡Vota tú también!"
+      description_8: "Tú decides cómo se llamará el Espacio de Igualdad de la Junta Municipal de Distrito de Vicálvaro. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+  type_selection:
+    title: "Estás creando..."
+    proposals_title: "Propuesta ciudadana"
+    proposals_info: "Crea una propuesta para recoger apoyos y llevarla a votación."
+    investment_title: "Proyecto de Presupuestos participativos"
+    investment_info: "Decide a qué se destina una parte del presupuesto municipal."
+  nvotes:
+    can_participate: "Puedes participar en las siguientes votaciones:"
+    thanks: "¡Muchas gracias por participar!"
+    exit: "Salir de la votación"
+    finish: "Sí, salir de la votación"
+    officer_title: "Presidente de mesa"
+    tablet: "Votar en tablet"
+    are_you_sure: "¿Estás seguro de que has terminado?"
+  delegation:
+    title: Lista de recomendaciones
+    info: Aquí puedes crear una lista con tus proyectos favoritos, para ayudar a que se apoyen y voten.
+    instructions: "Instrucciones:"
+    text_html: Selecciona los proyectos de gasto para añadir a tu lista introduciendo su ID
+    help_html: "<small><em>El ID es el número que aparece en la URL de cada proyecto de gasto, por ejemplo:<br>https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/proyecto/<strong>1234</strong></em></small>"
+    form_submit: "Añadir a mi lista"
+    table_head: "Título del proyecto de gasto"
+    delete: "Eliminar de mi lista"
+    list_title: "Proyectos de gasto recomendados por:"
+    no_recommendations: "Todavía no has añadido ningún proyecto de gasto para la fase de %{phase}."
+    phase:
+      selecting: preselección
+      balloting: votación final
+    view_list: "Ver mi lista de proyectos de gasto"
+    create_ok: "Proyecto de gasto añadido"
+    create_error: "El identificador no es válido"
+    deleted: "Proyecto eliminado de la lista"
+    share: "Comparte tu lista de proyectos recomendados con este enlace:"
+  welcome:
+    budgets:
+      title_html: "100 millones<br> para hacer Madrid"
+      text_html: "En la votación final de los presupuestos participativos 2017 tú decides los proyectos ciudadanos que llevará a cabo el Ayuntamiento <strong>en la ciudad y en los distritos</strong>."
+      date: "Del 15 de mayo al 30 de junio"
+      button: "Votar proyectos"
+      once_plazas:
+        label: "Proceso"
+        title: "Once Plazas"
+        text: "Participa en el debate del concurso de ideas previo a la remodelación de 11 plazas públicas en los distritos de la periferia de Madrid."
+        link: "Más información sobre Once Plazas"
+      videos:
+        label: "Vídeos"
+        title: "Presupuestos participativos"
+        text: "Las personas que han propuesto proyectos en los presupuestos participativos nos cuentan en vídeo en qué consiste su idea."
+        link: "Ver vídeos de Presupuestos participativos"
+      chincheto:
+        title: "Ver vídeo de SrChincheto77 en YouTube (se abre en ventana nueva)"
+        alt: "¡SrChincheto77 nos acompaña por el Madrid que decide la ciudadanía!"
+  budgets_banner:
+    title: "100 millones para hacer Madrid"
+    date: "Del 15 de mayo al 30 de junio"
+    button: "Votar proyectos"
+    alt: "Ir a la página de presupuestos participativos 2017"
+    city_title: "VOTA PROYECTOS DE TODA LA CIUDAD"
+    city_text_html: "Recuerda que puedes votar también proyectos de <strong>toda la ciudad</strong>."
+    city_button: "Votar proyectos de toda la ciudad"
+    district_title: "VOTA PROYECTOS DE UN DISTRITO"
+    district_text_html: "Recuerda que puedes votar también proyectos de <strong>uno de los distritos</strong>."
+    district_button: "Votar proyectos de un distrito"
+  processes:
+    lobbies:
+      title: "Registro de lobbies del Ayuntamiento de Madrid"
+      description: "El Ayuntamiento de Madrid quiere desarrollar en detalle la regulación del Registro de Lobbies."
+    manzanares:
+      title: "Parque Lineal del Manzanares"
+      description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."
+      date_html: "Proceso abierto"
+    shared:
+      more_info: "Más información"
+  polls_reports:
+    label: "Informe técnico"
+    button: "Descargar informe técnico"
+    title_1: "Madrid 100% sostenible"
+    img_alt_1: "Imagen genérica relacionada con la propuesta Madrid 100% sostenible"
+    description_1_html: "Informe técnico sobre la propuesta <strong>Madrid 100% sostenible</strong>."
+    title_2: "Billete único para el transporte público"
+    img_alt_2: "Imagen genérica relacionada con la propuesta Billete único para el transporte público"
+    description_2_html: "Informe técnico sobre la competencia, legalidad, viabilidad y coste de la propuesta <strong>Billete único para el transporte público</strong>."
+  budgets_minimal_selector:
+    view: "Mostrar como tarjetas o lista"

@@ -1,0 +1,89 @@
+<div class="small-12 medium-10 column" id="results-container">
+  <h2 class="inline-block"><%= @geozone.nil? ? t('geozones.none') : @geozone.name %></h2>
+
+  <span class="float-right"><%= link_to t("spending_proposals.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("spending_proposals.results.hide_discarded_link")} %></span>
+
+  <table id="spending-proposals-results">
+    <thead>
+      <tr>
+        <th scope="col"><%= t("spending_proposals.results.spending_proposal") %></th>
+        <th scope="col" class="text-right"><%= t("spending_proposals.results.ballot_lines_count") %></th>
+        <th scope="col" class="text-right"><%= t("spending_proposals.results.price") %></th>
+        <th scope="col" class="text-right" title="<%= t("spending_proposals.results.amount_available") %>" style="width:120px">
+          <%= format_price(@initial_budget) %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% available_budget = @initial_budget.to_i %>
+      <% @spending_proposals.each do |spending_proposal| %>
+        <% initial_budget = available_budget
+           budget = available_budget - spending_proposal.price
+           available_budget = budget if budget >= 0 %>
+
+        <% if budget >= 0 %>
+          <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal success">
+        <% else %>
+          <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal js-discarded" style="display:none">
+        <% end %>
+            <td>
+              <% if budget >= 0 %>
+                <span class="icon-check">
+                  <span class="show-for-sr"><%= t("spending_proposals.results.accepted") %></span>
+                </span>
+              <% else %>
+                <span class="icon-x">
+                  <span class="show-for-sr"><%= t("spending_proposals.results.discarded") %></span>
+                </span>
+              <% end %>
+              <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+            </td>
+            <td class="text-right">
+              <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
+            </td>
+            <td class="text-right" style="width:100px">
+              <%= format_price spending_proposal.price %>
+            </td>
+            <td class="small text-right" title="<%= format_price(initial_budget) %> - <%= format_price(spending_proposal.price) %>">
+              <%= format_price budget %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% if @incompatibles.any? %>
+    <div class="js-discarded" style="display:none">
+
+      <h3 class="inline-block"><%= t("spending_proposals.results.incompatible") %></h3>
+
+      <table id="incompatible-spending-proposals">
+        <thead>
+          <tr>
+            <th scope="col"><%= t("spending_proposals.results.spending_proposal") %></th>
+            <th scope="col" class="text-center"><%= t("spending_proposals.results.ballot_lines_count") %></th>
+            <th scope="col" class="text-center"><%= t("spending_proposals.results.price") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @incompatibles.each do |spending_proposal| %>
+            <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal">
+              <td>
+                <span class="icon-x"></span>
+                <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+                (id: <%= spending_proposal.id %>)
+              </td>
+              <td class="text-center">
+                <%= spending_proposal.ballot_lines_count + (@delegated_ballots[spending_proposal.id] || 0) %>
+              </td>
+              <td class="text-center">
+                <%= format_price spending_proposal.price %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+
+</div>

@@ -1,0 +1,15 @@
+<li id="<%= dom_id(spending_proposal) %>_sidebar">
+  <%= spending_proposal.title %>
+  <span><%= format_price(spending_proposal.price) %></span>
+
+  <% if feature?("spending_proposal_features.final_voting_allowed") %>
+    <%= link_to ballot_line_path(id: spending_proposal.id,
+                                 spending_proposals_ids: spending_proposal_ids),
+                title: t('ballots.show.remove'),
+                class: "remove-investment-project",
+                method: :delete,
+                remote: true do %>
+       <span class="icon-x delete"></span>
+    <% end %>
+  <% end %>
+</li>

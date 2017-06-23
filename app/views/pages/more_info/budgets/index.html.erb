@@ -1,0 +1,252 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_budgets_url %>
+<% end %>
+
+<div class="row">
+  <div class="menu small-12 medium-3 column">
+
+    <%= back_link_to more_info_path %>
+
+    <ul class="vertical menu clear">
+      <li><a href="#section_1"><strong>Explicación detallada</strong></a>
+        <ul class="vertical menu clear">
+          <li><a href="#1">¿Qué son los presupuestos participativos?</a></li>
+          <li><a href="#2">¿Qué cantidad destina el Ayuntamiento a los presupuestos participativos y cómo se reparten en la ciudad?</a></li>
+          <li><a href="#3">¿Cuándo se lleva a cabo el proceso de presupuestos participativos?</a></li>
+          <li><a href="#4">¿En qué consiste la presentación de proyectos?</a></li>
+          <li><a href="#5">¿En qué consiste el apoyo de proyectos?</a></li>
+          <li><a href="#6">¿En qué consiste la evaluación de proyectos?</a></li>
+          <li><a href="#7">¿En qué consiste la votación final de proyectos?</a></li>
+          <li><a href="#8">¿Cuál es el resultado final tras la votación de los presupuestos participativos?</a></li>
+          <li><a href="#9">¿Cuáles son los requisitos para proponer o votar proyectos?</a></li>
+          <li><a href="#10">¿Qué puedo proponer?</a></li>
+          <li><a href="#10b">Algunos ejemplos de proyectos posibles</a></li>
+        </ul>
+      </li>
+      <li><a href="#section_2"><strong>Más preguntas frecuentes</strong></a>
+        <ul class="vertical menu clear">
+          <li><a href="#11">¿En qué se diferencia un proyecto para toda la ciudad de un proyecto para un distrito? ¿Se puede cambiar la categoría?</a></li>
+          <li><a href="#12">¿Puede mi proyecto considerarse inviable?</a></li>
+          <li><a href="#13">¿Puedo acudir a mi Junta de Distrito a presentar proyectos?</a></li>
+          <li><a href="#14">¿Pueden participar asociaciones, fundaciones y ONG? ¿Y empresas?</a></li>
+          <li><a href="#15">¿Pueden plantearse proyectos que tarden más de un año en hacerse realidad?</a></li>
+          <li><a href="#16">¿Qué ocurre si hay proyectos repetidos o muy similares?</a></li>
+          <li><a href="#17">¿Qué diferencia la fase de apoyos de la votación final?</a></li>
+          <li><a href="#18">¿Cómo se analizan los proyectos durante la fase de evaluación? ¿Qué proyectos pasan a la fase de votación final?</a></li>
+          <li><a href="#19">¿Puedo votar propuestas de cualquier distrito?</a></li>
+          <li><a href="#20">¿Cómo se asegura que cada persona vota una única vez?</a></li>
+          <li><a href="#21">¿Qué pasa después de votar? ¿Cómo sabemos si los proyectos se llevan a cabo?</a></li>
+          <li><a href="#22">¿Qué ocurre en caso de incompatibilidad entre proyectos?</a></li>
+          <li><a href="#23">¿Puede ocurrir que un proyecto seleccionado en la votación final no llegue a ser realizado?</a></li>
+          <li><a href="#24">¿Qué diferencia hay entre la sección de propuestas de la web y los proyectos que se plantean en los presupuestos participativos?</a></li>
+          <li><a href="#25">¿Existe alguna experiencia de presupuestos participativos parecida en algún otro lugar?</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="text small-12 medium-9 column">
+    <h1>Preguntas frecuentes sobre los presupuestos participativos</h1>
+
+    <h2 id="section_1">Explicación detallada</h2>
+
+    <h3 id="1">¿Qué son los presupuestos participativos?</h3>
+    <p>Los presupuestos participativos son unos procesos democráticos en los que la ciudadanía decide de manera directa a qué se destina una parte del presupuesto municipal. Los ciudadanos proponen proyectos de gasto que son preseleccionados en una fase de apoyos ciudadana, se evalúan y finalmente llegan a una votación final. A partir del 1 de enero del año siguiente el Ayuntamiento lleva a cabo los proyectos seleccionados en la votación final.</p>
+
+    <h3 id="2">¿Qué cantidad destina el Ayuntamiento a los presupuestos participativos y cómo se reparten en la ciudad?</h3>
+    <p>Los presupuestos participativos que se deciden en 2017 y se empezarán a ejecutar en 2018 es de <strong>100 millones de euros</strong> (un 66% más que en el año anterior). Esta cantidad se dividirá en dos partes: 70 millones de euros (70%) que se destinarán a proyectos localizados en los distritos, y 30 millones de euros (30%) destinados a proyectos para toda la ciudad de Madrid.</p>
+
+    <h3 id="3">¿Cuándo se lleva a cabo el proceso de presupuestos participativos?</h3>
+    <p>Las fases del proceso son las siguientes:</p>
+
+    <ul>
+      <li><strong>Presentación de proyectos</strong>: 18 enero – 8 marzo.</li>
+      <li><strong>Apoyo de proyectos</strong>: 11 marzo – 25 marzo.</li>
+      <li><strong>Evaluación de proyectos</strong>: 26 marzo – 14 mayo.</li>
+      <li><strong>Votación final</strong>: 15 mayo-30 junio.</li>
+    </ul>
+
+    <h3 id="4">¿En qué consiste la presentación de proyectos?</h3>
+    <p>En la fase de presentación de proyectos (18 enero – 6 marzo), cualquier persona empadronada en Madrid puede presentar proyectos de gasto, tanto para toda la ciudad como para algún distrito. Los proyectos se presentan a través de Decide Madrid o en las <%= link_to "Oficinas de Atención a la Ciudadanía", "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD", target: "_blank", title: t("shared.target_blank_html") %> y pueden verse en Decide Madrid públicamente en cuanto son presentados. Los proyectos que sean similares entre sí serán notificados a sus autores ofreciéndoles la posibilidad de presentar proyectos conjuntos.</p>
+
+    <h3 id="5">¿En qué consiste el apoyo de proyectos?</h3>
+    <p>En la fase de apoyo de proyectos (11 – 25 marzo), cualquier persona empadronada en Madrid a partir de 16 años puede apoyar los proyectos que quiera de la lista para toda la ciudad y de la lista del distrito que elija. Los proyectos más apoyados pasan a la fase final de votación tras su evaluación.</p>
+
+    <h3 id="6">¿En qué consiste la evaluación de proyectos?</h3>
+    <p>En la fase de evaluación de proyectos (26 marzo – 14 mayo), el Ayuntamiento evalúa los proyectos más apoyados bajo la coordinación del Área de Participación Ciudadana, Transparencia y Gobierno Abierto en colaboración con el Área o Distrito correspondiente.</p>
+
+    <p>La evaluación confirma que los proyectos son válidos, viables y legales (se asegura que son competencia del Ayuntamiento y realizables) y pueden incluirse en el presupuesto municipal. Asimismo, se realiza un presupuesto estimativo del coste económico de cada proyecto.</p>
+
+    <p>Los proyectos cuyo coste supere el presupuesto previsto, no entren en el ámbito competencial del Ayuntamiento, sean contrarios a la normativa de aplicación o inviables técnicamente, serán excluidos del resto del proceso.</p>
+
+    <p>Al finalizar el periodo se publican todos los proyectos, tanto aprobados como rechazados, con sus informes y valoraciones correspondientes.</p>
+
+    <h3 id="7">¿En qué consiste la votación final de proyectos?</h3>
+    <p>En la fase de votación final (15 mayo – 30 junio), todas las personas empadronadas en Madrid a partir de 16 años pueden votar proyectos para toda la ciudad y para un distrito concreto a su elección. Se puede votar aunque no se haya participado anteriormente.</p>
+
+    <p>Tanto en la votación de proyectos para toda la ciudad como para los distritos, se publica el presupuesto disponible y los proyectos con su coste estimado. Se pueden votar proyectos uno a uno hasta agotar el presupuesto, aunque no es necesario agotarlo completamente, se puede votar un único proyecto si así lo decide la persona participante. Los proyectos votados se visualizan en una barra lateral, donde se pueden modificar los votos en cualquier momento hasta el final de la fase de votación, incluso cancelar los votos del distrito elegido y votar en otro, ya que no hace falta confirmar la votación en ningún momento.</p>
+
+    <h3 id="8">¿Cuál es el resultado final tras la votación de los presupuestos participativos?</h3>
+    <p>El resultado final del proceso se obtiene, una vez finalizada la votación, con todos los proyectos ordenados por número de votos para la ciudad y para cada distrito. En cada lista se van seleccionando las propuestas desde la más votada hasta la menos votada, teniendo en cuenta que cada propuesta incluida no supere el presupuesto restante destinado a dicha lista. Si una propuesta supera este límite, se ignora y se pasa a la siguiente.</p>
+
+    <p>La selección final se integra en el proyecto inicial del Presupuesto General del Ayuntamiento de Madrid que apruebe la Junta de Gobierno. Una vez aprobados los presupuestos por el Pleno, se publica cada uno de los proyectos seleccionados con la descripción de las actuaciones y de las fases en la que se encuentren, de forma que se permita entender de manera sencilla la evolución de cada proyecto.</p>
+
+    <p>El Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto coordina todo el proceso, siendo la garante de su neutralidad y efectividad. Finalizado el mismo, a partir de las evaluaciones de sus resultados se promueven las modificaciones necesarias en el proceso del año siguiente, y se aumenta la cantidad presupuestaria sometida a este proceso en función del éxito del mismo.</p>
+
+    <h3 id="9">¿Cuáles son los requisitos para proponer o votar proyectos?</h3>
+    <p>Las personas que participen tienen que estar empadronadas en Madrid, y en el caso de la votación además tener 16 años como mínimo. En caso de proponer o votar a través de la web <%= link_to "Decide Madrid", "https://decide.madrid.es/" %> es necesario que el usuario verifique su cuenta (el botón de verificación está en el apartado "Mi cuenta" en la esquina superior derecha) con la información del padrón y la introducción de un código que se recibe en el móvil a través de SMS (no se utiliza el número de teléfono para nada más). También se puede validar la cuenta o participar presencialmente en cualquiera de las <%= link_to "26 Oficinas de Atención a la Ciudadanía", "http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD", target: "_blank", title: t("shared.target_blank_html") %> que hay en cada distrito de Madrid.</p>
+
+    <h3 id="10">¿Qué puedo proponer?</h3>
+    <p>Puedes proponer proyectos de competencia municipal en materia de gasto corriente en bienes y servicios, ayudas o subvenciones e inversiones públicas.</p>
+
+    <p>("Inversiones públicas" son básicamente todo aquello que el Ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año.)</p>
+
+    <p>Quedarán excluidas de este conjunto los siguientes proyectos:</p>
+    <ul>
+      <li>Proyectos que afecten a contratos ya vigentes.</li>
+      <li>Proyectos que vayan destinados a beneficiar a una persona o entidad concreta, y no al interés público.</li>
+      <li>Proyectos de gasto en bienes corrientes y servicios cuyo gasto se extienda más allá de dos años.</li>
+    </ul>
+
+    <p>Descríbe el proyecto con tus propias palabras, no hace falta que sea una descripción técnica compleja. Aunque cuanto mejor lo expliques, será más fácil para el Ayuntamiento evaluarlo y para la gente decidir apoyarlo.</p>
+
+    <h3 id="10b">Algunos ejemplos de proyectos posibles</h3>
+
+    <h4>Servicios o trabajos a crear o realizar que puedan ponerse en marcha por los servicios municipales o por terceros (capítulo de gasto II):</h4>
+    <ul>
+      <li>Creación de talleres y cursos</li>
+      <li>Alquilar un tipo de infraestructura o material</li>
+      <li>Realización de estudios</li>
+      <li>Suministros de material que no se inventaríe (para consumir en el año), repartir material escolar por ejemplo, o abrigos, o instrumentos musicales.</li>
+      <li>Servicios nuevos que no estén incluidos en los ya contratados por los servicios municipales (por ejemplo un servicio de gestoría gratuito para los ciudadanos, o la creación de un servicio de educación ambiental para la participación en la conservación de los parques, etc.)</li>
+      <li>Cualquier actuación que no esté ya contemplada en los presupuestos de los distintos servicios municipales.</li>
+      <li>Materiales y útiles de administración; alimentos y utensilios; productos químicos, farmacéuticos y de laboratorio; arrendamientos de locales para desarrollo de actividades; servicio de mantenimiento y conservación de instalaciones; servicios de difusión e información.</li>
+    </ul>
+
+    <h4>Todo aquello que el Ayuntamiento pueda construir o adquirir y su duración prevista sea superior a un año (capítulo de gasto VI):</h4>
+    <ul>
+      <li>Creación de nuevas infraestructuras: urbanización, viales, pasos a distinto nivel, señalización vial, mobiliario urbano, alumbrado, parques, zonas ajardinadas, árboles y jardineras, fuentes e hidrantes, alcantarillado, etc.</li>
+      <li>Reposición de infraestructuras: adecuación de solares, remodelación de viales y de su señalización, reforma de alumbrado, remodelación de parques, zonas verdes, reforma de fuentes y estanques, etc.</li>
+      <li>Construcción o reforma de edificios: centros de día, centros de mayores, centros atención personas sin hogar, centros de servicios sociales bibliotecas, centros culturales, instalaciones deportivas, polideportivos, centros de enseñanza, escuelas de música, promoción y gestión de vivienda de protección pública, etc.</li>
+      <li>Adquisición o reposición de elementos de transporte: autobuses, vehículos para bomberos, policía, agentes de movilidad, etc.</li>
+      <li>Aplicaciones informáticas, propiedad intelectual: desarrollo de aplicaciones, web etc.</li>
+    </ul>
+
+    <h4>Becas, Ayudas, Concursos, Convenios (capítulos de gasto IV y VII):</h4>
+    <ul>
+      <li>Otorgar becas para realizar cursos.</li>
+      <li>Convocar concursos y premios para realizar actuaciones de interés.</li>
+      <li>Convenios con el Ayuntamiento para poder ofrecer servicios que actualmente no están disponibles.. (convenio con una Universidad para hacer un taller, convenio con ONGs para un fin concreto, sin que se vulnere los criterios de concurrencia que exige la Ley, nunca a una determinada entidad.)</li>
+      <li>Ayudas que actualmente no se estén dando o se quieran aumentar: ayudas para instalaciones de accesibilidad, de insonorización, de embellecimiento del paisaje urbano. Cualquier subvención debe estar sujeta a Derecho y permitir la libre concurrencia, nunca a alguien o una entidad determinada.</li>
+    </ul>
+
+    <h4>NO es un proyecto viable</h4>
+    <ul class="no-bullet">
+      <li><span class="icon-x delete"></span> Construcción de institutos y colegios públicos (la competencia sobre su construcción es de la Comunidad de Madrid)</li>
+      <li><span class="icon-x delete"></span> Construcción de centros de salud (sólo es posible en el caso de centros de salud municipales)</li>
+      <li><span class="icon-x delete"></span> Infraestructuras de carreteras de acceso a Madrid y de ferrocarril</li>
+      <li><span class="icon-x delete"></span> Propuestas de inversión sobre terrenos o solares no municipales</li>
+      <li><span class="icon-x delete"></span> Gastos de contratación de personal</li>
+      <li><span class="icon-x delete"></span> Subvenciones y ayudas a familias, instituciones sin ánimo de lucro, fundaciones, empresas privadas cuando se detalla una determinada persona física o jurídica.</li>
+      <li><span class="icon-x delete"></span> Crear nuevas Comisarías, o actuaciones sobre ellas al no ser competencia municipal</li>
+      <li><span class="icon-x delete"></span> Red de Metro</li>
+      <li><span class="icon-x delete"></span> Servicios de limpieza, mantenimiento o seguridad que ya se realicen con contratos en vigor.</li>
+      <li><span class="icon-x delete"></span> Contratación de “servicios/inversiones/ayudas” que ya existen o están previstas por los Servicios de la Administración Municipal</li>
+      <li><span class="icon-x delete"></span> La ampliación del horario del servicio de autobuses o la modificación de rutas, si afectan a decisiones que deba tomar el Consorcio de Transportes.</li>
+    </ul>
+
+    <h4>Costes de inversión y ejemplos de "servicios/inversiones/ayudas" del Ayuntamiento</h4>
+    <p>Incluimos a continuación algunos baremos generales aproximativos basados en ejercicios anteriores para algunas propuestas que se repiten con frecuencia:</p>
+    <ul>
+      <li><strong>Escuelas Infantiles</strong>: Entre 2.000.000 y 2.200.000 €, para una escuela de entre 2.300 y 3.000m2.</li>
+      <li><strong>Escuelas de Música</strong>: Entre 2.100.000/2.300.000 €, para una escuela de entre 1.500 y 1.800 m2.</li>
+      <li><strong>Centros de Mayores</strong>: Entre 2.400.000 y 2.800.000 €, para un edificio de entre 1.300 y 1.600 m2.</li>
+      <li><strong>Centros Deportivos Municipales</strong>: El coste de la construcción de un polideportivo que incluya pabellón y piscina cubierta y pistas exteriores descubiertas (tenis, pádel, polivalentes...) estaría comprendido entre 6.500.000 y 7.500.000 €.</li>
+      <li><strong>Carril bici</strong>: De una sola dirección entre 150 y 240 €/metro; De doble dirección entre 200 y 320 €/metro. En el caso de señalizar un carril en una calle 20€/metro.</li>
+      <li><strong>Coste de farola nueva</strong>: Entre 3.500 € a 4. 500 € por unidad en una urbanización de nueva construcción. Entre 1.000 € y 1.500 € por unidad cuando se trata de añadir farolas adicionales en una calle en la que ya hay alumbrado.</li>
+    </ul>
+    <h4>Para qué fines podemos proponer actuaciones</h4>
+    <p>Podemos proponer actuaciones en materia de urbanismo, medio ambiente urbano (parques, jardines públicos, etc.), infraestructura viaria, actuaciones en situaciones de riesgo o exclusión social, transporte colectivo urbano, actuaciones de protección de la salud pública, actuaciones que fomenten la práctica del deporte y la promoción de la cultura, tal y como recoge en los <%= link_to "artículos 25 y 26 de la Ley 27/2013, de 27 de diciembre, de racionalización y sostenibilidad de la Administración Local", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-13756", target: "_blank", title: t("shared.target_blank_html") %>.</p>
+
+    <h2 id="section_2">Más preguntas frecuentes</h2>
+
+    <h3 id="11">¿En qué se diferencia un proyecto para toda la ciudad de un proyecto para un distrito? ¿Se puede cambiar la categoría?</h3>
+    <p>Los proyectos para toda la ciudad son proyectos que cumplen algunas de las siguientes condiciones:</p>
+
+    <p>Las <strong>propuestas para toda la ciudad</strong> son propuestas que cumplen algunas de las siguientes condiciones:</p>
+    <ul>
+      <li><strong>No están localizadas en un distrito específico</strong> (ej: mejorar algún elemento que existe por toda la ciudad, como farolas, papeleras, bancos...)</li>
+      <li><strong>Afectan a varios distritos de manera equivalente</strong> (ej: un carril bici que atraviese toda la ciudad de norte a sur)</li>
+      <li><strong>Afectan a elementos que se consideran de relevancia para la mayoría de habitantes</strong> (ej: una propuesta relacionada con el Parque del Retiro, o la M30), o al menos para muchos más que los pertenecientes a un distrito concreto.</li>
+    </ul>
+
+    <p>Las propuestas de distrito estarán ubicadas en un distrito concreto y no cumplirán las anteriores condiciones.</p>
+
+    <p>Una propuesta categorizada como de ciudad o de distrito puede ser recategorizada por los técnicos del Ayuntamiento durante su evaluación si se considera que se ha hecho erróneamente. También se reclasifican como propuestas relativas a toda la ciudad las propuestas de distrito cuyo coste era superior a la cantidad de dinero asignada al distrito.  De esta manera no se eliminan por exceso de coste, y tienen la posibilidad de que los vecinos de toda la ciudad las hagan suyas y puedan ser seleccionadas.</p>
+
+    <h3 id="12">¿Puede mi proyecto considerarse inviable?</h3>
+    <p>Los proyectos pueden declararse inviables durante todo el proceso. Esto puede ocurrir de diferentes maneras en las diferentes fases:</p>
+
+    <p>Durante la primera fase de recogida de proyectos, los técnicos del Ayuntamiento realizan un primer estudio para detectar los planteamientos que son claramente inviables, como aquellos que no son competencia del Ayuntamiento. En estos casos se informa a los autores mediante un correo electrónico de las causas de la inviabilidad y se les invita a formular un nuevo proyecto. En el mismo contacto se les ofrece la posibilidad de reclamar en caso de que consideren que el informe de inviabilidad no es correcto.</p>
+
+    <p>Durante la fase de evaluación se lleva a cabo un estudio más detallado de la viabilidad de los proyectos que superen la nota de corte de la fase de apoyos. En este caso se pueden detectar como inviables proyectos que no se hubieran detectado como tales en la primera fase. También se pueden detectar varios proyectos viables que en el caso de ser aprobados impliquen exactamente la misma actuación por parte del Ayuntamiento. En este caso son marcados como inviables todos ellos a excepción del que cuente con mayor número de apoyos en la anterior fase, señalándolo así en el informe de inviabilidad.</p>
+
+    <p>Una vez finalizada la fase de votación final, dos proyectos seleccionados pueden marcarse como incompatibles entre sí (porque la actuación a llevar a cabo sea incompatible, o porque empaten en número de votos y no quede presupuesto para realizar ambos). En ese caso se lleva a cabo el que tiene más apoyos en la fase de apoyos. En caso de que coincidan los apoyos, se lleva a cabo el que se haya registrado primero en la web.</p>
+
+    <h3 id="13">¿Puedo acudir a mi Junta de Distrito a presentar proyectos?</h3>
+    <p>Los Foros Locales de las Juntas de Distrito llevarán a cabo encuentros sobre presupuestos participativos donde podrás debatir y plantear proyectos, para que todas las personas que quieran participar presencialmente puedan hacerlo con facilidad. En estos espacios se promueve el diagnóstico, debate y diseño colectivo de propuestas.</p>
+
+    <h3 id="14">¿Pueden participar asociaciones, fundaciones y ONG? ¿Y empresas?</h3>
+    <p>Las propuestas tienen que presentarse individualmente, aunque una organización puede estar representada por una persona. Al registrar una propuesta en la web existe la posibilidad de señalar este caso como propuesta de asociaciones/colectivos.</p>
+
+    <p>Esto es lo que evalúan los técnicos del Ayuntamiento para marcar la propuesta como válida:</p>
+
+    <p>¿Cuánto vale? Se intenta estimar el coste de los proyectos planteados. Se excluyen todos aquellos que tengan un coste superior al dinero correspondiente. Te recordamos que según sea una propuesta para toda la ciudad o para un distrito u otro, hay un tope máximo de coste diferente (puedes ver aquí la distribución de presupuesto entre distritos). Las propuestas de distrito que superen el tope del distrito pero no el de ciudad, serán clasificadas como propuestas de ciudad en lugar de excluirse.</p>
+
+    <p>¿Es legal? La propuesta debe ser competencia del Ayuntamiento. Este puede hacer una serie de gastos, pero existen otros que dependen de la Comunidad de Madrid o del Estado. También se estudia si hay alguna normativa que sea contraria a llevar a cabo la propuesta, si ya existe un contrato en vigor que cubre lo propuesto en el proyecto planteado o alguna otra limitación adicional.</p>
+
+    <p>¿Es viable? Se estudia si la propuesta es viable técnicamente y no se prevé algún impedimento para llevarla a cabo.</p>
+
+    <h3 id="15">¿Pueden plantearse proyectos que tarden más de un año en hacerse realidad?</h3>
+    <p>Sí. Lo único que se exige es que el total del proyecto pueda costearse con el presupuesto disponible. Es decir, el proyecto se tasa con su precio total, y no con el coste del primer año.</p>
+
+    <h3 id="16">¿Qué ocurre si hay proyectos repetidos o muy similares?</h3>
+    <p>Durante la primera fase de propuesta, los técnicos del Ayuntamiento detectan proyectos repetidos o muy similares y los recopilan. A través de un correo electrónico a los autores se les informa de un proyecto similar planteado y de las siguientes posibilidades: debatir sobre los planteamientos similares, plantear un nuevo proyecto conjunto y de la posibilidad de retirar el proyecto. Si algún autor quiere mantener su proyecto a pesar de ser similar a otros, el Ayuntamiento respeta su decisión.</p>
+
+    <p>Durante la fase de apoyos todavía pueden retirarse proyectos en caso de considerarse similares o por cualquier otra razón, mientras estos no hayan recibido apoyos.</p>
+
+    <h3 id="17">¿Qué diferencia la fase de apoyos de la votación final?</h3>
+    <p>La fase de apoyos simplemente reduce el número de propuestas que van a la votación final, para que esta sea manejable y para que el Ayuntamiento sea capaz de realizar todas los evaluaciones posibles de las propuestas más apoyadas. La votación final es la decisión sobre lo que debe llevarse a cabo, con todas las propuestas ya evaluadas.</p>
+
+    <h3 id="18">¿Cómo se analizan los proyectos durante la fase de evaluación? ¿Qué proyectos pasan a la fase de votación final?</h3>
+    <p>En la fase de evaluación se lleva a cabo un estudio detallado de la viabilidad y coste de los proyectos. La complejidad de este estudio en comparación con el que se realiza en las primeras fases implica que sólo es posible realizarlo para una parte de los proyectos presentados. Por tanto, durante el plazo de evaluación se estudian los proyectos en orden descendente de los más apoyados a los menos apoyados. El Ayuntamiento procura que haya un número de proyectos viable similar en cada distrito. Los proyectos que entran en las notas de corte y que se marcan como viables pasan a la fase de votación final.</p>
+
+    <p>Técnicos del Ayuntamiento realizan los estudios de viabilidad y coste de manera independiente y neutral, atendiendo únicamente a los criterios de evaluación que se han marcado públicamente para el proceso. La gente puede solicitar una revisión de los informes en caso de no estar conformes, aunque la decisión final sobre la viabilidad del proyecto recae en los técnicos.</p>
+
+    <h3 id="19">¿Puedo votar propuestas de cualquier distrito?</h3>
+    <p>Cualquier persona puede votar las propuestas a nivel ciudad, y en un distrito de su elección (¡Pero sólo en uno!). Esta posibilidad se ha activado para que cada persona decida en qué distrito quiere implicarse más; puede ser el distrito donde se está empadronado, pero podría ser también donde trabaja, donde tiene a su pareja, etc.</p>
+
+    <h3 id="20">¿Cómo se asegura que cada persona vota una única vez?</h3>
+    <p>Para votar de forma presencial en las Oficinas de Atención a la Ciudadanía es necesario presentar el DNI, pasaporte o tarjeta de residencia. En la votación a través de la web de Decide Madrid se verifica que la cuenta de usuario corresponde a un único ciudadano/a. Para ello además de comprobar los datos de padrón se facilita un código personal seguro de verificación de la cuenta que se comunica a través de un SMS al teléfono móvil. De esta forma nos aseguramos de que sólo esa persona ha recibido el código. En caso de que no se disponga de móvil, se solicita a la persona que acuda presencialmente a alguna de las Oficinas de Atención a la Ciudadanía, para obtener su código.</p>
+
+    <h3 id="21">¿Qué pasa después de votar? ¿Cómo sabemos si los proyectos se llevan a cabo?</h3>
+    <p>Una vez finalizada la votación final, la lista de proyectos resultantes de los presupuestos participativos se incluyen en los presupuestos del Ayuntamiento. Las cuentas municipales empiezan a confeccionarse a finales de verano para que se puedan aprobar antes de acabar el año. El compromiso del Gobierno es asumir de manera vinculante lo decidido, es decir, que el resultado del proceso se incluya en los presupuestos como si hubiera sido decidido por el propio Gobierno. Una vez aprobados los presupuestos, se publican en la web en la sección de Presupuestos Participativos, y se hace un seguimiento de cada una de las propuestas donde se va detallando qué pasa con ellas de ahí en adelante. La información es completa y transparente para que puedas hacer un seguimiento de cómo evoluciona cada propuesta de gasto.</p>
+
+    <h3 id="22">¿Qué ocurre en caso de incompatibilidad entre proyectos?</h3>
+    <p>Si salen elegidos dos proyectos que son incompatibles entre sí (por la actuación a llevar a cabo, o porque empatan en número de votos y no queda presupuesto para realizar ambos), se lleva a cabo el que tiene más apoyos en la fase de preselección. En caso de que coincidan, se lleva a cabo el que se haya registrado primero en la web. Puedes consultar el decreto que regula esta cuestión.</p>
+
+    <h3 id="23">¿Puede ocurrir que un proyecto seleccionado en la votación final no llegue a ser realizado?</h3>
+    <p>Tras finalizar el proceso de presupuestos participativos los proyectos se incluyen en el Proyecto Inicial del Presupuesto General del Ayuntamiento de Madrid para que lo apruebe el Pleno. Esto implica que los proyectos planteados por la ciudadanía pasan los mismos controles y estudios adicionales que los proyectos del propio Ayuntamiento. Aunque se haya hecho un estudio previo antes de la votación de los presupuestos participativos, en este trámite final podrían aparecer estudios adicionales que encontraran obstáculos no detectados anteriormente. En caso de ser así, se publican dichos estudios en la web, y se invita al autor a reformular la propuesta para incluirla en el siguiente proceso de presupuestos.</p>
+
+    <h3 id="24">¿Qué diferencia hay entre la sección de propuestas de la web y los proyectos que se plantean en los presupuestos participativos?</h3>
+    <p>La sección general de propuestas no tiene todos los límites que imponen los presupuestos participativos. En la sección de Propuestas Ciudadanas (https://decide.madrid.es/proposals), se puede proponer cualquier cosa que el Ayuntamiento pueda hacer, mientras que en los Presupuestos Participativos se trata de plantear proyectos en los que gastar una parte del presupuesto municipal. Por otro lado las propuestas generales están siempre abiertas a recibir nuevas propuestas, que se llevan a votación en el momento que alcancen el 1% de apoyos (27.000 apoyos), mientras que los presupuestos participativos ocurren en un periodo concreto del año, previo a la aprobación de las cuentas municipales, y no requieren de un mínimo de apoyos o votos para llevarse a cabo.</p>
+
+    <h3 id="25">¿Existe alguna experiencia de presupuestos participativos parecida en algún otro lugar?</h3>
+    <p>Sí. Los Presupuestos Participativos nacieron en Porto Alegre (Brasil) en la década de los 80. Desde entonces se han extendido de manera progresiva, y esa experiencia local se ha convertido en una tendencia global, con miles de procesos de presupuestos participativos en marcha en los cinco continentes.</p>
+
+    <p>Encontramos ejemplos como París, donde los residentes decidirán hasta el 2020 cómo se gastan 426 millones de euros (lo que corresponde al 5% del presupuesto municipal de París) o Nueva York, donde en 2016 dedicaron 36 millones de euros a presupuestos participativos.</p>
+
+    <p>Islandia es uno de los países de referencia al respecto, a través de su plataforma Betri Reykjavík-Betri Hverfi (Better District) cerca de la mitad de la población ha participado en el proceso. Cada año se gastan 1,8 millones de euros en proyectos propuestos por la población para los distintos barrios de Reikiavik. La ciudadanía pueden participar y seguir el proyecto a través de la plataforma digital <%= link_to "Betri Reykjavik", "https://betrireykjavik.is/domain/1", target: "_blank", title: t("shared.target_blank_html") %> o a través de centros en sus distritos o comités de distrito.</p>
+
+  </div>
+</div>

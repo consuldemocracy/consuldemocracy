@@ -1,0 +1,12 @@
+<% if session[:event].present? %>
+  <%= content_tag(:span, "",
+          id:   "tracking_events",
+          data: { track_event_category:        event_data_for(:category),
+                  track_event_action:          event_data_for(:action),
+                  track_event_name:            event_data_for(:name),
+                  track_event_custom_value:    event_data_for(:custom_value),
+                  track_event_dimension:       event_data_for(:dimension),
+                  track_event_dimension_value: event_data_for(:dimension_value) }) %>
+
+  <% session[:event] = nil %>
+<% end %>

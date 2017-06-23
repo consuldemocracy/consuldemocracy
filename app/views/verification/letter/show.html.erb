@@ -1,6 +1,5 @@
 <div class="row">
-  <%track_event(category: "verification", action: "start_letter" )%>
-  <div class="small-12 column">
+    <div class="small-12 column">
 
     <%= link_to account_path, class: "back" do %>
       <span class="icon-angle-left"></span>
@@ -18,6 +17,6 @@
       %>
     </div>
 
-    <%= link_to t("verification.letter.edit.see_all"), proposals_path, class: "button warning" %>
+    <%= link_to t("verification.letter.edit.see_all"), root_path, class: "button" %>
   </div>
 </div>

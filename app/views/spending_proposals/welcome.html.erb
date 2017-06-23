@@ -1,0 +1,128 @@
+<% provide :title, t("meta_tags.budget.title") %>
+<% provide :meta_description, t("meta_tags.budget.description") %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+
+<div class="expanded jumbo-investment-project-votes no-margin-top margin-bottom">
+  <div class="row" data-equalizer>
+    <div class="small-12 large-7 column content" data-equalizer-watch>
+
+      <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+        <h1><%= t("spending_proposals.welcome.title") %></h1>
+        <p><%= t("spending_proposals.welcome.text_first_html") %></p>
+        <p><%= t("spending_proposals.welcome.text_second_html") %></p>
+      <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
+        <h1><%= t("spending_proposals.welcome.title_results") %></h1>
+        <p><%= t("spending_proposals.welcome.text_first_results_html") %></p>
+        <p><%= t("spending_proposals.welcome.text_second_results_html") %></p>
+      <% else %>
+        <h1><%= t("spending_proposals.welcome.title_close") %></h1>
+        <p><%= t("spending_proposals.welcome.text_first_close_html") %></p>
+        <p><%= t("spending_proposals.welcome.text_second_close_html") %></p>
+      <% end %>
+
+      <div class="row">
+        <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+          <div class="small-12 medium-5 column">
+            <%= link_to t("spending_proposals.welcome.city_link"),
+                        spending_proposals_path(geozone: 'all'),
+                        data: { no_turbolink: true }, class: "button budget expanded" %>
+          </div>
+
+          <div class="small-12 medium-5 column end">
+            <%= link_to t("spending_proposals.welcome.districts_link"),
+                        select_district_path,
+                        class: "button budget expanded" %>
+          </div>
+        <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
+          <div class="small-12 medium-6 column">
+            <%= link_to t("spending_proposals.welcome.see_results"),
+                        participatory_budget_results_path,
+                        class: "button budget expanded" %>
+          </div>
+        <% else %>
+          <div class="small-12 medium-5 column">
+            <%= link_to t("spending_proposals.welcome.city_link_close"),
+                        spending_proposals_path(geozone: 'all'),
+                        data: { no_turbolink: true }, class: "button budget expanded" %>
+          </div>
+
+          <div class="small-12 medium-5 column end">
+            <%= link_to t("spending_proposals.welcome.districts_link_close"),
+                        select_district_path,
+                        class: "button budget expanded" %>
+          </div>
+        <% end %>
+
+        <div class="small-12 column">
+          <p>
+            <small>
+              <%= t("spending_proposals.welcome.contact_html",
+                  contact_faq: link_to(t("spending_proposals.welcome.contact_faq"), more_info_budgets_2016_path)).html_safe %>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-for-large large-5 column" data-equalizer-watch>
+      <%= image_tag "investment_project_welcome.png", class: "jumbo-investment-image", alt: "" %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="small-12 medium-6 column text-center">
+    <h1 class="big-number">60.000.000&euro;</h1>
+  </div>
+
+  <div class="small-12 medium-6 column">
+    <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+      <p><%= t("spending_proposals.welcome.text_long_html") %></p>
+    <% elsif setting["feature.spending_proposal_features.open_results_page"].present? %>
+      <p><%= t("spending_proposals.welcome.text_long_results_html") %></p>
+    <% else %>
+      <p><%= t("spending_proposals.welcome.text_long_close_html") %></p>
+    <% end %>
+    <div class="small-12 medium-10">
+      <%= link_to t("spending_proposals.welcome.in_two_minutes"), '/participatory_budget/in_two_minutes',
+                  class: "button expanded" %>
+    </div>
+    <p><%= link_to t("spending_proposals.welcome.unfeasible_link"), spending_proposals_path(unfeasible: '1') %></p>
+  </div>
+</div>
+
+<div class="expanded jumbo-delegation padding">
+  <div class="row margin-bottom">
+    <div class="small-12 column margin-top">
+      <h2><%= t("spending_proposals.welcome.delegation_title") %></h2>
+
+      <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+        <h3>
+          <%= t("spending_proposals.welcome.delegation_text",
+              meetings: link_to(t("spending_proposals.welcome.delegation_meetings"),
+              budgets_meetings_2016_path)).html_safe %>
+        </h3>
+
+        <p><%= t("spending_proposals.welcome.delegation_info_html") %></p>
+
+        <div class="small-12 medium-4">
+          <p><%= link_to t("spending_proposals.welcome.delegation"), '/delegacion', class: "button   expanded" %></p>
+        </div>
+      <% else %>
+       <h3>
+          <%= t("spending_proposals.welcome.delegation_text_closed",
+              meetings: link_to(t("spending_proposals.welcome.delegation_meetings"),
+              budgets_meetings_2016_path)).html_safe %>
+        </h3>
+
+        <p>&nbsp;</p>
+
+        <div class="small-12 medium-4">
+          <p><%= link_to t("spending_proposals.welcome.delegation_closed"), '/delegacion', class: "button expanded" %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

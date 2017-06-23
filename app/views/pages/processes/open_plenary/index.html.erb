@@ -1,0 +1,12 @@
+<% provide :title, "Pleno Abierto" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: open_plenary_url,
+          social_title: t("pages.processes.index.process_3_title") ,
+          social_description: t("pages.processes.index.process_3_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: open_plenary_url %>
+<% end %>
+
+<%= render "pages/processes/open_plenary/closed" %>

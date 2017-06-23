@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "Budget::Investment", "Poll::Question", "Legislation::Question", "Legislation::Annotation"]
+  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "SpendingProposal", "ProbeOption", "Poll::Question", "Budget::Investment", "Legislation::Question", "Legislation::Annotation"]
 
   validate :validate_body_length
 
@@ -26,6 +26,7 @@ class Comment < ActiveRecord::Base
   scope :with_visible_author, -> { joins(:user).where("users.hidden_at IS NULL") }
   scope :not_as_admin_or_moderator, -> { where("administrator_id IS NULL").where("moderator_id IS NULL")}
   scope :sort_by_flags, -> { order(flags_count: :desc, updated_at: :desc) }
+
   scope :public_for_api, -> do
     where(%{(comments.commentable_type = 'Debate' and comments.commentable_id in (?)) or
             (comments.commentable_type = 'Proposal' and comments.commentable_id in (?))},
@@ -110,6 +111,27 @@ class Comment < ActiveRecord::Base
   def calculate_confidence_score
     self.confidence_score = ScoreCalculator.confidence_score(cached_votes_total,
                                                              cached_votes_up)
+  end
+
+  def self.public_columns_for_api
+    ["id",
+     "commentable_id",
+     "commentable_type",
+     "body",
+     "created_at",
+     "cached_votes_total",
+     "cached_votes_up",
+     "cached_votes_down",
+     "ancestry",
+     "confidence_score"]
+  end
+
+  def public_for_api?
+    return false unless commentable.present?
+    return false if commentable.hidden?
+    return false unless ["Proposal", "Debate"].include? commentable_type
+    return false unless commentable.public_for_api?
+    return true
   end
 
   private

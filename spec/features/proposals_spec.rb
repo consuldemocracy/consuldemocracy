@@ -10,7 +10,7 @@ feature 'Proposals' do
 
       visit proposals_path
 
-      expect(page).to have_selector('#proposals .proposal-featured', count: 3)
+      expect(page).to have_selector('#proposals .proposal-featured', count: 2)
       featured_proposals.each do |featured_proposal|
         within('#featured-proposals') do
           expect(page).to have_content featured_proposal.title
@@ -43,7 +43,7 @@ feature 'Proposals' do
         click_link "Next", exact: false
       end
 
-      expect(page).to have_selector('#proposals .proposal', count: 2)
+      expect(page).to have_selector('#proposals .proposal', count: 3)
     end
   end
 
@@ -54,13 +54,12 @@ feature 'Proposals' do
 
     expect(page).to have_content proposal.title
     expect(page).to have_content proposal.code
-    expect(page).to have_content "Proposal question"
     expect(page).to have_content "Proposal description"
     expect(page).to have_content "http://external_documention.es"
     expect(page).to have_content proposal.author.name
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_selector(avatar(proposal.author.name))
-    expect(page.html).to include "<title>#{proposal.title}</title>"
+    expect(page).to have_title proposal.title
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram
@@ -125,10 +124,15 @@ feature 'Proposals' do
     author = create(:user)
     login_as(author)
 
-    visit new_proposal_path
+    visit proposals_path
+    within('aside') do
+      click_link 'Create proposal'
+    end
+
+    expect(current_path).to eq(new_proposal_path)
+
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     fill_in 'proposal_video_url', with: 'http://youtube.com'
@@ -145,8 +149,7 @@ feature 'Proposals' do
     click_link 'Not now, go to my proposal'
 
     expect(page).to have_content 'Help refugees'
-    expect(page).to have_content '¿Would you like to give assistance to war refugees?'
-    expect(page).to have_content 'In summary, what we want is...'
+    expect(page).to have_content 'In summary what we want is...'
     expect(page).to have_content 'This is very important because...'
     expect(page).to have_content 'http://rescue.org/refugees'
     expect(page).to have_content 'http://youtube.com'
@@ -156,14 +159,29 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
+  scenario 'Create (predefined tag in url)' do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path(tag: "open-plenary")
+    fill_in_proposal
+    click_button 'Create proposal'
+
+    expect(page).to have_content 'Proposal created successfully.'
+
+    click_link 'Not now, go to my proposal'
+    within "#tags_proposal_#{Proposal.last.id}" do
+      expect(page).to have_content "open-plenary"
+    end
+  end
+
   scenario 'Create with proposal improvement info link' do
-    Setting['proposal_improvement_path'] = 'more-information/proposal-improvement'
+    Setting['proposal_improvement_path'] = '/more-information/proposal-improvement'
     author = create(:user)
     login_as(author)
 
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
@@ -191,7 +209,6 @@ feature 'Proposals' do
     visit new_proposal_path
     fill_in 'proposal_title', with: 'I am a bot'
     fill_in 'proposal_subtitle', with: 'This is the honeypot field'
-    fill_in 'proposal_question', with: 'This is a question'
     fill_in 'proposal_summary', with: 'This is the summary'
     fill_in 'proposal_description', with: 'This is the description'
     fill_in 'proposal_external_url', with: 'http://google.com/robots.txt'
@@ -212,18 +229,11 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'I am a bot'
-    fill_in 'proposal_question', with: 'This is a question'
-    fill_in 'proposal_summary', with: 'This is the summary'
-    fill_in 'proposal_description', with: 'This is the description'
-    fill_in 'proposal_external_url', with: 'http://google.com/robots.txt'
-    fill_in 'proposal_responsible_name', with: 'Some other robot'
-    check 'proposal_terms_of_service'
+    fill_in_proposal
 
     click_button 'Create proposal'
 
     expect(page).to have_content 'Sorry, that was too quick! Please resubmit'
-
     expect(current_path).to eq(new_proposal_path)
   end
 
@@ -232,12 +242,7 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
-    fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: 'This is very important because...'
-    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in_proposal
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
@@ -258,8 +263,7 @@ feature 'Proposals' do
     expect(page).to_not have_selector('#proposal_responsible_name')
 
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
     check 'proposal_terms_of_service'
@@ -287,13 +291,9 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
+    fill_in_proposal
     fill_in 'proposal_title', with: 'Testing an attack'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: '<p>This is <script>alert("an attack");</script></p>'
-    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
 
@@ -312,12 +312,9 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
+    fill_in_proposal
     fill_in 'proposal_title', with: 'Testing auto link'
-    fill_in 'proposal_question', with: 'Should I stay or should I go?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: '<p>This is a link www.example.org</p>'
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
 
@@ -334,12 +331,9 @@ feature 'Proposals' do
     login_as(author)
 
     visit new_proposal_path
+    fill_in_proposal
     fill_in 'proposal_title', with: 'Testing auto link'
-    fill_in 'proposal_question', with: 'Should I stay or should I go?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
-    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-    check 'proposal_terms_of_service'
 
     click_button 'Create proposal'
 
@@ -359,6 +353,77 @@ feature 'Proposals' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
+  context 'Tagging' do
+    let(:author) { create(:user) }
+
+    background do
+      login_as(author)
+    end
+
+    scenario 'Category tags', :js do
+      education = create(:tag, name: 'Education', kind: 'category')
+      health    = create(:tag, name: 'Health',    kind: 'category')
+
+      visit new_proposal_path
+      fill_in 'proposal_title', with: 'Help refugees'
+      fill_in 'proposal_summary', with: 'In summary what we want is...'
+      fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
+      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+      fill_in 'proposal_video_url', with: 'http://youtube.com'
+      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+      check 'proposal_terms_of_service'
+
+      find('.js-add-tag-link', text: 'Education').click
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
+      within "#tags_proposal_#{Proposal.last.id}" do
+        expect(page).to have_content 'Education'
+        expect(page).to_not have_content 'Health'
+      end
+    end
+
+    scenario 'Custom tags' do
+      visit new_proposal_path
+
+      fill_in_proposal
+      fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
+      within "#tags_proposal_#{Proposal.last.id}" do
+        expect(page).to have_content 'Refugees'
+        expect(page).to have_content 'Solidarity'
+      end
+    end
+
+    scenario 'using dangerous strings' do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+      fill_in_proposal
+      fill_in 'proposal_tag_list', with: 'user_id=1, &a=3, <script>alert("hey");</script>'
+
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+
+      click_link 'Not now, go to my proposal'
+
+      expect(page).to have_content 'user_id1'
+      expect(page).to have_content 'a3'
+      expect(page).to have_content 'scriptalert("hey");script'
+      expect(page.html).to_not include 'user_id=1, &a=3, <script>alert("hey");</script>'
+    end
+  end
+
   context 'Geozones' do
 
     scenario "Default whole city" do
@@ -366,15 +431,7 @@ feature 'Proposals' do
       login_as(author)
 
       visit new_proposal_path
-
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
+      fill_in_proposal
 
       click_button 'Create proposal'
 
@@ -394,16 +451,7 @@ feature 'Proposals' do
       login_as(author)
 
       visit new_proposal_path
-
-      fill_in 'proposal_title', with: 'Help refugees'
-      fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-      fill_in 'proposal_summary', with: 'In summary, what we want is...'
-      fill_in 'proposal_description', with: 'This is very important because...'
-      fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-      fill_in 'proposal_video_url', with: 'http://youtube.com'
-      fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
-      check 'proposal_terms_of_service'
-
+      fill_in_proposal
       select('California', from: 'proposal_geozone_id')
       click_button 'Create proposal'
 
@@ -519,7 +567,7 @@ feature 'Proposals' do
 
     visit edit_proposal_path(proposal)
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content 'You do not have permission'
   end
 
@@ -534,7 +582,7 @@ feature 'Proposals' do
     visit edit_proposal_path(proposal)
 
     expect(current_path).not_to eq(edit_proposal_path(proposal))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content 'You do not have permission'
     Setting["max_votes_for_proposal_edit"] = 1000
   end
@@ -547,7 +595,6 @@ feature 'Proposals' do
     expect(current_path).to eq(edit_proposal_path(proposal))
 
     fill_in 'proposal_title', with: "End child poverty"
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'Basically...'
     fill_in 'proposal_description', with: "Let's do something to end child poverty"
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'

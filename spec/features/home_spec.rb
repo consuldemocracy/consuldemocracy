@@ -6,7 +6,7 @@ feature "Home" do
     scenario 'Welcome message' do
       visit root_path
 
-      expect(page).to have_content "Love the city, and it will become a city you love"
+      expect(page).to have_content "Participatory budgeting"
     end
   end
 
@@ -15,7 +15,7 @@ feature "Home" do
       login_as(create(:user))
       visit root_path
 
-      expect(current_path).to eq proposals_path
+      expect(current_path).to eq root_path_for_logged_in_users
     end
   end
 

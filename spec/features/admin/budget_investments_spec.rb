@@ -277,6 +277,64 @@ feature 'Admin budget investments' do
       expect(page).to have_select("tag_name", options: ["All tags", "Hospitals", "Teachers"])
     end
 
+    scenario "Limiting by max number of investments per heading", :js do
+      budget = create(:budget)
+
+      group_1 = create(:budget_group, budget: budget)
+      group_2 = create(:budget_group, budget: budget)
+
+      parks = create(:budget_heading, group: group_1)
+
+      roads   = create(:budget_heading, group: group_2)
+      streets = create(:budget_heading, group: group_2)
+
+
+      [2, 4, 90, 100, 200, 300].each do |n|
+        create(:budget_investment, heading: parks, cached_votes_up: n, title: "Park with #{n} supports")
+      end
+
+      [21, 31, 51, 81, 91, 101].each do |n|
+        create(:budget_investment, heading: roads, cached_votes_up: n, title: "Road with #{n} supports")
+      end
+
+      [3, 10, 30, 33, 44, 55].each do |n|
+        create(:budget_investment, heading: streets, cached_votes_up: n, title: "Street with #{n} supports")
+      end
+
+      visit admin_budget_budget_investments_path(budget)
+
+      [2, 4, 90, 100, 200, 300].each do |n|
+        expect(page).to have_link "Park with #{n} supports"
+      end
+
+      [21, 31, 51, 81, 91, 101].each do |n|
+        expect(page).to have_link "Road with #{n} supports"
+      end
+
+      [3, 10, 30, 33, 44, 55].each do |n|
+        expect(page).to have_link "Street with #{n} supports"
+      end
+
+      select "5", from: "max_per_heading"
+
+      expect(page).to have_content('There are 15 investments')
+      expect(page).to_not have_link "Park with 2 supports"
+      expect(page).to_not have_link "Road with 21 supports"
+      expect(page).to_not have_link "Street with 3 supports"
+
+      [4, 90, 100, 200, 300].each do |n|
+        expect(page).to have_link "Park with #{n} supports"
+      end
+
+      [31, 51, 81, 91, 101].each do |n|
+        expect(page).to have_link "Road with #{n} supports"
+      end
+
+      [10, 30, 33, 44, 55].each do |n|
+        expect(page).to have_link "Street with #{n} supports"
+      end
+    end
+
   end
 
   scenario 'Show' do
@@ -287,7 +345,8 @@ feature 'Admin budget investments' do
                                 price_first_year: 1000,
                                 feasibility: "unfeasible",
                                 unfeasibility_explanation: 'It is impossible',
-                                administrator: administrator)
+                                administrator: administrator,
+                                organization_name: "ACME")
     budget_investment.valuators << valuator
 
     visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -303,6 +362,7 @@ feature 'Admin budget investments' do
     expect(page).to have_content('Unfeasible')
     expect(page).to have_content('It is impossible')
     expect(page).to have_content('Ana (ana@admins.org)')
+    expect(page).to have_content('Representing: ACME')
 
     within('#assigned_valuators') do
       expect(page).to have_content('Rachel (rachel@valuators.org)')
@@ -311,7 +371,7 @@ feature 'Admin budget investments' do
 
   context "Edit" do
 
-    scenario "Change title, description or heading" do
+    scenario "Change title, description, organization name or heading" do
       budget_investment = create(:budget_investment)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
 
@@ -321,12 +381,28 @@ feature 'Admin budget investments' do
       fill_in 'budget_investment_title', with: 'Potatoes'
       fill_in 'budget_investment_description', with: 'Carrots'
       select "#{budget_investment.group.name}: Barbate", from: 'budget_investment[heading_id]'
+      fill_in 'budget_investment_organization_name', with: 'Vegetables'
 
       click_button 'Update'
 
       expect(page).to have_content 'Potatoes'
       expect(page).to have_content 'Carrots'
       expect(page).to have_content 'Barbate'
+      expect(page).to have_content 'Representing: Vegetables'
+    end
+
+    scenario "Change visible label" do
+      budget_investment = create(:budget_investment)
+      create(:budget_heading, group: budget_investment.group, name: "Patroclo")
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit'
+
+      fill_in 'budget_investment_label', with: 'Heroe'
+      click_button 'Update'
+
+      visit budget_investment_path(budget_investment.budget, budget_investment)
+      expect(page).to have_content 'Heroe'
     end
 
     scenario "Add administrator" do
@@ -409,20 +485,37 @@ feature 'Admin budget investments' do
       end
     end
 
-    scenario "Only displays valuation tags" do
+    scenario "Changes valuation and user generated tags" do
       budget_investment = create(:budget_investment, tag_list: 'Park')
       budget_investment.set_tag_list_on(:valuation, 'Education')
       budget_investment.save
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
 
-      expect(page).to     have_content "Education"
-      expect(page).to_not have_content "Park"
+      within("#user-tags") do
+        expect(page).to_not have_content "Education"
+        expect(page).to have_content "Park"
+      end
 
       click_link 'Edit classification'
 
-      expect(page).to     have_content "Education"
-      expect(page).to_not have_content "Park"
+      fill_in 'budget_investment_tag_list', with: 'Park, Trees'
+      fill_in 'budget_investment_valuation_tag_list', with: 'Education, Environment'
+      click_button 'Update'
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+
+      within("#user-tags") do
+        expect(page).to_not have_content "Education"
+        expect(page).to_not have_content "Environment"
+        expect(page).to have_content "Park, Trees"
+      end
+
+      within("#tags") do
+        expect(page).to have_content "Education, Environment"
+        expect(page).to_not have_content "Park"
+        expect(page).to_not have_content "Trees"
+      end
     end
 
     scenario "Maintains user tags" do
@@ -560,6 +653,92 @@ feature 'Admin budget investments' do
       end
     end
 
+  end
+
+  context "Mark as visible to valuators" do
+
+    scenario "Mark as visible to valuator", :js do
+      valuator = create(:valuator)
+
+      investment1 = create(:budget_investment, budget: @budget)
+      investment2 = create(:budget_investment, budget: @budget)
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        check "budget_investment_visible_to_valuators"
+      end
+
+      login_as(valuator.user)
+      visit root_path
+      click_link "Valuation"
+
+      within "#budget_#{@budget.id}" do
+        click_link "Evaluate"
+      end
+
+      expect(page).to     have_content investment1.title
+      expect(page).to_not have_content investment2.title
+    end
+
+    scenario "Unmark as visible to valuator", :js do
+      Setting['feature.budgets.valuators_allowed'] = true
+
+      valuator = create(:valuator)
+
+      investment1 = create(:budget_investment, budget: @budget, visible_to_valuators: true)
+      investment2 = create(:budget_investment, budget: @budget, visible_to_valuators: true)
+
+      investment1.valuators << valuator
+      investment2.valuators << valuator
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        uncheck "budget_investment_visible_to_valuators"
+      end
+
+      login_as(valuator.user)
+      visit root_path
+      click_link "Valuation"
+
+      within "#budget_#{@budget.id}" do
+        click_link "Evaluate"
+      end
+
+      expect(page).to_not have_content investment1.title
+      expect(page).to     have_content investment2.title
+    end
+
+    scenario "Showing the valuating checkbox" do
+      investment1 = create(:budget_investment, budget: @budget, visible_to_valuators: true)
+      investment2 = create(:budget_investment, budget: @budget, visible_to_valuators: false)
+
+      investment1.valuators << create(:valuator)
+      investment2.valuators << create(:valuator)
+
+      visit admin_budget_budget_investments_path(@budget)
+      within('#filter-subnav') { click_link 'All' }
+
+      expect(page).to_not have_css("#budget_investment_visible_to_valuators")
+
+      within('#filter-subnav') { click_link 'Under valuation' }
+
+      within("#budget_investment_#{investment1.id}") do
+        valuating_checkbox = find('#budget_investment_visible_to_valuators')
+        expect(valuating_checkbox).to be_checked
+      end
+
+      within("#budget_investment_#{investment2.id}") do
+        valuating_checkbox = find('#budget_investment_visible_to_valuators')
+        expect(valuating_checkbox).to_not be_checked
+      end
+    end
   end
 
 end

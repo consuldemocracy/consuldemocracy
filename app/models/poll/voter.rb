@@ -1,5 +1,8 @@
 class Poll
   class Voter < ActiveRecord::Base
+
+    VALID_ORIGINS = %w{ web booth letter }
+
     belongs_to :poll
     belongs_to :user
     belongs_to :geozone
@@ -10,8 +13,16 @@ class Poll
     validates :user_id, presence: true
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
+    validates :origin, inclusion: {in: VALID_ORIGINS}
 
-    before_validation :set_demographic_info, :set_document_info
+    validates :officer_assignment_id, presence: true, if: :booth?
+    validates :booth_assignment_id,   presence: true, if: :booth?
+
+    before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
+
+    scope :web,    -> { where(origin: 'web') }
+    scope :booth,  -> { where(origin: 'booth') }
+    scope :letter, -> { where(origin: 'letter') }
 
     def set_demographic_info
       return if user.blank?
@@ -29,6 +40,10 @@ class Poll
     end
 
     private
+
+      def set_denormalized_booth_assignment_id
+        self.booth_assignment_id ||= officer_assignment.try(:booth_assignment_id)
+      end
 
       def in_census?
         census_api_response.valid?
@@ -53,6 +68,10 @@ class Poll
           now = Date.current
           now.year - dob.year - (now.month > dob.month || (now.month == dob.month && now.day >= dob.day) ? 0 : 1)
         end
+      end
+
+      def booth?
+        origin == 'booth'
       end
 
   end

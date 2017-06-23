@@ -51,16 +51,14 @@ feature 'Officing Final Recount' do
     expect(page).to_not have_content('Your recounts')
 
     booth_name = @officer_assignment.booth_assignment.booth.name
-    date = I18n.l(@poll.starts_at.to_date, format: :long)
+    date = I18n.l(@poll.ends_at.to_date, format: :long)
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
     fill_in :count, with: '33'
     click_button 'Save'
 
     expect(page).to have_content('Your final recounts')
 
     within("#poll_final_recount_#{@officer_assignment.booth_assignment.final_recounts.first.id}") do
-      expect(page).to have_content(date)
       expect(page).to have_content(booth_name)
       expect(page).to have_content('33')
     end
@@ -70,7 +68,7 @@ feature 'Officing Final Recount' do
     final_recount = create(:poll_final_recount,
                     officer_assignment: @officer_assignment,
                     booth_assignment: @officer_assignment.booth_assignment,
-                    date: @poll.starts_at,
+                    date: @poll.ends_at,
                     count: 100)
 
     booth_name = @officer_assignment.booth_assignment.booth.name
@@ -81,49 +79,21 @@ feature 'Officing Final Recount' do
     expect(page).to have_content('Your final recounts')
 
     within("#poll_final_recount_#{final_recount.id}") do
-      expect(page).to have_content(date)
       expect(page).to have_content(booth_name)
       expect(page).to have_content('100')
     end
 
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
     fill_in :count, with: '42'
     click_button 'Save'
 
     expect(page).to have_content "Data added"
 
     within("#poll_final_recount_#{final_recount.id}") do
-      expect(page).to have_content(date)
       expect(page).to have_content(booth_name)
       expect(page).to have_content('42')
     end
     expect(page).to_not have_content('100')
-  end
-
-  scenario 'Show final and system recounts to compare' do
-    final_officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
-    poll = final_officer_assignment.booth_assignment.poll
-    poll.update(ends_at: 1.day.ago)
-    final_recount = create(:poll_final_recount,
-                    officer_assignment: final_officer_assignment,
-                    booth_assignment: final_officer_assignment.booth_assignment,
-                    date: 7.days.ago,
-                    count: 100)
-    33.times do
-      create(:poll_voter, :valid_document,
-             poll: poll,
-             booth_assignment: final_officer_assignment.booth_assignment,
-             created_at: final_recount.date)
-    end
-
-    visit new_officing_poll_final_recount_path(poll)
-    within("#poll_final_recount_#{final_recount.id}") do
-      expect(page).to have_content(I18n.l(final_recount.date.to_date, format: :long))
-      expect(page).to have_content(final_officer_assignment.booth_assignment.booth.name)
-      expect(page).to have_content('100')
-      expect(page).to have_content('33')
-    end
   end
 
   scenario "Show link to add results for same booth/date" do
@@ -143,7 +113,6 @@ feature 'Officing Final Recount' do
     expected_path = new_officing_poll_result_path(poll, oa: final_recount.officer_assignment.id, d: I18n.l(final_recount.date.to_date))
     expect(page).to have_current_path(expected_path)
     expect(page).to have_select('officer_assignment_id', selected: final_recount.booth_assignment.booth.name)
-    expect(page).to have_select('date', selected: I18n.l(final_recount.date.to_date, format: :long))
   end
 
 end

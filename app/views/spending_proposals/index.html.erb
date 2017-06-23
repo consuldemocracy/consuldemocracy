@@ -8,12 +8,48 @@
 <main>
   <h1 class="show-for-sr"><%= t("shared.outline.budget") %></h1>
 
-  <div class="row">
+  <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+    <%= render 'header' %>
+  <% end %>
+
+  <div class="wrap row">
+
     <div id="investment-projects" class="investment-projects-list small-12 medium-9 column">
 
-      <div class="small-12 search-results">
-        <%= content_tag(:h2, t("spending_proposals.index.unfeasible")) if params[:unfeasible].present? %>
-        <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @geozone_name)) if @geozone_name.present? %>
+      <div class="small-12 search-results margin-bottom">
+
+        <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+          <div class="show-for-small-only">
+            <% if @filter_geozone.present? && !@ballot.has_city_wide_votes? %>
+              <div class="callout highlighted">
+                <p><strong>
+                  <%= t("spending_proposals.index.sidebar.remember_city",
+                      city: link_to(t("spending_proposals.index.sidebar.remember_city_link_html"),
+                            spending_proposals_path(geozone: 'all'),
+                            data: { no_turbolink: true })).html_safe %>
+                </strong></p>
+              </div>
+            <% elsif @filter_geozone.blank? && !@ballot.has_district_wide_votes? %>
+              <div class="callout highlighted">
+                <p><strong>
+                  <%= t("spending_proposals.index.sidebar.remember_district",
+                      district: link_to(t("spending_proposals.index.sidebar.remember_district_link_html"),
+                            select_district_path)).html_safe %>
+                </strong></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if params[:unfeasible].present? %>
+          <h2><%= t("spending_proposals.index.unfeasible") %></h2>
+          <p>
+              <%= t("spending_proposals.index.unfeasible_text",
+              definitions: link_to(t("spending_proposals.index.unfeasible_text_definitions"), more_info_budgets_2016_path(anchor:"20"))).html_safe %>
+          </p>
+        <% end %>
+
+        <%= content_tag(:h2, t("spending_proposals.index.by_geozone", geozone: @filter_geozone_name)) if @filter_geozone_name.present? %>
         <% if params[:search].present? %>
           <h2>
             <%= page_entries_info @spending_proposals %>
@@ -22,16 +58,37 @@
         <% end %>
       </div>
 
-      <div class="show-for-small-only">
-        <%= link_to t("spending_proposals.index.start_spending_proposal"), new_spending_proposal_path, class: 'button expanded' %>
-      </div>
+      <%= render('shared/order_links', i18n_namespace: "spending_proposals.index") unless params[:unfeasible].present? %>
+
       <%= render partial: 'spending_proposals/spending_proposal', collection: @spending_proposals %>
       <%= paginate @spending_proposals %>
     </div>
 
     <div class="small-12 medium-3 column">
-      <aside id="sidebar" class="margin-bottom">
-        <%= render 'sidebar' %>
+      <aside class="margin-bottom">
+        <% if setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
+          <% if @filter_geozone.present? && !@ballot.has_city_wide_votes? %>
+            <div class="callout highlighted">
+              <p><strong>
+                <%= t("spending_proposals.index.sidebar.remember_city",
+                    city: link_to(t("spending_proposals.index.sidebar.remember_city_link_html"),
+                          spending_proposals_path(geozone: 'all'),
+                          data: { no_turbolink: true })).html_safe %>
+              </strong></p>
+            </div>
+          <% elsif @filter_geozone.blank? && !@ballot.has_district_wide_votes? %>
+            <div class="callout highlighted">
+              <p><strong>
+                <%= t("spending_proposals.index.sidebar.remember_district",
+                    district: link_to(t("spending_proposals.index.sidebar.remember_district_link_html"),
+                          select_district_path)).html_safe %>
+              </strong></p>
+            </div>
+          <% end %>
+        <% end %>
+        <div id="sidebar">
+          <%= render 'sidebar' %>
+        </div>
       </aside>
     </div>
 

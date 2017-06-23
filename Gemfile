@@ -6,6 +6,7 @@ gem 'rails', '4.2.8'
 gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
+gem "animate-rails"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 3.2.0'
 # Use CoffeeScript for .coffee assets and views
@@ -63,12 +64,11 @@ gem 'tolk', '~> 2.0.0' # Web interface for translations
 
 gem 'browser'
 gem 'turnout', '~> 2.4.0'
-gem 'redcarpet', '~> 3.4.0'
 gem 'rubyzip', '~> 1.2.0'
+gem 'redcarpet', '~> 3.4.0'
 
 gem 'paperclip'
 gem 'rails-assets-markdown-it', source: 'https://rails-assets.org'
-
 gem 'cocoon'
 
 gem 'graphql', '~> 1.6.3'
@@ -104,6 +104,8 @@ group :test do
   gem 'poltergeist', '~> 1.15.0'
   gem 'coveralls', '~> 0.8.21', require: false
   gem 'email_spec'
+  gem 'timecop'
+  gem 'selenium-webdriver'
 end
 
 group :development do

@@ -1,0 +1,78 @@
+<div class="small-12 column">
+  <table class="survey-districts">
+    <thead>
+      <tr>
+        <th rowspan="2">DISTRITO</th>
+        <th rowspan="2">PROPUESTAS ENVIADAS</th>
+        <th colspan="3">PARTICIPACIÓN FASE APOYOS</th>
+        <th colspan="3">PARTICIPACIÓN FASE VOTACIÓN</th>
+        <th colspan="3">PARTICIPACIÓN TOTAL</th>
+      </tr>
+      <tr>
+        <th class="tiny">TOTAL</th>
+        <th class="tiny">% <br>TOTAL<br>PARTICIPANTES</th>
+        <th class="tiny">% <br>CENSO<br>DISTRITO</th>
+        <th class="tiny">TOTAL</th>
+        <th class="tiny">% <br>TOTAL<br>PARTICIPANTES</th>
+        <th class="tiny">% <br>CENSO<br>DISTRITO</th>
+        <th class="tiny">TOTAL</th>
+        <th class="tiny">% <br>TOTAL<br>PARTICIPANTES</th>
+        <th class="tiny">% <br>CENSO<br>DISTRITO</th>
+      </tr>
+      </thead>
+    </thead>
+    <tbody>
+      <% @geozones.each do |geozone| %>
+        <tr id="<%= geozone.name.parameterize %>">
+          <td>
+            <strong><%= geozone.name %></strong>
+          </td>
+          <td id="total_spending_proposals_geozone_<%= geozone.id %>"
+              class="text-center border-left-success border-right-success success">
+            <%= geozone.spending_proposals.count %>
+          </td>
+
+          <% ["support", "vote", "all"].each do |phase| %>
+            <td id="total_participants_<%= phase %>_phase_geozone_<%= geozone.id %>"
+                class="border-left text-center <%= css_for_highlight_spending_proposal_stat(phase) %>">
+              <%= @stats[:geozones][geozone.id]["total_participants_#{phase}_phase".to_sym] %>
+            </td>
+            <td id="percentage_participants_<%= phase %>_phase_geozone_<%= geozone.id %>"
+                class="border-left border-right text-center <%= css_for_highlight_spending_proposal_stat(phase) %>">
+              <%= number_to_percentage(@stats[:geozones][geozone.id]["percentage_participants_#{phase}_phase".to_sym],
+                strip_insignificant_zeros: true,
+                precision: 2) %>
+            </td>
+            <td id="percentage_district_population_<%= phase %>_phase_geozone_<%= geozone.id %>"
+                class="text-center <%= css_for_highlight_spending_proposal_stat(phase) %>">
+              <%= number_to_percentage(@stats[:geozones][geozone.id]["percentage_district_population_#{phase}_phase".to_sym],
+                strip_insignificant_zeros: true,
+                precision: 2)%>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="small-12 column">
+      <p id="total_unknown_gender_or_age">
+        <em>
+          * No se dispone de los datos demográficos de
+          <%= @stats[:total_unknown_gender_or_age] %>
+          participantes.
+        </em>
+        <br>
+        <em>
+          ** Las cifras de participación total se refieren a personas que han creado, apoyado o votado propuestas.
+        </em>
+        <br>
+        <em>
+          *** Los datos de distrito se refieren al distrito en el que el usuario ha votado, no necesariamente en el que está empadronado.
+        </em>
+      </p>
+    </div>
+  </div>
+
+</div>

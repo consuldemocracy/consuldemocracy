@@ -14,7 +14,7 @@ feature "Custom Pages" do
 
       expect(page).to have_title("Terms of use")
       expect(page).to have_selector("h1", text: "Terms and conditions of use")
-      expect(page).to have_content("Página de información sobre las condiciones de uso, privacidad y protección de datos personales.")
+      expect(page).to have_content("Ámbito de aplicación de las condiciones de uso")
       expect(page).to have_content("Print this info")
     end
 

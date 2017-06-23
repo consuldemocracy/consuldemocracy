@@ -10,8 +10,10 @@ class Mailer < ApplicationMailer
     @commentable = comment.commentable
     @email_to = @commentable.author.email
 
-    with_user(@commentable.author) do
-      mail(to: @email_to, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+    unless Rails.env.production?
+      with_user(@commentable.author) do
+        mail(to: @email_to, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+      end
     end
   end
 
@@ -22,8 +24,10 @@ class Mailer < ApplicationMailer
     @recipient = parent.author
     @email_to = @recipient.email
 
-    with_user(@recipient) do
-      mail(to: @email_to, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+    unless Rails.env.production?
+      with_user(@recipient) do
+        mail(to: @email_to, subject: t('mailers.reply.subject')) if @commentable.present? && @recipient.present?
+      end
     end
   end
 

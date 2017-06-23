@@ -35,7 +35,7 @@ describe UsersHelper do
 
       investment.hide
 
-      expect(comment_commentable_title(comment)).to eq "<abbr title='This investment has been deleted'>#{comment.commentable.title}</abbr>"
+      expect(comment_commentable_title(comment)).to eq "<abbr title='This investment project has been deleted'>#{comment.commentable.title}</abbr>"
     end
   end
 

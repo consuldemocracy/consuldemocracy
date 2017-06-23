@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
 
   def index
     if current_user
-      redirect_to :proposals
     end
+    @proposal_successfull_exists = Proposal.successful.exists?
   end
 
   def welcome

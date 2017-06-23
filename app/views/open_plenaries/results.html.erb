@@ -1,0 +1,96 @@
+<div class="expanded jumbo-brand no-margin-top">
+  <div class="row">
+    <div class="small-12 medium-8 column padding">
+      <h1>Ganadores del Pleno Abierto</h1>
+      <p>Estas son las cinco propuestas y las cinco preguntas más votadas que serán formuladas en persona​ en el Pleno del día 24 de abril a todos los grupos políticos.</p>
+    </div>
+    <div class="show-for-medium medium-4 column">
+      <%= image_tag "featured_open_plenary.jpg" %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top plenaries">
+  <div class="small-12 column">
+    <h2>Propuestas más votadas</h2>
+
+    <ul class="no-bullet">
+      <li class="margin-bottom">
+        <h3><%= link_to "Apoyo para llevar a cabo Viviendas Protegidas y un colegio en Valdebebas", "https://decide.madrid.es/proposals/10726-apoyo-para-llevar-a-cabo-viviendas-protegidas-y-un-colegio-en-valdebebas" %></h3>
+        <p><strong>794 Apoyos</strong></p>
+      </li>
+      <li class="margin-bottom">
+        <h3><%= link_to "Recaudación del IBI a la Iglesia Católica", "https://decide.madrid.es/proposals/10546-recaudacion-del-ibi-a-la-iglesia-catolica" %></h3>
+        <p><strong>693 Apoyos</strong></p>
+      </li>
+      <li class="margin-bottom">
+        <h3><%= link_to "Multa a los que ensucian las calles", "https://decide.madrid.es/proposals/10532-multa-a-los-que-ensucian-las-calles" %></h3>
+        <p><strong>562 Apoyos</strong></p>
+      </li>
+      <li class="margin-bottom">
+        <h3><%= link_to "Transformar gradualmente la flota de autobuses de la EMT en 100% ELÉCTRICA.", "https://decide.madrid.es/proposals/10485-transformar-gradualmente-la-flota-de-autobuses-de-la-emt-en-100-electrica" %></h3>
+        <p><strong>540 Apoyos</strong></p>
+      </li>
+      <li class="margin-bottom">
+        <h3><%= link_to "REMUNICIPALIZACIÓN LIMPIEZAS", "https://decide.madrid.es/proposals/10465-remunicipalizacion-limpiezas" %></h3>
+        <p><strong>451 Apoyos</strong></p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="small-12 column">
+    <h2>Preguntas más votadas</h2>
+    <p>
+      <% open_plenary_debate = Debate.where(comment_kind: 'question').first %>
+      <%= link_to t("pages.processes.process_3.view_questions"),
+                    debate_path(open_plenary_debate) %>
+    </p>
+    <ul class="no-bullet">
+      <li class="margin-bottom">
+        <span>Solicito que la Alcaldesa Manuela Carmena y el Concejal Delegado del Área de Desarrollo Urbano Sostenible expliquen las razones por las que no se está tramitando el Convenio de Gestión del APR 07.09 TPA Raimundo Fernandez Villaverde, del que dependen para entrar a vivir 350 familias de cooperativistas que han invertido allí los ahorros de su vida para obtener un hogar y ustedes lo están impidiendo, a pesar de que la Cooperativa “Residencial Maravillas” ha cumplido, y está cumpliendo, con todos trámites legales y ni si quiera el concejal de urbanismo se ha dignado a reunirse con los socios representantes de la Cooperativa.</span>
+        <div>
+          <strong>788 Votos</strong>
+          (<span class="icon-like"></span>&nbsp;766&nbsp;|&nbsp;
+          <span class="icon-unlike"></span>&nbsp;22)
+        </div>
+      </li>
+      <li class="margin-bottom">
+        <span>443 familias de cooperativa Metropolitan llevan 1 año esperando para presentar el PPRI por diferentes problemas con asamblea y ayuntamiento. Ahora, ya hemos presentado el PPRI para el APR de cuatro caminos. Pregunta: Cuando se admitirá la iniciativa en pleno y cuando está prevista la aprobación definitiva del PPRI por el pleno??? Más de 2000 madrileños tienen sus ahorros invertidos en este suelo y están a la espera de las decisiones del ayuntamiento. Muchas gracias.</span>
+        <div>
+          <strong>547 Votos</strong>
+          (<span class="icon-like"></span>&nbsp;534&nbsp;|&nbsp;
+          <span class="icon-unlike"></span>&nbsp;13)
+        </div>
+      </li>
+      <li class="margin-bottom">
+        <span>¿Que se va a hacer con las cocheras de Cuatro Caminos?</span>
+        <div>
+          <strong>117 Votos</strong>
+          (<span class="icon-like"></span>&nbsp;106&nbsp;|&nbsp;
+          <span class="icon-unlike"></span>&nbsp;11)
+        </div>
+      </li>
+      <li class="margin-bottom">
+        <span>El pasado 31 de marzo se cerró la denominada Campaña contra el frío en Madrid que supone la apertura de 443 plazas entre el 25 de noviembre y el 31 de marzo y 130 camas más durante 100 días consecutivos dentro del mismo periodo. Estas plazas se suman a las 1478 habilitadas en la red estable de atención para las personas sin hogar en Madrid.
+Según los datos del Área de Equidad, Derechos Sociales y Empleo 1470 personas distintas hicieron uso de las plazas dispuestas para la campaña contra el frío durante el periodo de apertura de la misma.
+Así mismo y según los datos disponibles del VII Recuento de personas sin hogar en Madrid hay al menos 1905 personas en situación de sinhogarismo. Esto supone que con el cierre de estos dispositivos un mínimo de 427 personas quedan desprotegidas ante una demanda alojamiento.
+¿Por qué permanecen cerrados los recursos dispuestos para la campaña contra el frío cuando existe demanda suficiente para continuar prestando servicio durante el resto del año?</span>
+        <div>
+          <strong>75 Votos</strong>
+          (<span class="icon-like"></span>&nbsp;73&nbsp;|&nbsp;
+          <span class="icon-unlike"></span>&nbsp;2)
+        </div>
+      </li>
+      <li class="margin-bottom">
+        <span>El 15 de marzo la alcaldesa celebró con trabajadoras sociales del Ayuntamiento el día internacional del trabajo social. Desde su defensa de nuestra profesión, ¿Cómo se ha permitido perder a un activo fundamental de los servicios sociales madrileños sin que haya mediado una mínima defensa de su trayectoria profesional y su acreditada experiencia para ocupar su puesto? Me refiero a Mercedes Portero, trabajadora social y hasta hace unos días Coordinadora General del Área de Equidad. Usted nos llamó “primer abrazo” de la ciudadanía. Trabajamos, desde la mirada de los derechos, acompañando y removiendo obstáculos para la inclusión. Todo ello mientras en nuestros centros persisten discriminaciones laborales flagrantes e infradotación de personal y medios. Nos insta a informarles sobre la burocratización excesiva. Llevamos años haciéndolo, denunciando sin éxito instrumentos que no dan respuesta efectiva a las necesidades de los ciudadanos ¿Cómo podemos hacerles llegar el criterio técnico?</span>
+        <div>
+          <strong>66 Votos</strong>
+          (<span class="icon-like"></span>&nbsp;60&nbsp;|&nbsp;
+          <span class="icon-unlike"></span>&nbsp;6)
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+</div>

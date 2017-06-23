@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     if @comment.save
       CommentNotifier.new(comment: @comment).process
       add_notification @comment
+      log_comment_event
     else
       render :new
     end
@@ -73,12 +74,20 @@ class CommentsController < ApplicationController
     end
 
     def add_notification(comment)
-      if comment.reply?
-        notifiable = comment.parent
-      else
-        notifiable = comment.commentable
+      notifiable = comment.reply? ? comment.parent : comment.commentable
+      notifiable_author_id = notifiable.try(:author_id)
+      if notifiable_author_id.present? && notifiable_author_id != comment.author_id
+        Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
       end
-      Notification.add(notifiable.author_id, notifiable) unless comment.author_id == notifiable.author_id
+    end
+
+    def log_comment_event
+      return unless @comment.commentable_type == "Proposal"
+      if @comment.root?
+        log_event("proposal", "comment")
+      else
+        log_event("proposal", "comment_reply")
+      end
     end
 
     def verify_resident_for_commentable!

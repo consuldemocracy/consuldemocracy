@@ -1,6 +1,9 @@
 <div class="row section-content">
   <div class="small-12 column">
     <h3 id="polls" data-magellan-target="polls"><%= t("pages.more_info.polls.title") %></h3>
+    <p>
+      <%= link_to t("pages.more_info.polls.detail"), more_info_polls_path, class: "small" %>
+    </p>
     <p><%= t("pages.more_info.polls.description") %></p>
     <ul class="features">
       <li>
@@ -11,5 +14,10 @@
       <li><%= t("pages.more_info.polls.feature_2") %></li>
       <li><%= t("pages.more_info.polls.feature_3") %></li>
     </ul>
+
+    <figure>
+      <%= image_tag "more_info/vota.jpg", alt: t("pages.more_info.polls.image_alt") %>
+      <figcaption><%= t("pages.more_info.polls.figcaption") %></figcaption>
+    </figure>
   </div>
 </div>

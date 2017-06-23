@@ -213,6 +213,10 @@ a {
       color: $brand;
     }
   }
+
+  &.vertical li {
+    display: block;
+  }
 }
 
 .menu.vertical {

@@ -1,0 +1,427 @@
+<%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "stats-charts", 'data-turbolinks-track' => true %>
+
+<div class="survey-results">
+  <!-- Participación -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación</h3>
+      <p class="legend margin-top">TOTAL</p>
+      <p class="big-number-stat">31.761</p>
+    </div>
+
+    <hr>
+
+    <div class="small-12 medium-6 column show-for-medium">
+      <div class="panel text-center" data-equalizer-watch>
+        <div class="large-offset-3 large-5 padding">
+          <canvas id="stats" width="300" height="300"></canvas>
+        </div>
+
+        <div class="large-4 column relative">
+          <ul class="chart-legend absolute">
+            <li>
+              <span class="label" style="background: #FF6600"></span>
+              <strong>Hombres</strong>:<br> 18.944 (59,65%)
+            </li>
+            <li>
+              <span class="label" style="background: #FF9E01"></span>
+              <strong>Mujeres</strong>:<br> 12.686 (39,94%)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+
+      <div class="text-center">
+        <%= image_tag ("survey_results/sex_preselection.png"), alt: "" %>
+      </div>
+
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <div class="panel text-right" data-equalizer-watch>
+            <p class="legend">HOMBRES (59,65%)</p>
+            <p class="big-number-stat">18.944</p>
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 column">
+          <div class="panel" data-equalizer-watch>
+            <p class="legend">MUJERES (39,94%)</p>
+            <p class="big-number-stat">12.686</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación por grupos de edad -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación por<br> grupos de edad</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <table class="age-groups">
+        <thead>
+          <tr>
+            <th class="border-right">EDAD</th>
+            <th class="border-left">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-right">
+              De 16 a 19 años
+            </td>
+            <td class="border-left">
+              <strong>539 (1,70%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 9.72%"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-right">
+              De 20 a 24 años
+            </td>
+            <td class="border-left">
+              <strong>1980 (6,23%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 35.71%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 25 a 29 años
+            </td>
+            <td class="border-left">
+              <strong>3515 (11,07%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 63.40%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 30 a 34 años
+            </td>
+            <td class="border-left">
+              <strong>4991 (15,71%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 90%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 35 a 39 años
+            </td>
+            <td class="border-left">
+              <strong>4903 (15,44%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 88.43%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 40 a 44 años
+            </td>
+            <td class="border-left">
+              <strong>3974 (12,51%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 71.68%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 45 a 49 años
+            </td>
+            <td class="border-left">
+              <strong>2857 (9,00%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 51.53%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 50 a 54 años
+            </td>
+            <td class="border-left">
+              <strong>2388 (7,52%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 43.07%"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-right">
+              De 55 a 59 años
+            </td>
+            <td class="border-left">
+              <strong>2400 (7,56%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 43.28%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 60 a 64 años
+            </td>
+            <td class="border-left">
+              <strong>1663 (5,24%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 29.99%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 65 a 69 años
+            </td>
+            <td class="border-left">
+              <strong>1156 (3,64%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 20.85%"></span>
+              </div>
+            </td>
+          </tr>
+           <tr>
+            <td class="border-right">
+              De 70 y más años
+            </td>
+            <td class="border-left">
+              <strong>1264 (3,98%)</strong>
+              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+                <span class="progress-meter" style="width: 22.79%"></span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="double">
+
+  <!-- Participación por distritos -->
+  <div class="row">
+    <div class="small-12 column">
+      <h3 class="subtitle">Participación por<br> distritos</h3>
+    </div>
+
+    <div class="show-for-medium medium-6 column small-centered text-center margin-top">
+      <%= image_tag("map.jpg", usemap: "#html_map", alt: "Mapa de distritos de Madrid") %>
+    </div>
+
+    <map name="html_map" id="html_map">
+      <% Geozone.all.each do |geozone| %>
+        <area shape="poly"
+              coords="<%= geozone.html_map_coordinates %>"
+              href="#<%= geozone.name.parameterize %>"
+              title="<%= geozone.name %>"
+              alt="<%= geozone.name %>">
+      <% end %>
+    </map>
+
+    <div class="small-12 column small-centered">
+      <table class="survey-districts">
+        <thead>
+          <tr>
+            <th>DISTRITO</th>
+            <th>VOTOS</th>
+            <th>% PARTICIPACIÓN TOTAL PROYECTOS</th>
+            <th>% PARTICIPACIÓN POBLACIÓN DEL DISTRITO</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr id="arganzuela">
+          <td>
+            <strong>Arganzuela</strong>
+          </td>
+          <td class="text-center">2623</td>
+          <td class="text-center">8,26%</td>
+          <td class="text-center">1,72%</td>
+        </tr>
+        <tr id="barajas">
+          <td>
+            <strong>Barajas</strong>
+          </td>
+          <td class="text-center">338</td>
+          <td class="text-center">1,06%</td>
+          <td class="text-center">0,72%</td>
+        </tr>
+        <tr id="carabanchel">
+          <td>
+            <strong>Carabanchel</strong>
+          </td>
+          <td class="text-center">1484</td>
+          <td class="text-center">4,67%</td>
+          <td class="text-center">0,61%</td>
+        </tr>
+        <tr id="centro">
+          <td>
+            <strong>Centro</strong>
+          </td>
+          <td class="text-center">5049</td>
+          <td class="text-center">15,90%</td>
+          <td class="text-center">3,82%</td>
+        </tr>
+        <tr id="chamartin">
+          <td>
+            <strong>Chamartín</strong>
+          </td>
+          <td class="text-center">1662</td>
+          <td class="text-center">5,23%</td>
+          <td class="text-center">1,16%</td>
+        </tr>
+        <tr id="chamberi">
+          <td>
+            <strong>Chamberí</strong>
+          </td>
+          <td class="text-center">2070</td>
+          <td class="text-center">6,52%</td>
+          <td class="text-center">1,50%</td>
+        </tr>
+        <tr id="ciudad-lineal">
+          <td>
+            <strong>Ciudad Lineal</strong>
+          </td>
+          <td class="text-center">1427</td>
+          <td class="text-center">4,49%</td>
+          <td class="text-center">0,67%</td>
+        </tr>
+        <tr id="fuencarral-el-pardo">
+          <td>
+            <strong>Fuencarral - El Pardo</strong>
+          </td>
+          <td class="text-center">1930</td>
+          <td class="text-center">6,08%</td>
+          <td class="text-center">0,81%</td>
+        </tr>
+        <tr id="hortaleza">
+          <td>
+            <strong>Hortaleza</strong>
+          </td>
+          <td class="text-center">1345</td>
+          <td class="text-center">4,23%</td>
+          <td class="text-center">0,75%</td>
+        </tr>
+        <tr id="latina">
+          <td>
+            <strong>Latina</strong>
+          </td>
+          <td class="text-center">1922</td>
+          <td class="text-center">5,05%</td>
+          <td class="text-center">0,82%</td>
+        </tr>
+        <tr id="moncloa-aravaca">
+          <td>
+            <strong>Moncloa - Aravaca</strong>
+          </td>
+          <td class="text-center">1950</td>
+          <td class="text-center">6,14%</td>
+          <td class="text-center">1,66%</td>
+        </tr>
+        <tr id="moratalaz">
+          <td>
+            <strong>Moratalaz</strong>
+          </td>
+          <td class="text-center">648</td>
+          <td class="text-center">2,04%</td>
+          <td class="text-center">0,69%</td>
+        </tr>
+        <tr id="puente-de-vallecas">
+          <td>
+            <strong>Puente de Vallecas</strong>
+          </td>
+          <td class="text-center">1184</td>
+          <td class="text-center">3,73%</td>
+          <td class="text-center">0,52%</td>
+        </tr>
+        <tr id="retiro">
+          <td>
+            <strong>Retiro</strong>
+          </td>
+          <td class="text-center">1594</td>
+          <td class="text-center">5,02%</td>
+          <td class="text-center">1,34%</td>
+        </tr>
+        <tr id="salamanca">
+          <td>
+            <strong>Salamanca</strong>
+          </td>
+          <td class="text-center">1481</td>
+          <td class="text-center">4,66%</td>
+          <td class="text-center">1,03%</td>
+        </tr>
+        <tr id="san-blas-canillejas">
+          <td>
+            <strong>San Blas - Canillejas</strong>
+          </td>
+          <td class="text-center">902</td>
+          <td class="text-center">2,84%</td>
+          <td class="text-center">0,58%</td>
+        </tr>
+        <tr id="tetuan">
+          <td>
+            <strong>Tetuán</strong></td>
+           </td>
+            <td class="text-center">1482</td>
+            <td class="text-center">4,67%</td>
+            <td class="text-center">0,96%</td>
+          </td>
+        </tr>
+        <tr id="usera">
+          <td>
+            <strong>Usera</strong>
+          </td>
+          <td class="text-center">690</td>
+          <td class="text-center">2,17%</td>
+          <td class="text-center">0,51%</td>
+        </tr>
+        <tr id="vicalvaro">
+          <td>
+            <strong>Vicálvaro</strong>
+          </td>
+          <td class="text-center">388</td>
+          <td class="text-center">1,22%</td>
+          <td class="text-center">0,55%</td>
+        </tr>
+        <tr id="villaverde">
+          <td>
+            <strong>Villaverde</strong>
+          </td>
+          <td class="text-center">742</td>
+          <td class="text-center">2,34%</td>
+          <td class="text-center">0,52%</td>
+        </tr>
+        <tr id="villa-de-vallecas">
+          <td>
+            <strong>Villa de Vallecas</strong>
+          </td>
+          <td class="text-center">719</td>
+          <td class="text-center">2,26%</td>
+          <td class="text-center">0,69%</td>
+        </tr>
+        </tbody>
+      </table>
+
+    <p class="margin-top"><em>* No se dispone de los datos demográficos de 131 participantes.</em></p>
+
+    <hr class="double">
+
+    </div>
+  </div>
+</div>

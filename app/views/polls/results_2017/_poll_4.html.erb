@@ -1,0 +1,58 @@
+<h3 id="4">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</h3>
+
+<%
+  question = @poll_4.questions.first
+  answers_votes = {}
+  question.valid_answers.each_with_index do |answer, i|
+    answers_votes[answer] = total_votes_for_answer(question, answer)
+  end
+  results_ordered = answers_votes.keys.sort { |x, y| answers_votes[y] <=> answers_votes[x] }
+  winners = results_ordered.shift(10)
+%>
+
+<table>
+  <caption>
+    <%= question.title %>
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">OPCIÓN</th>
+      <th scope="col">VOTOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% winners.each do |winner| %>
+      <tr>
+        <td><%= san_blas_questions_valid_answers_mappings(winner) %></td>
+        <td><%= answers_votes[winner] %> (<%= percent_stat(answers_votes[winner], total_votes_for_poll(@poll_4)) %>%)</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<table class="poll-4-discarded" style="display:none">
+  <thead>
+    <tr>
+      <th scope="col">OPCIÓN</th>
+      <th scope="col">VOTOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% results_ordered.each do |result| %>
+      <tr>
+        <td><%= san_blas_questions_valid_answers_mappings(result) %></td>
+        <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_4)) %>%)</td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>En BLANCO</td>
+      <% whites = total_white_votes_for_poll(@poll_4) %>
+      <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_4)) %>%)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="margin text-right">
+  <%= link_to "Ver resultados de todas las respuestas", "#",
+              class: "js-toggle-link",
+              data: {'toggle-selector' => '.poll-4-discarded', 'toggle-text' => "Ver solo respuestas ganadoras"} %>
+</div>

@@ -34,6 +34,7 @@ data:
     - config/locales/devise_views.%{locale}.yml
     - config/locales/responders.%{locale}.yml
     - config/locales/kaminari.%{locale}.yml
+    - config/locales/custom.%{locale}.yml
     - config/locales/officing.%{locale}.yml
     - config/locales/budgets.%{locale}.yml
     - config/locales/legislation.%{locale}.yml
@@ -109,6 +110,10 @@ ignore_missing:
   - 'devise.failure.invalid'
   - 'devise.registrations.destroyed'
   - 'devise.password_expired.*'
+  - 'tracking.events.action.*'
+  - 'tracking.events.category.*'
+  - 'tracking.user_data.*'
+  - 'tracking.events.name.*'
 
 ## Consider these keys used:
 ignore_unused:
@@ -152,7 +157,12 @@ ignore_unused:
   - 'debates.index.orders.*'
   - 'proposals.index.select_order'
   - 'proposals.index.orders.*'
-  - 'spending_proposals.index.search_form.*'
+  - 'spending_proposals.index.select_order'
+  - 'spending_proposals.index.orders.*'
+  - 'debates.show.comments*'
+  - 'debates.show.questions*'
+  - 'comments_helper.*'
+  - 'questions_helper.*'
   - '*.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
@@ -162,6 +172,8 @@ ignore_unused:
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'
   - 'invisible_captcha.*'
+  - 'probes.codenames.*' # custom probes names
+  - 'social_share.polls_show.*' # SEO for polls
   - 'admin.site_customization.pages.page.status_*'
   - 'admin.legislation.processes.process.*'
   - 'legislation.processes.index.*'
@@ -169,6 +181,18 @@ ignore_unused:
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
 # - 'simple_form.{error_notification,required}.:'
+#### Review unused keys after merge with Budgest (both en and es)
+  - layouts.header.see_all
+  - legislation.help.alt
+  - legislation.help.text
+  - legislation.help.text_sign_in
+  - legislation.help.text_sign_up
+  - legislation.help.title
+  - users.show.confirm_deletion_spending_proposal
+  - users.show.delete_spending_proposal
+  - verification.letter.create.flash.offices_url
+  - verification.letter.new.offices_url
+####
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
 # ignore_eq_base:

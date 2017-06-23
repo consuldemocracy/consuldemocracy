@@ -31,10 +31,10 @@
                 <% end %>
               <% end %>
 
-              <% if spending_proposal.author.verified_organization? %>
+              <% if spending_proposal.forum? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="label round is-association">
-                  <%= t("shared.collective") %>
+                <span class="label round is-forum">
+                  <%= t("spending_proposals.spending_proposal.forum") %>
                 </span>
               <% end %>
 
@@ -42,17 +42,27 @@
               <%= geozone_name(spending_proposal) %>
             </p>
             <div class="investment-project-description">
-              <p><%= link_to spending_proposal.description, namespaced_spending_proposal_path(spending_proposal) %></p>
+              <p><%= spending_proposal.description %></p>
               <div class="truncate"></div>
             </div>
           <% end %>
         </div>
       </div>
 
-      <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-3 column supports-container">
-          <%= render 'votes',
-                    { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
-      </div>
+      <% unless spending_proposal.unfeasible? %>
+        <% if feature?("spending_proposal_features.phase2") %>
+          <div id="<%= dom_id(spending_proposal) %>_votes"
+               class="small-12 medium-3 column text-center supports-container">
+            <%= render 'votes',
+                      { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
+          </div>
+        <% elsif feature?("spending_proposal_features.phase3") %>
+          <div id="<%= dom_id(spending_proposal) %>_ballot"
+                class="small-12 medium-3 column text-center supports-container">
+            <%= render 'ballot', spending_proposal: spending_proposal %>
+          </div>
+        <% end %>
+      <% end %>
 
     </div>
   </div>

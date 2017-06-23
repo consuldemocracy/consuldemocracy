@@ -1,0 +1,85 @@
+// Once Plazas landing
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.landing {
+
+  .header {
+    background: $budget;
+    padding: $line-height 0;
+
+    h1 {
+      color: $text;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(40);
+      line-height: rem-calc(40);
+      margin-top: $line-height;
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
+    }
+  }
+}
+
+.once-plazas {
+
+  h1 {
+
+    span {
+      color: #d25236;
+    }
+  }
+}
+
+.brand-note {
+  background: #00349a;
+  color: #fff;
+  display: inline-block;
+  padding: 0 $line-height / 4;
+}
+
+.figure-box {
+
+  .figure-container-card {
+    border: 1px solid $border;
+    border-radius: 4px;
+    margin-bottom: $line-height;
+  }
+
+  ul {
+    padding: $line-height / 2;
+
+    li {
+      font-size: $small-font-size;
+      margin-bottom: $line-height / 2;
+    }
+  }
+
+  a {
+
+    h3 {
+      color: #fff;
+    }
+
+    &:hover {
+     text-decoration: none;
+    }
+  }
+
+  a:not(.button) {
+    color: #000;
+
+    .attachment {
+      display: inline-block;
+      line-height: rem-calc(20);
+      margin-left: $line-height / 4;
+      vertical-align: middle;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

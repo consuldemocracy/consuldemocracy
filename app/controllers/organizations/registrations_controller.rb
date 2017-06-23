@@ -14,6 +14,7 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
     if resource.valid?
+      log_event("registration", "successful_registration")
       super do |user|
         # Removes unuseful "organization is invalid" error message
         user.errors.messages.delete(:organization)

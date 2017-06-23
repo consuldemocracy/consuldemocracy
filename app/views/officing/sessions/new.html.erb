@@ -1,0 +1,16 @@
+<div class="row margin-top">
+  <div class="small-12 medium-6 column small-centered">
+    <div class="panel margin-top">
+      <h1 class="text-center"><%= t("nvotes.officer_title") %></h1>
+      <%= form_for @officer, as: :officer, url: officing_session_path, method: :post do |f| %>
+        <div class="row">
+          <div class="small-12 column">
+            <%= f.password_field :password, autocomplete: "off", placeholder: t("devise_views.sessions.new.password_label"), tabindex: "1" %>
+
+            <%= f.submit(t("devise_views.sessions.new.submit"), class: "button expanded") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

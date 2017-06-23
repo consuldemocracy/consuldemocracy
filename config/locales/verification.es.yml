@@ -21,25 +21,46 @@ es:
       create:
         flash:
           offices: Oficinas de Atención al Ciudadano
-          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las %{offices}.
+          offices_url: http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD
+          success_html: Próximamente recibirás una carta por correo postal con las instrucciones para añadir un doble comprobación a tu cuenta.<br> Recuerda que puedes ahorrar el envío acudiendo presencialmente a cualquiera de las %{offices}.
       edit:
-        see_all: Ver propuestas
-        title: Carta solicitada
+        see_all: Empezar a participar
+        title: Doble comprobación de verificación
       errors:
         incorrect_code: Código de verificación incorrecto
       new:
-        explanation: 'Para participar en las votaciones finales puedes:'
-        go_to_index: Ver propuestas
-        office: Verificarte presencialmente en cualquier %{office}
-        offices: Oficina de Atención al Ciudadano
-        send_letter: Solicitar una carta por correo postal
+        go_to_index: Empezar a participar
         title: "¡Felicidades!"
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
           success: Tu cuenta ya está verificada
+    sms:
+      new:
+        title: "SMS de confirmación"
+        phone: "Introduce tu teléfono móvil para recibir el código"
+        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
+        phone_note: "Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos."
+        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
+        submit_button: "Enviar"
+      create:
+        flash:
+          success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
+      edit:
+        confirmation_code: Introduce el código que has recibido en tu móvil
+        resend_sms_link: Solicitar un nuevo código
+        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
+        submit_button: Enviar
+        title: SMS de confirmación
+      update:
+        error: Código de confirmación incorrecto
+        flash:
+          level_three:
+            success: Código correcto. Tu cuenta ya está verificada
+          level_two:
+            success: Código correcto
     redirect_notices:
-      already_verified: Tu cuenta ya está verificada
+      already_verified: Tu cuenta está verificada
       email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
     residence:
       alert:
@@ -60,39 +81,18 @@ es:
           spanish_id: DNI
         document_type_label: Tipo de documento
         error_not_allowed_age: No tienes la edad mínima para participar
-        error_not_allowed_postal_code: Para verificarte debes estar empadronado.
-        error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
-        error_verifying_census_offices: oficina de Atención al ciudadano
+        error_can_not_redeem_code: No se pudo validar el código. Por favor asegúrese de que es correcto. Si aun así no es correcto, déjelo en blanco (puede rellenarlo más tarde).
+        error_not_allowed_postal_code: Para verificarte debes estar empadronado en el municipio de Madrid.
+        error_verifying_census: El Padrón de Madrid no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al 010 (o a su versión gratuita 915298210) o visita cualquiera de las %{offices}.
+        error_verifying_census_offices: 26 Oficinas de Atención al Ciudadano
         form_errors: evitaron verificar tu residencia
         postal_code: Código postal
-        postal_code_note: Para verificar tus datos debes estar empadronado
+        postal_code_note: Para verificar tus datos debes estar empadronado en el municipio de Madrid
+        redeemable_code: Código de verificación por carta (opcional)
+        redeemable_code_note: Si ha recibido un código de verificación por carta, puede introducirlo aquí. Si no lo ha recibido o no funciona, déjelo en blanco (puede rellenarlo más tarde).
         terms: los términos de acceso
         title: Verificar residencia
         verify_residence: Verificar residencia
-    sms:
-      create:
-        flash:
-          success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
-      edit:
-        confirmation_code: Introduce el código que has recibido en tu móvil
-        resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
-        submit_button: Enviar
-        title: SMS de confirmación
-      new:
-        phone: Introduce tu teléfono móvil para recibir el código
-        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
-        phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
-        phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
-        submit_button: Enviar
-        title: SMS de confirmación
-      update:
-        error: Código de confirmación incorrecto
-        flash:
-          level_three:
-            success: Código correcto. Tu cuenta ya está verificada
-          level_two:
-            success: Código correcto
     step_1: Residencia
     step_2: SMS de confirmación
     step_3: Verificación final
