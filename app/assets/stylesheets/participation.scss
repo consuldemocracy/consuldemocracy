@@ -654,55 +654,70 @@
 }
 
 .budget-investments-list {
-  .budget-investment{
-    .no-image{
+  .budget-investment {
+    .no-image {
       background: $brand;
     }
-    @include breakpoint(medium) {
-      .panel{
-        padding:0 0.75rem 0 0;
-        .no-image{
-          height: 245px;
-          width: 140px;
-        }
-      }
-      h3{
-        font-size: 1.4rem;
-      }
-      .column:first-child{
-        overflow: hidden;
-      }
-      .column:nth-child(2){
-        float: left;
-      }
-      .column:last-child:not(:first-child){
-        padding-top:0.75rem;
-      }
-      img{
-        max-width: 12rem;
-      }
-      .budget-investment-content{
-        ul{
-          margin-bottom:0;
-        }
+  }
+}
+
+.budget-investments-list .budget-investment {
+
+  @include breakpoint(small) {
+    .no-image {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .no-image::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    .column:first-child {
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .panel {
+      padding: 0 0.75rem 0 0;
+
+      .no-image {
+        height: 245px;
+        width: 140px;
       }
     }
-    @include breakpoint(small) {
-      .no-image{
-        width: 100%;
-        max-width: 300px;
-        margin:0 auto;
-        &:before {
-          content: "";
-        	display: block;
-        	padding-top: 100%;
-        }
-      }
-      h3{
-        font-size: 1.3rem;
-      }
-      .column:first-child{
-        text-align: center;
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    .column:first-child {
+      overflow: hidden;
+    }
+
+    .column:nth-child(2) {
+      float: left;
+    }
+
+    .column:last-child:not(:first-child) {
+      padding-top: 0.75rem;
+    }
+
+    img {
+      max-width: 12rem;
+    }
+
+    .budget-investment-content {
+      ul {
+        margin-bottom: 0;
       }
     }
   }
@@ -927,30 +942,31 @@
   }
 }
 
-.budget-investment-show{
-  figure{
+.budget-investment-show {
+
+  figure {
     margin: 1em 0 0;
     display: inline-block;
-    figcaption{
+
+    figcaption {
       font-size: $small-font-size;
-      margin-top:1rem;
+      margin-top: 1rem;
     }
   }
 }
 
-.edit_budget_investment{
-  .note-marked p{
-    margin-bottom:0;
+.edit_budget_investment {
+
+  @include image-upload;
+
+  .note-marked p {
+    margin-bottom: 0;
   }
-  .image-upload{
-    .button, p{
-      float: left;
-    }
-    p{
-      margin-left:1rem;
-      margin-top: 0.8rem;
-    }
-  }
+}
+
+.new_budget_investment {
+
+  @include image-upload;
 }
 
 .investment-project-show .supports,
