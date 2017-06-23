@@ -25,6 +25,8 @@ en:
         budget_investment: "Investment project updated succesfully."
       update_image:
         budget_investment: "Investment project image updated succesfully."
+      remove_image:
+        budget_investment: "Investment project image removed succesfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
         budget_investment: "Investment project deleted succesfully."

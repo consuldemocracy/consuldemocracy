@@ -82,6 +82,7 @@ Rails.application.routes.draw do
         post :vote
         get :edit_image
         put :update_image
+        delete :remove_image
       end
       collection { get :suggest }
     end
