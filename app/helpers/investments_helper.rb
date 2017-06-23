@@ -12,4 +12,8 @@ module InvestmentsHelper
     investment.image.exists? ? "edit_image" : "add_image"
   end
 
+  def errors_on_image(investment)
+    @investment.errors[:image].join(', ') if @investment.errors.has_key?(:image)
+  end
+
 end

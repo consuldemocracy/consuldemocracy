@@ -20,6 +20,11 @@
      </div>
     </div>
     <div class="small-12 column">
+      <div class="image-errors">
+        <p><%= errors_on_image(@investment)%></p>
+      </div>
+    </div>
+    <div class="small-12 column">
       <%= f.label :image_title, t("budgets.investments.edit_image.form.image_title") %>
       <%= f.text_field :image_title, placeholder: t("budgets.investments.edit_image.form.image_title"), label: false %>
     </div>
