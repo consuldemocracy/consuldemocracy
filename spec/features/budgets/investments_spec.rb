@@ -366,6 +366,7 @@ feature 'Budget Investments' do
     scenario "Should show add text when investment has not image" do
       investment = create(:budget_investment, heading: heading, author: author)
       login_as(author)
+
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_link "Add image"
@@ -374,6 +375,7 @@ feature 'Budget Investments' do
     scenario "Should show edit text when investment has already an image" do
       investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
       login_as(author)
+
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_link "Edit image"
@@ -381,6 +383,7 @@ feature 'Budget Investments' do
 
     scenario "Should not be shown for anonymous users" do
       investment = create(:budget_investment, heading: heading)
+
       visit budget_investment_path(budget, investment)
 
       expect(page).not_to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
@@ -388,6 +391,7 @@ feature 'Budget Investments' do
 
     scenario "Should not be shown when current user is not investment author" do
       investment = create(:budget_investment, heading: heading)
+
       visit budget_investment_path(budget, investment)
 
       expect(page).not_to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
@@ -396,6 +400,7 @@ feature 'Budget Investments' do
     scenario "Should be shown when current user is investment author" do
       investment = create(:budget_investment, heading: heading, author: author)
       login_as(author)
+
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_link "Add image", href: edit_image_budget_investment_path(budget, investment)
@@ -405,6 +410,7 @@ feature 'Budget Investments' do
       administrator = create(:administrator).user
       investment = create(:budget_investment, heading: heading, author: author)
       login_as(administrator)
+
       visit budget_investment_path(budget, investment)
 
       expect(page).to have_link "Add image", href: edit_image_budget_investment_path(budget, investment)
@@ -413,6 +419,7 @@ feature 'Budget Investments' do
 
   scenario "Edit image page should not be accesible when there is no logged user" do
     investment = create(:budget_investment, heading: heading, author: author)
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_content "You must sign in or register to continue"
@@ -422,6 +429,7 @@ feature 'Budget Investments' do
     other_author = create(:user, :level_two, username: 'Manuel')
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(other_author)
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_content "You do not have permission to carry out the action 'edit_image' on budget/investment."
@@ -430,6 +438,7 @@ feature 'Budget Investments' do
   scenario "Edit image page should be accesible when author is currently logged" do
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(author)
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_content "Change your project image"
@@ -439,6 +448,7 @@ feature 'Budget Investments' do
     administrator = create(:administrator).user
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(administrator)
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_content "Change your project image"
@@ -447,6 +457,7 @@ feature 'Budget Investments' do
   scenario "Remove image button should not be present when investment image does not exists" do
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(author)
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).not_to have_link "Remove image"
@@ -455,6 +466,7 @@ feature 'Budget Investments' do
   scenario "Remove image button should be present when investment has an image defined" do
     investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
     login_as(author)
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_link "Remove image"
@@ -464,8 +476,8 @@ feature 'Budget Investments' do
     administrator = create(:administrator).user
     investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
     login_as(administrator)
-    visit edit_image_budget_investment_path(budget, investment)
 
+    visit edit_image_budget_investment_path(budget, investment)
     click_link "Remove image"
 
     expect(page).to have_content "Investment project image removed succesfully."
@@ -474,8 +486,8 @@ feature 'Budget Investments' do
   scenario "Remove image should be possible for investment author" do
     investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
     login_as(author)
-    visit edit_image_budget_investment_path(budget, investment)
 
+    visit edit_image_budget_investment_path(budget, investment)
     click_link "Remove image"
 
     expect(page).to have_content "Investment project image removed succesfully."
@@ -484,6 +496,7 @@ feature 'Budget Investments' do
   scenario "Remove image should not be possible for any other logged users (except administrators and author)" do
     investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
     login_as(create(:user))
+
     visit edit_image_budget_investment_path(budget, investment)
 
     expect(page).to have_content "You do not have permission to carry out the action 'edit_image' on budget/investment."
@@ -495,6 +508,7 @@ feature 'Budget Investments' do
     login_as(other_author)
 
     visit edit_image_budget_investment_path(investment.budget, investment)
+
     expect(current_path).not_to eq(edit_image_budget_investment_path(investment.budget, investment))
     expect(page).to have_content 'You do not have permission'
   end
@@ -507,13 +521,14 @@ feature 'Budget Investments' do
     fill_in :budget_investment_image_title, with: "New image title"
     attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
     click_on "Save image"
+
     within ".budget-investment-show" do
       expect(page).to have_css("img[src*='logo_header.jpg']")
     end
     expect(page).to have_content 'Investment project image updated succesfully. '
   end
 
-  scenario "Update image should be possible for authors" do
+  scenario "Update image should be possible for administrators" do
     administrator = create(:administrator).user
     investment = create(:budget_investment, heading: heading, author: author)
     login_as(administrator)
@@ -522,6 +537,7 @@ feature 'Budget Investments' do
     fill_in :budget_investment_image_title, with: "New image title"
     attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
     click_on "Save image"
+
     within ".budget-investment-show" do
       expect(page).to have_css("img[src*='logo_header.jpg']")
     end
