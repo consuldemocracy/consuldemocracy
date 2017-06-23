@@ -324,7 +324,7 @@ FactoryGirl.define do
 
   factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
     association :investment, factory: :budget_investment
-    sequence(:title)     { |n| "Budget Investment Milestone #{n} title" }
+    sequence(:title)     { |n| "Budget investment milestone #{n} title" }
     description          'Milestone description'
   end
 

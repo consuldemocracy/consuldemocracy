@@ -391,11 +391,10 @@ feature 'Budget Investments' do
 
   scenario "Show milestones", :js do
     user = create(:user)
-    login_as(user)
-
     investment = create(:budget_investment)
     milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
 
+    login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
     find("#tab-milestones-label").trigger('click')
@@ -408,10 +407,9 @@ feature 'Budget Investments' do
 
   scenario "Show no_milestones text", :js do
     user = create(:user)
-    login_as(user)
-
     investment = create(:budget_investment)
 
+    login_as(user)
     visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
 
     find("#tab-milestones-label").trigger('click')
