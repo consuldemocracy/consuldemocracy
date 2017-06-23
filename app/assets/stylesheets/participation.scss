@@ -494,93 +494,107 @@
   }
 }
 
-#tab-milestones{
-  .timeline ul{
+
+.tab-milestones ul {
+  position: relative;
+  margin-top: rem-calc(40);
+
+  li {
     position: relative;
-    margin-top:rem-calc(40);
-    li {
-      position: relative;
-      width:0;
-      margin: 0 auto;
-      &:before{
-        content: '';
-        position: absolute;
-        top:rem-calc(5);
-        transform: translateX(-50%);
-        width: rem-calc(20);
-        height: rem-calc(20);
-        border-radius: 50%;
-        background: $budget;
-        z-index: 2;
-      }
-      &:after{
-        content: '';
-        width: 1px;
-        background: $light-gray;
-        bottom: 100%;
-        height: 100%;
-        position: absolute;
-        top: rem-calc(25);
-        z-index: 1;
-      }
-      div {
-        position: relative;
-        padding: rem-calc(3) rem-calc(10);
-        h3{
-          font-size: 1.2rem;
-          margin-bottom:0;
-        }
-        strong{
-          color:$text-light;
-          font-size: 0.9rem;
-        }
-      }
-
-      &:nth-child(odd),
-      &:nth-child(even){
-        div{
-          @include breakpoint(medium) {
-            width: rem-calc(300)
-          }
-          @include breakpoint(large) {
-            width: rem-calc(450)
-          }
-        }
-      }
-
-      &:nth-child(odd){
-        div{
-          text-align: right;
-          @include breakpoint(medium) {
-            margin-left:rem-calc(-315);
-          }
-          @include breakpoint(large) {
-            margin-left:rem-calc(-465);
-          }
-        }
-      }
-
-      &:nth-child(even) div {
-        left: rem-calc(15);
-      }
-    }
+    width: 0;
+    margin: 0 auto;
   }
 
+  li::before {
+    content: '';
+    position: absolute;
+    top: rem-calc(5);
+    transform: translateX(-50%);
+    width: rem-calc(20);
+    height: rem-calc(20);
+    border-radius: 50%;
+    background: $budget;
+    z-index: 2;
+  }
+
+  li::after {
+    content: '';
+    width: 1px;
+    background: $light-gray;
+    bottom: 100%;
+    height: 100%;
+    position: absolute;
+    top: rem-calc(25);
+    z-index: 1;
+  }
+}
+
+.tab-milestones ul div {
+  position: relative;
+  padding: rem-calc(3) rem-calc(10);
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  strong {
+    color: $text-light;
+    font-size: 0.9rem;
+  }
+}
+
+.tab-milestones .timeline ul li:nth-child(odd),
+.tab-milestones .timeline ul li:nth-child(even) {
+
+  div {
+    @include breakpoint(medium) {
+      width: rem-calc(300);
+    }
+
+    @include breakpoint(large) {
+      width: rem-calc(450);
+    }
+  }
+}
+
+.tab-milestones .timeline ul li:nth-child(odd) {
+  div {
+    text-align: right;
+
+    @include breakpoint(medium) {
+      margin-left: rem-calc(-315);
+    }
+
+    @include breakpoint(large) {
+      margin-left: rem-calc(-465);
+    }
+  }
+}
+
+.tab-milestones .timeline ul li:nth-child(even) {
+  div {
+    left: rem-calc(15);
+  }
+}
+
+.tab-milestones {
   @include breakpoint(small only) {
-    .timeline ul{
-      li{
-        width: 100%;
-        &:nth-child(odd),
-        &:nth-child(even){
-          div{
-            text-align: left;
-            left:rem-calc(15);
-          }
+
+    .timeline ul li {
+      width: 100%;
+
+      &:nth-child(odd),
+      &:nth-child(even) {
+        div {
+          text-align: left;
+          left: rem-calc(15);
         }
       }
     }
   }
 }
+
 
 // 04. List participation
 // ----------------------
