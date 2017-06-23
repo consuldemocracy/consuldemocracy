@@ -955,7 +955,7 @@
   }
 }
 
-.edit_budget_investment {
+.budget-investment-image-form {
 
   @include image-upload;
 
@@ -964,7 +964,7 @@
   }
 }
 
-.new_budget_investment {
+.budget-investment-new {
 
   @include image-upload;
 }
