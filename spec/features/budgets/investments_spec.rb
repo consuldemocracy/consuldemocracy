@@ -545,11 +545,11 @@ feature 'Budget Investments' do
 
     visit edit_image_budget_investment_path(investment.budget, investment)
     fill_in :budget_investment_image_title, with: "New image title"
-    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
+    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
     click_on "Save image"
 
     within ".budget-investment-show" do
-      expect(page).to have_css("img[src*='logo_header.jpg']")
+      expect(page).to have_css("img[src*='clippy.jpg']")
     end
     expect(page).to have_content 'Investment project image updated succesfully. '
   end
@@ -561,13 +561,25 @@ feature 'Budget Investments' do
 
     visit edit_image_budget_investment_path(investment.budget, investment)
     fill_in :budget_investment_image_title, with: "New image title"
-    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
+    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
     click_on "Save image"
 
     within ".budget-investment-show" do
-      expect(page).to have_css("img[src*='logo_header.jpg']")
+      expect(page).to have_css("img[src*='clippy.jpg']")
     end
     expect(page).to have_content 'Investment project image updated succesfully. '
+  end
+
+  scenario "Add image with dimmenssions smaller than 475x475" do
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(author)
+
+    visit edit_image_budget_investment_path(investment.budget, investment)
+    fill_in :budget_investment_image_title, with: "New image title"
+    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
+    click_on "Save image"
+
+    expect(page).to have_content 'Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px.'
   end
 
   context "Show (feasible budget investment)" do

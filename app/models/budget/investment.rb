@@ -43,6 +43,7 @@ class Budget
     validates_attachment :image, content_type: { content_type: ["image/jpeg"] }
     validates :image_title, presence: true, if: -> { image.present? }
     validates :image_title, length: { in: 4..Budget::Investment.title_max_length }, if: -> { image.present? }
+    validate :check_image_dimensions
 
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
@@ -269,6 +270,19 @@ class Budget
       def set_denormalized_ids
         self.group_id = heading.try(:group_id) if heading_id_changed?
         self.budget_id ||= heading.try(:group).try(:budget_id)
+      end
+
+      def check_image_dimensions
+        temp_file = image.queued_for_write[:original]
+        unless temp_file.nil?
+          dimensions = Paperclip::Geometry.from_file(temp_file)
+          width = dimensions.width
+          height = dimensions.height
+
+          if width < 475 || height < 475
+            errors['image'] << I18n.t("budgets.investments.edit_image.invalid_dimmensions")
+          end
+        end
       end
 
   end

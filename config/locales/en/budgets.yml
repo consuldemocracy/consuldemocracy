@@ -121,6 +121,7 @@ en:
         recommendation_title: Image recomendations
         recommendation_one: Projects that have images attract more attention than those that do not. If you have a picture suitable for your project upload.
         recommendation_two: Give a descriptive title to the image.
+        invalid_dimmensions: 'Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px.'
       wrong_price_format: Only integer numbers
       investment:
         add: Vote

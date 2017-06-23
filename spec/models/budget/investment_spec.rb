@@ -38,21 +38,35 @@ describe Budget::Investment do
 
     describe "file extension" do
       it "should not be valid with '.png' extension" do
-        investment_with_image.image = File.new("spec/fixtures/files/logo_header.png")
+        investment_with_image.image = File.new("spec/fixtures/files/clippy.png")
 
         expect(investment_with_image).to_not be_valid
+        expect(investment_with_image.errors[:image].size).to eq(1)
       end
 
       it "should not be valid with '.gif' extension" do
-        investment_with_image.image = File.new("spec/fixtures/files/logo_header.gif")
+        investment_with_image.image = File.new("spec/fixtures/files/clippy.gif")
 
         expect(investment_with_image).to_not be_valid
+        expect(investment_with_image.errors[:image].size).to eq(1)
       end
 
       it "should be valid with '.jpg' extension" do
-        investment_with_image.image = File.new("spec/fixtures/files/logo_header.jpg")
+        investment_with_image.image = File.new("spec/fixtures/files/clippy.jpg")
 
         expect(investment_with_image).to be_valid
+      end
+    end
+
+    describe "image dimmessions" do
+      it "should be valid when image dimmessions are 475X475 at least" do
+        expect(investment_with_image).to be_valid
+      end
+
+      it "should be valid when image dimmessions are 475X475 at least" do
+        investment_with_image.image = File.new("spec/fixtures/files/logo_header.jpg")
+
+        expect(investment_with_image).not_to be_valid
       end
     end
 

@@ -121,6 +121,7 @@ es:
         recommendation_title: Recomendaciones para cambiar la imagen
         recommendation_one: Los proyectos que tienen imágenes llaman más la atención que las que no la tienen. Si tienes una imagen adecuada para tu proyecto súbela.
         recommendation_two: Dale un título descriptivo a la imagen.
+        invalid_dimmensions: 'Las dimensiones de la imagen son demasiado pequeñas. Para una buena calidad de imagen suba una más grande. Ancho mínimo: 475px, altura mínima: 475px.'
       wrong_price_format: Solo puede incluir caracteres numéricos
       investment:
         add: Votar
