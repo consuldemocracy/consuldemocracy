@@ -92,6 +92,14 @@ module Budgets
       end
     end
 
+    def remove_image
+      @investment.image = nil
+      @investment.image_title = nil
+      @investment.save
+      redirect_to budget_investment_path(@investment.budget, @investment),
+                  notice: t("flash.actions.remove_image.budget_investment")
+    end
+
     private
 
       def resource_model

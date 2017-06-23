@@ -17,7 +17,7 @@
         <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
         <br>
         <%= f.label :image, t("images.upload_image"), class:'button' %>
-        <p><%= @investment.image.url.split('/').last.split("?")[0] %></p>
+        <p><%= @investment.image.url.split('/').last.split("?")[0] if @investment.image.exists?%></p>
      </div>
     </div>
     <div class="small-12 column">
@@ -26,6 +26,13 @@
     </div>
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("budgets.investments.edit_image.form.submit_button")) %>
+      <% if @investment.image.exists? %>
+        <%= link_to t("budgets.investments.edit_image.form.remove_button"),
+                    remove_image_budget_investment_path(@investment.budget, @investment),
+                    class: "button hollow alert",
+                    method: :delete,
+                    data: { confirm: "¿Está seguro que desea eliminar la imagen del proyecto?" } %>
+      <% end %>
     </div>
   </div>
 <% end %>

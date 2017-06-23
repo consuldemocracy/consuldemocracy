@@ -117,6 +117,7 @@ es:
         form:
           image_title: 'Título de la imagen'
           submit_button: Guardar imagen
+          remove_button: Eliminar imagen
         recommendation_title: Recomendaciones para cambiar la imagen
         recommendation_one: Los proyectos que tienen imágenes llaman más la atención que las que no la tienen. Si tienes una imagen adecuada para tu proyecto súbela.
         recommendation_two: Dale un título descriptivo a la imagen.
