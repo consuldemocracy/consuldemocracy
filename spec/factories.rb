@@ -531,14 +531,6 @@ FactoryGirl.define do
   factory :tag, class: 'ActsAsTaggableOn::Tag' do
     sequence(:name) { |n| "Tag #{n} name" }
 
-    trait :featured do
-      featured true
-    end
-
-    trait :unfeatured do
-      featured false
-    end
-
     trait :category do
       kind "category"
     end
