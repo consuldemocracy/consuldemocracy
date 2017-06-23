@@ -35,6 +35,21 @@ feature 'Admin budget investment milestones' do
       expect(page).to have_content 'New title milestone'
       expect(page).to have_content 'New description milestone'
     end
+
+    scenario "Show validation errors on milestone form" do
+      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+
+      click_link 'Create new milestone'
+
+      fill_in 'budget_investment_milestone_description', with: 'New description milestone'
+
+      click_button 'Create milestone'
+
+      within "#new_budget_investment_milestone" do
+        expect(page).to have_content "can't be blank"
+        expect(page).to have_content 'New description milestone'
+      end
+    end
   end
 
   context "Edit" do
