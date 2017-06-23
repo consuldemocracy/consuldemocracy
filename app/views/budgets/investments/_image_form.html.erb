@@ -3,8 +3,7 @@
   <div class="row">
     <div class="small-12 column">
       <span class="note-marked">
-        <% note_key = @investment.image.exists? ? "edit_note" : "add_note" %>
-        <%= t("budgets.investments.edit_image.#{note_key}", title: @investment.title) %></p>
+        <%= t("budgets.investments.edit_image.#{investment_image_advice_note_key(@investment)}", title: @investment.title) %></p>
       </span>
     </div>
     <% if @investment.image.exists? %>
@@ -17,7 +16,7 @@
         <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
         <br>
         <%= f.label :image, t("images.upload_image"), class:'button' %>
-        <p><%= @investment.image.url.split('/').last.split("?")[0] if @investment.image.exists?%></p>
+        <p><%= investment_image_file_name(@investment) %></p>
      </div>
     </div>
     <div class="small-12 column">

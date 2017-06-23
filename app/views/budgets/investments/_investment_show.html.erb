@@ -9,9 +9,8 @@
                     class: 'button hollow float-right' %>
       <% end %>
 
-      <% if author_of?(investment, current_user) || (current_user && current_user.administrator?) %>
-        <% button_text = investment.image.exists? ? t("budgets.investments.show.edit_image") : t("budgets.investments.show.add_image") %>
-        <%= link_to button_text,
+      <% if can?(:edit_image, @investment) %>
+        <%= link_to t("budgets.investments.show.#{investment_image_button_text(@investment)}"),
                     edit_image_budget_investment_path(investment.budget, investment),
                     class: 'button hollow float-right' %>
       <% end %>
@@ -26,19 +25,19 @@
       </div>
       <br>
       <% if investment.image.exists? %>
-      <div class="row">
-        <div class="small-12 column text-center">
-          <figure>
-            <%= image_tag investment.image.url(:large),
-                          title: investment.image_title,
-                          alt: investment.image_title %>
-            <figcaption class="text-right">
-              <em><%= investment.image_title %></em>
-            </figcaption>
-          </figure>
-          <hr>
+        <div class="row">
+          <div class="small-12 column text-center">
+            <figure>
+              <%= image_tag investment.image.url(:large),
+                            title: investment.image_title,
+                            alt: investment.image_title %>
+              <figcaption class="text-right">
+                <em><%= investment.image_title %></em>
+              </figcaption>
+            </figure>
+            <hr>
+          </div>
         </div>
-      </div>
       <% end %>
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
