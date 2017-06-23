@@ -31,21 +31,6 @@ feature 'Admin tags' do
     expect(page).to have_content 'important issues'
   end
 
-  scenario 'Update' do
-    visit admin_tags_path
-    featured_checkbox = find("#tag_featured_#{@tag1.id}")
-    expect(featured_checkbox.checked?).to be_blank
-
-    within("#edit_tag_#{@tag1.id}") do
-      check "tag_featured_#{@tag1.id}"
-      click_button 'Update Topic'
-    end
-
-    visit admin_tags_path
-    featured_checkbox = find("#tag_featured_#{@tag1.id}")
-    expect(featured_checkbox.checked?).to eq(true)
-  end
-
   scenario 'Delete' do
     tag2 = create(:tag, :category, name: "bad tag")
     create(:debate, tag_list: tag2.name)
@@ -100,17 +85,6 @@ feature 'Admin tags' do
       end
 
       expect(ActsAsTaggableOn::Tag.category.where(name: "wow_category")).to exist
-    end
-
-    scenario "Update doesn't affect the category kind" do
-      visit admin_tags_path
-
-      within("#edit_tag_#{@tag1.id}") do
-        check "tag_featured_#{@tag1.id}"
-        click_button 'Update Topic'
-      end
-
-      expect(ActsAsTaggableOn::Tag.category.where(id: @tag1.id)).to exist
     end
   end
 

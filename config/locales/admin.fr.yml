@@ -644,10 +644,8 @@ fr:
       index:
         add_tag: Ajouter un nouveau sujet de proposition
         title: Sujets de propositions
-      mark_as_featured: Proposer le sujet lors de la création d'une proposition
       name:
         placeholder: Saisir le nom du sujet
-      update: Mettre-à-jour le sujet
     users:
       index:
         filter: Filtrer

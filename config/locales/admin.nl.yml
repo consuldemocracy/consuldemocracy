@@ -641,10 +641,8 @@ nl:
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
-      mark_as_featured: Propose topic upon creating proposal
       name:
         placeholder: Type the name of the topic
-      update: Update Topic
     users:
       index:
         filter: Filter
