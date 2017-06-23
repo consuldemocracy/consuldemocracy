@@ -34,126 +34,131 @@
       </div>
     </div> -->
 
-    <div class="small-12 column" id="problem-display">
-      <div class="panel callout radius">
-        <!-- TODO: Acá se debe mostrar el problema elegido -->
-        <div class="small-12 column">
-          <h4 class="text-center"> Problema a resolver: <%= challenge.title%> </h4>
-          <%= f.hidden_field :problem_id, :value => challenge.id %>
-          <hr/>
-        </div>
-        <br></br>
-        <%= challenge.summary%>
-        <div class="small-12 medium-6 column">
-          <%= challenge.cause%>
-        </div>
-        <div class="small-12 medium-6 column">
-          <%= challenge.consequence%>
-        </div>
-        <p class="text-center"> ¡Crea tus propuestas! </p>
+    <div  id="problem-display">
+      <div class="small-12 column problem-display">
+          <!-- TODO: Acá se debe mostrar el problema elegido -->
+          <div class="summary-problem float-left">
+            <h3 class="title-challenge white"><%= challenge.title%> </h3>
+            <%= f.hidden_field :problem_id, :value => challenge.id %>
+            <p class="white"> <%= challenge.summary%> </p>
+            <p class="white"> <%= t("proposals.form.problem.budget") %> <%= challenge.budget%> </br>
+            <%= t("proposals.form.problem.community") %> <%= challenge.geozones_name %>
+            </p>
+          </div>
+          <div class="deadline-problem float-right">
+            <span> Quedan</span> <strong class="mark-days">
+            <%=distance_of_time_in_days(challenge.ends_at, Date.today)%></strong><span> días para crear propuestas </span>
+          </div>
       </div>
-    </div>
+  </div>
+
+    <!-- TODO: Por ahora las gezones serán las mismas que del desafío por defceto  -->
+
+
+
+    <% challenge.geozones.map(&:id).each do |id| %>
+      <%= hidden_field_tag "proposal[geozone_ids][]", id %>
+    <% end %>
 
     <%= f.hidden_field :for_challenge, :value => true %>
 
-    <div class="small-12 column">
-      <%= f.label :prioritize, t("proposals.form.proposal_prioritize") %>
-      <%= f.text_area :prioritize, rows: 2, label: false,
-                      placeholder: "" %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :description, t("proposals.form.proposal_text") %>
-      <p class="note"><%= t("proposals.form.proposal_description_note") %></p>
-      <%= f.text_area :description, rows: 5, maxlength: Proposal.description_max_length, label: false %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :deadline, t("proposals.form.proposal_deadline") %>
-      <%= f.text_field :deadline, label: false %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :title, t("proposals.form.proposal_title") %>
-      <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
-    </div>
-
-    <div id="js-suggest"></div>
-
-    <div class="small-12 column">
-      <%= f.label :question, t("proposals.form.proposal_question") %>
-      <span class="note-marked">
-        <%= t("proposals.form.proposal_question_example_html") %>
-      </span>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <%= f.text_area :summary, rows: 3, maxlength: 140, label: false %>
-    </div>
-
-  <!--
-    <div class="small-12 column">
-      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-      <p class="note"><%= t("proposals.form.proposal_video_url_note") %></p>
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
-      <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
-    </div>
-  -->
-
-    <div class="small-12 medium-6 column">
-      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.label :tag_list, t("proposals.form.tags_label") %>
-      <p class="note"><%= t("proposals.form.tags_instructions") %></p>
-
-      <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
-        <% @categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
-        <% end %>
+    <div class="text-width">
+      <div class="small-12 column column-with-margin">
+        <%= f.label :what, t("proposals.form.proposal_what") %>
+        <%= f.text_area :what, rows: 2, label: false,
+                        placeholder: "" %>
       </div>
 
-      <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
-                        label: false,
-                        placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list' %>
-    </div>
+      <div class="small-12 column column-with-margin">
+        <%= f.label :why, t("proposals.form.proposal_why") %>
+        <%= f.text_area :why, rows: 2, label: false,
+                        placeholder: "" %>
+      </div>
 
-    <% if current_user.unverified? %>
       <div class="small-12 column">
-        <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
-        <p class="note"><%= t("proposals.form.proposal_responsible_name_note") %></p>
-        <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false %>
+        <%= f.label :description, t("proposals.form.proposal_text") %>
+        <!-- <p class="note"><%= t("proposals.form.proposal_description_note") %></p> -->
+        <%= f.text_area :description, rows: 5, maxlength: Proposal.description_max_length, label: false %>
       </div>
-    <% end %>
 
-    <div class="small-12 column">
-      <% if @proposal.new_record? %>
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
-          <span class="checkbox">
-            <%= t("form.accept_terms",
-                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
-          </span>
-        <% end %>
+      <div class="small-12 column">
+        <%= f.label :summary, t("proposals.form.proposal_summary") %>
+        <%= f.text_area :summary, rows: 3, maxlength: 140, label: false %>
+      </div>
+
+      <div class="small-12 column">
+        <%= f.label :title, t("proposals.form.proposal_title") %>
+        <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+      </div>
+
+      <div id="js-suggest"></div>
+
+      <!-- <div class="small-12 column">
+        <%= f.label :question, t("proposals.form.proposal_question") %>
+        <span class="note-marked">
+          <%= t("proposals.form.proposal_question_example_html") %>
+        </span>
+        <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
+      </div> -->
+
+
+    <!--
+      <div class="small-12 column">
+        <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
+        <p class="note"><%= t("proposals.form.proposal_video_url_note") %></p>
+        <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false %>
+      </div>
+
+      <div class="small-12 column">
+        <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
+        <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
+      </div>
+    -->
+
+
+      <div class="small-12 column">
+        <%= f.label :tag_list, t("proposals.form.tags_label") %>
+        <p class="note"><%= t("proposals.form.tags_instructions") %></p>
+
+        <div id="category_tags" class="tags">
+          <% @categories.each do |tag| %>
+            <a class="js-add-tag-link"><%= tag.name %></a>
+          <% end %>
+        </div>
+
+        <br>
+        <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+                          label: false,
+                          placeholder: t("proposals.form.tags_placeholder"),
+                          class: 'js-tag-list' %>
+      </div>
+
+      <% if current_user.unverified? %>
+        <div class="small-12 column">
+          <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
+          <p class="note"><%= t("proposals.form.proposal_responsible_name_note") %></p>
+          <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false %>
+        </div>
       <% end %>
-    </div>
+
+      <div class="small-12 column">
+        <% if @proposal.new_record? %>
+          <%= f.label :terms_of_service do %>
+            <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+            <span class="checkbox">
+              <%= t("form.accept_terms",
+                  policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                  conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+            </span>
+          <% end %>
+        <% end %>
+      </div>
 
 
 
-    <div class="actions small-12 column">
-      <%= f.submit(class: "button", value: t("proposals.#{action_name}.form.submit_button")) %>
+      <div class="actions small-12 column">
+        <%= f.submit(class: "button float-center", value: t("proposals.#{action_name}.form.submit_button")) %>
+      </div>
     </div>
   </div>
 <% end %>

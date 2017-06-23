@@ -15,7 +15,7 @@ class Proposal < ActiveRecord::Base
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone
+  has_and_belongs_to_many :geozones
   belongs_to :problem
 
   has_many :comments, as: :commentable
@@ -25,14 +25,13 @@ class Proposal < ActiveRecord::Base
   accepts_nested_attributes_for :problem
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }
-  validates :question, length: { in: 10..Proposal.question_max_length }
+  # validates :question, length: { in: 10..Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Proposal.responsible_name_max_length }
   validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
 
@@ -69,7 +68,7 @@ class Proposal < ActiveRecord::Base
       question           => 'B',
       author.username    => 'B',
       tag_list.join(' ') => 'B',
-      geozone.try(:name) => 'B',
+      geozones.try(:name) => 'B',
       summary            => 'C',
       description        => 'D'
     }
@@ -177,6 +176,18 @@ class Proposal < ActiveRecord::Base
 
   def notifications
     proposal_notifications
+  end
+
+  def geozones_name
+    if self.geozones.any?
+      names = ''
+      self.geozones.each do |g|
+        names += g.name + ' | '
+      end
+      return names
+    else
+      return 'Toda la comuna'
+    end
   end
 
   protected

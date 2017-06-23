@@ -341,6 +341,11 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.integer "geozone_id", null: false
   end
 
+  create_table "geozones_proposals", id: false, force: :cascade do |t|
+    t.integer "proposal_id", null: false
+    t.integer "geozone_id",  null: false
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -626,6 +631,8 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.text     "description"
     t.string   "deadline"
     t.string   "question"
+    t.string   "what"
+    t.string   "why"
     t.string   "external_url"
     t.integer  "author_id"
     t.datetime "hidden_at"
@@ -644,7 +651,6 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.text     "summary"
     t.string   "video_url"
     t.tsvector "tsv"
-    t.integer  "geozone_id"
     t.datetime "retired_at"
     t.string   "retired_reason"
     t.text     "retired_explanation"
@@ -655,7 +661,6 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
-  add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
   add_index "proposals", ["problem_id"], name: "index_proposals_on_problem_id", using: :btree
@@ -863,7 +868,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-14 19:37:08', null: false
+    t.datetime "password_changed_at",                       default: '2017-06-21 19:43:32', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

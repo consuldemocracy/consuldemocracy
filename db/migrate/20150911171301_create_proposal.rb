@@ -5,6 +5,8 @@ class CreateProposal < ActiveRecord::Migration
       t.text      "description"
       t.string    "deadline"
       t.string    "question"
+      t.string    "what"
+      t.string    "why"
       t.string    "external_url"
       t.integer   "author_id"
       t.datetime  "hidden_at"

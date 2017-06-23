@@ -8,7 +8,7 @@
       <div class="small-12 medium-12 column">
         <div class="proposal-content">
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
-            <span class="label-proposal float-left"><%= t("proposals.proposal.proposal") %> para <%= proposal.geozone.name%></span>
+            <span class="label-proposal float-left"><%= t("proposals.proposal.proposal") %> para <%= proposal.geozones_name %></span>
             <span class="icon-proposals"></span>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
@@ -119,7 +119,7 @@
       </div>
 
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container">
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-12 column supports-container">
 
       </div>
     </div>

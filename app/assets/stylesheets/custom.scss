@@ -148,3 +148,44 @@ li {
 .submenu h2 {
     font-size: 0.9rem;
 }
+
+.title-page{
+  font-family: $body-font-family-title;
+}
+
+.title-challenge{
+  font-family: $body-font-family-title;
+}
+
+.text-width{
+  max-width: 900px;
+  margin: 0 auto !important;
+}
+
+.summary-problem{
+  background-color: $orange;
+  max-width: 900px;
+  padding: 0.7rem;
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  margin-bottom: 30px;
+  color: $white;
+}
+
+.deadline-problem{
+  max-width: 700px;
+  margin-top: -6rem;
+  padding: 2rem;
+  background-color: $gray2;
+  color: $white;
+
+}
+
+.mark-days{
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.problem-display{
+  margin-bottom: 3rem;
+}

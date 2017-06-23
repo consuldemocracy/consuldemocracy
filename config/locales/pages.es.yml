@@ -5,14 +5,28 @@ es:
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
     more_info:
-      title: "Descubre %{org_name}"
-      subtitle: "Aprende todo lo que puedes hacer en esta web."
-      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      title: "ABRE tu municipio"
+      subtitle: "Conoce tu nuevo espacio de participación. "
+      guide: 'En esta guía te mostramos las herramientas que ABRE ofrece para lograr las soluciones que tu comuna necesita.'
       menu:
         debates: "Debates"
         proposals: "Propuestas"
+        challenges: "Desafíos"
+        polls: "Votaciones"
         budgets: "Presupuestos participativos"
+        design_phase: "Talleres de Diseño"
         other: "Otra información de interés"
+      design_phase:
+        title: "Talleres de Diseño"
+        description: "La comunidad se reunirá para agregar sus ideas a la propuesta, definir tareas para su implementación y conformar un equipo que supervise estas tareas:"
+        feature_1: "Vecinas y vecinos proponen lo que les gustaría agregar a la propuesta ganadora."
+        feature_2: "Se define en conjunto un plan de trabajo, con tareas tanto del municipio como de la comunidad."
+        feature_3: "Municipio y vecinos adquieren compromisos y crean una estrategia de seguimiento para la propuesta."
+      challenges:
+        title: "Desafíos"
+        description: "ABRE permite a la comunidad participar de las soluciones para los problemas que la afectan. El municipio propondrá desafíos a resolver en conjunto con la comunidad, para construir soluciones participativas:"
+        feature_1: "El municipio identifica una problemática que afecta a la comunidad y propone el desafío para resolverla."
+        feature_2: "La comunidad involucrada puede hacer sus propuestas para resolver el desafío."
       debates:
         title: "Debates"
         description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de gente de tu ciudad."
@@ -23,9 +37,10 @@ es:
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
         title: "Propuestas"
-        description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
-        feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
-        feature_1_link: "registrarte en %{org_name}"
+        description: "Aporta con tus ideas para resolver el desafío. ABRE te permite realizar propuestas y compartirlas con la comunidad:"
+        feature_1: "Ingresa tu propuesta en ABRE."
+        feature_2: "Vecinas y vecinos pueden ver todas las propuestas y apoyar las que más les gusten."
+        feature_3: "Las propuestas que reciban más apoyo pasarán a una votación final."
         feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de 16 años empadronada en Madrid; 27.064 apoyos) pasan a votación."
         feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
         image_alt: "Botón para apoyar una propuesta"
@@ -42,11 +57,11 @@ es:
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
-        description: "Las propuestas ciudadanas que alcancen el 1% de apoyos pasarán a votación."
-        feature_1: "Para participar en la próxima votación tienes que %{link} y verificar tu cuenta."
+        description: "La propuesta que resuelva el desafío será determinada por la comunidad."
+        feature_1: "Las tres propuestas que reciban más apoyo pasarán a votación."
         feature_1_link: "registrarte en %{org_name}"
-        feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
-        feature_3: "Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        feature_2: "Vecinas y vecinos podrán votar para elegir una propuesta definitiva."
+        feature_3: "La propuesta con más votos a favor será acogida por el municipio y pasarán a Talleres de Diseño."
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."

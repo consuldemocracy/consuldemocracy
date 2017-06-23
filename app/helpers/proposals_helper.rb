@@ -50,4 +50,11 @@ module ProposalsHelper
     most_voted_proposals.select{ |p| p.id == proposal.id}.any?
   end
 
+  def problem_geozones(challenge)
+    array = []
+    challenge.geozones.each do |g|
+      array.push(g.id)
+    end
+    return array
+  end
 end

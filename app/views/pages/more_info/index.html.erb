@@ -22,6 +22,8 @@
         <%= render "pages/more_info/debates" %>
       <% end %>
 
+      <%= render "pages/more_info/challenges" %>
+
       <%= render "pages/more_info/proposals" %>
 
       <% if feature?(:budgets) %>
@@ -31,6 +33,9 @@
       <% if feature?(:polls) %>
         <%= render "pages/more_info/polls" %>
       <% end %>
+
+      <%= render "pages/more_info/design_phase" %>
+
     </div>
     <div class="small-12 medium-4 large-3 column more-info-sidebar">
       <%= render "pages/more_info/sidebar" %>
