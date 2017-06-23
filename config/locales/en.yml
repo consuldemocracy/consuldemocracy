@@ -838,8 +838,6 @@ en:
   welcome:
     title: "Decide Madrid: portal of citizen participation of the City of Madrid"
     featured:
-      title: Participatory processes
-      see_all: See all processes
       features: "Participate on %{org_name}"
       label: "Participate"
       proposals:
