@@ -157,7 +157,7 @@ feature 'Proposals' do
   end
 
   scenario 'Create with proposal improvement info link' do
-    Setting['proposal_improvement_path'] = 'more-information/proposal-improvement'
+    Setting['proposal_improvement_path'] = '/more-information/proposal-improvement'
     author = create(:user)
     login_as(author)
 
