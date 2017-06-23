@@ -838,8 +838,6 @@ es:
   welcome:
     title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
     featured:
-      title: Procesos participativos
-      see_all: Ver todos los procesos
       features: "Participa en %{org_name}"
       label: "Participa"
       proposals:

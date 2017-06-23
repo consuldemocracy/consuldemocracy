@@ -135,6 +135,11 @@ es:
       text_html: "En la votación final de los presupuestos participativos 2017 tú decides los proyectos ciudadanos que llevará a cabo el Ayuntamiento <strong>en la ciudad y en los distritos</strong>."
       date: "Del 15 de mayo al 30 de junio"
       button: "Votar proyectos"
+      geocraft:
+        label: "Descarga"
+        title: "Haz Madrid"
+        text: "Imagina y crea tu propio Madrid en este entorno que recrea la Plaza Santa Ana de la capital."
+        link: "Más información sobre Haz Madrid"
       once_plazas:
         label: "Proceso"
         title: "Once Plazas"
@@ -142,12 +147,17 @@ es:
         link: "Más información sobre Once Plazas"
       videos:
         label: "Vídeos"
-        title: "Presupuestos participativos"
+        title: "Proyectos de Presupuestos"
         text: "Las personas que han propuesto proyectos en los presupuestos participativos nos cuentan en vídeo en qué consiste su idea."
         link: "Ver vídeos de Presupuestos participativos"
       chincheto:
         title: "Ver vídeo de SrChincheto77 en YouTube (se abre en ventana nueva)"
         alt: "¡SrChincheto77 nos acompaña por el Madrid que decide la ciudadanía!"
+    manzanares:
+      label: Proceso
+      title: "Parque Lineal del Manzanares"
+      description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares y su entorno."
+      link: "Ver proceso Parque Lineal del Manzanares"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
@@ -166,7 +176,6 @@ es:
     manzanares:
       title: "Parque Lineal del Manzanares"
       description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno."
-      date_html: "Proceso abierto"
     shared:
       more_info: "Más información"
   polls_reports:
@@ -174,9 +183,9 @@ es:
     button: "Descargar informe técnico"
     title_1: "Madrid 100% sostenible"
     img_alt_1: "Imagen genérica relacionada con la propuesta Madrid 100% sostenible"
-    description_1_html: "Informe técnico sobre la propuesta <strong>Madrid 100% sostenible</strong>."
+    description_1_html: "Informe técnico sobre la propuesta Madrid 100% sostenible."
     title_2: "Billete único para el transporte público"
     img_alt_2: "Imagen genérica relacionada con la propuesta Billete único para el transporte público"
-    description_2_html: "Informe técnico sobre la competencia, legalidad, viabilidad y coste de la propuesta <strong>Billete único para el transporte público</strong>."
+    description_2_html: "Informe técnico sobre la competencia, legalidad, viabilidad y coste de la propuesta Billete único para el transporte público."
   budgets_minimal_selector:
     view: "Mostrar como tarjetas o lista"

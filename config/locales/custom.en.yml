@@ -135,6 +135,11 @@ en:
       text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
       date: "From May 15 to June 30"
       button: "Vote projects"
+      geocraft:
+        label: "Download"
+        title: "Make Madrid"
+        text: "Imagine and create your own Madrid in this environment that recreates the Plaza Santa Ana of the capital."
+        link: "More information about Make Madrid"
       once_plazas:
         label: "Process"
         title: "Once Plazas"
@@ -142,12 +147,17 @@ en:
         link: "More information about Once Plazas"
       videos:
         label: "Videos"
-        title: "Participatory budgets"
+        title: "Budgets projects"
         text: "The people who have proposed projects in participatory budgets tell us in video what their idea is."
         link: "Watch videos of Participatory budgets"
       chincheto:
         title: "Watch SrChincheto77 video on YouTube (opens in new tab)"
         alt: "SrChincheto77 accompanies us for the Madrid that decides the citizenship!"
+    manzanares:
+      label: Process
+      title: "Linear Park of Manzanares"
+      description: "The City of Madrid opens a public debate on the Linear Park of Manzanares and its surroundings."
+      link: "See Linear Park of Manzanares process"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
@@ -166,7 +176,6 @@ en:
     manzanares:
       title: "Linear Park of Manzanares"
       description: "The City of Madrid opens a public debate on the Linear Park of Manzanares aimed at initiating a process of citizen participation respect to this park and its surroundings."
-      date_html: "Open process"
     shared:
       more_info: "More information"
   polls_reports:
