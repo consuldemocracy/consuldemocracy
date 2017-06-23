@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Admin tags' do
 
   background do
-    @tag1 = create(:category)
+    @tag1 = create(:tag, :category)
     login_as(create(:administrator).user)
   end
 
@@ -51,7 +51,7 @@ feature 'Admin tags' do
   end
 
   scenario 'Delete' do
-    tag2 = create(:category, name: "bad tag")
+    tag2 = create(:tag, :category, name: "bad tag")
     create(:debate, tag_list: tag2.name)
     visit admin_tags_path
 
@@ -68,7 +68,7 @@ feature 'Admin tags' do
   end
 
   scenario 'Delete tag with hidden taggables' do
-    tag2 = create(:category, name: "bad tag")
+    tag2 = create(:tag, :category, name: "bad tag")
     debate = create(:debate, tag_list: tag2.name)
     debate.hide
 

@@ -79,8 +79,8 @@ feature 'Tags' do
   scenario 'Category with category tags', :js do
     login_as(author)
 
-    education = create(:tag, name: 'Education', kind: 'category')
-    health    = create(:tag, name: 'Health',    kind: 'category')
+    education = create(:tag, :category, name: 'Education')
+    health    = create(:tag, :category, name: 'Health')
 
     visit new_budget_investment_path(budget_id: budget.id)
 
@@ -221,8 +221,8 @@ feature 'Tags' do
 
   context "Categories" do
 
-    let!(:tag1) { create(:tag, kind: 'category', name: 'Medio Ambiente') }
-    let!(:tag2) { create(:tag, kind: 'category', name: 'Economía') }
+    let!(:tag1) { create(:tag, :category, name: 'Medio Ambiente') }
+    let!(:tag2) { create(:tag, :category, name: 'Economía') }
 
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }

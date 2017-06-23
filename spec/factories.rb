@@ -539,7 +539,7 @@ FactoryGirl.define do
       featured false
     end
 
-    factory :category do
+    trait :category do
       kind "category"
     end
   end
