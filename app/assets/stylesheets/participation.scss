@@ -495,53 +495,88 @@
 }
 
 #tab-milestones{
-  .timeline ul li {
-    list-style-type: none;
+  .timeline ul{
     position: relative;
-    width: 1px;
-    margin: 0 auto;
-    padding-top: 50px;
-    background: #dfe2e5;
-    &:before{
-      content: '';
-      position: absolute;
-      left: 50%;
-      top:0;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: inherit;
-      background: #179c87;
-    }
-    &:nth-child(odd) div {
-      text-align: right;
-      left: -515px;
-      top:-20px;
-      &:before {
-        left: -15px;
-      }
-    }
-    &:nth-child(even) div {
-      left: 15px;
-      top:-20px;
-      &:before {
-        right: -15px;
-      }
-    }
-    div {
+    margin-top:rem-calc(40);
+    li {
       position: relative;
-
-      padding: 10px;
-      width: 30vw;
-      width: 500px;
-      h3{
-        font-size: 1.2rem;
-        margin-bottom:0;
+      width:0;
+      margin: 0 auto;
+      &:before{
+        content: '';
+        position: absolute;
+        top:rem-calc(5);
+        transform: translateX(-50%);
+        width: rem-calc(20);
+        height: rem-calc(20);
+        border-radius: 50%;
+        background: $budget;
+        z-index: 2;
       }
-      strong{
-        color:#c9c9c9;
-        font-size: 0.9rem;
+      &:after{
+        content: '';
+        width: 1px;
+        background: $light-gray;
+        bottom: 100%;
+        height: 100%;
+        position: absolute;
+        top: rem-calc(25);
+        z-index: 1;
+      }
+      div {
+        position: relative;
+        padding: rem-calc(3) rem-calc(10);
+        h3{
+          font-size: 1.2rem;
+          margin-bottom:0;
+        }
+        strong{
+          color:$text-light;
+          font-size: 0.9rem;
+        }
+      }
+
+      &:nth-child(odd),
+      &:nth-child(even){
+        div{
+          @include breakpoint(medium) {
+            width: rem-calc(300)
+          }
+          @include breakpoint(large) {
+            width: rem-calc(450)
+          }
+        }
+      }
+
+      &:nth-child(odd){
+        div{
+          text-align: right;
+          @include breakpoint(medium) {
+            margin-left:rem-calc(-315);
+          }
+          @include breakpoint(large) {
+            margin-left:rem-calc(-465);
+          }
+        }
+      }
+
+      &:nth-child(even) div {
+        left: rem-calc(15);
+      }
+    }
+  }
+
+  @include breakpoint(small only) {
+    .timeline ul{
+      li{
+        width: 100%;
+        &:nth-child(odd),
+        &:nth-child(even){
+          div{
+            text-align: left;
+            left:rem-calc(15);
+          }
+        }
       }
     }
   }
