@@ -2,7 +2,7 @@ require 'database_cleaner'
 
 DatabaseCleaner.clean_with :truncation
 
-print "Creating Settings"
+print "Creando configuraciones"
 Setting.create(key: 'official_level_1_name', value: 'Empleados públicos')
 Setting.create(key: 'official_level_2_name', value: 'Organización Municipal')
 Setting.create(key: 'official_level_3_name', value: 'Directores generales')
@@ -136,7 +136,7 @@ org_user_ids = User.organizations.pluck(:id)
 not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 
 puts " ✅"
-print "Creating Tags Categories"
+print "Creando categorias"
 
 ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
 ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
@@ -156,7 +156,7 @@ ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "ca
 
 
 puts " ✅"
-print "Creando desafío"
+print "Creando un desafío y un problema"
 
 problem = Problem.create(title: "Mejoramiento Parque San Luis",
   summary: "Actualmente el Parque San Luis no está siendo útil para los vecinos ya que no cumple con las necesidades y expectativas de estos.",
@@ -172,8 +172,6 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
   geozones: Geozone.reorder("RANDOM()").limit(3),
   user: admin )
 
-  print "Creando desafío 1"
-
   problem2 = Problem.create(title: "Muchos perros callejeros en mi barrio",
   cause: "Las causas de que haya muchos perros callejeros son:
 1.- Poca capacidad en perreras municipales
@@ -184,8 +182,6 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
 3.- Perros sufren y tienen muy mala salud por tener que vivir en la calle",
   user: admin,
   geozones: Geozone.reorder("RANDOM()").limit(1) )
-
-  print "Creando desafío 2"
 
 puts ""
 
@@ -267,8 +263,6 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             geozones: problem.geozones,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
-
-
 proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear un espacio cultural en el espacio del Parque",
                             question: "¿Te gustaría crear un espacio culturan?",
@@ -281,8 +275,6 @@ proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
                             for_challenge: true)
-
-
 
 proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear una zona de juegos para perros",
@@ -299,7 +291,6 @@ proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             for_challenge: true,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
-
 proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "PASADA - Crear una zona de juegos para perros",
                             question: "¿Quieres crear una zona para ir con tu perro?",
@@ -315,7 +306,6 @@ proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             created_at: 20.month.ago,
                             cached_votes_up: Setting["votes_for_proposal_success"])
 
-
 puts " ✅"
 print "Creando Proyecto"
 
@@ -325,8 +315,6 @@ project = Project.create(name: "Mejoramiento plaza San Luis con Quinchos",
   starts_at: "2017-03-28 22:00:00",
   ends_at: "2017-06-24 22:00:00",
   proposal: proposal1)
-
-
 
 puts " ✅"
 print "Creating polls"

@@ -12,9 +12,8 @@
             <span class="icon-proposals"></span>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
-              <span class="icon-comments"></span>&nbsp;
-              <%= link_to t("proposals.proposal.comments", count: proposal.comments_count), namespaced_proposal_path(proposal, anchor: "comments") %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <span class="icon2-map-marker"></span>&nbsp;
+              <span class="bullet">|</span>
               <%= l proposal.created_at.to_date %>
               <% if proposal.author.hidden? || proposal.author.erased? %>
                 <span class="bullet">&nbsp;&bull;&nbsp;</span>
