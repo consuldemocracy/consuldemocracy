@@ -806,7 +806,7 @@ form {
     }
   }
 
-  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
+  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
     background: #f8f8f8;
     height: $line-height * 2;
     margin-bottom: rem-calc(16);
@@ -893,7 +893,7 @@ form {
 .callout {
   font-size: $small-font-size;
 
-  a {
+  a:not(.button) {
     font-weight: bold;
     text-decoration: underline;
   }
@@ -942,6 +942,14 @@ form {
 
   a {
     color: $color-alert;
+  }
+}
+
+.callout {
+
+  &.highlight,
+  &.light {
+    border: 0;
   }
 }
 

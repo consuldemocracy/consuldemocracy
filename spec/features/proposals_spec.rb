@@ -175,7 +175,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'You can also see more information about improving your campaign'
+    expect(page).to have_content 'Improve your campaign and get more supports'
 
     click_link 'Not now, go to my proposal'
 
