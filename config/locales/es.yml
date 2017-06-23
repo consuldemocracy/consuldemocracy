@@ -686,17 +686,21 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
-    debates:
-      description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
+    how_work: ¿Cómo funciona?
+    proposals:
+      title: propuestas
+      link_to: Ver todas
+    project:
+      description: Los involucrados dan seguimiento y evalúan el proyecto
       title: Debates
-    decide:
-      description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
+    design:
+      description: En talleres de diseño, vecinos y funcionarios desarrollana las propuestas
       title: Decides
     do:
-      description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+      description: El proyecto es implementado de forma colaborativa
       title: Se hace
     proposal:
-      description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
+      description: Los vecinos ingresan las propuestas y votan por su favorita
       title: Propones
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
@@ -704,7 +708,9 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
+      quote: construyamos soluciones para nuestra comuna
       go_to_index: Ahora no, ver propuestas
+      go_to_info: Quiero saber más
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
@@ -714,6 +720,11 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
+      info:
+        date: "17 DE JULIO - 5 DE AGOSTO"
+        epigraph: "__   recepción de propuestas"
+        title: "Parque de ideas: Soñemos en conjunto el Parque San Luis."
+        go_to: "Quiero subir una propuesta"
   legislation:
     help:
       title: "¿Cómo puedo comentar este documento?"

@@ -1,47 +1,83 @@
-<div class="expanded highlight padding no-margin-top">
+<div class="no-margin-top">
   <div class="row">
-    <div class="small-12 medium-6 column">
-      <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p>
-        <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
-        <%= link_to t("layouts.header.more_info"), more_info_path %>
-      </p>
-      <div class="small-12 medium-6">
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button see-more expanded" %>
+
+    <div class="small-12 medium-8 column home-quote">
+      <h1 class="home-quote-font"> <%= t("welcome.welcome.quote") %> </h1>
+      <%= link_to "Quiero saber más", more_info_path, class: "home-subtitle" %>
+
+    </div>
+
+    <div class="small-12 medium-4 column home-column2">
+      <div class="home-info">
+        <p class="home-info-dates label text-right"> <%= t("welcome.welcome.info.date") %> </p>
+        <h4 class="home-info-epigraph"> <%= t("welcome.welcome.info.epigraph") %> </h4>
+        <h3 class="home-info-title"> <%= t("welcome.welcome.info.title") %> </h3>
+        <%= link_to t("welcome.welcome.info.go_to"), new_proposal_path, class: "home-info-link" %>
+      </div>
+
+      <div class="home-img">
+        <%= image_tag(image_path_for('foto1.jpg')) %>
       </div>
     </div>
 
-    <div class="hide-for-small-only small-12 medium-5 column text-center">
-      <%= image_tag(image_path_for("icon_home.png"), size: "330x240", alt:"") %>
-    </div>
+
   </div>
 </div>
 
-<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
+
+    <h1 class="text-center home-title"> <%= t("welcome.how_work") %> </h1>
     <div class="row text-center margin">
       <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_debate.png", size: "168x168", alt: "", title: t("welcome.debates.title")) %>
-        <h2><%= t("welcome.debates.title") %></h2>
-        <p><%= t("welcome.debates.description") %></p>
-
-      </div>
-      <div class="small-12 medium-3 column">
         <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.proposal.title"))  %>
-        <h2><%= t("welcome.proposal.title") %></h2>
-        <p><%= t("welcome.proposal.description") %></p>
+        <div class="row text-left">
+          <div class="small-1 medium-2 column enumerate">
+            1
+          </div>
+          <div class="small-11 medium-10 column">
+            <p><%= t("welcome.project.description") %></p>
+          </div>
+        </div>
+      </div>
+      <div class="small-12 medium-3 column">
+        <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.design.title"))  %>
+        <div class="row text-left">
+          <div class="small-1 medium-2 column enumerate">
+            2
+          </div>
+          <div class="small-11 medium-10 column">
+            <p><%= t("welcome.design.description") %></p>
+          </div>
+        </div>
+
       </div>
 
       <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_decide.png", size: "168x168", alt: "", title: t("welcome.decide.title")) %>
-        <h2><%= t("welcome.decide.title") %></h2>
-        <p><%= t("welcome.decide.description") %></p>
+        <%= image_tag("icon_home_decide.png", size: "168x168", alt: "", title: t("welcome.do.title")) %>
+        <div class="row text-left">
+          <div class="small-1 medium-2 column enumerate">
+            3
+          </div>
+          <div class="small-11 medium-10 column">
+            <p><%= t("welcome.do.description") %></p>
+          </div>
+        </div>
       </div>
       <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_do.png", size: "168x168", alt: "", title: t("welcome.do.title")) %>
-        <h2><%= t("welcome.do.title") %></h2>
-        <p><%= t("welcome.do.description") %></p>
+        <%= image_tag("icon_home_do.png", size: "168x168", alt: "", title: t("welcome.project.title")) %>
+        <div class="row text-left">
+          <div class="small-1 medium-2 column enumerate">
+            4
+          </div>
+          <div class="small-11 medium-10 column">
+            <p><%= t("welcome.project.description") %></p>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
-<% end %>
+
+    <div class="large-centered">
+      <h1 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h1>
+      <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button button-home-proposals text-center' %>
+    </div>
+</main>

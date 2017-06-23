@@ -189,3 +189,80 @@ li {
 .problem-display{
   margin-bottom: 3rem;
 }
+
+.home-quote{
+  background-color: $brand;
+  min-height: 28rem;
+}
+
+.home-quote-font{
+  font-family: $body-font-family-title;
+  color: $white;
+  font-size: 4rem;
+  padding-right: 10rem;
+  padding-left: 2rem;
+  padding-top: 5rem;
+  text-transform: uppercase;
+}
+
+.home-subtitle{
+  font-size: 1.1rem;
+  color: $white;
+  font-weight: lighter;
+  text-decoration: underline;
+  margin-left: 2rem;
+}
+
+.home-column2{
+  padding-left: 0rem !important;
+}
+
+.home-info-epigraph{
+  font-size: 1rem;
+  color: $light-blue;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
+.home-info-title{
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+  line-height: 1.1;
+}
+
+.home-info-link{
+  color: $brand;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.home-info-dates{
+  color: $white;
+  background-color: $orange;
+  margin-right: auto;
+}
+
+.home-info{
+  min-height: 16rem;
+  padding: 2rem;
+}
+
+.home-title{
+  margin-top: 7rem;
+  font-family: $body-font-family-title;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.enumerate{
+  font-family: $body-font-family-title;
+  font-size: 3rem;
+  vertical-align: bottom;
+  font-weight: bold;
+}
+
+.button-home-proposals{
+  min-width: 200px;
+  margin: 0 auto !important;
+}
