@@ -1,4 +1,3 @@
----
 es:
   flash:
     actions:
@@ -18,9 +17,9 @@ es:
       update:
         notice: "%{resource_name} actualizado correctamente."
         debate: "Debate actualizado correctamente."
-        proposal: "Propuesta actualizada correctamente."
         poll: "Votación actualizada correctamente."
         poll_booth: "Urna actualizada correctamente."
+        proposal: "Propuesta actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
         budget_investment: "Propuesta de inversión actualizada correctamente"
       destroy:

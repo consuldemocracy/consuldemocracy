@@ -1,4 +1,3 @@
----
 es:
   legislation:
     annotations:
@@ -20,8 +19,8 @@ es:
         signup: registrarte
       index:
         title: Comentarios
-        see_in_context: Ver en contexto
         comments_about: Comentarios sobre
+        see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
           other: "%{count} comentarios"
@@ -67,7 +66,7 @@ es:
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:
-          empty: No hay nada publicado todavía
+        empty: No hay nada publicado todavía
       process:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso
@@ -86,7 +85,6 @@ es:
           leave_comment: Deja tu respuesta
       question:
         comments:
-          zero: Sin comentarios
           one: "%{count} comentario"
           other: "%{count} comentarios"
         debate: Debate

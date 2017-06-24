@@ -1,4 +1,3 @@
----
 es:
   account:
     show:
@@ -45,12 +44,10 @@ es:
       responses:
         one: 1 Respuesta
         other: "%{count} Respuestas"
-        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         one: 1 voto
         other: "%{count} votos"
-        zero: Sin votos
     form:
       comment_as_admin: Comentar como administrador
       comment_as_moderator: Comentar como moderador
@@ -76,11 +73,9 @@ es:
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
-        zero: Sin comentarios
       votes:
         one: 1 voto
         other: "%{count} votos"
-        zero: Sin votos
     edit:
       editing: Editar debate
       form:
@@ -130,7 +125,6 @@ es:
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
-        zero: Sin comentarios
       comments_title: Comentarios
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
@@ -173,7 +167,7 @@ es:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       consul: aplicación Consul
-      consul_url: https://github.com/consul/consul
+      consul_url: 'https://github.com/consul/consul'
       contact_us: Para asistencia técnica entra en
       copyright: Consul, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
@@ -181,13 +175,13 @@ es:
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
       open_data_title: Datos Abiertos
       open_source: software libre
-      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      open_source_url: 'http://www.gnu.org/licenses/agpl-3.0.html'
       participation_text: Decide cómo debe ser la ciudad que quieres.
       participation_title: Participación
       privacy: Política de privacidad
       transparency_text: Obtén cualquier información sobre la ciudad.
       transparency_title: Transparencia
-      transparency_url: https://transparency.consul
+      transparency_url: 'https://transparency.consul'
     header:
       administration: Administrar
       available_locales: Idiomas disponibles
@@ -195,9 +189,9 @@ es:
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
-      external_link_opendata_url: https://opendata.consul
+      external_link_opendata_url: 'https://opendata.consul'
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparency.consul
+      external_link_transparency_url: 'https://transparency.consul'
       locale: 'Idioma:'
       logo: Consul logo
       management: Gestión
@@ -211,7 +205,7 @@ es:
       new_notifications:
         one: Tienes una nueva notificación
         other: Tienes %{count} notificaciones nuevas
-      no_notifications: No tienes notificaciones nuevas
+      no_notifications: "No tienes notificaciones nuevas"
       open: abierto
       open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras.
@@ -220,7 +214,7 @@ es:
       poll_questions: Votaciones
       see_all: Ver propuestas
       budgets: Presupuestos participativos
-      spending_proposals: "Propuestas de inversión"
+      spending_proposals: Propuestas de inversión
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
   legacy_legislation:
@@ -229,7 +223,7 @@ es:
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
+      title: '¿Cómo puedo comentar este documento?'
   locale: Español
   notifications:
     index:
@@ -248,7 +242,7 @@ es:
   map:
     title: "Distritos"
     proposal_for_district: "Crea una propuesta para tu distrito"
-    select_district: "Ámbito de actuación"
+    select_district: Ámbito de actuación
     start_proposal: Crea una propuesta
   omniauth:
     facebook:
@@ -256,7 +250,8 @@ es:
       sign_up: Regístrate con Facebook
       name: Facebook
     finish_signup:
-      title: Añade tu email
+      title: "Detalles adicionales de tu cuenta"
+      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
     google_oauth2:
       sign_in: Entra con Google
       sign_up: Regístrate con Google
@@ -268,9 +263,6 @@ es:
     info_sign_in: "Entra con:"
     info_sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
-    finish_signup:
-      title: "Detalles adicionales de tu cuenta"
-      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
   proposals:
     create:
       form:
@@ -295,7 +287,7 @@ es:
       done: Realizada
       other: Otra
     form:
-      geozone: "Ámbito de actuación"
+      geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
       proposal_question: Pregunta de la propuesta
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
@@ -307,9 +299,9 @@ es:
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+      tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Temas
-      tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_proposals: Destacadas
@@ -340,7 +332,7 @@ es:
         one: " que contiene <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
-      select_order_long: Estas viendo las propuestas
+      select_order_long: 'Estas viendo las propuestas'
       start_proposal: Crea una propuesta
       title: Propuestas ciudadanas
       top: Top semanal
@@ -348,7 +340,7 @@ es:
     new:
       form:
         submit_button: Crear propuesta
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      more_info: '¿Cómo funcionan las propuestas ciudadanas?'
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -361,21 +353,19 @@ es:
       share:
         guide: "Compártela para que la gente empieze a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
-        view_proposal: "Ahora no, ir a mi propuesta"
+        view_proposal: Ahora no, ir a mi propuesta
       improve_info: "Mejora tu campaña y consigue más apoyos"
       improve_info_link: "Ver más información"
-      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
+      already_supported: '¡Ya has apoyado esta propuesta, compártela!'
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
-        zero: Sin comentarios
       reason_for_supports_necessary: 1% del Censo
       support: Apoyar
       support_title: Apoyar esta propuesta
       supports:
         one: 1 apoyo
         other: "%{count} apoyos"
-        zero: Sin apoyos
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
@@ -387,7 +377,6 @@ es:
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
-        zero: Sin comentarios
       comments_tab: Comentarios
       edit_proposal_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
@@ -396,8 +385,8 @@ es:
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
-      send_notification: Enviar notificación
       share: Compartir
+      send_notification: Enviar notificación
       no_notifications: "Esta propuesta no tiene notificaciones."
       embed_video_title: "Vídeo en %{proposal}"
     update:
@@ -419,7 +408,7 @@ es:
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
-      geozone_info: "Pueden participar las personas empadronadas en: "
+      geozone_info: 'Pueden participar las personas empadronadas en: '
       can_answer: "¡Puedes participar en esta votación!"
       cant_answer: "Esta votación no está disponible en tu zona"
       cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
@@ -467,7 +456,7 @@ es:
   shared:
     edit: 'Editar'
     save: 'Guardar'
-    delete: 'Borrar'
+    delete: Borrar
     comments:
       title: 'Comentarios'
       login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
@@ -491,7 +480,6 @@ es:
       search: 'Filtrar'
       title: 'Búsqueda avanzada'
       to: 'Hasta'
-    delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
@@ -552,7 +540,7 @@ es:
       association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
-      geozone: "Ámbito de actuación"
+      geozone: Ámbito de actuación
       submit_buttons:
         create: Crear
         new: Crear
@@ -560,7 +548,7 @@ es:
     index:
       title: Presupuestos participativos
       unfeasible: Propuestas de inversión no viables
-      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
+      by_geozone: 'Propuestas de inversión con ámbito: %{geozone}'
       search_form:
         button: Buscar
         placeholder: Propuestas de inversión...
@@ -574,7 +562,7 @@ es:
         unfeasible: No viables
       start_spending_proposal: Crea una propuesta de inversión
     new:
-      more_info: "¿Cómo funcionan los presupuestos participativos?"
+      more_info: '¿Cómo funcionan los presupuestos participativos?'
       recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
@@ -593,7 +581,6 @@ es:
       supports:
         one: 1 apoyo
         other: "%{count} apoyos"
-        zero: Sin apoyos
   stats:
     index:
       visits: Visitas
@@ -613,11 +600,11 @@ es:
   users:
     direct_messages:
       new:
-        body_label: "Mensaje"
+        body_label: Mensaje
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
-        submit_button: "Enviar mensaje"
+        submit_button: Enviar mensaje
         title: Enviar mensaje privado a %{receiver}
-        title_label: "Título"
+        title_label: Título
         verified_only: Para enviar un mensaje privado %{verify_account}
         verify_account: verifica tu cuenta
         authenticate: Necesitas %{signin} o %{signup}.
@@ -692,7 +679,7 @@ es:
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: ¿Tienes ya una cuenta en %{org_name}?
+      question: '¿Tienes ya una cuenta en %{org_name}?'
       title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ver propuestas
