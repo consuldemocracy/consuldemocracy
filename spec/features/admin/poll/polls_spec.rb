@@ -248,18 +248,21 @@ feature 'Admin polls' do
         booth_assignment_recounted = create(:poll_booth_assignment, poll: poll)
         booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
 
-        3.times { |i| create(:poll_recount,
-                         booth_assignment: booth_assignment,
-                         date: poll.starts_at + i.days,
-                         count: 33) }
+        3.times do |i|
+          create(:poll_recount,
+                 booth_assignment: booth_assignment,
+                 date: poll.starts_at + i.days,
+                 count: 33)
+        end
 
-        3.times { |i| create(:poll_final_recount,
-                         booth_assignment: booth_assignment,
-                         date: poll.starts_at + i.days,
-                         count: 21) }
+        3.times do |i|
+          create(:poll_final_recount,
+                 booth_assignment: booth_assignment,
+                 date: poll.starts_at + i.days,
+                 count: 21)
+        end
 
-        2.times { create(:poll_voter,
-                  booth_assignment: booth_assignment_final_recounted) }
+        2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
 
         create(:poll_recount,
                booth_assignment: booth_assignment_recounted,

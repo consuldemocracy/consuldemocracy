@@ -3,11 +3,14 @@ class User < ActiveRecord::Base
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable
+         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
+         authentication_keys: [:login]
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+
+  include Graphqlable
 
   has_one :administrator
   has_one :moderator
@@ -27,6 +30,7 @@ class User < ActiveRecord::Base
   has_many :notifications
   has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
   has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
+  has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
@@ -38,25 +42,25 @@ class User < ActiveRecord::Base
   validates :official_level, inclusion: {in: 0..5}
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s),
-                                 allow_nil: true}
-
   validates_associated :organization, message: false
 
   accepts_nested_attributes_for :organization, update_only: true
 
   attr_accessor :skip_password_validation
   attr_accessor :use_redeemable_code
+  attr_accessor :login
 
   scope :administrators, -> { joins(:administrators) }
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
+  scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
+  scope :public_for_api, -> { all }
 
   before_validation :clean_document_number
 
@@ -152,7 +156,7 @@ class User < ActiveRecord::Base
 
   def has_official_email?
     domain = Setting['email_domain_for_officials']
-    !email.blank? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+    email.present? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
   end
 
   def display_official_position_badge?
@@ -240,7 +244,7 @@ class User < ActiveRecord::Base
   end
 
   def email_required?
-    !erased?
+    !erased? && unverified?
   end
 
   def locale
@@ -284,10 +288,30 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
+  def public_proposals
+    public_activity? ? proposals : User.none
+  end
+
+  def public_debates
+    public_activity? ? debates : User.none
+  end
+
+  def public_comments
+    public_activity? ? comments : User.none
+  end
+
+  # overwritting of Devise method to allow login using email OR username
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    login = conditions.delete(:login)
+    where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
+    where(conditions.to_hash).where(["username = ?", login]).first
+  end
+
   private
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
     end
 
     def validate_username_length

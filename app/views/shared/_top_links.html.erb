@@ -6,13 +6,15 @@
     <%= link_to t("layouts.header.external_link_transparency"),
                 setting['transparency_url'].presence || t("layouts.header.external_link_transparency_url"),
                 target: "_blank",
-                title: t('shared.target_blank_html') %>
+                rel: "nofollow",
+                title: t("shared.go_to_page") + t("layouts.header.external_link_transparency") + t('shared.target_blank_html') %>
   </li>
   <li>
     <%= link_to t("layouts.header.external_link_opendata"),
                 setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"),
                 target: "_blank",
-                title: t('shared.target_blank_html') %>
+                rel: "nofollow",
+                title: t("shared.go_to_page") + t("layouts.header.external_link_opendata") + t('shared.target_blank_html') %>
   </li>
 <% 
 =end %>
@@ -22,7 +24,8 @@
       <%= link_to t("layouts.header.external_link_blog"),
                   setting['blog_url'],
                   target: "_blank",
-                  title: t('shared.target_blank_html') %>
+                  rel: "nofollow",
+                  title: t("shared.go_to_page") + t("layouts.header.external_link_blog") + t('shared.target_blank_html') %>
     </li>
   <% end %>
 

@@ -8,6 +8,8 @@ feature 'Moderate debates' do
     login_as(moderator.user)
 
     expect{ visit moderation_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.debates'] = true
   end
 
   scenario 'Hide', :js do
@@ -91,8 +93,6 @@ feature 'Moderate debates' do
       end
 
       scenario "select all/none", :js do
-        Capybara.current_driver = :poltergeist_no_js_errors
-
         create_list(:debate, 2)
 
         visit moderation_debates_path

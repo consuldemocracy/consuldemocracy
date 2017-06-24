@@ -7,14 +7,14 @@
 // --------
 
 @mixin logo {
-  color: white;
+  color: #fff;
   display: inline-block;
   font-family: 'Lato' !important;
   font-size: rem-calc(24);
   font-weight: lighter;
 
   @include breakpoint(medium) {
-    line-height: $line-height*2;
+    line-height: $line-height * 2;
     margin-top: 0;
   }
 
@@ -24,7 +24,7 @@
 
     @include breakpoint(medium) {
       height: 80px;
-      margin-right: $line-height/2;
+      margin-right: $line-height / 2;
       margin-top: 0;
       width: 80px;
     }

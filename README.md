@@ -8,6 +8,7 @@ Citizen Participation and Open Government Application
 [![Code Climate](https://codeclimate.com/github/consul/consul/badges/gpa.svg)](https://codeclimate.com/github/consul/consul)
 [![Dependency Status](https://gemnasium.com/consul/consul.svg)](https://gemnasium.com/consul/consul)
 [![Coverage Status](https://coveralls.io/repos/github/consul/consul/badge.svg?branch=master)](https://coveralls.io/github/consul/consul?branch=master)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://crowdin.com/project/consul)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 [![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
@@ -19,7 +20,7 @@ This is the opensource code repository of the eParticipation website originally 
 
 ## Current state
 
-Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in the [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues).
+Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in [features]( http://www.decide.es/en/) or [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues). For current status on upcoming features go to [Roadmap](https://github.com/consul/consul/projects/6)
 
 ## Tech stack
 
@@ -45,9 +46,9 @@ RAILS_ENV=test rake db:setup
 ```
 
 Run the app locally:
+
 ```
 bin/rails s
-
 ```
 
 Prerequisites for testing: install PhantomJS >= 1.9.8
@@ -56,6 +57,18 @@ Run the tests with:
 
 ```
 bin/rspec
+```
+
+If you add SCSS code you can check it with:
+
+```
+scss-lint
+```
+
+If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
+
+```
+coffeelint .
 ```
 
 You can use the default admin user from the seeds file:
@@ -70,7 +83,10 @@ But for some actions like voting, you will need a verified user, the seeds file 
 
 ### Customization
 
-See [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
+Read more on documentation:
+
+* English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
+* Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
 
 ### OAuth
 

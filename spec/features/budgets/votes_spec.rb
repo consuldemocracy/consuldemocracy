@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Votes' do
 
   background do
-    @manuela = create(:user, verified_at: Time.now)
+    @manuela = create(:user, verified_at: Time.current)
   end
 
   feature 'Investments' do

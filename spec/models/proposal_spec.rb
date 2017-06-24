@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Proposal do
   let(:proposal) { build(:proposal) }
 
+  it_behaves_like "has_public_author"
+
   it "should be valid" do
     expect(proposal).to be_valid
   end
@@ -97,7 +99,7 @@ describe Proposal do
 
       expect(proposal).to be_valid
       proposal.responsible_name = "12345678Z"
-    end
+     end
 
     it "should not be updated when the author is deleted" do
       author = create(:user, :level_three, document_number: "12345678Z")
@@ -138,11 +140,14 @@ describe Proposal do
     Setting["proposal_code_prefix"] = "TEST"
     proposal = create(:proposal)
     expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
+
+    Setting["proposal_code_prefix"] = "MAD"
   end
 
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
     before(:each) {Setting["max_votes_for_proposal_edit"] = 5}
+    after(:each) {Setting["max_votes_for_proposal_edit"] = 1000}
 
     it "should be true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)
@@ -837,6 +842,18 @@ describe Proposal do
 
       expect(not_archived.size).to eq(1)
       expect(not_archived.first).to eq(new_proposal)
+    end
+  end
+
+  describe 'public_for_api scope' do
+    it 'returns proposals' do
+      proposal = create(:proposal)
+      expect(Proposal.public_for_api).to include(proposal)
+    end
+
+    it 'does not return hidden proposals' do
+      proposal = create(:proposal, :hidden)
+      expect(Proposal.public_for_api).to_not include(proposal)
     end
   end
 

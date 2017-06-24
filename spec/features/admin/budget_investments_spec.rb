@@ -11,8 +11,15 @@ feature 'Admin budget investments' do
 
   context "Feature flag" do
 
-    scenario 'Disabled with a feature flag' do
+    background do
       Setting['feature.budgets'] = nil
+    end
+
+    after do
+      Setting['feature.budgets'] = true
+    end
+
+    scenario 'Disabled with a feature flag' do
       expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
@@ -21,9 +28,12 @@ feature 'Admin budget investments' do
   context "Index" do
 
     scenario 'Displaying investmentss' do
-      budget_investment = create(:budget_investment, budget: @budget)
+      budget_investment = create(:budget_investment, budget: @budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
       expect(page).to have_content(budget_investment.title)
+      expect(page).to have_content(budget_investment.heading.name)
+      expect(page).to have_content(budget_investment.id)
+      expect(page).to have_content(budget_investment.total_votes)
     end
 
     scenario 'Displaying assignments info' do
@@ -453,6 +463,7 @@ feature 'Admin budget investments' do
     let!(:feasible_bi)    { create(:budget_investment, :feasible, budget: @budget, title: "Feasible project") }
     let!(:feasible_vf_bi) { create(:budget_investment, :feasible, :finished, budget: @budget, title: "Feasible, VF project") }
     let!(:selected_bi)    { create(:budget_investment, :selected, budget: @budget, title: "Selected project") }
+    let!(:winner_bi)      { create(:budget_investment, :winner, budget: @budget, title: "Winner project") }
 
     scenario "Filtering by valuation and selection" do
       visit admin_budget_budget_investments_path(@budget)
@@ -462,18 +473,28 @@ feature 'Admin budget investments' do
       expect(page).to_not have_content(feasible_bi.title)
       expect(page).to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
+      expect(page).to have_content(winner_bi.title)
 
       within('#filter-subnav') { click_link 'Val. fin. Feasible' }
       expect(page).to_not have_content(unfeasible_bi.title)
       expect(page).to_not have_content(feasible_bi.title)
       expect(page).to have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
+      expect(page).to have_content(winner_bi.title)
 
       within('#filter-subnav') { click_link 'Selected' }
       expect(page).to_not have_content(unfeasible_bi.title)
       expect(page).to_not have_content(feasible_bi.title)
       expect(page).to_not have_content(feasible_vf_bi.title)
       expect(page).to have_content(selected_bi.title)
+      expect(page).to have_content(winner_bi.title)
+
+      within('#filter-subnav') { click_link 'Winners' }
+      expect(page).to_not have_content(unfeasible_bi.title)
+      expect(page).to_not have_content(feasible_bi.title)
+      expect(page).to_not have_content(feasible_vf_bi.title)
+      expect(page).to_not have_content(selected_bi.title)
+      expect(page).to have_content(winner_bi.title)
     end
 
     scenario "Showing the selection buttons", :js do
@@ -522,14 +543,14 @@ feature 'Admin budget investments' do
       visit admin_budget_budget_investments_path(@budget)
       within('#filter-subnav') { click_link 'Selected' }
 
-      expect(page).to have_content('There is 1 investment')
+      expect(page).to have_content('There are 2 investments')
 
       within("#budget_investment_#{selected_bi.id}") do
         click_link('Selected')
       end
 
       expect(page).to_not have_content(selected_bi.title)
-      expect(page).to have_content('investments cannot be found')
+      expect(page).to have_content('There is 1 investment')
 
       within('#filter-subnav') { click_link 'All' }
 

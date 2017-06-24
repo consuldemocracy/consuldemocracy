@@ -2,7 +2,7 @@ class Budget
   class Ballot
     class Line < ActiveRecord::Base
       belongs_to :ballot
-      belongs_to :investment
+      belongs_to :investment, counter_cache: :ballot_lines_count
       belongs_to :heading
       belongs_to :group
       belongs_to :budget
@@ -12,6 +12,8 @@ class Budget
       validate :check_selected
       validate :check_sufficient_funds
       validate :check_valid_heading
+
+      scope :by_investment, ->(investment_id) { where(investment_id: investment_id) }
 
       before_validation :set_denormalized_ids
 

@@ -9,7 +9,7 @@ class Budget
     has_many :headings, -> { uniq }, through: :groups
 
     def add_investment(investment)
-      lines.create!(investment: investment)
+      lines.create(investment: investment).persisted?
     end
 
     def total_amount_spent
@@ -66,7 +66,8 @@ class Budget
     end
 
     def heading_for_group(group)
-      self.headings.where(group: group).first
+      return nil unless has_lines_in_group?(group)
+      self.investments.where(group: group).first.heading
     end
 
   end

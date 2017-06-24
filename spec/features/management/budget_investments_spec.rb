@@ -4,7 +4,7 @@ feature 'Budget Investments' do
 
   background do
     login_as_manager
-    @budget = create(:budget, phase: 'selecting', name: "2016")
+    @budget = create(:budget, phase: 'selecting', name: "2033")
     @group = create(:budget_group, budget: @budget, name: 'Whole city')
     @heading = create(:budget_heading, group: @group, name: "Health")
   end
@@ -33,18 +33,21 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_title', with: 'Build a park in my neighborhood'
       fill_in 'budget_investment_description', with: 'There is no parks here...'
       fill_in 'budget_investment_external_url', with: 'http://moarparks.com'
-      check 'budget_investment_terms_of_service'
+      fill_in 'budget_investment_location', with: 'City center'
+      fill_in 'budget_investment_organization_name', with: 'T.I.A.'
+      fill_in 'budget_investment_tag_list', with: 'green'
 
       click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully.'
 
-      expect(page).to have_content '2017'
-      #expect(page).to have_content 'Whole city'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
       expect(page).to have_content 'http://moarparks.com'
+      expect(page).to have_content 'City center'
+      expect(page).to have_content 'T.I.A.'
+      expect(page).to have_content 'green'
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(@budget.created_at.to_date)
     end

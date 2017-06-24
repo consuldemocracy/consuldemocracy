@@ -1,9 +1,7 @@
-<h3 id="other" data-magellan-target="other">Otra información de interés</h3>
+<h3 id="other" data-magellan-target="other"><%= t("pages.more_info.other.title") %></h3>
 
 <ul class="features">
-  <li><%= link_to t("pages.more_info.other.how_to_use", org_name: setting['org_name']), faq_path %></li>
-  <li><%= link_to t("pages.more_info.other.facts"), participation_facts_path %></li>
-  <li><%= link_to t("pages.more_info.other.world"), participation_world_path %></li>
+  <li><%= link_to t("pages.more_info.other.how_to_use", org_name: setting['org_name']), how_to_use_path %></li>
 
   <% SiteCustomization::Page.with_more_info_flag.each do |custom_page| %>
     <li><%= link_to custom_page.title, page_path(custom_page.slug) %></li>

@@ -6,37 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 3
-Lint/AmbiguousRegexpLiteral:
-  Exclude:
-    - 'app/helpers/verification_helper.rb'
-    - 'spec/features/verification/residence_spec.rb'
-
-# Offense count: 3
-# Configuration parameters: AllowSafeAssignment.
-Lint/AssignmentInCondition:
-  Exclude:
-    - 'app/controllers/management/sessions_controller.rb'
-    - 'app/models/notification.rb'
-    - 'lib/capistrano/template.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AlignWith, SupportedStyles.
-# SupportedStyles: either, start_of_block, start_of_line
-Lint/BlockAlignment:
-  Exclude:
-    - 'spec/features/tracks_spec.rb'
-    - 'spec/models/proposal_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AlignWith, SupportedStyles, AutoCorrect.
-# SupportedStyles: start_of_line, def
-Lint/DefEndAlignment:
-  Exclude:
-    - 'app/controllers/comments_controller.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
@@ -45,11 +14,6 @@ Lint/InheritException:
   Exclude:
     - 'app/controllers/concerns/feature_flags.rb'
 
-# Offense count: 7
-Lint/NestedMethodDefinition:
-  Exclude:
-    - 'lib/acts_as_paranoid_aliases.rb'
-
 # Offense count: 13
 Lint/ParenthesesAsGroupedExpression:
   Exclude:
@@ -57,11 +21,6 @@ Lint/ParenthesesAsGroupedExpression:
     - 'spec/features/debates_spec.rb'
     - 'spec/features/proposals_spec.rb'
     - 'spec/models/debate_spec.rb'
-
-# Offense count: 1
-Lint/UnderscorePrefixedVariableName:
-  Exclude:
-    - 'lib/manager_authenticator.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -119,12 +78,6 @@ Metrics/ModuleLength:
 # Offense count: 3
 Metrics/PerceivedComplexity:
   Max: 11
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Performance/RedundantBlockCall:
-  Exclude:
-    - 'app/mailers/mailer.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -194,14 +147,6 @@ Rails/PluralizationGrammar:
     - 'spec/features/proposals_spec.rb'
     - 'spec/models/residence_spec.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: referer, referrer
-Rails/RequestReferer:
-  Exclude:
-    - 'app/controllers/users/sessions_controller.rb'
-
 # Offense count: 11
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: strict, flexible
@@ -235,7 +180,7 @@ Style/AccessorMethodName:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle, SupportedLastArgumentHashStyles.
 # SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
-Style/AlignHash:
+Layout/AlignHash:
   Exclude:
     - 'spec/features/admin/banners_spec.rb'
 
@@ -243,7 +188,7 @@ Style/AlignHash:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
 # SupportedStyles: with_first_parameter, with_fixed_indentation
-Style/AlignParameters:
+Layout/AlignParameters:
   Exclude:
     - 'app/helpers/search_helper.rb'
     - 'app/models/verification/management/email.rb'
@@ -257,28 +202,9 @@ Style/AlignParameters:
     - 'spec/models/user_spec.rb'
     - 'spec/rails_helper.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: always, conditionals
-Style/AndOr:
-  Exclude:
-    - 'app/helpers/embed_videos_helper.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ProceduralMethods, FunctionalMethods, IgnoredMethods.
-# SupportedStyles: line_count_based, semantic, braces_for_chaining
-# ProceduralMethods: benchmark, bm, bmbm, create, each_with_object, measure, new, realtime, tap, with_object
-# FunctionalMethods: let, let!, subject, watch
-# IgnoredMethods: lambda, proc, it
-Style/BlockDelimiters:
-  Exclude:
-    - 'spec/features/users_auth_spec.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/BlockEndNewline:
+Layout/BlockEndNewline:
   Exclude:
     - 'app/models/banner.rb'
     - 'spec/features/users_auth_spec.rb'
@@ -314,7 +240,7 @@ Style/ClassVars:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/ClosingParenthesisIndentation:
+Layout/ClosingParenthesisIndentation:
   Exclude:
     - 'spec/rails_helper.rb'
 
@@ -333,7 +259,7 @@ Style/ConditionalAssignment:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: leading, trailing
-Style/DotPosition:
+Layout/DotPosition:
   Exclude:
     - 'app/models/banner.rb'
     - 'app/models/tag_cloud.rb'
@@ -352,7 +278,7 @@ Style/EmptyCaseCondition:
 
 # Offense count: 9
 # Cop supports --auto-correct.
-Style/EmptyLines:
+Layout/EmptyLines:
   Exclude:
     - 'app/models/concerns/search_cache.rb'
     - 'app/models/notification.rb'
@@ -366,21 +292,21 @@ Style/EmptyLines:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/EmptyLinesAroundAccessModifier:
+Layout/EmptyLinesAroundAccessModifier:
   Exclude:
     - 'app/controllers/users_controller.rb'
 
 # Offense count: 29
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Enabled: false
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
 # SupportedStyles: consistent, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   Exclude:
     - 'app/controllers/users_controller.rb'
 
@@ -414,21 +340,21 @@ Style/IfUnlessModifier:
 # Cop supports --auto-correct.
 # Configuration parameters: SupportedStyles, IndentationWidth.
 # SupportedStyles: special_inside_parentheses, consistent, align_brackets
-Style/IndentArray:
+Layout/IndentArray:
   EnforcedStyle: consistent
 
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: SupportedStyles, IndentationWidth.
 # SupportedStyles: special_inside_parentheses, consistent, align_braces
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: normal, rails
-Style/IndentationConsistency:
+Layout/IndentationConsistency:
   Exclude:
     - 'spec/features/tracks_spec.rb'
     - 'spec/models/proposal_spec.rb'
@@ -436,7 +362,7 @@ Style/IndentationConsistency:
 # Offense count: 11
 # Cop supports --auto-correct.
 # Configuration parameters: Width.
-Style/IndentationWidth:
+Layout/IndentationWidth:
   Exclude:
     - 'app/controllers/annotations_controller.rb'
     - 'app/helpers/flags_helper.rb'
@@ -461,7 +387,7 @@ Style/Lambda:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Exclude:
     - 'app/controllers/management/document_verifications_controller.rb'
 
@@ -477,7 +403,7 @@ Style/MethodDefParentheses:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: symmetrical, new_line, same_line
-Style/MultilineArrayBraceLayout:
+Layout/MultilineArrayBraceLayout:
   Exclude:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
     - 'app/helpers/search_helper.rb'
@@ -489,7 +415,7 @@ Style/MultilineBlockChain:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/MultilineBlockLayout:
+Layout/MultilineBlockLayout:
   Exclude:
     - 'app/models/banner.rb'
     - 'spec/features/users_auth_spec.rb'
@@ -498,7 +424,7 @@ Style/MultilineBlockLayout:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: symmetrical, new_line, same_line
-Style/MultilineHashBraceLayout:
+Layout/MultilineHashBraceLayout:
   Exclude:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
     - 'app/models/debate.rb'
@@ -516,7 +442,7 @@ Style/MultilineIfThen:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: symmetrical, new_line, same_line
-Style/MultilineMethodCallBraceLayout:
+Layout/MultilineMethodCallBraceLayout:
   Exclude:
     - 'app/controllers/users_controller.rb'
     - 'app/models/comment.rb'
@@ -528,7 +454,7 @@ Style/MultilineMethodCallBraceLayout:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
 # SupportedStyles: aligned, indented, indented_relative_to_receiver
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   Exclude:
     - 'app/models/banner.rb'
     - 'app/models/tag_cloud.rb'
@@ -542,7 +468,7 @@ Style/MultilineMethodCallIndentation:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
 # SupportedStyles: aligned, indented
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Exclude:
     - 'app/helpers/users_helper.rb'
     - 'app/helpers/valuation_helper.rb'
@@ -683,13 +609,13 @@ Style/RescueModifier:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/SpaceAfterColon:
+Layout/SpaceAfterColon:
   Exclude:
     - 'spec/models/user_spec.rb'
 
 # Offense count: 14
 # Cop supports --auto-correct.
-Style/SpaceAfterComma:
+Layout/SpaceAfterComma:
   Exclude:
     - 'app/models/ahoy/data_source.rb'
     - 'app/models/banner.rb'
@@ -704,7 +630,7 @@ Style/SpaceAfterComma:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/SpaceAfterNot:
+Layout/SpaceAfterNot:
   Exclude:
     - 'app/models/flag.rb'
 
@@ -712,7 +638,7 @@ Style/SpaceAfterNot:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: space, no_space
-Style/SpaceAroundEqualsInParameterDefault:
+Layout/SpaceAroundEqualsInParameterDefault:
   Exclude:
     - 'app/helpers/cache_keys_helper.rb'
     - 'app/helpers/proposals_helper.rb'
@@ -733,12 +659,12 @@ Style/SpaceAroundEqualsInParameterDefault:
 # Offense count: 66
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment.
-Style/SpaceAroundOperators:
+Layout/SpaceAroundOperators:
   Enabled: false
 
 # Offense count: 6
 # Cop supports --auto-correct.
-Style/SpaceBeforeComma:
+Layout/SpaceBeforeComma:
   Exclude:
     - 'app/models/proposal.rb'
     - 'spec/controllers/management/sessions_controller_spec.rb'
@@ -747,7 +673,7 @@ Style/SpaceBeforeComma:
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment.
-Style/SpaceBeforeFirstArg:
+Layout/SpaceBeforeFirstArg:
   Exclude:
     - 'spec/factories.rb'
 
@@ -755,7 +681,7 @@ Style/SpaceBeforeFirstArg:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: require_no_space, require_space
-Style/SpaceInLambdaLiteral:
+Layout/SpaceInLambdaLiteral:
   Exclude:
     - 'app/models/concerns/filterable.rb'
     - 'app/models/spending_proposal.rb'
@@ -764,7 +690,7 @@ Style/SpaceInLambdaLiteral:
 
 # Offense count: 8
 # Cop supports --auto-correct.
-Style/SpaceInsideParens:
+Layout/SpaceInsideParens:
   Exclude:
     - 'app/models/user.rb'
     - 'lib/manager_authenticator.rb'
@@ -773,7 +699,7 @@ Style/SpaceInsideParens:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/SpaceInsidePercentLiteralDelimiters:
+Layout/SpaceInsidePercentLiteralDelimiters:
   Exclude:
     - 'app/models/activity.rb'
 
@@ -800,7 +726,7 @@ Style/SymbolProc:
 
 # Offense count: 2
 # Cop supports --auto-correct.
-Style/TrailingWhitespace:
+Layout/TrailingWhitespace:
   Exclude:
     - 'app/controllers/admin/api/stats_controller.rb'
 

@@ -42,8 +42,6 @@ input[type="submit"] { display: none !important; }
 
 .filters h2 { margin: 0 !important; font-size: 20px !important; line-height: 20px !important; width: auto !important; }
 
-.search-results h2 { margin: 0 !important; font-size: 20px !important; line-height: 20px !important; }
-
 .admin h2 { font-size: 20px !important; line-height: 20px !important; }
 
 .select-order {

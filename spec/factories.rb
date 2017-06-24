@@ -6,8 +6,9 @@ FactoryGirl.define do
     sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 
     password            'judgmentday'
-    terms_of_service     '1'
+    terms_of_service    '1'
     confirmed_at        { Time.current }
+    public_activity     true
 
     trait :incomplete_verification do
       after :create do |user|
@@ -41,6 +42,9 @@ FactoryGirl.define do
       confirmed_hide_at Time.current
     end
 
+    trait :verified do
+      verified_at Time.current
+    end
   end
 
   factory :identity do
@@ -275,12 +279,28 @@ FactoryGirl.define do
       unfeasibility_explanation "set to unfeasible on creation"
     end
 
+    trait :undecided do
+      feasibility "undecided"
+    end
+
     trait :finished do
       valuation_finished true
     end
 
     trait :selected do
       selected true
+      feasibility "feasible"
+      valuation_finished true
+
+    end
+
+    trait :winner do
+      selected
+      winner true
+    end
+
+    trait :unselected do
+      selected false
       feasibility "feasible"
       valuation_finished true
     end
@@ -294,6 +314,12 @@ FactoryGirl.define do
   factory :budget_ballot_line, class: 'Budget::Ballot::Line' do
     association :ballot, factory: :budget_ballot
     association :investment, factory: :budget_investment
+  end
+
+  factory :budget_reclassified_vote, class: 'Budget::ReclassifiedVote' do
+    user
+    association :investment, factory: :budget_investment
+    reason "unfeasible"
   end
 
   factory :vote do
@@ -338,8 +364,8 @@ FactoryGirl.define do
     end
   end
 
-  factory :legislation do
-    sequence(:title) { |n| "Legislation #{n}" }
+  factory :legacy_legislation do
+    sequence(:title) { |n| "Legacy Legislation #{n}" }
     body "In order to achieve this..."
   end
 
@@ -347,7 +373,7 @@ FactoryGirl.define do
     quote "ipsum"
     text "Loremp ipsum dolor"
     ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
-    legislation
+    legacy_legislation
     user
   end
 
@@ -372,7 +398,7 @@ FactoryGirl.define do
   end
 
   factory :poll do
-    sequence(:name) { |n| "Poll #{n}" }
+    sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
 
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
@@ -413,7 +439,7 @@ FactoryGirl.define do
   factory :poll_officer_assignment, class: 'Poll::OfficerAssignment' do
     association :officer, factory: :poll_officer
     association :booth_assignment, factory: :poll_booth_assignment
-    date Time.current.to_date
+    date Date.current
 
     trait :final do
       final true
@@ -582,6 +608,115 @@ FactoryGirl.define do
   factory :signature do
     signature_sheet
     sequence(:document_number) { |n| "#{n}A" }
+  end
+
+  factory :legislation_process, class: 'Legislation::Process' do
+    title "A collaborative legislation process"
+    description "Description of the process"
+    summary "Summary of the process"
+    start_date Date.current - 5.days
+    end_date Date.current + 5.days
+    debate_start_date Date.current - 5.days
+    debate_end_date Date.current - 2.days
+    draft_publication_date Date.current - 1.day
+    allegations_start_date Date.current
+    allegations_end_date Date.current + 3.days
+    result_publication_date Date.current + 5.days
+    debate_phase_enabled true
+    allegations_phase_enabled true
+    draft_publication_enabled true
+    result_publication_enabled true
+
+    trait :next do
+      start_date Date.current + 2.days
+      end_date Date.current + 8.days
+      debate_start_date Date.current + 2.days
+      debate_end_date Date.current + 4.days
+      draft_publication_date Date.current + 5.day
+      allegations_start_date Date.current + 5.days
+      allegations_end_date Date.current + 7.days
+      result_publication_date Date.current + 8.days
+    end
+
+    trait :past do
+      start_date Date.current - 12.days
+      end_date Date.current - 2.days
+      debate_start_date Date.current - 12.days
+      debate_end_date Date.current - 9.days
+      draft_publication_date Date.current - 8.day
+      allegations_start_date Date.current - 8.days
+      allegations_end_date Date.current - 4.days
+      result_publication_date Date.current - 2.days
+    end
+
+    trait :in_debate_phase do
+      start_date Date.current - 5.days
+      end_date Date.current + 5.days
+      debate_start_date Date.current - 5.days
+      debate_end_date Date.current + 1.days
+      draft_publication_date Date.current + 1.day
+      allegations_start_date Date.current + 2.days
+      allegations_end_date Date.current + 3.days
+      result_publication_date Date.current + 5.days
+    end
+  end
+
+  factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
+    process factory: :legislation_process
+    title "Version 1"
+    changelog "What changed in this version"
+    status "draft"
+    final_version false
+    body <<-LOREM_IPSUM
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.
+
+His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo, insolens complectitur te eos, ea pri dico munere propriae. Vel ferri facilis ut, qui paulo ridens praesent ad. Possim alterum qui cu. Accusamus consulatu ius te, cu decore soleat appareat usu.
+
+Est ei erat mucius quaeque. Ei his quas phaedrum, efficiantur mediocritatem ne sed, hinc oratio blandit ei sed. Blandit gloriatur eam et. Brute noluisse per et, verear disputando neglegentur at quo. Sea quem legere ei, unum soluta ne duo. Ludus complectitur quo te, ut vide autem homero pro.
+
+Vis id minim dicant sensibus. Pri aliquip conclusionemque ad, ad malis evertitur torquatos his. Has ei solum harum reprimique, id illum saperet tractatos his. Ei omnis soleat antiopam quo. Ad augue inani postulant mel, mel ea qualisque forensibus.
+
+Lorem salutandi eu mea, eam in soleat iriure assentior. Tamquam lobortis id qui. Ea sanctus democritum mei, per eu alterum electram adversarium. Ea vix probo dicta iuvaret, posse epicurei suavitate eam an, nam et vidit menandri. Ut his accusata petentium.
+LOREM_IPSUM
+
+    trait :published do
+      status "published"
+    end
+
+    trait :final_version do
+      final_version true
+    end
+  end
+
+  factory :legislation_annotation, class: 'Legislation::Annotation' do
+    draft_version factory: :legislation_draft_version
+    author factory: :user
+    quote "ipsum"
+    text "a comment"
+    ranges [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}]
+    range_start "/p[1]"
+    range_start_offset 6
+    range_end "/p[1]"
+    range_end_offset 11
+  end
+
+  factory :legislation_question, class: 'Legislation::Question' do
+    process factory: :legislation_process
+    title "Question text"
+    author factory: :user
+  end
+
+  factory :legislation_question_option, class: 'Legislation::QuestionOption' do
+    question factory: :legislation_question
+    sequence(:value) { |n| "Option #{n}" }
+  end
+
+  factory :legislation_answer, class: 'Legislation::Answer' do
+    question factory: :legislation_question
+    question_option factory: :legislation_question_option
+    user
   end
 
   factory :site_customization_page, class: 'SiteCustomization::Page' do

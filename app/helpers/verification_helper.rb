@@ -7,12 +7,12 @@ module VerificationHelper
   end
 
   def mask_phone(number)
-    match = number.match /\d{3}$/
+    match = number.match(/\d{3}$/)
     "******#{match}"
   end
 
   def mask_email(string)
-    match = string.match /^(\w{1,3})(.*)@(.*)/
+    match = string.match(/^(\w{1,3})(.*)@(.*)/)
 
     data_to_display = match[1]
     data_to_mask    = match[2]

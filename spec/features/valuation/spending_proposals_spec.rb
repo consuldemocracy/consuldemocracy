@@ -3,10 +3,15 @@ require 'rails_helper'
 feature 'Valuation spending proposals' do
 
   background do
-    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposals'] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
     @valuator = create(:valuator, user: create(:user, username: 'Rachel', email: 'rachel@valuators.org'))
     login_as(@valuator.user)
+  end
+
+  after do
+    Setting['feature.spending_proposals'] = nil
+    Setting['feature.spending_proposal_features.voting_allowed'] = nil
   end
 
   scenario 'Disabled with a feature flag' do
@@ -83,8 +88,6 @@ feature 'Valuation spending proposals' do
   end
 
   scenario "Index filtering by geozone", :js do
-    Capybara.current_driver = :poltergeist_no_js_errors
-
     geozone = create(:geozone, name: "District 9")
     spending_proposal1 = create(:spending_proposal, title: "Realocate visitors", geozone: geozone)
     spending_proposal2 = create(:spending_proposal, title: "Destroy the city")

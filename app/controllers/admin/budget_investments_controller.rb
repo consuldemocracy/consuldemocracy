@@ -3,7 +3,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   feature_flag :budgets
 
   has_filters(%w{valuation_open without_admin managed valuating valuation_finished
-                 valuation_finished_feasible selected all},
+                 valuation_finished_feasible selected winners all},
               only: [:index, :toggle_selection])
 
   before_action :load_budget

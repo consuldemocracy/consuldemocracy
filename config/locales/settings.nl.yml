@@ -1,0 +1,45 @@
+nl:
+  settings:
+    comments_body_max_length: "Comments body max length"
+    official_level_1_name: "Level 1 public official"
+    official_level_2_name: "Level 2 public official"
+    official_level_3_name: "Level 3 public official"
+    official_level_4_name: "Level 4 public official"
+    official_level_5_name: "Level 5 public official"
+    max_ratio_anon_votes_on_debates: "Maximum ratio of anonymous votes per Debate"
+    max_votes_for_proposal_edit: "Number of votes from which a Proposal can no longer be edited"
+    max_votes_for_debate_edit: "Number of votes from which a Debate can no longer be edited"
+    proposal_code_prefix: "Prefix for Proposal codes"
+    votes_for_proposal_success: "Number of votes necessary for approval of a Proposal"
+    months_to_archive_proposals: "Months to archive Proposals"
+    email_domain_for_officials: "Email domain for public officials"
+    per_page_code_head: "Code to be included on every page (<head>)"
+    per_page_code_body: "Code to be included on every page (<body>)"
+    twitter_handle: "Twitter handle"
+    twitter_hashtag: "Twitter hashtag"
+    facebook_handle: "Facebook handle"
+    youtube_handle: "Youtube handle"
+    telegram_handle: "Telegram handle"
+    blog_url: "Blog URL"
+    transparency_url: "Transparency URL"
+    opendata_url: "Open Data URL"
+    url: "Main URL"
+    org_name: "Organization"
+    place_name: "Place"
+    feature:
+      budgets: Participatory budgeting
+      twitter_login: Twitter login
+      facebook_login: Facebook login
+      google_login: Google login
+      debates: Debates
+      polls: Polls
+      signature_sheets: Signature sheets
+      spending_proposals: Investment projects
+      spending_proposal_features:
+        voting_allowed: Voting on investment projects
+    mailer_from_name: Origin email name
+    mailer_from_address: Origin email address
+    meta_description: "Site description (SEO)"
+    meta_keywords: "Keywords (SEO)"
+    verification_offices_url: Verification offices URL
+    min_age_to_participate: Minimum age needed to participate

@@ -1,0 +1,24 @@
+if ($(".comment").length == 0) {
+  $("#comments-box").append("<%= j render('comments_box', annotation: @annotation) %>").show();
+} else {
+  $("#comments-box #comments").append("<%= j render('comments', annotation: @annotation) %>");
+
+  var current_annotation_link = $("#annotation-link a").attr("href")
+  var sub_annotation_ids = current_annotation_link.split('=')[1];
+  if (sub_annotation_ids.length == 0) {
+    var new_annotation_link = current_annotation_link + <%= "#{@annotation.id}" %>
+  }
+  else {
+    var new_annotation_link = current_annotation_link + "," + <%= "#{@annotation.id}" %>
+  }
+
+  $("#annotation-link a").attr("href", new_annotation_link)
+
+  var current_comment_text = $(".comment-number").text()
+  var current_comment_count = current_comment_text.match(/\d+/)[0]
+  var new_comment_count = parseInt(current_comment_count) + parseInt(<%= @annotation.comments.roots.count %>)
+  var new_comment_count_text = current_comment_text.replace(/(\d+)/, new_comment_count);
+  $(".comment-number").text(new_comment_count_text)
+}
+
+<%= render 'comments_box_form', comment: @comment, annotation: @annotation %>
