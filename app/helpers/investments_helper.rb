@@ -1,5 +1,9 @@
 module InvestmentsHelper
 
+  def investment_image_full_url(investment, version)
+    URI(request.url) + investment.image.url(version)
+  end
+
   def investment_image_file_name(investment)
     investment.image.url.split('/').last.split("?")[0] if investment.image.present?
   end
