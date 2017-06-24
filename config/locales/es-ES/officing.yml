@@ -1,103 +1,103 @@
 ---
-es-ES:
+en-EN:
   officing:
     header:
-      title: Votaciones
+      title: Polling
     dashboard:
       index:
-        title: Presidir mesa de votaciones
-        info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+        title: Poll officing
+        info: Here you can validate user documents and store voting results
     menu:
-      voters: "Validar documento y votar"
-      recounts: "Recuento diario"
-      final_recounts: "Recuento final y escrutinio"
+      voters: Validate document
+      recounts: Store recount
+      final_recounts: Final recounts and results
     polls:
       index:
-        title: "Listado de votaciones"
-        no_polls: "No eres presidente de mesa en ninguna votación activa"
-        select_poll: "Selecciona votación"
-        add_recount: "Añadir recuento"
+        title: Poll list
+        no_polls: You are not officing in any active poll
+        select_poll: Select poll
+        add_recount: Add recount
       final:
-        title: "Listado de votaciones finalizadas"
-        no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
-        select_poll: "Selecciona votación"
-        add_recount: "Añadir recuentos finales"
-        add_results: "Añadir resultados"
+        title: Polls ready for final recounting
+        no_polls: You are not officing final recounts in any active poll
+        select_poll: Select poll
+        add_recount: Add final recount
+        add_results: Add results
     recounts:
       flash:
-        create: "Datos añadidos"
-        error_create: "Recuento NO añadido. Error en los datos"
+        create: "Data added"
+        error_create: "Count NOT added. Error in data."
       new:
-        title: "%{poll} - Añadir recuento diario"
-        not_allowed: "No eres presidente de mesa en esta votación"
-        booth_date: "Fecha y urna"
-        select_booth_date: "Elige fecha y urna"
-        count: "Número de votos"
-        count_placeholder: "Número de votos"
-        submit: "Guardar"
-        recount_list: "Tus recuentos"
-        booth: "Urna"
-        date: "Fecha"
+        title: "%{poll} - Add daily recount"
+        not_allowed: "You are not a poll officer for this poll"
+        booth_date: "Booth and date"
+        select_booth_date: "Select booth and date"
+        count: "Vote count"
+        count_placeholder: "Vote count"
+        submit: Save
+        recount_list: "Your recounts"
+        booth: "Booth"
+        date: "Date"
     final_recounts:
       flash:
-        create: "Datos añadidos"
-        error_create: "Recuento final NO añadido. Error en los datos"
+        create: "Data added"
+        error_create: "Final counts NOT added. Error in data."
       new:
-        title: "%{poll} - Añadir recuento final"
-        not_allowed: "No tienes permiso para introducir recountos finales"
-        booth: "Urna"
-        date: "Día"
-        select_booth: "Elige urna"
-        select_date: "Elige día"
-        count: "Recuento final"
-        count_placeholder: "Número final de votos"
-        submit: "Guardar"
-        final_recount_list: "Tus recuentos finales"
-        system_count: "Recuento del sistema"
-        add_results: "Añadir resultados"
+        title: "%{poll} - Add final recount"
+        not_allowed: "You are allowed to add final recounts for this poll"
+        booth: "Booth"
+        date: "Date"
+        select_booth: "Select booth"
+        select_date: "Select date"
+        count: "Final vote count"
+        count_placeholder: "Final vote count"
+        submit: Save
+        final_recount_list: "Your final recounts"
+        system_count: "System recount"
+        add_results: "Add results"
     results:
       flash:
-        create: "Datos guardados"
-        error_create: "Resultados NO añadidos. Error en los datos"
-        error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
-        error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
+        create: "Results saved"
+        error_create: "Results NOT saved. Error in data."
+        error_wrong_booth: "Wrong booth. Results NOT saved."
+        error_wrong_date: "Wrong date. Results NOT saved."
       new:
-        title: "%{poll} - Añadir resultados"
-        not_allowed: "No tienes permiso para introducir resultados"
-        booth: "Urna"
-        date: "Día"
-        select_booth: "Elige urna"
-        select_date: "Elige día"
-        ballots_white: "Papeletas en blanco"
-        ballots_null: "Papeletas nulas"
-        submit: "Guardar"
-        results_list: "Tus resultados"
-        see_results: "Ver resultados"
+        title: "%{poll} - Add results"
+        not_allowed: "You are allowed to add results for this poll"
+        booth: "Booth"
+        date: "Date"
+        select_booth: "Select booth"
+        select_date: "Select date"
+        ballots_white: "Blank ballots"
+        ballots_null: "Invalid ballots"
+        submit: "Save"
+        results_list: "Your results"
+        see_results: "See results"
       index:
-        no_results: "No hay resultados"
-        results: "Resultados"
-        table_answer: Respuesta
-        table_votes: Votos
-        table_whites: Papeletas en blanco
-        table_nulls: Papeletas nulas
+        no_results: "No results"
+        results: Results
+        table_answer: Answer
+        table_votes: Votes
+        table_whites: "Blank ballots"
+        table_nulls: "Invalid ballots"
     residence:
       flash:
-        create: "Documento verificado con el Padrón"
-        not_allowed: "Hoy no tienes turno de presidente de mesa"
+        create: "Document verified with Census"
+        not_allowed: "You don't have officing shifts today"
       new:
-        title: Validar documento
-        document_number: "Número de documento (incluida letra)"
-        submit: Validar documento
-        error_verifying_census: El Padrón no pudo verificar este documento.
-        form_errors: evitaron verificar este documento
-        no_assignments: "Hoy no tienes turno de presidente de mesa"
+        title: Validate document
+        document_number: "Document number (including letters)"
+        submit: Validate document
+        error_verifying_census: "The Census was unable to verify this document."
+        form_errors: prevented the verification of this document
+        no_assignments: "You don't have officing shifts today"
     voters:
       new:
-        title: Votaciones
-        table_poll: Votación
-        table_actions: Estado de las votaciones
+        title: Polls
+        table_poll: Poll
+        table_actions: Polls status
       show:
-        can_vote: Puede votar
-        error_already_voted: "Ya ha participado en esta votación."
-        submit: Confirmar voto
-        success: "¡Voto introducido!"
+        can_vote: Can vote
+        error_already_voted: Has already participated in this poll
+        submit: Confirm vote
+        success: "Vote introduced!"
