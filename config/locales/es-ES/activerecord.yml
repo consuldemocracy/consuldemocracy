@@ -14,7 +14,7 @@ es:
         one: "Comentario"
         other: "Comentarios"
       debate:
-        one: "Debates"
+        one: "Debate"
         other: "Debates"
       tag:
         one: "Tema"
