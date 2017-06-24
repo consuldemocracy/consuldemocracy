@@ -2,19 +2,19 @@ fr:
   helpers:
     page_entries_info:
       entry:
-        one: Entry
-        other: Entries
+        one: Entrée
+        other: Entrées
       more_pages:
-        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+        display_entries: Affichage des entrées <b>%{first}&nbsp;-&nbsp;%{last}</b> sur <b>%{total}</b> %{entry_name}
       one_page:
         display_entries:
-          one: There is <strong>1 %{entry_name}</strong>
-          other: There are <strong>%{count} %{entry_name}</strong>
+          one: Il y a <b>1</b> %{entry_name}
+          other: Il y a <b> %{count}</b> %{entry_name}
   views:
     pagination:
-      first: First
-      last: Last
-      next: Next
-      previous: Previous
+      first: Premier
+      last: Dernier
+      next: Suivant
+      previous: Précédent
       truncate: "&hellip;"
-      current: You're on page
+      current: Vous êtes sur la page
