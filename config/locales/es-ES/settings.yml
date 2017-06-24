@@ -1,4 +1,5 @@
-es:
+---
+es-ES:
   settings:
     comments_body_max_length: "Longitud máxima de los comentarios"
     official_level_1_name: "Cargos públicos de nivel 1"

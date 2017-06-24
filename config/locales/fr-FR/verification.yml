@@ -1,5 +1,5 @@
 ---
-fr:
+fr-FR:
   verification:
     alert:
       lock: Vous avez atteint le nombre maximum de tentatives. Merci de réessayer plus tard.

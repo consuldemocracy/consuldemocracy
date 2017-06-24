@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ---
-en:
+en-EN:
   date:
     abbr_day_names:
     - Sun

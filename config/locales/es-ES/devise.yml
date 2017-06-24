@@ -1,4 +1,5 @@
-es:
+---
+es-ES:
   devise:
     password_expired:
       expire_password: "Contraseña caducada"

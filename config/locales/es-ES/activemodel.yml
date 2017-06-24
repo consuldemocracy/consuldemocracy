@@ -1,4 +1,5 @@
-es:
+---
+es-ES:
   activemodel:
     models:
       verification:

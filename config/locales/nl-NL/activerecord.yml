@@ -1,4 +1,5 @@
-nl:
+---
+nl-NL:
   activerecord:
     models:
       activity:
@@ -135,7 +136,7 @@ nl:
         title: Titel
         updated_at: Bijgewerkt op
         more_info_flag: Toon in extra informatie pagina
-        print_content_flag: Print inhoud 
+        print_content_flag: Print inhoud
       site_customization/image:
         name: Naam
         image: Beeld

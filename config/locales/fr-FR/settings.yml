@@ -1,4 +1,5 @@
-fr:
+---
+fr-FR:
   settings:
     comments_body_max_length: "Longueur maximum des commentaires"
     official_level_1_name: "Personne officielle de niveau 1"

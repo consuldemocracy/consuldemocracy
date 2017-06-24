@@ -1,5 +1,5 @@
 ---
-nl:
+nl-NL:
   devise_views:
     confirmations:
       new:

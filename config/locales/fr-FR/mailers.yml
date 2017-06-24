@@ -1,5 +1,5 @@
 ---
-fr:
+fr-FR:
   mailers:
     no_reply: "Ce message a été envoyé d'une adresse qui n'accepte pas les réponses."
     comment:

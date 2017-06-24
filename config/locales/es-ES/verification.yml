@@ -1,5 +1,5 @@
 ---
-es:
+es-ES:
   verification:
     alert:
       lock: Has llegado al máximo número de intentos. Por favor intentalo de nuevo más tarde.

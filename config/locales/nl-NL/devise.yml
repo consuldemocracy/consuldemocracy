@@ -1,5 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-nl:
+---
+nl-NL:
   devise:
     password_expired:
       expire_password: "Wachtwoord is verlopen"
@@ -33,7 +34,7 @@ nl:
       success: 'Successvol aangemeld met uw %{kind} account.'
       failure: 'Kon niet aanmelden met uw %{kind} account, omdat "%{reason}".'
     passwords:
-      no_token: 'U kunt deze pagina niet benaderen zonder een "wachtwoord reset e-mail".' 
+      no_token: 'U kunt deze pagina niet benaderen zonder een "wachtwoord reset e-mail".'
       send_instructions: "U ontvangt via e-mail instructies hoe u uw account kunt ontgrendelen."
       send_paranoid_instructions: "Als uw e-mailadres bij ons bekend is, ontvangt u via e-mail instructies hoe u uw account kan ontgrendelen."
       updated: "Uw wachtwoord is gewijzigd. U bent nu ingelogd."
