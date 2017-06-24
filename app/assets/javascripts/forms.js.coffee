@@ -20,9 +20,7 @@ App.Forms =
 
   uploadButton: ->
     element = $('input[type=file]')
-    i = undefined
     i = 0
-    imageUpload = $(".image-upload")
     while i < element.length
       element[i].addEventListener 'change', ->
         idButton = $(this)
