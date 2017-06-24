@@ -169,7 +169,7 @@ es:
       consul: aplicación Consul
       consul_url: 'https://github.com/consul/consul'
       contact_us: Para asistencia técnica entra en
-      copyright: Consul, %{year}
+      copyright: Cónsul, %{year}
       description: Este portal usa la %{consul} que es %{open_source}.
       faq: Asistencia técnica
       open_data_text: Todos los datos del Ayuntamiento son tuyos.
