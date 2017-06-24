@@ -1,906 +1,906 @@
 ---
-es-ES:
+en-EN:
   admin:
     header:
-      title: Administración
+      title: Administration
     actions:
-      actions: Acciones
-      confirm: "¿Estás seguro?"
-      confirm_hide: Confirmar
-      hide: Ocultar
-      hide_author: Bloquear al autor
-      restore: Volver a mostrar
-      mark_featured: Destacar
-      unmark_featured: Quitar destacado
-      edit: Editar
-      configure: Configurar
+      actions: Actions
+      confirm: Are you sure?
+      confirm_hide: Confirm
+      hide: Hide
+      hide_author: Hide author
+      restore: Restore
+      mark_featured: Featured
+      unmark_featured: Unmark featured
+      edit: Edit
+      configure: Configure
     banners:
       index:
         title: Banners
-        create: Crear un banner
-        edit: Editar banner
-        delete: Eliminar banner
+        create: Create banner
+        edit: Edit banner
+        delete: Delete banner
         filters:
-          all: Todos
-          with_active: Activos
-          with_inactive: Inactivos
-        preview: Vista previa
+          all: All
+          with_active: Active
+          with_inactive: Inactive
+        preview: Preview
       banner:
-        title: Título
-        description:  Descripción
-        target_url:  Enlace
-        style: Estilo
-        image: Imagen
-        post_started_at: Inicio de publicación
-        post_ended_at: Fin de publicación
+        title: Title
+        description: Description
+        target_url: Link
+        style: Style
+        image: Image
+        post_started_at: Post started at
+        post_ended_at: Post ended at
       edit:
-        editing: Editar el banner
+        editing: Edit banner
         form:
-          submit_button: Guardar Cambios
+          submit_button: Save changes
       errors:
         form:
           error:
-            one: "error impidió guardar el banner"
-            other: "errores impidieron guardar el banner."
+            one: "prevented this banner from being saved"
+            other: 'prevented this banner from being saved'
       new:
-        creating: Crear banner
+        creating: Create banner
     activity:
       show:
-        action: Acción
+        action: Action
         actions:
-          block: Bloqueado
-          hide: Ocultado
-          restore: Restaurado
-        by: Moderado por
-        content: Contenido
-        filter: Mostrar
+          block: Blocked
+          hide: Hidden
+          restore: Restored
+        by: Moderated by
+        content: Content
+        filter: Show
         filters:
-          all: Todo
-          on_comments: Comentarios
+          all: All
+          on_comments: Comments
           on_debates: Debates
-          on_proposals: Propuestas
-          on_users: Usuarios
-        title: Actividad de los Moderadores
-        type: Tipo
+          on_proposals: Proposals
+          on_users: Users
+        title: Moderator activity
+        type: Type
     budgets:
       index:
-        title: Presupuestos participativos
-        new_link: Crear nuevo presupuesto
+        title: Participatory budgets
+        new_link: Create new budget
         filters:
-          current: Abiertos
-          finished: Terminados
-        budget_investments: Ver propuestas de inversión
-        table_name: Nombre
-        table_phase: Fase
-        table_investments: Propuestas de inversión
-        table_edit_groups: Grupos de partidas
-        table_edit_budget: Editar
-        edit_groups: Editar grupos de partidas
-        edit_budget: Editar presupuesto
+          current: Open
+          finished: Finished
+        budget_investments: See budget investments
+        table_name: Name
+        table_phase: Phase
+        table_investments: Investments
+        table_edit_groups: Headings groups
+        table_edit_budget: Edit
+        edit_groups: Edit headings groups
+        edit_budget: Edit budget
       create:
-        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+        notice: New participatory budget created successfully!
       update:
-        notice: Campaña de presupuestos participativos actualizada
+        notice: Participatory budget updated successfully
       edit:
-        title: Editar campaña de presupuestos participativos
+        title: Edit Participatory budget
       new:
-        title: Nuevo presupuesto ciudadano
+        title: New participatory budget
       show:
         groups:
-          one: 1 Grupo de partidas presupuestarias
-          other: "%{count} Grupos de partidas presupuestarias"
+          one: 1 Group of budget headings
+          other: "%{count} Groups of budget headings"
       form:
-        group: Nombre del grupo
-        no_groups: No hay grupos creados todavía. Cada usuario podrá votar en una sola partida de cada grupo.
-        add_group: Añadir nuevo grupo
-        create_group: Crear grupo
-        heading: Nombre de la partida
-        add_heading: Añadir partida
-        amount: Cantidad
-        save_heading: Guardar partida
-        no_heading: Este grupo no tiene ninguna partida asignada.
-        table_heading: Partida
-        table_amount: Cantidad
+        group: Group name
+        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
+        add_group: Add new group
+        create_group: Create group
+        heading: Heading name
+        add_heading: Add heading
+        amount: Amount
+        save_heading: Save heading
+        no_heading: This group has no assigned heading.
+        table_heading: Heading
+        table_amount: Amount
     budget_investments:
       index:
-        heading_filter_all: Todas las partidas
-        administrator_filter_all: Todos los administradores
-        valuator_filter_all: Todos los evaluadores
-        tags_filter_all: Todas las etiquetas
+        heading_filter_all: All headings
+        administrator_filter_all: All administrators
+        valuator_filter_all: All valuators
+        tags_filter_all: All tags
         filters:
-          valuation_open: Abiertas
-          without_admin: Sin administrador
-          managed: Gestionando
-          valuating: En evaluación
-          valuation_finished: Evaluación finalizada
-          valuation_finished_feasible: Viables
-          selected: Seleccionadas
-          all: Todas
-        title: Propuestas de inversión
-        assigned_admin: Administrador asignado
-        no_admin_assigned: Sin admin asignado
-        no_valuators_assigned: Sin evaluador
+          valuation_open: Open
+          without_admin: Without assigned admin
+          managed: Managed
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          valuation_finished_feasible: Val. fin. Feasible
+          selected: Selected
+          all: All
+        title: Investment projects
+        assigned_admin: Assigned administrator
+        no_admin_assigned: No admin assigned
+        no_valuators_assigned: No valuators assigned
         feasibility:
-          feasible: "Viable (%{price})"
-          unfeasible: "Inviable"
-          undecided: "Sin decidir"
-        selected: "Seleccionada"
-        select: "Seleccionar"
+          feasible: "Feasible (%{price})"
+          unfeasible: "Unfeasible"
+          undecided: "Undecided"
+        selected: "Selected"
+        select: "Select"
         table_id: "ID"
-        table_title: "Título"
-        table_supports: "Apoyos"
-        table_admin: "Administrador"
-        table_valuator: "Evaluador"
-        table_geozone: "Ámbito de actuación"
-        table_feasibility: "Viabilidad"
-        table_valuation_finished: "Ev. Fin."
-        table_selection: "Selección"
-        table_winner: "Ganadora"
+        table_title: "Title"
+        table_supports: "Supports"
+        table_admin: "Administrator"
+        table_valuator: "Valuator"
+        table_geozone: "Scope of operation"
+        table_feasibility: "Feasibility"
+        table_valuation_finished: "Val. Fin."
+        table_selection: "Selection"
+        table_winner: "Winner"
       show:
-        assigned_admin: Administrador asignado
-        assigned_valuators: Evaluadores asignados
-        classification: Clasificación
-        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
-        edit: Editar
-        edit_classification: Editar clasificación
-        by: Autor
-        sent: Fecha
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
+        classification: Clasification
+        info: '%{budget_name} - Group: %{group_name} - Investment project %{id}'
+        edit: Edit
+        edit_classification: Edit classification
+        by: By
+        sent: Sent
         group: Grupo
         heading: Partida
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Etiquetas
-        undefined: Sin definir
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        tags: Tags
+        undefined: Undefined
       edit:
-        classification: Clasificación
-        assigned_valuators: Evaluadores
-        select_heading: Seleccionar partida
-        submit_button: Actualizar
-        tags: Etiquetas
-        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
-        undefined: Sin definir
-      search_unfeasible: Buscar inviables
+        classification: Clasification
+        assigned_valuators: Valuators
+        select_heading: Select heading
+        submit_button: Update
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
+      search_unfeasible: Search unfeasible
     comments:
       index:
-        filter: Filtro
+        filter: Filter
         filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        hidden_debate: Debate oculto
-        hidden_proposal: Propuesta oculta
-        title: Comentarios ocultos
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        hidden_debate: Hidden debate
+        hidden_proposal: Hidden proposal
+        title: Hidden comments
     dashboard:
       index:
-        back: Volver a
-        title: Administración
+        back: Go back to
+        title: Administration
     debates:
       index:
-        filter: Filtro
+        filter: Filter
         filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        title: Debates ocultos
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden debates
     hidden_users:
       index:
-        filter: Filtro
+        filter: Filter
         filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        title: Usuarios bloqueados
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
       show:
         email: 'Email:'
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
-        title: Actividad del usuario (%{user})
+        hidden_at: 'Hidden at:'
+        registered_at: 'Registered at:'
+        title: Activity of user (%{user})
     legislation:
       processes:
         create:
-          notice: 'Proceso creado correctamente. <a href="%{link}">Haz click para verlo</a>'
-          error: No se ha podido crear el proceso
+          notice: 'Process created successfully. <a href="%{link}">Click to visit</a>'
+          error: Process couldn't be created
         update:
-          notice: 'Proceso actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
-          error: No se ha podido actualizar el proceso
+          notice: 'Process updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Process couldn't be updated
         destroy:
-          notice: Proceso eliminado correctamente
+          notice: Process deleted successfully
         edit:
-          back: Volver
-          submit_button: Guardar cambios
+          back: Back
+          submit_button: Save changes
         errors:
           form:
             error: Error
         form:
-          enabled: Habilitado
-          process: Proceso
-          debate_phase: Fase previa
-          allegations_phase: Fase de alegaciones
-          start: Inicio
-          end: Fin
-          use_markdown: Usa Markdown para formatear el texto
-          title_placeholder: Escribe el título del proceso
-          summary_placeholder: Resumen corto de la descripción
-          description_placeholder: Añade una descripción del proceso
-          additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
+          enabled: Enabled
+          process: Process
+          debate_phase: Debate phase
+          allegations_phase: Allegations phase
+          start: Start
+          end: End
+          use_markdown: Use Markdown to format the text
+          title_placeholder: The title of the process
+          summary_placeholder: Short summary of the description
+          description_placeholder: Add a description of the process
+          additional_info_placeholder: Add an additional information you consider useful
         index:
-          create: Nuevo proceso
-          delete: Borrar
-          title: Procesos de legislación colaborativa
+          create: New process
+          delete: Delete
+          title: Legislation processess
           filters:
-            open: Abiertos
-            next: Próximamente
-            past: Pasados
-            all: Todos
+            open: Open
+            next: Next
+            past: Past
+            all: All
         new:
-          back: Volver
-          title: Crear nuevo proceso de legislación colaborativa
-          submit_button: Crear proceso
+          back: Back
+          title: Create new collaborative legislation process
+          submit_button: Create process
         process:
-          title: Proceso
-          comments: Comentarios
-          status: Estado
-          creation_date: Fecha creación
-          status_open: Abierto
-          status_closed: Cerrado
-          status_planned: Próximamente
+          title: Process
+          comments: Comments
+          status: Status
+          creation_date: Creation date
+          status_open: Open
+          status_closed: Closed
+          status_planned: Planned
         subnav:
-          info: Información
-          draft_texts: Texto
+          info: Information
+          draft_texts: Text
           questions: Debate
       draft_versions:
         create:
-          notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
-          error: No se ha podido crear el borrador
+          notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
+          error: Draft couldn't be created
         update:
-          notice: 'Borrador actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
-          error: No se ha podido actualizar el borrador
+          notice: 'Draft updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Draft couldn't be updated
         destroy:
-          notice: Borrador eliminado correctamente
+          notice: Draft deleted successfully
         edit:
-          back: Volver
-          submit_button: Guardar cambios
-          warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
+          back: Back
+          submit_button: Save changes
+          warning: You've edited the text, don't forget to click on Save to permanently save the changes.
         errors:
           form:
             error: Error
         form:
-          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
-          launch_text_editor: Lanzar editor de texto
-          close_text_editor: Cerrar editor de texto
-          use_markdown: Usa Markdown para formatear el texto
+          title_html: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
+          launch_text_editor: Launch text editor
+          close_text_editor: Close text editor
+          use_markdown: Use Markdown to format the text
           hints:
-            final_version: Será la versión que se publique en Publicación de Resultados. Esta versión no se podrá comentar
+            final_version: This version will be published as Final Result for this process. Comments won't be allowed in this version.
             status:
-              draft: Podrás previsualizarlo como logueado, nadie más lo podrá ver
-              published: Será visible para todo el mundo
-          title_placeholder: Escribe el título de esta versión del borrador
-          changelog_placeholder: Describe cualquier cambio relevante con la versión anterior
-          body_placeholder: Escribe el texto del borrador
+              draft: You can preview as admin, no one else can see it
+              published: Visible for everybody
+          title_placeholder: Write the title of the draft version
+          changelog_placeholder: Add the main changes from the previous version
+          body_placeholder: Write down the draft text
         index:
-          title: Versiones del borrador
-          create: Crear versión
-          delete: Borrar
-          preview: Previsualizar
+          title: Draft versions
+          create: Create version
+          delete: Delete
+          preview: Preview
         new:
-          back: Volver
-          title: Crear nueva versión
-          submit_button: Crear versión
+          back: Back
+          title: Create new version
+          submit_button: Create version
         statuses:
-          draft: Borrador
-          published: Publicado
+          draft: Draft
+          published: Published
         table:
-          title: Título
-          created_at: Creado
-          comments: Comentarios
-          final_version: Versión final
-          status: Estado
+          title: Title
+          created_at: Created at
+          comments: Comments
+          final_version: Final version
+          status: Status
       questions:
         create:
-          notice: 'Pregunta creada correctamente. <a href="%{link}">Haz click para verla</a>'
-          error: No se ha podido crear la pregunta
+          notice: 'Question created successfully. <a href="%{link}">Click to visit</a>'
+          error: Question couldn't be created
         update:
-          notice: 'Pregunta actualizada correctamente. <a href="%{link}">Haz click para verla</a>'
-          error: No se ha podido actualizar la pregunta
+          notice: 'Question updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Question couldn't be updated
         destroy:
-          notice: Pregunta eliminada correctamente
+          notice: Question deleted successfully
         edit:
-          back: Volver
-          title: "Editar “%{question_title}”"
-          submit_button: Guardar cambios
+          back: Back
+          title: "Edit “%{question_title}”"
+          submit_button: Save changes
         errors:
           form:
             error: Error
         form:
-          add_option: +Añadir respuesta cerrada
-          title_placeholder: Escribe un título a la pregunta
-          value_placeholder: Escribe una respuesta cerrada
+          add_option: Add option
+          title_placeholder: Add a title
+          value_placeholder: Add a closed answer
         index:
-          back: Volver
-          title: Preguntas asociadas a este proceso
-          create: Crear pregunta
-          delete: Borrar
+          back: Back
+          title: Questions associated to this process
+          create: Create question
+          delete: Delete
         new:
-          back: Volver
-          title: Crear nueva pregunta
-          submit_button: Crear pregunta
+          back: Back
+          title: Create new question
+          submit_button: Create question
         table:
-          title: Título
-          question_options: Opciones de respuesta
-          answers_count: Número de respuestas
-          comments_count: Número de comentarios
+          title: Title
+          question_options: Question options
+          answers_count: Answers count
+          comments_count: Comments count
         question_option_fields:
-          remove_option: Eliminar
-    administrators:
-      index:
-        title: Administradores
-      administrator:
-        add: Añadir como Administrador
-        delete: Borrar
-        restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
-      search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+          remove_option: Remove option
     managers:
       index:
-        title: Gestores
+        title: Managers
       manager:
-        add: Añadir como Gestor
-        delete: Borrar
+        add: Add
+        delete: Delete
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     menu:
-      activity: Actividad de moderadores
-      admin: Menú de administración
-      banner: Gestionar banners
-      proposals_topics: Temas de propuestas
-      poll_questions: Preguntas ciudadanas
-      budgets: Presupuestos participativos
-      geozones: Gestionar distritos
-      hidden_comments: Comentarios ocultos
-      hidden_debates: Debates ocultos
-      hidden_proposals: Propuestas ocultas
-      hidden_users: Usuarios bloqueados
-      managers: Gestores
-      administrators: Administradores
-      moderators: Moderadores
-      newsletter: Envío de Newsletters
-      valuators: Evaluadores
-      poll_officers: Presidentes de mesa
-      polls: Votaciones
-      poll_booths: Ubicación de urnas
-      officials: Cargos públicos
-      organizations: Organizaciones
-      settings: Configuración global
-      spending_proposals: Propuestas de inversión
-      stats: Estadísticas
-      signature_sheets: Hojas de firmas
+      activity: Moderator activity
+      admin: Admin menu
+      banner: Manage banners
+      poll_questions: Poll questions
+      proposals_topics: Proposals topics
+      budgets: Participatory budgets
+      geozones: Manage geozones
+      hidden_comments: Hidden comments
+      hidden_debates: Hidden debates
+      hidden_proposals: Hidden proposals
+      hidden_users: Hidden users
+      administrators: Administrators
+      managers: Managers
+      moderators: Moderators
+      newsletter: Newsletters
+      valuators: Valuators
+      poll_officers: Poll officers
+      polls: Polls
+      poll_booths: Booths location
+      officials: Officials
+      organizations: Organisations
+      settings: Configuration settings
+      spending_proposals: Spending proposals
+      stats: Statistics
+      signature_sheets: Signature Sheets
       site_customization:
-        pages: Personalizar páginas
-        images: Personalizar imágenes
-        content_blocks: Personalizar bloques
-      title_categories: Categorías
-      title_moderated_content: Contenido moderado
-      title_budgets: Presupuestos
-      title_polls: Votaciones
-      title_profiles: Perfiles
+        pages: Custom Pages
+        images: Custom Images
+        content_blocks: Custom content blocks
+      title_categories: Categories
+      title_moderated_content: Moderated content
+      title_budgets: Budgets
+      title_polls: Polls
+      title_profiles: Profiles
       title_banners: Banners
-      title_site_customization: Personalizar sitio
-      legislation: Legislación colaborativa
-      users: Usuarios
+      title_site_customization: Site customization
+      legislation: Collaborative Legislation
+      users: Users
+    administrators:
+      index:
+        title: Administrators
+      administrator:
+        add: Add
+        delete: Delete
+        restricted_removal: "Sorry, you can't remove yourself from the administrators"
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     moderators:
       index:
-        title: Moderadores
+        title: Moderators
       moderator:
-        add: Añadir como Moderador
-        delete: Borrar
+        add: Add
+        delete: Delete
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     newsletters:
       index:
-        title: Envío de newsletters
-        button: Descargar zip con lista de usuarios
+        title: Newsletters
+        button: Download zip with users list
     valuators:
       index:
-        title: Evaluadores
+        title: Valuators
       valuator:
-        description_placeholder: "Descripción (opcional)"
-        user_found: Usuario encontrado
-        add: Añadir como evaluador
+        description_placeholder: 'Description (optional)'
+        user_found: User found
+        add: Add to valuators
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
       summary:
-        title: Resumen de evaluación de propuestas de inversión
-        valuator_name: Evaluador
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
-        in_evaluation_count: En evaluación
+        title: Valuator summary for investment projects
+        valuator_name: Valuator
+        finished_and_feasible_count: Finished and feasible
+        finished_and_unfeasible_count: Finished and unfeasible
+        finished_count: Finished
+        in_evaluation_count: In evaluation
         total_count: Total
-        cost: Coste total
+        cost: Cost
     poll_officers:
       index:
-        title: Presidentes de mesa
+        title: Poll officers
       officer:
-        add: Añadir como Presidente de mesa
-        delete: Eliminar cargo
-        name: Nombre
+        add: Add
+        delete: Delete position
+        name: Name
         email: Email
-        entry_name: presidente de mesa
+        entry_name: officer
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     poll_officer_assignments:
       flash:
-        destroy: "Eliminado turno de presidente de mesa"
-        create: "Añadido turno de presidente de mesa"
-        error_destroy: "Se ha producido un error al eliminar el turno"
-        error_create: "Se ha producido un error al intentar crear el turno"
+        destroy: "Officing shift removed"
+        create: "Officing shift added"
+        error_destroy: "An error ocurred when removing officer assignment"
+        error_create: "An error ocurred when adding officer assignment"
       index:
-        officers_title: "Listado de presidentes de mesa asignados"
-        no_officers: "No hay presidentes de mesa asignados a esta votación."
-        table_name: "Nombre"
+        officers_title: "List of officers"
+        no_officers: "There are no officers assigned to this poll."
+        table_name: "Name"
         table_email: "Email"
-        add_officer_assignments: "Añadir turnos como presidente de mesa"
-        edit_officer_assignments: "Editar turnos"
+        add_officer_assignments: "Add shifts as officer"
+        edit_officer_assignments: "Edit officing shifts"
       by_officer:
-        new_assignment: "Nuevo turno"
-        date: "Fecha"
-        booth: "Urna"
-        assignment: "Asignación"
-        select_date: "Seleccionar día"
-        select_booth: "Seleccionar urna"
-        add_assignment: "Añadir turno"
-        remove_assignment: "Eliminar turno"
-        assignments: "Turnos como presidente de mesa en esta votación"
-        no_assignments: "No tiene turnos como presidente de mesa en esta votación."
-        recounts: "Recuentos diarios"
-        recount: "Recuento diario (presidente de mesa)"
-        final_recounts: "Recuentos finales"
-        final_recount: "Recuento final (presidente de mesa)"
+        new_assignment: "New shift"
+        date: "Date"
+        booth: "Booth"
+        assignment: "Assignment"
+        select_date: "Select day"
+        select_booth: "Select booth"
+        add_assignment: "Add shift"
+        remove_assignment: "Remove"
+        assignments: "Officing shifts in this poll"
+        no_assignments: "This user has no officing shifts in this poll."
+        recounts: "Daily recounts"
+        recount: "Daily recount (by officer)"
+        final_recounts: "Final recounts"
+        final_recount: "Final recount (by officer)"
     poll_booth_assignments:
       flash:
-        destroy: "Urna desasignada"
-        create: "Urna asignada"
-        error_destroy: "Se ha producido un error al desasignar la urna"
-        error_create: "Se ha producido un error al intentar asignar la urna"
+        destroy: "Booth not assigned anymore"
+        create: "Booth assigned"
+        error_destroy: "An error ocurred when removing booth assignment"
+        error_create: "An error ocurred when assigning booth to the poll"
       show:
-        location: "Ubicación"
-        officers: "Presidentes de mesa"
-        officers_list: "Lista de presidentes de mesa asignados a esta urna"
-        no_officers: "No hay presidentes de mesa para esta urna"
-        recounts: "Recuentos"
-        recounts_list: "Lista de recuentos de esta urna"
-        no_recounts: "No hay recuentos diarios de esta urna"
-        date: "Fecha"
-        count_by_officer: "Recuento diario (presidente de mesa)"
-        count_final: "Recuento final (presidente de mesa)"
-        count_by_system:  "Votos (automático)"
+        location: "Location"
+        officers: "Officers"
+        officers_list: "Officer list for this booth"
+        no_officers: "There are no officers for this booth"
+        recounts: "Recounts"
+        recounts_list: "Recount list for this booth"
+        no_recounts: "There are not daily recounts of this booth yet"
+        date: "Date"
+        count_by_officer: "Daily recount (by officer)"
+        count_final: "Final recount (by officer)"
+        count_by_system: "Votes (automatic)"
       index:
-        booths_title: "Listado de urnas asignadas"
-        no_booths: "No hay urnas asignadas a esta votación."
-        table_name: "Nombre"
-        table_location: "Ubicación"
-        table_assignment: "Asignación"
-        remove_booth: "Desasignar urna"
-        add_booth: "Asignar urna"
+        booths_title: "List of booths"
+        no_booths: "There are no booths assigned to this poll."
+        table_name: "Name"
+        table_location: "Location"
+        table_assignment: "Assignment"
+        remove_booth: "Remove booth from poll"
+        add_booth: "Assign booth"
     polls:
       index:
-        title: "Listado de votaciones"
-        no_polls: "No hay ninguna votación."
-        create: "Crear votación"
-        name: "Nombre"
-        dates: "Fechas"
+        title: "List of polls"
+        no_polls: "There are no polls."
+        create: "Create poll"
+        name: "Name"
+        dates: "Dates"
       new:
-        title: "Nueva votación"
-        submit_button: "Crear votación"
+        title: "New poll"
+        submit_button: "Create poll"
       edit:
-        title: "Editar votación"
-        submit_button: "Actualizar votación"
+        title: "Edit poll"
+        submit_button: "Update poll"
       show:
-        questions_tab: Preguntas
-        booths_tab: Urnas
-        officers_tab: Presidentes de mesa
-        recounts_tab: Recuentos
-        results_tab: Resultados
-        no_questions: "No hay preguntas asignadas a esta votación."
-        questions_title: "Listado de preguntas asignadas"
-        remove_question: "Desasignar pregunta"
-        add_question: "Incluir pregunta"
-        table_title: "Título"
-        table_assignment: "Asignación"
-        table_name: "Nombre"
+        questions_tab: Questions
+        booths_tab: Booths
+        officers_tab: Officers
+        recounts_tab: Recounting
+        results_tab: Results
+        no_questions: "There are no questions assigned to this poll."
+        questions_title: "List of questions"
+        remove_question: "Remove question from poll"
+        add_question: "Include question"
+        table_title: "Title"
+        table_assignment: "Assignment"
+        table_name: "Name"
       flash:
-        question_added: "Pregunta añadida a esta votación"
-        error_on_question_added: "No se pudo asignar la pregunta"
-        question_removed: "Pregunta eliminada de esta votación"
-        error_on_question_removed: "No se pudo quitar la pregunta"
+        question_added: "Question added to this poll"
+        error_on_question_added: "Question could not be assigned to this poll"
+        question_removed: "Question removed from this poll"
+        error_on_question_removed: "Question could not be removed from this poll"
     questions:
       index:
-        title: "Preguntas ciudadanas"
-        create: "Crear pregunta ciudadana"
-        no_questions: "No hay ninguna pregunta ciudadana."
-        filter_poll: "Filtrar por votación"
-        select_poll: "Seleccionar votación"
-        questions_tab: "Preguntas ciudadanas"
-        successful_proposals_tab: "Propuestas que han superado el umbral"
-        create_question: "Crear pregunta para votación"
-        table_proposal: "Propuesta"
-        table_question: "Pregunta"
+        title: "Questions"
+        create: "Create question"
+        no_questions: "There are no questions."
+        filter_poll: Filter by Poll
+        select_poll: Select Poll
+        questions_tab: "Questions"
+        successful_proposals_tab: "Successful proposals"
+        create_question: "Create question"
+        table_proposal: "Proposal"
+        table_question: "Question"
       edit:
-        title: "Editar pregunta ciudadana"
+        title: "Edit Question"
       new:
-        title: "Crear pregunta ciudadana"
-        poll_label: "Votación"
-        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
+        title: "Create Question"
+        poll_label: "Poll"
+        valid_answers_note: "Enter the answers separated by commas (,)"
       show:
-        proposal: Propuesta ciudadana original
-        author: Autor
-        title: Título
-        valid_answers: Respuestas válidas
-        description: Descripción
-        preview: Ver en la web
+        proposal: Original proposal
+        author: Author
+        title: Title
+        valid_answers: Valid answers
+        description: Description
+        preview: View on website
     recounts:
       index:
-        title: "Recuentos"
-        no_recounts: "No hay nada de lo que hacer recuento"
-        table_booth_name: "Urna"
-        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
-        table_final_recount: "Recuento final (presidente de mesa)"
-        table_system_count: "Votos (automático)"
+        title: "Recounts"
+        no_recounts: "There is nothing to be recounted"
+        table_booth_name: "Booth"
+        table_recounts: "Accumulated daily recounts (by officer)"
+        table_final_recount: "Final recount (by officer)"
+        table_system_count: "Votes (automatic)"
     results:
       index:
-        title: "Resultados"
-        no_results: "No hay resultados"
-        table_whites: Papeletas en blanco
-        table_nulls: Papeletas nulas
-        table_answer: Respuesta
-        table_votes: Votos
+        title: "Results"
+        no_results: "There are no results"
+        table_whites: "Blank ballots"
+        table_nulls: "Invalid ballots"
+        table_answer: Answer
+        table_votes: Votes
     booths:
       index:
-        title: "Lista de urnas"
-        no_booths: "No hay urnas."
-        add_booth: "Añadir urna"
-        name: "Nombre"
-        location: "Ubicación"
+        title: "List of booths"
+        no_booths: "There are no booths."
+        add_booth: "Add booth"
+        name: "Name"
+        location: "Location"
       new:
-        title: "Nueva urna"
-        name: "Nombre"
-        location: "Ubicación"
-        submit_button: "Crear urna"
+        title: "New booth"
+        name: "Name"
+        location: "Location"
+        submit_button: "Create booth"
       edit:
-        title: "Editar urna"
-        submit_button: "Actualizar urna"
+        title: "Edit booth"
+        submit_button: "Update booth"
       show:
-        location: "Ubicación"
+        location: "Location"
     officials:
       edit:
-        destroy: Eliminar condición de 'Cargo Público'
-        title: 'Cargos Públicos: Editar usuario'
+        destroy: Remove 'Official' status
+        title: 'Officials: Edit user'
       flash:
-        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
-        official_updated: Datos del cargo público guardados
+        official_destroyed: 'Details saved: the user is no longer an official'
+        official_updated: Details of official saved
       index:
-        title: Cargos Públicos
-      level_0: No es cargo público
-      level_1: Nivel 1
-      level_2: Nivel 2
-      level_3: Nivel 3
-      level_4: Nivel 4
-      level_5: Nivel 5
+        title: Officials
+      level_0: Not official
+      level_1: Level 1
+      level_2: Level 2
+      level_3: Level 3
+      level_4: Level 4
+      level_5: Level 5
       search:
-        edit_official: Editar cargo público
-        make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        edit_official: Edit official
+        make_official: Make official
+        title: 'Official positions: User search'
     organizations:
       index:
-        filter: Filtro
+        filter: Filter
         filters:
-          all: Todas
-          pending: Pendientes
-          rejected: Rechazadas
-          verified: Verificadas
+          all: All
+          pending: Pending
+          rejected: Rejected
+          verified: Verified
         hidden_count_html:
-          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
-          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
-        reject: Rechazar
-        rejected: Rechazada
-        search: Buscar
-        search_placeholder: Nombre, email o teléfono
-        title: Organizaciones
-        verified: Verificada
-        verify: Verificar
+          one: There is also <strong>one organisation</strong> with no users or with a hidden user.
+          other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
+        reject: Reject
+        rejected: Rejected
+        search: Search
+        search_placeholder: Name, email or phone number
+        title: Organisations
+        verified: Verified
+        verify: Verify
       search:
-        title: Buscar Organizaciones
+        title: Search Organisations
     proposals:
       index:
-        filter: Filtro
+        filter: Filter
         filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendientes
-        title: Propuestas ocultas
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden proposals
     settings:
       flash:
-        updated: Valor actualizado
+        updated: Value updated
       index:
-        banners: Banner style
-        banner_imgs: Banner images
-        title: Configuración global
-        update_setting: Actualizar
-        feature_flags: Funcionalidades
+        banners: Estilos de banners
+        banner_imgs: Imágenes para los banners
+        title: Configuration settings
+        update_setting: Update
+        feature_flags: Features
         features:
-          enabled: "Funcionalidad activada"
-          disabled: "Funcionalidad desactivada"
-          enable: "Activar"
-          disable: "Desactivar"
+          enabled: "Feature enabled"
+          disabled: "Feature disabled"
+          enable: "Enable"
+          disable: "Disable"
     shared:
       booths_search:
-        button: Buscar
-        placeholder: Buscar urna por nombre
+        button: Search
+        placeholder: Search booth by name
       poll_officers_search:
-        button: Buscar
-        placeholder: Buscar presidentes de mesa
+        button: Search
+        placeholder: Search poll officers
       poll_questions_search:
-        button: Buscar
-        placeholder: Buscar preguntas
+        button: Search
+        placeholder: Search poll questions
       proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título, código, descripción o pregunta
+        button: Search
+        placeholder: Search proposals by title, code, description or question
       spending_proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título o descripción
+        button: Search
+        placeholder: Search spending proposals by title or description
       user_search:
-        button: Buscar
-        placeholder: Buscar usuario por nombre o email
-      search_results: "Resultados de la búsqueda"
-      no_search_results: "No se han encontrado resultados."
+        button: Search
+        placeholder: Search user by name or email
+      search_results: "Search results"
+      no_search_results: "No results found."
     spending_proposals:
       index:
-        geozone_filter_all: Todos los ámbitos de actuación
-        administrator_filter_all: Todos los administradores
-        valuator_filter_all: Todos los evaluadores
-        tags_filter_all: Todas las etiquetas
+        geozone_filter_all: All zones
+        administrator_filter_all: All administrators
+        valuator_filter_all: All valuators
+        tags_filter_all: All tags
         filters:
-          valuation_open: Abiertas
-          without_admin: Sin administrador
-          managed: Gestionando
-          valuating: En evaluación
-          valuation_finished: Evaluación finalizada
-          all: Todas
-        title: Propuestas de inversión para presupuestos participativos
-        assigned_admin: Administrador asignado
-        no_admin_assigned: Sin admin asignado
-        no_valuators_assigned: Sin evaluador
-        summary_link: "Resumen de propuestas"
-        valuator_summary_link: "Resumen de evaluadores"
+          valuation_open: Open
+          without_admin: Without assigned admin
+          managed: Managed
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          all: All
+        title: Investment projects for participatory budgeting
+        assigned_admin: Assigned administrator
+        no_admin_assigned: No admin assigned
+        no_valuators_assigned: No valuators assigned
+        summary_link: "Investment project summary"
+        valuator_summary_link: "Valuator summary"
         feasibility:
-          feasible: "Viable (%{price})"
-          not_feasible: "Inviable"
-          undefined: "Sin definir"
+          feasible: "Feasible (%{price})"
+          not_feasible: "Not feasible"
+          undefined: "Undefined"
       show:
-        assigned_admin: Administrador asignado
-        assigned_valuators: Evaluadores asignados
-        back: Volver
-        classification: Clasificación
-        heading: Propuesta de inversión %{id}
-        edit: Editar
-        edit_classification: Editar clasificación
-        association_name: Asociación
-        by: Autor
-        sent: Fecha
-        geozone: Ámbito
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Etiquetas
-        undefined: Sin definir
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
+        back: Back
+        classification: Clasification
+        heading: "Investment project %{id}"
+        edit: Edit
+        edit_classification: Edit classification
+        association_name: Association
+        by: By
+        sent: Sent
+        geozone: Scope
+        dossier: Dossier
+        edit_dossier: Edit dossier
+        tags: Tags
+        undefined: Undefined
       edit:
-        classification: Clasificación
-        assigned_valuators: Evaluadores
-        submit_button: Actualizar
-        tags: Etiquetas
-        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
-        undefined: Sin definir
+        classification: Clasification
+        assigned_valuators: Valuators
+        submit_button: Update
+        tags: Tags
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
       summary:
-        title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
-        geozone_name: Ámbito de ciudad
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
-        in_evaluation_count: En evaluación
+        title: Summary for investment projects
+        title_proposals_with_supports: Summary for investment projects with supports
+        geozone_name: Scope
+        finished_and_feasible_count: Finished and feasible
+        finished_and_unfeasible_count: Finished and unfeasible
+        finished_count: Finished
+        in_evaluation_count: In evaluation
         total_count: Total
-        cost_for_geozone: Coste total
+        cost_for_geozone: Cost
     geozones:
       index:
-        title: Distritos
-        create: Crear un distrito
-        edit: Editar
-        delete: Borrar
+        title: Geozone
+        create: Create geozone
+        edit: Edit
+        delete: Delete
       geozone:
-        name: Nombre
-        external_code: Código externo
-        census_code: Código del censo
-        coordinates: Coordenadas
+        name: Name
+        external_code: External code
+        census_code: Census code
+        coordinates: Coordinates
       errors:
         form:
           error:
-            one: "error impidió guardar el distrito"
-            other: "errores impidieron guardar el distrito."
+            one: "prevented this geozone from being saved"
+            other: 'prevented this geozone from being saved'
       edit:
         form:
-          submit_button: Guardar cambios
-        editing: Editando distrito
-        back: Volver
+          submit_button: Save changes
+        editing: Editing geozone
+        back: Go back
       new:
-        back: Volver
-        creating: Crear distrito
+        back: Go back
+        creating: Create district
       delete:
-        success: Distrito borrado correctamente
-        error: No se puede borrar el distrito porque ya tiene elementos asociados
+        success: Geozone successfully deleted
+        error: This geozone can't be deleted since there are elements attached to it
     signature_sheets:
-      author: Autor
-      created_at: Fecha de creación
-      name: Nombre
-      no_signature_sheets: "No existen hojas de firmas"
+      author: Author
+      created_at: Creation date
+      name: Name
+      no_signature_sheets: "There are not signature_sheets"
       index:
-        title: Hojas de firmas
-        new: Nueva hoja de firmas
+        title: Signature sheets
+        new: New signature sheets
       new:
-        title: Nueva hoja de firmas
-        document_numbers_note: "Introduce los números separados por comas (,)"
-        submit: Crear hoja de firmas
+        title: New signature sheets
+        document_numbers_note: "Write the numbers separated by commas (,)"
+        submit: Create signature sheet
       show:
-        created_at: Creado
-        author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
+        created_at: Created
+        author: Author
+        documents: Documents
+        document_count: "Number of documents:"
         verified:
-          one: "Hay %{count} firma válida"
-          other: "Hay %{count} firmas válidas"
+          one: "There is %{count} valid signature"
+          other: "There are %{count} valid signatures"
         unverified:
-          one: "Hay %{count} firma inválida"
-          other: "Hay %{count} firmas inválidas"
-        unverified_error: (No verificadas por el Padrón)
-        loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
+          one: "There is %{count} invalid signature"
+          other: "There are %{count} invalid signatures"
+        unverified_error: (Not verified by Census)
+        loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:
-        stats_title: Estadísticas
+        stats_title: Stats
         summary:
-          comment_votes: Votos en comentarios
-          comments: Comentarios
-          debate_votes: Votos en debates
+          comment_votes: Comment votes
+          comments: Comments
+          debate_votes: Debate votes
           debates: Debates
-          proposal_votes: Votos en propuestas
-          proposals: Propuestas
-          budgets: Presupuestos abiertos
-          budget_investments: Propuestas de inversión
-          spending_proposals: Propuestas de inversión
-          unverified_users: Usuarios sin verificar
-          user_level_three: Usuarios de nivel tres
-          user_level_two: Usuarios de nivel dos
-          users: Usuarios
-          verified_users: Usuarios verificados
-          verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
-          visits: Visitas
-          votes: Votos
-        spending_proposals_title: Propuestas de inversión
-        budgets_title: Presupuestos participativos
-        visits_title: Visitas
-        direct_messages: Mensajes directos
-        proposal_notifications: Notificaciones de propuestas
-        incomplete_verifications: Verificaciones incompletas
+          proposal_votes: Proposal votes
+          proposals: Proposals
+          budgets: Open budgets
+          budget_investments: Investment projects
+          spending_proposals: Spending Proposals
+          unverified_users: Unverified users
+          user_level_three: Level three users
+          user_level_two: Level two users
+          users: Total users
+          verified_users: Verified users
+          verified_users_who_didnt_vote_proposals: Verified users who didn't votes proposals
+          visits: Visits
+          votes: Total votes
+        spending_proposals_title: Spending Proposals
+        budgets_title: Participatory budgeting
+        visits_title: Visits
+        direct_messages: Direct messages
+        proposal_notifications: Proposal notifications
+        incomplete_verifications: Incomplete verifications
       direct_messages:
-        title: Mensajes directos
+        title: Direct messages
         total: Total
-        users_who_have_sent_message: Usuarios que han enviado un mensaje privado
+        users_who_have_sent_message: Users that have sent a private message
       proposal_notifications:
-        title: Notificaciones de propuestas
+        title: Proposal notifications
         total: Total
-        proposals_with_notifications: Propuestas con notificaciones
+        proposals_with_notifications: Proposals with notifications
     tags:
-      create: Crear Tema
-      destroy: Eliminar Tema
+      create: Create Topic
+      destroy: Destroy Topic
       index:
-        add_tag: Añade un nuevo tema de propuesta
-        title: Temas de propuesta
-      mark_as_featured: Proponer tema al crear propuesta
+        add_tag: Add a new proposal topic
+        title: Proposal topics
+      mark_as_featured: Propose topic upon creating proposal
       name:
-        placeholder: Escribe el nombre del tema
-      update: Actualizar Tema
+        placeholder: Type the name of the topic
+      update: Update Topic
     users:
       columns:
-        name: Nombre
-        email: Correo electrónico
-        document_number: DNI/Pasaporte/Tarjeta de residencia
+        name: Name
+        email: Email
+        document_number: Document number
         roles: Roles
-        verification_level: Nivel de verficación
+        verification_level: Verification level
       index:
-        title: Usuarios
+        title: User
       search:
-        placeholder: Buscar usuario por email, nombre o DNI
-        search: Buscar
+        placeholder: Search user by email, name or document number
+        search: Search
     verifications:
       index:
-        phone_not_given: No ha dado su teléfono
-        sms_code_not_confirmed: No ha introducido su código de seguridad
-        title: Verificaciones incompletas
+        phone_not_given: Phone not given
+        sms_code_not_confirmed: Has not confirmed the sms code
+        title: Incomplete verifications
     site_customization:
       content_blocks:
         form:
-          content_blocks_information: Información sobre los bloques de texto
-          content_block_about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu Cónsul.
-          content_block_top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
-          content_block_footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
+          content_blocks_information: Information about content blocks
+          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
+          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
+          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
         create:
-          notice: Bloque creado correctamente
-          error: No se ha podido crear el bloque
+          notice: Content block created successfully
+          error: Content block couldn't be created
         update:
-          notice: Bloque actualizado correctamente
-          error: No se ha podido actualizar el bloque
+          notice: Content block updated successfully
+          error: Content block couldn't be updated
         destroy:
-          notice: Bloque borrado correctamente
+          notice: Content block deleted successfully
         edit:
-          title: Editar bloque
+          title: Editing content block
         errors:
           form:
             error: Error
         index:
-          create: Crear nuevo bloque
-          delete: Borrar bloque
-          title: Bloques
+          create: Create new content block
+          delete: Delete block
+          title: Content blocks
         new:
-          title: Crear nuevo bloque
+          title: Create new content block
         content_block:
-          body: Contenido
-          name: Nombre
+          body: Body
+          name: Name
       images:
         index:
-          title: Personalizar imágenes
-          update: Actualizar
-          delete: Borrar
-          image: Imagen
+          title: Custom images
+          update: Update
+          delete: Delete
+          image: Image
         update:
-          notice: Imagen actualizada correctamente
-          error: No se ha podido actualizar la imagen
+          notice: Image updated successfully
+          error: Image couldn't be updated
         destroy:
-          notice: Imagen borrada correctamente
-          error: No se ha podido borrar la imagen
+          notice: Image deleted successfully
+          error: Image couldn't be deleted
       pages:
         create:
-          notice: Página creada correctamente
-          error: No se ha podido crear la página
+          notice: Page created successfully
+          error: Page couldn't be created
         update:
-          notice: Página actualizada correctamente
-          error: No se ha podido actualizar la página
+          notice: Page updated successfully
+          error: Page couldn't be updated
         destroy:
-          notice: Página eliminada correctamente
+          notice: Page deleted successfully
         edit:
-          title: Editar %{page_title}
+          title: Editing %{page_title}
         errors:
           form:
             error: Error
         form:
-          options: Opciones
+          options: Options
         index:
-          create: Crear nueva página
-          delete: Borrar página
-          title: Páginas
-          see_page: Ver página
+          create: Create new page
+          delete: Delete page
+          title: Custom Pages
+          see_page: See page
         new:
-          title: Página nueva
+          title: Create new custom page
         page:
-          created_at: Creada
-          status: Estado
-          title: Título
-          updated_at: Última actualización
-          status_draft: Borrador
-          status_published: Publicada
+          created_at: Created at
+          status: Status
+          title: Title
+          updated_at: Updated at
+          status_draft: Draft
+          status_published: Published
