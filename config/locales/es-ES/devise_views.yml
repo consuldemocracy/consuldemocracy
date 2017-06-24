@@ -3,127 +3,127 @@ es:
     confirmations:
       new:
         email_label: Email
-        submit: Re-send instructions
-        title: Re-send confirmation instructions
+        submit: Reenviar instrucciones
+        title: Reenviar instrucciones de confirmación
       show:
-        instructions_html: Confirming the account with email %{email}
-        new_password_confirmation_label: Repeat access password
-        new_password_label: New access password
-        please_set_password: Please choose your new pasword (it will allow you to login with the email above)
-        submit: Confirm
-        title: Confirm my account
+        instructions_html: Vamos a proceder a confirmar la cuenta con el email <b>%{email}</b>
+        new_password_confirmation_label: Repite la clave de nuevo
+        new_password_label: Nueva clave de acceso
+        please_set_password: Por favor introduce una nueva clave de acceso para su cuenta (te permitirá hacer login con el email de más arriba)
+        submit: Confirmar
+        title: Confirmar mi cuenta
     mailer:
       confirmation_instructions:
-        confirm_link: Confirm my account
-        text: 'You can confirm your email account at the following link:'
-        title: Welcome to the Open Government Portal
-        welcome: Welcome
+        confirm_link: Confirmar mi cuenta
+        text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
+        title: Te damos la bienvenida al Portal de Gobierno Abierto
+        welcome: Bienvenido/a
       reset_password_instructions:
-        change_link: Change my password
-        hello: Hello
-        ignore_text: If you did not request a password change, you can ignore this email.
-        info_text: Your password will not be changed unless you access the link and edit it.
-        text: 'We have received a request to change your password. You can do this at the following link:'
-        title: Change your password
+        change_link: Cambiar mi contraseña
+        hello: Hola
+        ignore_text: Si tú no lo has solicitado, puedes ignorar este email.
+        info_text: Tu contraseña no cambiará hasta que no accedas al enlace y la modifiques.
+        text: 'Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:'
+        title: Cambia tu contraseña
       unlock_instructions:
-        hello: Hello
-        info_text: Your account has been blocked due to an excessive number of failed sign-in attempts.
-        instructions_text: 'Please click on this link to unlock your account:'
-        title: Your account has been locked
-        unlock_link: Unlock my account
+        hello: Hola
+        info_text: Tu cuenta ha sido bloqueada debido a un excesivo número de intentos fallidos de alta.
+        instructions_text: 'Sigue el siguiente enlace para desbloquear tu cuenta:'
+        title: Tu cuenta ha sido bloqueada
+        unlock_link: Desbloquear mi cuenta
     menu:
       login_items:
-        login: Sign in
-        logout: Sign out
-        signup: Register
+        login: Entrar
+        logout: Salir
+        signup: Registrarse
     organizations:
       registrations:
         new:
           email_label: Email
-          organization_name_label: Name of organisation
-          password_confirmation_label: Confirm password
-          password_label: Password
-          phone_number_label: Phone number
-          responsible_name_label: Full name of the person responsible for the collective
-          responsible_name_note: This would be the person representing the association/collective in whose name the proposals are presented
-          submit: Register
-          title: Register as an organisation or collective
+          organization_name_label: Nombre de la organización
+          password_confirmation_label: Confirmar contraseña
+          password_label: Contraseña
+          phone_number_label: Teléfono
+          responsible_name_label: Nombre y apellidos de la persona responsable del colectivo
+          responsible_name_note: Será la persona representante de la asociación/colectivo en cuyo nombre se presenten las propuestas
+          submit: Registrarse
+          title: Registrarse como organización / colectivo
         success:
-          back_to_index: I understand; go back to main page
-          instructions_1_html: "<b>We will contact you soon</b> to verify that you do in fact represent this collective."
-          instructions_2_html: While your <b>email is reviewed</b>, we have sent you a <b>link to confirm your account</b>.
-          instructions_3_html: Once confirmed, you may begin to participate as an unverified collective.
-          thank_you_html: Thank you for registering your collective on the website. It is now <b>pending verification</b>.
-          title: Registration of organisation / collective
+          back_to_index: Entendido, volver a la página principal
+          instructions_1_html: "En breve <b>nos pondremos en contacto contigo</b> para verificar que realmente representas a este colectivo."
+          instructions_2_html: Mientras <b>revisa tu correo electrónico</b>, te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_3_html: Una vez confirmado, podrás empezar a participar como colectivo no verificado.
+          thank_you_html: Gracias por registrar tu colectivo en la web. Ahora está <b>pendiente de verificación</b>.
+          title: Registro de organización / colectivo
     passwords:
       edit:
-        change_submit: Change my password
-        password_confirmation_label: Confirm new password
-        password_label: New password
-        title: Change your password
+        change_submit: Cambiar mi contraseña
+        password_confirmation_label: Confirmar contraseña nueva
+        password_label: Contraseña nueva
+        title: Cambia tu contraseña
       new:
         email_label: Email
-        send_submit: Send instructions
-        title: Forgotten password?
+        send_submit: Recibir instrucciones
+        title: '¿Has olvidado tu contraseña?'
     sessions:
       new:
-        login_label: Email or username
-        password_label: Password
-        remember_me: Remember me
-        submit: Enter
-        title: Sign in
+        login_label: Email o nombre de usuario
+        password_label: Contraseña
+        remember_me: Recordarme
+        submit: Entrar
+        title: Entrar
     shared:
       links:
-        login: Enter
-        new_confirmation: Haven't received instructions to activate your account?
-        new_password: Forgotten your password?
-        new_unlock: Haven't received unlocking instructions?
-        signin_with_provider: Sign in with %{provider}
-        signup: Don't have an account? %{signup_link}
-        signup_link: Sign up
+        login: Entrar
+        new_confirmation: '¿No has recibido instrucciones para confirmar tu cuenta?'
+        new_password: '¿Olvidaste tu contraseña?'
+        new_unlock: '¿No has recibido instrucciones para desbloquear?'
+        signin_with_provider: Entrar con %{provider}
+        signup: '¿No tienes una cuenta? %{signup_link}'
+        signup_link: Regístrate
     unlocks:
       new:
         email_label: Email
-        submit: Re-send unlocking instructions
-        title: Re-sent unlocking instructions
+        submit: Reenviar instrucciones para desbloquear
+        title: Reenviar instrucciones para desbloquear
     users:
       registrations:
         delete_form:
-          erase_reason_label: Reason
-          info: This action can not be undone. Please make sure this is what you want.
-          info_reason: If you want, leave us a reason (optional)
-          submit: Erase my account
-          title: Erase account
+          erase_reason_label: Razón de la baja
+          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella.
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
+          submit: Borrar mi cuenta
+          title: Darme de baja
         edit:
-          current_password_label: Current password
-          edit: Edit
+          current_password_label: Contraseña actual
+          edit: Editar
           email_label: Email
-          leave_blank: Leave blank if you do not wish to modify
-          need_current: We need your current password to confirm the changes
-          password_confirmation_label: Confirm new password
-          password_label: New password
-          update_submit: Update
-          waiting_for: 'Awaiting confirmation of:'
+          leave_blank: Dejar en blanco si no deseas cambiarla
+          need_current: Necesitamos tu contraseña actual para confirmar los cambios
+          password_confirmation_label: Confirmar contraseña nueva
+          password_label: Contraseña nueva
+          update_submit: Actualizar
+          waiting_for: 'Esperando confirmación de:'
         new:
-          cancel: Cancel login
-          email_label: Email
-          organization_signup: Do you represent an organisation or collective? %{signup_link}
-          organization_signup_link: Sign up here
-          password_confirmation_label: Confirm password
-          password_label: Password
-          redeemable_code: Verification code received via email (optional)
-          submit: Register
-          terms: By registering you accept the %{terms}
-          terms_link: terms and conditions of use
-          terms_title: By registering you accept the terms and conditions of use
-          title: Register
-          username_is_available: "Username available"
-          username_is_not_available: "Username already in use"
-          username_label: Username
-          username_note: Name that appears next to your posts
+          cancel: Cancelar login
+          email_label: Tu correo electrónico
+          organization_signup: '¿Representas a una organización / colectivo? %{signup_link}'
+          organization_signup_link: Regístrate aquí
+          password_confirmation_label: Repite la contraseña anterior
+          password_label: Contraseña que utilizarás para acceder a este sitio web
+          redeemable_code: Tu código de verificación (si has recibido una carta con él)
+          submit: Registrarse
+          terms: Al registrarte aceptas las %{terms}
+          terms_link: condiciones de uso
+          terms_title: Al registrarte aceptas las condiciones de uso
+          title: Registrarse
+          username_is_available: "Nombre de usuario disponible"
+          username_is_not_available: "Nombre de usuario ya existente"
+          username_label: Nombre de usuario
+          username_note: Nombre público que aparecerá en tus publicaciones
         success:
-          back_to_index: I understand; go back to main page
-          instructions_1_html: Please <b>check your email</b> - we have sent you a <b>link to confirm your account</b>.
-          instructions_2_html: Once confirmed, you may begin participation.
-          thank_you_html: Thank you for registering for the website. You must now <b>confirm your email address</b>.
-          title: Modify your email
+          back_to_index: Entendido, volver a la página principal
+          instructions_1_html: Por favor <b>revisa tu correo electrónico</b> - te hemos enviado un <b>enlace para confirmar tu cuenta</b>.
+          instructions_2_html: Una vez confirmado, podrás empezar a participar.
+          thank_you_html: Gracias por registrarte en la web. Ahora debes <b>confirmar tu correo</b>.
+          title: Revisa tu correo
