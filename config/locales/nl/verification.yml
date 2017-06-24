@@ -1,4 +1,3 @@
----
 nl:
   verification:
     alert:
@@ -81,9 +80,9 @@ nl:
         title: Security code confirmation
       new:
         phone: Enter your mobile phone number to receive the code
-        phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
+        phone_format_html: '<strong><em>(Example: 612345678 or +34612345678)</em></strong>'
         phone_note: We only user your phone for send to you a code, we never contact to you.
-        phone_placeholder: "Example: 612345678 or +34612345678"
+        phone_placeholder: 'Example: 612345678 or +34612345678'
         submit_button: Send
         title: Send confirmation code
       update:

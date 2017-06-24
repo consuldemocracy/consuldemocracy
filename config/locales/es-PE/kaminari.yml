@@ -1,0 +1,20 @@
+es-PE:
+  helpers:
+    page_entries_info:
+      entry:
+        one: entrada
+        other: entradas
+      more_pages:
+        display_entries: Mostrando <strong>%{first}&nbsp;-&nbsp;%{last}</strong> de un total de <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          one: Hay <strong>1 %{entry_name}</strong>
+          other: Hay <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      first: Primera
+      last: Última
+      next: Siguiente
+      previous: Anterior
+      truncate: "&hellip;"
+      current: Estás en la página

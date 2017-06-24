@@ -1,18 +1,15 @@
----
 fr:
   helpers:
     page_entries_info:
       entry:
         one: Entrée
         other: Entrées
-        zero: Entrées
       more_pages:
         display_entries: Affichage des entrées <b>%{first}&nbsp;-&nbsp;%{last}</b> sur <b>%{total}</b> %{entry_name}
       one_page:
         display_entries:
           one: Il y a <b>1</b> %{entry_name}
           other: Il y a <b> %{count}</b> %{entry_name}
-          zero: "%{entry_name} ne peut être trouvée"
   views:
     pagination:
       first: Premier
@@ -21,4 +18,3 @@ fr:
       previous: Précédent
       truncate: "&hellip;"
       current: Vous êtes sur la page
-
