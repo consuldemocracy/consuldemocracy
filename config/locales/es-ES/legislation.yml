@@ -1,110 +1,110 @@
 ---
-es-ES:
+en-EN:
   legislation:
     annotations:
       comments:
-        see_all: Ver todos
-        see_complete: Ver completo
+        see_all: See all
+        see_complete: See complete
         comments_count:
-          one: "%{count} comentario"
-          other: "%{count} comentarios"
+          one: "%{count} comment"
+          other: "%{count} comments"
         replies_count:
-          one: "%{count} respuesta"
-          other: "%{count} respuestas"
-        cancel: Cancelar
-        publish_comment: Publicar Comentario
+          one: "%{count} reply"
+          other: "%{count} replies"
+        cancel: Cancel
+        publish_comment: Publish Comment
       form:
-        phase_not_open: Esta fase del proceso no está abierta
-        login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-        signin: iniciar sesión
-        signup: registrarte
+        phase_not_open: This phase is not open
+        login_to_comment: You must %{signin} or %{signup} to leave a comment.
+        signin: Sign in
+        signup: Sign up
       index:
-        title: Comentarios
-        see_in_context: Ver en contexto
-        comments_about: Comentarios sobre
+        title: Comments
+        comments_about: Comments about
+        see_in_context: See in context
         comments_count:
-          one: "%{count} comentario"
-          other: "%{count} comentarios"
+          one: "%{count} comment"
+          other: "%{count} comments"
       show:
-        title: Comentario
+        title: Comment
       version_chooser:
-        seeing_version: Comentarios para la versión
-        see_text: Ver borrador del texto
+        seeing_version: Commments for version
+        see_text: See text draft
     draft_versions:
       changes:
-        title: Cambios
-        seeing_changelog_version: Resumen de cambios de la revisión
-        see_text: Ver borrador del texto
+        title: Changes
+        seeing_changelog_version: Revision changes summary
+        see_text: See text draft
       show:
-        loading_comments: Cargando comentarios
-        seeing_version: Estás viendo la revisión
-        select_draft_version: Seleccionar borrador
-        select_version_submit: ver
-        updated_at: actualizada el %{date}
-        see_changes: ver resumen de cambios
-        see_comments: Ver todos los comentarios
-        text_toc: Índice
-        text_body: Texto
-        text_comments: Comentarios
+        loading_comments: Loading comments
+        seeing_version: You're seeing draft version
+        select_draft_version: Select draft
+        select_version_submit: see
+        updated_at: updated at %{date}
+        see_changes: see changes summary
+        see_comments: See all comments
+        text_toc: Table of contents
+        text_body: Text
+        text_comments: Comments
     processes:
       header:
-        view_process_information: Ver información del proceso
+        view_process_information: View process information
       debate:
-        empty_questions: No hay preguntas
-        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
+        empty_questions: There aren't any questions
+        participate: Participate in the debate
       header_full:
-        title: Colabora en la elaboración de la normativa sobre
-        description: En qué consiste
-        more_info: Más información y contexto
+        title: Participate
+        description: Description
+        more_info: More information and context
       index:
         filters:
-          open: Procesos activos
-          next: Próximamente
-          past: Terminados
-        no_open_processes: No hay procesos activos
-        no_next_processes: No hay procesos planeados
-        no_past_processes: No hay procesos terminados
+          open: Open processes
+          next: Next
+          past: Past
+        no_open_processes: There aren't open processes
+        no_next_processes: There aren't planned processes
+        no_past_processes: There aren't past processes
       phase_not_open:
-        not_open: Esta fase del proceso todavía no está abierta
+        not_open: This phase is not open yet
       phase_empty:
-          empty: No hay nada publicado todavía
+        empty: Nothing published yet
       process:
-        see_latest_comments: Ver últimas aportaciones
-        see_latest_comments_title: Aportar a este proceso
+        see_latest_comments: See latest comments
+        see_latest_comments_title: Comment on this process
       shared:
-        key_dates: Fechas clave
-        debate_dates: Debate previo
-        draft_publication_date: Publicación borrador
-        allegations_dates: Alegaciones
-        result_publication_date: Publicación resultados
+        key_dates: Key dates
+        debate_dates: Debate
+        draft_publication_date: Draft publication
+        allegations_dates: Allegations
+        result_publication_date: Final result publication
     questions:
       comments:
-        comment_button: Publicar respuesta
-        comments_title: Respuestas abiertas
-        comments_closed: Fase cerrada
+        comment_button: Publish answer
+        comments_title: Open answers
+        comments_closed: Closed phase
         form:
-          leave_comment: Deja tu respuesta
+          leave_comment: Leave your answer
       question:
         comments:
-          zero: Sin comentarios
-          one: "%{count} comentario"
-          other: "%{count} comentarios"
+          zero: No comments
+          one: "%{count} comment"
+          other: "%{count} comments"
         debate: Debate
       show:
-        answer_question: Enviar respuesta
-        next_question: Siguiente pregunta
-        first_question: Primera pregunta
-        share: Compartir
-        title: Proceso de legislación colaborativa
+        answer_question: Submit answer
+        next_question: Next question
+        first_question: First question
+        share: Share
+        title: Collaborative legislation process
       participation:
-        phase_not_open: Esta fase no está abierta
-        organizations: Las organizaciones no pueden participar en el debate
-        signin: iniciar sesión
-        signup: registrarte
-        unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
-        verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
-        verify_account: verifica tu cuenta
-        debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
+        phase_not_open: This phase is not open
+        organizations: Organisations are not permitted to participate in the debate
+        signin: Sign in
+        signup: Sign up
+        unauthenticated: You must %{signin} or %{signup} to participate.
+        verified_only: Only verified users can participate, %{verify_account}.
+        verify_account: verify your account
+        debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
     shared:
-      share: Compartir
-      share_comment: Comentario sobre la %{version_name} del borrador del proceso %{process_name}
+      share: Share
+      share_comment: Comment on %{version_name} from process draft %{process_name}
