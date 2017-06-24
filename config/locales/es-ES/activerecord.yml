@@ -2,239 +2,239 @@ es:
   activerecord:
     models:
       activity:
-        one: "activity"
-        other: "activities"
+        one: "actividad"
+        other: "actividades"
       budget:
-        one: "Participatory budget"
-        other: "Participatory budgets"
+        one: "Presupuesto participativo"
+        other: "Presupuestos participativos"
       budget/investment:
-        one: "Investment"
-        other: "Investments"
+        one: "Proyecto de inversión"
+        other: "Proyectos de inversión"
       comment:
-        one: "Comment"
-        other: "Comments"
+        one: "Comentario"
+        other: "Comentarios"
       debate:
         one: "Debate"
         other: "Debates"
       tag:
-        one: "Tag"
-        other: "Tags"
+        one: "Tema"
+        other: "Temas"
       user:
-        one: "User"
-        other: "Users"
+        one: "Usuario"
+        other: "Usuarios"
       moderator:
-        one: "Moderator"
-        other: "Moderators"
+        one: "Moderador"
+        other: "Moderadores"
       administrator:
-        one: "Administrator"
-        other: "Administrators"
+        one: "Administrador"
+        other: "Administradores"
       vote:
-        one: "Vote"
-        other: "Votes"
+        one: "Voto"
+        other: "Votos"
       organization:
-        one: "Organisation"
-        other: "Organisations"
+        one: "Organización"
+        other: "Organizaciones"
       poll/booth:
-        one: "booth"
-        other: "booths"
+        one: "urna"
+        other: "urnas"
       poll/officer:
-        one: "officer"
-        other: "officers"
+        one: "presidente de mesa"
+        other: "presidentes de mesa"
       proposal:
-        one: "Citizen proposal"
-        other: "Citizen proposals"
+        one: "Propuesta ciudadana"
+        other: "Propuestas ciudadanas"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Propuesta de inversión"
+        other: "Propuestas de inversión"
       site_customization/page:
-        one: Custom page
-        other: Custom pages
+        one: Página
+        other: Páginas
       site_customization/image:
-        one: Custom image
-        other: Custom images
+        one: Imagen
+        other: Imágenes
       site_customization/content_block:
-        one: Custom content block
-        other: Custom content blocks
+        one: Bloque
+        other: Bloques
       legislation/process:
-        one: "Process"
-        other: "Processes"
+        one: "Proceso"
+        other: "Procesos"
       legislation/draft_versions:
-        one: "Draft version"
-        other: "Draft versions"
+        one: "Versión borrador"
+        other: "Versiones borrador"
       legislation/draft_texts:
-        one: "Draft"
-        other: "Drafts"
+        one: "Borrador"
+        other: "Borradores"
       legislation/questions:
-        one: "Question"
-        other: "Questions"
+        one: "Pregunta"
+        other: "Preguntas"
       legislation/question_options:
-        one: "Question option"
-        other: "Question options"
+        one: "Opción de respuesta cerrada"
+        other: "Opciones de respuesta cerrada"
       legislation/answers:
-        one: "Answer"
-        other: "Answers"
+        one: "Respuesta"
+        other: "Respuestas"
     attributes:
       budget:
-        name: "Name"
-        description_accepting: "Description during Accepting phase"
-        description_reviewing: "Description during Reviewing phase"
-        description_selecting: "Description during Selecting phase"
-        description_valuating: "Description during Valuating phase"
-        description_balloting: "Description during Balloting phase"
-        description_reviewing_ballots: "Description during Reviewing Ballots phase"
-        description_finished: "Description when the budget is finished"
-        phase: "Phase"
-        currency_symbol: "Currency"
+        name: "Nombre"
+        description_accepting: "Descripción durante la fase de presentación de proyectos"
+        description_reviewing: "Descripción durante la fase de revisión interna"
+        description_selecting: "Descripción durante la fase de apoyos"
+        description_valuating: "Descripción durante la fase de evaluación"
+        description_balloting: "Descripción durante la fase de votación"
+        description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
+        description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
+        phase: "Fase"
+        currency_symbol: "Divisa"
       budget/investment:
-        heading_id: "Heading"
-        title: "Title"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        location: "Location"
-        administrator_id: "Administrator"
-        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        heading_id: "Partida presupuestaria"
+        title: "Título"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        location: "Ubicación"
+        administrator_id: "Administrador"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
       comment:
-        body: "Comment"
-        user: "User"
+        body: "Comentario"
+        user: "Usuario"
       debate:
-        author: "Author"
-        description: "Opinion"
-        terms_of_service: "Terms of service"
-        title: "Title"
+        author: "Autor"
+        description: "Opinión"
+        terms_of_service: "Términos de servicio"
+        title: "Título"
       proposal:
-        author: "Author"
-        title: "Title"
-        question: "Question"
-        description: "Description"
-        terms_of_service: "Terms of service"
+        author: "Autor"
+        title: "Título"
+        question: "Pregunta"
+        description: "Descripción"
+        terms_of_service: "Términos de servicio"
       user:
-        login: "Email or username"
-        email: "Email"
-        username: "Username"
-        password_confirmation: "Password confirmation"
-        password: "Password"
-        current_password: "Current password"
-        phone_number: "Phone number"
-        official_position: "Official position"
-        official_level: "Official level"
-        redeemable_code: "Verification code received via email"
+        login: "Email o nombre de usuario"
+        email: "Correo electrónico"
+        username: "Nombre de usuario"
+        password_confirmation: "Confirmación de contraseña"
+        password: "Contraseña"
+        current_password: "Contraseña actual"
+        phone_number: "Teléfono"
+        official_position: "Cargo público"
+        official_level: "Nivel del cargo"
+        redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Name of organisation"
-        responsible_name: "Person responsible for the group"
+        name: "Nombre de organización"
+        responsible_name: "Persona responsable del colectivo"
       spending_proposal:
         administrator_id: "Administrador"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
+        association_name: "Nombre de la asociación"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        geozone_id: "Ámbito de actuación"
+        title: "Título"
       poll:
-        name: "Name"
-        starts_at: "Start Date"
-        ends_at: "Closing Date"
-        geozone_restricted: "Restricted by geozone"
+        name: "Nombre"
+        starts_at: "Fecha de apertura"
+        ends_at: "Fecha de cierre"
+        geozone_restricted: "Restringida por zonas"
       poll/question:
-        title: "Question"
-        valid_answers: "Posibles answers"
-        summary: "Summary"
-        description: "Description"
-        external_url: "Link to additional documentation"
+        title: "Pregunta"
+        valid_answers: "Posibles respuestas"
+        summary: "Resumen"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
       signature_sheet:
-        signable_type: "Signable type"
-        signable_id: "Signable ID"
-        document_numbers: "Documents numbers"
+        signable_type: "Tipo de hoja de firmas"
+        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        document_numbers: "Números de documentos"
       site_customization/page:
-        content: Content
-        created_at: Created at
-        subtitle: Subtitle
+        content: Contenido
+        created_at: Creada
+        subtitle: Subtítulo
         slug: Slug
-        status: Status
-        title: Title
-        updated_at: Updated at
-        more_info_flag: Show in more information page
-        print_content_flag: Print content button
+        status: Estado
+        title: Título
+        updated_at: última actualización
+        more_info_flag: Mostrar en la página de más información
+        print_content_flag: Botón de imprimir contenido
       site_customization/image:
-        name: Name
-        image: Image
+        name: Nombre
+        image: Imagen
       site_customization/content_block:
-        name: Name
-        locale: locale
-        body: Body
+        name: Nombre
+        locale: Idioma
+        body: Contenido
       legislation/process:
-        title: Process Title
-        description: Description
-        additional_info: Additional info
-        start_date: Start date
-        end_date: End date
-        debate_start_date: Debate start date
-        debate_end_date: Debate end date
-        draft_publication_date: Draft publication date
-        allegations_start_date: Allegations start date
-        allegations_end_date: Allegations end date
-        result_publication_date: Final result publication date
+        title: Título del proceso
+        description: En qué consiste
+        additional_info: Información adicional
+        start_date: Fecha de inicio del proceso
+        end_date: Fecha de fin del proceso
+        debate_start_date: Fecha de inicio del debate
+        debate_end_date: Fecha de fin del debate
+        draft_publication_date: Fecha de publicación del borrador
+        allegations_start_date: Fecha de inicio de alegaciones
+        allegations_end_date: Fecha de fin de alegaciones
+        result_publication_date: Fecha de publicación del resultado final
       legislation/draft_version:
-        title: Version title
-        body: Text
-        changelog: Changes
-        status: Status
-        final_version: Final version
+        title: Título de la version
+        body: Texto
+        changelog: Cambios
+        status: Estado
+        final_version: Versión final
       legislation/question:
-        title: Title
-        question_options: Options
+        title: Título
+        question_options: Respuestas
       legislation/question_option:
-        value: Value
+        value: Valor
       legislation/annotation:
-        text: Comment
+        text: Comentario
     errors:
       models:
         user:
           attributes:
             email:
-              password_already_set: "This user already has a password"
+              password_already_set: "Este usuario ya tiene una clave asociada"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "You have reached the maximum number of private messages per day"
+              invalid: "Has llegado al número máximo de mensajes privados por día"
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Document not in census"
-              has_voted: "User has already voted"
+              not_in_census: "Este documento no aparece en el censo"
+              has_voted: "Este usuario ya ha votado"
         legislation/process:
           attributes:
             end_date:
-              invalid_date_range: must be on or after the start date
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
             debate_end_date:
-              invalid_date_range: must be on or after the debate start date
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
             allegations_end_date:
-              invalid_date_range: must be on or after the allegations start date
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: 'No verificado por Padrón'
+              already_voted: 'Ya ha votado esta propuesta'
         site_customization/page:
           attributes:
             slug:
-              slug_format: "must be letters, numbers, _ and -"
+              slug_format: "deber ser letras, números, _ y -"
         site_customization/image:
           attributes:
             image:
-              image_width: "Width must be %{required_width}px"
-              image_height: "Height must be %{required_height}px"
+              image_width: "Debe tener %{required_width}px de ancho"
+              image_height: "Debe tener %{required_height}px de alto"
