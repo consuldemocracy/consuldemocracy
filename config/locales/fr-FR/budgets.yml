@@ -11,15 +11,16 @@ fr:
           one: "Vous avez voté pour <span>une</span> proposition."
           other: "Vous avez voté pour <span>%{count}</span> propositions."
         voted_info_html: "Vous pouvez modifier votre vote à tout moment jusqu'à la fin de cette phase.<br> Vous n'avez pas besoin de dépenser tout le budget disponible."
-        zero: "Vous n'avez voté pour aucune des propositions d'investissement."
+        zero: Vous n'avez voté pour aucune des propositions d'investissement.
       reasons_for_not_balloting:
         not_logged_in: Vous devez %{signin} ou %{signup} pour continuer.
         not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions, %{verify_account}.
         organization: Les organisations ne sont pas autorisées à voter.
         not_selected: Les propositions d'investissement non-sélectionnées ne peuvent être soutenues.
-        not_enough_money: "Vous n'avez pas assez de fonds."
+        not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: La phase de sélection est terminée.
         different_heading_assigned: Vous avez déjà voté pour une autre section de cette proposition.
+        change_ballot: change your votes
     groups:
       show:
         title: Sélectionner une option
@@ -48,14 +49,14 @@ fr:
         unfeasible: Propositions d'investissement infaisables
         unfeasible_text: "Les propositions doivent satisfaire un certain nombre de critères (être légale, concrète, relever des compétences de la Ville, ne pas dépasser le plafond des budgets, %{definitions}) pour être déclarer viable et atteindre le stade final des votes. Toutes les propositions qui ne respectent pas ces critères sont identifiées comme infaisables et publiées dans la liste suivante, accompagnées de leur rapport d'infaisabilité."
         unfeasible_text_definitions: voir les définitions ici
-        by_heading: "Portée des propositions d'investissement: %{heading}"
+        by_heading: 'Portée des propositions d''investissement: %{heading}'
         search_form:
           button: Rechercher
           placeholder: Rechercher des propositions d'investissement...
           title: Recherche
-        search_results:
-          one: " contenant le terme '%{search_term}'"
-          other: " contenant les termes '%{search_term}'"
+        search_results_html:
+          one: " containing the term <strong>'%{search_term}'</strong>"
+          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mon vote
           voted_html:
@@ -63,7 +64,9 @@ fr:
             other: "<strong>Vous avez voté %{count} propositions pour un coût de %{amount_spent}</strong>"
           voted_info: Vous pouvez %{link} à tout moment jusqu'à la clôture de cette phase. Vous n'avez pas besoin de dépenser tout le budget disponible.
           voted_info_link: modifier votre vote
-          different_heading_assigned_html: "Vous avez des votes actifs dans une autre section : %{heading_link}"
+          different_heading_assigned_html: 'Vous avez des votes actifs dans une autre section : %{heading_link}'
+          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+          check_ballot_link: "check my ballot"
           zero: Vous n'avez voté pour aucune proposition d'investissement dans ce groupe.
           verified_only: "Pour créer une proposition d'investissement %{verify}."
           verify_account: "vérifiez votre compte"
@@ -92,7 +95,6 @@ fr:
         price: Coût
       wrong_price_format: Nombres entiers uniquement
       investment:
-        title: Proposition d'investissement
         add: Voter
         already_added: Vous avez déjà ajouté cette proposition d'investissement.
         already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
@@ -101,13 +103,14 @@ fr:
         supports:
           one: 1 soutien
           other: "%{count} soutiens"
-          zero: Pas de soutiens
         give_support: Soutenir
       header:
         check_ballot: Vérifier mon vote
-        different_heading_assigned_html: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
+        different_heading_assigned_html: 'Vous avez des votes actifs dans d''autres sections : %{heading_link}'
+        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+        check_ballot_link: "check my ballot"
     progress_bar:
-      available: "Disponible : "
+      available: 'Disponible : '
     show:
       group: Groupe
       phase: Phase actuelle
@@ -115,3 +118,16 @@ fr:
       unfeasible: Voir les propositions infaisables
       unselected_title: Propositions non-sélectionnées pour la phase de vote
       unselected: Voir les propositions non-sélectionnées pour la phase de vote
+      see_results: See results
+    results:
+      page_title: "%{budget} - Results"
+      heading: "Participatory budget results"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      accepted: 'Accepted spending proposal: '
+      discarded: 'Discarded spending proposal: '
