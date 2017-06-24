@@ -1,6 +1,6 @@
 es:
   social_share_button:
-    share_to: "Share to %{name}"
+    share_to: "Compartir en %{name}"
     weibo: "Sina Weibo"
     twitter: "Twitter"
     facebook: "Facebook"
@@ -16,5 +16,5 @@ es:
     tumblr: "Tumblr"
     plurk: "Plurk"
     pinterest: "Pinterest"
-    email: "Email"
+    email: "Correo electrónico"
     telegram: "Telegram"
