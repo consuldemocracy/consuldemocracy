@@ -5,6 +5,7 @@ nl:
         title: Uw keuze
         amount_spent: Uitgegeven
         remaining: "U heeft nog <span>%{amount}</span> te spenderen."
+        no_balloted_group_yet: "You have not voted on this group yet, go vote!"
         remove: Verwijder keuze
         voted_html:
           one: "U heeft op <span>één</span> voorstel gestemd."
@@ -12,17 +13,21 @@ nl:
         voted_info_html: "U te allen tijde uw stem wijzigen, tot de sluiting van deze fase.<br> U hoeft niet het héle bedrag uit te geven."
         zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
+        not_logged_in: You must %{signin} or %{signup} to continue.
         not_verified: Alleen geverrifieerde deelnemers kunnen op voorstellen stemmen; %{verify_account}.
         organization: Organisaties kunnen niet stemmen
         not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
-        not_enough_money: "Niet genoed budget."
+        not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
         no_ballots_allowed: De selectiefase is voorbij
         different_heading_assigned: You have already voted a different heading
+        change_ballot: change your votes
     groups:
       show:
         title: Kies een mogelijkheid
         unfeasible_title: Onhaalbare voorstellen
         unfeasible: Zie onhaalbare voorstellen
+        unselected_title: Investments not selected for balloting phase
+        unselected: See investments not selected for balloting phase
     phase:
       accepting: Voorstellen doen
       reviewing: Voorstellen beoordelen
@@ -44,20 +49,24 @@ nl:
         unfeasible: Onhaalbare begrotingsvoorstellen
         unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen in 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
         unfeasible_text_definitions: zie de voorwaarden hier
-        by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
+        by_heading: 'Begrotingsvoorstellen in de context van: %{heading}'
         search_form:
           button: Zoeken
           placeholder: Zoek begrotingsvoorstellen...
           title: Zoeken
-        search_results:
-          one: " met de term '%{search_term}'"
-          other: " met de term '%{search_term}'"
+        search_results_html:
+          one: " containing the term <strong>'%{search_term}'</strong>"
+          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mijn stemmen
           voted_html:
             one: "<strong>U heeft gestemd op een voorstel dat %{amount_spent} kost</strong>"
             other: "<strong>U heeft gestemd op %{count} voorstellen met een prijs van %{amount_spent}</strong>"
           voted_info: Tot de fase eindigt kunt u uw stem altijd wijzigen. Het budget hoeft niet per sé op.
+          voted_info_link: change your vote
+          different_heading_assigned_html: 'You have active votes in another heading: %{heading_link}'
+          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+          check_ballot_link: "check my ballot"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "Verifieer uw account om een nieuw begrotingsvoorstel te doen."
           verify_account: "verifieer uw account"
@@ -83,9 +92,9 @@ nl:
         title: Begrotingsvoorstel
         supports: Steunt
         votes: Stemmen
+        price: Price
       wrong_price_format: Alleen hele nummers
       investment:
-        title: Begrotingsvoorstel
         add: Voeg toe
         already_added: U heeft dit voorstel al toegevoegd
         already_supported: U heeft dit al gestuend. Deel 't!
@@ -94,15 +103,31 @@ nl:
         supports:
           one: 1 steunbetuiging
           other: "%{count} steunbetuigingen"
-          zero: Geen steunbetuigingen
         give_support: Steun
       header:
         check_ballot: Check mijn stemmen
-        different_heading_assigned_html: "U steunt al vanuit een ander deel van het voorstel: %{heading_link}"
+        different_heading_assigned_html: 'U steunt al vanuit een ander deel van het voorstel: %{heading_link}'
+        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+        check_ballot_link: "check my ballot"
     progress_bar:
-      available: "Beschikbaar: "
+      available: 'Beschikbaar: '
     show:
       group: Groep
       phase: Huidige fase
       unfeasible_title: Onhaalbare voorstellen
       unfeasible: Bekijk onhaalbare voorstellen
+      unselected_title: Investments not selected for balloting phase
+      unselected: See investments not selected for balloting phase
+      see_results: See results
+    results:
+      page_title: "%{budget} - Results"
+      heading: "Participatory budget results"
+      geozone_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      accepted: 'Accepted spending proposal: '
+      discarded: 'Discarded spending proposal: '
