@@ -1,4 +1,3 @@
----
 nl:
   pages:
     census_terms: To confirm the account, you must be 16 or older and be registered, having provided the information requested previously, will verify. By accepting the verification process, you also consent to the verification of this information, as well as the contact methods featuring in said files. The data provided will be acquired and processed in a file mentioned previously in the terms and conditions of use for the Portal.
@@ -51,17 +50,20 @@ nl:
         title: "Technische problemen?"
         description: "Lees de FAQs en kijk of dat helpt."
         button: "Bekijk de meest gestelde vragen"
+        page:
+          title: "Frequently Asked Questions"
+          description: "Use this page to resolve the common FAQs to the users of site."
+          faq_1_title: "Question 1"
+          faq_1_description: "This is an example for the description of question one."
       other:
         title: "Verdere informatie"
         how_to_use: "Gebruik %{org_name} in uw gemeente"
-        world: "Burgerparticipatie in de wereld"
-        facts: "Feiten over burgerparticipatie en directe democratie"
       how_to_use:
         text: |-
           Gebruik het in uw gemeente en help ons het te verbeteren, het is gratis software.
-
+          
           Deze Open Overheid site gebruikt de [Consul web-app](https://github.com/ayuntamientomadrid 'consul github'). Gratis software, onder de [AGPLv3 Licentie](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ). Simpel gezegd betekend dit dat u de app kunt inspecteren, gebruiken, aanpassen en herdistribueren (onder voorwaarde dat anderen hetzelfde kunnen doen met uw versie).
-
+          
           Voor programmeurs: help ons het te verbeteren via [Consul app](https://github.com/ayuntamientomadrid 'consul github').
       titles:
         how_to_use: Gebruik het in uw gemeente
