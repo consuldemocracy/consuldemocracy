@@ -29,7 +29,7 @@ describe Budget::Investment do
     end
   end
 
-  describe "#image" do
+  describe "#image and #image_title" do
     let(:investment_with_image) { build(:budget_investment, :with_descriptive_image) }
 
     it "should be valid" do
@@ -63,14 +63,14 @@ describe Budget::Investment do
         expect(investment_with_image).to be_valid
       end
 
-      it "should be valid when image dimmessions are 475X475 at least" do
+      it "should not be valid when image dimmensions are smaller than 475X475" do
         investment_with_image.image = File.new("spec/fixtures/files/logo_header.jpg")
 
         expect(investment_with_image).not_to be_valid
       end
     end
 
-    describe "description" do
+    describe "title" do
 
       it "should be valid when image and image_title are not defined" do
         investment_with_image.image = nil
@@ -79,19 +79,19 @@ describe Budget::Investment do
         expect(investment_with_image).to be_valid
       end
 
-      it "should not be valid when correct image attached but no image description provided" do
+      it "should not be valid when correct image attached but no image title provided" do
         investment_with_image.image_title = ''
 
         expect(investment_with_image).to_not be_valid
       end
 
-      it "should not be valid when image description is too short" do
+      it "should not be valid when image title is too short" do
         investment_with_image.image_title = 'a'*3
 
         expect(investment_with_image).to_not be_valid
       end
 
-      it "should not be valid when image description is too long" do
+      it "should not be valid when image title is too long" do
         investment_with_image.image_title = 'a'*81
 
         expect(investment_with_image).to_not be_valid
