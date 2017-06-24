@@ -55,6 +55,24 @@ nl:
       site_customization/content_block:
         one: Aangepaste inhoud
         other: Aangepaste inhoud
+      legislation/process:
+        one: "Process"
+        other: "Processes"
+      legislation/draft_versions:
+        one: "Draft version"
+        other: "Draft versions"
+      legislation/draft_texts:
+        one: "Draft"
+        other: "Drafts"
+      legislation/questions:
+        one: "Question"
+        other: "Questions"
+      legislation/question_options:
+        one: "Question option"
+        other: "Question options"
+      legislation/answers:
+        one: "Answer"
+        other: "Answers"
     attributes:
       budget:
         name: "Naam"
@@ -68,14 +86,12 @@ nl:
         phase: "Fase"
         currency_symbol: "Valuta"
       budget/investment:
-        heading_id: "Begrotingsectie"
+        heading_id: "Kop"
         title: "Titel"
         description: "Omschrijving"
-        external_url: "Externe url"
+        external_url: "Link naar extra documentatie"
         location: "Locatie"
         administrator_id: "Administrator"
-        external_url: "Link naar extra documentatie"
-        heading_id: "Kop"
         organization_name: "Als u een voorstel doet uit naam van een collectief/organisatie, voer de naam in"
       comment:
         body: "Reactie"
@@ -92,6 +108,7 @@ nl:
         description: "Omschrijving"
         terms_of_service: "Gebruiksvoorwaarden"
       user:
+        login: "Email or username"
         email: "Email"
         username: "Gebruikersnaam"
         password_confirmation: "Bevestiging wachtwoord"
@@ -135,7 +152,7 @@ nl:
         title: Titel
         updated_at: Bijgewerkt op
         more_info_flag: Toon in extra informatie pagina
-        print_content_flag: Print inhoud 
+        print_content_flag: Print inhoud
       site_customization/image:
         name: Naam
         image: Beeld
@@ -143,6 +160,31 @@ nl:
         name: Naam
         locale: locale
         body: Body
+      legislation/process:
+        title: Process Title
+        description: Description
+        additional_info: Additional info
+        start_date: Start date
+        end_date: End date
+        debate_start_date: Debate start date
+        debate_end_date: Debate end date
+        draft_publication_date: Draft publication date
+        allegations_start_date: Allegations start date
+        allegations_end_date: Allegations end date
+        result_publication_date: Final result publication date
+      legislation/draft_version:
+        title: Version title
+        body: Text
+        changelog: Changes
+        status: Status
+        final_version: Final version
+      legislation/question:
+        title: Title
+        question_options: Options
+      legislation/question_option:
+        value: Value
+      legislation/annotation:
+        text: Comment
     errors:
       models:
         user:
@@ -162,6 +204,14 @@ nl:
             document_number:
               not_in_census: "Document not in census"
               has_voted: "Deelnemer heeft al gestemd"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: must be on or after the start date
+            debate_end_date:
+              invalid_date_range: must be on or after the debate start date
+            allegations_end_date:
+              invalid_date_range: must be on or after the allegations start date
         proposal:
           attributes:
             tag_list:
