@@ -2,32 +2,32 @@ fr:
   activerecord:
     models:
       activity:
-        one: "activity"
-        other: "activities"
+        one: "activité"
+        other: "activités"
       budget:
-        one: "Participatory budget"
-        other: "Participatory budgets"
+        one: "Budget participatif"
+        other: "Budgets participatifs"
       budget/investment:
-        one: "Investment"
-        other: "Investments"
+        one: "Projet d'investissement"
+        other: "Projets d'investissement"
       comment:
-        one: "Comment"
-        other: "Comments"
+        one: "Commentaire"
+        other: "Commentaires"
       debate:
-        one: "Debate"
-        other: "Debates"
+        one: "Débat"
+        other: "Débats"
       tag:
-        one: "Tag"
-        other: "Tags"
+        one: "Étiquette"
+        other: "Étiquettes"
       user:
-        one: "User"
-        other: "Users"
+        one: "Utilisateur"
+        other: "Utilisateurs"
       moderator:
-        one: "Moderator"
-        other: "Moderators"
+        one: "Modérateur"
+        other: "Modérateurs"
       administrator:
-        one: "Administrator"
-        other: "Administrators"
+        one: "Administrateur"
+        other: "Administrateurs"
       vote:
         one: "Vote"
         other: "Votes"
@@ -35,26 +35,26 @@ fr:
         one: "Organisation"
         other: "Organisations"
       poll/booth:
-        one: "booth"
-        other: "booths"
+        one: "bureau de vote"
+        other: "bureaux de vote"
       poll/officer:
-        one: "officer"
-        other: "officers"
+        one: "président"
+        other: "présidents"
       proposal:
-        one: "Citizen proposal"
-        other: "Citizen proposals"
+        one: "Proposition citoyenne"
+        other: "Propositions citoyennes"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Proposition d'investissement"
+        other: "Propositions d'investissement"
       site_customization/page:
-        one: Custom page
-        other: Custom pages
+        one: Page personnalisée
+        other: Pages personnalisées
       site_customization/image:
-        one: Custom image
-        other: Custom images
+        one: Image personnalisée
+        other: Images personnalisées
       site_customization/content_block:
-        one: Custom content block
-        other: Custom content blocks
+        one: Bloc de contenu personnalisé
+        other: Blocs de contenu personnalisés
       legislation/process:
         one: "Process"
         other: "Processes"
@@ -75,91 +75,91 @@ fr:
         other: "Answers"
     attributes:
       budget:
-        name: "Name"
-        description_accepting: "Description during Accepting phase"
-        description_reviewing: "Description during Reviewing phase"
-        description_selecting: "Description during Selecting phase"
-        description_valuating: "Description during Valuating phase"
-        description_balloting: "Description during Balloting phase"
-        description_reviewing_ballots: "Description during Reviewing Ballots phase"
-        description_finished: "Description when the budget is finished"
+        name: "Nom"
+        description_accepting: "Description durant la phase d'acceptation"
+        description_reviewing: "Description durant la phase de revue"
+        description_selecting: "Description durant la phase de sélection"
+        description_valuating: "Description durant la phase d'évaluation"
+        description_balloting: "Description durant la phase de vote"
+        description_reviewing_ballots: "Description durant la phase de revue des votes"
+        description_finished: "Description quand le budget est finalisé"
         phase: "Phase"
-        currency_symbol: "Currency"
+        currency_symbol: "Devise"
       budget/investment:
-        heading_id: "Heading"
-        title: "Title"
+        heading_id: "Rubrique du budget"
+        title: "Titre"
         description: "Description"
-        external_url: "Link to additional documentation"
-        location: "Location"
-        administrator_id: "Administrator"
-        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        external_url: "Lien vers la documentation complémentaire"
+        location: "Lieu"
+        administrator_id: "Administrateur"
+        organization_name: "Si votre proposition concerne un collectif ou une organisation, renseignez leur nom"
       comment:
-        body: "Comment"
-        user: "User"
+        body: "Commentaire"
+        user: "Utilisateur"
       debate:
-        author: "Author"
+        author: "Auteur"
         description: "Opinion"
-        terms_of_service: "Terms of service"
-        title: "Title"
+        terms_of_service: "Conditions d'utilisation"
+        title: "Titre"
       proposal:
-        author: "Author"
-        title: "Title"
+        author: "Auteur"
+        title: "Titre"
         question: "Question"
         description: "Description"
-        terms_of_service: "Terms of service"
+        terms_of_service: "Conditions d'utilisation"
       user:
         login: "Email or username"
-        email: "Email"
-        username: "Username"
-        password_confirmation: "Password confirmation"
-        password: "Password"
-        current_password: "Current password"
-        phone_number: "Phone number"
-        official_position: "Official position"
-        official_level: "Official level"
-        redeemable_code: "Verification code received via email"
+        email: "Courriel"
+        username: "Nom d'utilisateur"
+        password_confirmation: "Confirmation du mot de passe"
+        password: "Mot de passe"
+        current_password: "Mot de passe actuel"
+        phone_number: "Téléphone"
+        official_position: "Position officielle"
+        official_level: "Niveau officiel"
+        redeemable_code: "Vérification du code reçu par courriel"
       organization:
-        name: "Name of organisation"
-        responsible_name: "Person responsible for the group"
+        name: "Nom de l'organisation"
+        responsible_name: "Personne responsable pour le groupe"
       spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Association name"
+        administrator_id: "Administrateur"
+        association_name: "Nom de l'association"
         description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
+        external_url: "Lien vers la documentation complémentaire"
+        geozone_id: "Périmètre de l'opération"
+        title: "Titre"
       poll:
-        name: "Name"
-        starts_at: "Start Date"
-        ends_at: "Closing Date"
-        geozone_restricted: "Restricted by geozone"
+        name: "Nom"
+        starts_at: "Date de début"
+        ends_at: "Date de fin"
+        geozone_restricted: "Restreint selon la zone géographique"
       poll/question:
         title: "Question"
-        valid_answers: "Posibles answers"
-        summary: "Summary"
+        valid_answers: "Réponses possibles"
+        summary: "Résumé"
         description: "Description"
-        external_url: "Link to additional documentation"
+        external_url: "Lien vers la documentation complémentaire"
       signature_sheet:
-        signable_type: "Signable type"
-        signable_id: "Signable ID"
-        document_numbers: "Documents numbers"
+        signable_type: "Type de signature"
+        signable_id: "Identifiant de la signature"
+        document_numbers: "Nombre de documents"
       site_customization/page:
-        content: Content
-        created_at: Created at
-        subtitle: Subtitle
+        content: Contenu
+        created_at: Créé le
+        subtitle: Sous-titres
         slug: Slug
-        status: Status
-        title: Title
-        updated_at: Updated at
-        more_info_flag: Show in more information page
-        print_content_flag: Print content button
+        status: Statut
+        title: Titre
+        updated_at: Mis-à-jour le
+        more_info_flag: Montrer dans la page Plus d'informations
+        print_content_flag: Bouton impression du contenu
       site_customization/image:
-        name: Name
+        name: Nom
         image: Image
       site_customization/content_block:
-        name: Name
-        locale: locale
-        body: Body
+        name: Nom
+        locale: Langue
+        body: Contenu
       legislation/process:
         title: Process Title
         description: Description
@@ -190,20 +190,20 @@ fr:
         user:
           attributes:
             email:
-              password_already_set: "This user already has a password"
+              password_already_set: "Cet utilisateur a déjà un mot de passe"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "You have reached the maximum number of private messages per day"
+              invalid: "Vous avez atteint le nombre maximum de message privés par jour"
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Document not in census"
-              has_voted: "User has already voted"
+              not_in_census: "Ce document n'est pas dans le recensement"
+              has_voted: "L'utilisateur a déjà voté"
         legislation/process:
           attributes:
             end_date:
@@ -215,26 +215,26 @@ fr:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "Le nombre d'étiquettes doit être inférieur ou égal à %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "Vous devez attendre un minimum de %{interval} jours entre les avis de proposition"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: 'Non vérifié par recensement'
+              already_voted: 'Cette proposition a déjà été votée'
         site_customization/page:
           attributes:
             slug:
-              slug_format: "must be letters, numbers, _ and -"
+              slug_format: "doit être des lettres, des nombres, _ et -"
         site_customization/image:
           attributes:
             image:
-              image_width: "Width must be %{required_width}px"
-              image_height: "Height must be %{required_height}px"
+              image_width: "La largeur doit être de %{required_width}px"
+              image_height: "La hauteur doit être de %{required_height}px"
