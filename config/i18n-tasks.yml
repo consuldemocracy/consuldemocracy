@@ -21,22 +21,38 @@ data:
     # - config/locales/**/*.%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
-    - config/locales/%{locale}/%{locale}.yml
-    - config/locales/%{locale}/activerecord.yml
-    - config/locales/%{locale}/activemodel.yml
-    - config/locales/%{locale}/admin.yml
-    - config/locales/%{locale}/moderation.yml
-    - config/locales/%{locale}/valuation.yml
-    - config/locales/%{locale}/management.yml
-    - config/locales/%{locale}/verification.yml
-    - config/locales/%{locale}/mailers.yml
-    - config/locales/%{locale}/pages.yml
-    - config/locales/%{locale}/devise_views.yml
-    - config/locales/%{locale}/responders.yml
-    - config/locales/%{locale}/kaminari.yml
-    - config/locales/%{locale}/officing.yml
-    - config/locales/%{locale}/budgets.yml
-    - config/locales/%{locale}/legislation.yml
+    - config/locales/en-EN/general.yml
+    - config/locales/en-EN/activerecord.yml
+    - config/locales/en-EN/activemodel.yml
+    - config/locales/en-EN/admin.yml
+    - config/locales/en-EN/moderation.yml
+    - config/locales/en-EN/valuation.yml
+    - config/locales/en-EN/management.yml
+    - config/locales/en-EN/verification.yml
+    - config/locales/en-EN/mailers.yml
+    - config/locales/en-EN/pages.yml
+    - config/locales/en-EN/devise_views.yml
+    - config/locales/en-EN/responders.yml
+    - config/locales/en-EN/kaminari.yml
+    - config/locales/en-EN/officing.yml
+    - config/locales/en-EN/budgets.yml
+    - config/locales/en-EN/legislation.yml
+    - config/locales/es-ES/general.yml
+    - config/locales/es-ES/activerecord.yml
+    - config/locales/es-ES/activemodel.yml
+    - config/locales/es-ES/admin.yml
+    - config/locales/es-ES/moderation.yml
+    - config/locales/es-ES/valuation.yml
+    - config/locales/es-ES/management.yml
+    - config/locales/es-ES/verification.yml
+    - config/locales/es-ES/mailers.yml
+    - config/locales/es-ES/pages.yml
+    - config/locales/es-ES/devise_views.yml
+    - config/locales/es-ES/responders.yml
+    - config/locales/es-ES/kaminari.yml
+    - config/locales/es-ES/officing.yml
+    - config/locales/es-ES/budgets.yml
+    - config/locales/es-ES/legislation.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
