@@ -631,8 +631,8 @@ nl:
       flash:
         updated: Value updated
       index:
-        banners: Estilos de banners
-        banner_imgs: Imágenes para los banners
+        banners: Banners
+        banner_imgs: Banner images
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
@@ -659,7 +659,7 @@ nl:
         placeholder: Search spending proposals by title or description
       user_search:
         button: Search
-        placeholder: Search user by name or email
+        placeholder: Search user by name or email'
       search_results: "Search results"
       no_search_results: "No results found."
     spending_proposals:
@@ -823,7 +823,7 @@ nl:
         roles: Roles
         verification_level: Verification level
       index:
-        title: User
+        title: Hidden users
       search:
         placeholder: Search user by email, name or document number
         search: Search
