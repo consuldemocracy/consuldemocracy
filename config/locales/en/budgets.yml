@@ -55,6 +55,7 @@ en:
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags
         tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+        image_label: Upload image
       index:
         title: Participatory budgeting
         unfeasible: Unfeasible investment projects
@@ -115,6 +116,7 @@ en:
         add_note: 'Add an image to your investment project: %{title}'
         edit_note: 'You are changing investment project image of: %{title}'
         form:
+          image_label: Upload image
           image_title: Image title
           submit_button: Save image
           remove_button: Remove image

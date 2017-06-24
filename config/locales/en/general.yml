@@ -184,8 +184,6 @@ en:
   geozones:
     none: All city
     all: All scopes
-  images:
-    upload_image: Upload Image
   layouts:
     application:
       chrome: Google Chrome
