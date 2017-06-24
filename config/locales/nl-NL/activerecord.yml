@@ -2,59 +2,59 @@ nl:
   activerecord:
     models:
       activity:
-        one: "activity"
-        other: "activities"
+        one: "activiteit"
+        other: "activiteiten"
       budget:
-        one: "Participatory budget"
-        other: "Participatory budgets"
+        one: "Participatieve begroting"
+        other: "Participatieve begrotingen"
       budget/investment:
-        one: "Investment"
-        other: "Investments"
+        one: "Investering"
+        other: "Investeringen"
       comment:
-        one: "Comment"
-        other: "Comments"
+        one: "Reactie"
+        other: "Reacties"
       debate:
-        one: "Debate"
-        other: "Debates"
+        one: "Debat"
+        other: "Debatten"
       tag:
-        one: "Tag"
-        other: "Tags"
+        one: "Label"
+        other: "Labels"
       user:
-        one: "User"
-        other: "Users"
+        one: "Deelnemer"
+        other: "Deelnemers"
       moderator:
         one: "Moderator"
-        other: "Moderators"
+        other: "Moderatoren"
       administrator:
-        one: "Administrator"
-        other: "Administrators"
+        one: "Admin"
+        other: "Admins"
       vote:
-        one: "Vote"
-        other: "Votes"
+        one: "Stem"
+        other: "Stemmen"
       organization:
-        one: "Organisation"
-        other: "Organisations"
+        one: "Organisatie"
+        other: "Organisaties"
       poll/booth:
-        one: "booth"
-        other: "booths"
+        one: "stemhokje"
+        other: "stemhokjes"
       poll/officer:
-        one: "officer"
-        other: "officers"
+        one: "lid"
+        other: "leden"
       proposal:
-        one: "Citizen proposal"
-        other: "Citizen proposals"
+        one: "Burgervoorstel"
+        other: "Burgervoorstellen"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Begrotingsvoorstel"
+        other: "Begrotingsvoorstellen"
       site_customization/page:
-        one: Custom page
-        other: Custom pages
+        one: Aangepaste pagina
+        other: Aangepaste paginas
       site_customization/image:
-        one: Custom image
-        other: Custom images
+        one: Aangepaste illustratie
+        other: Aangepaste illustraties
       site_customization/content_block:
-        one: Custom content block
-        other: Custom content blocks
+        one: Aangepaste inhoud
+        other: Aangepaste inhoud
       legislation/process:
         one: "Process"
         other: "Processes"
@@ -75,89 +75,89 @@ nl:
         other: "Answers"
     attributes:
       budget:
-        name: "Name"
-        description_accepting: "Description during Accepting phase"
-        description_reviewing: "Description during Reviewing phase"
-        description_selecting: "Description during Selecting phase"
-        description_valuating: "Description during Valuating phase"
-        description_balloting: "Description during Balloting phase"
-        description_reviewing_ballots: "Description during Reviewing Ballots phase"
-        description_finished: "Description when the budget is finished"
-        phase: "Phase"
-        currency_symbol: "Currency"
+        name: "Naam"
+        description_accepting: "Omschrijving gedurende de Acceptatiefase"
+        description_reviewing: "Omschrijving gedurende de Beoordelingsase"
+        description_selecting: "Omschrijving gedurende de Selectiefase"
+        description_valuating: "Omschrijving gedurende de Waarderingsfase"
+        description_balloting: "Omschrijving gedurende de Stemfase"
+        description_reviewing_ballots: "Omschrijving gedurende de beoordeling van de Stemfase"
+        description_finished: "Omschrijving wanneer de begroting is afgerond"
+        phase: "Fase"
+        currency_symbol: "Valuta"
       budget/investment:
-        heading_id: "Heading"
-        title: "Title"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        location: "Location"
+        heading_id: "Kop"
+        title: "Titel"
+        description: "Omschrijving"
+        external_url: "Link naar extra documentatie"
+        location: "Locatie"
         administrator_id: "Administrator"
-        organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        organization_name: "Als u een voorstel doet uit naam van een collectief/organisatie, voer de naam in"
       comment:
-        body: "Comment"
-        user: "User"
+        body: "Reactie"
+        user: "Deelnemer"
       debate:
-        author: "Author"
-        description: "Opinion"
-        terms_of_service: "Terms of service"
-        title: "Title"
+        author: "Auteur"
+        description: "Mening"
+        terms_of_service: "Gebruiksvoorwaarden"
+        title: "Titel"
       proposal:
-        author: "Author"
-        title: "Title"
-        question: "Question"
-        description: "Description"
-        terms_of_service: "Terms of service"
+        author: "Auteur"
+        title: "Titel"
+        question: "Vraag"
+        description: "Omschrijving"
+        terms_of_service: "Gebruiksvoorwaarden"
       user:
         login: "Email or username"
         email: "Email"
-        username: "Username"
-        password_confirmation: "Password confirmation"
-        password: "Password"
-        current_password: "Current password"
-        phone_number: "Phone number"
-        official_position: "Official position"
-        official_level: "Official level"
-        redeemable_code: "Verification code received via email"
+        username: "Gebruikersnaam"
+        password_confirmation: "Bevestiging wachtwoord"
+        password: "Wachtwoord"
+        current_password: "Huidig wachtwoord"
+        phone_number: "Telefoonnummer"
+        official_position: "Officiele positie"
+        official_level: "Officieel niveau"
+        redeemable_code: "Verificatiecode ontvangen via email"
       organization:
-        name: "Name of organisation"
-        responsible_name: "Person responsible for the group"
+        name: "Naam van organisatie"
+        responsible_name: "Persoon verantwoordelijk voor de groep"
       spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
+        administrator_id: "Administrator"
+        association_name: "Verenigingsnaam"
+        description: "Omschrijving"
+        external_url: "Link naar extra documentatie"
+        geozone_id: "Regio"
+        title: "Titel"
       poll:
-        name: "Name"
-        starts_at: "Start Date"
-        ends_at: "Closing Date"
-        geozone_restricted: "Restricted by geozone"
+        name: "Naam"
+        starts_at: "Start Datum"
+        ends_at: "Eind Datum"
+        geozone_restricted: "Beperkt tot regio"
       poll/question:
-        title: "Question"
-        valid_answers: "Posibles answers"
-        summary: "Summary"
-        description: "Description"
-        external_url: "Link to additional documentation"
+        title: "Vraag"
+        valid_answers: "Mogelijke antwoorden"
+        summary: "Samenvatting"
+        description: "Omschrijving"
+        external_url: "Link naar extra documentatie"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
-        document_numbers: "Documents numbers"
+        document_numbers: "Documentnummers"
       site_customization/page:
-        content: Content
-        created_at: Created at
-        subtitle: Subtitle
+        content: Inhoud
+        created_at: Aangemaakt op
+        subtitle: Subtitel
         slug: Slug
         status: Status
-        title: Title
-        updated_at: Updated at
-        more_info_flag: Show in more information page
-        print_content_flag: Print content button
+        title: Titel
+        updated_at: Bijgewerkt op
+        more_info_flag: Toon in extra informatie pagina
+        print_content_flag: Print inhoud
       site_customization/image:
-        name: Name
-        image: Image
+        name: Naam
+        image: Beeld
       site_customization/content_block:
-        name: Name
+        name: Naam
         locale: locale
         body: Body
       legislation/process:
@@ -190,20 +190,20 @@ nl:
         user:
           attributes:
             email:
-              password_already_set: "This user already has a password"
+              password_already_set: "Deze deelnemer heeft al een wachtwoord"
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "labels moeten kleiner of gelijk aan %{count} zijn"
         direct_message:
           attributes:
             max_per_day:
-              invalid: "You have reached the maximum number of private messages per day"
+              invalid: "U heeft het maximum aan privé berichten per dag bereikt"
         poll/voter:
           attributes:
             document_number:
               not_in_census: "Document not in census"
-              has_voted: "User has already voted"
+              has_voted: "Deelnemer heeft al gestemd"
         legislation/process:
           attributes:
             end_date:
@@ -215,26 +215,26 @@ nl:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "labels moeten kleiner of gelijk aan %{count} zijn"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tags must be less than or equal to %{count}"
+              less_than_or_equal_to: "labels moeten kleiner of gelijk aan %{count} zijn"
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "U moet minstens %{interval} dagen wachten tussen meldingen"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: 'Niet geverifieerd door gemeente'
+              already_voted: 'Heeft al gestemd over dit voorstel'
         site_customization/page:
           attributes:
             slug:
-              slug_format: "must be letters, numbers, _ and -"
+              slug_format: "moeten letters, nummers, _ en - zijn"
         site_customization/image:
           attributes:
             image:
-              image_width: "Width must be %{required_width}px"
-              image_height: "Height must be %{required_height}px"
+              image_width: "Breedte moet %{required_width}px zijn"
+              image_height: "Hoogte moet %{required_height}px zijn"
