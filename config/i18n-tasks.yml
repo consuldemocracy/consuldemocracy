@@ -3,7 +3,7 @@
 # The "main" locale.
 base_locale: en
 ## All available locales are inferred from the data by default. Alternatively, specify them explicitly:
-locales: [en, es]
+locales: [en]
 ## Reporting locale, default: en. Available: en, ru.
 # internal_locale: en
 
@@ -21,22 +21,22 @@ data:
     # - config/locales/**/*.%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
-    - config/locales/%{locale}.yml
-    - config/locales/activerecord.%{locale}.yml
-    - config/locales/activemodel.%{locale}.yml
-    - config/locales/admin.%{locale}.yml
-    - config/locales/moderation.%{locale}.yml
-    - config/locales/valuation.%{locale}.yml
-    - config/locales/management.%{locale}.yml
-    - config/locales/verification.%{locale}.yml
-    - config/locales/mailers.%{locale}.yml
-    - config/locales/pages.%{locale}.yml
-    - config/locales/devise_views.%{locale}.yml
-    - config/locales/responders.%{locale}.yml
-    - config/locales/kaminari.%{locale}.yml
-    - config/locales/officing.%{locale}.yml
-    - config/locales/budgets.%{locale}.yml
-    - config/locales/legislation.%{locale}.yml
+    - config/locales/%{locale}/general.yml
+    - config/locales/%{locale}/activerecord.yml
+    - config/locales/%{locale}/activemodel.yml
+    - config/locales/%{locale}/admin.yml
+    - config/locales/%{locale}/moderation.yml
+    - config/locales/%{locale}/valuation.yml
+    - config/locales/%{locale}/management.yml
+    - config/locales/%{locale}/verification.yml
+    - config/locales/%{locale}/mailers.yml
+    - config/locales/%{locale}/pages.yml
+    - config/locales/%{locale}/devise_views.yml
+    - config/locales/%{locale}/responders.yml
+    - config/locales/%{locale}/kaminari.yml
+    - config/locales/%{locale}/officing.yml
+    - config/locales/%{locale}/budgets.yml
+    - config/locales/%{locale}/legislation.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
