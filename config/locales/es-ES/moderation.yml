@@ -1,4 +1,3 @@
----
 es:
   moderation:
     header:
@@ -6,7 +5,7 @@ es:
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
+        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todos
@@ -28,7 +27,7 @@ es:
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
+        confirm: '¿Estás seguro?'
         filter: Filtrar
         filters:
           all: Todos
@@ -52,7 +51,7 @@ es:
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: "¿Estás seguro?"
+        confirm: '¿Estás seguro?'
         filter: Filtro
         filters:
           all: Todas
