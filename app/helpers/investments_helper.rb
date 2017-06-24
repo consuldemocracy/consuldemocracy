@@ -8,7 +8,7 @@ module InvestmentsHelper
     investment.image.exists? ? "edit_note" : "add_note"
   end
 
-  def investment_image_button_text(investment)
+  def investment_image_button_text_key(investment)
     investment.image.exists? ? "edit_image" : "add_image"
   end
 
