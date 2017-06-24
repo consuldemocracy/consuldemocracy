@@ -22,7 +22,7 @@ es:
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
       has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
-      link: Cónsul
+      link: Consul
       in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
       not_in_census: Este documento no está registrado.
       not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
