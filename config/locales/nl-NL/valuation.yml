@@ -1,5 +1,5 @@
 ---
-nl-NL:
+en-EN:
   valuation:
     header:
       title: Valuation
@@ -123,5 +123,3 @@ nl-NL:
         save: Save changes
       notice:
         valuate: "Dossier updated"
-
-
