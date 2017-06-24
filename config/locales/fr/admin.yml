@@ -1,11 +1,10 @@
----
 fr:
   admin:
     header:
       title: Administration
     actions:
       actions: Actions
-      confirm: "Êtes-vous sûr(e) ?"
+      confirm: Êtes-vous sûr(e) ?
       confirm_hide: Confirmer
       hide: Cacher
       hide_author: Cacher l'auteur
@@ -27,8 +26,8 @@ fr:
         preview: Aperçu
       banner:
         title: Titre
-        description:  Description
-        target_url:  Lien
+        description: Description
+        target_url: Lien
         style: Style
         image: Image
         post_started_at: Début de la publication
@@ -41,7 +40,7 @@ fr:
         form:
           error:
             one: "a empêché cette bannière d'être sauvegardée"
-            other: "ont empêchés cette bannière d'être sauvegardée"
+            other: 'ont empêchés cette bannière d''être sauvegardée'
       new:
         creating: Créer la bannière
     activity:
@@ -140,7 +139,7 @@ fr:
         assigned_admin: Administrateur assigné
         assigned_valuators: Évaluateur assigné
         classification: Classification
-        info: "%{budget_name} - Groupe : %{group_name} - Proposition d'investissement %{id}"
+        info: '%{budget_name} - Groupe : %{group_name} - Proposition d''investissement %{id}'
         edit: Modifier
         edit_classification: Modifier la classification
         by: Par
@@ -182,6 +181,155 @@ fr:
           with_confirmed_hide: Confirmé
           without_confirmed_hide: En attente
         title: Débats masqués
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
+      show:
+        email: 'Email:'
+        hidden_at: 'Hidden at:'
+        registered_at: 'Registered at:'
+        title: Activity of user (%{user})
+    legislation:
+      processes:
+        create:
+          notice: 'Process created successfully. <a href="%{link}">Click to visit</a>'
+          error: Process couldn't be created
+        update:
+          notice: 'Process updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Process couldn't be updated
+        destroy:
+          notice: Process deleted successfully
+        edit:
+          back: Back
+          submit_button: Save changes
+        errors:
+          form:
+            error: Error
+        form:
+          enabled: Enabled
+          process: Process
+          debate_phase: Debate phase
+          allegations_phase: Allegations phase
+          start: Start
+          end: End
+          use_markdown: Use Markdown to format the text
+          title_placeholder: The title of the process
+          summary_placeholder: Short summary of the description
+          description_placeholder: Add a description of the process
+          additional_info_placeholder: Add an additional information you consider useful
+        index:
+          create: New process
+          delete: Delete
+          title: Legislation processess
+          filters:
+            open: Open
+            next: Next
+            past: Past
+            all: All
+        new:
+          back: Back
+          title: Create new collaborative legislation process
+          submit_button: Create process
+        process:
+          title: Process
+          comments: Comments
+          status: Status
+          creation_date: Creation date
+          status_open: Open
+          status_closed: Closed
+          status_planned: Planned
+        subnav:
+          info: Information
+          draft_texts: Text
+          questions: Debate
+      draft_versions:
+        create:
+          notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
+          error: Draft couldn't be created
+        update:
+          notice: 'Draft updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Draft couldn't be updated
+        destroy:
+          notice: Draft deleted successfully
+        edit:
+          back: Back
+          submit_button: Save changes
+          warning: You've edited the text, don't forget to click on Save to permanently save the changes.
+        errors:
+          form:
+            error: Error
+        form:
+          title_html: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
+          launch_text_editor: Launch text editor
+          close_text_editor: Close text editor
+          use_markdown: Use Markdown to format the text
+          hints:
+            final_version: This version will be published as Final Result for this process. Comments won't be allowed in this version.
+            status:
+              draft: You can preview as admin, no one else can see it
+              published: Visible for everybody
+          title_placeholder: Write the title of the draft version
+          changelog_placeholder: Add the main changes from the previous version
+          body_placeholder: Write down the draft text
+        index:
+          title: Draft versions
+          create: Create version
+          delete: Delete
+          preview: Preview
+        new:
+          back: Back
+          title: Create new version
+          submit_button: Create version
+        statuses:
+          draft: Draft
+          published: Published
+        table:
+          title: Title
+          created_at: Created at
+          comments: Comments
+          final_version: Final version
+          status: Status
+      questions:
+        create:
+          notice: 'Question created successfully. <a href="%{link}">Click to visit</a>'
+          error: Question couldn't be created
+        update:
+          notice: 'Question updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Question couldn't be updated
+        destroy:
+          notice: Question deleted successfully
+        edit:
+          back: Back
+          title: "Edit “%{question_title}”"
+          submit_button: Save changes
+        errors:
+          form:
+            error: Error
+        form:
+          add_option: Add option
+          title_placeholder: Add a title
+          value_placeholder: Add a closed answer
+        index:
+          back: Back
+          title: Questions associated to this process
+          create: Create question
+          delete: Delete
+        new:
+          back: Back
+          title: Create new question
+          submit_button: Create question
+        table:
+          title: Title
+          question_options: Question options
+          answers_count: Answers count
+          comments_count: Comments count
+        question_option_fields:
+          remove_option: Remove option
     managers:
       index:
         title: Responsables
@@ -197,15 +345,17 @@ fr:
       admin: Menu d'administration
       banner: Gérer les bannières
       poll_questions: Questions des citoyens
-      proposals_topics:  Sujets des propositions
+      proposals_topics: Sujets des propositions
       budgets: Budgets participatifs
       geozones: Gérer les districts
       hidden_comments: Commentaires masqués
       hidden_debates: Débats masqués
       hidden_proposals: Propositions masquées
       hidden_users: Utilisateurs masqués
+      administrators: Administrators
       managers: Responsables
       moderators: Modérateurs
+      newsletter: Newsletters
       valuators: Évaluateurs
       poll_officers: Présidents
       polls: Votes
@@ -227,6 +377,19 @@ fr:
       title_profiles: Profils
       title_banners: Bannières
       title_site_customization: Personnalisation du site
+      legislation: Collaborative Legislation
+      users: Users
+    administrators:
+      index:
+        title: Administrators
+      administrator:
+        add: Add
+        delete: Delete
+        restricted_removal: "Sorry, you can't remove yourself from the administrators"
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     moderators:
       index:
         title: Modérateurs
@@ -237,6 +400,10 @@ fr:
         email_placeholder: Rechercher un utilisateur par courriel
         search: Rechercher
         user_not_found: Utilisateur non trouvé
+    newsletters:
+      index:
+        title: Newsletters
+        button: Download zip with users list
     valuators:
       index:
         title: Évaluateurs
@@ -315,7 +482,7 @@ fr:
         date: "Date"
         count_by_officer: "Dépouillement journalier (par président)"
         count_final: "Dépouillement final (par président)"
-        count_by_system:  "Votes (automatique)"
+        count_by_system: "Votes (automatique)"
       index:
         booths_title: "Liste des bureaux de vote"
         no_booths: "Il n'y a pas de bureaux de vote affectés à ce vote."
@@ -416,9 +583,9 @@ fr:
     officials:
       edit:
         destroy: Supprimer le statut de fonctionnaire
-        title: "Fonctionnaire: Modifier l'utilisateur"
+        title: 'Fonctionnaire: Modifier l''utilisateur'
       flash:
-        official_destroyed: "Informations sauvegardées : l'utilisateur n'est plus un fonctionnaire."
+        official_destroyed: 'Informations sauvegardées : l''utilisateur n''est plus un fonctionnaire.'
         official_updated: Informations du fonctionnaire sauvegardées
       index:
         title: Fonctionnaires
@@ -492,7 +659,7 @@ fr:
         placeholder: Rechercher des propositions de dépenses par titre ou description
       user_search:
         button: Rechercher
-        placeholder: 'Rechercher un utilisateur par nom ou courriel'
+        placeholder: Rechercher un utilisateur par nom ou courriel
       search_results: "Résultats de recherche"
       no_search_results: "Aucun résultat trouvé."
     spending_proposals:
@@ -566,7 +733,7 @@ fr:
         form:
           error:
             one: "a empêché ce district d'être sauvegardé"
-            other: "a empêché ce district d'être sauvegardé"
+            other: 'a empêché ce district d''être sauvegardé'
       edit:
         form:
           submit_button: Sauvegarder les changements
@@ -649,18 +816,17 @@ fr:
         placeholder: Saisir le nom du sujet
       update: Mettre-à-jour le sujet
     users:
+      columns:
+        name: Name
+        email: Email
+        document_number: Document number
+        roles: Roles
+        verification_level: Verification level
       index:
-        filter: Filtrer
-        filters:
-          all: Tous
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: En attente
         title: Utilisateurs masqués
-      show:
-        email: 'Courriel :'
-        hidden_at: 'Masqué le :'
-        registered_at: 'Inscrit le :'
-        title: Activité de l'utilisateur (%{user})
+      search:
+        placeholder: Search user by email, name or document number
+        search: Search
     verifications:
       index:
         phone_not_given: Téléphone non communiqué
