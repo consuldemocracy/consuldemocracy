@@ -443,6 +443,58 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Create new investment project should show image title validation errors when image selected and title blank" do
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(author)
+
+    visit new_budget_investment_path(budget)
+    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
+    check   'budget_investment_terms_of_service'
+    click_button "Create Investment"
+
+    expect(page).to have_content "can't be blank, is too short (minimum is 4 characters)"
+  end
+
+  scenario "Create new investment project should show image validation error when image selected is too small" do
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(author)
+
+    visit new_budget_investment_path(budget)
+    select  'Health: More hospitals', from: 'budget_investment_heading_id'
+    fill_in 'budget_investment_title', with: 'Build a skyscraper'
+    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
+    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
+    check   'budget_investment_terms_of_service'
+    click_button "Create Investment"
+
+    expect(page).to have_content "Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px."
+  end
+
+  scenario "Edit image page should show image title validation errors when image selected and title blank" do
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(author)
+
+    visit edit_image_budget_investment_path(budget, investment)
+    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
+    click_button "Save image"
+
+    expect(page).to have_content "can't be blank, is too short (minimum is 4 characters)"
+  end
+
+  scenario "Edit image page should show image validation error when image selected is too small" do
+    investment = create(:budget_investment, heading: heading, author: author)
+    login_as(author)
+
+    visit edit_image_budget_investment_path(budget, investment)
+    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
+    click_button "Save image"
+
+    expect(page).to have_content "Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px."
+  end
+
   scenario "Edit image page should not be accesible when there is no logged user" do
     investment = create(:budget_investment, heading: heading, author: author)
 
@@ -568,18 +620,6 @@ feature 'Budget Investments' do
       expect(page).to have_css("img[src*='clippy.jpg']")
     end
     expect(page).to have_content 'Investment project image updated succesfully. '
-  end
-
-  scenario "Add image with dimmenssions smaller than 475x475" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(investment.budget, investment)
-    fill_in :budget_investment_image_title, with: "New image title"
-    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
-    click_on "Save image"
-
-    expect(page).to have_content 'Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px.'
   end
 
   context "Show (feasible budget investment)" do
