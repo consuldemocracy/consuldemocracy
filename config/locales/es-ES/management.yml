@@ -1,133 +1,133 @@
 ---
-es-ES:
+en-EN:
   management:
     account:
       alert:
-        unverified_user: Solo se pueden editar cuentas de usuarios verificados
+        unverified_user: No verified user logged in yet
       show:
-        title: Cuenta de usuario
+        title: User account
     account_info:
-      change_user: Cambiar usuario
-      document_number_label: 'Número de documento:'
-      document_type_label: 'Tipo de documento:'
+      change_user: Change user
+      document_number_label: 'Document number:'
+      document_type_label: 'Document type:'
       email_label: 'Email:'
-      identified_label: 'Identificado como:'
-      username_label: 'Usuario:'
-    check: Comprobar
+      identified_label: 'Identified as:'
+      username_label: 'Username:'
+    check: Check
     dashboard:
       index:
-        title: Gestión
-        info: Desde aquí puedes gestionar usuarios a través de las acciones listadas en el menú de la izquierda.
-    document_number: Número de documento
-    document_type_label: Tipo de documento
+        title: Management
+        info: Here you can manage users through all actions listed in the left menu.
+    document_number: Document number
+    document_type_label: Document type
     document_verifications:
-      already_verified: Esta cuenta de usuario ya está verificada.
-      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
+      already_verified: This user account is already verified.
+      has_no_account_html: In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen.
       link: Consul
-      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
-      not_in_census: Este documento no está registrado.
-      not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
-      please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
-      title: Gestión de usuarios
-      under_age: No tienes edad suficiente para verificar tu cuenta.
-      verify: Verificar usuario
+      in_census_has_following_permissions: 'This user can participate in the website with the following permissions:'
+      not_in_census: This document is not registered.
+      not_in_census_info: 'Citizens not in the Census can participate in the website with the following permissions:'
+      please_check_account_data: Please check that the account data above are correct.
+      title: User management
+      under_age: "You don't have the required age to verify your account."
+      verify: Verify
     email_label: Email
-    date_of_birth: Fecha de nacimiento
+    date_of_birth: Date of birth
     email_verifications:
-      already_verified: Esta cuenta de usuario ya está verificada.
-      choose_options: 'Elige una de las opciones siguientes:'
-      document_found_in_census: Este documento está en el registro del padrón municipal, pero todavía no tiene una cuenta de usuario asociada.
-      document_mismatch: Ese email corresponde a un usuario que ya tiene asociado el documento %{document_number}(%{document_type})
-      email_placeholder: Introduce el email de registro
-      email_sent_instructions: Para terminar de verificar esta cuenta es necesario que haga clic en el enlace que le hemos enviado a la dirección de correo que figura arriba. Este paso es necesario para confirmar que dicha cuenta de usuario es suya.
-      if_existing_account: Si la persona ya ha creado una cuenta de usuario en la web
-      if_no_existing_account: Si la persona todavía no ha creado una cuenta de usuario en la web
-      introduce_email: 'Introduce el email con el que creó la cuenta:'
-      send_email: Enviar email de verificación
+      already_verified: This user account is already verified.
+      choose_options: 'Please choose one of the following options:'
+      document_found_in_census: This document was found in the census, but it has no user account associated to it.
+      document_mismatch: 'This email belongs to a user which already has an associated id: %{document_number}(%{document_type})'
+      email_placeholder: Write the email this person used to create his or her account
+      email_sent_instructions: In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him.
+      if_existing_account: If the person has already a user account created in the website,
+      if_no_existing_account: If this person has not created an account yet
+      introduce_email: 'Please introduce the email used on the account:'
+      send_email: Send verification email
     menu:
-      create_proposal: Crear propuesta
-      print_proposals: Imprimir propuestas
-      support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear propuesta de inversión
-      print_spending_proposals: Imprimir propts. de inversión
-      support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear proyectos de inversión
-      print_budget_investments: Imprimir proyectos de inversión
-      support_budget_investments: Apoyar proyectos de inversión
-      users: Usuarios
-      edit_user_accounts: Editar cuenta de usuario
-      user_invites: Invitaciones para usuarios
+      create_proposal: Create proposal
+      print_proposals: Print proposals
+      support_proposals: Support proposals
+      create_spending_proposal: Create spending proposal
+      print_spending_proposals: Print spending proposals
+      support_spending_proposals: Support spending proposals
+      create_budget_investment: Create budget investment
+      print_budget_investments: Print Budget Investments
+      support_budget_investments: Support Budget Investments
+      users: Users
+      edit_user_accounts: Edit user account
+      user_invites: User's invites
     permissions:
-      create_proposals: Crear nuevas propuestas
-      debates: Participar en debates
-      support_proposals: Apoyar propuestas
-      vote_proposals: Participar en las votaciones finales
+      create_proposals: Create proposals
+      debates: Engage in debates
+      support_proposals: Support proposals
+      vote_proposals: Vote proposals
     print:
-      proposals_info: Haz tu propuesta en http://url.consul
-      proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
-      proposals_title: 'Propuestas:'
-      spending_proposals_info: Participa en http://url.consul
-      spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
-      budget_investments_info: Participa en http://url.consul
-      budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
-    print_info: Imprimir esta información
+      proposals_info: 'Create yor proposal on http://url.consul'
+      proposals_note: The proposals more supported will be voted. If are accepted by a majority, the city Council shall be carried out.
+      proposals_title: 'Proposals:'
+      spending_proposals_info: 'Participate at http://url.consul'
+      spending_proposals_note: Participatory budget will be assigned to the most voted budget investment.
+      budget_investments_info: 'Participate at http://url.consul'
+      budget_investments_note: Participatory budget will be assigned to the most voted budget investment.
+    print_info: Print this info
     proposals:
       alert:
-        unverified_user: Este usuario no está verificado
-      create_proposal: Crear propuesta
+        unverified_user: User is not verified
+      create_proposal: Create proposal
       print:
-        print_button: Imprimir
+        print_button: Print
     budgets:
-      create_new_investment: Crear nuevo proyecto
-      print_investments: Imprimir proyectos
-      support_investments: Apoyar proyectos
+      create_new_investment: Create New Investment
+      print_investments: Print Budget Investments
+      support_investments: Support Budget Investments
     budget_investments:
       alert:
-        unverified_user: Usuario no verificado
-      create: Crear nuevo proyecto
+        unverified_user: User is not verified
+      create: Create budget investment
       filters:
         heading: Concepto
-        unfeasible: Proyectos no factibles
+        unfeasible: Unfeasible investment
       print:
-        print_button: Imprimir
+        print_button: Print
       search_results:
-        one: " contiene el término '%{search_term}'"
-        other: " contienen el término '%{search_term}'"
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Este usuario no está verificado
-      create: Crear propuesta de inversión
+        unverified_user: User is not verified
+      create: Create spending proposal
       filters:
-        unfeasible: Propuestas de inversión no viables
-        by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
+        unfeasible: Unfeasible investment projects
+        by_geozone: 'Investment projects with scope: %{geozone}'
       print:
-        print_button: Imprimir
+        print_button: Print
       search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
+        one: " containing the term '%{search_term}'"
+        other: " containing the term '%{search_term}'"
     sessions:
-      signed_out: Has cerrado la sesión correctamente.
-      signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
-    username_label: Nombre de usuario
+      signed_out: Signed out successfully.
+      signed_out_managed_user: User session signed out successfully.
+    username_label: Username
     users:
-      create_user: Crear nueva cuenta de usuario
-      create_user_info: 'Procedemos a crear un usuario con la siguiente información:'
-      create_user_submit: Crear usuario
-      create_user_success_html: Hemos enviado un correo electrónico a <b>%{email}</b> para verificar que es suya. El correo enviado contiene un link que el usuario deberá pulsar. Entonces podrá seleccionar una clave de acceso, y entrar en la web de participación.
-      autogenerated_password_html: "Se ha asignado la contraseña <b>%{password}</b> a este usuario. Puede modificarla desde el apartado 'Mi cuenta' de la web."
-      email_optional_label: "Email (recomendado pero opcional)"
-      erased_notice: Cuenta de usuario borrada.
-      erased_by_manager: "Borrada por el manager: %{manager}"
-      erase_account_link: Borrar cuenta
-      erase_account_confirm: ¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer
-      erase_warning: Esta acción no se puede deshacer. Por favor asegurese de que quiere eliminar esta cuenta.
-      erase_submit: Borrar cuenta
+      create_user: Create a new account
+      create_user_info: 'We will create an account with the following data:'
+      create_user_submit: Create user
+      create_user_success_html: We have sent an email to the email address <b>%{email}</b> in order to verify that it belongs to this user. It contains a link they have to click. Then they will have to set their access password before being able to log in to the website
+      autogenerated_password_html: "Autogenerated password is <b>%{password}</b>, you can change it in the 'My account' section of the web"
+      email_optional_label: Email (optional)
+      erased_notice: User account deleted.
+      erased_by_manager: 'Deleted by manager: %{manager}'
+      erase_account_link: Delete user
+      erase_account_confirm: Are you sure you want to erase the account? This action can not be undone
+      erase_warning: This action can not be undone. Please make sure you want to erase this account.
+      erase_submit: Delete account
     user_invites:
       new:
         label: Emails
-        info: "Introduce los emails separados por ','"
-        submit: Enviar invitaciones
-        title: Invitaciones para usuarios
+        info: "Enter the emails separated by commas (',')"
+        submit: Send invites
+        title: User's invites
       create:
-        success_html: Se han enviado <strong>%{count} invitaciones</strong>.
-        title: Invitaciones para usuarios
+        success_html: <strong>%{count} invitations</strong> have been sent.
+        title: User's invites
