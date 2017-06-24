@@ -38,9 +38,11 @@ fr:
       spending_proposals: Propositions d'investissement
       spending_proposal_features:
         voting_allowed: Vote sur les propositions d'investissement
+      legislation: Legislation
     mailer_from_name: Nom de l'expéditeur
     mailer_from_address: Courriel de l'expéditeur
     meta_description: "Description du site (SEO)"
     meta_keywords: "Mots-clés (SEO)"
     verification_offices_url: URL des bureaux de vérification
     min_age_to_participate: Âge minimum de participation
+    proposal_improvement_path: Proposal improvement info internal link
