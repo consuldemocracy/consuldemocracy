@@ -1,4 +1,3 @@
----
 fr:
   officing:
     header:
@@ -8,21 +7,21 @@ fr:
         title: Bureaux de vote
         info: Ici vous pouvez valider les documents des utilisateurs et enregistrer les résultats des votes
     menu:
-      voters: "Valider un document"
-      recounts: "Enregistrer le dépouillement"
-      final_recounts: "Dépouillements finaux et résultats"
+      voters: Valider un document
+      recounts: Enregistrer le dépouillement
+      final_recounts: Dépouillements finaux et résultats
     polls:
       index:
-        title: "Liste des votes"
-        no_polls: "Vous n'êtes responsable d'aucun vote actif"
-        select_poll: "Sélectionner un vote"
-        add_recount: "Ajouter un dépouillement"
+        title: Liste des votes
+        no_polls: Vous n'êtes responsable d'aucun vote actif
+        select_poll: Sélectionner un vote
+        add_recount: Ajouter un dépouillement
       final:
-        title: "Liste des votes finaux"
-        no_polls: "Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs"
-        select_poll: "Sélectionner un vote"
-        add_recount: "Ajouter le dépouillement final"
-        add_results: "Ajouter les résultats"
+        title: Liste des votes finaux
+        no_polls: Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs
+        select_poll: Sélectionner un vote
+        add_recount: Ajouter le dépouillement final
+        add_results: Ajouter les résultats
     recounts:
       flash:
         create: "Données ajoutées"
@@ -34,7 +33,7 @@ fr:
         select_booth_date: "Sélectionner un bureau de vote et une date"
         count: "Décompte des votes"
         count_placeholder: "Décompte des votes"
-        submit: "Sauvegarder"
+        submit: Sauvegarder
         recount_list: "Vos dépouillements"
         booth: "Urne"
         date: "Date"
@@ -51,7 +50,7 @@ fr:
         select_date: "Sélectionner une date"
         count: "Décompte final des votes"
         count_placeholder: "Décompte final des votes"
-        submit: "Sauvegarder"
+        submit: Sauvegarder
         final_recount_list: "Vos dépouillements finaux"
         system_count: "Dépouillement par le système"
         add_results: "Ajouter les résultats"
