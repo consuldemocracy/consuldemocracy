@@ -1,16 +1,19 @@
 <%= form_for([@investment.budget, @investment], url: update_image_budget_investment_path(@investment.budget, @investment), multipart: true, method: :put) do |f| %>
   <%= render 'shared/errors', resource: @investment %>
+
   <div class="row">
     <div class="small-12 column">
       <span class="note-marked">
         <%= t("budgets.investments.edit_image.#{investment_image_advice_note_key(@investment)}", title: @investment.title) %></p>
       </span>
     </div>
+
     <% if @investment.image.exists? %>
       <div class="small-12 column">
         <%= image_tag @investment.image.url(:large) %>
       </div>
     <% end %>
+
     <div class="small-12 column">
       <div class="image-upload">
         <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
@@ -19,6 +22,7 @@
         <p><%= investment_image_file_name(@investment) %></p>
      </div>
     </div>
+
     <% if @investment.errors.has_key?(:image) %>
       <div class="small-12 column">
         <div class="image-errors">
@@ -26,10 +30,12 @@
         </div>
       </div>
     <% end %>
+
     <div class="small-12 column">
       <%= f.label :image_title, t("budgets.investments.edit_image.form.image_title") %>
       <%= f.text_field :image_title, placeholder: t("budgets.investments.edit_image.form.image_title"), label: false %>
     </div>
+
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("budgets.investments.edit_image.form.submit_button")) %>
       <% if @investment.image.exists? %>
@@ -40,5 +46,6 @@
                     data: { confirm: "¿Está seguro que desea eliminar la imagen del proyecto?" } %>
       <% end %>
     </div>
+
   </div>
 <% end %>
