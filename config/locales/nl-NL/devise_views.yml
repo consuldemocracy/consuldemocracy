@@ -1,4 +1,3 @@
----
 nl:
   devise_views:
     confirmations:
@@ -68,7 +67,7 @@ nl:
         title: Wachtwoord vergeten?
     sessions:
       new:
-        email_label: Email
+        login_label: Email or username
         password_label: Wachtwoord
         remember_me: Onthoud mij
         submit: Ok
