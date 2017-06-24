@@ -62,6 +62,14 @@
       </div>
     </div>
 
+    <% if @investment.errors.has_key?(:image) %>
+      <div class="small-12 column">
+        <div class="image-errors">
+          <small class="error"><%= errors_on_image(@investment)%></small>
+        </div>
+      </div>
+    <% end %>
+
     <div class="small-12 column">
       <%= f.text_field :image_title %>
     </div>
