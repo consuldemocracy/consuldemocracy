@@ -1,5 +1,5 @@
 ---
-nl-NL:
+en-EN:
   settings:
     comments_body_max_length: "Comments body max length"
     official_level_1_name: "Level 1 public official"
@@ -21,6 +21,7 @@ nl-NL:
     facebook_handle: "Facebook handle"
     youtube_handle: "Youtube handle"
     telegram_handle: "Telegram handle"
+    instagram_handle: "Instagram handle"
     blog_url: "Blog URL"
     transparency_url: "Transparency URL"
     opendata_url: "Open Data URL"
@@ -38,9 +39,11 @@ nl-NL:
       spending_proposals: Investment projects
       spending_proposal_features:
         voting_allowed: Voting on investment projects
+      legislation: Legislation
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"
     meta_keywords: "Keywords (SEO)"
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
+    proposal_improvement_path: Proposal improvement info internal link

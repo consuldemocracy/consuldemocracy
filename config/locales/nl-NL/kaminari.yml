@@ -1,23 +1,23 @@
 ---
-nl-NL:
+en-EN:
   helpers:
     page_entries_info:
       entry:
-        one: Bijdrage
-        other: Bijdragen
-        zero: Bijdragen
+        one: Entry
+        other: Entries
+        zero: Entries
       more_pages:
-        display_entries: <b>%{first}&nbsp;-&nbsp;%{last}</b> van <b>%{total}</b> %{entry_name} getoond
+        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
-          one: Er is <b>1</b> %{entry_name}
-          other: Er zijn <b> %{count}</b> %{entry_name}
-          zero: "%{entry_name} -- niet gevonden"
+          one: There is <strong>1 %{entry_name}</strong>
+          other: There are <strong>%{count} %{entry_name}</strong>
+          zero: "%{entry_name} cannot be found"
   views:
     pagination:
-      first: Eerste
-      last: Laatste
-      next: Volgende
-      previous: Vorige
+      first: First
+      last: Last
+      next: Next
+      previous: Previous
       truncate: "&hellip;"
-      current: U bent op pagina
+      current: You're on page

@@ -1,5 +1,5 @@
 ---
-nl-NL:
+en-EN:
   admin:
     header:
       title: Administration
@@ -24,16 +24,16 @@ nl-NL:
           all: All
           with_active: Active
           with_inactive: Inactive
+        preview: Preview
       banner:
         title: Title
-        description:  Description
-        target_url:  Link
+        description: Description
+        target_url: Link
         style: Style
         image: Image
         post_started_at: Post started at
         post_ended_at: Post ended at
       edit:
-        back: Back
         editing: Edit banner
         form:
           submit_button: Save changes
@@ -43,7 +43,6 @@ nl-NL:
             one: "prevented this banner from being saved"
             other: 'prevented this banner from being saved'
       new:
-        back: Back
         creating: Create banner
     activity:
       show:
@@ -129,6 +128,7 @@ nl-NL:
         select: "Select"
         table_id: "ID"
         table_title: "Title"
+        table_supports: "Supports"
         table_admin: "Administrator"
         table_valuator: "Valuator"
         table_geozone: "Scope of operation"
@@ -140,7 +140,7 @@ nl-NL:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
         classification: Clasification
-        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
+        info: '%{budget_name} - Group: %{group_name} - Investment project %{id}'
         edit: Edit
         edit_classification: Edit classification
         by: By
@@ -182,6 +182,155 @@ nl-NL:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
+      show:
+        email: 'Email:'
+        hidden_at: 'Hidden at:'
+        registered_at: 'Registered at:'
+        title: Activity of user (%{user})
+    legislation:
+      processes:
+        create:
+          notice: 'Process created successfully. <a href="%{link}">Click to visit</a>'
+          error: Process couldn't be created
+        update:
+          notice: 'Process updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Process couldn't be updated
+        destroy:
+          notice: Process deleted successfully
+        edit:
+          back: Back
+          submit_button: Save changes
+        errors:
+          form:
+            error: Error
+        form:
+          enabled: Enabled
+          process: Process
+          debate_phase: Debate phase
+          allegations_phase: Allegations phase
+          start: Start
+          end: End
+          use_markdown: Use Markdown to format the text
+          title_placeholder: The title of the process
+          summary_placeholder: Short summary of the description
+          description_placeholder: Add a description of the process
+          additional_info_placeholder: Add an additional information you consider useful
+        index:
+          create: New process
+          delete: Delete
+          title: Legislation processess
+          filters:
+            open: Open
+            next: Next
+            past: Past
+            all: All
+        new:
+          back: Back
+          title: Create new collaborative legislation process
+          submit_button: Create process
+        process:
+          title: Process
+          comments: Comments
+          status: Status
+          creation_date: Creation date
+          status_open: Open
+          status_closed: Closed
+          status_planned: Planned
+        subnav:
+          info: Information
+          draft_texts: Text
+          questions: Debate
+      draft_versions:
+        create:
+          notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
+          error: Draft couldn't be created
+        update:
+          notice: 'Draft updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Draft couldn't be updated
+        destroy:
+          notice: Draft deleted successfully
+        edit:
+          back: Back
+          submit_button: Save changes
+          warning: You've edited the text, don't forget to click on Save to permanently save the changes.
+        errors:
+          form:
+            error: Error
+        form:
+          title_html: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
+          launch_text_editor: Launch text editor
+          close_text_editor: Close text editor
+          use_markdown: Use Markdown to format the text
+          hints:
+            final_version: This version will be published as Final Result for this process. Comments won't be allowed in this version.
+            status:
+              draft: You can preview as admin, no one else can see it
+              published: Visible for everybody
+          title_placeholder: Write the title of the draft version
+          changelog_placeholder: Add the main changes from the previous version
+          body_placeholder: Write down the draft text
+        index:
+          title: Draft versions
+          create: Create version
+          delete: Delete
+          preview: Preview
+        new:
+          back: Back
+          title: Create new version
+          submit_button: Create version
+        statuses:
+          draft: Draft
+          published: Published
+        table:
+          title: Title
+          created_at: Created at
+          comments: Comments
+          final_version: Final version
+          status: Status
+      questions:
+        create:
+          notice: 'Question created successfully. <a href="%{link}">Click to visit</a>'
+          error: Question couldn't be created
+        update:
+          notice: 'Question updated successfully. <a href="%{link}">Click to visit</a>'
+          error: Question couldn't be updated
+        destroy:
+          notice: Question deleted successfully
+        edit:
+          back: Back
+          title: "Edit “%{question_title}”"
+          submit_button: Save changes
+        errors:
+          form:
+            error: Error
+        form:
+          add_option: Add option
+          title_placeholder: Add a title
+          value_placeholder: Add a closed answer
+        index:
+          back: Back
+          title: Questions associated to this process
+          create: Create question
+          delete: Delete
+        new:
+          back: Back
+          title: Create new question
+          submit_button: Create question
+        table:
+          title: Title
+          question_options: Question options
+          answers_count: Answers count
+          comments_count: Comments count
+        question_option_fields:
+          remove_option: Remove option
     managers:
       index:
         title: Managers
@@ -204,8 +353,10 @@ nl-NL:
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
       hidden_users: Hidden users
+      administrators: Administrators
       managers: Managers
       moderators: Moderators
+      newsletter: Newsletters
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
@@ -227,6 +378,19 @@ nl-NL:
       title_profiles: Profiles
       title_banners: Banners
       title_site_customization: Site customization
+      legislation: Collaborative Legislation
+      users: Users
+    administrators:
+      index:
+        title: Administrators
+      administrator:
+        add: Add
+        delete: Delete
+        restricted_removal: "Sorry, you can't remove yourself from the administrators"
+      search:
+        email_placeholder: Search user by email
+        search: Search
+        user_not_found: User not found
     moderators:
       index:
         title: Moderators
@@ -237,6 +401,10 @@ nl-NL:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+    newsletters:
+      index:
+        title: Newsletters
+        button: Download zip with users list
     valuators:
       index:
         title: Valuators
@@ -315,7 +483,7 @@ nl-NL:
         date: "Date"
         count_by_officer: "Daily recount (by officer)"
         count_final: "Final recount (by officer)"
-        count_by_system:  "Votes (automatic)"
+        count_by_system: "Votes (automatic)"
       index:
         booths_title: "List of booths"
         no_booths: "There are no booths assigned to this poll."
@@ -464,8 +632,8 @@ nl-NL:
       flash:
         updated: Value updated
       index:
-        banners: Banners
-        banner_imgs: Banner images
+        banners: Estilos de banners
+        banner_imgs: Imágenes para los banners
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
@@ -492,7 +660,7 @@ nl-NL:
         placeholder: Search spending proposals by title or description
       user_search:
         button: Search
-        placeholder: Search user by name or email'
+        placeholder: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
     spending_proposals:
@@ -613,6 +781,8 @@ nl-NL:
           debates: Debates
           proposal_votes: Proposal votes
           proposals: Proposals
+          budgets: Open budgets
+          budget_investments: Investment projects
           spending_proposals: Spending Proposals
           unverified_users: Unverified users
           user_level_three: Level three users
@@ -623,6 +793,7 @@ nl-NL:
           visits: Visits
           votes: Total votes
         spending_proposals_title: Spending Proposals
+        budgets_title: Participatory budgeting
         visits_title: Visits
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
@@ -646,18 +817,17 @@ nl-NL:
         placeholder: Type the name of the topic
       update: Update Topic
     users:
+      columns:
+        name: Name
+        email: Email
+        document_number: Document number
+        roles: Roles
+        verification_level: Verification level
       index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        title: Hidden users
-      show:
-        email: 'Email:'
-        hidden_at: 'Hidden at:'
-        registered_at: 'Registered at:'
-        title: Activity of user (%{user})
+        title: User
+      search:
+        placeholder: Search user by email, name or document number
+        search: Search
     verifications:
       index:
         phone_not_given: Phone not given
