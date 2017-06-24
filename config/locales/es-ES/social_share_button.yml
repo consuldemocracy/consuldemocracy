@@ -1,7 +1,7 @@
 ---
-es-ES:
+en-EN:
   social_share_button:
-    share_to: "Compartir en %{name}"
+    share_to: "Share to %{name}"
     weibo: "Sina Weibo"
     twitter: "Twitter"
     facebook: "Facebook"
@@ -17,5 +17,5 @@ es-ES:
     tumblr: "Tumblr"
     plurk: "Plurk"
     pinterest: "Pinterest"
-    email: "Correo electrónico"
+    email: "Email"
     telegram: "Telegram"
