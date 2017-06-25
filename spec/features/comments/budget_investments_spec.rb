@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting Budget::Investments' do
-  let(:user)   { create :user }
+  let(:user) { create :user }
   let(:investment) { create :budget_investment }
 
   scenario 'Index' do

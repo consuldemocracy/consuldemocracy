@@ -35,7 +35,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :by_tag,      ->(tag_name) { tagged_with(tag_name) }
   scope :by_valuator, ->(valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
-  scope :for_render,             -> { includes(:geozone) }
+  scope :for_render, -> { includes(:geozone) }
 
   before_validation :set_responsible_name
 

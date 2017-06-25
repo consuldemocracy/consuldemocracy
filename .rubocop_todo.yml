@@ -216,12 +216,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'app/models/concerns/verification.rb'
 
-# Offense count: 29
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
