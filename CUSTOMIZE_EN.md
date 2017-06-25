@@ -32,7 +32,7 @@ If you just want to change some of the existing texts, you can just drop your ch
 <%= t("layouts.footer.copyright", year: Time.current.year) %>
 ```
 
-And that the text its located at the file `config/locales/es.yml` following this structure (we're only displaying in the following snippet the relevant parts):
+And that the text its located at the file `config/locales/es/general.yml` following this structure (we're only displaying in the following snippet the relevant parts):
 
 ```yml
 es:
@@ -42,7 +42,7 @@ es:
 
 ```
 
-So in order to customize it, we would create a new file `config/locales/custom/es.yml` with just that content, and change "Ayuntamiento de Madrid" for our organization name. We strongly recommend to make copies from `config/locales/` and modify or delete the lines as needed to keep the indentation structure and avoid issues.
+So in order to customize it, we would create a new file `config/locales/custom/es/general.yml` with just that content, and change "Ayuntamiento de Madrid" for our organization name. We strongly recommend to make copies from `config/locales/` and modify or delete the lines as needed to keep the indentation structure and avoid issues.
 
 ### Images
 
