@@ -634,7 +634,6 @@ feature 'Admin spending proposals' do
         proposal5 = create(:spending_proposal, geozone: new_york,   valuation_finished: true)
         proposal6 = create(:spending_proposal, geozone: new_york,   valuation_finished: false)
 
-
         create(:vote, votable: proposal1)
         create(:vote, votable: proposal2)
         create(:vote, votable: proposal3)

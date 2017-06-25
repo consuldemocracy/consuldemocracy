@@ -216,20 +216,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'app/models/concerns/verification.rb'
 
-# Offense count: 9
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'app/models/concerns/search_cache.rb'
-    - 'app/models/notification.rb'
-    - 'spec/features/admin/spending_proposals_spec.rb'
-    - 'spec/features/admin/verifications_spec.rb'
-    - 'spec/features/debates_spec.rb'
-    - 'spec/features/registration_form_spec.rb'
-    - 'spec/features/users_auth_spec.rb'
-    - 'spec/features/verification/verified_user_spec.rb'
-    - 'spec/support/verifiable.rb'
-
 # Offense count: 29
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.

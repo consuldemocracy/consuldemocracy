@@ -36,7 +36,6 @@ feature 'Incomplete verifications' do
     expect(page).to_not have_content("Isabel_anonymous")
   end
 
-
   scenario "Residence unverified" do
     incompletely_verified_user = create(:user, :incomplete_verification)
 

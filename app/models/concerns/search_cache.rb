@@ -31,5 +31,4 @@ module SearchCache
     ActionController::Base.helpers.sanitize(value, tags: [])
   end
 
-
 end

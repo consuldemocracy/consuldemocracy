@@ -211,8 +211,6 @@ feature 'Debates' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
-
-
   scenario 'Update should not be posible if logged user is not the author' do
     debate = create(:debate)
     expect(debate).to be_editable
@@ -946,7 +944,6 @@ feature 'Debates' do
       expect(page).to have_content("Featured")
     end
   end
-
 
   scenario 'Index do not show featured debates if none is marked as featured' do
     admin = create(:administrator)
