@@ -10,7 +10,7 @@ describe Management::UsersController do
 
       get :logout
 
-      expect(session[:manager]).to eq({user_key: "31415926", date: "20151031135905", login: "JJB033"})
+      expect(session[:manager]).to eq(user_key: "31415926", date: "20151031135905", login: "JJB033")
       expect(session[:document_type]).to be_nil
       expect(session[:document_number]).to be_nil
       expect(response).to be_redirect

@@ -165,22 +165,6 @@ Layout/AlignParameters:
     - 'spec/models/user_spec.rb'
     - 'spec/rails_helper.rb'
 
-# Offense count: 19
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: braces, no_braces, context_dependent
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'app/controllers/valuation/spending_proposals_controller.rb'
-    - 'app/models/concerns/searchable.rb'
-    - 'app/models/verification/residence.rb'
-    - 'lib/manager_authenticator.rb'
-    - 'spec/controllers/management/users_controller_spec.rb'
-    - 'spec/features/admin/spending_proposals_spec.rb'
-    - 'spec/lib/manager_authenticator_spec.rb'
-    - 'spec/models/residence_spec.rb'
-    - 'spec/models/user_spec.rb'
-
 # Offense count: 57
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: nested, compact

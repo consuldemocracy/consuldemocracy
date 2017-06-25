@@ -60,7 +60,7 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   def search_questions
-    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search({search: @search}).order(title: :asc)
+    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search(search: @search).order(title: :asc)
     respond_to do |format|
       format.js
     end

@@ -43,7 +43,7 @@ feature 'Admin spending proposals' do
 
       spending_proposal1.valuators << valuator1
       spending_proposal2.valuator_ids = [valuator1.id, valuator2.id]
-      spending_proposal3.update({administrator_id: admin.id})
+      spending_proposal3.update(administrator_id: admin.id)
 
       visit admin_spending_proposals_path
 
