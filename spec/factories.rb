@@ -552,7 +552,7 @@ FactoryGirl.define do
     sequence(:value) { |n| "Setting #{n} Value" }
   end
 
-  factory :ahoy_event, :class => Ahoy::Event do
+  factory :ahoy_event, class: Ahoy::Event do
     id { SecureRandom.uuid }
     time DateTime.current
     sequence(:name) {|n| "Event #{n} type"}
