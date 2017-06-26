@@ -9,7 +9,7 @@
 
 ## Code of conduct
 
-The team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT_EN.md](CODE_OF_CONDUCT_EN.md) file.
+The team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
 
 ## Report an issue
 
