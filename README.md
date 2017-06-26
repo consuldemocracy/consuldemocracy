@@ -51,7 +51,7 @@ Run the app locally:
 bin/rails s
 ```
 
-Prerequisites for testing: install PhantomJS >= 1.9.8
+Prerequisites for testing: install PhantomJS >= 2.1.1
 
 Run the tests with:
 
