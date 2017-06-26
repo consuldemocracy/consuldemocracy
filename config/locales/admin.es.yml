@@ -101,6 +101,9 @@ es:
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
         table_amount: Cantidad
+      winners:
+        calculate: Calcular propuestas ganadoras
+        calculated: Calculando ganadoras, puede tardar un minuto.
     budget_investments:
       index:
         heading_filter_all: Todas las partidas

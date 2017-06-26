@@ -102,6 +102,9 @@ nl:
         no_heading: This group has no assigned heading.
         table_heading: Heading
         table_amount: Amount
+      winners:
+        calculate: Calculate Winner Investments
+        calculated: Winners being calculated, it may take a minute.
     budget_investments:
       index:
         heading_filter_all: All headings
