@@ -205,8 +205,8 @@ class Budget
     end
 
     def should_show_aside?
-      (budget.selecting?  && !unfeasible?) ||
-        (budget.balloting?  && feasible?)    ||
+      (budget.selecting? && !unfeasible?) ||
+        (budget.balloting? && feasible?) ||
         (budget.valuating? && !unfeasible?)
     end
 

@@ -403,7 +403,7 @@ feature 'Valuation spending proposals' do
     end
 
     scenario "Summary table" do
-      scarlett  = create(:valuator)
+      scarlett = create(:valuator)
       john = create(:valuator)
 
       finished_and_feasible1 = create(:spending_proposal, valuation_finished: true, feasible: true, price: '3000000')
@@ -452,7 +452,7 @@ feature 'Valuation spending proposals' do
     scenario "Order by investment project count" do
       isabel = create(:valuator)
       john = create(:valuator)
-      scarlett  = create(:valuator)
+      scarlett = create(:valuator)
 
       3.times { create(:spending_proposal, valuators: [scarlett])}
       1.times { create(:spending_proposal, valuators: [john])}

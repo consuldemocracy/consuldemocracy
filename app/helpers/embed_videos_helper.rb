@@ -11,7 +11,7 @@ module EmbedVideosHelper
 
     if server == "Vimeo"
       reg_exp = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
-      src =  "https://player.vimeo.com/video/"
+      src = "https://player.vimeo.com/video/"
     elsif server == "YouTube"
       reg_exp = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
       src = "https://www.youtube.com/embed/"

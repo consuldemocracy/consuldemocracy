@@ -64,7 +64,7 @@ class Comment < ActiveRecord::Base
   end
 
   def author=(author)
-    self.user= author
+    self.user = author
   end
 
   def total_votes

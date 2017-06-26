@@ -424,7 +424,7 @@ feature 'Commenting legislation questions' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)

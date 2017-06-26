@@ -395,7 +395,7 @@ feature 'Commenting Budget::Investments' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit budget_investment_path(investment.budget, investment)

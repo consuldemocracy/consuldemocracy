@@ -557,12 +557,6 @@ Style/RescueModifier:
     - 'app/controllers/concerns/commentable_actions.rb'
     - 'app/controllers/verification/sms_controller.rb'
 
-# Offense count: 66
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment.
-Layout/SpaceAroundOperators:
-  Enabled: false
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

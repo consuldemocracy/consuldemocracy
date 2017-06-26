@@ -407,7 +407,7 @@ feature 'Commenting debates' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit debate_path(debate)
