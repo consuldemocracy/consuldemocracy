@@ -151,6 +151,8 @@ es:
         edit_dossier: Editar informe
         tags: Etiquetas
         undefined: Sin definir
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
       edit:
         classification: Clasificación
         assigned_valuators: Evaluadores
@@ -160,6 +162,24 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Título"
+        table_description: "Descripción"
+        table_actions: "Acciones"
+        delete: "Eliminar hito"
+        no_milestones: "No hay hitos definidos"
+      new:
+        creating: Crear hito
+      edit:
+        title: Editar hito
+      create:
+        notice: Nuevo hito creado con éxito!
+      update:
+        notice: Hito actualizado
+      delete:
+        notice: Hito borrado correctamente
     comments:
       index:
         filter: Filtro

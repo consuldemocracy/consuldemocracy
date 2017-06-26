@@ -27,7 +27,7 @@ feature 'Admin budget investments' do
 
   context "Index" do
 
-    scenario 'Displaying investmentss' do
+    scenario 'Displaying investments' do
       budget_investment = create(:budget_investment, budget: @budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
       expect(page).to have_content(budget_investment.title)
