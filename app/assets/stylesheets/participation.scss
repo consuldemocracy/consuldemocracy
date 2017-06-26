@@ -494,60 +494,59 @@
   }
 }
 
-
 .tab-milestones ul {
-  position: relative;
   margin-top: rem-calc(40);
+  position: relative;
 
   li {
+    margin: 0 auto;
     position: relative;
     width: 0;
-    margin: 0 auto;
   }
 
   li::before {
+    background: $budget;
+    border-radius: rem-calc(20);
     content: '';
+    height: rem-calc(20);
     position: absolute;
-    top: rem-calc(5);
+    top: 5px;
     transform: translateX(-50%);
     width: rem-calc(20);
-    height: rem-calc(20);
-    border-radius: 50%;
-    background: $budget;
     z-index: 2;
   }
 
   li::after {
-    content: '';
-    width: 1px;
     background: $light-gray;
     bottom: 100%;
+    content: '';
     height: 100%;
     position: absolute;
-    top: rem-calc(25);
+    top: 25px;
+    width: 1px;
     z-index: 1;
   }
 }
 
-.tab-milestones ul div {
+.tab-milestones ul .milestone-content {
+  padding: $line-height / 6 $line-height / 2;
   position: relative;
-  padding: rem-calc(3) rem-calc(10);
 
   h3 {
-    font-size: 1.2rem;
     margin-bottom: 0;
   }
 
-  strong {
-    color: $text-light;
-    font-size: 0.9rem;
+  .milestone-date {
+    color: $text-medium;
+    font-size: $small-font-size;
   }
 }
 
 .tab-milestones .timeline ul li:nth-child(odd),
 .tab-milestones .timeline ul li:nth-child(even) {
 
-  div {
+  .milestone-content {
+
     @include breakpoint(medium) {
       width: rem-calc(300);
     }
@@ -559,7 +558,8 @@
 }
 
 .tab-milestones .timeline ul li:nth-child(odd) {
-  div {
+
+  .milestone-content {
     text-align: right;
 
     @include breakpoint(medium) {
@@ -573,8 +573,9 @@
 }
 
 .tab-milestones .timeline ul li:nth-child(even) {
-  div {
-    left: rem-calc(15);
+
+  .milestone-content {
+    left: 15px;
   }
 }
 
@@ -586,15 +587,15 @@
 
       &:nth-child(odd),
       &:nth-child(even) {
-        div {
+
+        .milestone-content {
+          left: 15px;
           text-align: left;
-          left: rem-calc(15);
         }
       }
     }
   }
 }
-
 
 // 04. List participation
 // ----------------------

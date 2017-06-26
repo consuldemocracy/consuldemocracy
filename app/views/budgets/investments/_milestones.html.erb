@@ -10,9 +10,11 @@
         <ul class="no-bullet">
           <% @investment.milestones.each do |milestone| %>
             <li>
-              <div>
+              <div class="milestone-content">
                 <h3><%= milestone.title %></h3>
-                <strong><%= t("budgets.investments.show.milestone_publish_date", publish_date: milestone.created_at.strftime("%d/%m/%Y")) %></strong>
+                <span class="milestone-date">
+                  <strong><%= t("budgets.investments.show.milestone_publish_date", publish_date: milestone.created_at.strftime("%d/%m/%Y")) %></strong>
+                </span>
                 <p><%= milestone.description %></p>
               </div>
             </li>
