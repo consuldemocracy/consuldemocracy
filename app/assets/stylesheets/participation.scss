@@ -528,7 +528,7 @@
   }
 }
 
-.tab-milestones ul div {
+.tab-milestones ul .milestone-content {
   position: relative;
   padding: rem-calc(3) rem-calc(10);
 
@@ -537,7 +537,7 @@
     margin-bottom: 0;
   }
 
-  strong {
+  .milestone-date {
     color: $text-medium;
     font-size: 0.9rem;
   }
@@ -546,7 +546,8 @@
 .tab-milestones .timeline ul li:nth-child(odd),
 .tab-milestones .timeline ul li:nth-child(even) {
 
-  div {
+  .milestone-content {
+
     @include breakpoint(medium) {
       width: rem-calc(300);
     }
@@ -558,7 +559,8 @@
 }
 
 .tab-milestones .timeline ul li:nth-child(odd) {
-  div {
+
+  .milestone-content {
     text-align: right;
 
     @include breakpoint(medium) {
@@ -572,7 +574,8 @@
 }
 
 .tab-milestones .timeline ul li:nth-child(even) {
-  div {
+
+  .milestone-content {
     left: rem-calc(15);
   }
 }
@@ -585,7 +588,8 @@
 
       &:nth-child(odd),
       &:nth-child(even) {
-        div {
+
+        .milestone-content {
           text-align: left;
           left: rem-calc(15);
         }
