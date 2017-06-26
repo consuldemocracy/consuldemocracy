@@ -495,42 +495,42 @@
 }
 
 .tab-milestones ul {
-  position: relative;
   margin-top: rem-calc(40);
+  position: relative;
 
   li {
+    margin: 0 auto;
     position: relative;
     width: 0;
-    margin: 0 auto;
   }
 
   li::before {
+    background: $budget;
+    border-radius: rem-calc(20);
     content: '';
+    height: rem-calc(20);
     position: absolute;
     top: 5px;
     transform: translateX(-50%);
     width: rem-calc(20);
-    height: rem-calc(20);
-    border-radius: rem-calc(20);
-    background: $budget;
     z-index: 2;
   }
 
   li::after {
-    content: '';
-    width: 1px;
     background: $light-gray;
     bottom: 100%;
+    content: '';
     height: 100%;
     position: absolute;
     top: 25px;
+    width: 1px;
     z-index: 1;
   }
 }
 
 .tab-milestones ul .milestone-content {
-  position: relative;
   padding: $line-height / 6 $line-height / 2;
+  position: relative;
 
   h3 {
     margin-bottom: 0;
@@ -589,8 +589,8 @@
       &:nth-child(even) {
 
         .milestone-content {
-          text-align: left;
           left: 15px;
+          text-align: left;
         }
       }
     }
