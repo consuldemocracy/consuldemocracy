@@ -1,0 +1,20 @@
+<span class="followable-content">
+  <% if show_follow_action? followable %>
+    <a id="follow-expand-<%= entity_name(followable) %>-<%= followable.id %>" data-toggle="follow-drop-<%= entity_name(followable) %>-<%= followable.id %>" title="<%= follow_entity_text(entity_name(followable)) %>">
+      <%= t('shared.follow') %>
+    </a>
+    <div class="dropdown-pane" id="follow-drop-<%= entity_name(followable) %>-<%= followable.id %>" data-dropdown data-auto-focus="true">
+      <%= link_to follow_entity_text(entity_name(followable)), follows_path("#{entity_name(followable)}_id": followable.id), method: :post, remote: true, id: "follow-#{entity_name(followable)}-#{ followable.id }" %>
+    </div>
+  <% end %>
+
+  <% if show_unfollow_action? followable %>
+    <% follow = followable.follows.where(user: current_user).first %>
+    <a id="unfollow-expand-<%= entity_name(followable) %>-<%= followable.id %>" data-toggle="unfollow-drop-<%= entity_name(followable) %>-<%= followable.id %>" title="<%= unfollow_entity_text(entity_name(followable)) %>">
+        <%= t('shared.unfollow') %>
+    </a>
+    <div class="dropdown-pane" id="unfollow-drop-<%= entity_name(followable) %>-<%= followable.id %>" data-dropdown data-auto-focus="true">
+      <%= link_to unfollow_entity_text(entity_name(followable)), follow_path(follow), method: :delete, remote: true, id: "unfollow-#{entity_name(followable)}-#{ followable.id }" %>
+    </div>
+  <% end %>
+</span>

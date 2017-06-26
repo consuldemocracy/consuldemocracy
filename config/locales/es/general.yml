@@ -500,6 +500,8 @@ es:
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
+    follow: "Seguir"
+    follow_entity: "Seguir %{entity}"
     hide: Ocultar
     print:
       print_button: Imprimir esta información
@@ -532,6 +534,8 @@ es:
     target_blank_html: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
+    unfollow: Dejar de seguir
+    unfollow_entity: "Dejar de seguir %{entity}"
     outline:
       debates: Debates
       proposals: Propuestas

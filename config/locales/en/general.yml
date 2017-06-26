@@ -500,6 +500,8 @@ en:
     check_none: None
     collective: Collective
     flag: Flag as inappropriate
+    follow: "Follow"
+    follow_entity: "Follow %{entity}"
     hide: Hide
     print:
       print_button: Print this info
@@ -532,6 +534,8 @@ en:
     target_blank_html: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
+    unfollow: "Unfollow"
+    unfollow_entity: "Unfollow %{entity}"
     outline:
       debates: Debates
       proposals: Proposals
@@ -708,4 +712,3 @@ en:
   invisible_captcha:
     sentence_for_humans: "If you are human, ignore this field"
     timestamp_error_message: "Sorry, that was too quick! Please resubmit."
-

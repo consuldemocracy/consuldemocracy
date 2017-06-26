@@ -53,6 +53,10 @@
           <span class="js-flag-actions">
             <%= render 'proposals/flag_actions', proposal: @proposal %>
           </span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <span class="js-follow">
+            <%= render 'follows/followable_button', followable: @proposal %>
+          </span>
         </div>
 
         <br>
