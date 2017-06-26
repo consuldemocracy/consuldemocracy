@@ -25,7 +25,7 @@ module ActsAsParanoidAliases
         update_attribute(:confirmed_hide_at, Time.current)
       end
 
-      def restore(opts={})
+      def restore(opts = {})
         return false unless hidden?
         super(opts)
         update_attribute(:confirmed_hide_at, nil)

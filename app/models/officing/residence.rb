@@ -13,7 +13,7 @@ class Officing::Residence
   validate :allowed_age
   validate :residence_in_madrid
 
-  def initialize(attrs={})
+  def initialize(attrs = {})
     super
     clean_document_number
   end

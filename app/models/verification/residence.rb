@@ -17,7 +17,7 @@ class Verification::Residence
   validate :allowed_age
   validate :document_number_uniqueness
 
-  def initialize(attrs={})
+  def initialize(attrs = {})
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
