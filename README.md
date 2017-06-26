@@ -51,7 +51,7 @@ Run the app locally:
 bin/rails s
 ```
 
-Prerequisites for testing: install PhantomJS >= 1.9.8
+Prerequisites for testing: install PhantomJS >= 2.1.1
 
 Run the tests with:
 
@@ -102,4 +102,4 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 
 ## Contributions
 
-See [CONTRIBUTING_EN.md](CONTRIBUTING_EN.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)
