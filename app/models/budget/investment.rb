@@ -1,5 +1,7 @@
 class Budget
   class Investment < ActiveRecord::Base
+    MIN_SIZE = 475
+
     include Measurable
     include Sanitizable
     include Taggable
@@ -17,7 +19,7 @@ class Budget
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
 
-    has_attached_file :image, styles: { large: "x475", medium: "300x300#", thumb: "140x245#" }
+    has_attached_file :image, styles: { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" }
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -279,7 +281,7 @@ class Budget
           width = dimensions.width
           height = dimensions.height
 
-          if width < 475 || height < 475
+          if width < MIN_SIZE || height < MIN_SIZE
             errors['image'] << I18n.t("budgets.investments.edit_image.invalid_dimmensions")
           end
         end
