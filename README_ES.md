@@ -65,6 +65,8 @@ Si añades código SCSS puedes revisarlo con:
 scss-lint
 ```
 
+Para mantener el nivel de accesibilidad, si añades colores nuevos utiliza un [Comprobador de contraste de color](http://webaim.org/resources/contrastchecker/) (WCAG AA es obligatorio, WCAG AAA es recomendable)
+
 Si trabajas en código coffeescript puedes revisarlo con [coffeelint](http://www.coffeelint.org/) (instalalo con `npm install -g coffeelint`) :
 
 ```
