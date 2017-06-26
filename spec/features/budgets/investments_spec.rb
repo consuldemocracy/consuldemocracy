@@ -402,6 +402,7 @@ feature 'Budget Investments' do
     within("#tab-milestones") do
       expect(page).to have_content(milestone.title)
       expect(page).to have_content(milestone.description)
+      expect(page).to have_content("Published #{milestone.created_at.strftime("%d/%m/%Y")}")
     end
   end
 

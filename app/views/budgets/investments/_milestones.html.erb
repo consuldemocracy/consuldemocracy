@@ -12,7 +12,7 @@
             <li>
               <div>
                 <h3><%= milestone.title %></h3>
-                <strong>Publicado el <%= milestone.created_at.strftime("%d/%m/%Y") %></strong>
+                <strong><%= t("budgets.investments.show.milestone_publish_date", publish_date: milestone.created_at.strftime("%d/%m/%Y")) %></strong>
                 <p><%= milestone.description %></p>
               </div>
             </li>
