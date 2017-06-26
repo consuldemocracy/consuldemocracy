@@ -156,7 +156,7 @@ class User < ActiveRecord::Base
 
   def has_official_email?
     domain = Setting['email_domain_for_officials']
-    email.present? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+    email.present? && ((email.end_with? "@#{domain}") || (email.end_with? ".#{domain}"))
   end
 
   def display_official_position_badge?
