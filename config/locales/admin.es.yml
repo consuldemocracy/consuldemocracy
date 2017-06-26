@@ -169,6 +169,7 @@ es:
         table_description: "Descripción"
         table_actions: "Acciones"
         delete: "Eliminar hito"
+        no_milestones: "No hay hitos definidos"
       new:
         creating: Crear hito
       edit:

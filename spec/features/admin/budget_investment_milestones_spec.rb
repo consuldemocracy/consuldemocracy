@@ -19,6 +19,13 @@ feature 'Admin budget investment milestones' do
       expect(page).to have_content(milestone.title)
       expect(page).to have_content(milestone.id)
     end
+
+    scenario 'Displaying no_milestones text' do
+      visit admin_budget_budget_investment_path(@investment.budget, @investment)
+
+      expect(page).to have_content("Milestone")
+      expect(page).to have_content("Don't have defined milestones")
+    end
   end
 
   context "New" do
