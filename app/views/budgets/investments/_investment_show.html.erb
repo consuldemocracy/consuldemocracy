@@ -11,7 +11,7 @@
       <% end %>
 
       <% if can?(:edit_image, @investment) %>
-        <%= link_to t("budgets.investments.show.#{investment_image_button_text_key(@investment)}"),
+        <%= link_to investment_image_button_text(@investment),
                     edit_image_budget_investment_path(investment.budget, investment),
                     class: 'button hollow float-right' %>
       <% end %>

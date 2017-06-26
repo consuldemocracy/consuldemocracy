@@ -8,12 +8,21 @@ module InvestmentsHelper
     investment.image.url.split('/').last.split("?")[0] if investment.image.present?
   end
 
-  def investment_image_advice_note_key(investment)
-    investment.image.exists? ? "edit_note" : "add_note"
+  def investment_image_advice_note(investment)
+    title = investment.title
+    if investment.image.exists?
+      t "budgets.investments.edit_image.edit_note", title: title
+    else
+      t "budgets.investments.edit_image.add_note", title: title
+    end
   end
 
-  def investment_image_button_text_key(investment)
-    investment.image.exists? ? "edit_image" : "add_image"
+  def investment_image_button_text(investment)
+    if investment.image.exists?
+      t "budgets.investments.show.edit_image"
+    else
+      t "budgets.investments.show.add_image"
+    end
   end
 
   def errors_on_image(investment)
