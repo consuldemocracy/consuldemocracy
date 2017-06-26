@@ -4,7 +4,7 @@ describe Legislation::AnnotationsController do
 
   describe 'POST create' do
     before(:each) do
-      @process = create(:legislation_process, allegations_start_date: Date.current - 3.day, allegations_end_date: Date.current + 2.days)
+      @process = create(:legislation_process, allegations_start_date: Date.current - 3.days, allegations_end_date: Date.current + 2.days)
       @draft_version = create(:legislation_draft_version, :published, process: @process, title: "Version 1")
       @final_version = create(:legislation_draft_version, :published, :final_version, process: @process, title: "Final version")
       @user = create(:user, :level_two)

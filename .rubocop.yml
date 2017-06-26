@@ -31,6 +31,9 @@ Style/FrozenStringLiteralComment:
 Style/PercentLiteralDelimiters:
   Enabled: false
 
+Style/SymbolArray:
+  Enabled: false
+
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 

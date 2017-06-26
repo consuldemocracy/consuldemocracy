@@ -3,7 +3,7 @@ class Verification::Sms
 
   attr_accessor :user, :phone, :confirmation_code
 
-  validates_presence_of :phone
+  validates :phone, presence: true
   validates :phone, format: { with: /\A[\d \+]+\z/ }
   validate :uniqness_phone
 
