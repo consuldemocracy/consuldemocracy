@@ -26,7 +26,7 @@ module InvestmentsHelper
   end
 
   def errors_on_image(investment)
-    @investment.errors[:image].join(', ') if @investment.errors.has_key?(:image)
+    investment.errors[:image].join(', ') if investment.errors.has_key?(:image)
   end
 
 end
