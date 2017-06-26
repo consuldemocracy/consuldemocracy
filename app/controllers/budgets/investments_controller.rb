@@ -93,7 +93,7 @@ module Budgets
     end
 
     def remove_image
-      @investment.image = nil
+      @investment.image.destroy
       @investment.image_title = nil
       @investment.save
       redirect_to budget_investment_path(@investment.budget, @investment),
