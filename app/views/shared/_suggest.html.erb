@@ -1,6 +1,6 @@
 <div class="small-12 column" >
   <% if @search_terms && @resources.any? %>
-    <div class="alert-box radius warning">
+    <div class="callout warning">
       <p class="note-marked">
         <%= t("shared.suggest.#{resource_name}.found",
             count: @resources.count,
