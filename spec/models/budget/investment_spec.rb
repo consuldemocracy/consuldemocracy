@@ -99,6 +99,11 @@ describe Budget::Investment do
 
     end
 
+    it "image destroy should remove image from file storage" do
+      image_url = investment_with_image.image.url
+
+      expect{ investment_with_image.image.destroy }.to change{ investment_with_image.image.url }.from(image_url).to("/images/original/missing.png")
+    end
   end
 
   it "sanitizes description" do
