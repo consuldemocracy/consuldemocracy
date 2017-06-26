@@ -2,10 +2,11 @@
 
 ## Miembros del equipo
 
-* Raimond Garcia [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
+* Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
 * Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto Garcia Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto García Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
 
 ## Código de conducta
 
