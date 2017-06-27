@@ -1,6 +1,6 @@
 module CommonActions
 
-  def sign_up(email='manuela@consul.dev', password='judgementday')
+  def sign_up(email = 'manuela@consul.dev', password = 'judgementday')
     visit '/'
 
     click_link 'Register'
@@ -109,7 +109,7 @@ module CommonActions
     SCRIPT
   end
 
-  def error_message(resource_model=nil)
+  def error_message(resource_model = nil)
     resource_model ||= "(.*)"
     /\d errors? prevented this #{resource_model} from being saved:/
   end

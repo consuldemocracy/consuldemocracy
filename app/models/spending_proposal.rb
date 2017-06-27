@@ -31,9 +31,9 @@ class SpendingProposal < ActiveRecord::Base
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
   scope :with_supports,          -> { where('cached_votes_up > 0') }
 
-  scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
-  scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
-  scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
+  scope :by_admin,    ->(admin)    { where(administrator_id: admin.presence) }
+  scope :by_tag,      ->(tag_name) { tagged_with(tag_name) }
+  scope :by_valuator, ->(valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
   scope :for_render,             -> { includes(:geozone) }
 
@@ -44,7 +44,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def self.filter_params(params)
-    params.select{|x,_| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
+    params.select{|x, _| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
   end
 
   def self.scoped_filter(params, current_filter)

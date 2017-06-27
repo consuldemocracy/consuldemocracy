@@ -18,7 +18,7 @@ module VerificationHelper
     data_to_mask    = match[2]
     email_provider  = match[3]
 
-    data_to_display + "*"*data_to_mask.size + "@" + email_provider
+    data_to_display + "*" * data_to_mask.size + "@" + email_provider
   end
 
 end

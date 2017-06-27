@@ -99,7 +99,7 @@ FactoryGirl.define do
 
   factory :verified_user do
     document_number
-    document_type    'dni'
+    document_type 'dni'
   end
 
   factory :debate do
@@ -378,7 +378,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
     legacy_legislation
     user
   end
@@ -701,7 +701,7 @@ LOREM_IPSUM
     author factory: :user
     quote "ipsum"
     text "a comment"
-    ranges [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}]
+    ranges [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}]
     range_start "/p[1]"
     range_start_offset 6
     range_end "/p[1]"

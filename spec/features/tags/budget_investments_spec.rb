@@ -87,7 +87,7 @@ feature 'Tags' do
     select  'Health: More hospitals', from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
-    check   'budget_investment_terms_of_service'
+    check 'budget_investment_terms_of_service'
 
     find('.js-add-tag-link', text: 'Education').click
     click_button 'Create Investment'
