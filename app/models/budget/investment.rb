@@ -15,7 +15,7 @@ class Budget
     belongs_to :heading
     belongs_to :group
     belongs_to :budget
-    belongs_to :administrator
+    belongs_to :administrator, optional: true
 
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
