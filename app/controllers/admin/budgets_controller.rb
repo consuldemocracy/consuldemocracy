@@ -14,10 +14,15 @@ class Admin::BudgetsController < Admin::BaseController
     @budget = Budget.includes(groups: :headings).find(params[:id])
   end
 
-  def new
-  end
+  def new; end
 
-  def edit
+  def edit; end
+
+  def calculate_winners
+    return unless @budget.balloting_process?
+    @budget.headings.each { |heading| Budget::Result.new(@budget, heading).calculate_winners }
+    redirect_to admin_budget_budget_investments_path(budget_id: @budget.id, filter: 'winners'),
+                notice: I18n.t("admin.budgets.winners.calculated")
   end
 
   def update

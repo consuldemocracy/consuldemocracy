@@ -67,6 +67,7 @@ class Admin::Poll::PollsController < Admin::BaseController
   end
 
   private
+
     def load_geozones
       @geozones = Geozone.all.order(:name)
     end

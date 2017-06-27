@@ -101,6 +101,9 @@ fr:
         no_heading: Ce groupe n'a pas de rubrique assignée.
         table_heading: Rubrique
         table_amount: Montant
+      winners:
+        calculate: Calculate Winner Investments
+        calculated: Winners being calculated, it may take a minute.
     budget_investments:
       index:
         heading_filter_all: Toutes les rubriques

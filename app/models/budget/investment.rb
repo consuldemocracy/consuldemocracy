@@ -20,13 +20,14 @@ class Budget
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
     has_many :comments, as: :commentable
+    has_many :milestones
 
     validates :title, presence: true
     validates :author, presence: true
     validates :description, presence: true
     validates :heading_id, presence: true
-    validates_presence_of :unfeasibility_explanation, if: :unfeasibility_explanation_required?
-    validates_presence_of :price, if: :price_required?
+    validates :unfeasibility_explanation, presence: { if: :unfeasibility_explanation_required? }
+    validates :price, presence: { if: :price_required? }
 
     validates :title, length: { in: 4..Budget::Investment.title_max_length }
     validates :description, length: { maximum: Budget::Investment.description_max_length }

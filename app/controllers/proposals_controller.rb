@@ -57,7 +57,7 @@ class ProposalsController < ApplicationController
 
   def share
     if Setting['proposal_improvement_path'].present?
-      @proposal_improvement_url = root_url + Setting['proposal_improvement_path']
+      @proposal_improvement_path = Setting['proposal_improvement_path']
     end
   end
 

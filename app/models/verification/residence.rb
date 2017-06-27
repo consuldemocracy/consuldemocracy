@@ -7,10 +7,10 @@ class Verification::Residence
 
   before_validation :call_census_api
 
-  validates_presence_of :document_number
-  validates_presence_of :document_type
-  validates_presence_of :date_of_birth
-  validates_presence_of :postal_code
+  validates :document_number, presence: true
+  validates :document_type, presence: true
+  validates :date_of_birth, presence: true
+  validates :postal_code, presence: true
   validates :terms_of_service, acceptance: { allow_nil: false }
   validates :postal_code, length: { is: 5 }
 

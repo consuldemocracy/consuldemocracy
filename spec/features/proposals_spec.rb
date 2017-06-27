@@ -157,7 +157,7 @@ feature 'Proposals' do
   end
 
   scenario 'Create with proposal improvement info link' do
-    Setting['proposal_improvement_path'] = 'more-information/proposal-improvement'
+    Setting['proposal_improvement_path'] = '/more-information/proposal-improvement'
     author = create(:user)
     login_as(author)
 
@@ -175,7 +175,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'You can also see more information about improving your campaign'
+    expect(page).to have_content 'Improve your campaign and get more supports'
 
     click_link 'Not now, go to my proposal'
 
@@ -1025,7 +1025,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_max", with: 1.day.ago
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -1108,7 +1108,7 @@ feature 'Proposals' do
 
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.days.ago.to_date
+          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
           click_button "Filter"
 
           expect(page).to have_content("citizen proposals cannot be found")

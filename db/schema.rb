@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613203256) do
+ActiveRecord::Schema.define(version: 20170620132731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,14 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.string  "name",     limit: 50
     t.bigint  "price"
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
+  end
+
+  create_table "budget_investment_milestones", force: :cascade do |t|
+    t.integer  "investment_id"
+    t.string   "title",         limit: 80
+    t.text     "description"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "budget_investments", force: :cascade do |t|
@@ -876,7 +884,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2016-11-23 10:59:20', null: false
+    t.datetime "password_changed_at",                       default: '2017-06-22 11:21:30', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

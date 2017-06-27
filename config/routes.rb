@@ -193,15 +193,21 @@ Rails.application.routes.draw do
     end
 
     resources :budgets do
+      member do
+        put :calculate_winners
+      end
+
       resources :budget_groups do
         resources :budget_headings do
         end
       end
 
       resources :budget_investments, only: [:index, :show, :edit, :update] do
+        resources :budget_investment_milestones
         member { patch :toggle_selection }
       end
     end
+
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
