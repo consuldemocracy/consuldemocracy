@@ -135,6 +135,10 @@ en:
       text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
       date: "From May 15 to June 30"
       button: "Vote projects"
+      title_reviewing_html: "Finished voting on participatory budgets"
+      text_reviewing_html: "The final vote was closed on 30 June. The <strong>winning projects</strong> will be announced on the next <strong>July 13</strong>."
+      label_reviewing: "100 million to make Madrid"
+      button_reviewing: "See projects"
       geocraft:
         label: "Download"
         title: "Make Madrid"
