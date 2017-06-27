@@ -14,7 +14,7 @@ module SearchCache
 
   def searchable_values_sql
     searchable_values
-      .select{ |k,_| k.present? }
+      .select{ |k, _| k.present? }
       .collect{ |value, weight| set_tsvector(value, weight) }
       .join(" || ")
   end

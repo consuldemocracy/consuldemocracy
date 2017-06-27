@@ -27,6 +27,7 @@ class Officing::RecountsController < Officing::BaseController
   end
 
   private
+
     def load_poll
       @poll = Poll.find(params[:poll_id])
     end

@@ -12,9 +12,8 @@ class Banner < ActiveRecord::Base
   validates :post_started_at, presence: true
   validates :post_ended_at, presence: true
 
-  scope :with_active,  -> {where("post_started_at <= ?", Time.current).
-                      where("post_ended_at >= ?", Time.current) }
+  scope :with_active,   -> { where("post_started_at <= ?", Time.current).where("post_ended_at >= ?", Time.current) }
 
-  scope :with_inactive,-> {where("post_started_at > ? or post_ended_at < ?", Time.current, Time.current) }
+  scope :with_inactive, -> { where("post_started_at > ? or post_ended_at < ?", Time.current, Time.current) }
 
 end

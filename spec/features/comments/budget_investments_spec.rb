@@ -166,9 +166,12 @@ feature 'Commenting Budget::Investments' do
     fill_in "comment-body-budget_investment_#{investment.id}", with: 'Have you thought about...?'
     click_button 'Publish comment'
 
+    within "#tab-comments-label" do
+      expect(page).to have_content 'Comments (1)'
+    end
+
     within "#comments" do
       expect(page).to have_content 'Have you thought about...?'
-      expect(page).to have_content 'Comments (1)'
     end
   end
 
@@ -392,7 +395,7 @@ feature 'Commenting Budget::Investments' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit budget_investment_path(investment.budget, investment)

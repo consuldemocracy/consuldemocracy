@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  validates_inclusion_of :commentable_type, in: ["Debate", "Proposal", "Budget::Investment", "Poll::Question", "Legislation::Question", "Legislation::Annotation"]
+  validates :commentable_type, inclusion: { in: ["Debate", "Proposal", "Budget::Investment", "Poll::Question", "Legislation::Question", "Legislation::Annotation"] }
 
   validate :validate_body_length
 
@@ -44,7 +44,7 @@ class Comment < ActiveRecord::Base
 
   after_create :call_after_commented
 
-  def self.build(commentable, user, body, p_id=nil)
+  def self.build(commentable, user, body, p_id = nil)
     new commentable: commentable,
         user_id:     user.id,
         body:        body,
@@ -64,7 +64,7 @@ class Comment < ActiveRecord::Base
   end
 
   def author=(author)
-    self.user= author
+    self.user = author
   end
 
   def total_votes

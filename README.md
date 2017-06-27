@@ -51,7 +51,7 @@ Run the app locally:
 bin/rails s
 ```
 
-Prerequisites for testing: install PhantomJS >= 1.9.8
+Prerequisites for testing: install PhantomJS >= 2.1.1
 
 Run the tests with:
 
@@ -64,6 +64,8 @@ If you add SCSS code you can check it with:
 ```
 scss-lint
 ```
+
+To maintain accesibility level, if you add new colors use a [Color contrast checker](http://webaim.org/resources/contrastchecker/) (WCAG AA is mandatory, WCAG AAA is recommended)
 
 If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
 
@@ -100,4 +102,4 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 
 ## Contributions
 
-See [CONTRIBUTING_EN.md](CONTRIBUTING_EN.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)

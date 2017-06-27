@@ -17,8 +17,8 @@
       <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>
 
       <%= f.label :valid_answers %>
-      <p class="note"><%= t("admin.questions.new.valid_answers_note") %></p>
-      <%= f.text_field :valid_answers, label: false %>
+      <p class="help-text" id="valid-answers-help-text"><%= t("admin.questions.new.valid_answers_note") %></p>
+      <%= f.text_field :valid_answers, label: false, aria: {describedby: "valid-answers-help-text"} %>
 
       <div class="ckeditor">
         <%= f.cktext_area :description,

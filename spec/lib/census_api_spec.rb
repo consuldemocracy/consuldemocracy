@@ -39,7 +39,7 @@ describe CensusApi do
       response = api.call(1, "123456")
 
       expect(response).to be_valid
-      expect(response.date_of_birth).to eq(Date.new(1980,1,1))
+      expect(response.date_of_birth).to eq(Date.new(1980, 1, 1))
     end
 
     it "returns the last failed response" do

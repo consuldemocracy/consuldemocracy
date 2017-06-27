@@ -23,7 +23,7 @@ class Flag < ActiveRecord::Base
 
   def self.flagged?(user, flaggable)
     return false unless user
-    !! by_user_and_flaggable(user, flaggable).try(:first)
+    !!by_user_and_flaggable(user, flaggable).try(:first)
   end
 
 end

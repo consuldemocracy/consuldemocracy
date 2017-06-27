@@ -15,8 +15,8 @@
   </div>
 
   <%= f.label :document_numbers %>
-  <p class="note"><%= t("admin.signature_sheets.new.document_numbers_note") %></p>
-  <%= f.text_area :document_numbers, rows: "6", label: false %>
+  <p class="help-text" id="document-numbers-help-text"><%= t("admin.signature_sheets.new.document_numbers_note") %></p>
+  <%= f.text_area :document_numbers, rows: "6", label: false, aria: {describedby: "document-numbers-help-text"} %>
 
   <%= f.submit(class: "button", value: t("admin.signature_sheets.new.submit")) %>
 <% end %>

@@ -31,7 +31,7 @@
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="note"><%= t("budgets.investments.form.tags_instructions") %></p>
+      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
         <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
@@ -44,6 +44,7 @@
       <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
                         label: false,
                         placeholder: t("budgets.investments.form.tags_placeholder"),
+                        aria: {describedby: "tags-list-help-text"},
                         class: 'js-tag-list' %>
     </div>
 

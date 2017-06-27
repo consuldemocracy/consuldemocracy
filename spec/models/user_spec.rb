@@ -220,7 +220,7 @@ describe User do
       subject.username = nil
       expect(subject).to be_valid
 
-      subject.organization.name= nil
+      subject.organization.name = nil
       expect(subject).to_not be_valid
     end
   end

@@ -99,7 +99,7 @@ FactoryGirl.define do
 
   factory :verified_user do
     document_number
-    document_type    'dni'
+    document_type 'dni'
   end
 
   factory :debate do
@@ -322,6 +322,12 @@ FactoryGirl.define do
     reason "unfeasible"
   end
 
+  factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
+    association :investment, factory: :budget_investment
+    sequence(:title)     { |n| "Budget investment milestone #{n} title" }
+    description          'Milestone description'
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -372,7 +378,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
     legacy_legislation
     user
   end
@@ -632,7 +638,7 @@ FactoryGirl.define do
       end_date Date.current + 8.days
       debate_start_date Date.current + 2.days
       debate_end_date Date.current + 4.days
-      draft_publication_date Date.current + 5.day
+      draft_publication_date Date.current + 5.days
       allegations_start_date Date.current + 5.days
       allegations_end_date Date.current + 7.days
       result_publication_date Date.current + 8.days
@@ -643,7 +649,7 @@ FactoryGirl.define do
       end_date Date.current - 2.days
       debate_start_date Date.current - 12.days
       debate_end_date Date.current - 9.days
-      draft_publication_date Date.current - 8.day
+      draft_publication_date Date.current - 8.days
       allegations_start_date Date.current - 8.days
       allegations_end_date Date.current - 4.days
       result_publication_date Date.current - 2.days
@@ -653,7 +659,7 @@ FactoryGirl.define do
       start_date Date.current - 5.days
       end_date Date.current + 5.days
       debate_start_date Date.current - 5.days
-      debate_end_date Date.current + 1.days
+      debate_end_date Date.current + 1.day
       draft_publication_date Date.current + 1.day
       allegations_start_date Date.current + 2.days
       allegations_end_date Date.current + 3.days
@@ -695,7 +701,7 @@ LOREM_IPSUM
     author factory: :user
     quote "ipsum"
     text "a comment"
-    ranges [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}]
+    ranges [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}]
     range_start "/p[1]"
     range_start_offset 6
     range_end "/p[1]"

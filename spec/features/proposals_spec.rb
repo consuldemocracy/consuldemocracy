@@ -99,7 +99,7 @@ feature 'Proposals' do
     end
 
     scenario "Show Vimeo video" do
-      proposal = create(:proposal, video_url: "https://vimeo.com/7232823" )
+      proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://player.vimeo.com/video/7232823'
@@ -1025,7 +1025,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_max", with: 1.day.ago
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -1108,7 +1108,7 @@ feature 'Proposals' do
 
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.days.ago.to_date
+          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
           click_button "Filter"
 
           expect(page).to have_content("citizen proposals cannot be found")
