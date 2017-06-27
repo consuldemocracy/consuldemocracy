@@ -1,15 +1,25 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
-<% content_for :wrapper_class, "light" %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: polls_url %>
 <% end %>
 
-<div class="expanded no-margin-top dark-heading">
-  <div class="row">
-    <div class="small-12 medium-6 column padding">
-      <h1><%= t("polls.index.title") %></h1>
+
+<h1 class="text-center title-page">
+  <%= t("polls.index.title") %>
+</h1>
+
+
+
+<div class="small-12 column problem-display">
+    <!-- TODO: Acá se debe mostrar el problema elegido -->
+    <div class="float-left">
+      <div class="img-poll">
+        <%= image_tag(image_path_for('foto1.jpg')) %>
+      </div>
     </div>
-  </div>
+    <div class="info-poll float-right">
+      <span> <%= t("polls.index.description") %> </span>
+    </div>
 </div>
 
 <div class="row">
