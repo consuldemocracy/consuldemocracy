@@ -34,33 +34,24 @@
       </div>
     <% end %>
     <div class="row">
-      <div class="small-12 column">
-        <div class="dates"><%= poll_dates(poll) %></div>
-        <% if poll.questions.count == 1 %>
-          <% poll.questions.each do |question| %>
-            <h4 class="inline-block"><%= link_to question.title, poll %></h4>
-          <% end %>
-        <% else %>
-          <h4 class="inline-block"><%= link_to poll.name, poll %></h4>
-          <ul>
-            <% poll.questions.each do |question| %>
-              <li><%= link_to question.title, question_path(question) %></li>
-            <% end %>
-          </ul>
-        <% end %>
-        <% if poll.geozones.any? %>
-          <p class="inline-block">
-            <small><%= t("polls.index.geozone_info") %></small>
-          </p>
-        <% end %>
-        <ul class="no-bullet inline-block tags">
-          <% poll.geozones.each do |g| %>
-            <li class="inline-block"><span><%= g.name %></span></li>
-          <% end %>
-        </ul>
+      <div class="small-12 medium-2 column">
+        <h3> <%= distance_of_time_in_days(poll.ends_at, Date.today) %> </h3>
+        <p> dias para votar </p>
       </div>
-      <div class="small-12 medium-6 large-4 column end">
-        <%= link_to poll, class: "button expanded" do %>
+      <div class="small-12 medium-10 column">
+        <h3> <%= poll.name %> </h3>
+        <p class="proposal-info">
+          <% poll.geozones.each do |g| %>
+            <span><%= g.name %> | </span>
+          <% end %>
+        </p>
+        <p> <%= poll.description %> </p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 large-4 column end float-right">
+        <%= link_to poll, class: "button" do %>
           <% if poll.expired? %>
             <%= t("polls.index.participate_button_expired") %>
           <% elsif poll.incoming? %>
