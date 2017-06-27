@@ -1,6 +1,6 @@
 class Budget
   class Investment
-    class Milestone < ActiveRecord::Base
+    class Milestone < ApplicationRecord
       belongs_to :investment
 
       validates :title, presence: true
