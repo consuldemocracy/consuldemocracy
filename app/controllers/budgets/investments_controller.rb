@@ -93,9 +93,7 @@ module Budgets
     end
 
     def remove_image
-      @investment.image.destroy
-      @investment.image_title = nil
-      @investment.save
+      @investment.image.destroy!
       redirect_to budget_investment_path(@investment.budget, @investment),
                   notice: t("flash.actions.remove_image.budget_investment")
     end
@@ -128,7 +126,7 @@ module Budgets
         params.require(:budget_investment)
               .permit(:title, :description, :external_url, :heading_id,
                       :tag_list, :organization_name, :location, :terms_of_service,
-                      :image, :image_title,
+                      image_attributes: [:title, :attachment],
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
       end
 

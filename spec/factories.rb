@@ -320,9 +320,13 @@ FactoryGirl.define do
     end
 
     trait :with_descriptive_image do
-      image { File.new("spec/fixtures/files/clippy.jpg") }
-      image_title "Lorem ipsum dolor sit amet"
+      association :image, factory: :image
     end
+  end
+
+  factory :image, class: 'Image' do
+    attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    title "Lorem ipsum dolor sit amet"
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do

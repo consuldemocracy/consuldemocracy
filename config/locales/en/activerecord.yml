@@ -219,6 +219,11 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Image Width must be at least %{required_min_width}px"
+              min_image_height: "Image Height must be at least %{required_min_height}px"
         poll/voter:
           attributes:
             document_number:

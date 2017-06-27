@@ -8,6 +8,7 @@ class Budget
     include Followable
     include Communitable
     include Documentable
+    include Imageable
     documentable max_documents_allowed: 3,
                  max_file_size: 3.megabytes,
                  accepted_content_types: [ "application/pdf" ]
@@ -16,7 +17,6 @@ class Budget
     acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
-
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading

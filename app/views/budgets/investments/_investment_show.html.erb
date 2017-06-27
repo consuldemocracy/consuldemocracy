@@ -32,11 +32,10 @@
         <div class="row">
           <div class="small-12 column text-center">
             <figure>
-              <%= image_tag investment.image.url(:large),
-                            title: investment.image_title,
-                            alt: investment.image_title %>
+              <%= image_tag investment.image_url(:large),
+                            alt: investment.image.title %>
               <figcaption class="text-right">
-                <em><%= investment.image_title %></em>
+                <em><%= investment.image.title %></em>
               </figcaption>
             </figure>
             <hr>

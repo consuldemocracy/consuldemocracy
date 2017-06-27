@@ -29,7 +29,7 @@ describe Budget::Investment do
     end
   end
 
-  describe "#image and #image_title" do
+  describe "#image and #image_title", :investment_image do
     let(:investment_with_image) { build(:budget_investment, :with_descriptive_image) }
 
     it "should be valid" do

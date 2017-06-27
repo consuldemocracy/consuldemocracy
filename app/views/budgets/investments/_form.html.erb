@@ -53,26 +53,28 @@
                         data: {js_url: suggest_tags_path} %>
     </div>
 
-    <div class="small-12 column">
-      <div class="image-upload">
-        <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
-        <br>
-        <%= f.label :image, t("budgets.investments.form.image_label"), class:'button' %>
-        <p><%= investment_image_file_name(@investment) %></p>
-      </div>
-    </div>
+    <%= f.fields_for :image do |builder| %>
 
-    <% if @investment.errors.has_key?(:image) %>
       <div class="small-12 column">
-        <div class="image-errors">
-          <small class="error"><%= errors_on_image(@investment)%></small>
+        <div class="image-upload">
+          <%= f.file_field :attachment, accept: 'image/jpg,image/jpeg', label: false, class:'show-for-sr' %>
+          <br>
+          <%= f.label :attachment, t("budgets.investments.form.image_label"), class:'button' %>
         </div>
       </div>
-    <% end %>
 
-    <div class="small-12 column">
-      <%= f.text_field :image_title %>
-    </div>
+      <% if @investment.errors.has_key?(:attachment) %>
+        <div class="small-12 column">
+          <div class="image-errors">
+            <small class="error"><%= errors_on_image(@investment)%></small>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="small-12 column">
+        <%= f.text_field :title %>
+      </div>
+    <% end %>
 
     <% unless current_user.manager? %>
 

@@ -10,16 +10,15 @@
 
     <% if @investment.image.exists? %>
       <div class="small-12 column">
-        <%= image_tag @investment.image.url(:large) %>
+        <%= image_tag @investment.image_url(:large) %>
       </div>
     <% end %>
 
     <div class="small-12 column">
       <div class="image-upload">
-        <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
+        <%= f.file_field :attachment, accept: 'image/jpg,image/jpeg', label: false, class:'show-for-sr' %>
         <br>
-        <%= f.label :image, t("budgets.investments.edit_image.form.image_label"), class:'button' %>
-        <p><%= investment_image_file_name(@investment) %></p>
+        <%= f.label :attachment, t("budgets.investments.edit_image.form.image_label"), class:'button' %>
      </div>
     </div>
 
@@ -32,18 +31,21 @@
     <% end %>
 
     <div class="small-12 column">
-      <%= f.label :image_title, t("budgets.investments.edit_image.form.image_title") %>
-      <%= f.text_field :image_title, placeholder: t("budgets.investments.edit_image.form.image_title"), label: false %>
+      <%= f.label :title, t("budgets.investments.edit_image.form.image_title") %>
+      <%= f.text_field :title, placeholder: t("budgets.investments.edit_image.form.image_title"), label: false %>
     </div>
 
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("budgets.investments.edit_image.form.submit_button")) %>
+
       <% if @investment.image.exists? %>
-        <%= link_to t("budgets.investments.edit_image.form.remove_button"),
-                    remove_image_budget_investment_path(@investment.budget, @investment),
-                    class: "button hollow alert",
-                    method: :delete,
-                    data: { confirm: t("budgets.investments.edit_image.form.remove_alert") } %>
+        <div class="float-right">
+          <%= link_to t("budgets.investments.edit_image.form.remove_button"),
+                      remove_image_budget_investment_path(@investment.budget, @investment),
+                      class: "button hollow alert",
+                      method: :delete,
+                      data: { confirm: t("budgets.investments.edit_image.form.remove_alert") } %>
+        </div>
       <% end %>
     </div>
 

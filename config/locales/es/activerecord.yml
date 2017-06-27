@@ -214,6 +214,11 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
+              min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
         poll/voter:
           attributes:
             document_number:
