@@ -1,0 +1,34 @@
+<ul class="accordion" data-accordion data-allow-all-closed="true">
+  <% (1..2).each do |i| %>
+    <li class="accordion-item" data-accordion-item>
+      <a href="#" class="accordion-title">
+        <!--
+        ROR Need to change icon for each panel, example: use icon-proposal or icon-debates
+        <strong><i class="icon-proposals"></i>
+        Propuestas</strong>
+        -->
+        <span class="icon">
+          <i class="icon icon-debates"></i>
+        </span>
+        <span class="title">
+          <strong>Debate.title</strong>
+        </span>
+      </a>
+      <div class="accordion-content" data-tab-content>
+        <table>
+          <tbody>
+            <% (1..3).each do |i| %>
+            <tr>
+              <td>
+                <%= link_to "add translation", nil  %>
+                <br>
+                This is longer content Donec id elit non mi porta gravida at eget metus.
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  <% end %>
+</ul>
