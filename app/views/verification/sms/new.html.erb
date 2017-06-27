@@ -31,8 +31,10 @@
       <div class="small-12 medium-6">
         <%= f.label :phone, t("verification.sms.new.phone"), class: "inline-block" %>
         <span class="inline-block"><%= t("verification.sms.new.phone_format_html") %></span>
-        <p class="note"><%= t("verification.sms.new.phone_note") %></p>
-        <%= f.text_field :phone, label: false, placeholder: t("verification.sms.new.phone_placeholder") %>
+        <p class="help-text" id="phone-text-help"><%= t("verification.sms.new.phone_note") %></p>
+        <%= f.text_field :phone, label: false,
+                                 placeholder: t("verification.sms.new.phone_placeholder"),
+                                 aria: {describedby: "phone-help-text"} %>
       </div>
 
       <%= f.submit t("verification.sms.new.submit_button"), class: "button success" %>

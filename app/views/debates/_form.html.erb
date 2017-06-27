@@ -17,11 +17,12 @@
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
-      <p class="note"><%= t("debates.form.tags_instructions") %></p>
+      <p class="help-text" id="tag-list-help-text"><%= t("debates.form.tags_instructions") %></p>
 
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
                         label: false,
-                        placeholder: t("debates.form.tags_placeholder") %>
+                        placeholder: t("debates.form.tags_placeholder"),
+                        aria: {describedby: "tag-list-help-text"} %>
     </div>
     <div class="small-12 column">
       <% if @debate.new_record? %>
