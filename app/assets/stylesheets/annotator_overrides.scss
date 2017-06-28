@@ -105,23 +105,43 @@
   background: rgba(255, 249, 218, 0.75);
 
   &.weight-1 {
-    background: #fff9da;
+    background: hsla(50, 100, 93, 0.5);
+
+    .weight-1 {
+      background: hsla(50, 100, 93, 0.75);
+    }
   }
 
   &.weight-2 {
-    background: #f4f7be;
+    background: hsla(63, 78, 86, 0.5);
+
+    .weight-2 {
+      background: hsla(63, 78, 86, 0.75);
+    }
   }
 
   &.weight-3 {
-    background: #fff5b2;
+    background: hsla(52, 100, 85, 0.5);
+
+    .weight-3 {
+      background: hsla(52, 100, 85, 0.75);
+    }
   }
 
   &.weight-4 {
-    background: #f9e784;
+    background: hsla(51, 91, 75, 0.5);
+
+    .weight-4 {
+     background: hsla(51, 91, 75, 0.75);
+    }
   }
 
   &.weight-5 {
-    background: #eec643;
+    background: hsla(46, 83, 60, 0.5);
+
+    .weight-5 {
+      background: hsla(46, 83, 60, 0.5);
+    }
   }
 }
 
