@@ -7,12 +7,17 @@
       <br>
       <p class="lead-title"><%= t("welcome.budgets.title_reviewing_html") %></p>
       <p><%= t("welcome.budgets.text_reviewing_html") %></p>
-      <div class="small-12 medium-8">
-        <%= link_to t("welcome.budgets.button_reviewing"), budgets_welcome_path, class: "button expanded large" %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%= link_to t("welcome.budgets.button_stats"), "budgets_stats_path", class: "button expanded large" %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= link_to t("welcome.budgets.button_reviewing"), budgets_welcome_path, class: "button expanded large" %>
+        </div>
       </div>
     </div>
 
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-5 column">
       <%= link_to "https://www.youtube.com/watch?v=W4yR_Ww5TB8", rel: "nofollow", target: "_blank", title: t("welcome.budgets.chincheto.title") do %>
         <%= image_tag "welcome_video_chincheto.jpg", alt: t("welcome.budgets.chincheto.alt") %>
       <% end %>

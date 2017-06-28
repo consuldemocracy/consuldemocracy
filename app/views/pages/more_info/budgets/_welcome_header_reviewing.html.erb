@@ -7,26 +7,33 @@
           El 30 de junio se cerró la votación final. Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>.
         </p>
       </div>
-
-      <div class="small-12">
-        <div class="row margin-top">
-          <div class="small-12 medium-6 column">
-            <%= link_to "Ver proyectos de toda la ciudad",
-                        "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
-                        class: "button expanded large city" %>
-          </div>
-          <div class="small-12 medium-6 column">
-            <%= link_to "Ver proyectos de distritos",
-                        "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
-                        class: "button expanded large" %>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <div class="small-12 medium-3 column margin">
+    <div class="small-12 medium-3 medium-offset-1 column margin">
       <div class="budgets-calendar-minimal padding text-center">
         <span class="day">Resultados<br>13 julio</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="row margin-top">
+        <div class="small-12 medium-4 column">
+          <%= link_to "Ver proyectos de toda la ciudad",
+                      "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
+                      class: "button expanded large city" %>
+        </div>
+        <div class="small-12 medium-4 column">
+          <%= link_to "Ver proyectos de distritos",
+                      "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
+                      class: "button expanded large" %>
+        </div>
+        <div class="small-12 medium-4 column">
+          <%= link_to "Ver estadísticas de participación",
+                      "budget_stats_path",
+                      class: "button expanded large stats" %>
+        </div>
       </div>
     </div>
   </div>

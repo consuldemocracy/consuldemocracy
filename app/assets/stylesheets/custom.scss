@@ -2348,6 +2348,12 @@ $campaign-yellow:  #ffdb19;
         border: 0;
         color: #fff;
       }
+
+      &.stats {
+        background: none;
+        border: 1px solid $brand;
+        color: $brand;
+      }
     }
   }
 
