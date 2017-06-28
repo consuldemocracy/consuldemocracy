@@ -11,7 +11,7 @@
   <div class="small-12">
     <%= render 'subnav', i18n_namespace: "polls.index" %>
   </div>
-  
+
   <h1 class="text-center title-page">
     <%= t("polls.index.title") %>
   </h1>
@@ -36,12 +36,12 @@
     <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
 
     <% if polls_by_geozone_restriction[false].present? %>
-      <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3>
+      <!-- <h3 class="section-title-divider"><%= t("polls.index.no_geozone_restricted") %></h3> -->
       <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
     <% end %>
 
     <% if polls_by_geozone_restriction[true].present? %>
-      <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3>
+      <!-- <h3 class="section-title-divider"><%= t("polls.index.geozone_restricted") %></h3> -->
       <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
     <% end %>
 
