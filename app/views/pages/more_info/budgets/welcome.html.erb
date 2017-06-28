@@ -1,5 +1,14 @@
-<% provide :title, t("meta_tags.budget.title") %>
-<% provide :meta_description, t("meta_tags.budget.description") %>
+<% if Budget.balloting.any? %>
+  <% provide :title, t("meta_tags.budget.title") %>
+  <% provide :meta_description, t("meta_tags.budget.description") %>
+<% elsif Budget.reviewing_ballots.any? %>
+  <% provide :title, t("meta_tags.budget.title_reviewing") %>
+  <% provide :meta_description, t("meta_tags.budget.description_reviewing") %>
+<% else %>
+  <% provide :title, t("meta_tags.budget.title_finished") %>
+  <% provide :meta_description, t("meta_tags.budget.description_finished") %>
+<% end %>
+
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>

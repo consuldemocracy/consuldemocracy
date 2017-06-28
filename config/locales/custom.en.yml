@@ -53,6 +53,10 @@ en:
     budget:
       title: "Presupuestos participativos de Madrid"
       description: "Participa y crea un proyecto de gasto para decidir a qué proyectos destina el Ayuntamiento de Madrid su presupuesto participativo."
+      title_reviewing: "Presupuestos participativos de Madrid"
+      description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
+      title_finished: "Resultados de los Presupuestos participativos de Madrid"
+      description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
     first_voting:
       title: "Votaciones ciudadanas de Madrid - Decide Madrid"
       description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
