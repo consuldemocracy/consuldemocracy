@@ -53,15 +53,17 @@ $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
+// Color municipio
 $brand:             #D80017;
 $dark:              darken($brand, 10%);
 
-$light-blue:        #3FA9F5;
-$orange:            #FF5722;
-$light-orange:      #FF8964;
-$gray1:             #2D4059;
-$gray2:             #6C798A;
-$gray3:             #B1BBC9;
+// Paleta abre
+$light-blue: #3FA9F5;
+$orange: #FF5722;
+$light-orange: #FF8964;
+$gray-one: #2D4059;
+$gray-two: #6C798A;
+$gray-three: #B1BBC9;
 
 $text:              #222222;
 $text-medium:       #515151;
@@ -81,7 +83,6 @@ $delete:            #F04124;
 $check:             #46DB91;
 
 $proposals:         #FFA42D;
-$proposals-dark:    $gray2;
 
 $budget:            #7E328A;
 $budget-hover:      #7571BF;
@@ -128,7 +129,7 @@ $dark-gray: #8a8a8a;
 $black: #222222;
 $white: #ffffff;
 $body-background: $white;
-$body-font-color: $gray1;
+$body-font-color: $gray-one;
 $body-font-family: 'Fira sans', 'Helvetica', 'Arial', sans-serif !important;
 $body-font-family-title: 'Dosis', 'Helvetica', 'Arial', sans-serif !important;
 $body-antialiased: true;
@@ -183,7 +184,7 @@ $header-sizes: (
   ),
   medium: (
     'h1': 44,
-    'h2': 34,
+    'h2': 48,
     'h3': 24,
     'h4': 19,
     'h5': 16,
@@ -400,7 +401,7 @@ $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
-$form-label-color: $gray1;
+$form-label-color: $gray-one;
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;

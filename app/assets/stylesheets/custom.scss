@@ -4,6 +4,15 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+h2 {
+  letter-spacing: 3px;
+}
+
+p {
+  color: $gray-two;
+}
+
+
 .cd-horizontal-timeline .events-content {
   position: relative;
 }
@@ -109,7 +118,7 @@
 }
 
 .progress{
-  background: $gray3 !important;
+  background: $gray-three !important;
   margin-top: 1rem;
 }
 
@@ -133,7 +142,7 @@ ul, ol, dl {
 }
 
 .header-title{
-  color: $gray2;
+  color: $gray-two;
   font-size: 0.95rem;
 }
 
@@ -192,14 +201,14 @@ li {
 }
 
 .end-poll{
-  border-bottom: 1px solid $gray3;
+  border-bottom: 1px solid $gray-three;
 }
 
 .info-poll{
   max-width: 500px;
   margin-top: 5rem;
   padding: 2rem;
-  background-color: $gray2;
+  background-color: $gray-two;
   color: $white;
 }
 
@@ -211,7 +220,7 @@ li {
   max-width: 700px;
   margin-top: -6rem;
   padding: 2rem;
-  background-color: $gray2;
+  background-color: $gray-two;
   color: $white;
 
 }
@@ -311,7 +320,7 @@ li {
 }
 
 .home-proposal-color{
-  color: $gray2;
+  color: $gray-two;
 }
 
 .proposal-type{
@@ -339,4 +348,40 @@ li {
 
 .home-proposal-subtitle{
   font-size: 0.9rem;
+}
+
+// Home
+
+.como01, .como02, .como03, .como04 {
+  height: 210px;
+  width: 265px;
+  margin: 0 auto;
+}
+
+.como01 {
+    background: url(como01.png);
+    &:hover {
+      background: url(como01.gif);
+    }
+}
+
+.como02 {
+    background: url(como02.png);
+    &:hover {
+      background: url(como02.gif);
+    }
+}
+
+.como03 {
+    background: url(como03.png);
+    &:hover {
+      background: url(como03.gif);
+    }
+}
+
+.como04 {
+    background: url(como04.png);
+    &:hover {
+      background: url(como04.gif);
+    }
 }

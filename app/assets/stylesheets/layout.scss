@@ -454,7 +454,7 @@ header {
         width: 100%;
 
         @include breakpoint(medium) {
-          color: $gray1;
+          color: $gray-one;
           display: block;
           font-weight: bold;
           width: auto;
