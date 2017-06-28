@@ -148,6 +148,11 @@ es:
       text_finished_html: "Estos son los proyectos ciudadanos que se financiarán con 100 millones de euros del presupuesto municipal en 2018."
       label_finished: "La ciudadanía madrileña ha elegido los proyectos que se harán"
       button_finished: "Ver proyectos"
+      stats:
+        label: "Estadísticas"
+        title: "Datos de la votación de presupuestos"
+        text: "Consulta los datos detallados de la votación de proyectos."
+        link: "Ver estadísticas de participación"
       geocraft:
         label: "Descarga"
         title: "Haz Madrid"

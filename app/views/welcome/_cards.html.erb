@@ -1,5 +1,24 @@
 <div class="row margin">
-  <div class="small-12 medium-4 column">
+  <% if Budget.finished.any? %>
+    <div class="small-12 medium-4 column margin-bottom">
+      <figure class="figure-card">
+        <%= link_to "budgets_stats_path", title: t("welcome.budgets.stats.link") do %>
+          <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
+        <% end %>
+        <figcaption>
+          <%= link_to "budgets_stats_path", title: t("welcome.budgets.stats.link") do %>
+            <span><%= t("welcome.budgets.stats.label") %></span><br>
+            <p class="title"><%= t("welcome.budgets.stats.title") %></p>
+          <% end %>
+        </figcaption>
+      </figure>
+      <p><%= t("welcome.budgets.stats.text") %></p>
+      <p>
+        <%= link_to t("welcome.budgets.stats.link"), "budgets_stats_path" %>
+      </p>
+    </div>
+  <% end %>
+  <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card">
       <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
         <%= image_tag "welcome_geocraft.jpg", alt: "" %>
@@ -17,7 +36,7 @@
     </p>
   </div>
   <% unless Budget.finished.any? %>
-    <div class="small-12 medium-4 column">
+    <div class="small-12 medium-4 column margin-bottom">
       <figure class="figure-card">
         <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
           <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
@@ -34,7 +53,7 @@
         <%= link_to t("welcome.budgets.videos.link"), budgets_videos_2017_path %>
       </p>
     </div>
-    <div class="small-12 medium-4 column">
+    <div class="small-12 medium-4 column margin-bottom">
       <figure class="figure-card">
         <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
           <%= image_tag "welcome_once_plazas.jpg", alt: "" %>
@@ -53,7 +72,7 @@
     </div>
   <% end %>
 
-  <div class="small-12 medium-4 column">
+  <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card pdf">
       <%= link_to "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' do %>
@@ -73,7 +92,7 @@
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' %>
     </p>
   </div>
-  <div class="small-12 medium-4 column">
+  <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card pdf">
       <%= link_to "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' do %>
@@ -93,7 +112,7 @@
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' %>
     </p>
   </div>
-  <div class="small-12 medium-4 column end">
+  <div class="small-12 medium-4 column margin-bottom end">
     <figure class="figure-card">
       <%= link_to manzanares_path, title: t("welcome.manzanares.link") do %>
         <%= image_tag "welcome_parque_manzanares.jpg", alt: "" %>

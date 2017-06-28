@@ -148,6 +148,11 @@ en:
       text_finished_html: "These are the citizen projects that will be financed with 100 million euros of the municipal budget in 2018"
       label_finished: "The citizens of Madrid have chosen the projects that will be done"
       button_finished: "See projects"
+      stats:
+        label: "Statistics"
+        title: "Participatory Budget voting data"
+        text: "Check the detailed data of the voting of projects."
+        link: "See participation statistics"
       geocraft:
         label: "Download"
         title: "Make Madrid"
