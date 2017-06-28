@@ -131,9 +131,10 @@ ActiveRecord::Schema.define(version: 20190411090023) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.boolean  "physical",       default: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "ballot_lines_count", default: 0
+    t.boolean  "physical",           default: false
     t.integer  "poll_ballot_id"
   end
 
