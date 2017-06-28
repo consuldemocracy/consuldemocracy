@@ -13,14 +13,13 @@ class Legislation::ProcessesController < Legislation::BaseController
     if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
-      redirect_to legislation_process_debate_path(@process)
+      redirect_to debate_legislation_process_path(@process)
     else
-      redirect_to legislation_process_allegations_path(@process)
+      redirect_to allegations_legislation_process_path(@process)
     end
   end
 
   def debate
-    set_process
     @phase = :debate_phase
 
     if @process.debate_phase.started?
@@ -31,7 +30,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def draft_publication
-    set_process
     @phase = :draft_publication
 
     if @process.draft_publication.started?
@@ -48,7 +46,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def allegations
-    set_process
     @phase = :allegations_phase
 
     if @process.allegations_phase.started?
@@ -65,7 +62,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   def result_publication
-    set_process
     @phase = :result_publication
 
     if @process.result_publication.started?
@@ -81,9 +77,5 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
   end
 
-  private
 
-    def set_process
-      @process = ::Legislation::Process.find(params[:process_id])
-    end
 end

@@ -70,7 +70,7 @@ feature 'Legislation' do
       scenario 'not open' do
         process = create(:legislation_process, draft_publication_date: Date.current + 1.day)
 
-        visit legislation_process_draft_publication_path(process)
+        visit draft_publication_legislation_process_path(process)
 
         expect(page).to have_content("This phase is not open yet")
       end
@@ -78,7 +78,7 @@ feature 'Legislation' do
       scenario 'open' do
         process = create(:legislation_process, draft_publication_date: Date.current)
 
-        visit legislation_process_draft_publication_path(process)
+        visit draft_publication_legislation_process_path(process)
 
         expect(page).to have_content("Nothing published yet")
       end
@@ -88,7 +88,7 @@ feature 'Legislation' do
       scenario 'not open' do
         process = create(:legislation_process, allegations_start_date: Date.current + 1.day, allegations_end_date: Date.current + 2.days)
 
-        visit legislation_process_allegations_path(process)
+        visit allegations_legislation_process_path(process)
 
         expect(page).to have_content("This phase is not open yet")
       end
@@ -96,7 +96,7 @@ feature 'Legislation' do
       scenario 'open' do
         process = create(:legislation_process, allegations_start_date: Date.current - 1.day, allegations_end_date: Date.current + 2.days)
 
-        visit legislation_process_allegations_path(process)
+        visit allegations_legislation_process_path(process)
 
         expect(page).to have_content("Nothing published yet")
       end
@@ -106,7 +106,7 @@ feature 'Legislation' do
       scenario 'not open' do
         process = create(:legislation_process, result_publication_date: Date.current + 1.day)
 
-        visit legislation_process_result_publication_path(process)
+        visit result_publication_legislation_process_path(process)
 
         expect(page).to have_content("This phase is not open yet")
       end
@@ -114,7 +114,7 @@ feature 'Legislation' do
       scenario 'open' do
         process = create(:legislation_process, result_publication_date: Date.current)
 
-        visit legislation_process_result_publication_path(process)
+        visit result_publication_legislation_process_path(process)
 
         expect(page).to have_content("Nothing published yet")
       end
