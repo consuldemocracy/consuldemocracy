@@ -154,11 +154,11 @@ feature 'Legislation Draft Versions' do
 
       page.find(:css, ".legislation-annotatable").double_click
       page.find(:css, ".annotator-adder button").click
-      page.click_button "Create Annotation"
+      page.click_button "Publish Comment"
       expect(page).to have_content "Comment can't be blank"
 
       fill_in 'legislation_annotation_text', with: 'this is my annotation'
-      page.click_button "Create Annotation"
+      page.click_button "Publish Comment"
 
       expect(page).to have_css ".annotator-hl"
       first(:css, ".annotator-hl").click
