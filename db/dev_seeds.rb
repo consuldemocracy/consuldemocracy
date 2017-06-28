@@ -427,6 +427,22 @@ Budget.balloting.last.investments.each do |investment|
 end
 
 puts " ✅"
+print "Voting Investments"
+100.times do
+  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+  investment = Budget::Investment.reorder("RANDOM()").first
+  investment.vote_by(voter: voter, vote: true)
+end
+
+puts " ✅"
+print "Balloting Investments"
+100.times do
+  budget = Budget.reorder("RANDOM()").first
+  ballot = Budget::Ballot.create(user: User.reorder("RANDOM()").first, budget: budget)
+  ballot.add_investment(budget.investments.reorder("RANDOM()").first)
+end
+
+puts " ✅"
 print "Winner Investments"
 
 budget = Budget.where(phase: "finished").last
