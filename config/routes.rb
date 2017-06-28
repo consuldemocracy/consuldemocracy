@@ -85,6 +85,7 @@ Rails.application.routes.draw do
       resources :lines, controller: "budgets/ballot/lines", only: [:create, :destroy]
     end
     resource :results, only: :show, controller: "budgets/results"
+    resource :stats, only: :show, controller: "budgets/stats"
   end
 
   scope '/participatory_budget' do
