@@ -12,7 +12,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   private
 
     def budget_heading_params
-      params.require(:budget_heading).permit(:name, :price, :geozone_id)
+      params.require(:budget_heading).permit(:name, :price, :population)
     end
 
 end

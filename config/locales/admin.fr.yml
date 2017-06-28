@@ -97,10 +97,12 @@ fr:
         heading: Nom de la rubrique
         add_heading: Ajouter une rubrique
         amount: Montant
+        population: Population
         save_heading: Sauvegarder la rubrique
         no_heading: Ce groupe n'a pas de rubrique assignée.
         table_heading: Rubrique
         table_amount: Montant
+        table_population: Population
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.

@@ -254,6 +254,7 @@ FactoryGirl.define do
     association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
+    population 1234
   end
 
   factory :budget_investment, class: 'Budget::Investment' do

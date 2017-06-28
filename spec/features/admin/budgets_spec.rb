@@ -183,6 +183,7 @@ feature 'Admin budgets' do
 
         fill_in 'budget_heading_name', with: 'District 9 reconstruction'
         fill_in 'budget_heading_price', with: '6785'
+        fill_in 'budget_heading_population', with: '100500'
         click_button 'Save heading'
       end
 
@@ -194,6 +195,7 @@ feature 'Admin budgets' do
 
         expect(page).to have_content 'District 9 reconstruction'
         expect(page).to have_content '6785'
+        expect(page).to have_content '100500'
       end
     end
 
