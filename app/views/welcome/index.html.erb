@@ -13,8 +13,10 @@
     <div class="no-margin-top">
       <% if Budget.balloting.any? %>
         <%= render "budgets_module_balloting" %>
-      <% else %>
+      <% elsif Budget.reviewing_ballots.any? %>
         <%= render "budgets_module_reviewing" %>
+      <% else %>
+        <%= render "budgets_module_finished" %>
       <% end %>
     </div>
 

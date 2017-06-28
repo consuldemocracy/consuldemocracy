@@ -9,8 +9,10 @@
 
   <% if Budget.balloting.any? %>
     <%= render "pages/more_info/budgets/welcome_header_balloting" %>
-  <% else %>
+  <% elsif Budget.reviewing_ballots.any? %>
     <%= render "pages/more_info/budgets/welcome_header_reviewing" %>
+  <% else %>
+    <%= render "pages/more_info/budgets/welcome_header_finished" %>
   <% end %>
 
   <% if Budget.balloting.any? %>

@@ -139,6 +139,10 @@ en:
       text_reviewing_html: "The final vote was closed on 30 June. The <strong>winning projects</strong> will be announced on the next <strong>July 13</strong>."
       label_reviewing: "100 million to make Madrid"
       button_reviewing: "See projects"
+      title_finished_html: "Finalizada la votación de presupuestos participativos"
+      text_finished_html: "El 30 de junio se cerró la votación final. Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>."
+      label_finished: "100 millones para hacer Madrid"
+      button_finished: "Ver proyectos"
       geocraft:
         label: "Download"
         title: "Make Madrid"
