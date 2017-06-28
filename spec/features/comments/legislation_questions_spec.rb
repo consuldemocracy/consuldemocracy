@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
-  let(:user)   { create :user, :level_two }
+  let(:user) { create :user, :level_two }
   let(:process) { create :legislation_process, :in_debate_phase }
   let(:legislation_question) { create :legislation_question, process: process }
 

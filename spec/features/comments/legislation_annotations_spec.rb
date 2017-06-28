@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
-  let(:user)   { create :user }
+  let(:user) { create :user }
   let(:legislation_annotation) { create :legislation_annotation, author: user }
 
   scenario 'Index' do

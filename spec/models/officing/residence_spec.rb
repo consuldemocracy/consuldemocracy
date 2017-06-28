@@ -44,12 +44,12 @@ describe Officing::Residence do
 
   describe "new" do
     it "should upcase document number" do
-      residence = Officing::Residence.new({document_number: "x1234567z"})
+      residence = Officing::Residence.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
     it "should remove all characters except numbers and letters" do
-      residence = Officing::Residence.new({document_number: " 12.345.678 - B"})
+      residence = Officing::Residence.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end
@@ -108,13 +108,13 @@ describe Officing::Residence do
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)
-      expect(FailedCensusCall.first).to have_attributes({
+      expect(FailedCensusCall.first).to have_attributes(
         user_id:         residence.user.id,
         poll_officer_id: residence.officer.id,
         document_number: "12345678Z",
         document_type:   "1",
         year_of_birth:   Time.current.year
-      })
+      )
     end
 
   end

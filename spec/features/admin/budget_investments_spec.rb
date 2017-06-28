@@ -47,7 +47,7 @@ feature 'Admin budget investments' do
 
       budget_investment1.valuators << valuator1
       budget_investment2.valuator_ids = [valuator1.id, valuator2.id]
-      budget_investment3.update({administrator_id: admin.id})
+      budget_investment3.update(administrator_id: admin.id)
 
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
 

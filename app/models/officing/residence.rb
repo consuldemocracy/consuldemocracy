@@ -43,14 +43,13 @@ class Officing::Residence
   end
 
   def store_failed_census_call
-    FailedCensusCall.create({
+    FailedCensusCall.create(
       user: user,
       document_number: document_number,
-      document_type:   document_type,
-      year_of_birth:   year_of_birth,
-      poll_officer:    officer
-    })
-
+      document_type: document_type,
+      year_of_birth: year_of_birth,
+      poll_officer: officer
+    )
   end
 
   def user_exists?

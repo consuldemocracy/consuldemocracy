@@ -3,24 +3,24 @@ require 'rails_helper'
 describe ManagerAuthenticator do
   describe 'initialization params' do
     it 'should cause auth to return false if blank login' do
-      authenticator = ManagerAuthenticator.new({login: "", clave_usuario: "31415926", fecha_conexion: "20151031135905"})
+      authenticator = ManagerAuthenticator.new(login: "", clave_usuario: "31415926", fecha_conexion: "20151031135905")
       expect(authenticator.auth).to be false
     end
 
     it 'should cause auth to return false if blank user_key' do
-      authenticator = ManagerAuthenticator.new({login: "JJB033", clave_usuario: "", fecha_conexion: "20151031135905"})
+      authenticator = ManagerAuthenticator.new(login: "JJB033", clave_usuario: "", fecha_conexion: "20151031135905")
       expect(authenticator.auth).to be false
     end
 
     it 'should cause auth to return false if blank date' do
-      authenticator = ManagerAuthenticator.new({login: "JJB033", clave_usuario: "31415926", fecha_conexion: ""})
+      authenticator = ManagerAuthenticator.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "")
       expect(authenticator.auth).to be false
     end
   end
 
   describe '#auth' do
     before(:all) do
-      @authenticator = ManagerAuthenticator.new({login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905"})
+      @authenticator = ManagerAuthenticator.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905")
     end
 
     it 'should return false if not manager_exists' do
@@ -47,7 +47,7 @@ describe ManagerAuthenticator do
 
   describe 'SOAP' do
     before(:all) do
-      @authenticator = ManagerAuthenticator.new({login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905"})
+      @authenticator = ManagerAuthenticator.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905")
     end
 
     it 'should call the verification user method' do

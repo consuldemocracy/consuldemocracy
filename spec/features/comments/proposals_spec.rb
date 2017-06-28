@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting proposals' do
-  let(:user)   { create :user }
+  let(:user) { create :user }
   let(:proposal) { create :proposal }
 
   scenario 'Index' do

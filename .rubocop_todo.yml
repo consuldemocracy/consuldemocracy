@@ -165,22 +165,6 @@ Layout/AlignParameters:
     - 'spec/models/user_spec.rb'
     - 'spec/rails_helper.rb'
 
-# Offense count: 19
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: braces, no_braces, context_dependent
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'app/controllers/valuation/spending_proposals_controller.rb'
-    - 'app/models/concerns/searchable.rb'
-    - 'app/models/verification/residence.rb'
-    - 'lib/manager_authenticator.rb'
-    - 'spec/controllers/management/users_controller_spec.rb'
-    - 'spec/features/admin/spending_proposals_spec.rb'
-    - 'spec/lib/manager_authenticator_spec.rb'
-    - 'spec/models/residence_spec.rb'
-    - 'spec/models/user_spec.rb'
-
 # Offense count: 57
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: nested, compact
@@ -232,26 +216,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'app/models/concerns/verification.rb'
 
-# Offense count: 9
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'app/models/concerns/search_cache.rb'
-    - 'app/models/notification.rb'
-    - 'spec/features/admin/spending_proposals_spec.rb'
-    - 'spec/features/admin/verifications_spec.rb'
-    - 'spec/features/debates_spec.rb'
-    - 'spec/features/registration_form_spec.rb'
-    - 'spec/features/users_auth_spec.rb'
-    - 'spec/features/verification/verified_user_spec.rb'
-    - 'spec/support/verifiable.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
@@ -264,15 +228,6 @@ Layout/FirstParameterIndentation:
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Enabled: false
-
-# Offense count: 10
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  Exclude:
-    - 'lib/sms_api.rb'
-    - 'spec/factories.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
@@ -595,3 +550,11 @@ Style/VariableNumber:
 Style/WordArray:
   EnforcedStyle: percent
   MinSize: 3
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: braces, no_braces, context_dependent
+Style/BracesAroundHashParameters:
+  Exclude:
+    - 'app/models/concerns/searchable.rb'

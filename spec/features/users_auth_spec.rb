@@ -200,7 +200,6 @@ feature 'Users' do
         expect(current_path).to eq(finish_signup_path)
         click_link 'Cancel login'
 
-
         visit '/'
         expect_to_not_be_signed_in
       end

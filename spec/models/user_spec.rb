@@ -434,13 +434,13 @@ describe User do
 
   describe "document_number" do
     it "should upcase document number" do
-      user = User.new({document_number: "x1234567z"})
+      user = User.new(document_number: "x1234567z")
       user.valid?
       expect(user.document_number).to eq("X1234567Z")
     end
 
     it "should remove all characters except numbers and letters" do
-      user = User.new({document_number: " 12.345.678 - B"})
+      user = User.new(document_number: " 12.345.678 - B")
       user.valid?
       expect(user.document_number).to eq("12345678B")
     end

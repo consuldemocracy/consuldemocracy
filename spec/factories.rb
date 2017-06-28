@@ -258,7 +258,7 @@ FactoryGirl.define do
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
-    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    sequence(:title) { |n| "Budget Investment #{n} title" }
     association :heading, factory: :budget_heading
     association :author, factory: :user
     description          'Spend money on this'
@@ -552,7 +552,7 @@ FactoryGirl.define do
     sequence(:value) { |n| "Setting #{n} Value" }
   end
 
-  factory :ahoy_event, :class => Ahoy::Event do
+  factory :ahoy_event, class: Ahoy::Event do
     id { SecureRandom.uuid }
     time DateTime.current
     sequence(:name) {|n| "Event #{n} type"}
@@ -585,7 +585,7 @@ FactoryGirl.define do
 
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
-    sequence(:description)  { |n| "This is the text of Banner #{n}" }
+    sequence(:description) { |n| "This is the text of Banner #{n}" }
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}

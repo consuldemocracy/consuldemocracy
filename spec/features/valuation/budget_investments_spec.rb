@@ -76,7 +76,6 @@ feature 'Valuation budget investments' do
     expect(page).to have_link("Realocate visitors")
     expect(page).to have_link("Destroy the city")
 
-
     expect(page).to have_content "All headings (2)"
     expect(page).to have_content "District 9 (1)"
     expect(page).to have_content "Down to the river (1)"

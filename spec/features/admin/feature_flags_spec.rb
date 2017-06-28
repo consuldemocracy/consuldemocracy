@@ -13,7 +13,6 @@ feature 'Admin feature flags' do
     Setting['feature.spending_proposal_features.voting_allowed'] = nil
   end
 
-
   scenario 'Enabled features are listed on menu' do
     visit admin_root_path
 
