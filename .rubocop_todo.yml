@@ -550,3 +550,11 @@ Style/VariableNumber:
 Style/WordArray:
   EnforcedStyle: percent
   MinSize: 3
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: braces, no_braces, context_dependent
+Style/BracesAroundHashParameters:
+  Exclude:
+    - 'app/models/concerns/searchable.rb'
