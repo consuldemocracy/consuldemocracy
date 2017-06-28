@@ -102,27 +102,27 @@
 
 .annotator-hl {
   cursor: pointer;
-  background: rgba(255, 255, 10, 0.2);
-}
+  background: rgba(255, 249, 218, 0.75);
 
-.annotator-hl.weight-1 {
-  background: #fff9da;
-}
+  &.weight-1 {
+    background: #fff9da;
+  }
 
-.annotator-hl.weight-2 {
-  background: #fff5bc;
-}
+  &.weight-2 {
+    background: #f4f7be;
+  }
 
-.annotator-hl.weight-3 {
-  background: #fff1a2;
-}
+  &.weight-3 {
+    background: #fff5b2;
+  }
 
-.annotator-hl.weight-4 {
-  background: #ffef8c;
-}
+  &.weight-4 {
+    background: #f9e784;
+  }
 
-.annotator-hl.weight-5 {
-  background: #ffe95f;
+  &.weight-5 {
+    background: #eec643;
+  }
 }
 
 .current-annotation {
