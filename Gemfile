@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.4'
+
 # Use PostgreSQL
 gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
@@ -86,10 +87,10 @@ group :development, :test do
   gem 'launchy'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'i18n-tasks', '~> 0.9.15'
-  gem 'capistrano', '~> 3.8.1',           require: false
-  gem 'capistrano-bundler', '~> 1.2',  require: false
-  gem "capistrano-rails", '~> 1.2.3',     require: false
-  gem 'rvm1-capistrano3',              require: false
+  gem 'capistrano', '~> 3.8.1', require: false
+  gem 'capistrano-bundler', '~> 1.2', require: false
+  gem "capistrano-rails", '~> 1.2.3', require: false
+  gem 'rvm1-capistrano3', require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'selenium-webdriver', require: false
   gem "bullet", '~> 5.5.1'

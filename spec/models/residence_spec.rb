@@ -13,19 +13,19 @@ describe Verification::Residence do
 
     describe "dates" do
       it "should be valid with a valid date of birth" do
-        residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"1980"})
+        residence = Verification::Residence.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "1980")
         expect(residence.errors[:date_of_birth].size).to eq(0)
       end
 
       it "should not be valid without a date of birth" do
-        residence = Verification::Residence.new({"date_of_birth(3i)"=>"", "date_of_birth(2i)"=>"", "date_of_birth(1i)"=>""})
+        residence = Verification::Residence.new("date_of_birth(3i)" => "", "date_of_birth(2i)" => "", "date_of_birth(1i)" => "")
         expect(residence).to_not be_valid
         expect(residence.errors[:date_of_birth]).to include("can't be blank")
       end
     end
 
     it "should validate user has allowed age" do
-      residence = Verification::Residence.new({"date_of_birth(3i)"=>"1", "date_of_birth(2i)"=>"1", "date_of_birth(1i)"=>"#{5.years.ago.year}"})
+      residence = Verification::Residence.new("date_of_birth(3i)" => "1", "date_of_birth(2i)" => "1", "date_of_birth(1i)" => "#{5.years.ago.year}")
       expect(residence).to_not be_valid
       expect(residence.errors[:date_of_birth]).to include("You don't have the required age to participate")
     end
@@ -50,12 +50,12 @@ describe Verification::Residence do
 
   describe "new" do
     it "should upcase document number" do
-      residence = Verification::Residence.new({document_number: "x1234567z"})
+      residence = Verification::Residence.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
     it "should remove all characters except numbers and letters" do
-      residence = Verification::Residence.new({document_number: " 12.345.678 - B"})
+      residence = Verification::Residence.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end
@@ -99,13 +99,13 @@ describe Verification::Residence do
       residence.save
 
       expect(FailedCensusCall.count).to eq(1)
-      expect(FailedCensusCall.first).to have_attributes({
+      expect(FailedCensusCall.first).to have_attributes(
         user_id:         residence.user.id,
         document_number: "12345678Z",
         document_type:   "1",
         date_of_birth:   Date.new(1980, 12, 31),
         postal_code:     "28001"
-      })
+      )
     end
   end
 

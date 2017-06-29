@@ -89,7 +89,7 @@ feature 'Proposals' do
     end
   end
 
-  context "Embedded video"  do
+  context "Embedded video" do
 
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
@@ -99,7 +99,7 @@ feature 'Proposals' do
     end
 
     scenario "Show Vimeo video" do
-      proposal = create(:proposal, video_url: "https://vimeo.com/7232823" )
+      proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://player.vimeo.com/video/7232823'
@@ -1072,7 +1072,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
           select Setting['official_level_1_name'], from: "advanced_search_official_level"
-          select "Last 24 hours",   from: "js-advanced-search-date-min"
+          select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
 

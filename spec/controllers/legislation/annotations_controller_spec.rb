@@ -17,10 +17,11 @@ describe Legislation::AnnotationsController do
                       process_id: @process.id,
                       draft_version_id: @draft_version.id,
                       legislation_annotation: {
-                          "quote"=>"ipsum",
-                          "ranges"=>[{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
+                          "quote" => "ipsum",
+                          "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
                           "text": "una anotacion"
                       }}
+      
       expect(Ahoy::Event.where(name: :legislation_annotation_created).count).to eq 1
       expect(Ahoy::Event.last.properties['legislation_annotation_id']).to eq Legislation::Annotation.last.id
     end
@@ -32,8 +33,8 @@ describe Legislation::AnnotationsController do
                     process_id: @process.id,
                     draft_version_id: @final_version.id,
                     legislation_annotation: {
-                      "quote"=>"ipsum",
-                      "ranges"=>[{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
+                      "quote" => "ipsum",
+                      "ranges" => [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
                       "text": "una anotacion"
                     }}
 
@@ -48,11 +49,12 @@ describe Legislation::AnnotationsController do
                         process_id: @process.id,
                         draft_version_id: @draft_version.id,
                         legislation_annotation: {
-                            "quote"=>"ipsum",
-                            "ranges"=>[{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
+                            "quote" => "ipsum",
+                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
                             "text": "una anotacion"
                         }},
                       xhr: true
+
       end.to change { @draft_version.annotations.count }.by(1)
     end
 
@@ -65,8 +67,8 @@ describe Legislation::AnnotationsController do
                         process_id: @process.id,
                         draft_version_id: @draft_version.id,
                         legislation_annotation: {
-                            "quote"=>"ipsum",
-                            "ranges"=>[{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
+                            "quote" => "ipsum",
+                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
                             "text": "una anotacion"
                         }},
                       xhr: true
@@ -81,8 +83,8 @@ describe Legislation::AnnotationsController do
                         process_id: @process.id,
                         draft_version_id: @draft_version.id,
                         legislation_annotation: {
-                            "quote"=>"ipsum",
-                            "ranges"=>[{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}].to_json,
+                            "quote" => "ipsum",
+                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}].to_json,
                             "text": "una anotacion"
                         }},
                       xhr: true
@@ -91,7 +93,7 @@ describe Legislation::AnnotationsController do
 
     it 'should create a new comment on an existing annotation when range is the same' do
       annotation = create(:legislation_annotation, draft_version: @draft_version, text: "my annotation",
-                          ranges: [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
+                          ranges: [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}],
                           range_start: "/p[1]", range_start_offset: 6, range_end: "/p[1]", range_end_offset: 11)
       sign_in @user
 
@@ -100,8 +102,8 @@ describe Legislation::AnnotationsController do
                         process_id: @process.id,
                         draft_version_id: @draft_version.id,
                         legislation_annotation: {
-                            "quote"=>"ipsum",
-                            "ranges"=>[{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
+                            "quote" => "ipsum",
+                            "ranges" => [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}],
                             "text": "una anotacion"
                         }},
                         xhr: true

@@ -35,20 +35,20 @@ describe "Abilities::Moderator" do
     let(:rejected_organization) { create(:organization, :rejected) }
     let(:verified_organization) { create(:organization, :verified) }
 
-    it { should be_able_to(    :verify, pending_organization)  }
-    it { should be_able_to(    :reject, pending_organization)  }
+    it { should be_able_to(:verify, pending_organization)  }
+    it { should be_able_to(:reject, pending_organization)  }
 
     it { should_not be_able_to(:verify, verified_organization) }
-    it { should be_able_to(    :reject, verified_organization) }
+    it { should be_able_to(:reject, verified_organization) }
 
     it { should_not be_able_to(:reject, rejected_organization) }
-    it { should be_able_to(    :verify, rejected_organization) }
+    it { should be_able_to(:verify, rejected_organization) }
   end
 
   describe "hiding, reviewing and restoring" do
     let(:ignored_comment)  { create(:comment, :with_ignored_flag) }
     let(:ignored_debate)   { create(:debate,  :with_ignored_flag) }
-    let(:ignored_proposal) { create(:proposal,:with_ignored_flag) }
+    let(:ignored_proposal) { create(:proposal, :with_ignored_flag) }
 
     it { should be_able_to(:hide, comment) }
     it { should be_able_to(:hide_in_moderation_screen, comment) }

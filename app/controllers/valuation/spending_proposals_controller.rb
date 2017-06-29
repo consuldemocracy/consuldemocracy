@@ -58,7 +58,7 @@ class Valuation::SpendingProposalsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      params.merge({valuator_id: current_user.valuator.id})
+      params.merge(valuator_id: current_user.valuator.id)
     end
 
     def restrict_access_to_assigned_items

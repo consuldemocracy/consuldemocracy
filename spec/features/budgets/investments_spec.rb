@@ -5,7 +5,7 @@ feature 'Budget Investments' do
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
-  let(:group)   { create(:budget_group, name: "Health", budget: budget) }
+  let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
@@ -641,11 +641,11 @@ feature 'Budget Investments' do
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York")
 
-      sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)
-      sp2 = create(:budget_investment, :selected, price:     10, heading: global_heading)
-      sp3 = create(:budget_investment, :selected, price:    100, heading: global_heading)
-      sp4 = create(:budget_investment, :selected, price:   1000, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :selected, price:  10000, heading: carabanchel_heading)
+      sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
+      sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
+      sp3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
+      sp4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
+      sp5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
       sp6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
 
       login_as(user)

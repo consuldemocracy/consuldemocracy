@@ -60,7 +60,7 @@ class Budget
     scope :by_tag,      ->(tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
-    scope :for_render,             -> { includes(:heading) }
+    scope :for_render, -> { includes(:heading) }
 
     before_save :calculate_confidence_score
     before_validation :set_responsible_name
@@ -205,8 +205,8 @@ class Budget
     end
 
     def should_show_aside?
-      (budget.selecting?  && !unfeasible?) ||
-        (budget.balloting?  && feasible?)    ||
+      (budget.selecting? && !unfeasible?) ||
+        (budget.balloting? && feasible?) ||
         (budget.valuating? && !unfeasible?)
     end
 

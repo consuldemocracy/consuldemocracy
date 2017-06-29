@@ -7,7 +7,7 @@ describe GraphQL::QueryTypeCreator do
       Proposal => { fields: { id: :integer, title: :string } }
     }
   end
-  let(:api_types)  { GraphQL::ApiTypesCreator.create(api_type_definitions) }
+  let(:api_types) { GraphQL::ApiTypesCreator.create(api_type_definitions) }
 
   describe "::create" do
     let(:query_type) { GraphQL::QueryTypeCreator.create(api_types) }

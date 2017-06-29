@@ -31,11 +31,11 @@ class SpendingProposal < ApplicationRecord
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
   scope :with_supports,          -> { where('cached_votes_up > 0') }
 
-  scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
-  scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
-  scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
+  scope :by_admin,    ->(admin)    { where(administrator_id: admin.presence) }
+  scope :by_tag,      ->(tag_name) { tagged_with(tag_name) }
+  scope :by_valuator, ->(valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
-  scope :for_render,             -> { includes(:geozone) }
+  scope :for_render, -> { includes(:geozone) }
 
   before_validation :set_responsible_name
 

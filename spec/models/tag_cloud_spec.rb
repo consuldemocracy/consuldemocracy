@@ -24,7 +24,7 @@ describe TagCloud do
 
     it "returns budget investment tags" do
       create(:budget_investment, tag_list: 'participation')
-      create(:debate,   tag_list: 'world hunger')
+      create(:debate, tag_list: 'world hunger')
 
       tag_cloud = TagCloud.new(Budget::Investment)
 

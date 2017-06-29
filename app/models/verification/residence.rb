@@ -17,7 +17,7 @@ class Verification::Residence
   validate :allowed_age
   validate :document_number_uniqueness
 
-  def initialize(attrs={})
+  def initialize(attrs = {})
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
@@ -47,13 +47,13 @@ class Verification::Residence
   end
 
   def store_failed_attempt
-    FailedCensusCall.create({
+    FailedCensusCall.create(
       user: user,
       document_number: document_number,
-      document_type:   document_type,
-      date_of_birth:   date_of_birth,
-      postal_code:     postal_code
-    })
+      document_type: document_type,
+      date_of_birth: date_of_birth,
+      postal_code: postal_code
+    )
   end
 
   def geozone

@@ -165,22 +165,6 @@ Layout/AlignParameters:
     - 'spec/models/user_spec.rb'
     - 'spec/rails_helper.rb'
 
-# Offense count: 19
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: braces, no_braces, context_dependent
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'app/controllers/valuation/spending_proposals_controller.rb'
-    - 'app/models/concerns/searchable.rb'
-    - 'app/models/verification/residence.rb'
-    - 'lib/manager_authenticator.rb'
-    - 'spec/controllers/management/users_controller_spec.rb'
-    - 'spec/features/admin/spending_proposals_spec.rb'
-    - 'spec/lib/manager_authenticator_spec.rb'
-    - 'spec/models/residence_spec.rb'
-    - 'spec/models/user_spec.rb'
-
 # Offense count: 57
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: nested, compact
@@ -232,26 +216,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'app/models/concerns/verification.rb'
 
-# Offense count: 9
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'app/models/concerns/search_cache.rb'
-    - 'app/models/notification.rb'
-    - 'spec/features/admin/spending_proposals_spec.rb'
-    - 'spec/features/admin/verifications_spec.rb'
-    - 'spec/features/debates_spec.rb'
-    - 'spec/features/registration_form_spec.rb'
-    - 'spec/features/users_auth_spec.rb'
-    - 'spec/features/verification/verified_user_spec.rb'
-    - 'spec/support/verifiable.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
-Layout/ExtraSpacing:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
@@ -264,15 +228,6 @@ Layout/FirstParameterIndentation:
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:
   Enabled: false
-
-# Offense count: 10
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
-# SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
-Style/HashSyntax:
-  Exclude:
-    - 'lib/sms_api.rb'
-    - 'spec/factories.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
@@ -557,111 +512,6 @@ Style/RescueModifier:
     - 'app/controllers/concerns/commentable_actions.rb'
     - 'app/controllers/verification/sms_controller.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/SpaceAfterColon:
-  Exclude:
-    - 'spec/models/user_spec.rb'
-
-# Offense count: 14
-# Cop supports --auto-correct.
-Layout/SpaceAfterComma:
-  Exclude:
-    - 'app/models/ahoy/data_source.rb'
-    - 'app/models/banner.rb'
-    - 'app/models/concerns/search_cache.rb'
-    - 'app/models/concerns/taggable.rb'
-    - 'app/models/spending_proposal.rb'
-    - 'app/models/user.rb'
-    - 'spec/features/valuation/spending_proposals_spec.rb'
-    - 'spec/lib/census_api_spec.rb'
-    - 'spec/models/abilities/moderator_spec.rb'
-    - 'spec/models/verification/management/email_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/SpaceAfterNot:
-  Exclude:
-    - 'app/models/flag.rb'
-
-# Offense count: 20
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: space, no_space
-Layout/SpaceAroundEqualsInParameterDefault:
-  Exclude:
-    - 'app/helpers/cache_keys_helper.rb'
-    - 'app/helpers/proposals_helper.rb'
-    - 'app/helpers/spending_proposals_helper.rb'
-    - 'app/helpers/stats_helper.rb'
-    - 'app/helpers/tracks_helper.rb'
-    - 'app/helpers/valuation_helper.rb'
-    - 'app/mailers/devise_mailer.rb'
-    - 'app/models/comment.rb'
-    - 'app/models/tag_cloud.rb'
-    - 'app/models/verification/residence.rb'
-    - 'lib/acts_as_paranoid_aliases.rb'
-    - 'lib/capistrano/template.rb'
-    - 'lib/census_api.rb'
-    - 'lib/manager_authenticator.rb'
-    - 'spec/support/common_actions.rb'
-
-# Offense count: 66
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment.
-Layout/SpaceAroundOperators:
-  Enabled: false
-
-# Offense count: 6
-# Cop supports --auto-correct.
-Layout/SpaceBeforeComma:
-  Exclude:
-    - 'app/models/proposal.rb'
-    - 'spec/controllers/management/sessions_controller_spec.rb'
-    - 'spec/controllers/management/users_controller_spec.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AllowForAlignment.
-Layout/SpaceBeforeFirstArg:
-  Exclude:
-    - 'spec/factories.rb'
-
-# Offense count: 9
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: require_no_space, require_space
-Layout/SpaceInLambdaLiteral:
-  Exclude:
-    - 'app/models/concerns/filterable.rb'
-    - 'app/models/spending_proposal.rb'
-    - 'app/models/user.rb'
-    - 'app/models/verified_user.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-Layout/SpaceInsideParens:
-  Exclude:
-    - 'app/models/user.rb'
-    - 'lib/manager_authenticator.rb'
-    - 'spec/features/proposals_spec.rb'
-    - 'spec/models/abilities/moderator_spec.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/SpaceInsidePercentLiteralDelimiters:
-  Exclude:
-    - 'app/models/activity.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiteralsInInterpolation:
-  Exclude:
-    - 'app/controllers/stats_controller.rb'
-    - 'app/models/proposal.rb'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: IgnoredMethods.
@@ -673,12 +523,6 @@ Style/SymbolProc:
     - 'app/controllers/organizations/registrations_controller.rb'
     - 'lib/manager_authenticator.rb'
     - 'spec/factories.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/TrailingWhitespace:
-  Exclude:
-    - 'app/controllers/admin/api/stats_controller.rb'
 
 # Offense count: 31
 # Cop supports --auto-correct.
@@ -709,6 +553,8 @@ Style/WordArray:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/ZeroLengthPredicate:
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: braces, no_braces, context_dependent
+Style/BracesAroundHashParameters:
   Exclude:
-    - 'app/models/concerns/verification.rb'
+    - 'app/models/concerns/searchable.rb'

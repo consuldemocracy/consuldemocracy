@@ -825,23 +825,6 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .note,
-  .note-marked {
-    display: block;
-    font-size: rem-calc(13);
-    margin-bottom: $line-height / 2;
-  }
-
-  .note-marked {
-    background: #ff0;
-    display: inline-block;
-
-    em {
-      background: #fff;
-      display: block;
-    }
-  }
-
   .ckeditor {
     min-height: $line-height * 13;
   }

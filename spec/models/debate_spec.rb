@@ -545,7 +545,7 @@ describe Debate do
         title_some_votes    = create(:debate, title: 'stop corruption', cached_votes_up: 5)
         title_least_voted   = create(:debate, title: 'stop corruption', cached_votes_up: 2)
         title_most_voted    = create(:debate, title: 'stop corruption', cached_votes_up: 10)
-        description_most_voted  = create(:debate, description: 'stop corruption', cached_votes_up: 10)
+        description_most_voted = create(:debate, description: 'stop corruption', cached_votes_up: 10)
 
         results = Debate.search('stop corruption')
 

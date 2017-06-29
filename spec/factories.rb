@@ -99,7 +99,7 @@ FactoryGirl.define do
 
   factory :verified_user do
     document_number
-    document_type    'dni'
+    document_type 'dni'
   end
 
   factory :debate do
@@ -254,10 +254,11 @@ FactoryGirl.define do
     association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
+    population 1234
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
-    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    sequence(:title) { |n| "Budget Investment #{n} title" }
     association :heading, factory: :budget_heading
     association :author, factory: :user
     description          'Spend money on this'
@@ -378,7 +379,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
     legacy_legislation
     user
   end
@@ -551,7 +552,7 @@ FactoryGirl.define do
     sequence(:value) { |n| "Setting #{n} Value" }
   end
 
-  factory :ahoy_event, :class => Ahoy::Event do
+  factory :ahoy_event, class: Ahoy::Event do
     id { SecureRandom.uuid }
     time DateTime.current
     sequence(:name) {|n| "Event #{n} type"}
@@ -584,7 +585,7 @@ FactoryGirl.define do
 
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
-    sequence(:description)  { |n| "This is the text of Banner #{n}" }
+    sequence(:description) { |n| "This is the text of Banner #{n}" }
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
@@ -701,7 +702,7 @@ LOREM_IPSUM
     author factory: :user
     quote "ipsum"
     text "a comment"
-    ranges [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}]
+    ranges [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}]
     range_start "/p[1]"
     range_start_offset 6
     range_end "/p[1]"
