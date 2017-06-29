@@ -7,14 +7,11 @@
   <%= javascript_include_tag "chart", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "participatory-budget-charts", "data-turbolinks-track" => true %>
 
-  <div class="expanded spending-proposals results no-margin-top">
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding">
     <div class="row">
-      <div class="small-12 column padding text-center">
-        <%= link_to participatory_budget_path, class: "left back" do %>
-          <i class="icon-angle-left"></i>
-          <%= t("pages.processes.back") %>
-        <% end %>
-
+      <div class="small-12 column text-center">
+        <%= back_link_to participatory_budget_path %>
         <h1 class="title"><%= t("spending_proposals.stats.heading") %></h1>
       </div>
     </div>
@@ -34,66 +31,63 @@
     </div>
   </div>
 
-  <div class="survey-results">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="panel purple text-center">
+        <p>TOTAL PARTICIPANTES</p>
+        <p id="total_participants" class="big-number-stat">
+          <%= @stats[:total_participants] %>
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <div class="row">
-      <div class="small-12 column">
-        <div class="panel purple text-center">
-          <p>TOTAL PARTICIPANTES</p>
-          <p id="total_participants" class="big-number-stat">
-            <%= @stats[:total_participants] %>
-          </p>
-        </div>
+  <hr>
+
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-6 column text-right">
+      <div class="panel light-green" data-equalizer-watch>
+        <p>TOTAL PROPUESTAS ENVIADAS</p>
+        <p id="total_spending_proposals" class="big-number-stat">
+          <%= @stats[:total_spending_proposals] + @stats[:paper_spending_proposals] %>
+        </p>
       </div>
     </div>
 
-    <hr>
+    <div class="small-12 medium-6 column">
+      <p class="chart-legend" data-equalizer-watch>
+        <span class="label" style="background: #9CC56A"></span>&nbsp;
+        <span id="total_feasible_spending_proposals">
+          <strong>PROPUESTAS EN LA FASE FINAL</strong>:
+          <%= @stats[:total_feasible_spending_proposals] %><br>
+        </span>
 
-    <div class="row" data-equalizer>
-      <div class="small-12 medium-6 column text-right">
-        <div class="panel light-green" data-equalizer-watch>
-          <p>TOTAL PROPUESTAS ENVIADAS</p>
-          <p id="total_spending_proposals" class="big-number-stat">
-            <%= @stats[:total_spending_proposals] + @stats[:paper_spending_proposals] %>
-          </p>
-        </div>
-      </div>
+        <span class="label" style="background: #E87461"></span>&nbsp;
+        <span id="total_unfeasible_spending_proposals">
+          <strong>PROPUESTAS INVIABLES</strong>:
+          <%= @stats[:total_unfeasible_spending_proposals] %><br>
+        </span>
 
-      <div class="small-12 medium-6 column">
-        <p class="chart-legend" data-equalizer-watch>
-          <span class="label" style="background: #9CC56A"></span>&nbsp;
-          <span id="total_feasible_spending_proposals">
-            <strong>PROPUESTAS EN LA FASE FINAL</strong>:
-            <%= @stats[:total_feasible_spending_proposals] %><br>
-          </span>
+        <br>
 
-          <span class="label" style="background: #E87461"></span>&nbsp;
-          <span id="total_unfeasible_spending_proposals">
-            <strong>PROPUESTAS INVIABLES</strong>:
-            <%= @stats[:total_unfeasible_spending_proposals] %><br>
-          </span>
+        <span class="label" style="background: #d0cef6"></span>&nbsp;
+        <strong>FASE DE APOYOS</strong>:
+        <span id="total_participants_support_phase">
+          <%= @stats[:total_participants_support_phase] %> <em>Participantes</em>,
+        </span>
+        <span id="total_supports">
+          <%= @stats[:total_supports] %> <em>Apoyos</em><br>
+        </span>
 
-          <br>
-
-          <span class="label" style="background: #d0cef6"></span>&nbsp;
-          <strong>FASE DE APOYOS</strong>:
-          <span id="total_participants_support_phase">
-            <%= @stats[:total_participants_support_phase] %> <em>Participantes</em>,
-          </span>
-          <span id="total_supports">
-            <%= @stats[:total_supports] %> <em>Apoyos</em><br>
-          </span>
-
-          <span class="label" style="background: #454372"></span>&nbsp;
-          <strong>FASE DE VOTACIÓN</strong>:
-          <span id="total_participants_vote_phase">
-            <%= @stats[:total_participants_vote_phase] %> <em>Participantes</em>,
-          </span>
-          <span id="total_votes">
-            <%= @stats[:total_votes] %> <em>Votos</em><br>
-          </span>
-        </p>
-      </div>
+        <span class="label" style="background: #454372"></span>&nbsp;
+        <strong>FASE DE VOTACIÓN</strong>:
+        <span id="total_participants_vote_phase">
+          <%= @stats[:total_participants_vote_phase] %> <em>Participantes</em>,
+        </span>
+        <span id="total_votes">
+          <%= @stats[:total_votes] %> <em>Votos</em><br>
+        </span>
+      </p>
     </div>
 
     <div class="clear"></div>
@@ -252,9 +246,8 @@
             </p>
           </div>
         </div>
-
       </div>
-
     </div>
   </div>
+</div>
 <% end %>
