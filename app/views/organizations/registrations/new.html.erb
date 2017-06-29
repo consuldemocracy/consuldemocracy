@@ -9,8 +9,10 @@
       <%= f.fields_for :organization do |fo| %>
         <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("devise_views.organizations.registrations.new.organization_name_label") %>
         <%= fo.label :responsible_name %>
-        <p class="note"><%= t("devise_views.organizations.registrations.new.responsible_name_note") %></p>
-        <%= fo.text_field :responsible_name, placeholder: t("devise_views.organizations.registrations.new.responsible_name_label"), maxlength: Organization.responsible_name_max_length, label: false %>
+        <p class="help-text" id="responsible-name-help-text"><%= t("devise_views.organizations.registrations.new.responsible_name_note") %></p>
+        <%= fo.text_field :responsible_name, placeholder: t("devise_views.organizations.registrations.new.responsible_name_label"),
+                                             maxlength: Organization.responsible_name_max_length, label: false,
+                                             aria: {describedby: "responsible-name-help-text"} %>
       <% end %>
 
       <%= f.email_field :email, placeholder: t("devise_views.organizations.registrations.new.email_label") %>

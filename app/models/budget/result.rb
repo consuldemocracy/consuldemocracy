@@ -12,11 +12,10 @@ class Budget
       reset_winners
       investments.each do |investment|
         @current_investment = investment
-        if inside_budget?
-          set_winner
-        end
+        set_winner if inside_budget?
       end
     end
+    handle_asynchronously :calculate_winners
 
     def investments
       heading.investments.selected.sort_by_ballots

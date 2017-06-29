@@ -76,9 +76,9 @@
 
       <div class="small-12 medium-5 clear">
         <%= f.label t("verification.residence.new.postal_code") %>
-        <p class="note"><%= t("verification.residence.new.postal_code_note") %></p>
+        <p class="help-text" id="postal-code-help-text"><%= t("verification.residence.new.postal_code_note") %></p>
         <div class="medium-6">
-          <%= f.text_field :postal_code, label: false %>
+          <%= f.text_field :postal_code, label: false, aria: {describedby: "postal-code-help-text"} %>
         </div>
       </div>
 

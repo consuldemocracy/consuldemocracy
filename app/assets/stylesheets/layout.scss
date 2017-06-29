@@ -806,7 +806,7 @@ form {
     }
   }
 
-  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]) {
+  [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
     background: #f8f8f8;
     height: $line-height * 2;
     margin-bottom: rem-calc(16);
@@ -823,23 +823,6 @@ form {
 
   [type=file] {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
-  }
-
-  .note,
-  .note-marked {
-    display: block;
-    font-size: rem-calc(13);
-    margin-bottom: $line-height / 2;
-  }
-
-  .note-marked {
-    background: #ff0;
-    display: inline-block;
-
-    em {
-      background: #fff;
-      display: block;
-    }
   }
 
   .ckeditor {
@@ -893,7 +876,7 @@ form {
 .callout {
   font-size: $small-font-size;
 
-  a {
+  a:not(.button) {
     font-weight: bold;
     text-decoration: underline;
   }
@@ -942,6 +925,14 @@ form {
 
   a {
     color: $color-alert;
+  }
+}
+
+.callout {
+
+  &.highlight,
+  &.light {
+    border: 0;
   }
 }
 

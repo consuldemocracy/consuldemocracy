@@ -89,7 +89,7 @@ feature 'Proposals' do
     end
   end
 
-  context "Embedded video"  do
+  context "Embedded video" do
 
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
@@ -99,7 +99,7 @@ feature 'Proposals' do
     end
 
     scenario "Show Vimeo video" do
-      proposal = create(:proposal, video_url: "https://vimeo.com/7232823" )
+      proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://player.vimeo.com/video/7232823'
@@ -175,7 +175,7 @@ feature 'Proposals' do
     click_button 'Create proposal'
 
     expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'You can also see more information about improving your campaign'
+    expect(page).to have_content 'Improve your campaign and get more supports'
 
     click_link 'Not now, go to my proposal'
 
@@ -1025,7 +1025,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_max", with: 1.day.ago
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -1072,7 +1072,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
           select Setting['official_level_1_name'], from: "advanced_search_official_level"
-          select "Last 24 hours",   from: "js-advanced-search-date-min"
+          select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
 
@@ -1108,7 +1108,7 @@ feature 'Proposals' do
 
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.days.ago.to_date
+          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
           click_button "Filter"
 
           expect(page).to have_content("citizen proposals cannot be found")

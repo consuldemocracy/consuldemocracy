@@ -99,7 +99,7 @@ FactoryGirl.define do
 
   factory :verified_user do
     document_number
-    document_type    'dni'
+    document_type 'dni'
   end
 
   factory :debate do
@@ -254,10 +254,11 @@ FactoryGirl.define do
     association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
+    population 1234
   end
 
   factory :budget_investment, class: 'Budget::Investment' do
-    sequence(:title)     { |n| "Budget Investment #{n} title" }
+    sequence(:title) { |n| "Budget Investment #{n} title" }
     association :heading, factory: :budget_heading
     association :author, factory: :user
     description          'Spend money on this'
@@ -322,6 +323,12 @@ FactoryGirl.define do
     reason "unfeasible"
   end
 
+  factory :budget_investment_milestone, class: 'Budget::Investment::Milestone' do
+    association :investment, factory: :budget_investment
+    sequence(:title)     { |n| "Budget investment milestone #{n} title" }
+    description          'Milestone description'
+  end
+
   factory :vote do
     association :votable, factory: :debate
     association :voter,   factory: :user
@@ -372,7 +379,7 @@ FactoryGirl.define do
   factory :annotation do
     quote "ipsum"
     text "Loremp ipsum dolor"
-    ranges [{"start"=>"/div[1]", "startOffset"=>5, "end"=>"/div[1]", "endOffset"=>10}]
+    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
     legacy_legislation
     user
   end
@@ -541,7 +548,7 @@ FactoryGirl.define do
     sequence(:value) { |n| "Setting #{n} Value" }
   end
 
-  factory :ahoy_event, :class => Ahoy::Event do
+  factory :ahoy_event, class: Ahoy::Event do
     id { SecureRandom.uuid }
     time DateTime.current
     sequence(:name) {|n| "Event #{n} type"}
@@ -574,7 +581,7 @@ FactoryGirl.define do
 
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
-    sequence(:description)  { |n| "This is the text of Banner #{n}" }
+    sequence(:description) { |n| "This is the text of Banner #{n}" }
     style {["banner-style-one", "banner-style-two", "banner-style-three"].sample}
     image {["banner.banner-img-one", "banner.banner-img-two", "banner.banner-img-three"].sample}
     target_url {["/proposals", "/debates" ].sample}
@@ -628,7 +635,7 @@ FactoryGirl.define do
       end_date Date.current + 8.days
       debate_start_date Date.current + 2.days
       debate_end_date Date.current + 4.days
-      draft_publication_date Date.current + 5.day
+      draft_publication_date Date.current + 5.days
       allegations_start_date Date.current + 5.days
       allegations_end_date Date.current + 7.days
       result_publication_date Date.current + 8.days
@@ -639,7 +646,7 @@ FactoryGirl.define do
       end_date Date.current - 2.days
       debate_start_date Date.current - 12.days
       debate_end_date Date.current - 9.days
-      draft_publication_date Date.current - 8.day
+      draft_publication_date Date.current - 8.days
       allegations_start_date Date.current - 8.days
       allegations_end_date Date.current - 4.days
       result_publication_date Date.current - 2.days
@@ -649,7 +656,7 @@ FactoryGirl.define do
       start_date Date.current - 5.days
       end_date Date.current + 5.days
       debate_start_date Date.current - 5.days
-      debate_end_date Date.current + 1.days
+      debate_end_date Date.current + 1.day
       draft_publication_date Date.current + 1.day
       allegations_start_date Date.current + 2.days
       allegations_end_date Date.current + 3.days
@@ -691,7 +698,7 @@ LOREM_IPSUM
     author factory: :user
     quote "ipsum"
     text "a comment"
-    ranges [{"start"=>"/p[1]", "startOffset"=>6, "end"=>"/p[1]", "endOffset"=>11}]
+    ranges [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}]
     range_start "/p[1]"
     range_start_offset 6
     range_end "/p[1]"

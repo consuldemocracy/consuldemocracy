@@ -71,19 +71,19 @@ describe GraphqlController, type: :request do
     let(:query_string) { "{ proposal(id: #{proposal.id}) { title } }" }
 
     specify "when absent" do
-      get '/graphql', { query: query_string }
+      get '/graphql', query: query_string
 
       expect(response).to have_http_status(:ok)
     end
 
     specify "when specified as the 'null' string" do
-      get '/graphql', { query: query_string, variables: 'null' }
+      get '/graphql', query: query_string, variables: 'null'
 
       expect(response).to have_http_status(:ok)
     end
 
     specify "when specified as an empty string" do
-      get '/graphql', { query: query_string, variables: '' }
+      get '/graphql', query: query_string, variables: ''
 
       expect(response).to have_http_status(:ok)
     end

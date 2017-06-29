@@ -6,14 +6,14 @@ class Officing::Residence
 
   before_validation :call_census_api
 
-  validates_presence_of :document_number
-  validates_presence_of :document_type
-  validates_presence_of :year_of_birth
+  validates :document_number, presence: true
+  validates :document_type, presence: true
+  validates :year_of_birth, presence: true
 
   validate :allowed_age
   validate :residence_in_madrid
 
-  def initialize(attrs={})
+  def initialize(attrs = {})
     super
     clean_document_number
   end
@@ -43,14 +43,13 @@ class Officing::Residence
   end
 
   def store_failed_census_call
-    FailedCensusCall.create({
+    FailedCensusCall.create(
       user: user,
       document_number: document_number,
-      document_type:   document_type,
-      year_of_birth:   year_of_birth,
-      poll_officer:    officer
-    })
-
+      document_type: document_type,
+      year_of_birth: year_of_birth,
+      poll_officer: officer
+    )
   end
 
   def user_exists?

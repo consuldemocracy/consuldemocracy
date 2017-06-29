@@ -14,7 +14,7 @@ nl:
       phone_number_label: Telefoonnummer
       public_activity_label: Mijn activiteiten zijn publiek
       save_changes_submit: Sla veranderingen op
-      subscription_to_website_newsletter_label: Stuur me email met relevante informatie over de website 
+      subscription_to_website_newsletter_label: Stuur me email met relevante informatie over de website
       email_on_direct_message_label: Stuur me email naar aanleiding van directe boodschappen
       email_digest_label: Stuur me een samenvatting van meldingen naar aanleiding van voorstellen
       official_position_badge_label: Show official position badge
@@ -179,7 +179,7 @@ nl:
       conditions: Gebruiksvoorwaarden
       consul: Consul
       consul_url: https://github.com/consul/consul
-      contact_us: Voor tech support klik 
+      contact_us: Voor tech support klik
       copyright: Consul, %{year}
       description: Deze site gebruikt %{consul}; een %{open_source} toepassing.
       faq: hier
@@ -217,7 +217,7 @@ nl:
         other: U heeft %{count} nieuwe meldingen
       no_notifications: "U heeft geen nieuwe meldingen"
       open: open
-      open_city_slogan_html: Er zijn steden die rechtstreeks door hun bewoners worden bestuurd, welke <b>discussiëren</b> over de onderwerpen waarover ze zich zorgen maken, welke <b>voorstellen</b> doen om hun leven te verbeteren en <b>zelf</b> beslissen welke daarvan zullen worden uitgevoerd.      
+      open_city_slogan_html: Er zijn steden die rechtstreeks door hun bewoners worden bestuurd, welke <b>discussiëren</b> over de onderwerpen waarover ze zich zorgen maken, welke <b>voorstellen</b> doen om hun leven te verbeteren en <b>zelf</b> beslissen welke daarvan zullen worden uitgevoerd.
       open_city_title: De gemeente waar u van houdt is de gemeente waarin u meedenkt.
       open_gov: Open bestuur
       proposals: Voorstellen
@@ -297,10 +297,10 @@ nl:
       done: Is gebeurt
       other: Anders
     form:
-      geozone: Regio 
+      geozone: Regio
       proposal_external_url: Link naar meet informatie
       proposal_question: Vraag
-      proposal_question_example_html: Moet samengevat worden in een vraag met een ja/nee antwoord. <Em>E.g. 'Ben je het eens met autovrije Geldersekade?'</em>
+      proposal_question_example_html: Moet samengevat worden in een vraag met een ja/nee antwoord. <br>E.g. 'Ben je het eens met autovrije Geldersekade?'
       proposal_responsible_name: Volledige naam van persoon die het voorstel doet
       proposal_responsible_name_note: "(individueel of als vertegenwoordiger van een collectief; niet publiek zichtbaar)"
       proposal_summary: Samenvatting voorstel
@@ -506,7 +506,7 @@ nl:
     suggest:
       debate:
         found:
-          
+
           one: "Er is een debat met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuwe discussie te openen."
           other: "Er zijn discussies met de term '%{query}'; u kunt daar deelnemen in plaats van een nieuwe discussie te openen."
         message: "Er worden %{limit} uit %{count} discussies met de term '%{query}' getoond"
@@ -636,7 +636,7 @@ nl:
           other: "%{count} Begrotingsvoorstellen"
       no_activity: Deze deelnemer heeft geen publieke activiteit
       no_private_messages: "Deze deelnemer ontvangt geen privé berichten."
-      private_activity: Deze deelnemer heeft besloten activiteiten niet te delen 
+      private_activity: Deze deelnemer heeft besloten activiteiten niet te delen
       send_private_message: "Stuur privé bericht"
     proposals:
       send_notification: "Stuur melding"

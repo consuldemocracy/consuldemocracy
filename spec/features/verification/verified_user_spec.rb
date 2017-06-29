@@ -69,7 +69,6 @@ feature 'Verified users' do
     expect(current_path).to eq new_sms_path
   end
 
-
   scenario "Select a verified email" do
     user = create(:user,
               residence_verified_at: Time.current,

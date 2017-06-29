@@ -298,7 +298,7 @@ en:
       geozone: Scope of operation
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
-      proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
+      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer. <br>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'"
       proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_summary: Proposal summary
@@ -357,12 +357,13 @@ en:
     notice:
       retired: Proposal retired
     proposal:
-      created: "You've created a new proposal!"
+      created: "You've created a proposal!"
       share:
-        guide: "Now you can share it through Twitter, Facebook, Google+, Telegram or Whatsapp (if you're using a mobile device) so people can start supporting.<br><br>Before it gets shared you'll be able to change the text as you like."
+        guide: "Now you can share it so people can start supporting."
+        edit: "Before it gets shared you'll be able to change the text as you like."
         view_proposal: Not now, go to my proposal
-      improve_info: "You can also %{improve_info_link} about improving your campaign"
-      improve_info_link: see more information
+      improve_info: "Improve your campaign and get more supports"
+      improve_info_link: "See more information"
       already_supported: You have already supported this proposal. Share it!
       comments:
         one: 1 comment

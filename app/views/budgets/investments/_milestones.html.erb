@@ -1,0 +1,26 @@
+<div class="tabs-panel tab-milestones" id="tab-milestones">
+  <div class="row">
+    <div class="small-12 column">
+      <% if @investment.milestones.blank? %>
+        <div class="callout primary text-center">
+          <%= t('budgets.investments.show.no_milestones') %>
+        </div>
+      <% end %>
+      <section class="timeline">
+        <ul class="no-bullet">
+          <% @investment.milestones.each do |milestone| %>
+            <li>
+              <div class="milestone-content">
+                <h3><%= milestone.title %></h3>
+                <span class="milestone-date">
+                  <strong><%= t("budgets.investments.show.milestone_publish_date", publish_date: milestone.created_at.strftime("%d/%m/%Y")) %></strong>
+                </span>
+                <p><%= milestone.description %></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

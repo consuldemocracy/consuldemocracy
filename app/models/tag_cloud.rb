@@ -2,7 +2,7 @@ class TagCloud
 
   attr_accessor :resource_model, :scope
 
-  def initialize(resource_model, scope=nil)
+  def initialize(resource_model, scope = nil)
     @resource_model = resource_model
     @scope = scope
   end

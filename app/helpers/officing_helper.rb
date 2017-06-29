@@ -13,7 +13,7 @@ module OfficingHelper
     officer_assignments.each do |oa|
       options << [oa.booth_assignment.booth.name.to_s, oa.id]
     end
-    options.sort! {|x, y| x[0]<=>y[0]}
+    options.sort! {|x, y| x[0] <=> y[0]}
     options_for_select(options, params[:oa])
   end
 

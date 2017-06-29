@@ -1,7 +1,7 @@
 class Geozone < ActiveRecord::Base
 
   include Graphqlable
-  
+
   has_many :proposals
   has_many :spending_proposals
   has_many :debates
