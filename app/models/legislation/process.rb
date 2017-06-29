@@ -21,6 +21,8 @@ class Legislation::Process < ActiveRecord::Base
   scope :next, -> { where("start_date > ?", Date.current).order('id DESC') }
   scope :past, -> { where("end_date < ?", Date.current).order('id DESC') }
 
+  scope :published, -> { where(published: true) }
+
   def debate_phase
     Legislation::Process::Phase.new(debate_start_date, debate_end_date, debate_phase_enabled)
   end
