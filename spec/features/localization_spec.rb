@@ -6,7 +6,7 @@ feature 'Localization' do
     visit root_path(locale: :es)
     visit root_path(locale: :klingon)
 
-    expect(page).to have_text('100 millones para hacer Madrid')
+    expect(page).to have_text('En Madrid sus habitantes, debaten sobre temas que les preocupan, proponen ideas para mejorar sus vidas y deciden entre todas y todos las que se llevan a cabo')
   end
 
   scenario 'Available locales appear in the locale switcher' do
