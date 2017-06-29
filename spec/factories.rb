@@ -355,6 +355,10 @@ FactoryGirl.define do
     trait :followed_proposal do
       association :followable, factory: :proposal
     end
+
+    trait :followed_investment do
+      association :followable, factory: :budget_investment
+    end
   end
 
   factory :comment do

@@ -420,6 +420,74 @@ feature 'Budget Investments' do
     end
   end
 
+  feature "Follows" do
+
+    scenario "Should not show follow button when there is no logged user" do
+      investment = create(:budget_investment)
+
+      visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+      within "#budget_investment_#{investment.id}" do
+        expect(page).not_to have_link("Follow citizen proposal")
+      end
+    end
+
+    scenario "Following", :js do
+      user = create(:user)
+      investment = create(:budget_investment)
+      login_as(user)
+
+      visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+      within "#budget_investment_#{investment.id}" do
+        page.find("#follow-expand-investment-#{investment.id}").click
+        page.find("#follow-investment-#{investment.id}").click
+
+        expect(page).to have_css("#unfollow-expand-investment-#{investment.id}")
+      end
+
+      expect(Follow.followed?(user, investment)).to be
+    end
+
+    scenario "Show unfollow button when user already follow this investment" do
+      user = create(:user)
+      investment = create(:budget_investment)
+      follow = create(:follow, :followed_investment, user: user, followable: investment)
+      login_as(user)
+
+      visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+      expect(page).to have_link("Unfollow investment")
+    end
+
+    scenario "Unfollowing", :js do
+      user = create(:user)
+      investment = create(:budget_investment)
+      follow = create(:follow, :followed_investment, user: user, followable: investment)
+      login_as(user)
+
+      visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+      within "#budget_investment_#{investment.id}" do
+        page.find("#unfollow-expand-investment-#{investment.id}").click
+        page.find("#unfollow-investment-#{investment.id}").click
+
+        expect(page).to have_css("#follow-expand-investment-#{investment.id}")
+      end
+
+      expect(Follow.followed?(user, investment)).not_to be
+    end
+
+    scenario "Show follow button when user is not following this investment" do
+      user = create(:user)
+      investment = create(:budget_investment)
+      login_as(user)
+
+      visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+      expect(page).to have_link("Follow investment")
+    end
+
+  end
+
   context "Destroy" do
 
     scenario "Admin cannot destroy budget investments" do
