@@ -1,6 +1,6 @@
-<div class="expanded padding budgets-module">
+<div class="expanded padding budgets-module text-center">
   <div class="row">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-8 column small-centered">
       <span class="budgets-date">
         <strong><%= t("welcome.budgets.label_reviewing") %></strong>
       </span>
@@ -15,16 +15,6 @@
           <%= link_to t("welcome.budgets.button_reviewing"), budgets_welcome_path, class: "button expanded large" %>
         </div>
       </div>
-    </div>
-
-    <div class="small-12 medium-5 column">
-      <%= link_to "https://www.youtube.com/watch?v=W4yR_Ww5TB8", rel: "nofollow", target: "_blank", title: t("welcome.budgets.chincheto.title") do %>
-        <%= image_tag "welcome_video_chincheto.jpg", alt: t("welcome.budgets.chincheto.alt") %>
-      <% end %>
-      <br>
-      <p class="text-right">
-        <small><%= t("welcome.budgets.chincheto.alt") %></small>
-      </p>
     </div>
   </div>
 </div>
