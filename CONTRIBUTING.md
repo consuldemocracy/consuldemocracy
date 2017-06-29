@@ -35,7 +35,9 @@ If you want to contribute code to solve an issue:
 * Commit there your code to solve the issue.
 * Make sure all test are passing (and add specs to test any new feature if needed).
 * Follow these [best practices](https://github.com/styleguide/ruby)
-* Open a *pull request* to the main repository describing what issue you are addressing.
+* Open a *pull request* to the main repository describing what issue you are addressing. 
+
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Cleaning up
 
