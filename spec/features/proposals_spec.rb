@@ -1223,72 +1223,7 @@ feature 'Proposals' do
     expect(Flag.flagged?(user, proposal)).to_not be
   end
 
-  feature "Follows" do
-
-    scenario "Should not show follow button when there is no logged user" do
-      proposal = create(:proposal)
-
-      visit proposal_path(proposal)
-
-      within "#proposal_#{proposal.id}" do
-        expect(page).not_to have_link("Follow citizen proposal")
-      end
-    end
-
-    scenario "Following", :js do
-      user = create(:user)
-      proposal = create(:proposal)
-      login_as(user)
-
-      visit proposal_path(proposal)
-      within "#proposal_#{proposal.id}" do
-        page.find("#follow-expand-proposal-#{proposal.id}").click
-        page.find("#follow-proposal-#{proposal.id}").click
-
-        expect(page).to have_css("#unfollow-expand-proposal-#{proposal.id}")
-      end
-
-      expect(Follow.followed?(user, proposal)).to be
-    end
-
-    scenario "Show unfollow button when user already follow this proposal" do
-      user = create(:user)
-      follow = create(:follow, :followed_proposal, user: user)
-      login_as(user)
-
-      visit proposal_path(follow.followable)
-
-      expect(page).to have_link("Unfollow citizen proposal")
-    end
-
-    scenario "Unfollowing", :js do
-      user = create(:user)
-      proposal = create(:proposal)
-      follow = create(:follow, :followed_proposal, user: user, followable: proposal)
-      login_as(user)
-
-      visit proposal_path(proposal)
-      within "#proposal_#{proposal.id}" do
-        page.find("#unfollow-expand-proposal-#{proposal.id}").click
-        page.find("#unfollow-proposal-#{proposal.id}").click
-
-        expect(page).to have_css("#follow-expand-proposal-#{proposal.id}")
-      end
-
-      expect(Follow.followed?(user, proposal)).not_to be
-    end
-
-    scenario "Show follow button when user is not following this proposal" do
-      user = create(:user)
-      proposal = create(:proposal)
-      login_as(user)
-
-      visit proposal_path(proposal)
-
-      expect(page).to have_link("Follow citizen proposal")
-    end
-
-  end
+  it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
   scenario 'Erased author' do
     user = create(:user)

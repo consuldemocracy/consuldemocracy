@@ -23,6 +23,11 @@ module FollowsHelper
     entity_name.downcase
   end
 
+  def entity_full_name(followable)
+    entity_name = followable.class.name
+    entity_name.downcase.gsub("::", "-")
+  end
+
   private
 
     def followed?(followable)

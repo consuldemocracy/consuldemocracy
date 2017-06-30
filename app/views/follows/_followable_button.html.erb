@@ -1,21 +1,21 @@
 <% entity = entity_name(followable) %>
 <span class="followable-content">
   <% if show_follow_action? followable %>
-    <a id="follow-expand-<%= entity %>-<%= followable.id %>" data-toggle="follow-drop-<%= entity %>-<%= followable.id %>" title="<%= follow_entity_text(followable) %>">
+    <a href="#follow-drop-<%= entity_full_name(followable) %>-<%= followable.id %>" id="follow-expand-<%= entity_full_name(followable) %>-<%= followable.id %>" data-toggle="follow-drop-<%= entity_full_name(followable) %>-<%= followable.id %>" title="<%= follow_entity_text(followable) %>">
       <%= t('shared.follow') %>
     </a>
-    <div class="dropdown-pane" id="follow-drop-<%= entity %>-<%= followable.id %>" data-dropdown data-auto-focus="true">
-      <%= link_to follow_entity_text(followable), follows_path(followable_id: followable.id, followable_type: followable.class.name), method: :post, remote: true, id: "follow-#{entity}-#{ followable.id }" %>
+    <div class="dropdown-pane" id="follow-drop-<%= entity_full_name(followable) %>-<%= followable.id %>" data-dropdown data-auto-focus="true">
+      <%= link_to follow_entity_text(followable), follows_path(followable_id: followable.id, followable_type: followable.class.name), method: :post, remote: true, id: "follow-#{entity_full_name(followable)}-#{ followable.id }" %>
     </div>
   <% end %>
 
   <% if show_unfollow_action? followable %>
     <% follow = followable.follows.where(user: current_user).first %>
-    <a id="unfollow-expand-<%= entity %>-<%= followable.id %>" data-toggle="unfollow-drop-<%= entity %>-<%= followable.id %>" title="<%= unfollow_entity_text(followable) %>">
+    <a href="#unfollow-drop-<%= entity_full_name(followable) %>-<%= followable.id %>" id="unfollow-expand-<%= entity_full_name(followable) %>-<%= followable.id %>" data-toggle="unfollow-drop-<%= entity_full_name(followable) %>-<%= followable.id %>" title="<%= unfollow_entity_text(followable) %>">
         <%= t('shared.unfollow') %>
     </a>
-    <div class="dropdown-pane" id="unfollow-drop-<%= entity %>-<%= followable.id %>" data-dropdown data-auto-focus="true">
-      <%= link_to unfollow_entity_text(followable), follow_path(follow), method: :delete, remote: true, id: "unfollow-#{entity}-#{ followable.id }" %>
+    <div class="dropdown-pane" id="unfollow-drop-<%= entity_full_name(followable) %>-<%= followable.id %>" data-dropdown data-auto-focus="true">
+      <%= link_to unfollow_entity_text(followable), follow_path(follow), method: :delete, remote: true, id: "unfollow-#{entity_full_name(followable)}-#{ followable.id }" %>
     </div>
   <% end %>
 </span>
