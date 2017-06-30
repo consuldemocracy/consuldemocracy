@@ -1,0 +1,132 @@
+<div class="row margin">
+  <% if Budget.finished.any? %>
+    <div class="small-12 medium-4 column margin-bottom">
+      <figure class="figure-card">
+        <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.budgets.stats.link") do %>
+          <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
+        <% end %>
+        <figcaption>
+          <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.budgets.stats.link") do %>
+            <span><%= t("welcome.budgets.stats.label") %></span><br>
+            <p class="title"><%= t("welcome.budgets.stats.title") %></p>
+          <% end %>
+        </figcaption>
+      </figure>
+      <p><%= t("welcome.budgets.stats.text") %></p>
+      <p>
+        <%= link_to t("welcome.budgets.stats.link"), custom_budget_stats_path(id: Budget.last.to_param) %>
+      </p>
+    </div>
+  <% end %>
+  <div class="small-12 medium-4 column margin-bottom">
+    <figure class="figure-card">
+      <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
+        <%= image_tag "welcome_geocraft.jpg", alt: "" %>
+      <% end %>
+      <figcaption>
+        <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
+          <span><%= t("welcome.budgets.geocraft.label") %></span><br>
+          <p class="title"><%= t("welcome.budgets.geocraft.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.budgets.geocraft.text") %></p>
+    <p>
+      <%= link_to t("welcome.budgets.geocraft.link"), geocraft_path %>
+    </p>
+  </div>
+  <% unless Budget.finished.any? %>
+    <div class="small-12 medium-4 column margin-bottom">
+      <figure class="figure-card">
+        <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
+          <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
+        <% end %>
+        <figcaption>
+          <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
+            <span><%= t("welcome.budgets.videos.label") %></span><br>
+            <p class="title"><%= t("welcome.budgets.videos.title") %></p>
+          <% end %>
+        </figcaption>
+      </figure>
+      <p><%= t("welcome.budgets.videos.text") %></p>
+      <p>
+        <%= link_to t("welcome.budgets.videos.link"), budgets_videos_2017_path %>
+      </p>
+    </div>
+    <div class="small-12 medium-4 column margin-bottom">
+      <figure class="figure-card">
+        <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
+          <%= image_tag "welcome_once_plazas.jpg", alt: "" %>
+        <% end %>
+        <figcaption>
+          <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
+            <span><%= t("welcome.budgets.once_plazas.label") %></span><br>
+            <p class="title"><%= t("welcome.budgets.once_plazas.title") %></p>
+          <% end %>
+        </figcaption>
+      </figure>
+      <p><%= t("welcome.budgets.once_plazas.text") %></p>
+      <p>
+        <%= link_to t("welcome.budgets.once_plazas.link"), once_plazas_path %>
+      </p>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-4 column margin-bottom">
+    <figure class="figure-card pdf">
+      <%= link_to "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
+                  title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' do %>
+        <%= image_tag "landings/first_voting_sustainable_report_big.jpg", alt: t("polls_reports.img_alt_1") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
+                    title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' do %>
+          <span><%= t("polls_reports.label") %></span><br>
+          <p class="title"><%= t("polls_reports.title_1") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("polls_reports.description_1_html") %></p>
+    <p>
+      <%= link_to t("polls_reports.button"), "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
+                  title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' %>
+    </p>
+  </div>
+  <div class="small-12 medium-4 column margin-bottom">
+    <figure class="figure-card pdf">
+      <%= link_to "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
+                  title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' do %>
+        <%= image_tag "landings/first_voting_transport_report_big.jpg", alt: t("polls_reports.img_alt_2") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
+                    title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' do %>
+          <span><%= t("polls_reports.label") %></span><br>
+          <p class="title"><%= t("polls_reports.title_2") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("polls_reports.description_2_html") %></p>
+    <p>
+      <%= link_to t("polls_reports.button"), "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
+                  title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' %>
+    </p>
+  </div>
+  <div class="small-12 medium-4 column margin-bottom end">
+    <figure class="figure-card">
+      <%= link_to manzanares_path, title: t("welcome.manzanares.link") do %>
+        <%= image_tag "welcome_parque_manzanares.jpg", alt: "" %>
+      <% end %>
+      <figcaption>
+        <%= link_to manzanares_path, title: t("welcome.manzanares.link") do %>
+          <span><%= t("welcome.manzanares.label") %></span><br>
+          <p class="title"><%= t("welcome.manzanares.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.manzanares.description") %></p>
+    <p>
+      <%= link_to t("welcome.manzanares.link"), manzanares_path %>
+    </p>
+  </div>
+</div>

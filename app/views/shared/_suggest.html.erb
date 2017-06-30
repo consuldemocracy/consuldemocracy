@@ -1,10 +1,12 @@
 <div class="small-12 column" >
   <% if @search_terms && @resources.any? %>
     <div class="callout warning">
-      <p class="note-marked">
-        <%= t("shared.suggest.#{resource_name}.found",
-            count: @resources.count,
-            query: @search_terms)%>
+      <p>
+        <strong>
+          <%= t("shared.suggest.#{resource_name}.found",
+              count: @resources.count,
+              query: @search_terms)%>
+        </strong>
       </p>
 
       <ul>
@@ -14,11 +16,13 @@
       </ul>
 
       <% if @resources.count > @limit %>
-        <p class="note-marked">
-          <%= t("shared.suggest.#{resource_name}.message",
-              count: @resources.count,
-              query: @search_terms,
-              limit: @limit) %>
+        <p>
+          <strong>
+            <%= t("shared.suggest.#{resource_name}.message",
+                count: @resources.count,
+                query: @search_terms,
+                limit: @limit) %>
+          </strong>
           <%= link_to t("shared.suggest.#{resource_name}.see_all"),
                       polymorphic_url(resource_model, search: @search_terms)%>
         </p>

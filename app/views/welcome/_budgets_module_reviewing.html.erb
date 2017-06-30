@@ -1,0 +1,21 @@
+<div class="expanded padding budgets-module text-center">
+  <div class="row">
+    <div class="small-12 medium-8 column small-centered">
+      <span class="budgets-date">
+        <strong><%= t("welcome.budgets.label_reviewing") %></strong>
+      </span>
+      <br>
+      <p class="lead-title"><%= t("welcome.budgets.title_reviewing_html") %></p>
+      <p><%= t("welcome.budgets.text_reviewing_html") %></p>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <%# link_to t("welcome.budgets.button_stats"), custom_budget_stats_path(id: Budget.last.to_param), class: "button expanded large" %>
+          <!-- when uncomment the line before, remove the "small-centered" class in the next <div> -->
+        </div>
+        <div class="small-12 medium-6 column small-centered">
+          <%= link_to t("welcome.budgets.button_reviewing"), budgets_welcome_path, class: "button expanded large" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

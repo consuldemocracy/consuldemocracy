@@ -95,6 +95,10 @@ en:
         supports: Supports
         votes: Votes
         price: Price
+        comments_tab: Comments
+        milestones_tab: Milestones
+        no_milestones: Don't have defined milestones
+        milestone_publish_date: "Published %{publish_date}"
       wrong_price_format: Only integer numbers
       investment:
         add: Vote
@@ -123,6 +127,7 @@ en:
       unselected: See investments not selected for balloting phase
       see_results: See results
     results:
+      #link: Results
       page_title: "%{budget} - Results"
       heading: "Participatory budget results"
       geozone_selection_title: "By district"
@@ -134,3 +139,35 @@ en:
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
+    stats:
+      title: Participation stats
+      link: Stats
+      page_title: "%{budget} - Participation stats"
+      total_participants: Total Participants
+      total_budget_investments: Total Proposed Investments
+      total_selected_investments: Proposals on final phase
+      total_unfeasible_investments: Unfeasible proposals
+      total_participants_support_phase: Support phase
+      participants: Participants
+      supports: Supports
+      votes: Votes
+      total_participants_vote_phase: Voting Phase
+      by_gender: "Participants by gender"
+      total_male_participants: Mens
+      total_female_participants: Women
+      by_age: "Participants by age groups"
+      age: Age
+      total: Total
+      more_than: More than
+      years: years
+      by_heading: "Participants by heading"
+      heading: Heading
+      investments_sent: Investment proposals sent
+      participants_support_phase: Participants support phase
+      participants_voting_phase: Participants voting phase
+      participants_total: Total Participants
+      percent_total_participants_html: "% <br>Total<br>Participants"
+      percent_heading_census_html: "% <br>Heading<br>Census"
+      no_demographic_data: "* There is no demographic data for %{total} participants."
+      participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
+      heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."

@@ -53,6 +53,10 @@ en:
     budget:
       title: "Presupuestos participativos de Madrid"
       description: "Participa y crea un proyecto de gasto para decidir a qué proyectos destina el Ayuntamiento de Madrid su presupuesto participativo."
+      title_reviewing: "Presupuestos participativos de Madrid"
+      description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
+      title_finished: "Resultados de los Presupuestos participativos de Madrid"
+      description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
     first_voting:
       title: "Votaciones ciudadanas de Madrid - Decide Madrid"
       description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
@@ -135,6 +139,20 @@ en:
       text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
       date: "From May 15 to June 30"
       button: "Vote projects"
+      title_reviewing_html: "Citizens decide on 100 million for participatory budgets"
+      text_reviewing_html: "Check the participation statistics in the process.<br>The <strong>winning projects</strong> will be announced on the next <strong>July 13</strong>."
+      label_reviewing: "Finished voting on participatory budgets"
+      button_reviewing: "See projects"
+      button_stats: "See statistics"
+      title_finished_html: "Know the winning projects of the participatory budgets"
+      text_finished_html: "These are the citizen projects that will be financed with <strong>100 million euros</strong> of the municipal budget in 2018"
+      label_finished: "The citizens of Madrid have decided"
+      button_finished: "See projects"
+      stats:
+        label: "Statistics"
+        title: "Participatory Budget voting data"
+        text: "Check the detailed data of the voting of projects."
+        link: "See participation statistics"
       geocraft:
         label: "Download"
         title: "Make Madrid"

@@ -29,6 +29,7 @@ class Officing::FinalRecountsController < Officing::BaseController
   end
 
   private
+
     def load_poll
       @poll = Poll.expired.find(params[:poll_id])
     end

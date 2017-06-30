@@ -9,7 +9,7 @@ class Legislation::Question < ActiveRecord::Base
   has_many :answers, class_name: 'Legislation::Answer', foreign_key: 'legislation_question_id', dependent: :destroy, inverse_of: :question
   has_many :comments, as: :commentable, dependent: :destroy
 
-  accepts_nested_attributes_for :question_options, :reject_if => proc { |attributes| attributes[:value].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :question_options, reject_if: proc { |attributes| attributes[:value].blank? }, allow_destroy: true
 
   validates :process, presence: true
   validates :title, presence: true

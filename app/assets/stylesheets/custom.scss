@@ -2348,6 +2348,12 @@ $campaign-yellow:  #ffdb19;
         border: 0;
         color: #fff;
       }
+
+      &.stats {
+        background: none;
+        border: 1px solid $brand;
+        color: $brand;
+      }
     }
   }
 
@@ -2798,6 +2804,31 @@ h2.map-title {
 
   .panel h3 {
     margin: 0;
+  }
+}
+
+// Budgets stats
+
+.budgets-stats {
+
+  .header {
+
+    h1 {
+      font-family: 'Franklin Gothic' !important;
+    }
+
+    h1,
+    .back,
+    .icon-angle-left {
+      color: #000;
+    }
+  }
+
+  .big-number-stat {
+
+    &.budget {
+      color: $budget-custom;
+    }
   }
 }
 

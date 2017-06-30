@@ -19,7 +19,7 @@ class SpendingProposal < ActiveRecord::Base
   validates :title, presence: true
   validates :author, presence: true
   validates :description, presence: true
-  validates_presence_of :feasible_explanation, if: :feasible_explanation_required?
+  validates :feasible_explanation, presence: { if: :feasible_explanation_required? }
 
   validates :title, length: { in: 4..SpendingProposal.title_max_length }
   validates :description, length: { maximum: 10000 }
@@ -40,14 +40,12 @@ class SpendingProposal < ActiveRecord::Base
   scope :incompatible,           -> { where(compatible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
   scope :with_supports,          -> { where('cached_votes_up > 0') }
-
   scope :by_forum,               -> { where(forum: true) }
+  scope :by_admin,    ->(admin)     { where(administrator_id: admin.presence) }
+  scope :by_tag,      ->(tag_name)  { tagged_with(tag_name) }
+  scope :by_valuator, ->(valuator)  { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
 
-  scope :by_admin,    -> (admin)    { where(administrator_id: admin.presence) }
-  scope :by_tag,      -> (tag_name) { tagged_with(tag_name) }
-  scope :by_valuator, -> (valuator) { where("valuation_assignments.valuator_id = ?", valuator.presence).joins(:valuation_assignments) }
-
-  scope :for_render,             -> { includes(:geozone) }
+  scope :for_render, -> { includes(:geozone) }
 
   scope :district_wide,          -> { where.not(geozone_id: nil) }
   scope :city_wide,              -> { where(geozone_id: nil) }
@@ -60,7 +58,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def self.filter_params(params)
-    params.select{|x,_| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
+    params.select{|x, _| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
   end
 
   def self.scoped_filter(params, current_filter)

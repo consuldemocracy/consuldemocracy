@@ -1,5 +1,14 @@
-<% provide :title, t("meta_tags.budget.title") %>
-<% provide :meta_description, t("meta_tags.budget.description") %>
+<% if Budget.balloting.any? %>
+  <% provide :title, t("meta_tags.budget.title") %>
+  <% provide :meta_description, t("meta_tags.budget.description") %>
+<% elsif Budget.reviewing_ballots.any? %>
+  <% provide :title, t("meta_tags.budget.title_reviewing") %>
+  <% provide :meta_description, t("meta_tags.budget.description_reviewing") %>
+<% else %>
+  <% provide :title, t("meta_tags.budget.title_finished") %>
+  <% provide :meta_description, t("meta_tags.budget.description_finished") %>
+<% end %>
+
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags_participatory_budget" %>
 <% end %>
@@ -7,68 +16,43 @@
 
 <div class="budgets-welcome">
 
-  <div class="expanded header">
-    <div class="row no-margin-top padding">
-      <div class="small-12 medium-8 column">
-        <h1>Presupuestos participativos 2017</h1>
-        <div class="small-12 medium-11">
-          <p class="lead">
-            Tú decides a qué proyectos ciudadanos se destinarán 100 millones de euros de los presupuestos municipales en la ciudad y en los distritos.
-          </p>
-        </div>
+  <% if Budget.balloting.any? %>
+    <%= render "pages/more_info/budgets/welcome_header_balloting" %>
+  <% elsif Budget.reviewing_ballots.any? %>
+    <%= render "pages/more_info/budgets/welcome_header_reviewing" %>
+  <% else %>
+    <%= render "pages/more_info/budgets/welcome_header_finished" %>
+  <% end %>
 
-        <div class="small-12">
-          <div class="row margin-top">
-            <div class="small-12 medium-6 column">
-              <%= link_to "Votar proyectos de toda la ciudad",
-                          "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
-                          class: "button expanded large city" %>
-            </div>
-            <div class="small-12 medium-6 column">
-              <%= link_to "Votar proyectos de un distrito",
-                          "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
-                          class: "button expanded large" %>
-            </div>
-          </div>
-        </div>
+  <% if Budget.balloting.any? %>
+    <div class="row margin">
+      <div class="small-12 medium-6 column">
+        <figure class="figure-card">
+          <%= image_tag "budget_welcome/materials.jpg", alt:"100 millones para hacer Madrid" %>
+          <figcaption>
+            <span>Descargas</span>
+            <p class="title">Materiales de difusión</p>
+          </figcaption>
+        </figure>
+        <p>¿Quieres apoyar y ayudar a difundir los presupuestos participativos? Te facilitamos este kit con material gráfico para dar a conocer los proyectos de tu distrito.</p>
+        <%= link_to "Ver materiales para descargar", budgets_materials_2017_path %>
       </div>
 
-      <div class="small-12 medium-3 column margin">
-        <div class="budgets-calendar-minimal padding text-center">
-          <span class="day">Votación final<br>Último día 30 junio</span>
-        </div>
+      <div class="small-12 medium-6 column">
+        <figure class="figure-card">
+          <%= image_tag "budget_welcome/videos.jpg", alt:"Personas que han planteado proyectos en los presupuestos participativos 2017 del Ayuntamiento de Madrid." %>
+          <figcaption>
+            <span>Vídeos</span>
+            <p class="title">Presupuestos participativos</p>
+          </figcaption>
+        </figure>
+        <p>Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final, nos explican de primera mano en qué consisten sus propuestas.</p>
+        <%= link_to "Ver vídeos de proyectos", budgets_videos_2017_path %>
       </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="row margin">
-    <div class="small-12 medium-6 column">
-      <figure class="figure-card">
-        <%= image_tag "budget_welcome/materials.jpg", alt:"100 millones para hacer Madrid" %>
-        <figcaption>
-          <span>Descargas</span>
-          <p class="title">Materiales de difusión</p>
-        </figcaption>
-      </figure>
-      <p>¿Quieres apoyar y ayudar a difundir los presupuestos participativos? Te facilitamos este kit con material gráfico para dar a conocer los proyectos de tu distrito.</p>
-      <%= link_to "Ver materiales para descargar", budgets_materials_2017_path %>
-    </div>
-
-    <div class="small-12 medium-6 column">
-      <figure class="figure-card">
-        <%= image_tag "budget_welcome/videos.jpg", alt:"Personas que han planteado proyectos en los presupuestos participativos 2017 del Ayuntamiento de Madrid." %>
-        <figcaption>
-          <span>Vídeos</span>
-          <p class="title">Presupuestos participativos</p>
-        </figcaption>
-      </figure>
-      <p>Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final, nos explican de primera mano en qué consisten sus propuestas.</p>
-      <%= link_to "Ver vídeos de proyectos", budgets_videos_2017_path %>
-    </div>
-  </div>
-
-  <div class="row">
-    <hr>
     <div class="small-12 column">
       <div class="text-center">
         <h2 class="map-title">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>

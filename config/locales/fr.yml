@@ -1249,8 +1249,8 @@ fr:
       proposal_external_url: Lien vers de la documentation complémentaire
       proposal_question: Question proposée
       proposal_question_example_html: 'Doit être résumé par une question appelant
-        à une réponse par oui ou par non. <em>Exemple : ''Êtes-vous d''accord avec
-        la piétonnisation de Calle Mayor?''</em>'
+        à une réponse par oui ou par non. <br>Exemple : ''Êtes-vous d''accord avec
+        la piétonnisation de Calle Mayor?'
       proposal_responsible_name: Nom complet de la personne qui soumet la proposition
       proposal_responsible_name_note: "(individuellement ou comme représentant d'un
         collectif; ne sera pas public)"

@@ -8,6 +8,7 @@
 // 06. Budget
 // 07. Proposals successful
 // 08. Polls
+// 09. Budgets stats
 //
 
 // 01. Votes and supports
@@ -491,6 +492,109 @@
 
   .share-supported {
     display: none;
+  }
+}
+
+.tab-milestones ul {
+  margin-top: rem-calc(40);
+  position: relative;
+
+  li {
+    margin: 0 auto;
+    position: relative;
+    width: 0;
+  }
+
+  li::before {
+    background: $budget;
+    border-radius: rem-calc(20);
+    content: '';
+    height: rem-calc(20);
+    position: absolute;
+    top: 5px;
+    transform: translateX(-50%);
+    width: rem-calc(20);
+    z-index: 2;
+  }
+
+  li::after {
+    background: $light-gray;
+    bottom: 100%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 25px;
+    width: 1px;
+    z-index: 1;
+  }
+}
+
+.tab-milestones ul .milestone-content {
+  padding: $line-height / 6 $line-height / 2;
+  position: relative;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .milestone-date {
+    color: $text-medium;
+    font-size: $small-font-size;
+  }
+}
+
+.tab-milestones .timeline ul li:nth-child(odd),
+.tab-milestones .timeline ul li:nth-child(even) {
+
+  .milestone-content {
+
+    @include breakpoint(medium) {
+      width: rem-calc(300);
+    }
+
+    @include breakpoint(large) {
+      width: rem-calc(450);
+    }
+  }
+}
+
+.tab-milestones .timeline ul li:nth-child(odd) {
+
+  .milestone-content {
+    text-align: right;
+
+    @include breakpoint(medium) {
+      margin-left: rem-calc(-315);
+    }
+
+    @include breakpoint(large) {
+      margin-left: rem-calc(-465);
+    }
+  }
+}
+
+.tab-milestones .timeline ul li:nth-child(even) {
+
+  .milestone-content {
+    left: 15px;
+  }
+}
+
+.tab-milestones {
+  @include breakpoint(small only) {
+
+    .timeline ul li {
+      width: 100%;
+
+      &:nth-child(odd),
+      &:nth-child(even) {
+
+        .milestone-content {
+          left: 15px;
+          text-align: left;
+        }
+      }
+    }
   }
 }
 
@@ -1515,5 +1619,166 @@
         top: -6px;
       }
     }
+  }
+}
+
+// 09. Budgets stats
+// ----------------------
+
+.budgets-stats {
+
+  .header {
+    background: $budget;
+
+    h1,
+    .back,
+    .icon-angle-left {
+      color: #fff;
+    }
+  }
+
+  .legend {
+    color: $text-medium;
+    margin-bottom: 0;
+  }
+
+  .title {
+    color: #000201;
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(60);
+      line-height: rem-calc(60);
+    }
+  }
+
+  h2 {
+    color: $brand;
+  }
+
+  .big-number-stat {
+    font-size: rem-calc(72);
+    font-weight: bold;
+    line-height: rem-calc(72);
+
+    &.budget {
+      color: $budget;
+    }
+  }
+
+  .progress {
+    background: none;
+  }
+
+  .progress-meter {
+    background: #00dae0;
+    height: $line-height / 2;
+
+    &.web {
+      background: #00ad51;
+    }
+
+    &.zero-ten {
+      background: #007dc3;
+    }
+
+    &.paper {
+      background: #ffdc08;
+    }
+  }
+
+  .progress-meter-text {
+    color: #000201;
+    font-weight: normal;
+    left: 0;
+    top: $line-height / 2;
+    transform: initial;
+  }
+
+  .label {
+
+    &.feasible {
+      background: #9cc56a;
+    }
+
+    &.unfeasible {
+      background: #e87461;
+    }
+
+    &.supports {
+      background: #d0cef6;
+    }
+
+    &.balloting {
+      background: #454372;
+    }
+  }
+
+  .border-left {
+    border-left: 1px solid $border;
+  }
+
+  .border-right {
+    border-right: 1px solid $border;
+  }
+
+  .table-width {
+
+    @include breakpoint(medium) {
+      width: rem-calc(200);
+    }
+  }
+}
+
+.stats-districts {
+
+  th {
+    text-transform: uppercase;
+  }
+
+  tr th {
+    border: 1px solid $border;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .tiny {
+    font-size: rem-calc(11);
+    font-weight: normal;
+  }
+}
+
+@include breakpoint(medium down) {
+
+  .survey-districts thead {
+    font-size: rem-calc(12);
+
+    th {
+      width: 25%;
+      word-break: break-all;
+    }
+  }
+
+  .questions-table {
+
+    thead th {
+      font-size: rem-calc(13);
+      width: 20%;
+      word-break: break-all;
+    }
+
+    td {
+      font-size: rem-calc(13);
+    }
+  }
+}
+
+.age-groups {
+
+  th {
+    width: 20%;
   }
 }

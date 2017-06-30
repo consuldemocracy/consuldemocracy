@@ -105,6 +105,7 @@ module Budgets
           seed = Float(seed) rescue 0
           session[:random_seed] = seed
           params[:random_seed] = seed
+        else
           Budget::Investment.connection.execute("select setseed(#{seed})")
         end
       end
@@ -139,7 +140,7 @@ module Budgets
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        @categories = ActsAsTaggableOn::Tag.category.order(:name)
       end
 
       def tag_cloud

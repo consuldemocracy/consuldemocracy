@@ -1,15 +1,16 @@
 # How to Contribute to this Project
 
-## Team members
+## Core team members
 
-* Raimond Garcia [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
+* Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
 * Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto Garcia Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto García Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
 
 ## Code of conduct
 
-The team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT_EN.md](CODE_OF_CONDUCT_EN.md) file.
+The core team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
 
 ## Report an issue
 
@@ -34,7 +35,9 @@ If you want to contribute code to solve an issue:
 * Commit there your code to solve the issue.
 * Make sure all test are passing (and add specs to test any new feature if needed).
 * Follow these [best practices](https://github.com/styleguide/ruby)
-* Open a *pull request* to the main repository describing what issue you are addressing.
+* Open a *pull request* to the main repository describing what issue you are addressing. 
+
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Cleaning up
 

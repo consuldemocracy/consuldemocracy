@@ -18,7 +18,7 @@ module ProposalsHelper
     end
   end
 
-  def namespaced_proposal_path(proposal, options={})
+  def namespaced_proposal_path(proposal, options= {})
     return human_rights_proposal_path(proposal) if proposal.proceeding?
 
     @namespace_proposal_path ||= namespace

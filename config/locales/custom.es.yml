@@ -53,6 +53,10 @@ es:
     budget:
       title: "Presupuestos participativos de Madrid"
       description: "Participa y crea un proyecto de gasto para decidir a qué proyectos destina el Ayuntamiento de Madrid su presupuesto participativo."
+      title_reviewing: "Presupuestos participativos de Madrid"
+      description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
+      title_finished: "Resultados de los Presupuestos participativos de Madrid"
+      description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
     first_voting:
       title: "Votaciones ciudadanas de Madrid - Decide Madrid"
       description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
@@ -135,6 +139,20 @@ es:
       text_html: "En la votación final de los presupuestos participativos 2017 tú decides los proyectos ciudadanos que llevará a cabo el Ayuntamiento <strong>en la ciudad y en los distritos</strong>."
       date: "Del 15 de mayo al 30 de junio"
       button: "Votar proyectos"
+      title_reviewing_html: "La ciudadanía decide sobre 100 millones para los presupuestos participativos"
+      text_reviewing_html: "Consulta las estadísticas de participación en el proceso.<br>Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>."
+      label_reviewing: "Finaliza la votación de los proyectos finalistas"
+      button_reviewing: "Ver proyectos"
+      button_stats: "Ver estadísticas"
+      title_finished_html: "Conoce los proyectos ganadores de los presupuestos participativos"
+      text_finished_html: "Estos son los proyectos ciudadanos que se financiarán con <strong>100 millones de euros</strong> del presupuesto municipal en 2018."
+      label_finished: "La ciudadanía madrileña ha decidido"
+      button_finished: "Ver proyectos"
+      stats:
+        label: "Estadísticas"
+        title: "Datos de la votación de presupuestos"
+        text: "Consulta los datos detallados de la votación de proyectos."
+        link: "Ver estadísticas de participación"
       geocraft:
         label: "Descarga"
         title: "Haz Madrid"

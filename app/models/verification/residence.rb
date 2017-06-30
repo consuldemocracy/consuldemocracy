@@ -7,10 +7,10 @@ class Verification::Residence
 
   before_validation :call_census_api
 
-  validates_presence_of :document_number
-  validates_presence_of :document_type
-  validates_presence_of :date_of_birth
-  validates_presence_of :postal_code
+  validates :document_number, presence: true
+  validates :document_type, presence: true
+  validates :date_of_birth, presence: true
+  validates :postal_code, presence: true
   validates :terms_of_service, acceptance: { allow_nil: false }
   validates :postal_code, length: { is: 5 }
 
@@ -18,7 +18,7 @@ class Verification::Residence
   validate :document_number_uniqueness
   validate :redeemable_code_is_redeemable
 
-  def initialize(attrs={})
+  def initialize(attrs = {})
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
@@ -63,14 +63,14 @@ class Verification::Residence
   end
 
   def store_failed_attempt
-    FailedCensusCall.create({
+    FailedCensusCall.create(
       user: user,
       document_number: document_number,
-      document_type:   document_type,
-      date_of_birth:   date_of_birth,
-      postal_code:     postal_code,
-      district_code:   district_code
-    })
+      document_type: document_type,
+      date_of_birth: date_of_birth,
+      postal_code: postal_code,
+      district_code: district_code
+    )
   end
 
   def geozone

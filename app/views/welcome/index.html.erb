@@ -5,18 +5,22 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% cache ["welcome_index_20170623", user_signed_in?] do %>
+<% cache ["welcome_index_20170630", user_signed_in?] do %>
   <div class="welcome">
 
     <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
 
     <div class="no-margin-top">
-      <%= render "budgets_module" %>
+      <% if Budget.balloting.any? %>
+        <%= render "budgets_module_balloting" %>
+      <% elsif Budget.reviewing_ballots.any? %>
+        <%= render "budgets_module_reviewing" %>
+      <% else %>
+        <%= render "budgets_module_finished" %>
+      <% end %>
     </div>
 
-    <%= render "budgets_module_extra" %>
-
-    <%= render "polls_reports" %>
+    <%= render "cards" %>
 
     <%= render "features" %>
 

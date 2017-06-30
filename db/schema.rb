@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613203256) do
+ActiveRecord::Schema.define(version: 20170628211547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,8 +125,9 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_groups", force: :cascade do |t|
@@ -142,9 +143,18 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.string  "name",     limit: 50
     t.integer "price",    limit: 8
     t.string  "slug"
+    t.integer "population"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
+
+  create_table "budget_investment_milestones", force: :cascade do |t|
+    t.integer  "investment_id"
+    t.string   "title",         limit: 80
+    t.text     "description"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
@@ -468,13 +478,14 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.date     "allegations_end_date"
     t.date     "result_publication_date"
     t.datetime "hidden_at"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.text     "summary"
     t.boolean  "debate_phase_enabled",       default: false
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
+    t.boolean  "published",                  default: true
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -981,7 +992,6 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   create_table "tags", force: :cascade do |t|
     t.string  "name",                     limit: 40
     t.integer "taggings_count",                      default: 0
-    t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
@@ -1078,7 +1088,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.boolean  "email_digest",                                                default: true
     t.boolean  "email_on_direct_message",                                     default: true
     t.boolean  "official_position_badge",                                     default: false
-    t.datetime "password_changed_at",                                         default: '2016-11-03 12:11:02', null: false
+    t.datetime "password_changed_at",                                         default: '2017-06-22 11:21:30', null: false
     t.boolean  "created_from_signature",                                      default: false
     t.boolean  "officing_voter",                                              default: false
     t.text     "former_users_data_log",                                       default: ""

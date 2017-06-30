@@ -88,7 +88,7 @@ feature 'Proposals' do
     end
   end
 
-  context "Embedded video"  do
+  context "Embedded video" do
 
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
@@ -98,7 +98,7 @@ feature 'Proposals' do
     end
 
     scenario "Show Vimeo video" do
-      proposal = create(:proposal, video_url: "https://vimeo.com/7232823" )
+      proposal = create(:proposal, video_url: "https://vimeo.com/7232823")
       visit proposal_path(proposal)
       expect(page).to have_selector("div[id='js-embedded-video']")
       expect(page.html).to include 'https://player.vimeo.com/video/7232823'
@@ -1072,7 +1072,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_max", with: 1.day.ago
           click_button "Filter"
 
           expect(page).to have_content("There are 2 citizen proposals")
@@ -1119,7 +1119,7 @@ feature 'Proposals' do
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
           select Setting['official_level_1_name'], from: "advanced_search_official_level"
-          select "Last 24 hours",   from: "js-advanced-search-date-min"
+          select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
 
@@ -1155,7 +1155,7 @@ feature 'Proposals' do
 
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago.to_date
-          fill_in "advanced_search_date_max", with: 1.days.ago.to_date
+          fill_in "advanced_search_date_max", with: 1.day.ago.to_date
           click_button "Filter"
 
           expect(page).to have_content("citizen proposals cannot be found")
@@ -1392,8 +1392,8 @@ feature 'Proposals' do
   context "Summary" do
 
     scenario "Displays proposals grouped by category" do
-      create(:tag, kind: 'category', name: 'Culture')
-      create(:tag, kind: 'category', name: 'Social Services')
+      create(:tag, :category, name: 'Culture')
+      create(:tag, :category, name: 'Social Services')
 
       3.times { create(:proposal, tag_list: 'Culture') }
       3.times { create(:proposal, tag_list: 'Social Services') }
@@ -1436,7 +1436,7 @@ feature 'Proposals' do
     end
 
     scenario "Displays a maximum of 3 proposals per category" do
-      create(:tag, kind: 'category', name: 'culture')
+      create(:tag, :category, name: 'culture')
       4.times { create(:proposal, tag_list: 'culture') }
 
       visit summary_proposals_path
@@ -1445,7 +1445,7 @@ feature 'Proposals' do
     end
 
     scenario "Orders proposals by votes" do
-      create(:tag, kind: 'category', name: 'culture')
+      create(:tag, :category, name: 'culture')
       create(:proposal, title: 'Best',   tag_list: 'culture').update_column(:confidence_score, 10)
       create(:proposal, title: 'Worst',  tag_list: 'culture').update_column(:confidence_score, 2)
       create(:proposal, title: 'Medium', tag_list: 'culture').update_column(:confidence_score, 5)
@@ -1457,7 +1457,7 @@ feature 'Proposals' do
     end
 
     scenario "Displays proposals from last week" do
-      create(:tag, kind: 'category', name: 'culture')
+      create(:tag, :category, name: 'culture')
       proposal1 = create(:proposal, tag_list: 'culture', created_at: 1.day.ago)
       proposal2 = create(:proposal, tag_list: 'culture', created_at: 5.days.ago)
       proposal3 = create(:proposal, tag_list: 'culture', created_at: 8.days.ago)

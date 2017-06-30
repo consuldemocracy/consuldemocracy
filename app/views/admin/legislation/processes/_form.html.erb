@@ -39,6 +39,9 @@
                         class: "js-calendar-full",
                         id: "end_date" %>
     </div>
+    <div class="small-12 medium-2 column">
+      <%= f.check_box :published, checked: @process.published?, label: t('admin.legislation.processes.form.enabled') %>
+    </div>
 
     <div class="small-12 column">
       <hr>

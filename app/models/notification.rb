@@ -7,7 +7,6 @@ class Notification < ActiveRecord::Base
   scope :not_emailed, -> { where(emailed_at: nil) }
   scope :for_render,  -> { includes(:notifiable) }
 
-
   def timestamp
     notifiable.created_at
   end

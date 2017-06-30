@@ -275,8 +275,6 @@ feature 'Debates' do
     expect(page.html).to_not include "<script>alert('hey')</script>"
   end
 
-
-
   scenario 'Update should not be posible if logged user is not the author' do
     debate = create(:debate)
     expect(debate).to be_editable
@@ -693,7 +691,7 @@ feature 'Debates' do
           click_link "Advanced search"
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_max", with: 1.day.ago
           click_button "Filter"
 
           within("#debates") do
@@ -740,7 +738,7 @@ feature 'Debates' do
           click_link "Advanced search"
           fill_in "Write the text", with: "Schwifty"
           select Setting['official_level_1_name'], from: "advanced_search_official_level"
-          select "Last 24 hours",   from: "js-advanced-search-date-min"
+          select "Last 24 hours", from: "js-advanced-search-date-min"
 
           click_button "Filter"
 
@@ -773,7 +771,7 @@ feature 'Debates' do
 
           select "Customized", from: "js-advanced-search-date-min"
           fill_in "advanced_search_date_min", with: 7.days.ago
-          fill_in "advanced_search_date_max", with: 1.days.ago
+          fill_in "advanced_search_date_max", with: 1.day.ago
           click_button "Filter"
 
           within "#js-advanced-search" do
@@ -932,10 +930,10 @@ feature 'Debates' do
       login_as(author)
 
       debate1 = create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
-      debate2 = create(:debate, title: "Second debate has 2 votes",  cached_votes_up: 2)
-      debate3 = create(:debate, title: "Third debate has 3 votes",  cached_votes_up: 3)
-      debate4 = create(:debate, title: "This one has 4 votes", description: "This is the fourth debate",  cached_votes_up: 4)
-      debate5 = create(:debate, title: "Fifth debate has 5 votes",  cached_votes_up: 5)
+      debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
+      debate3 = create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
+      debate4 = create(:debate, title: "This one has 4 votes", description: "This is the fourth debate", cached_votes_up: 4)
+      debate5 = create(:debate, title: "Fifth debate has 5 votes", cached_votes_up: 5)
       debate6 = create(:debate, title: "Sixth debate has 6 votes", description: 'This is the sixth debate',  cached_votes_up: 6)
       debate7 = create(:debate, title: "This has seven votes, and is not suggest", description: 'This is the seven', cached_votes_up: 7)
 
@@ -1010,7 +1008,6 @@ feature 'Debates' do
       expect(page).to have_content("Featured")
     end
   end
-
 
   scenario 'Index do not show featured debates if none is marked as featured' do
     admin = create(:administrator)

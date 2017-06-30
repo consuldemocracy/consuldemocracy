@@ -5,7 +5,7 @@ feature 'Budget Investments' do
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
-  let(:group)   { create(:budget_group, name: "Health", budget: budget) }
+  let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
@@ -402,6 +402,37 @@ feature 'Budget Investments' do
     expect(page).to have_content(investment.unfeasibility_explanation)
   end
 
+  scenario "Show milestones", :js do
+    user = create(:user)
+    investment = create(:budget_investment)
+    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show")
+
+    login_as(user)
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content(milestone.title)
+      expect(page).to have_content(milestone.description)
+      expect(page).to have_content("Published #{milestone.created_at.strftime("%d/%m/%Y")}")
+    end
+  end
+
+  scenario "Show no_milestones text", :js do
+    user = create(:user)
+    investment = create(:budget_investment)
+
+    login_as(user)
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content("Don't have defined milestones")
+    end
+  end
+
   context "Destroy" do
 
     scenario "Admin cannot destroy budget investments" do
@@ -635,11 +666,11 @@ feature 'Budget Investments' do
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York")
 
-      sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)
-      sp2 = create(:budget_investment, :selected, price:     10, heading: global_heading)
-      sp3 = create(:budget_investment, :selected, price:    100, heading: global_heading)
-      sp4 = create(:budget_investment, :selected, price:   1000, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :selected, price:  10000, heading: carabanchel_heading)
+      sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
+      sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
+      sp3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
+      sp4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
+      sp5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
       sp6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
 
       login_as(user)

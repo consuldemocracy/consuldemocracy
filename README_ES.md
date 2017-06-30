@@ -17,6 +17,7 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![HTML issues](https://rocketvalidator.com/badges/html_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=html)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
 Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana Consul, creada originariamente por el Ayuntamiento de Madrid.
 
@@ -53,7 +54,7 @@ Para ejecutar la aplicación en local:
 bin/rails s
 ```
 
-Prerequisitos para los tests: tener instalado PhantomJS >= 1.9.8
+Prerequisitos para los tests: tener instalado PhantomJS >= 2.1.1
 
 Para ejecutar los tests:
 
@@ -66,6 +67,8 @@ Si añades código SCSS puedes revisarlo con:
 ```
 scss-lint
 ```
+
+Para mantener el nivel de accesibilidad, si añades colores nuevos utiliza un [Comprobador de contraste de color](http://webaim.org/resources/contrastchecker/) (WCAG AA es obligatorio, WCAG AAA es recomendable)
 
 Si trabajas en código coffeescript puedes revisarlo con [coffeelint](http://www.coffeelint.org/) (instalalo con `npm install -g coffeelint`) :
 

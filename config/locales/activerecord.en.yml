@@ -10,6 +10,9 @@ en:
       budget/investment:
         one: "Investment"
         other: "Investments"
+      budget/investment/milestone:
+        one: "milestone"
+        other: "milestones"
       comment:
         one: "Comment"
         other: "Comments"
@@ -152,6 +155,9 @@ en:
         title: "Title"
         location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
+      budget/investment/milestone:
+        title: "Title"
+        description: "Description"
       comment:
         body: "Comment"
         user: "User"

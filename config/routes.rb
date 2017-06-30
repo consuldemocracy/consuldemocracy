@@ -79,6 +79,7 @@ Rails.application.routes.draw do
 
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
   get 'presupuestos', to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
+  get "presupuestos/:id/estadisticas", to: "budgets/stats#show", as: 'custom_budget_stats'
 
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
@@ -93,6 +94,7 @@ Rails.application.routes.draw do
     resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
 
     resource :results, only: :show, controller: "budgets/results"
+    resource :stats, only: :show, controller: "budgets/stats"
   end
 
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
@@ -177,10 +179,12 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :result_publication
+      member do
+        get :debate
+        get :draft_publication
+        get :allegations
+        get :result_publication
+      end
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
       end
@@ -267,15 +271,21 @@ Rails.application.routes.draw do
     resources :probes, only: [:index, :show]
 
     resources :budgets do
+      member do
+        put :calculate_winners
+      end
+
       resources :budget_groups do
         resources :budget_headings do
         end
       end
 
       resources :budget_investments, only: [:index, :show, :edit, :update] do
+        resources :budget_investment_milestones
         member { patch :toggle_selection }
       end
     end
+
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
 

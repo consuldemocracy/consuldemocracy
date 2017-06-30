@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
-  scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :by_document,    ->(document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
       username:  auth.info.name || auth.uid,
       email: oauth_email,
       oauth_email: oauth_email,
-      password: Devise.friendly_token[0,20],
+      password: Devise.friendly_token[0, 20],
       terms_of_service: '1',
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
@@ -186,7 +186,7 @@ class User < ActiveRecord::Base
 
   def has_official_email?
     domain = Setting['email_domain_for_officials']
-    email.present? && ( (email.end_with? "@#{domain}") || (email.end_with? ".#{domain}") )
+    email.present? && ((email.end_with? "@#{domain}") || (email.end_with? ".#{domain}"))
   end
 
   def display_official_position_badge?

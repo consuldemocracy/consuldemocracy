@@ -1,0 +1,45 @@
+<div class="expanded header">
+  <div class="row no-margin-top padding">
+    <div class="small-12 medium-8 column">
+      <h1>Presupuestos participativos 2017</h1>
+      <div class="small-12 medium-11">
+        <p class="lead">
+          El 30 de junio se cerró la votación final. Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="small-12 medium-3 medium-offset-1 column margin">
+      <div class="budgets-calendar-minimal padding text-center">
+        <span class="day">Resultados<br>13 julio</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="row margin-top">
+        <div class="small-12 medium-4 column">
+          <%= link_to "Ver proyectos de toda la ciudad",
+                      custom_budget_investments_path(budget_id: Budget.last.to_param,
+                        id: Budget::Group.first,
+                        heading_id: Budget::Heading.first.to_param,
+                        filter: "selected"),
+                        class: "button expanded large city" %>
+        </div>
+        <div class="small-12 medium-4 column end">
+          <%= link_to "Ver proyectos de distritos",
+                      custom_budget_group_path(Budget.last, Budget::Group.last,
+                        filter: @current_filter),
+                        class: "button expanded large" %>
+        </div>
+        <!-- When uncomment this block remove the "end" class on the previous <div>
+        <div class="small-12 medium-4 column">
+          <%# link_to "Ver estadísticas de participación",
+                      custom_budget_stats_path(id: Budget.last.to_param),
+                      class: "button expanded large stats" %>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
