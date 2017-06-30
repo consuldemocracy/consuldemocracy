@@ -42,7 +42,7 @@ module Devise
     module PasswordExpirable
       def need_change_password?
         self.administrator? && password_expired?
-      end 
+      end
 
       def password_expired?
         self.password_changed_at < self.expire_password_after.ago

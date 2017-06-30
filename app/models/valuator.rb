@@ -1,4 +1,4 @@
-class Valuator < ActiveRecord::Base
+class Valuator < ApplicationRecord
   belongs_to :user, touch: true
   delegate :name, :email, :name_and_email, to: :user
 

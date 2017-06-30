@@ -1,5 +1,5 @@
 class Budget
-  class Heading < ActiveRecord::Base
+  class Heading < ApplicationRecord
     belongs_to :group
 
     has_many :investments

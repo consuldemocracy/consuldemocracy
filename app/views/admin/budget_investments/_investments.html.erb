@@ -22,7 +22,7 @@
         <strong><%= investment.id %></strong>
       </td>
       <td>
-        <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params)) %>
+        <%= link_to investment.title, admin_budget_budget_investment_path(budget_id: @budget.id, id: investment.id, params: Budget::Investment.filter_params(params).to_h) %>
       </td>
       <td class="text-center">
         <%= investment.total_votes %>

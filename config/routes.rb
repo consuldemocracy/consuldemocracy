@@ -153,7 +153,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    root to: "dashboard#index"
+    root to: "dashboard#index", as: "root"
     resources :organizations, only: :index do
       get :search, on: :collection
       member do
@@ -308,7 +308,7 @@ Rails.application.routes.draw do
   end
 
   namespace :moderation do
-    root to: "dashboard#index"
+    root to: "dashboard#index", as: "root"
 
     resources :users, only: :index do
       member do
@@ -334,7 +334,7 @@ Rails.application.routes.draw do
   end
 
   namespace :valuation do
-    root to: "budgets#index"
+    root to: "budgets#index", as: "root"
 
     resources :spending_proposals, only: [:index, :show, :edit] do
       patch :valuate, on: :member
@@ -348,7 +348,7 @@ Rails.application.routes.draw do
   end
 
   namespace :management do
-    root to: "dashboard#index"
+    root to: "dashboard#index", as: "root"
 
     resources :document_verifications, only: [:index, :new, :create] do
       post :check, on: :collection
@@ -403,7 +403,7 @@ Rails.application.routes.draw do
     end
     resource :residence, controller: "residence", only: [:new, :create]
     resources :voters, only: [:new, :create]
-    root to: "dashboard#index"
+    root to: "dashboard#index", as: "root"
   end
 
   # GraphQL

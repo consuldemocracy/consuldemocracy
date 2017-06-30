@@ -1,5 +1,5 @@
 class Poll
-  class Voter < ActiveRecord::Base
+  class Voter < ApplicationRecord
     belongs_to :poll
     belongs_to :user
     belongs_to :geozone

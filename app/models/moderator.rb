@@ -1,4 +1,4 @@
-class Moderator < ActiveRecord::Base
+class Moderator < ApplicationRecord
   belongs_to :user, touch: true
   delegate :name, :email, to: :user
 

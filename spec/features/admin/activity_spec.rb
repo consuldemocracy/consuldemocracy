@@ -15,7 +15,9 @@ feature 'Admin activity' do
 
       within("#proposal_#{proposal.id}") do
         click_link 'Hide'
+
       end
+      expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
 
@@ -78,6 +80,7 @@ feature 'Admin activity' do
       within("#debate_#{debate.id}") do
         click_link 'Hide'
       end
+      expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path
 
@@ -140,7 +143,9 @@ feature 'Admin activity' do
 
       within("#comment_#{comment.id}") do
         click_link 'Hide'
+        expect(page).to have_css(".faded")
       end
+      expect(page).to have_css('.faded')
 
       visit admin_activity_path
 
@@ -202,6 +207,7 @@ feature 'Admin activity' do
 
       within("#proposal_#{proposal.id}") do
         click_link 'Hide author'
+        expect(current_path).to eq(debates_path)
       end
 
       visit admin_activity_path
