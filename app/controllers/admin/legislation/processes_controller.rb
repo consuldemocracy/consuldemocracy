@@ -49,7 +49,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :debate_phase_enabled,
         :allegations_phase_enabled,
         :draft_publication_enabled,
-        :result_publication_enabled
+        :result_publication_enabled,
+        :published
       )
     end
 end
