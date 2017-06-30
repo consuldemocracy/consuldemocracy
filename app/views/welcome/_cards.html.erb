@@ -2,11 +2,11 @@
   <% if Budget.finished.any? %>
     <div class="small-12 medium-4 column margin-bottom">
       <figure class="figure-card">
-        <%= link_to "budgets_stats_path", title: t("welcome.budgets.stats.link") do %>
+        <%= link_to custom_budget_stats_path, title: t("welcome.budgets.stats.link") do %>
           <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
         <% end %>
         <figcaption>
-          <%= link_to "budgets_stats_path", title: t("welcome.budgets.stats.link") do %>
+          <%= link_to custom_budget_stats_path, title: t("welcome.budgets.stats.link") do %>
             <span><%= t("welcome.budgets.stats.label") %></span><br>
             <p class="title"><%= t("welcome.budgets.stats.title") %></p>
           <% end %>
@@ -14,7 +14,7 @@
       </figure>
       <p><%= t("welcome.budgets.stats.text") %></p>
       <p>
-        <%= link_to t("welcome.budgets.stats.link"), "budgets_stats_path" %>
+        <%= link_to t("welcome.budgets.stats.link"), custom_budget_stats_path %>
       </p>
     </div>
   <% end %>
