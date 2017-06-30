@@ -192,7 +192,7 @@ class Budget
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("budgets_stats/#{@budget.id}/#{key}/v2", &block)
+        Rails.cache.fetch("budgets_stats/#{@budget.id}/#{key}/v3", &block)
       end
   end
 end
