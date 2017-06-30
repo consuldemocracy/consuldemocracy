@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w{proposals debates budget_investments comments}, only: :show
+  has_filters %w{proposals debates budget_investments comments follows}, only: :show
 
   load_and_authorize_resource
   helper_method :author?
@@ -17,7 +17,8 @@ class UsersController < ApplicationController
                           proposals: Proposal.where(author_id: @user.id).count,
                           debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
-                          comments: only_active_commentables.count)
+                          comments: only_active_commentables.count,
+                          follows: @user.follows.count)
     end
 
     def load_filtered_activity
@@ -26,7 +27,8 @@ class UsersController < ApplicationController
       when "proposals" then load_proposals
       when "debates"   then load_debates
       when "budget_investments" then load_budget_investments
-      when "comments" then load_comments
+      when "comments"  then load_comments
+      when "follows"  then load_follows
       else load_available_activity
       end
     end
@@ -44,6 +46,9 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:comments] > 0
         load_comments
         @current_filter = "comments"
+      elsif  @activity_counts[:follows] > 0
+        load_follows
+        @current_filter = "follows"
       end
     end
 
@@ -63,8 +68,9 @@ class UsersController < ApplicationController
       @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
 
-    def load_interests
-      @user.interests
+    def load_follows
+      @followable_types = @user.follows.pluck(:followable_type).uniq
+      @follows = @user.follows
     end
 
     def valid_access?

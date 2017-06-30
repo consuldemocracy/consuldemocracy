@@ -38,10 +38,6 @@
               <% end %>
             <% end %>
           <% end %>
-          <!-- ROR Add this li above when the functionality exists-->
-          <li>
-            Add translate
-          <li>
           <%= t("users.show.no_activity") if @activity_counts.values.inject(&:+) == 0 %>
         </ul>
 

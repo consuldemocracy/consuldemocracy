@@ -52,6 +52,18 @@ module FollowsHelper
     "unfollow-drop-#{entity_full_name(followable)}-#{followable.id}"
   end
 
+  def entity_title(title)
+    entity = title.gsub('::', '/').downcase
+    t("activerecord.models.#{entity}.other")
+  end
+
+  def entity_icon(entity)
+    case entity
+    when "Proposal" then "proposals"
+    when "Budget::Investment" then "budget"
+    end
+  end
+
   private
 
     def followed?(followable)
