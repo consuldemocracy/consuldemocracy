@@ -105,7 +105,7 @@ module Budgets
           seed = Float(seed) rescue 0
           session[:random_seed] = seed
           params[:random_seed] = seed
-        end
+        else
           Budget::Investment.connection.execute("select setseed(#{seed})")
         end
       end
