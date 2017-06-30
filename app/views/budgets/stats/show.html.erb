@@ -135,9 +135,9 @@
           <tbody>
             <% all_ages_count = @stats[:age_groups].values.sum.to_f %>
             <% @stats[:age_groups].each do |age_group, count| %>
-              <tr id="age_group_<%= age_group.gsub(" - ", "_to_") %>">
+              <tr id="age_group_<%= age_group.gsub(" - ", "_to_").gsub("+ ", "up_to_") %>">
                 <td class="border-right">
-                  <%= age_group.gsub("+", t("budgets.stats.more_than")) + t("budgets.stats.years") %>
+                  <%= age_group.gsub("+", t("budgets.stats.more_than")) + " " + t("budgets.stats.years") %>
                 </td>
                 <td class="border-left">
                   <strong>
