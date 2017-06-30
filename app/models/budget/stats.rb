@@ -31,7 +31,7 @@ class Budget
       end
 
       def total_votes
-        stats_cache("total_votes") { @budget.ballots.map(&:lines).count }
+        stats_cache("total_votes") { @budget.ballots.pluck(:ballot_lines_count).inject(0) { |sum, x| sum + x } }
       end
 
       def total_selected_investments
