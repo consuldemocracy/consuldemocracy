@@ -9,7 +9,7 @@
       <p><%= t("welcome.budgets.text_reviewing_html") %></p>
       <div class="row">
         <div class="small-12 medium-6 column">
-          <%# link_to t("welcome.budgets.button_stats"), custom_budget_stats_path, class: "button expanded large" %>
+          <%# link_to t("welcome.budgets.button_stats"), custom_budget_stats_path(id: Budget.last.to_param), class: "button expanded large" %>
           <!-- when uncomment the line before, remove the "small-centered" class in the next <div> -->
         </div>
         <div class="small-12 medium-6 column small-centered">
