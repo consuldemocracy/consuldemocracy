@@ -31,7 +31,7 @@ class Budget
       end
 
       def total_votes
-        stats_cache("total_votes") { @budget.ballots.count }
+        stats_cache("total_votes") { @budget.ballots.map(&:lines).count }
       end
 
       def total_selected_investments
