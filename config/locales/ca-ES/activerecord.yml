@@ -4,6 +4,9 @@ ca:
       activity:
         one: "activitat"
         other: "activitats"
+      budget:
+        one: "Pressupost participatiu"
+        other: "Pressupostos participatius"
     attributes:
       budget/investment/milestone:
         title: "Títol"
