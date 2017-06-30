@@ -1,0 +1,33 @@
+es:
+  admin:
+    banners:
+      index:
+        create: Crear un banner
+        edit: Editar banner
+        delete: Eliminar banner
+      edit:
+        editing: Editar el banner
+      errors:
+        form:
+          error:
+            one: "error impidió guardar el banner"
+            other: 'errores impidieron guardar el banner.'
+      new:
+        creating: Crear banner
+    budget_investments:
+      index:
+        no_admin_assigned: Sin admin asignado
+        table_valuation_finished: "Ev. Fin."
+    legislation:
+      processes:
+        create:
+          notice: 'Proceso creado correctamente. <a href="%{link}">Haz click para verlo</a>'
+        update:
+          notice: 'Proceso actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
+        form:
+          use_markdown: Usa Markdown para formatear el texto
+      draft_versions:
+        create:
+          notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
+        update:
+          notice: 'Borrador actualizado correctamente. <a href="%{link}">Haz click para verlo</a>'
