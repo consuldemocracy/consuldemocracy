@@ -34,8 +34,8 @@ class Budget
         stats_cache("total_votes") { @budget.ballots.count }
       end
 
-      def total_feasible_investments
-        stats_cache("total_feasible_investments") { @budget.investments.feasible.count }
+      def total_selected_investments
+        stats_cache("total_selected_investments") { @budget.investments.selected.count }
       end
 
       def total_unfeasible_investments
