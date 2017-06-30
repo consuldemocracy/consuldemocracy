@@ -10,6 +10,9 @@ es:
       budget/investment:
         one: "Proyecto de gasto"
         other: "Proyectos de gasto"
+      budget/investment/milestone:
+        one: "hito"
+        other: "hitos"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -150,6 +153,9 @@ es:
       comment:
         body: "Comentario"
         user: "Usuario"
+      budget/investment/milestone:
+        title: "Título"
+        description: "Descripción"
       debate:
         author: "Autor"
         description: "Opinión"

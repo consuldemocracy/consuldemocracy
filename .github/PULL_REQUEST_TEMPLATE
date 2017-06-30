@@ -1,5 +1,3 @@
-PR_TITLE_GOES_HERE
-
 Where
 =====
 * **Related Issue:** LINK_OR_#_REF
@@ -7,24 +5,24 @@ Where
 
 What
 ====
-> Whats the objective of this changes ?
+- Whats the objective of this changes ?
 
 How
 ===
-> How you implemented/achieved the objective ?
+- How you implemented/achieved the objective ?
 
 Screenshots
 ===========
-> If changes affect UI just show them drag&dropping images here
+- If changes affect UI just show them drag&dropping images here
 
 Test
 ====
-> Is manual test needed or you just increased/fixed coverage?
+- Is manual test needed or you just increased/fixed coverage?
 
 Deployment
 ==========
-> Any details to remember when this feature is deployed?
+- Any details to remember when this feature is deployed?
 
 Warnings
 ========
-> Some caveats or important things to notice?
+- Some caveats or important things to notice?

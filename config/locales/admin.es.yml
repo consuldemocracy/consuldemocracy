@@ -99,10 +99,15 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
+        population: Población
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
         table_amount: Cantidad
+        table_population: Población
+      winners:
+        calculate: Calcular propuestas ganadoras
+        calculated: Calculando ganadoras, puede tardar un minuto.
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -157,6 +162,8 @@ es:
         edit_dossier: Editar informe
         tags: Etiquetas
         undefined: Sin definir
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
       edit:
         classification: Clasificación
         assigned_valuators: Evaluadores
@@ -168,6 +175,24 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Título"
+        table_description: "Descripción"
+        table_actions: "Acciones"
+        delete: "Eliminar hito"
+        no_milestones: "No hay hitos definidos"
+      new:
+        creating: Crear hito
+      edit:
+        title: Editar hito
+      create:
+        notice: Nuevo hito creado con éxito!
+      update:
+        notice: Hito actualizado
+      delete:
+        notice: Hito borrado correctamente
     comments:
       index:
         filter: Filtro
@@ -917,10 +942,8 @@ es:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
-      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
-      update: Actualizar Tema
     users:
       columns:
         name: Nombre

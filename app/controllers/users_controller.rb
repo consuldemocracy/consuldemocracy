@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   private
+
     def set_activity_counts
       @activity_counts = HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,

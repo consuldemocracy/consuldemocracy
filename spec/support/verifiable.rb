@@ -67,7 +67,6 @@ shared_examples_for "verifiable" do
         user3 = create(:user, verified_at: nil, confirmed_phone: nil)
         user4 = create(:user, verified_at: Time.current, residence_verified_at: Time.current, unconfirmed_phone: "123456789", confirmed_phone: "123456789")
 
-
         expect(model.incomplete_verification).to include(user1)
         expect(model.incomplete_verification).to include(user2)
         expect(model.incomplete_verification).to_not include(user3)

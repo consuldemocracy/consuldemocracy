@@ -32,7 +32,7 @@ describe :officer do
       poll_2 = create(:poll)
 
       booth_assignment_1 = create(:poll_booth_assignment, poll: poll_1)
-      booth_assignment_2  = create(:poll_booth_assignment, poll: poll_2)
+      booth_assignment_2 = create(:poll_booth_assignment, poll: poll_2)
 
       create(:poll_officer_assignment, booth_assignment: booth_assignment_1, officer: officer, date: poll_1.starts_at)
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)
@@ -48,7 +48,7 @@ describe :officer do
 
       poll_1 = create(:poll, ends_at: 1.day.ago)
       poll_2 = create(:poll, ends_at: 10.days.from_now)
-      poll_3 = create(:poll, ends_at: 10.day.ago)
+      poll_3 = create(:poll, ends_at: 10.days.ago)
 
       [poll_1, poll_2, poll_3].each do |p|
         create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: p))
@@ -92,7 +92,7 @@ describe :officer do
       poll_2 = create(:poll)
 
       booth_assignment_1 = create(:poll_booth_assignment, poll: poll_1)
-      booth_assignment_2  = create(:poll_booth_assignment, poll: poll_2)
+      booth_assignment_2 = create(:poll_booth_assignment, poll: poll_2)
 
       create(:poll_officer_assignment, booth_assignment: booth_assignment_1, officer: officer, date: poll_1.starts_at)
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)
@@ -108,7 +108,7 @@ describe :officer do
 
       poll_1 = create(:poll, ends_at: 1.day.ago)
       poll_2 = create(:poll, ends_at: 10.days.from_now)
-      poll_3 = create(:poll, ends_at: 10.day.ago)
+      poll_3 = create(:poll, ends_at: 10.days.ago)
 
       [poll_1, poll_2, poll_3].each do |p|
         create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: p), final: true)

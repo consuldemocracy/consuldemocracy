@@ -8,7 +8,7 @@ feature 'Organizations' do
 
     visit new_organization_registration_path
 
-    fill_in 'user_organization_attributes_name',  with: 'Greenpeace'
+    fill_in 'user_organization_attributes_name', with: 'Greenpeace'
     fill_in 'user_organization_attributes_responsible_name', with: 'Dorothy Stowe'
     fill_in 'user_email',                         with: 'green@peace.com'
     fill_in 'user_password',                      with: 'greenpeace'
@@ -45,7 +45,7 @@ feature 'Organizations' do
   scenario 'Create organization too fast' do
     allow(InvisibleCaptcha).to receive(:timestamp_threshold).and_return(Float::INFINITY)
     visit new_organization_registration_path
-    fill_in 'user_organization_attributes_name',  with: 'robot'
+    fill_in 'user_organization_attributes_name', with: 'robot'
     fill_in 'user_organization_attributes_responsible_name', with: 'Robots are more responsible than humans'
     fill_in 'user_email',                         with: 'robot@robot.com'
     fill_in 'user_password',                      with: 'destroyallhumans'

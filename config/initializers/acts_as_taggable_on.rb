@@ -47,6 +47,13 @@ module ActsAsTaggableOn
 
     has_many :proposals, through: :taggings, source: :taggable, source_type: 'Proposal'
     has_many :debates, through: :taggings, source: :taggable, source_type: 'Debate'
+
+    scope :category, -> { where(kind: "category") }
+
+    def category?
+      kind == "category"
+    end
+
     include Graphqlable
 
     scope :public_for_api, -> do
@@ -70,7 +77,7 @@ module ActsAsTaggableOn
     end
 
     def self.category_names
-      Tag.where("kind = 'category'").pluck(:name)
+      Tag.category.pluck(:name)
     end
 
     def self.spending_proposal_tags

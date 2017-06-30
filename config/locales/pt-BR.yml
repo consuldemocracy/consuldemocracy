@@ -1267,8 +1267,8 @@ pt-BR:
       proposal_external_url: Link para documentação adicional
       proposal_question: Questão proposta
       proposal_question_example_html: 'Precisa ser sumarizado em uma questão com resposta
-        Sim ou Não. <em>Ex.: ''Você concorda com a mudança da Calle Mayor como via
-        exclusiva de pedestres?''</em>'
+        Sim ou Não. <br>Ex.: ''Você concorda com a mudança da Calle Mayor como via
+        exclusiva de pedestres?'
       proposal_responsible_name: Nome completo da pessoa que está submetendo a proposta
       proposal_responsible_name_note: "(indivudualmente ou como representante de um
         coletivo; não será mostrado publicamente)"

@@ -554,7 +554,7 @@ en:
           one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
           other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
         message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'"
-        see_all: "Ver todos"
+        see_all: "See all"
       budget_investment:
         found:
           one: "There is an investment with the term '%{query}', you can participate in it instead of opening a new one."

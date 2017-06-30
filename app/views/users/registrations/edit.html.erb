@@ -18,8 +18,10 @@
 
     <div class="small-12 column">
       <%= f.label :password, t("devise_views.users.registrations.edit.password_label") %>
-      <p class="note"><%= t("devise_views.users.registrations.edit.leave_blank") %></p>
-      <%= f.password_field :password, autocomplete: "off", label: false, placeholder: t("devise_views.users.registrations.edit.password_label") %>
+      <p class="help-text" id="password-help-text"><%= t("devise_views.users.registrations.edit.leave_blank") %></p>
+      <%= f.password_field :password, autocomplete: "off", label: false,
+                                      placeholder: t("devise_views.users.registrations.edit.password_label"),
+                                      aria: {describedby: "password-help-text"} %>
     </div>
 
     <div class="small-12 column">
@@ -29,8 +31,10 @@
 
     <div class="small-12 column">
       <%= f.label :current_password, t("devise_views.users.registrations.edit.current_password_label") %>
-      <p class="note"><%= t("devise_views.users.registrations.edit.need_current") %></p>
-      <%= f.password_field :current_password, label: false, autocomplete: "off", placeholder:  t("devise_views.users.registrations.edit.current_password_label") %>
+      <p class="help-text" id="current-password-help-text"><%= t("devise_views.users.registrations.edit.need_current") %></p>
+      <%= f.password_field :current_password, label: false, autocomplete: "off",
+                                              placeholder: t("devise_views.users.registrations.edit.current_password_label"),
+                                              aria: {describedby: "current-password-help-text"} %>
     </div>
 
     <div class="small-12 column">

@@ -9,6 +9,13 @@ module TracksHelper
       I18n.t("tracking.user_data.gender.#{user.gender}")
     else
       I18n.t("tracking.user_data.gender.unknown")
+  end
+
+  def track_event(data = {})
+    track_data = ""
+    prefix = " data-track-event-"
+    data.each do |key, value|
+      track_data = track_data + prefix + key.to_s + '=' + value + " "
     end
   end
 

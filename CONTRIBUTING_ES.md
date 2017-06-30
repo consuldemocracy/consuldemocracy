@@ -2,10 +2,11 @@
 
 ## Miembros del equipo
 
-* Raimond Garcia [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
+* Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
 * Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
 * Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto Garcia Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto García Cabeza [github](https://github.com/decabeza) | [twitter](https://twitter.com/decabeza)
+* Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
 
 ## Código de conducta
 
@@ -34,7 +35,10 @@ Cuando quieras resolver una incidencia mediante código:
 * Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
 * Asegúrate de que los tests pasan (y escribe más tests para probar la nueva funcionalidad si fuera preciso)
 * Sigue estas [buenas prácticas](https://github.com/styleguide/ruby)
-* Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando
+* Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando.
+
+**¿Es tu primer Pull Request?** Puedes aprender en este curso gratuito (en inglés) sobre [cómo contribuir a un proyecto OpenSource en GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+
 
 ## Limpiar
 

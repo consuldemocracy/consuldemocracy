@@ -77,7 +77,7 @@ describe 'ActsAsTaggableOn' do
       end
 
       it "returns tags whose kind is 'category' and have at least one tagging whose taggable is not hidden" do
-        tag = create(:tag, kind: 'category')
+        tag = create(:tag, :category)
         proposal = create(:proposal)
         proposal.tag_list.add(tag)
         proposal.save

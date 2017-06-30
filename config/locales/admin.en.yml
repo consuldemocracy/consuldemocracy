@@ -99,10 +99,15 @@ en:
         heading: Heading name
         add_heading: Add heading
         amount: Amount
+        population: Population
         save_heading: Save heading
         no_heading: This group has no assigned heading.
         table_heading: Heading
         table_amount: Amount
+        table_population: Population
+      winners:
+        calculate: Calculate Winner Investments
+        calculated: Winners being calculated, it may take a minute.
     budget_investments:
       index:
         heading_filter_all: All headings
@@ -157,6 +162,8 @@ en:
         edit_dossier: Edit dossier
         tags: Tags
         undefined: Undefined
+        milestone: Milestone
+        new_milestone: Create new milestone
       edit:
         classification: Clasification
         assigned_valuators: Valuators
@@ -168,6 +175,24 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
       search_unfeasible: Search unfeasible
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Title"
+        table_description: "Description"
+        table_actions: "Actions"
+        delete: "Delete milestone"
+        no_milestones: "Don't have defined milestones"
+      new:
+        creating: Create milestone
+      edit:
+        title: Edit milestone
+      create:
+        notice: New milestone created successfully!
+      update:
+        notice: Milestone updated successfully
+      delete:
+        notice: Milestone successfully deleted
     comments:
       index:
         filter: Filter
@@ -917,10 +942,8 @@ en:
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
-      mark_as_featured: Propose topic upon creating proposal
       name:
         placeholder: Type the name of the topic
-      update: Update Topic
     users:
       columns:
         name: Name
