@@ -1,0 +1,16 @@
+es:
+  budgets:
+    ballots:
+      show:
+        remaining: "Te quedan <span>%{amount}</span> para invertir"
+      reasons_for_not_balloting:
+        organization: Las organizaciones no pueden votar.
+        not_selected: No se pueden votar propuestas inviables.
+        no_ballots_allowed: El periodo de votación está cerrado.
+        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+    investments:
+      index:
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
+          price: Por coste
