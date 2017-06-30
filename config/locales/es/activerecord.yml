@@ -150,8 +150,25 @@ es:
         signable_id: "ID Propuesta ciudadana/Propuesta inversión"
         document_numbers: "Números de documentos"
       site_customization/page:
+        content: Contenido
+        created_at: Creada
+        subtitle: Subtítulo
         slug: Slug
+        status: Estado
+        title: Título
+        updated_at: última actualización
+        more_info_flag: Mostrar en la página de más información
+        print_content_flag: Botón de imprimir contenido
+      site_customization/image:
+        name: Nombre
+        image: Imagen
+      site_customization/content_block:
+        name: Nombre
+        locale: Idioma
+        body: Contenido
       legislation/process:
+        title: Título del proceso
+        description: En qué consiste
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso
         end_date: Fecha de fin del proceso
