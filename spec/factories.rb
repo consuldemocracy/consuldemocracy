@@ -629,6 +629,7 @@ FactoryGirl.define do
     allegations_phase_enabled true
     draft_publication_enabled true
     result_publication_enabled true
+    published true
 
     trait :next do
       start_date Date.current + 2.days
@@ -662,6 +663,11 @@ FactoryGirl.define do
       allegations_end_date Date.current + 3.days
       result_publication_date Date.current + 5.days
     end
+
+    trait :not_published do
+      published false
+    end
+
   end
 
   factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
