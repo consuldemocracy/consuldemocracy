@@ -93,19 +93,6 @@
       </div>
 
       <div class="small-12 medium-6 column">
-        <div class="small-12 medium-6 column text-right">
-          <p id="male_percentage">
-            <span class="label" style="background: #FF6600"></span>
-            &nbsp;<%= t("budgets.stats.total_male_participants").upcase %>
-            (<%= number_to_percentage(@stats[:male_percentage],
-                                      strip_insignificant_zeros: true,
-                                      precision: 2) %>)
-          </p>
-          <p id="total_male_participants" class="big-number-stat">
-            <%= @stats[:total_male_participants] %>
-          </p>
-        </div>
-
         <div class="small-12 medium-6 column text-left">
           <p id="female_percentage">
             <span class="label" style="background: #FF9E01"></span>
@@ -116,6 +103,19 @@
           </p>
           <p id="total_female_participants" class="big-number-stat">
             <%= @stats[:total_female_participants] %>
+          </p>
+        </div>
+
+        <div class="small-12 medium-6 column text-right">
+          <p id="male_percentage">
+            <span class="label" style="background: #FF6600"></span>
+            &nbsp;<%= t("budgets.stats.total_male_participants").upcase %>
+            (<%= number_to_percentage(@stats[:male_percentage],
+                                      strip_insignificant_zeros: true,
+                                      precision: 2) %>)
+          </p>
+          <p id="total_male_participants" class="big-number-stat">
+            <%= @stats[:total_male_participants] %>
           </p>
         </div>
       </div>
