@@ -79,6 +79,7 @@ Rails.application.routes.draw do
 
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
   get 'presupuestos', to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
+  get "presupuestos/:budget_id/estadisticas", to: "budgets/stats#show", as: 'custom_budget_stats'
 
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
