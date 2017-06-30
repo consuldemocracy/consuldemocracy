@@ -207,7 +207,7 @@ describe 'ConsulSchema' do
 
     it 'only retruns tags with kind nil or category' do
       tag          = create(:tag, name: 'Parks')
-      category_tag = create(:tag, name: 'Health',    kind: 'category')
+      category_tag = create(:tag, :category, name: 'Health')
       admin_tag    = create(:tag, name: 'Admin tag', kind: 'admin')
 
       proposal = create(:proposal, tag_list: 'Parks, Health, Admin tag')
@@ -269,7 +269,7 @@ describe 'ConsulSchema' do
 
     it 'only retruns tags with kind nil or category' do
       tag          = create(:tag, name: 'Parks')
-      category_tag = create(:tag, name: 'Health',    kind: 'category')
+      category_tag = create(:tag, :category, name: 'Health')
       admin_tag    = create(:tag, name: 'Admin tag', kind: 'admin')
 
       debate = create(:debate, tag_list: 'Parks, Health, Admin tag')
@@ -453,7 +453,7 @@ describe 'ConsulSchema' do
   describe 'Tags' do
     it 'only display tags with kind nil or category' do
       tag           = create(:tag, name: 'Parks')
-      category_tag  = create(:tag, name: 'Health',    kind: 'category')
+      category_tag  = create(:tag, :category, name: 'Health')
       admin_tag     = create(:tag, name: 'Admin tag', kind: 'admin')
 
       proposal = create(:proposal, tag_list: 'Parks')

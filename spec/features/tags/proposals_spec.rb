@@ -91,8 +91,8 @@ feature 'Tags' do
     user = create(:user)
     login_as(user)
 
-    education = create(:tag, name: 'Education', kind: 'category')
-    health    = create(:tag, name: 'Health',    kind: 'category')
+    education = create(:tag, :category, name: 'Education')
+    health    = create(:tag, :category, name: 'Health')
 
     visit new_proposal_path
 
@@ -265,8 +265,8 @@ feature 'Tags' do
   context "Categories" do
 
     scenario 'Display category tags' do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      create(:tag, :category, name: 'Medio Ambiente')
+      create(:tag, :category, name: 'Economía')
 
       earth = create(:proposal, tag_list: 'Medio Ambiente')
       money = create(:proposal, tag_list: 'Economía')
@@ -280,8 +280,8 @@ feature 'Tags' do
     end
 
     scenario "Filter by category tags" do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      create(:tag, :category, name: 'Medio Ambiente')
+      create(:tag, :category, name: 'Economía')
 
       proposal1 = create(:proposal, tag_list: 'Medio Ambiente')
       proposal2 = create(:proposal, tag_list: 'Medio Ambiente')

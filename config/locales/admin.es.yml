@@ -837,10 +837,8 @@ es:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
-      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
-      update: Actualizar Tema
     users:
       columns:
         name: Nombre
