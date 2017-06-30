@@ -1626,21 +1626,13 @@
 // ----------------------
 
 .budgets-stats {
-  background: $budget;
 
-  h1 {
-    color: #fff;
-    margin: $line-height 0;
-  }
+  .header {
+    background: $budget;
 
-  .button {
-    background: #fff;
-    color: $budget;
-  }
-
-  &.results {
-
-    .back {
+    h1,
+    .back,
+    .icon-angle-left {
       color: #fff;
     }
   }
@@ -1662,60 +1654,17 @@
     }
   }
 
-  .subtitle {
-    border-left: 1px solid $brand;
+  h2 {
     color: $brand;
-    font-size: rem-calc(40);
-    line-height: rem-calc(40);
-    margin-bottom: rem-calc(40);
-    padding-left: $line-height / 2;
-  }
-
-  .panel {
-    border: 0;
-
-    &.green {
-      background: #58ff87;
-    }
-
-    &.purple,
-    &.light-green {
-
-      p {
-        color: #fff;
-        margin-bottom: 0;
-      }
-    }
-
-    &.purple {
-      background: $budget;
-    }
-
-    &.light-green {
-      background: #9cc56a;
-    }
-  }
-
-  .number-stat {
-    font-size: rem-calc(24);
-    font-weight: bold;
   }
 
   .big-number-stat {
     font-size: rem-calc(72);
     font-weight: bold;
     line-height: rem-calc(72);
-  }
 
-  .chart-legend .big-number-stat {
-    color: $budget;
-  }
-
-  hr {
-    border: 0;
-
-    &.double {
-      height: $line-height * 2;
+    &.budget {
+      color: $budget;
     }
   }
 
@@ -1748,107 +1697,46 @@
     transform: initial;
   }
 
-  table {
-    margin-top: $line-height * 1.5;
+  .label {
 
-    &.questions-table {
-
-      @include breakpoint(medium) {
-
-        th {
-          width: rem-calc(160);
-        }
-
-        th:first-child {
-          width: auto;
-        }
-      }
-
-      .empty td {
-        border: 0 !important;
-      }
-
-      td:first-child,
-      th:first-child {
-        border-right: 1px solid $border;
-      }
-
-      td:last-child,
-      th:last-child {
-        border-left: 1px solid $border;
-      }
+    &.feasible {
+      background: #9cc56a;
     }
 
-    tr td,
-    tr th {
-      text-align: left;
-
-      @include breakpoint(medium) {
-        padding: $line-height / 2 $line-height;
-      }
-
-      &.border-left {
-        border-left: 1px solid $border;
-      }
-
-      &.border-right {
-        border-right: 1px solid $border;
-      }
+    &.unfeasible {
+      background: #e87461;
     }
 
-    .empty {
-      background: #fff;
-      border-left: 1px solid #fff;
-      border-right: 1px solid #fff;
-      border-top: 1px solid $border;
-      height: $line-height;
-
-      @include breakpoint(medium) {
-        height: $line-height * 1.5;
-      }
+    &.supports {
+      background: #d0cef6;
     }
 
-    .table-width {
-
-      @include breakpoint(medium) {
-        width: rem-calc(200);
-      }
+    &.balloting {
+      background: #454372;
     }
+  }
 
-    .question,
-    caption {
-      background: #fff7b4;
-      border: 2px solid #fae100;
-      text-align: left;
+  .border-left {
+    border-left: 1px solid $border;
+  }
 
-      @include breakpoint(medium) {
-        font-size: rem-calc(24);
-        line-height: $line-height;
-      }
-    }
+  .border-right {
+    border-right: 1px solid $border;
+  }
 
-    .question-subtitle {
-      background: #9af6f9;
-    }
+  .table-width {
 
-    .answer {
-      background: #c1fdd2;
-      border-bottom: 2px solid #58ff87;
-      border-top: 2px solid #58ff87;
-
-      th {
-        background: #c1fdd2;
-      }
-
-      td:first-child,
-      td:last-child {
-        font-weight: bold;
-      }
+    @include breakpoint(medium) {
+      width: rem-calc(200);
     }
   }
 }
 
-.survey-districts {
+.stats-districts {
+
+  th {
+    text-transform: uppercase;
+  }
 
   tr th {
     border: 1px solid $border;
@@ -1860,20 +1748,6 @@
   .tiny {
     font-size: rem-calc(11);
     font-weight: normal;
-  }
-
-  .success {
-    background: #c1fdd2;
-  }
-
-  .border-left-success {
-    background: #c1fdd2;
-    border-left: 2px solid #58ff87;
-  }
-
-  .border-right-success {
-    background: #c1fdd2;
-    border-right: 2px solid #58ff87;
   }
 }
 
