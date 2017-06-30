@@ -21,7 +21,9 @@
       <div class="row margin-top">
         <div class="small-12 medium-4 column">
           <%= link_to "Ver proyectos de toda la ciudad",
-                      custom_budget_investments_path(budget_id: Budget.first.to_param, heading_id: Budget::Heading.first.to_param,
+                      custom_budget_investments_path(budget_id: Budget.first.to_param,
+                        id: Budget::Group.first,
+                        heading_id: Budget::Heading.first.to_param,
                         filter: "selected"),
                         class: "button expanded large city" %>
         </div>
