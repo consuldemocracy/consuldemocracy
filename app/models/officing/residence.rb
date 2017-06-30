@@ -56,7 +56,7 @@ class Officing::Residence
       document_type: document_type,
       year_of_birth: year_of_birth,
       poll_officer: officer
-    })
+    )
   end
 
   def user_exists?
