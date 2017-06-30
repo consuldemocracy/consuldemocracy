@@ -70,7 +70,7 @@ class Verification::Residence
       date_of_birth: date_of_birth,
       postal_code: postal_code,
       district_code: district_code
-    })
+    )
   end
 
   def geozone
