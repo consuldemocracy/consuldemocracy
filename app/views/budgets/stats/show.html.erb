@@ -99,7 +99,7 @@
     <div class="row" data-equalizer>
 
       <div class="small-12 column">
-        <h2 class="subtitle"><%= t("budgets.stats.by_gender") %></h2>
+        <h2 class="subtitle"><%= t("budgets.stats.by_gender_html") %></h2>
       </div>
 
       <hr>
@@ -150,7 +150,7 @@
     <div class="row">
 
       <div class="small-12 column margin-top">
-        <h2 class="subtitle"><%= t("budgets.stats.by_age") %></h2>
+        <h2 class="subtitle"><%= t("budgets.stats.by_age_html") %></h2>
       </div>
 
       <hr class="double">
@@ -197,7 +197,7 @@
     <div class="row">
 
       <div class="small-12 column">
-        <h2 class="subtitle"><%= t("budgets.stats.by_heading") %></h2>
+        <h2 class="subtitle"><%= t("budgets.stats.by_heading_html") %></h2>
       </div>
 
       <div class="small-12 column">
@@ -212,14 +212,14 @@
             </tr>
             <tr>
               <th class="tiny"><%= t("budgets.stats.total").upcase %></th>
-              <th class="tiny"><%= t("budgets.stats.percent_total_participants").upcase %></th>
-              <th class="tiny"><%= t("budgets.stats.percent_heading_census").upcase %></th>
+              <th class="tiny"><%= t("budgets.stats.percent_total_participants_html") %></th>
+              <th class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
               <th class="tiny"><%= t("budgets.stats.total").upcase %></th>
-              <th class="tiny"><%= t("budgets.stats.percent_total_participants").upcase %></th>
-              <th class="tiny"><%= t("budgets.stats.percent_heading_census").upcase %></th>
+              <th class="tiny"><%= t("budgets.stats.percent_total_participants_html") %></th>
+              <th class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
               <th class="tiny"><%= t("budgets.stats.total").upcase %></th>
-              <th class="tiny"><%= t("budgets.stats.percent_total_participants").upcase %></th>
-              <th class="tiny"><%= t("budgets.stats.percent_heading_census").upcase %></th>
+              <th class="tiny"><%= t("budgets.stats.percent_total_participants_html") %></th>
+              <th class="tiny"><%= t("budgets.stats.percent_heading_census_html") %></th>
             </tr>
             </thead>
           </thead>
@@ -261,7 +261,7 @@
           <div class="small-12 column">
             <p id="total_unknown_gender_or_age">
               <em>
-                <%= t("budgets.stats.no_demographic_data", total: @stats[:total_unknown_gender_or_age]) %>
+                <%= t("budgets.stats.no_demographic_data_html", total: @stats[:total_unknown_gender_or_age]) %>
               </em>
               <br>
               <em>

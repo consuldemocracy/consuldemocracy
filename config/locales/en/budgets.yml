@@ -203,22 +203,22 @@ en:
       supports: Supports
       votes: Votes
       total_participants_vote_phase: Voting Phase
-      by_gender: "Participants<br>by sex"
+      by_gender_html: "Participants<br>by sex"
       total_male_participants: Mens
       total_female_participants: Women
-      by_age: "Participants by<br> age groups"
+      by_age_html: "Participants by<br> age groups"
       age: Age
       total: Total
       more_than: More than
       years: years
-      by_heading: "Participants by<br> heading"
+      by_heading_html: "Participants by<br> heading"
       heading: Heading
       investments_sent: Investment proposals sent
       participants_support_phase: Participants support phase
       participants_voting_phase: Participants voting phase
       participants_total: Total Participants
-      percent_total_participants: "% <br>Total<br>Participants"
-      percent_heading_census: "% <br>Heading<br>Census"
-      no_demographic_data: "* There is no demographic data for<br>%{total}<br>participants."
+      percent_total_participants_html: "% <br>Total<br>Participants"
+      percent_heading_census_html: "% <br>Heading<br>Census"
+      no_demographic_data_html: "* There is no demographic data for<br>%{total}<br>participants."
       participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
       heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
