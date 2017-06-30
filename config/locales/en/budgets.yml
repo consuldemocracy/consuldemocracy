@@ -197,7 +197,7 @@ en:
       page_title: "%{budget} - Participation stats"
       total_participants: Total Participants
       total_budget_investments: Total Proposed Investments
-      total_feasible_investments: Proposals on final phase
+      total_selected_investments: Proposals on final phase
       total_unfeasible_investments: Unfeasible proposals
       total_participants_support_phase: Support phase
       participants: Participants
