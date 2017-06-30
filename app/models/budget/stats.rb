@@ -7,7 +7,7 @@ class Budget
 
     def generate
       stats = %w[total_participants total_participants_support_phase total_participants_vote_phase total_budget_investments total_votes
-                 total_feasible_investments total_unfeasible_investments total_male_participants total_female_participants total_supports
+                 total_selected_investments total_unfeasible_investments total_male_participants total_female_participants total_supports
                  total_unknown_gender_or_age age_groups male_percentage female_percentage headings]
       stats.map { |stat_name| [stat_name.to_sym, send(stat_name)] }.to_h
     end
@@ -34,8 +34,8 @@ class Budget
         stats_cache('total_votes') { @budget.ballots.count }
       end
 
-      def total_feasible_investments
-        stats_cache('total_feasible_investments') { @budget.investments.feasible.count }
+      def total_selected_investments
+        stats_cache('total_selected_investments') { @budget.investments.selected.count }
       end
 
       def total_unfeasible_investments
