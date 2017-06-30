@@ -1,6 +1,7 @@
 module Budgets
   class StatsController < ApplicationController
 
+    before_action :load_budget
     load_and_authorize_resource :budget
 
     def show
@@ -12,6 +13,10 @@ module Budgets
 
       def load_stats
         Budget::Stats.new(@budget).generate
+      end
+
+      def load_budget
+        @budget = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       end
 
   end
