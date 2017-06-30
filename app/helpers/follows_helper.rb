@@ -18,14 +18,33 @@ module FollowsHelper
     t('shared.unfollow_entity', entity: t("activerecord.models.#{entity}.one").downcase)
   end
 
-  def entity_name(followable)
-    entity_name = followable.class.name.split('::').last
-    entity_name.downcase
+  def entity_full_name(followable)
+    name = followable.class.name
+    name.downcase.gsub("::", "-")
   end
 
-  def entity_full_name(followable)
-    entity_name = followable.class.name
-    entity_name.downcase.gsub("::", "-")
+  def follow_link_wrapper_id(followable)
+    "follow-expand-#{entity_full_name(followable)}-#{followable.id}"
+  end
+
+  def unfollow_link_wrapper_id(followable)
+    "unfollow-expand-#{entity_full_name(followable)}-#{followable.id}"
+  end
+
+  def follow_link_id(followable)
+    "follow-#{entity_full_name(followable)}-#{followable.id}"
+  end
+
+  def unfollow_link_id(followable)
+    "unfollow-#{entity_full_name(followable)}-#{followable.id}"
+  end
+
+  def follow_drop_id(followable)
+    "follow-drop-#{entity_full_name(followable)}-#{followable.id}"
+  end
+
+  def unfollow_drop_id(followable)
+    "unfollow-drop-#{entity_full_name(followable)}-#{followable.id}"
   end
 
   private

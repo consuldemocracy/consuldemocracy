@@ -58,6 +58,7 @@
 //= require legislation_allegations
 //= require legislation_annotatable
 //= require watch_form_changes
+//= require followable
 //= require tree_navigator
 //= require custom
 
@@ -93,6 +94,7 @@ var initialize_modules = function() {
     App.LegislationAnnotatable.initialize();
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
+  App.Followable.initialize();
 };
 
 $(function(){
@@ -100,5 +102,5 @@ $(function(){
 
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);
-  $(document).on('ajax:complete', initialize_modules);
+  $(document).on('ajaxComplete', initialize_modules);
 });
