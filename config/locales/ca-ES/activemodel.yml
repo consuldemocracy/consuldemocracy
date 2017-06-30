@@ -1,0 +1,12 @@
+ca:
+  activemodel:
+    models:
+      verification:
+        residence: "Residència"
+    attributes:
+      verification:
+        residence:
+          date_of_birth: "Data de naixement"
+          postal_code: "Codi postal"
+        sms:
+          phone: "Telèfon"
