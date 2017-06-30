@@ -651,7 +651,8 @@ print "Creating legislation processes"
                                            debate_phase_enabled: true,
                                            allegations_phase_enabled: true,
                                            draft_publication_enabled: true,
-                                           result_publication_enabled: true
+                                           result_publication_enabled: true,
+                                           published: true
   )
 end
 
