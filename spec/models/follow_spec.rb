@@ -23,4 +23,17 @@ describe Follow do
     expect(follow).to_not be_valid
   end
 
+  describe "interests" do
+
+    let(:user)     { create(:user) }
+
+    it "interests_by user" do
+      proposal =  create(:proposal, tag_list: "Sport")
+      create(:follow, :followed_proposal, followable: proposal, user: user)
+
+      expect(Follow.interests_by(user)).to eq ["Sport"]
+    end
+
+  end
+
 end

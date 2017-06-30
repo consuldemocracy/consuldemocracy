@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     load_filtered_activity if valid_access?
+    load_interest if valid_interest_access?
   end
 
   private
@@ -62,8 +63,16 @@ class UsersController < ApplicationController
       @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
 
+    def load_interest
+      @interests = Follow.interests_by(@user)
+    end
+
     def valid_access?
       @user.public_activity || authorized_current_user?
+    end
+
+    def valid_interest_access?
+      @user.public_interests || authorized_current_user?
     end
 
     def author?

@@ -955,6 +955,7 @@ ActiveRecord::Schema.define(version: 20170704105112) do
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
+    t.boolean  "public_interests",                          default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

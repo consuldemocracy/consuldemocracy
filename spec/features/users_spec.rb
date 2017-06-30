@@ -213,6 +213,88 @@ feature 'Users' do
 
   end
 
+  feature 'Public interest' do
+    background do
+      @user = create(:user)
+    end
+
+    scenario 'show interests' do
+      proposal =  create(:proposal, tag_list: "Sport")
+      create(:follow, :followed_proposal, followable: proposal, user: @user)
+
+      login_as(@user)
+      visit account_path
+
+      check 'account_public_interests'
+      click_button 'Save changes'
+
+      logout
+
+      visit user_path(@user)
+      expect(page).to have_content("Sport")
+    end
+
+    scenario 'no visible by default' do
+      visit user_path(@user)
+
+      expect(page).to have_content(@user.username)
+      expect(page).not_to have_css('#public_interests')
+    end
+
+    scenario 'user can show public page' do
+      login_as(@user)
+      visit account_path
+
+      check 'account_public_interests'
+      click_button 'Save changes'
+
+      logout
+
+      visit user_path(@user)
+      expect(page).to have_css('#public_interests')
+    end
+
+    scenario 'is always visible for the owner' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_interests'
+      click_button 'Save changes'
+
+      visit user_path(@user)
+      expect(page).to have_css('#public_interests')
+    end
+
+    scenario 'is always visible for admins' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_interests'
+      click_button 'Save changes'
+
+      logout
+
+      login_as(create(:administrator).user)
+      visit user_path(@user)
+      expect(page).to have_css('#public_interests')
+    end
+
+    scenario 'is always visible for moderators' do
+      login_as(@user)
+      visit account_path
+
+      uncheck 'account_public_interests'
+      click_button 'Save changes'
+
+      logout
+
+      login_as(create(:moderator).user)
+      visit user_path(@user)
+      expect(page).to have_css('#public_interests')
+    end
+
+  end
+
   feature 'Special comments' do
 
     scenario 'comments posted as moderator are not visible in user activity' do

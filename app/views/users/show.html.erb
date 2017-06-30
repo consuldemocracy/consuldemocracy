@@ -46,6 +46,14 @@
         <p><%= t('users.show.private_activity') %></p>
       <% end %>
 
+      <% if @user.public_interests || @authorized_current_user %>
+        <div id="public_interests">
+            <% @interests.each do |interest| %>
+              <%= interest %>
+            <% end %>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </main>
