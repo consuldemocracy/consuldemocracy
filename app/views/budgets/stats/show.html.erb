@@ -1,6 +1,6 @@
 <% cache [@stats] do %>
   <% provide :title do %>
-    <%= t("budgets.stats.title") %> - <%= @budget.name %>
+    <%= t("budgets.stats.page_title", budget: @budget.name) %>
   <% end %>
   <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",

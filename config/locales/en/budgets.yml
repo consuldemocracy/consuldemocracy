@@ -194,7 +194,7 @@ en:
     stats:
       title: Participation stats
       link: Stats
-      page_title: "%{budget} - Stats"
+      page_title: "%{budget} - Participation stats"
       total_participants: Total Participants
       total_budget_investments: Total Proposed Investments
       total_feasible_investments: Proposals on final phase

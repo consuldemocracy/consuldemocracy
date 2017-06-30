@@ -194,7 +194,7 @@ es:
     stats:
       title: Estadísticas de participación
       link: Estadísticas
-      page_title: "%{budget} - Estadísticas"
+      page_title: "%{budget} - Estadísticas de participación"
       total_participants: Total participantes
       total_budget_investments: Total propuestas enviadas
       total_feasible_investments: Propuestas en la fase final
