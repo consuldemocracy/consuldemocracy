@@ -3,3 +3,12 @@ es:
     attributes:
       user:
         redeemable_code: "Código de verificación por carta (opcional)"
+      legislation/draft_version:
+        title: Título de la version
+    errors:
+      models:
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Debe tener %{required_width}px de ancho"
+              image_height: "Debe tener %{required_height}px de alto"
