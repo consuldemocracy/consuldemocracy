@@ -9,6 +9,7 @@ module TracksHelper
       I18n.t("tracking.user_data.gender.#{user.gender}")
     else
       I18n.t("tracking.user_data.gender.unknown")
+    end
   end
 
   def track_event(data = {})
