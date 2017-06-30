@@ -27,18 +27,17 @@
                         filter: "selected"),
                         class: "button expanded large city" %>
         </div>
-        <div class="small-12 medium-4 column end">
+        <div class="small-12 medium-4 column">
           <%= link_to "Ver proyectos de distritos",
                       custom_budget_group_path(Budget.last, Budget::Group.last,
                         filter: @current_filter),
                         class: "button expanded large" %>
         </div>
-        <!-- When uncomment this block remove the "end" class on the previous <div>
         <div class="small-12 medium-4 column">
-          <%# link_to "Ver estadísticas de participación",
+          <%= link_to "Ver estadísticas de participación",
                       custom_budget_stats_path(id: Budget.last.to_param),
                       class: "button expanded large stats" %>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
