@@ -2,7 +2,6 @@ ast:
   activemodel:
     models:
       verification:
-        residence: "Residencia"
         sms: "SMS"
     attributes:
       verification:
