@@ -21,21 +21,22 @@
       <div class="row margin-top">
         <div class="small-12 medium-4 column">
           <%= link_to "Ver proyectos de toda la ciudad",
-                      "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
-                      class: "button expanded large city" %>
+                      custom_budget_investments_path(budget_id: Budget.first.to_param, heading_id: Budget::Heading.first.to_param,
+                        filter: "selected"),
+                        class: "button expanded large city" %>
         </div>
-        <div class="small-12 medium-4 column end">
-          <%= link_to "Ver proyectos de distritos",
-                      "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
-                      class: "button expanded large" %>
-        </div>
-        <!--
-        When uncomment this block remove the "end" class on the previous <div>
         <div class="small-12 medium-4 column">
-          <%# link_to "Ver estadísticas de participación",
+          <%= link_to "Ver proyectos de distritos",
+                      custom_budget_group_path(Budget.last, Budget::Group.last,
+                        filter: @current_filter),
+                        class: "button expanded large" %>
+        </div>
+        <!-- When uncomment this block remove the "end" class on the previous <div> -->
+        <div class="small-12 medium-4 column">
+          <%= link_to "Ver estadísticas de participación",
                       custom_budget_stats_path,
                       class: "button expanded large stats" %>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
