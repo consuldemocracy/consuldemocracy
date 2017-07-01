@@ -214,7 +214,7 @@ en:
       years: years
       by_heading: "Participants by heading"
       heading: Heading
-      investments_sent: Investment proposals sent
+      investments_sent_html: "Investment proposals sent"
       participants_support_phase: Participants support phase
       participants_voting_phase: Participants voting phase
       participants_total: Total Participants
