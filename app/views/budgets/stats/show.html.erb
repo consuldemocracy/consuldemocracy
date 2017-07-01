@@ -220,29 +220,6 @@
                 <% end %>
               </tr>
             <% end %>
-            <tr id="headings_totals">
-              <td class="border-left-success success">
-                <strong><%= t("budgets.stats.total").upcase %></strong>
-              </td>
-              <td id="total_spending_proposals_heading_total"
-                  class="text-center success">
-                <strong><%= @stats[:headings][:total][:total_investments_count] %></strong>
-              </td>
-
-              <% ["support", "vote", "all"].each do |phase| %>
-                <td id="total_participants_<%= phase %>_phase_heading_total"
-                    class="text-center success">
-                  <strong><%= @stats[:headings][:total]["total_participants_#{phase}_phase".to_sym] %></strong>
-                </td>
-                <td id="percentage_participants_<%= phase %>_phase_heading_total"
-                    class="text-center success">
-                  <strong><%= number_to_percentage(@stats[:headings][:total]["percentage_participants_#{phase}_phase".to_sym],
-                    strip_insignificant_zeros: true,
-                    precision: 2) %></strong>
-                </td>
-                <td class="text-center success <%= phase == "all" ? "border-right-success " : "" %>"></td>
-              <% end %>
-            </tr>
           </tbody>
         </table>
       </div>
