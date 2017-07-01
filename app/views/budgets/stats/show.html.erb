@@ -190,7 +190,7 @@
             </thead>
           </thead>
           <tbody>
-            <% @budget.headings.each do |heading| %>
+            <% @budget.headings.order("id ASC").each do |heading| %>
               <tr id="<%= heading.name.parameterize %>">
                 <td class="border-left">
                   <strong><%= heading.name %></strong>
