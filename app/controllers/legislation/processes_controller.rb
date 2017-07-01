@@ -83,7 +83,12 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   private
 
+    def member_method?
+      params[:id].present?
+    end
+
     def set_process
+      return if member_method?
       @process = ::Legislation::Process.find(params[:process_id])
     end
 end
