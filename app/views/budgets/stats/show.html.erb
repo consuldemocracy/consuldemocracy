@@ -167,7 +167,7 @@
       <div class="small-12 column">
         <h2 class="margin-bottom"><%= t("budgets.stats.by_heading") %></h2>
 
-        <table class="stats-districts">
+        <table class="stats-districts survey-districts">
           <thead>
             <tr>
               <th scope="col" rowspan="2"><%= t("budgets.stats.heading") %></th>
@@ -197,7 +197,7 @@
                 </td>
                 <td id="total_spending_proposals_heading_<%= heading.id %>"
                     class="text-center border-left border-right">
-                  <%= heading.investments.count %>
+                  <%= @stats[:headings][heading.id][:total_investments_count] %>
                 </td>
 
                 <% ["support", "vote", "all"].each do |phase| %>
@@ -206,7 +206,7 @@
                     <%= @stats[:headings][heading.id]["total_participants_#{phase}_phase".to_sym] %>
                   </td>
                   <td id="percentage_participants_<%= phase %>_phase_heading_<%= heading.id %>"
-                      class="border-left border-right text-center %>">
+                      class="border-left border-right text-center">
                     <%= number_to_percentage(@stats[:headings][heading.id]["percentage_participants_#{phase}_phase".to_sym],
                       strip_insignificant_zeros: true,
                       precision: 2) %>
@@ -220,6 +220,29 @@
                 <% end %>
               </tr>
             <% end %>
+            <tr id="headings_totals">
+              <td class="text-center border-left-success  success">
+                <strong><%= t("budgets.stats.total").upcase %></strong>
+              </td>
+              <td id="total_spending_proposals_heading_total"
+                  class="text-center success">
+                <strong><%= @stats[:headings][:total][:total_investments_count] %></strong>
+              </td>
+
+              <% ["support", "vote", "all"].each do |phase| %>
+                <td id="total_participants_<%= phase %>_phase_heading_total"
+                    class="text-center success">
+                  <strong><%= @stats[:headings][:total]["total_participants_#{phase}_phase".to_sym] %></strong>
+                </td>
+                <td id="percentage_participants_<%= phase %>_phase_heading_total"
+                    class="text-center success">
+                  <strong><%= number_to_percentage(@stats[:headings][:total]["percentage_participants_#{phase}_phase".to_sym],
+                    strip_insignificant_zeros: true,
+                    precision: 2) %></strong>
+                </td>
+                <td class="text-center success <%= phase == "all" ? "border-right-success " : "" %>"></td>
+              <% end %>
+            </tr>
           </tbody>
         </table>
       </div>

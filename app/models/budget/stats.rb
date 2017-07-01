@@ -134,6 +134,7 @@ class Budget
           end
 
           groups[:total] = Hash.new(0)
+          groups[:total][:total_investments_count] = groups.collect {|_k, v| v[:total_investments_count]}.sum
           groups[:total][:total_participants_support_phase] = groups.collect {|_k, v| v[:total_participants_support_phase]}.sum
           groups[:total][:total_participants_vote_phase] = groups.collect {|_k, v| v[:total_participants_vote_phase]}.sum
           groups[:total][:total_participants_all_phase] = groups.collect {|_k, v| v[:total_participants_all_phase]}.sum
@@ -152,6 +153,7 @@ class Budget
 
       def calculate_heading_totals(heading)
         {
+          total_investments_count: heading.investments.count,
           total_participants_support_phase: voters_by_heading(heading).uniq.count,
           total_participants_vote_phase: balloters_by_heading(heading.id).uniq.count,
           total_participants_all_phase: voters_and_balloters_by_heading(heading)
