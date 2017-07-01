@@ -186,7 +186,7 @@ class Budget
 
       def calculate_percentage(fraction, total)
         percent = fraction / total.to_f
-        percent.nan? ? 0.0 : (percent * 100).round(2)
+        percent.nan? ? 0.0 : (percent * 100).round(3)
       end
 
       def supports(supportable)
