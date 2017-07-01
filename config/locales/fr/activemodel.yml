@@ -2,6 +2,7 @@ fr:
   activemodel:
     models:
       verification:
+        residence: "Résidence"
         sms: "SMS"
     attributes:
       verification:
