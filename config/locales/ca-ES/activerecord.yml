@@ -1,0 +1,15 @@
+ca:
+  activerecord:
+    models:
+      activity:
+        one: "activitat"
+        other: "activitats"
+      budget:
+        one: "Pressupost participatiu"
+        other: "Pressupostos participatius"
+    attributes:
+      budget/investment/milestone:
+        title: "Títol"
+        description: "Descripció"
+      spending_proposal:
+        administrator_id: "Administrador"
