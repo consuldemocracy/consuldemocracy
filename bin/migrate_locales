@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'pathname'
+
+ARGV.each do |locale|
+  puts "Moving files for locale: #{locale}"
+  system "mkdir ./config/locales/#{locale}"
+  system "mv ./config/locales/#{locale}.yml ./config/locales/#{locale}/general.yml"
+  system "mv ./config/locales/*.#{locale}.yml ./config/locales/#{locale}/"
+  system "find ./config/locales/ -name \"*.#{locale}.yml\" -exec sh -c 'mv \"$1\" \"${1%.#{locale}.yml}.yml\"' _ {} \\;"
+  puts "Moved!"
+end
+
