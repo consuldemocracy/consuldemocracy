@@ -733,6 +733,7 @@ LOREM_IPSUM
     more_info_flag false
     print_content_flag false
     status 'draft'
+    locale 'en'
 
     trait :published do
       status "published"

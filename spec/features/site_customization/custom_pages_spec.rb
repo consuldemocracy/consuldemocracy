@@ -7,7 +7,8 @@ feature "Custom Pages" do
         slug: "conditions",
         title: "Custom conditions",
         content: "New text for conditions page",
-        print_content_flag: true
+        print_content_flag: true,
+        locale: "en"
       )
 
       visit custom_page.url
@@ -23,7 +24,8 @@ feature "Custom Pages" do
         slug: "conditions",
         title: "Custom conditions",
         content: "New text for conditions page",
-        print_content_flag: true
+        print_content_flag: true,
+        locale: "en"
       )
 
       visit custom_page.url
@@ -42,7 +44,8 @@ feature "Custom Pages" do
           slug: "other-slug",
           title: "Custom page",
           content: "Text for new custom page",
-          print_content_flag: false
+          print_content_flag: false,
+          locale: "en"
         )
 
         visit custom_page.url
@@ -57,7 +60,8 @@ feature "Custom Pages" do
           slug: "other-slug",
           title: "Custom page",
           content: "Text for new custom page",
-          print_content_flag: false
+          print_content_flag: false,
+          locale: "en"
         )
 
         visit custom_page.url
@@ -72,7 +76,8 @@ feature "Custom Pages" do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title: "Another custom page",
           subtitle: "Subtitle for custom page",
-          more_info_flag: true
+          more_info_flag: true,
+          locale: "en"
         )
 
         visit more_info_path
@@ -84,7 +89,8 @@ feature "Custom Pages" do
         custom_page = create(:site_customization_page, :published,
           slug: "another-slug", title: "Another custom page",
           subtitle: "Subtitle for custom page",
-          more_info_flag: false
+          more_info_flag: false,
+          locale: "en"
         )
 
         visit more_info_path
