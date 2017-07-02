@@ -1,0 +1,18 @@
+---
+gl:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} creado correctamente."
+        debate: "Debate creado correctamente."
+        proposal: "Proposta creada correctamente."
+        spending_proposal: "Proposta de investimento creada correctamente. Podes acceder a ela dende %{activity}"
+      save_changes:
+        notice: Cambios gardados
+      update:
+        notice: "%{resource_name} actualizado correctamente."
+        debate: "Debate actualizado correctamente."
+        proposal: "Proposta actualizada correctamente."
+        spending_proposal: "Proposta de investimento actualizada correctamente."
+      destroy:
+        spending_proposal: "Proposta de investimento eliminada."
