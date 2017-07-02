@@ -4,7 +4,7 @@ namespace :settings do
   task per_page_code_migration: :environment do
     per_page_code_setting = Setting.where(key: 'per_page_code').first
 
-    Setting['per_page_code_head'] = per_page_code_setting.value.to_s if Setting.where(key: 'per_page_code_head').first.blank?
+    Setting['per_page_code_head'] = per_page_code_setting&.value.to_s if Setting.where(key: 'per_page_code_head').first.blank?
     per_page_code_setting.destroy if per_page_code_setting.present?
   end
 
