@@ -6,6 +6,7 @@ class SiteCustomization::Page < ActiveRecord::Base
                    format: { with: /\A[0-9a-zA-Z\-_]*\Z/, message: :slug_format }
   validates :title, presence: true
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
+  validates :locale, presence: true
 
   scope :published, -> { where(status: 'published').order('id DESC') }
   scope :with_more_info_flag, -> { where(status: 'published', more_info_flag: true).order('id ASC') }
