@@ -927,3 +927,4 @@ es:
           updated_at: Última actualización
           status_draft: Borrador
           status_published: Publicada
+          locale: Idioma
