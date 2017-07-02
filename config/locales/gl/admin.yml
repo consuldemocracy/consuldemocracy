@@ -1,0 +1,260 @@
+---
+gl:
+  admin:
+    actions:
+      confirm: "Estás seguro?"
+      confirm_hide: Confirmar
+      hide: Ocultar
+      hide_author: Bloquear o autor
+      restore: Volver mostrar
+      mark_featured: Destacar
+      unmark_featured: Quitar destacado
+    activity:
+      show:
+        action: Acción
+        actions:
+          block: Bloqueado
+          hide: Ocultado
+          restore: Restaurado
+        by: Moderado por
+        filter: Mostrar
+        filters:
+          all: Todo
+          on_comments: Comentarios
+          on_debates: Debates
+          on_proposals: Propostas
+          on_users: Usuarios
+        title: Actividade dos moderadores
+        type: Tipo
+    comments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        hidden_debate: Debate oculto
+        hidden_proposal: Proposta oculta
+        title: Comentarios ocultos
+    dashboard:
+      index:
+        title: Administración
+    debates:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Debates ocultos
+    menu:
+      activity: Actividade de moderadores
+      debate_topics: Temas de debate
+      hidden_comments: Comentarios ocultos
+      hidden_debates: Debates ocultos
+      hidden_proposals: Propostas ocultas
+      hidden_users: Usuarios bloqueados
+      incomplete_verifications: Verificacións incompletas
+      moderators: Moderadores
+      valuators: Avaliadores
+      officials: Cargos públicos
+      organizations: Organizacións
+      settings: Configuración global
+      spending_proposals: Propostas de investimento
+      stats: Estatísticas
+    moderators:
+      index:
+        title: Moderadores
+      moderator:
+        add: Engadir
+        delete: Borrar
+      search:
+        email_placeholder: Buscar usuario por correo electrónico
+        search: Buscar
+        user_not_found: Usuario non atopado
+    valuators:
+      index:
+        title: Avaliadores
+      valuator:
+        description_placeholder: "Descrición (opcional)"
+        user_found: Usuario atopado
+        add: Engadir como avaliador
+      search:
+        email_placeholder: Buscar usuario por correo electrónico
+        search: Buscar
+        user_not_found: Usuario non atopado
+    officials:
+      edit:
+        back: Volver
+        destroy: Eliminar condición de 'Cargo público'
+        title: 'Cargos públicos: editar usuario'
+      flash:
+        official_destroyed: 'Datos gardados: o usuario xa non é cargo público'
+        official_updated: Datos do cargo público gardados
+      index:
+        title: Cargos públicos
+      level_0: Non é cargo público
+      level_1: Nivel 1
+      level_2: Nivel 2
+      level_3: Nivel 3
+      level_4: Nivel 4
+      level_5: Nivel 5
+      search:
+        edit_official: Editar cargo público
+        make_official: Converter en cargo público
+        title: 'Cargos públicos: busca de usuarios'
+    organizations:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          pending: Pendentes
+          rejected: Rexeitadas
+          verified: Verificadas
+        hidden_count:
+          one: Hai ademais unha organización sen usuario ou co usuario bloqueado
+          other: Hai %{count} organizacións sen usuario ou co usuario bloqueado
+        reject: Rexeitar
+        rejected: Rexeitada
+        search: Buscar
+        search_placeholder: Nome, correo electrónico ou teléfono
+        title: Organizacións
+        verified: Verificada
+        verify: Verificar
+      search:
+        title: Buscar organizacións
+    proposals:
+      index:
+        filter: Filtro
+        filters:
+          all: Todas
+          with_confirmed_hide: Confirmadas
+          without_confirmed_hide: Pendentes
+        title: Propostas ocultas
+    settings:
+      flash:
+        updated: Valor actualizado
+      index:
+        title: Configuración global
+        update_setting: Actualizar
+        feature_flags: Funcionalidades
+        features:
+          enabled: "Funcionalidade activada"
+          disabled: "Funcionalidade desactivada"
+          enable: "Activar"
+          disable: "Desactivar"
+    shared:
+      proposal_search:
+        button: Buscar
+        placeholder: Buscar propostas por título, código, descrición ou pregunta
+      spending_proposal_search:
+        button: Buscar
+        placeholder: Buscar propostas por título ou descrición
+      user_search:
+        button: Buscar
+        placeholder: Buscar usuario por nome ou correo electrónico
+    spending_proposals:
+      index:
+        geozone_filter_all: Todos os ámbitos de actuación
+        administrator_filter_all: Todos os administradores
+        valuator_filter_all: Todos os avaliadores
+        tags_filter_all: Todas as etiquetas
+        filters:
+          valuation_open: Abertas
+          without_admin: Sen administrador
+          managed: Xestionando
+          valuating: En avaliación
+          valuation_finished: Avaliación finalizada
+          all: Todas
+        title: Propostas de investimento para orzamentos participativos
+        assigned_admin: Administrador asignado
+        no_admin_assigned: Sen administrador asignado
+        no_valuators_assigned: Sen avaliador
+        summary_link: "Resumo"
+        feasibility:
+          feasible: "Viable (%{price})"
+          not_feasible: "Inviable"
+          undefined: "Sen definir"
+      show:
+        assigned_admin: Administrador asignado
+        assigned_valuators: Avaliadores asignados
+        back: Volver
+        classification: Clasificación
+        heading: Proposta de investimento %{id}
+        edit: Editar
+        edit_classification: Editar clasificación
+        association_name: Asociación
+        by: Autor
+        sent: Data
+        geozone: Ámbito
+        dossier: Informe
+        edit_dossier: Editar informe
+        tags: Etiquetas
+        undefined: Sen definir
+      edit:
+        classification: Clasificación
+        assigned_valuators: Avaliadores
+        submit_button: Actualizar
+        tags: Etiquetas
+        tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
+        undefined: Sen definir
+      summary:
+        title: Resumo de propostas de investimento
+        title_proposals_with_supports: Resumo para propostas que superaron a fase de apoios
+        geozone_name: Ámbito de cidade
+        finished_and_feasible_count: Finalizadas viables
+        finished_and_unfeasible_count: Finalizadas inviables
+        finished_count: Finalizadas
+        in_evaluation_count: En avaliación
+        total_count: Total
+        cost_for_geozone: Custo total
+    stats:
+      show:
+        stats_title: Estatísticas
+        summary:
+          comment_votes: Votos en comentarios
+          comments: Comentarios
+          debate_votes: Votos en debates
+          debates: Debates
+          proposal_votes: Votos en propostas
+          proposals: Propostas
+          spending_proposals: Propostas de investimento
+          unverified_users: Usuarios sen verificar
+          user_level_three: Usuarios de nivel tres
+          user_level_two: Usuarios de nivel dous
+          users: Usuarios
+          verified_users: Usuarios verificados
+          verified_users_who_didnt_vote_proposals: Usuarios verificados que non votaron propostas
+          visits: Visitas
+          votes: Votos
+        spending_proposals_title: Propostas de investimento
+        visits_title: Visitas
+    tags:
+      create: Crear tema
+      destroy: Eliminar tema
+      index:
+        add_tag: Engade un novo tema de debate
+        title: Temas de debate
+      mark_as_featured: Propoñer tema ao crear debate
+      name:
+        placeholder: Escribe o nome do tema
+      update: Actualizar tema
+    users:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Usuarios bloqueados
+      show:
+        back: Volver
+        email: 'Correo electrónico:'
+        hidden_at: 'Bloqueado:'
+        registered_at: 'Data de alta:'
+        title: Actividade do usuario %{user}
+    verifications:
+      index:
+        phone_not_given: Non deu o seu teléfono
+        sms_code_not_confirmed: Non introduciu o seu código de seguridade
+        title: Verificacións incompletas
