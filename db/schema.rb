@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702105956) do
+ActiveRecord::Schema.define(version: 20170626081337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20170702105956) do
     t.integer "group_id"
     t.string  "name",     limit: 50
     t.integer "price",    limit: 8
+    t.integer "population"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
@@ -428,6 +429,7 @@ ActiveRecord::Schema.define(version: 20170702105956) do
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
+    t.boolean  "published",                  default: true
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -841,7 +843,6 @@ ActiveRecord::Schema.define(version: 20170702105956) do
   create_table "tags", force: :cascade do |t|
     t.string  "name",                     limit: 40
     t.integer "taggings_count",                      default: 0
-    t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0

@@ -97,10 +97,12 @@ en:
         heading: Heading name
         add_heading: Add heading
         amount: Amount
+        population: Population
         save_heading: Save heading
         no_heading: This group has no assigned heading.
         table_heading: Heading
         table_amount: Amount
+        table_population: Population
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -835,10 +837,8 @@ en:
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
-      mark_as_featured: Propose topic upon creating proposal
       name:
         placeholder: Type the name of the topic
-      update: Update Topic
     users:
       columns:
         name: Name

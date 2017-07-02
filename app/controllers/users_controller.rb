@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       when "proposals" then load_proposals
       when "debates"   then load_debates
       when "budget_investments" then load_budget_investments
-      when "comments"  then load_comments
+      when "comments" then load_comments
       else load_available_activity
       end
     end

@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting Budget::Investments' do
-  let(:user)   { create :user }
+  let(:user) { create :user }
   let(:investment) { create :budget_investment }
 
   scenario 'Index' do
@@ -395,7 +395,7 @@ feature 'Commenting Budget::Investments' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit budget_investment_path(investment.budget, investment)

@@ -14,13 +14,13 @@ module GraphQL
               type created_type
               description model.graphql_field_description
               argument :id, !types.ID
-              resolve -> (object, arguments, context) { model.public_for_api.find_by(id: arguments['id'])}
+              resolve ->(object, arguments, context) { model.public_for_api.find_by(id: arguments['id'])}
             end
           end
 
           connection(model.graphql_pluralized_field_name, created_type.connection_type, max_page_size: 50, complexity: 1000) do
             description model.graphql_pluralized_field_description
-            resolve -> (object, arguments, context) { model.public_for_api }
+            resolve ->(object, arguments, context) { model.public_for_api }
           end
 
         end

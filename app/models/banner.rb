@@ -5,7 +5,7 @@ class Banner < ActiveRecord::Base
 
   validates :title, presence: true,
                     length: { minimum: 2 }
-  validates :description,  presence: true
+  validates :description, presence: true
   validates :target_url, presence: true
   validates :style, presence: true
   validates :image, presence: true

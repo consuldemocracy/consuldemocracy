@@ -22,6 +22,9 @@ Metrics/LineLength:
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
+Style/EmptyMethod:
+  Enabled: false
+
 Style/StringLiterals:
   Enabled: false
 
