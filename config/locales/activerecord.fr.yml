@@ -139,6 +139,7 @@ fr:
         updated_at: Mis-à-jour le
         more_info_flag: Montrer dans la page Plus d'informations
         print_content_flag: Bouton impression du contenu
+        locale: Langue
       site_customization/image:
         name: Nom
         image: Image
