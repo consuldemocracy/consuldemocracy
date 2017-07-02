@@ -1,0 +1,125 @@
+---
+ca:
+  valuation:
+    budget_investments:
+      edit:
+        dossier: Informe
+        duration_html: Plaç d'execució <small>(opcional, dada no pública)</small>
+        feasibility: Viabilitat
+        feasible: Viable
+        feasible_explanation_html: Informe de inviabilitat <small>(en cas que ho siga, dada pública)</small>
+        internal_comments_html: Comentaris y observacions <small>(per a responsables interns, dada no pública)</small>
+        price_explanation_html: Informe de cost <small>(opcional, dada pública)</small>
+        price_first_year_html: Cost en el primer any (%{currency}) <small>(opcional, privat)</small>
+        price_html: Cost (%{currency}) <small>(dada pública)</small>
+        save: Guardar canvis
+        undefined_feasible: Sense decidir
+        unfeasible: Inviable
+        valuation_finished: Informe finalitzat
+      index:
+        assigned_to: Asignades a %{valuator}
+        edit: Editar informe
+        filters:
+          valuating: En avaluació
+          valuation_finished: Avaluació finalitzada
+          valuation_open: Obertes
+        headings_filter_all: Totes les partides
+        no_valuators_assigned: Sense avaluador
+        table_actions: Accions
+        table_heading_name: Nom de la partida
+        table_id: ID
+        table_title: Títol
+        title: Propostes d'inversió
+        valuators_assigned:
+          one: Avaluador asignat
+          other: "%{count} avaluadors asignats"
+      notice:
+        valuate: Dossier actualitzat
+      show:
+        assigned_admin: Administrador asignat
+        assigned_valuators: Avaluadors asignats
+        back: Tornar
+        by: Enviada per
+        currency: "€"
+        dossier: Informe
+        duration: Plaç d'execució
+        edit_dossier: Editar informe
+        feasibility: Viabilitat
+        feasible: Viable
+        heading: Partida
+        info: Dades d'enviament
+        internal_comments: Comentaris interns
+        price: Cost
+        price_first_year: Cost en el primer any
+        responsibles: Responsables
+        sent: Fecha de creació
+        title: Proposta d'inversió
+        undefined: Sense definir
+        unfeasible: Inviable
+        valuation_finished: Informe finalitzat
+    budgets:
+      index:
+        evaluate: Avaluar
+        filters:
+          current: Oberts
+          finished: Finalitzats
+        table_actions: Accions
+        table_assigned_investments_valuation_open: Prop. Inv. asignades en avaluació
+        table_name: Nom
+        table_phase: Fase
+        title: Pressupostos participatius
+    header:
+      title: Evaluación
+    menu:
+      budgets: Pressupostos participatius
+      spending_proposals: Propuestas de inversión
+      title: Avaluació
+    spending_proposals:
+      edit:
+        currency: "€"
+        dossier: Informe
+        feasibility: Viabilitat
+        feasible: Viable
+        feasible_explanation_html: Informe de inviabilitat <small>(en cas que ho siga, dada pública)</small>
+        internal_comments_html: Comentaris y observacions <small>(per a responsables interns, dada no pública)</small>
+        not_feasible: Inviable
+        price_explanation_html: Informe de cost <small>(opcional, dada pública)</small>
+        price_first_year_html: Cost en el primer any (%{currency}) <small>(opcional, privat)</small>
+        price_html: Cost (%{currency}) <small>(dada pública)</small>
+        save: Guardar canvis
+        time_scope_html: Plaç d'execució <small>(opcional, dada no pública)</small>
+        undefined_feasible: Sense decidir
+        valuation_finished: Informe finalitzat
+      index:
+        edit: Editar
+        filters:
+          valuating: En avaluació
+          valuation_finished: avaluació finalitzada
+          valuation_open: Obertes
+        geozone_filter_all: Tots els ambits d'actuació
+        title: Propostes d'inversió per a pressupostos participatius
+      notice:
+        valuate: Informe actualitzat
+      show:
+        assigned_admin: Administrador asignat
+        assigned_valuators: Avaluadors asignats
+        association_name: Associació
+        back: Tornar
+        by: Enviada per
+        currency: "€"
+        dossier: Informe
+        edit_dossier: Editar informe
+        feasibility: Viabilitat
+        feasible: Viable
+        geozone: Ámbit
+        heading: Proposta d'inversió
+        info: Dades d'enviament
+        internal_comments: Comentaris interns
+        not_feasible: No viable
+        price: Cost
+        price_first_year: Cost en el primer any
+        responsibles: Responsables
+        sent: Data de creació
+        time_scope: Plaç d'execució
+        undefined: Sense definir
+        valuation_finished: Informe finalitzat

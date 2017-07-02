@@ -1,0 +1,23 @@
+---
+ca:
+  activemodel:
+    attributes:
+      officing/residence:
+        document_number: Numero de document (inclosa lletra)
+        document_type: Tipus document
+        year_of_birth: Any de naiximent
+      verification:
+        email:
+          recipient: Email
+        residence:
+          date_of_birth: Data de naixement
+          document_number: Número de document (inclosa lletra)
+          document_type: Tipus document
+          postal_code: Codi postal
+        sms:
+          confirmation_code: Codi de confirmació
+          phone: Telefon
+    models:
+      verification:
+        residence: Residència
+        sms: SMS

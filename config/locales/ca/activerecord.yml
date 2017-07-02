@@ -1,0 +1,241 @@
+---
+ca:
+  activerecord:
+    attributes:
+      budget:
+        currency_symbol: Divisa
+        description_accepting: Descripció durant la fase d'aceptació
+        description_balloting: Descripció durant la fase de votació
+        description_finished: Descripció quan el pressupost ha finalitzat
+        description_reviewing: Descripció durant la fase de revisió
+        description_reviewing_ballots: Descripció durant la fase de revisió de vots
+        description_selecting: Descripció durant la fase de selecció
+        description_valuating: Descripció durant la fase de evaluació
+        name: Nom
+        phase: Fase
+      budget/investment:
+        administrator_id: Administrador
+        description: Descripció
+        external_url: Enllaç a documentació addicional
+        heading_id: Partida pressupostària
+        location: Ubicació
+        organization_name: Si estàs proposant en nom d'una associació, escriu el seu nom
+        title: Títol
+      comment:
+        body: Comentari
+        user: Usuari
+      debate:
+        author: Autor
+        description: Opinió
+        terms_of_service: Termes de servei
+        title: Títol
+      legislation/annotation:
+        text: comentari
+      legislation/draft_version:
+        body: text
+        changelog: canvis
+        final_version: versió final
+        status: estat
+        title: Títol de la versió
+      legislation/process:
+        additional_info: informació addicional
+        allegations_end_date: Data de fi d'al·legacions
+        allegations_start_date: Data d'inici d'al·legacions
+        debate_end_date: Data de fi del debat
+        debate_start_date: Data d'inici del debat
+        description: En què consisteix
+        draft_publication_date: Data de publicació de l'esborrany
+        end_date: Data de fi del procés
+        result_publication_date: Data de publicació del resultat final
+        start_date: Data d'inici del procés
+        title: Títol del procés
+      legislation/question:
+        question_options: respostes
+        title: Títol
+      legislation/question_option:
+        value: valor
+      organization:
+        name: Nom de l'associació
+        responsible_name: Persona responsable de l'associació
+      poll:
+        ends_at: Fecha de cierre
+        geozone_restricted: Restringida por zonas
+        name: Nombre
+        starts_at: Fecha de apertura
+      poll/question:
+        description: Descripción
+        external_url: Enlace a documentación adicional
+        summary: Resumen
+        title: Pregunta
+        valid_answers: Posibles respuestas
+      proposal:
+        author: Autor
+        description: Descripció
+        question: Pregunta
+        terms_of_service: Termes de servei
+        title: Títol
+      signature_sheet:
+        document_numbers: Nombres de documents
+        signable_id: ID Proposta ciutadana/Proposada inversió
+        signable_type: Tipus de fulla de signatures
+      site_customization/content_block:
+        body: contingut
+        locale: idioma
+        name: nom
+      site_customization/image:
+        image: imatge
+        name: nom
+      site_customization/page:
+        content: Contingut
+        created_at: Creada
+        more_info_flag: Mostra a la pàgina de més informació
+        print_content_flag: Botó d'imprimir contingut
+        slug: URL
+        status: Estat
+        subtitle: Subtítol
+        title: Títol
+        updated_at: última actualització
+      spending_proposal:
+        administrator_id: Administrador
+        association_name: Nom de l'associació
+        description: Descripció
+        external_url: Enllaç a documentació addicional
+        geozone_id: Àmbit d'actuació
+        title: Títol
+      user:
+        current_password: Contrasenya actual
+        email: Correu electrònic
+        login: E-mail o nom d'usuari
+        official_level: Nivell del càrrec
+        official_position: Càrrec públic
+        password: Contrasenya
+        password_confirmation: Confirmació de contrasenya
+        phone_number: Telèfon
+        redeemable_code: Codi de verificació per carta (opcional)
+        username: Nom d'usuari
+    errors:
+      models:
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: los temas deben ser menor o igual que %{count}
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: els temes han de ser menor o igual que %{count}
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: Has arribat al nombre màxim de missatges privats per dia
+        legislation/process:
+          attributes:
+            allegations_end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici de les al·legacions
+            debate_end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici del debat
+            end_date:
+              invalid_date_range: ha de ser igual o posterior a la data d'inici
+        poll/voter:
+          attributes:
+            document_number:
+              has_voted: Este usuario ya ha votado
+              not_in_census: Este documento no aparece en el censo
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: els temes han de ser menor o igual que %{count}
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: Has d'esperar un mínim de %{interval} dies entre notificacions
+        signature:
+          attributes:
+            document_number:
+              already_voted: Ja ha votat aquesta proposta
+              not_in_census: No verificat per Padró
+        site_customization/image:
+          attributes:
+            image:
+              image_height: Ha de tenir %{required_height}px d'alt
+              image_width: Ha de tenir %{required_width}px d'ample
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: ha de ser lletres, números, _ i -
+        user:
+          attributes:
+            email:
+              password_already_set: Aquest usuari ja té una clau associada
+    models:
+      activity:
+        one: activitat
+        other: activitats
+      administrator:
+        one: Administrador
+        other: Administradors
+      budget:
+        one: Pressupost participatiu
+        other: Pressupostos participatius
+      budget/investment:
+        one: Proposta d'inversió
+        other: Propostes d'inversió
+      comment:
+        one: Comentari
+        other: Comentaris
+      debate:
+        one: Debat
+        other: Debats
+      legislation/answers:
+        one: Resposta
+        other: respostes
+      legislation/draft_texts:
+        one: Esborrany
+        other: esborranys
+      legislation/draft_versions:
+        one: versió esborrany
+        other: versions esborrany
+      legislation/process:
+        one: procés
+        other: processos
+      legislation/question_options:
+        one: Opció de resposta tancada
+        other: Opcions de resposta tancada
+      legislation/questions:
+        one: pregunta
+        other: Preguntes
+      moderator:
+        one: Moderador
+        other: Moderadors
+      organization:
+        one: Associació
+        other: Associacions
+      poll/booth:
+        one: urna
+        other: urnas
+      poll/officer:
+        one: president de taula
+        other: presidents de taula
+      proposal:
+        one: Proposta ciutadana
+        other: Propostes ciutadanes
+      site_customization/content_block:
+        one: bloc
+        other: blocs
+      site_customization/image:
+        one: imatge
+        other: imatges
+      site_customization/page:
+        one: pàgina
+        other: pàgines
+      spending_proposal:
+        one: Proposta d'inversió
+        other: Propostes d'inversió
+      tag:
+        one: Tema
+        other: Temes
+      user:
+        one: Usuari
+        other: Usuaris
+      vote:
+        one: Vot
+        other: Vots
