@@ -64,6 +64,7 @@ class Budget
     scope :for_render, -> { includes(:heading) }
 
     before_save :calculate_confidence_score
+    after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
@@ -199,6 +200,10 @@ class Budget
 
     def calculate_confidence_score
       self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
+    end
+
+    def recalculate_heading_winners
+      Budget::Result.new(budget, heading).calculate_winners if incompatible_changed? && winner? && incompatible?
     end
 
     def set_responsible_name
