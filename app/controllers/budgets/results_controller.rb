@@ -1,6 +1,7 @@
 module Budgets
   class ResultsController < ApplicationController
     before_action :load_budget
+    before_action :load_heading
 
     load_and_authorize_resource :budget
 
@@ -12,15 +13,19 @@ module Budgets
     private
 
       def load_result
-        Budget::Result.new(@budget, heading)
+        Budget::Result.new(@budget, @heading)
       end
 
       def load_budget
         @budget = Budget.find_by(slug: params[:budget_id])
       end
 
-      def heading
-        @budget.headings.find_by(slug: params[:heading_id])
+      def load_heading
+        if params[:heading_id].present?
+          @heading = @budget.headings.find_by(slug: params[:heading_id])
+        else
+          @heading = @budget.headings.first
+        end
       end
 
   end
