@@ -311,7 +311,7 @@ feature 'Admin budget investments' do
 
   context "Edit" do
 
-    scenario "Change title, description or heading" do
+    scenario "Change title, incompatible, description or heading" do
       budget_investment = create(:budget_investment)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
 
@@ -321,12 +321,14 @@ feature 'Admin budget investments' do
       fill_in 'budget_investment_title', with: 'Potatoes'
       fill_in 'budget_investment_description', with: 'Carrots'
       select "#{budget_investment.group.name}: Barbate", from: 'budget_investment[heading_id]'
+      check "budget_investment_incompatible"
 
       click_button 'Update'
 
       expect(page).to have_content 'Potatoes'
       expect(page).to have_content 'Carrots'
       expect(page).to have_content 'Barbate'
+      expect(page).to have_content 'Incompatible'
     end
 
     scenario "Add administrator" do
