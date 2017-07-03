@@ -457,6 +457,4 @@ describe "Abilities::Common" do
     it { should_not be_able_to(:destroy, own_spending_proposal) }
   end
 
-
-
 end
