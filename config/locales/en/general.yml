@@ -14,6 +14,7 @@ en:
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
       public_interests_label: Keep my interests public
+      public_interests_title_list: List of interests
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
       email_on_direct_message_label: Receive emails about direct messages
@@ -648,6 +649,9 @@ en:
         budget_investments:
           one: 1 Investment
           other: "%{count} Investments"
+        follows:
+          one: 1 Following
+          other: "%{count} Following"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private
