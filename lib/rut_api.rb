@@ -14,6 +14,7 @@ class RutApi
 
   def authenticate()
     abre_log
+    abre_log Rails.application.secrets.rut_api_end_point
     begin
       response = HTTParty.post(Rails.application.secrets.rut_api_end_point + '/authenticate', headers: {"Content-Type" => "application/json"}, :body => @auth.to_json)
       @token = response['auth_token']
