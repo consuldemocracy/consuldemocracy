@@ -1,16 +1,19 @@
 <tr id="proposal_<%= proposal.id %>">
   <td>
-    <%= link_to proposal.title, proposal, proposal.retired? ? {class: 'retired'} : {} %>
+    <%= link_to proposal.title, proposal, proposal.retired? ? { class: 'retired' } : {} %>
     <br>
     <%= proposal.summary %>
   </td>
 
-  <% if author? %>
+  <% if can? :retire_form, proposal %>
     <td class="text-center">
-      <%= link_to t("users.proposals.send_notification"), new_proposal_notification_path(proposal_id: proposal.id),
-        class: 'button hollow' %>
+      <%= link_to t("users.proposals.send_notification"),
+                  new_proposal_notification_path(proposal_id: proposal.id),
+                  class: 'button hollow' %>
     </td>
+  <% end %>
 
+  <% if can? :new, ProposalNotification, author_id: proposal.author_id %>
     <td class="text-center">
       <% if proposal.retired? %>
         <span class="label alert"><%= t('users.proposals.retired') %></span>

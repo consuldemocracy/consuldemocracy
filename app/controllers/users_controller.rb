@@ -3,11 +3,11 @@ class UsersController < ApplicationController
 
   load_and_authorize_resource
   helper_method :author?
+  helper_method :valid_interests_access?
   helper_method :author_or_admin?
 
   def show
     load_filtered_activity if valid_access?
-    load_interests if valid_interests_access?
   end
 
   private
