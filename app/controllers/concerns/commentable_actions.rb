@@ -92,7 +92,7 @@ module CommentableActions
     end
 
     def load_categories
-      @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+      @categories = ActsAsTaggableOn::Tag.category.order(:name)
     end
 
     def parse_tag_filter

@@ -130,21 +130,21 @@ not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 puts " ✅"
 print "Creating Tags Categories"
 
-ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.category.create!(name:  "Asociaciones")
+ActsAsTaggableOn::Tag.category.create!(name:  "Cultura")
+ActsAsTaggableOn::Tag.category.create!(name:  "Deportes")
+ActsAsTaggableOn::Tag.category.create!(name:  "Derechos Sociales")
+ActsAsTaggableOn::Tag.category.create!(name:  "Economía")
+ActsAsTaggableOn::Tag.category.create!(name:  "Empleo")
+ActsAsTaggableOn::Tag.category.create!(name:  "Equidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Sostenibilidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Participación")
+ActsAsTaggableOn::Tag.category.create!(name:  "Movilidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Medios")
+ActsAsTaggableOn::Tag.category.create!(name:  "Salud")
+ActsAsTaggableOn::Tag.category.create!(name:  "Transparencia")
+ActsAsTaggableOn::Tag.category.create!(name:  "Seguridad y Emergencias")
+ActsAsTaggableOn::Tag.category.create!(name:  "Medio Ambiente")
 
 puts " ✅"
 print "Creating Debates"
@@ -390,7 +390,8 @@ Budget::PHASES.each_with_index do |phase, i|
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
       group.headings << group.headings.create!(name: geozone.name,
-                                               price: rand(1..100) * 100000)
+                                               price: rand(1..100) * 100000,
+                                               population: rand(1..50) * 10000)
     end
   end
 end
@@ -650,7 +651,8 @@ print "Creating legislation processes"
                                            debate_phase_enabled: true,
                                            allegations_phase_enabled: true,
                                            draft_publication_enabled: true,
-                                           result_publication_enabled: true
+                                           result_publication_enabled: true,
+                                           published: true
   )
 end
 

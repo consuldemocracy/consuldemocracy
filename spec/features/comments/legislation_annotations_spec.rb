@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting legislation questions' do
-  let(:user)   { create :user }
+  let(:user) { create :user }
   let(:legislation_annotation) { create :legislation_annotation, author: user }
 
   scenario 'Index' do
@@ -409,7 +409,7 @@ feature 'Commenting legislation questions' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process, legislation_annotation.draft_version, legislation_annotation)
@@ -510,8 +510,8 @@ feature 'Commenting legislation questions' do
 
   feature "Merged comment threads", :js do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
-    let!(:annotation1) { create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>5}]) }
-    let!(:annotation2) { create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start"=>"/p[1]", "startOffset"=>1, "end"=>"/p[1]", "endOffset"=>10}]) }
+    let!(:annotation1) { create(:legislation_annotation, draft_version: draft_version, text: "my annotation",       ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5}]) }
+    let!(:annotation2) { create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10}]) }
 
     background do
       login_as user

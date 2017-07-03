@@ -32,7 +32,7 @@ describe :officer do
       poll_2 = create(:poll)
 
       booth_assignment_1 = create(:poll_booth_assignment, poll: poll_1)
-      booth_assignment_2  = create(:poll_booth_assignment, poll: poll_2)
+      booth_assignment_2 = create(:poll_booth_assignment, poll: poll_2)
 
       create(:poll_officer_assignment, booth_assignment: booth_assignment_1, officer: officer, date: poll_1.starts_at)
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)
@@ -92,7 +92,7 @@ describe :officer do
       poll_2 = create(:poll)
 
       booth_assignment_1 = create(:poll_booth_assignment, poll: poll_1)
-      booth_assignment_2  = create(:poll_booth_assignment, poll: poll_2)
+      booth_assignment_2 = create(:poll_booth_assignment, poll: poll_2)
 
       create(:poll_officer_assignment, booth_assignment: booth_assignment_1, officer: officer, date: poll_1.starts_at)
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)

@@ -2,7 +2,7 @@ require 'rails_helper'
 include ActionView::Helpers::DateHelper
 
 feature 'Commenting proposals' do
-  let(:user)   { create :user }
+  let(:user) { create :user }
   let(:proposal) { create :proposal }
 
   scenario 'Index' do
@@ -395,7 +395,7 @@ feature 'Commenting proposals' do
     end
 
     scenario "can not comment as a moderator" do
-      admin  = create(:administrator)
+      admin = create(:administrator)
 
       login_as(admin.user)
       visit proposal_path(proposal)

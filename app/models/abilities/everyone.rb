@@ -19,7 +19,7 @@ module Abilities
       can [:read, :print], Budget::Investment
       can :read_results, Budget, phase: "finished"
       can :new, DirectMessage
-      can [:read, :debate, :draft_publication, :allegations, :result_publication], Legislation::Process
+      can [:read, :debate, :draft_publication, :allegations, :result_publication], Legislation::Process, published: true
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
       can [:create], Legislation::Answer

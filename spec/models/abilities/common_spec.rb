@@ -35,14 +35,14 @@ describe "Abilities::Common" do
   let(:incoming_poll) { create(:poll, :incoming) }
   let(:incoming_poll_from_own_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [geozone]) }
   let(:incoming_poll_from_other_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [create(:geozone)]) }
-  let(:expired_poll)  { create(:poll, :expired)  }
+  let(:expired_poll) { create(:poll, :expired) }
   let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
   let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
   let(:poll) { create(:poll, geozone_restricted: false) }
   let(:poll_from_own_geozone) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
   let(:poll_from_other_geozone) { create(:poll, geozone_restricted: true, geozones: [create(:geozone)]) }
 
-  let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone)  }
+  let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone) }
   let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }
   let(:poll_question_from_all_geozones)  { create(:poll_question, poll: poll) }
 
@@ -197,7 +197,7 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:vote, investment_in_accepting_budget) }
       it { should be_able_to(:vote, investment_in_selecting_budget) }
       it { should_not be_able_to(:vote, investment_in_balloting_budget) }
-      
+
       it { should_not be_able_to(:destroy, investment_in_accepting_budget) }
       it { should_not be_able_to(:destroy, investment_in_reviewing_budget) }
       it { should_not be_able_to(:destroy, investment_in_selecting_budget) }
@@ -222,7 +222,7 @@ describe "Abilities::Common" do
     it { should be_able_to(:vote, Proposal)          }
     it { should be_able_to(:vote_featured, Proposal) }
 
-    it { should     be_able_to(:create, SpendingProposal)                }
+    it { should     be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal)      }
 

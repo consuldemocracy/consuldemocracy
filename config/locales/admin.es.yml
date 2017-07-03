@@ -97,10 +97,12 @@ es:
         heading: Nombre de la partida
         add_heading: Añadir partida
         amount: Cantidad
+        population: Población
         save_heading: Guardar partida
         no_heading: Este grupo no tiene ninguna partida asignada.
         table_heading: Partida
         table_amount: Cantidad
+        table_population: Población
       winners:
         calculate: Calcular propuestas ganadoras
         calculated: Calculando ganadoras, puede tardar un minuto.
@@ -835,10 +837,8 @@ es:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
-      mark_as_featured: Proponer tema al crear propuesta
       name:
         placeholder: Escribe el nombre del tema
-      update: Actualizar Tema
     users:
       columns:
         name: Nombre
