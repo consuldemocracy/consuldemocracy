@@ -28,7 +28,7 @@
       <% @budget.headings.each do |heading| %>
         <li>
           <%= link_to heading.name,
-                      budget_results_path(@budget, heading_id: heading.id) %>
+                      budget_results_path(@budget, heading_id: heading.to_param) %>
         </li>
       <% end %>
     </ul>
