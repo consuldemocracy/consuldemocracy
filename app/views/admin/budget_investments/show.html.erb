@@ -56,3 +56,8 @@
 <p>
   <%= link_to t("admin.budget_investments.show.new_milestone"), new_admin_budget_budget_investment_budget_investment_milestone_path(@budget, @investment) %>
 </p>
+
+<h2 id="incompatible"><%= t("admin.budget_investments.show.compatibility.title") %></h2>
+<p id="incompatible">
+  <%= t("admin.budget_investments.show.compatibility.#{@investment.incompatible?}") %>
+</p>

@@ -159,6 +159,10 @@ en:
         undefined: Undefined
         milestone: Milestone
         new_milestone: Create new milestone
+        compatibility:
+          title: Compatibility
+          "true": Incompatible
+          "false": Compatible
       edit:
         classification: Clasification
         compatibility: Compatibility

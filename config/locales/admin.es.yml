@@ -159,6 +159,10 @@ es:
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
+        compatibility:
+          title: Compatibilidad
+          "true": Incompatible
+          "false": Compatible
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
