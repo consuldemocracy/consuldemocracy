@@ -28,7 +28,7 @@
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
-        <td><%= name_for_locale(page.locale) rescue nil %></td>
+        <td><%= name_for_locale(page.locale) %></td>
         <td class="small">
           <span class="icon-eye"></span>
           <% if page.status == "published" %>
