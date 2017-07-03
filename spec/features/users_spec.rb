@@ -234,6 +234,23 @@ feature 'Users' do
       expect(page).to have_content("Sport")
     end
 
+    scenario 'not show interests when proposal has been destroyed' do
+      proposal =  create(:proposal, tag_list: "Sport")
+      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      proposal.destroy
+
+      login_as(@user)
+      visit account_path
+
+      check 'account_public_interest'
+      click_button 'Save changes'
+
+      logout
+
+      visit user_path(@user)
+      expect(page).not_to have_content("Sport")
+    end
+
     scenario 'no visible by default' do
       visit user_path(@user)
 

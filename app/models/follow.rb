@@ -21,10 +21,8 @@ class Follow < ActiveRecord::Base
   def self.interests_by(user)
     interests = []
     user.follows.each do |follow|
-      if follow.followable.present?
-        follow.followable.tags.each do |tag|
-          interests << tag.name
-        end
+      follow.followable.tags.each do |tag|
+        interests << tag.name
       end
     end
     return interests.uniq
