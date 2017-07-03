@@ -161,6 +161,8 @@ en:
         new_milestone: Create new milestone
       edit:
         classification: Clasification
+        compatibility: Compatibility
+        mark_as_incompatible: Mark this investement project as incompatible
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update

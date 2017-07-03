@@ -61,9 +61,20 @@
     </div>
   </div>
 
-  <p class="clear">
+  <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
+
+  <div class="row">
+    <div class="small-12 medium-8 column">
+      <%= f.label :incompatible do %>
+        <%= f.check_box :incompatible, title: t('admin.budget_investments.edit.compatibility'), label: false %>
+        <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="margin-top">
     <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>
-  </p>
+  </div>
 <% end %>
 
 <hr>
