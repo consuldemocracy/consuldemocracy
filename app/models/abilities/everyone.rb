@@ -14,7 +14,6 @@ module Abilities
       can :read, Poll::Question
 
       can [:read, :welcome], Budget
-      can :read_results, Budget, phase: "finished"
       can [:read, :print], Budget::Investment
       can [:read], Budget::Group
 
