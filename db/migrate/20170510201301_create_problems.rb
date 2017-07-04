@@ -4,6 +4,7 @@ class CreateProblems < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.text :cause
+      t.text :problem_title
       t.text :consequence
       t.string :budget
       t.text :restriction
