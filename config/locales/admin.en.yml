@@ -123,6 +123,7 @@ en:
           valuation_finished: Valuation finished
           valuation_finished_feasible: Val. fin. Feasible
           selected: Selected
+          winners: Winners
           all: All
         title: Investment projects
         assigned_admin: Assigned administrator
@@ -145,6 +146,7 @@ en:
         table_selection: "Selection"
         table_evaluation: "Evaluation"
         table_winner: "Winner"
+        table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -164,8 +166,14 @@ en:
         undefined: Undefined
         milestone: Milestone
         new_milestone: Create new milestone
+        compatibility:
+          title: Compatibility
+          "true": Incompatible
+          "false": Compatible
       edit:
         classification: Clasification
+        compatibility: Compatibility
+        mark_as_incompatible: Mark this investement project as incompatible
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update

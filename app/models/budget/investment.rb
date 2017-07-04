@@ -51,7 +51,9 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { feasible.where(selected: true) }
-    scope :winners,                     -> { selected.where(winner: true) }
+    scope :compatible,                  -> { where(incompatible: false) }
+    scope :incompatible,                -> { where(incompatible: true) }
+    scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
@@ -63,6 +65,8 @@ class Budget
 
     scope :for_render, -> { includes(:heading) }
 
+    before_save :calculate_confidence_score
+    after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
@@ -224,6 +228,10 @@ class Budget
 
     def calculate_confidence_score
       self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
+    end
+
+    def recalculate_heading_winners
+      Budget::Result.new(budget, heading).calculate_winners if incompatible_changed? && winner? && incompatible?
     end
 
     def set_responsible_name

@@ -1,6 +1,6 @@
 <% provide :title, t("budgets.results.page_title", budget: @budget.name) %>
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: budget_results_url(@budget, heading_id: @result.heading) %>
+  <%= render "shared/canonical", href: budget_results_url(@budget, heading_id: @heading) %>
 <% end %>
 
 <div class="expanded budget no-margin-top">
@@ -34,5 +34,16 @@
     </ul>
   </div>
 
-  <%= render 'results_table', heading: @result.heading %>
+  <span class="float-right"><%= link_to t("budgets.results.hide_discarded_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.show_all_link")} %></span>
+
+
+  <%= render 'results_table', results_type: :compatible,
+                              title: @heading.name,
+                              heading_price: @heading.price,
+                              investments: @investments.compatible %>
+
+  <%= render 'results_table', results_type: :incompatible,
+                              title: t("budgets.results.incompatibles"),
+                              heading_price: @heading.price,
+                              investments: @investments.incompatible %>
 </div>

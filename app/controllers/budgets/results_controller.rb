@@ -7,7 +7,8 @@ module Budgets
 
     def show
       authorize! :read_results, @budget
-      @result = load_result
+      @investments = load_result.investments
+      @heading = @heading
     end
 
     private

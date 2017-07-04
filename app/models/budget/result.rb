@@ -10,7 +10,7 @@ class Budget
 
     def calculate_winners
       reset_winners
-      investments.each do |investment|
+      investments.compatible.each do |investment|
         @current_investment = investment
         set_winner if inside_budget?
       end
