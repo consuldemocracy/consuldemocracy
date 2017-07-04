@@ -236,6 +236,60 @@ feature "Notifications" do
       expect(page).to have_css ".notification", count: 0
     end
 
+    scenario "Followers should receive a notification", :js do
+      author = create(:user)
+
+      user1 = create(:user)
+      user2 = create(:user)
+      user3 = create(:user)
+
+      proposal = create(:proposal, author: author)
+
+      create(:follow, :followed_proposal, user: user1, followable: proposal)
+      create(:follow, :followed_proposal, user: user2, followable: proposal)
+
+      login_as(author)
+      visit root_path
+
+      visit new_proposal_notification_path(proposal_id: proposal.id)
+
+      fill_in 'proposal_notification_title', with: "Thank you for supporting my proposal"
+      fill_in 'proposal_notification_body', with: "Please share it with others so we can make it happen!"
+      click_button "Send message"
+
+      expect(page).to have_content "Your message has been sent correctly."
+
+      logout
+      login_as user1
+      visit root_path
+
+      find(".icon-notification").click
+
+      notification_for_user1 = Notification.where(user: user1).first
+      expect(page).to have_css ".notification", count: 1
+      expect(page).to have_content "There is one new notification on #{proposal.title}"
+      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
+
+      logout
+      login_as user2
+      visit root_path
+
+      find(".icon-notification").click
+
+      notification_for_user2 = Notification.where(user: user2).first
+      expect(page).to have_css ".notification", count: 1
+      expect(page).to have_content "There is one new notification on #{proposal.title}"
+      expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
+
+      logout
+      login_as user3
+      visit root_path
+
+      find(".icon-no-notification").click
+
+      expect(page).to have_css ".notification", count: 0
+    end
+
     pending "group notifications for the same proposal"
 
   end

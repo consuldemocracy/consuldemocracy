@@ -7,7 +7,7 @@
     <div class="callout primary">
       <p>
         <%= t("proposal_notifications.new.info_about_receivers_html",
-              count: @proposal.voters.count,
+              count: (@proposal.voters + @proposal.followers).uniq.count,
               proposal_page: link_to(t("proposal_notifications.new.proposal_page"),
                                      proposal_path(@proposal, anchor: "comments"))).html_safe %>
       </p>
