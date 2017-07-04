@@ -524,19 +524,6 @@ Style/SymbolProc:
     - 'lib/manager_authenticator.rb'
     - 'spec/factories.rb'
 
-# Offense count: 31
-# Cop supports --auto-correct.
-Style/UnneededInterpolation:
-  Exclude:
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'spec/factories.rb'
-    - 'spec/features/campaigns_spec.rb'
-    - 'spec/features/management/managed_users_spec.rb'
-    - 'spec/features/management/proposals_spec.rb'
-    - 'spec/features/management/spending_proposals_spec.rb'
-    - 'spec/models/residence_spec.rb'
-    - 'spec/models/spending_proposal_spec.rb'
-
 # Offense count: 13
 # Configuration parameters: SupportedStyles.
 # SupportedStyles: snake_case, normalcase, non_integer

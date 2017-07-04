@@ -24,7 +24,7 @@ module Graphqlable
     end
 
     def graphql_type_description
-      "#{self.model_name.human}"
+      (self.model_name.human).to_s
     end
 
   end

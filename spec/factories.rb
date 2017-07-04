@@ -567,7 +567,7 @@ FactoryGirl.define do
 
   factory :campaign do
     sequence(:name) { |n| "Campaign #{n}" }
-    sequence(:track_id) { |n| "#{n}" }
+    sequence(:track_id) { |n| n.to_s }
   end
 
   factory :notification do
@@ -577,8 +577,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    sequence(:external_code) { |n| "#{n}" }
-    sequence(:census_code) { |n| "#{n}" }
+    sequence(:external_code) { |n| n.to_s }
+    sequence(:census_code) { |n| n.to_s }
 
     trait :in_census do
       census_code "01"
