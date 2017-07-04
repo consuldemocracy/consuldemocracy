@@ -141,6 +141,10 @@ ul, ol, dl {
   float: right;
 }
 
+.top-bar .top-bar-title a img {
+    margin-bottom: -4px;
+}
+
 .header-title{
   color: $gray-two;
   font-size: 0.95rem;
@@ -148,6 +152,8 @@ ul, ol, dl {
 
 .subnavigation ul li a {
   line-height: 2rem;
+  font-weight: 400;
+  color: $gray-two;
 }
 
 li {
