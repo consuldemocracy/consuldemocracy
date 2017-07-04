@@ -388,12 +388,6 @@ Style/MutableConstant:
     - 'lib/tag_sanitizer.rb'
     - 'lib/wysiwyg_sanitizer.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/NegatedIf:
-  Exclude:
-    - 'spec/spec_helper.rb'
-
 # Offense count: 17
 # Cop supports --auto-correct.
 Style/NestedParenthesizedCalls:
