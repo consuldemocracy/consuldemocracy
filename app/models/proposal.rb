@@ -71,12 +71,12 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search(terms)
-    by_code = self.search_by_code(terms.strip)
-    by_code.present? ? by_code : self.pg_search(terms)
+    by_code = search_by_code(terms.strip)
+    by_code.present? ? by_code : pg_search(terms)
   end
 
   def self.search_by_code(terms)
-    matched_code = self.match_code(terms)
+    matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
     return results if (results.present? && results.first.code == terms)
   end
@@ -147,11 +147,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_hide
-    self.tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
+    tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
   end
 
   def after_restore
-    self.tags.each{ |t| t.increment_custom_counter_for('Proposal') }
+    tags.each{ |t| t.increment_custom_counter_for('Proposal') }
   end
 
   def self.votes_needed_for_success
@@ -163,7 +163,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def archived?
-    self.created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
+    created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
   end
 
   def notifications

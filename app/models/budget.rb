@@ -28,7 +28,7 @@ class Budget < ActiveRecord::Base
   scope :current,   -> { where.not(phase: "finished") }
 
   def description
-    self.send("description_#{self.phase}").try(:html_safe)
+    send("description_#{phase}").try(:html_safe)
   end
 
   def self.description_max_length
@@ -134,8 +134,8 @@ class Budget < ActiveRecord::Base
     def sanitize_descriptions
       s = WYSIWYGSanitizer.new
       PHASES.each do |phase|
-        sanitized = s.sanitize(self.send("description_#{phase}"))
-        self.send("description_#{phase}=", sanitized)
+        sanitized = s.sanitize(send("description_#{phase}"))
+        send("description_#{phase}=", sanitized)
       end
     end
 end

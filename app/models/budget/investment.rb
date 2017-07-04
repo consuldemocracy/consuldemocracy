@@ -94,7 +94,7 @@ class Budget
     end
 
     def self.search(terms)
-      self.pg_search(terms)
+      pg_search(terms)
     end
 
     def self.by_heading(heading)
@@ -191,7 +191,7 @@ class Budget
     end
 
     def enough_money?(ballot)
-      available_money = ballot.amount_available(self.heading)
+      available_money = ballot.amount_available(heading)
       price.to_i <= available_money
     end
 
@@ -256,8 +256,8 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id = self.heading.try(:group_id) if self.heading_id_changed?
-        self.budget_id ||= self.heading.try(:group).try(:budget_id)
+        self.group_id = heading.try(:group_id) if heading_id_changed?
+        self.budget_id ||= heading.try(:group).try(:budget_id)
       end
 
   end
