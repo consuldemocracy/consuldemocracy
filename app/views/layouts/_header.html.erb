@@ -1,6 +1,6 @@
 <header>
 
-  <div class="row">
+  <div class="">
     <div class="top-bar">
 
       <%= link_to setting['org_name'], root_path, class: "logo show-for-small-only" %>
@@ -13,7 +13,7 @@
       <div id="responsive-menu">
         <div class="top-bar-title">
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
-            <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', alt: t("layouts.header.logo")) %>
+            <%= image_tag(image_path_for('logo-header.svg'), class: 'hide-for-small-only float-left', alt: t("layouts.header.logo")) %>
           <% end %>
           <span class="header-title"> Peñalolen </span>
         </div>
@@ -39,7 +39,7 @@
   <div class="subnavigation expanded">
     <div class="row">
       <div class="hide-for-small-only">
-        <div class="small-12 medium-12 column">
+        <div class="small-12 medium-12">
           <ul>
             <%= render "shared/subnavigation" %>
             <div class="top-bar-right">

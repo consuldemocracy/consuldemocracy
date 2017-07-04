@@ -584,6 +584,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
 
   create_table "polls", force: :cascade do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "published",          default: false

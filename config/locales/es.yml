@@ -424,6 +424,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
     dates: "Desde el %{open_at} hasta el %{closed_at}"
     final_date: "Recuento final/Resultados"
     index:
+      description: La propuesta que resuelva el desafío será determinada por la comunidad. Las tres propuestas que reciban más apoyo pasarán a votación. Vecinas y vecinos podrán votar para elegir una propuesta definitiva. La propuesta con más votos a favor será acogida por el municipio y pasarán a Talleres de Diseño.
       filters:
         current: "Abiertas"
         incoming: "Próximamente"

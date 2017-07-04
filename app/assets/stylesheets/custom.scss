@@ -4,6 +4,15 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+h2 {
+  letter-spacing: 3px;
+}
+
+p {
+  color: $gray-two;
+}
+
+
 .cd-horizontal-timeline .events-content {
   position: relative;
 }
@@ -109,7 +118,7 @@
 }
 
 .progress{
-  background: $gray3 !important;
+  background: $gray-three !important;
   margin-top: 1rem;
 }
 
@@ -132,13 +141,19 @@ ul, ol, dl {
   float: right;
 }
 
+.top-bar .top-bar-title a img {
+    margin-bottom: -4px;
+}
+
 .header-title{
-  color: $gray2;
+  color: $gray-two;
   font-size: 0.95rem;
 }
 
 .subnavigation ul li a {
   line-height: 2rem;
+  font-weight: 400;
+  color: $gray-two;
 }
 
 li {
@@ -151,6 +166,8 @@ li {
 
 .title-page{
   font-family: $body-font-family-title;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .title-challenge{
@@ -172,11 +189,44 @@ li {
   color: $white;
 }
 
+.img-content-poll{
+  background-color: $orange;
+  max-width: 900px;
+  padding: 0.7rem;
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  margin-bottom: 30px;
+  color: $white;
+}
+
+.img-poll{
+  clip: rect(0px, 900px, 220px, 0px);
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+.end-poll{
+  border-bottom: 1px solid $gray-three;
+}
+
+.info-poll{
+  max-width: 500px;
+  margin-top: 5rem;
+  padding: 2rem;
+  background-color: $gray-two;
+  color: $white;
+}
+
+.menu-poll{
+  border-bottom: 0;
+}
+
 .deadline-problem{
   max-width: 700px;
   margin-top: -6rem;
   padding: 2rem;
-  background-color: $gray2;
+  background-color: $gray-two;
   color: $white;
 
 }
@@ -277,7 +327,7 @@ li {
 }
 
 .home-proposal-color{
-  color: $gray2;
+  color: $gray-two;
 }
 
 .proposal-type{
@@ -305,4 +355,40 @@ li {
 
 .home-proposal-subtitle{
   font-size: 0.9rem;
+}
+
+// Home
+
+.como01, .como02, .como03, .como04 {
+  height: 210px;
+  width: 265px;
+  margin: 0 auto;
+}
+
+.como01 {
+    background: url(como01.png);
+    &:hover {
+      background: url(como01.gif);
+    }
+}
+
+.como02 {
+    background: url(como02.png);
+    &:hover {
+      background: url(como02.gif);
+    }
+}
+
+.como03 {
+    background: url(como03.png);
+    &:hover {
+      background: url(como03.gif);
+    }
+}
+
+.como04 {
+    background: url(como04.png);
+    &:hover {
+      background: url(como04.gif);
+    }
 }
