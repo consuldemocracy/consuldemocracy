@@ -125,7 +125,6 @@ end
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
   user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
-  end
 end
 
 org_user_ids = User.organizations.pluck(:id)

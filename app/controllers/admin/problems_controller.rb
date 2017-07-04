@@ -44,7 +44,7 @@ private
   end
 
   def problem_params
-    params.require(:problem).permit(:title, :summary, :description, :starts_at, :ends_at, :cause, :consequence, :budget, :restriction, :user_id, :geozone_restricted, geozone_ids: [])
+    params.require(:problem).permit(:title, :summary, :description, :starts_at, :ends_at, :cause, :consequence, :budget, :problem_title, :restriction, :user_id, :geozone_restricted, geozone_ids: [])
   end
 
 end
