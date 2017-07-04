@@ -11,7 +11,7 @@ class CreateProblems < ActiveRecord::Migration
       t.datetime :starts_at
       t.datetime :ends_at
       t.boolean :geozone_restricted
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps null: false
     end
