@@ -115,6 +115,7 @@ class Verification::Residence
     def clean_document_number
       abre_log
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
+      abre_log self.document_number
     end
 
 end

@@ -277,6 +277,16 @@ ActiveRecord::Schema.define(version: 20170531153458) do
 
   add_index "design_events", ["project_id"], name: "index_design_events_on_project_id", using: :btree
 
+  create_table "design_phases", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "activated"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "design_phases", ["project_id"], name: "index_design_phases_on_project_id", using: :btree
+
   create_table "direct_messages", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "receiver_id"
@@ -317,7 +327,6 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.string   "name"
     t.string   "html_map_coordinates"
     t.string   "external_code"
-    t.integer  "population"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.string   "census_code"
@@ -587,15 +596,12 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   create_table "problems", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.text     "cause"
-    t.text     "consequence"
     t.string   "budget"
     t.text     "restriction"
     t.text     "summary"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "geozone_restricted"
-    t.boolean  "active"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
@@ -630,28 +636,24 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   create_table "proposals", force: :cascade do |t|
     t.string   "title",               limit: 80
     t.text     "description"
-    t.string   "deadline"
     t.string   "question"
-    t.string   "what"
-    t.string   "why"
     t.string   "external_url"
     t.integer  "author_id"
     t.datetime "hidden_at"
-    t.text     "prioritize"
     t.integer  "flags_count",                    default: 0
     t.datetime "ignored_flag_at"
     t.integer  "cached_votes_up",                default: 0
     t.integer  "comments_count",                 default: 0
     t.datetime "confirmed_hide_at"
-    t.boolean  "for_challenge",                  default: false
     t.integer  "hot_score",           limit: 8,  default: 0
     t.integer  "confidence_score",               default: 0
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "responsible_name",    limit: 60
     t.text     "summary"
     t.string   "video_url"
     t.tsvector "tsv"
+    t.integer  "geozone_id"
     t.datetime "retired_at"
     t.string   "retired_reason"
     t.text     "retired_explanation"
@@ -662,6 +664,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+  add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
   add_index "proposals", ["problem_id"], name: "index_proposals_on_problem_id", using: :btree
@@ -869,7 +872,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-28 14:41:34', null: false
+    t.datetime "password_changed_at",                       default: '2017-05-30 19:56:46', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
@@ -964,6 +967,7 @@ ActiveRecord::Schema.define(version: 20170531153458) do
   add_foreign_key "annotations", "legislations"
   add_foreign_key "annotations", "users"
   add_foreign_key "design_events", "projects"
+  add_foreign_key "design_phases", "projects"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"

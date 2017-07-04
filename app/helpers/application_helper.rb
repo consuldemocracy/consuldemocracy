@@ -57,7 +57,7 @@ module ApplicationHelper
   end
 
   def abre_log(text = nil)
-    p 'abre_log : ' + (text.nil? ? caller[0].to_s : text.to_s)
+    Rails.logger.debug 'abre_log : ' + (text.nil? ? caller[0].to_s : text.to_s)
   end
 
   def distance_of_time_in_days(from_time, to_time = 0)
@@ -66,5 +66,5 @@ module ApplicationHelper
     from_time, to_time = to_time, from_time if from_time > to_time
     distance_in_days = (((to_time - from_time).abs) / 86400).round
   end
-  
+
 end
