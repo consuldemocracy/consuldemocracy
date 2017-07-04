@@ -934,3 +934,4 @@ en:
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
+          locale: Language
