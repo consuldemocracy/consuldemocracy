@@ -141,7 +141,7 @@ es:
         table_feasibility: "Viabilidad"
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
-        table_winner: "Ganadora"
+        table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
@@ -159,8 +159,14 @@ es:
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
+        compatibility:
+          title: Compatibilidad
+          "true": Incompatible
+          "false": Compatible
       edit:
         classification: Clasificación
+        compatibility: Compatibilidad
+        mark_as_incompatible: Marcar esta propuesta de inversión como incompatible
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar

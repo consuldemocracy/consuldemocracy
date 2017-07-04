@@ -210,7 +210,6 @@ Rails.application.routes.draw do
       end
     end
 
-
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
     resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do

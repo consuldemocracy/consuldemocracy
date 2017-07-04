@@ -141,7 +141,7 @@ en:
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
         table_selection: "Selection"
-        table_winner: "Winner"
+        table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -159,8 +159,14 @@ en:
         undefined: Undefined
         milestone: Milestone
         new_milestone: Create new milestone
+        compatibility:
+          title: Compatibility
+          "true": Incompatible
+          "false": Compatible
       edit:
         classification: Clasification
+        compatibility: Compatibility
+        mark_as_incompatible: Mark this investement project as incompatible
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update

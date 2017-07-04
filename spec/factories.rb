@@ -266,6 +266,7 @@ FactoryGirl.define do
     unfeasibility_explanation ''
     external_url         'http://external_documention.org'
     terms_of_service     '1'
+    incompatible          false
 
     trait :with_confidence_score do
       before(:save) { |i| i.calculate_confidence_score }
@@ -298,6 +299,11 @@ FactoryGirl.define do
     trait :winner do
       selected
       winner true
+    end
+
+    trait :incompatible do
+      selected
+      incompatible true
     end
 
     trait :unselected do
