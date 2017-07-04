@@ -163,6 +163,14 @@ en:
           title: Compatibility
           "true": Incompatible
           "false": Compatible
+        selection:
+          title: Selection
+          "true": Selected
+          "false": Not selected
+        winner:
+          title: Winner
+          "true": "Yes"
+          "false": "No"
       edit:
         classification: Clasification
         compatibility: Compatibility

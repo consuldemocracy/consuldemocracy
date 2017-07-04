@@ -163,11 +163,19 @@ es:
           title: Compatibilidad
           "true": Incompatible
           "false": Compatible
+        selection:
+          title: Selección
+          "true": Seleccionado
+          "false": No seleccionado
+        winner:
+          title: Ganador
+          "true": "Si"
+          "false": "No"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
         mark_as_incompatible: Marcar como incompatible
-        selected: Selección
+        selection: Selección
         mark_as_selected: Marcar como seleccionado
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
