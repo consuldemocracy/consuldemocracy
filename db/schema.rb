@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702105956) do
+ActiveRecord::Schema.define(version: 20170703120055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,8 +95,9 @@ ActiveRecord::Schema.define(version: 20170702105956) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_groups", force: :cascade do |t|
@@ -108,8 +109,8 @@ ActiveRecord::Schema.define(version: 20170702105956) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",     limit: 50
-    t.integer "price",    limit: 8
+    t.string  "name",       limit: 50
+    t.integer "price",      limit: 8
     t.integer "population"
   end
 
@@ -157,6 +158,7 @@ ActiveRecord::Schema.define(version: 20170702105956) do
     t.integer  "ballot_lines_count",                    default: 0
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
+    t.boolean  "incompatible",                          default: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree

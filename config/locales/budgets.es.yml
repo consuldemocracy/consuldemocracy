@@ -136,3 +136,5 @@ es:
       amount_available: Presupuesto disponible
       accepted: "Propuesta de inversión aceptada: "
       discarded: "Propuesta de inversión descartada: "
+      incompatibles: Incompatibles
+

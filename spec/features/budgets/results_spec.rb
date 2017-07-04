@@ -8,8 +8,8 @@ feature 'Results' do
 
   let!(:investment1) { create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900) }
   let!(:investment2) { create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800) }
-  let!(:investment3) { create(:budget_investment, :selected, heading: heading, price: 500, ballot_lines_count: 700) }
-  let!(:investment4) { create(:budget_investment, :selected, heading: heading, price: 100, ballot_lines_count: 600) }
+  let!(:investment3) { create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700) }
+  let!(:investment4) { create(:budget_investment, :selected, heading: heading, price: 600, ballot_lines_count: 600) }
 
   let!(:results) { Budget::Result.new(budget, heading).calculate_winners }
 
@@ -17,31 +17,32 @@ feature 'Results' do
     visit budget_path(budget)
     click_link "See results"
 
-    within("#budget-investments-results") do
+    within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
       expect(page).to have_content investment2.title
-      expect(page).to have_content investment3.title
-      expect(page).to_not have_content investment4.title
+      expect(page).to have_content investment4.title
 
       expect(investment1.title).to appear_before(investment2.title)
-      expect(investment2.title).to appear_before(investment3.title)
+      expect(investment2.title).to appear_before(investment4.title)
+    end
+
+    within("#budget-investments-incompatible") do
+      expect(page).to have_content investment3.title
     end
   end
 
   scenario "Displays non winner investments", :js do
     visit budget_path(budget)
     click_link "See results"
-    click_link "Show all"
+    click_link "Hide discarded"
 
-    within("#budget-investments-results") do
+    within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
       expect(page).to have_content investment2.title
-      expect(page).to have_content investment3.title
-      expect(page).to have_content investment4.title
+      expect(page).not_to have_content investment3.title
+      expect(page).not_to have_content investment4.title
 
       expect(investment1.title).to appear_before(investment2.title)
-      expect(investment2.title).to appear_before(investment3.title)
-      expect(investment3.title).to appear_before(investment4.title)
     end
   end
 
