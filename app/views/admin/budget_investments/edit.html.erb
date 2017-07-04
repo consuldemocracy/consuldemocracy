@@ -61,13 +61,20 @@
     </div>
   </div>
 
-  <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
 
-  <div class="row">
-    <div class="small-12 medium-8 column">
+  <div class="row margin-top">
+    <div class="small-12 medium-3 column">
+      <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
       <%= f.label :incompatible do %>
         <%= f.check_box :incompatible, title: t('admin.budget_investments.edit.compatibility'), label: false %>
         <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
+      <% end %>
+    </div>
+    <div class="small-12 medium-3 column float-left">
+      <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
+      <%= f.label :selected do %>
+        <%= f.check_box :selected, title: t('admin.budget_investments.edit.selection'), label: false %>
+        <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_selected") %></span>
       <% end %>
     </div>
   </div>

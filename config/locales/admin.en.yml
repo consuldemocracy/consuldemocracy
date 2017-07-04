@@ -166,7 +166,9 @@ en:
       edit:
         classification: Clasification
         compatibility: Compatibility
-        mark_as_incompatible: Mark this investement project as incompatible
+        mark_as_incompatible: Mark as incompatible
+        selection: Selection
+        mark_as_selected: Mark as selected
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update

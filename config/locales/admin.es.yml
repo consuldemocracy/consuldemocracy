@@ -166,7 +166,9 @@ es:
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
-        mark_as_incompatible: Marcar esta propuesta de inversión como incompatible
+        mark_as_incompatible: Marcar como incompatible
+        selected: Selección
+        mark_as_selected: Marcar como seleccionado
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
