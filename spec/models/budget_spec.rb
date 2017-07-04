@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe Budget do
 
+  it_behaves_like "sluggable"
+
   describe "description" do
     it "changes depending on the phase" do
       budget = create(:budget)
