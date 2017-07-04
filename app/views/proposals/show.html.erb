@@ -49,14 +49,15 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-flag-actions">
+
+          <% if current_user %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'proposals/flag_actions', proposal: @proposal %>
-          </span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-follow">
+
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'follows/followable_button', followable: @proposal %>
-          </span>
+          <% end %>
+
         </div>
 
         <br>

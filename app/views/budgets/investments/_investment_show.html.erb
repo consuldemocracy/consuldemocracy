@@ -13,10 +13,12 @@
         <%= l investment.created_at.to_date %>
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <span class="js-follow">
+
+        <% if current_user %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= render 'follows/followable_button', followable: investment %>
-        </span>
+        <% end %>
+
       </div>
 
       <br>

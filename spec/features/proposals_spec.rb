@@ -61,6 +61,8 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_selector(avatar(proposal.author.name))
     expect(page.html).to include "<title>#{proposal.title}</title>"
+    expect(page).not_to have_selector ".js-flag-actions"
+    expect(page).not_to have_selector ".js-follow"
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram

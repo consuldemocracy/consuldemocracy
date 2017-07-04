@@ -329,6 +329,14 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Not sow flaggable buttons" do
+    investment = create(:budget_investment, heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_selector ".js-follow"
+  end
+
   scenario "Show back link contains heading id" do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, investment)
