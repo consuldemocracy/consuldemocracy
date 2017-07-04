@@ -1,43 +1,68 @@
 <%= form_for [:admin, @problem] do |f| %>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :title %>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.text_area :cause %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.text_area :consequence %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.text_area :summary %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.text_area :description %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.text_area :restriction %>
-    </div>
-  </div>
+<div class="small-12 column">
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.text_field :budget %>
+      <%= f.label :title %>
+      <p class="note"><%= t("admin.problems.form.note_title") %></p>
+      <%= f.text_field :title, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <%= f.label :problem_title %>
+      <p class="note"><%= t("admin.problems.form.note_problem") %></p>
+      <%= f.text_area :problem_title, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <%= f.label :cause %>
+      <p class="note"><%= t("admin.problems.form.note_cause") %></p>
+      <%= f.text_area :cause, label: false%>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <%= f.label :consequence %>
+      <p class="note"><%= t("admin.problems.form.note_consequence") %></p>
+      <%= f.text_area :consequence, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <%= f.label :summary %>
+      <p class="note"><%= t("admin.problems.form.note_summary") %></p>
+      <%= f.text_area :summary, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <%= f.label :description %>
+      <p class="note"><%= t("admin.problems.form.note_description") %></p>
+      <%= f.text_area :description, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <%= f.label :restriction %>
+      <p class="note"><%= t("admin.problems.form.note_restriction") %></p>
+      <%= f.text_area :restriction, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.label :budget %>
+      <%= f.text_field :budget, label: false %>
     </div>
   </div>
 
@@ -73,9 +98,7 @@
     </div>
   </div>
 
-
   <%= f.hidden_field :user_id, :value => @current_user.id %>
-
 
   <div class="row">
     <div class="small-12 medium-4 column">

@@ -208,6 +208,18 @@ es:
         tip_description: ""
       edit:
         submit_button: "Editar desafío"
+      form:
+        note_title: "Escribe el título del desafío propuesto a la comunidad"
+        note_problem: Redacta el problema al cual responde el desafío que se propone a la comunidad
+        note_summary: "Resume el desafío en menos de 140 caracteres"
+        note_description: "Describe el desafío propuesto a la comunidad, indicando objetivo, etapas y personas involucradas"
+        note_budget: "Presupuesto máximo"
+        note_restriction: "Restricciones"
+        note_cause: "Indica las causas del problema que se busca resolver"
+        note_consequence: "Identifica las principales consecuencias del problema mencionado"
+        note_starts_at: "Fecha de inicio de recepción de propuestas"
+        note_ends_at: "Fecha de término de recepción de propuestas"
+        note_geozone_restricted: "Restringido por unidad vecinal/zonas"
     debates:
       index:
         filter: Filtro

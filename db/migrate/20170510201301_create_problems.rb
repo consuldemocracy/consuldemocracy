@@ -4,6 +4,7 @@ class CreateProblems < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.text :cause
+      t.text :problem_title
       t.text :consequence
       t.string :budget
       t.text :restriction
@@ -11,7 +12,7 @@ class CreateProblems < ActiveRecord::Migration
       t.datetime :starts_at
       t.datetime :ends_at
       t.boolean :geozone_restricted
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps null: false
     end
