@@ -1,5 +1,11 @@
 module StatsHelper
 
+  def chart_tag(opt={})
+    opt[:data] ||= {}
+    opt[:data][:graph] = admin_api_stats_path(chart_data(opt))
+    content_tag :div, "", opt
+  end
+
   def events_chart_tag(events, opt = {})
     events = events.join(',') if events.is_a? Array
     opt[:data] ||= {}
