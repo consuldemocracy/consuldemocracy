@@ -2,6 +2,13 @@
   <ul id="admin_menu" data-accordion-menu>
 
     <li class="section-title">
+      <%= link_to admin_settings_path do %>
+      <span class="icon-settings"></span>
+        <strong><%= t('admin.menu.site_customization.home') %></strong>
+      <% end %>
+    </li>
+
+    <li class="section-title">
       <a href="#">
         <span class="icon-tag"></span>
         <strong><%= t("admin.menu.title_categories") %></strong>
@@ -96,13 +103,13 @@
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
-          <li <%= 'class=active' if controller_name == 'officers' %>>
+          <!-- <li <%= 'class=active' if controller_name == 'officers' %>>
             <%= link_to t('admin.menu.poll_officers'), admin_officers_path %>
           </li>
 
           <li <%= 'class=active' if controller_name == 'booths' %>>
             <%= link_to t('admin.menu.poll_booths'), admin_booths_path %>
-          </li>
+          </li> -->
         </ul>
       </li>
     <% end %>
@@ -122,9 +129,9 @@
         <strong><%= t("admin.menu.title_profiles") %></strong>
       </a>
       <ul <%= "class=is-active" if menu_profiles? %>>
-        <li <%= "class=active" if controller_name == "organizations" %>>
+        <!-- <li <%= "class=active" if controller_name == "organizations" %>>
           <%= link_to t("admin.menu.organizations"), admin_organizations_path %>
-        </li>
+        </li> -->
 
         <li <%= "class=active" if controller_name == "officials" %>>
           <%= link_to t("admin.menu.officials"), admin_officials_path %>
@@ -134,17 +141,17 @@
           <%= link_to t('admin.menu.moderators'), admin_moderators_path%>
         </li>
 
-        <li <%= 'class=active' if controller_name == 'valuators' %>>
+        <!-- <li <%= 'class=active' if controller_name == 'valuators' %>>
           <%= link_to t('admin.menu.valuators'), admin_valuators_path %>
         </li>
 
         <li <%= 'class=active' if controller_name == 'managers' %>>
           <%= link_to t('admin.menu.managers'), admin_managers_path %>
-        </li>
+        </li> -->
       </ul>
     </li>
 
-    <li class="section-title">
+    <!-- <li class="section-title">
       <a href="#">
         <span class="icon-banner"></span>
         <strong><%= t("admin.menu.title_banners") %></strong>
@@ -154,9 +161,9 @@
           <%= link_to t("admin.menu.banner"), admin_banners_path %>
         </li>
       </ul>
-    </li>
+    </li> -->
 
-    <li class="section-title">
+    <!-- <li class="section-title">
       <a href="#">
         <span class="icon-settings"></span>
         <strong><%= t("admin.menu.title_site_customization") %></strong>
@@ -165,19 +172,18 @@
         <li <%= "class=active" if controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>
-
         <li <%= "class=active" if controller_name == "images" %>>
           <%= link_to t("admin.menu.site_customization.images"), admin_site_customization_images_path %>
         </li>
-
         <li <%= 'class=active' if controller_name == 'content_blocks' %>>
           <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
         </li>
       </ul>
-    </li>
+    </li> -->
 
     <li class="section-title" <%= 'class=active' if controller_name == 'geozones' %>>
       <%= link_to admin_geozones_path do %>
+        <span class="icon-settings"></span>
         <strong><%= t('admin.menu.geozones') %></strong>
       <% end %>
     </li>

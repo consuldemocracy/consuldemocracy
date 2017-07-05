@@ -13,6 +13,7 @@ es:
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar
+      destroy: Eliminar
       configure: Configurar
     banners:
       index:
@@ -202,6 +203,7 @@ es:
         no_problems: "No hay desafíos agregados"
         create: "Crear desafío"
         title: "Desafíos"
+        brief: Resumen
       new:
         submit_button: "Crear desafío"
         title: "Desafíos"
@@ -211,6 +213,7 @@ es:
       form:
         note_title: "Escribe el título del desafío propuesto a la comunidad"
         note_problem: Redacta el problema al cual responde el desafío que se propone a la comunidad
+        note_call_to_action: Escribe una frase, en menos de 140 caracteres, que invite a los vecinos a crear propuestas para el desafío propuesto.
         note_summary: "Resume el desafío en menos de 140 caracteres"
         note_description: "Describe el desafío propuesto a la comunidad, indicando objetivo, etapas y personas involucradas"
         note_budget: "Presupuesto máximo"
@@ -266,6 +269,7 @@ es:
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
+        home: Personalizar sitio
       title_categories: Categorías
       title_moderated_content: Contenido moderado
       title_problems: Desafíos
@@ -516,7 +520,7 @@ es:
       index:
         banners: Banner style
         banner_imgs: Banner images
-        title: Configuración global
+        title: Personalizar sitio
         update_setting: Actualizar
         feature_flags: Funcionalidades
         features:
@@ -524,6 +528,10 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        home: Página principal
+        many: Varios
+        many_subtitle: ""
+        home_subtitle: En esta sección podrás editar la información mostrada en la página principal.
     shared:
       booths_search:
         button: Buscar

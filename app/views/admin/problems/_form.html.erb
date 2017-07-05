@@ -37,6 +37,14 @@
 
   <div class="row">
     <div class="small-12 medium-12 column">
+      <%= f.label :description %>
+      <p class="note"><%= t("admin.problems.form.note_description") %></p>
+      <%= f.text_area :description, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
       <%= f.label :summary %>
       <p class="note"><%= t("admin.problems.form.note_summary") %></p>
       <%= f.text_area :summary, label: false%>
@@ -44,10 +52,10 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.label :description %>
-      <p class="note"><%= t("admin.problems.form.note_description") %></p>
-      <%= f.text_area :description, label: false%>
+    <div class="small-12 column">
+      <%= f.label :call_to_action %>
+      <p class="note"><%= t("admin.problems.form.note_call_to_action") %></p>
+      <%= f.text_field :call_to_action, rows: 3, maxlength: 140, label: false %>
     </div>
   </div>
 
