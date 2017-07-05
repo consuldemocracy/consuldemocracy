@@ -1,1 +1,2 @@
-$("#<%= dom_id(@followable) %> .js-follow").html('<%= j render("followable_button", followable: @followable) %>');
+App.Followable.update("<%= dom_id(@followable) %>",
+                      "<%= j render('followable_button', followable: @followable) %>")
