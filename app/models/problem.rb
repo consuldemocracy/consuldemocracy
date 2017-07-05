@@ -1,8 +1,9 @@
 class Problem < ActiveRecord::Base
 
-  # validates :title, presence: true
-  # validates :summary, presence: true
-  # validates :user_id, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :summary, presence: true
+  validates :call_to_action, presence: true
 
   has_and_belongs_to_many :geozones
   belongs_to :user

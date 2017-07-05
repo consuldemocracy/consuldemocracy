@@ -211,13 +211,25 @@ es:
       edit:
         submit_button: "Editar desafío"
       form:
-        note_title: "Escribe el título del desafío propuesto a la comunidad"
-        note_problem: Redacta el problema al cual responde el desafío que se propone a la comunidad
-        note_call_to_action: Escribe una frase, en menos de 140 caracteres, que invite a los vecinos a crear propuestas para el desafío propuesto.
-        note_summary: "Resume el desafío en menos de 140 caracteres"
-        note_description: "Describe el desafío propuesto a la comunidad, indicando objetivo, etapas y personas involucradas"
-        note_budget: "Presupuesto máximo"
-        note_restriction: "Restricciones"
+        title: "*Título"
+        summary: "*Resumen"
+        description: "*Descripción"
+        budget: "Presupuesto máximo"
+        problem_title: "*¿Por qué estás creando este desafío?"
+        restriction: "Restricciones"
+        cause: "Causas"
+        consequence: "Consecuencias"
+        call_to_action: "*Invitación a crear propuestas"
+        starts_at: "*Fecha de inicio de recepción de propuestas"
+        ends_at: "*Fecha de término de recepción de propuestas"
+        problem: ¿Por qué estás creando este desafío?
+        note_title: Escribe el título del desafío propuesto a la comunidad (140 caracteres max.)
+        note_problem: Redacta la razón (problema a resolver o principal motivación) por la que se invita a la comunidad a participar en la solución a este desafío.
+        note_call_to_action: Escribe una frase llamativa que invite a los vecinos a crear propuestas para el desafío propuesto…¡haz un llamado a la acción! (140 caracteres max.)
+        note_budget: Si no hay presupuesto asignado ingresa $0, pero si el presupuesto no es relevante (o será abordado en otra instancia) deja este espacio en blanco.
+        note_summary: Resume el desafío propuesto. Esto es lo primero que verán los vecinos acerca del desafío, sé conciso y claro (260 caracteres max.)
+        note_description: Describe el desafío propuesto a la comunidad, indicando objetivo, motivaciones, etapas, personas involucradas, resultados esperados, etc. (760 caracteres max.)
+        note_restriction: "Indica de forma detallada si es que las propuestas deben acotarse a un rango específico de posibilidades (extensión, medidas, cantidad, presupuestos, características, opciones disponibles, etc)."
         note_cause: "Indica las causas del problema que se busca resolver"
         note_consequence: "Identifica las principales consecuencias del problema mencionado"
         note_starts_at: "Fecha de inicio de recepción de propuestas"

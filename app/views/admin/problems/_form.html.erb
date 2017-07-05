@@ -3,10 +3,34 @@
 <div class="small-12 column">
 
   <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.label :title %>
+    <div class="small-12 medium-12 column">
+      <label> <%= t("admin.problems.form.title") %> </label>
       <p class="note"><%= t("admin.problems.form.note_title") %></p>
-      <%= f.text_field :title, label: false %>
+      <%= f.text_field :title, maxlength: 140, label: false %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <label> <%= t("admin.problems.form.description") %> </label>
+      <p class="note"><%= t("admin.problems.form.note_description") %></p>
+      <%= f.text_area :description, rows:5, maxlength: 760, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 column">
+      <label> <%= t("admin.problems.form.summary") %> </label>
+      <p class="note"><%= t("admin.problems.form.note_summary") %></p>
+      <%= f.text_area :summary, rows: 3, maxlength: 260, label: false%>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
+      <label> <%= t("admin.problems.form.call_to_action") %> </label>
+      <p class="note"><%= t("admin.problems.form.note_call_to_action") %></p>
+      <%= f.text_area :call_to_action, rows: 2, maxlength: 140, label: false %>
     </div>
   </div>
 
@@ -37,30 +61,6 @@
 
   <div class="row">
     <div class="small-12 medium-12 column">
-      <%= f.label :description %>
-      <p class="note"><%= t("admin.problems.form.note_description") %></p>
-      <%= f.text_area :description, label: false%>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-12 column">
-      <%= f.label :summary %>
-      <p class="note"><%= t("admin.problems.form.note_summary") %></p>
-      <%= f.text_area :summary, label: false%>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 column">
-      <%= f.label :call_to_action %>
-      <p class="note"><%= t("admin.problems.form.note_call_to_action") %></p>
-      <%= f.text_field :call_to_action, rows: 3, maxlength: 140, label: false %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 medium-12 column">
       <%= f.label :restriction %>
       <p class="note"><%= t("admin.problems.form.note_restriction") %></p>
       <%= f.text_area :restriction, label: false%>
@@ -68,23 +68,28 @@
   </div>
 
   <div class="row">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-12 column">
       <%= f.label :budget %>
+      <p class="note"><%= t("admin.problems.form.note_budget") %></p>
       <%= f.text_field :budget, label: false %>
     </div>
   </div>
 
   <div class="row">
     <div class="small-12 medium-6 column">
+      <label> <%= t("admin.problems.form.starts_at") %> </label>
       <%= f.text_field :starts_at,
                         value: @problem.starts_at.present? ? l(@problem.starts_at.to_date) : nil,
-                        class: "js-calendar-full" %>
+                        class: "js-calendar-full",
+                          label: false %>
     </div>
 
     <div class="small-12 medium-6 column">
+      <label> <%= t("admin.problems.form.ends_at") %> </label>
       <%= f.text_field :ends_at,
                         value: @problem.ends_at.present? ? l(@problem.ends_at.to_date) : nil,
-                        class: "js-calendar-full" %>
+                        class: "js-calendar-full",
+                        label: false %>
     </div>
   </div>
 
