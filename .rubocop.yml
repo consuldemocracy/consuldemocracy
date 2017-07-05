@@ -28,6 +28,9 @@ Style/EmptyMethod:
 Style/StringLiterals:
   Enabled: false
 
+Style/SymbolProc:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
