@@ -25,9 +25,9 @@ class Verification::Management::Document
   def valid_age?(response)
     if under_age?(response)
       errors.add(:age, true)
-      return false
+      false
     else
-      return true
+      true
     end
   end
 

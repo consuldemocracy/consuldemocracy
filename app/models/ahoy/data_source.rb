@@ -27,7 +27,7 @@ module Ahoy
         end
       end
 
-      return data
+      data
     end
 
     private

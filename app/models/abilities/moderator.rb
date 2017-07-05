@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Moderation.new(user)
+      merge Abilities::Moderation.new(user)
 
       can :comment_as_moderator, [Debate, Comment, Proposal, SpendingProposal, ProbeOption, Poll::Question, Budget::Investment, Legislation::Question, Legislation::Annotation]
     end

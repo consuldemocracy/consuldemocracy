@@ -59,8 +59,8 @@ class Signature < ActiveRecord::Base
   end
 
   def clean_document_number
-    return if self.document_number.blank?
-    self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase
+    return if document_number.blank?
+    self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
   end
 
   def random_password

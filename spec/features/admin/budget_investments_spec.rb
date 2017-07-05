@@ -372,7 +372,7 @@ feature 'Admin budget investments' do
   context "Edit" do
 
     scenario "Change title, incompatible, description or heading" do
-      budget_investment = create(:budget_investment)
+      budget_investment = create(:budget_investment, :selected)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -383,6 +383,7 @@ feature 'Admin budget investments' do
       select "#{budget_investment.group.name}: Barbate", from: 'budget_investment[heading_id]'
       fill_in 'budget_investment_organization_name', with: 'Vegetables'
       check "budget_investment_incompatible"
+      check "budget_investment_selected"
 
       click_button 'Update'
 
@@ -391,6 +392,7 @@ feature 'Admin budget investments' do
       expect(page).to have_content 'Barbate'
       expect(page).to have_content 'Representing: Vegetables'
       expect(page).to have_content 'Incompatible'
+      expect(page).to have_content 'Selected'
     end
 
     scenario "Change visible label" do
