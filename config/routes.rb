@@ -137,48 +137,6 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :final_version_publication
-      resources :questions, only: [:show] do
-        resources :answers, only: [:create]
-      end
-      resources :draft_versions, only: [:show] do
-        get :go_to_version, on: :collection
-        get :changes
-        resources :annotations do
-          get :search, on: :collection
-          get :comments
-          post :new_comment
-        end
-      end
-    end
-  end
-
-  namespace :legislation do
-    resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :final_version_publication
-      resources :questions, only: [:show] do
-        resources :answers, only: [:create]
-      end
-      resources :draft_versions, only: [:show] do
-        get :go_to_version, on: :collection
-        get :changes
-        resources :annotations do
-          get :search, on: :collection
-          get :comments
-          post :new_comment
-        end
-      end
-    end
-  end
-
-  namespace :legislation do
-    resources :processes, only: [:index, :show] do
       member do
         get :debate
         get :draft_publication
