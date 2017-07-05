@@ -171,6 +171,10 @@ class Proposal < ActiveRecord::Base
     proposal_notifications
   end
 
+  def users_to_notify
+    (voters + followers).uniq
+  end
+
   protected
 
     def set_responsible_name

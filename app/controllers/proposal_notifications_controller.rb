@@ -11,7 +11,7 @@ class ProposalNotificationsController < ApplicationController
     @notification = ProposalNotification.new(proposal_notification_params)
     @proposal = Proposal.find(proposal_notification_params[:proposal_id])
     if @notification.save
-      notification_users.each do |user|
+      @proposal.users_to_notify.each do |user|
         Notification.add(user.id, @notification)
       end
       redirect_to @notification, notice: I18n.t("flash.actions.create.proposal_notification")
@@ -28,10 +28,6 @@ class ProposalNotificationsController < ApplicationController
 
     def proposal_notification_params
       params.require(:proposal_notification).permit(:title, :body, :proposal_id)
-    end
-
-    def notification_users
-      (@proposal.voters + @proposal.followers).uniq
     end
 
 end
