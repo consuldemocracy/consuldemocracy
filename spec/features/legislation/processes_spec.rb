@@ -56,7 +56,7 @@ feature 'Legislation' do
 
       visit legislation_processes_path(filter: 'next')
       expect(page).to_not have_content('Process open')
-      expect(page).to have_content("There aren't planned processes")
+      expect(page).to have_content('Process next')
       expect(page).to_not have_content('Process past')
 
       visit legislation_processes_path(filter: 'past')
