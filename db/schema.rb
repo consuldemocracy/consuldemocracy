@@ -95,9 +95,8 @@ ActiveRecord::Schema.define(version: 20170704105112) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "ballot_lines_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "budget_groups", force: :cascade do |t|

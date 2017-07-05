@@ -1,4 +1,4 @@
-RSpec.shared_examples "followable" do |followable_class_name, followable_path, followable_path_arguments|
+shared_examples "followable" do |followable_class_name, followable_path, followable_path_arguments|
   include ActionView::Helpers
 
   let!(:arguments) { {} }
@@ -11,73 +11,73 @@ RSpec.shared_examples "followable" do |followable_class_name, followable_path, f
     end
   end
 
-  scenario "Should not show follow button when there is no logged user" do
-    visit send(followable_path, arguments)
+  context "Show" do
 
-    within "##{dom_id(followable)}" do
-      expect(page).not_to have_link("Follow")
+    scenario "Should not display follow button when there is no logged user" do
+      visit send(followable_path, arguments)
+
+      within "##{dom_id(followable)}" do
+        expect(page).not_to have_link("Follow")
+      end
     end
-  end
 
-  scenario "Should show follow button when user is logged in" do
-    user = create(:user)
-    login_as(user)
+    scenario "Should display follow button when user is logged in" do
+      user = create(:user)
+      login_as(user)
 
-    visit send(followable_path, arguments)
+      visit send(followable_path, arguments)
 
-    within "##{dom_id(followable)}" do
+      within "##{dom_id(followable)}" do
+        expect(page).to have_link("Follow")
+      end
+    end
+
+    scenario "Should display follow button when user is logged and is not following" do
+      user = create(:user)
+      login_as(user)
+
+      visit send(followable_path, arguments)
+
       expect(page).to have_link("Follow")
     end
-  end
 
-  scenario "Following", :js do
-    user = create(:user)
-    login_as(user)
+    scenario "Should display unfollow button when click on follow button", :js do
+      user = create(:user)
+      login_as(user)
 
-    visit send(followable_path, arguments)
-    within "##{dom_id(followable)}" do
-      click_link "Follow"
-      page.find("#follow-#{followable_dom_name}-#{followable.id}").click
+      visit send(followable_path, arguments)
+      within "##{dom_id(followable)}" do
+        click_link "Follow"
+        page.find("#follow-#{followable_dom_name}-#{followable.id}").click
 
-      expect(page).to have_css("#unfollow-expand-#{followable_dom_name}-#{followable.id}")
+        expect(page).to have_css("#unfollow-expand-#{followable_dom_name}-#{followable.id}")
+      end
     end
 
-    expect(Follow.followed?(user, followable)).to be
-  end
+    scenario "Display unfollow button when user already following" do
+      user = create(:user)
+      follow = create(:follow, user: user, followable: followable)
+      login_as(user)
 
-  scenario "Show unfollow button when user already follow this followable" do
-    user = create(:user)
-    follow = create(:follow, user: user, followable: followable)
-    login_as(user)
+      visit send(followable_path, arguments)
 
-    visit send(followable_path, arguments)
-
-    expect(page).to have_link("Unfollow")
-  end
-
-  scenario "Unfollowing", :js do
-    user = create(:user)
-    follow = create(:follow, user: user, followable: followable)
-    login_as(user)
-
-    visit send(followable_path, arguments)
-    within "##{dom_id(followable)}" do
-      click_link "Unfollow"
-      page.find("#unfollow-#{followable_dom_name}-#{followable.id}").click
-
-      expect(page).to have_css("#follow-expand-#{followable_dom_name}-#{followable.id}")
+      expect(page).to have_link("Unfollow")
     end
 
-    expect(Follow.followed?(user, followable)).not_to be
-  end
+    scenario "Should display follow button when click on unfollow button", :js do
+      user = create(:user)
+      follow = create(:follow, user: user, followable: followable)
+      login_as(user)
 
-  scenario "Show follow button when user is not following this followable" do
-    user = create(:user)
-    login_as(user)
+      visit send(followable_path, arguments)
+      within "##{dom_id(followable)}" do
+        click_link "Unfollow"
+        page.find("#unfollow-#{followable_dom_name}-#{followable.id}").click
 
-    visit send(followable_path, arguments)
+        expect(page).to have_css("#follow-expand-#{followable_dom_name}-#{followable.id}")
+      end
+    end
 
-    expect(page).to have_link("Follow")
   end
 
 end

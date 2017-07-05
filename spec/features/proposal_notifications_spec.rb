@@ -36,7 +36,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower user)" do
+  scenario "Send a notification (Follower)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
     user_follower = create(:user)
@@ -47,7 +47,7 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
-  scenario "Send a notification (Follower user and Active voter)" do
+  scenario "Send a notification (Follower and Voter)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 

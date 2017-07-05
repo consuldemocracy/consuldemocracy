@@ -329,7 +329,7 @@ feature 'Budget Investments' do
     end
   end
 
-  scenario "Not sow flaggable buttons" do
+  scenario "Don't display flaggable buttons" do
     investment = create(:budget_investment, heading: heading)
 
     visit budget_investment_path(budget_id: budget.id, id: investment.id)

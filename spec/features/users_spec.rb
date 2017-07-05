@@ -218,7 +218,7 @@ feature 'Users' do
       @user = create(:user)
     end
 
-    scenario 'show interests' do
+    scenario 'Display interests' do
       proposal =  create(:proposal, tag_list: "Sport")
       create(:follow, :followed_proposal, followable: proposal, user: @user)
 
@@ -234,7 +234,7 @@ feature 'Users' do
       expect(page).to have_content("Sport")
     end
 
-    scenario 'not show interests when proposal has been destroyed' do
+    scenario 'Not display interests when proposal has been destroyed' do
       proposal =  create(:proposal, tag_list: "Sport")
       create(:follow, :followed_proposal, followable: proposal, user: @user)
       proposal.destroy
@@ -251,14 +251,14 @@ feature 'Users' do
       expect(page).not_to have_content("Sport")
     end
 
-    scenario 'no visible by default' do
+    scenario 'No visible by default' do
       visit user_path(@user)
 
       expect(page).to have_content(@user.username)
       expect(page).not_to have_css('#public_interests')
     end
 
-    scenario 'user can show public page' do
+    scenario 'User can display public page' do
       login_as(@user)
       visit account_path
 
@@ -271,7 +271,7 @@ feature 'Users' do
       expect(page).to have_css('#public_interests')
     end
 
-    scenario 'is always visible for the owner' do
+    scenario 'Is always visible for the owner' do
       login_as(@user)
       visit account_path
 
@@ -282,7 +282,7 @@ feature 'Users' do
       expect(page).to have_css('#public_interests')
     end
 
-    scenario 'is always visible for admins' do
+    scenario 'Is always visible for admins' do
       login_as(@user)
       visit account_path
 
@@ -296,7 +296,7 @@ feature 'Users' do
       expect(page).to have_css('#public_interests')
     end
 
-    scenario 'is always visible for moderators' do
+    scenario 'Is always visible for moderators' do
       login_as(@user)
       visit account_path
 
