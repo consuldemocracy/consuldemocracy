@@ -13,6 +13,11 @@ module FollowsHelper
     t('shared.follow_entity', entity: t("activerecord.models.#{entity}.one").downcase)
   end
 
+  def follow_entity_title(followable)
+    entity = followable.class.name.gsub('::', '/').downcase
+    t('shared.follow_entity_title', entity: t("activerecord.models.#{entity}.one").downcase)
+  end
+
   def unfollow_entity_text(followable)
     entity = followable.class.name.gsub('::', '/').downcase
     t('shared.unfollow_entity', entity: t("activerecord.models.#{entity}.one").downcase)
