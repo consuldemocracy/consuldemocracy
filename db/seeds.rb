@@ -24,7 +24,7 @@ Setting.create(key: 'telegram_handle', value: 'consul')
 Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Abre')
-Setting.create(key: 'place_name', value: 'City')
+Setting.create(key: 'place_name', value: 'Municipio')
 Setting.create(key: 'feature.debates', value: "false")
 Setting.create(key: 'feature.polls', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: nil)
@@ -54,6 +54,17 @@ Setting['feature.google_login'] = false
 Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = false
 Setting['feature.signature_sheets'] = false
+
+# Home
+Setting.create(key: 'home.main-title', value: "Construyamos soluciones para nuestra comuna")
+Setting.create(key: 'home.main-subtitle', value: "Quiero saber más")
+Setting.create(key: 'home.main-subtitle-link', value: "http://abre.penalolen.cl/more-information")
+Setting.create(key: 'home.info-epigraph', value: "Recepción de propuestas")
+Setting.create(key: 'home.info-title', value: "Parque de ideas: Soñemos en conjunto el Parque San Luis.")
+Setting.create(key: 'home.info-go_to', value: "Quiero subir una propuesta")
+Setting.create(key: 'home.info-go_to_link', value: "http://abre.penalolen.cl/proposals/new")
+Setting.create(key: 'home.info-date', value: "17 DE JULIO - 15 DE AGOSTO")
+
 
 puts " ✅"
 print "Creando unidades vecinales y zonas"
