@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Everyone.new(user)
+      merge Abilities::Everyone.new(user)
 
       can [:read, :update], User, id: user.id
 

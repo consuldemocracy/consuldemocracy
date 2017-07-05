@@ -31,7 +31,7 @@ class Verification::Residence
 
     user.update(document_number:       document_number,
                 document_type:         document_type,
-                geozone:               self.geozone,
+                geozone:               geozone,
                 date_of_birth:         date_of_birth.to_datetime,
                 gender:                gender,
                 residence_verified_at: Time.current)
@@ -39,7 +39,7 @@ class Verification::Residence
 
   def allowed_age
     return if errors[:date_of_birth].any?
-    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless Age.in_years(self.date_of_birth) >= User.minimum_required_age
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless Age.in_years(date_of_birth) >= User.minimum_required_age
   end
 
   def document_number_uniqueness
@@ -81,7 +81,7 @@ class Verification::Residence
     end
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
+      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
     end
 
 end

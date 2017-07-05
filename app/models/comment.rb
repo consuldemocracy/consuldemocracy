@@ -100,7 +100,7 @@ class Comment < ActiveRecord::Base
   end
 
   def call_after_commented
-    self.commentable.try(:after_commented)
+    commentable.try(:after_commented)
   end
 
   def self.body_max_length

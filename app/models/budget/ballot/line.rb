@@ -22,7 +22,7 @@ class Budget
       end
 
       def check_valid_heading
-        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected") unless ballot.valid_heading?(self.heading)
+        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected") unless ballot.valid_heading?(heading)
       end
 
       def check_selected
@@ -32,9 +32,9 @@ class Budget
       private
 
         def set_denormalized_ids
-          self.heading_id ||= self.investment.try(:heading_id)
-          self.group_id   ||= self.investment.try(:group_id)
-          self.budget_id  ||= self.investment.try(:budget_id)
+          self.heading_id ||= investment.try(:heading_id)
+          self.group_id   ||= investment.try(:group_id)
+          self.budget_id  ||= investment.try(:budget_id)
         end
     end
   end
