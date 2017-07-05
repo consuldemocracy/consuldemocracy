@@ -2,6 +2,7 @@
   <span class="followable-content">
 
     <% if show_follow_action? followable %>
+
       <%= link_to "##{follow_link_wrapper_id(followable)}",
                   id: follow_link_wrapper_id(followable),
                   title: follow_entity_text(followable),
@@ -16,9 +17,11 @@
                     method: :post, remote: true,
                     id: follow_link_id(followable) %>
       </div>
+
     <% end %>
 
     <% if show_unfollow_action? followable %>
+
       <% follow = followable.follows.where(user: current_user).first %>
       <%= link_to "##{unfollow_link_wrapper_id(followable)}",
                   id: unfollow_link_wrapper_id(followable),
@@ -33,6 +36,7 @@
                     method: :delete, remote: true,
                     id: unfollow_link_id(followable) %>
       </div>
+
     <% end %>
 
   </span>

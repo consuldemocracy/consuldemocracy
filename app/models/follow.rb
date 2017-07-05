@@ -25,7 +25,7 @@ class Follow < ActiveRecord::Base
         interests << tag.name
       end
     end
-    return interests.uniq
+    interests.uniq
   end
 
 end
