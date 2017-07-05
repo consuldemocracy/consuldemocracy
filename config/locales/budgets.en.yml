@@ -139,6 +139,7 @@ en:
       amount_available: Available budget
       accepted: "Accepted spending proposal: "
       discarded: "Discarded spending proposal: "
+      incompatibles: Incompatibles
     stats:
       title: Participation stats
       link: Stats
@@ -171,4 +172,3 @@ en:
       no_demographic_data: "* There is no demographic data for %{total} participants."
       participatory_disclaimer: "** The numbers of total participation refer to persons that created, supported or voted investment proposals."
       heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
-      incompatibles: Incompatibles

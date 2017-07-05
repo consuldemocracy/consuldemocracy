@@ -146,7 +146,6 @@ es:
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
         table_evaluation: "Evaluación"
-        table_winner: "Ganadora"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado

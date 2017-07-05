@@ -353,8 +353,8 @@ es:
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
-      tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      tags_label: Tags
     index:
       featured_proposals: Destacadas
       filter_topic:
