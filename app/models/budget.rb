@@ -1,13 +1,15 @@
 class Budget < ActiveRecord::Base
 
   include Measurable
+  include Sluggable
 
   PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :phase, inclusion: { in: PHASES }
   validates :currency_symbol, presence: true
+  validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy
