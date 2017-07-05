@@ -712,7 +712,6 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      quote: construyamos soluciones para nuestra comuna
       go_to_index: Ahora no, ver propuestas
       go_to_info: Quiero saber más
       title: Empieza a participar

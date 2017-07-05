@@ -65,7 +65,6 @@ Setting.create(key: 'home.info-go_to', value: "Quiero subir una propuesta")
 Setting.create(key: 'home.info-go_to_link', value: "http://abre.penalolen.cl/proposals/new")
 Setting.create(key: 'home.info-date', value: "17 DE JULIO - 15 DE AGOSTO")
 
-Setting['home.main-title'] = "Hola"
 
 puts " ✅"
 print "Creando unidades vecinales y zonas"
