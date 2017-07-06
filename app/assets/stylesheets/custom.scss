@@ -187,6 +187,10 @@ li {
   padding-left: 2.5rem;
   margin-bottom: 30px;
   color: $white;
+
+  p {
+    color: $white
+  }
 }
 
 .img-content-poll{
@@ -238,6 +242,10 @@ li {
 
 .problem-display{
   margin-bottom: 3rem;
+
+  p{
+    color: $white;
+  }
 }
 
 .home-quote{
@@ -275,6 +283,15 @@ li {
   text-transform: uppercase;
   font-family: $body-font-family-title;
 }
+
+
+.epigraph-problem{
+  font-size: 1rem;
+  color: $gray-two;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
 
 .home-info-title{
   font-size: 2rem;
@@ -366,29 +383,33 @@ li {
 }
 
 .como01 {
-    background: url(como01.png);
+    background: asset-url("como01.png");
     &:hover {
-      background: url(como01.gif);
+      background: asset-url("como01.gif");
     }
 }
 
 .como02 {
-    background: url(como02.png);
+    background: asset-url("como02.png");
     &:hover {
-      background: url(como02.gif);
+      background: asset-url("como02.gif");
     }
 }
 
 .como03 {
-    background: url(como03.png);
+    background: asset-url("como03.png");
     &:hover {
-      background: url(como03.gif);
+      background: asset-url("como03.gif");
     }
 }
 
 .como04 {
-    background: url(como04.png);
+    background: asset-url("como04.png");
     &:hover {
-      background: url(como04.gif);
+      background: asset-url("como04.gif");
     }
+}
+
+.white{
+  color: $white;
 }

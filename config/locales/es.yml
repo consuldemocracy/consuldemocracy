@@ -145,9 +145,9 @@ es:
       user_not_found: No se encontró el usuario
       invalid_date_range: "El rango de fechas no es válido"
   form:
-    accept_terms: Acepto la %{policy} y las %{conditions}
+    accept_terms: Acepto los %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
-    conditions: Condiciones de uso
+    conditions: Términos y Condiciones de uso
     debate: el debate
     direct_message: el mensaje privado
     error: error
@@ -312,18 +312,20 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       proposal_question_example_html: Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <em>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'</em>
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      proposal_summary: Resume tu propuesta en 140 carácteres
-      proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: ¿Qué agregarías al desafío para resolver de mejor manera el problema? Redacta tu propuesta
+      proposal_summary: "*Resumen de la propuesta"
+      proposal_summary_note: "Esto es lo primero que verán tus amigos y vecinos acerca de tu propuesta. ¡Sé conciso y claro! (200 caracteres máx.)"
+      proposal_text: "*Descripción de la propuesta"
       proposal_deadline: ¿En qué plazo se debería llegar al resultado de la propuesta?
       proposal_what: ¿Cómo crees que este problema afecta a la comunidad?
-      proposal_why: ¿Por qué crees que ocurre este problema?
-      proposal_description_note: Intenta que ataque directamente a la causa que definiste como más importante para que pueda resolver la principal consecuencia. Recuerda que tu propuesta debe ser una medida concreta que se pueda implementar para acabar con el problema.
-      proposal_title: Título de la propuesta
+      proposal_why: Reflexiona en torno al desafío
+      proposal_why_note: Explica de qué manera tu propuesta aborda el desafío planteado por la Municipalidad y profundízalo si es que crees que faltan elementos por considerar.
+      proposal_description_note: Describe de forma detallada tu propuesta. Explica de qué se trata, cuáles son sus principales características y por qué la comunidad debería apoyarla.
+      proposal_title: "*Título de la propuesta"
       proposal_video_url: Enlace a vídeo externo
       proposal_prioritize: ¿Cuáles crees que son la causa y consecuencia más importantes en relación al desafío planteado?
       proposal_problem: Seleccionar desafío o definir un problema a solucionar
-      proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+      proposal_video_url_note: Puedes añadir un enlace a YouTube u otro
+      proposal_document_note: Pega aquí links a sitios, archivos pdf o cualquier otro documento que sirva de apoyo
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_label: Temas
       tag_category_label: "Categorías"
@@ -712,7 +714,6 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      quote: construyamos soluciones para nuestra comuna
       go_to_index: Ahora no, ver propuestas
       go_to_info: Quiero saber más
       title: Empieza a participar
@@ -745,3 +746,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
   subtitles:
     proposals: Aporta con tus ideas para resolver el desafío. ABRE te permite realizar propuestas y compartirlas con la comunidad.
     create_proposal: Crea una propuesta para el desafío de la Municipalidad de Peñalolen
+  flash:
+    actions:
+      create:
+        problem: "Desafío creado exitosamente"

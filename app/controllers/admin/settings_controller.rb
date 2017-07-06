@@ -6,6 +6,7 @@ class Admin::SettingsController < Admin::BaseController
     @feature_flags = all_settings['feature']
     @banner_styles = all_settings['banner-style']
     @banner_imgs = all_settings['banner-img']
+    @home = all_settings['home']
   end
 
   def update

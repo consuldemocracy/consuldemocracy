@@ -28,6 +28,7 @@ class Proposal < ActiveRecord::Base
   validates :summary, presence: true
   validates :author, presence: true
   validates :responsible_name, presence: true
+  validates :description, presence: true
 
   validates :title, length: { in: 4..Proposal.title_max_length }
   validates :description, length: { maximum: Proposal.description_max_length }

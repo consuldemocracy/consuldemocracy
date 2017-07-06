@@ -10,6 +10,8 @@ class Setting < ActiveRecord::Base
       'feature'
     elsif banner_style?
       'banner-style'
+    elsif home?
+      'home'
     elsif banner_img?
       'banner-img'
     else
@@ -23,6 +25,10 @@ class Setting < ActiveRecord::Base
 
   def enabled?
     feature_flag? && value.present?
+  end
+
+  def home?
+    key.start_with?('home.')
   end
 
   def banner_style?

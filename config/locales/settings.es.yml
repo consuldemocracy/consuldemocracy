@@ -37,6 +37,15 @@ es:
       spending_proposals: Propuestas de inversión
       spending_proposal_features:
         voting_allowed: Votaciones sobre propuestas de inversión
+    home:
+      main-title: Título sección principal
+      main-subtitle: Subtítilo sección principal
+      main-subtitle-link: Link al que lleva el subtitulo de la sección principal
+      info-epigraph: Epígrafe de sección derecha
+      info-title: Título de sección derecha
+      info-go_to: Subtítulo de sección derecha
+      info-go_to_link: Link al que lleva el subtitulo de sección derecha
+      info-date: Destacado de sección derecha
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
     meta_description: "Descripción del sitio (SEO)"

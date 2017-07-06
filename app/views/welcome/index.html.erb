@@ -3,17 +3,17 @@
 
 
     <div class="small-12 medium-8 column home-quote">
-      <h1 class="home-quote-font"> <%= t("welcome.welcome.quote") %> </h1>
-      <%= link_to "Quiero saber más", more_info_path, class: "home-subtitle" %>
+      <h1 class="home-quote-font"> <%= Setting["home.main-title"] %> </h1>
+      <%= link_to Setting["home.main-subtitle"], Setting["home.main-subtitle-link"], class: "home-subtitle" %>
 
     </div>
 
     <div class="small-12 medium-4 column home-column2">
       <div class="home-info">
-        <p class="home-info-dates label text-right"> <%= t("welcome.welcome.info.date") %> </p>
-        <h4 class="home-info-epigraph"> <%= t("welcome.welcome.info.epigraph") %> </h4>
-        <h3 class="home-info-title"> <%= t("welcome.welcome.info.title") %> </h3>
-        <%= link_to t("welcome.welcome.info.go_to"), new_proposal_path, class: "home-info-link" %>
+        <p class="home-info-dates label text-right"> <%= Setting["home.info-date"] %> </p>
+        <h4 class="home-info-epigraph"> <%= Setting["home.info-epigraph"] %> </h4>
+        <h3 class="home-info-title"> <%= Setting["home.info-title"] %> </h3>
+        <%= link_to Setting["home.info-go_to"], Setting["home.info-go_to_link"], class: "home-info-link" %>
       </div>
 
       <div class="home-img">
@@ -84,7 +84,7 @@
     </div>
 
     <div class="home-proposals">
-      <% if Proposal.all.nil? %>
+      <% if Proposal.all.any? %>
       <h1 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h1>
       <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button button-home-proposals text-center' %>
       <div class="row">
