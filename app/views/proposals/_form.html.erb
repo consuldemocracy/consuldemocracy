@@ -65,32 +65,34 @@
     <%= f.hidden_field :for_challenge, :value => true %>
 
     <div class="text-width">
-      <div class="small-12 column column-with-margin">
-        <%= f.label :what, t("proposals.form.proposal_what") %>
-        <%= f.text_area :what, rows: 2, label: false,
-                        placeholder: "" %>
-      </div>
-
-      <div class="small-12 column column-with-margin">
-        <%= f.label :why, t("proposals.form.proposal_why") %>
-        <%= f.text_area :why, rows: 2, label: false,
-                        placeholder: "" %>
-      </div>
-
       <div class="small-12 column">
-        <%= f.label :description, t("proposals.form.proposal_text") %>
-        <!-- <p class="note"><%= t("proposals.form.proposal_description_note") %></p> -->
-        <%= f.text_area :description, rows: 5, maxlength: Proposal.description_max_length, label: false %>
+        <%= f.label :title, t("proposals.form.proposal_title") %>
+        <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
       </div>
 
       <div class="small-12 column">
         <%= f.label :summary, t("proposals.form.proposal_summary") %>
-        <%= f.text_area :summary, rows: 3, maxlength: 140, label: false %>
+        <p class="note"><%= t("proposals.form.proposal_summary_note") %></p>
+        <%= f.text_area :summary, rows: 3, maxlength: 200, label: false %>
       </div>
 
       <div class="small-12 column">
-        <%= f.label :title, t("proposals.form.proposal_title") %>
-        <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+        <%= f.label :description, t("proposals.form.proposal_text") %>
+        <p class="note"><%= t("proposals.form.proposal_description_note") %></p>
+        <%= f.text_area :description, rows: 5, label: false %>
+      </div>
+      <!--
+      <div class="small-12 column column-with-margin">
+        <%= f.label :what, t("proposals.form.proposal_what") %>
+        <%= f.text_area :what, rows: 2, label: false,
+                        placeholder: "" %>
+      </div> -->
+
+      <div class="small-12 column column-with-margin">
+        <%= f.label :why, t("proposals.form.proposal_why") %>
+        <p class="note"><%= t("proposals.form.proposal_why_note") %></p>
+        <%= f.text_area :why, rows: 2, label: false,
+                        placeholder: "" %>
       </div>
 
       <div id="js-suggest"></div>
@@ -104,7 +106,7 @@
       </div> -->
 
 
-    <!--
+
       <div class="small-12 column">
         <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
         <p class="note"><%= t("proposals.form.proposal_video_url_note") %></p>
@@ -113,9 +115,10 @@
 
       <div class="small-12 column">
         <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
+        <p class="note"><%= t("proposals.form.proposal_document_note") %></p>
         <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
       </div>
-    -->
+
 
 
       <div class="small-12 column">

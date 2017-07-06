@@ -22,6 +22,5 @@ class Problem < ActiveRecord::Base
       return 'Toda la comuna'
     end
   end
-
-
+  
 end

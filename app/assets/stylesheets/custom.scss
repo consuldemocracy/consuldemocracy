@@ -383,30 +383,30 @@ li {
 }
 
 .como01 {
-    background: url(como01.png);
+    background: asset-url("como01.png");
     &:hover {
-      background: url(como01.gif);
+      background: asset-url("como01.gif");
     }
 }
 
 .como02 {
-    background: url(como02.png);
+    background: asset-url("como02.png");
     &:hover {
-      background: url(como02.gif);
+      background: asset-url("como02.gif");
     }
 }
 
 .como03 {
-    background: url(como03.png);
+    background: asset-url("como03.png");
     &:hover {
-      background: url(como03.gif);
+      background: asset-url("como03.gif");
     }
 }
 
 .como04 {
-    background: url(como04.png);
+    background: asset-url("como04.png");
     &:hover {
-      background: url(como04.gif);
+      background: asset-url("como04.gif");
     }
 }
 
