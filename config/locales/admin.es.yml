@@ -192,6 +192,9 @@ es:
           implementation: "Implementación"
           evaluation: "Evaluación"
     problems:
+      flash:
+        actions:
+          create: "Desafío agregado con éxito"
       title: "Desafíos"
       edit:
         tip_cause: ""
@@ -204,6 +207,7 @@ es:
         create: "Crear desafío"
         title: "Desafíos"
         brief: Resumen
+        name: "Título"
       new:
         submit_button: "Crear desafío"
         title: "Desafíos"
