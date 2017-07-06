@@ -84,7 +84,7 @@
     </div>
 
     <div class="home-proposals">
-      <% if Proposal.all.nil? %>
+      <% if Proposal.all.any? %>
       <h1 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h1>
       <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button button-home-proposals text-center' %>
       <div class="row">

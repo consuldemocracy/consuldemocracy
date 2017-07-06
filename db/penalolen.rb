@@ -55,6 +55,16 @@ Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = false
 Setting['feature.signature_sheets'] = false
 
+# Home
+Setting.create(key: 'home.main-title', value: "Construyamos soluciones para nuestra comuna")
+Setting.create(key: 'home.main-subtitle', value: "Quiero saber más")
+Setting.create(key: 'home.main-subtitle-link', value: "http://abre.penalolen.cl/more-information")
+Setting.create(key: 'home.info-epigraph', value: "Recepción de propuestas")
+Setting.create(key: 'home.info-title', value: "Parque de ideas: Soñemos en conjunto el Parque San Luis.")
+Setting.create(key: 'home.info-go_to', value: "Quiero subir una propuesta")
+Setting.create(key: 'home.info-go_to_link', value: "http://abre.penalolen.cl/proposals/new")
+Setting.create(key: 'home.info-date', value: "17 DE JULIO - 15 DE AGOSTO")
+
 puts " ✅"
 print "Creando unidades vecinales y zonas"
 
@@ -160,8 +170,7 @@ print "Creando un desafío y un problema"
 
 problem = Problem.create(title: "Mejoramiento Parque San Luis",
   summary: "Actualmente el Parque San Luis no está siendo útil para los vecinos ya que no cumple con las necesidades y expectativas de estos.",
-  cause: "Estas son las cauas",
-  consequence: "Estas son las consecuencias",
+  call_to_action: "Invitamos a los vecinos a proponer acerca de cómo quieren el Parque San Luis",
   description: "El Parque San Luis, ubicado en la Unidad Vecinal 23, ha sido desde hace muchos años un lugar donde los vecinos de la comuna se congregan. Pero, a pesar de ello, no esta satisfaciendo las necesidades actuales de los vecinos, que a través de las mesas barriales han manifestado su interés por mejorar este, con la finalidad que las familias se puedan congregar en este espacio.",
   id: 3,
   budget: "$60.000.000",
@@ -181,6 +190,11 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
 2.- Mi barrio está sucio y poco salubre con fecas
 3.- Perros sufren y tienen muy mala salud por tener que vivir en la calle",
   user: admin,
+  call_to_action: "Crea propuestas",
+  starts_at: 1.day.ago,
+  ends_at: 10.day.from_now,
+  description: "Description",
+  summary: "Summary",
   geozones: Geozone.reorder("RANDOM()").limit(1) )
 
 puts ""
