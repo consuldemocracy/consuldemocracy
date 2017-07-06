@@ -68,6 +68,7 @@ gem 'redcarpet', '~> 3.4.0'
 gem 'paperclip'
 gem 'httparty'
 gem 'simple_form'
+gem "faker", '~> 1.7.3'
 
 
 group :development, :test do
@@ -90,7 +91,6 @@ group :development, :test do
   gem 'rvm1-capistrano3',              require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem "bullet", '~> 5.5.1'
-  gem "faker", '~> 1.7.3'
   gem 'rubocop', '~> 0.48.1', require: false
   gem 'knapsack'
 end
