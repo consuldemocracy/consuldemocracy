@@ -102,5 +102,5 @@ $(function(){
 
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);
-  $(document).on('ajaxComplete', initialize_modules);
+  $(document).on('ajax:complete', initialize_modules);
 });
