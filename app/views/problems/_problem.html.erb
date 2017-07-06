@@ -1,5 +1,11 @@
 <% provide :title do %><%= @problem.title %><% end %>
 
+<div class="proposal-form row">
+  <div class="small-12 medium-12 column">
+    <%= render "shared/back_link" %>
+  </div>
+</div>
+
 <div class="text-width">
   <div class="small-12 column column-with-margin">
     <p class="epigraph-problem"> _ DESAFÍO </p>
@@ -15,7 +21,9 @@
         <h4 class="call-to-action-challenge"><%= @problem.call_to_action%> </h4>
         <p class="white"> <%= @problem.description %> </p>
         <p class="white">
-          <%= t("proposals.form.problem.budget") %> <%= @problem.budget%> </br>
+          <% if @problem.budget? %>
+            <%= t("proposals.form.problem.budget") %> <%= @problem.budget%> </br>
+          <% end %>
           <%= t("proposals.form.problem.community") %> <%= @problem.geozones_name %>
         </p>
       </div>
@@ -29,19 +37,19 @@
 
 <div class="text-width">
   <div class="small-12 column column-with-margin">
-    <% if @problem.problem_title %>
+    <% if @problem.problem_title? %>
       <h4> ¿Por qué surge este desafío? </h1>
       <p> <%= @problem.summary%> </p>
     <% end %>
-    <% if @problem.cause %>
+    <% if @problem.cause? %>
       <h4> Causas </h1>
       <p> <%= @problem.cause%> </p>
     <% end %>
-    <% if @problem.consequence %>
+    <% if @problem.consequence? %>
       <h4> Consecuencias </h1>
       <p> <%= @problem.consequence%> </p>
     <% end %>
-    <% if @problem.restriction %>
+    <% if @problem.restriction? %>
       <h4> Restricciones </h1>
       <p> <%= @problem.restriction%> </p>
     <% end %>
