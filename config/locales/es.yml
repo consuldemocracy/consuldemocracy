@@ -744,3 +744,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
   subtitles:
     proposals: Aporta con tus ideas para resolver el desafío. ABRE te permite realizar propuestas y compartirlas con la comunidad.
     create_proposal: Crea una propuesta para el desafío de la Municipalidad de Peñalolen
+  flash:
+    actions:
+      create:
+        problem: "Desafío creado exitosamente"

@@ -1,44 +1,49 @@
 <% provide :title do %><%= @problem.title %><% end %>
 
+<div class="text-width">
+  <div class="small-12 column column-with-margin">
+    <p class="epigraph-problem"> _ DESAFÍO </p>
+    <h1 class="text-left title-page"><%= @problem.title %> </h1>
+    <p> <%= @problem.summary%> </p>
+  </div>
+</div>
 
-<div class="proposal-show">
-  <div id="<%= dom_id(@problem) %>" class="row">
-    <div class="small-12 medium-9 column">
-      <%= render "shared/back_link" %>
-
-      <h1><%= @problem.title %></h1>
-
-      <div class="proposal-info">
-        <%= l @problem.created_at.to_date %>
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <%= l @problem.created_at.to_date %>
-        <span class="bullet">&nbsp;&bull;&nbsp;</span>
-        <span class="icon-comments">
-        </span>&nbsp;
-      </div>
-
-      <br>
-      <p>
-        <%= t("proposals.show.code") %>
-        <strong><%= @problem.summary %></strong>
-      </p>
-
-      <blockquote><%= @problem.summary %></blockquote>
-
-      <%= safe_html_with_links @problem.description %>
-
-    </div>
-
-    <aside class="small-12 medium-3 column">
-      <div class="sidebar-divider"></div>
-      <h2><%= t("votes.supports") %></h2>
-      <div id="<%= dom_id(@problem) %>_votes">
-        <p>
-          <%= t("proposals.show.code") %>
-          <strong><%= @problem.starts_at %></strong>
-          <strong><%= @problem.ends_at %></strong>
+<div class="row">
+  <div  id="problem-display">
+    <div class="small-12 column problem-display">
+      <div class="summary-problem float-left">
+        <h4 class="call-to-action-challenge"><%= @problem.call_to_action%> </h4>
+        <p class="white"> <%= @problem.description %> </p>
+        <p class="white">
+          <%= t("proposals.form.problem.budget") %> <%= @problem.budget%> </br>
+          <%= t("proposals.form.problem.community") %> <%= @problem.geozones_name %>
         </p>
       </div>
-    </aside>
+      <div class="deadline-problem float-right">
+        <span> Quedan</span> <strong class="mark-days">
+        <%=distance_of_time_in_days(@problem.ends_at, Date.today)%></strong><span> días para crear propuestas </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-width">
+  <div class="small-12 column column-with-margin">
+    <% if @problem.problem_title %>
+      <h4> ¿Por qué surge este desafío? </h1>
+      <p> <%= @problem.summary%> </p>
+    <% end %>
+    <% if @problem.cause %>
+      <h4> Causas </h1>
+      <p> <%= @problem.cause%> </p>
+    <% end %>
+    <% if @problem.consequence %>
+      <h4> Consecuencias </h1>
+      <p> <%= @problem.consequence%> </p>
+    <% end %>
+    <% if @problem.restriction %>
+      <h4> Restricciones </h1>
+      <p> <%= @problem.restriction%> </p>
+    <% end %>
   </div>
 </div>

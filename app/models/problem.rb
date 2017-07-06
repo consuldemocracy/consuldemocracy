@@ -4,6 +4,8 @@ class Problem < ActiveRecord::Base
   validates :description, presence: true
   validates :summary, presence: true
   validates :call_to_action, presence: true
+  validates :starts_at, presence: true
+  validates :ends_at, presence: true
 
   has_and_belongs_to_many :geozones
   belongs_to :user
