@@ -146,7 +146,6 @@ es:
         table_valuation_finished: "Ev. Fin."
         table_selection: "Selección"
         table_evaluation: "Evaluación"
-        table_winner: "Ganadora"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Administrador asignado
@@ -171,10 +170,20 @@ es:
           title: Compatibilidad
           "true": Incompatible
           "false": Compatible
+        selection:
+          title: Selección
+          "true": Seleccionado
+          "false": No seleccionado
+        winner:
+          title: Ganador
+          "true": "Si"
+          "false": "No"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
-        mark_as_incompatible: Marcar esta propuesta de inversión como incompatible
+        mark_as_incompatible: Marcar como incompatible
+        selection: Selección
+        mark_as_selected: Marcar como seleccionado
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
@@ -1041,3 +1050,4 @@ es:
           updated_at: Última actualización
           status_draft: Borrador
           status_published: Publicada
+          locale: Idioma

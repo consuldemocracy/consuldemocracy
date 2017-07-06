@@ -12,7 +12,7 @@ class Verification::Sms
   end
 
   def save
-    return false unless self.valid?
+    return false unless valid?
     update_user_phone_information
     send_sms
     Lock.increase_tries(user)

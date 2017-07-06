@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Moderation.new(user)
+      merge Abilities::Moderation.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil

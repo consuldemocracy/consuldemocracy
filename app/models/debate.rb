@@ -59,7 +59,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    self.pg_search(terms)
+    pg_search(terms)
   end
 
   def to_param
@@ -129,11 +129,11 @@ class Debate < ActiveRecord::Base
   end
 
   def after_hide
-    self.tags.each{ |t| t.decrement_custom_counter_for('Debate') }
+    tags.each{ |t| t.decrement_custom_counter_for('Debate') }
   end
 
   def after_restore
-    self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+    tags.each{ |t| t.increment_custom_counter_for('Debate') }
   end
 
   def set_comment_kind
@@ -148,7 +148,7 @@ class Debate < ActiveRecord::Base
   end
 
   def featured?
-    self.featured_at.present?
+    featured_at.present?
   end
 
   def self.public_columns_for_api

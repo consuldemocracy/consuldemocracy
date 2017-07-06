@@ -51,7 +51,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def budget_investment_params
       params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :organization_name, :tag_list, :label, :administrator_id, :valuation_tag_list, :visible_to_valuators, :incompatible, valuator_ids: [])
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :valuation_tag_list, :incompatible,
+                    :selected, :organization_name, :tag_list, :label, :visible_to_valuators, valuator_ids: [])
     end
 
     def load_budget

@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Everyone.new(user)
+      merge Abilities::Everyone.new(user)
 
       can [:read, :update], User, id: user.id
 
@@ -47,9 +47,6 @@ module Abilities
         can :create, Budget::Investment,               budget: { phase: "accepting" }
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
-        can :vote, Budget::Investment,                 budget: { phase: "selecting" }
-        can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
-        can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Recommendation
 
         can :create, DirectMessage
@@ -59,6 +56,7 @@ module Abilities
           can :vote, Proposal
           can :vote_featured, Proposal
           can :vote, SpendingProposal
+
           can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
           can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
           # This line must happen after Budget::Ballot is used (in the previous lines);
@@ -68,6 +66,9 @@ module Abilities
             can [:create, :destroy], ::BallotLine
           end
           can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+          can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
+          can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
+
           can :answer, Poll do |poll|
             poll.answerable_by?(user)
           end

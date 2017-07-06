@@ -145,7 +145,6 @@ en:
         table_valuation_finished: "Val. Fin."
         table_selection: "Selection"
         table_evaluation: "Evaluation"
-        table_winner: "Winner"
         table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
@@ -159,7 +158,7 @@ en:
         label: Label (public visibility)
         sent: Sent
         group: Grupo
-        heading: Partida
+        heading: Heading
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
@@ -170,10 +169,20 @@ en:
           title: Compatibility
           "true": Incompatible
           "false": Compatible
+        selection:
+          title: Selection
+          "true": Selected
+          "false": Not selected
+        winner:
+          title: Winner
+          "true": "Yes"
+          "false": "No"
       edit:
         classification: Clasification
         compatibility: Compatibility
-        mark_as_incompatible: Mark this investement project as incompatible
+        mark_as_incompatible: Mark as incompatible
+        selection: Selection
+        mark_as_selected: Mark as selected
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
@@ -1040,3 +1049,4 @@ en:
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
+          locale: Language

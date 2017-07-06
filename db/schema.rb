@@ -928,6 +928,7 @@ ActiveRecord::Schema.define(version: 20170703120055) do
     t.string   "status",             default: "draft"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "locale"
   end
 
   create_table "spending_proposals", force: :cascade do |t|
