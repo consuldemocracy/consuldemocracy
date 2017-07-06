@@ -38,12 +38,17 @@
       <div class="small-12 column problem-display">
           <!-- TODO: Acá se debe mostrar el problema elegido -->
           <div class="summary-problem float-left">
-            <h3 class="title-challenge white"><%= challenge.title%> </h3>
-            <%= f.hidden_field :problem_id, :value => challenge.id %>
-            <p class="white"> <%= challenge.summary%> </p>
-            <p class="white"> <%= t("proposals.form.problem.budget") %> <%= challenge.budget%> </br>
-            <%= t("proposals.form.problem.community") %> <%= challenge.geozones_name %>
-            </p>
+            <%= link_to problem_path(challenge) do %>
+              <h3 class="title-challenge white"><%= challenge.title%> </h3>
+              <%= f.hidden_field :problem_id, :value => challenge.id %>
+              <p class="white"> <%= challenge.summary%> </p>
+              <p> <%= challenge.call_to_action %> </p>
+              <% if challenge.budget? %>
+                <p class="white"> <%= t("proposals.form.problem.budget") %> <%= challenge.budget%> </p> </br>
+              <% end %>
+              <p> <%= t("proposals.form.problem.community") %> <%= challenge.geozones_name %>
+              </p>
+            <% end %>
           </div>
           <div class="deadline-problem float-right">
             <span> Quedan</span> <strong class="mark-days">
