@@ -242,7 +242,7 @@ feature 'Users' do
       login_as(@user)
       visit account_path
 
-      check 'account_public_interest'
+      check 'account_public_interests'
       click_button 'Save changes'
 
       logout

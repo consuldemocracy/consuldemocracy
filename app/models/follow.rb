@@ -18,14 +18,4 @@ class Follow < ActiveRecord::Base
     !! by_user_and_followable(user, followable).try(:first)
   end
 
-  def self.interests_by(user)
-    interests = []
-    user.follows.each do |follow|
-      follow.followable.tags.each do |tag|
-        interests << tag.name
-      end
-    end
-    interests.uniq
-  end
-
 end

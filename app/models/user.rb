@@ -309,6 +309,10 @@ class User < ActiveRecord::Base
     where(conditions.to_hash).where(["username = ?", login]).first
   end
 
+  def interests
+    follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
+  end
+
   private
 
     def clean_document_number
