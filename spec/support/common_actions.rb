@@ -468,7 +468,7 @@ module CommonActions
   end
 
   def csv_path_for(table)
-    "api/#{table}.csv"
+    "system/api/#{table}.csv"
   end
 
 end
