@@ -189,11 +189,12 @@ feature 'Debates' do
 
   scenario 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
+    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
 
     visit new_debate_path
     fill_in 'debate_title', with: 'Testing auto link'
-    fill_in 'debate_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    fill_in 'debate_description', with: js_injection_string
     check 'debate_terms_of_service'
 
     click_button 'Start a debate'

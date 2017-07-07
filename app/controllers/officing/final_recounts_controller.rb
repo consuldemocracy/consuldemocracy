@@ -15,7 +15,8 @@ class Officing::FinalRecountsController < Officing::BaseController
   end
 
   def create
-    @final_recount = ::Poll::FinalRecount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id, date: final_recount_params[:date])
+    @final_recount = ::Poll::FinalRecount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                                date: final_recount_params[:date])
     @final_recount.officer_assignment_id = @officer_assignment.id
     @final_recount.count = final_recount_params[:count]
 

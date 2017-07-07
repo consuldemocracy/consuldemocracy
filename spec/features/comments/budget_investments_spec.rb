@@ -62,9 +62,12 @@ feature 'Commenting Budget::Investments' do
   end
 
   scenario 'Comment order' do
-    c1 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.current - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.current - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.current)
+    c1 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 100,
+                                                  cached_votes_total: 120, created_at: Time.current - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 10,
+                                                  cached_votes_total: 12, created_at: Time.current - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: investment, cached_votes_up: 1,
+                                                  cached_votes_total: 2, created_at: Time.current)
 
     visit budget_investment_path(investment.budget, investment, order: :most_voted)
 
@@ -118,7 +121,8 @@ feature 'Commenting Budget::Investments' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: investment, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+    create :comment, commentable: investment,
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit budget_investment_path(investment.budget, investment)
 

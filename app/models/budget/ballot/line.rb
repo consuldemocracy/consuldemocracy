@@ -22,7 +22,8 @@ class Budget
       end
 
       def check_valid_heading
-        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected") unless ballot.valid_heading?(heading)
+        return if ballot.valid_heading?(heading)
+        errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected")
       end
 
       def check_selected
