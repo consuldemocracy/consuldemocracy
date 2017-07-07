@@ -53,7 +53,7 @@ class API::CSVExporter
     end
 
     def folder
-      "public/api/"
+      "public/system/api/"
     end
 
 end
