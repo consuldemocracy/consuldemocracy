@@ -1,6 +1,6 @@
 <header>
 
-  <div class="">
+  <div class="row all-screen column">
     <div class="top-bar">
 
       <%= link_to setting['org_name'], root_path, class: "logo show-for-small-only" %>
@@ -21,7 +21,7 @@
         <div class="top-bar-right">
           <div class="top-bar-title">
             <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
-              <%= image_tag(image_path_for('logo_pena.png'), class: 'hide-for-small-only float-left pena') %>
+              <%= image_tag(image_path_for('logo_pena.svg'), class: 'hide-for-small-only') %>
               <!-- <%= setting['org_name'] %> -->
             <% end %>
           </div>
@@ -37,7 +37,7 @@
   </div>
 
   <div class="subnavigation expanded">
-    <div class="row">
+    <div class="row large-12 medium-12 small-12 columns">
       <div class="hide-for-small-only">
         <div class="small-12 medium-12">
           <ul>

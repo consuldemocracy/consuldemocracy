@@ -2,16 +2,16 @@
   <div class="row all-screen">
 
 
-    <div class="small-12 medium-8 column home-quote">
+    <div class="small-12 medium-7 large-7 column hero">
       <h1 class="home-quote-font"> <%= t("welcome.welcome.quote") %> </h1>
-      <%= link_to "Quiero saber más", more_info_path, class: "home-subtitle" %>
-
+      <h5 class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
+      <%= link_to "Quiero saber más", more_info_path, class: "hollow button secondary float-right" %>
     </div>
 
-    <div class="small-12 medium-4 column home-column2">
+    <div class="small-12 medium-5 large-5 column home-column2">
       <div class="home-info">
-        <p class="home-info-dates label text-right"> <%= t("welcome.welcome.info.date") %> </p>
-        <h4 class="home-info-epigraph"> <%= t("welcome.welcome.info.epigraph") %> </h4>
+        <p class="home-info-dates label float-right"> <%= t("welcome.welcome.info.date") %> </p>
+        <h4 class="home-info-epigraph small blue"> <%= t("welcome.welcome.info.epigraph") %> </h4>
         <h3 class="home-info-title"> <%= t("welcome.welcome.info.title") %> </h3>
         <%= link_to t("welcome.welcome.info.go_to"), new_proposal_path, class: "home-info-link" %>
       </div>

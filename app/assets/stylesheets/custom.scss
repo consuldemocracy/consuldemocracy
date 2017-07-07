@@ -4,14 +4,49 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+h1 {
+  font-size: 71px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
 h2 {
   letter-spacing: 3px;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
+h3 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
 }
 
 p {
   color: $gray-two;
 }
 
+.small {
+  font-family: $body-font-family-title;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.white {
+  color: white;
+}
 
 .cd-horizontal-timeline .events-content {
   position: relative;
@@ -240,20 +275,17 @@ li {
   margin-bottom: 3rem;
 }
 
-.home-quote{
+// Home
+
+.hero{
   background-color: $brand;
   min-height: 28rem;
+  padding: 6vw 2vw;
 }
 
 .home-quote-font{
   font-family: $body-font-family-title;
   color: $white;
-  font-size: 4rem;
-  padding-right: 10rem;
-  padding-left: 2rem;
-  padding-top: 5rem;
-  text-transform: uppercase;
-  line-height: 1.2;
 }
 
 .home-subtitle{
@@ -274,13 +306,6 @@ li {
   color: $light-blue;
   text-transform: uppercase;
   font-family: $body-font-family-title;
-}
-
-.home-info-title{
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-family: $body-font-family-title;
-  line-height: 1.1;
 }
 
 .home-info-link{
