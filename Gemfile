@@ -74,24 +74,14 @@ gem 'graphql', '~> 1.6.3'
 gem 'graphiql-rails', '~> 1.4.1'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.6'
-  gem 'capybara', '~> 2.14.0'
   gem 'factory_girl_rails', '~> 4.8.0'
-  gem 'fuubar'
   gem 'launchy'
   gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'i18n-tasks', '~> 0.9.15'
-  gem 'capistrano', '~> 3.8.1', require: false
-  gem 'capistrano-bundler', '~> 1.2', require: false
-  gem "capistrano-rails", '~> 1.2.3', require: false
-  gem 'rvm1-capistrano3', require: false
-  gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem "bullet", '~> 5.5.1'
   gem "faker", '~> 1.7.3'
   gem 'rubocop', '~> 0.49.1', require: false
@@ -103,14 +93,20 @@ group :test do
   gem 'poltergeist', '~> 1.15.0'
   gem 'coveralls', '~> 0.8.21', require: false
   gem 'email_spec'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'capybara', '~> 2.14.0'
+  gem 'fuubar'
 end
 
 group :development do
   gem 'mdl', require: false
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'scss_lint', require: false
   gem 'web-console', '3.3.0'
-
+  gem 'capistrano', '~> 3.8.1', require: false
+  gem 'capistrano-bundler', '~> 1.2', require: false
+  gem "capistrano-rails", '~> 1.2.3', require: false
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano3-delayed-job', '~> 1.7.3'
 end
 
 eval_gemfile './Gemfile_custom'
