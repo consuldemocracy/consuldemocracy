@@ -436,13 +436,6 @@ Rails/OutputSafety:
     - 'app/helpers/users_helper.rb'
     - 'app/helpers/valuation_helper.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: NotNilAndNotEmpty, NotBlank, UnlessBlank.
-Rails/Present:
-  Exclude:
-    - 'app/controllers/management/document_verifications_controller.rb'
-
 # Offense count: 70
 # Configuration parameters: Blacklist.
 # Blacklist: decrement!, decrement_counter, increment!, increment_counter, toggle!, touch, update_all, update_attribute, update_column, update_columns, update_counters
