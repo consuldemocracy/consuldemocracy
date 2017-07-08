@@ -387,7 +387,6 @@ GEM
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
       sshkit (>= 1.2)
-    safe_yaml (1.0.4)
     safely_block (0.2.0)
       errbase
     sass (3.4.23)
@@ -445,9 +444,6 @@ GEM
     tilt (2.0.7)
     timecop (0.8.1)
     tins (1.13.2)
-    tolk (2.0.0)
-      rails (>= 4.0)
-      safe_yaml (>= 0.8.6)
     turbolinks (2.5.3)
       coffee-rails
     turnout (2.4.0)
@@ -559,7 +555,6 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   sprockets (~> 3.7.1)
-  tolk (~> 2.0.0)
   turbolinks
   turnout (~> 2.4.0)
   uglifier (~> 3.2.0)

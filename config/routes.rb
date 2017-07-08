@@ -416,7 +416,6 @@ Rails.application.routes.draw do
   end
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-  mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # more info pages
   get 'more-information',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'
