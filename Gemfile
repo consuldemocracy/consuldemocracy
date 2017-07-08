@@ -1,22 +1,15 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.9'
-# Use PostgreSQL
+
 gem 'pg', '~> 0.20.0'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '~> 3.2.0'
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2.1'
-# Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.3.1'
 gem 'jquery-ui-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# Fix sprockets on the
 gem 'sprockets', '~> 3.7.1'
 
 gem 'devise', '~> 3.5.7'
