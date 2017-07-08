@@ -365,12 +365,6 @@ Performance/RedundantMatch:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
     - 'app/helpers/embed_videos_helper.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Rails/Delegate:
-  Exclude:
-    - 'app/models/poll/question.rb'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: Whitelist.

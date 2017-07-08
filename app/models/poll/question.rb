@@ -58,9 +58,7 @@ class Poll::Question < ActiveRecord::Base
     end
   end
 
-  def answerable_by?(user)
-    poll.answerable_by?(user)
-  end
+  delegate :answerable_by?, to: :poll
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
