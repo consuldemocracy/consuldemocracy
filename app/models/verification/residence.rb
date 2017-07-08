@@ -5,7 +5,7 @@ class Verification::Residence
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
 
-  before_validation :call_census_api
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -29,12 +29,21 @@ class Verification::Residence
 
     user.take_votes_if_erased_document(document_number, document_type)
 
-    user.update(document_number:       document_number,
-                document_type:         document_type,
-                geozone:               self.geozone,
-                date_of_birth:         date_of_birth.to_datetime,
-                gender:                gender,
-                residence_verified_at: Time.current)
+    if @census_data.class.name === 'LocalCensusRecord'
+      user.update(document_number:       document_number,
+                  document_type:         document_type,
+                  date_of_birth:         date_of_birth.to_datetime,
+                  residence_verified_at: Time.current)
+
+      @census_data.update(user_id: user)
+    else
+      user.update(document_number:       document_number,
+                  document_type:         document_type,
+                  geozone:               self.geozone,
+                  date_of_birth:         date_of_birth.to_datetime,
+                  gender:                gender,
+                  residence_verified_at: Time.current)
+    end
   end
 
   def allowed_age
@@ -61,23 +70,34 @@ class Verification::Residence
   end
 
   def district_code
-    @census_api_response.district_code
+    @census_data.district_code
   end
 
   def gender
-    @census_api_response.gender
+    @census_data.gender
   end
 
   private
 
+    def retrieve_census_data
+      response = call_census_api
+      response = local_census_record_query unless response.valid?
+
+      @census_data = response
+    end
+
     def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
+      CensusApi.new.call(document_type, document_number)
+    end
+
+    def local_census_record_query
+      LocalCensusRecord.find_by(document_type: document_type, document_number: document_number)
     end
 
     def residency_valid?
-      @census_api_response.valid? &&
-        @census_api_response.postal_code == postal_code &&
-        @census_api_response.date_of_birth == date_of_birth
+      @census_data.valid? &&
+        @census_data.postal_code == postal_code &&
+        @census_data.date_of_birth == date_of_birth
     end
 
     def clean_document_number
