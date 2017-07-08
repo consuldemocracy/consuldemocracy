@@ -367,13 +367,6 @@ Performance/RedundantMatch:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: NilOrEmpty, NotPresent, UnlessPresent.
-Rails/Blank:
-  Exclude:
-    - 'app/controllers/management/base_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Rails/Delegate:
   Exclude:
     - 'app/models/poll/question.rb'
