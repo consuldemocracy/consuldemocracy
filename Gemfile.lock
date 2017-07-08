@@ -170,9 +170,6 @@ GEM
       activesupport (>= 4.1)
       railties (>= 4.1)
       tzinfo (~> 1.2, >= 1.2.2)
-    fuubar (2.2.0)
-      rspec-core (~> 3.0)
-      ruby-progressbar (~> 1.4)
     geocoder (1.4.3)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -512,7 +509,6 @@ DEPENDENCIES
   faker (~> 1.7.3)
   foundation-rails (~> 6.2.4.0)
   foundation_rails_helper (~> 2.0.0)
-  fuubar
   graphiql-rails (~> 1.4.1)
   graphql (~> 1.6.3)
   groupdate (~> 3.2.0)
