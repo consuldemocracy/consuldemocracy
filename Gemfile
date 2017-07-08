@@ -24,8 +24,6 @@ gem 'sprockets', '~> 3.7.1'
 
 gem 'devise', '~> 3.5.7'
 gem 'devise_security_extension'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 4.0.0'
