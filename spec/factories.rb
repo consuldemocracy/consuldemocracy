@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :local_census_record do
+    
+  end
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626081337) do
+ActiveRecord::Schema.define(version: 20170708174932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,8 +108,8 @@ ActiveRecord::Schema.define(version: 20170626081337) do
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",     limit: 50
-    t.integer "price",    limit: 8
+    t.string  "name",       limit: 50
+    t.integer "price",      limit: 8
     t.integer "population"
   end
 
@@ -468,6 +468,16 @@ ActiveRecord::Schema.define(version: 20170626081337) do
   add_index "legislation_questions", ["hidden_at"], name: "index_legislation_questions_on_hidden_at", using: :btree
   add_index "legislation_questions", ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
 
+  create_table "local_census_records", force: :cascade do |t|
+    t.string   "document_number", null: false
+    t.string   "document_type",   null: false
+    t.date     "date_of_birth",   null: false
+    t.string   "postal_code",     null: false
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tries",        default: 0
@@ -793,6 +803,7 @@ ActiveRecord::Schema.define(version: 20170626081337) do
     t.string   "status",             default: "draft"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "locale"
   end
 
   create_table "spending_proposals", force: :cascade do |t|
@@ -1034,6 +1045,7 @@ ActiveRecord::Schema.define(version: 20170626081337) do
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
+  add_foreign_key "local_census_records", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
