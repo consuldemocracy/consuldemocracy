@@ -1,0 +1,16 @@
+es:
+  officing:
+    recounts:
+      flash:
+        error_create: "Recuento NO añadido. Error en los datos"
+    final_recounts:
+      flash:
+        error_create: "Recuento final NO añadido. Error en los datos"
+      new:
+        not_allowed: "No tienes permiso para introducir recuentos finales"
+    results:
+      flash:
+        error_create: "Resultados NO añadidos. Error en los datos"
+    voters:
+      show:
+        error_already_voted: Ya ha participado en esta votación.
