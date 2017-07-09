@@ -1,10 +1,34 @@
 es:
   account:
     show:
+      change_credentials_link: Cambiar mis datos de acceso
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
+      erase_account_link: Darme de baja
+      finish_verification: Finalizar verificación
+      notifications: Notificaciones
+      organization_name_label: Nombre de la organización
+      organization_responsible_name_placeholder: Representante de la asociación/colectivo
+      personal: Datos personales
+      phone_number_label: Teléfono
+      public_activity_label: Mostrar públicamente mi lista de actividades
+      save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
       email_on_direct_message_label: Recibir emails con mensajes privados
+      email_digest_label: Recibir resumen de notificaciones sobre propuestas
+      official_position_badge_label: Mostrar etiqueta de tipo de usuario
+      title: Mi cuenta
+      user_permission_debates: Participar en debates
+      user_permission_info: Con tu cuenta ya puedes...
+      user_permission_proposal: Crear nuevas propuestas
+      user_permission_support_proposal: Apoyar propuestas*
+      user_permission_title: Participación
+      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
+      user_permission_verify_info: "* Sólo usuarios empadronados."
+      user_permission_votes: Participar en las votaciones finales*
+      username_label: Nombre de usuario
+      verified_account: Cuenta verificada
+      verify_my_account: Verificar mi cuenta
   debates:
     index:
       orders:
@@ -13,33 +37,94 @@ es:
         hot_score: Más activos hoy
         most_commented: Más comentados
         relevance: Más relevantes
+      title: Debates
     new:
       recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+      recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
+      recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
+      recommendations_title: Recomendaciones para crear un debate
+      start_new: Empezar un debate
+    show:
+      author_deleted: Usuario eliminado
+      comments:
+        one: 1 Comentario
+        other: "%{count} Comentarios"
+      comments_title: Comentarios
+      edit_debate_link: Editar debate
+      flag: Este debate ha sido marcado como inapropiado por varios usuarios.
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
+      share: Compartir
+    update:
+      form:
+        submit_button: Guardar cambios
+  errors:
+    messages:
+      user_not_found: No se encontró el usuario
+      invalid_date_range: "El rango de fechas no es válido"
   form:
+    accept_terms: Acepto la %{policy} y las %{conditions}
+    accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
+    conditions: Condiciones de uso
     debate: el debate
+    direct_message: el mensaje privado
+    error: error
+    errors: errores
+    not_saved: 'impidieron guardar %{resource}:'
+    policy: Política de privacidad
     proposal: la propuesta
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
     user: la cuenta
+    verification/sms: el teléfono
     signature_sheet: la hoja de firmas
+  geozones:
+    none: Toda la ciudad
+    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
       firefox: Firefox
       ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
+      ie_title: Esta web no está optimizada para tu navegador
     footer:
+      accessibility: Accesibilidad
+      conditions: Condiciones de uso
       consul: aplicación Consul
       consul_url: 'https://github.com/consul/consul'
+      contact_us: Para asistencia técnica entra en
       copyright: Consul, %{year}
+      description: Este portal usa la %{consul} que es %{open_source}.
       faq: Asistencia técnica
+      open_data_text: Todos los datos del Ayuntamiento son tuyos.
+      open_data_title: Datos Abiertos
+      open_source: software de código abierto
       open_source_url: 'http://www.gnu.org/licenses/agpl-3.0.html'
+      participation_text: Decide cómo debe ser la ciudad que quieres.
+      participation_title: Participación
+      privacy: Política de privacidad
+      transparency_text: Obtén cualquier información sobre la ciudad.
+      transparency_title: Transparencia
       transparency_url: 'https://transparency.consul'
     header:
+      administration: Administrar
+      available_locales: Idiomas disponibles
+      collaborative_legislation: Procesos legislativos
+      debates: Debates
       external_link_blog: Blog
+      external_link_opendata: Datos abiertos
       external_link_opendata_url: 'https://opendata.consul'
+      external_link_transparency: Transparencia
       external_link_transparency_url: 'https://transparency.consul'
+      locale: 'Idioma:'
       logo: Consul logo
+      management: Gestión
+      moderation: Moderar
+      valuation: Evaluación
+      officing: Presidentes de mesa
+      more_info: Más información
+      my_account_link: Mi cuenta
+      my_activity_link: Mi actividad
       open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
   omniauth:
     facebook:
@@ -75,6 +160,7 @@ es:
     proposal:
       share:
         guide: "Compártela para que la gente empiece a apoyarla."
+      total_percent: 100%
   polls:
     show:
       signin: iniciar sesión
@@ -87,6 +173,7 @@ es:
     new:
       info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
   shared:
+    "no": "No"
     advanced_search:
       date_placeholder: 'DD/MM/AAAA'
     suggest:
@@ -94,6 +181,8 @@ es:
         found:
           one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
           other: "Existen propuestas con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
+    outline:
+      debates: Debates
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -105,6 +194,9 @@ es:
   spending_proposals:
     new:
       recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+  stats:
+    index:
+      debates: Debates
   votes:
     signin: iniciar sesión
     signup: registrarte
@@ -116,3 +208,6 @@ es:
       organization: Las organizaciones no pueden votar.
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
+  welcome:
+    debates:
+      title: Debates
