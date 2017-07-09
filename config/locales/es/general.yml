@@ -1,0 +1,117 @@
+es:
+  account:
+    show:
+      email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
+      email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
+      subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
+      email_on_direct_message_label: Recibir emails con mensajes privados
+  debates:
+    index:
+      orders:
+        confidence_score: Mejor valorados
+        created_at: Nuevos
+        hot_score: Más activos hoy
+        most_commented: Más comentados
+        relevance: Más relevantes
+    new:
+      recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+  form:
+    debate: el debate
+    proposal: la propuesta
+    proposal_notification: "la notificación"
+    spending_proposal: la propuesta de gasto
+    budget/investment: la propuesta de inversión
+    user: la cuenta
+    signature_sheet: la hoja de firmas
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
+    footer:
+      consul: aplicación Consul
+      consul_url: 'https://github.com/consul/consul'
+      copyright: Consul, %{year}
+      faq: Asistencia técnica
+      open_source_url: 'http://www.gnu.org/licenses/agpl-3.0.html'
+      transparency_url: 'https://transparency.consul'
+    header:
+      external_link_blog: Blog
+      external_link_opendata_url: 'https://opendata.consul'
+      external_link_transparency_url: 'https://transparency.consul'
+      logo: Consul logo
+  omniauth:
+    facebook:
+      sign_in: Entra con Facebook
+      sign_up: Regístrate con Facebook
+      name: Facebook
+    google_oauth2:
+      sign_in: Entra con Google
+      sign_up: Regístrate con Google
+      name: Google
+    twitter:
+      sign_in: Entra con Twitter
+      sign_up: Regístrate con Twitter
+      name: Twitter
+    info_sign_up: "Regístrate con:"
+  proposals:
+    retire_form:
+      warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
+      retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
+    form:
+      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <br>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'"
+      proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+    index:
+      orders:
+        confidence_score: Más apoyadas
+        created_at: Nuevas
+        hot_score: Más activas hoy
+        most_commented: Más comentadas
+        relevance: Más relevantes
+      select_order_long: 'Estas viendo las propuestas'
+    new:
+      recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+    proposal:
+      share:
+        guide: "Compártela para que la gente empiece a apoyarla."
+  polls:
+    show:
+      signin: iniciar sesión
+      signup: registrarte
+  poll_questions:
+    show:
+      signin: iniciar sesión
+      signup: registrarte
+  proposal_notifications:
+    new:
+      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
+  shared:
+    advanced_search:
+      date_placeholder: 'DD/MM/AAAA'
+    suggest:
+      proposal:
+        found:
+          one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
+          other: "Existen propuestas con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
+  social:
+    blog: "Blog de %{org}"
+    facebook: "Facebook de %{org}"
+    twitter: "Twitter de %{org}"
+    youtube: "YouTube de %{org}"
+    whatsapp: WhatsApp
+    telegram: "Telegram de %{org}"
+    instagram: "Instagram de %{org}"
+  spending_proposals:
+    new:
+      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+  votes:
+    signin: iniciar sesión
+    signup: registrarte
+    spending_proposals:
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
+    budget_investments:
+      organization: Las organizaciones no pueden votar.
+      unfeasible: No se pueden votar propuestas inviables.
+      not_voting_allowed: El periodo de votación está cerrado.
