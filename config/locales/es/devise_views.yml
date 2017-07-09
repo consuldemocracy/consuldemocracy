@@ -64,10 +64,19 @@ es:
       new:
         email_label: Email
         send_submit: Recibir instrucciones
+    shared:
+      links:
+        signup_link: Regístrate
     unlocks:
       new:
         email_label: Email
     users:
       registrations:
+        delete_form:
+          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a entrar con ella.
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
         edit:
           email_label: Email
+        new:
+          cancel: Cancelar login
+          organization_signup_link: Regístrate aquí
