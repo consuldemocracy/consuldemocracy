@@ -72,7 +72,7 @@ en:
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
       signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
-      share: "Comparte tu proyecto"
+      share: "Share your project"
     budget_investment_unfeasible:
       hi: "Dear user,"
       new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
