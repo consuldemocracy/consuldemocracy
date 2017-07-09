@@ -38,6 +38,8 @@ es:
         feature_3_html: "Después hay una <strong>fase de apoyos</strong> para priorizar lo más interesante, las más apoyadas son evaluadas por el Ayuntamiento para ver si son viables y cuánto valen."
         feature_4_html: "Al final hay una <strong>fase de votación</strong> donde se decide en cuáles se gasta esa parte del presupuesto."
         image_alt: "Diferentes fases de un presupuesto participativo"
+      polls:
+        title: "Votaciones"
       faq:
         page:
           description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
