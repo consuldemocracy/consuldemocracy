@@ -1,0 +1,6 @@
+es:
+  helpers:
+    page_entries_info:
+      entry:
+        one: entrada
+        other: entradas
