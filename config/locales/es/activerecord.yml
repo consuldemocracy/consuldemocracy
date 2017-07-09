@@ -37,15 +37,15 @@ es:
       organization:
         one: "Organización"
         other: "Organizaciones"
-      proposal:
-        one: "Propuesta ciudadana"
-        other: "Propuestas ciudadanas"
       poll/booth:
         one: "urna"
         other: "urnas"
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      proposal:
+        one: "Propuesta ciudadana"
+        other: "Propuestas ciudadanas"
       spending_proposal:
         one: "Propuesta de inversión"
         other: "Propuestas de inversión"
@@ -59,11 +59,11 @@ es:
         one: Bloque
         other: Bloques
       legislation/process:
-          one: "Proceso"
-          other: "Procesos"
+        one: "Proceso"
+        other: "Procesos"
       legislation/draft_versions:
-          one: "Versión borrador"
-          other: "Versiones borrador"
+        one: "Versión borrador"
+        other: "Versiones borrador"
       legislation/draft_texts:
         one: "Borrador"
         other: "Borradores"
@@ -89,19 +89,19 @@ es:
         phase: "Fase"
         currency_symbol: "Divisa"
       budget/investment:
-        administrator_id: "Administrador"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
         heading_id: "Partida presupuestaria"
         title: "Título"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
         location: "Ubicación"
+        administrator_id: "Administrador"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
-      comment:
-        body: "Comentario"
-        user: "Usuario"
       budget/investment/milestone:
         title: "Título"
         description: "Descripción"
+      comment:
+        body: "Comentario"
+        user: "Usuario"
       debate:
         author: "Autor"
         description: "Opinión"
@@ -114,7 +114,7 @@ es:
         description: "Descripción"
         terms_of_service: "Términos de servicio"
       user:
-        login: Email o nombre de usuario
+        login: "Email o nombre de usuario"
         email: "Correo electrónico"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
