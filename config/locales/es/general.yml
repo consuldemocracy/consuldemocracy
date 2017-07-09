@@ -40,6 +40,7 @@ es:
       external_link_opendata_url: 'https://opendata.consul'
       external_link_transparency_url: 'https://transparency.consul'
       logo: Consul logo
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
   omniauth:
     facebook:
       sign_in: Entra con Facebook
