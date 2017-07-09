@@ -31,6 +31,9 @@ ca:
       vote:
         one: "Vot"
         other: "Vots"
+      organization:
+        one: "Organització"
+        other: "Organitzacions"
       poll/booth:
         one: "urna"
         other: "urnes"
