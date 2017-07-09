@@ -1,5 +1,7 @@
 es:
   officing:
+    header:
+      title: Votaciones
     recounts:
       flash:
         error_create: "Recuento NO añadido. Error en los datos"
