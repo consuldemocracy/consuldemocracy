@@ -1,5 +1,18 @@
 es:
   moderation:
+    header:
+      title: Moderación
+    comments:
+      index:
+        block_authors: Bloquear autores
+        confirm: '¿Estás seguro?'
+        filter: Filtrar
+        filters:
+          all: Todos
+          pending_flag_review: Pendientes
+          with_ignored_flag: Marcados como revisados
+        headers:
+          comment: Comentario
     users:
       index:
         search_placeholder: email o nombre de usuario
