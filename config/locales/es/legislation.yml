@@ -1,0 +1,13 @@
+es:
+  legislation:
+    annotations:
+      form:
+        signin: iniciar sesión
+        signup: registrarte
+    processes:
+      debate:
+        participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
+    questions:
+      participation:
+        signin: iniciar sesión
+        signup: registrarte
