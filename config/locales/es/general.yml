@@ -29,6 +29,41 @@ es:
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
+  application:
+    close: Cerrar
+    menu: Menú
+  comments:
+    comments_closed: Los comentarios están cerrados
+    verified_only: Para participar %{verify_account}
+    verify_account: verifica tu cuenta
+    comment:
+      admin: Administrador
+      author: Autor
+      deleted: Este comentario ha sido eliminado
+      moderator: Moderador
+      responses:
+        one: 1 Respuesta
+        other: "%{count} Respuestas"
+      user_deleted: Usuario eliminado
+      votes:
+        one: 1 voto
+        other: "%{count} votos"
+    form:
+      comment_as_admin: Comentar como administrador
+      comment_as_moderator: Comentar como moderador
+      leave_comment: Deja tu comentario
+    orders:
+      most_voted: Más votados
+      newest: Más nuevos primero
+      oldest: Más antiguos primero
+    select_order: Ordenar por
+    show:
+      return_to_commentable: 'Volver a '
+  comments_helper:
+    comment_button: Publicar comentario
+    comment_link: Comentar
+    comments_title: Comentarios
+    reply_button: Publicar respuesta
   debates:
     index:
       orders:
