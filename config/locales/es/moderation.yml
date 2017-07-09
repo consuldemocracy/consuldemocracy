@@ -1,0 +1,5 @@
+es:
+  moderation:
+    users:
+      index:
+        search_placeholder: email o nombre de usuario
