@@ -1,0 +1,11 @@
+es:
+  mailers:
+    config:
+      manage_email_subscriptions: Puedes dejar de recibir estos emails cambiando tu configuración en
+    email_verification:
+      instructions_2_html: Este email es para verificar tu cuenta con <b>%{document_type} %{document_number}</b>. Si esos no son tus datos, por favor no pulses el enlace anterior e ignora este email.
+      subject: Verifica tu email
+    direct_message_for_receiver:
+      unsubscribe: "Si no quieres recibir mensajes privados, puedes entrar en %{account} y desmarcar la opción 'Recibir emails con mensajes privados'."
+    budget_investment_unselected:
+      participate_html: "Puedes continuar participando en la votación final votando proyectos para toda la ciudad y el distrito que elijas desde el <strong>15 de mayo hasta el 30 de junio de 2017.</strong>"
