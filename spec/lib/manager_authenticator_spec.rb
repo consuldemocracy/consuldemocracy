@@ -51,8 +51,9 @@ describe ManagerAuthenticator do
     end
 
     it 'should call the verification user method' do
+      message = { ub: {user_key: "31415926", date: "20151031135905"} }
       allow(@authenticator).to receive(:application_authorized?).and_return(true)
-      expect(@authenticator.send(:client)).to receive(:call).with(:get_status_user_data, message: { ub: {user_key: "31415926", date: "20151031135905"} })
+      expect(@authenticator.send(:client)).to receive(:call).with(:get_status_user_data, message: message)
       @authenticator.auth
     end
 

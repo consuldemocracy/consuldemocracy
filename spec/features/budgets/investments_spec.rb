@@ -593,9 +593,9 @@ feature 'Budget Investments' do
     end
 
     scenario 'Order by cost (only when balloting)' do
-      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper',  price: 20000)
+      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000).update_column(:confidence_score, 10)
+      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000).update_column(:confidence_score, 5)
+      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 

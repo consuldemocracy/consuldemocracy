@@ -3,6 +3,8 @@ class Comment < ActiveRecord::Base
   include HasPublicAuthor
   include Graphqlable
 
+  COMMENTABLE_TYPES = %w(Debate Proposal Budget::Investment Poll::Question Legislation::Question Legislation::Annotation).freeze
+
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
   acts_as_votable
@@ -13,7 +15,7 @@ class Comment < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
 
-  validates :commentable_type, inclusion: { in: ["Debate", "Proposal", "Budget::Investment", "Poll::Question", "Legislation::Question", "Legislation::Annotation"] }
+  validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
 
   validate :validate_body_length
 

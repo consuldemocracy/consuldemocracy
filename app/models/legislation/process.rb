@@ -4,8 +4,10 @@ class Legislation::Process < ActiveRecord::Base
 
   PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase draft_publication result_publication).freeze
 
-  has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id', dependent: :destroy
-  has_one :final_draft_version, -> { where final_version: true, status: 'published' }, class_name: 'Legislation::DraftVersion', foreign_key: 'legislation_process_id'
+  has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion',
+                                               foreign_key: 'legislation_process_id', dependent: :destroy
+  has_one :final_draft_version, -> { where final_version: true, status: 'published' }, class_name: 'Legislation::DraftVersion',
+                                                                                       foreign_key: 'legislation_process_id'
   has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question', foreign_key: 'legislation_process_id', dependent: :destroy
 
   validates :title, presence: true
@@ -64,7 +66,9 @@ class Legislation::Process < ActiveRecord::Base
     def valid_date_ranges
       errors.add(:end_date, :invalid_date_range) if end_date && start_date && end_date < start_date
       errors.add(:debate_end_date, :invalid_date_range) if debate_end_date && debate_start_date && debate_end_date < debate_start_date
-      errors.add(:allegations_end_date, :invalid_date_range) if allegations_end_date && allegations_start_date && allegations_end_date < allegations_start_date
+      if allegations_end_date && allegations_start_date && allegations_end_date < allegations_start_date
+        errors.add(:allegations_end_date, :invalid_date_range)
+      end
     end
 
 end

@@ -33,8 +33,10 @@ feature 'Admin poll questions' do
     poll = create(:poll, name: 'Movies')
     title = "Star Wars: Episode IV - A New Hope"
     description = %{
-      During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
-      Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....
+      During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station
+       with enough power to destroy an entire planet.
+      Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her
+       people and restore freedom to the galaxy....
     }
 
     visit admin_questions_path
