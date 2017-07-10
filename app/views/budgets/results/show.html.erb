@@ -26,7 +26,8 @@
       </li>
 
       <% @budget.headings.each do |heading| %>
-        <li>
+        <% active_class = heading.id.to_s == params[:heading_id] ? 'bold' : '' %>
+        <li class="<%= active_class %>">
           <%= link_to heading.name,
                       budget_results_path(@budget, heading_id: heading.id) %>
         </li>

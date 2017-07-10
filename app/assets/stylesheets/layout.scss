@@ -236,6 +236,11 @@ a {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
+
+    &.bold {
+      font-weight: bold;
+      color: $brand;
+    }
   }
 
   &.no-margin-top {
