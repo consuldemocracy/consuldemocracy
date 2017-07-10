@@ -1,4 +1,6 @@
-<div class="small-12 medium-9 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>" id="<%= results_type %>-container">
+<div class="small-12 medium-9 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>"
+     style="<%= results_type != :compatible ? 'display: none' : '' %>"
+     id="<%= results_type %>-container">
 
   <h3 class="inline-block">
     <%= title %>
@@ -28,7 +30,9 @@
     <tbody>
       <% amount_available = heading_price %>
       <% investments.each do |investment| %>
-          <tr id="<%= dom_id(investment) %>" class="budget-investments <%= investment.winner? ? 'success' : 'js-discarded' %>">
+          <tr id="<%= dom_id(investment) %>"
+              class="budget-investments <%= investment.winner? ? 'success' : 'js-discarded' %>"
+              style="<%= investment.winner? ? '' : 'display: none' %>">
             <td>
               <% if investment.winner? %>
                 <span class="icon-check">
