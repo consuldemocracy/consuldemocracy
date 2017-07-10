@@ -328,6 +328,7 @@ feature 'Proposals' do
 
   scenario 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
+    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
 
     visit new_proposal_path

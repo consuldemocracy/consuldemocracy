@@ -14,8 +14,10 @@ class ProposalNotification < ActiveRecord::Base
 
   def minimum_interval
     return true if proposal.try(:notifications).blank?
-    if proposal.notifications.last.created_at > (Time.current - Setting[:proposal_notification_minimum_interval_in_days].to_i.days).to_datetime
-      errors.add(:title, I18n.t('activerecord.errors.models.proposal_notification.attributes.minimum_interval.invalid', interval: Setting[:proposal_notification_minimum_interval_in_days]))
+    interval = Setting[:proposal_notification_minimum_interval_in_days]
+    minimum_interval = (Time.current - interval.to_i.days).to_datetime
+    if proposal.notifications.last.created_at > minimum_interval
+      errors.add(:title, I18n.t('activerecord.errors.models.proposal_notification.attributes.minimum_interval.invalid', interval: interval))
     end
   end
 

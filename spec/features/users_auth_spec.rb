@@ -6,6 +6,7 @@ feature 'Users' do
     context 'Sign up' do
 
       scenario 'Success' do
+        message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
         visit '/'
         click_link 'Register'
 
@@ -17,7 +18,7 @@ feature 'Users' do
 
         click_button 'Register'
 
-        expect(page).to have_content "You have been sent a message containing a verification link. Please click on this link to activate your account."
+        expect(page).to have_content message
 
         confirm_email
 

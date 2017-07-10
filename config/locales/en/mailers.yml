@@ -69,8 +69,8 @@ en:
       follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
-      signatory: "Área de Participación Ciudadana, Transparencia y Gobierno Abierto del Ayuntamiento de Madrid"
-      share: "Comparte tu proyecto"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      share: "Share your project"
     budget_investment_unfeasible:
       hi: "Dear user,"
       reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address preparticipativos@madrid.es. Including the code %{code} in the subject of the email."
