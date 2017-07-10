@@ -19,7 +19,7 @@
   <div class="row">
     <div class="small-12 column">
       <div class="row margin-top">
-        <div class="small-12 medium-4 column">
+        <div class="small-12 medium-3 column">
           <%= link_to "Ver proyectos de toda la ciudad",
                       custom_budget_investments_path(budget_id: Budget.last.to_param,
                         id: Budget::Group.first,
@@ -27,15 +27,20 @@
                         filter: "selected"),
                         class: "button expanded large city" %>
         </div>
-        <div class="small-12 medium-4 column">
+        <div class="small-12 medium-3 column">
           <%= link_to "Ver proyectos de distritos",
                       custom_budget_group_path(Budget.last, Budget::Group.last,
                         filter: @current_filter),
                         class: "button expanded large" %>
         </div>
-        <div class="small-12 medium-4 column">
+        <div class="small-12 medium-3 column">
           <%= link_to "Ver estadísticas de participación",
                       custom_budget_stats_path(id: Budget.last.to_param),
+                      class: "button expanded large stats" %>
+        </div>
+        <div class="small-12 medium-3 column">
+          <%= link_to "Ver ejecucción de proyectos 2016",
+                      "link to excel coming up in the morning",
                       class: "button expanded large stats" %>
         </div>
       </div>
