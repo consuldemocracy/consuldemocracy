@@ -13,11 +13,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   def index
     @heading_filters = heading_filters
     @investments = if current_user.valuator? && @budget.present?
-      @budget.investments.scoped_filter(params_for_current_valuator, @current_filter)
-             .order(cached_votes_up: :desc)
-             .page(params[:page])
+                     @budget.investments.scoped_filter(params_for_current_valuator, @current_filter)
+                            .order(cached_votes_up: :desc)
+                            .page(params[:page])
                    else
-      Budget::Investment.none.page(params[:page])
+                     Budget::Investment.none.page(params[:page])
                    end
   end
 
