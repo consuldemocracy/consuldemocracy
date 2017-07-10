@@ -55,4 +55,14 @@ feature 'Results' do
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 
+  scenario "No incompatible investments", :js do
+    investment3.incompatible = false
+    investment3.save
+
+    visit budget_path(budget)
+    click_link "See results"
+
+    expect(page).not_to have_content "Incompatibles"
+  end
+
 end

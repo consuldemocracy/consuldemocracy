@@ -42,8 +42,10 @@
                               heading_price: @heading.price,
                               investments: @investments.compatible %>
 
-  <%= render 'results_table', results_type: :incompatible,
-                              title: t("budgets.results.incompatibles"),
-                              heading_price: @heading.price,
-                              investments: @investments.incompatible %>
+  <% if @investments.incompatible.present? %>
+    <%= render 'results_table', results_type: :incompatible,
+                                title: t("budgets.results.incompatibles"),
+                                heading_price: @heading.price,
+                                investments: @investments.incompatible %>
+  <% end %>
 </div>
