@@ -43,7 +43,9 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     else
       notice = t("admin.poll_officer_assignments.flash.error_create")
     end
-    redirect_to by_officer_admin_poll_officer_assignments_path(poll_id: create_params[:poll_id], officer_id: create_params[:officer_id]), notice: notice
+
+    redirect_params = { poll_id: create_params[:poll_id], officer_id: create_params[:officer_id] }
+    redirect_to by_officer_admin_poll_officer_assignments_path(redirect_params), notice: notice
   end
 
   def destroy
@@ -54,7 +56,9 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     else
       notice = t("admin.poll_officer_assignments.flash.error_destroy")
     end
-    redirect_to by_officer_admin_poll_officer_assignments_path(poll_id: @officer_assignment.poll_id, officer_id: @officer_assignment.officer_id), notice: notice
+
+    redirect_params = { poll_id: @officer_assignment.poll_id, officer_id: @officer_assignment.officer_id }
+    redirect_to by_officer_admin_poll_officer_assignments_path(redirect_params), notice: notice
   end
 
   private
@@ -68,7 +72,8 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     end
 
     def load_booth_assignment
-      @booth_assignment = ::Poll::BoothAssignment.includes(:poll).find_by(poll_id: create_params[:poll_id], booth_id: create_params[:booth_id])
+      find_params = { poll_id: create_params[:poll_id], booth_id: create_params[:booth_id] }
+      @booth_assignment = ::Poll::BoothAssignment.includes(:poll).find_by(find_params)
     end
 
     def load_poll

@@ -505,7 +505,6 @@ Rails.application.routes.draw do
   end
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-  mount Tolk::Engine => '/translate', :as => 'tolk'
 
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')

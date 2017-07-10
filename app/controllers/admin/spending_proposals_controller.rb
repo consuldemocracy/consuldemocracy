@@ -7,7 +7,9 @@ class Admin::SpendingProposalsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter).order(confidence_score: :desc, created_at: :desc).page(params[:page])
+    @spending_proposals = SpendingProposal.scoped_filter(params, @current_filter)
+                                          .order(confidence_score: :desc, created_at: :desc)
+                                          .page(params[:page])
   end
 
   def show
@@ -43,13 +45,15 @@ class Admin::SpendingProposalsController < Admin::BaseController
   end
 
   def summary
-    @spending_proposals = SpendingProposal.limit_results(SpendingProposal, params).group(:geozone).sum(:price).sort_by{|geozone, count| geozone.present? ? geozone.name : "ZZ"}
+    @spending_proposals = SpendingProposal.limit_results(SpendingProposal, params).group(:geozone).sum(:price)
+                                          .sort_by{|geozone, count| geozone.present? ? geozone.name : "ZZ"}
   end
 
   private
 
     def spending_proposal_params
-      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name, :administrator_id, :tag_list, :compatible, valuator_ids: [])
+      params.require(:spending_proposal).permit(:title, :description, :external_url, :geozone_id, :association_name,
+                                                :administrator_id, :tag_list, :compatible, valuator_ids: [])
     end
 
     def load_admins
@@ -65,7 +69,7 @@ class Admin::SpendingProposalsController < Admin::BaseController
     end
 
     def load_geozone
-      @geozone = (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id])
+      @geozone = params[:geozone_id].blank? || params[:geozone_id] == 'all' ? nil : Geozone.find(params[:geozone_id])
     end
 
 end

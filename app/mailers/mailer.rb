@@ -12,7 +12,8 @@ class Mailer < ApplicationMailer
 
     unless Rails.env.production?
       with_user(@commentable.author) do
-        mail(to: @email_to, subject: t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)) if @commentable.present? && @commentable.author.present?
+        subject = t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
+        mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present?
       end
     end
   end

@@ -49,7 +49,7 @@ en:
         feature_3_html: "Then there is a <strong>support phase</strong> to prioritize the most interesting, the most supported are evaluated by the City to see if they are viable and how much they are worth."
         feature_4_html: "At the end there is a <strong>vote phase </strong> and you decide which of the approved projects to spend the budget on."
         image_alt: "Different phases of a participatory budget"
-        figcaption_html: '"Support phase" and "Voting" phase of participatory budgets.'
+        figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
         detail: "Detailed polls information"
@@ -172,10 +172,3 @@ en:
       password: Password
       submit: Verify my account
       title: Verify your account
-  annotator:
-    help:
-      alt: Select the text you want to comment and press the button with the pencil.
-      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
-      title: How I can comment this document?

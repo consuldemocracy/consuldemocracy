@@ -13,7 +13,7 @@
               <div class="milestone-content">
                 <h3><%= milestone.title %></h3>
                 <span class="milestone-date">
-                  <strong><%= t("budgets.investments.show.milestone_publish_date", publish_date: milestone.created_at.strftime("%d/%m/%Y")) %></strong>
+                  <strong><%= t("budgets.investments.show.milestone_publish_date", publish_date: l(milestone.created_at.to_date)) %></strong>
                 </span>
                 <p><%= milestone.description %></p>
               </div>

@@ -35,7 +35,11 @@ class Organization < ActiveRecord::Base
   end
 
   def self.search(text)
-    text.present? ? joins(:user).where("users.email = ? OR users.phone_number = ? OR organizations.name ILIKE ?", text, text, "%#{text}%") : none
+    if text.present?
+      joins(:user).where("users.email = ? OR users.phone_number = ? OR organizations.name ILIKE ?", text, text, "%#{text}%")
+    else
+      none
+    end
   end
 
   def self.name_max_length
