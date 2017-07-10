@@ -365,16 +365,6 @@ Performance/RedundantMatch:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
     - 'app/helpers/embed_videos_helper.rb'
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: Whitelist.
-# Whitelist: find_by_sql
-Rails/DynamicFindBy:
-  Exclude:
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'spec/features/management/users_spec.rb'
-
 # Offense count: 2
 Rails/FilePath:
   Exclude:
