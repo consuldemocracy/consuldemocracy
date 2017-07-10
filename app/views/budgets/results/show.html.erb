@@ -35,7 +35,7 @@
     </ul>
   </div>
 
-  <span class="float-right"><%= link_to t("budgets.results.hide_discarded_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.show_all_link")} %></span>
+  <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>
 
 
   <%= render 'results_table', results_type: :compatible,

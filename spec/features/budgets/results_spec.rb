@@ -20,6 +20,21 @@ feature 'Results' do
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
       expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment3.title
+      expect(page).not_to have_content investment4.title
+
+      expect(investment1.title).to appear_before(investment2.title)
+    end
+  end
+
+  scenario "Show non winner & incomaptible investments", :js do
+    visit budget_path(budget)
+    click_link "See results"
+    click_link "Show all"
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
+      expect(page).to have_content investment2.title
       expect(page).to have_content investment4.title
 
       expect(investment1.title).to appear_before(investment2.title)
@@ -28,21 +43,6 @@ feature 'Results' do
 
     within("#budget-investments-incompatible") do
       expect(page).to have_content investment3.title
-    end
-  end
-
-  scenario "Displays non winner investments", :js do
-    visit budget_path(budget)
-    click_link "See results"
-    click_link "Hide discarded"
-
-    within("#budget-investments-compatible") do
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).not_to have_content investment3.title
-      expect(page).not_to have_content investment4.title
-
-      expect(investment1.title).to appear_before(investment2.title)
     end
   end
 
