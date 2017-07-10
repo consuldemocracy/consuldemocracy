@@ -29,21 +29,12 @@ class Verification::Residence
 
     user.take_votes_if_erased_document(document_number, document_type)
 
-    if @census_data.class.name === 'LocalCensusRecord'
-      user.update(document_number:       document_number,
-                  document_type:         document_type,
-                  date_of_birth:         date_of_birth.to_datetime,
-                  residence_verified_at: Time.current)
-
-      @census_data.update(user_id: user)
-    else
-      user.update(document_number:       document_number,
-                  document_type:         document_type,
-                  geozone:               self.geozone,
-                  date_of_birth:         date_of_birth.to_datetime,
-                  gender:                gender,
-                  residence_verified_at: Time.current)
-    end
+    user.update(document_number:       document_number,
+                document_type:         document_type,
+                geozone:               self.geozone,
+                date_of_birth:         date_of_birth.to_datetime,
+                gender:                gender,
+                residence_verified_at: Time.current)
   end
 
   def allowed_age
@@ -80,18 +71,7 @@ class Verification::Residence
   private
 
     def retrieve_census_data
-      response = call_census_api
-      response = local_census_record_query unless response.valid?
-
-      @census_data = response
-    end
-
-    def call_census_api
-      CensusApi.new.call(document_type, document_number)
-    end
-
-    def local_census_record_query
-      LocalCensusRecord.find_by(document_type: document_type, document_number: document_number)
+      @census_data = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?

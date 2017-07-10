@@ -102,7 +102,7 @@ class Officing::Residence
   private
 
     def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
+      @census_api_response = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
