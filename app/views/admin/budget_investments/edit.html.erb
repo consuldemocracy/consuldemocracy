@@ -63,6 +63,7 @@
 
 
   <div class="row margin-top">
+    <% if @investment.incompatible? || @investment.winner? %>
     <div class="small-12 medium-3 column">
       <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
       <%= f.label :incompatible do %>
@@ -70,6 +71,7 @@
         <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
       <% end %>
     </div>
+    <% end %>
     <div class="small-12 medium-3 column float-left">
       <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
       <%= f.label :selected do %>
