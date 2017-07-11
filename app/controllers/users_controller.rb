@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     load_filtered_activity if valid_access?
+    load_interests if valid_interests_access?
   end
 
   private
@@ -74,12 +75,20 @@ class UsersController < ApplicationController
       @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
 
-    def load_ballot
-      @ballot = Ballot.where(user: current_user).first_or_create if current_user_is_author?
+    def load_interests
+      @user.interests
     end
 
     def valid_access?
       @user.public_activity || authorized_current_user?
+    end
+
+    def valid_interests_access?
+      @user.public_interests || authorized_current_user?
+    end
+
+    def load_ballot
+      @ballot = Ballot.where(user: current_user).first_or_create if current_user_is_author?
     end
 
     def current_user_is_author?

@@ -240,6 +240,11 @@ a {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
+
+    &.bold {
+      font-weight: bold;
+      color: $brand;
+    }
   }
 
   &.no-margin-top {
@@ -1982,6 +1987,14 @@ table {
   .activity-ballot td:first-child::before {
     content: '\53';
     top: 10px;
+  }
+}
+
+.public-interests {
+  margin-top: $line-height;
+
+  .column {
+    padding-left: 0;
   }
 }
 

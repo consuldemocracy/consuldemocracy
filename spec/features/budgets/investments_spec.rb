@@ -342,6 +342,14 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Don't display flaggable buttons" do
+    investment = create(:budget_investment, heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_selector ".js-follow"
+  end
+
   scenario "Show back link contains heading id" do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, investment)
@@ -433,6 +441,8 @@ feature 'Budget Investments' do
       expect(page).to have_content("Don't have defined milestones")
     end
   end
+
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
 
   context "Destroy" do
 
