@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
   has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
   has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
+  has_many :follows
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
@@ -306,6 +307,10 @@ class User < ActiveRecord::Base
     login = conditions.delete(:login)
     where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
     where(conditions.to_hash).where(["username = ?", login]).first
+  end
+
+  def interests
+    follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
   end
 
   private

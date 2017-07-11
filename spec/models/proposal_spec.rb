@@ -857,4 +857,26 @@ describe Proposal do
     end
   end
 
+  describe "#user_to_notify" do
+
+    it "should return voters and followers" do
+      proposal = create(:proposal)
+      voter = create(:user, :level_two)
+      follower = create(:user, :level_two)
+      follow = create(:follow, user: follower, followable: proposal)
+      create(:vote, voter: voter, votable: proposal)
+
+      expect(proposal.users_to_notify).to eq([voter, follower])
+    end
+
+    it "should return voters and followers discarding duplicates" do
+      proposal = create(:proposal)
+      voter_and_follower = create(:user, :level_two)
+      follow = create(:follow, user: voter_and_follower, followable: proposal)
+      create(:vote, voter: voter_and_follower, votable: proposal)
+
+      expect(proposal.users_to_notify).to eq([voter_and_follower])
+    end
+
+  end
 end

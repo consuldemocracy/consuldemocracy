@@ -166,8 +166,8 @@ FactoryGirl.define do
     end
 
     trait :flagged do
-      after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+      after :create do |proposal|
+        Flag.flag(FactoryGirl.create(:user), proposal)
       end
     end
 
@@ -347,6 +347,18 @@ FactoryGirl.define do
   factory :flag do
     association :flaggable, factory: :debate
     association :user, factory: :user
+  end
+
+  factory :follow do
+    association :user, factory: :user
+
+    trait :followed_proposal do
+      association :followable, factory: :proposal
+    end
+
+    trait :followed_investment do
+      association :followable, factory: :budget_investment
+    end
   end
 
   factory :comment do
