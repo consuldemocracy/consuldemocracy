@@ -1,6 +1,5 @@
 class Follow < ActiveRecord::Base
   belongs_to :user
-  #TODO Rock&RoR: Check touch usage on cache system
   belongs_to :followable, polymorphic: true
 
   validates :user_id, presence: true
