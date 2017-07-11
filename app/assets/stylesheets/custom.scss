@@ -5,7 +5,7 @@
 //
 
 h1 {
-  font-size: 71px;
+  font-size: 64px;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-family: $body-font-family-title;
@@ -42,10 +42,55 @@ p {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 14px;
+  padding-left: 25px;
+  position: relative;
+  &:before {
+    content: '_';
+    font-size: 36px;
+    position: absolute;
+    bottom: -3px;
+    left: 5px;
+  }
 }
+
+.label {
+    padding: 0.5rem 0.9rem 0.35rem;
+}
+
+.padding {
+  padding: 3vw;
+}
+
+.num {
+  position: relative;
+  text-align: center;
+  margin-top: -9px;
+  &::after {
+    content: '_';
+    position: absolute;
+    bottom: -16px;
+    left: 25px;
+  }
+}
+
+// Text color
 
 .white {
   color: white;
+}
+
+.blue {
+  color: $light-blue;
+}
+
+// Background color
+
+.bg-gray {
+    background: $gray-two;
+}
+
+.bg-light-gray {
+  background: $gray-five;
 }
 
 .cd-horizontal-timeline .events-content {
@@ -122,6 +167,17 @@ p {
 
 }
 
+// Buttons
+
+.button.primary {
+  background: $brand;
+  color: white;
+  &:hover {
+    background: darken( $brand, 6% );
+    color: white;
+  }
+}
+
 .button{
   border-radius: 2rem;
 }
@@ -129,6 +185,11 @@ p {
 .button-proposal{
   background: white;
   color: black;
+}
+
+.button.hollow.secondary {
+    border: 1px solid #fff;
+    color: #fff;
 }
 
 .in-favor{
@@ -286,14 +347,14 @@ li {
 // Home
 
 .hero{
-  background-color: $brand;
   min-height: 28rem;
-  padding: 6vw 2vw;
 }
 
-.home-quote-font{
-  font-family: $body-font-family-title;
-  color: $white;
+.hero-quote {
+    color: #ffffff;
+    background: #D80017;
+    padding: 3vw;
+    margin-top: -23vw;
 }
 
 .home-subtitle{
@@ -309,13 +370,6 @@ li {
   padding-right: 0rem !important;
 }
 
-.home-info-epigraph{
-  font-size: 1rem;
-  color: $light-blue;
-  text-transform: uppercase;
-  font-family: $body-font-family-title;
-}
-
 .home-info-link{
   color: $brand;
   text-decoration: underline;
@@ -325,26 +379,11 @@ li {
 .home-info-dates{
   color: $white;
   background-color: $orange;
-  margin-right: auto;
 }
 
 .home-info{
   min-height: 16rem;
   padding: 2rem;
-}
-
-.home-title{
-  margin-top: 7rem;
-  font-family: $body-font-family-title;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.enumerate{
-  font-family: $body-font-family-title;
-  font-size: 3rem;
-  vertical-align: bottom;
-  font-weight: bold;
 }
 
 .home-proposals{
@@ -396,33 +435,40 @@ li {
   height: 210px;
   width: 265px;
   margin: 0 auto;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  &:hover {
+    background-size: 200px;
+    background-repeat: no-repeat;
+  }
 }
 
 .como01 {
-    background: asset-url("como01.png");
+    background-image: asset-url("como01.png");
     &:hover {
-      background: asset-url("como01.gif");
+      background-image: asset-url("como01.gif");
     }
 }
 
 .como02 {
-    background: asset-url("como02.png");
+    background-image: asset-url("como02.png");
     &:hover {
-      background: asset-url("como02.gif");
+      background-image: asset-url("como02.gif");
     }
 }
 
 .como03 {
-    background: asset-url("como03.png");
+    background-image: asset-url("como03.png");
     &:hover {
-      background: asset-url("como03.gif");
+      background-image: asset-url("como03.gif");
     }
 }
 
 .como04 {
-    background: asset-url("como04.png");
+    background-image: asset-url("como04.png");
     &:hover {
-      background: asset-url("como04.gif");
+      background-image: asset-url("como04.gif");
     }
 }
 

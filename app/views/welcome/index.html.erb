@@ -1,87 +1,95 @@
 <div class="no-margin-top">
-  <div class="row all-screen">
 
-
-    <div class="small-12 medium-8 large-7 column hero">
-      <h1 class="home-quote-font"> <%= Setting["home.main-title"] %> </h1>
-      <%= link_to Setting["home.main-subtitle"], Setting["home.main-subtitle-link"], class: "hollow button secondary float-right" %>
-
-    </div>
-
-    <div class="small-12 medium-5 large-5 column home-column2">
-      <div class="home-info">
-        <p class="home-info-dates label float-right"> <%= Setting["home.info-date"] %> </p>
-        <h4 class="home-info-epigraph small blue"> <%= Setting["home.info-epigraph"] %> </h4>
-        <h3 class="home-info-title"> <%= Setting["home.info-title"] %> </h3>
-        <%= link_to Setting["home.info-go_to"], Setting["home.info-go_to_link"], class: "home-info-link" %>
+    <div class="hero">
+      <div class="row all-screen collapse">
+        <div class="small-10 medium-7 large-6 columns">
+          <div class="home-info">
+            <p class="home-info-dates label float-right"> <%= Setting["home.info-date"] %> </p>
+            <h4 class="small blue"> <%= Setting["home.info-epigraph"] %> </h4>
+            <h1 class="home-info-title"> <%= Setting["home.info-title"] %> </h1>
+            <%= link_to Setting["home.info-go_to"], Setting["home.info-go_to_link"], class: "button primary" %>
+          </div>
+        </div>
+        <div class="small-2 medium-5 large-6 columns home-img">
+          <%= image_tag(image_path_for('foto1.jpg')) %>
+        </div>
       </div>
 
-      <div class="home-img">
-        <%= image_tag(image_path_for('foto1.jpg')) %>
+      <div class="row all-screen collapse">
+        <div class="small-12 medium-4 medium-offset-8 large-5 large-offset-7 columns">
+          <div class="hero-quote">
+            <h2> <%= Setting["home.main-title"] %> </h2>
+            <div class="text-right">
+              <%= link_to Setting["home.main-subtitle"], Setting["home.main-subtitle-link"], class: "hollow button secondary" %>
+            </div>
+        </div>
+        </div>
       </div>
     </div>
 
-
-  </div>
 </div>
 
   <main>
 
-    <h2 class="text-center home-title">
-      <%= t("welcome.how_work") %>
-    </h2>
-    <div class="row text-center margin">
-      <div class="small-12 medium-3 column">
+<div class="row all-screen collapse">
+  <div class="large-3 columns">
+    <div class="padding bg-gray">
+      <h2 class="white">
+        <%= t("welcome.how_work") %>
+      </h2>
+    </div>
+  </div>
+  <div class="large-9 columns">
+    <div class="row bg-light-gray">
+      <div class="large-3 columns">
         <div class="como01"></div>
-        <!-- <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.proposal.title"))  %> -->
-        <div class="row text-left">
-          <div class="small-1 medium-2 column enumerate">
+        <div class="row collapse">
+          <h2 class="small-3 medium-3 large-3 column num">
             1
-          </div>
-          <div class="small-11 medium-10 column">
+          </h2>
+          <div class="small-9 medium-9 large-9 column">
             <p><%= t("welcome.project.description") %></p>
           </div>
         </div>
       </div>
-      <div class="small-12 medium-3 column">
+      <div class="large-3 columns">
         <div class="como02"></div>
-        <!-- <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.design.title"))  %> -->
-        <div class="row text-left">
-          <div class="small-1 medium-2 column enumerate">
-            2
-          </div>
-          <div class="small-11 medium-10 column">
+        <div class="row collapse">
+          <h2 class="small-3 medium-3 large-3 column num">
+          2
+          </h2>
+          <div class="small-9 medium-9 large-9 column">
             <p><%= t("welcome.design.description") %></p>
           </div>
         </div>
-
       </div>
-
-      <div class="small-12 medium-3 column">
+      <div class="large-3 columns">
         <div class="como03"></div>
-        <!-- <%= image_tag("icon_home_decide.png", size: "168x168", alt: "", title: t("welcome.do.title")) %> -->
-        <div class="row text-left">
-          <div class="small-1 medium-2 column enumerate">
+        <div class="row collapse">
+          <h2 class="small-3 medium-3 large-3 column num">
             3
-          </div>
-          <div class="small-11 medium-10 column">
+          </h2>
+          <div class="small-9 medium-9 large-9 column">
             <p><%= t("welcome.do.description") %></p>
           </div>
         </div>
       </div>
-      <div class="small-12 medium-3 column">
+      <div class="large-3 columns">
         <div class="como04"></div>
-        <!-- <%= image_tag("icon_home_do.png", size: "168x168", alt: "", title: t("welcome.project.title")) %> -->
-        <div class="row text-left">
-          <div class="small-1 medium-2 column enumerate">
+        <div class="row collapse">
+          <h2 class="small-3 medium-3 large-3 column num">
             4
-          </div>
-          <div class="small-11 medium-10 column">
+          </h2>
+          <div class="small-9 medium-9 large-9 column">
             <p><%= t("welcome.project.description") %></p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+</div>
+
 
     <div class="home-proposals">
       <% if Proposal.all.any? %>
