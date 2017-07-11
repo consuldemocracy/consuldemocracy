@@ -53,9 +53,6 @@
           <% if current_user %>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'proposals/flag_actions', proposal: @proposal %>
-
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <%= render 'follows/followable_button', followable: @proposal %>
           <% end %>
 
         </div>
@@ -142,6 +139,9 @@
           title: @proposal.title,
           url: proposal_url(@proposal)
         } %>
+
+        <%= render 'follows/followable_button', followable: @proposal if current_user %>
+
       </aside>
     </div>
   </div>
