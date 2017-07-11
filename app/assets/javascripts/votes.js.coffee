@@ -11,16 +11,12 @@ App.Votes =
     }, votes
 
   hide_button: ->
-    console.log("Entro al metodo hide button")
     $('.button-support').click ->
-      $count = 0
-      $element = ''
       $(this).hide()
       $element = $(this).closest(".row").siblings().children(".total-votes-text").children(".total-votes-count")
       $count = parseInt($element.text()) + 1
       $element.replaceWith("<span class='total-votes-count'>" + $count + "</span>")
       return
-
 
   initialize: ->
     App.Votes.hoverize "div.votes"

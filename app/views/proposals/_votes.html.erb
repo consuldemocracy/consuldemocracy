@@ -8,7 +8,7 @@
       <% if setting['twitter_handle'] %>
         <div class="share-supported">
           <div class="supported callout success">
-            <%= t("proposals.proposal.already_supported") %>
+            <span> <%= t("proposals.proposal.already_supported") %> </span>
             <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
           </div>
         </div>
