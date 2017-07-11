@@ -24,7 +24,7 @@ class Mailer < ApplicationMailer
   def email_verification(user, recipient, token, document_type, document_number)
     @user = user
     @recipient = recipient
-    @token = token
+    @token = @user.confirmation_token
     @document_type = document_type
     @document_number = document_number
 
