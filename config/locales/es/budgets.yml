@@ -125,7 +125,7 @@ es:
       unselected: Ver las propuestas no seleccionadas para la votación final
       see_results: Ver resultados
     results:
-      #link: Resultados
+      link: Resultados
       page_title: "%{budget} - Resultados"
       heading: "Resultados presupuestos participativos"
       geozone_selection_title: "Ámbito de actuación"
@@ -161,7 +161,7 @@ es:
       years: años
       by_heading: "Participación por distritos"
       heading: Distrito
-      investments_sent: Propuestas enviadas
+      investments_sent_html: "Propuestas<br>enviadas"
       participants_support_phase: Participación fase apoyos
       participants_voting_phase: Participación fase votación
       participants_total: Participación total
