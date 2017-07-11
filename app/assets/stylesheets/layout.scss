@@ -385,7 +385,7 @@ header {
 
     &::after, &:hover::after {
       background: $brand;
-      box-shadow: 0 7px 0 white, 0 14px 0 white;
+      // box-shadow: 0 7px 0 white, 0 14px 0 white;
     }
   }
 }
