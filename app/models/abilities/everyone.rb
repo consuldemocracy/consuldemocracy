@@ -9,7 +9,6 @@ module Abilities
       can :read, Poll
       can :read, Poll::Question
       can [:read, :welcome], Budget
-      can :read, Budget::Investment
       can :read, SpendingProposal
       can :read, LegacyLegislation
       can :read, User
