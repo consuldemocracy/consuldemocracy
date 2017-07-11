@@ -77,12 +77,19 @@ class Budget
            "70 - 140"].each do |group|
             start, finish = group.split(" - ")
             group_name = (group == "70 - 140" ? "+ 70" : group)
-            groups[group_name] = User.where(id: participants)
-                                     .where("date_of_birth > ? AND date_of_birth < ?",
-                                            finish.to_i.years.ago.beginning_of_year,
-                                            start.to_i.years.ago.end_of_year).count
+            finish = finish.to_i.years.ago.beginning_of_year
+            start = start.to_i.years.ago.end_of_year
+            groups[group_name] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", finish, start).count
           end
-          groups
+
+          all_ages_count = groups.values.sum.to_f
+
+          groups.each_with_object({}) do |(group_name, count), h|
+            h[group_name] = {
+              count: count,
+              percent: all_ages_count.zero? ? 0 : count / all_ages_count * 100
+            }
+          end
         end
       end
 
