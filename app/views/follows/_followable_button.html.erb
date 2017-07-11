@@ -6,7 +6,8 @@
       <%= link_to "##{follow_link_wrapper_id(followable)}",
                   id: follow_link_wrapper_id(followable),
                   title: follow_entity_text(followable),
-                  data: { toggle: follow_drop_id(followable) } do %>
+                  data: { toggle: follow_drop_id(followable) },
+                  class: 'button hollow' do %>
         <%= t('shared.follow') %>
       <% end %>
       <div class="dropdown-pane" id="<%= follow_drop_id(followable) %>"
@@ -26,7 +27,8 @@
       <%= link_to "##{unfollow_link_wrapper_id(followable)}",
                   id: unfollow_link_wrapper_id(followable),
                   title: unfollow_entity_text(followable),
-                  data: { toggle: unfollow_drop_id(followable) } do %>
+                  data: { toggle: unfollow_drop_id(followable) },
+                  class: 'button hollow' do %>
         <%= t('shared.unfollow') %>
       <% end %>
       <div class="dropdown-pane" id="<%= unfollow_drop_id(followable) %>"
