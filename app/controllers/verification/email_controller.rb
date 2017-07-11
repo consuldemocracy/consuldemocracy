@@ -19,7 +19,7 @@ class Verification::EmailController < ApplicationController
       current_user.reload
       Mailer.email_verification(current_user,
                                 @email.recipient,
-                                @email.encrypted_token,
+                                @email.plain_token,
                                 @verified_user.document_type,
                                 @verified_user.document_number).deliver_later
       redirect_to account_path, notice: t('verification.email.create.flash.success', email: @verified_user.email)
