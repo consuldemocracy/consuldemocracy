@@ -16,15 +16,15 @@ Setting.create(key: 'votes_for_proposal_success', value: '100')
 Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
-Setting.create(key: 'twitter_handle', value: '@consul_dev')
-Setting.create(key: 'twitter_hashtag', value: '#consul_dev')
-Setting.create(key: 'facebook_handle', value: 'consul')
-Setting.create(key: 'youtube_handle', value: 'consul')
-Setting.create(key: 'telegram_handle', value: 'consul')
-Setting.create(key: 'blog_url', value: '/blog')
-Setting.create(key: 'url', value: 'http://localhost:3000')
+Setting.create(key: 'twitter_handle', value: '@ciudadanoi')
+Setting.create(key: 'twitter_hashtag', value: '#ciudadanoi')
+Setting.create(key: 'facebook_handle', value: 'ciudadanointeligente')
+Setting.create(key: 'youtube_handle', value: '')
+Setting.create(key: 'telegram_handle', value: '')
+Setting.create(key: 'blog_url', value: '')
+Setting.create(key: 'url', value: "https://#{Rails.application.secrets.server_name}")
 Setting.create(key: 'org_name', value: 'Abre')
-Setting.create(key: 'place_name', value: 'City')
+Setting.create(key: 'place_name', value: 'Municipio')
 Setting.create(key: 'feature.debates', value: "false")
 Setting.create(key: 'feature.polls', value: "true")
 Setting.create(key: 'feature.spending_proposals', value: nil)
@@ -54,6 +54,17 @@ Setting['feature.google_login'] = false
 Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = false
 Setting['feature.signature_sheets'] = false
+
+# Home
+Setting.create(key: 'home.main-title', value: "Construyamos soluciones para nuestra comuna")
+Setting.create(key: 'home.main-subtitle', value: "Quiero saber más")
+Setting.create(key: 'home.main-subtitle-link', value: "http://abre.penalolen.cl/more-information")
+Setting.create(key: 'home.info-epigraph', value: "Recepción de propuestas")
+Setting.create(key: 'home.info-title', value: "Parque de ideas: Soñemos en conjunto el Parque San Luis.")
+Setting.create(key: 'home.info-go_to', value: "Quiero subir una propuesta")
+Setting.create(key: 'home.info-go_to_link', value: "http://abre.penalolen.cl/proposals/new")
+Setting.create(key: 'home.info-date', value: "17 DE JULIO - 15 DE AGOSTO")
+
 
 puts " ✅"
 print "Creando unidades vecinales y zonas"
@@ -121,15 +132,10 @@ end
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
-(1..3).each do |i|
+(1..20).each do |i|
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
-  if level >= 2
-    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
-  end
-  if level == 3
-    user.update(verified_at: Time.current, document_number: Faker::Number.number(10) )
-  end
+  user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
 end
 
 org_user_ids = User.organizations.pluck(:id)

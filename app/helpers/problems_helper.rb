@@ -5,11 +5,11 @@ module ProblemsHelper
   end
 
   def has_active_problem?
-    Problem.all.where("active").any? && active_problem.ends_at > Date.today
+    Problem.all.where("active").any?
   end
 
   def active_problem
-    Problem.all.where("active").first
+    Problem.all.where("active").last
   end
 
 end

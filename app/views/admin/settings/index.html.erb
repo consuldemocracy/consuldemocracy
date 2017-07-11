@@ -1,4 +1,33 @@
-<h2><%= t("admin.settings.index.title") %></h2>
+<h1><%= t("admin.settings.index.title") %></h1>
+
+
+<h3><%= t("admin.settings.index.home") %></h3>
+<p><%= t("admin.settings.index.home_subtitle") %></p>
+
+<table>
+  <tbody>
+    <% @home.each do |h| %>
+      <tr>
+        <td class="small-12 medium-4">
+          <strong><%= t("settings.#{h.key}") %></strong>
+        </td>
+        <td class="small-12 medium-8">
+          <%= form_for(h, url: admin_setting_path(h), html: { id: "edit_#{dom_id(h)}"}) do |f| %>
+            <div class="small-12 medium-6 large-9 column">
+              <%= f.text_area :value, label: false, id: dom_id(h), lines: 1 %>
+            </div>
+            <div class="small-12 medium-6 large-3 column">
+              <%= f.submit(t('admin.settings.index.update_setting'), class: "button hollow expanded") %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3><%= t("admin.settings.index.many") %></h3>
+<p><%= t("admin.settings.index.many_subtitle") %></p>
 
 <table>
   <tbody>
@@ -22,9 +51,9 @@
   </tbody>
 </table>
 
-<h2><%= t("admin.settings.index.feature_flags") %></h2>
+<!-- <h2><%= t("admin.settings.index.feature_flags") %></h2> -->
 
-<table>
+<!-- <table>
   <tbody>
     <% @feature_flags.each do |feature_flag| %>
       <tr>
@@ -48,7 +77,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <% if @banner_styles.present? %>
   <h2><%= t("admin.settings.index.banners") %></h2>

@@ -1,8 +1,11 @@
 class Problem < ActiveRecord::Base
 
-  # validates :title, presence: true
-  # validates :summary, presence: true
-  # validates :user_id, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :summary, presence: true
+  validates :call_to_action, presence: true
+  validates :starts_at, presence: true
+  validates :ends_at, presence: true
 
   has_and_belongs_to_many :geozones
   belongs_to :user
@@ -19,6 +22,5 @@ class Problem < ActiveRecord::Base
       return 'Toda la comuna'
     end
   end
-
-
+  
 end

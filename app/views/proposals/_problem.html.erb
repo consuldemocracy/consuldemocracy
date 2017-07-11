@@ -1,21 +1,25 @@
 <div id="next-voting" class="row active-problem">
   <%= link_to problem_path(problem) do %>
     <div class="small-12 column padding">
+      <p class="epigraph-problem white"> __ DESAFÍO </p>
       <h4><%= problem.title %></h4>
       <p><%= problem.summary %></p>
+      <p><%= problem.call_to_action %></p>
       <div class="row">
       <div class="small-12 medium-4 column">
-        <p class='problem-budget p-small'><%= t('activerecord.attributes.problem.budget')%>: <%= problem.budget %></p>
+        <% if problem.budget? %>
+          <p class='problem-budget p-small'><%= t('activerecord.attributes.problem.budget')%>: <%= problem.budget %></p>
+        <% end %>
       </div>
       <div class="small-12 medium-8 column">
-          <div class="row ">
-            <div class="small-12 medium-8 column">
-              <p class="text-right p-small"> <%= t("proposals.index.remaining_time", days: distance_of_time_in_words(Problem.last.ends_at, Date.today)) %> </p>
-            </div>
-            <div class="small-12 medium-4 column">
-          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button button-proposal p-small' %>
+        <div class="row ">
+          <div class="small-12 medium-8 column">
+            <p class="text-right p-small"> <%= t("proposals.index.remaining_time", days: distance_of_time_in_words(Problem.last.ends_at, Date.today)) %> </p>
+          </div>
+          <div class="small-12 medium-4 column">
+            <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button button-proposal p-small' %>
+          </div>
         </div>
-      </div>
       </div>
     </div>
     </div>

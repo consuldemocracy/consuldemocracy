@@ -13,6 +13,7 @@ es:
       mark_featured: Destacar
       unmark_featured: Quitar destacado
       edit: Editar
+      destroy: Eliminar
       configure: Configurar
     banners:
       index:
@@ -191,6 +192,9 @@ es:
           implementation: "Implementación"
           evaluation: "Evaluación"
     problems:
+      flash:
+        actions:
+          create: "Desafío agregado con éxito"
       title: "Desafíos"
       edit:
         tip_cause: ""
@@ -202,12 +206,39 @@ es:
         no_problems: "No hay desafíos agregados"
         create: "Crear desafío"
         title: "Desafíos"
+        brief: Resumen
+        name: "Título"
       new:
         submit_button: "Crear desafío"
         title: "Desafíos"
         tip_description: ""
       edit:
         submit_button: "Editar desafío"
+      form:
+        title: "*Título"
+        summary: "*Resumen"
+        description: "*Descripción"
+        budget: "Presupuesto máximo"
+        problem_title: "*¿Por qué estás creando este desafío?"
+        restriction: "Restricciones"
+        cause: "Causas"
+        consequence: "Consecuencias"
+        call_to_action: "*Invitación a crear propuestas"
+        starts_at: "*Fecha de inicio de recepción de propuestas"
+        ends_at: "*Fecha de término de recepción de propuestas"
+        problem: ¿Por qué estás creando este desafío?
+        note_title: Escribe el título del desafío propuesto a la comunidad (140 caracteres max.)
+        note_problem: Redacta la razón (problema a resolver o principal motivación) por la que se invita a la comunidad a participar en la solución a este desafío.
+        note_call_to_action: Escribe una frase llamativa que invite a los vecinos a crear propuestas para el desafío propuesto…¡haz un llamado a la acción! (140 caracteres max.)
+        note_budget: Si no hay presupuesto asignado ingresa $0, pero si el presupuesto no es relevante (o será abordado en otra instancia) deja este espacio en blanco.
+        note_summary: Resume el desafío propuesto. Esto es lo primero que verán los vecinos acerca del desafío, sé conciso y claro (260 caracteres max.)
+        note_description: Describe el desafío propuesto a la comunidad, indicando objetivo, motivaciones, etapas, personas involucradas, resultados esperados, etc. (760 caracteres max.)
+        note_restriction: "Indica de forma detallada si es que las propuestas deben acotarse a un rango específico de posibilidades (extensión, medidas, cantidad, presupuestos, características, opciones disponibles, etc)."
+        note_cause: "Indica las causas del problema que se busca resolver"
+        note_consequence: "Identifica las principales consecuencias del problema mencionado"
+        note_starts_at: "Fecha de inicio de recepción de propuestas"
+        note_ends_at: "Fecha de término de recepción de propuestas"
+        note_geozone_restricted: "Restringido por unidad vecinal/zonas"
     debates:
       index:
         filter: Filtro
@@ -254,6 +285,7 @@ es:
         pages: Personalizar páginas
         images: Personalizar imágenes
         content_blocks: Personalizar bloques
+        home: Personalizar sitio
       title_categories: Categorías
       title_moderated_content: Contenido moderado
       title_problems: Desafíos
@@ -504,7 +536,7 @@ es:
       index:
         banners: Banner style
         banner_imgs: Banner images
-        title: Configuración global
+        title: Personalizar sitio
         update_setting: Actualizar
         feature_flags: Funcionalidades
         features:
@@ -512,6 +544,10 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        home: Página principal
+        many: Varios
+        many_subtitle: ""
+        home_subtitle: En esta sección podrás editar la información mostrada en la página principal.
     shared:
       booths_search:
         button: Buscar

@@ -2,18 +2,18 @@
   <div class="row all-screen">
 
 
-    <div class="small-12 medium-7 large-7 column hero">
-      <h1 class="home-quote-font"> <%= t("welcome.welcome.quote") %> </h1>
-      <h5 class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h5>
-      <%= link_to "Quiero saber más", more_info_path, class: "hollow button secondary float-right" %>
+    <div class="small-12 medium-8 large-7 column hero">
+      <h1 class="home-quote-font"> <%= Setting["home.main-title"] %> </h1>
+      <%= link_to Setting["home.main-subtitle"], Setting["home.main-subtitle-link"], class: "hollow button secondary float-right" %>
+
     </div>
 
     <div class="small-12 medium-5 large-5 column home-column2">
       <div class="home-info">
-        <p class="home-info-dates label float-right"> <%= t("welcome.welcome.info.date") %> </p>
-        <h4 class="home-info-epigraph small blue"> <%= t("welcome.welcome.info.epigraph") %> </h4>
-        <h3 class="home-info-title"> <%= t("welcome.welcome.info.title") %> </h3>
-        <%= link_to t("welcome.welcome.info.go_to"), new_proposal_path, class: "home-info-link" %>
+        <p class="home-info-dates label float-right"> <%= Setting["home.info-date"] %> </p>
+        <h4 class="home-info-epigraph small blue"> <%= Setting["home.info-epigraph"] %> </h4>
+        <h3 class="home-info-title"> <%= Setting["home.info-title"] %> </h3>
+        <%= link_to Setting["home.info-go_to"], Setting["home.info-go_to_link"], class: "home-info-link" %>
       </div>
 
       <div class="home-img">
@@ -84,7 +84,7 @@
     </div>
 
     <div class="home-proposals">
-      <% if Proposal.all.nil? %>
+      <% if Proposal.all.any? %>
       <h1 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h1>
       <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button button-home-proposals text-center' %>
       <div class="row">
