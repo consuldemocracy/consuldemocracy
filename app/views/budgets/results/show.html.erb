@@ -26,7 +26,8 @@
       </li>
 
       <% @budget.headings.each do |heading| %>
-        <li>
+        <% active_class = heading.id.to_s == params[:heading_id] ? 'bold' : '' %>
+        <li class="<%= active_class %>">
           <%= link_to heading.name,
                       budget_results_path(@budget, heading_id: heading.id) %>
         </li>
@@ -34,7 +35,7 @@
     </ul>
   </div>
 
-  <span class="float-right"><%= link_to t("budgets.results.hide_discarded_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.show_all_link")} %></span>
+  <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>
 
 
   <%= render 'results_table', results_type: :compatible,
@@ -42,8 +43,10 @@
                               heading_price: @heading.price,
                               investments: @investments.compatible %>
 
-  <%= render 'results_table', results_type: :incompatible,
-                              title: t("budgets.results.incompatibles"),
-                              heading_price: @heading.price,
-                              investments: @investments.incompatible %>
+  <% if @investments.incompatible.present? %>
+    <%= render 'results_table', results_type: :incompatible,
+                                title: t("budgets.results.incompatibles"),
+                                heading_price: @heading.price,
+                                investments: @investments.incompatible %>
+  <% end %>
 </div>

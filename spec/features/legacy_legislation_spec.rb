@@ -77,8 +77,10 @@ feature 'Legacy Legislation' do
 
     scenario 'Search' do
       legacy_legislation = create(:legacy_legislation)
-      annotation1 = create(:annotation, legacy_legislation: legacy_legislation, text: "my annotation",       ranges: [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}])
-      annotation2 = create(:annotation, legacy_legislation: legacy_legislation, text: "my other annotation", ranges: [{"start" => "/div[1]", "startOffset" => 12, "end" => "/div[1]", "endOffset" => 19}])
+      annotation1 = create(:annotation, legacy_legislation: legacy_legislation, text: "my annotation",
+                                        ranges: [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}])
+      annotation2 = create(:annotation, legacy_legislation: legacy_legislation, text: "my other annotation",
+                                        ranges: [{"start" => "/div[1]", "startOffset" => 12, "end" => "/div[1]", "endOffset" => 19}])
 
       visit legacy_legislation_path(legacy_legislation)
 

@@ -28,7 +28,8 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter)
+                                 .send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
@@ -102,7 +103,8 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list,
+                                                  :organization_name, :location, :terms_of_service)
       end
 
       def load_ballot

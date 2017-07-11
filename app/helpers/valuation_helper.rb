@@ -2,7 +2,9 @@ module ValuationHelper
 
   def valuator_select_options(valuator = nil)
     if valuator.present?
-      Valuator.where.not(id: valuator.id).order("description ASC").order("users.email ASC").includes(:user).collect { |v| [ v.description_or_email, v.id ] }.prepend([valuator.description_or_email, valuator.id])
+      Valuator.where.not(id: valuator.id).order("description ASC").order("users.email ASC")
+              .includes(:user).collect { |v| [ v.description_or_email, v.id ] }
+              .prepend([valuator.description_or_email, valuator.id])
     else
       Valuator.all.order("description ASC").order("users.email ASC").includes(:user).collect { |v| [ v.description_or_email, v.id ] }
     end

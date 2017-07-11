@@ -8,7 +8,8 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
 
   def create
     if @draft_version.save
-      redirect_to admin_legislation_process_draft_versions_path, notice: t('admin.legislation.draft_versions.create.notice', link: legislation_process_draft_version_path(@process, @draft_version).html_safe)
+      link = legislation_process_draft_version_path(@process, @draft_version).html_safe
+      redirect_to admin_legislation_process_draft_versions_path, notice: t('admin.legislation.draft_versions.create.notice', link: link)
     else
       flash.now[:error] = t('admin.legislation.draft_versions.create.error')
       render :new
@@ -17,7 +18,9 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
 
   def update
     if @draft_version.update(draft_version_params)
-      redirect_to edit_admin_legislation_process_draft_version_path(@process, @draft_version), notice: t('admin.legislation.draft_versions.update.notice', link: legislation_process_draft_version_path(@process, @draft_version).html_safe)
+      link = legislation_process_draft_version_path(@process, @draft_version).html_safe
+      notice = t('admin.legislation.draft_versions.update.notice', link: link)
+      redirect_to edit_admin_legislation_process_draft_version_path(@process, @draft_version), notice: notice
     else
       flash.now[:error] = t('admin.legislation.draft_versions.update.error')
       render :edit

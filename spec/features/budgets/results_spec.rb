@@ -20,6 +20,21 @@ feature 'Results' do
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
       expect(page).to have_content investment2.title
+      expect(page).not_to have_content investment3.title
+      expect(page).not_to have_content investment4.title
+
+      expect(investment1.title).to appear_before(investment2.title)
+    end
+  end
+
+  scenario "Show non winner & incomaptible investments", :js do
+    visit budget_path(budget)
+    click_link "See results"
+    click_link "Show all"
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
+      expect(page).to have_content investment2.title
       expect(page).to have_content investment4.title
 
       expect(investment1.title).to appear_before(investment2.title)
@@ -31,21 +46,6 @@ feature 'Results' do
     end
   end
 
-  scenario "Displays non winner investments", :js do
-    visit budget_path(budget)
-    click_link "See results"
-    click_link "Hide discarded"
-
-    within("#budget-investments-compatible") do
-      expect(page).to have_content investment1.title
-      expect(page).to have_content investment2.title
-      expect(page).not_to have_content investment3.title
-      expect(page).not_to have_content investment4.title
-
-      expect(investment1.title).to appear_before(investment2.title)
-    end
-  end
-
   scenario "If budget is in a phase different from finished results can't be accessed" do
     budget.update phase: (Budget::PHASES - ["finished"]).sample
     visit budget_path(budget)
@@ -53,6 +53,16 @@ feature 'Results' do
 
     visit budget_results_path(budget, heading_id: budget.headings.first)
     expect(page).to have_content "You do not have permission to carry out the action"
+  end
+
+  scenario "No incompatible investments", :js do
+    investment3.incompatible = false
+    investment3.save
+
+    visit budget_path(budget)
+    click_link "See results"
+
+    expect(page).not_to have_content "Incompatibles"
   end
 
 end
