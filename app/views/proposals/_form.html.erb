@@ -49,13 +49,19 @@
               <p> <%= t("proposals.form.problem.community") %> <%= challenge.geozones_name %>
               </p>
             <% end %>
+            <div class="show-for-small-only">
+              <span> Quedan</span> <strong class="mark-days">
+              <%=distance_of_time_in_days(challenge.ends_at, Date.today)%></strong><span> días para crear propuestas </span>
+            </div>
           </div>
-          <div class="deadline-problem float-right">
+          <div class="deadline-problem hide-for-small-only float-right">
             <span> Quedan</span> <strong class="mark-days">
             <%=distance_of_time_in_days(challenge.ends_at, Date.today)%></strong><span> días para crear propuestas </span>
           </div>
       </div>
   </div>
+
+
 
     <!-- TODO: Por ahora las gezones serán las mismas que del desafío por defceto  -->
     <% challenge.geozones.map(&:id).each do |id| %>
