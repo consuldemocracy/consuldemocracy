@@ -95,8 +95,9 @@ ActiveRecord::Schema.define(version: 20170708225159) do
   create_table "budget_ballots", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "budget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_groups", force: :cascade do |t|
@@ -924,7 +925,7 @@ ActiveRecord::Schema.define(version: 20170708225159) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-22 11:21:30', null: false
+    t.datetime "password_changed_at",                       default: '2017-07-11 15:28:13', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
