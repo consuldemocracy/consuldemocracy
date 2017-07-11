@@ -117,6 +117,8 @@ Rails.application.routes.draw do
     get :results, on: :collection
   end
 
+  resources :follows, only: [:create, :destroy]
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'

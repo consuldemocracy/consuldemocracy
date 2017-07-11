@@ -14,6 +14,8 @@ en:
       personal: Personal details
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
+      public_interests_label: Keep my interests public
+      public_interests_title_list: List of interests
       save_changes_submit: Save changes
       subscription_to_website_newsletter_label: Receive by email website relevant information
       email_on_direct_message_label: Receive emails about direct messages
@@ -543,6 +545,9 @@ en:
     check_none: None
     collective: Collective
     flag: Flag as inappropriate
+    follow: "Follow"
+    follow_entity: "Follow %{entity}"
+    follow_entity_title: "Follow %{entity}: You can participate and receive notifications of any related events."
     hide: Hide
     print:
       print_button: Print this info
@@ -576,6 +581,8 @@ en:
     you_are_in: "You are in"
     unflag: Unflag
     probe_plaza_banner: "#RemodelingPlazaEspaña"
+    unfollow: "Unfollow"
+    unfollow_entity: "Unfollow %{entity}"
     outline:
       debates: Debates
       proposals: Proposals
@@ -794,6 +801,9 @@ en:
           one: 1 Investment
           other: "%{count} Investments"
         ballot: Participatory budget
+        follows:
+          one: 1 Following
+          other: "%{count} Following"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private

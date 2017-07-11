@@ -9,6 +9,7 @@ class Proposal < ActiveRecord::Base
   include Filterable
   include HasPublicAuthor
   include Graphqlable
+  include Followable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -190,6 +191,10 @@ class Proposal < ActiveRecord::Base
 
   def notifications
     proposal_notifications
+  end
+
+  def users_to_notify
+    (voters + followers).uniq
   end
 
   def self.rank(proposal)

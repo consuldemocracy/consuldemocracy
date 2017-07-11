@@ -62,10 +62,12 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-flag-actions">
+
+          <% if current_user %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'proposals/flag_actions', proposal: @proposal %>
-          </span>
+          <% end %>
+
         </div>
 
         <br>
@@ -154,6 +156,8 @@
           title: @proposal.title,
           url: proposal_url(@proposal)
         } %>
+
+        <%= render 'follows/followable_button', followable: @proposal if current_user %>
 
       </aside>
     </div>

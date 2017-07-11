@@ -379,6 +379,18 @@ ActiveRecord::Schema.define(version: 20170708225159) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "followable_id"
+    t.string   "followable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "follows", ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id", using: :btree
+  add_index "follows", ["user_id", "followable_type", "followable_id"], name: "access_follows", using: :btree
+  add_index "follows", ["user_id"], name: "index_follows_on_user_id", using: :btree
+
   create_table "geozones", force: :cascade do |t|
     t.string   "name"
     t.string   "html_map_coordinates"
@@ -1060,7 +1072,7 @@ ActiveRecord::Schema.define(version: 20170708225159) do
     t.integer  "supported_spending_proposals_geozone_id"
     t.integer  "representative_id"
     t.boolean  "accepted_delegation_alert",                                   default: false
-    t.string   "gender",                                           limit: 10
+    t.string   "gender",                                                      limit: 10
     t.datetime "date_of_birth"
     t.boolean  "email_on_proposal_notification",                              default: true
     t.boolean  "email_digest",                                                default: true
@@ -1072,6 +1084,7 @@ ActiveRecord::Schema.define(version: 20170708225159) do
     t.text     "former_users_data_log",                                       default: ""
     t.integer  "failed_email_digests_count",                                  default: 0
     t.integer  "balloted_heading_id"
+    t.boolean  "public_interests",                                            default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -1212,6 +1225,7 @@ ActiveRecord::Schema.define(version: 20170708225159) do
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
+  add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
