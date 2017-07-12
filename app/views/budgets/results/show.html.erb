@@ -38,10 +38,10 @@
       </li>
 
       <% @budget.headings.order('id ASC').each do |heading| %>
-        <% active_class = heading.to_param == @heading.to_param ? 'bold' : '' %>
-        <li class="<%= active_class %>">
+        <li>
           <%= link_to heading.name,
-                      custom_budget_heading_result_path(@budget, heading_id: heading.to_param) %>
+                      custom_budget_heading_result_path(@budget, heading_id: heading.to_param),
+                      class: heading.to_param == @heading.to_param ? 'bold' : '' %>
         </li>
       <% end %>
     </ul>
