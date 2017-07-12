@@ -10,8 +10,17 @@
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
           <span class="total-votes-text">
             __ <span class="total-votes-count"><%= proposal.total_votes %> </span> vecinos apoyan esta propuesta
-            <i class="fa fa-heart" style="font-size:1.1rem;"></i>
+            <i class="fa fa-heart" style="font-size:1.1rem;">
+              <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle.">
+                 Hola
+              </span>
+            </i>
           </span>
+          <% if proposal.for_challenge && proposal.successful? %>
+            <span class="label round tag-succesful">
+              <%= t("proposals.show.tag_succesful") %>
+            </span>
+          <% end %>
             <h3><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
             <p class="proposal-info">
               <i class="fa fa-map-marker"></i> <%= proposal.geozones_name %> |
@@ -27,14 +36,6 @@
                   <%= proposal.author.name %>
                 </span>
               <% end %>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-              <% if proposal.for_challenge && proposal.successful? %>
-                <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                <span class="label round tag-succesful">
-                  <%= t("proposals.show.tag_succesful") %>
-                </span>
-              <% end %>
-            </p>
            <% if !proposal.for_challenge %>
             <div class="supports">
               <abbr title= "<%= proposal.total_votes %> votos">
@@ -57,46 +58,44 @@
 
         <div class="row">
           <% if proposal.successful? %>
-          <% if proposal.for_challenge %>
-          <div class="small-9 medium-9 column ">
-            <div class="padding text-left">
-              <p>
-                <%= t("proposals.proposal.successful_for_challenge",
-                    voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe  %>
-              </p>
-            </div>
-          </div>
-          <% else %>
+            <% if proposal.for_challenge %>
             <div class="small-9 medium-9 column ">
               <div class="padding text-left">
                 <p>
-                  <%= t("proposals.proposal.successful",
-                      voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+                  <%= t("proposals.proposal.successful_for_challenge",
+                      voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe  %>
                 </p>
               </div>
             </div>
-          <% end %>
-
-          <div class="small-3 medium-3 column ">
-            <% if can? :create, Poll::Question %>
-              <p class="text-center">
-                <%= link_to t('poll_questions.create_question'),
-                            new_admin_question_path(proposal_id: proposal.id),
-                            class: "button hollow" %>
-              </p>
+            <% else %>
+              <div class="small-9 medium-9 column ">
+                <div class="padding text-left">
+                  <p>
+                    <%= t("proposals.proposal.successful",
+                        voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+                  </p>
+                </div>
+              </div>
             <% end %>
-          </div>
-          <% elsif proposal.archived? %>
-          <div class="small-3 medium-3 column ">
-            <div class="padding text-center">
-              <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
-              <p><%= t("proposals.proposal.archived") %></p>
+            <div class="small-3 medium-3 column ">
+              <% if can? :create, Poll::Question %>
+                <p class="text-center">
+                  <%= link_to t('poll_questions.create_question'),
+                              new_admin_question_path(proposal_id: proposal.id),
+                              class: "button hollow" %>
+                </p>
+              <% end %>
             </div>
-          </div>
+          <% elsif proposal.archived? %>
+            <div class="small-3 medium-3 column ">
+              <div class="padding text-center">
+                <strong><%= t("proposals.proposal.supports", count: proposal.total_votes) %></strong>
+                <p><%= t("proposals.proposal.archived") %></p>
+              </div>
+            </div>
           <% else %>
-          <div class="small-12 medium-12 column ">
-
-            <%= render 'votes',
+            <div class="small-12 medium-12 column ">
+              <%= render 'votes',
                       { proposal: proposal, vote_url: vote_proposal_path(proposal, value: 'yes') } %>
             </div>
           <% end %>

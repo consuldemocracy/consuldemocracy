@@ -331,6 +331,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
       tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
+      subtitle: En esta página encontrarás las propuestas realizadas por los vecinos para mejorar el Parque San Luis. ¡Apoya aquellas que te gusten o crea nuevas! Las 3 que cuenten con más apoyo pasarán a la fase de votación.
       featured_proposals: Destacadas
       filter_topic:
         one: " con el tema '%{topic}'"

@@ -134,11 +134,8 @@ end
 (1..3).each do |i|
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
-  if level >= 2
+  if level >= 1
     user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
-  end
-  if level == 3
-    user.update(verified_at: Time.current, document_number: Faker::Number.number(10) )
   end
 end
 

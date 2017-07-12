@@ -46,8 +46,12 @@ module ProposalsHelper
     Proposal.all.reorder(cached_votes_up: :desc).first(3)
   end
 
+  def most_voted_challenge_proposals
+    Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(3)
+  end
+
   def winning_proposal?(proposal)
-    most_voted_proposals.select{ |p| p.id == proposal.id}.any?
+    most_voted_challenge_proposals.select{ |p| p.id == proposal.id}.any?
   end
 
   def problem_geozones(challenge)
