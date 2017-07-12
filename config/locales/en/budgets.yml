@@ -127,10 +127,10 @@ en:
       unselected: See investments not selected for balloting phase
       see_results: See results
     results:
-      #link: Results
+      link: Results
       page_title: "%{budget} - Results"
       heading: "Participatory budget results"
-      geozone_selection_title: "By district"
+      heading_selection_title: "By district"
       spending_proposal: Proposal title
       ballot_lines_count: Times selected
       hide_discarded_link: Hide discarded
