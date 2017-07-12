@@ -22,13 +22,13 @@
     <div class="row margin-top">
       <div class="small-12 column">
         <ul class="tabs">
-          <!-- Pending results tab
+          <% if @budget.finished? %>
             <li class="tabs-title">
-            <%# link_to t("budget.results.link"), budget_results_path(@budget) %>
+              <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+              <%= link_to t("budgets.results.link"), budget_results_path(@budget, heading_id: @budget.headings.first.to_param) %>
             </li>
-          -->
+          <% end %>
           <li class="tabs-title is-active">
-            <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
             <%= link_to t("budgets.stats.link"), budget_stats_path(@budget), class: "is-active" %>
           </li>
         </ul>
