@@ -3,15 +3,13 @@
   <%= render "shared/canonical", href: budget_results_url(@budget, heading_id: @heading) %>
 <% end %>
 
-<div class="expanded budget no-margin-top">
-  <div class="row">
-    <div class="small-12 column padding text-center">
-      <%= back_link_to budget_path(@budget) %>
-
-      <h2 class="title">
-        <%= @budget.name %><br>
-        <%= t("budgets.results.heading") %>
-      </h2>
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column text-center">
+        <%= back_link_to budget_path(@budget) %>
+        <h1 class="title"><%= t("budgets.results.heading") %><br><%= @budget.name %></h1>
+      </div>
     </div>
   </div>
 </div>
