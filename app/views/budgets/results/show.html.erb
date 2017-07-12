@@ -34,13 +34,13 @@
   <div class="small-12 medium-3 column">
     <ul class="menu vertical no-margin-top no-padding-top">
       <li>
-        <strong>
+        <h3>
           <%= t("budgets.results.heading_selection_title") %>
-        </strong>
+        </h3>
       </li>
 
-      <% @budget.headings.each do |heading| %>
-        <% active_class = heading.id.to_s == params[:heading_id] ? 'bold' : '' %>
+      <% @budget.headings.order('id ASC').each do |heading| %>
+        <% active_class = heading.to_param == params[:heading_id] ? 'bold' : '' %>
         <li class="<%= active_class %>">
           <%= link_to heading.name,
                       custom_budget_results_path(@budget, heading_id: heading.to_param) %>
