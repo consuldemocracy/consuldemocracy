@@ -13,9 +13,10 @@ App.Votes =
   hide_button: ->
     $('.button-support').click ->
       $(this).hide()
-      $element = $(this).closest(".row").siblings().children(".total-votes-text").children(".total-votes-count")
-      $count = parseInt($element.text()) + 1
-      $element.replaceWith("<span class='total-votes-count'>" + $count + "</span>")
+      element = $(this).closest(".row").siblings().children(".total-votes-text").children(".total-votes-count")
+      count = (parseInt(element.text()) + 1)
+      element.replaceWith("<span class='total-votes-count'>" + count + "</span>")
+      $(this).remove()
       return
 
   initialize: ->
