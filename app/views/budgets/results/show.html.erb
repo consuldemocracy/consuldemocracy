@@ -43,7 +43,7 @@
         <% active_class = heading.to_param == params[:heading_id] ? 'bold' : '' %>
         <li class="<%= active_class %>">
           <%= link_to heading.name,
-                      custom_budget_results_path(@budget, heading_id: heading.to_param) %>
+                      custom_budget_heading_result_path(@budget, heading_id: heading.to_param) %>
         </li>
       <% end %>
     </ul>
