@@ -21,7 +21,7 @@
     <ul class="tabs">
       <li class="tabs-title is-active">
         <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
-        <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget, heading_id: @budget.headings.first.to_param), class: "is-active"  %>
+        <%= link_to t("budgets.results.link"), custom_budget_heading_result_path(@budget, heading_id: @budget.headings.first.to_param), class: "is-active"  %>
       </li>
       <li class="tabs-title">
         <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget)%>
