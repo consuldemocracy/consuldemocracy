@@ -37,6 +37,10 @@ h5 {
   max-width: none;
 }
 
+.row {
+  max-width: none;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -96,6 +100,10 @@ p {
 }
 
 // Text color
+
+.line-text {
+  color: $gray-four;
+}
 
 .white {
   color: white;
@@ -426,6 +434,14 @@ li {
     &:hover {
       color: $gray-one;
     }
+}
+
+.home-proposal  {
+  padding: 0 3vw;
+  &:nth-child(2)  {
+    border-left: 1px solid $gray-four;
+    border-right: 1px solid $gray-four;
+  }
 }
 
 .proposal-type{
