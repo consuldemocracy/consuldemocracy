@@ -685,7 +685,7 @@ feature 'Admin budget investments' do
         check "budget_investment_visible_to_valuators"
       end
 
-      login_as(valuator.user)
+      login_as(valuator.user.reload)
       visit root_path
       click_link "Valuation"
 
@@ -697,7 +697,7 @@ feature 'Admin budget investments' do
       expect(page).to_not have_content investment2.title
     end
 
-    scenario "Unmark as visible to valuator", :js do
+    scenario "Unmark as visible to valuator", :js, do
       Setting['feature.budgets.valuators_allowed'] = true
 
       valuator = create(:valuator)
@@ -715,7 +715,7 @@ feature 'Admin budget investments' do
         uncheck "budget_investment_visible_to_valuators"
       end
 
-      login_as(valuator.user)
+      login_as(valuator.user.reload)
       visit root_path
       click_link "Valuation"
 
@@ -723,7 +723,7 @@ feature 'Admin budget investments' do
         click_link "Evaluate"
       end
 
-      expect(page).to_not have_content investment1.title
+      expect(page).not_to have_content investment1.title
       expect(page).to     have_content investment2.title
     end
 
