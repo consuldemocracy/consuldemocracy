@@ -17,11 +17,25 @@
 </div>
 
 <div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title is-active">
+        <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+        <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget, heading_id: @budget.headings.first.to_param), class: "is-active"  %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget)%>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
   <div class="small-12 medium-3 column">
     <ul class="menu vertical no-margin-top no-padding-top">
       <li>
         <strong>
-          <%= t("budgets.results.geozone_selection_title") %>
+          <%= t("budgets.results.heading_selection_title") %>
         </strong>
       </li>
 
@@ -29,7 +43,7 @@
         <% active_class = heading.id.to_s == params[:heading_id] ? 'bold' : '' %>
         <li class="<%= active_class %>">
           <%= link_to heading.name,
-                      budget_results_path(@budget, heading_id: heading.to_param) %>
+                      custom_budget_results_path(@budget, heading_id: heading.to_param) %>
         </li>
       <% end %>
     </ul>
