@@ -15,7 +15,7 @@
         <%= render "budgets_module_balloting" %>
       <% elsif Budget.reviewing_ballots.any? %>
         <%= render "budgets_module_reviewing" %>
-      <% else %>
+      <% elsif Budget.finished.any? %>
         <%= render "budgets_module_finished" %>
       <% end %>
     </div>
