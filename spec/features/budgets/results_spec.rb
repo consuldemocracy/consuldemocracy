@@ -50,7 +50,7 @@ feature 'Results' do
     other_heading = create(:budget_heading, group: group)
     other_investment = create(:budget_investment, :winner, heading: other_heading)
 
-    visit custom_budget_heading_result_path(budget)
+    visit custom_budget_results_path(budget)
 
     within("#budget-investments-compatible") do
       expect(page).to have_content investment1.title
