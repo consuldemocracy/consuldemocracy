@@ -418,3 +418,14 @@ li {
   color: $gray-one;
   font-family: $body-font-family-title;
 }
+
+.total-votes-text{
+  font-family: $body-font-family-title;
+  color: $light-blue;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.total-votes-count{
+  font-size: 1.4rem;
+}

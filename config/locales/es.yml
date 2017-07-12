@@ -378,7 +378,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
     notice:
       retired: Propuesta retiradadays
     proposal:
-      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
+      already_supported: Gracias por apoyar esta propuesta. Compártela para que más vecinos la apoyen
       comments:
         one: 1 Comentario
         other: "%{count} Comentarios"
@@ -599,7 +599,7 @@ Intenta que ataque directamente a la causa que definiste como más importante pa
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
-      already_supported: Ya has apoyado este proyecto. ¡Compártelo!
+      already_supported: Gracias por apoyar esta propuesta. Compártela para que más vecinos la apoyen
       support: Apoyar
       support_title: Apoyar este proyecto
       supports:

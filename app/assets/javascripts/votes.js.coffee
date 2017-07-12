@@ -10,7 +10,17 @@ App.Votes =
         $("div.participation-allowed", this).show();
     }, votes
 
+  hide_button: ->
+    $('.button-support').click ->
+      $(this).hide()
+      element = $(this).closest(".row").siblings().children(".total-votes-text").children(".total-votes-count")
+      count = (parseInt(element.text()) + 1)
+      element.replaceWith("<span class='total-votes-count'>" + count + "</span>")
+      $(this).remove()
+      return
+
   initialize: ->
     App.Votes.hoverize "div.votes"
     App.Votes.hoverize "div.supports"
+    App.Votes.hide_button ""
     false

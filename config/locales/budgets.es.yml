@@ -93,7 +93,7 @@ es:
         title: Propuesta de inversión
         add: Añadir
         already_added: "Ya has añadido esta propuesta de inversión"
-        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        already_supported: Gracias por apoyar esta propuesta. Compártela para que más vecinos la apoyen
         support_title: Apoyar esta propuesta
         confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
         supports:
