@@ -190,6 +190,11 @@ p {
 .button.hollow.secondary {
     border: 1px solid #fff;
     color: #fff;
+    &:hover {
+      border: 1px solid #fff;
+      color: #fff;
+      background: darken($brand, 5%);
+    }
 }
 
 .in-favor{
@@ -355,6 +360,10 @@ li {
     background: #D80017;
     padding: 3vw;
     margin-top: -23vw;
+}
+
+.how-it-works {
+  background: $gray-two;
 }
 
 .home-subtitle{
