@@ -29,22 +29,22 @@
 </div>
 
 <div class="row">
-  <div class="small-12 medium-3 column">
-    <ul class="menu vertical no-margin-top no-padding-top">
-      <li>
+  <div class="small-12 medium-3 large-2 column">
+    <div class="row">
+      <ul class="menu vertical no-margin-top no-padding-top">
         <h3>
           <%= t("budgets.results.heading_selection_title") %>
         </h3>
-      </li>
 
-      <% @budget.headings.order('id ASC').each do |heading| %>
-        <li>
-          <%= link_to heading.name,
-                      custom_budget_heading_result_path(@budget, heading_id: heading.to_param),
-                      class: heading.to_param == @heading.to_param ? 'bold' : '' %>
-        </li>
-      <% end %>
-    </ul>
+        <% @budget.headings.order('id ASC').each do |heading| %>
+          <li>
+            <%= link_to heading.name,
+                        custom_budget_heading_result_path(@budget, heading_id: heading.to_param),
+                        class: heading.to_param == @heading.to_param ? 'bold' : '' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>
