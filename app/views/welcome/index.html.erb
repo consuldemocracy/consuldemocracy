@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="large-9 columns">
-    <div class="row bg-light-gray">
+    <div class="row bg-light-gray collapse">
       <div class="large-3 columns">
         <div class="como01"></div>
         <div class="row collapse">
@@ -93,8 +93,10 @@
 
     <div class="home-proposals">
       <% if Proposal.all.any? %>
-      <h1 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h1>
-      <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button button-home-proposals text-center' %>
+      <h2 class="text-center home-title"> <%= t("welcome.proposals.title") %> </h2>
+      <div class="text-center">
+        <%= link_to t("welcome.proposals.link_to"), proposals_path, class: 'button primary' %>
+      </div>
       <div class="row">
         <div class="small-12 medium-4 column">
           <%= render "proposal", proposal: most_voted_proposals.first, proposal_type: "Más votadas", proposal_class: "proposal-type most-voted" %>

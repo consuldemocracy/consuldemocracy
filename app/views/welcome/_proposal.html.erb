@@ -1,14 +1,14 @@
-  <h4 class="<%= proposal_class %> "> __<%= proposal_type %>  </h4>
-  <h4><%= link_to proposal.title, namespaced_proposal_path(proposal), class: "home-proposal-color" %></h4>
+  <div class="small orange"><%= proposal_type %>  </div>
+  <h4><%= link_to proposal.title, namespaced_proposal_path(proposal), class: "" %></h4>
   <p class="proposal-info">
-    <span class="icon-calendar"></span>&nbsp; <span class="home-proposal-color home-proposal-subtitle"><%= l proposal.created_at.to_date %></span>
+    <i class="fa fa-map-marker" aria-hidden="true"></i> Lugar |
+    <i class="fa fa-calendar" aria-hidden="true"></i> <%= l proposal.created_at.to_date %></span>
     <% if proposal.author.hidden? || proposal.author.erased? %>
-      <span class="bullet">&nbsp;&bull;&nbsp;</span>
       <span class="author">
         <%= t("proposals.show.author_deleted") %>
       </span>
     <% else %>
-      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+       | <i class="fa fa-user-circle" aria-hidden="true"></i>
       <span class="author home-proposal-color home-proposal-subtitle">
         <%= proposal.author.name %>
       </span>

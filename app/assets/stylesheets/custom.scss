@@ -33,8 +33,17 @@ h5 {
   font-size: 20px;
 }
 
+.all-screen {
+  max-width: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 p {
   color: $gray-two;
+  font-size: 16px;
 }
 
 .small {
@@ -44,6 +53,7 @@ p {
   font-size: 14px;
   padding-left: 25px;
   position: relative;
+  margin-bottom: 14px;
   &:before {
     content: '_';
     font-size: 36px;
@@ -55,6 +65,18 @@ p {
 
 .label {
     padding: 0.5rem 0.9rem 0.35rem;
+}
+
+.tags a, .tag-cloud a, .categories a, .geozone a, .sidebar-links a, .tags span {
+    background: $gray-two;
+    border-radius: 0;
+    color: white;
+    font-size: 16px;
+    padding: 0.1vw 0.6rem;
+}
+
+.tags a:hover, .tag-cloud a:hover, .categories a:hover, .geozone a:hover, .sidebar-links a:hover, .tags span:hover {
+    background: $brand;
 }
 
 .padding {
@@ -81,6 +103,10 @@ p {
 
 .blue {
   color: $light-blue;
+}
+
+.orange {
+  color: $orange;
 }
 
 // Background color
@@ -208,10 +234,6 @@ p {
   display: inline-block;
   font-size: 0.875rem;
   margin-top: 0.75rem;
-}
-
-.p-small{
-  font-size: 0.92rem;
 }
 
 .meter{
@@ -395,20 +417,15 @@ li {
   padding: 2rem;
 }
 
-.home-proposals{
-  margin: 0 auto !important;
+.home-proposals {
+    padding: 6vw 0;
 }
 
-.button-home-proposals{
-  max-width: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5rem;
-}
-
-.home-proposal-color{
-  color: $gray-two;
+.home-proposals h4 a {
+    color: $gray-two;
+    &:hover {
+      color: $gray-one;
+    }
 }
 
 .proposal-type{
@@ -424,18 +441,6 @@ li {
 
 .most-activated{
   color: $light-blue;
-}
-
-.newest{
-  color: $orange;
-}
-
-.all-screen{
-  max-width: none;
-}
-
-.home-proposal-subtitle{
-  font-size: 0.9rem;
 }
 
 // Home
