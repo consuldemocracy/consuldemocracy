@@ -3,11 +3,12 @@
   <div class="row all-screen column">
     <div class="top-bar">
 
-      <%= link_to setting['org_name'], root_path, class: "logo show-for-small-only" %>
+
+      <%= image_tag(image_path_for('logo-header.svg'), class: 'show-for-small-only float-left', alt: t("layouts.header.logo")) %>
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
-        <%= t("application.menu")%>
+        <span class="menu-text"> <%= t("application.menu")%> </span>
       </span>
 
       <div id="responsive-menu">
@@ -15,7 +16,6 @@
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
             <%= image_tag(image_path_for('logo-header.svg'), class: 'hide-for-small-only float-left', alt: t("layouts.header.logo")) %>
           <% end %>
-          <span class="header-title"> Peñalolen </span>
         </div>
 
         <div class="top-bar-right">
@@ -27,7 +27,16 @@
           </div>
         </div>
 
-
+        <div class="top-bar-right">
+          <div class="show-for-small-only">
+            <div class="subnavigation row">
+              <div class="small-12 column">
+                <%= render "shared/subnavigation" %>
+                <!-- <%= render "shared/top_links" %> -->
+              </div>
+            </div>
+          </div>
+        </div>
 
 
       </div>
@@ -50,16 +59,7 @@
         </div>
       </div>
 
-      <div class="top-bar-right">
-        <div class="show-for-small-only">
-          <div class="subnavigation row">
-            <%= render "shared/subnavigation" %>
-            <div class="small-12 column">
-              <%= render "shared/top_links" %>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
     </div>
   </div>

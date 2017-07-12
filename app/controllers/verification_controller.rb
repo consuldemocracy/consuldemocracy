@@ -24,7 +24,8 @@ class VerificationController < ApplicationController
       elsif user.verification_sms_sent?
         { path: edit_sms_path }
       elsif user.verification_email_sent?
-        { path: verified_user_path, notice: t('verification.redirect_notices.email_already_sent') }
+        # { path: verified_user_path, notice: t('verification.redirect_notices.email_already_sent') }
+        { path: account_path, notice: t('verification.redirect_notices.already_verified') }
       elsif user.residence_verified?
         { path: account_path }
       else

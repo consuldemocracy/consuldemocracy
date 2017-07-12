@@ -182,8 +182,13 @@ class Proposal < ActiveRecord::Base
   def geozones_name
     if self.geozones.any?
       names = ''
+      init = true
       self.geozones.each do |g|
-        names += g.name + ' | '
+        if !init
+          names += ', '
+        end
+        names += g.name
+        init = false
       end
       return names
     else

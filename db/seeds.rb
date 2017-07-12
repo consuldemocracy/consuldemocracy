@@ -22,7 +22,7 @@ Setting.create(key: 'facebook_handle', value: 'ciudadanointeligente')
 Setting.create(key: 'youtube_handle', value: '')
 Setting.create(key: 'telegram_handle', value: '')
 Setting.create(key: 'blog_url', value: '')
-Setting.create(key: 'url', value: "https://#{Rails.application.secrets.server_name}")
+Setting.create(key: 'url', value: Rails.application.secrets.server_name)
 Setting.create(key: 'org_name', value: 'Abre')
 Setting.create(key: 'place_name', value: 'Municipio')
 Setting.create(key: 'feature.debates', value: "false")
@@ -38,7 +38,7 @@ Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
 Setting.create(key: 'mailer_from_name', value: 'Consul')
-Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
+Setting.create(key: 'mailer_from_address', value: 'abre@penalolen.cl')
 Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
@@ -88,34 +88,34 @@ def create_user(email, username = Faker::Name.name)
 end
 
 
-admin = create_user('admin@consul.dev', 'admin')
+admin = create_user('admin@abre.penalolen.cl', 'admin')
 admin.create_administrator
 admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
 
-moderator = create_user('mod@consul.dev', 'mod')
+moderator = create_user('mod@abre.penalolen.cl', 'mod')
 moderator.create_moderator
 
-manager = create_user('manager@consul.dev', 'manager')
+manager = create_user('manager@abre.penalolen.cl', 'manager')
 manager.create_manager
 
-valuator = create_user('valuator@consul.dev', 'valuator')
+valuator = create_user('valuator@abre.penalolen.cl', 'valuator')
 valuator.create_valuator
 
-poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
+poll_officer = create_user('poll_officer@abre.penalolen.cl', 'Paul O. Fisher')
 poll_officer.create_poll_officer
 
-level_2 = create_user('leveltwo@consul.dev', 'level 2')
+level_2 = create_user('leveltwo@abre.penalolen.cl', 'level 2')
 level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1" )
 
-verified = create_user('verified@consul.dev', 'verified')
+verified = create_user('verified@abre.penalolen.cl', 'verified')
 verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
 
-verified2 = create_user('unverified@consul.dev', 'unverified')
+verified2 = create_user('unverified@abre.penalolen.cl', 'unverified')
 
 
 (1..10).each do |i|
   org_name = Faker::Company.name
-  org_user = create_user("org#{i}@consul.dev", org_name)
+  org_user = create_user("org#{i}@abre.penalolen.cl", org_name)
   org_responsible_name = Faker::Name.name
   org = org_user.create_organization(name: org_name, responsible_name: org_responsible_name)
 
@@ -128,12 +128,12 @@ verified2 = create_user('unverified@consul.dev', 'unverified')
 end
 
 (1..3).each do |i|
-  official = create_user("official#{i}@consul.dev")
+  official = create_user("official#{i}@abre.penalolen.cl")
   official.update(official_level: i, official_position: "Official position #{i}")
 end
 
 (1..20).each do |i|
-  user = create_user("user#{i}@consul.dev")
+  user = create_user("user#{i}@abre.penalolen.cl")
   level = [1, 2, 3].sample
   user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
 end

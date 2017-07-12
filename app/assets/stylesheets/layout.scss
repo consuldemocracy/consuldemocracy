@@ -385,7 +385,7 @@ header {
 
     &::after, &:hover::after {
       background: $brand;
-      box-shadow: 0 7px 0 white, 0 14px 0 white;
+      // box-shadow: 0 7px 0 white, 0 14px 0 white;
     }
   }
 }
@@ -887,8 +887,8 @@ form {
   }
 
   &.success, &.notice {
-    background-color: $success-bg;
-    border-color: $success-border;
+    background-color: $light-blue;
+    border-color: $light-blue;
     color: $color-success;
   }
 
@@ -1394,9 +1394,14 @@ table {
 .share-supported {
   text-align: center;
 
+  span{
+    color: white;
+  }
+
   .social-share-button {
     display: inline-block;
   }
+
 
   .ssb-twitter {
     background: #45B0E3;
@@ -1423,9 +1428,9 @@ table {
   }
 
   .ssb-facebook {
-    background: #3B5998;
+    background: $light-blue;
     color: white;
-    height: rem-calc(24);
+    height: rem-calc(48);
     position: relative;
     width: rem-calc(48);
 
