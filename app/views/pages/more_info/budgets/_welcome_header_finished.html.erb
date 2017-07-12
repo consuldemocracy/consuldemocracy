@@ -11,8 +11,8 @@
       <div class="small-12">
         <div class="row margin-top">
           <div class="small-12 medium-6 column">
-            <%= link_to "Ver proyectos",
-                        "budgets_results_path",
+            <%= link_to t("budgets.show.see_results"),
+                        custom_budget_results_path(Budget.finished.first),
                         class: "button expanded large city" %>
           </div>
           <div class="small-12 medium-6 column">
