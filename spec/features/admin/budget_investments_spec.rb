@@ -697,7 +697,7 @@ feature 'Admin budget investments' do
       expect(page).to_not have_content investment2.title
     end
 
-    scenario "Unmark as visible to valuator", :js, do
+    scenario "Unmark as visible to valuator", :js do
       Setting['feature.budgets.valuators_allowed'] = true
 
       valuator = create(:valuator)
