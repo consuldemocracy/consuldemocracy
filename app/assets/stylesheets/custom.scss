@@ -16,6 +16,7 @@ h2 {
   font-size: 48px;
   text-transform: uppercase;
   font-family: $body-font-family-title;
+  margin: 2vw 0;
 }
 
 h3 {
@@ -31,6 +32,16 @@ h4 {
 
 h5 {
   font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
 }
 
 .all-screen {
@@ -221,7 +232,16 @@ p {
   color: black;
 }
 
-.button.hollow.secondary {
+.button.secondary {
+    background-color: $gray-two;
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      background-color: darken($gray-two, 5%);
+    }
+}
+
+.button.hollow.primary {
     border: 1px solid #fff;
     color: #fff;
     &:hover {
@@ -392,6 +412,12 @@ li {
     margin-top: -23vw;
 }
 
+@media only screen and (max-width: 800px) {
+  .hero-quote {
+    margin-top: 0vw;
+  }
+}
+
 .how-it-works {
   background: $gray-two;
 }
@@ -504,4 +530,34 @@ li {
 
 .white{
   color: $white;
+}
+
+// Footer
+
+.footer {
+    background: white;
+    border-top: 1px solid $gray-four;
+    margin-top: 3rem;
+    padding-top: 5vw;
+}
+
+.footer p {
+  font-size: inherit;
+}
+
+footer a, footer a:active, footer a:focus {
+    color: $gray-two;
+    text-decoration: none;
+    padding-left: 16px;
+    &:hover {
+      color: darken ($gray-two, 10%)
+    }
+}
+
+.footer svg {
+    max-width: 100%;
+}
+
+.redes {
+    padding: 2vw 0px;
 }
