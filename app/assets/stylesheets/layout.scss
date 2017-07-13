@@ -887,8 +887,8 @@ form {
   }
 
   &.success, &.notice {
-    background-color: $light-blue;
-    border-color: $light-blue;
+    background-color: $success-bg;
+    border-color: $success-border;
     color: $color-success;
   }
 
