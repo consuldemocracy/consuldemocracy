@@ -5,15 +5,16 @@
 //
 
 h1 {
-  font-size: 64px;
+  font-size: 4.5vw;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-family: $body-font-family-title;
+  margin: 5vw 0;
 }
 
 h2 {
   letter-spacing: 3px;
-  font-size: 48px;
+  font-size: 3.5vw;
   text-transform: uppercase;
   font-family: $body-font-family-title;
   margin: 2vw 0;
@@ -30,6 +31,13 @@ h4 {
   font-size: 24px;
 }
 
+h4 a {
+    color: $gray-two;
+    &:hover {
+      color: $gray-one;
+    }
+}
+
 h5 {
   font-size: 20px;
 }
@@ -42,10 +50,6 @@ h5 {
   h1 {
     font-size: 44px;
   }
-}
-
-.all-screen {
-  max-width: none;
 }
 
 .row {
@@ -80,6 +84,7 @@ p {
 
 .label {
     padding: 0.5rem 0.9rem 0.35rem;
+    border-radius: 0;
 }
 
 .tags a, .tag-cloud a, .categories a, .geozone a, .sidebar-links a, .tags span {
@@ -95,7 +100,7 @@ p {
 }
 
 .padding {
-  padding: 3vw;
+  padding: 2.5vw;
 }
 
 .num {
@@ -106,7 +111,7 @@ p {
     content: '_';
     position: absolute;
     bottom: -16px;
-    left: 25px;
+    left: 43%;
   }
 }
 
@@ -118,6 +123,10 @@ p {
 
 .white {
   color: white;
+}
+
+.gray {
+  color: $gray-two;
 }
 
 .blue {
@@ -318,12 +327,6 @@ li {
     font-size: 0.9rem;
 }
 
-.title-page{
-  font-family: $body-font-family-title;
-  text-transform: uppercase;
-  font-weight: bolder;
-}
-
 .title-challenge{
   font-family: $body-font-family-title;
 }
@@ -405,24 +408,38 @@ li {
 // Home
 
 .hero{
-  min-height: 28rem;
+  background-image: asset-url("foto1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero h1 {
+  margin: 0 0 2vw;
 }
 
 .hero-quote {
-    color: #ffffff;
-    background: #D80017;
-    padding: 3vw;
-    margin-top: -23vw;
+  color: #ffffff;
+  background: #D80017;
+  padding: 0.2vw 3vw 2vw;
+  margin-top: -24vw;
+  z-index: 1;
+  position: relative;
 }
 
-@media only screen and (max-width: 800px) {
-  .hero-quote {
-    margin-top: 0vw;
-  }
-}
 
 .how-it-works {
   background: $gray-two;
+  margin-top: -3vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  .hero-quote {
+    margin-top: 0vw;
+  }
+
+  .how-it-works {
+    margin-top: 0vw;
+  }
 }
 
 .home-subtitle{
@@ -449,20 +466,13 @@ li {
   background-color: $orange;
 }
 
-.home-info{
-  min-height: 16rem;
-  padding: 2rem;
+.home-info {
+    padding: 6vmin;
+    background: white;
 }
 
 .home-proposals {
     padding: 6vw 0;
-}
-
-.home-proposals h4 a {
-    color: $gray-two;
-    &:hover {
-      color: $gray-one;
-    }
 }
 
 .home-proposal  {
@@ -487,8 +497,6 @@ li {
 .most-activated{
   color: $light-blue;
 }
-
-// Home
 
 .como01, .como02, .como03, .como04 {
   height: 210px;
@@ -533,6 +541,14 @@ li {
 
 .white{
   color: $white;
+}
+
+// Vista propuesta
+
+.back, .icon-angle-left {
+    color: $gray-two;
+    float: none;
+    font-size: 14px;
 }
 
 // Footer
