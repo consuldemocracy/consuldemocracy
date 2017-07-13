@@ -9,7 +9,6 @@ h1 {
   letter-spacing: 4px;
   text-transform: uppercase;
   font-family: $body-font-family-title;
-  margin: 5vw 0;
 }
 
 h2 {
@@ -22,13 +21,12 @@ h2 {
 
 h3 {
   font-size: 36px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: $body-font-family-title;
+  font-weight: 500;
 }
 
 h4 {
   font-size: 24px;
+  color: $gray-two;
 }
 
 h4 a {
@@ -82,6 +80,14 @@ p {
   }
 }
 
+h4.page-title {
+  margin-bottom: 2vw;
+}
+
+h1.page-title {
+  margin-top: 5vw;
+}
+
 .label {
     padding: 0.5rem 0.9rem 0.35rem;
     border-radius: 0;
@@ -115,6 +121,12 @@ p {
   }
 }
 
+.counter {
+  font-size: 4vw;
+  font-family: "Dosis", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
+}
+
 // Text color
 
 .line-text {
@@ -145,6 +157,24 @@ p {
 
 .bg-light-gray {
   background: $gray-five;
+}
+
+// Form
+
+form label {
+  font-size: 24px;
+  color: $gray-two;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+}
+
+li {
+    font-size: 24px;
+    color: #6C798A;
+    font-weight: bold;
+    position: relative;
 }
 
 .cd-horizontal-timeline .events-content {
@@ -319,16 +349,8 @@ ul, ol, dl {
   color: $gray-two;
 }
 
-li {
-  font-size: 0.9em;
-}
-
 .submenu h2 {
     font-size: 0.9rem;
-}
-
-.title-challenge{
-  font-family: $body-font-family-title;
 }
 
 .text-width{
@@ -336,15 +358,10 @@ li {
   margin: 0 auto !important;
 }
 
-.summary-problem{
+.summary {
   background-color: $orange;
-  max-width: 900px;
-  padding: 0.7rem;
-  padding-top: 2.5rem;
-  padding-left: 2.5rem;
   margin-bottom: 30px;
   color: $white;
-
   p {
     color: $white
   }
@@ -384,12 +401,7 @@ li {
 }
 
 .deadline-problem{
-  max-width: 700px;
-  margin-top: -6rem;
-  padding: 2rem;
-  background-color: $gray-two;
-  color: $white;
-
+  margin-top: -7vw;
 }
 
 .mark-days{

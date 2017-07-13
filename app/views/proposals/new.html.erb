@@ -1,16 +1,14 @@
-<div class="proposal-form row">
+<div class="proposal-form">
 
-  <div class="small-12 medium-12 column">
     <%= render "shared/back_link" %>
 
     <% if Problem.any? %>
-      <h1 class="text-center title-page"><%= t("titles.create_proposal") %></h1>
-      <p class="text-center"><%= t("subtitles.create_proposal") %></p>
+      <h1 class="text-center page-title"><%= t("titles.create_proposal") %></h1>
+      <h4 class="text-center page-title"><%= t("subtitles.create_proposal") %></h4>
       <%= render "proposals/form", form_url: proposals_url %>
     <% else %>
       <h1 class="text-center title-page">Propuestas</h1>
       <p class="text-center">Aún no hay un desafío creado para crear propuestas</p>
     <% end %>
-  </div>
 
 </div>
