@@ -46,8 +46,21 @@ module ProposalsHelper
     Proposal.all.reorder(cached_votes_up: :desc).first(3)
   end
 
+  # Método que retorna las propuestas más votadas. Si son 3 retorna estas, pero si la cuarta, quinta.. tiene igual votos que la 3ra entonces también son retornadas
+  def most_voted_challenge_proposals
+    @votes = Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(3).last.cached_votes_up
+    index = 3
+    while true
+      if Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(index + 1).last.cached_votes_up == @votes
+        index = index+1
+      else
+        return Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(index)
+      end
+    end
+  end
+
   def winning_proposal?(proposal)
-    most_voted_proposals.select{ |p| p.id == proposal.id}.any?
+    most_voted_challenge_proposals.select{ |p| p.id == proposal.id}.any?
   end
 
   def problem_geozones(challenge)
