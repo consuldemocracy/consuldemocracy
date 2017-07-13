@@ -7,30 +7,30 @@
 </div>
 
 <div class="text-width">
-  <div class="small-12 column column-with-margin">
-    <p class="epigraph-problem"> _ DESAFÍO </p>
-    <h1 class="text-left title-page"><%= @problem.title %> </h1>
-    <p> <%= @problem.summary%> </p>
-  </div>
+    <div class="small gray">DESAFÍO </div>
+    <h2 class="page-title"><%= @problem.title %> </h2>
+    <h5> <%= @problem.summary%> </5>
 </div>
 
-<div class="row">
-  <div  id="problem-display">
-    <div class="small-12 column problem-display">
-      <div class="summary-problem float-left">
-        <h4 class="call-to-action-challenge"><%= @problem.call_to_action%> </h4>
+<div class="row collapse">
+    <div class="small-12 medium-10 large-10 column">
+      <div class="summary padding">
+        <h5 class="white"><%= @problem.call_to_action%> </h5>
         <p class="white"> <%= @problem.description %> </p>
         <p class="white">
           <% if @problem.budget? %>
-            <%= t("proposals.form.problem.budget") %> <%= @problem.budget%> </br>
+            <i class="fa fa-usd" aria-hidden="true"></i> <%= t("proposals.form.problem.budget") %> <%= @problem.budget%> </br>
           <% end %>
-          <%= t("proposals.form.problem.community") %> <%= @problem.geozones_name %>
+          <i class="fa fa-map-marker" aria-hidden="true"></i> <%= t("proposals.form.problem.community") %> <%= @problem.geozones_name %>
         </p>
       </div>
-      <div class="deadline-problem float-right">
-        <span> Quedan</span> <strong class="mark-days">
-        <%=distance_of_time_in_days(@problem.ends_at, Date.today)%></strong><span> días para crear propuestas </span>
-      </div>
+    </div>
+</div>
+<div class="row collapse">
+  <div class="small-12 medium-5 medium-offset-7 large-5 large-offset-7">
+    <div class="deadline-problem bg-gray padding white">
+      <h4 class="white text-center">Quedan <span class="counter num">
+      <%=distance_of_time_in_days(@problem.ends_at, Date.today)%></span> días para crear propuestas</h4>
     </div>
   </div>
 </div>
