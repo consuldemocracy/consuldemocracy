@@ -273,7 +273,7 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
                             geozones: problem.geozones,
-                            cached_votes_up: 12)
+                            cached_votes_up: 74)
 
 proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear un espacio cultural en el espacio del Parque",
@@ -287,7 +287,7 @@ proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
                             for_challenge: true,
-                            cached_votes_up: 10)
+                            cached_votes_up: 74)
 
 proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear una zona de juegos para perros",
