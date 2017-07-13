@@ -81,7 +81,7 @@ class UsersController < ApplicationController
     end
 
     def author?(proposal)
-      proposal.author_id == current_user.id
+      proposal.author_id == current_user.id if current_user
     end
 
     def authorized_current_user?
