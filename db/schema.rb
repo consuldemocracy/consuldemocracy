@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708174932) do
+ActiveRecord::Schema.define(version: 20170713110317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -473,7 +473,6 @@ ActiveRecord::Schema.define(version: 20170708174932) do
     t.string   "document_type",   null: false
     t.date     "date_of_birth",   null: false
     t.string   "postal_code",     null: false
-    t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -1045,7 +1044,6 @@ ActiveRecord::Schema.define(version: 20170708174932) do
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
-  add_foreign_key "local_census_records", "users"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"

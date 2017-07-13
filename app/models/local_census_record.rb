@@ -1,5 +1,4 @@
 class LocalCensusRecord < ActiveRecord::Base
-  has_one :user
 
   validates :document_number, presence: true
   validates :document_type, presence: true
