@@ -10,11 +10,7 @@
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
           <span class="total-votes-text">
             __ <span class="total-votes-count"><%= proposal.total_votes %> </span> vecinos apoyan esta propuesta
-            <i class="fa fa-heart" style="font-size:1.1rem;">
-              <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Fancy word for a beetle.">
-                 Hola
-              </span>
-            </i>
+            <i data-tooltip aria-haspopup="true" class="fa fa-heart has-tip" style="font-size:1.1rem;" title="Fancy word for a beetle."> </i>
           </span>
           <% if proposal.for_challenge && proposal.successful? %>
             <span class="label round tag-succesful">
