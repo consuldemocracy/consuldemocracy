@@ -592,3 +592,9 @@ footer a, footer a:active, footer a:focus {
 .redes {
     padding: 2vw 0px;
 }
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+   color: $gray-four;
+}
