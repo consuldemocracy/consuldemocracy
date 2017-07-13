@@ -46,17 +46,20 @@ module ProposalsHelper
     Proposal.all.reorder(cached_votes_up: :desc).first(3)
   end
 
-  # Método que retorna las propuestas más votadas. Si son 3 retorna estas, pero si la cuarta, quinta.. tiene igual votos que la 3ra entonces también son retornadas
+  #TODO: Método que retorna las propuestas más votadas. Si son 3 retorna estas, pero si la cuarta, quinta.. tiene igual votos que la 3ra entonces también son retornadas
   def most_voted_challenge_proposals
     @votes = Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(3).last.cached_votes_up
     index = 3
-    while true
-      if Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(index + 1).last.cached_votes_up == @votes
+    check = true
+    while check == true && Proposal.all.count != index do
+      if Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(index+1).last.cached_votes_up == @votes
         index = index+1
       else
-        return Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(index)
+        check = false
       end
     end
+    p index
+    return Proposal.where(for_challenge: true).reorder(cached_votes_up: :desc).first(index)
   end
 
   def winning_proposal?(proposal)
