@@ -176,7 +176,12 @@ problem = Problem.create(title: "Mejoramiento Parque San Luis",
   ends_at: 10.day.from_now,
   active: true,
   geozones: Geozone.reorder("RANDOM()").limit(3),
-  user: admin )
+  user: admin,
+  cause: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  consequence: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  problem_title: "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  restriction: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  )
 
   problem2 = Problem.create(title: "Muchos perros callejeros en mi barrio",
   cause: "Las causas de que haya muchos perros callejeros son:
