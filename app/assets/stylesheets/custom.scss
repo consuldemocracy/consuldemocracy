@@ -9,6 +9,7 @@ h1 {
   letter-spacing: 4px;
   text-transform: uppercase;
   font-family: $body-font-family-title;
+  margin: 5vw 0;
 }
 
 h2 {
@@ -42,10 +43,6 @@ h5 {
   h1 {
     font-size: 44px;
   }
-}
-
-.all-screen {
-  max-width: none;
 }
 
 .row {
@@ -318,12 +315,6 @@ li {
     font-size: 0.9rem;
 }
 
-.title-page{
-  font-family: $body-font-family-title;
-  text-transform: uppercase;
-  font-weight: bolder;
-}
-
 .title-challenge{
   font-family: $body-font-family-title;
 }
@@ -408,11 +399,17 @@ li {
   min-height: 28rem;
 }
 
+.hero h1 {
+  margin: 0;
+}
+
 .hero-quote {
-    color: #ffffff;
-    background: #D80017;
-    padding: 3vw;
-    margin-top: -23vw;
+  color: #ffffff;
+  background: #D80017;
+  padding: 1vw 3vw 3vw;
+  margin-top: -23vw;
+  z-index: 1;
+  position: relative;
 }
 
 @media only screen and (max-width: 800px) {
@@ -423,6 +420,7 @@ li {
 
 .how-it-works {
   background: $gray-two;
+  margin-top: -5vw;
 }
 
 .home-subtitle{
@@ -488,8 +486,6 @@ li {
   color: $light-blue;
 }
 
-// Home
-
 .como01, .como02, .como03, .como04 {
   height: 210px;
   width: 265px;
@@ -533,6 +529,14 @@ li {
 
 .white{
   color: $white;
+}
+
+// Vista propuesta
+
+.back, .icon-angle-left {
+    color: $gray-two;
+    float: none;
+    font-size: 14px;
 }
 
 // Footer

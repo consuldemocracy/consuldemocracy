@@ -6,9 +6,9 @@
             social_description: @proposal.summary %>
 <% end %>
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
-  <div class="proposal-show">
-    <div id="<%= dom_id(@proposal) %>" class="row">
-      <div class="small-12 medium-9 column">
+  <div class="proposal-show text-width">
+    <div id="<%= dom_id(@proposal) %>" class="">
+      <div class="">
         <%= render "shared/back_link" %>
 
         <% if author_of?(@proposal, current_user) %>
@@ -22,7 +22,10 @@
           <% end %>
         <% end %>
 
-        <h1><%= @proposal.title %></h1>
+        <div class="small blue">
+          propuesta
+        </div>
+        <h2><%= @proposal.title %></h2>
         <% if @proposal.retired? %>
           <div data-alert class="callout alert margin-top proposal-retired">
             <strong>
@@ -103,7 +106,7 @@
         </div>
       </div>
 
-      <aside class="small-12 medium-3 column">
+      <aside class="">
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@proposal) %>_votes">
