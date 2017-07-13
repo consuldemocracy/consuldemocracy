@@ -63,7 +63,7 @@ feature 'Results' do
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
 
-    visit custom_budget_results_path(budget, heading_id: budget.headings.first)
+    visit custom_budget_heading_result_path(budget, heading_id: budget.headings.first)
     expect(page).to have_content "You do not have permission to carry out the action"
   end
 

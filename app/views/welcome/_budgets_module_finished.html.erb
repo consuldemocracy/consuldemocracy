@@ -6,9 +6,9 @@
       </span>
       <br>
       <p class="lead-title"><%= t("welcome.budgets.title_finished_html") %></p>
-      <p><%= t("welcome.budgets.text_finished_html") %></p>
-      <div class="small-12 medium-6 small-centered">
-        <%= link_to t("welcome.budgets.button_finished"), budgets_welcome_path, class: "button expanded large" %>
+      <p class="lead"><%= t("welcome.budgets.text_finished_html") %></p>
+      <div class="small-12 medium-9 large-6 column small-centered">
+        <%= link_to t("welcome.budgets.button_finished"), custom_budget_results_path(Budget.finished.last.to_param), class: "button expanded large" %>
       </div>
     </div>
   </div>

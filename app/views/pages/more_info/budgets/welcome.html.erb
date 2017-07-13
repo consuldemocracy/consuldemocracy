@@ -20,7 +20,7 @@
     <%= render "pages/more_info/budgets/welcome_header_balloting" %>
   <% elsif Budget.reviewing_ballots.any? %>
     <%= render "pages/more_info/budgets/welcome_header_reviewing" %>
-  <% else %>
+  <% elsif Budget.finished.any? %>
     <%= render "pages/more_info/budgets/welcome_header_finished" %>
   <% end %>
 

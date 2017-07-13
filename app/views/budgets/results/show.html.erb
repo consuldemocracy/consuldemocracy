@@ -3,15 +3,13 @@
   <%= render "shared/canonical", href: budget_results_url(@budget, heading_id: @heading) %>
 <% end %>
 
-<div class="expanded budget no-margin-top">
-  <div class="row">
-    <div class="small-12 column padding text-center">
-      <%= back_link_to budget_path(@budget) %>
-
-      <h2 class="title">
-        <%= @budget.name %><br>
-        <%= t("budgets.results.heading") %>
-      </h2>
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column text-center">
+        <%= back_link_to budget_path(@budget) %>
+        <h1 class="title"><%= t("budgets.results.heading") %><br><%= @budget.name %></h1>
+      </div>
     </div>
   </div>
 </div>
@@ -21,7 +19,7 @@
     <ul class="tabs">
       <li class="tabs-title is-active">
         <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
-        <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget, heading_id: @budget.headings.first.to_param), class: "is-active"  %>
+        <%= link_to t("budgets.results.link"), custom_budget_results_path(@budget), class: "is-active"  %>
       </li>
       <li class="tabs-title">
         <%= link_to t("budgets.stats.link"), custom_budget_stats_path(@budget)%>
@@ -31,22 +29,22 @@
 </div>
 
 <div class="row">
-  <div class="small-12 medium-3 column">
-    <ul class="menu vertical no-margin-top no-padding-top">
-      <li>
+  <div class="small-12 medium-3 large-2 column">
+    <div class="row">
+      <ul class="menu vertical no-margin-top no-padding-top">
         <h3>
           <%= t("budgets.results.heading_selection_title") %>
         </h3>
-      </li>
 
-      <% @budget.headings.order('id ASC').each do |heading| %>
-        <% active_class = heading.to_param == params[:heading_id] ? 'bold' : '' %>
-        <li class="<%= active_class %>">
-          <%= link_to heading.name,
-                      custom_budget_results_path(@budget, heading_id: heading.to_param) %>
-        </li>
-      <% end %>
-    </ul>
+        <% @budget.headings.order('id ASC').each do |heading| %>
+          <li>
+            <%= link_to heading.name,
+                        custom_budget_heading_result_path(@budget, heading_id: heading.to_param),
+                        class: heading.to_param == @heading.to_param ? 'bold' : '' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>

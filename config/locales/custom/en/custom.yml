@@ -145,7 +145,7 @@ en:
       button_reviewing: "See projects"
       button_stats: "See statistics"
       title_finished_html: "Know the winning projects of the participatory budgets"
-      text_finished_html: "These are the citizen projects that will be financed with <strong>100 million euros</strong> of the municipal budget in 2018"
+      text_finished_html: "These are the citizen projects that will be financed with<br><strong>100 million euros</strong> of the municipal budget in 2018"
       label_finished: "The citizens of Madrid have decided"
       button_finished: "See projects"
       stats:

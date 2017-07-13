@@ -230,6 +230,11 @@ a {
     a {
       color: $text-medium;
       padding: 0;
+
+      &.bold {
+        font-weight: bold;
+        color: $brand;
+      }
     }
 
     h2 {
@@ -238,11 +243,6 @@ a {
 
     &.active {
       border-bottom: 2px solid $brand;
-      color: $brand;
-    }
-
-    &.bold {
-      font-weight: bold;
       color: $brand;
     }
   }

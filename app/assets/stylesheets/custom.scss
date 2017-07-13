@@ -2832,6 +2832,13 @@ h2.map-title {
   }
 }
 
+.min-width-100 {
+
+  @include breakpoint(medium) {
+    min-width: rem-calc(100);
+  }
+}
+
 // 12. Nvotes
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
