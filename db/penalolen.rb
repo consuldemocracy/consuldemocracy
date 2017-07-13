@@ -134,11 +134,8 @@ end
 (1..3).each do |i|
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
-  if level >= 2
+  if level >= 1
     user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1" )
-  end
-  if level == 3
-    user.update(verified_at: Time.current, document_number: Faker::Number.number(10) )
   end
 end
 
@@ -251,7 +248,7 @@ proposal1 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             problem: problem,
                             geozones: problem.geozones,
                             for_challenge: true,
-                            cached_votes_up: Setting["votes_for_proposal_success"])
+                            cached_votes_up: 75)
 
 proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Mejorar la cancha",
@@ -265,7 +262,8 @@ proposal2 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             for_challenge: true,
                             geozones: problem.geozones,
                             terms_of_service: "1",
-                            problem: problem)
+                            problem: problem,
+                            cached_votes_up: 33)
 
 proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear un huerto",
@@ -280,7 +278,7 @@ proposal3 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             terms_of_service: "1",
                             problem: problem,
                             geozones: problem.geozones,
-                            cached_votes_up: Setting["votes_for_proposal_success"])
+                            cached_votes_up: 74)
 
 proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear un espacio cultural en el espacio del Parque",
@@ -293,7 +291,8 @@ proposal4 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             tag_list: tags.sample(3).join(','),
                             terms_of_service: "1",
                             problem: problem,
-                            for_challenge: true)
+                            for_challenge: true,
+                            cached_votes_up: 74)
 
 proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "Crear una zona de juegos para perros",
@@ -308,7 +307,7 @@ proposal5 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             problem: problem,
                             geozones: problem.geozones,
                             for_challenge: true,
-                            cached_votes_up: Setting["votes_for_proposal_success"])
+                            cached_votes_up: 89)
 
 proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             title: "PASADA - Crear una zona de juegos para perros",
@@ -322,8 +321,8 @@ proposal6 = Proposal.create!(author: User.reorder("RANDOM()").first,
                             problem: problem,
                             for_challenge: true,
                             geozones: problem.geozones,
-                            created_at: 20.month.ago,
-                            cached_votes_up: Setting["votes_for_proposal_success"])
+                            created_at: 8.month.ago,
+                            cached_votes_up: 74)
 
 puts " ✅"
 print "Creando Proyecto"
