@@ -8,7 +8,7 @@
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
-        <span class="menu-text"> <%= t("application.menu")%> </span>
+        <span class="menu-text gray"> <%= t("application.menu")%> </span>
       </span>
 
       <div id="responsive-menu">
@@ -16,6 +16,7 @@
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
             <%= image_tag(image_path_for('logo-header.svg'), class: 'hide-for-small-only float-left', alt: t("layouts.header.logo")) %>
           <% end %>
+          <span class="header-title"> Peñalolen </span>
         </div>
 
         <div class="top-bar-right">
