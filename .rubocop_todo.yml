@@ -365,35 +365,6 @@ Performance/RedundantMatch:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
     - 'app/helpers/embed_videos_helper.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: NilOrEmpty, NotPresent, UnlessPresent.
-Rails/Blank:
-  Exclude:
-    - 'app/controllers/management/base_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Rails/Delegate:
-  Exclude:
-    - 'app/models/poll/question.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: Whitelist.
-# Whitelist: find_by_sql
-Rails/DynamicFindBy:
-  Exclude:
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'spec/features/management/users_spec.rb'
-
-# Offense count: 2
-Rails/FilePath:
-  Exclude:
-    - 'app/controllers/sandbox_controller.rb'
-    - 'spec/spec_helper.rb'
-
 # Offense count: 16
 # Cop supports --auto-correct.
 # Configuration parameters: Include.
@@ -448,13 +419,6 @@ Rails/OutputSafety:
     - 'app/helpers/text_with_links_helper.rb'
     - 'app/helpers/users_helper.rb'
     - 'app/helpers/valuation_helper.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: NotNilAndNotEmpty, NotBlank, UnlessBlank.
-Rails/Present:
-  Exclude:
-    - 'app/controllers/management/document_verifications_controller.rb'
 
 # Offense count: 70
 # Configuration parameters: Blacklist.
