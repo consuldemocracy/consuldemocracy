@@ -4,14 +4,139 @@
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
 
+h1 {
+  font-size: 64px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
 h2 {
   letter-spacing: 3px;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+  margin: 2vw 0;
+}
+
+h3 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $body-font-family-title;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+}
+
+.all-screen {
+  max-width: none;
+}
+
+.row {
+  max-width: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 p {
   color: $gray-two;
+  font-size: 16px;
 }
 
+.small {
+  font-family: $body-font-family-title;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 14px;
+  &:before {
+    content: '_';
+    font-size: 36px;
+    position: absolute;
+    bottom: -3px;
+    left: 5px;
+  }
+}
+
+.label {
+    padding: 0.5rem 0.9rem 0.35rem;
+}
+
+.tags a, .tag-cloud a, .categories a, .geozone a, .sidebar-links a, .tags span {
+    background: $gray-two;
+    border-radius: 0;
+    color: white;
+    font-size: 16px;
+    padding: 0.1vw 0.6rem;
+}
+
+.tags a:hover, .tag-cloud a:hover, .categories a:hover, .geozone a:hover, .sidebar-links a:hover, .tags span:hover {
+    background: $brand;
+}
+
+.padding {
+  padding: 3vw;
+}
+
+.num {
+  position: relative;
+  text-align: center;
+  margin-top: -9px;
+  &::after {
+    content: '_';
+    position: absolute;
+    bottom: -16px;
+    left: 25px;
+  }
+}
+
+// Text color
+
+.line-text {
+  color: $gray-four;
+}
+
+.white {
+  color: white;
+}
+
+.blue {
+  color: $light-blue;
+}
+
+.orange {
+  color: $orange;
+}
+
+// Background color
+
+.bg-gray {
+    background: $gray-two;
+}
+
+.bg-light-gray {
+  background: $gray-five;
+}
 
 .cd-horizontal-timeline .events-content {
   position: relative;
@@ -87,6 +212,17 @@ p {
 
 }
 
+// Buttons
+
+.button.primary {
+  background: $brand;
+  color: white;
+  &:hover {
+    background: darken( $brand, 6% );
+    color: white;
+  }
+}
+
 .button{
   border-radius: 2rem;
 }
@@ -94,6 +230,25 @@ p {
 .button-proposal{
   background: white;
   color: black;
+}
+
+.button.secondary {
+    background-color: $gray-two;
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      background-color: darken($gray-two, 5%);
+    }
+}
+
+.button.hollow.primary {
+    border: 1px solid #fff;
+    color: #fff;
+    &:hover {
+      border: 1px solid #fff;
+      color: #fff;
+      background: darken($brand, 5%);
+    }
 }
 
 .in-favor{
@@ -107,10 +262,6 @@ p {
   display: inline-block;
   font-size: 0.875rem;
   margin-top: 0.75rem;
-}
-
-.p-small{
-  font-size: 0.92rem;
 }
 
 .meter{
@@ -147,7 +298,10 @@ ul, ol, dl {
 
 .header-title{
   color: $gray-two;
-  font-size: 0.95rem;
+  font-family: "Dosis", "Helvetica", "Arial", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .subnavigation ul li a {
@@ -248,20 +402,27 @@ li {
   }
 }
 
-.home-quote{
-  background-color: $brand;
+// Home
+
+.hero{
   min-height: 28rem;
 }
 
-.home-quote-font{
-  font-family: $body-font-family-title;
-  color: $white;
-  font-size: 4rem;
-  padding-right: 10rem;
-  padding-left: 2rem;
-  padding-top: 5rem;
-  text-transform: uppercase;
-  line-height: 1.2;
+.hero-quote {
+    color: #ffffff;
+    background: #D80017;
+    padding: 3vw;
+    margin-top: -23vw;
+}
+
+@media only screen and (max-width: 800px) {
+  .hero-quote {
+    margin-top: 0vw;
+  }
+}
+
+.how-it-works {
+  background: $gray-two;
 }
 
 .home-subtitle{
@@ -277,29 +438,6 @@ li {
   padding-right: 0rem !important;
 }
 
-.home-info-epigraph{
-  font-size: 1rem;
-  color: $light-blue;
-  text-transform: uppercase;
-  font-family: $body-font-family-title;
-}
-
-
-.epigraph-problem{
-  font-size: 1rem;
-  color: $gray-two;
-  text-transform: uppercase;
-  font-family: $body-font-family-title;
-}
-
-
-.home-info-title{
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-family: $body-font-family-title;
-  line-height: 1.1;
-}
-
 .home-info-link{
   color: $brand;
   text-decoration: underline;
@@ -309,7 +447,6 @@ li {
 .home-info-dates{
   color: $white;
   background-color: $orange;
-  margin-right: auto;
 }
 
 .home-info{
@@ -317,34 +454,23 @@ li {
   padding: 2rem;
 }
 
-.home-title{
-  margin-top: 7rem;
-  font-family: $body-font-family-title;
-  text-transform: uppercase;
-  font-weight: bold;
+.home-proposals {
+    padding: 6vw 0;
 }
 
-.enumerate{
-  font-family: $body-font-family-title;
-  font-size: 3rem;
-  vertical-align: bottom;
-  font-weight: bold;
+.home-proposals h4 a {
+    color: $gray-two;
+    &:hover {
+      color: $gray-one;
+    }
 }
 
-.home-proposals{
-  margin: 0 auto !important;
-}
-
-.button-home-proposals{
-  max-width: 250px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5rem;
-}
-
-.home-proposal-color{
-  color: $gray-two;
+.home-proposal  {
+  padding: 0 3vw;
+  &:nth-child(2)  {
+    border-left: 1px solid $gray-four;
+    border-right: 1px solid $gray-four;
+  }
 }
 
 .proposal-type{
@@ -362,51 +488,46 @@ li {
   color: $light-blue;
 }
 
-.newest{
-  color: $orange;
-}
-
-.all-screen{
-  max-width: none;
-}
-
-.home-proposal-subtitle{
-  font-size: 0.9rem;
-}
-
 // Home
 
 .como01, .como02, .como03, .como04 {
   height: 210px;
   width: 265px;
   margin: 0 auto;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  &:hover {
+    background-size: 200px;
+    background-repeat: no-repeat;
+  }
 }
 
 .como01 {
-    background: asset-url("como01.png");
+    background-image: asset-url("como01.png");
     &:hover {
-      background: asset-url("como01.gif");
+      background-image: asset-url("como01.gif");
     }
 }
 
 .como02 {
-    background: asset-url("como02.png");
+    background-image: asset-url("como02.png");
     &:hover {
-      background: asset-url("como02.gif");
+      background-image: asset-url("como02.gif");
     }
 }
 
 .como03 {
-    background: asset-url("como03.png");
+    background-image: asset-url("como03.png");
     &:hover {
-      background: asset-url("como03.gif");
+      background-image: asset-url("como03.gif");
     }
 }
 
 .como04 {
-    background: asset-url("como04.png");
+    background-image: asset-url("como04.png");
     &:hover {
-      background: asset-url("como04.gif");
+      background-image: asset-url("como04.gif");
     }
 }
 
@@ -414,18 +535,32 @@ li {
   color: $white;
 }
 
-.menu-text{
-  color: $gray-one;
-  font-family: $body-font-family-title;
+// Footer
+
+.footer {
+    background: white;
+    border-top: 1px solid $gray-four;
+    margin-top: 3rem;
+    padding-top: 5vw;
 }
 
-.total-votes-text{
-  font-family: $body-font-family-title;
-  color: $light-blue;
-  font-size: 0.9rem;
-  text-transform: uppercase;
+.footer p {
+  font-size: inherit;
 }
 
-.total-votes-count{
-  font-size: 1.4rem;
+footer a, footer a:active, footer a:focus {
+    color: $gray-two;
+    text-decoration: none;
+    padding-left: 16px;
+    &:hover {
+      color: darken ($gray-two, 10%)
+    }
+}
+
+.footer svg {
+    max-width: 100%;
+}
+
+.redes {
+    padding: 2vw 0px;
 }

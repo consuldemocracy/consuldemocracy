@@ -30,15 +30,4 @@
     }
   }
 
-  .pena {
-    height: 48px;
-    width: 111px;
-
-    @include breakpoint(medium) {
-      height: 55px;
-      margin-right: $line-height/2;
-      margin-top: 7px;
-      width: 250px;
-    }
-  }
 }
