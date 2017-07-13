@@ -297,7 +297,7 @@ feature "Notifications" do
       create(:follow, :followed_proposal, user: user1, followable: proposal)
       create(:follow, :followed_proposal, user: user2, followable: proposal)
 
-      login_as(author)
+      login_as author.reload
       visit root_path
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
