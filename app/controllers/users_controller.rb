@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   helper_method :author?
   helper_method :valid_interests_access?
-  helper_method :author_or_admin?
 
   def show
     load_filtered_activity if valid_access?
@@ -81,12 +80,8 @@ class UsersController < ApplicationController
       @user.public_interests || authorized_current_user?
     end
 
-    def author?
-      @author ||= current_user && (current_user == @user)
-    end
-
-    def author_or_admin?
-      @author_or_admin ||= current_user && (author? || current_user.administrator?)
+    def author?(proposal)
+      proposal.author_id == current_user.id
     end
 
     def authorized_current_user?

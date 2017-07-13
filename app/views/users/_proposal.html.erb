@@ -5,7 +5,7 @@
     <%= proposal.summary %>
   </td>
 
-  <% if can? :retire_form, proposal %>
+  <% if author?(proposal) %>
     <td class="text-center">
       <%= link_to t("users.proposals.send_notification"),
                   new_proposal_notification_path(proposal_id: proposal.id),
@@ -13,7 +13,7 @@
     </td>
   <% end %>
 
-  <% if can? :new, ProposalNotification, author_id: proposal.author_id %>
+  <% if author?(proposal) || proposal.retired? %>
     <td class="text-center">
       <% if proposal.retired? %>
         <span class="label alert"><%= t('users.proposals.retired') %></span>
