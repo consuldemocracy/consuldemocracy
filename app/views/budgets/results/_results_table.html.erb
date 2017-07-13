@@ -1,4 +1,4 @@
-<div class="small-12 medium-9 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>"
+<div class="small-12 medium-9 large-10 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>"
      style="<%= results_type != :compatible ? 'display: none' : '' %>"
      id="<%= results_type %>-container">
 
@@ -20,8 +20,8 @@
         </th>
         <% if results_type == :compatible %>
           <th scope="col" class="text-right">
+            <small><%= t("budgets.results.amount_available") %></small><br>
             <%= format_price(heading_price) %><br>
-            <small><%= t("budgets.results.amount_available") %></small>
           </th>
         <% end %>
       </tr>

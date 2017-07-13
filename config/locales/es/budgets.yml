@@ -125,9 +125,10 @@ es:
       unselected: Ver las propuestas no seleccionadas para la votación final
       see_results: Ver resultados
     results:
+      link: Resultados
       page_title: "%{budget} - Resultados"
       heading: "Resultados presupuestos participativos"
-      geozone_selection_title: "Ámbito de actuación"
+      heading_selection_title: "Ámbito de actuación"
       spending_proposal: Título
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartadas
@@ -137,4 +138,3 @@ es:
       accepted: "Propuesta de inversión aceptada: "
       discarded: "Propuesta de inversión descartada: "
       incompatibles: Incompatibles
-
