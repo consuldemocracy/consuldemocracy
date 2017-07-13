@@ -1,7 +1,7 @@
   <div class="small orange"><%= proposal_type %>  </div>
   <h4><%= link_to proposal.title, namespaced_proposal_path(proposal), class: "" %></h4>
   <p class="proposal-info">
-    <i class="fa fa-map-marker" aria-hidden="true"></i> Lugar <span class="line-text"> | </span>
+    <i class="fa fa-map-marker" aria-hidden="true"></i> <%= proposal.geozones_name %> <span class="line-text"> | </span>
     <i class="fa fa-calendar" aria-hidden="true"></i> <%= l proposal.created_at.to_date %></span>
     <% if proposal.author.hidden? || proposal.author.erased? %>
       <span class="author">

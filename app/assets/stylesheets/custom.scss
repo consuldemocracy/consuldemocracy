@@ -606,5 +606,5 @@ footer a, footer a:active, footer a:focus {
 .disabled {
    pointer-events: none;
    cursor: default;
-   color: $gray-four;
+   color: $gray-four !important;
 }
