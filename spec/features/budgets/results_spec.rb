@@ -46,6 +46,18 @@ feature 'Results' do
     end
   end
 
+  scenario "Load first budget heading if not specified" do
+    other_heading = create(:budget_heading, group: group)
+    other_investment = create(:budget_investment, :winner, heading: other_heading)
+
+    visit budget_results_path(budget)
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
+      expect(page).to_not have_content other_investment.title
+    end
+  end
+
   scenario "If budget is in a phase different from finished results can't be accessed" do
     budget.update phase: (Budget::PHASES - ["finished"]).sample
     visit budget_path(budget)
