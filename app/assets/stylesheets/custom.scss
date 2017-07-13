@@ -27,6 +27,7 @@ h3 {
 h4 {
   font-size: 24px;
   color: $gray-two;
+  font-weight: 500;
 }
 
 h4 a {
@@ -38,6 +39,8 @@ h4 a {
 
 h5 {
   font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 1vw;
 }
 
 @media only screen and (max-width: 800px) {
@@ -61,6 +64,7 @@ a:hover {
 p {
   color: $gray-two;
   font-size: 16px;
+  margin-bottom: 2vw;
 }
 
 .small {
@@ -80,12 +84,16 @@ p {
   }
 }
 
-h4.page-title {
-  margin-bottom: 2vw;
-}
-
 h1.page-title {
   margin-top: 5vw;
+}
+
+h2.page-title {
+  margin: 0vw 0 1vw;
+}
+
+h4.page-title {
+  margin-bottom: 2vw;
 }
 
 .label {
@@ -170,7 +178,7 @@ ol {
     list-style-type: decimal-leading-zero;
 }
 
-li {
+form li {
     font-size: 24px;
     color: #6C798A;
     font-weight: bold;
@@ -402,6 +410,8 @@ ul, ol, dl {
 
 .deadline-problem{
   margin-top: -7vw;
+  z-index: 1;
+  position: relative;
 }
 
 .mark-days{
