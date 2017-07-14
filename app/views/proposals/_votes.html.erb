@@ -20,12 +20,12 @@
 
     <% elsif user_signed_in? && proposal.votable_by?(current_user) %>
       <%= link_to vote_url,
-          class: "button button-support small",
+          class: "button hollow primary",
           title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
         <%= t("proposals.proposal.support") %>
       <% end %>
     <% else %>
-      <div class="button button-support small">
+      <div class="button hollow primary">
         <%= t("proposals.proposal.support") %>
       </div>
     <% end %>

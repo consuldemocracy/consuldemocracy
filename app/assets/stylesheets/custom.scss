@@ -105,12 +105,17 @@ h4.page-title {
     background: $gray-two;
     border-radius: 0;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0.1vw 0.6rem;
 }
 
+
 .tags a:hover, .tag-cloud a:hover, .categories a:hover, .geozone a:hover, .sidebar-links a:hover, .tags span:hover {
     background: $brand;
+}
+
+.debate-show .tags a, .proposal-show .tags a, .investment-project-show .tags a, .budget-investment-show .tags a, .polls-show .tags a {
+  margin-right: 0.1rem;
 }
 
 .padding {
@@ -130,9 +135,11 @@ h4.page-title {
 }
 
 .counter {
-  font-size: 4vw;
+  font-size: 24px;
   font-family: "Dosis", "Helvetica", "Arial", sans-serif;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 // Text color
@@ -165,6 +172,10 @@ h4.page-title {
 
 .bg-light-gray {
   background: $gray-five;
+}
+
+.bg-blue {
+  background: $light-blue;
 }
 
 // Form
@@ -291,10 +302,11 @@ form li {
 .button.hollow.primary {
     border: 1px solid #fff;
     color: #fff;
+    background: rgba(216, 0, 23, 0);
     &:hover {
       border: 1px solid #fff;
       color: #fff;
-      background: darken($brand, 5%);
+      background: rgba(216, 0, 23, 0);
     }
 }
 
@@ -430,7 +442,7 @@ ul, ol, dl {
 // Home
 
 .hero{
-  background-image: asset-url("foto1.jpg");
+  // background-image: asset-url("foto1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -443,11 +455,16 @@ ul, ol, dl {
   color: #ffffff;
   background: #D80017;
   padding: 0.2vw 3vw 2vw;
-  margin-top: -24vw;
+  margin-top: -22vw;
   z-index: 1;
   position: relative;
 }
 
+.home-img {
+    background-image: asset-url("foto1.jpg");
+    height: 42vw;
+    background-size: cover;
+}
 
 .how-it-works {
   background: $gray-two;

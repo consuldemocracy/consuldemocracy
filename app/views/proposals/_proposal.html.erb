@@ -16,13 +16,13 @@
           </h4>
           <h4><%= link_to proposal.title, namespaced_proposal_path(proposal) %></h3>
           <p class="proposal-info">
-            <i class="fa fa-map-marker"></i> <%= proposal.geozones_name %> |
+            <i class="fa fa-map-marker"></i> <%= proposal.geozones_name %> <span class="line-text">|</span>
             <i class="fa fa-calendar"> </i> <%= l proposal.created_at.to_date %>
             <% if proposal.author.hidden? || proposal.author.erased? %>
-              | <i class="fa fa-user-o"> </i>
+              <span class="line-text">|</span> <i class="fa fa-user-o"> </i>
               <span><%= t("proposals.show.author_deleted") %></span>
             <% else %>
-            | <i class="fa fa-user-o"> </i>
+            <span class="line-text">|</span> <i class="fa fa-user-o"> </i>
               <span class> <%= proposal.author.name %> </span>
             <% end %>
           </p>
