@@ -16,9 +16,7 @@ class LocalCensus
     end
 
     def valid?
-      @body.valid?
-    rescue NoMethodError
-      false
+      @body.present? ? !@body.attributes.values.include?("" || nil) : false
     end
 
     def date_of_birth
