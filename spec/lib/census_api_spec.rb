@@ -23,13 +23,25 @@ describe CensusApi do
     end
 
     it 'adds upper and lowercase letter when the letter is present' do
-      expect(api.get_document_number_variants(1, '1234567A')).to eq(['1234567', '01234567', '1234567a', '1234567A', '01234567a', '01234567A'])
+      expect(api.get_document_number_variants(1, '1234567A')).to eq(%w(1234567 01234567 1234567a 1234567A 01234567a 01234567A))
     end
   end
 
   describe '#call' do
     let(:invalid_body) { {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}}}} }
-    let(:valid_body){ {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {item: {fecha_nacimiento_string: "1-1-1980"}}}}} }
+    let(:valid_body) do
+      {
+        get_habita_datos_response: {
+          get_habita_datos_return: {
+            datos_habitante: {
+              item: {
+                fecha_nacimiento_string: "1-1-1980"
+              }
+            }
+          }
+        }
+      }
+    end
 
     it "returns the response for the first valid variant" do
       allow(api).to receive(:get_response_body).with(1, "00123456").and_return(invalid_body)

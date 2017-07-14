@@ -173,8 +173,8 @@ FactoryGirl.define do
     end
 
     trait :flagged do
-      after :create do |debate|
-        Flag.flag(FactoryGirl.create(:user), debate)
+      after :create do |proposal|
+        Flag.flag(FactoryGirl.create(:user), proposal)
       end
     end
 
@@ -273,6 +273,7 @@ FactoryGirl.define do
     unfeasibility_explanation ''
     external_url         'http://external_documention.org'
     terms_of_service     '1'
+    incompatible          false
 
     trait :with_confidence_score do
       before(:save) { |i| i.calculate_confidence_score }
@@ -305,6 +306,11 @@ FactoryGirl.define do
     trait :winner do
       selected
       winner true
+    end
+
+    trait :incompatible do
+      selected
+      incompatible true
     end
 
     trait :unselected do
@@ -348,6 +354,18 @@ FactoryGirl.define do
   factory :flag do
     association :flaggable, factory: :debate
     association :user, factory: :user
+  end
+
+  factory :follow do
+    association :user, factory: :user
+
+    trait :followed_proposal do
+      association :followable, factory: :proposal
+    end
+
+    trait :followed_investment do
+      association :followable, factory: :budget_investment
+    end
   end
 
   factory :comment do
@@ -568,7 +586,7 @@ FactoryGirl.define do
 
   factory :campaign do
     sequence(:name) { |n| "Campaign #{n}" }
-    sequence(:track_id) { |n| "#{n}" }
+    sequence(:track_id) { |n| n.to_s }
   end
 
   factory :notification do
@@ -578,8 +596,8 @@ FactoryGirl.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    sequence(:external_code) { |n| "#{n}" }
-    sequence(:census_code) { |n| "#{n}" }
+    sequence(:external_code) { |n| n.to_s }
+    sequence(:census_code) { |n| n.to_s }
 
     trait :in_census do
       census_code "01"
@@ -743,6 +761,7 @@ LOREM_IPSUM
     more_info_flag false
     print_content_flag false
     status 'draft'
+    locale 'en'
 
     trait :published do
       status "published"

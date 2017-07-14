@@ -46,6 +46,21 @@
         <p><%= t('users.show.private_activity') %></p>
       <% end %>
 
+      <% if @user.public_interests || @authorized_current_user %>
+        <div id="public_interests" class="public-interests">
+          <h4><%= t('account.show.public_interests_title_list') %></h4>
+          <% @user.interests.in_groups_of(10, false) do |interests_group| %>
+            <div class="small-4 column end">
+              <ul class="no-bullet">
+                <% interests_group.each do |interest| %>
+                  <li> <small><%= interest %></small> </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </main>

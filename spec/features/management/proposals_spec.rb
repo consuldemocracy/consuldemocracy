@@ -16,9 +16,9 @@ feature 'Proposals' do
 
       within(".account-info") do
         expect(page).to have_content "Identified as"
-        expect(page).to have_content "#{user.username}"
-        expect(page).to have_content "#{user.email}"
-        expect(page).to have_content "#{user.document_number}"
+        expect(page).to have_content (user.username).to_s
+        expect(page).to have_content (user.email).to_s
+        expect(page).to have_content (user.document_number).to_s
       end
 
       fill_in 'proposal_title', with: 'Help refugees'
@@ -119,9 +119,9 @@ feature 'Proposals' do
 
     within(".account-info") do
       expect(page).to have_content "Identified as"
-      expect(page).to have_content "#{user.username}"
-      expect(page).to have_content "#{user.email}"
-      expect(page).to have_content "#{user.document_number}"
+      expect(page).to have_content (user.username).to_s
+      expect(page).to have_content (user.email).to_s
+      expect(page).to have_content (user.document_number).to_s
     end
 
     within(".proposals-list") do

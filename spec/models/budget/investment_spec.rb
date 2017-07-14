@@ -103,7 +103,7 @@ describe Budget::Investment do
     let(:investment) { create(:budget_investment) }
 
       it "returns the proposal id" do
-        expect(investment.code).to include("#{investment.id}")
+        expect(investment.code).to include((investment.id).to_s)
       end
 
       it "returns the administrator id when assigned" do

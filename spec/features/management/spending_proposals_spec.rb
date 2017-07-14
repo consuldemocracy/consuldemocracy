@@ -23,9 +23,9 @@ feature 'Spending Proposals' do
 
       within(".account-info") do
         expect(page).to have_content "Identified as"
-        expect(page).to have_content "#{user.username}"
-        expect(page).to have_content "#{user.email}"
-        expect(page).to have_content "#{user.document_number}"
+        expect(page).to have_content (user.username).to_s
+        expect(page).to have_content (user.email).to_s
+        expect(page).to have_content (user.document_number).to_s
       end
 
       fill_in 'spending_proposal_title', with: 'Build a park in my neighborhood'
@@ -118,9 +118,9 @@ feature 'Spending Proposals' do
 
     within(".account-info") do
       expect(page).to have_content "Identified as"
-      expect(page).to have_content "#{user.username}"
-      expect(page).to have_content "#{user.email}"
-      expect(page).to have_content "#{user.document_number}"
+      expect(page).to have_content (user.username).to_s
+      expect(page).to have_content (user.email).to_s
+      expect(page).to have_content (user.document_number).to_s
     end
 
     within("#investment-projects") do

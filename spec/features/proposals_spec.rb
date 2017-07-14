@@ -61,6 +61,8 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(proposal.created_at.to_date)
     expect(page).to have_selector(avatar(proposal.author.name))
     expect(page.html).to include "<title>#{proposal.title}</title>"
+    expect(page).not_to have_selector ".js-flag-actions"
+    expect(page).not_to have_selector ".js-follow"
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram
@@ -331,13 +333,14 @@ feature 'Proposals' do
 
   scenario 'JS injection is prevented but autolinking is respected' do
     author = create(:user)
+    js_injection_string = "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
     login_as(author)
 
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Testing auto link'
     fill_in 'proposal_question', with: 'Should I stay or should I go?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    fill_in 'proposal_description', with: "<script>alert('hey')</script> <a href=\"javascript:alert('surprise!')\">click me<a/> http://example.org"
+    fill_in 'proposal_description', with: js_injection_string
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
 
@@ -1222,6 +1225,8 @@ feature 'Proposals' do
 
     expect(Flag.flagged?(user, proposal)).to_not be
   end
+
+  it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
   scenario 'Erased author' do
     user = create(:user)

@@ -12,7 +12,7 @@ class Notification < ActiveRecord::Base
   end
 
   def mark_as_read
-    self.destroy
+    destroy
   end
 
   def self.add(user_id, notifiable)

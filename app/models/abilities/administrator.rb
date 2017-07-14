@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Moderation.new(user)
+      merge Abilities::Moderation.new(user)
 
       can :restore, Comment
       cannot :restore, Comment, hidden_at: nil
@@ -32,7 +32,8 @@ module Abilities
       can :mark_featured, Debate
       can :unmark_featured, Debate
 
-      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment, Legislation::Question, Legislation::Annotation]
+      can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment,
+                                      Legislation::Question, Legislation::Annotation]
 
       can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator

@@ -40,6 +40,16 @@
             <% end %>
           </div>
 
+          <div>
+            <%= f.label :public_interests do %>
+              <%= f.check_box :public_interests, title: t('account.show.public_interests_label'), label: false %>
+              <span class="checkbox">
+                <%= t("account.show.public_interests_label") %>
+              </span>
+            <% end %>
+          </div>
+
+
           <% if @account.email.present? %>
             <h2><%= t("account.show.notifications")%></h2>
 

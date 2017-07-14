@@ -66,7 +66,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def self.search(terms)
-    self.pg_search(terms)
+    pg_search(terms)
   end
 
   def self.by_geozone(geozone)

@@ -140,7 +140,7 @@ nl:
         table_feasibility: "Feasibility"
         table_valuation_finished: "Val. Fin."
         table_selection: "Selection"
-        table_winner: "Winner"
+        table_incompatible: "Incompatible"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -737,3 +737,4 @@ nl:
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
+          locale: Taal

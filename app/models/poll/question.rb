@@ -25,7 +25,7 @@ class Poll::Question < ActiveRecord::Base
   scope :for_render,    -> { includes(:author, :proposal) }
 
   def self.search(params)
-    results = self.all
+    results = all
     results = results.by_poll_id(params[:poll_id]) if params[:poll_id].present?
     results = results.pg_search(params[:search])   if params[:search].present?
     results
@@ -58,9 +58,7 @@ class Poll::Question < ActiveRecord::Base
     end
   end
 
-  def answerable_by?(user)
-    poll.answerable_by?(user)
-  end
+  delegate :answerable_by?, to: :poll
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?

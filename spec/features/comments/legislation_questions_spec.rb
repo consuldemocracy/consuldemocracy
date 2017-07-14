@@ -25,6 +25,7 @@ feature 'Commenting legislation questions' do
     parent_comment = create(:comment, commentable: legislation_question)
     first_child    = create(:comment, commentable: legislation_question, parent: parent_comment)
     second_child   = create(:comment, commentable: legislation_question, parent: parent_comment)
+    href           = legislation_process_question_path(legislation_question.process, legislation_question)
 
     visit comment_path(parent_comment)
 
@@ -33,7 +34,7 @@ feature 'Commenting legislation questions' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{legislation_question.title}", href: legislation_process_question_path(legislation_question.process, legislation_question)
+    expect(page).to have_link "Go back to #{legislation_question.title}", href: href
   end
 
   scenario 'Collapsable comments', :js do
@@ -63,9 +64,12 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Comment order' do
-    c1 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 100, cached_votes_total: 120, created_at: Time.current - 2)
-    c2 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 10, cached_votes_total: 12, created_at: Time.current - 1)
-    c3 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 1, cached_votes_total: 2, created_at: Time.current)
+    c1 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 100,
+                                                  cached_votes_total: 120, created_at: Time.current - 2)
+    c2 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 10,
+                                                  cached_votes_total: 12, created_at: Time.current - 1)
+    c3 = create(:comment, :with_confidence_score, commentable: legislation_question, cached_votes_up: 1,
+                                                  cached_votes_total: 2, created_at: Time.current)
 
     visit legislation_process_question_path(legislation_question.process, legislation_question, order: :most_voted)
 
@@ -119,7 +123,8 @@ feature 'Commenting legislation questions' do
   end
 
   scenario 'Sanitizes comment body for security' do
-    create :comment, commentable: legislation_question, body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
+    create :comment, commentable: legislation_question,
+                     body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
