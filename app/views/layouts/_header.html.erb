@@ -4,7 +4,10 @@
     <div class="top-bar">
 
 
-      <%= image_tag(image_path_for('logo-header.svg'), class: 'show-for-small-only float-left', alt: t("layouts.header.logo")) %>
+      <%= link_to root_path, class: "show-for-small-only", accesskey: "0" do %>
+        <%= image_tag(image_path_for('logo-header.svg'), class: 'float-left', alt: t("layouts.header.logo")) %>
+        <!-- <span class="header-title"> Peñalolen </span> -->
+      <% end %>
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
@@ -16,7 +19,7 @@
           <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
             <%= image_tag(image_path_for('logo-header.svg'), class: 'hide-for-small-only float-left', alt: t("layouts.header.logo")) %>
           <% end %>
-          <span class="header-title"> Peñalolen </span>
+          <span class="header-title hide-for-small-only"> Peñalolen </span>
         </div>
 
         <div class="top-bar-right">
