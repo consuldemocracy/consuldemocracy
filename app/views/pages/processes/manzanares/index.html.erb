@@ -1,0 +1,100 @@
+<% provide :title do %><%= t("processes.manzanares.title") %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: manzanares_url,
+          social_title: t("processes.manzanares.title"),
+          social_description: t("processes.manzanares.description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: manzanares_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to processes_path %>
+      <h1>Parque Lineal del Manzanares</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+    <p>El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares dirigido a comenzar un proceso de participación ciudadana respecto a dicho parque y su entorno.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/jornadas_vecinales_parque_lineal_del_manzanares.pdf", target: "_blank",
+                    title: "Documento Jornadas vecinales Parque Lineal del Manzanares (se abre en ventana nueva)" do %>
+                    <strong>Jornadas vecinales Parque Lineal del Manzanares</strong><br>
+                    <small>(PDF | 805Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Participa respondiendo a las siguientes preguntas:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/5165-pregunta-1-sobre-parque-lineal-del-manzanares" do %>
+                <strong>
+                ¿Cómo abrir un espacio de participación y debate que aporte ideas, sugerencias y alternativas para configurar un plan de futuro a este parque y oriente las correspondientes decisiones que el planeamiento y la inversión deba adoptar para ello?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/5166-pregunta-2-sobre-parque-lineal-del-manzanares" do %>
+                <strong>
+                ¿Qué oportunidades para el desarrollo social y el empleo social y local ofrece todo este espacio y el conjunto de los Parques del Manzanares?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">3</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/5167-pregunta-3-sobre-parque-lineal-del-manzanares" do %>
+                <strong>
+                ¿Qué problemas y soluciones respecto a la calidad medioambiental del río y su entorno te parecen más relevantes?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">4</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/5168-pregunta-4-sobre-parque-lineal-del-manzanares" do %>
+                <strong>
+                ¿Qué futuro jugará el río como vertebrador de la movilidad urbana sostenible en el eje norte-sur?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

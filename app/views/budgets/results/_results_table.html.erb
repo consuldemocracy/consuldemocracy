@@ -1,4 +1,4 @@
-<div class="small-12 medium-9 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>"
+<div class="small-12 medium-9 large-10 column <%= results_type == :compatible ? 'success' : 'js-discarded' %>"
      style="<%= results_type != :compatible ? 'display: none' : '' %>"
      id="<%= results_type %>-container">
 
@@ -15,13 +15,13 @@
         <th scope="col" class="text-center">
           <%= t("budgets.results.ballot_lines_count") %>
         </th>
-        <th scope="col" class="text-center">
+        <th scope="col" class="text-center min-width-100">
           <%= t("budgets.results.price") %>
         </th>
         <% if results_type == :compatible %>
           <th scope="col" class="text-right">
-            <%= format_price(heading_price) %><br>
-            <small><%= t("budgets.results.amount_available") %></small>
+            <small><%= t("budgets.results.amount_available") %></small><br>
+            <%= format_price(heading_price) %>
           </th>
         <% end %>
       </tr>

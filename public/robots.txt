@@ -12,3 +12,45 @@ Disallow: /*?*order
 Disallow: /*?*search
 Disallow: /*?*locale-switcher
 Disallow: user_id
+
+# Allow search by category
+Allow: /*?*search=Asociaciones
+Allow: /*?*search=Cultura
+Allow: /*?*search=Deportes
+Allow: /*?*search=Derechos
+Allow: /*?*search=Distritos
+Allow: /*?*search=Econom
+Allow: /*?*search=Empleo
+Allow: /*?*search=Equidad
+Allow: /*?*search=Medio
+Allow: /*?*search=Medios
+Allow: /*?*search=Movilidad
+Allow: /*?*search=Participaci
+Allow: /*?*search=Salud
+Allow: /*?*search=Seguridad
+Allow: /*?*search=Sostenibilidad
+Allow: /*?*search=Transparencia
+Allow: /*?*search=Urbanismo
+
+# Allow search by district
+Allow: /*?*search=Arganzuela
+Allow: /*?*search=Barajas
+Allow: /*?*search=Carabanchel
+Allow: /*?*search=Centro
+Allow: /*?*search=Chamart%C3%ADn
+Allow: /*?*search=Chamber%C3%AD
+Allow: /*?*search=Ciudad+Lineal
+Allow: /*?*search=Fuencarral-El+Pardo
+Allow: /*?*search=Hortaleza
+Allow: /*?*search=Latina
+Allow: /*?*search=Moncloa-Aravaca
+Allow: /*?*search=Moratalaz
+Allow: /*?*search=Puente+de+Vallecas
+Allow: /*?*search=Retiro
+Allow: /*?*search=Salamanca
+Allow: /*?*search=San+Blas-Canillejas
+Allow: /*?*search=Tetu%C3%A1n
+Allow: /*?*search=Usera
+Allow: /*?*search=Vic%C3%A1lvaro
+Allow: /*?*search=Villa+de+Vallecas
+Allow: /*?*search=Villaverde

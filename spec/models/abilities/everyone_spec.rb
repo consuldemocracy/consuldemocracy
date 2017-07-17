@@ -8,6 +8,9 @@ describe "Abilities::Everyone" do
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
 
+  let(:reviewing_ballot_budget) { create(:budget, phase: 'reviewing_ballots') }
+  let(:finished_budget) { create(:budget, phase: 'finished') }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should_not be_able_to(:edit, Debate) }
@@ -25,7 +28,25 @@ describe "Abilities::Everyone" do
   it { should be_able_to(:show, Comment) }
 
   it { should be_able_to(:index, SpendingProposal) }
+  it { should be_able_to(:welcome, SpendingProposal) }
   it { should_not be_able_to(:create, SpendingProposal) }
 
+  describe "Participatory budgeting results page is public with setting to true" do
+    before { Setting["feature.spending_proposal_features.open_results_page"] = true }
+    it { should be_able_to(:stats, SpendingProposal) }
+    it { should be_able_to(:results, SpendingProposal) }
+  end
+
+  describe "Participatory budgeting results page is public with setting to nil" do
+    before { Setting["feature.spending_proposal_features.open_results_page"] = nil }
+    it { should be_able_to(:stats, SpendingProposal) }
+    it { should be_able_to(:results, SpendingProposal) }
+  end
+
+  pending "only authors can access new and create for ProposalNotifications"
+
   it { should be_able_to(:index, Budget) }
+  it { should be_able_to(:read_results, finished_budget) }
+  it { should_not be_able_to(:read_results, reviewing_ballot_budget) }
+
 end

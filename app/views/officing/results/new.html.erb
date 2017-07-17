@@ -1,6 +1,10 @@
 <% if @officer_assignments.any? %>
   <h2><%= t("officing.results.new.title", poll: @poll.name) %></h2>
 
+  <div class="callout primary">
+    <%= t("officing.results.new.intro_html")%>
+  </div>
+
   <%= form_tag(officing_poll_results_path(@poll), {id: "officer_assignment_form"}) do %>
     <div class="row">
       <div class="small-12 medium-6 column">
@@ -9,18 +13,21 @@
                         booths_for_officer_select_options(@officer_assignments),
                         { prompt: t("officing.results.new.select_booth"),
                           label: false } %>
+        <%= hidden_field_tag :date, l(@poll.ends_at.to_date) %>
       </div>
     </div>
 
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <label><%= t("officing.results.new.date") %></label>
-        <%= select_tag :date,
-                        poll_dates_select_options(@poll),
-                        { prompt: t("officing.results.new.select_date"),
-                          label: false } %>
+    <% if current_user.administrator? %>
+      <div class="row">
+        <div class="small-12 medium-6 column">
+          <label>Origen</label>
+          <%= select_tag :origin,
+                          options_for_select([["Urna", "booth"], ["Ágora", "web"], ["Correo", "letter"]]),
+                          { prompt: "Elige origen",
+                            label: false } %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <% @poll.questions.each do |question| %>
       <div class="row">

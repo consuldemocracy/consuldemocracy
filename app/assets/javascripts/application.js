@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
+//= require jquery-ui/effects/effect-shake
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -40,6 +41,7 @@
 //= require annotatable
 //= require advanced_search
 //= require registration_form
+//= require forms
 //= require suggest
 //= require forms
 //= require tracks
@@ -48,6 +50,7 @@
 //= require embed_video
 //= require fixed_bar
 //= require banners
+//= require probe
 //= require social_share
 //= require checkbox_toggle
 //= require markdown-it

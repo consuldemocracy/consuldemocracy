@@ -1,6 +1,6 @@
 class Poll::NullResult < ActiveRecord::Base
 
-  VALID_ORIGINS = %w{web booth}
+  VALID_ORIGINS = %w{ web booth letter }
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :booth_assignment
@@ -9,7 +9,10 @@ class Poll::NullResult < ActiveRecord::Base
   validates :author, presence: true
   validates :origin, inclusion: {in: VALID_ORIGINS}
 
-  scope :by_author, ->(author_id) { where(author_id: author_id) }
+  scope :by_author, -> (author_id) { where(author_id: author_id) }
+  scope :web,    -> { where(origin: 'web') }
+  scope :booth,  -> { where(origin: 'booth') }
+  scope :letter, -> { where(origin: 'letter') }
 
   before_save :update_logs
 

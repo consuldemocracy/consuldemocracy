@@ -15,11 +15,20 @@ class Poll
 
     scope :voting_days, -> { where(final: false) }
     scope :final,       -> { where(final: true) }
+    scope :by_officer, ->(officer){ where(officer_id: officer.id) }
+    scope :by_poll,  ->(poll){ joins(:booth_assignment).where("poll_booth_assignments.poll_id" => poll.id) }
+    scope :by_booth, ->(booth){ joins(:booth_assignment).where("poll_booth_assignments.booth_id" => booth.id) }
+    scope :by_date, ->(date){ where(date: date) }
 
     before_create :log_user_data
 
     def log_user_data
       self.user_data_log = "#{officer.user_id} - #{officer.user.name_and_email}"
     end
+
+    def booth
+      booth_assignment.booth
+    end
+
   end
 end

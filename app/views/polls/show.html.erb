@@ -1,20 +1,44 @@
-<% provide :title do %><%= @poll.name %><% end %>
+<% provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
+<% provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: first_voting_url,
+              social_title: t("social_share.polls_show.title_#{@poll.id}"),
+              social_description: t("social_share.polls_show.facebook_#{@poll.id}") %>
+<% end %>
+
 <% content_for :wrapper_class, "light" %>
 
 <div class="polls-show">
-  <div class="expanded no-margin-top dark-heading polls-show-header">
+  <div id="polls-show-header" class="expanded no-margin-top dark-heading polls-show-header">
     <div class="row">
       <div class="small-12 medium-9 column padding">
         <%= back_link_to polls_path %>
 
-        <h2><%= @poll.name %></h2>
+        <% if @questions.count == 1 %>
+          <% question = @questions.first %>
+          <h2><%= question.title %></h2>
+        <% else %>
+          <h2><%= @poll.name %></h2>
+        <% end %>
+
+        <% if @poll.votable_by?(current_user) || @poll.voted_by?(current_user) %>
+          <ol class="margin-top">
+            <% @questions.each do |question| %>
+              <li><%= link_to question.title, question_path(question) %></li>
+            <%end %>
+          </ol>
+        <% end %>
+
         <ul class="no-bullet margin-top tags">
           <% @poll.geozones.each do |g| %>
             <li class="inline-block"><span><%= g.name %></span></li>
           <% end %>
         </ul>
 
-        <%= render "callout" %>
+        <% unless can?(:answer, @poll) %>
+          <%= render 'reasons_for_not_answering', poll: @poll %>
+        <% end %>
       </div>
       <div class="small-12 medium-3 column">
         <div class="info">
@@ -30,14 +54,31 @@
     </div>
   </div>
 
-  <div class="row margin-top">
+  <div id="questions" class="row margin-top">
     <div class="small-12 medium-9 column">
-      <% @questions.each do |question| %>
-        <%= render 'polls/questions/question', question: question %>
+      <% if @poll.votable_by?(current_user) %>
+        <%= render "polls/nvotes/iframe" %>
+      <% elsif @poll.voted_by?(current_user) %>
+        <div class="callout warning">
+          <%= t("polls.show.already_voted") %>
+        </div>
+      <% else %>
+        <% @questions.each do |question| %>
+          <%= render 'polls/questions/question', question: question %>
+        <% end %>
+      <% end %>
+      <% if @questions.count == 1 %>
+        <% question = @questions.first %>
+        <h3 class="margin-top"><%= t('polls.show.more_info') %></h3>
+        <%= question.description %>
       <% end %>
     </div>
 
     <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("polls.show.polls") %></h2>
+      <%= link_to t("polls.show.more_polls"), polls_path, class: "button hollow expanded" %>
+
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("proposals.show.share"),
         title: @poll.name,

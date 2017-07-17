@@ -16,6 +16,7 @@ describe Admin::Api::StatsController do
     end
 
     context 'events present' do
+
       before :each do
         time_1 = DateTime.parse("2015-01-01").in_time_zone
         time_2 = DateTime.parse("2015-01-02").in_time_zone
@@ -31,7 +32,7 @@ describe Admin::Api::StatsController do
 
       it 'should return single events formated for working with c3.js' do
         sign_in user
-        get :show, events: 'foo'
+        get :show, event: 'foo'
 
         expect(response).to be_ok
 
@@ -39,15 +40,6 @@ describe Admin::Api::StatsController do
         expect(data).to eq "x" => ["2015-01-01", "2015-01-02"], "Foo" => [2, 1]
       end
 
-      it 'should return combined comma separated events formated for working with c3.js' do
-        sign_in user
-        get :show, events: 'foo,bar'
-
-        expect(response).to be_ok
-
-        data = JSON.parse(response.body)
-        expect(data).to eq "x" => ["2015-01-01", "2015-01-02", "2015-01-03"], "Foo" => [2, 1, 0], "Bar" => [1, 0, 2]
-      end
     end
 
     context 'visits present' do
@@ -83,7 +75,7 @@ describe Admin::Api::StatsController do
         create :visit, started_at: time_2
 
         sign_in user
-        get :show, events: 'foo', visits: true
+        get :show, event: 'foo', visits: true
 
         expect(response).to be_ok
 
@@ -110,5 +102,6 @@ describe Admin::Api::StatsController do
         expect(data).to eq "x" => ["2017-04-01", "2017-04-02"], "Budget Investments" => [1, 2]
       end
     end
+
   end
 end

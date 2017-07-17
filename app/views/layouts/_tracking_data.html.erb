@@ -1,1 +1,9 @@
-<meta name="tracking_data" data-track-usertype="<%=current_user ? current_user.user_type : :anonymous%>" <%= yield(:track_event) %>/>
+<% if current_user %>
+  <span id="tracking_data"
+        data-track-user-id="<%= current_user.id %>"
+        data-track-verification-level="<%= verification_level(current_user) %>"
+        data-track-age="<%= age(current_user) %>"
+        data-track-gender="<%= gender(current_user) %>"
+        data-track-district="<%= geozone(current_user) %>">
+  </span>
+<% end %>

@@ -70,7 +70,6 @@ feature 'Tags' do
 
     visit new_proposal_path
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
@@ -97,7 +96,6 @@ feature 'Tags' do
     visit new_proposal_path
 
     fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in_ckeditor 'proposal_description', with: 'A description with enough characters'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
@@ -142,7 +140,6 @@ feature 'Tags' do
     visit new_proposal_path
 
     fill_in 'proposal_title', with: 'A test of dangerous strings'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
     fill_in 'proposal_summary', with: 'In summary, what we want is...'
     fill_in 'proposal_description', with: 'A description suitable for this test'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
@@ -169,7 +166,7 @@ feature 'Tags' do
     login_as(proposal.author)
     visit edit_proposal_path(proposal)
 
-    expect(page).to have_selector("input[value='Economía']")
+    expect(page).to have_selector("input[value='Economía,']")
 
     fill_in 'proposal_tag_list', with: "Economía, Hacienda"
     click_button 'Save changes'

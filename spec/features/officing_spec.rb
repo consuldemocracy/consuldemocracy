@@ -11,7 +11,7 @@ feature 'Poll Officing' do
     visit officing_root_path
 
     expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -24,7 +24,7 @@ feature 'Poll Officing' do
     visit officing_root_path
 
     expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -37,7 +37,7 @@ feature 'Poll Officing' do
     visit officing_root_path
 
     expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -50,7 +50,7 @@ feature 'Poll Officing' do
     visit officing_root_path
 
     expect(current_path).not_to eq(officing_root_path)
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path_for_logged_in_users)
     expect(page).to have_content "You do not have permission to access this page"
   end
 
@@ -81,6 +81,7 @@ feature 'Poll Officing' do
   end
 
   scenario "Poll officer access links" do
+    create(:poll)
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path

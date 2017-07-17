@@ -1,0 +1,305 @@
+<% if Budget.balloting.any? %>
+  <% provide :title, t("meta_tags.budget.title") %>
+  <% provide :meta_description, t("meta_tags.budget.description") %>
+<% elsif Budget.reviewing_ballots.any? %>
+  <% provide :title, t("meta_tags.budget.title_reviewing") %>
+  <% provide :meta_description, t("meta_tags.budget.description_reviewing") %>
+<% else %>
+  <% provide :title, t("meta_tags.budget.title_finished") %>
+  <% provide :meta_description, t("meta_tags.budget.description_finished") %>
+<% end %>
+
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+<% provide :tracking_page_number, "33" %>
+
+<div class="budgets-welcome">
+
+  <% if Budget.balloting.any? %>
+    <%= render "pages/more_info/budgets/welcome_header_balloting" %>
+  <% elsif Budget.reviewing_ballots.any? %>
+    <%= render "pages/more_info/budgets/welcome_header_reviewing" %>
+  <% elsif Budget.finished.any? %>
+    <%= render "pages/more_info/budgets/welcome_header_finished" %>
+  <% end %>
+
+  <% if Budget.balloting.any? %>
+    <div class="row margin">
+      <div class="small-12 medium-6 column">
+        <figure class="figure-card">
+          <%= image_tag "budget_welcome/materials.jpg", alt:"100 millones para hacer Madrid" %>
+          <figcaption>
+            <span>Descargas</span>
+            <p class="title">Materiales de difusión</p>
+          </figcaption>
+        </figure>
+        <p>¿Quieres apoyar y ayudar a difundir los presupuestos participativos? Te facilitamos este kit con material gráfico para dar a conocer los proyectos de tu distrito.</p>
+        <%= link_to "Ver materiales para descargar", budgets_materials_2017_path %>
+      </div>
+
+      <div class="small-12 medium-6 column">
+        <figure class="figure-card">
+          <%= image_tag "budget_welcome/videos.jpg", alt:"Personas que han planteado proyectos en los presupuestos participativos 2017 del Ayuntamiento de Madrid." %>
+          <figcaption>
+            <span>Vídeos</span>
+            <p class="title">Presupuestos participativos</p>
+          </figcaption>
+        </figure>
+        <p>Las personas y colectivos que cuentan con proyectos de presupuestos participativos de 2017 en la votación final, nos explican de primera mano en qué consisten sus propuestas.</p>
+        <%= link_to "Ver vídeos de proyectos", budgets_videos_2017_path %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row margin">
+    <div class="small-12 column">
+      <div class="text-center">
+        <h2 class="map-title">Propuestas localizables geográficamente de los presupuestos participativos 2017</h2>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1lf155NMY1TmVElqka-UEw5qrvEo" height="480" style="border:0; width:100%; margin-top: 24px;" allowfullscreen title="Mapa de propuestas localizables geográficamente de los presupuestos participativos 2017"></iframe>
+      </div>
+
+      <%= link_to "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017" do %>
+        <small>Ver lista completa de propuestas</small>
+      <% end %><br>
+      <%= link_to "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017?filter=unfeasible" do %>
+        <small>Ver lista de propuestas inviables</small>
+      <% end %><br>
+      <%= link_to "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017?filter=unselected" do %>
+        <small>Ver lista de propuestas no seleccionadas para la votación final</small>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="budgets-timeline margin-top">
+    <div class="row">
+      <hr>
+      <div class="small-12 column text-center">
+        <h3>Los presupuestos participativos en 2 minutos</h3>
+        <p>
+          Si tienes alguna duda del proceso puedes <%= link_to "consultar las preguntas frecuentes", more_info_budgets_path %> o enviarnos un email a <%= link_to "preparticipativos@madrid.es", "mailto:preparticipativos@madrid.es" %>
+        </p>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 large-2 large-offset-5 column show-for-large">
+        <%= image_tag "budget_welcome/step_1.gif", alt:"" %>
+      </div>
+      <div class="small-12 large-5 column block-border-left">
+        <h4>Envío de proyectos</h4>
+        <p>Del <strong>18 de enero al 8 de marzo</strong>, cualquier persona empadronada en Madrid puede crear un proyecto de gasto para toda la ciudad o para un distrito concreto. Los <strong>100 millones</strong> se repartirán en una bolsa para proyectos para toda la ciudad, y una para cada distrito.</p>
+
+        <p>En cada distrito hay espacios donde debatir, pensar y trabajar juntos sobre los proyectos, que se dejan en la web de Decide Madrid o en cualquiera de las <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Atencion-al-ciudadano/Oficinas-de-Atencion-al-Ciudadano?vgnextfmt=default&vgnextchannel=5b99cde2e09a4310VgnVCM1000000b205a0aRCRD" target="_blank">26 Oficinas de Atención a la Ciudadanía</a> que están por todo Madrid.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 large-5 column large-text-right block-border-right">
+        <h4>Apoyos y evaluación de proyectos</h4>
+        <p>Del <strong>11 al 25 de marzo</strong> los usuarios verificados de Decide Madrid pueden apoyar proyectos de gasto para toda la ciudad y para el distrito que elijan. Los proyectos más apoyados pasan a la votación final.</p>
+
+        <p>El Ayuntamiento estudia hasta el 14 de mayo que cada uno de esos proyectos cumple los requisitos de que sean viables y legales. El Ayuntamiento dice si todo esto se cumple y tasa cuánto costaría llevar los proyectos a cabo.</p>
+      </div>
+      <div class="small-12 large-2 column end show-for-large">
+        <%= image_tag "budget_welcome/step_2.gif", alt:"" %>
+      </div>
+    </div>
+
+    <div class="row no-margin-top">
+      <div class="small-12 large-2 large-offset-5 column show-for-large">
+        <%= image_tag "budget_welcome/step_3.gif", alt:"" %>
+      </div>
+      <div class="small-12 large-5 column block-border-left">
+        <h4>Votación final</h4>
+        <p>Del <strong>15 de mayo al 30 de junio</strong> tú decides qué proyectos finalistas de toda la ciudad y los distritos recibirán <strong>100 millones de euros</strong>. Conviértete en alcalde o alcaldesa y elige todas las propuestas que quieras hasta gastar el presupuesto.</p>
+
+        <p>Las propuestas más votadas que completen los 100 millones serán las seleccionadas y se incluirán en el Proyecto Inicial del Presupuesto General del Ayuntamiento de Madrid.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 text-center column">
+      <%= link_to "Toda la información sobre los presupuestos participativos", more_info_budgets_path, class: "button" %>
+    </div>
+  </div>
+
+  <!-- <div class="padding margin" data-equalizer>
+    <div class="small-12 medium-6 column block-black" data-equalizer-watch>
+      <div class="row">
+        <div class="small-12 medium-8 medium-offset-4 column">
+          <h4>Espacios presenciales de debate y propuesta</h4>
+          <p>Aquí publicaremos la información de los encuentros presenciales para debatir los presupuestos participativos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column block-yellow" data-equalizer-watch>
+      <div class="row">
+        <div class="small-12 medium-8 column">
+          <h4>Si te sientes gato</h4>
+          <p>Si eres docente o responsable de un grupo de jóvenes puedes implicar a los votantes de menor edad en esta iniciativa didáctica sobre los presupuestos participativos.</p>
+          <%# link_to "Visitar Si te sientes gato", "https://decide.madrid.es/sitesientesgato", target: "_blank" %>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row">
+    <div class="small-12 column text-center margin">
+      <h2>
+        Distribución del presupuesto participativo y proyectos de gasto
+      </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 column margin-bottom">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Propuestas para toda la ciudad</th>
+            <th scope="col" class="text-center">Propuestas para distritos*</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center budget-big-number">
+              <strong>30.000.000&euro;</strong>
+            </td>
+            <td class="text-center budget-big-number">
+              <strong>70.000.000&euro;</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note"><small>* El reparto por distritos es proporcional a la población e inversamente proporcional a la renta per capita.</small></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column margin-bottom">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Distrito</th>
+            <th scope="col" class="text-center district">Cantidad asignada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arganzuela</td>
+            <td class="text-center">2.969.252&euro;</td>
+          </tr>
+          <tr>
+            <td>Barajas</td>
+            <td class="text-center">869.331&euro;</td>
+          </tr>
+          <tr>
+            <td>Carabanchel</td>
+            <td class="text-center">6.406.694&euro;</td>
+          </tr>
+          <tr>
+            <td>Centro</td>
+            <td class="text-center">2.571.089&euro;</td>
+          </tr>
+          <tr>
+            <td>Chamartín</td>
+            <td class="text-center">2.424.577&euro;</td>
+          </tr>
+          <tr>
+            <td>Chamberí</td>
+            <td class="text-center">2.347.462&euro;</td>
+          </tr>
+          <tr>
+            <td>Ciudad Lineal</td>
+            <td class="text-center">4.639.470&euro;</td>
+          </tr>
+          <tr>
+            <td>Fuencarral-El Pardo</td>
+            <td class="text-center">4.783.450&euro;</td>
+          </tr>
+          <tr>
+            <td>Hortaleza</td>
+            <td class="text-center">3.610.431&euro;</td>
+          </tr>
+          <tr>
+            <td>Latina</td>
+            <td class="text-center">5.686.008&euro;</td>
+          </tr>
+          <tr>
+            <td>Moncloa-Aravaca</td>
+            <td class="text-center">2.055.934&euro;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="small-12 medium-6 column margin-bottom">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Distrito</th>
+            <th scope="col" class="text-center">Cantidad asignada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Moratalaz</td>
+            <td class="text-center">2.076.549&euro;</td>
+          </tr>
+          <tr>
+            <td>Puente de Vallecas</td>
+            <td class="text-center">6.396.482&euro;</td>
+          </tr>
+          <tr>
+            <td>Retiro</td>
+            <td class="text-center">2.035.989&euro;</td>
+          </tr>
+          <tr>
+            <td>Salamanca</td>
+            <td class="text-center">2.411.343&euro;</td>
+          </tr>
+          <tr>
+            <td>San Blas-Canillejas</td>
+            <td class="text-center">3.551.020&euro;</td>
+          </tr>
+          <tr>
+            <td>Tetuán</td>
+            <td class="text-center">3.334.206&euro;</td>
+          </tr>
+          <tr>
+            <td>Usera</td>
+            <td class="text-center">3.693.578&euro;</td>
+          </tr>
+          <tr>
+            <td>Vicálvaro</td>
+            <td class="text-center">1.693.444&euro;</td>
+          </tr>
+          <tr>
+            <td>Villa de Vallecas</td>
+            <td class="text-center">2.496.257&euro;</td>
+          </tr>
+          <tr>
+            <td>Villaverde</td>
+            <td class="text-center">3.947.434&euro;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="expanded previous-budgets sticky-bottom">
+  <div class="row">
+    <div class="small-12 medium-8 column small-centered text-center">
+      <h2>Presupuestos participativos de 2016</h2>
+      <p>La ciudadanía decidió que el Ayuntamiento de Madrid destinara <strong>60.000.000 de euros</strong> a los proyectos que se plantearon, debatieron y votaron en 2016 para ejecutar a partir del 1 de enero de 2017.</p>
+      <div class="small-12 medium-6 small-centered">
+        <%= link_to "Resultados de 2016", participatory_budget_results_path, class: "button expanded" %>
+      </div>
+    </div>
+  </div>
+</div>

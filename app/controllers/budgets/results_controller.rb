@@ -8,6 +8,7 @@ module Budgets
     def show
       authorize! :read_results, @budget
       @investments = load_result.investments
+      @heading = @heading
     end
 
     private
@@ -17,12 +18,12 @@ module Budgets
       end
 
       def load_budget
-        @budget = Budget.find_by(id: params[:budget_id])
+        @budget = Budget.find_by(slug: params[:id]) || Budget.find_by(id: params[:id]) || Budget.first
       end
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
+          @heading = @budget.headings.find_by(slug: params[:heading_id])
         else
           @heading = @budget.headings.first
         end

@@ -15,8 +15,13 @@ feature 'Email campaigns' do
     5.times { visit root_url(track_id: @campaign2.track_id) }
 
     visit admin_stats_path
+    click_link @campaign1.name
 
     expect(page).to have_content "#{@campaign1.name} (3)"
+
+    click_link "Go back"
+    click_link @campaign2.name
+
     expect(page).to have_content "#{@campaign2.name} (5)"
   end
 
@@ -25,9 +30,12 @@ feature 'Email campaigns' do
     visit root_url(track_id: "999")
 
     visit admin_stats_path
+    click_link @campaign1.name
 
     expect(page).to have_content "#{@campaign1.name} (1)"
-    expect(page).to_not have_content (@campaign2.name).to_s
+
+    click_link "Go back"
+    expect(page).to_not have_content @campaign2.name.to_s
   end
 
 end

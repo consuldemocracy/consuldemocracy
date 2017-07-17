@@ -2,7 +2,7 @@
   <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
   <div id="js-comment-form-<%= css_id %>" <%= "style='display:none'".html_safe if toggeable %> class="comment-form">
     <%= form_for Comment.new, remote: true do |f| %>
-      <%= label_tag "comment-body-#{css_id}", leave_comment_text(commentable) %>
+      <%= label_tag "comment-body-#{css_id}", leave_comment_text(commentable, parent_id) %>
       <%= f.text_area :body, id: "comment-body-#{css_id}", maxlength: Comment.body_max_length, label: false %>
       <%= f.hidden_field :commentable_type, value: commentable.class.name %>
       <%= f.hidden_field :commentable_id, value: commentable.id %>
@@ -12,17 +12,27 @@
 
       <% if can? :comment_as_moderator, commentable %>
         <div class="float-right">
-          <%= f.check_box :as_moderator, title: t('comments.form.comment_as_moderator'), id: "comment-as-moderator-#{css_id}", label: false %>
-          <%= label_tag "comment-as-moderator-#{css_id}", t("comments.form.comment_as_moderator"), class: "checkbox" %>
+          <%= f.check_box :as_moderator,
+                          title: t('comments.form.comment_as_moderator'),
+                          id: "comment-as-moderator-#{css_id}",
+                          label: false %>
+          <%= label_tag "comment-as-moderator-#{css_id}",
+                        t("comments.form.comment_as_moderator"),
+                        class: "checkbox" %>
         </div>
       <% end %>
+
       <% if can? :comment_as_administrator, commentable %>
         <div class="float-right">
-          <%= f.check_box :as_administrator, title: t('comments.form.comment_as_admin'), id: "comment-as-administrator-#{css_id}",label: false %>
+          <%= f.check_box :as_administrator,
+                          title: t('comments.form.comment_as_admin'),
+                          id: "comment-as-administrator-#{css_id}",
+                          label: false %>
           <%= label_tag "comment-as-administrator-#{css_id}", t("comments.form.comment_as_admin"), class: "checkbox" %>
         </div>
       <% end %>
 
     <% end %>
   </div>
+
 <% end %>

@@ -6,8 +6,11 @@
 
 <div class="expanded no-margin-top dark-heading">
   <div class="row">
-    <div class="small-12 medium-6 column padding">
-      <h1><%= t("polls.index.title") %></h1>
+    <div class="small-12 column padding">
+      <h1 class="inline-block"><%= t("polls.index.title") %></h1>
+      <div class="float-right margin-top">
+        <%= link_to t("polls.index.more_info"), more_info_polls_path %>
+      </div>
     </div>
   </div>
 </div>

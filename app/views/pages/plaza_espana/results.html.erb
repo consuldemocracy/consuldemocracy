@@ -1,0 +1,45 @@
+<% provide :title, "Remodelación de Plaza España | Resultados" %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_plaza_espana" %>
+<% end %>
+<%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "survey-charts", 'data-turbolinks-track' => true %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: survey_plaza_url %>
+<% end %>
+
+<%= render "shared/plaza_espana_header" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <ul class="expanded menu text-center border-bottom">
+      <li><a href="#stats_1"><strong>Participación total</strong></a></li>
+      <li><a href="#stats_2"><strong>Preselección</strong></a></li>
+      <li><a href="#stats_3"><strong>Encuesta</strong></a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2 id="stats_1" class="section-title-stats">Participación total</h2>
+  </div>
+</div>
+
+<%= render "/pages/plaza_espana/stats" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2 id="stats_2" class="section-title-stats">Preselección</h2>
+  </div>
+</div>
+
+<%= render "/pages/plaza_espana/preselection" %>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2 id="stats_3" class="section-title-stats">Encuesta</h2>
+  </div>
+</div>
+
+<%= render "/pages/plaza_espana/survey" %>

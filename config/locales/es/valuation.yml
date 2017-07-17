@@ -22,10 +22,10 @@ es:
       index:
         headings_filter_all: Todas las partidas
         filters:
-          valuation_open: Abiertas
+          valuation_open: Abiertos
           valuating: En evaluación
           valuation_finished: Evaluación finalizada
-        title: Propuestas de inversión
+        title: Proyectos de gasto
         assigned_to: "Asignadas a %{valuator}"
         edit: Editar informe
         valuators_assigned:
@@ -38,7 +38,7 @@ es:
         table_actions: Acciones
       show:
         back: Volver
-        title: Propuesta de inversión
+        title: Proyecto de gasto
         info: Datos de envío
         by: Enviada por
         sent: Fecha de creación
@@ -106,6 +106,7 @@ es:
         responsibles: Responsables
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
+        vote_count: Votos
       edit:
         dossier: Informe
         price_html: "Coste (%{currency}) <small>(dato público)</small>"

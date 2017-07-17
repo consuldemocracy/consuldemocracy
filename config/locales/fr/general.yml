@@ -384,9 +384,9 @@ fr:
     - Samedi
     - Dimanche
     formats:
-      default: "%j-%m-%A"
-      long: "%B %d, %Y"
-      short: "%b %d"
+      default: "%d/%m/%Y"
+      long: "%d %B de %Y"
+      short: "%d %b"
     month_names:
     -
     - Janvier
@@ -402,9 +402,9 @@ fr:
     - Novembre
     - Décembre
     order:
-    - Jour
-    - Mois
-    - Année
+    - :day
+    - :month
+    - :year
   datetime:
     distance_in_words:
       about_x_hours:

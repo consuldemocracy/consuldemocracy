@@ -1,0 +1,20 @@
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@abriendomadrid" />
+<meta name="twitter:title" content="Presupuestos Participativos en Madrid" />
+<meta name="twitter:description" content="Tú decides cómo invertir 100 millones de euros para tu ciudad" />
+<meta name="twitter:image" content="<%= image_url '/social_media_budgets_twitter.png' %>" />
+<!-- Facebook OG -->
+<meta id="ogtitle" property="og:title" content="Presupuestos Participativos en Madrid"/>
+<% if setting['url'] %>
+  <meta property="article:publisher" content=<%= setting['url'] %>/>
+<% end %>
+<% if setting['facebook_handle'] %>
+  <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
+<% end %>
+<meta property="og:type" content="article"/>
+<meta id="ogurl" property="og:url" content="<%= budgets_welcome_url %>"/>
+<meta id="ogimage" property="og:image" content="<%= image_url '/social_media_budgets.png' %>"/>
+<meta property="og:site_name" content="Decide Madrid"/>
+<meta id="ogdescription" property="og:description" content="Tú decides cómo invertir 100 millones de euros para tu ciudad"/>
+<meta property="fb:app_id" content="1662598980652932"/>

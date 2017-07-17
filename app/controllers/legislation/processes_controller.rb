@@ -1,6 +1,6 @@
 class Legislation::ProcessesController < Legislation::BaseController
   has_filters %w{open next past}, only: :index
-  load_and_authorize_resource
+  load_and_authorize_resource :process
 
   def index
     @current_filter ||= 'open'

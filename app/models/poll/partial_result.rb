@@ -1,6 +1,6 @@
 class Poll::PartialResult < ActiveRecord::Base
 
-  VALID_ORIGINS = %w{web booth}
+  VALID_ORIGINS = %w{ web booth letter }
 
   belongs_to :question, -> { with_hidden }
   belongs_to :author, ->   { with_hidden }, class_name: 'User', foreign_key: 'author_id'
@@ -15,6 +15,10 @@ class Poll::PartialResult < ActiveRecord::Base
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
+
+  scope :web,    -> { where(origin: 'web') }
+  scope :booth,  -> { where(origin: 'booth') }
+  scope :letter, -> { where(origin: 'letter') }
 
   before_save :update_logs
 

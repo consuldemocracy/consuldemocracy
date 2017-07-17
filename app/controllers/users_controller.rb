@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   helper_method :author?
   helper_method :author_or_admin?
+  helper_method :current_user_is_author?
 
   def show
     load_filtered_activity if valid_access?
@@ -16,6 +17,8 @@ class UsersController < ApplicationController
       @activity_counts = HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
                           debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
+                          #spending_proposals: SpendingProposal.where(author_id: @user.id).count,
+                          ballot: (Setting["feature.spending_proposal_features.phase3"].blank? ? 0 : 1),
                           budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count)
     end
@@ -26,7 +29,9 @@ class UsersController < ApplicationController
       when "proposals" then load_proposals
       when "debates"   then load_debates
       when "budget_investments" then load_budget_investments
-      when "comments" then load_comments
+      when "comments"  then load_comments
+      #when "spending_proposals"  then load_spending_proposals if author_or_admin?
+      when "ballot"    then load_ballot
       else load_available_activity
       end
     end
@@ -38,7 +43,10 @@ class UsersController < ApplicationController
       elsif @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
-      elsif  @activity_counts[:budget_investments] > 0
+      #elsif @activity_counts[:spending_proposals] > 0
+      #  load_spending_proposals
+      #  @current_filter = "spending_proposals"
+      elsif @activity_counts[:budget_investments] > 0
         load_budget_investments
         @current_filter = "budget_investments"
       elsif  @activity_counts[:comments] > 0
@@ -59,6 +67,10 @@ class UsersController < ApplicationController
       @comments = only_active_commentables.includes(:commentable).order(created_at: :desc).page(params[:page])
     end
 
+    def load_spending_proposals
+      @spending_proposals = SpendingProposal.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
+    end
+
     def load_budget_investments
       @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
@@ -73,6 +85,14 @@ class UsersController < ApplicationController
 
     def valid_interests_access?
       @user.public_interests || authorized_current_user?
+    end
+
+    def load_ballot
+      @ballot = Ballot.where(user: current_user).first_or_create if current_user_is_author?
+    end
+
+    def current_user_is_author?
+      @current_user_is_author ||= current_user && current_user == @user
     end
 
     def author?
@@ -95,11 +115,11 @@ class UsersController < ApplicationController
       disabled_commentables = []
       disabled_commentables << "Debate" unless Setting['feature.debates']
       disabled_commentables << "Budget::Investment" unless Setting['feature.budgets']
+      disabled_commentables << "SpendingProposal" unless Setting['feature.spending_proposals']
       if disabled_commentables.present?
         all_user_comments.where("commentable_type NOT IN (?)", disabled_commentables)
       else
         all_user_comments
       end
     end
-
 end

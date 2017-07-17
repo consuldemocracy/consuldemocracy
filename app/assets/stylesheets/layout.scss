@@ -213,6 +213,10 @@ a {
       color: $brand;
     }
   }
+
+  &.vertical li {
+    display: block;
+  }
 }
 
 .menu.vertical {
@@ -226,6 +230,11 @@ a {
     a {
       color: $text-medium;
       padding: 0;
+
+      &.bold {
+        font-weight: bold;
+        color: $brand;
+      }
     }
 
     h2 {
@@ -234,11 +243,6 @@ a {
 
     &.active {
       border-bottom: 2px solid $brand;
-      color: $brand;
-    }
-
-    &.bold {
-      font-weight: bold;
       color: $brand;
     }
   }
@@ -317,6 +321,10 @@ a {
 
 .pagination .current {
   background: $brand;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 // 02. Header

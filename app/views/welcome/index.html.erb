@@ -1,47 +1,35 @@
+<% provide :title, t("meta_tags.welcome_index.title") %>
+<% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% provide :tracking_page_number, "23" %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<div class="expanded highlight padding no-margin-top">
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p>
-        <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
-        <%= link_to t("layouts.header.more_info"), more_info_path %>
-      </p>
-      <div class="small-12 medium-6">
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button see-more expanded" %>
-      </div>
+<% cache ["welcome_index_20170713", user_signed_in?] do %>
+  <div class="welcome">
+
+    <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
+
+    <div class="no-margin-top">
+      <% if Budget.balloting.any? %>
+        <%= render "budgets_module_balloting" %>
+      <% elsif Budget.reviewing_ballots.any? %>
+        <%= render "budgets_module_reviewing" %>
+      <% elsif Budget.finished.any? %>
+        <%= render "budgets_module_finished" %>
+      <% end %>
     </div>
 
-    <div class="hide-for-small-only small-12 medium-5 column text-center">
-      <%= image_tag(image_path_for("icon_home.png"), size: "330x240", alt:"") %>
+    <%= render "cards" %>
+
+    <%= render "features" %>
+
+    <div class="row padding slogan">
+      <div class="small-12 column text-center">
+        <p><%= t("layouts.header.open_city_slogan_html") %></p>
+          <%= link_to t("welcome.more_information", org_name: setting['org_name']),
+                      more_info_path, class: "button hollow large" %>
+      </div>
     </div>
   </div>
-</div>
-
-<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
-  <main>
-    <div class="row text-center margin">
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.debates.title") %></h2>
-        <p><%= t("welcome.debates.description") %></p>
-
-      </div>
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.proposal.title") %></h2>
-        <p><%= t("welcome.proposal.description") %></p>
-      </div>
-
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.decide.title") %></h2>
-        <p><%= t("welcome.decide.description") %></p>
-      </div>
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.do.title") %></h2>
-        <p><%= t("welcome.do.description") %></p>
-      </div>
-    </div>
-  </main>
 <% end %>

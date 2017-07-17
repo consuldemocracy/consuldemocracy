@@ -1,13 +1,24 @@
 class Users::SessionsController < Devise::SessionsController
+  after_filter :after_login, only: :create
 
   private
 
     def after_sign_in_path_for(resource)
-      if !verifying_via_email? && resource.show_welcome_screen?
+      if false #current_user.poll_officer? && current_user.has_poll_active?
+        if current_user.poll_officer.letter_officer?
+          new_officing_letter_path
+        else
+          new_officing_booth_path
+        end
+      elsif !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
         super
       end
+    end
+
+    def after_login
+      log_event("login", "successful_login")
     end
 
     def after_sign_out_path_for(resource)

@@ -23,10 +23,9 @@ es:
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
       has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
-      link: Consul
-      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
-      not_in_census: Este documento no está registrado.
-      not_in_census_info: 'Las personas no empadronadas pueden participar en el Portal de Gobierno Abierto con las siguientes posibilidades:'
+      in_census_has_following_permissions: 'Este usuario puede participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
+      not_in_census: Este documento no está registrado en el Padrón Municipal de Madrid.
+      not_in_census_info: 'Las personas no empadronadas en Madrid pueden participar en el Portal de Gobierno Abierto del Ayuntamiento de Madrid con las siguientes posibilidades:'
       please_check_account_data: Compruebe que los datos anteriores son correctos para proceder a verificar la cuenta completamente.
       title: Gestión de usuarios
       under_age: No tienes edad suficiente para verificar tu cuenta.
@@ -51,9 +50,9 @@ es:
       create_spending_proposal: Crear propuesta de inversión
       print_spending_proposals: Imprimir propts. de inversión
       support_spending_proposals: Apoyar propts. de inversión
-      create_budget_investment: Crear proyectos de inversión
-      print_budget_investments: Imprimir proyectos de inversión
-      support_budget_investments: Apoyar proyectos de inversión
+      create_budget_investment: Crear proyectos de gasto
+      print_budget_investments: Imprimir proyectos de gasto
+      support_budget_investments: Apoyar proyectos de gasto
       users: Usuarios
       edit_user_accounts: Editar cuenta de usuario
       user_invites: Invitaciones para usuarios
@@ -63,10 +62,10 @@ es:
       support_proposals: Apoyar propuestas
       vote_proposals: Participar en las votaciones finales
     print:
-      proposals_info: Haz tu propuesta en http://url.consul
+      proposals_info: Haz tu propuesta en http://decide.madrid.es
       proposals_note: Las propuestas más apoyadas serán llevadas a votación. Y si las acepta una mayoría, el Ayuntamiento las llevará a cabo.
       proposals_title: 'Propuestas:'
-      spending_proposals_info: Participa en http://url.consul
+      spending_proposals_info: Participa en http://decide.madrid.es
       spending_proposals_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.
       budget_investments_info: Participa en http://url.consul
       budget_investments_note: Los presupuestos participativos se invertirán en las propuestas de inversión más apoyadas.

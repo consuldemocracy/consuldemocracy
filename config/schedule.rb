@@ -26,3 +26,11 @@ end
 every 1.day, at: '5:00 am' do
   rake "-s sitemap:refresh"
 end
+
+every 29.minutes do
+  rake "-s budgets:stats:balloting"
+end
+
+every 1.day, at: '4:00 am', roles: [:cron] do
+  rake "csv:export"
+end

@@ -7,6 +7,7 @@
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+
             <p class="investment-project-info">
 
               <%= l investment.created_at.to_date %>
@@ -26,6 +27,10 @@
                   <span class="label round level-<%= investment.author.official_level %>">
                     <%= investment.author.official_position %>
                   </span>
+                <% end %>
+                <% if investment.label.present? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round is-author"><%= investment.label %></span>
                 <% end %>
               <% end %>
 

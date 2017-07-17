@@ -1,0 +1,157 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: lobbies_draft_url %>
+<% end %>
+
+<div class="row margin">
+  <div class="small-12 column">
+    <%= back_link_to lobbies_path %>
+
+    <div class="float-right">
+      <a class="button warning" type="button" data-toggle="annotator-help">
+        <sub><span class="icon-edit"></span></sub>&nbsp;
+        <%= t("annotator.help.title") %>
+      </a>
+
+      <div class="dropdown-pane" id="annotator-help" data-dropdown data-auto-focus="true">
+        <% if user_signed_in? %>
+          <%= t("annotator.help.alt") %>
+        <% else %>
+          <p>
+            <%= t("annotator.help.text",
+                sign_in: link_to(t("annotator.help.text_sign_in"), new_user_session_path),
+                sign_up: link_to(t("annotator.help.text_sign_up"), new_user_registration_path)).html_safe %>
+          </p>
+        <% end %>
+
+        <%= image_tag ("annotator_help.gif"), alt: t("annotator.help.alt") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-10 small-centered column">
+    <section data-annotatable-type="legislation"
+             data-annotatable-id="9"
+             id="lobbies_body">
+
+      <h1 class="text-center lead">Acuerdo del Pleno del Ayuntamiento de Madrid por el que se establecen las líneas básicas del Registro de lobbies regulado en la Ordenanza de Transparencia de la Ciudad de Madrid</h1>
+
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#primero">Primero.- Concepto.</a></li>
+        <li><a href="#segundo">Segundo.- Ejercicio de la actividad de lobby.</a></li>
+        <li><a href="#tercero">Tercero.- Forma y momento de la inscripción.</a></li>
+        <li><a href="#cuarto">Cuarto.-Contenido mínimo del registro.</a></li>
+        <li><a href="#quinto">Quinto.- Documentación suministrada por el lobby.</a></li>
+        <li><a href="#sexto">Sexto.-Código de Conducta.</a></li>
+        <li><a href="#septimo">Séptimo.-Incentivos.</a></li>
+        <li><a href="#octavo">Octavo.- Control.</a></li>
+        <li><a href="#noveno">Noveno.- Publicidad.</a></li>
+        <li><a href="#decimo">Décimo.- Integración de registros.</a></li>
+      </ul>
+
+      <p>La Ordenanza de Transparencia de la Ciudad de Madrid, aprobada el 27 de julio de 2016 por el Pleno del Ayuntamiento y publicada en el Boletín Oficial de la Comunidad de Madrid el 17 de agosto de 2016, regula en su capítulo VI un Registro de lobbies para la inscripción y el control de las personas físicas y jurídicas o entidades sin personalidad jurídica que actúan directamente o en representación de un tercero o de un grupo organizado de carácter privado o no gubernamental con el objetivo de hacer valer algún interés en la elaboración de la normativa municipal y en el diseño y desarrollo de las políticas públicas municipales y en la toma de decisiones del Ayuntamiento de Madrid y sus organismos autónomos. Esta regulación sigue las pautas esenciales de la normativa comparada y de las pocas experiencias a nivel autonómico que existían hasta la fecha.</p>
+
+      <p>La ordenanza se limita a una regulación mínima de los aspectos sustantivos, remitiendo a una mayor concreción de sus aspectos técnicos y auxiliares mediante directrices de la Junta de Gobierno de la Ciudad de Madrid en su disposición final quinta, que prevé además que la aprobación de estas directrices se efectuará en el plazo de seis meses desde la adopción de un acuerdo por el Pleno en el que se establezcan las líneas básicas del Registro.</p>
+
+      <p>Este acuerdo, por tanto, tiene como propósito esencial aclarar aquellos aspectos troncales que constituyen la razón de ser de este registro como una pieza clave de la política de transparencia de la Ciudad de Madrid. Tampoco se reiteran en el presente acuerdo aquellas cuestiones que por ser expresión de la voluntad normativa del Pleno del Ayuntamiento, están ya recogidas en la Ordenanza de Transparencia de la Ciudad de Madrid.</p>
+
+      <p>De conformidad con lo dispuesto en el artículo 80 del Reglamento Orgánico del Pleno del Ayuntamiento de Madrid, los miembros de la Junta de Gobierno podrán elevar al Pleno propuestas de Acuerdo, que deberán ir dictaminadas por la comisión correspondiente.</p>
+
+      <p>En su virtud, de conformidad con los artículos 80 y 82 del Reglamento Orgánico del Pleno del Ayuntamiento de Madrid, a propuesta del Delegado del Área de Gobierno de Participación Ciudadana, Transparencia y Gobierno Abierto, una vez dictaminada por la Comisión de Participación Ciudadana, Transparencia y Gobierno Abierto, el Pleno aprueba el siguiente,</p>
+
+      <h2 class="text-center">ACUERDO</h2>
+
+      <h3 id="primero">Primero.- Concepto.</h3>
+
+      <ol>
+        <li>Las personas o entidades que deben inscribirse en el Registro son todas aquellas que vayan a ejercer alguna de las actividades definidas en el artículo 34.1 de la Ordenanza de Transparencia de la Ciudad de Madrid (OTCM en adelante), ya se ejerzan directamente o por cuenta propia como por cuenta ajena.</li>
+
+        <li>La dispensa de inscripción en este Registro aplicable a las entidades asociativas a que alude el artículo 31.1 párrafo tercero de la OTCM, no supondrá una merma de publicidad en las actividades de lobby que ejerzan estas entidades. Esto supone que de esta actividad quedará reflejo tanto en las agendas institucionales de aquellos sujetos obligados a mantenerla con quienes se reúnan, como en el registro de Entidades Ciudadanas o de Lobbies en la forma que se decida.</li>
+
+        <li>Las organizaciones gubernamentales no están obligadas a inscribirse salvo que representen intereses corporativos o profesionales de manera similar a las asociaciones de naturaleza privada y ejerzan la actividad de lobby al margen de los foros orgánicos o institucionales municipales en los que participen como miembros o de los procedimientos en los que deban ser consultados.</li>
+      </ol>
+
+      <h3 id="segundo">Segundo.- Ejercicio de la actividad de lobby.</h3>
+
+      <p>Partiendo de la finalidad de la actividad de lobby a que se refiere el artículo 34.1 de la OTCM, se considerará tal la llevada a cabo a través de cualquier cauce, medio, soporte o canal, con independencia del lugar en el que se realice, ya se trate de dependencias municipales o no.</p>
+
+      <h3 id="tercero">Tercero.- Forma y momento de la inscripción.</h3>
+
+      <ul class="no-bullet">
+        <li>1. Tanto la solicitud de inscripción en el Registro, como su modificación y baja, se formularán electrónicamente mediante declaración responsable de conformidad con lo dispuesto en la Ley 39/2015, de 1 de octubre, de Procedimiento Administrativo Común de las Administraciones Públicas.</li>
+      </ul>
+
+      <p>La inscripción exigirá identificación electrónica y en los casos en que se ejerza lobby por cuenta ajena, acreditación por parte del representado de que la actividad de lobby se ejerce por cuenta suya.</p>
+
+      <ul class="no-bullet">
+        <li>2. Los concejales, titulares de órganos directivos y personal eventual deberán verificar previamente a la celebración de cualquier reunión o encuentro con personas o entidades que vayan a ejercer lobby, que están inscritas en el Registro. En caso de que se compruebe que no lo están, no podrán celebrarse la reunión o encuentro en tanto no se registren, de acuerdo con lo dispuesto en el artículo 40.2 de la OTCM.</li>
+      </ul>
+
+      <p>Si en el curso de una reunión o encuentro se apreciara que la persona o entidad lleva a cabo alguna actividad que exija el previo registro, se le advertirá expresamente de esta circunstancia, poniéndose fin en ese mismo momento a la citada reunión o encuentro.</p>
+
+      <h3 id="cuarto">Cuarto.-Contenido mínimo del registro.</h3>
+
+      <ul class="no-bullet">
+        <li>1. Tanto en el caso de que la actividad de lobby se ejerza por cuenta ajena como por cuenta propia se solicitarán los datos personales de la persona física o del representante de la persona jurídica y persona de contacto, respectivamente, que vaya a ejercer la actividad. Cuando el lobby sea persona jurídica, se facilitarán, asimismo, los datos de las personas físicas que van a ejercer materialmente la actividad de lobby.</li>
+      </ul>
+
+      <p>Quien suscriba la declaración responsable debe asegurar que posee y puede acreditar el consentimiento expreso de las personas físicas que van a ejercer la actividad de lobby para que sus datos meramente identificativos puedan hacerse públicos.</p>
+
+      <ul class="no-bullet">
+        <li>2. En la inscripción se hará constar el área de actividad e interés del lobby de acuerdo con la nomenclatura admitida comúnmente en los registros de esta naturaleza.</li>
+
+        <li>3. Se indicará expresamente si las personas físicas que van a actuar como lobby han trabajado al servicio del Ayuntamiento, sus organismos públicos, sociedades mercantiles o consorcios en los que participe en los dos años previos al registro, con el fin de prevenir posibles conflictos de intereses.</li>
+      </ul>
+
+      <p>Asimismo, se deberá recabar información acerca de los fondos públicos que la entidad representada por el lobby hubiera percibido con cargo a ayudas o subvenciones municipales o los contratos y convenios celebrados con el Ayuntamiento, sus organismos públicos, sociedades mercantiles o consorcios.</p>
+
+      <ul class="no-bullet">
+        <li>4. La inscripción podrá también requerir información sobre la naturaleza jurídica del lobby o los fondos que la entidad representada por él dedica a esta actividad.</li>
+      </ul>
+
+      <h3 id="quinto">Quinto.- Documentación suministrada por el lobby.</h3>
+
+      <p>De acuerdo con lo previsto en el artículo 36.2 de la OTCM, de los documentos principales que sirvan de soporte para la celebración de las reuniones o encuentros con lobbies y que sean suministrados por ellos, se dará publicidad teniendo en cuenta los límites contemplados en los artículos 14 y 15 de la Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.</p>
+
+      <p>El lobby podrá designar qué parte de la información suministrada desea, en su caso, que se mantenga a salvo de la publicidad por afectar a sus intereses económicos o comerciales, a la debida confidencialidad que deba guardarse o cualquier otro límite. Esta alegación será debidamente ponderada, teniendo en cuenta el interés general en la divulgación de la información pública y los intereses manifestados por el lobby.</p>
+
+      <h3 id="sexto">Sexto.-Código de Conducta.</h3>
+
+      <ol>
+        <li>La inscripción lleva aparejada para todos los sujetos que ejerzan la actividad de lobby, incluidas las entidades inscritas en el registro de Entidades Ciudadanas, la aceptación del código de conducta que aparece en el art. 37 de la OTCM y de todas las obligaciones que se desprenden de su título V.</li>
+
+        <li>La inscripción supondrá, asimismo, el compromiso de no efectuar regalos no permitidos según lo dispuesto en el Acuerdo de 5 de noviembre de 2015 de la Junta de Gobierno de la Ciudad de Madrid por el que se establece el régimen de regalos que reciban el Alcalde, los Miembros de la Junta de Gobierno, los Concejales con responsabilidades de gobierno, los Concejales-Presidentes de los Distritos, los titulares de los órganos directivos y los empleados públicos del Ayuntamiento de Madrid y sus organismos autónomos.</li>
+      </ol>
+
+      <h3 id="septimo">Séptimo.-Incentivos.</h3>
+
+      <p>La solución técnica del registro podrá permitir la inclusión del lobby en listas de distribución sobre contenidos relacionados con las áreas de actividad o interés que haya manifestado, con el fin de facilitar su participación, así como solicitar reuniones y encuentros con quienes mantengan agenda institucional.</p>
+
+      <p>La información relativa a los procedimientos en los que haya intervenido podrá incluir una mención expresa de su participación.</p>
+
+      <h3 id="octavo">Octavo.- Control.</h3>
+
+      <ol>
+        <li>La inexactitud, falsedad u omisión, de carácter esencial, de cualquier dato o información que se incorpore a la declaración responsable o la no presentación ante el Ayuntamiento de la documentación que sea en su caso requerida para acreditar el cumplimiento de lo declarado, determinará la baja en el registro, la pérdida de los incentivos y imposibilidad de mantener reuniones con concejales, titulares de los órganos directivos del Ayuntamiento de Madrid y sus organismos autónomos y el personal eventual.</li>
+
+        <li>La Comisión de Seguimiento controlará que los concejales, los titulares de los órganos directivos del Ayuntamiento de Madrid y sus organismos autónomos y el personal eventual no celebren reuniones ni encuentros con personas no inscritas en el Registro de lobbies, cuando las reuniones tengan por objeto actividades sujetas a registro.</li>
+      </ol>
+
+      <p>Se articulará un buzón electrónico para que se puedan comunicar de manera anónima los incumplimientos de lo dispuesto en el título V de la OTCM y en este acuerdo. De las comunicaciones se dará cuenta a la Comisión de Seguimiento de la OTCM.</p>
+
+      <h3 id="noveno">Noveno.- Publicidad.</h3>
+
+      <p>La información existente en el Registro será accesible y permanecerá publicada, reflejándose el estado de alta o baja del lobby y garantizando el cumplimiento de la normativa de protección de datos personales.</p>
+
+      <p>La información que obre en el Registro podrá extraerse en formato reutilizable.</p>
+
+      <h3 id="decimo">Décimo.- Integración de registros.</h3>
+
+      <p>Según lo que establece la disposición adicional decimosegunda de la OTCM, con el fin de simplificar la gestión del Registro de lobbies, se promoverá la integración o conexión del Registro con otros similares, ya sean de ámbito territorial superior o de otras entidades locales, que pudieran crearse en el futuro.</p>
+
+    </section>
+  </div>
+</div>
+

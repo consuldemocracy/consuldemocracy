@@ -1,7 +1,10 @@
-<% provide :title do %><%= t('proposals.index.title') %><% end %>
+<% provide :title, t("meta_tags.proposals.title") %>
+<% provide :meta_description, t("meta_tags.proposals.description") %>
+<% provide :tracking_page_number, "29" %>
+
 <% content_for :header_addon do %>
   <%= render "shared/search_form",
-             search_path: proposals_path(page: 1),
+             search_path: current_path_with_query_params(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
 <% end %>
 <% content_for :canonical do %>
@@ -44,6 +47,10 @@
         <%= render "shared/banner" %>
       <% end %>
 
+      <% if Budget.balloting.any? %>
+        <%= render "budgets/banner" %>
+      <% end %>
+
       <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
@@ -57,13 +64,19 @@
         </div>
       <% end %>
 
-      <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
-
+      <% unless params[:retired].present? %>
+        <%= render "shared/advanced_search",
+                   search_path: path_to_search_proposals  %>
+      <% end %>
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
-      <div class="show-for-small-only">
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
-      </div>
+      <% if request.path != human_rights_proposals_path %>
+        <div class="show-for-small-only">
+          <%= link_to t("proposals.index.start_proposal"),
+                      new_proposal_path,
+                      class: 'button expanded' %>
+        </div>
+      <% end %>
 
       <div id="proposals-list">
         <%= render partial: 'proposals/proposal', collection: @proposals %>
@@ -73,14 +86,21 @@
 
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        <% if request.path != human_rights_proposals_path %>
+          <%= link_to t("proposals.index.start_proposal"),
+                      new_proposal_path,
+                      class: 'button expanded' %>
+        <% end %>
+
         <% if params[:retired].blank? %>
-            <%= render 'categories' %>
+          <%= render 'categories' %>
+          <% if request.path != human_rights_proposals_path %>
             <%= render "shared/tag_cloud", taggable: 'proposal' %>
-            <%= render 'geozones' %>
-            <%= render 'popular' %>
           <% end %>
-          <%= render 'retired' %>
+          <%= render 'geozones' %>
+          <%= render 'popular' %>
+        <% end %>
+        <%= render 'retired' %>
       </aside>
     </div>
 

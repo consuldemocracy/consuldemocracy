@@ -112,6 +112,8 @@ feature 'Admin booths assignments' do
                          officer_assignment: final_officer_assignment,
                          date: final_officer_assignment.date,
                          count: 5678)
+      create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.starts_at.to_date)
+      create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.ends_at.to_date)
 
       booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
       other_recount = create(:poll_recount, booth_assignment: booth_assignment_2, count: 100)
@@ -122,6 +124,13 @@ feature 'Admin booths assignments' do
       within('#assigned_booths_list') { click_link booth.name }
 
       click_link 'Recounts'
+
+      within('#totals') do
+        within("#total_daily") { expect(page).to have_content "111" }
+        within("#total_final") { expect(page).to have_content "5678" }
+        within("#total_system") { expect(page).to have_content "2" }
+      end
+
       within('#recounts_list') do
         expect(page).to_not have_content other_recount.count
 
@@ -132,11 +141,6 @@ feature 'Admin booths assignments' do
         within("#recounting_#{recount_2.date.strftime('%Y%m%d')}") do
           expect(page).to have_content recount_2.count
         end
-
-        within("#recounting_#{final_recount.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content final_recount.count
-        end
-
       end
     end
 

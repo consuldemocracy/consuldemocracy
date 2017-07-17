@@ -24,7 +24,7 @@
             <%= t("polls.index.cant_answer_verify") %>
           </span>
       <% end %>
-    <% elsif !poll.votable_by?(current_user) %>
+    <% elsif poll.voted_by?(current_user) %>
       <div class="icon-poll-answer already-answer" title="<%= t("polls.index.already_answer") %>">
         <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
       </div>
@@ -60,7 +60,7 @@
         </ul>
       </div>
       <div class="small-12 medium-6 large-4 column end">
-        <%= link_to poll, class: "button expanded" do %>
+        <%= link_to poll_path(poll, anchor: "questions"), class: "button expanded", data: { no_turbolink: true } do %>
           <% if poll.expired? %>
             <%= t("polls.index.participate_button_expired") %>
           <% elsif poll.incoming? %>

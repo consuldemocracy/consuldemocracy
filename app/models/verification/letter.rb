@@ -28,9 +28,24 @@ class Verification::Letter
 
   def validate_correct_code
     return if errors.include?(:verification_code)
-    if user.try(:letter_verification_code).to_i != verification_code.to_i
+    if correct_letter_code? || correct_reedemable_code?
+      true
+    else
       errors.add(:verification_code, I18n.t('verification.letter.errors.incorrect_code'))
     end
+  end
+
+  def correct_letter_code?
+    return false unless user.try(:letter_verification_code).present?
+    user.try(:letter_verification_code).to_i == verification_code.to_i
+  end
+
+  def correct_reedemable_code?
+    RedeemableCode.redeemable?(verification_code)
+  end
+
+  def redeem_code
+    RedeemableCode.redeem(verification_code, user)
   end
 
   def verify?

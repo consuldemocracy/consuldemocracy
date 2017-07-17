@@ -1,0 +1,53 @@
+<h3 id="1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</h3>
+
+<% @poll_1.questions.order(id: :asc).each do |question| %>
+  <table>
+    <caption>
+      <%= question.title %>
+    </caption>
+    <% answers_votes = {} %>
+    <% max_i = 0 %>
+    <% question.valid_answers.each_with_index do |answer, i| %>
+      <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
+      <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
+    <% end %>
+
+    <thead>
+      <tr>
+        <% answers_votes.keys.each_with_index do |answer, i| %>
+          <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
+        <% end %>
+        <th scope="col">EN BLANCO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% answers_votes.values.each_with_index do |votes, i| %>
+          <td  class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_1)) %>%)</td>
+        <% end %>
+        <% whites = total_votes_for_poll(@poll_1) - answers_votes.values.sum %>
+        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_1)) %>%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <% if question.id == 1 %>
+      <%= link_to "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" do %>
+        Ir a la propuesta "Billete único para el transporte público"
+      <% end %>
+    <% elsif question.id == 2 %>
+      <%= link_to "https://decide.madrid.es/proposals/199-madrid-100-sostenible" do %>
+        Ir a la propuesta "Madrid 100% Sostenible"
+      <% end %>
+    <% elsif question.id == 3 %>
+      <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/38" do %>
+        Ir a "Proyecto X: Welcome mother Nature"
+      <% end %>
+      <br>
+      <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/22" do %>
+        Ir a "Proyecto Y: UN PASEO POR LA CORNISA"
+      <% end %>
+    <% end %>
+  </p>
+<% end %>

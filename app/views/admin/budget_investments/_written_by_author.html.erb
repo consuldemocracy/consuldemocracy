@@ -19,6 +19,12 @@
         <strong><%= t("admin.budget_investments.show.by") %>:</strong>
         <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
       </p>
+      <% if @investment.organization_name.present? %>
+        <p>
+          <strong><%= t("admin.budget_investments.show.organization_name") %>:</strong>
+          <%= @investment.organization_name %>
+        </p>
+      <% end %>
     </div>
 
     <div class="small-12 medium-4 column">
@@ -56,3 +62,9 @@
 <% end %>
 
 <%= safe_html_with_links @investment.description %>
+
+<p id="user-tags">
+  <strong><%= t("admin.budget_investments.show.tags") %> del usuario:</strong>
+
+  <%= @investment.tag_list.sort.join(', ') %>
+</p>

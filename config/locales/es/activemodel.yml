@@ -8,7 +8,7 @@ es:
       verification:
         residence:
           document_type: "Tipo documento"
-          document_number: "Numero de documento (incluida letra)"
+          document_number: "Numero de documento"
           date_of_birth: "Fecha de nacimiento"
           postal_code: "Código postal"
         sms:
@@ -18,5 +18,6 @@ es:
           recipient: "Email"
       officing/residence:
         document_type: "Tipo documento"
-        document_number: "Numero de documento (incluida letra)"
+        document_number: "Numero de documento"
         year_of_birth: "Año de nacimiento"
+        postal_code: "Código postal"
