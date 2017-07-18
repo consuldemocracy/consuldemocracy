@@ -11,4 +11,5 @@ Disallow: /*?*locale
 Disallow: /*?*order
 Disallow: /*?*search
 Disallow: /*?*locale-switcher
+Disallow: /*?*filter
 Disallow: user_id
