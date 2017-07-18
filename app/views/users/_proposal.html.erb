@@ -5,15 +5,16 @@
     <%= proposal.summary %>
   </td>
 
-  <% if author?(proposal) %>
+  <% if proposal.retired? %>
+
     <td class="text-center">
       <%= link_to t("users.proposals.send_notification"),
                   new_proposal_notification_path(proposal_id: proposal.id),
                   class: 'button hollow' %>
     </td>
-  <% end %>
 
-  <% if author?(proposal) || proposal.retired? %>
+  <% elsif author?(proposal) %>
+
     <td class="text-center">
       <% if proposal.retired? %>
         <span class="label alert"><%= t('users.proposals.retired') %></span>
@@ -23,6 +24,7 @@
                     class: 'button hollow alert' %>
       <% end %>
     </td>
+
   <% end %>
 
 </tr>
