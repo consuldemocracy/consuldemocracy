@@ -53,7 +53,8 @@ If you want to overwrite any image, firstly you need to findout the filename, an
 * logo_email.png
 * logo_header.png
 * map.jpg
-* social-media-icon.png
+* social_media_icon.png
+* social_media_icon_twitter.png
 
 ### Views (HTML)
 

@@ -1,13 +1,13 @@
 <% provide :title, t("budgets.results.page_title", budget: @budget.name) %>
 <% content_for :meta_description do %><%= ActionView::Base.full_sanitizer.sanitize(@budget.description_finished) %><% end %>
 <% provide :social_media_meta_tags do %>
-<meta id="ogimage" property="og:image" 
+<meta id="ogimage" property="og:image"
       content="<%= image_url '/social_media_budgets_results.png' %>"/>
 <%= render "shared/social_media_meta_tags",
             social_url: budget_results_url(@budget),
             social_title: @budget.name,
             social_description: ActionView::Base.full_sanitizer.sanitize(@budget.description_finished) %>
-<meta name="twitter:image" 
+<meta name="twitter:image"
       content="<%= image_url '/social_media_budgets_results_twitter.png' %>" />
 <% end %>
 
@@ -52,7 +52,7 @@
           <li>
             <%= link_to heading.name,
                         custom_budget_heading_result_path(@budget, heading_id: heading.to_param),
-                        class: heading.to_param == @heading.to_param ? 'bold' : '' %>
+                        heading.to_param == @heading.to_param ? { class: 'active' } : {} %>
           </li>
         <% end %>
       </ul>
