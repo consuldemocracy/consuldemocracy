@@ -8,12 +8,16 @@
   <% if proposal.retired? %>
 
     <td class="text-center">
+      <span class="label alert"><%= t('users.proposals.retired') %></span>
+    </td>
+
+  <% elsif author?(proposal) %>
+
+    <td class="text-center">
       <%= link_to t("users.proposals.send_notification"),
                   new_proposal_notification_path(proposal_id: proposal.id),
                   class: 'button hollow' %>
     </td>
-
-  <% elsif author?(proposal) %>
 
     <td class="text-center">
       <% if proposal.retired? %>

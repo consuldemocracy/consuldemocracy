@@ -17,11 +17,8 @@
         <table>
           <tbody>
             <% @follows.where(followable_type: followable_type).each do |follow| %>
-              <% if followable_type == "Proposal" %>
-                <%= render "proposal", proposal: follow.followable %>
-              <% elsif followable_type == "Budget::Investment" %>
-                <%= render "budget_investment", budget_investment: follow.followable %>
-              <% end %>
+              <%= render entity_partial(followable_type),
+                         entity_partial(followable_type).to_sym => follow.followable %>
             <% end %>
           </tbody>
         </table>

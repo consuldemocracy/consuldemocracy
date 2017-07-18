@@ -62,6 +62,10 @@ module FollowsHelper
     }.invert[entity]
   end
 
+  def entity_partial(class_name)
+    class_name.parameterize.gsub('-','_')
+  end
+
   private
 
     def followed?(followable)
