@@ -53,7 +53,8 @@ Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene
 * logo_email.png
 * logo_header.png
 * map.jpg
-* social-media-icon.png
+* social_media_icon.png
+* social_media_icon_twitter.png
 
 ### Vistas (HTML)
 
