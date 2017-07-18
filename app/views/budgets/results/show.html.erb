@@ -10,36 +10,48 @@
   <%= render "shared/canonical", href: budget_results_url(@budget) %>
 <% end %>
 
-<div class="expanded budget no-margin-top">
-  <div class="row">
-    <div class="small-12 column padding text-center">
-      <%= back_link_to budget_path(@budget) %>
-
-      <h2 class="title">
-        <%= @budget.name %><br>
-        <%= t("budgets.results.heading") %>
-      </h2>
+<div class="budgets-stats">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 column text-center">
+        <%= back_link_to budget_path(@budget) %>
+        <h1 class="title"><%= t("budgets.results.heading") %><br><%= @budget.name %></h1>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="row margin-top">
-  <div class="small-12 medium-3 column">
-    <ul class="menu vertical no-margin-top no-padding-top">
-      <li>
-        <strong>
-          <%= t("budgets.results.geozone_selection_title") %>
-        </strong>
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title is-active">
+        <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+        <%= link_to t("budgets.results.link"), budget_results_path(@budget), class: "is-active"  %>
       </li>
-
-      <% @budget.headings.each do |heading| %>
-        <% active_class = heading.id.to_s == params[:heading_id] ? 'bold' : '' %>
-        <li class="<%= active_class %>">
-          <%= link_to heading.name,
-                      budget_results_path(@budget, heading_id: heading.id) %>
-        </li>
-      <% end %>
+      <li class="tabs-title">
+        <%# link_to t("budgets.stats.link"), budget_stats_path(@budget)%>
+      </li>
     </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-3 large-2 column">
+    <div class="row">
+      <ul class="menu vertical no-margin-top no-padding-top">
+        <h3>
+          <%= t("budgets.results.heading_selection_title") %>
+        </h3>
+
+        <% @budget.headings.order('id ASC').each do |heading| %>
+          <li>
+            <%= link_to heading.name,
+                        budget_results_path(@budget, heading_id: heading.to_param),
+                        class: heading.to_param == @heading.to_param ? 'active' : '' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <span class="float-right"><%= link_to t("budgets.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("budgets.results.hide_discarded_link")} %></span>

@@ -7,25 +7,21 @@ module Budgets
 
     def show
       authorize! :read_results, @budget
-      @investments = load_result.investments
+      @investments = Budget::Result.new(@budget, @heading).investments
     end
 
     private
-
-      def load_result
-        Budget::Result.new(@budget, @heading)
-      end
 
       def load_budget
         @budget = Budget.find_by(id: params[:budget_id])
       end
 
       def load_heading
-        if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
-        else
-          @heading = @budget.headings.first
-        end
+        @heading = if params[:heading_id].present?
+                     @budget.headings.find(params[:heading_id])
+                   else
+                     @budget.headings.first
+                   end
       end
 
   end
