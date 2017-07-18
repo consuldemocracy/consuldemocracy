@@ -56,10 +56,10 @@ module FollowsHelper
   end
 
   def entity_icon(entity)
-    case entity
-    when "Proposal" then "proposals"
-    when "Budget::Investment" then "budget"
-    end
+    {
+      proposals: 'Proposal',
+      budget: 'Budget::Investment'
+    }.invert[entity]
   end
 
   private
