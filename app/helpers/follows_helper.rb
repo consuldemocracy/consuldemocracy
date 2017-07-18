@@ -9,23 +9,22 @@ module FollowsHelper
   end
 
   def follow_entity_text(followable)
-    entity = followable.class.name.gsub('::', '/').downcase
+    entity = followable.class.name.underscore
     t('shared.follow_entity', entity: t("activerecord.models.#{entity}.one").downcase)
   end
 
   def follow_entity_title(followable)
-    entity = followable.class.name.gsub('::', '/').downcase
+    entity = followable.class.name.underscore
     t('shared.follow_entity_title', entity: t("activerecord.models.#{entity}.one").downcase)
   end
 
   def unfollow_entity_text(followable)
-    entity = followable.class.name.gsub('::', '/').downcase
+    entity = followable.class.name.underscore
     t('shared.unfollow_entity', entity: t("activerecord.models.#{entity}.one").downcase)
   end
 
   def entity_full_name(followable)
-    name = followable.class.name
-    name.downcase.gsub("::", "-")
+    followable.class.name.parameterize
   end
 
   def follow_link_wrapper_id(followable)
@@ -53,8 +52,7 @@ module FollowsHelper
   end
 
   def entity_title(title)
-    entity = title.gsub('::', '/').downcase
-    t("activerecord.models.#{entity}.other")
+    t("activerecord.models.#{title.underscore}.other")
   end
 
   def entity_icon(entity)
