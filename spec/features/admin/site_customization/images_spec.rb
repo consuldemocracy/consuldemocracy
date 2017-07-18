@@ -46,14 +46,14 @@ feature "Admin custom images" do
       click_link "Custom Images"
     end
 
-    within("tr.social-media-icon") do
+    within("tr.social_media_icon") do
       attach_file "site_customization_image_image", "spec/fixtures/files/social_media_icon.png"
       click_button "Update"
     end
 
     expect(page).to have_css("img[src*='social_media_icon.png']")
 
-    within("tr.social-media-icon") do
+    within("tr.social_media_icon") do
       click_link "Delete"
     end
 
