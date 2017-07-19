@@ -1,6 +1,6 @@
 <ul class="accordion" data-accordion data-allow-all-closed="true">
 
-  <% @followable_types.each do |followable_type| %>
+  <% @follows.each do |followable_type, follows| %>
 
     <li class="accordion-item" data-accordion-item>
 
@@ -16,9 +16,8 @@
       <div class="accordion-content" data-tab-content>
         <table>
           <tbody>
-            <% @follows.where(followable_type: followable_type).each do |follow| %>
-              <%= render entity_partial(followable_type),
-                         entity_partial(followable_type).to_sym => follow.followable %>
+            <% follows.each do |follow| %>
+              <%= render_follow(follow) %>
             <% end %>
           </tbody>
         </table>

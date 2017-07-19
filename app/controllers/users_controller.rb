@@ -68,8 +68,7 @@ class UsersController < ApplicationController
     end
 
     def load_follows
-      @followable_types = @user.follows.pluck(:followable_type).uniq
-      @follows = @user.follows
+      @follows = @user.follows.group_by(&:followable_type)
     end
 
     def valid_access?
