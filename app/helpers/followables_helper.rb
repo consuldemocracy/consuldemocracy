@@ -8,17 +8,8 @@ module FollowablesHelper
     current_user && followed?(followable)
   end
 
-  def entity_title(title)
-    t("activerecord.models.#{title.underscore}.other")
-  end
-
-  def followable_full_name(followable)
-    followable.class.name.parameterize
-  end
-
-  def followable_title(followable)
-    entity = followable.class.name.underscore
-    t('shared.followable_title', entity: t("activerecord.models.#{entity}.one").downcase)
+  def followable_type_title(followable_type)
+    t("activerecord.models.#{followable_type.underscore}.other")
   end
 
   def followable_icon(followable)
