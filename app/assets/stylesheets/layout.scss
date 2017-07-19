@@ -533,6 +533,14 @@ header {
   }
 }
 
+.top-bar-right {
+
+  .active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
 .submenu {
   border-bottom: 1px solid $border;
   clear: both;
