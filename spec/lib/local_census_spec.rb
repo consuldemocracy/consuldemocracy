@@ -28,7 +28,7 @@ describe LocalCensus do
   end
 
   describe '#call' do
-    let(:invalid_body) { create(:local_census_record, postal_code: '') }
+    let(:invalid_body) { nil }
     let(:valid_body) { create(:local_census_record) }
 
     it "returns the response for the first valid variant" do
