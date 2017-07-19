@@ -504,7 +504,7 @@ es:
     flag: Denunciar como inapropiado
     follow: "Seguir"
     follow_entity: "Seguir %{entity}"
-    follow_entity_title: "Seguir %{entity}: Podrás participar y recibir notificaciones de cualquier suceso relacionado."
+    followable_title: "Seguir %{entity}: Podrás participar y recibir notificaciones de cualquier suceso relacionado."
     hide: Ocultar
     print:
       print_button: Imprimir esta información
