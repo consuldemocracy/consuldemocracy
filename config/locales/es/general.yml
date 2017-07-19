@@ -504,7 +504,17 @@ es:
     flag: Denunciar como inapropiado
     follow: "Seguir"
     follow_entity: "Seguir %{entity}"
-    followable_title: "Seguir %{entity}: Podrás participar y recibir notificaciones de cualquier suceso relacionado."
+    followable:
+      budget_investment:
+        create:
+          notice_html: "¡Ahora estás siguiendo este proyecto de inversión! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+        destroy:
+          notice_html: "¡Has dejado de seguir este proyecto de inverisión! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
+      proposal:
+          create:
+            notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+          destroy:
+            notice_html: "¡Has dejado de seguir esta propuesta ciudadana! </br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
     hide: Ocultar
     print:
       print_button: Imprimir esta información

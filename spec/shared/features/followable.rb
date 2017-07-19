@@ -49,8 +49,21 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       within "##{dom_id(followable)}" do
         click_link "Follow"
 
+        expect(page).not_to have_link "Follow"
         expect(page).to have_link "Unfollow"
       end
+    end
+
+    scenario "Should display new follower notice after user clicks on follow button", :js do
+      user = create(:user)
+      login_as(user)
+
+      visit send(followable_path, arguments)
+      within "##{dom_id(followable)}" do
+        click_link "Follow"
+      end
+
+      expect(page).to have_content strip_tags(t("shared.followable.#{followable_class_name}.create.notice_html"))
     end
 
     scenario "Display unfollow button when user already following" do
@@ -63,7 +76,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       expect(page).to have_link("Unfollow")
     end
 
-    scenario "Should display follow button after user clicks on unfollow button", :js do
+    scenario "Should update follow button and show destroy notice after user clicks on unfollow button", :js do
       user = create(:user)
       follow = create(:follow, user: user, followable: followable)
       login_as(user)
@@ -72,8 +85,22 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
       within "##{dom_id(followable)}" do
         click_link "Unfollow"
 
+        expect(page).not_to have_link "Unfollow"
         expect(page).to have_link "Follow"
       end
+    end
+
+    scenario "Should display destroy follower notice after user clicks on unfollow button", :js do
+      user = create(:user)
+      follow = create(:follow, user: user, followable: followable)
+      login_as(user)
+
+      visit send(followable_path, arguments)
+      within "##{dom_id(followable)}" do
+        click_link "Unfollow"
+      end
+
+      expect(page).to have_content strip_tags(t("shared.followable.#{followable_class_name}.destroy.notice_html"))
     end
 
   end
