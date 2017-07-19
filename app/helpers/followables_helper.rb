@@ -1,11 +1,7 @@
 module FollowablesHelper
 
-  def show_follow_action?(followable)
-    current_user && !followed?(followable)
-  end
-
-  def show_unfollow_action?(followable)
-    current_user && followed?(followable)
+  def followed?(user, followable)
+    Follow.followed?(user, followable)
   end
 
   def followable_type_title(followable_type)
@@ -31,10 +27,11 @@ module FollowablesHelper
     followable.class.to_s.parameterize.gsub('-', '_')
   end
 
-  private
-
-    def followed?(followable)
-      Follow.followed?(current_user, followable)
+  def find_or_build_follow(user, followable)
+    if followed?(user, followable)
+      return Follow.find_by(user: user, followable: followable)
     end
+    Follow.new(user: user, followable: followable)
+  end
 
 end

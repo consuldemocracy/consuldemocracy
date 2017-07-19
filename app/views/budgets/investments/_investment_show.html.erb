@@ -113,7 +113,9 @@
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
 
-      <%= render 'follows/followable_button', followable: investment if current_user %>
+      <% if current_user %>
+        <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
+      <% end %>
 
      </aside>
   </div>
