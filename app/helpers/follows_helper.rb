@@ -62,8 +62,16 @@ module FollowsHelper
     }.invert[entity]
   end
 
-  def entity_partial(class_name)
-    class_name.parameterize.gsub('-','_')
+  def entity_class_name(followable)
+    followable.class.to_s.parameterize.gsub('-','_')
+  end
+
+  def render_follow(follow)
+    followable = follow.followable
+    partial = entity_class_name(followable)
+    locals = {entity_class_name(followable).to_sym => followable}
+  
+    render partial, locals
   end
 
   private
