@@ -2,7 +2,6 @@ class Poll
   class OfficerAssignment < ActiveRecord::Base
     belongs_to :officer
     belongs_to :booth_assignment
-    has_one :recount
     has_many :final_recounts
     has_many :partial_results
     has_many :voters

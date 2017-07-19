@@ -478,13 +478,6 @@ FactoryGirl.define do
     end
   end
 
-  factory :poll_recount, class: 'Poll::Recount' do
-    association :officer_assignment, factory: :poll_officer_assignment
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
-  end
-
   factory :poll_final_recount, class: 'Poll::FinalRecount' do
     association :officer_assignment, factory: [:poll_officer_assignment, :final]
     association :booth_assignment, factory: :poll_booth_assignment

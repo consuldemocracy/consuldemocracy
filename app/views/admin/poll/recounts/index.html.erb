@@ -17,7 +17,6 @@
       </thead>
       <tbody>
         <% @booth_assignments.each do |booth_assignment| %>
-          <% recount = booth_assignment_sum_recounts(booth_assignment) %>
           <% final_recount = booth_assignment_sum_final_recounts(booth_assignment) %>
           <% system_count = booth_assignment.voters.size %>
           <tr id="<%= dom_id(booth_assignment) %>_recounts" class="booth_recounts">
