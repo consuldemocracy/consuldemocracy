@@ -6,4 +6,8 @@ module Followable
     has_many :followers, through: :follows, source: :user
   end
 
+  def followed_by?(user)
+    followers.include?(user)  
+  end
+
 end
