@@ -9,35 +9,14 @@ es:
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
       voters: "Validar documento y votar"
-      recounts: "Recuento diario"
       final_recounts: "Recuento final y escrutinio"
     polls:
-      index:
-        title: "Listado de votaciones"
-        no_polls: "No eres presidente de mesa en ninguna votación activa"
-        select_poll: "Selecciona votación"
-        add_recount: "Añadir recuento"
       final:
         title: "Listado de votaciones finalizadas"
         no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
         select_poll: "Selecciona votación"
         add_recount: "Añadir recuentos finales"
         add_results: "Añadir resultados"
-    recounts:
-      flash:
-        create: "Datos añadidos"
-        error_create: "Recuento NO añadido. Error en los datos"
-      new:
-        title: "%{poll} - Añadir recuento diario"
-        not_allowed: "No eres presidente de mesa en esta votación"
-        booth_date: "Fecha y urna"
-        select_booth_date: "Elige fecha y urna"
-        count: "Número de votos"
-        count_placeholder: "Número de votos"
-        submit: "Guardar"
-        recount_list: "Tus recuentos"
-        booth: "Urna"
-        date: "Fecha"
     final_recounts:
       flash:
         create: "Datos añadidos"

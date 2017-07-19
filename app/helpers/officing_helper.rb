@@ -17,11 +17,6 @@ module OfficingHelper
     options_for_select(options, params[:oa])
   end
 
-  def recount_to_compare_with_final_recount(final_recount)
-    recount = final_recount.booth_assignment.recounts.select {|r| r.date == final_recount.date}.first
-    recount.present? ? recount.count : "-"
-  end
-
   def system_recount_to_compare_with_final_recount(final_recount)
     final_recount.booth_assignment.voters.select {|v| v.created_at.to_date == final_recount.date}.size
   end
