@@ -368,6 +368,18 @@ FactoryGirl.define do
     end
   end
 
+  factory :document do
+    association :user, factory: :user
+
+    trait :proposal_document do
+      association :documentable, factory: :proposal
+    end
+
+    trait :budget_investment_document do
+      association :documentable, factory: :budget_investment
+    end
+  end
+
   factory :comment do
     association :commentable, factory: :debate
     user
