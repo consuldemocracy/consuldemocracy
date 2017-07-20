@@ -687,6 +687,7 @@ feature 'Admin budget investments' do
 
       login_as(valuator.user.reload)
       visit root_path
+      click_link "Admin"
       click_link "Valuation"
 
       within "#budget_#{budget.id}" do
@@ -717,6 +718,7 @@ feature 'Admin budget investments' do
 
       login_as(valuator.user.reload)
       visit root_path
+      click_link "Admin"
       click_link "Valuation"
 
       within "#budget_#{budget.id}" do

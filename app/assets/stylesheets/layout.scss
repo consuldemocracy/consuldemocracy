@@ -420,6 +420,32 @@ header {
       box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
   }
+
+  .menu {
+
+    &.is-dropdown-submenu {
+      margin: 0;
+      margin-top: rem-calc(-24);
+      padding: 0;
+    }
+
+    .is-submenu-item {
+      display: block;
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        color: $text;
+      }
+    }
+  }
+}
+
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-color: #fff transparent transparent;
+  }
 }
 
 .top-links {
