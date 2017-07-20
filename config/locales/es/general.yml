@@ -191,6 +191,7 @@ es:
       transparency_title: Transparencia
       transparency_url: https://transparency.consul
     header:
+      administration_menu: Admin
       administration: Administrar
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
