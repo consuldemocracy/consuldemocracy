@@ -19,6 +19,7 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
+    @document = Document.new(documentable: @proposal)
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 

@@ -9,6 +9,7 @@ class Proposal < ActiveRecord::Base
   include HasPublicAuthor
   include Graphqlable
   include Followable
+  include Documentable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
