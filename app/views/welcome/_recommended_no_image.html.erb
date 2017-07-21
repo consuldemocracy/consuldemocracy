@@ -10,7 +10,7 @@
         <div class="orbit" role="region" data-orbit data-use-m-u-i="false">
           <div class="orbit-wrapper">
             <ul class="orbit-container no-bullet" tabindex="0" >
-              <% current_user.recommended_debates.each_with_index do |debate, index| %>
+              <% recommended_debates.each_with_index do |debate, index| %>
                 <li class="orbit-slide <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
                   <div class="card">
                     <div class="card-section">
@@ -27,7 +27,7 @@
           </div>
 
           <nav class="orbit-bullets">
-            <% current_user.recommended_debates.each_with_index do |debate, index| %>
+            <% recommended_debates.each_with_index do |debate, index| %>
               <button data-slide="<%= index %>" class="<%= active_class(index) %>">
                 <span class="show-for-sr">Second slide details.</span>
               </button>
@@ -45,7 +45,7 @@
         <div class="orbit" role="region" data-orbit data-use-m-u-i="false">
           <div class="orbit-wrapper">
             <ul class="orbit-container no-bullet" tabindex="0" >
-              <% current_user.recommended_proposals.each_with_index do |proposal, index| %>
+              <% recommended_proposals.each_with_index do |proposal, index| %>
                 <li class="orbit-slide <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
                   <div class="card">
                     <div class="card-section">
@@ -61,7 +61,7 @@
             <div class="truncate"></div>
           </div>
           <nav class="orbit-bullets">
-            <% current_user.recommended_proposals.each_with_index do |proposal, index| %>
+            <% recommended_proposals.each_with_index do |proposal, index| %>
               <button data-slide="<%= index %>" class="<%= active_class(index) %>">
                 <span class="show-for-sr">Second slide details.</span>
               </button>
@@ -79,7 +79,7 @@
         <div class="orbit" role="region" data-orbit data-use-m-u-i="false">
           <div class="orbit-wrapper">
             <ul class="orbit-container no-bullet" tabindex="0" >
-              <% current_user.recommended_budget_investments.each_with_index do |budget_investment, index| %>
+              <% recommended_budget_investments.each_with_index do |budget_investment, index| %>
                 <li class="orbit-slide <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
                   <div class="card">
                     <div class="card-section">
@@ -95,7 +95,7 @@
             <div class="truncate"></div>
           </div>
           <nav class="orbit-bullets">
-            <% current_user.recommended_budget_investments.each_with_index do |budget_investment, index| %>
+            <% recommended_budget_investments.each_with_index do |budget_investment, index| %>
               <button data-slide="<%= index %>" class="<%= active_class(index) %>">
                 <span class="show-for-sr">Second slide details.</span>
               </button>

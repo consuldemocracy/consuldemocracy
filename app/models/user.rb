@@ -321,18 +321,29 @@ class User < ActiveRecord::Base
 
   def recommended_proposals
     already_followed_proposals_ids = Proposal.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
+    proposals_list = []
 
-    Proposal.tagged_with(interests, any: true).
-             where("author_id != ? AND id NOT IN (?)", id, already_followed_proposals_ids).
-             order("cached_votes_up DESC").limit(3)
+    if already_followed_proposals_ids.any?
+      proposals_list = Proposal.tagged_with(interests, any: true).
+                       where("author_id != ? AND id NOT IN (?)", id, already_followed_proposals_ids)
+    else
+      proposals_list = Proposal.where("author_id != ?", id)
+    end
+
+    proposals_list.order("cached_votes_up DESC").limit(3)
   end
 
   def recommended_budget_investments
     already_followed_investments_ids = Budget::Investment.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
+    investments_list = []
+    if already_followed_investments_ids.any?
+      investments_list = Budget::Investment.tagged_with(interests, any: true).
+               where("author_id != ? AND id NOT IN (?)", id, already_followed_investments_ids)
+    else
+      investments_list = Budget::Investment.where("author_id != ?", id)
+    end
 
-    Budget::Investment.tagged_with(interests, any: true).
-             where("author_id != ? AND id NOT IN (?)", id, already_followed_investments_ids).
-             order("cached_votes_up DESC").limit(3)
+    investments_list.order("cached_votes_up DESC").limit(3)
   end
 
   private
