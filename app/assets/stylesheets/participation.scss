@@ -248,7 +248,8 @@
 .debate-form,
 .proposal-form,
 .budget-investment-form,
-.spending-proposal-form {
+.spending-proposal-form,
+.document-form {
 
   .icon-debates,
   .icon-proposals,
@@ -262,7 +263,8 @@
     color: $debates;
   }
 
-  .icon-proposals {
+  .icon-proposals,
+  .icon-documents {
     color: $proposals;
   }
 
