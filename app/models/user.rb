@@ -314,18 +314,23 @@ class User < ActiveRecord::Base
   end
 
   def recommended_debates
-    Debate.tagged_with(interests, any: true).
-           where("author_id != ?", self).
-           order("cached_votes_total DESC").limit(3)
+    debates_list = []
+
+    if interests.any?
+      debates_list = Debate.tagged_with(interests, any: true).where("author_id != ?", self)
+    else
+      debates_list = Debate.where("author_id != ?", self)
+    end
+
+    debates_list.order("cached_votes_total DESC").limit(3)
   end
 
   def recommended_proposals
-    already_followed_proposals_ids = Proposal.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
     proposals_list = []
 
-    if already_followed_proposals_ids.any?
-      proposals_list = Proposal.tagged_with(interests, any: true).
-                       where("author_id != ? AND id NOT IN (?)", id, already_followed_proposals_ids)
+    if interests.any?
+      already_followed_proposals_ids = Proposal.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
+      proposals_list = Proposal.tagged_with(interests, any: true).where("author_id != ? AND id NOT IN (?)", id, already_followed_proposals_ids)
     else
       proposals_list = Proposal.where("author_id != ?", id)
     end
@@ -334,11 +339,11 @@ class User < ActiveRecord::Base
   end
 
   def recommended_budget_investments
-    already_followed_investments_ids = Budget::Investment.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
     investments_list = []
-    if already_followed_investments_ids.any?
-      investments_list = Budget::Investment.tagged_with(interests, any: true).
-               where("author_id != ? AND id NOT IN (?)", id, already_followed_investments_ids)
+
+    if interests.any?
+      already_followed_investments_ids = Budget::Investment.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
+      investments_list = Budget::Investment.tagged_with(interests, any: true).where("author_id != ? AND id NOT IN (?)", id, already_followed_investments_ids)
     else
       investments_list = Budget::Investment.where("author_id != ?", id)
     end

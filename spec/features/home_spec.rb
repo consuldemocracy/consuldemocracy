@@ -3,20 +3,78 @@ require 'rails_helper'
 feature "Home" do
 
   feature "For not logged users" do
+
     scenario 'Welcome message' do
       visit root_path
 
       expect(page).to have_content "Love the city, and it will become a city you love"
     end
+
+    scenario 'Not display recommended text' do
+      debate = create(:debate)
+
+      visit root_path
+
+      expect(page).not_to have_content "Recommendations that may interest you"
+    end
+
   end
 
   feature "For signed in users" do
-    scenario 'Redirect to proposals' do
-      login_as(create(:user))
-      visit root_path
 
-      expect(current_path).to eq proposals_path
+    before do
+      login_as(create(:user))
     end
+
+    feature "Recommended" do
+
+      scenario 'Display recommended text' do
+        debate = create(:debate)
+
+        visit root_path
+
+        expect(page).to have_content "Recommendations that may interest you"
+      end
+
+      scenario 'Display debates' do
+        debate = create(:debate)
+
+        visit root_path
+
+        expect(page).to have_content debate.title
+        expect(page).to have_content debate.description
+      end
+
+      scenario 'Display proposal' do
+        proposal = create(:proposal)
+
+        visit root_path
+
+        expect(page).to have_content proposal.title
+        expect(page).to have_content proposal.description
+      end
+
+      scenario 'Display investments' do
+        budget_investment = create(:budget_investment)
+
+        visit root_path
+
+        expect(page).to have_content budget_investment.title
+        expect(page).to have_content budget_investment.description
+      end
+
+      scenario 'Display orbit carrousel' do
+        debate = create_list(:debate, 3)
+
+        visit root_path
+
+        expect(page).to have_selector('li[data-slide="0"]')
+        expect(page).to have_selector('li[data-slide="1"]', visible: false)
+        expect(page).to have_selector('li[data-slide="2"]', visible: false)
+      end
+
+    end
+
   end
 
   feature 'IE alert' do

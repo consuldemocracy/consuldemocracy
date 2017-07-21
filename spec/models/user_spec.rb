@@ -680,4 +680,160 @@ describe User do
     end
 
   end
+
+  describe "#recommended_debates" do
+
+    let(:user)     { create(:user) }
+
+    it "Should return up to 3 debates" do
+      create_list(:debate, 4)
+
+      expect(user.recommended_debates.size).to eq 3
+    end
+
+    it "Should return debates ordered by cached_votes_total" do
+      debate1 = create(:debate, cached_votes_total: 1 )
+      debate2 = create(:debate, cached_votes_total: 5 )
+      debate3 = create(:debate, cached_votes_total: 10 )
+
+      result = user.recommended_debates
+
+      expect(result.first).to eq debate3
+      expect(result.second).to eq debate2
+      expect(result.third).to eq debate1
+    end
+
+    it "Should return debates related with user interests" do
+      debate1 =  create(:debate, tag_list: "Sport")
+      debate2 =  create(:debate, tag_list: "Politics")
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      result = user.recommended_debates
+
+      expect(result.size).to eq 1
+      expect(result).to eq [debate1]
+    end
+
+    it "Should not return debates when user is an author" do
+      debate1 =  create(:debate, author: user)
+      debate2 =  create(:debate)
+
+      result = user.recommended_debates
+
+      expect(result.size).to eq 1
+      expect(result).to eq [debate2]
+    end
+
+  end
+
+  describe "#recommended_proposals" do
+
+    let(:user)     { create(:user) }
+
+    it "Should return up to 3 debates" do
+      create_list(:proposal, 4)
+
+      expect(user.recommended_proposals.size).to eq 3
+    end
+
+    it "Should return proposals ordered by cached_votes_up" do
+      proposal1 = create(:proposal, cached_votes_up: 1 )
+      proposal2 = create(:proposal, cached_votes_up: 5 )
+      proposal3 = create(:proposal, cached_votes_up: 10 )
+
+      result = user.recommended_proposals
+
+      expect(result.first).to eq proposal3
+      expect(result.second).to eq proposal2
+      expect(result.third).to eq proposal1
+    end
+
+    it "Should return proposals related with user interests" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      proposal2 =  create(:proposal, tag_list: "Sport")
+      proposal3 =  create(:proposal, tag_list: "Politics")
+      create(:follow, followable: proposal1, user: user)
+
+      result = user.recommended_proposals
+
+      expect(result.size).to eq 1
+      expect(result).to eq [proposal2]
+    end
+
+    it "Should not return proposals when user is follower" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      result = user.recommended_proposals
+
+      expect(result.size).to eq 0
+    end
+
+    it "Should not return proposals when user is an author" do
+      proposal1 =  create(:proposal, author: user)
+      proposal2 =  create(:proposal)
+
+      result = user.recommended_proposals
+
+      expect(result.size).to eq 1
+      expect(result).to eq [proposal2]
+    end
+
+  end
+
+  describe "#recommended_budget_investments" do
+
+    let(:user)     { create(:user) }
+
+    it "Should return up to 3 debates" do
+      create_list(:budget_investment, 4)
+
+      expect(user.recommended_budget_investments.size).to eq 3
+    end
+
+    it "Should return budget_investments ordered by cached_votes_up" do
+      budget_investment1 = create(:budget_investment, cached_votes_up: 1 )
+      budget_investment2 = create(:budget_investment, cached_votes_up: 5 )
+      budget_investment3 = create(:budget_investment, cached_votes_up: 10 )
+
+      result = user.recommended_budget_investments
+
+      expect(result.first).to eq budget_investment3
+      expect(result.second).to eq budget_investment2
+      expect(result.third).to eq budget_investment1
+    end
+
+    it "Should return budget_investments related with user interests" do
+      budget_investment1 =  create(:budget_investment, tag_list: "Sport")
+      budget_investment2 =  create(:budget_investment, tag_list: "Sport")
+      budget_investment3 =  create(:budget_investment, tag_list: "Politics")
+      create(:follow, followable: budget_investment1, user: user)
+
+      result = user.recommended_budget_investments
+
+      expect(result.size).to eq 1
+      expect(result).to eq [budget_investment2]
+    end
+
+    it "Should not return budget_investments when user is follower" do
+      budget_investment1 =  create(:budget_investment, tag_list: "Sport")
+      create(:follow, followable: budget_investment1, user: user)
+
+      result = user.recommended_budget_investments
+
+      expect(result.size).to eq 0
+    end
+
+    it "Should not return budget_investments when user is an author" do
+      budget_investment1 =  create(:budget_investment, author: user)
+      budget_investment2 =  create(:budget_investment)
+
+      result = user.recommended_budget_investments
+
+      expect(result.size).to eq 1
+      expect(result).to eq [budget_investment2]
+    end
+
+  end
 end
