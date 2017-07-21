@@ -18,6 +18,7 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
+// 19. Documents
 //
 
 // 01. Global styles
@@ -2127,5 +2128,20 @@ table {
   a:hover h3 {
     color: #eaeaf2 !important;
     text-decoration: none;
+  }
+}
+
+// 19. Documents
+.documents-list{
+  table {
+    border: 0;
+  }
+  td {
+    position: relative;
+
+    &:first-child {
+      padding-left: $line-height * 1.5;
+      width: 75%;
+    }
   }
 }
