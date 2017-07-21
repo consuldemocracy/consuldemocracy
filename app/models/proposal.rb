@@ -10,12 +10,14 @@ class Proposal < ActiveRecord::Base
   include Graphqlable
   include Followable
   include Documentable
+  documentable max_documents_allowed: 3,
+               max_file_size: 3.megabytes,
+               accepted_content_types: [ "application/pdf" ]
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  MAX_DOCUMENTS_SIZE = 3
   RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'

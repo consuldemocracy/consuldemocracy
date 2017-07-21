@@ -4,7 +4,7 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-      <% if can?(:create, @document) && investment.documents.size < Budget::Investment::MAX_DOCUMENTS_SIZE %>
+      <% if can?(:create, @document) && investment.documents.size < Budget::Investment.max_documents_allowed %>
         <%= link_to t("documents.upload_document"),
                     new_document_path(documentable_id:investment, documentable_type: investment.class.name, from: request.url),
                     class: 'button hollow float-right' %>

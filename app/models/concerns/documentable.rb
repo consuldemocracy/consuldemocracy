@@ -5,4 +5,16 @@ module Documentable
     has_many :documents, as: :documentable, dependent: :destroy
   end
 
+  module ClassMethods
+    attr_reader :max_documents_allowed, :max_file_size, :accepted_content_types
+
+    private
+
+    def documentable(options= {})
+      @max_documents_allowed = options[:max_documents_allowed]
+      @max_file_size = options[:max_file_size]
+      @accepted_content_types = options[:accepted_content_types]
+    end
+  end
+
 end

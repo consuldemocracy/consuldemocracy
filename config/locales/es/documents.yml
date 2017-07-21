@@ -3,7 +3,7 @@ es:
     tab: Documentos
     no_documents: No hay documentos subidos
     upload_document: Subir documento
-    max_documents_size_reached: ¡Has alcanzado el número máximo de documentos permitidos! Tienes que eliminar uno antes de poder subir otro.
+    max_documents_allowed_reached: ¡Has alcanzado el número máximo de documentos permitidos! Tienes que eliminar uno antes de poder subir otro.
     form:
       attachment_label: Selecciona un archivo
       submit_button: Subir documento
@@ -24,3 +24,7 @@ es:
       download_document: Descargar PDF
       destroy_document: Eliminar
       link_document: Enlace
+    errors:
+      messages:
+        in_between: debe estar entre %{min} y %{max}
+        wrong_content_type: El tipo de contenido %{content_type} del archivo no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}

@@ -1,10 +1,10 @@
 <% if documents.any? %>
 
-  <% if documents.size == max_documents_size %>
+  <% if documents.size == max_documents_allowed %>
     <div class="row documents-list">
       <div class="small-12 column">
         <div class="callout primary text-center">
-          <%= t "documents.max_documents_size_reached" %>
+          <%= t "documents.max_documents_allowed_reached" %>
         </div>
       </div>
     </div>
