@@ -253,7 +253,8 @@
 
   .icon-debates,
   .icon-proposals,
-  .icon-budget {
+  .icon-budget,
+  .icon-documents {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
@@ -296,7 +297,8 @@
   }
 }
 
-.proposal-form {
+.proposal-form,
+.document-form {
 
   .recommendations li::before {
     color: $proposals;
@@ -749,6 +751,13 @@
 
 .divider {
   display: none;
+}
+
+/* Ovveride proposal linea 623 */
+.document-form{
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .more-info {
