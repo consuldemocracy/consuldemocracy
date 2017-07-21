@@ -44,6 +44,7 @@ module Budgets
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
+      @document = Document.new(documentable: @investment)
     end
 
     def create

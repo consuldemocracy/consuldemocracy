@@ -165,6 +165,7 @@ es:
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
+    document: el documento
   geozones:
     none: Toda la ciudad
     all: Todos los ámbitos de actuación

@@ -95,6 +95,8 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
+  resources :documents, only: [:new, :create, :destroy]
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'

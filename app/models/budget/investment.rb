@@ -7,6 +7,7 @@ class Budget
     include Searchable
     include Reclassification
     include Followable
+    include Documentable
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at

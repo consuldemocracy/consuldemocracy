@@ -1,0 +1,17 @@
+<% if documents.any? %>
+
+  <table>
+    <tbody>
+      <% documents.each do |document| %>
+        <%= render "documents/document", document: document %>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+
+  <div class="callout primary text-center">
+    <%= t('documents.no_documents') %>
+  </div>
+
+<% end %>

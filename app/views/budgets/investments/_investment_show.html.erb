@@ -4,6 +4,12 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
+      <% if can? :create, @document %>
+        <%= link_to t("documents.upload_document"),
+                    new_document_path(documentable_id:investment, documentable_type: investment.class.name, from: request.url),
+                    class: 'button hollow float-right' %>
+      <% end %>
+
       <h1><%= investment.title %></h1>
 
       <div class="budget-investment-info">
@@ -14,7 +20,6 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>
-
       <br>
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
@@ -51,6 +56,7 @@
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
+
     </div>
 
     <aside class="small-12 medium-3 column">

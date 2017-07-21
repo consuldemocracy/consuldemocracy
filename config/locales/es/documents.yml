@@ -1,0 +1,21 @@
+es:
+  documents:
+    tab: Documentos
+    no_documents: No hay documentos subidos
+    upload_document: Subir documento
+    form:
+      attachment_label: Selecciona un archivo
+      submit_button: Subir documento
+    new:
+      title: Subir un documento
+    recommendations_title: Consejos para subir archivos
+    recommendation_one_html: Puedes subir hasta un máximo de <strong>3 ficheros</strong>
+    recommendation_two_html: Sólo puedes subir archivos <strong>pdf</strong>
+    recommendation_three_html: Puedes subir archivos de hasta <strong>3MB</strong>
+    actions:
+      create:
+        notice: "El documento se ha creado correctamente."
+        alert: "El documento no se ha podido crear. Revise los errores del formulario."
+      destroy:
+        notice: "El documento se ha eliminado correctamente."
+        alert: "El documento no se ha podido eliminar."

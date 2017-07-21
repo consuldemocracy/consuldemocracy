@@ -1,0 +1,38 @@
+<%= form_for @document,
+             url: documents_path(
+              documentable_type: @document.documentable_type,
+              documentable_id: @document.documentable_id,
+              from: params[:from]
+             ),
+             html: { multipart: true } do |f| %>
+
+  <%= render 'shared/errors', resource: @document %>
+
+  <div class="row">
+
+    <div class="small-12 column">
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="small-12 column">
+      <div class="file-name">
+        <%= f.file_field :attachment, label: false, class:'show-for-sr' %>
+        <br>
+        <%= f.label :attachment, t("documents.form.attachment_label"), class:'button' %>
+        <p><%= document_attachment_file_name(@document) %></p>
+      </div>
+    </div>
+
+    <% if @document.errors.has_key?(:attachment) %>
+      <div class="small-12 column">
+        <div class="attachment-errors">
+          <small class="error"><%= errors_on_attachment(@document)%></small>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="actions small-12 medium-6 large-4 end column">
+      <%= f.submit(t("documents.form.submit_button"), class: "button expanded") %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+en:
+  documents:
+    tab: Documents
+    no_documents: Don't have uploaded documents
+    upload_document: Upload document
+    form:
+      attachment_label: Choose attachment file
+      submit_button: Upload document
+    new:
+      title: Upload document
+    recommendations_title: File upload tips
+    recommendation_one_html: You can upload up to a <strong>maximum of 3 files</strong>
+    recommendation_two_html: You can upload <strong>.pdf</strong> files only
+    recommendation_three_html: You can upload files up to <strong>3 MB</strong>
+    actions:
+      create:
+        notice: Document was created successfully.
+        alert: Cannot create document. Check form errors and try again.
+      destroy:
+        notice: Document was deleted successfully.
+        alert: Cannot destroy document.

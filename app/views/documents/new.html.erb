@@ -1,0 +1,20 @@
+<div class="document-form <%= @document.documentable.class.name.parameterize('_') %> row">
+
+  <div class="small-12 medium-9 column">
+    <%= render "shared/back_link" %>
+
+    <h1><%= t("documents.new.title") %></h1>
+
+    <%= render "documents/form", form_url: documents_url %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <span class="icon-documents float-right"></span>
+    <h2><%= t("documents.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li><%= t("documents.recommendation_one_html") %></li>
+      <li><%= t("documents.recommendation_two_html") %></li>
+      <li><%= t("documents.recommendation_three_html") %></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<tr id="<%= dom_id(document)%>">
+  <td><%#= icon %></td>
+  <td><%= document.title %></td>
+  <td>
+    <%= link_to "Download", document.attachment.url %>
+
+    <% if can? :destroy, Document %>
+      <%= link_to "Destroy",
+                    document_path(document, from: request.url), method: :delete,
+                    data: { confirm: "¿Está segurto de que desea eliminar el documento?. Esta acción no se puede deshacer." } %>
+    <% end %>
+
+  </td>
+</tr>
