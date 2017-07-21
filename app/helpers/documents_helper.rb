@@ -8,8 +8,12 @@ module DocumentsHelper
     document.errors[:attachment].join(', ') if document.errors.key?(:attachment)
   end
 
-  def document_documentable_class(document)
-    document.documentable.class.name.parameterize('_')
+  def document_source_options
+    Hash[Document.sources.map { |k,v| [k, Document.human_attribute_name("document.#{k}")] }]
+  end
+
+  def bytesToMeg(bytes)
+    bytes / Numeric::MEGABYTE
   end
 
 end

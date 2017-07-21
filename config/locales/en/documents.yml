@@ -10,9 +10,9 @@ en:
     new:
       title: Upload document
     recommendations_title: File upload tips
-    recommendation_one_html: You can upload up to a <strong>maximum of 3 files</strong>
-    recommendation_two_html: You can upload <strong>.pdf</strong> files only
-    recommendation_three_html: You can upload files up to <strong>3 MB</strong>
+    recommendation_one_html: You can upload up to a <strong>maximum of %{max_documents_allowed} documents</strong>.
+    recommendation_two_html: You can upload <strong>%{accepted_content_types}</strong> files.
+    recommendation_three_html: You can upload files up to <strong>%{max_file_size} MB</strong>.
     actions:
       create:
         notice: Document was created successfully.
@@ -23,7 +23,6 @@ en:
     buttons:
       download_document: Download PDF
       destroy_document: Destroy
-      link_document: Link
     errors:
       messages:
         in_between: must be in between %{min} and %{max}

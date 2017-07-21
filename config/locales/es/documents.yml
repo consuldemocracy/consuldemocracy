@@ -10,9 +10,9 @@ es:
     new:
       title: Subir un documento
     recommendations_title: Consejos para subir archivos
-    recommendation_one_html: Puedes subir hasta un máximo de <strong>3 ficheros</strong>
-    recommendation_two_html: Sólo puedes subir archivos <strong>pdf</strong>
-    recommendation_three_html: Puedes subir archivos de hasta <strong>3MB</strong>
+    recommendation_one_html: Puedes subir hasta un máximo de <strong>%{max_documents_allowed} documentos</strong>
+    recommendation_two_html: Sólo puedes subir <strong>archivos %{accepted_content_types}</strong>.
+    recommendation_three_html: Puedes subir archivos de hasta <strong>%{max_file_size}  MB</strong>
     actions:
       create:
         notice: "El documento se ha creado correctamente."
@@ -23,7 +23,6 @@ es:
     buttons:
       download_document: Descargar PDF
       destroy_document: Eliminar
-      link_document: Enlace
     errors:
       messages:
         in_between: debe estar entre %{min} y %{max}

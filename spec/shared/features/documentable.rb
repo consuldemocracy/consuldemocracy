@@ -1,5 +1,6 @@
 shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
   include ActionView::Helpers
+  include DocumentsHelper
 
   let!(:administrator)          { create(:user) }
   let!(:user)                   { create(:user) }
@@ -82,7 +83,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
           visit send(documentable_path, arguments)
 
           within "#tab-documents" do
-            expect(page).to have_link("Download")
+            expect(page).to have_link("Download PDF")
           end
         end
 
@@ -125,7 +126,8 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   context "New" do
 
     scenario "Should not be able for unathenticated users" do
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id)
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
 
       expect(page).to have_content("You must sign in or register to continue.")
     end
@@ -133,7 +135,8 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should not be able for other users" do
       login_as create(:user)
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id)
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
 
       expect(page).to have_content("You do not have permission to carry out the action 'new' on document. ")
     end
@@ -141,9 +144,22 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should be able to documentable author" do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id)
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
 
       expect(page).to have_selector("h1", text: "Upload document")
+    end
+
+    scenario "Should show documentable custom recomentations" do
+      login_as documentable.author
+
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id,
+                              from: send(documentable_path, arguments))
+
+      expect(page).to have_content "You can upload up to a maximum of #{documentable.class.max_documents_allowed} documents."
+      expect(page).to have_content "You can upload #{documentable.class.accepted_content_types.join(", ")} files."
+      expect(page).to have_content "You can upload files up to #{bytesToMeg(documentable.class.max_file_size)} MB."
     end
 
   end
@@ -153,7 +169,8 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should show validation errors" do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id)
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
       click_on "Upload document"
 
       expect(page).to have_content "2 errors prevented this Document from being saved: "
@@ -164,7 +181,8 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should display file name after file selection", :js do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id)
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
 
       expect(page).to have_content "empty.pdf"
@@ -173,7 +191,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should show error notice after unsuccessfull document upload" do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id, from: send(documentable_path, arguments))
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id,
+                              from: send(documentable_path, arguments))
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
       click_on "Upload document"
 
@@ -183,7 +203,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should show success notice after successfull document upload" do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id, from: send(documentable_path, arguments))
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id,
+                              from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
       click_on "Upload document"
@@ -194,7 +216,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should redirect to documentable path after successfull document upload" do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id, from: send(documentable_path, arguments))
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id,
+                              from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
       click_on "Upload document"
@@ -207,7 +231,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     scenario "Should show new document on documentable documents tab after successfull document upload" do
       login_as documentable.author
 
-      visit new_document_path(documentable_type: documentable.class.name, documentable_id: documentable.id, from: send(documentable_path, arguments))
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id,
+                              from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
       click_on "Upload document"
@@ -216,7 +242,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       within "#tab-documents" do
         within "#document_#{Document.last.id}" do
           expect(page).to have_content "Document title"
-          expect(page).to have_link "Download"
+          expect(page).to have_link "Download PDF"
           expect(page).to have_link "Destroy"
         end
       end
