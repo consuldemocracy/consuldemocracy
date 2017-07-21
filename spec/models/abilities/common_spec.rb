@@ -54,6 +54,11 @@ describe "Abilities::Common" do
   let(:incoming_poll_question_from_other_geozone) { create(:poll_question, poll: incoming_poll_from_other_geozone) }
   let(:incoming_poll_question_from_all_geozones)  { create(:poll_question, poll: incoming_poll) }
 
+  let(:own_proposal_document)          { build(:document, documentable: own_proposal) }
+  let(:proposal_document)              { build(:document, documentable: proposal) }
+  let(:own_budget_investment_document) { build(:document, documentable: own_investment_in_accepting_budget) }
+  let(:budget_investment_document)     { build(:document, documentable: investment_in_accepting_budget) }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }
   it { should be_able_to(:vote, debate)  }
@@ -81,6 +86,22 @@ describe "Abilities::Common" do
   it { should     be_able_to(:new,    DirectMessage) }
   it { should_not be_able_to(:create, DirectMessage) }
   it { should_not be_able_to(:show,   DirectMessage) }
+
+  it { should be_able_to(:new, own_proposal_document) }
+  it { should be_able_to(:create, own_proposal_document) }
+  it { should be_able_to(:destroy, own_proposal_document) }
+
+  it { should_not be_able_to(:new, proposal_document) }
+  it { should_not be_able_to(:create, proposal_document) }
+  it { should_not be_able_to(:destroy, proposal_document) }
+
+  it { should be_able_to(:new, own_budget_investment_document) }
+  it { should be_able_to(:create, own_budget_investment_document) }
+  it { should be_able_to(:destroy, own_budget_investment_document) }
+
+  it { should_not be_able_to(:new, budget_investment_document) }
+  it { should_not be_able_to(:create, budget_investment_document) }
+  it { should_not be_able_to(:destroy, budget_investment_document) }
 
   describe 'flagging content' do
     it { should be_able_to(:flag, debate)   }
