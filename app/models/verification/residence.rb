@@ -5,7 +5,7 @@ class Verification::Residence
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service
 
-  before_validation :call_census_api
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -61,23 +61,23 @@ class Verification::Residence
   end
 
   def district_code
-    @census_api_response.district_code
+    @census_data.district_code
   end
 
   def gender
-    @census_api_response.gender
+    @census_data.gender
   end
 
   private
 
-    def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
+    def retrieve_census_data
+      @census_data = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
-      @census_api_response.valid? &&
-        @census_api_response.postal_code == postal_code &&
-        @census_api_response.date_of_birth == date_of_birth
+      @census_data.valid? &&
+        @census_data.postal_code == postal_code &&
+        @census_data.date_of_birth == date_of_birth
     end
 
     def clean_document_number

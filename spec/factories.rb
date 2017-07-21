@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :local_census_record, class: 'LocalCensusRecord' do
+    document_number '12345678A'
+    document_type 1
+    date_of_birth Date.new(1970, 1, 31)
+    postal_code '28002'
+  end
+
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
