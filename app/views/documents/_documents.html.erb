@@ -1,4 +1,15 @@
 <% if documents.any? %>
+
+  <% if documents.size == max_documents_size %>
+    <div class="row documents-list">
+      <div class="small-12 column">
+        <div class="callout primary text-center">
+          <%= t "documents.max_documents_size_reached" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="row documents-list">
     <div class="small-12 column">
       <table>
@@ -10,7 +21,9 @@
       </table>
     </div>
   </div>
+
 <% else %>
+
   <div class="row">
     <div class="small-12 column">
       <div class="callout primary text-center">
@@ -18,4 +31,5 @@
       </div>
     </div>
   </div>
+
 <% end %>

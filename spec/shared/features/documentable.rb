@@ -25,6 +25,15 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       end
     end
 
+    scenario "Should not display upload document button when maximum number of documents reached " do
+      create_list(:document, 3, documentable: documentable)
+      visit send(documentable_path, arguments)
+
+      within "##{dom_id(documentable)}" do
+        expect(page).not_to have_link("Upload document")
+      end
+    end
+
     scenario "Should display upload document button when user is logged in and is documentable owner" do
       login_as(user)
 
@@ -57,6 +66,15 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     describe "Documents tab" do
 
       let!(:document) { create(:document, documentable: documentable, user: documentable.author)}
+
+      scenario "Should display maximum number of documents alert when reached" do
+        create_list(:document, 2, documentable: documentable)
+        visit send(documentable_path, arguments)
+
+        within "#tab-documents" do
+          expect(page).to have_content "You have reached the maximum number of documents allowed! You have to delete one before you can upload another."
+        end
+      end
 
       describe "Download action" do
 

@@ -21,7 +21,9 @@
   </div>
 
   <div class="tabs-panel" id="tab-documents">
-    <%= render 'documents/documents', documents: @investment.documents %>
+    <%= render 'documents/documents',
+                documents: @investment.documents,
+                max_documents_size: Budget::Investment::MAX_DOCUMENTS_SIZE %>
   </div>
 
 </div>

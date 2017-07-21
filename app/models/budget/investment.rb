@@ -1,6 +1,5 @@
 class Budget
   class Investment < ActiveRecord::Base
-
     include Measurable
     include Sanitizable
     include Taggable
@@ -13,6 +12,8 @@ class Budget
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
 
+    MAX_DOCUMENTS_SIZE = 3
+    
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
     belongs_to :group

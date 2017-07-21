@@ -3,6 +3,7 @@ en:
     tab: Documents
     no_documents: Don't have uploaded documents
     upload_document: Upload document
+    max_documents_size_reached: You have reached the maximum number of documents allowed! You have to delete one before you can upload another.
     form:
       attachment_label: Choose attachment file
       submit_button: Upload document

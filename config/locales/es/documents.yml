@@ -3,6 +3,7 @@ es:
     tab: Documentos
     no_documents: No hay documentos subidos
     upload_document: Subir documento
+    max_documents_size_reached: ¡Has alcanzado el número máximo de documentos permitidos! Tienes que eliminar uno antes de poder subir otro.
     form:
       attachment_label: Selecciona un archivo
       submit_button: Subir documento

@@ -16,7 +16,7 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
-        <% if can? :create, @document %>
+        <% if can?(:create, @document) && @proposal.documents.size < Proposal::MAX_DOCUMENTS_SIZE %>
           <%= link_to t("documents.upload_document"),
                       new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
                       class: 'button hollow float-right' %>
@@ -164,6 +164,8 @@
   </div>
 
   <div class="tabs-panel" id="tab-documents">
-    <%= render 'documents/documents', documents: @proposal.documents %>
+    <%= render 'documents/documents',
+                documents: @proposal.documents,
+                max_documents_size: Proposal::MAX_DOCUMENTS_SIZE %>
   </div>
 </div>
