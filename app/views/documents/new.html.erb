@@ -1,8 +1,7 @@
-<div class="document-form <%= document_documentable_class(@document) %> row">
+<div class="document-form <%= @document.documentable.class.name.parameterize('_') %> row">
 
   <div class="small-12 medium-9 column">
-    <%= back_link_to params[:from] %>
-
+    <%= render "shared/back_link" %>
     <h1><%= t("documents.new.title") %></h1>
     <%= render "documents/form", form_url: documents_url %>
   </div>
@@ -16,5 +15,4 @@
       <li><%= t("documents.recommendation_three_html") %></li>
     </ul>
   </div>
-
 </div>

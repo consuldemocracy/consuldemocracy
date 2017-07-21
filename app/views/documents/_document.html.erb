@@ -1,11 +1,11 @@
 <tr id="<%= dom_id(document)%>">
-  <td> <%= document.title %></td>
+  <td><%= document.title %></td>
   <td class="text-center">
-    <%= link_to "Download", document.attachment.url, class: 'button hollow' %>
+    <%= link_to t('documents.buttons.download_document'), document.attachment.url, class: 'button hollow' %>
   </td>
   <td class="text-center">
     <% if can? :destroy, Document %>
-      <%= link_to "Destroy",
+      <%= link_to t('documents.buttons.destroy_document'),
                     document_path(document, from: request.url), method: :delete,
                     data: { confirm: "¿Está segurto de que desea eliminar el documento?. Esta acción no se puede deshacer." },
                     class: 'button hollow alert' %>

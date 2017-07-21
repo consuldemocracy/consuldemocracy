@@ -20,3 +20,7 @@ en:
       destroy:
         notice: Document was deleted successfully.
         alert: Cannot destroy document.
+    buttons:
+      download_document: Download PDF
+      destroy_document: Destroy
+      link_document: Link

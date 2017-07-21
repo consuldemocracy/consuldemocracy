@@ -20,3 +20,7 @@ es:
       destroy:
         notice: "El documento se ha eliminado correctamente."
         alert: "El documento no se ha podido eliminar."
+    buttons:
+      download_document: Descargar PDF
+      destroy_document: Eliminar
+      link_document: Enlace
