@@ -144,10 +144,10 @@ GEM
       json
       thread
       thread_safe
-    email_spec (2.1.0)
+    email_spec (2.1.1)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
-      mail (~> 2.6.3)
+      mail (~> 2.6)
     errbase (0.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
