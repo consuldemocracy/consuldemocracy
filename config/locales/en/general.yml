@@ -713,6 +713,14 @@ en:
     proposal:
       description: Open space for citizen proposals about the kind of city we want to live in.
       title: You propose
+    recommended:
+      title: Recommendations that may interest you
+      debates:
+        title: Recommended debates
+      proposals:
+        title: Recommended proposals
+      budget_investments:
+        title: Recommended investments
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

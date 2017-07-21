@@ -313,6 +313,24 @@ class User < ActiveRecord::Base
     follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
   end
 
+  def recommended_debates
+    Debate.tagged_with(interests, any: true).
+           where("author_id != ?", self).
+           order("cached_votes_total DESC").limit(3)
+  end
+
+  def recommended_proposals
+    Proposal.tagged_with(interests, any: true).
+             where("author_id != ?", self).
+             order("cached_votes_up DESC").limit(3)
+  end
+
+  def recommended_budget_investments
+    Budget::Investment.tagged_with(interests, any: true).
+             where("author_id != ?", self).
+             order("cached_votes_up DESC").limit(3)
+  end
+
   private
 
     def clean_document_number

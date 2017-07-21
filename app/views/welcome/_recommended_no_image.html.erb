@@ -1,128 +1,107 @@
 <div class="row">
-  <h2 class="text-center">Recomendaciones que te pueden interesar</h2>
-  <div class="small-12 medium-4 column text-center budgets">
+  <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
+
+  <div class="small-12 medium-4 column text-center debates">
     <div class="card small-11 small-centered debates">
-      <h4>Debates recomendados</h4>
+
+      <h4><%= t("welcome.recommended.debates.title") %></h4>
+
       <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-use-m-u-i="false" data-resize="" id="" data-events="resize">
         <div class="orbit-wrapper">
+
           <ul class="orbit-container no-bullet" tabindex="0" >
-            <li class="orbit-slide no-motionui is-active is-in" data-slide="0" style="position: relative;" aria-live="polite">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo debate 1 </h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
+            <% current_user.recommended_debates.each_with_index do |debate, index| %>
 
-            <li class="orbit-slide no-motionui" data-slide="slide-1" style="position: relative; display: none;">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo debate 2</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+              <li class="orbit-slide no-motionui <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
+                <div class="card">
+                  <div class="card-section">
+                    <h5><%= debate.title %></h5>
+                    <p><%= debate.description %></p>
+                    <!-- <div class="truncate"></div>  -->
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <li class="orbit-slide no-motionui" data-slide="slide-2" style="position: relative; display: none;">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo debate 3</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
+            <% end %>
           </ul>
+
         </div>
-       <div class="orbit-controls">
-         <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
-         <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
-       </div>
+
+        <div class="orbit-controls">
+          <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
+          <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
+        </div>
      </div>
     </div>
   </div>
 
-  <div class="small-12 medium-4 column text-center">
-
+  <div class="small-12 medium-4 column text-center proposals">
     <div class="card small-11 small-centered proposals">
-      <h4>Propuestas recomendadas</h4>
+
+      <h4><%= t("welcome.recommended.proposals.title") %></h4>
+
       <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-use-m-u-i="false" data-resize="" id="" data-events="resize">
         <div class="orbit-wrapper">
-          <ul class="orbit-container no-bullet" tabindex="0" >
-            <li class="orbit-slide no-motionui is-active is-in" data-slide="0" style="position: relative;" aria-live="polite">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo propuesta 1</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
 
-            <li class="orbit-slide no-motionui" data-slide="slide-1" style="position: relative; display: none;">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo propuesta 2</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          <ul class="orbit-container no-bullet" tabindex="0" >
+            <% current_user.recommended_proposals.each_with_index do |proposal, index| %>
+
+              <li class="orbit-slide no-motionui <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
+                <div class="card">
+                  <div class="card-section">
+                    <h5><%= proposal.title %></h5>
+                    <p><%= proposal.description %></p>
+                    <!-- <div class="truncate"></div>  -->
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="orbit-slide no-motionui" data-slide="slide-2" style="position: relative; display: none;">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo propuesta 3</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
+              </li>
+
+            <% end %>
           </ul>
+
         </div>
-       <div class="orbit-controls">
+
+        <div class="orbit-controls">
          <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
          <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
-       </div>
+        </div>
+
      </div>
     </div>
   </div>
 
-  <div class="small-12 medium-4 column text-center">
+  <div class="small-12 medium-4 column text-center budget-investments">
+    <div class="card small-11 small-centered budget-investments">
 
-    <div class="card small-11 small-centered budget">
-      <h4>Presupuestos recomendados</h4>
+      <h4><%= t("welcome.recommended.budget_investments.title") %></h4>
+
       <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-use-m-u-i="false" data-resize="" id="" data-events="resize">
         <div class="orbit-wrapper">
-          <ul class="orbit-container no-bullet" tabindex="0" >
-            <li class="orbit-slide no-motionui is-active is-in" data-slide="0" style="position: relative;" aria-live="polite">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo presupuesto 1 </h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
 
-            <li class="orbit-slide no-motionui" data-slide="slide-1" style="position: relative; display: none;">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo presupuesto 2</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+          <ul class="orbit-container no-bullet" tabindex="0" >
+            <% current_user.recommended_budget_investments.each_with_index do |budget_investment, index| %>
+
+              <li class="orbit-slide no-motionui <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
+                <div class="card">
+                  <div class="card-section">
+                    <h5><%= budget_investment.title %></h5>
+                    <p><%= budget_investment.description %></p>
+                    <!-- <div class="truncate"></div>  -->
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="orbit-slide no-motionui" data-slide="slide-2" style="position: relative; display: none;">
-              <div class="card">
-                <div class="card-section">
-                  <h5>Titulo presupuesto 3 </h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
+              </li>
+
+            <% end %>
           </ul>
+
         </div>
-       <div class="orbit-controls">
+
+        <div class="orbit-controls">
          <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
          <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
-       </div>
-     </div>
+        </div>
+
+      </div>
     </div>
   </div>
 

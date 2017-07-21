@@ -16,13 +16,13 @@
       <div class="row">
         <div class="small-12 column">
           <% if @search_terms || @advanced_search_terms %>
-          <h2><%= t("shared.search_results") %></h2>
-          <p>
-            <%= page_entries_info @proposals %>
-            <% if !@advanced_search_terms %>
-              <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
-            <% end %>
-          <p>
+            <h2><%= t("shared.search_results") %></h2>
+            <p>
+              <%= page_entries_info @proposals %>
+              <% if !@advanced_search_terms %>
+                <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
+              <% end %>
+            <p>
           <% elsif @tag_filter %>
             <h2><%= t("shared.search_results") %></h2>
             <p>
