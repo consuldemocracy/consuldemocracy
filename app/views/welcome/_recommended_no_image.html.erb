@@ -3,9 +3,23 @@
 
     <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
 
-    <%= render "recommended_carousel", recommendeds: recommended_debates,   key: "debates" %>
-    <%= render "recommended_carousel", recommendeds: recommended_proposals, key: "proposals" %>
-    <%= render "recommended_carousel", recommendeds: recommended_budget_investments, key: "budget-investments" %>
+    <%= render "recommended_carousel", recommendeds: recommended_debates,
+                                       key: "debates",
+                                       image_field: nil,
+                                       image_version: nil,
+                                       image_default: "https://dummyimage.com/600x400/000/fff" %>
+
+    <%= render "recommended_carousel", recommendeds: recommended_proposals,
+                                       key: "proposals",
+                                       image_field: nil,
+                                       image_version: nil,
+                                       image_default: "https://dummyimage.com/600x400/000/fff" %>
+
+    <%= render "recommended_carousel", recommendeds: recommended_budget_investments,
+                                       key: "budget-investments",
+                                       image_field: nil, #example value :image (PR#1691)
+                                       image_version: nil, #example value :thumb (PR#1691)
+                                       image_default: "https://dummyimage.com/600x400/000/fff" %>
 
   </div>
 </div>

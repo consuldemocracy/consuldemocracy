@@ -9,6 +9,7 @@
           <% recommendeds.each_with_index do |recommended, index| %>
             <li class="orbit-slide <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
               <div class="card">
+                <%= render_image(recommended, image_field, image_version, image_default) %>
                 <div class="card-section">
                   <%= link_to recommended_path(recommended) do %>
                     <h5 class="truncate-horizontal-text"><%= recommended.title %></h5>
