@@ -10,7 +10,8 @@ RSpec.describe "welcome/index" do
                      recommendeds: [debate],
                      image_field: nil,
                      image_version: nil,
-                     image_default: "https://dummyimage.com/600x400/000/fff"}
+                     image_default: "https://dummyimage.com/600x400/000/fff",
+                     klass: ""}
 
     within 'li[data-slide="0"] .card' do
       expect(page).to have_selector("img")
@@ -26,7 +27,8 @@ RSpec.describe "welcome/index" do
                      recommendeds: [debate],
                      image_field: nil,
                      image_version: nil,
-                     image_default: nil}
+                     image_default: nil,
+                     klass: ""}
 
     within 'li[data-slide="0"] .card' do
       expect(page).not_to have_selector("img")
