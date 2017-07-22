@@ -715,7 +715,7 @@ describe User do
       expect(result).to eq [debate1]
     end
 
-    it "Should not return debates when user is an author" do
+    it "Should not return debates when user is the author" do
       debate1 =  create(:debate, author: user)
       debate2 =  create(:debate)
 
@@ -731,7 +731,7 @@ describe User do
 
     let(:user)     { create(:user) }
 
-    it "Should return up to 3 debates" do
+    it "Should return up to 3 proposals" do
       create_list(:proposal, 4)
 
       expect(user.recommended_proposals.size).to eq 3
@@ -770,7 +770,7 @@ describe User do
       expect(result.size).to eq 0
     end
 
-    it "Should not return proposals when user is an author" do
+    it "Should not return proposals when user is the author" do
       proposal1 =  create(:proposal, author: user)
       proposal2 =  create(:proposal)
 
@@ -786,7 +786,7 @@ describe User do
 
     let(:user)     { create(:user) }
 
-    it "Should return up to 3 debates" do
+    it "Should return up to 3 investments" do
       create_list(:budget_investment, 4)
 
       expect(user.recommended_budget_investments.size).to eq 3
@@ -825,7 +825,7 @@ describe User do
       expect(result.size).to eq 0
     end
 
-    it "Should not return budget_investments when user is an author" do
+    it "Should not return budget_investments when user is the author" do
       budget_investment1 =  create(:budget_investment, author: user)
       budget_investment2 =  create(:budget_investment)
 

@@ -10,7 +10,7 @@ feature "Home" do
       expect(page).to have_content "Love the city, and it will become a city you love"
     end
 
-    scenario 'Not display recommended text' do
+    scenario 'Not display recommended section' do
       debate = create(:debate)
 
       visit root_path
@@ -28,7 +28,7 @@ feature "Home" do
 
     feature "Recommended" do
 
-      scenario 'Display recommended text' do
+      scenario 'Display recommended section' do
         debate = create(:debate)
 
         visit root_path
@@ -73,6 +73,14 @@ feature "Home" do
         expect(page).to have_selector('li[data-slide="2"]', visible: false)
       end
 
+      scenario 'Display recommended show when click on carousel' do
+        debate = create(:debate)
+
+        visit root_path
+        click_on debate.title
+
+        expect(current_path).to eq debate_path(debate)
+      end
     end
 
   end

@@ -9,20 +9,16 @@ module WelcomeHelper
   end
 
   def recommended_path(recommended)
-    case recommended.class
-    when Debate
-      debates_path(recommended)
-    when Proposal
-      proposals_path(recommended)
-    when Budget::Investment
-      budget_investments_path(recommended)
+    case recommended.class.name
+    when "Debate"
+      debate_path(recommended)
+    when "Proposal"
+      proposal_path(recommended)
+    when "Budget::Investment"
+      budget_investment_path(budget_id: recommended.budget.id, id: recommended.id)
     else
       '#'
     end
-  end
-
-  def title_key(key)
-    key.gsub("-", "_")
   end
 
 end
