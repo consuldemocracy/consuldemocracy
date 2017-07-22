@@ -2132,16 +2132,70 @@ table {
 }
 
 // 19. Documents
-.documents-list{
+.document-form form {
+  .radio-buttons {
+    label {
+      margin-right: $line-height;
+    }
+  }
+}
+
+.documents-list {
+
   table {
     border: 0;
   }
+
   td {
     position: relative;
 
+    @include breakpoint(small) {
+      float: left;
+      width: 100%;
+    }
+
+    @include breakpoint(medium) {
+      float: none;
+    }
+
+    a {
+      width: 100%;
+    }
+
     &:first-child {
       padding-left: $line-height * 1.5;
-      width: 75%;
+
+      @include breakpoint(small) {
+        width: 100%;
+      }
+
+      @include breakpoint(medium) {
+        width: 70%;
+      }
+
+      @include breakpoint(large) {
+        width: 80%;
+      }
     }
+
+    &:first-child::before {
+      color: #007bb7;
+      content: 'G';
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: rem-calc(6);
+      position: absolute;
+      top: 0;
+
+      @include breakpoint(small) {
+        padding-top: rem-calc(12);
+      }
+
+      @include breakpoint(medium) {
+        padding-top: rem-calc(22);
+      }
+
+    }
+
   }
 }

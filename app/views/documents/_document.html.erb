@@ -1,5 +1,7 @@
 <tr id="<%= dom_id(document)%>">
-  <td><%= document.title %></td>
+  <td class="document-link">
+    <%= document.title %>
+  </td>
   <td class="text-center">
     <%= link_to t('documents.buttons.download_document'), document.attachment.url, target: :blank, class: 'button hollow' %>
   </td>
