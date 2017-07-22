@@ -314,39 +314,36 @@ class User < ActiveRecord::Base
   end
 
   def recommended_debates
-    debates_list = []
-
-    if interests.any?
-      debates_list = Debate.tagged_with(interests, any: true).where("author_id != ?", self)
-    else
-      debates_list = Debate.where("author_id != ?", self)
-    end
+    debates_list =  if interests.any?
+                      Debate.tagged_with(interests, any: true)
+                            .where("author_id != ?", self)
+                    else
+                      Debate.where("author_id != ?", self)
+                    end
 
     debates_list.order("cached_votes_total DESC").limit(3)
   end
 
   def recommended_proposals
-    proposals_list = []
-
-    if interests.any?
-      already_followed_proposals_ids = Proposal.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
-      proposals_list = Proposal.tagged_with(interests, any: true).where("author_id != ? AND id NOT IN (?)", id, already_followed_proposals_ids)
-    else
-      proposals_list = Proposal.where("author_id != ?", id)
-    end
+    proposals_list =  if interests.any?
+                        followed_proposals_ids = Proposal.followed_by_user(self).pluck(:id)
+                        Proposal.tagged_with(interests, any: true)
+                                .where("author_id != ? AND id NOT IN (?)", id, followed_proposals_ids)
+                      else
+                        Proposal.where("author_id != ?", id)
+                      end
 
     proposals_list.order("cached_votes_up DESC").limit(3)
   end
 
   def recommended_budget_investments
-    investments_list = []
-
-    if interests.any?
-      already_followed_investments_ids = Budget::Investment.joins(:follows).where("follows.user_id = ?", id).pluck(:id)
-      investments_list = Budget::Investment.tagged_with(interests, any: true).where("author_id != ? AND id NOT IN (?)", id, already_followed_investments_ids)
-    else
-      investments_list = Budget::Investment.where("author_id != ?", id)
-    end
+    investments_list =  if interests.any?
+                          followed_investments_ids = Budget::Investment.followed_by_user(self).pluck(:id)
+                          Budget::Investment.tagged_with(interests, any: true)
+                                            .where("author_id != ? AND id NOT IN (?)", id, followed_investments_ids)
+                        else
+                          Budget::Investment.where("author_id != ?", id)
+                        end
 
     investments_list.order("cached_votes_up DESC").limit(3)
   end
