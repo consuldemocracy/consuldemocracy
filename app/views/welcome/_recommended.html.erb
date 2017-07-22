@@ -1,138 +1,29 @@
-<div class="row">
-  <h2 class="text-center">Recomendaciones que te pueden interesar</h2>
-  <div class="small-12 medium-4 column text-center budgets">
-    <div class="card small-11 small-centered debates">
-      <h4>Debates recomendados</h4>
-      <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-use-m-u-i="false" data-resize="" id="" data-events="resize">
-        <div class="orbit-wrapper">
-          <ul class="orbit-container no-bullet" tabindex="0" >
-            <li class="orbit-slide no-motionui is-active is-in" data-slide="0" style="position: relative;" aria-live="polite">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo debate 1 </h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
+<div class="highlight small-12 column section-recommended">
+  <div class="row">
 
-            <li class="orbit-slide no-motionui" data-slide="slide-1" style="position: relative; display: none;">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo debate 2</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
+    <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
+    <div class="small-12 column carousel-image">
+      <%= render "recommended_carousel", recommendeds: recommended_debates,
+                                         key: "debates",
+                                         image_field: nil,
+                                         image_version: nil,
+                                         image_default: "https://dummyimage.com/600x400/000/fff",
+                                         klass: "large-offset-1"  %>
 
-            <li class="orbit-slide no-motionui" data-slide="slide-2" style="position: relative; display: none;">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo debate 3</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-       <div class="orbit-controls">
-         <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
-         <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
-       </div>
-     </div>
+      <%= render "recommended_carousel", recommendeds: recommended_proposals,
+                                         key: "proposals",
+                                         image_field: nil,
+                                         image_version: nil,
+                                         image_default: "https://dummyimage.com/600x400/000/fff",
+                                         klass: "" %>
+
+      <%= render "recommended_carousel", recommendeds: recommended_budget_investments,
+                                         key: "budget-investments",
+                                         image_field: nil, #example value :image (PR#1691)
+                                         image_version: nil, #example value :thumb (PR#1691)
+                                         image_default: "https://dummyimage.com/600x400/000/fff",
+                                         klass: "end" %>
+
     </div>
   </div>
-
-  <div class="small-12 medium-4 column text-center">
-
-    <div class="card small-11 small-centered proposals">
-      <h4>Propuestas recomendadas</h4>
-      <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-use-m-u-i="false" data-resize="" id="" data-events="resize">
-        <div class="orbit-wrapper">
-          <ul class="orbit-container no-bullet" tabindex="0" >
-            <li class="orbit-slide no-motionui is-active is-in" data-slide="0" style="position: relative;" aria-live="polite">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo propuesta 1</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-
-            <li class="orbit-slide no-motionui" data-slide="slide-1" style="position: relative; display: none;">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo propuesta 2</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-            <li class="orbit-slide no-motionui" data-slide="slide-2" style="position: relative; display: none;">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo propuesta 3</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-       <div class="orbit-controls">
-         <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
-         <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
-       </div>
-     </div>
-    </div>
-  </div>
-
-  <div class="small-12 medium-4 column text-center">
-
-    <div class="card small-11 small-centered budget">
-      <h4>Presupuestos recomendados</h4>
-      <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit="" data-use-m-u-i="false" data-resize="" id="" data-events="resize">
-        <div class="orbit-wrapper">
-          <ul class="orbit-container no-bullet" tabindex="0" >
-            <li class="orbit-slide no-motionui is-active is-in" data-slide="0" style="position: relative;" aria-live="polite">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo presupuesto 1 </h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-
-            <li class="orbit-slide no-motionui" data-slide="slide-1" style="position: relative; display: none;">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo presupuesto 2</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-            <li class="orbit-slide no-motionui" data-slide="slide-2" style="position: relative; display: none;">
-              <div class="card">
-                <img src="https://dummyimage.com/600x400/000/fff">
-                <div class="card-section">
-                  <h5>Titulo presupuesto 3 </h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-       <div class="orbit-controls">
-         <button class="orbit-previous" aria-label="previous" tabindex="0"><span class="show-for-sr">Previous Slide</span>◀</button>
-         <button class="orbit-next" aria-label="next" tabindex="0"><span class="show-for-sr">Next Slide</span>▶</button>
-       </div>
-     </div>
-    </div>
-  </div>
-
 </div>
