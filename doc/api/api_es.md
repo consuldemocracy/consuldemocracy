@@ -14,6 +14,9 @@
     * [Paginación](#paginación)
   * [Acceder a varios recursos en una única petición](#acceder-a-varios-recursos-en-una-única-petición)
 * [Limitaciones de seguridad](#limitaciones-de-seguridad)
+  * [Ejemplo de consulta demasiado profunda](#ejemplo-de-consulta-demasiado-profunda)
+  * [Ejemplo de consulta demasiado compleja](#ejemplo-de-consulta-demasiado-compleja)
+* [Ejemplos de código](#ejemplos-de-código)
 
 ## Características
 
@@ -423,3 +426,7 @@ La respuesta:
   }
 }
 ```
+
+## Ejemplos de código
+
+El directorio [doc/api/examples](examples) contiene ejemplos de código para acceder a la API.
