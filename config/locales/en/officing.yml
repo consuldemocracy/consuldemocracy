@@ -10,7 +10,6 @@ en:
     menu:
       voters: Validate document
       letters: "Validate document"
-      recounts: Store recount
       final_recounts: Final recounts and results
     polls:
       final:
@@ -26,21 +25,6 @@ en:
       create:
         flash:
           wrong_password: "Wrong password"
-    recounts:
-      flash:
-        create: "Data added"
-        error_create: "Count NOT added. Error in data."
-      new:
-        title: "%{poll} - Add daily recount"
-        not_allowed: "You are not a poll officer for this poll"
-        booth_date: "Booth and date"
-        select_booth_date: "Select booth and date"
-        count: "Vote count"
-        count_placeholder: "Vote count"
-        submit: Save
-        recount_list: "Your recounts"
-        booth: "Booth"
-        date: "Date"
     final_recounts:
       flash:
         create: "Data added"
