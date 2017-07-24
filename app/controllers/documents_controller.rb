@@ -19,8 +19,11 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
-    @document.destroy
-    flash[:notice] = t "documents.actions.destroy.notice"
+    if @document.destroy
+      flash[:notice] = t "documents.actions.destroy.notice"
+    else
+      flash[:alert] = t "documents.actions.destroy.alert"
+    end
     redirect_to params[:from]
   end
 

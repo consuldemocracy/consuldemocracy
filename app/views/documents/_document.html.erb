@@ -9,7 +9,7 @@
     <% if can? :destroy, Document %>
       <%= link_to t('documents.buttons.destroy_document'),
                     document_path(document, from: request.url), method: :delete,
-                    data: { confirm: "¿Está segurto de que desea eliminar el documento?. Esta acción no se puede deshacer." },
+                    data: { confirm: t('documents.actions.destroy.alert') },
                     class: 'button hollow alert' %>
     <% end %>
   </td>

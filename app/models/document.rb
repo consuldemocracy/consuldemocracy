@@ -28,7 +28,7 @@ class Document < ActiveRecord::Base
   def validate_attachment_content_type
     if documentable.present? &&
        !documentable.class.accepted_content_types.include?(attachment_content_type)
-      errors[:attachment] = I18n.t("documents.errors.messages.content_type",
+      errors[:attachment] = I18n.t("documents.errors.messages.wrong_content_type",
                                     content_type: attachment_content_type,
                                     accepted_content_types: documentable.class.accepted_content_types.join(", "))
     end
