@@ -10,9 +10,18 @@
     <span class="icon-documents float-right"></span>
     <h2><%= t("documents.recommendations_title") %></h2>
     <ul class="recommendations">
-      <li><%= t("documents.recommendation_one_html", max_documents_allowed: @document.documentable.class.max_documents_allowed) %></li>
-      <li><%= t("documents.recommendation_two_html", accepted_content_types: @document.documentable.class.accepted_content_types.join(", ")) %></li>
-      <li><%= t("documents.recommendation_three_html", max_file_size: bytesToMeg(@document.documentable.class.max_file_size)) %></li>
+      <li>
+        <%= t "documents.recommendation_one_html",
+                max_documents_allowed: max_documents_allowed(@document.documentable) %>
+      </li>
+      <li>
+        <%= t "documents.recommendation_two_html",
+              accepted_content_types: humanized_accepted_content_types(@document.documentable) %>
+      </li>
+      <li>
+        <%= t "documents.recommendation_three_html",
+              max_file_size: max_file_size(@document.documentable) %>
+      </li>
     </ul>
   </div>
 </div>

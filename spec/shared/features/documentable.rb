@@ -1,12 +1,13 @@
 shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
   include ActionView::Helpers
   include DocumentsHelper
+  include DocumentablesHelper
 
   let!(:administrator)          { create(:user) }
   let!(:user)                   { create(:user) }
   let!(:arguments)              { {} }
   let!(:documentable)           { create(documentable_factory_name, author: user) }
-  let!(:documentable_dom_name)  { documentable_factory_name.gsub('_', '-') }
+  let!(:documentable_dom_name)  { documentable_factory_name.parameterize }
 
   before do
     create(:administrator, user: administrator)
@@ -157,9 +158,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               documentable_id: documentable.id,
                               from: send(documentable_path, arguments))
 
-      expect(page).to have_content "You can upload up to a maximum of #{documentable.class.max_documents_allowed} documents."
-      expect(page).to have_content "You can upload #{documentable.class.accepted_content_types.join(", ")} files."
-      expect(page).to have_content "You can upload files up to #{bytesToMeg(documentable.class.max_file_size)} MB."
+      expect(page).to have_content "You can upload up to a maximum of #{max_file_size(documentable)} documents."
+      expect(page).to have_content "You can upload #{humanized_accepted_content_types(documentable)} files."
+      expect(page).to have_content "You can upload files up to #{max_file_size(documentable)} MB."
     end
 
   end
