@@ -17,7 +17,6 @@
     <div class="small-12 column">
       <div class="file-name">
         <%= f.file_field :attachment, label: false, class: 'show-for-sr' %>
-        <br>
         <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
         <p><%= document_attachment_file_name(@document) %></p>
       </div>
