@@ -3,7 +3,11 @@
     <%= document.title %>
   </td>
   <td class="text-center">
-    <%= link_to t('documents.buttons.download_document'), document.attachment.url, target: :blank, class: 'button hollow' %>
+    <%= link_to t('documents.buttons.download_document'),
+                document.attachment.url,
+                target: "_blank",
+                rel: "nofollow",
+                class: 'button hollow' %>
   </td>
   <td class="text-center">
     <% if can? :destroy, Document %>

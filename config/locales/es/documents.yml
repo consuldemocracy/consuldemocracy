@@ -21,7 +21,7 @@ es:
         notice: "El documento se ha eliminado correctamente."
         alert: "El documento no se ha podido eliminar."
     buttons:
-      download_document: Descargar PDF
+      download_document: Descargar archivo
       destroy_document: Eliminar
     errors:
       messages:

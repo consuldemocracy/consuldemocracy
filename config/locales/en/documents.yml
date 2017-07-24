@@ -21,7 +21,7 @@ en:
         notice: Document was deleted successfully.
         alert: Cannot destroy document.
     buttons:
-      download_document: Download PDF
+      download_document: Dowload file
       destroy_document: Destroy
     errors:
       messages:
