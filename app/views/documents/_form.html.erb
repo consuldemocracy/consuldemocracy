@@ -23,7 +23,7 @@
     </div>
 
     <% if @document.errors.has_key?(:attachment) %>
-      <div class="small-12 column">
+      <div class="small-12 column source-option-file">
         <div class="attachment-errors">
           <small class="error"><%= errors_on_attachment(@document)%></small>
         </div>
