@@ -9,35 +9,14 @@ en:
         info: Here you can validate user documents and store voting results
     menu:
       voters: Validate document
-      recounts: Store recount
       final_recounts: Final recounts and results
     polls:
-      index:
-        title: Poll list
-        no_polls: You are not officing in any active poll
-        select_poll: Select poll
-        add_recount: Add recount
       final:
         title: Polls ready for final recounting
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_recount: Add final recount
         add_results: Add results
-    recounts:
-      flash:
-        create: "Data added"
-        error_create: "Count NOT added. Error in data."
-      new:
-        title: "%{poll} - Add daily recount"
-        not_allowed: "You are not a poll officer for this poll"
-        booth_date: "Booth and date"
-        select_booth_date: "Select booth and date"
-        count: "Vote count"
-        count_placeholder: "Vote count"
-        submit: Save
-        recount_list: "Your recounts"
-        booth: "Booth"
-        date: "Date"
     final_recounts:
       flash:
         create: "Data added"

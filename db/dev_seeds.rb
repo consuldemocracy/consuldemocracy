@@ -577,19 +577,6 @@ print "Creating Poll Officer Assignments"
 end
 
 puts " ✅"
-print "Creating Poll Recounts" do
-  (1..15).to_a.sample.times do |i|
-    poll_officer.poll_officer.officer_assignments.all.sample(i).each do |officer_assignment|
-      Poll::Recount.create(officer_assignment: officer_assignment,
-                           booth_assignment: officer_assignment.booth_assignment,
-                           date: officer_assignment.date,
-                           count: (1..5000).to_a.sample)
-    end
-  end
-
-end
-
-puts " ✅"
 print "Creating Poll Questions from Proposals"
 
 3.times do

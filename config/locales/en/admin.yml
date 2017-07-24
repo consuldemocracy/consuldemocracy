@@ -504,8 +504,6 @@ en:
         remove_assignment: "Remove"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
-        recounts: "Daily recounts"
-        recount: "Daily recount (by officer)"
         final_recounts: "Final recounts"
         final_recount: "Final recount (by officer)"
     poll_booth_assignments:
@@ -521,9 +519,7 @@ en:
         no_officers: "There are no officers for this booth"
         recounts: "Recounts"
         recounts_list: "Recount list for this booth"
-        no_recounts: "There are not daily recounts of this booth yet"
         date: "Date"
-        count_by_officer: "Daily recount (by officer)"
         count_final: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
       index:
@@ -595,7 +591,6 @@ en:
         title: "Recounts"
         no_recounts: "There is nothing to be recounted"
         table_booth_name: "Booth"
-        table_recounts: "Accumulated daily recounts (by officer)"
         table_final_recount: "Final recount (by officer)"
         table_system_count: "Votes (automatic)"
     results:

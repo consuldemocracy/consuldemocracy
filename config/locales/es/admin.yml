@@ -521,9 +521,7 @@ es:
         no_officers: "No hay presidentes de mesa para esta urna"
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
-        no_recounts: "No hay recuentos diarios de esta urna"
         date: "Fecha"
-        count_by_officer: "Recuento diario (presidente de mesa)"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
       index:
@@ -595,7 +593,6 @@ es:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
         table_booth_name: "Urna"
-        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
         table_final_recount: "Recuento final (presidente de mesa)"
         table_system_count: "Votos (automático)"
     results:
