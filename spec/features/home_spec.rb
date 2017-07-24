@@ -81,6 +81,44 @@ feature "Home" do
 
         expect(current_path).to eq debate_path(debate)
       end
+
+      scenario 'Do not display recommended section when there are not debates, proposals and investments' do
+        visit root_path
+
+        expect(page).not_to have_content "Recommendations that may interest you"
+      end
+
+      feature 'Dynamic display' do
+
+        scenario 'Display debates centered when there are not proposals and investments' do
+          debate = create(:debate)
+
+          visit root_path
+
+          expect(page).to have_selector('.medium-6.large-6.medium-centered.large-centered')
+        end
+
+        scenario 'Correct display debates and proposals when there are not investments' do
+          proposal = create(:proposal)
+          budget_investment = create(:budget_investment)
+
+          visit root_path
+
+          expect(page).to have_selector('.medium-6.large-6')
+          expect(page).not_to have_selector('.medium-centered.large-centered')
+        end
+
+        scenario 'Correct display debates, proposals and investments' do
+          debate = create(:debate)
+          proposal = create(:proposal)
+          budget_investment = create(:budget_investment)
+
+          visit root_path
+
+          expect(page).to have_selector('.medium-4.large-4')
+          expect(page).not_to have_selector('.medium-centered.large-centered')
+        end
+      end
     end
 
   end

@@ -30,4 +30,29 @@ module WelcomeHelper
     image_tag(image_path) if image_path.present?
   end
 
+  def calculate_size(debates, proposals, budget_investments)
+    size =  debates.any? && proposals.any? && budget_investments.any? ? 4 : 6
+    "medium-#{size} large-#{size}"
+  end
+
+  def calculate_centered(debates, proposals, budget_investments)
+    centered = ""
+    if debates.blank? && proposals.blank? ||
+       debates.blank? && budget_investments.blank? ||
+       proposals.blank? && budget_investments.blank?
+        centered = "medium-centered large-centered"
+    end
+    centered
+  end
+
+  def calculate_centered_and_size_class(debates, proposals, budget_investments)
+    size = calculate_size(debates, proposals, budget_investments)
+    centered = calculate_centered(debates, proposals, budget_investments)
+    "#{size} #{centered if centered.present?}"
+  end
+
+  def display_recommendeds(debates, proposals, budget_investments)
+    debates.any? || proposals.any? || budget_investments.any?
+  end
+
 end
