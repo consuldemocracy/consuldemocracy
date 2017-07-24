@@ -78,23 +78,23 @@ class Verification::Residence
   end
 
   def district_code
-    @census_data.district_code
+    @census_api_response.district_code
   end
 
   def gender
-    @census_data.gender
+    @census_api_response.gender
   end
 
   private
 
     def retrieve_census_data
-      @census_data = CensusCaller.new.call(document_type, document_number)
+      @census_api_response = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
-      @census_data.valid? &&
-        @census_data.postal_code == postal_code &&
-        @census_data.date_of_birth == date_of_birth
+      @census_api_response.valid? &&
+        @census_api_response.postal_code == postal_code &&
+        @census_api_response.date_of_birth == date_of_birth
     end
 
     def clean_document_number
