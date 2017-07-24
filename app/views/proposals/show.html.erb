@@ -140,7 +140,9 @@
           url: proposal_url(@proposal)
         } %>
 
-        <%= render 'follows/followable_button', followable: @proposal if current_user %>
+        <% if current_user %>
+          <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
+        <% end %>
 
       </aside>
     </div>

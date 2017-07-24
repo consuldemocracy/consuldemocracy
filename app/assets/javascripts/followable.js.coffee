@@ -1,10 +1,8 @@
 App.Followable =
 
-  initialize: ->
-    $('.followable-content a[data-toggle]').on 'click', (event) ->
-      event.preventDefault()
-
-  update: (followable_id, button) ->
+  update: (followable_id, button, notice) ->
     $("#" + followable_id + " .js-follow").html(button)
-    # Temporary line. Waiting for issue resolution: https://github.com/consul/consul/issues/1736
-    initialize_modules()
+    if ($('[data-alert]').length > 0)
+      $('[data-alert]').replaceWith(notice)
+    else
+      $("body").append(notice)

@@ -357,4 +357,159 @@ feature 'Users' do
     end
   end
 
+  feature 'Following (public page)' do
+
+    before do
+      @user = create(:user)
+    end
+
+    scenario 'Not display following tab when user is not following any followable' do
+      visit user_path(@user)
+
+      expect(page).not_to have_content('0 Following')
+    end
+
+    scenario 'Active following tab by default when follows filters selected', :js do
+      proposal = create(:proposal, author: @user)
+      create(:follow, followable: proposal, user: @user)
+
+      visit user_path(@user, filter: "follows")
+
+      expect(page).to have_selector(".activity li.active", text: "1 Following" )
+    end
+
+    describe 'Proposals' do
+
+      scenario 'Display following tab when user is following one proposal at least' do
+        proposal = create(:proposal)
+        create(:follow, followable: proposal, user: @user)
+
+        visit user_path(@user)
+
+        expect(page).to have_content('1 Following')
+      end
+
+      scenario 'Display accordion proposal tab when user is following one proposal at least' do
+        proposal = create(:proposal)
+        create(:follow, followable: proposal, user: @user)
+
+        visit user_path(@user, filter: "follows")
+
+        expect(page).to have_link('Citizen proposals', href: "#")
+      end
+
+      scenario 'Not display accordion proposal tab when user is not following any proposal' do
+        visit user_path(@user, filter: "follows")
+
+        expect(page).not_to have_link('Citizen proposals', href: "#")
+      end
+
+      scenario 'Display proposal with action buttons inside accordion proposal tab when current user is proposal author', :js do
+        proposal = create(:proposal, author: @user)
+        create(:follow, followable: proposal, user: @user)
+        login_as @user
+
+        visit user_path(@user, filter: "follows")
+        click_link 'Citizen proposals'
+
+        expect(page).to have_content proposal.title
+        expect(page).to have_link "Send notification"
+        expect(page).to have_link "Retire"
+      end
+
+      scenario 'Display proposal with action buttons inside accordion proposal tab when there is no logged user', :js do
+        proposal = create(:proposal, author: @user)
+        create(:follow, followable: proposal, user: @user)
+
+        visit user_path(@user, filter: "follows")
+        click_link 'Citizen proposals'
+
+        expect(page).to have_content proposal.title
+        expect(page).not_to have_link "Send notification"
+        expect(page).not_to have_link "Retire"
+      end
+
+      scenario 'Display proposal without action buttons inside accordion proposal tab when current user is not proposal author', :js do
+        proposal = create(:proposal)
+        create(:follow, followable: proposal, user: @user)
+        login_as @user
+
+        visit user_path(@user, filter: "follows")
+        click_link 'Citizen proposals'
+
+        expect(page).to have_content proposal.title
+        expect(page).not_to have_link "Send notification"
+        expect(page).not_to have_link "Retire"
+      end
+
+    end
+
+    describe 'Budget Investments' do
+
+      scenario 'Display following tab when user is following one budget investment at least' do
+        budget_investment = create(:budget_investment)
+        create(:follow, followable: budget_investment, user: @user)
+
+        visit user_path(@user)
+
+        expect(page).to have_content('1 Following')
+      end
+
+      scenario 'Display accordion budget investment tab when user is following one budget investment at least' do
+        budget_investment = create(:budget_investment)
+        create(:follow, followable: budget_investment, user: @user)
+
+        visit user_path(@user, filter: "follow")
+
+        expect(page).to have_link('Investments', href: "#")
+      end
+
+      scenario 'Not display accordion budget investment tab when user is not following any budget investment' do
+        visit user_path(@user, filter: "follow")
+
+        expect(page).not_to have_link('Investments', href: "#")
+      end
+
+      scenario 'Display budget investment with action buttons inside accordion budget investment tab when current user is a verified user and author', :js do
+        user =  create(:user, :level_two)
+        budget_investment = create(:budget_investment, author: user)
+        create(:follow, followable: budget_investment, user: user)
+        login_as user
+
+        visit user_path(user, filter: "follows")
+        click_link 'Investments'
+
+        expect(page).to have_link budget_investment.title
+        expect(page).to have_link "Delete"
+      end
+
+      scenario 'Display budget investment with action buttons inside accordion budget investment tab when there is no logged user', :js do
+        user =  create(:user, :level_two)
+        budget_investment = create(:budget_investment, author: user)
+        create(:follow, followable: budget_investment, user: user)
+
+        visit user_path(user, filter: "follows")
+        click_link 'Investments'
+
+        expect(page).to have_link budget_investment.title
+        expect(page).not_to have_link "Delete"
+      end
+
+      scenario 'Display budget investment without action buttons inside accordion budget investment tab when current user is not budget investment author', :js do
+        user =  create(:user, :level_two)
+        budget_investment = create(:budget_investment)
+        create(:follow, followable: budget_investment, user: user)
+        login_as user
+
+        visit user_path(user, filter: "follows")
+        click_link 'Investments'
+
+        expect(page).to have_link budget_investment.title
+        expect(page).not_to have_link "Delete"
+      end
+
+    end
+
+  end
+
 end
