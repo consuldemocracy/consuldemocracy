@@ -115,7 +115,6 @@ feature 'Admin booths assignments' do
       click_link 'Recounts'
 
       within('#totals') do
-        within("#total_daily") { expect(page).to have_content "111" }
         within("#total_final") { expect(page).to have_content "5678" }
         within("#total_system") { expect(page).to have_content "2" }
       end
