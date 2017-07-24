@@ -69,7 +69,17 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
       let!(:document) { create(:document, documentable: documentable, user: documentable.author)}
 
-      scenario "Should display maximum number of documents alert when reached" do
+      scenario "Should not display maximum number of documents alert when reached for users without document creation permission" do
+        create_list(:document, 2, documentable: documentable)
+        visit send(documentable_path, arguments)
+
+        within "#tab-documents" do
+          expect(page).not_to have_content "You have reached the maximum number of documents allowed! You have to delete one before you can upload another."
+        end
+      end
+
+      scenario "Should display maximum number of documents alert when reached and when current user has document creation permission" do
+        login_as documentable.author
         create_list(:document, 2, documentable: documentable)
         visit send(documentable_path, arguments)
 

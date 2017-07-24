@@ -1,6 +1,6 @@
 <% if documents.any? %>
 
-  <% if documents.size == max_documents_allowed %>
+  <% if documents.size == max_documents_allowed && can?(:create, Document) %>
     <div class="row documents-list">
       <div class="small-12 column">
         <div class="callout primary text-center">
