@@ -13,11 +13,6 @@ en:
       recounts: Store recount
       final_recounts: Final recounts and results
     polls:
-      index:
-        title: Poll list
-        no_polls: You are not officing in any active poll
-        select_poll: Select poll
-        add_recount: Add recount
       final:
         title: Polls ready for final recounting
         no_polls: You are not officing final recounts in any active poll

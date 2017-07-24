@@ -13,11 +13,6 @@ es:
       recounts: "Recuento diario"
       final_recounts: "Recuento final y escrutinio"
     polls:
-      index:
-        title: "Listado de votaciones"
-        no_polls: "No eres presidente de mesa en ninguna votación activa"
-        select_poll: "Selecciona votación"
-        add_recount: "Añadir recuento"
       final:
         title: "Listado de votaciones finalizadas"
         no_polls: "No tienes permiso para recuento final en ninguna votación reciente"

@@ -4,7 +4,7 @@ class Officing::Residence
 
   attr_accessor :user, :officer, :document_number, :document_type, :year_of_birth, :postal_code, :letter
 
-  before_validation :call_census_api
+  before_validation :retrieve_census_data
 
   validates :document_number, presence: true
   validates :document_type, presence: true
@@ -109,8 +109,8 @@ class Officing::Residence
     Poll.find(1)
   end
 
-  def call_census_api
-    @census_api_response = CensusApi.new.call(document_type, document_number)
+  def retrieve_census_data
+    @census_api_response = CensusCaller.new.call(document_type, document_number)
   end
 
   def census_name
@@ -122,7 +122,6 @@ class Officing::Residence
   end
 
   private
-
     def residency_valid?
       return false unless @census_api_response.valid?
       if letter?
