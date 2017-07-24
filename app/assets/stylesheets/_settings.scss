@@ -3,7 +3,6 @@
 //
 //  Table of Contents:
 //
-//   0. Custom variables
 //   1. Global
 //   2. Breakpoints
 //   3. The Grid
@@ -43,64 +42,6 @@
 //  37. Custom variables
 
 @import 'util/util';
-
-// 0. Custom variables
-// --------------------
-
-$base-font-size:      rem-calc(17);
-$base-line:           rem-calc(26);
-$small-font-size:     rem-calc(14);
-$line-height:         rem-calc(24);
-$tiny-font-size:      rem-calc(12);
-
-$brand:             #004a83;
-$dark:              darken($brand, 10%);
-
-$text:              #222;
-$text-medium:       #515151;
-$text-light:        #bfbfbf;
-
-$border:            #dee0e3;
-
-$link:              $brand;
-$link-hover:        darken($link, 20%);
-
-$debates:           $brand;
-
-$like:              #7bd2a8;
-$unlike:            #ef8585;
-
-$delete:            #f04124;
-$check:             #46db91;
-
-$proposals:         #ffa42d;
-$proposals-dark:    #794500;
-
-$budget:            #7e328a;
-$budget-hover:      #7571bf;
-
-$highlight:         #e7f2fc;
-$light:             #f5f7fa;
-$featured:          #ffdc5c;
-
-$footer-border:     #bfc1c3;
-
-$success-bg:        #dff0d8;
-$success-border:    #d6e9c6;
-$color-success:     #3c763d;
-
-$info-bg:           #d9edf7;
-$info-border:       #bce8f1;
-$color-info:        #31708f;
-
-$warning-bg:        #fcf8e3;
-$warning-border:    #faebcc;
-$color-warning:     #8a6d3b;
-
-$alert-bg:          #f2dede;
-$alert-border:      #ebccd1;
-$color-alert:       #a94442;
-
 
 // 1. Global
 // ---------
@@ -254,12 +195,12 @@ $input-error-font-weight: $global-weight-bold;
 
 $accordion-background: $white;
 $accordion-plusminus: true;
-$accordion-item-color: foreground($accordion-background, $text);
+$accordion-item-color: foreground($accordion-background, $primary-color);
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
 $accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: foreground($accordion-background, $text);
+$accordion-content-color: foreground($accordion-background, $primary-color);
 $accordion-content-padding: 1rem;
 
 // 8. Accordion Menu
@@ -571,12 +512,12 @@ $show-header-for-stacked: false;
 $tab-margin: 0;
 $tab-background: $white;
 $tab-background-active: $white;
-$tab-item-font-size: $base-font-size;
+$tab-item-font-size: rem-calc(12);
 $tab-item-background-hover: $white;
-$tab-item-padding: $line-height / 2  0;
+$tab-item-padding: 1.25rem 1.5rem;
 $tab-expand-max: 6;
 $tab-content-background: $white;
-$tab-content-border: $border;
+$tab-content-border: $light-gray;
 $tab-content-color: foreground($tab-background, $primary-color);
 $tab-content-padding: 1rem;
 
