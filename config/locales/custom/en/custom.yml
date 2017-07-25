@@ -147,17 +147,20 @@ en:
       title_finished_html: "Know the winning projects of the participatory budgets"
       text_finished_html: "These are the citizen projects that will be financed with<br><strong>100 million euros</strong> of the municipal budget in 2018"
       label_finished: "The citizens of Madrid have decided"
-      button_finished: "See projects"
+      button_finished: "See results"
+      button_finished_title: "See results of Participatory Budgets 2017"
       stats:
         label: "Statistics"
         title: "Participatory Budget voting data"
         text: "Check the detailed data of the voting of projects."
         link: "See participation statistics"
+        alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
       geocraft:
         label: "Download"
         title: "Make Madrid"
         text: "Imagine and create your own Madrid in this environment that recreates the Plaza Santa Ana of the capital."
         link: "More information about Make Madrid"
+        alt: "Image of the Geocraft environment representing the Plaza Santa Ana in Madrid"
       once_plazas:
         label: "Process"
         title: "Once Plazas"
