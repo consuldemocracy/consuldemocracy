@@ -1,16 +1,16 @@
 require 'http'
 
-API_ENDPOINT = 'https://decide.madrid.es/graphql'
+API_ENDPOINT = 'https://decide.madrid.es/graphql'.freeze
 
 def make_request(query_string)
   HTTP.headers('User-Agent' => 'Mozilla/5.0', accept: 'application/json')
       .get(
         API_ENDPOINT,
-        params: { query: query_string.gsub("\n", '').gsub(" ", '') }
+        params: { query: query_string.delete("\n").delete(" ") }
       )
 end
 
-query = """
+query = <<-GRAPHQL
   {
     proposal(id: 1) {
         id,
@@ -18,7 +18,7 @@ query = """
         public_created_at
     }
   }
-"""
+GRAPHQL
 
 response = make_request(query)
 

@@ -440,6 +440,8 @@ Style/AccessorMethodName:
 Style/BracesAroundHashParameters:
   Exclude:
     - 'app/models/concerns/searchable.rb'
+    - 'spec/features/budgets/investments_spec.rb'
+    - 'spec/features/proposals_spec.rb'
 
 # Offense count: 119
 # Configuration parameters: EnforcedStyle, SupportedStyles.
