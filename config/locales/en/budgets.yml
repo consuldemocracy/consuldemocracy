@@ -129,7 +129,7 @@ en:
     results:
       link: Results
       page_title: "%{budget} - Results"
-      heading: "Results"
+      heading: "Participatory budget results"
       heading_selection_title: "By district"
       spending_proposal: Proposal title
       ballot_lines_count: Times selected

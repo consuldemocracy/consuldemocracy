@@ -129,7 +129,7 @@ es:
     results:
       link: Resultados
       page_title: "%{budget} - Resultados"
-      heading: "Resultados"
+      heading: "Resultados presupuestos participativos"
       heading_selection_title: "Ámbito de actuación"
       spending_proposal: Título
       ballot_lines_count: Votos

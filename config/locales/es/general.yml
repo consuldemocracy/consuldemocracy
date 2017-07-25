@@ -233,6 +233,7 @@ es:
       transparency_title: Transparencia
       transparency_url: http://transparencia.madrid.es
     header:
+      administration_menu: Admin
       administration: Administrar
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos
