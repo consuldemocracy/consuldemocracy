@@ -46,6 +46,10 @@ class LocalCensus
       "#{@body.nombre} #{@body.apellido1}" rescue nil
     end
 
+    def document_number
+      "#{@body.identificador_documento}#{@body.letra_documento_string}" rescue nil
+    end
+
     private
 
       def data
