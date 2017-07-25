@@ -168,16 +168,6 @@ feature 'Probes' do
         expect(page).to_not have_content @probe_option_1.debate.title
         expect(page).to_not have_content @probe_option_2.debate.title
       end
-
-      scenario 'debate show should redirect to probe show' do
-        probe_option = @probe.probe_options.first
-
-        debate = create(:debate)
-        probe_option.update(debate: debate)
-
-        visit debate_path(probe_option.debate)
-        expect(current_url).to include("proceso/plaza-espana/proyectos/#{@probe_option_1.id}")
-      end
     end
 
   end
