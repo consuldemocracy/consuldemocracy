@@ -1,12 +1,12 @@
 require 'http'
 
-API_ENDPOINT = 'https://decide.madrid.es/graphql'
+API_ENDPOINT = 'https://decide.madrid.es/graphql'.freeze
 
 def make_request(query_string)
   HTTP.headers('User-Agent' => 'Mozilla/5.0', accept: 'application/json')
       .get(
         API_ENDPOINT,
-        params: { query: query_string.gsub("\n", '').gsub(" ", '') }
+        params: { query: query_string.delete("\n").delete(" ") }
       )
 end
 
@@ -15,9 +15,9 @@ def build_query(options = {})
   page_size_parameter = "first: #{page_size}"
 
   page_number = options[:page_number] || 0
-  after_parameter = page_number > 0 ? ", after: \"#{options[:next_cursor]}\"" : ""
+  after_parameter = page_number.positive? ? ", after: \"#{options[:next_cursor]}\"" : ""
 
-  """
+  <<-GRAPHQL
   {
     proposals(#{page_size_parameter}#{after_parameter}) {
       pageInfo {
@@ -33,7 +33,7 @@ def build_query(options = {})
       }
     }
   }
-  """
+  GRAPHQL
 end
 
 page_number = 0
@@ -41,7 +41,7 @@ next_cursor = nil
 proposals   = []
 
 loop do
-  
+
   puts "> Requesting page #{page_number}"
 
   query = build_query(page_size: 25, page_number: page_number, next_cursor: next_cursor)
@@ -61,5 +61,5 @@ loop do
 
   page_number += 1
 
-  break if !has_next_page
+  break unless has_next_page
 end

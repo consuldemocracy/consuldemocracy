@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
-  has_filters %w{proposals debates budget_investments comments}, only: :show
+  has_filters %w{proposals debates budget_investments comments follows}, only: :show
 
   load_and_authorize_resource
   helper_method :author?
-  helper_method :author_or_admin?
   helper_method :current_user_is_author?
+  helper_method :valid_interests_access?
 
   def show
     load_filtered_activity if valid_access?
-    load_interests if valid_interests_access?
   end
 
   private
@@ -17,21 +16,21 @@ class UsersController < ApplicationController
       @activity_counts = HashWithIndifferentAccess.new(
                           proposals: Proposal.where(author_id: @user.id).count,
                           debates: (Setting['feature.debates'] ? Debate.where(author_id: @user.id).count : 0),
-                          #spending_proposals: SpendingProposal.where(author_id: @user.id).count,
                           ballot: (Setting["feature.spending_proposal_features.phase3"].blank? ? 0 : 1),
                           budget_investments: (Setting['feature.budgets'] ? Budget::Investment.where(author_id: @user.id).count : 0),
-                          comments: only_active_commentables.count)
+                          comments: only_active_commentables.count,
+                          follows: @user.follows.count)
     end
 
     def load_filtered_activity
       set_activity_counts
       case params[:filter]
       when "proposals" then load_proposals
-      when "debates"   then load_debates
+      when "debates" then load_debates
       when "budget_investments" then load_budget_investments
-      when "comments"  then load_comments
-      #when "spending_proposals"  then load_spending_proposals if author_or_admin?
-      when "ballot"    then load_ballot
+      when "ballot" then load_ballot
+      when "comments" then load_comments
+      when "follows" then load_follows
       else load_available_activity
       end
     end
@@ -43,15 +42,15 @@ class UsersController < ApplicationController
       elsif @activity_counts[:debates] > 0
         load_debates
         @current_filter = "debates"
-      #elsif @activity_counts[:spending_proposals] > 0
-      #  load_spending_proposals
-      #  @current_filter = "spending_proposals"
       elsif @activity_counts[:budget_investments] > 0
         load_budget_investments
         @current_filter = "budget_investments"
       elsif  @activity_counts[:comments] > 0
         load_comments
         @current_filter = "comments"
+      elsif  @activity_counts[:follows] > 0
+        load_follows
+        @current_filter = "follows"
       end
     end
 
@@ -75,8 +74,8 @@ class UsersController < ApplicationController
       @budget_investments = Budget::Investment.where(author_id: @user.id).order(created_at: :desc).page(params[:page])
     end
 
-    def load_interests
-      @user.interests
+    def load_follows
+      @follows = @user.follows.group_by(&:followable_type)
     end
 
     def valid_access?
@@ -95,12 +94,8 @@ class UsersController < ApplicationController
       @current_user_is_author ||= current_user && current_user == @user
     end
 
-    def author?
-      @author ||= current_user && (current_user == @user)
-    end
-
-    def author_or_admin?
-      @author_or_admin ||= current_user && (author? || current_user.administrator?)
+    def author?(proposal)
+      proposal.author_id == current_user.id if current_user
     end
 
     def authorized_current_user?
