@@ -478,7 +478,6 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       get :final, on: :collection
 
-      resources :recounts, only: [:new, :create]
       resources :final_recounts, only: [:new, :create]
       resources :results, only: [:new, :create, :index]
 

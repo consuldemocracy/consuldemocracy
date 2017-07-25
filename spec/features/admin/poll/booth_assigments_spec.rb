@@ -97,16 +97,6 @@ feature 'Admin booths assignments' do
       officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
       final_officer_assignment = create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
 
-      recount_1 = create(:poll_recount,
-                         booth_assignment: booth_assignment,
-                         officer_assignment: officer_assignment_1,
-                         date: officer_assignment_1.date,
-                         count: 33)
-      recount_2 = create(:poll_recount,
-                         booth_assignment: booth_assignment,
-                         officer_assignment: officer_assignment_2,
-                         date: officer_assignment_2.date,
-                         count: 78)
       final_recount = create(:poll_final_recount,
                          booth_assignment: booth_assignment,
                          officer_assignment: final_officer_assignment,
@@ -116,7 +106,6 @@ feature 'Admin booths assignments' do
       create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.ends_at.to_date)
 
       booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
-      other_recount = create(:poll_recount, booth_assignment: booth_assignment_2, count: 100)
 
       visit admin_poll_path(poll)
       click_link 'Booths (2)'
@@ -126,60 +115,15 @@ feature 'Admin booths assignments' do
       click_link 'Recounts'
 
       within('#totals') do
-        within("#total_daily") { expect(page).to have_content "111" }
         within("#total_final") { expect(page).to have_content "5678" }
         within("#total_system") { expect(page).to have_content "2" }
       end
 
       within('#recounts_list') do
-        expect(page).to_not have_content other_recount.count
-
-        within("#recounting_#{recount_1.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content recount_1.count
-        end
-
-        within("#recounting_#{recount_2.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content recount_2.count
+        within("#recounting_#{final_recount.date.strftime('%Y%m%d')}") do
+          expect(page).to have_content final_recount.count
         end
       end
     end
-
-    scenario 'Marks recount values with count-errors' do
-      poll = create(:poll)
-      booth = create(:poll_booth)
-      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      today = Date.current
-      officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: today)
-
-      recount = create(:poll_recount,
-                         booth_assignment: booth_assignment,
-                         officer_assignment: officer_assignment,
-                         date: officer_assignment.date,
-                         count: 1)
-
-      visit admin_poll_booth_assignment_path(poll, booth_assignment)
-      click_link 'Recounts'
-
-      within('#recounts_list') do
-        expect(page).to have_css("#recounting_#{recount.date.strftime('%Y%m%d')} td.count-error")
-        within("#recounting_#{recount.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content recount.count
-          expect(page).to have_content 0
-        end
-      end
-
-      create(:poll_voter, :valid_document, poll: poll, booth_assignment: booth_assignment)
-
-      visit admin_poll_booth_assignment_path(poll, booth_assignment)
-      click_link 'Recounts'
-
-      within('#recounts_list') do
-        expect(page).to_not have_css('.count-error')
-        within("#recounting_#{recount.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content(recount.count)
-        end
-      end
-    end
-
   end
 end
