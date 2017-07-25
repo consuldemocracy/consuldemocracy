@@ -219,7 +219,7 @@ feature 'Users' do
     end
 
     scenario 'Display interests' do
-      proposal =  create(:proposal, tag_list: "Sport")
+      proposal = create(:proposal, tag_list: "Sport")
       create(:follow, :followed_proposal, followable: proposal, user: @user)
 
       login_as(@user)
@@ -375,7 +375,7 @@ feature 'Users' do
 
       visit user_path(@user, filter: "follows")
 
-      expect(page).to have_selector(".activity li.active", text: "1 Following" )
+      expect(page).to have_selector(".activity li.active", text: "1 Following")
     end
 
     describe 'Proposals' do
@@ -471,7 +471,7 @@ feature 'Users' do
       end
 
       scenario 'Display budget investment with action buttons inside accordion budget investment tab when current user is a verified user and author', :js do
-        user =  create(:user, :level_two)
+        user = create(:user, :level_two)
         budget_investment = create(:budget_investment, author: user)
         create(:follow, followable: budget_investment, user: user)
         login_as user
@@ -484,7 +484,7 @@ feature 'Users' do
       end
 
       scenario 'Display budget investment with action buttons inside accordion budget investment tab when there is no logged user', :js do
-        user =  create(:user, :level_two)
+        user = create(:user, :level_two)
         budget_investment = create(:budget_investment, author: user)
         create(:follow, followable: budget_investment, user: user)
 
@@ -496,7 +496,7 @@ feature 'Users' do
       end
 
       scenario 'Display budget investment without action buttons inside accordion budget investment tab when current user is not budget investment author', :js do
-        user =  create(:user, :level_two)
+        user = create(:user, :level_two)
         budget_investment = create(:budget_investment)
         create(:follow, followable: budget_investment, user: user)
         login_as user

@@ -20,7 +20,7 @@ module FollowablesHelper
   end
 
   def followable_class_name(followable)
-    followable.class.to_s.parameterize.gsub('-', '_')
+    followable.class.to_s.parameterize('_')
   end
 
   def find_or_build_follow(user, followable)

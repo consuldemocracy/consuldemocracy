@@ -5,5 +5,4 @@ class Follow < ActiveRecord::Base
   validates :user_id, presence: true
   validates :followable_id, presence: true
   validates :followable_type, presence: true
-
 end
