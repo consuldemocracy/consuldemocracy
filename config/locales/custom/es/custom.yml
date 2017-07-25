@@ -148,16 +148,19 @@ es:
       text_finished_html: "Estos son los proyectos ciudadanos que se financiarán con<br><strong>100 millones de euros</strong> del presupuesto municipal en 2018."
       label_finished: "La ciudadanía madrileña ha decidido"
       button_finished: "Ver Resultados"
+      button_finished_title: "Ver resultados de los Presupuestos participativos 2017"
       stats:
         label: "Estadísticas"
         title: "Datos de la votación de presupuestos"
         text: "Consulta los datos detallados de la votación de proyectos."
         link: "Ver estadísticas de participación"
+        alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
       geocraft:
         label: "Descarga"
         title: "Haz Madrid"
         text: "Imagina y crea tu propio Madrid en este entorno que recrea la Plaza Santa Ana de la capital."
         link: "Más información sobre Haz Madrid"
+        alt: "Imagen del entorno Geocraft que representa la Plaza Santa Ana de Madrid"
       once_plazas:
         label: "Proceso"
         title: "Once Plazas"

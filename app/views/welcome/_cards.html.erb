@@ -3,7 +3,7 @@
     <div class="small-12 medium-4 column margin-bottom">
       <figure class="figure-card">
         <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.budgets.stats.link") do %>
-          <%= image_tag "welcome_budgets_videos.jpg", alt: "" %>
+          <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.budgets.stats.alt") %>
         <% end %>
         <figcaption>
           <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.budgets.stats.link") do %>
@@ -21,7 +21,7 @@
   <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card">
       <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
-        <%= image_tag "welcome_geocraft.jpg", alt: "" %>
+        <%= image_tag "welcome_geocraft.jpg", alt: t("welcome.budgets.geocraft.alt") %>
       <% end %>
       <figcaption>
         <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
