@@ -604,7 +604,6 @@ es:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
         all_booths_total: "Acumulado en todas las urnas:"
-        total_daily: Recuentos diarios
         total_final: Recuentos finales
         total_system: Votos (automático)
         table_booth_name: "Urna"
