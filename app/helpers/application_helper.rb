@@ -45,7 +45,7 @@ module ApplicationHelper
 
   def back_link_to(destination = :back, text = t("shared.back"))
     link_to destination, class: "back" do
-      "<span class='icon-angle-left'></span>".html_safe + text
+      content_tag(:span, class: 'icon-angle-left') + text
     end
   end
 
