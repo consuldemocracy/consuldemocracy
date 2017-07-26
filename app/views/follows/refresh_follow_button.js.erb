@@ -1,2 +1,3 @@
-App.Followable.update("<%= dom_id(@followable) %>",
-                      "<%= j render('followable_button', followable: @followable) %>")
+App.Followable.update("<%= dom_id(@follow.followable) %>",
+                      "<%= j render('follow_button', follow: @follow) %>",
+                      "<%= j render('layouts/flash') %>")
