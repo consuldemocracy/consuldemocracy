@@ -5,7 +5,7 @@ describe CensusCaller do
 
   describe '#call' do
     it "returns data from local_census_records if census API is not available" do
-      census_api_response = CensusApi::Response.new({:get_habita_datos_response=>{:get_habita_datos_return=>{:datos_habitante=>{}, :datos_vivienda=>{}}}})
+      census_api_response = CensusApi::Response.new(get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}})
       local_census_response = LocalCensus::Response.new(create(:local_census_record))
 
       CensusApi.any_instance.stub(:call).and_return(census_api_response)
@@ -20,7 +20,7 @@ describe CensusCaller do
     end
 
     it "returns data from census API if it's available and valid" do
-      census_api_response = CensusApi::Response.new({get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {item: {fecha_nacimiento_string: "1-1-1980"}}}}})
+      census_api_response = CensusApi::Response.new(get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {item: {fecha_nacimiento_string: "1-1-1980"}}}})
       local_census_response = LocalCensus::Response.new(create(:local_census_record))
 
       CensusApi.any_instance.stub(:call).and_return(census_api_response)

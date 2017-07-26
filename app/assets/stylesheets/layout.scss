@@ -1973,8 +1973,39 @@ table {
 .activity {
   margin-bottom: $line-height * 2;
 
+  .accordion li {
+    margin-bottom: $line-height / 2;
+
+    .accordion-title {
+      border-bottom: 1px solid $border;
+      background: #f8f9fb;
+      font-size: $small-font-size;
+      padding: $line-height / 2;
+    }
+
+    .accordion-content {
+      padding: 0;
+    }
+  }
+
+  .accordion .title {
+    display: block;
+    line-height: $line-height;
+  }
+
+  .accordion .icon {
+    font-size: rem-calc(20);
+    float: left;
+    margin-right: $line-height / 3;
+
+    &.icon-debates {
+      margin-top: rem-calc(3);
+    }
+  }
+
   table {
     border: 0;
+    margin-bottom: 0;
   }
 
   td {

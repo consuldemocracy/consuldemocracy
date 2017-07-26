@@ -67,7 +67,7 @@ module Abilities
           if Setting["feature.spending_proposal_features.final_voting_allowed"].present?
             can [:create, :destroy], ::BallotLine
           end
-          can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+          can :vote, Budget::Investment,                 budget: { phase: "selecting" }
           can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
           can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 

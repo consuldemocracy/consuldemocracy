@@ -97,7 +97,6 @@ var initialize_modules = function() {
     App.LegislationAnnotatable.initialize();
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
-  App.Followable.initialize();
 };
 
 $(function(){
