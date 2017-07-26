@@ -3,8 +3,8 @@
   <% if documents.size == max_documents_allowed && can?(:create, Document) %>
     <div class="row documents-list">
       <div class="small-12 column">
-        <div class="callout primary text-center">
-          <%= t "documents.max_documents_allowed_reached" %>
+        <div class="callout warning text-center">
+          <%= t "documents.max_documents_allowed_reached_html" %>
         </div>
       </div>
     </div>
