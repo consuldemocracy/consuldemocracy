@@ -213,7 +213,7 @@ feature 'Users' do
 
   end
 
-  feature 'Public interest' do
+  feature 'Public interests' do
     background do
       @user = create(:user)
     end
@@ -310,6 +310,35 @@ feature 'Users' do
       expect(page).to have_css('#public_interests')
     end
 
+    scenario 'Should display generic interests title' do
+      @user.update(public_interests: true)
+      visit user_path(@user)
+
+      expect(page).to have_content("List of interests (Tags of elements this user follows)")
+    end
+
+    scenario 'Should display custom interests title when user is visiting own user page' do
+      @user.update(public_interests: true)
+      login_as(@user)
+      visit user_path(@user)
+
+      expect(page).to have_content("List of interests (Tags of elements you follow)")
+    end
+
+    scenario 'Should display generic empty interests list message when visited user has not interests defined' do
+      @user.update(public_interests: true)
+      visit user_path(@user)
+
+      expect(page).to have_content("This user does not follow any elements yet.")
+    end
+
+    scenario 'Should display custom empty interests list message when user has not interests defined and user is visiting own user page' do
+      @user.update(public_interests: true)
+      login_as(@user)
+      visit user_path(@user)
+
+      expect(page).to have_content("You do not follow any elements yet.")
+    end
   end
 
   feature 'Special comments' do

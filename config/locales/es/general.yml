@@ -14,7 +14,10 @@ es:
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
       public_interests_label: Mostrar públicamente mis intereses
-      public_interests_title_list: Lista de intereses
+      public_interests_my_title_list: Lista de intereses (Etiquetas de los elementos que sigues)
+      public_interests_user_title_list: Lista de intereses (Etiquetas de los elementos seguidos este usuario)
+      public_interests_my_empty_list: Aún no sigues ningún elemento.
+      public_interests_user_empty_list: Este usuario no sigue ningún elemento todavía.
       save_changes_submit: Guardar cambios
       subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
       email_on_direct_message_label: Recibir emails con mensajes privados
