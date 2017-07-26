@@ -514,8 +514,6 @@ es:
         remove_assignment: "Eliminar turno"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
-        recounts: "Recuentos diarios"
-        recount: "Recuento diario (presidente de mesa)"
         final_recounts: "Recuentos finales"
         final_recount: "Recuento final (presidente de mesa)"
     poll_booth_assignments:
@@ -536,7 +534,6 @@ es:
         count_by_officer: "Recuento diario (presidente de mesa)"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
-        total_daily: "Recuentos diarios acumulados (presidentes de mesa)"
         total_system: "Votos totales acumulados(automático)"
       index:
         booths_title: "Listado de urnas asignadas"
@@ -611,7 +608,6 @@ es:
         total_final: Recuentos finales
         total_system: Votos (automático)
         table_booth_name: "Urna"
-        table_recounts: "Recuentos diarios acumulados (presidente de mesa)"
         table_final_recount: "Recuento final (presidente de mesa)"
         table_system_count: "Votos (automático)"
     results:

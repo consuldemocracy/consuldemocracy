@@ -1,6 +1,4 @@
 class DebatesController < ApplicationController
-  before_action :redirect_to_plaza, only: :show
-
   include FeatureFlags
   include CommentableActions
   include FlagActions
@@ -57,14 +55,6 @@ class DebatesController < ApplicationController
 
     def resource_model
       Debate
-    end
-
-    def redirect_to_plaza
-      plaza = Probe.where(codename: 'plaza').first
-      probe_option = ProbeOption.where(probe: plaza, debate_id: params[:id]).first
-      if probe_option.present?
-        redirect_to plaza_probe_option_path(probe_option, anchor: 'comments')
-      end
     end
 
 end

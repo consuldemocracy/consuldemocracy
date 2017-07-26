@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :local_census_record, class: 'LocalCensusRecord' do
+    document_number '12345678A'
+    document_type 1
+    date_of_birth Date.new(1970, 1, 31)
+    postal_code '28002'
+  end
+
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
 
   factory :user do
@@ -513,13 +520,6 @@ FactoryGirl.define do
     trait :final do
       final true
     end
-  end
-
-  factory :poll_recount, class: 'Poll::Recount' do
-    association :officer_assignment, factory: :poll_officer_assignment
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
   end
 
   factory :poll_final_recount, class: 'Poll::FinalRecount' do

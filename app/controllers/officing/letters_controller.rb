@@ -23,10 +23,10 @@ class Officing::LettersController < Officing::BaseController
           @log = ::Poll::LetterOfficerLog.log(current_user, voter.document_number, @residence.postal_code, :ok)
         end
       else
-        if @residence.document_number.blank? || @residence.errors[:year_of_birth].present? || @residence.errors[:residence_in_madrid].present? || (not @residence.call_census_api.valid?)
+        if @residence.document_number.blank? || @residence.errors[:year_of_birth].present? || @residence.errors[:residence_in_madrid].present? || (not @residence.retrieve_census_data.valid?)
           @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :census_failed)
-        elsif @residence.postal_code.blank? && @residence.call_census_api.valid? && (not @residence.already_voted?)
-          @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :no_postal_code, @residence.census_name, @residence.call_census_api.postal_code)
+        elsif @residence.postal_code.blank? && @residence.retrieve_census_data.valid? && (not @residence.already_voted?)
+          @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :no_postal_code, @residence.census_name, @residence.retrieve_census_data.postal_code)
         elsif @residence.errors[:document_number].present?
           @log = ::Poll::LetterOfficerLog.log(current_user, @residence.document_number, @residence.postal_code, :has_voted)
         end
