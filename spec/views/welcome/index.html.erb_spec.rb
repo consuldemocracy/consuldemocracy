@@ -11,7 +11,7 @@ RSpec.describe "welcome/index" do
                      image_field: nil,
                      image_version: nil,
                      image_default: "https://dummyimage.com/600x400/000/fff",
-                     klass: ""}
+                     carousel_size: "medium-6 large-6 medium-centered large-centered"}
 
     within 'li[data-slide="0"] .card' do
       expect(page).to have_selector("img")
@@ -28,7 +28,7 @@ RSpec.describe "welcome/index" do
                      image_field: nil,
                      image_version: nil,
                      image_default: nil,
-                     klass: ""}
+                     carousel_size: "medium-6 large-6 medium-centered large-centered"}
 
     within 'li[data-slide="0"] .card' do
       expect(page).not_to have_selector("img")
