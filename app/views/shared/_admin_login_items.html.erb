@@ -1,4 +1,7 @@
 <% if current_user %>
+<% if current_user.administrator? || current_user.moderator? ||
+  (feature?(:spending_proposals) || feature?(:budgets)) && (current_user.administrator? || current_user.valuator?) ||
+  current_user.manager? || current_user.poll_officer? && Poll.current.any? %>
 <li>
   <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow" %>
   <ul class="menu">
@@ -40,4 +43,5 @@
     <% end %>
   </ul>
 </li>
+<% end %>
 <% end %>
