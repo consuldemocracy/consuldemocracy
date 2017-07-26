@@ -1,3 +1,5 @@
+<% content_for :body_class, "home-page" %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: root_url %>
 <% end %>
@@ -21,31 +23,6 @@
   </div>
 </div>
 
-<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
-  <main>
-    <div class="row text-center margin">
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.debates.title") %></h2>
-        <p><%= t("welcome.debates.description") %></p>
-
-      </div>
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.proposal.title") %></h2>
-        <p><%= t("welcome.proposal.description") %></p>
-      </div>
-
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.decide.title") %></h2>
-        <p><%= t("welcome.decide.description") %></p>
-      </div>
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.do.title") %></h2>
-        <p><%= t("welcome.do.description") %></p>
-      </div>
-    </div>
-  </main>
-<% end %>
-
 <% if current_user.present? %>
 
   <% recommended_debates = current_user.recommended_debates %>
@@ -58,4 +35,31 @@
                               recommended_budget_investments: recommended_budget_investments %>
   <% end %>
 
+<% end %>
+
+
+
+<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
+  <main>
+    <div class="highlight small-12 column text-center">
+      <div class="row margin padding">
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.debates.title") %></h2>
+          <p><%= t("welcome.debates.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.proposal.title") %></h2>
+          <p><%= t("welcome.proposal.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.decide.title") %></h2>
+          <p><%= t("welcome.decide.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.do.title") %></h2>
+          <p><%= t("welcome.do.description") %></p>
+        </div>
+      </div>
+    </div>
+  </main>
 <% end %>

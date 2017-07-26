@@ -1,7 +1,8 @@
-<div class="highlight small-12 column section-recommended">
+<div class="small-12 column section-recommended padding">
   <div class="row">
 
     <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
+    <!-- Add the carousel-image class to show the pictures -->
     <div class="small-12 column carousel-image">
       <% centered_and_size_class = calculate_centered_and_size_class(recommended_debates, recommended_proposals, recommended_budget_investments) %>
       <% if recommended_debates.any? %>

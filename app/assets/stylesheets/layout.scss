@@ -2140,8 +2140,16 @@ table {
 
 // 19. Recommended Section Home
 // -----------
+
+.home-page {
+  .push {
+    display: none;
+  }
+}
+
 .section-recommended {
-  padding-top: $line-height * 2;
+  padding: $line-height * 2 0;
+  // padding-bottom: $line-height * 2;
 
   h2 {
     margin-bottom: $line-height * 2;
@@ -2163,10 +2171,11 @@ table {
   .card {
 
     .card-section {
-      padding: $line-height;
+      padding:$line-height 0;
 
       p {
         font-size: rem-calc(15);
+        text-align: left;
       }
     }
 
@@ -2226,6 +2235,38 @@ table {
 
     h5 {
       font-size: rem-calc(14);
+      text-align: left;
     }
   }
+
+  .carousel-image {
+
+    .card .orbit {
+      height: 480px;
+
+      .orbit-wrapper {
+        min-height: 450px;
+        max-height: 460px;
+      }
+    }
+
+    .debates-inner,
+    .proposals-inner,
+    .budget-investments-inner {
+      max-height: 500px;
+
+      @include breakpoint(small) {
+        max-height: 600px;
+      }
+    }
+  }
+
+  .carousel-image .orbit-wrapper img {
+    display: block;
+
+    @include breakpoint(small) {
+      margin: 0 auto;
+    }
+  }
+
 }
