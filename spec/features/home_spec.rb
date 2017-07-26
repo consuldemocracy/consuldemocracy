@@ -88,7 +88,7 @@ feature "Home" do
         expect(page).not_to have_content "Recommendations that may interest you"
       end
 
-      feature 'Dynamic display' do
+      feature 'Carousel size' do
 
         scenario 'Display debates centered when there are not proposals and investments' do
           debate = create(:debate)

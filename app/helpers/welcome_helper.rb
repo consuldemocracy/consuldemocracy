@@ -36,19 +36,17 @@ module WelcomeHelper
   end
 
   def calculate_centered(debates, proposals, budget_investments)
-    centered = ""
-    if debates.blank? && proposals.blank? ||
-       debates.blank? && budget_investments.blank? ||
-       proposals.blank? && budget_investments.blank?
+    if debates.blank? && proposals.blank? && budget_investments.any?   ||
+       debates.blank? && proposals.any?   && budget_investments.blank? ||
+       debates.any?   && proposals.blank? && budget_investments.blank?
         centered = "medium-centered large-centered"
     end
-    centered
   end
 
-  def calculate_centered_and_size_class(debates, proposals, budget_investments)
+  def calculate_carousel_size(debates, proposals, budget_investments)
     size = calculate_size(debates, proposals, budget_investments)
     centered = calculate_centered(debates, proposals, budget_investments)
-    "#{size} #{centered if centered.present?}"
+    "#{size} #{centered if centered}"
   end
 
   def display_recommendeds(debates, proposals, budget_investments)

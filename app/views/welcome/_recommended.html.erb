@@ -4,14 +4,14 @@
     <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
     <!-- Add the carousel-image class to show the pictures -->
     <div class="small-12 column carousel-image">
-      <% centered_and_size_class = calculate_centered_and_size_class(recommended_debates, recommended_proposals, recommended_budget_investments) %>
+      <% carousel_size = calculate_carousel_size(recommended_debates, recommended_proposals, recommended_budget_investments) %>
       <% if recommended_debates.any? %>
         <%= render "recommended_carousel", recommendeds: recommended_debates,
                                            key: "debates",
                                            image_field: nil,
                                            image_version: nil,
                                            image_default: "https://dummyimage.com/600x400/000/fff",
-                                           dynamic_display: centered_and_size_class %>
+                                           carousel_size: carousel_size %>
       <% end %>
 
       <% if recommended_proposals.any? %>
@@ -20,7 +20,7 @@
                                            image_field: nil,
                                            image_version: nil,
                                            image_default: "https://dummyimage.com/600x400/000/fff",
-                                           dynamic_display: centered_and_size_class %>
+                                           carousel_size: carousel_size %>
       <% end %>
 
       <% if recommended_budget_investments.any? %>
@@ -29,7 +29,7 @@
                                            image_field: nil, #example value :image (PR#1691)
                                            image_version: nil, #example value :thumb (PR#1691)
                                            image_default: "https://dummyimage.com/600x400/000/fff",
-                                           dynamic_display: centered_and_size_class %>
+                                           carousel_size: carousel_size %>
       <% end %>
 
     </div>
