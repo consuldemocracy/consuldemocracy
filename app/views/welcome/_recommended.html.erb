@@ -2,10 +2,9 @@
   <div class="row">
 
     <h2 class="text-center"><%= t("welcome.recommended.title") %></h2>
-    <!-- Add the carousel-image class to show the pictures -->
     <div class="small-12 column carousel-image">
-      <% carousel_size = calculate_carousel_size(recommended_debates, recommended_proposals, recommended_budget_investments) %>
       <% if recommended_debates.any? %>
+        <% carousel_size = calculate_carousel_size(recommended_debates, recommended_proposals, true) %>
         <%= render "recommended_carousel", recommendeds: recommended_debates,
                                            key: "debates",
                                            image_field: nil,
@@ -15,6 +14,7 @@
       <% end %>
 
       <% if recommended_proposals.any? %>
+        <% carousel_size = calculate_carousel_size(recommended_debates, recommended_proposals, false) %>
         <%= render "recommended_carousel", recommendeds: recommended_proposals,
                                            key: "proposals",
                                            image_field: nil,
@@ -22,16 +22,6 @@
                                            image_default: "https://dummyimage.com/600x400/000/fff",
                                            carousel_size: carousel_size %>
       <% end %>
-
-      <% if recommended_budget_investments.any? %>
-        <%= render "recommended_carousel", recommendeds: recommended_budget_investments,
-                                           key: "budget-investments",
-                                           image_field: nil, #example value :image (PR#1691)
-                                           image_version: nil, #example value :thumb (PR#1691)
-                                           image_default: "https://dummyimage.com/600x400/000/fff",
-                                           carousel_size: carousel_size %>
-      <% end %>
-
     </div>
   </div>
 </div>

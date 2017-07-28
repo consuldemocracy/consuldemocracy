@@ -27,12 +27,10 @@
 
   <% recommended_debates = current_user.recommended_debates %>
   <% recommended_proposals = current_user.recommended_proposals %>
-  <% recommended_budget_investments = current_user.recommended_budget_investments %>
 
-  <% if display_recommendeds(recommended_debates, recommended_proposals, recommended_budget_investments) %>
+  <% if display_recommendeds(recommended_debates, recommended_proposals) %>
     <%= render "recommended", recommended_debates: recommended_debates,
-                              recommended_proposals: recommended_proposals,
-                              recommended_budget_investments: recommended_budget_investments %>
+                              recommended_proposals: recommended_proposals %>
   <% end %>
 
 <% end %>

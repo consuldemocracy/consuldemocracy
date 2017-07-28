@@ -30,27 +30,31 @@ module WelcomeHelper
     image_tag(image_path) if image_path.present?
   end
 
-  def calculate_size(debates, proposals, budget_investments)
-    size =  debates.any? && proposals.any? && budget_investments.any? ? 4 : 6
-    "medium-#{size} large-#{size}"
+  def calculate_carousel_size(debates, proposals, apply_offset)
+    offset = calculate_offset(debates, proposals, apply_offset)
+    centered = calculate_centered(debates, proposals)
+    "#{offset if offset} #{centered if centered}"
   end
 
-  def calculate_centered(debates, proposals, budget_investments)
-    if debates.blank? && proposals.blank? && budget_investments.any?   ||
-       debates.blank? && proposals.any?   && budget_investments.blank? ||
-       debates.any?   && proposals.blank? && budget_investments.blank?
-        centered = "medium-centered large-centered"
+  def calculate_centered(debates, proposals)
+    if (debates.blank? && proposals.any?) ||
+       (debates.any? && proposals.blank?)
+      centered = "medium-centered large-centered"
     end
   end
 
-  def calculate_carousel_size(debates, proposals, budget_investments)
-    size = calculate_size(debates, proposals, budget_investments)
-    centered = calculate_centered(debates, proposals, budget_investments)
-    "#{size} #{centered if centered}"
+  def calculate_offset(debates, proposals, apply_offset)
+    if (debates.any? && proposals.any?)
+      if apply_offset
+        offset = "medium-offset-2 large-offset-2"
+      else
+        offset = "end"
+      end
+    end
   end
 
-  def display_recommendeds(debates, proposals, budget_investments)
-    debates.any? || proposals.any? || budget_investments.any?
+  def display_recommendeds(debates, proposals)
+    debates.any? || proposals.any?
   end
 
 end

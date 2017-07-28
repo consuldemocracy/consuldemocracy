@@ -54,15 +54,6 @@ feature "Home" do
         expect(page).to have_content proposal.description
       end
 
-      scenario 'Display investments' do
-        budget_investment = create(:budget_investment)
-
-        visit root_path
-
-        expect(page).to have_content budget_investment.title
-        expect(page).to have_content budget_investment.description
-      end
-
       scenario 'Display orbit carrousel' do
         debate = create_list(:debate, 3)
 
@@ -82,7 +73,7 @@ feature "Home" do
         expect(current_path).to eq debate_path(debate)
       end
 
-      scenario 'Do not display recommended section when there are not debates, proposals and investments' do
+      scenario 'Do not display recommended section when there are not debates and proposals' do
         visit root_path
 
         expect(page).not_to have_content "Recommendations that may interest you"
@@ -90,34 +81,27 @@ feature "Home" do
 
       feature 'Carousel size' do
 
-        scenario 'Display debates centered when there are not proposals and investments' do
+        scenario 'Display debates centered when there is not proposals' do
           debate = create(:debate)
 
           visit root_path
 
-          expect(page).to have_selector('.medium-6.large-6.medium-centered.large-centered')
+          expect(page).to have_selector('.medium-centered.large-centered')
         end
 
-        scenario 'Correct display debates and proposals when there are not investments' do
+        scenario 'Correct display debates and proposals' do
           proposal = create(:proposal)
-          budget_investment = create(:budget_investment)
+          debates = create(:debate)
 
           visit root_path
 
-          expect(page).to have_selector('.medium-6.large-6')
+          expect(page).to have_selector('.debates.medium-offset-2.large-offset-2')
+          expect(page).not_to have_selector('.proposals.medium-offset-2.large-offset-2')
+          expect(page).not_to have_selector('.debates.end')
+          expect(page).to have_selector('.proposals.end')
           expect(page).not_to have_selector('.medium-centered.large-centered')
         end
 
-        scenario 'Correct display debates, proposals and investments' do
-          debate = create(:debate)
-          proposal = create(:proposal)
-          budget_investment = create(:budget_investment)
-
-          visit root_path
-
-          expect(page).to have_selector('.medium-4.large-4')
-          expect(page).not_to have_selector('.medium-centered.large-centered')
-        end
       end
     end
 

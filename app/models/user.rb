@@ -336,18 +336,6 @@ class User < ActiveRecord::Base
     proposals_list.order("cached_votes_up DESC").limit(3)
   end
 
-  def recommended_budget_investments
-    investments_list = Budget::Investment.where("author_id != ?", id)
-    investments_list_with_tagged = investments_list.tagged_with(interests, any: true)
-
-    if interests.any? && investments_list_with_tagged.any?
-      followed_investments_ids = Budget::Investment.followed_by_user(self).pluck(:id)
-      investments_list = investments_list_with_tagged.where("id NOT IN (?)", followed_investments_ids)
-    end
-
-    investments_list.order("cached_votes_up DESC").limit(3)
-  end
-
   private
 
     def clean_document_number
