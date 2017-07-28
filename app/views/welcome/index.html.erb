@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<% if current_user.present? %>
+<% if current_user.present? && feature?(:recommendeds) %>
 
   <% recommended_debates = current_user.recommended_debates %>
   <% recommended_proposals = current_user.recommended_proposals %>
