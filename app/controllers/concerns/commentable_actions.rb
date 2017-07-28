@@ -8,13 +8,19 @@ module CommentableActions
     @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
 
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
-    @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+    @resources =  if @current_order == "recommended" && current_user.present?
+                    @resources.recommended(current_user).page(params[:page]).send("sort_by_#{@current_order}")
+                  else
+                    @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+                  end
+
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
     @banners = Banner.with_active
 
     set_resource_votes(@resources)
+
     set_resources_instance
   end
 

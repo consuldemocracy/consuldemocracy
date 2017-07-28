@@ -28,12 +28,37 @@ feature "Home" do
 
     feature "Recommended" do
 
+      background do
+        Setting['feature.user.recommendations'] = true
+      end
+
+      after do
+        Setting['feature.user.recommendations'] = nil
+      end
+
       scenario 'Display recommended section' do
         debate = create(:debate)
 
         visit root_path
 
         expect(page).to have_content "Recommendations that may interest you"
+      end
+
+      scenario 'Display recommended section when feature flag recommended is active' do
+        debate = create(:debate)
+
+        visit root_path
+
+        expect(page).to have_content "Recommendations that may interest you"
+      end
+
+      scenario 'Not display recommended section when feature flag recommended is not active' do
+        debate = create(:debate)
+        Setting['feature.user.recommendations'] = false
+
+        visit root_path
+
+        expect(page).not_to have_content "Recommendations that may interest you"
       end
 
       scenario 'Display debates' do

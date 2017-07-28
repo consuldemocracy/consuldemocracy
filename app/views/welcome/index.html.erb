@@ -23,19 +23,11 @@
   </div>
 </div>
 
-<% if current_user.present? && feature?(:recommendeds) %>
-
-  <% recommended_debates = current_user.recommended_debates %>
-  <% recommended_proposals = current_user.recommended_proposals %>
-
-  <% if display_recommendeds(recommended_debates, recommended_proposals) %>
-    <%= render "recommended", recommended_debates: recommended_debates,
-                              recommended_proposals: recommended_proposals %>
-  <% end %>
-
+<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+  <%= render "recommended",
+              recommended_debates: @recommended_debates,
+              recommended_proposals: @recommended_proposals %>
 <% end %>
-
-
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>

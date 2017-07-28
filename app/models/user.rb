@@ -313,29 +313,6 @@ class User < ActiveRecord::Base
     follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
   end
 
-  def recommended_debates
-    debates_list = Debate.where("author_id != ?", self)
-    debates_list_with_tagged = debates_list.tagged_with(interests, any: true)
-
-    if interests.any? && debates_list_with_tagged.any?
-      debates_list = debates_list_with_tagged
-    end
-
-    debates_list.order("cached_votes_total DESC").limit(3)
-  end
-
-  def recommended_proposals
-    proposals_list = Proposal.where("author_id != ?", id)
-    proposals_list_with_tagged = proposals_list.tagged_with(interests, any: true)
-
-    if interests.any? && proposals_list_with_tagged.any?
-      followed_proposals_ids = Proposal.followed_by_user(self).pluck(:id)
-      proposals_list = proposals_list_with_tagged.where("id NOT IN (?)", followed_proposals_ids)
-    end
-
-    proposals_list.order("cached_votes_up DESC").limit(3)
-  end
-
   private
 
     def clean_document_number
