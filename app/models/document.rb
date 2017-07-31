@@ -2,11 +2,14 @@ class Document < ActiveRecord::Base
   include DocumentsHelper
   include DocumentablesHelper
   has_attached_file :attachment
+  attr_accessor :cached_attachment
 
   belongs_to :user
   belongs_to :documentable, polymorphic: true
 
-  validates_attachment :attachment, presence: true
+  # validates_attachment :attachment, presence: true
+  validate :attachment_presence
+  # validates :attachment_prensence
   # Disable paperclip security validation due to polymorphic configuration
   # Paperclip do not allow to user Procs on valiations definition
   do_not_validate_attachment_file_type :attachment
@@ -32,6 +35,12 @@ class Document < ActiveRecord::Base
       errors[:attachment] = I18n.t("documents.errors.messages.wrong_content_type",
                                     content_type: attachment_content_type,
                                     accepted_content_types: humanized_accepted_content_types(documentable))
+    end
+  end
+
+  def attachment_presence
+    if attachment.blank? && cached_attachment.blank?
+      errors[:attachment] = I18n.t("errors.messages.blank")
     end
   end
 

@@ -16,12 +16,21 @@
     </div>
 
     <div class="small-12 column">
+      <%= f.hidden_field :cached_attachment %>
       <%= f.file_field :attachment,
                        accept: accepted_content_types_extensions(@document.documentable),
-                       label: false, class: 'show-for-sr' %>
+                       label: false,
+                       class: 'document_ajax_attachment show-for-sr',
+                       data: {
+                         url: upload_documents_url(
+                                documentable_type: @document.documentable_type,
+                                documentable_id: @document.documentable_id
+                              ),
+                         multiple: false
+                       } %>
       <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
-      <div id="progress-bar" class="progress-bar-placeholder"></div>
-      <p><%= document_attachment_file_name(@document) %></p>
+      <div class="progress-bar-placeholder"></div>
+      <p class="file-name"><%= document_attachment_file_name(@document) %></p>
     </div>
 
     <% if @document.errors.has_key?(:attachment) %>

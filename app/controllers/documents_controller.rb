@@ -15,6 +15,7 @@ class DocumentsController < ApplicationController
   end
 
   def create
+    recover_attachment_from_cache
     if @document.save
       flash[:notice] = t "documents.actions.create.notice"
       redirect_to params[:from]
@@ -34,13 +35,13 @@ class DocumentsController < ApplicationController
   end
 
   def upload
-    document = Document.new(documentable: @documentable, attachment: params[:file].tempfile, title: "faketitle", user: current_user )
-    debugger
+    document = Document.new(documentable: @documentable, attachment: params[:document][:attachment].tempfile, title: "faketitle", user: current_user )
     # We only are intested in attachment validators. We set some fake data to get attachment errors only
     if document.valid?
-      # TODO: Store file on tmp cache
-      msg = { status: 200, msg: "OK" }
+      # Move image from tmp to cache
+      msg = { status: 200, attachment: params[:document][:attachment].path }
     else
+      params[:document][:attachment].tempfile.delete
       msg = { status: 422, msg: document.errors[:attachment].join(', ') }
     end
     render :json => msg
@@ -63,7 +64,14 @@ class DocumentsController < ApplicationController
   end
 
   def document_params
-    params.require(:document).permit(:title, :documentable_type, :documentable_id, :attachment)
+    params.require(:document).permit(:title, :documentable_type, :documentable_id,
+                                     :attachment, :cached_attachment)
+  end
+
+  def recover_attachment_from_cache
+    if @document.attachment.blank? && @document.cached_attachment.present?
+      @document.attachment = File.open(@document.cached_attachment)
+    end
   end
 
   def validate_upload
