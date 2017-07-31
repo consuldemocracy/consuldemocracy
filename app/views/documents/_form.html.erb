@@ -4,7 +4,8 @@
               documentable_id: @document.documentable_id,
               from: params[:from]
              ),
-             html: { multipart: true } do |f| %>
+             html: { multipart: true, class: "documentable"},
+             data: { direct_upload_url: upload_documents_url(documentable_type: @document.documentable_type, documentable_id: @document.documentable_id) } do |f| %>
 
   <%= render 'shared/errors', resource: @document %>
 
@@ -15,13 +16,12 @@
     </div>
 
     <div class="small-12 column">
-      <div class="file-name">
-        <%= f.file_field :attachment,
-                         accept: accepted_content_types_extensions(@document.documentable),
-                         label: false, class: 'show-for-sr' %>
-        <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
-        <p><%= document_attachment_file_name(@document) %></p>
-      </div>
+      <%= f.file_field :attachment,
+                       accept: accepted_content_types_extensions(@document.documentable),
+                       label: false, class: 'show-for-sr' %>
+      <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
+      <div id="progress-bar" class="progress-bar-placeholder"></div>
+      <p><%= document_attachment_file_name(@document) %></p>
     </div>
 
     <% if @document.errors.has_key?(:attachment) %>

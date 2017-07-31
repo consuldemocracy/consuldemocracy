@@ -95,7 +95,10 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
-  resources :documents, only: [:new, :create, :destroy]
+  resources :documents, only: [:new, :create, :destroy] do
+    collection { post :upload, format: :json}
+    collection { post :progress, format: :json}
+  end
 
   resources :stats, only: [:index]
 
