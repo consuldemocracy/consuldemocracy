@@ -2166,6 +2166,10 @@ table {
     @include breakpoint(small) {
       margin-bottom: $line-height;
     }
+
+    .button.hollow{
+      margin-top: $line-height;
+    }
   }
 
   .card {

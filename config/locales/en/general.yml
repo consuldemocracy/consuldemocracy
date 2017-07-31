@@ -717,8 +717,10 @@ en:
       title: Recommendations that may interest you
       debates:
         title: Recommended debates
+        btn_text_link: All recommended debates
       proposals:
         title: Recommended proposals
+        btn_text_link: All recommended proposals
       budget_investments:
         title: Recommended investments
     verification:

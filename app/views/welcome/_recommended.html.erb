@@ -10,8 +10,9 @@
                                            image_field: nil,
                                            image_version: nil,
                                            image_default: "https://dummyimage.com/600x400/000/fff",
-                                           carousel_size: carousel_size %>
-        <%= link_to "todos los debates recomendados", debates_path(order: "recommended") %>
+                                           carousel_size: carousel_size,
+                                           btn_text_link: t("welcome.recommended.debates.btn_text_link"),
+                                           btn_path_link: debates_path(order: "recommended") %>
       <% end %>
 
       <% if recommended_proposals.any? %>
@@ -21,8 +22,9 @@
                                            image_field: nil,
                                            image_version: nil,
                                            image_default: "https://dummyimage.com/600x400/000/fff",
-                                           carousel_size: carousel_size %>
-        <%= link_to "todos las propuestas recomendados", proposals_path(order: "recommended") %>
+                                           carousel_size: carousel_size,
+                                           btn_text_link: t("welcome.recommended.proposals.btn_text_link"),
+                                           btn_path_link: proposals_path(order: "recommended")  %>
       <% end %>
     </div>
   </div>

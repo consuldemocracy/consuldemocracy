@@ -717,8 +717,10 @@ es:
       title: Recomendaciones que te pueden interesar
       debates:
         title: Debates recomendados
+        btn_text_link: Todos los debates recomendados
       proposals:
         title: Propuestas recomendadas
+        btn_text_link: Todas las propuestas recomendadas
       budget_investments:
         title: Presupuestos recomendados
     verification:
