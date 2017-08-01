@@ -48,7 +48,7 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
-  scope :sort_by_recommended,      -> { order(cached_votes_up: :desc) }
+  scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
@@ -57,9 +57,9 @@ class Proposal < ActiveRecord::Base
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
 
-  def self.recommended(user)
+  def self.recommendations(user)
     proposals_list = where("author_id != ?", user.id)
-    # same as tagged_with(user.interests, any: true) 
+    # same as tagged_with(user.interests, any: true)
     proposals_list_with_tagged = proposals_list.joins(:tags).where('taggings.taggable_type = ?', self.name)
                                                             .where('tags.name IN (?)', user.interests)
     if proposals_list_with_tagged.any?
@@ -191,7 +191,7 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    orders << "recommended" if user.present?
+    orders << "recommendations" if user.present?
     orders
   end
 

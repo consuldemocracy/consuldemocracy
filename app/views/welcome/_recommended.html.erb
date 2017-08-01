@@ -12,7 +12,7 @@
                                            image_default: "https://dummyimage.com/600x400/000/fff",
                                            carousel_size: carousel_size,
                                            btn_text_link: t("welcome.recommended.debates.btn_text_link"),
-                                           btn_path_link: debates_path(order: "recommended") %>
+                                           btn_path_link: debates_path(order: "recommendations") %>
       <% end %>
 
       <% if recommended_proposals.any? %>
@@ -24,7 +24,7 @@
                                            image_default: "https://dummyimage.com/600x400/000/fff",
                                            carousel_size: carousel_size,
                                            btn_text_link: t("welcome.recommended.proposals.btn_text_link"),
-                                           btn_path_link: proposals_path(order: "recommended")  %>
+                                           btn_path_link: proposals_path(order: "recommendations")  %>
       <% end %>
     </div>
   </div>

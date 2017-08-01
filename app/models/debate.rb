@@ -37,7 +37,7 @@ class Debate < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :sort_by_recommended,      -> { order(cached_votes_total: :desc) }
+  scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
   scope :public_for_api,           -> { all }
@@ -47,9 +47,9 @@ class Debate < ActiveRecord::Base
 
   attr_accessor :link_required
 
-  def self.recommended(user)
+  def self.recommendations(user)
     debates_list = where("author_id != ?", user.id)
-    # same as tagged_with(user.interests, any: true) 
+    # same as tagged_with(user.interests, any: true)
     debates_list_with_tagged = debates_list.joins(:tags).where('taggings.taggable_type = ?', self.name).where('tags.name IN (?)', user.interests)
     if debates_list_with_tagged.any?
       debates_list = debates_list_with_tagged
@@ -150,7 +150,7 @@ class Debate < ActiveRecord::Base
 
   def self.debates_orders(user)
     orders = %w{hot_score confidence_score created_at relevance}
-    orders << "recommended" if user.present?
+    orders << "recommendations" if user.present?
     orders
   end
 end

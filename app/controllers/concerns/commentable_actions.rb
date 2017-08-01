@@ -6,7 +6,7 @@ module CommentableActions
   def index
     @resources = resource_model.all
 
-    @resources = @current_order == "recommended" && current_user.present? ? @resources.recommended(current_user) : @resources.for_render
+    @resources = @current_order == "recommendations" && current_user.present? ? @resources.recommendations(current_user) : @resources.for_render
     @resources = @resources.search(@search_terms) if @search_terms.present?
     @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter

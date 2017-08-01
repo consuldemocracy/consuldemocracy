@@ -108,6 +108,7 @@ es:
         hot_score: Más activos hoy
         most_commented: Más comentados
         relevance: Más relevantes
+        recommendations: Recomendaciones
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -329,6 +330,7 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
+        recommendations: Recomendaciones 
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:

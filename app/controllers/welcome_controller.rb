@@ -17,8 +17,8 @@ class WelcomeController < ApplicationController
   private
 
   def set_user_recommendations
-    @recommended_debates = Debate.recommended(current_user).limit(3)
-    @recommended_proposals = Proposal.recommended(current_user).limit(3)
+    @recommended_debates = Debate.recommendations(current_user).limit(3)
+    @recommended_proposals = Proposal.recommendations(current_user).limit(3)
   end
 
 end
