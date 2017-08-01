@@ -590,7 +590,7 @@ header {
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: $line-height * 1.5;
+      margin-right: rem-calc(24);
     }
 
     &:hover {

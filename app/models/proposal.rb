@@ -59,6 +59,7 @@ class Proposal < ActiveRecord::Base
 
   def self.recommended(user)
     proposals_list = where("author_id != ?", user.id)
+    # same as tagged_with(user.interests, any: true) 
     proposals_list_with_tagged = proposals_list.joins(:tags).where('taggings.taggable_type = ?', self.name)
                                                             .where('tags.name IN (?)', user.interests)
     if proposals_list_with_tagged.any?

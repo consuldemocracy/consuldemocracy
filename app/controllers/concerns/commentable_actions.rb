@@ -4,15 +4,14 @@ module CommentableActions
   include Search
 
   def index
-    @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
-    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
+    @resources = resource_model.all
 
+    @resources = @current_order == "recommended" && current_user.present? ? @resources.recommended(current_user) : @resources.for_render
+    @resources = @resources.search(@search_terms) if @search_terms.present?
+    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
-    @resources =  if @current_order == "recommended" && current_user.present?
-                    @resources.recommended(current_user).page(params[:page]).send("sort_by_#{@current_order}")
-                  else
-                    @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
-                  end
+
+    @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
 
     index_customization if index_customization.present?
 

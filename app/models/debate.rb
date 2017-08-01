@@ -49,7 +49,7 @@ class Debate < ActiveRecord::Base
 
   def self.recommended(user)
     debates_list = where("author_id != ?", user.id)
-    #same as "with_tagged(user.interests, any: true)"
+    # same as tagged_with(user.interests, any: true) 
     debates_list_with_tagged = debates_list.joins(:tags).where('taggings.taggable_type = ?', self.name).where('tags.name IN (?)', user.interests)
     if debates_list_with_tagged.any?
       debates_list = debates_list_with_tagged
