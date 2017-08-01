@@ -649,8 +649,8 @@ es:
     show:
       deleted: Eliminado
       deleted_debate: Este debate ha sido eliminado
-      deleted_proposal: Este propuesta ha sido eliminada
-      deleted_budget_investment: Este propuesta de inversión ha sido eliminada
+      deleted_proposal: Esta propuesta ha sido eliminada
+      deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
       filters:
         comments:
           one: 1 Comentario

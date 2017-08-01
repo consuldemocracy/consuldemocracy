@@ -16,9 +16,10 @@ module UsersHelper
     if commentable.nil?
       deleted_commentable_text(comment)
     elsif commentable.hidden?
-      "<abbr title='#{deleted_commentable_text(comment)}'>".html_safe +
-      commentable.title +
-      "</abbr>".html_safe
+      "<del>".html_safe + commentable.title.html_safe + "</del>".html_safe + ' ' +
+      '<span class="small">'.html_safe +
+      '(' + deleted_commentable_text(comment) + ')' +
+      "</span>".html_safe
     else
       link_to(commentable.title, comment)
     end
