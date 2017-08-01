@@ -371,7 +371,7 @@ feature 'Debates' do
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
-      scenario 'Debates are ordered by recommendations when there is an user logged', :js do
+      scenario 'Debates are ordered by recommendations when there is a user logged', :js do
         user = create(:user)
         login_as(user)
 
