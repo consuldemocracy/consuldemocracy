@@ -5,8 +5,10 @@
 
     <div class="orbit" role="region" data-orbit data-use-m-u-i="false">
       <div class="orbit-wrapper">
+
         <ul class="orbit-container no-bullet" tabindex="0" >
           <% recommendeds.each_with_index do |recommended, index| %>
+
             <li class="orbit-slide <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
               <div class="card">
                 <%= render_image(recommended, image_field, image_version, image_default) %>
@@ -18,9 +20,11 @@
                 </div>
               </div>
             </li>
+
           <% end %>
         </ul>
         <div class="truncate"></div>
+
       </div>
 
       <nav class="orbit-bullets">
@@ -30,8 +34,9 @@
           </button>
         <% end %>
       </nav>
+
     </div>
 
   </div>
-  <%= link_to btn_text_link, btn_path_link, class: 'button hollow expanded' %>  
+  <%= link_to btn_text_link, btn_path_link, class: 'button hollow expanded' %>
 </div>

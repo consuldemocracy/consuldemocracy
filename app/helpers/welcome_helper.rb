@@ -14,8 +14,6 @@ module WelcomeHelper
       debate_path(recommended)
     when "Proposal"
       proposal_path(recommended)
-    when "Budget::Investment"
-      budget_investment_path(budget_id: recommended.budget.id, id: recommended.id)
     else
       '#'
     end
@@ -51,10 +49,6 @@ module WelcomeHelper
         offset = "end"
       end
     end
-  end
-
-  def display_recommendeds(debates, proposals)
-    debates.any? || proposals.any?
   end
 
 end
