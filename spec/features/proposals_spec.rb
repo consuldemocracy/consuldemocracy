@@ -629,6 +629,45 @@ feature 'Proposals' do
       expect(current_url).to include('order=created_at')
       expect(current_url).to include('page=1')
     end
+
+    context 'Recommendations' do
+
+      background do
+        Setting['feature.user.recommendations'] = true
+        create(:proposal, title: 'Best',   cached_votes_up: 10)
+        create(:proposal, title: 'Medium', cached_votes_up: 5)
+        create(:proposal, title: 'Worst',  cached_votes_up: 1)
+      end
+
+      after do
+        Setting['feature.user.recommendations'] = nil
+      end
+
+      scenario 'Proposals can not ordered by recommendations when there is not an user logged', :js do
+        visit proposals_path
+
+        expect(page).not_to have_selector('a', text: 'recommendations')
+      end
+
+      scenario 'Proposals are ordered by recommendations when there is an user logged', :js do
+        user = create(:user)
+        login_as(user)
+
+        visit proposals_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_selector('a.active', text: 'recommendations')
+
+        within '#proposals' do
+          expect('Best').to appear_before('Medium')
+          expect('Medium').to appear_before('Worst')
+        end
+
+        expect(current_url).to include('order=recommendations')
+        expect(current_url).to include('page=1')
+      end
+    end
   end
 
   feature 'Archived proposals' do
@@ -1162,6 +1201,32 @@ feature 'Proposals' do
         expect(all(".proposal")[2].text).to match "Show what you got"
         expect(page).to_not have_content "Do not display"
       end
+    end
+
+    scenario "Reorder by recommendations results maintaing search", :js do
+      Setting['feature.user.recommendations'] = true
+      user = create(:user)
+      login_as(user)
+      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
+      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
+      proposal3 = create(:proposal, title: "Do not display with same tag", cached_votes_up: 100, tag_list: "Sport")
+      proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1)
+      proposal5 = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal5, user: user)
+
+      visit proposals_path
+      fill_in "search", with: "Show you got"
+      click_button "Search"
+      click_link 'recommendations'
+      expect(page).to have_selector("a.active", text: "recommendations")
+
+      within("#proposals") do
+        expect(all(".proposal")[0].text).to match "Show you got"
+        expect(all(".proposal")[1].text).to match "Show what you got"
+        expect(page).to_not have_content "Do not display with same tag"
+        expect(page).to_not have_content "Do not display"
+      end
+      Setting['feature.user.recommendations'] = nil
     end
 
     scenario 'After a search do not show featured proposals' do

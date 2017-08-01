@@ -714,4 +714,49 @@ describe Debate do
     end
   end
 
+  describe "#recommendations" do
+
+    let(:user)     { create(:user) }
+
+    it "Should return up to 4 debates" do
+      create_list(:debate, 4)
+
+      expect(Debate.recommendations(user).size).to eq 4
+    end
+
+    it "Should return debates ordered by cached_votes_total" do
+      debate1 = create(:debate, cached_votes_total: 1 )
+      debate2 = create(:debate, cached_votes_total: 5 )
+      debate3 = create(:debate, cached_votes_total: 10 )
+
+      result = Debate.recommendations(user).sort_by_recommendations
+
+      expect(result.first).to eq debate3
+      expect(result.second).to eq debate2
+      expect(result.third).to eq debate1
+    end
+
+    it "Should return debates related with user interests" do
+      debate1 =  create(:debate, tag_list: "Sport")
+      debate2 =  create(:debate, tag_list: "Politics")
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      result = Debate.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [debate1]
+    end
+
+    it "Should not return debates when user is the author" do
+      debate1 =  create(:debate, author: user)
+      debate2 =  create(:debate)
+
+      result = Debate.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [debate2]
+    end
+
+  end
 end

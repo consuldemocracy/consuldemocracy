@@ -70,6 +70,14 @@ feature "Home" do
         expect(page).to have_content debate.description
       end
 
+      scenario 'Display all recommended debates link' do
+        debate = create(:debate)
+
+        visit root_path
+
+        expect(page).to have_link("All recommended debates", href: debates_path(order: "recommendations"))
+      end
+
       scenario 'Display proposal' do
         proposal = create(:proposal)
 
@@ -77,6 +85,14 @@ feature "Home" do
 
         expect(page).to have_content proposal.title
         expect(page).to have_content proposal.description
+      end
+
+      scenario 'Display all recommended proposals link' do
+        debate = create(:proposal)
+
+        visit root_path
+
+        expect(page).to have_link("All recommended proposals", href: proposals_path(order: "recommendations"))
       end
 
       scenario 'Display orbit carrousel' do
