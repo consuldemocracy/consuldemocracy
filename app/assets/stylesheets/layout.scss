@@ -1784,6 +1784,7 @@ table {
 
     [class^="icon-"] {
       font-size: $base-font-size;
+      text-decoration: none;
       vertical-align: sub;
     }
   }
@@ -1814,6 +1815,7 @@ table {
       font-size: $base-font-size;
       left: -20px;
       position: absolute;
+      text-decoration: none;
       top: -1px;
     }
 
