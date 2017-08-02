@@ -65,7 +65,7 @@ class Proposal < ActiveRecord::Base
       proposals_list = self.proposals_not_followed_by_user(user, proposals_list_with_tagged)
     end
 
-    proposals_list
+    proposals_list.uniq
   end
 
   def self.proposals_with_tagged(user, proposals_list)
