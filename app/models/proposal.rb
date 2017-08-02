@@ -66,12 +66,13 @@ class Proposal < ActiveRecord::Base
       proposals_list = self.proposals_not_followed_by_user(user, proposals_list_with_tagged)
     end
 
-    proposals_list
+    # proposals_list
+    proposals_list.distinct
   end
 
   def self.proposals_with_tagged(user, proposals_list)
     proposals_list.joins(:tags).where('taggings.taggable_type = ?', self.name)
-                               .where('tags.name IN (?)', user.interests).group('proposals.id')
+                               .where('tags.name IN (?)', user.interests)
   end
 
   def self.proposals_not_followed_by_user(user, proposals_list_with_tagged)
