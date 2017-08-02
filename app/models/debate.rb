@@ -48,13 +48,8 @@ class Debate < ActiveRecord::Base
   attr_accessor :link_required
 
   def self.recommendations(user)
-    debates_list = where("author_id != ?", user.id)
-    debates_list_with_tagged = debates_list.joins(:tags).where('taggings.taggable_type = ?', self.name).where('tags.name IN (?)', user.interests)
-    if debates_list_with_tagged.any?
-      debates_list = debates_list_with_tagged.group('debates.id')
-    end
-
-    debates_list
+    tagged_with(user.interests, any: true).
+    where("author_id != ?", user.id)
   end
 
   def searchable_values

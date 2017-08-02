@@ -356,9 +356,9 @@ feature 'Debates' do
 
       background do
         Setting['feature.user.recommendations'] = true
-        create(:debate, title: 'Best',   cached_votes_total: 10)
-        create(:debate, title: 'Medium', cached_votes_total: 5)
-        create(:debate, title: 'Worst',  cached_votes_total: 1)
+        create(:debate, title: 'Best',   cached_votes_total: 10, tag_list: "Sport")
+        create(:debate, title: 'Medium', cached_votes_total: 5,  tag_list: "Sport")
+        create(:debate, title: 'Worst',  cached_votes_total: 1,  tag_list: "Sport")
       end
 
       after do
@@ -372,7 +372,9 @@ feature 'Debates' do
       end
 
       scenario 'Debates are ordered by recommendations when there is a user logged', :js do
+        proposal = create(:proposal, tag_list: "Sport" )
         user = create(:user)
+        create(:follow, followable: proposal, user: user)
         login_as(user)
 
         visit debates_path

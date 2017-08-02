@@ -23,13 +23,18 @@ feature "Home" do
   feature "For signed in users" do
 
     before do
-      login_as(create(:user))
+      # user = create(:user)
+      # login_as(user)
     end
 
     feature "Recommended" do
 
       background do
         Setting['feature.user.recommendations'] = true
+        user = create(:user)
+        proposal = create(:proposal, tag_list: "Sport" )
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
       end
 
       after do
@@ -37,19 +42,19 @@ feature "Home" do
       end
 
       scenario 'Display recommended section' do
-        debate = create(:debate)
+        debate = create(:debate, tag_list: "Sport")
         visit root_path
         expect(page).to have_content "Recommendations that may interest you"
       end
 
       scenario 'Display recommended section when feature flag recommended is active' do
-        debate = create(:debate)
+        debate = create(:debate, tag_list: "Sport")
         visit root_path
         expect(page).to have_content "Recommendations that may interest you"
       end
 
       scenario 'Not display recommended section when feature flag recommended is not active' do
-        debate = create(:debate)
+        debate = create(:debate, tag_list: "Sport")
         Setting['feature.user.recommendations'] = false
 
         visit root_path
@@ -58,7 +63,7 @@ feature "Home" do
       end
 
       scenario 'Display debates' do
-        debate = create(:debate)
+        debate = create(:debate, tag_list: "Sport")
 
         visit root_path
 
@@ -67,13 +72,13 @@ feature "Home" do
       end
 
       scenario 'Display all recommended debates link' do
-        debate = create(:debate)
+        debate = create(:debate, tag_list: "Sport")
         visit root_path
         expect(page).to have_link("All recommended debates", href: debates_path(order: "recommendations"))
       end
 
       scenario 'Display proposal' do
-        proposal = create(:proposal)
+        proposal = create(:proposal, tag_list: "Sport")
 
         visit root_path
 
@@ -82,13 +87,13 @@ feature "Home" do
       end
 
       scenario 'Display all recommended proposals link' do
-        debate = create(:proposal)
+        debate = create(:proposal, tag_list: "Sport")
         visit root_path
         expect(page).to have_link("All recommended proposals", href: proposals_path(order: "recommendations"))
       end
 
       scenario 'Display orbit carrousel' do
-        debate = create_list(:debate, 3)
+        create_list(:debate, 3, tag_list: "Sport")
 
         visit root_path
 
@@ -98,7 +103,7 @@ feature "Home" do
       end
 
       scenario 'Display recommended show when click on carousel' do
-        debate = create(:debate)
+        debate = create(:debate, tag_list: "Sport")
 
         visit root_path
         click_on debate.title
@@ -114,14 +119,14 @@ feature "Home" do
       feature 'Carousel size' do
 
         scenario 'Display debates centered when there are no proposals' do
-          debate = create(:debate)
+          debate = create(:debate, tag_list: "Sport")
           visit root_path
           expect(page).to have_selector('.medium-centered.large-centered')
         end
 
         scenario 'Correct display debates and proposals' do
-          proposal = create(:proposal)
-          debates = create(:debate)
+          proposal = create(:proposal, tag_list: "Sport")
+          debates = create(:debate, tag_list: "Sport")
 
           visit root_path
 

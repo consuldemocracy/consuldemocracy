@@ -718,16 +718,18 @@ describe Debate do
 
     let(:user)     { create(:user) }
 
-    it "Should return up to 4 debates" do
-      create_list(:debate, 4)
+    it "Should not return any debates when user has not interests" do
+      create(:debate)
 
-      expect(Debate.recommendations(user).size).to eq 4
+      expect(Debate.recommendations(user).size).to eq 0
     end
 
     it "Should return debates ordered by cached_votes_total" do
-      debate1 = create(:debate, cached_votes_total: 1 )
-      debate2 = create(:debate, cached_votes_total: 5 )
-      debate3 = create(:debate, cached_votes_total: 10 )
+      debate1 =  create(:debate, cached_votes_total: 1, tag_list: "Sport" )
+      debate2 =  create(:debate, cached_votes_total: 5, tag_list: "Sport" )
+      debate3 =  create(:debate, cached_votes_total: 10, tag_list: "Sport" )
+      proposal = create(:proposal, tag_list: "Sport" )
+      create(:follow, followable: proposal, user: user)
 
       result = Debate.recommendations(user).sort_by_recommendations
 
@@ -749,8 +751,10 @@ describe Debate do
     end
 
     it "Should not return debates when user is the author" do
-      debate1 =  create(:debate, author: user)
-      debate2 =  create(:debate)
+      debate1 =  create(:debate, author: user, tag_list: "Sport")
+      debate2 =  create(:debate, tag_list: "Sport")
+      proposal = create(:proposal, tag_list: "Sport" )
+      create(:follow, followable: proposal, user: user)
 
       result = Debate.recommendations(user)
 
