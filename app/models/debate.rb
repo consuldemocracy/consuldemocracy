@@ -51,10 +51,10 @@ class Debate < ActiveRecord::Base
     debates_list = where("author_id != ?", user.id)
     debates_list_with_tagged = debates_list.joins(:tags).where('taggings.taggable_type = ?', self.name).where('tags.name IN (?)', user.interests)
     if debates_list_with_tagged.any?
-      debates_list = debates_list_with_tagged
+      debates_list = debates_list_with_tagged.group('debates.id')
     end
 
-    debates_list.uniq
+    debates_list
   end
 
   def searchable_values
