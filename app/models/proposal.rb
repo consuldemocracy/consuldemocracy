@@ -59,21 +59,21 @@ class Proposal < ActiveRecord::Base
 
   def self.recommendations(user)
     proposals_list = where("author_id != ?", user.id)
-    proposals_list_with_tagged = proposals_with_tagged(user, proposals_list)
+    proposals_list_with_tagged = self.proposals_with_tagged(user, proposals_list)
 
     if proposals_list_with_tagged.any?
-      proposals_list = proposals_not_followed_by_user(user, proposals_list_with_tagged)
+      proposals_list = self.proposals_not_followed_by_user(user, proposals_list_with_tagged)
     end
 
     proposals_list
   end
 
-  def proposals_with_tagged(user, proposals_list)
+  def self.proposals_with_tagged(user, proposals_list)
     proposals_list.joins(:tags).where('taggings.taggable_type = ?', self.name)
                                .where('tags.name IN (?)', user.interests)
   end
 
-  def proposals_not_followed_by_user(user, proposals_list_with_tagged)
+  def self.proposals_not_followed_by_user(user, proposals_list_with_tagged)
     followed_proposals_ids = Proposal.followed_by_user(user).pluck(:id)
     proposals_list_with_tagged.where("proposals.id NOT IN (?)", followed_proposals_ids)
   end
