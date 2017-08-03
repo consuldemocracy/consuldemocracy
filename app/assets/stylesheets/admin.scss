@@ -8,6 +8,7 @@
 // 06. Polls
 // 07. Legislation
 // 08. CMS
+// 09. Map
 //
 
 // 01. Global styles
@@ -966,4 +967,39 @@ table {
   &:focus {
     border: 0;
   }
+}
+
+// 09. Map
+// --------------
+
+.map{
+  width: 100%;
+  height: 350px;
+  .map-marker {
+    visibility: visible;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    background: #00cae9;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -45px 0 0 -15px;
+  }
+  .map-marker:after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin: 8px 0 0 8px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+.map-marker{
+  visibility: hidden;
+}
+.map-attributtion{
+  visibility: hidden;
 }

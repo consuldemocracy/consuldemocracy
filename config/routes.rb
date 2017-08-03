@@ -250,6 +250,8 @@ Rails.application.routes.draw do
     end
 
     resources :settings, only: [:index, :update]
+    put :update_map, to: "settings#update_map"
+
     resources :moderators, only: [:index, :create, :destroy] do
       get :search, on: :collection
     end
