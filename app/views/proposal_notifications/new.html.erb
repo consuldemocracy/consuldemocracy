@@ -1,13 +1,13 @@
 <div class="row">
   <div class="small-12 column">
-    <%= render 'shared/back_link' %>
+    <%= back_link_to %>
 
     <h1><%= t("proposal_notifications.new.title") %></h1>
 
     <div class="callout primary">
       <p>
         <%= t("proposal_notifications.new.info_about_receivers_html",
-              count: @proposal.users_to_notify.count, 
+              count: @proposal.users_to_notify.count,
               proposal_page: link_to(t("proposal_notifications.new.proposal_page"),
                                      proposal_path(@proposal, anchor: "comments"))).html_safe %>
       </p>
