@@ -7,7 +7,7 @@
   <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= render "shared/back_link" %>
+        <%= back_link_to %>
 
         <% if current_user && @debate.editable_by?(current_user) %>
           <%= link_to edit_debate_path(@debate), class: 'edit-debate button success small float-right' do %>
