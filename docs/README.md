@@ -1,0 +1,2 @@
+# docs
+Consul documentation
