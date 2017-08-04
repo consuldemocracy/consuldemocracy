@@ -109,6 +109,9 @@ es:
         most_commented: Más comentados
         relevance: Más relevantes
         recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen debates relacionados con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -330,7 +333,10 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
-        recommendations: Recomendaciones 
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen propuestas relacionadas con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:

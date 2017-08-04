@@ -66,7 +66,11 @@
       </div>
 
       <div id="proposals-list">
-        <%= render partial: 'proposals/proposal', collection: @proposals %>
+        <% if @proposals.any? %>
+          <%= render partial: 'proposals/proposal', collection: @proposals %>
+        <% else %>
+          <%= empty_recommended_proposals_message_text(current_user) %>
+        <% end %>
         <%= paginate @proposals %>
       </div>
     </div>

@@ -109,6 +109,9 @@ en:
         most_commented: most commented
         relevance: relevance
         recommendations: recommendations
+      recommendations:
+        without_results: There are not debates related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       search_form:
         button: Search
         placeholder: Search debates...
@@ -331,6 +334,9 @@ en:
         relevance: relevance
         archival_date: Archived
         recommendations: recommendations
+      recommendations:
+        without_results: There are not proposals related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:

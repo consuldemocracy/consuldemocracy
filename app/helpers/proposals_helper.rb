@@ -32,4 +32,12 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
+  def empty_recommended_proposals_message_text(user)
+    if user.interests.any?
+      t('proposals.index.recommendations.without_results')
+    else
+      t('proposals.index.recommendations.without_interests')
+    end
+  end
+
 end

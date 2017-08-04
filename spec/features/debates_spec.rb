@@ -371,6 +371,28 @@ feature 'Debates' do
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
+      scenario 'Should display text when there are not recommendeds results', :js do
+        user = create(:user)
+        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+        visit debates_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "There are not debates related to your interests"
+      end
+
+      scenario 'Should display text when user has not related interests', :js do
+        user = create(:user)
+        login_as(user)
+        visit debates_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "Follow proposals so we can give you recommendations"
+      end
+
       scenario 'Debates are ordered by recommendations when there is a user logged', :js do
         proposal = create(:proposal, tag_list: "Sport" )
         user = create(:user)

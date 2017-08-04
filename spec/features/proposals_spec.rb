@@ -632,11 +632,11 @@ feature 'Proposals' do
 
     context 'Recommendations' do
 
-      background do
+      before do
         Setting['feature.user.recommendations'] = true
-        create(:proposal, title: 'Best',   cached_votes_up: 10)
-        create(:proposal, title: 'Medium', cached_votes_up: 5)
-        create(:proposal, title: 'Worst',  cached_votes_up: 1)
+        create(:proposal, title: 'Best',   cached_votes_up: 10, tag_list: "Sport")
+        create(:proposal, title: 'Medium', cached_votes_up: 5, tag_list: "Sport")
+        create(:proposal, title: 'Worst',  cached_votes_up: 1, tag_list: "Sport")
       end
 
       after do
@@ -649,8 +649,32 @@ feature 'Proposals' do
         expect(page).not_to have_selector('a', text: 'recommendations')
       end
 
+      scenario 'Should display text when there are not recommendeds results', :js do
+        user = create(:user)
+        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+        visit proposals_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "There are not proposals related to your interests"
+      end
+
+      scenario 'Should display text when user has not related interests', :js do
+        user = create(:user)
+        login_as(user)
+        visit proposals_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "Follow proposals so we can give you recommendations"
+      end
+
       scenario 'Proposals are ordered by recommendations when there is an user logged', :js do
         user = create(:user)
+        proposal = create(:proposal, tag_list: "Sport")
+        create(:follow, followable: proposal, user: user)
         login_as(user)
 
         visit proposals_path
@@ -659,7 +683,7 @@ feature 'Proposals' do
 
         expect(page).to have_selector('a.active', text: 'recommendations')
 
-        within '#proposals' do
+        within '#proposals-list' do
           expect('Best').to appear_before('Medium')
           expect('Medium').to appear_before('Worst')
         end
