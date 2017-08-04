@@ -17,10 +17,7 @@
       </div>
     </div>
 
-    <%= link_to account_path, class: "back" do %>
-      <span class="icon-angle-left float-left"></span>
-      <%= t("verification.back") %>
-    <% end %>
+    <%= back_link_to account_path, t("verification.back") %>
   </div>
 
   <div class="row">

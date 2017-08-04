@@ -188,9 +188,9 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
     t.string   "label"
+    t.integer  "previous_heading_id"
     t.boolean  "visible_to_valuators",                  default: false
     t.integer  "ballot_lines_count",                    default: 0
-    t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
     t.boolean  "incompatible",                          default: false
   end
@@ -284,26 +284,25 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.string   "title",                        limit: 80
     t.text     "description"
     t.integer  "author_id"
-    t.datetime "created_at",                                                   null: false
-    t.datetime "updated_at",                                                   null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.string   "visit_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                              default: 0
-    t.integer  "cached_votes_total",                       default: 0
-    t.integer  "cached_votes_up",                          default: 0
-    t.integer  "cached_votes_down",                        default: 0
+    t.integer  "flags_count",                             default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "comments_count",                           default: 0
+    t.integer  "cached_votes_total",                      default: 0
+    t.integer  "cached_votes_up",                         default: 0
+    t.integer  "cached_votes_down",                       default: 0
+    t.integer  "comments_count",                          default: 0
     t.datetime "confirmed_hide_at"
-    t.integer  "cached_anonymous_votes_total",             default: 0
-    t.integer  "cached_votes_score",                       default: 0
-    t.integer  "hot_score",                    limit: 8,   default: 0
-    t.integer  "confidence_score",                         default: 0
+    t.integer  "cached_anonymous_votes_total",            default: 0
+    t.integer  "cached_votes_score",                      default: 0
+    t.integer  "hot_score",                    limit: 8,  default: 0
+    t.integer  "confidence_score",                        default: 0
     t.integer  "geozone_id"
     t.tsvector "tsv"
-    t.string   "comment_kind",                             default: "comment"
     t.datetime "featured_at"
-    t.string   "external_link",                limit: 100
+    t.string   "comment_kind",                            default: "comment"
   end
 
   add_index "debates", ["author_id", "hidden_at"], name: "index_debates_on_author_id_and_hidden_at", using: :btree
@@ -313,7 +312,6 @@ ActiveRecord::Schema.define(version: 20170719174326) do
   add_index "debates", ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
   add_index "debates", ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
   add_index "debates", ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
-  add_index "debates", ["description"], name: "index_debates_on_description", using: :btree
   add_index "debates", ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
   add_index "debates", ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
   add_index "debates", ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -372,13 +370,6 @@ ActiveRecord::Schema.define(version: 20170719174326) do
   add_index "flags", ["user_id", "flaggable_type", "flaggable_id"], name: "access_inappropiate_flags", using: :btree
   add_index "flags", ["user_id"], name: "index_flags_on_user_id", using: :btree
 
-  create_table "forums", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "follows", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "followable_id"
@@ -390,6 +381,13 @@ ActiveRecord::Schema.define(version: 20170719174326) do
   add_index "follows", ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id", using: :btree
   add_index "follows", ["user_id", "followable_type", "followable_id"], name: "access_follows", using: :btree
   add_index "follows", ["user_id"], name: "index_follows_on_user_id", using: :btree
+
+  create_table "forums", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "geozones", force: :cascade do |t|
     t.string   "name"
@@ -858,7 +856,6 @@ ActiveRecord::Schema.define(version: 20170719174326) do
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
-  add_index "proposals", ["description"], name: "index_proposals_on_description", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
   add_index "proposals", ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
@@ -1055,9 +1052,9 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.string   "erase_reason"
     t.datetime "erased_at"
     t.boolean  "public_activity",                                             default: true
+    t.boolean  "newsletter",                                                  default: true
     t.integer  "notifications_count",                                         default: 0
     t.boolean  "registering_with_oauth",                                      default: false
-    t.boolean  "newsletter",                                                  default: true
     t.string   "locale"
     t.string   "oauth_email"
     t.integer  "geozone_id"
@@ -1067,17 +1064,17 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.integer  "supported_spending_proposals_geozone_id"
     t.integer  "representative_id"
     t.boolean  "accepted_delegation_alert",                                   default: false
-    t.string   "gender",                                                      limit: 10
+    t.string   "gender",                                           limit: 10
     t.datetime "date_of_birth"
     t.boolean  "email_on_proposal_notification",                              default: true
     t.boolean  "email_digest",                                                default: true
     t.boolean  "email_on_direct_message",                                     default: true
     t.boolean  "official_position_badge",                                     default: false
-    t.datetime "password_changed_at",                                         default: '2016-11-03 12:11:02', null: false
+    t.datetime "password_changed_at",                                         default: '2017-07-11 11:56:45', null: false
     t.boolean  "created_from_signature",                                      default: false
+    t.integer  "failed_email_digests_count",                                  default: 0
     t.boolean  "officing_voter",                                              default: false
     t.text     "former_users_data_log",                                       default: ""
-    t.integer  "failed_email_digests_count",                                  default: 0
     t.integer  "balloted_heading_id"
     t.boolean  "public_interests",                                            default: false
   end

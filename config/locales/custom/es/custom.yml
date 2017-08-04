@@ -1,5 +1,8 @@
 ---
 es:
+  users:
+    show:
+      deleted_budget_investment: Este proyecto de gasto ha sido eliminado
   admin:
     probes:
       index:
