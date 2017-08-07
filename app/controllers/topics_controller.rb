@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:title, :community_id)
+    params.require(:topic).permit(:title, :community_id, :description_as_comment)
   end
 
   def set_community

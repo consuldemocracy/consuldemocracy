@@ -6,4 +6,12 @@ class Topic < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   has_many :comments, as: :commentable
+
+  after_create :associate_comment
+
+  private
+
+  def associate_comment
+    Comment.create(commentable: self, user: self.author, body: self.description_as_comment)
+  end
 end

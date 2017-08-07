@@ -6,6 +6,8 @@
     <div class="small-12 column">
       <%= f.label :title, t("topic.form.topic_title") %>
       <%= f.text_field :title %>
+      <%= f.label :description_as_comment, t("topic.form.topic_description_as_comment") %>
+      <%= f.text_area :description_as_comment, maxlength: Comment.body_max_length %>
     </div>
 
     <div class="actions small-12 column">
