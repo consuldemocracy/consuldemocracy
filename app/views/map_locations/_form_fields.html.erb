@@ -1,7 +1,7 @@
 <%= form.label :map_location, label %>
 <p class="help-text" id="tag-list-help-text"><%= help %></p>
 
-<div class="map"
+<div id="<%= dom_id(map_location)%>" class="map"
      data-map
      data-map-zoom="<%=  map_location_zoom(map_location) %>"
      data-map-tiles-attribution-selector="#map-location-attribution"
@@ -27,8 +27,8 @@
                               id: map_location_input_id(parent_class, 'latitude') %>
   <%= m_l_fields.hidden_field :longitude,
                               value: map_location.longitude,
-                              id: map_location_input_id(parent_class, 'latitude')  %>
+                              id: map_location_input_id(parent_class, 'longitude')  %>
   <%= m_l_fields.hidden_field :zoom,
                               value: map_location.zoom,
-                              id: map_location_input_id(parent_class, 'latitude') %>
+                              id: map_location_input_id(parent_class, 'zoom') %>
 <% end %>
