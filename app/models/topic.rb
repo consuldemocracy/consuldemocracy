@@ -9,6 +9,10 @@ class Topic < ActiveRecord::Base
 
   after_create :associate_comment
 
+  scope :sort_by_newest, -> { order(created_at: :desc) }
+  scope :sort_by_oldest, -> { order(created_at: :asc) }
+  scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
+
   private
 
   def associate_comment

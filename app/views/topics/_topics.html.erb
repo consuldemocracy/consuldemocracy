@@ -1,22 +1,6 @@
-<div class="row column">
-  <div class="order">
-    <div class="wide-order-selector small-12 medium-8">
-      <form>
-        <div class="small-12 medium-8 float-left">
-          <label for="order-selector-participation">
-            Ordenar por:
-          </label>
-        </div>
-
-        <div class="small-12 medium-4 float-left">
-          <select class="js-location-changer js-order-selector select-order">
-            <option>Value 1</option>
-            <option>Value 2</option>
-          </select>
-        </div>
-      </form>
-    </div>
-  </div>
+<div class="order">
+  Ordenar por:
+  <%= render 'shared/wide_order_selector', i18n_namespace: "topics" %>
 </div>
 
 <% if topics.any? %>
