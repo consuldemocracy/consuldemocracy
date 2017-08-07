@@ -6,10 +6,12 @@
   <% topics.each do |topic| %>
     <div id="<%= dom_id(topic) %>">
       <%= link_to topic.title, community_topic_path(@community, topic) %>
-      <br>
-      <%= topic.author.name %>
-      <br>
-      <%= I18n.l topic.created_at %>
+      <p class="topic-info">
+        <%= link_to t("proposals.proposal.comments", count: topic.comments_count), community_topic_path(@community, topic, anchor: "comments") %>
+        <%= topic.author.name %>
+        <%= I18n.l topic.created_at %>
+      </p>
+
       <% if topic.author == current_user %>
         <%= link_to t("topic.edit"), edit_community_topic_path(@community.id, topic), class: 'button expanded' %>
       <% end %>
