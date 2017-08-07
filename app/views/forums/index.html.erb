@@ -1,10 +1,7 @@
 <div class="row">
   <div class="small-12 medium-9 column">
 
-    <%= link_to :back, class: "back" do %>
-      <i class="icon-angle-left"></i>
-      <%= t("shared.back") %>
-    <% end %>
+    <%= back_link_to %>
 
     <% if Setting["feature.spending_proposal_features.final_voting_allowed"].present? %>
       <h1><%= t("forums.index.title") %></h1>

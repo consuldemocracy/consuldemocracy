@@ -1,13 +1,7 @@
 <% if @filter_geozone.present? || @ballot.geozone.present? %>
-  <%= link_to select_district_path, class: "back" do %>
-    <i class="icon-angle-left"></i>
-    <%= t("spending_proposals.index.sidebar.back") %>
-  <% end %>
+  <%= back_link_to select_district_path, t("spending_proposals.index.sidebar.back") %>
 <% else %>
-  <%= link_to participatory_budget_path, class: "back" do %>
-    <i class="icon-angle-left"></i>
-    <%= t("spending_proposals.index.sidebar.back") %>
-  <% end %>
+  <%= back_link_to participatory_budget_path, t("spending_proposals.index.sidebar.back") %>
 <% end %>
 
 <div class="clear"></div>
