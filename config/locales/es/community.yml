@@ -21,4 +21,8 @@ es:
       edit_button: Editar
       form:
         topic_title: Titulo del tema
-        submit_button: Crear tema
+        topic_description_as_comment: Comentario inicial
+        new:
+          submit_button: Crear tema
+        edit:
+          submit_button: Editar tema
