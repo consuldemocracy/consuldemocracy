@@ -5,7 +5,7 @@ Comunidad: <%= @community.proposal.title %>
 <%= @topic.title %>
 
 <div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%#= render "proposals/filter_subnav" %>
+  <%= render "topics/filter_subnav" %>
   <%#= render "proposals/notifications" %>
 
   <div class="tabs-panel is-active" id="tab-comments">
