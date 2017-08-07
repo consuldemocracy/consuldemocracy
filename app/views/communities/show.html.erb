@@ -11,8 +11,9 @@
 <div class="row">
   <div class="small-12 medium-9 column">
     <div id="topics">
-      <%= render "topics/topics", topics: @community.topics %>
+      <%= render "topics/topics", topics: @topics %>
     </div>
+    <%= paginate @topics %>
   </div>
 
   <div class="small-12 medium-3 column">

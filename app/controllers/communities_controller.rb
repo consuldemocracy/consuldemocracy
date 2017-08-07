@@ -14,6 +14,6 @@ class CommunitiesController < ApplicationController
   end
 
   def load_topics
-    @topics = @community.topics
+    @topics = @community.topics.page(params[:page])
   end
 end
