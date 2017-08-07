@@ -1,0 +1,7 @@
+es:
+  community:
+    sidebar:
+      title: Comunidad
+      description: Partecipa a la comunidad de usuarios, da tu opinión.
+      button_to_access: Acceder a la comunidad
+    show:

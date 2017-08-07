@@ -158,7 +158,13 @@
         <% if current_user %>
           <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
         <% end %>
-        <%= link_to t("community.show.access"), community_path(@proposal.community_id), class: 'button expanded' %>
+
+        <div class="sidebar-divider"></div>
+        <h2><%= t("community.sidebar.title") %></h2>
+        <p>
+          <%= t("community.sidebar.description") %>
+        </p>
+        <%= link_to t("community.sidebar.button_to_access"), community_path(@proposal.community_id), class: 'button hollow expanded' %>
 
       </aside>
     </div>
