@@ -1,0 +1,16 @@
+<div class="order">
+  Ordenar por:
+</div>
+<br>
+<% if topics.any? %>
+  <% topics.each do |topic| %>
+    <div id="<%= dom_id(topic) %>">
+      <%= link_to topic.title, community_topic_path(@community, topic) %>
+      <% if topic.author == current_user %>
+        <%= link_to t("topic.edit"), edit_community_topic_path(@community.id, topic), class: 'button expanded' %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  Crea el primer tema de la comunidad!!!
+<% end %>

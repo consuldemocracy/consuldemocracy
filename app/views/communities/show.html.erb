@@ -1,0 +1,17 @@
+Comunidad de usuarios
+<br>
+<%= @community.proposal.title %>
+<br>
+Participa en la comunidad de esta propuesta
+
+
+<div class="small-12 medium-9 column">
+  <div id="topics">
+    <%= render "topics/topics", topics: @community.topics %>
+  </div>
+</div>
+
+<div class="small-12 medium-3 column">
+  Participa
+  <%= link_to t("topic.new"), new_community_topic_path(@community.id), class: 'button expanded' %>
+</div>
