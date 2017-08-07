@@ -1,0 +1,25 @@
+<%= form.label :map_location, label %>
+<p class="help-text" id="tag-list-help-text"><%= help %></p>
+<div id="location-map" class="map" data-map
+                       data-latitude="<%= map_location.present? && map_location.latitude.present? ? map_location.latitude : Setting["map.latitude"] %>"
+                       data-longitude="<%= map_location.present? && map_location.longitude.present? ? map_location.longitude : Setting["map.longitude"] %>"
+                       data-zoom="<%= map_location.present? && map_location.zoom.present? ? map_location.zoom : Setting["map.zoom"] %>"
+                       data-tiles-attribution-selector="#map-location-attribution"
+                       data-tiles-provider="//{s}.tile.osm.org/{z}/{x}/{y}.png"
+                       data-latitude-input-selector="#<%= parent_class %>_map_location_attributes_latitude"
+                       data-longitude-input-selector="#<%= parent_class %>_map_location_attributes_longitude"
+                       data-zoom-input-selector="#<%= parent_class %>_map_location_attributes_zoom"
+                       data-remove-marker-selector=".location-map-remove-marker-button">
+</div>
+
+<div id="map-location-attribution" class="map-attributtion">
+  &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors
+</div>
+
+<a class="location-map-remove-marker-button" href="#">Remove marker</a>
+
+<%= form.fields_for :map_location, map_location do |map_location_fields| %>
+  <%= map_location_fields.hidden_field :latitude, value: map_location.latitude, id: "#{parent_class}_map_location_attributes_latitude" %>
+  <%= map_location_fields.hidden_field :longitude, value: map_location.longitude, id: "#{parent_class}_map_location_attributes_longitude"  %>
+  <%= map_location_fields.hidden_field :zoom, value: map_location.zoom, id: "#{parent_class}_map_location_attributes_zoom" %>
+<% end %>
