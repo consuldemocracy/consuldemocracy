@@ -4,10 +4,7 @@
 
       <div class="row">
         <div class="small-12 column">
-          <%= link_to welcome_spending_proposals_path, class: "back" do %>
-            <i class="icon-angle-left"></i>
-            <%= t("pages.processes.back") %>
-          <% end %>
+          <%= back_link_to welcome_spending_proposals_path, t("pages.processes.back") %>
 
           <% if can? :show, Ballot %>
             <%= link_to t("spending_proposals.header.check_ballot"), ballot_path, class: "button float-right" %>
@@ -45,10 +42,7 @@
   <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
     <div class="row">
       <div class="small-12 column">
-        <%= link_to welcome_spending_proposals_path, class: "back" do %>
-          <i class="icon-angle-left"></i>
-          <%= t("pages.processes.back") %>
-        <% end %>
+        <%= back_link_to welcome_spending_proposals_path, t("pages.processes.back") %>
 
         <h1><%= t('spending_proposals.index.title') %></h1>
       </div>

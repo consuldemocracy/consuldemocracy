@@ -1,10 +1,7 @@
 <div class="expanded jumbo-investment-project padding no-margin-top margin-bottom">
   <div class="row">
     <div class="small-12 medium-8 column">
-      <%= link_to :back, class: "back" do %>
-        <span class="icon-angle-left"></span>
-        <%= t("shared.back") %>
-      <% end %>
+      <%= back_link_to %>
 
       <h2>
         <% if @forum.has_voted? %>

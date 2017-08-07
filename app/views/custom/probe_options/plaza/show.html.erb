@@ -10,10 +10,7 @@
   <div class="probe-show">
     <div class="row">
       <div class="small-12 medium-9 column">
-        <%= link_to plaza_path, class: "back" do %>
-          <span class="icon-angle-left"></span>
-          <%= t("probes.back") %>
-        <% end %>
+        <%= back_link_to plaza_path, t("probes.back") %>
 
         <h1>
           <% if project_x?(@probe_option) %>
