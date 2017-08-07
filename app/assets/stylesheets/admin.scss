@@ -996,10 +996,15 @@ table {
     position: absolute;
     border-radius: 50%;
   }
+  .map-attributtion{
+    visibility: visible;
+    height: auto;
+  }
 }
 .map-marker{
   visibility: hidden;
 }
 .map-attributtion{
   visibility: hidden;
+  height: 0;
 }
