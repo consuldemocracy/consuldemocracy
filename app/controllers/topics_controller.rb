@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  # include CommentableActions
 
   before_action :set_community
 

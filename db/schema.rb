@@ -891,9 +891,11 @@ ActiveRecord::Schema.define(version: 20170807082243) do
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
 
   create_table "topics", force: :cascade do |t|
-    t.string  "title",        null: false
-    t.integer "author_id"
-    t.integer "community_id"
+    t.string   "title",        null: false
+    t.integer  "author_id"
+    t.integer  "community_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "topics", ["community_id"], name: "index_topics_on_community_id", using: :btree
