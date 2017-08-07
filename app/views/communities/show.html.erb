@@ -20,3 +20,10 @@
     <%= link_to t("topic.new"), new_community_topic_path(@community.id), class: 'button expanded' %>
   </div>
 </div>
+
+<div class="">
+  Participantes
+  <% User.community_participants(@community).each do |participant| %>
+    <%= link_to participant.name, user_path(participant)%>
+  <% end %>
+</div>

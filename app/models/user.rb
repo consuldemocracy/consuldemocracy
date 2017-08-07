@@ -313,6 +313,11 @@ class User < ActiveRecord::Base
     follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
   end
 
+  def self.community_participants(community)
+    topics_ids = community.topics.pluck(:id)
+    User.joins(:comments).where("comments.commentable_id IN (?) and comments.commentable_type = 'Topic'", topics_ids)
+  end
+
   private
 
     def clean_document_number
