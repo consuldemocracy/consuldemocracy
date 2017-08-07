@@ -1,5 +1,8 @@
 ---
 en:
+  users:
+    show:
+      deleted_budget_investment: This investment has been deleted
   admin:
     probes:
       index:
