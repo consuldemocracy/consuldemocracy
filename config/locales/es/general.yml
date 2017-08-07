@@ -335,6 +335,7 @@ es:
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+      map_remove_marker: "Eliminar el marcador"
     index:
       featured_proposals: Destacadas
       filter_topic:

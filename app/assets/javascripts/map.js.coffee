@@ -8,16 +8,17 @@ App.Map =
         App.Map.initializeMap map
 
   initializeMap: (element) ->
-    latitude                  = $(element).data('latitude')
-    longitude                 = $(element).data('longitude')
-    zoom                      = $(element).data('zoom')
-    mapTilesProvider          = $(element).data('tiles-provider')
-    mapAttributionSelector    = $(element).data('tiles-attribution-selector')
+    latitude                  = $(element).data('marker-latitude')
+    longitude                 = $(element).data('marker-longitude')
+    zoom                      = $(element).data('map-zoom')
+    mapTilesProvider          = $(element).data('map-tiles-provider')
+    mapAttributionSelector    = $(element).data('map-tiles-attribution-selector')
     latitudeInputSelector     = $(element).data('latitude-input-selector')
     longitudeInputSelector    = $(element).data('longitude-input-selector')
     zoomInputSelector         = $(element).data('zoom-input-selector')
-    removeMarkerSelector       = $(element).data('remove-marker-selector')
+    removeMarkerSelector      = $(element).data('marker-remove-selector')
     attribution               = $(mapAttributionSelector)
+    editable                  = $(element).data('marker-editable')
     marker_icon               = L.divIcon(
                                   iconSize: null
                                   html: '<div class="map-marker"></div>')
@@ -48,11 +49,12 @@ App.Map =
 
     latLng  = new (L.LatLng)(latitude, longitude)
     map     = L.map(element.id).setView(latLng, zoom)
-    marker  = L.marker(latLng, { icon: marker_icon, draggable: 'true' })
+    marker  = L.marker(latLng, { icon: marker_icon, draggable: editable })
     L.tileLayer(mapTilesProvider, attribution: attribution.html()).addTo map
     marker.addTo(map)
 
-    $(removeMarkerSelector).on 'click', removeMarker
-    marker.on 'dragend', updateFormfields
-    map.on    'zoomend', updateFormfields
-    map.on    'click',   placeMarker
+    if editable
+      $(removeMarkerSelector).on 'click', removeMarker
+      marker.on 'dragend', updateFormfields
+      map.on    'zoomend', updateFormfields
+      map.on    'click',   placeMarker
