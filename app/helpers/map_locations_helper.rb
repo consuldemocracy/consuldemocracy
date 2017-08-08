@@ -1,7 +1,7 @@
 module MapLocationsHelper
 
   def map_location_available?(map_location)
-    map_location.present? && map_location.filled?
+    map_location.present? && map_location.available?
   end
 
   def map_location_latitude(map_location)

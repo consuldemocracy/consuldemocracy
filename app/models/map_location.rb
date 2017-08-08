@@ -3,7 +3,7 @@ class MapLocation < ActiveRecord::Base
   belongs_to :proposal
   belongs_to :investment
 
-  def filled?
+  def available?
     latitude.present? && longitude.present? && zoom.present?
   end
 
