@@ -1,13 +1,16 @@
-<%= render "shared/back_link" %>
-<br>
-Comunidad: <%= @community.proposal.title %>
-<br>
-<%= @topic.title %>
+<div class="row topic-show">
+  <div class="small-12 medium-12 column">
+    <%= render "shared/back_link" %>
+    <br>
+    <p>Comunidad: <strong><%= @community.proposal.title %></strong></p>
+    <h1><%= @topic.title %></h1>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "topics/filter_subnav" %>
+    <div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
+      <%= render "topics/filter_subnav" %>
 
-  <div class="tabs-panel is-active" id="tab-comments">
-    <%= render "topics/comments" %>
+      <div class="tabs-panel is-active" id="tab-comments">
+        <%= render "topics/comments" %>
+      </div>
+    </div>
   </div>
 </div>

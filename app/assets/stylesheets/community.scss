@@ -1,5 +1,5 @@
 .communities-show{
-  
+
   .wide-order-selector{
     margin-top: 0;
   }
@@ -30,21 +30,18 @@
     .button{
       margin-top: $line-height;
     }
+  }
+}
 
-    .topic-info{
-
-      color: #515151;
-      font-size: 0.875rem;
-      margin: 0.375rem 0 0;
-
-      .icon-comments {
-        font-size: rem-calc(16);
-        vertical-align: top;
-      }
-
-      a {
-        color: $text-medium;
-      }
-    }
+.communities-participantes{
+  .comment-body{
+    display: inline-block;
+    float: left;
+    margin-right: $line-height;
+  }
+}
+.topic-show{
+  p{
+    margin-bottom: 0;
   }
 }
