@@ -27,8 +27,8 @@ class Budget
     has_many :valuators, through: :valuator_assignments
     has_many :comments, as: :commentable
     has_many :milestones
-    has_one :map_location
-    accepts_nested_attributes_for :map_location
+    has_one :map_location, dependent: :destroy
+    accepts_nested_attributes_for :map_location, allow_destroy: true
 
     validates :title, presence: true
     validates :author, presence: true

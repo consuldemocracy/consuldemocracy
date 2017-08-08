@@ -25,8 +25,8 @@ class Proposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
-  has_one :map_location
-  accepts_nested_attributes_for :map_location
+  has_one :map_location, dependent: :destroy
+  accepts_nested_attributes_for :map_location, allow_destroy: true
   has_many :comments, as: :commentable
   has_many :proposal_notifications
 

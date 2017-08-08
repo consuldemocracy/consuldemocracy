@@ -2,6 +2,8 @@
   <div class="small-12 column">
     <div id="admin-map" class="map"
                         data-map
+                        data-map-center-latitude="<%= Setting["map.latitude"] %>"
+                        data-map-center-longitude="<%= Setting["map.longitude"] %>"
                         data-map-zoom="<%= Setting["map.zoom"] %>"
                         data-map-tiles-attribution-selector="#admin-map-attribution"
                         data-map-tiles-provider="//{s}.tile.osm.org/{z}/{x}/{y}.png"

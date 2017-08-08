@@ -1,5 +1,9 @@
 module MapLocationsHelper
 
+  def map_location_available?(map_location)
+    map_location.present? && map_location.filled?
+  end
+
   def map_location_latitude(map_location)
     map_location.present? && map_location.latitude.present? ? map_location.latitude : Setting["map.latitude"]
   end
@@ -30,12 +34,14 @@ module MapLocationsHelper
                           class: "map",
                           data:{
                             map: "",
+                            map_center_latitude: map_location_latitude(map_location),
+                            map_center_longitude: map_location_longitude(map_location),
                             map_zoom: map_location_zoom(map_location),
                             map_tiles_attribution_selector: map_location_attribution_id(map_location),
                             map_tiles_provider: "//{s}.tile.osm.org/{z}/{x}/{y}.png",
                             marker_editable: editable,
-                            marker_latitude: map_location_latitude(map_location),
-                            marker_longitude: map_location_longitude(map_location),
+                            marker_latitude: map_location.latitude,
+                            marker_longitude: map_location.longitude,
                             marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
                             latitude_input_selector: "##{map_location_input_id(parent_class, 'latitude')}",
                             longitude_input_selector: "##{map_location_input_id(parent_class, 'longitude')}",
@@ -43,6 +49,7 @@ module MapLocationsHelper
                           }
     map += map_attributtion(map_location)
     map += map_location_remove_marker(map_location, remove_marker_label) if editable
+    map
   end
 
   def map_attributtion(map_location, klass = nil)

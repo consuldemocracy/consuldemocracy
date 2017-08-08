@@ -8,24 +8,47 @@ App.Map =
         App.Map.initializeMap map
 
   initializeMap: (element) ->
-    latitude                  = $(element).data('marker-latitude')
-    longitude                 = $(element).data('marker-longitude')
-    zoom                      = $(element).data('map-zoom')
-    mapTilesProvider          = $(element).data('map-tiles-provider')
-    mapAttributionSelector    = $(element).data('map-tiles-attribution-selector')
-    latitudeInputSelector     = $(element).data('latitude-input-selector')
-    longitudeInputSelector    = $(element).data('longitude-input-selector')
-    zoomInputSelector         = $(element).data('zoom-input-selector')
-    removeMarkerSelector      = $(element).data('marker-remove-selector')
-    attribution               = $(mapAttributionSelector)
-    editable                  = $(element).data('marker-editable')
-    marker_icon               = L.divIcon(
+
+    mapCenterLatitude        = $(element).data('map-center-latitude')
+    mapCenterLongitude       = $(element).data('map-center-longitude')
+    markerLatitude           = $(element).data('marker-latitude')
+    markerLongitude          = $(element).data('marker-longitude')
+    zoom                     = $(element).data('map-zoom')
+    mapTilesProvider         = $(element).data('map-tiles-provider')
+    mapAttributionSelector   = $(element).data('map-tiles-attribution-selector')
+    latitudeInputSelector    = $(element).data('latitude-input-selector')
+    longitudeInputSelector   = $(element).data('longitude-input-selector')
+    zoomInputSelector        = $(element).data('zoom-input-selector')
+    removeMarkerSelector     = $(element).data('marker-remove-selector')
+    attribution              = $(mapAttributionSelector)
+    editable                 = $(element).data('marker-editable')
+    marker                   = null;
+    markerIcon               = L.divIcon(
                                   iconSize: null
                                   html: '<div class="map-marker"></div>')
 
-    placeMarker = (e) ->
-      marker.setLatLng(e.latlng)
+    createMarker = (latitude, longitude) ->
+      markerLatLng  = new (L.LatLng)(latitude, longitude)
+      marker  = L.marker(markerLatLng, { icon: markerIcon, draggable: editable })
+      if editable
+        marker.on 'dragend', updateFormfields
       marker.addTo(map)
+      return marker
+
+    removeMarker = (e) ->
+      e.preventDefault()
+      if marker
+        map.removeLayer(marker)
+        marker = null;
+      clearFormfields()
+      return
+
+    moveOrPlaceMarker = (e) ->
+      if marker
+        marker.setLatLng(e.latlng)
+      else
+        marker = createMarker(e.latlng.lat, e.latlng.lng)
+
       updateFormfields()
       return
 
@@ -41,20 +64,14 @@ App.Map =
       $(zoomInputSelector).val ''
       return
 
-    removeMarker = (e) ->
-      e.preventDefault()
-      map.removeLayer(marker)
-      clearFormfields()
-      return
-
-    latLng  = new (L.LatLng)(latitude, longitude)
-    map     = L.map(element.id).setView(latLng, zoom)
-    marker  = L.marker(latLng, { icon: marker_icon, draggable: editable })
+    mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
+    map              = L.map(element.id).setView(mapCenterLatLng, zoom)
     L.tileLayer(mapTilesProvider, attribution: attribution.html()).addTo map
-    marker.addTo(map)
+
+    if markerLatitude && markerLongitude
+      marker  = createMarker(markerLatitude, markerLongitude)
 
     if editable
       $(removeMarkerSelector).on 'click', removeMarker
-      marker.on 'dragend', updateFormfields
       map.on    'zoomend', updateFormfields
-      map.on    'click',   placeMarker
+      map.on    'click',   moveOrPlaceMarker

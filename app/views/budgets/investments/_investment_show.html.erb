@@ -45,6 +45,10 @@
 
       <%= safe_html_with_links investment.description.html_safe %>
 
+      <% if feature?(:map) && map_location_available?(@investment.map_location) %>
+        <%= render_map(@investment.map_location, "budget_investment", false, nil) %>
+      <% end %>
+
       <% if investment.external_url.present? %>
         <div class="document-link">
           <%= text_with_links investment.external_url %>
