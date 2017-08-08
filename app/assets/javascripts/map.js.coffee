@@ -15,12 +15,11 @@ App.Map =
     markerLongitude          = $(element).data('marker-longitude')
     zoom                     = $(element).data('map-zoom')
     mapTilesProvider         = $(element).data('map-tiles-provider')
-    mapAttributionSelector   = $(element).data('map-tiles-attribution-selector')
+    mapAttribution           = $(element).data('map-tiles-provider-attribution')
     latitudeInputSelector    = $(element).data('latitude-input-selector')
     longitudeInputSelector   = $(element).data('longitude-input-selector')
     zoomInputSelector        = $(element).data('zoom-input-selector')
     removeMarkerSelector     = $(element).data('marker-remove-selector')
-    attribution              = $(mapAttributionSelector)
     editable                 = $(element).data('marker-editable')
     marker                   = null;
     markerIcon               = L.divIcon(
@@ -68,7 +67,7 @@ App.Map =
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
-    L.tileLayer(mapTilesProvider, attribution: attribution.html()).addTo map
+    L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
 
     if markerLatitude && markerLongitude
       marker  = createMarker(markerLatitude, markerLongitude)

@@ -5,17 +5,14 @@
                         data-map-center-latitude="<%= Setting["map_latitude"] %>"
                         data-map-center-longitude="<%= Setting["map_longitude"] %>"
                         data-map-zoom="<%= Setting["map_zoom"] %>"
-                        data-map-tiles-attribution-selector="#admin-map-attribution"
-                        data-map-tiles-provider="//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        data-map-tiles-provider="<%= Rails.application.secrets.map_tiles_provider %>"
+                        data-map-tiles-provider-attribution="<%= Rails.application.secrets.map_tiles_provider_attribution %>"
                         data-marker-editable="true"
                         data-marker-latitude="<%= Setting["map_latitude"] %>"
                         data-marker-longitude="<%= Setting["map_longitude"] %>"
                         data-latitude-input-selector="#latitude"
                         data-longitude-input-selector="#longitude"
                         data-zoom-input-selector="#zoom">
-    </div>
-    <div id="admin-map-attribution" class="map-attributtion">
-      &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors
     </div>
 
     <%= form_tag admin_update_map_path, method: :put, id: 'map-form' do |f| %>

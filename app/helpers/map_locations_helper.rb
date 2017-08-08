@@ -20,10 +20,6 @@ module MapLocationsHelper
     "#{prefix}_map_location_attributes_#{attribute}"
   end
 
-  def map_location_attribution_id(map_location)
-    "attribution-#{dom_id(map_location)}"
-  end
-
   def map_location_remove_marker_link_id(map_location)
     "remove-marker-link-#{dom_id(map_location)}"
   end
@@ -33,16 +29,8 @@ module MapLocationsHelper
                           map_location,
                           class: "map",
                           data: prepare_map_settings(map_location, editable, parent_class)
-    map += map_attributtion(map_location)
     map += map_location_remove_marker(map_location, remove_marker_label) if editable
     map
-  end
-
-  def map_attributtion(map_location, klass = nil)
-    content = "&copy;#{link_to("OpenStreetMap", "http://osm.org/copyright")} contributors".html_safe
-    content_tag :div, id: map_location_attribution_id(map_location), class: "map-attributtion #{klass}" do
-      content
-    end
   end
 
   def map_location_remove_marker(map_location, text)
@@ -63,8 +51,8 @@ module MapLocationsHelper
       map_center_latitude: map_location_latitude(map_location),
       map_center_longitude: map_location_longitude(map_location),
       map_zoom: map_location_zoom(map_location),
-      map_tiles_attribution_selector: map_location_attribution_id(map_location),
-      map_tiles_provider: "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      map_tiles_provider: Rails.application.secrets.map_tiles_provider,
+      map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
       marker_editable: editable,
       marker_latitude: map_location.latitude,
       marker_longitude: map_location.longitude,
