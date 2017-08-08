@@ -2,14 +2,14 @@
   <div class="small-12 column">
     <div id="admin-map" class="map"
                         data-map
-                        data-map-center-latitude="<%= Setting["map.latitude"] %>"
-                        data-map-center-longitude="<%= Setting["map.longitude"] %>"
-                        data-map-zoom="<%= Setting["map.zoom"] %>"
+                        data-map-center-latitude="<%= Setting["map_latitude"] %>"
+                        data-map-center-longitude="<%= Setting["map_longitude"] %>"
+                        data-map-zoom="<%= Setting["map_zoom"] %>"
                         data-map-tiles-attribution-selector="#admin-map-attribution"
                         data-map-tiles-provider="//{s}.tile.osm.org/{z}/{x}/{y}.png"
                         data-marker-editable="true"
-                        data-marker-latitude="<%= Setting["map.latitude"] %>"
-                        data-marker-longitude="<%= Setting["map.longitude"] %>"
+                        data-marker-latitude="<%= Setting["map_latitude"] %>"
+                        data-marker-longitude="<%= Setting["map_longitude"] %>"
                         data-latitude-input-selector="#latitude"
                         data-longitude-input-selector="#longitude"
                         data-zoom-input-selector="#zoom">
@@ -20,9 +20,9 @@
 
     <%= form_tag admin_update_map_path, method: :put, id: 'map-form' do |f| %>
 
-      <%= hidden_field_tag :latitude,   Setting["map.latitude"] %>
-      <%= hidden_field_tag :longitude,  Setting["map.longitude"] %>
-      <%= hidden_field_tag :zoom,       Setting["map.zoom"] %>
+      <%= hidden_field_tag :latitude,   Setting["map_latitude"] %>
+      <%= hidden_field_tag :longitude,  Setting["map_longitude"] %>
+      <%= hidden_field_tag :zoom,       Setting["map_zoom"] %>
 
       <div class="small-12 medium-6 large-4">
         <%= submit_tag t("admin.settings.index.map.form.submit"),
