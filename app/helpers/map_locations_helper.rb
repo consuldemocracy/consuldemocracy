@@ -34,7 +34,7 @@ module MapLocationsHelper
   end
 
   def map_location_remove_marker(map_location, text)
-    content_tag :div, class: "small-12 column text-right" do
+    content_tag :div, class: "text-right" do
       content_tag :a,
                   id: map_location_remove_marker_link_id(map_location),
                   class: "location-map-remove-marker-button delete" do
