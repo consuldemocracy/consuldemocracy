@@ -32,21 +32,7 @@ module MapLocationsHelper
     map = content_tag_for :div,
                           map_location,
                           class: "map",
-                          data:{
-                            map: "",
-                            map_center_latitude: map_location_latitude(map_location),
-                            map_center_longitude: map_location_longitude(map_location),
-                            map_zoom: map_location_zoom(map_location),
-                            map_tiles_attribution_selector: map_location_attribution_id(map_location),
-                            map_tiles_provider: "//{s}.tile.osm.org/{z}/{x}/{y}.png",
-                            marker_editable: editable,
-                            marker_latitude: map_location.latitude,
-                            marker_longitude: map_location.longitude,
-                            marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
-                            latitude_input_selector: "##{map_location_input_id(parent_class, 'latitude')}",
-                            longitude_input_selector: "##{map_location_input_id(parent_class, 'longitude')}",
-                            zoom_input_selector: "##{map_location_input_id(parent_class, 'zoom')}"
-                          }
+                          data: prepare_map_settings(map_location, editable, parent_class)
     map += map_attributtion(map_location)
     map += map_location_remove_marker(map_location, remove_marker_label) if editable
     map
@@ -67,6 +53,26 @@ module MapLocationsHelper
         text
       end
     end
+  end
+
+  private
+
+  def prepare_map_settings(map_location, editable, parent_class)
+    options = {
+      map: "",
+      map_center_latitude: map_location_latitude(map_location),
+      map_center_longitude: map_location_longitude(map_location),
+      map_zoom: map_location_zoom(map_location),
+      map_tiles_attribution_selector: map_location_attribution_id(map_location),
+      map_tiles_provider: "//{s}.tile.osm.org/{z}/{x}/{y}.png",
+      marker_editable: editable,
+      marker_latitude: map_location.latitude,
+      marker_longitude: map_location.longitude,
+      marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
+      latitude_input_selector: "##{map_location_input_id(parent_class, 'latitude')}",
+      longitude_input_selector: "##{map_location_input_id(parent_class, 'longitude')}",
+      zoom_input_selector: "##{map_location_input_id(parent_class, 'zoom')}"
+    }
   end
 
 end
