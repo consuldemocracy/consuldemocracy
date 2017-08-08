@@ -33,15 +33,25 @@
   }
 }
 
-.communities-participantes{
+.communities-participants{
   .comment-body{
     display: inline-block;
     float: left;
     margin-right: $line-height;
+    margin-bottom: $line-height;
   }
 }
 .topic-show{
   p{
     margin-bottom: 0;
+  }
+  ul li {
+    margin-bottom:0;
+  }
+  .comments{
+    .first-comment{
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
   }
 }

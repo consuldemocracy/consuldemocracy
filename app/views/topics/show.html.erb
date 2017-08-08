@@ -2,12 +2,19 @@
   <div class="small-12 medium-12 column">
     <%= render "shared/back_link" %>
     <br>
-    <p>Comunidad: <strong><%= @community.proposal.title %></strong></p>
+    <p>Comunidad de la propuesta: <strong><%= @community.proposal.title %></strong></p>
     <h1><%= @topic.title %></h1>
+    <div class="topic-info">
+      <%= render '/shared/author_info', resource: @topic %>
+
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <%= l @topic.created_at.to_date %>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <span class="icon-comments"></span>&nbsp;
+    </div>
 
     <div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
       <%= render "topics/filter_subnav" %>
-
       <div class="tabs-panel is-active" id="tab-comments">
         <%= render "topics/comments" %>
       </div>

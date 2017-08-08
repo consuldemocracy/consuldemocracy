@@ -316,7 +316,9 @@
 .debate-quiz,
 .budget-investment-show,
 .draft-panels,
-.debate-questions {
+.debate-questions,
+.communities-show,
+.topic-show {
 
   p {
     word-wrap: break-word;
@@ -350,7 +352,8 @@
   .debate-info,
   .proposal-info,
   .investment-project-info,
-  .budget-investment-show {
+  .budget-investment-show,
+  .topic-info {
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
