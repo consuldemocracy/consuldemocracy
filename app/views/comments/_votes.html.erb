@@ -8,13 +8,13 @@
         <%= link_to vote_comment_path(comment, value: 'yes'),
             method: "post", remote: true, title: t('votes.agree') do %>
             <span class="icon-like">
-              <span class="sr-only"><%= t('votes.agree') %></span>
+              <span class="show-for-sr"><%= t('votes.agree') %></span>
             </span>
         <% end %>
       <% else %>
         <%= link_to new_user_session_path do %>
           <span class="icon-like">
-            <span class="sr-only"><%= t('votes.agree') %></span>
+            <span class="show-for-sr"><%= t('votes.agree') %></span>
           </span>
         <% end %>
       <% end %>
@@ -26,12 +26,12 @@
         <%= link_to vote_comment_path(comment, value: 'no'),
             method: "post", remote: true, title: t('votes.disagree') do %>
             <span class="icon-unlike">
-              <span class="sr-only"><%= t('votes.disagree') %></span>
+              <span class="show-for-sr"><%= t('votes.disagree') %></span>
             </span>
         <% end %>
       <% else %>
         <span class="icon-unlike">
-          <span class="sr-only"><%= t('votes.disagree') %></span>
+          <span class="show-for-sr"><%= t('votes.disagree') %></span>
         </span>
       <% end %>
       <%= comment.total_dislikes %>
@@ -48,13 +48,13 @@
           <%= link_to vote_comment_path(comment, value: 'yes'),
               method: "post", remote: true, title: t('votes.agree') do %>
               <span class="icon-like">
-                <span class="sr-only"><%= t('votes.agree') %></span>
+                <span class="show-for-sr"><%= t('votes.agree') %></span>
               </span>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
             <span class="icon-like">
-              <span class="sr-only"><%= t('votes.agree') %></span>
+              <span class="show-for-sr"><%= t('votes.agree') %></span>
             </span>
           <% end %>
         <% end %>
@@ -66,13 +66,13 @@
           <%= link_to vote_comment_path(comment, value: 'no'),
               method: "post", remote: true, title: t('votes.disagree') do %>
               <span class="icon-unlike">
-                <span class="sr-only"><%= t('votes.disagree') %></span>
+                <span class="show-for-sr"><%= t('votes.disagree') %></span>
               </span>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
             <span class="icon-unlike">
-              <span class="sr-only"><%= t('votes.disagree') %></span>
+              <span class="show-for-sr"><%= t('votes.disagree') %></span>
             </span>
           <% end %>
         <% end %>

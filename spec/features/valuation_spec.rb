@@ -4,8 +4,13 @@ feature 'Valuation' do
   let(:user) { create(:user) }
 
   background do
-    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposals'] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
+  after do
+    Setting['feature.spending_proposals'] = nil
+    Setting['feature.spending_proposal_features.voting_allowed'] = nil
   end
 
   scenario 'Access as regular user is not authorized' do

@@ -7,6 +7,7 @@
     <%= render "layouts/tracking_data" %>
     <%= render "layouts/meta_tags" %>
     <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
+    <%= content_for :canonical %>
     <%= stylesheet_link_tag    "application" %>
     <!--[if lt IE 9]>
       <%= stylesheet_link_tag "ie" %>
@@ -25,7 +26,7 @@
   <body>
     <%= setting['per_page_code_body'].try(:html_safe) %>
 
-    <h1 class="sr-only"><%= setting['org_name'] %></h1>
+    <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
 
     <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render 'layouts/header' %>

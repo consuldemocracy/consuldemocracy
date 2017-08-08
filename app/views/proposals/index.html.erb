@@ -4,38 +4,47 @@
              search_path: proposals_path(page: 1),
              i18n_namespace: "proposals.index.search_form" %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposals_url %>
+<% end %>
 
 <main>
-  <h1 class="sr-only"><%= t("shared.outline.proposals") %></h1>
+  <h1 class="show-for-sr"><%= t("shared.outline.proposals") %></h1>
+
+  <% if @search_terms || @advanced_search_terms || @tag_filter || params[:retired].present? %>
+    <div class="highlight no-margin-top padding margin-bottom">
+      <div class="row">
+        <div class="small-12 column">
+          <% if @search_terms || @advanced_search_terms %>
+          <h2><%= t("shared.search_results") %></h2>
+          <p>
+            <%= page_entries_info @proposals %>
+            <% if !@advanced_search_terms %>
+              <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
+            <% end %>
+          <p>
+          <% elsif @tag_filter %>
+            <h2><%= t("shared.search_results") %></h2>
+            <p>
+              <%= page_entries_info @proposals %>
+              <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
+            </p>
+          <% elsif params[:retired].present? %>
+            <h2><%= t("proposals.index.retired_proposals") %></h2>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
-      <div class="small-12 search-results">
-        <% if @search_terms || @advanced_search_terms %>
-          <h2>
-            <%= page_entries_info @proposals %>
-            <% if !@advanced_search_terms %>
-              <%= t("proposals.index.search_results", count: @proposals.size, search_term: @search_terms) %>
-            <% end %>
-          </h2>
-        <% elsif @tag_filter %>
-          <h2>
-            <%= page_entries_info @proposals %>
-            <%= t("proposals.index.filter_topic", count: @proposals.size, topic: @tag_filter) %>
-          </h2>
-        <% elsif params[:retired].present? %>
-          <h2><%= t("proposals.index.retired_proposals") %>
-        <% end %>
-      </div>
-
-      <% if has_banners %>
+      <% if has_banners? %>
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @proposal_successful_exists %>
-        <%= render "successful_banner" %>
-      <% elsif @featured_proposals.present? %>
+      <% if @featured_proposals.present? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>
@@ -66,8 +75,8 @@
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
         <% if params[:retired].blank? %>
-            <%= render "shared/tag_cloud", taggable: 'proposal' %>
             <%= render 'categories' %>
+            <%= render "shared/tag_cloud", taggable: 'proposal' %>
             <%= render 'geozones' %>
             <%= render 'popular' %>
           <% end %>

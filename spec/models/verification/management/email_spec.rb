@@ -39,7 +39,7 @@ describe Verification::Management::Email do
 
       allow(validation).to receive(:user).and_return user
       expect(mail).to receive(:deliver_later)
-      expect(Devise.token_generator).to receive(:generate).with(User, :email_verification_token).and_return(["1","2"])
+      expect(Devise.token_generator).to receive(:generate).with(User, :email_verification_token).and_return(["1", "2"])
       expect(Mailer).to receive(:email_verification).with(user, user.email, "2", "1", "1234").and_return(mail)
 
       validation.save

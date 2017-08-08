@@ -1,0 +1,108 @@
+nl:
+  budgets:
+    ballots:
+      show:
+        title: Uw keuze
+        amount_spent: Uitgegeven
+        remaining: "U heeft nog <span>%{amount}</span> te spenderen."
+        remove: Verwijder keuze
+        voted_html:
+          one: "U heeft op <span>één</span> voorstel gestemd."
+          other: "U heeft op <span>%{count}</span> voorstellen gestemd."
+        voted_info_html: "U te allen tijde uw stem wijzigen, tot de sluiting van deze fase.<br> U hoeft niet het héle bedrag uit te geven."
+        zero: U heeft op geen enkel voorstel gestemd.
+      reasons_for_not_balloting:
+        not_verified: Alleen geverrifieerde deelnemers kunnen op voorstellen stemmen; %{verify_account}.
+        organization: Organisaties kunnen niet stemmen
+        not_selected: Niet-geselecteerde voorstellen kunnen niet worden gesteund
+        not_enough_money: "Niet genoed budget."
+        no_ballots_allowed: De selectiefase is voorbij
+        different_heading_assigned: You have already voted a different heading
+    groups:
+      show:
+        title: Kies een mogelijkheid
+        unfeasible_title: Onhaalbare voorstellen
+        unfeasible: Zie onhaalbare voorstellen
+    phase:
+      accepting: Voorstellen doen
+      reviewing: Voorstellen beoordelen
+      selecting: Voorstellen selecteren
+      valuating: Voorstellen waarderen
+      balloting: Voorstellen in stemming
+      reviewing_ballots: Beoordelen stemuitslag
+      finished: Afronden budgetvoorstel
+    index:
+      title: Begrotingsvoorstellen
+    investments:
+      form:
+        tag_category_label: "Categorieën"
+        tags_instructions: "Label dit voorstel. U kunt uw eigen categorie kiezen of één van de bestaande."
+        tags_label: Labels
+        tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
+      index:
+        title: Begrotingsvoorstellen
+        unfeasible: Onhaalbare begrotingsvoorstellen
+        unfeasible_text: "De voorstellen moeten aan een aantal criteria (leesbaarheid, concreetheid, de gemeente is er op aanspreekbaar, binnen het budget) voldoen in 'haalbaar' te worden geacht en in stemming te kunnen worden gebracht. Voorstellen die hierbuiten vallen worden als 'onhaalbaar' aangemerkt en in de volgende lijst gepubliceerd, met de reden van onhaalbaarheid."
+        unfeasible_text_definitions: zie de voorwaarden hier
+        by_heading: "Begrotingsvoorstellen in de context van: %{heading}"
+        search_form:
+          button: Zoeken
+          placeholder: Zoek begrotingsvoorstellen...
+          title: Zoeken
+        search_results:
+          one: " met de term '%{search_term}'"
+          other: " met de term '%{search_term}'"
+        sidebar:
+          my_ballot: Mijn stemmen
+          voted_html:
+            one: "<strong>U heeft gestemd op een voorstel dat %{amount_spent} kost</strong>"
+            other: "<strong>U heeft gestemd op %{count} voorstellen met een prijs van %{amount_spent}</strong>"
+          voted_info: Tot de fase eindigt kunt u uw stem altijd wijzigen. Het budget hoeft niet per sé op.
+          zero: U hebt op geen enkel begrotingsvoorstel gestemd.
+          verified_only: "Verifieer uw account om een nieuw begrotingsvoorstel te doen."
+          verify_account: "verifieer uw account"
+          create: "Nieuw begrotingsvoorstel"
+          not_logged_in: "Log in om een nieuw begrotingsvoorstel te doen."
+          sign_in: "log in"
+          sign_up: "registreer"
+          by_feasibility: Op haalbaarheid
+          feasible: Haalbare voorstellen
+          unfeasible: Onhaalbare voorstellen
+        orders:
+          random: willekeurig
+          confidence_score: best gescored
+          price: op bedrag
+      show:
+        author_deleted: Deelnemer verwijderd
+        price_explanation: Uitleg bedrag
+        unfeasibility_explanation: Uitleg haalbaarheid
+        code_html: 'Begrotingsvoorstel code: <strong>%{code}</strong>'
+        location_html: 'Plaats: <strong>%{location}</strong>'
+        organization_name_html: 'Organisatie: <strong>%{name}</strong>'
+        share: Delen
+        title: Begrotingsvoorstel
+        supports: Steunt
+        votes: Stemmen
+      wrong_price_format: Alleen hele nummers
+      investment:
+        title: Begrotingsvoorstel
+        add: Voeg toe
+        already_added: U heeft dit voorstel al toegevoegd
+        already_supported: U heeft dit al gestuend. Deel 't!
+        support_title: Steun dit voorstel
+        confirm_group: "U kunt maar in één district voorstellen steunen. Als u verder gaat is dat definitief. Bent u zeker?"
+        supports:
+          one: 1 steunbetuiging
+          other: "%{count} steunbetuigingen"
+          zero: Geen steunbetuigingen
+        give_support: Steun
+      header:
+        check_ballot: Check mijn stemmen
+        different_heading_assigned_html: "U steunt al vanuit een ander deel van het voorstel: %{heading_link}"
+    progress_bar:
+      available: "Beschikbaar: "
+    show:
+      group: Groep
+      phase: Huidige fase
+      unfeasible_title: Onhaalbare voorstellen
+      unfeasible: Bekijk onhaalbare voorstellen

@@ -1,15 +1,20 @@
 <% provide :title do %><%= @proposal.title %><% end %>
+<% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
             social_url: proposal_url(@proposal),
             social_title: @proposal.title,
             social_description: @proposal.summary %>
 <% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+<% end %>
+
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= render "shared/back_link" %>
+        <%= back_link_to %>
 
         <% if author_of?(@proposal, current_user) %>
           <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
@@ -44,10 +49,12 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-flag-actions">
+
+          <% if current_user %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'proposals/flag_actions', proposal: @proposal %>
-          </span>
+          <% end %>
+
         </div>
 
         <br>
@@ -127,17 +134,16 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
-        <div id="social-share" class="sidebar-divider"></div>
-        <h2><%= t("proposals.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@proposal.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @proposal.title.gsub(/\s/, '&nbsp;') %>&nbsp;<%= proposal_url(@proposal) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-              <span class="sr-only"><%= t("social.whatsapp") %></span>
-            </a>
-          <% end %>
-        </div>
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("proposals.show.share"),
+          title: @proposal.title,
+          url: proposal_url(@proposal)
+        } %>
+
+        <% if current_user %>
+          <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
+        <% end %>
+
       </aside>
     </div>
   </div>

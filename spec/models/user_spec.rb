@@ -220,7 +220,7 @@ describe User do
       subject.username = nil
       expect(subject).to be_valid
 
-      subject.organization.name= nil
+      subject.organization.name = nil
       expect(subject).to_not be_valid
     end
   end
@@ -434,13 +434,13 @@ describe User do
 
   describe "document_number" do
     it "should upcase document number" do
-      user = User.new({document_number: "x1234567z"})
+      user = User.new(document_number: "x1234567z")
       user.valid?
       expect(user.document_number).to eq("X1234567Z")
     end
 
     it "should remove all characters except numbers and letters" do
-      user = User.new({document_number: " 12.345.678 - B"})
+      user = User.new(document_number: " 12.345.678 - B")
       user.valid?
       expect(user.document_number).to eq("12345678B")
     end
@@ -632,4 +632,52 @@ describe User do
 
   end
 
+  describe "email_required?" do
+    it "is true for regular users" do
+      expect(subject.email_required?).to eq(true)
+      expect(create(:user, :hidden).email_required?).to eq(true)
+    end
+
+    it "is false for erased users" do
+      user = create(:user)
+      user.erase
+      user.reload
+
+      expect(user.email_required?).to eq(false)
+    end
+
+    it "is false for verified users with no email" do
+      user = create(:user,
+                     username: "Lois",
+                     email: "",
+                     verified_at: Time.current)
+
+      expect(user).to be_valid
+      expect(user.email_required?).to eq(false)
+    end
+  end
+
+  describe "#interests" do
+    let(:user) { create(:user) }
+
+    it "should return followed object tags" do
+      proposal = create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal, user: user)
+
+      expect(user.interests).to eq ["Sport"]
+    end
+
+    it "should discard followed objects duplicated tags" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      proposal2 =  create(:proposal, tag_list: "Sport")
+      budget_investment = create(:budget_investment, tag_list: "Sport")
+
+      create(:follow, followable: proposal1, user: user)
+      create(:follow, followable: proposal2, user: user)
+      create(:follow, followable: budget_investment, user: user)
+
+      expect(user.interests).to eq ["Sport"]
+    end
+
+  end
 end

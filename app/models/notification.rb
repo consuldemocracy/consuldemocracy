@@ -7,17 +7,18 @@ class Notification < ActiveRecord::Base
   scope :not_emailed, -> { where(emailed_at: nil) }
   scope :for_render,  -> { includes(:notifiable) }
 
-
   def timestamp
     notifiable.created_at
   end
 
   def mark_as_read
-    self.destroy
+    destroy
   end
 
   def self.add(user_id, notifiable)
-    if notification = Notification.find_by(user_id: user_id, notifiable: notifiable)
+    notification = Notification.find_by(user_id: user_id, notifiable: notifiable)
+
+    if notification.present?
       Notification.increment_counter(:counter, notification.id)
     else
       Notification.create!(user_id: user_id, notifiable: notifiable)

@@ -148,6 +148,8 @@ feature 'Emails' do
     expect(email).to have_body_text(spending_proposal.title)
     expect(email).to have_body_text(spending_proposal.code)
     expect(email).to have_body_text(spending_proposal.feasible_explanation)
+
+    Setting["feature.spending_proposals"] = nil
   end
 
   context "Direct Message" do
@@ -321,5 +323,62 @@ feature 'Emails' do
       expect(email).to have_body_text(investment.unfeasibility_explanation)
     end
 
+    scenario "Selected investment" do
+      author1 = create(:user)
+      author2 = create(:user)
+      author3 = create(:user)
+
+      investment1 = create(:budget_investment, :selected,   author: author1, budget: budget)
+      investment2 = create(:budget_investment, :selected,   author: author2, budget: budget)
+      investment3 = create(:budget_investment, :unselected, author: author3, budget: budget)
+
+      reset_mailer
+      budget.email_selected
+
+      expect(find_email investment1.author.email).to be
+      expect(find_email investment2.author.email).to be
+      expect(find_email investment3.author.email).to_not be
+
+      email = open_last_email
+      investment = investment2
+      expect(email).to have_subject("Your investment project '#{investment.code}' has been selected")
+      expect(email).to deliver_to(investment.author.email)
+      expect(email).to have_body_text(investment.title)
+    end
+
+    scenario "Unselected investment" do
+      author1 = create(:user)
+      author2 = create(:user)
+      author3 = create(:user)
+
+      investment1 = create(:budget_investment, :unselected, author: author1, budget: budget)
+      investment2 = create(:budget_investment, :unselected, author: author2, budget: budget)
+      investment3 = create(:budget_investment, :selected,   author: author3, budget: budget)
+
+      reset_mailer
+      budget.email_unselected
+
+      expect(find_email investment1.author.email).to be
+      expect(find_email investment2.author.email).to be
+      expect(find_email investment3.author.email).to_not be
+
+      email = open_last_email
+      investment = investment2
+      expect(email).to have_subject("Your investment project '#{investment.code}' has not been selected")
+      expect(email).to deliver_to(investment.author.email)
+      expect(email).to have_body_text(investment.title)
+    end
+
+  end
+
+  context "Users without email" do
+    scenario "should not receive emails", :js do
+      user = create(:user, :verified, email_on_comment: true)
+      proposal = create(:proposal, author: user)
+      user.update(email: nil)
+      comment_on(proposal)
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
   end
 end

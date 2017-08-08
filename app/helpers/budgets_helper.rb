@@ -8,7 +8,7 @@ module BudgetsHelper
     Budget::CURRENCY_SYMBOLS.map { |cs| [ cs, cs ] }
   end
 
-  def namespaced_budget_investment_path(investment, options={})
+  def namespaced_budget_investment_path(investment, options = {})
     case namespace
     when "management/budgets"
       management_budget_investment_path(investment.budget, investment, options)
@@ -17,7 +17,7 @@ module BudgetsHelper
     end
   end
 
-  def namespaced_budget_investment_vote_path(investment, options={})
+  def namespaced_budget_investment_vote_path(investment, options = {})
     case namespace
     when "management/budgets"
       vote_management_budget_investment_path(investment.budget, investment, options)
@@ -31,7 +31,7 @@ module BudgetsHelper
   end
 
   def css_for_ballot_heading(heading)
-    return '' unless current_ballot.present?
+    return '' if current_ballot.blank?
     current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
   end
 

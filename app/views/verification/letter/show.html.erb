@@ -2,10 +2,7 @@
   <%track_event(category: "verification", action: "start_letter" )%>
   <div class="small-12 column">
 
-    <%= link_to account_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("verification.back") %>
-    <% end %>
+    <%= back_link_to account_path, t("verification.back") %>
 
     <h1><%= t("verification.letter.edit.title") %></h1>
 

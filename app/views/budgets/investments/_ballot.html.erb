@@ -50,8 +50,9 @@
               signup: link_to(t("votes.signup"), new_user_registration_path),
               my_heading: link_to(investment.heading.name,
                                   budget_investments_path(budget_id: investment.budget_id,
-                                                          heading_id: investment.heading_id))
-         ).html_safe %>
+                                                          heading_id: investment.heading_id)),
+              change_ballot: link_to(t("budgets.ballots.reasons_for_not_balloting.change_ballot"),
+                                    budget_ballot_path(@budget))).html_safe %>
       </p>
     </div>
 

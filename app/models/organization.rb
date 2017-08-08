@@ -1,4 +1,7 @@
 class Organization < ActiveRecord::Base
+
+  include Graphqlable
+
   belongs_to :user, touch: true
 
   validates :name, presence: true
@@ -32,15 +35,19 @@ class Organization < ActiveRecord::Base
   end
 
   def self.search(text)
-    text.present? ? joins(:user).where("users.email = ? OR users.phone_number = ? OR organizations.name ILIKE ?", text, text, "%#{text}%") : none
+    if text.present?
+      joins(:user).where("users.email = ? OR users.phone_number = ? OR organizations.name ILIKE ?", text, text, "%#{text}%")
+    else
+      none
+    end
   end
 
   def self.name_max_length
-    @@name_max_length ||= self.columns.find { |c| c.name == 'name' }.limit || 60
+    @@name_max_length ||= columns.find { |c| c.name == 'name' }.limit || 60
   end
 
   def self.responsible_name_max_length
-    @@responsible_name_max_length ||= self.columns.find { |c| c.name == 'responsible_name' }.limit || 60
+    @@responsible_name_max_length ||= columns.find { |c| c.name == 'responsible_name' }.limit || 60
   end
 
   private

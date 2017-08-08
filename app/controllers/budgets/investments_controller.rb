@@ -14,18 +14,22 @@ module Budgets
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
     before_action :load_categories, only: [:index, :new, :create]
+    before_action :set_default_budget_filter, only: :index
 
     feature_flag :budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
+    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
+    helper_method :resource_model, :resource_name
     respond_to :html, :js
 
     def index
-      @investments = @investments.apply_filters_and_search(@budget, params).send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
+      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter)
+                                 .send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
@@ -68,7 +72,21 @@ module Budgets
       end
     end
 
+    def suggest
+      @resource_path_method = :namespaced_budget_investment_path
+      @resource_relation    = resource_model.where(budget: @budget).apply_filters_and_search(@budget, params, @current_filter)
+      super
+    end
+
     private
+
+      def resource_model
+        Budget::Investment
+      end
+
+      def resource_name
+        "budget_investment"
+      end
 
       def load_investment_votes(investments)
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
@@ -76,7 +94,7 @@ module Budgets
 
       def set_random_seed
         if params[:order] == 'random' || params[:order].blank?
-          params[:random_seed] ||= rand(99)/100.0
+          params[:random_seed] ||= rand(99) / 100.0
           seed = Float(params[:random_seed]) rescue 0
           Budget::Investment.connection.execute("select setseed(#{seed})")
         else
@@ -85,7 +103,8 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list,
+                                                  :organization_name, :location, :terms_of_service)
       end
 
       def load_ballot
@@ -101,12 +120,13 @@ module Budgets
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        @categories = ActsAsTaggableOn::Tag.category.order(:name)
       end
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
       end
+
   end
 
 end

@@ -11,7 +11,8 @@ feature 'Verify Letter' do
 
     click_link "Send me a letter with the code"
 
-    expect(page).to have_content "Thank you for requesting your maximum security code (only required for the final votes). In a few days we will send it to the address featuring in the data we have on file."
+    expect(page).to have_content "Thank you for requesting your maximum security code (only required for the final votes). In a few days"\
+                                 " we will send it to the address featuring in the data we have on file."
 
     user.reload
 

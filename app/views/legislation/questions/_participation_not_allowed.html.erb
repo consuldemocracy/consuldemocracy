@@ -1,0 +1,24 @@
+<% if user_signed_in? && current_user.organization? %>
+  <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <p>
+      <%= t("legislation.questions.participation.organizations") %>
+    </p>
+  </div>
+<% elsif user_signed_in? && current_user.unverified? %>
+  <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <p>
+      <%= t("legislation.questions.participation.verified_only",
+          verify_account: link_to(t("legislation.questions.participation.verify_account"), verification_path )).html_safe %>
+    </p>
+  </div>
+<% elsif !user_signed_in? %>
+  <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <%= t("legislation.questions.participation.unauthenticated",
+      signin: link_to(t("legislation.questions.participation.signin"), new_user_session_path),
+      signup: link_to(t("legislation.questions.participation.signup"), new_user_registration_path)).html_safe %>
+  </div>
+<% elsif !@process.debate_phase.open? %>
+  <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <%= t("legislation.questions.participation.debate_phase_not_open") %>
+  </div>
+<% end %>

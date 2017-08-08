@@ -1,11 +1,11 @@
 class ManagerAuthenticator
 
-  def initialize(data={})
+  def initialize(data = {})
     @manager = {login: data[:login], user_key: data[:clave_usuario], date: data[:fecha_conexion]}.with_indifferent_access
   end
 
   def auth
-    return false unless [@manager[:login], @manager[:user_key], @manager[:date]].all? {|_| _.present?}
+    return false unless [@manager[:login], @manager[:user_key], @manager[:date]].all? {|manager| manager.present?}
     return @manager if manager_exists? && application_authorized?
     false
   end
@@ -25,7 +25,7 @@ class ManagerAuthenticator
       parsed_response = parser.parse((response[:get_applications_user_list_response][:get_applications_user_list_return]))
       aplication_value = parsed_response["APLICACIONES"]["APLICACION"]
       # aplication_value from UWEB can be an array of hashes or a hash
-      aplication_value.include?( {"CLAVE_APLICACION" => application_key}) || aplication_value["CLAVE_APLICACION"] == application_key
+      aplication_value.include?("CLAVE_APLICACION" => application_key) || aplication_value["CLAVE_APLICACION"] == application_key
     rescue
       false
     end

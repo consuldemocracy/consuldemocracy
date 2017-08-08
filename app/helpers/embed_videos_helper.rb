@@ -11,7 +11,7 @@ module EmbedVideosHelper
 
     if server == "Vimeo"
       reg_exp = /vimeo.*(staffpicks\/|channels\/|videos\/|video\/|\/)([^#\&\?]*).*/
-      src =  "https://player.vimeo.com/video/"
+      src = "https://player.vimeo.com/video/"
     elsif server == "YouTube"
       reg_exp = /youtu.*(be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
       src = "https://www.youtube.com/embed/"
@@ -21,7 +21,7 @@ module EmbedVideosHelper
       match = link.match(reg_exp)
     end
 
-    if match and match[2]
+    if match && match[2]
       '<iframe src="' + src + match[2] + '" style="border:0;" allowfullscreen title="' + title + '"></iframe>'
     else
       ''

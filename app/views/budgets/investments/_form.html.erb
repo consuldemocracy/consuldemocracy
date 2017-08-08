@@ -7,8 +7,9 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>
     </div>
+    <div id="js-suggest"></div>
 
     <%= f.invisible_captcha :subtitle %>
 
@@ -30,7 +31,7 @@
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="note"><%= t("budgets.investments.form.tags_instructions") %></p>
+      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
         <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
@@ -43,6 +44,7 @@
       <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
                         label: false,
                         placeholder: t("budgets.investments.form.tags_placeholder"),
+                        aria: {describedby: "tags-list-help-text"},
                         class: 'js-tag-list' %>
     </div>
 

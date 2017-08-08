@@ -1,0 +1,29 @@
+---
+fr:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} créé avec succès."
+        debate: "Débat créé avec succès."
+        direct_message: "Votre message a été envoyé avec succès."
+        poll: "Vote créé avec succès."
+        poll_booth: "Urne créée avec succès."
+        proposal: "Proposition créée avec succès."
+        proposal_notification: "Votre message a correctement été envoyé."
+        spending_proposal: "Proposition de dépense créée avec succès. Vous pouvez y accéder depuis %{activity}"
+        budget_investment: "Budget d'investissement créé avec succès."
+        signature_sheet: "Feuille de signature créée avec succès"
+      save_changes:
+        notice: Modifications sauvegardées
+      update:
+        notice: "%{resource_name} mis-à-jour avec succès."
+        debate: "Débat mis-à-jour avec succès."
+        poll: "Vote mis-à-jour avec succès."
+        poll_booth: "Urne mise-à-jour avec succès."
+        proposal: "Proposition mise-à-jour avec succès."
+        spending_proposal: "Proposition de dépense mise-à-jour avec succès."
+        budget_investment: "Budget d'investissement mis-à-jour avec succès."
+      destroy:
+        spending_proposal: "Proposition de dépense supprimée avec succès."
+        budget_investment: "Budget d'investissement supprimé avec succès."
+        error: "Suppression impossible"

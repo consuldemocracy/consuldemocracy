@@ -16,5 +16,15 @@
       <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
     </div>
   </div>
-  <%= f.submit nil, class: "button success" %>
+  <div class="margin-top">
+    <%= f.submit nil, class: "button success" %>
+    <% if @budget.balloting_process? %>
+      <div class="float-right">
+        <%= link_to t("admin.budgets.winners.calculate"),
+                    calculate_winners_admin_budget_path(@budget),
+                    method: :put,
+                    class: "button hollow" %>
+      </div>
+    <% end %>
+  </div>
 <% end %>

@@ -1,0 +1,85 @@
+---
+nl:
+  mailers:
+    no_reply: "This message was sent from an email address that does not accept replies."
+    comment:
+      hi: Hi
+      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
+      subject: Someone has commented on your %{commentable}
+      title: New comment
+    config:
+      manage_email_subscriptions: To stop receiving these emails change your settings in
+    email_verification:
+      click_here_to_verify: this link
+      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
+      instructions_html: To complete the verification of your user account in the Open Government Portal, you must click %{verification_link}.
+      subject: Confirm your email
+      thanks: Thank you very much.
+      title: Confirm your account using the following link
+    reply:
+      hi: Hi
+      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
+      subject: Someone has responded to your comment
+      title: New response to your comment
+    unfeasible_spending_proposal:
+      hi: "Dear user,"
+      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_href: "new investment project"
+      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
+      sincerely: "Sincerely"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
+      subject: "Your investment project '%{code}' has been marked as unfeasible"
+      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+    budget_investment_unfeasible:
+      hi: "Dear user,"
+      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_href: "new investment project"
+      reconsider_html: "If you believe that the rejected proposal meets the requirements to be an investment proposal, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
+      sincerely: "Sincerely"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
+      subject: "Your investment project '%{code}' has been marked as unfeasible"
+      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your proposal <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"
+    proposal_notification_digest:
+      info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
+      title: "Proposal notifications in %{org_name}"
+      share: Share proposal
+      comment: Comment proposal
+      unsubscribe: "If you don't want receive proposal's notification, visit %{account} and unckeck 'Receive a summary of proposal notifications'."
+      unsubscribe_account: My account
+    direct_message_for_receiver:
+      subject: "You have received a new private message"
+      reply: Reply to %{sender}
+      unsubscribe: "If you don't want receive direct messages, visit %{account} and unckeck 'Receive emails about direct messages'."
+      unsubscribe_account: My account
+    direct_message_for_sender:
+      subject: "You have send a new private message"
+      title_html: "You have send a new private message to <strong>%{receiver}</strong> with the content:"
+    user_invite:
+      ignore: "If you have not requested this invitation don't worry, you can ignore this email."
+      text: "Thank you for applying to join %{org}! In seconds you can start to decide the city you want, just fill the form below:"
+      thanks: "Thank you very much."
+      title: "Welcome to %{org}"
+      button: Complete registration
+      subject: "Invitation to %{org_name}"
+    budget_investment_created:
+      subject: "Thank you for creating an investment!"
+      title: "Thank you for creating an investment!"
+      intro_html: "Hi <strong>%{author}</strong>,"
+      text_html: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
+      follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
+      follow_link: "Participatory Budgets"
+      sincerely: "Sincerely,"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      share: "Comparte tu proyecto"
+    budget_investment_unfeasible:
+      hi: "Dear user,"
+      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that ajusts to the conditions of this process. You can do it following this link: %{url}."
+      new_href: "new investment project"
+      reconsider_html: "If you believe that the rejected investment meets the requirements to be an investment project, you can communicate this, within 48 hours, responding to the email address examples@consul.es. Including the code %{code} in the subject of the email."
+      sincerely: "Sincerely"
+      signatory: "DEPARTMENT OF PUBLIC PARTICIPATION"
+      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
+      subject: "Your investment project '%{code}' has been marked as unfeasible"
+      unfeasible_html: "From the City Council we want to thank you for your participation in the <strong>participatory budgets</strong>. We regret to inform you that your investment <strong>'%{title}'</strong> will be excluded from this participatory process for the following reason:"

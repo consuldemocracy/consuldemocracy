@@ -5,6 +5,15 @@ module ActsAsTaggableOn
     after_create :increment_tag_custom_counter
     after_destroy :touch_taggable, :decrement_tag_custom_counter
 
+    scope :public_for_api, -> do
+      where(%{taggings.tag_id in (?) and
+              (taggings.taggable_type = 'Debate' and taggings.taggable_id in (?)) or
+              (taggings.taggable_type = 'Proposal' and taggings.taggable_id in (?))},
+            Tag.where('kind IS NULL or kind = ?', 'category').pluck(:id),
+            Debate.public_for_api.pluck(:id),
+            Proposal.public_for_api.pluck(:id))
+    end
+
     def touch_taggable
       taggable.touch if taggable.present?
     end
@@ -19,6 +28,20 @@ module ActsAsTaggableOn
   end
 
   Tag.class_eval do
+
+    scope :category, -> { where(kind: "category") }
+
+    def category?
+      kind == "category"
+    end
+
+    include Graphqlable
+
+    scope :public_for_api, -> do
+      where('(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)',
+            'category',
+            Tagging.public_for_api.pluck('DISTINCT taggings.tag_id'))
+    end
 
     def increment_custom_counter_for(taggable_type)
       Tag.increment_counter(custom_counter_field_name_for(taggable_type), id)
@@ -35,11 +58,23 @@ module ActsAsTaggableOn
     end
 
     def self.category_names
-      Tag.where("kind = 'category'").pluck(:name)
+      Tag.category.pluck(:name)
     end
 
     def self.spending_proposal_tags
       ActsAsTaggableOn::Tag.where('taggings.taggable_type' => 'SpendingProposal').includes(:taggings).order(:name).uniq
+    end
+
+    def self.graphql_field_name
+      :tag
+    end
+
+    def self.graphql_pluralized_field_name
+      :tags
+    end
+
+    def self.graphql_type_name
+      'Tag'
     end
 
     private

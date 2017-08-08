@@ -3,7 +3,7 @@ class Admin::Poll::RecountsController < Admin::BaseController
 
   def index
     @booth_assignments = @poll.booth_assignments.
-                              includes(:booth, :recounts, :final_recounts, :voters).
+                              includes(:booth, :final_recounts, :voters).
                               order("poll_booths.name").
                               page(params[:page]).per(50)
   end

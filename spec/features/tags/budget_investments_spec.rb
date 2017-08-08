@@ -79,15 +79,15 @@ feature 'Tags' do
   scenario 'Category with category tags', :js do
     login_as(author)
 
-    education = create(:tag, name: 'Education', kind: 'category')
-    health    = create(:tag, name: 'Health',    kind: 'category')
+    education = create(:tag, :category, name: 'Education')
+    health    = create(:tag, :category, name: 'Health')
 
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  'Health: More hospitals', from: 'budget_investment_heading_id'
     fill_in 'budget_investment_title', with: 'Build a skyscraper'
     fill_in_ckeditor 'budget_investment_description', with: 'If I had a gym near my place I could go do Zumba'
-    check   'budget_investment_terms_of_service'
+    check 'budget_investment_terms_of_service'
 
     find('.js-add-tag-link', text: 'Education').click
     click_button 'Create Investment'
@@ -199,11 +199,12 @@ feature 'Tags' do
 
         if budget.balloting?
           [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true)
+            investment.update(selected: true, feasibility: "feasible")
           end
         end
 
-        visit budget_investments_path(budget, heading_id: heading.id)
+        visit budget_path(budget)
+        click_link group.name
 
         within "#tag-cloud" do
           click_link "Medio Ambiente"
@@ -220,8 +221,8 @@ feature 'Tags' do
 
   context "Categories" do
 
-    let!(:tag1) { create(:tag, kind: 'category', name: 'Medio Ambiente') }
-    let!(:tag2) { create(:tag, kind: 'category', name: 'Economía') }
+    let!(:tag1) { create(:tag, :category, name: 'Medio Ambiente') }
+    let!(:tag2) { create(:tag, :category, name: 'Economía') }
 
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: 'Medio Ambiente') }
@@ -246,11 +247,12 @@ feature 'Tags' do
 
         if budget.balloting?
           [investment1, investment2, investment3].each do |investment|
-            investment.update(selected: true)
+            investment.update(selected: true, feasibility: "feasible")
           end
         end
 
-        visit budget_investments_path(budget, heading_id: heading.id, search: 'Economía')
+        visit budget_path(budget)
+        click_link group.name
 
         within "#categories" do
           click_link "Medio Ambiente"

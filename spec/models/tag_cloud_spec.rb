@@ -24,7 +24,7 @@ describe TagCloud do
 
     it "returns budget investment tags" do
       create(:budget_investment, tag_list: 'participation')
-      create(:debate,   tag_list: 'world hunger')
+      create(:debate, tag_list: 'world hunger')
 
       tag_cloud = TagCloud.new(Budget::Investment)
 
@@ -41,8 +41,8 @@ describe TagCloud do
     end
 
     it "does not return category tags" do
-      create(:tag, kind: 'category', name: 'Education')
-      create(:tag, kind: 'category', name: 'Participation')
+      create(:tag, :category, name: 'Education')
+      create(:tag, :category, name: 'Participation')
 
       create(:proposal, tag_list: 'education, parks')
       create(:proposal, tag_list: 'participation, water')
@@ -65,8 +65,8 @@ describe TagCloud do
     end
 
     it "returns tags scoped by category" do
-      create(:tag, kind: 'category', name: 'Education')
-      create(:tag, kind: 'category', name: 'Participation')
+      create(:tag, :category, name: 'Education')
+      create(:tag, :category, name: 'Participation')
 
       create(:proposal, tag_list: 'education, parks')
       create(:proposal, tag_list: 'participation, water')

@@ -18,8 +18,11 @@
       <%= f.hidden_field :locale, value: I18n.locale %>
 
       <%= f.label :username %>
-      <p class="note"><%= t("devise_views.users.registrations.new.username_note") %></p>
-      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length, placeholder: t("devise_views.users.registrations.new.username_label"), label: false %>
+      <p class="help-text" id="username-help-text"><%= t("devise_views.users.registrations.new.username_note") %></p>
+      <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
+                                   placeholder: t("devise_views.users.registrations.new.username_label"),
+                                   label: false,
+                                   aria: {describedby: "username-help-text"} %>
 
       <%= f.invisible_captcha :family_name %>
 

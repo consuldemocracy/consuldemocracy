@@ -4,14 +4,19 @@ feature 'Budget Investments' do
 
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
-  let(:group)   { create(:budget_group, name: "Health", budget: budget) }
+  let(:other_budget) { create(:budget, name: "What a Budget!") }
+  let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
-    investments = [create(:budget_investment, heading: heading), create(:budget_investment, heading: heading), create(:budget_investment, :feasible, heading: heading)]
+    investments = [create(:budget_investment, heading: heading),
+                   create(:budget_investment, heading: heading),
+                   create(:budget_investment, :feasible, heading: heading)]
+
     unfeasible_investment = create(:budget_investment, :unfeasible, heading: heading)
 
-    visit budget_investments_path(budget, heading_id: heading.id)
+    visit budget_path(budget)
+    click_link "Health"
 
     expect(page).to have_selector('#budget-investments .budget-investment', count: 3)
     investments.each do |investment|
@@ -56,7 +61,7 @@ feature 'Budget Investments' do
       investment3 = create(:budget_investment, heading: heading)
       investment4 = create(:budget_investment, :feasible, heading: heading)
 
-      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, unfeasible: 1)
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unfeasible")
 
       within("#budget-investments") do
         expect(page).to have_css('.budget-investment', count: 1)
@@ -69,6 +74,7 @@ feature 'Budget Investments' do
     end
 
     scenario "by unfeasibilty link for group with one heading" do
+      budget.update(phase: :balloting)
       group   = create(:budget_group,   name: 'All City', budget: budget)
       heading = create(:budget_heading, name: "Madrid",   group: group)
 
@@ -77,11 +83,12 @@ feature 'Budget Investments' do
 
       click_link "All City"
 
-      expected_path = budget_investments_path(budget, heading_id: heading.id, unfeasible: 1)
+      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
 
     scenario "by unfeasibilty link for group with many headings" do
+      budget.update(phase: :balloting)
       group = create(:budget_group, name: 'Districts', budget: budget)
       heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
       heading2 = create(:budget_heading, name: 'Barajas',     group: group)
@@ -93,7 +100,7 @@ feature 'Budget Investments' do
       click_link 'Districts'
       click_link 'Carabanchel'
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, unfeasible: 1)
+      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unfeasible")
       expect(page).to have_current_path(expected_path)
     end
   end
@@ -205,7 +212,7 @@ feature 'Budget Investments' do
       expect(current_path).to eq(new_budget_investment_path(budget_id: budget.id))
     end
 
-    scenario 'Create notice' do
+    scenario 'Create' do
       login_as(author)
 
       visit new_budget_investment_path(budget_id: budget.id)
@@ -214,15 +221,24 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_title', with: 'Build a skyscraper'
       fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
       fill_in 'budget_investment_external_url', with: 'http://http://skyscraperpage.com/'
+      fill_in 'budget_investment_location', with: 'City center'
+      fill_in 'budget_investment_organization_name', with: 'T.I.A.'
+      fill_in 'budget_investment_tag_list', with: 'Towers'
       check   'budget_investment_terms_of_service'
 
       click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully'
+      expect(page).to have_content 'Build a skyscraper'
+      expect(page).to have_content 'I want to live in a high tower over the clouds'
+      expect(page).to have_content 'http://http://skyscraperpage.com/'
+      expect(page).to have_content 'City center'
+      expect(page).to have_content 'T.I.A.'
+      expect(page).to have_content 'Towers'
 
       visit user_url(author, filter: :budget_investments)
-      expect(page).to have_content "1 Investment"
-      expect(page).to have_content "Build a skyscraper"
+      expect(page).to have_content '1 Investment'
+      expect(page).to have_content 'Build a skyscraper'
     end
 
     scenario 'Errors on create' do
@@ -231,6 +247,56 @@ feature 'Budget Investments' do
       visit new_budget_investment_path(budget_id: budget.id)
       click_button 'Create Investment'
       expect(page).to have_content error_message
+    end
+
+    context 'Suggest' do
+      factory = :budget_investment
+
+      scenario 'Show up to 5 suggestions', :js do
+        login_as(author)
+
+        %w(first second third fourth fifth sixth).each do |ordinal|
+          create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
+        end
+        create(factory, title: "This is the last #{factory}", budget: budget)
+
+        visit new_budget_investment_path(budget)
+        fill_in "budget_investment_title", with: "search"
+
+        within("div#js-suggest") do
+          expect(page).to have_content ("You are seeing 5 of 6 investments containing the term 'search'")
+        end
+      end
+
+      scenario 'No found suggestions', :js do
+        login_as(author)
+
+        %w(first second third fourth fifth sixth).each do |ordinal|
+          create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
+        end
+
+        visit new_budget_investment_path(budget)
+        fill_in "budget_investment_title", with: "item"
+
+        within('div#js-suggest') do
+          expect(page).to_not have_content ('You are seeing')
+        end
+      end
+
+      scenario "Don't show suggestions from a different budget", :js do
+        login_as(author)
+
+        %w(first second third fourth fifth sixth).each do |ordinal|
+          create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
+        end
+
+        visit new_budget_investment_path(other_budget)
+        fill_in "budget_investment_title", with: "search"
+
+        within('div#js-suggest') do
+          expect(page).to_not have_content ('You are seeing')
+        end
+      end
     end
 
     scenario 'Ballot is not visible' do
@@ -263,15 +329,32 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Don't display flaggable buttons" do
+    investment = create(:budget_investment, heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_selector ".js-follow"
+  end
+
+  scenario "Show back link contains heading id" do
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget, investment)
+
+    expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: investment.heading)
+  end
+
   context "Show (feasible budget investment)" do
-    let(:investment) { create(:budget_investment,
-                          :feasible,
-                          :finished,
-                          budget: budget,
-                          group: group,
-                          heading: heading,
-                          price: 16,
-                          price_explanation: 'Every wheel is 4 euros, so total is 16')}
+    let(:investment) do
+      create(:budget_investment,
+             :feasible,
+             :finished,
+             budget: budget,
+             group: group,
+             heading: heading,
+             price: 16,
+             price_explanation: 'Every wheel is 4 euros, so total is 16')
+    end
 
     background do
       user = create(:user)
@@ -313,6 +396,40 @@ feature 'Budget Investments' do
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content(investment.unfeasibility_explanation)
   end
+
+  scenario "Show milestones", :js do
+    user = create(:user)
+    investment = create(:budget_investment)
+    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show",
+                                                     created_at: DateTime.new(2015, 9, 19).utc)
+
+    login_as(user)
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content(milestone.title)
+      expect(page).to have_content(milestone.description)
+      expect(page).to have_content("Published 2015-09-19")
+    end
+  end
+
+  scenario "Show no_milestones text", :js do
+    user = create(:user)
+    investment = create(:budget_investment)
+
+    login_as(user)
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content("Don't have defined milestones")
+    end
+  end
+
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
 
   context "Destroy" do
 
@@ -486,9 +603,9 @@ feature 'Budget Investments' do
     end
 
     scenario 'Order by cost (only when balloting)' do
-      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper',  price: 20000)
+      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000).update_column(:confidence_score, 10)
+      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000).update_column(:confidence_score, 5)
+      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -516,8 +633,6 @@ feature 'Budget Investments' do
       expect(page).to have_content "€10,000"
     end
 
-
-
     scenario "Sidebar in show should display vote text" do
       investment = create(:budget_investment, :selected, budget: budget)
       visit budget_investment_path(budget, investment)
@@ -537,12 +652,11 @@ feature 'Budget Investments' do
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York")
 
-
-      sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)
-      sp2 = create(:budget_investment, :selected, price:     10, heading: global_heading)
-      sp3 = create(:budget_investment, :selected, price:    100, heading: global_heading)
-      sp4 = create(:budget_investment, :selected, price:   1000, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :selected, price:  10000, heading: carabanchel_heading)
+      sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
+      sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
+      sp3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
+      sp4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
+      sp5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
       sp6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
 
       login_as(user)
@@ -602,5 +716,116 @@ feature 'Budget Investments' do
       end
     end
 
+    scenario 'Show unselected budget investments' do
+      investment1 = create(:budget_investment, :unselected, :feasible, heading: heading, valuation_finished: true)
+      investment2 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
+      investment3 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
+      investment4 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
+
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
+
+      within("#budget-investments") do
+        expect(page).to have_css('.budget-investment', count: 1)
+
+        expect(page).to have_content(investment1.title)
+        expect(page).to_not have_content(investment2.title)
+        expect(page).to_not have_content(investment3.title)
+        expect(page).to_not have_content(investment4.title)
+      end
+    end
+
+    scenario "Shows unselected link for group with one heading" do
+      group   = create(:budget_group,   name: 'All City', budget: budget)
+      heading = create(:budget_heading, name: "Madrid",   group: group)
+
+      visit budget_path(budget)
+      click_link 'See investments not selected for balloting phase'
+
+      click_link "All City"
+
+      expected_path = budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
+      expect(page).to have_current_path(expected_path)
+    end
+
+    scenario "Shows unselected link for group with many headings" do
+      group = create(:budget_group, name: 'Districts', budget: budget)
+      heading1 = create(:budget_heading, name: 'Carabanchel', group: group)
+      heading2 = create(:budget_heading, name: 'Barajas',     group: group)
+
+      visit budget_path(budget)
+
+      click_link 'See investments not selected for balloting phase'
+
+      click_link 'Districts'
+      click_link 'Carabanchel'
+
+      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
+      expect(page).to have_current_path(expected_path)
+    end
+
+    scenario "Do not display vote button for unselected investments in index" do
+      investment = create(:budget_investment, :unselected, heading: heading)
+
+      visit budget_investments_path(budget_id: budget.id, heading_id: heading.id, filter: "unselected")
+
+      expect(page).to have_content investment.title
+      expect(page).to_not have_link("Vote")
+    end
+
+    scenario "Do not display vote button for unselected investments in show" do
+      investment = create(:budget_investment, :unselected, heading: heading)
+
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_content investment.title
+      expect(page).to_not have_link("Vote")
+    end
+
+    feature "Reclassification" do
+
+      scenario "Due to heading change" do
+        user = create(:user, :level_two)
+        investment = create(:budget_investment, :selected, heading: heading)
+        heading2 = create(:budget_heading, group: group)
+
+        ballot = create(:budget_ballot, user: user, budget: budget)
+        ballot.investments << investment
+
+        login_as(user)
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted one investment")
+
+        investment.heading = heading2
+        investment.save
+
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted 0 investment")
+      end
+
+      scenario "Due to being unfeasible" do
+        user = create(:user, :level_two)
+        investment = create(:budget_investment, :selected, heading: heading)
+        heading2 = create(:budget_heading, group: group)
+
+        ballot = create(:budget_ballot, user: user, budget: budget)
+        ballot.investments << investment
+
+        login_as(user)
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted one investment")
+
+        investment.feasibility = "unfeasible"
+        investment.unfeasibility_explanation = "too expensive"
+        investment.save
+
+        visit budget_ballot_path(budget)
+
+        expect(page).to have_content("You have voted 0 investment")
+      end
+
+    end
   end
 end

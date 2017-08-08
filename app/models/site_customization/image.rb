@@ -2,14 +2,15 @@ class SiteCustomization::Image < ActiveRecord::Base
   VALID_IMAGES = {
     "icon_home" => [330, 240],
     "logo_header" => [80, 80],
-    "social-media-icon" => [200, 200],
+    "social_media_icon" => [470, 246],
+    "social_media_icon_twitter" => [246, 246],
     "apple-touch-icon-200" => [200, 200]
   }
 
   has_attached_file :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
-  validates_attachment_content_type :image, :content_type => ["image/png"]
+  validates_attachment_content_type :image, content_type: ["image/png"]
   validate :check_image
 
   def self.all_images
@@ -21,9 +22,8 @@ class SiteCustomization::Image < ActiveRecord::Base
   def self.image_path_for(filename)
     image_name = filename.split(".").first
 
-    if i = find_by(name: image_name)
-      i.image.exists? ? i.image.url : nil
-    end
+    imageable = find_by(name: image_name)
+    imageable.present? && imageable.image.exists? ? imageable.image.url : nil
   end
 
   def required_width

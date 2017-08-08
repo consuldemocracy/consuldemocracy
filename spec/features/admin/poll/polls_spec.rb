@@ -248,23 +248,14 @@ feature 'Admin polls' do
         booth_assignment_recounted = create(:poll_booth_assignment, poll: poll)
         booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
 
-        3.times { |i| create(:poll_recount,
-                         booth_assignment: booth_assignment,
-                         date: poll.starts_at + i.days,
-                         count: 33) }
+        3.times do |i|
+          create(:poll_final_recount,
+                 booth_assignment: booth_assignment,
+                 date: poll.starts_at + i.days,
+                 count: 21)
+        end
 
-        3.times { |i| create(:poll_final_recount,
-                         booth_assignment: booth_assignment,
-                         date: poll.starts_at + i.days,
-                         count: 21) }
-
-        2.times { create(:poll_voter,
-                  booth_assignment: booth_assignment_final_recounted) }
-
-        create(:poll_recount,
-               booth_assignment: booth_assignment_recounted,
-               date: poll.ends_at,
-               count: 777)
+        2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
 
         create(:poll_final_recount,
                booth_assignment: booth_assignment_final_recounted,
@@ -279,19 +270,16 @@ feature 'Admin polls' do
 
         within("#poll_booth_assignment_#{booth_assignment.id}_recounts") do
           expect(page).to have_content(booth_assignment.booth.name)
-          expect(page).to have_content('99')
           expect(page).to have_content('63')
         end
 
         within("#poll_booth_assignment_#{booth_assignment_recounted.id}_recounts") do
           expect(page).to have_content(booth_assignment_recounted.booth.name)
-          expect(page).to have_content('777')
           expect(page).to have_content('-')
         end
 
         within("#poll_booth_assignment_#{booth_assignment_final_recounted.id}_recounts") do
           expect(page).to have_content(booth_assignment_final_recounted.booth.name)
-          expect(page).to have_content('-')
           expect(page).to have_content('55555')
           expect(page).to have_content('2')
         end
@@ -353,7 +341,7 @@ feature 'Admin polls' do
         question_2.valid_answers.each_with_index do |answer, i|
           within("#question_#{question_2.id}_#{i}_result") do
             expect(page).to have_content(answer)
-            expect(page).to have_content([0,15][i])
+            expect(page).to have_content([0, 15][i])
           end
         end
 

@@ -103,7 +103,7 @@ describe Budget::Investment do
     let(:investment) { create(:budget_investment) }
 
       it "returns the proposal id" do
-        expect(investment.code).to include("#{investment.id}")
+        expect(investment.code).to include((investment.id).to_s)
       end
 
       it "returns the administrator id when assigned" do
@@ -163,17 +163,24 @@ describe Budget::Investment do
   end
 
   describe "#should_show_ballots?" do
-    it "returns true in balloting phase" do
+    it "returns true in balloting phase for selected investments" do
       budget = create(:budget, phase: "balloting")
-      investment = create(:budget_investment, budget: budget)
+      investment = create(:budget_investment, :selected, budget: budget)
 
       expect(investment.should_show_ballots?).to eq(true)
+    end
+
+    it "returns false for unselected investments" do
+      budget = create(:budget, phase: "balloting")
+      investment = create(:budget_investment, :unselected, budget: budget)
+
+      expect(investment.should_show_ballots?).to eq(false)
     end
 
     it "returns false in any other phase" do
       Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
         budget = create(:budget, phase: phase)
-        investment = create(:budget_investment, budget: budget)
+        investment = create(:budget_investment, :selected, budget: budget)
 
         expect(investment.should_show_ballots?).to eq(false)
       end
@@ -242,7 +249,7 @@ describe Budget::Investment do
       by_valuator = Budget::Investment.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
-      expect(by_valuator.sort).to eq([investment1,investment3].sort)
+      expect(by_valuator.sort).to eq([investment1, investment3].sort)
     end
   end
 
@@ -335,6 +342,132 @@ describe Budget::Investment do
         expect(Budget::Investment.unfeasible).to eq [unfeasible_investment]
       end
     end
+
+    describe "not_unfeasible" do
+      it "should return all feasible and undecided investments" do
+        unfeasible_investment = create(:budget_investment, :unfeasible)
+        undecided_investment = create(:budget_investment, :undecided)
+        feasible_investment = create(:budget_investment, :feasible)
+
+        expect(Budget::Investment.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
+      end
+    end
+
+    describe "undecided" do
+      it "should return all undecided investments" do
+        unfeasible_investment = create(:budget_investment, :unfeasible)
+        undecided_investment = create(:budget_investment, :undecided)
+        feasible_investment = create(:budget_investment, :feasible)
+
+        expect(Budget::Investment.undecided).to eq [undecided_investment]
+      end
+    end
+
+    describe "selected" do
+      it "should return all selected investments" do
+        selected_investment = create(:budget_investment, :selected)
+        unselected_investment = create(:budget_investment, :unselected)
+
+        expect(Budget::Investment.selected).to eq [selected_investment]
+      end
+    end
+
+    describe "unselected" do
+      it "should return all unselected not_unfeasible investments" do
+        selected_investment = create(:budget_investment, :selected)
+        unselected_unfeasible_investment = create(:budget_investment, :unselected, :unfeasible)
+        unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
+        unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
+
+        expect(Budget::Investment.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
+      end
+    end
+  end
+
+  describe "apply_filters_and_search" do
+
+    let(:budget) { create(:budget) }
+
+    it "returns feasible investments" do
+      investment1 = create(:budget_investment, :feasible,   budget: budget)
+      investment2 = create(:budget_investment, :feasible,   budget: budget)
+      investment3 = create(:budget_investment, :unfeasible, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :feasible)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns unfeasible investments" do
+      investment1 = create(:budget_investment, :unfeasible, budget: budget)
+      investment2 = create(:budget_investment, :unfeasible, budget: budget)
+      investment3 = create(:budget_investment, :feasible,   budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :unfeasible)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns selected investments" do
+      budget.update(phase: "balloting")
+
+      investment1 = create(:budget_investment, :feasible, :selected,   budget: budget)
+      investment2 = create(:budget_investment, :feasible, :selected,   budget: budget)
+      investment3 = create(:budget_investment, :feasible, :unselected, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :selected)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns unselected investments" do
+      budget.update(phase: "balloting")
+
+      investment1 = create(:budget_investment, :feasible, :unselected, budget: budget)
+      investment2 = create(:budget_investment, :feasible, :unselected, budget: budget)
+      investment3 = create(:budget_investment, :feasible, :selected,   budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, {}, :unselected)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns investmens by heading" do
+      group = create(:budget_group, budget: budget)
+
+      heading1 = create(:budget_heading, group: group)
+      heading2 = create(:budget_heading, group: group)
+
+      investment1 = create(:budget_investment, heading: heading1, budget: budget)
+      investment2 = create(:budget_investment, heading: heading1, budget: budget)
+      investment3 = create(:budget_investment, heading: heading2, budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, heading_id: heading1.id)
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
+
+    it "returns investments by search string" do
+      investment1 = create(:budget_investment, title: "health for all",  budget: budget)
+      investment2 = create(:budget_investment, title: "improved health", budget: budget)
+      investment3 = create(:budget_investment, title: "finance",         budget: budget)
+
+      results = Budget::Investment::apply_filters_and_search(budget, search: "health")
+
+      expect(results).to     include investment1
+      expect(results).to     include investment2
+      expect(results).to_not include investment3
+    end
   end
 
   describe "search" do
@@ -352,7 +485,6 @@ describe Budget::Investment do
     end
 
   end
-
 
   describe 'Permissions' do
     let(:budget)      { create(:budget) }
@@ -458,11 +590,10 @@ describe Budget::Investment do
         most_voted2  = create(:budget_investment, cached_votes_up: 10)
         least_voted2 = create(:budget_investment, cached_votes_up: 1)
 
-
-        expect(Budget::Investment.sort_by_confidence_score.first).to  eq most_voted2
-        expect(Budget::Investment.sort_by_confidence_score.second).to  eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.third).to  eq least_voted2
-        expect(Budget::Investment.sort_by_confidence_score.fourth).to  eq least_voted
+        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted2
+        expect(Budget::Investment.sort_by_confidence_score.second).to eq most_voted
+        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted2
+        expect(Budget::Investment.sort_by_confidence_score.fourth).to eq least_voted
       end
     end
   end
@@ -579,7 +710,7 @@ describe Budget::Investment do
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1
 
-          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money_html)
         end
 
       end
@@ -588,4 +719,143 @@ describe Budget::Investment do
 
   end
 
+  describe "Reclassification" do
+
+    let(:budget)   { create(:budget, phase: "balloting")   }
+    let(:group)    { create(:budget_group, budget: budget) }
+    let(:heading1) { create(:budget_heading, group: group) }
+    let(:heading2) { create(:budget_heading, group: group) }
+
+    describe "heading_changed?" do
+
+      it "returns true if budget is in balloting phase and heading has changed" do
+        investment = create(:budget_investment, heading: heading1)
+        investment.heading = heading2
+
+        expect(investment.heading_changed?).to eq(true)
+      end
+
+      it "returns false if heading has not changed" do
+        investment = create(:budget_investment)
+        investment.heading = investment.heading
+
+        expect(investment.heading_changed?).to eq(false)
+      end
+
+      it "returns false if budget is not balloting phase" do
+        Budget::PHASES.reject {|phase| phase == "balloting"}.each do |phase|
+          budget.update(phase: phase)
+          investment = create(:budget_investment, budget: budget)
+
+          investment.heading = heading2
+
+          expect(investment.heading_changed?).to eq(false)
+        end
+      end
+
+    end
+
+    describe "log_heading_change" do
+
+      it "stores the previous heading before being reclassified" do
+        investment = create(:budget_investment, heading: heading1)
+
+        expect(investment.heading_id).to eq(heading1.id)
+        expect(investment.previous_heading_id).to eq(nil)
+
+        investment.heading = heading2
+        investment.save
+
+        investment.reload
+        expect(investment.heading_id).to eq(heading2.id)
+        expect(investment.previous_heading_id).to eq(heading1.id)
+      end
+
+    end
+
+    describe "store_reclassified_votes" do
+
+      it "stores the votes for a reclassified investment" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.heading = heading2
+        investment.store_reclassified_votes("heading_changed")
+
+        reclassified_vote = Budget::ReclassifiedVote.first
+
+        expect(Budget::ReclassifiedVote.count).to eq(3)
+        expect(reclassified_vote.investment_id).to eq(investment.id)
+        expect(reclassified_vote.user_id).to eq(Budget::Ballot.first.user.id)
+        expect(reclassified_vote.reason).to eq("heading_changed")
+      end
+    end
+
+    describe "remove_reclassified_votes" do
+
+      it "removes votes from invesment" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.heading = heading2
+        investment.remove_reclassified_votes
+
+        investment.reload
+        expect(investment.ballot_lines_count).to eq(0)
+      end
+
+    end
+
+    describe "check_for_reclassification" do
+
+      it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.heading = heading2
+        investment.save
+        investment.reload
+
+        expect(investment.ballot_lines_count).to eq(0)
+        expect(Budget::ReclassifiedVote.count).to eq(3)
+      end
+
+      it "does not store reclassified votes nor remove actual votes if the investment has not been reclassifed" do
+        investment = create(:budget_investment, :selected, heading: heading1)
+
+        3.times do
+          ballot = create(:budget_ballot, budget: budget)
+          ballot.investments << investment
+        end
+
+        expect(investment.ballot_lines_count).to eq(3)
+
+        investment.save
+        investment.reload
+
+        expect(investment.ballot_lines_count).to eq(3)
+        expect(Budget::ReclassifiedVote.count).to eq(0)
+      end
+
+    end
+
+  end
 end

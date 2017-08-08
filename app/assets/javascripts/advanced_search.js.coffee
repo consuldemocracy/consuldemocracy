@@ -4,7 +4,7 @@ App.AdvancedSearch =
     $('#js-advanced-search').data('advanced-search-terms')
 
   toggle_form: (event) ->
-    event.preventDefault();
+    event.preventDefault()
     $('#js-advanced-search').slideToggle()
 
   toggle_date_options: ->
@@ -22,7 +22,7 @@ App.AdvancedSearch =
 
     $('.js-calendar').datepicker
       regional: locale
-      maxDate:  "+0d"
+      maxDate: "+0d"
     $('.js-calendar-full').datepicker
       regional: locale
 
