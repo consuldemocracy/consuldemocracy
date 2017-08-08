@@ -24,8 +24,10 @@ App.Map =
     editable                 = $(element).data('marker-editable')
     marker                   = null;
     markerIcon               = L.divIcon(
-                                  iconSize: null
-                                  html: '<div class="map-marker"></div>')
+                                  className: 'map-marker'
+                                  iconSize:     [30, 30]
+                                  iconAnchor:   [15, 40]
+                                  html: '<div class="map-icon"></div>')
 
     createMarker = (latitude, longitude) ->
       markerLatLng  = new (L.LatLng)(latitude, longitude)

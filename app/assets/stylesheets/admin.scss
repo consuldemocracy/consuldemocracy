@@ -977,24 +977,27 @@ table {
   height: 350px;
   .map-marker {
     visibility: visible;
-    width: 30px;
-    height: 30px;
-    border-radius: 50% 50% 50% 0;
-    background: #00cae9;
     position: absolute;
-    transform: rotate(-45deg);
     left: 50%;
     top: 50%;
-    margin: -45px 0 0 -15px;
-  }
-  .map-marker:after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    margin: 8px 0 0 8px;
-    background: white;
-    position: absolute;
-    border-radius: 50%;
+    margin-top: -5px;
+    .map-icon{
+      transform: rotate(-45deg);
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      background: #00cae9;
+      transform: rotate(-45deg);
+    }
+    .map-icon:after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      margin: 8px 0 0 8px;
+      background: white;
+      position: absolute;
+      border-radius: 50%;
+    }
   }
   .map-attributtion{
     visibility: visible;
