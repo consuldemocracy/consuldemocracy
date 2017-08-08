@@ -64,7 +64,7 @@ module MapLocationsHelper
       map_center_longitude: map_location_longitude(map_location),
       map_zoom: map_location_zoom(map_location),
       map_tiles_attribution_selector: map_location_attribution_id(map_location),
-      map_tiles_provider: "//{s}.tile.osm.org/{z}/{x}/{y}.png",
+      map_tiles_provider: "//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       marker_editable: editable,
       marker_latitude: map_location.latitude,
       marker_longitude: map_location.longitude,
