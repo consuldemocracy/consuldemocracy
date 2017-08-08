@@ -1018,6 +1018,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "debates", "users", column: "author_id", name: "debates_author_id_fkey"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
@@ -1049,6 +1050,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "proposals", "users", column: "author_id", name: "proposals_author_id_fkey"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

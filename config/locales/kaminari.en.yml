@@ -7,7 +7,8 @@ en:
         other: Entries
         zero: Entries
       more_pages:
-        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+        display_entries: Displaying <strong>%{first}&nbsp;-&nbsp;%{last}</strong>
+          of <strong>%{total} %{entry_name}</strong>
       one_page:
         display_entries:
           one: There is <strong>1 %{entry_name}</strong>

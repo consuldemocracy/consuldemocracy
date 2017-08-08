@@ -15,7 +15,8 @@ en:
           finished: Finished
         table_name: Name
         table_phase: Phase
-        table_assigned_investments_valuation_open: Investment projects assigned with valuation open
+        table_assigned_investments_valuation_open: Investment projects assigned with
+          valuation open
         table_actions: Actions
         evaluate: Evaluate
     budget_investments:
@@ -25,7 +26,7 @@ en:
           valuation_open: Open
           valuating: Under valuation
           valuation_finished: Valuation finished
-        assigned_to: "Assigned to %{valuator}"
+        assigned_to: Assigned to %{valuator}
         title: Investment projects
         edit: Edit dossier
         valuators_assigned:
@@ -60,8 +61,9 @@ en:
         assigned_valuators: Assigned valuators
       edit:
         dossier: Dossier
-        price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
+        price_html: Price (%{currency})
+        price_first_year_html: Cost during the first year (%{currency}) <small>(optional,
+          data not public)</small>
         price_explanation_html: Price explanation
         feasibility: Feasibility
         feasible: Feasible
@@ -73,7 +75,7 @@ en:
         internal_comments_html: Internal comments
         save: Save changes
       notice:
-        valuate: "Dossier updated"
+        valuate: Dossier updated
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -108,8 +110,8 @@ en:
         assigned_valuators: Assigned valuators
       edit:
         dossier: Dossier
-        price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency})"
+        price_html: Price (%{currency})
+        price_first_year_html: Cost during the first year (%{currency})
         currency: "€"
         price_explanation_html: Price explanation
         feasibility: Feasibility
@@ -122,6 +124,4 @@ en:
         internal_comments_html: Internal comments
         save: Save changes
       notice:
-        valuate: "Dossier updated"
-
-
+        valuate: Dossier updated

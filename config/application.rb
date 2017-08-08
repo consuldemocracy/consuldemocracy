@@ -21,7 +21,6 @@ module Consul
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :he
     config.i18n.available_locales = [:en, :he]
-    config.i18n.fallbacks = {'fr' => 'en', 'pt-br' => 'en'}
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 

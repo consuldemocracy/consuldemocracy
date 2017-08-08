@@ -3,8 +3,10 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      email_on_comment_label: Notify me by email when someone comments on my proposals or debates
-      email_on_comment_reply_label: Notify me by email when someone replies to my comments
+      email_on_comment_label: Notify me by email when someone comments on my proposals
+        or debates
+      email_on_comment_reply_label: Notify me by email when someone replies to my
+        comments
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
@@ -14,7 +16,8 @@ en:
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
       save_changes_submit: Save changes
-      subscription_to_website_newsletter_label: Receive by email website relevant information
+      subscription_to_website_newsletter_label: Receive by email website relevant
+        information
       email_on_direct_message_label: Receive emails about direct messages
       email_digest_label: Receive a summary of proposal notifications
       official_position_badge_label: Show official position badge
@@ -91,7 +94,8 @@ en:
       debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_label: Topics
-      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+      tags_placeholder: Enter the tags you would like to use, separated by commas
+        (',')
     index:
       featured_debates: Featured
       filter_topic:
@@ -119,10 +123,17 @@ en:
       info: If you want to make a proposal, this is the wrong section, enter %{info_link}.
       info_link: create new proposal
       more_info: More information
-      recommendation_four: Enjoy this space and the voices that fill it. It belongs to you too.
-      recommendation_one: Do not use capital letters for the debate title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
-      recommendation_three: Ruthless criticism is very welcome. This is a space for reflection. But we recommend that you stick to elegance and intelligence. The world is a better place with these virtues in it.
-      recommendation_two: Any debate or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
+      recommendation_four: Enjoy this space and the voices that fill it. It belongs
+        to you too.
+      recommendation_one: Do not use capital letters for the debate title or for whole
+        sentences. On the internet, this is considered shouting. And nobody likes
+        being shouted at.
+      recommendation_three: Ruthless criticism is very welcome. This is a space for
+        reflection. But we recommend that you stick to elegance and intelligence.
+        The world is a better place with these virtues in it.
+      recommendation_two: Any debate or comment suggesting illegal action will be
+        deleted, as well as those intending to sabotage the debate spaces. Anything
+        else is allowed.
       recommendations_title: Recommendations for creating a debate
       start_new: Start a debate
     show:
@@ -142,10 +153,11 @@ en:
   errors:
     messages:
       user_not_found: User not found
-      invalid_date_range: "Invalid date range"
+      invalid_date_range: Invalid date range
   form:
     accept_terms: I agree to the %{policy} and the %{conditions}
-    accept_terms_title: I agree to the Privacy Policy and the Terms and conditions of use
+    accept_terms_title: I agree to the Privacy Policy and the Terms and conditions
+      of use
     conditions: Terms and conditions of use
     debate: Debate
     direct_message: private message
@@ -154,7 +166,7 @@ en:
     not_saved: 'prevented this %{resource} from being saved:'
     policy: Privacy Policy
     proposal: Proposal
-    proposal_notification: "Notification"
+    proposal_notification: Notification
     spending_proposal: Spending proposal
     budget/investment: Investment
     user: Account
@@ -167,7 +179,8 @@ en:
     application:
       chrome: Google Chrome
       firefox: Firefox
-      ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
+      ie: We have detected that you are browsing with Internet Explorer. For an enhanced
+        experience, we recommend using %{firefox} or %{chrome}.
       ie_title: This website is not optimised for your browser
     footer:
       accessibility: Accessibility
@@ -211,9 +224,12 @@ en:
       new_notifications:
         one: You have a new notification
         other: You have %{count} new notifications
-      no_notifications: "You don't have new notifications"
+      no_notifications: You don't have new notifications
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
+      open_city_slogan_html: There are cities that are governed directly by their
+        inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b>
+        ideas to improve their lives and <b>decide</b> among themselves which ones
+        will be carried out.
       open_city_title: Love the city, and it will become a city you love.
       open_gov: Open government
       proposals: Proposals
@@ -222,11 +238,12 @@ en:
       budgets: Participatory budgeting
       spending_proposals: Spending Proposals
     admin:
-      watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
+      watch_form_message: You have unsaved changes. Do you confirm to leave the page?
   legacy_legislation:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
-      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
+      text: To comment this document you must %{sign_in} or %{sign_up}. Then select
+        the text you want to comment and press the button with the pencil.
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
@@ -246,8 +263,8 @@ en:
         other: There are %{count} new replies to your comment on
       title: Notifications
   map:
-    title: "Districts"
-    proposal_for_district: "Start a proposal for your district"
+    title: Districts
+    proposal_for_district: Start a proposal for your district
     select_district: Scope of operation
     start_proposal: Create a proposal
   omniauth:
@@ -256,7 +273,10 @@ en:
       sign_up: Sign up with Facebook
       name: Facebook
     finish_signup:
-      title: Add your email address
+      title: Additional details
+      username_warning: Due to a change in the way we interact with social networks,
+        it is possible that your username now appears as 'already in use'. If that
+        is your case, please choose a different username.
     google_oauth2:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
@@ -265,12 +285,9 @@ en:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
       name: Twitter
-    info_sign_in: "Sign in with:"
-    info_sign_up: "Sign up with:"
-    or_fill: "Or fill the following form:"
-    finish_signup:
-      title: "Additional details"
-      username_warning: "Due to a change in the way we interact with social networks, it is possible that your username now appears as 'already in use'. If that is your case, please choose a different username."
+    info_sign_in: 'Sign in with:'
+    info_sign_up: 'Sign up with:'
+    or_fill: 'Or fill the following form:'
   proposals:
     create:
       form:
@@ -282,11 +299,14 @@ en:
       show_link: View proposal
     retire_form:
       title: Retire proposal
-      warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
+      warning: If you retire the proposal it would still accept supports, but will
+        be removed from the main list and a message will be visible to all users stating
+        that the author considers the proposal should not be supported anymore
       retired_reason_label: Reason to retire the proposal
       retired_reason_blank: Choose an option
       retired_explanation_label: Explanation
-      retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
+      retired_explanation_placeholder: Explain shortly why you think this proposal
+        should not receive more supports
       submit_button: Retire proposal
     retire_options:
       duplicated: Duplicated
@@ -298,19 +318,23 @@ en:
       geozone: Scope of operation
       proposal_external_url: Link to additional documentation
       proposal_question: Proposal question
-      proposal_question_example_html: Must be summarised in one question with a Yes or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
+      proposal_question_example_html: Must be summarised in one question with a Yes
+        or No answer. <em>E.g. 'Do you agree with the pedestrianisation of Calle Mayor?'</em>
       proposal_responsible_name: Full name of the person submitting the proposal
-      proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
+      proposal_responsible_name_note: "(individually or as representative of a collective;
+        will not be displayed publically)"
       proposal_summary: Proposal summary
       proposal_summary_note: "(maximum 200 characters)"
       proposal_text: Proposal text
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
-      tag_category_label: "Categories"
-      tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
+      tag_category_label: Categories
+      tags_instructions: Tag this proposal. You can choose from proposed categories
+        or add your own
       tags_label: Tags
-      tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+      tags_placeholder: Enter the tags you would like to use, separated by commas
+        (',')
     index:
       featured_proposals: Featured
       filter_topic:
@@ -324,7 +348,7 @@ en:
         relevance: relevance
         archival_date: Archived
       retired_proposals: Retired proposals
-      retired_proposals_link: "Proposals retired by the author"
+      retired_proposals_link: Proposals retired by the author
       retired_links:
         all: All
         duplicated: Duplicated
@@ -349,21 +373,26 @@ en:
       form:
         submit_button: Create proposal
       more_info: How do citizen proposals work?
-      recommendation_one: Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at.
-      recommendation_three: Enjoy this space and the voices that fill it. It belongs to you too.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed.
+      recommendation_one: Do not use capital letters for the proposal title or for
+        whole sentences. On the internet, this is considered shouting. And nobody
+        likes being shouted at.
+      recommendation_three: Enjoy this space and the voices that fill it. It belongs
+        to you too.
+      recommendation_two: Any proposal or comment suggesting illegal action will be
+        deleted, as well as those intending to sabotage the debate spaces. Anything
+        else is allowed.
       recommendations_title: Recommendations for creating a proposal
       start_new: Create new proposal
     notice:
       retired: Proposal retired
     proposal:
-      created: "You've created a proposal!"
+      created: You've created a proposal!
       share:
-        guide: "Now you can share it so people can start supporting."
-        edit: "Before it gets shared you'll be able to change the text as you like."
+        guide: Now you can share it so people can start supporting.
+        edit: Before it gets shared you'll be able to change the text as you like.
         view_proposal: Not now, go to my proposal
-      improve_info: "Improve your campaign and get more supports"
-      improve_info_link: "See more information"
+      improve_info: Improve your campaign and get more supports
+      improve_info_link: See more information
       already_supported: You have already supported this proposal. Share it!
       comments:
         one: 1 comment
@@ -378,9 +407,10 @@ en:
         zero: No supports
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
-      archived: "This proposal has been archived and can't collect supports."
-      successful: "This proposal has reached the required supports and will be voted in the %{voting}."
-      voting: "next voting"
+      archived: This proposal has been archived and can't collect supports.
+      successful: This proposal has reached the required supports and will be voted
+        in the %{voting}.
+      voting: next voting
     show:
       author_deleted: User deleted
       code: 'Proposal code:'
@@ -393,105 +423,108 @@ en:
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
-      retired_warning: "The author considers this proposal should not receive more supports."
-      retired_warning_link_to_explanation: Read the explanation before voting for it.
+      retired_warning: The author considers this proposal should not receive more
+        supports.
+      retired_warning_link_to_explanation: Read the explanation before voting for
+        it.
       retired: Proposal retired by the author
       share: Share
       send_notification: Send notification
-      no_notifications: "This proposal has any notifications."
-      embed_video_title: "Video on %{proposal}"
+      no_notifications: This proposal has any notifications.
+      embed_video_title: Video on %{proposal}
     update:
       form:
         submit_button: Save changes
   polls:
-    all: "All"
-    no_dates: "no date assigned"
-    dates: "From %{open_at} to %{closed_at}"
-    final_date: "Final recounts/Results"
+    all: All
+    no_dates: no date assigned
+    dates: From %{open_at} to %{closed_at}
+    final_date: Final recounts/Results
     index:
       filters:
-        current: "Open"
-        incoming: "Incoming"
-        expired: "Expired"
-      title: "Polls"
-      participate_button: "Participate in this poll"
-      participate_button_incoming: "More information"
-      participate_button_expired: "Poll ended"
-      no_geozone_restricted: "All city"
-      geozone_restricted: "Districts"
-      geozone_info: "Can participate people in the Census of: "
-      can_answer: "You can participate in this poll!"
-      cant_answer: "This poll is not available on your geozone"
-      cant_answer_not_logged_in: "You must sign in or sign up to participate"
-      cant_answer_verify: "You must verify your account in order to answer"
-      already_answer: "You already have participated in this poll"
+        current: Open
+        incoming: Incoming
+        expired: Expired
+      title: Polls
+      participate_button: Participate in this poll
+      participate_button_incoming: More information
+      participate_button_expired: Poll ended
+      no_geozone_restricted: All city
+      geozone_restricted: Districts
+      geozone_info: 'Can participate people in the Census of: '
+      can_answer: You can participate in this poll!
+      cant_answer: This poll is not available on your geozone
+      cant_answer_not_logged_in: You must sign in or sign up to participate
+      cant_answer_verify: You must verify your account in order to answer
+      already_answer: You already have participated in this poll
     show:
-      dates_title: "Participation dates"
-      cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
+      dates_title: Participation dates
+      cant_answer_not_logged_in: You must %{signin} or %{signup} to participate.
       signin: Sign in
       signup: Sign up
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
-      verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
-      cant_answer_expired: "This poll has finished."
+      cant_answer_verify_html: You must %{verify_link} in order to answer.
+      verify_link: verify your account
+      cant_answer_incoming: This poll has not yet started.
+      cant_answer_expired: This poll has finished.
   poll_questions:
-    create_question: "Create question"
-    default_valid_answers: "Yes, No"
+    create_question: Create question
+    default_valid_answers: Yes, No
     show:
-      answer_this_question: "Answer this question"
-      original_proposal: "Original proposal"
-      author: "Created by"
-      dates_title: "Participation dates"
-      more_info: "More information"
-      not_logged_in: "You must %{signin} or %{signup} to participate."
+      answer_this_question: Answer this question
+      original_proposal: Original proposal
+      author: Created by
+      dates_title: Participation dates
+      more_info: More information
+      not_logged_in: You must %{signin} or %{signup} to participate.
       signin: Sign in
       signup: Sign up
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
-      verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
-      cant_answer_expired: "This poll has finished."
-      cant_answer_wrong_geozone: "This question is not available on your geozone."
-      vote_answer: "Vote %{answer}"
-      voted: "You have voted %{answer}"
-      poll: "Poll"
+      cant_answer_verify_html: You must %{verify_link} in order to answer.
+      verify_link: verify your account
+      cant_answer_incoming: This poll has not yet started.
+      cant_answer_expired: This poll has finished.
+      cant_answer_wrong_geozone: This question is not available on your geozone.
+      vote_answer: Vote %{answer}
+      voted: You have voted %{answer}
+      poll: Poll
   proposal_notifications:
     new:
-      title: "Send message"
-      title_label: "Title"
-      body_label: "Message"
-      submit_button: "Send message"
-      info_about_receivers_html: "This message will be send to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Message are not sent immediately, users will receive periodically an email with all proposal notifications."
-      proposal_page: "the proposal's page"
+      title: Send message
+      title_label: Title
+      body_label: Message
+      submit_button: Send message
+      info_about_receivers_html: This message will be send to <strong>%{count} people</strong>
+        and it will be visible in %{proposal_page}.<br> Message are not sent immediately,
+        users will receive periodically an email with all proposal notifications.
+      proposal_page: the proposal's page
     show:
-      back: "Go back to my activity"
+      back: Go back to my activity
   shared:
-    edit: 'Edit'
-    save: 'Save'
-    delete: 'Delete'
-    comments:
-      title: 'Comments'
-      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
-    "yes": "Yes"
-    "no": "No"
-    search_results: "Search results"
-    advanced_search:
-      author_type: 'By author category'
-      author_type_blank: 'Select a category'
-      date: 'By date'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: 'Choose a date'
-      date_1: 'Last 24 hours'
-      date_2: 'Last week'
-      date_3: 'Last month'
-      date_4: 'Last year'
-      date_5: 'Customized'
-      from: 'From'
-      general: 'With the text'
-      general_placeholder: 'Write the text'
-      search: 'Filter'
-      title: 'Advanced search'
-      to: 'To'
+    edit: Edit
+    save: Save
     delete: Delete
+    comments:
+      title: Comments
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.
+    'yes': 'Yes'
+    'no': 'No'
+    search_results: Search results
+    advanced_search:
+      author_type: By author category
+      author_type_blank: Select a category
+      date: By date
+      date_placeholder: DD/MM/YYYY
+      date_range_blank: Choose a date
+      date_1: Last 24 hours
+      date_2: Last week
+      date_3: Last month
+      date_4: Last year
+      date_5: Customized
+      from: From
+      general: With the text
+      general_placeholder: Write the text
+      search: Filter
+      title: Advanced search
+      to: To
     author_info:
       author_deleted: User deleted
     back: Go back
@@ -508,36 +541,44 @@ en:
     suggest:
       debate:
         found:
-          one: "There is a debate with the term '%{query}', you can participate in it instead of opening a new one."
-          other: "There are debates with the term '%{query}', you can participate in them instead of opening a new one."
-        message: "You are seeing %{limit} of %{count} debates containing the term '%{query}'"
-        see_all: "Ver todos"
+          one: There is a debate with the term '%{query}', you can participate in
+            it instead of opening a new one.
+          other: There are debates with the term '%{query}', you can participate in
+            them instead of opening a new one.
+        message: You are seeing %{limit} of %{count} debates containing the term '%{query}'
+        see_all: Ver todos
       budget_investment:
         found:
-          one: "There is an investment with the term '%{query}', you can participate in it instead of opening a new one."
-          other: "There are investments with the term '%{query}', you can participate in them instead of opening a new one."
-        message: "You are seeing %{limit} of %{count} investments containing the term '%{query}'"
-        see_all: "See all"
+          one: There is an investment with the term '%{query}', you can participate
+            in it instead of opening a new one.
+          other: There are investments with the term '%{query}', you can participate
+            in them instead of opening a new one.
+        message: You are seeing %{limit} of %{count} investments containing the term
+          '%{query}'
+        see_all: See all
       proposal:
         found:
-          one: "There is a proposal with the term '%{query}', you can contribute to it instead of creating a new"
-          other: "There are proposals with the term '%{query}', you can contribute to them instead of creating a new"
-        message: "You are seeing %{limit} of %{count} proposals containing the term '%{query}'"
-        see_all: "See all"
+          one: There is a proposal with the term '%{query}', you can contribute to
+            it instead of creating a new
+          other: There are proposals with the term '%{query}', you can contribute
+            to them instead of creating a new
+        message: You are seeing %{limit} of %{count} proposals containing the term
+          '%{query}'
+        see_all: See all
     tags_cloud:
       tags: Trending
-      districts: "Districts"
-      districts_list: "Districts list"
-      categories: "Categories"
+      districts: Districts
+      districts_list: Districts list
+      categories: Categories
     target_blank_html: " (link opens in new window)"
-    you_are_in: "You are in"
+    you_are_in: You are in
     unflag: Unflag
     outline:
       debates: Debates
       proposals: Proposals
       budget: Participatory budget
       searcher: Searcher
-    go_to_page: "Go to page of "
+    go_to_page: 'Go to page of '
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"
@@ -548,8 +589,9 @@ en:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'If you propose in name of an assocation or collective add the name here'
-      association_name: 'Association name'
+      association_name_label: If you propose in name of an assocation or collective
+        add the name here
+      association_name: Association name
       description: Description
       external_url: Link to additional documentation
       geozone: Scope of operation
@@ -560,7 +602,7 @@ en:
     index:
       title: Participatory budgeting
       unfeasible: Unfeasible investment projects
-      by_geozone: "Investment projects with scope: %{geozone}"
+      by_geozone: 'Investment projects with scope: %{geozone}'
       search_form:
         button: Search
         placeholder: Investment projects...
@@ -575,9 +617,12 @@ en:
       start_spending_proposal: Create an investment project
     new:
       more_info: How do participatory budgeting works?
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
-      recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
+      recommendation_one: It's mandatory that the proposal makes reference to a budgetable
+        action.
+      recommendation_three: Try to go into details when describing your spending proposal
+        so the reviewing team undertands your points.
+      recommendation_two: Any proposal or comment suggesting illegal action will be
+        deleted.
       recommendations_title: How to create a spending proposal
       start_new: Create spending proposal
     show:
@@ -609,12 +654,12 @@ en:
   unauthorized:
     default: You do not have permission to access this page.
     manage:
-      all: "You do not have permission to carry out the action '%{action}' on %{subject}."
+      all: You do not have permission to carry out the action '%{action}' on %{subject}.
   users:
     direct_messages:
       new:
         body_label: Message
-        direct_messages_bloqued: "This user has decided not to receive direct messages"
+        direct_messages_bloqued: This user has decided not to receive direct messages
         submit_button: Send message
         title: Send private message to %{receiver}
         title_label: Title
@@ -644,13 +689,13 @@ en:
           one: 1 Investment
           other: "%{count} Investments"
       no_activity: User has no public activity
-      no_private_messages: "This user doesn't accept private messages."
+      no_private_messages: This user doesn't accept private messages.
       private_activity: This user decided to keep the activity list private
-      send_private_message: "Send private message"
+      send_private_message: Send private message
     proposals:
-      send_notification: "Send notification"
-      retire: "Retire"
-      retired: "Retired"
+      send_notification: Send notification
+      retire: Retire
+      retired: Retired
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
@@ -678,16 +723,20 @@ en:
       different_heading_assigned: You can only support proposals in one district
   welcome:
     debates:
-      description: For meeting, discussing and sharing the things that matter to us in our city.
+      description: For meeting, discussing and sharing the things that matter to us
+        in our city.
       title: Debates
     decide:
-      description: The public decides if it accepts or rejects the most supported proposals.
+      description: The public decides if it accepts or rejects the most supported
+        proposals.
       title: You decide
     do:
-      description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
+      description: If the proposal is accepted by the majority, the City Council accepts
+        it as its own and it gets done.
       title: It gets done
     proposal:
-      description: Open space for citizen proposals about the kind of city we want to live in.
+      description: Open space for citizen proposals about the kind of city we want
+        to live in.
       title: You propose
     verification:
       i_dont_have_an_account: I don't have an account
@@ -706,6 +755,5 @@ en:
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
   invisible_captcha:
-    sentence_for_humans: "If you are human, ignore this field"
-    timestamp_error_message: "Sorry, that was too quick! Please resubmit."
-
+    sentence_for_humans: If you are human, ignore this field
+    timestamp_error_message: Sorry, that was too quick! Please resubmit.
