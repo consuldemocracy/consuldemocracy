@@ -1,9 +1,11 @@
-<div class="jumbo light">
-  <div class="row">
-    <div class="small-12 column">
-      <h2><%= t("community.show.title") %></h2>
-      <p class="lead"> <%= @community.proposal.title %> </p>
-      <p><%= t("community.show.description") %></p>
+<div class="communities-show">
+  <div class="jumbo light">
+    <div class="row">
+      <div class="small-12 column">
+        <h2><%= t("community.show.title") %></h2>
+        <p class="lead"> <%= @community.proposal.title %> </p>
+        <p><%= t("community.show.description") %></p>
+      </div>
     </div>
   </div>
 </div>
@@ -22,13 +24,12 @@
   </div>
 </div>
 
-<div class="row column communities-participants">
+<div class="row column communities-participant">
   <ul class="tabs" data-tabs id="communities-show-tabs">
     <li class="tabs-title is-active">
       <%= link_to "#tab-participantes" do %>
         <h3>
-          Participantes
-          <!-- Sebas Check count of topics  -->
+          <%= t("community.tab.participant") %>
           <span class="js-comments-count">(<%= @participants.count %>)</span>
         </h3>
       <% end %>
