@@ -10,6 +10,13 @@
   </div>
 
   <div class="row">
+
+    <div class="btn-new-theme-small show-for-small-only small-12 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("community.sidebar.topic.title") %></h2>
+      <%= link_to t("community.sidebar.topic.new_topic"), new_community_topic_path(@community.id), class: 'button expanded' %>
+    </div>
+
     <div class="small-12 medium-9 column">
       <div id="topics" class="topics-list">
         <%= render "topics/topics", topics: @topics %>
@@ -17,7 +24,7 @@
       <%= paginate @topics %>
     </div>
 
-    <aside class="small-12 medium-3 column">
+    <aside class="small-12 medium-3 hide-for-small-only column">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.sidebar.topic.title") %></h2>
       <%= link_to t("community.sidebar.topic.new_topic"), new_community_topic_path(@community.id), class: 'button expanded' %>
@@ -46,7 +53,7 @@
             <%= link_to participant.name, user_path(participant)%>
           </span>
           &nbsp;&bull;&nbsp;
-          <span class="label round is-author">    
+          <span class="label round is-author">
               <%= t("comments.comment.author") %>
           </span>
         </div>
