@@ -8,19 +8,20 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="small-12 medium-9 column">
-    <div id="topics">
-      <%= render "topics/topics", topics: @topics %>
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <div id="topics" class="topics-list">
+        <%= render "topics/topics", topics: @topics %>
+      </div>
+      <%= paginate @topics %>
     </div>
-    <%= paginate @topics %>
-  </div>
 
-  <div class="small-12 medium-3 column">
-    Participa
-    <%= link_to t("topic.new"), new_community_topic_path(@community.id), class: 'button expanded' %>
+    <aside class="small-12 medium-3 column">
+      <div class="sidebar-divider"></div>
+      <h2><%= t("community.sidebar.topic.title") %></h2>
+      <%= link_to t("community.sidebar.topic.new_topic"), new_community_topic_path(@community.id), class: 'button expanded' %>
+    </aside>
   </div>
 </div>
 

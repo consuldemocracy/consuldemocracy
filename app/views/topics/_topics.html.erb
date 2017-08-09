@@ -1,9 +1,10 @@
-<div class="order">
-  Ordenar por:
-  <%= render 'shared/wide_order_selector', i18n_namespace: "topics" %>
-</div>
-
 <% if topics.any? %>
+  <div class="row column">
+    <div class="order">
+      <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
+    </div>
+  </div>
+
   <% topics.each do |topic| %>
     <div id="<%= dom_id(topic) %>" class="panel">
       <div class="small-12 medium-11 column">
