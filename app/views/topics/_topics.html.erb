@@ -6,8 +6,8 @@
   </div>
 
   <% topics.each do |topic| %>
-    <div id="<%= dom_id(topic) %>" class="panel">
-      <div class="small-10 medium-10 column">
+    <div id="<%= dom_id(topic) %>" class="panel column">
+      <div class="small-10 column">
         <h3><%= link_to topic.title, community_topic_path(@community, topic) %></h3>
         <p class="topic-info">
           <span class="icon-comments"></span>&nbsp;
@@ -18,7 +18,7 @@
           <%= topic.author.name %>
         </p>
       </div>
-      <div class="small-2 medium-2 column text-center">
+      <div class="small-2 column text-right">
         <% if topic.author == current_user %>
           <%= link_to t("community.topic.edit_button"), edit_community_topic_path(@community.id, topic), class: 'button small hollow' %>
         <% end %>

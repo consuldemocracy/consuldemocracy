@@ -5,24 +5,11 @@
   }
 
   .panel {
-    min-height: 7rem;
+    min-height: auto;
     margin: 0.375rem 0;
 
     .button {
       margin-top: $line-height;
-    }
-  }
-
-  //Participations.scss line 412
-  .btn-new-theme-small {
-
-    h2 {
-      border-top: 2px solid $brand;
-      display: inline-block;
-      font-size: rem-calc(16);
-      margin: -1px 0 rem-calc(12);
-      padding-top: rem-calc(6);
-      text-transform: uppercase;
     }
   }
 }
@@ -39,10 +26,7 @@
 
 .topic-show {
 
-  p {
-    margin-bottom: 0;
-  }
-
+  p,
   ul li {
     margin-bottom: 0;
   }

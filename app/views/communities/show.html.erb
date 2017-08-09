@@ -11,11 +11,11 @@
 
   <div class="row">
 
-    <div class="btn-new-theme-small show-for-small-only small-12 column">
+    <aside class="show-for-small-only small-12 column">
       <div class="sidebar-divider"></div>
       <h2><%= t("community.sidebar.topic.title") %></h2>
       <%= link_to t("community.sidebar.topic.new_topic"), new_community_topic_path(@community.id), class: 'button expanded' %>
-    </div>
+    </aside>
 
     <div class="small-12 medium-9 column">
       <div id="topics" class="topics-list">
