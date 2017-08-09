@@ -64,6 +64,7 @@ es:
       most_voted: Más votados
       newest: Más nuevos primero
       oldest: Más antiguos primero
+      most_commented: Más comentados
     select_order: Ordenar por
     show:
       return_to_commentable: 'Volver a '
