@@ -216,9 +216,8 @@ a {
 }
 
 .menu.vertical {
-  background: #fff;
   margin: $line-height 0;
-  padding: $line-height;
+  padding: $line-height 0;
 
   li {
     margin-bottom: $line-height;
@@ -416,6 +415,7 @@ header {
   .menu {
 
     &.is-dropdown-submenu {
+      background: #fff;
       margin: 0;
       margin-top: rem-calc(-24);
       padding: 0;
