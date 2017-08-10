@@ -179,6 +179,7 @@ en:
     verification/sms: phone
     signature_sheet: Signature sheet
     document: Document
+    topic: Topic
   geozones:
     none: All city
     all: All scopes

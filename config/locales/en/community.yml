@@ -1,41 +1,48 @@
 en:
   community:
-    create_first_community_theme: Create the first community theme
-    join_the_community_of_users: Join the community of users, give your opinion.
-    tab:
-      participant: Participants
-
     sidebar:
-      title: Community
-      description: Join the community of users, give your opinion.
+      title: Comunidad
+      description: Partecipa a la comunidad de usuarios, da tu opinión.
       button_to_access: Access the community
-
-      topic:
-        title: Participants
-        new_topic: Create topic
-        edit_topic: Edit theme
-        recommendations_title: Recommendations to create a theme
-        recommendation_one: Do not write the topic title or whole sentences in capital letters. On the internet that is considered shouting. And no one likes to be yelled at.
-        recommendation_two: Any topic or comment that implies an illegal action will be eliminated, also those that intend to sabotage the spaces of the subject, everything else is allowed.
-        recommendation_three: Enjoy this space, the voices that fill it, it's yours too
-        without_topics: Create the first community topic
-
     show:
-      title: User community
+      title: Proposal community
       description: Participate in the community of this proposal
-      participants: Participants
-
+      create_first_community_topic: Create the first community topic
+      tab:
+        participants: Participants
+      sidebar:
+        participate: Participate
+        new_topic: Create topic
+        disabled_info_title: You need to be logged to create a new topic
+      topic:
+        edit_button: Edit
+        comments:
+          one: 1 comment
+          other: "%{count} comments"
+          zero: No comments
     topic:
-      create: Create a theme
-      edit_button: Edit
+      create: Create a topic
+      edit: Edit Topic
       form:
         topic_title: Topic Title
-        topic_description_as_comment: Initial comment
+        topic_description: Description
         new:
-          submit_button: Create theme
+          submit_button: Create topic
         edit:
-          submit_button: Edit theme
+          submit_button: Edit topic
+        create:
+          submit_button: Create topic
+        update:
+          submit_button: Update topic
       show:
         community_of_the_proposal: Community of the proposal
         tab:
           comments_tab: Comments
+      sidebar:
+        recommendations_title: Recommendations to create a topic
+        recommendation_one: Do not write the topic title or whole sentences in capital letters. On the internet that is considered shouting. And no one likes to be yelled at.
+        recommendation_two: Any topic or comment that implies an illegal action will be eliminated, also those that intend to sabotage the spaces of the subject, everything else is allowed.
+        recommendation_three: Enjoy this space, the voices that fill it, it's yours too.
+  topics:
+    show:
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.

@@ -1,4 +1,6 @@
 class Topic < ActiveRecord::Base
+  include Flaggable
+
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
@@ -7,15 +9,12 @@ class Topic < ActiveRecord::Base
 
   has_many :comments, as: :commentable
 
-  after_create :associate_comment
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :author, presence: true
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_by_oldest, -> { order(created_at: :asc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
 
-  private
-
-  def associate_comment
-    Comment.create(commentable: self, user: self.author, body: self.description_as_comment)
-  end
 end

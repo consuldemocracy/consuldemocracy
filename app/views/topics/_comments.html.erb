@@ -3,9 +3,8 @@
 
     <div id="comments" class="small-12 column">
       <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
-      <!-- <p class="first-comment"><%= @topic.description_as_comment %></p> -->
-      <% @comment_tree.root_comments.each do |comment| %>
 
+      <% @comment_tree.root_comments.each do |comment| %>
         <%= render 'comments/comment', comment: comment  %>
       <% end %>
 

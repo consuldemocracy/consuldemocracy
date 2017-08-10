@@ -4,7 +4,7 @@
       <div class="small-12 column">
         <h2><%= t("community.show.title") %></h2>
         <p class="lead"> <%= @community.proposal.title %> </p>
-        <p><%= t("community.show.description") %></p>
+        <p><%= t("community.show.description") %> </p>
       </div>
     </div>
   </div>
@@ -13,8 +13,8 @@
 
     <aside class="show-for-small-only small-12 column">
       <div class="sidebar-divider"></div>
-      <h2><%= t("community.sidebar.topic.title") %></h2>
-      <%= link_to t("community.sidebar.topic.new_topic"), new_community_topic_path(@community.id), class: 'button expanded' %>
+      <h2><%= t("community.show.sidebar.participate") %></h2>
+      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}" %>
     </aside>
 
     <div class="small-12 medium-9 column">
@@ -26,8 +26,8 @@
 
     <aside class="small-12 medium-3 hide-for-small-only column">
       <div class="sidebar-divider"></div>
-      <h2><%= t("community.sidebar.topic.title") %></h2>
-      <%= link_to t("community.sidebar.topic.new_topic"), new_community_topic_path(@community.id), class: 'button expanded' %>
+      <h2><%= t("community.show.sidebar.participate") %></h2>
+      <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}", title: "#{disabled_info_title}" %>
     </aside>
   </div>
 </div>
@@ -35,9 +35,9 @@
 <div class="row column communities-participant">
   <ul class="tabs" data-tabs id="communities-show-tabs">
     <li class="tabs-title is-active">
-      <%= link_to "#tab-participantes" do %>
+      <%= link_to "#tab-participants" do %>
         <h3>
-          <%= t("community.tab.participant") %>
+          <%= t("community.show.tab.participants") %>
           <span class="js-comments-count">(<%= @participants.count %>)</span>
         </h3>
       <% end %>

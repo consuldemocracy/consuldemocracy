@@ -63,6 +63,7 @@ feature 'Proposals' do
     expect(page.html).to include "<title>#{proposal.title}</title>"
     expect(page).not_to have_selector ".js-flag-actions"
     expect(page).not_to have_selector ".js-follow"
+    expect(page).to have_content "Access the community"
 
     within('.social-share-button') do
       expect(page.all('a').count).to be(4) # Twitter, Facebook, Google+, Telegram

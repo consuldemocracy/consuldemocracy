@@ -22,4 +22,8 @@ class CommunitiesController < ApplicationController
   def load_topics
     @topics = @community.topics.send("sort_by_#{@order}").page(params[:page])
   end
+
+  def load_participants
+    @participants = @community.participants
+  end
 end

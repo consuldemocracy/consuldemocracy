@@ -179,6 +179,7 @@ es:
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
     document: el documento
+    topic: Tema
   geozones:
     none: Toda la ciudad
     all: Todos los ámbitos de actuación

@@ -6,6 +6,7 @@
     <p><%= t("community.topic.show.community_of_the_proposal") %> <strong><%= @community.proposal.title %></strong></p>
     <h1><%= @topic.title %></h1>
     <div class="topic-info">
+      <p><%= @topic.description %></p>
       <%= render '/shared/author_info', resource: @topic %>
 
       <span class="bullet">&nbsp;&bull;&nbsp;</span>

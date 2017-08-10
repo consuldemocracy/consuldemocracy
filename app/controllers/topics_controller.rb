@@ -1,7 +1,9 @@
 class TopicsController < ApplicationController
   include CommentableActions
+  include FlagActions
 
-  before_action :set_community
+  before_action :load_community
+  before_action :load_topic, only: [:show, :edit, :update]
 
   has_orders %w{most_voted newest oldest}, only: :show
 
@@ -13,7 +15,6 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params.merge(author: current_user, community_id: params[:community_id]))
-
     if @topic.save
       redirect_to community_path(@community), notice: I18n.t('flash.actions.create.topic')
     else
@@ -22,20 +23,17 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
     @commentable = @topic
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
   end
 
   def edit
-    @topic = Topic.find(params[:id])
   end
 
   def update
-    @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
-      redirect_to community_path(@community), notice: t('topic.update.notice')
+      redirect_to community_path(@community), notice: t('flash.actions.update.topic')
     else
       render :edit
     end
@@ -44,10 +42,14 @@ class TopicsController < ApplicationController
   private
 
   def topic_params
-    params.require(:topic).permit(:title, :community_id, :description_as_comment)
+    params.require(:topic).permit(:title, :description)
   end
 
-  def set_community
+  def load_community
     @community = Community.find(params[:community_id])
+  end
+
+  def load_topic
+    @topic = Topic.find(params[:id])
   end
 end

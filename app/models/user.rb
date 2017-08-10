@@ -315,7 +315,13 @@ class User < ActiveRecord::Base
 
   def self.community_participants(community)
     topics_ids = community.topics.pluck(:id)
-    User.joins(:comments).where("comments.commentable_id IN (?) and comments.commentable_type = 'Topic'", topics_ids)
+    users_who_commented = User.joins(:comments).where("comments.commentable_id IN (?) and comments.commentable_type = 'Topic'", topics_ids).uniq
+
+    author_ids = community.topics.pluck(:author_id)
+    users_who_authors = User.where("users.id IN (?)", author_ids)
+
+    users_participants = users_who_commented + users_who_authors
+    users_participants.uniq
   end
 
   private

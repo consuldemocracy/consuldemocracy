@@ -1,39 +1,48 @@
 es:
   community:
-    create_first_community_theme: Crea el primer tema de la comunidad
-    join_the_community_of_users: Partecipa a la comunidad de usuarios, da tu opinión.
-    tab:
-      participant: Participantes
-
     sidebar:
       title: Comunidad
       description: Partecipa a la comunidad de usuarios, da tu opinión.
       button_to_access: Acceder a la comunidad
-      topic:
-        title: Participa
-        new_topic: Crea un tema
-        recommendations_title: Recomendaciones para crear un tema
-        recommendation_one: No escribas el título del tema o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
-        recommendation_two: Cualquier tema o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios del tema, todo lo demás está permitido.
-        recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo
-        without_topics: Crea el primer tema de la comunidad
-
     show:
-      title: Comunidad de usuarios
+      title: Comunidad de la propuesta
       description: Participa en la comunidad de esta propuesta
-      paricipants: Participantes
-
+      create_first_community_topic: Crea el primer tema de la comunidad
+      tab:
+        paricipants: Participantes
+      sidebar:
+        participate: Participa
+        new_topic: Crea un tema
+        disabled_info_title: Necesitas estar logueado para crear un nuevo tema
+      topic:
+        edit_button: Editar
+        comments:
+          one: 1 Comentario
+          other: "%{count} Comentarios"
+          zero: Sin comentarios
     topic:
       create: Crear un tema
-      edit_button: Editar
+      edit: Editar tema
       form:
         topic_title: Titulo del tema
-        topic_description_as_comment: Comentario inicial
+        topic_description: Descripción
         new:
           submit_button: Crear tema
         edit:
           submit_button: Guardar cambios
+        create:
+          submit_button: Crear tema
+        update:
+          submit_button: Actualizar tema
       show:
         community_of_the_proposal: Comunidad de la propuesta
         tab:
           comments_tab: Comentarios
+      sidebar:
+        recommendations_title: Recomendaciones para crear un tema
+        recommendation_one: No escribas el título del tema o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+        recommendation_two: Cualquier tema o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios del tema, todo lo demás está permitido.
+        recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo
+  topics:
+    show:
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
