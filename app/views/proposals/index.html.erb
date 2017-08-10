@@ -61,9 +61,11 @@
 
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
-      <div class="show-for-small-only">
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
-      </div>
+      <% if @proposals.any? %>
+        <div class="show-for-small-only">
+          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        </div>
+      <% end %>
 
       <div id="proposals-list">
         <%= render partial: 'proposals/proposal', collection: @proposals %>
