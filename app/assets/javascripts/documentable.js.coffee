@@ -4,10 +4,14 @@ App.Documentable =
 
     $('input.document_ajax_attachment[type=file]').fileupload
 
+      paramName : "document[attachment]"
+
+      formData: null
+
       add: (e, data) ->
         wrapper = $(e.target).parent()
         $(wrapper).find('.progress-bar-placeholder').empty()
-        data.progressBar = $('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
+        data.progressBar = $(wrapper).find('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
         data.submit()
 
       change: (e, data) ->
@@ -26,7 +30,8 @@ App.Documentable =
         if result.status == 200
           $(data.progressBar).find('.loading-bar').removeClass 'uploading'
           $(data.progressBar).find('.loading-bar').addClass 'complete'
-          $('#document_cached_attachment').val result.attachment
+          inputId = '#' + $(e.target).data('chached-attachment-input-field')
+          $(inputId).val result.attachment
         else
           $(data.progressBar).find('.loading-bar').addClass 'errors'
           $(data.progressBar).prepend("<span>" + result.msg + "</span>")

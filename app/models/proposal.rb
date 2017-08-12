@@ -13,6 +13,7 @@ class Proposal < ActiveRecord::Base
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
+  accepts_nested_attributes_for :documents
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

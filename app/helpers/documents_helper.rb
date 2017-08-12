@@ -1,7 +1,7 @@
 module DocumentsHelper
 
   def document_attachment_file_name(document)
-    document.attachment.attachment_file_name if document.attachment.exists?
+    document.attachment_file_name if document.attachment.exists?
   end
 
   def errors_on_attachment(document)

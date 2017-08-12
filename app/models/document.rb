@@ -17,8 +17,8 @@ class Document < ActiveRecord::Base
   validate :validate_attachment_size,                 if: -> { attachment.present? }
   validates :title, presence: true
   validates :user, presence: true
-  validates :documentable_id, presence: true
-  validates :documentable_type, presence: true
+  # validates :documentable_id, presence: true
+  # validates :documentable_type, presence: true
 
   def validate_attachment_size
     if documentable.present? &&

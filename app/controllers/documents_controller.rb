@@ -4,12 +4,8 @@ class DocumentsController < ApplicationController
   before_filter :prepare_new_document, only: :new
   before_filter :prepare_document_for_creation, only: :create
 
-  before_filter :validate_upload, only: :upload
   load_and_authorize_resource :except => [:upload]
   skip_authorization_check :only => [:upload]
-
-  def preload
-  end
 
   def new
   end
@@ -35,13 +31,15 @@ class DocumentsController < ApplicationController
   end
 
   def upload
-    document = Document.new(documentable: @documentable, attachment: params[:document][:attachment].tempfile, title: "faketitle", user: current_user )
+    attachment = params[:document][:attachment]
+    document = Document.new(documentable: @documentable, attachment: attachment.tempfile, title: "faketitle", user: current_user )
     # We only are intested in attachment validators. We set some fake data to get attachment errors only
-    if document.valid?
+    document.valid?
+    if document.errors[:attachment].empty?
       # Move image from tmp to cache
-      msg = { status: 200, attachment: params[:document][:attachment].path }
+      msg = { status: 200, attachment: attachment.tempfile.path }
     else
-      params[:document][:attachment].tempfile.delete
+      attachment.tempfile.delete
       msg = { status: 422, msg: document.errors[:attachment].join(', ') }
     end
     render :json => msg
@@ -50,7 +48,7 @@ class DocumentsController < ApplicationController
   private
 
   def find_documentable
-    @documentable = params[:documentable_type].constantize.find(params[:documentable_id])
+    @documentable = params[:documentable_type].constantize.find_or_initialize_by(id: params[:documentable_id])
   end
 
   def prepare_new_document
@@ -74,8 +72,4 @@ class DocumentsController < ApplicationController
     end
   end
 
-  def validate_upload
-    if @documentable.present?
-    end
-  end
 end

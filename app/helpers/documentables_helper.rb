@@ -20,7 +20,7 @@ module DocumentablesHelper
     documentable.class.accepted_content_types
                 .collect{ |content_type| ".#{content_type.split("/").last}" }
                 .join(",")
-  end  
+  end
 
   def humanized_accepted_content_types(documentable)
     documentable.class.accepted_content_types

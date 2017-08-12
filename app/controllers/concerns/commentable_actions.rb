@@ -28,6 +28,7 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
+    prepare_new_resource_documents
     set_geozone
     set_resource_instance
   end
@@ -58,6 +59,7 @@ module CommentableActions
 
   def update
     resource.assign_attributes(strong_params)
+    resource = parse_documents(resource)
     if resource.save
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
@@ -108,6 +110,24 @@ module CommentableActions
 
     def index_customization
       nil
+    end
+
+    def prepare_new_resource_documents
+      if @resource.class == Proposal || @resource.class == Budget::Investment
+        (0..@resource.class.max_documents_allowed - 1).each do
+          @resource.documents.build
+        end
+      end
+    end
+
+    def parse_documents(resource)
+      resource.documents.each do |document|
+        document.user = current_user
+      end
+      resource.documents = resource.documents.select{|document| document.valid? }.each do |document|
+        document.attachment = File.open(document.cached_attachment)
+      end
+      resource
     end
 
 end
