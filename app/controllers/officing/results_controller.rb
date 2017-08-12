@@ -126,7 +126,8 @@ class Officing::ResultsController < Officing::BaseController
 
     def load_partial_results
       if @officer_assignments.present?
-        @partial_results = ::Poll::PartialResult.where(officer_assignment_id: @officer_assignments.map(&:id)).order(:booth_assignment_id, :date)
+        @partial_results = ::Poll::PartialResult.where(officer_assignment_id: @officer_assignments.map(&:id))
+                                                .order(:booth_assignment_id, :date)
       end
     end
 

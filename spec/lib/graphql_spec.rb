@@ -207,7 +207,7 @@ describe 'ConsulSchema' do
 
     it 'only retruns tags with kind nil or category' do
       tag          = create(:tag, name: 'Parks')
-      category_tag = create(:tag, name: 'Health',    kind: 'category')
+      category_tag = create(:tag, :category, name: 'Health')
       admin_tag    = create(:tag, name: 'Admin tag', kind: 'admin')
 
       proposal = create(:proposal, tag_list: 'Parks, Health, Admin tag')
@@ -269,7 +269,7 @@ describe 'ConsulSchema' do
 
     it 'only retruns tags with kind nil or category' do
       tag          = create(:tag, name: 'Parks')
-      category_tag = create(:tag, name: 'Health',    kind: 'category')
+      category_tag = create(:tag, :category, name: 'Health')
       admin_tag    = create(:tag, name: 'Admin tag', kind: 'admin')
 
       debate = create(:debate, tag_list: 'Parks, Health, Admin tag')
@@ -321,7 +321,7 @@ describe 'ConsulSchema' do
 
     it 'does not include hidden comments' do
       visible_comment = create(:comment)
-      hidden_comment  = create(:comment, hidden_at: Time.now)
+      hidden_comment  = create(:comment, hidden_at: Time.current)
 
       response = execute('{ comments { edges { node { body } } } }')
       received_comments = extract_fields(response, 'comments', 'body')
@@ -331,7 +331,7 @@ describe 'ConsulSchema' do
 
     it 'does not include comments from hidden proposals' do
       visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, hidden_at: Time.now)
+      hidden_proposal  = create(:proposal, hidden_at: Time.current)
 
       visible_proposal_comment = create(:comment, commentable: visible_proposal)
       hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
@@ -344,7 +344,7 @@ describe 'ConsulSchema' do
 
     it 'does not include comments from hidden debates' do
       visible_debate = create(:debate)
-      hidden_debate  = create(:debate, hidden_at: Time.now)
+      hidden_debate  = create(:debate, hidden_at: Time.current)
 
       visible_debate_comment = create(:comment, commentable: visible_debate)
       hidden_debate_comment  = create(:comment, commentable: hidden_debate)
@@ -453,7 +453,7 @@ describe 'ConsulSchema' do
   describe 'Tags' do
     it 'only display tags with kind nil or category' do
       tag           = create(:tag, name: 'Parks')
-      category_tag  = create(:tag, name: 'Health',    kind: 'category')
+      category_tag  = create(:tag, :category, name: 'Health')
       admin_tag     = create(:tag, name: 'Admin tag', kind: 'admin')
 
       proposal = create(:proposal, tag_list: 'Parks')
@@ -567,7 +567,7 @@ describe 'ConsulSchema' do
 
     it 'does not include votes of hidden proposals' do
       visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, hidden_at: Time.now)
+      hidden_proposal  = create(:proposal, hidden_at: Time.current)
 
       visible_proposal_vote = create(:vote, votable: visible_proposal)
       hidden_proposal_vote  = create(:vote, votable: hidden_proposal)
@@ -580,7 +580,7 @@ describe 'ConsulSchema' do
 
     it 'does not include votes of hidden comments' do
       visible_comment = create(:comment)
-      hidden_comment  = create(:comment, hidden_at: Time.now)
+      hidden_comment  = create(:comment, hidden_at: Time.current)
 
       visible_comment_vote = create(:vote, votable: visible_comment)
       hidden_comment_vote  = create(:vote, votable: hidden_comment)

@@ -5,11 +5,12 @@ class Legislation::Question < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
 
-  has_many :question_options, -> { order(:id) }, class_name: 'Legislation::QuestionOption', foreign_key: 'legislation_question_id', dependent: :destroy, inverse_of: :question
+  has_many :question_options, -> { order(:id) }, class_name: 'Legislation::QuestionOption', foreign_key: 'legislation_question_id',
+                                                 dependent: :destroy, inverse_of: :question
   has_many :answers, class_name: 'Legislation::Answer', foreign_key: 'legislation_question_id', dependent: :destroy, inverse_of: :question
   has_many :comments, as: :commentable, dependent: :destroy
 
-  accepts_nested_attributes_for :question_options, :reject_if => proc { |attributes| attributes[:value].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :question_options, reject_if: proc { |attributes| attributes[:value].blank? }, allow_destroy: true
 
   validates :process, presence: true
   validates :title, presence: true

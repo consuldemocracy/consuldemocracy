@@ -226,6 +226,11 @@ a {
     a {
       color: $text-medium;
       padding: 0;
+
+      &.active {
+        font-weight: bold;
+        color: $brand;
+      }
     }
 
     h2 {
@@ -407,6 +412,32 @@ header {
       box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
   }
+
+  .menu {
+
+    &.is-dropdown-submenu {
+      margin: 0;
+      margin-top: rem-calc(-24);
+      padding: 0;
+    }
+
+    .is-submenu-item {
+      display: block;
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        color: $text;
+      }
+    }
+  }
+}
+
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-color: #fff transparent transparent;
+  }
 }
 
 .top-links {
@@ -525,6 +556,14 @@ header {
     margin-bottom: 0;
     margin-right: 0;
     width: 100%;
+  }
+}
+
+.top-bar-right {
+
+  .active {
+    font-weight: bold;
+    text-decoration: underline;
   }
 }
 
@@ -825,23 +864,6 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .note,
-  .note-marked {
-    display: block;
-    font-size: rem-calc(13);
-    margin-bottom: $line-height / 2;
-  }
-
-  .note-marked {
-    background: #ff0;
-    display: inline-block;
-
-    em {
-      background: #fff;
-      display: block;
-    }
-  }
-
   .ckeditor {
     min-height: $line-height * 13;
   }
@@ -1124,7 +1146,6 @@ form {
     margin-top: $line-height / 4;
     position: absolute;
     right: 0;
-    z-index: 2;
   }
 }
 
@@ -1764,6 +1785,7 @@ table {
 
     [class^="icon-"] {
       font-size: $base-font-size;
+      text-decoration: none;
       vertical-align: sub;
     }
   }
@@ -1794,6 +1816,7 @@ table {
       font-size: $base-font-size;
       left: -20px;
       position: absolute;
+      text-decoration: none;
       top: -1px;
     }
 
@@ -1945,8 +1968,39 @@ table {
 .activity {
   margin-bottom: $line-height * 2;
 
+  .accordion li {
+    margin-bottom: $line-height / 2;
+
+    .accordion-title {
+      border-bottom: 1px solid $border;
+      background: #f8f9fb;
+      font-size: $small-font-size;
+      padding: $line-height / 2;
+    }
+
+    .accordion-content {
+      padding: 0;
+    }
+  }
+
+  .accordion .title {
+    display: block;
+    line-height: $line-height;
+  }
+
+  .accordion .icon {
+    font-size: rem-calc(20);
+    float: left;
+    margin-right: $line-height / 3;
+
+    &.icon-debates {
+      margin-top: rem-calc(3);
+    }
+  }
+
   table {
     border: 0;
+    margin-bottom: 0;
   }
 
   td {
@@ -1992,6 +2046,14 @@ table {
   .activity-ballot td:first-child::before {
     content: '\53';
     top: 10px;
+  }
+}
+
+.public-interests {
+  margin-top: $line-height;
+
+  .column {
+    padding-left: 0;
   }
 }
 

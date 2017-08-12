@@ -43,10 +43,9 @@ module ApplicationHelper
     authorable.author_id == user.id
   end
 
-  def back_link_to(destination_path)
-    destination = destination_path || :back
+  def back_link_to(destination = :back, text = t("shared.back"))
     link_to destination, class: "back" do
-      "<span class='icon-angle-left'></span>".html_safe + t("shared.back")
+      content_tag(:span, nil, class: "icon-angle-left") + text
     end
   end
 

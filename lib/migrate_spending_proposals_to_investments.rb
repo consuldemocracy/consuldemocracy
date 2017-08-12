@@ -50,7 +50,7 @@ class MigrateSpendingProposalsToInvestments
 
     votes = ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: sp.id)
 
-    votes.each {|v| investment.vote_by({voter: v.voter, vote: 'yes'}) }
+    votes.each {|v| investment.vote_by(voter: v.voter, vote: 'yes') }
 
     # Spending proposals are not commentable in Consul so we can not test this
     #

@@ -36,6 +36,33 @@ feature 'Proposal Notifications' do
     expect(Notification.count).to eq(1)
   end
 
+  scenario "Send a notification (Follower)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+    user_follower = create(:user)
+    create(:follow, :followed_proposal, user: user_follower, followable: proposal)
+
+    create_proposal_notification(proposal)
+
+    expect(Notification.count).to eq(1)
+  end
+
+  scenario "Send a notification (Follower and Voter)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    user_voter_follower = create(:user)
+    create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
+    create(:vote, voter: user_voter_follower, votable: proposal)
+
+    user_follower = create(:user)
+    create(:follow, :followed_proposal, user: user_follower, followable: proposal)
+
+    create_proposal_notification(proposal)
+
+    expect(Notification.count).to eq(2)
+  end
+
   scenario "Send a notification (Blocked voter)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
@@ -65,7 +92,8 @@ feature 'Proposal Notifications' do
   scenario "Show notifications" do
     proposal = create(:proposal)
     notification1 = create(:proposal_notification, proposal: proposal, title: "Hey guys", body: "Just wanted to let you know that...")
-    notification2 = create(:proposal_notification, proposal: proposal, title: "Another update", body: "We are almost there please share with your peoples!")
+    notification2 = create(:proposal_notification, proposal: proposal, title: "Another update",
+                                                   body: "We are almost there please share with your peoples!")
 
     visit proposal_path(proposal)
 
@@ -76,7 +104,7 @@ feature 'Proposal Notifications' do
     expect(page).to have_content "We are almost there please share with your peoples!"
   end
 
-  scenario "Message about receivers" do
+  scenario "Message about receivers (Voters)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
 
@@ -86,6 +114,48 @@ feature 'Proposal Notifications' do
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
     expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+  end
+
+  scenario "Message about receivers (Followers)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    7.times { create(:follow, :followed_proposal, followable: proposal) }
+
+    login_as(author)
+    visit new_proposal_notification_path(proposal_id: proposal.id)
+
+    expect(page).to have_content "This message will be send to 7 people and it will be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+  end
+
+  scenario "Message about receivers (Disctinct Followers and Voters)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    7.times { create(:follow, :followed_proposal, followable: proposal) }
+    7.times { create(:vote, votable: proposal, vote_flag: true) }
+
+    login_as(author)
+    visit new_proposal_notification_path(proposal_id: proposal.id)
+
+    expect(page).to have_content "This message will be send to 14 people and it will be visible in the proposal's page"
+    expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
+  end
+
+  scenario "Message about receivers (Same Followers and Voters)" do
+    author = create(:user)
+    proposal = create(:proposal, author: author)
+
+    user_voter_follower = create(:user)
+    create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
+    create(:vote, voter: user_voter_follower, votable: proposal)
+
+    login_as(author)
+    visit new_proposal_notification_path(proposal_id: proposal.id)
+
+    expect(page).to have_content "This message will be send to 1 people and it will be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal, anchor: 'comments'))
   end
 

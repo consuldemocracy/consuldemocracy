@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Everyone.new(user)
+      merge Abilities::Everyone.new(user)
 
       can [:read, :update], User, id: user.id
 
@@ -34,6 +34,8 @@ module Abilities
       can [:flag, :unflag], Proposal
       cannot [:flag, :unflag], Proposal, author_id: user.id
 
+      can [:create, :destroy], Follow
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
@@ -48,7 +50,7 @@ module Abilities
         can :create, Budget::Investment,               budget: { phase: "accepting" }
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
-        can :vote,   Budget::Investment,               budget: { phase: "selecting" }
+        can :vote, Budget::Investment,                 budget: { phase: "selecting" }
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 

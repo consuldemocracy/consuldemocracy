@@ -42,7 +42,7 @@ module GraphQL
             field(field_name, SCALAR_TYPES[field_type], model.human_attribute_name(field_name))
           when :singular_association
             field(field_name, -> { created_types[field_type] }) do
-              resolve -> (object, arguments, context) do
+              resolve ->(object, arguments, context) do
                 association_target = object.send(field_name)
                 association_target.present? ? field_type.public_for_api.find_by(id: association_target.id) : nil
               end
@@ -50,7 +50,7 @@ module GraphQL
           when :multiple_association
             field_type = field_type.first
             connection(field_name, -> { created_types[field_type].connection_type }, max_page_size: 50, complexity: 1000) do
-              resolve -> (object, arguments, context) { object.send(field_name).public_for_api }
+              resolve ->(object, arguments, context) { object.send(field_name).public_for_api }
             end
           end
         end

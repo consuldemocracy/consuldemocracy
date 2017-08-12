@@ -18,10 +18,7 @@
       <span class="meter" style="width: 66%"></span>
     </div>
 
-    <%= link_to account_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("verification.back") %>
-    <% end %>
+    <%= back_link_to account_path, t("verification.back") %>
 
     <h1><%= t("verification.sms.edit.title") %></h1>
 

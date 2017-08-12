@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Legislation' do
   context 'process debate page' do
     before(:each) do
-      @process = create(:legislation_process, debate_start_date: Date.current - 3.day, debate_end_date: Date.current + 2.days)
+      @process = create(:legislation_process, debate_start_date: Date.current - 3.days, debate_end_date: Date.current + 2.days)
       create(:legislation_question, process: @process, title: "Question 1")
       create(:legislation_question, process: @process, title: "Question 2")
       create(:legislation_question, process: @process, title: "Question 3")

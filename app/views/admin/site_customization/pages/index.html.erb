@@ -15,6 +15,7 @@
         <th><%= t("admin.site_customization.pages.page.created_at") %></th>
         <th><%= t("admin.site_customization.pages.page.updated_at") %></th>
         <th><%= t("admin.site_customization.pages.page.status") %></th>
+        <th><%= t("admin.site_customization.pages.page.locale") %></th>
         <th colspan="2"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -27,6 +28,7 @@
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= I18n.l page.created_at, format: :short %></td>
         <td><%= t("admin.site_customization.pages.page.status_#{page.status}") %></td>
+        <td><%= name_for_locale(page.locale) %></td>
         <td class="small">
           <span class="icon-eye"></span>
           <% if page.status == "published" %>

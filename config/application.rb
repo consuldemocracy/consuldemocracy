@@ -21,6 +21,8 @@ module Consul
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :he
     config.i18n.available_locales = [:en, :he]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '**', '*.{rb,yml}')]
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
@@ -40,7 +42,6 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"
     config.autoload_paths << "#{Rails.root}/app/models/custom"
     config.paths['app/views'].unshift(Rails.root.join('app', 'views', 'custom'))
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{rb,yml}')]
   end
 end
 

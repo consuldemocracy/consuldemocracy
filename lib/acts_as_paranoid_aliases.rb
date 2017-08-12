@@ -2,7 +2,7 @@ module ActsAsParanoidAliases
 
   def self.included(base)
     base.extend(ClassMethods)
-    self.class_eval do
+    class_eval do
 
       def hide
         return false if hidden?
@@ -25,7 +25,7 @@ module ActsAsParanoidAliases
         update_attribute(:confirmed_hide_at, Time.current)
       end
 
-      def restore(opts={})
+      def restore(opts = {})
         return false unless hidden?
         super(opts)
         update_attribute(:confirmed_hide_at, nil)

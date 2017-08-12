@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th colspan="2" class="with-button">
+      <th colspan="3" class="with-button">
         <%= group.name %>
         <%= link_to t("admin.budgets.form.add_heading"), "#", class: "button float-right js-toggle-link", data: { "toggle-selector" => "#group-#{group.id}-new-heading-form" } %>
       </th>
@@ -21,6 +21,7 @@
     <tr>
       <th><%= t("admin.budgets.form.table_heading") %></th>
       <th><%= t("admin.budgets.form.table_amount") %></th>
+      <th><%= t("admin.budgets.form.table_population") %></th>
     </tr>
   </thead>
   <tbody>
@@ -45,6 +46,15 @@
                                 placeholder: t("admin.budgets.form.amount") %>
             </div>
           </div>
+          <div class="row">
+            <div class="small-12 medium-6 column">
+              <label><%= t("admin.budgets.form.population") %></label>
+              <%= f.text_field :population,
+                                label: false,
+                                maxlength: 8,
+                                placeholder: t("admin.budgets.form.population") %>
+            </div>
+          </div>
 
           <%= f.submit t("admin.budgets.form.save_heading"), class: "button success" %>
         <% end %>
@@ -59,6 +69,9 @@
       </td>
       <td>
         <%= heading.price %>
+      </td>
+      <td>
+        <%= heading.population %>
       </td>
     </tr>
     <% end %>

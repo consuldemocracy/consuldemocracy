@@ -17,7 +17,7 @@ module Sanitizable
     end
 
     def sanitize_tag_list
-      self.tag_list = TagSanitizer.new.sanitize_tag_list(self.tag_list) if self.class.taggable?
+      self.tag_list = TagSanitizer.new.sanitize_tag_list(tag_list) if self.class.taggable?
     end
 
 end

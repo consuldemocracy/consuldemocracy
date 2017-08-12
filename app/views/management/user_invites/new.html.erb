@@ -3,8 +3,10 @@
 
   <%= form_tag management_user_invites_path do %>
     <label><%= t('management.user_invites.new.label') %></label>
-    <p class="note"><%= t('management.user_invites.new.info') %></p>
-    <%= text_area_tag "emails", nil, rows: 5, placeholder: t('management.user_invites.new.info') %>
+    <p class="help-text" id="emails-help-text"><%= t('management.user_invites.new.info') %></p>
+    <%= text_area_tag "emails", nil, rows: 5,
+                      placeholder: t('management.user_invites.new.info'),
+                      aria: {describedby: "emails-help-text"} %>
     <div class="small-12 medium-6">
       <input type="submit" name="" value="<%= t('management.user_invites.new.submit') %>", class="button hollow expanded">
     </div>

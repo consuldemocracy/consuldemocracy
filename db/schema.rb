@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170613203256) do
+ActiveRecord::Schema.define(version: 20170719174326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,17 +102,28 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   create_table "budget_groups", force: :cascade do |t|
     t.integer "budget_id"
     t.string  "name",      limit: 50
+    t.string  "slug"
   end
 
   add_index "budget_groups", ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
 
   create_table "budget_headings", force: :cascade do |t|
     t.integer "group_id"
-    t.string  "name",     limit: 50
-    t.integer "price",    limit: 8
+    t.string  "name",       limit: 50
+    t.integer "price",      limit: 8
+    t.integer "population"
+    t.string  "slug"
   end
 
   add_index "budget_headings", ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
+
+  create_table "budget_investment_milestones", force: :cascade do |t|
+    t.integer  "investment_id"
+    t.string   "title",         limit: 80
+    t.text     "description"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
@@ -148,6 +159,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.integer  "ballot_lines_count",                    default: 0
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
+    t.boolean  "incompatible",                          default: false
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -185,6 +197,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.text     "description_balloting"
     t.text     "description_reviewing_ballots"
     t.text     "description_finished"
+    t.string   "slug"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -312,6 +325,18 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_index "flags", ["user_id", "flaggable_type", "flaggable_id"], name: "access_inappropiate_flags", using: :btree
   add_index "flags", ["user_id"], name: "index_flags_on_user_id", using: :btree
 
+  create_table "follows", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "followable_id"
+    t.string   "followable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "follows", ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id", using: :btree
+  add_index "follows", ["user_id", "followable_type", "followable_id"], name: "access_follows", using: :btree
+  add_index "follows", ["user_id"], name: "index_follows_on_user_id", using: :btree
+
   create_table "geozones", force: :cascade do |t|
     t.string   "name"
     t.string   "html_map_coordinates"
@@ -420,6 +445,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.boolean  "allegations_phase_enabled",  default: false
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
+    t.boolean  "published",                  default: true
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -457,6 +483,15 @@ ActiveRecord::Schema.define(version: 20170613203256) do
 
   add_index "legislation_questions", ["hidden_at"], name: "index_legislation_questions_on_hidden_at", using: :btree
   add_index "legislation_questions", ["legislation_process_id"], name: "index_legislation_questions_on_legislation_process_id", using: :btree
+
+  create_table "local_census_records", force: :cascade do |t|
+    t.string   "document_number", null: false
+    t.string   "document_type",   null: false
+    t.date     "date_of_birth",   null: false
+    t.string   "postal_code",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "locks", force: :cascade do |t|
     t.integer  "user_id"
@@ -617,20 +652,6 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
-  create_table "poll_recounts", force: :cascade do |t|
-    t.integer  "booth_assignment_id"
-    t.integer  "officer_assignment_id"
-    t.integer  "count"
-    t.text     "count_log",                 default: ""
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.date     "date",                                   null: false
-    t.text     "officer_assignment_id_log", default: ""
-  end
-
-  add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
-  add_index "poll_recounts", ["officer_assignment_id"], name: "index_poll_recounts_on_officer_assignment_id", using: :btree
-
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
@@ -783,6 +804,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.string   "status",             default: "draft"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "locale"
   end
 
   create_table "spending_proposals", force: :cascade do |t|
@@ -832,7 +854,6 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   create_table "tags", force: :cascade do |t|
     t.string  "name",                     limit: 40
     t.integer "taggings_count",                      default: 0
-    t.boolean "featured",                            default: false
     t.integer "debates_count",                       default: 0
     t.integer "proposals_count",                     default: 0
     t.integer "spending_proposals_count",            default: 0
@@ -844,32 +865,6 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
-
-  create_table "tolk_locales", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tolk_locales", ["name"], name: "index_tolk_locales_on_name", unique: true, using: :btree
-
-  create_table "tolk_phrases", force: :cascade do |t|
-    t.text     "key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tolk_translations", force: :cascade do |t|
-    t.integer  "phrase_id"
-    t.integer  "locale_id"
-    t.text     "text"
-    t.text     "previous_text"
-    t.boolean  "primary_updated", default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tolk_translations", ["phrase_id", "locale_id"], name: "index_tolk_translations_on_phrase_id_and_locale_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                     default: ""
@@ -928,6 +923,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
+    t.boolean  "public_interests",                          default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -1022,6 +1018,7 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"
+  add_foreign_key "follows", "users"
   add_foreign_key "geozones_polls", "geozones"
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
@@ -1045,8 +1042,6 @@ ActiveRecord::Schema.define(version: 20170613203256) do
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
-  add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
-  add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"

@@ -84,13 +84,16 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to have_content(budget_investment1.title)
         expect(page).to_not have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']",
+                                 text: budget_investment1.title)
       end
     end
 
     scenario "by heading" do
-      budget_investment1 = create(:budget_investment, budget: @budget, title: "Hey ho", heading: create(:budget_heading, name: "District 9"))
-      budget_investment2 = create(:budget_investment, budget: @budget, title: "Let's go", heading: create(:budget_heading, name: "Area 52"))
+      budget_investment1 = create(:budget_investment, budget: @budget, title: "Hey ho",
+                                                      heading: create(:budget_heading, name: "District 9"))
+      budget_investment2 = create(:budget_investment, budget: @budget, title: "Let's go",
+                                                      heading: create(:budget_heading, name: "Area 52"))
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -108,7 +111,8 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to_not have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']",
+                                 text: budget_investment2.title)
       end
     end
   end
@@ -135,8 +139,10 @@ feature 'Budget Investments' do
 
     within("#budget-investments") do
       expect(page).to have_css('.budget-investment', count: 2)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']",
+                               text: budget_investment1.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']",
+                               text: budget_investment2.title)
     end
   end
 

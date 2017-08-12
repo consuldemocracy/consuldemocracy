@@ -27,7 +27,7 @@ class Verification::Email
   end
 
   def self.find(user, token)
-    self.valid_token?(user, token)
+    valid_token?(user, token)
   end
 
   def self.valid_token?(user, token)

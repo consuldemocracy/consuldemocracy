@@ -43,7 +43,8 @@ class Management::DocumentVerificationsController < Management::BaseController
     end
 
     def clean_document_number
-      params[:document_verification][:document_number] = params[:document_verification][:document_number].gsub(/[^a-z0-9]+/i, "").upcase unless params[:document_verification][:document_number].blank?
+      return if params[:document_verification][:document_number].blank?
+      params[:document_verification][:document_number] = params[:document_verification][:document_number].gsub(/[^a-z0-9]+/i, "").upcase
     end
 
 end

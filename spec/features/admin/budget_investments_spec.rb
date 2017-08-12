@@ -27,7 +27,7 @@ feature 'Admin budget investments' do
 
   context "Index" do
 
-    scenario 'Displaying investmentss' do
+    scenario 'Displaying investments' do
       budget_investment = create(:budget_investment, budget: @budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
       expect(page).to have_content(budget_investment.title)
@@ -47,7 +47,7 @@ feature 'Admin budget investments' do
 
       budget_investment1.valuators << valuator1
       budget_investment2.valuator_ids = [valuator1.id, valuator2.id]
-      budget_investment3.update({administrator_id: admin.id})
+      budget_investment3.update(administrator_id: admin.id)
 
       visit admin_budget_budget_investments_path(budget_id: @budget.id)
 
@@ -311,8 +311,8 @@ feature 'Admin budget investments' do
 
   context "Edit" do
 
-    scenario "Change title, description or heading" do
-      budget_investment = create(:budget_investment)
+    scenario "Change title, incompatible, description or heading" do
+      budget_investment = create(:budget_investment, :incompatible)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -321,12 +321,27 @@ feature 'Admin budget investments' do
       fill_in 'budget_investment_title', with: 'Potatoes'
       fill_in 'budget_investment_description', with: 'Carrots'
       select "#{budget_investment.group.name}: Barbate", from: 'budget_investment[heading_id]'
+      uncheck "budget_investment_incompatible"
+      check "budget_investment_selected"
 
       click_button 'Update'
 
       expect(page).to have_content 'Potatoes'
       expect(page).to have_content 'Carrots'
       expect(page).to have_content 'Barbate'
+      expect(page).to have_content 'Compatibility: Compatible'
+      expect(page).to have_content 'Selected'
+    end
+
+    scenario "Compatible non-winner can't edit incompatibility" do
+      budget_investment = create(:budget_investment, :selected)
+      create(:budget_heading, group: budget_investment.group, name: "Tetuan")
+
+      visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
+      click_link 'Edit'
+
+      expect(page).not_to have_content 'Compatibility'
+      expect(page).not_to have_content 'Mark as incompatible'
     end
 
     scenario "Add administrator" do

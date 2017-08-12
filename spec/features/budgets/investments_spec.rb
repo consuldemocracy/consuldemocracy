@@ -5,7 +5,7 @@ feature 'Budget Investments' do
   let(:author)  { create(:user, :level_two, username: 'Isabel') }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
-  let(:group)   { create(:budget_group, name: "Health", budget: budget) }
+  let(:group) { create(:budget_group, name: "Health", budget: budget) }
   let!(:heading) { create(:budget_heading, name: "More hospitals", group: group) }
 
   scenario 'Index' do
@@ -329,6 +329,14 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario "Don't display flaggable buttons" do
+    investment = create(:budget_investment, heading: heading)
+
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+
+    expect(page).not_to have_selector ".js-follow"
+  end
+
   scenario "Show back link contains heading id" do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, investment)
@@ -388,6 +396,40 @@ feature 'Budget Investments' do
     expect(page).to have_content("Unfeasibility explanation")
     expect(page).to have_content(investment.unfeasibility_explanation)
   end
+
+  scenario "Show milestones", :js do
+    user = create(:user)
+    investment = create(:budget_investment)
+    milestone = create(:budget_investment_milestone, investment: investment, title: "New text to show",
+                                                     created_at: DateTime.new(2015, 9, 19).utc)
+
+    login_as(user)
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content(milestone.title)
+      expect(page).to have_content(milestone.description)
+      expect(page).to have_content("Published 2015-09-19")
+    end
+  end
+
+  scenario "Show no_milestones text", :js do
+    user = create(:user)
+    investment = create(:budget_investment)
+
+    login_as(user)
+    visit budget_investment_path(budget_id: investment.budget.id, id: investment.id)
+
+    find("#tab-milestones-label").trigger('click')
+
+    within("#tab-milestones") do
+      expect(page).to have_content("Don't have defined milestones")
+    end
+  end
+
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
 
   context "Destroy" do
 
@@ -561,9 +603,9 @@ feature 'Budget Investments' do
     end
 
     scenario 'Order by cost (only when balloting)' do
-      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house',  price:  1000).update_column(:confidence_score, 10)
-      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price:  1000).update_column(:confidence_score, 5)
-      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper',  price: 20000)
+      create(:budget_investment, :selected, heading: heading, title: 'Build a nice house', price: 1000).update_column(:confidence_score, 10)
+      create(:budget_investment, :selected, heading: heading, title: 'Build an ugly house', price: 1000).update_column(:confidence_score, 5)
+      create(:budget_investment, :selected, heading: heading, title: 'Build a skyscraper', price: 20000)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -610,11 +652,11 @@ feature 'Budget Investments' do
       carabanchel_heading = create(:budget_heading, group: group, name: "Carabanchel")
       new_york_heading    = create(:budget_heading, group: group, name: "New York")
 
-      sp1 = create(:budget_investment, :selected, price:      1, heading: global_heading)
-      sp2 = create(:budget_investment, :selected, price:     10, heading: global_heading)
-      sp3 = create(:budget_investment, :selected, price:    100, heading: global_heading)
-      sp4 = create(:budget_investment, :selected, price:   1000, heading: carabanchel_heading)
-      sp5 = create(:budget_investment, :selected, price:  10000, heading: carabanchel_heading)
+      sp1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
+      sp2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
+      sp3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
+      sp4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
+      sp5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
       sp6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
 
       login_as(user)

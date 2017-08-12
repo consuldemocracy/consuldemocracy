@@ -16,9 +16,8 @@ module UsersHelper
     if commentable.nil?
       deleted_commentable_text(comment)
     elsif commentable.hidden?
-      "<abbr title='#{deleted_commentable_text(comment)}'>".html_safe +
-      commentable.title +
-      "</abbr>".html_safe
+      content_tag(:del, commentable.title) + ' ' +
+      content_tag(:span, '(' + deleted_commentable_text(comment) + ')', class: 'small')
     else
       link_to(commentable.title, comment)
     end
@@ -39,6 +38,22 @@ module UsersHelper
 
   def current_administrator?
     current_user && current_user.administrator?
+  end
+
+  def interests_title_text(user)
+    if current_user == user
+      t('account.show.public_interests_my_title_list')
+    else
+      t('account.show.public_interests_user_title_list')
+    end
+  end
+
+  def empty_interests_message_text(user)
+    if current_user == user
+      t('account.show.public_interests_my_empty_list')
+    else
+      t('account.show.public_interests_user_empty_list')
+    end
   end
 
 end
