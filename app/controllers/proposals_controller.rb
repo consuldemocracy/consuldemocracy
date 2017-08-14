@@ -25,7 +25,7 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
-    @proposal = parse_documents(@proposal)
+    parse_documents(@proposal)
 
     if @proposal.save
       redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
@@ -78,7 +78,7 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id,
-                                       documents_attributes: [:cached_attachment, :title] )
+                                       documents_attributes: [:id, :title, :attachment, :cached_attachment ] )
     end
 
     def retired_params

@@ -55,11 +55,12 @@ module CommentableActions
   end
 
   def edit
+    prepare_edit_resource_documents(resource)
   end
 
   def update
     resource.assign_attributes(strong_params)
-    resource = parse_documents(resource)
+    parse_documents(resource)
     if resource.save
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
@@ -114,8 +115,16 @@ module CommentableActions
 
     def prepare_new_resource_documents
       if @resource.class == Proposal || @resource.class == Budget::Investment
-        (0..@resource.class.max_documents_allowed - 1).each do
+        (1..@resource.class.max_documents_allowed).each do
           @resource.documents.build
+        end
+      end
+    end
+
+    def prepare_edit_resource_documents(resource)
+      if resource.class == Proposal || resource.class == Budget::Investment
+        (resource.documents.count + 1 .. resource.class.max_documents_allowed).each do
+          resource.documents.build
         end
       end
     end
@@ -127,7 +136,6 @@ module CommentableActions
       resource.documents = resource.documents.select{|document| document.valid? }.each do |document|
         document.attachment = File.open(document.cached_attachment)
       end
-      resource
     end
 
 end

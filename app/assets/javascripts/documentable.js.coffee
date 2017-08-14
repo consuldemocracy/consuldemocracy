@@ -30,7 +30,7 @@ App.Documentable =
         if result.status == 200
           $(data.progressBar).find('.loading-bar').removeClass 'uploading'
           $(data.progressBar).find('.loading-bar').addClass 'complete'
-          inputId = '#' + $(e.target).data('chached-attachment-input-field')
+          inputId = '#' + $(e.target).data('cached-attachment-input-field')
           $(inputId).val result.attachment
         else
           $(data.progressBar).find('.loading-bar').addClass 'errors'
