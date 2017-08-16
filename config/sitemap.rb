@@ -95,4 +95,23 @@ SitemapGenerator::Sitemap.create do
   add budgets_meetings_2017_path
   add more_info_human_rights_path
   add participation_open_government_path
+
+  #Search by category
+  add proposals_path(search: "Asociaciones")
+  add proposals_path(search: "Cultura")
+  add proposals_path(search: "Deportes")
+  add proposals_path(search: "Derechos Sociales")
+  add proposals_path(search: "Distritos")
+  add proposals_path(search: "Economía")
+  add proposals_path(search: "Empleo")
+  add proposals_path(search: "Equidad")
+  add proposals_path(search: "Medio Ambiente")
+  add proposals_path(search: "Medios")
+  add proposals_path(search: "Movilidad")
+  add proposals_path(search: "Participación")
+  add proposals_path(search: "Salud")
+  add proposals_path(search: "Seguridad y Emergencias")
+  add proposals_path(search: "Sostenibilidad")
+  add proposals_path(search: "Transparencia")
+  add proposals_path(search: "Urbanismo")
 end
