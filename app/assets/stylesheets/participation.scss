@@ -311,7 +311,8 @@
 .polls-show,
 .debate-quiz,
 .budget-investment-show,
-.draft-panels {
+.draft-panels,
+.debate-questions {
 
   p {
     word-wrap: break-word;
@@ -328,10 +329,13 @@
   .whatsapp::before {
     background-color: #43d854;
     color: #fff;
-    font-size: 1.7em;
-    margin-left: rem-calc(0.5);
-    padding: rem-calc(9.5) rem-calc(9.8);
-    vertical-align: rem-calc(10);
+    display: inline-block;
+    font-size: rem-calc(30);
+    height: rem-calc(48);
+    padding-top: rem-calc(9);
+    text-align: center;
+    vertical-align: top;
+    width: rem-calc(48);
   }
 
   .edit-debate,
