@@ -38,10 +38,10 @@ SitemapGenerator::Sitemap.create do
     add poll_path(poll), lastmod: poll.starts_at
   end
 
-  #Budgets
+  # budgets
   add budgets_welcome_path
 
-  #Processes
+  # processes
   add processes_path
   add urbanistic_licenses_path
   add open_government_path
@@ -69,14 +69,14 @@ SitemapGenerator::Sitemap.create do
   add lobbies_draft_path
   add manzanares_path
 
-  #Landings
+  # landings
   add g1000_path
   add blas_bonilla_path
   add sitesientesgato_path
   add plazas_abiertas_path
   add budgets_videos_2017_path
 
-  #Polls 2017 results & stats
+  # polls 2017 results & stats
   add primera_votacion_stats_path
   add primera_votacion_info_path
   add first_voting_path
@@ -96,7 +96,7 @@ SitemapGenerator::Sitemap.create do
   add more_info_human_rights_path
   add participation_open_government_path
 
-  #Search by category
+  # search by category
   add proposals_path(search: "Asociaciones")
   add proposals_path(search: "Cultura")
   add proposals_path(search: "Deportes")
