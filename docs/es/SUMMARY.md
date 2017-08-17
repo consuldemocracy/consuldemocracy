@@ -3,9 +3,9 @@
 * [Introducción](README.md)
 
 ### Primeros pasos
-* [Instalación local](installation/README.md)
-* [Servidores de prueba y producción](servers/README.md)
-* [Recomendaciones](recomendations/README.md)
+* [Instalación local](getting_started/installation.md)
+* [Servidores de prueba y producción](getting_started/servers.md)
+* [Recomendaciones](getting_started/recomendations.md)
 
 ### Personalización
 * [Interfaz y diseño](customization/templating.md)
