@@ -3,9 +3,9 @@
 * [Introduction](README.md)
 
 ### Getting started
-* [Local installation](installation/README.md)
-* [Production and Test servers](servers/README.md)
-* [Recomendations](recomendations/README.md)
+* [Local installation](getting_started/installation.md)
+* [Production and Test servers](getting_started/servers.md)
+* [Recomendations](getting_started/recomendations.md)
 
 ### Customization
 * [Templating](customization/templating.md)
