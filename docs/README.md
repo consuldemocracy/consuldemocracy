@@ -1,2 +1,1 @@
-# docs
-Consul documentation
+# Consul documentation

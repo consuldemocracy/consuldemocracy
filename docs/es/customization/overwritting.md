@@ -1,0 +1,1 @@
+# Adaptar la aplicación
