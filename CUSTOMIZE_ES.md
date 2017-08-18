@@ -32,7 +32,7 @@ Las adaptaciones los debes poner en el directorio `config/locales/custom/`, reco
 <%= t("layouts.footer.copyright", year: Time.current.year) %>
 ```
 
-Y que en el fichero `config/locales/es.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
+Y que en el fichero `config/locales/es/general.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
 
 ```yml
 es:
@@ -42,7 +42,7 @@ es:
 
 ```
 
-Si creamos el fichero `config/locales/custom/es.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
+Si creamos el fichero `config/locales/custom/es/general.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
 
 ### Imágenes
 
@@ -53,7 +53,8 @@ Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene
 * logo_email.png
 * logo_header.png
 * map.jpg
-* social-media-icon.png
+* social_media_icon.png
+* social_media_icon_twitter.png
 
 ### Vistas (HTML)
 

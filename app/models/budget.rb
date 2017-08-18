@@ -1,13 +1,15 @@
 class Budget < ActiveRecord::Base
 
   include Measurable
+  include Sluggable
 
   PHASES = %w(accepting reviewing selecting valuating balloting reviewing_ballots finished).freeze
   CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :phase, inclusion: { in: PHASES }
   validates :currency_symbol, presence: true
+  validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
   has_many :investments, dependent: :destroy
   has_many :ballots, dependent: :destroy
@@ -16,7 +18,6 @@ class Budget < ActiveRecord::Base
   has_many :lines, through: :ballots, class_name: 'Budget::Ballot::Line'
 
   before_validation :sanitize_descriptions
-  before_save :set_slug
 
   scope :on_hold,   -> { where(phase: %w(reviewing valuating reviewing_ballots")) }
   scope :accepting, -> { where(phase: "accepting") }
@@ -33,12 +34,8 @@ class Budget < ActiveRecord::Base
     name.parameterize
   end
 
-  def set_slug
-    self.slug = name.parameterize
-  end
-
   def description
-    self.send("description_#{self.phase}").try(:html_safe)
+    send("description_#{phase}").try(:html_safe)
   end
 
   def self.description_max_length
@@ -77,8 +74,12 @@ class Budget < ActiveRecord::Base
     phase == "finished"
   end
 
+  def balloting_process?
+    balloting? || reviewing_ballots?
+  end
+
   def balloting_or_later?
-    balloting? || reviewing_ballots? || finished?
+    balloting_process? || finished?
   end
 
   def on_hold?
@@ -140,8 +141,8 @@ class Budget < ActiveRecord::Base
     def sanitize_descriptions
       s = WYSIWYGSanitizer.new
       PHASES.each do |phase|
-        sanitized = s.sanitize(self.send("description_#{phase}"))
-        self.send("description_#{phase}=", sanitized)
+        sanitized = s.sanitize(send("description_#{phase}"))
+        send("description_#{phase}=", sanitized)
       end
     end
 end

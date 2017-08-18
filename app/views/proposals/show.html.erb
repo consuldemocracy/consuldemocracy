@@ -18,8 +18,7 @@
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= render "shared/back_link",
-                   path: @proposal.proceeding? ? human_rights_proposals_path : proposals_path %>
+        <%= back_link_to @proposal.proceeding? ? human_rights_proposals_path : proposals_path %>
 
         <% if author_of?(@proposal, current_user) && !@proposal.proceeding? %>
           <%= link_to t("proposals.show.send_notification"),
@@ -62,10 +61,12 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-flag-actions">
+
+          <% if current_user %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'proposals/flag_actions', proposal: @proposal %>
-          </span>
+          <% end %>
+
         </div>
 
         <br>
@@ -154,6 +155,10 @@
           title: @proposal.title,
           url: proposal_url(@proposal)
         } %>
+
+        <% if current_user %>
+          <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
+        <% end %>
 
       </aside>
     </div>

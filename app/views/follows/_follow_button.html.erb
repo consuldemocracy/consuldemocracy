@@ -1,0 +1,24 @@
+<span class="js-follow">
+  <span class="followable-content">
+
+    <% if follow.followable.followed_by?(current_user) %>
+
+      <%= link_to t('shared.unfollow'),
+                  follow_path(follow),
+                  method: :delete, remote: true,
+                  title: unfollow_text(follow.followable),
+                  class: 'button hollow' %>
+
+    <% else %>
+
+      <%= link_to t('shared.follow'),
+                  follows_path(followable_id: follow.followable.id,
+                               followable_type: follow.followable.class.name),
+                  method: :post, remote: true,
+                  title: follow_text(follow.followable),
+                  class: 'button hollow' %>
+
+    <% end %>
+
+  </span>
+</span>

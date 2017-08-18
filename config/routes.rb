@@ -79,6 +79,9 @@ Rails.application.routes.draw do
 
   get 'participatory_budget',                to: 'pages#show', id: 'budgets/welcome',            as: 'participatory_budget'
   get 'presupuestos', to: 'pages#show', id: 'more_info/budgets/welcome',  as: 'budgets_welcome'
+  get "presupuestos/:id/estadisticas", to: "budgets/stats#show", as: 'custom_budget_stats'
+  get "presupuestos/:id/resultados", to: "budgets/results#show", as: 'custom_budget_results'
+  get "presupuestos/:id/resultados/:heading_id", to: "budgets/results#show", as: 'custom_budget_heading_result'
 
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
@@ -93,6 +96,7 @@ Rails.application.routes.draw do
     resources :recommendations, controller: "budgets/recommendations", only: [:index, :new, :create, :destroy]
 
     resource :results, only: :show, controller: "budgets/results"
+    resource :stats, only: :show, controller: "budgets/stats"
   end
 
   get "presupuestos/:budget_id/:id/:heading_id", to: "budgets/investments#index", as: 'custom_budget_investments'
@@ -115,6 +119,8 @@ Rails.application.routes.draw do
     get :results, on: :collection
   end
 
+  resources :follows, only: [:create, :destroy]
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'
@@ -135,52 +141,12 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :final_version_publication
-      resources :questions, only: [:show] do
-        resources :answers, only: [:create]
+      member do
+        get :debate
+        get :draft_publication
+        get :allegations
+        get :result_publication
       end
-      resources :draft_versions, only: [:show] do
-        get :go_to_version, on: :collection
-        get :changes
-        resources :annotations do
-          get :search, on: :collection
-          get :comments
-          post :new_comment
-        end
-      end
-    end
-  end
-
-  namespace :legislation do
-    resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :final_version_publication
-      resources :questions, only: [:show] do
-        resources :answers, only: [:create]
-      end
-      resources :draft_versions, only: [:show] do
-        get :go_to_version, on: :collection
-        get :changes
-        resources :annotations do
-          get :search, on: :collection
-          get :comments
-          post :new_comment
-        end
-      end
-    end
-  end
-
-  namespace :legislation do
-    resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :result_publication
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
       end
@@ -267,12 +233,17 @@ Rails.application.routes.draw do
     resources :probes, only: [:index, :show]
 
     resources :budgets do
+      member do
+        put :calculate_winners
+      end
+
       resources :budget_groups do
         resources :budget_headings do
         end
       end
 
       resources :budget_investments, only: [:index, :show, :edit, :update] do
+        resources :budget_investment_milestones
         member { patch :toggle_selection }
       end
     end
@@ -507,7 +478,6 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       get :final, on: :collection
 
-      resources :recounts, only: [:new, :create]
       resources :final_recounts, only: [:new, :create]
       resources :results, only: [:new, :create, :index]
 
@@ -538,7 +508,6 @@ Rails.application.routes.draw do
   end
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-  mount Tolk::Engine => '/translate', :as => 'tolk'
 
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')

@@ -1,5 +1,6 @@
-# Overrides and adds customized gems in this file
-# Read more on documentation: 
-# * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
-# * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
-#
+gem "animate-rails", '~> 1.0.10'
+
+group :test do
+  gem 'selenium-webdriver', '~> 3.0.5'
+  gem 'timecop', '~> 0.8.1'
+end

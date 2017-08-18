@@ -92,7 +92,9 @@
                        locals: { investment: investment } %>
           <% end %>
 
-          <%= render "banners" %>
+          <% if Budget.balloting.any? %>
+            <%= render "banners" %>
+          <% end %>
         </div>
 
       <% end %>

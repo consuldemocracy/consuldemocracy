@@ -33,7 +33,7 @@ describe :voter do
       user = create(:user, :level_two)
 
       voter1 = create(:poll_voter, user: user, poll: poll)
-      voter2 =  build(:poll_voter, user: user, poll: poll)
+      voter2 = build(:poll_voter, user: user, poll: poll)
 
       expect(voter2).to_not be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
@@ -43,7 +43,7 @@ describe :voter do
       user = create(:user, :level_two)
 
       voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
-      voter2 =  build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
+      voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
       expect(voter2).to_not be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
@@ -56,7 +56,7 @@ describe :voter do
       user = create(:user, :level_two)
 
       voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment1)
-      voter2 =  build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment2)
+      voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment2)
 
       expect(voter2).to_not be_valid
       expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
@@ -69,7 +69,7 @@ describe :voter do
       user = create(:user, :level_two)
 
       voter1 = create(:poll_voter, user: user, booth_assignment: booth_assignment1)
-      voter2 =  build(:poll_voter, user: user, booth_assignment: booth_assignment2)
+      voter2 = build(:poll_voter, user: user, booth_assignment: booth_assignment2)
 
       expect(voter2).to be_valid
     end

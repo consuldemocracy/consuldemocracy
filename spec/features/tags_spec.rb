@@ -148,8 +148,8 @@ feature 'Tags' do
     end
 
     scenario "scoped by category" do
-      create(:tag, kind: 'category', name: 'Medio Ambiente')
-      create(:tag, kind: 'category', name: 'Economía')
+      create(:tag, :category, name: 'Medio Ambiente')
+      create(:tag, :category, name: 'Economía')
 
       earth = create(:proposal, tag_list: 'Medio Ambiente, Agua')
       money = create(:proposal, tag_list: 'Economía, Corrupción')

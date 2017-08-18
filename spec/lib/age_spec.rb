@@ -17,7 +17,7 @@ describe Age do
       d = Date.new(1980, 12, 31)
       expect(Age.in_years(d, Date.new(2000, 12, 30))).to eq(19)
       expect(Age.in_years(d, Date.new(2000, 12, 31))).to eq(20)
-      expect(Age.in_years(d, Date.new(2001,  1,  1))).to eq(20)
+      expect(Age.in_years(d, Date.new(2001, 1,  1))).to eq(20)
 
       d = Date.new(1980, 1, 1)
       expect(Age.in_years(d, Date.new(2000, 12, 31))).to eq(20)
@@ -31,28 +31,28 @@ describe Age do
       expect(Age.in_years(d, Date.new(2000,  2, 27))).to eq(19)
       expect(Age.in_years(d, Date.new(2000,  2, 28))).to eq(19)
       expect(Age.in_years(d, Date.new(2000,  2, 29))).to eq(20)
-      expect(Age.in_years(d, Date.new(2000,  3,  1))).to eq(20)
+      expect(Age.in_years(d, Date.new(2000,  3, 1))).to eq(20)
       expect(Age.in_years(d, Date.new(2001,  2, 27))).to eq(20)
       expect(Age.in_years(d, Date.new(2001,  2, 28))).to eq(20)
-      expect(Age.in_years(d, Date.new(2001,  3,  1))).to eq(21)
+      expect(Age.in_years(d, Date.new(2001,  3, 1))).to eq(21)
 
       d = Date.new(1980, 2, 28)
       expect(Age.in_years(d, Date.new(2000,  2, 27))).to eq(19)
       expect(Age.in_years(d, Date.new(2000,  2, 28))).to eq(20)
       expect(Age.in_years(d, Date.new(2000,  2, 29))).to eq(20)
-      expect(Age.in_years(d, Date.new(2000,  3,  1))).to eq(20)
+      expect(Age.in_years(d, Date.new(2000,  3, 1))).to eq(20)
       expect(Age.in_years(d, Date.new(2001,  2, 27))).to eq(20)
       expect(Age.in_years(d, Date.new(2001,  2, 28))).to eq(21)
-      expect(Age.in_years(d, Date.new(2001,  3,  1))).to eq(21)
+      expect(Age.in_years(d, Date.new(2001,  3, 1))).to eq(21)
 
       d = Date.new(1980, 3, 1)
       expect(Age.in_years(d, Date.new(2000,  2, 27))).to eq(19)
       expect(Age.in_years(d, Date.new(2000,  2, 28))).to eq(19)
       expect(Age.in_years(d, Date.new(2000,  2, 29))).to eq(19)
-      expect(Age.in_years(d, Date.new(2000,  3,  1))).to eq(20)
+      expect(Age.in_years(d, Date.new(2000,  3, 1))).to eq(20)
       expect(Age.in_years(d, Date.new(2001,  2, 27))).to eq(20)
       expect(Age.in_years(d, Date.new(2001,  2, 28))).to eq(20)
-      expect(Age.in_years(d, Date.new(2001,  3,  1))).to eq(21)
+      expect(Age.in_years(d, Date.new(2001,  3, 1))).to eq(21)
     end
   end
 end

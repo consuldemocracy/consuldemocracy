@@ -12,6 +12,14 @@ module TracksHelper
     end
   end
 
+  def track_event(data = {})
+    track_data = ""
+    prefix = " data-track-event-"
+    data.each do |key, value|
+      track_data = track_data + prefix + key.to_s + '=' + value + " "
+    end
+  end
+
   def age(user)
     if user.date_of_birth.blank?
       I18n.t("tracking.user_data.age.unknown")

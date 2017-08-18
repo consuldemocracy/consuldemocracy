@@ -199,23 +199,21 @@ not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 puts " ✅"
 print "Creating Tags Categories"
 
-ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Distritos", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Urbanismo", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.category.create!(name:  "Asociaciones")
+ActsAsTaggableOn::Tag.category.create!(name:  "Cultura")
+ActsAsTaggableOn::Tag.category.create!(name:  "Deportes")
+ActsAsTaggableOn::Tag.category.create!(name:  "Derechos Sociales")
+ActsAsTaggableOn::Tag.category.create!(name:  "Economía")
+ActsAsTaggableOn::Tag.category.create!(name:  "Empleo")
+ActsAsTaggableOn::Tag.category.create!(name:  "Equidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Sostenibilidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Participación")
+ActsAsTaggableOn::Tag.category.create!(name:  "Movilidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Medios")
+ActsAsTaggableOn::Tag.category.create!(name:  "Salud")
+ActsAsTaggableOn::Tag.category.create!(name:  "Transparencia")
+ActsAsTaggableOn::Tag.category.create!(name:  "Seguridad y Emergencias")
+ActsAsTaggableOn::Tag.category.create!(name:  "Medio Ambiente")
 
 puts " ✅"
 print "Creating Debates"
@@ -482,13 +480,14 @@ Budget::PHASES.each_with_index do |phase, i|
     )
   )
 
-  (1..([1, 2, 3].sample)).each do
-    group = budget.groups.create!(name: Faker::StarWars.planet)
+  (1..([1, 2, 3].sample)).each do |i|
+    group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
 
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
-      group.headings << group.headings.create!(name: Faker::Lorem.sentence(3).truncate(10),
-                                               price: rand(1..100) * 100000)
+      group.headings << group.headings.create!(name: "#{geozone.name} #{i}",
+                                               price: rand(1..100) * 100000,
+                                               population: rand(1..50) * 10000)
     end
   end
 end
@@ -525,6 +524,22 @@ puts " ✅"
 print "Balloting Investments"
 Budget.balloting.last.investments.each do |investment|
   investment.update(selected: true, feasibility: "feasible")
+end
+
+puts " ✅"
+print "Voting Investments"
+100.times do
+  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+  investment = Budget::Investment.reorder("RANDOM()").first
+  investment.vote_by(voter: voter, vote: true)
+end
+
+puts " ✅"
+print "Balloting Investments"
+100.times do
+  budget = Budget.reorder("RANDOM()").first
+  ballot = Budget::Ballot.create(user: User.reorder("RANDOM()").first, budget: budget)
+  ballot.add_investment(budget.investments.reorder("RANDOM()").first)
 end
 
 puts " ✅"
@@ -901,19 +916,6 @@ print "Creating Poll Officer Assignments"
 end
 
 puts " ✅"
-print "Creating Poll Recounts" do
-  (1..15).to_a.sample.times do |i|
-    poll_officer.poll_officer.officer_assignments.all.sample(i).each do |officer_assignment|
-      Poll::Recount.create(officer_assignment: officer_assignment,
-                           booth_assignment: officer_assignment.booth_assignment,
-                           date: officer_assignment.date,
-                           count: (1..5000).to_a.sample)
-    end
-  end
-
-end
-
-puts " ✅"
 print "Creating Poll Questions from Proposals"
 
 3.times do
@@ -975,7 +977,8 @@ print "Creating legislation processes"
                                            debate_phase_enabled: true,
                                            allegations_phase_enabled: true,
                                            draft_publication_enabled: true,
-                                           result_publication_enabled: true
+                                           result_publication_enabled: true,
+                                           published: true
   )
 end
 

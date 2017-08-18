@@ -31,5 +31,4 @@
 .ruby-gemset
 
 public/sitemap.xml
-public/api/*.csv
 public/system/

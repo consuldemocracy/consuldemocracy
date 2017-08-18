@@ -36,7 +36,7 @@ class GraphqlController < ApplicationController
 
     def query_string
       if request.headers["CONTENT_TYPE"] == 'application/graphql'
-        request.body.string  # request.body.class => StringIO
+        request.body.string # request.body.class => StringIO
       else
         params[:query]
       end

@@ -4,10 +4,8 @@
 
 <div class="legislation-admin legislation-draft-versions-new legislation-draft-versions-form row">
   <div class="small-12 column">
-    <%= link_to admin_legislation_process_draft_versions_path(@process), class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("admin.legislation.draft_versions.new.back") %>
-    <% end %>
+    <%= back_link_to admin_legislation_process_draft_versions_path(@process),
+                     t("admin.legislation.draft_versions.new.back") %>
 
     <h2><%= @process.title %></h2>
 

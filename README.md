@@ -17,6 +17,7 @@ Citizen Participation and Open Government Application
 [![HTML issues](https://rocketvalidator.com/badges/html_issues.svg?url=https://decide.madrid.es)](https://rocketvalidator.com/badges/link?url=https://decide.madrid.es&report=html)
 
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
 This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
 
@@ -53,7 +54,7 @@ Run the app locally:
 bin/rails s
 ```
 
-Prerequisites for testing: install PhantomJS >= 1.9.8
+Prerequisites for testing: install PhantomJS >= 2.1.1
 
 Run the tests with:
 
@@ -66,6 +67,8 @@ If you add SCSS code you can check it with:
 ```
 scss-lint
 ```
+
+To maintain accesibility level, if you add new colors use a [Color contrast checker](http://webaim.org/resources/contrastchecker/) (WCAG AA is mandatory, WCAG AAA is recommended)
 
 If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
 
@@ -102,4 +105,4 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 
 ## Contributions
 
-See [CONTRIBUTING_EN.md](CONTRIBUTING_EN.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md)

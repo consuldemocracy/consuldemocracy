@@ -13,11 +13,13 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
   def index
     @heading_filters = heading_filters
-    if current_user.valuator? && @budget.present?
-      @investments = @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter).order(cached_votes_up: :desc).page(params[:page])
-    else
-      @investments = Budget::Investment.none.page(params[:page])
-    end
+    @investments = if current_user.valuator? && @budget.present?
+                     @budget.investments.visible_to_valuators.scoped_filter(params_for_current_valuator, @current_filter)
+                            .order(cached_votes_up: :desc)
+                            .page(params[:page])
+                   else
+                     Budget::Investment.none.page(params[:page])
+                   end
   end
 
   def valuate
@@ -64,7 +66,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def valuation_params
-      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasibility, :unfeasibility_explanation, :duration, :valuation_finished, :internal_comments)
+      params.require(:budget_investment).permit(:price, :price_first_year, :price_explanation, :feasibility, :unfeasibility_explanation,
+                                                :duration, :valuation_finished, :internal_comments)
     end
 
     def restrict_access
@@ -72,7 +75,9 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def restrict_access_to_assigned_items
-      raise ActionController::RoutingError.new('Not Found') unless current_user.administrator? || Budget::ValuatorAssignment.exists?(investment_id: params[:id], valuator_id: current_user.valuator.id)
+      return if current_user.administrator? ||
+                Budget::ValuatorAssignment.exists?(investment_id: params[:id], valuator_id: current_user.valuator.id)
+      raise ActionController::RoutingError.new('Not Found')
     end
 
     def valid_price_params?

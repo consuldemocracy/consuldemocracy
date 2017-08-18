@@ -4,7 +4,7 @@
 <% provide :meta_description, t("meta_tags.processes.description") %>
 <% provide :tracking_page_number, "32" %>
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: legislation_processes_url %>
+  <%= render "shared/canonical", href: processes_url %>
 <% end %>
 
 <%= render "custom/legislation/processes_header" %>
@@ -16,14 +16,15 @@
 
   <div id="legislation" class="legislation-list small-12 medium-9 column">
     <div id="legislation-list">
-      <% if @current_filter == "next" %>
+      <% if @processes.any? %>
+        <%= render @processes %>
+        <%= paginate @processes %>
+      <% else %>
         <div class="callout primary margin-top">
           <%= t(".no_#{@current_filter}_processes") %>
         </div>
-      <% elsif @processes.any? %>
-        <%= render @processes %>
-        <%= paginate @processes %>
       <% end %>
+
       <% if @current_filter == "open" %>
         <!-- Parque Manzanares -->
         <div class="panel margin-bottom">
@@ -33,6 +34,7 @@
                       title: t("pages.processes.index.more_info_title") + t("processes.manzanares.title") %>
         </div>
       <% end %>
+
       <% if @current_filter == "past" %>
         <%= render "custom/legislation/processes_archived" %>
       <% end %>

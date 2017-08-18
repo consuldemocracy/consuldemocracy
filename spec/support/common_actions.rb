@@ -1,6 +1,6 @@
 module CommonActions
 
-  def sign_up(email='manuela@consul.dev', password='judgementday')
+  def sign_up(email = 'manuela@consul.dev', password = 'judgementday')
     visit '/'
 
     click_link 'Register'
@@ -57,8 +57,9 @@ module CommonActions
   end
 
   def login_as_authenticated_manager
+    expected_response = {login: login, user_key: user_key, date: date}.with_indifferent_access
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
-    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
+    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(expected_response)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end
 
@@ -161,7 +162,7 @@ module CommonActions
     SCRIPT
   end
 
-  def error_message(resource_model=nil)
+  def error_message(resource_model = nil)
     resource_model ||= "(.*)"
     /\d errors? prevented this #{resource_model} from being saved:/
   end
@@ -346,8 +347,11 @@ module CommonActions
   end
 
   def create_archived_proposals
-    [create(:proposal, title: "This is an expired proposal", created_at: Setting["months_to_archive_proposals"].to_i.months.ago),
-     create(:proposal, title: "This is an oldest expired proposal", created_at: (Setting["months_to_archive_proposals"].to_i + 2).months.ago)]
+    months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i
+    [
+      create(:proposal, title: "This is an expired proposal", created_at: months_to_archive_proposals.months.ago),
+      create(:proposal, title: "This is an oldest expired proposal", created_at: (months_to_archive_proposals + 2).months.ago)
+    ]
   end
 
   def tag_names(tag_cloud)
@@ -468,7 +472,7 @@ module CommonActions
   end
 
   def csv_path_for(table)
-    "api/#{table}.csv"
+    "system/api/#{table}.csv"
   end
 
 end

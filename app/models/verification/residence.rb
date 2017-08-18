@@ -5,12 +5,12 @@ class Verification::Residence
 
   attr_accessor :user, :document_number, :document_type, :date_of_birth, :postal_code, :terms_of_service, :redeemable_code
 
-  before_validation :call_census_api
+  before_validation :retrieve_census_data
 
-  validates_presence_of :document_number
-  validates_presence_of :document_type
-  validates_presence_of :date_of_birth
-  validates_presence_of :postal_code
+  validates :document_number, presence: true
+  validates :document_type, presence: true
+  validates :date_of_birth, presence: true
+  validates :postal_code, presence: true
   validates :terms_of_service, acceptance: { allow_nil: false }
   validates :postal_code, length: { is: 5 }
 
@@ -18,7 +18,7 @@ class Verification::Residence
   validate :document_number_uniqueness
   validate :redeemable_code_is_redeemable
 
-  def initialize(attrs={})
+  def initialize(attrs = {})
     self.date_of_birth = parse_date('date_of_birth', attrs)
     attrs = remove_date('date_of_birth', attrs)
     super
@@ -35,7 +35,7 @@ class Verification::Residence
 
     user.update(document_number:       document_number,
                 document_type:         document_type,
-                geozone:               self.geozone,
+                geozone:               geozone,
                 date_of_birth:         date_of_birth.to_datetime,
                 gender:                gender,
                 residence_verified_at: Time.current)
@@ -47,8 +47,8 @@ class Verification::Residence
   end
 
   def allowed_age
-    return if errors[:date_of_birth].any?
-    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age')) unless Age.in_years(self.date_of_birth) >= User.minimum_required_age_for_verification
+    return if errors[:date_of_birth].any? ||  Age.in_years(date_of_birth) >= User.minimum_required_age_for_verification
+    errors.add(:date_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
   end
 
   def document_number_uniqueness
@@ -63,14 +63,14 @@ class Verification::Residence
   end
 
   def store_failed_attempt
-    FailedCensusCall.create({
+    FailedCensusCall.create(
       user: user,
       document_number: document_number,
-      document_type:   document_type,
-      date_of_birth:   date_of_birth,
-      postal_code:     postal_code,
-      district_code:   district_code
-    })
+      document_type: document_type,
+      date_of_birth: date_of_birth,
+      postal_code: postal_code,
+      district_code: district_code
+    )
   end
 
   def geozone
@@ -87,8 +87,8 @@ class Verification::Residence
 
   private
 
-    def call_census_api
-      @census_api_response = CensusApi.new.call(document_type, document_number)
+    def retrieve_census_data
+      @census_api_response = CensusCaller.new.call(document_type, document_number)
     end
 
     def residency_valid?
@@ -98,7 +98,7 @@ class Verification::Residence
     end
 
     def clean_document_number
-      self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase if self.document_number.present?
+      self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
     end
 
 end

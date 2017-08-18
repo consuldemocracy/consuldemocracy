@@ -92,11 +92,12 @@ module CommentableActions
     end
 
     def set_geozone
-      @resource.geozone = Geozone.find(params[resource_name.to_sym].try(:[], :geozone_id)) if params[resource_name.to_sym].try(:[], :geozone_id).present?
+      geozone_id = params[resource_name.to_sym].try(:[], :geozone_id)
+      @resource.geozone = Geozone.find(geozone_id) if geozone_id.present?
     end
 
     def load_categories
-      @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+      @categories = ActsAsTaggableOn::Tag.category.order(:name)
     end
 
     def parse_tag_filter
@@ -116,5 +117,4 @@ module CommentableActions
     def add_predefined_tag
       @resource.tag_list << params[:tag] if params[:tag].present?
     end
-
 end

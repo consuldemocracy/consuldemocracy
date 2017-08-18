@@ -70,12 +70,12 @@
       <% end %>
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
-      <% if request.path != human_rights_proposals_path %>
-        <div class="show-for-small-only">
-          <%= link_to t("proposals.index.start_proposal"),
-                      new_proposal_path,
-                      class: 'button expanded' %>
-        </div>
+      <% if @proposals.any? %>
+        <% if request.path != human_rights_proposals_path %>
+          <div class="show-for-small-only">
+            <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+          </div>
+        <% end %>
       <% end %>
 
       <div id="proposals-list">

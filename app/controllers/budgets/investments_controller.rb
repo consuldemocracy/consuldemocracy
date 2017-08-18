@@ -106,11 +106,15 @@ module Budgets
           session[:random_seed] = seed
           params[:random_seed] = seed
           Budget::Investment.connection.execute("select setseed(#{seed})")
+        else
+          session[:random_seed] = nil
+          params[:random_seed] = nil
         end
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location, :terms_of_service)
+        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list,
+                                                  :organization_name, :location, :terms_of_service)
       end
 
       def load_ballot
@@ -139,7 +143,7 @@ module Budgets
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.where("kind = 'category'").order(:name)
+        @categories = ActsAsTaggableOn::Tag.category.order(:name)
       end
 
       def tag_cloud
