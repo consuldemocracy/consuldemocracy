@@ -48,32 +48,7 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :documents %>
-      <p class="help-text">Aquí puedes añadir hasta 3 doucmentos en formato PDF </p>
-      <% @proposal.documents.each_with_index do |document, index| %>
-        <div>
-          <%= f.fields_for :documents, document do |document_fields| %>
-            <%= document_fields.text_field :title %>
-            <%= document_fields.hidden_field :cached_attachment, value: document.attachment.path %>
-            <%= document_fields.file_field :attachment,
-                                           accept: accepted_content_types_extensions(@proposal),
-                                           label: false,
-                                           class: 'document_ajax_attachment show-for-sr',
-                                           data: {
-                                             url: upload_documents_url(
-                                                    documentable_type: document_fields.object.documentable_type,
-                                                    documentable_id: document_fields.object.documentable_id
-                                                  ),
-                                             cached_attachment_input_field: "proposal_documents_attributes_#{index}_cached_attachment",
-                                             multiple: false
-                                           } %>
-            <%= document_fields.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
-            <div class="progress-bar-placeholder"></div>
-            <p class="file-name"><%= document_attachment_file_name(document) %></p>
-          <% end %>
-        </div>
-        <hr>
-      <% end %>
+      <%= render 'documents/nested_form_fields', form: f, resource: @proposal, documents: @proposal.documents  %>
     </div>
 
     <div class="small-12 medium-6 column">
