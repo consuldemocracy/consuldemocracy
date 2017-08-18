@@ -15,5 +15,7 @@
 * Alberto Calderón [Github](https://github.com/bertocq) | [Twitter](https://twitter.com/bertocq)
 * María Checa [Github](https://github.com/mariacheca)
 
+Also we want to thank their help to our wonderful [contributors](https://github.com/consul/consul/graphs/contributors) ❤️
+
 ## Licensing
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](https://github.com/consul/consul/blob/master/LICENSE-AGPLv3.txt)).
