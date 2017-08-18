@@ -32,6 +32,6 @@ Te sugerimos seguir los siguientes pasos para facilitar el seguimiento de los ca
 
 Agradecemos cualquier tipo de contribución a Consul. Incluso si no puedes contribuir al código del proyecto, puedes:
 
-- Crear issues sobre cualquier problema o error que hayas encontrado
-- Ayudar a traducir la plataforma a otros idiomas que domines en el proyecto de [Consul en Crowdin](https://crwd.in/consul)
-- Ayudar con la [documentación de Consul](https://github.com/consul/docs)
+- Crear issues sobre cualquier problema o error que hayas encontrado.
+- Ayudar a traducir la plataforma a otros idiomas que domines en el proyecto de [Consul en Crowdin](https://crwd.in/consul).
+- Ayudar con la [documentación de Consul](https://github.com/consul/docs).

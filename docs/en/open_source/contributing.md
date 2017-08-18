@@ -33,6 +33,6 @@ We suggest to follow these steps to keep a good track of the changes you're abou
 
 We'll appreciate any kind of contribution to Consul. Even if you can't contribute to it coding, you still can:
 
-- Create issues about any problem or error you've encountered
-- Help translate the platform to other languages you master at [Consul's Crowdin](https://crwd.in/consul)
-- Help with [Consul's documentation](https://github.com/consul/docs)
+- Create issues about any problem or error you've encountered.
+- Help translate the platform to other languages you master at [Consul's Crowdin](https://crwd.in/consul).
+- Help with [Consul's documentation](https://github.com/consul/docs).
