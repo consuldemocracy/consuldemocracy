@@ -20,6 +20,9 @@
       <%= document_fields.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
       <div class="progress-bar-placeholder"></div>
       <p class="file-name"><%= document_attachment_file_name(document) %></p>
+      <% if document.errors[:attachment].any? %>
+        <div class="error"><%= document.errors[:attachment].join(", ")  %></div>
+      <% end %>
     <% end %>
   </div>
   <hr>

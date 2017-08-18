@@ -28,7 +28,7 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
-    prepare_new_resource_documents
+    prepare_new_resource_documents(@resource)
     set_geozone
     set_resource_instance
   end
@@ -113,28 +113,28 @@ module CommentableActions
       nil
     end
 
-    def prepare_new_resource_documents
-      if @resource.class == Proposal || @resource.class == Budget::Investment
-        (1..@resource.class.max_documents_allowed).each do
-          @resource.documents.build
-        end
+    def prepare_new_resource_documents(resource)
+      return false unless resource.try(:documents)
+      (1..resource.class.max_documents_allowed).each do
+        resource.documents.build
       end
     end
 
     def prepare_edit_resource_documents(resource)
-      if resource.class == Proposal || resource.class == Budget::Investment
-        (resource.documents.count + 1 .. resource.class.max_documents_allowed).each do
-          resource.documents.build
-        end
+      return false unless resource.try(:documents)
+      (resource.documents.size + 1 .. resource.class.max_documents_allowed).each do
+        resource.documents.build
       end
+      resource
     end
 
     def parse_documents(resource)
+      return false unless resource.try(:documents)
       resource.documents.each do |document|
         document.user = current_user
       end
-      resource.documents = resource.documents.select{|document| document.valid? }.each do |document|
-        document.attachment = File.open(document.cached_attachment)
+      resource.documents = resource.documents.each do |document|
+        document.attachment = File.open(document.cached_attachment) if document.cached_attachment.present?
       end
     end
 

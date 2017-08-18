@@ -30,6 +30,7 @@ class ProposalsController < ApplicationController
     if @proposal.save
       redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
     else
+      @proposal = prepare_edit_resource_documents(@proposal)
       render :new
     end
   end
