@@ -8,5 +8,12 @@
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
-# Licensing
+## Consul core team
+
+* Raimond García [Github](https://github.com/voodoorai2000) | [Twitter](https://twitter.com/voodoorai2000)
+* Alberto García Cabeza [Github](https://github.com/decabeza) | [Twitter](https://twitter.com/decabeza)
+* Alberto Calderón [Github](https://github.com/bertocq) | [Twitter](https://twitter.com/bertocq)
+* María Checa [Github](https://github.com/mariacheca)
+
+## Licensing
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](https://github.com/consul/consul/blob/master/LICENSE-AGPLv3.txt)).
