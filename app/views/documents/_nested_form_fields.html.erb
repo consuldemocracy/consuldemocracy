@@ -1,8 +1,8 @@
-<%= f.label :documents %>
+<%= form.label :documents %>
 <p class="help-text">Aquí puedes añadir hasta 3 doucmentos en formato PDF </p>
 <% documents.each_with_index do |document, index| %>
   <div>
-    <%= f.fields_for :documents, document do |document_fields| %>
+    <%= form.fields_for :documents, document do |document_fields| %>
       <%= document_fields.text_field :title %>
       <%= document_fields.hidden_field :cached_attachment, value: document.attachment.path %>
       <%= document_fields.file_field :attachment,
