@@ -31,4 +31,8 @@ We suggest to follow these steps to keep a good track of the changes you're abou
 
 ## Other ways of contributing
 
-We'll appreciate any kind of contribution to Consul. Even if you can't contribute to it coding, you still can create issues to notify the project owners with as much information as you can provide about anything wrong you see, and someone will take care of it as soon as possible.
+We'll appreciate any kind of contribution to Consul. Even if you can't contribute to it coding, you still can:
+
+- Create issues about any problem or error you've encountered
+- Help translate the platform to other languages you master at [Consul's Crowdin](https://crwd.in/consul)
+- Help with [Consul's documentation](https://github.com/consul/docs)
