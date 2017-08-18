@@ -169,11 +169,13 @@ en:
         title: "Once Plazas"
         text: "Participate in the discussion of ideas before the remodeling of 11 public squares in the outskirts districts of Madrid."
         link: "More information about Once Plazas"
+        alt: "Logo Plan MAD-RE 2017"
       videos:
         label: "Videos"
         title: "Budgets projects"
         text: "The people who have proposed projects in participatory budgets tell us in video what their idea is."
         link: "Watch videos of Participatory budgets"
+        alt: "Image of one of the videos of participatory Budgets"
       chincheto:
         title: "Watch SrChincheto77 video on YouTube (opens in new tab)"
         alt: "SrChincheto77 accompanies us for the Madrid that decides the citizenship!"
@@ -182,6 +184,7 @@ en:
       title: "Linear Park of Manzanares"
       description: "The City of Madrid opens a public debate on the Linear Park of Manzanares and its surroundings."
       link: "See Linear Park of Manzanares process"
+      alt: "Image of the environment of the Manzanares Lineal Park"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
