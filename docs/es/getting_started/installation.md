@@ -1,37 +1,47 @@
 # Instalación local
 
-Antes de instalar Consul y empezar a usarlo asegúrate de tener [Ruby 2.3.2](https://www.ruby-lang.org/en/news/2016/11/15/ruby-2-3-2-released/) instalado en tu entorno local.
+Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisitos](prerequisites) correctamente instalados.
 
 1. Primero, clona el [repositorio de Consul en Github](https://github.com/consul/consul/):
 
-  ```
+  ```bash
   git clone https://github.com/consul/consul.git
   ```
 
 2. Ve a la carpeta del proyecto e instala las gemas requeridas usando [Bundler](http://bundler.io/):
-  ```
+  
+  ```bash
   cd consul
   bundle install
   ```
 
 3. Copia los archivos de configuración de ejemplo del entorno dentro de unos nuevos válidos:
 
-  ```
+  ```bash
   cp config/database.yml.example config/database.yml
   cp config/secrets.yml.example config/secrets.yml
   ```
 
-4. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
+  Y configura los de tu usuario de base de datos `consul` en `database.yml`
 
-  ```
+4. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para crear y rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
+
+  ```bash
+  bin/rake db:create
   bin/rake db:setup
   bin/rake db:dev_seed
-  RAILS_ENV=test rake db:setup
+  RAILS_ENV=test bin/rake db:setup
   ```
 
-5. Ahora que ya está todo listo puedes ejecutar la aplicación:
+5. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que tardará unos cuantos minutos):
 
+  ```bash
+  bundle exec rspec
   ```
+
+6. Ahora que ya está todo listo puedes ejecutar la aplicación:
+
+  ```bash
   rails s
   ```
 
