@@ -3,6 +3,12 @@
 * [Introducción](README.md)
 
 ### Primeros pasos
+* [Crea tu fork](forks/create.md)
+* [Configura tu fork](forks/configuration.md)
+* [Manten tu fork actualizado](forks/update.md)
+* [Comunicación](forks/communication.md)
+
+### Instalación
 * [Prerrequisitos](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
@@ -17,11 +23,6 @@
 * [Imágenes](customization/images.md)
 * [Adaptar la aplicación](customization/overwritting.md)
 * [Añadir nuevas funcionalidades](customization/new_features.md)
-
-### Tu Consul
-* [Crea tu fork](forks/create.md)
-* [Manten tu fork actualizado](forks/update.md)
-* [Comunicación](forks/communication.md)
 
 ### Proyecto Open Source
 * [Código de conducta](open_source/code_of_conduct.md)

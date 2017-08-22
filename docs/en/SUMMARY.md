@@ -3,6 +3,12 @@
 * [Introduction](README.md)
 
 ### Getting started
+* [Fork Consul](forks/create.md)
+* [Configure your fork](forks/configuration.md)
+* [Keep your fork updated](forks/update.md)
+* [Communication](forks/communication.md)
+
+### Installation
 * [Prerequisites](getting_started/prerequisites/README.md)
   * [Linux](getting_started/prerequisites/linux.md)
   * [macOS](getting_started/prerequisites/macos.md)
@@ -17,11 +23,6 @@
 * [Images](customization/images.md)
 * [Overwritting](customization/overwritting.md)
 * [Adding new features](customization/new_features.md)
-
-### Your Consul
-* [Creating your fork](forks/create.md)
-* [Keeping your fork updated](forks/update.md)
-* [Communication](forks/communication.md)
 
 ### Open Source project
 * [Code of conduct](open_source/code_of_conduct.md)
