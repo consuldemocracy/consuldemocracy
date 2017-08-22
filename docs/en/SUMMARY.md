@@ -4,6 +4,9 @@
 
 ### Getting started
 * [Prerequisites](getting_started/prerequisites/README.md)
+  * [Linux](getting_started/prerequisites/linux.md)
+  * [macOS](getting_started/prerequisites/macos.md)
+  * [Windows](getting_started/prerequisites/windows.md)
 * [Local installation](getting_started/installation.md)
 * [Production and Test servers](getting_started/servers.md)
 * [Recomendations](getting_started/recomendations.md)

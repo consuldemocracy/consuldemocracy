@@ -1,4 +1,4 @@
-# Configuración para los entornos de desarrollo y pruebas  (GNU/Linux)
+# Configuración para los entornos de desarrollo y pruebas (GNU/Linux)
 
 ## Git
 
