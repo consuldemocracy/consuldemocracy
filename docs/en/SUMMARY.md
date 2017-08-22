@@ -13,7 +13,8 @@
 
 ### Customization
 * [Templating](customization/templating.md)
-* [Translations](customization/translations.md)
+* [Texts & Translations](customization/translations.md)
+* [Images](customization/images.md)
 * [Overwritting](customization/overwritting.md)
 * [Adding new features](customization/new_features.md)
 

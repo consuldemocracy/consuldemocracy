@@ -13,7 +13,8 @@
 
 ### Personalización
 * [Interfaz y diseño](customization/templating.md)
-* [Idiomas](customization/translations.md)
+* [Textos & Traducciones](customization/translations.md)
+* [Imágenes](customization/images.md)
 * [Adaptar la aplicación](customization/overwritting.md)
 * [Añadir nuevas funcionalidades](customization/new_features.md)
 
