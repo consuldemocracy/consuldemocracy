@@ -4,8 +4,6 @@
 
 ### Primeros pasos
 * [Prerrequisitos](getting_started/prerequisites/README.md)
-  * [Linux](getting_started/prerequisites/linux.md)
-  * [macOS](getting_started/prerequisites/macos.md)
 * [Instalación local](getting_started/installation.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
 * [Recomendaciones](getting_started/recomendations.md)
