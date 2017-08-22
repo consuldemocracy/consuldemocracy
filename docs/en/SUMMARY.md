@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 
 ### Getting started
+* [Prerequisites](getting_started/prerequisites/README.md)
 * [Local installation](getting_started/installation.md)
 * [Production and Test servers](getting_started/servers.md)
 * [Recomendations](getting_started/recomendations.md)
