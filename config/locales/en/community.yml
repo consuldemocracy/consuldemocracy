@@ -5,8 +5,12 @@ en:
       description: Partecipa a la comunidad de usuarios, da tu opinión.
       button_to_access: Access the community
     show:
-      title: Proposal community
-      description: Participate in the community of this proposal
+      title:
+        proposal: Proposal community
+        investment: Budget Investment community
+      description:
+        proposal: Participate in the community of this proposal
+        investment: Participate in the community of this budget investment
       create_first_community_topic: Create the first community topic
       tab:
         participants: Participants

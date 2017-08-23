@@ -3,7 +3,7 @@
     <%= render "shared/back_link" %>
     <br>
 
-    <p><%= t("community.topic.show.community_of_the_proposal") %> <strong><%= @community.proposal.title %></strong></p>
+    <p><%= t("community.topic.show.community_of_the_proposal") %> <strong><%= community_title(@community) %></strong></p>
     <h1><%= @topic.title %></h1>
     <div class="topic-info">
       <p><%= @topic.description %></p>

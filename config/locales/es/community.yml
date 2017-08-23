@@ -2,11 +2,15 @@ es:
   community:
     sidebar:
       title: Comunidad
-      description: Partecipa a la comunidad de usuarios, da tu opinión.
+      description: Participa en la comunidad de usuarios, da tu opinión.
       button_to_access: Acceder a la comunidad
     show:
-      title: Comunidad de la propuesta
-      description: Participa en la comunidad de esta propuesta
+      title:
+        proposal: Comunidad de la propuesta
+        investment: Comunidad del presupuesto participativo
+      description:
+        proposal: Participa en la comunidad de esta propuesta
+        investment: Participa en la comunidad de este presupuesto participativo
       create_first_community_topic: Crea el primer tema de la comunidad
       tab:
         paricipants: Participantes

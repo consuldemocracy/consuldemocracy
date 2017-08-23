@@ -2,9 +2,9 @@
   <div class="jumbo light">
     <div class="row">
       <div class="small-12 column">
-        <h2><%= t("community.show.title") %></h2>
-        <p class="lead"> <%= @community.proposal.title %> </p>
-        <p><%= t("community.show.description") %> </p>
+        <h2><%= community_text(@community) %></h2>
+        <p class="lead"> <%= community_title(@community) %> </p>
+        <p><%= community_description(@community) %> </p>
       </div>
     </div>
   </div>

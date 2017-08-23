@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807082243) do
+ActiveRecord::Schema.define(version: 20170822144743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -160,10 +160,12 @@ ActiveRecord::Schema.define(version: 20170807082243) do
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
     t.boolean  "incompatible",                          default: false
+    t.integer  "community_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+  add_index "budget_investments", ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
@@ -1052,6 +1054,7 @@ ActiveRecord::Schema.define(version: 20170807082243) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "budget_investments", "communities"
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"

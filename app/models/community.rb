@@ -6,4 +6,9 @@ class Community < ActiveRecord::Base
   def participants
     User.community_participants(self)
   end
+
+  def from_proposal?
+    self.proposal.present?
+  end
+
 end
