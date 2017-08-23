@@ -28,13 +28,15 @@ App.Forms =
     i = 0
     while i < element.length
       element[i].addEventListener 'change', ->
-        $(element).parent().find('.file-name').text(@files[i].name)
+        console.log @files[0].name
+        $(element).parent().find('.file-name').text(@files[0].name)
         return
       i++
 
   initialize: ->
+    console.log 'initialize forms'
     App.Forms.disableEnter()
     App.Forms.submitOnChange()
     App.Forms.toggleLink()
-    App.Forms.uploadButton()
+    # App.Forms.uploadButton()
     false
