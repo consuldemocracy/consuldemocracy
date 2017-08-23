@@ -156,17 +156,14 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
-<<<<<<< HEAD
     t.datetime "ignored_flag_at"
     t.text     "moderation_text"
     t.integer  "flags_count",                           default: 0
     t.integer  "cached_ballots_up",                     default: 0,           null: false
-=======
     t.integer  "ballot_lines_count",                    default: 0
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
     t.boolean  "incompatible",                          default: false
->>>>>>> master
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
@@ -926,11 +923,7 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-<<<<<<< HEAD
     t.datetime "password_changed_at",                       default: '2017-01-20 11:34:56', null: false
-=======
-    t.datetime "password_changed_at",                       default: '2017-06-22 11:21:30', null: false
->>>>>>> master
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

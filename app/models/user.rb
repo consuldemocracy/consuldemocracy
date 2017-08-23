@@ -4,11 +4,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
-<<<<<<< HEAD
-         :timeoutable
-=======
-         authentication_keys: [:login]
->>>>>>> master
+         :timeoutable, authentication_keys: [:login]
 
   acts_as_voter
   acts_as_paranoid column: :hidden_at
@@ -296,10 +292,10 @@ class User < ActiveRecord::Base
   end
   delegate :can?, :cannot?, to: :ability
 
-<<<<<<< HEAD
   def timeout_in
     30.minutes
-=======
+  end
+
   def public_proposals
     public_activity? ? proposals : User.none
   end
@@ -322,7 +318,6 @@ class User < ActiveRecord::Base
 
   def interests
     follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
->>>>>>> master
   end
 
   private

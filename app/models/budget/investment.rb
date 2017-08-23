@@ -186,14 +186,10 @@ class Budget
     def permission_problem(user)
       return :not_logged_in unless user
       return :organization  if user.organization?
-<<<<<<< HEAD
-      return :not_verified  unless user.level_three_verified?
-      return :quota_exeeded  unless user.can?(:vote, Budget::Investment)
-      return nil
-=======
+      # return :not_verified  unless user.level_three_verified?
       return :not_verified  unless user.can?(:vote, Budget::Investment)
+      return :quota_exeeded  unless user.can?(:vote, Budget::Investment)
       nil
->>>>>>> master
     end
 
     def permission_problem?(user)
@@ -283,16 +279,13 @@ class Budget
 
     def self.apply_filters_and_search(_budget, params, current_filter = nil)
       investments = all
-<<<<<<< HEAD
       if budget.balloting?
         #investments = investments.selected
         investments = params[:unfeasible].present? ? investments.unfeasible : investments.selected
       else
         investments = params[:unfeasible].present? ? investments.unfeasible : investments.not_unfeasible
       end
-=======
-      investments = investments.send(current_filter)            if current_filter.present?
->>>>>>> master
+      # investments = investments.send(current_filter)            if current_filter.present?
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
@@ -303,7 +296,6 @@ class Budget
       save
     end
 
-<<<<<<< HEAD
     def self.regenerate_cached_ballots_up
       includes(:lines).each do |i|
         i.update_cached_ballots_up
@@ -317,17 +309,17 @@ class Budget
       self.budget_id ||= self.heading.try(:group).try(:budget_id)
     end
 
+      # def set_denormalized_ids
+      #   self.group_id = heading.try(:group_id) if heading_id_changed?
+      #   self.budget_id ||= heading.try(:group).try(:budget_id)
+      # end
+
     def description_length
       text = Html2Text.convert(description)
       max = Budget::Investment.description_max_length
       errors.add(:description, I18n.t('errors.messages.too_long', count: max)) if text.length > max
     end
-=======
-      def set_denormalized_ids
-        self.group_id = heading.try(:group_id) if heading_id_changed?
-        self.budget_id ||= heading.try(:group).try(:budget_id)
-      end
->>>>>>> master
+
 
   end
 end

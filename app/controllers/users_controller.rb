@@ -28,14 +28,10 @@ class UsersController < ApplicationController
       when "proposals" then load_proposals
       when "debates"   then load_debates
       when "budget_investments" then load_budget_investments
-<<<<<<< HEAD
-      when "comments"  then load_comments
+      when "comments" then load_comments
       when "votes"  then load_votes
       when "ballot_lines"  then load_ballot_lines
-=======
-      when "comments" then load_comments
       when "follows" then load_follows
->>>>>>> master
       else load_available_activity
       end
     end
@@ -53,18 +49,15 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:comments] > 0
         load_comments
         @current_filter = "comments"
-<<<<<<< HEAD
       elsif  @activity_counts[:votes] > 0
         load_votes
         @current_filter = "votes"
       elsif  @activity_counts[:ballot_lines] > 0
         load_ballot_lines
         @current_filter = "ballot_lines"
-=======
       elsif  @activity_counts[:follows] > 0
         load_follows
         @current_filter = "follows"
->>>>>>> master
       end
     end
 
