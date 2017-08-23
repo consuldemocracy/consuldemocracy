@@ -46,12 +46,14 @@ shared_examples "document validations" do |documentable_factory|
   end
 
   it "should not be valid without a documentable_id" do
+    document.save
     document.documentable_id = nil
 
     expect(document).to_not be_valid
   end
 
   it "should not be valid without a documentable_type" do
+    document.save
     document.documentable_type = nil
 
     expect(document).to_not be_valid
