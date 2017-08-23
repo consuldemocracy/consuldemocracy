@@ -1,0 +1,9 @@
+<%
+  nested_fields = render 'documents/nested_document', document: @document, index: params[:index]
+%>
+
+<% if @document.cached_attachment.present? %>
+  App.Documentable.upload("<%= document_nested_field_wrapper_id(params[:index]) %>", "<%= j nested_fields %>", true)
+<% else %>
+  App.Documentable.upload("<%= document_nested_field_wrapper_id(params[:index]) %>", "<%= j nested_fields %>", false)
+<% end %>

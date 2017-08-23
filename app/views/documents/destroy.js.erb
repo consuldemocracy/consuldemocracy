@@ -1,0 +1,6 @@
+App.Documentable.destroy("<%= document_nested_field_wrapper_id(params[:index]) %>", "<%= j render('layouts/flash') %>")
+<% new_document_link = link_to t("documents.form.add_new_document"),
+                               new_document_path(documentable_type: @document.documentable_type, index: params[:index]),
+                               remote: true,
+                               id: "new_document_link" %>
+App.Documentable.updateNewDocumentButton("<%= j new_document_link %>")

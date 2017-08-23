@@ -1230,6 +1230,8 @@ feature 'Proposals' do
 
   it_behaves_like "documentable", "proposal", "proposal_path", { "id": "id" }
 
+  it_behaves_like "nested documentable", "proposal", "new_proposal_path"
+
   scenario 'Erased author' do
     user = create(:user)
     proposal = create(:proposal, author: user)

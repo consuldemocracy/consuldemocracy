@@ -18,7 +18,7 @@
     <div class="small-12 column">
       <%= f.hidden_field :cached_attachment %>
       <%= f.file_field :attachment,
-                       accept: accepted_content_types_extensions(@document.documentable),
+                       accept: accepted_content_types_extensions(@document.documentable.class),
                        label: false,
                        class: 'document_ajax_attachment show-for-sr',
                        data: {

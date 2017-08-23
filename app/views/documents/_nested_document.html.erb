@@ -1,0 +1,68 @@
+<div id="<%= document_nested_field_wrapper_id(index) %>" class="document">
+  <%= hidden_field_tag :id,
+                       document.id,
+                       name: document_nested_field_name(document, index, :id),
+                       id: document_nested_field_id(document, index, :id) if document.persisted? %>
+  <%= hidden_field_tag :user_id,
+                       current_user.id,
+                       name: document_nested_field_name(document, index, :user_id),
+                       id: document_nested_field_id(document, index, :user_id) %>
+  <%= hidden_field_tag :cached_attachment,
+                       document.cached_attachment,
+                       name: document_nested_field_name(document, index, :cached_attachment),
+                       id: document_nested_field_id(document, index, :cached_attachment) %>
+
+  <%= label_tag :title, t("activerecord.attributes.document.title") %>
+  <%= text_field_tag :title,
+                     document.title,
+                     name: document_nested_field_name(document, index, :title),
+                     id: document_nested_field_id(document, index, :title),
+                     class: "document-title" %>
+   <% if document.errors[:title].any? %>
+     <small class="error"><%= document.errors[:title].join(", ") %></small>
+     <br>
+   <% end %>
+
+  <%= file_field_tag :attachment,
+                     accept: accepted_content_types_extensions(document.documentable_type.constantize),
+                     class: 'document_ajax_attachment show-for-sr',
+                     data: {
+                       url: upload_documents_url(
+                              documentable_type: document.documentable_type,
+                              documentable_id: document.documentable_id,
+                              format: :js
+                            ),
+                       cached_attachment_input_field: "#{document.documentable.class.name.downcase}_documents_attributes_#{index}_cached_attachment",
+                       multiple: false,
+                       index: index
+                     },
+                     name: document_nested_field_name(document, index, :attachment),
+                     id: document_nested_field_id(document, index, :attachment) %>
+
+  <% if document.persisted? %>
+    <%= link_to t('documents.form.delete_button'), document_path(document, index: index),
+                                                   method: :delete,
+                                                   remote: true,
+                                                   data: { confirm: t('documents.actions.destroy.confirm') },
+                                                   class: "button hollow alert" if document.persisted? %>
+  <% elsif !document.persisted? && document.cached_attachment.present? %>
+    <%= link_to t('documents.form.delete_button'), destroy_upload_documents_path(path: document.cached_attachment, index: index, documentable_type: document.documentable_type, documentable_id: document.documentable_id),
+                                                   method: :delete,
+                                                   remote: true,
+                                                   class: "button hollow alert" %>
+  <% else %>
+    <%= label_tag document_nested_field_id(document, index, :attachment),
+                  t("documents.form.attachment_label"),
+                  class: "button hollow #{"error" if document.errors[:attachment].any?}" %>
+    <%= link_to t('documents.form.delete_button'), "#", class: "button hollow alert remove-document" %>
+    <% if document.errors[:attachment].any? %>
+      <br>
+      <small class="error"><%= document.errors[:attachment].join(", ") %></small>
+      <br>
+    <% end %>
+  <% end %>
+
+  <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+  <p class="file-name"><%= document_attachment_file_name(document) %></p>
+  <hr>
+</div>

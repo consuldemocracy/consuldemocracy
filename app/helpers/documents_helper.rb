@@ -1,7 +1,7 @@
 module DocumentsHelper
 
   def document_attachment_file_name(document)
-    document.attachment_file_name if document.attachment.exists?
+    document.attachment_file_name
   end
 
   def errors_on_attachment(document)
@@ -20,6 +20,20 @@ module DocumentsHelper
 
   def bytesToMeg(bytes)
     bytes / Numeric::MEGABYTE
+  end
+
+  def document_nested_field_name(document, index, field)
+    parent = document.documentable_type.constantize.name.downcase
+    "#{parent}[documents_attributes][#{index}][#{field}]"
+  end
+
+  def document_nested_field_id(document, index, field)
+    parent = document.documentable_type.constantize.name.downcase
+    "#{parent}_documents_attributes_#{index}_#{field}"
+  end
+
+  def document_nested_field_wrapper_id(index)
+    "document_#{index}"
   end
 
 end

@@ -18,9 +18,11 @@
   }
   &.complete{
     background-color: #0f0;
+    width: 100%;
   }
   &.errors{
     background-color: #f00;
+    width: 100%;
   }
 }
 

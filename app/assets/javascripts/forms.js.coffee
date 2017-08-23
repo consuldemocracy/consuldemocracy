@@ -28,7 +28,7 @@ App.Forms =
     i = 0
     while i < element.length
       element[i].addEventListener 'change', ->
-        $(element).parent().find('.file-name').text(@files[0].name)
+        $(element).parent().find('.file-name').text(@files[i].name)
         return
       i++
 

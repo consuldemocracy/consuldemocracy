@@ -28,7 +28,6 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
-    prepare_new_resource_documents(@resource)
     set_geozone
     set_resource_instance
   end
@@ -55,12 +54,12 @@ module CommentableActions
   end
 
   def edit
-    prepare_edit_resource_documents(resource)
   end
 
   def update
     resource.assign_attributes(strong_params)
-    parse_documents(resource)
+    recover_documents_from_cache(resource)
+
     if resource.save
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
@@ -113,28 +112,12 @@ module CommentableActions
       nil
     end
 
-    def prepare_new_resource_documents(resource)
+    def recover_documents_from_cache(resource)
       return false unless resource.try(:documents)
-      (1..resource.class.max_documents_allowed).each do
-        resource.documents.build
-      end
-    end
-
-    def prepare_edit_resource_documents(resource)
-      return false unless resource.try(:documents)
-      (resource.documents.size + 1 .. resource.class.max_documents_allowed).each do
-        resource.documents.build
-      end
-      resource
-    end
-
-    def parse_documents(resource)
-      return false unless resource.try(:documents)
-      resource.documents.each do |document|
-        document.user = current_user
-      end
       resource.documents = resource.documents.each do |document|
-        document.attachment = File.open(document.cached_attachment) if document.cached_attachment.present?
+        if document.cached_attachment.present? && File.exists?(document.cached_attachment)
+          document.attachment = File.open(document.cached_attachment)
+        end
       end
     end
 
