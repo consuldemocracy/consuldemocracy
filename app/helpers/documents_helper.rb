@@ -23,13 +23,13 @@ module DocumentsHelper
   end
 
   def document_nested_field_name(document, index, field)
-    parent = document.documentable_type.constantize.name.downcase
-    "#{parent}[documents_attributes][#{index}][#{field}]"
+    parent = document.documentable_type.parameterize.underscore
+    "#{parent.parameterize}[documents_attributes][#{index}][#{field}]"
   end
 
   def document_nested_field_id(document, index, field)
-    parent = document.documentable_type.constantize.name.downcase
-    "#{parent}_documents_attributes_#{index}_#{field}"
+    parent = document.documentable_type.parameterize.underscore
+    "#{parent.parameterize}_documents_attributes_#{index}_#{field}"
   end
 
   def document_nested_field_wrapper_id(index)

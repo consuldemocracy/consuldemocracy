@@ -4,7 +4,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
   include DocumentablesHelper
 
   let!(:administrator)          { create(:user) }
-  let!(:user)                   { create(:user) }
+  let!(:user)                   { create(:user, :level_two) }
   let!(:arguments)              { {} }
   let!(:documentable)           { create(documentable_factory_name, author: user) }
 
@@ -16,7 +16,6 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
         arguments.merge!("#{argument_name}": documentable.send(path_to_value))
       end
     end
-
   end
 
   scenario "Should show new document link when max documents allowed limit is not reached" do
@@ -263,7 +262,13 @@ def fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title"
   fill_in :proposal_summary, with: "Proposal summary"
   fill_in :proposal_question, with: "Proposal question?"
-  fill_in :proposal_responsible_name, with: 'John Snow'
   check :proposal_terms_of_service
+end
+
+def fill_new_valid_budget_investment
+  page.select documentable.heading.name_scoped_by_group, from: :budget_investment_heading_id
+  fill_in :budget_investment_title, with: "Budget investment title"
+  fill_in_ckeditor "budget_investment_description", with: "Budget investment description"
+  check :budget_investment_terms_of_service
 end
 
