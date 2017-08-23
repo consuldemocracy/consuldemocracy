@@ -112,8 +112,13 @@ feature 'Account' do
   end
 
   scenario 'Errors editing credentials' do
-    visit account_path
+    visit root_path
 
+    click_link 'My account'
+
+    expect(current_path).to eq(account_path)
+
+    expect(page).to have_link('Change my credentials')
     click_link 'Change my credentials'
     click_button 'Update'
 
@@ -133,6 +138,6 @@ feature 'Account' do
 
     login_through_form_as(@user)
 
-    expect(page).to have_content "Invalid email or password"
+    expect(page).to have_content "Invalid login or password"
   end
 end

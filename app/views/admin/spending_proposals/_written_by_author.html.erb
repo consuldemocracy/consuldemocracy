@@ -16,7 +16,7 @@
   <div class="small-12 medium-4 column">
     <p>
       <strong><%= t("admin.spending_proposals.show.by") %>:</strong>
-      <%= link_to @spending_proposal.author.name, admin_user_path(@spending_proposal.author) %>
+      <%= link_to @spending_proposal.author.name, admin_hidden_user_path(@spending_proposal.author) %>
     </p>
   </div>
 

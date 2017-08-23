@@ -4,6 +4,8 @@ require 'rails_helper'
 describe Debate do
   let(:debate) { build(:debate) }
 
+  it_behaves_like "has_public_author"
+
   it "should be valid" do
     expect(debate).to be_valid
   end
@@ -84,6 +86,7 @@ describe Debate do
   describe "#editable?" do
     let(:debate) { create(:debate) }
     before(:each) { Setting["max_votes_for_debate_edit"] = 3 }
+    after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
 
     it "should be true if debate has no votes yet" do
       expect(debate.total_votes).to eq(0)
@@ -106,6 +109,7 @@ describe Debate do
   describe "#editable_by?" do
     let(:debate) { create(:debate) }
     before(:each) { Setting["max_votes_for_debate_edit"] = 1 }
+    after(:each) { Setting["max_votes_for_debate_edit"] = 1000 }
 
     it "should be true if user is the author and debate is editable" do
       expect(debate.editable_by?(debate.author)).to be true
@@ -541,7 +545,7 @@ describe Debate do
         title_some_votes    = create(:debate, title: 'stop corruption', cached_votes_up: 5)
         title_least_voted   = create(:debate, title: 'stop corruption', cached_votes_up: 2)
         title_most_voted    = create(:debate, title: 'stop corruption', cached_votes_up: 10)
-        description_most_voted  = create(:debate, description: 'stop corruption', cached_votes_up: 10)
+        description_most_voted = create(:debate, description: 'stop corruption', cached_votes_up: 10)
 
         results = Debate.search('stop corruption')
 
@@ -695,6 +699,18 @@ describe Debate do
   describe "#to_param" do
     it "should return a friendly url" do
       expect(debate.to_param).to eq "#{debate.id} #{debate.title}".parameterize
+    end
+  end
+
+  describe 'public_for_api scope' do
+    it 'returns debates' do
+      debate = create(:debate)
+      expect(Debate.public_for_api).to include(debate)
+    end
+
+    it 'does not return hidden debates' do
+      debate = create(:debate, :hidden)
+      expect(Debate.public_for_api).to_not include(debate)
     end
   end
 

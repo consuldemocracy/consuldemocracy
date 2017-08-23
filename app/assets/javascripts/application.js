@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-es
+//= require jquery-ui/widgets/datepicker
+//= require jquery-ui/i18n/datepicker-es
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -49,6 +49,17 @@
 //= require fixed_bar
 //= require banners
 //= require social_share
+//= require checkbox_toggle
+//= require markdown-it
+//= require markdown_editor
+//= require cocoon
+//= require legislation_admin
+//= require legislation
+//= require legislation_allegations
+//= require legislation_annotatable
+//= require watch_form_changes
+//= require followable
+//= require tree_navigator
 //= require custom
 
 var initialize_modules = function() {
@@ -74,9 +85,18 @@ var initialize_modules = function() {
   App.FixedBar.initialize();
   App.Banners.initialize();
   App.SocialShare.initialize();
+  App.CheckboxToggle.initialize();
+  App.MarkdownEditor.initialize();
+  App.LegislationAdmin.initialize();
+  App.LegislationAllegations.initialize();
+  App.Legislation.initialize();
+  if ( $(".legislation-annotatable").length )
+    App.LegislationAnnotatable.initialize();
+  App.WatchFormChanges.initialize();
+  App.TreeNavigator.initialize();
+
 
   $("#columna_2").css({height: $('div.expanded.budget.jumbo-budget.budget-heading').height()});
-
 };
 
 $(function(){

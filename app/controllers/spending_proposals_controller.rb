@@ -30,7 +30,8 @@ class SpendingProposalsController < ApplicationController
     @spending_proposal.author = current_user
 
     if @spending_proposal.save
-      notice = t('flash.actions.create.spending_proposal', activity: "<a href='#{user_path(current_user, filter: :spending_proposals)}'>#{t('layouts.header.my_activity_link')}</a>")
+      activity = "<a href='#{user_path(current_user, filter: :spending_proposals)}'>#{t('layouts.header.my_activity_link')}</a>"
+      notice = t('flash.actions.create.spending_proposal', activity: activity)
       redirect_to @spending_proposal, notice: notice, flash: { html_safe: true }
     else
       render :new

@@ -11,6 +11,14 @@ feature 'Valuation budget investments' do
   scenario 'Disabled with a feature flag' do
     Setting['feature.budgets'] = nil
     expect{ visit valuation_budget_budget_investments_path(create(:budget)) }.to raise_exception(FeatureFlags::FeatureDisabled)
+
+    Setting['feature.budgets'] = true
+  end
+
+  scenario 'Display link to valuation section' do
+    Setting['feature.budgets'] = true
+    visit root_path
+    expect(page).to have_link "Valuation", href: valuation_root_path
   end
 
   scenario 'Index shows budget investments assigned to current valuator' do
@@ -67,7 +75,6 @@ feature 'Valuation budget investments' do
 
     expect(page).to have_link("Realocate visitors")
     expect(page).to have_link("Destroy the city")
-
 
     expect(page).to have_content "All headings (2)"
     expect(page).to have_content "District 9 (1)"
@@ -281,10 +288,10 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
-      feasible_fields  = ['Price (€)','Cost during the first year (€)','Price explanation','Time scope']
+      feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation', 'Time scope']
       unfeasible_fields = ['Feasibility explanation']
-      any_feasibility_fields   = ['Valuation finished','Internal comments']
-      undecided_fields   = feasible_fields + unfeasible_fields + any_feasibility_fields
+      any_feasibility_fields = ['Valuation finished', 'Internal comments']
+      undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
 

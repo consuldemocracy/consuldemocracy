@@ -3,7 +3,9 @@ require 'database_cleaner'
 require 'email_spec'
 require 'devise'
 require 'knapsack'
+Dir["./spec/models/concerns/*.rb"].each { |f| require f }
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
+Dir["./spec/shared/**/*.rb"].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
@@ -38,7 +40,7 @@ RSpec.configure do |config|
   config.before(:each) do |example|
     DatabaseCleaner.strategy = :transaction
     I18n.locale = :en
-    load "#{Rails.root}/db/seeds.rb"
+    load Rails.root.join('db', 'seeds.rb').to_s
   end
 
   config.before(:each, type: :feature) do
@@ -46,7 +48,7 @@ RSpec.configure do |config|
     # with the specs, so continue to use transaction strategy for speed.
     driver_shares_db_connection_with_specs = Capybara.current_driver == :rack_test
 
-    if !driver_shares_db_connection_with_specs
+    unless driver_shares_db_connection_with_specs
       # Driver is probably for an external browser with an app
       # under test that does *not* share a database connection with the
       # specs, so use truncation strategy.

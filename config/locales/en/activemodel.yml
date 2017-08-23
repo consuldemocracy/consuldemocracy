@@ -1,0 +1,22 @@
+en:
+  activemodel:
+    models:
+      verification:
+        residence: "Residence"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Document type"
+          document_number: "Document number (including letters)"
+          date_of_birth: "Date of birth"
+          postal_code: "Postcode"
+        sms:
+          phone: "Telephone"
+          confirmation_code: "Confirmation code"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Document type"
+        document_number: "Document number (including letters)"
+        year_of_birth: "Year born"

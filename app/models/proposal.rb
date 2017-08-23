@@ -6,6 +6,9 @@ class Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include HasPublicAuthor
+  include Graphqlable
+  include Followable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -36,8 +39,8 @@ class Proposal < ActiveRecord::Base
 
   before_save :calculate_hot_score, :calculate_confidence_score
 
-  scope :for_render,               -> { includes(:tags) }
-  scope :sort_by_hot_score ,       -> { reorder(hot_score: :desc) }
+  scope :for_render, -> { includes(:tags) }
+  scope :sort_by_hot_score, -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
@@ -45,12 +48,13 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
-  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
-  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago)}
+  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
+  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
-  scope :successfull,              -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success)}
+  scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
+  scope :public_for_api,           -> { all }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -68,12 +72,12 @@ class Proposal < ActiveRecord::Base
   end
 
   def self.search(terms)
-    by_code = self.search_by_code(terms.strip)
-    by_code.present? ? by_code : self.pg_search(terms)
+    by_code = search_by_code(terms.strip)
+    by_code.present? ? by_code : pg_search(terms)
   end
 
   def self.search_by_code(terms)
-    matched_code = self.match_code(terms)
+    matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
     return results if (results.present? && results.first.code == terms)
   end
@@ -125,7 +129,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def code
-    "#{Setting["proposal_code_prefix"]}-#{created_at.strftime('%Y-%m')}-#{id}"
+    "#{Setting['proposal_code_prefix']}-#{created_at.strftime('%Y-%m')}-#{id}"
   end
 
   def after_commented
@@ -144,27 +148,31 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_hide
-    self.tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
+    tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
   end
 
   def after_restore
-    self.tags.each{ |t| t.increment_custom_counter_for('Proposal') }
+    tags.each{ |t| t.increment_custom_counter_for('Proposal') }
   end
 
   def self.votes_needed_for_success
     Setting['votes_for_proposal_success'].to_i
   end
 
-  def successfull?
+  def successful?
     total_votes >= Proposal.votes_needed_for_success
   end
 
   def archived?
-    self.created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
+    created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
   end
 
   def notifications
     proposal_notifications
+  end
+
+  def users_to_notify
+    (voters + followers).uniq
   end
 
   protected

@@ -3,7 +3,6 @@
 //
 //  Table of Contents:
 //
-//   0. Custom variables
 //   1. Global
 //   2. Breakpoints
 //   3. The Grid
@@ -44,63 +43,6 @@
 
 @import 'util/util';
 
-// 0. Custom variables
-// --------------------
-
-$base-font-size:      rem-calc(17);
-$base-line:           rem-calc(26);
-$small-font-size:     rem-calc(14);
-$line-height:         rem-calc(24);
-$tiny-font-size:      rem-calc(12);
-
-$brand:             #004A83;
-$dark:              darken($brand, 10%);
-
-$text:              #222222;
-$text-medium:       #515151;
-$text-light:        #BFBFBF;
-
-$border:            #DEE0E3;
-
-$link:              $brand;
-$link-hover:        darken($link, 20%);
-
-$debates:           $brand;
-
-$like:              #7BD2A8;
-$unlike:            #EF8585;
-
-$delete:            #F04124;
-$check:             #46DB91;
-
-$proposals:         #FFA42D;
-$proposals-dark:    #794500;
-
-$budget:            #7E328A;
-$budget-hover:      #7571BF;
-
-$highlight:         #E7F2FC;
-$featured:          #FFDC5C;
-
-$footer-border:     #BFC1C3;
-
-$success-bg:        #DFF0D8;
-$success-border:    #D6E9C6;
-$color-success:     #3C763D;
-
-$info-bg:           #D9EDF7;
-$info-border:       #BCE8F1;
-$color-info:        #31708F;
-
-$warning-bg:        #FCF8E3;
-$warning-border:    #FAEBCC;
-$color-warning:     #8A6D3B;
-
-$alert-bg:          #F2DEDE;
-$alert-border:      #EBCCD1;
-$color-alert:       #A94442;
-
-
 // 1. Global
 // ---------
 
@@ -117,8 +59,8 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #222222;
-$white: #ffffff;
+$black: #222;
+$white: #fff;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif !important;
@@ -163,6 +105,7 @@ $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
 $header-sizes: (
   small: (
     'h1': 34,
@@ -222,7 +165,7 @@ $keystroke-color: $black;
 $keystroke-background: $light-gray;
 $keystroke-padding: rem-calc(2 4 0);
 $keystroke-radius: $global-radius;
-$abbr-underline: 1px dotted $black;
+$abbr-underline: none;
 
 // 5. Typography Helpers
 // ---------------------
@@ -252,12 +195,12 @@ $input-error-font-weight: $global-weight-bold;
 
 $accordion-background: $white;
 $accordion-plusminus: true;
-$accordion-item-color: foreground($accordion-background, $text);
+$accordion-item-color: foreground($accordion-background, $primary-color);
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
 $accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: foreground($accordion-background, $text);
+$accordion-content-color: foreground($accordion-background, $primary-color);
 $accordion-content-padding: 1rem;
 
 // 8. Accordion Menu
@@ -569,12 +512,12 @@ $show-header-for-stacked: false;
 $tab-margin: 0;
 $tab-background: $white;
 $tab-background-active: $white;
-$tab-item-font-size: $base-font-size;
+$tab-item-font-size: rem-calc(12);
 $tab-item-background-hover: $white;
-$tab-item-padding: $line-height/2  0;
+$tab-item-padding: 1.25rem 1.5rem;
 $tab-expand-max: 6;
 $tab-content-background: $white;
-$tab-content-border: $border;
+$tab-content-border: $light-gray;
 $tab-content-color: foreground($tab-background, $primary-color);
 $tab-content-padding: 1rem;
 

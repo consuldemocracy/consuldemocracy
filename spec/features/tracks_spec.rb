@@ -8,7 +8,7 @@ feature 'Tracking' do
       visit proposals_path
 
       expect(page.html).to include "anonymous"
-    end
+     end
 
     scenario 'Usertype level_1_user' do
       create(:geozone)

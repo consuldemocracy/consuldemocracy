@@ -1,0 +1,46 @@
+<div class="comment-box" id="comments-box-<%= annotation.id %>">
+  <div class="comment-header">
+    <%= render "comment_header", annotation: annotation %>
+  </div>
+  <div class="comments-wrapper">
+    <div id="comments">
+      <%= render "comments", annotation: annotation %>
+    </div>
+  </div>
+
+  <div class="comment-footer">
+    <% if annotation.comments.roots.count > Legislation::Annotation::COMMENTS_PAGE_SIZE %>
+      <%= link_to legislation_process_draft_version_annotation_path(annotation.draft_version.process, annotation.draft_version, annotation), class: "button" do %>
+          <strong><%= t('legislation.annotations.comments.see_all') %></strong>
+      <% end %>
+    <% end %>
+
+    <% if @process.allegations_phase.open? %>
+      <a class="button publish-comment" href="#"><strong><%= t('legislation.annotations.comments.publish_comment') %></strong></a>
+      &nbsp;
+    <% end %>
+
+    <% if @process.allegations_phase.open? %>
+      <% if user_signed_in? %>
+        <% css_id = parent_or_commentable_dom_id(nil, annotation) %>
+        <div id="js-comment-form-annotation-<%= annotation.id %>" style="display:none" class="comment-form js-comment-form-annotation">
+          <%= form_for @comment, url: legislation_process_draft_version_annotation_new_comment_path(annotation.draft_version.process, annotation.draft_version, annotation), remote: true do |f| %>
+            <%= label_tag "comment-body-#{css_id}", leave_comment_text(annotation) %>
+            <%= f.text_area :body, id: "comment-body-#{css_id}", maxlength: Comment.body_max_length, label: false, rows: 8 %>
+            <%= f.submit comment_button_text(nil, annotation), class: "button" %>
+          <% end %>
+        </div>
+      <% else %>
+
+      <div>
+        <div class="participation-not-allowed" style="display: none;" aria-hidden="false">
+          <%= t("legislation.annotations.form.login_to_comment",
+              signin: link_to(t("legislation.annotations.form.signin"), new_user_session_path),
+              signup: link_to(t("legislation.annotations.form.signup"), new_user_registration_path)).html_safe %>
+        </div>
+      </div>
+
+      <% end %>
+    <% end %>
+  </div>
+</div>

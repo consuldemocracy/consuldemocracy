@@ -18,21 +18,21 @@ class Verification::Management::Document
   end
 
   def in_census?
-    response = CensusApi.new.call(document_type, document_number)
+    response = CensusCaller.new.call(document_type, document_number)
     response.valid? && valid_age?(response)
   end
 
   def valid_age?(response)
     if under_age?(response)
       errors.add(:age, true)
-      return false
+      false
     else
-      return true
+      true
     end
   end
 
   def under_age?(response)
-    User.minimum_required_age.years.ago.beginning_of_day < response.date_of_birth.beginning_of_day
+    response.date_of_birth.blank? || Age.in_years(response.date_of_birth) < User.minimum_required_age
   end
 
   def verified?

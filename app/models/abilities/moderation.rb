@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      self.merge Abilities::Common.new(user)
+      merge Abilities::Common.new(user)
 
       can :read, Organization
       can(:verify, Organization){ |o| !o.verified? }

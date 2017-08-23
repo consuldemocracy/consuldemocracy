@@ -2,7 +2,7 @@ class SignatureSheet < ActiveRecord::Base
   belongs_to :signable, polymorphic: true
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
-  VALID_SIGNABLES = %w( Proposal SpendingProposal )
+  VALID_SIGNABLES = %w(Proposal Budget::Investment SpendingProposal)
 
   has_many :signatures
 
@@ -22,7 +22,7 @@ class SignatureSheet < ActiveRecord::Base
 
   def verify_signatures
     parsed_document_numbers.each do |document_number|
-      signature = self.signatures.where(document_number: document_number).first_or_create
+      signature = signatures.where(document_number: document_number).first_or_create
       signature.verify
     end
     update(processed: true)

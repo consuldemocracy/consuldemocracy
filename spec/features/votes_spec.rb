@@ -364,9 +364,14 @@ feature 'Votes' do
 
   feature 'Spending Proposals' do
     background do
-     Setting["feature.spending_proposals"] = true
+     Setting['feature.spending_proposals'] = true
      Setting['feature.spending_proposal_features.voting_allowed'] = true
      login_as(@manuela)
+    end
+
+    after do
+      Setting['feature.spending_proposals'] = nil
+      Setting['feature.spending_proposal_features.voting_allowed'] = nil
     end
 
     feature 'Index' do

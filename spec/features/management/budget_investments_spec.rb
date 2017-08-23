@@ -4,7 +4,7 @@ feature 'Budget Investments' do
 
   background do
     login_as_manager
-    @budget = create(:budget, phase: 'selecting', name: "2016")
+    @budget = create(:budget, phase: 'selecting', name: "2033")
     @group = create(:budget_group, budget: @budget, name: 'Whole city')
     @heading = create(:budget_heading, group: @group, name: "Health")
   end
@@ -33,18 +33,21 @@ feature 'Budget Investments' do
       fill_in 'budget_investment_title', with: 'Build a park in my neighborhood'
       fill_in 'budget_investment_description', with: 'There is no parks here...'
       fill_in 'budget_investment_external_url', with: 'http://moarparks.com'
-      check 'budget_investment_terms_of_service'
+      fill_in 'budget_investment_location', with: 'City center'
+      fill_in 'budget_investment_organization_name', with: 'T.I.A.'
+      fill_in 'budget_investment_tag_list', with: 'green'
 
       click_button 'Create Investment'
 
       expect(page).to have_content 'Investment created successfully.'
 
-      expect(page).to have_content '2017'
-      #expect(page).to have_content 'Whole city'
       expect(page).to have_content 'Health'
       expect(page).to have_content 'Build a park in my neighborhood'
       expect(page).to have_content 'There is no parks here...'
       expect(page).to have_content 'http://moarparks.com'
+      expect(page).to have_content 'City center'
+      expect(page).to have_content 'T.I.A.'
+      expect(page).to have_content 'green'
       expect(page).to have_content user.name
       expect(page).to have_content I18n.l(@budget.created_at.to_date)
     end
@@ -81,13 +84,16 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to have_content(budget_investment1.title)
         expect(page).to_not have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']",
+                                 text: budget_investment1.title)
       end
     end
 
     scenario "by heading" do
-      budget_investment1 = create(:budget_investment, budget: @budget, title: "Hey ho", heading: create(:budget_heading, name: "District 9"))
-      budget_investment2 = create(:budget_investment, budget: @budget, title: "Let's go", heading: create(:budget_heading, name: "Area 52"))
+      budget_investment1 = create(:budget_investment, budget: @budget, title: "Hey ho",
+                                                      heading: create(:budget_heading, name: "District 9"))
+      budget_investment2 = create(:budget_investment, budget: @budget, title: "Let's go",
+                                                      heading: create(:budget_heading, name: "Area 52"))
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -105,7 +111,8 @@ feature 'Budget Investments' do
         expect(page).to have_css('.budget-investment', count: 1)
         expect(page).to_not have_content(budget_investment1.title)
         expect(page).to have_content(budget_investment2.title)
-        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
+        expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']",
+                                 text: budget_investment2.title)
       end
     end
   end
@@ -132,9 +139,66 @@ feature 'Budget Investments' do
 
     within("#budget-investments") do
       expect(page).to have_css('.budget-investment', count: 2)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']", text: budget_investment1.title)
-      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']", text: budget_investment2.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment1)}']",
+                               text: budget_investment1.title)
+      expect(page).to have_css("a[href='#{management_budget_investment_path(@budget, budget_investment2)}']",
+                               text: budget_investment2.title)
     end
+  end
+
+  scenario "Listing - managers can see budgets in accepting phase" do
+    accepting_budget = create(:budget, phase: "accepting")
+    reviewing_budget = create(:budget, phase: "reviewing")
+    selecting_budget = create(:budget, phase: "selecting")
+    valuating_budget = create(:budget, phase: "valuating")
+    balloting_budget = create(:budget, phase: "balloting")
+    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
+    finished = create(:budget, phase: "finished")
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+
+    click_link "Create budget investment"
+
+    expect(page).to have_content(accepting_budget.name)
+
+    expect(page).to_not have_content(reviewing_budget.name)
+    expect(page).to_not have_content(selecting_budget.name)
+    expect(page).to_not have_content(valuating_budget.name)
+    expect(page).to_not have_content(balloting_budget.name)
+    expect(page).to_not have_content(reviewing_ballots_budget.name)
+    expect(page).to_not have_content(finished.name)
+  end
+
+  scenario "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
+    accepting_budget = create(:budget, phase: "accepting")
+    reviewing_budget = create(:budget, phase: "reviewing")
+    selecting_budget = create(:budget, phase: "selecting")
+    valuating_budget = create(:budget, phase: "valuating")
+    balloting_budget = create(:budget, phase: "balloting")
+    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
+    finished = create(:budget, phase: "finished")
+
+    visit root_path
+    click_link "Sign out"
+
+    admin = create(:administrator)
+    login_as(admin.user)
+
+    user = create(:user, :level_two)
+    login_managed_user(user)
+    visit management_sign_in_path
+
+    click_link "Create budget investment"
+
+    expect(page).to have_content(accepting_budget.name)
+    expect(page).to have_content(reviewing_budget.name)
+    expect(page).to have_content(selecting_budget.name)
+
+    expect(page).to_not have_content(valuating_budget.name)
+    expect(page).to_not have_content(balloting_budget.name)
+    expect(page).to_not have_content(reviewing_ballots_budget.name)
+    expect(page).to_not have_content(finished.name)
   end
 
   context "Supporting" do

@@ -7,6 +7,8 @@ class Debate < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
+  include HasPublicAuthor
+  include Graphqlable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -37,6 +39,7 @@ class Debate < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
+  scope :public_for_api,           -> { all }
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
@@ -52,7 +55,7 @@ class Debate < ActiveRecord::Base
   end
 
   def self.search(terms)
-    self.pg_search(terms)
+    pg_search(terms)
   end
 
   def to_param
@@ -121,15 +124,15 @@ class Debate < ActiveRecord::Base
   end
 
   def after_hide
-    self.tags.each{ |t| t.decrement_custom_counter_for('Debate') }
+    tags.each{ |t| t.decrement_custom_counter_for('Debate') }
   end
 
   def after_restore
-    self.tags.each{ |t| t.increment_custom_counter_for('Debate') }
+    tags.each{ |t| t.increment_custom_counter_for('Debate') }
   end
 
   def featured?
-    self.featured_at.present?
+    featured_at.present?
   end
 
 end

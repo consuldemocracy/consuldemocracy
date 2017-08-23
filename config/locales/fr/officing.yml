@@ -1,0 +1,103 @@
+---
+fr:
+  officing:
+    header:
+      title: Votes
+    dashboard:
+      index:
+        title: Bureaux de vote
+        info: Ici vous pouvez valider les documents des utilisateurs et enregistrer les résultats des votes
+    menu:
+      voters: "Valider un document"
+      recounts: "Enregistrer le dépouillement"
+      final_recounts: "Dépouillements finaux et résultats"
+    polls:
+      index:
+        title: "Liste des votes"
+        no_polls: "Vous n'êtes responsable d'aucun vote actif"
+        select_poll: "Sélectionner un vote"
+        add_recount: "Ajouter un dépouillement"
+      final:
+        title: "Liste des votes finaux"
+        no_polls: "Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs"
+        select_poll: "Sélectionner un vote"
+        add_recount: "Ajouter le dépouillement final"
+        add_results: "Ajouter les résultats"
+    recounts:
+      flash:
+        create: "Données ajoutées"
+        error_create: "Décompte NON ajouté. Erreur dans les données."
+      new:
+        title: "%{poll} - Ajouter le dépouillement quotidien"
+        not_allowed: "Vous n'êtes pas le président de ce vote"
+        booth_date: "Bureau de vote et date"
+        select_booth_date: "Sélectionner un bureau de vote et une date"
+        count: "Décompte des votes"
+        count_placeholder: "Décompte des votes"
+        submit: "Sauvegarder"
+        recount_list: "Vos dépouillements"
+        booth: "Urne"
+        date: "Date"
+    final_recounts:
+      flash:
+        create: "Données ajoutées"
+        error_create: "Décompte final NON ajouté. Erreur dans les données."
+      new:
+        title: "%{poll} - Ajouter le dépouillement final"
+        not_allowed: "Vous n'êtes pas autorisés à ajouter les dépouillements finaux pour ce vote"
+        booth: "Bureau de vote"
+        date: "Date"
+        select_booth: "Sélectionner un bureau de vote"
+        select_date: "Sélectionner une date"
+        count: "Décompte final des votes"
+        count_placeholder: "Décompte final des votes"
+        submit: "Sauvegarder"
+        final_recount_list: "Vos dépouillements finaux"
+        system_count: "Dépouillement par le système"
+        add_results: "Ajouter les résultats"
+    results:
+      flash:
+        create: "Résultats sauvegardés"
+        error_create: "Résultats NON sauvegardés. Erreur dans les données."
+        error_wrong_booth: "Mauvaise urne. Résultats NON sauvegardés."
+        error_wrong_date: "Mauvaise date. Résultats NON sauvegardés."
+      new:
+        title: "%{poll} - Ajouter des résultats"
+        not_allowed: "Vous n'êtes pas autorisé à ajouter des résultats pour ce vote"
+        booth: "Bureau de vote"
+        date: "Date"
+        select_booth: "Sélectionner une bureau de vote"
+        select_date: "Sélectionner une date"
+        ballots_white: "Votes blancs"
+        ballots_null: "Votes invalides"
+        submit: "Sauvegarder"
+        results_list: "Vos résultats"
+        see_results: "Voir les résultats"
+      index:
+        no_results: "Pas de résultats"
+        results: Résultats
+        table_answer: Réponse
+        table_votes: Votes
+        table_whites: "Votes blancs"
+        table_nulls: "Votes invalides"
+    residence:
+      flash:
+        create: "Document vérifié avec le recensement"
+        not_allowed: "Vous n'avez pas de votes à superviser aujourd'hui"
+      new:
+        title: Valider le document
+        document_number: "Numéro du document (incluant les lettres)"
+        submit: Valider le document
+        error_verifying_census: "Le recensement n'a pas pu vérifier ce document."
+        form_errors: a empêché la vérification de ce document
+        no_assignments: "Vous n'avez pas de votes à superviser aujourd'hui"
+    voters:
+      new:
+        title: Votes
+        table_poll: Vote
+        table_actions: Statut des votes
+      show:
+        can_vote: Peut voter
+        error_already_voted: a déjà participé à ce vote
+        submit: Confirmer le vote
+        success: "A voté !"

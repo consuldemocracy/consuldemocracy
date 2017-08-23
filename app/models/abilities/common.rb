@@ -3,8 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-
-      self.merge Abilities::Everyone.new(user)
+      merge Abilities::Everyone.new(user)
 
       can [:read, :update], User, id: user.id
 
@@ -35,6 +34,8 @@ module Abilities
       can [:flag, :unflag], Proposal
       cannot [:flag, :unflag], Proposal, author_id: user.id
 
+      can [:create, :destroy], Follow
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
@@ -46,6 +47,7 @@ module Abilities
         can :vote, SpendingProposal
         can :create, SpendingProposal
 
+<<<<<<< HEAD
         # TODO: no dejar crear si ya se ha creado
         if user
            .budget_investments
@@ -64,15 +66,27 @@ module Abilities
 
         budgets_current = Budget.includes(:investments).where(phase: 'selecting')
         investment_ids = budgets_current.map { |b| b.investment_ids }.flatten
-        if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size < 3 
+        if user.votes.for_type(Budget::Investment).where(votable_id: investment_ids).size < 3
           can :vote,   Budget::Investment,               budget: { phase: "selecting" }
         end
 
+=======
+        can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :suggest, Budget::Investment,              budget: { phase: "accepting" }
+        can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
+        can :vote, Budget::Investment,                 budget: { phase: "selecting" }
+>>>>>>> master
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+        can :answer, Poll do |poll|
+          poll.answerable_by?(user)
+        end
+        can :answer, Poll::Question do |question|
+          question.answerable_by?(user)
+        end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }

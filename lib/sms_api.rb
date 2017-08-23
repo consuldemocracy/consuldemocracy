@@ -38,7 +38,20 @@ class SMSApi
   end
 
   def stubbed_response
-    {:respuesta_sms=>{:identificador_mensaje=>"1234567", :fecha_respuesta=>"Thu, 20 Aug 2015 16:28:05 +0200", :respuesta_pasarela=>{:codigo_pasarela=>"0000", :descripcion_pasarela=>"Operación ejecutada correctamente."}, :respuesta_servicio_externo=>{:codigo_respuesta=>"1000", :texto_respuesta=>"Success"}}}
+    {
+      respuesta_sms: {
+        identificador_mensaje: "1234567",
+        fecha_respuesta: "Thu, 20 Aug 2015 16:28:05 +0200",
+        respuesta_pasarela: {
+          codigo_pasarela: "0000",
+          descripcion_pasarela: "Operación ejecutada correctamente."
+        },
+        respuesta_servicio_externo: {
+          codigo_respuesta: "1000",
+          texto_respuesta: "Success"
+        }
+      }
+    }
   end
 
 end

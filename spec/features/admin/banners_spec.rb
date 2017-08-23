@@ -29,7 +29,7 @@ feature 'Admin banners magement' do
                   target_url:  "http://www.url.com",
                   style: "banner-style.banner-three",
                   image: "banner-img.banner-three",
-                  post_started_at: (Time.current - 1.days),
+                  post_started_at: (Time.current - 1.day),
                   post_ended_at:   (Time.current + 10.days))
 
       @banner4 = create(:banner, title: "Banner number four",
@@ -114,6 +114,7 @@ feature 'Admin banners magement' do
     visit admin_root_path
 
     within('#side_menu') do
+      click_link "Banners"
       click_link "Manage banners"
     end
 

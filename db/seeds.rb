@@ -38,15 +38,22 @@ Setting["months_to_archive_proposals"] = 12
 # Emails under the domain's subdomains will also be included
 Setting["email_domain_for_officials"] = ''
 
-# Code to be included at the top (header) of every page (useful for tracking)
-Setting['per_page_code'] =  ''
+# Code to be included at the top (inside <head>) of every page (useful for tracking)
+Setting['per_page_code_head'] =  ''
+
+# Code to be included at the top (inside <body>) of every page
+Setting['per_page_code_body'] =  ''
 
 # Social settings
 Setting["twitter_handle"] = nil
 Setting["twitter_hashtag"] = nil
 Setting["facebook_handle"] = nil
 Setting["youtube_handle"] = nil
+Setting["telegram_handle"] = nil
+Setting["instagram_handle"] = nil
 Setting["blog_url"] = nil
+Setting["transparency_url"] = nil
+Setting["opendata_url"] = "/opendata"
 
 # Public-facing URL of the app.
 Setting["url"] = "https://decidimpre.castello.es"
@@ -64,6 +71,7 @@ Setting["meta_keywords"] = nil
 # Feature flags
 Setting['feature.debates'] = false
 Setting['feature.spending_proposals'] = nil
+<<<<<<< HEAD
 Setting['feature.twitter_login'] = false
 Setting['feature.facebook_login'] = false
 Setting['feature.google_login'] = false
@@ -71,6 +79,16 @@ Setting['feature.public_stats'] = false
 Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = false
 Setting['feature.proposals'] = false
+=======
+Setting['feature.polls'] = true
+Setting['feature.twitter_login'] = true
+Setting['feature.facebook_login'] = true
+Setting['feature.google_login'] = true
+Setting['feature.public_stats'] = true
+Setting['feature.budgets'] = true
+Setting['feature.signature_sheets'] = true
+Setting['feature.legislation'] = true
+>>>>>>> master
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -105,3 +123,4 @@ Setting['min_age_to_participate'] = 16
   ActsAsTaggableOn::Tag.create!(name:  c, featured: true, kind: "category")
 
  end
+ Setting['proposal_improvement_path'] = nil

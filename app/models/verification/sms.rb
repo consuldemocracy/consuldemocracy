@@ -3,7 +3,7 @@ class Verification::Sms
 
   attr_accessor :user, :phone, :confirmation_code
 
-  validates_presence_of :phone
+  validates :phone, presence: true
   validates :phone, format: { with: /\A[\d \+]+\z/ }
   validate :uniqness_phone
 
@@ -12,7 +12,7 @@ class Verification::Sms
   end
 
   def save
-    return false unless self.valid?
+    return false unless valid?
     update_user_phone_information
     send_sms
     Lock.increase_tries(user)

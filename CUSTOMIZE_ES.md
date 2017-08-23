@@ -32,7 +32,7 @@ Las adaptaciones los debes poner en el directorio `config/locales/custom/`, reco
 <%= t("layouts.footer.copyright", year: Time.current.year) %>
 ```
 
-Y que en el fichero `config/locales/es.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
+Y que en el fichero `config/locales/es/general.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
 
 ```yml
 es:
@@ -42,7 +42,7 @@ es:
 
 ```
 
-Si creamos el fichero `config/locales/custom/es.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
+Si creamos el fichero `config/locales/custom/es/general.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
 
 ### Imágenes
 
@@ -53,7 +53,8 @@ Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene
 * logo_email.png
 * logo_header.png
 * map.jpg
-* social-media-icon.png
+* social_media_icon.png
+* social_media_icon_twitter.png
 
 ### Vistas (HTML)
 
@@ -68,7 +69,8 @@ Si quieres cambiar algun selector CSS (de las hojas de estilo) puedes hacerlo en
   background: red;
 }
 ```
-Si quieres cambiar alguna variable de foundation puedes hacerlo en el fichero `app/assets/stylesheets/_custom_settings.scss`. Por ejemplo para cambiar el color general de la aplicación puedes hacerlo agregando:
+
+Si quieres cambiar alguna variable de [foundation](http://foundation.zurb.com/) puedes hacerlo en el fichero `app/assets/stylesheets/_custom_settings.scss`. Por ejemplo para cambiar el color general de la aplicación puedes hacerlo agregando:
 
 ```css
 $brand:             #446336;
@@ -125,7 +127,6 @@ end
 
 No olvides poner los tests relevantes en `spec/models/custom`, siguiendo con el ejemplo pondriamos lo siguiente en `spec/models/custom/residence_spec.rb`:
 
-
 ```ruby
 require 'rails_helper'
 
@@ -181,7 +182,6 @@ Y siguiendo el flujo clásico en Ruby on Rails (`bundle install` y seguir con lo
 
 Cuando necesites extender o modificar el `config/application.rb` puedes hacerlo a través del fichero `config/application_custom.rb`. Por ejemplo si quieres modificar el idioma por defecto al inglés pondrías lo siguiente:
 
-
 ```ruby
 module Consul
   class Application < Rails::Application
@@ -210,7 +210,7 @@ TODO
 Te recomendamos que agregues el remote de consul para facilitar este proceso de merge:
 
 ```
-$ git remote add consul https://github.com/consul/consul
+git remote add consul https://github.com/consul/consul
 ```
 
 Con esto puedes actualizarte con

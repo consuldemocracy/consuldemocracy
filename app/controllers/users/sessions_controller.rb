@@ -11,13 +11,12 @@ class Users::SessionsController < Devise::SessionsController
     end
 
     def after_sign_out_path_for(resource)
-      # TODO: en request.referrer a veces tenemos url que no admiten GET... por lo que da un error de acceso.
-      # request.referrer.present? ? request.referrer : super
-      root_path
+      # root_path
+      request.referer.present? ? request.referer : super
     end
 
     def verifying_via_email?
-      return false unless resource.present?
+      return false if resource.blank?
       stored_path = session[stored_location_key_for(resource)] || ""
       stored_path[0..5] == "/email"
     end

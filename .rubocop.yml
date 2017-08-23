@@ -19,10 +19,16 @@ Documentation:
 Metrics/LineLength:
   Max: 140
 
-Style/IndentationConsistency:
+Layout/IndentationConsistency:
   EnforcedStyle: rails
 
+Style/EmptyMethod:
+  Enabled: false
+
 Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolProc:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
@@ -31,26 +37,32 @@ Style/FrozenStringLiteralComment:
 Style/PercentLiteralDelimiters:
   Enabled: false
 
-Style/EmptyLinesAroundClassBody:
+Style/SymbolArray:
   Enabled: false
 
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundClassBody:
   Enabled: false
 
-Style/EmptyLinesAroundModuleBody:
+Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 
-Style/SpaceBeforeBlockBraces:
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 
-Style/SpaceInsideBrackets:
+Layout/SpaceBeforeBlockBraces:
   Enabled: false
 
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideBrackets:
   Enabled: false
 
-Style/SpaceInsideBlockBraces:
+Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
-Style/TrailingBlankLines:
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+
+Layout/TrailingBlankLines:
+  Enabled: false
+
+Rails/ApplicationRecord:
   Enabled: false

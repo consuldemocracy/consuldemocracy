@@ -5,7 +5,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   helper_method :sort_column, :sort_direction
 
   has_filters(%w{valuation_open without_admin managed valuating valuation_finished
-                 valuation_finished_feasible selected all},
+                 valuation_finished_feasible selected winners all},
               only: [:index, :toggle_selection])
 
   before_action :load_budget
@@ -54,7 +54,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def budget_investment_params
       params.require(:budget_investment)
-            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :valuation_tag_list, valuator_ids: [])
+            .permit(:title, :description, :external_url, :heading_id, :administrator_id, :valuation_tag_list, :incompatible,
+                    :selected, valuator_ids: [])
     end
 
     def load_budget

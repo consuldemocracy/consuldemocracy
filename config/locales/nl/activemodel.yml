@@ -1,0 +1,22 @@
+nl:
+  activemodel:
+    models:
+      verification:
+        residence: "Woonplaats"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Document type"
+          document_number: "Document nummer (inclusief letters)"
+          date_of_birth: "Geboortedatum"
+          postal_code: "Postcode"
+        sms:
+          phone: "Telefoon"
+          confirmation_code: "Bevestigingscode"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Document type"
+        document_number: "Document nummer (inclusief letters)"
+        year_of_birth: "Geboortejaar"

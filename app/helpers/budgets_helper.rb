@@ -8,18 +8,18 @@ module BudgetsHelper
     Budget::CURRENCY_SYMBOLS.map { |cs| [ cs, cs ] }
   end
 
-  def namespaced_budget_investment_path(investment, options={})
+  def namespaced_budget_investment_path(investment, options = {})
     case namespace
-    when "management::budgets"
+    when "management/budgets"
       management_budget_investment_path(investment.budget, investment, options)
     else
       budget_investment_path(investment.budget, investment, options)
     end
   end
 
-  def namespaced_budget_investment_vote_path(investment, options={})
+  def namespaced_budget_investment_vote_path(investment, options = {})
     case namespace
-    when "management::budgets"
+    when "management/budgets"
       vote_management_budget_investment_path(investment.budget, investment, options)
     else
       vote_budget_investment_path(investment.budget, investment, options)
@@ -31,12 +31,16 @@ module BudgetsHelper
   end
 
   def css_for_ballot_heading(heading)
-    return '' unless current_ballot.present?
+    return '' if current_ballot.blank?
     current_ballot.has_lines_in_heading?(heading) ? 'active' : ''
   end
 
   def current_ballot
     Budget::Ballot.where(user: current_user, budget: @budget).first
+  end
+
+  def investment_tags_select_options
+    Budget::Investment.tags_on(:valuation).order(:name).select(:name).distinct
   end
 
   def css_for_highlight_investment_stat(phase)

@@ -12,17 +12,21 @@
 
     <div class="small-12 column">
       <%= f.label :question, t("proposals.form.proposal_question") %>
-      <span class="note-marked">
+      <p class="help-text" id="question-help-text">
         <%= t("proposals.form.proposal_question_example_html") %>
-      </span>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length, placeholder: t("proposals.form.proposal_question"), label: false %>
+      </p>
+      <%= f.text_field :question, maxlength: Proposal.question_max_length,
+                                  placeholder: t("proposals.form.proposal_question"),
+                                  label: false,
+                                  aria: {describedby: "question-help-text"} %>
     </div>
 
     <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <p class="note"><%= t("proposals.form.proposal_summary_note") %></p>
+      <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t('proposals.form.proposal_summary') %>
+                      placeholder: t('proposals.form.proposal_summary'),
+                      aria: {describedby: "summary-help-text"} %>
     </div>
 
     <div class="ckeditor small-12 column">
@@ -33,8 +37,9 @@
 
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-      <p class="note"><%= t("proposals.form.proposal_video_url_note") %></p>
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false %>
+      <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
+      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
+                                   aria: {describedby: "video-url-help-text"} %>
     </div>
 
     <div class="small-12 column">
@@ -49,7 +54,7 @@
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
-      <p class="note"><%= t("proposals.form.tags_instructions") %></p>
+      <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
         <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
@@ -62,14 +67,16 @@
       <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list' %>
+                        class: 'js-tag-list',
+                        aria: {describedby: "tag-list-help-text"} %>
     </div>
 
     <% if current_user.unverified? %>
       <div class="small-12 column">
         <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
-        <p class="note"><%= t("proposals.form.proposal_responsible_name_note") %></p>
-        <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false %>
+        <p class="help-text" id="responsible-name-help-text"><%= t("proposals.form.proposal_responsible_name_note") %></p>
+        <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false,
+                                            aria: {describedby: "responsible-name-help-text"} %>
       </div>
     <% end %>
 

@@ -1,6 +1,6 @@
 module CommonActions
 
-  def sign_up(email='manuela@consul.dev', password='judgementday')
+  def sign_up(email = 'manuela@consul.dev', password = 'judgementday')
     visit '/'
 
     click_link 'Register'
@@ -18,15 +18,16 @@ module CommonActions
     visit root_path
     click_link 'Sign in'
 
-    fill_in 'user_email', with: user.email
+    fill_in 'user_login', with: user.email
     fill_in 'user_password', with: user.password
 
     click_button 'Enter'
   end
 
   def login_as_authenticated_manager
+    expected_response = {login: login, user_key: user_key, date: date}.with_indifferent_access
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
-    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return({login: login, user_key: user_key, date: date}.with_indifferent_access)
+    allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(expected_response)
     visit management_sign_in_path(login: login, clave_usuario: user_key, fecha_conexion: date)
   end
 
@@ -109,7 +110,7 @@ module CommonActions
     SCRIPT
   end
 
-  def error_message(resource_model=nil)
+  def error_message(resource_model = nil)
     resource_model ||= "(.*)"
     /\d errors? prevented this #{resource_model} from being saved:/
   end
@@ -140,6 +141,16 @@ module CommonActions
   #   click_button 'Verify residence'
   #   expect(page).to have_content 'Residence verified'
   # end
+
+  def officing_verify_residence
+    select 'DNI', from: 'residence_document_type'
+    fill_in 'residence_document_number', with: "12345678Z"
+    fill_in 'residence_year_of_birth', with: "1980"
+
+    click_button 'Validate document'
+
+    expect(page).to have_content 'Document verified with Census'
+  end
 
   def confirm_phone
     fill_in 'sms_phone', with: "611111111"
@@ -203,14 +214,17 @@ module CommonActions
      create(:debate, :with_confidence_score, cached_votes_up: 80)]
   end
 
-  def create_successfull_proposals
+  def create_successful_proposals
     [create(:proposal, title: "Winter is coming", question: "Do you speak it?", cached_votes_up: Proposal.votes_needed_for_success + 100),
      create(:proposal, title: "Fire and blood", question: "You talking to me?", cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end
 
   def create_archived_proposals
-    [create(:proposal, title: "This is an expired proposal", created_at: Setting["months_to_archive_proposals"].to_i.months.ago),
-     create(:proposal, title: "This is an oldest expired proposal", created_at: (Setting["months_to_archive_proposals"].to_i + 2).months.ago)]
+    months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i
+    [
+      create(:proposal, title: "This is an expired proposal", created_at: months_to_archive_proposals.months.ago),
+      create(:proposal, title: "This is an oldest expired proposal", created_at: (months_to_archive_proposals + 2).months.ago)
+    ]
   end
 
   def tag_names(tag_cloud)

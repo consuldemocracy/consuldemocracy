@@ -4,8 +4,13 @@ feature 'Valuation' do
   let(:user) { create(:user) }
 
   background do
-    Setting["feature.spending_proposals"] = true
+    Setting['feature.spending_proposals'] = true
     Setting['feature.spending_proposal_features.voting_allowed'] = true
+  end
+
+  after do
+    Setting['feature.spending_proposals'] = nil
+    Setting['feature.spending_proposal_features.voting_allowed'] = nil
   end
 
   scenario 'Access as regular user is not authorized' do
@@ -35,6 +40,19 @@ feature 'Valuation' do
 
   scenario 'Access as manager is not authorized' do
     create(:manager, user: user)
+    login_as(user)
+    visit root_path
+
+    expect(page).to_not have_link("Valuation")
+    visit valuation_root_path
+
+    expect(current_path).not_to eq(valuation_root_path)
+    expect(current_path).to eq(proposals_path)
+    expect(page).to have_content "You do not have permission to access this page"
+  end
+
+  scenario 'Access as poll officer is not authorized' do
+    create(:poll_officer, user: user)
     login_as(user)
     visit root_path
 

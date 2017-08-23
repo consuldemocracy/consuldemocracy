@@ -1,9 +1,13 @@
 <% provide :title do %><%= @debate.title %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: debate_url(@debate) %>
+<% end %>
+
 <% cache [locale_and_user_status(@debate), @debate, @debate.author, Flag.flagged?(current_user, @debate), @debate_votes] do %>
   <div class="debate-show">
     <div id="<%= dom_id(@debate) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= render "shared/back_link" %>
+        <%= back_link_to %>
 
         <% if current_user && @debate.editable_by?(current_user) %>
           <%= link_to edit_debate_path(@debate), class: 'edit-debate button success small float-right' do %>
@@ -48,16 +52,11 @@
         <div id="<%= dom_id(@debate) %>_votes">
           <%= render 'debates/votes', debate: @debate %>
         </div>
-        <div class="sidebar-divider"></div>
-        <h2><%= t("debates.show.share") %></h2>
-        <div class="social-share-full">
-          <%= social_share_button_tag("#{@debate.title} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @debate.title %> <%= debate_url(@debate) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-            </a>
-          <% end %>
-        </div>
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("debates.show.share"),
+          title: @debate.title,
+          url: debate_url(@debate)
+        } %>
       </aside>
     </div>
   </div>

@@ -35,7 +35,7 @@
           <div id="responsive-menu">
             <div class="top-bar-title">
               <%= link_to management_root_path, class: "hide-for-small-only" do %>
-                <%= image_tag('logo_header.png', class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+                <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
                 <%= setting['org_name'] %>
                 &nbsp;|&nbsp;<%= t("management.dashboard.index.title") %>
               <% end %>
