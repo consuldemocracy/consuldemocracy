@@ -11,3 +11,11 @@ El repositorio git de Consul está hospedado en Github.com, recomendamos lo uses
 4. [Clona el repositorio de tu fork](https://help.github.com/articles/cloning-a-repository/) en tu ordenador
 
 ****ADVERTENCIA IMPORTANTE**: No hagas un fork de `https://github.com/AyuntamientoMadrid/consul`, es una equivocación infrecuente que conlleva múltiples y graves problemas.
+
+## ¿Porqué hacer el código público?
+
+Recomendamos publicar el código por varias razones:
+- **Transparencia**: Debería ser parte de la cultura de aquellas entidades públicas que adopten Consul, así como cualquier organización o grupo.
+- **Soporte**: Si necesitas ayuda técnica, el resto de la comunidad o el equipo de Consul podrán entender y aconsejar mas fácilmente al ver el código implicado.
+- **Colaboración**: Por parte de otros profesionales, ciudadanos, etc...
+- Por último y no menos importante, Consul se distribuye bajo la **licencia [AGPLv3](https://github.com/consul/consul/blob/master/LICENSE-AGPLv3.txt)** que obliga a publicar el codigo fuente.

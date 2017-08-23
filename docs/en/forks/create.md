@@ -11,3 +11,11 @@ Consul git repo is hosted at Github.com, we recommend using it for your fork's r
 4. [Clone your fork repository](https://help.github.com/articles/cloning-a-repository/) on to your computer
 
 ****IMPORTANT NOTICE**: Do not fork `https://github.com/AyuntamientoMadrid/consul`, its a common mistake that leads to multiple and grave problems
+
+## Why make code public?
+
+We strongly recommend making code public vor multiple reasons:
+- **Transparency**: It should be part of the culture of public entities that adopt Consul, as well as any organization or group.
+- **Support**: If you need technical help, both community and Consul core team will be able to understand and advice by easily seeing involved code.
+- **Collaboration**: By other professionals, citizens, etc...
+- Last but not least, Consul is distributed under the **[AGPLv3](https://github.com/consul/consul/blob/master/LICENSE-AGPLv3.txt) license** that commands to publish source code.
