@@ -1,49 +1,39 @@
-.document{
-  .button{
+.document {
+  .button {
     font-weight: normal;
   }
 
   .progress-bar {
-    background-color: transparent;
-    height: 5px;
     width: 100%;
-    z-index: 666000555;
+    background-color: $light-gray;
   }
 
-  .file-name{
-    margin-top:15px;
+  .file-name {
+    margin-top: $line-height / 2;
   }
 
   .loading-bar {
     height: 5px;
-    width: 0px;
-    z-index: 666000666;
-    -webkit-transition:width 500ms ease-out, height 500ms ease-out;
-    -moz-transition:width 500ms ease-out, height 500ms ease-out;
-    -o-transition:width 500ms ease-out, height 500ms ease-out;
-    transition:width 500ms ease-out, height 500ms ease-out;
+    width: 0;
+    transition: width 500ms ease-out;
 
     &.uploading {
-      background-color: #bbb;
+      background-color: $dark-gray;
     }
 
     &.complete {
-      background-color: #0f0;
+      background-color: $success-color;
       width: 100%;
       margin-top: $line-height * 2;
     }
 
     &.errors {
-      background-color: #f00;
+      background-color: $alert-color;
       width: 100%;
     }
   }
 
   .loading-bar.no-transition {
-    -webkit-transition:none;
-    -moz-transition:none;
-    -o-transition:none;
-    transition:none;
+    transition: none;
   }
-
 }
