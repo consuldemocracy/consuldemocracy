@@ -1,7 +1,7 @@
 <%
   nested_fields = render 'documents/nested_document', document: @document, index: params[:index]
   new_document_link = link_to t("documents.form.add_new_document"),
-                              new_document_path(documentable_type: params[:documentable_type], index: params[:index].to_i + 1),
+                              new_nested_documents_path(documentable_type: params[:documentable_type], index: params[:index].to_i + 1),
                               remote: true,
                               id: "new_document_link"
 %>

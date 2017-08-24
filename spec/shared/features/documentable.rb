@@ -155,7 +155,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_content("You must sign in or register to continue.")
     end
 
-    scenario "Should not be able for other users" do
+    scenario "Should be able for other users" do
       login_as create(:user)
 
       visit new_document_path(documentable_type: documentable.class.name,

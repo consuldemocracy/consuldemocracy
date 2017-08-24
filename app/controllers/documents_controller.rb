@@ -1,13 +1,16 @@
 class DocumentsController < ApplicationController
   before_action :authenticate_user!
   before_filter :find_documentable, except: [:destroy]
-  before_filter :prepare_new_document, only: :new
+  before_filter :prepare_new_document, only: [:new, :new_nested]
   before_filter :prepare_document_for_creation, only: :create
 
   load_and_authorize_resource :except => [:upload]
   skip_authorization_check :only => [:upload]
 
   def new
+  end
+
+  def new_nested
   end
 
   def create

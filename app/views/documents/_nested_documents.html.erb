@@ -9,7 +9,7 @@
 
 <% if resource.documents.count < resource.class.max_documents_allowed %>
   <%= link_to t("documents.form.add_new_document"),
-              new_document_path(documentable_type: resource.class.name, index: resource.documents.size),
+              new_nested_documents_path(documentable_type: resource.class.name, index: resource.documents.size),
               remote: true,
               id: "new_document_link"  %>
   <div class="max-documents-notice callout warning text-center hide">
