@@ -1,34 +1,49 @@
-.progress-bar {
-  background-color: transparent;
-  height: 5px;
-  width: 100%;
-  z-index: 666000555;
-}
+.document{
+  .button{
+    font-weight: normal;
+  }
 
-.loading-bar {
-  height: 5px;
-  width: 0px;
-  z-index: 666000666;
-  -webkit-transition:width 500ms ease-out, height 500ms ease-out;
-  -moz-transition:width 500ms ease-out, height 500ms ease-out;
-  -o-transition:width 500ms ease-out, height 500ms ease-out;
-  transition:width 500ms ease-out, height 500ms ease-out;
-  &.uploading{
-    background-color: #bbb;
-  }
-  &.complete{
-    background-color: #0f0;
+  .progress-bar {
+    background-color: transparent;
+    height: 5px;
     width: 100%;
+    z-index: 666000555;
   }
-  &.errors{
-    background-color: #f00;
-    width: 100%;
-  }
-}
 
-.loading-bar.no-transition {
-  -webkit-transition:none;
-  -moz-transition:none;
-  -o-transition:none;
-  transition:none;
+  .file-name{
+    margin-top:15px;
+  }
+
+  .loading-bar {
+    height: 5px;
+    width: 0px;
+    z-index: 666000666;
+    -webkit-transition:width 500ms ease-out, height 500ms ease-out;
+    -moz-transition:width 500ms ease-out, height 500ms ease-out;
+    -o-transition:width 500ms ease-out, height 500ms ease-out;
+    transition:width 500ms ease-out, height 500ms ease-out;
+
+    &.uploading {
+      background-color: #bbb;
+    }
+
+    &.complete {
+      background-color: #0f0;
+      width: 100%;
+      margin-top: $line-height * 2;
+    }
+
+    &.errors {
+      background-color: #f00;
+      width: 100%;
+    }
+  }
+
+  .loading-bar.no-transition {
+    -webkit-transition:none;
+    -moz-transition:none;
+    -o-transition:none;
+    transition:none;
+  }
+
 }

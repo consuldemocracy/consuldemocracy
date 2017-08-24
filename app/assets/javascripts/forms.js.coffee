@@ -34,7 +34,6 @@ App.Forms =
       i++
 
   initialize: ->
-    console.log 'initialize forms'
     App.Forms.disableEnter()
     App.Forms.submitOnChange()
     App.Forms.toggleLink()

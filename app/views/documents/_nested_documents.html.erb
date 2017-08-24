@@ -11,7 +11,8 @@
   <%= link_to t("documents.form.add_new_document"),
               new_nested_documents_path(documentable_type: resource.class.name, index: resource.documents.size),
               remote: true,
-              id: "new_document_link"  %>
+              id: "new_document_link",
+              class: "button hollow"  %>
   <div class="max-documents-notice callout warning text-center hide">
     <%= t "documents.max_documents_allowed_reached_html" %>
   </div>

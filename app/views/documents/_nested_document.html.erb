@@ -44,17 +44,17 @@
                                                    method: :delete,
                                                    remote: true,
                                                    data: { confirm: t('documents.actions.destroy.confirm') },
-                                                   class: "button hollow alert" if document.persisted? %>
+                                                   class: "delete float-right" if document.persisted? %>
   <% elsif !document.persisted? && document.cached_attachment.present? %>
     <%= link_to t('documents.form.delete_button'), destroy_upload_documents_path(path: document.cached_attachment, index: index, documentable_type: document.documentable_type, documentable_id: document.documentable_id),
                                                    method: :delete,
                                                    remote: true,
-                                                   class: "button hollow alert" %>
+                                                   class: "delete float-right" %>
   <% else %>
     <%= label_tag document_nested_field_id(document, index, :attachment),
                   t("documents.form.attachment_label"),
                   class: "button hollow #{"error" if document.errors[:attachment].any?}" %>
-    <%= link_to t('documents.form.delete_button'), "#", class: "button hollow alert remove-document" %>
+    <%= link_to t('documents.form.delete_button'), "#", class: "delete float-right remove-document" %>
     <% if document.errors[:attachment].any? %>
       <br>
       <small class="error"><%= document.errors[:attachment].join(", ") %></small>
