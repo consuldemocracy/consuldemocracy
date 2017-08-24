@@ -14,7 +14,7 @@ class DocumentsController < ApplicationController
   end
 
   def create
-    recover_attachment_from_cache
+    recover_attachments_from_cache
     if @document.save
       flash[:notice] = t "documents.actions.create.notice"
       redirect_to params[:from]
@@ -60,6 +60,7 @@ class DocumentsController < ApplicationController
     @document = Document.new(document_params.merge(user: current_user))
     @document.documentable = @documentable
     if @document.valid?
+      @document.attachment_file_name = "#{Time.now.to_i} - #{@document.attachment_file_name}"
       @document.attachment.save
       @document.cached_attachment = @document.attachment.path
     else
@@ -88,7 +89,7 @@ class DocumentsController < ApplicationController
     @document.user = current_user
   end
 
-  def recover_attachment_from_cache
+  def recover_attachments_from_cache
     if @document.attachment.blank? && @document.cached_attachment.present?
       @document.attachment = File.open(@document.cached_attachment)
     end
