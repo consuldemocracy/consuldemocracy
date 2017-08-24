@@ -81,6 +81,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
     visit send(path, arguments)
 
     click_link "Add new document"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
 
     expect(page).to have_selector ".file-name", text: "empty.pdf"
@@ -91,6 +92,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
     visit send(path, arguments)
 
     click_link "Add new document"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
     sleep 1
 
@@ -103,6 +105,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
     click_link "Add new document"
     fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
     sleep 1
 
@@ -115,6 +118,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
     click_link "Add new document"
     fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
     sleep 1
 
@@ -127,6 +131,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
     click_link "Add new document"
     fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/logo_header.png"
     sleep 1
 
@@ -139,6 +144,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
     click_link "Add new document"
     fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
     sleep 1
 
@@ -151,6 +157,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
     click_link "Add new document"
     fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
     attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/logo_header.png"
     sleep 1
 
@@ -254,6 +261,7 @@ end
 def attach_new_file(documentable_factory_name, index, path)
   click_link "Add new document"
   sleep 1
+  execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
   attach_file "#{documentable_factory_name}[documents_attributes][#{index}][attachment]", path
   sleep 1
 end
