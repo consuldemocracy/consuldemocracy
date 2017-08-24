@@ -197,8 +197,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       click_on "Upload document"
 
       expect(page).to have_content "2 errors prevented this Document from being saved: "
-      expect(page).to have_selector "small.error:not(.show-for-sr)", text: "can't be blank", count: 2
-      expect(page).to have_selector "small.show-for-sr", text: "can't be blank", count: 1
+      expect(page).to have_selector "small.error", text: "can't be blank", count: 3
     end
 
     scenario "Should display file name after file selection", :js do

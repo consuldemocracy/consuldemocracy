@@ -25,7 +25,7 @@
 
   <%= file_field_tag :attachment,
                      accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                     class: 'document_ajax_attachment show-for-sr',
+                     class: 'document_ajax_attachment',
                      data: {
                        url: upload_documents_url(
                               documentable_type: document.documentable_type,

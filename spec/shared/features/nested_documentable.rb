@@ -105,8 +105,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
     click_link "Add new document"
     fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
+    attach_file("#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf", make_visible: true)
     sleep 1
 
     expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "Title"
@@ -261,8 +260,7 @@ end
 def attach_new_file(documentable_factory_name, index, path)
   click_link "Add new document"
   sleep 1
-  execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-  attach_file "#{documentable_factory_name}[documents_attributes][#{index}][attachment]", path
+  attach_file("#{documentable_factory_name}[documents_attributes][#{index}][attachment]", path, make_visible: true)
   sleep 1
 end
 
