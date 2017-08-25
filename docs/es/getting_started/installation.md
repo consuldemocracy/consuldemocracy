@@ -9,7 +9,7 @@ Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisi
   ```
 
 2. Ve a la carpeta del proyecto e instala las gemas requeridas usando [Bundler](http://bundler.io/):
-  
+
   ```bash
   cd consul
   bundle install
@@ -47,6 +47,6 @@ Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisi
 
   ¡Felicidades! Tu aplicación Consul local estará corriendo en `http://localhost:3000`.
 
-En caso de que quieras acceder a la aplicación local como usuario administrador existe un usuario por defecto con permisos con **nombre de usuario** `admin@consul.dev` y **contraseña** `12345678`.
+En caso de que quieras acceder a la aplicación local como usuario administrador existe un usuario por defecto verificado y con permisos con **nombre de usuario** `admin@consul.dev` y **contraseña** `12345678`.
 
-Si necesitas un usuario específico que pueda realizar acciones como votar, dispones de otro usuario verificado con **nombre de usuario** `verified@consul.dev` y **contraseña** `12345678`.
+Si necesitas un usuario específico que pueda realizar acciones como votar sin permisos de administración, dispones de otro usuario verificado con **nombre de usuario** `verified@consul.dev` y **contraseña** `12345678`.
