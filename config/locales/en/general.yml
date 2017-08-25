@@ -675,6 +675,7 @@ en:
       send_notification: "Send notification"
       retire: "Retire"
       retired: "Retired"
+      see: "See proposal"
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.

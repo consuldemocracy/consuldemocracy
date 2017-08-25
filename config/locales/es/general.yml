@@ -675,6 +675,7 @@ es:
       send_notification: "Enviar notificación"
       retire: "Retirar"
       retired: "Retirada"
+      see: "Ver propuesta"
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
