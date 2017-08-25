@@ -7,12 +7,10 @@ class Document < ActiveRecord::Base
   belongs_to :user
   belongs_to :documentable, polymorphic: true
 
-  # validates_attachment :attachment, presence: true
-  validate :attachment_presence
-  # validates :attachment_prensence
   # Disable paperclip security validation due to polymorphic configuration
   # Paperclip do not allow to user Procs on valiations definition
   do_not_validate_attachment_file_type :attachment
+  validate :attachment_presence
   validate :validate_attachment_content_type,         if: -> { attachment.present? }
   validate :validate_attachment_size,                 if: -> { attachment.present? }
   validates :title, presence: true
