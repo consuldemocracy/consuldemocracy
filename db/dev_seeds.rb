@@ -84,6 +84,7 @@ manager.create_manager
 
 valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
+valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2111111111")
 
 poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
 poll_officer.create_poll_officer
