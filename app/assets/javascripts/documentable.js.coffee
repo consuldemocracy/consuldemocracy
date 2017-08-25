@@ -18,6 +18,7 @@ App.Documentable =
         is_nested_document = $(e.target).data('nested-document')
         $(wrapper).find('.progress-bar-placeholder').empty()
         data.progressBar = $(wrapper).find('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
+        $(wrapper).find('.progress-bar-placeholder').css('display','block')
         data.formData = {
           "document[title]": $(wrapper).find('input.document-title').val() || data.files[0].name
           "index": index,
@@ -66,6 +67,7 @@ App.Documentable =
       $('#' + id).find('.loading-bar').addClass 'complete'
     else
       $('#' + id).find('.loading-bar').addClass 'errors'
+    $('#' + id).find('.progress-bar-placeholder').css('display','block')
 
   new: (nested_fields) ->
     $(".documents-list").append(nested_fields)
