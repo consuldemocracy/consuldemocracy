@@ -9,7 +9,7 @@ Before installing Consul and having it up and running make sure you all [prerequ
   ```
 
 2. Go to the project folder and install the gems stack using [Bundler](http://bundler.io/):
-  
+
   ```bash
   cd consul
   bundle install
@@ -47,6 +47,6 @@ Before installing Consul and having it up and running make sure you all [prerequ
 
   Congratulations! Your local Consul application will be running now at `http://localhost:3000`.
 
-In case you want to access the local application as admin, a default user with admin permissions was created by the seed files with **username** `admin@consul.dev` and **password** `12345678`.
+In case you want to access the local application as admin, a default user verified and with admin permissions was created by the seed files with **username** `admin@consul.dev` and **password** `12345678`.
 
-If you need an specific user to perform actions such as voting, a default verified user is also available with **username** `verified@consul.dev` and **password** `12345678`.
+If you need an specific user to perform actions such as voting without admin permissions, a default verified user is also available with **username** `verified@consul.dev` and **password** `12345678`.
