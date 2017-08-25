@@ -34,4 +34,8 @@ module DocumentablesHelper
                              max_file_size: max_file_size(documentable)
   end
 
+  def max_documents_allowed?(documentable)
+    documentable.documents.count >= documentable.class.max_documents_allowed
+  end
+
 end

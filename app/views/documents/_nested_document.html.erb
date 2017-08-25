@@ -20,49 +20,14 @@
                      class: "document-title" %>
    <% if document.errors[:title].any? %>
      <small class="error"><%= document.errors[:title].join(", ") %></small>
-     <br>
    <% end %>
 
-  <%= file_field_tag :attachment,
-                     accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                     class: 'document_ajax_attachment',
-                     data: {
-                       url: upload_documents_url(
-                              documentable_type: document.documentable_type,
-                              documentable_id: document.documentable_id,
-                              format: :js
-                            ),
-                       cached_attachment_input_field: "#{document.documentable.class.name.downcase}_documents_attributes_#{index}_cached_attachment",
-                       multiple: false,
-                       index: index
-                     },
-                     name: document_nested_field_name(document, index, :attachment),
-                     id: document_nested_field_id(document, index, :attachment) %>
+  <%= render_attachment(document, index) %>
 
-  <% if document.persisted? %>
-    <%= link_to t('documents.form.delete_button'), document_path(document, index: index),
-                                                   method: :delete,
-                                                   remote: true,
-                                                   data: { confirm: t('documents.actions.destroy.confirm') },
-                                                   class: "delete float-right" if document.persisted? %>
-  <% elsif !document.persisted? && document.cached_attachment.present? %>
-    <%= link_to t('documents.form.delete_button'), destroy_upload_documents_path(path: document.cached_attachment, index: index, documentable_type: document.documentable_type, documentable_id: document.documentable_id),
-                                                   method: :delete,
-                                                   remote: true,
-                                                   class: "delete float-right" %>
-  <% else %>
-    <%= label_tag document_nested_field_id(document, index, :attachment),
-                  t("documents.form.attachment_label"),
-                  class: "button hollow #{"error" if document.errors[:attachment].any?}" %>
-    <%= link_to t('documents.form.delete_button'), "#", class: "delete float-right remove-document" %>
-    <% if document.errors[:attachment].any? %>
-      <br>
-      <small class="error"><%= document.errors[:attachment].join(", ") %></small>
-      <br>
-    <% end %>
-  <% end %>
+  <%= render_destroy_document_link(document, index) %>
 
   <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
   <p class="file-name"><%= document_attachment_file_name(document) %></p>
+
   <hr>
 </div>

@@ -47,7 +47,7 @@
     </div>
 
     <div class="documents small-12 column" data-max-documents="<%= Proposal.max_documents_allowed %>">
-      <%= render 'documents/nested_documents', resource: @proposal %>
+      <%= render 'documents/nested_documents', documentable: @proposal %>
     </div>
 
     <div class="small-12 medium-6 column">
