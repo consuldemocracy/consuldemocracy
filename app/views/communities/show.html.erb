@@ -43,8 +43,8 @@
       <% end %>
     </li>
   </ul>
-  <% @participants.each do |participant| %>
 
+  <% @participants.each do |participant| %>
     <div class="comment-body">
       <div class="comment-info">
         <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
@@ -59,7 +59,5 @@
         </div>
       </div>
     </div>
-
-    <%#= link_to participant.name, user_path(participant)%>
   <% end %>
 </div>
