@@ -44,10 +44,12 @@
     </li>
   </ul>
 
+
+
   <% @participants.each do |participant| %>
     <div class="comment-body">
       <div class="comment-info">
-        <%= image_tag("avatar_admin.png", size: 32, class: "admin-avatar float-left") %>
+        <%= avatar_image( participant, seed: participant.id, size: 32, class: 'author-photo') %>
         <div class="comment-info">
           <span class="user-name">
             <%= link_to participant.name, user_path(participant)%>
