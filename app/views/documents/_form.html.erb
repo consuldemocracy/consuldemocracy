@@ -11,33 +11,7 @@
 
   <div class="row">
 
-    <div class="small-12 column">
-      <%= f.text_field :title %>
-    </div>
-
-    <div class="small-12 column">
-      <%= f.hidden_field :cached_attachment %>
-      <%= f.file_field :attachment,
-                       accept: accepted_content_types_extensions(@document.documentable.class),
-                       label: false,
-                       class: 'document_ajax_attachment',
-                       data: {
-                         url: upload_documents_url(documentable_type: @document.documentable_type, documentable_id: @document.documentable_id),
-                         cached_attachment_input_field: "document_cached_attachment",
-                         multiple: false
-                       } %>
-      <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
-      <div class="progress-bar-placeholder"></div>
-      <p class="file-name"><%= document_attachment_file_name(@document) %></p>
-    </div>
-
-    <% if @document.errors.has_key?(:attachment) %>
-      <div class="small-12 column source-option-file">
-        <div class="attachment-errors">
-          <small class="error"><%= errors_on_attachment(@document) %></small>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'plain_fields', document: @document %>
 
     <div class="actions small-12 medium-6 large-4 end column">
       <%= f.submit(t("documents.form.submit_button"), class: "button expanded") %>

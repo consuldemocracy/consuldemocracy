@@ -18,234 +18,219 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
     end
   end
 
-  scenario "Should show new document link when max documents allowed limit is not reached" do
-    login_as user
-    visit send(path, arguments)
+  describe "at #{path}" do
 
-    expect(page).to have_selector "#new_document_link", visible: true
-  end
+    scenario "Should show new document link when max documents allowed limit is not reached" do
+      login_as user
+      visit send(path, arguments)
 
-  scenario "Should not show new document link when documentable max documents allowed limit is reached", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    sleep 1
-    click_link "Add new document"
-    sleep 1
-    click_link "Add new document"
-
-    expect(page).to have_selector "#new_document_link", visible: false
-  end
-
-  scenario "Should not show max documents warning when no documents added", :js do
-    login_as user
-    visit send(path, arguments)
-
-    expect(page).to have_selector ".max-documents-notice", visible: false
-  end
-
-  scenario "Should show max documents warning when max documents allowed limit is reached", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    sleep 1
-    click_link "Add new document"
-    sleep 1
-    click_link "Add new document"
-
-    expect(page).to have_selector ".max-documents-notice", visible: true
-  end
-
-  scenario "Should hide max documents warning after any document removal", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    sleep 1
-    click_link "Add new document"
-    sleep 1
-    click_link "Add new document"
-    sleep 1
-    within "#document_0" do
-      find("a", text: "Remove document").click
-    end
-    sleep 1
-
-    expect(page).to have_selector ".max-documents-notice", visible: false
-  end
-
-  scenario "Should update nested document file name after choosing a file", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
-
-    expect(page).to have_selector ".file-name", text: "empty.pdf"
-  end
-
-  scenario "Should update nested document file title with file name after choosing a file when no title defined", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
-    sleep 1
-
-    expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "empty.pdf"
-  end
-
-  scenario "Should not update nested document file title with file name after choosing a file when title already defined", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-    attach_file("#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf", make_visible: true)
-    sleep 1
-
-    expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "Title"
-  end
-
-  scenario "Should update loading bar style after valid file upload", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
-    sleep 1
-
-    expect(page).to have_selector ".loading-bar.complete"
-  end
-
-  scenario "Should update loading bar style after unvalid file upload", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/logo_header.png"
-    sleep 1
-
-    expect(page).to have_selector ".loading-bar.errors"
-  end
-
-  scenario "Should update document cached_attachment field after valid file upload", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf"
-    sleep 1
-
-    expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to include("empty.pdf")
-  end
-
-  scenario "Should not update document cached_attachment field after unvalid file upload", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-    execute_script "$('input[type=\"file\"]').removeClass('show-for-sr');"
-    attach_file "#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/logo_header.png"
-    sleep 1
-
-    expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to eq ""
-  end
-
-  scenario "Should show document errors after unvalid file upload", :js do
-    login_as user
-    visit send(path, arguments)
-
-    click_link "Add new document"
-    sleep 1
-    click_on submit_button
-
-    within "#document_0" do
-      expect(page).to have_content("can't be blank", count: 2)
-    end
-  end
-
-  scenario "Should delete document after valid file upload and click on remove button", :js do
-    login_as user
-    visit send(path, arguments)
-
-    attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
-    within "#document_0" do
-      click_link "Remove document"
+      expect(page).to have_selector "#new_document_link", visible: true
     end
 
-    expect(page).not_to have_selector("#document_0")
-  end
+    scenario "Should not show new document link when documentable max documents allowed limit is reached", :js do
+      login_as user
+      visit send(path, arguments)
 
-  scenario "Should delete document after valid file upload and click on remove button", :js do
-    login_as user
-    visit send(path, arguments)
+      click_link "Add new document"
+      sleep 1
+      click_link "Add new document"
+      sleep 1
+      click_link "Add new document"
 
-    attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
-    within "#document_0" do
-      click_link "Remove document"
+      expect(page).to have_selector "#new_document_link", visible: false
     end
 
-    expect(page).to have_content "Document was deleted successfully."
-  end
+    scenario "Should not show max documents warning when no documents added", :js do
+      login_as user
+      visit send(path, arguments)
 
-  scenario "Should show successful notice when resource filled correctly without any nested documents", :js do
-    login_as user
-    visit send(path, arguments)
-    send(fill_resource_method_name) if fill_resource_method_name
-
-    click_on submit_button
-    expect(page).to have_content documentable_success_notice
-  end
-
-  scenario "Should show successful notice when resource filled correctly and after valid file uploads", :js do
-    login_as user
-    visit send(path, arguments)
-    send(fill_resource_method_name) if fill_resource_method_name
-
-    attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
-
-    click_on submit_button
-    expect(page).to have_content documentable_success_notice
-  end
-
-  scenario "Should show new document after successful creation with one uploaded file", :js do
-    login_as user
-    visit send(path, arguments)
-    send(fill_resource_method_name) if fill_resource_method_name
-
-    attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
-
-    click_on submit_button
-    redirected_to_resource_show_or_navigate_to
-
-    expect(page).to have_content "Documents (1)"
-  end
-
-  scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
-    login_as user
-    visit send(path, arguments)
-    send(fill_resource_method_name) if fill_resource_method_name
-
-    documentable.class.max_documents_allowed.times.each do |index|
-      attach_new_file(documentable_factory_name, index , "spec/fixtures/files/empty.pdf")
+      expect(page).to have_selector ".max-documents-notice", visible: false
     end
 
-    click_on submit_button
-    redirected_to_resource_show_or_navigate_to
+    scenario "Should show max documents warning when max documents allowed limit is reached", :js do
+      login_as user
+      visit send(path, arguments)
 
-    expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
+      click_link "Add new document"
+      sleep 1
+      click_link "Add new document"
+      sleep 1
+      click_link "Add new document"
+
+      expect(page).to have_selector ".max-documents-notice", visible: true
+    end
+
+    scenario "Should hide max documents warning after any document removal", :js do
+      login_as user
+      visit send(path, arguments)
+
+      click_link "Add new document"
+      sleep 1
+      click_link "Add new document"
+      sleep 1
+      click_link "Add new document"
+      sleep 1
+      within "#document_0" do
+        find("a", text: "Remove document").click
+      end
+      sleep 1
+
+      expect(page).to have_selector ".max-documents-notice", visible: false
+    end
+
+    scenario "Should update nested document file name after choosing a file", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+
+      expect(page).to have_selector ".file-name", text: "empty.pdf"
+    end
+
+    scenario "Should update nested document file title with file name after choosing a file when no title defined", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+
+      expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "empty.pdf"
+    end
+
+    scenario "Should not update nested document file title with file name after choosing a file when title already defined", :js do
+      login_as user
+      visit send(path, arguments)
+
+      click_link "Add new document"
+      sleep 1
+      fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+      attach_file("#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf", make_visible: true)
+      sleep 1
+
+      expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "Title"
+    end
+
+    scenario "Should update loading bar style after valid file upload", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
+
+      expect(page).to have_selector ".loading-bar.complete"
+    end
+
+    scenario "Should update loading bar style after unvalid file upload", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+
+      expect(page).to have_selector ".loading-bar.errors"
+    end
+
+    scenario "Should update document cached_attachment field after valid file upload", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+
+      expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to include("empty.pdf")
+    end
+
+    scenario "Should not update document cached_attachment field after unvalid file upload", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+
+      expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to eq ""
+    end
+
+    scenario "Should show document errors after unvalid file upload", :js do
+      login_as user
+      visit send(path, arguments)
+
+      click_link "Add new document"
+      sleep 1
+      click_on submit_button
+
+      within "#document_0" do
+        expect(page).to have_content("can't be blank", count: 2)
+      end
+    end
+
+    scenario "Should delete document after valid file upload and click on remove button", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      within "#document_0" do
+        click_link "Remove document"
+      end
+
+      expect(page).not_to have_selector("#document_0")
+    end
+
+    scenario "Should delete document after valid file upload and click on remove button", :js do
+      login_as user
+      visit send(path, arguments)
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      within "#document_0" do
+        click_link "Remove document"
+      end
+
+      expect(page).to have_content "Document was deleted successfully."
+    end
+
+    scenario "Should show successful notice when resource filled correctly without any nested documents", :js do
+      login_as user
+      visit send(path, arguments)
+      send(fill_resource_method_name) if fill_resource_method_name
+
+      click_on submit_button
+      expect(page).to have_content documentable_success_notice
+    end
+
+    scenario "Should show successful notice when resource filled correctly and after valid file uploads", :js do
+      login_as user
+      visit send(path, arguments)
+      send(fill_resource_method_name) if fill_resource_method_name
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+
+      click_on submit_button
+      expect(page).to have_content documentable_success_notice
+    end
+
+    scenario "Should show new document after successful creation with one uploaded file", :js do
+      login_as user
+      visit send(path, arguments)
+      send(fill_resource_method_name) if fill_resource_method_name
+
+      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+
+      click_on submit_button
+      redirected_to_resource_show_or_navigate_to
+
+      expect(page).to have_content "Documents (1)"
+    end
+
+    scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
+      login_as user
+      visit send(path, arguments)
+      send(fill_resource_method_name) if fill_resource_method_name
+
+      documentable.class.max_documents_allowed.times.each do |index|
+        attach_new_file(documentable_factory_name, index , "spec/fixtures/files/empty.pdf")
+      end
+
+      click_on submit_button
+      redirected_to_resource_show_or_navigate_to
+
+      expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
+    end
+
   end
 
 end

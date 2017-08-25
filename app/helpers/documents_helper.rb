@@ -39,7 +39,7 @@ module DocumentsHelper
   def render_destroy_document_link(document, index)
     if document.persisted?
       link_to t('documents.form.delete_button'),
-              document_path(document, index: index),
+              document_path(document, index: index, nested_document: true),
               method: :delete,
               remote: true,
               data: { confirm: t('documents.actions.destroy.confirm') },
@@ -47,6 +47,7 @@ module DocumentsHelper
     elsif !document.persisted? && document.cached_attachment.present?
       link_to t('documents.form.delete_button'),
               destroy_upload_documents_path(path: document.cached_attachment,
+                                            nested_document: true,
                                             index: index,
                                             documentable_type: document.documentable_type,
                                             documentable_id: document.documentable_id),
@@ -68,7 +69,8 @@ module DocumentsHelper
                             url: document_direct_upload_url(document),
                             cached_attachment_input_field: document_nested_field_id(document, index, :cached_attachment),
                             multiple: false,
-                            index: index
+                            index: index,
+                            nested_document: true
                           },
                           name: document_nested_field_name(document, index, :attachment),
                           id: document_nested_field_id(document, index, :attachment)

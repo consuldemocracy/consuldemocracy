@@ -155,7 +155,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_content("You must sign in or register to continue.")
     end
 
-    scenario "Should be able for other users" do
+    scenario "Should not be able for other users" do
       login_as create(:user)
 
       visit new_document_path(documentable_type: documentable.class.name,
@@ -173,9 +173,97 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_selector("h1", text: "Upload document")
     end
 
+    scenario "Should display file name after file selection", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(page).to have_content "empty.pdf"
+    end
+
+    scenario "Should not display file name after file selection", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+      sleep 1
+
+      expect(page).not_to have_content "logo_header.jpg"
+    end
+
+    scenario "Should update loading bar style after valid file upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(page).to have_selector ".loading-bar.complete"
+    end
+
+    scenario "Should update loading bar style after unvalid file upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+      sleep 1
+
+      expect(page).to have_selector ".loading-bar.errors"
+    end
+
+    scenario "Should update document title with attachment original file name after file selection if no title defined by user", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(find("input[name='document[title]']").value).to eq("empty.pdf")
+    end
+
+    scenario "Should not update document title with attachment original file name after file selection when title already defined by user", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      fill_in :document_title, with: "My custom title"
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(find("input[name='document[title]']").value).to eq("My custom title")
+    end
+
+    scenario "Should update document cached_attachment field after valid file upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(find("input[name='document[cached_attachment]']", visible: false).value).to include("empty.pdf")
+    end
+
+    scenario "Should not update document cached_attachment field after unvalid file upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+      sleep 1
+
+      expect(find("input[name='document[cached_attachment]']", visible: false).value).to eq ""
+    end
+
     scenario "Should show documentable custom recomentations" do
       login_as documentable.author
-
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id,
                               from: send(documentable_path, arguments))
@@ -191,23 +279,13 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
     scenario "Should show validation errors" do
       login_as documentable.author
-
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
+
       click_on "Upload document"
 
       expect(page).to have_content "2 errors prevented this Document from being saved: "
-      expect(page).to have_selector "small.error", text: "can't be blank", count: 3
-    end
-
-    scenario "Should display file name after file selection", :js do
-      login_as documentable.author
-
-      visit new_document_path(documentable_type: documentable.class.name,
-                              documentable_id: documentable.id)
-      attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
-
-      expect(page).to have_content "empty.pdf"
+      expect(page).to have_selector "small.error", text: "can't be blank", count: 2
     end
 
     scenario "Should show error notice after unsuccessfull document upload" do
@@ -217,6 +295,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               documentable_id: documentable.id,
                               from: send(documentable_path, arguments))
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
+      sleep 1
       click_on "Upload document"
 
       expect(page).to have_content "Cannot create document. Check form errors and try again."
@@ -230,6 +309,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
+      sleep 1
       click_on "Upload document"
 
       expect(page).to have_content "Document was created successfully."
@@ -243,6 +323,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
+      sleep 1
       click_on "Upload document"
 
       within "##{dom_id(documentable)}" do
@@ -258,6 +339,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
+      sleep 1
       click_on "Upload document"
 
       expect(page).to have_link "Documents (1)"

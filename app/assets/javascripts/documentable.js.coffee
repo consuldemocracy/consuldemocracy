@@ -13,13 +13,15 @@ App.Documentable =
       formData: null
 
       add: (e, data) ->
-        wrapper = $(e.target).parent()
+        wrapper = $(e.target).closest('.document')
         index = $(e.target).data('index')
+        is_nested_document = $(e.target).data('nested-document')
         $(wrapper).find('.progress-bar-placeholder').empty()
         data.progressBar = $(wrapper).find('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
         data.formData = {
           "document[title]": $(wrapper).find('input.document-title').val() || data.files[0].name
-          "index": index
+          "index": index,
+          "nested_document": is_nested_document
         }
         data.submit()
 
@@ -49,21 +51,34 @@ App.Documentable =
       $('#new_document_link').show()
       $('.max-documents-notice').hide()
 
-  upload: (id, nested_document, result) ->
+  uploadNestedDocument: (id, nested_document, result) ->
     $('#' + id).replaceWith(nested_document)
+    @updateLoadingBar(id, result)
+    @initialize()
+
+  uploadPlainDocument: (id, nested_document, result) ->
+    $('#' + id).replaceWith(nested_document)
+    @updateLoadingBar(id, result)
+    @initialize()
+
+  updateLoadingBar: (id, result) ->
     if result
       $('#' + id).find('.loading-bar').addClass 'complete'
     else
       $('#' + id).find('.loading-bar').addClass 'errors'
-    @initialize()
 
   new: (nested_fields) ->
     $(".documents-list").append(nested_fields)
     @initialize()
 
-  destroy: (id, notice) ->
+  destroyNestedDocument: (id, notice) ->
     $('#' + id).remove()
     @updateNotice(notice)
+
+  replacePlainDocument: (id, notice, plain_document) ->
+    $('#' + id).replaceWith(plain_document)
+    @updateNotice(notice)
+    @initialize()
 
   updateNotice: (notice) ->
     if $('[data-alert]').length > 0
