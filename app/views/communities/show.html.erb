@@ -54,10 +54,12 @@
           <span class="user-name">
             <%= link_to participant.name, user_path(participant)%>
           </span>
-          &nbsp;&bull;&nbsp;
-          <span class="label round is-author">
-              <%= t("comments.comment.author") %>
-          </span>
+          <% if @community.topics.pluck(:author_id).include?(participant.id) %>
+            &nbsp;&bull;&nbsp;
+            <span class="label round is-author">
+                <%= t("comments.comment.author") %>
+            </span>
+          <% end %>
         </div>
       </div>
     </div>
