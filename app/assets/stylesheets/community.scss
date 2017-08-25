@@ -1,4 +1,7 @@
 .communities-show {
+  .button.disabled, .button[disabled] {
+    pointer-events: none;
+  }
 
   .wide-order-selector {
     margin-top: 0;
