@@ -36,12 +36,10 @@
         <h3><%= t("probes.show.share") %></h3>
         <div class="social-share-full">
           <%= social_share_button_tag("#{@probe_option.name} #{setting['twitter_hashtag']}") %>
-          <% if browser.device.mobile? %>
-            <a href="whatsapp://send?text=<%= @probe_option.name %> <%= plaza_probe_option_url(@probe_option) %>" data-action="share/whatsapp/share">
-              <span class="icon-whatsapp whatsapp"></span>
-              <span class="show-for-sr"><%= t("social.whatsapp") %></span>
-            </a>
-          <% end %>
+          <a href="whatsapp://send?text=<%= CGI.escape(@probe_option.name) %>&nbsp;<%= plaza_probe_option_url(@probe_option) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+            <span class="show-for-sr"><%= t("social.whatsapp") %></span>
+          </a>
         </div>
       </aside>
 
