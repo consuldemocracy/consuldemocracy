@@ -674,7 +674,7 @@ en:
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
-      retired: "Retired"
+      retired: "Retired proposal"
       see: "See proposal"
   votes:
     agree: I agree

@@ -674,7 +674,7 @@ es:
     proposals:
       send_notification: "Enviar notificación"
       retire: "Retirar"
-      retired: "Retirada"
+      retired: "Propuesta retirada"
       see: "Ver propuesta"
   votes:
     agree: Estoy de acuerdo
