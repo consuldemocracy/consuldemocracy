@@ -1,9 +1,9 @@
 <div class="row topic-show">
   <div class="small-12 medium-12 column">
-    <%= render "shared/back_link" %>
+    <%= back_link_to community_path(@community) %>
     <br>
 
-    <p><%= t("community.topic.show.community_of_the_proposal") %> <strong><%= community_title(@community) %></strong></p>
+    <p><%= community_text(@community) %> <strong><%= community_title(@community) %></strong></p>
     <h1><%= @topic.title %></h1>
     <div class="topic-info">
       <p><%= @topic.description %></p>

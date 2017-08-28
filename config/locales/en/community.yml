@@ -1,8 +1,8 @@
 en:
   community:
     sidebar:
-      title: Comunidad
-      description: Partecipa a la comunidad de usuarios, da tu opinión.
+      title: Community
+      description: Join the community of users, give your opinion.
       button_to_access: Access the community
     show:
       title:
@@ -39,7 +39,6 @@ en:
         update:
           submit_button: Update topic
       show:
-        community_of_the_proposal: Community of the proposal
         tab:
           comments_tab: Comments
       sidebar:

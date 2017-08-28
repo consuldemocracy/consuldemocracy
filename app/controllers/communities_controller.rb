@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
 
-  before_action :set_order, :set_community, :load_topics, only: :show
+  before_action :set_order, :set_community, :load_topics, :load_participants, only: :show
 
   has_orders %w{newest most_commented oldest}, only: :show
 

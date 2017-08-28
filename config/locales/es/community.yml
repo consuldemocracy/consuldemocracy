@@ -39,7 +39,6 @@ es:
         update:
           submit_button: Actualizar tema
       show:
-        community_of_the_proposal: Comunidad de la propuesta
         tab:
           comments_tab: Comentarios
       sidebar:
