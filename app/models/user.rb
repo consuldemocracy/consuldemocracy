@@ -57,11 +57,13 @@ class User < ActiveRecord::Base
   scope :officials,      -> { where("official_level > 0") }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
-  scope :by_document,    ->(document_type, document_number) { where(document_type: document_type, document_number: document_number) }
+  scope :by_document,    -> (document_type, document_number) { where(document_type: document_type, document_number: document_number) }
   scope :email_digest,   -> { where(email_digest: true) }
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
+  scope :by_comments,    -> (query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
+  scope :by_authors,     -> (author_ids) { where("users.id IN (?)", author_ids) }
 
   before_validation :clean_document_number
 
@@ -313,11 +315,6 @@ class User < ActiveRecord::Base
     follows.map{|follow| follow.followable.tags.map(&:name)}.flatten.compact.uniq
   end
 
-  def self.community_participants(community)
-    users_participants = users_who_commented_by(community) + users_who_topics_author_by(community)
-    users_participants.uniq
-  end
-
   private
 
     def clean_document_number
@@ -331,14 +328,4 @@ class User < ActiveRecord::Base
       validator.validate(self)
     end
 
-    def users_who_commented_by(community)
-      topics_ids = community.topics.pluck(:id)
-      query = "comments.commentable_id IN (?)and comments.commentable_type = 'Topic'"
-      User.joins(:comments).where(query, topics_ids).uniq
-    end
-
-    def users_who_topics_author_by(community)
-      author_ids = community.topics.pluck(:author_id)
-      User.where("users.id IN (?)", author_ids)
-    end
 end
