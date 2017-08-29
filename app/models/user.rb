@@ -314,13 +314,7 @@ class User < ActiveRecord::Base
   end
 
   def self.community_participants(community)
-    topics_ids = community.topics.pluck(:id)
-    users_who_commented = User.joins(:comments).where("comments.commentable_id IN (?) and comments.commentable_type = 'Topic'", topics_ids).uniq
-
-    author_ids = community.topics.pluck(:author_id)
-    users_who_authors = User.where("users.id IN (?)", author_ids)
-
-    users_participants = users_who_commented + users_who_authors
+    users_participants = users_who_commented_by(community) + users_who_topics_author_by(community)
     users_participants.uniq
   end
 
@@ -337,4 +331,14 @@ class User < ActiveRecord::Base
       validator.validate(self)
     end
 
+    def users_who_commented_by(community)
+      topics_ids = community.topics.pluck(:id)
+      query = "comments.commentable_id IN (?)and comments.commentable_type = 'Topic'"
+      User.joins(:comments).where(query, topics_ids).uniq
+    end
+
+    def users_who_topics_author_by(community)
+      author_ids = community.topics.pluck(:author_id)
+      User.where("users.id IN (?)", author_ids)
+    end
 end
