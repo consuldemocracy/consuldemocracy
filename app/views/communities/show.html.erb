@@ -1,4 +1,5 @@
 <div class="communities-show">
+
   <div class="jumbo light">
     <div class="row">
       <div class="small-12 column">
@@ -29,39 +30,9 @@
       <h2><%= t("community.show.sidebar.participate") %></h2>
       <%= link_to t("community.show.sidebar.new_topic"), new_community_topic_path(@community.id), class: "button expanded #{disabled_create_topic}", title: "#{disabled_info_title}" %>
     </aside>
+
   </div>
+
 </div>
 
-<div class="row column communities-participant">
-  <ul class="tabs" data-tabs id="communities-show-tabs">
-    <li class="tabs-title is-active">
-      <%= link_to "#tab-participants" do %>
-        <h3>
-          <%= t("community.show.tab.participants") %>
-          <span class="js-comments-count">(<%= @participants.count %>)</span>
-        </h3>
-      <% end %>
-    </li>
-  </ul>
-
-
-
-  <% @participants.each do |participant| %>
-    <div class="comment-body">
-      <div class="comment-info">
-        <%= avatar_image( participant, seed: participant.id, size: 32, class: 'author-photo') %>
-        <div class="comment-info">
-          <span class="user-name">
-            <%= link_to participant.name, user_path(participant)%>
-          </span>
-          <% if @community.topics.pluck(:author_id).include?(participant.id) %>
-            &nbsp;&bull;&nbsp;
-            <span class="label round is-author">
-                <%= t("comments.comment.author") %>
-            </span>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'participants' %>

@@ -17,4 +17,8 @@ module CommunitiesHelper
     community.from_proposal? ? t("community.show.description.proposal") : t("community.show.description.investment")
   end
 
+  def is_author?(community, participant)
+    community.topics.pluck(:author_id).include?(participant.id)
+  end
+
 end
