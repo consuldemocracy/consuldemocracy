@@ -111,6 +111,7 @@ feature 'Communities' do
     end
 
     scenario 'Should redirect root path when communities are disabled' do
+      Setting['feature.community'] = nil
       proposal = create(:proposal)
       community = proposal.community
 
