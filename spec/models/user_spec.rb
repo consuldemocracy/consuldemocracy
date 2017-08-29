@@ -681,21 +681,4 @@ describe User do
 
   end
 
-  describe "#community_participants" do
-
-    it "should return participants without duplicates" do
-      proposal = create(:proposal)
-      community = proposal.community
-      user1 = create(:user)
-      user2 = create(:user)
-
-      topic1 = create(:topic, community: community, author: user1)
-      create(:comment, commentable: topic1, author: user1)
-      create(:comment, commentable: topic1, author: user2)
-      topic2 = create(:topic, community: community, author: user2)
-
-      expect(User.community_participants(community)).to eq [user1, user2]
-    end
-  end
-
 end
