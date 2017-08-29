@@ -1,5 +1,4 @@
 include DocumentParser
-require "woocommerce_api"
 
 class CensusApi
 
@@ -18,7 +17,7 @@ class CensusApi
     end
 
     def valid?
-      data["last_order"].present?
+      data.class == Hash  && [:last_order].present?
     end
 
     def date_of_birth
@@ -54,6 +53,7 @@ class CensusApi
       all  = client.get("customers?per_page=100").parsed_response #client.call(:get_habita_datos, message: request(document_type, document_number)).body
       all.each do |a|
         if document_number ==  a["billing"]["company"]
+          puts  "get_response_body",a
           return a
         end
       end
@@ -61,6 +61,8 @@ class CensusApi
 
     def client
       #@client = Savon.client(wsdl: Rails.application.secrets.census_api_end_point)
+
+
       @client = WooCommerce::API.new(
         "http://www.kolhaam.org.il",
         "ck_1ef0696d317d1272b2d3fa3152f50155ad72ecb5",

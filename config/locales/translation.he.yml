@@ -209,8 +209,8 @@ he:
         one: תגובה
         other: תגובות
       debate:
-        one: דיון
-        other: דיונים
+        one: דיון ציבורי
+        other: דיונים ציבוריים
       tag:
         one: תגית
         other: תגיות
@@ -268,6 +268,9 @@ he:
       legislation/answers:
         one: תשובה
         other: תשובות
+      budget/investment/milestone:
+        one: 
+        other: 
     attributes:
       budget:
         name: שם
@@ -348,6 +351,7 @@ he:
         updated_at: עודכן ב-
         more_info_flag: לצפייה במידע נוסף
         print_content_flag: לחצן להדפסה
+        locale: 
       site_customization/image:
         name: שם
         image: תמונה
@@ -358,7 +362,7 @@ he:
       legislation/process:
         title: כותרת התהליך
         description: תיאור
-        additional_info: מידע נוסף
+        additional_info: עזרה
         start_date: תאריך התחלה
         end_date: תאריך סיום
         debate_start_date: תאריך תחילת הדיון
@@ -380,6 +384,9 @@ he:
         value: ערך
       legislation/annotation:
         text: תגובה
+      budget/investment/milestone:
+        title: 
+        description: 
   datetime:
     distance_in_words:
       half_a_minute: חצי דקה
@@ -527,6 +534,7 @@ he:
         tree_translate: Google Translate a tree to root locales
         unused: show unused translations
         xlsx_report: save missing and unused translations to an Excel file
+        check_normalized: 
       encourage:
       - Good job! סחטיין עליך!
       - Well done! שאפו!
@@ -776,7 +784,7 @@ he:
         filters:
           all: הכל
           on_comments: תגובות
-          on_debates: דיונים
+          on_debates: דיונים ציבוריים
           on_proposals: הצעות
           on_users: משתמשים/ות
         title: פעילות המנחה
@@ -821,6 +829,11 @@ he:
         no_heading: לקבוצה זו לא הוקצתה כותרת
         table_heading: כותרת
         table_amount: כמות
+        population: 
+        table_population: 
+      winners:
+        calculate: 
+        calculated: 
     budget_investments:
       index:
         heading_filter_all: כל הכותרות
@@ -836,6 +849,7 @@ he:
           valuation_finished_feasible: בר ביצוע
           selected: נבחר
           all: הכל
+          winners: 
         title: מיזמים להשקעה
         assigned_admin: מנהל/ת שהוקצה למיזם
         no_admin_assigned: לא הוקצה מנהל/ת
@@ -856,6 +870,7 @@ he:
         table_valuation_finished: ערך סופי
         table_selection: בחירה
         table_winner: זוכה
+        table_incompatible: 
       show:
         assigned_admin: מנהל/ת שהוקצה למיזם
         assigned_valuators: מעריכים/ות שהוקצו
@@ -871,6 +886,20 @@ he:
         edit_dossier: עריכת מסמכים נלווים
         tags: תגיות
         undefined: אינו מוגדר
+        milestone: 
+        new_milestone: 
+        compatibility:
+          title: 
+          'true': 
+          'false': 
+        selection:
+          title: 
+          'true': 
+          'false': 
+        winner:
+          title: 
+          'true': 
+          'false': 
       edit:
         classification: סיווג
         assigned_valuators: מעריכים/ות
@@ -879,6 +908,10 @@ he:
         tags: תגיות
         tags_placeholder: הזנת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)
         undefined: לא הוגדר
+        compatibility: 
+        mark_as_incompatible: 
+        selection: 
+        mark_as_selected: 
       search_unfeasible: חיפוש מיזמים שאינם ברי יישום
     comments:
       index:
@@ -887,7 +920,7 @@ he:
           all: הכל
           with_confirmed_hide: מאומת
           without_confirmed_hide: ממתין לאישור
-        hidden_debate: דיון מוסתר
+        hidden_debate: דיון ציבורי מוסתר
         hidden_proposal: הצעה מוסתרת
         title: תגובות מוסתרות
     dashboard:
@@ -901,7 +934,7 @@ he:
           all: הכל
           with_confirmed_hide: מאומת
           without_confirmed_hide: ממתין לאישור
-        title: דיונים מוסתרים
+        title: דיונים ציבוריים מוסתרים
     hidden_users:
       index:
         filter: מסנן
@@ -934,7 +967,7 @@ he:
         form:
           enabled: אפשר
           process: תהליך
-          debate_phase: שלב דיון
+          debate_phase: שלב דיון ציבורי
           allegations_phase: שלב הטענות
           start: פתיחת
           end: סיום
@@ -967,7 +1000,7 @@ he:
         subnav:
           info: מידע
           draft_texts: מלל
-          questions: דיון
+          questions: דיון ציבורי
       draft_versions:
         create:
           notice: נוצרה טיוטה בהצלחה. <a href="%{link}"> לצפייה ללחוץ כאן </a>
@@ -1072,7 +1105,7 @@ he:
       budgets: תקצובים שיתופיים
       geozones: ניהול אזור
       hidden_comments: תגובות מוסתרות
-      hidden_debates: דיונים מוסתרים
+      hidden_debates: דיונים ציבוריים מוסתרים
       hidden_proposals: הצעות מוסתרות
       hidden_users: משתמשים/ות מוסתרים/ות
       administrators: מנהלי/ות מערכת
@@ -1502,7 +1535,7 @@ he:
           comment_votes: הצבעות על תגובה
           comments: תגובות
           debate_votes: הצבעות על הדיון
-          debates: דיונים
+          debates: דיונים ציבוריים
           proposal_votes: הצבעות על הצעה
           proposals: הצעות
           budgets: תקציב פתוח
@@ -1633,6 +1666,25 @@ he:
           updated_at: עודכן ב-
           status_draft: טיוטה
           status_published: פורסם
+          locale: 
+    milestones:
+      index:
+        table_id: 
+        table_title: 
+        table_description: 
+        table_actions: 
+        delete: 
+        no_milestones: 
+      new:
+        creating: 
+      edit:
+        title: 
+      create:
+        notice: 
+      update:
+        notice: 
+      delete:
+        notice: 
   budgets:
     ballots:
       show:
@@ -1734,6 +1786,10 @@ he:
         supports: תמיכה
         votes: הצבעות
         price: מחיר
+        comments_tab: 
+        milestones_tab: 
+        no_milestones: 
+        milestone_publish_date: 
       wrong_price_format: רק בסכומים שלמים
       investment:
         add: הצבעה
@@ -1775,6 +1831,9 @@ he:
       amount_available: תקציב זמין
       accepted: 'הצעה להשקעה כספית שהתקבלה:'
       discarded: 'הצעה להשקעה כספית שהושלמה:'
+      link: 
+      heading_selection_title: 
+      incompatibles: 
   devise_views:
     confirmations:
       new:
@@ -1941,6 +2000,11 @@ he:
       username_label: שם משתמש/ת
       verified_account: החשבון זוהה בהצלחה
       verify_my_account: אימות חשבון
+      public_interests_label: 
+      public_interests_my_title_list: 
+      public_interests_user_title_list: 
+      public_interests_my_empty_list: 
+      public_interests_user_empty_list: 
   application:
     close: סגירה
     menu: תפריט
@@ -1952,7 +2016,7 @@ he:
       admin: מנהל/ת מערכת
       author: מחבר/ת
       deleted: תגובה זו נמחקה
-      moderator: מנחה דיון
+      moderator: מנחה דיון ציבורי
       responses:
         one: תגובה 1
         other: "%{count} תגובות"
@@ -1982,7 +2046,7 @@ he:
   debates:
     create:
       form:
-        submit_button: פתיחת דיון חדש
+        submit_button: פתיחת דיון ציבורי חדש
     debate:
       comments:
         one: תגובה אחת
@@ -2017,31 +2081,31 @@ he:
         relevance: שייכת לנושא
       search_form:
         button: חיפוש
-        placeholder: חיפוש דיונים...
+        placeholder: חיפוש דיונים ציבוריים...
         title: חיפוש
       search_results_html:
         one: " הכוללים את המונח <strong>'%{search_term}'</strong>"
         other: "  הכוללים את המונח <strong>'%{search_term}'</strong>"
       select_order: סדר לפי
-      start_debate: פתיחת דיון חדש
-      title: דיונים
+      start_debate: פתיחת דיון ציבורי חדש
+      title: דיונים ציבוריים
     new:
       form:
-        submit_button: פתיחת דיון חדש
+        submit_button: פתיחת דיון ציבורי חדש
       info: אם ברצונך להציע הצעה, לא כאן המקום. עבר/י אל %{info_link}.
       info_link: הצעה חדשה
-      more_info: מידע נוסף
+      more_info: עזרה
       recommendation_four: אנו מזמינים אותך ליהנות מהמרחב הזה ומהקולות הנשמעים בו,
         הוא שייך גם לך
       recommendation_one: בכתיבה נבקשך לשמור על שיח ענייני ומכבד, להמנע מהתקפות אישיות
         או שפה בוטה.
       recommendation_three: ביקורת חריפה תתקבל בברכה, זה בדיוק המקום לחשוב לעומק,
         אבל נבקשך לשמור על הנימוס ועל השכל הישר, העולם הוא מקום טוב יותר כשיש בו אותם.
-      recommendation_two: כל דיון או הצעה שתופיעה בו קריאה לפעילות בלתי חוקית - יימחקו
-        מיד כשיתגלו, ואיתן גם כל דיון או הצעה שבאו בכוונה להכפיש או לחבל במרחב השיח
-        הציבורי, חוץ מזה הכל מותר.
-      recommendations_title: המלצות ליצירת דיון
-      start_new: פתיחת דיון חדש
+      recommendation_two: כל דיון ציבורי או הצעה שתופיעה בו קריאה לפעילות בלתי חוקית
+        - יימחקו מיד כשיתגלו, ואיתן גם כל דיון ציבורי או הצעה שבאו בכוונה להכפיש או
+        לחבל במרחב השיח הציבורי, חוץ מזה הכל מותר.
+      recommendations_title: המלצות ליצירת דיון ציבורי
+      start_new: פתיחת דיון ציבורי חדש
     show:
       author_deleted: המשתמש/ת נמחק/ה
       comments:
@@ -2050,7 +2114,7 @@ he:
         zero: אין תגובות
       comments_title: תגובות
       edit_debate_link: עריכה
-      flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים/ות
+      flag: דיון ציבורי זה סומן כבלתי-ראוי על ידי מספר משתמשים/ות
       login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       share: שיתוף
     update:
@@ -2060,7 +2124,7 @@ he:
     accept_terms: אני מאשר/ת את %{policy} ואת %{conditions}
     accept_terms_title: אני מאשר/ת שקראתי והסכמתי למדיניות הפרטיות, לכללים ותנאי השימוש
     conditions: כללים ותנאי שימוש
-    debate: דיון
+    debate: דיון ציבורי
     direct_message: פנייה אישית
     error: שגיאה
     errors: שגיאות
@@ -2106,8 +2170,8 @@ he:
     header:
       administration: מנהלה
       available_locales: שפות לבחירה
-      collaborative_legislation: דיון השתתפותי
-      debates: דיונים
+      collaborative_legislation: דיון מקצועי
+      debates: דיונים ציבוריים
       external_link_blog: אתר קול העם
       external_link_opendata: מידע נגיש
       external_link_opendata_url: https://opendata.consul
@@ -2119,7 +2183,7 @@ he:
       moderation: הנחיה
       valuation: הערכה
       officing: משתמשים/ות בתפקיד רשמי בהצבעה סופית
-      more_info: מידע נוסף
+      more_info: עזרה
       my_account_link: החשבון שלי
       my_activity_link: הפעילות שלי
       notifications: הודעות
@@ -2138,6 +2202,7 @@ he:
       see_all: צפייה בהצעות
       budgets: תקצוב השתתפותי
       spending_proposals: הצעות להשקעה כספית
+      administration_menu: 
     admin:
       watch_form_message: יש לך שינויים שלא נשמרו, האם את/ה מאשר/ת את היציאה מדף?
         (נתונים לא ישמרו)
@@ -2279,9 +2344,9 @@ he:
       recommendation_three: ביקורת חריפה תתקבל בברכה - כאן בדיוק המקום לחשוב לעומק.
         אבל נבקשך לשמור על הנימוס ועל השכל הישר, לשמור על שיח ענייני ומכבד, להמנע
         מהתקפות אישיות או שפה בוטה.
-      recommendation_two: כל דיון או הצעה שתופיעה בו קריאה לפעילות בלתי חוקית יימחקו
-        מיד כשיתגלו, ואיתן גם כל דיון או הצעה שבאו בכוונה להכפיש או לחבל במרחב השיח
-        הציבורי, חוץ מזה הכל מותר
+      recommendation_two: כל דיון ציבורי או הצעה שתופיעה בו קריאה לפעילות בלתי חוקית
+        יימחקו מיד כשיתגלו, ואיתן גם כל דיון ציבורי או הצעה שבאו בכוונה להכפיש או
+        לחבל במרחב השיח הציבורי, חוץ מזה הכל מותר
       recommendations_title: המלצות ליצירת הצעה חדשה
       start_new: הצעה חדשה
     notice:
@@ -2345,7 +2410,7 @@ he:
         expired: לא בתוקף
       title: הצבעות
       participate_button: השתתפות בהצבעה זו
-      participate_button_incoming: מידע נוסף
+      participate_button_incoming: עזרה
       participate_button_expired: ההצבעה הסתיימה
       no_geozone_restricted: בכל הערים/הרשויות
       geozone_restricted: מחוזות
@@ -2372,7 +2437,7 @@ he:
       original_proposal: ההצעה המקורית
       author: נוצרה על ידי
       dates_title: תאריכי השתתפות
-      more_info: מידע נוסף
+      more_info: עזרה
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להשתתף
       signin: התחברות
       signup: הרשמה
@@ -2439,11 +2504,11 @@ he:
     suggest:
       debate:
         found:
-          one: כבר קיימים דיונים בנושא '%{query}' ,תוכל/י להצטרף אליהם במקום לפתוח
-            עוד דיון מקביל
-          other: כבר קיימים דיונים בנושא '%{query}' ,תוכל/י להצטרף אליהם במקום לפתוח
-            עוד דיון מקביל
-        message: מציג %{limit} מתוך %{count} דיונים הכוללים את המונח '%{query}'
+          one: כבר קיימים דיונים ציבוריים בנושא '%{query}' , תוכל/י להצטרף אליהם במקום
+            לפתוח עוד דיון ציבורי מקביל
+          other: כבר קיימים דיונים ציבוריים בנושא '%{query}' , תוכל/י להצטרף אליהם
+            במקום לפתוח עוד דיון מקביל
+        message: מציג %{limit} מתוך %{count} דיונים ציבוריים הכוללים את המונח '%{query}'
         see_all: הצג הכל
       budget_investment:
         found:
@@ -2470,11 +2535,26 @@ he:
     you_are_in: הנך נמצא/ת ב-
     unflag: הסרת הסימן
     outline:
-      debates: דיונים
+      debates: דיונים ציבוריים
       proposals: הצעות
       budget: תקצוב השתתפותי
       searcher: חיפוש
     go_to_page: עבור אל הדף של
+    follow: 
+    follow_entity: 
+    followable:
+      budget_investment:
+        create:
+          notice_html: 
+        destroy:
+          notice_html: 
+      proposal:
+        create:
+          notice_html: 
+        destroy:
+          notice_html: 
+    unfollow: 
+    unfollow_entity: 
   social:
     blog: "%{org} בלוג"
     facebook: "%{org} פייסבוק"
@@ -2537,11 +2617,11 @@ he:
   stats:
     index:
       visits: כניסות
-      debates: דיונים
+      debates: דיונים ציבוריים
       proposals: הצעות
       comments: תגובות
       proposal_votes: הצבעות על הצעות
-      debate_votes: הצבעות על דיונים
+      debate_votes: הצבעות על דיונים ציבוריים
       comment_votes: הצבעות על תגובות
       votes: סך כל ההצבעות
       verified_users: משתמשים/ות מאומתים/ות
@@ -2567,7 +2647,7 @@ he:
         receiver: ההודעה נשלחה אל %{receiver}
     show:
       deleted: מחיקה
-      deleted_debate: דיון זה נמחק
+      deleted_debate: דיון ציבורי זה נמחק
       deleted_proposal: הצעה זו נמחקה
       deleted_budget_investment: השקעה זו נמחקה
       filters:
@@ -2575,14 +2655,17 @@ he:
           one: תגובה 1
           other: "%{count} תגובות"
         debates:
-          one: דיון 1
-          other: "%{count} דיונים"
+          one: דיון ציבורי 1
+          other: "%{count} דיונים ציבוריים"
         proposals:
           one: הצעה 1
           other: "%{count} הצעות"
         budget_investments:
           one: השקעה 1
           other: "%{count} השקעות"
+        follows:
+          one: 
+          other: 
       no_activity: למשתמש/ת זה/ו אין פעילות ציבורית
       no_private_messages: משתמש/ת זה/זו אינו/ה מקבל/ת פניות אישיות.
       private_activity: משתמש/ת זה/ו בחר/ה לשמור בפרטי את רשימת הפעילויות שלו/ה
@@ -2619,9 +2702,9 @@ he:
   welcome:
     debates:
       description: 'שיתוף ההצעות שלך ותמיכה בהצעות שעלו. הצעות שיעברו את רף האישור
-        הנדרש של חברי/ות קול העם יעברו לשלב הבא: דיון צוות מעמיק להפקת המסמך להצבעה
-        סופית. '
-      title: דיונים
+        הנדרש של חברי/ות קול העם יעברו לשלב הבא: דיון צוות מקצועי מעמיק להפקת המסמך
+        להצבעה סופית. '
+      title: דיונים ציבוריים
     decide:
       description: חברי/ות התנועה מחליטים/ות אם הם/ן מקבלים/ות או דוחים/ות את ההצעות
         הנתמכות ביותר על ידי האזרחים/ות.
@@ -2725,7 +2808,7 @@ he:
         see_latest_comments_title: תגובה על תהליך זה
       shared:
         key_dates: תאריכים חשובים
-        debate_dates: דיון
+        debate_dates: דיון ציבורי
         draft_publication_date: פרסום טיוטה
         allegations_dates: טענות
         result_publication_date: פרסום תוצאות סופית
@@ -2741,13 +2824,13 @@ he:
           zero: אין תגובות
           one: "%{count} תגובה"
           other: "%{count} תגובות"
-        debate: דיון
+        debate: דיון ציבורי
       show:
         answer_question: שליחת תשובה
         next_question: שאלה הבאה
         first_question: שאלה ראשונה
         share: שתף
-        title: תהליך דיון השתתפותי
+        title: תהליך דיון מקצועי
       participation:
         phase_not_open: שלב זה לא נפתח עדיין
         organizations: ארגונים אינם רשאים להשתתף בדיון
@@ -2759,7 +2842,7 @@ he:
         debate_phase_not_open: שלב הדיון הסתיים ותשובות נוספות לא מתקבלות
     shared:
       share: שתף
-      share_comment: תגובה על %{version_name} מתוך טיוטת תהליך דיון השתתפותי %{process_name}
+      share_comment: תגובה על %{version_name} מתוך טיוטת תהליך דיון מקצועי %{process_name}
   mailers:
     no_reply: נא לא להשיב להודעה זו. ההודעה נשלחה מכתובת דואר אלקטרוני שאינה מקבלת
       הודעות חוזרות.
@@ -2941,7 +3024,7 @@ he:
       user_invites: הזמנות של המשתמש/ת
     permissions:
       create_proposals: יצירת הצעות
-      debates: השתתפות בדיונים
+      debates: השתתפות בדיונים ציבוריים
       support_proposals: תמיכה בהצעות
       vote_proposals: הצבעה על הצעות
     print:
@@ -3017,6 +3100,7 @@ he:
       create:
         success_html: "<strong>%{count} הזמנות </strong> נשלחו."
         title: הזמנות של המשתמש/ת
+    date_of_birth: 
   moderation:
     header:
       title: הנחייה
@@ -3031,7 +3115,7 @@ he:
           with_ignored_flag: סומן כנצפה
         headers:
           comment: תגובה
-          moderate: הנחה דיון
+          moderate: הנחה דיון ציבורי
         hide_comments: הסתר תגובות
         ignore_flags: סמנו כנראה
         order: הזמינו
@@ -3052,18 +3136,18 @@ he:
           pending_flag_review: ממתין לאישור
           with_ignored_flag: סומן כנצפה
         headers:
-          debate: דיון
-          moderate: הנחה דיון
+          debate: דיון ציבורי
+          moderate: הנחה דיון ציבורי
         hide_debates: הסתירו את הדיון
         ignore_flags: סמן כנצפה
         order: הזמן
         orders:
           created_at: החדש ביותר
           flags: הנצפה ביותר
-        title: דיונים
+        title: דיונים ציבוריים
     menu:
       flagged_comments: תגובות
-      flagged_debates: דיונים
+      flagged_debates: דיונים ציבוריים
       proposals: הצעות
       users: חסימת משתמשים/ות
     proposals:
@@ -3203,22 +3287,22 @@ he:
     general_terms: כללים ותנאי שימוש
     more_info:
       title: למד על %{org_name}
-      subtitle: ללמוד כל מה שניתן לעשות באתר זה
-      guide: מדריך זה מסביר כל חלק ב %{org_name}. ניתן להרחיב על המידע בקישור "מידע
-        מפורט".
+      subtitle: ללמוד כל מה שניתן לעשות במערכת ההצבעות
+      guide: מדריך זה מסביר כל חלק במערכת ההצבעות של %{org_name}. ניתן להרחיב למידע
+        נוסף בקישור "הצגת שאלות נפוצות".
       menu:
-        debates: דיונים
+        debates: דיונים ציבוריים
         proposals: הצעות
         budgets: תקצובים שיתופיים
         other: מידע נוסף שעשוי לעניין אותך
       debates:
-        title: דיונים
-        description: יצירת דיון בכל רעיון לשיפור ניהול המדינה, שברצונך לשתף עם אזרחים/ות
-          נוספים/ות.
-        feature_1: כדי ליצור דיון עליך %{link}
+        title: דיונים ציבוריים
+        description: יצירת דיון ציבורי בכל רעיון לשיפור ניהול המדינה, שברצונך לשתף
+          עם אזרחים/ות נוספים/ות.
+        feature_1: כדי ליצור דיון ציבורי עליך %{link}
         feature_1_link: להרשם ולהתחבר ל %{org_name}
-        feature_2_html: דיונים ניתן לדרג באמצעות הקשה על לחצן <strong>אני מסכים/ה
-          </strong> או <strong>לא מסכים/ה</strong> שנמצאים לצד כל דיון
+        feature_2_html: דיונים ציבוריים ניתן לדרג באמצעות הקשה על לחצן <strong>אני
+          מסכים/ה </strong> או <strong>לא מסכים/ה</strong> שנמצאים לצד כל דיון ציבורי
         image_alt: לחצנים לדרג את הדיונים
         figcaption: '"אני מסכים/ה" ו "לא מסכים/ה" הם לחצנים המדרגים את הדיונים'
       proposals:
@@ -3228,12 +3312,11 @@ he:
           את חשבונך
         feature_1_link: להרשם ל%{org_name}
         feature_2_html: הצעות שמקבלות <strong> תמיכה החל מ 10% מהמתפקדים/ות </strong>
-          ימשיכו הלאה לשלב הצבעה סופית.
-        feature_3_html: 'אם יש יותר א/נשים בעד מאשר נגד ההצעה <strong> קול העם תפרסם
-          את ההצעה שהתקבלה </strong>  כדי שיהיה אפשר לעקוב אחר התקדמותה.
-
-'
-        image_alt: Button to support a proposal
+          ימשיכו הלאה לשלב דיון צוות מקצועי מעמיק, להפקת המסמך שיעבור להצבעה סופית.
+        feature_3_html: צוות הצבעות של קול העם יעביר את ההצעה <strong> בתום הדיון
+          המקצועי </strong> להצבעת המתפקדים/ות ויפרסם את פתיחת ההצבעה, כדי שיהיה אפשר
+          לעקוב אחר התקדמותה.
+        image_alt: תמיכה בהצעות
         figcaption_html: לחצן להביע "תמיכה" בהצעה.<br>כאשר היא מגיעה למספר התומכים
           הנדרש ניתן להעבירה להצבעה
       budgets:
@@ -3266,11 +3349,11 @@ he:
           title: שאלות נפוצות
           description: רשימה של פתרונות לבעיות נפוצות/שאלות טכניות על מערכת ההצבעות
           faq_1_title: אני לא רוצה להתפקד לקול העם, האם אני יכול/ה להשתתף?
-          faq_1_description: 'בשלב הדיון תוכל/י להעלות רעיון לאחר הרשמה למערכת וגם
-            להשאיר תגובה. אולם לא תוכל/י להשתתף בניסוח מסמכי דיון השתתפותי, לתמוך
-            בהצעות, או להצביע בהצבעות סופיות, אלו מוגבלות למתפקדי קול העם בלבד, כי
-            מדובר בקבלת החלטות המשפיעות על התנהלות המפלגה, ולכן רק מתפקדים/ות יכולים/ות
-            להשפיע על החלטות אלו. '
+          faq_1_description: 'בשלב הדיון הציבורי תוכל/י להעלות רעיון לאחר הרשמה למערכת,
+            לדרג בעד או נגד וגם להשאיר תגובה ולדרג תגובות של אחרים/ות. אולם לא תוכל/י
+            להשתתף בניסוח מסמכי דיון מקצועי, לתמוך בהצעות, או להצביע בהצבעות סופיות,
+            אלו מוגבלות למתפקדי קול העם בלבד, כי מדובר בקבלת החלטות המשפיעות על התנהלות
+            המפלגה, ולכן רק מתפקדים/ות יכולים/ות להשפיע על החלטות אלו. '
       other:
         title: עוד מידע מעניין
         how_to_use: שימוש %{org_name} בעירך
@@ -3327,13 +3410,13 @@ he:
       twitter_login: התחברות באמצעות טוויטר Twitter
       facebook_login: התחברות באמצעות פייסבוק
       google_login: התחברות עם גוגל Google
-      debates: דיונים
+      debates: דיונים ציבוריים
       polls: הצבעות סופיות
       signature_sheets: גליונות חתימה
       spending_proposals: מיזמים להשקעה
       spending_proposal_features:
         voting_allowed: להצביע על מיזמים להשקעה
-      legislation: דיון השתתפותי
+      legislation: דיון מקצועי
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: Site description (SEO)
@@ -3341,6 +3424,8 @@ he:
     verification_offices_url: Verification offices URL
     min_age_to_participate: Minimum age needed to participate
     proposal_improvement_path: Proposal improvement info internal link
+    per_page_code_head: 
+    per_page_code_body: 
   valuation:
     header:
       title: הערכה
