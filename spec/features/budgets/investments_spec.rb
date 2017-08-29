@@ -330,6 +330,22 @@ feature 'Budget Investments' do
     expect(page).to have_content "Access the community"
   end
 
+  scenario 'Can access the community' do
+    Setting['feature.community'] = true
+
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    expect(page).to have_content "Access the community"
+
+    Setting['feature.community'] = false
+  end
+
+  scenario 'Can not access the community' do
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    expect(page).not_to have_content "Access the community"
+  end
+
   scenario "Don't display flaggable buttons" do
     investment = create(:budget_investment, heading: heading)
 

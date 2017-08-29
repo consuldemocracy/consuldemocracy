@@ -2,6 +2,14 @@ require 'rails_helper'
 
 feature 'Communities' do
 
+  background do
+    Setting['feature.community'] = true
+  end
+
+  after do
+    Setting['feature.community'] = nil
+  end
+
   context 'Show' do
 
     scenario 'Should display default content' do
@@ -100,6 +108,15 @@ feature 'Communities' do
         expect(page).to have_content topic.author.name
         expect(page).to have_content comment.author.name
       end
+    end
+
+    scenario 'Should redirect root path when communities are disabled' do
+      proposal = create(:proposal)
+      community = proposal.community
+
+      visit community_path(community)
+
+      expect(current_path).to eq(root_path)
     end
 
   end
