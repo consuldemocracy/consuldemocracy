@@ -9,6 +9,7 @@ class Proposal < ActiveRecord::Base
   include HasPublicAuthor
   include Graphqlable
   include Followable
+  include Communitable
   include Documentable
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
@@ -23,7 +24,6 @@ class Proposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
-  belongs_to :community
   has_many :comments, as: :commentable
   has_many :proposal_notifications
 
@@ -44,7 +44,6 @@ class Proposal < ActiveRecord::Base
   before_validation :set_responsible_name
 
   before_save :calculate_hot_score, :calculate_confidence_score
-  before_create :associate_community
 
   scope :for_render, -> { includes(:tags) }
   scope :sort_by_hot_score, -> { reorder(hot_score: :desc) }
@@ -180,11 +179,6 @@ class Proposal < ActiveRecord::Base
 
   def users_to_notify
     (voters + followers).uniq
-  end
-
-  def associate_community
-    community =  Community.create
-    self.community_id =  community.id
   end
 
   protected

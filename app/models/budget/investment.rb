@@ -6,6 +6,7 @@ class Budget
     include Searchable
     include Reclassification
     include Followable
+    include Communitable
     include Documentable
     documentable max_documents_allowed: 3,
                  max_file_size: 3.megabytes,
@@ -21,7 +22,6 @@ class Budget
     belongs_to :group
     belongs_to :budget
     belongs_to :administrator
-    belongs_to :community
 
     has_many :valuator_assignments, dependent: :destroy
     has_many :valuators, through: :valuator_assignments
@@ -72,7 +72,6 @@ class Budget
 
     before_save :calculate_confidence_score
     after_save :recalculate_heading_winners if :incompatible_changed?
-    before_create :associate_community
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
@@ -258,11 +257,6 @@ class Budget
       investments = investments.by_heading(params[:heading_id]) if params[:heading_id].present?
       investments = investments.search(params[:search])         if params[:search].present?
       investments
-    end
-
-    def associate_community
-      community =  Community.create
-      self.community_id =  community.id
     end
 
     private
