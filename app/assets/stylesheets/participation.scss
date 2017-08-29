@@ -875,6 +875,20 @@
   }
 }
 
+.help-link {
+  margin-left: $line-height;
+  position: relative;
+
+  &::before {
+    color: $link;
+    content: '\4e';
+    font-family: 'icons';
+    position: absolute;
+    left: -24px;
+    top: -2px;
+  }
+}
+
 // 05. Featured
 // ------------
 
