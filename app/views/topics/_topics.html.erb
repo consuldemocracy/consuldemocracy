@@ -1,4 +1,5 @@
 <% if topics.any? %>
+
   <div class="row column">
     <div class="order">
       <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
@@ -6,9 +7,12 @@
   </div>
 
   <% topics.each do |topic| %>
+
     <div id="<%= dom_id(topic) %>" class="panel column">
       <div class="small-10 column">
+
         <h3><%= link_to topic.title, community_topic_path(@community, topic) %></h3>
+
         <p class="topic-info">
           <span class="icon-comments"></span>&nbsp;
           <%= link_to t("community.show.topic.comments", count: topic.comments_count), community_topic_path(@community, topic, anchor: "comments") %>
@@ -17,14 +21,19 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= topic.author.name %>
         </p>
+
       </div>
+
       <div class="small-2 column text-right">
         <% if topic.author == current_user %>
           <%= link_to t("community.show.topic.edit_button"), edit_community_topic_path(@community.id, topic), class: 'button small hollow' %>
         <% end %>
       </div>
+
     </div>
+
   <% end %>
+
 <% else %>
   <h4><%= t("community.show.create_first_community_topic") %></h4>
 <% end %>

@@ -327,6 +327,7 @@ feature 'Budget Investments' do
     within("#investment_code") do
       expect(page).to have_content(investment.id)
     end
+    expect(page).to have_content "Access the community"
   end
 
   scenario "Don't display flaggable buttons" do

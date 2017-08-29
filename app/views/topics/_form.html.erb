@@ -3,6 +3,7 @@
   <%= render 'shared/errors', resource: @topic %>
 
   <div class="row">
+
     <div class="small-12 column">
       <%= f.label :title, t("community.topic.form.topic_title") %>
       <%= f.text_field :title, label: false %>
@@ -13,6 +14,7 @@
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("community.topic.form.#{action_name}.submit_button")) %>
     </div>
+    
   </div>
-  
+
 <% end %>
