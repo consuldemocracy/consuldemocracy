@@ -88,12 +88,6 @@ rm -rf /usr/local/var/postgres
 brew install postgis
 ```
 
-## Ghostscript
-
-```
-brew install ghostscript
-```
-
 ## PhantomJS
 
 ```

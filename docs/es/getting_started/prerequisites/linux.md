@@ -84,12 +84,6 @@ apt-get update
 apt-get install postgresql-9.4
 ```
 
-## Ghostscript
-
-```
-apt-get install ghostscript
-```
-
 ## Clonar el repositorio
 
 Ahora que ya tenemos todas las dependencias instalado podemos bajarnos el proyecto:

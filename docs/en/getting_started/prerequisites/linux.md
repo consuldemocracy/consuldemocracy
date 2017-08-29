@@ -86,10 +86,4 @@ apt-get update
 apt-get install postgresql-9.4
 ```
 
-## Ghostscript
-
-```
-apt-get install ghostscript
-```
-
 > Now you're ready to go get Consul [installed](../installation.html)!!
