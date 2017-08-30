@@ -1495,13 +1495,9 @@
 
 .poll,
 .poll-question {
-  background: #fff;
-  border-radius: rem-calc(6);
+  border: 1px solid $border;
   margin-bottom: $line-height / 2;
-}
-
-.poll {
-  padding: $line-height;
+  padding: $line-height / 2;
   position: relative;
 
   .icon-poll-answer {
