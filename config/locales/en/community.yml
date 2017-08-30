@@ -15,7 +15,7 @@ en:
         first_theme_not_logged_in: No issue yet available, participate creating the first one. Click on the create new topic button.
         first_theme: Create the first community topic
         sub_first_theme: To create a theme you have to %{link}
-        sign_link: "access in %{org_name}"
+        sign_link: "access %{org_name}"
       tab:
         participants: Participants
       sidebar:

@@ -15,7 +15,7 @@ es:
         first_theme_not_logged_in: Aún no hay ningun tema disponible, participa creando el primero. Haz click en el botón crear nuevo tema.
         first_theme: Crea el primer tema de la comunidad
         sub_first_theme: Para crear un tema tienes que %{link}
-        sign_link: "acceder en %{org_name}"
+        sign_link: "acceder a %{org_name}"
       tab:
         participants: Participantes
       sidebar:
