@@ -250,6 +250,7 @@
 .budget-investment-form,
 .spending-proposal-form,
 .document-form,
+.topic-new,
 .topic-form  {
 
   .icon-debates,
@@ -300,6 +301,7 @@
 
 .proposal-form,
 .topic-form,
+.topic-new,
 .document-form {
 
   .recommendations li::before {
@@ -633,7 +635,7 @@
 .investment-project,
 .budget-investment,
 .legislation,
-.communities-show  {
+.communities-show {
   margin: $line-height / 4 0;
 
   .panel {
