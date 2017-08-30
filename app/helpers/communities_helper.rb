@@ -18,7 +18,12 @@ module CommunitiesHelper
   end
 
   def is_author?(community, participant)
-    community.topics.pluck(:author_id).include?(participant.id)
+    if community.from_proposal?
+      community.proposal.author_id == participant.id
+    else
+      investment = Budget::Investment.where(community_id: community.id).first
+      investment.author_id == participant.id
+    end
   end
 
 end
