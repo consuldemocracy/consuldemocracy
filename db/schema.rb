@@ -156,6 +156,10 @@ ActiveRecord::Schema.define(version: 20170719174326) do
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
+    t.datetime "ignored_flag_at"
+    t.text     "moderation_text"
+    t.integer  "flags_count",                           default: 0
+    t.integer  "cached_ballots_up",                     default: 0,           null: false
     t.integer  "ballot_lines_count",                    default: 0
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
@@ -535,37 +539,169 @@ ActiveRecord::Schema.define(version: 20170719174326) do
 
   add_index "organizations", ["user_id"], name: "index_organizations_on_user_id", using: :btree
 
-  create_table "probe_options", force: :cascade do |t|
-    t.string  "code"
-    t.string  "name"
-    t.integer "probe_id"
-    t.integer "probe_selections_count", default: 0
-    t.integer "debate_id"
-    t.integer "comments_count",         default: 0, null: false
+  create_table "poll_answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "author_id"
+    t.string   "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "probe_options", ["debate_id"], name: "index_probe_options_on_debate_id", using: :btree
+  add_index "poll_answers", ["author_id"], name: "index_poll_answers_on_author_id", using: :btree
+  add_index "poll_answers", ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer", using: :btree
+  add_index "poll_answers", ["question_id"], name: "index_poll_answers_on_question_id", using: :btree
 
-  create_table "probe_selections", force: :cascade do |t|
-    t.integer  "probe_id"
-    t.integer  "probe_option_id"
+  create_table "poll_booth_assignments", force: :cascade do |t|
+    t.integer  "booth_id"
+    t.integer  "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "poll_booth_assignments", ["booth_id"], name: "index_poll_booth_assignments_on_booth_id", using: :btree
+  add_index "poll_booth_assignments", ["poll_id"], name: "index_poll_booth_assignments_on_poll_id", using: :btree
+
+  create_table "poll_booths", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+  end
+
+  create_table "poll_final_recounts", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_assignment_id"
+    t.integer  "count"
+    t.text     "count_log",                 default: ""
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.text     "officer_assignment_id_log", default: ""
+    t.date     "date",                                   null: false
+  end
+
+  add_index "poll_final_recounts", ["booth_assignment_id"], name: "index_poll_final_recounts_on_booth_assignment_id", using: :btree
+  add_index "poll_final_recounts", ["officer_assignment_id"], name: "index_poll_final_recounts_on_officer_assignment_id", using: :btree
+
+  create_table "poll_null_results", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "amount"
+    t.string  "origin"
+    t.date    "date"
+    t.integer "booth_assignment_id"
+    t.integer "officer_assignment_id"
+    t.text    "amount_log",                default: ""
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
+  end
+
+  add_index "poll_null_results", ["booth_assignment_id"], name: "index_poll_null_results_on_booth_assignment_id", using: :btree
+  add_index "poll_null_results", ["officer_assignment_id"], name: "index_poll_null_results_on_officer_assignment_id", using: :btree
+
+  create_table "poll_officer_assignments", force: :cascade do |t|
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.date     "date",                                null: false
+    t.boolean  "final",               default: false
+    t.string   "user_data_log",       default: ""
+  end
+
+  add_index "poll_officer_assignments", ["booth_assignment_id"], name: "index_poll_officer_assignments_on_booth_assignment_id", using: :btree
+  add_index "poll_officer_assignments", ["officer_id", "date"], name: "index_poll_officer_assignments_on_officer_id_and_date", using: :btree
+  add_index "poll_officer_assignments", ["officer_id"], name: "index_poll_officer_assignments_on_officer_id", using: :btree
+
+  create_table "poll_officers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "failed_census_calls_count", default: 0
+  end
+
+  add_index "poll_officers", ["user_id"], name: "index_poll_officers_on_user_id", using: :btree
+
+  create_table "poll_partial_results", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "author_id"
+    t.string  "answer"
+    t.integer "amount"
+    t.string  "origin"
+    t.date    "date"
+    t.integer "booth_assignment_id"
+    t.integer "officer_assignment_id"
+    t.text    "amount_log",                default: ""
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
+  end
+
+  add_index "poll_partial_results", ["answer"], name: "index_poll_partial_results_on_answer", using: :btree
+  add_index "poll_partial_results", ["author_id"], name: "index_poll_partial_results_on_author_id", using: :btree
+  add_index "poll_partial_results", ["booth_assignment_id", "date"], name: "index_poll_partial_results_on_booth_assignment_id_and_date", using: :btree
+  add_index "poll_partial_results", ["origin"], name: "index_poll_partial_results_on_origin", using: :btree
+  add_index "poll_partial_results", ["question_id"], name: "index_poll_partial_results_on_question_id", using: :btree
+
+  create_table "poll_questions", force: :cascade do |t|
+    t.integer  "proposal_id"
+    t.integer  "poll_id"
+    t.integer  "author_id"
+    t.string   "author_visible_name"
+    t.string   "title"
+    t.string   "valid_answers"
+    t.text     "description"
+    t.integer  "comments_count"
+    t.datetime "hidden_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.tsvector "tsv"
+  end
+
+  add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
+  add_index "poll_questions", ["poll_id"], name: "index_poll_questions_on_poll_id", using: :btree
+  add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
+  add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
+
+  create_table "poll_voters", force: :cascade do |t|
+    t.string   "document_number"
+    t.string   "document_type"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "poll_id",               null: false
+    t.integer  "booth_assignment_id"
+    t.integer  "age"
+    t.string   "gender"
+    t.integer  "geozone_id"
+    t.integer  "answer_id"
+    t.integer  "officer_assignment_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
-  add_index "probe_selections", ["probe_id"], name: "index_probe_selections_on_probe_id", using: :btree
-  add_index "probe_selections", ["probe_option_id"], name: "index_probe_selections_on_probe_option_id", using: :btree
-  add_index "probe_selections", ["user_id"], name: "index_probe_selections_on_user_id", using: :btree
+  add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree
+  add_index "poll_voters", ["document_number"], name: "index_poll_voters_on_document_number", using: :btree
+  add_index "poll_voters", ["officer_assignment_id"], name: "index_poll_voters_on_officer_assignment_id", using: :btree
+  add_index "poll_voters", ["poll_id", "document_number", "document_type"], name: "doc_by_poll", using: :btree
+  add_index "poll_voters", ["poll_id"], name: "index_poll_voters_on_poll_id", using: :btree
+  add_index "poll_voters", ["user_id"], name: "index_poll_voters_on_user_id", using: :btree
 
-  create_table "probes", force: :cascade do |t|
-    t.string   "codename"
-    t.boolean  "selecting_allowed", default: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "poll_white_results", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "amount"
+    t.string  "origin"
+    t.date    "date"
+    t.integer "booth_assignment_id"
+    t.integer "officer_assignment_id"
+    t.text    "amount_log",                default: ""
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
   end
 
-  add_index "probes", ["codename"], name: "index_probes_on_codename", using: :btree
+  add_index "poll_white_results", ["booth_assignment_id"], name: "index_poll_white_results_on_booth_assignment_id", using: :btree
+  add_index "poll_white_results", ["officer_assignment_id"], name: "index_poll_white_results_on_officer_assignment_id", using: :btree
+
+  create_table "polls", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "published",          default: false
+    t.boolean  "geozone_restricted", default: false
+  end
+
+  add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
 
   create_table "proposal_notifications", force: :cascade do |t|
     t.string   "title"

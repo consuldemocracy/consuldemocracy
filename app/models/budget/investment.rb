@@ -275,7 +275,7 @@ class Budget
       budget.formatted_amount(price)
     end
 
-    def self.apply_filters_and_search(_budget, params, current_filter = nil)
+    def self.apply_filters_and_search(budget, params, current_filter = nil)
       investments = all
       investments = investments.send(current_filter)            if current_filter.present?
       if budget.balloting?
