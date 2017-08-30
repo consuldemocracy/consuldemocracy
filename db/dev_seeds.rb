@@ -150,6 +150,7 @@ moderator.create_moderator
 
 valuator = create_user('valuator@madrid.es', 'valuator')
 valuator.create_valuator
+valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2111111111")
 
 manager = create_user('manager@madrid.es', 'manager')
 manager.create_manager
