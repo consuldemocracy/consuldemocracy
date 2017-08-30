@@ -28,18 +28,16 @@ module Budgets
     respond_to :html, :js
 
     def index
-      # Budget::Investment.transaction do
-      #   set_random_seed
-      #   @investments = @investments
-      #                  .apply_filters_and_search(@budget, params)
-      #                  .send("sort_by_#{@current_order}")
-      #                  .page(params[:page])
-      #                  .per(10)
-      #                  .for_render
-      # end
+      Budget::Investment.transaction do
+        set_random_seed
+        @investments = @investments
+                       .apply_filters_and_search(@budget, params)
+                       .send("sort_by_#{@current_order}")
+                       .page(params[:page])
+                       .per(10)
+                       .for_render
+      end
 
-      @investments = @investments.apply_filters_and_search(@budget, params, @current_filter)
-                                 .send("sort_by_#{@current_order}").page(params[:page]).per(10).for_render
       @investment_ids = @investments.pluck(:id)
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud

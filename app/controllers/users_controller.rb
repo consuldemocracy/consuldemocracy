@@ -32,6 +32,8 @@ class UsersController < ApplicationController
       when "votes"  then load_votes
       when "ballot_lines"  then load_ballot_lines
       when "follows" then load_follows
+      when "votes"  then load_votes
+      when "ballot_lines"  then load_ballot_lines
       else load_available_activity
       end
     end
@@ -58,6 +60,12 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:follows] > 0
         load_follows
         @current_filter = "follows"
+      elsif  @activity_counts[:votes] > 0
+        load_votes
+        @current_filter = "votes"
+      elsif  @activity_counts[:ballot_lines] > 0
+        load_ballot_lines
+        @current_filter = "ballot_lines"
       end
     end
 
