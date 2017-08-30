@@ -20,6 +20,22 @@ class Document < ActiveRecord::Base
 
   after_save :remove_cached_document, if: -> { valid? && persisted? && cached_attachment.present? }
 
+  def set_cached_attachment_from_attachment(prefix)
+    self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
+                               attachment.path
+                             else
+                               prefix + attachment.url
+                             end
+  end
+
+  def set_attachment_from_cache
+    self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
+                        File.open(cached_attachment)
+                      else
+                        URI.parse(cached_attachment)
+                      end
+  end
+
   private
 
     def validate_attachment_size

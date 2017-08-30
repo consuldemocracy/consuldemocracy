@@ -45,7 +45,8 @@ class DocumentsController < ApplicationController
   end
 
   def destroy_upload
-    @document = Document.new(attachment: URI.parse(params[:path]))
+    @document = Document.new(cached_attachment: params[:path])
+    @document.set_attachment_from_cache
     @document.documentable = @documentable
 
     if @document.attachment.destroy
@@ -62,7 +63,7 @@ class DocumentsController < ApplicationController
     if @document.valid?
       @document.attachment_file_name = "#{Time.now.to_i} - #{@document.attachment_file_name}"
       @document.attachment.save
-      @document.cached_attachment = URI(request.url) + @document.attachment.url
+      @document.set_cached_attachment_from_attachment(URI(request.url))
     else
       @document.attachment.destroy
     end
@@ -91,7 +92,7 @@ class DocumentsController < ApplicationController
 
   def recover_attachments_from_cache
     if @document.attachment.blank? && @document.cached_attachment.present?
-      @document.attachment = URI.parse(@document.cached_attachment)
+      @document.set_attachment_from_cache
     end
   end
 
