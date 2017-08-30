@@ -36,14 +36,14 @@ feature 'Communities' do
       expect(page).to have_selector(".button.disabled", text: "Create topic")
     end
 
-    scenario 'Should display without_topics_text and empty participants when there are not topics' do
+    scenario 'Should display without_topics_text and participants when there are not topics' do
       proposal = create(:proposal)
       community = proposal.community
 
       visit community_path(community)
 
       expect(page).to have_content "Create the first community topic"
-      expect(page).to have_content "Participants (0)"
+      expect(page).to have_content "Participants (1)"
     end
 
     scenario 'Should display order selector and topic content when there are topics' do
@@ -90,8 +90,9 @@ feature 'Communities' do
       visit community_path(community)
 
       within ".communities-participant" do
-        expect(page).to have_content "Participants (1)"
+        expect(page).to have_content "Participants (2)"
         expect(page).to have_content topic.author.name
+        expect(page).to have_content proposal.author.name
       end
     end
 
@@ -104,9 +105,10 @@ feature 'Communities' do
       visit community_path(community)
 
       within ".communities-participant" do
-        expect(page).to have_content "Participants (2)"
+        expect(page).to have_content "Participants (3)"
         expect(page).to have_content topic.author.name
         expect(page).to have_content comment.author.name
+        expect(page).to have_content proposal.author.name
       end
     end
 
