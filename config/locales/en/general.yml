@@ -450,6 +450,8 @@ en:
       send_notification: Send notification
       no_notifications: "This proposal has any notifications."
       embed_video_title: "Video on %{proposal}"
+      title_external_url: "Additional documentation"
+      title_video_url: "External video"
     update:
       form:
         submit_button: Save changes
@@ -826,7 +828,8 @@ en:
     proposals:
       send_notification: "Send notification"
       retire: "Retire"
-      retired: "Retired"
+      retired: "Retired proposal"
+      see: "See proposal"
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
