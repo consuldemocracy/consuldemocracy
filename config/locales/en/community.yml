@@ -11,7 +11,11 @@ en:
       description:
         proposal: Participate in the community of this proposal
         investment: Participate in the community of this budget investment
-      create_first_community_topic: Create the first community topic
+      create_first_community_topic:
+        first_theme_not_logged_in: No issue yet available, participate creating the first one. Click on the create new topic button.
+        first_theme: Create the first community topic
+        sub_first_theme: To create a theme you have to %{link}
+        sign_link: "access in %{org_name}"
       tab:
         participants: Participants
       sidebar:
