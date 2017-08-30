@@ -26,7 +26,7 @@ Setting["max_votes_for_proposal_edit"] = 1000
 Setting['comments_body_max_length'] = 1000
 
 # Prefix for the Proposal codes
-Setting["proposal_code_prefix"] = 'MAD'
+Setting["proposal_code_prefix"] = 'CAS'
 
 # Number of votes needed for proposal success
 Setting["votes_for_proposal_success"] = 53726
@@ -69,16 +69,17 @@ Setting["meta_description"] = nil
 Setting["meta_keywords"] = nil
 
 # Feature flags
-Setting['feature.debates'] = false
-Setting['feature.spending_proposals'] = nil
+Setting['feature.debates'] = true
+Setting['feature.spending_proposals'] = true
+Setting['feature.polls'] = true
 Setting['feature.twitter_login'] = false
 Setting['feature.facebook_login'] = false
 Setting['feature.google_login'] = false
 Setting['feature.public_stats'] = false
 Setting['feature.budgets'] = true
-Setting['feature.signature_sheets'] = false
+Setting['feature.signature_sheets'] = true
 Setting['feature.proposals'] = true
-Setting['feature.signature_sheets'] = false
+Setting['feature.legislation'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
@@ -128,4 +129,6 @@ ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "ca
  'Distrito Norte', 'Distrito Sur', 'Distrito Este', 'Distrito Oeste', 'Distrito Centro', 'Distrito Grao'].each do |c|
 
   ActsAsTaggableOn::Tag.create!(name:  c, featured: true, kind: "category")
-end
+
+ end
+ Setting['proposal_improvement_path'] = true

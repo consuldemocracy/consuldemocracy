@@ -465,9 +465,9 @@ header {
     @include breakpoint(medium) {
       display: inline-block;
 
-      &::after {
-        content: '|';
-      }
+      // &::after {
+      //   content: '|';
+      // }
 
       &:last-child::after {
         content: none;

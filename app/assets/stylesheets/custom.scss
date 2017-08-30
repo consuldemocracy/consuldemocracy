@@ -36,6 +36,18 @@
     color: $text;
   }
 }
+.admin .top-links {
+  a {
+    color: $white;
+  }
+}
+.admin form.locale-form label {
+  color: $white;
+}
+
+.admin form.locale-form select.locale-switcher {
+  color: $white;
+}
 
 form.locale-form label {
   color: $text;
