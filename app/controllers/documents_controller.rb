@@ -15,6 +15,7 @@ class DocumentsController < ApplicationController
 
   def create
     recover_attachments_from_cache
+
     if @document.save
       flash[:notice] = t "documents.actions.create.notice"
       redirect_to params[:from]
@@ -26,6 +27,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     respond_to do |format|
+
       format.html do
         if @document.destroy
           flash[:notice] = t "documents.actions.destroy.notice"
@@ -34,6 +36,7 @@ class DocumentsController < ApplicationController
         end
         redirect_to params[:from]
       end
+
       format.js do
         if @document.destroy
           flash.now[:notice] = t "documents.actions.destroy.notice"
@@ -41,12 +44,13 @@ class DocumentsController < ApplicationController
           flash.now[:alert] = t "documents.actions.destroy.alert"
         end
       end
+
     end
   end
 
   def destroy_upload
     @document = Document.new(cached_attachment: params[:path])
-    @document.set_attachment_from_cache
+    @document.set_attachment_from_cached_attachment
     @document.documentable = @documentable
 
     if @document.attachment.destroy
@@ -54,12 +58,13 @@ class DocumentsController < ApplicationController
     else
       flash.now[:alert] = t "documents.actions.destroy.alert"
     end
-    render:destroy
+    render :destroy
   end
 
   def upload
     @document = Document.new(document_params.merge(user: current_user))
     @document.documentable = @documentable
+
     if @document.valid?
       @document.attachment_file_name = "#{Time.now.to_i} - #{@document.attachment_file_name}"
       @document.attachment.save
@@ -92,7 +97,7 @@ class DocumentsController < ApplicationController
 
   def recover_attachments_from_cache
     if @document.attachment.blank? && @document.cached_attachment.present?
-      @document.set_attachment_from_cache
+      @document.set_attachment_from_cached_attachment
     end
   end
 

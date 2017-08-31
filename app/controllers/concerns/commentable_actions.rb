@@ -115,7 +115,7 @@ module CommentableActions
     def recover_documents_from_cache(resource)
       return false unless resource.try(:documents)
       resource.documents = resource.documents.each do |document|
-        document.set_attachment_from_cache if document.cached_attachment.present?
+        document.set_attachment_from_cached_attachment if document.cached_attachment.present?
       end
     end
 

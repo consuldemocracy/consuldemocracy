@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   include DocumentsHelper
   include DocumentablesHelper
-  has_attached_file :attachment
+  has_attached_file :attachment, path: ":rails_root/public/system/:class/:attachment/:prefix/:style/:filename"
   attr_accessor :cached_attachment
 
   belongs_to :user
@@ -28,12 +28,24 @@ class Document < ActiveRecord::Base
                              end
   end
 
-  def set_attachment_from_cache
+  def set_attachment_from_cached_attachment
     self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                         File.open(cached_attachment)
                       else
                         URI.parse(cached_attachment)
                       end
+  end
+
+  Paperclip.interpolates :prefix do |attachment, style|
+    attachment.instance.prefix(attachment, style)
+  end
+
+  def prefix(attachment, style)
+    if !attachment.instance.persisted?
+      "cached_attachments/user/#{attachment.instance.user_id}"
+    else
+      Paperclip::Interpolations.id_partition(attachment, style)
+    end
   end
 
   private
