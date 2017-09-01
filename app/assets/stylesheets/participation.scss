@@ -429,33 +429,30 @@
 
   .document-link,
   .video-link {
-    border: 1px solid $border;
+    background: $highlight-soft;
+    border: 1px solid $highlight;
     display: block;
     margin: $line-height / 2 0;
     padding: $line-height / 2;
     position: relative;
 
     a {
-      padding-left: rem-calc(24);
+      word-wrap: break-word;
     }
 
-    ::before {
-      color: #007bb7;
-      content: 'G';
-      font-family: "icons" !important;
+    [class^="icon-"] {
+      display: inline-block;
       font-size: rem-calc(24);
-      left: rem-calc(6);
-      padding-top: rem-calc(3);
-      position: absolute;
-      top: 0;
+      line-height: $line-height;
+      vertical-align: middle;
     }
-  }
 
-  .video-link {
+    .icon-document {
+      color: #007bb7;
+    }
 
-    ::before {
+    .icon-video {
       color: #cc181e;
-      content: 'D';
     }
   }
 
