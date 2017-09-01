@@ -35,4 +35,8 @@ module CommunitiesHelper
     end
   end
 
+  def community_access_text(community)
+    community.from_proposal? ? t("community.sidebar.description.proposal") : t("community.sidebar.description.investment")
+  end
+
 end

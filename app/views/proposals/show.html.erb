@@ -159,7 +159,7 @@
           <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
         <% end %>
 
-        <%= render 'communities/access_button', community_id: @proposal.community_id %>
+        <%= render 'communities/access_button', community: @proposal.community %>
 
       </aside>
     </div>
