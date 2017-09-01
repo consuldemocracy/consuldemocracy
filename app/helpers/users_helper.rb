@@ -57,13 +57,7 @@ module UsersHelper
   end
 
   def show_admin_menu?
-    if current_user
-      current_administrator? ||
-      current_moderator? ||
-      current_valuator? ||
-      current_manager? ||
-      current_poll_officer?
-    end
+    current_administrator? || current_moderator? || current_valuator? || current_manager? || current_poll_officer?
   end
 
   def interests_title_text(user)
