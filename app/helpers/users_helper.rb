@@ -40,6 +40,32 @@ module UsersHelper
     current_user && current_user.administrator?
   end
 
+  def current_moderator?
+    current_user && current_user.moderator?
+  end
+
+  def current_valuator?
+    current_user && current_user.valuator?
+  end
+
+  def current_manager?
+    current_user && current_user.manager?
+  end
+
+  def current_poll_officer?
+    current_user && current_user.poll_officer? && Poll.current.any?
+  end
+
+  def show_admin_menu?
+    if current_user
+      current_administrator? ||
+      current_moderator? ||
+      current_valuator? ||
+      current_manager? ||
+      current_poll_officer?
+    end
+  end
+
   def interests_title_text(user)
     if current_user == user
       t('account.show.public_interests_my_title_list')
