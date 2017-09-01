@@ -1,11 +1,11 @@
 class DocumentsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_documentable, except: [:destroy]
+  before_filter :find_documentable, except: :destroy
   before_filter :prepare_new_document, only: [:new, :new_nested]
   before_filter :prepare_document_for_creation, only: :create
 
-  load_and_authorize_resource :except => [:upload]
-  skip_authorization_check :only => [:upload]
+  load_and_authorize_resource except: :upload
+  skip_authorization_check only: :upload
 
   def new
   end
@@ -27,7 +27,6 @@ class DocumentsController < ApplicationController
 
   def destroy
     respond_to do |format|
-
       format.html do
         if @document.destroy
           flash[:notice] = t "documents.actions.destroy.notice"
@@ -36,7 +35,6 @@ class DocumentsController < ApplicationController
         end
         redirect_to params[:from]
       end
-
       format.js do
         if @document.destroy
           flash.now[:notice] = t "documents.actions.destroy.notice"
@@ -44,7 +42,6 @@ class DocumentsController < ApplicationController
           flash.now[:alert] = t "documents.actions.destroy.alert"
         end
       end
-
     end
   end
 
@@ -66,7 +63,6 @@ class DocumentsController < ApplicationController
     @document.documentable = @documentable
 
     if @document.valid?
-      @document.attachment_file_name = "#{Time.now.to_i} - #{@document.attachment_file_name}"
       @document.attachment.save
       @document.set_cached_attachment_from_attachment(URI(request.url))
     else
