@@ -100,7 +100,6 @@ Rails.application.routes.draw do
       get :new_nested
       delete :destroy_upload
       post :upload
-      post :progress
     end
   end
 
