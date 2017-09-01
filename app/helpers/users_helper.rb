@@ -53,7 +53,7 @@ module UsersHelper
   end
 
   def current_poll_officer?
-    current_user && current_user.poll_officer? && Poll.current.any?
+    current_user && current_user.poll_officer?
   end
 
   def show_admin_menu?
