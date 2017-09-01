@@ -2,15 +2,17 @@ es:
   community:
     sidebar:
       title: Comunidad
-      description: Participa en la comunidad de usuarios, da tu opinión.
+      description:
+        proposal: Participa en la comunidad de usuarios de esta propuesta.
+        investment: Participa en la comunidad de usuarios de este proyecto de inversión.
       button_to_access: Acceder a la comunidad
     show:
       title:
         proposal: Comunidad de la propuesta
         investment: Comunidad del presupuesto participativo
       description:
-        proposal: Participa en la comunidad de esta propuesta
-        investment: Participa en la comunidad de este presupuesto participativo
+        proposal: Participa en la comunidad de esta propuesta. Una comunidad activa puede ayudar a mejorar el contenido de la propuesta así como a dinamizar su difusión para conseguir más apoyos.
+        investment: Participa en la comunidad de este proyecto de inversión. Una comunidad activa puede ayudar a mejorar el contenido del proyecto de inversión así como a dinamizar su difusión para conseguir más apoyos.
       create_first_community_topic:
         first_theme_not_logged_in: Aún no hay ningun tema disponible, participa creando el primero. Haz click en el botón crear nuevo tema.
         first_theme: Crea el primer tema de la comunidad

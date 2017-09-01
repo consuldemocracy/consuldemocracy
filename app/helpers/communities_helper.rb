@@ -26,4 +26,13 @@ module CommunitiesHelper
     end
   end
 
+  def community_back_link_path(community)
+    if community.from_proposal?
+      proposal_path(community.proposal)
+    else
+      investment = Budget::Investment.where(community_id: community.id).first
+      budget_investment_path(investment.budget_id, investment)
+    end
+  end
+
 end

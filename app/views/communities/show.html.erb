@@ -3,6 +3,7 @@
   <div class="jumbo light">
     <div class="row">
       <div class="small-12 column">
+        <%= back_link_to community_back_link_path(@community) %>
         <h2><%= community_text(@community) %></h2>
         <p class="lead"> <%= community_title(@community) %> </p>
         <p><%= community_description(@community) %> </p>

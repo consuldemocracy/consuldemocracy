@@ -2,15 +2,17 @@ en:
   community:
     sidebar:
       title: Community
-      description: Join the community of users, give your opinion.
+      description:
+        proposal: Participate in the user community of this proposal.
+        investment: Participate in the user community of this investment.
       button_to_access: Access the community
     show:
       title:
         proposal: Proposal community
         investment: Budget Investment community
       description:
-        proposal: Participate in the community of this proposal
-        investment: Participate in the community of this budget investment
+        proposal: Participate in the community of this proposal. An active community can help to improve the content of the proposal and boost its dissemination to get more support.
+        investment: Participate in the community of this budget investment. An active community can help to improve the content of the budget investment and boost its dissemination to get more support.
       create_first_community_topic:
         first_theme_not_logged_in: No issue yet available, participate creating the first one. Click on the create new topic button.
         first_theme: Create the first community topic
