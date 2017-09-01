@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   include DocumentsHelper
   include DocumentablesHelper
-  has_attached_file :attachment, path: ":rails_root/public/system/:class/:attachment/:prefix/:style/:filename"
+  has_attached_file :attachment, path: ":rails_root/public/system/:class/:prefix/:style/:filename"
   attr_accessor :cached_attachment
 
   belongs_to :user
@@ -44,7 +44,7 @@ class Document < ActiveRecord::Base
     if !attachment.instance.persisted?
       "cached_attachments/user/#{attachment.instance.user_id}"
     else
-      Paperclip::Interpolations.id_partition(attachment, style)
+      ":attachment/:id_partition"
     end
   end
 
