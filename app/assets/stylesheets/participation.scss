@@ -311,7 +311,8 @@
 .polls-show,
 .debate-quiz,
 .budget-investment-show,
-.draft-panels {
+.draft-panels,
+.debate-questions {
 
   p {
     word-wrap: break-word;
@@ -328,10 +329,13 @@
   .whatsapp::before {
     background-color: #43d854;
     color: #fff;
-    font-size: 1.7em;
-    margin-left: rem-calc(0.5);
-    padding: rem-calc(9.5) rem-calc(9.8);
-    vertical-align: rem-calc(10);
+    display: inline-block;
+    font-size: rem-calc(30);
+    height: rem-calc(48);
+    padding-top: rem-calc(9);
+    text-align: center;
+    vertical-align: top;
+    width: rem-calc(48);
   }
 
   .edit-debate,
@@ -424,33 +428,30 @@
 
   .document-link,
   .video-link {
-    border: 1px solid $border;
+    background: $highlight-soft;
+    border: 1px solid $highlight;
     display: block;
     margin: $line-height / 2 0;
     padding: $line-height / 2;
     position: relative;
 
     a {
-      padding-left: rem-calc(24);
+      word-wrap: break-word;
     }
 
-    ::before {
-      color: #007bb7;
-      content: 'G';
-      font-family: "icons" !important;
+    [class^="icon-"] {
+      display: inline-block;
       font-size: rem-calc(24);
-      left: rem-calc(6);
-      padding-top: rem-calc(3);
-      position: absolute;
-      top: 0;
+      line-height: $line-height;
+      vertical-align: middle;
     }
-  }
 
-  .video-link {
+    .icon-document {
+      color: #007bb7;
+    }
 
-    ::before {
+    .icon-video {
       color: #cc181e;
-      content: 'D';
     }
   }
 
@@ -871,6 +872,20 @@
     line-height: $line-height;
     margin-left: rem-calc(6);
     top: 0;
+  }
+}
+
+.help-link {
+  margin-left: $line-height;
+  position: relative;
+
+  &::before {
+    color: $link;
+    content: '\4e';
+    font-family: 'icons';
+    position: absolute;
+    left: -24px;
+    top: -2px;
   }
 }
 
@@ -1480,13 +1495,9 @@
 
 .poll,
 .poll-question {
-  background: #fff;
-  border-radius: rem-calc(6);
+  border: 1px solid $border;
   margin-bottom: $line-height / 2;
-}
-
-.poll {
-  padding: $line-height;
+  padding: $line-height / 2;
   position: relative;
 
   .icon-poll-answer {

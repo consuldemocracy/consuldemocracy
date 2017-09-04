@@ -217,9 +217,8 @@ a {
 }
 
 .menu.vertical {
-  background: #fff;
   margin: $line-height 0;
-  padding: $line-height;
+  padding: $line-height 0;
 
   li {
     margin-bottom: $line-height;
@@ -328,6 +327,10 @@ a {
   -ms-text-overflow: ellipsis;
 }
 
+.align-top {
+  vertical-align: top;
+}
+
 // 02. Header
 // ----------
 
@@ -425,6 +428,7 @@ header {
   .menu {
 
     &.is-dropdown-submenu {
+      background: #fff;
       margin: 0;
       margin-top: rem-calc(-24);
       padding: 0;
@@ -1830,6 +1834,7 @@ table {
 
     .divider {
       color: $text-light;
+      display: inline-block;
     }
 
     form {

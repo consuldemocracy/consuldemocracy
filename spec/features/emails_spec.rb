@@ -210,7 +210,7 @@ feature 'Emails' do
       email_digest.mark_as_emailed
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in Consul")
+      expect(email).to have_subject("Proposal notifications in CONSUL")
       expect(email).to deliver_to(user.email)
 
       expect(email).to have_body_text(proposal1.title)
@@ -257,7 +257,7 @@ feature 'Emails' do
       expect(unread_emails_for("isable@example.com").count).to eq 1
 
       email = open_last_email
-      expect(email).to have_subject("Invitation to Consul")
+      expect(email).to have_subject("Invitation to CONSUL")
       expect(email).to have_body_text(/#{new_user_registration_path}/)
     end
 

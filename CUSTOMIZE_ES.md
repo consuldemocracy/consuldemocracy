@@ -1,12 +1,12 @@
 # Personalización
 
-Puedes modificar consul y ponerle tu propia imagen, para esto debes primero hacer un fork de [https://github.com/consul/consul](https://github.com/consul/consul) creando un repositorio nuevo en Github. Puedes usar otro servicio como Gitlab, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3).
+Puedes modificar CONSUL y ponerle tu propia imagen, para esto debes primero hacer un fork de [https://github.com/consul/consul](https://github.com/consul/consul) creando un repositorio nuevo en Github. Puedes usar otro servicio como Gitlab, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3).
 
-Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que Consul sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
+Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que CONSUL sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
 
 ## Ficheros y directorios especiales
 
-Para adaptarlo puedes hacerlo a través de los directorios que están en custom dentro de:
+Para adaptar tu fork de CONSUL puedes utilizar alguno de los directorios `custom` que están en las rutas:
 
 * `config/locales/custom/`
 * `app/assets/images/custom/`
@@ -207,7 +207,7 @@ TODO
 
 ## Actualizar
 
-Te recomendamos que agregues el remote de consul para facilitar este proceso de merge:
+Te recomendamos que agregues el remote de CONSUL para facilitar este proceso de merge:
 
 ```
 git remote add consul https://github.com/consul/consul
