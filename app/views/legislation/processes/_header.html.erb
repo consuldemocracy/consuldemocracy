@@ -1,5 +1,5 @@
 <% if header == :small %>
-  <div class="legislation-hero legislation-allegation no-margin-top grey-heading" data-target="legislation-header-small">
+  <div class="legislation-hero jumbo grey-heading" data-target="legislation-header-small">
     <div class="row headline">
       <div class="small-12 medium-8 column">
         <h3 class="headline-small"><%= process.title %></h3>
@@ -23,7 +23,7 @@
     </div>
 
     <% if process.description.present? || process.additional_info.present? %>
-      <div class="text-center half-gradient">
+      <div class="text-center">
         <a class="button big text-center button-circle" title="<%= t('.view_process_information') %>" id="js-toggle-small-debate">
           <span class="icon-angle-down" aria-hidden="true"></span>
         </a>

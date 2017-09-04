@@ -25,11 +25,6 @@ $epigraph-line-height: rem-calc(22);
 // 02. Hero
 // -----------------
 .legislation-hero {
-  padding-top: 1.5rem;
-
-  @include breakpoint(medium) {
-    padding-top: 3.5rem;
-  }
 
   h4 {
     text-transform: uppercase;
@@ -52,8 +47,8 @@ $epigraph-line-height: rem-calc(22);
   }
 
   .debate-add-info {
-    margin-top: 3rem;
-    padding-top: 4rem;
+    margin-top: $line-height;
+    padding-top: $line-height;
     border-top: 1px solid darken($border, 10%);
 
     @include breakpoint(medium) {
@@ -72,28 +67,12 @@ $epigraph-line-height: rem-calc(22);
     }
   }
 
-  .half-gradient {
-    background: #e6e6e6;
-    background: linear-gradient(to bottom, #e6e6e6 0%, #e6e6e6 50%, #fff 50%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#fff', GradientType=0);
-  }
-
   .text-center .button {
     background: $brand;
     margin-bottom: 0;
   }
 
-  .headline {
-    margin-bottom: 1rem;
-
-    @include breakpoint(medium) {
-      margin-bottom: 4rem;
-
-    }
-  }
-
   .description {
-    margin-bottom: 1rem;
 
     p {
       font-size: $epigraph-font-size;
@@ -150,24 +129,12 @@ $epigraph-line-height: rem-calc(22);
   .legislation-process-list {
     border-bottom: 1px solid $medium-gray;
     margin: 0 1rem 1rem;
-    padding-top: 4rem;
-
-    @include breakpoint(medium) {
-      margin-left: 0;
-    }
 
     ul {
-      position: relative;
-      max-width: 75rem;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       list-style: none;
       padding-left: 0;
       margin-bottom: 0;
-
-      @include breakpoint(medium) {
-        padding-left: 1rem;
-      }
 
       svg {
         position: absolute;
