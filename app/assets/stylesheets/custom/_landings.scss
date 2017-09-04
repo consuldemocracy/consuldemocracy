@@ -328,7 +328,7 @@ $villaverde:        #8e4e28;
 // 03. Geocraft
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$geocraft: #61b74a;
+$geocraft: #006800;
 
 .geocraft {
 
@@ -352,7 +352,7 @@ $geocraft: #61b74a;
     }
 
     .button {
-      background: #61b74a;
+      background: $geocraft;
       color: #fff;
       font-size: rem-calc(24);
       text-transform: uppercase;
