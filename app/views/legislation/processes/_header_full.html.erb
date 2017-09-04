@@ -11,15 +11,13 @@
   <div class="row description">
     <div class="small-12 column">
       <% if process.description.present? %>
-        <h4><%= t('.description') %></h4>
+        <p class="title"><%= t('.description') %></p>
         <%= markdown process.description %>
       <% end %>
     </div>
     <% if process.additional_info.present? %>
       <div id="debate-show" class="small-12 column debate-add-info legislation-debate-show">
-        <div class="debate-info-wrapper">
-          <%= markdown process.additional_info if process.additional_info %>
-        </div>
+        <%= markdown process.additional_info if process.additional_info %>
       </div>
     <% end %>
   </div>
