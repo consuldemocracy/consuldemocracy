@@ -149,6 +149,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.6)
     errbase (0.0.3)
+    erubi (1.6.1)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -187,11 +188,11 @@ GEM
       rack
       socksify
     i18n (0.8.6)
-    i18n-tasks (0.9.15)
+    i18n-tasks (0.9.18)
       activesupport (>= 4.0.2)
       ast (>= 2.1.0)
       easy_translate (>= 0.5.0)
-      erubis
+      erubi
       highline (>= 1.7.3)
       i18n
       parser (>= 2.2.3.0)
