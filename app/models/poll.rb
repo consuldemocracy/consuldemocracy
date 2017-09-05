@@ -35,6 +35,10 @@ class Poll < ActiveRecord::Base
     ends_at < timestamp
   end
 
+  def self.current_or_incoming
+    current + incoming
+  end
+
   def answerable_by?(user)
     user.present? &&
       user.level_two_or_three_verified? &&

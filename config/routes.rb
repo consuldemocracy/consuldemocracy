@@ -286,7 +286,10 @@ Rails.application.routes.draw do
         get :search, on: :collection
       end
 
-      resources :booths
+      resources :booths do
+        resources :shifts
+      end
+
       resources :questions
     end
 

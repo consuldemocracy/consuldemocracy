@@ -676,6 +676,18 @@ ActiveRecord::Schema.define(version: 20170822144743) do
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
+  create_table "poll_shifts", force: :cascade do |t|
+    t.integer  "booth_id"
+    t.integer  "officer_id"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
+  add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
+  add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
+
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
