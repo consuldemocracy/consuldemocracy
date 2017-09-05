@@ -1,4 +1,4 @@
-<%= form_for(@investment, url: form_url, method: :post) do |f| %>
+<%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
@@ -52,6 +52,26 @@
                         class: 'js-tag-list' %>
     </div>
 
+    <div class="small-12 column">
+      <div class="image-upload">
+        <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
+        <br>
+        <%= f.label :image, t("budgets.investments.form.image_label"), class:'button' %>
+        <p><%= investment_image_file_name(@investment) %></p>
+      </div>
+    </div>
+
+    <% if @investment.errors.has_key?(:image) %>
+      <div class="small-12 column">
+        <div class="image-errors">
+          <small class="error"><%= errors_on_image(@investment)%></small>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="small-12 column">
+      <%= f.text_field :image_title %>
+    </div>
 
     <% unless current_user.manager? %>
 

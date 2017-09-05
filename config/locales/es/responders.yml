@@ -22,7 +22,11 @@ es:
         poll: "Votación actualizada correctamente."
         poll_booth: "Urna actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
-        budget_investment: "Propuesta de inversión actualizada correctamente"
+        budget_investment: "Proyecto de inversión actualizado correctamente."
+      update_image:
+        budget_investment: "La imagen del proyecto de inversión se ha actualizado correctamente."
+      remove_image:
+        budget_investment: "La imagen del proyecto de inversión se ha eliminado correctamente."
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         budget_investment: "Propuesta de inversión eliminada."

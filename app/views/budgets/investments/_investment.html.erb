@@ -2,13 +2,29 @@
   <div class="panel">
     <div class="row">
 
-      <div class="small-12 medium-9 column">
+      <div class="small-12 medium-3 large-2 column">
+        <% if investment.image.exists? %>
+          <picture>
+            <source srcset="<%= investment.image.url(:medium) %>"
+                    alt="<%= investment.image_title %>"
+                    title= "<%= investment.image_title %>"
+                    media="(max-width: 640px)">
+            <img    srcset="<%= investment.image.url(:thumb) %>"
+                    alt="<%= investment.image_title %>"
+                    title="<%= investment.image_title %>">
+          </picture>
+        <% else %>
+          <div class="no-image"></div>
+        <% end %>
+      </div>
+
+      <div class="small-12 medium-6 large-7 column">
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
-            <p class="investment-project-info">
 
+            <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
 
               <% if investment.author.hidden? || investment.author.erased? %>

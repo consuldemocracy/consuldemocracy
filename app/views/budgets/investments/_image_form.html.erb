@@ -1,0 +1,51 @@
+<%= form_for([@investment.budget, @investment], url: update_image_budget_investment_path(@investment.budget, @investment), multipart: true, method: :put) do |f| %>
+  <%= render 'shared/errors', resource: @investment %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <span class="note-marked">
+        <p><%= investment_image_advice_note(@investment) %></p>
+      </span>
+    </div>
+
+    <% if @investment.image.exists? %>
+      <div class="small-12 column">
+        <%= image_tag @investment.image.url(:large) %>
+      </div>
+    <% end %>
+
+    <div class="small-12 column">
+      <div class="image-upload">
+        <%= f.file_field :image, accept: 'image/jpeg', label: false, class:'show-for-sr' %>
+        <br>
+        <%= f.label :image, t("budgets.investments.edit_image.form.image_label"), class:'button' %>
+        <p><%= investment_image_file_name(@investment) %></p>
+     </div>
+    </div>
+
+    <% if @investment.errors.has_key?(:image) %>
+      <div class="small-12 column">
+        <div class="image-errors">
+          <small class="error"><%= errors_on_image(@investment)%></small>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="small-12 column">
+      <%= f.label :image_title, t("budgets.investments.edit_image.form.image_title") %>
+      <%= f.text_field :image_title, placeholder: t("budgets.investments.edit_image.form.image_title"), label: false %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("budgets.investments.edit_image.form.submit_button")) %>
+      <% if @investment.image.exists? %>
+        <%= link_to t("budgets.investments.edit_image.form.remove_button"),
+                    remove_image_budget_investment_path(@investment.budget, @investment),
+                    class: "button hollow alert",
+                    method: :delete,
+                    data: { confirm: t("budgets.investments.edit_image.form.remove_alert") } %>
+      <% end %>
+    </div>
+
+  </div>
+<% end %>
