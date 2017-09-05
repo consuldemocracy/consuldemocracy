@@ -6,6 +6,9 @@
     <%= booth.location %>
   </td>
   <td class="text-right">
+    <%= link_to t("admin.booths.booth.shifts"),
+                new_admin_booth_shift_path(booth),
+                class: "button hollow" %>
     <%= link_to t("admin.actions.edit"),
                 edit_admin_booth_path(booth),
                 class: "button hollow" %>
