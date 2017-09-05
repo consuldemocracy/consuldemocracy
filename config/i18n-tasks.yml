@@ -37,6 +37,7 @@ data:
     - config/locales/%{locale}/officing.yml
     - config/locales/%{locale}/budgets.yml
     - config/locales/%{locale}/legislation.yml
+    - config/locales/%{locale}/documents.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules

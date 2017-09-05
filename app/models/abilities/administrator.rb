@@ -73,6 +73,7 @@ module Abilities
       can [:manage], ::Legislation::Question
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation]
 
+      can [:create, :destroy], Document
     end
   end
 end

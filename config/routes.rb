@@ -95,6 +95,14 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
+  resources :documents, only: [:new, :create, :destroy] do
+    collection do
+      get :new_nested
+      delete :destroy_upload
+      post :upload
+    end
+  end
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'

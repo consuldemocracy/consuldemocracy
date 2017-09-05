@@ -1228,6 +1228,24 @@ feature 'Proposals' do
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
+  it_behaves_like "documentable", "proposal", "proposal_path", { "id": "id" }
+
+  it_behaves_like "nested documentable",
+                  "proposal",
+                  "new_proposal_path",
+                  { },
+                  "fill_new_valid_proposal",
+                  "Create proposal",
+                  "Proposal created successfully"
+
+  it_behaves_like "nested documentable",
+                  "proposal",
+                  "edit_proposal_path",
+                  { "id": "id" },
+                  nil,
+                  "Save changes",
+                  "Proposal updated successfully"
+
   scenario 'Erased author' do
     user = create(:user)
     proposal = create(:proposal, author: user)

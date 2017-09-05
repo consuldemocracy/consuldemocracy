@@ -1,0 +1,22 @@
+<div class="documents-list">
+  <%= label_tag :documents, t("documents.form.title") %>
+  <p class="help-text"><%= documentables_note(documentable) %></p>
+
+  <% documentable.documents.each_with_index do |document, index| %>
+    <%= render 'documents/nested_fields', document: document, index: index, documentable: documentable %>
+  <% end %>
+</div>
+
+<% unless max_documents_allowed?(documentable) %>
+  <%= link_to t("documents.form.add_new_document"),
+              new_nested_documents_path(documentable_type: documentable.class.name, index: documentable.documents.size),
+              remote: true,
+              id: "new_document_link",
+              class: "button hollow"  %>
+<% end %>
+
+<div class="max-documents-notice callout warning text-center <%= "hide" unless max_documents_allowed?(documentable) %>">
+  <%= t "documents.max_documents_allowed_reached_html" %>
+</div>
+
+<hr>

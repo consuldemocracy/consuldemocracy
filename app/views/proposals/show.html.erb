@@ -16,6 +16,12 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
+        <% if can?(:create, @document) && @proposal.documents.size < Proposal.max_documents_allowed %>
+          <%= link_to t("documents.upload_document"),
+                      new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
+                      class: 'button hollow float-right' %>
+        <% end %>
+
         <% if author_of?(@proposal, current_user) %>
           <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
                       class: 'button hollow float-right' %>
@@ -164,5 +170,11 @@
 
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "proposals/comments" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @proposal.documents,
+                max_documents_allowed: Proposal.max_documents_allowed %>
   </div>
 </div>
