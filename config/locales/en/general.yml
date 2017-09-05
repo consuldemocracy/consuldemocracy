@@ -181,6 +181,7 @@ en:
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
+    document: Document
   geozones:
     none: All city
     all: All scopes

@@ -36,6 +36,9 @@ module Abilities
 
       can [:create, :destroy], Follow
 
+      can [:create, :destroy, :new], Document, documentable: { author_id: user.id }
+      can [:new_nested, :upload, :destroy_upload], Document
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
