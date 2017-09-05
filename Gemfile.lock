@@ -199,7 +199,7 @@ GEM
       terminal-table (>= 1.5.1)
     initialjs-rails (0.2.0.5)
       railties (>= 3.1, < 6.0)
-    invisible_captcha (0.9.2)
+    invisible_captcha (0.9.3)
       rails (>= 3.2.0)
     jquery-fileupload-rails (0.4.7)
       actionpack (>= 3.1)
@@ -430,7 +430,7 @@ GEM
       babel-source (>= 5.8.11)
       babel-transpiler
       sprockets (>= 3.0.0)
-    sprockets-rails (3.2.0)
+    sprockets-rails (3.2.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
