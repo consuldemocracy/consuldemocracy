@@ -31,7 +31,6 @@ feature 'Commenting proposals' do
     expect(page).to have_content parent_comment.body
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
-
     expect(page).to have_link "Go back to #{proposal.title}", href: proposal_path(proposal)
   end
 

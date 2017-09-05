@@ -795,4 +795,11 @@ LOREM_IPSUM
     locale "en"
     body "Some top links content"
   end
+
+  factory :topic do
+    sequence(:title) { |n| "Topic title #{n}" }
+    sequence(:description) { |n| "Description as comment #{n}" }
+    association :author, factory: :user
+  end
+
 end
