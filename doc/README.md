@@ -8,7 +8,7 @@
 
 ## Funcionalidades
 
-Actualmente Consul soporta:
+Actualmente CONSUL soporta:
 
 * Registro y verificación de usuarios tanto en la misma aplicación como con distintos proveedores (Twitter, Facebook, Google).
 * Distintos perfiles de usuario, tanto ciudadanos individuales como organizaciones y cargos públicos.
@@ -54,7 +54,7 @@ Dentro de su perfil ("Mi cuenta" en el menú superior) cada usuario puede config
 
 ## Perfiles de administrador, moderador y gestor
 
-Consul cuenta con tres perfiles de usuario para administrar contenidos de la web: administrador, moderador y gestor. Además tiene otros dos perfiles para gestión de procesos participativos: [evaluador y presidente de mesa](#perfiles_de_evaluador,_gestor_y_presidente_de_mesa), que se detallan más abajo.
+CONSUL cuenta con tres perfiles de usuario para administrar contenidos de la web: administrador, moderador y gestor. Además tiene otros dos perfiles para gestión de procesos participativos: [evaluador y presidente de mesa](#perfiles_de_evaluador,_gestor_y_presidente_de_mesa), que se detallan más abajo.
 
 Los usuarios con perfil de administrador pueden asignar cualquier tipo de perfil a cualquier tipo de usuario. Sin embargo, todos los perfiles tienen que ser usuarios verificados (contrastados con el padrón municipal) para poder realizar ciertas acciones (por ejemplo, los gestores necesitan estar verificados para crear propuestas de inversión).
 
@@ -168,11 +168,11 @@ Las páginas sirven para mostrar cualquier tipo de contenido estático relativo 
 
 ##### Personalizar imágenes
 
-Desde este panel se definen las imágenes de los elementos corporativos de tu Consul.
+Desde este panel se definen las imágenes de los elementos corporativos de tu CONSUL.
 
 ##### Personalizar bloques
 
-Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu Cónsul.
+Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
 
 Los bloques de la cabecera (top_links) son bloques de enlaces que deben crearse con este formato:
 

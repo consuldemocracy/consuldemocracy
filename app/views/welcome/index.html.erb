@@ -2,45 +2,50 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<div class="expanded highlight padding no-margin-top">
+<div class="jumbo highlight">
   <div class="row">
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-9 small-centered column text-center">
       <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p>
-        <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
-        <%= link_to t("layouts.header.more_info"), more_info_path %>
+      <p class="lead">
+        <%= t("layouts.header.open_city_slogan_html") %>
       </p>
-      <div class="small-12 medium-6">
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button see-more expanded" %>
+      <div class="small-12 medium-6 large-4 small-centered">
+        <%= link_to t("layouts.header.more_info"), more_info_path, class: "button expanded large" %>
       </div>
-    </div>
-
-    <div class="hide-for-small-only small-12 medium-5 column text-center">
-      <%= image_tag(image_path_for("icon_home.png"), size: "330x240", alt:"") %>
     </div>
   </div>
 </div>
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
-    <div class="row text-center margin">
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.debates.title") %></h2>
-        <p><%= t("welcome.debates.description") %></p>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <p>
+          <span class="lead"><strong><%= t("welcome.debates.title") %></strong></span><br>
+          <%= t("welcome.debates.description") %>
+        </p>
 
       </div>
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.proposal.title") %></h2>
-        <p><%= t("welcome.proposal.description") %></p>
+      <div class="small-12 medium-6 column">
+        <p>
+          <span class="lead"><strong><%= t("welcome.proposal.title") %></strong></span><br>
+          <%= t("welcome.proposal.description") %>
+        </p>
       </div>
+    </div>
 
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.decide.title") %></h2>
-        <p><%= t("welcome.decide.description") %></p>
+    <div class="row margin-top">
+      <div class="small-12 medium-6 column">
+        <p>
+          <span class="lead"><strong><%= t("welcome.decide.title") %></strong></span><br>
+          <%= t("welcome.decide.description") %>
+        </p>
       </div>
-      <div class="small-12 medium-3 column">
-        <h2><%= t("welcome.do.title") %></h2>
-        <p><%= t("welcome.do.description") %></p>
+      <div class="small-12 medium-6 column">
+        <p>
+          <span class="lead"><strong><%= t("welcome.do.title") %></strong></span><br>
+          <%= t("welcome.do.description") %>
+        </p>
       </div>
     </div>
   </main>

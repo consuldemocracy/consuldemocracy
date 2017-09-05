@@ -1,6 +1,6 @@
-![Logotipo de Consul](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![Logotipo de CONSUL](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
-# Consul
+# CONSUL
 
 Aplicación de Participación Ciudadana y Gobierno Abierto
 
@@ -17,7 +17,7 @@ Aplicación de Participación Ciudadana y Gobierno Abierto
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
-Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana Consul, creada originariamente por el Ayuntamiento de Madrid.
+Este es el repositorio de código abierto de la Aplicación de Participación Ciudadana CONSUL, creada originariamente por el Ayuntamiento de Madrid.
 
 ## Estado del proyecto
 
@@ -32,7 +32,7 @@ Las herramientas utilizadas para el frontend no están cerradas aún. Los estilo
 
 **NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/consul/tree/master/doc/es/dev_test_setup.md)
 
-Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler`, ghostscript y PostgreSQL (9.4 o superior).
+Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler` y PostgreSQL (9.4 o superior).
 
 ```
 
@@ -101,3 +101,7 @@ El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver 
 ## Contribuciones
 
 Ver fichero [CONTRIBUTING_ES.md](CONTRIBUTING_ES.md)
+
+## Guía de estilo
+
+Si quieres usar el logo de CONSUL puedes [descargar la guía de estilo](https://raw.githubusercontent.com/consul/consul/master/public/consul_brand.zip) que contiene una guía de uso y diferentes versiones y tamaños del logo.

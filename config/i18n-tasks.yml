@@ -37,6 +37,7 @@ data:
     - config/locales/%{locale}/officing.yml
     - config/locales/%{locale}/budgets.yml
     - config/locales/%{locale}/legislation.yml
+    - config/locales/%{locale}/documents.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -114,6 +115,7 @@ ignore_missing:
 ignore_unused:
   - 'budgets.phase.*'
   - 'budgets.investments.index.orders.*'
+  - 'budgets.index.section_header.*'
   - 'activerecord.*'
   - 'activemodel.*'
   - 'unauthorized.*'
@@ -148,16 +150,20 @@ ignore_unused:
   - 'valuation.budget_investments.index.filter*'
   - 'users.show.filters.*'
   - 'polls.index.filters.*'
+  - 'polls.index.section_header.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
+  - 'debates.index.section_header.*'
   - 'proposals.index.select_order'
   - 'proposals.index.orders.*'
+  - 'proposals.index.section_header.*'
   - 'spending_proposals.index.search_form.*'
   - '*.index.search_form.*'
   - 'notifications.index.comments_on*'
   - 'notifications.index.replies_to*'
   - 'notifications.index.proposal_notification*'
   - 'legislation.processes.index.filter*'
+  - 'legislation.processes.index.section_header.*'
   - 'helpers.page_entries_info.*' # kaminari
   - 'views.pagination.*' # kaminari
   - 'shared.suggest.*'

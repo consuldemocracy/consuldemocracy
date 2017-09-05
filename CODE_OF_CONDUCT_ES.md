@@ -1,22 +1,46 @@
-# Código de conducta
+# Código de Conducta convenido para Contribuyentes
 
-Como las personas encargadas de contribuir código y responsables de mantener este proyecto, y con la intención de crear una comunidad abierta en la que sentirse bienvenido acordamos respetar a toda persona que contribuya al proyecto reportando incidencias, creando peticiones de funcionalidades, actualizando la documentación, enviando parches de código o de alguna otra manera.
+## Nuestro compromiso
 
-Estamos comprometidos a hacer de la participación en este proyecto una experiencia libre de acoso para todo el mundo, independientemente del nivel de experiencia, género, identidad y expresión de género, orientación sexual, discapacidad, apariencia personal, raza, etnia, edad, religión o nacionalidad.
+En el interés de fomentar una comunidad abierta y acogedora, nosotros como contribuyentes y administradores nos comprometemos a hacer de la participación en nuestro proyecto y nuestra comunidad una experiencia libre de acoso para todos, independientemente de la edad, dimensión corporal, discapacidad, etnia, identidad y expresión de género, nivel de experiencia, nacionalidad, apariencia física, raza, religión, identidad u orientación sexual. 
 
-Ejemplos de comportamiento inaceptable por parte de los participantes incluyen:
+## Nuestros estándares
 
-* El uso de imágenes o lenguaje sexual
-* Ataques personales
-* Comentarios insultantes/despectivos
+Ejemplos de comportamiento que contribuyen a crear un ambiente positivo:
+
+* Uso de lenguaje amable e inclusivo
+* Respeto a diferentes puntos de vista y experiencias
+* Aceptación de críticas constructivas
+* Enfocarse en lo que es mejor para la comunidad
+* Mostrar empatía a otros miembros de la comunidad
+
+Ejemplos de comportamiento inaceptable por participantes:
+
+* Uso de lenguaje o imágenes sexuales y atención sexual no deseada
+* Comentarios insultantes o despectivos (*trolling*) y ataques personales o políticos
 * Acoso público o privado
-* Publicación de información privada de terceros, como la dirección física o electrónica, sin permiso explícito
-* Otras conductas poco éticas o no profesionales
+* Publicación de información privada de terceros sin su consentimiento, como direcciones físicas o electrónicas
+* Otros tipos de conducta que pudieran considerarse inapropiadas en un entorno profesional.
 
-Los administradores del proyecto tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, commits, código, ediciones de wikis, incidencias y otro tipo de aportaciones que no estén en línea con este Código de Conducta. Por el hecho de adoptar este Código de Conducta, los responsables del proyecto se comprometen a aplicar sus principios de manera justa y consistente en todos los aspectos relacionados con el desarrollo del proyecto. Los responsables del proyecto que no sigan ni obliguen a cumplir este código de conducta pueden ser apartados del equipo del proyecto.
+## Nuestras responsabilidades
 
-Este código de conducta tiene validez tanto en el proyecto como en espacios públicos en los que un individuo esté representando al proyecto o a su comunidad.
+Los administradores del proyecto son responsables de clarificar los estándares de comportamiento aceptable y se espera que tomen medidas correctivas y apropiadas en respuesta a situaciones de conducta inaceptable. 
 
-Las ocurrencias de abuso, acoso u otro comportamiento inaceptable se puede reportar abriendo una incidencia o contactando a uno o más de los miembros del equipo responsable del proyecto.
+Los administradores del proyecto tienen el derecho y la responsabilidad de eliminar, editar o rechazar comentarios, *commits*, código, ediciones de documentación, *issues*, y otras contribuciones que no estén alineadas con este Código de Conducta, o de prohibir temporal o permanentemente a cualquier colaborador cuyo comportamiento sea inapropiado, amenazante, ofensivo o perjudicial.
 
-Este Código de Conducta es una adaptación del [Contributor Covenant](http://contributor-covenant.org), version 1.2.0, disponible en [http://contributor-covenant.org/version/1/2/0/](http://contributor-covenant.org/version/1/2/0/)
+## Alcance
+
+Este código de conducta aplica tanto a espacios del proyecto como a espacios públicos donde un individuo esté en representación del proyecto o comunidad. Ejemplos de esto incluye el uso de la cuenta oficial de correo electrónico, publicaciones a través de las redes sociales oficiales, o presentaciones con personas designadas en eventos *online* u *offline*. La representación del proyecto puede ser clarificada explicitamente por los administradores del proyecto.
+ 
+## Aplicación
+
+Ejemplos de abuso, acoso u otro tipo de comportamiento inaceptable puede ser reportado al equipo del proyecto en consul@madrid.es. Todas las quejas serán revisadas e investigadas, generando un resultado apropiado a las circunstancias. El equipo del proyecto está obligado a mantener confidencialidad de la persona que reportó el incidente. Detalles específicos acerca de las políticas de aplicación pueden ser publicadas por separado.
+
+Administradores que no sigan o que no hagan cumplir este Código de Conducta pueden ser eliminados de forma temporal o permanente del equipo administrador. 
+
+## Atribución
+
+Este Código de Conducta es una adaptación del [Contributor Covenant][homepage], versión 1.4, disponible en [http://contributor-covenant.org/version/1/4/es/][version]
+
+[homepage]: http://contributor-covenant.org
+[version]: http://contributor-covenant.org/version/1/4/es/

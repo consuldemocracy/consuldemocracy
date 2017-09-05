@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if show_admin_menu? %>
 <li>
   <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow" %>
   <ul class="menu">

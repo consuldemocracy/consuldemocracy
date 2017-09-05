@@ -1,6 +1,6 @@
-![Logo of Consul](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
+![Logo of CONSUL](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
-# Consul
+# CONSUL
 
 Citizen Participation and Open Government Application
 
@@ -17,7 +17,7 @@ Citizen Participation and Open Government Application
 [![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/consul/consul/issues?q=is%3Aissue+is%3Aopen+label%3APRs-welcome)
 
-This is the opensource code repository of the eParticipation website originally developed for the Madrid City government eParticipation website
+This is the opensource code repository of the eParticipation website CONSUL, originally developed for the Madrid City government eParticipation website
 
 ## Current state
 
@@ -33,7 +33,7 @@ Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http
 
 **NOTE**: For more detailed instructions check the [docs](https://github.com/consul/consul/tree/master/doc/en/dev_test_setup.md)
 
-Prerequisites: install git, Ruby 2.3.2, bundler gem, ghostscript and PostgreSQL (>=9.4).
+Prerequisites: install git, Ruby 2.3.2, bundler gem, and PostgreSQL (>=9.4).
 
 ```
 git clone https://github.com/consul/consul.git
@@ -104,3 +104,7 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Brand guidelines
+
+If you want to use CONSUL logo you can [download the guidelines](https://raw.githubusercontent.com/consul/consul/master/public/consul_brand.zip) which contains a use guide and different versions and sizes of the logo.

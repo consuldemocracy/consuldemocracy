@@ -298,6 +298,23 @@ ActiveRecord::Schema.define(version: 20170724190805) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string   "title"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "user_id"
+    t.integer  "documentable_id"
+    t.string   "documentable_type"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "documents", ["documentable_type", "documentable_id"], name: "index_documents_on_documentable_type_and_documentable_id", using: :btree
+  add_index "documents", ["user_id", "documentable_type", "documentable_id"], name: "access_documents", using: :btree
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
+
   create_table "failed_census_calls", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "document_number"
@@ -1026,6 +1043,7 @@ ActiveRecord::Schema.define(version: 20170724190805) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
   add_foreign_key "flags", "users"

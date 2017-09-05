@@ -368,6 +368,20 @@ FactoryGirl.define do
     end
   end
 
+  factory :document do
+    sequence(:title) { |n| "Document title #{n}" }
+    association :user, factory: :user
+    attachment { File.new("spec/fixtures/files/empty.pdf") }
+
+    trait :proposal_document do
+      association :documentable, factory: :proposal
+    end
+
+    trait :budget_investment_document do
+      association :documentable, factory: :budget_investment
+    end
+  end
+
   factory :comment do
     association :commentable, factory: :debate
     user
