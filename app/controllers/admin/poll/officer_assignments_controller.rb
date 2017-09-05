@@ -32,35 +32,6 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     end
   end
 
-  def create
-    @officer_assignment = ::Poll::OfficerAssignment.new(booth_assignment: @booth_assignment,
-                                                        officer_id: create_params[:officer_id],
-                                                        date: create_params[:date])
-    @officer_assignment.final = true if @officer_assignment.date > @booth_assignment.poll.ends_at.to_date
-
-    if @officer_assignment.save
-      notice = t("admin.poll_officer_assignments.flash.create")
-    else
-      notice = t("admin.poll_officer_assignments.flash.error_create")
-    end
-
-    redirect_params = { poll_id: create_params[:poll_id], officer_id: create_params[:officer_id] }
-    redirect_to by_officer_admin_poll_officer_assignments_path(redirect_params), notice: notice
-  end
-
-  def destroy
-    @officer_assignment = ::Poll::OfficerAssignment.includes(:booth_assignment).find(params[:id])
-
-    if @officer_assignment.destroy
-      notice = t("admin.poll_officer_assignments.flash.destroy")
-    else
-      notice = t("admin.poll_officer_assignments.flash.error_destroy")
-    end
-
-    redirect_params = { poll_id: @officer_assignment.poll_id, officer_id: @officer_assignment.officer_id }
-    redirect_to by_officer_admin_poll_officer_assignments_path(redirect_params), notice: notice
-  end
-
   private
 
     def officer_assignment_params

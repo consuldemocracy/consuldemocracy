@@ -89,6 +89,22 @@ feature 'Proposals' do
       expect(current_path).to_not eq(old_path)
       expect(current_path).to eq(right_path)
     end
+
+    scenario 'Can access the community' do
+      Setting['feature.community'] = true
+
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      expect(page).to have_content "Access the community"
+
+      Setting['feature.community'] = false
+    end
+
+    scenario 'Can not access the community' do
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      expect(page).not_to have_content "Access the community"
+    end
   end
 
   context "Embedded video" do

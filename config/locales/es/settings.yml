@@ -41,6 +41,7 @@ es:
       legislation: Legislación
       user:
         recommendations: Recomendaciones
+      community: Comunidad en propuestas y proyectos de inversión
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
     meta_description: "Descripción del sitio (SEO)"

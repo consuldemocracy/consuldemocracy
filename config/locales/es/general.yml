@@ -64,6 +64,7 @@ es:
       most_voted: Más votados
       newest: Más nuevos primero
       oldest: Más antiguos primero
+      most_commented: Más comentados
     select_order: Ordenar por
     show:
       return_to_commentable: 'Volver a '
@@ -182,6 +183,7 @@ es:
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
     document: el documento
+    topic: Tema
   geozones:
     none: Toda la ciudad
     all: Todos los ámbitos de actuación

@@ -1,0 +1,27 @@
+<div class="row topic-show">
+  <div class="small-12 medium-12 column">
+
+    <%= back_link_to community_path(@community) %>
+    <br>
+
+    <p><%= community_text(@community) %> <strong><%= community_title(@community) %></strong></p>
+    <h1><%= @topic.title %></h1>
+    <div class="topic-info">
+      <p><%= @topic.description %></p>
+      <%= render '/shared/author_info', resource: @topic %>
+
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <%= l @topic.created_at.to_date %>
+      <span class="bullet">&nbsp;&bull;&nbsp;</span>
+      <span class="icon-comments"></span>&nbsp;
+    </div>
+
+    <div class="tabs-content" data-tabs-content="topics-tabs" role="tablist">
+      <%= render "topics/filter_subnav" %>
+      <div class="tabs-panel is-active" id="tab-comments">
+        <%= render "topics/comments" %>
+      </div>
+    </div>
+    
+  </div>
+</div>
