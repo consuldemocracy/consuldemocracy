@@ -88,12 +88,12 @@ class User < ActiveRecord::Base
   end
 
   def debate_votes(debates)
-    voted = votes.for_debates(debates)
+    voted = votes.for_debates(Array(debates).map(&:id))
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
   def proposal_votes(proposals)
-    voted = votes.for_proposals(proposals)
+    voted = votes.for_proposals(Array(proposals).map(&:id))
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 

@@ -9,7 +9,7 @@ class ProposalsController < ApplicationController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
-  has_orders %w{hot_score confidence_score created_at relevance archival_date}, only: :index
+  has_orders ->(c) { Proposal.proposals_orders(c.current_user) }, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
   load_and_authorize_resource
@@ -113,7 +113,7 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?
+      return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank? && @current_order != "recommendations"
       @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(3)
       if @featured_proposals.present?
         set_featured_proposal_votes(@featured_proposals)

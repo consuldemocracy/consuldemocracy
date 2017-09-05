@@ -54,7 +54,11 @@
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: 'button expanded' %>
       </div>
 
-      <%= render @debates %>
+      <% if @debates.any? || current_user.blank? %>
+        <%= render @debates %>
+      <% else %>
+        <%= empty_recommended_debates_message_text(current_user) %>
+      <% end %>
       <%= paginate @debates %>
 
       <% unless @search_terms || @advanced_search_terms || @tag_filter %>

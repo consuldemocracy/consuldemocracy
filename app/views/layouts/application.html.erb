@@ -23,7 +23,7 @@
 
     <%= setting['per_page_code_head'].try(:html_safe) %>
   </head>
-  <body>
+  <body class="<%= yield (:body_class) %>">
     <%= setting['per_page_code_body'].try(:html_safe) %>
 
     <h1 class="show-for-sr"><%= setting['org_name'] %></h1>

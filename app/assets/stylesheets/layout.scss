@@ -18,7 +18,8 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
-// 19. Documents
+// 19. Recommended Section Home
+// 20. Documents
 //
 
 // 01. Global styles
@@ -324,6 +325,14 @@ a {
   background: $brand;
 }
 
+.truncate-horizontal-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+
 .align-top {
   vertical-align: top;
 }
@@ -591,7 +600,7 @@ header {
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: $line-height * 1.5;
+      margin-right: rem-calc(24);
     }
 
     &:hover {
@@ -2140,7 +2149,142 @@ table {
   }
 }
 
-// 19. Documents
+// 19. Recommended Section Home
+// -----------
+
+.home-page {
+  .push {
+    display: none;
+  }
+}
+
+.section-recommended {
+  padding: $line-height * 2 0;
+
+  h2 {
+    margin-bottom: $line-height * 2;
+  }
+
+  .debates,
+  .proposals,
+  .budget-investments {
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(small) {
+      margin-bottom: $line-height;
+    }
+
+    .button.hollow{
+      margin-top: $line-height;
+    }
+  }
+
+  .card {
+
+    .card-section {
+      padding:$line-height 0;
+
+      p {
+        font-size: rem-calc(15);
+        text-align: left;
+      }
+    }
+
+    .orbit {
+      height: 300px;
+
+      .orbit-wrapper {
+        max-height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .orbit-bullets {
+        @include orbit-bullets;
+        width: 100%;
+      }
+    }
+  }
+
+  .card .orbit .orbit-wrapper .truncate {
+    background: image-url('truncate.png');
+    background-repeat: repeat-x;
+    bottom: 0;
+    height: 20px;
+    position: absolute;
+    width: 100%;
+  }
+
+  .debates-inner {
+    border-top: 4px solid $debates;
+  }
+
+  .proposals-inner {
+    border-top: 4px solid $proposals;
+  }
+
+  .budget-investments-inner {
+    border-top: 4px solid $budget;
+  }
+
+  .debates-inner,
+  .proposals-inner,
+  .budget-investments-inner {
+    background: #fff;
+    max-height: 350px;
+
+    @include breakpoint(small) {
+      max-height: 400px;
+    }
+
+    h4 {
+      margin-top: $line-height;
+      margin-bottom: 0;
+      font-size: rem-calc(18);
+      min-height: 50px;
+    }
+
+    h5 {
+      font-size: rem-calc(14);
+      text-align: left;
+    }
+  }
+
+  .carousel-image {
+
+    .card .orbit {
+      height: 480px;
+
+      .orbit-wrapper {
+        min-height: 450px;
+        max-height: 460px;
+      }
+    }
+
+    .debates-inner,
+    .proposals-inner,
+    .budget-investments-inner {
+      max-height: 500px;
+
+      @include breakpoint(small) {
+        max-height: 600px;
+      }
+    }
+  }
+
+  .carousel-image .orbit-wrapper img {
+    display: block;
+
+    @include breakpoint(small) {
+      margin: 0 auto;
+    }
+  }
+}
+
+// 20. Documents
 .document-form form {
 
   .radio-buttons {
@@ -2196,7 +2340,7 @@ table {
       }
     }
   }
-
+  
   .attachment-errors {
     margin-bottom: $line-height;
   }
