@@ -885,17 +885,10 @@
   }
 }
 
-.help-link {
-  margin-left: $line-height;
-  position: relative;
+.help-header {
 
-  &::before {
-    color: $link;
-    content: '\4e';
-    font-family: 'icons';
-    position: absolute;
-    left: -24px;
-    top: -2px;
+  h1 {
+    font-size: rem-calc(24);
   }
 }
 
