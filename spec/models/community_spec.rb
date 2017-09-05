@@ -21,7 +21,9 @@ RSpec.describe Community, type: :model do
       create(:comment, commentable: topic1, author: user2)
       topic2 = create(:topic, community: community, author: user2)
 
-      expect(community.participants).to eq [user1, user2, proposal.author]
+      expect(community.participants).to include(user1)
+      expect(community.participants).to include(user2)
+      expect(community.participants).to include(proposal.author)
     end
   end
 end
