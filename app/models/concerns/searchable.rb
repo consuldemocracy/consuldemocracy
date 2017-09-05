@@ -12,7 +12,7 @@ module Searchable
       },
       ignoring: :accents,
       ranked_by: '(:tsearch)',
-      order_within_rank: (self.column_names.include?('cached_votes_up') ? "#{self.table_name}.cached_votes_up DESC" : nil)
+      order_within_rank: (column_names.include?('cached_votes_up') ? "#{table_name}.cached_votes_up DESC" : nil)
     }
   end
 

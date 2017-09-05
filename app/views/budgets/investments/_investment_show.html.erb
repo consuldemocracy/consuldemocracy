@@ -10,6 +10,12 @@
                     class: 'button hollow float-right' %>
       <% end %>
 
+      <% if can?(:create, @document) && investment.documents.size < Budget::Investment.max_documents_allowed %>
+        <%= link_to t("documents.upload_document"),
+                    new_document_path(documentable_id:investment, documentable_type: investment.class.name, from: request.url),
+                    class: 'button hollow float-right' %>
+      <% end %>
+
       <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
@@ -19,7 +25,6 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>
-
       <br>
 
       <% if investment.image.exists? %>
@@ -73,6 +78,7 @@
         <h2><%= t('budgets.investments.show.price_explanation') %></h2>
         <p><%= investment.price_explanation %></p>
       <% end %>
+
     </div>
 
     <aside class="small-12 medium-3 column">
@@ -135,6 +141,11 @@
         image_url: investment.image.exists? ? investment_image_full_url(investment, :thumb) : '',
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
+
+      <% if current_user %>
+        <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, investment) %>
+      <% end %>
+
      </aside>
   </div>
 </section>

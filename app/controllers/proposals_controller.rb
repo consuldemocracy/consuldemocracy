@@ -19,11 +19,13 @@ class ProposalsController < ApplicationController
   def show
     super
     @notifications = @proposal.notifications
+    @document = Document.new(documentable: @proposal)
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
+    recover_documents_from_cache(@proposal)
 
     if @proposal.save
       redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
@@ -74,7 +76,9 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url, :responsible_name, :tag_list, :terms_of_service, :geozone_id)
+      params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
+                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id,
+                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id] )
     end
 
     def retired_params
@@ -109,7 +113,8 @@ class ProposalsController < ApplicationController
     end
 
     def load_featured
-      @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(3) if (!@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?)
+      return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?
+      @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(3)
       if @featured_proposals.present?
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
@@ -119,4 +124,5 @@ class ProposalsController < ApplicationController
     def load_successful_proposals
       @proposal_successful_exists = Proposal.successful.exists?
     end
+
 end

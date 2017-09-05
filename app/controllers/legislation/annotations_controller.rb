@@ -102,8 +102,9 @@ class Legislation::AnnotationsController < ApplicationController
     end
 
     def convert_ranges_parameters
-      if params[:legislation_annotation] && params[:legislation_annotation][:ranges] && params[:legislation_annotation][:ranges].is_a?(String)
-        params[:legislation_annotation][:ranges] = JSON.parse(params[:legislation_annotation][:ranges])
+      annotation = params[:legislation_annotation]
+      if annotation && annotation[:ranges] && annotation[:ranges].is_a?(String)
+        params[:legislation_annotation][:ranges] = JSON.parse(annotation[:ranges])
       end
     rescue JSON::ParserError
     end

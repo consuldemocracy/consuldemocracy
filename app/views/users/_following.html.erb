@@ -1,0 +1,30 @@
+<ul class="accordion" data-accordion data-allow-all-closed="true">
+
+  <% @follows.each do |followable_type, follows| %>
+
+    <li class="accordion-item" data-accordion-item>
+
+      <a href="#" class="accordion-title">
+        <span class="icon">
+          <i class="icon icon-<%= followable_icon(followable_type) %>"></i>
+        </span>
+        <span class="title">
+          <strong><%= followable_type_title(followable_type) %></strong>
+        </span>
+      </a>
+
+      <div class="accordion-content" data-tab-content>
+        <table>
+          <tbody>
+            <% follows.each do |follow| %>
+              <%= render_follow(follow) %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+    </li>
+
+  <% end %>
+
+</ul>

@@ -1,12 +1,12 @@
 # Personalización
 
-Puedes modificar consul y ponerle tu propia imagen, para esto debes primero hacer un fork de [https://github.com/consul/consul](https://github.com/consul/consul) creando un repositorio nuevo en Github. Puedes usar otro servicio como Gitlab, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3).
+Puedes modificar CONSUL y ponerle tu propia imagen, para esto debes primero hacer un fork de [https://github.com/consul/consul](https://github.com/consul/consul) creando un repositorio nuevo en Github. Puedes usar otro servicio como Gitlab, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3).
 
-Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que Consul sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
+Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que CONSUL sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
 
 ## Ficheros y directorios especiales
 
-Para adaptarlo puedes hacerlo a través de los directorios que están en custom dentro de:
+Para adaptar tu fork de CONSUL puedes utilizar alguno de los directorios `custom` que están en las rutas:
 
 * `config/locales/custom/`
 * `app/assets/images/custom/`
@@ -32,7 +32,7 @@ Las adaptaciones los debes poner en el directorio `config/locales/custom/`, reco
 <%= t("layouts.footer.copyright", year: Time.current.year) %>
 ```
 
-Y que en el fichero `config/locales/es.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
+Y que en el fichero `config/locales/es/general.yml` sigue esta estructura (solo ponemos lo relevante para este caso):
 
 ```yml
 es:
@@ -42,7 +42,7 @@ es:
 
 ```
 
-Si creamos el fichero `config/locales/custom/es.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
+Si creamos el fichero `config/locales/custom/es/general.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
 
 ### Imágenes
 
@@ -53,7 +53,8 @@ Si quieres sobreescribir alguna imagen debes primero fijarte el nombre que tiene
 * logo_email.png
 * logo_header.png
 * map.jpg
-* social-media-icon.png
+* social_media_icon.png
+* social_media_icon_twitter.png
 
 ### Vistas (HTML)
 
@@ -206,7 +207,7 @@ TODO
 
 ## Actualizar
 
-Te recomendamos que agregues el remote de consul para facilitar este proceso de merge:
+Te recomendamos que agregues el remote de CONSUL para facilitar este proceso de merge:
 
 ```
 git remote add consul https://github.com/consul/consul

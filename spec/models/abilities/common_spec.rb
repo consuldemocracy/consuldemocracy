@@ -35,14 +35,14 @@ describe "Abilities::Common" do
   let(:incoming_poll) { create(:poll, :incoming) }
   let(:incoming_poll_from_own_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [geozone]) }
   let(:incoming_poll_from_other_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [create(:geozone)]) }
-  let(:expired_poll)  { create(:poll, :expired)  }
+  let(:expired_poll) { create(:poll, :expired) }
   let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
   let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
   let(:poll) { create(:poll, geozone_restricted: false) }
   let(:poll_from_own_geozone) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
   let(:poll_from_other_geozone) { create(:poll, geozone_restricted: true, geozones: [create(:geozone)]) }
 
-  let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone)  }
+  let(:poll_question_from_own_geozone)   { create(:poll_question, poll: poll_from_own_geozone) }
   let(:poll_question_from_other_geozone) { create(:poll_question, poll: poll_from_other_geozone) }
   let(:poll_question_from_all_geozones)  { create(:poll_question, poll: poll) }
 
@@ -53,6 +53,11 @@ describe "Abilities::Common" do
   let(:incoming_poll_question_from_own_geozone)   { create(:poll_question, poll: incoming_poll_from_own_geozone) }
   let(:incoming_poll_question_from_other_geozone) { create(:poll_question, poll: incoming_poll_from_other_geozone) }
   let(:incoming_poll_question_from_all_geozones)  { create(:poll_question, poll: incoming_poll) }
+
+  let(:own_proposal_document)          { build(:document, documentable: own_proposal) }
+  let(:proposal_document)              { build(:document, documentable: proposal) }
+  let(:own_budget_investment_document) { build(:document, documentable: own_investment_in_accepting_budget) }
+  let(:budget_investment_document)     { build(:document, documentable: investment_in_accepting_budget) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }
@@ -81,6 +86,25 @@ describe "Abilities::Common" do
   it { should     be_able_to(:new,    DirectMessage) }
   it { should_not be_able_to(:create, DirectMessage) }
   it { should_not be_able_to(:show,   DirectMessage) }
+
+  it { should  be_able_to(:new_nested, Document) }
+  it { should  be_able_to(:destroy_upload, Document) }
+
+  it { should be_able_to(:new, own_proposal_document) }
+  it { should be_able_to(:create, own_proposal_document) }
+  it { should be_able_to(:destroy, own_proposal_document) }
+
+  it { should_not be_able_to(:new, proposal_document) }
+  it { should_not be_able_to(:create, proposal_document) }
+  it { should_not be_able_to(:destroy, proposal_document) }
+
+  it { should be_able_to(:new, own_budget_investment_document) }
+  it { should be_able_to(:create, own_budget_investment_document) }
+  it { should be_able_to(:destroy, own_budget_investment_document) }
+
+  it { should_not be_able_to(:new, budget_investment_document) }
+  it { should_not be_able_to(:create, budget_investment_document) }
+  it { should_not be_able_to(:destroy, budget_investment_document) }
 
   describe 'flagging content' do
     it { should be_able_to(:flag, debate)   }
@@ -249,7 +273,7 @@ describe "Abilities::Common" do
     it { should be_able_to(:vote, Proposal)          }
     it { should be_able_to(:vote_featured, Proposal) }
 
-    it { should     be_able_to(:create, SpendingProposal)                }
+    it { should     be_able_to(:create, SpendingProposal) }
     it { should_not be_able_to(:destroy, create(:spending_proposal)) }
     it { should_not be_able_to(:destroy, own_spending_proposal)      }
 

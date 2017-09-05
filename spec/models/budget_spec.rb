@@ -2,6 +2,18 @@ require 'rails_helper'
 
 describe Budget do
 
+  it_behaves_like "sluggable"
+
+  describe "name" do
+    before do
+      create(:budget, name: 'object name')
+    end
+
+    it "is validated for uniqueness" do
+      expect(build(:budget, name: 'object name')).not_to be_valid
+    end
+  end
+
   describe "description" do
     it "changes depending on the phase" do
       budget = create(:budget)

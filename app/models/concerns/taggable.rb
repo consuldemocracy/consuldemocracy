@@ -9,7 +9,7 @@ module Taggable
   def tag_list_with_limit(limit = nil)
     return tags if limit.blank?
 
-    tags.sort{|a,b| b.taggings_count <=> a.taggings_count}[0, limit]
+    tags.sort{|a, b| b.taggings_count <=> a.taggings_count}[0, limit]
   end
 
   def tags_count_out_of_limit(limit = nil)

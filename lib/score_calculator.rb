@@ -1,7 +1,7 @@
 module ScoreCalculator
 
   EPOC           = Time.new(2015, 6, 15).in_time_zone
-  COMMENT_WEIGHT = 1.0/5 # 1 positive vote / x comments
+  COMMENT_WEIGHT = 1.0 / 5 # 1 positive vote / x comments
   TIME_UNIT      = 24.hours.to_f
 
   def self.hot_score(date, votes_total, votes_up, comments_count)
@@ -13,7 +13,7 @@ module ScoreCalculator
     sign    = score <=> 0
     seconds = ((date || Time.current) - EPOC).to_f
 
-    (((offset * sign) + (seconds/TIME_UNIT)) * 10000000).round
+    (((offset * sign) + (seconds / TIME_UNIT)) * 10000000).round
   end
 
   def self.confidence_score(votes_total, votes_up)

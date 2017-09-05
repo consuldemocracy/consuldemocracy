@@ -18,6 +18,7 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
+// 19. Documents
 //
 
 // 01. Global styles
@@ -89,6 +90,11 @@ a {
 .button.hollow {
   border: 1px solid $link;
   color: $link;
+}
+
+.button.hollow.error {
+  border-color: $alert-border;
+  color: $color-alert;
 }
 
 .postfix.button {
@@ -216,9 +222,8 @@ a {
 }
 
 .menu.vertical {
-  background: #fff;
   margin: $line-height 0;
-  padding: $line-height;
+  padding: $line-height 0;
 
   li {
     margin-bottom: $line-height;
@@ -226,6 +231,11 @@ a {
     a {
       color: $text-medium;
       padding: 0;
+
+      &.active {
+        font-weight: bold;
+        color: $brand;
+      }
     }
 
     h2 {
@@ -312,6 +322,10 @@ a {
 
 .pagination .current {
   background: $brand;
+}
+
+.align-top {
+  vertical-align: top;
 }
 
 // 02. Header
@@ -406,6 +420,33 @@ header {
       background: #fff;
       box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
     }
+  }
+
+  .menu {
+
+    &.is-dropdown-submenu {
+      background: #fff;
+      margin: 0;
+      margin-top: rem-calc(-24);
+      padding: 0;
+    }
+
+    .is-submenu-item {
+      display: block;
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        color: $text;
+      }
+    }
+  }
+}
+
+.dropdown.menu > li {
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-color: #fff transparent transparent;
   }
 }
 
@@ -525,6 +566,14 @@ header {
     margin-bottom: 0;
     margin-right: 0;
     width: 100%;
+  }
+}
+
+.top-bar-right {
+
+  .active {
+    font-weight: bold;
+    text-decoration: underline;
   }
 }
 
@@ -825,23 +874,6 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .note,
-  .note-marked {
-    display: block;
-    font-size: rem-calc(13);
-    margin-bottom: $line-height / 2;
-  }
-
-  .note-marked {
-    background: #ff0;
-    display: inline-block;
-
-    em {
-      background: #fff;
-      display: block;
-    }
-  }
-
   .ckeditor {
     min-height: $line-height * 13;
   }
@@ -1124,7 +1156,6 @@ form {
     margin-top: $line-height / 4;
     position: absolute;
     right: 0;
-    z-index: 2;
   }
 }
 
@@ -1763,6 +1794,7 @@ table {
 
     [class^="icon-"] {
       font-size: $base-font-size;
+      text-decoration: none;
       vertical-align: sub;
     }
   }
@@ -1793,11 +1825,13 @@ table {
       font-size: $base-font-size;
       left: -20px;
       position: absolute;
+      text-decoration: none;
       top: -1px;
     }
 
     .divider {
       color: $text-light;
+      display: inline-block;
     }
 
     form {
@@ -1944,8 +1978,39 @@ table {
 .activity {
   margin-bottom: $line-height * 2;
 
+  .accordion li {
+    margin-bottom: $line-height / 2;
+
+    .accordion-title {
+      border-bottom: 1px solid $border;
+      background: #f8f9fb;
+      font-size: $small-font-size;
+      padding: $line-height / 2;
+    }
+
+    .accordion-content {
+      padding: 0;
+    }
+  }
+
+  .accordion .title {
+    display: block;
+    line-height: $line-height;
+  }
+
+  .accordion .icon {
+    font-size: rem-calc(20);
+    float: left;
+    margin-right: $line-height / 3;
+
+    &.icon-debates {
+      margin-top: rem-calc(3);
+    }
+  }
+
   table {
     border: 0;
+    margin-bottom: 0;
   }
 
   td {
@@ -1991,6 +2056,14 @@ table {
   .activity-ballot td:first-child::before {
     content: '\53';
     top: 10px;
+  }
+}
+
+.public-interests {
+  margin-top: $line-height;
+
+  .column {
+    padding-left: 0;
   }
 }
 
@@ -2064,5 +2137,127 @@ table {
   a:hover h3 {
     color: #eaeaf2 !important;
     text-decoration: none;
+  }
+}
+
+// 19. Documents
+.document-form form {
+
+  .radio-buttons {
+    label {
+      margin-right: $line-height;
+    }
+  }
+
+  .source-option-link {
+    input {
+      padding-bottom: 0;
+    }
+
+    .error {
+      margin-bottom: $line-height;
+    }
+
+    label {
+      &.error {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .source-option-file {
+    .file-name {
+      label {
+
+        @include breakpoint(small medium) {
+          float: none;
+        }
+
+        @include breakpoint(large) {
+          float: left;
+        }
+      }
+
+      p {
+
+        @include breakpoint(small medium) {
+          float: none;
+          margin-top: 0;
+          margin-left: 0;
+          margin-bottom: 0;
+        }
+
+        @include breakpoint(large) {
+          float: left;
+          margin-bottom: 0;
+          margin-top: $line-height / 2;
+          margin-left: $line-height;
+        }
+      }
+    }
+  }
+
+  .attachment-errors {
+    margin-bottom: $line-height;
+  }
+}
+
+.documents-list {
+
+  table {
+    border: 0;
+  }
+
+  td {
+    position: relative;
+
+    @include breakpoint(small) {
+      float: left;
+      width: 100%;
+    }
+
+    @include breakpoint(medium) {
+      float: none;
+    }
+
+    a {
+      width: 100%;
+    }
+
+    &:first-child {
+      padding-left: $line-height * 1.5;
+
+      @include breakpoint(small) {
+        width: 100%;
+      }
+
+      @include breakpoint(medium) {
+        width: 70%;
+      }
+
+      @include breakpoint(large) {
+        width: 80%;
+      }
+    }
+
+    &:first-child::before {
+      color: #007bb7;
+      content: 'G';
+      font-family: "icons" !important;
+      font-size: rem-calc(24);
+      left: rem-calc(6);
+      position: absolute;
+      top: 0;
+
+      @include breakpoint(small) {
+        padding-top: rem-calc(12);
+      }
+
+      @include breakpoint(medium) {
+        padding-top: rem-calc(22);
+      }
+
+    }
+
   }
 }

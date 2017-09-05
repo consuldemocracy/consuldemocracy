@@ -14,7 +14,13 @@
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= render "shared/back_link" %>
+        <%= back_link_to %>
+
+        <% if can?(:create, @document) && @proposal.documents.size < Proposal.max_documents_allowed %>
+          <%= link_to t("documents.upload_document"),
+                      new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
+                      class: 'button hollow float-right' %>
+        <% end %>
 
         <% if author_of?(@proposal, current_user) %>
           <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
@@ -49,10 +55,12 @@
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="icon-comments"></span>&nbsp;
           <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="js-flag-actions">
+
+          <% if current_user %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
             <%= render 'proposals/flag_actions', proposal: @proposal %>
-          </span>
+          <% end %>
+
         </div>
 
         <br>
@@ -75,14 +83,23 @@
 
         <% if @proposal.external_url.present? %>
           <div class="document-link">
-            <%= text_with_links @proposal.external_url %>
+            <p>
+              <span class="icon-document"></span>&nbsp;
+              <strong><%= t('proposals.show.title_external_url') %></strong>
+            </p>
+              <%= text_with_links @proposal.external_url %>
           </div>
         <% end %>
 
         <% if @proposal.video_url.present? %>
           <div class="video-link">
+            <p>
+              <span class="icon-video"></span>&nbsp;
+              <strong><%= t('proposals.show.title_video_url') %></strong>
+            </p>
             <%= text_with_links @proposal.video_url %>
           </div>
+
         <% end %>
 
         <h4><%= @proposal.question %></h4>
@@ -137,6 +154,11 @@
           title: @proposal.title,
           url: proposal_url(@proposal)
         } %>
+
+        <% if current_user %>
+          <%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @proposal)  %>
+        <% end %>
+
       </aside>
     </div>
   </div>
@@ -148,5 +170,11 @@
 
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "proposals/comments" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @proposal.documents,
+                max_documents_allowed: Proposal.max_documents_allowed %>
   </div>
 </div>

@@ -76,7 +76,6 @@ feature 'Valuation budget investments' do
     expect(page).to have_link("Realocate visitors")
     expect(page).to have_link("Destroy the city")
 
-
     expect(page).to have_content "All headings (2)"
     expect(page).to have_content "District 9 (1)"
     expect(page).to have_content "Down to the river (1)"
@@ -289,10 +288,10 @@ feature 'Valuation budget investments' do
     end
 
     scenario 'Feasibility selection makes proper fields visible', :js do
-      feasible_fields  = ['Price (€)','Cost during the first year (€)','Price explanation','Time scope']
+      feasible_fields = ['Price (€)', 'Cost during the first year (€)', 'Price explanation', 'Time scope']
       unfeasible_fields = ['Feasibility explanation']
-      any_feasibility_fields   = ['Valuation finished','Internal comments']
-      undecided_fields   = feasible_fields + unfeasible_fields + any_feasibility_fields
+      any_feasibility_fields = ['Valuation finished', 'Internal comments']
+      undecided_fields = feasible_fields + unfeasible_fields + any_feasibility_fields
 
       visit edit_valuation_budget_budget_investment_path(@budget, @investment)
 

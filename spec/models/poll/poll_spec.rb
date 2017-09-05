@@ -93,7 +93,7 @@ describe :poll do
     let(:non_user) { nil }
     let(:level1)   { create(:user) }
     let(:level2)   { create(:user, :level_two) }
-    let(:level2_from_geozone)   { create(:user, :level_two, geozone: geozone) }
+    let(:level2_from_geozone) { create(:user, :level_two, geozone: geozone) }
     let(:all_users) { [non_user, level1, level2, level2_from_geozone] }
 
     describe 'instance method' do

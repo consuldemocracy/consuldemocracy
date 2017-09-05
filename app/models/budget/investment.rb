@@ -1,5 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
+    
     MIN_SIZE = 475
 
     include Measurable
@@ -7,6 +8,12 @@ class Budget
     include Taggable
     include Searchable
     include Reclassification
+    include Followable
+    include Documentable
+    documentable max_documents_allowed: 3,
+                 max_file_size: 3.megabytes,
+                 accepted_content_types: [ "application/pdf" ]
+    accepts_nested_attributes_for :documents, allow_destroy: true
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
@@ -57,7 +64,9 @@ class Budget
     scope :undecided,                   -> { where(feasibility: "undecided") }
     scope :with_supports,               -> { where('cached_votes_up > 0') }
     scope :selected,                    -> { feasible.where(selected: true) }
-    scope :winners,                     -> { selected.where(winner: true) }
+    scope :compatible,                  -> { where(incompatible: false) }
+    scope :incompatible,                -> { where(incompatible: true) }
+    scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
 
@@ -67,9 +76,10 @@ class Budget
     scope :by_tag,      ->(tag_name)    { tagged_with(tag_name) }
     scope :by_valuator, ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
 
-    scope :for_render,             -> { includes(:heading) }
+    scope :for_render, -> { includes(:heading) }
 
     before_save :calculate_confidence_score
+    after_save :recalculate_heading_winners if :incompatible_changed?
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
@@ -98,7 +108,7 @@ class Budget
     end
 
     def self.search(terms)
-      self.pg_search(terms)
+      pg_search(terms)
     end
 
     def self.by_heading(heading)
@@ -195,7 +205,7 @@ class Budget
     end
 
     def enough_money?(ballot)
-      available_money = ballot.amount_available(self.heading)
+      available_money = ballot.amount_available(heading)
       price.to_i <= available_money
     end
 
@@ -207,13 +217,17 @@ class Budget
       self.confidence_score = ScoreCalculator.confidence_score(total_votes, total_votes)
     end
 
+    def recalculate_heading_winners
+      Budget::Result.new(budget, heading).calculate_winners if incompatible_changed?
+    end
+
     def set_responsible_name
       self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
     end
 
     def should_show_aside?
-      (budget.selecting?  && !unfeasible?) ||
-        (budget.balloting?  && feasible?)    ||
+      (budget.selecting? && !unfeasible?) ||
+        (budget.balloting? && feasible?) ||
         (budget.valuating? && !unfeasible?)
     end
 
@@ -256,8 +270,8 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id = self.heading.try(:group_id) if self.heading_id_changed?
-        self.budget_id ||= self.heading.try(:group).try(:budget_id)
+        self.group_id = heading.try(:group_id) if heading_id_changed?
+        self.budget_id ||= heading.try(:group).try(:budget_id)
       end
 
       def check_image_dimensions

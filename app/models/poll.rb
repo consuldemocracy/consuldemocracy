@@ -18,7 +18,7 @@ class Poll < ActiveRecord::Base
   scope :current,  -> { where('starts_at <= ? and ? <= ends_at', Time.current, Time.current) }
   scope :incoming, -> { where('? < starts_at', Time.current) }
   scope :expired,  -> { where('ends_at < ?', Time.current) }
-  scope :published,  -> { where('published = ?', true) }
+  scope :published, -> { where('published = ?', true) }
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }

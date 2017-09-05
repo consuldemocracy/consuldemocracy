@@ -19,10 +19,10 @@ class Poll::PartialResult < ActiveRecord::Base
   before_save :update_logs
 
   def update_logs
-    if self.amount_changed? && self.amount_was.present?
-      self.amount_log += ":#{self.amount_was.to_s}"
-      self.officer_assignment_id_log += ":#{self.officer_assignment_id_was.to_s}"
-      self.author_id_log += ":#{self.author_id_was.to_s}"
+    if amount_changed? && amount_was.present?
+      self.amount_log += ":#{amount_was.to_s}"
+      self.officer_assignment_id_log += ":#{officer_assignment_id_was.to_s}"
+      self.author_id_log += ":#{author_id_was.to_s}"
     end
   end
 end

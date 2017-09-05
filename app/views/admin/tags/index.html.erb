@@ -8,12 +8,6 @@
       <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
     </div>
 
-    <div class="is-featured small-12 medium-6 column">
-      <%= f.label :featured do %>
-        <%= f.check_box :featured, title: t('admin.tags.mark_as_featured'), label: false %>
-        <span class="checkbox"><%= t("admin.tags.mark_as_featured") %></span>
-      <% end %>
-    </div>
   </div>
 
   <%= f.submit(t("admin.tags.create"), class: "button success") %>
@@ -33,13 +27,8 @@
 
             <span class="float-left text-left">
               <strong><%= tag.name %></strong>
-              <%= f.label "featured_#{tag.id}" do %>
-                <%= f.check_box :featured, title: t('admin.tags.mark_as_featured'), label: false, id: "tag_featured_#{tag.id}", class: "inline-block" %>
-                <span class="checkbox inline-block"><%= t("admin.tags.mark_as_featured") %></span>
-              <% end %>
             </span>
 
-            <%= f.submit(t("admin.tags.update"), class: "button hollow on-hover") %>
             <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert on-hover" %>
         <% end %>
       </td>

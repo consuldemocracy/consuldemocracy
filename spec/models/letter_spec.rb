@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Verification::Letter' do
 
-  let(:user)   { create(:user)  }
+  let(:user) { create(:user) }
 
   describe "validations" do
 

@@ -35,7 +35,7 @@ class Poll
       end
 
       def census_api_response
-        @census_api_response ||= CensusApi.new.call(document_type, document_number)
+        @census_api_response ||= CensusCaller.new.call(document_type, document_number)
       end
 
       def fill_stats_fields

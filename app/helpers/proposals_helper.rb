@@ -18,7 +18,7 @@ module ProposalsHelper
     end
   end
 
-  def namespaced_proposal_path(proposal, options={})
+  def namespaced_proposal_path(proposal, options = {})
     @namespace_proposal_path ||= namespace
     case @namespace_proposal_path
     when "management"

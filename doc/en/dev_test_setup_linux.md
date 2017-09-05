@@ -86,15 +86,9 @@ apt-get update
 apt-get install postgresql-9.4
 ```
 
-## Ghostscript
-
-```
-apt-get install ghostscript
-```
-
 ## Cloning the repository
 
-Now, with all the dependencies installed, clone the Consul repository:
+Now, with all the dependencies installed, clone the CONSUL repository:
 
 ```
 git clone https://github.com/consul/consul.git

@@ -35,7 +35,10 @@ Cuando quieras resolver una incidencia mediante código:
 * Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
 * Asegúrate de que los tests pasan (y escribe más tests para probar la nueva funcionalidad si fuera preciso)
 * Sigue estas [buenas prácticas](https://github.com/styleguide/ruby)
-* Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando
+* Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando.
+
+**¿Es tu primer Pull Request?** Puedes aprender en este curso gratuito (en inglés) sobre [cómo contribuir a un proyecto OpenSource en GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+
 
 ## Limpiar
 

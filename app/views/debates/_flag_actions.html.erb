@@ -3,17 +3,17 @@
     <a id="flag-expand-debate-<%= debate.id %>" data-toggle="flag-drop-debate-<%= debate.id %>" title="<%= t('shared.flag') %>">
       <span class="icon-flag flag-disable"></span>
     </a>
-    <div class="dropdown-pane" id="flag-drop-debate-<%= debate.id %>" data-dropdown data-auto-focus="true">
+    <span class="dropdown-pane" id="flag-drop-debate-<%= debate.id %>" data-dropdown data-auto-focus="true">
       <%= link_to t('shared.flag'), flag_debate_path(debate), method: :put, remote: true, id: "flag-debate-#{ debate.id }" %>
-    </div>
+    </span>
   <% end %>
 
   <% if show_unflag_action? debate %>
     <a id="unflag-expand-debate-<%= debate.id %>" data-toggle="unflag-drop-debate-<%= debate.id %>" title="<%= t('shared.unflag') %>">
       <span class="icon-flag flag-active"></span>
     </a>
-    <div class="dropdown-pane" id="unflag-drop-debate-<%= debate.id %>" data-dropdown data-auto-focus="true">
+    <span class="dropdown-pane" id="unflag-drop-debate-<%= debate.id %>" data-dropdown data-auto-focus="true">
       <%= link_to t('shared.unflag'), unflag_debate_path(debate), method: :put, remote: true, id: "unflag-debate-#{ debate.id }" %>
-    </div>
+    </span>
   <% end %>
 </span>

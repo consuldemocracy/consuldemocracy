@@ -180,7 +180,7 @@ describe Budget::Investment do
     let(:investment) { create(:budget_investment) }
 
       it "returns the proposal id" do
-        expect(investment.code).to include("#{investment.id}")
+        expect(investment.code).to include((investment.id).to_s)
       end
 
       it "returns the administrator id when assigned" do
@@ -326,7 +326,7 @@ describe Budget::Investment do
       by_valuator = Budget::Investment.by_valuator(valuator1.id)
 
       expect(by_valuator.size).to eq(2)
-      expect(by_valuator.sort).to eq([investment1,investment3].sort)
+      expect(by_valuator.sort).to eq([investment1, investment3].sort)
     end
   end
 
@@ -667,11 +667,10 @@ describe Budget::Investment do
         most_voted2  = create(:budget_investment, cached_votes_up: 10)
         least_voted2 = create(:budget_investment, cached_votes_up: 1)
 
-
-        expect(Budget::Investment.sort_by_confidence_score.first).to  eq most_voted2
-        expect(Budget::Investment.sort_by_confidence_score.second).to  eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.third).to  eq least_voted2
-        expect(Budget::Investment.sort_by_confidence_score.fourth).to  eq least_voted
+        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted2
+        expect(Budget::Investment.sort_by_confidence_score.second).to eq most_voted
+        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted2
+        expect(Budget::Investment.sort_by_confidence_score.fourth).to eq least_voted
       end
     end
   end

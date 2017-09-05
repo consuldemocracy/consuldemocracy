@@ -9,7 +9,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
   def create
     if @process.save
-      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.create.notice', link: legislation_process_path(@process).html_safe)
+      link = legislation_process_path(@process).html_safe
+      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.create.notice', link: link)
     else
       flash.now[:error] = t('admin.legislation.processes.create.error')
       render :new
@@ -18,7 +19,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
   def update
     if @process.update(process_params)
-      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.update.notice', link: legislation_process_path(@process).html_safe)
+      link = legislation_process_path(@process).html_safe
+      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.update.notice', link: link)
     else
       flash.now[:error] = t('admin.legislation.processes.update.error')
       render :edit
@@ -49,7 +51,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :debate_phase_enabled,
         :allegations_phase_enabled,
         :draft_publication_enabled,
-        :result_publication_enabled
+        :result_publication_enabled,
+        :published
       )
     end
 end

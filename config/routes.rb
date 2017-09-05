@@ -98,6 +98,16 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :follows, only: [:create, :destroy]
+
+  resources :documents, only: [:new, :create, :destroy] do
+    collection do
+      get :new_nested
+      delete :destroy_upload
+      post :upload
+    end
+  end
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'
@@ -114,10 +124,12 @@ Rails.application.routes.draw do
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
-      get :debate
-      get :draft_publication
-      get :allegations
-      get :result_publication
+      member do
+        get :debate
+        get :draft_publication
+        get :allegations
+        get :result_publication
+      end
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
       end
@@ -212,7 +224,6 @@ Rails.application.routes.draw do
         member { patch :toggle_selection }
       end
     end
-
 
     resources :signature_sheets, only: [:index, :new, :create, :show]
 
@@ -402,7 +413,6 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       get :final, on: :collection
 
-      resources :recounts, only: [:new, :create]
       resources :final_recounts, only: [:new, :create]
       resources :results, only: [:new, :create, :index]
     end
@@ -420,7 +430,6 @@ Rails.application.routes.draw do
   end
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-  mount Tolk::Engine => '/translate', :as => 'tolk'
 
   # more info pages
   get 'more-information',                     to: 'pages#show', id: 'more_info/index',                as: 'more_info'

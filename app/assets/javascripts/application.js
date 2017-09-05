@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
+//= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
 //= require ckeditor/loader
@@ -58,6 +59,8 @@
 //= require legislation_allegations
 //= require legislation_annotatable
 //= require watch_form_changes
+//= require followable
+//= require documentable
 //= require tree_navigator
 //= require custom
 
@@ -93,6 +96,7 @@ var initialize_modules = function() {
     App.LegislationAnnotatable.initialize();
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
+  App.Documentable.initialize();
 };
 
 $(function(){

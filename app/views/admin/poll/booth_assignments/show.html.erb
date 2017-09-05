@@ -44,44 +44,30 @@
   </div>
 
   <div class="tabs-panel" id="tab-recounts">
-    <% if @booth_assignment.recounts.empty? %>
-      <div class="callout primary margin-top">
-        <%= t("admin.poll_booth_assignments.show.no_recounts") %>
-      </div>
-    <% else %>
-      <h3><%= t("admin.poll_booth_assignments.show.recounts_list") %></h3>
-      <table id="recounts_list">
-        <thead>
-          <tr>
-            <th><%= t("admin.poll_booth_assignments.show.date") %></th>
-            <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_officer") %></th>
-            <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_final") %></th>
-            <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_system") %></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
-          <% recount = recount_for_date(@booth_assignment.recounts, voting_date) %>
-          <% final_recount = final_recount_for_date(@booth_assignment.final_recounts, voting_date) %>
-          <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
-          <tr id="recounting_<%= voting_date.strftime('%Y%m%d') %>">
-            <td><%= l voting_date %></td>
-            <% if recount.present? %>
-
-              <td class="text-center <%= 'count-error' if recount.count != system_count %>" title="<%= recount.officer_assignment.officer.name %>"><%= recount.count %></td>
-            <% else %>
-              <td class="text-center" title=""> - </td>
-            <% end %>
-            <% if final_recount.present? %>
-              <td class="text-center <%= 'count-error' if final_recount.count != system_count %>" title="<%= final_recount.officer_assignment.officer.name %>"><%= final_recount.count %></td>
-            <% else %>
-              <td class="text-center" title=""> - </td>
-            <% end %>
-            <td class="text-center"><%= system_count %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    <% end %>
+    <h3><%= t("admin.poll_booth_assignments.show.recounts_list") %></h3>
+    <table id="recounts_list">
+      <thead>
+        <tr>
+          <th><%= t("admin.poll_booth_assignments.show.date") %></th>
+          <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_final") %></th>
+          <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_system") %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
+        <% final_recount = final_recount_for_date(@booth_assignment.final_recounts, voting_date) %>
+        <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
+        <tr id="recounting_<%= voting_date.strftime('%Y%m%d') %>">
+          <td><%= l voting_date %></td>
+          <% if final_recount.present? %>
+            <td class="text-center <%= 'count-error' if final_recount.count != system_count %>" title="<%= final_recount.officer_assignment.officer.name %>"><%= final_recount.count %></td>
+          <% else %>
+            <td class="text-center" title=""> - </td>
+          <% end %>
+          <td class="text-center"><%= system_count %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

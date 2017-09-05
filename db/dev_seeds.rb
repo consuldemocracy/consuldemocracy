@@ -18,13 +18,13 @@ Setting.create(key: 'comments_body_max_length', value: '1000')
 
 Setting.create(key: 'twitter_handle', value: '@consul_dev')
 Setting.create(key: 'twitter_hashtag', value: '#consul_dev')
-Setting.create(key: 'facebook_handle', value: 'consul')
-Setting.create(key: 'youtube_handle', value: 'consul')
-Setting.create(key: 'telegram_handle', value: 'consul')
-Setting.create(key: 'instagram_handle', value: 'consul')
+Setting.create(key: 'facebook_handle', value: 'CONSUL')
+Setting.create(key: 'youtube_handle', value: 'CONSUL')
+Setting.create(key: 'telegram_handle', value: 'CONSUL')
+Setting.create(key: 'instagram_handle', value: 'CONSUL')
 Setting.create(key: 'blog_url', value: '/blog')
 Setting.create(key: 'url', value: 'http://localhost:3000')
-Setting.create(key: 'org_name', value: 'Consul')
+Setting.create(key: 'org_name', value: 'CONSUL')
 Setting.create(key: 'place_name', value: 'City')
 Setting.create(key: 'feature.debates', value: "true")
 Setting.create(key: 'feature.polls', value: "true")
@@ -39,7 +39,7 @@ Setting.create(key: 'feature.legislation', value: "true")
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
-Setting.create(key: 'mailer_from_name', value: 'Consul')
+Setting.create(key: 'mailer_from_name', value: 'CONSUL')
 Setting.create(key: 'mailer_from_address', value: 'noreply@consul.dev')
 Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
@@ -84,6 +84,7 @@ manager.create_manager
 
 valuator = create_user('valuator@consul.dev', 'valuator')
 valuator.create_valuator
+valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2111111111")
 
 poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
 poll_officer.create_poll_officer
@@ -130,21 +131,21 @@ not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 puts " ✅"
 print "Creating Tags Categories"
 
-ActsAsTaggableOn::Tag.create!(name:  "Asociaciones", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Cultura", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Deportes", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Derechos Sociales", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Economía", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Empleo", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Equidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Sostenibilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Participación", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Movilidad", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medios", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Salud", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Transparencia", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Seguridad y Emergencias", featured: true, kind: "category")
-ActsAsTaggableOn::Tag.create!(name:  "Medio Ambiente", featured: true, kind: "category")
+ActsAsTaggableOn::Tag.category.create!(name:  "Asociaciones")
+ActsAsTaggableOn::Tag.category.create!(name:  "Cultura")
+ActsAsTaggableOn::Tag.category.create!(name:  "Deportes")
+ActsAsTaggableOn::Tag.category.create!(name:  "Derechos Sociales")
+ActsAsTaggableOn::Tag.category.create!(name:  "Economía")
+ActsAsTaggableOn::Tag.category.create!(name:  "Empleo")
+ActsAsTaggableOn::Tag.category.create!(name:  "Equidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Sostenibilidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Participación")
+ActsAsTaggableOn::Tag.category.create!(name:  "Movilidad")
+ActsAsTaggableOn::Tag.category.create!(name:  "Medios")
+ActsAsTaggableOn::Tag.category.create!(name:  "Salud")
+ActsAsTaggableOn::Tag.category.create!(name:  "Transparencia")
+ActsAsTaggableOn::Tag.category.create!(name:  "Seguridad y Emergencias")
+ActsAsTaggableOn::Tag.category.create!(name:  "Medio Ambiente")
 
 puts " ✅"
 print "Creating Debates"
@@ -384,13 +385,14 @@ Budget::PHASES.each_with_index do |phase, i|
     )
   )
 
-  (1..([1, 2, 3].sample)).each do
-    group = budget.groups.create!(name: Faker::StarWars.planet)
+  (1..([1, 2, 3].sample)).each do |i|
+    group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
 
     geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
     geozones.each do |geozone|
-      group.headings << group.headings.create!(name: geozone.name,
-                                               price: rand(1..100) * 100000)
+      group.headings << group.headings.create!(name: "#{geozone.name} #{i}",
+                                               price: rand(1..100) * 100000,
+                                               population: rand(1..50) * 10000)
     end
   end
 end
@@ -576,19 +578,6 @@ print "Creating Poll Officer Assignments"
 end
 
 puts " ✅"
-print "Creating Poll Recounts" do
-  (1..15).to_a.sample.times do |i|
-    poll_officer.poll_officer.officer_assignments.all.sample(i).each do |officer_assignment|
-      Poll::Recount.create(officer_assignment: officer_assignment,
-                           booth_assignment: officer_assignment.booth_assignment,
-                           date: officer_assignment.date,
-                           count: (1..5000).to_a.sample)
-    end
-  end
-
-end
-
-puts " ✅"
 print "Creating Poll Questions from Proposals"
 
 3.times do
@@ -650,7 +639,8 @@ print "Creating legislation processes"
                                            debate_phase_enabled: true,
                                            allegations_phase_enabled: true,
                                            draft_publication_enabled: true,
-                                           result_publication_enabled: true
+                                           result_publication_enabled: true,
+                                           published: true
   )
 end
 

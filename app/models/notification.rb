@@ -7,13 +7,12 @@ class Notification < ActiveRecord::Base
   scope :not_emailed, -> { where(emailed_at: nil) }
   scope :for_render,  -> { includes(:notifiable) }
 
-
   def timestamp
     notifiable.created_at
   end
 
   def mark_as_read
-    self.destroy
+    destroy
   end
 
   def self.add(user_id, notifiable)
