@@ -62,4 +62,16 @@
   </div>
 </div>
 
-<%= render "comments" %>
+<div class="tabs-content" data-tabs-content="questions-tabs" role="tablist">
+  <%= render "polls/questions/filter_subnav" %>
+
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render "polls/questions/comments" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @question.documents,
+                max_documents_allowed: Poll::Question.max_documents_allowed %>
+  </div>
+</div>
