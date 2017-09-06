@@ -71,6 +71,9 @@ module Abilities
 
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
+
+      can [:create], Topic
+      can [:update, :destroy], Topic, author_id: user.id
     end
   end
 end

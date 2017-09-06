@@ -79,7 +79,7 @@ Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
-Setting['feature.community'] = nil
+Setting['feature.community'] = true
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
