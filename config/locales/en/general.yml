@@ -64,6 +64,7 @@ en:
       most_voted: Most voted
       newest: Newest first
       oldest: Oldest first
+      most_commented: Most commented
     select_order: Sort by
     show:
       return_to_commentable: 'Go back to '
@@ -178,6 +179,7 @@ en:
     verification/sms: phone
     signature_sheet: Signature sheet
     document: Document
+    topic: Topic
   geozones:
     none: All city
     all: All scopes

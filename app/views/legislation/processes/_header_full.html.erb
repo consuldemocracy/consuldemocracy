@@ -1,7 +1,7 @@
-<div class="legislation-hero no-margin-top grey-heading" style="display:<%= hidden ? 'none' : 'block' %>" data-target="legislation-header-full">
+<div class="legislation-hero jumbo grey-heading" style="display:<%= hidden ? 'none' : 'block' %>" data-target="legislation-header-full">
   <div class="row headline">
     <div class="small-12 medium-8 column">
-      <p><%= t('.title') %></p>
+      <%= back_link_to legislation_processes_path %>
       <h2>
         <%= process.title %>
       </h2>
@@ -11,21 +11,19 @@
   <div class="row description">
     <div class="small-12 column">
       <% if process.description.present? %>
-        <h4><%= t('.description') %></h4>
+        <p class="title"><%= t('.description') %></p>
         <%= markdown process.description %>
       <% end %>
     </div>
     <% if process.additional_info.present? %>
       <div id="debate-show" class="small-12 column debate-add-info legislation-debate-show">
-        <div class="debate-info-wrapper">
-          <%= markdown process.additional_info if process.additional_info %>
-        </div>
+        <%= markdown process.additional_info if process.additional_info %>
       </div>
     <% end %>
   </div>
 
   <% if process.additional_info.present? %>
-    <div class="text-center half-gradient">
+    <div class="text-center">
       <a id="js-toggle-debate" class="button big text-center" title="<%= t('.more_info') %>">
         <strong><%= t('.more_info') %></strong>
       </a>

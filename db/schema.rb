@@ -160,10 +160,12 @@ ActiveRecord::Schema.define(version: 20170905111444) do
     t.integer  "previous_heading_id"
     t.boolean  "winner",                                default: false
     t.boolean  "incompatible",                          default: false
+    t.integer  "community_id"
   end
 
   add_index "budget_investments", ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
   add_index "budget_investments", ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
+  add_index "budget_investments", ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
   add_index "budget_investments", ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
   add_index "budget_investments", ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
 
@@ -235,6 +237,11 @@ ActiveRecord::Schema.define(version: 20170905111444) do
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["hidden_at"], name: "index_comments_on_hidden_at", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "communities", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "debates", force: :cascade do |t|
     t.string   "title",                        limit: 80
@@ -684,6 +691,18 @@ ActiveRecord::Schema.define(version: 20170905111444) do
   add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
   add_index "poll_recounts", ["officer_assignment_id"], name: "index_poll_recounts_on_officer_assignment_id", using: :btree
 
+  create_table "poll_shifts", force: :cascade do |t|
+    t.integer  "booth_id"
+    t.integer  "officer_id"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
+  add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
+  add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
+
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
@@ -764,11 +783,13 @@ ActiveRecord::Schema.define(version: 20170905111444) do
     t.datetime "retired_at"
     t.string   "retired_reason"
     t.text     "retired_explanation"
+    t.integer  "community_id"
   end
 
   add_index "proposals", ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
   add_index "proposals", ["author_id"], name: "index_proposals_on_author_id", using: :btree
   add_index "proposals", ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
+  add_index "proposals", ["community_id"], name: "index_proposals_on_community_id", using: :btree
   add_index "proposals", ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
   add_index "proposals", ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
   add_index "proposals", ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
@@ -924,6 +945,20 @@ ActiveRecord::Schema.define(version: 20170905111444) do
 
   add_index "tolk_translations", ["phrase_id", "locale_id"], name: "index_tolk_translations_on_phrase_id_and_locale_id", unique: true, using: :btree
 
+  create_table "topics", force: :cascade do |t|
+    t.string   "title",                      null: false
+    t.text     "description"
+    t.integer  "author_id"
+    t.integer  "comments_count", default: 0
+    t.integer  "community_id"
+    t.datetime "hidden_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "topics", ["community_id"], name: "index_topics_on_community_id", using: :btree
+  add_index "topics", ["hidden_at"], name: "index_topics_on_hidden_at", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                                     default: ""
     t.string   "encrypted_password",                        default: "",                    null: false
@@ -1072,6 +1107,7 @@ ActiveRecord::Schema.define(version: 20170905111444) do
   add_foreign_key "administrators", "users"
   add_foreign_key "annotations", "legacy_legislations"
   add_foreign_key "annotations", "users"
+  add_foreign_key "budget_investments", "communities"
   add_foreign_key "documents", "users"
   add_foreign_key "failed_census_calls", "poll_officers"
   add_foreign_key "failed_census_calls", "users"
@@ -1103,6 +1139,7 @@ ActiveRecord::Schema.define(version: 20170905111444) do
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"
+  add_foreign_key "proposals", "communities"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

@@ -249,7 +249,9 @@
 .proposal-form,
 .budget-investment-form,
 .spending-proposal-form,
-.document-form {
+.document-form,
+.topic-new,
+.topic-form  {
 
   .icon-debates,
   .icon-proposals,
@@ -298,6 +300,8 @@
 }
 
 .proposal-form,
+.topic-form,
+.topic-new,
 .document-form {
 
   .recommendations li::before {
@@ -316,7 +320,9 @@
 .debate-quiz,
 .budget-investment-show,
 .draft-panels,
-.debate-questions {
+.debate-questions,
+.communities-show,
+.topic-show {
 
   p {
     word-wrap: break-word;
@@ -350,7 +356,8 @@
   .debate-info,
   .proposal-info,
   .investment-project-info,
-  .budget-investment-show {
+  .budget-investment-show,
+  .topic-info {
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
@@ -627,7 +634,8 @@
 .proposal,
 .investment-project,
 .budget-investment,
-.legislation {
+.legislation,
+.communities-show {
   margin: $line-height / 4 0;
 
   .panel {
@@ -699,7 +707,8 @@
   .debate-info,
   .proposal-info,
   .investment-project-info,
-  .budget-investment-info {
+  .budget-investment-info,
+  .topic-info {
     color: $text-medium;
     font-size: $small-font-size;
     margin: rem-calc(6) 0 0;
@@ -885,17 +894,10 @@
   }
 }
 
-.help-link {
-  margin-left: $line-height;
-  position: relative;
+.help-header {
 
-  &::before {
-    color: $link;
-    content: '\4e';
-    font-family: 'icons';
-    position: absolute;
-    left: -24px;
-    top: -2px;
+  h1 {
+    font-size: rem-calc(24);
   }
 }
 

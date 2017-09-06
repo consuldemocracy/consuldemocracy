@@ -453,6 +453,11 @@ FactoryGirl.define do
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
 
+    trait :current do
+      starts_at { 2.days.ago }
+      ends_at { 2.days.from_now }
+    end
+
     trait :incoming do
       starts_at { 2.days.from_now }
       ends_at { 1.month.from_now }
@@ -494,6 +499,12 @@ FactoryGirl.define do
     trait :final do
       final true
     end
+  end
+
+  factory :poll_shift, class: 'Poll::Shift' do
+    association :booth, factory: :poll_booth
+    association :officer, factory: :poll_officer
+    date Date.current
   end
 
   factory :poll_final_recount, class: 'Poll::FinalRecount' do
@@ -788,4 +799,11 @@ LOREM_IPSUM
     locale "en"
     body "Some top links content"
   end
+
+  factory :topic do
+    sequence(:title) { |n| "Topic title #{n}" }
+    sequence(:description) { |n| "Description as comment #{n}" }
+    association :author, factory: :user
+  end
+
 end
