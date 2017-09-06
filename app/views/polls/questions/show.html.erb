@@ -56,13 +56,15 @@
 </div>
 
 <% if @question.video_url.present? %>
-  <div class='row margin-top poll-question-show'>
-    <div class="small-12 medium-9 column video-link">
-      <p>
-        <span class="icon-video"></span>&nbsp;
-        <strong><%= t('proposals.show.title_video_url') %></strong>
-      </p>
-      <%= text_with_links @question.video_url %>
+  <div class="row margin-top poll-question-show">
+    <div class="small-12 medium-9 column">
+      <div class="video-link">
+        <p>
+          <span class="icon-video"></span>&nbsp;
+          <strong><%= t('proposals.show.title_video_url') %></strong>
+        </p>
+        <%= text_with_links @question.video_url %>
+      </div>
     </div>
   </div>
 
