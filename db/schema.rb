@@ -677,20 +677,6 @@ ActiveRecord::Schema.define(version: 20170905111444) do
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
-  create_table "poll_recounts", force: :cascade do |t|
-    t.integer  "booth_assignment_id"
-    t.integer  "officer_assignment_id"
-    t.integer  "count"
-    t.text     "count_log",                 default: ""
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.date     "date",                                   null: false
-    t.text     "officer_assignment_id_log", default: ""
-  end
-
-  add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
-  add_index "poll_recounts", ["officer_assignment_id"], name: "index_poll_recounts_on_officer_assignment_id", using: :btree
-
   create_table "poll_shifts", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "officer_id"
@@ -919,32 +905,6 @@ ActiveRecord::Schema.define(version: 20170905111444) do
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
 
-  create_table "tolk_locales", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tolk_locales", ["name"], name: "index_tolk_locales_on_name", unique: true, using: :btree
-
-  create_table "tolk_phrases", force: :cascade do |t|
-    t.text     "key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tolk_translations", force: :cascade do |t|
-    t.integer  "phrase_id"
-    t.integer  "locale_id"
-    t.text     "text"
-    t.text     "previous_text"
-    t.boolean  "primary_updated", default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tolk_translations", ["phrase_id", "locale_id"], name: "index_tolk_translations_on_phrase_id_and_locale_id", unique: true, using: :btree
-
   create_table "topics", force: :cascade do |t|
     t.string   "title",                      null: false
     t.text     "description"
@@ -1012,7 +972,7 @@ ActiveRecord::Schema.define(version: 20170905111444) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-06-22 11:21:30', null: false
+    t.datetime "password_changed_at",                       default: '2017-09-06 18:19:39', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
