@@ -15,7 +15,7 @@ feature 'Communities' do
     scenario 'Should display default content' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
 
       visit community_path(community)
@@ -103,7 +103,7 @@ feature 'Communities' do
     scenario 'Should display topic edit button when author is logged' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       topic1 = create(:topic, community: community, author: user)
       topic2 = create(:topic, community: community)
       login_as(user)

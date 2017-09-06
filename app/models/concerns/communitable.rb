@@ -7,8 +7,8 @@ module Communitable
   end
 
   def associate_community
-    community =  Community.create
-    self.community_id =  community.id
+    community = Community.create
+    self.community_id = community.id
   end
 
 end

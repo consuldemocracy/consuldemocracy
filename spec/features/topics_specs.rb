@@ -16,7 +16,7 @@ feature 'Topics' do
     scenario 'Can access to new topic page with user logged', :js do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
       visit community_path(community)
 
@@ -28,7 +28,7 @@ feature 'Topics' do
     scenario 'Should have content on new topic page', :js do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
       visit community_path(community)
 
@@ -78,7 +78,7 @@ feature 'Topics' do
     scenario 'Can edit a topic' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       topic = create(:topic, community: community, author: user)
       login_as(user)
       visit edit_community_topic_path(community, topic)
@@ -95,7 +95,7 @@ feature 'Topics' do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
 
       visit edit_community_topic_path(community, topic)
@@ -125,7 +125,7 @@ feature 'Topics' do
     scenario 'Can destroy a topic' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       topic = create(:topic, community: community, author: user)
       login_as(user)
       visit community_path(community)
@@ -141,7 +141,7 @@ feature 'Topics' do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
 
       visit community_path(community)

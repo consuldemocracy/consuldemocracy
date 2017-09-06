@@ -48,7 +48,7 @@ class Admin::BudgetInvestmentMilestonesController < Admin::BaseController
   end
 
   def load_budget_investment_milestone
-    @milestone =  Budget::Investment::Milestone.find params[:id]
+    @milestone = Budget::Investment::Milestone.find params[:id]
   end
 
 
