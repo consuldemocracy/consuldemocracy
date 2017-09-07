@@ -41,7 +41,7 @@ feature 'Poll Questions' do
 
     visit question_path(normal_question)
 
-    expect(page).to have_link(document.title)
+    expect(page).to have_content(document.title)
   end
 
   context 'Answering' do
