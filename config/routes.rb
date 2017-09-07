@@ -287,7 +287,9 @@ Rails.application.routes.draw do
       end
 
       resources :booths do
-        resources :shifts
+        resources :shifts do
+          get :search_officers, on: :collection
+        end
       end
 
       resources :questions
