@@ -235,7 +235,7 @@ feature 'Users' do
     end
 
     scenario 'Not display interests when proposal has been destroyed' do
-      proposal =  create(:proposal, tag_list: "Sport")
+      proposal = create(:proposal, tag_list: "Sport")
       create(:follow, :followed_proposal, followable: proposal, user: @user)
       proposal.destroy
 

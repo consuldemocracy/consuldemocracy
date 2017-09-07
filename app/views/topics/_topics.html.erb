@@ -1,48 +1,13 @@
 <% if topics.any? %>
-
   <div class="row column">
     <div class="order">
       <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
     </div>
   </div>
-
-  <% topics.each do |topic| %>
-
-    <div id="<%= dom_id(topic) %>" class="panel column">
-      <div class="small-10 column">
-
-        <h3><%= link_to topic.title, community_topic_path(@community, topic) %></h3>
-
-        <p class="topic-info">
-          <span class="icon-comments"></span>&nbsp;
-          <%= link_to t("community.show.topic.comments", count: topic.comments_count), community_topic_path(@community, topic, anchor: "comments") %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= I18n.l topic.created_at.to_date %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= topic.author.name %>
-        </p>
-
-      </div>
-
-      <div class="small-2 column text-right">
-        <% if topic.author == current_user %>
-          <%= link_to t("community.show.topic.edit_button"), edit_community_topic_path(@community.id, topic), class: 'button small hollow' %>
-        <% end %>
-      </div>
-
-    </div>
-
-  <% end %>
-
 <% else %>
-  <h3><%= t("community.show.create_first_community_topic.first_theme") %></h3>
-  <% if user_signed_in? %>
-    <%= t("community.show.create_first_community_topic.first_theme_not_logged_in") %>
-  <% else %>
-    <div class="callout primary">
-      <%= t("community.show.create_first_community_topic.sub_first_theme",
-            link: link_to(t("community.show.create_first_community_topic.sign_link",
-            org_name: setting['org_name']), new_user_session_path)).html_safe %>
-    </div>
-  <% end %>
+  <%= render 'topics/informative_text', topics: topics %>
+<% end %>
+
+<% topics.each do |topic| %>
+  <%= render 'topics/topic', topic: topic %>
 <% end %>

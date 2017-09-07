@@ -1,13 +1,13 @@
 class TopicsController < ApplicationController
   include CommentableActions
-  include FlagActions
 
   before_action :load_community
-  before_action :load_topic, only: [:show, :edit, :update]
+  before_action :load_topic, only: [:show, :edit, :update, :destroy]
 
   has_orders %w{most_voted newest oldest}, only: :show
 
-  skip_authorization_check
+  skip_authorization_check only: :show
+  load_and_authorize_resource except: :show
 
   def new
     @topic = Topic.new
@@ -37,6 +37,11 @@ class TopicsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @topic.destroy
+    redirect_to community_path(@community), notice: I18n.t('flash.actions.destroy.topic')
   end
 
   private

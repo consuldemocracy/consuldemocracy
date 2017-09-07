@@ -15,7 +15,7 @@ feature 'Communities' do
     scenario 'Should display default content' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
 
       visit community_path(community)
@@ -63,10 +63,47 @@ feature 'Communities' do
       end
     end
 
+    scenario "Topic order" do
+      proposal = create(:proposal)
+      community = proposal.community
+      topic1 = create(:topic, community: community)
+      topic2 = create(:topic, community: community)
+      topic2_comment = create(:comment, :with_confidence_score, commentable: topic2)
+      topic3 = create(:topic, community: community)
+      topic3_comment = create(:comment, :with_confidence_score, commentable: topic3)
+      topic3_comment = create(:comment, :with_confidence_score, commentable: topic3)
+
+      visit community_path(community, order: :most_commented)
+
+      expect(topic3.title).to appear_before(topic2.title)
+      expect(topic2.title).to appear_before(topic1.title)
+
+      visit community_path(community, order: :oldest)
+
+      expect(topic1.title).to appear_before(topic2.title)
+      expect(topic2.title).to appear_before(topic3.title)
+
+      visit community_path(community, order: :newest)
+
+      expect(topic3.title).to appear_before(topic2.title)
+      expect(topic2.title).to appear_before(topic1.title)
+    end
+
+    scenario "Should order by newest when order param is invalid" do
+      proposal = create(:proposal)
+      community = proposal.community
+      topic1 = create(:topic, community: community)
+      topic2 = create(:topic, community: community)
+
+      visit community_path(community, order: "invalid_param")
+
+      expect(topic2.title).to appear_before(topic1.title)
+    end
+
     scenario 'Should display topic edit button when author is logged' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       topic1 = create(:topic, community: community, author: user)
       topic2 = create(:topic, community: community)
       login_as(user)

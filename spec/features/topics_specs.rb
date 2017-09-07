@@ -13,10 +13,10 @@ feature 'Topics' do
       expect(page).to have_selector(".button.expanded.disabled")
     end
 
-    scenario 'Should can access to new topic page with user logged', :js do
+    scenario 'Can access to new topic page with user logged', :js do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
       visit community_path(community)
 
@@ -28,7 +28,7 @@ feature 'Topics' do
     scenario 'Should have content on new topic page', :js do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
       visit community_path(community)
 
@@ -47,10 +47,10 @@ feature 'Topics' do
 
   context 'Create' do
 
-    scenario 'Should can create a new topic', :js do
+    scenario 'Can create a new topic', :js do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       login_as(user)
 
       visit new_community_topic_path(community)
@@ -62,14 +62,23 @@ feature 'Topics' do
       expect(current_path).to eq(community_path(community))
     end
 
+    scenario 'Can not create a new topic when user not logged', :js do
+      proposal = create(:proposal)
+      community = proposal.community
+
+      visit new_community_topic_path(community)
+
+      expect(page).to have_content "You do not have permission to carry out the action 'new' on topic."
+    end
+
   end
 
   context 'Edit' do
 
-    scenario 'Should can edit a topic' do
+    scenario 'Can edit a topic' do
       proposal = create(:proposal)
       community = proposal.community
-      user =  create(:user)
+      user = create(:user)
       topic = create(:topic, community: community, author: user)
       login_as(user)
       visit edit_community_topic_path(community, topic)
@@ -82,11 +91,23 @@ feature 'Topics' do
       expect(current_path).to eq(community_path(community))
     end
 
+    scenario 'Can not edit a topic when user logged is not an author' do
+      proposal = create(:proposal)
+      community = proposal.community
+      topic = create(:topic, community: community)
+      user = create(:user)
+      login_as(user)
+
+      visit edit_community_topic_path(community, topic)
+
+      expect(page).to have_content "You do not have permission to carry out the action 'edit' on topic."
+    end
+
   end
 
   context 'Show' do
 
-    scenario 'Should can show topic' do
+    scenario 'Can show topic' do
       proposal = create(:proposal)
       community = proposal.community
       topic = create(:topic, community: community)
@@ -95,6 +116,37 @@ feature 'Topics' do
 
       expect(page).to have_content community.proposal.title
       expect(page).to have_content topic.title
+    end
+
+  end
+
+  context 'Destroy' do
+
+    scenario 'Can destroy a topic' do
+      proposal = create(:proposal)
+      community = proposal.community
+      user = create(:user)
+      topic = create(:topic, community: community, author: user)
+      login_as(user)
+      visit community_path(community)
+
+      click_link "Destroy"
+
+      expect(page).to have_content "Topic deleted successfully."
+      expect(page).not_to have_content topic.title
+      expect(current_path).to eq(community_path(community))
+    end
+
+    scenario 'Can not destroy a topic when user logged is not an author' do
+      proposal = create(:proposal)
+      community = proposal.community
+      topic = create(:topic, community: community)
+      user = create(:user)
+      login_as(user)
+
+      visit community_path(community)
+
+      expect(page).not_to have_link "Destroy"
     end
 
   end

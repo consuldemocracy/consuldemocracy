@@ -29,3 +29,4 @@ en:
         spending_proposal: "Spending proposal deleted succesfully."
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"
+        topic: "Topic deleted successfully."

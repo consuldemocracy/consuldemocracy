@@ -101,6 +101,8 @@ feature 'Proposals' do
     end
 
     scenario 'Can not access the community' do
+      Setting['feature.community'] = false
+      
       proposal = create(:proposal)
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
