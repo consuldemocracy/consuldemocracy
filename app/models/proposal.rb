@@ -10,6 +10,12 @@ class Proposal < ActiveRecord::Base
   include HasPublicAuthor
   include Graphqlable
   include Followable
+  include Communitable
+  include Documentable
+  documentable max_documents_allowed: 3,
+               max_file_size: 3.megabytes,
+               accepted_content_types: [ "application/pdf" ]
+  accepts_nested_attributes_for :documents, allow_destroy: true
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

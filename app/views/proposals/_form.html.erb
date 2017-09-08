@@ -47,7 +47,6 @@
       <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
-
     <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
@@ -66,6 +65,10 @@
         <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
       </div>
     <% end %>
+
+    <div class="documents small-12 column" data-max-documents="<%= Proposal.max_documents_allowed %>">
+      <%= render 'documents/nested_documents', documentable: @proposal %>
+    </div>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>

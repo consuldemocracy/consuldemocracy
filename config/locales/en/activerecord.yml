@@ -76,6 +76,9 @@ en:
       legislation/answers:
         one: "Answer"
         other: "Answers"
+      documents:
+        one: "Document"
+        other: "Documents"
     attributes:
       volunteer_poll:
         email: "Email"
@@ -251,6 +254,9 @@ en:
         value: Value
       legislation/annotation:
         text: Comment
+      document:
+        title: Title
+        attachment: Attachment
     errors:
       models:
         user:

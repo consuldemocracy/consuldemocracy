@@ -33,8 +33,9 @@ gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 gem 'omniauth-twitter', '~> 1.4.0'
 gem 'paperclip', '~> 5.1.0'
+gem 'jquery-fileupload-rails'
 gem 'paranoia', '~> 2.3.1'
-gem 'pg', '~> 0.20.0'
+gem 'pg', '~> 0.21.0'
 gem 'pg_search', '~> 2.0.1'
 gem 'rails-assets-markdown-it', '~> 8.2.1', source: 'https://rails-assets.org'
 gem 'redcarpet', '~> 3.4.0'
@@ -71,7 +72,7 @@ end
 group :test do
   gem 'capybara', '~> 2.14.0'
   gem 'coveralls', '~> 0.8.21', require: false
-  gem 'database_cleaner', '~> 1.5.3'
+  gem 'database_cleaner', '~> 1.6.1'
   gem 'email_spec', '~> 2.1.0'
   gem 'poltergeist', '~> 1.15.0'
   gem 'rspec-rails', '~> 3.6'
@@ -84,7 +85,7 @@ group :development do
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'mdl', '~> 0.4.0', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false
-  gem 'scss_lint', '~> 0.53.0', require: false
+  gem 'scss_lint', '~> 0.54.0', require: false
   gem 'web-console', '~> 3.3.0'
 end
 

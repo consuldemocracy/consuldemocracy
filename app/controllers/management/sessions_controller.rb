@@ -20,7 +20,7 @@ class Management::SessionsController < ActionController::Base
 
     def destroy_session
       session[:manager] = nil
-      session[:document_type] =   nil
+      session[:document_type] = nil
       session[:document_number] = nil
     end
 

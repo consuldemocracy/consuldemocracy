@@ -1,0 +1,13 @@
+<% if topics.any? %>
+  <div class="row column">
+    <div class="order">
+      <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
+    </div>
+  </div>
+<% else %>
+  <%= render 'topics/informative_text', topics: topics %>
+<% end %>
+
+<% topics.each do |topic| %>
+  <%= render 'topics/topic', topic: topic %>
+<% end %>

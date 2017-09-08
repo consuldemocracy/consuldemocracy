@@ -38,6 +38,9 @@ module Abilities
 
       can [:create, :destroy], Follow
 
+      can [:create, :destroy, :new], Document, documentable: { author_id: user.id }
+      can [:new_nested, :upload, :destroy_upload], Document
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
@@ -90,6 +93,9 @@ module Abilities
       can [:create, :read], Answer
       can :create, Annotation
       can [:update, :destroy], Annotation, user_id: user.id
+
+      can [:create], Topic
+      can [:update, :destroy], Topic, author_id: user.id
     end
   end
 end

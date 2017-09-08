@@ -53,7 +53,6 @@ es:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
       header_full:
-        title: Colabora en la elaboración de la normativa sobre
         description: En qué consiste
         more_info: Más información y contexto
       index:
@@ -64,6 +63,16 @@ es:
         no_open_processes: No hay procesos activos
         no_next_processes: No hay procesos planeados
         no_past_processes: No hay procesos terminados
+        section_header:
+          icon_alt: Icono de Procesos legislativos
+          title: Procesos legislativos
+          description: Participa en los debates y procesos previos a la aprobación de una norma o de una actuación municipal. Tu opinión será tenida en cuenta por el Ayuntamiento.
+          help: Ayuda sobre procesos legislativos
+        section_footer:
+          title: Ayuda sobre procesos legislativos
+          help_text_1: "En los procesos participativos, el Ayuntamiento ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la ciudad y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo."
+          help_text_2: "Las personas registradas en %{org} pueden participar con aportaciones en la consulta pública de nuevas ordenanzas, reglamentos y directrices, entre otros. Sus comentarios son analizados por el área correspondiente y tenidos en cuenta de cara a la redacción final de las normas."
+          help_text_3: "El Ayuntamiento también abre procesos para recibir aportaciones y opiniones sobre actuaciones municipales."
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:

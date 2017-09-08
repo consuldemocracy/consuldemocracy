@@ -89,6 +89,24 @@ feature 'Proposals' do
       expect(current_path).to_not eq(old_path)
       expect(current_path).to eq(right_path)
     end
+
+    scenario 'Can access the community' do
+      Setting['feature.community'] = true
+
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      expect(page).to have_content "Access the community"
+
+      Setting['feature.community'] = false
+    end
+
+    scenario 'Can not access the community' do
+      Setting['feature.community'] = false
+      
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+      expect(page).not_to have_content "Access the community"
+    end
   end
 
   context "Embedded video" do
@@ -1275,6 +1293,24 @@ feature 'Proposals' do
   end
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
+
+  it_behaves_like "documentable", "proposal", "proposal_path", { "id": "id" }
+
+  it_behaves_like "nested documentable",
+                  "proposal",
+                  "new_proposal_path",
+                  { },
+                  "fill_new_valid_proposal",
+                  "Create proposal",
+                  "Proposal created successfully"
+
+  it_behaves_like "nested documentable",
+                  "proposal",
+                  "edit_proposal_path",
+                  { "id": "id" },
+                  nil,
+                  "Save changes",
+                  "Proposal updated successfully"
 
   scenario 'Erased author' do
     user = create(:user)
