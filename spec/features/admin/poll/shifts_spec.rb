@@ -76,6 +76,20 @@ feature 'Admin shifts' do
     expect(page).to have_css(".shift", count: 0)
   end
 
+  scenario "Destroy an officer" do
+    poll = create(:poll)
+    booth = create(:poll_booth)
+    officer = create(:poll_officer)
+
+    shift = create(:poll_shift, officer: officer, booth: booth)
+    officer.destroy
+
+    visit new_admin_booth_shift_path(booth)
+
+    expect(page).to have_css(".shift", count: 1)
+    expect(page).to have_content(officer.name)
+  end
+
   scenario "Empty" do
     poll = create(:poll)
     booth = create(:poll_booth)
