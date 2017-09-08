@@ -10,7 +10,7 @@
       <tr>
         <th><%= t("admin.poll_shifts.new.table_name") %></th>
         <th><%= t("admin.poll_shifts.new.table_email") %></th>
-        <th class="text-center">
+        <th class="text-right">
           <%= t("admin.poll_shifts.new.table_shift") %>
         </th>
       </tr>
@@ -24,10 +24,10 @@
         <td>
           <%= user.email %>
         </td>
-        <td class="text-center">
+        <td class="text-right">
           <%= link_to t("admin.poll_shifts.new.edit_shifts"),
                       new_admin_booth_shift_path(officer_id: user.poll_officer.id),
-                      class: "button hollow alert" %>
+                      class: "button hollow" %>
         </td>
       </tr>
       <% end %>

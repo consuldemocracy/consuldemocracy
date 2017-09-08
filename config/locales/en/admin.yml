@@ -509,7 +509,7 @@ en:
         remove_shift: "Remove"
         search_officer_button: Search
         search_officer_placeholder: Search officer
-        search_officer_text: Please search for an officer to assign a new shift
+        search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
         table_shift: "Shift"
         table_email: "Email"
