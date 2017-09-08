@@ -114,7 +114,7 @@ class ProposalsController < ApplicationController
 
     def load_featured
       return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank?
-      @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(3)
+      @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(Setting['count_featured_proposals'].presence.to_i|| 3)
       if @featured_proposals.present?
         set_featured_proposal_votes(@featured_proposals)
         @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
