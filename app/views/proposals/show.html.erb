@@ -23,7 +23,8 @@
         <% end %>
 
         <% if author_of?(@proposal, current_user) %>
-          <%= link_to t("proposals.show.send_notification"), new_proposal_notification_path(proposal_id: @proposal.id),
+          <%= link_to t("proposals.show.send_notification"),
+                      new_proposal_notification_path(proposal_id: @proposal.id),
                       class: 'button hollow float-right' %>
         <% end %>
 
