@@ -21,7 +21,7 @@ data:
     # - config/locales/**/*.%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
-    - config/locales/custom/%{locale}/custom.yml
+    - config/locales/custom/%{locale}/*.yml
     - config/locales/%{locale}/general.yml
     - config/locales/%{locale}/activerecord.yml
     - config/locales/%{locale}/activemodel.yml
@@ -200,6 +200,7 @@ ignore_unused:
   - users.show.delete_spending_proposal
   - verification.letter.create.flash.offices_url
   - verification.letter.new.offices_url
+  - layouts.header.open_city_title
 ####
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:

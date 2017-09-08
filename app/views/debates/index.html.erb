@@ -1,5 +1,5 @@
-<% provide :title, t("meta_tags.debates.title") %>
-<% provide :meta_description, t("meta_tags.debates.description") %>
+<% provide :title do %><%= t('debates.index.title') %><% end %>
+<% provide :meta_description, t("debates.index.description") %>
 <% provide :tracking_page_number, "27" %>
 
 <% content_for :header_addon do %>
