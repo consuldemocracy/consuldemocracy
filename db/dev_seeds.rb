@@ -14,6 +14,7 @@ Setting.create(key: 'max_votes_for_proposal_edit', value: '1000')
 Setting.create(key: 'proposal_code_prefix', value: 'MAD')
 Setting.create(key: 'votes_for_proposal_success', value: '100')
 Setting.create(key: 'months_to_archive_proposals', value: '12')
+Setting.create(key: 'count_featured_proposals', value: '3')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
 Setting.create(key: 'twitter_handle', value: '@consul_dev')

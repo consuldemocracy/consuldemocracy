@@ -33,6 +33,7 @@ Setting["votes_for_proposal_success"] = 53726
 
 # Months to archive proposals
 Setting["months_to_archive_proposals"] = 12
+Setting["count_featured_proposals"] = 3
 
 # Users with this email domain will automatically be marked as level 1 officials
 # Emails under the domain's subdomains will also be included

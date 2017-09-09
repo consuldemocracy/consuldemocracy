@@ -102,7 +102,7 @@ feature 'Proposals' do
 
     scenario 'Can not access the community' do
       Setting['feature.community'] = false
-      
+
       proposal = create(:proposal)
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
@@ -732,6 +732,22 @@ feature 'Proposals' do
         expect(page).to_not have_content(featured_proposal.title)
         expect(page).to have_content(archived_proposal.title)
       end
+    end
+
+    scenario 'show featured proposals in section' do
+      old_value = Setting['count_featured_proposals']
+      Setting['count_featured_proposals'] = 0
+
+      featured_proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
+
+      visit proposals_path
+
+      expect(page).not_to have_css('#featured-proposals')
+      within("#proposals-list") do
+        expect(page).to have_content(featured_proposal.title)
+      end
+
+      Setting['count_featured_proposals'] = old_value
     end
 
     scenario "Order by votes" do
