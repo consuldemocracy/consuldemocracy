@@ -20,7 +20,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
                                   polls_path,
-                                  controller_name == "polls",
+                                  controller_name == "polls" || controller_name == "questions",
                                   accesskey: "3",
                                   title: t("shared.go_to_page") + t("layouts.header.poll_questions") %>
       </li>
