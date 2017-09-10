@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="small-12 medium-6 column">
+    <%= form_tag search_officers_admin_booth_shifts_path,
+                 method: :get, remote: true do |f| %>
+      <div class="input-group">
+        <%= text_field_tag :search,
+                            @search,
+                            placeholder: t("admin.poll_shifts.new.search_officer_placeholder"),
+                            id: "search-officers" %>
+        <div class="input-group-button">
+          <%= submit_tag t("admin.poll_shifts.new.search_officer_button"),
+                         class: "button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="search-officers-results"></div>

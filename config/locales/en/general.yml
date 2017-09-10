@@ -175,6 +175,7 @@ en:
     proposal_notification: "Notification"
     spending_proposal: Spending proposal
     budget/investment: Investment
+    poll/shift: Shift
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
