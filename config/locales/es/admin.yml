@@ -498,18 +498,24 @@ es:
         final_recount: "Recuento final (presidente de mesa)"
     poll_shifts:
       new:
-        new_assignment: "Nuevo turno"
+        add_shift: "Añadir turno"
+        shift: "Asignación"
+        shifts: "Turnos en esta urna"
         date: "Fecha"
+        edit_shifts: Asignar turno
+        new_shift: "Nuevo turno"
+        no_shifts: "Esta urna no tiene turnos asignados"
         officer: "Presidente de mesa"
-        assignment: "Asignación"
+        remove_shift: "Eliminar turno"
+        search_officer_button: Buscar
+        search_officer_placeholder: Buscar presidentes de mesa
+        search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
-        select_officer: "Seleccionar presidente de mesa"
-        add_assignment: "Añadir turno"
-        remove_assignment: "Eliminar turno"
-        assignments: "Turnos en esta urna"
-        no_assignments: "Esta urna no tiene turnos asignados"
+        table_shift: "Turno"
+        table_email: "Email"
+        table_name: "Nombre"
       flash:
-        create: "Añadido turno de presidente de mesa"   
+        create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
     poll_booth_assignments:
       flash:
@@ -590,6 +596,8 @@ es:
         title: Título
         valid_answers: Respuestas válidas
         description: Descripción
+        video_url: Video externo
+        documents: Documentos
         preview: Ver en la web
     recounts:
       index:

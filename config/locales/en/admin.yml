@@ -498,16 +498,22 @@ en:
         final_recount: "Final recount (by officer)"
     poll_shifts:
       new:
-        new_assignment: "New shift"
+        add_shift: "Add shift"
+        shift: "Assignment"
+        shifts: "Shifts in this booth"
         date: "Date"
+        edit_shifts: Edit shifts
+        new_shift: "New shift"
+        no_shifts: "This booth has no shifts"
         officer: "Officer"
-        assignment: "Assignment"
+        remove_shift: "Remove"
+        search_officer_button: Search
+        search_officer_placeholder: Search officer
+        search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
-        select_officer: "Select officer"
-        add_assignment: "Add shift"
-        remove_assignment: "Remove"
-        assignments: "Shifts in this booth"
-        no_assignments: "This booth has no shifts"
+        table_shift: "Shift"
+        table_email: "Email"
+        table_name: "Name"
       flash:
         create: "Shift added"
         destroy: "Shift removed"
@@ -590,6 +596,8 @@ en:
         title: Title
         valid_answers: Valid answers
         description: Description
+        video_url: External video
+        documents: Documents
         preview: View on website
     recounts:
       index:

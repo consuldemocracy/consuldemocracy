@@ -669,6 +669,7 @@ ActiveRecord::Schema.define(version: 20170908175149) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.tsvector "tsv"
+    t.string   "video_url"
   end
 
   add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
@@ -973,7 +974,7 @@ ActiveRecord::Schema.define(version: 20170908175149) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-08-07 11:14:09', null: false
+    t.datetime "password_changed_at",                       default: '2017-09-06 18:19:39', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

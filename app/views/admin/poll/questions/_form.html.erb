@@ -26,6 +26,17 @@
                           ckeditor: { language: I18n.locale } %>
       </div>
 
+      <div class="documents small-12" data-max-documents="<%= Poll::Question.max_documents_allowed %>">
+        <%= render 'documents/nested_documents', documentable: @question %>
+      </div>
+
+      <div class="small-12">
+        <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
+        <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
+        <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
+                                     aria: {describedby: "video-url-help-text"} %>
+      </div>
+
       <div class="row">
         <div class="actions small-12 medium-4 column margin-top">
           <%= f.submit(class: "button expanded", value: t("shared.save")) %>

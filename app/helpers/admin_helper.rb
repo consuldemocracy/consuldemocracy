@@ -25,7 +25,7 @@ module AdminHelper
   end
 
   def menu_polls?
-    ["polls", "questions", "officers", "booths", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name
+    ["polls", "questions", "officers", "booths", "officer_assignments", "booth_assignments", "recounts", "results", "shifts"].include? controller_name
   end
 
   def menu_profiles?

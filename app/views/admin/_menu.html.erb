@@ -73,12 +73,15 @@
             <%= link_to t('admin.menu.poll_officers'), admin_officers_path %>
           </li>
 
-          <li <%# "class=active" if controller_name == "booths" %>>
+          <li <%= "class=active" if controller_name == "booths" && 
+                                    action_name != "available" %>>
             <%= link_to t('admin.menu.poll_booths'), admin_booths_path %>
           </li>
 
-          <li <%= "class=active" if controller_name == "booths" %>>
-            <%= link_to t('admin.menu.poll_shifts'), admin_booths_path %>
+          <li <%= "class=active" if controller_name == "shifts" || 
+                                    controller_name == "booths" && 
+                                    action_name == "available" %>>
+            <%= link_to t('admin.menu.poll_shifts'), available_admin_booths_path %>
           </li>
         </ul>
       </li>

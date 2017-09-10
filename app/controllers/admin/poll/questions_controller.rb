@@ -1,4 +1,6 @@
 class Admin::Poll::QuestionsController < Admin::BaseController
+  include CommentableActions
+
   load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: 'Poll::Question'
 
@@ -20,6 +22,7 @@ class Admin::Poll::QuestionsController < Admin::BaseController
 
   def create
     @question.author = @question.proposal.try(:author) || current_user
+    recover_documents_from_cache(@question)
 
     if @question.save
       redirect_to admin_question_path(@question)
@@ -29,6 +32,7 @@ class Admin::Poll::QuestionsController < Admin::BaseController
   end
 
   def show
+    @document = Document.new(documentable: @question)
   end
 
   def edit
@@ -54,7 +58,8 @@ class Admin::Poll::QuestionsController < Admin::BaseController
   private
 
     def question_params
-      params.require(:poll_question).permit(:poll_id, :title, :question, :description, :proposal_id, :valid_answers)
+      params.require(:poll_question).permit(:poll_id, :title, :question, :description, :proposal_id, :valid_answers, :video_url,
+      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
     end
 
     def search_params
