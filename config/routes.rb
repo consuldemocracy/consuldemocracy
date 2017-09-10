@@ -287,6 +287,8 @@ Rails.application.routes.draw do
       end
 
       resources :booths do
+        get :available, on: :collection 
+        
         resources :shifts
       end
 
