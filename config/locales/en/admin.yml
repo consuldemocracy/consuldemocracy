@@ -596,6 +596,8 @@ en:
         title: Title
         valid_answers: Valid answers
         description: Description
+        video_url: External video
+        documents: Documents
         preview: View on website
     recounts:
       index:

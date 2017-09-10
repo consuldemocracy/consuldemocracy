@@ -380,6 +380,10 @@ FactoryGirl.define do
     trait :budget_investment_document do
       association :documentable, factory: :budget_investment
     end
+
+    trait :poll_question_document do
+      association :documentable, factory: :poll_question
+    end
   end
 
   factory :comment do

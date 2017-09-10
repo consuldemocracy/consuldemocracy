@@ -596,6 +596,8 @@ es:
         title: Título
         valid_answers: Respuestas válidas
         description: Descripción
+        video_url: Video externo
+        documents: Documentos
         preview: Ver en la web
     recounts:
       index:
