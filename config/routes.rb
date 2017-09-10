@@ -287,9 +287,11 @@ Rails.application.routes.draw do
       end
 
       resources :booths do
+        get :available, on: :collection 
+
         resources :shifts do
           get :search_officers, on: :collection
-        end
+        end        
       end
 
       resources :questions

@@ -30,6 +30,11 @@ class Admin::Poll::BoothsController < Admin::BaseController
     end
   end
 
+  def available
+    @booths = Poll::Booth.available.order(name: :asc).page(params[:page])
+    render :index
+  end
+
   private
 
     def booth_params
