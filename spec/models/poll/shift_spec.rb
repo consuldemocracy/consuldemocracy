@@ -57,5 +57,27 @@ describe :shift do
     end
 
   end
+
+  describe "#persist_data" do
+    
+    let(:user) { create(:user, username: "Ana", email: "ana@example.com") } 
+    let(:officer) { create(:poll_officer, user: user) } 
+    let(:shift) { create(:poll_shift, officer: officer) } 
+
+    it "should maintain officer data after destroying associated user" do
+      shift.officer.user.destroy
+
+      expect(shift.officer_name).to eq "Ana"
+      expect(shift.officer_email).to eq "ana@example.com"
+    end
+
+    it "should maintain officer data after destroying officer role" do
+      shift.officer.destroy
+
+      expect(shift.officer_name).to eq "Ana"
+      expect(shift.officer_email).to eq "ana@example.com"
+    end
+
+  end
   
 end
