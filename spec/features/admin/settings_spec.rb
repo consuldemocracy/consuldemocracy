@@ -39,7 +39,7 @@ feature 'Admin settings' do
       expect(page).not_to have_content "Map configuration"
     end
 
-    scenario "Should be able when map feature deactivated" do
+    scenario "Should be able when map feature activated" do
       Setting['feature.map'] = true
       admin = create(:administrator).user
       login_as(admin)
@@ -60,6 +60,26 @@ feature 'Admin settings' do
 
       expect(page).to have_content "Map configuration updated succesfully"
     end
+
+    scenario "Should update marker", :js do
+      Setting['feature.map'] = true
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+
+      expect(find("#latitude", visible: false).value).to eq "51.48"
+      expect(find("#longitude", visible: false).value).to eq "0.0"
+
+      find("#admin-map").click
+
+      within "#map-form" do
+        click_on "Update"
+      end
+
+      expect(find("#latitude", visible: false).value).not_to eq "51.48"
+      expect(page).to have_content "Map configuration updated succesfully"
+    end
+
 
   end
 
