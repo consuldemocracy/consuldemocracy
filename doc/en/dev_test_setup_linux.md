@@ -86,6 +86,12 @@ apt-get update
 apt-get install postgresql-9.4
 ```
 
+Besides, you will also need the dev libraries and headers so that pg gem can be compiled when running `bundle install`. Also, you will need the postgresql postGIS scripts. You can install them by running a single command:
+
+```
+apt-get install postgresql-server-dev-9.4 postgresql-9.4-postgis-scripts
+```
+
 ## Cloning the repository
 
 Now, with all the dependencies installed, clone the CONSUL repository:
@@ -119,4 +125,22 @@ rake db:create
 rake db:setup
 rake db:dev_seed
 RAILS_ENV=test bin/rake db:setup
+```
+
+If you get the following error message when running `rake db:create`:
+
+```
+PG::InvalidParameterValue: ERROR:  new encoding (UTF8) is incompatible with the encoding of the template database (SQL_ASCII)
+HINT:  Use the same encoding as in the template database, or use template0 as template.
+```
+
+you probably have template1 using `SQL_ASCII` encoding instead of `UTF8`, to correct this run the following sequence of commands within the postgresql client to recreate the template1 with `UTF8` encoding:
+
+```
+UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+DROP DATABASE template1;
+CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+\c template1
+VACUUM FREEZE;
 ```
