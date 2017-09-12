@@ -4,7 +4,7 @@ module DocumentsHelper
     document.attachment_file_name
   end
 
-  def errors_on_attachment(document)
+  def document_errors_on_attachment(document)
     document.errors[:attachment].join(', ') if document.errors.key?(:attachment)
   end
 
@@ -71,7 +71,7 @@ module DocumentsHelper
                        class: "button hollow #{klass}"
       if document.errors[:attachment].any?
         html += content_tag :small, class: "error" do
-          errors_on_attachment(document)
+          document_errors_on_attachment(document)
         end
       end
     end

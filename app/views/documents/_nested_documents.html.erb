@@ -3,8 +3,9 @@
   <p class="help-text"><%= documentables_note(documentable) %></p>
 
   <% documentable.documents.each_with_index do |document, index| %>
-    <%= render 'documents/nested_fields', document: document, index: index, documentable: documentable %>
+    <%= render 'documents/nested_fields', document: document, index: index %>
   <% end %>
+
 </div>
 
 <% unless max_documents_allowed?(documentable) %>

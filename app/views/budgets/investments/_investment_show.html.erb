@@ -10,9 +10,16 @@
                     class: 'button hollow float-right' %>
       <% end %>
 
-      <% if can?(:edit_image, @investment) %>
-        <%= link_to investment_image_button_text(@investment),
-                    edit_image_budget_investment_path(investment.budget, investment),
+      <% if can?(:create, @image) %>
+        <%= link_to t("images.upload_image"),
+                    new_image_path(imageable_id:investment, imageable_type: investment.class.name, from: request.url),
+                    class: 'button hollow float-right' %>
+      <% end %>
+
+      <% if @investment.image.present? && can?(:destroy, @investment.image) %>
+        <%= link_to t("images.remove_image"),
+                    image_path(@investment.image, from: request.url),
+                    method: :delete,
                     class: 'button hollow float-right' %>
       <% end %>
 
@@ -28,20 +35,7 @@
 
       <br>
 
-      <% if investment.image.exists? %>
-        <div class="row">
-          <div class="small-12 column text-center">
-            <figure>
-              <%= image_tag investment.image_url(:large),
-                            alt: investment.image.title %>
-              <figcaption class="text-right">
-                <em><%= investment.image.title %></em>
-              </figcaption>
-            </figure>
-            <hr>
-          </div>
-        </div>
-      <% end %>
+      <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
@@ -138,7 +132,7 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
-        image_url: investment.image.exists? ? investment_image_full_url(investment, :thumb) : '',
+        image_url: investment.image.present? ? investment_image_full_url(investment, :thumb) : '',
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
 

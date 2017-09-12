@@ -1,0 +1,12 @@
+<% if params[:nested_image] == "true" %>
+
+  App.Imageable.uploadNestedImage("<%= image_nested_field_wrapper_id %>",
+                                  "<%= j render('images/nested_fields', image: @image) %>",
+                                  <%= @image.cached_attachment.present? %>)
+<% else %>
+
+  App.Imageable.uploadPlainImage("plain_image_fields",
+                                 "<%= j render('images/plain_fields', image: @image) %>",
+                                 <%= @image.cached_attachment.present? %>)
+
+<% end %>

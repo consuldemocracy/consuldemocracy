@@ -1,0 +1,26 @@
+<div class="image-form <%= imageable_class(@image.imageable) %> row">
+
+  <div class="small-12 medium-9 column">
+    <%= back_link_to params[:from] %>
+    <h1><%= t("images.new.title") %></h1>
+    <%= render "form", form_url: images_url %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <span class="icon-images float-right"></span>
+    <h2><%= t("images.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li>
+        <%= t "images.recommendation_one_html" %>
+      </li>
+      <li>
+        <%= t "images.recommendation_two_html",
+              accepted_content_types: imageable_humanized_accepted_content_types %>
+      </li>
+      <li>
+        <%= t "images.recommendation_three_html",
+              max_file_size: imageable_max_file_size %>
+      </li>
+    </ul>
+  </div>
+</div>

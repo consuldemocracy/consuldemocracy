@@ -79,6 +79,9 @@ es:
       documents:
         one: "Documento"
         other: "Documentos"
+      images:
+        one: "Imagen"
+        other: "Imágenes"
     attributes:
       budget:
         name: "Nombre"
@@ -99,8 +102,7 @@ es:
         title: "Título"
         location: "Ubicación"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
-        image: "Imagen descriptiva de la propuesta"
-        image_title: "Título de la imagen"
+        image: "Imagen descriptiva de la propuesta de inversión"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -198,6 +200,9 @@ es:
       legislation/annotation:
         text: Comentario
       document:
+        title: Título
+        attachment: Archivo adjunto
+      image:
         title: Título
         attachment: Archivo adjunto
     errors:

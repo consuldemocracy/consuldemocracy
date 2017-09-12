@@ -15,6 +15,7 @@ module Documentable
       @max_file_size = options[:max_file_size]
       @accepted_content_types = options[:accepted_content_types]
     end
+
   end
 
 end

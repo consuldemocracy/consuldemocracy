@@ -29,17 +29,17 @@ feature 'Budget Investments' do
   end
 
   scenario 'Index should show investment descriptive image only when is defined' do
-    investment = FactoryGirl.create(:budget_investment, heading: heading)
-    investment_with_image = FactoryGirl.create(:budget_investment, :with_descriptive_image, heading: heading)
+    investment = create(:budget_investment, heading: heading)
+    investment_with_image = create(:budget_investment, heading: heading)
+    image = create(:image, imageable: investment_with_image)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).not_to have_css("picture")
+      expect(page).not_to have_css("img")
     end
-
     within("#budget_investment_#{investment_with_image.id}") do
-      expect(page).to have_css("picture img[alt='#{investment_with_image.image.title}']")
+      expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
     end
   end
 
@@ -370,256 +370,11 @@ feature 'Budget Investments' do
     expect(page).not_to have_selector ".js-follow"
   end
 
-  scenario "Show descriptive image when exists" do
-    user = create(:user)
-    login_as(user)
-    investment_with_image = create(:budget_investment, :with_descriptive_image, heading: heading)
-
-    visit budget_investment_path(budget_id: budget.id, id: investment_with_image.id)
-
-    expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
-  end
-
   scenario "Show back link contains heading id" do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, investment)
 
     expect(page).to have_link "Go back", href: budget_investments_path(budget, heading_id: investment.heading)
-  end
-
-  context "Show investment image button" do
-
-    scenario "Should show add text when investment has not image" do
-      investment = create(:budget_investment, heading: heading, author: author)
-      login_as(author)
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).to have_link "Add image"
-    end
-
-    scenario "Should show edit text when investment has already an image" do
-      investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
-      login_as(author)
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).to have_link "Edit image"
-    end
-
-    scenario "Should not be shown for anonymous users" do
-      investment = create(:budget_investment, heading: heading)
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).not_to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
-    end
-
-    scenario "Should not be shown when current user is not investment author" do
-      investment = create(:budget_investment, heading: heading)
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).not_to have_link "Edit image", href: edit_image_budget_investment_path(budget, investment)
-    end
-
-    scenario "Should be shown when current user is investment author" do
-      investment = create(:budget_investment, heading: heading, author: author)
-      login_as(author)
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).to have_link "Add image", href: edit_image_budget_investment_path(budget, investment)
-    end
-
-    scenario "Should be shown when current user is administrator" do
-      administrator = create(:administrator).user
-      investment = create(:budget_investment, heading: heading, author: author)
-      login_as(administrator)
-
-      visit budget_investment_path(budget, investment)
-
-      expect(page).to have_link "Add image", href: edit_image_budget_investment_path(budget, investment)
-    end
-  end
-
-  scenario "Create new investment project should show image title validation errors when image selected and title blank" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit new_budget_investment_path(budget)
-    select  'Health: More hospitals', from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
-    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
-    check   'budget_investment_terms_of_service'
-    click_button "Create Investment"
-
-    expect(page).to have_content "can't be blank, is too short (minimum is 4 characters)"
-  end
-
-  scenario "Create new investment project should show image validation error when image selected is too small" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit new_budget_investment_path(budget)
-    select  'Health: More hospitals', from: 'budget_investment_heading_id'
-    fill_in 'budget_investment_title', with: 'Build a skyscraper'
-    fill_in 'budget_investment_description', with: 'I want to live in a high tower over the clouds'
-    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
-    check   'budget_investment_terms_of_service'
-    click_button "Create Investment"
-
-    expect(page).to have_content "Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px."
-  end
-
-  scenario "Edit image page should show image title validation errors when image selected and title blank" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
-    click_button "Save image"
-
-    expect(page).to have_content "can't be blank, is too short (minimum is 4 characters)"
-  end
-
-  scenario "Edit image page should show image validation error when image selected is too small" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-    attach_file :budget_investment_image, "spec/fixtures/files/logo_header.jpg"
-    click_button "Save image"
-
-    expect(page).to have_content "Image dimensions are too small. For a good quality please upload a larger image. Minimum width: 475px, minimum height: 475px."
-  end
-
-  scenario "Edit image page should not be accesible when there is no logged user" do
-    investment = create(:budget_investment, heading: heading, author: author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).to have_content "You must sign in or register to continue"
-  end
-
-  scenario "Edit image page should redirect to investment show page if logged user is not the author" do
-    other_author = create(:user, :level_two, username: 'Manuel')
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(other_author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).to have_content "You do not have permission to carry out the action 'edit_image' on budget/investment."
-  end
-
-  scenario "Edit image page should be accesible when author is currently logged" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).to have_content "Change your project image"
-  end
-
-  scenario "Edit image page should be accesible when there is logged any administrator" do
-    administrator = create(:administrator).user
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(administrator)
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).to have_content "Change your project image"
-  end
-
-  scenario "Remove image button should not be present when investment image does not exists" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).not_to have_link "Remove image"
-  end
-
-  scenario "Remove image button should be present when investment has an image defined" do
-    investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).to have_link "Remove image"
-  end
-
-  scenario "Remove image button should be possible for administrators" do
-    administrator = create(:administrator).user
-    investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
-    login_as(administrator)
-
-    visit edit_image_budget_investment_path(budget, investment)
-    click_link "Remove image"
-
-    expect(page).to have_content "Investment project image removed succesfully."
-  end
-
-  scenario "Remove image should be possible for investment author" do
-    investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(budget, investment)
-    click_link "Remove image"
-
-    expect(page).to have_content "Investment project image removed succesfully."
-  end
-
-  scenario "Remove image should not be possible for any other logged users (except administrators and author)" do
-    investment = create(:budget_investment, :with_descriptive_image, heading: heading, author: author)
-    login_as(create(:user))
-
-    visit edit_image_budget_investment_path(budget, investment)
-
-    expect(page).to have_content "You do not have permission to carry out the action 'edit_image' on budget/investment."
-  end
-
-  scenario "Update image should not be possible if logged user is not the author" do
-    other_author = create(:user, :level_two, username: 'Manuel')
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(other_author)
-
-    visit edit_image_budget_investment_path(investment.budget, investment)
-
-    expect(current_path).not_to eq(edit_image_budget_investment_path(investment.budget, investment))
-    expect(page).to have_content 'You do not have permission'
-  end
-
-  scenario "Update image should be possible for authors" do
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(author)
-
-    visit edit_image_budget_investment_path(investment.budget, investment)
-    fill_in :budget_investment_image_title, with: "New image title"
-    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
-    click_on "Save image"
-
-    within ".budget-investment-show" do
-      expect(page).to have_css("img[src*='clippy.jpg']")
-    end
-    expect(page).to have_content 'Investment project image updated succesfully. '
-  end
-
-  scenario "Update image should be possible for administrators" do
-    administrator = create(:administrator).user
-    investment = create(:budget_investment, heading: heading, author: author)
-    login_as(administrator)
-
-    visit edit_image_budget_investment_path(investment.budget, investment)
-    fill_in :budget_investment_image_title, with: "New image title"
-    attach_file :budget_investment_image, "spec/fixtures/files/clippy.jpg"
-    click_on "Save image"
-
-    within ".budget-investment-show" do
-      expect(page).to have_css("img[src*='clippy.jpg']")
-    end
-    expect(page).to have_content 'Investment project image updated succesfully. '
   end
 
   context "Show (feasible budget investment)" do
@@ -706,6 +461,8 @@ feature 'Budget Investments' do
       expect(page).to have_content("Don't have defined milestones")
     end
   end
+
+  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 

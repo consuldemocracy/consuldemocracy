@@ -39,7 +39,6 @@ Rails.application.routes.draw do
   concern :imageable do
     resources :images
   end
-
   resources :debates do
     member do
       post :vote
@@ -84,9 +83,6 @@ Rails.application.routes.draw do
     resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy], concerns: :imageable do
       member do
         post :vote
-        get :edit_image
-        put :update_image
-        delete :remove_image
       end
       collection { get :suggest }
     end
@@ -105,6 +101,14 @@ Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
 
   resources :documents, only: [:new, :create, :destroy] do
+    collection do
+      get :new_nested
+      delete :destroy_upload
+      post :upload
+    end
+  end
+
+  resources :images, only: [:new, :create, :destroy] do
     collection do
       get :new_nested
       delete :destroy_upload

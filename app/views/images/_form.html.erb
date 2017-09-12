@@ -1,0 +1,20 @@
+<%= form_for @image,
+             url: images_path(
+              imageable_type: @image.imageable_type,
+              imageable_id: @image.imageable_id,
+              from: params[:from]
+             ),
+             html: { multipart: true, class: "imageable"},
+             data: { direct_upload_url: upload_images_url(imageable_type: @image.imageable_type, imageable_id: @image.imageable_id) } do |f| %>
+
+  <%= render 'shared/errors', resource: @image %>
+
+  <div class="row">
+
+    <%= render 'plain_fields', image: @image %>
+
+    <div class="actions small-12 medium-6 large-4 end column">
+      <%= f.submit(t("images.form.submit_button"), class: "button expanded") %>
+    </div>
+  </div>
+<% end %>

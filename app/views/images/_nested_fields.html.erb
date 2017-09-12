@@ -1,0 +1,32 @@
+<div id="<%= image_nested_field_wrapper_id %>" class="image">
+  <%= hidden_field_tag :id,
+                       image.id,
+                       name: image_nested_field_name(image, :id),
+                       id: image_nested_field_id(image, :id) if image.persisted? %>
+  <%= hidden_field_tag :user_id,
+                       current_user.id,
+                       name: image_nested_field_name(image, :user_id),
+                       id: image_nested_field_id(image, :user_id) %>
+  <%= hidden_field_tag :cached_attachment,
+                       image.cached_attachment,
+                       name: image_nested_field_name(image, :cached_attachment),
+                       id: image_nested_field_id(image, :cached_attachment) %>
+
+  <%= label_tag :title, t("activerecord.attributes.image.title") %>
+  <%= text_field_tag :title,
+                     image.title,
+                     name: image_nested_field_name(image, :title),
+                     id: image_nested_field_id(image, :title),
+                     class: "image-title" %>
+   <% if image.errors[:title].any? %>
+     <small class="error"><%= image.errors[:title].join(", ") %></small>
+   <% end %>
+
+  <%= render_image(image, :thumb, false) if image.attachment.exists? %>
+
+  <%= render_image_attachment(image) %>
+
+  <%= render_destroy_image_link(image) %>
+  <p class="file-name"><%= image_attachment_file_name(image) %></p>
+  <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+</div>

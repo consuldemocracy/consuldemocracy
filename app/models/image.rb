@@ -1,35 +1,62 @@
 class Image < ActiveRecord::Base
+  include ImagesHelper
+  include ImageablesHelper
+
   TITLE_LEGHT_RANGE = 4..80
   MIN_SIZE = 475
+  MAX_IMAGE_SIZE = 1.megabyte
+  ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg)
 
-  attr_accessor :content_type, :original_filename, :attachment_data, :attachment_urls
+  has_attached_file :attachment, styles: { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" },
+                                 path: ":rails_root/public/system/:class/:prefix/:style/:filename",
+                                 url: "/system/:class/:prefix/:style/:filename"
+  attr_accessor :cached_attachment
+
+  belongs_to :user
   belongs_to :imageable, polymorphic: true
-  before_validation :set_styles
-  has_attached_file :attachment, styles: { large: "x475", medium: "300x300#", thumb: "140x245#" },
-                                 url:  "/system/:class/:attachment/:imageable_name_path/:style/:hash.:extension",
-                                 hash_secret: Rails.application.secrets.secret_key_base
-  validates_attachment :attachment, presence: true, content_type: { content_type:  %w(image/jpeg image/jpg) },
-                                    size: { less_than: 1.megabytes }
+
+  # Disable paperclip security validation due to polymorphic configuration
+  # Paperclip do not allow to use Procs on valiations definition
+  do_not_validate_attachment_file_type :attachment
+  validate :attachment_presence
+  validate :validate_attachment_content_type,         if: -> { attachment.present? }
+  validate :validate_attachment_size,                 if: -> { attachment.present? }
   validates :title, presence: true, length: { in: TITLE_LEGHT_RANGE }
-  validate :check_image_dimensions
+  validates :user_id, presence: true
+  validates :imageable_id, presence: true,         if: -> { persisted? }
+  validates :imageable_type, presence: true,       if: -> { persisted? }
+
+  validate :validate_image_dimensions, if: -> { attachment.present? && attachment.dirty? }
 
   after_create :redimension_using_origin_styles
-  accepts_nested_attributes_for :imageable
+  after_save :remove_cached_image, if: -> { valid? && persisted? && cached_attachment.present? }
 
-  # # overwrite default styles for Image class
-  # def set_image_styles
-  #   { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" }
-  # end
-  def set_styles
-    if imageable
-      imageable.set_styles if imageable.respond_to? :set_styles
-    else
-      { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" }
-    end
+  def set_cached_attachment_from_attachment(prefix)
+    self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
+                               attachment.path
+                             else
+                               prefix + attachment.url
+                             end
   end
 
-  Paperclip.interpolates :imageable_name_path do |attachment, _style|
-    attachment.instance.imageable.class.to_s.downcase.split('::').map(&:pluralize).join('/')
+  def set_attachment_from_cached_attachment
+    self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
+                        File.open(cached_attachment)
+                      else
+                        URI.parse(cached_attachment)
+                      end
+  end
+
+  Paperclip.interpolates :prefix do |attachment, style|
+    attachment.instance.prefix(attachment, style)
+  end
+
+  def prefix(attachment, style)
+    if !attachment.instance.persisted?
+      "cached_attachments/user/#{attachment.instance.user_id}"
+    else
+      ":attachment/:id_partition"
+    end
   end
 
   private
@@ -38,11 +65,37 @@ class Image < ActiveRecord::Base
       attachment.reprocess!
     end
 
-    def check_image_dimensions
-      return unless attachment?
-
+    def validate_image_dimensions
       dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
       errors.add(:attachment, :min_image_width, required_min_width: MIN_SIZE) if dimensions.width < MIN_SIZE
       errors.add(:attachment, :min_image_height, required_min_height: MIN_SIZE) if dimensions.height < MIN_SIZE
+    end
+
+    def validate_attachment_size
+      if imageable.present? &&
+         attachment_file_size > 1.megabytes
+        errors[:attachment] = I18n.t("images.errors.messages.in_between",
+                                      min: "0 Bytes",
+                                      max: "#{imageable_max_file_size} MB")
+      end
+    end
+
+    def validate_attachment_content_type
+      if imageable.present? &&
+         !imageable_accepted_content_types.include?(attachment_content_type)
+        errors[:attachment] = I18n.t("images.errors.messages.wrong_content_type",
+                                      content_type: attachment_content_type,
+                                      accepted_content_types: imageable_humanized_accepted_content_types)
+      end
+    end
+
+    def attachment_presence
+      if attachment.blank? && cached_attachment.blank?
+        errors[:attachment] = I18n.t("errors.messages.blank")
+      end
+    end
+
+    def remove_cached_image
+      File.delete(cached_attachment) if File.exists?(cached_attachment)
     end
 end

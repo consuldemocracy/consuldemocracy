@@ -8,7 +8,7 @@ class Document < ActiveRecord::Base
   belongs_to :documentable, polymorphic: true
 
   # Disable paperclip security validation due to polymorphic configuration
-  # Paperclip do not allow to user Procs on valiations definition
+  # Paperclip do not allow to use Procs on valiations definition
   do_not_validate_attachment_file_type :attachment
   validate :attachment_presence
   validate :validate_attachment_content_type,         if: -> { attachment.present? }
@@ -64,7 +64,7 @@ class Document < ActiveRecord::Base
          !accepted_content_types(documentable).include?(attachment_content_type)
         errors[:attachment] = I18n.t("documents.errors.messages.wrong_content_type",
                                       content_type: attachment_content_type,
-                                      accepted_content_types: humanized_accepted_content_types(documentable))
+                                      accepted_content_types: documentable_humanized_accepted_content_types(documentable))
       end
     end
 

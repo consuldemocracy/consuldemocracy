@@ -1,0 +1,33 @@
+en:
+  images:
+    upload_image: Upload image
+    remove_image: Remove image
+    form:
+      title: Descriptive image
+      attachment_label: Choose image
+      submit_button: Upload image
+      delete_button: Remove image
+      note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
+      add_new_image: Add image
+    new:
+      title: Upload image
+    recommendations_title: File upload tips
+    recommendation_one_html: You can upload only one image. Proposals with image attract more attention of the users.
+    recommendation_two_html: You can upload <strong>%{accepted_content_types}</strong> image.
+    recommendation_three_html: You can upload one image up to <strong>%{max_file_size} MB</strong>.
+
+    actions:
+      create:
+        notice: Image was created successfully.
+        alert: Cannot create image. Check form errors and try again.
+      destroy:
+        notice: Image was deleted successfully.
+        alert: Cannot destroy image.
+        confirm: Are you sure you want to delete the image? This action cannot be undone!
+    buttons:
+      download_image: Dowload file
+      destroy_image: Destroy
+    errors:
+      messages:
+        in_between: must be in between %{min} and %{max}
+        wrong_content_type: content type %{content_type} does not match any of accepted content types %{accepted_content_types}

@@ -22,7 +22,7 @@ module DocumentablesHelper
                       .join(",")
   end
 
-  def humanized_accepted_content_types(documentable)
+  def documentable_humanized_accepted_content_types(documentable)
     documentable.class.accepted_content_types
                 .collect{ |content_type| content_type.split("/").last }
                 .join(", ")
@@ -30,7 +30,7 @@ module DocumentablesHelper
 
   def documentables_note(documentable)
     t "documents.form.note", max_documents_allowed: max_documents_allowed(documentable),
-                             accepted_content_types: humanized_accepted_content_types(documentable),
+                             accepted_content_types: documentable_humanized_accepted_content_types(documentable),
                              max_file_size: max_file_size(documentable)
   end
 

@@ -59,6 +59,7 @@ module CommentableActions
   def update
     resource.assign_attributes(strong_params)
     recover_documents_from_cache(resource)
+    recover_image_from_cache(resource)
 
     if resource.save
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
@@ -117,6 +118,12 @@ module CommentableActions
       resource.documents = resource.documents.each do |document|
         document.set_attachment_from_cached_attachment if document.cached_attachment.present?
       end
+    end
+
+    def recover_image_from_cache(resource)
+      return false unless resource.try(:image)
+
+      resource.image.attachment = resource.image.set_attachment_from_cached_attachment if resource.image.cached_attachment.present?
     end
 
 end

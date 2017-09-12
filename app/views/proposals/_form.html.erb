@@ -46,6 +46,10 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
+    <div class="images small-12 column" data-max-images="1">
+      <%= render 'images/nested_images', imageable: @proposal %>
+    </div>
+
     <div class="documents small-12 column" data-max-documents="<%= Proposal.max_documents_allowed %>">
       <%= render 'documents/nested_documents', documentable: @proposal %>
     </div>

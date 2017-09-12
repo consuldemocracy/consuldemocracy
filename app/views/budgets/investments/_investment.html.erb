@@ -3,11 +3,8 @@
     <div class="row">
 
       <div class="small-12 medium-3 large-2 column">
-        <% if investment.image.exists? %>
-          <figure>
-            <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
-            <figcaption><%= investment.image.title %></figcaption>
-          </figure>
+        <% if investment.image.present? %>
+          <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
         <% else %>
           <div class="no-image"></div>
         <% end %>

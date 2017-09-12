@@ -1,0 +1,16 @@
+<div class="images-list">
+  <%= label_tag :image, t("images.form.title") %>
+  <p class="help-text"><%= imageables_note(imageable) %></p>
+
+  <%= render 'images/nested_fields', image: imageable.image if imageable.image.present? %>
+</div>
+
+<% if imageable.image.blank? %>
+  <%= link_to t("images.form.add_new_image"),
+              new_nested_images_path(imageable_type: imageable.class.name, index: 0),
+              remote: true,
+              id: "new_image_link",
+              class: "button hollow"  %>
+<% end %>
+
+<hr>

@@ -1,0 +1,9 @@
+<%
+  new_image_link = link_to t("images.form.add_new_image"),
+                              new_nested_images_path(imageable_type: params[:imageable_type]),
+                              remote: true,
+                              id: "new_image_link",
+                              class: "button hollow"
+%>
+App.Imageable.new("<%= j render('images/nested_fields', image: @image) %>")
+App.Imageable.updateNewImageButton("<%= j new_image_link %>")

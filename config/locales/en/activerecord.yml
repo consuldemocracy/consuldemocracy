@@ -79,6 +79,9 @@ en:
       documents:
         one: "Document"
         other: "Documents"
+      images:
+        one: "Image"
+        other: "Images"
     attributes:
       budget:
         name: "Name"
@@ -203,6 +206,9 @@ en:
       legislation/annotation:
         text: Comment
       document:
+        title: Title
+        attachment: Attachment
+      image:
         title: Title
         attachment: Attachment
     errors:

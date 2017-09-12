@@ -45,11 +45,13 @@ module Budgets
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
       @document = Document.new(documentable: @investment)
+      @image = Image.new(imageable: @investment)
     end
 
     def create
       @investment.author = current_user
       recover_documents_from_cache(@investment)
+      recover_image_from_cache(@investment)
 
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
@@ -80,24 +82,6 @@ module Budgets
       super
     end
 
-    def edit_image
-    end
-
-    def update_image
-      if @investment.update(investment_params)
-        redirect_to budget_investment_path(@investment.budget, @investment),
-                    notice: t("flash.actions.update_image.budget_investment")
-      else
-        render :edit_image
-      end
-    end
-
-    def remove_image
-      @investment.image.destroy!
-      redirect_to budget_investment_path(@investment.budget, @investment),
-                  notice: t("flash.actions.remove_image.budget_investment")
-    end
-
     private
 
       def resource_model
@@ -124,9 +108,9 @@ module Budgets
 
       def investment_params
         params.require(:budget_investment)
-              .permit(:title, :description, :external_url, :heading_id,
-                      :tag_list, :organization_name, :location, :terms_of_service,
-                      image_attributes: [:title, :attachment],
+              .permit(:title, :description, :external_url, :heading_id, :tag_list,
+                      :organization_name, :location, :terms_of_service,
+                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id],
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
       end
 

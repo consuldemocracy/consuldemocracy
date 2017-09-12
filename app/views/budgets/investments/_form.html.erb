@@ -21,6 +21,10 @@
       <%= f.text_field :external_url %>
     </div>
 
+    <div class="images small-12 column" data-max-images="1">
+      <%= render 'images/nested_images', imageable: @investment %>
+    </div>
+
     <div class="documents small-12 column" data-max-documents="<%= Budget::Investment.max_documents_allowed %>">
       <%= render 'documents/nested_documents', documentable: @investment %>
     </div>
@@ -52,29 +56,6 @@
                         class: 'js-tag-list tag-autocomplete',
                         data: {js_url: suggest_tags_path} %>
     </div>
-
-    <%= f.fields_for :image do |builder| %>
-
-      <div class="small-12 column">
-        <div class="image-upload">
-          <%= f.file_field :attachment, accept: 'image/jpg,image/jpeg', label: false, class:'show-for-sr' %>
-          <br>
-          <%= f.label :attachment, t("budgets.investments.form.image_label"), class:'button' %>
-        </div>
-      </div>
-
-      <% if @investment.errors.has_key?(:attachment) %>
-        <div class="small-12 column">
-          <div class="image-errors">
-            <small class="error"><%= errors_on_image(@investment)%></small>
-          </div>
-        </div>
-      <% end %>
-
-      <div class="small-12 column">
-        <%= f.text_field :title %>
-      </div>
-    <% end %>
 
     <% unless current_user.manager? %>
 

@@ -48,6 +48,8 @@
 
         </div>
 
+        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
+
         <br>
         <p>
           <%= t("proposals.show.code") %>
@@ -106,7 +108,8 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if can_create_document?(@document, @proposal) || author_of_proposal?(@proposal) || current_editable?(@proposal) %>
+        <% if can_create_document?(@document, @proposal) || author_of_proposal?(@proposal) || current_editable?(@proposal) ||
+              can?(:create, @image) || (@proposal.image.present? && can?(:destroy, @proposal.image)) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
@@ -130,6 +133,22 @@
               <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
                 <span class="icon-edit"></span>
                 <%= t("proposals.show.edit_proposal_link") %>
+              <% end %>
+            <% end %>
+
+            <% if can?(:create, @image) %>
+              <%= link_to new_image_path(imageable_id: @proposal, imageable_type: @proposal.class.name, from: request.url),
+                          class: 'button hollow float-right' do %>
+                <%= t("images.upload_image") %>
+              <% end %>
+            <% end %>
+
+            <% if @proposal.image.present? && can?(:destroy, @proposal.image) %>
+              <%= link_to image_path(@proposal.image, from: request.url),
+                          method: :delete,
+                          class: 'button hollow float-right',
+                          data: { confirm: 'Are you sure?' } do %>
+                <% t("images.remove_image") %>
               <% end %>
             <% end %>
           </div>

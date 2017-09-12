@@ -1,0 +1,33 @@
+es:
+  images:
+    upload_image: Subir imagen
+    remove_image: Eliminar imagen
+    form:
+      title: Imagen descriptiva
+      attachment_label: Selecciona una imagen
+      submit_button: Subir imagen
+      delete_button: Eliminar imagen
+      note: "Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
+      add_new_image: Añadir imagen
+    new:
+      title: Subir una imagen
+    recommendations_title: Consejos para subir imágenes
+    recommendation_one_html: Puedes subir una imagen descriptiva, esta imagen se mostrará en los listados y ayudará a que tu propuesta llame más la atención de los usuarios.
+    recommendation_two_html: "Sólo puedes subir <strong>imágenes en los formatos: %{accepted_content_types}</strong>."
+    recommendation_three_html: Puedes subir una imagen de hasta <strong>%{max_file_size} MB</strong>
+
+    actions:
+      create:
+        notice: "La imagen se ha creado correctamente."
+        alert: "La imagen no se ha podido crear. Revise los errores del formulario."
+      destroy:
+        notice: "La imagen se ha eliminado correctamente."
+        alert: "La imagen no se ha podido eliminar."
+        confirm: "¿Está seguro de que desea eliminar la imagen? Esta acción no se puede deshacer!"
+    buttons:
+      download_image: Descargar imagen
+      destroy_image: Eliminar
+    errors:
+      messages:
+        in_between: debe estar entre %{min} y %{max}
+        wrong_content_type: El tipo de contenido %{content_type} de la imagen no coincide con ninguno de los tipos de contenido aceptados %{accepted_content_types}

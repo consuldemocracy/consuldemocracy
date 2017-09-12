@@ -319,14 +319,20 @@ FactoryGirl.define do
       valuation_finished true
     end
 
-    trait :with_descriptive_image do
-      association :image, factory: :image
-    end
   end
 
-  factory :image, class: 'Image' do
+  factory :image do
     attachment { File.new("spec/fixtures/files/clippy.jpg") }
     title "Lorem ipsum dolor sit amet"
+    association :user, factory: :user
+
+    trait :proposal_image do
+      association :imageable, factory: :proposal
+    end
+
+    trait :budget_investment_image do
+      association :imageable, factory: :budget_investment
+    end
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do
