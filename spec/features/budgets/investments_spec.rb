@@ -462,9 +462,17 @@ feature 'Budget Investments' do
     end
   end
 
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+
   it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
-  it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+  it_behaves_like "nested imageable",
+                  "budget_investment",
+                  "new_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  "imageable_fill_new_valid_budget_investment",
+                  "Create Investment",
+                  "Budget Investment created successfully."
 
   it_behaves_like "documentable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
 
@@ -472,7 +480,7 @@ feature 'Budget Investments' do
                   "budget_investment",
                   "new_budget_investment_path",
                   { "budget_id": "budget_id" },
-                  "fill_new_valid_budget_investment",
+                  "documentable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Budget Investment created successfully."
 

@@ -80,7 +80,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
       expect(page).to have_selector ".file-name", text: "empty.pdf"
     end
@@ -89,7 +89,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
       expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "empty.pdf"
     end
@@ -111,7 +111,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
 
       expect(page).to have_selector ".loading-bar.complete"
@@ -121,7 +121,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
 
       expect(page).to have_selector ".loading-bar.errors"
     end
@@ -130,7 +130,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
       expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to include("empty.pdf")
     end
@@ -139,7 +139,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
 
       expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to eq ""
     end
@@ -161,7 +161,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       within "#document_0" do
         click_link "Remove document"
       end
@@ -173,7 +173,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       within "#document_0" do
         click_link "Remove document"
       end
@@ -195,7 +195,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
       click_on submit_button
       expect(page).to have_content documentable_success_notice
@@ -206,10 +206,10 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
       click_on submit_button
-      redirected_to_resource_show_or_navigate_to
+      documentable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_content "Documents (1)"
     end
@@ -220,11 +220,11 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable.class.max_documents_allowed.times.each do |index|
-        attach_new_file(documentable_factory_name, index, "spec/fixtures/files/empty.pdf")
+        documentable_attach_new_file(documentable_factory_name, index , "spec/fixtures/files/empty.pdf")
       end
 
       click_on submit_button
-      redirected_to_resource_show_or_navigate_to
+      documentable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
     end
@@ -233,31 +233,30 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
 end
 
-def redirected_to_resource_show_or_navigate_to
+def documentable_redirected_to_resource_show_or_navigate_to
   find("a", text: "Not now, go to my proposal")
   click_on "Not now, go to my proposal"
 rescue
   return
 end
 
-def attach_new_file(documentable_factory_name, index, path)
+def documentable_attach_new_file(documentable_factory_name, index, path)
   click_link "Add new document"
   sleep 1
   attach_file("#{documentable_factory_name}[documents_attributes][#{index}][attachment]", path, make_visible: true)
   sleep 1
 end
 
-def fill_new_valid_proposal
+def documentable_fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title #{rand(9999)}"
   fill_in :proposal_summary, with: "Proposal summary"
   fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
 end
 
-def fill_new_valid_budget_investment
+def documentable_fill_new_valid_budget_investment
   page.select documentable.heading.name_scoped_by_group, from: :budget_investment_heading_id
   fill_in :budget_investment_title, with: "Budget investment title"
   fill_in_ckeditor "budget_investment_description", with: "Budget investment description"
   check :budget_investment_terms_of_service
 end
-
