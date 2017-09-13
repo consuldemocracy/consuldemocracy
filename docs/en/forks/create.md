@@ -1,6 +1,6 @@
 # Creating your fork
 
-Consul git repo is hosted at Github.com, we recommend using it for your fork's repo to make things easier. But you can use any other service like Bitbucket or Gitlab if you want to.
+Consul git repo is hosted at Github.com, we recommend using it for your fork's repo to make things easier. But you can use any other service like Bitbucket or Gitlab if you want to, but don't forget to put a reference link back to CONSUL on the footer to comply with project's license (GPL Affero 3).
 
 1. [Register an user account on Github](https://github.com/join) if you don't have one
 

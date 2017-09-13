@@ -1,6 +1,6 @@
 # Crea tu fork
 
-El repositorio git de Consul está hospedado en Github.com, recomendamos lo uses para tu fork para hacer las cosas mas fáciles. Pero puedes usar cualquier otro servicio como Bitbucket o Gitlab si deseas.
+El repositorio git de Consul está hospedado en Github.com, recomendamos lo uses para tu fork para hacer las cosas mas fáciles. Pero puedes usar cualquier otro servicio como Bitbucket o Gitlab si deseas, pero no te olvides de poner el enlace en el footer a tu repositorio en cumplimiento con la licencia de este proyecto (GPL Affero 3).
 
 1. [Registra una cuenta de usuario en Github](https://github.com/join) si no tienes una ya.
 
