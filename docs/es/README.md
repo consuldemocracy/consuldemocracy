@@ -1,4 +1,4 @@
-![Logotipo de CONSUL](./consul_logo.png)
+![Logotipo de CONSUL](../consul_logo.png)
 
 # CONSUL
 
