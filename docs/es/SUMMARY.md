@@ -24,6 +24,10 @@
 * [Adaptar la aplicación](customization/overwritting.md)
 * [Añadir nuevas funcionalidades](customization/new_features.md)
 
+### Funcionalidades
+* [OAuth](features/oauth.md)
+* [GraphQL](features/graphql.md)
+
 ### Proyecto Open Source
 * [Código de conducta](open_source/code_of_conduct.md)
 * [Contribuciones](open_source/contributing.md)
