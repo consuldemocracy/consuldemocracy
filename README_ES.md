@@ -77,7 +77,3 @@ El código de este proyecto está publicado bajo la licencia AFFERO GPL v3 (ver 
 ## Contribuciones
 
 Ver fichero [CONTRIBUTING_ES.md](CONTRIBUTING_ES.md)
-
-## Guía de estilo
-
-Si quieres usar el logo de CONSUL puedes [descargar la guía de estilo](https://raw.githubusercontent.com/consul/consul/master/public/consul_brand.zip) que contiene una guía de uso y diferentes versiones y tamaños del logo.

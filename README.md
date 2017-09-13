@@ -76,7 +76,3 @@ Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt)
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Brand guidelines
-
-If you want to use CONSUL logo you can [download the guidelines](https://raw.githubusercontent.com/consul/consul/master/public/consul_brand.zip) which contains a use guide and different versions and sizes of the logo.
