@@ -23,79 +23,9 @@ This is the opensource code repository of the eParticipation website CONSUL, ori
 
 Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features in [features]( http://www.decide.es/en/) or [docs](https://github.com/consul/consul/tree/master/doc) and future features in the [open issues list](https://github.com/consul/consul/issues). For current status on upcoming features go to [Roadmap](https://github.com/consul/consul/projects/6)
 
-## Tech stack
+## Documentation
 
-The application backend is written in the [Ruby language](https://www.ruby-lang.org/) using the [Ruby on Rails](http://rubyonrails.org/) framework.
-
-Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http://foundation.zurb.com/) for the styles.
-
-## Configuration for development and test environments
-
-**NOTE**: For more detailed instructions check the [docs](https://github.com/consul/consul/tree/master/doc/en/dev_test_setup.md)
-
-Prerequisites: install git, Ruby 2.3.2, bundler gem, and PostgreSQL (>=9.4).
-
-```
-git clone https://github.com/consul/consul.git
-cd consul
-bundle install
-cp config/database.yml.example config/database.yml
-cp config/secrets.yml.example config/secrets.yml
-bin/rake db:setup
-bin/rake db:dev_seed
-RAILS_ENV=test rake db:setup
-```
-
-Run the app locally:
-
-```
-bin/rails s
-```
-
-Prerequisites for testing: install PhantomJS >= 2.1.1
-
-Run the tests with:
-
-```
-bin/rspec
-```
-
-If you add SCSS code you can check it with:
-
-```
-scss-lint
-```
-
-To maintain accesibility level, if you add new colors use a [Color contrast checker](http://webaim.org/resources/contrastchecker/) (WCAG AA is mandatory, WCAG AAA is recommended)
-
-If you work on Coffeescript code you can check it with [coffeelint](http://www.coffeelint.org/) (install with `npm install -g coffeelint`) :
-
-```
-coffeelint .
-```
-
-You can use the default admin user from the seeds file:
-
- **user:** admin@consul.dev
- **pass:** 12345678
-
-But for some actions like voting, you will need a verified user, the seeds file also includes one:
-
- **user:** verified@consul.dev
- **pass:** 12345678
-
-### Customization
-
-Read more on documentation:
-
-* English: [CUSTOMIZE_EN.md](CUSTOMIZE_EN.md)
-* Spanish: [CUSTOMIZE_ES.md](CUSTOMIZE_ES.md)
-
-### OAuth
-
-To test authentication services with external OAuth suppliers - right now Twitter, Facebook and Google - you'll need to create an "application" in each of the supported platforms and set the *key* and *secret* provided in your *secrets.yml*
-
-In the case of Google, verify that the APIs *Contacts API* and *Google+ API* are enabled for the application.
+Please check the ongoing documentation at https://consul_docs.gitbooks.io/docs/content/ to learn more about how to start your own CONSUL fork, install it, customize it and learn to use it from an administrator/maintainer perspective. You can contribute to it at https://github.com/consul/docs
 
 ## License
 
