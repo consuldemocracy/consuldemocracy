@@ -23,6 +23,49 @@ Este es el repositorio de código abierto de la Aplicación de Participación Ci
 
 El desarrollo de esta aplicación comenzó el [15 de Julio de 2015](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6) y el código fue puesto en producción el día 7 de Septiembre de 2015 en [decide.madrid.es](https://decide.madrid.es). Desde entonces se le añaden mejoras y funcionalidades constantemente. Las funcionalidades actuales se pueden consultar en [características](http://www.decide.es/es/) o en la [documentación](https://github.com/consul/consul/tree/master/doc) y las siguientes funcionaliades en la lista de [tareas por hacer](https://github.com/consul/consul/issues). Para conocer el estado actual de las próximas caracteristicas, vaya a [Roadmap](https://github.com/consul/consul/projects/6)
 
+## Configuración para desarrollo y tests
+
+**NOTA**: para unas instrucciones más detalladas consulta la [documentación](https://github.com/consul/docs/tree/master/es/getting_started/prerequisites)
+
+Prerequisitos: tener instalado git, Ruby 2.3.2, la gema `bundler` y PostgreSQL (9.4 o superior).
+
+```
+
+git clone https://github.com/consul/consul.git
+cd consul
+bundle install
+cp config/database.yml.example config/database.yml
+cp config/secrets.yml.example config/secrets.yml
+bin/rake db:create
+bin/rake db:migrate
+bin/rake db:dev_seed
+RAILS_ENV=test rake db:setup
+```
+
+Para ejecutar la aplicación en local:
+
+```
+bin/rails s
+```
+
+Prerequisitos para los tests: tener instalado PhantomJS >= 2.1.1
+
+Para ejecutar los tests:
+
+```
+bin/rspec
+```
+
+Puedes usar el usuario administrador por defecto del fichero seeds:
+
+ **user:** admin@consul.dev
+ **pass:** 12345678
+
+Pero para ciertas acciones, como apoyar, necesitarás un usuario verificado, el fichero seeds proporciona uno:
+
+ **user:** verified@consul.dev
+ **pass:** 12345678
+
 ## Documentación
 
 Por favor visita la documentación que está siendo completada en https://consul_docs.gitbooks.io/docs/content/ para conocer más sobre este proyecto, como comenzar tu propio fork, instalarlo, customizarlo y usarlo como administrador/mantenedor. Puedes colaborar en ella en https://github.com/consul/docs
