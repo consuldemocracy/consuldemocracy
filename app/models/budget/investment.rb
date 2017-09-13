@@ -8,6 +8,7 @@ class Budget
     include Followable
     include Communitable
     include Imageable
+    include Mappable
     include Documentable
     documentable max_documents_allowed: 3,
                  max_file_size: 3.megabytes,
@@ -27,8 +28,6 @@ class Budget
     has_many :valuators, through: :valuator_assignments
     has_many :comments, as: :commentable
     has_many :milestones
-    has_one :map_location, dependent: :destroy
-    accepts_nested_attributes_for :map_location, allow_destroy: true
 
     validates :title, presence: true
     validates :author, presence: true

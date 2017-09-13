@@ -485,7 +485,7 @@ feature 'Budget Investments' do
                   "Create Investment",
                   "Budget Investment created successfully."
 
-  it_behaves_like "mapeable",
+  it_behaves_like "mappable",
                   "budget_investment",
                   "investment",
                   "new_budget_investment_path",

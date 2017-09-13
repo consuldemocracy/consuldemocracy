@@ -1328,7 +1328,7 @@ feature 'Proposals' do
                   "Save changes",
                   "Proposal updated successfully"
 
-  it_behaves_like "mapeable",
+  it_behaves_like "mappable",
                   "proposal",
                   "proposal",
                   "new_proposal_path",
@@ -1540,37 +1540,6 @@ feature 'Proposals' do
     end
 
   end
-
-  scenario 'Add Map on proposal' do
-    author = create(:user)
-    login_as(author)
-
-    visit new_proposal_path
-    fill_in 'proposal_title', with: 'Help refugees'
-    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
-    fill_in 'proposal_summary', with: 'In summary, what we want is...'
-    check 'proposal_terms_of_service'
-
-    click_button 'Create proposal'
-
-    expect(page).to have_content 'Proposal created successfully.'
-    expect(page).to have_content 'Help refugees'
-    expect(page).not_to have_content 'You can also see more information about improving your campaign'
-
-    click_link 'Not now, go to my proposal'
-
-    expect(page).to have_content 'Help refugees'
-    expect(page).to have_content '¿Would you like to give assistance to war refugees?'
-    expect(page).to have_content 'In summary, what we want is...'
-    expect(page).to have_content 'This is very important because...'
-    expect(page).to have_content 'http://rescue.org/refugees'
-    expect(page).to have_content 'http://youtube.com'
-    expect(page).to have_content author.name
-    expect(page).to have_content 'Refugees'
-    expect(page).to have_content 'Solidarity'
-    expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
-  end
-
 
 end
 

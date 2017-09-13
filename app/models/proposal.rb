@@ -11,10 +11,11 @@ class Proposal < ActiveRecord::Base
   include Followable
   include Communitable
   include Imageable
+  include Mappable
   include Documentable
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]  
+               accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
 
   acts_as_votable
@@ -25,8 +26,6 @@ class Proposal < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
-  has_one :map_location, dependent: :destroy
-  accepts_nested_attributes_for :map_location, allow_destroy: true
   has_many :comments, as: :commentable
   has_many :proposal_notifications
 
