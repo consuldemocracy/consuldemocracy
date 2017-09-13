@@ -2,6 +2,8 @@ en:
   images:
     upload_image: Upload image
     remove_image: Remove image
+    remove_alert: Are you sure you want to remove the image?
+
     form:
       title: Descriptive image
       attachment_label: Choose image
@@ -9,12 +11,21 @@ en:
       delete_button: Remove image
       note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
       add_new_image: Add image
+
     new:
       title: Upload image
+      budget_investment:
+        note: 'Add an image to your investment project: %{title}'
+      proposal:
+        note: 'Add an image to your proposal: %{title}'
+
     recommendations_title: File upload tips
-    recommendation_one_html: You can upload only one image. Proposals with image attract more attention of the users.
-    recommendation_two_html: You can upload <strong>%{accepted_content_types}</strong> image.
-    recommendation_three_html: You can upload one image up to <strong>%{max_file_size} MB</strong>.
+    proposal:
+      recommendation_one_html: Proposals with image attract the attention of users more than those that do not have image. This image will be displayed in the list of proposals and on the proposal page.
+    budget_investment:
+      recommendation_one_html: Investment project with image attract the attention of users more than those that do not have image. This image will be displayed in the list of project investments and on the project investments page.
+    recommendation_two_html: "You can upload images in following formats: <strong>%{accepted_content_types}</strong>."
+    recommendation_three_html: You can upload one image up to <strong>1 MB</strong>.
 
     actions:
       create:
@@ -24,9 +35,6 @@ en:
         notice: Image was deleted successfully.
         alert: Cannot destroy image.
         confirm: Are you sure you want to delete the image? This action cannot be undone!
-    buttons:
-      download_image: Dowload file
-      destroy_image: Destroy
     errors:
       messages:
         in_between: must be in between %{min} and %{max}

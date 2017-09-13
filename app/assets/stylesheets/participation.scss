@@ -653,15 +653,16 @@
   }
 }
 
-.budget-investments-list {
-  .budget-investment {
-    .no-image {
-      background: $brand;
-    }
+.budget-investments-list .budget-investment,
+.proposals-list .proposal {
+
+  .no-image {
+    background: $brand;
   }
 }
 
-.budget-investments-list .budget-investment {
+.budget-investments-list .budget-investment,
+.proposals-list .proposal {
 
   @include breakpoint(small) {
     .no-image {

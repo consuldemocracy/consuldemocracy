@@ -1274,7 +1274,7 @@ feature 'Proposals' do
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
-  it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }
+  it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }, "proposals_path", {}
 
   it_behaves_like "nested imageable",
                   "proposal",

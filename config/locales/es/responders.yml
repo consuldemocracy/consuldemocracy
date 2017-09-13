@@ -25,10 +25,6 @@ es:
         spending_proposal: "Propuesta de inversión actualizada correctamente."
         budget_investment: "Propuesta de inversión actualizada correctamente"
         topic: "Tema actualizado correctamente."
-      update_image:
-        budget_investment: "La imagen de la propuesta de inversión se ha actualizado correctamente."
-      remove_image:
-        budget_investment: "La imagen de la propuesta de inversión se ha eliminado correctamente."
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         budget_investment: "Propuesta de inversión eliminada."

@@ -1,5 +1,24 @@
 module ImagesHelper
 
+  def image_absolute_url(image, version)
+    return "" unless image
+    if Paperclip::Attachment.default_options[:storage] == :filesystem
+      URI(request.url) + image.attachment.url(version)
+    else
+      investment.image_url(version)
+    end
+  end
+
+  def image_note(image)
+    t "images.new.#{image.imageable.class.name.parameterize.underscore}.note",
+      title: image.imageable.title
+  end
+
+  def image_first_recommendation(image)
+    t "images.#{image.imageable.class.name.parameterize.underscore}.recommendation_one_html",
+      title: image.imageable.title
+  end
+
   def image_attachment_file_name(image)
     image.attachment_file_name
   end

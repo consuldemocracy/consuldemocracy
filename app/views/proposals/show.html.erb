@@ -109,7 +109,7 @@
 
       <aside class="small-12 medium-3 column">
         <% if can_create_document?(@document, @proposal) || author_of_proposal?(@proposal) || current_editable?(@proposal) ||
-              can?(:create, @image) || (@proposal.image.present? && can?(:destroy, @proposal.image)) %>
+              can?(:create, @image) || can_destroy_image?(@proposal.image, @proposal) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
@@ -143,7 +143,7 @@
               <% end %>
             <% end %>
 
-            <% if @proposal.image.present? && can?(:destroy, @proposal.image) %>
+            <% if can_destroy_image?(@proposal.image, @proposal) %>
               <%= link_to image_path(@proposal.image, from: request.url),
                           method: :delete,
                           class: 'button hollow float-right',

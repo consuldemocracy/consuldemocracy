@@ -464,7 +464,7 @@ feature 'Budget Investments' do
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
-  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }, "budget_investments_path", { "budget_id": "budget_id" }
 
   it_behaves_like "nested imageable",
                   "budget_investment",

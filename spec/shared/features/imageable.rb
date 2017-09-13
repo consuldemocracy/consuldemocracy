@@ -1,20 +1,49 @@
-shared_examples "imageable" do |imageable_factory_name, imageable_path, imageable_path_arguments|
+shared_examples "imageable" do |imageable_factory_name, imageable_path, imageable_path_arguments, imageables_path, imageables_path_arguments|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper
 
-  let!(:administrator)       { create(:user) }
-  let!(:user)                { create(:user) }
-  let!(:arguments)           { {} }
-  let!(:imageable)           { create(imageable_factory_name, author: user) }
-  let!(:imageable_dom_name)  { imageable_factory_name.parameterize }
+  let!(:administrator)          { create(:user) }
+  let!(:user)                   { create(:user) }
+  let!(:imageable_arguments)    { {} }
+  let!(:imageables_arguments)   { {} }
+  let!(:imageable)              { create(imageable_factory_name, author: user) }
+  let!(:imageable_dom_name)     { imageable_factory_name.parameterize }
 
   before do
     create(:administrator, user: administrator)
 
     imageable_path_arguments.each do |argument_name, path_to_value|
-      arguments.merge!("#{argument_name}": imageable.send(path_to_value))
+      imageable_arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
+
+    imageables_path_arguments.each do |argument_name, path_to_value|
+      imageables_arguments.merge!("#{argument_name}": imageable.send(path_to_value))
+    end
+  end
+
+  context "Index" do
+
+    let!(:featured)                 { create_list(imageable_factory_name, 3) }
+    let!(:imageable_with_image)     { create(imageable_factory_name) }
+    let!(:image)                    { create(:image, imageable: imageable_with_image) }
+    let!(:imageable_without_image)  { create(imageable_factory_name) }
+
+    scenario "should show default imageable image not defined" do
+      visit send(imageables_path, imageables_arguments)
+
+      within "##{dom_id(imageable_without_image)}" do
+        expect(page).to have_css("div.no-image")
+      end
+    end
+
+    scenario "should show imageable image when exists" do
+      image = create(:image, imageable: imageable)
+      visit send(imageables_path, imageables_arguments)
+
+      expect(page).to have_css("img[alt='#{image.title}']")
+    end
+
   end
 
   context "Show" do
@@ -22,7 +51,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Show descriptive image when exists", :js do
       image = create(:image, imageable: imageable)
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
 
       expect(page).to have_css("img[alt='#{image.title}']")
     end
@@ -30,13 +59,13 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Show image title when image exists" do
       image = create(:image, imageable: imageable)
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
 
       expect(page).to have_content image.title
     end
 
     scenario "Should not display upload image button when there is no logged user" do
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
 
       within "##{dom_id(imageable)}" do
         expect(page).not_to have_link("Upload image")
@@ -45,7 +74,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
     scenario "Should not display upload image button when maximum number of images reached " do
       create_list(:image, 3, imageable: imageable)
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
 
       within "##{dom_id(imageable)}" do
         expect(page).not_to have_link("Upload image")
@@ -55,7 +84,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should display upload image button when user is logged in and is imageable owner" do
       login_as(user)
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
 
       within "##{dom_id(imageable)}" do
         expect(page).to have_link("Upload image")
@@ -65,7 +94,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should display upload image button when admin is logged in" do
       login_as(administrator)
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
 
       within "##{dom_id(imageable)}" do
         expect(page).to have_link("Upload image")
@@ -75,7 +104,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should navigate to new image page when click un upload button" do
       login_as(user)
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
       click_link  "Upload image"
 
       expect(page).to have_selector("h1", text: "Upload image")
@@ -87,7 +116,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
     scenario "Should not be able for unathenticated users" do
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       expect(page).to have_content("You must sign in or register to continue.")
     end
@@ -96,16 +125,17 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       login_as create(:user)
 
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
-      expect(page).to have_content("You do not have permission to carry out the action 'new' on image. ")
+      expect(page).to have_content("You do not have permission to carry out the action 'new' on image.")
+      expect(page).not_to have_content(image_first_recommendation(Image.new(imageable: imageable)))
     end
 
     scenario "Should be able to imageable author" do
       login_as imageable.author
 
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       expect(page).to have_selector("h1", text: "Upload image")
     end
@@ -113,7 +143,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should display file name after file selection", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
       sleep 1
@@ -124,7 +154,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should not display file name after file selection", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
       sleep 1
@@ -135,7 +165,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should update loading bar style after valid file upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
       sleep 1
@@ -146,7 +176,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should update loading bar style after unvalid file upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
       sleep 1
@@ -157,7 +187,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should update image title with attachment original file name after file selection if no title defined by user", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
       sleep 1
@@ -168,7 +198,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should not update image title with attachment original file name after file selection when title already defined by user", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       fill_in :image_title, with: "My custom title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
@@ -180,7 +210,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should update image cached_attachment field after valid file upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
       sleep 1
@@ -191,7 +221,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should not update image cached_attachment field after unvalid file upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id)
+                           imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
       sleep 1
@@ -202,12 +232,12 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should show imageable custom recomentations" do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id,
-                              from: send(imageable_path, arguments))
+                           imageable_id: imageable.id,
+                           from: send(imageable_path, imageable_arguments))
 
-      expect(page).to have_content "You can upload only one image. Proposals with image attract more attention of the users."
-      expect(page).to have_content "You can upload #{imageable_humanized_accepted_content_types} image."
-      expect(page).to have_content "You can upload one image up to #{imageable_max_file_size} MB."
+      expect(page).to have_content(image_first_recommendation(Image.new(imageable: imageable)))
+      expect(page).to have_content "You can upload images in following formats:  #{imageable_humanized_accepted_content_types}."
+      expect(page).to have_content "You can upload one image up to 1 MB."
     end
 
   end
@@ -229,8 +259,8 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       login_as imageable.author
 
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id,
-                              from: send(imageable_path, arguments))
+                           imageable_id: imageable.id,
+                           from: send(imageable_path, imageable_arguments))
       attach_file :image_attachment, "spec/fixtures/files/empty.pdf"
       sleep 1
       click_on "Upload image"
@@ -242,8 +272,8 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       login_as imageable.author
 
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id,
-                              from: send(imageable_path, arguments))
+                           imageable_id: imageable.id,
+                           from: send(imageable_path, imageable_arguments))
       fill_in :image_title, with: "Image title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg"
       sleep 1
@@ -256,8 +286,8 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       login_as imageable.author
 
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id,
-                              from: send(imageable_path, arguments))
+                           imageable_id: imageable.id,
+                           from: send(imageable_path, imageable_arguments))
       fill_in :image_title, with: "Image title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg"
       sleep 1
@@ -272,8 +302,8 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       login_as imageable.author
 
       visit new_image_path(imageable_type: imageable.class.name,
-                              imageable_id: imageable.id,
-                              from: send(imageable_path, arguments))
+                           imageable_id: imageable.id,
+                           from: send(imageable_path, imageable_arguments))
       fill_in :image_title, with: "Image title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg"
       sleep 1
@@ -291,7 +321,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should show success notice after successfull deletion by an admin" do
       login_as administrator
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
       click_on "Remove image"
 
       expect(page).to have_content "Image was deleted successfully."
@@ -300,7 +330,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should show success notice after successfull deletion" do
       login_as imageable.author
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
       click_on "Remove image"
 
       expect(page).to have_content "Image was deleted successfully."
@@ -309,7 +339,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should not show image after successful deletion" do
       login_as imageable.author
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
       click_on "Remove image"
 
       expect(page).not_to have_selector "figure img"
@@ -318,7 +348,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     scenario "Should redirect to imageable path after successful deletion" do
       login_as imageable.author
 
-      visit send(imageable_path, arguments)
+      visit send(imageable_path, imageable_arguments)
       click_on "Remove image"
 
       within "##{dom_id(imageable)}" do
