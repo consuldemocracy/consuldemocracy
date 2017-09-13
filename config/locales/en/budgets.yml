@@ -41,10 +41,10 @@ en:
       section_header:
         icon_alt: Participatory budgets icon
         title: Participatory budgets
-        description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
         help: Help about participatory budgets
       section_footer:
         title: Help about participatory budgets
+        description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
         help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
         help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council once the municipal budgets of the next year are approved."
         help_text_3: "The presentation of participatory budgeting projects takes place from January and over a period of one and a half months. To participate and propose proposals for the entire city and / or districts, you must sign up on %{org} and verify your account."
