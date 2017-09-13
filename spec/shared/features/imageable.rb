@@ -1,4 +1,4 @@
-shared_examples "imageable" do |imageable_factory_name, imageable_path, imageable_path_arguments, imageables_path, imageables_path_arguments|
+shared_examples "imageable" do |imageable_factory_name, imageable_path, imageable_path_arguments|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper
@@ -16,34 +16,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     imageable_path_arguments.each do |argument_name, path_to_value|
       imageable_arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
-
-    imageables_path_arguments.each do |argument_name, path_to_value|
-      imageables_arguments.merge!("#{argument_name}": imageable.send(path_to_value))
-    end
-  end
-
-  context "Index" do
-
-    let!(:featured)                 { create_list(imageable_factory_name, 3) }
-    let!(:imageable_with_image)     { create(imageable_factory_name) }
-    let!(:image)                    { create(:image, imageable: imageable_with_image) }
-    let!(:imageable_without_image)  { create(imageable_factory_name) }
-
-    scenario "should show default imageable image not defined" do
-      visit send(imageables_path, imageables_arguments)
-
-      within "##{dom_id(imageable_without_image)}" do
-        expect(page).to have_css("div.no-image")
-      end
-    end
-
-    scenario "should show imageable image when exists" do
-      image = create(:image, imageable: imageable)
-      visit send(imageables_path, imageables_arguments)
-
-      expect(page).to have_css("img[alt='#{image.title}']")
-    end
-
   end
 
   context "Show" do

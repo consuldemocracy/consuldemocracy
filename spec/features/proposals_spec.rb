@@ -45,6 +45,22 @@ feature 'Proposals' do
 
       expect(page).to have_selector('#proposals .proposal', count: 2)
     end
+
+    scenario 'Index should show proposal descriptive image only when is defined' do
+      featured_proposals = create_featured_proposals
+      proposal = create(:proposal)
+      proposal_with_image = create(:proposal)
+      image = create(:image, imageable: proposal_with_image)
+
+      visit proposals_path(proposal)
+
+      within("#proposal_#{proposal.id}") do
+        expect(page).to have_css("div.no-image")
+      end
+      within("#proposal_#{proposal_with_image.id}") do
+        expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
+      end
+    end
   end
 
   scenario 'Show' do
@@ -1274,7 +1290,7 @@ feature 'Proposals' do
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
-  it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }, "proposals_path", {}
+  it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }
 
   it_behaves_like "nested imageable",
                   "proposal",

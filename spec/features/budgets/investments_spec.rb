@@ -36,7 +36,7 @@ feature 'Budget Investments' do
     visit budget_investments_path(budget, heading_id: heading.id)
 
     within("#budget_investment_#{investment.id}") do
-      expect(page).not_to have_css("img")
+      expect(page).to have_css("div.no-image")
     end
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
@@ -464,7 +464,7 @@ feature 'Budget Investments' do
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
-  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }, "budget_investments_path", { "budget_id": "budget_id" }
+  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
   it_behaves_like "nested imageable",
                   "budget_investment",
