@@ -24,6 +24,8 @@
 * [Imágenes](customization/images.md)
 * [Vistas & Estilos](customization/views_and_styles.md)
 * [Javascript](customization/javascript.md)
+* [Modelos](customization/models.md)
+* [Gemas](customization/gems.md)
 * [Adaptar la aplicación](customization/overwritting.md)
 * [Añadir nuevas funcionalidades](customization/new_features.md)
 
