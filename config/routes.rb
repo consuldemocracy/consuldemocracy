@@ -287,11 +287,11 @@ Rails.application.routes.draw do
       end
 
       resources :booths do
-        get :available, on: :collection 
+        get :available, on: :collection
 
         resources :shifts do
           get :search_officers, on: :collection
-        end        
+        end
       end
 
       resources :questions
@@ -313,6 +313,7 @@ Rails.application.routes.draw do
     namespace :legislation do
       resources :processes do
         resources :questions
+        resources :proposals
         resources :draft_versions
       end
     end
