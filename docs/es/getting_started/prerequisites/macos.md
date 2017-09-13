@@ -70,7 +70,7 @@ ALTER ROLE consul WITH SUPERUSER;
 ALTER ROLE consul WITH login;
 ```
 
-Si en algún momento durante la instalación de PostgreSQL y postgis sospechas que te has equivocado y deseas desinstalarlo y volver a empezar desde cero:
+Si en algún momento durante la instalación de PostgreSQL y sospechas que te has equivocado y deseas desinstalarlo y volver a empezar desde cero:
 
 ```
 brew uninstall postgres
@@ -80,12 +80,6 @@ También tendrás que borrar el siguiente directorio para que no de conflictos c
 
 ```
 rm -rf /usr/local/var/postgres
-```
-
-## Postgis
-
-```
-brew install postgis
 ```
 
 ## PhantomJS
