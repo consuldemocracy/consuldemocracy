@@ -17,5 +17,12 @@
 
 Also we want to thank their help to our wonderful [contributors](https://github.com/consul/consul/graphs/contributors) ❤️
 
+
+## Tech stack
+
+The application backend is written in the [Ruby language](https://www.ruby-lang.org/) using the [Ruby on Rails](http://rubyonrails.org/) framework.
+
+Frontend tools used include [SCSS](http://sass-lang.com/) over [Foundation](http://foundation.zurb.com/) for the styles.
+
 ## Licensing
 Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](https://github.com/consul/consul/blob/master/LICENSE-AGPLv3.txt)).

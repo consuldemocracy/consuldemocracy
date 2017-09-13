@@ -17,5 +17,10 @@
 
 También queremos agradecerles sus contribuciones a nuestros maravillosos [colaboradores](https://github.com/consul/consul/graphs/contributors) ❤️
 
+## Tecnología
+
+El backend de esta aplicación se desarrolla con el lenguaje de programación [Ruby](https://www.ruby-lang.org/) sobre el *framework* [Ruby on Rails](http://rubyonrails.org/).
+Las herramientas utilizadas para el frontend no están cerradas aún. Los estilos de la página usan [SCSS](http://sass-lang.com/) sobre [Foundation](http://foundation.zurb.com/)
+
 ## Licencia
 Código publicado bajo licencia AFFERO GPL v3 (ver [LICENSE-AGPLv3.txt](https://github.com/consul/consul/blob/master/LICENSE-AGPLv3.txt)).
