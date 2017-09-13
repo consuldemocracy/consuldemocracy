@@ -5,7 +5,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
   let!(:user)                   { create(:user) }
   let!(:arguments)              { {} }
   let!(:documentable)           { create(documentable_factory_name, author: user) }
-  let!(:documentable_dom_name)  { documentable_factory_name.parameterize }
 
   before do
     create(:administrator, user: administrator)

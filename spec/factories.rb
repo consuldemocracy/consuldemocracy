@@ -849,8 +849,8 @@ LOREM_IPSUM
       proposal
     end
 
-    trait :investment_map_location do
-      investment
+    trait :budget_investment_map_location do
+      association :investment, factory: :budget_investment
     end
   end
 
