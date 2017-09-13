@@ -205,7 +205,7 @@ a {
 
 .menu.simple {
   border-bottom: 1px solid $border;
-  margin: $line-height 0;
+  margin-bottom: $line-height;
 
   li {
     padding-bottom: rem-calc(7);
