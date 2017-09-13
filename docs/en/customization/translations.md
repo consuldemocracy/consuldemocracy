@@ -2,13 +2,17 @@
 
 Currently Consul is translated totally or partially to multiple languages, check it's [Crowdin project](https://crowdin.com/project/consul)
 
-Please [join the translators](https://crwd.in/consul) to add a new language or help complete existing ones, or contact us through [consul's gitter](https://gitter.im/consul/consul) to become a Proofreader and validate translators contributions.
+Please [join the translators](https://crwd.in/consul) to help us complete existing ones, or contact us through [consul's gitter](https://gitter.im/consul/consul) to become a Proofreader and validate translators contributions.
 
-If you want to check translations of the user-facing texts you can find them organized in YML files under `config/locales/` folder. Take a look at the official Ruby on Rails [internationalization guide](http://guides.rubyonrails.org/i18n.html) to better understand the translations system.
+If your language isn't at Crowdin project, please [open an issue](https://github.com/consul/consul/issues/new?title=New language&body=Hello I would like to have my language INSERT YOUR LANGUAGE NAME added to consul) and we'll set it up in a breeze.
 
-# Texts
+If you want to check existing translations of the user-facing texts you can find them organized in YML files under `config/locales/` folder. Take a look at the official Ruby on Rails [internationalization guide](http://guides.rubyonrails.org/i18n.html) to better understand the translations system.
 
-If you just want to change some of the existing texts, you can just drop your changes at the `config/locales/custom/` folder, we strongly recommend to include only those text that you want to change instead of a whole copy of the original file. For example if you want to customize the text "Ayuntamiento de Madrid, 2016" that appears on every page's footer, firstly you want to locate where it's used (`app/views/layouts/_footer.html.erb`), we can see code is:
+# Custom Texts
+
+Since CONSUL is always evolving with new features, and in order to make your fork easier to be updated, we strongly recommend translation files not to be modified, but instead "overwritten" with custom translation files in case a text needs to be customize for you.
+
+So if you just want to change some of the existing texts, you can just drop your changes at the `config/locales/custom/` folder, we strongly recommend to include only those text that you want to change instead of a whole copy of the original file. For example if you want to customize the text "Ayuntamiento de Madrid, 2016" that appears on every page's footer, firstly you want to locate where it's used (`app/views/layouts/_footer.html.erb`), we can see code is:
 
 ```ruby
 <%= t("layouts.footer.copyright", year: Time.current.year) %>
