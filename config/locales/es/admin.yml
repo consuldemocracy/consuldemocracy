@@ -291,6 +291,15 @@ es:
           info: Información
           draft_texts: Texto
           questions: Debate
+          proposals: Propuestas
+      proposals:
+        index:
+          title: Propuestas
+          back: Volver
+        form:
+          header_information: Encabezado de información
+          header_information_description: Proporciona información sobre el recorrido de las propuestas. Este texto se mostrará como una alerta en el encabezado de la sección de Propuestas dentro de este proceso. Usa Markdown para formatear el texto.
+          header_information_placeholder: Añade información para el encabezado de las las propuestas
       draft_versions:
         create:
           notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'

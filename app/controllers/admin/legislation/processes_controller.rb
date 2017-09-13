@@ -20,7 +20,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   def update
     if @process.update(process_params)
       link = legislation_process_path(@process).html_safe
-      redirect_to edit_admin_legislation_process_path(@process), notice: t('admin.legislation.processes.update.notice', link: link)
+      redirect_to :back, notice: t('admin.legislation.processes.update.notice', link: link)
     else
       flash.now[:error] = t('admin.legislation.processes.update.error')
       render :edit
@@ -55,7 +55,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :proposals_phase_enabled,
         :draft_publication_enabled,
         :result_publication_enabled,
-        :published
+        :published,
+        :proposals_description
       )
     end
 end
