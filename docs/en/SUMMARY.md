@@ -22,6 +22,8 @@
 * [Templating](customization/templating.md)
 * [Texts & Translations](customization/translations.md)
 * [Images](customization/images.md)
+* [Views & Styles](customization/views_and_styles.md)
+* [Javascript](customization/javascript.md)
 * [Overwritting](customization/overwritting.md)
 * [Adding new features](customization/new_features.md)
 

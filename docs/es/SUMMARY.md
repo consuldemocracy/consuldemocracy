@@ -22,6 +22,8 @@
 * [Interfaz y diseño](customization/templating.md)
 * [Textos & Traducciones](customization/translations.md)
 * [Imágenes](customization/images.md)
+* [Vistas & Estilos](customization/views_and_styles.md)
+* [Javascript](customization/javascript.md)
 * [Adaptar la aplicación](customization/overwritting.md)
 * [Añadir nuevas funcionalidades](customization/new_features.md)
 
