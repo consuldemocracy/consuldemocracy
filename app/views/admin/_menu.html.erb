@@ -65,7 +65,7 @@
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
 
-          <li <%= "class=active" if controller_name == "questions" %>>
+          <li <%= "class=active" if controller_name == "questions" && controller.class.parent != Admin::Legislation %>>
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
