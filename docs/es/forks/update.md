@@ -50,11 +50,11 @@ git merge consul/master
 
 Tras el último comando, hay tres posibles escenarios:
 
-1. Obtienes una respuesta `Already up-to-date.`. Eso significa que tu fork esta al dia con los cambios de consul 😊👌
+A. Obtienes una respuesta `Already up-to-date.`. Eso significa que tu fork esta al dia con los cambios de consul 😊👌
 
-2. Se abre una ventana del editor que tengas configurado en git, mostrando el mensaje de commit `Merge remote-tracking branch 'consul/master' into consul_pull`. Esto significa que git fue capaz de mezclar los cambios de consul sobre tu código sin encontrar problemas o conflictos. Termina el commit.
+B. Se abre una ventana del editor que tengas configurado en git, mostrando el mensaje de commit `Merge remote-tracking branch 'consul/master' into consul_pull`. Esto significa que git fue capaz de mezclar los cambios de consul sobre tu código sin encontrar problemas o conflictos. Termina el commit.
 
-3. Recibes mensajes de error de git junto con un `Automatic merge failed; fix conflicts and then commit the result.`. Esto significa que se han encontrado conflictos entre los cambios en tu código y los cambios que se realizaron en consul desde la última vez que actualizaste tu fork. Esta es una de las principales razones para intentar mantener tu fork lo más al dia posible, realizando este proceso al menos mensualmente. Resuelve manualmente los conflictos para terminar el merge y haz un commit.
+C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix conflicts and then commit the result.`. Esto significa que se han encontrado conflictos entre los cambios en tu código y los cambios que se realizaron en consul desde la última vez que actualizaste tu fork. Esta es una de las principales razones para intentar mantener tu fork lo más al dia posible, realizando este proceso al menos mensualmente. Resuelve manualmente los conflictos para terminar el merge y haz un commit.
 
 Now you can just simply push **consul_pull** branch to github and create a Pull Request so you can easily check all changes going into your repo, and see your tests suite runs.
 
