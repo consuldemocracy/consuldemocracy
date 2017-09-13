@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908175149) do
+ActiveRecord::Schema.define(version: 20170913101029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -470,6 +470,9 @@ ActiveRecord::Schema.define(version: 20170908175149) do
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
     t.boolean  "published",                  default: true
+    t.date     "proposals_phase_start_date"
+    t.date     "proposals_phase_end_date"
+    t.boolean  "proposals_phase_enabled"
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
