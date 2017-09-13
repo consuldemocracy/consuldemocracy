@@ -33,12 +33,6 @@
 * [OAuth](features/oauth.md)
 * [GraphQL](features/graphql.md)
 
-* [Templating](customization/templating.md)
-* [Texts & Translations](customization/translations.md)
-* [Images](customization/images.md)
-* [Overwritting](customization/overwritting.md)
-* [Adding new features](customization/new_features.md)
-
 ### Open Source project
 * [Code of conduct](open_source/code_of_conduct.md)
 * [Contributing](open_source/contributing.md)
