@@ -18,6 +18,7 @@
 * [Recomendaciones](getting_started/recomendations.md)
 
 ### Personalización
+* [Introducción](customization/README.md)
 * [Interfaz y diseño](customization/templating.md)
 * [Textos & Traducciones](customization/translations.md)
 * [Imágenes](customization/images.md)

@@ -18,6 +18,7 @@
 * [Recomendations](getting_started/recomendations.md)
 
 ### Customization
+* [Introduction](customization/introduction.md)
 * [Templating](customization/templating.md)
 * [Texts & Translations](customization/translations.md)
 * [Images](customization/images.md)
