@@ -258,6 +258,7 @@ en:
           process: Process
           debate_phase: Debate phase
           allegations_phase: Allegations phase
+          proposals_phase: Proposals phase
           start: Start
           end: End
           use_markdown: Use Markdown to format the text

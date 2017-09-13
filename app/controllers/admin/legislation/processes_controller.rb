@@ -47,9 +47,12 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :draft_publication_date,
         :allegations_start_date,
         :allegations_end_date,
+        :proposals_phase_start_date,
+        :proposals_phase_end_date,
         :result_publication_date,
         :debate_phase_enabled,
         :allegations_phase_enabled,
+        :proposals_phase_enabled,
         :draft_publication_enabled,
         :result_publication_enabled,
         :published

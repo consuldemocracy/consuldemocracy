@@ -2,7 +2,7 @@ class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase draft_publication result_publication).freeze
+  PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase proposals_phase draft_publication result_publication).freeze
 
   has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion',
                                                foreign_key: 'legislation_process_id', dependent: :destroy
@@ -31,6 +31,10 @@ class Legislation::Process < ActiveRecord::Base
 
   def allegations_phase
     Legislation::Process::Phase.new(allegations_start_date, allegations_end_date, allegations_phase_enabled)
+  end
+
+  def proposals_phase
+    Legislation::Process::Phase.new(proposals_phase_start_date, proposals_phase_end_date, proposals_phase_enabled)
   end
 
   def draft_publication

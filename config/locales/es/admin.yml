@@ -258,6 +258,7 @@ es:
           process: Proceso
           debate_phase: Fase previa
           allegations_phase: Fase de alegaciones
+          proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin
           use_markdown: Usa Markdown para formatear el texto
