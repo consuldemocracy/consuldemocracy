@@ -1,4 +1,4 @@
-class Admin::Poll::RecountsController < Admin::BaseController
+class Admin::Poll::RecountsController < Admin::Poll::BaseController
   before_action :load_poll
 
   def index
