@@ -15,24 +15,6 @@ es:
         title: "Listado de votaciones finalizadas"
         no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
         select_poll: "Selecciona votación"
-        add_recount: "Añadir recuentos finales"
-        add_results: "Añadir resultados"
-    final_recounts:
-      flash:
-        create: "Datos añadidos"
-        error_create: "Recuento final NO añadido. Error en los datos"
-      new:
-        title: "%{poll} - Añadir recuento final"
-        not_allowed: "No tienes permiso para introducir recountos finales"
-        booth: "Urna"
-        date: "Día"
-        select_booth: "Elige urna"
-        select_date: "Elige día"
-        count: "Recuento final"
-        count_placeholder: "Número final de votos"
-        submit: "Guardar"
-        final_recount_list: "Tus recuentos finales"
-        system_count: "Recuento del sistema"
         add_results: "Añadir resultados"
     results:
       flash:
