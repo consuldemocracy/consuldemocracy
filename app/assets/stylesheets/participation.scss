@@ -314,6 +314,7 @@
 
 .debate-show,
 .proposal-show,
+.poll-question-show,
 .investment-project-show,
 .budget-investment-show,
 .polls-show,
@@ -895,9 +896,14 @@
 }
 
 .help-header {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  padding-bottom: $line-height / 2;
+  padding-top: $line-height;
 
   h1 {
     font-size: rem-calc(24);
+    text-transform: uppercase;
   }
 }
 

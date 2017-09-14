@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822144743) do
+ActiveRecord::Schema.define(version: 20170914154743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -669,6 +669,7 @@ ActiveRecord::Schema.define(version: 20170822144743) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.tsvector "tsv"
+    t.string   "video_url"
   end
 
   add_index "poll_questions", ["author_id"], name: "index_poll_questions_on_author_id", using: :btree
@@ -682,11 +683,28 @@ ActiveRecord::Schema.define(version: 20170822144743) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "officer_name"
+    t.string   "officer_email"
   end
 
   add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
+
+  create_table "poll_total_results", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "amount"
+    t.string  "origin"
+    t.date    "date"
+    t.integer "booth_assignment_id"
+    t.integer "officer_assignment_id"
+    t.text    "amount_log",                default: ""
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
+  end
+
+  add_index "poll_total_results", ["booth_assignment_id"], name: "index_poll_total_results_on_booth_assignment_id", using: :btree
+  add_index "poll_total_results", ["officer_assignment_id"], name: "index_poll_total_results_on_officer_assignment_id", using: :btree
 
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
@@ -971,7 +989,7 @@ ActiveRecord::Schema.define(version: 20170822144743) do
     t.boolean  "email_digest",                              default: true
     t.boolean  "email_on_direct_message",                   default: true
     t.boolean  "official_position_badge",                   default: false
-    t.datetime "password_changed_at",                       default: '2017-08-07 11:14:09', null: false
+    t.datetime "password_changed_at",                       default: '2015-01-01 00:01:01', null: false
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""

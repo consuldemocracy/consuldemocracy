@@ -155,7 +155,7 @@ FactoryGirl.define do
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
-    video_url            'http://video_link.com'
+    video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
@@ -380,6 +380,10 @@ FactoryGirl.define do
     trait :budget_investment_document do
       association :documentable, factory: :budget_investment
     end
+
+    trait :poll_question_document do
+      association :documentable, factory: :poll_question
+    end
   end
 
   factory :comment do
@@ -548,6 +552,11 @@ FactoryGirl.define do
   end
 
   factory :poll_null_result, class: 'Poll::NullResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
+  factory :poll_total_result, class: 'Poll::TotalResult' do
     association :author, factory: :user
     origin { 'web' }
   end

@@ -14,11 +14,13 @@
       <thead>
         <th><%= t("admin.results.index.table_whites") %></th>
         <th><%= t("admin.results.index.table_nulls") %></th>
+        <th><%= t("admin.results.index.table_total") %></th>
       </thead>
       <tbody>
         <tr>
           <td id="white_results"><%= @poll.white_results.sum(:amount) %></td>
           <td id="null_results"><%= @poll.null_results.sum(:amount) %></td>
+          <td id="total_results"><%= @poll.total_results.sum(:amount) %></td>
         </tr>
       </tbody>
     </table>

@@ -40,6 +40,21 @@
       <%= @question.description %>
     </p>
 
+    <% if @question.video_url.present? %>
+      <p>
+        <strong><%= t("admin.questions.show.video_url") %></strong>
+        <br>
+        <a href="<%= @question.video_url %>"><%= @question.video_url %></a>
+      </p>
+    <% end %>
+
+    <% if @question.documents.any? %>
+      <p>
+        <strong><%= t("admin.questions.show.documents") %></strong>
+        <br>
+        <a href="<%= @question.documents.first.attachment.url %>"><%= @question.documents.first.title %></a>
+      </p>
+    <% end %>
 
     <%= link_to t("admin.questions.show.preview"), question_path(@question) %>
   </div>

@@ -47,6 +47,11 @@
         <h3><%= t("officing.results.new.ballots_null") %></h3>
         <%= text_field_tag :nulls, params[:nulls].presence, placeholder: "0" %>
       </div>
+
+      <div class="small-12 medium-6 large-3 column end">
+        <h3><%= t("officing.results.new.ballots_total") %></h3>
+        <%= text_field_tag :total, params[:total].presence, placeholder: "0" %>
+      </div>
     </div>
     <hr>
 

@@ -67,6 +67,18 @@ describe Proposal do
     end
   end
 
+  describe "#video_url" do
+    it "should not be valid when URL is not from Youtube or Vimeo" do
+      proposal.video_url = "https://twitter.com"
+      expect(proposal).to_not be_valid
+    end
+
+    it "should be valid when URL is from Youtube or Vimeo" do
+      proposal.video_url = "https://vimeo.com/112681885"
+      expect(proposal).to be_valid
+    end
+  end
+
   describe "#responsible_name" do
     it "should be mandatory" do
       proposal.responsible_name = nil

@@ -30,7 +30,7 @@ feature 'Admin shifts' do
     expect(page).to have_content officer.name
   end
 
-  scenario "Create" do
+  scenario "Create", :js do
     poll = create(:poll)
     booth = create(:poll_booth)
     officer = create(:poll_officer)
@@ -41,10 +41,13 @@ feature 'Admin shifts' do
       click_link "Manage shifts"
     end
 
-    select I18n.l(poll.starts_at.to_date, format: :long), from: 'shift_date'
-    select officer.name, from: 'shift_officer_id'
-    click_button "Add shift"
+    fill_in "search", with: officer.email
+    click_button "Search"
+    click_link "Edit shifts"
 
+    select I18n.l(poll.starts_at.to_date, format: :long), from: 'shift_date'
+    click_button "Add shift"
+    
     expect(page).to have_content "Shift added"
 
     within("#shifts") do
@@ -52,6 +55,25 @@ feature 'Admin shifts' do
       expect(page).to have_content(I18n.l(poll.starts_at.to_date, format: :long))
       expect(page).to have_content(officer.name)
     end
+  end
+
+  scenario "Erros on create", :js do
+    poll = create(:poll)
+    booth = create(:poll_booth)
+    officer = create(:poll_officer)
+
+    visit admin_booths_path
+    
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    fill_in "search", with: officer.email
+    click_button "Search"
+    click_link "Edit shifts"
+    click_button "Add shift"
+
+    expect(page).to have_content "can't be blank"
   end
 
   scenario "Destroy" do
@@ -74,6 +96,20 @@ feature 'Admin shifts' do
 
     expect(page).to have_content "Shift removed"
     expect(page).to have_css(".shift", count: 0)
+  end
+
+  scenario "Destroy an officer" do
+    poll = create(:poll)
+    booth = create(:poll_booth)
+    officer = create(:poll_officer)
+
+    shift = create(:poll_shift, officer: officer, booth: booth)
+    officer.destroy
+
+    visit new_admin_booth_shift_path(booth)
+
+    expect(page).to have_css(".shift", count: 1)
+    expect(page).to have_content(officer.name)
   end
 
   scenario "Empty" do

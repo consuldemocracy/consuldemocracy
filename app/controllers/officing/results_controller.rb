@@ -28,6 +28,7 @@ class Officing::ResultsController < Officing::BaseController
                                             where(date: index_params[:date])
       @whites = ::Poll::WhiteResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
       @nulls  = ::Poll::NullResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
+      @total  = ::Poll::TotalResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
     end
   end
 
@@ -70,6 +71,7 @@ class Officing::ResultsController < Officing::BaseController
 
       build_white_results
       build_null_results
+      build_total_results
     end
 
     def build_white_results
@@ -93,6 +95,18 @@ class Officing::ResultsController < Officing::BaseController
         null_result.author = current_user
         null_result.origin = 'booth'
         @results << null_result
+      end
+    end
+
+    def build_total_results
+      if results_params[:total].present?
+        total_result = ::Poll::TotalResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                  date: results_params[:date])
+        total_result.officer_assignment_id = @officer_assignment.id
+        total_result.amount = results_params[:total].to_i
+        total_result.author = current_user
+        total_result.origin = 'booth'
+        @results << total_result
       end
     end
 
@@ -132,7 +146,7 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def results_params
-      params.permit(:officer_assignment_id, :date, :questions, :whites, :nulls)
+      params.permit(:officer_assignment_id, :date, :questions, :whites, :nulls, :total)
     end
 
     def index_params

@@ -1,6 +1,4 @@
 class Topic < ActiveRecord::Base
-  include Flaggable
-
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 

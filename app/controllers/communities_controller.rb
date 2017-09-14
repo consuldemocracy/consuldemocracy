@@ -1,8 +1,8 @@
 class CommunitiesController < ApplicationController
+  TOPIC_ORDERS = %w{newest most_commented oldest}.freeze
+  before_action :set_order, :set_community, :load_topics, :load_participants
 
-  before_action :set_order, :set_community, :load_topics, :load_participants, only: :show
-
-  has_orders %w{newest most_commented oldest}, only: :show
+  has_orders TOPIC_ORDERS
 
   skip_authorization_check
 
@@ -13,7 +13,7 @@ class CommunitiesController < ApplicationController
   private
 
   def set_order
-    @order = params[:order].present? ? params[:order] : "newest"
+    @order = valid_order? ? params[:order] : "newest"
   end
 
   def set_community
@@ -26,5 +26,9 @@ class CommunitiesController < ApplicationController
 
   def load_participants
     @participants = @community.participants
+  end
+
+  def valid_order?
+    params[:order].present? && TOPIC_ORDERS.include?(params[:order])
   end
 end

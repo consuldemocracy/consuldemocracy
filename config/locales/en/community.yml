@@ -26,6 +26,7 @@ en:
         disabled_info_title: You need to be logged to create a new topic
       topic:
         edit_button: Edit
+        destroy_button: Destroy
         comments:
           one: 1 comment
           other: "%{count} comments"

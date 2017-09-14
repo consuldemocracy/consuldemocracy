@@ -1,12 +1,7 @@
 module CommunitiesHelper
 
   def community_title(community)
-    if community.from_proposal?
-      community.proposal.title
-    else
-      investment = Budget::Investment.where(community_id: community.id).first
-      investment.title
-    end
+    community.from_proposal? ? community.proposal.title : community.investment.title
   end
 
   def community_text(community)
@@ -21,8 +16,7 @@ module CommunitiesHelper
     if community.from_proposal?
       community.proposal.author_id == participant.id
     else
-      investment = Budget::Investment.where(community_id: community.id).first
-      investment.author_id == participant.id
+      community.investment.author_id == participant.id
     end
   end
 
@@ -30,8 +24,7 @@ module CommunitiesHelper
     if community.from_proposal?
       proposal_path(community.proposal)
     else
-      investment = Budget::Investment.where(community_id: community.id).first
-      budget_investment_path(investment.budget_id, investment)
+      budget_investment_path(community.investment.budget_id, community.investment)
     end
   end
 

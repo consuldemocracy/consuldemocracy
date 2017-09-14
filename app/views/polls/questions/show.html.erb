@@ -55,6 +55,21 @@
   </div>
 </div>
 
+<% if @question.video_url.present? %>
+  <div class="row margin-top poll-question-show">
+    <div class="small-12 medium-9 column">
+      <div class="video-link">
+        <p>
+          <span class="icon-video"></span>&nbsp;
+          <strong><%= t('proposals.show.title_video_url') %></strong>
+        </p>
+        <%= text_with_links @question.video_url %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
 <div class="row margin-top">
   <div class="small-12 medium-9 column">
     <h3><%= t('poll_questions.show.more_info') %></h3>
@@ -62,4 +77,16 @@
   </div>
 </div>
 
-<%= render "comments" %>
+<div class="tabs-content" data-tabs-content="questions-tabs" role="tablist">
+  <%= render "polls/questions/filter_subnav" %>
+
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render "polls/questions/comments" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-documents">
+    <%= render 'documents/documents',
+                documents: @question.documents,
+                max_documents_allowed: Poll::Question.max_documents_allowed %>
+  </div>
+</div>

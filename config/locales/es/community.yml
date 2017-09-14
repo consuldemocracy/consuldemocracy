@@ -26,6 +26,7 @@ es:
         disabled_info_title: Necesitas estar logueado para crear un nuevo tema
       topic:
         edit_button: Editar
+        destroy_button: Eliminar
         comments:
           one: 1 Comentario
           other: "%{count} Comentarios"

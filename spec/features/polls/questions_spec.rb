@@ -25,6 +25,25 @@ feature 'Poll Questions' do
     expect(page).to have_content(question_with_author_visible_name.author_visible_name)
   end
 
+  scenario '#show view has video_url present' do
+    poll = create(:poll)
+    normal_question = create(:poll_question, poll: poll, video_url: "https://puppyvideos.com")
+
+    visit question_path(normal_question)
+
+    expect(page).to have_link(normal_question.video_url)
+  end
+
+  scenario '#show view has document present' do
+    poll = create(:poll)
+    normal_question = create(:poll_question, poll: poll)
+    document = create(:document, documentable: normal_question)
+
+    visit question_path(normal_question)
+
+    expect(page).to have_content(document.title)
+  end
+
   context 'Answering' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, geozone_restricted: true, geozone_ids: [geozone.id]) }
