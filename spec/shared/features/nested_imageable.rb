@@ -27,11 +27,14 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_selector "#new_image_link", visible: true
     end
 
-    scenario "Should update nested image file name after choosing a file", :js do
+    scenario "Should update nested image file name after choosing any file", :js do
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      click_link "Add image"
+      # next line is to force capybara to wait for ajax response and new DOM elements rendering
+      find("input[name='#{imageable_factory_name}[image_attributes]attachment']", visible: false)
+      attach_file("#{imageable_factory_name}[image_attributes]attachment", "spec/fixtures/files/empty.pdf", make_visible: true)
 
       expect(page).to have_selector ".file-name", text: "empty.pdf"
     end
@@ -40,9 +43,9 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
-      expect(find("##{imageable_factory_name}_image_attributes_title").value).to eq "clippy.jpg"
+      expect(page).to have_css("##{imageable_factory_name}_image_attributes_title[value$='clippy.jpg']")
     end
 
     scenario "Should not update nested image file title with file name after choosing a file when title already defined", :js do
@@ -50,10 +53,10 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       click_link "Add image"
-      sleep 1
       fill_in "#{imageable_factory_name}[image_attributes]title", with: "Title"
       attach_file("#{imageable_factory_name}[image_attributes]attachment", "spec/fixtures/files/empty.pdf", make_visible: true)
-      sleep 1
+      # force capybara to wait for AJAX response to ensure new input has correct value after direct upload
+      have_css(".loading-bar.complete")
 
       expect(find("##{imageable_factory_name}_image_attributes_title").value).to eq "Title"
     end
@@ -62,7 +65,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
       expect(page).to have_selector ".loading-bar.complete"
     end
@@ -71,7 +74,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/logo_header.png", false)
 
       expect(page).to have_selector ".loading-bar.errors"
     end
@@ -80,38 +83,37 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
-      expect(find("input[name='#{imageable_factory_name}[image_attributes]cached_attachment']", visible: false).value).to include("clippy.jpg")
+      expect(page).to have_selector("input[name='#{imageable_factory_name}[image_attributes]cached_attachment'][value$='clippy.jpg']", visible: false)
     end
 
     scenario "Should not update image cached_attachment field after unvalid file upload", :js do
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/logo_header.png", false)
 
       expect(find("input[name='#{imageable_factory_name}[image_attributes]cached_attachment']", visible: false).value).to eq ""
     end
 
-    scenario "Should show image errors after unvalid file upload", :js do
+    scenario "Should show nested image errors after unvalid form submit", :js do
+      page.driver.resize_window 1200, 2000
       login_as user
       visit send(path, arguments)
 
       click_link "Add image"
-      sleep 1
+      find("input[id$='_image_attributes_title']") # force to wait for ajax response new DOM elements
       click_on submit_button
 
-      within "#nested_image" do
-        expect(page).to have_content("can't be blank", count: 2)
-      end
+      expect(page).to have_css("#nested_image .error")
     end
 
     scenario "Should delete image after valid file upload and click on remove button", :js do
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
       within "#nested_image" do
         click_link "Remove image"
       end
@@ -123,7 +125,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       login_as user
       visit send(path, arguments)
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
       within "#nested_image" do
         click_link "Remove image"
       end
@@ -134,9 +136,10 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     scenario "Should show successful notice when resource filled correctly without any nested images", :js do
       login_as user
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
 
+      send(fill_resource_method_name) if fill_resource_method_name
       click_on submit_button
+
       expect(page).to have_content imageable_success_notice
     end
 
@@ -145,9 +148,9 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
-
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
       click_on submit_button
+
       expect(page).to have_content imageable_success_notice
     end
 
@@ -156,15 +159,13 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      imageable_attach_new_file(imageable_factory_name, 0, "spec/fixtures/files/clippy.jpg")
-
+      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
       click_on submit_button
       imageable_redirected_to_resource_show_or_navigate_to
 
       expect(page).to have_selector "figure .image"
       expect(page).to have_selector "figure figcaption"
     end
-
 
   end
 
@@ -177,11 +178,17 @@ rescue
   return
 end
 
-def imageable_attach_new_file(imageable_factory_name, index, path)
+def imageable_attach_new_file(imageable_factory_name, path, success = true)
   click_link "Add image"
-  sleep 1
+  # next line is to force capybara to wait for ajax response and new DOM elements rendering
+  find("input[name='#{imageable_factory_name}[image_attributes]attachment']", visible: false)
   attach_file("#{imageable_factory_name}[image_attributes]attachment", path, make_visible: true)
-  sleep 1
+  # next line is to force capybara to wait for ajax response and new DOM elements rendering
+  if success
+    expect(page).to have_css(".loading-bar.complete")
+  else
+    expect(page).to have_css(".loading-bar.errors")
+  end
 end
 
 def imageable_fill_new_valid_proposal

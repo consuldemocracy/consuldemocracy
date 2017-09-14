@@ -2,7 +2,7 @@
   <%= label_tag :image, t("images.form.title") %>
   <p class="help-text"><%= imageables_note(imageable) %></p>
 
-  <%= render 'images/nested_fields', image: imageable.image if imageable.image.present? %>
+  <%= render 'images/nested_fields', image: imageable.image, index: 0 if imageable.image.present? %>
 </div>
 
 <% if imageable.image.blank? %>
