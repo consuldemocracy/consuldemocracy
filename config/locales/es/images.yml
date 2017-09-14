@@ -15,9 +15,11 @@ es:
     new:
       title: Subir una imagen
       budget_investment:
-        note: 'Añade un título a la propuesta de inversión: %{title}.'
+        note: 'Añade una imagen la propuesta de inversión: %{title}.'
       proposal:
-        note: 'Añade un título a la propuesta: %{title}.'
+        note: 'Añade una imagen a la propuesta: %{title}.'
+      form:
+        title_placeholder: Añade un título descriptivo para la imagen
 
     recommendations_title: Consejos para subir imágenes
     proposal:

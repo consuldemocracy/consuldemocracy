@@ -2,13 +2,15 @@
 
   <div class="small-12 column">
     <%= label_tag :image_title, t("activerecord.attributes.image.title") %>
-    <%= text_field_tag :image_title, image.title, name: "image[title]", class: "image-title" %>
+    <%= text_field_tag :image_title, image.title, placeholder: t("images.new.form.title_placeholder"), name: "image[title]", class: "image-title" %>
     <% if image.errors.has_key?(:title) %>
       <small class="error"><%= image.errors[:title].join(", ") %></small>
     <% end %>
   </div>
 
   <div class="small-12 column">
+    <%= render_image(image, :thumb, false) if image.attachment.exists? %>
+    
     <%= hidden_field_tag :cached_attachment, image.cached_attachment, name: "image[cached_attachment]" %>
     <%= file_field_tag :attachment,
                      accept: imageable_accepted_content_types_extensions,

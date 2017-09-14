@@ -15,6 +15,7 @@
   <%= label_tag :title, t("activerecord.attributes.image.title") %>
   <%= text_field_tag :title,
                      image.title,
+                     placeholder: t("images.new.form.title_placeholder"),
                      name: image_nested_field_name(image, :title),
                      id: image_nested_field_id(image, :title),
                      class: "image-title" %>

@@ -112,7 +112,17 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       expect(page).to have_selector("h1", text: "Upload image")
     end
 
-    scenario "Should display file name after file selection", :js do
+    scenario "Should display file name after image selection", :js do
+      login_as imageable.author
+      visit new_image_path(imageable_type: imageable.class.name,
+                           imageable_id: imageable.id)
+
+      attach_file :image_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+
+      expect(page).to have_content "empty.pdf"
+    end
+
+    scenario "Should not display file name after invalid image upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
@@ -120,10 +130,10 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       attach_file :image_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
       sleep 1
 
-      expect(page).to have_content "empty.pdf"
+      expect(page).not_to have_content "empty.pdf"
     end
 
-    scenario "Should not display file name after file selection", :js do
+    scenario "Should display attachment validation errors after invalid image upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
@@ -131,7 +141,19 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
       sleep 1
 
-      expect(page).not_to have_content "logo_header.jpg"
+      expect(page).to have_selector "small.error"
+    end
+
+    scenario "Should display cached image without caption after valid image upload", :js do
+      login_as imageable.author
+      visit new_image_path(imageable_type: imageable.class.name,
+                           imageable_id: imageable.id)
+
+      attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
+      sleep 1
+
+      expect(page).to have_css("figure img")
+      expect(page).not_to have_css("figure figcaption")
     end
 
     scenario "Should update loading bar style after valid file upload", :js do

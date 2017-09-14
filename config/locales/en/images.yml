@@ -18,6 +18,8 @@ en:
         note: 'Add an image to your investment project: %{title}'
       proposal:
         note: 'Add an image to your proposal: %{title}'
+      form:
+        title_placeholder: Add a descriptive title for the image
 
     recommendations_title: File upload tips
     proposal:
