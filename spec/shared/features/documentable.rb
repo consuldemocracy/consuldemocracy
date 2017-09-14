@@ -179,7 +179,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               documentable_id: documentable.id)
 
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
-      sleep 1
 
       expect(page).to have_content "empty.pdf"
     end
@@ -189,8 +188,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
-      attach_file :document_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/logo_header.png", false)
 
       expect(page).not_to have_content "logo_header.jpg"
     end
@@ -200,8 +198,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
-      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/empty.pdf", true)
 
       expect(page).to have_selector ".loading-bar.complete"
     end
@@ -211,8 +208,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
-      attach_file :document_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/logo_header.png", false)
 
       expect(page).to have_selector ".loading-bar.errors"
     end
@@ -222,10 +218,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
-      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/empty.pdf", true)
 
-      expect(find("input[name='document[title]']").value).to eq("empty.pdf")
+      expect(page).to have_css("input[name='document[title]'][value='empty.pdf']")
     end
 
     scenario "Should not update document title with attachment original file name after file selection when title already defined by user", :js do
@@ -234,8 +229,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               documentable_id: documentable.id)
 
       fill_in :document_title, with: "My custom title"
-      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/empty.pdf", true)
 
       expect(find("input[name='document[title]']").value).to eq("My custom title")
     end
@@ -245,10 +239,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
-      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/empty.pdf", true)
 
-      expect(find("input[name='document[cached_attachment]']", visible: false).value).to include("empty.pdf")
+      expect(page).to have_css("input[name='document[cached_attachment]'][value$='empty.pdf']", visible: false)
     end
 
     scenario "Should not show 'Choose document' button after valid upload", :js do
@@ -291,10 +284,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
-      attach_file :document_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
-      sleep 1
+      attach_document("spec/fixtures/files/logo_header.png", false)
 
-      expect(find("input[name='document[cached_attachment]']", visible: false).value).to eq ""
+      expect(find("input[name='document[cached_attachment]']", visible: false).value).to eq("")
     end
 
     scenario "Should show documentable custom recomentations" do
@@ -330,7 +322,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               documentable_id: documentable.id,
                               from: send(documentable_path, arguments))
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
-      sleep 1
       click_on "Upload document"
 
       expect(page).to have_content "Cannot create document. Check form errors and try again."
@@ -344,7 +335,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
-      sleep 1
       click_on "Upload document"
 
       expect(page).to have_content "Document was created successfully."
@@ -358,7 +348,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
-      sleep 1
       click_on "Upload document"
 
       within "##{dom_id(documentable)}" do
@@ -374,7 +363,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               from: send(documentable_path, arguments))
       fill_in :document_title, with: "Document title"
       attach_file :document_attachment, "spec/fixtures/files/empty.pdf"
-      sleep 1
       click_on "Upload document"
 
       expect(page).to have_link "Documents (1)"
@@ -436,4 +424,13 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
   end
 
+end
+
+def attach_document(path, success = true)
+  attach_file :document_attachment, path, make_visible: true
+  if success
+    have_css ".loading-bar.complete"
+  else
+    have_css ".loading-bar.errors"
+  end
 end
