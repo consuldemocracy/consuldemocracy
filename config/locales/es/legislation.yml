@@ -86,6 +86,7 @@ es:
         draft_publication_date: Publicación borrador
         allegations_dates: Alegaciones
         result_publication_date: Publicación resultados
+        proposals_dates: Propuestas
     questions:
       comments:
         comment_button: Publicar respuesta
