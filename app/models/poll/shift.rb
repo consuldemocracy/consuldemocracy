@@ -1,13 +1,13 @@
 class Poll
   class Shift < ActiveRecord::Base
-  	belongs_to :booth
-  	belongs_to :officer
+    belongs_to :booth
+    belongs_to :officer
 
     validates :booth_id, presence: true
     validates :officer_id, presence: true
     validates :date, presence: true
     validates :date, uniqueness: { scope: [:officer_id, :booth_id] }
-    
+
     before_create :persist_data
     after_create :create_officer_assignments
 
@@ -20,7 +20,7 @@ class Poll
       end
     end
 
-    def persist_data      
+    def persist_data
       self.officer_name = officer.name
       self.officer_email = officer.email
     end

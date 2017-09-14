@@ -8,13 +8,13 @@ feature 'Admin shifts' do
   end
 
   scenario "Show" do
-    poll = create(:poll)  
+    poll = create(:poll)
     officer = create(:poll_officer)
 
     booth1 = create(:poll_booth)
     booth2 = create(:poll_booth)
-    
-    shift1 = create(:poll_shift, officer: officer, booth: booth1, date: Date.today) 
+
+    shift1 = create(:poll_shift, officer: officer, booth: booth1, date: Date.today)
     shift2 = create(:poll_shift, officer: officer, booth: booth2, date: Date.tomorrow)
 
     visit new_admin_booth_shift_path(booth1)
@@ -36,7 +36,7 @@ feature 'Admin shifts' do
     officer = create(:poll_officer)
 
     visit admin_booths_path
-    
+
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
     end
@@ -47,7 +47,7 @@ feature 'Admin shifts' do
 
     select I18n.l(poll.starts_at.to_date, format: :long), from: 'shift_date'
     click_button "Add shift"
-    
+
     expect(page).to have_content "Shift added"
 
     within("#shifts") do
@@ -63,7 +63,7 @@ feature 'Admin shifts' do
     officer = create(:poll_officer)
 
     visit admin_booths_path
-    
+
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
     end
@@ -84,7 +84,7 @@ feature 'Admin shifts' do
     shift = create(:poll_shift, officer: officer, booth: booth)
 
     visit admin_booths_path
-    
+
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
     end

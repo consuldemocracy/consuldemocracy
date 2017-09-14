@@ -40,7 +40,7 @@ class Document < ActiveRecord::Base
     attachment.instance.prefix(attachment, style)
   end
 
-  def prefix(attachment, style)
+  def prefix(attachment, _style)
     if !attachment.instance.persisted?
       "cached_attachments/user/#{attachment.instance.user_id}"
     else
@@ -75,7 +75,7 @@ class Document < ActiveRecord::Base
     end
 
     def remove_cached_document
-      File.delete(cached_attachment) if File.exists?(cached_attachment)
+      File.delete(cached_attachment) if File.exist?(cached_attachment)
     end
 
 end

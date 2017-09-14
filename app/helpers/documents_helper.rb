@@ -80,10 +80,10 @@ module DocumentsHelper
 
   def document_direct_upload_url(document)
     upload_documents_url(
-       documentable_type: document.documentable_type,
-       documentable_id: document.documentable_id,
-       format: :js
-     )
+      documentable_type: document.documentable_type,
+      documentable_id: document.documentable_id,
+      format: :js
+    )
   end
 
 end
