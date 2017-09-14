@@ -100,7 +100,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id)
 
       expect(page).to have_content("You do not have permission to carry out the action 'new' on image.")
-      expect(page).not_to have_content(image_first_recommendation(Image.new(imageable: imageable)))
     end
 
     scenario "Should be able to imageable author" do
@@ -110,6 +109,27 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id)
 
       expect(page).to have_selector("h1", text: "Upload image")
+    end
+
+    scenario "Should show imageable custom recomentations" do
+      login_as imageable.author
+      visit new_image_path(imageable_type: imageable.class.name,
+                           imageable_id: imageable.id,
+                           from: send(imageable_path, imageable_arguments))
+
+      expect(page).to have_content(image_first_recommendation(Image.new(imageable: imageable)))
+      expect(page).to have_content "You can upload images in following formats:  #{imageable_humanized_accepted_content_types}."
+      expect(page).to have_content "You can upload one image up to 1 MB."
+    end
+
+    scenario "Should display attachment validation errors after invalid image upload", :js do
+      login_as imageable.author
+      visit new_image_path(imageable_type: imageable.class.name,
+                           imageable_id: imageable.id)
+
+      attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+
+      expect(page).to have_css "small.error"
     end
 
     scenario "Should display file name after image selection", :js do
@@ -127,21 +147,10 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
-      sleep 1
+      attach_file :image_attachment, "spec/fixtures/files/clippy.png", make_visible: true
 
-      expect(page).not_to have_content "empty.pdf"
-    end
-
-    scenario "Should display attachment validation errors after invalid image upload", :js do
-      login_as imageable.author
-      visit new_image_path(imageable_type: imageable.class.name,
-                           imageable_id: imageable.id)
-
-      attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
-      sleep 1
-
-      expect(page).to have_selector "small.error"
+      expect(page).to have_css ".loading-bar.errors"
+      expect(page).not_to have_content "clippy.png"
     end
 
     scenario "Should display cached image without caption after valid image upload", :js do
@@ -150,7 +159,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
-      sleep 1
 
       expect(page).to have_css("figure img")
       expect(page).not_to have_css("figure figcaption")
@@ -162,43 +170,40 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
-      sleep 1
 
       expect(page).to have_selector ".loading-bar.complete"
     end
 
-    scenario "Should update loading bar style after unvalid file upload", :js do
+    scenario "Should update loading bar style after invalid file upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
-      sleep 1
 
       expect(page).to have_selector ".loading-bar.errors"
     end
 
-    scenario "Should update image title with attachment original file name after file selection if no title defined by user", :js do
+    scenario "Should update image title with attachment original file name after valid image upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
-      sleep 1
 
-      expect(find("input[name='image[title]']").value).to eq("clippy.jpg")
+      expect(page).to have_css("input[name='image[title]'][value='clippy.jpg']", visible: false)
     end
 
-    scenario "Should not update image title with attachment original file name after file selection when title already defined by user", :js do
+    scenario "Should not update image title with attachment original file name after valid image upload when title already defined by user", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
       fill_in :image_title, with: "My custom title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
-      sleep 1
 
-      expect(find("input[name='image[title]']").value).to eq("My custom title")
+      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css("input[name='image[title]'][value='My custom title']", visible: false)
     end
 
     scenario "Should update image cached_attachment field after valid file upload", :js do
@@ -207,31 +212,19 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
-      sleep 1
 
-      expect(find("input[name='image[cached_attachment]']", visible: false).value).to include("clippy.jpg")
+      expect(page).to have_css("input[name='image[cached_attachment]'][value$='clippy.jpg']", visible: false)
     end
 
-    scenario "Should not update image cached_attachment field after unvalid file upload", :js do
+    scenario "Should not update image cached_attachment field after invalid file upload", :js do
       login_as imageable.author
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
       attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
-      sleep 1
 
-      expect(find("input[name='image[cached_attachment]']", visible: false).value).to eq ""
-    end
-
-    scenario "Should show imageable custom recomentations" do
-      login_as imageable.author
-      visit new_image_path(imageable_type: imageable.class.name,
-                           imageable_id: imageable.id,
-                           from: send(imageable_path, imageable_arguments))
-
-      expect(page).to have_content(image_first_recommendation(Image.new(imageable: imageable)))
-      expect(page).to have_content "You can upload images in following formats:  #{imageable_humanized_accepted_content_types}."
-      expect(page).to have_content "You can upload one image up to 1 MB."
+      expect(page).to have_selector ".loading-bar.errors"
+      expect(find("input[name='image[cached_attachment]']", visible: false).value).to eq("")
     end
 
   end
@@ -256,7 +249,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id,
                            from: send(imageable_path, imageable_arguments))
       attach_file :image_attachment, "spec/fixtures/files/empty.pdf"
-      sleep 1
       click_on "Upload image"
 
       expect(page).to have_content "Cannot create image. Check form errors and try again."
@@ -270,7 +262,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            from: send(imageable_path, imageable_arguments))
       fill_in :image_title, with: "Image title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg"
-      sleep 1
       click_on "Upload image"
 
       expect(page).to have_content "Image was created successfully."
@@ -284,7 +275,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            from: send(imageable_path, imageable_arguments))
       fill_in :image_title, with: "Image title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg"
-      sleep 1
       click_on "Upload image"
 
       within "##{dom_id(imageable)}" do
@@ -300,7 +290,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            from: send(imageable_path, imageable_arguments))
       fill_in :image_title, with: "Image title"
       attach_file :image_attachment, "spec/fixtures/files/clippy.jpg"
-      sleep 1
       click_on "Upload image"
 
       expect(page).to have_content "Image title"
