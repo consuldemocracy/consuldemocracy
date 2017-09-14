@@ -612,6 +612,7 @@ en:
         no_results: "There are no results"
         table_whites: "Blank ballots"
         table_nulls: "Invalid ballots"
+        table_total: "Total ballots"
         table_answer: Answer
         table_votes: Votes
     booths:

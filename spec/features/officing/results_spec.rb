@@ -65,6 +65,7 @@ feature 'Officing Results' do
 
     fill_in "whites", with: '66'
     fill_in "nulls",  with: '77'
+    fill_in "total",  with: '88'
 
     click_button 'Save'
 
@@ -101,6 +102,7 @@ feature 'Officing Results' do
     fill_in "questions[#{@question_1.id}][1]", with: '200'
     fill_in "whites", with: '6'
     fill_in "nulls",  with: '7'
+    fill_in "total",  with: '8'
 
     click_button 'Save'
 
@@ -113,6 +115,7 @@ feature 'Officing Results' do
     expect(page).to_not have_content('7777')
     within("#white_results") { expect(page).to have_content('6') }
     within("#null_results")  { expect(page).to have_content('7') }
+    within("#total_results") { expect(page).to have_content('8') }
     within("#question_#{@question_1.id}_0_result") { expect(page).to have_content('5555') }
     within("#question_#{@question_1.id}_1_result") { expect(page).to have_content('200') }
   end
@@ -134,6 +137,11 @@ feature 'Officing Results' do
                       booth_assignment: @officer_assignment.booth_assignment,
                       date: @poll.ends_at,
                       amount: 44)
+    total_result = create(:poll_total_result,
+                      officer_assignment: @officer_assignment,
+                      booth_assignment: @officer_assignment.booth_assignment,
+                      date: @poll.ends_at,
+                      amount: 66)
 
     visit officing_poll_results_path(@poll,
                                      date: I18n.l(@poll.ends_at.to_date),
@@ -154,6 +162,7 @@ feature 'Officing Results' do
 
     within('#white_results') { expect(page).to have_content('21') }
     within('#null_results') { expect(page).to have_content('44') }
+    within('#total_results') { expect(page).to have_content('66') }
   end
 
 end
