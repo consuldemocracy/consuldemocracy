@@ -45,9 +45,12 @@
     color: #fff;
     cursor: pointer;
     font-weight: normal;
-    font-size: $small-font-size;
     line-height: $line-height;
     top: 0;
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+    height: 1.8em;
   }
 
   table {
