@@ -9,6 +9,20 @@ RSpec.describe Poll::Question, type: :model do
     end
   end
 
+  describe "#poll_question_id" do
+    it "should be invalid if a poll is not selected" do
+      q = create(:poll_question)
+      q.poll_id = nil
+      expect(q).to_not be_valid
+    end
+
+    it "should be valid if a poll is selected" do
+      q = create(:poll_question)
+      q.poll_id = 1
+      expect(q).to be_valid
+    end
+  end
+
   describe "#copy_attributes_from_proposal" do
     it "copies the attributes from the proposal" do
       create_list(:geozone, 3)
