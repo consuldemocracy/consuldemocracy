@@ -287,6 +287,7 @@ Lint/StringConversionInInterpolation:
     - 'app/models/poll/null_result.rb'
     - 'app/models/poll/partial_result.rb'
     - 'app/models/poll/white_result.rb'
+    - 'app/models/poll/total_result.rb'
 
 # Offense count: 15
 # Cop supports --auto-correct.
@@ -562,6 +563,7 @@ Style/MutableConstant:
     - 'app/models/poll/null_result.rb'
     - 'app/models/poll/partial_result.rb'
     - 'app/models/poll/white_result.rb'
+    - 'app/models/poll/total_result.rb'
     - 'app/models/proposal.rb'
     - 'app/models/signature_sheet.rb'
     - 'app/models/site_customization/content_block.rb'
