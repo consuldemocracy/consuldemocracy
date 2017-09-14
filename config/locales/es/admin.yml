@@ -612,6 +612,7 @@ es:
         no_results: "No hay resultados"
         table_whites: Papeletas en blanco
         table_nulls: Papeletas nulas
+        table_total: Papeletas totales
         table_answer: Respuesta
         table_votes: Votos
     booths:

@@ -31,6 +31,7 @@ es:
         select_date: "Elige día"
         ballots_white: "Papeletas en blanco"
         ballots_null: "Papeletas nulas"
+        ballots_total: "Papeletas totales"
         submit: "Guardar"
         results_list: "Tus resultados"
         see_results: "Ver resultados"
@@ -41,6 +42,7 @@ es:
         table_votes: Votos
         table_whites: Papeletas en blanco
         table_nulls: Papeletas nulas
+        table_total: Papeletas totales
     residence:
       flash:
         create: "Documento verificado con el Padrón"

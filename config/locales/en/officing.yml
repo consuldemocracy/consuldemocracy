@@ -31,6 +31,7 @@ en:
         select_date: "Select date"
         ballots_white: "Blank ballots"
         ballots_null: "Invalid ballots"
+        ballots_total: "Total ballots"
         submit: "Save"
         results_list: "Your results"
         see_results: "See results"
@@ -41,6 +42,7 @@ en:
         table_votes: Votes
         table_whites: "Blank ballots"
         table_nulls: "Invalid ballots"
+        table_total: "Total ballots"
     residence:
       flash:
         create: "Document verified with Census"
