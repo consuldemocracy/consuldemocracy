@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913130803) do
+ActiveRecord::Schema.define(version: 20170914102634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -485,6 +485,36 @@ ActiveRecord::Schema.define(version: 20170913130803) do
   add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
   add_index "legislation_processes", ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree
   add_index "legislation_processes", ["start_date"], name: "index_legislation_processes_on_start_date", using: :btree
+
+  create_table "legislation_proposals", force: :cascade do |t|
+    t.integer  "legislation_process_id"
+    t.string   "title",                  limit: 80
+    t.text     "description"
+    t.string   "question"
+    t.string   "external_url"
+    t.integer  "author_id"
+    t.datetime "hidden_at"
+    t.integer  "flags_count",                       default: 0
+    t.datetime "ignored_flag_at"
+    t.integer  "cached_votes_up",                   default: 0
+    t.integer  "comments_count",                    default: 0
+    t.datetime "confirmed_hide_at"
+    t.integer  "hot_score",              limit: 8,  default: 0
+    t.integer  "confidence_score",                  default: 0
+    t.string   "responsible_name",       limit: 60
+    t.text     "summary"
+    t.string   "video_url"
+    t.tsvector "tsv"
+    t.integer  "geozone_id"
+    t.datetime "retired_at"
+    t.string   "retired_reason"
+    t.text     "retired_explanation"
+    t.integer  "community_id"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+  end
+
+  add_index "legislation_proposals", ["legislation_process_id"], name: "index_legislation_proposals_on_legislation_process_id", using: :btree
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
@@ -1083,6 +1113,7 @@ ActiveRecord::Schema.define(version: 20170913130803) do
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
+  add_foreign_key "legislation_proposals", "legislation_processes"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"

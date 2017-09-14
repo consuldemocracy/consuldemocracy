@@ -18,6 +18,7 @@ class Legislation::Process < ActiveRecord::Base
   validates :debate_end_date, presence: true, if: :debate_start_date?
   validates :allegations_start_date, presence: true, if: :allegations_end_date?
   validates :allegations_end_date, presence: true, if: :allegations_start_date?
+  validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
   validate :valid_date_ranges
 
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current).order('id DESC') }
