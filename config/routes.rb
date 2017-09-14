@@ -124,9 +124,26 @@ Rails.application.routes.draw do
         get :draft_publication
         get :allegations
         get :result_publication
+        get :proposals
       end
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
+      end
+      resources :proposals do
+        member do
+          post :vote
+          post :vote_featured
+          put :flag
+          put :unflag
+          get :retire_form
+          get :share
+          patch :retire
+        end
+        collection do
+          get :map
+          get :suggest
+          get :summary
+        end
       end
       resources :draft_versions, only: [:show] do
         get :go_to_version, on: :collection
