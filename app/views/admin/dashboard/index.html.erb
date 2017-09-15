@@ -1,12 +1,3 @@
-<%= link_to admin_settings_path, class: "button float-right" do %>
-  <span class="icon-settings"></span>
-  <%= t("admin.menu.settings") %>
-<% end %>
-
-<%= link_to admin_stats_path, class: "button float-right" do %>
-  <span class="icon-stats"></span>
-  <%= t("admin.menu.stats") %>
-<% end %>
 <div class="float-right">
   <%= link_to root_path do %>
     <%= t("admin.dashboard.index.back") + " " + setting['org_name'] %>
