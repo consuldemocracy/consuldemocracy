@@ -395,8 +395,6 @@ feature 'Admin budget investments' do
 
       find('.js-add-tag-link', text: 'Education').click
 
-      fill_in 'budget_investment_title', with: 'Updated title'
-
       click_button 'Update'
 
       expect(page).to have_content 'Investment project updated succesfully.'
