@@ -1,0 +1,27 @@
+<div class="document-form <%= documentable_class(@document.documentable) %> row">
+
+  <div class="small-12 medium-9 column">
+    <%= back_link_to params[:from] %>
+    <h1><%= t("documents.new.title") %></h1>
+    <%= render "documents/form", form_url: documents_url %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+    <span class="icon-documents float-right"></span>
+    <h2><%= t("documents.recommendations_title") %></h2>
+    <ul class="recommendations">
+      <li>
+        <%= t "documents.recommendation_one_html",
+                max_documents_allowed: max_documents_allowed(@document.documentable) %>
+      </li>
+      <li>
+        <%= t "documents.recommendation_two_html",
+              accepted_content_types: humanized_accepted_content_types(@document.documentable) %>
+      </li>
+      <li>
+        <%= t "documents.recommendation_three_html",
+              max_file_size: max_file_size(@document.documentable) %>
+      </li>
+    </ul>
+  </div>
+</div>

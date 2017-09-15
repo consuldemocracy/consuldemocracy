@@ -5,12 +5,12 @@
 
 <div class="wide-order-selector small-12 medium-8">
   <form>
-    <div class="small-12 medium-8 float-left">
+    <div class="small-12 medium-6 float-left">
       <label for="order-selector-participation">
         <%= t("#{i18n_namespace}.select_order") %>
       </label>
     </div>
-    <div class="small-12 medium-4 float-left">
+    <div class="small-12 medium-6 float-left">
       <select class="js-location-changer js-order-selector select-order" data-order="<%= @current_order %>" name="order-selector" id="order-selector-participation">
          <% @valid_orders.each do |order| %>
            <option <%= 'selected' if order == @current_order %>

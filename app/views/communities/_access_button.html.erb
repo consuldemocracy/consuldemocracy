@@ -1,0 +1,8 @@
+<% if feature?("community") %>
+  <div class="sidebar-divider"></div>
+  <h2><%= t("community.sidebar.title") %></h2>
+  <p>
+    <%= community_access_text(community) %>
+  </p>
+  <%= link_to t("community.sidebar.button_to_access"), community_path(community.id), class: 'button hollow expanded' %>
+<% end %>

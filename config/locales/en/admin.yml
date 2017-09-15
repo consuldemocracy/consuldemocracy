@@ -412,6 +412,7 @@ en:
       poll_officers: Poll officers
       polls: Polls
       poll_booths: Booths location
+      poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
@@ -490,11 +491,6 @@ en:
         search: Search
         user_not_found: User not found
     poll_officer_assignments:
-      flash:
-        destroy: "Officing shift removed"
-        create: "Officing shift added"
-        error_destroy: "An error ocurred when removing officer assignment"
-        error_create: "An error ocurred when adding officer assignment"
       index:
         officers_title: "List of officers"
         no_officers: "There are no officers assigned to this poll."
@@ -503,18 +499,27 @@ en:
         add_officer_assignments: "Add shifts as officer"
         edit_officer_assignments: "Edit officing shifts"
       by_officer:
-        new_assignment: "New shift"
         date: "Date"
         booth: "Booth"
-        assignment: "Assignment"
-        select_date: "Select day"
-        select_booth: "Select booth"
-        add_assignment: "Add shift"
-        remove_assignment: "Remove"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
         final_recounts: "Final recounts"
         final_recount: "Final recount (by officer)"
+    poll_shifts:
+      new:
+        new_assignment: "New shift"
+        date: "Date"
+        officer: "Officer"
+        assignment: "Assignment"
+        select_date: "Select day"
+        select_officer: "Select officer"
+        add_assignment: "Add shift"
+        remove_assignment: "Remove"
+        assignments: "Shifts in this booth"
+        no_assignments: "This booth has no shifts"
+      flash:
+        create: "Shift added"
+        destroy: "Shift removed"
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"
@@ -634,6 +639,8 @@ en:
         submit_button: "Update booth"
       show:
         location: "Location"
+      booth:
+        shifts: "Manage shifts"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -977,7 +984,7 @@ en:
       content_blocks:
         form:
           content_blocks_information: Information about content blocks
-          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your Consul.
+          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your CONSUL.
           content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
           content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
         create:

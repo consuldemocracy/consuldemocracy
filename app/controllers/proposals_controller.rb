@@ -20,11 +20,13 @@ class ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     load_rank
+    @document = Document.new(documentable: @proposal)
     redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
   end
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
+    recover_documents_from_cache(@proposal)
 
     if @proposal.save
       log_event("proposal", "create")
@@ -87,7 +89,8 @@ class ProposalsController < ApplicationController
 
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :proceeding, :sub_proceeding)
+                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id, :proceeding, :sub_proceeding,
+                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id] )
     end
 
     def retired_params

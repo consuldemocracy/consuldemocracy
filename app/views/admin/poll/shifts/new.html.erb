@@ -1,0 +1,46 @@
+<%= back_link_to admin_booths_path %>
+
+<h2><%= @booth.name %></h2>
+
+<%= form_for @shift, as: :shift, url: admin_booth_shifts_path do |f| %>
+  <%= render "shared/errors", resource: @shift %>
+
+  <fieldset class="fieldset">
+    <legend>
+    	<%= t("admin.poll_shifts.new.new_assignment") %>
+    </legend>
+    
+    <div class="small-12 medium-4 column">
+      <label><%= t("admin.poll_shifts.new.date") %></label>
+      <%= f.select :date,
+                    shift_dates_select_options(@polls),
+                    prompt: t("admin.poll_shifts.new.select_date"),
+                    label: false %>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <label><%= t("admin.poll_shifts.new.officer") %></label>
+      <%= f.select :officer_id,
+                    officer_select_options(@officers),
+                    prompt: t("admin.poll_shifts.new.select_officer"),
+                    label: false %>
+    </div>
+
+    <%= f.hidden_field :booth_id, value: @booth.id %>
+
+    <div class="small-12 medium-4 column">
+      <%= f.submit t("admin.poll_shifts.new.add_assignment"),
+                     class: "button expanded hollow margin-top" %>
+    </div>
+  </fieldset>
+<% end %>
+
+<div id="shifts">
+  <% if @shifts.empty? %>
+    <div class="callout primary margin-top">
+      <%= t("admin.poll_shifts.new.no_assignments") %>
+    </div>
+  <% else %>
+    <%= render "shifts" %>
+  <% end %>
+</div>

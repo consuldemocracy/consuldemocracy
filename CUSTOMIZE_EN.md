@@ -1,12 +1,12 @@
 # Customization
 
-You can modify your own Consul to have your custom visual style, but first you'll have to create a fork from [https://github.com/consul/consul](https://github.com/consul/consul) using Github's "fork" button on top right corner. You can use any other service like Gitlab, but don't forget to put a reference link back to Consul on the footer to comply with project's license (GPL Affero 3).
+You can modify your own CONSUL to have your custom visual style, but first you'll have to create a fork from [https://github.com/consul/consul](https://github.com/consul/consul) using Github's "fork" button on top right corner. You can use any other service like Gitlab, but don't forget to put a reference link back to CONSUL on the footer to comply with project's license (GPL Affero 3).
 
-We've created an specific structure where you can overwrite and customize the application in a way that will let you keep updating it from Consul's main repository, without having conflicts on code merging or risking loosing your customization changes. We try to make Consul as vanilla as possible to help other developers onboard the codebase.
+We've created an specific structure where you can overwrite and customize the application in a way that will let you keep updating it from CONSUL's main repository, without having conflicts on code merging or risking loosing your customization changes. We try to make CONSUL as vanilla as possible to help other developers onboard the codebase.
 
 ## Special Folders and Files
 
-In order to customize your Consul fork, you'll make use of some `custom` folders on the following paths:
+In order to customize your CONSUL fork, you'll make use of some `custom` folders on the following paths:
 
 * `config/locales/custom/`
 * `app/assets/images/custom/`
@@ -207,7 +207,7 @@ TODO
 
 ## Updating
 
-We recommend you to add consul as remote:
+We recommend you to add CONSUL as remote:
 
 ```
 git remote add consul https://github.com/consul/consul

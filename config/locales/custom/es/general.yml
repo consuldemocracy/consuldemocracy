@@ -1,0 +1,29 @@
+es:
+  debates:
+    index:
+      top: Destacados
+      top_link_debates: '#TúPreguntas'
+      title: "Debates ciudadanos de Madrid - Decide Madrid"
+      description: "En el espacio de debates ciudadanos de Decide Madrid podrás compartir con otros habitantes de Madrid los temas de la ciudad que más te preocupan."
+  forums:
+    index:
+      deactivate_link: "Desactivar"
+      delegating: "Estás delegando tus votos en <strong>%{representative}</strong>"
+      not_delegating: No estás delegando tus votos
+      title: Delega tus votos
+      title_closed: Delegación de votos
+    show:
+      delegate_button: "Delegar en %{forum}"
+      sign_in_to_delegate: "Debes estar idenficado para delegar"
+      verify_accont_to_delegate: "Debes estar verificado para delegar"
+      no_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto
+      no_city_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de ciudad
+      no_district_votes: Este espacio de debate distrital aún no ha apoyado ningún proyecto de distrito
+      confirm: Ya has votado algunos proyectos de gasto. Si delegas tu voto en %{forum}, tus votos se eliminarán y pasarás a votar lo que vote este espacio distrital.
+  layouts:
+    footer:
+      copyright: Ayuntamiento de Madrid, %{year}
+      description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
+    header:
+      logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
+      open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.

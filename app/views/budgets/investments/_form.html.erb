@@ -21,6 +21,10 @@
       <%= f.text_field :external_url %>
     </div>
 
+    <div class="documents small-12 column" data-max-documents="<%= Budget::Investment.max_documents_allowed %>">
+      <%= render 'documents/nested_documents', documentable: @investment %>
+    </div>
+
     <div class="small-12 column">
       <%= f.text_field :location %>
     </div>

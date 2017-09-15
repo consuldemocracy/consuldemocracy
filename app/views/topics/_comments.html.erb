@@ -1,0 +1,26 @@
+<% cache [locale_and_user_status, @current_order, commentable_cache_key(@topic), @comment_tree.comments, @comment_tree.comment_authors, @topic.comments_count, @comment_flags] do %>
+  <div class="row comments">
+
+    <div id="comments" class="small-12 column">
+      <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
+
+      <% @comment_tree.root_comments.each do |comment| %>
+        <%= render 'comments/comment', comment: comment  %>
+      <% end %>
+
+      <%= paginate @comment_tree.root_comments %>
+
+      <% if user_signed_in? %>
+        <%= render 'comments/form', {commentable: @topic, parent_id: nil, toggeable: false} %>
+      <% else %>
+      <br>
+      <div data-alert class="callout primary">
+        <%= t("topics.show.login_to_comment",
+            signin: link_to(t("votes.signin"), new_user_session_path),
+            signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+<% end %>

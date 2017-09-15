@@ -13,37 +13,29 @@
 //
 
 // 01. Utils
-// -----------------
+// ---------
+
+$grey-heading: #e6e6e6;
+$border-dark:  darken($border, 10%);
 
 .grey-heading {
-  background: #e6e6e6;
+  background: $grey-heading;
 }
 
-$epigraph-font-size: rem-calc(15);
-$epigraph-line-height: rem-calc(22);
-
 // 02. Hero
-// -----------------
+// --------
+
 .legislation-hero {
-  padding-top: 1.5rem;
-
-  @include breakpoint(medium) {
-    padding-top: 3.5rem;
-  }
-
-  h4 {
-    text-transform: uppercase;
-  }
 
   ul {
     list-style: none;
     margin-left: 0;
 
     li::before {
-      vertical-align: text-bottom;
-      padding-right: 0.5rem;
-      content: '■';
       color: #8aa8be;
+      content: '■';
+      padding-right: $line-height / 4;
+      vertical-align: text-bottom;
     }
   }
 
@@ -52,79 +44,33 @@ $epigraph-line-height: rem-calc(22);
   }
 
   .debate-add-info {
-    margin-top: 3rem;
-    padding-top: 4rem;
-    border-top: 1px solid darken($border, 10%);
+    border-top: 1px solid $border-dark;
+    margin-top: $line-height;
+    padding-top: $line-height;
 
-    @include breakpoint(medium) {
-      margin-bottom: 2rem;
-    }
-
-    .debate-info-wrapper {
-
-      h2 {
-        font-size: $lead-font-size;
-
-        @include breakpoint(medium) {
-          float: left;
-        }
-      }
-    }
   }
 
-  .half-gradient {
-    background: #e6e6e6;
-    background: linear-gradient(to bottom, #e6e6e6 0%, #e6e6e6 50%, #fff 50%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#fff', GradientType=0);
-  }
-
-  .text-center .button {
-    background: $brand;
-    margin-bottom: 0;
-  }
-
-  .headline {
-    margin-bottom: 1rem;
-
-    @include breakpoint(medium) {
-      margin-bottom: 4rem;
-
-    }
+  .title {
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   .description {
-    margin-bottom: 1rem;
-
-    p {
-      font-size: $epigraph-font-size;
-      line-height: $epigraph-line-height;
-    }
-
-    ul {
-      font-size: $epigraph-font-size;
-      line-height: $epigraph-line-height;
-    }
 
     li {
-      margin-bottom: 1rem;
 
       p {
         display: inline;
-        margin-bottom: 0;
       }
-    }
-
-    h4 {
-      font-size: $base-font-size;
     }
   }
 
   .button-subscribe {
-    margin-top: 1rem;
+    margin-top: $line-height;
 
     @include breakpoint(medium) {
+      margin-top: $line-height * 2;
       padding: 0.5em 1em;
-      margin-top: 3rem;
     }
 
     h3 {
@@ -132,8 +78,8 @@ $epigraph-line-height: rem-calc(22);
     }
 
     p {
-      margin-bottom: 0;
       font-size: $small-font-size;
+      margin-bottom: 0;
     }
 
     &:hover h3 {
@@ -143,41 +89,21 @@ $epigraph-line-height: rem-calc(22);
 }
 
 // 03. Legislation process navigation
-// -----------------
+// ----------------------------------
+
 .legislation-process-categories {
   position: relative;
 
   .legislation-process-list {
     border-bottom: 1px solid $medium-gray;
     margin: 0 1rem 1rem;
-    padding-top: 4rem;
-
-    @include breakpoint(medium) {
-      margin-left: 0;
-    }
 
     ul {
-      position: relative;
-      max-width: 75rem;
-      margin-left: auto;
-      margin-right: auto;
+
       list-style: none;
-      padding-left: 0;
+      margin: 0 auto;
       margin-bottom: 0;
-
-      @include breakpoint(medium) {
-        padding-left: 1rem;
-      }
-
-      svg {
-        position: absolute;
-        top: 1.25rem;
-
-        @include breakpoint(1280px) {
-          transform: rotate(-6deg);
-          left: -1rem;
-        }
-      }
+      padding-left: 0;
     }
 
     li {
@@ -186,6 +112,10 @@ $epigraph-line-height: rem-calc(22);
       margin: 0 1rem 1rem 0;
       transition: all 0.4s;
       border-bottom: 2px solid transparent;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height * 2;
+      }
 
       &:first-of-type {
         margin-left: 0;
@@ -197,29 +127,25 @@ $epigraph-line-height: rem-calc(22);
         border-bottom: 2px solid $brand;
       }
 
-      @media (min-width: 950px) {
-        margin: 0 0 0 3rem;
-      }
-
       a,
       h4 {
         display: block;
         color: #6d6d6d;
         margin-bottom: 0;
       }
+    }
 
-      a {
-        &:hover,
-        &:active {
-          text-decoration: none;
-        }
+    a {
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
 
-        p {
-          margin-bottom: 0;
+      p {
+        margin-bottom: 0;
 
-          @include breakpoint(medium) {
-            margin-bottom: 1rem;
-          }
+        @include breakpoint(medium) {
+          margin-bottom: 1rem;
         }
       }
     }
@@ -231,7 +157,8 @@ $epigraph-line-height: rem-calc(22);
 }
 
 // 04. Debate list
-// -----------------
+// ----------------
+
 .debate-chooser {
   padding: 2rem 1rem;
 
@@ -277,38 +204,43 @@ $epigraph-line-height: rem-calc(22);
 }
 
 // 05. Debate quiz
-// -----------------
+// ---------------
+
 .debate-questions {
+
   .comments {
-    margin-top: 4rem;
+    margin-top: $line-height * 2.5;
   }
 
   .quiz-header {
-    margin-bottom: 2rem;
+    margin-bottom: $line-height;
 
     .quiz-title,
     .quiz-next {
-      padding: 1rem;
-      height: 6rem;
+      padding: $line-height;
+
+      @include breakpoint(medium) {
+        height: $line-height * 4;
+      }
     }
 
     .quiz-title {
       background: #e5ecf2;
 
       .quiz-header-title {
+        font-size: $small-font-size;
+        font-weight: 700;
         margin-bottom: 0;
         text-transform: uppercase;
-        font-weight: 700;
-        font-size: $small-font-size;
       }
     }
 
     h4 a {
       color: $brand;
-    }
 
-    h4 a:hover {
-      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     .quiz-next-link {
@@ -318,57 +250,49 @@ $epigraph-line-height: rem-calc(22);
       &:active {
         text-decoration: none;
       }
+    }
 
-      .quiz-next {
-        background: #ccdbe5;
-        font-weight: 700;
-        color: $brand;
-        font-size: $small-font-size;
-        text-align: right;
-        text-transform: uppercase;
-        transition: background 0.25s ease-out, background 0.25s ease-out;
+    .quiz-next {
+      background: #ccdbe5;
+      color: $brand;
+      font-size: $small-font-size;
+      font-weight: bold;
+      text-align: right;
+      text-transform: uppercase;
+      transition: background 0.25s ease-out, background 0.25s ease-out;
 
-        .icon-angle-right {
-          vertical-align: sub;
-        }
+      .icon-angle-right {
+        vertical-align: middle;
+      }
 
-        &:hover,
-        &:active {
-          text-decoration: none;
-          background: $brand;
-          color: #fff;
-
-          .icon-angle-right {
-            color: #fff;
-          }
-        }
+      &:hover,
+      &:active {
+        background: $brand;
+        color: #fff;
+        text-decoration: none;
       }
     }
   }
 
   .quiz-question {
-    margin-bottom: 2rem;
+    margin-bottom: $line-height;
   }
 
   .debate-questions {
     position: relative;
     list-style: none;
 
-    .participation-not-allowed {
-      padding-bottom: 3rem;
-    }
-
     .control {
-      position: relative;
-      display: inline-block;
-      color: #555;
-      cursor: pointer;
       background: #fff;
       border: 1px solid $border;
-      border-radius: 4px;
-      padding: 0.75rem 2.5rem;
-      margin-right: 1.5rem;
-      margin-bottom: 0.5rem;
+      border-radius: rem-calc(4);
+      color: #555;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: $line-height / 2;
+      margin-right: $line-height;
+      padding: $line-height / 2  $line-height * 2;
+      position: relative;
     }
 
     .active {
@@ -409,14 +333,15 @@ $epigraph-line-height: rem-calc(22);
 }
 
 // 06. Legislation draft
-// -----------------
+// ---------------------
+
 .debate-draft {
   padding: 10rem 2rem 15rem;
   display: block;
   background: #f2f2f2;
 
   button {
-    height: 90px;
+    height: rem-calc(90);
 
     h3 {
       margin-bottom: 0;
@@ -430,7 +355,8 @@ $epigraph-line-height: rem-calc(22);
 }
 
 // 07. Legislation allegations
-// -----------------
+// ---------------------------
+
 .legislation-allegation {
   padding-top: 1rem;
 
@@ -449,12 +375,12 @@ $epigraph-line-height: rem-calc(22);
   .button-circle {
     line-height: 0;
     padding: 0;
-    width: 30px;
-    height: 30px;
+    width: rem-calc(30);
+    height: rem-calc(30);
     border-radius: 50%;
 
     span {
-      padding-left: 1px;
+      padding-left: rem-calc(1);
 
       &::before {
         line-height: 1.55;
@@ -580,7 +506,7 @@ $epigraph-line-height: rem-calc(22);
       .calc-comments {
         cursor: pointer;
         background: #f2f2f2;
-        width: 50px;
+        width: rem-calc(50);
 
         .draft-panel {
           .panel-title {
@@ -733,7 +659,7 @@ $epigraph-line-height: rem-calc(22);
 
   .comments-on {
     .calc-index {
-      width: 50px;
+      width: rem-calc(50);
       background: #f2f2f2;
       cursor: pointer;
 
@@ -797,11 +723,11 @@ $epigraph-line-height: rem-calc(22);
 
       .comments-box-container {
         position: absolute;
-        top: 230px;
+        top: rem-calc(230);
       }
 
       .comment-box {
-        width: 375px;
+        width: rem-calc(375);
         padding: 1rem;
         background: #f9f9f9;
         border: 1px solid $border;
@@ -852,7 +778,7 @@ $epigraph-line-height: rem-calc(22);
 
           .participation-not-allowed {
             font-size: 0.875rem;
-            height: 50px;
+            height: rem-calc(50);
             padding: 0.85rem 0.75rem;
             top: -18px;
           }
@@ -891,7 +817,7 @@ $epigraph-line-height: rem-calc(22);
             border-right: 1px solid #d0d0d0;
             border-left: 1px solid #d0d0d0;
             width: 100%;
-            height: 200px;
+            height: rem-calc(200);
             margin-bottom: 0.5rem;
           }
 

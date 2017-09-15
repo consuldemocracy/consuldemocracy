@@ -1,0 +1,11 @@
+<div class="topic-new row">
+  
+  <div class="small-12 medium-9 column">
+    <%= back_link_to community_path(@community) %>
+    <h1><%= t("community.topic.create") %></h1>
+    <%= render 'form' %>
+  </div>
+
+  <%= render "recommendations" %>
+
+</div>
