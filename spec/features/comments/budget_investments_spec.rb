@@ -32,7 +32,7 @@ feature 'Commenting Budget::Investments' do
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
 
-    expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
+    expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget.id, investment)
 
     expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
     expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
