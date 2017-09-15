@@ -59,6 +59,11 @@ describe "Abilities::Common" do
   let(:own_budget_investment_document) { build(:document, documentable: own_investment_in_accepting_budget) }
   let(:budget_investment_document)     { build(:document, documentable: investment_in_accepting_budget) }
 
+  let(:own_proposal_image)          { build(:image, imageable: own_proposal) }
+  let(:proposal_image)              { build(:image, imageable: proposal) }
+  let(:own_budget_investment_image) { build(:image, imageable: own_investment_in_accepting_budget) }
+  let(:budget_investment_image)     { build(:image, imageable: investment_in_accepting_budget) }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }
   it { should be_able_to(:vote, debate)  }
@@ -105,6 +110,22 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:new, budget_investment_document) }
   it { should_not be_able_to(:create, budget_investment_document) }
   it { should_not be_able_to(:destroy, budget_investment_document) }
+
+  it { should be_able_to(:new, own_proposal_image) }
+  it { should be_able_to(:create, own_proposal_image) }
+  it { should be_able_to(:destroy, own_proposal_image) }
+
+  it { should_not be_able_to(:new, proposal_image) }
+  it { should_not be_able_to(:create, proposal_image) }
+  it { should_not be_able_to(:destroy, proposal_image) }
+
+  it { should be_able_to(:new, own_budget_investment_image) }
+  it { should be_able_to(:create, own_budget_investment_image) }
+  it { should be_able_to(:destroy, own_budget_investment_image) }
+
+  it { should_not be_able_to(:new, budget_investment_image) }
+  it { should_not be_able_to(:create, budget_investment_image) }
+  it { should_not be_able_to(:destroy, budget_investment_image) }
 
   describe 'flagging content' do
     it { should be_able_to(:flag, debate)   }
@@ -235,33 +256,6 @@ describe "Abilities::Common" do
       it { should_not be_able_to(:create, ballot_in_accepting_budget) }
       it { should_not be_able_to(:create, ballot_in_selecting_budget) }
       it { should be_able_to(:create, ballot_in_balloting_budget) }
-
-
-      it { should be_able_to(:edit_image, own_investment_in_accepting_budget) }
-      it { should be_able_to(:edit_image, own_investment_in_reviewing_budget) }
-      it { should be_able_to(:edit_image, own_investment_in_selecting_budget) }
-      it { should be_able_to(:edit_image, own_investment_in_balloting_budget) }
-      it { should be_able_to(:update_image, own_investment_in_accepting_budget) }
-      it { should be_able_to(:update_image, own_investment_in_reviewing_budget) }
-      it { should be_able_to(:update_image, own_investment_in_selecting_budget) }
-      it { should be_able_to(:update_image, own_investment_in_balloting_budget) }
-      it { should be_able_to(:remove_image, own_investment_in_accepting_budget) }
-      it { should be_able_to(:remove_image, own_investment_in_reviewing_budget) }
-      it { should be_able_to(:remove_image, own_investment_in_selecting_budget) }
-      it { should be_able_to(:remove_image, own_investment_in_balloting_budget) }
-
-      it { should_not be_able_to(:edit_image, investment_in_accepting_budget) }
-      it { should_not be_able_to(:edit_image, investment_in_reviewing_budget) }
-      it { should_not be_able_to(:edit_image, investment_in_selecting_budget) }
-      it { should_not be_able_to(:edit_image, investment_in_balloting_budget) }
-      it { should_not be_able_to(:update_image, investment_in_accepting_budget) }
-      it { should_not be_able_to(:update_image, investment_in_reviewing_budget) }
-      it { should_not be_able_to(:update_image, investment_in_selecting_budget) }
-      it { should_not be_able_to(:update_image, investment_in_balloting_budget) }
-      it { should_not be_able_to(:remove_image, investment_in_accepting_budget) }
-      it { should_not be_able_to(:remove_image, investment_in_reviewing_budget) }
-      it { should_not be_able_to(:remove_image, investment_in_selecting_budget) }
-      it { should_not be_able_to(:remove_image, investment_in_balloting_budget) }      
     end
   end
 

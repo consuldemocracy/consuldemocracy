@@ -85,10 +85,6 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:create, proposal_document) }
   it { should be_able_to(:destroy, proposal_document) }
 
-  it { should be_able_to(:new, proposal_image) }
-  it { should be_able_to(:create, proposal_image) }
-  it { should be_able_to(:destroy, proposal_image) }
-
   it { should be_able_to(:new, budget_investment_document) }
   it { should be_able_to(:create, budget_investment_document) }
   it { should be_able_to(:destroy, budget_investment_document) }
@@ -96,6 +92,10 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:new, poll_question_document) }
   it { should be_able_to(:create, poll_question_document) }
   it { should be_able_to(:destroy, poll_question_document) }
+
+  it { should be_able_to(:new, proposal_image) }
+  it { should be_able_to(:create, proposal_image) }
+  it { should be_able_to(:destroy, proposal_image) }
 
   it { should be_able_to(:new, budget_investment_image) }
   it { should be_able_to(:create, budget_investment_image) }
