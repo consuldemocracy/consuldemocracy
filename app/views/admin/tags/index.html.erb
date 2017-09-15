@@ -19,7 +19,7 @@
 <table>
   <% @tags.each do |tag| %>
     <tr>
-      <td>
+      <td class="with-button">
         <%= form_for(tag,
             url: admin_tag_path(tag),
             as: :tag,

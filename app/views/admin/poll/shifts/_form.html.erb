@@ -1,0 +1,30 @@
+<%= form_for @shift, as: :shift, url: admin_booth_shifts_path do |f| %>
+  <%= render "shared/errors", resource: @shift %>
+
+  <fieldset class="fieldset">
+    <legend>
+    	<%= t("admin.poll_shifts.new.new_shift") %>
+    </legend>
+
+    <div class="small-12 medium-4 column highlight padding">
+      <strong><%= t("admin.poll_shifts.new.officer") %></strong>
+      <br><%= @officer.name %>
+      <%= f.hidden_field :officer_id, value: @officer.id %>
+    </div>
+
+    <div class="small-12 medium-4 column">
+      <label><%= t("admin.poll_shifts.new.date") %></label>
+      <%= f.select :date,
+                    shift_dates_select_options(@polls),
+                    prompt: t("admin.poll_shifts.new.select_date"),
+                    label: false %>
+    </div>
+
+    <%= f.hidden_field :booth_id, value: @booth.id %>
+
+    <div class="small-12 medium-4 column">
+      <%= f.submit t("admin.poll_shifts.new.add_shift"),
+                     class: "button expanded margin-top" %>
+    </div>
+  </fieldset>
+<% end %>

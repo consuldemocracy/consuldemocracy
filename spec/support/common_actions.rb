@@ -82,7 +82,7 @@ module CommonActions
     fill_in 'proposal_summary', with: 'In summary what we want is...'
     fill_in 'proposal_description', with: 'This is very important because...'
     fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
-    fill_in 'proposal_video_url', with: 'http://youtube.com'
+    fill_in 'proposal_video_url', with: 'https://www.youtube.com/watch?v=yPQfcG-eimk'
     fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
     check 'proposal_terms_of_service'
   end

@@ -32,3 +32,6 @@
 
 public/sitemap.xml
 public/system/
+
+#Netbeans projects files
+/nbproject

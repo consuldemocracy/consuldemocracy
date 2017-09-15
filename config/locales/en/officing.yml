@@ -16,7 +16,6 @@ en:
         title: Polls ready for final recounting
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
-        add_recount: Add final recount
         add_results: Add results
     booth:
       new:
@@ -25,21 +24,6 @@ en:
       create:
         flash:
           wrong_password: "Wrong password"
-    final_recounts:
-      flash:
-        create: "Data added"
-        error_create: "Final counts NOT added. Error in data."
-      new:
-        title: "%{poll} - Add final recount"
-        intro_html: "Put together <strong>all daily envelopes</strong> and complete the following info:"
-        not_allowed: "You are allowed to add final recounts for this poll"
-        booth: "Booth"
-        select_booth: "Select booth"
-        count: "Final vote count"
-        count_placeholder: "Final vote count"
-        submit: Save
-        final_recount_list: "Your final recounts"
-        add_results: "Add results"
     results:
       flash:
         create: "Results saved"
@@ -55,6 +39,7 @@ en:
         select_booth: "Select booth"
         ballots_white: "Blank ballots"
         ballots_null: "Invalid ballots"
+        ballots_total: "Total ballots"
         submit: "Save"
         results_list: "Your results"
         see_results: "See results"
@@ -65,6 +50,7 @@ en:
         table_votes: Votes
         table_whites: "Blank ballots"
         table_nulls: "Invalid ballots"
+        table_total: "Total ballots"
     residence:
       flash:
         create: "Document verified with Census"

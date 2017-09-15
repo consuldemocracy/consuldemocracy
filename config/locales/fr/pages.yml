@@ -59,9 +59,9 @@ fr:
         text: |-
           Utilisez le librement pour votre gouvernement ou aider nous à l'améliorer, c'est un logiciel libre.
 
-          Ce portail de Gouvernement Ouvert utilise l'[application Consul](https://github.com/ayuntamientomadrid 'consul github') qui est un logiciel libre, sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui, en quelques mots, signifie que tout le monde peut utiliser le code librement, le copier, le voir en détail, le modifier et le redistribuer avec ces modifications (permettant à d'autres d'en faire de même). Car nous pensons que la culture est meilleure et plus riche quand elle est libre.
+          Ce portail de Gouvernement Ouvert utilise l'[application Consul](https://github.com/consul/consul 'consul github') qui est un logiciel libre, sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui, en quelques mots, signifie que tout le monde peut utiliser le code librement, le copier, le voir en détail, le modifier et le redistribuer avec ces modifications (permettant à d'autres d'en faire de même). Car nous pensons que la culture est meilleure et plus riche quand elle est libre.
 
-          Si vous êtes un développeur, vous pouvez voir le code et nous aider à l'améliorer en allant sur l'[applicationConsul](https://github.com/ayuntamientomadrid 'consul github').
+          Si vous êtes un développeur, vous pouvez voir le code et nous aider à l'améliorer en allant sur l'[applicationConsul](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Utilisez-le pour votre gouvernement
     privacy: Politique de confidentialité

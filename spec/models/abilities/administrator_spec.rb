@@ -14,9 +14,11 @@ describe "Abilities::Administrator" do
   let(:proposal) { create(:proposal) }
   let(:budget_investment) { create(:budget_investment) }
   let(:legislation_question) { create(:legislation_question) }
+  let(:poll_question) { create(:poll_question) }
 
   let(:proposal_document) { build(:document, documentable: proposal) }
   let(:budget_investment_document) { build(:document, documentable: budget_investment) }
+  let(:poll_question_document) { build(:document, documentable: poll_question) }
 
   let(:probe_option) { create(:probe_option) }
   let(:spending_proposal) { create(:spending_proposal) }
@@ -113,4 +115,8 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:new, budget_investment_document) }
   it { should be_able_to(:create, budget_investment_document) }
   it { should be_able_to(:destroy, budget_investment_document) }
+
+  it { should be_able_to(:new, poll_question_document) }
+  it { should be_able_to(:create, poll_question_document) }
+  it { should be_able_to(:destroy, poll_question_document) }
 end
