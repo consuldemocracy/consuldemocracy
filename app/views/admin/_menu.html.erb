@@ -59,8 +59,8 @@
         <a href="#">
           <span class="icon-checkmark-circle"></span>
           <strong><%= t("admin.menu.title_polls") %></strong>
-        </a>
-        <ul id="polls_menu" <%= "class=is-active" if menu_polls? %>>
+        </a>       
+        <ul id="polls_menu" <%= "class=is-active" if menu_polls? && controller.class.parent != Admin::Legislation %>>
           <li <%= "class=active" if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name  %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
