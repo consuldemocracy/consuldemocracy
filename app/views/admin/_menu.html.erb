@@ -158,8 +158,8 @@
         <span class="icon-settings"></span>
         <strong><%= t("admin.menu.title_site_customization") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_profiles? %>>
-        <li <%= "class=active" if controller_name == "pages" %>>
+        <ul <%= "class=is-active" if menu_customization? %>>
+            <li <%= "class=active" if controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>
 
