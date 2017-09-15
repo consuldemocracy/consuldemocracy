@@ -26,7 +26,7 @@ class Officing::ResidenceController < Officing::BaseController
       @officer_assignments = current_user.poll_officer.
                                officer_assignments.
                                voting_days.
-                               where(date: Date.current)
+                               where(date: Date.current) if current_user.poll_officer.present?
     end
 
     def validate_officer_assignment
