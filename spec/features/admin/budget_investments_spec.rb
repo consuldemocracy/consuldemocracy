@@ -390,8 +390,7 @@ feature 'Admin budget investments' do
 
       budget_investment2 = create(:budget_investment)
 
-      visit admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
-      click_link 'Edit classification'
+      visit edit_admin_budget_budget_investment_path(budget_investment2.budget, budget_investment2)
 
       find('.js-add-tag-link', text: 'Education').click
 
