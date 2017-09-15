@@ -1,4 +1,4 @@
-<div class="document-form <%= documentable_class(@document.documentable) %> row">
+<div class="document-form <%= documentable_class(@document.documentable.class) %> row">
 
   <div class="small-12 medium-9 column">
     <%= back_link_to params[:from] %>
@@ -16,7 +16,7 @@
       </li>
       <li>
         <%= t "documents.recommendation_two_html",
-              accepted_content_types: documentable_humanized_accepted_content_types(@document.documentable) %>
+              accepted_content_types: documentable_humanized_accepted_content_types(@document.documentable.class) %>
       </li>
       <li>
         <%= t "documents.recommendation_three_html",

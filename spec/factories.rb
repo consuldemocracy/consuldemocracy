@@ -819,4 +819,23 @@ LOREM_IPSUM
     association :author, factory: :user
   end
 
+  factory :direct_upload do
+
+    trait :proposal do
+      resource_type "Proposal"
+    end
+    trait :budget_investment do
+      resource_type "Budget::Investment"
+    end
+
+    trait :documents do
+      resource_relation "documents"
+      attachment { File.new("spec/fixtures/files/empty.pdf") }
+    end
+    trait :image do
+      resource_relation "image"
+      attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    end
+  end
+
 end

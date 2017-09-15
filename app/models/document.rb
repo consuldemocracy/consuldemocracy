@@ -50,9 +50,13 @@ class Document < ActiveRecord::Base
 
   private
 
+    def documentable_class
+      documentable_type.constantize if documentable_type.present?
+    end
+
     def validate_attachment_size
-      if documentable.present? &&
-         attachment_file_size > documentable.class.max_file_size
+      if documentable_class.present? &&
+         attachment_file_size > documentable_class.max_file_size
         errors[:attachment] = I18n.t("documents.errors.messages.in_between",
                                       min: "0 Bytes",
                                       max: "#{max_file_size(documentable)} MB")
@@ -60,11 +64,11 @@ class Document < ActiveRecord::Base
     end
 
     def validate_attachment_content_type
-      if documentable.present? &&
-         !accepted_content_types(documentable).include?(attachment_content_type)
+      if documentable_class &&
+         !accepted_content_types(documentable_class).include?(attachment_content_type)
         errors[:attachment] = I18n.t("documents.errors.messages.wrong_content_type",
                                       content_type: attachment_content_type,
-                                      accepted_content_types: documentable_humanized_accepted_content_types(documentable))
+                                      accepted_content_types: documentable_humanized_accepted_content_types(documentable_class))
       end
     end
 

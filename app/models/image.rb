@@ -66,6 +66,10 @@ class Image < ActiveRecord::Base
       attachment.reprocess!
     end
 
+    def imageable_class
+      imageable_type.constantize if imageable_type.present?
+    end
+
     def validate_image_dimensions
       if attachment_of_valid_content_type?
         dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
@@ -75,7 +79,7 @@ class Image < ActiveRecord::Base
     end
 
     def validate_attachment_size
-      if imageable.present? &&
+      if imageable_class &&
          attachment_file_size > 1.megabytes
         errors[:attachment] = I18n.t("images.errors.messages.in_between",
                                       min: "0 Bytes",
@@ -84,7 +88,7 @@ class Image < ActiveRecord::Base
     end
 
     def validate_attachment_content_type
-      if imageable.present? && !attachment_of_valid_content_type?
+      if imageable_class && !attachment_of_valid_content_type?
         errors[:attachment] = I18n.t("images.errors.messages.wrong_content_type",
                                       content_type: attachment_content_type,
                                       accepted_content_types: imageable_humanized_accepted_content_types)
