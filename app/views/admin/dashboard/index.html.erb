@@ -7,6 +7,12 @@
   <span class="icon-stats"></span>
   <%= t("admin.menu.stats") %>
 <% end %>
+<div class="float-right">
+  <%= link_to root_path do %>
+    <%= t("admin.dashboard.index.back") + " " + setting['org_name'] %>
+  <% end %>
+</div>
 
 <h2 class="inline-block"><%= t("admin.dashboard.index.title") %></h2>
 
+<p><%= t("admin.dashboard.index.description", org: setting['org_name']) %></p>

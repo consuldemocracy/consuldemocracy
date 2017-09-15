@@ -216,6 +216,7 @@ es:
       index:
         back: Volver a
         title: Administración
+        description: Bienvenido al panel de administración de %{org}.
     debates:
       index:
         filter: Filtro

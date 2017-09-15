@@ -216,6 +216,7 @@ en:
       index:
         back: Go back to
         title: Administration
+        description: Welcome to the %{org} admin panel.
     debates:
       index:
         filter: Filter
