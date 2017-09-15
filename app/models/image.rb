@@ -59,6 +59,7 @@ class Image < ActiveRecord::Base
     end
   end
 
+
   private
 
     def redimension_using_origin_styles
@@ -66,9 +67,11 @@ class Image < ActiveRecord::Base
     end
 
     def validate_image_dimensions
-      dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
-      errors.add(:attachment, :min_image_width, required_min_width: MIN_SIZE) if dimensions.width < MIN_SIZE
-      errors.add(:attachment, :min_image_height, required_min_height: MIN_SIZE) if dimensions.height < MIN_SIZE
+      if attachment_of_valid_content_type?
+        dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
+        errors.add(:attachment, :min_image_width, required_min_width: MIN_SIZE) if dimensions.width < MIN_SIZE
+        errors.add(:attachment, :min_image_height, required_min_height: MIN_SIZE) if dimensions.height < MIN_SIZE
+      end
     end
 
     def validate_attachment_size
@@ -81,8 +84,7 @@ class Image < ActiveRecord::Base
     end
 
     def validate_attachment_content_type
-      if imageable.present? &&
-         !imageable_accepted_content_types.include?(attachment_content_type)
+      if imageable.present? && !attachment_of_valid_content_type?
         errors[:attachment] = I18n.t("images.errors.messages.wrong_content_type",
                                       content_type: attachment_content_type,
                                       accepted_content_types: imageable_humanized_accepted_content_types)
@@ -98,4 +100,9 @@ class Image < ActiveRecord::Base
     def remove_cached_image
       File.delete(cached_attachment) if File.exists?(cached_attachment)
     end
+
+    def attachment_of_valid_content_type?
+      attachment.present? && imageable_accepted_content_types.include?(attachment_content_type)
+    end
+
 end
