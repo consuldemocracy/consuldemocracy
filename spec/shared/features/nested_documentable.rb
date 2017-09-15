@@ -11,10 +11,8 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
   before do
     create(:administrator, user: administrator)
 
-    if documentable_path_arguments
-      documentable_path_arguments.each do |argument_name, path_to_value|
+    documentable_path_arguments&.each do |argument_name, path_to_value|
         arguments.merge!("#{argument_name}": documentable.send(path_to_value))
-      end
     end
   end
 
@@ -222,7 +220,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable.class.max_documents_allowed.times.each do |index|
-        attach_new_file(documentable_factory_name, index , "spec/fixtures/files/empty.pdf")
+        attach_new_file(documentable_factory_name, index, "spec/fixtures/files/empty.pdf")
       end
 
       click_on submit_button

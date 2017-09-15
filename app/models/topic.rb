@@ -13,6 +13,6 @@ class Topic < ActiveRecord::Base
 
   scope :sort_by_newest, -> { order(created_at: :desc) }
   scope :sort_by_oldest, -> { order(created_at: :asc) }
-  scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
+  scope :sort_by_most_commented, -> { reorder(comments_count: :desc) }
 
 end

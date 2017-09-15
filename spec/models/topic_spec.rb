@@ -71,5 +71,4 @@ describe Topic do
 
   end
 
-
 end
