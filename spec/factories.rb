@@ -155,7 +155,7 @@ FactoryGirl.define do
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
-    video_url            'http://video_link.com'
+    video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
