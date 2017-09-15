@@ -22,7 +22,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       login_as user
       visit send(path, arguments)
 
-      expect(page).to have_selector "#new_document_link", visible: true
+      expect(page).to have_css "#new_document_link", visible: true
     end
 
     scenario "Should not show new document link when documentable max documents allowed limit is reached", :js do
@@ -30,19 +30,19 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       visit send(path, arguments)
 
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_0_title"
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_1_title"
       click_link "Add new document"
 
-      expect(page).to have_selector "#new_document_link", visible: false
+      expect(page).to have_css "#new_document_link", visible: false
     end
 
     scenario "Should not show max documents warning when no documents added", :js do
       login_as user
       visit send(path, arguments)
 
-      expect(page).to have_selector ".max-documents-notice", visible: false
+      expect(page).to have_css ".max-documents-notice", visible: false
     end
 
     scenario "Should show max documents warning when max documents allowed limit is reached", :js do
@@ -50,12 +50,12 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       visit send(path, arguments)
 
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_0_title"
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_1_title"
       click_link "Add new document"
 
-      expect(page).to have_selector ".max-documents-notice", visible: true
+      expect(page).to have_css ".max-documents-notice", visible: true
     end
 
     scenario "Should hide max documents warning after any document removal", :js do
@@ -63,26 +63,26 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       visit send(path, arguments)
 
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_0_title"
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_1_title"
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css "##{documentable_factory_name}_documents_attributes_2_title"
       within "#document_0" do
         find("a", text: "Remove document").click
       end
-      sleep 1
 
-      expect(page).to have_selector ".max-documents-notice", visible: false
+      expect(page).to have_css ".max-documents-notice", visible: false
     end
 
     scenario "Should update nested document file name after choosing a file", :js do
       login_as user
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
+      click_link "Add new document"
+      attach_file("#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf", make_visible: true)
 
-      expect(page).to have_selector ".file-name", text: "empty.pdf"
+      expect(page).to have_css ".file-name", text: "empty.pdf"
     end
 
     scenario "Should update nested document file title with file name after choosing a file when no title defined", :js do
@@ -91,7 +91,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
-      expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "empty.pdf"
+      expect(page).to have_css("##{documentable_factory_name}_documents_attributes_0_title[value$='empty.pdf']")
     end
 
     scenario "Should not update nested document file title with file name after choosing a file when title already defined", :js do
@@ -99,10 +99,9 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       visit send(path, arguments)
 
       click_link "Add new document"
-      sleep 1
+
       fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
-      attach_file("#{documentable_factory_name}[documents_attributes][0][attachment]", "spec/fixtures/files/empty.pdf", make_visible: true)
-      sleep 1
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
       expect(find("##{documentable_factory_name}_documents_attributes_0_title").value).to eq "Title"
     end
@@ -114,16 +113,16 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       fill_in "#{documentable_factory_name}[documents_attributes][0][title]", with: "Title"
 
-      expect(page).to have_selector ".loading-bar.complete"
+      expect(page).to have_css ".loading-bar.complete"
     end
 
     scenario "Should update loading bar style after unvalid file upload", :js do
       login_as user
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png", false)
 
-      expect(page).to have_selector ".loading-bar.errors"
+      expect(page).to have_css ".loading-bar.errors"
     end
 
     scenario "Should update document cached_attachment field after valid file upload", :js do
@@ -132,24 +131,24 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
-      expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to include("empty.pdf")
+      expect(page).to have_css("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]'][value$='empty.pdf']", visible: false)
     end
 
     scenario "Should not update document cached_attachment field after unvalid file upload", :js do
       login_as user
       visit send(path, arguments)
 
-      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png")
+      documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/logo_header.png", false)
 
-      expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to eq ""
+      expect(find("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]']", visible: false).value).to eq("")
     end
 
-    scenario "Should show document errors after unvalid file upload", :js do
+    scenario "Should show document errors after documentable submit with empty document fields", :js do
       login_as user
       visit send(path, arguments)
 
       click_link "Add new document"
-      sleep 1
+      expect(page).to have_css("input[name='#{documentable_factory_name}[documents_attributes][0][title]']")
       click_on submit_button
 
       within "#document_0" do
@@ -166,7 +165,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
         click_link "Remove document"
       end
 
-      expect(page).not_to have_selector("#document_0")
+      expect(page).not_to have_css("#document_0")
     end
 
     scenario "Should delete document after valid file upload and click on remove button", :js do
@@ -184,9 +183,10 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
     scenario "Should show successful notice when resource filled correctly without any nested documents", :js do
       login_as user
       visit send(path, arguments)
-      send(fill_resource_method_name) if fill_resource_method_name
 
+      send(fill_resource_method_name) if fill_resource_method_name
       click_on submit_button
+
       expect(page).to have_content documentable_success_notice
     end
 
@@ -196,8 +196,8 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
-
       click_on submit_button
+
       expect(page).to have_content documentable_success_notice
     end
 
@@ -207,7 +207,6 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       send(fill_resource_method_name) if fill_resource_method_name
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
-
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
 
@@ -215,6 +214,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
     end
 
     scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
+      page.driver.resize_window 1200, 2500
       login_as user
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
@@ -222,7 +222,6 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
       documentable.class.max_documents_allowed.times.each do |index|
         documentable_attach_new_file(documentable_factory_name, index , "spec/fixtures/files/empty.pdf")
       end
-
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
 
@@ -240,11 +239,18 @@ rescue
   return
 end
 
-def documentable_attach_new_file(documentable_factory_name, index, path)
+def documentable_attach_new_file(documentable_factory_name, index, path, success = true)
   click_link "Add new document"
-  sleep 1
-  attach_file("#{documentable_factory_name}[documents_attributes][#{index}][attachment]", path, make_visible: true)
-  sleep 1
+  input_file_id = "#{documentable_factory_name}_documents_attributes_#{index}_attachment"
+  expect(page).to have_css("##{input_file_id}", visible: false)
+  attach_file(input_file_id, path, make_visible: true)
+  within "#document_#{index}" do
+    if success
+      expect(page).to have_css ".loading-bar.complete"
+    else
+      expect(page).to have_css ".loading-bar.errors"
+    end
+  end
 end
 
 def documentable_fill_new_valid_proposal
