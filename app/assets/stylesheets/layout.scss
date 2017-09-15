@@ -371,7 +371,11 @@ header {
 
   .top-bar-title a {
     @include logo;
-    line-height: rem-calc(80) !important;
+    line-height: rem-calc(80);
+
+    @include breakpoint(medium) {
+      line-height: rem-calc(80);
+    }
 
     &:hover {
       text-decoration: none;
