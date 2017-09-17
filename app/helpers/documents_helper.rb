@@ -1,5 +1,10 @@
 module DocumentsHelper
 
+  def document_note(document)
+    t "documents.new.#{document.documentable.class.name.parameterize.underscore}.note",
+      title: document.documentable.title
+  end
+
   def document_attachment_file_name(document)
     document.attachment_file_name
   end

@@ -8,7 +8,7 @@ App.Documentable =
 
     $('input.js-document-attachment[type=file]').fileupload
 
-      paramName: "document[attachment]"
+      paramName: "direct_upload[attachment]"
 
       formData: null
 
@@ -20,7 +20,7 @@ App.Documentable =
         data.progressBar = $(wrapper).find('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
         $(wrapper).find('.progress-bar-placeholder').css('display','block')
         data.formData = {
-          "document[title]": $(wrapper).find('input.document-title').val() || data.files[0].name
+          "direct_upload[title]": $(wrapper).find('inputdirect_upload-title').val() || data.files[0].name
           "index": index,
           "nested_document": is_nested_document
         }

@@ -127,7 +127,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+      attach_image("spec/fixtures/files/logo_header.png", false)
 
       expect(page).to have_css "small.error"
     end
@@ -147,9 +147,8 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/clippy.png", make_visible: true
+      attach_image("spec/fixtures/files/logo_header.png", false)
 
-      expect(page).to have_css ".loading-bar.errors"
       expect(page).not_to have_content "clippy.png"
     end
 
@@ -158,7 +157,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
+      attach_image("spec/fixtures/files/clippy.jpg", true)
 
       expect(page).to have_css("figure img")
       expect(page).not_to have_css("figure figcaption")
@@ -169,7 +168,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
+      attach_image("spec/fixtures/files/clippy.jpg", true)
 
       expect(page).to have_selector ".loading-bar.complete"
     end
@@ -179,7 +178,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+      attach_image("spec/fixtures/files/logo_header.png", false)
 
       expect(page).to have_selector ".loading-bar.errors"
     end
@@ -189,9 +188,9 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
+      attach_image("spec/fixtures/files/clippy.jpg")
 
-      expect(page).to have_css("input[name='image[title]'][value='clippy.jpg']", visible: false)
+      expect(find('input#image_title').value).to eq('clippy.jpg')
     end
 
     scenario "Should not update image title with attachment original file name after valid image upload when title already defined by user", :js do
@@ -200,10 +199,9 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
                            imageable_id: imageable.id)
 
       fill_in :image_title, with: "My custom title"
-      attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
+      attach_image("spec/fixtures/files/clippy.jpg")
 
-      expect(page).to have_selector ".loading-bar.complete"
-      expect(page).to have_css("input[name='image[title]'][value='My custom title']", visible: false)
+      expect(find('input#image_title').value).to eq('My custom title')
     end
 
     scenario "Should update image cached_attachment field after valid file upload", :js do
@@ -211,7 +209,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/clippy.jpg", make_visible: true
+      attach_image("spec/fixtures/files/clippy.jpg", true)
 
       expect(page).to have_css("input[name='image[cached_attachment]'][value$='clippy.jpg']", visible: false)
     end
@@ -221,7 +219,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
       visit new_image_path(imageable_type: imageable.class.name,
                            imageable_id: imageable.id)
 
-      attach_file :image_attachment, "spec/fixtures/files/logo_header.png", make_visible: true
+      attach_image("spec/fixtures/files/logo_header.png", false)
 
       expect(page).to have_selector ".loading-bar.errors"
       expect(find("input[name='image[cached_attachment]']", visible: false).value).to eq("")
@@ -341,4 +339,13 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
   end
 
+end
+
+def attach_image(path, success = true)
+  attach_file :image_attachment, path, make_visible: true
+  if success
+    expect(page).to have_css ".loading-bar.complete"
+  else
+    expect(page).to have_css ".loading-bar.errors"
+  end
 end

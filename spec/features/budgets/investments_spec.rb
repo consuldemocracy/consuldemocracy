@@ -474,7 +474,7 @@ feature 'Budget Investments' do
                   "Create Investment",
                   "Budget Investment created successfully."
 
-  it_behaves_like "documentable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
+  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
   it_behaves_like "nested documentable",
                   "budget_investment",

@@ -75,6 +75,7 @@ module Abilities
 
       can [:create, :destroy], Document
       can [:create, :destroy], Image
+      can [:create, :destroy], DirectUpload
     end
   end
 end

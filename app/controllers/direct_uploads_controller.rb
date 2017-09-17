@@ -1,33 +1,52 @@
 class DirectUploadsController < ApplicationController
+  include DirectUploadsHelper
+  include ActionView::Helpers::UrlHelper
+  before_action :authenticate_user!
 
-  def destroy_upload
-    @document = Document.new(cached_attachment: params[:path])
-    @document.set_attachment_from_cached_attachment
-    @document.cached_attachment = nil
-    @document.documentable = @documentable
+  load_and_authorize_resource except: :create
+  skip_authorization_check only: :create
 
-    if @document.attachment.destroy
-      flash.now[:notice] = t "documents.actions.destroy.notice"
+  helper_method :render_destroy_upload_link
+
+  # It should return cached attachment path or attachment errors
+  def create
+    @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user, attachment: params[:attachment]))
+
+    if @direct_upload.valid?
+      @direct_upload.save_attachment
+      @direct_upload.relation.set_cached_attachment_from_attachment(URI(request.url))
+      render json: { cached_attachment: @direct_upload.relation.cached_attachment,
+                     filename: @direct_upload.relation.attachment.original_filename,
+                     destroy_link: render_destroy_upload_link(@direct_upload).html_safe,
+                     attachment_url: @direct_upload.relation.attachment.url,
+                     is_image: Image::ACCEPTED_CONTENT_TYPE.include?(@direct_upload.relation.attachment_content_type)
+                   }
     else
-      flash.now[:alert] = t "documents.actions.destroy.alert"
+      @direct_upload.destroy_attachment
+      render json: { errors: @direct_upload.errors[:attachment].join(", ") },
+             status: 422
     end
-    render :destroy
   end
 
-  def upload
-    @document = Document.new(document_params.merge(user: current_user))
-    @document.documentable = @documentable
-    @document.valid?
+  def destroy
+    @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user) )
 
-    if @document.valid?
-      @document.attachment.save
-      @document.set_cached_attachment_from_attachment(URI(request.url))
+    @direct_upload.relation.set_attachment_from_cached_attachment
+
+    if @direct_upload.destroy_attachment
+      render json: :ok
     else
-      @document.attachment.destroy
+      render json: :error
     end
   end
 
   private
+
+  def direct_upload_params
+    params.require(:direct_upload)
+          .permit(:resource, :resource_type, :resource_id, :resource_relation,
+                  :attachment, :cached_attachment, attachment_attributes: [])
+  end
 
   def set_attachment_container_resource
     @container_resource = params[:resource_type]

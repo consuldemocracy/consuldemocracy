@@ -64,6 +64,7 @@
 //= require flaggable
 //= require documentable
 //= require imageable
+//= require direct_uploads
 //= require tree_navigator
 //= require custom
 //= require tag_autocomplete

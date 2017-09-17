@@ -101,20 +101,15 @@ Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
 
   resources :documents, only: [:new, :create, :destroy] do
-    collection do
-      get :new_nested
-      delete :destroy_upload
-      post :upload
-    end
+    get :new_nested, on: :collection
   end
 
   resources :images, only: [:new, :create, :destroy] do
-    collection do
-      get :new_nested
-      delete :destroy_upload
-      post :upload
-    end
+    get :new_nested, on: :collection
   end
+
+  resources :direct_uploads, only: [:create]
+  delete "direct_uploads/destroy", to: "direct_uploads#destroy", as: :direct_upload_destroy
 
   resources :stats, only: [:index]
 

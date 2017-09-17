@@ -213,14 +213,24 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       expect(page).to have_selector ".loading-bar.errors"
     end
 
-    scenario "Should update document title with attachment original file name after file selection if no title defined by user", :js do
+    scenario "Should update document title with attachment original file name after valid upload if no title defined by user", :js do
       login_as documentable.author
       visit new_document_path(documentable_type: documentable.class.name,
                               documentable_id: documentable.id)
 
       attach_document("spec/fixtures/files/empty.pdf", true)
 
-      expect(page).to have_css("input[name='document[title]'][value='empty.pdf']")
+      expect(find("input#document_title").value).to eq("empty.pdf")
+    end
+
+    scenario "Should update document title with attachment original file name after invalid upload if no title defined by user", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_document("spec/fixtures/files/logo_header.png", false)
+
+      expect(find("input#document_title").value).to be_empty
     end
 
     scenario "Should not update document title with attachment original file name after file selection when title already defined by user", :js do
@@ -429,8 +439,8 @@ end
 def attach_document(path, success = true)
   attach_file :document_attachment, path, make_visible: true
   if success
-    have_css ".loading-bar.complete"
+    expect(page).to have_css ".loading-bar.complete"
   else
-    have_css ".loading-bar.errors"
+    expect(page).to have_css ".loading-bar.errors"
   end
 end

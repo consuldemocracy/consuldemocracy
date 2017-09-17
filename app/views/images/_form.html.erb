@@ -4,17 +4,63 @@
               imageable_id: @image.imageable_id,
               from: params[:from]
              ),
-             html: { multipart: true, class: "imageable"},
-             data: { direct_upload_url: upload_images_url(imageable_type: @image.imageable_type, imageable_id: @image.imageable_id) } do |f| %>
+             html: { multipart: true, class: "imageable" } do |f| %>
 
   <%= render 'shared/errors', resource: @image %>
 
-  <div class="row">
+  <div class="row image direct-upload">
 
-    <%= render 'plain_fields', image: @image %>
+    <%= f.hidden_field :cached_attachment %>
+
+    <div class="small-12 column">
+      <%= f.text_field :title, placeholder: t("images.new.form.title_placeholder") %>
+    </div>
+
+    <%= render_image(@image, :thumb, false) if @image.attachment.exists? %>
+
+    <div class="small-12 column attachment-actions">
+      <div class="small-6 column action-add attachment-errors">
+        <%= f.label :attachment, t("images.form.attachment_label"), class: 'button hollow' %>
+        <%= f.file_field :attachment,
+                         accept: imageable_accepted_content_types_extensions,
+                         label: false,
+                         class: 'direct_upload_attachment',
+                         data: {
+                           url: direct_uploads_url("direct_upload[resource_type]": @image.imageable_type,
+                                                   "direct_upload[resource_id]": @image.imageable_id,
+                                                   "direct_upload[resource_relation]": "image"),
+                           cached_attachment_input_field: "image_cached_attachment",
+                           title_input_field: "image_title",
+                           multiple: false
+                         } %>
+      </div>
+      <div class="small-6 column action-remove">
+        <% if @image.cached_attachment.present? %>
+          <%= link_to t('images.form.delete_button'),
+                      direct_upload_destroy_url("direct_upload[resource_type]": @image.imageable_type,
+                                                "direct_upload[resource_id]": @image.imageable_id,
+                                                "direct_upload[resource_relation]": "image",
+                                                "direct_upload[cached_attachment]": @image.cached_attachment),
+                      method: :delete,
+                      remote: true,
+                      class: "delete float-right" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="small-12 column">
+      <p class="file-name">
+        <%= image_attachment_file_name(@image) %>
+      </p>
+    </div>
+
+    <div class="small-12 column">
+      <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+    </div>
 
     <div class="actions small-12 medium-6 large-4 end column">
       <%= f.submit(t("images.form.submit_button"), class: "button expanded") %>
     </div>
+
   </div>
 <% end %>

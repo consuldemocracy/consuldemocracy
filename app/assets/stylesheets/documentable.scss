@@ -28,7 +28,8 @@
     background-color: $light-gray;
   }
 
-  .js-document-attachment {
+  .js-document-attachment,
+  input.direct_upload_attachment[type=file] {
     display: none;
   }
 

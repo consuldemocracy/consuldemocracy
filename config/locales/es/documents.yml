@@ -4,6 +4,7 @@ es:
     no_documents: No hay documentos subidos
     upload_document: Subir documento
     max_documents_allowed_reached_html: ¡Has alcanzado el número máximo de documentos permitidos! <strong>Tienes que eliminar uno antes de poder subir otro.</strong>
+
     form:
       title: Documentos
       attachment_label: Selecciona un documento
@@ -11,12 +12,18 @@ es:
       delete_button: Eliminar documento
       note: "Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_document: Añadir nuevo documento
+
     new:
       title: Subir un documento
+      budget_investment:
+        note: 'Añade un documento la propuesta de inversión: %{title}.'
+      proposal:
+        note: 'Añade un documento a la propuesta: %{title}.'
     recommendations_title: Consejos para subir archivos
     recommendation_one_html: Puedes subir hasta un máximo de <strong>%{max_documents_allowed} documentos</strong>
     recommendation_two_html: Sólo puedes subir <strong>archivos %{accepted_content_types}</strong>.
     recommendation_three_html: Puedes subir archivos de hasta <strong>%{max_file_size}  MB</strong>
+
     actions:
       create:
         notice: "El documento se ha creado correctamente."

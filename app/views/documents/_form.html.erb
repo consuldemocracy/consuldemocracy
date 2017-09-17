@@ -4,14 +4,57 @@
               documentable_id: @document.documentable_id,
               from: params[:from]
              ),
-             html: { multipart: true, class: "documentable"},
-             data: { direct_upload_url: upload_documents_url(documentable_type: @document.documentable_type, documentable_id: @document.documentable_id) } do |f| %>
+             html: { multipart: true, class: "documentable" } do |f| %>
 
   <%= render 'shared/errors', resource: @document %>
 
-  <div class="row">
+  <div class="row document direct-upload">
 
-    <%= render 'plain_fields', document: @document %>
+    <%= f.hidden_field :cached_attachment %>
+
+    <div class="small-12 column">
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="small-12 column actions">
+      <div class="small-6 column action-add attachment-errors">
+        <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
+        <%= f.file_field :attachment,
+                         accept: accepted_content_types_extensions(@document.documentable.class),
+                         label: false,
+                         class: 'js-document-attachment',
+                         data: {
+                           url: direct_uploads_url("direct_upload[resource_type]": @document.documentable_type,
+                                                   "direct_upload[resource_id]": @document.documentable_id,
+                                                   "direct_upload[resource_relation]": "documents"),
+                           cached_attachment_input_field: "document_cached_attachment",
+                           title_input_field: "document_title"
+                         } %>
+
+      </div>
+      <div class="small-6 column action-remove">
+        <% if @document.cached_attachment.present? %>
+          <%= link_to t('documents.form.delete_button'),
+                      direct_upload_destroy_url("direct_upload[resource_type]": @document.documentable_type,
+                                                "direct_upload[resource_id]": @document.documentable_id,
+                                                "direct_upload[resource_relation]": "documents",
+                                                "direct_upload[cached_attachment]": @document.cached_attachment),
+                      method: :delete,
+                      remote: true,
+                      class: "delete float-right" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="small-12 column">
+      <p class="file-name">
+        <%= document_attachment_file_name(@document) %>
+      </p>
+    </div>
+
+    <div class="small-12 column">
+      <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+    </div>
 
     <div class="actions small-12 medium-6 large-4 end column">
       <%= f.submit(t("documents.form.submit_button"), class: "button expanded") %>

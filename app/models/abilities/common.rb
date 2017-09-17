@@ -43,6 +43,8 @@ module Abilities
       can [:create, :destroy, :new], Image, imageable: { author_id: user.id }
       can [:new_nested, :upload, :destroy_upload], Image
 
+      can [:create, :destroy], DirectUpload
+
       unless user.organization?
         can :vote, Debate
         can :vote, Comment
