@@ -504,7 +504,7 @@ Proposal.last(3).each do |proposal|
 end
 
 puts " ✅"
-puts "Creating proposal notifications"
+print "Creating proposal notifications"
 
 100.times do |i|
   ProposalNotification.create!(title: "Proposal notification title #{i}",
