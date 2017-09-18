@@ -44,8 +44,4 @@ module ProposalsHelper
     current_user && @proposal.editable_by?(current_user)
   end
 
-  def show_actions_menu?
-    can_create_document? || author_of_proposal? || current_editable?
-  end
-
 end
