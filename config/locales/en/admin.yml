@@ -494,8 +494,8 @@ en:
         booth: "Booth"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
-        final_recounts: "Final recounts"
-        final_recount: "Final recount (by officer)"
+        total_recounts: "Total recounts"
+        total_recount: "Total recount (by officer)"
     poll_shifts:
       new:
         add_shift: "Add shift"

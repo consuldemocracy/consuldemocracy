@@ -301,8 +301,8 @@ fr:
         no_assignments: "Cet utilisateur n'a pas d'affectation pour ce vote."
         recounts: "Dépouillement journalier"
         recount: "Dépouillement journalier (par président)"
-        final_recounts: "Dépouillement final"
-        final_recount: "Dépouillement final (par président)"
+        total_recounts: "Dépouillement final"
+        total_recount: "Dépouillement final (par président)"
     poll_booth_assignments:
       flash:
         destroy: "Ce bureau de vote n'est plus affecté"

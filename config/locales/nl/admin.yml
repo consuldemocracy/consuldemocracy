@@ -301,8 +301,8 @@ nl:
         no_assignments: "This user has no officing shifts in this poll."
         recounts: "Daily recounts"
         recount: "Daily recount (by officer)"
-        final_recounts: "Final recounts"
-        final_recount: "Final recount (by officer)"
+        total_recounts: "Final recounts"
+        total_recount: "Final recount (by officer)"
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"
