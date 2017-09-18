@@ -84,7 +84,6 @@ en:
     processes:
       back: Back
       index:
-        featured: Featured
         process_1_title: Transparency Ordinance
         process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
         process_1_button: More information
@@ -141,7 +140,6 @@ en:
         process_19_title: 'Cambio de denominación  del barrio "San Andrés"'
         process_19_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.'
         process_19_button: "Más información"
-        title: Participatory processes
         process_plaza_title: Remodeling of the Plaza España
         process_plaza_description: Select the project that you like for this new space in your city.
         more_info_title: "See more information about the process "
