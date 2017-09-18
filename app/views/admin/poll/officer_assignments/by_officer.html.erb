@@ -27,10 +27,7 @@
       <% end %>
     </tbody>
   </table>
-<% end %>
 
-<% final_officer_assignments = @officer_assignments.select{|oa| oa.final == true} %>
-<% if final_officer_assignments.any? %>
   <h3><%= t("admin.poll_officer_assignments.by_officer.total_recounts") %></h3>
   <table id="total_recount_list" class="fixed">
     <thead>
@@ -41,13 +38,13 @@
       </tr>
     </thead>
     <tbody>
-      <% final_officer_assignments.each do |officer_assignment| %>
+      <% @officer_assignments.each do |officer_assignment| %>
           <tr id="total_recount_<%= officer_assignment.date.to_date.strftime('%Y%m%d') %>">
             <td><%= l(officer_assignment.date.to_date) %></td>
             <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
             <td class="text-right">
-              <% if officer_assignment.total_recounts.any? %>
-                <%= officer_assignment.total_recounts.to_a.sum(&:amount) %>
+              <% if officer_assignment.total_results.any? %>
+                <%= officer_assignment.total_results.to_a.sum(&:amount) %>
               <% else %>
                 <span>-</span>
               <% end %>
