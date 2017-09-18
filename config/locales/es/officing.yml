@@ -16,7 +16,6 @@ es:
         title: "Listado de votaciones finalizadas"
         no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
         select_poll: "Selecciona votación"
-        add_recount: "Añadir recuentos finales"
         add_results: "Añadir resultados"
     booth:
       new:
@@ -25,21 +24,6 @@ es:
       create:
         flash:
           wrong_password: "Contraseña inválida"
-    final_recounts:
-      flash:
-        create: "Datos añadidos"
-        error_create: "Recuento final NO añadido. Error en los datos"
-      new:
-        title: "%{poll} - Añadir recuento final"
-        intro_html: "Junte los sobres de votación de <strong>todos</strong> los días e introduzca la siguiente información:"
-        not_allowed: "No tienes permiso para introducir recountos finales"
-        booth: "Urna"
-        select_booth: "Elige urna"
-        count: "Recuento final"
-        count_placeholder: "Número final de votos"
-        submit: "Guardar"
-        final_recount_list: "Tus recuentos finales"
-        add_results: "Añadir resultados"
     results:
       flash:
         create: "Datos guardados"
@@ -55,6 +39,7 @@ es:
         select_booth: "Elige urna"
         ballots_white: "Papeletas en blanco"
         ballots_null: "Papeletas nulas"
+        ballots_total: "Papeletas totales"
         submit: "Guardar"
         results_list: "Tus resultados"
         see_results: "Ver resultados"
@@ -65,6 +50,7 @@ es:
         table_votes: Votos
         table_whites: Papeletas en blanco
         table_nulls: Papeletas nulas
+        table_total: Papeletas totales
     residence:
       flash:
         create: "Documento verificado con el Padrón"

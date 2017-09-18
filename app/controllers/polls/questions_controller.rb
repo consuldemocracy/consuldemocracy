@@ -10,6 +10,8 @@ class Polls::QuestionsController < ApplicationController
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
     set_comment_flags(@comment_tree.comments)
 
+    @document = Document.new(documentable: @question)
+
     question_answer = @question.answers.where(author_id: current_user.try(:id)).first
     @answers_by_question_id = {@question.id => question_answer.try(:answer)}
   end

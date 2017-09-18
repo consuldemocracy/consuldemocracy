@@ -323,7 +323,11 @@ Rails.application.routes.draw do
       end
 
       resources :booths do
-        resources :shifts
+        get :available, on: :collection
+
+        resources :shifts do
+          get :search_officers, on: :collection
+        end
       end
 
       resources :questions
@@ -494,7 +498,6 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       get :final, on: :collection
 
-      resources :final_recounts, only: [:new, :create]
       resources :results, only: [:new, :create, :index]
 
       resources :nvotes, only: :new do

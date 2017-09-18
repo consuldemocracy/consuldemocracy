@@ -202,7 +202,9 @@ es:
     signature_sheet: la hoja de firmas
     spending_proposal: la propuesta de inversión
     proposal_notification: "la notificación"
-    budget/investment: el proyecto de gasto
+    spending_proposal: la propuesta de gasto
+    budget/investment: la propuesta de inversión
+    poll/shift: el turno
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas

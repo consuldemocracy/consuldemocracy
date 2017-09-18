@@ -8,6 +8,7 @@ class Poll
     validates :date, presence: true
     validates :date, uniqueness: { scope: [:officer_id, :booth_id] }
     
+    before_create :persist_data
     after_create :create_officer_assignments
 
     def create_officer_assignments
@@ -18,5 +19,11 @@ class Poll
         Poll::OfficerAssignment.create!(attrs)
       end
     end
+
+    def persist_data      
+      self.officer_name = officer.name
+      self.officer_email = officer.email
+    end
+
   end
  end
