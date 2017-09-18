@@ -35,3 +35,6 @@ public/system/
 
 #Netbeans projects files
 /nbproject
+
+# Jetbrains project files
+.idea
