@@ -60,12 +60,12 @@
           <span class="icon-checkmark-circle"></span>
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
-        <ul id="polls_menu" <%= "class=is-active" if menu_polls? %>>
-          <li <%= "class=active" if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name  %>>
+        <ul id="polls_menu" <%= "class=is-active" if menu_polls? && controller.class.parent == Admin::Poll::QuestionsController %>>
+          <li <%= "class=active" if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
 
-          <li <%= "class=active" if controller_name == "questions" %>>
+          <li <%= "class=active" if controller_name == "questions" && controller.class.parent == Admin::Poll::QuestionsController %>>
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
@@ -73,13 +73,13 @@
             <%= link_to t('admin.menu.poll_officers'), admin_officers_path %>
           </li>
 
-          <li <%= "class=active" if controller_name == "booths" && 
+          <li <%= "class=active" if controller_name == "booths" &&
                                     action_name != "available" %>>
             <%= link_to t('admin.menu.poll_booths'), admin_booths_path %>
           </li>
 
-          <li <%= "class=active" if controller_name == "shifts" || 
-                                    controller_name == "booths" && 
+          <li <%= "class=active" if controller_name == "shifts" ||
+                                    controller_name == "booths" &&
                                     action_name == "available" %>>
             <%= link_to t('admin.menu.poll_shifts'), available_admin_booths_path %>
           </li>

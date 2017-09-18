@@ -11,7 +11,7 @@ class Community < ActiveRecord::Base
   end
 
   def from_proposal?
-    self.proposal.present?
+    proposal.present?
   end
 
   private

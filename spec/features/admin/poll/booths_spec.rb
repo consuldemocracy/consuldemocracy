@@ -44,13 +44,13 @@ feature 'Admin booths' do
     current_poll  = create(:poll, :current)
     incoming_poll = create(:poll, :incoming)
     expired_poll  = create(:poll, :expired)
-  
+
     create(:poll_booth_assignment, poll: current_poll,  booth: booth_for_current_poll)
     create(:poll_booth_assignment, poll: incoming_poll, booth: booth_for_incoming_poll)
     create(:poll_booth_assignment, poll: expired_poll,  booth: booth_for_expired_poll)
-    
+
     visit admin_root_path
-    
+
     within('#side_menu') do
       click_link "Manage shifts"
     end
