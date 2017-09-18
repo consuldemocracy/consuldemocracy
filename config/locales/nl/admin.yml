@@ -391,7 +391,7 @@ nl:
         no_recounts: "There is nothing to be recounted"
         table_booth_name: "Booth"
         table_recounts: "Accumulated daily recounts (by officer)"
-        table_final_recount: "Final recount (by officer)"
+        table_total_recount: "Final recount (by officer)"
         table_system_count: "Votes (automatic)"
     results:
       index:
