@@ -32,4 +32,20 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
+  def can_create_document?
+    can?(:create, @document) && @proposal.documents.size < Proposal.max_documents_allowed
+  end
+
+  def author_of_proposal?
+    author_of?(@proposal, current_user)
+  end
+
+  def current_editable?
+    current_user && @proposal.editable_by?(current_user)
+  end
+
+  def show_actions_menu?
+    can_create_document? || author_of_proposal? || current_editable?
+  end
+
 end
