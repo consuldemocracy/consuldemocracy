@@ -9,7 +9,7 @@ module DocumentablesHelper
   end
 
   def max_file_size(documentable)
-    bytes_to_mega(documentable.class.max_file_size)
+    bytes_to_mega(documentable_class.max_file_size)
   end
 
   def accepted_content_types(documentable_class)
@@ -31,7 +31,7 @@ module DocumentablesHelper
   def documentables_note(documentable)
     t "documents.form.note", max_documents_allowed: max_documents_allowed(documentable),
                              accepted_content_types: documentable_humanized_accepted_content_types(documentable.class),
-                             max_file_size: max_file_size(documentable)
+                             max_file_size: max_file_size(documentable.class)
   end
 
   def max_documents_allowed?(documentable)

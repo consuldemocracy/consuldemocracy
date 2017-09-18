@@ -1,17 +1,7 @@
-<% if params[:nested_document] == "true" %>
-
-  App.Documentable.destroyNestedDocument("<%= document_nested_field_wrapper_id(params[:index]) %>", "<%= j render('layouts/flash') %>")
-  <% new_document_link = link_to t("documents.form.add_new_document"),
-                                 new_nested_documents_path(documentable_type: @document.documentable_type, index: params[:index]),
-                                 remote: true,
-                                 id: "new_document_link",
-                                 class: "button hollow" %>
-  App.Documentable.updateNewDocumentButton("<%= j new_document_link %>")
-
-<% else %>
-
-  App.Documentable.replacePlainDocument("plain_document_fields",
-                                        "<%= j render('layouts/flash') %>",
-                                        "<%= j render('plain_fields', document: @document) %>")
-
-<% end %>
+App.Documentable.destroyNestedDocument("<%= document_nested_field_wrapper_id(params[:index]) %>")
+<% new_document_link = link_to t("documents.form.add_new_document"),
+                               new_nested_documents_path(documentable_type: @document.documentable_type, index: params[:index]),
+                               remote: true,
+                               id: "new_document_link",
+                               class: "button hollow" %>
+App.Documentable.updateNewDocumentButton("<%= j new_document_link %>")

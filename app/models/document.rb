@@ -59,7 +59,7 @@ class Document < ActiveRecord::Base
          attachment_file_size > documentable_class.max_file_size
         errors[:attachment] = I18n.t("documents.errors.messages.in_between",
                                       min: "0 Bytes",
-                                      max: "#{max_file_size(documentable)} MB")
+                                      max: "#{max_file_size(documentable_class)} MB")
       end
     end
 

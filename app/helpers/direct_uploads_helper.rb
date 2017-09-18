@@ -9,7 +9,7 @@ module DirectUploadsHelper
                                       format: :json),
             method: :delete,
             remote: true,
-            class: "delete float-right"
+            class: "delete remove-cached-attachment"
   end
 
 end

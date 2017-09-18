@@ -1,56 +1,23 @@
 App.Imageable =
 
   initialize: ->
-    @initializeDirectUploads()
-    @initializeInterface()
-
-  initializeDirectUploads: ->
-
-    $('input.image_ajax_attachment[type=file]').fileupload
-
-      paramName: "image[attachment]"
-
-      formData: null
-
-      add: (e, data) ->
-        wrapper = $(e.target).closest('.image')
-        index = $(e.target).data('index')
-        is_nested_image = $(e.target).data('nested-image')
-        $(wrapper).find('.progress-bar-placeholder').empty()
-        data.progressBar = $(wrapper).find('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
-        $(wrapper).find('.progress-bar-placeholder').css('display','block')
-        data.formData = {
-          "image[title]": $(wrapper).find('input.image-title').val() || data.files[0].name
-          "index": index,
-          "nested_image": is_nested_image
-        }
-        data.submit()
-
-      change: (e, data) ->
-        wrapper = $(e.target).parent()
-        $.each(data.files, (index, file)->
-          $(wrapper).find('.file-name').text(file.name)
-        )
-
-      progress: (e, data) ->
-        progress = parseInt(data.loaded / data.total * 100, 10)
-        $(data.progressBar).find('.loading-bar').css 'width', progress + '%'
-        return
-
-  initializeInterface: ->
-    input_files = $('input.image_ajax_attachment[type=file]')
+    console.log 'App.Imageable initialize'
+    input_files = $('input.direct_upload_attachment[type=file]')
 
     $.each input_files, (index, file) ->
-      wrapper = $(file).parent()
+      wrapper = $(file).closest(".direct-upload")
       App.Imageable.watchRemoveImagebutton(wrapper)
 
+    $("#new_image_link").on 'click', ->
+      $(this).hide()
+
   watchRemoveImagebutton:  (wrapper) ->
-    remove_image_button = $(wrapper).find('.remove-image')
+    console.log 'App.Imageable watchRemoveDocumentbutton'
+    remove_image_button = $(wrapper).find('a.delete[href="#"]')
     $(remove_image_button).on 'click', (e) ->
       e.preventDefault()
       $(wrapper).remove()
       $('#new_image_link').show()
-      $('.max-images-notice').hide()
 
   uploadNestedImage: (id, nested_image, result) ->
     $('#' + id).replaceWith(nested_image)
@@ -71,10 +38,12 @@ App.Imageable =
 
   new: (nested_fields) ->
     $(".images-list").append(nested_fields)
+    $("#new_image_link").hide()
     @initialize()
 
   destroyNestedImage: (id, notice) ->
     $('#' + id).remove()
+    $("#new_image_link").show()
     @updateNotice(notice)
 
   replacePlainImage: (id, notice, plain_image) ->

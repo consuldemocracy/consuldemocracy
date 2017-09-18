@@ -305,9 +305,9 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
                               documentable_id: documentable.id,
                               from: send(documentable_path, arguments))
 
-      expect(page).to have_content "You can upload up to a maximum of #{max_file_size(documentable)} documents."
+      expect(page).to have_content "You can upload up to a maximum of #{max_file_size(documentable.class)} documents."
       expect(page).to have_content "You can upload #{documentable_humanized_accepted_content_types(documentable.class)} files."
-      expect(page).to have_content "You can upload files up to #{max_file_size(documentable)} MB."
+      expect(page).to have_content "You can upload files up to #{max_file_size(documentable.class)} MB."
     end
 
   end

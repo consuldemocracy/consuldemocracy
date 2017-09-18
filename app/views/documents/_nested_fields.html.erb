@@ -1,4 +1,4 @@
-<div id="<%= document_nested_field_wrapper_id(index) %>" class="document">
+<div id="<%= document_nested_field_wrapper_id(index) %>" class="document direct-upload">
   <%= hidden_field_tag :id,
                        document.id,
                        name: document_nested_field_name(document, index, :id),
@@ -12,21 +12,37 @@
                        name: document_nested_field_name(document, index, :cached_attachment),
                        id: document_nested_field_id(document, index, :cached_attachment) %>
 
-  <%= label_tag :title, t("activerecord.attributes.document.title") %>
+  <div class="small-12 column">
+    <%= label_tag :title, t("activerecord.attributes.document.title") %>
 
-  <%= text_field_tag :title,
-                     document.errors.has_key?(:attachment) ? "" : document.title,
-                     name: document_nested_field_name(document, index, :title),
-                     id: document_nested_field_id(document, index, :title),
-                     class: "document-title" %>
-   <% if document.errors[:title].any? %>
-     <small class="error"><%= document.errors[:title].join(", ") %></small>
-   <% end %>
+    <%= text_field_tag :title,
+                       document.errors.has_key?(:attachment) ? "" : document.title,
+                       name: document_nested_field_name(document, index, :title),
+                       id: document_nested_field_id(document, index, :title),
+                       class: "document-title" %>
+    <% if document.errors[:title].any? %>
+      <small class="error"><%= document.errors[:title].join(", ") %></small>
+    <% end %>
+  </div>
 
-  <%= render_attachment(document, index) %>
+  <div class="small-12 column attachment-actions">
+    <div class="small-6 column action-add attachment-errors">
+      <%= render_attachment(document, index) %>
+    </div>
+    <div class="small-6 column action-remove text-right">
+      <%= render_destroy_document_link(document, index) %>
+    </div>
+  </div>
 
-  <%= render_destroy_document_link(document, index) %>
-  <p class="file-name"><%= document_attachment_file_name(document) %></p>
-  <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+  <div class="small-12 column">
+    <p class="file-name">
+      <%= document_attachment_file_name(document) %>
+    </p>
+  </div>
+
+  <div class="small-12 column">
+    <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+  </div>
+
   <hr>
 </div>

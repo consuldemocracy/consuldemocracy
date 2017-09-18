@@ -32,7 +32,7 @@
                          } %>
 
       </div>
-      <div class="small-6 column action-remove">
+      <div class="small-6 column action-remove text-right">
         <% if @document.cached_attachment.present? %>
           <%= link_to t('documents.form.delete_button'),
                       direct_upload_destroy_url("direct_upload[resource_type]": @document.documentable_type,
@@ -41,7 +41,7 @@
                                                 "direct_upload[cached_attachment]": @document.cached_attachment),
                       method: :delete,
                       remote: true,
-                      class: "delete float-right" %>
+                      class: "delete remove-cached-attachment" %>
         <% end %>
       </div>
     </div>

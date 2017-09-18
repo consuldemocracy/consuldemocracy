@@ -30,7 +30,7 @@ module ImageablesHelper
 
   def imageables_note(imageable)
     t "images.form.note", accepted_content_types: imageable_humanized_accepted_content_types,
-                          max_file_size: max_file_size(imageable)
+                          max_file_size: imageable_max_file_size
   end
 
 end

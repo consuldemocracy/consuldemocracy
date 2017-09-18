@@ -38,21 +38,20 @@ module DocumentsHelper
               method: :delete,
               remote: true,
               data: { confirm: t('documents.actions.destroy.confirm') },
-              class: "delete float-right"
+              class: "delete remove-document"
     elsif !document.persisted? && document.cached_attachment.present?
       link_to t('documents.form.delete_button'),
-              destroy_upload_documents_path(path: document.cached_attachment,
-                                            nested_document: true,
-                                            index: index,
-                                            documentable_type: document.documentable_type,
-                                            documentable_id: document.documentable_id),
-              method: :delete,
-              remote: true,
-              class: "delete float-right"
+                  direct_upload_destroy_url("direct_upload[resource_type]": document.documentable_type,
+                                            "direct_upload[resource_id]": document.documentable_id,
+                                            "direct_upload[resource_relation]": "documents",
+                                            "direct_upload[cached_attachment]": document.cached_attachment),
+                  method: :delete,
+                  remote: true,
+                  class: "delete remove-cached-attachment"
     else
       link_to t('documents.form.delete_button'),
               "#",
-              class: "delete float-right remove-document"
+              class: "delete remove-nested-field"
     end
   end
 
@@ -63,6 +62,7 @@ module DocumentsHelper
                           data: {
                             url: document_direct_upload_url(document),
                             cached_attachment_input_field: document_nested_field_id(document, index, :cached_attachment),
+                            title_input_field: document_nested_field_id(document, index, :title),
                             multiple: false,
                             index: index,
                             nested_document: true
@@ -84,11 +84,9 @@ module DocumentsHelper
   end
 
   def document_direct_upload_url(document)
-    upload_documents_url(
-      documentable_type: document.documentable_type,
-      documentable_id: document.documentable_id,
-      format: :js
-    )
+    direct_uploads_url("direct_upload[resource_type]": document.documentable_type,
+                       "direct_upload[resource_id]": document.documentable_id,
+                       "direct_upload[resource_relation]": "documents")
   end
 
 end

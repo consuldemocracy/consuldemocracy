@@ -29,7 +29,8 @@
     background-color: $light-gray;
   }
 
-  input.image_ajax_attachment[type=file],
+  input.direct_upload_image_attachment[type=file],
+  input.direct_upload_document_attachment[type=file],
   input.direct_upload_attachment[type=file] {
     display: none;
   }

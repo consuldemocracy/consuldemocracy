@@ -1,92 +1,153 @@
 App.Documentable =
 
   initialize: ->
-    @initializeDirectUploads()
-    @initializeInterface()
+    inputFiles = $('input.js-document-attachment[type=file]')
 
-  initializeDirectUploads: ->
+    $.each inputFiles, (index, input) ->
+      App.Documentable.initializeDirectUploadInput(input)
 
-    $('input.js-document-attachment[type=file]').fileupload
+  initializeDirectUploadInput: (input) ->
 
-      paramName: "direct_upload[attachment]"
+    inputData = @buildData([], input)
+
+    @initializeRemoveDocumentLink(input)
+
+    @initializeRemoveCachedDocumentLink(input, inputData)
+
+    $(input).fileupload
+
+      paramName: "attachment"
 
       formData: null
 
       add: (e, data) ->
-        wrapper = $(e.target).closest('.document')
-        index = $(e.target).data('index')
-        is_nested_document = $(e.target).data('nested-document')
-        $(wrapper).find('.progress-bar-placeholder').empty()
-        data.progressBar = $(wrapper).find('.progress-bar-placeholder').html('<div class="progress-bar"><div class="loading-bar uploading"></div></div>')
-        $(wrapper).find('.progress-bar-placeholder').css('display','block')
-        data.formData = {
-          "direct_upload[title]": $(wrapper).find('inputdirect_upload-title').val() || data.files[0].name
-          "index": index,
-          "nested_document": is_nested_document
-        }
+        data = App.Documentable.buildFileUploadData(e, data)
+        App.Documentable.clearProgressBar(data)
+        App.Documentable.setProgressBar(data, 'uploading')
         data.submit()
 
       change: (e, data) ->
-        wrapper = $(e.target).parent()
-        $.each(data.files, (index, file)->
-          $(wrapper).find('.file-name').text(file.name)
-        )
+        $.each data.files, (index, file) ->
+          App.Documentable.setFilename(data, file)
+
+      fail: (e, data) ->
+        $(data.cachedAttachmentField).val("")
+        App.Documentable.clearFilename(data)
+        App.Documentable.setProgressBar(data, 'errors')
+        App.Documentable.clearInputErrors(data)
+        App.Documentable.setInputErrors(data)
+        $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove()
+        $(data.addAttachmentLabel).show()
+
+      done: (e, data) ->
+        $(data.cachedAttachmentField).val(data.result.cached_attachment)
+        App.Documentable.setTitleFromFile(data, data.result.filename)
+        App.Documentable.setProgressBar(data, 'complete')
+        App.Documentable.setFilename(data, data.result.filename)
+        App.Documentable.clearInputErrors(data)
+        $(data.addAttachmentLabel).hide()
+
+        $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link)
+        data.destroyAttachmentLinkContainer = $(data.wrapper).find('.action-remove .remove-cached-attachment')
+        $(data.destroyAttachmentLinkContainer).on 'click', (e) ->
+          e.preventDefault()
+          e.stopPropagation()
+          App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)
 
       progress: (e, data) ->
         progress = parseInt(data.loaded / data.total * 100, 10)
         $(data.progressBar).find('.loading-bar').css 'width', progress + '%'
         return
 
-  initializeInterface: ->
-    input_files = $('input.js-document-attachment[type=file]')
+  buildFileUploadData: (e, data) ->
+    data = @buildData(data, e.target)
+    return data
 
-    $.each input_files, (index, file) ->
-      wrapper = $(file).parent()
-      App.Documentable.watchRemoveDocumentbutton(wrapper)
+  buildData: (data, input) ->
+    wrapper = $(input).closest('.direct-upload')
+    data.input = input
+    data.wrapper = wrapper
+    data.progressBar = $(wrapper).find('.progress-bar-placeholder')
+    data.errorContainer = $(wrapper).find('.attachment-errors')
+    data.fileNameContainer = $(wrapper).find('p.file-name')
+    data.destroyAttachmentLinkContainer = $(wrapper).find('.action-remove')
+    data.addAttachmentLabel = $(wrapper).find('.action-add label')
+    data.cachedAttachmentField = $(wrapper).find("#" + $(input).data('cached-attachment-input-field'))
+    data.titleField = $(wrapper).find("#" + $(input).data('title-input-field'))
+    $(wrapper).find('.progress-bar-placeholder').css('display', 'block')
+    return data
 
-  watchRemoveDocumentbutton:  (wrapper) ->
-    remove_document_button = $(wrapper).find('.remove-document')
-    $(remove_document_button).on 'click', (e) ->
+  clearFilename: (data) ->
+    $(data.fileNameContainer).text('')
+    $(data.fileNameContainer).hide()
+
+  clearInputErrors: (data) ->
+    $(data.errorContainer).find('small.error').remove()
+
+  clearProgressBar: (data) ->
+    $(data.progressBar).find('.loading-bar').removeClass('complete errors uploading').css('width', "0px")
+
+  setFilename: (data, file_name) ->
+    $(data.fileNameContainer).text(file_name)
+    $(data.fileNameContainer).show()
+
+  setProgressBar: (data, klass) ->
+    $(data.progressBar).find('.loading-bar').addClass(klass)
+
+  setTitleFromFile: (data, title) ->
+    if $(data.titleField).val() == ""
+      $(data.titleField).val(title)
+
+  setInputErrors: (data) ->
+    errors = '<small class="error">' + data.jqXHR.responseJSON.errors + '</small>'
+    $(data.errorContainer).append(errors)
+
+  doDeleteCachedAttachmentRequest: (url, data) ->
+    $.ajax
+      type: "POST"
+      url: url
+      dataType: "json"
+      data: { "_method": "delete" }
+      complete: ->
+        $(data.cachedAttachmentField).val("")
+        $(data.addAttachmentLabel).show()
+
+        App.Documentable.clearFilename(data)
+        App.Documentable.clearInputErrors(data)
+        App.Documentable.clearProgressBar(data)
+
+        if $(data.input).data('nested-document') == true
+          $(data.wrapper).remove()
+          $('#new_document_link').show()
+          $('.max-documents-notice').hide()
+        else
+          $(data.destroyAttachmentLinkContainer).find('a.delete').remove()
+
+  initializeRemoveDocumentLink: (input) ->
+    wrapper = $(input).closest(".direct-upload")
+    remove_document_link = $(wrapper).find('a.remove-nested-field')
+    $(remove_document_link).on 'click', (e) ->
       e.preventDefault()
       $(wrapper).remove()
       $('#new_document_link').show()
       $('.max-documents-notice').hide()
 
-  uploadNestedDocument: (id, nested_document, result) ->
-    $('#' + id).replaceWith(nested_document)
-    @updateLoadingBar(id, result)
-    @initialize()
+  initializeRemoveCachedDocumentLink: (input, data) ->
+    wrapper = $(input).closest(".direct-upload")
+    remove_document_link = $(wrapper).find('a.remove-cached-attachment')
+    $(remove_document_link).on 'click', (e) ->
+      e.preventDefault()
+      e.stopPropagation()
+      App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)
 
-  uploadPlainDocument: (id, nested_document, result) ->
-    $('#' + id).replaceWith(nested_document)
-    @updateLoadingBar(id, result)
-    @initialize()
+  new: (nested_field) ->
+    nested_field = $(nested_field)
+    $(".documents-list").append(nested_field)
+    input = nested_field.find("input[type='file']")
+    @initializeDirectUploadInput(input)
 
-  updateLoadingBar: (id, result) ->
-    if result
-      $('#' + id).find('.loading-bar').addClass 'complete'
-    else
-      $('#' + id).find('.loading-bar').addClass 'errors'
-    $('#' + id).find('.progress-bar-placeholder').css('display','block')
-
-  new: (nested_fields) ->
-    $(".documents-list").append(nested_fields)
-    @initialize()
-
-  destroyNestedDocument: (id, notice) ->
+  destroyNestedDocument: (id) ->
     $('#' + id).remove()
-    @updateNotice(notice)
-
-  replacePlainDocument: (id, notice, plain_document) ->
-    $('#' + id).replaceWith(plain_document)
-    @updateNotice(notice)
-    @initialize()
-
-  updateNotice: (notice) ->
-    if $('[data-alert]').length > 0
-      $('[data-alert]').replaceWith(notice)
-    else
-      $("body").append(notice)
 
   updateNewDocumentButton: (link) ->
     if $('.document').length >= $('.documents').data('max-documents')

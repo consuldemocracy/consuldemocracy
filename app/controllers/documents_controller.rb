@@ -4,8 +4,7 @@ class DocumentsController < ApplicationController
   before_action :prepare_new_document, only: [:new, :new_nested]
   before_action :prepare_document_for_creation, only: :create
 
-  load_and_authorize_resource except: :upload
-  skip_authorization_check only: :upload
+  load_and_authorize_resource
 
   def new
   end
@@ -42,32 +41,6 @@ class DocumentsController < ApplicationController
           flash.now[:alert] = t "documents.actions.destroy.alert"
         end
       end
-    end
-  end
-
-  def destroy_upload
-    @document = Document.new(cached_attachment: params[:path])
-    @document.set_attachment_from_cached_attachment
-    @document.cached_attachment = nil
-    @document.documentable = @documentable
-
-    if @document.attachment.destroy
-      flash.now[:notice] = t "documents.actions.destroy.notice"
-    else
-      flash.now[:alert] = t "documents.actions.destroy.alert"
-    end
-    render :destroy
-  end
-
-  def upload
-    @document = Document.new(document_params.merge(user: current_user))
-    @document.documentable = @documentable
-
-    if @document.valid?
-      @document.attachment.save
-      @document.set_cached_attachment_from_attachment(URI(request.url))
-    else
-      @document.attachment.destroy
     end
   end
 

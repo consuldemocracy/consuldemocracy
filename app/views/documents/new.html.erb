@@ -21,7 +21,7 @@
       </li>
       <li>
         <%= t "documents.recommendation_three_html",
-              max_file_size: max_file_size(@document.documentable) %>
+              max_file_size: max_file_size(@document.documentable.class) %>
       </li>
     </ul>
   </div>

@@ -69,17 +69,18 @@ module ImagesHelper
     else
       link_to t('images.form.delete_button'),
               "#",
-              class: "delete float-right remove-image"
+              class: "delete float-right remove-nested"
     end
   end
 
   def render_image_attachment(image)
     html = file_field_tag :attachment,
                           accept: imageable_accepted_content_types_extensions,
-                          class: 'image_ajax_attachment',
+                          class: 'direct_upload_attachment',
                           data: {
                             url: image_direct_upload_url(image),
                             cached_attachment_input_field: image_nested_field_id(image, :cached_attachment),
+                            title_input_field: image_nested_field_id(image, :title),
                             multiple: false,
                             nested_image: true
                           },
@@ -107,11 +108,9 @@ module ImagesHelper
   end
 
   def image_direct_upload_url(image)
-    upload_images_url(
-       imageable_type: image.imageable_type,
-       imageable_id: image.imageable_id,
-       format: :js
-     )
+    direct_uploads_url("direct_upload[resource_type]": image.imageable_type,
+                       "direct_upload[resource_id]": image.imageable_id,
+                       "direct_upload[resource_relation]": "image")
   end
 
 end
