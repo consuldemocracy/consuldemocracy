@@ -433,6 +433,7 @@ es:
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
+      author: Autor
     update:
       form:
         submit_button: Guardar cambios

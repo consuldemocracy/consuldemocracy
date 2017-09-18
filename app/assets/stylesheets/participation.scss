@@ -395,8 +395,8 @@
     }
   }
 
-  &.tags,
-  &.geozone {
+  .tags,
+  .geozone {
 
     li {
       margin-bottom: 0;
@@ -478,6 +478,7 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
 
     a {
       margin-right: rem-calc(6);
@@ -607,6 +608,14 @@
         }
       }
     }
+  }
+}
+
+.show-actions-menu {
+
+  [class^="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
