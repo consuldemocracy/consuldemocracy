@@ -395,6 +395,8 @@
     }
   }
 
+  .tags,
+  .geozone {
 
     li {
       margin-bottom: 0;
@@ -476,6 +478,7 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
 
     a {
       margin-right: rem-calc(6);
