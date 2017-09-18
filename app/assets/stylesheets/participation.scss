@@ -395,8 +395,6 @@
     }
   }
 
-  &.tags,
-  &.geozone {
 
     li {
       margin-bottom: 0;
@@ -607,6 +605,14 @@
         }
       }
     }
+  }
+}
+
+.show-actions-menu {
+
+  [class^="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
