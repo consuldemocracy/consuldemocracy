@@ -319,7 +319,7 @@ fr:
         no_recounts: "Il n'y a pas encore de dépouillements journaliers pour ce bureau de vote."
         date: "Date"
         count_by_officer: "Dépouillement journalier (par président)"
-        count_final: "Dépouillement final (par président)"
+        total_count: "Dépouillement final (par président)"
         count_by_system:  "Votes (automatique)"
       index:
         booths_title: "Liste des bureaux de vote"

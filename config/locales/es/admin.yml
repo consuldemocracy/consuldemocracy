@@ -531,7 +531,7 @@ es:
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
         date: "Fecha"
-        count_final: "Recuento final (presidente de mesa)"
+        total_recount: "Recuento total (presidente de mesa)"
         count_by_system:  "Votos (automático)"
       index:
         booths_title: "Listado de urnas asignadas"
