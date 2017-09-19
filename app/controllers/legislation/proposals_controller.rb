@@ -1,9 +1,9 @@
-class Legislation::ProposalsController < ApplicationController
+class Legislation::ProposalsController < Legislation::BaseController
   include CommentableActions
   include FlagActions
 
-  load_and_authorize_resource :process
-  load_and_authorize_resource :proposal, through: :process
+  load_and_authorize_resource :process, class: "Legislation::Process"
+  load_and_authorize_resource :proposal, class: "Legislation::Proposal", through: :process
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -15,7 +15,6 @@ class Legislation::ProposalsController < ApplicationController
   has_orders %w{hot_score confidence_score created_at relevance archival_date}, only: :index
   has_orders %w{most_voted newest oldest}, only: :show
 
-  load_and_authorize_resource
   helper_method :resource_model, :resource_name
   respond_to :html, :js
 
@@ -23,7 +22,8 @@ class Legislation::ProposalsController < ApplicationController
     super
     @notifications = @proposal.notifications
     @document = Document.new(documentable: @proposal)
-    redirect_to proposal_path(@proposal), status: :moved_permanently if request.path != proposal_path(@proposal)
+    redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
+                status: :moved_permanently if request.path != legislation_process_proposal_path(params[:process_id], @proposal)
   end
 
   def create
@@ -31,7 +31,7 @@ class Legislation::ProposalsController < ApplicationController
     recover_documents_from_cache(@proposal)
 
     if @proposal.save
-      redirect_to share_proposal_path(@proposal), notice: I18n.t('flash.actions.create.proposal')
+      redirect_to share_legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t('flash.actions.create.proposal')
     else
       render :new
     end
@@ -46,7 +46,7 @@ class Legislation::ProposalsController < ApplicationController
 
   def vote
     @proposal.register_vote(current_user, 'yes')
-    set_proposal_votes(@proposal)
+    set_legislation_proposal_votes(@proposal)
   end
 
   def retire
@@ -98,7 +98,11 @@ class Legislation::ProposalsController < ApplicationController
       Legislation::Proposal
     end
 
-    def set_featured_proposal_votes(proposals)
+    def resource_name
+      'proposal'
+    end
+
+    def set_legislation_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
