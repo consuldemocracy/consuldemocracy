@@ -8,10 +8,11 @@ module ActsAsTaggableOn
     scope :public_for_api, -> do
       where(%{taggings.tag_id in (?) and
               (taggings.taggable_type = 'Debate' and taggings.taggable_id in (?)) or
-              (taggings.taggable_type = 'Proposal' and taggings.taggable_id in (?))},
+              (taggings.taggable_type = 'Proposal' and taggings.taggable_id in (?)) or taggings.taggable_type = 'LegislationProposal' and taggings.taggable_id in (?))},
             Tag.where('kind IS NULL or kind = ?', 'category').pluck(:id),
             Debate.public_for_api.pluck(:id),
-            Proposal.public_for_api.pluck(:id))
+            Proposal.public_for_api.pluck(:id),
+            Legislation::Proposal.public_for_api.pluck(:id))
     end
 
     def touch_taggable

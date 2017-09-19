@@ -156,11 +156,11 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for('Proposal') }
+    tags.each{ |t| t.decrement_custom_counter_for('LegislationProposal') }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for('Proposal') }
+    tags.each{ |t| t.increment_custom_counter_for('LegislationProposal') }
   end
 
   def self.votes_needed_for_success
