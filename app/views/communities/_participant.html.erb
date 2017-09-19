@@ -9,7 +9,7 @@
         <%= link_to participant.name, user_path(participant)%>
       </span>
 
-      <% if is_author?(@community, participant) %>
+      <% if author?(@community, participant) %>
         &nbsp;&bull;&nbsp;
         <span class="label round is-author">
             <%= t("comments.comment.author") %>

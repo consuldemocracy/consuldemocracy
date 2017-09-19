@@ -14,19 +14,19 @@ feature 'Admin shifts' do
     booth1 = create(:poll_booth)
     booth2 = create(:poll_booth)
 
-    shift1 = create(:poll_shift, officer: officer, booth: booth1, date: Date.today)
-    shift2 = create(:poll_shift, officer: officer, booth: booth2, date: Date.tomorrow)
+    shift1 = create(:poll_shift, officer: officer, booth: booth1, date: Time.zone.today)
+    shift2 = create(:poll_shift, officer: officer, booth: booth2, date: Time.zone.tomorrow)
 
     visit new_admin_booth_shift_path(booth1)
 
     expect(page).to have_css(".shift", count: 1)
-    expect(page).to have_content I18n.l(Date.today, format: :long)
+    expect(page).to have_content I18n.l(Time.zone.today, format: :long)
     expect(page).to have_content officer.name
 
     visit new_admin_booth_shift_path(booth2)
 
     expect(page).to have_css(".shift", count: 1)
-    expect(page).to have_content I18n.l(Date.tomorrow, format: :long)
+    expect(page).to have_content I18n.l(Time.zone.tomorrow, format: :long)
     expect(page).to have_content officer.name
   end
 
