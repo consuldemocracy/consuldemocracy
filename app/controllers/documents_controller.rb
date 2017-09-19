@@ -48,6 +48,7 @@ class DocumentsController < ApplicationController
   def destroy_upload
     @document = Document.new(cached_attachment: params[:path])
     @document.set_attachment_from_cached_attachment
+    @document.cached_attachment = nil
     @document.documentable = @documentable
 
     if @document.attachment.destroy
