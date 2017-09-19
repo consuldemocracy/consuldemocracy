@@ -6,8 +6,11 @@ class CensusApi
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
       response = Response.new(get_response_body(document_type, variant))
+      Rails.logger.info response
+      Rails.logger.info "valid" if response.valid?
       return response if response.valid?
     end
+    Rails.logger.info "invalid" 
     response
   end
 
@@ -29,7 +32,7 @@ class CensusApi
     end
 
     def district_code
-      data["billing"]["postcode"]
+      nil#nil#nil#data["billing"]["postcode"]
     end
 
     def gender
@@ -50,10 +53,13 @@ class CensusApi
   private
 
     def get_response_body(document_type, document_number)
-      all  = client.get("customers?per_page=100").parsed_response #client.call(:get_habita_datos, message: request(document_type, document_number)).body
+      Rails.logger.info  "get_response_body"
+      all  = client.get("customers?per_page=100").parsed_response #client.call(:get_habita_datos, message: request(document_type, document_number)).bodyi
       all.each do |a|
-        if document_number ==  a["billing"]["company"]
-          puts  "get_response_body",a
+        Rails.logger.info document_number.to_s
+        Rails.logger.info  a["billing"]["company"].to_s
+        if document_number.to_s ==  a["billing"]["company"].to_s
+          Rails.logger.info a
           return a
         end
       end
@@ -127,7 +133,7 @@ class CensusApi
     end
 
     def is_dni?(document_type)
-      document_type.to_s == "1"
+      false #document_type.to_s == "1"
     end
 
 end

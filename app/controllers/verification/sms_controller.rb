@@ -8,6 +8,7 @@ class Verification::SmsController < ApplicationController
   skip_authorization_check
 
   def new
+    redirect_to_next_path
     @sms = Verification::Sms.new(phone: params[:phone])
   end
 

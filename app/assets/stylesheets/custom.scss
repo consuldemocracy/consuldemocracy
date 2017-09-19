@@ -3,18 +3,22 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
-.top-bar .top-bar-title a{color:#5A1252  ;  padding: 14px;}
-.top-links,.button{background-color:#5A1252 }
-.top-links,.top-bar ,.top-bar-title a {color:#5A1252 !important}
-header,.top-bar{background-color:#C5CCDF !important}
+
+.top-links,.top-bar ,.top-bar-title a {color:#5A1252 }
+/*header,.top-bar{background-color:#C5CCDF}*/
 body{direction:rtl}
 .close-button{left:1rem}
-.advanced-search{float:left;left:0;right:auto;direction:ltr}
+.advanced-search{float:left;left:0;direction:ltr}
 .column{float:right}
-.top-bar ul.menu > li a {color:#5A1252 !important}
-.featured-proposals{background:#B5A0B3   }
-#map{display:none}
-.proposal .supports .button-support{background:#B5A0B3   }
-#comments h3{margin-bottom:2.5rem;}
-
-
+.banner-style-one{ background-color:#B5A0B3}
+.banner-style-two {background-color:#5A1252}
+.banner-style-three{ background-color:#E3D9E1}
+.banner-style-four {background-color:#0b8a7a}
+.banner-style-five {background-color:#C5CCDF}
+.banner-style-six {background-color:#C5CCDF}
+.top-bar .top-bar-title a img {
+    height: 52px;
+    margin-right: 0.75rem;
+    margin-top: 15px;
+    width: 52px;
+}
