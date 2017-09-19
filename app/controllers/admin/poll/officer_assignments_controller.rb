@@ -1,4 +1,4 @@
-class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
+class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll
   before_action :redirect_if_blank_required_params, only: [:by_officer]
