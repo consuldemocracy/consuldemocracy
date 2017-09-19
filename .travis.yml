@@ -8,6 +8,7 @@ before_script:
   - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
   - bundle exec rake db:setup
 script:
+  - "bundle exec rake assets:precompile RAILS_ENV=test"
   - "bundle exec rake knapsack:rspec"
 env:
   global:
