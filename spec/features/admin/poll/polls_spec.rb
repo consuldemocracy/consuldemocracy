@@ -183,7 +183,7 @@ feature 'Admin polls' do
 
       scenario 'Add question to poll', :js do
         poll = create(:poll)
-        question = create(:poll_question, poll: nil, title: 'Should we rebuild the city?')
+        question = create(:poll_question, title: 'Should we rebuild the city?')
 
         visit admin_poll_path(poll)
 
