@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914102634) do
+ActiveRecord::Schema.define(version: 20170915101519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -927,16 +927,18 @@ ActiveRecord::Schema.define(version: 20170914102634) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name",                     limit: 40
-    t.integer "taggings_count",                      default: 0
-    t.integer "debates_count",                       default: 0
-    t.integer "proposals_count",                     default: 0
-    t.integer "spending_proposals_count",            default: 0
+    t.string  "name",                        limit: 40
+    t.integer "taggings_count",                         default: 0
+    t.integer "debates_count",                          default: 0
+    t.integer "proposals_count",                        default: 0
+    t.integer "spending_proposals_count",               default: 0
     t.string  "kind"
-    t.integer "budget/investments_count",            default: 0
+    t.integer "budget/investments_count",               default: 0
+    t.integer "legislation/proposals_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
+  add_index "tags", ["legislation/proposals_count"], name: "index_tags_on_legislation/proposals_count", using: :btree
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
