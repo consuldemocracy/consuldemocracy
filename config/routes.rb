@@ -167,6 +167,10 @@ Rails.application.routes.draw do
     resource :email, controller: "email", only: [:new, :show, :create]
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
+  
+  namespace :tags do
+    get :search
+  end
 
 
   namespace :admin do
