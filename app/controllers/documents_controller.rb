@@ -1,8 +1,8 @@
 class DocumentsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_documentable, except: :destroy
-  before_filter :prepare_new_document, only: [:new, :new_nested]
-  before_filter :prepare_document_for_creation, only: :create
+  before_action :find_documentable, except: :destroy
+  before_action :prepare_new_document, only: [:new, :new_nested]
+  before_action :prepare_document_for_creation, only: :create
 
   load_and_authorize_resource except: :upload
   skip_authorization_check only: :upload
@@ -48,6 +48,7 @@ class DocumentsController < ApplicationController
   def destroy_upload
     @document = Document.new(cached_attachment: params[:path])
     @document.set_attachment_from_cached_attachment
+    @document.cached_attachment = nil
     @document.documentable = @documentable
 
     if @document.attachment.destroy

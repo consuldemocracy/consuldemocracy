@@ -341,7 +341,7 @@ feature 'Budget Investments' do
 
   scenario 'Can not access the community' do
     Setting['feature.community'] = false
-    
+
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget_id: budget.id, id: investment.id)
     expect(page).not_to have_content "Access the community"
