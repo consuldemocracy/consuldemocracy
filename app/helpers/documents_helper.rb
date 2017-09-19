@@ -8,7 +8,7 @@ module DocumentsHelper
     document.errors[:attachment].join(', ') if document.errors.key?(:attachment)
   end
 
-  def bytesToMeg(bytes)
+  def bytes_to_mega(bytes)
     bytes / Numeric::MEGABYTE
   end
 
