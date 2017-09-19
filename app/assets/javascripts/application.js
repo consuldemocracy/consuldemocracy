@@ -63,7 +63,7 @@
 //= require followable
 //= require flaggable
 //= require documentable
-// require imageable
+//= require imageable
 //= require tree_navigator
 //= require custom
 //= require tag_autocomplete

@@ -45,7 +45,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
-      expect(page).to have_css("##{imageable_factory_name}_image_attributes_title[value$='clippy.jpg']")
+      expect(find("##{imageable_factory_name}_image_attributes_title").value).to eq("clippy.jpg")
     end
 
     scenario "Should not update nested image file title with file name after choosing a file when title already defined", :js do
@@ -98,7 +98,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     scenario "Should show nested image errors after unvalid form submit", :js do
-      page.driver.resize_window 1200, 2000
       login_as user
       visit send(path, arguments)
 
@@ -130,7 +129,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         click_link "Remove image"
       end
 
-      expect(page).to have_content "Image was deleted successfully."
+      expect(page).not_to have_css "#nested_image"
     end
 
     scenario "Should show successful notice when resource filled correctly without any nested images", :js do

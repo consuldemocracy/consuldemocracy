@@ -14,6 +14,7 @@
 
   <div class="small-12 column">
     <%= label_tag :title, t("activerecord.attributes.image.title") %>
+
     <%= text_field_tag :title,
                        image.title,
                        placeholder: t("images.new.form.title_placeholder"),
@@ -31,7 +32,7 @@
     <div class="small-6 column action-add attachment-errors">
       <%= render_image_attachment(image) %>
     </div>
-    <div class="small-6 column action-remove">
+    <div class="small-6 column action-remove text-right">
       <%= render_destroy_image_link(image) %>
     </div>
   </div>

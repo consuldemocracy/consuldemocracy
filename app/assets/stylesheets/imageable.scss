@@ -30,8 +30,7 @@
   }
 
   input.direct_upload_image_attachment[type=file],
-  input.direct_upload_document_attachment[type=file],
-  input.direct_upload_attachment[type=file] {
+  input.direct_upload_document_attachment[type=file] {
     display: none;
   }
 
@@ -55,7 +54,6 @@
 
     &.errors {
       background-color: $alert-color;
-      width: 100%;
       margin-top: $line-height / 2;
     }
   }

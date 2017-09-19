@@ -1,45 +1,173 @@
 App.Imageable =
 
   initialize: ->
-    console.log 'App.Imageable initialize'
-    input_files = $('input.direct_upload_attachment[type=file]')
+    inputFiles = $('input.direct_upload_image_attachment[type=file]')
 
-    $.each input_files, (index, file) ->
-      wrapper = $(file).closest(".direct-upload")
-      App.Imageable.watchRemoveImagebutton(wrapper)
+    $.each inputFiles, (index, input) ->
+      App.Imageable.initializeDirectUploadInput(input)
 
-    $("#new_image_link").on 'click', ->
-      $(this).hide()
+    $("#new_image_link").on 'click', -> $(this).hide()
+
+  initializeDirectUploadInput: (input) ->
+
+    inputData = @buildData([], input)
+
+    @initializeRemoveImageLink(input)
+
+    @initializeRemoveCachedImageLink(input, inputData)
+
+    $(input).fileupload
+
+      paramName: "attachment"
+
+      formData: null
+
+      add: (e, data) ->
+        data = App.Imageable.buildFileUploadData(e, data)
+        App.Imageable.clearProgressBar(data)
+        App.Imageable.setProgressBar(data, 'uploading')
+        data.submit()
+
+      change: (e, data) ->
+        $.each data.files, (index, file) ->
+          App.Imageable.setFilename(inputData, file.name)
+
+      fail: (e, data) ->
+        $(data.cachedAttachmentField).val("")
+        App.Imageable.clearFilename(data)
+        App.Imageable.setProgressBar(data, 'errors')
+        App.Imageable.clearInputErrors(data)
+        App.Imageable.setInputErrors(data)
+        App.Imageable.clearPreview(data)
+        $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove()
+        $(data.addAttachmentLabel).show()
+
+      done: (e, data) ->
+        $(data.cachedAttachmentField).val(data.result.cached_attachment)
+        App.Imageable.setTitleFromFile(data, data.result.filename)
+        App.Imageable.setProgressBar(data, 'complete')
+        App.Imageable.setFilename(data, data.result.filename)
+        App.Imageable.clearInputErrors(data)
+        $(data.addAttachmentLabel).hide()
+
+        App.Imageable.setPreview(data)
+        destroyAttachmentLink = $(data.result.destroy_link)
+        $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink)
+        $(destroyAttachmentLink).on 'click', (e) ->
+          e.preventDefault()
+          e.stopPropagation()
+          App.Imageable.doDeleteCachedAttachmentRequest(this.href, data)
+
+      progress: (e, data) ->
+        progress = parseInt(data.loaded / data.total * 100, 10)
+        $(data.progressBar).find('.loading-bar').css 'width', progress + '%'
+        return
+
+  buildFileUploadData: (e, data) ->
+    data = @buildData(data, e.target)
+    return data
+
+  buildData: (data, input) ->
+    wrapper = $(input).closest('.direct-upload')
+    data.input = input
+    data.wrapper = wrapper
+    data.progressBar = $(wrapper).find('.progress-bar-placeholder')
+    data.preview = $(wrapper).find('.image-preview')
+    data.errorContainer = $(wrapper).find('.attachment-errors')
+    data.fileNameContainer = $(wrapper).find('p.file-name')
+    data.destroyAttachmentLinkContainer = $(wrapper).find('.action-remove')
+    data.addAttachmentLabel = $(wrapper).find('.action-add label')
+    data.cachedAttachmentField = $(wrapper).find("#" + $(input).data('cached-attachment-input-field'))
+    data.titleField = $(wrapper).find("#" + $(input).data('title-input-field'))
+    $(wrapper).find('.progress-bar-placeholder').css('display', 'block')
+    return data
+
+  clearFilename: (data) ->
+    $(data.fileNameContainer).text('')
+    $(data.fileNameContainer).hide()
+
+  clearInputErrors: (data) ->
+    $(data.errorContainer).find('small.error').remove()
+
+  clearProgressBar: (data) ->
+    $(data.progressBar).find('.loading-bar').removeClass('complete errors uploading').css('width', "0px")
+
+  clearPreview: (data) ->
+    $(data.wrapper).find('.image-preview').remove()
+
+  setFilename: (data, file_name) ->
+    $(data.fileNameContainer).text(file_name)
+    $(data.fileNameContainer).show()
+
+  setProgressBar: (data, klass) ->
+    $(data.progressBar).find('.loading-bar').addClass(klass)
+
+  setTitleFromFile: (data, title) ->
+    if $(data.titleField).val() == ""
+      $(data.titleField).val(title)
+
+  setInputErrors: (data) ->
+    errors = '<small class="error">' + data.jqXHR.responseJSON.errors + '</small>'
+    $(data.errorContainer).append(errors)
+
+  setPreview: (data) ->
+    image_preview = '<div class="small-12 column text-center image-preview"><figure><img src="' + data.result.attachment_url + '" class="cached-image"/></figure></div>'
+    if $(data.preview).length > 0
+      $(data.preview).replaceWith(image_preview)
+    else
+      $(image_preview).insertBefore($(data.wrapper).find(".attachment-actions"))
+      data.preview = $(data.wrapper).find('.image-preview')
 
   watchRemoveImagebutton:  (wrapper) ->
-    console.log 'App.Imageable watchRemoveDocumentbutton'
     remove_image_button = $(wrapper).find('a.delete[href="#"]')
     $(remove_image_button).on 'click', (e) ->
       e.preventDefault()
       $(wrapper).remove()
       $('#new_image_link').show()
 
-  uploadNestedImage: (id, nested_image, result) ->
-    $('#' + id).replaceWith(nested_image)
-    @updateLoadingBar(id, result)
-    @initialize()
+  doDeleteCachedAttachmentRequest: (url, data) ->
+    $.ajax
+      type: "POST"
+      url: url
+      dataType: "json"
+      data: { "_method": "delete" }
+      complete: ->
+        $(data.cachedAttachmentField).val("")
+        $(data.addAttachmentLabel).show()
 
-  uploadPlainImage: (id, nested_image, result) ->
-    $('#' + id).replaceWith(nested_image)
-    @updateLoadingBar(id, result)
-    @initialize()
+        App.Imageable.clearFilename(data)
+        App.Imageable.clearInputErrors(data)
+        App.Imageable.clearProgressBar(data)
+        App.Imageable.clearPreview(data)
 
-  updateLoadingBar: (id, result) ->
-    if result
-      $('#' + id).find('.loading-bar').addClass 'complete'
-    else
-      $('#' + id).find('.loading-bar').addClass 'errors'
-    $('#' + id).find('.progress-bar-placeholder').css('display','block')
+        if $(data.input).data('nested-image') == true
+          $(data.wrapper).remove()
+          $('#new_image_link').show()
+        else
+          $(data.destroyAttachmentLinkContainer).find('a.delete').remove()
 
-  new: (nested_fields) ->
-    $(".images-list").append(nested_fields)
+  initializeRemoveImageLink: (input) ->
+    wrapper = $(input).closest(".direct-upload")
+    remove_image_link = $(wrapper).find('a.remove-nested-field')
+    $(remove_image_link).on 'click', (e) ->
+      e.preventDefault()
+      $(wrapper).remove()
+      $('#new_image_link').show()
+
+  initializeRemoveCachedImageLink: (input, data) ->
+    wrapper = $(input).closest(".direct-upload")
+    remove_image_link = $(wrapper).find('a.remove-cached-attachment')
+    $(remove_image_link).on 'click', (e) ->
+      e.preventDefault()
+      e.stopPropagation()
+      App.Imageable.doDeleteCachedAttachmentRequest(this.href, data)
+
+  new: (nested_field) ->
+    nested_field = $(nested_field)
+    $(".images-list").append(nested_field)
+    input = nested_field.find("input[type='file']")
+    @initializeDirectUploadInput(input)
     $("#new_image_link").hide()
-    @initialize()
 
   destroyNestedImage: (id, notice) ->
     $('#' + id).remove()

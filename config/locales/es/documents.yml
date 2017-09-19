@@ -19,6 +19,9 @@ es:
         note: 'Añade un documento la propuesta de inversión: %{title}.'
       proposal:
         note: 'Añade un documento a la propuesta: %{title}.'
+      form:
+        title_placeholder: Añade un título descriptivo para el documento
+
     recommendations_title: Consejos para subir archivos
     recommendation_one_html: Puedes subir hasta un máximo de <strong>%{max_documents_allowed} documentos</strong>
     recommendation_two_html: Sólo puedes subir <strong>archivos %{accepted_content_types}</strong>.

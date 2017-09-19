@@ -19,6 +19,9 @@ en:
         note: 'Add new document to your investment project: %{title}'
       proposal:
         note: 'Add new document to your proposal: %{title}'
+      form:
+        title_placeholder: Add a descriptive title for the document
+
     recommendations_title: File upload tips
     recommendation_one_html: You can upload up to a <strong>maximum of %{max_documents_allowed} documents</strong>.
     recommendation_two_html: You can upload <strong>%{accepted_content_types}</strong> files.

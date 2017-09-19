@@ -243,8 +243,6 @@ def documentable_attach_new_file(documentable_factory_name, index, path, success
       expect(page).to have_css ".loading-bar.errors"
     end
   end
-
-
 end
 
 def documentable_fill_new_valid_proposal

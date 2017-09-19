@@ -28,8 +28,8 @@
     background-color: $light-gray;
   }
 
-  .js-document-attachment,
-  input.direct_upload_image_attachment[type=file] {
+  input.direct_upload_image_attachment[type=file],
+  .js-document-attachment{
     display: none;
   }
 

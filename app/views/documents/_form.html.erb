@@ -13,10 +13,10 @@
     <%= f.hidden_field :cached_attachment %>
 
     <div class="small-12 column">
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: t("documents.new.form.title_placeholder") %>
     </div>
 
-    <div class="small-12 column actions">
+    <div class="small-12 column attachment-actions">
       <div class="small-6 column action-add attachment-errors">
         <%= f.label :attachment, t("documents.form.attachment_label"), class: 'button hollow' %>
         <%= f.file_field :attachment,

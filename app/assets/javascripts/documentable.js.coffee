@@ -28,7 +28,7 @@ App.Documentable =
 
       change: (e, data) ->
         $.each data.files, (index, file) ->
-          App.Documentable.setFilename(data, file)
+          App.Documentable.setFilename(inputData, file)
 
       fail: (e, data) ->
         $(data.cachedAttachmentField).val("")
@@ -47,9 +47,9 @@ App.Documentable =
         App.Documentable.clearInputErrors(data)
         $(data.addAttachmentLabel).hide()
 
-        $(data.destroyAttachmentLinkContainer).html(data.result.destroy_link)
-        data.destroyAttachmentLinkContainer = $(data.wrapper).find('.action-remove .remove-cached-attachment')
-        $(data.destroyAttachmentLinkContainer).on 'click', (e) ->
+        destroyAttachmentLink = $(data.result.destroy_link)
+        $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink)
+        $(destroyAttachmentLink).on 'click', (e) ->
           e.preventDefault()
           e.stopPropagation()
           App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)

@@ -56,7 +56,7 @@ module ImagesHelper
               method: :delete,
               remote: true,
               data: { confirm: t('images.actions.destroy.confirm') },
-              class: "delete float-right"
+              class: "delete remove-image"
     elsif !image.persisted? && image.cached_attachment.present?
       link_to t('images.form.delete_button'),
               destroy_upload_images_path(path: image.cached_attachment,
@@ -65,18 +65,18 @@ module ImagesHelper
                                             imageable_id: image.imageable_id),
               method: :delete,
               remote: true,
-              class: "delete float-right"
+              class: "delete remove-cached-attachment"
     else
       link_to t('images.form.delete_button'),
               "#",
-              class: "delete float-right remove-nested"
+              class: "delete remove-nested"
     end
   end
 
   def render_image_attachment(image)
     html = file_field_tag :attachment,
                           accept: imageable_accepted_content_types_extensions,
-                          class: 'direct_upload_attachment',
+                          class: 'direct_upload_image_attachment',
                           data: {
                             url: image_direct_upload_url(image),
                             cached_attachment_input_field: image_nested_field_id(image, :cached_attachment),

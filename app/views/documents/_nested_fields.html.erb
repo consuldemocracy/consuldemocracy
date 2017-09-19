@@ -16,7 +16,8 @@
     <%= label_tag :title, t("activerecord.attributes.document.title") %>
 
     <%= text_field_tag :title,
-                       document.errors.has_key?(:attachment) ? "" : document.title,
+                       document.title,
+                       placeholder: t("documents.new.form.title_placeholder"),
                        name: document_nested_field_name(document, index, :title),
                        id: document_nested_field_id(document, index, :title),
                        class: "document-title" %>

@@ -30,11 +30,10 @@
                                                    "direct_upload[resource_id]": @image.imageable_id,
                                                    "direct_upload[resource_relation]": "image"),
                            cached_attachment_input_field: "image_cached_attachment",
-                           title_input_field: "image_title",
-                           multiple: false
+                           title_input_field: "image_title"
                          } %>
       </div>
-      <div class="small-6 column action-remove">
+      <div class="small-6 column action-remove text-right">
         <% if @image.cached_attachment.present? %>
           <%= link_to t('images.form.delete_button'),
                       direct_upload_destroy_url("direct_upload[resource_type]": @image.imageable_type,
@@ -43,7 +42,7 @@
                                                 "direct_upload[cached_attachment]": @image.cached_attachment),
                       method: :delete,
                       remote: true,
-                      class: "delete float-right" %>
+                      class: "delete remove-cached-attachment" %>
         <% end %>
       </div>
     </div>
