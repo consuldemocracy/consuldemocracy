@@ -211,7 +211,7 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
       attach_image("spec/fixtures/files/clippy.jpg", true)
 
-      expect(page).to have_css("input[name='image[cached_attachment]'][value$='clippy.jpg']", visible: false)
+      expect(page).to have_css("input[name='image[cached_attachment]'][value$='.jpg']", visible: false)
     end
 
     scenario "Should not update image cached_attachment field after invalid file upload", :js do

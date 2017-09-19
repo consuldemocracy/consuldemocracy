@@ -8,8 +8,9 @@ class Image < ActiveRecord::Base
   ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg)
 
   has_attached_file :attachment, styles: { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" },
-                                 path: ":rails_root/public/system/:class/:prefix/:style/:filename",
-                                 url: "/system/:class/:prefix/:style/:filename"
+                                 path: ":rails_root/public/system/:class/:prefix/:style/:hash.:extension",
+                                 url: "/system/:class/:prefix/:style/:hash.:extension",
+                                 hash_secret: Rails.application.secrets.secret_key_base
   attr_accessor :cached_attachment
 
   belongs_to :user

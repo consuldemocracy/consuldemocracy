@@ -131,7 +131,7 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
 
-      expect(page).to have_css("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]'][value$='empty.pdf']", visible: false)
+      expect(page).to have_css("input[name='#{documentable_factory_name}[documents_attributes][0][cached_attachment]'][value$='.pdf']", visible: false)
     end
 
     scenario "Should not update document cached_attachment field after unvalid file upload", :js do

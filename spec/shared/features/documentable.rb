@@ -251,7 +251,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
 
       attach_document("spec/fixtures/files/empty.pdf", true)
 
-      expect(page).to have_css("input[name='document[cached_attachment]'][value$='empty.pdf']", visible: false)
+      expect(page).to have_css("input[name='document[cached_attachment]'][value$='.pdf']", visible: false)
     end
 
     scenario "Should not show 'Choose document' button after valid upload", :js do

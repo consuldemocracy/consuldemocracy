@@ -85,7 +85,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
-      expect(page).to have_selector("input[name='#{imageable_factory_name}[image_attributes]cached_attachment'][value$='clippy.jpg']", visible: false)
+      expect(page).to have_selector("input[name='#{imageable_factory_name}[image_attributes]cached_attachment'][value$='.jpg']", visible: false)
     end
 
     scenario "Should not update image cached_attachment field after unvalid file upload", :js do

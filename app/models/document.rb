@@ -1,7 +1,9 @@
 class Document < ActiveRecord::Base
   include DocumentsHelper
   include DocumentablesHelper
-  has_attached_file :attachment, path: ":rails_root/public/system/:class/:prefix/:style/:filename"
+  has_attached_file :attachment, path: ":rails_root/public/system/:class/:prefix/:style/:hash.:extension",
+                                 url: "/system/:class/:prefix/:style/:hash.:extension",
+                                 hash_secret: Rails.application.secrets.secret_key_base
   attr_accessor :cached_attachment
 
   belongs_to :user
