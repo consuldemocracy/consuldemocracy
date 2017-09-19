@@ -21,7 +21,7 @@ data:
     # - config/locales/**/*.%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
-    - config/locales/custom/%{locale}/custom.yml
+    - config/locales/custom/%{locale}/*.yml
     - config/locales/%{locale}/general.yml
     - config/locales/%{locale}/activerecord.yml
     - config/locales/%{locale}/activemodel.yml

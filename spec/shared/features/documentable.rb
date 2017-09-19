@@ -60,7 +60,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       login_as(user)
 
       visit send(documentable_path, arguments)
-      click_link  "Upload document"
+      click_link "Upload document"
 
       expect(page).to have_selector("h1", text: "Upload document")
     end
@@ -249,6 +249,41 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       sleep 1
 
       expect(find("input[name='document[cached_attachment]']", visible: false).value).to include("empty.pdf")
+    end
+
+    scenario "Should not show 'Choose document' button after valid upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(page).not_to have_content "Choose document"
+    end
+
+    scenario "Should show 'Remove document' button after valid upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+
+      expect(page).to have_link("Remove document")
+    end
+
+    scenario "Should show 'Choose document' button after remove valid upload", :js do
+      login_as documentable.author
+      visit new_document_path(documentable_type: documentable.class.name,
+                              documentable_id: documentable.id)
+
+      attach_file :document_attachment, "spec/fixtures/files/empty.pdf", make_visible: true
+      sleep 1
+      click_link "Remove document"
+      sleep 1
+
+      expect(page).to have_content "Choose document"
     end
 
     scenario "Should not update document cached_attachment field after unvalid file upload", :js do

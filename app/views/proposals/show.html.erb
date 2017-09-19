@@ -16,24 +16,6 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
-        <% if can?(:create, @document) && @proposal.documents.size < Proposal.max_documents_allowed %>
-          <%= link_to t("documents.upload_document"),
-                      new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
-                      class: 'button hollow float-right' %>
-        <% end %>
-
-        <% if author_of?(@proposal, current_user) %>
-          <%= link_to t("proposals.show.send_notification"),
-                      new_proposal_notification_path(proposal_id: @proposal.id),
-                      class: 'button hollow float-right' %>
-        <% end %>
-
-        <% if current_user && @proposal.editable_by?(current_user) %>
-          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow float-right' do %>
-            <%= t("proposals.show.edit_proposal_link") %>
-          <% end %>
-        <% end %>
-
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
           <div data-alert class="callout alert margin-top proposal-retired">
@@ -122,6 +104,35 @@
       </div>
 
       <aside class="small-12 medium-3 column">
+        <% if can_create_document?(@document, @proposal) || author_of_proposal?(@proposal) || current_editable?(@proposal) %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("proposals.show.author") %></h2>
+          <div class="show-actions-menu">
+            <% if can_create_document?(@document, @proposal) %>
+              <%= link_to new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
+                          class: 'button hollow expanded' do %>
+                          <span class="icon-document"></span>
+                          <%= t("documents.upload_document") %>
+              <% end %>
+            <% end %>
+
+            <% if author_of_proposal?(@proposal) %>
+              <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
+                          class: 'button hollow expanded' do %>
+                          <span class="icon-no-notification"></span>
+                          <%= t("proposals.show.send_notification") %>
+              <% end %>
+            <% end %>
+
+            <% if current_editable?(@proposal) %>
+              <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
+                <span class="icon-edit"></span>
+                <%= t("proposals.show.edit_proposal_link") %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@proposal) %>_votes">
