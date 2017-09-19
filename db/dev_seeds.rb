@@ -585,7 +585,7 @@ print "Creating Poll Questions from Proposals"
 3.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No")
+  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end
@@ -596,7 +596,7 @@ print "Creating Successful Proposals"
 10.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No")
+  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end
