@@ -10,7 +10,7 @@ nl:
     menu:
       voters: Validate document
       recounts: Store recount
-      total_recounts: Final recounts and results
+      total_recounts: Total recounts and results
     polls:
       index:
         title: Poll list
