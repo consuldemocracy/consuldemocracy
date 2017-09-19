@@ -129,28 +129,31 @@
               <% end %>
             <% end %>
 
-            <% if current_editable?(@proposal) %>
-              <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
-                <span class="icon-edit"></span>
-                <%= t("proposals.show.edit_proposal_link") %>
-              <% end %>
-            <% end %>
-
             <% if can?(:create, @image) %>
               <%= link_to new_image_path(imageable_id: @proposal, imageable_type: @proposal.class.name, from: request.url),
-                          class: 'button hollow float-right' do %>
-                <%= t("images.upload_image") %>
+                          class: 'button hollow expanded' do %>
+                          <span class="icon-document"></span>
+                          <%= t("images.upload_image") %>
               <% end %>
             <% end %>
 
             <% if can_destroy_image?(@proposal.image, @proposal) %>
               <%= link_to image_path(@proposal.image, from: request.url),
                           method: :delete,
-                          class: 'button hollow float-right',
-                          data: { confirm: 'Are you sure?' } do %>
-                <% t("images.remove_image") %>
+                          class: 'button hollow expanded',
+                          data: { confirm: t('images.actions.destroy.confirm') } do %>
+                          <span class="icon-document"></span>
+                          <%= t("images.remove_image") %>
               <% end %>
             <% end %>
+
+            <% if current_editable?(@proposal) %>
+              <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
+                          <span class="icon-edit"></span>
+                          <%= t("proposals.show.edit_proposal_link") %>
+              <% end %>
+            <% end %>
+
           </div>
         <% end %>
 

@@ -8,7 +8,7 @@ module DocumentablesHelper
     documentable.class.max_documents_allowed
   end
 
-  def max_file_size(documentable)
+  def max_file_size(documentable_class)
     bytes_to_mega(documentable_class.max_file_size)
   end
 
