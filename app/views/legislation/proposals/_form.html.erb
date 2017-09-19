@@ -1,10 +1,12 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
   <%= render 'shared/errors', resource: @proposal %>
 
+  <%= f.hidden_field(:legislation_process_id, :value => params[:process_id]) %>
+
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("proposals.form.proposal_title") %>
-      <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+      <%= f.text_field :title, maxlength: Legislation::Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
     </div>
     <div id="js-suggest"></div>
 
@@ -15,7 +17,7 @@
       <p class="help-text" id="question-help-text">
         <%= t("proposals.form.proposal_question_example_html") %>
       </p>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length,
+      <%= f.text_field :question, maxlength: Legislation::Proposal.question_max_length,
                                   placeholder: t("proposals.form.proposal_question"),
                                   label: false,
                                   aria: {describedby: "question-help-text"} %>
@@ -31,7 +33,7 @@
 
     <div class="ckeditor small-12 column">
       <%= f.label :description, t("proposals.form.proposal_text") %>
-      <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+      <%= f.cktext_area :description, maxlength: Legislation::Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
     <div class="small-12 column">
@@ -46,7 +48,7 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
-    <div class="documents small-12 column" data-max-documents="<%= Proposal.max_documents_allowed %>">
+    <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>">
       <%= render 'documents/nested_documents', documentable: @proposal %>
     </div>
 

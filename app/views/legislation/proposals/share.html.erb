@@ -34,7 +34,7 @@
         <% end %>
 
         <div class="small margin-bottom">
-          <%= link_to t("proposals.proposal.share.view_proposal"), proposal_path(@proposal) %>
+          <%= link_to t("proposals.proposal.share.view_proposal"), legislation_process_proposal_path(@proposal.legislation_process_id, @proposal) %>
         </div>
       </div>
 
