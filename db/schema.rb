@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920130836) do
+ActiveRecord::Schema.define(version: 20170920153849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -672,6 +672,12 @@ ActiveRecord::Schema.define(version: 20170920130836) do
     t.text    "amount_log",                default: ""
     t.text    "officer_assignment_id_log", default: ""
     t.text    "author_id_log",             default: ""
+    t.integer "null_amount"
+    t.integer "total_amount"
+    t.integer "white_amount"
+    t.text    "null_amount_log",           default: ""
+    t.text    "total_amount_log",          default: ""
+    t.text    "white_amount_log",          default: ""
   end
 
   add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
