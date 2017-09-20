@@ -155,12 +155,12 @@ es:
         text: "Consulta los datos detallados de la votación de proyectos."
         link: "Ver estadísticas de participación"
         alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-      geocraft:
-        label: "Descarga"
-        title: "Haz Madrid"
-        text: "Imagina y crea tu propio Madrid en este entorno que recrea la Plaza Santa Ana de la capital."
-        link: "Más información sobre Haz Madrid"
-        alt: "Imagen del entorno Geocraft que representa la Plaza Santa Ana de Madrid"
+      journalism:
+        label: "Concurso"
+        title: "Concurso de periodismo de datos y Datatón"
+        text: "Participa con historias y proyectos creados a partir de datos abiertos del Ayuntamiento de Madrid."
+        link: "Más información sobre el concurso"
+        alt: "Imagen del cartel del Concurso de periodismo de datos y Datatón"
       once_plazas:
         label: "Proceso"
         title: "Once Plazas"
