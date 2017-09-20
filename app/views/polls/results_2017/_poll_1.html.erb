@@ -1,53 +1,80 @@
-<h3 id="1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</h3>
+        <h3 id="1">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</h3>
 
-<% @poll_1.questions.order(id: :asc).each do |question| %>
   <table>
     <caption>
-      <%= question.title %>
+      ¿Estás de acuerdo con la propuesta “Billete único para el transporte público”?
     </caption>
-    <% answers_votes = {} %>
-    <% max_i = 0 %>
-    <% question.valid_answers.each_with_index do |answer, i| %>
-      <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
-      <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
-    <% end %>
 
     <thead>
       <tr>
-        <% answers_votes.keys.each_with_index do |answer, i| %>
-          <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
-        <% end %>
+          <th scope="col" class="win">Sí</th>
+          <th scope="col" class="">No</th>
         <th scope="col">EN BLANCO</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <% answers_votes.values.each_with_index do |votes, i| %>
-          <td  class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_1)) %>%)</td>
-        <% end %>
-        <% whites = total_votes_for_poll(@poll_1) - answers_votes.values.sum %>
-        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_1)) %>%)</td>
+          <td  class="win">198905 (93,94%)</td>
+          <td  class="">6631 (3,13%)</td>
+        <td>6189 (2,92%)</td>
       </tr>
     </tbody>
   </table>
 
   <p>
-    <% if question.id == 1 %>
-      <%= link_to "https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico" do %>
+      <a href="https://decide.madrid.es/proposals/9-billete-unico-para-el-transporte-publico">
         Ir a la propuesta "Billete único para el transporte público"
-      <% end %>
-    <% elsif question.id == 2 %>
-      <%= link_to "https://decide.madrid.es/proposals/199-madrid-100-sostenible" do %>
+</a>  </p>
+  <table>
+    <caption>
+      ¿Estás de acuerdo con la propuesta “Madrid 100% Sostenible”?
+    </caption>
+
+    <thead>
+      <tr>
+          <th scope="col" class="win">Sí</th>
+          <th scope="col" class="">No</th>
+        <th scope="col">EN BLANCO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td  class="win">188665 (89,11%)</td>
+          <td  class="">14783 (6,98%)</td>
+        <td>8277 (3,91%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+      <a href="https://decide.madrid.es/proposals/199-madrid-100-sostenible">
         Ir a la propuesta "Madrid 100% Sostenible"
-      <% end %>
-    <% elsif question.id == 3 %>
-      <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/38" do %>
+</a>  </p>
+  <table>
+    <caption>
+      De los dos proyectos finalistas para reformar la Plaza de España ¿cuál prefieres que se lleve a cabo?
+    </caption>
+
+    <thead>
+      <tr>
+          <th scope="col" class="win">Proyecto X</th>
+          <th scope="col" class="">Proyecto Y</th>
+        <th scope="col">EN BLANCO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td  class="win">110076 (51,99%)</td>
+          <td  class="">63543 (30,01%)</td>
+        <td>38106 (18%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+      <a href="https://decide.madrid.es/proceso/plaza-espana/proyectos/38">
         Ir a "Proyecto X: Welcome mother Nature"
-      <% end %>
-      <br>
-      <%= link_to "https://decide.madrid.es/proceso/plaza-espana/proyectos/22" do %>
+</a>      <br>
+      <a href="https://decide.madrid.es/proceso/plaza-espana/proyectos/22">
         Ir a "Proyecto Y: UN PASEO POR LA CORNISA"
-      <% end %>
-    <% end %>
-  </p>
-<% end %>
+</a>  </p>

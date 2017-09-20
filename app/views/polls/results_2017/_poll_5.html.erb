@@ -1,33 +1,42 @@
 <h3 id="5">Nombre de distrito y Parque Felipe VI en Hortaleza</h3>
 
-<% @poll_5.questions.order(id: :asc).each do |question| %>
-  <table>
-    <caption>
-      <%= question.title %>
-    </caption>
-    <% answers_votes = {} %>
-    <% max_i = 0 %>
-    <% question.valid_answers.each_with_index do |answer, i| %>
-      <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
-      <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
-    <% end %>
+ <table>
+   <caption>
+     ¿Cambiamos el nombre del distrito de Hortaleza a Hortaleza-Canillas?
+   </caption>
 
-    <thead>
-      <tr>
-        <% answers_votes.keys.each_with_index do |answer, i| %>
-          <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
-        <% end %>
-        <th scope="col">EN BLANCO</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% answers_votes.values.each_with_index do |votes, i| %>
-          <td class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_5)) %>%)</td>
-        <% end %>
-        <% whites = total_votes_for_poll(@poll_5) - answers_votes.values.sum %>
-        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_5)) %>%)</td>
-      </tr>
-    </tbody>
-  </table>
-<% end %>
+   <thead>
+     <tr>
+         <th scope="col" class="">Sí</th>
+         <th scope="col" class="win">No</th>
+       <th scope="col">EN BLANCO</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+         <td class="">1169 (31%)</td>
+         <td class="win">2473 (65,58%)</td>
+       <td>129 (3,42%)</td>
+     </tr>
+   </tbody>
+ </table>
+ <table>
+   <caption>
+     ¿Debe retomar el actual Parque de Felipe VI a su nombre original Parque Forestal de Valdebebas?
+   </caption>
+
+   <thead>
+     <tr>
+         <th scope="col" class="win">Sí</th>
+         <th scope="col" class="">No</th>
+       <th scope="col">EN BLANCO</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+         <td class="win">2528 (67,04%)</td>
+         <td class="">1156 (30,65%)</td>
+       <td>87 (2,31%)</td>
+     </tr>
+   </tbody>
+ </table>

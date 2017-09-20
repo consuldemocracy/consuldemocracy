@@ -1,20 +1,20 @@
-<% provide :title,             t("meta_tags.polls_results.title") %>
-<% provide :meta_description,  t("meta_tags.polls_results.description") %>
+<% provide :title,             t("first_2017_poll.results.title") %>
+<% provide :meta_description,  t("first_2017_poll.results.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: first_voting_url %>
 <% end %>
 <% provide :social_media_meta_tags do %>
   <!-- Facebook -->
   <meta property="og:url"            content="<%= first_voting_url %>" />
-  <meta property="og:title"          content="<%= t("meta_tags.polls_results.title") %>" />
+  <meta property="og:title"          content="<%= t("first_2017_poll.results.title") %>" />
   <meta property="og:image"          content="<%= image_url '/social_media_polls_results.png' %>" />
-  <meta property="og:description"    content="<%= t("meta_tags.polls_results.description") %>" />
+  <meta property="og:description"    content="<%= t("first_2017_poll.results.description") %>" />
   <!-- Twitter -->
   <meta name="twitter:card"          content="summary" />
   <meta name="twitter:site"          content="@DecideMadrid" />
-  <meta name="twitter:title"         content="<%= t("meta_tags.polls_results.title") %>" />
+  <meta name="twitter:title"         content="<%= t("first_2017_poll.results.title") %>" />
   <meta name="twitter:image"         content="<%= image_url '/social_media_polls_results_twitter.png' %>" />
-  <meta name="twitter:description"   content="<%= t("meta_tags.polls_results.description") %>" />
+  <meta name="twitter:description"   content="<%= t("first_2017_poll.results.description") %>" />
 <% end %>
 
 <div class="polls-results">
@@ -22,15 +22,15 @@
     <div class="row">
       <div class="small-12 column">
         <h1 class="inline-block">
-          RESULTADOS
-          <span>PRIMERA VOTACIÓN CIUDADANA</span>
-          <span>13-19 DE FEBRERO 2017</span>
+          <%= t("polls.results").upcase %>
+          <span><%= t("first_2017_poll.title") %></span>
+          <span><%= t("first_2017_poll.date") %></span>
         </h1>
 
         <div class="more-info">
-          <p>Resultados con el 100% de los votos escrutados</p>
+          <p><%= t("polls.full_recount_results") %></p>
           <div class="text-right">
-            <%= link_to "Más información sobre las votaciones", more_info_polls_path %>
+            <%= link_to t("polls.more_poll_info"), more_info_polls_path %>
           </div>
         </div>
       </div>
