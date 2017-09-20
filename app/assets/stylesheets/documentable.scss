@@ -3,18 +3,22 @@
 }
 
 .document-form {
+
   .document .file-name {
     margin-top: 0;
   }
+
   .progress-bar-placeholder {
     margin-bottom: 15px;
   }
+
   .document .loading-bar.errors {
     margin-top: $line-height * 2;
   }
 }
 
 .document {
+
   .button {
     font-weight: normal;
   }
