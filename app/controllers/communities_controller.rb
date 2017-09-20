@@ -7,7 +7,7 @@ class CommunitiesController < ApplicationController
   skip_authorization_check
 
   def show
-    redirect_to root_path unless Setting['feature.community'].present?
+    redirect_to root_path if Setting['feature.community'].blank?
   end
 
   private

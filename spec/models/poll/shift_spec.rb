@@ -43,7 +43,7 @@ describe :shift do
 
       officer_assignments = Poll::OfficerAssignment.all
       expect(officer_assignments.count).to eq(2)
-      
+
       oa1 = officer_assignments.first
       oa2 = officer_assignments.second
 
@@ -59,10 +59,10 @@ describe :shift do
   end
 
   describe "#persist_data" do
-    
-    let(:user) { create(:user, username: "Ana", email: "ana@example.com") } 
-    let(:officer) { create(:poll_officer, user: user) } 
-    let(:shift) { create(:poll_shift, officer: officer) } 
+
+    let(:user) { create(:user, username: "Ana", email: "ana@example.com") }
+    let(:officer) { create(:poll_officer, user: user) }
+    let(:shift) { create(:poll_shift, officer: officer) }
 
     it "should maintain officer data after destroying associated user" do
       shift.officer.user.destroy
@@ -79,5 +79,5 @@ describe :shift do
     end
 
   end
-  
+
 end

@@ -60,7 +60,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
       login_as(user)
 
       visit send(documentable_path, arguments)
-      click_link  "Upload document"
+      click_link "Upload document"
 
       expect(page).to have_selector("h1", text: "Upload document")
     end

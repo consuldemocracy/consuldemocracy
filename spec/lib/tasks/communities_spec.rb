@@ -41,7 +41,7 @@ describe 'Communities Rake' do
 
         expect(investment.community).to be_present
       end
-      
+
     end
 
   end
