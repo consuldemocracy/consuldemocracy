@@ -23,7 +23,10 @@ $sidebar-active: #f4fcd0;
   h2 {
     font-weight: 100;
     margin-bottom: $line-height;
-    text-transform: uppercase;
+
+    &.title {
+      text-transform: uppercase;
+    }
   }
 
   .back {
