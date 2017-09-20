@@ -220,7 +220,7 @@ en:
   polls:
     results: Results
     stats: Statistics
-    stats: Information
+    information: Information
     more_poll_info: More information about polls
     full_recount_results: Results with 100% of the votes counted
   first_2017_poll:

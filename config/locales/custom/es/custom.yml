@@ -220,7 +220,7 @@ es:
   polls:
     results: Resultados
     stats: Estadísticas
-    stats: Información
+    information: Información
     more_poll_info: Más información sobre las votaciones
     full_recount_results: Resultados con el 100% de los votos escrutados
   first_2017_poll:
@@ -232,6 +232,6 @@ es:
     results:
       title: "Resultados de la primera votación ciudadana"
       description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
-    polls_stats:
+    stats:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
