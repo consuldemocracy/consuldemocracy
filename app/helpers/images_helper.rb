@@ -69,7 +69,7 @@ module ImagesHelper
     else
       link_to t('images.form.delete_button'),
               "#",
-              class: "delete remove-nested"
+              class: "delete remove-nested-field"
     end
   end
 
