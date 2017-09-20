@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920153849) do
+ActiveRecord::Schema.define(version: 20170920155131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -664,12 +664,10 @@ ActiveRecord::Schema.define(version: 20170920153849) do
 
   create_table "poll_recounts", force: :cascade do |t|
     t.integer "author_id"
-    t.integer "amount"
     t.string  "origin"
     t.date    "date"
     t.integer "booth_assignment_id"
     t.integer "officer_assignment_id"
-    t.text    "amount_log",                default: ""
     t.text    "officer_assignment_id_log", default: ""
     t.text    "author_id_log",             default: ""
     t.integer "null_amount"
