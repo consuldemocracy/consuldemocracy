@@ -9,7 +9,7 @@ end
 set :default_shell, 'bash -l'
 
 set :rails_env, fetch(:stage)
-set :rvm1_ruby_version, '2.3.3'
+set :rvm1_ruby_version, '2.3.4'
 
 set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)

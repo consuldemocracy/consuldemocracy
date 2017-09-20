@@ -425,7 +425,7 @@ Rails.application.routes.draw do
   get '/graphql', to: 'graphql#query'
   post '/graphql', to: 'graphql#query'
 
-  if Rails.env.development?
+  if Rails.env.development? || Rails.env.staging?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
