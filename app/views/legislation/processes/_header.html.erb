@@ -1,5 +1,5 @@
 <% if header == :small %>
-  <div class="legislation-hero jumbo grey-heading" data-target="legislation-header-small">
+  <div class="legislation-hero jumbo grey-heading">
     <div class="row headline">
       <div class="small-12 medium-8 column">
         <h3 class="headline-small"><%= process.title %></h3>
@@ -29,7 +29,6 @@
     <% end %>
   </div>
 
-  <%= render 'legislation/processes/header_full', process: @process, hidden: true %>
 <% else %>
-  <%= render 'legislation/processes/header_full', process: @process, hidden: false %>
+  <%= render 'legislation/processes/header_full', process: @process %>
 <% end %>
