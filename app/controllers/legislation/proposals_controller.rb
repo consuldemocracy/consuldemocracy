@@ -20,6 +20,7 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   def show
     super
+    set_legislation_proposal_votes(@process.proposals)
     @notifications = @proposal.notifications
     @document = Document.new(documentable: @proposal)
     redirect_to legislation_process_proposal_path(params[:process_id], @proposal),
@@ -79,18 +80,18 @@ class Legislation::ProposalsController < Legislation::BaseController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:legislation_process_id, :title, :question, :summary, :description, :external_url, :video_url,
+      params.require(:legislation_proposal).permit(:legislation_process_id, :title, :question, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id,
                                        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id] )
     end
 
     def retired_params
-      params.require(:proposal).permit(:retired_reason, :retired_explanation)
+      params.require(:legislation_proposal).permit(:retired_reason, :retired_explanation)
     end
 
     def valid_retired_params?
-      @proposal.errors.add(:retired_reason, I18n.t('errors.messages.blank')) if params[:proposal][:retired_reason].blank?
-      @proposal.errors.add(:retired_explanation, I18n.t('errors.messages.blank')) if params[:proposal][:retired_explanation].blank?
+      @proposal.errors.add(:retired_reason, I18n.t('errors.messages.blank')) if params[:legislation_proposal][:retired_reason].blank?
+      @proposal.errors.add(:retired_explanation, I18n.t('errors.messages.blank')) if params[:legislation_proposal][:retired_explanation].blank?
       @proposal.errors.empty?
     end
 
@@ -102,7 +103,7 @@ class Legislation::ProposalsController < Legislation::BaseController
       'proposal'
     end
 
-    def set_legislation_proposal_votes(proposals)
+    def set_featured_proposal_votes(proposals)
       @featured_proposals_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 

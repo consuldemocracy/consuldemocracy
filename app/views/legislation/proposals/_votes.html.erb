@@ -16,7 +16,7 @@
   </span>
 
   <div class="in-favor">
-    <% if voted_for?(@proposal_votes, proposal) %>
+    <% if voted_for?(@legislation_proposal_votes, proposal) %>
       <div class="supported callout success">
         <%= t("proposals.proposal.already_supported") %>
       </div>
@@ -58,7 +58,7 @@
     </div>
   <% end %>
 
-  <% if voted_for?(@proposal_votes, proposal) && setting['twitter_handle'] %>
+  <% if voted_for?(@legislation_proposal_votes, proposal) && setting['twitter_handle'] %>
     <div class="share-supported">
       <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
     </div>

@@ -10,7 +10,7 @@
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @legislation_proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
@@ -29,7 +29,7 @@
         <% end %>
 
         <% if current_user && @proposal.editable_by?(current_user) %>
-          <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow float-right' do %>
+          <%= link_to edit_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal), class: 'edit-proposal button hollow float-right' do %>
             <%= t("proposals.show.edit_proposal_link") %>
           <% end %>
         <% end %>
@@ -147,7 +147,7 @@
             </div>
           <% else %>
             <%= render 'votes',
-                      { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
+                      { proposal: @proposal, vote_url: vote_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal, value: 'yes') } %>
           <% end %>
         </div>
         <%= render partial: 'shared/social_share', locals: {
