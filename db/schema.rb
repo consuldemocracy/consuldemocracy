@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914154743) do
+ActiveRecord::Schema.define(version: 20170920121234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -677,6 +677,21 @@ ActiveRecord::Schema.define(version: 20170914154743) do
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
+  create_table "poll_recounts", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "amount"
+    t.string  "origin"
+    t.date    "date"
+    t.integer "booth_assignment_id"
+    t.integer "officer_assignment_id"
+    t.text    "amount_log",                default: ""
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
+  end
+
+  add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
+  add_index "poll_recounts", ["officer_assignment_id"], name: "index_poll_recounts_on_officer_assignment_id", using: :btree
+
   create_table "poll_shifts", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "officer_id"
@@ -1113,6 +1128,8 @@ ActiveRecord::Schema.define(version: 20170914154743) do
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
+  add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"
