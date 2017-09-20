@@ -26,9 +26,7 @@ class Officing::ResultsController < Officing::BaseController
       @partial_results = ::Poll::PartialResult.includes(:question).
                                             where(booth_assignment_id: index_params[:booth_assignment_id]).
                                             where(date: index_params[:date])
-      @whites = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
-      @nulls  = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
-      @total  = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
+      @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date])
     end
   end
 
@@ -79,7 +77,7 @@ class Officing::ResultsController < Officing::BaseController
         white_result = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
                                                   date: results_params[:date])
         white_result.officer_assignment_id = @officer_assignment.id
-        white_result.amount = results_params[:whites].to_i
+        white_result.white_amount = results_params[:whites].to_i
         white_result.author = current_user
         white_result.origin = 'booth'
         @results << white_result
@@ -91,7 +89,7 @@ class Officing::ResultsController < Officing::BaseController
         null_result = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
                                                   date: results_params[:date])
         null_result.officer_assignment_id = @officer_assignment.id
-        null_result.amount = results_params[:nulls].to_i
+        null_result.null_amount = results_params[:nulls].to_i
         null_result.author = current_user
         null_result.origin = 'booth'
         @results << null_result
@@ -103,7 +101,7 @@ class Officing::ResultsController < Officing::BaseController
         total_result = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
                                                   date: results_params[:date])
         total_result.officer_assignment_id = @officer_assignment.id
-        total_result.amount = results_params[:total].to_i
+        total_result.total_amount = results_params[:total].to_i
         total_result.author = current_user
         total_result.origin = 'booth'
         @results << total_result
