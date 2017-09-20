@@ -9,7 +9,7 @@ es:
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
     menu:
       voters: "Validar documento y votar"
-      final_recounts: "Recuento final y escrutinio"
+      total_recounts: "Recuento total y escrutinio"
     polls:
       final:
         title: "Listado de votaciones finalizadas"

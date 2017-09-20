@@ -9,7 +9,7 @@ en:
         info: Here you can validate user documents and store voting results
     menu:
       voters: Validate document
-      final_recounts: Final recounts and results
+      total_recounts: Total recounts and results
     polls:
       final:
         title: Polls ready for final recounting
