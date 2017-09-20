@@ -820,7 +820,8 @@ LOREM_IPSUM
   end
 
   factory :direct_upload do
-
+    user
+    
     trait :proposal do
       resource_type "Proposal"
     end
@@ -836,6 +837,7 @@ LOREM_IPSUM
       resource_relation "image"
       attachment { File.new("spec/fixtures/files/clippy.jpg") }
     end
+    initialize_with { new(attributes) }
   end
 
 end

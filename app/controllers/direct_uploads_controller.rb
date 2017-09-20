@@ -8,13 +8,13 @@ class DirectUploadsController < ApplicationController
 
   helper_method :render_destroy_upload_link
 
-  # It should return cached attachment path or attachment errors
   def create
     @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user, attachment: params[:attachment]))
 
     if @direct_upload.valid?
       @direct_upload.save_attachment
       @direct_upload.relation.set_cached_attachment_from_attachment(URI(request.url))
+
       render json: { cached_attachment: @direct_upload.relation.cached_attachment,
                      filename: @direct_upload.relation.attachment.original_filename,
                      destroy_link: render_destroy_upload_link(@direct_upload).html_safe,
@@ -29,7 +29,6 @@ class DirectUploadsController < ApplicationController
 
   def destroy
     @direct_upload = DirectUpload.new(direct_upload_params.merge(user: current_user) )
-
     @direct_upload.relation.set_attachment_from_cached_attachment
 
     if @direct_upload.destroy_attachment

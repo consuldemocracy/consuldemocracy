@@ -29,9 +29,6 @@ class Image < ActiveRecord::Base
 
   validate :validate_image_dimensions, if: -> { attachment.present? && attachment.dirty? }
 
-  after_create :redimension_using_origin_styles
-  after_save :remove_cached_image, if: -> { valid? && persisted? && cached_attachment.present? }
-
   def set_cached_attachment_from_attachment(prefix)
     self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                                attachment.path
@@ -60,12 +57,7 @@ class Image < ActiveRecord::Base
     end
   end
 
-
   private
-
-    def redimension_using_origin_styles
-      attachment.reprocess!
-    end
 
     def imageable_class
       imageable_type.constantize if imageable_type.present?
@@ -100,10 +92,6 @@ class Image < ActiveRecord::Base
       if attachment.blank? && cached_attachment.blank?
         errors[:attachment] = I18n.t("errors.messages.blank")
       end
-    end
-
-    def remove_cached_image
-      File.delete(cached_attachment) if File.exists?(cached_attachment)
     end
 
     def attachment_of_valid_content_type?

@@ -20,8 +20,6 @@ class Document < ActiveRecord::Base
   validates :documentable_id, presence: true,         if: -> { persisted? }
   validates :documentable_type, presence: true,       if: -> { persisted? }
 
-  after_save :remove_cached_document, if: -> { valid? && persisted? && cached_attachment.present? }
-
   def set_cached_attachment_from_attachment(prefix)
     self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                                attachment.path
@@ -42,7 +40,7 @@ class Document < ActiveRecord::Base
     attachment.instance.prefix(attachment, style)
   end
 
-  def prefix(attachment, _style)
+  def prefix(attachment, style)
     if !attachment.instance.persisted?
       "cached_attachments/user/#{attachment.instance.user_id}"
     else
@@ -78,10 +76,6 @@ class Document < ActiveRecord::Base
       if attachment.blank? && cached_attachment.blank?
         errors[:attachment] = I18n.t("errors.messages.blank")
       end
-    end
-
-    def remove_cached_document
-      File.delete(cached_attachment) if File.exist?(cached_attachment)
     end
 
 end
