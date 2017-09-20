@@ -53,7 +53,7 @@ gem 'uglifier', '~> 3.2.0'
 gem 'unicorn', '~> 5.3.0'
 gem 'whenever', '~> 0.9.7', require: false
 
-group :development, :test do
+group :development, :test, :staging do
   gem "bullet", '~> 5.5.1'
   gem 'byebug', '~> 9.0.6'
   gem 'factory_girl_rails', '~> 4.8.0'
