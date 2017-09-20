@@ -54,7 +54,7 @@
           <% if setting['twitter_handle'] %>
             <li class="inline-block">
               <%= link_to "https://twitter.com/#{setting['twitter_handle']}", target: "_blank", title: t("social.twitter") + t('shared.target_blank_html') do %>
-                <span class="sr-only"><%= t("social.twitter") %></span>
+                <span class="show-for-sr"><%= t("social.twitter") %></span>
                 <span class="icon-twitter" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -62,7 +62,7 @@
           <% if setting['facebook_handle'] %>
             <li class="inline-block">
               <%= link_to "https://www.facebook.com/#{setting['facebook_handle']}/", target: "_blank", title: t("social.facebook") + t('shared.target_blank_html') do %>
-                <span class="sr-only"><%= t("social.facebook") %></span>
+                <span class="show-for-sr"><%= t("social.facebook") %></span>
                 <span class="icon-facebook" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -70,7 +70,7 @@
           <%  if setting['blog_url'] %>
             <li class="inline-block">
               <%= link_to setting['blog_url'], target: "_blank", title: t("social.blog") + t('shared.target_blank_html') do %>
-                <span class="sr-only"><%= t("social.blog") %></span>
+                <span class="show-for-sr"><%= t("social.blog") %></span>
                 <span class="icon-blog" aria-hidden="true"></span>
               <% end %>
             </li>
@@ -78,7 +78,7 @@
           <% if setting['youtube_handle'] %>
             <li class="inline-block">
               <%= link_to "https://www.youtube.com/#{setting['youtube_handle']}", target: "_blank", title: t("social.youtube") + t('shared.target_blank_html') do %>
-                <span class="sr-only"><%= t("social.youtube") %></span>
+                <span class="show-for-sr"><%= t("social.youtube") %></span>
                 <span class="icon-youtube" aria-hidden="true"></span>
               <% end %>
             </li>

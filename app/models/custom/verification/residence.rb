@@ -32,15 +32,14 @@ class Verification::Residence
 
   private
 
-    def call_census_api
-      @census_api_response = PadronCastellonApi.new.call(document_type, document_number)
+    def retrieve_census_data
+      # @census_data = CensusCaller.new.call(document_type, document_number)
+      @census_data = PadronCastellonApi.new.call(document_type, document_number)
     end
 
     def residency_valid?
-      # TODO: Errores en el Padron @census_api_response.postal_code == postal_code &&
-      @census_api_response.valid? &&
-        @census_api_response.date_of_birth == date_of_birth
-
+      @census_data.valid? &&
+        @census_data.date_of_birth == date_of_birth
     end
 
     def valid_postal_code?

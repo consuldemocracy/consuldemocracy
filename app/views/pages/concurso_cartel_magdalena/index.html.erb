@@ -1,0 +1,34 @@
+<% provide :title do %><%= t('pages.titles.concurso_cartel_magdalena') %><% end %>
+
+<% votacion = Poll.first %>
+
+<div class="expanded no-margin-top">
+  <div class="row">
+    <div class="small-12 medium-6 column padding">
+      <h1>Concurso del cartel de la Magdalena 2018</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin">
+  <div class="large-8 small-12 columns">
+
+    <p><%= link_to 'vota tu cartel', poll_path(votacion) %></p>
+  </div>
+
+</div>
+<div class="row margin-top">
+  <div class="small-12 medium-9 column">
+    <% votacion.questions.each do |question| %>
+      <%= render 'pages/concurso_cartel_magdalena/questions/question', question: question %>
+    <% end %>
+  </div>
+
+  <aside class="small-12 medium-3 column">
+    <%= render partial: 'shared/social_share', locals: {
+      share_title: t("proposals.show.share"),
+      title: votacion.name,
+      url: poll_url
+    } %>
+  </aside>
+</div>

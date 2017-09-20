@@ -10,7 +10,7 @@
   <div class="small-12 column">
     <ul class="tabs">
       <li class="tabs-title is-active">
-        <span class="sr-only"><%= t("shared.you_are_in") %></span>
+        <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
         <%= link_to t("results.results_link"), results_budget_path(@budget), class: "is-active" %>
       </li>
       <li class="tabs-title">
@@ -68,11 +68,11 @@
             <td>
               <% if budget >= 0 %>
                 <span class="icon-check">
-                  <span class="sr-only"><%= t("spending_proposals.results.accepted") %></span>
+                  <span class="show-for-sr"><%= t("spending_proposals.results.accepted") %></span>
                 </span>
               <% else %>
                 <span class="icon-x">
-                  <span class="sr-only"><%= t("spending_proposals.results.discarded") %></span>
+                  <span class="show-for-sr"><%= t("spending_proposals.results.discarded") %></span>
                 </span>
               <% end %>
             </td>

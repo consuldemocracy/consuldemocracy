@@ -18,6 +18,18 @@
                                   title: t("shared.go_to_page") + t("layouts.header.proposals") %>
       </li>
     <% end %>
+
+    <% if feature?(:concurso_cartel_magdalena) %>
+      <li>
+        <%= layout_menu_link_to t("layouts.header.concurso_cartel_magdalena"),
+                                  page_path('concurso_cartel_magdalena/index'),
+                                  controller_name == 'pages',
+                                  accesskey: "2",
+                                  title: t("shared.go_to_page") + t("layouts.header.concurso_cartel_magdalena") %>
+      </li>
+
+    <% end %>
+
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),

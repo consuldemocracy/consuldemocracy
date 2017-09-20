@@ -1,0 +1,32 @@
+
+<% question_answer = question.answers.where(author_id: current_user.try(:id)).first %>
+<% answers_by_question_id = {question.id => question_answer.try(:answer)} %>
+<div class="poll-question-answers">
+  <% if can? :answer, question %>
+    <% question.valid_answers.each do |answer| %>
+      <div class="row">
+        <div class="small-10 large-10 columns">
+          <%= debug answer %>
+        </div>
+        <div class="small-10 large-10 columns">
+          <% if answers_by_question_id[question.id] == answer %>
+            <span class="button answered" title="<%= t("poll_questions.show.voted", answer: answer)%>">
+              <%= answer %>
+            </span>
+          <% else %>
+            <%= link_to answer,
+              answer_question_path(question, answer: answer),
+              method: :post,
+              remote: true,
+              title: t("poll_questions.show.vote_answer", answer: answer),
+              class: "button secondary hollow" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <% question.valid_answers.each do |answer| %>
+      <span class="button secondary hollow disabled"><%= answer %></span>
+    <% end %>
+  <% end %>
+</div>

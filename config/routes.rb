@@ -443,4 +443,10 @@ Rails.application.routes.draw do
   get 'presupuestos-participativos-resultados',   to: 'spending_proposals#results', as: 'participatory_budget_results'
   get 'presupuestos-participativos-estadisticas', to: 'spending_proposals#stats',   as: 'participatory_budget_stats'
 
+
+
+
+  # Pages personalizadas
+
+  get 'concurso_cartel_magdalena', to: 'pages#show', id: 'concurso_cartel_magdalena/index',  as: 'concurso_cartel_magdalena'
 end
