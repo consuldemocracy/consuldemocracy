@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920125901) do
+ActiveRecord::Schema.define(version: 20170920130631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -690,21 +690,6 @@ ActiveRecord::Schema.define(version: 20170920125901) do
   add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
-
-  create_table "poll_total_results", force: :cascade do |t|
-    t.integer "author_id"
-    t.integer "amount"
-    t.string  "origin"
-    t.date    "date"
-    t.integer "booth_assignment_id"
-    t.integer "officer_assignment_id"
-    t.text    "amount_log",                default: ""
-    t.text    "officer_assignment_id_log", default: ""
-    t.text    "author_id_log",             default: ""
-  end
-
-  add_index "poll_total_results", ["booth_assignment_id"], name: "index_poll_total_results_on_booth_assignment_id", using: :btree
-  add_index "poll_total_results", ["officer_assignment_id"], name: "index_poll_total_results_on_officer_assignment_id", using: :btree
 
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
