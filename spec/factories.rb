@@ -551,21 +551,6 @@ FactoryGirl.define do
     origin { 'web' }
   end
 
-  factory :poll_white_result, class: 'Poll::WhiteResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_null_result, class: 'Poll::NullResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_total_result, class: 'Poll::TotalResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
   factory :officing_residence, class: 'Officing::Residence' do
     user
     association :officer, factory: :poll_officer
