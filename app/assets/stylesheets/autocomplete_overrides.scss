@@ -4,7 +4,6 @@
 /* Autocomplete
 ----------------------------------*/
 .ui-autocomplete { position: absolute; cursor: default; }
-.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
 
 /* workarounds */
 * html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
@@ -13,29 +12,23 @@
 ----------------------------------*/
 .ui-menu {
   list-style:none;
-  padding: 0px 5px;
-  margin: 0;
+  padding: $line-height / 4 $line-height / 3;
   display:block;
-  /*width:227px;*/
   background: white;
   border: 1px solid $border;
-}
-.ui-menu .ui-menu {
-  margin-top: -3px;
-}
-.ui-menu .ui-menu-item {
-  margin:0;
-  padding: 0;
-  width: 200px;
-}
-.ui-menu .ui-menu-item a {
-  /*  text-decoration:none;
-    display:block;*/
-  padding:.2em .4em;
-  /*  line-height:1.5;
-    zoom:1;*/
-}
-.ui-menu .ui-menu-item a.ui-state-hover,
-.ui-menu .ui-menu-item a.ui-state-active {
-  margin: -1px;
+  font-size: $small-font-size;
+
+  .ui-menu-item {
+
+    .ui-menu-item-wrapper {
+      padding: $line-height / 4 $line-height / 3;
+      position: relative;
+    }
+
+    .ui-state-hover, .ui-state-active {
+      background: #ececec;
+      border-radius: rem-calc(6);
+    }
+  }
+
 }

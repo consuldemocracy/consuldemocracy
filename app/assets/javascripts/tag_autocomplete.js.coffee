@@ -7,13 +7,18 @@ App.TagAutocomplete =
     return (App.TagAutocomplete.split( term ).pop())
 
   init_autocomplete: ->
-    $('.js-tag-list').autocomplete
+    $('.tag-autocomplete').autocomplete
       source: (request, response) ->
-        response( $.ui.autocomplete.filter(["Arbol", "Becerro", "Caracol"], App.TagAutocomplete.extractLast( request.term ) ) );
+        $.ajax
+          url: $('.tag-autocomplete').data('js-url'),
+          data: {search: App.TagAutocomplete.extractLast( request.term )},
+          type: 'GET',
+          dataType: 'json'
+          success: ( data ) ->
+            response( data );
+
       minLength: 0,
       search: ->
-        console.log(this.value);
-        console.log(App.TagAutocomplete.extractLast( this.value ));
         App.TagAutocomplete.extractLast( this.value );
       focus: ->
         return false;

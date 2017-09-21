@@ -133,6 +133,21 @@ describe 'ActsAsTaggableOn' do
         expect(ActsAsTaggableOn::Tag.public_for_api).to be_empty
       end
     end
+
+    describe "search" do
+      it "containing the word in the name" do
+        create(:tag, name: 'Familia')
+        create(:tag, name: 'Cultura')
+        create(:tag, name: 'Salud')
+        create(:tag, name: 'Famosos')
+
+        expect(ActsAsTaggableOn::Tag.pg_search('f').length).to eq(2)
+        expect(ActsAsTaggableOn::Tag.search('cultura').first.name).to eq('Cultura')
+        expect(ActsAsTaggableOn::Tag.search('sal').first.name).to eq('Salud')
+        expect(ActsAsTaggableOn::Tag.search('fami').first.name).to eq('Familia')
+      end
+    end
+
   end
 
 end
