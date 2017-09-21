@@ -20,9 +20,7 @@
       </div>
 
       <div class="small-12 medium-3 column">
-        <div class="callout success">
-          <p><%= t('.participate') %></p>
-        </div>
+        <p><%= link_to t("proposals.index.start_proposal"), new_legislation_process_proposal_path(@process), class: 'button expanded' %></p>
       </div>
     </div>
   </div>
