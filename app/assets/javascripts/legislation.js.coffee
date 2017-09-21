@@ -1,13 +1,8 @@
 App.Legislation =
 
   initialize: ->
-    $('#js-toggle-debate').on
-      click: ->
-        $('#debate-show').toggle()
-
     $('#js-toggle-small-debate').on
       click: ->
-        $('#debate-show').toggle()
         $(this).find($('span')).toggleClass('icon-angle-up')
 
     $('form#new_legislation_answer input.button').hide()

@@ -16,7 +16,7 @@
       <% end %>
     </div>
     <% if process.additional_info.present? %>
-      <div id="debate-show" class="small-12 column debate-add-info legislation-debate-show">
+      <div id="additional_info" class="small-12 column debate-add-info is-hidden" data-toggler=".is-hidden">
         <%= markdown process.additional_info if process.additional_info %>
       </div>
     <% end %>
@@ -24,7 +24,7 @@
 
   <% if process.additional_info.present? %>
     <div class="text-center">
-      <a id="js-toggle-debate" class="button big text-center" title="<%= t('.more_info') %>">
+      <a id="js-toggle-debate" class="button big text-center" title="<%= t('.more_info') %>" data-toggle="additional_info">
         <strong><%= t('.more_info') %></strong>
       </a>
     </div>
