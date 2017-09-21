@@ -91,7 +91,7 @@ class ApplicationController < ActionController::Base
     end
 
     def verify_resident!
-      unless current_user.residence_verified?
+      if !current_user.residence_verified? && Setting['feature.residence_verification']
         redirect_to new_residence_path, alert: t('verification.residence.alert.unconfirmed_residency')
       end
     end

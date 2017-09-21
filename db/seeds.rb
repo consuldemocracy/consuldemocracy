@@ -80,6 +80,8 @@ Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 Setting['feature.community'] = true
+Setting['feature.residence_verification'] = nil
+
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.voting_allowed'] = nil

@@ -26,7 +26,11 @@ class VerificationController < ApplicationController
       elsif user.residence_verified?
         { path: verified_user_path }
       else
-        { path: new_residence_path }
+        if Setting['feature.residence_verification']
+          { path: new_residence_path }
+        else
+          {path: new_sms_path}
+        end
       end
     end
 
