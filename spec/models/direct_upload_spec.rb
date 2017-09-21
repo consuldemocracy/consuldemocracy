@@ -36,20 +36,30 @@ describe DirectUpload do
   end
 
   context "save_attachment" do
-    it "should create all uploaded file versions" do
+
+    it "should save uploaded file" do
       proposal_document_direct_upload = build(:direct_upload, :proposal, :documents)
 
-      expect{ proposal_document_direct_upload.save_attachment }.to eq(true)
+      proposal_document_direct_upload.save_attachment
+
+      expect(File.exists?(proposal_document_direct_upload.relation.attachment.path)).to eq(true)
+      expect(proposal_document_direct_upload.relation.attachment.path).to include('cached_attachments')
     end
 
   end
 
   context "destroy_attachment" do
-    it "should create all uploaded file versions" do
 
+    it "should remove uploaded file" do
+      proposal_document_direct_upload = build(:direct_upload, :proposal, :documents)
+
+      proposal_document_direct_upload.save_attachment
+      uploaded_path = proposal_document_direct_upload.relation.attachment.path
+      proposal_document_direct_upload.destroy_attachment
+
+      expect(File.exists?(uploaded_path)).to eq(false)
     end
 
   end
-
 
 end
