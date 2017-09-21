@@ -249,11 +249,15 @@
 .debate-form,
 .proposal-form,
 .budget-investment-form,
-.spending-proposal-form {
+.spending-proposal-form,
+.document-form,
+.topic-new,
+.topic-form  {
 
   .icon-debates,
   .icon-proposals,
-  .icon-budget {
+  .icon-budget,
+  .icon-documents {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
@@ -263,7 +267,8 @@
     color: $debates;
   }
 
-  .icon-proposals {
+  .icon-proposals,
+  .icon-documents {
     color: $proposals;
   }
 
@@ -295,7 +300,10 @@
   }
 }
 
-.proposal-form {
+.proposal-form,
+.topic-form,
+.topic-new,
+.document-form {
 
   .recommendations li::before {
     color: $proposals;
@@ -307,13 +315,16 @@
 
 .debate-show,
 .proposal-show,
+.poll-question-show,
 .investment-project-show,
 .budget-investment-show,
 .polls-show,
 .debate-quiz,
 .budget-investment-show,
 .draft-panels,
-.debate-questions {
+.debate-questions,
+.communities-show,
+.topic-show {
 
   p {
     word-wrap: break-word;
@@ -347,7 +358,8 @@
   .debate-info,
   .proposal-info,
   .investment-project-info,
-  .budget-investment-show {
+  .budget-investment-show,
+  .topic-info {
     clear: both;
     color: $text-medium;
     font-size: $small-font-size;
@@ -384,8 +396,8 @@
     }
   }
 
-  &.tags,
-  &.geozone {
+  .tags,
+  .geozone {
 
     li {
       margin-bottom: 0;
@@ -467,6 +479,7 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
 
     a {
       margin-right: rem-calc(6);
@@ -599,6 +612,14 @@
   }
 }
 
+.show-actions-menu {
+
+  [class^="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
 // 04. List participation
 // ----------------------
 
@@ -624,7 +645,8 @@
 .proposal,
 .investment-project,
 .budget-investment,
-.legislation {
+.legislation,
+.communities-show {
   margin: $line-height / 4 0;
 
   .panel {
@@ -696,7 +718,8 @@
   .debate-info,
   .proposal-info,
   .investment-project-info,
-  .budget-investment-info {
+  .budget-investment-info,
+  .topic-info {
     color: $text-medium;
     font-size: $small-font-size;
     margin: rem-calc(6) 0 0;
@@ -745,6 +768,12 @@
 
 .divider {
   display: none;
+}
+
+.document-form{
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .more-info {
@@ -873,6 +902,18 @@
     line-height: $line-height;
     margin-left: rem-calc(6);
     top: 0;
+  }
+}
+
+.help-header {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  padding-bottom: $line-height / 2;
+  padding-top: $line-height;
+
+  h1 {
+    font-size: rem-calc(24);
+    text-transform: uppercase;
   }
 }
 
@@ -1482,13 +1523,9 @@
 
 .poll,
 .poll-question {
-  background: #fff;
-  border-radius: rem-calc(6);
+  border: 1px solid $border;
   margin-bottom: $line-height / 2;
-}
-
-.poll {
-  padding: $line-height;
+  padding: $line-height / 2;
   position: relative;
 
   .icon-poll-answer {

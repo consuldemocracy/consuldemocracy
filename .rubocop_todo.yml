@@ -42,7 +42,6 @@ Layout/DotPosition:
     - 'app/controllers/admin/poll/officer_assignments_controller.rb'
     - 'app/controllers/admin/poll/polls_controller.rb'
     - 'app/controllers/admin/poll/recounts_controller.rb'
-    - 'app/controllers/officing/final_recounts_controller.rb'
     - 'app/controllers/officing/residence_controller.rb'
     - 'app/controllers/officing/results_controller.rb'
     - 'app/models/poll/officer.rb'
@@ -191,7 +190,6 @@ Layout/MultilineMethodCallIndentation:
     - 'app/controllers/admin/poll/officer_assignments_controller.rb'
     - 'app/controllers/admin/poll/polls_controller.rb'
     - 'app/controllers/admin/poll/recounts_controller.rb'
-    - 'app/controllers/officing/final_recounts_controller.rb'
     - 'app/controllers/officing/residence_controller.rb'
     - 'app/controllers/officing/results_controller.rb'
     - 'app/models/poll/officer.rb'
@@ -289,6 +287,7 @@ Lint/StringConversionInInterpolation:
     - 'app/models/poll/null_result.rb'
     - 'app/models/poll/partial_result.rb'
     - 'app/models/poll/white_result.rb'
+    - 'app/models/poll/total_result.rb'
 
 # Offense count: 15
 # Cop supports --auto-correct.
@@ -473,7 +472,6 @@ Style/ConditionalAssignment:
     - 'app/controllers/admin/poll/questions_controller.rb'
     - 'app/controllers/comments_controller.rb'
     - 'app/controllers/management/spending_proposals_controller.rb'
-    - 'app/controllers/officing/final_recounts_controller.rb'
     - 'app/controllers/spending_proposals_controller.rb'
     - 'app/controllers/verification/sms_controller.rb'
     - 'lib/graph_ql/api_types_creator.rb'
@@ -565,6 +563,7 @@ Style/MutableConstant:
     - 'app/models/poll/null_result.rb'
     - 'app/models/poll/partial_result.rb'
     - 'app/models/poll/white_result.rb'
+    - 'app/models/poll/total_result.rb'
     - 'app/models/proposal.rb'
     - 'app/models/signature_sheet.rb'
     - 'app/models/site_customization/content_block.rb'

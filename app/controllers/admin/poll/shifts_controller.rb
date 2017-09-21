@@ -1,0 +1,60 @@
+class Admin::Poll::ShiftsController < Admin::BaseController
+
+  before_action :load_booth
+  before_action :load_polls
+  before_action :load_officer
+
+  def new
+    load_shifts
+    @shift = ::Poll::Shift.new
+  end
+
+  def create
+    @shift = ::Poll::Shift.new(shift_params)
+    @officer = @shift.officer
+
+    if @shift.save
+      notice = t("admin.poll_shifts.flash.create")
+      redirect_to new_admin_booth_shift_path(@shift.booth), notice: notice
+    else
+      load_shifts
+      render :new
+    end
+  end
+
+  def destroy
+    @shift = Poll::Shift.find(params[:id])
+    @shift.destroy
+    notice = t("admin.poll_shifts.flash.destroy")
+    redirect_to new_admin_booth_shift_path(@booth), notice: notice
+  end
+
+  def search_officers
+    @officers = User.search(params[:search]).order(username: :asc)
+  end
+
+  private
+
+    def load_booth
+      @booth = ::Poll::Booth.find(params[:booth_id])
+    end
+
+    def load_polls
+      @polls = ::Poll.current_or_incoming
+    end
+
+    def load_shifts
+      @shifts = @booth.shifts
+    end
+
+    def load_officer
+      if params[:officer_id].present?
+        @officer = ::Poll::Officer.find(params[:officer_id])
+      end
+    end
+
+    def shift_params
+      params.require(:shift).permit(:booth_id, :officer_id, :date)
+    end
+
+end

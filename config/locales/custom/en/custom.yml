@@ -44,9 +44,6 @@ en:
     welcome_index:
       title: "Decide Madrid: portal de participación ciudadana de Madrid"
       description: "En la web de participación ciudadana Decide Madrid podrás proponer, apoyar, crear propuestas y decidir en qué gasta el Ayuntamiento su presupuesto."
-    debates:
-      title: "Debates ciudadanos de Madrid - Decide Madrid"
-      description: "En el espacio de debates ciudadanos de Decide Madrid podrás compartir con otros habitantes de Madrid los temas de la ciudad que más te preocupan."
     proposals:
       title: "Propuestas ciudadanas de Madrid - Decide Madrid"
       description: "Participa activamente en Decide Madrid creando y votando propuestas ciudadanas que quieras que el Ayuntamiento de Madrid lleve a cabo."
@@ -158,12 +155,12 @@ en:
         text: "Check the detailed data of the voting of projects."
         link: "See participation statistics"
         alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-      geocraft:
-        label: "Download"
-        title: "Make Madrid"
-        text: "Imagine and create your own Madrid in this environment that recreates the Plaza Santa Ana of the capital."
-        link: "More information about Make Madrid"
-        alt: "Image of the Geocraft environment representing the Plaza Santa Ana in Madrid"
+      journalism:
+        label: "Contest"
+        title: "Contest of data journalism and Datatón"
+        text: "Participate with stories and projects created from open data of the City Council of Madrid."
+        link: "More information about the contest"
+        alt: "Image of the Contest of Data Journalism and Datatón"
       once_plazas:
         label: "Process"
         title: "Once Plazas"

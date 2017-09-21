@@ -424,6 +424,7 @@ es:
       poll_officers: Presidentes de mesa
       polls: Votaciones
       poll_booths: Ubicación de urnas
+      poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
@@ -491,11 +492,6 @@ es:
         search: Buscar
         user_not_found: Usuario no encontrado
     poll_officer_assignments:
-      flash:
-        destroy: "Eliminado turno de presidente de mesa"
-        create: "Añadido turno de presidente de mesa"
-        error_destroy: "Se ha producido un error al eliminar el turno"
-        error_create: "Se ha producido un error al intentar crear el turno"
       index:
         officers_title: "Listado de presidentes de mesa asignados"
         no_officers: "No hay presidentes de mesa asignados a esta votación."
@@ -504,18 +500,33 @@ es:
         add_officer_assignments: "Añadir turnos como presidente de mesa"
         edit_officer_assignments: "Editar turnos"
       by_officer:
-        new_assignment: "Nuevo turno"
         date: "Fecha"
         booth: "Urna"
-        assignment: "Asignación"
-        select_date: "Seleccionar día"
-        select_booth: "Seleccionar urna"
-        add_assignment: "Añadir turno"
-        remove_assignment: "Eliminar turno"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
         final_recounts: "Recuentos finales"
         final_recount: "Recuento final (presidente de mesa)"
+    poll_shifts:
+      new:
+        add_shift: "Añadir turno"
+        shift: "Asignación"
+        shifts: "Turnos en esta urna"
+        date: "Fecha"
+        edit_shifts: Asignar turno
+        new_shift: "Nuevo turno"
+        no_shifts: "Esta urna no tiene turnos asignados"
+        officer: "Presidente de mesa"
+        remove_shift: "Eliminar turno"
+        search_officer_button: Buscar
+        search_officer_placeholder: Buscar presidentes de mesa
+        search_officer_text: Busca al presidente de mesa para asignar un turno
+        select_date: "Seleccionar día"
+        table_shift: "Turno"
+        table_email: "Email"
+        table_name: "Nombre"
+      flash:
+        create: "Añadido turno de presidente de mesa"
+        destroy: "Eliminado turno de presidente de mesa"
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -598,6 +609,8 @@ es:
         title: Título
         valid_answers: Respuestas válidas
         description: Descripción
+        video_url: Video externo
+        documents: Documentos
         preview: Ver en la web
     recounts:
       index:
@@ -615,6 +628,7 @@ es:
         no_results: "No hay resultados"
         table_whites: Papeletas en blanco
         table_nulls: Papeletas nulas
+        table_total: Papeletas totales
         table_answer: Respuesta
         table_votes: Votos
     booths:
@@ -635,6 +649,8 @@ es:
         submit_button: "Actualizar urna"
       show:
         location: "Ubicación"
+      booth:
+        shifts: "Asignar turnos"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
@@ -978,7 +994,7 @@ es:
       content_blocks:
         form:
           content_blocks_information: Información sobre los bloques de texto
-          content_block_about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu Cónsul.
+          content_block_about: Puedes crear bloques de HTML que se incrustarán en la cabecera o el pie de tu CONSUL.
           content_block_top_links_html: "Los <strong>bloques de la cabecera (top_links)</strong> son bloques de enlaces que deben crearse con este formato:"
           content_block_footer_html: "Los <strong>bloques del pie (footer)</strong> pueden tener cualquier formato y se pueden utilizar para guardar huellas Javascript, contenido CSS o contenido HTML personalizado."
         create:

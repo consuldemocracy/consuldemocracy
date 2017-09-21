@@ -17,7 +17,6 @@ Setting.create(key: 'votes_for_proposal_success', value: '100')
 Setting.create(key: 'months_to_archive_proposals', value: '12')
 Setting.create(key: 'comments_body_max_length', value: '1000')
 
-
 Setting.create(key: 'twitter_handle', value: '@decidemadrid')
 Setting.create(key: 'twitter_hashtag', value: '#decidemadrid')
 Setting.create(key: 'facebook_handle', value: 'decidemadrid')
@@ -25,7 +24,6 @@ Setting.create(key: 'youtube_handle', value: 'decidemadrid')
 Setting.create(key: 'telegram_handle', value: 'decidemadrid')
 Setting.create(key: 'instagram_handle', value: 'decidemadrid')
 Setting.create(key: 'blog_url', value: 'https://diario.madrid.es/decidemadrid/')
-
 Setting.create(key: 'url', value: 'http://localhost:3000')
 Setting.create(key: 'org_name', value: 'Decide Madrid')
 Setting.create(key: 'place_name', value: 'City')
@@ -52,15 +50,12 @@ Setting.create(key: 'feature.human_rights.voting', value: 'true')
 Setting.create(key: 'feature.human_rights.closed', value: 'true')
 Setting.create(key: 'feature.signature_sheets', value: "true")
 Setting.create(key: 'feature.legislation', value: "true")
-
-Setting.create(key: 'mailer_from_name', value: 'Decide Madrid')
-Setting.create(key: 'mailer_from_address', value: 'noreply@madrid.es')
-
+Setting.create(key: 'feature.community', value: "true")
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
-
 Setting.create(key: 'comments_body_max_length', value: '1000')
-
+Setting.create(key: 'mailer_from_name', value: 'Decide Madrid')
+Setting.create(key: 'mailer_from_address', value: 'noreply@madrid.es')
 Setting.create(key: 'meta_description', value: 'Citizen Participation and Open Government Application')
 Setting.create(key: 'meta_keywords', value: 'citizen participation, open government')
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
@@ -157,6 +152,7 @@ manager.create_manager
 
 poll_officer = create_user('poll_officer@madrid.es', 'Paul O. Fisher')
 poll_officer.create_poll_officer
+poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2211111111")
 
 level_2 = create_user('leveltwo@madrid.es', 'level 2')
 level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1")

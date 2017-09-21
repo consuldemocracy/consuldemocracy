@@ -2,6 +2,7 @@ class Poll
   class Booth < ActiveRecord::Base
     has_many :booth_assignments, class_name: "Poll::BoothAssignment"
     has_many :polls, through: :booth_assignments
+    has_many :shifts
 
     validates :name, presence: true, uniqueness: true
 
@@ -9,5 +10,10 @@ class Poll
       return Booth.none if terms.blank?
       Booth.where("name ILIKE ? OR location ILIKE ?", "%#{terms}%", "%#{terms}%")
     end
+
+    def self.available
+      where(polls: { id: Poll.current_or_incoming }).includes(:polls)
+    end
+
   end
 end

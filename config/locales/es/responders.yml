@@ -14,7 +14,7 @@ es:
         spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
         budget_investment: "Proyecto de gasto creado correctamente."
         signature_sheet: "Hoja de firmas creada correctamente"
-        spending_proposal: "Propuesta de inversión creada correctamente. Puedes acceder a ella desde %{activity}"
+        topic: "Tema creado correctamente."
       save_changes:
         notice: Cambios guardados
       update:
@@ -24,9 +24,11 @@ es:
         poll: "Votación actualizada correctamente."
         poll_booth: "Urna actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
-        budget_investment: "Proyecto de gasto actualizado correctamente"
+        budget_investment: "Propuesta de inversión actualizada correctamente"
+        topic: "Tema actualizado correctamente."
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         representative: "Ya no tienes un representante"
         budget_investment: "Proyecto de gasto eliminado."
         error: "No se pudo borrar"
+        topic: "Tema eliminado."

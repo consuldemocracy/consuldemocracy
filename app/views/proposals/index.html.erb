@@ -12,8 +12,6 @@
 <% end %>
 
 <main>
-  <h1 class="show-for-sr"><%= t("shared.outline.proposals") %></h1>
-
   <% if @search_terms || @advanced_search_terms || @tag_filter || params[:retired].present? %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
@@ -38,6 +36,8 @@
         </div>
       </div>
     </div>
+  <% else %>
+    <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
   <div class="row">
@@ -81,6 +81,20 @@
       <div id="proposals-list">
         <%= render partial: 'proposals/proposal', collection: @proposals %>
         <%= paginate @proposals %>
+
+        <% unless @search_terms || @advanced_search_terms || @tag_filter %>
+          <div id="section_help" class="margin" data-magellan-target="section_help">
+            <p class="lead">
+              <strong><%= t("proposals.index.section_footer.title") %></strong>
+            </p>
+            <p><%= t("proposals.index.section_footer.description") %></p>
+            <p><%= t("proposals.index.section_footer.help_text_1") %></p>
+            <p><%= t("proposals.index.section_footer.help_text_2",
+                      org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+            <p><%= t("proposals.index.section_footer.help_text_3") %></p>
+            <p><%= t("proposals.index.section_footer.help_text_4") %></p>
+          </div>
+        <% end %>
       </div>
     </div>
 

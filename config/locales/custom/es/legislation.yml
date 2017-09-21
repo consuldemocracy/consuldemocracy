@@ -1,0 +1,14 @@
+---
+es:
+  legislation:
+    processes:
+      index:
+        section_header:
+          icon_alt: Icono de Procesos participativos
+          title: Procesos participativos
+          help: Ayuda sobre procesos participativos
+        section_footer:
+          title: Ayuda sobre procesos participativos
+          help_text_1: "En los procesos participativos, el Ayuntamiento ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la ciudad de Madrid y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo."
+          help_text_2: "Las personas registradas en %{org} pueden participar con aportaciones en la consulta pública de nuevas ordenanzas, reglamentos y directrices, entre otros. Sus comentarios son analizados por el área correspondiente y tenidos en cuenta de cara a la redacción final de las normas. Han pasado por este proceso la ordenanza de subvenciones, el Plan de Derechos Humanos, el borrador de Plan de Calidad de Aire y Cambio Climático, el nuevo reglamento de adjudicación de viviendas públicas de la EMVS, etc."
+          help_text_3: 'El Ayuntamiento también abre procesos para recibir aportaciones y opiniones sobre actuaciones municipales. Son ejemplo de procesos pasados el cambio de denominación del barrio "San Andrés", la conveniencia de crear nuevos barrios en el Distrito de Vicálvaro, preguntas sobre el Parque Lineal del Manzanares o las opiniones acerca de la remodelación de once plazas de la ciudad.'

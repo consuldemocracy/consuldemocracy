@@ -121,6 +121,14 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
+  resources :documents, only: [:new, :create, :destroy] do
+    collection do
+      get :new_nested
+      delete :destroy_upload
+      post :upload
+    end
+  end
+
   resources :stats, only: [:index]
 
   resources :legacy_legislations, only: [:show], path: 'legislations'
@@ -180,6 +188,10 @@ Rails.application.routes.draw do
 
   resource :verification, controller: "verification", only: [:show]
 
+  resources :communities, only: [:show] do
+    resources :topics
+  end
+
   scope module: :verification do
     resource :residence, controller: "residence", only: [:new, :create]
     resource :sms, controller: "sms", only: [:new, :create, :edit, :update]
@@ -188,6 +200,7 @@ Rails.application.routes.draw do
     resource :letter, controller: "letter", only: [:new, :create, :show, :edit, :update]
   end
   get "/verifica", to: "verification/letter#edit"
+
 
   namespace :admin do
     root to: "dashboard#index"
@@ -309,7 +322,14 @@ Rails.application.routes.draw do
         get :search, on: :collection
       end
 
-      resources :booths
+      resources :booths do
+        get :available, on: :collection
+
+        resources :shifts do
+          get :search_officers, on: :collection
+        end
+      end
+
       resources :questions
     end
 
@@ -478,7 +498,6 @@ Rails.application.routes.draw do
     resources :polls, only: [:index] do
       get :final, on: :collection
 
-      resources :final_recounts, only: [:new, :create]
       resources :results, only: [:new, :create, :index]
 
       resources :nvotes, only: :new do

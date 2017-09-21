@@ -20,19 +20,19 @@
   <% end %>
   <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
-        <%= image_tag "welcome_geocraft.jpg", alt: t("welcome.budgets.geocraft.alt") %>
+      <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", title: t("welcome.budgets.journalism.link"), target: "_blank", rel: "nofollow" do %>
+        <%= image_tag "welcome_journalism.jpg", alt: t("welcome.budgets.journalism.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to geocraft_path, title: t("welcome.budgets.geocraft.link") do %>
-          <span><%= t("welcome.budgets.geocraft.label") %></span><br>
-          <p class="title"><%= t("welcome.budgets.geocraft.title") %></p>
+        <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", title: t("welcome.budgets.journalism.link"), target: "_blank", rel: "nofollow" do %>
+          <span><%= t("welcome.budgets.journalism.label") %></span><br>
+          <p class="title"><%= t("welcome.budgets.journalism.title") %></p>
         <% end %>
       </figcaption>
     </figure>
-    <p><%= t("welcome.budgets.geocraft.text") %></p>
+    <p><%= t("welcome.budgets.journalism.text") %></p>
     <p>
-      <%= link_to t("welcome.budgets.geocraft.link"), geocraft_path %>
+      <%= link_to t("welcome.budgets.journalism.link"), "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", target: "_blank", rel: "nofollow" %>
     </p>
   </div>
   <% unless Budget.finished.any? %>

@@ -342,6 +342,24 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Can access the community' do
+    Setting['feature.community'] = true
+
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    expect(page).to have_content "Access the community"
+
+    Setting['feature.community'] = false
+  end
+
+  scenario 'Can not access the community' do
+    Setting['feature.community'] = false
+
+    investment = create(:budget_investment, heading: heading)
+    visit budget_investment_path(budget_id: budget.id, id: investment.id)
+    expect(page).not_to have_content "Access the community"
+  end
+
   scenario "Don't display flaggable buttons" do
     investment = create(:budget_investment, heading: heading)
 
@@ -442,7 +460,17 @@ feature 'Budget Investments' do
     end
   end
 
-  it_behaves_like "followable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
+  it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+
+  it_behaves_like "documentable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
+
+  it_behaves_like "nested documentable",
+                  "budget_investment",
+                  "new_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  "fill_new_valid_budget_investment",
+                  "Create Investment",
+                  "Budget Investment created successfully."
 
   context "Destroy" do
 

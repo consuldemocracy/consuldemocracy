@@ -10,6 +10,13 @@ class Proposal < ActiveRecord::Base
   include HasPublicAuthor
   include Graphqlable
   include Followable
+  include Communitable
+  include Documentable
+  documentable max_documents_allowed: 3,
+               max_file_size: 3.megabytes,
+               accepted_content_types: [ "application/pdf" ]
+  accepts_nested_attributes_for :documents, allow_destroy: true
+  include EmbedVideosHelper
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -36,6 +43,8 @@ class Proposal < ActiveRecord::Base
   validates :sub_proceeding, presence: true, length: { in: 10..150 }, if: :proceeding?
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
+
+  validate :valid_video_url?
 
   before_validation :set_responsible_name
 

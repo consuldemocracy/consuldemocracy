@@ -74,11 +74,9 @@ en:
         text: |-
           Use it in your local government or help us to improve it, it is free software.
 
-          This Open Government Portal use the [Consul app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
+          This Open Government Portal use the [CONSUL app](https://github.com/consul/consul 'consul github') that is free software, with [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), that means in simple words that anyone can use the code freely, copy it, see it in detail, modify it and redistribute it to the word with the modifications he wants (allowing others to do the same). Because we think culture is better and richer when it is released.
 
-          Not only can you use freely this portal in yout local government, but you also will be helped by Madrid city council as much as possible to do it, so if you are interested <a href='mailto:extension.institucional@madrid.es'>write us an email</a>.
-
-          If you are a programmer, you can see the code and help us to improve it at [Consul app](https://github.com/consul/consul 'consul github ' ).
+          If you are a programmer, you can see the code and help us to improve it at [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Use it in your local government
         meetings: Debate's and proposal's meetings
@@ -86,7 +84,6 @@ en:
     processes:
       back: Back
       index:
-        featured: Featured
         process_1_title: Transparency Ordinance
         process_1_description: Madrid wants launch a system of public transparency at the level of the most advanced in the world, and we need your help.
         process_1_button: More information
@@ -143,7 +140,6 @@ en:
         process_19_title: 'Cambio de denominación  del barrio "San Andrés"'
         process_19_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.'
         process_19_button: "Más información"
-        title: Participatory processes
         process_plaza_title: Remodeling of the Plaza España
         process_plaza_description: Select the project that you like for this new space in your city.
         more_info_title: "See more information about the process "

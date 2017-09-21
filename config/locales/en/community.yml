@@ -1,0 +1,58 @@
+en:
+  community:
+    sidebar:
+      title: Community
+      description:
+        proposal: Participate in the user community of this proposal.
+        investment: Participate in the user community of this investment.
+      button_to_access: Access the community
+    show:
+      title:
+        proposal: Proposal community
+        investment: Budget Investment community
+      description:
+        proposal: Participate in the community of this proposal. An active community can help to improve the content of the proposal and boost its dissemination to get more support.
+        investment: Participate in the community of this budget investment. An active community can help to improve the content of the budget investment and boost its dissemination to get more support.
+      create_first_community_topic:
+        first_theme_not_logged_in: No issue yet available, participate creating the first one. Click on the create new topic button.
+        first_theme: Create the first community topic
+        sub_first_theme: To create a theme you have to %{link}
+        sign_link: "access %{org_name}"
+      tab:
+        participants: Participants
+      sidebar:
+        participate: Participate
+        new_topic: Create topic
+        disabled_info_title: You need to be logged to create a new topic
+      topic:
+        edit_button: Edit
+        destroy_button: Destroy
+        comments:
+          one: 1 comment
+          other: "%{count} comments"
+          zero: No comments
+    topic:
+      create: Create a topic
+      edit: Edit Topic
+      form:
+        topic_title: Topic Title
+        topic_description: Description
+        new:
+          submit_button: Create topic
+        edit:
+          submit_button: Edit topic
+        create:
+          submit_button: Create topic
+        update:
+          submit_button: Update topic
+      show:
+        tab:
+          comments_tab: Comments
+      sidebar:
+        recommendations_title: Recommendations to create a topic
+        recommendation_one: Do not write the topic title or whole sentences in capital letters. On the internet that is considered shouting. And no one likes to be yelled at.
+        recommendation_two: Any topic or comment that implies an illegal action will be eliminated, also those that intend to sabotage the spaces of the subject, everything else is allowed.
+        recommendation_three: Enjoy this space, the voices that fill it, it's yours too.
+  topics:
+    show:
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.
