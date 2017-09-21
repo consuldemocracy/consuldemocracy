@@ -7,8 +7,6 @@ class Legislation::Proposal < ActiveRecord::Base
   include Sanitizable
   include Searchable
   include Filterable
-  include HasPublicAuthor
-  include Graphqlable
   include Followable
   include Communitable
   include Documentable
@@ -21,13 +19,10 @@ class Legislation::Proposal < ActiveRecord::Base
   acts_as_votable
   acts_as_paranoid column: :hidden_at
 
-  RETIRE_OPTIONS = %w(duplicated started unfeasible done other)
-
   belongs_to :process, class_name: 'Legislation::Process', foreign_key: 'legislation_process_id'
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
   has_many :comments, as: :commentable
-  has_many :proposal_notifications
 
   validates :title, presence: true
   validates :question, presence: true
@@ -39,7 +34,6 @@ class Legislation::Proposal < ActiveRecord::Base
   validates :description, length: { maximum: Legislation::Proposal.description_max_length }
   validates :question, length: { in: 10..Legislation::Proposal.question_max_length }
   validates :responsible_name, length: { in: 6..Legislation::Proposal.responsible_name_max_length }
-  validates :retired_reason, inclusion: {in: RETIRE_OPTIONS, allow_nil: true}
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -53,16 +47,8 @@ class Legislation::Proposal < ActiveRecord::Base
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
   scope :sort_by_random,           -> { reorder("RANDOM()") }
-  scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
-  scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
-  scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
-  scope :retired,                  -> { where.not(retired_at: nil) }
-  scope :not_retired,              -> { where(retired_at: nil) }
-  scope :successful,               -> { where("cached_votes_up >= ?", Legislation::Proposal.votes_needed_for_success) }
-  scope :public_for_api,           -> { all }
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -94,18 +80,6 @@ class Legislation::Proposal < ActiveRecord::Base
     /\A#{Setting["proposal_code_prefix"]}-\d\d\d\d-\d\d-(\d*)\z/.match(terms)
   end
 
-  def self.for_summary
-    summary = {}
-    categories = ActsAsTaggableOn::Tag.category_names.sort
-    geozones   = Geozone.names.sort
-
-    groups = categories + geozones
-    groups.each do |group|
-      summary[group] = search(group).last_week.sort_by_confidence_score.limit(3)
-    end
-    summary
-  end
-
   def total_votes
     cached_votes_up
   end
@@ -124,10 +98,6 @@ class Legislation::Proposal < ActiveRecord::Base
 
   def votable_by?(user)
     user && user.level_two_or_three_verified?
-  end
-
-  def retired?
-    retired_at.present?
   end
 
   def register_vote(user, vote_value)
@@ -161,26 +131,6 @@ class Legislation::Proposal < ActiveRecord::Base
 
   def after_restore
     tags.each{ |t| t.increment_custom_counter_for('LegislationProposal') }
-  end
-
-  def self.votes_needed_for_success
-    Setting['votes_for_proposal_success'].to_i
-  end
-
-  def successful?
-    total_votes >= Legislation::Proposal.votes_needed_for_success
-  end
-
-  def archived?
-    created_at <= Setting["months_to_archive_proposals"].to_i.months.ago
-  end
-
-  def notifications
-    proposal_notifications
-  end
-
-  def users_to_notify
-    (voters + followers).uniq
   end
 
   protected

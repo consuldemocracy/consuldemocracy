@@ -98,7 +98,7 @@ class User < ActiveRecord::Base
   end
 
   def legislation_proposal_votes(proposals)
-    voted = votes.for_proposals(proposals)
+    voted = votes.for_legislation_proposals(proposals)
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
