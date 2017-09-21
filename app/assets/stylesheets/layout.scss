@@ -278,7 +278,7 @@ a {
 .icon-angle-left {
   clear: both;
   color: $text-medium;
-  float: left;
+  display: inline-block;
 }
 
 .tabs-content {
@@ -322,6 +322,10 @@ a {
 
 .align-top {
   vertical-align: top;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 // 02. Header
