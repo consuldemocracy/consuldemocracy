@@ -1,7 +1,7 @@
 App.Imageable =
 
   initialize: ->
-    inputFiles = $('input.direct_upload_image_attachment[type=file]')
+    inputFiles = $('input.js-document-attachment[type=file]')
 
     $.each inputFiles, (index, input) ->
       App.Imageable.initializeDirectUploadInput(input)

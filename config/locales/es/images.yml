@@ -2,7 +2,6 @@ es:
   images:
     upload_image: Subir imagen
     remove_image: Eliminar imagen
-    remove_alert: ¿Está seguro que desea eliminar la imagen del proyecto?
 
     form:
       title: Imagen descriptiva

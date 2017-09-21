@@ -76,7 +76,7 @@ module ImagesHelper
   def render_image_attachment(image)
     html = file_field_tag :attachment,
                           accept: imageable_accepted_content_types_extensions,
-                          class: 'direct_upload_image_attachment',
+                          class: 'js-document-attachment',
                           data: {
                             url: image_direct_upload_url(image),
                             cached_attachment_input_field: image_nested_field_id(image, :cached_attachment),

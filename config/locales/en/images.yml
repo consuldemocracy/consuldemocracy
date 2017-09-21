@@ -2,7 +2,6 @@ en:
   images:
     upload_image: Upload image
     remove_image: Remove image
-    remove_alert: Are you sure you want to remove the image?
 
     form:
       title: Descriptive image
