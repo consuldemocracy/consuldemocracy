@@ -251,7 +251,7 @@
 .spending-proposal-form,
 .document-form,
 .topic-new,
-.topic-form  {
+.topic-form {
 
   .icon-debates,
   .icon-proposals,
@@ -395,8 +395,8 @@
     }
   }
 
-  &.tags,
-  &.geozone {
+  .tags,
+  .geozone {
 
     li {
       margin-bottom: 0;
@@ -478,6 +478,7 @@
 
   .tags {
     display: block;
+    margin-bottom: 0;
 
     a {
       margin-right: rem-calc(6);
@@ -607,6 +608,14 @@
         }
       }
     }
+  }
+}
+
+.show-actions-menu {
+
+  [class^="icon-"] {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
@@ -760,7 +769,7 @@
   display: none;
 }
 
-.document-form{
+.document-form {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -896,9 +905,14 @@
 }
 
 .help-header {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  padding-bottom: $line-height / 2;
+  padding-top: $line-height;
 
   h1 {
     font-size: rem-calc(24);
+    text-transform: uppercase;
   }
 }
 

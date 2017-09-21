@@ -12,7 +12,7 @@ module CommunitiesHelper
     community.from_proposal? ? t("community.show.description.proposal") : t("community.show.description.investment")
   end
 
-  def is_author?(community, participant)
+  def author?(community, participant)
     if community.from_proposal?
       community.proposal.author_id == participant.id
     else

@@ -155,7 +155,7 @@ FactoryGirl.define do
     description          'Proposal description'
     question             'Proposal question'
     external_url         'http://external_documention.es'
-    video_url            'http://video_link.com'
+    video_url            'https://youtu.be/nhuNb0XtRhQ'
     responsible_name     'John Snow'
     terms_of_service     '1'
     association :author, factory: :user
@@ -507,13 +507,6 @@ FactoryGirl.define do
     date Date.current
   end
 
-  factory :poll_final_recount, class: 'Poll::FinalRecount' do
-    association :officer_assignment, factory: [:poll_officer_assignment, :final]
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
-  end
-
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
@@ -552,6 +545,11 @@ FactoryGirl.define do
   end
 
   factory :poll_null_result, class: 'Poll::NullResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
+  factory :poll_total_result, class: 'Poll::TotalResult' do
     association :author, factory: :user
     origin { 'web' }
   end

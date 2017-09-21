@@ -97,11 +97,11 @@ feature 'Admin booths assignments' do
       officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
       final_officer_assignment = create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
 
-      final_recount = create(:poll_final_recount,
+      total_recount = create(:poll_total_result,
                          booth_assignment: booth_assignment,
                          officer_assignment: final_officer_assignment,
                          date: final_officer_assignment.date,
-                         count: 5678)
+                         amount: 5678)
 
       booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
 
@@ -112,8 +112,8 @@ feature 'Admin booths assignments' do
 
       click_link 'Recounts'
       within('#recounts_list') do
-        within("#recounting_#{final_recount.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content final_recount.count
+        within("#recounting_#{total_recount.date.strftime('%Y%m%d')}") do
+          expect(page).to have_content total_recount.amount
         end
       end
     end

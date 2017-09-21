@@ -8,7 +8,7 @@ module DocumentsHelper
     document.errors[:attachment].join(', ') if document.errors.key?(:attachment)
   end
 
-  def bytesToMeg(bytes)
+  def bytes_to_mega(bytes)
     bytes / Numeric::MEGABYTE
   end
 
@@ -54,7 +54,7 @@ module DocumentsHelper
   def render_attachment(document, index)
     html = file_field_tag :attachment,
                           accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                          class: 'document_ajax_attachment',
+                          class: 'js-document-attachment',
                           data: {
                             url: document_direct_upload_url(document),
                             cached_attachment_input_field: document_nested_field_id(document, index, :cached_attachment),
@@ -80,10 +80,10 @@ module DocumentsHelper
 
   def document_direct_upload_url(document)
     upload_documents_url(
-       documentable_type: document.documentable_type,
-       documentable_id: document.documentable_id,
-       format: :js
-     )
+      documentable_type: document.documentable_type,
+      documentable_id: document.documentable_id,
+      format: :js
+    )
   end
 
 end

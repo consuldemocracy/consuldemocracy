@@ -1,4 +1,4 @@
-class Admin::Poll::BoothsController < Admin::BaseController
+class Admin::Poll::BoothsController < Admin::Poll::BaseController
   load_and_authorize_resource class: 'Poll::Booth'
 
   def index

@@ -4,11 +4,11 @@ class Poll
     belongs_to :poll
 
     has_many :officer_assignments, class_name: "Poll::OfficerAssignment", dependent: :destroy
-    has_many :final_recounts, class_name: "Poll::FinalRecount", dependent: :destroy
     has_many :officers, through: :officer_assignments
     has_many :voters
     has_many :partial_results
     has_many :white_results
     has_many :null_results
+    has_many :total_results
   end
 end

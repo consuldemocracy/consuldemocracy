@@ -183,7 +183,7 @@ feature 'Admin polls' do
 
       scenario 'Add question to poll', :js do
         poll = create(:poll)
-        question = create(:poll_question, poll: nil, title: 'Should we rebuild the city?')
+        question = create(:poll_question, title: 'Should we rebuild the city?')
 
         visit admin_poll_path(poll)
 
@@ -249,18 +249,18 @@ feature 'Admin polls' do
         booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
 
         3.times do |i|
-          create(:poll_final_recount,
+          create(:poll_total_result,
                  booth_assignment: booth_assignment,
                  date: poll.starts_at + i.days,
-                 count: 21)
+                 amount: 21)
         end
 
         2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
 
-        create(:poll_final_recount,
+        create(:poll_total_result,
                booth_assignment: booth_assignment_final_recounted,
                date: poll.ends_at,
-               count: 55555)
+               amount: 55555)
 
         visit admin_poll_path(poll)
 

@@ -91,6 +91,8 @@ poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
 poll_officer.create_poll_officer
 poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2211111111")
 
+create_user('unverified@consul.dev', 'unverified')
+
 level_2 = create_user('leveltwo@consul.dev', 'level 2')
 level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1")
 
@@ -502,7 +504,7 @@ Proposal.last(3).each do |proposal|
 end
 
 puts " ✅"
-puts "Creating proposal notifications"
+print "Creating proposal notifications"
 
 100.times do |i|
   ProposalNotification.create!(title: "Proposal notification title #{i}",
@@ -585,7 +587,7 @@ print "Creating Poll Questions from Proposals"
 3.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No")
+  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end
@@ -596,7 +598,7 @@ print "Creating Successful Proposals"
 10.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No")
+  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end

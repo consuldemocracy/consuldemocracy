@@ -1,4 +1,4 @@
-class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
+class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll
   before_action :redirect_if_blank_required_params, only: [:by_officer]
@@ -18,7 +18,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::BaseController
     @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer_id])
     @officer_assignments = ::Poll::OfficerAssignment.
                            joins(:booth_assignment).
-                           includes(:final_recounts, booth_assignment: :booth).
+                           includes(:total_results, booth_assignment: :booth).
                            where("officer_id = ? AND poll_booth_assignments.poll_id = ?", @officer.id, @poll.id).
                            order(:date)
   end

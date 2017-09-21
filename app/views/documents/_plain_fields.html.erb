@@ -13,7 +13,7 @@
     <%= file_field_tag :attachment,
                      accept: accepted_content_types_extensions(document.documentable.class),
                      label: false,
-                     class: 'document_ajax_attachment',
+                     class: 'js-document-attachment',
                      data: {
                        url: upload_documents_url(documentable_type: document.documentable_type, documentable_id: document.documentable_id),
                        cached_attachment_input_field: "document_cached_attachment",

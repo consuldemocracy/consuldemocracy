@@ -1,4 +1,4 @@
-class Admin::Poll::PollsController < Admin::BaseController
+class Admin::Poll::PollsController < Admin::Poll::BaseController
   load_and_authorize_resource
 
   before_action :load_search, only: [:search_booths, :search_questions, :search_officers]

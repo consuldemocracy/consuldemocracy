@@ -1,5 +1,5 @@
-class Admin::Poll::ShiftsController < Admin::BaseController
-  
+class Admin::Poll::ShiftsController < Admin::Poll::BaseController
+
   before_action :load_booth
   before_action :load_polls
   before_action :load_officer

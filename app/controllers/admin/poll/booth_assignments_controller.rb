@@ -1,4 +1,4 @@
-class Admin::Poll::BoothAssignmentsController < Admin::BaseController
+class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll, except: [:create, :destroy]
 
@@ -15,7 +15,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::BaseController
   end
 
   def show
-    @booth_assignment = @poll.booth_assignments.includes(:final_recounts, :voters,
+    @booth_assignment = @poll.booth_assignments.includes(:total_results, :voters,
                                                          officer_assignments: [officer: [:user]]).find(params[:id])
     @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
   end
