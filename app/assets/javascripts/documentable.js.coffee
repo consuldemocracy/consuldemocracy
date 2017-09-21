@@ -28,7 +28,7 @@ App.Documentable =
 
       change: (e, data) ->
         $.each data.files, (index, file) ->
-          App.Documentable.setFilename(inputData, file)
+          App.Documentable.setFilename(inputData, file.name)
 
       fail: (e, data) ->
         $(data.cachedAttachmentField).val("")
