@@ -27,15 +27,15 @@
   </div>
 
   <div class="small-12 column attachment-actions">
-    <div class="small-6 column action-add attachment-errors">
+    <div class="small-9 column action-add attachment-errors document-attachment">
       <%= render_attachment(document, index) %>
     </div>
-    <div class="small-6 column action-remove text-right">
+    <div class="small-3 column action-remove text-right">
       <%= render_destroy_document_link(document, index) %>
     </div>
   </div>
 
-  <div class="small-12 column">
+  <div class="small-6 column">
     <p class="file-name">
       <%= document_attachment_file_name(document) %>
     </p>
@@ -44,6 +44,5 @@
   <div class="small-12 column">
     <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
   </div>
-
   <hr>
 </div>

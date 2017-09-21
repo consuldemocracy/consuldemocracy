@@ -31,16 +31,88 @@
   }
 }
 
-@mixin image-upload {
-  .image-upload {
-    .button,
-    p {
-      float: left;
+
+@mixin upload-image-documents {
+
+  .cached-image {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .progress-bar-placeholder {
+    display: none;
+    margin-bottom: $line-height;
+  }
+
+  .document-form,
+  .image-form {
+
+    .document,
+    .image-form {
+      .file-name {
+        margin-top: 0;
+      }
     }
 
-    p {
-      margin-left: 1rem;
-      margin-top: 0.8rem;
+    .document,
+    .image {
+      .loading-bar.errors {
+        margin-top: $line-height * 2;
+      }
     }
+  }
+
+  .document,
+  .image {
+
+    .document-attachment,
+    .image-attachment {
+      padding-left:0;
+
+      p{
+        margin-bottom: 0;
+      }
+    }
+    .js-document-attachment{
+      display: none;
+    }
+  }
+
+  .button {
+    font-weight: normal;
+  }
+
+  .progress-bar {
+    width: 100%;
+    background-color: $light-gray;
+  }
+
+  .file-name {
+    margin-top: 0;
+  }
+
+  .loading-bar {
+    height: 5px;
+    width: 0;
+    transition: width 500ms ease-out;
+
+    &.uploading {
+      background-color: $dark-gray;
+    }
+
+    &.complete {
+      background-color: $success-color;
+      width: 100%;
+    }
+
+    &.errors {
+      background-color: $alert-color;
+      width: 100%;
+      margin-top: $line-height / 2;
+    }
+  }
+
+  .loading-bar.no-transition {
+    transition: none;
   }
 }

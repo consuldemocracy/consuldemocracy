@@ -37,6 +37,7 @@ App.Documentable =
         App.Documentable.clearInputErrors(data)
         App.Documentable.setInputErrors(data)
         $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove()
+        $(data.addAttachmentLabel).addClass('error')
         $(data.addAttachmentLabel).show()
 
       done: (e, data) ->
@@ -46,6 +47,8 @@ App.Documentable =
         App.Documentable.setFilename(data, data.result.filename)
         App.Documentable.clearInputErrors(data)
         $(data.addAttachmentLabel).hide()
+        $(data.wrapper).find(".attachment-actions").removeClass('small-12').addClass('small-6 float-right')
+        $(data.wrapper).find(".attachment-actions .action-remove").removeClass('small-3').addClass('small-12')
 
         destroyAttachmentLink = $(data.result.destroy_link)
         $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink)

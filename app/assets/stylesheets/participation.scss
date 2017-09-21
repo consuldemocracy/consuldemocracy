@@ -252,7 +252,8 @@
 .document-form,
 .topic-new,
 .topic-form,
-.image-form {
+.image-form,
+.proposal .image-form {
 
   .icon-debates,
   .icon-proposals,
@@ -269,16 +270,13 @@
   }
 
   .icon-proposals,
-  .icon-documents {
+  .icon-documents,
+  .icon-image {
     color: $proposals;
   }
 
   .icon-budget {
     color: $budget;
-  }
-
-  .icon-image {
-    color: $budget-investment-image;
   }
 }
 
@@ -308,19 +306,19 @@
 .proposal-form,
 .topic-form,
 .topic-new,
-.document-form {
+.document-form,
+.image-form {
 
   .recommendations li::before {
     color: $proposals;
   }
 }
 
-.image-form {
-
-  .recommendations li::before {
-    color: $budget-investment-image;
-  }
+.budget-investment-new,
+.proposal-form {
+  @include upload-image-documents;
 }
+
 
 // 03. Show participation
 // ----------------------
@@ -946,28 +944,21 @@
 .budget-investment-show {
 
   figure {
-    margin: 1em 0 0;
+    margin: rem-calc(10) 0 0;
     display: inline-block;
 
     figcaption {
       font-size: $small-font-size;
-      margin-top: 1rem;
+      margin-top: rem-calc(10);
     }
   }
 }
 
 .image-form {
 
-  @include image-upload;
-
   .note-marked p {
     margin-bottom: 0;
   }
-}
-
-.budget-investment-new {
-
-  @include image-upload;
 }
 
 .investment-project-show .supports,

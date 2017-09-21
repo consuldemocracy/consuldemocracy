@@ -40,6 +40,7 @@ App.Imageable =
         App.Imageable.setInputErrors(data)
         App.Imageable.clearPreview(data)
         $(data.destroyAttachmentLinkContainer).find("a.delete:not(.remove-nested)").remove()
+        $(data.addAttachmentLabel).addClass('error')
         $(data.addAttachmentLabel).show()
 
       done: (e, data) ->
@@ -49,6 +50,8 @@ App.Imageable =
         App.Imageable.setFilename(data, data.result.filename)
         App.Imageable.clearInputErrors(data)
         $(data.addAttachmentLabel).hide()
+        $(data.wrapper).find(".attachment-actions").removeClass('small-12').addClass('small-6 float-right')
+        $(data.wrapper).find(".attachment-actions .action-remove").removeClass('small-3').addClass('small-12')
 
         App.Imageable.setPreview(data)
         destroyAttachmentLink = $(data.result.destroy_link)

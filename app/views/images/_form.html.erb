@@ -18,7 +18,7 @@
 
     <%= render_image(@image, :thumb, false) if @image.attachment.exists? %>
 
-    <div class="small-12 column attachment-actions">
+    <div class="attachment-actions">
       <div class="small-6 column action-add attachment-errors">
         <%= f.label :attachment, t("images.form.attachment_label"), class: 'button hollow' %>
         <%= f.file_field :attachment,
@@ -47,8 +47,8 @@
       </div>
     </div>
 
-    <div class="small-12 column">
-      <p class="file-name">
+    <div class="small-12 column image-attachment">
+      <p class="file-name column">
         <%= image_attachment_file_name(@image) %>
       </p>
     </div>

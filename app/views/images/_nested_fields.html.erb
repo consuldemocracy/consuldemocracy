@@ -29,15 +29,15 @@
   <%= render_image(image, :thumb, false) if image.attachment.exists? %>
 
   <div class="small-12 column attachment-actions">
-    <div class="small-6 column action-add attachment-errors">
+    <div class="small-9 column action-add attachment-errors image-attachment">
       <%= render_image_attachment(image) %>
     </div>
-    <div class="small-6 column action-remove text-right">
+    <div class="small-3 column action-remove text-right">
       <%= render_destroy_image_link(image) %>
     </div>
   </div>
 
-  <div class="small-12 column">
+  <div class="small-6 column">
     <p class="file-name">
       <%= image_attachment_file_name(image) %>
     </p>
