@@ -80,7 +80,7 @@ Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 Setting['feature.community'] = true
-Setting['feature.residence_verification'] = nil
+Setting['feature.residence_verification'] = true
 
 
 # Spending proposals feature flags
