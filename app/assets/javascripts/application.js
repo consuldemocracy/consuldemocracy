@@ -63,6 +63,7 @@
 //= require legislation_annotatable
 //= require watch_form_changes
 //= require followable
+//= require flaggable
 //= require documentable
 //= require tree_navigator
 //= require custom

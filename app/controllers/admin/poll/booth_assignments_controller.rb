@@ -1,4 +1,4 @@
-class Admin::Poll::BoothAssignmentsController < Admin::BaseController
+class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll, except: [:create, :destroy]
 
