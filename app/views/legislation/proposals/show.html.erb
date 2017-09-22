@@ -16,18 +16,6 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
-        <% if can?(:create, @document) && @proposal.documents.size < Proposal.max_documents_allowed %>
-          <%= link_to t("documents.upload_document"),
-                      new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
-                      class: 'button hollow float-right' %>
-        <% end %>
-
-        <% if current_user && @proposal.editable_by?(current_user) %>
-          <%= link_to edit_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal), class: 'edit-proposal button hollow float-right' do %>
-            <%= t("proposals.show.edit_proposal_link") %>
-          <% end %>
-        <% end %>
-
         <h1><%= @proposal.title %></h1>
         <% if @proposal.conflictive? %>
           <div data-alert class="callout alert margin-top">
