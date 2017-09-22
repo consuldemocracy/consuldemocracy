@@ -673,7 +673,6 @@ Proposal.last(3).each do |proposal|
 end
 
 puts " ✅"
-<<<<<<< HEAD
 print "Creating Probe and ProbeOptions for Town Planning project"
 town_planning = Probe.create(codename: "town_planning")
 town_planning_options = [
@@ -839,10 +838,7 @@ tags = Faker::Lorem.words(25)
                               sub_proceeding: subproceedings.sample)
 end
 
-puts "Creating proposal notifications"
-=======
 print "Creating proposal notifications"
->>>>>>> consul/master
 
 100.times do |i|
   ProposalNotification.create!(title: "Proposal notification title #{i}",

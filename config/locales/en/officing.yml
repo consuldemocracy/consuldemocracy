@@ -10,7 +10,7 @@ en:
     menu:
       voters: Validate document
       letters: "Validate document"
-      final_recounts: Final recounts and results
+      total_recounts: Total recounts and results
     polls:
       final:
         title: Polls ready for final recounting

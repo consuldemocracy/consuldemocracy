@@ -2,8 +2,10 @@ class Poll
   class OfficerAssignment < ActiveRecord::Base
     belongs_to :officer
     belongs_to :booth_assignment
-    has_many :final_recounts
     has_many :partial_results
+    has_many :white_results
+    has_many :null_results
+    has_many :total_results
     has_many :voters
 
     validates :officer_id, presence: true

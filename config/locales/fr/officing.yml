@@ -10,7 +10,7 @@ fr:
     menu:
       voters: "Valider un document"
       recounts: "Enregistrer le dépouillement"
-      final_recounts: "Dépouillements finaux et résultats"
+      total_recounts: "Dépouillements finaux et résultats"
     polls:
       index:
         title: "Liste des votes"
@@ -38,23 +38,6 @@ fr:
         recount_list: "Vos dépouillements"
         booth: "Urne"
         date: "Date"
-    final_recounts:
-      flash:
-        create: "Données ajoutées"
-        error_create: "Décompte final NON ajouté. Erreur dans les données."
-      new:
-        title: "%{poll} - Ajouter le dépouillement final"
-        not_allowed: "Vous n'êtes pas autorisés à ajouter les dépouillements finaux pour ce vote"
-        booth: "Bureau de vote"
-        date: "Date"
-        select_booth: "Sélectionner un bureau de vote"
-        select_date: "Sélectionner une date"
-        count: "Décompte final des votes"
-        count_placeholder: "Décompte final des votes"
-        submit: "Sauvegarder"
-        final_recount_list: "Vos dépouillements finaux"
-        system_count: "Dépouillement par le système"
-        add_results: "Ajouter les résultats"
     results:
       flash:
         create: "Résultats sauvegardés"
