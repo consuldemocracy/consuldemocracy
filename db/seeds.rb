@@ -80,6 +80,7 @@ Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
 Setting['feature.community'] = true
+Setting['feature.document_on_show'] = false
 
 # Spending proposals feature flags
 Setting['feature.spending_proposal_features.phase1'] = true
