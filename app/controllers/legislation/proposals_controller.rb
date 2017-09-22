@@ -53,11 +53,6 @@ class Legislation::ProposalsController < Legislation::BaseController
     end
   end
 
-  def summary
-    @proposals = Legislation::Proposal.for_summary
-    @tag_cloud = tag_cloud
-  end
-
   private
 
     def proposal_params
