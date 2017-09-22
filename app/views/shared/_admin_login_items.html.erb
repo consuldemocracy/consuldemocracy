@@ -30,13 +30,9 @@
       <% if current_user.administrator? || current_user.poll_officer? && Poll.current.any? %>
         <li>
           <% if current_user.try(:poll_officer).try(:letter_officer?) %>
-            <li>
               <%= link_to t("layouts.header.officing"), new_officing_letter_path %>
-            </li>
           <% else %>
-            <li>
               <%= link_to t("layouts.header.officing"), officing_root_path %>
-            </li>
           <% end %>
         </li>
       <% end %>
