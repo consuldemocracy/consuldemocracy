@@ -3,18 +3,23 @@
 
 /* Autocomplete
 ----------------------------------*/
-.ui-autocomplete { position: absolute; cursor: default; }
+.ui-autocomplete {
+  position: absolute;
+  cursor: default;
+}
 
 /* workarounds */
-* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+* html .ui-autocomplete {
+  width: 1px;
+} /* without this, the menu expands to 100% in IE6 */
 
 /* Menu
 ----------------------------------*/
 .ui-menu {
-  list-style:none;
+  list-style: none;
   padding: $line-height / 4 $line-height / 3;
-  display:block;
-  background: white;
+  display: block;
+  background: #fff;
   border: 1px solid $border;
   font-size: $small-font-size;
 
@@ -25,7 +30,8 @@
       position: relative;
     }
 
-    .ui-state-hover, .ui-state-active {
+    .ui-state-hover,
+    .ui-state-active {
       background: #ececec;
       border-radius: rem-calc(6);
     }
