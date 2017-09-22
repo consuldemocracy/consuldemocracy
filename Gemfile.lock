@@ -541,7 +541,7 @@ DEPENDENCIES
   pg (~> 0.21.0)
   pg_search (~> 2.0.1)
   poltergeist (~> 1.15.0)
-  puma
+  puma (~> 3.10.0)
   quiet_assets (~> 1.1.0)
   rails (= 4.2.9)
   rails-assets-markdown-it (~> 8.2.1)!

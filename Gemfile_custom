@@ -4,4 +4,4 @@
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
 
-gem 'puma'
+gem 'puma', '~> 3.10.0'
