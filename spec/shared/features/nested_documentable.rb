@@ -9,11 +9,16 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
   let!(:documentable)           { create(documentable_factory_name, author: user) }
 
   before do
+    Setting['feature.document_on_show'] = 'true'
     create(:administrator, user: administrator)
 
     documentable_path_arguments&.each do |argument_name, path_to_value|
         arguments.merge!("#{argument_name}": documentable.send(path_to_value))
     end
+  end
+
+  after do
+    Setting['feature.document_on_show'] = nil
   end
 
   describe "at #{path}" do

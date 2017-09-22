@@ -51,6 +51,8 @@ Setting.create(key: 'feature.human_rights.closed', value: 'true')
 Setting.create(key: 'feature.signature_sheets', value: "true")
 Setting.create(key: 'feature.legislation', value: "true")
 Setting.create(key: 'feature.community', value: "true")
+Setting.create(key: 'feature.document_on_show', value: "false")
+
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')

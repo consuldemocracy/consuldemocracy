@@ -121,7 +121,7 @@
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
-            <% if can_create_document?(@document, @proposal) %>
+            <% if Setting['feature.document_on_show'] && can_create_document?(@document, @proposal) %>
               <%= link_to new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
                           class: 'button hollow expanded' do %>
                           <span class="icon-document"></span>
