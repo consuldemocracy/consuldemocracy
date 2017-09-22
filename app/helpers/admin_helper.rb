@@ -17,7 +17,7 @@ module AdminHelper
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users"].include? controller_name
+    ["proposals", "debates", "comments", "hidden_users"].include? controller_name && controller.class.parent != Admin::Legislation
   end
 
   def menu_budget?
@@ -39,7 +39,7 @@ module AdminHelper
   def menu_customization?
     ["pages", "images", "content_blocks"].include? controller_name
   end
-  
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|
