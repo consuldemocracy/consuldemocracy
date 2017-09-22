@@ -19,6 +19,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
   def update
     if @process.update(process_params)
+      set_tag_list
+
       link = legislation_process_path(@process).html_safe
       redirect_to :back, notice: t('admin.legislation.processes.update.notice', link: link)
     else
@@ -56,7 +58,13 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :draft_publication_enabled,
         :result_publication_enabled,
         :published,
-        :proposals_description
+        :proposals_description,
+        :custom_list
       )
+    end
+
+    def set_tag_list
+      @process.set_tag_list_on(:customs, process_params[:custom_list])
+      @process.save
     end
 end

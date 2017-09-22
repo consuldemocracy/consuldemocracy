@@ -1,6 +1,9 @@
 class Legislation::Process < ActiveRecord::Base
-  acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  include Taggable
+
+  acts_as_paranoid column: :hidden_at
+  acts_as_taggable_on :customs
 
   PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase proposals_phase draft_publication result_publication).freeze
 
