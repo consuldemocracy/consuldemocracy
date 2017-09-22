@@ -17,24 +17,14 @@ module DocumentsHelper
     bytes / Numeric::MEGABYTE
   end
 
-  def document_nested_field_name(document, index, field)
-    parent = document.documentable_type.parameterize.underscore
-    "#{parent.parameterize}[documents_attributes][#{index}][#{field}]"
-  end
-
-  def document_nested_field_id(document, index, field)
-    parent = document.documentable_type.parameterize.underscore
-    "#{parent.parameterize}_documents_attributes_#{index}_#{field}"
-  end
-
   def document_nested_field_wrapper_id(index)
     "document_#{index}"
   end
 
-  def render_destroy_document_link(document, index)
+  def render_destroy_document_link(document)
     if document.persisted?
       link_to t('documents.form.delete_button'),
-              document_path(document, index: index, nested_document: true),
+              document_path(document, nested_document: true),
               method: :delete,
               remote: true,
               data: { confirm: t('documents.actions.destroy.confirm') },
@@ -55,25 +45,18 @@ module DocumentsHelper
     end
   end
 
-  def render_attachment(document, index)
-    html = file_field_tag :attachment,
-                          accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                          class: 'js-document-attachment',
-                          data: {
-                            url: document_direct_upload_url(document),
-                            cached_attachment_input_field: document_nested_field_id(document, index, :cached_attachment),
-                            title_input_field: document_nested_field_id(document, index, :title),
-                            multiple: false,
-                            index: index,
-                            nested_document: true
-                          },
-                          name: document_nested_field_name(document, index, :attachment),
-                          id: document_nested_field_id(document, index, :attachment)
+  def render_attachment(builder, document)
+    html = builder.file_field :attachment,
+                        label: false,
+                        accept: accepted_content_types_extensions(document.documentable_type.constantize),
+                        class: 'js-document-attachment',
+                        data: {
+                          url: document_direct_upload_url(document),
+                          nested_document: true
+                        }
     if document.attachment.blank? && document.cached_attachment.blank?
       klass = document.errors[:attachment].any? ? "error" : ""
-      html += label_tag document_nested_field_id(document, index, :attachment),
-                       t("documents.form.attachment_label"),
-                       class: "button hollow #{klass}"
+      html += builder.label :attachment, t("documents.upload_document"), class: "button hollow"
       if document.errors[:attachment].any?
         html += content_tag :small, class: "error" do
           document_errors_on_attachment(document)

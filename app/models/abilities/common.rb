@@ -38,7 +38,7 @@ module Abilities
       can [:create, :destroy], Follow
 
       can [:create, :destroy, :new], Document, documentable: { author_id: user.id }
-      can [:new_nested, :upload, :destroy_upload], Document
+      can [:upload, :destroy_upload], Document
 
       can [:create, :destroy, :new], Image, imageable: { author_id: user.id }
       can [:new_nested, :upload, :destroy_upload], Image

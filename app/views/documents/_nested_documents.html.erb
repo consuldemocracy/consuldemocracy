@@ -1,23 +1,31 @@
 <div class="documents-list">
-  <%= label_tag :documents, t("documents.form.title") %>
+  <%= f.label :documents, t("documents.form.title") %>
   <p class="help-text"><%= documentables_note(documentable) %></p>
 
-  <% documentable.documents.each_with_index do |document, index| %>
-    <%= render 'documents/nested_fields', document: document, index: index %>
-  <% end %>
+  <div id="nested-documents" data-max-documents-allowed="<%= documentable.class.max_documents_allowed%>">
+    <%= f.fields_for :documents do |documents_builder| %>
+      <%= render 'documents/document_fields', f: documents_builder %>
+    <% end %>
+  </div>
+
+  <%= link_to_add_association t('documents.form.add_new_document'), f, :documents,
+                              partial: "documents/document_fields",
+                              render_options: {
+                                locals: {
+                                  document: Document.new(documentable: documentable)
+                                },
+                              },
+                              id: "new_document_link",
+                              class: "button hollow",
+                              data: {
+                                association_insertion_node: "#nested-documents",
+                                association_insertion_method: "append"
+                              } %>
+
+  <div id="max-documents-notice" class="max-documents-notice callout warning text-center <%= "hide" unless max_documents_allowed?(documentable) %>">
+    <%= t "documents.max_documents_allowed_reached_html" %>
+  </div>
+
+  <hr>
 
 </div>
-
-<% unless max_documents_allowed?(documentable) %>
-  <%= link_to t("documents.form.add_new_document"),
-              new_nested_documents_path(documentable_type: documentable.class.name, index: documentable.documents.size),
-              remote: true,
-              id: "new_document_link",
-              class: "button hollow"  %>
-<% end %>
-
-<div class="max-documents-notice callout warning text-center <%= "hide" unless max_documents_allowed?(documentable) %>">
-  <%= t "documents.max_documents_allowed_reached_html" %>
-</div>
-
-<hr>

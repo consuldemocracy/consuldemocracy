@@ -12,15 +12,17 @@
                        name: image_nested_field_name(image, :cached_attachment),
                        id: image_nested_field_id(image, :cached_attachment) %>
 
-  <div class="small-12 column">
-    <%= label_tag :title, t("activerecord.attributes.image.title") %>
+  <div class="small-12 column title">
+    <%= label_tag :title,
+                  t("activerecord.attributes.image.title"),
+                  class: image.errors[:title].any? ? "error" : "" %>
 
     <%= text_field_tag :title,
                        image.title,
                        placeholder: t("images.new.form.title_placeholder"),
                        name: image_nested_field_name(image, :title),
                        id: image_nested_field_id(image, :title),
-                       class: "image-title" %>
+                       class: image.errors[:title].any? ? "error" : "" %>
     <% if image.errors[:title].any? %>
       <small class="error"><%= image.errors[:title].join(", ") %></small>
     <% end %>

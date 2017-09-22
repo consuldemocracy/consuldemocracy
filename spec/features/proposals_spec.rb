@@ -1290,6 +1290,8 @@ feature 'Proposals' do
 
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
 
+describe "xxx" do
+
   it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }
 
   it_behaves_like "nested imageable",
@@ -1325,6 +1327,7 @@ feature 'Proposals' do
                   nil,
                   "Save changes",
                   "Proposal updated successfully"
+end
 
   scenario 'Erased author' do
     user = create(:user)

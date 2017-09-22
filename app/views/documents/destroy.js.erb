@@ -1,7 +1,1 @@
-App.Documentable.destroyNestedDocument("<%= document_nested_field_wrapper_id(params[:index]) %>")
-<% new_document_link = link_to t("documents.form.add_new_document"),
-                               new_nested_documents_path(documentable_type: @document.documentable_type, index: params[:index]),
-                               remote: true,
-                               id: "new_document_link",
-                               class: "button hollow" %>
-App.Documentable.updateNewDocumentButton("<%= j new_document_link %>")
+App.Documentable.destroyNestedDocument("<%= dom_id(@document) %>")

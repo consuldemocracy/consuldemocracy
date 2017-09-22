@@ -47,6 +47,10 @@
   .document-form,
   .image-form {
 
+    .title{
+      margin-bottom: $line-height;
+    }
+
     .document,
     .image-form {
       .file-name {

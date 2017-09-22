@@ -50,8 +50,8 @@
       <%= render 'images/nested_images', imageable: @proposal %>
     </div>
 
-    <div class="documents small-12 column" data-max-documents="<%= Proposal.max_documents_allowed %>">
-      <%= render 'documents/nested_documents', documentable: @proposal %>
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
     </div>
 
     <div class="small-12 medium-6 column">

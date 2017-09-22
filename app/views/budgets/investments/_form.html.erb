@@ -25,8 +25,8 @@
       <%= render 'images/nested_images', imageable: @investment %>
     </div>
 
-    <div class="documents small-12 column" data-max-documents="<%= Budget::Investment.max_documents_allowed %>">
-      <%= render 'documents/nested_documents', documentable: @investment %>
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @investment, f: f %>
     </div>
 
     <div class="small-12 column">

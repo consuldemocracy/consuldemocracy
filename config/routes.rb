@@ -100,9 +100,7 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
-  resources :documents, only: [:new, :create, :destroy] do
-    get :new_nested, on: :collection
-  end
+  resources :documents, only: [:new, :create, :destroy]
 
   resources :images, only: [:new, :create, :destroy] do
     get :new_nested, on: :collection

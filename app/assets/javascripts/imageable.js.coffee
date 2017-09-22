@@ -114,6 +114,7 @@ App.Imageable =
     $(data.errorContainer).append(errors)
 
   setPreview: (data) ->
+    console.log 'App.Imageable.setPreview'
     image_preview = '<div class="small-12 column text-center image-preview"><figure><img src="' + data.result.attachment_url + '" class="cached-image"/></figure></div>'
     if $(data.preview).length > 0
       $(data.preview).replaceWith(image_preview)

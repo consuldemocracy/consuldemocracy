@@ -1,10 +1,13 @@
 App.Documentable =
 
   initialize: ->
-    inputFiles = $('input.js-document-attachment[type=file]')
-
-    $.each inputFiles, (index, input) ->
+    $('#nested-documents').on 'cocoon:after-insert', (e, nested_document) ->
+      input = $(nested_document).find('.js-document-attachment')
       App.Documentable.initializeDirectUploadInput(input)
+
+      if $(nested_document).closest('#nested-documents').find('.document').length >= $('#nested-documents').data('max-documents-allowed')
+        $('#max-documents-notice').removeClass('hide')
+        $('#new_document_link').addClass('hide')
 
   initializeDirectUploadInput: (input) ->
 
@@ -75,8 +78,8 @@ App.Documentable =
     data.fileNameContainer = $(wrapper).find('p.file-name')
     data.destroyAttachmentLinkContainer = $(wrapper).find('.action-remove')
     data.addAttachmentLabel = $(wrapper).find('.action-add label')
-    data.cachedAttachmentField = $(wrapper).find("#" + $(input).data('cached-attachment-input-field'))
-    data.titleField = $(wrapper).find("#" + $(input).data('title-input-field'))
+    data.cachedAttachmentField = $(wrapper).find("input[name$='[cached_attachment]']")
+    data.titleField = $(wrapper).find("input[name$='[title]']")
     $(wrapper).find('.progress-bar-placeholder').css('display', 'block')
     return data
 
@@ -119,12 +122,13 @@ App.Documentable =
         App.Documentable.clearInputErrors(data)
         App.Documentable.clearProgressBar(data)
 
+        $('#new_document_link').removeClass('hide')
+        $('#max-documents-notice').addClass('hide')
+        $(data.wrapper).find(".attachment-actions").addClass('small-12').removeClass('small-6 float-right')
+        $(data.wrapper).find(".attachment-actions .action-remove").addClass('small-3').removeClass('small-12')
+
         if $(data.input).data('nested-document') == true
           $(data.wrapper).remove()
-          $('#new_document_link').show()
-          $('.max-documents-notice').hide()
-        else
-          $(data.destroyAttachmentLinkContainer).find('a.delete').remove()
 
   initializeRemoveDocumentLink: (input) ->
     wrapper = $(input).closest(".direct-upload")
@@ -132,8 +136,8 @@ App.Documentable =
     $(remove_document_link).on 'click', (e) ->
       e.preventDefault()
       $(wrapper).remove()
-      $('#new_document_link').show()
-      $('.max-documents-notice').hide()
+      $('#new_document_link').removeClass('hide')
+      $('#max-documents-notice').addClass('hide')
 
   initializeRemoveCachedDocumentLink: (input, data) ->
     wrapper = $(input).closest(".direct-upload")
@@ -143,23 +147,5 @@ App.Documentable =
       e.stopPropagation()
       App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)
 
-  new: (nested_field) ->
-    nested_field = $(nested_field)
-    $(".documents-list").append(nested_field)
-    input = nested_field.find("input[type='file']")
-    @initializeDirectUploadInput(input)
-
   destroyNestedDocument: (id) ->
     $('#' + id).remove()
-
-  updateNewDocumentButton: (link) ->
-    if $('.document').length >= $('.documents').data('max-documents')
-      $('#new_document_link').hide()
-      $('.max-documents-notice').removeClass('hide')
-      $('.max-documents-notice').show()
-    else if $('#new_document_link').length > 0
-      $('#new_document_link').replaceWith(link)
-      $('.max-documents-notice').hide()
-    else
-      $('.max-documents-notice').hide()
-      $(link).insertBefore('.documents hr:last')

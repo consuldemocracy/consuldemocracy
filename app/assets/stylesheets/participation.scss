@@ -315,7 +315,9 @@
 }
 
 .budget-investment-new,
-.proposal-form {
+.proposal-form,
+.proposal-edit,
+.image-form {
   @include upload-image-documents;
 }
 
