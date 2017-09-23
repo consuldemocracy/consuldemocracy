@@ -92,8 +92,6 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:create, DirectMessage) }
   it { should_not be_able_to(:show,   DirectMessage) }
 
-  it { should  be_able_to(:destroy_upload, Document) }
-
   it { should be_able_to(:new, own_proposal_document) }
   it { should be_able_to(:create, own_proposal_document) }
   it { should be_able_to(:destroy, own_proposal_document) }

@@ -318,7 +318,9 @@
 .proposal-form,
 .proposal-edit,
 .image-form,
-.document-form {
+.document-form,
+.new_poll_question,
+.edit_poll_question {
   @include upload-image-documents;
 }
 

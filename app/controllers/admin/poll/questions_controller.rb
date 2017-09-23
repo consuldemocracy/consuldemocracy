@@ -39,7 +39,10 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def update
-    if @question.update(question_params)
+    @question.assign_attributes(question_params)
+    recover_documents_from_cache(@question)
+
+    if @question.save
       redirect_to admin_question_path(@question), notice: t("flash.actions.save_changes.notice")
     else
       render :edit

@@ -118,4 +118,22 @@ feature 'Admin poll questions' do
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
 
+  it_behaves_like "nested documentable",
+                  "administrator",
+                  "poll_question",
+                  "new_admin_question_path",
+                  { },
+                  "documentable_fill_new_valid_poll_question",
+                  "Save",
+                  "Changes saved"
+
+  it_behaves_like "nested documentable",
+                  "administrator",
+                  "poll_question",
+                  "edit_admin_question_path",
+                  { "id": "id" },
+                  nil,
+                  "Save",
+                  "Changes saved"
+
 end

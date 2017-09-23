@@ -477,6 +477,7 @@ feature 'Budget Investments' do
   it_behaves_like "documentable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
   it_behaves_like "nested documentable",
+                  "user",
                   "budget_investment",
                   "new_budget_investment_path",
                   { "budget_id": "budget_id" },
