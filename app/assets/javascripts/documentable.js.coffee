@@ -6,8 +6,11 @@ App.Documentable =
       App.Documentable.initializeDirectUploadInput(input)
 
       if $(nested_document).closest('#nested-documents').find('.document').length >= $('#nested-documents').data('max-documents-allowed')
-        $('#max-documents-notice').removeClass('hide')
-        $('#new_document_link').addClass('hide')
+        App.Documentable.lockUploads()
+
+    inputFiles = $('.js-document-attachment')
+    $.each inputFiles, (index, input) ->
+      App.Documentable.initializeDirectUploadInput(input)
 
   initializeDirectUploadInput: (input) ->
 
@@ -108,6 +111,14 @@ App.Documentable =
     errors = '<small class="error">' + data.jqXHR.responseJSON.errors + '</small>'
     $(data.errorContainer).append(errors)
 
+  lockUploads: ->
+    $('#max-documents-notice').removeClass('hide')
+    $('#new_document_link').addClass('hide')
+
+  unlockUploads: ->
+    $('#max-documents-notice').addClass('hide')
+    $('#new_document_link').removeClass('hide')
+
   doDeleteCachedAttachmentRequest: (url, data) ->
     $.ajax
       type: "POST"
@@ -122,8 +133,7 @@ App.Documentable =
         App.Documentable.clearInputErrors(data)
         App.Documentable.clearProgressBar(data)
 
-        $('#new_document_link').removeClass('hide')
-        $('#max-documents-notice').addClass('hide')
+        App.Documentable.unlockUploads()
         $(data.wrapper).find(".attachment-actions").addClass('small-12').removeClass('small-6 float-right')
         $(data.wrapper).find(".attachment-actions .action-remove").addClass('small-3').removeClass('small-12')
 
@@ -136,8 +146,7 @@ App.Documentable =
     $(remove_document_link).on 'click', (e) ->
       e.preventDefault()
       $(wrapper).remove()
-      $('#new_document_link').removeClass('hide')
-      $('#max-documents-notice').addClass('hide')
+      App.Documentable.unlockUploads()
 
   initializeRemoveCachedDocumentLink: (input, data) ->
     wrapper = $(input).closest(".direct-upload")
@@ -149,3 +158,5 @@ App.Documentable =
 
   destroyNestedDocument: (id) ->
     $('#' + id).remove()
+    if $('#nested-documents .document').length < $('#nested-documents').data('max-documents-allowed')
+      App.Documentable.unlockUploads()

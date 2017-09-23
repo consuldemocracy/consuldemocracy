@@ -1,7 +1,1 @@
-App.Imageable.destroyNestedImage("<%= image_nested_field_wrapper_id %>", "<%= j render('layouts/flash') %>")
-<% new_image_link = link_to t("images.form.add_new_image"),
-                               new_nested_images_path(imageable_type: @image.imageable_type),
-                               remote: true,
-                               id: "new_image_link",
-                               class: "button hollow" %>
-App.Imageable.updateNewImageButton("<%= j new_image_link %>")
+App.Imageable.destroyNestedImage("<%= dom_id(@image) %>")

@@ -1,12 +1,16 @@
 App.Imageable =
 
   initialize: ->
-    inputFiles = $('input.js-document-attachment[type=file]')
+    $('#nested-image').on 'cocoon:after-insert', (e, nested_image) ->
+      input = $(nested_image).find('.js-image-attachment')
+      App.Imageable.initializeDirectUploadInput(input)
 
+    inputFiles = $('.js-image-attachment')
     $.each inputFiles, (index, input) ->
       App.Imageable.initializeDirectUploadInput(input)
 
-    $("#new_image_link").on 'click', -> $(this).hide()
+    $("#new_image_link").on 'click', ->
+      $(this).addClass('hide')
 
   initializeDirectUploadInput: (input) ->
 
@@ -52,8 +56,8 @@ App.Imageable =
         $(data.addAttachmentLabel).hide()
         $(data.wrapper).find(".attachment-actions").removeClass('small-12').addClass('small-6 float-right')
         $(data.wrapper).find(".attachment-actions .action-remove").removeClass('small-3').addClass('small-12')
-
         App.Imageable.setPreview(data)
+
         destroyAttachmentLink = $(data.result.destroy_link)
         $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink)
         $(destroyAttachmentLink).on 'click', (e) ->
@@ -80,8 +84,8 @@ App.Imageable =
     data.fileNameContainer = $(wrapper).find('p.file-name')
     data.destroyAttachmentLinkContainer = $(wrapper).find('.action-remove')
     data.addAttachmentLabel = $(wrapper).find('.action-add label')
-    data.cachedAttachmentField = $(wrapper).find("#" + $(input).data('cached-attachment-input-field'))
-    data.titleField = $(wrapper).find("#" + $(input).data('title-input-field'))
+    data.cachedAttachmentField = $(wrapper).find("input[name$='[cached_attachment]']")
+    data.titleField = $(wrapper).find("input[name$='[title]']")
     $(wrapper).find('.progress-bar-placeholder').css('display', 'block')
     return data
 
@@ -114,20 +118,12 @@ App.Imageable =
     $(data.errorContainer).append(errors)
 
   setPreview: (data) ->
-    console.log 'App.Imageable.setPreview'
     image_preview = '<div class="small-12 column text-center image-preview"><figure><img src="' + data.result.attachment_url + '" class="cached-image"/></figure></div>'
     if $(data.preview).length > 0
       $(data.preview).replaceWith(image_preview)
     else
       $(image_preview).insertBefore($(data.wrapper).find(".attachment-actions"))
       data.preview = $(data.wrapper).find('.image-preview')
-
-  watchRemoveImagebutton:  (wrapper) ->
-    remove_image_button = $(wrapper).find('a.delete[href="#"]')
-    $(remove_image_button).on 'click', (e) ->
-      e.preventDefault()
-      $(wrapper).remove()
-      $('#new_image_link').show()
 
   doDeleteCachedAttachmentRequest: (url, data) ->
     $.ajax
@@ -144,9 +140,10 @@ App.Imageable =
         App.Imageable.clearProgressBar(data)
         App.Imageable.clearPreview(data)
 
+        $('#new_image_link').removeClass('hide')
+
         if $(data.input).data('nested-image') == true
           $(data.wrapper).remove()
-          $('#new_image_link').show()
         else
           $(data.destroyAttachmentLinkContainer).find('a.delete').remove()
 
@@ -156,7 +153,7 @@ App.Imageable =
     $(remove_image_link).on 'click', (e) ->
       e.preventDefault()
       $(wrapper).remove()
-      $('#new_image_link').show()
+      $('#new_image_link').removeClass('hide')
 
   initializeRemoveCachedImageLink: (input, data) ->
     wrapper = $(input).closest(".direct-upload")
@@ -166,37 +163,6 @@ App.Imageable =
       e.stopPropagation()
       App.Imageable.doDeleteCachedAttachmentRequest(this.href, data)
 
-  new: (nested_field) ->
-    nested_field = $(nested_field)
-    $(".images-list").append(nested_field)
-    input = nested_field.find("input[type='file']")
-    @initializeDirectUploadInput(input)
-    $("#new_image_link").hide()
-
   destroyNestedImage: (id, notice) ->
     $('#' + id).remove()
-    $("#new_image_link").show()
-    @updateNotice(notice)
-
-  replacePlainImage: (id, notice, plain_image) ->
-    $('#' + id).replaceWith(plain_image)
-    @updateNotice(notice)
-    @initialize()
-
-  updateNotice: (notice) ->
-    if $('[data-alert]').length > 0
-      $('[data-alert]').replaceWith(notice)
-    else
-      $("body").append(notice)
-
-  updateNewImageButton: (link) ->
-    if $('.image').length >= $('.images').data('max-images')
-      $('#new_image_link').hide()
-      $('.max-images-notice').removeClass('hide')
-      $('.max-images-notice').show()
-    else if $('#new_image_link').length > 0
-      $('#new_image_link').replaceWith(link)
-      $('.max-images-notice').hide()
-    else
-      $('.max-images-notice').hide()
-      $(link).insertBefore('.images hr:last')
+    $("#new_image_link").removeClass('hide')

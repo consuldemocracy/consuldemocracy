@@ -159,6 +159,8 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 
       attach_image("spec/fixtures/files/clippy.jpg", true)
 
+      expect(page).to have_selector ".loading-bar.complete"
+
       expect(page).to have_css("figure img")
       expect(page).not_to have_css("figure figcaption")
     end
@@ -342,7 +344,9 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
 end
 
 def attach_image(path, success = true)
-  attach_file :image_attachment, path, make_visible: true
+  image = find(".image")
+  image_input = image.find("input[type=file]", visible: false)
+  attach_file image_input[:id], path, make_visible: true
   if success
     expect(page).to have_css ".loading-bar.complete"
   else

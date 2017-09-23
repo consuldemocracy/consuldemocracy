@@ -31,22 +31,8 @@ module ImagesHelper
     bytes / Numeric::MEGABYTE
   end
 
-  def image_nested_field_name(image, field)
-    parent = image.imageable_type.parameterize.underscore
-    "#{parent.parameterize}[image_attributes]#{field}"
-  end
-
-  def image_nested_field_id(image, field)
-    parent = image.imageable_type.parameterize.underscore
-    "#{parent.parameterize}_image_attributes_#{field}"
-  end
-
-  def image_nested_field_wrapper_id
-    "nested_image"
-  end
-
   def image_class(image)
-    image.persisted? ? "image" : "cached-image"
+    image.persisted? ? "persisted-image" : "cached-image"
   end
 
   def render_destroy_image_link(image)
@@ -59,10 +45,10 @@ module ImagesHelper
               class: "delete remove-image"
     elsif !image.persisted? && image.cached_attachment.present?
       link_to t('images.form.delete_button'),
-              destroy_upload_images_path(path: image.cached_attachment,
-                                            nested_image: true,
-                                            imageable_type: image.imageable_type,
-                                            imageable_id: image.imageable_id),
+              direct_upload_destroy_url("direct_upload[resource_type]": image.imageable_type,
+                                        "direct_upload[resource_id]": image.imageable_id,
+                                        "direct_upload[resource_relation]": "image",
+                                        "direct_upload[cached_attachment]": image.cached_attachment),
               method: :delete,
               remote: true,
               class: "delete remove-cached-attachment"
@@ -73,30 +59,21 @@ module ImagesHelper
     end
   end
 
-  def render_image_attachment(image)
-    html = file_field_tag :attachment,
-                          accept: imageable_accepted_content_types_extensions,
-                          class: 'js-document-attachment',
-                          data: {
-                            url: image_direct_upload_url(image),
-                            cached_attachment_input_field: image_nested_field_id(image, :cached_attachment),
-                            title_input_field: image_nested_field_id(image, :title),
-                            multiple: false,
-                            nested_image: true
-                          },
-                          name: image_nested_field_name(image, :attachment),
-                          id: image_nested_field_id(image, :attachment)
-    if image.attachment.blank? && image.cached_attachment.blank?
-      klass = image.errors[:attachment].any? ? "error" : ""
-      html += label_tag image_nested_field_id(image, :attachment),
-                       t("images.form.attachment_label"),
-                       class: "button hollow #{klass}"
-      if image.errors[:attachment].any?
-        html += content_tag :small, class: "error" do
-          image_errors_on_attachment(image)
-        end
-      end
-    end
+  def render_image_attachment(builder, imageable, image)
+    klass = image.errors[:attachment].any? ? "error" : ""
+    klass = image.persisted? ? " hide" : ""
+    html = builder.label :attachment,
+                          t("images.form.attachment_label"),
+                          class: "button hollow #{klass}"
+    html += builder.file_field :attachment,
+                               label: false,
+                               accept: imageable_accepted_content_types_extensions,
+                               class: 'js-image-attachment',
+                               data: {
+                                 url: image_direct_upload_url(imageable),
+                                 nested_image: true
+                               }
+
     html
   end
 
@@ -107,9 +84,9 @@ module ImagesHelper
                                               show_caption: show_caption }
   end
 
-  def image_direct_upload_url(image)
-    direct_uploads_url("direct_upload[resource_type]": image.imageable_type,
-                       "direct_upload[resource_id]": image.imageable_id,
+  def image_direct_upload_url(imageable)
+    direct_uploads_url("direct_upload[resource_type]": imageable.class.name,
+                       "direct_upload[resource_id]": imageable.id,
                        "direct_upload[resource_relation]": "image")
   end
 

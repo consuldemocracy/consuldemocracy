@@ -195,21 +195,28 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
     end
 
     scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
-      skip "weird behavior"
-      # page.driver.resize_window 1200, 2500
+      skip "due to weird behaviour"
+      page.driver.resize_window 1200, 2500
       login_as user
       visit send(path, arguments)
 
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable.class.max_documents_allowed.times.each do |index|
-        documentable_attach_new_file(documentable_factory_name, index , "spec/fixtures/files/empty.pdf")
-      end
+      click_link "Add new document"
+      click_link "Add new document"
+      click_link "Add new document"
 
+      documents = all(".document")
+      documents.each_with_index do |document, index|
+        document_input = document.find("input[type=file]", visible: false)
+        attach_file(document_input[:id], "spec/fixtures/files/empty.pdf", make_visible: true)
+        within all(".document")[index] do
+          expect(page).to have_css ".loading-bar.complete"
+        end
+      end
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
 
-      save_screenshot
       expect(page).to have_content "Documents (#{documentable.class.max_documents_allowed})"
     end
 
@@ -221,6 +228,26 @@ shared_examples "nested documentable" do |documentable_factory_name, path, docum
         visit send(path, arguments)
 
         expect(page).to have_css ".document", count: 1
+      end
+
+      scenario "Should not show add document button when documentable has reached maximum of documents allowed", :js do
+        login_as user
+        create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
+        visit send(path, arguments)
+
+        expect(page).to have_css "#new_document_link", visible: false
+      end
+
+      scenario "Should show add document button after destroy one document", :js do
+        login_as user
+        create_list(:document, documentable.class.max_documents_allowed, documentable: documentable)
+        visit send(path, arguments)
+        last_document = all("#nested-documents .document").last
+        within last_document do
+          click_on "Remove document"
+        end
+
+        expect(page).to have_css "#new_document_link", visible: true
       end
 
       scenario "Should remove nested field after remove document", :js do

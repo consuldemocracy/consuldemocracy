@@ -77,7 +77,8 @@
         margin-bottom: 0;
       }
     }
-    .js-document-attachment{
+    input.js-document-attachment,
+    input.js-image-attachment{
       display: none;
     }
   }

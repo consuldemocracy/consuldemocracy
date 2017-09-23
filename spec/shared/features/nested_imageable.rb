@@ -27,16 +27,24 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       expect(page).to have_selector "#new_image_link", visible: true
     end
 
+    scenario "Should hide new image link after add one image" do
+      login_as user
+      visit send(path, arguments)
+
+      click_on "Add image"
+
+      expect(page).to have_selector "#new_image_link", visible: true
+    end
+
     scenario "Should update nested image file name after choosing any file", :js do
       login_as user
       visit send(path, arguments)
 
       click_link "Add image"
-      # next line is to force capybara to wait for ajax response and new DOM elements rendering
-      find("input[name='#{imageable_factory_name}[image_attributes]attachment']", visible: false)
-      attach_file("#{imageable_factory_name}[image_attributes]attachment", "spec/fixtures/files/empty.pdf", make_visible: true)
+      image_input = find(".image").find("input[type=file]", visible: false)
+      attach_file(image_input[:id], "spec/fixtures/files/clippy.jpg", make_visible: true)
 
-      expect(page).to have_selector ".file-name", text: "empty.pdf"
+      expect(page).to have_selector ".file-name", text: "clippy.jpg"
     end
 
     scenario "Should update nested image file title with file name after choosing a file when no title defined", :js do
@@ -45,7 +53,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
-      expect(find("##{imageable_factory_name}_image_attributes_title").value).to eq("clippy.jpg")
+      expect_image_has_title("clippy.jpg")
     end
 
     scenario "Should not update nested image file title with file name after choosing a file when title already defined", :js do
@@ -53,10 +61,10 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       click_link "Add image"
-      fill_in "#{imageable_factory_name}[image_attributes]title", with: "Title"
-      attach_file("#{imageable_factory_name}[image_attributes]attachment", "spec/fixtures/files/empty.pdf", make_visible: true)
-      # force capybara to wait for AJAX response to ensure new input has correct value after direct upload
-      have_css(".loading-bar.complete")
+      input_title = find(".image input[name$='[title]']")
+      fill_in input_title[:id], with: "Title"
+      image_input = find(".image").find("input[type=file]", visible: false)
+      attach_file(image_input[:id], "spec/fixtures/files/clippy.jpg", make_visible: true)
 
       expect(find("##{imageable_factory_name}_image_attributes_title").value).to eq "Title"
     end
@@ -85,7 +93,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
 
-      expect(page).to have_selector("input[name='#{imageable_factory_name}[image_attributes]cached_attachment'][value$='.jpg']", visible: false)
+      expect_image_has_cached_attachment(".jpg")
     end
 
     scenario "Should not update image cached_attachment field after unvalid file upload", :js do
@@ -94,7 +102,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
       imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/logo_header.png", false)
 
-      expect(find("input[name='#{imageable_factory_name}[image_attributes]cached_attachment']", visible: false).value).to eq ""
+      expect_image_has_cached_attachment("")
     end
 
     scenario "Should show nested image errors after unvalid form submit", :js do
@@ -102,34 +110,23 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       visit send(path, arguments)
 
       click_link "Add image"
-      find("input[id$='_image_attributes_title']") # force to wait for ajax response new DOM elements
       click_on submit_button
 
-      expect(page).to have_css("#nested_image .error")
+      within "#nested-image .image" do
+        expect(page).to have_content("can't be blank", count: 2)
+      end
     end
 
-    scenario "Should delete image after valid file upload and click on remove button", :js do
+    scenario "Should remove nested image after valid file upload and click on remove button", :js do
       login_as user
       visit send(path, arguments)
 
       imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
-      within "#nested_image" do
+      within "#nested-image .image" do
         click_link "Remove image"
       end
 
-      expect(page).not_to have_selector("#nested_image")
-    end
-
-    scenario "Should delete image after valid file upload and click on remove button", :js do
-      login_as user
-      visit send(path, arguments)
-
-      imageable_attach_new_file(imageable_factory_name, "spec/fixtures/files/clippy.jpg")
-      within "#nested_image" do
-        click_link "Remove image"
-      end
-
-      expect(page).not_to have_css "#nested_image"
+      expect(page).not_to have_selector("#nested-image .image")
     end
 
     scenario "Should show successful notice when resource filled correctly without any nested images", :js do
@@ -162,8 +159,46 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
       imageable_redirected_to_resource_show_or_navigate_to
 
-      expect(page).to have_selector "figure .image"
+      expect(page).to have_selector "figure img"
       expect(page).to have_selector "figure figcaption"
+    end
+
+    if path.include? "edit"
+
+      scenario "Should show persisted image" do
+        login_as user
+        create(:image, imageable: imageable)
+        visit send(path, arguments)
+
+        expect(page).to have_css ".image", count: 1
+      end
+
+      scenario "Should not show add image button when image already exists", :js do
+        login_as user
+        create(:image, imageable: imageable)
+        visit send(path, arguments)
+
+        expect(page).to have_css "a#new_image_link", visible: false
+      end
+
+      scenario "Should remove nested field after remove image", :js do
+        login_as user
+        create(:image, imageable: imageable)
+        visit send(path, arguments)
+        click_on "Remove image"
+
+        expect(page).not_to have_css ".image"
+      end
+
+      scenario "Should show add image button after remove image", :js do
+        login_as user
+        create(:image, imageable: imageable)
+        visit send(path, arguments)
+        click_on "Remove image"
+
+        expect(page).to have_css "a#new_image_link", visible: true
+      end
+
     end
 
   end
@@ -179,14 +214,17 @@ end
 
 def imageable_attach_new_file(imageable_factory_name, path, success = true)
   click_link "Add image"
-  # next line is to force capybara to wait for ajax response and new DOM elements rendering
-  find("input[name='#{imageable_factory_name}[image_attributes]attachment']", visible: false)
-  attach_file("#{imageable_factory_name}[image_attributes]attachment", path, make_visible: true)
-  # next line is to force capybara to wait for ajax response and new DOM elements rendering
-  if success
-    expect(page).to have_css(".loading-bar.complete")
-  else
-    expect(page).to have_css(".loading-bar.errors")
+  within "#nested-image" do
+    image = find(".image")
+    image_input = image.find("input[type=file]", visible: false)
+    attach_file(image_input[:id], path, make_visible: true)
+    within image do
+      if success
+        expect(page).to have_css(".loading-bar.complete")
+      else
+        expect(page).to have_css(".loading-bar.errors")
+      end
+    end
   end
 end
 
@@ -202,4 +240,22 @@ def imageable_fill_new_valid_budget_investment
   fill_in :budget_investment_title, with: "Budget investment title"
   fill_in_ckeditor "budget_investment_description", with: "Budget investment description"
   check :budget_investment_terms_of_service
+end
+
+def expect_image_has_title(title)
+  image = find(".image")
+
+  within image do
+    expect(find("input[name$='[title]']").value).to eq title
+  end
+end
+
+def expect_image_has_cached_attachment(extension)
+  within "#nested-image" do
+    image = find(".image")
+
+    within image do
+      expect(find("input[name$='[cached_attachment]']", visible: false).value).to end_with(extension)
+    end
+  end
 end

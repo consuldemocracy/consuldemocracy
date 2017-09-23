@@ -24,7 +24,7 @@
         <%= f.file_field :attachment,
                          accept: imageable_accepted_content_types_extensions,
                          label: false,
-                         class: 'js-document-attachment',
+                         class: 'js-image-attachment',
                          data: {
                            url: direct_uploads_url("direct_upload[resource_type]": @image.imageable_type,
                                                    "direct_upload[resource_id]": @image.imageable_id,

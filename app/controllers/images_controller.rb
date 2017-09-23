@@ -1,15 +1,12 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!
   before_filter :find_imageable, except: :destroy
-  before_filter :prepare_new_image, only: [:new, :new_nested]
+  before_filter :prepare_new_image, only: [:new]
   before_filter :prepare_image_for_creation, only: :create
 
   load_and_authorize_resource
 
   def new
-  end
-
-  def new_nested
   end
 
   def create
