@@ -50,7 +50,6 @@ module Budgets
 
     def create
       @investment.author = current_user
-      recover_image_from_cache(@investment)
 
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later

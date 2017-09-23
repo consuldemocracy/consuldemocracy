@@ -52,7 +52,7 @@ module ImagesHelper
 
   def render_image_attachment(builder, imageable, image)
     klass = image.errors[:attachment].any? ? "error" : ""
-    klass = image.persisted? ? " hide" : ""
+    klass = image.persisted? || image.cached_attachment.present? ? " hide" : ""
     html = builder.label :attachment,
                           t("images.form.attachment_label"),
                           class: "button hollow #{klass}"

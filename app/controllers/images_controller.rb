@@ -10,8 +10,6 @@ class ImagesController < ApplicationController
   end
 
   def create
-    recover_attachments_from_cache
-
     if @image.save
       flash[:notice] = t "images.actions.create.notice"
       redirect_to params[:from]
@@ -60,12 +58,6 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
     @image.imageable = @imageable
     @image.user = current_user
-  end
-
-  def recover_attachments_from_cache
-    if @image.attachment.blank? && @image.cached_attachment.present?
-      @image.set_attachment_from_cached_attachment
-    end
   end
 
 end
