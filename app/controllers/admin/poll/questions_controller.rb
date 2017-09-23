@@ -59,7 +59,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
     def question_params
       params.require(:poll_question).permit(:poll_id, :title, :question, :description, :proposal_id, :valid_answers, :video_url,
-      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
+                                            documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
     end
 
     def search_params

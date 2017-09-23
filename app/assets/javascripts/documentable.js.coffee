@@ -1,22 +1,24 @@
 App.Documentable =
 
   initialize: ->
-    $('#nested-documents').on 'cocoon:after-insert', (e, nested_document) ->
-      input = $(nested_document).find('.js-document-attachment')
-      App.Documentable.initializeDirectUploadInput(input)
-
-      if $(nested_document).closest('#nested-documents').find('.document').length >= $('#nested-documents').data('max-documents-allowed')
-        App.Documentable.lockUploads()
 
     inputFiles = $('.js-document-attachment')
     $.each inputFiles, (index, input) ->
       App.Documentable.initializeDirectUploadInput(input)
 
+    $('#nested-documents').on 'cocoon:after-remove', (e, insertedItem) ->
+      App.Documentable.unlockUploads()
+
+    $('#nested-documents').on 'cocoon:after-insert', (e, nested_document) ->
+      input = $(nested_document).find('.js-document-attachment')
+      App.Documentable.initializeDirectUploadInput(input)
+
+      if $(nested_document).closest('#nested-documents').find('.document:visible').length >= $('#nested-documents').data('max-documents-allowed')
+        App.Documentable.lockUploads()
+
   initializeDirectUploadInput: (input) ->
 
     inputData = @buildData([], input)
-
-    @initializeRemoveDocumentLink(input)
 
     @initializeRemoveCachedDocumentLink(input, inputData)
 
@@ -139,14 +141,8 @@ App.Documentable =
 
         if $(data.input).data('nested-document') == true
           $(data.wrapper).remove()
-
-  initializeRemoveDocumentLink: (input) ->
-    wrapper = $(input).closest(".direct-upload")
-    remove_document_link = $(wrapper).find('a.remove-nested-field')
-    $(remove_document_link).on 'click', (e) ->
-      e.preventDefault()
-      $(wrapper).remove()
-      App.Documentable.unlockUploads()
+        else
+          $(data.wrapper).find('a.remove-cached-attachment').remove()
 
   initializeRemoveCachedDocumentLink: (input, data) ->
     wrapper = $(input).closest(".direct-upload")
@@ -156,7 +152,5 @@ App.Documentable =
       e.stopPropagation()
       App.Documentable.doDeleteCachedAttachmentRequest(this.href, data)
 
-  destroyNestedDocument: (id) ->
+  removeDocument: (id) ->
     $('#' + id).remove()
-    if $('#nested-documents .document').length < $('#nested-documents').data('max-documents-allowed')
-      App.Documentable.unlockUploads()

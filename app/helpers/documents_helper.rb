@@ -21,15 +21,8 @@ module DocumentsHelper
     "document_#{index}"
   end
 
-  def render_destroy_document_link(document)
-    if document.persisted?
-      link_to t('documents.form.delete_button'),
-              document_path(document, nested_document: true),
-              method: :delete,
-              remote: true,
-              data: { confirm: t('documents.actions.destroy.confirm') },
-              class: "delete remove-document"
-    elsif !document.persisted? && document.cached_attachment.present?
+  def render_destroy_document_link(builder, document)
+    if !document.persisted? && document.cached_attachment.present?
       link_to t('documents.form.delete_button'),
                   direct_upload_destroy_url("direct_upload[resource_type]": document.documentable_type,
                                             "direct_upload[resource_id]": document.documentable_id,
@@ -39,9 +32,7 @@ module DocumentsHelper
                   remote: true,
                   class: "delete remove-cached-attachment"
     else
-      link_to t('documents.form.delete_button'),
-              "#",
-              class: "delete remove-nested-field"
+      link_to_remove_association t('documents.form.delete_button'), builder, class: "delete remove-document"
     end
   end
 

@@ -4,7 +4,7 @@
               documentable_id: @document.documentable_id,
               from: params[:from]
              ),
-             html: { multipart: true, class: "documentable" } do |f| %>
+             html: { multipart: true, class: "documentable document-form" } do |f| %>
 
   <%= render 'shared/errors', resource: @document %>
 

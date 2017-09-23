@@ -81,7 +81,7 @@ class ProposalsController < ApplicationController
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id,
                                        image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id],
-                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id] )
+                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy] )
     end
 
     def retired_params

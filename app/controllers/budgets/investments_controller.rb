@@ -111,7 +111,7 @@ module Budgets
               .permit(:title, :description, :external_url, :heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service,
                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id],
-                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
+                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
       end
 
       def load_ballot
