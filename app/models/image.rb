@@ -30,6 +30,7 @@ class Image < ActiveRecord::Base
   validate :validate_image_dimensions, if: -> { attachment.present? && attachment.dirty? }
 
   before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
+  after_save :remove_cached_attachment,               if: -> { cached_attachment.present? }
 
   def set_cached_attachment_from_attachment(prefix)
     self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
@@ -98,6 +99,14 @@ class Image < ActiveRecord::Base
 
     def attachment_of_valid_content_type?
       attachment.present? && imageable_accepted_content_types.include?(attachment_content_type)
+    end
+
+    def remove_cached_attachment
+      image = Image.new(imageable: imageable,
+                           cached_attachment: cached_attachment,
+                           user: user)
+      image.set_attachment_from_cached_attachment
+      image.attachment.destroy
     end
 
 end

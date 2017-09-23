@@ -22,6 +22,7 @@ class Document < ActiveRecord::Base
   validates :documentable_type, presence: true,       if: -> { persisted? }
 
   before_save :set_attachment_from_cached_attachment, if: -> { cached_attachment.present? }
+  after_save :remove_cached_attachment,               if: -> { cached_attachment.present? }
 
   def set_cached_attachment_from_attachment(prefix)
     self.cached_attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
@@ -79,6 +80,14 @@ class Document < ActiveRecord::Base
       if attachment.blank? && cached_attachment.blank?
         errors[:attachment] = I18n.t("errors.messages.blank")
       end
+    end
+
+    def remove_cached_attachment
+      document = Document.new(documentable: documentable,
+                              cached_attachment: cached_attachment,
+                              user: user)
+      document.set_attachment_from_cached_attachment
+      document.attachment.destroy
     end
 
 end
