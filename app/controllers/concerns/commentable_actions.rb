@@ -57,10 +57,7 @@ module CommentableActions
   end
 
   def update
-    resource.assign_attributes(strong_params)
-    recover_image_from_cache(resource)
-
-    if resource.save
+    if resource.update(strong_params)
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
       load_categories
@@ -110,12 +107,6 @@ module CommentableActions
 
     def index_customization
       nil
-    end
-
-    def recover_image_from_cache(resource)
-      return false unless resource.try(:image)
-
-      resource.image.attachment = resource.image.set_attachment_from_cached_attachment if resource.image.cached_attachment.present?
     end
 
 end
