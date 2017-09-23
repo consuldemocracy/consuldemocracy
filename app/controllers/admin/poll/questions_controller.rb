@@ -22,7 +22,6 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
   def create
     @question.author = @question.proposal.try(:author) || current_user
-    recover_documents_from_cache(@question)
 
     if @question.save
       redirect_to admin_question_path(@question)
@@ -39,10 +38,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def update
-    @question.assign_attributes(question_params)
-    recover_documents_from_cache(@question)
-
-    if @question.save
+    if @question.update(question_params)
       redirect_to admin_question_path(@question), notice: t("flash.actions.save_changes.notice")
     else
       render :edit

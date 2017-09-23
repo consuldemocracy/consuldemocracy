@@ -58,7 +58,6 @@ module CommentableActions
 
   def update
     resource.assign_attributes(strong_params)
-    recover_documents_from_cache(resource)
     recover_image_from_cache(resource)
 
     if resource.save
@@ -111,13 +110,6 @@ module CommentableActions
 
     def index_customization
       nil
-    end
-
-    def recover_documents_from_cache(resource)
-      return false unless resource.try(:documents)
-      resource.documents = resource.documents.each do |document|
-        document.set_attachment_from_cached_attachment if document.cached_attachment.present?
-      end
     end
 
     def recover_image_from_cache(resource)

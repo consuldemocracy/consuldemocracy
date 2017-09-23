@@ -50,7 +50,6 @@ module Budgets
 
     def create
       @investment.author = current_user
-      recover_documents_from_cache(@investment)
       recover_image_from_cache(@investment)
 
       if @investment.save

@@ -26,7 +26,6 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
-    recover_documents_from_cache(@proposal)
     recover_image_from_cache(@proposal)
 
     if @proposal.save
