@@ -13,7 +13,7 @@ class DirectUploadsController < ApplicationController
 
     if @direct_upload.valid?
       @direct_upload.save_attachment
-      @direct_upload.relation.set_cached_attachment_from_attachment(URI(request.url))
+      @direct_upload.relation.set_cached_attachment_from_attachment
 
       render json: { cached_attachment: @direct_upload.relation.cached_attachment,
                      filename: @direct_upload.relation.attachment.original_filename,
