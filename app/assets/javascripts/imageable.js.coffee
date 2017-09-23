@@ -1,22 +1,21 @@
 App.Imageable =
 
   initialize: ->
-    $('#nested-image').on 'cocoon:after-insert', (e, nested_image) ->
-      input = $(nested_image).find('.js-image-attachment')
-      App.Imageable.initializeDirectUploadInput(input)
-
     inputFiles = $('.js-image-attachment')
     $.each inputFiles, (index, input) ->
       App.Imageable.initializeDirectUploadInput(input)
 
-    $("#new_image_link").on 'click', ->
-      $(this).addClass('hide')
+    $('#nested-image').on 'cocoon:after-remove', (e, item) ->
+      $("#new_image_link").removeClass('hide')
+
+    $('#nested-image').on 'cocoon:after-insert', (e, nested_image) ->
+      $("#new_image_link").addClass('hide')
+      input = $(nested_image).find('.js-image-attachment')
+      App.Imageable.initializeDirectUploadInput(input)
 
   initializeDirectUploadInput: (input) ->
 
     inputData = @buildData([], input)
-
-    @initializeRemoveImageLink(input)
 
     @initializeRemoveCachedImageLink(input, inputData)
 
@@ -142,18 +141,13 @@ App.Imageable =
 
         $('#new_image_link').removeClass('hide')
 
+        $(data.wrapper).find(".attachment-actions").addClass('small-12').removeClass('small-6 float-right')
+        $(data.wrapper).find(".attachment-actions .action-remove").addClass('small-3').removeClass('small-12')
+
         if $(data.input).data('nested-image') == true
           $(data.wrapper).remove()
         else
-          $(data.destroyAttachmentLinkContainer).find('a.delete').remove()
-
-  initializeRemoveImageLink: (input) ->
-    wrapper = $(input).closest(".direct-upload")
-    remove_image_link = $(wrapper).find('a.remove-nested-field')
-    $(remove_image_link).on 'click', (e) ->
-      e.preventDefault()
-      $(wrapper).remove()
-      $('#new_image_link').removeClass('hide')
+          $(data.wrapper).find('a.remove-cached-attachment').remove()
 
   initializeRemoveCachedImageLink: (input, data) ->
     wrapper = $(input).closest(".direct-upload")
@@ -163,6 +157,6 @@ App.Imageable =
       e.stopPropagation()
       App.Imageable.doDeleteCachedAttachmentRequest(this.href, data)
 
-  destroyNestedImage: (id, notice) ->
+  removeImage: (id) ->
     $('#' + id).remove()
     $("#new_image_link").removeClass('hide')

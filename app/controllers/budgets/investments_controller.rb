@@ -110,7 +110,7 @@ module Budgets
         params.require(:budget_investment)
               .permit(:title, :description, :external_url, :heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service,
-                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id],
+                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
       end
 

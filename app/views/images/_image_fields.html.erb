@@ -1,7 +1,8 @@
-<div id="<%= dom_id(f.object) %>" class="image direct-upload">
+<div id="<%= dom_id(f.object) %>" class="image direct-upload nested-fields">
   <%= f.hidden_field :id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :cached_attachment %>
+  <%= f.hidden_field :_destroy %>
 
   <div class="small-12 column title">
     <%= f.text_field :title, placeholder: t("images.new.form.title_placeholder") %>
@@ -14,7 +15,7 @@
       <%= render_image_attachment(f, imageable, f.object) %>
     </div>
     <div class="small-3 column action-remove text-right">
-      <%= render_destroy_image_link(f.object) %>
+      <%= render_destroy_image_link(f, f.object) %>
     </div>
   </div>
 
