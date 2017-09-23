@@ -320,16 +320,7 @@ def documentable_fill_new_valid_budget_investment
 end
 
 def documentable_fill_new_valid_poll_question
-  title = "Star Wars: Episode IV - A New Hope"
-  description = %{
-    During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station
-     with enough power to destroy an entire planet.
-    Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her
-     people and restore freedom to the galaxy....
-  }
-
   page.select documentable.poll.name, from: 'poll_question_poll_id'
-  fill_in 'poll_question_title', with: title
-  fill_in_ckeditor "poll_question_description", with: description
-  click_button 'Save'
+  fill_in 'poll_question_title', with: "Star Wars: Episode IV - A New Hope"
+  fill_in_ckeditor "poll_question_description", with: "Description"
 end

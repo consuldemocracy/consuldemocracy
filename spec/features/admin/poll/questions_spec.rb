@@ -125,7 +125,7 @@ feature 'Admin poll questions' do
                   { },
                   "documentable_fill_new_valid_poll_question",
                   "Save",
-                  "Changes saved"
+                  "Star Wars: Episode IV - A New Hope"
 
   it_behaves_like "nested documentable",
                   "administrator",
