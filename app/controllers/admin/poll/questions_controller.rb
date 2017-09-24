@@ -31,7 +31,6 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def show
-    @document = Document.new(documentable: @question)
   end
 
   def edit
