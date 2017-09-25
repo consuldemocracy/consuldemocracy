@@ -572,17 +572,6 @@ Style/MutableConstant:
     - 'lib/tag_sanitizer.rb'
     - 'lib/wysiwyg_sanitizer.rb'
 
-# Offense count: 29
-# Cop supports --auto-correct.
-Style/NestedParenthesizedCalls:
-  Exclude:
-    - 'spec/features/debates_spec.rb'
-    - 'spec/features/emails_spec.rb'
-    - 'spec/features/valuation/budget_investments_spec.rb'
-    - 'spec/features/valuation/spending_proposals_spec.rb'
-    - 'spec/helpers/settings_helper_spec.rb'
-    - 'spec/helpers/verification_helper_spec.rb'
-
 # Offense count: 54
 # Cop supports --auto-correct.
 # Configuration parameters: Strict.
