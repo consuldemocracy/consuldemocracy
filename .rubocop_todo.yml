@@ -534,14 +534,6 @@ Style/MethodCallWithoutArgsParentheses:
     - 'app/controllers/management/document_verifications_controller.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: require_parentheses, require_no_parentheses, require_no_parentheses_except_multiline
-Style/MethodDefParentheses:
-  Exclude:
-    - 'spec/helpers/comments_helper_spec.rb'
-
-# Offense count: 1
 Style/MultilineBlockChain:
   Exclude:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
