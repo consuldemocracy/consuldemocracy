@@ -24,16 +24,6 @@
         </div>
       <% end %>
 
-      <% if @current_filter == "open" %>
-        <!-- Parque Manzanares -->
-        <div class="panel margin-bottom">
-          <h3><%= link_to t("processes.manzanares.title"), manzanares_path %></h3>
-          <p><%= t("processes.manzanares.description") %></p>
-          <%= link_to t("processes.shared.more_info"), manzanares_path, class: "button hollow",
-                      title: t("pages.processes.index.more_info_title") + t("processes.manzanares.title") %>
-        </div>
-      <% end %>
-
       <% if @current_filter == "past" %>
         <%= render "custom/legislation/processes_archived" %>
       <% end %>

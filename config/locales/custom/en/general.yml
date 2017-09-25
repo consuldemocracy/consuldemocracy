@@ -21,6 +21,8 @@ en:
         title: Help about citizen proposals
         description: Make a citizen proposal. If it gets enough supports it will go to voting phase, so you can get all the citizens of Madrid to decide how they want their city to be.
         help_text_1: "The citizen proposals are an opportunity for neighbours and collectives of Madrid to decide directly how they want to shape their city. Any person can make a proposal about a topic or concern of their interest, for the City Council to make it, after it gets enough supports to be put to a citizens vote."
+        help_text_1b: "Before to create a proposal, read this %{blog}."
+        help_text_1b_blog: "10 keys to propose better your idea and advices to broadcast it"
         help_text_2: "To create a proposal, you must sign up on %{org}. The proposals that get the support of 1% of the users (persons over 16 years of age registered in Madrid; 27,064 people) in the web, goes to voting phase. To support proposals it is necessary to have a verified account."
         help_text_3: "The City Council of Madrid celebrates a citizen vote when the proposals get the necessary supports. Once celebrated, if there are more people in favor than against, the City Council assumes the proposal and carries it out."
         help_text_4: 'In February 2017 occurred the first citizen vote in which were approved the proposals "Madrid 100% sostenible" and "Billete único para el transporte público".'

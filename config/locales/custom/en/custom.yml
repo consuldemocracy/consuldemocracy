@@ -125,54 +125,25 @@ en:
     deleted: "Investment project removed from the list"
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
-    budgets:
-      title_html: "100 million<br> to make Madrid"
-      text_html: "In the final vote of the participatory budgets 2017, you decide the citizen projects that will be included in the City Council's budget <strong>in the city and the districts</strong>."
-      date: "From May 15 to June 30"
-      button: "Vote projects"
-      title_reviewing_html: "Citizens decide on 100 million for participatory budgets"
-      text_reviewing_html: "Check the participation statistics in the process.<br>The <strong>winning projects</strong> will be announced on the next <strong>July 13</strong>."
-      label_reviewing: "Finished voting on participatory budgets"
-      button_reviewing: "See projects"
-      button_stats: "See statistics"
-      title_finished_html: "Know the winning projects of the participatory budgets"
-      text_finished_html: "These are the citizen projects that will be financed with<br><strong>100 million euros</strong> of the municipal budget in 2018"
-      label_finished: "The citizens of Madrid have decided"
-      button_finished: "See results"
-      button_finished_title: "See results of Participatory Budgets 2017"
-      stats:
-        label: "Statistics"
-        title: "Participatory Budget voting data"
-        text: "Check the detailed data of the voting of projects."
-        link: "See participation statistics"
-        alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-      journalism:
-        label: "Contest"
-        title: "Contest of data journalism and Datatón"
-        text: "Participate with stories and projects created from open data of the City Council of Madrid."
-        link: "More information about the contest"
-        alt: "Image of the Contest of Data Journalism and Datatón"
-      once_plazas:
-        label: "Process"
-        title: "Once Plazas"
-        text: "Participate in the discussion of ideas before the remodeling of 11 public squares in the outskirts districts of Madrid."
-        link: "More information about Once Plazas"
-        alt: "Logo Plan MAD-RE 2017"
-      videos:
-        label: "Videos"
-        title: "Budgets projects"
-        text: "The people who have proposed projects in participatory budgets tell us in video what their idea is."
-        link: "Watch videos of Participatory budgets"
-        alt: "Image of one of the videos of participatory Budgets"
-      chincheto:
-        title: "Watch SrChincheto77 video on YouTube (opens in new tab)"
-        alt: "SrChincheto77 accompanies us for the Madrid that decides the citizenship!"
-    manzanares:
-      label: Process
-      title: "Linear Park of Manzanares"
-      description: "The City of Madrid opens a public debate on the Linear Park of Manzanares and its surroundings."
-      link: "See Linear Park of Manzanares process"
-      alt: "Image of the environment of the Manzanares Lineal Park"
+    header:
+      label: Make your citizen proposal
+      title: Citizens make direct municipal decisions
+      text: We tell you in 10 steps how to present and broadcast your proposal to improve Madrid.
+      button: More information
+      button_title: Read ten Keys to creating a citizen proposal at Decide Madrid
+      button_proposal: Create a proposal
+    results:
+      label: "Participatory Budget"
+      title: "Results voting data"
+      text: "Check the detailed data of the voting of projects."
+      link: "See results"
+      alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
+    journalism:
+      label: "Contest"
+      title: "Contest of data journalism and Datatón"
+      text: "Participate with stories and projects created from open data of the City Council of Madrid."
+      link: "More information about the contest"
+      alt: "Image of the Contest of Data Journalism and Datatón"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

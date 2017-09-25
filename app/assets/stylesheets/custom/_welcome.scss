@@ -3,52 +3,6 @@
 
 .welcome {
 
-  .header {
-    background: #ffdb19;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #000;
-    padding: $line-height * 2 0;
-
-    h1 {
-      font-family: 'Franklin Gothic' !important;
-      font-weight: normal;
-      font-size: rem-calc(200);
-      line-height: rem-calc(200);
-
-      @include breakpoint(large) {
-        font-size: rem-calc(270);
-        line-height: rem-calc(240);
-      }
-    }
-
-    .decoration-none {
-      text-decoration: none !important;
-    }
-
-    .lead {
-      font-size: rem-calc(24);
-      line-height: $line-height * 1.5;
-    }
-
-    a:not(.button) {
-      color: #000;
-      text-decoration: underline;
-    }
-
-    .button {
-      background: #000;
-      color: #fff;
-      font-family: 'Franklin Gothic' !important;
-      font-weight: normal;
-      font-size: rem-calc(36);
-      line-height: $line-height * 1.5;
-      padding-bottom: $line-height / 2;
-      padding-top: $line-height / 2;
-    }
-  }
-
   h2 {
 
     &.title {
@@ -109,43 +63,49 @@
       background: #f4fb2d;
     }
   }
-}
 
-.budgets-module {
-  background: $budget;
-  padding: $line-height * 2 0;
+  .header {
+    background: $budget;
+    padding: $line-height * 2 0;
 
-  .lead-title {
-    font-family: 'Franklin Gothic' !important;
-    font-size: rem-calc(40);
-    font-weight: bold;
-    line-height: rem-calc(40);
-    text-transform: uppercase;
+    .lead-title {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(40);
+      font-weight: bold;
+      line-height: rem-calc(40);
+      text-transform: uppercase;
 
-    @include breakpoint(medium) {
-      font-size: rem-calc(60);
-      line-height: rem-calc(60);
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
     }
-  }
 
-  .budgets-date {
-    background: $campaign-red;
-    color: #fff;
-    display: inline-block;
-    font-size: rem-calc(24);
-    line-height: $line-height;
-    margin-bottom: $line-height / 2;
-    padding: $line-height / 4 $line-height / 2;
-  }
+    .label {
+      background: $campaign-red;
+      color: #fff;
+      display: inline-block;
+      font-size: rem-calc(24);
+      line-height: $line-height;
+      margin-bottom: $line-height / 2;
+      padding: $line-height / 4 $line-height / 2;
+    }
 
-  .button {
-    background: #000;
-    color: #fff;
-    font-weight: bold;
-  }
+    .button {
+      background: #000;
+      color: #fff;
+      font-weight: bold;
 
-  a:not(.button) {
-    text-decoration: underline;
+      &.hollow {
+        background: none;
+        border-color: #000;
+        color: #000;
+      }
+    }
+
+    a:not(.button) {
+      text-decoration: underline;
+    }
   }
 }
 
