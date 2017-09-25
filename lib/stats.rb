@@ -13,7 +13,7 @@ booth_results = []
 
 poll.booth_assignments.each do |ba|
   response_in_booth = []
-  recount = Poll::FinalRecount.where(booth_assignment_id: ba.id).sum(:count)
+  recount = Poll::TotalResult.where(booth_assignment_id: ba.id).sum(:amount)
   whites = Poll::WhiteResult.where(booth_assignment_id: ba.id).sum(:amount)
   nulls = Poll::NullResult.where(booth_assignment_id: ba.id).sum(:amount)
   wn = whites+nulls
@@ -54,7 +54,7 @@ booth_results = []
 booths.each do |b|
   b.booth_assignments.each do |ba|
     response_in_booth = []
-    recount = Poll::FinalRecount.where(booth_assignment_id: ba.id).sum(:count)
+    recount = Poll::TotalResult.where(booth_assignment_id: ba.id).sum(:amount)
     whites = Poll::WhiteResult.where(booth_assignment_id: ba.id).sum(:amount)
     nulls = Poll::NullResult.where(booth_assignment_id: ba.id).sum(:amount)
 
@@ -81,7 +81,7 @@ booths.each do |b|
   b.booth_assignments.each do |ba|
 
     results = ::Poll::PartialResult.where(booth_assignment: ba).count
-    recounts = Poll::FinalRecount.where(booth_assignment_id: ba.id).count
+    recounts = Poll::TotalResult.where(booth_assignment_id: ba.id).amount
     whites = Poll::WhiteResult.where(booth_assignment_id: ba.id).count
     nulls = Poll::NullResult.where(booth_assignment_id: ba.id).count
 

@@ -7,7 +7,7 @@ class Admin::Poll::RecountsController < Admin::Poll::BaseController
                               order("poll_booths.name").
                               page(params[:page]).per(50)
     @all_booths_counts = {
-      final: ::Poll::FinalRecount.select(:count).where(booth_assignment_id: @poll.booth_assignment_ids).sum(:count),
+      final: ::Poll::TotalResult.select(:amount).where(booth_assignment_id: @poll.booth_assignment_ids).sum(:amount),
       system: ::Poll::Voter.where(booth_assignment_id: @poll.booth_assignment_ids).count
     }
   end

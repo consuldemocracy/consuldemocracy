@@ -44,7 +44,7 @@ describe :final_recount do
         final_recount2 = create(:poll_final_recount, origin: "web")
         final_recount3 = create(:poll_final_recount, origin: "booth")
 
-        web_final_recounts = Poll::FinalRecount.web
+        web_final_recounts = Poll::TotalResult.where(origin: 'web')
 
         expect(web_final_recounts.count).to eq(2)
         expect(web_final_recounts).to     include(final_recount1)
@@ -59,7 +59,7 @@ describe :final_recount do
         final_recount2 = create(:poll_final_recount, origin: "booth")
         final_recount3 = create(:poll_final_recount, origin: "web")
 
-        booth_final_recounts = Poll::FinalRecount.booth
+        booth_final_recounts = Poll::TotalResult.where(origin: 'booth')
 
         expect(booth_final_recounts.count).to eq(2)
         expect(booth_final_recounts).to     include(final_recount1)
@@ -74,7 +74,7 @@ describe :final_recount do
         final_recount2 = create(:poll_final_recount, origin: "letter")
         final_recount3 = create(:poll_final_recount, origin: "web")
 
-        letter_final_recounts = Poll::FinalRecount.letter
+        letter_final_recounts = Poll::TotalResult.where(origin: 'letter')
 
         expect(letter_final_recounts.count).to eq(2)
         expect(letter_final_recounts).to     include(final_recount1)
