@@ -532,8 +532,9 @@ en:
         recounts: "Recounts"
         recounts_list: "Recount list for this booth"
         date: "Date"
-        total_recount: "Total recount (by officer)"
+        count_final: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
+        total_system: "Votos totales acumulados(automático)"
       index:
         booths_title: "List of booths"
         no_booths: "There are no booths assigned to this poll."
