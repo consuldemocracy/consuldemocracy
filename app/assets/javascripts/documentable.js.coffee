@@ -6,7 +6,7 @@ App.Documentable =
 
   initializeDirectUploads: ->
 
-    $('input.document_ajax_attachment[type=file]').fileupload
+    $('input.js-document-attachment[type=file]').fileupload
 
       paramName: "document[attachment]"
 
@@ -38,7 +38,7 @@ App.Documentable =
         return
 
   initializeInterface: ->
-    input_files = $('input.document_ajax_attachment[type=file]')
+    input_files = $('input.js-document-attachment[type=file]')
 
     $.each input_files, (index, file) ->
       wrapper = $(file).parent()

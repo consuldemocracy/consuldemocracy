@@ -649,4 +649,22 @@ namespace :polls do
     Rake::Task["polls:import_2017"].execute
     Rake::Task["polls:add_2017_nvotes_poll_id"].execute
   end
+
+  desc "Migrates data from FinalRecount to TotalResult"
+  task migrate_final_recount_total_result: :environment do
+    Poll::FinalRecount.all.each do |final_recount|
+      author = User.where(email: 'adevapl@madrid.es').first
+      total_result = Poll::TotalResult.new
+      total_result.booth_assignment = final_recount.booth_assignment
+      total_result.officer_assignment = final_recount.officer_assignment
+      total_result.amount = final_recount.count
+      total_result.amount_log = final_recount.count_log
+      total_result.officer_assignment_id_log = final_recount.officer_assignment_id_log
+      total_result.date = final_recount.date
+      total_result.origin = final_recount.origin
+      total_result.author = author
+      total_result.author_id_log = ":#{author.id}"
+      puts "Error creating TotalResult with ##{final_recount.id} FinalRecount params, #{total_result.errors}" unless total_result.save
+    end
+  end
 end

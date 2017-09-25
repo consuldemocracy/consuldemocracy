@@ -54,7 +54,7 @@ module DocumentsHelper
   def render_attachment(document, index)
     html = file_field_tag :attachment,
                           accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                          class: 'document_ajax_attachment',
+                          class: 'js-document-attachment',
                           data: {
                             url: document_direct_upload_url(document),
                             cached_attachment_input_field: document_nested_field_id(document, index, :cached_attachment),

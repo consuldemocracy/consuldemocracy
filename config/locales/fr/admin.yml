@@ -301,8 +301,8 @@ fr:
         no_assignments: "Cet utilisateur n'a pas d'affectation pour ce vote."
         recounts: "Dépouillement journalier"
         recount: "Dépouillement journalier (par président)"
-        final_recounts: "Dépouillement final"
-        final_recount: "Dépouillement final (par président)"
+        total_recounts: "Dépouillement final"
+        total_recount: "Dépouillement final (par président)"
     poll_booth_assignments:
       flash:
         destroy: "Ce bureau de vote n'est plus affecté"
@@ -319,7 +319,7 @@ fr:
         no_recounts: "Il n'y a pas encore de dépouillements journaliers pour ce bureau de vote."
         date: "Date"
         count_by_officer: "Dépouillement journalier (par président)"
-        count_final: "Dépouillement final (par président)"
+        total_count: "Dépouillement final (par président)"
         count_by_system:  "Votes (automatique)"
       index:
         booths_title: "Liste des bureaux de vote"
@@ -391,7 +391,7 @@ fr:
         no_recounts: "Il n'y a rien à dépouiller"
         table_booth_name: "Bureau de vote"
         table_recounts: "Accumulation des dépouillements journaliers (par président)"
-        table_final_recount: "Dépouillement final (par président)"
+        table_total_recount: "Dépouillement final (par président)"
         table_system_count: "Votes (automatique)"
     results:
       index:

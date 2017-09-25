@@ -44,7 +44,7 @@
   </div>
 
   <div class="tabs-panel" id="tab-recounts">
-    <% if @booth_assignment.final_recounts.empty? %>
+    <% if @booth_assignment.total_results.empty? %>
       <div class="callout primary margin-top">
         <%= t("admin.poll_booth_assignments.show.no_recounts") %>
       </div>
@@ -60,7 +60,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="text-center" id="total_final"><%= booth_assignment_sum_final_recounts(@booth_assignment) || '-'  %></td>
+            <td class="text-center" id="total_final"><%= total_recounts_by_booth(@booth_assignment) || '-'  %></td>
             <td class="text-center" id="total_system"><%= @booth_assignment.voters.count %></td>
           </tr>
         </tbody>
@@ -70,18 +70,18 @@
         <thead>
           <tr>
             <th><%= t("admin.poll_booth_assignments.show.date") %></th>
-            <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_officer") %></th>
+            <th class="text-center"><%= t("admin.poll_booth_assignments.show.total_recount") %></th>
             <th class="text-center"><%= t("admin.poll_booth_assignments.show.count_by_system") %></th>
           </tr>
         </thead>
         <tbody>
         <% (@poll.starts_at.to_date..@poll.ends_at.to_date).each do |voting_date| %>
-          <% final_recount = final_recount_for_date(@booth_assignment.final_recounts, voting_date) %>
+          <% total_recount = @booth_assignment.total_results.where(date: voting_date).first %>
           <% system_count = @voters_by_date[voting_date].present? ? @voters_by_date[voting_date].size : 0 %>
           <tr id="recounting_<%= voting_date.strftime('%Y%m%d') %>">
             <td><%= l voting_date %></td>
-            <% if final_recount.present? %>
-              <td class="text-center <%= 'count-error' if final_recount.count != system_count %>" title="<%= final_recount.officer_assignment.officer.name %>"><%= final_recount.count %></td>
+            <% if total_recount.present? %>
+              <td class="text-center <%= 'count-error' if total_recount.amount != system_count %>" title="<%= total_recount.officer_assignment.officer.name %>"><%= total_recount.amount %></td>
             <% else %>
               <td class="text-center" title=""> - </td>
             <% end %>
