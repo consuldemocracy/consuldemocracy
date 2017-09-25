@@ -46,12 +46,4 @@ class DirectUploadsController < ApplicationController
                   :attachment, :cached_attachment, attachment_attributes: [])
   end
 
-  def set_attachment_container_resource
-    @container_resource = params[:resource_type]
-  end
-
-  def find_attachment_container_resource
-    @uplo = params[:documentable_type].constantize.find_or_initialize_by(id: params[:documentable_id])
-  end
-
 end
