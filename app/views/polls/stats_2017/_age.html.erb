@@ -12,46 +12,611 @@
   </thead>
   <tbody>
 
-    <% ::Poll::AGE_STEPS.each_with_index do |age, i| %>
       <tr>
-        <% next_age = ::Poll::AGE_STEPS[i+1] %>
 
         <td class="border-right">
-          <% if next_age.present? %>
-            <%= "De #{age} a #{next_age - 1} años" %>
-          <% else %>
-            <%= "De #{age} y más años" %>
-          <% end %>
+            De 16 a 19 años
         </td>
 
-        <% ::Poll::Voter::VALID_ORIGINS.each do |origin| %>
           <td>
             <div class="progress" role="progressbar" tabindex="0"
-                 aria-valuetext="<%= percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%"
+                 aria-valuetext="1,06%"
                  aria-valuemin="0" aria-valuemax="100">
-              <span class="progress-meter <%= origin %>" style="width: <%= @age_stats[age.to_s][origin]*100*6/@age_stats['all']['total'] rescue 0 %>%">
+              <span class="progress-meter web" style="width: 6%">
                 <span class="progress-meter-text">
-                  <%= @age_stats[age.to_s][origin] %>
-                  (<%=  percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%)
+                  2305
+                  (1,06%)
                 </span>
               </span>
             </div>
           </td>
-        <% end %>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,27%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 1%">
+                <span class="progress-meter-text">
+                  576
+                  (0,27%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="1,98%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 11%">
+                <span class="progress-meter-text">
+                  4300
+                  (1,98%)
+                </span>
+              </span>
+            </div>
+          </td>
 
         <td class="border-left">
           <strong>
-            <%= @age_stats[age.to_s]['total'] %>
-            (<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%)
+            7181
+            (3,3%)
           </strong>
           <div class="progress" role="progressbar" tabindex="0"
-               aria-valuetext="<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%"
+               aria-valuetext="3,3%"
                aria-valuemin="0" aria-valuemax="100">
-            <span class="progress-meter" style="width: <%= @age_stats[age.to_s]['total']*100*6/@age_stats['all']['total'] rescue 0 %>%"></span>
+            <span class="progress-meter" style="width: 19%"></span>
           </div>
         </td>
       </tr>
-    <% end %>
+      <tr>
+
+        <td class="border-right">
+            De 20 a 24 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="2,59%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 15%">
+                <span class="progress-meter-text">
+                  5628
+                  (2,59%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,42%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 2%">
+                <span class="progress-meter-text">
+                  912
+                  (0,42%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="2,77%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 16%">
+                <span class="progress-meter-text">
+                  6021
+                  (2,77%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            12561
+            (5,78%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="5,78%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 34%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 25 a 29 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="3,89%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 23%">
+                <span class="progress-meter-text">
+                  8447
+                  (3,89%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,58%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 3%">
+                <span class="progress-meter-text">
+                  1267
+                  (0,58%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="3,38%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 20%">
+                <span class="progress-meter-text">
+                  7343
+                  (3,38%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            17057
+            (7,85%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="7,85%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 47%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 30 a 34 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="5,4%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 32%">
+                <span class="progress-meter-text">
+                  11733
+                  (5,4%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,79%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 4%">
+                <span class="progress-meter-text">
+                  1723
+                  (0,79%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="4,32%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 25%">
+                <span class="progress-meter-text">
+                  9381
+                  (4,32%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            22837
+            (10,51%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="10,51%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 63%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 35 a 39 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="5,48%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 32%">
+                <span class="progress-meter-text">
+                  11906
+                  (5,48%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,97%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 5%">
+                <span class="progress-meter-text">
+                  2102
+                  (0,97%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="4,54%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 27%">
+                <span class="progress-meter-text">
+                  9864
+                  (4,54%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            23872
+            (10,98%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="10,98%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 65%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 40 a 44 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="4,43%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 26%">
+                <span class="progress-meter-text">
+                  9638
+                  (4,43%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,98%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 5%">
+                <span class="progress-meter-text">
+                  2130
+                  (0,98%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="4,55%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 27%">
+                <span class="progress-meter-text">
+                  9883
+                  (4,55%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            21651
+            (9,96%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="9,96%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 59%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 45 a 49 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="3,23%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 19%">
+                <span class="progress-meter-text">
+                  7015
+                  (3,23%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="0,87%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 5%">
+                <span class="progress-meter-text">
+                  1884
+                  (0,87%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="4,68%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 28%">
+                <span class="progress-meter-text">
+                  10160
+                  (4,68%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            19059
+            (8,77%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="8,77%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 52%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 50 a 54 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="3,04%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 18%">
+                <span class="progress-meter-text">
+                  6602
+                  (3,04%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="1,08%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 6%">
+                <span class="progress-meter-text">
+                  2340
+                  (1,08%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="5,39%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 32%">
+                <span class="progress-meter-text">
+                  11704
+                  (5,39%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            20646
+            (9,5%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="9,5%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 57%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 55 a 59 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="2,55%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 15%">
+                <span class="progress-meter-text">
+                  5532
+                  (2,55%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="1,18%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 7%">
+                <span class="progress-meter-text">
+                  2569
+                  (1,18%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="5,53%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 33%">
+                <span class="progress-meter-text">
+                  12022
+                  (5,53%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            20123
+            (9,26%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="9,26%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 55%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 60 a 64 años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="1,79%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 10%">
+                <span class="progress-meter-text">
+                  3895
+                  (1,79%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="1,18%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 7%">
+                <span class="progress-meter-text">
+                  2554
+                  (1,18%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="4,72%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 28%">
+                <span class="progress-meter-text">
+                  10257
+                  (4,72%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            16706
+            (7,69%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="7,69%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 46%"></span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+
+        <td class="border-right">
+            De 65 y más años
+        </td>
+
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="1,67%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter web" style="width: 10%">
+                <span class="progress-meter-text">
+                  3622
+                  (1,67%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="2,57%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter booth" style="width: 15%">
+                <span class="progress-meter-text">
+                  5584
+                  (2,57%)
+                </span>
+              </span>
+            </div>
+          </td>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="12,16%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter letter" style="width: 72%">
+                <span class="progress-meter-text">
+                  26420
+                  (12,16%)
+                </span>
+              </span>
+            </div>
+          </td>
+
+        <td class="border-left">
+          <strong>
+            35626
+            (16,39%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="16,39%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: 98%"></span>
+          </div>
+        </td>
+      </tr>
 
   </tbody>
 </table>

@@ -1,20 +1,20 @@
-<% provide :title,             t("meta_tags.polls_stats.title") %>
-<% provide :meta_description,  t("meta_tags.polls_stats.description") %>
+<% provide :title,             t("first_2017_poll.stats.title") %>
+<% provide :meta_description,  t("first_2017_poll.stats.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: primera_votacion_stats_url %>
 <% end %>
 <% provide :social_media_meta_tags do %>
   <!-- Facebook -->
   <meta property="og:url"            content="<%= primera_votacion_stats_url %>" />
-  <meta property="og:title"          content="<%= t("meta_tags.polls_stats.title") %>" />
+  <meta property="og:title"          content="<%= t("first_2017_poll.stats.title") %>" />
   <meta property="og:image"          content="<%= image_url '/social_media_polls_results.png' %>" />
-  <meta property="og:description"    content="<%= t("meta_tags.polls_stats.description") %>" />
+  <meta property="og:description"    content="<%= t("first_2017_poll.stats.description") %>" />
   <!-- Twitter -->
   <meta name="twitter:card"          content="summary" />
   <meta name="twitter:site"          content="@DecideMadrid" />
-  <meta name="twitter:title"         content="<%= t("meta_tags.polls_stats.title") %>" />
+  <meta name="twitter:title"         content="<%= t("first_2017_poll.stats.title") %>" />
   <meta name="twitter:image"         content="<%= image_url '/social_media_polls_results_twitter.png' %>" />
-  <meta name="twitter:description"   content="<%= t("meta_tags.polls_stats.description") %>" />
+  <meta name="twitter:description"   content="<%= t("first_2017_poll.stats.description") %>" />
 <% end %>
 <% cache ["stats:polls_2017:rake_task:#{Stat.named('polls_2017_cache', 'keys', 'stats').value}"] do %>
   <div class="polls-stats">
@@ -22,15 +22,15 @@
       <div class="row">
         <div class="small-12 column">
           <h1 class="inline-block">
-            ESTADÍSTICAS
-            <span>PRIMERA VOTACIÓN CIUDADANA</span>
-            <span>13-19 DE FEBRERO 2017</span>
+            <%= t("polls.stats").upcase %>
+            <span><%= t("first_2017_poll.title") %></span>
+            <span><%= t("first_2017_poll.date") %></span>
           </h1>
 
           <div class="more-info">
-            <p>Resultados con el 100% de los votos escrutados</p>
+            <p><%= t("polls.full_recount_results") %></p>
             <div class="text-right">
-              <%= link_to "Más información sobre las votaciones", more_info_polls_path %>
+              <%= link_to t("polls.more_poll_info"), more_info_polls_path %>
             </div>
           </div>
         </div>
@@ -41,13 +41,13 @@
       <div class="small-12 column">
         <ul class="tabs">
           <li class="tabs-title">
-            <%= link_to "Resultados", first_voting_path %>
+            <%= link_to t("polls.results"), first_voting_path %>
           </li>
           <li class="tabs-title is-active">
-            <span class="is-active">Estadísticas</span>
+            <span class="is-active"><%= t("polls.stats") %></span>
           </li>
           <li class="tabs-title">
-            <%= link_to "Información", primera_votacion_info_path %>
+            <%= link_to t("polls.information"), primera_votacion_info_path %>
           </li>
         </ul>
       </div>
@@ -80,44 +80,20 @@
         <h2 class="show-for-sr">PARTICIPACIÓN</h2>
 
         <!-- Participación total -->
-        <%= render "polls/stats_2017/total" if @totals.present?%>
+        <%= render "polls/stats_2017/total" %>
 
         <!-- Participación por sexo -->
-        <%= render "polls/stats_2017/gender" if @gender_stats.present? %>
+        <%= render "polls/stats_2017/gender" %>
 
         <!-- Participación por grupos de edad -->
-        <%= render "polls/stats_2017/age" if @age_stats.present? %>
+        <%= render "polls/stats_2017/age" %>
 
         <!-- Participación por distrito -->
-        <%= render "polls/stats_2017/districts" if @district_stats.present? %>
+        <%= render "polls/stats_2017/districts" %>
 
         <h2 class="show-for-sr">VOTACIONES</h2>
 
-        <% if @poll_stats.present? %>
-          <!-- Propuestas y Plaza de España -->
-          <%= render("polls/stats_2017/poll_with_letter", {stats: @poll_stats[@poll_1.id.to_s], poll: @poll_1}) if @poll_1.present? %>
-
-          <!-- Gran Vía -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_2.id.to_s], poll: @poll_2}) if @poll_2.present? %>
-
-          <!-- Barajas -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_3.id.to_s], poll: @poll_3}) if @poll_3.present? %>
-
-          <!-- San Blas - Canillejas -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_4.id.to_s], poll: @poll_4}) if @poll_4.present? %>
-
-          <!-- Hortaleza -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_5.id.to_s], poll: @poll_5}) if @poll_5.present? %>
-
-          <!-- Retiro -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_6.id.to_s], poll: @poll_6}) if @poll_6.present? %>
-
-          <!-- Salamanca -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_7.id.to_s], poll: @poll_7}) if @poll_7.present? %>
-
-          <!-- Vicálvaro -->
-          <%= render("polls/stats_2017/poll", {stats: @poll_stats[@poll_8.id.to_s], poll: @poll_8}) if @poll_8.present? %>
-        <% end %>
+        <%= render "polls/stats_2017/polls" %>
       <p>
         <em>* No se dispone de todos los datos demográficos de todos los participantes.</em><br>
         <em>** En el canal web no se presenta el número de papeletas en blanco ya que por anonimización de los votantes no se dispone de esta información.</em><br>

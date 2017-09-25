@@ -1,25 +1,25 @@
-<% provide :title,                t("meta_tags.first_voting.title") %>
-<% provide :meta_description,     t("meta_tags.first_voting.description") %>
+<% provide :title,                t("first_2017_poll.meta_tags.title") %>
+<% provide :meta_description,     t("first_2017_poll.meta_tags.description") %>
 <% provide :tracking_page_number, "31" %>
 <% provide :social_media_meta_tags do %>
   <!-- Facebook -->
   <meta property="og:url"            content="<%= first_voting_url %>" />
-  <meta property="og:title"          content="<%= t("meta_tags.first_voting.title") %>" />
+  <meta property="og:title"          content="<%= t("first_2017_poll.meta_tags.title") %>" />
   <meta property="og:image"          content="<%= image_url '/social_media_vota.png' %>" />
-  <meta property="og:description"    content="<%= t("meta_tags.first_voting.description") %>" />
+  <meta property="og:description"    content="<%= t("first_2017_poll.meta_tags.description") %>" />
   <!-- Twitter -->
   <meta name="twitter:card"          content="summary" />
   <meta name="twitter:site"          content="@DecideMadrid" />
-  <meta name="twitter:title"         content="<%= t("meta_tags.first_voting.title") %>" />
+  <meta name="twitter:title"         content="<%= t("first_2017_poll.meta_tags.title") %>" />
   <meta name="twitter:image"         content="<%= image_url '/social_media_vota_twitter.png' %>" />
-  <meta name="twitter:description"   content="<%= t("meta_tags.first_voting.description") %>" />
+  <meta name="twitter:description"   content="<%= t("first_2017_poll.meta_tags.description") %>" />
 <% end %>
 
 <div class="landing-voting">
   <div class="expanded header no-margin-top padding">
     <div class="row">
       <div class="small-12 column text-center margin-top">
-        <h1 class="uppercase">Primera Votación Ciudadana</h1>
+        <h1 class="uppercase"><%= t("first_2017_poll.title") %></h1>
       </div>
     </div>
     <div class="row">

@@ -1,32 +1,22 @@
 <h3 id="7">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</h3>
 
 <table>
-  <% question = @poll_7.questions.first %>
   <caption>
-    <%= question.title %>
+    ¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?
   </caption>
-  <% answers_votes = {} %>
-  <% max_i = 0 %>
-  <% question.valid_answers.each_with_index do |answer, i| %>
-    <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
-    <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
-  <% end %>
 
   <thead>
     <tr>
-      <% answers_votes.keys.each_with_index do |answer, i| %>
-        <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
-      <% end %>
+        <th scope="col" class="win">Sí</th>
+        <th scope="col" class="">No</th>
       <th scope="col">EN BLANCO</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <% answers_votes.values.each_with_index do |votes, i| %>
-        <td class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_7)) %>%)</td>
-      <% end %>
-      <% whites = total_votes_for_poll(@poll_7) - answers_votes.values.sum %>
-        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_7)) %>%)</td>
+        <td class="win">1914 (90,24%)</td>
+        <td class="">201 (9,48%)</td>
+        <td>6 (0,28%)</td>
     </tr>
   </tbody>
 </table>
