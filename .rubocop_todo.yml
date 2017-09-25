@@ -528,12 +528,6 @@ Style/Lambda:
     - 'lib/graph_ql/api_types_creator.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Style/MethodCallWithoutArgsParentheses:
-  Exclude:
-    - 'app/controllers/management/document_verifications_controller.rb'
-
-# Offense count: 1
 Style/MultilineBlockChain:
   Exclude:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
