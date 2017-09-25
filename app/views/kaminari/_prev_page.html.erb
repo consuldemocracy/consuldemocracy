@@ -1,3 +1,3 @@
 <li class="pagination-previous">
-  <%= link_to t("views.pagination.previous").html_safe, url, :rel => "prev", :remote => remote %>
+  <%= link_to t("views.pagination.previous").html_safe, "#{root_url}#{url.delete('/')}", :rel => "prev", :remote => remote %>
 </li>
