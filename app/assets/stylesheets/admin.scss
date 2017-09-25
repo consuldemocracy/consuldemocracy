@@ -48,11 +48,7 @@ $sidebar-active: #f4fcd0;
     color: #000;
     height: auto;
 
-    span {
-      padding-top: $line-height / 2;
-    }
-
-    [class^="icon-"] {
+    [class^="icon-"]:not(.icon-circle) {
       font-size: $base-font-size;
     }
   }
@@ -102,6 +98,10 @@ $sidebar-active: #f4fcd0;
       background: #000 !important;
       box-shadow: 0 7px 0 #000, 0 14px 0 #000 !important;
     }
+  }
+
+  .notifications .icon-circle {
+    color: $admin-color;
   }
 
   .dropdown.menu > .is-dropdown-submenu-parent > a::after {
