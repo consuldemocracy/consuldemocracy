@@ -1,11 +1,11 @@
 <div class="row margin">
   <div class="small-12 medium-4 medium-offset-2 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to custom_budget_results_path(Budget.finished.last.to_param), title: t("welcome.results.link") do %>
+      <%= link_to custom_budget_results_path(Budget.finished.last), title: t("welcome.results.link") do %>
         <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.results.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to custom_budget_results_path(Budget.finished.last.to_param), title: t("welcome.results.link") do %>
+        <%= link_to custom_budget_results_path(Budget.finished.last), title: t("welcome.results.link") do %>
           <span><%= t("welcome.results.label") %></span><br>
           <p class="title"><%= t("welcome.results.title") %></p>
         <% end %>
@@ -13,7 +13,7 @@
     </figure>
     <p><%= t("welcome.results.text") %></p>
     <p>
-      <%= link_to t("welcome.results.link"), custom_budget_results_path(Budget.finished.last.to_param) %>
+      <%= link_to t("welcome.results.link"), custom_budget_results_path(Budget.finished.last) %>
     </p>
   </div>
   <div class="small-12 medium-4 column margin-bottom end">
