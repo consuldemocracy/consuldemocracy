@@ -706,14 +706,6 @@ Style/StringLiteralsInInterpolation:
   Exclude:
     - 'spec/features/budgets/investments_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline, SupportedStylesForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'app/controllers/legislation/answers_controller.rb'
-
 # Offense count: 9
 # Configuration parameters: SupportedStyles.
 # SupportedStyles: snake_case, camelCase
