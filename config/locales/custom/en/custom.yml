@@ -141,11 +141,11 @@ en:
       button: More information
       button_title: Read ten Keys to creating a citizen proposal at Decide Madrid
       button_proposal: Create a proposal
-    stats:
-      label: "Statistics"
-      title: "Participatory Budget voting data"
+    results:
+      label: "Participatory Budget"
+      title: "Results voting data"
       text: "Check the detailed data of the voting of projects."
-      link: "See participation statistics"
+      link: "See results"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
     journalism:
       label: "Contest"

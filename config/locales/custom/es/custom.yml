@@ -141,11 +141,11 @@ es:
       button: Más información
       button_title: Leer diez claves para crear una propuesta ciudadana en Decide Madrid
       button_proposal: Crea una propuesta
-    stats:
-      label: "Estadísticas"
-      title: "Datos de la votación de presupuestos"
+    results:
+      label: "Presupuestos participativos"
+      title: "Resultados de la votación"
       text: "Consulta los datos detallados de la votación de proyectos."
-      link: "Ver estadísticas de participación"
+      link: "Ver resultados"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
     journalism:
       label: "Concurso"

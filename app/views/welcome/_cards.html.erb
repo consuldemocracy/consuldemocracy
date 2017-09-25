@@ -1,19 +1,19 @@
 <div class="row margin">
   <div class="small-12 medium-4 medium-offset-2 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.stats.link") do %>
-        <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.stats.alt") %>
+      <%= link_to custom_budget_results_path(Budget.finished.last.to_param), title: t("welcome.results.link") do %>
+        <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.results.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.stats.link") do %>
-          <span><%= t("welcome.stats.label") %></span><br>
-          <p class="title"><%= t("welcome.stats.title") %></p>
+        <%= link_to custom_budget_results_path(Budget.finished.last.to_param), title: t("welcome.results.link") do %>
+          <span><%= t("welcome.results.label") %></span><br>
+          <p class="title"><%= t("welcome.results.title") %></p>
         <% end %>
       </figcaption>
     </figure>
-    <p><%= t("welcome.stats.text") %></p>
+    <p><%= t("welcome.results.text") %></p>
     <p>
-      <%= link_to t("welcome.stats.link"), custom_budget_stats_path(id: Budget.last.to_param) %>
+      <%= link_to t("welcome.results.link"), custom_budget_results_path(Budget.finished.last.to_param) %>
     </p>
   </div>
   <div class="small-12 medium-4 column margin-bottom end">
