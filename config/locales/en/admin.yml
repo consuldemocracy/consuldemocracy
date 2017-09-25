@@ -222,8 +222,9 @@ en:
         title: Hidden comments
     dashboard:
       index:
-        back: Go back to
+        back: Go back to %{org}
         title: Administration
+        description: Welcome to the %{org} admin panel.
     debates:
       index:
         filter: Filter
