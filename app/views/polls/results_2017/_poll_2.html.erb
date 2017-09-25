@@ -1,33 +1,85 @@
 <h3 id="2">Gran vía</h3>
 
-<% @poll_2.questions.order(id: :asc).each do |question| %>
-  <table>
-    <caption>
-      <%= question.title %>
-    </caption>
-    <% answers_votes = {} %>
-    <% max_i = 0 %>
-    <% question.valid_answers.each_with_index do |answer, i| %>
-      <% answers_votes[answer] = total_votes_for_answer(question, answer) %>
-      <% max_i = i if answers_votes.values.max == answers_votes[answer] %>
-    <% end %>
+ <table>
+   <caption>
+     ¿Estás de acuerdo con mejorar el espacio peatonal de la Gran Vía mediante la ampliación de sus aceras?
+   </caption>
 
-    <thead>
-      <tr>
-        <% answers_votes.keys.each_with_index do |answer, i| %>
-          <th scope="col" class="<%= 'win' if max_i == i %>"><%= answer %></th>
-        <% end %>
-        <th scope="col">EN BLANCO</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <% answers_votes.values.each_with_index do |votes, i| %>
-          <td class="<%= 'win' if max_i == i %>"><%= votes %> (<%= percent_stat(votes, total_votes_for_poll(@poll_2)) %>%)</td>
-        <% end %>
-        <% whites = total_votes_for_poll(@poll_2) - answers_votes.values.sum %>
-        <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_2)) %>%)</td>
-      </tr>
-    </tbody>
-  </table>
-<% end %>
+   <thead>
+     <tr>
+         <th scope="col" class="win">Sí</th>
+         <th scope="col" class="">No</th>
+       <th scope="col">EN BLANCO</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+         <td class="win">71047 (85,49%)</td>
+         <td class="">11459 (13,79%)</td>
+       <td>595 (0,72%)</td>
+     </tr>
+   </tbody>
+ </table>
+ <table>
+   <caption>
+     ¿Consideras necesario mejorar las condiciones de las plazas traseras vinculadas a Gran Vía para que puedan ser utilizadas como espacio de descanso y/o de estancia?
+   </caption>
+
+   <thead>
+     <tr>
+         <th scope="col" class="win">Sí</th>
+         <th scope="col" class="">No</th>
+       <th scope="col">EN BLANCO</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+         <td class="win">73339 (88,25%)</td>
+         <td class="">8147 (9,8%)</td>
+       <td>1615 (1,94%)</td>
+     </tr>
+   </tbody>
+ </table>
+ <table>
+   <caption>
+     ¿Consideras que sería necesario incrementar el número de pasos peatonales de la Gran Vía para mejorar la comunicación peatonal?
+   </caption>
+
+   <thead>
+     <tr>
+         <th scope="col" class="win">Sí</th>
+         <th scope="col" class="">No</th>
+       <th scope="col">EN BLANCO</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+         <td class="win">55461 (66,74%)</td>
+         <td class="">26127 (31,44%)</td>
+       <td>1513 (1,82%)</td>
+     </tr>
+   </tbody>
+ </table>
+ <table>
+   <caption>
+     ¿Estás de acuerdo en que el transporte público colectivo debe mantener su prioridad en la circulación rodada en la Gran Vía?
+   </caption>
+
+   <thead>
+     <tr>
+         <th scope="col" class="win">Sí</th>
+         <th scope="col" class="">No</th>
+       <th scope="col">EN BLANCO</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+         <td class="win">76644 (92,23%)</td>
+         <td class="">5576 (6,71%)</td>
+       <td>881 (1,06%)</td>
+     </tr>
+   </tbody>
+ </table>
+
+
+       <h2 class="show-for-sr">DISTRITOS</h2>

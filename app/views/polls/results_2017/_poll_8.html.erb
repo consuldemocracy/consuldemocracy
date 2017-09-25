@@ -1,18 +1,9 @@
 <h3 id="8">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</h3>
 
 
-<%
-  question = @poll_8.questions.first
-  answers_votes = {}
-  question.valid_answers.each_with_index do |answer, i|
-    answers_votes[answer] = total_votes_for_answer(question, answer)
-  end
-  results_ordered = answers_votes.keys.sort { |x, y| answers_votes[y] <=> answers_votes[x] }
-  winner = results_ordered.shift
-%>
 <table>
   <caption>
-    <%= question.title %>
+    ¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?
   </caption>
   <thead>
     <tr>
@@ -22,8 +13,8 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= winner %></td>
-      <td><%= answers_votes[winner] %> (<%= percent_stat(answers_votes[winner], total_votes_for_poll(@poll_8)) %>%)</td>
+      <td>Gloria Fuertes</td>
+      <td>521 (50,63%)</td>
     </tr>
   </tbody>
 </table>
@@ -36,22 +27,25 @@
     </tr>
   </thead>
   <tbody>
-    <% results_ordered.each do |result| %>
       <tr>
-        <td><%= result %></td>
-        <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_8)) %>%)</td>
+        <td>Federica Montseny</td>
+        <td>245 (23,81%)</td>
       </tr>
-    <% end %>
+      <tr>
+        <td>Frida Kahlo</td>
+        <td>162 (15,74%)</td>
+      </tr>
+      <tr>
+        <td>María Pacheco</td>
+        <td>92 (8,94%)</td>
+      </tr>
     <tr>
       <td>En BLANCO</td>
-      <% whites = total_white_votes_for_poll(@poll_8) %>
-      <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_8)) %>%)</td>
+      <td>8 (0,78%)</td>
     </tr>
   </tbody>
 </table>
 
 <div class="margin text-right">
-<%= link_to "Ver resultados de todas las respuestas", "#",
-            class: "js-toggle-link",
-            data: {'toggle-selector' => ".poll-8-discarded", 'toggle-text' => "Ver solo respuestas ganadoras"} %>
+<a class="js-toggle-link" data-toggle-selector=".poll-8-discarded" data-toggle-text="Ver solo respuestas ganadoras" href="#">Ver resultados de todas las respuestas</a>
 </div>
