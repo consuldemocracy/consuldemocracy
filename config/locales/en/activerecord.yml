@@ -107,6 +107,10 @@ en:
       budget/investment/milestone:
         title: "Title"
         description: "Description"
+      budget/heading:
+        name: "Heading name"
+        price: "Price"
+        population: "Population"
       comment:
         body: "Comment"
         user: "User"

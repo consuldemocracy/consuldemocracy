@@ -99,6 +99,10 @@ es:
         title: "Título"
         location: "Ubicación"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
+      budget/heading:
+        name: "Nombre de la partida"
+        price: "Cantidad"
+        population: "Población"
       comment:
         body: "Comentario"
         user: "Usuario"

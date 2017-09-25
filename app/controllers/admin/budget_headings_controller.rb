@@ -9,6 +9,27 @@ class Admin::BudgetHeadingsController < Admin::BaseController
     @headings = @budget_group.headings
   end
 
+  def edit
+    @budget = Budget.find params[:budget_id]
+    @budget_group = @budget.groups.find params[:budget_group_id]
+    @heading = Budget::Heading.find params[:id]
+  end
+
+  def update
+    @budget = Budget.find params[:budget_id]
+    @budget_group = @budget.groups.find params[:budget_group_id]
+    @heading = Budget::Heading.find params[:id]
+    @heading.assign_attributes(budget_heading_params)
+    @errors = @heading.errors.full_messages unless @heading.save
+  end
+
+  def destroy
+    @heading = Budget::Heading.find params[:id]
+    @heading.destroy
+    @budget = Budget.find params[:budget_id]
+    redirect_to admin_budget_path(@budget)
+  end
+
   private
 
     def budget_heading_params

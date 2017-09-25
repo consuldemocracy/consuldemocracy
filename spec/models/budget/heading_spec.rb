@@ -25,4 +25,17 @@ describe Budget::Heading do
     end
   end
 
+  describe "heading" do
+    it "can be deleted if not budget's investments associated" do
+      heading1 = create(:budget_heading, group: group, name: 'name')
+      heading2 = create(:budget_heading, group: group, name: 'name 2')
+
+      create(:budget_investment, heading: heading1)
+
+      expect(heading1.can_be_deleted?).to eq false
+      expect(heading2.can_be_deleted?).to eq true
+
+    end
+  end
+
 end
