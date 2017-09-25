@@ -583,14 +583,6 @@ Style/NestedParenthesizedCalls:
     - 'spec/helpers/settings_helper_spec.rb'
     - 'spec/helpers/verification_helper_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, MinBodyLength, SupportedStyles.
-# SupportedStyles: skip_modifier_ifs, always
-Style/Next:
-  Exclude:
-    - 'app/controllers/officing/results_controller.rb'
-
 # Offense count: 54
 # Cop supports --auto-correct.
 # Configuration parameters: Strict.
