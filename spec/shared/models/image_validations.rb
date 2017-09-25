@@ -41,7 +41,7 @@ shared_examples "image validations" do |imageable_factory|
   end
 
   it "should not be valid for attachments larger than imageable max_file_size definition" do
-    image.stub(:attachment_file_size).and_return(Image::MAX_IMAGE_SIZE + 1.byte)
+    allow(image).to receive(:attachment_file_size).and_return(Image::MAX_IMAGE_SIZE + 1.byte)
 
     expect(image).to_not be_valid
     expect(image.errors[:attachment]).to include "must be in between 0 Bytes and 1 MB"
