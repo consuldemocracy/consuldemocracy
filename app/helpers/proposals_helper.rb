@@ -32,14 +32,6 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
-  def can_create_document?(document, proposal)
-    can?(:create, document) && proposal.documents.size < Proposal.max_documents_allowed
-  end
-
-  def can_destroy_image?(image, proposal)
-    proposal.image.present? && can?(:destroy, image)
-  end
-
   def author_of_proposal?(proposal)
     author_of?(proposal, current_user)
   end
