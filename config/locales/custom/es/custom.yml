@@ -134,21 +134,6 @@ es:
     deleted: "Proyecto eliminado de la lista"
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
-    budgets:
-      title_html: "100 millones<br> para hacer Madrid"
-      text_html: "En la votación final de los presupuestos participativos 2017 tú decides los proyectos ciudadanos que llevará a cabo el Ayuntamiento <strong>en la ciudad y en los distritos</strong>."
-      date: "Del 15 de mayo al 30 de junio"
-      button: "Votar proyectos"
-      title_reviewing_html: "La ciudadanía decide sobre 100 millones para los presupuestos participativos"
-      text_reviewing_html: "Consulta las estadísticas de participación en el proceso.<br>Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>."
-      label_reviewing: "Finaliza la votación de los proyectos finalistas"
-      button_reviewing: "Ver proyectos"
-      button_stats: "Ver estadísticas"
-      title_finished_html: "Conoce los proyectos ganadores de los presupuestos participativos"
-      text_finished_html: "Estos son los proyectos ciudadanos que se financiarán con<br><strong>100 millones de euros</strong> del presupuesto municipal en 2018."
-      label_finished: "La ciudadanía madrileña ha decidido"
-      button_finished: "Ver Resultados"
-      button_finished_title: "Ver resultados de los Presupuestos participativos 2017"
       stats:
         label: "Estadísticas"
         title: "Datos de la votación de presupuestos"
