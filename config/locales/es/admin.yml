@@ -542,7 +542,6 @@ es:
         recounts_list: "Lista de recuentos de esta urna"
         no_recounts: "No hay recuentos diarios de esta urna"
         date: "Fecha"
-        count_by_officer: "Recuento diario (presidente de mesa)"
         count_final: "Recuento final (presidente de mesa)"
         total_recount: "Recuento total (presidente de mesa)"
         count_by_system:  "Votos (automático)"
