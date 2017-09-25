@@ -541,12 +541,10 @@ es:
         no_officers: "No hay presidentes de mesa para esta urna"
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
-        no_recounts: "No hay recuentos diarios de esta urna"
         date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
-        total_recount: "Recuento total (presidente de mesa)"
         count_by_system:  "Votos (automático)"
-        total_system: "Votos totales acumulados(automático)"
+        total_system: Total votes (automatic)
       index:
         booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
