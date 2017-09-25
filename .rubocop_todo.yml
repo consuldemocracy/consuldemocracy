@@ -625,15 +625,6 @@ Style/ParallelAssignment:
     - 'lib/active_model/dates.rb'
     - 'spec/support/common_actions.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: AllowSafeAssignment.
-Style/ParenthesesAroundCondition:
-  Exclude:
-    - 'app/controllers/proposals_controller.rb'
-    - 'app/models/debate.rb'
-    - 'app/models/proposal.rb'
-
 # Offense count: 11
 # Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist.
 # NamePrefix: is_, has_, have_

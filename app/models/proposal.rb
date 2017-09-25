@@ -88,7 +88,7 @@ class Proposal < ActiveRecord::Base
   def self.search_by_code(terms)
     matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
-    return results if (results.present? && results.first.code == terms)
+    return results if results.present? && results.first.code == terms
   end
 
   def self.match_code(terms)

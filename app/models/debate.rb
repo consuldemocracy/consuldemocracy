@@ -88,7 +88,7 @@ class Debate < ActiveRecord::Base
 
   def register_vote(user, vote_value)
     if votable_by?(user)
-      Debate.increment_counter(:cached_anonymous_votes_total, id) if (user.unverified? && !user.voted_for?(self))
+      Debate.increment_counter(:cached_anonymous_votes_total, id) if user.unverified? && !user.voted_for?(self)
       vote_by(voter: user, vote: vote_value)
     end
   end
