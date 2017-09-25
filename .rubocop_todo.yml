@@ -454,12 +454,6 @@ Style/ClassVars:
     - 'app/models/organization.rb'
     - 'app/models/user.rb'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Style/ColonMethodCall:
-  Exclude:
-    - 'spec/models/budget/investment_spec.rb'
-
 # Offense count: 12
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, SingleLineConditionsOnly, IncludeTernaryExpressions.

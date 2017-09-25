@@ -393,7 +393,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible,   budget: budget)
       investment3 = create(:budget_investment, :unfeasible, budget: budget)
 
-      results = Budget::Investment::apply_filters_and_search(budget, {}, :feasible)
+      results = Budget::Investment.apply_filters_and_search(budget, {}, :feasible)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -405,7 +405,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :unfeasible, budget: budget)
       investment3 = create(:budget_investment, :feasible,   budget: budget)
 
-      results = Budget::Investment::apply_filters_and_search(budget, {}, :unfeasible)
+      results = Budget::Investment.apply_filters_and_search(budget, {}, :unfeasible)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -419,7 +419,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible, :selected,   budget: budget)
       investment3 = create(:budget_investment, :feasible, :unselected, budget: budget)
 
-      results = Budget::Investment::apply_filters_and_search(budget, {}, :selected)
+      results = Budget::Investment.apply_filters_and_search(budget, {}, :selected)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -433,7 +433,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, :feasible, :unselected, budget: budget)
       investment3 = create(:budget_investment, :feasible, :selected,   budget: budget)
 
-      results = Budget::Investment::apply_filters_and_search(budget, {}, :unselected)
+      results = Budget::Investment.apply_filters_and_search(budget, {}, :unselected)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -450,7 +450,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, heading: heading1, budget: budget)
       investment3 = create(:budget_investment, heading: heading2, budget: budget)
 
-      results = Budget::Investment::apply_filters_and_search(budget, heading_id: heading1.id)
+      results = Budget::Investment.apply_filters_and_search(budget, heading_id: heading1.id)
 
       expect(results).to     include investment1
       expect(results).to     include investment2
@@ -462,7 +462,7 @@ describe Budget::Investment do
       investment2 = create(:budget_investment, title: "improved health", budget: budget)
       investment3 = create(:budget_investment, title: "finance",         budget: budget)
 
-      results = Budget::Investment::apply_filters_and_search(budget, search: "health")
+      results = Budget::Investment.apply_filters_and_search(budget, search: "health")
 
       expect(results).to     include investment1
       expect(results).to     include investment2
