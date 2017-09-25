@@ -21,6 +21,8 @@ es:
         title: Ayuda sobre las propuestas ciudadanas
         description: Haz una propuesta ciudadana. Si obtiene los apoyos suficientes y pasa a votación, puedes conseguir que todos los habitantes de Madrid decidan cómo quieren que sea nuestra ciudad.
         help_text_1: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos de Madrid decidan directamente cómo quieren que sea su ciudad. Cualquier persona puede hacer una propuesta sobre un tema que le interese o preocupe para que el ayuntamiento la lleve a cabo, después de conseguir los apoyos suficientes y de someterse a votación ciudadana."
+        help_text_1b: "Antes de crear una propuesta, lee estas %{blog}."
+        help_text_1b_blog: "10 claves para plantear mejor tu idea y consejos para difundirla"
         help_text_2: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consigan el apoyo del 1% de la gente (personas mayores de 16 años empadronadas en Madrid; 27.064 apoyos) en la web, pasan a votación. Para apoyar propuestas es necesario tener una cuenta verificada."
         help_text_3: "El Ayuntamiento de Madrid convoca una votación ciudadana cuando las propuestas consiguen los apoyos necesarios. Una vez celebrada, si hay más gente a favor que en contra, el Consistorio asume la propuesta y la lleva a cabo."
         help_text_4: 'En febrero de 2017 tuvo lugar la primera votación ciudadana en la que se aprobaron las propuestas "Madrid 100% sostenible" y "Billete único para el transporte público".'
