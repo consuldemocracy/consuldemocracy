@@ -668,11 +668,6 @@ Style/RedundantBegin:
     - 'app/controllers/graphql_controller.rb'
     - 'app/models/legislation/annotation.rb'
 
-# Offense count: 55
-# Cop supports --auto-correct.
-Style/RedundantParentheses:
-  Enabled: false
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, AllowInnerSlashes.

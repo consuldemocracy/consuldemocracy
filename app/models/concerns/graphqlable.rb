@@ -24,7 +24,7 @@ module Graphqlable
     end
 
     def graphql_type_description
-      (model_name.human).to_s
+      model_name.human.to_s
     end
 
   end

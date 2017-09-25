@@ -264,7 +264,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within("div#js-suggest") do
-          expect(page).to have_content ("You are seeing 5 of 6 investments containing the term 'search'")
+          expect(page).to have_content "You are seeing 5 of 6 investments containing the term 'search'"
         end
       end
 
@@ -279,7 +279,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "item"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content ('You are seeing')
+          expect(page).to_not have_content 'You are seeing'
         end
       end
 
@@ -294,7 +294,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content ('You are seeing')
+          expect(page).to_not have_content 'You are seeing'
         end
       end
     end
