@@ -214,8 +214,9 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
-        back: Volver a
+        back: Volver a %{org}
         title: Administración
+        description: Bienvenido al panel de administración de %{org}.
     debates:
       index:
         filter: Filtro
