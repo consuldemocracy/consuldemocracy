@@ -29,3 +29,9 @@ es:
 ```
 
 So in order to customize it, we would create a new file `config/locales/custom/es/general.yml` with just that content, and change "Ayuntamiento de Madrid" for our organization name. We strongly recommend to make copies from `config/locales/` and modify or delete the lines as needed to keep the indentation structure and avoid issues.
+
+# Maintaining your Custom Texts & Languages
+
+CONSUL has the [i18n-tasks](https://github.com/glebm/i18n-tasks) gem, it's and awesome helping tool to manage i18n translations. Just check `i18n-tasks health` for a nice report.
+
+If you have a custom language different than English, you should add it to the [i18n-tasks.yml config file on both `base_locale` and `locales`](https://github.com/consul/consul/blob/master/config/i18n-tasks.yml#L4-L7) variables so your language files will be checked as well.

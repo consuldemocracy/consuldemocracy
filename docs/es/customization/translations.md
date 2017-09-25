@@ -29,3 +29,9 @@ es:
 ```
 
 Si creamos el fichero `config/locales/custom/es/general.yml` y modificamos "Ayuntamiento de Madrid" por el nombre de la organización que se este haciendo la modificación. Recomendamos directamente copiar los ficheros `config/locales/` e ir revisando y corrigiendo las que querramos, borrando las líneas que no querramos traducir.
+
+# Mantener tus Textos Personalizados y Lenguajes
+
+CONSUL tiene la gema [i18n-tasks](https://github.com/glebm/i18n-tasks), es una herramienta estupenda para gestionar textos i18n. Prueba en tu consola `i18n-tasks health` para ver un reporte de estado.
+
+Si tienes un lenguaje propio diferente al Inglés, deberias añadirlo al fichero de configuración [i18n-tasks.yml para las variables `base_locale` y `locales`](https://github.com/consul/consul/blob/master/config/i18n-tasks.yml#L4-L7) de forma que los ficheros de tu idioma también sean comprobados.
