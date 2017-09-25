@@ -92,7 +92,7 @@
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' %>
     </p>
   </div>
-  <div class="small-12 medium-4 column margin-bottom">
+  <div class="small-12 medium-4 column margin-bottom end">
     <figure class="figure-card pdf">
       <%= link_to "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' do %>
@@ -110,23 +110,6 @@
     <p>
       <%= link_to t("polls_reports.button"), "/docs/informe_tecnico_billete_unico.pdf", target: "_blank",
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_2") + ' - ' + 'PDF 514kb' %>
-    </p>
-  </div>
-  <div class="small-12 medium-4 column margin-bottom end">
-    <figure class="figure-card">
-      <%= link_to manzanares_path, title: t("welcome.manzanares.link") do %>
-        <%= image_tag "welcome_parque_manzanares.jpg", alt: t("welcome.manzanares.alt") %>
-      <% end %>
-      <figcaption>
-        <%= link_to manzanares_path, title: t("welcome.manzanares.link") do %>
-          <span><%= t("welcome.manzanares.label") %></span><br>
-          <p class="title"><%= t("welcome.manzanares.title") %></p>
-        <% end %>
-      </figcaption>
-    </figure>
-    <p><%= t("welcome.manzanares.description") %></p>
-    <p>
-      <%= link_to t("welcome.manzanares.link"), manzanares_path %>
     </p>
   </div>
 </div>
