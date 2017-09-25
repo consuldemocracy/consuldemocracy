@@ -134,33 +134,18 @@ en:
     deleted: "Investment project removed from the list"
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
-      stats:
-        label: "Statistics"
-        title: "Participatory Budget voting data"
-        text: "Check the detailed data of the voting of projects."
-        link: "See participation statistics"
-        alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-      journalism:
-        label: "Contest"
-        title: "Contest of data journalism and Datatón"
-        text: "Participate with stories and projects created from open data of the City Council of Madrid."
-        link: "More information about the contest"
-        alt: "Image of the Contest of Data Journalism and Datatón"
-      once_plazas:
-        label: "Process"
-        title: "Once Plazas"
-        text: "Participate in the discussion of ideas before the remodeling of 11 public squares in the outskirts districts of Madrid."
-        link: "More information about Once Plazas"
-        alt: "Logo Plan MAD-RE 2017"
-      videos:
-        label: "Videos"
-        title: "Budgets projects"
-        text: "The people who have proposed projects in participatory budgets tell us in video what their idea is."
-        link: "Watch videos of Participatory budgets"
-        alt: "Image of one of the videos of participatory Budgets"
-      chincheto:
-        title: "Watch SrChincheto77 video on YouTube (opens in new tab)"
-        alt: "SrChincheto77 accompanies us for the Madrid that decides the citizenship!"
+    stats:
+      label: "Statistics"
+      title: "Participatory Budget voting data"
+      text: "Check the detailed data of the voting of projects."
+      link: "See participation statistics"
+      alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
+    journalism:
+      label: "Contest"
+      title: "Contest of data journalism and Datatón"
+      text: "Participate with stories and projects created from open data of the City Council of Madrid."
+      link: "More information about the contest"
+      alt: "Image of the Contest of Data Journalism and Datatón"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

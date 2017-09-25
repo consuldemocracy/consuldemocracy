@@ -1,78 +1,42 @@
 <div class="row margin">
-  <% if Budget.finished.any? %>
-    <div class="small-12 medium-4 column margin-bottom">
-      <figure class="figure-card">
-        <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.budgets.stats.link") do %>
-          <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.budgets.stats.alt") %>
-        <% end %>
-        <figcaption>
-          <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.budgets.stats.link") do %>
-            <span><%= t("welcome.budgets.stats.label") %></span><br>
-            <p class="title"><%= t("welcome.budgets.stats.title") %></p>
-          <% end %>
-        </figcaption>
-      </figure>
-      <p><%= t("welcome.budgets.stats.text") %></p>
-      <p>
-        <%= link_to t("welcome.budgets.stats.link"), custom_budget_stats_path(id: Budget.last.to_param) %>
-      </p>
-    </div>
-  <% end %>
-  <div class="small-12 medium-4 column margin-bottom">
+  <div class="small-12 medium-4 medium-offset-2 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", title: t("welcome.budgets.journalism.link"), target: "_blank", rel: "nofollow" do %>
-        <%= image_tag "welcome_journalism.jpg", alt: t("welcome.budgets.journalism.alt") %>
+      <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.stats.link") do %>
+        <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.stats.alt") %>
       <% end %>
       <figcaption>
-        <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", title: t("welcome.budgets.journalism.link"), target: "_blank", rel: "nofollow" do %>
-          <span><%= t("welcome.budgets.journalism.label") %></span><br>
-          <p class="title"><%= t("welcome.budgets.journalism.title") %></p>
+        <%= link_to custom_budget_stats_path(id: Budget.last.to_param), title: t("welcome.stats.link") do %>
+          <span><%= t("welcome.stats.label") %></span><br>
+          <p class="title"><%= t("welcome.stats.title") %></p>
         <% end %>
       </figcaption>
     </figure>
-    <p><%= t("welcome.budgets.journalism.text") %></p>
+    <p><%= t("welcome.stats.text") %></p>
     <p>
-      <%= link_to t("welcome.budgets.journalism.link"), "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", target: "_blank", rel: "nofollow" %>
+      <%= link_to t("welcome.stats.link"), custom_budget_stats_path(id: Budget.last.to_param) %>
     </p>
   </div>
-  <% unless Budget.finished.any? %>
-    <div class="small-12 medium-4 column margin-bottom">
-      <figure class="figure-card">
-        <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
-          <%= image_tag "welcome_budgets_videos.jpg", alt: t("welcome.budgets.videos.alt") %>
+  <div class="small-12 medium-4 column margin-bottom end">
+    <figure class="figure-card">
+      <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", title: t("welcome.journalism.link"), target: "_blank", rel: "nofollow" do %>
+        <%= image_tag "welcome_journalism.jpg", alt: t("welcome.journalism.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", title: t("welcome.journalism.link"), target: "_blank", rel: "nofollow" do %>
+          <span><%= t("welcome.journalism.label") %></span><br>
+          <p class="title"><%= t("welcome.journalism.title") %></p>
         <% end %>
-        <figcaption>
-          <%= link_to budgets_videos_2017_path, title: t("welcome.budgets.videos.link") do %>
-            <span><%= t("welcome.budgets.videos.label") %></span><br>
-            <p class="title"><%= t("welcome.budgets.videos.title") %></p>
-          <% end %>
-        </figcaption>
-      </figure>
-      <p><%= t("welcome.budgets.videos.text") %></p>
-      <p>
-        <%= link_to t("welcome.budgets.videos.link"), budgets_videos_2017_path %>
-      </p>
-    </div>
-    <div class="small-12 medium-4 column margin-bottom">
-      <figure class="figure-card">
-        <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
-          <%= image_tag "welcome_once_plazas.jpg", alt: t("welcome.budgets.once_plazas.alt") %>
-        <% end %>
-        <figcaption>
-          <%= link_to once_plazas_path, title: t("welcome.budgets.once_plazas.link") do %>
-            <span><%= t("welcome.budgets.once_plazas.label") %></span><br>
-            <p class="title"><%= t("welcome.budgets.once_plazas.title") %></p>
-          <% end %>
-        </figcaption>
-      </figure>
-      <p><%= t("welcome.budgets.once_plazas.text") %></p>
-      <p>
-        <%= link_to t("welcome.budgets.once_plazas.link"), once_plazas_path %>
-      </p>
-    </div>
-  <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.journalism.text") %></p>
+    <p>
+      <%= link_to t("welcome.journalism.link"), "https://diario.madrid.es/blog/notas-de-prensa/el-ayuntamiento-lanza-el-concurso-de-periodismo-de-datos-y-el-dataton-ciudad-de-madrid-2017/", target: "_blank", rel: "nofollow" %>
+    </p>
+  </div>
+</div>
 
-  <div class="small-12 medium-4 column margin-bottom">
+<div class="row margin">
+  <div class="small-12 medium-4 medium-offset-2 column margin-bottom">
     <figure class="figure-card pdf">
       <%= link_to "/docs/informe_tecnico_100_sostenible.pdf", target: "_blank",
                   title: t("polls_reports.label") + ' - ' + t("polls_reports.title_1") + ' - ' + 'PDF 712kb' do %>
