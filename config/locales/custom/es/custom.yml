@@ -134,6 +134,13 @@ es:
     deleted: "Proyecto eliminado de la lista"
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
+    header:
+      label: Haz tu propuesta ciudadana
+      title: La ciudadanía toma decisiones municipales de forma directa
+      text: Te contamos en 10 pasos como presentar y difundur tu propuesta para mejorar Madrid.
+      button: Más información
+      button_title: Leer diez claves para crear una propuesta ciudadana en Decide Madrid
+      button_proposal: Crea una propuesta
     stats:
       label: "Estadísticas"
       title: "Datos de la votación de presupuestos"

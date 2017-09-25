@@ -1,0 +1,24 @@
+<div class="expanded jumbo header text-center">
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <span class="label">
+        <strong><%= t("welcome.header.label") %></strong>
+      </span>
+      <br>
+      <p class="lead-title"><%= t("welcome.header.title") %></p>
+      <p class="lead"><%= t("welcome.header.text") %></p>
+      <div class="small-12 medium-9 column small-centered">
+        <div class="small-12 medium-6 column">
+          <%= link_to t("welcome.header.button"),
+                      "https://diario.madrid.es/decidemadrid/2017/09/07/diez-claves-para-crear-una-propuesta-ciudadana-en-decide-madrid/",
+                      class: "button hollow expanded large", title: t("welcome.header.button_title"), target: "_blank" %>
+        </div>
+        <div class="small-12 medium-6 column">
+          <%= link_to t("welcome.header.button_proposal"),
+                      new_proposal_path,
+                      class: "button expanded large", title: t("welcome.header.button_proposal") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

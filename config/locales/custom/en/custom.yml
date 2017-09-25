@@ -134,6 +134,13 @@ en:
     deleted: "Investment project removed from the list"
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
+    header:
+      label: Make your citizen proposal
+      title: Citizens make direct municipal decisions
+      text: We tell you in 10 steps how to present and broadcast your proposal to improve Madrid.
+      button: More information
+      button_title: Read ten Keys to creating a citizen proposal at Decide Madrid
+      button_proposal: Create a proposal
     stats:
       label: "Statistics"
       title: "Participatory Budget voting data"
