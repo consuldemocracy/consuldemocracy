@@ -1,5 +1,6 @@
 .communities-show {
-  .button.disabled, .button[disabled] {
+  .button.disabled,
+  .button[disabled] {
     pointer-events: none;
   }
 

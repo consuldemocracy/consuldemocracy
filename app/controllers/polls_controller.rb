@@ -21,14 +21,6 @@ class PollsController < ApplicationController
   end
 
   def results_2017
-    @poll_1 = ::Poll.where("name ILIKE ?", "%Billete único%").first
-    @poll_2 = ::Poll.where("name ILIKE ?", "%Gran Vía%").first
-    @poll_3 = ::Poll.where("name ILIKE ?", "%Territorial de Barajas%").first
-    @poll_4 = ::Poll.where("name ILIKE ?", "%Territorial de San Blas%").first
-    @poll_5 = ::Poll.where("name ILIKE ?", "%Hortaleza%").first
-    @poll_6 = ::Poll.where("name ILIKE ?", "%culturales en Retiro%").first
-    @poll_7 = ::Poll.where("name ILIKE ?", "%Distrito de Salamanca%").first
-    @poll_8 = ::Poll.where("name ILIKE ?", "%Distrito de Vicálvaro%").first
   end
 
   def stats_2017

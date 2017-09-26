@@ -27,8 +27,7 @@ feature 'Legislation' do
 
     scenario 'Processes can be listed' do
       visit legislation_processes_path
-      #expect(page).to have_text "There aren't open processes"
-      expect(page).to have_text "Linear Park of Manzanares"
+      expect(page).to have_text "There aren't open processes"
 
       visit legislation_processes_path(filter: 'next')
       expect(page).to have_text "There aren't planned processes"

@@ -59,9 +59,9 @@ namespace :stats do
       poll = Poll.find(poll_id)
       ba_ids = poll.booth_assignment_ids
 
-      web = Poll::FinalRecount.web.where(booth_assignment_id: ba_ids).sum(:count)
-      booth = Poll::FinalRecount.booth.where(booth_assignment_id: ba_ids).sum(:count)
-      letter = Poll::FinalRecount.letter.where(booth_assignment_id: ba_ids).sum(:count)
+      web = Poll::TotalResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
+      booth = Poll::TotalResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)
+      letter = Poll::TotalResult.letter.where(booth_assignment_id: ba_ids).sum(:amount)
 
       white_web = Poll::WhiteResult.web.where(booth_assignment_id: ba_ids).sum(:amount)
       white_booth = Poll::WhiteResult.booth.where(booth_assignment_id: ba_ids).sum(:amount)

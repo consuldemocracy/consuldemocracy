@@ -459,11 +459,11 @@ $border-dark:  darken($border, 10%);
       span {
         vertical-align: inherit;
         font-style: normal;
+      }
 
-        a {
-          text-decoration: underline;
-          color: $text-medium;
-        }
+      .see-changes {
+        color: $text-medium;
+        text-decoration: underline;
       }
     }
 
@@ -477,6 +477,7 @@ $border-dark:  darken($border, 10%);
   }
 
   .draft-allegation {
+
     @include breakpoint(medium) {
       display: flex;
       padding-left: 0.9375rem;
@@ -493,7 +494,6 @@ $border-dark:  darken($border, 10%);
       }
     }
 
-    // Panel calcs for desktop
     @media screen and (min-width: 40em) {
       .calc-index {
         width: calc(35% - 25px);
@@ -509,6 +509,7 @@ $border-dark:  darken($border, 10%);
         width: rem-calc(50);
 
         .draft-panel {
+
           .panel-title {
             display: none;
           }
@@ -912,19 +913,15 @@ $border-dark:  darken($border, 10%);
           display: inline-block;
         }
       }
-
-      .show-for-medium {
-        .panel-title {
-          display: none;
-        }
-      }
     }
   }
 }
 
 // 08. Legislation changes
 // -----------------
+
 .legislation-changes {
+
   ul {
     list-style: none;
     margin-left: 0;
@@ -936,35 +933,36 @@ $border-dark:  darken($border, 10%);
         margin-right: 0.25rem;
         content: '—';
       }
+    }
+  }
 
-      .changes-link {
-        display: block;
-        margin-left: 1rem;
-        font-size: $small-font-size;
+  .changes-link {
+    display: block;
+    margin-left: 1rem;
+    font-size: $small-font-size;
 
-        @include breakpoint(medium) {
-          display: inline-block;
-        }
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
 
-        a {
-          span {
-            text-decoration: underline;
-          }
+    a {
 
-          .icon-external {
-            text-decoration: none;
-            color: #999;
-            line-height: 0;
-            vertical-align: sub;
-            margin-left: 0.5rem;
-          }
+      span {
+        text-decoration: underline;
+      }
 
-          &:active,
-          &:focus,
-          &:hover {
-            text-decoration: none;
-          }
-        }
+      .icon-external {
+        text-decoration: none;
+        color: #999;
+        line-height: 0;
+        vertical-align: sub;
+        margin-left: 0.5rem;
+      }
+
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: none;
       }
     }
   }
@@ -972,6 +970,7 @@ $border-dark:  darken($border, 10%);
 
 // 09. Legislation comments
 // -----------------
+
 .legislation-comments {
 
   .pull-right {
@@ -1020,6 +1019,7 @@ $border-dark:  darken($border, 10%);
 
 // 10. Legislation draft comment
 // -----------------
+
 .legislation-comment {
 
   .annotation-share-comment {

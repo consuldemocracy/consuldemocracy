@@ -1,5 +1,5 @@
 <div class="admin-sidebar" data-equalizer-watch>
-  <ul id="admin_menu" data-accordion-menu>
+  <ul id="admin_menu" data-accordion-menu data-multi-open="false">
 
     <li class="section-title">
       <a href="#">
@@ -60,12 +60,12 @@
           <span class="icon-checkmark-circle"></span>
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
-        <ul id="polls_menu" <%= "class=is-active" if menu_polls? && controller.class.parent == Admin::Poll::QuestionsController %>>
+        <ul id="polls_menu" <%= "class=is-active" if menu_polls? && controller.class.parent == Admin::Poll %>>
           <li <%= "class=active" if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
 
-          <li <%= "class=active" if controller_name == "questions" && controller.class.parent == Admin::Poll::QuestionsController %>>
+          <li <%= "class=active" if current_page?(admin_questions_path) %>>
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
@@ -158,7 +158,7 @@
         <span class="icon-settings"></span>
         <strong><%= t("admin.menu.title_site_customization") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_profiles? %>>
+      <ul <%= "class=is-active" if menu_customization? %>>
         <li <%= "class=active" if controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>

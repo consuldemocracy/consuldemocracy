@@ -10,7 +10,7 @@ nl:
     menu:
       voters: Validate document
       recounts: Store recount
-      final_recounts: Final recounts and results
+      total_recounts: Total recounts and results
     polls:
       index:
         title: Poll list
@@ -38,23 +38,6 @@ nl:
         recount_list: "Your recounts"
         booth: "Booth"
         date: "Date"
-    final_recounts:
-      flash:
-        create: "Data added"
-        error_create: "Final counts NOT added. Error in data."
-      new:
-        title: "%{poll} - Add final recount"
-        not_allowed: "You are allowed to add final recounts for this poll"
-        booth: "Booth"
-        date: "Date"
-        select_booth: "Select booth"
-        select_date: "Select date"
-        count: "Final vote count"
-        count_placeholder: "Final vote count"
-        submit: Save
-        final_recount_list: "Your final recounts"
-        system_count: "System recount"
-        add_results: "Add results"
     results:
       flash:
         create: "Results saved"

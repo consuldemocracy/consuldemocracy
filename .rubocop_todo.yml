@@ -283,7 +283,6 @@ Lint/ParenthesesAsGroupedExpression:
 # Cop supports --auto-correct.
 Lint/StringConversionInInterpolation:
   Exclude:
-    - 'app/models/poll/final_recount.rb'
     - 'app/models/poll/null_result.rb'
     - 'app/models/poll/partial_result.rb'
     - 'app/models/poll/white_result.rb'

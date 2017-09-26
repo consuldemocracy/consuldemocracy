@@ -57,15 +57,6 @@ es:
       description_reviewing: "El 30 de junio se cerró la votación final. Los proyectos ganadores se darán a conocer el próximo 13 de julio."
       title_finished: "Resultados de los Presupuestos participativos de Madrid"
       description_finished: "Mira qué proyectos ciudadanos se ejecutarán a partir de 2018 con los 100 millones de los presupuestos participativos."
-    first_voting:
-      title: "Votaciones ciudadanas de Madrid - Decide Madrid"
-      description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
-    polls_results:
-      title: "Resultados de la primera votación ciudadana"
-      description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
-    polls_stats:
-      title: "Estadísticas de la primera votación ciudadana"
-      description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
   social_share:
     polls_show:
       title_1: "Votación de Plaza de España, Madrid 100% sostenible y billete intermodal"
@@ -134,54 +125,25 @@ es:
     deleted: "Proyecto eliminado de la lista"
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
-    budgets:
-      title_html: "100 millones<br> para hacer Madrid"
-      text_html: "En la votación final de los presupuestos participativos 2017 tú decides los proyectos ciudadanos que llevará a cabo el Ayuntamiento <strong>en la ciudad y en los distritos</strong>."
-      date: "Del 15 de mayo al 30 de junio"
-      button: "Votar proyectos"
-      title_reviewing_html: "La ciudadanía decide sobre 100 millones para los presupuestos participativos"
-      text_reviewing_html: "Consulta las estadísticas de participación en el proceso.<br>Los <strong>proyectos ganadores</strong> se darán a conocer el próximo <strong>13 de julio</strong>."
-      label_reviewing: "Finaliza la votación de los proyectos finalistas"
-      button_reviewing: "Ver proyectos"
-      button_stats: "Ver estadísticas"
-      title_finished_html: "Conoce los proyectos ganadores de los presupuestos participativos"
-      text_finished_html: "Estos son los proyectos ciudadanos que se financiarán con<br><strong>100 millones de euros</strong> del presupuesto municipal en 2018."
-      label_finished: "La ciudadanía madrileña ha decidido"
-      button_finished: "Ver Resultados"
-      button_finished_title: "Ver resultados de los Presupuestos participativos 2017"
-      stats:
-        label: "Estadísticas"
-        title: "Datos de la votación de presupuestos"
-        text: "Consulta los datos detallados de la votación de proyectos."
-        link: "Ver estadísticas de participación"
-        alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-      journalism:
-        label: "Concurso"
-        title: "Concurso de periodismo de datos y Datatón"
-        text: "Participa con historias y proyectos creados a partir de datos abiertos del Ayuntamiento de Madrid."
-        link: "Más información sobre el concurso"
-        alt: "Imagen del cartel del Concurso de periodismo de datos y Datatón"
-      once_plazas:
-        label: "Proceso"
-        title: "Once Plazas"
-        text: "Participa en el debate del concurso de ideas previo a la remodelación de 11 plazas públicas en los distritos de la periferia de Madrid."
-        link: "Más información sobre Once Plazas"
-        alt: "Logo Plan MAD-RE 2017"
-      videos:
-        label: "Vídeos"
-        title: "Proyectos de Presupuestos"
-        text: "Las personas que han propuesto proyectos en los presupuestos participativos nos cuentan en vídeo en qué consiste su idea."
-        link: "Ver vídeos de Presupuestos participativos"
-        alt: "Imagen de uno de los vídeos de Presupuestos participativos"
-      chincheto:
-        title: "Ver vídeo de SrChincheto77 en YouTube (se abre en ventana nueva)"
-        alt: "¡SrChincheto77 nos acompaña por el Madrid que decide la ciudadanía!"
-    manzanares:
-      label: Proceso
-      title: "Parque Lineal del Manzanares"
-      description: "El Ayuntamiento de Madrid abre un debate público sobre el Parque Lineal del Manzanares y su entorno."
-      link: "Ver proceso Parque Lineal del Manzanares"
-      alt: "Imagen del entorno del Parque Lineal del Manzanares"
+    header:
+      label: Haz tu propuesta ciudadana
+      title: La ciudadanía toma decisiones municipales de forma directa
+      text: Te contamos en 10 pasos como presentar y difundur tu propuesta para mejorar Madrid.
+      button: Más información
+      button_title: Leer diez claves para crear una propuesta ciudadana en Decide Madrid
+      button_proposal: Crea una propuesta
+    results:
+      label: "Presupuestos participativos"
+      title: "Resultados de la votación"
+      text: "Consulta los datos detallados de la votación de proyectos."
+      link: "Ver resultados"
+      alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
+    journalism:
+      label: "Concurso"
+      title: "Concurso de periodismo de datos y Datatón"
+      text: "Participa con historias y proyectos creados a partir de datos abiertos del Ayuntamiento de Madrid."
+      link: "Más información sobre el concurso"
+      alt: "Imagen del cartel del Concurso de periodismo de datos y Datatón"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
@@ -226,3 +188,21 @@ es:
   budgets:
     results:
       heading: "Resultados"
+  polls:
+    results: Resultados
+    stats: Estadísticas
+    information: Información
+    more_poll_info: Más información sobre las votaciones
+    full_recount_results: Resultados con el 100% de los votos escrutados
+  first_2017_poll:
+    title: PRIMERA VOTACIÓN CIUDADANA
+    date: 13-19 DE FEBRERO 2017
+    meta_tags:
+      title: "Votaciones ciudadanas de Madrid - Decide Madrid"
+      description: "Participa en el espacio de votación ciudadana: apoya propuetas que hayan conseguido el 100% de apoyos y consulta los resultados de las votaciones."
+    results:
+      title: "Resultados de la primera votación ciudadana"
+      description: "Consulta todos los resultados y la participación de la decisión de la ciudadanía sobre el futuro de la Gran Vía y de la Plaza de España, de las propuestas ciudadanas de Madrid 100% sostenible, billete único para el transporte público y las respuestas en seis distritos."
+    stats:
+      title: "Estadísticas de la primera votación ciudadana"
+      description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."

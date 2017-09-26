@@ -205,19 +205,40 @@ a {
 
 .menu.simple {
   border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
+  clear: both;
+  margin-bottom: $line-height / 2;
 
   li {
-    padding-bottom: rem-calc(7);
+    margin-right: $line-height / 2;
+
+    @include breakpoint(medium) {
+      margin-right: $line-height * 1.5;
+    }
 
     a {
-      color: $text-medium;
+      color: $text;
+      display: inline-block;
+      font-weight: bold;
+      position: relative;
+      text-align: left;
+
+      &:hover {
+        color: $link;
+      }
     }
 
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
+
+    &:not(.active) {
+      margin-bottom: $line-height / 3;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 
   &.vertical li {
@@ -316,10 +337,6 @@ a {
   }
 }
 
-.no-max-width {
-  max-width: none;
-}
-
 .button.float-right ~ .button.float-right {
   margin: 0 $line-height / 2;
 }
@@ -379,7 +396,11 @@ header {
 
   .top-bar-title a {
     @include logo;
-    line-height: rem-calc(80) !important;
+    line-height: rem-calc(80);
+
+    @include breakpoint(medium) {
+      line-height: rem-calc(80);
+    }
 
     &:hover {
       text-decoration: none;

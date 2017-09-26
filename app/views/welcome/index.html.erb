@@ -5,20 +5,12 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% cache ["welcome_index_20170919", user_signed_in?] do %>
+<% cache ["welcome_index_20170925b", user_signed_in?] do %>
   <div class="welcome">
 
     <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
 
-    <div class="no-margin-top">
-      <% if Budget.balloting.any? %>
-        <%= render "budgets_module_balloting" %>
-      <% elsif Budget.reviewing_ballots.any? %>
-        <%= render "budgets_module_reviewing" %>
-      <% elsif Budget.finished.any? %>
-        <%= render "budgets_module_finished" %>
-      <% end %>
-    </div>
+    <%= render "header" %>
 
     <%= render "cards" %>
 

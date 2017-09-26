@@ -222,8 +222,9 @@ en:
         title: Hidden comments
     dashboard:
       index:
-        back: Go back to
+        back: Go back to %{org}
         title: Administration
+        description: Welcome to the %{org} admin panel.
     debates:
       index:
         filter: Filter
@@ -503,8 +504,8 @@ en:
         booth: "Booth"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
-        final_recounts: "Final recounts"
-        final_recount: "Final recount (by officer)"
+        total_recounts: "Total recounts"
+        total_recount: "Total recount (by officer)"
     poll_shifts:
       new:
         add_shift: "Add shift"
@@ -539,9 +540,7 @@ en:
         no_officers: "There are no officers for this booth"
         recounts: "Recounts"
         recounts_list: "Recount list for this booth"
-        no_recounts: "There are not daily recounts of this booth yet"
         date: "Date"
-        count_by_officer: "Daily recount (by officer)"
         count_final: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
         total_system: Total votes (automatic)
@@ -619,7 +618,7 @@ en:
         total_final: Final recounts
         total_system: Votes (automatic)
         table_booth_name: "Booth"
-        table_final_recount: "Final recount (by officer)"
+        table_total_recount: "Total recount (by officer)"
         table_system_count: "Votes (automatic)"
     results:
       index:

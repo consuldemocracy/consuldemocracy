@@ -89,6 +89,8 @@
             </p>
             <p><%= t("proposals.index.section_footer.description") %></p>
             <p><%= t("proposals.index.section_footer.help_text_1") %></p>
+            <p><%= t("proposals.index.section_footer.help_text_1b",
+                      blog: link_to(t("proposals.index.section_footer.help_text_1b_blog"), "https://diario.madrid.es/decidemadrid/2017/09/07/diez-claves-para-crear-una-propuesta-ciudadana-en-decide-madrid/", target: "_blank")).html_safe %></p>
             <p><%= t("proposals.index.section_footer.help_text_2",
                       org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
             <p><%= t("proposals.index.section_footer.help_text_3") %></p>

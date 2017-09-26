@@ -1,18 +1,9 @@
-<h3 id="4">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</h3>
+ <h3 id="4">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</h3>
 
-<%
-  question = @poll_4.questions.first
-  answers_votes = {}
-  question.valid_answers.each_with_index do |answer, i|
-    answers_votes[answer] = total_votes_for_answer(question, answer)
-  end
-  results_ordered = answers_votes.keys.sort { |x, y| answers_votes[y] <=> answers_votes[x] }
-  winners = results_ordered.shift(10)
-%>
 
 <table>
   <caption>
-    <%= question.title %>
+    Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas
   </caption>
   <thead>
     <tr>
@@ -21,12 +12,46 @@
     </tr>
   </thead>
   <tbody>
-    <% winners.each do |winner| %>
       <tr>
-        <td><%= san_blas_questions_valid_answers_mappings(winner) %></td>
-        <td><%= answers_votes[winner] %> (<%= percent_stat(answers_votes[winner], total_votes_for_poll(@poll_4)) %>%)</td>
+        <td>Hacer gratuita la educación de 0 a 3 años</td>
+        <td>712 (29,95%)</td>
       </tr>
-    <% end %>
+      <tr>
+        <td>Mejorar la protección a las víctimas de violencia de género y a sus familias</td>
+        <td>596 (25,07%)</td>
+      </tr>
+      <tr>
+        <td>Paquete de medidas para combatir la pobreza</td>
+        <td>592 (24,91%)</td>
+      </tr>
+      <tr>
+        <td>Abrir la Finca Torre Arias a actividades culturales y sociales</td>
+        <td>584 (24,57%)</td>
+      </tr>
+      <tr>
+        <td>Mejora del carril bici</td>
+        <td>520 (21,88%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Resolución de los problemas de acceso al distrito de San Blas a la M-40</td>
+        <td>504 (21,2%)</td>
+      </tr>
+      <tr>
+        <td>Mejorar mantenimiento de los colegios públicos</td>
+        <td>500 (21,03%)</td>
+      </tr>
+      <tr>
+        <td>Garantizar recursos básicos para cualquier persona</td>
+        <td>493 (20,74%)</td>
+      </tr>
+      <tr>
+        <td>Garantizar alquileres dignos</td>
+        <td>475 (19,98%)</td>
+      </tr>
+      <tr>
+        <td>Incrementar personal a los Servicios Sociales</td>
+        <td>442 (18,59%)</td>
+      </tr>
   </tbody>
 </table>
 <table class="poll-4-discarded" style="display:none">
@@ -37,22 +62,329 @@
     </tr>
   </thead>
   <tbody>
-    <% results_ordered.each do |result| %>
       <tr>
-        <td><%= san_blas_questions_valid_answers_mappings(result) %></td>
-        <td><%= answers_votes[result] %> (<%= percent_stat(answers_votes[result], total_votes_for_poll(@poll_4)) %>%)</td>
+        <td>Nueva piscina cubierta</td>
+        <td>392 (16,49%)</td>
       </tr>
-    <% end %>
+      <tr>
+        <td>Rediseño integral de la red de la EMT, en especial en los barrios periféricos (Rejas, Las Mercedes, etc.)</td>
+        <td>376 (15,82%)</td>
+      </tr>
+      <tr>
+        <td>Incrementar educadores sociales</td>
+        <td>373 (15,69%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Construir IES en el Barrio de las Rejas</td>
+        <td>363 (15,27%)</td>
+      </tr>
+      <tr>
+        <td>Remunicipalización de servicios públicos, incremento de los recursos humanos para la gestión municipal, y concursos de plazas vacantes</td>
+        <td>345 (14,51%)</td>
+      </tr>
+      <tr>
+        <td>Remodelación del Polideportivo de San Blas</td>
+        <td>345 (14,51%)</td>
+      </tr>
+      <tr>
+        <td>Incrementar los servicios de ayuda a domicilio</td>
+        <td>338 (14,22%)</td>
+      </tr>
+      <tr>
+        <td>Residuos Cero: un plan, para que en lugar de crearlos, sean reutilizables y reciclables</td>
+        <td>337 (14,18%)</td>
+      </tr>
+      <tr>
+        <td>Dotar de presupuesto a las asociaciones que trabajan con personas en exclusión social </td>
+        <td>330 (13,88%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Eliminar asignatura de religión en horario lectivo</td>
+        <td>324 (13,63%)</td>
+      </tr>
+      <tr>
+        <td>Declaración de la Quinta de Torre Arias como Bien de Interés Cultural</td>
+        <td>317 (13,34%)</td>
+      </tr>
+      <tr>
+        <td>Supresión de las barreras arquitéctonicas del distrito</td>
+        <td>314 (13,21%)</td>
+      </tr>
+      <tr>
+        <td>Instaurar una Oficina de la Agencia Municipal para el Empleo en el Distrito</td>
+        <td>313 (13,17%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Apertura de la estación de O’Donell</td>
+        <td>311 (13,08%)</td>
+      </tr>
+      <tr>
+        <td>Construcción de nuevos parques infantiles y la mejora de los ya existentes</td>
+        <td>308 (12,96%)</td>
+      </tr>
+      <tr>
+        <td>Alternativas a la problemática planteada por la convivencia de animales de compañía (perros) y sus dueños, con el resto de vecinos en la vía pública</td>
+        <td>304 (12,79%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) No más desahucios por parte de los bancos</td>
+        <td>297 (12,49%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Revisar o suprimir la ley educativa (LOMCE) </td>
+        <td>294 (12,37%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Recuperar profesores apoyo, orientadores y profesores de servicios a la comunidad en colegios e institutos</td>
+        <td>273 (11,49%)</td>
+      </tr>
+      <tr>
+        <td>Redistribución del espacio público atendiendo a la prioridad del ciudadano que camina, el que va en bici y en transporte público por encima del coche privado.</td>
+        <td>270 (11,36%)</td>
+      </tr>
+      <tr>
+        <td>Promover el acceso de los jóvenes a la cultura</td>
+        <td>260 (10,94%)</td>
+      </tr>
+      <tr>
+        <td>Impulsar Planes y Acciones de Formación Profesional para el Empleo en el Distrito</td>
+        <td>242 (10,18%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Es imprescindible luchar por tener una Sanidad Pública Universal.</td>
+        <td>232 (9,76%)</td>
+      </tr>
+      <tr>
+        <td>Garantizar la gestión municipal directa de los centros culturales</td>
+        <td>227 (9,55%)</td>
+      </tr>
+      <tr>
+        <td>Impulsar el autoempleo, el cooperativismo y la economía social, a nivel municipal y distrital</td>
+        <td>224 (9,42%)</td>
+      </tr>
+      <tr>
+        <td>Reformular cuotas, pliegos y ratios escuelas educación infantil</td>
+        <td>222 (9,34%)</td>
+      </tr>
+      <tr>
+        <td>Poner personal de limpieza en horario lectivo</td>
+        <td>222 (9,34%)</td>
+      </tr>
+      <tr>
+        <td>Plan de dignificación de Ciudad Pegaso</td>
+        <td>215 (9,05%)</td>
+      </tr>
+      <tr>
+        <td>Regeneración y Gestión sostenible del patrimonio ambiental de la Quinta de Torre Arias y del Distrito, en general, con modelos participativos</td>
+        <td>206 (8,67%)</td>
+      </tr>
+      <tr>
+        <td>Instalar  vados peatonales (rebajes adaptados) en todos los bordillos de cruces de aceras de todo el distrito.</td>
+        <td>203 (8,54%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Dotar de ascensores o de escaleras mecánicas en las estaciones de metro del distrito</td>
+        <td>201 (8,46%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Incremento del personal cualificado en los Centros de Salud</td>
+        <td>196 (8,25%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Construir nuevo colegio en las Rejas </td>
+        <td>195 (8,2%)</td>
+      </tr>
+      <tr>
+        <td>Mejorar la gestión y dotación de medios de los recursos culturales del distrito</td>
+        <td>194 (8,16%)</td>
+      </tr>
+      <tr>
+        <td>Plan Especial de Limpieza y Mantenimiento en los Ejes Comerciales del Distrito</td>
+        <td>192 (8,08%)</td>
+      </tr>
+      <tr>
+        <td>Apoyo a Madrid Salud San Blas y al Programa contra la desigualdades sociales</td>
+        <td>192 (8,08%)</td>
+      </tr>
+      <tr>
+        <td>Valorar la necesidad de nuevas instalaciones polideportivas</td>
+        <td>191 (8,04%)</td>
+      </tr>
+      <tr>
+        <td>Fomentar el acogimiento familiar de menores tutelados</td>
+        <td>183 (7,7%)</td>
+      </tr>
+      <tr>
+        <td>Mejora de los elementos para la práctica del ejercicio en los parques</td>
+        <td>182 (7,66%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Garantizar acceso Universidad a personas en riesgo de exclusión </td>
+        <td>179 (7,53%)</td>
+      </tr>
+      <tr>
+        <td>Creación de plazas de aparcamiento y gestión eficaz de zonas de carga y descarga</td>
+        <td>179 (7,53%)</td>
+      </tr>
+      <tr>
+        <td>Mejorar la seguridad de las zonas comerciales y controlar la venta ilegal</td>
+        <td>174 (7,32%)</td>
+      </tr>
+      <tr>
+        <td>Revertir la gestión indirecta de las instalaciones deportivas</td>
+        <td>172 (7,24%)</td>
+      </tr>
+      <tr>
+        <td>Mejorar la difusión de las actividades culturales entre los jóvenes</td>
+        <td>169 (7,11%)</td>
+      </tr>
+      <tr>
+        <td>Mejorar la difusión de las actividades de los centros culturales entre la vecindad </td>
+        <td>166 (6,98%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Construir 2ªFase IES Alfredo Kraus</td>
+        <td>163 (6,86%)</td>
+      </tr>
+      <tr>
+        <td>Cesión de espacios cuturales en horario de tarde-noche</td>
+        <td>152 (6,39%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Ley estatal contra el maltrato animal</td>
+        <td>142 (5,97%)</td>
+      </tr>
+      <tr>
+        <td>Facilitar la cesión de uso de los auditorios del distrito</td>
+        <td>137 (5,76%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Agilizar las valoraciones de dependencia y dotarla de mayores recursos</td>
+        <td>125 (5,26%)</td>
+      </tr>
+      <tr>
+        <td>Potenciar la iniciativa ciudadana en torno a la cultura</td>
+        <td>122 (5,13%)</td>
+      </tr>
+      <tr>
+        <td>Promoción y fomento de la implantación en los centros educativos del Programa Municipal STARS (“Con bici y a pie al Cole”)</td>
+        <td>117 (4,92%)</td>
+      </tr>
+      <tr>
+        <td>Rediseño de los ejes comerciales y espacios sociales del distrito</td>
+        <td>115 (4,84%)</td>
+      </tr>
+      <tr>
+        <td>Facilitar el acceso de la ciudadanía a la gestión cultural</td>
+        <td>106 (4,46%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Traslado del Cuartel de San Cristóbal, y desarrollo en sus terrenos de un programa alternativo de equipamientos para el Distrito.</td>
+        <td>103 (4,33%)</td>
+      </tr>
+      <tr>
+        <td>Remodelación y rehabilitación de las pistas elementales</td>
+        <td>100 (4,21%)</td>
+      </tr>
+      <tr>
+        <td>Limitación a 30 km/h en todas las calles del distrito de un solo carril</td>
+        <td>97 (4,08%)</td>
+      </tr>
+      <tr>
+        <td>Creación de un Observatorio Distrital sobre Empleo, Formación y Actividad Comercial y Productiva</td>
+        <td>87 (3,66%)</td>
+      </tr>
+      <tr>
+        <td>Simplificar los procedimientos administrativos y reducir las limitaciones existentes para la actividad comercial</td>
+        <td>86 (3,62%)</td>
+      </tr>
+      <tr>
+        <td>Garantizar la accesibilidad de las instalaciones deportivas</td>
+        <td>82 (3,45%)</td>
+      </tr>
+      <tr>
+        <td>Dotación económica y facilitación de trámites burocráticos para las organizaciones dedicadas a temas de salud en el distrito</td>
+        <td>81 (3,41%)</td>
+      </tr>
+      <tr>
+        <td>Reducir el tiempo de la fase semafórica de paso de vehículo (ganar tiempo peatones) en distintos puntos del distrito</td>
+        <td>78 (3,28%)</td>
+      </tr>
+      <tr>
+        <td>Garantizar la accesibilidad a las instalaciones culturales</td>
+        <td>76 (3,2%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Eliminación del concepto de perreras de toda la Comunidad, en el sentido de último reducto a donde llegan los animales antes de su muerte</td>
+        <td>76 (3,2%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Intervención en los locales vacios del IVIMA</td>
+        <td>75 (3,16%)</td>
+      </tr>
+      <tr>
+        <td>Facilitar espacios de gestión municipal a las entidades culturales del distrito</td>
+        <td>73 (3,07%)</td>
+      </tr>
+      <tr>
+        <td>Fomentar la participación ciudadana y la democracia en temas de salud, a través de los Consejos de salud del distrito</td>
+        <td>73 (3,07%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Intervención urgente en edificios abandonados del IVIMA</td>
+        <td>71 (2,99%)</td>
+      </tr>
+      <tr>
+        <td>Plan de hierba artificial para fútbol</td>
+        <td>69 (2,9%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Creación de una nueva ley de gestión de residuos sostenible para la ciudadanía</td>
+        <td>69 (2,9%)</td>
+      </tr>
+      <tr>
+        <td>Permitir el acceso de las bicicletas a las dependencias municipales del distrito</td>
+        <td>66 (2,78%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Moratoria indefinida a la implantación de más Grandes Superficies y Centros Comerciales en el Distrito</td>
+        <td>61 (2,57%)</td>
+      </tr>
+      <tr>
+        <td> Instar desde el Ayuntamiento la derogación del Plan de Medidas de Garantía de la Sostenibilidad del Sistema Sanitario Público de la Comunidad de Madrid.</td>
+        <td>59 (2,48%)</td>
+      </tr>
+      <tr>
+        <td>Apoyo e impulso a las Actividades Comerciales en periodos especiales</td>
+        <td>49 (2,06%)</td>
+      </tr>
+      <tr>
+        <td>Intervención para la dignificación en el espacio conocido como Plaza Cívica</td>
+        <td>39 (1,64%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Derogación de la nueva y actual Ley de Montes</td>
+        <td>28 (1,18%)</td>
+      </tr>
+      <tr>
+        <td>Desarrollar convenios para la creación de unidades de corta estancia</td>
+        <td>26 (1,09%)</td>
+      </tr>
+      <tr>
+        <td>Impulsar el cumplimiento de un estricto plan de seguridad de la zona de explotación minera de sepiolita</td>
+        <td>19 (0,8%)</td>
+      </tr>
+      <tr>
+        <td>(NO ES COMPETENCIA MUNICIPAL) Aumentar el número claustro en la Universidad para cubrir las necesidades de personal sanitario cualificado </td>
+        <td>17 (0,72%)</td>
+      </tr>
     <tr>
       <td>En BLANCO</td>
-      <% whites = total_white_votes_for_poll(@poll_4) %>
-      <td><%= whites %> (<%= percent_stat(whites, total_votes_for_poll(@poll_4)) %>%)</td>
+      <td>3 (0,13%)</td>
     </tr>
   </tbody>
 </table>
 
 <div class="margin text-right">
-  <%= link_to "Ver resultados de todas las respuestas", "#",
-              class: "js-toggle-link",
-              data: {'toggle-selector' => '.poll-4-discarded', 'toggle-text' => "Ver solo respuestas ganadoras"} %>
+  <a class="js-toggle-link" data-toggle-selector=".poll-4-discarded" data-toggle-text="Ver solo respuestas ganadoras" href="#">Ver resultados de todas las respuestas</a>
 </div>

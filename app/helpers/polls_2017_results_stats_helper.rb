@@ -5,7 +5,7 @@ module Polls2017ResultsStatsHelper
   end
 
   def total_votes_for_poll(poll)
-    ::Poll::FinalRecount.where(booth_assignment_id: poll.booth_assignment_ids).sum(:count)
+    ::Poll::TotalResult.where(booth_assignment_id: poll.booth_assignment_ids).sum(:amount)
   end
 
   def total_white_votes_for_poll(poll)
