@@ -44,12 +44,10 @@ module Budgets
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
-      @document = Document.new(documentable: @investment)
     end
 
     def create
       @investment.author = current_user
-      recover_documents_from_cache(@investment)
 
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
@@ -105,9 +103,11 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list,
-                                                  :organization_name, :location, :terms_of_service,
-                                                  documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
+        params.require(:budget_investment)
+              .permit(:title, :description, :external_url, :heading_id, :tag_list,
+                      :organization_name, :location, :terms_of_service,
+                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
       end
 
       def load_ballot

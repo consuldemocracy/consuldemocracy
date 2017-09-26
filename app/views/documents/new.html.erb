@@ -1,8 +1,9 @@
-<div class="document-form <%= documentable_class(@document.documentable) %> row">
+<div class="document-form <%= documentable_class(@document.documentable.class) %> row">
 
   <div class="small-12 medium-9 column">
     <%= back_link_to params[:from] %>
     <h1><%= t("documents.new.title") %></h1>
+    <p><%= document_note(@document) %></p>
     <%= render "documents/form", form_url: documents_url %>
   </div>
 
@@ -16,11 +17,11 @@
       </li>
       <li>
         <%= t "documents.recommendation_two_html",
-              accepted_content_types: humanized_accepted_content_types(@document.documentable) %>
+              accepted_content_types: documentable_humanized_accepted_content_types(@document.documentable.class) %>
       </li>
       <li>
         <%= t "documents.recommendation_three_html",
-              max_file_size: max_file_size(@document.documentable) %>
+              max_file_size: max_file_size(@document.documentable.class) %>
       </li>
     </ul>
   </div>

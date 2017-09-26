@@ -38,7 +38,10 @@ module Abilities
       can [:create, :destroy], Follow
 
       can [:create, :destroy, :new], Document, documentable: { author_id: user.id }
-      can [:new_nested, :upload, :destroy_upload], Document
+
+      can [:create, :destroy, :new], Image, imageable: { author_id: user.id }
+
+      can [:create, :destroy], DirectUpload
 
       unless user.organization?
         can :vote, Debate
@@ -55,6 +58,7 @@ module Abilities
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can :vote, Budget::Investment,                 budget: { phase: "selecting" }
+
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 

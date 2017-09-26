@@ -4,14 +4,26 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-      <% if can?(:create, @document) && investment.documents.size < Budget::Investment.max_documents_allowed %>
+      <% if can_create_document?(investment) %>
         <%= link_to t("documents.upload_document"),
                     new_document_path(documentable_id:investment, documentable_type: investment.class.name, from: request.url),
                     class: 'button hollow float-right' %>
       <% end %>
 
-      <h1><%= investment.title %></h1>
+      <% if can_create_image?(investment) %>
+        <%= link_to t("images.upload_image"),
+                    new_image_path(imageable_id:investment, imageable_type: investment.class.name, from: request.url),
+                    class: 'button hollow float-right' %>
+      <% end %>
 
+      <% if can_destroy_image?(investment) %>
+        <%= link_to t("images.remove_image"),
+                    image_path(investment.image, from: request.url),
+                    method: :delete,
+                    class: 'button hollow float-right' %>
+      <% end %>
+
+      <h1><%= investment.title %></h1>
       <div class="budget-investment-info">
         <%= render '/shared/author_info', resource: investment %>
 
@@ -20,7 +32,11 @@
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= investment.heading.name %>
       </div>
+
       <br>
+
+      <%= render_image(investment.image, :large, true) if investment.image.present? %>
+
       <p id="investment_code">
         <%= t("budgets.investments.show.code_html", code: investment.id) %>
       </p>
@@ -116,6 +132,7 @@
       <%= render partial: 'shared/social_share', locals: {
         share_title: t("budgets.investments.show.share"),
         title: investment.title,
+        image_url: image_absolute_url(investment.image, :thumb),
         url: budget_investment_url(budget_id: investment.budget_id, id: investment.id)
       } %>
 

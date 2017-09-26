@@ -181,6 +181,7 @@ en:
     signature_sheet: Signature sheet
     document: Document
     topic: Topic
+    image: Image
   geozones:
     none: All city
     all: All scopes

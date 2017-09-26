@@ -1,0 +1,42 @@
+en:
+  images:
+    upload_image: Upload image
+    remove_image: Remove image
+
+    form:
+      title: Descriptive image
+      attachment_label: Choose image
+      submit_button: Upload image
+      delete_button: Remove image
+      note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
+      add_new_image: Add image
+
+    new:
+      title: Upload image
+      budget_investment:
+        note: 'Add an image to your investment project: %{title}'
+      proposal:
+        note: 'Add an image to your proposal: %{title}'
+      form:
+        title_placeholder: Add a descriptive title for the image
+
+    recommendations_title: File upload tips
+    proposal:
+      recommendation_one_html: Proposals with image attract the attention of users more than those that do not have image. This image will be displayed in the list of proposals and on the proposal page.
+    budget_investment:
+      recommendation_one_html: Investment project with image attract the attention of users more than those that do not have image. This image will be displayed in the list of project investments and on the project investments page.
+    recommendation_two_html: "You can upload images in following formats: <strong>%{accepted_content_types}</strong>."
+    recommendation_three_html: You can upload one image up to <strong>1 MB</strong>.
+
+    actions:
+      create:
+        notice: Image was created successfully.
+        alert: Cannot create image. Check form errors and try again.
+      destroy:
+        notice: Image was deleted successfully.
+        alert: Cannot destroy image.
+        confirm: Are you sure you want to delete the image? This action cannot be undone!
+    errors:
+      messages:
+        in_between: must be in between %{min} and %{max}
+        wrong_content_type: content type %{content_type} does not match any of accepted content types %{accepted_content_types}

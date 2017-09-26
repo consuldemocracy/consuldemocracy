@@ -79,6 +79,9 @@ es:
       documents:
         one: "Documento"
         other: "Documentos"
+      images:
+        one: "Imagen"
+        other: "Imágenes"
     attributes:
       budget:
         name: "Nombre"
@@ -99,6 +102,7 @@ es:
         title: "Título"
         location: "Ubicación"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
+        image: "Imagen descriptiva de la propuesta de inversión"
       comment:
         body: "Comentario"
         user: "Usuario"
@@ -198,6 +202,9 @@ es:
       document:
         title: Título
         attachment: Archivo adjunto
+      image:
+        title: Título
+        attachment: Archivo adjunto
     errors:
       models:
         user:
@@ -212,6 +219,11 @@ es:
           attributes:
             max_per_day:
               invalid: "Has llegado al número máximo de mensajes privados por día"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "La imagen debe tener al menos %{required_min_width}px de largo"
+              min_image_height: "La imagen debe tener al menos %{required_min_height}px de alto"
         poll/voter:
           attributes:
             document_number:

@@ -251,12 +251,15 @@
 .spending-proposal-form,
 .document-form,
 .topic-new,
-.topic-form {
+.topic-form,
+.image-form,
+.proposal .image-form {
 
   .icon-debates,
   .icon-proposals,
   .icon-budget,
-  .icon-documents {
+  .icon-documents,
+  .icon-image {
     font-size: rem-calc(50);
     line-height: $line-height;
     opacity: 0.5;
@@ -267,7 +270,8 @@
   }
 
   .icon-proposals,
-  .icon-documents {
+  .icon-documents,
+  .icon-image {
     color: $proposals;
   }
 
@@ -302,12 +306,24 @@
 .proposal-form,
 .topic-form,
 .topic-new,
-.document-form {
+.document-form,
+.image-form {
 
   .recommendations li::before {
     color: $proposals;
   }
 }
+
+.budget-investment-new,
+.proposal-form,
+.proposal-edit,
+.image-form,
+.document-form,
+.new_poll_question,
+.edit_poll_question {
+  @include direct-uploads;
+}
+
 
 // 03. Show participation
 // ----------------------
@@ -640,6 +656,77 @@
   }
 }
 
+.budget-investments-list .budget-investment,
+.proposals-list .proposal {
+
+  .no-image {
+    background: $brand;
+  }
+}
+
+.budget-investments-list .budget-investment,
+.proposals-list .proposal {
+
+  @include breakpoint(small) {
+    .no-image {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .no-image::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+
+    .column:first-child {
+      text-align: center;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .panel {
+      padding: 0 0.75rem 0 0;
+
+      .no-image {
+        height: 245px;
+        width: 140px;
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    .column:first-child {
+      overflow: hidden;
+    }
+
+    .column:nth-child(2) {
+      float: left;
+    }
+
+    .column:last-child:not(:first-child) {
+      padding-top: 0.75rem;
+    }
+
+    img {
+      max-width: 12rem;
+    }
+
+    .budget-investment-content {
+      ul {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .debate,
 .proposal,
 .investment-project,
@@ -855,6 +942,19 @@
       display: block;
       font-size: rem-calc(70);
       line-height: rem-calc(70);
+    }
+  }
+}
+
+.budget-investment-show {
+
+  figure {
+    margin: rem-calc(10) 0 0;
+    display: inline-block;
+
+    figcaption {
+      font-size: $small-font-size;
+      margin-top: rem-calc(10);
     }
   }
 }

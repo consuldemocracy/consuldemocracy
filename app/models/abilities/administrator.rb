@@ -74,6 +74,8 @@ module Abilities
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation]
 
       can [:create, :destroy], Document
+      can [:create, :destroy], Image
+      can [:create, :destroy], DirectUpload
     end
   end
 end

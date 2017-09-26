@@ -599,7 +599,7 @@ es:
         valid_answers: Respuestas válidas
         description: Descripción
         video_url: Video externo
-        documents: Documentos
+        documents: Documentos (1)
         preview: Ver en la web
     recounts:
       index:
