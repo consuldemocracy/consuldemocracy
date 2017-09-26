@@ -17,6 +17,10 @@ module ApplicationHelper
     url_for(request.query_parameters.merge(query_parameters))
   end
 
+  def kaminari_path(url)
+    "#{root_url}#{url.delete('/')}"
+  end
+
   def markdown(text)
     return text if text.blank?
 

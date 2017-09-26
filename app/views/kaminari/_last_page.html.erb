@@ -1,3 +1,3 @@
 <li>
-  <%= link_to t("views.pagination.last").html_safe, "#{root_url}#{url.delete('/')}", :remote => remote %>
+  <%= link_to t("views.pagination.last").html_safe, kaminari_path(url), :remote => remote %>
 </li>
