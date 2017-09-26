@@ -341,9 +341,9 @@ feature 'Emails' do
       reset_mailer
       budget.email_selected
 
-      expect(find_email investment1.author.email).to be
-      expect(find_email investment2.author.email).to be
-      expect(find_email investment3.author.email).to_not be
+      expect(find_email(investment1.author.email)).to be
+      expect(find_email(investment2.author.email)).to be
+      expect(find_email(investment3.author.email)).to_not be
 
       email = open_last_email
       investment = investment2
@@ -364,9 +364,9 @@ feature 'Emails' do
       reset_mailer
       budget.email_unselected
 
-      expect(find_email investment1.author.email).to be
-      expect(find_email investment2.author.email).to be
-      expect(find_email investment3.author.email).to_not be
+      expect(find_email(investment1.author.email)).to be
+      expect(find_email(investment2.author.email)).to be
+      expect(find_email(investment3.author.email)).to_not be
 
       email = open_last_email
       investment = investment2
