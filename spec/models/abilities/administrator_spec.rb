@@ -69,6 +69,7 @@ describe "Abilities::Administrator" do
 
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }
+  it { should be_able_to(:read_results, Budget) }
 
   it { should be_able_to(:create, Budget::ValuatorAssignment) }
 
