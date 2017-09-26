@@ -52,20 +52,19 @@ class Officing::ResultsController < Officing::BaseController
         go_back_to_new if question.blank?
 
         results.each_pair do |answer_index, count|
-          if count.present?
-            answer = question.valid_answers[answer_index.to_i]
-            go_back_to_new if question.blank?
+          next unless count.present?
+          answer = question.valid_answers[answer_index.to_i]
+          go_back_to_new if question.blank?
 
-            partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                                 date: results_params[:date],
-                                                                 question_id: question_id,
-                                                                 answer: answer)
-            partial_result.officer_assignment_id = @officer_assignment.id
-            partial_result.amount = count.to_i
-            partial_result.author = current_user
-            partial_result.origin = 'booth'
-            @results << partial_result
-          end
+          partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                               date: results_params[:date],
+                                                               question_id: question_id,
+                                                               answer: answer)
+          partial_result.officer_assignment_id = @officer_assignment.id
+          partial_result.amount = count.to_i
+          partial_result.author = current_user
+          partial_result.origin = 'booth'
+          @results << partial_result
         end
       end
 

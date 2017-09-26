@@ -95,7 +95,7 @@ feature 'Admin::Organizations' do
       click_on 'Verify'
     end
     expect(current_path).to eq(admin_organizations_path)
-    expect(page).to have_content ('Verified')
+    expect(page).to have_content 'Verified'
 
     expect(organization.reload.verified?).to eq(true)
   end
@@ -108,18 +108,18 @@ feature 'Admin::Organizations' do
     click_on "Verified"
 
     within("#organization_#{organization.id}") do
-      expect(page).to have_content ('Verified')
+      expect(page).to have_content 'Verified'
       expect(page).to_not have_link('Verify')
       expect(page).to have_link('Reject')
 
       click_on 'Reject'
     end
     expect(current_path).to eq(admin_organizations_path)
-    expect(page).to_not have_content (organization.name)
+    expect(page).to_not have_content organization.name
 
     click_on 'Rejected'
-    expect(page).to have_content ('Rejected')
-    expect(page).to have_content (organization.name)
+    expect(page).to have_content 'Rejected'
+    expect(page).to have_content organization.name
 
     expect(organization.reload.rejected?).to eq(true)
   end
@@ -137,10 +137,10 @@ feature 'Admin::Organizations' do
       click_on 'Verify'
     end
     expect(current_path).to eq(admin_organizations_path)
-    expect(page).to_not have_content (organization.name)
+    expect(page).to_not have_content organization.name
     click_on('Verified')
 
-    expect(page).to have_content (organization.name)
+    expect(page).to have_content organization.name
 
     expect(organization.reload.verified?).to eq(true)
   end
