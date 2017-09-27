@@ -5,23 +5,21 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<% cache ["welcome_index_20170926", user_signed_in?] do %>
-  <div class="welcome">
+<div class="welcome">
 
-    <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
+  <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
 
-    <%= render "header" %>
+  <%= render "header" %>
 
-    <%= render "cards" %>
+  <%= render "cards" %>
 
-    <%= render "features" %>
+  <%= render "features" %>
 
-    <div class="row padding slogan">
-      <div class="small-12 column text-center">
-        <p><%= t("layouts.header.open_city_slogan_html") %></p>
-          <%= link_to t("welcome.more_information", org_name: setting['org_name']),
-                      more_info_path, class: "button hollow large" %>
-      </div>
+  <div class="row padding slogan">
+    <div class="small-12 column text-center">
+      <p><%= t("layouts.header.open_city_slogan_html") %></p>
+        <%= link_to t("welcome.more_information", org_name: setting['org_name']),
+                    more_info_path, class: "button hollow large" %>
     </div>
   </div>
-<% end %>
+</div>
