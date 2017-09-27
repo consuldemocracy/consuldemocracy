@@ -97,7 +97,7 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
-  resources :documents, only: [:new, :create, :destroy]
+  resources :documents, only: [:destroy]
 
   resources :images, only: [:destroy]
 

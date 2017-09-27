@@ -92,20 +92,10 @@ describe "Abilities::Common" do
   it { should_not be_able_to(:create, DirectMessage) }
   it { should_not be_able_to(:show,   DirectMessage) }
 
-  it { should be_able_to(:new, own_proposal_document) }
-  it { should be_able_to(:create, own_proposal_document) }
   it { should be_able_to(:destroy, own_proposal_document) }
-
-  it { should_not be_able_to(:new, proposal_document) }
-  it { should_not be_able_to(:create, proposal_document) }
   it { should_not be_able_to(:destroy, proposal_document) }
 
-  it { should be_able_to(:new, own_budget_investment_document) }
-  it { should be_able_to(:create, own_budget_investment_document) }
   it { should be_able_to(:destroy, own_budget_investment_document) }
-
-  it { should_not be_able_to(:new, budget_investment_document) }
-  it { should_not be_able_to(:create, budget_investment_document) }
   it { should_not be_able_to(:destroy, budget_investment_document) }
 
   it { should be_able_to(:destroy, own_proposal_image) }
