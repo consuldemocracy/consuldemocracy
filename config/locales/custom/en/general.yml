@@ -57,7 +57,6 @@ en:
       description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
     header:
       logo: "Decide Madrid: portal of citizen participation of the City of Madrid."
-      open_city_slogan_html: In Madrid their inhabitants, <strong>discuss the topics</strong> they are concerned about, <strong>propose ideas</strong> to improve their lives and <strong>decide among themselves</strong> which ones will be carried out.
   social:
     blog_link: "Blog"
     facebook_link: "Facebook"
