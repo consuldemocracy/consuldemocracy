@@ -30,7 +30,7 @@ feature 'Admin shifts' do
     expect(page).to have_content officer.name
   end
 
-  scenario "Create", :js do
+  scenario "Create Vote Collection Shift", :js do
     poll = create(:poll)
     booth = create(:poll_booth)
     officer = create(:poll_officer)
@@ -45,7 +45,7 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
-    select I18n.l(poll.starts_at.to_date, format: :long), from: 'shift_date'
+    select I18n.l(poll.starts_at.to_date, format: :long), from: 'shift_date_vote_collection_date'
     click_button "Add shift"
 
     expect(page).to have_content "Shift added"
@@ -53,6 +53,37 @@ feature 'Admin shifts' do
     within("#shifts") do
       expect(page).to have_css(".shift", count: 1)
       expect(page).to have_content(I18n.l(poll.starts_at.to_date, format: :long))
+      expect(page).to have_content("Collect Votes")
+      expect(page).to have_content(officer.name)
+    end
+  end
+
+  scenario "Create Recount & Scrutiny Shift", :js do
+    poll = create(:poll)
+    booth = create(:poll_booth)
+    officer = create(:poll_officer)
+
+    visit admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    fill_in "search", with: officer.email
+    click_button "Search"
+    click_link "Edit shifts"
+
+    select "Recount & Scrutiny", from: 'shift_task'
+
+    select I18n.l(poll.ends_at.to_date + 4.days, format: :long), from: 'shift_date_recount_scrutiny_date'
+    click_button "Add shift"
+
+    expect(page).to have_content "Shift added"
+
+    within("#shifts") do
+      expect(page).to have_css(".shift", count: 1)
+      expect(page).to have_content(I18n.l(poll.ends_at.to_date + 4.days, format: :long))
+      expect(page).to have_content("Recount & Scrutiny")
       expect(page).to have_content(officer.name)
     end
   end
