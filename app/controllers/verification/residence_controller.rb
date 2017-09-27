@@ -5,7 +5,11 @@ class Verification::ResidenceController < ApplicationController
   skip_authorization_check
 
   def new
-    @residence = Verification::Residence.new
+    if Setting['feature.residence_verification']
+      @residence = Verification::Residence.new
+    else
+      redirect_to account_path, alert: t('verification.residence.alert.unavailable')
+    end
   end
 
   def create

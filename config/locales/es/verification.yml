@@ -44,6 +44,7 @@ es:
     residence:
       alert:
         unconfirmed_residency: Aún no has verificado tu residencia
+        unavailable: Esta función no está disponible
       create:
         flash:
           success: Residencia verificada

@@ -44,6 +44,7 @@ en:
     residence:
       alert:
         unconfirmed_residency: You have not yet confirmed your residency
+        unavailable: This function is not enabled
       create:
         flash:
           success: Residence verified
