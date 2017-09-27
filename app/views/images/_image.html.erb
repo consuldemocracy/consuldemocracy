@@ -2,7 +2,8 @@
   <figure>
     <%= image_tag image.attachment.url(version),
                   class: image_class(image),
-                  alt: image.title %>
+                  alt: image.title,
+                  title: image.title %>
     <% if show_caption %>
       <figcaption class="text-right">
         <em><%= image.title %></em>

@@ -108,32 +108,16 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if can_create_document?(@proposal) || author_of_proposal?(@proposal) || current_editable?(@proposal) ||
-              can_create_image?(@proposal) || can_destroy_image?(@proposal) %>
+        <% if author_of_proposal?(@proposal) || current_editable?(@proposal) || can_destroy_image?(@proposal) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
-            <% if can_create_document?(@proposal) %>
-              <%= link_to new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
-                          class: 'button hollow expanded' do %>
-                          <span class="icon-document"></span>
-                          <%= t("documents.upload_document") %>
-              <% end %>
-            <% end %>
 
             <% if author_of_proposal?(@proposal) %>
               <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
                           class: 'button hollow expanded' do %>
                           <span class="icon-no-notification"></span>
                           <%= t("proposals.show.send_notification") %>
-              <% end %>
-            <% end %>
-
-            <% if can_create_image?(@proposal) %>
-              <%= link_to new_image_path(imageable_id: @proposal, imageable_type: @proposal.class.name, from: request.url),
-                          class: 'button hollow expanded' do %>
-                          <span class="icon-document"></span>
-                          <%= t("images.upload_image") %>
               <% end %>
             <% end %>
 

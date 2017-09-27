@@ -36,9 +36,6 @@ Rails.application.routes.draw do
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
-  concern :imageable do
-    resources :images
-  end
   resources :debates do
     member do
       post :vote
@@ -80,7 +77,7 @@ Rails.application.routes.draw do
 
   resources :budgets, only: [:show, :index] do
     resources :groups, controller: "budgets/groups", only: [:show]
-    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy], concerns: :imageable do
+    resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy] do
       member do
         post :vote
       end
@@ -100,9 +97,9 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
-  resources :documents, only: [:new, :create, :destroy]
+  resources :documents, only: [:destroy]
 
-  resources :images, only: [:new, :create, :destroy]
+  resources :images, only: [:destroy]
 
   resources :direct_uploads, only: [:create]
   delete "direct_uploads/destroy", to: "direct_uploads#destroy", as: :direct_upload_destroy
@@ -228,7 +225,7 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :budget_investments, only: [:index, :show, :edit, :update], concerns: :imageable do
+      resources :budget_investments, only: [:index, :show, :edit, :update] do
         resources :budget_investment_milestones
         member { patch :toggle_selection }
       end

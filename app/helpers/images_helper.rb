@@ -9,11 +9,6 @@ module ImagesHelper
     end
   end
 
-  def image_note(image)
-    t "images.new.#{image.imageable.class.name.parameterize.underscore}.note",
-      title: image.imageable.title
-  end
-
   def image_first_recommendation(image)
     t "images.#{image.imageable.class.name.parameterize.underscore}.recommendation_one_html",
       title: image.imageable.title

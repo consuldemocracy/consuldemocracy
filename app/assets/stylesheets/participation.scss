@@ -249,11 +249,8 @@
 .proposal-form,
 .budget-investment-form,
 .spending-proposal-form,
-.document-form,
 .topic-new,
-.topic-form,
-.image-form,
-.proposal .image-form {
+.topic-form {
 
   .icon-debates,
   .icon-proposals,
@@ -305,9 +302,7 @@
 
 .proposal-form,
 .topic-form,
-.topic-new,
-.document-form,
-.image-form {
+.topic-new {
 
   .recommendations li::before {
     color: $proposals;
@@ -317,8 +312,6 @@
 .budget-investment-new,
 .proposal-form,
 .proposal-edit,
-.image-form,
-.document-form,
 .new_poll_question,
 .edit_poll_question {
   @include direct-uploads;
@@ -854,12 +847,6 @@
 
 .divider {
   display: none;
-}
-
-.document-form {
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .more-info {

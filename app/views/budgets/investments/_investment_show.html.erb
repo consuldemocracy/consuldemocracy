@@ -4,18 +4,6 @@
     <div class="small-12 medium-9 column">
       <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-      <% if can_create_document?(investment) %>
-        <%= link_to t("documents.upload_document"),
-                    new_document_path(documentable_id:investment, documentable_type: investment.class.name, from: request.url),
-                    class: 'button hollow float-right' %>
-      <% end %>
-
-      <% if can_create_image?(investment) %>
-        <%= link_to t("images.upload_image"),
-                    new_image_path(imageable_id:investment, imageable_type: investment.class.name, from: request.url),
-                    class: 'button hollow float-right' %>
-      <% end %>
-
       <% if can_destroy_image?(investment) %>
         <%= link_to t("images.remove_image"),
                     image_path(investment.image, from: request.url),
