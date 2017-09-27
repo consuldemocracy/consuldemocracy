@@ -1,0 +1,8 @@
+@mixin logo {
+  font-family: $header-font-family !important;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: $dark;
+}

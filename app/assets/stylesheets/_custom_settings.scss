@@ -3,3 +3,22 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+$brand: #a50050;
+$dark: darken($brand, 10%);
+$link: $brand;
+$global-radius: 0px;
+$button-radius: 0px;
+$input-radius: 0px;
+$callout-radius: 0px;
+$body-font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+$body-font-weight: 300;
+$header-font-family: 'Raleway Webfont', 'Helvetica', 'Arial', sans-serif !important;
+$header-font-weight: 200;
+$header-font-style: normal;
+$footer-background: #373737;
+$footer-text: #ccc;
+
+$budget: #a50050;
+$budget-darken: rgba(darken(#000, 10%), 0.5);
+
