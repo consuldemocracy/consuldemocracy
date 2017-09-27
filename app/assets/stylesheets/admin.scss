@@ -174,10 +174,19 @@ $sidebar-active: #f4fcd0;
     max-width: none;
   }
 
-  .menu.simple .active {
-    border-bottom: 2px solid $admin-color;
-    color: $admin-color;
-    font-weight: bold;
+  .menu.simple {
+    margin-bottom: $line-height / 2;
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: $line-height / 3;
+    }
+
+    .active {
+      border-bottom: 2px solid $admin-color;
+      color: $admin-color;
+      font-weight: bold;
+    }
   }
 
   .tabs-panel {
