@@ -1,8 +1,6 @@
 ---
 en:
   moderation:
-    header:
-      title: Moderation
     comments:
       index:
         block_authors: Block authors
@@ -44,6 +42,8 @@ en:
           created_at: Newest
           flags: Most flagged
         title: Debates
+    header:
+      title: Moderation
     menu:
       flagged_comments: Comments
       flagged_debates: Debates

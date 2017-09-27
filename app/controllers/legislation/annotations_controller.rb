@@ -30,7 +30,7 @@ class Legislation::AnnotationsController < ApplicationController
 
   def create
     if !@process.allegations_phase.open? || @draft_version.final_version?
-      render(json: {}, status: :not_found) && (return)
+      render(json: {}, status: :not_found) && return
     end
 
     existing_annotation = @draft_version.annotations.where(

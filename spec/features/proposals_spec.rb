@@ -1440,7 +1440,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to have_content ("You are seeing 5 of 6 proposals containing the term 'search'")
+        expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
       end
     end
 
@@ -1456,7 +1456,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to_not have_content ('You are seeing')
+        expect(page).to_not have_content 'You are seeing'
       end
     end
   end

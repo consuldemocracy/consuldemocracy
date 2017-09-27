@@ -84,8 +84,9 @@
       <%= f.text_field :tag_list, value: display_tag_list(@proposal),
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list',
-                        aria: {describedby: "tag-list-help-text"} %>
+                        class: 'js-tag-list tag-autocomplete',
+                        aria: {describedby: "tag-list-help-text"},
+                        data: {js_url: suggest_tags_path} %>
     </div>
 
     <% if current_user.unverified? %>

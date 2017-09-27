@@ -6,17 +6,17 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-                       registrations: 'users/registrations',
-                       sessions: 'users/sessions',
-                       confirmations: 'users/confirmations',
-                       omniauth_callbacks: 'users/omniauth_callbacks'
-                     }
+    registrations: 'users/registrations',
+    sessions: 'users/sessions',
+    confirmations: 'users/confirmations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
   devise_for :organizations, class_name: 'User',
-             controllers: {
-               registrations: 'organizations/registrations',
-               sessions: 'devise/sessions',
-             },
-             skip: [:omniauth_callbacks]
+                             controllers: {
+                               registrations: 'organizations/registrations',
+                               sessions: 'devise/sessions'
+                             },
+                             skip: [:omniauth_callbacks]
 
   devise_scope :organization do
     get 'organizations/sign_up/success', to: 'organizations/registrations#success'
@@ -201,6 +201,11 @@ Rails.application.routes.draw do
   end
   get "/verifica", to: "verification/letter#edit"
 
+  resources :tags do
+    collection do
+      get :suggest
+    end
+  end
 
   namespace :admin do
     root to: "dashboard#index"
@@ -522,9 +527,7 @@ Rails.application.routes.draw do
   get '/graphql', to: 'graphql#query'
   post '/graphql', to: 'graphql#query'
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
 
