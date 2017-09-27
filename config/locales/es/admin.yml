@@ -66,6 +66,7 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
+        filter: Filtro
         filters:
           current: Abiertos
           finished: Terminados

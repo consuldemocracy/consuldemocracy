@@ -66,6 +66,7 @@ en:
       index:
         title: Participatory budgets
         new_link: Create new budget
+        filter: Filter
         filters:
           current: Open
           finished: Finished
