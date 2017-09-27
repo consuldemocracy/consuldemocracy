@@ -3,3 +3,9 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+.tip {
+  position: absolute;
+  width: 300px;
+  z-index: 10;
+}

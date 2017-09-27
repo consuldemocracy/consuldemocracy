@@ -5,40 +5,57 @@
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("debates.form.debate_title") %>
-      <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_debates_path}%>
     </div>
+    <div class="small-12 medium-9 column">
+      <%= f.text_field :title, maxlength: Debate.title_max_length, placeholder: t("debates.form.debate_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_debates_path, toggle_focus: "title-suggestions"}%>
+    </div>
+    <%= render 'shared/suggest_message', id: 'title-suggestions', message: "#{t("debates.suggestions.title")}" %>
     <div id="js-suggest"></div>
-    <div class="ckeditor small-12 column">
+  </div>
+
+  <div class="row">
+    <div class="small-12 column">
       <%= f.label :description, t("debates.form.debate_text") %>
+    </div>
+    <div class="ckeditor small-12 medium-9 column">
       <%= f.cktext_area :description, maxlength: Debate.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
-    <%= f.invisible_captcha :subtitle %>
+      <%= f.invisible_captcha :subtitle %>  
+  </div>
 
+  <div class="row">
     <div class="small-12 column">
       <%= f.label :tag_list, t("debates.form.tags_label") %>
       <p class="help-text" id="tag-list-help-text"><%= t("debates.form.tags_instructions") %></p>
-
+    </div>
+    <div class="small-12 medium-9 column">
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
-                        label: false,
-                        placeholder: t("debates.form.tags_placeholder"),
-                        aria: {describedby: "tag-list-help-text"},
-                        data: {js_url: suggest_tags_path},
-                        class: 'tag-autocomplete'%>
+                          label: false,
+                          placeholder: t("debates.form.tags_placeholder"),
+                          aria: {describedby: "tag-list-help-text"},
+                          data: {js_url: suggest_tags_path, toggle_focus: "tag-list-suggestions"},
+                          class: 'tag-autocomplete'%>
     </div>
-    <div class="small-12 column">
-      <% if @debate.new_record? %>
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
-          <span class="checkbox">
-            <%= t("form.accept_terms",
-                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
-          </span>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render 'shared/suggest_message', id: 'tag-list-suggestions', message: "#{t("debates.suggestions.tag_list")}" %>      
+  </div>
 
+  <div class="row">
+      <div class="small-12 column">
+        <% if @debate.new_record? %>
+          <%= f.label :terms_of_service do %>
+            <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+            <span class="checkbox">
+              <%= t("form.accept_terms",
+                  policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                  conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+            </span>
+          <% end %>
+        <% end %>
+      </div>  
+  </div>
+  
+  <div class="row">
     <div class="actions small-12 column">
       <%= f.submit(class: "button", value: t("debates.#{action_name}.form.submit_button")) %>
     </div>

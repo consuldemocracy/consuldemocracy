@@ -163,6 +163,9 @@ en:
     update:
       form:
         submit_button: Save changes
+    suggestions:
+      title: "Do not use capital letters for the debate title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at."
+      tag_list: "Tagging your debate correctly makes its search easier and may be voted more."
   errors:
     messages:
       user_not_found: User not found
@@ -451,6 +454,14 @@ en:
     update:
       form:
         submit_button: Save changes
+    suggestions:
+      title: "Do not use capital letters for the proposal title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at."
+      question: "Simple questions are easier to understand and to answer."
+      summary: "Any proposal or comment suggesting illegal action will be deleted, as well as those intending to sabotage the debate spaces. Anything else is allowed."
+      description: "Description tip"
+      video_url: "Make your proposal more dynamic adding a video. All of us love them."
+      external_url: "There is not enough space for the proposal? Include an URL to let people access more information about it."
+      tag_list: "Tagging your proposal correctly makes its search easier and may be voted more."
   polls:
     all: "All"
     no_dates: "no date assigned"
@@ -683,6 +694,12 @@ en:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+    suggestions:
+      title: "Do not use capital letters for the project title or for whole sentences. On the internet, this is considered shouting. And nobody likes being shouted at."
+      external_url: "There is not enough space for the project development? Include an URL to let people access more information about it."
+      location: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      organization_name: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      tag_list: "Tagging your project correctly makes its search easier and may be voted more."
   stats:
     index:
       visits: Visits

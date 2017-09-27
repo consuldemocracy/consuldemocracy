@@ -163,6 +163,9 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+    suggestions:
+      title: "No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar, y a nadie le gusta que le griten."
+      tag_list: "Etiquetar correctamente un debate hace que su búsqueda sea más sencilla y tiene más posibilidades de conseguir apoyos."
   errors:
     messages:
       user_not_found: Usuario no encontrado
@@ -451,6 +454,14 @@ es:
     update:
       form:
         submit_button: Guardar cambios
+    suggestions:
+      title: "No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar, y a nadie le gusta que le griten."
+      question: "Las preguntas simples son más fáciles de entender y, por tanto, de contestar."
+      summary: "Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido."
+      description: "Description tip"
+      video_url: "Da más dinamismo a la propuesta con un vídeo. A todos nos resulta más divertido."
+      external_url: "¿Se te ha quedado pequeño el espacio para la propuesta? Incluye un enlace para poder tener acceso a más información."
+      tag_list: "Etiquetar correctamente una propuesta hace que su búsqueda sea más sencilla y tiene más posibilidades de conseguir apoyos."
   polls:
     all: "Todas"
     no_dates: "sin fecha asignada"
@@ -682,6 +693,12 @@ es:
         zero: Sin apoyos
         one: 1 apoyo
         other: "%{count} apoyos"
+    suggestions:
+      title: "No escribas el título del pryecto o frases enteras en mayúsculas. En internet eso se considera gritar, y a nadie le gusta que le griten."
+      external_url: "¿Se te ha quedado pequeño el espacio para la propuesta? Incluye un enlace para poder tener acceso a más información."
+      location: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      organization_name: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      tag_list: "Etiquetar correctamente un proyecto hace que su búsqueda sea más sencilla y tiene más posibilidades de conseguir apoyos."
   stats:
     index:
       visits: Visitas
