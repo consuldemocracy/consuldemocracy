@@ -142,11 +142,6 @@ es:
       info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
       info_link: crear nueva propuesta
       more_info: Más información
-      recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
-      recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
-      recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
-      recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
-      recommendations_title: Recomendaciones para crear un debate
       start_new: Empezar un debate
     show:
       author_deleted: Usuario eliminado
@@ -395,10 +390,6 @@ es:
       form:
         submit_button: Crear propuesta
       more_info: '¿Cómo funcionan las propuestas ciudadanas?'
-      recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
-      recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
-      recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
-      recommendations_title: Recomendaciones para crear una propuesta
       start_new: Crear una propuesta
     notice:
       retired: Propuesta retirada
