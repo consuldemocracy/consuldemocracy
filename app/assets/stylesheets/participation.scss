@@ -251,9 +251,7 @@
 .spending-proposal-form,
 .document-form,
 .topic-new,
-.topic-form,
-.image-form,
-.proposal .image-form {
+.topic-form {
 
   .icon-debates,
   .icon-proposals,
@@ -306,8 +304,7 @@
 .proposal-form,
 .topic-form,
 .topic-new,
-.document-form,
-.image-form {
+.document-form {
 
   .recommendations li::before {
     color: $proposals;
@@ -317,7 +314,6 @@
 .budget-investment-new,
 .proposal-form,
 .proposal-edit,
-.image-form,
 .document-form,
 .new_poll_question,
 .edit_poll_question {

@@ -10,12 +10,6 @@
                     class: 'button hollow float-right' %>
       <% end %>
 
-      <% if can_create_image?(investment) %>
-        <%= link_to t("images.upload_image"),
-                    new_image_path(imageable_id:investment, imageable_type: investment.class.name, from: request.url),
-                    class: 'button hollow float-right' %>
-      <% end %>
-
       <% if can_destroy_image?(investment) %>
         <%= link_to t("images.remove_image"),
                     image_path(investment.image, from: request.url),

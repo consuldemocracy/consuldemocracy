@@ -39,7 +39,7 @@ module Abilities
 
       can [:create, :destroy, :new], Document, documentable: { author_id: user.id }
 
-      can [:create, :destroy, :new], Image, imageable: { author_id: user.id }
+      can [:destroy], Image, imageable: { author_id: user.id }
 
       can [:create, :destroy], DirectUpload
 
