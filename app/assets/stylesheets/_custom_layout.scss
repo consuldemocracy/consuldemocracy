@@ -50,12 +50,14 @@ footer {
   }
 }
 
-.jumbo-budget.budget-heading {
+.jumbo-budget.budget-heading,
+.jumbo.light{
 
   background-image: asset_url('custom/budget_main_bg.jpg');
   background-repeat: repeat-x;
   background-position: center center;
   background-size: cover;
+  color: white;
 }
 
 
