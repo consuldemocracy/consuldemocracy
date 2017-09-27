@@ -40,6 +40,25 @@ footer {
   }
 }
 
+.expanded.budget {
+
+  background-image: asset_url('custom/budget_info_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: center top;
+  .info {
+    background: $budget-darken;
+  }
+}
+
+.jumbo-budget.budget-heading {
+
+  background-image: asset_url('custom/budget_main_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: cover;
+}
+
+
 
 .top-bar-title a,
 .logo a {
