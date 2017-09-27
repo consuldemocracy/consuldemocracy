@@ -54,7 +54,7 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     end
 
     def shift_params
-      params.require(:shift).permit(:booth_id, :officer_id, :date)
+      params.require(:shift).permit(:booth_id, :officer_id, :date, :task)
     end
 
 end

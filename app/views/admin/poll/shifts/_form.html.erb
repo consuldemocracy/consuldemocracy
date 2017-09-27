@@ -6,13 +6,21 @@
     	<%= t("admin.poll_shifts.new.new_shift") %>
     </legend>
 
-    <div class="small-12 medium-4 column highlight padding">
+    <div class="small-12 medium-3 column highlight padding">
       <strong><%= t("admin.poll_shifts.new.officer") %></strong>
       <br><%= @officer.name %>
       <%= f.hidden_field :officer_id, value: @officer.id %>
     </div>
 
-    <div class="small-12 medium-4 column">
+    <div class="small-12 medium-3 column">
+      <label><%= t("admin.poll_shifts.new.task") %></label>
+      <%= f.select :task,
+                    Poll::Shift.tasks.map {|k,v| [t("admin.poll_shifts.#{k}"), k]},
+                    prompt: t("admin.poll_shifts.new.select_task"),
+                    label: false %>
+    </div>
+
+    <div class="small-12 medium-3 column">
       <label><%= t("admin.poll_shifts.new.date") %></label>
       <%= f.select :date,
                     shift_dates_select_options(@polls),
@@ -22,7 +30,7 @@
 
     <%= f.hidden_field :booth_id, value: @booth.id %>
 
-    <div class="small-12 medium-4 column">
+    <div class="small-12 medium-3 column">
       <%= f.submit t("admin.poll_shifts.new.add_shift"),
                      class: "button expanded margin-top" %>
     </div>
