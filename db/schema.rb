@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918231410) do
+ActiveRecord::Schema.define(version: 20170927110953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -687,6 +687,7 @@ ActiveRecord::Schema.define(version: 20170918231410) do
     t.datetime "updated_at"
     t.string   "officer_name"
     t.string   "officer_email"
+    t.integer  "task",          default: 0, null: false
   end
 
   add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
