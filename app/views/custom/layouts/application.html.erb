@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <%= render "layouts/tracking_data" %>
     <%= render "layouts/meta_tags" %>
-    <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
+    <title><%= content_for?(:title) ? yield(:title) : t('layouts.application.title') %></title>
     <%= stylesheet_link_tag    "application" %>
     <!--[if lt IE 9]>
       <%= stylesheet_link_tag "ie" %>

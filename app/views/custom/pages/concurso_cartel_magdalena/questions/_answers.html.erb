@@ -3,7 +3,7 @@
 <% answers_by_question_id = {question.id => question_answer.try(:answer)} %>
 <div class="poll-question-answers">
   <% if can? :answer, question %>
-    <% question.valid_answers.each do |answer| %>
+    <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
       <div class="row">
         <div class="small-10 large-10 columns">
           <%= debug answer %>
@@ -26,6 +26,7 @@
     <% end %>
   <% else %>
     <% question.valid_answers.each do |answer| %>
+      <%= debug answer %>
       <span class="button secondary hollow disabled"><%= answer %></span>
     <% end %>
   <% end %>

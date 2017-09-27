@@ -2,6 +2,7 @@
 es:
   layouts:
     application:
+      title: Ayuntamiento de Castellón
       chrome: Google Chrome
       firefox: Firefox
       ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.

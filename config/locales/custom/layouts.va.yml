@@ -2,6 +2,7 @@
 va:
   layouts:
     application:
+      title: Ajuntament de Castelló
       chrome: Google Chrome
       firefox: Firefox
       ie: "Hem detectat que estàs navegant des d'Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}."

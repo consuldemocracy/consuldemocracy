@@ -1,6 +1,18 @@
 ---
 es:
   pages:
+    cartel_magdalena_2018:
+      title: Concurso del cartel de la Magdalena 2018
+      tab_link: Cartel Magdalena 2018
+    titles:
+      concurso_cartel_magdalena: Concurso del cartel de la Magdalena 2018
+
+
+
+
+
+
+
     more_information:
       item_1:
         title: 1.-¿ Qué son los presupuestos participativos?
@@ -150,8 +162,8 @@ es:
           Hay dos opciones para hacer la votación:
 
           1. De manera telemática mediante la plataforma web decidim.castello.es . <strong><a href='http://www.castello.es/decidim/manualvotacion.pdf' target='_blank'> Consulta la guia práctica aquí</a></strong>.
-    
-          2. Por otro lado, para los ciudadanos que no disponen de acceso a Internet, también se han habilitado puntos de votación presencial con ordenadores y personal de asesoramiento donde se les ayudará a hacer uso de la plataforma. 
+
+          2. Por otro lado, para los ciudadanos que no disponen de acceso a Internet, también se han habilitado puntos de votación presencial con ordenadores y personal de asesoramiento donde se les ayudará a hacer uso de la plataforma.
           Estos puntos de votación son los siguientes:
 
             1. Tenencia alcaldía Norte Plaza del Primer Molino, s/n.
@@ -170,7 +182,7 @@ es:
                 * Tenencia alcaldía **Grau** Días **11 y 15 de mayo**
                 * Tenencia alcaldía **Centro** Días **2,3,4,5,8,9,10,11,12 i 15 de mayo**
 
-            Para votar presencialmente habrá que ir provisto del **DNI, NIE o pasaporte**. 
+            Para votar presencialmente habrá que ir provisto del **DNI, NIE o pasaporte**.
       item_9:
         title: 9.  Sobre los resultados de la votación.
         subt: ''
@@ -362,6 +374,7 @@ es:
       title: Datos abiertos
     privacy: Política de Privacidad
     titles:
+      concurso_cartel_magdalena: Concurso del cartel de la Magdalena 2018
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       more_information: Más información

@@ -1,6 +1,15 @@
 ---
 va:
   pages:
+    cartel_magdalena_2018:
+      title: Concurs del cartell de la Magdalena 2018
+      tab_link: Cartell Magdalena 2018
+    titles:
+
+
+
+
+
     priv:
       title: "Política de Privadesa"
       subtitle: "AVÍS DE PROTECCIÓ DE DADES"
@@ -174,6 +183,7 @@ va:
       title: Dades obertes
     privacy: "Política de Privadesa"
     titles:
+      concurso_cartel_magdalena: Concurs del cartell de la Magdalena 2018
       accessibility: Accessibilitat
       conditions: "Condicions d'ús"
       more_information: Més informació
@@ -395,12 +405,12 @@ va:
              6. Tinència d'Alcaldia Centre Aula de Consum (quarta planta de l'Edifici Noble, plaça Major, 1).
 
             - Les votacions presencials es faran en horari de **9:30 a 12:30** hores els següents dies:
-                
+
                 * Tinència d'Alcaldia **Nord** Dies **2 i 8 de maig**
-                * Tinència d'Alcaldia **Sud** Dies **3 i 9 de maig** 
-                * Tinència d'Alcaldia **Est** Dies **4 i 10 de maig** 
+                * Tinència d'Alcaldia **Sud** Dies **3 i 9 de maig**
+                * Tinència d'Alcaldia **Est** Dies **4 i 10 de maig**
                 * Tinència d'Alcaldia **Oest** Dies **5 i 12 de maig**
-                * Tinència d'Alcaldia **Grau** Dies **11 i 15 de maig** 
+                * Tinència d'Alcaldia **Grau** Dies **11 i 15 de maig**
                 * Tinència d'Alcaldia **Centre** Dies **2,3,4,5,8,9,10,11,12 i 15 de maig**
 
             Per a votar presencialment caldrà anar proveït del **DNI, NIE o passaport**.
