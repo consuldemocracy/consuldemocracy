@@ -40,8 +40,8 @@ en:
       errors:
         form:
           error:
-            one: "prevented this banner from being saved"
-            other: 'prevented this banner from being saved'
+            one: "error prevented this banner from being saved"
+            other: 'errors prevented this banner from being saved'
       new:
         creating: Create banner
     activity:
@@ -698,6 +698,13 @@ en:
           disabled: "Feature disabled"
           enable: "Enable"
           disable: "Disable"
+        map:
+          title: Map configuration
+          help: Here you can customize the way the map is displayed to users. Drag map marker or click anywhere over the map, set desired zoom and click button "Update".
+          flash:
+            update: Map configuration updated succesfully.
+          form:
+            submit: Update
     shared:
       booths_search:
         button: Search
@@ -789,8 +796,8 @@ en:
       errors:
         form:
           error:
-            one: "prevented this geozone from being saved"
-            other: 'prevented this geozone from being saved'
+            one: "error prevented this geozone from being saved"
+            other: 'errors prevented this geozone from being saved'
       edit:
         form:
           submit_button: Save changes

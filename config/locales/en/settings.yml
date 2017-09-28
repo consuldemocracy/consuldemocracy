@@ -40,6 +40,10 @@ en:
         voting_allowed: Voting on investment projects
       legislation: Legislation
       community: Community on proposals and investments
+      map: Proposals and budget investments geolocation
+    map_latitude: Latitude
+    map_longitude: Longitude
+    map_zoom: Zoom
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"

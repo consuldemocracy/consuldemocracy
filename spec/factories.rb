@@ -821,7 +821,7 @@ LOREM_IPSUM
 
   factory :direct_upload do
     user
-    
+
     trait :proposal do
       resource_type "Proposal"
     end
@@ -838,6 +838,20 @@ LOREM_IPSUM
       attachment { File.new("spec/fixtures/files/clippy.jpg") }
     end
     initialize_with { new(attributes) }
+  end
+
+  factory :map_location do
+    latitude 51.48
+    longitude 0.0
+    zoom 10
+
+    trait :proposal_map_location do
+      proposal
+    end
+
+    trait :budget_investment_map_location do
+      association :investment, factory: :budget_investment
+    end
   end
 
 end

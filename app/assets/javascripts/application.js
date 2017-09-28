@@ -67,6 +67,8 @@
 //= require tree_navigator
 //= require custom
 //= require tag_autocomplete
+//= require leaflet
+//= require map
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -103,6 +105,7 @@ var initialize_modules = function() {
   App.Documentable.initialize();
   App.Imageable.initialize();
   App.TagAutocomplete.initialize();
+  App.Map.initialize();
 };
 
 $(function(){

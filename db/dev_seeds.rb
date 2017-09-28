@@ -37,6 +37,7 @@ Setting.create(key: 'feature.google_login', value: "true")
 Setting.create(key: 'feature.signature_sheets', value: "true")
 Setting.create(key: 'feature.legislation', value: "true")
 Setting.create(key: 'feature.community', value: "true")
+Setting.create(key: 'feature.map', value: "true")
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
@@ -47,6 +48,9 @@ Setting.create(key: 'meta_keywords', value: 'citizen participation, open governm
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
 Setting.create(key: 'proposal_improvement_path', value: nil)
+Setting.create(key: 'map_latitude', value: 51.48)
+Setting.create(key: 'map_longitude', value: 0.0)
+Setting.create(key: 'map_zoom', value: 10)
 
 puts " ✅"
 print "Creating Geozones"
