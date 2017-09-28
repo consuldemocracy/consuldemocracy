@@ -301,8 +301,8 @@ nl:
         no_assignments: "This user has no officing shifts in this poll."
         recounts: "Daily recounts"
         recount: "Daily recount (by officer)"
-        final_recounts: "Final recounts"
-        final_recount: "Final recount (by officer)"
+        total_recounts: "Final recounts"
+        total_recount: "Final recount (by officer)"
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"
@@ -319,7 +319,7 @@ nl:
         no_recounts: "There are not daily recounts of this booth yet"
         date: "Date"
         count_by_officer: "Daily recount (by officer)"
-        count_final: "Final recount (by officer)"
+        total_count: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
       index:
         booths_title: "List of booths"
@@ -391,7 +391,7 @@ nl:
         no_recounts: "There is nothing to be recounted"
         table_booth_name: "Booth"
         table_recounts: "Accumulated daily recounts (by officer)"
-        table_final_recount: "Final recount (by officer)"
+        table_total_recount: "Final recount (by officer)"
         table_system_count: "Votes (automatic)"
     results:
       index:

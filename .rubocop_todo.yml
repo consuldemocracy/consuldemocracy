@@ -283,7 +283,6 @@ Lint/ParenthesesAsGroupedExpression:
 # Cop supports --auto-correct.
 Lint/StringConversionInInterpolation:
   Exclude:
-    - 'app/models/poll/final_recount.rb'
     - 'app/models/poll/null_result.rb'
     - 'app/models/poll/partial_result.rb'
     - 'app/models/poll/white_result.rb'
@@ -455,12 +454,6 @@ Style/ClassVars:
     - 'app/models/organization.rb'
     - 'app/models/user.rb'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-Style/ColonMethodCall:
-  Exclude:
-    - 'spec/models/budget/investment_spec.rb'
-
 # Offense count: 12
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, SingleLineConditionsOnly, IncludeTernaryExpressions.
@@ -480,12 +473,6 @@ Style/ConditionalAssignment:
 Style/DoubleNegation:
   Exclude:
     - 'app/models/flag.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyCaseCondition:
-  Exclude:
-    - 'app/models/concerns/verification.rb'
 
 # Offense count: 2
 # Configuration parameters: ExpectMatchingDefinition, Regex, IgnoreExecutableScripts, AllowedAcronyms.
@@ -529,20 +516,6 @@ Style/Lambda:
     - 'lib/graph_ql/api_types_creator.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Style/MethodCallWithoutArgsParentheses:
-  Exclude:
-    - 'app/controllers/management/document_verifications_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: require_parentheses, require_no_parentheses, require_no_parentheses_except_multiline
-Style/MethodDefParentheses:
-  Exclude:
-    - 'spec/helpers/comments_helper_spec.rb'
-
-# Offense count: 1
 Style/MultilineBlockChain:
   Exclude:
     - 'app/controllers/valuation/spending_proposals_controller.rb'
@@ -572,25 +545,6 @@ Style/MutableConstant:
     - 'lib/graph_ql/api_types_creator.rb'
     - 'lib/tag_sanitizer.rb'
     - 'lib/wysiwyg_sanitizer.rb'
-
-# Offense count: 29
-# Cop supports --auto-correct.
-Style/NestedParenthesizedCalls:
-  Exclude:
-    - 'spec/features/debates_spec.rb'
-    - 'spec/features/emails_spec.rb'
-    - 'spec/features/valuation/budget_investments_spec.rb'
-    - 'spec/features/valuation/spending_proposals_spec.rb'
-    - 'spec/helpers/settings_helper_spec.rb'
-    - 'spec/helpers/verification_helper_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, MinBodyLength, SupportedStyles.
-# SupportedStyles: skip_modifier_ifs, always
-Style/Next:
-  Exclude:
-    - 'app/controllers/officing/results_controller.rb'
 
 # Offense count: 54
 # Cop supports --auto-correct.
@@ -626,15 +580,6 @@ Style/ParallelAssignment:
     - 'lib/active_model/dates.rb'
     - 'spec/support/common_actions.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: AllowSafeAssignment.
-Style/ParenthesesAroundCondition:
-  Exclude:
-    - 'app/controllers/proposals_controller.rb'
-    - 'app/models/debate.rb'
-    - 'app/models/proposal.rb'
-
 # Offense count: 11
 # Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist.
 # NamePrefix: is_, has_, have_
@@ -669,11 +614,6 @@ Style/RedundantBegin:
     - 'app/controllers/graphql_controller.rb'
     - 'app/models/legislation/annotation.rb'
 
-# Offense count: 55
-# Cop supports --auto-correct.
-Style/RedundantParentheses:
-  Enabled: false
-
 # Offense count: 3
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, AllowInnerSlashes.
@@ -698,22 +638,6 @@ Style/RescueModifier:
 Style/SafeNavigation:
   Exclude:
     - 'app/models/signature.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiteralsInInterpolation:
-  Exclude:
-    - 'spec/features/budgets/investments_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline, SupportedStylesForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'app/controllers/legislation/answers_controller.rb'
 
 # Offense count: 9
 # Configuration parameters: SupportedStyles.

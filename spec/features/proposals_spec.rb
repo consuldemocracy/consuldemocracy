@@ -45,6 +45,22 @@ feature 'Proposals' do
 
       expect(page).to have_selector('#proposals .proposal', count: 2)
     end
+
+    scenario 'Index should show proposal descriptive image only when is defined' do
+      featured_proposals = create_featured_proposals
+      proposal = create(:proposal)
+      proposal_with_image = create(:proposal)
+      image = create(:image, imageable: proposal_with_image)
+
+      visit proposals_path(proposal)
+
+      within("#proposal_#{proposal.id}") do
+        expect(page).to have_css("div.no-image")
+      end
+      within("#proposal_#{proposal_with_image.id}") do
+        expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
+      end
+    end
   end
 
   scenario 'Show' do
@@ -1333,19 +1349,67 @@ feature 'Proposals' do
     expect(Flag.flagged?(user, proposal)).to_not be
   end
 
+  scenario 'Flagging/Unflagging AJAX', :js do
+    user = create(:user)
+    proposal = create(:proposal)
+
+    login_as(user)
+    visit proposal_path(proposal)
+
+    # Flagging
+    within "#proposal_#{proposal.id}" do
+      page.find("#flag-expand-proposal-#{proposal.id}").click
+      page.find("#flag-proposal-#{proposal.id}").click
+
+      expect(page).to have_css("#unflag-expand-proposal-#{proposal.id}")
+    end
+
+    expect(Flag.flagged?(user, proposal)).to be
+
+    # Unflagging
+    within "#proposal_#{proposal.id}" do
+      page.find("#unflag-expand-proposal-#{proposal.id}").click
+      page.find("#unflag-proposal-#{proposal.id}").click
+
+      expect(page).to have_css("#flag-expand-proposal-#{proposal.id}")
+    end
+
+    expect(Flag.flagged?(user, proposal)).to_not be
+  end
+
   it_behaves_like "followable", "proposal", "proposal_path", { "id": "id" }
+
+  it_behaves_like "imageable", "proposal", "proposal_path", { "id": "id" }
+
+  it_behaves_like "nested imageable",
+                  "proposal",
+                  "new_proposal_path",
+                  { },
+                  "imageable_fill_new_valid_proposal",
+                  "Create proposal",
+                  "Proposal created successfully"
+
+  it_behaves_like "nested imageable",
+                  "proposal",
+                  "edit_proposal_path",
+                  { "id": "id" },
+                  nil,
+                  "Save changes",
+                  "Proposal updated successfully"
 
   it_behaves_like "documentable", "proposal", "proposal_path", { "id": "id" }
 
   it_behaves_like "nested documentable",
+                  "user",
                   "proposal",
                   "new_proposal_path",
                   { },
-                  "fill_new_valid_proposal",
+                  "documentable_fill_new_valid_proposal",
                   "Create proposal",
                   "Proposal created successfully"
 
   it_behaves_like "nested documentable",
+                  "user",
                   "proposal",
                   "edit_proposal_path",
                   { "id": "id" },
@@ -1451,7 +1515,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to have_content ("You are seeing 5 of 6 proposals containing the term 'search'")
+        expect(page).to have_content "You are seeing 5 of 6 proposals containing the term 'search'"
       end
     end
 
@@ -1467,7 +1531,7 @@ feature 'Proposals' do
       check "proposal_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to_not have_content ('You are seeing')
+        expect(page).to_not have_content 'You are seeing'
       end
     end
   end

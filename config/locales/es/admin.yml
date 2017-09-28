@@ -214,8 +214,9 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
-        back: Volver a
+        back: Volver a %{org}
         title: Administración
+        description: Bienvenido al panel de administración de %{org}.
     debates:
       index:
         filter: Filtro
@@ -494,8 +495,8 @@ es:
         booth: "Urna"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
-        final_recounts: "Recuentos finales"
-        final_recount: "Recuento final (presidente de mesa)"
+        total_recounts: "Recuentos totales"
+        total_recount: "Recuento total (presidente de mesa)"
     poll_shifts:
       new:
         add_shift: "Añadir turno"
@@ -533,6 +534,7 @@ es:
         date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
+        total_system: "Votos totales acumulados(automático)"
       index:
         booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
@@ -597,14 +599,14 @@ es:
         valid_answers: Respuestas válidas
         description: Descripción
         video_url: Video externo
-        documents: Documentos
+        documents: Documentos (1)
         preview: Ver en la web
     recounts:
       index:
         title: "Recuentos"
         no_recounts: "No hay nada de lo que hacer recuento"
         table_booth_name: "Urna"
-        table_final_recount: "Recuento final (presidente de mesa)"
+        table_total_recount: "Recuento total (presidente de mesa)"
         table_system_count: "Votos (automático)"
     results:
       index:

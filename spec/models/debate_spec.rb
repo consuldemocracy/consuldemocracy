@@ -687,12 +687,12 @@ describe Debate do
   describe "#last_week" do
     it "should return debates created this week" do
       debate = create(:debate)
-      expect(Debate.last_week.all).to include (debate)
+      expect(Debate.last_week.all).to include debate
     end
 
     it "should not show debates created more than a week ago" do
       debate = create(:debate, created_at: 8.days.ago)
-      expect(Debate.last_week.all).to_not include (debate)
+      expect(Debate.last_week.all).to_not include debate
     end
   end
 

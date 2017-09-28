@@ -19,8 +19,8 @@
         <% carousel_size = calculate_carousel_size(recommended_debates, recommended_proposals, false) %>
         <%= render "recommended_carousel", recommendeds: recommended_proposals,
                                            key: "proposals",
-                                           image_field: nil,
-                                           image_version: nil,
+                                           image_field: :attachment,
+                                           image_version: :thumb,
                                            image_default: nil,
                                            carousel_size: carousel_size,
                                            btn_text_link: t("welcome.recommended.proposals.btn_text_link"),

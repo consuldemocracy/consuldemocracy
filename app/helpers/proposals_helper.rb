@@ -12,8 +12,8 @@ module ProposalsHelper
     percentage = (proposal.total_votes.to_f * 100 / Proposal.votes_needed_for_success)
     case percentage
     when 0 then "0%"
-    when 0..(0.1) then "0.1%"
-    when (0.1)..100 then number_to_percentage(percentage, strip_insignificant_zeros: true, precision: 1)
+    when 0..0.1 then "0.1%"
+    when 0.1..100 then number_to_percentage(percentage, strip_insignificant_zeros: true, precision: 1)
     else "100%"
     end
   end
@@ -38,11 +38,6 @@ module ProposalsHelper
     else
       t('proposals.index.recommendations.without_interests')
     end
-  end
-
-
-  def can_create_document?(document, proposal)
-    can?(:create, document) && proposal.documents.size < Proposal.max_documents_allowed
   end
 
   def author_of_proposal?(proposal)

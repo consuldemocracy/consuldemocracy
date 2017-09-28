@@ -318,6 +318,21 @@ FactoryGirl.define do
       feasibility "feasible"
       valuation_finished true
     end
+
+  end
+
+  factory :image do
+    attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    title "Lorem ipsum dolor sit amet"
+    association :user, factory: :user
+
+    trait :proposal_image do
+      association :imageable, factory: :proposal
+    end
+
+    trait :budget_investment_image do
+      association :imageable, factory: :budget_investment
+    end
   end
 
   factory :budget_ballot, class: 'Budget::Ballot' do
@@ -505,13 +520,6 @@ FactoryGirl.define do
     association :booth, factory: :poll_booth
     association :officer, factory: :poll_officer
     date Date.current
-  end
-
-  factory :poll_final_recount, class: 'Poll::FinalRecount' do
-    association :officer_assignment, factory: [:poll_officer_assignment, :final]
-    association :booth_assignment, factory: :poll_booth_assignment
-    count (1..100).to_a.sample
-    date (1.month.ago.to_datetime..1.month.from_now.to_datetime).to_a.sample
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
@@ -809,6 +817,27 @@ LOREM_IPSUM
     sequence(:title) { |n| "Topic title #{n}" }
     sequence(:description) { |n| "Description as comment #{n}" }
     association :author, factory: :user
+  end
+
+  factory :direct_upload do
+    user
+    
+    trait :proposal do
+      resource_type "Proposal"
+    end
+    trait :budget_investment do
+      resource_type "Budget::Investment"
+    end
+
+    trait :documents do
+      resource_relation "documents"
+      attachment { File.new("spec/fixtures/files/empty.pdf") }
+    end
+    trait :image do
+      resource_relation "image"
+      attachment { File.new("spec/fixtures/files/clippy.jpg") }
+    end
+    initialize_with { new(attributes) }
   end
 
 end

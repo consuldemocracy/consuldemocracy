@@ -27,7 +27,7 @@ feature 'Email campaigns' do
     visit admin_stats_path
 
     expect(page).to have_content "#{@campaign1.name} (1)"
-    expect(page).to_not have_content (@campaign2.name).to_s
+    expect(page).to_not have_content @campaign2.name.to_s
   end
 
 end

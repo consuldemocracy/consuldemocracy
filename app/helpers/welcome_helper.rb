@@ -19,14 +19,14 @@ module WelcomeHelper
     end
   end
 
-  def render_image(recommended, image_field, image_version, image_default)
-    image_path = calculate_image_path(recommended, image_field, image_version, image_default)
+  def render_recommendation_image(recommended, image_default)
+    image_path = calculate_image_path(recommended, image_default)
     image_tag(image_path) if image_path.present?
   end
 
-  def calculate_image_path(recommended, image_field, image_version, image_default)
-    if image_field.present? && image_version.present?
-      recommended.send("#{image_field}", image_version)
+  def calculate_image_path(recommended, image_default)
+    if recommended.try(:image) && recommended.image.present? && recommended.image.attachment.exists?
+      recommended.image.attachment.send("url", :medium)
     elsif image_default.present?
       image_default
     end

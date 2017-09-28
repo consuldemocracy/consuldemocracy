@@ -26,7 +26,7 @@ feature 'Officing Results' do
 
     expect(page).to have_content('Poll officing')
     within('#side_menu') do
-      click_link 'Final recounts and results'
+      click_link 'Total recounts and results'
     end
 
     expect(page).to_not have_content(not_allowed_poll_1.name)
@@ -42,7 +42,7 @@ feature 'Officing Results' do
     visit officing_root_path
 
     within('#side_menu') do
-      click_link 'Final recounts and results'
+      click_link 'Total recounts and results'
     end
 
     within("#poll_#{@poll.id}") do

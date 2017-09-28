@@ -1,4 +1,4 @@
-<%= form_for(@investment, url: form_url, method: :post) do |f| %>
+<%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
   <%= render 'shared/errors', resource: @investment %>
 
   <div class="row">
@@ -21,8 +21,12 @@
       <%= f.text_field :external_url %>
     </div>
 
-    <div class="documents small-12 column" data-max-documents="<%= Budget::Investment.max_documents_allowed %>">
-      <%= render 'documents/nested_documents', documentable: @investment %>
+    <div class="images small-12 column">
+      <%= render 'images/nested_image', imageable: @investment, f: f %>
+    </div>
+
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @investment, f: f %>
     </div>
 
     <div class="small-12 column">
@@ -49,9 +53,9 @@
                         label: false,
                         placeholder: t("budgets.investments.form.tags_placeholder"),
                         aria: {describedby: "tags-list-help-text"},
-                        class: 'js-tag-list' %>
+                        class: 'js-tag-list tag-autocomplete',
+                        data: {js_url: suggest_tags_path} %>
     </div>
-
 
     <% unless current_user.manager? %>
 

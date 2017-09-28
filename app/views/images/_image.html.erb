@@ -1,0 +1,18 @@
+<div class="small-12 column text-center image-preview">
+  <figure>
+    <%= image_tag image.attachment.url(version),
+                  class: image_class(image),
+                  alt: image.title,
+                  title: image.title %>
+    <% if show_caption %>
+      <figcaption class="text-right">
+        <em><%= image.title %></em>
+      </figcaption>
+    <% end %>
+  </figure>
+
+  <% if show_caption %>
+    <hr>
+  <% end %>
+
+</div>

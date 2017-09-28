@@ -66,7 +66,7 @@ feature 'Debates' do
     first(:link, debate.title).click
     link_text = find_link('Go back')[:href]
 
-    expect(link_text).to include(debates_path order: :hot_score, page: 1)
+    expect(link_text).to include(debates_path(order: :hot_score, page: 1))
   end
 
   context "Show" do
@@ -968,7 +968,7 @@ feature 'Debates' do
       check "debate_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to have_content ("You are seeing 5 of 6 debates containing the term 'debate'")
+        expect(page).to have_content "You are seeing 5 of 6 debates containing the term 'debate'"
       end
     end
 
@@ -984,7 +984,7 @@ feature 'Debates' do
       check "debate_terms_of_service"
 
       within('div#js-suggest') do
-        expect(page).to_not have_content ('You are seeing')
+        expect(page).to_not have_content 'You are seeing'
       end
     end
   end

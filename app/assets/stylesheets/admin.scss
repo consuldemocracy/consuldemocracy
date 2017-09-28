@@ -13,33 +13,99 @@
 // 01. Global styles
 // -----------------
 
-$admin-color: #cf3638;
+$admin-color:    #245b80;
+$sidebar:        #245b80;
+$sidebar-hover:  #25597c;
+$sidebar-active: #f4fcd0;
 
 .admin {
+
+  h2 {
+    font-weight: 100;
+    margin-bottom: $line-height;
+
+    &.title {
+      text-transform: uppercase;
+    }
+  }
+
+  .back {
+    float: none;
+  }
 
   .header {
     border: 0;
   }
 
   .top-links {
-    background: darken($admin-color, 15%);
-  }
-
-  .back-web {
-    padding-top: $line-height / 4;
-    text-decoration: underline;
+    background: #000;
   }
 
   .top-bar {
-    background: $admin-color !important;
+    background: #fff !important;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 2px #eee;
+    color: #000;
     height: auto;
+
+    [class^="icon-"]:not(.icon-circle) {
+      font-size: $base-font-size;
+    }
   }
 
   .top-bar-title {
 
     h1 {
       margin-bottom: 0;
+      margin-top: $line-height / 2;
+
+      @include breakpoint(medium) {
+        margin-left: $line-height / 2;
+      }
+
+      small {
+        color: #000;
+        text-transform: uppercase;
+      }
     }
+
+    a {
+      color: #000 !important;
+      line-height: $line-height !important;
+
+      @include breakpoint(medium) {
+        line-height: $line-height !important;
+      }
+    }
+  }
+
+  .top-bar .menu > li {
+
+    @include breakpoint(medium) {
+      height: auto !important;
+      padding-top: $line-height / 2;
+    }
+
+    a {
+      color: #000 !important;
+    }
+  }
+
+  .menu-icon.dark {
+
+    &::after,
+    &:hover::after {
+      background: #000 !important;
+      box-shadow: 0 7px 0 #000, 0 14px 0 #000 !important;
+    }
+  }
+
+  .notifications .icon-circle {
+    color: $admin-color;
+  }
+
+  .dropdown.menu > .is-dropdown-submenu-parent > a::after {
+    border-color: #000 transparent transparent;
   }
 
   .fieldset {
@@ -54,7 +120,8 @@ $admin-color: #cf3638;
     }
   }
 
-  th, td {
+  th,
+  td {
     text-align: left;
 
     &.text-center {
@@ -110,6 +177,7 @@ $admin-color: #cf3638;
   .menu.simple .active {
     border-bottom: 2px solid $admin-color;
     color: $admin-color;
+    font-weight: bold;
   }
 
   .tabs-panel {
@@ -195,6 +263,8 @@ $admin-color: #cf3638;
 // -----------
 
 .admin-sidebar {
+  background: $sidebar;
+  background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
   border-right: 1px solid $border;
 
   @include breakpoint(medium) {
@@ -208,7 +278,7 @@ $admin-color: #cf3638;
     padding: 0;
 
     [class^="icon-"] {
-      color: $admin-color;
+      color: #fff;
       display: inline-block;
       font-size: rem-calc(24);
       line-height: $line-height;
@@ -219,39 +289,32 @@ $admin-color: #cf3638;
   }
 
   li {
-    background: #fff;
     margin: 0;
     outline: 0;
 
     ul {
       margin-left: $line-height / 1.5;
-      border-left: 1px solid $border;
+      border-left: 1px solid $sidebar-hover;
       padding-left: $line-height / 2;
     }
 
-    &.section-title {
-      border-bottom: 1px solid $border;
-    }
-
     &.active a {
-      background: #f3f6f7;
-      border-radius: rem-calc(6);
-      color: $admin-color;
+      background: $sidebar-hover;
+      border-left: 2px solid $sidebar-active;
       font-weight: bold;
     }
   }
 
   li a {
-    color: $text;
+    color: #fff;
     display: block;
     line-height: rem-calc(48);
     padding-left: rem-calc(12);
     vertical-align: top;
 
     &:hover {
-      background: #f3f6f7;
-      border-radius: rem-calc(6);
-      color: $admin-color;
+      background: $sidebar-hover;
+      color: #fff;
       text-decoration: none;
     }
   }
@@ -259,7 +322,13 @@ $admin-color: #cf3638;
   .is-accordion-submenu-parent {
 
     > a::after {
-      border-color: $admin-color transparent transparent;
+      border: 0;
+      content: '\61' !important;
+      font-family: "icons" !important;
+      height: auto;
+      position: absolute !important;
+      right: 30px;
+      top: 6px !important;
     }
   }
 

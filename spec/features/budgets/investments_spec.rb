@@ -28,6 +28,21 @@ feature 'Budget Investments' do
     end
   end
 
+  scenario 'Index should show investment descriptive image only when is defined' do
+    investment = create(:budget_investment, heading: heading)
+    investment_with_image = create(:budget_investment, heading: heading)
+    image = create(:image, imageable: investment_with_image)
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    within("#budget_investment_#{investment.id}") do
+      expect(page).to have_css("div.no-image")
+    end
+    within("#budget_investment_#{investment_with_image.id}") do
+      expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
+    end
+  end
+
   context("Search") do
 
     scenario 'Search by text' do
@@ -264,7 +279,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within("div#js-suggest") do
-          expect(page).to have_content ("You are seeing 5 of 6 investments containing the term 'search'")
+          expect(page).to have_content "You are seeing 5 of 6 investments containing the term 'search'"
         end
       end
 
@@ -279,7 +294,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "item"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content ('You are seeing')
+          expect(page).to_not have_content 'You are seeing'
         end
       end
 
@@ -294,7 +309,7 @@ feature 'Budget Investments' do
         fill_in "budget_investment_title", with: "search"
 
         within('div#js-suggest') do
-          expect(page).to_not have_content ('You are seeing')
+          expect(page).to_not have_content 'You are seeing'
         end
       end
     end
@@ -449,13 +464,24 @@ feature 'Budget Investments' do
 
   it_behaves_like "followable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
-  it_behaves_like "documentable", "budget_investment", "budget_investment_path", {"budget_id": "budget_id", "id": "id"}
+  it_behaves_like "imageable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
 
-  it_behaves_like "nested documentable",
+  it_behaves_like "nested imageable",
                   "budget_investment",
                   "new_budget_investment_path",
                   { "budget_id": "budget_id" },
-                  "fill_new_valid_budget_investment",
+                  "imageable_fill_new_valid_budget_investment",
+                  "Create Investment",
+                  "Budget Investment created successfully."
+
+  it_behaves_like "documentable", "budget_investment", "budget_investment_path", { "budget_id": "budget_id", "id": "id" }
+
+  it_behaves_like "nested documentable",
+                  "user",
+                  "budget_investment",
+                  "new_budget_investment_path",
+                  { "budget_id": "budget_id" },
+                  "documentable_fill_new_valid_budget_investment",
                   "Create Investment",
                   "Budget Investment created successfully."
 

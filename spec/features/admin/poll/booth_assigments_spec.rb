@@ -97,11 +97,8 @@ feature 'Admin booths assignments' do
       officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
       final_officer_assignment = create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
 
-      final_recount = create(:poll_final_recount,
-                         booth_assignment: booth_assignment,
-                         officer_assignment: final_officer_assignment,
-                         date: final_officer_assignment.date,
-                         count: 5678)
+      create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.starts_at.to_date)
+      create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.ends_at.to_date)
 
       booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
 
@@ -111,9 +108,20 @@ feature 'Admin booths assignments' do
       within('#assigned_booths_list') { click_link booth.name }
 
       click_link 'Recounts'
+
+      within('#totals') do
+        within("#total_system") { expect(page).to have_content "2" }
+      end
+
       within('#recounts_list') do
-        within("#recounting_#{final_recount.date.strftime('%Y%m%d')}") do
-          expect(page).to have_content final_recount.count
+        within("#recounting_#{poll.starts_at.to_date.strftime('%Y%m%d')}") do
+          expect(page).to have_content 1
+        end
+        within("#recounting_#{(poll.ends_at.to_date - 5.days).strftime('%Y%m%d')}") do
+          expect(page).to have_content '-'
+        end
+        within("#recounting_#{poll.ends_at.to_date.strftime('%Y%m%d')}") do
+          expect(page).to have_content 1
         end
       end
     end

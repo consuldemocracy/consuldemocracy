@@ -1,7 +1,7 @@
 module PollRecountsHelper
 
-  def booth_assignment_sum_final_recounts(ba)
-    ba.final_recounts.any? ? ba.final_recounts.to_a.sum(&:count) : nil
+  def total_recounts_by_booth(booth_assignment)
+    booth_assignment.total_results.any? ? booth_assignment.total_results.to_a.sum(&:amount) : nil
   end
 
 end

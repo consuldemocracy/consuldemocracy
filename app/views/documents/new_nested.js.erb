@@ -1,9 +1,0 @@
-<%
-  new_document_link = link_to t("documents.form.add_new_document"),
-                              new_nested_documents_path(documentable_type: params[:documentable_type], index: params[:index].to_i + 1),
-                              remote: true,
-                              id: "new_document_link",
-                              class: "button hollow"
-%>
-App.Documentable.new("<%= j render('documents/nested_fields', document: @document, index: params[:index]) %>")
-App.Documentable.updateNewDocumentButton("<%= j new_document_link %>")
