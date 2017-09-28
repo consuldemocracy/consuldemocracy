@@ -32,6 +32,8 @@ feature 'Admin shifts' do
 
   scenario "Create Vote Collection Shift", :js do
     poll = create(:poll)
+    vote_collection_dates = (poll.starts_at.to_date..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
+
     booth = create(:poll_booth)
     officer = create(:poll_officer)
 
@@ -45,6 +47,8 @@ feature 'Admin shifts' do
     click_button "Search"
     click_link "Edit shifts"
 
+    expect(page).to have_select('shift_date_vote_collection_date', options: ["Select day", *vote_collection_dates])
+    expect(page).not_to have_select('shift_date_recount_scrutiny_date')
     select I18n.l(poll.starts_at.to_date, format: :long), from: 'shift_date_vote_collection_date'
     click_button "Add shift"
 
@@ -60,6 +64,8 @@ feature 'Admin shifts' do
 
   scenario "Create Recount & Scrutiny Shift", :js do
     poll = create(:poll)
+    recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a.map { |date| I18n.l(date, format: :long) }
+
     booth = create(:poll_booth)
     officer = create(:poll_officer)
 
@@ -75,6 +81,8 @@ feature 'Admin shifts' do
 
     select "Recount & Scrutiny", from: 'shift_task'
 
+    expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
+    expect(page).not_to have_select('shift_date_vote_collection_date')
     select I18n.l(poll.ends_at.to_date + 4.days, format: :long), from: 'shift_date_recount_scrutiny_date'
     click_button "Add shift"
 
