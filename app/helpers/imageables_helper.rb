@@ -1,9 +1,5 @@
 module ImageablesHelper
 
-  def can_create_image?(imageable)
-    can?(:create, Image.new(imageable: imageable))
-  end
-
   def can_destroy_image?(imageable)
     imageable.image.present? && can?(:destroy, imageable.image)
   end

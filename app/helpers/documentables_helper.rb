@@ -1,9 +1,5 @@
 module DocumentablesHelper
 
-  def can_create_document?(documentable)
-    can?(:create, Document.new(documentable: documentable)) && documentable.documents.size < documentable.class.max_documents_allowed
-  end
-
   def documentable_class(documentable)
     documentable.class.name.parameterize('_')
   end

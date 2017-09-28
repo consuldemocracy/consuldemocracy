@@ -1,10 +1,5 @@
 module DocumentsHelper
 
-  def document_note(document)
-    t "documents.new.#{document.documentable.class.name.parameterize.underscore}.note",
-      title: document.documentable.title
-  end
-
   def document_attachment_file_name(document)
     document.attachment_file_name
   end
@@ -40,7 +35,7 @@ module DocumentsHelper
     klass = document.errors[:attachment].any? ? "error" : ""
     klass = document.persisted? || document.cached_attachment.present?  ? " hide" : ""
     html = builder.label :attachment,
-                         t("documents.upload_document"),
+                         t("documents.form.attachment_label"),
                          class: "button hollow #{klass}"
     html += builder.file_field :attachment,
                                label: false,

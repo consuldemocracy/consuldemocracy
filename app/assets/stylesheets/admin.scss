@@ -8,6 +8,7 @@
 // 06. Polls
 // 07. Legislation
 // 08. CMS
+// 09. Map
 //
 
 // 01. Global styles
@@ -174,10 +175,19 @@ $sidebar-active: #f4fcd0;
     max-width: none;
   }
 
-  .menu.simple .active {
-    border-bottom: 2px solid $admin-color;
-    color: $admin-color;
-    font-weight: bold;
+  .menu.simple {
+    margin-bottom: $line-height / 2;
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: $line-height / 3;
+    }
+
+    .active {
+      border-bottom: 2px solid $admin-color;
+      color: $admin-color;
+      font-weight: bold;
+    }
   }
 
   .tabs-panel {
@@ -966,4 +976,52 @@ table {
   &:focus {
     border: 0;
   }
+}
+
+// 09. Map
+// --------------
+
+.map {
+  width: 100%;
+  height: 350px;
+
+  .map-marker {
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -5px;
+
+    .map-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      background: #00cae9;
+      transform: rotate(-45deg);
+    }
+
+    .map-icon::after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      margin: 8px 0 0 8px;
+      background: #fff;
+      position: absolute;
+      border-radius: 50%;
+    }
+  }
+
+  .map-attributtion {
+    visibility: visible;
+    height: auto;
+  }
+}
+
+.map-marker {
+  visibility: hidden;
+}
+
+.map-attributtion {
+  visibility: hidden;
+  height: 0;
 }

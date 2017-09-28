@@ -549,6 +549,17 @@ ActiveRecord::Schema.define(version: 20170927110953) do
 
   add_index "managers", ["user_id"], name: "index_managers_on_user_id", using: :btree
 
+  create_table "map_locations", force: :cascade do |t|
+    t.float   "latitude"
+    t.float   "longitude"
+    t.integer "zoom"
+    t.integer "proposal_id"
+    t.integer "investment_id"
+  end
+
+  add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
+  add_index "map_locations", ["proposal_id"], name: "index_map_locations_on_proposal_id", using: :btree
+
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
   end

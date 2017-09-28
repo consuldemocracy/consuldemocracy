@@ -1,41 +1,21 @@
 es:
   images:
-    upload_image: Subir imagen
     remove_image: Eliminar imagen
 
     form:
       title: Imagen descriptiva
       attachment_label: Selecciona una imagen
-      submit_button: Subir imagen
       delete_button: Eliminar imagen
       note: "Puedes subir una imagen en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_image: Añadir imagen
-
-    new:
-      title: Subir una imagen
-      budget_investment:
-        note: 'Añade una imagen la propuesta de inversión: %{title}.'
-      proposal:
-        note: 'Añade una imagen a la propuesta: %{title}.'
-      form:
-        title_placeholder: Añade un título descriptivo para la imagen
-
-    recommendations_title: Consejos para subir imágenes
-    proposal:
-      recommendation_one_html: Las propuestas con imagen llaman más la atención de los usuarios que las que no tienen imagen. Esta imagen se mostrará en el listado de propuestas y en la página de la propuesta.
-    budget_investment:
-      recommendation_one_html: Las proyectos de inversión con imagen llaman más la atención de los usuarios que las que no tienen imagen. Esta imagen se mostrará en el listado de proyectos de inversión y en la página del proyecto de inversión.
-    recommendation_two_html: "Sólo puedes subir <strong>imágenes en los formatos: %{accepted_content_types}</strong>."
-    recommendation_three_html: Puedes subir una imagen de hasta <strong>1 MB</strong>.
+      title_placeholder: Añade un título descriptivo para la imagen
 
     actions:
-      create:
-        notice: "La imagen se ha creado correctamente."
-        alert: "La imagen no se ha podido crear. Revise los errores del formulario."
       destroy:
         notice: "La imagen se ha eliminado correctamente."
         alert: "La imagen no se ha podido eliminar."
         confirm: "¿Está seguro de que desea eliminar la imagen? Esta acción no se puede deshacer!"
+
     errors:
       messages:
         in_between: debe estar entre %{min} y %{max}

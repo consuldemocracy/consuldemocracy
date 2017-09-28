@@ -40,6 +40,10 @@ es:
         voting_allowed: Votaciones sobre propuestas de inversión
       legislation: Legislación
       community: Comunidad en propuestas y proyectos de inversión
+      map: Geolocalización de propuestas y proyectos de inversión
+    map_latitude: Latitud
+    map_longitude: Longitud
+    map_zoom: Zoom
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
     meta_description: "Descripción del sitio (SEO)"

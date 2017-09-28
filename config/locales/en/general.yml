@@ -333,6 +333,9 @@ en:
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
       tags_label: Tags
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+      map_location: "Map location"
+      map_location_instructions: "Navigate the map to the location and place the marker."
+      map_remove_marker: "Remove map marker"
     index:
       featured_proposals: Featured
       filter_topic:

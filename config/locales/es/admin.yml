@@ -66,6 +66,7 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
+        filter: Filtro
         filters:
           current: Abiertos
           finished: Terminados
@@ -702,6 +703,13 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        map:
+          title: Configuración del mapa
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
+          flash:
+            update: La configuración del mapa se ha guardado correctamente.
+          form:
+            submit: Actualizar
     shared:
       booths_search:
         button: Buscar

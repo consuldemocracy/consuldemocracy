@@ -7,37 +7,22 @@ es:
 
     form:
       title: Documentos
+      title_placeholder: Añade un título descriptivo para el documento
       attachment_label: Selecciona un documento
-      submit_button: Subir documento
       delete_button: Eliminar documento
       note: "Puedes subir hasta un máximo de %{max_documents_allowed} documentos en los formatos: %{accepted_content_types}, y de hasta %{max_file_size} MB por archivo."
       add_new_document: Añadir nuevo documento
 
-    new:
-      title: Subir un documento
-      budget_investment:
-        note: 'Añade un documento la propuesta de inversión: %{title}.'
-      proposal:
-        note: 'Añade un documento a la propuesta: %{title}.'
-      form:
-        title_placeholder: Añade un título descriptivo para el documento
-
-    recommendations_title: Consejos para subir archivos
-    recommendation_one_html: Puedes subir hasta un máximo de <strong>%{max_documents_allowed} documentos</strong>
-    recommendation_two_html: Sólo puedes subir <strong>archivos %{accepted_content_types}</strong>.
-    recommendation_three_html: Puedes subir archivos de hasta <strong>%{max_file_size}  MB</strong>
-
     actions:
-      create:
-        notice: "El documento se ha creado correctamente."
-        alert: "El documento no se ha podido crear. Revise los errores del formulario."
       destroy:
         notice: "El documento se ha eliminado correctamente."
         alert: "El documento no se ha podido eliminar."
         confirm: "¿Está seguro de que desea eliminar el documento? Esta acción no se puede deshacer!"
+
     buttons:
       download_document: Descargar archivo
       destroy_document: Eliminar
+
     errors:
       messages:
         in_between: debe estar entre %{min} y %{max}

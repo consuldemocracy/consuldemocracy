@@ -59,6 +59,20 @@
       <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
     </div>
 
+    <% if feature?(:map) %>
+      <div class="small-12 column">
+
+        <%= render 'map_locations/form_fields',
+                   form:     f,
+                   map_location: @proposal.map_location || MapLocation.new,
+                   label:    t("proposals.form.map_location"),
+                   help:     t("proposals.form.map_location_instructions"),
+                   remove_marker_label: t("proposals.form.map_remove_marker"),
+                   parent_class: "proposal" %>
+
+      </div>
+    <% end %>
+
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>
       <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>

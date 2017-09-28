@@ -485,6 +485,14 @@ feature 'Budget Investments' do
                   "Create Investment",
                   "Budget Investment created successfully."
 
+  it_behaves_like "mappable",
+                  "budget_investment",
+                  "investment",
+                  "new_budget_investment_path",
+                  "",
+                  "budget_investment_path",
+                  { "budget_id": "budget_id" }
+
   context "Destroy" do
 
     scenario "Admin cannot destroy budget investments" do

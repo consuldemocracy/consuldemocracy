@@ -4,7 +4,7 @@
   <%= f.hidden_field :cached_attachment %>
 
   <div class="small-12 column title">
-    <%= f.text_field :title, placeholder: t("images.new.form.title_placeholder") %>
+    <%= f.text_field :title, placeholder: t("images.form.title_placeholder") %>
   </div>
 
   <%= render_image(f.object, :thumb, false) if f.object.attachment.exists? %>
