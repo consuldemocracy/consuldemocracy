@@ -2198,15 +2198,17 @@ table {
       margin-bottom: $line-height;
     }
 
-    .button.hollow{
-      margin-top: $line-height;
+    .button.hollow {
+      margin-top: rem-calc(10);
     }
   }
 
   .card {
 
     .card-section {
-      padding:$line-height 0;
+      padding: $line-height 0;
+      max-width: 300px;
+      margin: 0 auto;
 
       p {
         font-size: rem-calc(15);
@@ -2280,8 +2282,7 @@ table {
       height: 480px;
 
       .orbit-wrapper {
-        min-height: 450px;
-        max-height: 460px;
+        max-height: 450px;
       }
     }
 
@@ -2362,6 +2363,5 @@ table {
       }
 
     }
-
   }
 }
