@@ -88,7 +88,7 @@ feature 'Admin shifts' do
     end
   end
 
-  scenario "Erros on create", :js do
+  scenario "Error on create", :js do
     poll = create(:poll)
     booth = create(:poll_booth)
     officer = create(:poll_officer)
@@ -104,7 +104,7 @@ feature 'Admin shifts' do
     click_link "Edit shifts"
     click_button "Add shift"
 
-    expect(page).to have_content "can't be blank"
+    expect(page).to have_content "A date must be selected"
   end
 
   scenario "Destroy" do

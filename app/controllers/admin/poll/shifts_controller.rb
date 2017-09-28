@@ -14,10 +14,10 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     @officer = @shift.officer
 
     if @shift.save
-      notice = t("admin.poll_shifts.flash.create")
-      redirect_to new_admin_booth_shift_path(@shift.booth), notice: notice
+      redirect_to new_admin_booth_shift_path(@shift.booth), notice: t("admin.poll_shifts.flash.create")
     else
       load_shifts
+      flash[:error] = t("admin.poll_shifts.flash.date_missing")
       render :new
     end
   end

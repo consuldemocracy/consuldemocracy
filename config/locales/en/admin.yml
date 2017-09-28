@@ -520,6 +520,7 @@ en:
       flash:
         create: "Shift added"
         destroy: "Shift removed"
+        date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
     poll_booth_assignments:
