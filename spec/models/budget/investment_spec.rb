@@ -29,6 +29,8 @@ describe Budget::Investment do
     end
   end
 
+  it_behaves_like "acts as imageable", "budget_investment_image"
+
   it "sanitizes description" do
     investment.description = "<script>alert('danger');</script>"
     investment.valid?
