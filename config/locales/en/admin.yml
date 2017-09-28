@@ -504,6 +504,7 @@ en:
         shift: "Assignment"
         shifts: "Shifts in this booth"
         date: "Date"
+        task: "Task"
         edit_shifts: Edit shifts
         new_shift: "New shift"
         no_shifts: "This booth has no shifts"
@@ -513,12 +514,16 @@ en:
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
+        select_task: "Select task"
         table_shift: "Shift"
         table_email: "Email"
         table_name: "Name"
       flash:
         create: "Shift added"
         destroy: "Shift removed"
+        date_missing: "A date must be selected"
+      vote_collection: Collect Votes
+      recount_scrutiny: Recount & Scrutiny
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"

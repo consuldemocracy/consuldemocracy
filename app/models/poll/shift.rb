@@ -7,6 +7,9 @@ class Poll
     validates :officer_id, presence: true
     validates :date, presence: true
     validates :date, uniqueness: { scope: [:officer_id, :booth_id] }
+    validates :task, presence: true
+
+    enum task: { vote_collection: 0, recount_scrutiny: 1 }
 
     before_create :persist_data
     after_create :create_officer_assignments
