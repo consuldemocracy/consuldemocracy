@@ -56,9 +56,16 @@
       }
     }
 
-    .js-document-attachment,
-    .js-image-attachment {
-      display: none;
+    .attachment-errors {
+
+      > .js-image-attachment,
+      > .js-document-attachment {
+        display: none;
+
+        ~ .error {
+          display: inline-block;
+        }
+      }
     }
   }
 
