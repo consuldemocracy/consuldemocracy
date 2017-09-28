@@ -55,7 +55,5 @@
         <a href="<%= @question.documents.first.attachment.url %>"><%= @question.documents.first.title %></a>
       </p>
     <% end %>
-
-    <%= link_to t("admin.questions.show.preview"), question_path(@question) %>
   </div>
 </div>
