@@ -255,7 +255,6 @@
   .icon-debates,
   .icon-proposals,
   .icon-budget,
-  .icon-documents,
   .icon-image {
     font-size: rem-calc(50);
     line-height: $line-height;
@@ -267,7 +266,6 @@
   }
 
   .icon-proposals,
-  .icon-documents,
   .icon-image {
     color: $proposals;
   }
@@ -358,8 +356,7 @@
     width: rem-calc(48);
   }
 
-  .edit-debate,
-  .edit-proposal {
+  .edit-debate {
     margin-bottom: 0;
   }
 
