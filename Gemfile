@@ -59,7 +59,7 @@ end
 
 group :development, :test do
   gem "bullet", '~> 5.5.1'
-  gem 'byebug', '~> 9.0.6'
+  gem 'byebug', '~> 9.1.0'
   gem 'factory_girl_rails', '~> 4.8.0'
   gem "faker", '~> 1.7.3'
   gem 'i18n-tasks', '~> 0.9.15'
