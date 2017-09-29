@@ -35,6 +35,7 @@ feature 'Email campaigns' do
     expect(page).to have_content "#{@campaign1.name} (1)"
 
     click_link "Go back"
+
     expect(page).to_not have_content @campaign2.name.to_s
   end
 

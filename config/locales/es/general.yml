@@ -266,7 +266,6 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras
       open_gov: Gobierno %{open}
       proposals: Propuestas
@@ -897,7 +896,6 @@ es:
         text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
         link: Ver proyectos de gasto
         alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
-    more_information: Más información sobre %{org_name}
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar

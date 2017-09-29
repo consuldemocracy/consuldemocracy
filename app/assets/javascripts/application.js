@@ -15,6 +15,7 @@
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
 //= require jquery-ui/effects/effect-shake
+//= require jquery-ui/widgets/autocomplete
 //= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
@@ -67,6 +68,7 @@
 //= require documentable
 //= require tree_navigator
 //= require custom
+//= require tag_autocomplete
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -101,6 +103,7 @@ var initialize_modules = function() {
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
+  App.TagAutocomplete.initialize();
 };
 
 $(function(){
