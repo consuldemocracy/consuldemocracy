@@ -265,7 +265,6 @@ en:
         other: You have %{count} new notifications
       no_notifications: "You don't have new notifications"
       open: open
-      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_city_title: Love the city, and it will become a city you love
       open_gov: Open government
       proposals: Proposals
@@ -896,7 +895,6 @@ en:
         text: "You propose and decide on what the City Council invests in a part of the municipal budget."
         link: See investment projects
         alt_image: "Generic image related with budgets of the City of Madrid."
-    more_information: More information about %{org_name}
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

@@ -20,6 +20,85 @@
 // 00. Others
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Madrid corporate identity manual
+
+$madrid-black: #000;
+$madrid-blue:  #003df6;
+$madrid-grey:  #f1f1f1;
+
+.top-links {
+  background: $madrid-black;
+}
+
+header,
+.top-bar {
+  background: $madrid-blue !important;
+
+  .top-bar-title {
+    line-height: $line-height;
+
+    a img {
+      height: rem-calc(48);
+      margin: 0;
+      width: auto;
+
+      @include breakpoint(medium up) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.footer {
+  background: $madrid-grey;
+  border-top: 0;
+  min-height: $line-height * 10;
+}
+
+.subfooter {
+  background: $madrid-black;
+  border-top: 0;
+  color: #fff;
+  margin-top: $line-height;
+
+  a {
+    color: #fff;
+    font-weight: bold;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .social {
+
+    @include breakpoint(medium down) {
+
+      ul,
+      a {
+        margin-left: 0;
+      }
+
+      li {
+        display: block;
+      }
+    }
+
+    a {
+      font-size: $small-font-size;
+      text-decoration: underline;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 // Display tables correctly on mobile (admin)
 
 .table-for-mobile {

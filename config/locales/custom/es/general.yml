@@ -57,6 +57,12 @@ es:
       description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
     header:
       logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
-      open_city_slogan_html: En Madrid sus habitantes, <strong>debaten sobre temas</strong> que les preocupan, <strong>proponen ideas</strong> para mejorar sus vidas y <strong>deciden entre todas y todos</strong> las que se llevan a cabo.
   form:
     budget/investment: el proyecto de gasto
+  social:
+    blog_link: "Blog"
+    facebook_link: "Facebook"
+    twitter_link: "Twitter"
+    youtube_link: "YouTube"
+    telegram_link: "Telegram"
+    instagram_link: "Instagram"

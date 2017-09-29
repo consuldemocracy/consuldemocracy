@@ -51,19 +51,6 @@
     }
   }
 
-  .slogan {
-    padding: $line-height * 2 0;
-
-    p {
-      font-size: rem-calc(30);
-      line-height: rem-calc(48);
-    }
-
-    strong {
-      background: #f4fb2d;
-    }
-  }
-
   .header {
     background: $budget;
     padding: $line-height * 2 0;
