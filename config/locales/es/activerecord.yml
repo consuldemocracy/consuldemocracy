@@ -157,6 +157,7 @@ es:
         location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
+        image_title: "Título de la imagen"
       comment:
         body: "Comentario"
         user: "Usuario"
