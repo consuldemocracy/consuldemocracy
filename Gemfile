@@ -63,7 +63,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.8.0'
   gem "faker", '~> 1.7.3'
   gem 'i18n-tasks', '~> 0.9.15'
-  gem 'knapsack', '~> 1.13.3'
+  gem 'knapsack', '~> 1.14.1'
   gem 'launchy', '~> 2.4.3'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'quiet_assets', '~> 1.1.0'
