@@ -1,0 +1,60 @@
+<div class="images small-12 column">
+    <div>
+      <%= f.label :image, t("images.form.admin_title") %>
+
+      <div id="nested-image">
+        <%= f.fields_for :image do |image_builder| %>
+          <%#= render 'images/image_fields', f: image_builder, imageable: imageable %>
+        
+        <!-- -->
+        
+        <div id="<%= dom_id(image_builder.object) %>" class="image direct-upload nested-fields">
+          <%= image_builder.hidden_field :id %>
+          <%= image_builder.hidden_field :user_id, value: current_user.id %>
+          <%= image_builder.hidden_field :cached_attachment %>
+
+          <%= image_builder.text_field :title, placeholder: t("images.form.title_placeholder") %>
+
+
+          <%= render_image(image_builder.object, :thumb, false) if image_builder.object.attachment.exists? %>
+
+          <div class="attachment-actions">
+            <div class="small-9 column action-add attachment-errors image-attachment">
+              <%= render_image_attachment(image_builder, imageable, image_builder.object) %>
+            </div>
+            <div class="small-3 column action-remove text-right">
+              <%= render_destroy_image_link(image_builder, image_builder.object) %>
+            </div>
+          </div>
+
+          <div class="small-6 column">
+            <p class="file-name">
+              <%= image_attachment_file_name(image_builder.object) %>
+            </p>
+          </div>
+
+          <div class="small-12 column">
+            <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+          </div>
+
+        </div>
+        
+        
+        <!-- -->
+        <% end %>
+      </div>
+    </div>
+
+    <%= link_to_add_association t('images.form.add_new_image'), f, :image,
+                            force_non_association_create: true,
+                            partial: "images/image_fields",
+                            id: "new_image_link",
+                            class: "button hollow #{"hide" if imageable.image.present?}",
+                            render_options: {
+                              locals: { imageable: imageable }
+                            },
+                            data: {
+                              association_insertion_node: "#nested-image",
+                              association_insertion_method: "append"
+                            } %>
+  </div>

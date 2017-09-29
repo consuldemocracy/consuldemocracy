@@ -313,7 +313,8 @@
 .proposal-form,
 .proposal-edit,
 .new_poll_question,
-.edit_poll_question {
+.edit_poll_question,
+.edit_poll {
   @include direct-uploads;
 }
 

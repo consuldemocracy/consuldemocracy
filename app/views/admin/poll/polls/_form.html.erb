@@ -31,29 +31,28 @@
     </div>
   </div>
 
-  <div class="images small-12 column">
-    <div>
-      <%= f.label :image, t("images.form.admin_title") %>
+  <div class="row">
+    <%= render 'images/admin_image', imageable: @poll, f: f %>
+  </div>
 
-      <div id="nested-image">
-        <%= f.fields_for :image do |image_builder| %>
-          <%= render 'images/image_fields', f: image_builder, imageable: @poll %>
-        <% end %>
-      </div>
-    </div>
-
-    <%= link_to_add_association t('images.form.add_new_image'), f, :image,
-                            force_non_association_create: true,
-                            partial: "images/image_fields",
-                            id: "new_image_link",
-                            class: "button hollow #{"hide" if @poll.image.present?}",
-                            render_options: {
-                              locals: { imageable: @poll }
-                            },
-                            data: {
-                              association_insertion_node: "#nested-image",
-                              association_insertion_method: "append"
-                            } %>
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <td colspan="2"><%= t("admin.polls.attachments.title") %></td>
+        </tr>
+        <tr>
+          <td><%= t("admin.polls.attachments.images_title") %></td>
+          <td><%= t("admin.polls.attachments.documents_title") %></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= link_to "#{t("admin.polls.attachments.images_link")} (#{@poll.images.count})", root_path %></td>
+          <td><%= link_to "#{t("admin.polls.attachments.documents_link")} (#{@poll.documents.count})", root_path %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="row">

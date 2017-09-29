@@ -580,6 +580,12 @@ es:
         error_on_question_added: "No se pudo asignar la pregunta"
         question_removed: "Pregunta eliminada de esta votación"
         error_on_question_removed: "No se pudo quitar la pregunta"
+      attachments:
+        title: "Imágenes y documentos de la votación"
+        images_title: "Imágenes"
+        documents_title: "Documents"
+        images_link: "Lista de imágenes"
+        documents_link: "Lista de documentos"
     questions:
       index:
         title: "Preguntas ciudadanas"

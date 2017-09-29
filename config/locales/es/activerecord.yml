@@ -146,6 +146,8 @@ es:
         starts_at: "Fecha de apertura"
         ends_at: "Fecha de cierre"
         geozone_restricted: "Restringida por zonas"
+        summary: "Resumen"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
         valid_answers: "Posibles respuestas"
