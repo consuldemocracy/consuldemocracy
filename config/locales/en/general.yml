@@ -109,6 +109,10 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not debates related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       search_form:
         button: Search
         placeholder: Search debates...
@@ -348,6 +352,10 @@ en:
         most_commented: most commented
         relevance: relevance
         archival_date: Archived
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not proposals related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -753,6 +761,16 @@ en:
     proposal:
       description: Open space for citizen proposals about the kind of city we want to live in.
       title: You propose
+    recommended:
+      title: Recommendations that may interest you
+      debates:
+        title: Recommended debates
+        btn_text_link: All recommended debates
+      proposals:
+        title: Recommended proposals
+        btn_text_link: All recommended proposals
+      budget_investments:
+        title: Recommended investments
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

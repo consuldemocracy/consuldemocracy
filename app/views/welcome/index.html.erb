@@ -1,3 +1,5 @@
+<% content_for :body_class, "home-page" %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: root_url %>
 <% end %>
@@ -16,37 +18,35 @@
   </div>
 </div>
 
+<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+  <%= render "recommended",
+              recommended_debates: @recommended_debates,
+              recommended_proposals: @recommended_proposals %>
+<% end %>
+
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <p>
-          <span class="lead"><strong><%= t("welcome.debates.title") %></strong></span><br>
-          <%= t("welcome.debates.description") %>
-        </p>
 
-      </div>
-      <div class="small-12 medium-6 column">
-        <p>
-          <span class="lead"><strong><%= t("welcome.proposal.title") %></strong></span><br>
-          <%= t("welcome.proposal.description") %>
-        </p>
+    <div class="small-12 column text-center <%= highlight_background %>">
+      <div class="row margin padding">
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.debates.title") %></h2>
+          <p><%= t("welcome.debates.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.proposal.title") %></h2>
+          <p><%= t("welcome.proposal.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.decide.title") %></h2>
+          <p><%= t("welcome.decide.description") %></p>
+        </div>
+        <div class="small-12 medium-3 column">
+          <h2><%= t("welcome.do.title") %></h2>
+          <p><%= t("welcome.do.description") %></p>
+        </div>
       </div>
     </div>
 
-    <div class="row margin-top">
-      <div class="small-12 medium-6 column">
-        <p>
-          <span class="lead"><strong><%= t("welcome.decide.title") %></strong></span><br>
-          <%= t("welcome.decide.description") %>
-        </p>
-      </div>
-      <div class="small-12 medium-6 column">
-        <p>
-          <span class="lead"><strong><%= t("welcome.do.title") %></strong></span><br>
-          <%= t("welcome.do.description") %>
-        </p>
-      </div>
-    </div>
   </main>
 <% end %>
