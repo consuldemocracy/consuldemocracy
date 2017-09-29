@@ -2,22 +2,22 @@
 
 <% votacion = Poll.first %>
 
-<div class="expanded no-margin-top">
+<div class="expanded cartel_magdalena_2018 no-margin-top">
   <div class="row">
-    <div class="small-12 medium-6 column padding">
+    <div class="small-12 medium-12 column padding">
       <h1><%= t('pages.cartel_magdalena_2018.title') %></h1>
     </div>
   </div>
 </div>
 
-<div class="row margin">
-  <div class="large-8 small-12 columns">
+<!-- <div class="row margin">
+  <div class="large-8 small-12 columns"> -->
 
-    <p><%= link_to 'vota tu cartel', poll_path(votacion) %></p>
-  </div>
+    <!-- <p><%# link_to 'vota tu cartel', poll_path(votacion) %></p> -->
+  <!-- </div> -->
 
-</div>
-<div class="row margin-top">
+<!-- </div> -->
+<div class="row">
   <div class="small-12 medium-9 column">
     <% votacion.questions.each do |question| %>
       <%= render 'pages/concurso_cartel_magdalena/questions/question', question: question %>

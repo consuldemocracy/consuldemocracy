@@ -6,9 +6,6 @@
     <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
       <div class="row">
         <div class="small-10 large-10 columns">
-          <%= debug answer %>
-        </div>
-        <div class="small-10 large-10 columns">
           <% if answers_by_question_id[question.id] == answer %>
             <span class="button answered" title="<%= t("poll_questions.show.voted", answer: answer)%>">
               <%= answer %>
@@ -25,9 +22,16 @@
       </div>
     <% end %>
   <% else %>
-    <% question.valid_answers.each do |answer| %>
-      <%= debug answer %>
-      <span class="button secondary hollow disabled"><%= answer %></span>
+    <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
+      <div class="row">
+        <div class="small-8 large-8 columns">
+          <%= image_tag 'custom/concurs_cartell_magdalena_2018/cartel_2017.jpg' %>
+        </div>
+        <div class="small-4 large-4 columns">
+          <span class="button secondary hollow disabled"><%= answer %></span>
+        </div>
+      </div>
+      <hr>
     <% end %>
   <% end %>
 </div>

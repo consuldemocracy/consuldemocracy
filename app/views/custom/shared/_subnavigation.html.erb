@@ -23,9 +23,9 @@
       <li>
         <%= layout_menu_link_to t("pages.cartel_magdalena_2018.tab_link"),
                                   page_path('concurso_cartel_magdalena'),
-                                  controller_name == 'pages',
+                                  controller_name == 'pages' && params[:id] == 'concurso_cartel_magdalena',
                                   accesskey: "2",
-                                  title: t("shared.go_to_page") + t("layouts.header.concurso_cartel_magdalena") %>
+                                  title: t("shared.go_to_page") + t("pages.cartel_magdalena_2018.tab_link") %>
       </li>
 
     <% end %>
