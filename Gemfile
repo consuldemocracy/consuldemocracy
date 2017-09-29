@@ -84,7 +84,7 @@ end
 group :development do
   gem 'capistrano', '~> 3.8.1', require: false
   gem 'capistrano-bundler', '~> 1.2', require: false
-  gem "capistrano-rails", '~> 1.2.3', require: false
+  gem "capistrano-rails", '~> 1.3.0', require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'mdl', '~> 0.4.0', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false
