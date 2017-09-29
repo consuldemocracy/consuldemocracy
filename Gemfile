@@ -58,7 +58,7 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
-  gem "bullet", '~> 5.5.1'
+  gem "bullet", '~> 5.6.1'
   gem 'byebug', '~> 9.0.6'
   gem 'factory_girl_rails', '~> 4.8.0'
   gem "faker", '~> 1.7.3'
