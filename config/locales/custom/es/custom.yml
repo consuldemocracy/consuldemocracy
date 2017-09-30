@@ -138,12 +138,6 @@ es:
       text: "Consulta los datos detallados de la votación de proyectos."
       link: "Ver resultados"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-    journalism:
-      label: "Concurso"
-      title: "Concurso de periodismo de datos y Datatón"
-      text: "Participa con historias y proyectos creados a partir de datos abiertos del Ayuntamiento de Madrid."
-      link: "Más información sobre el concurso"
-      alt: "Imagen del cartel del Concurso de periodismo de datos y Datatón"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
