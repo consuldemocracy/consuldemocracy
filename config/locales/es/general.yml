@@ -420,7 +420,7 @@ es:
     proposal:
       created: "¡Has creado una propuesta!"
       share:
-        guide: "Compártela para que la gente empieze a apoyarla."
+        guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: "Ahora no, ir a mi propuesta"
       improve_info: "Mejora tu campaña y consigue más apoyos"
