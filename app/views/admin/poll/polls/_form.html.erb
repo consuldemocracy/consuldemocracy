@@ -36,26 +36,6 @@
   </div>
 
   <div class="row">
-    <table>
-      <thead>
-        <tr>
-          <td colspan="2"><%= t("admin.polls.attachments.title") %></td>
-        </tr>
-        <tr>
-          <td><%= t("admin.polls.attachments.images_title") %></td>
-          <td><%= t("admin.polls.attachments.documents_title") %></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= link_to "#{t("admin.polls.attachments.images_link")} (#{@poll.images.count})", root_path %></td>
-          <td><%= link_to "#{t("admin.polls.attachments.documents_link")} (#{@poll.documents.count})", root_path %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="row">
     <div class="small-6 medium-6 column">
       <%= f.check_box :geozone_restricted, data: { checkbox_toggle: "#geozones" } %>
     </div>

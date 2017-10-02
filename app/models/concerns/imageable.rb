@@ -5,7 +5,6 @@ module Imageable
 
   included do
     has_one :image, as: :imageable, dependent: :destroy
-    has_many :images, as: :imageable, dependent: :destroy
     accepts_nested_attributes_for :image, allow_destroy: true, update_only: true
 
     def image_url(style)
