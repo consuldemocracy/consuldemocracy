@@ -1,10 +1,10 @@
 <% provide :title do %><%= @poll.name %><% end %>
 
 <div class="polls-show">
-  <div class="expanded no-margin-top dark-heading polls-show-header">
+  <div class="expanded no-margin-top polls-show-header">
     <div class="row">
       <div class="small-12 medium-9 column padding">
-        <%= back_link_to polls_path %>
+        <%= back_link_to polls_path, t("polls.show.back") %>
 
         <h2><%= @poll.name %></h2>
         <ul class="no-bullet margin-top tags">
@@ -12,25 +12,22 @@
             <li class="inline-block"><span><%= g.name %></span></li>
           <% end %>
         </ul>
+      </div>
 
-        <%= render "callout" %>
-      </div>
-      <div class="small-12 medium-3 column">
-        <div class="info">
-          <p>
-            <span class="title">
-              <strong><%= t("polls.show.dates_title") %></strong>
-            </span>
-            <br>
-            <%= poll_dates(@poll) %>
-          </p>
-        </div>
-      </div>
+      <aside class="small-12 medium-3 column margin-top">
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("shared.share"),
+          title: @poll.name,
+          url: poll_url
+        } %>
+      </aside>
     </div>
   </div>
 
   <div class="row margin-top">
     <div class="small-12 medium-9 column">
+      <%= render "callout" %>
+
       <% if @poll.voted_in_booth?(current_user) %>
         <div class="callout warning">
           <%= t("polls.show.already_voted_in_booth") %>
@@ -41,13 +38,5 @@
         <% end %>
       <% end %>
     </div>
-
-    <aside class="small-12 medium-3 column">
-      <%= render partial: 'shared/social_share', locals: {
-        share_title: t("proposals.show.share"),
-        title: @poll.name,
-        url: poll_url
-      } %>
-    </aside>
   </div>
 </div>

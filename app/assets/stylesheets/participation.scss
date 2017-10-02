@@ -1549,18 +1549,8 @@
 // 08. Polls
 // ----------------------
 
-.dark-heading {
-  background: #2d3e50;
-  color: #fff;
-
-  .title {
-    color: #92ba48;
-  }
-
-  .button {
-    background: #fff;
-    color: $brand;
-  }
+.polls-show-header {
+  background: #fafafa;
 
   .callout {
 
@@ -1575,29 +1565,6 @@
     &.alert a {
       color: $color-alert;
     }
-  }
-
-  .info {
-    background: #314253;
-    padding: $line-height;
-
-    @include breakpoint(medium) {
-      border-top: rem-calc(6) solid #92ba48;
-    }
-  }
-
-  a:not(.button) {
-    color: #fff;
-    text-decoration: underline;
-  }
-
-  .back,
-  .icon-angle-left {
-    color: #fff;
-  }
-
-  &.polls-show-header {
-    min-height: $line-height * 8;
   }
 }
 
