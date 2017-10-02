@@ -14,6 +14,6 @@ class Poll::Answer < ActiveRecord::Base
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
   def record_voter_participation
-    Poll::Voter.create!(user: author, poll: poll)
+    Poll::Voter.find_or_create_by!(user: author, poll: poll)
   end
 end
