@@ -891,4 +891,63 @@ describe Proposal do
     end
 
   end
+
+  describe "#recommendations" do
+
+    let(:user)     { create(:user) }
+
+    it "Should not return any proposals when user has not interests" do
+      create(:proposal)
+
+      expect(Proposal.recommendations(user).size).to eq 0
+    end
+
+    it "Should return proposals ordered by cached_votes_up" do
+      proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport" )
+      proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport" )
+      proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport" )
+      proposal4 = create(:proposal, tag_list: "Sport" )
+      create(:follow, followable: proposal4, user: user)
+
+      result = Proposal.recommendations(user).sort_by_recommendations
+
+      expect(result.first).to eq proposal3
+      expect(result.second).to eq proposal2
+      expect(result.third).to eq proposal1
+    end
+
+    it "Should return proposals related with user interests" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      proposal2 =  create(:proposal, tag_list: "Sport")
+      proposal3 =  create(:proposal, tag_list: "Politics")
+      create(:follow, followable: proposal1, user: user)
+
+      result = Proposal.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [proposal2]
+    end
+
+    it "Should not return proposals when user is follower" do
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      result = Proposal.recommendations(user)
+
+      expect(result.size).to eq 0
+    end
+
+    it "Should not return proposals when user is the author" do
+      proposal1 =  create(:proposal, author: user, tag_list: "Sport")
+      proposal2 =  create(:proposal, tag_list: "Sport")
+      proposal3 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal3, user: user)
+
+      result = Proposal.recommendations(user)
+
+      expect(result.size).to eq 1
+      expect(result).to eq [proposal2]
+    end
+
+  end
 end

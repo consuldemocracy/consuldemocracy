@@ -21,9 +21,9 @@
         </thead>
         <tbody>
           <tr>
-            <td id="white_results"><%= @whites %></td>
-            <td id="null_results"><%= @nulls %></td>
-            <td id="total_results"><%= @total %></td>
+            <td id="white_results"><%= @recounts.sum(:white_amount) %></td>
+            <td id="null_results"><%= @recounts.sum(:null_amount) %></td>
+            <td id="total_results"><%= @recounts.sum(:total_amount) %></td>
           </tr>
         </tbody>
       </table>

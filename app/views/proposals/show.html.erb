@@ -117,6 +117,13 @@
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
 
+            <% if current_editable?(@proposal) %>
+              <%= link_to edit_proposal_path(@proposal), class: 'button hollow expanded' do %>
+                          <span class="icon-edit"></span>
+                          <%= t("proposals.show.edit_proposal_link") %>
+              <% end %>
+            <% end %>
+
             <% if author_of_proposal?(@proposal) %>
               <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
                           class: 'button hollow expanded' do %>
@@ -128,17 +135,10 @@
             <% if can_destroy_image?(@proposal) %>
               <%= link_to image_path(@proposal.image, from: request.url),
                           method: :delete,
-                          class: 'button hollow expanded',
+                          class: 'button hollow alert expanded',
                           data: { confirm: t('images.actions.destroy.confirm') } do %>
-                          <span class="icon-document"></span>
+                          <span class="icon-image"></span>
                           <%= t("images.remove_image") %>
-              <% end %>
-            <% end %>
-
-            <% if current_editable?(@proposal) %>
-              <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
-                          <span class="icon-edit"></span>
-                          <%= t("proposals.show.edit_proposal_link") %>
               <% end %>
             <% end %>
 
