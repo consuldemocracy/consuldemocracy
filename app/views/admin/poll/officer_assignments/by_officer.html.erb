@@ -43,8 +43,8 @@
             <td><%= l(officer_assignment.date.to_date) %></td>
             <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
             <td class="text-right">
-              <% if officer_assignment.total_results.any? %>
-                <%= officer_assignment.total_results.to_a.sum(&:amount) %>
+              <% if officer_assignment.recounts.any? %>
+                <%= officer_assignment.recounts.to_a.sum(&:total_amount) %>
               <% else %>
                 <span>-</span>
               <% end %>
