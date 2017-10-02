@@ -26,7 +26,6 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
-    recover_documents_from_cache(@proposal)
 
     if @proposal.save
       log_event("proposal", "create")
@@ -90,7 +89,9 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id, :proceeding, :sub_proceeding,
-                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id])
+                                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                                       map_location_attributes: [:latitude, :longitude, :zoom])
     end
 
     def retired_params

@@ -68,6 +68,7 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
+        filter: Filtro
         filters:
           current: Abiertos
           finished: Terminados
@@ -513,6 +514,7 @@ es:
         shift: "Asignación"
         shifts: "Turnos en esta urna"
         date: "Fecha"
+        task: "Tarea"
         edit_shifts: Asignar turno
         new_shift: "Nuevo turno"
         no_shifts: "Esta urna no tiene turnos asignados"
@@ -522,12 +524,16 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
+        select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
         table_name: "Nombre"
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
+        date_missing: "Debe seleccionarse una fecha"
+      vote_collection: Recoger Votos
+      recount_scrutiny: Recuento & Escrutinio
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -609,7 +615,7 @@ es:
         valid_answers: Respuestas válidas
         description: Descripción
         video_url: Video externo
-        documents: Documentos
+        documents: Documentos (1)
         preview: Ver en la web
     recounts:
       index:
@@ -711,6 +717,13 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        map:
+          title: Configuración del mapa
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
+          flash:
+            update: La configuración del mapa se ha guardado correctamente.
+          form:
+            submit: Actualizar
     shared:
       booths_search:
         button: Buscar

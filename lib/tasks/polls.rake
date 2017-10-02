@@ -682,7 +682,7 @@ namespace :polls do
           recount.date = result.date
           recount.origin = result.origin
           recount.author = result.author
-          recount.author_id_log = ":#{author.id}"
+          recount.author_id_log = ":#{result.author.id}"
           puts "Error creating Poll Recount with ##{result.id} and result type ##{type} params, #{recount.errors}" unless recount.save
         end
       end
