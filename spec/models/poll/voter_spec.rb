@@ -93,6 +93,16 @@ describe :voter do
         voter.origin = "invalid_origin"
         expect(voter).to_not be_valid
       end
+
+      it "should be valid with a booth origin" do
+        voter.origin = "booth"
+        expect(voter).to be_valid
+      end
+
+      it "should be valid with a web origin" do
+        voter.origin = "web"
+        expect(voter).to be_valid
+      end
     end
 
     context "assignments" do
