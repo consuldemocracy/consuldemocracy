@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927110953) do
+ActiveRecord::Schema.define(version: 20170928132402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -763,6 +763,8 @@ ActiveRecord::Schema.define(version: 20170927110953) do
     t.datetime "ends_at"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
+    t.text     "summary"
+    t.text     "description"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
