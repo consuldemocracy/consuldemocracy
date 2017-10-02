@@ -119,13 +119,14 @@ feature 'Admin shifts' do
   end
 
   scenario "Destroy" do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
 
     shift = create(:poll_shift, officer: officer, booth: booth)
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
