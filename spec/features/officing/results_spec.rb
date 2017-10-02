@@ -127,21 +127,13 @@ feature 'Officing Results' do
                       date: @poll.ends_at,
                       question: @question_1,
                       amount: 33)
-    white_result = create(:poll_white_result,
+    poll_recount = create(:poll_recount,
                       officer_assignment: @officer_assignment,
                       booth_assignment: @officer_assignment.booth_assignment,
                       date: @poll.ends_at,
-                      amount: 21)
-    null_result = create(:poll_null_result,
-                      officer_assignment: @officer_assignment,
-                      booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.ends_at,
-                      amount: 44)
-    total_result = create(:poll_total_result,
-                      officer_assignment: @officer_assignment,
-                      booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.ends_at,
-                      amount: 66)
+                      white_amount: 21,
+                      null_amount: 44,
+                      total_amount: 66)
 
     visit officing_poll_results_path(@poll,
                                      date: I18n.l(@poll.ends_at.to_date),

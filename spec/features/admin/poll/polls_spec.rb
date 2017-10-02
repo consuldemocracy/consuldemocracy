@@ -249,18 +249,18 @@ feature 'Admin polls' do
         booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
 
         3.times do |i|
-          create(:poll_total_result,
+          create(:poll_recount,
                  booth_assignment: booth_assignment,
                  date: poll.starts_at + i.days,
-                 amount: 21)
+                 total_amount: 21)
         end
 
         2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
 
-        create(:poll_total_result,
+        create(:poll_recount,
                booth_assignment: booth_assignment_final_recounted,
                date: poll.ends_at,
-               amount: 55555)
+               total_amount: 55555)
 
         visit admin_poll_path(poll)
 
@@ -318,12 +318,10 @@ feature 'Admin polls' do
                   answer: 'Tomorrow',
                   amount: 5)
         end
-        create(:poll_white_result,
+        create(:poll_recount,
                booth_assignment: booth_assignment_1,
-               amount: 21)
-        create(:poll_null_result,
-               booth_assignment: booth_assignment_3,
-               amount: 44)
+               white_amount: 21,
+               null_amount: 44)
 
         visit admin_poll_path(poll)
 
