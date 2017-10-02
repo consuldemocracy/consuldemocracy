@@ -8,6 +8,9 @@ describe "Abilities::Everyone" do
   let(:debate) { create(:debate) }
   let(:proposal) { create(:proposal) }
 
+  let(:reviewing_ballot_budget) { create(:budget, phase: 'reviewing_ballots') }
+  let(:finished_budget) { create(:budget, phase: 'finished') }
+
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
   it { should_not be_able_to(:edit, Debate) }
@@ -28,4 +31,7 @@ describe "Abilities::Everyone" do
   it { should_not be_able_to(:create, SpendingProposal) }
 
   it { should be_able_to(:index, Budget) }
+
+  it { should be_able_to(:read_results, finished_budget) }
+  it { should_not be_able_to(:read_results, reviewing_ballot_budget) }
 end
