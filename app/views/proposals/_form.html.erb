@@ -59,16 +59,32 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
-    <% unless @proposal.proceeding? %>
-      <div class="small-12 medium-6 column">
-        <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-        <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+    <div class="images small-12 column">
+      <%= render 'images/nested_image', imageable: @proposal, f: f %>
+    </div>
+
+    <div class="documents small-12 column">
+      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
+      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+    </div>
+
+    <% if feature?(:map) %>
+      <div class="small-12 column">
+
+        <%= render 'map_locations/form_fields',
+                   form:     f,
+                   map_location: @proposal.map_location || MapLocation.new,
+                   label:    t("proposals.form.map_location"),
+                   help:     t("proposals.form.map_location_instructions"),
+                   remove_marker_label: t("proposals.form.map_remove_marker"),
+                   parent_class: "proposal" %>
+
       </div>
     <% end %>
-
-    <div class="documents small-12 column" data-max-documents="<%= Proposal.max_documents_allowed %>">
-      <%= render 'documents/nested_documents', documentable: @proposal %>
-    </div>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("proposals.form.tags_label") %>

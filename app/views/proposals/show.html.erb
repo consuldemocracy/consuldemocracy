@@ -58,6 +58,8 @@
 
         </div>
 
+        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
+
         <br>
         <p>
           <%= t("proposals.show.code") %>
@@ -75,6 +77,10 @@
         <% end %>
 
         <%= safe_html_with_links @proposal.description %>
+
+        <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
+          <%= render_map(@proposal.map_location, "proposal", false, nil) %>
+        <% end %>
 
         <% if @proposal.external_url.present? %>
           <div class="document-link">
@@ -119,18 +125,10 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if can_create_document?(@document, @proposal) || author_of_proposal?(@proposal) || current_editable?(@proposal) %>
+        <% if author_of_proposal?(@proposal) || current_editable?(@proposal) || can_destroy_image?(@proposal) %>
           <div class="sidebar-divider"></div>
           <h2><%= t("proposals.show.author") %></h2>
           <div class="show-actions-menu">
-            <% if Setting['feature.document_on_show'] && can_create_document?(@document, @proposal) %>
-              <%= link_to new_document_path(documentable_id: @proposal, documentable_type: @proposal.class.name, from: request.url),
-                          class: 'button hollow expanded' do %>
-                          <span class="icon-document"></span>
-                          <%= t("documents.upload_document") %>
-              <% end %>
-            <% end %>
-
             <% if author_of_proposal?(@proposal) %>
               <%= link_to new_proposal_notification_path(proposal_id: @proposal.id),
                           class: 'button hollow expanded' do %>
@@ -139,12 +137,23 @@
               <% end %>
             <% end %>
 
-            <% if current_editable?(@proposal) %>
-              <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
-                <span class="icon-edit"></span>
-                <%= t("proposals.show.edit_proposal_link") %>
+            <% if can_destroy_image?(@proposal) %>
+              <%= link_to image_path(@proposal.image, from: request.url),
+                          method: :delete,
+                          class: 'button hollow expanded',
+                          data: { confirm: t('images.actions.destroy.confirm') } do %>
+                          <span class="icon-document"></span>
+                          <%= t("images.remove_image") %>
               <% end %>
             <% end %>
+
+            <% if current_editable?(@proposal) %>
+              <%= link_to edit_proposal_path(@proposal), class: 'edit-proposal button hollow expanded' do %>
+                          <span class="icon-edit"></span>
+                          <%= t("proposals.show.edit_proposal_link") %>
+              <% end %>
+            <% end %>
+
           </div>
         <% end %>
 

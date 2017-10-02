@@ -61,10 +61,7 @@ module CommentableActions
   end
 
   def update
-    resource.assign_attributes(strong_params)
-    recover_documents_from_cache(resource)
-
-    if resource.save
+    if resource.update(strong_params)
       redirect_to resource, notice: t("flash.actions.update.#{resource_name.underscore}")
     else
       load_categories
@@ -126,5 +123,4 @@ module CommentableActions
         document.set_attachment_from_cached_attachment if document.cached_attachment.present?
       end
     end
-
 end

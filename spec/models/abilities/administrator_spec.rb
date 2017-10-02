@@ -22,6 +22,8 @@ describe "Abilities::Administrator" do
 
   let(:probe_option) { create(:probe_option) }
   let(:spending_proposal) { create(:spending_proposal) }
+  let(:proposal_image) { build(:image, imageable: proposal) }
+  let(:budget_investment_image) { build(:image, imageable: budget_investment) }
 
   let(:hidden_debate) { create(:debate, :hidden) }
   let(:hidden_comment) { create(:comment, :hidden) }
@@ -108,15 +110,11 @@ describe "Abilities::Administrator" do
   it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: 'valuating'))) }
   it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, phase: 'finished'))) }
 
-  it { should be_able_to(:new, proposal_document) }
-  it { should be_able_to(:create, proposal_document) }
   it { should be_able_to(:destroy, proposal_document) }
-
-  it { should be_able_to(:new, budget_investment_document) }
-  it { should be_able_to(:create, budget_investment_document) }
   it { should be_able_to(:destroy, budget_investment_document) }
-
-  it { should be_able_to(:new, poll_question_document) }
-  it { should be_able_to(:create, poll_question_document) }
   it { should be_able_to(:destroy, poll_question_document) }
+
+  it { should be_able_to(:destroy, proposal_image) }
+  it { should be_able_to(:destroy, budget_investment_image) }
+
 end

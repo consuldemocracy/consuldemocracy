@@ -26,8 +26,8 @@
                           ckeditor: { language: I18n.locale } %>
       </div>
 
-      <div class="documents small-12" data-max-documents="<%= Poll::Question.max_documents_allowed %>">
-        <%= render 'documents/nested_documents', documentable: @question %>
+      <div class="documents small-12">
+        <%= render 'documents/nested_documents', documentable: @question, f: f %>
       </div>
 
       <div class="small-12">
