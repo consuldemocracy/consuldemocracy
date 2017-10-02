@@ -126,8 +126,7 @@ en:
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
     header:
-      label: Make your citizen proposal
-      title: Citizens make direct municipal decisions
+      title: Make your citizen proposal
       text: We tell you in 10 steps how to present and broadcast your proposal to improve Madrid.
       button: More information
       button_title: Read ten Keys to creating a citizen proposal at Decide Madrid
@@ -138,12 +137,6 @@ en:
       text: "Check the detailed data of the voting of projects."
       link: "See results"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-    journalism:
-      label: "Contest"
-      title: "Contest of data journalism and Datatón"
-      text: "Participate with stories and projects created from open data of the City Council of Madrid."
-      link: "More information about the contest"
-      alt: "Image of the Contest of Data Journalism and Datatón"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

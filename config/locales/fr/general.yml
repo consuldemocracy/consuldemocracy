@@ -883,10 +883,6 @@ fr:
         other: Vous avez %{count} nouvelles notifications
       no_notifications: Vous n'avez pas de nouvelles notifications
       open: ouvert
-      open_city_slogan_html: Il y a des villes gouvernées directement par leurs habitants
-        qui discutent des sujets dont il se sentent concernées, proposent des idées
-        pour améliorer leurs vies et décider lesquelles seront mises en place. Madrid
-        est déjà une de ces villes.
       open_city_title: Aimez la ville, et elle deviendra la ville que vous aimez
       open_data: Open data
       open_gov: Gouvernement ouvert
