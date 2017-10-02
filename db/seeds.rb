@@ -79,6 +79,7 @@ Setting['feature.public_stats'] = true
 Setting['feature.budgets'] = true
 Setting['feature.signature_sheets'] = true
 Setting['feature.legislation'] = true
+Setting['feature.user.recommendations'] = true
 Setting['feature.community'] = true
 Setting['feature.map'] = nil
 
