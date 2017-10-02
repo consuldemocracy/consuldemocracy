@@ -1701,9 +1701,13 @@
 }
 
 .section-title-divider {
-  border-bottom: 2px solid $brand;
-  color: $brand;
-  margin-bottom: $line-height;
+  border-bottom: 1px solid #eee;
+  color: #000;
+  margin: $line-height 0;
+
+  span {
+    border-bottom: 1px solid #000;
+  }
 }
 
 .poll-question {
