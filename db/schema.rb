@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927110953) do
+ActiveRecord::Schema.define(version: 20171002103314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -701,9 +701,10 @@ ActiveRecord::Schema.define(version: 20170927110953) do
     t.integer  "task",          default: 0, null: false
   end
 
-  add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
+  add_index "poll_shifts", ["booth_id", "officer_id", "task"], name: "index_poll_shifts_on_booth_id_and_officer_id_and_task", unique: true, using: :btree
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
+  add_index "poll_shifts", ["task"], name: "index_poll_shifts_on_task", using: :btree
 
   create_table "poll_total_results", force: :cascade do |t|
     t.integer "author_id"

@@ -6,8 +6,8 @@ class Poll
     validates :booth_id, presence: true
     validates :officer_id, presence: true
     validates :date, presence: true
-    validates :date, uniqueness: { scope: [:officer_id, :booth_id] }
     validates :task, presence: true
+    validates :date, uniqueness: { scope: [:officer_id, :booth_id, :task] }
 
     enum task: { vote_collection: 0, recount_scrutiny: 1 }
 
