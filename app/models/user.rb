@@ -293,7 +293,7 @@ class User < ActiveRecord::Base
   delegate :can?, :cannot?, to: :ability
 
   def timeout_in
-    1.minutes
+    30.minutes
   end
 
   def public_proposals
