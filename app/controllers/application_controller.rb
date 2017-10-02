@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include HasOrders
   include Analytics
 
-  #before_action :authenticate_http_basic, if: :http_basic_auth_site?
+  before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
   before_action :ensure_signup_complete
   before_action :set_locale
