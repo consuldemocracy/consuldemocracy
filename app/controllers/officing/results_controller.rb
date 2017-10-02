@@ -26,9 +26,7 @@ class Officing::ResultsController < Officing::BaseController
       @partial_results = ::Poll::PartialResult.includes(:question).
                                             where(booth_assignment_id: index_params[:booth_assignment_id]).
                                             where(date: index_params[:date])
-      @whites = ::Poll::WhiteResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
-      @nulls  = ::Poll::NullResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
-      @total  = ::Poll::TotalResult.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date]).sum(:amount)
+      @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date])
     end
   end
 
@@ -52,14 +50,14 @@ class Officing::ResultsController < Officing::BaseController
         go_back_to_new if question.blank?
 
         results.each_pair do |answer_index, count|
-          next unless count.present?
+          next if count.blank?
           answer = question.valid_answers[answer_index.to_i]
           go_back_to_new if question.blank?
 
           partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                               date: results_params[:date],
-                                                               question_id: question_id,
-                                                               answer: answer)
+                                                                       date: results_params[:date],
+                                                                       question_id: question_id,
+                                                                       answer: answer)
           partial_result.officer_assignment_id = @officer_assignment.id
           partial_result.amount = count.to_i
           partial_result.author = current_user
@@ -68,45 +66,21 @@ class Officing::ResultsController < Officing::BaseController
         end
       end
 
-      build_white_results
-      build_null_results
-      build_total_results
+      build_recounts
     end
 
-    def build_white_results
-      if results_params[:whites].present?
-        white_result = ::Poll::WhiteResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                  date: results_params[:date])
-        white_result.officer_assignment_id = @officer_assignment.id
-        white_result.amount = results_params[:whites].to_i
-        white_result.author = current_user
-        white_result.origin = 'booth'
-        @results << white_result
+    def build_recounts
+      recount = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
+                                                      date: results_params[:date])
+      recount.officer_assignment_id = @officer_assignment.id
+      recount.author = current_user
+      recount.origin = 'booth'
+      [:whites, :nulls, :total].each do |recount_type|
+        if results_params[recount_type].present?
+          recount["#{recount_type.to_s.singularize}_amount"] = results_params[recount_type].to_i
+        end
       end
-    end
-
-    def build_null_results
-      if results_params[:nulls].present?
-        null_result = ::Poll::NullResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                  date: results_params[:date])
-        null_result.officer_assignment_id = @officer_assignment.id
-        null_result.amount = results_params[:nulls].to_i
-        null_result.author = current_user
-        null_result.origin = 'booth'
-        @results << null_result
-      end
-    end
-
-    def build_total_results
-      if results_params[:total].present?
-        total_result = ::Poll::TotalResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                  date: results_params[:date])
-        total_result.officer_assignment_id = @officer_assignment.id
-        total_result.amount = results_params[:total].to_i
-        total_result.author = current_user
-        total_result.origin = 'booth'
-        @results << total_result
-      end
+      @results << recount
     end
 
     def go_back_to_new(alert = nil)

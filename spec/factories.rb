@@ -576,6 +576,11 @@ FactoryGirl.define do
     origin { 'web' }
   end
 
+  factory :poll_recount, class: 'Poll::Recount' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
   factory :officing_residence, class: 'Officing::Residence' do
     user
     association :officer, factory: :poll_officer
