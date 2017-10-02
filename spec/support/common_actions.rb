@@ -471,4 +471,26 @@ module CommonActions
     "system/api/#{table}.csv"
   end
 
+  def vote_for_poll_via_web
+    visit question_path(question)
+
+    click_link 'Answer this question'
+    click_link 'Yes'
+
+    expect(page).to_not have_link('Yes')
+    expect(Poll::Voter.count).to eq(1)
+  end
+
+  def vote_for_poll_via_booth
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+
+    first(:button, "Confirm vote").click
+    expect(page).to have_content "Vote introduced!"
+
+    expect(Poll::Voter.count).to eq(1)
+  end
+
 end

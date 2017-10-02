@@ -511,6 +511,7 @@ en:
         help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
     show:
       dates_title: "Voting dates"
+      already_voted_in_booth: "You have already participated in a booth for this poll."
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       signin: Sign in
       signup: Sign up
