@@ -47,18 +47,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     redirect_to admin_poll_path(@poll), notice: notice
   end
 
-  def remove_question
-    question = ::Poll::Question.find(params[:question_id])
-
-    if @poll.questions.include? question
-      @poll.questions.delete(question)
-      notice = t("admin.polls.flash.question_removed")
-    else
-      notice = t("admin.polls.flash.error_on_question_removed")
-    end
-    redirect_to admin_poll_path(@poll), notice: notice
-  end
-
   def search_questions
     @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search(search: @search).order(title: :asc)
     respond_to do |format|

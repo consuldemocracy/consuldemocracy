@@ -275,7 +275,6 @@ Rails.application.routes.draw do
       resources :polls do
         get :search_questions, on: :member
         patch :add_question, on: :member
-        patch :remove_question, on: :member
 
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
           get :search_booths, on: :collection
