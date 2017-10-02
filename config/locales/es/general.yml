@@ -131,6 +131,10 @@ es:
         hot_score: Más activos hoy
         most_commented: Más comentados
         relevance: Más relevantes
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen debates relacionados con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -378,7 +382,10 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
-        random: Aleatorias
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen propuestas relacionadas con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -886,20 +893,28 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
-    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
-    featured:
-      features: "Participa en %{org_name}"
-      label: "Participa"
+    debates:
+      description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
+      title: Debates
+    decide:
+      description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
+      title: Decides
+    do:
+      description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+      title: Se hace
+    proposal:
+      description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
+      title: Propones
+    recommended:
+      title: Recomendaciones que te pueden interesar
+      debates:
+        title: Debates recomendados
+        btn_text_link: Todos los debates recomendados
       proposals:
-        title: Crea propuestas ciudadanas
-        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
-        link: Ver propuestas ciudadanas
-        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
-      budgets:
-        title: "Decide a qué proyectos se destina el presupuesto participativo"
-        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
-        link: Ver proyectos de gasto
-        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
+        title: Propuestas recomendadas
+        btn_text_link: Todas las propuestas recomendadas
+      budget_investments:
+        title: Presupuestos recomendados
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar

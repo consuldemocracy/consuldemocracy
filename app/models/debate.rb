@@ -25,7 +25,7 @@ class Debate < ActiveRecord::Base
 
   validates :title, length: { in: 4..Debate.title_max_length }
   validates :description, length: { in: 10..Debate.description_max_length }
-  validates_inclusion_of :comment_kind, in: ["comment", "question"]
+  validates :comment_kind, inclusion: { in: ["comment", "question"] }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -40,14 +40,21 @@ class Debate < ActiveRecord::Base
   scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
+  scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
   scope :not_probe,                -> { where.not(id: ProbeOption.pluck(:debate_id))}
   scope :public_for_api,           -> { all }
+
   # Ahoy setup
   visitable # Ahoy will automatically assign visit_id on create
 
   attr_accessor :link_required
+
+  def self.recommendations(user)
+    tagged_with(user.interests, any: true)
+      .where("author_id != ?", user.id)
+  end
 
   def searchable_values
     { title              => 'A',
@@ -136,32 +143,38 @@ class Debate < ActiveRecord::Base
     tags.each{ |t| t.increment_custom_counter_for('Debate') }
   end
 
+  def featured?
+    featured_at.present?
+  end
+
+  def self.debates_orders(user)
+    orders = %w{hot_score confidence_score created_at relevance}
+    orders << "recommendations" if user.present?
+    orders
+  end
+
   def set_comment_kind
     self.comment_kind ||= 'comment'
   end
 
   def self.open_plenary_winners
-    where(comment_kind: 'question').first.
-    comments.
-    sort_by_most_voted.
-    limit(5)
-  end
-
-  def featured?
-    featured_at.present?
+    where(comment_kind: 'question').first
+                                   .comments
+                                   .sort_by_most_voted
+                                   .limit(5)
   end
 
   def self.public_columns_for_api
-    ["id",
-     "title",
-     "description",
-     "created_at",
-     "cached_votes_total",
-     "cached_votes_up",
-     "cached_votes_down",
-     "comments_count",
-     "hot_score",
-     "confidence_score"]
+    %w[id
+       title
+       description
+       created_at
+       cached_votes_total
+       cached_votes_up
+       cached_votes_down
+       comments_count
+       hot_score
+       confidence_score]
   end
 
   def public_for_api?

@@ -49,6 +49,8 @@ es:
         plaza: "Sondeo Plaza España"
         voting_allowed: Votaciones sobre propuestas de inversión
       legislation: Legislación
+      user:
+        recommendations: Recomendaciones
       community: Comunidad en propuestas y proyectos de inversión
       map: Geolocalización de propuestas y proyectos de inversión
     map_latitude: Latitud

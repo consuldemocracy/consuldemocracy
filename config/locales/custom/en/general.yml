@@ -36,6 +36,8 @@ en:
         description: Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly.
         help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council of Madrid ask to the citizens decision."
         help_text_3: "In the first vote on february 2017, moreover to decide about two citizen proposals, the City Council asked about the reforms of Gran Vía, about finalist projects to reform Plaza España and some issues in six districts of Madrid."
+      orders:
+        random: Random
   forums:
     index:
       deactivate_link: "Deactivate"
@@ -64,3 +66,19 @@ en:
     youtube_link: "YouTube"
     telegram_link: "Telegram"
     instagram_link: "Instagram"
+  welcome:
+    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
+    featured:
+      features: "Participa en %{org_name}"
+      label: "Participa"
+      proposals:
+        title: Crea propuestas ciudadanas
+        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
+        link: Ver propuestas ciudadanas
+        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
+      budgets:
+        title: "Decide a qué proyectos se destina el presupuesto participativo"
+        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
+        link: Ver proyectos de gasto
+        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
+

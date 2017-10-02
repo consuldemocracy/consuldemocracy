@@ -49,6 +49,8 @@ en:
         plaza: "Plaza España Probe"
         voting_allowed: Voting on investment projects
       legislation: Legislation
+      user:
+        recommendations: Recommendeds
       community: Community on proposals and investments
       map: Proposals and budget investments geolocation
     map_latitude: Latitude

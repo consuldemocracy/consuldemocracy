@@ -18,7 +18,7 @@ module ProposalsHelper
     end
   end
 
-  def namespaced_proposal_path(proposal, options= {})
+  def namespaced_proposal_path(proposal, options = {})
     return human_rights_proposal_path(proposal) if proposal.proceeding?
 
     @namespace_proposal_path ||= namespace
@@ -34,7 +34,23 @@ module ProposalsHelper
     Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
   end
 
-  def link_to_new_proposal_proceeding_path(proceeding, sub_proceeding, title=nil)
+  def empty_recommended_proposals_message_text(user)
+    if user.interests.any?
+      t('proposals.index.recommendations.without_results')
+    else
+      t('proposals.index.recommendations.without_interests')
+    end
+  end
+
+  def author_of_proposal?(proposal)
+    author_of?(proposal, current_user)
+  end
+
+  def current_editable?(proposal)
+    current_user && proposal.editable_by?(current_user)
+  end
+
+  def link_to_new_proposal_proceeding_path(proceeding, sub_proceeding, title = nil)
     link_to title || sub_proceeding, new_proposal_path(proceeding: proceeding, sub_proceeding: sub_proceeding)
   end
 
@@ -52,14 +68,6 @@ module ProposalsHelper
 
   def can_create_document?(document, proposal)
     can?(:create, document) && proposal.documents.size < Proposal.max_documents_allowed
-  end
-
-  def author_of_proposal?(proposal)
-    author_of?(proposal, current_user)
-  end
-
-  def current_editable?(proposal)
-    current_user && proposal.editable_by?(current_user)
   end
 
 end
