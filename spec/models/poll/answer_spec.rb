@@ -14,14 +14,35 @@ describe Poll::Answer do
   end
 
   describe "#record_voter_participation" do
+
+    let(:author) { create(:user, :level_two) }
+    let(:poll) { create(:poll) }
+    let(:question) { create(:poll_question, poll: poll, valid_answers: "Yes, No") }
+
     it "creates a poll_voter with user and poll data" do
-      answer = create(:poll_answer)
+      answer = create(:poll_answer, question: question, author: author, answer: "Yes")
       expect(answer.poll.voters).to be_blank
 
       answer.record_voter_participation
-      expect(answer.poll.reload.voters.size).to eq(1)
-      voter = answer.poll.voters.first
+      expect(poll.reload.voters.size).to eq(1)
+      voter = poll.voters.first
 
+      expect(voter.document_number).to eq(answer.author.document_number)
+      expect(voter.poll_id).to eq(answer.poll.id)
+    end
+
+    it "updates a poll_voter with user and poll data" do
+      answer = create(:poll_answer, question: question, author: author, answer: "Yes")
+      answer.record_voter_participation
+
+      expect(poll.reload.voters.size).to eq(1)
+
+      answer = create(:poll_answer, question: question, author: author, answer: "No")
+      answer.record_voter_participation
+
+      expect(poll.reload.voters.size).to eq(1)
+
+      voter = poll.voters.first
       expect(voter.document_number).to eq(answer.author.document_number)
       expect(voter.poll_id).to eq(answer.poll.id)
     end
