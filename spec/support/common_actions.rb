@@ -24,6 +24,17 @@ module CommonActions
     click_button 'Enter'
   end
 
+  def login_through_form_as_officer(user)
+    visit root_path
+    click_link 'Sign in'
+
+    fill_in 'user_login', with: user.email
+    fill_in 'user_password', with: user.password
+
+    click_button 'Enter'
+    visit new_officing_residence_path
+  end
+
   def login_as_authenticated_manager
     expected_response = {login: login, user_key: user_key, date: date}.with_indifferent_access
     login, user_key, date = "JJB042", "31415926", Time.current.strftime("%Y%m%d%H%M%S")
@@ -285,6 +296,28 @@ module CommonActions
       find('.add a').trigger('click')
       expect(page).to have_content "Remove"
     end
+  end
+
+  def vote_for_poll_via_web
+    visit question_path(question)
+
+    click_link 'Answer this question'
+    click_link 'Yes'
+
+    expect(page).to_not have_link('Yes')
+    expect(Poll::Voter.count).to eq(1)
+  end
+
+  def vote_for_poll_via_booth
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+
+    first(:button, "Confirm vote").click
+    expect(page).to have_content "Vote introduced!"
+
+    expect(Poll::Voter.count).to eq(1)
   end
 
 end
