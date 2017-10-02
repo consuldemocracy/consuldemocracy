@@ -255,7 +255,6 @@
   .icon-debates,
   .icon-proposals,
   .icon-budget,
-  .icon-documents,
   .icon-image {
     font-size: rem-calc(50);
     line-height: $line-height;
@@ -267,7 +266,6 @@
   }
 
   .icon-proposals,
-  .icon-documents,
   .icon-image {
     color: $proposals;
   }
@@ -312,11 +310,9 @@
 .budget-investment-new,
 .proposal-form,
 .proposal-edit,
-.new_poll_question,
-.edit_poll_question {
+.poll-question-form {
   @include direct-uploads;
 }
-
 
 // 03. Show participation
 // ----------------------
@@ -358,8 +354,7 @@
     width: rem-calc(48);
   }
 
-  .edit-debate,
-  .edit-proposal {
+  .edit-debate {
     margin-bottom: 0;
   }
 
@@ -661,20 +656,17 @@
 .proposals-list .proposal {
 
   @include breakpoint(small) {
+
     .no-image {
       width: 100%;
-      max-width: 300px;
+      max-width: rem-calc(300);
       margin: 0 auto;
-    }
 
-    .no-image::before {
-      content: '';
-      display: block;
-      padding-top: 100%;
-    }
-
-    h3 {
-      font-size: 1.3rem;
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
     }
 
     .column:first-child {
@@ -683,17 +675,15 @@
   }
 
   @include breakpoint(medium) {
+
     .panel {
-      padding: 0 0.75rem 0 0;
+      padding: 0 $line-height / 2 0 0;
 
       .no-image {
-        height: 245px;
-        width: 140px;
+        height: 100%;
+        min-height: rem-calc(245);
+        width: rem-calc(140);
       }
-    }
-
-    h3 {
-      font-size: 1.4rem;
     }
 
     .column:first-child {
@@ -705,7 +695,7 @@
     }
 
     .column:last-child:not(:first-child) {
-      padding-top: 0.75rem;
+      padding-top: $line-height / 2;
     }
 
     img {
@@ -1701,9 +1691,13 @@
 }
 
 .section-title-divider {
-  border-bottom: 2px solid $brand;
-  color: $brand;
-  margin-bottom: $line-height;
+  border-bottom: 1px solid #eee;
+  color: #000;
+  margin: $line-height 0;
+
+  span {
+    border-bottom: 1px solid #000;
+  }
 }
 
 .poll-question {
