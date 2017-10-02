@@ -109,6 +109,10 @@ es:
         hot_score: Más activos hoy
         most_commented: Más comentados
         relevance: Más relevantes
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen debates relacionados con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -348,6 +352,10 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen propuestas relacionadas con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -394,7 +402,7 @@ es:
     proposal:
       created: "¡Has creado una propuesta!"
       share:
-        guide: "Compártela para que la gente empieze a apoyarla."
+        guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: "Ahora no, ir a mi propuesta"
       improve_info: "Mejora tu campaña y consigue más apoyos"
@@ -753,6 +761,16 @@ es:
     proposal:
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
+    recommended:
+      title: Recomendaciones que te pueden interesar
+      debates:
+        title: Debates recomendados
+        btn_text_link: Todos los debates recomendados
+      proposals:
+        title: Propuestas recomendadas
+        btn_text_link: Todas las propuestas recomendadas
+      budget_investments:
+        title: Presupuestos recomendados
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar

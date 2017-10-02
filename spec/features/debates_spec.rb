@@ -219,7 +219,7 @@ feature 'Debates' do
 
     visit edit_debate_path(debate)
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content "You do not have permission to carry out the action 'edit' on debate."
   end
 
@@ -234,7 +234,7 @@ feature 'Debates' do
     visit edit_debate_path(debate)
 
     expect(current_path).not_to eq(edit_debate_path(debate))
-    expect(current_path).to eq(proposals_path)
+    expect(current_path).to eq(root_path)
     expect(page).to have_content 'You do not have permission to'
   end
 
@@ -350,6 +350,69 @@ feature 'Debates' do
 
       expect(current_url).to include('order=created_at')
       expect(current_url).to include('page=1')
+    end
+
+    context 'Recommendations' do
+
+      background do
+        Setting['feature.user.recommendations'] = true
+        create(:debate, title: 'Best',   cached_votes_total: 10, tag_list: "Sport")
+        create(:debate, title: 'Medium', cached_votes_total: 5,  tag_list: "Sport")
+        create(:debate, title: 'Worst',  cached_votes_total: 1,  tag_list: "Sport")
+      end
+
+      after do
+        Setting['feature.user.recommendations'] = nil
+      end
+
+      scenario 'Debates can not ordered by recommendations when there is not an user logged', :js do
+        visit debates_path
+
+        expect(page).not_to have_selector('a', text: 'recommendations')
+      end
+
+      scenario 'Should display text when there are not recommendeds results', :js do
+        user = create(:user)
+        proposal = create(:proposal, tag_list: "Distinct_to_sport")
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+        visit debates_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "There are not debates related to your interests"
+      end
+
+      scenario 'Should display text when user has not related interests', :js do
+        user = create(:user)
+        login_as(user)
+        visit debates_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_content "Follow proposals so we can give you recommendations"
+      end
+
+      scenario 'Debates are ordered by recommendations when there is a user logged', :js do
+        proposal = create(:proposal, tag_list: "Sport" )
+        user = create(:user)
+        create(:follow, followable: proposal, user: user)
+        login_as(user)
+
+        visit debates_path
+
+        click_link 'recommendations'
+
+        expect(page).to have_selector('a.active', text: 'recommendations')
+
+        within '#debates' do
+          expect('Best').to appear_before('Medium')
+          expect('Medium').to appear_before('Worst')
+        end
+
+        expect(current_url).to include('order=recommendations')
+        expect(current_url).to include('page=1')
+      end
     end
   end
 
@@ -757,6 +820,32 @@ feature 'Debates' do
         expect(all(".debate")[2].text).to match "Show what you got"
         expect(page).to_not have_content "Do not display"
       end
+    end
+
+    scenario "Reorder by recommendations results maintaing search", :js do
+      Setting['feature.user.recommendations'] = true
+      user = create(:user)
+      login_as(user)
+      debate1 = create(:debate, title: "Show you got",      cached_votes_total: 10,  tag_list: "Sport")
+      debate2 = create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
+      debate3 = create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
+      debate4 = create(:debate, title: "Do not display",    cached_votes_total: 1)
+      proposal1 =  create(:proposal, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
+
+      visit debates_path
+      fill_in "search", with: "Show you got"
+      click_button "Search"
+      click_link 'recommendations'
+      expect(page).to have_selector("a.active", text: "recommendations")
+
+      within("#debates") do
+        expect(all(".debate")[0].text).to match "Show you got"
+        expect(all(".debate")[1].text).to match "Show what you got"
+        expect(page).to_not have_content "Do not display with same tag"
+        expect(page).to_not have_content "Do not display"
+      end
+      Setting['feature.user.recommendations'] = nil
     end
 
     scenario 'After a search do not show featured debates' do
