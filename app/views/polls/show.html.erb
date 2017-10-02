@@ -31,8 +31,14 @@
 
   <div class="row margin-top">
     <div class="small-12 medium-9 column">
-      <% @questions.each do |question| %>
-        <%= render 'polls/questions/question', question: question %>
+      <% if @poll.voted_in_booth?(current_user) %>
+        <div class="callout warning">
+          <%= t("polls.show.already_voted_in_booth") %>
+        </div>
+      <% else %>
+        <% @questions.each do |question| %>
+          <%= render 'polls/questions/question', question: question %>
+        <% end %>
       <% end %>
     </div>
 

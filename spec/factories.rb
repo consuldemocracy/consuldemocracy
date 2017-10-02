@@ -52,6 +52,12 @@ FactoryGirl.define do
     trait :verified do
       verified_at Time.current
     end
+
+    trait :in_census do
+      document_number "12345678Z"
+      document_type "1"
+      verified_at Time.current
+    end
   end
 
   factory :identity do
