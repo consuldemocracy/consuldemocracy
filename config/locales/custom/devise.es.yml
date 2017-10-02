@@ -54,7 +54,7 @@ es:
       send_instructions: "Recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
       send_paranoid_instructions: "Si tu cuenta existe, recibirás un correo electrónico en unos minutos con instrucciones sobre cómo desbloquear tu cuenta."
       unlocked: "Tu cuenta ha sido desbloqueada. Por favor inicia sesión para continuar."
-      
+
   devise_views:
     confirmations:
       new:
@@ -129,6 +129,7 @@ es:
         remember_me: Recordarme
         submit: Entrar
         title: Entrar
+        login_label: Email
     shared:
       links:
         login: Entrar

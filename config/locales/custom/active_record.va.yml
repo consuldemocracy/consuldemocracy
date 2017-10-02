@@ -76,6 +76,7 @@ va:
         description: "Descripció"
         terms_of_service: "Termes de servei"
       user:
+        login: Correu o nom d'usuari
         email: "Correu electrònic"
         username: "Nom d'usuari"
         password_confirmation: "Confirmació de contrasenya"

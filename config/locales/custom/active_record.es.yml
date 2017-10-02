@@ -76,6 +76,7 @@ es:
         description: "Descripción"
         terms_of_service: "Términos de servicio"
       user:
+        login: Email o nombre de usuario
         email: "Correo electrónico"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
