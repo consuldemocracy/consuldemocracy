@@ -83,6 +83,64 @@ describe :voter do
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
+    context "origin" do
+
+      it "should not be valid without an origin" do
+        voter.origin = nil
+        expect(voter).to_not be_valid
+      end
+
+      it "should not be valid without a valid origin" do
+        voter.origin = "invalid_origin"
+        expect(voter).to_not be_valid
+      end
+
+      it "should be valid with a booth origin" do
+        voter.origin = "booth"
+        expect(voter).to be_valid
+      end
+
+      it "should be valid with a web origin" do
+        voter.origin = "web"
+        expect(voter).to be_valid
+      end
+
+    end
+
+  end
+
+  describe "scopes" do
+
+    describe "#web" do
+      it "returns voters with a web origin" do
+        voter1 = create(:poll_voter, origin: "web")
+        voter2 = create(:poll_voter, origin: "web")
+        voter3 = create(:poll_voter, origin: "booth")
+
+        web_voters = Poll::Voter.web
+
+        expect(web_voters.count).to eq(2)
+        expect(web_voters).to     include(voter1)
+        expect(web_voters).to     include(voter2)
+        expect(web_voters).to_not include(voter3)
+      end
+    end
+
+    describe "#booth" do
+      it "returns voters with a booth origin" do
+        voter1 = create(:poll_voter, origin: "booth")
+        voter2 = create(:poll_voter, origin: "booth")
+        voter3 = create(:poll_voter, origin: "web")
+
+        booth_voters = Poll::Voter.booth
+
+        expect(booth_voters.count).to eq(2)
+        expect(booth_voters).to     include(voter1)
+        expect(booth_voters).to     include(voter2)
+        expect(booth_voters).to_not include(voter3)
+      end
+    end
+
   end
 
   describe "save" do
