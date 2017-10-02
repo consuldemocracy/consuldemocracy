@@ -3,13 +3,35 @@ require 'rails_helper'
 describe Poll::Answer do
 
   describe "validations" do
-    it "validates that the answers are included in the Poll::Question's list" do
-      q = create(:poll_question, valid_answers: 'One, Two, Three')
-      expect(build(:poll_answer, question: q, answer: 'One')).to be_valid
-      expect(build(:poll_answer, question: q, answer: 'Two')).to be_valid
-      expect(build(:poll_answer, question: q, answer: 'Three')).to be_valid
 
-      expect(build(:poll_answer, question: q, answer: 'Four')).to_not be_valid
+    let(:answer) { build(:poll_answer) }
+
+    it "should be valid" do
+      expect(answer).to be_valid
+    end
+
+    it "should not be valid wihout a question" do
+      answer.question = nil
+      expect(answer).to_not be_valid
+    end
+
+    it "should not be valid without an author" do
+      answer.author = nil
+      expect(answer).to_not be_valid
+    end
+
+    it "should not be valid without an answer" do
+      answer.answer = nil
+      expect(answer).to_not be_valid
+    end
+
+    it "should be valid for answers included in the Poll::Question's list" do
+      question = create(:poll_question, valid_answers: 'One, Two, Three')
+      expect(build(:poll_answer, question: question, answer: 'One')).to be_valid
+      expect(build(:poll_answer, question: question, answer: 'Two')).to be_valid
+      expect(build(:poll_answer, question: question, answer: 'Three')).to be_valid
+
+      expect(build(:poll_answer, question: question, answer: 'Four')).to_not be_valid
     end
   end
 
