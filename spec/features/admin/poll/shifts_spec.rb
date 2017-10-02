@@ -31,13 +31,14 @@ feature 'Admin shifts' do
   end
 
   scenario "Create Vote Collection Shift", :js do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     vote_collection_dates = (poll.starts_at.to_date..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
 
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
@@ -63,13 +64,14 @@ feature 'Admin shifts' do
   end
 
   scenario "Create Recount & Scrutiny Shift", :js do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a.map { |date| I18n.l(date, format: :long) }
 
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
@@ -97,11 +99,12 @@ feature 'Admin shifts' do
   end
 
   scenario "Error on create", :js do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"

@@ -181,54 +181,6 @@ feature 'Admin polls' do
         expect(page).to_not have_content "There are no questions assigned to this poll"
       end
 
-      scenario 'Add question to poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, title: 'Should we rebuild the city?')
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-
-        fill_in 'search-questions', with: 'rebuild'
-        click_button 'Search'
-
-        within('#search-questions-results') do
-          click_link 'Include question'
-        end
-
-        expect(page).to have_content 'Question added to this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-      end
-
-      scenario 'Remove question from poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, poll: poll)
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-
-        within("#poll_question_#{question.id}") do
-          click_link 'Remove question from poll'
-        end
-
-        expect(page).to have_content 'Question removed from this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-        expect(page).to_not have_content question.title
-      end
-
     end
   end
 
