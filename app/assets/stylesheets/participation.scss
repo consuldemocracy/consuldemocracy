@@ -1605,6 +1605,28 @@
   background: #eee;
   color: $text;
 }
+
+.zoom-link {
+  background: #fff;
+  border-radius: rem-calc(48);
+  color: #000;
+  font-size: rem-calc(24);
+  font-weight: bold;
+  height: rem-calc(48);
+  line-height: rem-calc(48);
+  right: 12px;
+  padding-top: rem-calc(4);
+  position: absolute;
+  text-align: center;
+  top: 24px;
+  width: rem-calc(48);
+  z-index: 9;
+
+  &:hover {
+    background: $dark;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .poll,

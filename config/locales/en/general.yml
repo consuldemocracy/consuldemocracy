@@ -492,6 +492,7 @@ en:
       cant_answer_expired: "This poll has finished."
       more_info_title: "More information"
       documents: Documents
+      zoom_plus: Expand image
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
