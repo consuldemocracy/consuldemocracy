@@ -13,19 +13,21 @@ class Poll
     before_create :persist_data
     after_create :create_officer_assignments
 
-    def create_officer_assignments
-      booth.booth_assignments.each do |booth_assignment|
-        attrs = { officer_id:          officer_id,
-                  date:                date,
-                  booth_assignment_id: booth_assignment.id }
-        Poll::OfficerAssignment.create!(attrs)
-      end
-    end
-
     def persist_data
       self.officer_name = officer.name
       self.officer_email = officer.email
     end
 
+    def create_officer_assignments
+      booth.booth_assignments.each do |booth_assignment|
+        attrs = {
+          officer_id:          officer_id,
+          date:                date,
+          booth_assignment_id: booth_assignment.id,
+          final:               recount_scrutiny?
+        }
+        Poll::OfficerAssignment.create!(attrs)
+      end
+    end
   end
 end
