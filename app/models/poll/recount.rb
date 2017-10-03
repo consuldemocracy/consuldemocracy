@@ -1,6 +1,6 @@
 class Poll::Recount < ActiveRecord::Base
 
-  VALID_ORIGINS = %w{ web booth letter }
+  VALID_ORIGINS = %w{web booth letter}.freeze
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :booth_assignment
@@ -22,7 +22,7 @@ class Poll::Recount < ActiveRecord::Base
 
     [:white, :null, :total].each do |amount|
       next unless send("#{amount}_amount_changed?") && send("#{amount}_amount_was").present?
-      self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_was").to_s}"
+      self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_was")}"
       amounts_changed = true
     end
 
@@ -30,7 +30,7 @@ class Poll::Recount < ActiveRecord::Base
   end
 
   def update_officer_author
-      self.officer_assignment_id_log += ":#{officer_assignment_id_was.to_s}"
-      self.author_id_log += ":#{author_id_was.to_s}"
+    self.officer_assignment_id_log += ":#{officer_assignment_id_was}"
+    self.author_id_log += ":#{author_id_was}"
   end
 end

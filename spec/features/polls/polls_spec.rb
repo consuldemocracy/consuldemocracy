@@ -184,6 +184,7 @@ feature 'Polls' do
       poll.geozones << geozone
       create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
       user = create(:user, :level_two, geozone: geozone)
+
       login_as user
       visit poll_path(poll)
 
@@ -191,6 +192,26 @@ feature 'Polls' do
 
       expect(page).to_not have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
+    end
+
+    scenario 'Level 2 users changing answer', :js do
+      poll.update(geozone_restricted: true)
+      poll.geozones << geozone
+      create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
+      user = create(:user, :level_two, geozone: geozone)
+
+      login_as user
+      visit poll_path(poll)
+
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+
+      click_link 'Chewbacca'
+
+      expect(page).to_not have_link('Chewbacca')
+      expect(page).to have_link('Han Solo')
     end
 
   end
