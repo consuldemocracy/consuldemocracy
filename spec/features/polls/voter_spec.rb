@@ -23,7 +23,7 @@ feature "Voter" do
       login_as user
       visit question_path(question)
 
-      click_link 'Answer this question'
+      click_link 'Go to voting page'
       click_link 'Yes'
 
       expect(page).to_not have_link('Yes')
@@ -93,7 +93,7 @@ feature "Voter" do
         login_as user
         visit question_path(question)
 
-        click_link 'Answer this question'
+        click_link 'Go to voting page'
 
         expect(page).to_not have_link('Yes')
         expect(page).to have_content "You have already participated in a booth for this poll."

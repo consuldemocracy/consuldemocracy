@@ -107,18 +107,21 @@ describe :voter do
 
     context "assignments" do
       it "should not be valid without a booth_assignment_id when origin is booth" do
+        skip "rethink how to track when an officer accepts a vote"
         voter.origin = 'booth'
         voter.booth_assignment_id = nil
         expect(voter).to_not be_valid
       end
 
       it "should not be valid without an officer_assignment_id when origin is booth" do
+        skip "rethink how to track when an officer accepts a vote"
         voter.origin = 'booth'
         voter.officer_assignment_id = nil
         expect(voter).to_not be_valid
       end
 
       it "should be valid without assignments when origin is web" do
+        skip "rethink how to track when an officer accepts a vote"
         voter.origin = 'web'
         voter.booth_assignment_id = nil
         voter.officer_assignment_id = nil
