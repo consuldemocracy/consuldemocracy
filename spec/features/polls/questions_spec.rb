@@ -82,7 +82,7 @@ feature 'Poll Questions' do
       login_as(create(:user, :level_two, geozone: geozone))
       visit question_path(question)
 
-      expect(page).to have_link('Answer this question')
+      expect(page).to have_link('Go to voting page')
     end
 
     scenario 'Level 2 users who have already answered' do
@@ -94,7 +94,7 @@ feature 'Poll Questions' do
       login_as user
       visit question_path(question)
 
-      expect(page).to have_link('Answer this question')
+      expect(page).to have_link('Go to voting page')
     end
 
     scenario 'Level 2 users answering', :js do
@@ -104,7 +104,7 @@ feature 'Poll Questions' do
       login_as user
       visit question_path(question)
 
-      expect(page).to have_link('Answer this question')
+      expect(page).to have_link('Go to voting page')
     end
 
     scenario 'Records participation', :js do
@@ -114,7 +114,7 @@ feature 'Poll Questions' do
       login_as user
       visit question_path(question)
 
-      click_link 'Answer this question'
+      click_link 'Go to voting page'
       click_link 'Han Solo'
 
       expect(page).to_not have_link('Han Solo')
