@@ -1,0 +1,18 @@
+<% provide :title, t("meta_tags.welcome_index.title") %>
+<% provide :meta_description, t("meta_tags.welcome_index.description") %>
+<% provide :tracking_page_number, "23" %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: root_url %>
+<% end %>
+
+<div class="welcome">
+
+  <h1 class="show-for-sr"><%= t("welcome.title") %></h1>
+
+  <%= render "header" %>
+
+  <%= render "cards" %>
+
+  <%= render "features" %>
+
+</div>
