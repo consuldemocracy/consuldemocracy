@@ -1,8 +1,10 @@
 class PollsController < ApplicationController
+  include CommentableActions
 
   load_and_authorize_resource
 
   has_filters %w{current expired incoming}
+  has_orders %w{most_voted newest oldest}, only: :show
 
   ::Poll::Answer # trigger autoload
 
@@ -12,6 +14,9 @@ class PollsController < ApplicationController
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
+
+    @commentable = @poll
+    @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
 
     @answers_by_question_id = {}
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))

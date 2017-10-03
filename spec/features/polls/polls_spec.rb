@@ -256,5 +256,38 @@ feature 'Polls' do
       expect(page).to have_link('Han Solo')
     end
 
+    scenario 'User can write comments' do
+      create(:comment, commentable: poll)
+
+      visit poll_path(poll)
+
+      expect(page).to have_css('.comment', count: 1)
+
+      comment = Comment.last
+      within first('.comment') do
+        expect(page).to have_content comment.user.name
+        expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
+        expect(page).to have_content comment.body
+      end
+    end
+
+    scenario 'user can reply to comment' do
+      oliver = create(:user, username: 'Oliver Atom')
+      benji = create(:user, username: 'Benji Prince')
+      create(:comment, commentable: poll, user: oliver)
+
+      login_as(oliver)
+      visit poll_path(poll)
+
+      expect(page).to have_content oliver.username
+    end
+
+    scenario 'user can upvote a comment' do
+
+    end
+
+    scenario 'user can downvote a comment' do
+
+    end
   end
 end
