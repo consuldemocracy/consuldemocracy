@@ -13,6 +13,8 @@ class Poll < ActiveRecord::Base
 
   has_and_belongs_to_many :geozones
 
+  accepts_nested_attributes_for :questions
+
   validates :name, presence: true
 
   validate :date_range
