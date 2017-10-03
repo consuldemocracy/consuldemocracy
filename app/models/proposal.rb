@@ -58,13 +58,26 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
+  scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
+  scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
+
+  def self.recommendations(user)
+    tagged_with(user.interests, any: true).
+    where("author_id != ?", user.id).
+    unsuccessful.
+    not_followed_by_user(user)
+  end
+
+  def self.not_followed_by_user(user)
+    where.not(id: followed_by_user(user).pluck(:id))
+  end
 
   def to_param
     "#{id}-#{title}".parameterize
@@ -183,6 +196,12 @@ class Proposal < ActiveRecord::Base
 
   def users_to_notify
     (voters + followers).uniq
+  end
+
+  def self.proposals_orders(user)
+    orders = %w{hot_score confidence_score created_at relevance archival_date}
+    orders << "recommendations" if user.present?
+    orders
   end
 
   protected

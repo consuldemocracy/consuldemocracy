@@ -138,4 +138,33 @@ describe :poll do
       end
     end
   end
+
+  describe "#voted_in_booth?" do
+
+    it "returns true if the user has already voted in booth" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      create(:poll_voter, poll: poll, user: user, origin: "booth")
+
+      expect(poll.voted_in_booth?(user)).to be
+    end
+
+    it "returns false if the user has not already voted in a booth" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      expect(poll.voted_in_booth?(user)).to_not be
+    end
+
+    it "returns false if the user has voted in web" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      create(:poll_voter, poll: poll, user: user, origin: "web")
+
+      expect(poll.voted_in_booth?(user)).to_not be
+    end
+
+  end
 end

@@ -1,0 +1,42 @@
+<div class="small-12 medium-4 large-4 <%= carousel_size %> column text-center <%= key %> ">
+  <div class="card small-centered <%= key %>-inner">
+
+    <h4><%= t("welcome.recommended.#{key.underscore}.title") %></h4>
+
+    <div class="orbit" role="region" data-orbit data-use-m-u-i="false">
+      <div class="orbit-wrapper">
+
+        <ul class="orbit-container no-bullet" tabindex="0" >
+          <% recommendeds.each_with_index do |recommended, index| %>
+
+            <li class="orbit-slide <%= active_class(index) %>" data-slide="<%= index %>" style="position: relative; <%= slide_display(index) %>" aria-live="polite">
+              <div class="card">
+                <%= render_recommendation_image(recommended, image_default) %>
+                <div class="card-section">
+                  <%= link_to recommended_path(recommended) do %>
+                    <h5 class="truncate-horizontal-text"><%= recommended.title %></h5>
+                  <% end %>
+                  <p><%= recommended.description %></p>
+                </div>
+              </div>
+            </li>
+
+          <% end %>
+        </ul>
+        <div class="truncate"></div>
+
+      </div>
+
+      <nav class="orbit-bullets">
+        <% recommendeds.each_with_index do |recommended, index| %>
+          <button data-slide="<%= index %>" class="<%= active_class(index) %>">
+            <span class="show-for-sr">Second slide details.</span>
+          </button>
+        <% end %>
+      </nav>
+
+    </div>
+
+  </div>
+  <%= link_to btn_text_link, btn_path_link, class: 'button hollow expanded' %>
+</div>
