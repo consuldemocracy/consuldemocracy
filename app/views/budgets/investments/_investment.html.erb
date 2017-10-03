@@ -2,7 +2,7 @@
   <div class="panel">
     <div class="row">
 
-      <% if feature?(:index_images) %>
+      <% if feature?(:allow_images) %>
         <div class="small-12 medium-3 large-2 column text-center">
           <% if investment.image.present? %>
             <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>

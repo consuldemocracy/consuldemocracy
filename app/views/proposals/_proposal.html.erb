@@ -9,7 +9,7 @@
 
     <div class="row">
 
-      <% if feature?(:index_images) %>
+      <% if feature?(:allow_images) %>
         <div class="small-12 medium-3 large-2 column text-center">
           <% if proposal.image.present? %>
             <%= image_tag proposal.image_url(:thumb), alt: proposal.image.title %>
