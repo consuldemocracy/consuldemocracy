@@ -8,7 +8,8 @@ desc "Create second citizen poll"
     # destroy_all
 
     (1..10).each do |i|
-      poll = Poll.new(poll_attributes(i))
+      poll = Poll.find_or_initialize_by(name: poll_attributes(i)[:name])
+      poll.attributes = poll_attributes(i)
       if poll.save
         print "."
       else
