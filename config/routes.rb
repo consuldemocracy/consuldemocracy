@@ -273,7 +273,6 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
-        get :search_questions, on: :member
         patch :add_question, on: :member
 
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
