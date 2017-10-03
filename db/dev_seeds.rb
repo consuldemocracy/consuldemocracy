@@ -53,6 +53,7 @@ Setting.create(key: 'feature.legislation', value: "true")
 Setting.create(key: 'feature.user.recommendations', value: "true")
 Setting.create(key: 'feature.community', value: "true")
 Setting.create(key: 'feature.map', value: "true")
+Setting.create(key: 'feature.index_images', value: "true")
 
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")

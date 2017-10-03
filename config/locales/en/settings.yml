@@ -53,6 +53,7 @@ en:
         recommendations: Recommendeds
       community: Community on proposals and investments
       map: Proposals and budget investments geolocation
+      index_images: Show images on lists
     map_latitude: Latitude
     map_longitude: Longitude
     map_zoom: Zoom

@@ -53,6 +53,7 @@ es:
         recommendations: Recomendaciones
       community: Comunidad en propuestas y proyectos de inversión
       map: Geolocalización de propuestas y proyectos de inversión
+      index_images: Mostrar imágenes en los listados
     map_latitude: Latitud
     map_longitude: Longitud
     map_zoom: Zoom
