@@ -528,7 +528,7 @@ en:
     default_valid_answers: "Yes, No"
     show:
       answer_this_question: "Go to voting page"
-      original_proposal: "See proposal's text"
+      original_proposal: "Original proposal"
       author: "Created by"
       dates_title: "Voting dates"
       more_info: "More information"
