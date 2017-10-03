@@ -12,28 +12,18 @@
       <tr>
         <th><%= t("admin.poll_officer_assignments.index.table_name") %></th>
         <th><%= t("admin.poll_officer_assignments.index.table_email") %></th>
-        <th class="text-center"><%= t("admin.polls.show.table_assignment") %></th>
       </tr>
     </thead>
     <tbody>
       <% @officers.each do |user| %>
       <tr>
         <td>
-          <%= user.name %>
+          <strong>
+            <%= link_to user.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: user.id) %>
+          </strong>
         </td>
         <td>
           <%= user.email %>
-        </td>
-        <td class="text-center">
-        <% if @poll.officer_ids.include?(user.poll_officer.id) %>
-            <%= link_to t("admin.poll_officer_assignments.index.edit_officer_assignments"),
-                          by_officer_admin_poll_officer_assignments_path(@poll, officer_id: user.poll_officer.id),
-                          class: "button hollow alert" %>
-          <% else %>
-            <%= link_to t("admin.poll_officer_assignments.index.add_officer_assignments"),
-                          by_officer_admin_poll_officer_assignments_path(@poll, officer_id: user.poll_officer.id),
-                          class: "button hollow" %>
-          <% end %>
         </td>
       </tr>
       <% end %>
