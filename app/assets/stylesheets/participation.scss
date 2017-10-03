@@ -310,6 +310,10 @@
 .budget-investment-new,
 .proposal-form,
 .proposal-edit,
+.new_poll_question,
+.edit_poll_question,
+.new_poll,
+.edit_poll,
 .poll-question-form {
   @include direct-uploads;
 }

@@ -783,6 +783,8 @@ ActiveRecord::Schema.define(version: 20171003095936) do
     t.datetime "ends_at"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
+    t.text     "summary"
+    t.text     "description"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
