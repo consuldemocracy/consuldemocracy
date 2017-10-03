@@ -89,6 +89,10 @@ class Poll < ActiveRecord::Base
     Poll::Voter.where(poll: self, user: user, origin: "booth").exists?
   end
 
+  def voted_in_booth?(user)
+    Poll::Voter.where(poll: self, user: user, origin: "booth").exists?
+  end
+
   def date_range
     unless starts_at.present? && ends_at.present? && starts_at <= ends_at
       errors.add(:starts_at, I18n.t('errors.messages.invalid_date_range'))
