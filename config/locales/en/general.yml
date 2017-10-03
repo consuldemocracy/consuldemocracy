@@ -490,6 +490,8 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
+      more_info_title: "More information"
+      documents: Documents
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"

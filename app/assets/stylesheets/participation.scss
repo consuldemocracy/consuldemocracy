@@ -1568,6 +1568,15 @@
   }
 }
 
+.poll-more-info,
+.poll-more-info-answers {
+  border-top: 1px solid #eee;
+}
+
+.poll-more-info-answers {
+  background: #fafafa;
+}
+
 .poll,
 .poll-question {
   border: 1px solid $border;
