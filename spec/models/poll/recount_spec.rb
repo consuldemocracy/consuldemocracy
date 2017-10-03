@@ -3,7 +3,9 @@ require 'rails_helper'
 describe Poll::Recount do
 
   describe "logging changes" do
-    let(:poll_recount) { create(:poll_recount) }
+    let(:author) { create(:user) }
+    let(:officer_assignment) { create(:poll_officer_assignment) }
+    let(:poll_recount) { create(:poll_recount, author: author, officer_assignment: officer_assignment) }
 
     it "should update white_amount_log if white_amount changes" do
       poll_recount.white_amount = 33
@@ -69,7 +71,7 @@ describe Poll::Recount do
       poll_recount.save
 
       expect(poll_recount.white_amount_log).to eq(":0:33:32")
-      expect(poll_recount.officer_assignment_id_log).to eq(":101:102")
+      expect(poll_recount.officer_assignment_id_log).to eq(":#{officer_assignment.id}:101:102")
     end
 
     it "should update author_id if amount changes" do
@@ -95,7 +97,7 @@ describe Poll::Recount do
       poll_recount.save!
 
       expect(poll_recount.white_amount_log).to eq(":0:33:32")
-      expect(poll_recount.author_id_log).to eq(":#{first_author.id}:#{second_author.id}:#{third_author.id}")
+      expect(poll_recount.author_id_log).to eq(":#{author.id}:#{first_author.id}:#{second_author.id}")
     end
   end
 
