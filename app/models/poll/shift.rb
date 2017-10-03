@@ -12,6 +12,7 @@ class Poll
 
     before_create :persist_data
     after_create :create_officer_assignments
+    before_destroy :destroy_officer_assignments
 
     def persist_data
       self.officer_name = officer.name
@@ -28,6 +29,13 @@ class Poll
         }
         Poll::OfficerAssignment.create!(attrs)
       end
+    end
+
+    def destroy_officer_assignments
+      Poll::OfficerAssignment.where(booth_assignment: booth.booth_assignments,
+                                    officer: officer,
+                                    date: date,
+                                    final: recount_scrutiny?).destroy_all
     end
   end
 end
