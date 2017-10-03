@@ -489,15 +489,11 @@ en:
         no_officers: "There are no officers assigned to this poll."
         table_name: "Name"
         table_email: "Email"
-        add_officer_assignments: "Add shifts as officer"
-        edit_officer_assignments: "Edit officing shifts"
       by_officer:
         date: "Date"
         booth: "Booth"
         assignments: "Officing shifts in this poll"
         no_assignments: "This user has no officing shifts in this poll."
-        total_recounts: "Total recounts"
-        total_recount: "Total recount (by officer)"
     poll_shifts:
       new:
         add_shift: "Add shift"
@@ -570,16 +566,10 @@ en:
         results_tab: Results
         no_questions: "There are no questions assigned to this poll."
         questions_title: "List of questions"
-        remove_question: "Remove question from poll"
-        add_question: "Include question"
         table_title: "Title"
-        table_assignment: "Assignment"
-        table_name: "Name"
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
-        question_removed: "Question removed from this poll"
-        error_on_question_removed: "Question could not be removed from this poll"
     questions:
       index:
         title: "Questions"
@@ -606,7 +596,6 @@ en:
         description: Description
         video_url: External video
         documents: Documents (1)
-        preview: View on website
     recounts:
       index:
         title: "Recounts"

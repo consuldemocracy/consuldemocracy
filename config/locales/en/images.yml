@@ -9,6 +9,9 @@ en:
       delete_button: Remove image
       note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
       add_new_image: Add image
+      title_placeholder: Add a descriptive title for the image
+      admin_title: "Main image of the poll"
+      admin_alt_text: "Alternative text for the image"
 
     actions:
       destroy:
