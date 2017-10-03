@@ -112,11 +112,7 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resources :polls, only: [:show, :index] do
-    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
-      post :answer, on: :member
-    end
-  end
+  resources :polls, only: [:show, :index]
 
   namespace :legislation do
     resources :processes, only: [:index, :show] do
