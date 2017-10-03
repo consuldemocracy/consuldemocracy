@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 describe :shift do
-  let(:shift) { build(:poll_shift) }
+  let(:poll) { create(:poll) }
+  let(:booth) { create(:poll_booth) }
+  let(:user) { create(:user, username: "Ana", email: "ana@example.com") }
+  let(:officer) { create(:poll_officer, user: user) }
+  let(:recount_shift) { build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny) }
 
   describe "validations" do
+    let(:shift) { build(:poll_shift) }
 
     it "should be valid" do
       expect(shift).to be_valid
@@ -34,14 +39,10 @@ describe :shift do
   describe "officer_assignments" do
 
     it "should create and destroy corresponding officer_assignments" do
-      poll1 = create(:poll)
       poll2 = create(:poll)
       poll3 = create(:poll)
 
-      booth = create(:poll_booth)
-      officer = create(:poll_officer)
-
-      booth_assignment1 = create(:poll_booth_assignment, poll: poll1, booth: booth)
+      booth_assignment1 = create(:poll_booth_assignment, poll: poll, booth: booth)
       booth_assignment2 = create(:poll_booth_assignment, poll: poll2, booth: booth)
 
       expect { create(:poll_shift, booth: booth, officer: officer, date: Date.current) }.to change {Poll::OfficerAssignment.all.count}.by(2)
@@ -66,13 +67,8 @@ describe :shift do
     end
 
     it "should create final officer_assignments" do
-      poll = create(:poll)
-      booth = create(:poll_booth)
-      officer = create(:poll_officer)
-
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-
-      shift = create(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)
+      recount_shift.save
 
       officer_assignments = Poll::OfficerAssignment.all
       expect(officer_assignments.count).to eq(1)
@@ -88,10 +84,7 @@ describe :shift do
   end
 
   describe "#persist_data" do
-
-    let(:user) { create(:user, username: "Ana", email: "ana@example.com") }
-    let(:officer) { create(:poll_officer, user: user) }
-    let(:shift) { create(:poll_shift, officer: officer) }
+    let(:shift) { create(:poll_shift, officer: officer, booth: booth) }
 
     it "should maintain officer data after destroying associated user" do
       shift.officer.user.destroy
