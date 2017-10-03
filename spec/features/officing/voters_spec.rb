@@ -26,6 +26,8 @@ feature 'Voters' do
     page.evaluate_script("window.location.reload()")
     expect(page).to have_content "Has already participated in this poll"
     expect(page).to_not have_button "Confirm vote"
+
+    expect(Poll::Voter.last.officer_id).to eq(officer.id)
   end
 
   scenario "Already voted", :js do
