@@ -222,7 +222,9 @@ class Proposal < ActiveRecord::Base
 
   def self.proposals_orders(user)
     orders = %w{hot_score confidence_score created_at relevance archival_date}
-    orders << "recommendations" if user.present?
+    if user.present? && Setting['feature.user.recommendations'] == true
+      orders << "recommendations"
+    end
     orders
   end
 
