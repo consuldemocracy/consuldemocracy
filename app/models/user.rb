@@ -98,12 +98,12 @@ class User < ActiveRecord::Base
   end
 
   def debate_votes(debates)
-    voted = votes.for_debates(debates)
+    voted = votes.for_debates(Array(debates).map(&:id))
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
   def proposal_votes(proposals)
-    voted = votes.for_proposals(proposals)
+    voted = votes.for_proposals(Array(proposals).map(&:id))
     voted.each_with_object({}) { |v, h| h[v.votable_id] = v.value }
   end
 
@@ -336,7 +336,7 @@ class User < ActiveRecord::Base
                             user: self,
                             officer_assignment: officer_assignment)
 
-    if Poll::Nvote.find_by_voter_hash(nvote.generate_message)
+    if Poll::Nvote.find_by(voter_hash: nvote.generate_message)
       nvote
     else
       nvote.save

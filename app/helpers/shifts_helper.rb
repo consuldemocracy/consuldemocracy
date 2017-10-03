@@ -5,7 +5,7 @@ module ShiftsHelper
   end
 
   def shift_recount_scrutiny_dates(polls)
-    date_options(polls.map(&:ends_at).map(&:to_date).inject([]) { |total, date| total << (date..date + 1.week).to_a }.flatten.uniq)
+    date_options(polls.map(&:ends_at).map(&:to_date).sort.inject([]) { |total, date| total << (date..date + 1.week).to_a }.flatten.uniq)
   end
 
   def date_options(dates)

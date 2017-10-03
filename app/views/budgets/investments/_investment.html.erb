@@ -2,15 +2,19 @@
   <div class="panel">
     <div class="row">
 
-      <div class="small-12 medium-3 large-2 column">
-        <% if investment.image.present? %>
-          <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
-        <% else %>
-          <div class="no-image"></div>
-        <% end %>
-      </div>
+      <% if feature?(:allow_images) %>
+        <div class="small-12 medium-3 large-2 column text-center">
+          <% if investment.image.present? %>
+            <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
+          <% else %>
+            <div class="no-image"></div>
+          <% end %>
+        </div>
 
-      <div class="small-12 medium-6 large-7 column">
+        <div class="small-12 medium-6 large-7 column">
+      <% else %>
+        <div class="small-12 medium-9 column">
+      <% end %>
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>

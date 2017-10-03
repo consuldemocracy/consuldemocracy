@@ -73,10 +73,6 @@ module CommonActions
     allow_any_instance_of(Management::BaseController).to receive(:managed_user).and_return(user)
   end
 
-  def root_path_for_logged_in_users
-    root_path
-  end
-
   def fill_in_proposal
     fill_in 'proposal_title', with: 'Help refugees'
     fill_in 'proposal_summary', with: 'In summary what we want is...'
@@ -473,6 +469,28 @@ module CommonActions
 
   def csv_path_for(table)
     "system/api/#{table}.csv"
+  end
+
+  def vote_for_poll_via_web
+    visit question_path(question)
+
+    click_link 'Go to voting page'
+    click_link 'Yes'
+
+    expect(page).to_not have_link('Yes')
+    expect(Poll::Voter.count).to eq(1)
+  end
+
+  def vote_for_poll_via_booth
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+
+    first(:button, "Confirm vote").click
+    expect(page).to have_content "Vote introduced!"
+
+    expect(Poll::Voter.count).to eq(1)
   end
 
 end
