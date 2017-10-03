@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002122312) do
+ActiveRecord::Schema.define(version: 20171003095936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -639,7 +639,6 @@ ActiveRecord::Schema.define(version: 20171002122312) do
   end
 
   add_index "poll_officer_assignments", ["booth_assignment_id"], name: "index_poll_officer_assignments_on_booth_assignment_id", using: :btree
-  add_index "poll_officer_assignments", ["officer_id", "date"], name: "index_poll_officer_assignments_on_officer_id_and_date", using: :btree
   add_index "poll_officer_assignments", ["officer_id"], name: "index_poll_officer_assignments_on_officer_id", using: :btree
 
   create_table "poll_officers", force: :cascade do |t|
@@ -698,11 +697,11 @@ ActiveRecord::Schema.define(version: 20171002122312) do
     t.integer "officer_assignment_id"
     t.text    "officer_assignment_id_log", default: ""
     t.text    "author_id_log",             default: ""
-    t.integer "white_amount"
+    t.integer "white_amount",              default: 0
     t.text    "white_amount_log",          default: ""
-    t.integer "null_amount"
+    t.integer "null_amount",               default: 0
     t.text    "null_amount_log",           default: ""
-    t.integer "total_amount"
+    t.integer "total_amount",              default: 0
     t.text    "total_amount_log",          default: ""
   end
 
@@ -720,9 +719,10 @@ ActiveRecord::Schema.define(version: 20171002122312) do
     t.integer  "task",          default: 0, null: false
   end
 
-  add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
+  add_index "poll_shifts", ["booth_id", "officer_id", "task"], name: "index_poll_shifts_on_booth_id_and_officer_id_and_task", unique: true, using: :btree
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
+  add_index "poll_shifts", ["task"], name: "index_poll_shifts_on_task", using: :btree
 
   create_table "poll_total_results", force: :cascade do |t|
     t.integer "author_id"
@@ -752,6 +752,7 @@ ActiveRecord::Schema.define(version: 20171002122312) do
     t.integer  "answer_id"
     t.integer  "officer_assignment_id"
     t.integer  "user_id"
+    t.string   "origin"
   end
 
   add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree
