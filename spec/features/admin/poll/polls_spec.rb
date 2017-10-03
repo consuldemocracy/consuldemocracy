@@ -58,6 +58,8 @@ feature 'Admin polls' do
     fill_in "poll_name", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
+    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
