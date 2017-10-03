@@ -38,6 +38,8 @@ es:
         help_text_3: "En la primera votación de febrero de 2017, además de decidir sobre dos propuestas ciudadanas, el Ayuntamiento preguntó sobre actuaciones que se planteaban llevar a cabo en la Gran Vía, sobre los proyectos finalistas para reformar plaza de España y diversas cuestiones en seis distritos de Madrid que plantearon sus respectivas Juntas."
       orders:
         random: Aleatorias
+    show:
+      dates_title: "Fechas de votación"
   forums:
     index:
       deactivate_link: "Desactivar"

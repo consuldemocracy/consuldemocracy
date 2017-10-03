@@ -64,8 +64,8 @@
 @mixin direct-uploads {
 
   .cached-image {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: rem-calc(150);
+    max-height: rem-calc(150);
   }
 
   .progress-bar-placeholder {
@@ -78,15 +78,23 @@
 
     .document-attachment,
     .image-attachment {
-      padding-left:0;
+      padding-left: 0;
 
-      p{
+      p {
         margin-bottom: 0;
       }
     }
-    input.js-document-attachment,
-    input.js-image-attachment{
-      display: none;
+
+    .attachment-errors {
+
+      > .js-image-attachment,
+      > .js-document-attachment {
+        display: none;
+
+        ~ .error {
+          display: inline-block;
+        }
+      }
     }
   }
 

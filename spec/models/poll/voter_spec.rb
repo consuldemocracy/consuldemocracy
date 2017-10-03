@@ -179,9 +179,7 @@ describe :voter do
         expect(letter_voters).to_not include(voter3)
       end
     end
-
   end
-
 
   describe "save" do
 

@@ -49,7 +49,6 @@ module Abilities
       end
 
       can [:read, :valuate, :summary], SpendingProposal
-
       can [:index, :read, :new, :create, :update, :destroy, :calculate_winners, :read_results], Budget
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
@@ -61,7 +60,7 @@ module Abilities
 
       can [:index, :create, :edit, :update, :destroy], Geozone
 
-      can [:read, :create, :update, :destroy, :add_question, :remove_question, :search_booths, :search_questions, :search_officers], Poll
+      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers], Poll
       can [:read, :create, :update, :destroy, :available], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer
       can [:create, :destroy], ::Poll::BoothAssignment
