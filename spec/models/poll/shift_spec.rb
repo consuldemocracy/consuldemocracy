@@ -24,6 +24,11 @@ describe :shift do
       expect(shift).to_not be_valid
     end
 
+    it "should not be valid without a task" do
+      shift.task = nil
+      expect(shift).to_not be_valid
+    end
+
   end
 
   describe "officer_assignments" do
