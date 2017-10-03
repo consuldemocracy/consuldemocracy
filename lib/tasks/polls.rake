@@ -23,7 +23,7 @@ desc "Create second citizen poll"
       ends_at: 1.week.from_now,
       geozone_restricted: false,
       questions_attributes: [
-        { title: "¿Quieres rehabilitar la plaza #{i}?",
+        { title: "¿Quieres rehabilitar la plaza #{main_square_names[i]}?",
           valid_answers: "Sí, No",
           author: User.first,
           author_visible_name: author_name,
