@@ -1575,6 +1575,36 @@
 
 .poll-more-info-answers {
   background: #fafafa;
+  border-bottom: 1px solid #eee;
+
+  .column:nth-child(odd) {
+    border-right: 1px solid #eee;
+  }
+}
+
+.orbit-bullets button {
+  background-color: #ccc;
+  height: $line-height / 2;
+  width: $line-height / 2;
+
+  &.is-active {
+    background-color: $brand;
+  }
+}
+
+.orbit-container {
+  height: 100% !important;
+  max-height: none !important;
+}
+
+.orbit-slide {
+  max-height: none !important;
+}
+
+.orbit-caption {
+  background: #eee;
+  color: $text;
+}
 }
 
 .poll,
