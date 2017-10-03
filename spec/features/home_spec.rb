@@ -22,11 +22,6 @@ feature "Home" do
 
   feature "For signed in users" do
 
-    before do
-      # user = create(:user)
-      # login_as(user)
-    end
-
     feature "Recommended" do
 
       background do

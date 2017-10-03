@@ -97,10 +97,6 @@
   content: '\72';
 }
 
-.icon-documents::before {
-  content: '\68';
-}
-
 .icon-proposals::before {
   content: '\68';
 }
@@ -197,10 +193,6 @@
   content: '\53';
 }
 
-.icon-image::before {
-  content: '\68';
-}
-
 .icon-notification::before {
   content: '\6e';
 }
@@ -263,4 +255,8 @@
 
 .icon-instagram::before {
   content: '\32';
+}
+
+.icon-image::before {
+  content: '\33';
 }

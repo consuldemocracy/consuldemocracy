@@ -2,9 +2,7 @@ class Poll < ActiveRecord::Base
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
   has_many :partial_results, through: :booth_assignments
-  has_many :white_results, through: :booth_assignments
-  has_many :null_results, through: :booth_assignments
-  has_many :total_results, through: :booth_assignments
+  has_many :recounts, through: :booth_assignments
   has_many :voters
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
@@ -59,6 +57,10 @@ class Poll < ActiveRecord::Base
 
   def document_has_voted?(document_number, document_type)
     voters.where(document_number: document_number, document_type: document_type).exists?
+  end
+
+  def voted_in_booth?(user)
+    Poll::Voter.where(poll: self, user: user, origin: "booth").exists?
   end
 
   def date_range
