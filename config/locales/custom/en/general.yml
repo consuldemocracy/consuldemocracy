@@ -67,18 +67,17 @@ en:
     telegram_link: "Telegram"
     instagram_link: "Instagram"
   welcome:
-    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
+    title: "Decide Madrid: portal of citizen participation of the City of Madrid"
     featured:
-      features: "Participa en %{org_name}"
-      label: "Participa"
+      features: "Participate on %{org_name}"
+      label: "Participate"
       proposals:
-        title: Crea propuestas ciudadanas
-        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
-        link: Ver propuestas ciudadanas
-        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
+        title: Create citizen proposals
+        text: "Do you have an idea for Madrid? Propose it. If 1% of the people of Madrid support it, we will vote to make it out."
+        link: See citizen proposals
+        alt_image: "Generic image related with proposals of the City of Madrid."
       budgets:
-        title: "Decide a qué proyectos se destina el presupuesto participativo"
-        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
-        link: Ver proyectos de gasto
-        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
-
+        title: "Decides which projects are earmarked for the participatory budget"
+        text: "You propose and decide on what the City Council invests in a part of the municipal budget."
+        link: See investment projects
+        alt_image: "Generic image related with budgets of the City of Madrid."
