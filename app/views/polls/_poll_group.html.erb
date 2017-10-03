@@ -51,7 +51,7 @@
           <%= poll_dates(poll) %>
           <ul class="margin-top">
             <% poll.questions.each do |question| %>
-              <li><%= link_to question.title, question_path(question) %></li>
+              <li><%= question.title %></li>
             <% end %>
           </ul>
         <% end %>
