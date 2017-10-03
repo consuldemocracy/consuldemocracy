@@ -34,6 +34,24 @@ describe :shift do
       expect(shift).to_not be_valid
     end
 
+    it "should not be valid with same booth, officer, date and task" do
+      recount_shift.save
+
+      expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)).to_not be_valid
+    end
+
+    it "should be valid with same booth, officer and date but different task" do
+      recount_shift.save
+
+      expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :vote_collection)).to be_valid
+    end
+
+    it "should be valid with same booth, officer and task but different date" do
+      recount_shift.save
+
+      expect(build(:poll_shift, booth: booth, officer: officer, date: Date.tomorrow, task: :recount_scrutiny)).to be_valid
+    end
+
   end
 
   describe "officer_assignments" do
