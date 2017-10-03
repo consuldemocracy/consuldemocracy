@@ -597,12 +597,13 @@ en:
       new:
         title: "Create Question"
         poll_label: "Poll"
-        valid_answers_note: "Enter the answers separated by commas (,)"
       show:
         proposal: Original proposal
         author: Author
         title: Title
         valid_answers: Valid answers
+        add_answer: "Add answer"
+        answer: "Answer"
         description: Description
         video_url: External video
         documents: Documents (1)

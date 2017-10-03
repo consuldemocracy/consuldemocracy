@@ -24,15 +24,21 @@
       <%= link_to @question.author.name, user_path(@question.author) %>
     </p>
 
-    <p>
-      <strong><%= t("admin.questions.show.valid_answers") %></strong>
-    </p>
+    <table>
+      <tr>
+        <th colspan="1" scope="colgroup"><%= t('admin.questions.show.valid_answers') %></th>
+        <th colspan="1" scope="colgroup"><%= link_to t("admin.questions.show.add_answer"), "#", class: "button hollow float-right" %></th>
+      </tr>
 
-    <% @question.valid_answers.each do |answer| %>
-      <span class="button">
-        <%= answer %>
-      </span>
-    <% end %>
+      <tr>
+        <th scope="col"><%= t("admin.questions.show.answer") %></th>
+        <th scope="col"><%= t("admin.questions.show.description") %></th>
+      </tr>
+
+      <tr>
+
+      </tr>
+    </table>
 
     <p>
       <strong><%= t("admin.questions.show.description") %></strong>
