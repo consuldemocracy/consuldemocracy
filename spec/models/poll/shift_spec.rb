@@ -50,10 +50,32 @@ describe :shift do
       expect(oa1.officer).to eq(officer)
       expect(oa1.date).to eq(Date.current)
       expect(oa1.booth_assignment).to eq(booth_assignment1)
+      expect(oa1.final).to be_falsey
 
       expect(oa2.officer).to eq(officer)
       expect(oa2.date).to eq(Date.current)
       expect(oa2.booth_assignment).to eq(booth_assignment2)
+      expect(oa2.final).to be_falsey
+    end
+
+    it "should create final officer_assignments" do
+      poll = create(:poll)
+      booth = create(:poll_booth)
+      officer = create(:poll_officer)
+
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+
+      shift = create(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)
+
+      officer_assignments = Poll::OfficerAssignment.all
+      expect(officer_assignments.count).to eq(1)
+
+      officer_assignment = officer_assignments.first
+
+      expect(officer_assignment.officer).to eq(officer)
+      expect(officer_assignment.date).to eq(Date.current)
+      expect(officer_assignment.booth_assignment).to eq(booth_assignment)
+      expect(officer_assignment.final).to be_truthy
     end
 
   end
