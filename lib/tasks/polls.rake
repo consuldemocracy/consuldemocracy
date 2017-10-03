@@ -4,7 +4,8 @@ namespace :polls do
 
 desc "Create second citizen poll"
   task setup: :environment do
-    destroy_all
+    # tricky to destroy, dependent on existent results, use only in dev env
+    # destroy_all
 
     (1..10).each do |i|
       poll = Poll.new(poll_attributes(i))
