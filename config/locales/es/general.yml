@@ -522,7 +522,6 @@ es:
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
       more_info: "Más información"
-      already_voted: "Ya has participado en esta votación."
       polls: "Votaciones"
       more_polls: "Ir a otras votaciones"
   poll_questions:
