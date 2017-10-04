@@ -128,6 +128,7 @@ va:
         remember_em: Recordar-me
         submit: Entrar
         title: Entrar
+        login_label: Correu o nom d'usuari
     shared:
       links:
         login: Entrar

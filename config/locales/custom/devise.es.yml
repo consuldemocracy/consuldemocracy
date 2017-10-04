@@ -129,7 +129,7 @@ es:
         remember_me: Recordarme
         submit: Entrar
         title: Entrar
-        login_label: Email
+        login_label: Correo o nombre de usuario
     shared:
       links:
         login: Entrar
