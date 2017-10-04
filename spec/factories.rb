@@ -501,7 +501,7 @@ FactoryGirl.define do
     valid_answers { Faker::Lorem.words(3).join(', ') }
   end
 
-  factory :poll_question_answer, class: 'Poll::QuestionAnswer' do
+  factory :poll_question_answer, class: 'Poll::Question::Answer' do
     association :question, factory: :poll_question
     sequence(:title) { |n| "Question title #{n}" }
     sequence(:description) { |n| "Question description #{n}" }
