@@ -501,6 +501,12 @@ FactoryGirl.define do
     valid_answers { Faker::Lorem.words(3).join(', ') }
   end
 
+  factory :poll_question_answer, class: 'Poll::Question::Answer' do
+    association :question, factory: :poll_question
+    sequence(:title) { |n| "Question title #{n}" }
+    sequence(:description) { |n| "Question description #{n}" }
+  end
+
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
     sequence(:location) { |n| "Street #{n}" }

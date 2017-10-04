@@ -587,12 +587,22 @@ es:
       new:
         title: "Crear pregunta ciudadana"
         poll_label: "Votación"
-        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
       show:
         proposal: Propuesta ciudadana original
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
+        add_answer: "Añadir respuesta"
+        description: Descripción
+        video_url: Video externo
+        documents: Documentos (1)
+        preview: Ver en la web
+        answers:
+          title: Respuesta
+          description: Descripción
+    answers:
+      new:
+        title: "Nueva respuesta"
         video_url: Video externo
         documents: Documentos (1)
     recounts:

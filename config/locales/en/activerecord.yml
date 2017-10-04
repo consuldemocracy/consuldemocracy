@@ -213,6 +213,9 @@ en:
       image:
         title: Title
         attachment: Attachment
+      poll/question_answer:
+        title: "Answer"
+        description: "Description"
     errors:
       models:
         user:

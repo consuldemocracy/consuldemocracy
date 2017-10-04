@@ -1,22 +1,23 @@
 <div class="poll-question-answers">
   <% if can? :answer, question %>
-    <% question.valid_answers.each do |answer| %>
-      <% if @answers_by_question_id[question.id] == answer %>
-        <span class="button answered" title="<%= t("poll_questions.show.voted", answer: answer)%>">
-          <%= answer %>
+    <% question.question_answers.each do |answer| %>
+      <% if @answers_by_question_id[question.id] == answer.title %>
+        <span class="button answered" 
+              title="<%= t("poll_questions.show.voted", answer: answer)%>">
+          <%= answer.title %>
         </span>
       <% else %>
-        <%= link_to answer,
-          answer_question_path(question, answer: answer),
+        <%= link_to answer.title,
+          answer_question_path(question, answer: answer.title),
           method: :post,
           remote: true,
-          title: t("poll_questions.show.vote_answer", answer: answer),
+          title: t("poll_questions.show.vote_answer", answer: answer.title),
           class: "button secondary hollow" %>
       <% end %>
     <% end %>
   <% else %>
-    <% question.valid_answers.each do |answer| %>
-      <span class="button secondary hollow disabled"><%= answer %></span>
+    <% question.question_answers.each do |answer| %>
+      <span class="button secondary hollow disabled"><%= answer.title %></span>
     <% end %>
   <% end %>
 </div>

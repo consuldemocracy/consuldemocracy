@@ -25,7 +25,6 @@ feature 'Admin poll questions' do
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.author.name)
-    expect(page).to have_content(question.valid_answers.join(" "))
   end
 
   scenario 'Create' do
@@ -61,7 +60,6 @@ feature 'Admin poll questions' do
 
     expect(current_path).to eq(new_admin_question_path)
     expect(page).to have_field('poll_question_title', with: proposal.title)
-    expect(page).to have_field('poll_question_valid_answers', with: "Yes, No")
 
     select 'Proposals', from: 'poll_question_poll_id'
 
