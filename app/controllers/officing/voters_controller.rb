@@ -3,7 +3,8 @@ class Officing::VotersController < Officing::BaseController
 
   def new
     @user = User.find(params[:id])
-    @polls = Poll.answerable_by(@user)
+    booths = current_user.poll_officer.shifts.current.vote_collection.pluck(:booth_id).uniq
+    @polls = Poll.answerable_by(@user).where(id: Poll::BoothAssignment.where(booth: booths).pluck(:poll_id).uniq)
   end
 
   def create
