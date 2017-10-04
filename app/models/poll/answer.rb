@@ -8,8 +8,10 @@ class Poll::Answer < ActiveRecord::Base
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
-  validates :answer, inclusion: { in: ->(a) { a.question.valid_answers }},
-                                  unless: ->(a) { a.question.blank? }
+
+  # temporary skipping validation, review when removing valid_answers
+  # validates :answer, inclusion: { in: ->(a) { a.question.valid_answers }},
+  #                                unless: ->(a) { a.question.blank? }
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }

@@ -300,7 +300,9 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :questions
+      resources :questions do
+        resources :answers, only: [:new, :create], controller: 'questions/answers'
+      end
     end
 
     resources :verifications, controller: :verifications, only: :index do

@@ -207,6 +207,9 @@ es:
       image:
         title: Título
         attachment: Archivo adjunto
+      poll/question_answer:
+        title: "Respuesta"
+        description: "Descripción"
     errors:
       models:
         user:

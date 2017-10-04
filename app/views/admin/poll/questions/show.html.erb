@@ -24,15 +24,30 @@
       <%= link_to @question.author.name, user_path(@question.author) %>
     </p>
 
-    <p>
-      <strong><%= t("admin.questions.show.valid_answers") %></strong>
-    </p>
+    <table>
+      <tr>
+        <th colspan="1" scope="colgroup">
+          <%= t('admin.questions.show.valid_answers') %>
+        </th>
+        <th colspan="1" scope="colgroup">
+          <%= link_to t("admin.questions.show.add_answer"), 
+                      new_admin_question_answer_path(@question), 
+                      class: "button hollow float-right" %>
+        </th>
+      </tr>
 
-    <% @question.valid_answers.each do |answer| %>
-      <span class="button">
-        <%= answer %>
-      </span>
-    <% end %>
+      <tr>
+        <th scope="col"><%= t("admin.questions.show.answers.title") %></th>
+        <th scope="col"><%= t("admin.questions.show.answers.description") %></th>
+      </tr>
+
+      <% @question.question_answers.each do |answer| %>
+        <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
+          <th scope="col"><%= answer.title %></th>
+          <th scope="col"><%= answer.description %></th>
+        </tr>  
+      <% end %>
+    </table>
 
     <% if @question.video_url.present? %>
       <p>

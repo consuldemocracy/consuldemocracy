@@ -490,6 +490,7 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
+      cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info_title: "More information"
       documents: Documents
       zoom_plus: Expand image
@@ -497,14 +498,6 @@ en:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
     show:
-      not_logged_in: "You must %{signin} or %{signup} to participate."
-      signin: Sign in
-      signup: Sign up
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
-      verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
-      cant_answer_expired: "This poll has finished."
-      cant_answer_wrong_geozone: "This question is not available on your geozone."
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
   proposal_notifications:

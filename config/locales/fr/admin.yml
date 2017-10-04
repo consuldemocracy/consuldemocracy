@@ -377,14 +377,18 @@ fr:
       new:
         title: "Créer une question"
         poll_label: "Vote"
-        valid_answers_note: "Saisir les réponses séparées par des virgules (,)"
       show:
         proposal: Proposition originale
         author: Auteur
         title: Titre
         valid_answers: Réponses valides
+        add_answer: "Ajouter une réponse"
+        answer: "Réponse"
         description: Description
         preview: Voir l'aperçu
+    answers:
+      new:
+        title: "Nouvelle réponse"
     recounts:
       index:
         title: "Dépouillements"

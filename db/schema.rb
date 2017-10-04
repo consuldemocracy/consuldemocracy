@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171003223152) do
+ActiveRecord::Schema.define(version: 20171004151553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -668,6 +668,14 @@ ActiveRecord::Schema.define(version: 20171003223152) do
   add_index "poll_partial_results", ["origin"], name: "index_poll_partial_results_on_origin", using: :btree
   add_index "poll_partial_results", ["question_id"], name: "index_poll_partial_results_on_question_id", using: :btree
 
+  create_table "poll_question_answers", force: :cascade do |t|
+    t.string  "title"
+    t.text    "description"
+    t.integer "question_id"
+  end
+
+  add_index "poll_question_answers", ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
+
   create_table "poll_questions", force: :cascade do |t|
     t.integer  "proposal_id"
     t.integer  "poll_id"
@@ -1144,6 +1152,7 @@ ActiveRecord::Schema.define(version: 20171003223152) do
   add_foreign_key "poll_partial_results", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_partial_results", "poll_questions", column: "question_id"
   add_foreign_key "poll_partial_results", "users", column: "author_id"
+  add_foreign_key "poll_question_answers", "poll_questions", column: "question_id"
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
