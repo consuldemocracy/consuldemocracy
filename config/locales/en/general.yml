@@ -611,6 +611,9 @@ en:
       searcher: Searcher
     go_to_page: "Go to page of "
     share: Share
+    orbit:
+      previous_slide: Previous Slide
+      next_slide: Next Slide
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

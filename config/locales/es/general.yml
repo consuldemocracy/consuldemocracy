@@ -611,6 +611,9 @@ es:
       searcher: Buscador
     go_to_page: "Ir a la página de "
     share: Compartir
+    orbit:
+      previous_slide: Imagen anterior
+      next_slide: Siguiente imagen
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
