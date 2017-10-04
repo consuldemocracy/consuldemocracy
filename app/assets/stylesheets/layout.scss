@@ -303,6 +303,10 @@ a {
   float: left;
 }
 
+.back:not([class^="icon-"]) {
+  text-decoration: underline;
+}
+
 .tabs-content {
   border: 0;
 }
@@ -343,11 +347,9 @@ a {
 }
 
 .truncate-horizontal-text {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .align-top {
@@ -633,7 +635,7 @@ header {
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: rem-calc(24);
+      margin-right: $line-height;
     }
 
     &:hover {
@@ -2183,9 +2185,10 @@ table {
 }
 
 // 19. Recommended Section Home
-// -----------
+// ----------------------------
 
 .home-page {
+
   .push {
     display: none;
   }
@@ -2219,7 +2222,7 @@ table {
 
     .card-section {
       padding: $line-height 0;
-      max-width: 300px;
+      max-width: rem-calc(300);
       margin: 0 auto;
 
       p {
@@ -2229,10 +2232,10 @@ table {
     }
 
     .orbit {
-      height: 300px;
+      height: rem-calc(300);
 
       .orbit-wrapper {
-        max-height: 250px;
+        max-height: rem-calc(250);
         overflow: hidden;
         position: relative;
       }
@@ -2248,7 +2251,7 @@ table {
     background: image-url('truncate.png');
     background-repeat: repeat-x;
     bottom: 0;
-    height: 20px;
+    height: rem-calc(20);
     position: absolute;
     width: 100%;
   }
@@ -2269,21 +2272,21 @@ table {
   .proposals-inner,
   .budget-investments-inner {
     background: #fff;
-    max-height: 350px;
+    max-height: rem-calc(350);
 
     @include breakpoint(small) {
-      max-height: 400px;
+      max-height: rem-calc(400);
     }
 
     h4 {
       margin-top: $line-height;
       margin-bottom: 0;
       font-size: rem-calc(18);
-      min-height: 50px;
+      min-height: rem-calc(50);
     }
 
     h5 {
-      font-size: rem-calc(14);
+      font-size: $small-font-size;
       text-align: left;
     }
   }
@@ -2291,20 +2294,20 @@ table {
   .carousel-image {
 
     .card .orbit {
-      height: 480px;
+      height: rem-calc(480);
 
       .orbit-wrapper {
-        max-height: 450px;
+        max-height: rem-calc(450);
       }
     }
 
     .debates-inner,
     .proposals-inner,
     .budget-investments-inner {
-      max-height: 500px;
+      max-height: rem-calc(500);
 
       @include breakpoint(small) {
-        max-height: 600px;
+        max-height: rem-calc(600);
       }
     }
   }
@@ -2318,7 +2321,9 @@ table {
   }
 }
 
-// 19. Documents
+// 20. Documents
+// -------------
+
 .documents-list {
 
   table {

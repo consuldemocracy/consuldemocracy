@@ -1,5 +1,5 @@
 <% poll_group.each do |poll| %>
-  <div class="poll">
+  <div class="poll with-image">
     <% if poll.answerable_by?(current_user) && poll.votable_by?(current_user) %>
       <%= link_to poll,
               class: "icon-poll-answer can-answer",
@@ -34,10 +34,14 @@
       </div>
     <% end %>
     <div class="row" data-equalizer>
-      <div class="small-12 medium-3 column" data-equalizer-watch>
-        <!-- PENDING TO REPLACE THIS BLOCK WITH POLL MAIN IMAGE -->
-        <div style="background: #eee; width: 100%; height: 100%; display: block; margin: -12px;">&nbsp;</div>
-        <!-- /. PENDING TO REPLACE THIS BLOCK WITH POLL MAIN IMAGE -->
+      <div class="small-12 medium-3 column">
+        <div class="image-container" data-equalizer-watch>
+          <% if poll.image.present? %>
+            <%= image_tag poll.image_url(:large), alt: poll.image.title %>
+          <% else %>
+            <div class="no-image"></div>
+          <% end %>
+        </div>
       </div>
       <div class="small-12 medium-6 column" data-equalizer-watch>
         <div class="dates"></div>
@@ -51,7 +55,7 @@
           <%= poll_dates(poll) %>
           <ul class="margin-top">
             <% poll.questions.each do |question| %>
-              <li><%= link_to question.title, question_path(question) %></li>
+              <li><%= question.title %></li>
             <% end %>
           </ul>
         <% end %>

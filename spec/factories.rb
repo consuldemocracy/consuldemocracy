@@ -498,7 +498,6 @@ FactoryGirl.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
     valid_answers { Faker::Lorem.words(3).join(', ') }
   end
 

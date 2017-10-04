@@ -1,36 +1,38 @@
 <% provide :title do %><%= @poll.name %><% end %>
 
 <div class="polls-show">
-  <div class="expanded no-margin-top dark-heading polls-show-header">
+  <div class="expanded no-margin-top polls-show-header">
     <div class="row">
       <div class="small-12 medium-9 column padding">
-        <%= back_link_to polls_path %>
+        <%= back_link_to polls_path, t("polls.show.back") %>
 
         <h2><%= @poll.name %></h2>
-        <ul class="no-bullet margin-top tags">
-          <% @poll.geozones.each do |g| %>
-            <li class="inline-block"><span><%= g.name %></span></li>
-          <% end %>
-        </ul>
 
-        <%= render "callout" %>
+        <%= safe_html_with_links simple_format(@poll.summary) %>
+
+        <% if @poll.geozones.any? %>
+          <ul class="no-bullet margin-top tags">
+            <% @poll.geozones.each do |g| %>
+              <li class="inline-block"><span><%= g.name %></span></li>
+            <% end %>
+          </ul>
+        <% end %>
       </div>
-      <div class="small-12 medium-3 column">
-        <div class="info">
-          <p>
-            <span class="title">
-              <strong><%= t("polls.show.dates_title") %></strong>
-            </span>
-            <br>
-            <%= poll_dates(@poll) %>
-          </p>
-        </div>
-      </div>
+
+      <aside class="small-12 medium-3 column margin-top">
+        <%= render partial: 'shared/social_share', locals: {
+          share_title: t("shared.share"),
+          title: @poll.name,
+          url: poll_url
+        } %>
+      </aside>
     </div>
   </div>
 
-  <div class="row margin-top">
+  <div class="row margin">
     <div class="small-12 medium-9 column">
+      <%= render "callout" %>
+
       <% if @poll.voted_in_booth?(current_user) %>
         <div class="callout warning">
           <%= t("polls.show.already_voted_in_booth") %>
@@ -41,13 +43,46 @@
         <% end %>
       <% end %>
     </div>
+  </div>
 
-    <aside class="small-12 medium-3 column">
-      <%= render partial: 'shared/social_share', locals: {
-        share_title: t("proposals.show.share"),
-        title: @poll.name,
-        url: poll_url
-      } %>
-    </aside>
+  <div class="expanded poll-more-info">
+    <div class="row margin">
+      <div class="small-12 medium-9 column">
+        <h3><%= t("polls.show.more_info_title") %></h3>
+        <%= safe_html_with_links simple_format(@poll.description) %>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+          <div class="sidebar-divider"></div>
+          <h2><%= t("polls.show.documents") %></h2>
+      </aside>
+    </div>
+  </div>
+
+  <div class="expanded poll-more-info-answers">
+    <div class="row padding">
+
+      <!-- EACH ANSWER DO -->
+      <div class="small-12 medium-6 column end" id="answer_1" data-toggler=".medium-6">
+
+        <!-- REPLACE THIS WITH answer title -->
+        <h3>Answer 1</h3>
+        <!-- /. REPLACE THIS WITH answer title -->
+
+        <!-- If Answer have images render this:
+          Maybe something like <%# render "gallery", gallery: answer.gallery %> -->
+        <%= render "gallery" %>
+        <!-- If Answer have images render this -->
+
+        <!-- REPLACE THIS WITH answer description -->
+        <div class="margin-top">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <!-- /. REPLACE THIS WITH answer description -->
+
+      </div>
+    </div>
+    <!-- /. EACH ANSWER DO -->
+
   </div>
 </div>

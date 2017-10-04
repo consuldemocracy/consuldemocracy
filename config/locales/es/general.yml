@@ -482,7 +482,7 @@ es:
         help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
     show:
       already_voted_in_booth: "Ya has participado en esta votación en una urna."
-      dates_title: "Fechas de participación"
+      back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión
       signup: registrarte
@@ -490,15 +490,13 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
+      more_info_title: "Más información"
+      documents: Documentación
+      zoom_plus: Ampliar imagen
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
     show:
-      answer_this_question: "Responder a esta pregunta"
-      original_proposal: "Propuesta original"
-      author: "Creado por"
-      dates_title: "Fechas de participación"
-      more_info: "Más información"
       not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión
       signup: registrarte
@@ -509,7 +507,6 @@ es:
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
-      poll: "Votación"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -524,9 +521,6 @@ es:
     edit: 'Editar'
     save: 'Guardar'
     delete: 'Borrar'
-    comments:
-      title: 'Comentarios'
-      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
     search_results: "Resultados de búsqueda"
@@ -607,6 +601,10 @@ es:
       budget: Presupuestos participativos
       searcher: Buscador
     go_to_page: "Ir a la página de "
+    share: Compartir
+    orbit:
+      previous_slide: Imagen anterior
+      next_slide: Siguiente imagen
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
