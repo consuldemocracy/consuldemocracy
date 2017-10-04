@@ -64,7 +64,7 @@ feature 'Voters' do
     expect(page).to have_content poll.name
   end
 
-  scenario "Display only current polls on which officer has a voting shift today", :js do
+  scenario "Display only current polls on which officer has a voting shift today, and user can answer", :js do
     poll_current = create(:poll, :current)
     second_booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll_current, booth: second_booth)
@@ -73,11 +73,17 @@ feature 'Voters' do
     create(:poll_shift, officer: officer, booth: second_booth, date: Date.tomorrow, task: :vote_collection)
 
     poll_expired = create(:poll, :expired)
-    booth_assignment = create(:poll_booth_assignment, poll: poll_expired, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: poll_expired, booth: booth))
 
     poll_incoming = create(:poll, :incoming)
-    booth_assignment = create(:poll_booth_assignment, poll: poll_incoming, booth: booth)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: poll_incoming, booth: booth))
+
+    poll_geozone_restricted_in = create(:poll, :current, geozone_restricted: true, geozones: [Geozone.first])
+    booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_in, booth: booth)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+    poll_geozone_restricted_out = create(:poll, :current, geozone_restricted: true, geozones: [create(:geozone, census_code: "02")])
+    booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_out, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
     visit new_officing_residence_path
@@ -88,5 +94,7 @@ feature 'Voters' do
     expect(page).not_to have_content poll_current.name
     expect(page).not_to have_content poll_expired.name
     expect(page).not_to have_content poll_incoming.name
+    expect(page).to have_content poll_geozone_restricted_in.name
+    expect(page).not_to have_content poll_geozone_restricted_out.name
   end
 end
