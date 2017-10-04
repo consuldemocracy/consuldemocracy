@@ -593,7 +593,6 @@ en:
         title: Title
         valid_answers: Valid answers
         add_answer: "Add answer"
-        description: Description
         video_url: External video
         documents: Documents (1)
         answers:
