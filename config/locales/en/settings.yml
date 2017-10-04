@@ -49,7 +49,14 @@ en:
         plaza: "Plaza España Probe"
         voting_allowed: Voting on investment projects
       legislation: Legislation
+      user:
+        recommendations: Recommendeds
       community: Community on proposals and investments
+      map: Proposals and budget investments geolocation
+      allow_images: Allow upload and show images
+    map_latitude: Latitude
+    map_longitude: Longitude
+    map_zoom: Zoom
     mailer_from_name: Origin email name
     mailer_from_address: Origin email address
     meta_description: "Site description (SEO)"

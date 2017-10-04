@@ -18,7 +18,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
     @officer = ::Poll::Officer.includes(:user).find(officer_assignment_params[:officer_id])
     @officer_assignments = ::Poll::OfficerAssignment.
                            joins(:booth_assignment).
-                           includes(:total_results, booth_assignment: :booth).
+                           includes(:recounts, booth_assignment: :booth).
                            where("officer_id = ? AND poll_booth_assignments.poll_id = ?", @officer.id, @poll.id).
                            order(:date)
   end

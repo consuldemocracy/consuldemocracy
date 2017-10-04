@@ -66,9 +66,13 @@
 //= require followable
 //= require flaggable
 //= require documentable
+//= require imageable
 //= require tree_navigator
 //= require custom
 //= require tag_autocomplete
+//= require polls_admin
+//= require leaflet
+//= require map
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -103,11 +107,14 @@ var initialize_modules = function() {
   App.WatchFormChanges.initialize();
   App.TreeNavigator.initialize();
   App.Documentable.initialize();
+  App.Imageable.initialize();
   App.TagAutocomplete.initialize();
+  App.PollsAdmin.initialize();
+  App.Map.initialize();
 };
 
 $(function(){
-  Turbolinks.enableProgressBar()
+  Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);
   $(document).on('page:load', initialize_modules);

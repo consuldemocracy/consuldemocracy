@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914154743) do
+ActiveRecord::Schema.define(version: 20171002191347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -440,6 +440,22 @@ ActiveRecord::Schema.define(version: 20170914154743) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "images", force: :cascade do |t|
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "title",                   limit: 80
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id", using: :btree
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
   create_table "legacy_legislations", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -584,6 +600,17 @@ ActiveRecord::Schema.define(version: 20170914154743) do
   end
 
   add_index "managers", ["user_id"], name: "index_managers_on_user_id", using: :btree
+
+  create_table "map_locations", force: :cascade do |t|
+    t.float   "latitude"
+    t.float   "longitude"
+    t.integer "zoom"
+    t.integer "proposal_id"
+    t.integer "investment_id"
+  end
+
+  add_index "map_locations", ["investment_id"], name: "index_map_locations_on_investment_id", using: :btree
+  add_index "map_locations", ["proposal_id"], name: "index_map_locations_on_proposal_id", using: :btree
 
   create_table "moderators", force: :cascade do |t|
     t.integer "user_id"
@@ -759,6 +786,25 @@ ActiveRecord::Schema.define(version: 20170914154743) do
   add_index "poll_questions", ["proposal_id"], name: "index_poll_questions_on_proposal_id", using: :btree
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
+  create_table "poll_recounts", force: :cascade do |t|
+    t.integer "author_id"
+    t.string  "origin"
+    t.date    "date"
+    t.integer "booth_assignment_id"
+    t.integer "officer_assignment_id"
+    t.text    "officer_assignment_id_log", default: ""
+    t.text    "author_id_log",             default: ""
+    t.integer "white_amount",              default: 0
+    t.text    "white_amount_log",          default: ""
+    t.integer "null_amount",               default: 0
+    t.text    "null_amount_log",           default: ""
+    t.integer "total_amount",              default: 0
+    t.text    "total_amount_log",          default: ""
+  end
+
+  add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
+  add_index "poll_recounts", ["officer_assignment_id"], name: "index_poll_recounts_on_officer_assignment_id", using: :btree
+
   create_table "poll_shifts", force: :cascade do |t|
     t.integer  "booth_id"
     t.integer  "officer_id"
@@ -767,6 +813,7 @@ ActiveRecord::Schema.define(version: 20170914154743) do
     t.datetime "updated_at"
     t.string   "officer_name"
     t.string   "officer_email"
+    t.integer  "task",          default: 0, null: false
   end
 
   add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
@@ -1293,6 +1340,7 @@ ActiveRecord::Schema.define(version: 20170914154743) do
   add_foreign_key "geozones_polls", "geozones"
   add_foreign_key "geozones_polls", "polls"
   add_foreign_key "identities", "users"
+  add_foreign_key "images", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
@@ -1315,6 +1363,8 @@ ActiveRecord::Schema.define(version: 20170914154743) do
   add_foreign_key "poll_questions", "polls"
   add_foreign_key "poll_questions", "proposals"
   add_foreign_key "poll_questions", "users", column: "author_id"
+  add_foreign_key "poll_recounts", "poll_booth_assignments", column: "booth_assignment_id"
+  add_foreign_key "poll_recounts", "poll_officer_assignments", column: "officer_assignment_id"
   add_foreign_key "poll_voters", "polls"
   add_foreign_key "poll_white_results", "poll_booth_assignments", column: "booth_assignment_id"
   add_foreign_key "poll_white_results", "poll_officer_assignments", column: "officer_assignment_id"

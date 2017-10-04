@@ -91,6 +91,46 @@ es:
       twitter_8: "He votado la propuesta para dar nombre al Espacio de Igualdad del @jmdvicalvaro en @DecideMadrid. ¡Vota tú también!"
       facebook_8: "He votado la propuesta para dar nombre al Espacio de Igualdad de la Junta Municipal de Distrito de Vicálvaro en Decide Madrid. ¡Vota tú también!"
       description_8: "Tú decides cómo se llamará el Espacio de Igualdad de la Junta Municipal de Distrito de Vicálvaro. Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_9: "Votación 9 - Decide Madrid"
+      twitter_9: "He votado la propuesta 9. ¡Vota tú también!"
+      facebook_9: "He votado la propuesta 9. ¡Vota tú también!"
+      description_9: "Tú decides 9 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_10: "Votación 10 - Decide Madrid"
+      twitter_10: "He votado la propuesta 10. ¡Vota tú también!"
+      facebook_10: "He votado la propuesta 10. ¡Vota tú también!"
+      description_10: "Tú decides 10 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_11: "Votación 11 - Decide Madrid"
+      twitter_11: "He votado la propuesta 11. ¡Vota tú también!"
+      facebook_11: "He votado la propuesta 11. ¡Vota tú también!"
+      description_11: "Tú decides 11 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_12: "Votación 12 - Decide Madrid"
+      twitter_12: "He votado la propuesta 12. ¡Vota tú también!"
+      facebook_12: "He votado la propuesta 12. ¡Vota tú también!"
+      description_12: "Tú decides 12 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_13: "Votación 13 - Decide Madrid"
+      twitter_13: "He votado la propuesta 13. ¡Vota tú también!"
+      facebook_13: "He votado la propuesta 13. ¡Vota tú también!"
+      description_13: "Tú decides 13 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_14: "Votación 14 - Decide Madrid"
+      twitter_14: "He votado la propuesta 14. ¡Vota tú también!"
+      facebook_14: "He votado la propuesta 14. ¡Vota tú también!"
+      description_14: "Tú decides 14 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_15: "Votación 15 - Decide Madrid"
+      twitter_15: "He votado la propuesta 15. ¡Vota tú también!"
+      facebook_15: "He votado la propuesta 15. ¡Vota tú también!"
+      description_15: "Tú decides 15 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_16: "Votación 16 - Decide Madrid"
+      twitter_16: "He votado la propuesta 16. ¡Vota tú también!"
+      facebook_16: "He votado la propuesta 16. ¡Vota tú también!"
+      description_16: "Tú decides 16 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_17: "Votación 17 - Decide Madrid"
+      twitter_17: "He votado la propuesta 17. ¡Vota tú también!"
+      facebook_17: "He votado la propuesta 17. ¡Vota tú también!"
+      description_17: "Tú decides 17 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
+      title_18: "Votación 18 - Decide Madrid"
+      twitter_18: "He votado la propuesta 18. ¡Vota tú también!"
+      facebook_18: "He votado la propuesta 18. ¡Vota tú también!"
+      description_18: "Tú decides 18 Participa en la votación ciudadana de Decide Madrid y marca el futuro de tu ciudad."
   type_selection:
     title: "Estás creando..."
     proposals_title: "Propuesta ciudadana"
@@ -126,7 +166,7 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      title: La ciudadanía toma decisiones municipales de forma directa
+      title: Haz tu propuesta ciudadana
       text: Te contamos en 10 pasos cómo presentar y difundir tu propuesta para mejorar Madrid.
       button: Más información
       button: Infórmate
@@ -138,12 +178,6 @@ es:
       text: "Consulta los datos detallados de la votación de proyectos."
       link: "Ver resultados"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-    journalism:
-      label: "Concurso"
-      title: "Concurso de periodismo de datos y Datatón"
-      text: "Participa con historias y proyectos creados a partir de datos abiertos del Ayuntamiento de Madrid."
-      link: "Más información sobre el concurso"
-      alt: "Imagen del cartel del Concurso de periodismo de datos y Datatón"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"

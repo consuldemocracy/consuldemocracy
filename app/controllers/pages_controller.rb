@@ -2,8 +2,6 @@ class PagesController < ApplicationController
   skip_authorization_check
 
   def show
-    @proposal_successfull_exists = Proposal.successful.exists?
-
     @custom_page = SiteCustomization::Page.published.find_by(slug: params[:id])
 
     if @custom_page.present?
@@ -11,7 +9,6 @@ class PagesController < ApplicationController
     else
       render action: params[:id]
     end
-
   rescue ActionView::MissingTemplate
     head 404
   end

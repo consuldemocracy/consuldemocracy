@@ -86,7 +86,9 @@ Rails.application.routes.draw do
   resources :budgets, only: [:show, :index], path: 'presupuestos' do
     resources :groups, controller: "budgets/groups", only: [:show], path: 'grupo'
     resources :investments, controller: "budgets/investments", only: [:index, :show, :new, :create, :destroy], path: 'proyecto' do
-      member { post :vote }
+      member do
+        post :vote
+      end
       collection { get :suggest }
     end
     resource :ballot, only: :show, controller: "budgets/ballots" do
@@ -121,13 +123,12 @@ Rails.application.routes.draw do
 
   resources :follows, only: [:create, :destroy]
 
-  resources :documents, only: [:new, :create, :destroy] do
-    collection do
-      get :new_nested
-      delete :destroy_upload
-      post :upload
-    end
-  end
+  resources :documents, only: [:destroy]
+
+  resources :images, only: [:destroy]
+
+  resources :direct_uploads, only: [:create]
+  delete "direct_uploads/destroy", to: "direct_uploads#destroy", as: :direct_upload_destroy
 
   resources :stats, only: [:index]
 
@@ -285,6 +286,8 @@ Rails.application.routes.draw do
     end
 
     resources :settings, only: [:index, :update]
+    put :update_map, to: "settings#update_map"
+
     resources :moderators, only: [:index, :create, :destroy] do
       get :search, on: :collection
     end

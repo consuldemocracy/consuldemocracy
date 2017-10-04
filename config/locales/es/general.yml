@@ -131,6 +131,10 @@ es:
         hot_score: Más activos hoy
         most_commented: Más comentados
         relevance: Más relevantes
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen debates relacionados con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -210,6 +214,7 @@ es:
     signature_sheet: la hoja de firmas
     document: el documento
     topic: Tema
+    image: Imagen
   geozones:
     none: Toda la ciudad
   layouts:
@@ -267,6 +272,7 @@ es:
       no_notifications: No tienes notificaciones nuevas
       open: abierto
       open_city_title: La ciudad que quieres será la ciudad que quieras
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_gov: Gobierno %{open}
       proposals: Propuestas
       spending_proposals: Presupuestos participativos
@@ -362,6 +368,9 @@ es:
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
       tags_label: Tags
+      map_location: "Ubicación en el mapa"
+      map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+      map_remove_marker: "Eliminar el marcador"
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -374,7 +383,10 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
-        random: Aleatorias
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen propuestas relacionadas con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -420,7 +432,7 @@ es:
     proposal:
       created: "¡Has creado una propuesta!"
       share:
-        guide: "Compártela para que la gente empieze a apoyarla."
+        guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: "Ahora no, ir a mi propuesta"
       improve_info: "Mejora tu campaña y consigue más apoyos"
@@ -500,6 +512,7 @@ es:
         help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
     show:
       dates_title: "Fechas de votación"
+      already_voted_in_booth: "Ya has participado en esta votación en una urna."
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión
       signup: registrarte
@@ -509,7 +522,6 @@ es:
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
       more_info: "Más información"
-      already_voted: "Ya has participado en esta votación."
       polls: "Votaciones"
       more_polls: "Ir a otras votaciones"
   poll_questions:
@@ -882,20 +894,28 @@ es:
       not_voting_allowed: El periodo de votación está cerrado.
       different_heading_assigned: Sólo puedes apoyar propuestas en un distrito
   welcome:
-    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
-    featured:
-      features: "Participa en %{org_name}"
-      label: "Participa"
+    debates:
+      description: Encontrarnos, debatir y compartir lo que nos parece importante en nuestra ciudad.
+      title: Debates
+    decide:
+      description: La ciudadanía decide si acepta o rechaza las propuestas más apoyadas.
+      title: Decides
+    do:
+      description: Si la propuesta es aceptada mayoritariamente, el Ayuntamiento la asume como propia y se hace.
+      title: Se hace
+    proposal:
+      description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
+      title: Propones
+    recommended:
+      title: Recomendaciones que te pueden interesar
+      debates:
+        title: Debates recomendados
+        btn_text_link: Todos los debates recomendados
       proposals:
-        title: Crea propuestas ciudadanas
-        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
-        link: Ver propuestas ciudadanas
-        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
-      budgets:
-        title: "Decide a qué proyectos se destina el presupuesto participativo"
-        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
-        link: Ver proyectos de gasto
-        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
+        title: Propuestas recomendadas
+        btn_text_link: Todas las propuestas recomendadas
+      budget_investments:
+        title: Presupuestos recomendados
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
