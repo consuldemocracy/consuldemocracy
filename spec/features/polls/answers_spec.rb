@@ -33,6 +33,10 @@ feature 'Answers' do
     click_button "Save"
 
     expect(page).to have_content "Answer created successfully"
+
+    expect(page).to have_css(".poll_question_answer", count: 1)
+    expect(page).to have_content "¿Would you like to reform Central Park?"
+    expect(page).to have_content "Adding more trees, creating a play area..."
   end
 
   pending "Update"
