@@ -7,7 +7,7 @@
     <div class="icon-successful"></div>
     <div class="icon-human-rights"></div>
 
-    <div class="row" data-equalizer>
+    <div class="row" <%= "data-equalizer" if feature?(:allow_images) %>>
 
       <% if feature?(:allow_images) %>
         <div class="small-12 medium-3 large-2 column text-center">
@@ -71,7 +71,8 @@
         </div>
       </div>
 
-      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container" data-equalizer-watch>
+      <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column supports-container"
+           <%= "data-equalizer-watch" if feature?(:allow_images) %>>
         <% if proposal.successful? %>
           <div class="padding text-center">
 
