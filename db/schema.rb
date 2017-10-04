@@ -639,7 +639,6 @@ ActiveRecord::Schema.define(version: 20171004025903) do
   end
 
   add_index "poll_officer_assignments", ["booth_assignment_id"], name: "index_poll_officer_assignments_on_booth_assignment_id", using: :btree
-  add_index "poll_officer_assignments", ["officer_id", "date"], name: "index_poll_officer_assignments_on_officer_id_and_date", using: :btree
   add_index "poll_officer_assignments", ["officer_id"], name: "index_poll_officer_assignments_on_officer_id", using: :btree
 
   create_table "poll_officers", force: :cascade do |t|
@@ -684,7 +683,6 @@ ActiveRecord::Schema.define(version: 20171004025903) do
     t.string   "author_visible_name"
     t.string   "title"
     t.string   "valid_answers"
-    t.text     "description"
     t.integer  "comments_count"
     t.datetime "hidden_at"
     t.datetime "created_at"
@@ -728,7 +726,7 @@ ActiveRecord::Schema.define(version: 20171004025903) do
     t.integer  "task",          default: 0, null: false
   end
 
-  add_index "poll_shifts", ["booth_id", "officer_id"], name: "index_poll_shifts_on_booth_id_and_officer_id", using: :btree
+  add_index "poll_shifts", ["booth_id", "officer_id", "date", "task"], name: "index_poll_shifts_on_booth_id_and_officer_id_and_date_and_task", unique: true, using: :btree
   add_index "poll_shifts", ["booth_id"], name: "index_poll_shifts_on_booth_id", using: :btree
   add_index "poll_shifts", ["officer_id"], name: "index_poll_shifts_on_officer_id", using: :btree
 
@@ -761,6 +759,7 @@ ActiveRecord::Schema.define(version: 20171004025903) do
     t.integer  "officer_assignment_id"
     t.integer  "user_id"
     t.string   "origin"
+    t.integer  "officer_id"
   end
 
   add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree
@@ -791,6 +790,8 @@ ActiveRecord::Schema.define(version: 20171004025903) do
     t.datetime "ends_at"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
+    t.text     "summary"
+    t.text     "description"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree

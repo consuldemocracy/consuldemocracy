@@ -1,11 +1,11 @@
 <div id="<%= dom_id(proposal) %>"
      class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
-  <div class="panel">
+  <div class="panel with-image">
     <div class="icon-successful"></div>
     <div class="row" data-equalizer>
 
-      <div class="small-12 medium-3 large-2 column">
+      <div class="small-12 medium-3 large-2 column text-center">
         <div data-equalizer-watch>
           <% if proposal.image.present? %>
             <%= image_tag proposal.image_url(:thumb), alt: proposal.image.title %>

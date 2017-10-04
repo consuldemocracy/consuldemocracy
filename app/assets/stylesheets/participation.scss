@@ -310,6 +310,10 @@
 .budget-investment-new,
 .proposal-form,
 .proposal-edit,
+.new_poll_question,
+.edit_poll_question,
+.new_poll,
+.edit_poll,
 .poll-question-form {
   @include direct-uploads;
 }
@@ -668,16 +672,15 @@
         padding-top: 100%;
       }
     }
-
-    .column:first-child {
-      text-align: center;
-    }
   }
 
   @include breakpoint(medium) {
 
     .panel {
-      padding: 0 $line-height / 2 0 0;
+
+      &.with-image {
+        padding: 0 $line-height / 2 0 0;
+      }
 
       .no-image {
         height: 100%;
@@ -825,7 +828,7 @@
     background: image-url('truncate.png');
     background-repeat: repeat-x;
     bottom: 0;
-    height: 24px;
+    height: rem-calc(24);
     position: absolute;
     width: 100%;
   }

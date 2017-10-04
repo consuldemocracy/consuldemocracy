@@ -494,11 +494,6 @@ en:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
     show:
-      answer_this_question: "Answer this question"
-      original_proposal: "Original proposal"
-      author: "Created by"
-      dates_title: "Participation dates"
-      more_info: "More information"
       not_logged_in: "You must %{signin} or %{signup} to participate."
       signin: Sign in
       signup: Sign up
@@ -509,7 +504,6 @@ en:
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
-      poll: "Poll"
   proposal_notifications:
     new:
       title: "Send message"
@@ -524,9 +518,6 @@ en:
     edit: 'Edit'
     save: 'Save'
     delete: 'Delete'
-    comments:
-      title: 'Comments'
-      login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
     "yes": "Yes"
     "no": "No"
     search_results: "Search results"

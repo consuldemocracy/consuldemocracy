@@ -322,5 +322,4 @@ end
 def documentable_fill_new_valid_poll_question
   page.select documentable.poll.name, from: 'poll_question_poll_id'
   fill_in 'poll_question_title', with: "Star Wars: Episode IV - A New Hope"
-  fill_in_ckeditor "poll_question_description", with: "Description"
 end

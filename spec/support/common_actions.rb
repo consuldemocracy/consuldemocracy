@@ -298,13 +298,14 @@ module CommonActions
     end
   end
 
-  def vote_for_poll_via_web
-    visit question_path(question)
+  def vote_for_poll_via_web(poll, question)
+    visit poll_path(poll)
 
-    click_link 'Answer this question'
-    click_link 'Yes'
+    within("#poll_question_#{question.id}_answers") do
+      click_link 'Yes'
+      expect(page).to_not have_link('Yes')
+    end
 
-    expect(page).to_not have_link('Yes')
     expect(Poll::Voter.count).to eq(1)
   end
 

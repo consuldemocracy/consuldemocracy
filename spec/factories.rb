@@ -498,7 +498,6 @@ FactoryGirl.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
     valid_answers { Faker::Lorem.words(3).join(', ') }
   end
 
@@ -531,6 +530,7 @@ FactoryGirl.define do
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    association :officer, factory: :poll_officer
     origin "web"
 
     trait :from_booth do

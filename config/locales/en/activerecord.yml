@@ -152,6 +152,8 @@ en:
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
         valid_answers: "Posibles answers"

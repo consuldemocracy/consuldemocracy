@@ -30,14 +30,15 @@ feature 'Admin shifts' do
     expect(page).to have_content officer.name
   end
 
-  scenario "Create Vote Collection Shift", :js do
-    poll = create(:poll)
-    vote_collection_dates = (poll.starts_at.to_date..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
-
+  scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
+    vote_collection_dates = (poll.starts_at.to_date..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
+    recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a.map { |date| I18n.l(date, format: :long) }
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
@@ -60,16 +61,8 @@ feature 'Admin shifts' do
       expect(page).to have_content("Collect Votes")
       expect(page).to have_content(officer.name)
     end
-  end
 
-  scenario "Create Recount & Scrutiny Shift", :js do
-    poll = create(:poll)
-    recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a.map { |date| I18n.l(date, format: :long) }
-
-    booth = create(:poll_booth)
-    officer = create(:poll_officer)
-
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
@@ -89,7 +82,7 @@ feature 'Admin shifts' do
     expect(page).to have_content "Shift added"
 
     within("#shifts") do
-      expect(page).to have_css(".shift", count: 1)
+      expect(page).to have_css(".shift", count: 2)
       expect(page).to have_content(I18n.l(poll.ends_at.to_date + 4.days, format: :long))
       expect(page).to have_content("Recount & Scrutiny")
       expect(page).to have_content(officer.name)
@@ -97,11 +90,12 @@ feature 'Admin shifts' do
   end
 
   scenario "Error on create", :js do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
@@ -116,13 +110,14 @@ feature 'Admin shifts' do
   end
 
   scenario "Destroy" do
-    poll = create(:poll)
+    poll = create(:poll, :current)
     booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     officer = create(:poll_officer)
 
     shift = create(:poll_shift, officer: officer, booth: booth)
 
-    visit admin_booths_path
+    visit available_admin_booths_path
 
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"

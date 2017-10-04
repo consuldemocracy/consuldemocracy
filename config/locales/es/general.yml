@@ -494,11 +494,6 @@ es:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
     show:
-      answer_this_question: "Responder a esta pregunta"
-      original_proposal: "Propuesta original"
-      author: "Creado por"
-      dates_title: "Fechas de participación"
-      more_info: "Más información"
       not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión
       signup: registrarte
@@ -509,7 +504,6 @@ es:
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
-      poll: "Votación"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -524,9 +518,6 @@ es:
     edit: 'Editar'
     save: 'Guardar'
     delete: 'Borrar'
-    comments:
-      title: 'Comentarios'
-      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
     search_results: "Resultados de búsqueda"
