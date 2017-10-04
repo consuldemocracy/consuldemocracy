@@ -2,7 +2,6 @@ class Officing::ResidenceController < Officing::BaseController
 
   before_action :load_officer_assignment
   before_action :verify_officer_assignment
-  before_action :verify_booth
 
   def new
     @residence = Officing::Residence.new

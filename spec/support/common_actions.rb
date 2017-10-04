@@ -53,7 +53,7 @@ module CommonActions
     fill_in 'user_password', with: user.password
 
     click_button 'Enter'
-    visit new_officing_booth_path
+    visit new_officing_residence_path
   end
 
   def login_as_authenticated_manager

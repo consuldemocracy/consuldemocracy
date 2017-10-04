@@ -510,8 +510,8 @@ en:
         help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council ask to the citizens decision."
         help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
     show:
-      dates_title: "Voting dates"
       already_voted_in_booth: "You have already participated in a booth for this poll."
+      dates_title: "Participation dates"
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       signin: Sign in
       signup: Sign up
@@ -528,7 +528,7 @@ en:
     default_valid_answers: "Yes, No"
     show:
       answer_this_question: "Go to voting page"
-      original_proposal: "See proposal's text"
+      original_proposal: "Original proposal"
       author: "Created by"
       dates_title: "Voting dates"
       more_info: "More information"
