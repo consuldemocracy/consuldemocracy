@@ -494,7 +494,7 @@ en:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
     show:
-      answer_this_question: "Answer this question"
+      answer_this_question: "Go to voting page"
       original_proposal: "Original proposal"
       author: "Created by"
       dates_title: "Participation dates"

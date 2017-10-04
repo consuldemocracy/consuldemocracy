@@ -13,7 +13,8 @@ class Officing::VotersController < Officing::BaseController
                              document_number: @user.document_number,
                              user: @user,
                              poll: @poll,
-                             origin: "booth")
+                             origin: "booth",
+                             officer: current_user.poll_officer)
     @voter.save!
   end
 

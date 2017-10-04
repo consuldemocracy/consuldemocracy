@@ -301,7 +301,7 @@ module CommonActions
   def vote_for_poll_via_web
     visit question_path(question)
 
-    click_link 'Answer this question'
+    click_link 'Go to voting page'
     click_link 'Yes'
 
     expect(page).to_not have_link('Yes')

@@ -58,6 +58,8 @@ feature 'Admin polls' do
     fill_in "poll_name", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
+    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
@@ -179,54 +181,6 @@ feature 'Admin polls' do
         expect(page).to have_content question.title
         expect(page).to_not have_content other_question.title
         expect(page).to_not have_content "There are no questions assigned to this poll"
-      end
-
-      scenario 'Add question to poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, title: 'Should we rebuild the city?')
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-
-        fill_in 'search-questions', with: 'rebuild'
-        click_button 'Search'
-
-        within('#search-questions-results') do
-          click_link 'Include question'
-        end
-
-        expect(page).to have_content 'Question added to this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-      end
-
-      scenario 'Remove question from poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, poll: poll)
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-
-        within("#poll_question_#{question.id}") do
-          click_link 'Remove question from poll'
-        end
-
-        expect(page).to have_content 'Question removed from this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-        expect(page).to_not have_content question.title
       end
 
     end
