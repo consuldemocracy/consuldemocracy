@@ -606,7 +606,7 @@ es:
       index:
         title: "Resultados"
         no_results: "No hay resultados"
-        table_whites: Papeletas en blanco
+        table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
         table_answer: Respuesta
