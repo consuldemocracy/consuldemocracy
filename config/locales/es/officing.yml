@@ -32,7 +32,6 @@ es:
         error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
-        intro_html: "Junte los sobres de votación de <strong>todos</strong> los días e introduzca la siguiente información:"
         not_allowed: "No tienes permiso para introducir resultados"
         booth: "Urna"
         date: "Día"
