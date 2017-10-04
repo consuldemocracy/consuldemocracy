@@ -8,6 +8,7 @@ en:
         direct_message: "You message has been sent successfully."
         poll: "Poll created successfully."
         poll_booth: "Booth created successfully."
+        poll_question_answer: "Answer created successfully"
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"

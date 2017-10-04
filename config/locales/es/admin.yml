@@ -593,11 +593,13 @@ es:
         title: Título
         valid_answers: Respuestas válidas
         add_answer: "Añadir respuesta"
-        answer: "Respuesta"
         description: Descripción
         video_url: Video externo
         documents: Documentos (1)
         preview: Ver en la web
+        answers:
+          title: Respuesta
+          description: Descripción
     answers:
       new:
         title: "Nueva respuesta"

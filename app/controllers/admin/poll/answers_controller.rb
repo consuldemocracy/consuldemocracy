@@ -11,7 +11,8 @@ class Admin::Poll::AnswersController < Admin::Poll::BaseController
     @answer = Poll::QuestionAnswer.new(answer_params)
 
     if @answer.save
-      redirect_to admin_question_path(@question)
+      redirect_to admin_question_path(@question),
+               notice: t("flash.actions.create.poll_question_answer")
     else
       render :new
     end

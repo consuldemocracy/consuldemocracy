@@ -593,10 +593,12 @@ en:
         title: Title
         valid_answers: Valid answers
         add_answer: "Add answer"
-        answer: "Answer"
         description: Description
         video_url: External video
         documents: Documents (1)
+        answers:
+          title: Answer
+          description: Description
     answers:
       new:
         title: "New answer"
