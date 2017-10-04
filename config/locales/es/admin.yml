@@ -608,6 +608,9 @@ es:
         video_url: Video externo
         documents: Documentos (1)
         preview: Ver en la web
+    answers:
+      new:
+        title: "Nueva respuesta"
     recounts:
       index:
         title: "Recuentos"

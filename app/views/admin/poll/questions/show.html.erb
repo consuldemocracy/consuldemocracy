@@ -27,7 +27,7 @@
     <table>
       <tr>
         <th colspan="1" scope="colgroup"><%= t('admin.questions.show.valid_answers') %></th>
-        <th colspan="1" scope="colgroup"><%= link_to t("admin.questions.show.add_answer"), "#", class: "button hollow float-right" %></th>
+        <th colspan="1" scope="colgroup"><%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question), class: "button hollow float-right" %></th>
       </tr>
 
       <tr>
@@ -36,7 +36,10 @@
       </tr>
 
       <tr>
-
+        <% @question.question_answers.each do |answer| %>
+          <th scope="col"><%= answer.title %></th>
+          <th scope="col"><%= answer.description %></th>
+        <% end %>
       </tr>
     </table>
 

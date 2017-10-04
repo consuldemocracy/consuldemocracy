@@ -386,6 +386,9 @@ fr:
         answer: "Réponse"
         description: Description
         preview: Voir l'aperçu
+    answers:
+      new:
+        title: "Nouvelle réponse"
     recounts:
       index:
         title: "Dépouillements"
