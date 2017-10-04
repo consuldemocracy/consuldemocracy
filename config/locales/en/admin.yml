@@ -597,12 +597,9 @@ en:
         description: Description
         video_url: External video
         documents: Documents (1)
-        preview: View on website
     answers:
       new:
         title: "New answer"
-        video_url: External video
-        documents: Documents (1)
     recounts:
       index:
         title: "Recounts"
