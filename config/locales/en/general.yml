@@ -511,7 +511,7 @@ en:
         help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
     show:
       already_voted_in_booth: "You have already participated in a booth for this poll."
-      dates_title: "Participation dates"
+      back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       signin: Sign in
       signup: Sign up
@@ -523,6 +523,9 @@ en:
       more_info: "More information"
       polls: "Polls"
       more_polls: "Go to other polls"
+      more_info_title: "More information"
+      documents: Documents
+      zoom_plus: Expand image
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
@@ -634,6 +637,10 @@ en:
       budget: Participatory budget
       searcher: Searcher
     go_to_page: "Go to page of "
+    share: Share
+    orbit:
+      previous_slide: Previous Slide
+      next_slide: Next Slide
   social:
     blog: "%{org} Blog"
     facebook: "%{org} Facebook"

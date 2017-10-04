@@ -307,6 +307,10 @@ a {
   float: left;
 }
 
+.back:not([class^="icon-"]) {
+  text-decoration: underline;
+}
+
 .tabs-content {
   border: 0;
 }

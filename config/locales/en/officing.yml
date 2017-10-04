@@ -36,7 +36,7 @@ en:
         booth: "Booth"
         date: "Date"
         select_booth: "Select booth"
-        ballots_white: "Blank ballots"
+        ballots_white: "Totally blank ballots"
         ballots_null: "Invalid ballots"
         ballots_total: "Total ballots"
         submit: "Save"
@@ -47,7 +47,7 @@ en:
         results: Results
         table_answer: Answer
         table_votes: Votes
-        table_whites: "Blank ballots"
+        table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
         table_total: "Total ballots"
     residence:
