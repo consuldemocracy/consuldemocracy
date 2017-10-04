@@ -21,7 +21,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   private
 
     def answer_params
-      params.require(:poll_question_answer).permit(:title, :description, :poll_question_id)
+      params.require(:poll_question_answer).permit(:title, :description, :question_id)
     end
 
     def load_question
