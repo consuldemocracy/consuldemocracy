@@ -1,66 +1,10 @@
 <%= form_for(Poll::Question::Answer.new, 
 						 url: admin_answer_images_path(@answer), 
 						 method: :post) do |f| %>
+						 
 	<div class="images small-12 column">
-	  <%# render 'images/nested_image', imageable: @answer, f: f %>
-
-	  <%= f.label :images, t("images.form.title") %>
+	  <%= render 'images/nested_image', imageable: @answer, f: f, image_fields: :images %>
 	</div>
-
-		<p class="help-text"><%# imageables_note(imageable) %></p>
-
-	<div id="nested-image">
-	  <%= f.fields_for :images do |image_builder| %>
-	    <%# render 'images/image_fields', f: image_builder, imageable: imageable %>
-	    <div id="<%= dom_id(f.object) %>" class="image direct-upload nested-fields">
-			  <%= f.hidden_field :id %>
-			  <%= f.hidden_field :user_id, value: current_user.id %>
-			  <%= f.hidden_field :cached_attachment %>
-
-			  <div class="small-12 column title">
-			    <%= f.text_field :title, placeholder: t("images.form.title_placeholder") %>
-			  </div>
-
-			  <%= render_image(f.object, :thumb, false) if f.object.attachment.exists? %>
-
-			  <div class="small-12 column attachment-actions">
-			    <div class="small-9 column action-add attachment-errors image-attachment">
-			      <%= render_image_attachment(f, @answer, f.object) %>
-			    </div>
-			    <div class="small-3 column action-remove text-right">
-			      <%= render_destroy_image_link(f, f.object) %>
-			    </div>
-			  </div>
-
-			  <div class="small-6 column">
-			    <p class="file-name">
-			      <%= image_attachment_file_name(f.object) %>
-			    </p>
-			  </div>
-
-			  <div class="small-12 column">
-			    <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
-			  </div>
-
-			  <hr>
-			</div>
-	  <% end %>
-	</div>
-
-	<%= link_to_add_association t('images.form.add_new_image'), f, :images,
-	                            force_non_association_create: true,
-	                            partial: "images/image_fields",
-	                            id: "new_image_link",
-	                            class: "button hollow",
-	                            render_options: {
-	                              locals: { imageable: @answer }
-	                            },
-	                            data: {
-	                              association_insertion_node: "#nested-image",
-	                              association_insertion_method: "append"
-	                            } %>
-
-		</div>
 
 	<%= f.submit "Save image" %>
 <% end %>

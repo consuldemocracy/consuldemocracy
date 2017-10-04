@@ -1,9 +1,9 @@
 <%= back_link_to admin_question_path(@answer.question) %>
 
-<% @answer.images.each do |image| %>
-	<%= render_image(image, :large, true) if image.present? %>
-<% end %>
-
 <div>
 	<%= link_to "Add image", new_admin_answer_image_path(@answer) %>
 </div>
+
+<% @answer.images.each do |image| %>
+	<%= render_image(image, :large, true) if image.present? %>
+<% end %>
