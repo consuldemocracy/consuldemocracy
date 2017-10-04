@@ -829,7 +829,7 @@
     background: image-url('truncate.png');
     background-repeat: repeat-x;
     bottom: 0;
-    height: 24px;
+    height: rem-calc(24);
     position: absolute;
     width: 100%;
   }

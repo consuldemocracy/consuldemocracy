@@ -139,7 +139,7 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index], path: 'votaciones' do
-    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
+    resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
     resources :nvotes, only: [:new], controller: 'polls/nvotes' do

@@ -603,7 +603,6 @@ es:
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
-        description: Descripción
         video_url: Video externo
         documents: Documentos (1)
     recounts:

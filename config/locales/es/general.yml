@@ -547,12 +547,12 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar'
-    save: 'Guardar'
-    delete: 'Borrar'
     comments:
       title: 'Comentarios'
       login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
     "yes": "Sí"
     "no": "No"
     search_results: "Resultados de búsqueda"

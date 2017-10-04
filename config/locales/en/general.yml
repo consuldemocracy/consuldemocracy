@@ -546,12 +546,12 @@ en:
     show:
       back: "Go back to my activity"
   shared:
-    edit: 'Edit'
-    save: 'Save'
-    delete: 'Delete'
     comments:
       title: 'Comments'
       login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'
+    edit: 'Edit'
+    save: 'Save'
+    delete: 'Delete'
     "yes": "Yes"
     "no": "No"
     search_results: "Search results"
