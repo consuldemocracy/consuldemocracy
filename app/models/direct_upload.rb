@@ -19,8 +19,9 @@ class DirectUpload
     if @resource_type.present? && @resource_relation.present? && (@attachment.present? || @cached_attachment.present?)
       @resource = @resource_type.constantize.find_or_initialize_by(id: @resource_id)
 
-      if @resource.class.reflections[@resource_relation].macro == :has_one
-        @relation = @resource.send("build_#{resource_relation}", relation_attributtes)
+      if true #@resource.class.reflections[@resource_relation].macro == :has_one
+        #@relation = @resource.send("build_#{resource_relation}", relation_attributtes)
+        @relation = @resource.images.send("build", relation_attributtes)
       else
         @relation = @resource.send(@resource_relation).build(relation_attributtes)
       end
