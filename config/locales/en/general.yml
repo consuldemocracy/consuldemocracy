@@ -521,8 +521,6 @@ en:
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "You can not answer this poll because you are not censed in the right district"
       more_info: "More information"
-      polls: "Polls"
-      more_polls: "Go to other polls"
       more_info_title: "More information"
       documents: Documents
       zoom_plus: Expand image

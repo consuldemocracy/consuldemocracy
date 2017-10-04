@@ -38,8 +38,6 @@ en:
         help_text_3: "In the first vote on february 2017, moreover to decide about two citizen proposals, the City Council asked about the reforms of Gran Vía, about finalist projects to reform Plaza España and some issues in six districts of Madrid."
       orders:
         random: Random
-    show:
-      dates_title: "Voting dates"
   forums:
     index:
       deactivate_link: "Deactivate"
