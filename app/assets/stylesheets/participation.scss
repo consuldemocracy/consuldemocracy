@@ -1629,6 +1629,25 @@
   }
 }
 
+.image-container {
+  background: #fafafa;
+  overflow: hidden;
+  position: relative;
+}
+
+.poll {
+
+  &.with-image {
+    padding: 0 $line-height / 2 0 0;
+
+    img {
+      height: 100%;
+      max-width: none;
+      position: absolute;
+    }
+  }
+}
+
 .poll,
 .poll-question {
   border: 1px solid $border;
