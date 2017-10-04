@@ -1,7 +1,6 @@
 class Admin::Poll::ShiftsController < Admin::Poll::BaseController
 
   before_action :load_booth
-  before_action :load_polls
   before_action :load_officer
 
   def new
@@ -37,10 +36,6 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
 
     def load_booth
       @booth = ::Poll::Booth.find(params[:booth_id])
-    end
-
-    def load_polls
-      @polls = ::Poll.current_or_incoming
     end
 
     def load_shifts
