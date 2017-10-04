@@ -678,7 +678,10 @@
   @include breakpoint(medium) {
 
     .panel {
-      padding: 0 $line-height / 2 0 0;
+
+      &.with-image {
+        padding: 0 $line-height / 2 0 0;
+      }
 
       .no-image {
         height: 100%;

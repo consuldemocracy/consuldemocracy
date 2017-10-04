@@ -3,7 +3,7 @@
            <%= css_for_human_rights_user(proposal) %>
            <%= css_for_successfull_proposal(proposal) %>"
      data-type="proposal">
-  <div class="panel">
+  <div class="panel <%= 'with-image' if feature?(:allow_images) %>">
     <div class="icon-successful"></div>
     <div class="icon-human-rights"></div>
 
