@@ -6,11 +6,15 @@ feature 'Polls' do
 
     scenario 'Polls can be listed' do
       polls = create_list(:poll, 3)
+      create(:image, imageable: polls[0])
+      create(:image, imageable: polls[1])
+      create(:image, imageable: polls[2])
 
       visit polls_path
 
       polls.each do |poll|
         expect(page).to have_content(poll.name)
+        expect(page).to have_css("img[alt='#{poll.image.title}']")
         expect(page).to have_link("Participate in this poll")
       end
     end
@@ -59,7 +63,7 @@ feature 'Polls' do
 
   context 'Show' do
     let(:geozone) { create(:geozone) }
-    let(:poll) { create(:poll) }
+    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
 
     scenario 'Lists questions from proposals as well as regular ones' do
       normal_question = create(:poll_question, poll: poll)
@@ -67,6 +71,8 @@ feature 'Polls' do
 
       visit poll_path(poll)
       expect(page).to have_content(poll.name)
+      expect(page).to have_content(poll.summary)
+      expect(page).to have_content(poll.description)
 
       expect(page).to have_content(normal_question.title)
       expect(page).to have_content(proposal_question.title)

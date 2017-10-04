@@ -2,7 +2,6 @@
     <div>
       <%= f.label :image, t("images.form.admin_title") %>
       
-
       <%= link_to_add_association t('images.form.add_new_image'), f, :image,
                             force_non_association_create: true,
                             partial: "images/image_fields",
@@ -15,6 +14,8 @@
                               association_insertion_node: "#nested-image",
                               association_insertion_method: "append"
                             } %>
+      
+      <%= render_image(f.object.image, :thumb, false) if f.object.image %>
 
       <div id="nested-image">
         <%= f.fields_for :image do |image_builder| %>
@@ -26,17 +27,11 @@
 
             <%= image_builder.text_field :title, placeholder: t("images.form.title_placeholder"), label: "#{t("images.form.admin_alt_text")}" %>
 
-
             <div class="attachment-actions">
               <div class="small-12 column action-add attachment-errors image-attachment">
                 <%= render_image_attachment(image_builder, imageable, image_builder.object) %>
               </div>
             </div>
-
-            <div class="small-12 column">
-              <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
-            </div>
-
           </div>
         
         <% end %>
