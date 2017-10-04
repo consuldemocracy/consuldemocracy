@@ -214,7 +214,6 @@ end
 
 def imageable_attach_new_file(imageable_factory_name, path, success = true)
   click_link "Add image"
-
   within "#nested-image" do
     image = find(".image")
     image_input = image.find("input[type=file]", visible: false)
