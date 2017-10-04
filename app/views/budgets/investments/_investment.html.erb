@@ -4,11 +4,13 @@
 
       <% if feature?(:allow_images) %>
         <div class="small-12 medium-3 large-2 column text-center">
-          <% if investment.image.present? %>
-            <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
-          <% else %>
-            <div class="no-image"></div>
-          <% end %>
+          <div data-equalizer-watch>
+            <% if investment.image.present? %>
+              <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
+            <% else %>
+              <div class="no-image"></div>
+            <% end %>
+          </div>
         </div>
 
         <div class="small-12 medium-6 large-7 column">
