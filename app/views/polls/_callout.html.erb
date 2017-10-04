@@ -1,0 +1,26 @@
+<% unless can?(:answer, @poll) %>
+  <% if current_user.nil? %>
+    <div class="callout primary">
+      <%= t("polls.show.cant_answer_not_logged_in",
+            signin: link_to(t("polls.show.signin"), new_user_session_path, class: "probe-message"),
+            signup: link_to(t("polls.show.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+    </div>
+  <% elsif current_user.unverified? %>
+    <div class="callout warning">
+      <%= t('polls.show.cant_answer_verify_html',
+            verify_link: link_to(t('polls.show.verify_link'), verification_path)) %>
+    </div>
+  <% elsif @poll.incoming? %>
+    <div class="callout primary">
+      <%= t('polls.show.cant_answer_incoming') %>
+    </div>
+  <% elsif @poll.expired? %>
+    <div class="callout alert">
+      <%= t('polls.show.cant_answer_expired') %>
+    </div>
+  <% else %>
+    <div class="callout warning">
+      <%= t('polls.show.cant_answer_wrong_geozone') %>
+    </div>
+  <% end %>
+<% end %>
