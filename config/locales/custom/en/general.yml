@@ -36,6 +36,10 @@ en:
         description: Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly.
         help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council of Madrid ask to the citizens decision."
         help_text_3: "In the first vote on february 2017, moreover to decide about two citizen proposals, the City Council asked about the reforms of Gran Vía, about finalist projects to reform Plaza España and some issues in six districts of Madrid."
+      orders:
+        random: Random
+    show:
+      dates_title: "Voting dates"
   forums:
     index:
       deactivate_link: "Deactivate"
@@ -64,3 +68,18 @@ en:
     youtube_link: "YouTube"
     telegram_link: "Telegram"
     instagram_link: "Instagram"
+  welcome:
+    title: "Decide Madrid: portal of citizen participation of the City of Madrid"
+    featured:
+      features: "Participate on %{org_name}"
+      label: "Participate"
+      proposals:
+        title: Create citizen proposals
+        text: "Do you have an idea for Madrid? Propose it. If 1% of the people of Madrid support it, we will vote to make it out."
+        link: See citizen proposals
+        alt_image: "Generic image related with proposals of the City of Madrid."
+      budgets:
+        title: "Decides which projects are earmarked for the participatory budget"
+        text: "You propose and decide on what the City Council invests in a part of the municipal budget."
+        link: See investment projects
+        alt_image: "Generic image related with budgets of the City of Madrid."

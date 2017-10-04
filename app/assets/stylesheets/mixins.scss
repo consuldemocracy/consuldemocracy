@@ -1,6 +1,7 @@
 // Table of Contents
 //
 // 01. Logo
+// 02. Orbit bullets
 //
 
 // 01. Logo
@@ -31,12 +32,40 @@
   }
 }
 
+// 02. Orbit bullet
+// ----------------
+@mixin orbit-bullets {
+  @include disable-mouse-outline;
+  position: relative;
+  margin-top: $orbit-bullet-margin-top;
+  margin-bottom: $orbit-bullet-margin-bottom;
+  text-align: center;
 
+  button {
+    width: $orbit-bullet-diameter;
+    height: $orbit-bullet-diameter;
+    margin: $orbit-bullet-margin;
+
+    border-radius: 50%;
+    background-color: $orbit-bullet-background;
+
+    &:hover {
+      background-color: $orbit-bullet-background-active;
+    }
+
+    &.is-active {
+      background-color: $orbit-bullet-background-active;
+    }
+  }
+}
+
+// 02. Direct uploads
+// ------------------
 @mixin direct-uploads {
 
   .cached-image {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: rem-calc(150);
+    max-height: rem-calc(150);
   }
 
   .progress-bar-placeholder {
@@ -49,15 +78,23 @@
 
     .document-attachment,
     .image-attachment {
-      padding-left:0;
+      padding-left: 0;
 
-      p{
+      p {
         margin-bottom: 0;
       }
     }
-    input.js-document-attachment,
-    input.js-image-attachment{
-      display: none;
+
+    .attachment-errors {
+
+      > .js-image-attachment,
+      > .js-document-attachment {
+        display: none;
+
+        ~ .error {
+          display: inline-block;
+        }
+      }
     }
   }
 
@@ -96,4 +133,5 @@
   .loading-bar.no-transition {
     transition: none;
   }
+
 }

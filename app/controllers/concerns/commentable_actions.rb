@@ -4,17 +4,22 @@ module CommentableActions
   include Search
 
   def index
-    @resources = @search_terms.present? ? resource_model.search(@search_terms) : resource_model.all
-    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
+    @resources = resource_model.all
 
+    @resources = @current_order == "recommendations" && current_user.present? ? @resources.recommendations(current_user) : @resources.for_render
+    @resources = @resources.search(@search_terms) if @search_terms.present?
+    @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
-    @resources = @resources.page(params[:page]).for_render.send("sort_by_#{@current_order}")
+
+    @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
+
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
     @banners = Banner.with_active
 
     set_resource_votes(@resources)
+
     set_resources_instance
   end
 
@@ -44,9 +49,7 @@ module CommentableActions
 
     if @resource.save
       track_event
-      if @resource.class == Proposal
-        log_event("proposal", "create")
-      end
+      log_event("proposal", "create") if @resource.class == Proposal
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else

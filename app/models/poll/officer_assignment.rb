@@ -3,14 +3,12 @@ class Poll
     belongs_to :officer
     belongs_to :booth_assignment
     has_many :partial_results
-    has_many :white_results
-    has_many :null_results
-    has_many :total_results
+    has_many :recounts
     has_many :voters
 
     validates :officer_id, presence: true
     validates :booth_assignment_id, presence: true
-    validates :date, presence: true, uniqueness: { scope: [:officer_id, :booth_assignment_id] }
+    validates :date, presence: true
 
     delegate :poll_id, :booth_id, to: :booth_assignment
 
@@ -27,9 +25,7 @@ class Poll
       self.user_data_log = "#{officer.user_id} - #{officer.user.name_and_email}"
     end
 
-    def booth
-      booth_assignment.booth
-    end
+    delegate :booth, to: :booth_assignment
 
   end
 end

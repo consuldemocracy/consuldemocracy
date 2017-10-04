@@ -131,6 +131,10 @@ en:
         hot_score: most active
         most_commented: most commented
         relevance: relevance
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not debates related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       search_form:
         button: Search
         placeholder: Search debates...
@@ -267,6 +271,7 @@ en:
       no_notifications: "You don't have new notifications"
       open: open
       open_city_title: Love the city, and it will become a city you love
+      open_city_slogan_html: There are cities that are governed directly by their inhabitants, who <b>discuss</b> the topics they are concerned about, <b>propose</b> ideas to improve their lives and <b>decide</b> among themselves which ones will be carried out.
       open_gov: Open government
       proposals: Proposals
       spending_proposals: Participatory budgeting
@@ -377,7 +382,10 @@ en:
         most_commented: most commented
         relevance: relevance
         archival_date: Archived
-        random: Random
+        recommendations: recommendations
+      recommendations:
+        without_results: There are not proposals related to your interests
+        without_interests: Follow proposals so we can give you recommendations
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       retired_links:
@@ -502,7 +510,8 @@ en:
         help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council ask to the citizens decision."
         help_text_2: "To participate in the next vote you have to sign up on %{org} and verify your account. All registered voters in the city over 16 years old can vote. The results of all votes are binding on the government."
     show:
-      dates_title: "Voting dates"
+      already_voted_in_booth: "You have already participated in a booth for this poll."
+      dates_title: "Participation dates"
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       signin: Sign in
       signup: Sign up
@@ -512,7 +521,6 @@ en:
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "You can not answer this poll because you are not censed in the right district"
       more_info: "More information"
-      already_voted: "You already have participated in this poll."
       polls: "Polls"
       more_polls: "Go to other polls"
   poll_questions:
@@ -520,7 +528,7 @@ en:
     default_valid_answers: "Yes, No"
     show:
       answer_this_question: "Go to voting page"
-      original_proposal: "See proposal's text"
+      original_proposal: "Original proposal"
       author: "Created by"
       dates_title: "Voting dates"
       more_info: "More information"
@@ -885,20 +893,28 @@ en:
       not_voting_allowed: Voting phase is closed
       different_heading_assigned: You can only support proposals in one district
   welcome:
-    title: "Decide Madrid: portal of citizen participation of the City of Madrid"
-    featured:
-      features: "Participate on %{org_name}"
-      label: "Participate"
+    debates:
+      description: For meeting, discussing and sharing the things that matter to us in our city.
+      title: Debates
+    decide:
+      description: The public decides if it accepts or rejects the most supported proposals.
+      title: You decide
+    do:
+      description: If the proposal is accepted by the majority, the City Council accepts it as its own and it gets done.
+      title: It gets done
+    proposal:
+      description: Open space for citizen proposals about the kind of city we want to live in.
+      title: You propose
+    recommended:
+      title: Recommendations that may interest you
+      debates:
+        title: Recommended debates
+        btn_text_link: All recommended debates
       proposals:
-        title: Create citizen proposals
-        text: "Do you have an idea for Madrid? Propose it. If 1% of the people of Madrid support it, we will vote to make it out."
-        link: See citizen proposals
-        alt_image: "Generic image related with proposals of the City of Madrid."
-      budgets:
-        title: "Decides which projects are earmarked for the participatory budget"
-        text: "You propose and decide on what the City Council invests in a part of the municipal budget."
-        link: See investment projects
-        alt_image: "Generic image related with budgets of the City of Madrid."
+        title: Recommended proposals
+        btn_text_link: All recommended proposals
+      budget_investments:
+        title: Recommended investments
     verification:
       i_dont_have_an_account: I don't have an account
       i_have_an_account: I already have an account

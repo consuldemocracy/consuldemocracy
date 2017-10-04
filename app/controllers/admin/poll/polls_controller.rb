@@ -1,7 +1,7 @@
 class Admin::Poll::PollsController < Admin::Poll::BaseController
   load_and_authorize_resource
 
-  before_action :load_search, only: [:search_booths, :search_questions, :search_officers]
+  before_action :load_search, only: [:search_booths, :search_officers]
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
@@ -47,25 +47,6 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     redirect_to admin_poll_path(@poll), notice: notice
   end
 
-  def remove_question
-    question = ::Poll::Question.find(params[:question_id])
-
-    if @poll.questions.include? question
-      @poll.questions.delete(question)
-      notice = t("admin.polls.flash.question_removed")
-    else
-      notice = t("admin.polls.flash.error_on_question_removed")
-    end
-    redirect_to admin_poll_path(@poll), notice: notice
-  end
-
-  def search_questions
-    @questions = ::Poll::Question.where("poll_id IS ? OR poll_id != ?", nil, @poll.id).search(search: @search).order(title: :asc)
-    respond_to do |format|
-      format.js
-    end
-  end
-
   private
 
     def load_geozones
@@ -73,7 +54,9 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     end
 
     def poll_params
-      params.require(:poll).permit(:name, :starts_at, :ends_at, :geozone_restricted, geozone_ids: [])
+      params.require(:poll).permit(:name, :starts_at, :ends_at, :geozone_restricted, :summary, :description, 
+                                   geozone_ids: [],
+                                   image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
     end
 
     def search_params

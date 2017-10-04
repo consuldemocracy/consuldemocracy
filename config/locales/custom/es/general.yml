@@ -36,6 +36,10 @@ es:
         description: Regístrate para poder votar propuestas ciudadanas y las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid. Toma decisiones municipales de forma directa.
         help_text_1: "Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. En las votaciones también se pueden incluir cuestiones que el Ayuntamiento de Madrid somete a decisión directa de la ciudadanía."
         help_text_3: "En la primera votación de febrero de 2017, además de decidir sobre dos propuestas ciudadanas, el Ayuntamiento preguntó sobre actuaciones que se planteaban llevar a cabo en la Gran Vía, sobre los proyectos finalistas para reformar plaza de España y diversas cuestiones en seis distritos de Madrid que plantearon sus respectivas Juntas."
+      orders:
+        random: Aleatorias
+    show:
+      dates_title: "Fechas de votación"
   forums:
     index:
       deactivate_link: "Desactivar"
@@ -66,3 +70,18 @@ es:
     youtube_link: "YouTube"
     telegram_link: "Telegram"
     instagram_link: "Instagram"
+  welcome:
+    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
+    featured:
+      features: "Participa en %{org_name}"
+      label: "Participa"
+      proposals:
+        title: Crea propuestas ciudadanas
+        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
+        link: Ver propuestas ciudadanas
+        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
+      budgets:
+        title: "Decide a qué proyectos se destina el presupuesto participativo"
+        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
+        link: Ver proyectos de gasto
+        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."

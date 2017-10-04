@@ -569,7 +569,12 @@ FactoryGirl.define do
   factory :poll_voter, class: 'Poll::Voter' do
     poll
     association :user, :level_two
+    association :officer, factory: :poll_officer
     origin "web"
+
+    trait :from_booth do
+      association :booth_assignment, factory: :poll_booth_assignment
+    end
 
     trait :valid_document do
       document_type   "1"
@@ -611,6 +616,11 @@ FactoryGirl.define do
   end
 
   factory :poll_total_result, class: 'Poll::TotalResult' do
+    association :author, factory: :user
+    origin { 'web' }
+  end
+
+  factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
     origin { 'web' }
   end

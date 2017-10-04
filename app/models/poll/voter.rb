@@ -8,15 +8,13 @@ class Poll
     belongs_to :geozone
     belongs_to :booth_assignment
     belongs_to :officer_assignment
+    belongs_to :officer
 
     validates :poll_id, presence: true
     validates :user_id, presence: true
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
-    validates :origin, inclusion: {in: VALID_ORIGINS}
-
-    validates :officer_assignment_id, presence: true, if: :booth?
-    validates :booth_assignment_id,   presence: true, if: :booth?
+    validates :origin, inclusion: { in: VALID_ORIGINS }
 
     before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
 

@@ -23,7 +23,6 @@ class SpendingProposalsController < ApplicationController
   end
 
   def welcome
-    @proposal_successfull_exists = Proposal.successful.exists?
   end
 
   def select_district
@@ -93,7 +92,7 @@ class SpendingProposalsController < ApplicationController
   end
 
   def results
-    @geozone = daily_cache("geozone_geozone_#{params[:geozone_id]}") { (params[:geozone_id].blank? || params[:geozone_id] == 'all') ? nil : Geozone.find(params[:geozone_id]) }
+    @geozone = daily_cache("geozone_geozone_#{params[:geozone_id]}") { params[:geozone_id].blank? || params[:geozone_id] == 'all' ? nil : Geozone.find(params[:geozone_id]) }
     @delegated_ballots = daily_cache("delegated_geozone_#{params[:geozone_id]}") { Forum.delegated_ballots }
     @spending_proposals = daily_cache("sps_geozone_#{params[:geozone_id]}") { SpendingProposal.feasible.compatible.valuation_finished.by_geozone(params[:geozone_id]) }
     @spending_proposals = daily_cache("sorted_sps_geozone_#{params[:geozone_id]}") { SpendingProposal.sort_by_delegated_ballots_and_price(@spending_proposals, @delegated_ballots) }
@@ -105,7 +104,7 @@ class SpendingProposalsController < ApplicationController
   private
 
     def daily_cache(key, &block)
-      Rails.cache.fetch("spending_proposals_results/#{Time.now.strftime("%Y-%m-%d")}/#{key}", &block)
+      Rails.cache.fetch("spending_proposals_results/#{Time.now.strftime('%Y-%m-%d')}/#{key}", &block)
     end
 
     def spending_proposal_params
@@ -125,20 +124,22 @@ class SpendingProposalsController < ApplicationController
       default_target = Setting["feature.spending_proposal_features.phase3"].present? ? target.feasible.valuation_finished : target.not_unfeasible
       target = params[:unfeasible].present? ? target.unfeasible : default_target
       params[:geozone] = 'all' if params[:geozone].blank?
-      target = target.by_geozone(params[:geozone]) unless params[:unfeasible].present?
+      target = target.by_geozone(params[:geozone]) if params[:unfeasible].blank?
       set_filter_geozone
 
-      if params[:forum].present?
-        target = target.by_forum
-      end
+      target = target.by_forum if params[:forum].present?
       target = target.search(params[:search]) if params[:search].present?
       target
     end
 
     def set_random_seed
       if params[:order] == 'random' || params[:order].blank?
-        params[:random_seed] ||= rand(99)/100.0
-        seed = Float(params[:random_seed]) rescue 0
+        params[:random_seed] ||= rand(99) / 100.0
+        seed = begin
+                 Float(params[:random_seed])
+               rescue
+                 0
+               end
         SpendingProposal.connection.execute "select setseed(#{seed})"
       else
         params[:random_seed] = nil
@@ -175,34 +176,34 @@ class SpendingProposalsController < ApplicationController
     end
 
     def participants
-      stats_cache('participants') {
+      stats_cache('participants') do
         users = (authors + voters + balloters + delegators).uniq
         User.where(id: users)
-      }
+      end
     end
 
     def total_participants_support_phase
-      stats_cache('total_participants_support_phase') {
+      stats_cache('total_participants_support_phase') do
         voters.uniq.count
-      }
+      end
     end
 
     def total_participants_vote_phase
-      stats_cache('total_participants_vote_phase') {
+      stats_cache('total_participants_vote_phase') do
         balloters.uniq.count
-      }
+      end
     end
 
     def total_supports
-      stats_cache('total_supports') {
+      stats_cache('total_supports') do
         ActsAsVotable::Vote.where(votable_type: 'SpendingProposal').count
-      }
+      end
     end
 
     def total_votes
-      stats_cache('total_votes') {
+      stats_cache('total_votes') do
         BallotLine.count
-      }
+      end
     end
 
     def authors
@@ -214,21 +215,21 @@ class SpendingProposalsController < ApplicationController
     end
 
     def voters_by_geozone(geozone_id)
-      stats_cache("voters_geozone_#{geozone_id}") {
+      stats_cache("voters_geozone_#{geozone_id}") do
         ActsAsVotable::Vote.where(votable_type: 'SpendingProposal', votable_id: SpendingProposal.by_geozone(geozone_id)).pluck(:voter_id)
-      }
+      end
     end
 
     def balloters
-      stats_cache('balloters') {
+      stats_cache('balloters') do
         Ballot.where('ballot_lines_count > ?', 0).pluck(:user_id)
-      }
+      end
     end
 
     def balloters_by_geozone(geozone_id)
-      stats_cache("balloters_geozone_#{geozone_id}") {
+      stats_cache("balloters_geozone_#{geozone_id}") do
         Ballot.where('ballot_lines_count > ? AND geozone_id = ?', 0, geozone_id).pluck(:user_id)
-      }
+      end
     end
 
     def delegators
@@ -268,30 +269,30 @@ class SpendingProposalsController < ApplicationController
     end
 
     def age_groups
-      stats_cache('age_groups') {
+      stats_cache('age_groups') do
         groups = Hash.new(0)
         ["16 - 19",
-        "20 - 24",
-        "25 - 29",
-        "30 - 34",
-        "35 - 39",
-        "40 - 44",
-        "45 - 49",
-        "50 - 54",
-        "55 - 59",
-        "60 - 64",
-        "65 - 69",
-        "70 - 140"].each do |group|
+         "20 - 24",
+         "25 - 29",
+         "30 - 34",
+         "35 - 39",
+         "40 - 44",
+         "45 - 49",
+         "50 - 54",
+         "55 - 59",
+         "60 - 64",
+         "65 - 69",
+         "70 - 140"].each do |group|
           start, finish = group.split(" - ")
           group_name = (group == "70 - 140" ? "+ 70" : group)
           groups[group_name] = User.where(id: participants).where("date_of_birth > ? AND date_of_birth < ?", finish.to_i.years.ago.beginning_of_year, eval(start).years.ago.end_of_year).count
         end
         groups
-      }
+      end
     end
 
     def geozones
-      stats_cache('geozones') {
+      stats_cache('geozones') do
         groups = Hash.new(0)
         @geozones.each do |geozone|
           groups[geozone.id] = Hash.new(0)
@@ -301,9 +302,9 @@ class SpendingProposalsController < ApplicationController
         end
 
         groups[:total] = Hash.new(0)
-        groups[:total][:total_participants_support_phase] = groups.collect {|k,v| v[:total_participants_support_phase]}.sum
-        groups[:total][:total_participants_vote_phase]    = groups.collect {|k,v| v[:total_participants_vote_phase]}.sum
-        groups[:total][:total_participants_all_phase]     = groups.collect {|k,v| v[:total_participants_all_phase]}.sum
+        groups[:total][:total_participants_support_phase] = groups.collect {|_k, v| v[:total_participants_support_phase]}.sum
+        groups[:total][:total_participants_vote_phase]    = groups.collect {|_k, v| v[:total_participants_vote_phase]}.sum
+        groups[:total][:total_participants_all_phase]     = groups.collect {|_k, v| v[:total_participants_all_phase]}.sum
 
         @geozones.each do |geozone|
           groups[geozone.id][:percentage_participants_support_phase]        = voters_by_geozone(geozone.id).uniq.count / groups[:total][:total_participants_support_phase].to_f * 100
@@ -316,12 +317,12 @@ class SpendingProposalsController < ApplicationController
           groups[geozone.id][:percentage_district_population_all_phase] = (voters_by_geozone(geozone.id) + balloters_by_geozone(geozone.id)).uniq.count / district_population[geozone.name].to_f * 100
         end
 
-        groups[:total][:percentage_participants_support_phase] = groups.collect {|k,v| v[:percentage_participants_support_phase]}.sum
-        groups[:total][:percentage_participants_vote_phase]    = groups.collect {|k,v| v[:percentage_participants_vote_phase]}.sum
-        groups[:total][:percentage_participants_all_phase]     = groups.collect {|k,v| v[:percentage_participants_all_phase]}.sum
+        groups[:total][:percentage_participants_support_phase] = groups.collect {|_k, v| v[:percentage_participants_support_phase]}.sum
+        groups[:total][:percentage_participants_vote_phase]    = groups.collect {|_k, v| v[:percentage_participants_vote_phase]}.sum
+        groups[:total][:percentage_participants_all_phase]     = groups.collect {|_k, v| v[:percentage_participants_all_phase]}.sum
 
         groups
-      }
+      end
     end
 
     def district_population
@@ -349,9 +350,9 @@ class SpendingProposalsController < ApplicationController
     end
 
     def total_unknown_gender_or_age
-      stats_cache('total_unknown_gender_or_age') {
+      stats_cache('total_unknown_gender_or_age') do
         participants.where("gender IS NULL OR date_of_birth is NULL").uniq.count
-      }
+      end
     end
 
     def stats_cache(key, &block)

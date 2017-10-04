@@ -59,9 +59,9 @@ end
 
 group :development, :test do
   gem "bullet", '~> 5.5.1'
-  gem "faker", '~> 1.7.3'
-  gem 'byebug', '~> 9.0.6'
+  gem 'byebug', '~> 9.1.0'
   gem 'factory_girl_rails', '~> 4.8.0'
+  gem "faker", '~> 1.7.3'
   gem 'i18n-tasks', '~> 0.9.15'
   gem 'knapsack', '~> 1.13.3'
   gem 'launchy', '~> 2.4.3'
@@ -82,9 +82,9 @@ group :test do
 end
 
 group :development do
-  gem "capistrano-rails", '~> 1.2.3', require: false
   gem 'capistrano', '~> 3.8.1', require: false
   gem 'capistrano-bundler', '~> 1.2', require: false
+  gem "capistrano-rails", '~> 1.2.3', require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'mdl', '~> 0.4.0', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false

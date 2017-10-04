@@ -29,6 +29,8 @@ feature 'Budget Investments' do
   end
 
   scenario 'Index should show investment descriptive image only when is defined' do
+    Setting['feature.allow_images'] = true
+
     investment = create(:budget_investment, heading: heading)
     investment_with_image = create(:budget_investment, heading: heading)
     image = create(:image, imageable: investment_with_image)
@@ -41,6 +43,8 @@ feature 'Budget Investments' do
     within("#budget_investment_#{investment_with_image.id}") do
       expect(page).to have_css("img[alt='#{investment_with_image.image.title}']")
     end
+
+    Setting['feature.allow_images'] = nil
   end
 
   context("Search") do

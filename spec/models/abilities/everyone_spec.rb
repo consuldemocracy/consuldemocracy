@@ -46,7 +46,7 @@ describe "Abilities::Everyone" do
   pending "only authors can access new and create for ProposalNotifications"
 
   it { should be_able_to(:index, Budget) }
+
   it { should be_able_to(:read_results, finished_budget) }
   it { should_not be_able_to(:read_results, reviewing_ballot_budget) }
-
 end

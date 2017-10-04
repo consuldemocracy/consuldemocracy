@@ -53,7 +53,7 @@ module CommonActions
     fill_in 'user_password', with: user.password
 
     click_button 'Enter'
-    visit new_officing_booth_path
+    visit new_officing_residence_path
   end
 
   def login_as_authenticated_manager
@@ -71,10 +71,6 @@ module CommonActions
 
   def login_managed_user(user)
     allow_any_instance_of(Management::BaseController).to receive(:managed_user).and_return(user)
-  end
-
-  def root_path_for_logged_in_users
-    root_path
   end
 
   def fill_in_proposal
@@ -473,6 +469,28 @@ module CommonActions
 
   def csv_path_for(table)
     "system/api/#{table}.csv"
+  end
+
+  def vote_for_poll_via_web
+    visit question_path(question)
+
+    click_link 'Go to voting page'
+    click_link 'Yes'
+
+    expect(page).to_not have_link('Yes')
+    expect(Poll::Voter.count).to eq(1)
+  end
+
+  def vote_for_poll_via_booth
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+
+    first(:button, "Confirm vote").click
+    expect(page).to have_content "Vote introduced!"
+
+    expect(Poll::Voter.count).to eq(1)
   end
 
 end
