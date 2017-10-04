@@ -602,7 +602,6 @@ en:
         author: Author
         title: Title
         valid_answers: Valid answers
-        description: Description
         video_url: External video
         documents: Documents (1)
     recounts:
@@ -619,7 +618,7 @@ en:
       index:
         title: "Results"
         no_results: "There are no results"
-        table_whites: "Blank ballots"
+        table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
         table_total: "Total ballots"
         table_answer: Answer

@@ -771,7 +771,6 @@ ActiveRecord::Schema.define(version: 20171003223152) do
     t.string   "author_visible_name"
     t.string   "title"
     t.string   "valid_answers"
-    t.text     "description"
     t.integer  "comments_count"
     t.datetime "hidden_at"
     t.datetime "created_at"

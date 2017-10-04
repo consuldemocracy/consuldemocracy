@@ -30,7 +30,7 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
   end
 
   def search_officers
-    @officers = User.search(params[:search]).order(username: :asc)
+    @officers = User.search(params[:search]).order(username: :asc).select { |o| o.poll_officer? == true }
   end
 
   private

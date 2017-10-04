@@ -603,7 +603,6 @@ es:
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
-        description: Descripción
         video_url: Video externo
         documents: Documentos (1)
     recounts:
@@ -620,7 +619,7 @@ es:
       index:
         title: "Resultados"
         no_results: "No hay resultados"
-        table_whites: Papeletas en blanco
+        table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
         table_answer: Respuesta
