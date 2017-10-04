@@ -34,12 +34,6 @@
       </span>
     <% end %>
 
-    <p>
-      <strong><%= t("admin.questions.show.description") %></strong>
-      <br>
-      <%= @question.description %>
-    </p>
-
     <% if @question.video_url.present? %>
       <p>
         <strong><%= t("admin.questions.show.video_url") %></strong>
