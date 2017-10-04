@@ -301,7 +301,7 @@ Rails.application.routes.draw do
       end
 
       resources :questions do
-        resources :answers, only: [:new, :create]
+        resources :answers, only: [:new, :create], controller: 'questions/answers'
       end
     end
 

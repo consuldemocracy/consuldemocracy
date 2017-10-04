@@ -15,7 +15,7 @@ class Poll::Question < ActiveRecord::Base
 
   has_many :comments, as: :commentable
   has_many :answers
-  has_many :question_answers, class_name: 'Poll::QuestionAnswer', foreign_key: 'poll_question_id'
+  has_many :question_answers, class_name: 'Poll::Question::Answer', foreign_key: 'poll_question_id'
   has_many :partial_results
   belongs_to :proposal
 

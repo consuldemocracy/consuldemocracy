@@ -1,14 +1,14 @@
-class Admin::Poll::AnswersController < Admin::Poll::BaseController
+class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   before_action :load_question
 
   load_and_authorize_resource :question, class: "::Poll::Question"
 
   def new
-    @answer = Poll::QuestionAnswer.new
+    @answer = ::Poll::Question::Answer.new
   end
 
   def create
-    @answer = Poll::QuestionAnswer.new(answer_params)
+    @answer = ::Poll::Question::Answer.new(answer_params)
 
     if @answer.save
       redirect_to admin_question_path(@question),
