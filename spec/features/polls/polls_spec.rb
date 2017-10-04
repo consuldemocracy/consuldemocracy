@@ -271,23 +271,67 @@ feature 'Polls' do
       end
     end
 
-    scenario 'user can reply to comment' do
+    scenario 'user b can access to comments from user a' do
       oliver = create(:user, username: 'Oliver Atom')
       benji = create(:user, username: 'Benji Prince')
       create(:comment, commentable: poll, user: oliver)
 
-      login_as(oliver)
+      login_as(benji)
       visit poll_path(poll)
 
       expect(page).to have_content oliver.username
     end
 
-    scenario 'user can upvote a comment' do
+    scenario 'user b can reply to comments from user a', :js do
+      koji = create(:user, username: 'Koji Kabuto')
+      sayaka = create(:user, username: 'Sayaka')
+      comment = create(:comment, commentable: poll, user: koji)
 
+      login_as(sayaka)
+      visit poll_path(poll)
+
+      click_link "Reply"
+
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment-body-comment_#{comment.id}", with: 'MAZINGER!!.'
+        click_button 'Publish reply'
+      end
+
+      within "#comment_#{comment.id}" do
+        expect(page).to have_content 'MAZINGER!!.'
+      end
+
+      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
-    scenario 'user can downvote a comment' do
+    scenario 'user can upvote a comment', :js do
+      goku = create(:user, username: 'Goku')
+      vegeta = create(:user, username: 'Vegeta')
+      comment = create(:comment, commentable: poll, user: goku)
 
+      login_as(vegeta)
+      visit poll_path(poll)
+
+      within("#comment_#{comment.id}_votes") do
+        find('.in_favor a').click
+
+        expect(page).to have_content "1 vote"
+      end
+    end
+
+    scenario 'user can downvote a comment', :js do
+      doraemon = create(:user, username: 'Doraemon')
+      nobita = create(:user, username: 'Nobi Nobita')
+      comment = create(:comment, commentable: poll, user: doraemon)
+
+      login_as(nobita)
+      visit poll_path(poll)
+
+      within("#comment_#{comment.id}_votes") do
+        find('.against a').click
+
+        expect(page).to have_content "1 vote"
+      end
     end
   end
 end
