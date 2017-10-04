@@ -1,5 +1,6 @@
 class Poll::Question::Answer < ActiveRecord::Base
   belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
+  has_many :videos, class_name: 'Poll::Question::Answer::Video'
 
   validates :title, presence: true
 
