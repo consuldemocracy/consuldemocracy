@@ -1,8 +1,8 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel">
+  <div class="panel with-image">
     <div class="row" data-equalizer>
 
-      <div class="small-12 medium-3 large-2 column">
+      <div class="small-12 medium-3 large-2 column text-center">
         <div data-equalizer-watch>
           <% if investment.image.present? %>
             <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>

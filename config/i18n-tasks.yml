@@ -154,6 +154,7 @@ ignore_unused:
   - 'users.show.filters.*'
   - 'polls.index.filters.*'
   - 'polls.index.section_header.*'
+  - 'polls.index.orders.*'
   - 'debates.index.select_order'
   - 'debates.index.orders.*'
   - 'debates.index.section_header.*'
