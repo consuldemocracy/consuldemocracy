@@ -393,6 +393,16 @@ fr:
     answers:
       new:
         title: "Nouvelle réponse"
+      videos:
+        index:
+          title: Vidéos
+          add_video: Ajouter une vidéo
+          video_title: Titre
+          video_url: Vidéo externe
+        new:
+          title: Nouveau vidéo
+        edit:
+          title: Modifier la vidéo
     recounts:
       index:
         title: "Dépouillements"

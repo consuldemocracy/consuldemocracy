@@ -210,6 +210,9 @@ es:
       poll/question/answer:
         title: "Respuesta"
         description: "Descripción"
+      poll/question/answer/video:
+        title: Título
+        url: Vídeo externo
     errors:
       models:
         user:

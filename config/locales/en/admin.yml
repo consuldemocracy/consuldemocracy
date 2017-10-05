@@ -602,7 +602,17 @@ en:
           video_list: Video list (%{count})
     answers:
       new:
-        title: "New answer"
+        title: New answer
+      videos:
+        index:
+          title: Videos
+          add_video: Add video
+          video_title: Title
+          video_url: External video
+        new:
+          title: New video
+        edit:
+          title: Edit video
     recounts:
       index:
         title: "Recounts"

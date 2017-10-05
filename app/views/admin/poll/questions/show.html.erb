@@ -24,13 +24,13 @@
       <%= link_to @question.author.name, user_path(@question.author) %>
     </p>
 
-    <table cellspacing="0" cellpadding="0">
+    <table>
       <thead>
         <tr>
-          <th colspan="1" scope="col">
+          <th>
             <%= t('admin.questions.show.valid_answers') %>
           </th>
-          <th colspan="2" scope="col">
+          <th colspan="2">
             <%= link_to t("admin.questions.show.add_answer"),
                         new_admin_question_answer_path(@question),
                         class: "button hollow float-right" %>
@@ -38,9 +38,9 @@
         </tr>
 
         <tr>
-          <th scope="col"><%= t("admin.questions.show.answers.title") %></th>
-          <th scope="col"><%= t("admin.questions.show.answers.description") %></th>
-          <th scope="col"><%= t("admin.questions.show.answers.videos") %></th>
+          <th><%= t("admin.questions.show.answers.title") %></th>
+          <th><%= t("admin.questions.show.answers.description") %></th>
+          <th><%= t("admin.questions.show.answers.videos") %></th>
         </tr>
       </thead>
 
@@ -49,7 +49,9 @@
           <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
             <td><%= answer.title %></td>
             <td><%= answer.description %></td>
-            <td><%= link_to t("admin.questions.show.answers.video_list", count: 0), "#" %></td>
+            <td><%= link_to t("admin.questions.show.answers.video_list",
+                            count: answer.videos.count),
+                            admin_answer_videos_path(answer) %></td>
           </tr>
         <% end %>
       </tbody>
