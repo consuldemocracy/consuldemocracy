@@ -180,6 +180,7 @@ en:
     spending_proposal: Spending proposal
     budget/investment: Investment
     poll/shift: Shift
+    poll/question/answer: Answer
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet

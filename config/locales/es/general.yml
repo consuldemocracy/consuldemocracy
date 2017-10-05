@@ -180,6 +180,7 @@ es:
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
     poll/shift: el turno
+    poll/question/answer: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
