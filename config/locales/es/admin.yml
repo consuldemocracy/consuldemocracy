@@ -587,6 +587,13 @@ es:
       new:
         title: "Crear pregunta ciudadana"
         poll_label: "Votación"
+        form:
+          title: Título
+          description: Descripción
+      answers:
+        images:
+          add_image: "Añadir imagen"
+          save_image: "Guardar imagen"
       show:
         proposal: Propuesta ciudadana original
         author: Autor
@@ -599,6 +606,8 @@ es:
         answers:
           title: Respuesta
           description: Descripción
+          images: Imágenes
+          images_list: Lista de imágenes
           documents: Documentos
           documents_list: Lista de documentos
           document_title: Título

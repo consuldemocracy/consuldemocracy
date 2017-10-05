@@ -15,9 +15,9 @@ feature "Voter" do
       create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
     end
 
-    scenario "Voting via web", :js do
+    scenario "Voting via web - Standard", :js do
       poll = create(:poll)
-      
+
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, question: question, title: 'Yes')
       answer2 = create(:poll_question_answer, question: question, title: 'No')
@@ -56,11 +56,11 @@ feature "Voter" do
     context "Trying to vote the same poll in booth and web" do
 
       let(:poll) { create(:poll) }
-      
+
       let(:question) { create(:poll_question, poll: poll) }
       let!(:answer1) { create(:poll_question_answer, question: question, title: 'Yes') }
       let!(:answer2) { create(:poll_question_answer, question: question, title: 'No') }
-      
+
       let!(:user) { create(:user, :in_census) }
 
       scenario "Trying to vote in web and then in booth", :js do

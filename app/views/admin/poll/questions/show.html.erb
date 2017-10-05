@@ -5,18 +5,13 @@
 
 <div class="clear"></div>
 
-<div class="row">
-  <div class="small-12 column">
-    <strong><%= t("admin.questions.show.title") %></strong>
-    <h2><%= @question.title %></h2>
-
-    <% if @question.proposal.present? %>
-      <p>
-        <strong><%= t("admin.questions.show.proposal") %></strong>
-        <br>
-        <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
-      </p>
-    <% end %>
+<div class="small-12 medium-6">
+  <div class="callout highlight">
+    <p>
+      <strong><%= t("admin.questions.show.title") %></strong>
+      <br>
+      <%= @question.title %>
+    </p>
 
     <p>
       <strong><%= t("admin.questions.show.author") %></strong>
@@ -65,10 +60,62 @@
 
     <% if @question.documents.any? %>
       <p>
-        <strong><%= t("admin.questions.show.documents") %></strong>
+        <strong><%= t("admin.questions.show.proposal") %></strong>
         <br>
-        <a href="<%= @question.documents.first.attachment.url %>"><%= @question.documents.first.title %></a>
+        <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
       </p>
     <% end %>
   </div>
 </div>
+
+<table class="margin-top">
+  <tr>
+    <th colspan="4" scope="col" class="with-button">
+      <%= t('admin.questions.show.valid_answers') %>
+      <%= link_to t("admin.questions.show.add_answer"),
+                  new_admin_question_answer_path(@question),
+                  class: "button hollow float-right" %>
+    </th>
+  </tr>
+
+  <tr>
+    <th><%= t("admin.questions.show.answers.title") %></th>
+    <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
+    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
+    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
+  </tr>
+
+  <% @question.question_answers.each do |answer| %>
+    <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
+      <td><%= answer.title %></td>
+      <td><%= answer.description %></td>
+      <td class="text-center">
+        (<%= answer.images.count %>)<br>
+        <%= link_to t("admin.questions.show.answers.images_list"),
+                    admin_answer_images_path(answer) %>
+      </td>
+      <td class="text-center">
+        (<%= answer.documents.count rescue 0 %>)
+        <br>
+        <%= link_to t("admin.questions.show.answers.documents_list"),
+                    admin_question_answer_documents_path(@question, answer) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<% if @question.video_url.present? %>
+  <p>
+    <strong><%= t("admin.questions.show.video_url") %></strong>
+    <br>
+    <a href="<%= @question.video_url %>"><%= @question.video_url %></a>
+  </p>
+<% end %>
+
+<% if @question.documents.any? %>
+  <p>
+    <strong><%= t("admin.questions.show.documents") %></strong>
+    <br>
+    <a href="<%= @question.documents.first.attachment.url %>"><%= @question.documents.first.title %></a>
+  </p>
+<% end %>
