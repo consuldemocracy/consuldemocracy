@@ -594,7 +594,6 @@ en:
         valid_answers: Valid answers
         add_answer: "Add answer"
         video_url: External video
-        documents: Documents (1)
         answers:
           title: Answer
           description: Description
