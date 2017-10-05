@@ -587,6 +587,13 @@ en:
       new:
         title: "Create Question"
         poll_label: "Poll"
+        form:
+          title: Title
+          description: Description
+      answers:
+        images:
+          add_image: "Add image"
+          save_image: "Save image"
       show:
         proposal: Original proposal
         author: Author
@@ -600,6 +607,8 @@ en:
           description: Description
           videos: Videos
           video_list: Video list (%{count})
+          images: Images
+          images_list: Images list
     answers:
       new:
         title: New answer

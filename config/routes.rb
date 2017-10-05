@@ -301,7 +301,8 @@ Rails.application.routes.draw do
       end
 
       resources :questions, shallow: true do
-        resources :answers, only: [:new, :create], controller: 'questions/answers' do
+        resources :answers, only: [:new, :create], controller: 'questions/answers', shallow: true do
+          resources :images, controller: 'questions/answers/images'
           resources :videos, controller: 'questions/answers/videos'
         end
       end
