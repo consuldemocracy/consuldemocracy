@@ -96,7 +96,7 @@ feature "Voter" do
       end
     end
 
-    scenario "Voting in web - Nvotes", :nvotes do
+    xscenario "Voting in web - Nvotes", :nvotes do
       user  = create(:user, :in_census, id: rand(9999999))
       poll = create(:poll)
       nvote = create(:poll_nvote, user: user, poll: poll)

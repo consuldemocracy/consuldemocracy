@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Poll::Question, :focus do
+describe Poll::Question do
   let(:poll_question) { build(:poll_question) }
 
   describe "#valid_answers" do

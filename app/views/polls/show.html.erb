@@ -49,11 +49,6 @@
           <%= render 'polls/questions/question', question: question %>
         <% end %>
       <% end %>
-      <% if @questions.count == 1 %>
-        <% question = @questions.first %>
-        <h3 class="margin-top"><%= t('polls.show.more_info') %></h3>
-        <%= question.description %>
-      <% end %>
     </div>
   </div>
 

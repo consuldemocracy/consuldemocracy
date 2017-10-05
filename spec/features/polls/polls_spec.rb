@@ -160,7 +160,7 @@ feature 'Polls' do
 
       visit poll_path(poll)
 
-      expect(page).to have_content('You can not answer this poll because you are not censed in the right district')
+      expect(page).to have_content('This question is not available on your geozone.')
       expect(page).to have_content('Vader')
       expect(page).to have_content('Palpatine')
       expect(page).to_not have_link('Vader')
@@ -238,7 +238,10 @@ feature 'Polls' do
     scenario 'Level 2 users changing answer', :js do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
-      create(:poll_question, poll: poll, valid_answers: 'Han Solo, Chewbacca')
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
+      answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+
       user = create(:user, :level_two, geozone: geozone)
 
       login_as user

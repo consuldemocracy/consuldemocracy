@@ -120,7 +120,7 @@ feature 'Voters' do
     expect(page).not_to have_content poll_geozone_restricted_out.name
   end
 
-  scenario "After voting, via nvotes or physical booth", :js do
+  xscenario "After voting, via nvotes or physical booth", :js do
      poll1 = create(:poll, geozone_restricted: false)
      poll2 = create(:poll, geozone_restricted: false)
 
@@ -150,7 +150,7 @@ feature 'Voters' do
      expect(page).to_not have_content "You already have participated in this poll."
    end
 
-   scenario "Store officer and booth information", :js do
+   xscenario "Store officer and booth information", :js do
      user  = create(:user, :in_census, id: rand(9999999))
      poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
      poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
@@ -212,7 +212,7 @@ feature 'Voters' do
        expect(page).to_not have_link "Vote on tablet"
      end
 
-     scenario "Digital booth", :js do
+     xscenario "Digital booth", :js do
        poll = create(:poll)
        booth = create(:poll_booth, physical: false)
 
@@ -230,7 +230,7 @@ feature 'Voters' do
        expect(page).to     have_link "Vote on tablet"
      end
 
-     scenario "Digital booth (already voted)", :js do
+     xscenario "Digital booth (already voted)", :js do
        user = create(:user, :in_census)
        poll = create(:poll)
 
@@ -253,7 +253,7 @@ feature 'Voters' do
 
    end
 
-   scenario "No officer assignment for a poll", :js do
+   xscenario "No officer assignment for a poll", :js do
      poll1 = create(:poll)
      poll2 = create(:poll)
 

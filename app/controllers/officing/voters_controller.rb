@@ -4,7 +4,7 @@ class Officing::VotersController < Officing::BaseController
 
   before_action :load_officer_assignment
   before_action :verify_officer_assignment
-  before_action :verify_booth
+  # before_action :verify_booth
 
   def new
     @user = User.find(params[:id])
