@@ -60,12 +60,14 @@
           <span class="icon-checkmark-circle"></span>
           <strong><%= t("admin.menu.title_polls") %></strong>
         </a>
-        <ul id="polls_menu" <%= "class=is-active" if menu_polls? && controller.class.parent == Admin::Poll %>>
+        <ul id="polls_menu" <%= "class=is-active" if menu_polls? || controller.class.parent == Admin::Poll::Questions::Answers %>>
           <li <%= "class=active" if ["polls", "officer_assignments", "booth_assignments", "recounts", "results"].include? controller_name %>>
             <%= link_to t('admin.menu.polls'), admin_polls_path %>
           </li>
 
-          <li <%= "class=active" if current_page?(admin_questions_path) %>>
+          <li <%= "class=active" if controller_name == "questions" ||
+                                    controller_name == "answers" ||
+                                    controller.class.parent == Admin::Poll::Questions::Answers %>>
             <%= link_to t("admin.menu.poll_questions"), admin_questions_path %>
           </li>
 
@@ -158,12 +160,14 @@
         <span class="icon-settings"></span>
         <strong><%= t("admin.menu.title_site_customization") %></strong>
       </a>
-      <ul <%= "class=is-active" if menu_customization? %>>
+      <ul <%= "class=is-active" if menu_customization? &&
+                                   controller.class.parent != Admin::Poll::Questions::Answers %>>
         <li <%= "class=active" if controller_name == "pages" %>>
           <%= link_to t("admin.menu.site_customization.pages"), admin_site_customization_pages_path %>
         </li>
 
-        <li <%= "class=active" if controller_name == "images" %>>
+        <li <%= "class=active" if controller_name == "images" &&
+                                  controller.class.parent != Admin::Poll::Questions::Answers %>>
           <%= link_to t("admin.menu.site_customization.images"), admin_site_customization_images_path %>
         </li>
 

@@ -180,6 +180,7 @@ en:
     spending_proposal: Spending proposal
     budget/investment: Investment
     poll/shift: Shift
+    poll/question/answer: Answer
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
@@ -466,10 +467,6 @@ en:
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
       geozone_info: "Can participate people in the Census of: "
-      can_answer: "You can participate in this poll!"
-      cant_answer: "This poll is not available on your geozone"
-      cant_answer_not_logged_in: "You must sign in or sign up to participate"
-      cant_answer_verify: "You must verify your account in order to answer"
       already_answer: "You already have participated in this poll"
       section_header:
         icon_alt: Voting icon

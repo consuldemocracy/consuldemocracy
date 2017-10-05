@@ -5,10 +5,19 @@
 
 <div class="clear"></div>
 
-<div class="row">
-  <div class="small-12 medium-9 column">
-    <strong><%= t("admin.questions.show.title") %></strong>
-    <h1><%= @question.title %></h1>
+<div class="small-12 medium-6">
+  <div class="callout highlight">
+    <p>
+      <strong><%= t("admin.questions.show.title") %></strong>
+      <br>
+      <%= @question.title %>
+    </p>
+
+    <p>
+      <strong><%= t("admin.questions.show.author") %></strong>
+      <br>
+      <%= link_to @question.author.name, user_path(@question.author) %>
+    </p>
 
     <% if @question.proposal.present? %>
       <p>
@@ -17,44 +26,42 @@
         <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
       </p>
     <% end %>
-
-    <p>
-      <strong><%= t("admin.questions.show.author") %></strong>
-      <br>
-      <%= link_to @question.author.name, user_path(@question.author) %>
-    </p>
-
-    <table>
-      <tr>
-        <th colspan="1" scope="colgroup">
-          <%= t('admin.questions.show.valid_answers') %>
-        </th>
-        <th colspan="1" scope="colgroup">
-          <%= link_to t("admin.questions.show.add_answer"), 
-                      new_admin_question_answer_path(@question), 
-                      class: "button hollow float-right" %>
-        </th>
-      </tr>
-
-      <tr>
-        <th scope="col"><%= t("admin.questions.show.answers.title") %></th>
-        <th scope="col"><%= t("admin.questions.show.answers.description") %></th>
-      </tr>
-
-      <% @question.question_answers.each do |answer| %>
-        <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
-          <th scope="col"><%= answer.title %></th>
-          <th scope="col"><%= answer.description %></th>
-        </tr>  
-      <% end %>
-    </table>
-
-    <% if @question.video_url.present? %>
-      <p>
-        <strong><%= t("admin.questions.show.video_url") %></strong>
-        <br>
-        <a href="<%= @question.video_url %>"><%= @question.video_url %></a>
-      </p>
-    <% end %>
   </div>
 </div>
+
+<table class="margin-top">
+  <tr>
+    <th colspan="3" scope="col" class="with-button">
+      <%= t('admin.questions.show.valid_answers') %>
+      <%= link_to t("admin.questions.show.add_answer"),
+                  new_admin_question_answer_path(@question),
+                  class: "button hollow float-right" %>
+    </th>
+  </tr>
+
+  <tr>
+    <th><%= t("admin.questions.show.answers.title") %></th>
+    <th class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
+    <th class="text-center"><%= t("admin.questions.show.answers.images") %></th>
+  </tr>
+
+  <% @question.question_answers.each do |answer| %>
+    <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
+      <td><%= answer.title %></td>
+      <td><%= answer.description %></td>
+      <td class="text-center">
+        (<%= answer.images.count %>)<br>
+        <%= link_to t("admin.questions.show.answers.images_list"),
+                    admin_answer_images_path(answer) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<% if @question.video_url.present? %>
+  <p>
+    <strong><%= t("admin.questions.show.video_url") %></strong>
+    <br>
+    <a href="<%= @question.video_url %>"><%= @question.video_url %></a>
+  </p>
+<% end %>

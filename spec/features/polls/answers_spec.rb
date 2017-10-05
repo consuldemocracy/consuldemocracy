@@ -42,4 +42,16 @@ feature 'Answers' do
   pending "Update"
   pending "Destroy"
 
+  context "Gallery" do
+
+    it_behaves_like "nested imageable",
+                    "poll_question_answer",
+                    "new_admin_answer_image_path",
+                    { "answer_id": "id" },
+                    nil,
+                    "Save image",
+                    "Image uploaded successfully",
+                    true
+  end
+
 end

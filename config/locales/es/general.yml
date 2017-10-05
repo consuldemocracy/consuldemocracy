@@ -180,6 +180,7 @@ es:
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
     poll/shift: el turno
+    poll/question/answer: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -466,10 +467,6 @@ es:
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
       geozone_info: "Pueden participar las personas empadronadas en: "
-      can_answer: "¡Puedes participar en esta votación!"
-      cant_answer: "Esta votación no está disponible en tu zona"
-      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
-      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
       already_answer: "Ya has participado en esta votación"
       section_header:
         icon_alt: Icono de Votaciones
