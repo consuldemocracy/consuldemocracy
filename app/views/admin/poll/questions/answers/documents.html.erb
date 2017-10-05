@@ -1,7 +1,8 @@
-<h4><%= link_to @question.title, admin_question_path(@question) %> > <%= @answer.title %></h4>
-
+<%= back_link_to %>
 
 <h2><%= t("admin.questions.show.answers.documents_list") %></h2>
+
+<p><%= link_to @question.poll.name, admin_poll_path(@question.poll) %> > <%= link_to @question.title, admin_question_path(@question) %> > <%= @answer.title %></p>
 
 <div class="poll-question-answer-form">
   <%= form_for(@answer, url: admin_question_answer_path(@question, @answer)) do |f| %>
