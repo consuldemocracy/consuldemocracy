@@ -213,7 +213,7 @@ en:
       image:
         title: Title
         attachment: Attachment
-      poll/question_answer:
+      poll/question/answer:
         title: "Answer"
         description: "Description"
     errors:

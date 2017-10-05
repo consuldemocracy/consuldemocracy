@@ -147,7 +147,7 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
-      poll/question_answer:
+      poll/question/answer:
         title: "Réponse"
         description: "Description"
     errors:

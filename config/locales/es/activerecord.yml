@@ -207,7 +207,7 @@ es:
       image:
         title: Título
         attachment: Archivo adjunto
-      poll/question_answer:
+      poll/question/answer:
         title: "Respuesta"
         description: "Descripción"
     errors:
