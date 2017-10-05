@@ -2,7 +2,11 @@
 
 <h2><%= t("admin.questions.show.answers.documents_list") %></h2>
 
-<p><%= link_to @question.poll.name, admin_poll_path(@question.poll) %> > <%= link_to @question.title, admin_question_path(@question) %> > <%= @answer.title %></p>
+<ul class="breadcrumbs">
+  <li><%= link_to @question.poll.name, admin_poll_path(@question.poll) %></li>
+  <li><%= link_to @question.title, admin_question_path(@question) %></li>
+  <li><%= @answer.title %></li>
+</ul>
 
 <div class="poll-question-answer-form">
   <%= form_for(@answer, url: admin_question_answer_path(@question, @answer)) do |f| %>
@@ -30,15 +34,15 @@
     <table>
       <tr>
         <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
-        <th scope="col"><%= t("admin.questions.show.answers.document_actions") %></th>
+        <th scope="col" class="text-right"><%= t("admin.questions.show.answers.document_actions") %></th>
       </tr>
 
       <% @answer.documents.each do |document| %>
         <tr>
-          <td scope="col">
+          <td>
             <%= link_to document.title, document.attachment.url %>
           </td>
-          <td scope="col">
+          <td class="text-right">
             <%= link_to t('documents.buttons.download_document'),
                         document.attachment.url,
                         target: "_blank",
