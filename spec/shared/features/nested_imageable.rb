@@ -10,7 +10,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
   before do
     Setting['feature.allow_images'] = true
-    create(:administrator, user: administrator)
 
     if imageable_path_arguments
       imageable_path_arguments.each do |argument_name, path_to_value|
