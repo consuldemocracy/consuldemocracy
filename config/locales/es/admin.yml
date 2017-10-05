@@ -602,13 +602,15 @@ es:
         add_answer: "Añadir respuesta"
         description: Descripción
         video_url: Video externo
-        documents: Documentos (1)
-        preview: Ver en la web
+        documents: Documentos
         answers:
           title: Respuesta
           description: Descripción
           images: Imágenes
           images_list: Lista de imágenes
+          documents: Documentos
+          documents_list: Lista de documentos
+          document_title: Título
     answers:
       new:
         title: "Nueva respuesta"
