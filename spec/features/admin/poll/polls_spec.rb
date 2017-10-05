@@ -70,14 +70,18 @@ feature 'Admin polls' do
 
   scenario "Edit" do
     poll = create(:poll)
+    create(:image, imageable: poll)
 
     visit admin_poll_path(poll)
     click_link "Edit"
 
     end_date = 1.year.from_now
 
+    expect(page).to have_css("img[alt='#{poll.image.title}']")
+
     fill_in "poll_name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"

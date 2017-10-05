@@ -10,6 +10,10 @@ class Poll
 
     enum task: { vote_collection: 0, recount_scrutiny: 1 }
 
+    scope :vote_collection,  -> { where(task: 'vote_collection') }
+    scope :recount_scrutiny, -> { where(task: 'recount_scrutiny') }
+    scope :current, -> { where(date: Date.current) }
+
     before_create :persist_data
     after_create :create_officer_assignments
     before_destroy :destroy_officer_assignments

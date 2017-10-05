@@ -209,6 +209,7 @@ es:
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
     poll/shift: el turno
+    poll/question/answer: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
@@ -496,10 +497,6 @@ es:
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
       geozone_info: "Pueden participar las personas empadronadas en: "
-      can_answer: "¡Puedes participar en esta votación!"
-      cant_answer: "Esta votación no está disponible en tu zona"
-      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
-      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
       already_answer: "Ya has participado en esta votación"
       section_header:
         icon_alt: Icono de Votaciones
@@ -520,7 +517,7 @@ es:
       verify_link: "verifica tu cuenta"
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
-      cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
+      cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info: "Más información"
       more_info_title: "Más información"
       documents: Documentación
@@ -529,14 +526,8 @@ es:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
     show:
-      answer_this_question: "Ir a la página de votación"
-      original_proposal: "Ver el texto de la propuesta"
-      author: "Creado por"
-      dates_title: "Fechas de votación"
-      more_info: "Más información"
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
-      poll: "Votación"
   proposal_notifications:
     new:
       title: "Enviar mensaje"

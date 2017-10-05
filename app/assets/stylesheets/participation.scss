@@ -1592,6 +1592,10 @@
 .orbit-container {
   height: 100% !important;
   max-height: none !important;
+
+  li {
+    margin-bottom: 0 !important;
+  }
 }
 
 .orbit-slide {

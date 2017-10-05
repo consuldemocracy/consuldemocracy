@@ -26,6 +26,7 @@ describe Poll::Answer do
     end
 
     it "should be valid for answers included in the Poll::Question's list" do
+      skip "review when removing valid_answers"
       question = create(:poll_question, valid_answers: 'One, Two, Three')
       expect(build(:poll_answer, question: question, answer: 'One')).to be_valid
       expect(build(:poll_answer, question: question, answer: 'Two')).to be_valid

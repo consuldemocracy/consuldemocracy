@@ -14,7 +14,8 @@ class Poll::Question < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   has_many :comments, as: :commentable
-  has_many :answers
+  has_many :answers, class_name: 'Poll::Answer'
+  has_many :question_answers, class_name: 'Poll::Question::Answer'
   has_many :partial_results
   belongs_to :proposal
 

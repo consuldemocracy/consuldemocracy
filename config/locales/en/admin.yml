@@ -596,14 +596,29 @@ en:
       new:
         title: "Create Question"
         poll_label: "Poll"
-        valid_answers_note: "Enter the answers separated by commas (,)"
+        form:
+          title: Title
+          description: Description
+      answers:
+        images:
+          add_image: "Add image"
+          save_image: "Save image"
       show:
         proposal: Original proposal
         author: Author
         title: Title
         valid_answers: Valid answers
+        add_answer: "Add answer"
         video_url: External video
         documents: Documents (1)
+        answers:
+          title: Answer
+          description: Description
+          images: Images
+          images_list: Images list
+    answers:
+      new:
+        title: "New answer"
     recounts:
       index:
         title: "Recounts"

@@ -208,6 +208,7 @@ en:
     spending_proposal: Spending proposal
     budget/investment: Investment
     poll/shift: Shift
+    poll/question/answer: Answer
     user: Account
     verification/sms: phone
     signature_sheet: Signature sheet
@@ -495,10 +496,6 @@ en:
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
       geozone_info: "Can participate people in the Census of: "
-      can_answer: "You can participate in this poll!"
-      cant_answer: "This poll is not available on your geozone"
-      cant_answer_not_logged_in: "You must sign in or sign up to participate"
-      cant_answer_verify: "You must verify your account in order to answer"
       already_answer: "You already have participated in this poll"
       section_header:
         icon_alt: Voting icon
@@ -519,7 +516,7 @@ en:
       verify_link: "verify your account"
       cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
-      cant_answer_wrong_geozone: "You can not answer this poll because you are not censed in the right district"
+      cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info: "More information"
       more_info_title: "More information"
       documents: Documents
@@ -528,14 +525,8 @@ en:
     create_question: "Create question"
     default_valid_answers: "Yes, No"
     show:
-      answer_this_question: "Go to voting page"
-      original_proposal: "Original proposal"
-      author: "Created by"
-      dates_title: "Voting dates"
-      more_info: "More information"
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
-      poll: "Poll"
   proposal_notifications:
     new:
       title: "Send message"
