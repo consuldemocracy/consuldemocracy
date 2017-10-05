@@ -6,7 +6,7 @@
 <div class="clear"></div>
 
 <div class="row">
-  <div>
+  <div class="small-12 column">
     <strong><%= t("admin.questions.show.title") %></strong>
     <h2><%= @question.title %></h2>
 
@@ -44,9 +44,9 @@
 
       <% @question.question_answers.each do |answer| %>
         <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
-          <td scope="col"><%= answer.title %></td>
-          <td scope="col"><%= answer.description %></td>
-          <td scope="col" class="text-center">
+          <td><%= answer.title %></td>
+          <td><%= answer.description %></td>
+          <td class="text-center">
             (<%= answer.documents.count rescue 0 %>)
             <br>
             <%= link_to t("admin.questions.show.answers.documents_list"), admin_question_answer_documents_path(@question, answer) %>
