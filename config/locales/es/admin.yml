@@ -602,6 +602,7 @@ es:
           documents: Documentos
           documents_list: Lista de documentos
           document_title: Título
+          document_actions: Acciones
     answers:
       new:
         title: "Nueva respuesta"

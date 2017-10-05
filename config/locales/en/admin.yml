@@ -601,6 +601,7 @@ en:
           documents: Documents
           documents_list: Documents list
           document_title: Title
+          document_actions: Actions
     answers:
       new:
         title: "New answer"
