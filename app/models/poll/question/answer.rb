@@ -1,4 +1,6 @@
 class Poll::Question::Answer < ActiveRecord::Base
+	include Galleryable
+
   belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
 
   validates :title, presence: true

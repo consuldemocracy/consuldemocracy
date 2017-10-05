@@ -62,27 +62,23 @@
   <div class="expanded poll-more-info-answers">
     <div class="row padding">
 
-      <!-- EACH ANSWER DO -->
-      <div class="small-12 medium-6 column end" id="answer_1" data-toggler=".medium-6">
+      <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
+        <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
+             data-toggler=".medium-6">
 
-        <!-- REPLACE THIS WITH answer title -->
-        <h3>Answer 1</h3>
-        <!-- /. REPLACE THIS WITH answer title -->
+          <h3><%= answer.title %></h3>
 
-        <!-- If Answer have images render this:
-          Maybe something like <%# render "gallery", gallery: answer.gallery %> -->
-        <%= render "gallery" %>
-        <!-- If Answer have images render this -->
+          <% if answer.images.any? %>
+            <%= render "gallery", answer: answer %>
+          <% end %>
 
-        <!-- REPLACE THIS WITH answer description -->
-        <div class="margin-top">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="margin-top">
+            <%= safe_html_with_links simple_format(answer.description) %>
+          </div>
+
         </div>
-        <!-- /. REPLACE THIS WITH answer description -->
-
-      </div>
+      <% end %>
     </div>
-    <!-- /. EACH ANSWER DO -->
 
   </div>
 </div>
