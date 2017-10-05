@@ -601,12 +601,16 @@ en:
         valid_answers: Valid answers
         add_answer: "Add answer"
         video_url: External video
-        documents: Documents (1)
+        documents: Documents
         answers:
           title: Answer
           description: Description
           images: Images
           images_list: Images list
+          documents: Documents
+          documents_list: Documents list
+          document_title: Title
+          document_actions: Actions
     answers:
       new:
         title: "New answer"
