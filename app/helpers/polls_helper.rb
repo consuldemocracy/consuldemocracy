@@ -41,4 +41,8 @@ module PollsHelper
     booth.name + location
   end
 
+  def voted_before_sign_in(question)
+    current_user.current_sign_in_at >= question.poll.voters.find_by_user_id(current_user).updated_at
+  end
+
 end
