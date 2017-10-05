@@ -600,6 +600,8 @@ es:
         answers:
           title: Respuesta
           description: Descripción
+          images: Imágenes
+          images_list: Lista de imágenes
     answers:
       new:
         title: "Nueva respuesta"

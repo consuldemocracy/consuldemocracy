@@ -598,6 +598,8 @@ en:
         answers:
           title: Answer
           description: Description
+          images: Images
+          images_list: Images list
     answers:
       new:
         title: "New answer"
