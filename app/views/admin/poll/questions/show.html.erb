@@ -6,9 +6,9 @@
 <div class="clear"></div>
 
 <div class="row">
-  <div class="small-12 medium-9 column">
+  <div>
     <strong><%= t("admin.questions.show.title") %></strong>
-    <h1><%= @question.title %></h1>
+    <h2><%= @question.title %></h2>
 
     <% if @question.proposal.present? %>
       <p>
@@ -24,14 +24,14 @@
       <%= link_to @question.author.name, user_path(@question.author) %>
     </p>
 
-    <table>
+    <table class='fixed'>
       <tr>
-        <th colspan="1" scope="colgroup">
+        <th colspan="2" scope="colgroup">
           <%= t('admin.questions.show.valid_answers') %>
         </th>
         <th colspan="1" scope="colgroup">
-          <%= link_to t("admin.questions.show.add_answer"), 
-                      new_admin_question_answer_path(@question), 
+          <%= link_to t("admin.questions.show.add_answer"),
+                      new_admin_question_answer_path(@question),
                       class: "button hollow float-right" %>
         </th>
       </tr>
@@ -39,13 +39,19 @@
       <tr>
         <th scope="col"><%= t("admin.questions.show.answers.title") %></th>
         <th scope="col"><%= t("admin.questions.show.answers.description") %></th>
+        <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
       </tr>
 
       <% @question.question_answers.each do |answer| %>
         <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
-          <th scope="col"><%= answer.title %></th>
-          <th scope="col"><%= answer.description %></th>
-        </tr>  
+          <td scope="col"><%= answer.title %></td>
+          <td scope="col"><%= answer.description %></td>
+          <td scope="col" class="text-center">
+            (<%= answer.documents.count rescue 0 %>)
+            <br>
+            <%= link_to t("admin.questions.show.answers.documents_list"), admin_question_answer_documents_path(@question, answer) %>
+          </td>
+        </tr>
       <% end %>
     </table>
 
