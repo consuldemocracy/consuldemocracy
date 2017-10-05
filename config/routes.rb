@@ -301,7 +301,9 @@ Rails.application.routes.draw do
       end
 
       resources :questions do
-        resources :answers, only: [:new, :create], controller: 'questions/answers'
+        resources :answers, only: [:new, :create, :update], controller: 'questions/answers' do
+          get :documents, to: 'questions/answers#documents'
+        end
       end
     end
 

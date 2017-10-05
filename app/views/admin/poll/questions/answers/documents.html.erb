@@ -1,0 +1,51 @@
+<h4><%= link_to @question.title, admin_question_path(@question) %> > <%= @answer.title %></h4>
+
+
+<h2><%= t("admin.questions.show.answers.documents_list") %></h2>
+
+<div class="poll-question-answer-form">
+  <%= form_for(@answer, url: admin_question_answer_path(@question, @answer)) do |f| %>
+
+    <%= render 'shared/errors', resource: @answer %>
+
+    <%= f.hidden_field :question_id, value: @question.id %>
+
+    <div class="row">
+      <div class="small-12 column">
+        <div class="documents small-12">
+          <%= render 'documents/nested_documents', documentable: @answer, f: f %>
+        </div>
+
+        <div class="row">
+          <div class="actions small-12 medium-4 margin-top">
+            <%= f.submit(class: "button expanded", value: t("shared.save")) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @answer.documents.present? %>
+    <table>
+      <tr>
+        <th scope="col"><%= t("admin.questions.show.answers.document_title") %></th>
+        <th scope="col"><%= t("admin.questions.show.answers.description") %></th>
+      </tr>
+
+      <% @answer.documents.each do |document| %>
+        <tr>
+          <td scope="col">
+            <%= link_to document.title, document.attachment.url %>
+          </td>
+          <td scope="col">
+            <%= link_to t('documents.buttons.download_document'),
+                        document.attachment.url,
+                        target: "_blank",
+                        rel: "nofollow",
+                        class: 'button hollow' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
