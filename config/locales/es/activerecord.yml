@@ -208,8 +208,8 @@ es:
         title: Título
         attachment: Archivo adjunto
       poll/question/answer:
-        title: "Respuesta"
-        description: "Descripción"
+        title: Respuesta
+        description: Descripción
       poll/question/answer/video:
         title: Título
         url: Vídeo externo

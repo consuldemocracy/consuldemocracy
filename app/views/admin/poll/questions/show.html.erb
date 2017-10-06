@@ -49,7 +49,7 @@
 
   <% @question.question_answers.each do |answer| %>
     <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
-      <td><%= answer.title %></td>
+      <td><%= link_to answer.title, admin_answer_path(answer) %></td>
       <td><%= answer.description %></td>
       <td class="text-center">
         (<%= answer.images.count %>)

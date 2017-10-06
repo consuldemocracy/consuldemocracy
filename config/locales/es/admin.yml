@@ -587,9 +587,6 @@ es:
       new:
         title: "Crear pregunta ciudadana"
         poll_label: "Votación"
-        form:
-          title: Título
-          description: Descripción
       answers:
         images:
           add_image: "Añadir imagen"
@@ -614,9 +611,16 @@ es:
           document_actions: Acciones
     answers:
       new:
-        title: "Nueva respuesta"
+        title: Nueva respuesta
         video_url: Video externo
         documents: Documentos (1)
+      show:
+        title: Título
+        description: Descripción
+        images: Imágenes
+        images_list: Lista de imágenes
+      edit:
+        title: Editar respuesta
       videos:
         index:
           title: Vídeos

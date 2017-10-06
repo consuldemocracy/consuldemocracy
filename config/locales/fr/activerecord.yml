@@ -148,8 +148,8 @@ fr:
         locale: Langue
         body: Contenu
       poll/question/answer:
-        title: "Réponse"
-        description: "Description"
+        title: Réponse
+        description: Description
       poll/question/answer/video:
         title: Titre
         url: Vidéo externe
