@@ -8,6 +8,7 @@ class Poll::Answer < ActiveRecord::Base
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
+  validates :token, presence: true
 
   # temporary skipping validation, review when removing valid_answers
   # validates :answer, inclusion: { in: ->(a) { a.question.valid_answers }},
