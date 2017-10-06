@@ -191,9 +191,17 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       click_on submit_button
+
       documentable_redirected_to_resource_show_or_navigate_to
 
-      expect(page).to have_content "Documents (1)"
+      expect(page).to have_content "Documents"
+
+      find("#tab-documents-label").click
+      expect(page).to have_content "empty.pdf"
+
+      #Review
+      #Doble check why the file is stored with a name different to empty.pdf
+      expect(page).to have_css("a[href$='.pdf']")
     end
 
     scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
