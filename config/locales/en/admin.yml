@@ -601,7 +601,6 @@ en:
         valid_answers: Valid answers
         add_answer: Add answer
         video_url: External video
-        documents: Documents
         answers:
           title: Answer
           description: Description
