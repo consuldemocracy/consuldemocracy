@@ -382,13 +382,27 @@ fr:
         author: Auteur
         title: Titre
         valid_answers: Réponses valides
-        add_answer: "Ajouter une réponse"
-        answer: "Réponse"
-        description: Description
+        add_answer: Ajouter une réponse
+        documents: Documents (1)
         preview: Voir l'aperçu
+        answers:
+          title: Réponse
+          description: Description
+          videos: Vidéos
+          video_list: Liste des vidéos (%{count})
     answers:
       new:
         title: "Nouvelle réponse"
+      videos:
+        index:
+          title: Vidéos
+          add_video: Ajouter une vidéo
+          video_title: Titre
+          video_url: Vidéo externe
+        new:
+          title: Nouveau vidéo
+        edit:
+          title: Modifier la vidéo
     recounts:
       index:
         title: "Dépouillements"

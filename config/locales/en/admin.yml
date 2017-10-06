@@ -608,17 +608,29 @@ en:
         author: Author
         title: Title
         valid_answers: Valid answers
-        add_answer: "Add answer"
+        add_answer: Add answer
         video_url: External video
         documents: Documents (1)
         answers:
           title: Answer
           description: Description
+          videos: Videos
+          video_list: Video list (%{count})
           images: Images
           images_list: Images list
     answers:
       new:
-        title: "New answer"
+        title: New answer
+      videos:
+        index:
+          title: Videos
+          add_video: Add video
+          video_title: Title
+          video_url: External video
+        new:
+          title: New video
+        edit:
+          title: Edit video
     recounts:
       index:
         title: "Recounts"

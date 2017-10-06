@@ -609,17 +609,31 @@ es:
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
-        add_answer: "Añadir respuesta"
+        add_answer: Añadir respuesta
         video_url: Video externo
         documents: Documentos (1)
         answers:
           title: Respuesta
           description: Descripción
+          videos: Vídeos
+          video_list: Lista de vídeos (%{count})
           images: Imágenes
           images_list: Lista de imágenes
     answers:
       new:
         title: "Nueva respuesta"
+        video_url: Video externo
+        documents: Documentos (1)
+      videos:
+        index:
+          title: Vídeos
+          add_video: Añadir vídeo
+          video_title: Título
+          video_url: External video
+        new:
+          title: Nuevo video
+        edit:
+          title: Editar vídeo
     recounts:
       index:
         title: "Recuentos"
