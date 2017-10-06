@@ -301,9 +301,10 @@ Rails.application.routes.draw do
       end
 
       resources :questions, shallow: true do
-        resources :answers, except: [:index, :destroy, :delete], controller: 'questions/answers', shallow: true do
+        resources :answers, except: [:index, :destroy], controller: 'questions/answers', shallow: true do
           resources :images, controller: 'questions/answers/images'
           resources :videos, controller: 'questions/answers/videos'
+          get :documents, to: 'questions/answers#documents'
         end
       end
     end
