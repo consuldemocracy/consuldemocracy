@@ -761,7 +761,6 @@ ActiveRecord::Schema.define(version: 20171006145053) do
     t.string   "origin"
     t.integer  "officer_id"
     t.string   "token"
-    t.date     "token_seen_at"
   end
 
   add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree

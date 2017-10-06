@@ -38,6 +38,13 @@
           <%= t("polls.show.already_voted_in_booth") %>
         </div>
       <% else %>
+
+      <% if !@poll.voters.find_by_user_id(current_user).present? %>
+        <div class="callout primary js-token-message" style="display: none">
+          <%= t('poll_questions.show.voted_token') %>
+        </div>
+      <% end %>
+
         <% @questions.each do |question| %>
           <%= render 'polls/questions/question', question: question, token: @token %>
         <% end %>

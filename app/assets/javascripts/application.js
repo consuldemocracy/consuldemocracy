@@ -70,6 +70,7 @@
 //= require polls_admin
 //= require leaflet
 //= require map
+//= require polls
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -108,6 +109,7 @@ var initialize_modules = function() {
   App.TagAutocomplete.initialize();
   App.PollsAdmin.initialize();
   App.Map.initialize();
+  App.Polls.initialize();
 };
 
 $(function(){
