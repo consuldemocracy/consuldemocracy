@@ -557,11 +557,14 @@ print "Creating Poll Questions"
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   open_at = rand(2.months.ago..2.months.from_now)
+  answers = Faker::Lorem.words((2..4).to_a.sample).map { |answer| answer.capitalize }
   question = Poll::Question.create!(author: author,
                                     title: Faker::Lorem.sentence(3).truncate(60),
-                                    description: description,
-                                    valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
+                                    valid_answers: answers.join(', '),
                                     poll: poll)
+  answers.each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer, description: Faker::ChuckNorris.fact)
+  end
 end
 
 puts " ✅"
