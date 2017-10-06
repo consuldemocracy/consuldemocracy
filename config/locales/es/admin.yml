@@ -612,6 +612,7 @@ es:
         add_answer: Añadir respuesta
         video_url: Video externo
         documents: Documentos (1)
+        preview: Ver en la web
         answers:
           title: Respuesta
           description: Descripción

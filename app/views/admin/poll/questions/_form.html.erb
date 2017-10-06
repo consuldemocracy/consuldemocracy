@@ -4,7 +4,6 @@
 
   <%= f.hidden_field :proposal_id %>
 
-
   <div class="small-12">
     <div class="small-12 medium-6 large-4">
       <%= f.select :poll_id,
@@ -14,10 +13,6 @@
     </div>
 
     <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>
-
-    <div class="documents small-12">
-      <%= render 'documents/nested_documents', documentable: @question, f: f %>
-    </div>
 
     <div class="small-12">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
