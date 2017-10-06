@@ -20,7 +20,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_question_path(@question), notice: t("flash.actions.save_changes.notice")
+      redirect_to admin_question_path(@answer.question), notice: t("flash.actions.save_changes.notice")
     else
       redirect_to :back
     end
