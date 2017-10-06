@@ -387,8 +387,15 @@ fr:
         description: Description
         preview: Voir l'aperçu
     answers:
+      show:
+        title: Titre
+        description: Description
+        images: Images
+        images_list: Liste des images
       new:
-        title: "Nouvelle réponse"
+        title: Nouvelle réponse
+      edit:
+        title: Modifier réponse
     recounts:
       index:
         title: "Dépouillements"

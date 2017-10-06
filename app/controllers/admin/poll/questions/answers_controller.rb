@@ -1,5 +1,6 @@
 class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
-  before_action :load_question
+  before_action :load_question, except: [:show, :edit, :update]
+  before_action :load_answer, only: [:show, :edit, :update]
 
   load_and_authorize_resource :question, class: "::Poll::Question"
 
@@ -18,6 +19,21 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @answer.update(answer_params)
+      redirect_to admin_answer_path(@answer),
+               notice: t("flash.actions.save_changes.notice")
+    else
+      render :edit
+    end
+  end
+
   private
 
     def answer_params
@@ -26,5 +42,9 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
     def load_question
       @question = ::Poll::Question.find(params[:question_id])
+    end
+
+    def load_answer
+      @answer = ::Poll::Question::Answer.find(params[:id])
     end
 end

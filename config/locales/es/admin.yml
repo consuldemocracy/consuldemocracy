@@ -611,9 +611,16 @@ es:
           images_list: Lista de imágenes
     answers:
       new:
-        title: "Nueva respuesta"
+        title: Nueva respuesta
         video_url: Video externo
         documents: Documentos (1)
+      show:
+        title: Título
+        description: Descripción
+        images: Imágenes
+        images_list: Lista de imágenes
+      edit:
+        title: Editar respuesta
     recounts:
       index:
         title: "Recuentos"

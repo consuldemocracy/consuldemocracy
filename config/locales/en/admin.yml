@@ -609,7 +609,14 @@ en:
           images_list: Images list
     answers:
       new:
-        title: "New answer"
+        title: New answer
+      show:
+        title: Title
+        description: Description
+        images: Images
+        images_list: Images list
+      edit:
+        title: Edit answer
     recounts:
       index:
         title: "Recounts"
