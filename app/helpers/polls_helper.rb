@@ -42,7 +42,7 @@ module PollsHelper
   end
 
   def voted_before_sign_in(question)
-    current_user.current_sign_in_at >= question.answers.find_or_initialize_by(author: current_user).updated_at
+    question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at >= vote.updated_at }
   end
 
 end
