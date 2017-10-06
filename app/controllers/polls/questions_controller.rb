@@ -9,6 +9,7 @@ class Polls::QuestionsController < ApplicationController
     answer = @question.answers.find_or_initialize_by(author: current_user)
 
     answer.answer = params[:answer]
+    answer.token = params[:token]
     answer.save!
     answer.record_voter_participation
 

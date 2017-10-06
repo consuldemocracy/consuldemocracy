@@ -2,13 +2,13 @@
   <% if can? :answer, question %>
     <% question.question_answers.each do |answer| %>
       <% if @answers_by_question_id[question.id] == answer.title %>
-        <span class="button answered" 
+        <span class="button answered"
               title="<%= t("poll_questions.show.voted", answer: answer)%>">
           <%= answer.title %>
         </span>
       <% else %>
         <%= link_to answer.title,
-          answer_question_path(question, answer: answer.title),
+          answer_question_path(question, answer: answer.title, token: token),
           method: :post,
           remote: true,
           title: t("poll_questions.show.vote_answer", answer: answer.title),

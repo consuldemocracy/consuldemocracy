@@ -39,7 +39,7 @@
         </div>
       <% else %>
         <% @questions.each do |question| %>
-          <%= render 'polls/questions/question', question: question %>
+          <%= render 'polls/questions/question', question: question, token: @token %>
         <% end %>
       <% end %>
     </div>
