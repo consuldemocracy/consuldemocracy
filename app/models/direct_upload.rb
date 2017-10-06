@@ -21,7 +21,7 @@ class DirectUpload
 
       #Refactor
       if @resource.respond_to?(:images) &&
-        (@attachment.present? && !@attachment.content_type.match(/pdf/)) || @cached_attachment.present?
+        ((@attachment.present? && !@attachment.content_type.match(/pdf/)) || @cached_attachment.present?)
         @relation = @resource.images.send("build", relation_attributtes)
       elsif @resource.class.reflections[@resource_relation].macro == :has_one
         @relation = @resource.send("build_#{resource_relation}", relation_attributtes)
