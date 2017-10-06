@@ -67,7 +67,7 @@
   </div>
 
   <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
-    <% if answer.description.present? || answer.images.any? %>
+    <% if answer.description.present? || answer.images.any? || answer.documents.present? %>
       <div class="expanded poll-more-info-answers">
         <div class="row padding" data-equalizer>
 
@@ -86,7 +86,18 @@
               <%= render "gallery", answer: answer %>
             <% end %>
 
+            <% if answer.documents.present? %>
+              <% answer.documents.each do |document| %>
+                <tr>
+                  <td><%= link_to document.title,
+                                  document.attachment.url,
+                                  target: "_blank",
+                                  rel: "nofollow" %></td>
+                </tr>
+              <% end %>
+            <% end %>
           </div>
+
         </div>
       </div>
     <% end %>
