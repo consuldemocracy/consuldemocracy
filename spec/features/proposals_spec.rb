@@ -47,6 +47,7 @@ feature 'Proposals' do
     end
 
     scenario 'Index should show proposal descriptive image only when is defined' do
+      Setting['feature.allow_images'] = true
       featured_proposals = create_featured_proposals
       proposal = create(:proposal)
       proposal_with_image = create(:proposal)
@@ -60,6 +61,7 @@ feature 'Proposals' do
       within("#proposal_#{proposal_with_image.id}") do
         expect(page).to have_css("img[alt='#{proposal_with_image.image.title}']")
       end
+      Setting['feature.allow_images'] = nil
     end
   end
 
