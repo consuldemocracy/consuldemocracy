@@ -66,29 +66,29 @@
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
-    <div class="row padding">
+  <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
+    <% if answer.description.present? || answer.images.any? %>
+      <div class="expanded poll-more-info-answers">
+        <div class="row padding" data-equalizer>
 
-      <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
-        <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
-             data-toggler=".medium-6">
+          <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
+             data-toggler=".medium-6" data-equalizer-watch>
 
-          <% if answer.description.present? %>
-            <h3><%= answer.title %></h3>
-          <% end %>
+            <% if answer.description.present? %>
+              <h3><%= answer.title %></h3>
 
-          <% if answer.images.any? %>
-            <%= render "gallery", answer: answer %>
-          <% end %>
+              <div class="margin-top">
+                <%= safe_html_with_links simple_format(answer.description) %>
+              </div>
+            <% end %>
 
-          <% if answer.description.present? %>
-            <div class="margin-top">
-              <%= safe_html_with_links simple_format(answer.description) %>
-            </div>
-          <% end %>
+            <% if answer.images.any? %>
+              <%= render "gallery", answer: answer %>
+            <% end %>
 
+          </div>
         </div>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
