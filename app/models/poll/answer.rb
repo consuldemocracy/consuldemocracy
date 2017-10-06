@@ -17,7 +17,10 @@ class Poll::Answer < ActiveRecord::Base
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
-  def record_voter_participation
-    Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web")
+  def record_voter_participation(token)
+    Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web") do |poll_voter|
+        poll_voter.token = token            unless poll_voter.token.present?
+        poll_voter.token_seen_at = Time.now unless poll_voter.token_seen_at.present?
+    end
   end
 end

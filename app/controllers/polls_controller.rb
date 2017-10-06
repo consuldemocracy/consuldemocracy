@@ -14,7 +14,6 @@ class PollsController < ApplicationController
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
-    @token = poll_answer_author_token(@poll, current_user)
     @answers_by_question_id = {}
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))
     poll_answers.each do |answer|
