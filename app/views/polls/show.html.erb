@@ -52,10 +52,12 @@
         <%= safe_html_with_links simple_format(@poll.description) %>
       </div>
 
-      <aside class="small-12 medium-3 column">
+      <% if false %>
+        <aside class="small-12 medium-3 column">
           <div class="sidebar-divider"></div>
           <h2><%= t("polls.show.documents") %></h2>
-      </aside>
+        </aside>
+      <% end %>
     </div>
   </div>
 
