@@ -587,9 +587,6 @@ en:
       new:
         title: "Create Question"
         poll_label: "Poll"
-        form:
-          title: Title
-          description: Description
       answers:
         images:
           add_image: "Add image"

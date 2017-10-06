@@ -50,4 +50,8 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
       @answer = ::Poll::Question::Answer.find(params[:id] || params[:answer_id])
     end
 
+    def load_question
+      @question = ::Poll::Question.find(params[:question_id])
+    end
+
 end
