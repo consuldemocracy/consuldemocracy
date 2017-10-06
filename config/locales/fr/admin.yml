@@ -391,8 +391,15 @@ fr:
           videos: Vidéos
           video_list: Liste des vidéos (%{count})
     answers:
+      show:
+        title: Titre
+        description: Description
+        images: Images
+        images_list: Liste des images
       new:
-        title: "Nouvelle réponse"
+        title: Nouvelle réponse
+      edit:
+        title: Modifier réponse
       videos:
         index:
           title: Vidéos
