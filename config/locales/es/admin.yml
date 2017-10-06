@@ -601,7 +601,6 @@ es:
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
         video_url: Video externo
-        preview: Ver en la web
         answers:
           title: Respuesta
           description: Descripción
@@ -609,6 +608,10 @@ es:
           video_list: Lista de vídeos (%{count})
           images: Imágenes
           images_list: Lista de imágenes
+          documents: Documentos
+          documents_list: Lista de documentos
+          document_title: Título
+          document_actions: Acciones
     answers:
       new:
         title: "Nueva respuesta"
