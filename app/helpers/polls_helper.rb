@@ -41,9 +41,8 @@ module PollsHelper
     booth.name + location
   end
 
-  def poll_answer_author_token(poll, author)
-    existing_token = Poll::Answer.where(question: poll.questions, author: author)
-    existing_token.present? ? existing_token.first.token : ''
+  def poll_voter_token(poll, user)
+    Poll::Voter.where(poll: poll, user: user, origin: "web").first&.token || ''
   end
 
 end

@@ -8,7 +8,6 @@ class Poll::Answer < ActiveRecord::Base
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
-  validates :token, presence: true
 
   # temporary skipping validation, review when removing valid_answers
   # validates :answer, inclusion: { in: ->(a) { a.question.valid_answers }},
@@ -19,8 +18,8 @@ class Poll::Answer < ActiveRecord::Base
 
   def record_voter_participation(token)
     Poll::Voter.find_or_create_by!(user: author, poll: poll, origin: "web") do |poll_voter|
-        poll_voter.token = token            unless poll_voter.token.present?
-        poll_voter.token_seen_at = Time.now unless poll_voter.token_seen_at.present?
+        poll_voter.token = token                unless poll_voter.token.present?
+        poll_voter.token_seen_at = Time.current unless poll_voter.token_seen_at.present?
     end
   end
 end
