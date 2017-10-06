@@ -193,7 +193,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       click_on submit_button
       documentable_redirected_to_resource_show_or_navigate_to
 
-      expect(page).to have_content "Documents (1)"
+      expect(page).to have_content "Documents"
+      expect(page).to have_link "empty.pdf"
     end
 
     scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
