@@ -1,7 +1,11 @@
 App.Polls =
   generateToken: ->
-    rand = Math.random().toString(36).substr(2) # remove `0.`
-    token = rand + rand # to make it longer
+    token = ''
+    for n in [0..5]
+      rand = Math.random().toString(36).substr(2) # remove `0.`
+      token = token + rand;
+
+    token = token.substring(0, 64)
     return token
 
   replaceToken: ->
