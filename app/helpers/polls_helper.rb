@@ -43,13 +43,7 @@ module PollsHelper
 
   def poll_answer_author_token(poll, author)
     existing_token = Poll::Answer.where(question: poll.questions, author: author)
-    existing_token.present? ? existing_token.first.token : poll_answer_unique_token
+    existing_token.present? ? existing_token.first.token : ''
   end
 
-  def poll_answer_unique_token
-    loop do
-      token = SecureRandom.hex(32)
-      break token unless Poll::Answer.where(token: token).exists?
-    end
-  end
 end
