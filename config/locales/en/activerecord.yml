@@ -213,9 +213,12 @@ en:
       image:
         title: Title
         attachment: Attachment
-      poll/question_answer:
+      poll/question/answer:
         title: "Answer"
         description: "Description"
+      poll/question/answer/video:
+        title: Title
+        url: External video
     errors:
       models:
         user:
