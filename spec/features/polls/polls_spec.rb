@@ -209,8 +209,7 @@ feature 'Polls' do
       visit poll_path(poll)
 
       expect(page).to have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
-      expect(page).to have_content('Chewbacca')
+      expect(page).to have_link('Chewbacca')
     end
 
     scenario 'Level 2 users answering', :js do

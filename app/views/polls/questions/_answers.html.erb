@@ -1,9 +1,9 @@
 <div class="poll-question-answers">
   <% if can? :answer, question %>
     <% question.question_answers.each do |answer| %>
-      <% if @answers_by_question_id[question.id] == answer.title %>
-        <span class="button answered" 
-              title="<%= t("poll_questions.show.voted", answer: answer)%>">
+      <% if @answers_by_question_id[question.id] == answer.title && !voted_before_sign_in(question) %>
+        <span class="button answered"
+              title="<%= t("poll_questions.show.voted", answer: answer.title)%>">
           <%= answer.title %>
         </span>
       <% else %>

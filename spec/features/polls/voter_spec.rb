@@ -91,8 +91,31 @@ feature "Voter" do
         visit poll_path(poll)
 
         expect(page).to_not have_link('Yes')
-        expect(page).to have_content "You have already participated in a booth for this poll."
+        expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
+      end
+
+      scenario "Trying to vote in web again", :js do
+        login_as user
+        vote_for_poll_via_web(poll, question)
+
+        visit poll_path(poll)
+
+        expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).to_not have_link('Yes')
+        end
+
+        click_link "Sign out"
+
+        login_as user
+        visit poll_path(poll)
+
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).to have_link('Yes')
+          expect(page).to have_link('No')
+        end
+
       end
     end
 

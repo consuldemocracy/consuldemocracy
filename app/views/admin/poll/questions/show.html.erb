@@ -43,6 +43,7 @@
     <th><%= t("admin.questions.show.answers.title") %></th>
     <th class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
     <th class="text-center"><%= t("admin.questions.show.answers.images") %></th>
+    <th><%= t("admin.questions.show.answers.videos") %></th>
   </tr>
 
   <% @question.question_answers.each do |answer| %>
@@ -52,8 +53,10 @@
       <td class="text-center">
         (<%= answer.images.count %>)<br>
         <%= link_to t("admin.questions.show.answers.images_list"),
-                    admin_answer_images_path(answer) %>
-      </td>
+                    admin_answer_images_path(answer) %></td>
+      <td><%= link_to t("admin.questions.show.answers.video_list",
+                            count: answer.videos.count),
+                            admin_answer_videos_path(answer) %></td>
     </tr>
   <% end %>
 </table>
@@ -63,13 +66,5 @@
     <strong><%= t("admin.questions.show.video_url") %></strong>
     <br>
     <a href="<%= @question.video_url %>"><%= @question.video_url %></a>
-  </p>
-<% end %>
-
-<% if @question.documents.any? %>
-  <p>
-    <strong><%= t("admin.questions.show.documents") %></strong>
-    <br>
-    <a href="<%= @question.documents.first.attachment.url %>"><%= @question.documents.first.title %></a>
   </p>
 <% end %>

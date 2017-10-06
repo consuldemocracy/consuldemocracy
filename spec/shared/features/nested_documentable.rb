@@ -263,7 +263,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     end
 
-
   end
 
 end
@@ -275,7 +274,7 @@ rescue
   return
 end
 
-def documentable_attach_new_file(documentable_factory_name, index, path, success = true)
+def documentable_attach_new_file(_documentable_factory_name, index, path, success = true)
   click_link "Add new document"
   document = all(".document")[index]
   document_input = document.find("input[type=file]", visible: false)
@@ -317,9 +316,4 @@ def documentable_fill_new_valid_budget_investment
   fill_in :budget_investment_title, with: "Budget investment title"
   fill_in_ckeditor "budget_investment_description", with: "Budget investment description"
   check :budget_investment_terms_of_service
-end
-
-def documentable_fill_new_valid_poll_question
-  page.select documentable.poll.name, from: 'poll_question_poll_id'
-  fill_in 'poll_question_title', with: "Star Wars: Episode IV - A New Hope"
 end
