@@ -152,7 +152,11 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       send(fill_resource_method_name) if fill_resource_method_name
       click_on submit_button
 
-      expect(page).to have_content imageable_success_notice
+      if has_many_images
+        skip "there are no attributes for the parent resource"
+      else
+        expect(page).to have_content imageable_success_notice
+      end
     end
 
     scenario "Should show successful notice when resource filled correctly and after valid file uploads", :js do
