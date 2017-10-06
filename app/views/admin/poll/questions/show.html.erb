@@ -31,7 +31,7 @@
 
 <table class="margin-top">
   <tr>
-    <th colspan="4" scope="col" class="with-button">
+    <th colspan="5" scope="col" class="with-button">
       <%= t('admin.questions.show.valid_answers') %>
       <%= link_to t("admin.questions.show.add_answer"),
                   new_admin_question_answer_path(@question),
@@ -44,6 +44,7 @@
     <th scope="col" class="medium-7"><%= t("admin.questions.show.answers.description") %></th>
     <th scope="col" class="text-center"><%= t("admin.questions.show.answers.images") %></th>
     <th scope="col" class="text-center"><%= t("admin.questions.show.answers.documents") %></th>
+    <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
   </tr>
 
   <% @question.question_answers.each do |answer| %>
@@ -61,6 +62,11 @@
         <br>
         <%= link_to t("admin.questions.show.answers.documents_list"),
                     admin_answer_documents_path(answer) %>
+      </td>
+      <td class="text-center">
+        <%= link_to t("admin.questions.show.answers.video_list",
+                    count: answer.videos.count),
+                    admin_answer_videos_path(answer) %>
       </td>
     </tr>
   <% end %>

@@ -7,6 +7,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   accepts_nested_attributes_for :documents, allow_destroy: true
 
   belongs_to :question, class_name: 'Poll::Question', foreign_key: 'question_id'
+  has_many :videos, class_name: 'Poll::Question::Answer::Video'
 
   validates :title, presence: true
 
