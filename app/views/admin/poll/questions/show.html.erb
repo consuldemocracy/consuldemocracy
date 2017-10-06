@@ -60,7 +60,7 @@
         (<%= answer.documents.count rescue 0 %>)
         <br>
         <%= link_to t("admin.questions.show.answers.documents_list"),
-                    admin_question_answer_documents_path(@question, answer) %>
+                    admin_answer_documents_path(answer) %>
       </td>
     </tr>
   <% end %>
