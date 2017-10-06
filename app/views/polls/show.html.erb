@@ -52,33 +52,38 @@
         <%= safe_html_with_links simple_format(@poll.description) %>
       </div>
 
-      <aside class="small-12 medium-3 column">
+      <% if false %>
+        <aside class="small-12 medium-3 column">
           <div class="sidebar-divider"></div>
           <h2><%= t("polls.show.documents") %></h2>
-      </aside>
+        </aside>
+      <% end %>
     </div>
   </div>
 
   <div class="expanded poll-more-info-answers">
-    <div class="row padding">
+    <div class="row padding" data-equalizer>
 
       <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
         <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
-             data-toggler=".medium-6">
+             data-toggler=".medium-6" data-equalizer-watch>
 
-          <h3><%= answer.title %></h3>
+          <% if answer.description.present? %>
+            <h3><%= answer.title %></h3>
+          <% end %>
 
           <% if answer.images.any? %>
             <%= render "gallery", answer: answer %>
           <% end %>
 
-          <div class="margin-top">
-            <%= safe_html_with_links simple_format(answer.description) %>
-          </div>
+          <% if answer.description.present? %>
+            <div class="margin-top">
+              <%= safe_html_with_links simple_format(answer.description) %>
+            </div>
+          <% end %>
 
         </div>
       <% end %>
     </div>
-
   </div>
 </div>
