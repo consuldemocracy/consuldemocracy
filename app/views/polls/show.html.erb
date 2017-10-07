@@ -45,6 +45,12 @@
         </div>
       <% end %>
 
+        <% if current_user && !@poll.votable_by?(current_user) %>
+          <div class="callout warning">
+            <%= t("polls.show.already_voted_in_web") %>
+          </div>
+        <% end %>
+
         <% @questions.each do |question| %>
           <%= render 'polls/questions/question', question: question, token: @token %>
         <% end %>
@@ -59,10 +65,12 @@
         <%= safe_html_with_links simple_format(@poll.description) %>
       </div>
 
-      <aside class="small-12 medium-3 column">
+      <% if false %>
+        <aside class="small-12 medium-3 column">
           <div class="sidebar-divider"></div>
           <h2><%= t("polls.show.documents") %></h2>
-      </aside>
+        </aside>
+      <% end %>
     </div>
   </div>
 
@@ -73,19 +81,22 @@
         <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
              data-toggler=".medium-6">
 
-          <h3><%= answer.title %></h3>
+          <% if answer.description.present? %>
+            <h3><%= answer.title %></h3>
+          <% end %>
 
           <% if answer.images.any? %>
             <%= render "gallery", answer: answer %>
           <% end %>
 
-          <div class="margin-top">
-            <%= safe_html_with_links simple_format(answer.description) %>
-          </div>
+          <% if answer.description.present? %>
+            <div class="margin-top">
+              <%= safe_html_with_links simple_format(answer.description) %>
+            </div>
+          <% end %>
 
         </div>
       <% end %>
     </div>
-
   </div>
 </div>

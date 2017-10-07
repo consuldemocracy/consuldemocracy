@@ -10,6 +10,7 @@ class Polls::QuestionsController < ApplicationController
     token = params[:token]
 
     answer.answer = params[:answer]
+    answer.touch if answer.persisted?
     answer.save!
     answer.record_voter_participation(token)
 

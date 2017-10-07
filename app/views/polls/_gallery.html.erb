@@ -16,10 +16,10 @@
       </button>
     </li>
 
-    <% answer.images.each_with_index do |image, index| %>
+    <% answer.images.reverse.each_with_index do |image, index| %>
       <li class="orbit-slide <%= active_class(index) %>">
         <%= link_to image.attachment.url(:original), target: "_blank" do %>
-          <%= image_tag image.attachment.url(:medium),
+          <%= image_tag image.attachment.url(:large),
                         class: "orbit-image",
                         alt: image.title %>
         <% end %>

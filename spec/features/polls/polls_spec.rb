@@ -209,8 +209,7 @@ feature 'Polls' do
       visit poll_path(poll)
 
       expect(page).to have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
-      expect(page).to have_content('Chewbacca')
+      expect(page).to have_link('Chewbacca')
     end
 
     scenario 'Level 2 users answering', :js do
@@ -250,6 +249,40 @@ feature 'Polls' do
       expect(page).to_not have_link('Han Solo')
       expect(page).to have_link('Chewbacca')
 
+      click_link 'Chewbacca'
+
+      expect(page).to_not have_link('Chewbacca')
+      expect(page).to have_link('Han Solo')
+    end
+
+    scenario 'Level 2 votes, signs out, signs in, votes again', :js do
+      poll.update(geozone_restricted: true)
+      poll.geozones << geozone
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
+      answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+
+      user = create(:user, :level_two, geozone: geozone)
+
+      login_as user
+      visit poll_path(poll)
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+
+      click_link "Sign out"
+      login_as user
+      visit poll_path(poll)
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+
+      click_link "Sign out"
+      login_as user
+      visit poll_path(poll)
       click_link 'Chewbacca'
 
       expect(page).to_not have_link('Chewbacca')
