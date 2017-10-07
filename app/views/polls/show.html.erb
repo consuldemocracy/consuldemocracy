@@ -39,12 +39,6 @@
         </div>
       <% else %>
 
-      <% if poll_voter_token(@poll, current_user).empty? %>
-        <div class="callout primary js-token-message" style="display: none">
-          <%= t('poll_questions.show.voted_token') %>
-        </div>
-      <% end %>
-
         <% if current_user && !@poll.votable_by?(current_user) %>
           <div class="callout warning">
             <%= t("polls.show.already_voted_in_web") %>
@@ -54,6 +48,12 @@
 
       <% @questions.each do |question| %>
         <%= render 'polls/questions/question', question: question, token: @token %>
+      <% end %>
+
+      <% if poll_voter_token(@poll, current_user).empty? %>
+        <div class="callout primary js-token-message" style="display: none">
+          <%= t('poll_questions.show.voted_token') %>
+        </div>
       <% end %>
     </div>
   </div>
