@@ -72,7 +72,7 @@
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell aling-middle">
-          <%= link_to poll_path(poll, anchor: "questions"), class: "button hollow expanded", data: { no_turbolink: true } do %>
+          <%= link_to poll_path(poll), class: "button hollow expanded", data: { no_turbolink: true } do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>
             <% elsif poll.incoming? %>
