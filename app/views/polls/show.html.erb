@@ -39,7 +39,7 @@
         </div>
       <% else %>
 
-      <% if !@poll.voters.find_by_user_id(current_user).present? %>
+      <% if poll_voter_token(@poll, current_user).empty? %>
         <div class="callout primary js-token-message" style="display: none">
           <%= t('poll_questions.show.voted_token') %>
         </div>

@@ -1,6 +1,7 @@
 App.Polls =
   generateToken: ->
     token = ''
+    rand = ''
     for n in [0..5]
       rand = Math.random().toString(36).substr(2) # remove `0.`
       token = token + rand;
