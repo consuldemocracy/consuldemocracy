@@ -1,0 +1,46 @@
+<div class="orbit margin-bottom" role="region" aria-label="Answer 1" data-orbit data-auto-play="false">
+  <a data-toggle="answer_1" class="zoom-link show-for-medium-up">
+    <span class="icon-search-plus"></span>
+    <span class="show-for-sr"><%= t("polls.show.zoom_plus") %></span>
+  </a>
+
+  <ul class="orbit-container">
+    <li>
+      <button class="orbit-previous">
+        <span class="show-for-sr"><%= t("shared.orbit.previous_slide") %></span>&#9664;&#xFE0E;
+      </button>
+    </li>
+    <li>
+      <button class="orbit-next">
+        <span class="show-for-sr"><%= t("shared.orbit.next_slide") %></span>&#9654;&#xFE0E;
+      </button>
+    </li>
+    <!-- each image do -->
+    <li class="is-active orbit-slide">
+      <%= link_to "/assets/example_vertical.jpg", target: "_blank" do %>
+        <%= image_tag "example_horizontal.jpg", class: "orbit-image" %>
+      <% end %>
+      <!-- replace this with image title -->
+      <span class="orbit-caption">Image title 1</span>
+      <!-- /. replace this with image title -->
+    </li>
+    <!-- end -->
+    <li class="orbit-slide">
+      <%= link_to "/assets/example_vertical.jpg", target: "_blank" do %>
+        <%= image_tag "example_vertical.jpg", class: "orbit-image" %>
+      <% end %>
+      <span class="orbit-caption">Image title 2</span>
+    </li>
+  </ul>
+
+  <nav class="orbit-bullets">
+    <button class="is-active" data-slide="0">
+      <!-- replace this with image title -->
+      <span class="show-for-sr">Image title 1</span>
+      <!-- /. replace this with image title -->
+    </button>
+    <button data-slide="1">
+      <span class="show-for-sr">Image title 2</span>
+    </button>
+  </nav>
+</div>

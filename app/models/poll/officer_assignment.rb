@@ -8,7 +8,7 @@ class Poll
 
     validates :officer_id, presence: true
     validates :booth_assignment_id, presence: true
-    validates :date, presence: true, uniqueness: { scope: [:officer_id, :booth_assignment_id] }
+    validates :date, presence: true
 
     delegate :poll_id, :booth_id, to: :booth_assignment
 

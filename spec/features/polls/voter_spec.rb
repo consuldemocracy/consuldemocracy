@@ -21,12 +21,12 @@ feature "Voter" do
       user = create(:user, :level_two)
 
       login_as user
-      visit question_path(question)
+      visit poll_path(poll)
 
-      click_link 'Go to voting page'
-      click_link 'Yes'
-
-      expect(page).to_not have_link('Yes')
+      within("#poll_question_#{question.id}_answers") do
+        click_link 'Yes'
+        expect(page).to_not have_link('Yes')
+      end
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")
@@ -68,7 +68,7 @@ feature "Voter" do
 
       scenario "Trying to vote in web and then in booth", :js do
         login_as user
-        vote_for_poll_via_web
+        vote_for_poll_via_web(poll, question)
 
         click_link "Sign out"
 
@@ -91,9 +91,7 @@ feature "Voter" do
         click_link "Sign out"
 
         login_as user
-        visit question_path(question)
-
-        click_link 'Go to voting page'
+        visit poll_path(poll)
 
         expect(page).to_not have_link('Yes')
         expect(page).to have_content "You have already participated in a booth for this poll."

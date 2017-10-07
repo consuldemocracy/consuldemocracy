@@ -139,7 +139,7 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index], path: 'votaciones' do
-    resources :questions, only: [:show], controller: 'polls/questions', shallow: true do
+    resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
     resources :nvotes, only: [:new], controller: 'polls/nvotes' do
@@ -309,9 +309,7 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
-        get :search_questions, on: :member
         patch :add_question, on: :member
-        patch :remove_question, on: :member
 
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
           get :search_booths, on: :collection

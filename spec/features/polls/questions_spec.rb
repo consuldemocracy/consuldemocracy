@@ -118,6 +118,7 @@ feature 'Poll Questions' do
       visit question_path(question)
 
       click_link 'Go to voting page'
+      click_link 'Han Solo'
 
       expect(page).to have_selector('.booth-container')
 

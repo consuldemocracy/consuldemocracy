@@ -511,8 +511,8 @@ es:
         help_text_1: "Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. En las votaciones también se pueden incluir cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
         help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
     show:
-      dates_title: "Fechas de votación"
       already_voted_in_booth: "Ya has participado en esta votación en una urna."
+      back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       signin: iniciar sesión
       signup: registrarte
@@ -522,8 +522,9 @@ es:
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "No puedes responder esta votación al no estar empadronado en él"
       more_info: "Más información"
-      polls: "Votaciones"
-      more_polls: "Ir a otras votaciones"
+      more_info_title: "Más información"
+      documents: Documentación
+      zoom_plus: Ampliar imagen
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
@@ -547,12 +548,12 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar'
-    save: 'Guardar'
-    delete: 'Borrar'
     comments:
       title: 'Comentarios'
       login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
+    edit: 'Editar'
+    save: 'Guardar'
+    delete: 'Borrar'
     "yes": "Sí"
     "no": "No"
     search_results: "Resultados de búsqueda"
@@ -635,6 +636,10 @@ es:
       budget: Presupuestos participativos
       searcher: Buscador
     go_to_page: "Ir a la página de "
+    share: Compartir
+    orbit:
+      previous_slide: Imagen anterior
+      next_slide: Siguiente imagen
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"

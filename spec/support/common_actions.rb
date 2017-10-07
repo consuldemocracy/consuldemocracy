@@ -53,7 +53,7 @@ module CommonActions
     fill_in 'user_password', with: user.password
 
     click_button 'Enter'
-    visit new_officing_booth_path
+    visit new_officing_residence_path
   end
 
   def login_as_authenticated_manager
@@ -471,13 +471,14 @@ module CommonActions
     "system/api/#{table}.csv"
   end
 
-  def vote_for_poll_via_web
-    visit question_path(question)
+  def vote_for_poll_via_web(poll, question)
+    visit poll_path(poll)
 
-    click_link 'Go to voting page'
-    click_link 'Yes'
+    within("#poll_question_#{question.id}_answers") do
+      click_link 'Yes'
+      expect(page).to_not have_link('Yes')
+    end
 
-    expect(page).to_not have_link('Yes')
     expect(Poll::Voter.count).to eq(1)
   end
 

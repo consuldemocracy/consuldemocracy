@@ -14,15 +14,15 @@
 
 <div class="tabs-content" data-tabs-content="booths-tabs">
   <ul class="tabs" data-tabs id="booths-tabs">
-    <li class="tabs-title is-active">
+    <li class="tabs-title">
       <%= link_to t("admin.poll_booth_assignments.show.officers"), "#tab-officers" %>
     </li>
-    <li class="tabs-title">
+    <li class="tabs-title is-active">
       <%= link_to t("admin.poll_booth_assignments.show.recounts"), "#tab-recounts" %>
     </li>
   </ul>
 
-  <div class="tabs-panel is-active" id="tab-officers">
+  <div class="tabs-panel" id="tab-officers">
     <% if @booth_assignment.officers.empty? %>
       <div class="callout primary margin-top">
         <%= t("admin.poll_booth_assignments.show.no_officers") %>
@@ -43,7 +43,7 @@
     <% end %>
   </div>
 
-  <div class="tabs-panel" id="tab-recounts">
+  <div class="tabs-panel is-active" id="tab-recounts">
     <h3><%= t("admin.poll_booth_assignments.show.recounts_list") %></h3>
 
     <table id="totals">

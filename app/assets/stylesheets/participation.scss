@@ -256,7 +256,6 @@
   .icon-debates,
   .icon-proposals,
   .icon-budget,
-  .icon-documents,
   .icon-image {
     font-size: rem-calc(50);
     line-height: $line-height;
@@ -268,7 +267,6 @@
   }
 
   .icon-proposals,
-  .icon-documents,
   .icon-image {
     color: $proposals;
   }
@@ -313,11 +311,10 @@
 .budget-investment-new,
 .proposal-form,
 .proposal-edit,
-.new_poll_question,
-.edit_poll_question {
+.polls-form,
+.poll-question-form {
   @include direct-uploads;
 }
-
 
 // 03. Show participation
 // ----------------------
@@ -359,8 +356,7 @@
     width: rem-calc(48);
   }
 
-  .edit-debate,
-  .edit-proposal {
+  .edit-debate {
     margin-bottom: 0;
   }
 
@@ -662,34 +658,33 @@
 .proposals-list .proposal {
 
   @include breakpoint(small) {
+
     .no-image {
       width: 100%;
-      max-width: 300px;
+      max-width: rem-calc(300);
       margin: 0 auto;
-    }
 
-    .no-image::before {
-      content: '';
-      display: block;
-      padding-top: 100%;
-    }
-
-    h3 {
-      font-size: 1.3rem;
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
     }
   }
 
   @include breakpoint(medium) {
+
     .panel {
 
-      .no-image {
-        height: 245px;
-        width: 140px;
+      &.with-image {
+        padding: 0 $line-height / 2 0 0;
       }
-    }
 
-    h3 {
-      font-size: 1.4rem;
+      .no-image {
+        height: 100%;
+        min-height: rem-calc(245);
+        width: rem-calc(140);
+      }
     }
 
     .column:first-child {
@@ -701,7 +696,7 @@
     }
 
     .column:last-child:not(:first-child) {
-      padding-top: 0.75rem;
+      padding-top: $line-height / 2;
     }
 
     img {
@@ -831,7 +826,7 @@
     background: image-url('truncate.png');
     background-repeat: repeat-x;
     bottom: 0;
-    height: 24px;
+    height: rem-calc(24);
     position: absolute;
     width: 100%;
   }
@@ -1551,18 +1546,8 @@
 // 08. Polls
 // ----------------------
 
-.dark-heading {
-  background: #2d3e50;
-  color: #fff;
-
-  .title {
-    color: #92ba48;
-  }
-
-  .button {
-    background: #fff;
-    color: $brand;
-  }
+.polls-show-header {
+  background: #fafafa;
 
   .callout {
 
@@ -1578,28 +1563,85 @@
       color: $color-alert;
     }
   }
+}
 
-  .info {
-    background: #314253;
-    padding: $line-height;
+.poll-more-info,
+.poll-more-info-answers {
+  border-top: 1px solid #eee;
+}
 
-    @include breakpoint(medium) {
-      border-top: rem-calc(6) solid #92ba48;
+.poll-more-info-answers {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+
+  .column:nth-child(odd) {
+    border-right: 1px solid #eee;
+  }
+}
+
+.orbit-bullets button {
+  background-color: #ccc;
+  height: $line-height / 2;
+  width: $line-height / 2;
+
+  &.is-active {
+    background-color: $brand;
+  }
+}
+
+.orbit-container {
+  height: 100% !important;
+  max-height: none !important;
+}
+
+.orbit-slide {
+  max-height: none !important;
+}
+
+.orbit-caption {
+  background: #eee;
+  color: $text;
+}
+
+.zoom-link {
+  background: #fff;
+  border-radius: rem-calc(48);
+  color: #000;
+  font-size: rem-calc(24);
+  font-weight: bold;
+  height: rem-calc(48);
+  line-height: rem-calc(48);
+  right: 12px;
+  padding-top: rem-calc(4);
+  position: absolute;
+  text-align: center;
+  top: 24px;
+  width: rem-calc(48);
+  z-index: 9;
+
+  &:hover {
+    background: $dark;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.image-container {
+  background: #fafafa;
+  overflow: hidden;
+  position: relative;
+}
+
+.poll {
+
+  &.with-image {
+    padding: 0 $line-height / 2 0 0;
+
+    img {
+      height: 100%;
+      max-width: none;
+      position: absolute;
     }
-  }
-
-  a:not(.button) {
-    color: #fff;
-    text-decoration: underline;
-  }
-
-  .back,
-  .icon-angle-left {
-    color: #fff;
-  }
-
-  &.polls-show-header {
-    min-height: $line-height * 8;
   }
 }
 
@@ -1697,9 +1739,13 @@
 }
 
 .section-title-divider {
-  border-bottom: 2px solid $brand;
-  color: $brand;
-  margin-bottom: $line-height;
+  border-bottom: 1px solid #eee;
+  color: #000;
+  margin: $line-height 0;
+
+  span {
+    border-bottom: 1px solid #000;
+  }
 }
 
 .poll-question {

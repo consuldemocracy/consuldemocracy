@@ -499,15 +499,11 @@ es:
         no_officers: "No hay presidentes de mesa asignados a esta votación."
         table_name: "Nombre"
         table_email: "Email"
-        add_officer_assignments: "Añadir turnos como presidente de mesa"
-        edit_officer_assignments: "Editar turnos"
       by_officer:
         date: "Fecha"
         booth: "Urna"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
-        total_recounts: "Recuentos totales"
-        total_recount: "Recuento total (presidente de mesa)"
     poll_shifts:
       new:
         add_shift: "Añadir turno"
@@ -580,16 +576,10 @@ es:
         results_tab: Resultados
         no_questions: "No hay preguntas asignadas a esta votación."
         questions_title: "Listado de preguntas asignadas"
-        remove_question: "Desasignar pregunta"
-        add_question: "Incluir pregunta"
         table_title: "Título"
-        table_assignment: "Asignación"
-        table_name: "Nombre"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
-        question_removed: "Pregunta eliminada de esta votación"
-        error_on_question_removed: "No se pudo quitar la pregunta"
     questions:
       index:
         title: "Preguntas ciudadanas"
@@ -613,10 +603,8 @@ es:
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
-        description: Descripción
         video_url: Video externo
         documents: Documentos (1)
-        preview: Ver en la web
     recounts:
       index:
         title: "Recuentos"
@@ -631,7 +619,7 @@ es:
       index:
         title: "Resultados"
         no_results: "No hay resultados"
-        table_whites: Papeletas en blanco
+        table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
         table_answer: Respuesta

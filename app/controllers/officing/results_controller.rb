@@ -93,7 +93,7 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def load_poll
-      @poll = ::Poll.expired.includes(:questions).find(params[:poll_id])
+      @poll = ::Poll.includes(:questions).find(params[:poll_id])
     end
 
     def load_officer_assignment
