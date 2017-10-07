@@ -389,7 +389,7 @@ fr:
           title: Réponse
           description: Description
           videos: Vidéos
-          video_list: Liste des vidéos (%{count})
+          video_list: Liste des vidéos
     answers:
       show:
         title: Titre

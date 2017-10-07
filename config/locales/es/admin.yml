@@ -602,7 +602,7 @@ es:
           title: Respuesta
           description: Descripción
           videos: Vídeos
-          video_list: Lista de vídeos (%{count})
+          video_list: Lista de vídeos
           images: Imágenes
           images_list: Lista de imágenes
           documents: Documentos
