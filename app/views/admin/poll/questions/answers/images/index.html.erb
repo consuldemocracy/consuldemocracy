@@ -9,7 +9,7 @@
   <li><%= @answer.title %></li>
 </ul>
 
-<% @answer.images.each do |image| %>
+<% @answer.images.sort_by{|i| i.title.split(" (")[1].to_i }.each do |image| %>
   <div class="small-12 medium-4 column end">
     <%= render_image(image, :large, true) if image.present? %>
   </div>
