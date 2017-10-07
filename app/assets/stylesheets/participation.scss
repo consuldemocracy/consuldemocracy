@@ -1576,6 +1576,13 @@
   .column:nth-child(odd) {
     border-right: 1px solid #eee;
   }
+
+  .answer-divider {
+    border-bottom: 1px solid #eee;
+    border-right: 0 !important;
+    margin-bottom: $line-height;
+    padding-bottom: $line-height;
+  }
 }
 
 .orbit-bullets button {
