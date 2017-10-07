@@ -85,7 +85,7 @@ desc "Create second citizen poll"
   def main_square_names
     ["Plaza de la Duquesa de Osuna (Barajas)",
      "Plaza de la Remonta (Tetuán)",
-     "Plaza de la Vaguada (Fuencarral - El pardo)",
+     "Plaza de la Vaguada (Fuencarral - El Pardo)",
      "Plaza Cívica de Lucero (Latina)",
      "Plaza de la Emperatriz (Carabanchel)",
      "Plaza del Puerto de Canfranc (Puente de Vallecas)",
@@ -93,7 +93,7 @@ desc "Create second citizen poll"
      "Plaza de los Misterios (Ciudad Lineal)",
      "Plaza Cívica Mar de Cristal (Hortaleza)",
      "Plaza Mayor de Villaverde y Plaza de Ágata (Villaverde)",
-     "Plaza Cívica de San Blas (San Blas)"]
+     "Plaza Cívica de San Blas (San Blas - Canillejas)"]
   end
 
   def project_x_names
