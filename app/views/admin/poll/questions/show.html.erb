@@ -64,8 +64,9 @@
                     admin_answer_documents_path(answer) %>
       </td>
       <td class="text-center">
-        <%= link_to t("admin.questions.show.answers.video_list",
-                    count: answer.videos.count),
+        (<%= answer.videos.count %>)
+        <br>
+        <%= link_to t("admin.questions.show.answers.video_list"),
                     admin_answer_videos_path(answer) %>
       </td>
     </tr>

@@ -602,7 +602,7 @@ en:
           title: Answer
           description: Description
           videos: Videos
-          video_list: Video list (%{count})
+          video_list: Video list
           images: Images
           images_list: Images list
           documents: Documents
