@@ -1583,6 +1583,15 @@
     margin-bottom: $line-height;
     padding-bottom: $line-height;
   }
+
+  .answer-description {
+    height: 100%;
+
+    &.short {
+      height: $line-height * 12;
+      overflow: hidden;
+    }
+  }
 }
 
 .orbit-bullets button {
