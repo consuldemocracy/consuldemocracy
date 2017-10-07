@@ -3,6 +3,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def new
     @answer = ::Poll::Question::Answer.new
+    @question = ::Poll::Question.find(params[:question_id])
   end
 
   def create
