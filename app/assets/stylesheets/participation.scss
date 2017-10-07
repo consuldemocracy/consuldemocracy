@@ -1658,7 +1658,10 @@
 .poll {
 
   &.with-image {
-    padding: 0 $line-height / 2 0 0;
+
+    @include breakpoint(medium) {
+      padding: 0 $line-height / 2 0 0;
+    }
 
     img {
       height: 100%;
