@@ -110,6 +110,7 @@ feature 'Residence' do
   end
 
   scenario "Verify booth", :js do
+    skip "Review before launching booth votes"
     booth = create(:poll_booth)
     poll = create(:poll)
 
