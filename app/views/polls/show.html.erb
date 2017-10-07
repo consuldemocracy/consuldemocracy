@@ -73,29 +73,64 @@
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
-    <div class="row padding">
+  <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
+    <% if answer.description.present? || answer.images.any? || answer.documents.present? %>
+      <div class="expanded poll-more-info-answers">
+        <div class="row padding">
 
-      <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
-        <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
-             data-toggler=".medium-6">
+          <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
+            <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
+                 data-toggler="medium-6 answer-divider">
+              <h3><%= answer.title %></h3>
 
-          <% if answer.description.present? %>
-            <h3><%= answer.title %></h3>
-          <% end %>
+              <% if answer.description.present? %>
+                <div class="margin-top">
+                  <%= safe_html_with_links simple_format(answer.description) %>
+                </div>
+              <% end %>
 
-          <% if answer.images.any? %>
-            <%= render "gallery", answer: answer %>
-          <% end %>
+              <% if answer.images.any? %>
+                <%= render "gallery", answer: answer %>
+              <% end %>
 
-          <% if answer.description.present? %>
-            <div class="margin-top">
-              <%= safe_html_with_links simple_format(answer.description) %>
+              <% if answer.description.present? %>
+                <div class="margin-top">
+                  <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
+                    <%= safe_html_with_links simple_format(answer.description) %>
+                  </div>
+                  <a id="read_more_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+                     data-toggler="hide">
+                    <%= t("polls.show.read_more", answer: answer.title) %>
+                  </a>
+                  <a id="read_less_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+                     data-toggler="hide"
+                     class="hide">
+                    <%= t("polls.show.read_less", answer: answer.title) %>
+                  </a>
+                </div>
+              <% end %>
+
+              <% if answer.documents.present? %>
+              <div class="document-link">
+                <p>
+                  <span class="icon-document"></span>&nbsp;
+                  <strong><%= t("polls.show.documents") %></strong>
+                </p>
+
+                <% answer.documents.each do |document| %>
+                    <%= link_to document.title,
+                                document.attachment.url,
+                                target: "_blank",
+                                rel: "nofollow" %><br>
+                <% end %>
+              </div>
+              <% end %>
             </div>
           <% end %>
-
         </div>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>

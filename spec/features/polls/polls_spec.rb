@@ -371,6 +371,42 @@ feature 'Polls' do
       expect(page).to_not have_link('Chewbacca')
       expect(page).to have_link('Han Solo')
     end
+  end
+
+  context 'Booth & Website' do
+
+    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    let(:booth) { create(:poll_booth) }
+    let(:officer) { create(:poll_officer) }
+
+    scenario 'Already voted on booth cannot vote on website', :js do
+
+      create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      question = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question, title: 'Han Solo')
+      create(:poll_question_answer, question: question, title: 'Chewbacca')
+      user = create(:user, :level_two, :in_census)
+
+      login_as(officer.user)
+      visit new_officing_residence_path
+      officing_verify_residence
+      click_button "Confirm vote"
+
+      expect(page).to have_content "Vote introduced!"
+
+      visit new_officing_residence_path
+      click_link "Sign out"
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+      expect(page).to have_content('Han Solo')
+      expect(page).to have_content('Chewbacca')
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to_not have_link('Chewbacca')
+    end
 
   end
 end

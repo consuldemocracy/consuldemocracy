@@ -153,7 +153,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
 
       if has_many_images
-        skip "there are no attributes for the parent resource"
+        skip "no need to test, there are no attributes for the parent resource"
       else
         expect(page).to have_content imageable_success_notice
       end

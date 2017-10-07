@@ -16,7 +16,7 @@ feature 'Videos' do
     visit admin_question_path(question)
 
     within("#poll_question_answer_#{answer.id}") do
-      click_link "Video list (#{answer.videos.count})"
+      click_link "Video list"
     end
 
     click_link "Add video"
