@@ -336,8 +336,16 @@
     word-wrap: break-word;
   }
 
-  .callout.proposal-retired {
-    font-size: $base-font-size;
+  .callout {
+    &.token-message {
+      background-color: #fff;
+      border-color: $info-border;
+      color: $color-info;
+    }
+
+    &.proposal-retired {
+      font-size: $base-font-size;
+    }
   }
 
   .social-share-full .social-share-button {
