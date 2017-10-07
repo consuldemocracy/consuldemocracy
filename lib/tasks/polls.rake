@@ -46,10 +46,10 @@ desc "Create second citizen poll"
           author_visible_name: author_name,
           poll: Poll.last,
           question_answers_attributes: [
-            { title: "Proyecto Y",
+            { title: "Proyecto Y: #{project_y_names[i]}",
               description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-y"]
             },
-            { title: "Proyecto X",
+            { title: "Proyecto X: #{project_x_names[i]}",
               description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-x"]
             }
           ]
@@ -73,6 +73,34 @@ desc "Create second citizen poll"
      "Plaza Civica Mar Cristal",
      "Plaza Mayor Villaverde",
      "Plaza Civica San Blas"]
+  end
+
+  def project_x_names
+    ["Ad libitum",
+     "60 x 60",
+     "Naturnah",
+     "Ba de Luz",
+     "Del metro al Parterre",
+     "Activa tu plaza",
+     "Encuentros en la tercera plaza",
+     "Quinto",
+     "Greenfingers",
+     "Polos opuestos",
+     "Nos cruzamos en la plaza"]
+  end
+
+  def project_y_names
+    ["Locus amoenus",
+     "La Remonta a un paso",
+     "La gran pérgola",
+     "Historia natural",
+     "Toma la calle",
+     "Nos vemos en Canfranc",
+     "Horizontes cívicos",
+     "Link al verde",
+     "Formas de vida",
+     "Verde Villa",
+     "Conectando San Blas"]
   end
 
   def project_name(i)
