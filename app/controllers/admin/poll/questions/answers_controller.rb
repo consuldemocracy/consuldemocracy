@@ -1,6 +1,6 @@
 class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
-  before_action :load_question, except: [:show, :edit, :update]
   before_action :load_answer, only: [:show, :edit, :update, :documents]
+  before_action :load_question, except: [:show, :edit, :update]
 
   load_and_authorize_resource :question, class: "::Poll::Question"
 
@@ -51,7 +51,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     end
 
     def load_question
-      @question = ::Poll::Question.find(params[:question_id])
+      @question = @answer.question
     end
 
 end
