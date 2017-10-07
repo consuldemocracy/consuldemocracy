@@ -615,6 +615,8 @@ Rails.application.routes.draw do
 
   # more information pages
   get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',                 as: 'more_info'
+  get 'mas-informacion-votacion-febrero-2017',       to: 'pages#show', id: 'more_info/index_february_2017',   as: 'more_info_february'
+  get 'mas-informacion-votacion-octubre-2017',       to: 'pages#show', id: 'more_info/index_october_2017',    as: 'more_info_october'
   get 'mas-informacion/como-usar',                   to: 'pages#show', id: 'more_info/how_to_use/index',      as: 'how_to_use'
   get 'mas-informacion/faq',                         to: 'pages#show', id: 'more_info/faq/index',             as: 'faq'
   get 'mas-informacion/propuestas',                  to: 'pages#show', id: 'more_info/proposals/index',       as: 'more_info_proposals'
