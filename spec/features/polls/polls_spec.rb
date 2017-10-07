@@ -319,10 +319,14 @@ feature 'Polls' do
       visit poll_path(poll)
 
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
-      expect(page).to have_content('Han Solo')
-      expect(page).to have_content('Chewbacca')
-      expect(page).to_not have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
+
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_content('Han Solo')
+        expect(page).to have_content('Chewbacca')
+
+        expect(page).to_not have_link('Han Solo')
+        expect(page).to_not have_link('Chewbacca')
+      end
     end
 
   end
