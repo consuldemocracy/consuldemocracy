@@ -1574,11 +1574,11 @@
   border-bottom: 1px solid #eee;
 
   .column:nth-child(odd) {
-    border-right: 1px solid #eee;
+    border-right: 2px solid $text;
   }
 
   .answer-divider {
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid $text;
     border-right: 0 !important;
     margin-bottom: $line-height;
     padding-bottom: $line-height;
