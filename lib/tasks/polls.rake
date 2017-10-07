@@ -21,7 +21,7 @@ desc "Create second citizen poll"
   end
 
   def poll_attributes(i)
-    { name: "Remodelación de la plaza #{main_square_names[i]}",
+    { name: "Remodelación de la #{main_square_names[i]}",
       description: config["description_for_poll"]["#{project_name(i)}"],
       summary: config["summary_for_poll"]["#{project_name(i)}"],
       starts_at: 1.week.ago,
