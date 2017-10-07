@@ -109,7 +109,7 @@ class Admin::StatsController < Admin::BaseController
   end
 
   def polls
-    @polls = ::Poll.all
+    @polls_groups = { current: ::Poll.current_or_incoming, expired: ::Poll.expired }
     @voters = ::Poll::Voter.all
     @participants = ::Poll::Voter.select(:user_id).distinct.count
   end

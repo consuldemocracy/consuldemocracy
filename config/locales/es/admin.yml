@@ -976,14 +976,18 @@ es:
         total: Total
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
       polls:
-        title: Votación 13 al 19 de Febrero
-        web_votes: Votos en Ágora
-        booth_votes: Votos en Urnas
-        participants: Participantes
+        title: Estadísticas de votaciones
+        current: Votaciones Abiertas y Próximas
+        expired: Votaciones Pasadas
+        web_participants: Participantes en Web
+        booth_participants: Participantes en Urnas
+        total_participants: Participantes totales
+        poll_questions: "Preguntas de votación: %{poll}"
         table:
           title: Votos por votación
           poll_name: Votación
-          origin_web: Ágora
+          question_name: Pregunta
+          origin_web: Web
           origin_booth: Urna
       proposal_notifications:
         title: Notificaciones de propuestas

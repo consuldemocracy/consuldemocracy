@@ -203,6 +203,8 @@ ignore_unused:
   - verification.letter.create.flash.offices_url
   - verification.letter.new.offices_url
   - layouts.header.open_city_title
+  - admin.stats.polls.current
+  - admin.stats.polls.expired
 ####
 
 ## Exclude these keys from the `i18n-tasks eq-base' report:
