@@ -1776,6 +1776,10 @@
     margin-right: $line-height / 4;
     min-width: rem-calc(168);
 
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
+
     &.answered {
       background: #f4f8ec;
       border: 2px solid #92ba48;
