@@ -1615,11 +1615,20 @@
 
 .orbit-slide {
   max-height: none !important;
+
+  img {
+    image-rendering: pixelated;
+  }
 }
 
 .orbit-caption {
   background: #eee;
   color: $text;
+}
+
+.orbit-next,
+.orbit-previous {
+  background: rgba(34, 34, 34, 0.25);
 }
 
 .zoom-link {
@@ -1654,7 +1663,10 @@
 .poll {
 
   &.with-image {
-    padding: 0 $line-height / 2 0 0;
+
+    @include breakpoint(medium) {
+      padding: 0 $line-height / 2 0 0;
+    }
 
     img {
       height: 100%;
