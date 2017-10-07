@@ -1,11 +1,11 @@
-<% provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
-<% provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
-<% provide :social_media_meta_tags do %>
-  <%= render "shared/social_media_meta_tags",
+<%# provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
+<%# provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
+<%# provide :social_media_meta_tags do %>
+  <%# render "shared/social_media_meta_tags",
               social_url: first_voting_url,
               social_title: t("social_share.polls_show.title_#{@poll.id}"),
               social_description: t("social_share.polls_show.facebook_#{@poll.id}") %>
-<% end %>
+<%# end %>
 
 <div class="polls-show">
   <div id="polls-show-header" class="expanded no-margin-top polls-show-header">
