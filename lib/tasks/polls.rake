@@ -155,7 +155,6 @@ desc "Create second citizen poll"
   def set_answer_images(poll, i)
     poll.questions.map(&:question_answers).flatten.each do |answer|
       images(answer, i).each do |image|
-puts image
         answer.images << build_image(image)
       end
     end
@@ -173,7 +172,7 @@ puts document
   def build_document(path)
     return false unless path
     filename = path.split("/").last
-    Document.new(attachment: File.new(path, "r"), title: config["title_for_document"][filename] || "unavailable", user: User.first)
+    Document.new(attachment: File.new(path, "r"), title: config["title_for_document"][filename.downcase] || "unavailable", user: User.first)
   end
 
   def documents(answer, i)
