@@ -10,11 +10,11 @@
         </span>
       <% else %>
         <%= link_to answer.title,
-          answer_question_path(question, answer: answer.title),
+          answer_question_path(question, answer: answer.title, token: token),
           method: :post,
           remote: true,
           title: t("poll_questions.show.vote_answer", answer: answer.title),
-          class: "button secondary hollow" %>
+          class: "button secondary hollow js-question-answer" %>
       <% end %>
     <% end %>
   <% elsif !user_signed_in? %>

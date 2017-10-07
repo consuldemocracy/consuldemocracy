@@ -530,6 +530,7 @@ es:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
+      voted_token: "Puedes apuntar este identificador de voto, para comprobar tu votación en el resultado final:"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
