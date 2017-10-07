@@ -33,10 +33,10 @@ desc "Create second citizen poll"
           author_visible_name: author_name,
           poll: Poll.last,
           question_answers_attributes: [
-            { title: "Sí",
+            { title: "No",
               description: ""
             },
-            { title: "No",
+            { title: "Sí",
               description: ""
             },
           ]
@@ -46,11 +46,11 @@ desc "Create second citizen poll"
           author_visible_name: author_name,
           poll: Poll.last,
           question_answers_attributes: [
-            { title: "Proyecto X",
-              description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-x"]
-            },
             { title: "Proyecto Y",
               description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-y"]
+            },
+            { title: "Proyecto X",
+              description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-x"]
             }
           ]
       ]
