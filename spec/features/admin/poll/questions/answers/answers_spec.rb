@@ -26,7 +26,7 @@ feature 'Answers' do
 
   scenario 'Update' do
     question = create(:poll_question)
-    answer = create(:poll_question_answer, question: question)
+    answer = create(:poll_question_answer, question: question, title: "Answer title")
 
     visit admin_answer_path(answer)
 
