@@ -33,6 +33,9 @@ desc "Create second citizen poll"
           author_visible_name: author_name,
           poll: Poll.last,
           question_answers_attributes: [
+            { title: "En blanco",
+              description: ""
+            },
             { title: "No",
               description: ""
             },
@@ -46,6 +49,9 @@ desc "Create second citizen poll"
           author_visible_name: author_name,
           poll: Poll.last,
           question_answers_attributes: [
+            { title: "En blanco",
+              description: ""
+            },
             { title: "Proyecto Y: #{project_y_names[i]}",
               description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-y"]
             },
