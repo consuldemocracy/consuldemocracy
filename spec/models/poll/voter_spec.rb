@@ -162,11 +162,12 @@ describe :voter do
 
     it "sets user info" do
       user = create(:user, document_number: "1234A", document_type: "1")
-      voter = build(:poll_voter, user: user)
+      voter = build(:poll_voter, user: user, token: "1234abcd")
       voter.save
 
       expect(voter.document_number).to eq("1234A")
       expect(voter.document_type).to eq("1")
+      expect(voter.token).to eq("1234abcd")
     end
   end
 end
