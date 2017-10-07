@@ -1626,6 +1626,11 @@
   color: $text;
 }
 
+.orbit-next,
+.orbit-previous {
+  background: rgba(34, 34, 34, 0.25);
+}
+
 .zoom-link {
   background: #fff;
   border-radius: rem-calc(48);
