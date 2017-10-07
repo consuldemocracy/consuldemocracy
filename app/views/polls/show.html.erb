@@ -106,12 +106,19 @@
               <% end %>
 
               <% if answer.documents.present? %>
+              <div class="document-link">
+                <p>
+                  <span class="icon-document"></span>&nbsp;
+                  <strong><%= t("polls.show.documents") %></strong>
+                </p>
+
                 <% answer.documents.each do |document| %>
                     <%= link_to document.title,
                                 document.attachment.url,
                                 target: "_blank",
-                                rel: "nofollow" %>
+                                rel: "nofollow" %><br>
                 <% end %>
+              </div>
               <% end %>
             </div>
           <% end %>
