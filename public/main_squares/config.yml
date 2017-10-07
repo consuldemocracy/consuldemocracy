@@ -1,0 +1,783 @@
+title_for_image:
+  0main_04_ba_de_luz: "Proyecto X: Ba de Luz (1/15)"
+  04_ba_de_luz_A1_1.jpg: "Proyecto X: Ba de Luz (2/15)"
+  04_ba_de_luz_A1_2.jpg: "Proyecto X: Ba de Luz (3/15)"
+  04_ba_de_luz_memoria_1.jpg: "Proyecto X: Ba de Luz (4/15)"
+  04_ba_de_luz_memoria_2.jpg: "Proyecto X: Ba de Luz (5/15)"
+  04_ba_de_luz_memoria_3.jpg: "Proyecto X: Ba de Luz (6/15)"
+  04_ba_de_luz_memoria_4.jpg: "Proyecto X: Ba de Luz (7/15)"
+  04_ba_de_luz_memoria_5.jpg: "Proyecto X: Ba de Luz (8/15)"
+  04_ba_de_luz_memoria_6.jpg: "Proyecto X: Ba de Luz (9/15)"
+  04_ba_de_luz_memoria_7.jpg: "Proyecto X: Ba de Luz (10/15)"
+  04_ba_de_luz_memoria_8.jpg: "Proyecto X: Ba de Luz (11/15)"
+  04_ba_de_luz_memoria_9.jpg: "Proyecto X: Ba de Luz (12/15)"
+  04_ba_de_luz_memoria_10.jpg: "Proyecto X: Ba de Luz (13/15)"
+  04_ba_de_luz_memoria_11.jpg: "Proyecto X: Ba de Luz (14/15)"
+  04_ba_de_luz_memoria_12.jpg: "Proyecto X: Ba de Luz (15/15)"
+  0main_08_historia_natural.jpg: "Proyecto Y: Historia Natural (1/8)"
+  08_historia_natural_A1_1.jpg: "Proyecto Y: Historia Natural (2/8)"
+  08_historia_natural_A1_2.jpg: "Proyecto Y: Historia Natural (3/8)"
+  08_historia_natural_memoria_1.jpg: "Proyecto Y: Historia Natural (4/8)"
+  08_historia_natural_memoria_2.jpg: "Proyecto Y: Historia Natural (5/8)"
+  08_historia_natural_memoria_3.jpg: "Proyecto Y: Historia Natural (6/8)"
+  08_historia_natural_memoria_4.jpg: "Proyecto Y: Historia Natural (7/8)"
+  08_historia_natural_memoria_5.jpg: "Proyecto Y: Historia Natural (8/8)"
+  0main_05_greenfingers.jpg: "Proyecto X: Greenfingers (1/10)"
+  05_greenfingers_A1_1.jpg: "Proyecto X: Greenfingers (2/10)"
+  05_greenfingers_A1_2.jpg: "Proyecto X: Greenfingers (3/10)"
+  05_greenfingers_memoria_1.jpg: "Proyecto X: Greenfingers (4/10)"
+  05_greenfingers_memoria_2.jpg: "Proyecto X: Greenfingers (5/10)"
+  05_greenfingers_memoria_3.jpg: "Proyecto X: Greenfingers (6/10)"
+  05_greenfingers_memoria_4.jpg: "Proyecto X: Greenfingers (7/10)"
+  05_greenfingers_memoria_5.jpg: "Proyecto X: Greenfingers (8/10)"
+  05_greenfingers_memoria_6.jpg: "Proyecto X: Greenfingers (9/10)"
+  05_greenfingers_memoria_7.jpg: "Proyecto X: Greenfingers (10/10)"
+  0main_08_formas_de_vida.jpg: "Proyecto Y: Formas de vida (1/9)"
+  08_formas_de_vida_A1_1.jpg: "Proyecto Y: Formas de vida (2/9)"
+  08_formas_de_vida_A1_2.jpg: "Proyecto Y: Formas de vida (3/9)"
+  08_formas_de_vida_memoria_1.jpg: "Proyecto Y: Formas de vida (4/9)"
+  08_formas_de_vida_memoria_2.jpg: "Proyecto Y: Formas de vida (5/9)"
+  08_formas_de_vida_memoria_3.jpg: "Proyecto Y: Formas de vida (6/9)"
+  08_formas_de_vida_memoria_4.jpg: "Proyecto Y: Formas de vida (7/9)"
+  08_formas_de_vida_memoria_5.jpg: "Proyecto Y: Formas de vida (8/9)"
+  08_formas_de_vida_memoria_6.jpg: "Proyecto Y: Formas de vida (9/9)"
+  0main_01_nos_cruzamos_en_la_plaza.jpg: "Proyecto X: Nos cruzamos en la plaza (1/18)"
+  01_nos_cruzamos_en_la_plaza_A1_1.jpg: "Proyecto X: Nos cruzamos en la plaza (2/18)"
+  01_nos_cruzamos_en_la_plaza_A1_2.jpg: "Proyecto X: Nos cruzamos en la plaza (3/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_1.jpg: "Proyecto X: Nos cruzamos en la plaza (4/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_2.jpg: "Proyecto X: Nos cruzamos en la plaza (5/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_3.jpg: "Proyecto X: Nos cruzamos en la plaza (6/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_4.jpg: "Proyecto X: Nos cruzamos en la plaza (7/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_5.jpg: "Proyecto X: Nos cruzamos en la plaza (8/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_6.jpg: "Proyecto X: Nos cruzamos en la plaza (9/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_7.jpg: "Proyecto X: Nos cruzamos en la plaza (10/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_8.jpg: "Proyecto X: Nos cruzamos en la plaza (11/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_9.jpg: "Proyecto X: Nos cruzamos en la plaza (12/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_10.jpg: "Proyecto X: Nos cruzamos en la plaza (13/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_11.jpg: "Proyecto X: Nos cruzamos en la plaza (14/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_12.jpg: "Proyecto X: Nos cruzamos en la plaza (15/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_13.jpg: "Proyecto X: Nos cruzamos en la plaza (16/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_14.jpg: "Proyecto X: Nos cruzamos en la plaza (17/18)"
+  01_nos_cruzamos_en_la_plaza_memoria_15.jpg: "Proyecto X: Nos cruzamos en la plaza (18/18)"
+  0main_05_conectando_san_blas.jpg: "Proyecto Y: Conectando San Blas (1/17)"
+  05_conectando_san_blas_A1_1.jpg: "Proyecto Y: Conectando San Blas (2/17)"
+  05_conectando_san_blas_A1_2.jpg: "Proyecto Y: Conectando San Blas (3/17)"
+  05_conectando_san_blas_memoria_1.jpg: "Proyecto Y: Conectando San Blas (4/17)"
+  05_conectando_san_blas_memoria_2.jpg: "Proyecto Y: Conectando San Blas (5/17)"
+  05_conectando_san_blas_memoria_3.jpg: "Proyecto Y: Conectando San Blas (6/17)"
+  05_conectando_san_blas_memoria_4.jpg: "Proyecto Y: Conectando San Blas (7/17)"
+  05_conectando_san_blas_memoria_5.jpg: "Proyecto Y: Conectando San Blas (8/17)"
+  05_conectando_san_blas_memoria_6.jpg: "Proyecto Y: Conectando San Blas (9/17)"
+  05_conectando_san_blas_memoria_7.jpg: "Proyecto Y: Conectando San Blas (10/17)"
+  05_conectando_san_blas_memoria_8.jpg: "Proyecto Y: Conectando San Blas (11/17)"
+  05_conectando_san_blas_memoria_9.jpg: "Proyecto Y: Conectando San Blas (12/17)"
+  05_conectando_san_blas_memoria_10.jpg: "Proyecto Y: Conectando San Blas (13/17)"
+  05_conectando_san_blas_memoria_11.jpg: "Proyecto Y: Conectando San Blas (14/17)"
+  05_conectando_san_blas_memoria_12.jpg: "Proyecto Y: Conectando San Blas (15/17)"
+  05_conectando_san_blas_memoria_13.jpg: "Proyecto Y: Conectando San Blas (16/17)"
+  05_conectando_san_blas_memoria_14.jpg: "Proyecto Y: Conectando San Blas (17/17)"
+  0main_02_ad_libitum.jpg : "Proyecto X: Ad libitum (1/5)"
+  02_ad_libitum_A1_1.jpg : "Proyecto X: Ad libitum (2/5)"
+  02_ad_libitum_A1_2.jpg : "Proyecto X: Ad libitum (3/5)"
+  02_ad_libitum_memoria_1.jpg : "Proyecto X: Ad libitum (4/5)"
+  02_ad_libitum_memoria_2.jpg : "Proyecto X: Ad libitum (5/5)"
+  0main_11_locus_amoenus.jpg: "Proyecto Y: Locus amoenus (1/17)"
+  11_locus_amoenus_A1_1.jpg: "Proyecto Y: Locus amoenus (2/17)"
+  11_locus_amoenus_A1_2.jpg: "Proyecto Y: Locus amoenus (3/17)"
+  11_locus_amoenus_memoria_1.jpg: "Proyecto Y: Locus amoenus (4/17)"
+  11_locus_amoenus_memoria_2.jpg: "Proyecto Y: Locus amoenus (5/17)"
+  11_locus_amoenus_memoria_3.jpg: "Proyecto Y: Locus amoenus (6/17)"
+  11_locus_amoenus_memoria_4.jpg: "Proyecto Y: Locus amoenus (7/17)"
+  11_locus_amoenus_memoria_5.jpg: "Proyecto Y: Locus amoenus (8/17)"
+  11_locus_amoenus_memoria_6.jpg: "Proyecto Y: Locus amoenus (9/17)"
+  11_locus_amoenus_memoria_7.jpg: "Proyecto Y: Locus amoenus (10/17)"
+  11_locus_amoenus_memoria_8.jpg: "Proyecto Y: Locus amoenus (11/17)"
+  11_locus_amoenus_memoria_9.jpg: "Proyecto Y: Locus amoenus (12/17)"
+  11_locus_amoenus_memoria_10.jpg: "Proyecto Y: Locus amoenus (13/17)"
+  11_locus_amoenus_memoria_11.jpg: "Proyecto Y: Locus amoenus (14/17)"
+  11_locus_amoenus_memoria_12.jpg: "Proyecto Y: Locus amoenus (15/17)"
+  11_locus_amoenus_memoria_13.jpg: "Proyecto Y: Locus amoenus (16/17)"
+  11_locus_amoenus_memoria_14.jpg: "Proyecto Y: Locus amoenus (17/17)"
+  0main_11_del_metro_al_parterre.jpg: "Proyecto X: Del metro al Parterre (1/8)"
+  11_del_metro_al_parterre_A1_1.jpg: "Proyecto X: Del metro al Parterre (2/8)"
+  11_del_metro_al_parterre_A1_2.jpg: "Proyecto X: Del metro al Parterre (3/8)"
+  11_del_metro_al_parterre_memoria_1.jpg: "Proyecto X: Del metro al Parterre (4/8)"
+  11_del_metro_al_parterre_memoria_2.jpg: "Proyecto X: Del metro al Parterre (5/8)"
+  11_del_metro_al_parterre_memoria_3.jpg: "Proyecto X: Del metro al Parterre (6/8)"
+  11_del_metro_al_parterre_memoria_4.jpg: "Proyecto X: Del metro al Parterre (7/8)"
+  11_del_metro_al_parterre_memoria_5.jpg: "Proyecto X: Del metro al Parterre (8/8)"
+  0main_19_toma_la_calle.jpg: "Proyecto Y: Toma la calle (1/10)"
+  19_toma_la_calle_A1_1.jpg: "Proyecto Y: Toma la calle (2/10)"
+  19_toma_la_calle_A1_2.jpg: "Proyecto Y: Toma la calle (3/10)"
+  19_toma_la_calle_memoria_1.jpg: "Proyecto Y: Toma la calle (4/10)"
+  19_toma_la_calle_memoria_2.jpg: "Proyecto Y: Toma la calle (5/10)"
+  19_toma_la_calle_memoria_3.jpg: "Proyecto Y: Toma la calle (6/10)"
+  19_toma_la_calle_memoria_4.jpg: "Proyecto Y: Toma la calle (7/10)"
+  19_toma_la_calle_memoria_5.jpg: "Proyecto Y: Toma la calle (8/10)"
+  19_toma_la_calle_memoria_6.jpg: "Proyecto Y: Toma la calle (9/10)"
+  19_toma_la_calle_memoria_7.jpg: "Proyecto Y: Toma la calle (10/10)"
+  0main_02_encuentros_en_la_tercera_plaza.jpg: "Proyecto X: Encuentros en la tercera plaza (1/10)"
+  02_encuentros_en_la_tercera_plaza_A1_1.jpg: "Proyecto X: Encuentros en la tercera plaza (2/10)"
+  02_encuentros_en_la_tercera_plaza_A1_2.jpg: "Proyecto X: Encuentros en la tercera plaza (3/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_1.jpg: "Proyecto X: Encuentros en la tercera plaza (4/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_2.jpg: "Proyecto X: Encuentros en la tercera plaza (5/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_3.jpg: "Proyecto X: Encuentros en la tercera plaza (6/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_4.jpg: "Proyecto X: Encuentros en la tercera plaza (7/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_5.jpg: "Proyecto X: Encuentros en la tercera plaza (8/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_6.jpg: "Proyecto X: Encuentros en la tercera plaza (9/10)"
+  02_encuentros_en_la_tercera_plaza_memoria_7.jpg: "Proyecto X: Encuentros en la tercera plaza (10/10)"
+  0main_07_plaz_er_horizontes_civicos.jpg: "Proyecto Y: Horizontes cívicos (1/19)"
+  07_plaz_er_horizontes_civicios_A1_1.jpg: "Proyecto Y: Horizontes cívicos (2/19)"
+  07_plaz_er_horizontes_civicios_A1_2.jpg: "Proyecto Y: Horizontes cívicos (3/19)"
+  07_plaz-er_horizontes_civicos_memoria_1.jpg: "Proyecto Y: Horizontes cívicos (4/19)"
+  07_plaz-er_horizontes_civicos_memoria_2.jpg: "Proyecto Y: Horizontes cívicos (5/19)"
+  07_plaz-er_horizontes_civicos_memoria_3.jpg: "Proyecto Y: Horizontes cívicos (6/19)"
+  07_plaz-er_horizontes_civicos_memoria_4.jpg: "Proyecto Y: Horizontes cívicos (7/19)"
+  07_plaz-er_horizontes_civicos_memoria_5.jpg: "Proyecto Y: Horizontes cívicos (8/19)"
+  07_plaz-er_horizontes_civicos_memoria_6.jpg: "Proyecto Y: Horizontes cívicos (9/19)"
+  07_plaz-er_horizontes_civicos_memoria_7.jpg: "Proyecto Y: Horizontes cívicos (10/19)"
+  07_plaz-er_horizontes_civicos_memoria_8.jpg: "Proyecto Y: Horizontes cívicos (11/19)"
+  07_plaz-er_horizontes_civicos_memoria_9.jpg: "Proyecto Y: Horizontes cívicos (12/19)"
+  07_plaz-er_horizontes_civicos_memoria_10.jpg: "Proyecto Y: Horizontes cívicos (13/19)"
+  07_plaz-er_horizontes_civicos_memoria_11.jpg: "Proyecto Y: Horizontes cívicos (14/19)"
+  07_plaz-er_horizontes_civicos_memoria_12.jpg: "Proyecto Y: Horizontes cívicos (15/19)"
+  07_plaz-er_horizontes_civicos_memoria_13.jpg: "Proyecto Y: Horizontes cívicos (16/19)"
+  07_plaz-er_horizontes_civicos_memoria_14.jpg: "Proyecto Y: Horizontes cívicos (17/19)"
+  07_plaz-er_horizontes_civicos_memoria_15.jpg: "Proyecto Y: Horizontes cívicos (18/19)"
+  07_plaz-er_horizontes_civicos_memoria_16.jpg: "Proyecto Y: Horizontes cívicos (19/19)"
+  0main_05_polos_opuestos.jpg: "Proyecto X: Polos opuestos (1/13)"
+  05_polos_opuestos_A1_1.jpg: "Proyecto X: Polos opuestos (2/13)"
+  05_polos_opuestos_A1_2.jpg: "Proyecto X: Polos opuestos (3/13)"
+  05_polos_opuestos_memoria_1.jpg: "Proyecto X: Polos opuestos (4/13)"
+  05_polos_opuestos_memoria_2.jpg: "Proyecto X: Polos opuestos (5/13)"
+  05_polos_opuestos_memoria_3.jpg: "Proyecto X: Polos opuestos (6/13)"
+  05_polos_opuestos_memoria_4.jpg: "Proyecto X: Polos opuestos (7/13)"
+  05_polos_opuestos_memoria_5.jpg: "Proyecto X: Polos opuestos (8/13)"
+  05_polos_opuestos_memoria_6.jpg: "Proyecto X: Polos opuestos (9/13)"
+  05_polos_opuestos_memoria_7.jpg: "Proyecto X: Polos opuestos (10/13)"
+  05_polos_opuestos_memoria_8.jpg: "Proyecto X: Polos opuestos (11/13)"
+  05_polos_opuestos_memoria_9.jpg: "Proyecto X: Polos opuestos (12/13)"
+  05_polos_opuestos_memoria_10.jpg: "Proyecto X: Polos opuestos (13/13)"
+  0main_07_verdevilla.jpg: "Proyecto Y: Verde Villa (1/11)"
+  07_verdevilla_A1_1.jpg: "Proyecto Y: Verde Villa (2/11)"
+  07_verdevilla_A1_2.jpg: "Proyecto Y: Verde Villa (3/11)"
+  07_verdevilla_memoria_1.jpg: "Proyecto Y: Verde Villa (4/11)"
+  07_verdevilla_memoria_2.jpg: "Proyecto Y: Verde Villa (5/11)"
+  07_verdevilla_memoria_3.jpg: "Proyecto Y: Verde Villa (6/11)"
+  07_verdevilla_memoria_4.jpg: "Proyecto Y: Verde Villa (7/11)"
+  07_verdevilla_memoria_5.jpg: "Proyecto Y: Verde Villa (8/11)"
+  07_verdevilla_memoria_6.jpg: "Proyecto Y: Verde Villa (9/11)"
+  07_verdevilla_memoria_7.jpg: "Proyecto Y: Verde Villa (10/11)"
+  07_verdevilla_memoria_8.jpg: "Proyecto Y: Verde Villa (11/11)"
+  0main_08_quinto.jpg: "Proyecto X: Quinto (1/13)"
+  08_QUINTO_A1_1.jpg: "Proyecto X: Quinto (2/13)"
+  08_QUINTO_A1_2.jpg: "Proyecto X: Quinto (3/13)"
+  08_QUINTO_Memoria_1.jpg: "Proyecto X: Quinto (4/13)"
+  08_QUINTO_Memoria_2.jpg: "Proyecto X: Quinto (5/13)"
+  08_QUINTO_Memoria_3.jpg: "Proyecto X: Quinto (6/13)"
+  08_QUINTO_Memoria_4.jpg: "Proyecto X: Quinto (7/13)"
+  08_QUINTO_Memoria_5.jpg: "Proyecto X: Quinto (8/13)"
+  08_QUINTO_Memoria_6.jpg: "Proyecto X: Quinto (9/13)"
+  08_QUINTO_Memoria_7.jpg: "Proyecto X: Quinto (10/13)"
+  08_QUINTO_Memoria_8.jpg: "Proyecto X: Quinto (11/13)"
+  08_QUINTO_Memoria_9.jpg: "Proyecto X: Quinto (12/13)"
+  08_QUINTO_Memoria_10.jpg: "Proyecto X: Quinto (13/13)"
+  0main_09_link_al_verde_1.jpg: "Proyecto Y: Link al verde (1/7)"
+  0main_09_link_al_verde_2.jpg: "Proyecto Y: Link al verde (2/7)"
+  09_LINK_AL_VERDE_A1_1.jpg: "Proyecto Y: Link al verde (3/7)"
+  09_LINK_AL_VERDE_A1_2.jpg: "Proyecto Y: Link al verde (4/7)"
+  09_link_al_verde_memoria_1.jpg: "Proyecto Y: Link al verde (5/7)"
+  09_link_al_verde_memoria_2.jpg: "Proyecto Y: Link al verde (6/7)"
+  09_link_al_verde_memoria_3.jpg: "Proyecto Y: Link al verde (7/7)"
+  0main_01_activatuplaza.jpg: "Proyecto X: Activa tu Plaza (1/12)"
+  01_activatuplaza_A1_1.jpg: "Proyecto X: Activa tu Plaza (2/12)"
+  01_activatuplaza_A1_2.jpg: "Proyecto X: Activa tu Plaza (3/12)"
+  01_activatuplaza_memoria_1.jpg: "Proyecto X: Activa tu Plaza (4/12)"
+  01_activatuplaza_memoria_2.jpg: "Proyecto X: Activa tu Plaza (5/12)"
+  01_activatuplaza_memoria_3.jpg: "Proyecto X: Activa tu Plaza (6/12)"
+  01_activatuplaza_memoria_4.jpg: "Proyecto X: Activa tu Plaza (7/12)"
+  01_activatuplaza_memoria_5.jpg: "Proyecto X: Activa tu Plaza (8/12)"
+  01_activatuplaza_memoria_6.jpg: "Proyecto X: Activa tu Plaza (9/12)"
+  01_activatuplaza_memoria_7.jpg: "Proyecto X: Activa tu Plaza (10/12)"
+  01_activatuplaza_memoria_8.jpg: "Proyecto X: Activa tu Plaza (11/12)"
+  01_activatuplaza_memoria_9.jpg: "Proyecto X: Activa tu Plaza (12/12)"
+  0main_08_nos_vemos_en_canfrac.jpg: "Proyecto Y: Nos vemos en Canfranc (1/4)"
+  08_nos_vemos_en_canfrac_A1_1.jpg: "Proyecto Y: Nos vemos en Canfranc (2/4)"
+  08_nos_vemos_en_canfrac_A1_2.jpg: "Proyecto Y: Nos vemos en Canfranc (3/4)"
+  08_nos_vemos_en_canfrac_memoria.jpg: "Proyecto Y: Nos vemos en Canfranc (4/4)"
+  0main_06_60x60.jpg: "Proyecto X: 60 x 60 (1/22)"
+  06_60x60_A1_1.jpg: "Proyecto X: 60 x 60 (2/22)"
+  06_60x60_A1_2.jpg: "Proyecto X: 60 x 60 (3/22)"
+  06_60x60_memoria_1.jpg: "Proyecto X: 60 x 60 (4/22)"
+  06_60x60_memoria_2.jpg: "Proyecto X: 60 x 60 (5/22)"
+  06_60x60_memoria_3.jpg: "Proyecto X: 60 x 60 (6/22)"
+  06_60x60_memoria_4.jpg: "Proyecto X: 60 x 60 (7/22)"
+  06_60x60_memoria_5.jpg: "Proyecto X: 60 x 60 (8/22)"
+  06_60x60_memoria_6.jpg: "Proyecto X: 60 x 60 (9/22)"
+  06_60x60_memoria_7.jpg: "Proyecto X: 60 x 60 (10/22)"
+  06_60x60_memoria_8.jpg: "Proyecto X: 60 x 60 (11/22)"
+  06_60x60_memoria_9.jpg: "Proyecto X: 60 x 60 (12/22)"
+  06_60x60_memoria_10.jpg: "Proyecto X: 60 x 60 (13/22)"
+  06_60x60_memoria_11.jpg: "Proyecto X: 60 x 60 (14/22)"
+  06_60x60_memoria_12.jpg: "Proyecto X: 60 x 60 (15/22)"
+  06_60x60_memoria_13.jpg: "Proyecto X: 60 x 60 (16/22)"
+  06_60x60_memoria_14.jpg: "Proyecto X: 60 x 60 (17/22)"
+  06_60x60_memoria_15.jpg: "Proyecto X: 60 x 60 (18/22)"
+  06_60x60_memoria_16.jpg: "Proyecto X: 60 x 60 (19/22)"
+  06_60x60_memoria_17.jpg: "Proyecto X: 60 x 60 (20/22)"
+  06_60x60_memoria_18.jpg: "Proyecto X: 60 x 60 (21/22)"
+  06_60x60_memoria_19.jpg: "Proyecto X: 60 x 60 (22/22)"
+  0main_14_la_remonta_a_un_paso.jpg: "Proyecto Y: La Remonta a un paso (1/20)"
+  14_la_remonta_a_un_paso_A1_1.jpg: "Proyecto Y: La Remonta a un paso (2/20)"
+  14_la_remonta_a_un_paso_A1_2.jpg: "Proyecto Y: La Remonta a un paso (3/20)"
+  14_la_remonta_a_un_paso_memoria_1.jpg: "Proyecto Y: La Remonta a un paso (4/20)"
+  14_la_remonta_a_un_paso_memoria_2.jpg: "Proyecto Y: La Remonta a un paso (5/20)"
+  14_la_remonta_a_un_paso_memoria_3.jpg: "Proyecto Y: La Remonta a un paso (6/20)"
+  14_la_remonta_a_un_paso_memoria_4.jpg: "Proyecto Y: La Remonta a un paso (7/20)"
+  14_la_remonta_a_un_paso_memoria_5.jpg: "Proyecto Y: La Remonta a un paso (8/20)"
+  14_la_remonta_a_un_paso_memoria_6.jpg: "Proyecto Y: La Remonta a un paso (9/20)"
+  14_la_remonta_a_un_paso_memoria_7.jpg: "Proyecto Y: La Remonta a un paso (10/20)"
+  14_la_remonta_a_un_paso_memoria_8.jpg: "Proyecto Y: La Remonta a un paso (11/20)"
+  14_la_remonta_a_un_paso_memoria_9.jpg: "Proyecto Y: La Remonta a un paso (12/20)"
+  14_la_remonta_a_un_paso_memoria_10.jpg: "Proyecto Y: La Remonta a un paso (13/20)"
+  14_la_remonta_a_un_paso_memoria_11.jpg: "Proyecto Y: La Remonta a un paso (14/20)"
+  14_la_remonta_a_un_paso_memoria_12.jpg: "Proyecto Y: La Remonta a un paso (15/20)"
+  14_la_remonta_a_un_paso_memoria_13.jpg: "Proyecto Y: La Remonta a un paso (16/20)"
+  14_la_remonta_a_un_paso_memoria_14.jpg: "Proyecto Y: La Remonta a un paso (17/20)"
+  14_la_remonta_a_un_paso_memoria_15.jpg: "Proyecto Y: La Remonta a un paso (18/20)"
+  14_la_remonta_a_un_paso_memoria_16.jpg: "Proyecto Y: La Remonta a un paso (19/20)"
+  14_la_remonta_a_un_paso_memoria_17.jpg: "Proyecto Y: La Remonta a un paso (20/20)"
+  0main_02_naturnah.jpg: "Proyecto X: Naturnah (1/7)"
+  02_naturnah_A1_1.jpg: "Proyecto X: Naturnah (2/7)"
+  02_naturnah_A1_2.jpg: "Proyecto X: Naturnah (3/7)"
+  02_naturnah_memoria_1.jpg: "Proyecto X: Naturnah (4/7)"
+  02_naturnah_memoria_2.jpg: "Proyecto X: Naturnah (5/7)"
+  02_naturnah_memoria_3.jpg: "Proyecto X: Naturnah (6/7)"
+  02_naturnah_memoria_4.jpg: "Proyecto X: Naturnah (7/7)"
+  0main_05_la_gran_pergola.jpg: "Proyecto Y: La gran pérgola (1/22)"
+  05_la_gran_pergola_A1_1.jpg: "Proyecto Y: La gran pérgola (2/22)"
+  05_la_gran_pergola_A1_2.jpg: "Proyecto Y: La gran pérgola (3/22)"
+  05_la_gran_pergola_memoria_1.jpg: "Proyecto Y: La gran pérgola (4/22)"
+  05_la_gran_pergola_memoria_2.jpg: "Proyecto Y: La gran pérgola (5/22)"
+  05_la_gran_pergola_memoria_3.jpg: "Proyecto Y: La gran pérgola (6/22)"
+  05_la_gran_pergola_memoria_4.jpg: "Proyecto Y: La gran pérgola (7/22)"
+  05_la_gran_pergola_memoria_5.jpg: "Proyecto Y: La gran pérgola (8/22)"
+  05_la_gran_pergola_memoria_6.jpg: "Proyecto Y: La gran pérgola (9/22)"
+  05_la_gran_pergola_memoria_7.jpg: "Proyecto Y: La gran pérgola (10/22)"
+  05_la_gran_pergola_memoria_8.jpg: "Proyecto Y: La gran pérgola (11/22)"
+  05_la_gran_pergola_memoria_9.jpg: "Proyecto Y: La gran pérgola (12/22)"
+  05_la_gran_pergola_memoria_10.jpg: "Proyecto Y: La gran pérgola (13/22)"
+  05_la_gran_pergola_memoria_11.jpg: "Proyecto Y: La gran pérgola (14/22)"
+  05_la_gran_pergola_memoria_12.jpg: "Proyecto Y: La gran pérgola (15/22)"
+  05_la_gran_pergola_memoria_13.jpg: "Proyecto Y: La gran pérgola (16/22)"
+  05_la_gran_pergola_memoria_14.jpg: "Proyecto Y: La gran pérgola (17/22)"
+  05_la_gran_pergola_memoria_15.jpg: "Proyecto Y: La gran pérgola (18/22)"
+  05_la_gran_pergola_memoria_16.jpg: "Proyecto Y: La gran pérgola (19/22)"
+  05_la_gran_pergola_memoria_17.jpg: "Proyecto Y: La gran pérgola (20/22)"
+  05_la_gran_pergola_memoria_18.jpg: "Proyecto Y: La gran pérgola (21/22)"
+  05_la_gran_pergola_memoria_19.jpg: "Proyecto Y: La gran pérgola (22/22)"
+summary_for_poll:
+  plaza-remonta: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza de la Remonta en el Distrito de Tetuán, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-vaguada: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza de La Vaguada en el Distrito de Fuencarral-El Pardo, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-civica-lucero: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza Cívica de Lucero en el Distrito de Latina, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-emperatriz: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza de la Emperatriz en el Distrito de Carabanchel, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-puerto-canfranc: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza del Puerto de Canfranc en el Distrito de Puente de Vallecas, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-encuentro: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza del Encuentro en el Distrito de Moratalaz, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-misterios: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza de los Misterios en el Distrito de Ciudad Lineal, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-civica-mar-cristal: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza Cívica de Mar de Cristal en el Distrito de Hortaleza, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-mayor-villaverde: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra el conjunto de Plazas de Villaverde en el Distrito de Villaverde, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-civica-san-blas: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello, y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza Cívica de San Blas en el Distrito de San Blas-Canillejas, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+
+  plaza-duquesa-osuna: "El Ayuntamiento de Madrid es consciente de la importancia del espacio público como elemento de cohesión social que determina la identidad urbana y la calidad de vida de los barrios de la ciudad. Por ello y a través del Área de Gobierno de Desarrollo Urbano Sostenible se pretende iniciar un Concurso de ideas para la remodelación de plazas en la periferia de Madrid que contribuya a mejorar la identidad de barrios y distritos.
+
+Se han seleccionado 11 plazas, entre las que se encuentra la Plaza Duquesa de Osuna en el Distrito de Barajas, atendiendo a la necesidad y oportunidad de intervenir para mejorar el diseño urbano, la calidad de la urbanización y su acondicionamiento para mejorar su uso por parte de la población."
+description_for_poll:
+  plaza-remonta: "Dentro del distrito de Tetuán, los barrios situados al oeste de Bravo Murillo, como Valdeacederas y Berruguete, se caracterizan por su trama estrecha de calles sin apenas espacios libres.
+
+La Plaza de la Remonta es singular en cuanto a dimensiones y amplitud, lo que la convierte en uno de los lugares más identitarios y utilizados por la población residente en el distrito.
+
+La plaza es fruto de una operación de reforma anterior al Plan General de 1985 sobre unos terrenos ocupados por el cuartel de la Remonta. Se quería crear un 'centro dotacional y de espacios libres' para el barrio y una actuación de promoción de vivienda pública y privada. Así, desde su origen, está concebida como un lugar central.
+
+En la actualidad dispone de usos comerciales y dotacionales, comisaría, centro de salud y centro de mayores, así como una pequeña zona ajardinada. El mal estado de la pavimentación ha llevado a los vecinos a solicitar su mejora, por lo que se plantea remodelar la plaza.
+
+La Plaza de la Remonta se incluye en el concurso de proyectos para proceder a la repavimentación y para replantear sus condiciones ambientales y su funcionalidad.
+
+Esto supone estudiar alternativas diferentes: mantener el carácter de 'plaza mayor porticada'; soluciones con mayor presencia vegetal en la propia plaza como en las plantas bajas de los edificios que la conforman o pensar en sus funciones, tanto para un uso frecuente y cotidiano como para usos más esporádicos para fiestas del distrito o mercadillos.
+
+Otros parámetros que se pueden tener en cuenta y sobre los que realizar aportaciones que optimicen el funcionamiento de este espacio son: la accesibilidad peatonal desde los pasajes y calles que rodean la plaza y la integración de los usos y edificaciones que miran hacia la plaza.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/1_plaza_remonta.pdf'>Mapa de la Plaza de la Remonta</a>"
+
+  plaza-vaguada: "El origen de este espacio se encuentra en las operaciones de reforma urbana del Plan General de 1985 pensadas para reestructurar y transformar tejidos existentes con amplias arterias, como la Avenida de la Ilustración.
+
+En ese momento se sustituyeron viejos inmuebles por nuevos edificios de mejor calidad, centros dotacionales y comerciales. La Avenida de la Ilustración es un proyecto concebido para el cierre norte de la M‐30 que plantea un foco de atracción comercial, cultural y de esparcimiento en el parque de la Vaguada.
+
+El presente concurso invita a reflexionar y recoger aportaciones sobre la actual configuración de la plaza. Por un lado, existe la posibilidad de rehabilitar y poner en uso el antiguo Teatro de Madrid, por lo que se actualizaría la imagen de la plaza como conectora entre la zona ajardinada y los usos dotacionales del perímetro (Junta de distrito, usos culturales y usos deportivos).
+
+Por otro lado, se propone pensar la accesibilidad a la plaza desde las calles adyacentes ya que el centro comercial, la plaza y el entorno constituido del barrio del Pilar son hitos de referencia para el distrito de Fuencarral.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/2_plaza_vaguada.pdf'>Mapa de la Plaza de Vaguada</a>"
+
+  plaza-civica-lucero: "La plaza Cívica de Lucero pretende convertirse en un nodo de atracción para el distrito de
+Latina y para la población que pueda venir de otras partes de la ciudad, ya que presenta una accesibilidad óptima a nivel regional en transporte público.
+
+Supone el remate del barrio de Puerta del Ángel y la conexión con el parque de Cuña de
+Latina. Proviene de una ordenación del Plan General de 1985, el Plan Parcial Cuña Latina‐
+Alhambra, que se aprobó en el año 1989 con el objetivo de consolidar un frente residencial edificado al nuevo parque y albergar usos dotacionales para servir de charnela entre lo antiguo y lo nuevo.
+
+La parcela está destinada a uso deportivo y zona verde, pero en la actualidad cuenta con una amplia superficie vacante que se requiere repensar bajo una nueva óptica para aprovechar la ventaja de posición y generar un polo de atracción hacia el distrito, se pretende crear una nueva plaza como lugar de acogida para eventos culturales y reuniones sociales que supone una de las carencias más evidentes en los distritos de la periferia.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/3_plaza_civica_lucero.pdf'>Mapa de la Plaza Cívica de Lucero</a>"
+
+  plaza-emperatriz: "La Plaza de Emperatriz es una plaza emblemática e histórica del casco de Carabanchel Alto. Soporta un exceso de tráfico que accede desde la Avenida de los Poblados.
+
+Este impacto no impide que sea a la vez una plaza que concentra mucha vida urbana por la presencia de equipamientos: colegios, centro cultural, de salud y biblioteca y de una cierta actividad comercial.
+
+Se plantea reconfigurar el espacio, pensar en alternativas para el tráfico, medidas para proteger a los peatones y aumentar el espacio peatonal. Se trata de convertir la plaza en el centro del barrio, hacerla más habitable e identitaria para la población de Carabanchel.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/4_plaza_emperatriz.pdf'>Mapa de la Plaza de la Emperatriz</a>"
+
+  plaza-puerto-canfranc: "La Plaza del Puerto de Canfranc es en la actualidad una parcela vacante calificada de zona verde por el plan General, pero que supone una oportunidad para el barrio de Numancia, ya que apenas alberga espacios en los que poder permanecer.
+
+El barrio tiene una densa trama de calles estrechas con quiebros en alineaciones que todavía no han llegado a regularizarse, como es el caso de la Calle Sierra Toledana, que delimita la plaza. En este sentido, las calles que confluyen en la Plaza del Puerto de Canfranc tienen un carácter muy local.
+
+Con el concurso de ideas se pretende pensar en una nueva configuración de un espacio actualmente residual para que pueda servir a la población como lugar de convivencia de un denso barrio carente de lugares de esparcimiento.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/5_plaza_puerto_canfranc.pdf'>Mapa de la Plaza del Puerto de Canfranc</a>"
+
+  plaza-encuentro: "La Plaza del Encuentro es uno de los principales lugares de reunión de la población de Moratalaz. También es un punto de tránsito y confluencia de varias calles importantes del distrito, como la Avenida de Moratalaz y Hacienda de Pavones, que cuentan con recorridos de líneas de autobuses y tráficos de conexión con el distrito limítrofe de Puente de Vallecas.
+
+Esta confluencia de funciones es el reto que debe plantear la intervención en la plaza. El principal objetivo es reconfigurarla para mejorarla como lugar de reunión y de encuentro ciudadano.
+
+Entre otros, se invita a repensar el espacio central de la plaza, actualmente infrautilizado. También cómo mantenerla como lugar de tránsito (pasa el autobús) al mismo tiempo que posibilitar su conversión en un lugar más identitario.
+
+Moratalaz se caracteriza por una excesiva homogeneidad en el paisaje edificado. Su trazado de las calles, con grandes rotondas, no contribuye a la orientación y legibilidad del distrito.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/6_plaza_encuentro.pdf'>Mapa de la Plaza del Encuentro</a>"
+
+  plaza-misterios: "La Plaza de los Misterios es el lugar de referencia tanto para Ciudad Lineal como para San Blas. Tiene una función de intercambiador de transportes con acceso a la estación de metro de Ciudad Lineal y a paradas de autobuses urbanos e interurbanos. También por la presencia del centro comercial Plaza Norte.
+
+El concurso de proyectos busca un nuevo diseño de la plaza que incorpore parte del espacio destinado actualmente a intercambiador de autobuses y refuerce la identidad de la plaza. Está en estudio una mejor localización de la cabecera de líneas interurbanas que se trasladarían a un espacio menos nodal para las relaciones del distrito y permitiría reducir el espacio actualmente destinado a paradas de autobús.
+
+La nueva configuración de la plaza debe compatibilizar el uso esporádico para eventos o celebraciones del distrito con el uso cotidiano de carácter donde permanecer. También debe estudiar los flujos y movimientos peatonales entre metro, comercio y confluencia de dos importantes ejes urbanos como la calle Alcalá y la calle Arturo Soria.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/7_plaza_misterios.pdf'>Mapa de la Plaza de los Misterios</a>"
+
+  plaza-civica-mar-cristal: "Está previsto que la Plaza Cívica de Mar de Cristal se ejecute sobre la parcela vacante deportiva situada junto a las instalaciones del Comité Olímpico Español en la Glorieta Mar de Cristal.
+
+Supone reconsiderar la ordenación propuesta en el PGOUM 97 que califica esta parcela de uso deportivo e intercambiador de transporte, así como de instrumentos de desarrollo PE16.327, que han definido el régimen normativo para implantar un Centro Deportivo de Accesibilidad Universal.
+
+Esta ubicación se considera estratégica para la identidad del distrito, ya que ocupa una posición central y accesible desde uno de los ejes urbanos más importantes, como es la Gran Vía de Hortaleza.
+
+La propuesta proviene de una operación de reforma urbana del Plan General de 1985 que tiene la vocación de equipar y estructurar el distrito. Se buscaba crear un eje urbano significativo que conectase Hortaleza con distritos limítrofes. También integrar tejidos urbanos diferentes y generar en el tramo central un importante núcleo comercial y terciario.
+
+Con el transcurso de los años se ha consolidado el centro comercial Gran Vía de Hortaleza que genera una fuerte atracción para el conjunto de la población, se ha edificado la sede del COE y la parcela se mantiene vacante.
+
+La normativa urbanística permite el uso de espacio libre, sin menoscabo de un posible planeamiento en el futuro para reordenar y relocalizar los usos dotacionales, deportivos, transporte y zonas verdes.
+
+La parcela tiene un potencial como plaza cívica generadora de identidad para la población del distrito que se pretende explorar a través del concurso de proyectos, como actuación ex novo.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/8_plaza_civica_mar_cristal.pdf'>Mapa de la Plaza Cívica de Mar de Cristal</a>"
+
+  plaza-mayor-villaverde: "En este concurso se propone repensar dos de las plazas más representativas de Villaverde Alto con el objetivo de revitalizar este centro histórico y activar su economía.
+
+La plaza Mayor es una pequeña plaza con valor histórico. Se encuentra en un área que fue objeto en 2010 de un planeamiento, Plan Especial 17.312 Plaza Mayor de Villaverde. Su objetivo era cualificar y poner en valor la plaza mayor y el entorno de la iglesia de San Andrés.
+
+¿Cómo? Mediante la ampliación del catálogo de edificios que incluía en PGOUM 97, la eliminación de impactos negativos sobre edificios existentes y estableciendo unas condiciones estéticas dirigidas al ámbito exclusivo de la edificación.
+
+Por su parte, la plaza de Ágata es un espacio abierto en el que confluyen la actividad comercial y el transporte público y finaliza el bulevar Alberto Palacios.
+
+El ámbito se completa con la unidad de ejecución, UE.1 del casco de Villaverde. Cuenta con la ordenación aprobada, aunque todavía no se ha llevado a cabo su gestión.
+
+Para el concurso supone considerar otro espacio verde que incorporar a la propuesta global, aunque quedaría excluido de la ejecución material.
+
+Se trata de completar la cualificación de este ámbito con una propuesta dirigida a la intervención en el espacio libre, acorde con el carácter histórico del conjunto y los usos, tanto existentes como previstos en las parcelas vacantes y el antiguo cine de Villaverde, cobrando especial interés la conexión de las plazas entre sí y con el entorno inmediato.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/9_plaza_conjunto_plazas_villaverde.pdf'>Mapa del conjunto de Plazas de Villaverde</a>"
+
+  plaza-civica-san-blas: "El Gran San Blas es el conjunto de vivienda social más extenso y representativo de la época de los años 50 y 60 en que se desarrolla el Plan de Urgencia Social de Madrid.
+
+Cuenta con unas 10.000 viviendas construidas en bloques de edificios que configuran grandes supermanzanas. Esta 'plaza cívica' la pieza central del conjunto, ya que concentra los usos de equipamientos y comercio en torno a una plaza o espacio central abierto.
+
+La plaza cívica sigue disponiendo en la actualidad de parcelas vacantes. Los usos que alberga están lejos de generar un espacio cívico y de centralidad, como son un punto limpio o un parque de bomberos.
+
+Por otro lado, la configuración del espacio se ha producido por mera agregación de edificios según se han ido edificando en las diferentes parcelas sin una intención de crear un conjunto unitario de edificios y espacios libres.
+
+El objetivo del concurso es, por tanto, repensar el conjunto de la manzana en términos de forma y funcionalidad urbana y reconfigurar los espacios libres que quedarían sin edificar. Sería donde se circunscribiría la ejecución material de la propuesta del concurso.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/10_plaza_civica_san_blas.pdf'>Mapa de la Plaza Cívica de San Blas</a>"
+
+
+  plaza-duquesa-osuna: "La Plaza de la Duquesa de Osuna, inexistente como tal en la actualidad, es una propuesta de nuevo espacio que se crearía en la parte trasera del recinto que alberga el Jardín histórico del Capricho. Concretamente, sobre unos suelos calificados como uso dotacional en la calle la Rambla.
+
+La oportunidad de crear esta plaza surge por la rehabilitación y recuperación para uso museístico del palacio de los Duques de Osuna; por la apertura de un acceso directo desde esta calle y por la presencia de un edificio histórico ligado al palacio que se usa como escuela municipal de música.
+
+La parcela dotacional vacante permitiría crear una nueva plaza y resolver la integración de los diferentes edificios existentes, pensar en la forma y disposición de los nuevos equipamientos previstos y entender el valor histórico del ámbito en que se encuentra.
+
+Elementos a tener en cuenta en esta propuesta la relación de la plaza con el colegio de Alameda de Osuna, el recorrido hacia el castillo y el búnker de la Guerra Civil, la vinculación que podría realizarse desde la salida de metro, entendiendo el interés que puede tener para su visita por ciudadanos de otros barrios.
+
+<a href='https://decide.madrid.es/docs/procesos/once_plazas/11_plaza_duquesa_osuna.pdf'>Mapa de la Plaza Duquesa de Osuna</a>"
+
+desciption_for_answer:
+  plaza-remonta/proyecto-x: "LA CIUDAD, UNA RED DE ESPACIOS COMPARTIDOS ...LA REMONTA, UNA PLAZA CONECTADA
+
+La Remonta es una isla urbana conectada con la ciudad a través de Bravo Murillo, con el distrito a través de Capitán Argibay, y con el barrio por la red de calles adyacentes. Pero esa conexión es meramente física, el objetivo a escala urbana es reconectar la Plaza con el distrito  y  con el corredor verde del  Paseo de la Dirección.
+
+Se trata de una conexión social y ecológica.
+
+Una Plaza más verde e integrada en el sistema de parques y zonas verdes del distrito.
+
+
+LA ESCALA, UNA PLAZA PARA EL BARRIO.
+...LA REMONTA, UNA 'PLAZA VERDE PORTIVADA' DE 60x60 METROS
+
+La Remonta responde a una tipología de plaza porticada y a un ambicioso plan de ser la plaza porticada más grande de Madrid, y lo es.
+La Remonta tiene unas dimensiones de 112x108 metros, compitiendo y superando en tamaño a la Plaza Mayor de Madrid , con un tamaño de 120x80 metros, e incluso la Plaza Mayor porticada más grande de España, la de Valladolid, con unas dimensiones de 125x84 metros.
+
+El tamaño de La Remonta no se ajusta a su contexto…. Es por eso que la propuesta propone redefinir la escala de La Remonta a través de un nuevo perímetro verde y programado con diferentes usos, que libera el espacio central de la plaza, transformando la plaza de La Remonta en una tipología de 'plaza verde porticada' de 60x60 metros.   El anillo verde propuesto define un cuadrado interior libre de obstáculos, interrumpido en todos los puntos necesarios para respetar las conexiones urbanas y ser un lugar accesible para todos.
+
+
+UN ANILLO PROGRAMADO, UN ESPACIO PARA TODOS
+…LA REMONTA, UNA PLAZA MULTICULTURAL, INTEGENERACIONAL Y ACCESIBLE
+
+'60x60' refuerza la cohesión social, y crea una infraestructura de la que se pueden apropiar las diferentes comunidades del distrito. Un espacio multicultural, diverso, intergeneracional, y heterogéneo.
+
+Se propone la rehabilitación de un proceso participativo de los vecinos,  para generar una infraestructura social abierta, adaptable y flexible.
+
+A modo de ensayo se proponen los siguientes usos: juegos de agua y fuente, quiosco, huerto urbano e invernadero, aparcamiento temporal para la policía, espacio deportivo con graderío, zona canina, terrazas con pérgolas para restauración, gimnasio urbano, juegos para niños y escenario.
+
+El anillo programado está equipado con tomas de voz y datos, para que la plaza pueda albergar todo tipo de usos temporales. Es una plaza plug-in, flexible y abierta a la incertidumbre.
+
+
+LA MATERIALIDAD, UNA SOLUCIÓN CONTEXTUADA
+…LA REMONTA, UNA PLAZA EN TETUÁN Y EN MADRID
+
+La solución de urbanización y paisajismo no es una solución genérica que se pueda encontrar en cualquier plaza del mundo, sino un proyecto anclado en la identidad y el contexto de Tetuán, y de Madrid.
+
+Se proyectan soluciones específicas y extrapolables a otros espacios públicos de la ciudad, reflejadas especialmente con el diseño y producción de la 'Pieza Madrid' de pavimento, inspirada en el patrón de pata de gallo, tan presente en la memoria colectiva de la ciudad de Madrid, y en sus parpusas y chalecos… "
+  plaza-remonta/proyecto-y: "La plaza de la Remonta es el espacio libre público más importante del distrito de Tetuán. Está rodeada de un tejido residencial denso y se encuentra lejos de otros espacios libres significativos como el parque Rodríguez Sahagún.
+
+El estudio de vulnerabilidad integral y del impacto de la isla de calor (un barrio muy recalentado y con un índice de vulnerabilidad integral que duplica la media del distrito) indican que la mejora de la plaza y su entorno podría influir significativamente en las condiciones de habitabilidad y confort climático de la zona.
+
+Dos aspectos de oportunidad para la intervención en la plaza son:
+
+La complementariedad con la Estrategia de Regeneración Urbana definida por el Ayuntamiento de Madrid, especialmente el Plan MADRE, Madrid Ciudad de los Cuidados y Madrid + Natural.
+
+La posibilidad de contribuir a la mejora prevista por estos programas en la conectividad de espacios de valor ambiental y en la continuidad peatonal en la zona.
+
+Tras un análisis del estado actual de la plaza podemos resumir los problemas que presenta en problemas de accesibilidad, problemas de visibilidad de la plaza desde el exterior, deterioro material, dureza del diseño en relación con el clima y los usuarios, diseño obsoleto, falta de arbolado, tráfico de vehículos privados y de carga y descarga.
+
+Teniendo en cuenta la necesidad de cambio en el diseño de la plaza en función de las actividades presentes, se propone:
+
+Trabajar en los accesos, para conseguir que la Plaza tenga mayor visibilidad desde las calles laterales y resolver todos los problemas de accesibilidad peatonal.
+Generar una plaza central diáfana, pensada como espacio representativo de movimientos peatonales, descanso e interacción.
+Reservar una zona reservada a la actividad de las terrazas, pavimentada con adoquines de tamaño más reducido. Contará con una cubierta textil permanente que proteja el itinerario principal ya que no hay posibilidad de plantar arbolado.
+Crear un espacio para la reunión y la representación constituido por un pequeño teatro escalonado a modo de graderío que quedará protegido por la misma cubierta textil.
+Resolver el problema de falta de actividad de la esquina sudoeste de la plaza ubicando en este lugar un espacio para la estancia y el juego de los niños.
+Incrementar el carácter verde y habitable de la plaza con la plantación de una nueva trama de arbolado de sombra, dispuestos en relación con la zona ajardinada existente, la introducción de pavimento permeable que permita la infiltración de agua y la instalación de fuentes de agua, convirtiendo la plaza dura en una oasis para Tetuán.
+Introducir elementos de mobiliario urbano adaptado y señalética de la red cotidiana, con un diseño coherente y coordinado.
+Finalmente, se propone un proceso de información ciudadana y un sencillo proceso de aportación de sugerencias para dar continuidad a la adaptación y precisión participativa del proyecto. Algunos ámbitos de oportunidad podrían ser el diseño de murales cerámicos o la gestión colaborativa del huerto."
+  plaza-vaguada/proyecto-x: "naturnah es un vocablo alemán que se podría traducir como próximo a lo natural. Este podría ser el adjetivo que define una propuesta que propone una rehabilitación de la zona del estanque del parque de la Vaguada.
+
+Adoptando un lenguaje formal contemporáneo, alejándose de la rigidez y del clasicismo arquitectónico de la arquitectura que preside el escenario, se pretende una integración de la zona del estanque en un parque de formas orgánicas que preside el escenario, se pretende una integración de la zona del estanque en un parque de formas orgánicas que se extiende hasta la explanada del templete a través del bosque de pinos.
+
+El nuevo estanque cerrará la plaza rectangular de acceso a los distintos equipamientos, e irá deformándose en formas orgánicas que dialogan con las masas arbóreas de pinos que descienden. Dispondrá para su mantenimiento de un sistema de depuración sostenible, manteniendo el agua cristalina y limpia de algas y  malos olores. El borde del estanque será de hormigón blanco, e irá ganando altura debido a la ligera caída del terreno hasta conformar un banco continuo donde sentarse a la sombra de una  nueva pérgola. En su parte superior, se ensanchará hasta conformar una superficie que recuerde una gota de  agua y donde se plantean surtidores de agua.
+Esta superficie ligeramente cóncava y con pendiente hacia el estanque, permitirá compensar las pérdidas de agua producidas por la evaporación, al mismo tiempo que ofrece una superficie de juego donde los niños pueden bañarse en épocas estivales.
+
+Toda la superficie de actuación se pavimentará con un hormigón poroso, que drena las aguas pluviales alimentando el subsuelo urbano, tan maltratado en nuestras ciudades.
+Al mismo tiempo al presentar colores claro, el pavimento de hormigón absorbe la luz y almacena menos calor de la radiación solar, reduciendo así el efecto isla de calor.
+
+La superficie de hormigón presentará una isla para la ubicación de una zona de juego infantil, que se cubrirá con virutas de madera, vendrán plantados con árboles de hoja cauda, que den sombra durante las épocas de calor, y dejen pasar el sol en invierno.
+
+El pabellón existente junto al estanque se rehabilitará para albergar un café donde encontrarse en días soleados. Una plataforma de madera se adentrará en el estanque, ofreciendo una panorámica privilegiada donde tomar un café, o simplemente tumbarse al sol.
+
+Los caminos sinuosos que bajaban por el bosque de pinos se completaran cerrando con formas  orgánicas la superficie de pradera plantada de pinos, extendiendo la masa de pinos y acercándola al nuevo estanque. Bancos curvos multiplicarán las superficies de bancos a la sombra. Los aparatos de gimnasia se trasladarán junto a estos bancos curvos, desde donde padres y abuelos podrán observar como juegan sus pequeños. Nuevas rampas darán acceso a personas con movilidad reducida desde el paseo de la Vaguada, completando los accesos al futuro teatro remodelado, y desde la avda. Monforte de Lemos, abriéndose al barrio del Pilar y al centro comercial"
+  plaza-vaguada/proyecto-y: "El parque de la Vaguada se sitúa en el centro del barrio del Pilar, a espaldas del centro comercial homónimo. Es un lugar que frecuentan los vecinos de la zona, tanto APRA pasear, como para hacer uso de los equipamientos culturales y deportivos a los que da acceso. Esta dualidad es la principal característica del parque: concentra zonas urbanas, como la plaza de la Vaguada y los principales equipamientos del distrito, con áreas de vegetación frondosa, así como el acceso al Teatro de Madrid.
+
+Actualmente el parque se encuentra deteriorado por falta de mantenimiento. Sin embargo la configuración general funciona porque hay zonas que están sobreutilizadas y es un parque muy querido por los vecinos. Si bien es cierto que actualmente, los puntos fuertes del parque se ven opacados por todas las carencias y algunos aspectos deficitarios que vecinos y usuarios habituales del parque de la Vaguada y su plaza han  dado a conocer en las diferentes fases y encuestas de la participación ciudadana.
+
+Este proyecto rellena los vacíos que existen actualmente, mediante la utilización de una gran pérgola que aúna todos los aspectos de la propuesta, otorgándole a ésta identidad y singularidad. El proyecto no sólo es visualmente atractivo: resuelve rincones y espacios intersticiales que ahora potencian el carácter verde, abierto y plural del parque de la Vaguada, resultando más agradable y atractivo a sus usuarios.
+
+La gran pérgola acoge un nuevo estanque, reconvirtiendo a una fina lámina de agua con fuentes transitables. Además, potencia el crecimiento de nuevas masas arbóreas, mediante la incursión de éstas bajo la superficie de chapa metálica. Las zonas abiertas quedan conectadas mediante nuevos caminos o rampas, así como las vías ya existentes se ensanchan. La terraza de la biblioteca y la piscina potencia su uso como lugar de estancia y como conexión, abriendo un paso transversal norte-sur por detrás del teatro que enlace las grandes vías colindantes.
+
+La zona del teatro se reordena y dignifica su entrada, otorgándole conexión con las otras zonas de la propuesta, como son la banda activa, las diferentes zonas de niños y la zona más frondosa del parque. L banda activa está situada estratégicamente para no entorpecer otros usos y que sus usuarios accedan a ella a través de los demás espacios del parque, pero siempre ligada a la calle, por ser el programa más vital de la plaza. La gran altura de la pérgola metálica permite que incluso desde esta zona más elevada, todo el espacio está unificado y existe una sensación de entidad, sin interrumpir la identitaria fachada de los soportales en ningún momento."
+  plaza-civica-lucero/proyecto-x: "Ba. de Luz, responde a la voluntad ciudadana de crear una centralidad en el distrito, a través, de un nuevo espacio público: la plaza cívica.
+
+La propuesta debe dar respuesta a situaciones muy diferentes desde el punto de vista más técnico: topografía, viario, accesibilidad…hasta el más social. Por eso, se entiende Ba. de Luz como un integrador, un  elemento en el que confluir.
+
+Integrador urbano: la nueva plaza supone el punto de conexión de la gran extensión verde  que supone el parque de la Cuña Verde con la parte más consolidada y densa del distrito de Latina. Además de la oportunidad de continuar el eje/boulevard que supone la Calle de Higueras con la Plaza de la Achicoria y Calle Alhambra, punto importante de conexión de transporte público.
+
+Integrador social: la identidad de un barrio se alimenta de la asociación vecinal y del sentido de pertenencia a un lugar. La diversidad social presente en el distrito necesita de un lugar como la nueva plaza cívica para integrar a todos los vecinos, para que la reconozcan y se apropien de ella de una manera natural y abierta. La mezcla enriquecerá de manera exponencial la calidad del espacio público.
+
+Integrador de usos: debido a la gran dimensión de la plaza, es necesaria una estrategia sencilla que sea capaz de dar respuesta a los diferentes usos requeridos por los vecinos. Por este motivo, se emplean bandas de programa que permitirá la fácil comprensión del espacio para todos los usuarios y es, de la misma manera, otro gesto hacia la integración de diferentes situaciones en un mismo lugar."
+  plaza-civica-lucero/proyecto-y: "La identificación de una imagen urbana en un ámbito se debe trabajar, leyendo preexistencias y colocando nuevos elementos que lo doten de carácter. Los ciudadanos deben identificar  esos elementos urbanos como propios en la plaza cívica. El proyecto intenta aunar las necesidades de una población y su relación con la ciudad. Un referente social de apropiación de espacio público.
+
+Se intenta configurar un recinto de reunión y disfrute de las actividades propias del distrito aumentando la calidad urbana, en especial de la red de espacios limítrofes. Se plantean las bases para conseguir a lo largo del tiempo una nueva área de centralidad mediante la realización de una 'plaza equipada' que una los hitos de uso más importantes  del distrito. Es ahí donde reside la importancia degenerar actividad en la plaza, aprovechando el valor eficaz de los itinerarios que discurren por la misma y activándola  mediante la introducción de necesidades de equipamiento en el barrio.
+
+Se establecen unos equipamientos que configuran la plaza. Este recinto se configura mediante la introducción de programa en la plaza: Mercado, Piscinas deportivas y terapéuticas, Salas polivalentes, Sala sinfónica y aulas de música y danza.
+
+La propuesta trata de resolver los problemas de conexión de la plaza y dar continuidad a los itinerarios peatonales accesibles necesarios para poder abarcar la plaza en toda su plenitud. Esto se consigue modificando la cota natural del terreno tomando como premisa que el paso natural accesible sea el recorrido más rápido. Se tendrán en cuenta los aspectos que consideren la conservación de la energía y de los recursos naturales, la reutilización de esos recursos, la gestión del ciclo de vida de los materiales y componentes utilizados y las consideraciones relativas a la calidad de la edificación."
+  plaza-emperatriz/proyecto-x: "La propuesta trata de generar un espacio peatonal continuo y sin interrupciones entre la plaza del Metro de Carabanchel Alto y la plaza del 6 de Diciembre, utilizando toda la intervención a lo largo del eje de la plaza de la Emperatriz para articular las transiciones entre todos estos espacios.
+
+  Pretende la actuación, por tanto, encadenar los espacios entorno a los cuales se origina el núcleo de población, reforzando la conexión entre ellos potenciando su carácter social referenciado a su vez por las zonas verdes en un movimiento inverso en el que recuperar los espacios urbanos diferenciando sus circulaciones peatonales de las de vehículos.
+
+  Las diferencias de cota dentro de las plazas no son importantes, pero sí suficientes para marcar intencionalidades encaminadas a conectar o separar espacios y/o usos.
+
+  El pavimento nos ayuda a identificar esos espacios-usos, invitándonos a realizar el paso rápido, fortuito, (cómodo y agradable), o a disfrutar de una estancia más o menos prolongada y más o menos socializada.
+
+  El tráfico rodado se mantiene en sus vías principales siendo, los internos a la zona de actuación, relegados a un uso esporádico y momentáneo evitándose la posibilidad de aparcar, en un claro interés por prolongar la 'acera' hasta el límite mismo de la Avda. de Carabanchel Alto."
+  plaza-emperatriz/proyecto-y: "Nuestra propuesta para la plaza Emperatriz y 6 de Diciembre pretende utilizar como catalizador el elemento constituyente de los lugares estanciales de la ciudad: el pavimento-plataforma. Se pretende rescatar estas dos estancias, de carácter muy diferente mediante un elemento unificador que permita la diversidad de cada una.
+
+ La plataforma de apoyo físico y conceptual de la vida urbana es el firme, lugar-plataforma para la vida cotidiana, organiza el paso de peatones y coches aunando sus velocidades, en una superficie sin límites, únicamente direccionales para el tráfico rodado. Se pretende suprimir todas las barreras arquitectónicas para posibilitar el uso a todos los ciudadanos. El aparcamiento se limita al necesario para el correcto funcionamiento de la ciudad. El firme albergará todas las instalaciones necesarias, tanto en la superficie como debajo de ella.
+
+Nuestra propuesta eleva a arquitectura el trazado y forma de las recogidas de agua, las superficies vegetales, y también la ordenación de la señalización necesaria, elementos únicos y suficientes para la formalización del lugar.
+
+Construcción-formalización
+
+La introducción de tres planos perfectos en la trama actual de la plaza Emperatriz y su entorno es un juego de geometría. Cada plano se fusiona con el siguiente cambiando ligeramente la pendiente, si los planos tienen una inclinación de un 6%, los encuentros es los puntos de máxima pendiente no llegan al 10%. La nueva geometría se posa sobre el plano actual sin apenas demolerlo y resolviendo los encuentros con las edificaciones.
+
+El trazado de esta geometría impuesta y unificadora en la plaza Emperatriz y su entorno se realiza mediante puntos, barras testigo que mediante equipos de topografía que trabajan con gps se posicionan en su altura con absoluta precisión. Hemos impuesto una malla de puntos cada 2.26. Las barras-tubo posicionadas funcionan como conectores de lo ocurre sobre la plataforma con ella. Son soporte de luminarias, de asientos, de tenderetes, pantallas de proyección, señalización, limitación de tráfico, etc. Es la gran herramienta que no solo define la forma también permite el uso variable. Entre las barras se vierte un hormigón  que confiere continuidad al espacio urbano y produce un acabado casi de un terrazo continuo. La elección del árido en cuanto a la calidad de la piedra y su cualidad: color y tamaño, permite variar el tono y el color del pavimento.  Desde áridos de mármol blanco a piedras basálticas negras. La perfección de los planos y su continuidad conferirán al lugar una sensación especial.
+
+Las superficies de encuentro entre los planos llevarán la mayor carga de vegetación, y se utilizarán como lugares posibles de aparcamiento y equipamiento urbano."
+  plaza-puerto-canfranc/proyecto-x: "Espacio público como base para el Derecho a la Ciudad
+
+Situado en Numancia y en Vallecas- barrio pionero de los movimientos sociales, Asociaciones de vecinos y fiestas populares- la nueva plaza de Puerto Canfranc Puente Vallecas se convierte en el prototipo de un espacio urbano generador de ciudadanía activa. La solución es una plataforma urbana cuyo objetivo es la multiplicación autogestionada, por la Asociaciones de vecinos y ciudadanía, de las actividades de la ciudad contemporánea.
+Es también un bonito lugar –con las áreas verdes situadas en los lugares adecuados, conectados al paisaje de las redes vecinales, ecosostenible- pero sobre todo un espacio vivo, facilitador de la participación de la ciudadanía.
+
+La amplia zona central pavimentada quiere ser: flexible, multi-dimensional, con sombra adonde es necesario, equipada desde un punto de vista tecnológico, útil para las asociaciones de vecinos, intermodal y permeable.
+
+Las actividades a desarrollar serán autogestionadas por las Asociaciones de ciudadanía: la elección del nombre de la plaza será el objetivo del primer proyecto participativo a generar en la plataforma urbana.  Un soporte web y una aplicación APP para smartphone harán posible una programación diversificada de las actividades de las Asociaciones todo el año: el calendario de actividades autogestionadas.
+
+El diseño urbano del nuevo proyecto es la bisagra entre los diferentes distritos de la ciudad vieja compacta (al sur y al oeste) y la ciudad más abierta de la segunda mitad del ‘900 (norte y este); es generador de continuidad, sobre todo con las redes del paisaje (el arbolado del Boulevard de la Calle Sierra Toledana entra en el proyecto y 'protege' la parte peatonal de la plaza, dando continuidad entre los parque de la calle Giraldez hasta el Camino de Valderribas).
+
+En línea con los objetivos de la convocatoria, el proyecto da prioridad a la accesibilidad de peatones, especialmente en los cruces entre el Camino de Valderribas y la Calle del Puerto Canfranc y entre el Camino de Valderribas y la calle de Sierra Toledana. Coches y autobuses se ajustan a la velocidad de la ciudad y de los peatones. No se descuida el tema de aparcamiento: se recuperan los espacios de estacionamiento eliminados en la parte media de la zona situada entre el Camino de Valderribas y la calle de Sierra Toledana.
+
+En cuanto a tecnología y sostenibilidad ambiental, el proyecto explora las fronteras de ahorro energético: la plaza será uno de los primeros espacios públicos de bajo consumo en España en energía y agua. La movilidad sostenible, el acceso al territorio, el agua y la gestión adecuada de drenaje urbano, la eficiencia energética, iluminación LED y fotovoltaica, el uso fotocatalítica de materiales sostenibles, son las consignas del proyecto."
+  plaza-puerto-canfranc/proyecto-y: "La primera decisión de nuestra propuesta consiste en eliminar la gran isleta de tráfico creada entre el Camino de Valderribas y la calle Sierra Toledana, para conseguir más superficie libre para la plaza.
+
+Además, teniendo en cuenta que la parcela hoy día tiene un gran desnivel que hay que resolver y que está conectada en su esquina noroeste con un espacio verde de forma alargada, con un arbolado importante, y que consideramos que la solución a proponer en la plaza debe dar continuidad y extensión a esta franja de parque.
+
+El criterio que escogemos para resolver el espacio se basa en crear dos zonas bien diferenciadas, separadas por unas gradas que resuelven el desnivel y permiten a personas de todas las edades sentarse mirando al sol.
+
+La parte norte, que es la superior en cota, sería una zona verde con pavimentos blandos que se enlazaría con la franja verde alargada antes mencionada y con los árboles de la calle Sierra Toledana. En esta zona se situarían zonas de descanso entre árboles para ancianos y niños, con mesas donde poder jugar a las cartas o al dominó. Para los niños se diseñan un conjunto de toboganes que aprovechan el desnivel del existente y que forma la imagen escultórica del espacio. Los toboganes aprovechan el desnivel pero no cortan el paso peatonal de cada nivel. Todas las conexiones peatonales en esto niveles y en el acceso a la parte inferior están resueltas con rampas para conseguir una accesibilidad universal a todos los puntos. Los materiales son naturales: piedras en los bordes de cada plataforma, y dentro de ellas: arena, albero, superficies blandas para niños, pavimentos de goma…
+
+La zona sur, la parte inferior, sería un gran plano de suelo vacío, una plaza con pavimento duro, que crea una superficie libre que permita el desarrollo de todo tipo de actividades variadas; mercadillos (alimentario de productos colectivos, verduras-frutas, ropa, navideño, artesanales, temáticos), eventos lúdicos (como lugar de verbena donde poder bailar en los días de fiesta) o incluso como soporte para la tradicional fiesta del agua o batalla naval que se celebra en el barrio. Se ha dado acceso directo desde las aceras y desde los pasos de cebra y cruces de peatones. Los materiales son pétreos pero discontinuos formando dibujos y trazas que ayuden al orden.
+
+Al oeste se habilita una pequeña zona de aparcamiento en superficie, aprovechando la vía de acceso a los locales de las viviendas colindantes.
+
+Nuestra propuesta dota de una nueva configuración a un espacio que actualmente es residual, sin uso, un no lugar, para convertirlo en un nuevo espacio que los ciudadanos puedan utilizar para su ocio y convivencia, en este denso barrio en el que hay pocos lugares de esparcimiento.
+
+Se trata de utilizar el espacio público como un elemento de cohesión social determinante de la identidad del barrio y que mejore la calidad de vida de los vecinos."
+  plaza-encuentro/proyecto-x: "Reordenamos el tráfico rodado en la zona de la plaza, para, sin comprometer la conectividad, generar un nuevo espacio peatonal. Este nuevo espacio comprenderá el centro de la plaza y la zona frente al supermercado, que en la actualidad es la que presenta mayor actividad.
+
+En este sentido, presentamos una opción alternativa mucho más ambiciosa y ventajosa para el peatonal. La plaza peatonal sería de dimensiones mucho mayores, más liberada de tráfico rodado y con más opciones de conectividad. Presentaría, sin embargo, algunos inconvenientes que deberían ser valorados para decidir su conveniencia.
+
+Además de la nueva plaza peatonal, la zona de actuación propuesta comprende también otros espacios adyacentes. Por su forma y dimensiones, dos de ellos son especialmente importantes.
+Consideramos estos tres espacios como un todo, como un espacio peatonal continuo en el que hemos planificado los diferentes usos demandados.
+
+Para que el flujo peatonal entre las diferentes zonas sea fluido y agradable, es de especial importancia el diseño de sus conexiones. Hemos previsto zonas de calzada adoquinada que ralenticen el tráfico, pasos de cebra a nivel y expresivos despieces de pavimento que enfaticen la concatenación y macla de las mencionadas áreas.
+
+Para minimizar el efecto 'isla de calor', mantener el ciclo hidrológico del agua y dar satisfacción a la demanda ciudadana, hemos optado por naturalizar al máximo el área de actuación, vinculándolo, en su mayoría, a usos estanciales y de juegos de niños.
+
+En la zona situada sobre el actual parking subterráneo, las zonas verdes han de estar más controladas. Es por ello, y por su posición en el centro de la plaza, por lo que diseñamos aquí el espacio más icónico y representativo de la propuesta, que pretende ser generador de identidad, encuentro, reunión y actividad vecinal.
+Será de carácter flexible y multifuncional, capaz de albergar fiestas, mercadillos, conciertos, ferias o actividades económicas de carácter temporal.
+
+Diseñamos en esta zona una plataforma a contrapendiente, lo que le hace ganar un gran protagonismo volumétrico.
+Dada la excesiva homogeneidad visual del entorno, el color es protagonista en el diseño de esta área. En su pavimentación combinamos el uso de colores de tonos neutros, con otros mucho más vibrantes como el rojo, el amarillo, el azul o el verde.
+Es de especial importancia el diseño del nuevo toldo. Se trataría de un elemento ligero y manejable para su fácil instalación y retirada. Es importante su pronunciada inclinación. Gracias a ella, la nueva plaza adquiere una componente vertical que la hace perceptible a gran distancia desde las calles que en ella confluyen.
+Para apuntar su identidad visual, diseñamos sobre él una iluminación singular basada en la multiplicidad de proyectores.
+
+Por sus atractivas formas y colores, la nueva plataforma, y en especial, el tándem plataforma-toldo, pueden convertir esta plaza en un icono generador de cohesión social y orgullo ciudadano."
+  plaza-encuentro/proyecto-y: "'Ciudad es ante todo plaza, ágora, discusión, elocuencia. De hecho, no necesita tener casas, la ciudad; las fachadas bastan. Las ciudades clásicas están basadas en un instinto opuesto al doméstico. La gente construye la casa para vivir en ella y la gente funda la ciudad para salir de la casa y encontrarse con otros que también han salido de la suya'.
+
+José Ortega y Gasset, Obras Completas
+
+(…) no necesita tener casas, la ciudad; las fachadas bastan. Con esta frase aparentemente ligera, Ortega hace un elogio elocuente de la medianería urbana y de la concepción del espacio público como espacio interior. Una ciudad configurada, no por la suma de sus edificios, sino por la suma de sus espacios públicos.
+
+El reto de la propuesta Horizontes Cívicos es reconstruir el espacio urbano disperso concibiéndolo como unidad ambiental, cultural y económica.
+
+Para dotar a la Plaza Cívica y a todos los espacios de su entorno, antes residuales, de la densidad de uso y caracterización necesaria para la identificación vecinal con los mismos se propone una estrategia esencial de bandas programadas, cosidas por la Avenida de Moratalaz como recorrido cívico.
+
+Toda la propuesta se concibe desde los principios de sostenibilidad social, energética y económica que deben regir cualquier actuación urbana.
+
+Sostenibilidad social
+
+Los espacios contrastados que generan los Horizontes Cívicos, espacios de escala global para el uso comunitario conjunto y espacios de escala casi doméstica para la convivencia más calmada, invitan a la reconstrucción de las relaciones entre los individuos y la cohesión entre estos.
+
+Sostenibilidad energética
+
+Se propone que los Horizontes Cívicos configuren un espacio urbano de consumo energético cero. Para ello, sobre las pérgolas del Atrio, se colocarán paneles solares fotovoltaicos que realizarán la doble función de dar sombra, por un lado, y de abastecer de energía eléctrica a toda la intervención.
+
+Por otro lado, en los grandes espacios abiertos, susceptibles de producir el efecto isla de calor se colocarán pavimentos claros que limiten su absorción.
+
+Dada la importancia de la concienciación social en este sentido, se propone la instalación de paneles informativos a lo largo de toda la intervención que indiquen datos como la calidad del aire, la temperatura, el nivel de humedad, etc.
+
+Sostenibilidad económica
+
+El uso de materiales derivados del hormigón y de la concepción del proyecto desde la sencillez y sinceridad constructiva, así como la utilización de materiales de fácil y económico mantenimiento limita contundentemente el impacto económico de la propuesta."
+  plaza-misterios/proyecto-x: "La propuesta se centra en generar un nuevo centro de actividad cívica en la Plaza de los Misterios. Esta intervención pone en valor la narrativa del enclave buscando dotar a su entorno de un nuevo signo de identidad. Se proponen espacios de alta flexibilidad que habiliten amplias zonas estanciales de óptimo rendimiento climático, así como otras capaces de acoger eventos de toda naturaleza y escala. Con estos objetivos, el proyecto toma como punto de partida la consideración de la historia y el carácter de la Ciudad Lineal original plantada por el urbanista Arturo Soria, uno de los experimentos urbanísticos europeos más importantes de la primera mitad del siglo XX. Otros puntos de partida determinantes son la situación urbana actual y las intervenciones de mejora previstas para el futuro, así como el acondicionamiento climático de la plaza mediante métodos pasivos.
+
+El espacio público de la plaza de los Misterios considera la sección prevista para la calle Alcalá, así como las posibles actuaciones sobre la calle Arturo Soria. Para este eje vertebrador, la propuesta plantea una nueva sección basada en los valores originales de la Ciudad Lineal de Arturo Soria, ampliando las zonas de paseo peatonal y vegetación en ambos flancos, y condensando el tráfico. Esto reduce el impacto de los vehículos privados sobre el espacio público, a la vez que minimiza los ruidos y las barreras físicas. Se propone un gran parque lineal potencialmente extrapolable a toda la calle Arturo Soria, poniendo en valor la idea de la Ciudad Lineal cuya arteria estructuradora proporciona comunicación fluida y espacios verdes a sus alrededores.
+
+La intersección de los dos grandes ejes arbolados de las calles Alcalá y Arturo Soria en la plaza de los Misterios hace que sea un punto propicio para la reunión y el intercambio social. Esta propuesta se centra en crear un marco idóneo para cualquier actividad cívica posible. Se proponen una serie de intervenciones destinadas a permitir una gran flexibilidad de uso, y sobre todo, al acondicionamiento climático de la plaza mediante sistemas pasivos que hagan de la misma un ambiente óptimo a la vez que permitan un ahorro energético mediante la recolección de aguas pluviales y el aprovechamiento de energía solar.
+
+Esto se consigue mediante una trama ortogonal basada en las ordenanzas originales de la Ciudad Lineal de Arturo Soria, que se reinterpreta en forma de un jardín de árboles y acequias. Este jardín público invita al desarrollo de todo tipo de actividades cívicas. Un gran claro central se reserva como marco para actividades de mayor afluencia. El borde de la plaza se rediseña como un elemento continuo que incorpora los usos existentes de gasolinera, boca de metro, etc.; mientras que incorpora otros de nueva planta. Del mismo modo, sirve como deambulatorio cubierto incluyendo espacios de estancia exterior para los locales del perímetro de la intervención."
+  plaza-misterios/proyecto-y: "La ciudad es y ha sido siempre paradigma de todo artista que contempla su belleza como algo inexplicable, autónomo, caótico… en definitiva, complejo. La complejidad urbana proviene de la diversidad, de los millones de entidades individuales con comportamientos autónomos e independientes que generan interacciones en todas las direcciones. Dicha complejidad ha sido, y es, el santo grial del diseñador urbano. Mientras que durante siglos se ha planteado el control de dicha complejidad, desde hace unos cincuenta años surgieron pensadores, artistas y diseñadores que definían la complejidad urbana como un paradigma incontrolable, o lo que es más fácil, un fenómeno incontrolable, y ahí –según definían- radicaba su belleza.
+
+Frente a este dilema, la presente propuesta tienen un posición clara  y firme: potenciar la belleza urbana en la plaza de los Misterios a través de la complementación, potenciación, y cohesión de la complejidad urbana que se ha alojado, que hoy día lo hace, y que sobre todo esperamos, que un futuro se alojará. El proyecto de los Misterios busca generar una unión entre los dos espacios diferenciados desde que la ciudad ha sido objeto del control más que del diseño de la complejidad. Una cohesión de su lado más natural y el artificial, de su lado más local y el global, de su lado más funcional y el estético, de su lado más joven y el mayor, en definitiva, una unión de los dos espacios que unidos finalizan un puzle en una posición estratégica urbana tanto para Ciudad Lineal como para las líneas estratégicas que marca la ciudad de Madrid.
+
+Un proyecto que nace de una iniciativa llena de ilusión, y por lo tanto, no cabe otra forma de plantear una propuesta que se base en la construcción de ilusiones, misterios y sueños. Un proyecto que:
+
+Busca complementar una estrategia urbano-territorial de la Ciudad, y en específico enmarcada en el contexto de Ciudad Lineal que marca un eje que culmina en la Plaza de los Misterios.
+
+Busca potenciar una historia de activación y participación desde el pasado hasta el presente del área. Una población activa y comprometida merece y debe obtener una propuesta abierta al diálogo auténtico en la toma de decisiones.
+
+
+Busca cohesionar lo que comienza a ser una brecha latente que amenaza la diversidad y heterogeneidad como forma de respeto. Un proyecto que busca generar un espacio ejemplar tanto en su materialización como proceso de construcción y gestión debido a la cohesión de la diversidad social, racial y religiosa.
+
+Y así, complementándonos, potenciándonos, y generando cohesión podríamos llegar a construir un espacio colectivo, común y colaborativo. Porque replantearse las líneas preestablecidas ha llevado a generar esta convocatoria, y así, se ha generado un misterio: ¿Cuál será la nueva Plaza de los Misterios? Un misterio que debe ser respondido mediante el descubrimiento del espacio vacante, mediante la colaboración técnica  y ciudadana, mediante la valentía institucional, pero sobre todo, mediante la sinergia de la ilusión común."
+  plaza-civica-mar-cristal/proyecto-x: "El proyecto se basa en los tres pilares fundamentales de la sostenibilidad, estos son el ambiental, el social y el económico.
+
+Estrategia Ambiental: Un parque con una calle peatonal-ciclista estructurante con un centro intermodal de transportes sostenibles.
+La propuesta propone una vía peatonal y ciclista estructurante donde originalmente se encontraba la Calle de Ayacucho.
+Como elemento principal integrador norte-sur, se plantea un parque que extiende el ámbito de actuación hasta las zonas residenciales colindantes.
+Se repiensa el espacio público del intercambiador de Mar de Cristal en forma de plaza dura con aparcamientos para coche eléctrico, coche compartido y bicicletas y se propone la Gran Vía de Hortaleza como calle de doble sentido.
+
+Estrategia Social: una calle que se activa y un centro de distrito.
+A lo largo de la espina peatonal- ciclista se van adjuntando sacos rotacionales al aire libre, los cuales permiten una variedad de acontecimientos. Donde grupos se puedan reunir y se puedan realizar eventos de escala distrital.
+
+Estrategia económica: un parque sostenible con autogestión de actividades.
+Como elemento de cerramiento al espacio central se propone un nuevo edificio, el cual se situará dando la espalda al aparcamiento del COE.
+Se trata de un centro de gestión y representación del parque. Las actividades realizadas podrán representarse de manera digital en la fachada del edificio que da al espacio central, convirtiendo el edificio en un hito focal y convirtiendo el nuevo parque de Hortaleza a escala de ciudad, un lugar que permite a la población a participar, generar y ser parte del mismo."
+  plaza-civica-mar-cristal/proyecto-y: "'Formas-de-vida' es un proyecto de intervención que asume conscientemente la herencia de los primeros planes de ordenación urbana de la Transición, para regenerarla desde la perspectiva contemporánea con proyección de futuro, donde la 'condición periférica' ha de entenderse como espacio de oportunidad que posibilite la emergencia de otras prácticas sociales, nuevas y heterogéneas.
+
+El solar de Mar de Cristal aparece hoy como área prácticamente no construida donde un estado de semiabandono prolongado con uso de escombrera ha terminado por configurar un descampado, en forma de isla desconectada de la trama urbana pero con una interesante topografía. En ello radican sus potencialidades. Tramo integrante de la llamada Gran Vía de Hortaleza y objeto de sucesivas modificaciones en el planeamiento urbano que no se han llegado a concretar, el solar permanece vacante  y a la espera, con una circulación de tráfico rodado omnipresente que lo envuelve y ocupa espontáneamente, en una dinámica cada vez más hostil para la gente.
+
+Se proponen una serie de estrategias, mínimas pero radicales, para revertir las negatividades de la situación, a la vez que se preservan e intensifican sus cualidades para consolidar un espacio de identidad para el distrito de Hortaleza, que fundamentalmente pasan por aumentar el espacio dedicado a la ciudadanía y mitigar el impacto del tráfico. Para ello se propone una nueva construcción ambiental que completa las carencias del entorno (con parques y dotaciones deportivas diversas) mediante la naturalización del lugar y el protagonismo de nuevas infraestructuras deportivas que también funcionan en el plano simbólico."
+  plaza-mayor-villaverde/proyecto-x: "La plaza Mayor y la plaza de Ágata constituyen el centro neurálgico del distrito de Villaverde, aunque cada una de ellas tiene un carácter distinto. La primera es una estancia peatonal, soleada, tranquila y alejada de la circulación rodada; la segunda funciona como núcleo de comunicaciones y es un lugar sombreado de estancia con una gran arboleda.
+
+  La propuesta POLOS OPUESTOS pretende mantener la dualidad de caracteres de ambas plazas, pero dando continuidad a estos espacios públicos. Como si fueran polos de un imán o cargas eléctricas de distinto signo, las plazas se unen o atraen en una intervención común que utiliza el patrón del pavimento como punto de unión.
+
+  Los artistas Ahmed Matter y Ling Meng emplean imanes y limaduras de hierro para crear pequeñas obras de arte que reflejan las fuerzas surgidas de los campos magnéticos de los polos. Siguiendo esta estrategia se ha trazado el patrón del pavimento obteniendo una serie de líneas que conectan y unen los elementos relevantes.
+
+  En estas líneas se ubica el alumbrado público, formado por luces tipo LED empotradas en el pavimento. Se utilizará un mobiliario urbano formado principalmente por bancos de granito iluminados en la base para completar la iluminación nocturna del pavimento. El pavimento se ejecuta con adoquines de granito gris de tres tonos distintos. En los elementos de interés se trazan grandes círculos para destacarlos del resto del pavimento. El uso de una plataforma única y continua permitirá la percepción del espacio como una unidad.
+
+  La propuesta plantea la peatonalización de la calle Travesía de Palomares, la calle Vieja de Pinto junto a la plaza de Ágata y la calle del Asfalto, creando con todas estas actuaciones una gran zona peatonal. En la plaza de Ágata el tráfico de vehículos privados se restringe para conectar las calles aledañas, permitiéndose la circulación exclusivamente del transporte público a través de la plaza.
+
+  La Plaza Mayor se rodeará en tres de sus lados de arces de porte bajo y podados con forma prismática. La forma pretende recordar una plaza porticada pero ejecutada con la vegetación. El lado sin vegetación se corresponde con el del antiguo Ayuntamiento para darle relevancia en la plaza.
+
+  Se mantendrán las acacias de la plaza de Ágata, retirando el resto de especies y se eliminarán los parterres que dificultan el tránsito diagonal. Se repoblará la plaza con jacarandas para crear junto con las acacias un bosquete. Se mantienen las paradas de autobús en la plaza de Ágata, si bien se reubican y agrupan junto a la arboleda de la plaza y junto a la entrada del centro Sociocultural.
+
+  Para la zona verde de la calle Albino Hernández Lázaro se propone la continuación del pavimento siguiendo las líneas de la intervención, manteniendo parte del muro que lo delimita para conservar la configuración de la manzana y perforándolo para permitir el paso. Se crearán dos franjas verdes que separen el espacio público de las viviendas de futura creación."
+  plaza-mayor-villaverde/proyecto-y: "VERDEVILLA: En alusión a la toponimia del distrito, la intención es potenciar con este lema lo que un día pudo haber sido la antigua villa. Una clase de ciudad jardín, donde lo verde y sostenible primaría sobre el asfalto.
+
+Acondicionamiento, mobiliario, iluminación, pavimentación y empleo color.
+El acondicionamiento general pretende limitar al máximo el espacio rodado y ganar lo más posible para el peatón, utilizando la vegetación de poco mantenimiento como elemento que rodea toda la intervención. El mobiliario urbano se mantiene siempre que sea posible y se incorpora un nuevo diseño compacto. Se plantea en la propuesta mantener al máximo el pavimento existente y completar con materiales similares pero más permeables. El color lo incluirá la vegetación.
+
+Reconsiderar las actividades y usos existentes posibles.
+Eliminación de la rotonda central de la plaza de Ágata para dotar de continuidad el paseo Alberto Palacios y conectar con el Centro Cultural. Potenciar el uso estancial, comercial y el de nudo de transportes, pero limitando este último a lo mínimo imprescindible.
+Plantear la Plaza Mayor como centro neurálgico de Villaverde, que recupere el lugar tradicional de celebración de actividades colectivas y eventos populares. Potenciando su marcado ambiente rural, pero dotándolo de un fuerte carácter comercial con la inclusión de los principales establecimientos públicos.. Nuevos usos en el antiguo cine y en la parcela de equipamiento. Espacio interior como una calle cubierta donde coexisten los usos de mercadillo y huertos urbanos en plantas superiores. Diversidad y dinamización.
+
+Realizar propuestas sobre el plano vertical que puedan contribuir a la configuración del paisaje.
+Analizamos la incidencia en el paisaje urbano de la nueva edificación, que complementa los edificios protegidos de la plaza mayor con una imagen similar. Las medianeras se pueden tratar con arte urbano o elementos de vegetación vertical.
+
+Estudiar la integración con el entorno, flujos peatonales, los accesos o tratamiento de calles de borde.
+Reordenación de la plaza de Ágata, limitando al mínimo imprescindible el tráfico rodado restringido, manteniendo el nudo de transportes y reforzando la continuidad con el Paseo Alberto Palacios. Tratamiento de todos los espacios en coexistencia, sin aparcamiento y con pavimento similar al existente.
+Peatonalización de la calle Vieja de Pinto y Travesía de Palomares.
+
+Considerar la accesibilidad universal, eliminar barreras y solucionar desniveles.
+En la plaza de Ágata, se eliminan las actuales barreras arquitectónicas, escalones, vallados, alcorques, setos, etc. planteando una pendiente uniforme y manteniendo la actual ubicación de la fuente.
+
+Pensar en el confort urbano, los materiales, empleo de vegetación, permeabilidad y áreas sombreadas.
+Utilización de masas de vegetación de hoja caduca y mucha sombra. Trabajar con refrescamiento por medio de la vegetación.
+Utilizar pavimento permeable, evitar el efecto isla de calor. Introducir contenedores de recogida selectiva de residuos."
+  plaza-civica-san-blas/proyecto-x: "El espacio público es la esencia de la ciudad, pero ¿dónde encontrarla en las morfologías de bloque abierto? Encontramos aquí 10.000 viviendas sin espacio central de referencia: sin plaza, sin espacio de relación social. El entorno marca un espacio muy homogéneo, muy denso y desestructurado, atractivo a vista de pájaro, pero sin escala adecuada para las relaciones sociales, con algunas zonas verdes desconectadas e infrautilizadas y los espacios libres vacantes vacíos, inseguros y laberínticos.
+
+Existe una cierta variedad de equipamientos, pero que no logran dotar al espacio urbano de centralidad ni de vida urbana de cotidianeidad.
+
+Se propone mantener las edificaciones actuales, siguiendo criterios de sostenibilidad, pero revaluados o completados por edificaciones nuevas, que dan un carácter de cierre a tres nuevas escenas urbanas que serán la conexión y articulación de todo el barrio, con una nueva ordenación y jerarquías funcionales-ambientales y estéticas.
+LA PLAZA CÍVICA, de 55 x 120 metros (6.600 m2);
+LA ARBOLEDA, de 50 x 80 metros, (4.000 m2); y
+EL JARDÍN DEL MERCADO, de 55 x 55 metros, (3.012 m2).
+
+Entre los tres espacios, se propone una diversidad de ambientes que además permiten ser utilizados para una variedad de actividades (fiestas, asambleas, mercadillo, cine de verano, reuniones vecinales, …). Están delimitadas con dotaciones multifunción, como la Torre Solar, con usos formativos, lúdicos, viviendas tuteladas y apartamentos de protección pública; la Casa de San Blas, centro cultural integrados, biblioteca, ludoteca, áreas recreativas, de co-working, lugares para el ocio, y el aprendizaje. Los tres espacios se articulan entre sí y con el resto de los equipamientos del distrito mediante tres paseos peatonales, uno hacia el Parque del Paraíso, otro hacia el Polideportivo y por último el Bulevar del Gran San Blas (calle Pobladura del Valle), con amplias aceras, eje de llegada a la Plaza Cívica articulando con puntos funcionales como el metro o los equipamientos de barrio. Se propone un claro espacio de centralidad para todo el barrio de San Blas."
+  plaza-civica-san-blas/proyecto-y: "'Conectando San Blas'. La propuesta tiene como principal objetivo mejorar la conectividad urbana y la cohesión social del distrito. El proyecto se encaja dentro del Plan Estratégico Madrid Regenera incorporando y potenciando los itinerarios estructurales proyectados por el Ayuntamiento.
+
+Un sistema de ejes y espacios públicos confluirán en la Plaza Cívica de San Blas. La nueva plaza dará continuidad al Parque del Paraíso conectándolo con los diferentes equipamientos públicos y con los barrios de Amposta, Arcos y Hellín. El proyecto no sólo desarrollará las conexiones de cada barrio con la plaza sino que también potenciará las conexiones entre los barrios a través de la plaza. Este nuevo espacio de centralidad funcionará como conector y dinamizador del distrito.
+
+Más bicicleta. El proyecto integra la red de carriles ciclistas prevista por el Ayuntamiento.
+
+
+PLAZA CÍVICA DE SAN BLAS
+
+Un espacio continuo y sin barreras. Para asegurar la continuidad del nuevo espacio se desplazará la calle Alconera al extremo oeste del terreno.
+
+Una plaza con identidad propia. Es necesario reubicar y cambiar la imagen del Mercado y el CAID. El Mercado se convertirá en una galería comercial con soportales que revitalizará el comercio local y potenciará la actividad en la plaza.
+
+Mucho más espacio verde como elemento conector, que mejorará el confort climático con recorridos en sombra y una topografía que separará la plaza de los coches. Además, se proponen varios espacios cubiertos para protegerse del sol en verano y de la lluvia en invierno.
+
+Un espacio flexible capaz de acoger diferentes actividades y con espacios deportivos y de juego que la convertirán en un lugar de encuentro para todos los vecinos.
+
+
+CONFLICTOS Y DEMANDAS DEL DISTRITO
+
+Generar equipamientos sociales en el edificio de Telefónica. Actualmente el Centro de Mayores y los Servicios Sociales comparten edificio en la calle Pobladura del Valle, siendo patente el insuficiente espacio existente.
+
+El mercado ambulante. Otro de los conflictos del distrito es la ubicación del mercado ambulante de la calle San Román del Valle, ya que no reúne los requisitos de seguridad necesarios. Creemos que la Plaza Cívica puede acogerlo al ser un punto de centralidad para los usuarios.
+
+Participación ciudadana. El proyecto incorpora varias de las propuestas del proceso de participación ciudadana de Madrid Decide como el rocódromo, el skatepark, el incremento de las áreas verdes o la zona de reunión vecinal."
+  plaza-duquesa-osuna/proyecto-x: "Como estrategia se emplean una serie de acciones y elementos que constituyen un sistema abierto de actuación que permitirá el ajuste de la actual materialización según las necesidades de los futuros usuarios del espacio cívico propuesto. Se trata de una coreografía de elementos, una secuencia de lugares, destinada a que sean éstos siempre entendidos como dentro de un todo orquestado, pero con un carácter de piezas con intensidad propia y diferenciadora tal y como se produce en el propio Parque de El Capricho. De esta forma las nuevas intervenciones no serán más que un añadido de contemporaneidad a lo ya existente, un sumatorio que complete la oferta que actualmente ya se produce.
+
+La estratégica colocación de los elementos construidos y las secuencias de silencios o vacíos, establecen una lectura de los recorridos posibles del lugar que es flexible, abierta a la reinterpretación de los trayectos. La transparencia y fácil apertura de nuevas conexiones en cualquier punto de los itinerarios posibles, facilita la visita personalizada de cada usuario dependiendo de sus intereses personales. Para ello ha sido clave la propuesta de peatonalización de la calle de la Rambla en su tramo intermedio a su paso por la antigua Plaza de la Fuente. Se procede por tanto a cubrir dicha calle y la de la Fuente para dar salida hacia la calle de Joaquín Ibarra y ofrecer también acceso al aparcamiento cubierto que aprovecha la topografía de la calle. Una operación que evita grandes excavaciones, resuelta mediante el uso de plataformas que habilitan diferentes estancias a distintas cotas del terreno, estratificando la propuesta en unidades de intervención perfectamente controlables."
+  plaza-duquesa-osuna/proyecto-y: "Algo ocurre en Alameda de Osuna cuando el único semáforo situado en el barrio se encuentra junto a una gran tapia que rodea un solar vacío. Se trata de un elemento particular que habla de este emplazamiento, una discontinuidad en una gran trama, un engranaje roto que no transmite el movimiento.
+
+Nuestro objetivo consistirá en reponer esta pieza clave para sacar lustre a todo lo que lo rodea. Un área que comunica y continúa con el gran hilo argumental presente en Alameda de Osuna: la red de espacios naturales e históricos que se mueve entre sus edificios y las personas que los habitan.
+
+Para lograr nuestra meta, establecemos 5 estrategias para que la nueva plaza de la Duquesa de Osuna, dé solución a sus diferentes escalas, la social y la monumental. Ofrecemos una única solución de doble naturaleza. Proponemos un gran manto continuo de espacios abiertos y naturales que conectan dos espacios diferenciados por su cota.
+
+El primero, en la parte baja de la zona de actuación, un gran parque urbano, que alberga el tipo de actividades sociales cotidianas esperadas en cualquier barrio. Este parque está dirigido a satisfacer a los vecinos que buscan disfrutar de un parque tranquilo y amplio, un parque diseñado para la estancia.
+
+Más arriba encontramos una plaza flanqueada por el Palacio de la Duquesa de Osuna, la Casa de Oficios, dos bicentenarios Platanus Hispanica y una humilde fuente. Aunque es menor en dimensiones, se trata de un espacio monumental, adecuado a su contexto. Será un espacio de transición entre los vaivenes de los usuarios entre dichos edificios. También un espacio de reposo y silencio cuando estos cierren sus puertas. Ejerciendo de conector del eje histórico-cultural en su continuación hacia el Castillo.
+
+Y, ¿qué ocurre en la transición entre la plaza y el parque? Actuando como bisagra y en la línea divisoria (calle de la Fuente) se sitúa una banda dotacional. Es la pieza clave en la propuesta que unifica la dualidad monumental y social. La nueva edificación dialoga con su entorno a través de dos planos.
+
+El plano de calle: Se permite la libre circulación plaza-parque cuando se camina en el exterior.
+
+Plano interior: En la dirección perpendicular al flujo anterior, se crea una nueva entrada al Parque de El Capricho. La apertura parcial del patio interior de la Casa de Oficios para conectarlo a la banda edificada facilita el funcionamiento del conjunto y aporta un nuevo valor arquitectónico al lugar en relación con su historia.
+
+Estos puntos fundamentales que se describen se ven acompañados de ACCIONES que darán soporte a las ESTRATEGIAS para el área de actuación. Las ACCIONES más notables modificarán la movilidad y el tráfico. Además se situarán nuevos accesos tanto a edificios como al parque para reconducir los flujos de movimiento. La distribución de los puntos de actividad en el ámbito también jugará un papel importante.
+
+'El limonero lánguido suspende
+una pálida rama polvorienta
+sobre el encanto de la fuente limpia,
+y allá en el fondo sueñan
+los frutos de oro…' (Machado)"
