@@ -335,14 +335,16 @@
     word-wrap: break-word;
   }
 
-  .callout.token-message {
-    background-color: #FFFFFF;
-    border-color: $info-border;
-    color: $color-info;
-  }
+  .callout {
+    &.token-message {
+      background-color: #fff;
+      border-color: $info-border;
+      color: $color-info;
+    }
 
-  .callout.proposal-retired {
-    font-size: $base-font-size;
+    &.proposal-retired {
+      font-size: $base-font-size;
+    }
   }
 
   .social-share-full .social-share-button {
