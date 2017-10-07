@@ -80,7 +80,7 @@ desc "Create second citizen poll"
   end
 
   def images(answer, i)
-    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.parameterize}/*"]
+    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.parameterize}/*"].sort
   end
 
   def main_image(poll, i)
@@ -106,6 +106,7 @@ desc "Create second citizen poll"
   def set_answer_images(poll, i)
     poll.questions.map(&:question_answers).flatten.each do |answer|
       images(answer, i).each do |image|
+puts image
         answer.images << build_image(image)
       end
     end
