@@ -73,29 +73,40 @@
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
-    <div class="row padding">
+  <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
+    <% if answer.description.present? || answer.images.any? || answer.documents.present? %>
+      <div class="expanded poll-more-info-answers">
+        <div class="row padding">
 
-      <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
-        <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
+          <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
              data-toggler=".medium-6">
 
-          <% if answer.description.present? %>
             <h3><%= answer.title %></h3>
-          <% end %>
 
-          <% if answer.images.any? %>
-            <%= render "gallery", answer: answer %>
-          <% end %>
+            <% if answer.description.present? %>
+              <div class="margin-top">
+                <%= safe_html_with_links simple_format(answer.description) %>
+              </div>
+            <% end %>
 
-          <% if answer.description.present? %>
-            <div class="margin-top">
-              <%= safe_html_with_links simple_format(answer.description) %>
-            </div>
-          <% end %>
+            <% if answer.images.any? %>
+              <%= render "gallery", answer: answer %>
+            <% end %>
+
+            <% if answer.documents.present? %>
+              <% answer.documents.each do |document| %>
+                <tr>
+                  <td><%= link_to document.title,
+                                  document.attachment.url,
+                                  target: "_blank",
+                                  rel: "nofollow" %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </div>
 
         </div>
-      <% end %>
-    </div>
-  </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
