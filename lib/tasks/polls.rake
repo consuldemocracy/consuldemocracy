@@ -114,7 +114,7 @@ desc "Create second citizen poll"
   end
 
   def images(answer, i)
-    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.parameterize}/*"].sort
+    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.split(":").first.parameterize}/*"].sort
   end
 
   def main_image(poll, i)
