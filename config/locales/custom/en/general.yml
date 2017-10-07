@@ -33,9 +33,12 @@ en:
         help: Help about citizen voting
       section_footer:
         title: Help about citizen voting
-        description: Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly.
-        help_text_1: "Voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council of Madrid ask to the citizens decision."
-        help_text_3: "In the first vote on february 2017, moreover to decide about two citizen proposals, the City Council asked about the reforms of Gran Vía, about finalist projects to reform Plaza España and some issues in six districts of Madrid."
+        description: "Decide now what the City Council will do with these 11 squares."
+        help_text_1: "The City Council has selected 11 squares of the city for its remodeling and made a participatory process to make that decision that culminates now. The process has had dialogues with neighbors, open debates in Decide Madrid and a contest of ideas that ends now in this direct citizen vote."
+        help_text_2: "You can decide on each square to remodel or not, and in case it is remodeled which of the two finalist projects will be carried out. Both decisions will be taken directly by the citizen by a majority of supports in each decision between the two possibilities."
+        help_text_3: "All persons registered in Madrid over 16 years old can participate."
+        help_text_4: "Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly."
+        help_text_5: "In addition to the issues that the City of Madrid submits to a direct decision of the citizens, also voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council of Madrid ask to the citizens decision."
       orders:
         random: Random
   forums:
