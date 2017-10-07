@@ -1,8 +1,6 @@
 class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
   before_action :load_answer, only: [:show, :edit, :update, :documents]
 
-  load_and_authorize_resource :question, class: "::Poll::Question"
-
   def new
     @answer = ::Poll::Question::Answer.new
   end
