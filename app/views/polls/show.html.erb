@@ -50,10 +50,10 @@
             <%= t("polls.show.already_voted_in_web") %>
           </div>
         <% end %>
+      <% end %>
 
-        <% @questions.each do |question| %>
-          <%= render 'polls/questions/question', question: question, token: @token %>
-        <% end %>
+      <% @questions.each do |question| %>
+        <%= render 'polls/questions/question', question: question, token: @token %>
       <% end %>
     </div>
   </div>
