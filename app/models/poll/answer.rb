@@ -17,8 +17,6 @@ class Poll::Answer < ActiveRecord::Base
   scope :by_question, ->(question_id) { where(question_id: question_id) }
 
   def record_voter_participation(token)
-    Poll::Voter.find_or_create_by(user: author, poll: poll, origin: "web") do |poll_voter|
-      poll_voter.token = token unless poll_voter.token.present?
-    end
+    Poll::Voter.find_or_create_by(user: author, poll: poll, origin: "web", token: token)
   end
 end

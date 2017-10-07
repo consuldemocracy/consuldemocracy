@@ -76,7 +76,7 @@ describe :voter do
 
     it "should not be valid if the user has voted via web" do
       answer = create(:poll_answer)
-      answer.record_voter_participation
+      answer.record_voter_participation('token')
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).to_not be_valid
