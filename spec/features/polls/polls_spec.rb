@@ -94,6 +94,9 @@ feature 'Polls' do
     end
 
     scenario 'Level 1 users' do
+      visit polls_path
+      expect(page).to_not have_selector('.already-answer')
+
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
