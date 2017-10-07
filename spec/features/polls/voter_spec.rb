@@ -32,6 +32,11 @@ feature "Voter" do
         expect(page).to_not have_link('Yes')
       end
 
+      find(:css, ".js-token-message").should be_visible
+      token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
+
+      expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
+
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")
     end
@@ -100,6 +105,8 @@ feature "Voter" do
         vote_for_poll_via_web(poll, question)
 
         visit poll_path(poll)
+
+        expect(page).to_not have_selector('.js-token-message')
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
