@@ -17,6 +17,7 @@ desc "Create second citizen poll"
       end
 
       add_images_for(poll, i)
+      add_documents_for(poll, i)
     end
   end
 
@@ -128,7 +129,7 @@ desc "Create second citizen poll"
   end
 
   def images(answer, i)
-    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.split(":").first.parameterize}/*"].sort
+    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.split(":").first.parameterize}/*.jpg"].sort
   end
 
   def main_image(poll, i)
@@ -158,6 +159,25 @@ puts image
         answer.images << build_image(image)
       end
     end
+  end
+
+  def add_documents_for(poll, i)
+    poll.questions.map(&:question_answers).flatten.each do |answer|
+      documents(answer, i).each do |document|
+puts document
+        answer.documents << build_document(document)
+      end
+    end
+  end
+
+  def build_document(path)
+    return false unless path
+    filename = path.split("/").last
+    Document.new(attachment: File.new(path, "r"), title: config["title_for_document"][filename] || "unavailable", user: User.first)
+  end
+
+  def documents(answer, i)
+    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.split(":").first.parameterize}/*.pdf"].sort
   end
 
   def destroy_all

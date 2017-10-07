@@ -276,6 +276,9 @@ title_for_image:
   05_la_gran_pergola_memoria_17.jpg: "Proyecto Y: La gran pérgola (20/22)"
   05_la_gran_pergola_memoria_18.jpg: "Proyecto Y: La gran pérgola (21/22)"
   05_la_gran_pergola_memoria_19.jpg: "Proyecto Y: La gran pérgola (22/22)"
+title_for_document:
+  empty_proyecto_y.pdf: "title for test document y"
+  empty_proyecto_x.pdf: "title for test document x"
 summary_for_poll:
   plaza-remonta: "Decide ahora qué va a hacer el Ayuntamiento con esta plaza.
 
