@@ -51,12 +51,12 @@
       <% end %>
 
       <% if poll_voter_token(@poll, current_user).empty? %>
-        <div class="callout primary js-token-message" style="display: none">
+        <div class="callout token-message js-token-message" style="display: none">
           <%= t('poll_questions.show.voted_token') %>
         </div>
       <% end %>
 
-      <%= link_to t("polls.show.participate_in_other_polls"), polls_path, class: "button" %>pconfig/locales/en/general.yml
+      <%= link_to t("polls.show.participate_in_other_polls"), polls_path, class: "button" %>
     </div>
   </div>
 

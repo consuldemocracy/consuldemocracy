@@ -335,6 +335,12 @@
     word-wrap: break-word;
   }
 
+  .callout.token-message {
+    background-color: #FFFFFF;
+    border-color: $info-border;
+    color: $color-info;
+  }
+
   .callout.proposal-retired {
     font-size: $base-font-size;
   }
