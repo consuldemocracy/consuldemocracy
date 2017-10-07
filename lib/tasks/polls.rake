@@ -4,37 +4,54 @@ namespace :polls do
 
 desc "Create second citizen poll"
   task setup: :environment do
-    # tricky to destroy, dependent on existent results, use only in dev env
-    # destroy_all
+    destroy_all
 
-    (1..10).each do |i|
-      poll = Poll.find_or_initialize_by(name: poll_attributes(i)[:name])
+    (0..10).each do |i|
+      poll = Poll.new(name: poll_attributes(i)[:name])
       poll.attributes = poll_attributes(i)
+
       if poll.save
         print "."
       else
         puts poll.errors.first
       end
+
+      add_images_for(poll, i)
     end
   end
 
   def poll_attributes(i)
-    { name: "Rehabilitar la plaza #{main_square_names[i]}",
-      starts_at: Date.yesterday,
+    { name: "Remodelación de la plaza #{main_square_names[i]}",
+      description: config["description_for_poll"]["#{project_name(i)}"],
+      starts_at: 1.week.ago,
       ends_at: 1.week.from_now,
       geozone_restricted: false,
       questions_attributes: [
-        { title: "¿Quieres rehabilitar la plaza #{main_square_names[i]}?",
-          valid_answers: "Sí, No",
+        { title: "¿Consideras necesario remodelar la plaza?",
           author: User.first,
           author_visible_name: author_name,
-          poll: Poll.last
+          poll: Poll.last,
+          question_answers_attributes: [
+            { title: "Sí",
+              description: ""
+            },
+            { title: "No",
+              description: ""
+            },
+          ]
           },
-          title: "¿Qué plaza te gusta más?",
-          valid_answers: "Plaza X, Plaza Y",
+          title: "En el caso de que se decida mayoritariamente remodelar la plaza ¿Cuál de los dos proyectos finalistas prefieres que se lleve a cabo?",
           author: User.first,
           author_visible_name: author_name,
-          poll: Poll.last
+          poll: Poll.last,
+          question_answers_attributes: [
+            { title: "Proyecto X",
+              description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-x"]
+            },
+            { title: "Proyecto Y",
+              description: config["desciption_for_answer"]["#{project_name(i)}/proyecto-y"]
+            }
+          ]
       ]
     }
   end
@@ -57,13 +74,59 @@ desc "Create second citizen poll"
      "Plaza Civica San Blas"]
   end
 
+  def project_name(i)
+    main_square_names[i].parameterize
+  end
+
+  def images(answer, i)
+    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/#{answer.title.parameterize}/*"]
+  end
+
+  def main_image(poll, i)
+    Dir["#{Rails.root}/public/main_squares/#{project_name(i)}/*.jpg"].first
+  end
+
+  def build_image(path)
+    return false unless path
+    filename = path.split("/").last
+    Image.new(attachment: File.new(path, "r"), title: config["title_for_image"][filename] || "unavailable", user: User.first)
+  end
+
+  def add_images_for(poll, i)
+    set_poll_image(poll, i)
+    set_answer_images(poll, i)
+  end
+
+  def set_poll_image(poll, i)
+    main_image = main_image(poll, i)
+    poll.image = build_image(main_image(poll, i))
+  end
+
+  def set_answer_images(poll, i)
+    poll.questions.map(&:question_answers).flatten.each do |answer|
+      images(answer, i).each do |image|
+        answer.images << build_image(image)
+      end
+    end
+  end
+
   def destroy_all
-    Poll::Answer.destroy_all
-    Poll::Question.all.map(&:really_destroy!)
-    Poll::Voter.destroy_all
-    Poll::BoothAssignment.destroy_all
-    Poll::OfficerAssignment.destroy_all
-    Poll.destroy_all
+    if Rails.env.preproduction?
+      Poll.update_all(ends_at: 1.month.ago)
+    else
+      Poll::Answer.destroy_all
+      Poll::Question::Answer::Video.destroy_all
+      Poll::Question::Answer.destroy_all
+      Poll::Question.all.map(&:really_destroy!)
+      Poll::Voter.destroy_all
+      Poll::BoothAssignment.destroy_all
+      Poll::OfficerAssignment.destroy_all
+      Poll.destroy_all
+    end
+  end
+
+  def config
+    YAML.load(File.read("#{Rails.root}/public/main_squares/config.yml"))
   end
 
   namespace :polls do
