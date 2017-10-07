@@ -67,7 +67,7 @@ desc "Create second citizen poll"
     "Ayuntamiento de Madrid"
   end
 
-  def main_square_names
+  def folder_square_names
     ["Plaza Duquesa Osuna",
      "Plaza Remonta",
      "Plaza Vaguada",
@@ -79,6 +79,20 @@ desc "Create second citizen poll"
      "Plaza Civica Mar Cristal",
      "Plaza Mayor Villaverde",
      "Plaza Civica San Blas"]
+  end
+
+  def main_square_names
+    ["Plaza de la Duquesa de Osuna (Barajas)",
+     "Plaza de la Remonta (Tetuán)",
+     "Plaza de la Vaguada (Fuencarral - El pardo)",
+     "Plaza Cívica de Lucero (Latina)",
+     "Plaza de la Emperatriz (Carabanchel)",
+     "Plaza del Puerto de Canfranc (Puente de Vallecas)",
+     "Plaza del Encuentro (Moratalaz)",
+     "Plaza de los Misterios (Ciudad Lineal)",
+     "Plaza Cívica Mar de Cristal (Hortaleza)",
+     "Plaza Mayor de Villaverde y Plaza de Ágata (Villaverde)",
+     "Plaza Cívica de San Blas (San Blas)"]
   end
 
   def project_x_names
@@ -110,7 +124,7 @@ desc "Create second citizen poll"
   end
 
   def project_name(i)
-    main_square_names[i].parameterize
+    folder_square_names[i].parameterize
   end
 
   def images(answer, i)
