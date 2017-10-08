@@ -56,6 +56,9 @@
       <% @questions.each do |question| %>
         <%= render 'polls/questions/question', question: question, token: @token %>
       <% end %>
+      <div class="callout primary text-center">
+        <%= link_to t("poll_questions.show.see_projects"), "#poll_more_info_answers", class: "lead" %>
+      </div>
 
       <% if poll_voter_token(@poll, current_user).empty? %>
         <div class="callout token-message js-token-message" style="display: none">
@@ -63,7 +66,7 @@
         </div>
       <% end %>
 
-      <div class="callout primary text-center">
+      <div class="text-center">
         <%= link_to t("polls.show.participate_in_other_polls"), polls_path %>
       </div>
     </div>
@@ -85,7 +88,7 @@
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
+  <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
 
       <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
