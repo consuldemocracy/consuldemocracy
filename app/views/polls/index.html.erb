@@ -1,4 +1,5 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
+<% provide :meta_description, t("polls.index.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: polls_url %>
 <% end %>

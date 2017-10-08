@@ -28,6 +28,8 @@ en:
         help_text_4: 'In February 2017 occurred the first citizen vote in which were approved the proposals "Madrid 100% sostenible" and "Billete único para el transporte público".'
   polls:
     index:
+      title: Vote eleven squares on Decide Madrid
+      description: You decide about remodeling of eleven squares of Madrid. From Barajas to Villaverde, vote how you want changes these places.
       section_header:
         title: Citizen Voting
         help: Help about citizen voting

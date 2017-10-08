@@ -28,6 +28,8 @@ es:
         help_text_4: 'En febrero de 2017 tuvo lugar la primera votación ciudadana en la que se aprobaron las propuestas "Madrid 100% sostenible" y "Billete único para el transporte público".'
   polls:
     index:
+      title: Vota once plazas en Decide Madrid
+      description: Tú decides sobre la remodelación de once plazas de Madrid. Desde Barajas hasta Villaverde, vota cómo quieres que cambien estos espacios.
       section_header:
         title: Votaciones ciudadanas
         help: Ayuda sobre las votaciones ciudadanas
