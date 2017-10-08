@@ -31,7 +31,7 @@ class Poll < ActiveRecord::Base
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
   def to_param
-    self.name.parameterize
+    slug
   end
 
   def current?(timestamp = Date.current.beginning_of_day)
