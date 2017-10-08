@@ -531,6 +531,7 @@ en:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       voted_token: "You can write down this vote identifier, to check your vote on the final results:"
+      see_projects: "See projects"
   proposal_notifications:
     new:
       title: "Send message"
