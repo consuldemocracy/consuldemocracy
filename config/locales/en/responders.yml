@@ -8,6 +8,8 @@ en:
         direct_message: "You message has been sent successfully."
         poll: "Poll created successfully."
         poll_booth: "Booth created successfully."
+        poll_question_answer: "Answer created successfully"
+        poll_question_answer_video: "Video created successfully"
         proposal: "Proposal created successfully."
         spending_proposal: "Investment project created successfully. You can access it from %{activity}"
         representative: "You have updated your representative"
@@ -33,3 +35,4 @@ en:
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"
         topic: "Topic deleted successfully."
+        poll_question_answer_video: "Answer video deleted successfully."

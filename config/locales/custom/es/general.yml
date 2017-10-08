@@ -33,9 +33,13 @@ es:
         help: Ayuda sobre las votaciones ciudadanas
       section_footer:
         title: Ayuda sobre las votaciones ciudadanas
-        description: Regístrate para poder votar propuestas ciudadanas y las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid. Toma decisiones municipales de forma directa.
-        help_text_1: "Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. En las votaciones también se pueden incluir cuestiones que el Ayuntamiento de Madrid somete a decisión directa de la ciudadanía."
-        help_text_3: "En la primera votación de febrero de 2017, además de decidir sobre dos propuestas ciudadanas, el Ayuntamiento preguntó sobre actuaciones que se planteaban llevar a cabo en la Gran Vía, sobre los proyectos finalistas para reformar plaza de España y diversas cuestiones en seis distritos de Madrid que plantearon sus respectivas Juntas."
+        description: "Decide ahora qué va a hacer el Ayuntamiento con estas 11 plazas."
+        help_text_1: "El Ayuntamiento ha seleccionado 11 plazas de la ciudad para su remodelación y realizado un proceso participativo para tomar esa decisión que culmina ahora. El proceso ha contado con diálogos con los vecinos, debates abiertos en Decide Madrid y un concurso de ideas que termina ahora en esta votación directa ciudadana."
+        help_text_2: "Puedes decidir respecto a cada plaza si se debe remodelar o no, y en caso de que se remodele cuál de los dos proyectos finalistas se llevará a cabo. Ambas decisiones se tomarán directamente por la ciudadanía por mayoría de apoyos en cada decisión entre las dos posibilidades."
+        help_text_3: "Pueden participar todas las personas empadronadas en Madrid mayores de 16 años."
+        help_text_4: "Regístrate para poder votar las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid y las propuestas ciudadanas. Toma decisiones municipales de forma directa."
+        help_text_5: "Además de las cuestiones que el Ayuntamiento de Madrid somete a decisión directa de la ciudadanía, también se convocan votaciones cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        help_text_6: "Más información sobre las votaciones"
       orders:
         random: Aleatorias
   forums:

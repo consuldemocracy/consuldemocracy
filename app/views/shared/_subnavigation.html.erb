@@ -20,9 +20,10 @@
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
-                                  first_voting_path,
+                                  "/vota",
                                   current_page?(first_voting_path) || current_page?(primera_votacion_info_path) ||
-                                    current_page?(primera_votacion_stats_path),
+                                    current_page?(primera_votacion_stats_path) ||
+                                    current_page?("/vota"),
                                   accesskey: "3",
                                   title: t("shared.go_to_page") + t("layouts.header.poll_questions") %>
       </li>
