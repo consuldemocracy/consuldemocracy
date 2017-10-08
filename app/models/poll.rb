@@ -3,6 +3,7 @@ class Poll < ActiveRecord::Base
   AGE_STEPS = [16,20,25,30,35,40,45,50,55,60,65]
 
   include Imageable
+  include Sluggable
 
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
@@ -18,6 +19,7 @@ class Poll < ActiveRecord::Base
   accepts_nested_attributes_for :questions
 
   validates :name, presence: true
+  validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
   validate :date_range
 

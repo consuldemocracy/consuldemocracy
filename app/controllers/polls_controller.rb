@@ -51,6 +51,6 @@ class PollsController < ApplicationController
   private
 
     def load_poll
-      @poll = Poll.find_by(slug: params[:slug]) || Poll.find_by(id: params[:slug])
+      @poll = Poll.find_by(slug: params[:id]) || Poll.find_by(id: params[:id])
     end
 end
