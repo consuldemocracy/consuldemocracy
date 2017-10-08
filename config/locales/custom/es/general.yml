@@ -39,6 +39,7 @@ es:
         help_text_3: "Pueden participar todas las personas empadronadas en Madrid mayores de 16 años."
         help_text_4: "Regístrate para poder votar las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid y las propuestas ciudadanas. Toma decisiones municipales de forma directa."
         help_text_5: "Además de las cuestiones que el Ayuntamiento de Madrid somete a decisión directa de la ciudadanía, también se convocan votaciones cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        help_text_6: "Más información sobre las votaciones"
       orders:
         random: Aleatorias
   forums:

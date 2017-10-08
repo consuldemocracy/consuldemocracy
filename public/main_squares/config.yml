@@ -1,5 +1,5 @@
 title_for_image:
-  0main_04_ba_de_luz: "Proyecto X: Ba de Luz (1/15)"
+  0main_04_ba_de_luz.jpg: "Proyecto X: Ba de Luz (1/15)"
   04_ba_de_luz_A1_1.jpg: "Proyecto X: Ba de Luz (2/15)"
   04_ba_de_luz_A1_2.jpg: "Proyecto X: Ba de Luz (3/15)"
   04_ba_de_luz_memoria_1.jpg: "Proyecto X: Ba de Luz (4/15)"
@@ -98,14 +98,15 @@ title_for_image:
   11_locus_amoenus_memoria_12.jpg: "Proyecto Y: Locus amoenus (15/17)"
   11_locus_amoenus_memoria_13.jpg: "Proyecto Y: Locus amoenus (16/17)"
   11_locus_amoenus_memoria_14.jpg: "Proyecto Y: Locus amoenus (17/17)"
-  0main_11_del_metro_al_parterre.jpg: "Proyecto X: Del metro al Parterre (1/8)"
-  11_del_metro_al_parterre_A1_1.jpg: "Proyecto X: Del metro al Parterre (2/8)"
-  11_del_metro_al_parterre_A1_2.jpg: "Proyecto X: Del metro al Parterre (3/8)"
-  11_del_metro_al_parterre_memoria_1.jpg: "Proyecto X: Del metro al Parterre (4/8)"
-  11_del_metro_al_parterre_memoria_2.jpg: "Proyecto X: Del metro al Parterre (5/8)"
-  11_del_metro_al_parterre_memoria_3.jpg: "Proyecto X: Del metro al Parterre (6/8)"
-  11_del_metro_al_parterre_memoria_4.jpg: "Proyecto X: Del metro al Parterre (7/8)"
-  11_del_metro_al_parterre_memoria_5.jpg: "Proyecto X: Del metro al Parterre (8/8)"
+  0main_11_del_metro_al_parterre.jpg: "Proyecto X: Del metro al Parterre (1/9)"
+  11_del_metro_al_parterre_A1_1.jpg: "Proyecto X: Del metro al Parterre (2/9)"
+  11_del_metro_al_parterre_A1_2.jpg: "Proyecto X: Del metro al Parterre (3/9)"
+  11_del_metro_al_parterre_memoria_1.jpg: "Proyecto X: Del metro al Parterre (4/9)"
+  11_del_metro_al_parterre_memoria_2.jpg: "Proyecto X: Del metro al Parterre (5/9)"
+  11_del_metro_al_parterre_memoria_3.jpg: "Proyecto X: Del metro al Parterre (6/9)"
+  11_del_metro_al_parterre_memoria_4.jpg: "Proyecto X: Del metro al Parterre (7/9)"
+  11_del_metro_al_parterre_memoria_5.jpg: "Proyecto X: Del metro al Parterre (8/9)"
+  11_del_metro_al_parterre_memoria_6.jpg: "Proyecto X: Del metro al Parterre (9/9)"
   0main_19_toma_la_calle.jpg: "Proyecto Y: Toma la calle (1/10)"
   19_toma_la_calle_A1_1.jpg: "Proyecto Y: Toma la calle (2/10)"
   19_toma_la_calle_A1_2.jpg: "Proyecto Y: Toma la calle (3/10)"
@@ -145,19 +146,20 @@ title_for_image:
   07_plaz-er_horizontes_civicos_memoria_14.jpg: "Proyecto Y: Horizontes cívicos (17/19)"
   07_plaz-er_horizontes_civicos_memoria_15.jpg: "Proyecto Y: Horizontes cívicos (18/19)"
   07_plaz-er_horizontes_civicos_memoria_16.jpg: "Proyecto Y: Horizontes cívicos (19/19)"
-  0main_05_polos_opuestos.jpg: "Proyecto X: Polos opuestos (1/13)"
-  05_polos_opuestos_A1_1.jpg: "Proyecto X: Polos opuestos (2/13)"
-  05_polos_opuestos_A1_2.jpg: "Proyecto X: Polos opuestos (3/13)"
-  05_polos_opuestos_memoria_1.jpg: "Proyecto X: Polos opuestos (4/13)"
-  05_polos_opuestos_memoria_2.jpg: "Proyecto X: Polos opuestos (5/13)"
-  05_polos_opuestos_memoria_3.jpg: "Proyecto X: Polos opuestos (6/13)"
-  05_polos_opuestos_memoria_4.jpg: "Proyecto X: Polos opuestos (7/13)"
-  05_polos_opuestos_memoria_5.jpg: "Proyecto X: Polos opuestos (8/13)"
-  05_polos_opuestos_memoria_6.jpg: "Proyecto X: Polos opuestos (9/13)"
-  05_polos_opuestos_memoria_7.jpg: "Proyecto X: Polos opuestos (10/13)"
-  05_polos_opuestos_memoria_8.jpg: "Proyecto X: Polos opuestos (11/13)"
-  05_polos_opuestos_memoria_9.jpg: "Proyecto X: Polos opuestos (12/13)"
-  05_polos_opuestos_memoria_10.jpg: "Proyecto X: Polos opuestos (13/13)"
+  0main_05_polos_opuestos.jpg: "Proyecto X: Polos opuestos (1/14)"
+  05_polos_opuestos_A1_1.jpg: "Proyecto X: Polos opuestos (2/14)"
+  05_polos_opuestos_A1_2.jpg: "Proyecto X: Polos opuestos (3/14)"
+  05_polos_opuestos_memoria_1.jpg: "Proyecto X: Polos opuestos (4/14)"
+  05_polos_opuestos_memoria_2.jpg: "Proyecto X: Polos opuestos (5/14)"
+  05_polos_opuestos_memoria_3.jpg: "Proyecto X: Polos opuestos (6/14)"
+  05_polos_opuestos_memoria_4.jpg: "Proyecto X: Polos opuestos (7/14)"
+  05_polos_opuestos_memoria_5.jpg: "Proyecto X: Polos opuestos (8/14)"
+  05_polos_opuestos_memoria_6.jpg: "Proyecto X: Polos opuestos (9/14)"
+  05_polos_opuestos_memoria_7.jpg: "Proyecto X: Polos opuestos (10/14)"
+  05_polos_opuestos_memoria_8.jpg: "Proyecto X: Polos opuestos (11/14)"
+  05_polos_opuestos_memoria_9.jpg: "Proyecto X: Polos opuestos (12/14)"
+  05_polos_opuestos_memoria_10.jpg: "Proyecto X: Polos opuestos (13/14)"
+  05_polos_opuestos_memoria_11.jpg: "Proyecto X: Polos opuestos (14/14)"
   0main_07_verdevilla.jpg: "Proyecto Y: Verde Villa (1/11)"
   07_verdevilla_A1_1.jpg: "Proyecto Y: Verde Villa (2/11)"
   07_verdevilla_A1_2.jpg: "Proyecto Y: Verde Villa (3/11)"
@@ -189,18 +191,19 @@ title_for_image:
   09_link_al_verde_memoria_1.jpg: "Proyecto Y: Link al verde (5/7)"
   09_link_al_verde_memoria_2.jpg: "Proyecto Y: Link al verde (6/7)"
   09_link_al_verde_memoria_3.jpg: "Proyecto Y: Link al verde (7/7)"
-  0main_01_activatuplaza.jpg: "Proyecto X: Activa tu Plaza (1/12)"
-  01_activatuplaza_A1_1.jpg: "Proyecto X: Activa tu Plaza (2/12)"
-  01_activatuplaza_A1_2.jpg: "Proyecto X: Activa tu Plaza (3/12)"
-  01_activatuplaza_memoria_1.jpg: "Proyecto X: Activa tu Plaza (4/12)"
-  01_activatuplaza_memoria_2.jpg: "Proyecto X: Activa tu Plaza (5/12)"
-  01_activatuplaza_memoria_3.jpg: "Proyecto X: Activa tu Plaza (6/12)"
-  01_activatuplaza_memoria_4.jpg: "Proyecto X: Activa tu Plaza (7/12)"
-  01_activatuplaza_memoria_5.jpg: "Proyecto X: Activa tu Plaza (8/12)"
-  01_activatuplaza_memoria_6.jpg: "Proyecto X: Activa tu Plaza (9/12)"
-  01_activatuplaza_memoria_7.jpg: "Proyecto X: Activa tu Plaza (10/12)"
-  01_activatuplaza_memoria_8.jpg: "Proyecto X: Activa tu Plaza (11/12)"
-  01_activatuplaza_memoria_9.jpg: "Proyecto X: Activa tu Plaza (12/12)"
+  0main_01_activatuplaza.jpg: "Proyecto X: Activa tu Plaza (1/13)"
+  01_activatuplaza_A1_1.jpg: "Proyecto X: Activa tu Plaza (2/13)"
+  01_activatuplaza_A1_2.jpg: "Proyecto X: Activa tu Plaza (3/13)"
+  01_activatuplaza_memoria_1.jpg: "Proyecto X: Activa tu Plaza (4/13)"
+  01_activatuplaza_memoria_2.jpg: "Proyecto X: Activa tu Plaza (5/13)"
+  01_activatuplaza_memoria_3.jpg: "Proyecto X: Activa tu Plaza (6/13)"
+  01_activatuplaza_memoria_4.jpg: "Proyecto X: Activa tu Plaza (7/13)"
+  01_activatuplaza_memoria_5.jpg: "Proyecto X: Activa tu Plaza (8/13)"
+  01_activatuplaza_memoria_6.jpg: "Proyecto X: Activa tu Plaza (9/13)"
+  01_activatuplaza_memoria_7.jpg: "Proyecto X: Activa tu Plaza (10/13)"
+  01_activatuplaza_memoria_8.jpg: "Proyecto X: Activa tu Plaza (11/13)"
+  01_activatuplaza_memoria_9.jpg: "Proyecto X: Activa tu Plaza (12/13)"
+  01_activatuplaza_memoria_10.jpg: "Proyecto X: Activa tu Plaza (13/13)"
   0main_08_nos_vemos_en_canfrac.jpg: "Proyecto Y: Nos vemos en Canfranc (1/4)"
   08_nos_vemos_en_canfrac_A1_1.jpg: "Proyecto Y: Nos vemos en Canfranc (2/4)"
   08_nos_vemos_en_canfrac_A1_2.jpg: "Proyecto Y: Nos vemos en Canfranc (3/4)"
@@ -471,7 +474,7 @@ Elementos a tener en cuenta en esta propuesta la relación de la plaza con el co
 <a href='https://decide.madrid.es/docs/procesos/once_plazas/11_plaza_duquesa_osuna.pdf'>Mapa de la Plaza Duquesa de Osuna</a>"
 
 desciption_for_answer:
-  plaza-remonta/proyecto-x: "LA CIUDAD, UNA RED DE ESPACIOS COMPARTIDOS ...LA REMONTA, UNA PLAZA CONECTADA
+  plaza-remonta/proyecto-x: "LA CIUDAD, UNA RED DE ESPACIOS COMPARTIDO. LA REMONTA, UNA PLAZA CONECTADA
 
 La Remonta es una isla urbana conectada con la ciudad a través de Bravo Murillo, con el distrito a través de Capitán Argibay, y con el barrio por la red de calles adyacentes. Pero esa conexión es meramente física, el objetivo a escala urbana es reconectar la Plaza con el distrito  y  con el corredor verde del  Paseo de la Dirección.
 
@@ -479,18 +482,15 @@ Se trata de una conexión social y ecológica.
 
 Una Plaza más verde e integrada en el sistema de parques y zonas verdes del distrito.
 
-
-LA ESCALA, UNA PLAZA PARA EL BARRIO.
-...LA REMONTA, UNA 'PLAZA VERDE PORTIVADA' DE 60x60 METROS
+LA ESCALA, UNA PLAZA PARA EL BARRIO. LA REMONTA, UNA 'PLAZA VERDE PORTIVADA' DE 60x60 METROS
 
 La Remonta responde a una tipología de plaza porticada y a un ambicioso plan de ser la plaza porticada más grande de Madrid, y lo es.
-La Remonta tiene unas dimensiones de 112x108 metros, compitiendo y superando en tamaño a la Plaza Mayor de Madrid , con un tamaño de 120x80 metros, e incluso la Plaza Mayor porticada más grande de España, la de Valladolid, con unas dimensiones de 125x84 metros.
 
-El tamaño de La Remonta no se ajusta a su contexto…. Es por eso que la propuesta propone redefinir la escala de La Remonta a través de un nuevo perímetro verde y programado con diferentes usos, que libera el espacio central de la plaza, transformando la plaza de La Remonta en una tipología de 'plaza verde porticada' de 60x60 metros.   El anillo verde propuesto define un cuadrado interior libre de obstáculos, interrumpido en todos los puntos necesarios para respetar las conexiones urbanas y ser un lugar accesible para todos.
+La Remonta tiene unas dimensiones de 112x108 metros, compitiendo y superando en tamaño a la Plaza Mayor de Madrid, con un tamaño de 120x80 metros, e incluso la Plaza Mayor porticada más grande de España, la de Valladolid, con unas dimensiones de 125x84 metros.
 
+El tamaño de La Remonta no se ajusta a su contexto…. Es por eso que la propuesta propone redefinir la escala de La Remonta a través de un nuevo perímetro verde y programado con diferentes usos, que libera el espacio central de la plaza, transformando la plaza de La Remonta en una tipología de 'plaza verde porticada' de 60x60 metros. El anillo verde propuesto define un cuadrado interior libre de obstáculos, interrumpido en todos los puntos necesarios para respetar las conexiones urbanas y ser un lugar accesible para todos.
 
-UN ANILLO PROGRAMADO, UN ESPACIO PARA TODOS
-…LA REMONTA, UNA PLAZA MULTICULTURAL, INTEGENERACIONAL Y ACCESIBLE
+UN ANILLO PROGRAMADO, UN ESPACIO PARA TODOS. LA REMONTA, UNA PLAZA MULTICULTURAL, INTEGENERACIONAL Y ACCESIBLE
 
 '60x60' refuerza la cohesión social, y crea una infraestructura de la que se pueden apropiar las diferentes comunidades del distrito. Un espacio multicultural, diverso, intergeneracional, y heterogéneo.
 
@@ -500,9 +500,7 @@ A modo de ensayo se proponen los siguientes usos: juegos de agua y fuente, quios
 
 El anillo programado está equipado con tomas de voz y datos, para que la plaza pueda albergar todo tipo de usos temporales. Es una plaza plug-in, flexible y abierta a la incertidumbre.
 
-
-LA MATERIALIDAD, UNA SOLUCIÓN CONTEXTUADA
-…LA REMONTA, UNA PLAZA EN TETUÁN Y EN MADRID
+LA MATERIALIDAD, UNA SOLUCIÓN CONTEXTUADA. LA REMONTA, UNA PLAZA EN TETUÁN Y EN MADRID
 
 La solución de urbanización y paisajismo no es una solución genérica que se pueda encontrar en cualquier plaza del mundo, sino un proyecto anclado en la identidad y el contexto de Tetuán, y de Madrid.
 

@@ -39,6 +39,7 @@ en:
         help_text_3: "All persons registered in Madrid over 16 years old can participate."
         help_text_4: "Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly."
         help_text_5: "In addition to the issues that the City of Madrid submits to a direct decision of the citizens, also voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council of Madrid ask to the citizens decision."
+        help_text_6: "More information about voting"
       orders:
         random: Random
   forums:

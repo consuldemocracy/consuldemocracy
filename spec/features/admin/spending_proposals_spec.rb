@@ -480,28 +480,6 @@ feature 'Admin spending proposals' do
       end
     end
 
-    scenario "Adds existing tags", :js do
-      create(:spending_proposal, tag_list: 'Education, Health')
-
-      spending_proposal = create(:spending_proposal)
-
-      visit admin_spending_proposal_path(spending_proposal)
-      click_link 'Edit classification'
-
-      find('.js-add-tag-link', text: 'Education').click
-
-      fill_in 'spending_proposal_title', with: 'Updated title'
-
-      click_button 'Update'
-
-      expect(page).to have_content 'Investment project updated succesfully.'
-
-      within "#tags" do
-        expect(page).to have_content 'Education'
-        expect(page).to_not have_content 'Health'
-      end
-    end
-
     scenario "Adds non existent tags" do
       spending_proposal = create(:spending_proposal)
 
