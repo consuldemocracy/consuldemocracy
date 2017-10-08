@@ -611,7 +611,7 @@ Rails.application.routes.draw do
   #Polls 2017 results & stats
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
-  get 'vota',                                    to: 'polls#results_2017',  as: 'first_voting'
+  get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'first_voting'
 
   # more information pages
   get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',                 as: 'more_info'
