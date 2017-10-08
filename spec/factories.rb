@@ -509,6 +509,8 @@ FactoryGirl.define do
     sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
     nvotes_poll_id "128"
 
+    slug "this-is-a-slug"
+
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
 

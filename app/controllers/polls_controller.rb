@@ -1,6 +1,7 @@
 class PollsController < ApplicationController
-
   include PollsHelper
+
+  before_action :load_poll, except: [:index]
 
   load_and_authorize_resource
 
@@ -46,4 +47,10 @@ class PollsController < ApplicationController
 
   def info_2017
   end
+
+  private
+
+    def load_poll
+      @poll = Poll.find_by(slug: params[:id]) || Poll.find_by(id: params[:id])
+    end
 end

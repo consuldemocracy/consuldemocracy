@@ -65,6 +65,16 @@ feature 'Polls' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
 
+    scenario "Visit path with id" do
+      visit poll_path(poll.id)
+      expect(page).to have_current_path(poll_path(poll.id))
+    end
+
+    scenario "Visit path with slug" do
+      visit poll_path(poll.slug)
+      expect(page).to have_current_path(poll_path(poll.slug))
+    end
+
     scenario 'Lists questions from proposals as well as regular ones' do
       normal_question = create(:poll_question, poll: poll)
       proposal_question = create(:poll_question, poll: poll, proposal: create(:proposal))
