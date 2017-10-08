@@ -28,6 +28,7 @@ desc "Create second citizen poll"
       starts_at: 1.week.ago,
       ends_at: 1.week.from_now,
       geozone_restricted: false,
+      slug: "Remodelación de la #{main_square_names[i]}".parameterize,
       questions_attributes: [
         { title: "¿Consideras necesario remodelar la plaza?",
           author: User.first,
@@ -219,4 +220,3 @@ puts document
     end
   end
 end
-

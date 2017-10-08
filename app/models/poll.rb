@@ -30,6 +30,10 @@ class Poll < ActiveRecord::Base
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
 
+  def to_param
+    self.name.parameterize
+  end
+
   def current?(timestamp = Date.current.beginning_of_day)
     starts_at <= timestamp && timestamp <= ends_at
   end
