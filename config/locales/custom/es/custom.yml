@@ -166,12 +166,10 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      title: Haz tu propuesta ciudadana
-      text: Te contamos en 10 pasos cómo presentar y difundir tu propuesta para mejorar Madrid.
-      button: Más información
-      button: Infórmate
-      button_title: Leer diez claves para crear una propuesta ciudadana en Decide Madrid
-      button_proposal: Crea una propuesta
+      label: Nueva votación ciudadana
+      title: Vota once plazas
+      text: Hasta el 22 de octubre, decide sobre la remodelación de las plazas de once distritos Madrid.
+      button: Vota aquí
     results:
       label: "Presupuestos participativos"
       title: "Resultados de la votación"
