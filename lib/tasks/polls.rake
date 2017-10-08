@@ -28,7 +28,7 @@ desc "Create second citizen poll"
       starts_at: 1.week.ago,
       ends_at: 1.week.from_now,
       geozone_restricted: false,
-      slug: "Remodelación de la #{main_square_names[i]}".parameterize,
+      slug: "#{main_square_slugs[i]}",
       questions_attributes: [
         { title: "¿Consideras necesario remodelar la plaza?",
           author: User.first,
@@ -95,6 +95,20 @@ desc "Create second citizen poll"
      "Plaza Cívica Mar de Cristal (Hortaleza)",
      "Plaza Mayor de Villaverde y Plaza de Ágata (Villaverde)",
      "Plaza Cívica de San Blas (San Blas - Canillejas)"]
+  end
+
+  def main_square_slugs
+    ["rehabilitacion-plaza-duquesa-osuna",
+     "rehabilitacion-plaza-remonta",
+     "rehabilitacion-plaza-vaguada",
+     "rehabilitacion-plaza-civica-lucero",
+     "rehabilitacion-plaza-emperatriz",
+     "rehabilitacion-plaza-puerto-canfranc",
+     "rehabilitacion-plaza-encuentro",
+     "rehabilitacion-plaza-misterios",
+     "rehabilitacion-plaza-civica-mar-cristal",
+     "rehabilitacion-plaza-mayor-villaverde",
+     "rehabilitacion-plaza-civica-san-blas"]
   end
 
   def project_x_names
