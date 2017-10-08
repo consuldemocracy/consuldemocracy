@@ -88,7 +88,7 @@
   <div class="expanded poll-more-info-answers">
     <div class="row padding">
 
-      <% @poll.questions.map(&:question_answers).flatten.each do |answer| %>
+      <% @poll.questions.map(&:question_answers).flatten.reverse.each do |answer| %>
         <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
              data-toggler="medium-6 answer-divider">
 
