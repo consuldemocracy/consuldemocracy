@@ -1,6 +1,6 @@
 <div class="poll-question-answers">
   <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
-    <% question.question_answers.each do |answer| %>
+    <% question.question_answers.reverse.each do |answer| %>
       <% if @answers_by_question_id[question.id] == answer.title &&
             (!voted_before_sign_in(question) ||
              question.poll.voted_in_booth?(current_user)) %>
