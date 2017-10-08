@@ -1,6 +1,11 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
+<% provide :meta_description, t("polls.index.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: polls_url %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <meta name="twitter:image" content="<%= root_url %>social_media_once_plazas_twitter.png" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_once_plazas.png"/>
 <% end %>
 
 <%= render "shared/section_header", i18n_namespace: "polls.index.section_header", image: "polls" %>

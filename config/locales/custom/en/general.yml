@@ -28,13 +28,15 @@ en:
         help_text_4: 'In February 2017 occurred the first citizen vote in which were approved the proposals "Madrid 100% sostenible" and "Billete único para el transporte público".'
   polls:
     index:
+      title: Vote eleven squares on Decide Madrid
+      description: You decide about remodeling of eleven squares of Madrid. From Barajas to Villaverde, vote how you want changes these places.
       section_header:
         title: Citizen Voting
         help: Help about citizen voting
       section_footer:
         title: Help about citizen voting
         description: "Decide now what the City Council will do with these 11 squares."
-        help_text_1: "The City Council has selected 11 squares of the city for its remodeling and made a participatory process to make that decision that culminates now. The process has had dialogues with neighbors, open debates in Decide Madrid and a contest of ideas that ends now in this direct citizen vote."
+        help_text_1: "The City Council has selected 11 squares of the city for its remodeling and has celebrated a participatory process to make that decision that culminates now. The process has had dialogues with neighbors, open debates in Decide Madrid and a contest of ideas that ends now in this direct citizen vote."
         help_text_2: "You can decide on each square to remodel or not, and in case it is remodeled which of the two finalist projects will be carried out. Both decisions will be taken directly by the citizen by a majority of supports in each decision between the two possibilities."
         help_text_3: "All persons registered in Madrid over 16 years old can participate."
         help_text_4: "Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly."

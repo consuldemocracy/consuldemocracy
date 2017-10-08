@@ -28,13 +28,15 @@ es:
         help_text_4: 'En febrero de 2017 tuvo lugar la primera votación ciudadana en la que se aprobaron las propuestas "Madrid 100% sostenible" y "Billete único para el transporte público".'
   polls:
     index:
+      title: Vota once plazas en Decide Madrid
+      description: Tú decides sobre la remodelación de once plazas de Madrid. Desde Barajas hasta Villaverde, vota cómo quieres que cambien estos espacios.
       section_header:
         title: Votaciones ciudadanas
         help: Ayuda sobre las votaciones ciudadanas
       section_footer:
         title: Ayuda sobre las votaciones ciudadanas
         description: "Decide ahora qué va a hacer el Ayuntamiento con estas 11 plazas."
-        help_text_1: "El Ayuntamiento ha seleccionado 11 plazas de la ciudad para su remodelación y realizado un proceso participativo para tomar esa decisión que culmina ahora. El proceso ha contado con diálogos con los vecinos, debates abiertos en Decide Madrid y un concurso de ideas que termina ahora en esta votación directa ciudadana."
+        help_text_1: "El Ayuntamiento ha seleccionado 11 plazas de la ciudad para su remodelación y ha realizado un proceso participativo para tomar esa decisión que culmina ahora. El proceso ha contado con diálogos con los vecinos, debates abiertos en Decide Madrid y un concurso de ideas que termina ahora en esta votación directa ciudadana."
         help_text_2: "Puedes decidir respecto a cada plaza si se debe remodelar o no, y en caso de que se remodele cuál de los dos proyectos finalistas se llevará a cabo. Ambas decisiones se tomarán directamente por la ciudadanía por mayoría de apoyos en cada decisión entre las dos posibilidades."
         help_text_3: "Pueden participar todas las personas empadronadas en Madrid mayores de 16 años."
         help_text_4: "Regístrate para poder votar las cuestiones que pregunta a sus vecinos el Ayuntamiento de Madrid y las propuestas ciudadanas. Toma decisiones municipales de forma directa."
