@@ -18,7 +18,6 @@ class Poll < ActiveRecord::Base
   accepts_nested_attributes_for :questions
 
   validates :name, presence: true
-  validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
   validate :date_range
 
