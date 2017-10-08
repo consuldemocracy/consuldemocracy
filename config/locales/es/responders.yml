@@ -8,6 +8,8 @@ es:
         direct_message: "Tu mensaje ha sido enviado correctamente."
         poll: "Votación creada correctamente."
         poll_booth: "Urna creada correctamente."
+        poll_question_answer: "Respuesta creada correctamente"
+        poll_question_answer_video: "Vídeo creado correctamente"
         proposal: "Propuesta creada correctamente."
         proposal_notification: "Tu message ha sido enviado correctamente."
         representative: "Has actualizado tu representante"
@@ -32,3 +34,4 @@ es:
         budget_investment: "Proyecto de gasto eliminado."
         error: "No se pudo borrar"
         topic: "Tema eliminado."
+        poll_question_answer_video: "Vídeo de respuesta eliminado."

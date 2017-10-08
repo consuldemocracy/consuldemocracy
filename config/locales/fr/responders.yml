@@ -8,6 +8,8 @@ fr:
         direct_message: "Votre message a été envoyé avec succès."
         poll: "Vote créé avec succès."
         poll_booth: "Urne créée avec succès."
+        poll_question_answer: "Réponse créée avec succès"
+        poll_question_answer_video: "Vidéo créée avec succès"
         proposal: "Proposition créée avec succès."
         proposal_notification: "Votre message a correctement été envoyé."
         spending_proposal: "Proposition de dépense créée avec succès. Vous pouvez y accéder depuis %{activity}"
@@ -27,3 +29,4 @@ fr:
         spending_proposal: "Proposition de dépense supprimée avec succès."
         budget_investment: "Budget d'investissement supprimé avec succès."
         error: "Suppression impossible"
+        poll_question_answer_video: "Réponse vidéo supprimée avec succès."

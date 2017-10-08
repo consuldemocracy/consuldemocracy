@@ -596,14 +596,48 @@ en:
       new:
         title: "Create Question"
         poll_label: "Poll"
-        valid_answers_note: "Enter the answers separated by commas (,)"
+      answers:
+        images:
+          add_image: "Add image"
+          save_image: "Save image"
       show:
         proposal: Original proposal
         author: Author
         title: Title
         valid_answers: Valid answers
+        add_answer: Add answer
         video_url: External video
-        documents: Documents (1)
+        answers:
+          title: Answer
+          description: Description
+          videos: Videos
+          video_list: Video list
+          images: Images
+          images_list: Images list
+          documents: Documents
+          documents_list: Documents list
+          document_title: Title
+          document_actions: Actions
+    answers:
+      new:
+        title: New answer
+      show:
+        title: Title
+        description: Description
+        images: Images
+        images_list: Images list
+      edit:
+        title: Edit answer
+      videos:
+        index:
+          title: Videos
+          add_video: Add video
+          video_title: Title
+          video_url: External video
+        new:
+          title: New video
+        edit:
+          title: Edit video
     recounts:
       index:
         title: "Recounts"
@@ -941,15 +975,16 @@ en:
         total: Total
         users_who_have_sent_message: Users that have sent a private message
       polls:
-        title: Poll February 13th to 19th
-        web_votes: Web votes
-        booth_votes: Booth votes
-        participants: Participants
+        title: Poll Stats
+        all: Polls
+        web_participants: Web participants
+        total_participants: Total Participants
+        poll_questions: "Questions from poll: %{poll}"
         table:
-          title: Votes by poll
           poll_name: Poll
-          origin_web: Web
-          origin_booth: Booth
+          question_name: Question
+          origin_web: Web participants
+          origin_total: Total participants
       proposal_notifications:
         title: Proposal notifications
         total: Total

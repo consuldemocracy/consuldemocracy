@@ -109,9 +109,8 @@ class Admin::StatsController < Admin::BaseController
   end
 
   def polls
-    @polls = ::Poll.all
-    @voters = ::Poll::Voter.all
-    @participants = ::Poll::Voter.select(:user_id).distinct.count
+    @polls = ::Poll.current
+    @participants = ::Poll::Voter.where(poll: @polls)
   end
 
   private

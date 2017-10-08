@@ -2,6 +2,7 @@ class Poll
   class Officer < ActiveRecord::Base
     belongs_to :user
     has_many :officer_assignments, class_name: "Poll::OfficerAssignment"
+    has_many :shifts, class_name: "Poll::Shift"
     has_many :failed_census_calls, foreign_key: :poll_officer_id
 
     validates :user_id, presence: true, uniqueness: true

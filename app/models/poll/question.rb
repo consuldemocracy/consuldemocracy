@@ -1,11 +1,6 @@
 class Poll::Question < ActiveRecord::Base
   include Measurable
   include Searchable
-  include Documentable
-  documentable max_documents_allowed: 1,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
-  accepts_nested_attributes_for :documents, allow_destroy: true
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -14,9 +9,12 @@ class Poll::Question < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   has_many :comments, as: :commentable
-  has_many :answers
+  has_many :answers, class_name: 'Poll::Answer'
+  has_many :question_answers, class_name: 'Poll::Question::Answer'
   has_many :partial_results
   belongs_to :proposal
+
+  accepts_nested_attributes_for :question_answers
 
   validates :title, presence: true
   validates :author, presence: true

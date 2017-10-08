@@ -597,14 +597,48 @@ es:
       new:
         title: "Crear pregunta ciudadana"
         poll_label: "Votación"
-        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
+      answers:
+        images:
+          add_image: "Añadir imagen"
+          save_image: "Guardar imagen"
       show:
         proposal: Propuesta ciudadana original
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
+        add_answer: Añadir respuesta
         video_url: Video externo
-        documents: Documentos (1)
+        answers:
+          title: Respuesta
+          description: Descripción
+          videos: Vídeos
+          video_list: Lista de vídeos
+          images: Imágenes
+          images_list: Lista de imágenes
+          documents: Documentos
+          documents_list: Lista de documentos
+          document_title: Título
+          document_actions: Acciones
+    answers:
+      new:
+        title: Nueva respuesta
+      show:
+        title: Título
+        description: Descripción
+        images: Imágenes
+        images_list: Lista de imágenes
+      edit:
+        title: Editar respuesta
+      videos:
+        index:
+          title: Vídeos
+          add_video: Añadir vídeo
+          video_title: Título
+          video_url: External video
+        new:
+          title: Nuevo video
+        edit:
+          title: Editar vídeo
     recounts:
       index:
         title: "Recuentos"
@@ -942,15 +976,16 @@ es:
         total: Total
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
       polls:
-        title: Votación 13 al 19 de Febrero
-        web_votes: Votos en Ágora
-        booth_votes: Votos en Urnas
-        participants: Participantes
+        title: Estadísticas de votaciones
+        all: Votaciones
+        web_participants: Participantes en Web
+        total_participants: Participantes totales
+        poll_questions: "Preguntas de votación: %{poll}"
         table:
-          title: Votos por votación
           poll_name: Votación
-          origin_web: Ágora
-          origin_booth: Urna
+          question_name: Pregunta
+          origin_web: Participantes Web 
+          origin_total: Participantes Totales
       proposal_notifications:
         title: Notificaciones de propuestas
         total: Total

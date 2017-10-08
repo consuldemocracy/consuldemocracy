@@ -25,7 +25,6 @@ feature 'Admin poll questions' do
 
     expect(page).to have_content(question.title)
     expect(page).to have_content(question.author.name)
-    expect(page).to have_content(question.valid_answers.join(" "))
   end
 
   scenario 'Create' do
@@ -61,7 +60,6 @@ feature 'Admin poll questions' do
 
     expect(current_path).to eq(new_admin_question_path)
     expect(page).to have_field('poll_question_title', with: proposal.title)
-    expect(page).to have_field('poll_question_valid_answers', with: "Yes, No")
 
     select 'Proposals', from: 'poll_question_poll_id'
 
@@ -112,23 +110,5 @@ feature 'Admin poll questions' do
   end
 
   pending "Mark all city by default when creating a poll question from a successful proposal"
-
-  it_behaves_like "nested documentable",
-                  "administrator",
-                  "poll_question",
-                  "new_admin_question_path",
-                  { },
-                  "documentable_fill_new_valid_poll_question",
-                  "Save",
-                  "Star Wars: Episode IV - A New Hope"
-
-  it_behaves_like "nested documentable",
-                  "administrator",
-                  "poll_question",
-                  "edit_admin_question_path",
-                  { "id": "id" },
-                  nil,
-                  "Save",
-                  "Changes saved"
 
 end

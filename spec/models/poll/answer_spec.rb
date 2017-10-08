@@ -26,6 +26,7 @@ describe Poll::Answer do
     end
 
     it "should be valid for answers included in the Poll::Question's list" do
+      skip "review when removing valid_answers"
       question = create(:poll_question, valid_answers: 'One, Two, Three')
       expect(build(:poll_answer, question: question, answer: 'One')).to be_valid
       expect(build(:poll_answer, question: question, answer: 'Two')).to be_valid
@@ -45,7 +46,7 @@ describe Poll::Answer do
       answer = create(:poll_answer, question: question, author: author, answer: "Yes")
       expect(answer.poll.voters).to be_blank
 
-      answer.record_voter_participation
+      answer.record_voter_participation('token')
       expect(poll.reload.voters.size).to eq(1)
       voter = poll.voters.first
 
@@ -56,12 +57,12 @@ describe Poll::Answer do
 
     it "updates a poll_voter with user and poll data" do
       answer = create(:poll_answer, question: question, author: author, answer: "Yes")
-      answer.record_voter_participation
+      answer.record_voter_participation('token')
 
       expect(poll.reload.voters.size).to eq(1)
 
       answer = create(:poll_answer, question: question, author: author, answer: "No")
-      answer.record_voter_participation
+      answer.record_voter_participation('token')
 
       expect(poll.reload.voters.size).to eq(1)
 

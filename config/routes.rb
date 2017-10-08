@@ -138,7 +138,7 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resources :polls, only: [:show, :index], path: 'votaciones' do
+  resources :polls, only: [:show, :index], path: 'vota' do
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
@@ -336,7 +336,13 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :questions
+      resources :questions, shallow: true do
+        resources :answers, except: [:index, :destroy], controller: 'questions/answers', shallow: true do
+          resources :images, controller: 'questions/answers/images'
+          resources :videos, controller: 'questions/answers/videos'
+          get :documents, to: 'questions/answers#documents'
+        end
+      end
     end
 
     resources :verifications, controller: :verifications, only: :index do
@@ -605,10 +611,12 @@ Rails.application.routes.draw do
   #Polls 2017 results & stats
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
-  get 'vota',                                    to: 'polls#results_2017',  as: 'first_voting'
+  get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'first_voting'
 
   # more information pages
   get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',                 as: 'more_info'
+  get 'mas-informacion-votacion-febrero-2017',       to: 'pages#show', id: 'more_info/index_february_2017',   as: 'more_info_february'
+  get 'mas-informacion-votacion-octubre-2017',       to: 'pages#show', id: 'more_info/index_october_2017',    as: 'more_info_october'
   get 'mas-informacion/como-usar',                   to: 'pages#show', id: 'more_info/how_to_use/index',      as: 'how_to_use'
   get 'mas-informacion/faq',                         to: 'pages#show', id: 'more_info/faq/index',             as: 'faq'
   get 'mas-informacion/propuestas',                  to: 'pages#show', id: 'more_info/proposals/index',       as: 'more_info_proposals'
