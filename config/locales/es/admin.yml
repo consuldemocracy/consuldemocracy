@@ -977,18 +977,15 @@ es:
         users_who_have_sent_message: Usuarios que han enviado un mensaje privado
       polls:
         title: Estadísticas de votaciones
-        current: Votaciones Abiertas y Próximas
-        expired: Votaciones Pasadas
+        all: Votaciones
         web_participants: Participantes en Web
-        booth_participants: Participantes en Urnas
         total_participants: Participantes totales
         poll_questions: "Preguntas de votación: %{poll}"
         table:
-          title: Votos por votación
           poll_name: Votación
           question_name: Pregunta
-          origin_web: Web
-          origin_booth: Urna
+          origin_web: Participantes Web 
+          origin_total: Participantes Totales
       proposal_notifications:
         title: Notificaciones de propuestas
         total: Total

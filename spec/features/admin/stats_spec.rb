@@ -609,10 +609,9 @@ feature 'Stats' do
 
   context "Polls" do
 
-    scenario "Total votes by origin" do
+    scenario "Total participants by origin" do
       oa = create(:poll_officer_assignment)
       3.times { create(:poll_voter, origin: "web") }
-      5.times { create(:poll_voter, origin: "booth", officer_assignment: oa) }
 
       visit admin_stats_path
 
@@ -620,12 +619,8 @@ feature 'Stats' do
         click_link "Polls"
       end
 
-      within("#web_votes") do
+      within("#web_participants") do
         expect(page).to have_content "3"
-      end
-
-      within("#booth_votes") do
-        expect(page).to have_content "5"
       end
     end
 
@@ -645,7 +640,7 @@ feature 'Stats' do
       end
     end
 
-    scenario "Votes by poll" do
+    scenario "Participants by poll" do
       oa = create(:poll_officer_assignment)
 
       poll1 = create(:poll)
@@ -653,9 +648,6 @@ feature 'Stats' do
 
       1.times { create(:poll_voter, poll: poll1, origin: "web") }
       2.times { create(:poll_voter, poll: poll2, origin: "web") }
-
-      3.times { create(:poll_voter, poll: poll1, origin: "booth", officer_assignment: oa) }
-      4.times { create(:poll_voter, poll: poll2, origin: "booth", officer_assignment: oa) }
 
       visit admin_stats_path
 
@@ -665,24 +657,48 @@ feature 'Stats' do
 
       within("#polls") do
 
-        within("#poll_#{poll1.id}_web") do
+        within("#poll_#{poll1.id}") do
           expect(page).to have_content "1"
         end
 
-        within("#poll_#{poll2.id}_web") do
+        within("#poll_#{poll2.id}") do
           expect(page).to have_content "2"
-        end
-
-        within("#poll_#{poll1.id}_booth") do
-          expect(page).to have_content "3"
-        end
-
-        within("#poll_#{poll2.id}_booth") do
-          expect(page).to have_content "4"
         end
 
       end
     end
-  end
 
+    scenario "Participants by poll question" do
+      user1 = create(:user, :level_two)
+      user2 = create(:user, :level_two)
+
+      poll = create(:poll)
+
+      question1 = create(:poll_question, poll: poll)
+      question2 = create(:poll_question, poll: poll)
+
+      create(:poll_answer, question: question1, author: user1)
+      create(:poll_answer, question: question2, author: user1)
+      create(:poll_answer, question: question2, author: user2)
+
+      visit admin_stats_path
+
+      within("#stats") do
+        click_link "Polls"
+      end
+
+      within("#poll_question_#{question1.id}") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_question_#{question2.id}") do
+        expect(page).to have_content "2"
+      end
+
+      within("#poll_#{poll.id}_questions_total") do
+        expect(page).to have_content "2"
+      end
+    end
+
+  end
 end

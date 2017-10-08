@@ -542,7 +542,6 @@ en:
     show:
       back: "Go back to my activity"
   shared:
-    total: Total
     comments:
       title: 'Comments'
       login_to_comment: 'You must %{signin} or %{signup} to leave a comment.'

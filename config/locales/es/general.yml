@@ -543,7 +543,6 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
-    total: Total
     comments:
       title: 'Comentarios'
       login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'

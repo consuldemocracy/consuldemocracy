@@ -976,18 +976,15 @@ en:
         users_who_have_sent_message: Users that have sent a private message
       polls:
         title: Poll Stats
-        current: Current & Incoming Polls
-        expired: Passed Polls
+        all: Polls
         web_participants: Web participants
-        booth_participants: Booth participants
         total_participants: Total Participants
         poll_questions: "Questions from poll: %{poll}"
         table:
-          title: Votes by poll
           poll_name: Poll
           question_name: Question
-          origin_web: Web
-          origin_booth: Booth
+          origin_web: Web participants
+          origin_total: Total participants
       proposal_notifications:
         title: Proposal notifications
         total: Total
