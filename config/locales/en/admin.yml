@@ -975,15 +975,16 @@ en:
         total: Total
         users_who_have_sent_message: Users that have sent a private message
       polls:
-        title: Poll February 13th to 19th
-        web_votes: Web votes
-        booth_votes: Booth votes
-        participants: Participants
+        title: Poll Stats
+        all: Polls
+        web_participants: Web participants
+        total_participants: Total Participants
+        poll_questions: "Questions from poll: %{poll}"
         table:
-          title: Votes by poll
           poll_name: Poll
-          origin_web: Web
-          origin_booth: Booth
+          question_name: Question
+          origin_web: Web participants
+          origin_total: Total participants
       proposal_notifications:
         title: Proposal notifications
         total: Total
