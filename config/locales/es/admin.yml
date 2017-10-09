@@ -552,6 +552,7 @@ es:
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
+        geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
         submit_button: "Crear votación"

@@ -552,6 +552,7 @@ en:
         create: "Create poll"
         name: "Name"
         dates: "Dates"
+        geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
         submit_button: "Create poll"
