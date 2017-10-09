@@ -60,6 +60,14 @@
           <%= t("management.menu.support_budget_investments") %>
         <% end %>
       </li>
+
+        <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "print") ||
+            (controller_name == "budgets" && action_name == "print_investments") %>>
+          <%= link_to print_investments_management_budgets_path do %>
+              <span class="icon-print"></span>
+              <%= t("management.menu.print_budget_investments") %>
+          <% end %>
+        </li>
     <% end %>
 
     <li <%= "class=active" if controller_name == "proposals" && action_name == "print" %>>
@@ -75,17 +83,6 @@
         <%= t("management.menu.print_spending_proposals") %>
       <% end %>
     </li>
-
-    <% if Setting['feature.budgets'] %>
-      <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "print") ||
-                                (controller_name == "budgets" && action_name == "print_investments") %>>
-        <%= link_to print_investments_management_budgets_path do %>
-          <span class="icon-print"></span>
-          <%= t("management.menu.print_budget_investments") %>
-        <% end %>
-      </li>
-    <% end %>
-
 
     <li>
       <%= link_to new_management_user_invite_path do %>
