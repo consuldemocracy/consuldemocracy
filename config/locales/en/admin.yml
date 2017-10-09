@@ -619,6 +619,7 @@ en:
         description: Description
         images: Images
         images_list: Images list
+        edit: Edit answer
       edit:
         title: Edit answer
       videos:
