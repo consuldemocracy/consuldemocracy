@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<%= link_to t('shared.edit'), edit_admin_question_path(@question),
+<%= link_to t('admin.questions.show.edit_question'), edit_admin_question_path(@question),
             class: "button hollow float-right" %>
 
 <div class="clear"></div>
@@ -8,7 +8,7 @@
 <div class="small-12 medium-6">
   <div class="callout highlight">
     <p>
-      <strong><%= t("admin.questions.show.title") %></strong>
+      <strong><%= t("admin.questions.show.question") %></strong>
       <br>
       <%= @question.title %>
     </p>
@@ -35,7 +35,7 @@
       <%= t('admin.questions.show.valid_answers') %>
       <%= link_to t("admin.questions.show.add_answer"),
                   new_admin_question_answer_path(@question),
-                  class: "button hollow float-right" %>
+                  class: "button float-right" %>
     </th>
   </tr>
 

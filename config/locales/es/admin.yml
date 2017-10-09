@@ -595,7 +595,8 @@ es:
       show:
         proposal: Propuesta ciudadana original
         author: Autor
-        title: Título
+        question: Pregunta
+        edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
         video_url: Video externo
