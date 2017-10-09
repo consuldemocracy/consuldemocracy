@@ -1,11 +1,15 @@
-<%# provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
-<%# provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
-<%# provide :social_media_meta_tags do %>
-  <%# render "shared/social_media_meta_tags",
-              social_url: first_voting_url,
+<%= provide :title,            t("social_share.polls_show.title_#{@poll.id}") %>
+<%= provide :meta_description, t("social_share.polls_show.description_#{@poll.id}") %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: poll_url,
               social_title: t("social_share.polls_show.title_#{@poll.id}"),
               social_description: t("social_share.polls_show.facebook_#{@poll.id}") %>
-<%# end %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <meta name="twitter:image" content="<%= root_url %>social_media_polls_<%= @poll.id %>_twitter.jpg" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_polls_<%= @poll.id %>.jpg"/>
+<% end %>
 
 <div class="polls-show">
   <div id="polls-show-header" class="expanded no-margin-top polls-show-header">
@@ -56,6 +60,9 @@
       <% @questions.each do |question| %>
         <%= render 'polls/questions/question', question: question, token: @token %>
       <% end %>
+      <div class="callout primary text-center">
+        <%= link_to t("poll_questions.show.see_projects"), "#poll_more_info_answers", class: "lead" %>
+      </div>
 
       <% if poll_voter_token(@poll, current_user).empty? %>
         <div class="callout token-message js-token-message" style="display: none">
@@ -63,7 +70,7 @@
         </div>
       <% end %>
 
-      <div class="callout primary text-center">
+      <div class="text-center">
         <%= link_to t("polls.show.participate_in_other_polls"), polls_path %>
       </div>
     </div>
@@ -85,7 +92,7 @@
     </div>
   </div>
 
-  <div class="expanded poll-more-info-answers">
+  <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
 
       <% @poll.questions.map(&:question_answers).flatten.reverse.each do |answer| %>
