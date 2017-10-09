@@ -52,9 +52,7 @@
           <%= t("management.menu.create_budget_investment") %>
         <% end %>
       </li>
-    <% end %>
 
-    <% if Setting['feature.budgets'] %>
       <li <%= "class=active" if (controller_name == "budget_investments" && action_name == "index") ||
                                 (controller_name == "budget" && action_name == "support_investments")%>>
         <%= link_to support_investments_management_budgets_path do %>
