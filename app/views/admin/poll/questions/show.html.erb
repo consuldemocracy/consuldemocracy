@@ -47,7 +47,7 @@
     <th scope="col" class="text-center"><%= t("admin.questions.show.answers.videos") %></th>
   </tr>
 
-  <% @question.question_answers.reverse.each do |answer| %>
+  <% @question.question_answers.order(id: :desc).each do |answer| %>
     <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
       <td><%= link_to answer.title, admin_answer_path(answer) %></td>
       <td><%= answer.description %></td>
