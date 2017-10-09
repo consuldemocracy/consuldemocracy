@@ -14,4 +14,12 @@ class Poll::Question::Answer < ActiveRecord::Base
   def description
     super.try :html_safe
   end
+  
+  def self.order_answers(ordered_array)
+    ordered_array.each_with_index do |answer_id, order|
+      answer = self.find(answer_id)
+      answer.update_attribute(:given_order, (order + 1))
+      answer.save      
+    end  
+  end
 end
