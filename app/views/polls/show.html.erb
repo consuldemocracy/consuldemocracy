@@ -125,6 +125,22 @@
               <% end %>
             </div>
           <% end %>
+
+          <% if answer.videos.present? %>
+            <div class="video-link">
+              <p>
+                <span class="icon-video"></span>&nbsp;
+                <strong><%= t("polls.show.videos") %></strong>
+              </p>
+
+              <% answer.videos.each do |video| %>
+                  <%= link_to video.title,
+                              video.url,
+                              target: "_blank",
+                              rel: "nofollow" %><br>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
