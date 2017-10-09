@@ -49,21 +49,21 @@
 
   <% @question.question_answers.each do |answer| %>
     <tr id="<%= dom_id(answer) %>" class="poll_question_answer">
-      <td><%= link_to answer.title, admin_answer_path(answer) %></td>
-      <td><%= answer.description %></td>
-      <td class="text-center">
+      <td class="align-top"><%= link_to answer.title, admin_answer_path(answer) %></td>
+      <td class="align-top break"><%= answer.description %></td>
+      <td class="align-top text-center">
         (<%= answer.images.count %>)
         <br>
         <%= link_to t("admin.questions.show.answers.images_list"),
                     admin_answer_images_path(answer) %>
       </td>
-      <td class="text-center">
+      <td class="align-top text-center">
         (<%= answer.documents.count rescue 0 %>)
         <br>
         <%= link_to t("admin.questions.show.answers.documents_list"),
                     admin_answer_documents_path(answer) %>
       </td>
-      <td class="text-center">
+      <td class="align-top text-center">
         (<%= answer.videos.count %>)
         <br>
         <%= link_to t("admin.questions.show.answers.video_list"),
