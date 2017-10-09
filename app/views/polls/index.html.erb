@@ -4,6 +4,12 @@
   <%= render "shared/canonical", href: polls_url %>
 <% end %>
 <%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: "https://decide.madrid.es/vota",
+              social_title: t("polls.index.title"),
+              social_description: t("polls.index.description") %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
   <meta name="twitter:image" content="<%= root_url %>social_media_once_plazas_twitter.png" />
   <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_once_plazas.png"/>
 <% end %>
