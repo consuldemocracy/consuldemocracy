@@ -7,8 +7,6 @@ class Poll
     has_many :officers, through: :officer_assignments
     has_many :voters
     has_many :partial_results
-    has_many :white_results
-    has_many :null_results
-    has_many :total_results
+    has_many :recounts
   end
 end

@@ -66,6 +66,7 @@ es:
       index:
         title: Presupuestos participativos
         new_link: Crear nuevo presupuesto
+        filter: Filtro
         filters:
           current: Abiertos
           finished: Terminados
@@ -214,8 +215,9 @@ es:
         title: Comentarios ocultos
     dashboard:
       index:
-        back: Volver a
+        back: Volver a %{org}
         title: Administración
+        description: Bienvenido al panel de administración de %{org}.
     debates:
       index:
         filter: Filtro
@@ -499,21 +501,18 @@ es:
         no_officers: "No hay presidentes de mesa asignados a esta votación."
         table_name: "Nombre"
         table_email: "Email"
-        add_officer_assignments: "Añadir turnos como presidente de mesa"
-        edit_officer_assignments: "Editar turnos"
       by_officer:
         date: "Fecha"
         booth: "Urna"
         assignments: "Turnos como presidente de mesa en esta votación"
         no_assignments: "No tiene turnos como presidente de mesa en esta votación."
-        total_recounts: "Recuentos totales"
-        total_recount: "Recuento total (presidente de mesa)"
     poll_shifts:
       new:
         add_shift: "Añadir turno"
         shift: "Asignación"
         shifts: "Turnos en esta urna"
         date: "Fecha"
+        task: "Tarea"
         edit_shifts: Asignar turno
         new_shift: "Nuevo turno"
         no_shifts: "Esta urna no tiene turnos asignados"
@@ -523,12 +522,16 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
+        select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
         table_name: "Nombre"
       flash:
         create: "Añadido turno de presidente de mesa"
         destroy: "Eliminado turno de presidente de mesa"
+        date_missing: "Debe seleccionarse una fecha"
+      vote_collection: Recoger Votos
+      recount_scrutiny: Recuento & Escrutinio
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -543,8 +546,9 @@ es:
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
         date: "Fecha"
-        total_recount: "Recuento total (presidente de mesa)"
+        count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
+        total_system: "Votos totales acumulados(automático)"
       index:
         booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
@@ -574,16 +578,10 @@ es:
         results_tab: Resultados
         no_questions: "No hay preguntas asignadas a esta votación."
         questions_title: "Listado de preguntas asignadas"
-        remove_question: "Desasignar pregunta"
-        add_question: "Incluir pregunta"
         table_title: "Título"
-        table_assignment: "Asignación"
-        table_name: "Nombre"
       flash:
         question_added: "Pregunta añadida a esta votación"
         error_on_question_added: "No se pudo asignar la pregunta"
-        question_removed: "Pregunta eliminada de esta votación"
-        error_on_question_removed: "No se pudo quitar la pregunta"
     questions:
       index:
         title: "Preguntas ciudadanas"
@@ -601,16 +599,50 @@ es:
       new:
         title: "Crear pregunta ciudadana"
         poll_label: "Votación"
-        valid_answers_note: "Escribe las respuestas separadas por comas (,)"
+      answers:
+        images:
+          add_image: "Añadir imagen"
+          save_image: "Guardar imagen"
       show:
         proposal: Propuesta ciudadana original
         author: Autor
         title: Título
         valid_answers: Respuestas válidas
-        description: Descripción
+        add_answer: Añadir respuesta
         video_url: Video externo
-        documents: Documentos
-        preview: Ver en la web
+        answers:
+          title: Respuesta
+          description: Descripción
+          videos: Vídeos
+          video_list: Lista de vídeos
+          images: Imágenes
+          images_list: Lista de imágenes
+          documents: Documentos
+          documents_list: Lista de documentos
+          document_title: Título
+          document_actions: Acciones
+    answers:
+      new:
+        title: Nueva respuesta
+        video_url: Video externo
+        documents: Documentos (1)
+      show:
+        title: Título
+        description: Descripción
+        images: Imágenes
+        images_list: Lista de imágenes
+      edit:
+        title: Editar respuesta
+      videos:
+        index:
+          title: Vídeos
+          add_video: Añadir vídeo
+          video_title: Título
+          video_url: External video
+        new:
+          title: Nuevo video
+        edit:
+          title: Editar vídeo
     recounts:
       index:
         title: "Recuentos"
@@ -622,7 +654,7 @@ es:
       index:
         title: "Resultados"
         no_results: "No hay resultados"
-        table_whites: Papeletas en blanco
+        table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
         table_answer: Respuesta
@@ -707,6 +739,13 @@ es:
           disabled: "Funcionalidad desactivada"
           enable: "Activar"
           disable: "Desactivar"
+        map:
+          title: Configuración del mapa
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
+          flash:
+            update: La configuración del mapa se ha guardado correctamente.
+          form:
+            submit: Actualizar
     shared:
       booths_search:
         button: Buscar

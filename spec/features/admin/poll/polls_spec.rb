@@ -58,6 +58,8 @@ feature 'Admin polls' do
     fill_in "poll_name", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
+    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
@@ -68,14 +70,18 @@ feature 'Admin polls' do
 
   scenario "Edit" do
     poll = create(:poll)
+    create(:image, imageable: poll)
 
     visit admin_poll_path(poll)
     click_link "Edit"
 
     end_date = 1.year.from_now
 
+    expect(page).to have_css("img[alt='#{poll.image.title}']")
+
     fill_in "poll_name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"
@@ -181,54 +187,6 @@ feature 'Admin polls' do
         expect(page).to_not have_content "There are no questions assigned to this poll"
       end
 
-      scenario 'Add question to poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, title: 'Should we rebuild the city?')
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-
-        fill_in 'search-questions', with: 'rebuild'
-        click_button 'Search'
-
-        within('#search-questions-results') do
-          click_link 'Include question'
-        end
-
-        expect(page).to have_content 'Question added to this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-      end
-
-      scenario 'Remove question from poll', :js do
-        poll = create(:poll)
-        question = create(:poll_question, poll: poll)
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (1)'
-        expect(page).to_not have_content 'There are no questions assigned to this poll'
-        expect(page).to have_content question.title
-
-        within("#poll_question_#{question.id}") do
-          click_link 'Remove question from poll'
-        end
-
-        expect(page).to have_content 'Question removed from this poll'
-
-        visit admin_poll_path(poll)
-
-        expect(page).to have_content 'Questions (0)'
-        expect(page).to have_content 'There are no questions assigned to this poll'
-        expect(page).to_not have_content question.title
-      end
-
     end
   end
 
@@ -249,18 +207,18 @@ feature 'Admin polls' do
         booth_assignment_final_recounted = create(:poll_booth_assignment, poll: poll)
 
         3.times do |i|
-          create(:poll_total_result,
+          create(:poll_recount,
                  booth_assignment: booth_assignment,
                  date: poll.starts_at + i.days,
-                 amount: 21)
+                 total_amount: 21)
         end
 
         2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
 
-        create(:poll_total_result,
+        create(:poll_recount,
                booth_assignment: booth_assignment_final_recounted,
                date: poll.ends_at,
-               amount: 55555)
+               total_amount: 55555)
 
         visit admin_poll_path(poll)
 
@@ -318,12 +276,10 @@ feature 'Admin polls' do
                   answer: 'Tomorrow',
                   amount: 5)
         end
-        create(:poll_white_result,
+        create(:poll_recount,
                booth_assignment: booth_assignment_1,
-               amount: 21)
-        create(:poll_null_result,
-               booth_assignment: booth_assignment_3,
-               amount: 44)
+               white_amount: 21,
+               null_amount: 44)
 
         visit admin_poll_path(poll)
 

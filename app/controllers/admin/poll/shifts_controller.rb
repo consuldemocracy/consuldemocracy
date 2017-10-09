@@ -1,7 +1,6 @@
 class Admin::Poll::ShiftsController < Admin::Poll::BaseController
 
   before_action :load_booth
-  before_action :load_polls
   before_action :load_officer
 
   def new
@@ -14,10 +13,10 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     @officer = @shift.officer
 
     if @shift.save
-      notice = t("admin.poll_shifts.flash.create")
-      redirect_to new_admin_booth_shift_path(@shift.booth), notice: notice
+      redirect_to new_admin_booth_shift_path(@shift.booth), notice: t("admin.poll_shifts.flash.create")
     else
       load_shifts
+      flash[:error] = t("admin.poll_shifts.flash.date_missing")
       render :new
     end
   end
@@ -30,17 +29,13 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
   end
 
   def search_officers
-    @officers = User.search(params[:search]).order(username: :asc)
+    @officers = User.search(params[:search]).order(username: :asc).select { |o| o.poll_officer? == true }
   end
 
   private
 
     def load_booth
       @booth = ::Poll::Booth.find(params[:booth_id])
-    end
-
-    def load_polls
-      @polls = ::Poll.current_or_incoming
     end
 
     def load_shifts
@@ -54,7 +49,7 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     end
 
     def shift_params
-      params.require(:shift).permit(:booth_id, :officer_id, :date)
+      shift_params = params.require(:shift).permit(:booth_id, :officer_id, :task, date:[:vote_collection_date, :recount_scrutiny_date])
+      shift_params.merge(date: shift_params[:date]["#{shift_params[:task]}_date".to_sym])
     end
-
 end

@@ -29,7 +29,7 @@ es:
         date: "Día"
         select_booth: "Elige urna"
         select_date: "Elige día"
-        ballots_white: "Papeletas en blanco"
+        ballots_white: "Papeletas totalmente en blanco"
         ballots_null: "Papeletas nulas"
         ballots_total: "Papeletas totales"
         submit: "Guardar"
@@ -40,7 +40,7 @@ es:
         results: "Resultados"
         table_answer: Respuesta
         table_votes: Votos
-        table_whites: Papeletas en blanco
+        table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
     residence:

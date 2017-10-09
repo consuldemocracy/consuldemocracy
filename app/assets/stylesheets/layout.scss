@@ -18,7 +18,8 @@
 // 16. Flags
 // 17. Activity
 // 18. Banners
-// 19. Documents
+// 19. Recommended Section Home
+// 20. Documents
 //
 
 // 01. Global styles
@@ -205,19 +206,40 @@ a {
 
 .menu.simple {
   border-bottom: 1px solid $border;
-  margin-bottom: $line-height;
+  clear: both;
+  margin-bottom: $line-height / 2;
 
   li {
-    padding-bottom: rem-calc(7);
+    margin-right: $line-height / 2;
+
+    @include breakpoint(medium) {
+      margin-right: $line-height * 1.5;
+    }
 
     a {
-      color: $text-medium;
+      color: $text;
+      display: inline-block;
+      font-weight: bold;
+      position: relative;
+      text-align: left;
+
+      &:hover {
+        color: $link;
+      }
     }
 
     &.active {
       border-bottom: 2px solid $brand;
       color: $brand;
     }
+
+    &:not(.active) {
+      margin-bottom: $line-height / 3;
+    }
+  }
+
+  h2 {
+    font-size: $base-font-size;
   }
 }
 
@@ -281,6 +303,10 @@ a {
   float: left;
 }
 
+.back:not([class^="icon-"]) {
+  text-decoration: underline;
+}
+
 .tabs-content {
   border: 0;
 }
@@ -320,8 +346,26 @@ a {
   background: $brand;
 }
 
+.truncate-horizontal-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .align-top {
   vertical-align: top;
+}
+
+.aling-middle {
+  vertical-align: middle;
+}
+
+.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-cell;
 }
 
 // 02. Header
@@ -367,7 +411,11 @@ header {
 
   .top-bar-title a {
     @include logo;
-    line-height: rem-calc(80) !important;
+    line-height: rem-calc(80);
+
+    @include breakpoint(medium) {
+      line-height: rem-calc(80);
+    }
 
     &:hover {
       text-decoration: none;
@@ -587,7 +635,7 @@ header {
     text-align: left;
 
     @include breakpoint(medium) {
-      margin-right: $line-height * 1.5;
+      margin-right: $line-height;
     }
 
     &:hover {
@@ -2136,67 +2184,145 @@ table {
   }
 }
 
-// 19. Documents
-.document-form form {
+// 19. Recommended Section Home
+// ----------------------------
 
-  .radio-buttons {
-    label {
-      margin-right: $line-height;
-    }
+.home-page {
+
+  .push {
+    display: none;
+  }
+}
+
+.section-recommended {
+  padding: $line-height * 2 0;
+
+  h2 {
+    margin-bottom: $line-height * 2;
   }
 
-  .source-option-link {
-    input {
-      padding-bottom: 0;
+  .debates,
+  .proposals,
+  .budget-investments {
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
     }
 
-    .error {
+    @include breakpoint(small) {
       margin-bottom: $line-height;
     }
 
-    label {
-      &.error {
-        margin-bottom: 0;
-      }
+    .button.hollow {
+      margin-top: rem-calc(15);
     }
   }
 
-  .source-option-file {
-    .file-name {
-      label {
+  .card {
 
-        @include breakpoint(small medium) {
-          float: none;
-        }
-
-        @include breakpoint(large) {
-          float: left;
-        }
-      }
+    .card-section {
+      padding: $line-height 0;
+      max-width: rem-calc(300);
+      margin: 0 auto;
 
       p {
+        font-size: rem-calc(15);
+        text-align: left;
+      }
+    }
 
-        @include breakpoint(small medium) {
-          float: none;
-          margin-top: 0;
-          margin-left: 0;
-          margin-bottom: 0;
-        }
+    .orbit {
+      height: rem-calc(300);
 
-        @include breakpoint(large) {
-          float: left;
-          margin-bottom: 0;
-          margin-top: $line-height / 2;
-          margin-left: $line-height;
-        }
+      .orbit-wrapper {
+        max-height: rem-calc(250);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .orbit-bullets {
+        @include orbit-bullets;
+        width: 100%;
       }
     }
   }
 
-  .attachment-errors {
-    margin-bottom: $line-height;
+  .card .orbit .orbit-wrapper .truncate {
+    background: image-url('truncate.png');
+    background-repeat: repeat-x;
+    bottom: 0;
+    height: rem-calc(20);
+    position: absolute;
+    width: 100%;
+  }
+
+  .debates-inner {
+    border-top: 4px solid $debates;
+  }
+
+  .proposals-inner {
+    border-top: 4px solid $proposals;
+  }
+
+  .budget-investments-inner {
+    border-top: 4px solid $budget;
+  }
+
+  .debates-inner,
+  .proposals-inner,
+  .budget-investments-inner {
+    background: #fff;
+    max-height: rem-calc(350);
+
+    @include breakpoint(small) {
+      max-height: rem-calc(400);
+    }
+
+    h4 {
+      margin-top: $line-height;
+      margin-bottom: 0;
+      font-size: rem-calc(18);
+      min-height: rem-calc(50);
+    }
+
+    h5 {
+      font-size: $small-font-size;
+      text-align: left;
+    }
+  }
+
+  .carousel-image {
+
+    .card .orbit {
+      height: rem-calc(480);
+
+      .orbit-wrapper {
+        max-height: rem-calc(450);
+      }
+    }
+
+    .debates-inner,
+    .proposals-inner,
+    .budget-investments-inner {
+      max-height: rem-calc(500);
+
+      @include breakpoint(small) {
+        max-height: rem-calc(600);
+      }
+    }
+  }
+
+  .carousel-image .orbit-wrapper img {
+    display: block;
+
+    @include breakpoint(small) {
+      margin: 0 auto;
+    }
   }
 }
+
+// 20. Documents
+// -------------
 
 .documents-list {
 
@@ -2254,6 +2380,5 @@ table {
       }
 
     }
-
   }
 }

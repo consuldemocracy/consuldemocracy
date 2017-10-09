@@ -14,7 +14,7 @@ RSpec.describe CommentsHelper, type: :helper do
 
   describe '#user_level_class' do
 
-    def comment_double as_administrator: false, as_moderator: false, official: false
+    def comment_double(as_administrator: false, as_moderator: false, official: false)
       user = double official?: official, official_level: 'Y'
       double as_administrator?: as_administrator, as_moderator?: as_moderator, user: user
     end

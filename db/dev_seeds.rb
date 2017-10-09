@@ -36,7 +36,9 @@ Setting.create(key: 'feature.facebook_login', value: "true")
 Setting.create(key: 'feature.google_login', value: "true")
 Setting.create(key: 'feature.signature_sheets', value: "true")
 Setting.create(key: 'feature.legislation', value: "true")
+Setting.create(key: 'feature.user.recommendations', value: "true")
 Setting.create(key: 'feature.community', value: "true")
+Setting.create(key: 'feature.map', value: "true")
 Setting.create(key: 'per_page_code_head', value: "")
 Setting.create(key: 'per_page_code_body', value: "")
 Setting.create(key: 'comments_body_max_length', value: '1000')
@@ -47,6 +49,9 @@ Setting.create(key: 'meta_keywords', value: 'citizen participation, open governm
 Setting.create(key: 'verification_offices_url', value: 'http://oficinas-atencion-ciudadano.url/')
 Setting.create(key: 'min_age_to_participate', value: '16')
 Setting.create(key: 'proposal_improvement_path', value: nil)
+Setting.create(key: 'map_latitude', value: 51.48)
+Setting.create(key: 'map_longitude', value: 0.0)
+Setting.create(key: 'map_zoom', value: 10)
 
 puts " ✅"
 print "Creating Geozones"
@@ -552,11 +557,14 @@ print "Creating Poll Questions"
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   open_at = rand(2.months.ago..2.months.from_now)
+  answers = Faker::Lorem.words((2..4).to_a.sample).map { |answer| answer.capitalize }
   question = Poll::Question.create!(author: author,
                                     title: Faker::Lorem.sentence(3).truncate(60),
-                                    description: description,
-                                    valid_answers: Faker::Lorem.words((2..7).to_a.sample).join(', '),
+                                    valid_answers: answers.join(', '),
                                     poll: poll)
+  answers.each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer, description: Faker::ChuckNorris.fact)
+  end
 end
 
 puts " ✅"
