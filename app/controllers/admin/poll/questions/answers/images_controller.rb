@@ -23,7 +23,8 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
   private
 
     def images_params
-      params.permit(images_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
+      params.require(:poll_question_answer).permit(:answer_id,
+        images_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
     end
 
     def load_answer

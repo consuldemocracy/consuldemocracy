@@ -94,6 +94,9 @@ feature 'Polls' do
     end
 
     scenario 'Level 1 users' do
+      visit polls_path
+      expect(page).to_not have_selector('.already-answer')
+
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
@@ -209,8 +212,7 @@ feature 'Polls' do
       visit poll_path(poll)
 
       expect(page).to have_link('Han Solo')
-      expect(page).to_not have_link('Chewbacca')
-      expect(page).to have_content('Chewbacca')
+      expect(page).to have_link('Chewbacca')
     end
 
     scenario 'Level 2 users answering', :js do
@@ -256,82 +258,79 @@ feature 'Polls' do
       expect(page).to have_link('Han Solo')
     end
 
-    scenario 'User can write comments' do
-      create(:comment, commentable: poll)
+    scenario 'Level 2 votes, signs out, signs in, votes again', :js do
+      poll.update(geozone_restricted: true)
+      poll.geozones << geozone
 
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
+      answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+
+      user = create(:user, :level_two, geozone: geozone)
+
+      login_as user
+      visit poll_path(poll)
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+
+      click_link "Sign out"
+      login_as user
+      visit poll_path(poll)
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+      expect(page).to have_link('Chewbacca')
+
+      click_link "Sign out"
+      login_as user
+      visit poll_path(poll)
+      click_link 'Chewbacca'
+
+      expect(page).to_not have_link('Chewbacca')
+      expect(page).to have_link('Han Solo')
+    end
+  end
+
+  context 'Booth & Website' do
+
+    let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    let(:booth) { create(:poll_booth) }
+    let(:officer) { create(:poll_officer) }
+
+    scenario 'Already voted on booth cannot vote on website', :js do
+
+      create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      question = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question, title: 'Han Solo')
+      create(:poll_question_answer, question: question, title: 'Chewbacca')
+      user = create(:user, :level_two, :in_census)
+
+      login_as(officer.user)
+      visit new_officing_residence_path
+      officing_verify_residence
+      click_button "Confirm vote"
+
+      expect(page).to have_content "Vote introduced!"
+
+      visit new_officing_residence_path
+      click_link "Sign out"
+      login_as user
       visit poll_path(poll)
 
-      expect(page).to have_css('.comment', count: 1)
+      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
 
-      comment = Comment.last
-      within first('.comment') do
-        expect(page).to have_content comment.user.name
-        expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
-        expect(page).to have_content comment.body
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_content('Han Solo')
+        expect(page).to have_content('Chewbacca')
+
+        expect(page).to_not have_link('Han Solo')
+        expect(page).to_not have_link('Chewbacca')
       end
     end
 
-    scenario 'user b can access to comments from user a' do
-      oliver = create(:user, username: 'Oliver Atom')
-      benji = create(:user, username: 'Benji Prince')
-      create(:comment, commentable: poll, user: oliver)
-
-      login_as(benji)
-      visit poll_path(poll)
-
-      expect(page).to have_content oliver.username
-    end
-
-    scenario 'user b can reply to comments from user a', :js do
-      koji = create(:user, username: 'Koji Kabuto')
-      sayaka = create(:user, username: 'Sayaka')
-      comment = create(:comment, commentable: poll, user: koji)
-
-      login_as(sayaka)
-      visit poll_path(poll)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: 'MAZINGER!!.'
-        click_button 'Publish reply'
-      end
-
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content 'MAZINGER!!.'
-      end
-
-      expect(page).to_not have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
-    end
-
-    scenario 'user can upvote a comment', :js do
-      goku = create(:user, username: 'Goku')
-      vegeta = create(:user, username: 'Vegeta')
-      comment = create(:comment, commentable: poll, user: goku)
-
-      login_as(vegeta)
-      visit poll_path(poll)
-
-      within("#comment_#{comment.id}_votes") do
-        find('.in_favor a').click
-
-        expect(page).to have_content "1 vote"
-      end
-    end
-
-    scenario 'user can downvote a comment', :js do
-      doraemon = create(:user, username: 'Doraemon')
-      nobita = create(:user, username: 'Nobi Nobita')
-      comment = create(:comment, commentable: poll, user: doraemon)
-
-      login_as(nobita)
-      visit poll_path(poll)
-
-      within("#comment_#{comment.id}_votes") do
-        find('.against a').click
-
-        expect(page).to have_content "1 vote"
-      end
-    end
   end
 end

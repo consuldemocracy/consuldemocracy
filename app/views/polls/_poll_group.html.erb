@@ -1,11 +1,11 @@
 <% poll_group.each do |poll| %>
   <div class="poll with-image">
-    <% if user_signed_in? && !poll.votable_by?(current_user) %>
+    <% if user_signed_in? && !current_user.unverified? && !poll.votable_by?(current_user) %>
       <div class="icon-poll-answer already-answer" title="<%= t("polls.index.already_answer") %>">
         <span class="show-for-sr"><%= t("polls.index.already_answer") %></span>
       </div>
     <% end %>
-    <div class="row" data-equalizer>
+    <div class="row" data-equalizer data-equalize-on="medium">
       <div class="small-12 medium-3 column">
         <div class="image-container" data-equalizer-watch>
           <% if poll.image.present? %>

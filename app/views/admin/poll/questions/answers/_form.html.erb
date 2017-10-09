@@ -2,20 +2,17 @@
 
   <%= render 'shared/errors', resource: @answer %>
 
-  <%= f.hidden_field :question_id, value: @question.id %>
+  <%= f.hidden_field :question_id, value: @answer.question_id || @question.id %>
 
-  <%= f.label :title, t('admin.questions.new.form.title') %>
-  <%= f.text_field :title, label: false %>
+  <%= f.text_field :title %>
 
   <div class="ckeditor">
-    <%= f.label :description, t('admin.questions.new.form.description') %>
     <%= f.cktext_area :description,
                       maxlength: Poll::Question.description_max_length,
-                      ckeditor: { language: I18n.locale },
-                      label: false %>
+                      ckeditor: { language: I18n.locale } %>
   </div>
 
-  <div class="small-12 medium-6 large-4">
+  <div class="small-12 medium-6 large-4 margin-top">
     <%= f.submit(class: "button expanded", value: t("shared.save")) %>
   </div>
 

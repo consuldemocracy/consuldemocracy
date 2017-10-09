@@ -9,6 +9,7 @@ en:
         poll: "Poll created successfully."
         poll_booth: "Booth created successfully."
         poll_question_answer: "Answer created successfully"
+        poll_question_answer_video: "Video created successfully"
         proposal: "Proposal created successfully."
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
@@ -31,3 +32,4 @@ en:
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"
         topic: "Topic deleted successfully."
+        poll_question_answer_video: "Answer video deleted successfully."

@@ -191,9 +191,17 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
       documentable_attach_new_file(documentable_factory_name, 0, "spec/fixtures/files/empty.pdf")
       click_on submit_button
+
       documentable_redirected_to_resource_show_or_navigate_to
 
-      expect(page).to have_content "Documents (1)"
+      expect(page).to have_content "Documents"
+
+      find("#tab-documents-label").click
+      expect(page).to have_content "empty.pdf"
+
+      #Review
+      #Doble check why the file is stored with a name different to empty.pdf
+      expect(page).to have_css("a[href$='.pdf']")
     end
 
     scenario "Should show resource with new document after successful creation with maximum allowed uploaded files", :js do
@@ -263,7 +271,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     end
 
-
   end
 
 end
@@ -275,7 +282,7 @@ rescue
   return
 end
 
-def documentable_attach_new_file(documentable_factory_name, index, path, success = true)
+def documentable_attach_new_file(_documentable_factory_name, index, path, success = true)
   click_link "Add new document"
   document = all(".document")[index]
   document_input = document.find("input[type=file]", visible: false)
@@ -317,9 +324,4 @@ def documentable_fill_new_valid_budget_investment
   fill_in :budget_investment_title, with: "Budget investment title"
   fill_in_ckeditor "budget_investment_description", with: "Budget investment description"
   check :budget_investment_terms_of_service
-end
-
-def documentable_fill_new_valid_poll_question
-  page.select documentable.poll.name, from: 'poll_question_poll_id'
-  fill_in 'poll_question_title', with: "Star Wars: Episode IV - A New Hope"
 end

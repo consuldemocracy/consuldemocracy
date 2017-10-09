@@ -335,8 +335,16 @@
     word-wrap: break-word;
   }
 
-  .callout.proposal-retired {
-    font-size: $base-font-size;
+  .callout {
+    &.token-message {
+      background-color: #fff;
+      border-color: $info-border;
+      color: $color-info;
+    }
+
+    &.proposal-retired {
+      font-size: $base-font-size;
+    }
   }
 
   .social-share-full .social-share-button {
@@ -1574,7 +1582,23 @@
   border-bottom: 1px solid #eee;
 
   .column:nth-child(odd) {
-    border-right: 1px solid #eee;
+    border-right: 2px solid $text;
+  }
+
+  .answer-divider {
+    border-bottom: 2px solid $text;
+    border-right: 0 !important;
+    margin-bottom: $line-height;
+    padding-bottom: $line-height;
+  }
+
+  .answer-description {
+    height: 100%;
+
+    &.short {
+      height: $line-height * 12;
+      overflow: hidden;
+    }
   }
 }
 
@@ -1599,11 +1623,20 @@
 
 .orbit-slide {
   max-height: none !important;
+
+  img {
+    image-rendering: pixelated;
+  }
 }
 
 .orbit-caption {
   background: #eee;
   color: $text;
+}
+
+.orbit-next,
+.orbit-previous {
+  background: rgba(34, 34, 34, 0.25);
 }
 
 .zoom-link {
@@ -1638,7 +1671,10 @@
 .poll {
 
   &.with-image {
-    padding: 0 $line-height / 2 0 0;
+
+    @include breakpoint(medium) {
+      padding: 0 $line-height / 2 0 0;
+    }
 
     img {
       height: 100%;
@@ -1768,6 +1804,10 @@
   .button {
     margin-right: $line-height / 4;
     min-width: rem-calc(168);
+
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
 
     &.answered {
       background: #f4f8ec;

@@ -4,7 +4,6 @@
 
   <%= f.hidden_field :proposal_id %>
 
-
   <div class="small-12">
     <div class="small-12 medium-6 large-4">
       <%= f.select :poll_id,
@@ -13,17 +12,19 @@
                     label: t("admin.questions.new.poll_label") %>
     </div>
 
-    <%= f.text_field :title, maxlength: Poll::Question.title_max_length %>
-
-    <div class="documents small-12">
-      <%= render 'documents/nested_documents', documentable: @question, f: f %>
-    </div>
+    <%= f.text_field :title %>
 
     <div class="small-12">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-      <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
-                                   aria: {describedby: "video-url-help-text"} %>
+
+      <p class="help-text" id="video-url-help-text">
+        <%= t("proposals.form.proposal_video_url_note") %>
+      </p>
+
+      <%= f.text_field :video_url,
+                        placeholder: t("proposals.form.proposal_video_url"),
+                        label: false,
+                        aria: {describedby: "video-url-help-text"} %>
     </div>
 
     <div class="small-12 medium-6 large-4 margin-top">
