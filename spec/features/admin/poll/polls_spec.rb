@@ -73,7 +73,7 @@ feature 'Admin polls' do
     create(:image, imageable: poll)
 
     visit admin_poll_path(poll)
-    click_link "Edit"
+    click_link "Edit poll"
 
     end_date = 1.year.from_now
 
