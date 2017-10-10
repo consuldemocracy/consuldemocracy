@@ -2,6 +2,24 @@
 
 <%= render 'legislation/processes/header', process: @process, header: :full %>
 
+<% if @process.id == 25 %>
+  <div class="document-divider no-margin-top margin-bottom padding">
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <div class="document-link">
+          <p>
+            <span class="icon-document"></span>&nbsp;
+            <strong><%= t('proposals.show.title_external_url') %></strong>
+          </p>
+          <%= link_to "Resumen Plan Estratégico de zonas verde, arbolado y biodiversidad de la ciudad de Madrid <small>(PDF | 468Kb)</small>".html_safe,
+                      "/docs/procesos/resumen_plan_estrategico_zonas_verdes.pdf",
+                      target: "_blank", title: t("shared.target_blank_html") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <%= render 'key_dates', process: @process, phase: :debate %>
 
 <div class="row">
