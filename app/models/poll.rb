@@ -3,7 +3,8 @@ class Poll < ActiveRecord::Base
   AGE_STEPS = [16,20,25,30,35,40,45,50,55,60,65]
 
   include Imageable
-
+  acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
   has_many :partial_results, through: :booth_assignments
@@ -12,8 +13,10 @@ class Poll < ActiveRecord::Base
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
   has_many :questions
+  has_many :comments, as: :commentable
 
   has_and_belongs_to_many :geozones
+  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   accepts_nested_attributes_for :questions
 
