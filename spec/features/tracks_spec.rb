@@ -66,8 +66,8 @@ feature 'Tracking' do
       end
 
       scenario 'Gender' do
-        male   = create(:user, gender: 'male')
-        female = create(:user, gender: 'female')
+        male   = create(:user, gender: 'Male')
+        female = create(:user, gender: 'Female')
 
         login_as(male)
         visit "/"
