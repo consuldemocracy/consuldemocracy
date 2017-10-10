@@ -42,7 +42,6 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def order_answers
     ::Poll::Question::Answer.order_answers(params[:ordered_list])
-    # redirect_to admin_question_path(params[:question_id])
     render nothing: true
   end
 
