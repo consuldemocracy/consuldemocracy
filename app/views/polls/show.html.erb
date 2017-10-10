@@ -128,14 +128,33 @@
         </div>
       <% end %>
     </div>
-    
+
   </div>
 </div>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "filter_subnav" %>
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-4 column small-centered text-center">
+    <a id="show_comments_<%= @poll.id %>"
+       class="button expanded"
+       data-toggle="comments_<%= @poll.id %> hide_comments_<%= @poll.id %> show_comments_<%= @poll.id %>"
+       data-toggler="hide">
+      <%= t("polls.show.show_comments") %>
+    </a>
+    <a id="hide_comments_<%= @poll.id %>"
+       class="button expanded hide"
+       data-toggle="comments_<%= @poll.id %> hide_comments_<%= @poll.id %> show_comments_<%= @poll.id %>"
+       data-toggler="hide">
+      <%= t("polls.show.hide_comments") %>
+    </a>
+  </div>
+</div>
 
-  <div class="tabs-panel is-active" id="tab-comments">
-    <%= render "comments" %>
+<div id="comments_<%= @poll.id %>" class="hide" data-toggler="hide">
+  <div class="tabs-content" data-tabs-content="polls-tabs" role="tablist">
+    <%= render "filter_subnav" %>
+
+    <div class="tabs-panel is-active" id="tab-comments">
+      <%= render "comments" %>
+    </div>
   </div>
 </div>
