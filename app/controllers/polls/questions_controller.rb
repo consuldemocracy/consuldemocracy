@@ -15,6 +15,7 @@ class Polls::QuestionsController < ApplicationController
     answer.record_voter_participation(token)
 
     @answers_by_question_id = { @question.id => params[:answer] }
+    log_event("poll", 'vote')
   end
 
 end
