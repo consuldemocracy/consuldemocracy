@@ -66,8 +66,8 @@ feature 'Tracking' do
       end
 
       scenario 'Gender' do
-        male   = create(:user, gender: 'male')
-        female = create(:user, gender: 'female')
+        male   = create(:user, gender: 'Male')
+        female = create(:user, gender: 'Female')
 
         login_as(male)
         visit "/"
@@ -220,6 +220,26 @@ feature 'Tracking' do
 
       expect(page).to have_css("span[data-track-event-category='Propuesta']")
       expect(page).to have_css("span[data-track-event-action='Comentar']")
+    end
+
+    scenario 'Vote a poll', :js do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
+      answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+
+      login_as user
+      visit poll_path(poll)
+
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+
+      expect(page).to have_css("span[data-track-event-category]")
+      expect(page).to have_css("span[data-track-event-category='Votación']")
+      expect(page).to have_css("span[data-track-event-action='Votar']")
     end
 
     scenario 'Verify census' do

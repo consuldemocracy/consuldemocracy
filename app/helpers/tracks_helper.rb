@@ -6,7 +6,7 @@ module TracksHelper
 
   def gender(user)
     if user.gender.present?
-      I18n.t("tracking.user_data.gender.#{user.gender}")
+      I18n.t("tracking.user_data.gender.#{user.gender.downcase}")
     else
       I18n.t("tracking.user_data.gender.unknown")
     end
