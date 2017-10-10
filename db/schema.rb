@@ -801,6 +801,9 @@ ActiveRecord::Schema.define(version: 20171006145053) do
     t.boolean  "geozone_restricted", default: false
     t.text     "summary"
     t.text     "description"
+    t.integer  "comments_count",     default: 0
+    t.integer  "author_id"
+    t.datetime "hidden_at"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree

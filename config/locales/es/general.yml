@@ -482,6 +482,8 @@ es:
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      comments_tab: Comentarios
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       signin: iniciar sesión
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."

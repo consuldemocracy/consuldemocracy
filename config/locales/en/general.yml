@@ -482,6 +482,8 @@ en:
       already_voted_in_web: "You have already participated in this poll. If you vote again it will be overwritten."
       back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
+      comments_tab: Comments
+      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       signin: Sign in
       signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
