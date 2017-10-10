@@ -899,6 +899,9 @@ ActiveRecord::Schema.define(version: 20171008154106) do
     t.text     "summary"
     t.text     "description"
     t.string   "slug"
+    t.integer  "comments_count",     default: 0
+    t.integer  "author_id"
+    t.datetime "hidden_at"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
