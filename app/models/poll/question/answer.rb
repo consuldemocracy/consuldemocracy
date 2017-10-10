@@ -1,5 +1,5 @@
 class Poll::Question::Answer < ActiveRecord::Base
-	include Galleryable
+  include Galleryable
   include Documentable
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
@@ -14,12 +14,18 @@ class Poll::Question::Answer < ActiveRecord::Base
   def description
     super.try :html_safe
   end
-  
+
   def self.order_answers(ordered_array)
     ordered_array.each_with_index do |answer_id, order|
-      answer = self.find(answer_id)
+      answer = find(answer_id)
       answer.update_attribute(:given_order, (order + 1))
-      answer.save      
-    end  
+      answer.save
+    end
+  end
+
+  def set_order
+    last_position = Poll::Question::Answer.where(question_id: question_id).maximum("given_order") || 0
+    next_position = last_position + 1
+    update_attribute(:given_order, next_position)
   end
 end

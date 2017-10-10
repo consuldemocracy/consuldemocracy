@@ -9,6 +9,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def create
     @answer = ::Poll::Question::Answer.new(answer_params)
+    @answer.set_order
 
     if @answer.save
       redirect_to admin_question_path(@answer.question),
@@ -37,12 +38,12 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     @documents = @answer.documents
 
     render 'admin/poll/questions/answers/documents'
-  end  
-  
+  end
+
   def order_answers
     ::Poll::Question::Answer.order_answers(params[:ordered_list])
-    #redirect_to admin_question_path(params[:question_id])
-    render :nothing => true
+    # redirect_to admin_question_path(params[:question_id])
+    render nothing: true
   end
 
   private
