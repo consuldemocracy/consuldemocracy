@@ -371,6 +371,55 @@ feature 'Emails' do
 
   end
 
+  context "Polls" do
+
+    scenario "Do not send email on poll comment", :js do
+      user1 = create(:user, email_on_comment: true)
+      user2 = create(:user)
+
+      poll = create(:poll, author: user1)
+      reset_mailer
+
+      login_as(user2)
+      visit poll_path(poll)
+
+      fill_in "comment-body-poll_#{poll.id}", with: 'Have you thought about...?'
+      click_button 'Publish comment'
+
+      expect(page).to have_content 'Have you thought about...?'
+
+      expect { open_last_email }.to raise_error "No email has been sent!"
+    end
+
+    scenario "Send email on poll comment reply", :js do
+      user1 = create(:user, email_on_comment_reply: true)
+      user2 = create(:user)
+
+      poll = create(:poll)
+      comment = create(:comment, commentable: poll, author: user1)
+
+      login_as(user2)
+      visit poll_path(poll)
+
+      click_link "Reply"
+      within "#js-comment-form-comment_#{comment.id}" do
+        fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
+        click_button 'Publish reply'
+      end
+      expect(page).to have_content 'It will be done next week.'
+
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has responded to your comment')
+      expect(email).to deliver_to(user1)
+      expect(email).to_not have_body_text(poll_path(poll))
+      expect(email).to have_body_text(comment_path(Comment.last))
+      expect(email).to have_body_text(I18n.t("mailers.config.manage_email_subscriptions"))
+      expect(email).to have_body_text(account_path)
+    end
+
+  end
+
   context "Users without email" do
     scenario "should not receive emails", :js do
       user = create(:user, :verified, email_on_comment: true)
