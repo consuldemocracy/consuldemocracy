@@ -306,6 +306,7 @@ Rails.application.routes.draw do
           resources :videos, controller: 'questions/answers/videos'
           get :documents, to: 'questions/answers#documents'
         end
+        post '/answers/order_answers', to: 'questions/answers#order_answers'
       end
     end
 
