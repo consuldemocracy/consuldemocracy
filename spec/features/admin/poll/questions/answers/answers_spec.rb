@@ -43,8 +43,8 @@ feature 'Answers' do
 
   scenario 'Update' do
     question = create(:poll_question)
-    answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 1)
-    answer2 = create(:poll_question_answer, question: question, title: "Another title", given_order: 2)
+    answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
+    answer2 = create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
     visit admin_answer_path(answer)
 

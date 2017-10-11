@@ -15,6 +15,7 @@ class PollsController < ApplicationController
   def show
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)
+    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
 
     @answers_by_question_id = {}
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))

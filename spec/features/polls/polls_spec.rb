@@ -80,8 +80,8 @@ feature 'Polls' do
 
     scenario "Question answers appear in the given order" do
       question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 1)
-      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 2)
+      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
 
       visit poll_path(poll)
 
@@ -92,8 +92,8 @@ feature 'Polls' do
 
     scenario "More info answers appear in the given order" do
       question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 1)
-      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 2)
+      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
 
       visit poll_path(poll)
 

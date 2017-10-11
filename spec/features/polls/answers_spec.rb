@@ -9,8 +9,8 @@ feature 'Answers' do
 
   scenario "Index" do
     question = create(:poll_question)
-    answer1 = create(:poll_question_answer, question: question, given_order: 1)
-    answer2 = create(:poll_question_answer, question: question, given_order: 2)
+    answer1 = create(:poll_question_answer, question: question, given_order: 2)
+    answer2 = create(:poll_question_answer, question: question, given_order: 1)
 
     visit admin_question_path(question)
 
