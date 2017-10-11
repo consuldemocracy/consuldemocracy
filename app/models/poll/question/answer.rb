@@ -10,6 +10,9 @@ class Poll::Question::Answer < ActiveRecord::Base
   has_many :videos, class_name: 'Poll::Question::Answer::Video'
 
   validates :title, presence: true
+  validates :given_order, presence: true, uniqueness: { scope: :question_id }
+
+  before_validation :set_order, on: :create
 
   def description
     super.try :html_safe
@@ -17,15 +20,16 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   def self.order_answers(ordered_array)
     ordered_array.each_with_index do |answer_id, order|
-      answer = find(answer_id)
-      answer.update_attribute(:given_order, (order + 1))
-      answer.save
+      find(answer_id).update_attribute(:given_order, (order + 1))
     end
   end
 
   def set_order
-    last_position = Poll::Question::Answer.where(question_id: question_id).maximum("given_order") || 0
-    next_position = last_position + 1
-    update_attribute(:given_order, next_position)
+    next_position = self.class.last_position(question_id) + 1
+    self.given_order = next_position
+  end
+
+  def self.last_position(question_id)
+    where(question_id: question_id).maximum("given_order") || 0
   end
 end

@@ -9,7 +9,6 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def create
     @answer = ::Poll::Question::Answer.new(answer_params)
-    @answer.set_order
 
     if @answer.save
       redirect_to admin_question_path(@answer.question),

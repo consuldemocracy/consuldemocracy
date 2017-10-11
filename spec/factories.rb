@@ -503,8 +503,8 @@ FactoryGirl.define do
 
   factory :poll_question_answer, class: 'Poll::Question::Answer' do
     association :question, factory: :poll_question
-    sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
+    sequence(:title) { |n| "Answer title #{n}" }
+    sequence(:description) { |n| "Answer description #{n}" }
   end
 
   factory :poll_booth, class: 'Poll::Booth' do
