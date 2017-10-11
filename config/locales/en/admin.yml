@@ -664,6 +664,7 @@ en:
         location: "Location"
       booth:
         shifts: "Manage shifts"
+        edit: "Edit booth"
     officials:
       edit:
         destroy: Remove 'Official' status
