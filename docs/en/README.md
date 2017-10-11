@@ -25,7 +25,7 @@ Development started on [2015 July 15th](https://github.com/consul/consul/commit/
 
 ## Configuration for development and test environments
 
-**NOTE**: For more detailed instructions check the [docs](https://github.com/consul/docs/tree/master/en/getting_started/prerequisites)
+**NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/content/en/getting_started/prerequisites/)
 
 Prerequisites: install git, Ruby 2.3.2, bundler gem, and PostgreSQL (>=9.4).
 
