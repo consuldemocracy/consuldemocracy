@@ -78,6 +78,30 @@ feature 'Polls' do
       expect(page).to have_content(proposal_question.title)
     end
 
+    scenario "Question answers appear in the given order" do
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
+
+      visit poll_path(poll)
+
+      within("div#poll_question_#{question.id}") do
+        expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+      end
+    end
+
+    scenario "More info answers appear in the given order" do
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
+
+      visit poll_path(poll)
+
+      within('div.poll-more-info-answers') do
+        expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+      end
+    end
+
     scenario 'Non-logged in users' do
       question = create(:poll_question, poll: poll)
       answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')

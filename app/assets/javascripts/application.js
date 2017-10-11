@@ -15,6 +15,7 @@
 //= require jquery-ui/widgets/datepicker
 //= require jquery-ui/i18n/datepicker-es
 //= require jquery-ui/widgets/autocomplete
+//= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
@@ -71,6 +72,7 @@
 //= require leaflet
 //= require map
 //= require polls
+//= require sortable
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -110,6 +112,7 @@ var initialize_modules = function() {
   App.PollsAdmin.initialize();
   App.Map.initialize();
   App.Polls.initialize();
+  App.Sortable.initialize();
 };
 
 $(function(){

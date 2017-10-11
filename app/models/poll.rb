@@ -1,6 +1,7 @@
 class Poll < ActiveRecord::Base
   include Imageable
-
+  acts_as_paranoid column: :hidden_at
+  include ActsAsParanoidAliases
   has_many :booth_assignments, class_name: "Poll::BoothAssignment"
   has_many :booths, through: :booth_assignments
   has_many :partial_results, through: :booth_assignments
@@ -9,8 +10,10 @@ class Poll < ActiveRecord::Base
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
   has_many :questions
+  has_many :comments, as: :commentable
 
   has_and_belongs_to_many :geozones
+  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   validates :name, presence: true
 
@@ -23,6 +26,10 @@ class Poll < ActiveRecord::Base
   scope :by_geozone_id, ->(geozone_id) { where(geozones: {id: geozone_id}.joins(:geozones)) }
 
   scope :sort_for_list, -> { order(:geozone_restricted, :starts_at, :name) }
+
+  def title
+    name
+  end
 
   def current?(timestamp = Date.current.beginning_of_day)
     starts_at <= timestamp && timestamp <= ends_at
