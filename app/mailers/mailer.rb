@@ -12,7 +12,7 @@ class Mailer < ApplicationMailer
 
     with_user(@commentable.author) do
       subject = t('mailers.comment.subject', commentable: t("activerecord.models.#{@commentable.class.name.underscore}", count: 1).downcase)
-      mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present?
+      mail(to: @email_to, subject: subject) if @commentable.present? && @commentable.author.present? && commentable.class.name != 'Poll'
     end
   end
 
