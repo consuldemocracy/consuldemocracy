@@ -666,6 +666,7 @@ es:
         location: "Ubicación"
       booth:
         shifts: "Asignar turnos"
+        edit: "Editar urna"
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
