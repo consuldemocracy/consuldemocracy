@@ -347,30 +347,3 @@
     }
   }
 }
-
-.polls-results-welcome {
-  background: #000 image-url('polls_results_welcome.jpg') no-repeat;
-  background-size: cover;
-  color: #fff;
-
-  h2 {
-    font-family: 'Franklin Gothic' !important;
-    font-size: rem-calc(60);
-    font-weight: normal;
-    line-height: rem-calc(60);
-    text-transform: uppercase;
-
-    span {
-      font-size: rem-calc(30);
-      line-height: rem-calc(30);
-    }
-  }
-
-  .button {
-    background: #fff;
-    color: #000;
-    font-family: 'Franklin Gothic' !important;
-    font-size: rem-calc(24);
-    text-transform: uppercase;
-  }
-}
