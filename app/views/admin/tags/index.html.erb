@@ -29,7 +29,7 @@
             <strong><%= tag.name %></strong>
         <% end %>
       </td>
-      <td>
+      <td id="tag_<%= tag.id %>">
         <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert" %>
       </td>
     </tr>
