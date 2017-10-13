@@ -54,7 +54,7 @@ feature "Voter" do
       within("#poll_#{poll.id}") do
         click_button("Confirm vote")
         expect(page).to_not have_button("Confirm vote")
-        expect(page).to have_button('WAIT, confirming vote', disabled: true)
+        expect(page).to have_button('Wait, confirming vote...', disabled: true)
         expect(page).to have_content "Vote introduced!"
       end
 
