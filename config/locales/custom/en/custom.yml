@@ -174,12 +174,24 @@ en:
       title: Vote eleven squares
       text: Until October 22th, decide about the remodeling of eleven squares of Madrid.
       button: Vote here
-    results:
-      label: "Participatory Budget"
-      title: "Results voting data"
-      text: "Check the detailed data of the voting of projects."
-      link: "See results"
+    green_areas:
+      label: "Previous debate"
+      title: "Green areas of Madrid"
+      text: "Debate about green spaces and trees of the city until October 25th."
+      link: "View previous debate"
+      alt: "Image of one of the green areas of the city of Madrid"
+    budgets_results:
+      label: "Results 2017"
+      title: "Participatory Budgeting"
+      text: "Check out the winning projects that will take place from 2018."
+      link: "View results for participatory budgets"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
+    first_voting:
+      label: "Voting February"
+      title: "First citizen voting"
+      text: "The Madrid citizenship approved Madrid 100% sustainable and single ticket, also decided on Gran Vía and Plaza España."
+      link: "View results of first citizen voting"
+      alt: "Image of two volunteers at one of the polling stations of the first citizen voting in February 2017"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
