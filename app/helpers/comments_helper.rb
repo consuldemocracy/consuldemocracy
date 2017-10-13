@@ -97,4 +97,12 @@ module CommentsHelper
     end
   end
 
+  def commentable_author_id_for_polls(comment, commentable)
+    if commentable.class == Poll
+      comment_author_class comment, nil
+    else
+      comment_author_class comment, commentable.author_id
+    end
+  end
+
 end
