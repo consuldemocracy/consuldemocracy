@@ -174,12 +174,24 @@ es:
       title: Vota once plazas
       text: Hasta el 22 de octubre, decide sobre la remodelación de las plazas de once distritos Madrid.
       button: Vota aquí
-    results:
-      label: "Presupuestos participativos"
-      title: "Resultados de la votación"
-      text: "Consulta los datos detallados de la votación de proyectos."
-      link: "Ver resultados"
+    green_areas:
+      label: "Debate previo"
+      title: "Zonas verdes de Madrid"
+      text: "Opina sobre las zonas verdes y el arbolado de la ciudad hasta el 25 de octubre."
+      link: "Ver debate previo"
+      alt: "Imagen de una de las zonas de verdes de la ciudad de Madrid"
+    budgets_results:
+      label: "Resultados 2017"
+      title: "Presupuestos participativos"
+      text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
+      link: "Ver resultados de los presupuestos participativos"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
+    first_voting:
+      label: "Votación febrero"
+      title: "Primera votación ciudadana"
+      text: "La ciudadanía madrileña aprobó Madrid 100% sostenible y billete único. También decidió sobre Gran Vía y Plaza España."
+      link: "Ver resultados de la primera votación ciudadana"
+      alt: "Imagen de dos voluntarias en una de las mesas de votación de la primera votación ciudadana en febrero de 2017"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"

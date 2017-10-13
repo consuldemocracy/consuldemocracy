@@ -3,13 +3,6 @@
 
 .welcome {
 
-  h2 {
-
-    &.title {
-      color: $brand;
-    }
-  }
-
   .cards {
     background: #fafafa;
 
@@ -38,7 +31,7 @@
   }
 
   .features {
-    padding: $line-height * 2 0;
+    padding: $line-height 0;
 
     .panel {
       border: 0;
