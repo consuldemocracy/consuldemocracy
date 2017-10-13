@@ -64,3 +64,5 @@ es:
         error_already_voted: "Ya ha participado en esta votación."
         submit: Confirmar voto
         success: "¡Voto introducido!"
+      can_vote:
+        submit_disable_with: "ESPERA, confirmando voto"

@@ -64,3 +64,5 @@ en:
         error_already_voted: Has already participated in this poll
         submit: Confirm vote
         success: "Vote introduced!"
+      can_vote:
+        submit_disable_with: "WAIT, confirming vote"
