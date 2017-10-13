@@ -5,7 +5,7 @@
 <% if physical_booth? %>
 
   <% if @polls.any? %>
-    <table class="fixed">
+    <table>
       <thead>
         <tr>
           <th><%= t("officing.voters.new.table_poll") %></th>
@@ -18,7 +18,7 @@
           <td>
             <%= poll.name %>
           </td>
-          <td id="actions">
+          <td>
             <% if poll.votable_by?(@user) %>
               <%= render "can_vote", poll: poll %>
             <% else %>
