@@ -92,6 +92,22 @@ describe :poll do
     end
   end
 
+  describe "#current_or_recounting_or_incoming" do
+    it "returns current or recounting or incoming polls" do
+      current = create(:poll, :current)
+      incoming = create(:poll, :incoming)
+      expired = create(:poll, :expired)
+      recounting = create(:poll, :recounting)
+
+      current_or_recounting_or_incoming = Poll.current_or_recounting_or_incoming
+
+      expect(current_or_recounting_or_incoming).to include(current)
+      expect(current_or_recounting_or_incoming).to include(recounting)
+      expect(current_or_recounting_or_incoming).to include(incoming)
+      expect(current_or_recounting_or_incoming).to_not include(expired)
+    end
+  end
+
   describe "answerable_by" do
     let(:geozone) {create(:geozone) }
 
