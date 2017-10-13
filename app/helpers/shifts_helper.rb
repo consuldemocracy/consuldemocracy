@@ -6,7 +6,8 @@ module ShiftsHelper
 
   def shift_recount_scrutiny_dates(polls)
     dates = polls.map(&:ends_at).map(&:to_date).sort.inject([]) do |total, date|
-      total << (date..date + Poll::RECOUNT_DURATION).to_a
+      initial_date = date < Date.current ? Date.current : date
+      total << (initial_date..date + Poll::RECOUNT_DURATION).to_a
     end
     date_options(dates.flatten.uniq)
   end
@@ -16,7 +17,8 @@ module ShiftsHelper
   end
 
   def start_date(polls)
-    polls.map(&:starts_at).min.to_date
+    start_date = polls.map(&:starts_at).min.to_date
+    start_date < Date.current ? Date.current : start_date
   end
 
   def end_date(polls)
