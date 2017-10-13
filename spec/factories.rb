@@ -489,6 +489,11 @@ FactoryGirl.define do
       ends_at { 15.days.ago }
     end
 
+    trait :recounting do
+      starts_at { 1.month.ago }
+      ends_at { Date.current }
+    end
+
     trait :published do
       published true
     end

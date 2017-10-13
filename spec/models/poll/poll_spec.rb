@@ -76,6 +76,22 @@ describe :poll do
     end
   end
 
+  describe "#recounting" do
+    it "returns polls in recount & scrutiny phase" do
+      current = create(:poll, :current)
+      incoming = create(:poll, :incoming)
+      expired = create(:poll, :expired)
+      recounting = create(:poll, :recounting)
+
+      recounting_polls = Poll.recounting
+
+      expect(recounting_polls).to_not include(current)
+      expect(recounting_polls).to_not include(incoming)
+      expect(recounting_polls).to_not include(expired)
+      expect(recounting_polls).to include(recounting)
+    end
+  end
+
   describe "answerable_by" do
     let(:geozone) {create(:geozone) }
 
