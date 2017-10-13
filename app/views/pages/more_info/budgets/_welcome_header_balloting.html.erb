@@ -12,12 +12,12 @@
         <div class="row margin-top">
           <div class="small-12 medium-6 column">
             <%= link_to "Votar proyectos de toda la ciudad",
-                        "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
+                        "#{request.url}presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
                         class: "button expanded large city" %>
           </div>
           <div class="small-12 medium-6 column">
             <%= link_to "Votar proyectos de un distrito",
-                        "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
+                        "#{request.url}presupuestos/presupuestos-participativos-2017/distritos?filter=selected",
                         class: "button expanded large" %>
           </div>
         </div>
