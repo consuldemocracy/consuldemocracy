@@ -35,7 +35,8 @@ feature 'Admin shifts' do
     create(:poll, :incoming)
     poll = create(:poll, :current)
     booth = create(:poll_booth)
-    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    create(:poll_booth_assignment, poll: poll, booth: booth)
+    create(:poll_booth_assignment, poll: create(:poll, :expired), booth: booth)
     officer = create(:poll_officer)
     vote_collection_dates = (poll.starts_at.to_date..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
     recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a.map { |date| I18n.l(date, format: :long) }
