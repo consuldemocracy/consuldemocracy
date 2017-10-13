@@ -552,6 +552,7 @@ es:
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
+        geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
         submit_button: "Crear votación"
@@ -594,7 +595,8 @@ es:
       show:
         proposal: Propuesta ciudadana original
         author: Autor
-        title: Título
+        question: Pregunta
+        edit_question: Editar pregunta
         valid_answers: Respuestas válidas
         add_answer: Añadir respuesta
         video_url: Video externo
@@ -619,6 +621,7 @@ es:
         description: Descripción
         images: Imágenes
         images_list: Lista de imágenes
+        edit: Editar respuesta
       edit:
         title: Editar respuesta
       videos:

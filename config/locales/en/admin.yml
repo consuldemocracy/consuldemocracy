@@ -552,6 +552,7 @@ en:
         create: "Create poll"
         name: "Name"
         dates: "Dates"
+        geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
         submit_button: "Create poll"
@@ -594,7 +595,8 @@ en:
       show:
         proposal: Original proposal
         author: Author
-        title: Title
+        question: Question
+        edit_question: Edit question
         valid_answers: Valid answers
         add_answer: Add answer
         video_url: External video
@@ -617,6 +619,7 @@ en:
         description: Description
         images: Images
         images_list: Images list
+        edit: Edit answer
       edit:
         title: Edit answer
       videos:
