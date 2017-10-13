@@ -1478,33 +1478,6 @@
   }
 }
 
-.featured-proposals-ballot-banner,
-.sucessfull-proposals-banner {
-  background: #2d3e50 image-url('ballot_tiny.gif') no-repeat;
-  background-position: 75% 0;
-  position: relative;
-
-  @include breakpoint(medium) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  @include breakpoint(large) {
-    background: #2d3e50 image-url('ballot.gif') no-repeat;
-    background-position: 90% 0;
-  }
-
-  h2,
-  a:hover h2 {
-    color: #ffd200 !important;
-  }
-
-  p {
-    color: #fff;
-  }
-}
-
-.sucessfull-proposals-banner,
 .successful .panel {
 
   .icon-successful {
