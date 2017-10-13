@@ -58,9 +58,13 @@ en:
       new:
         title: Polls
         table_poll: Poll
-        table_actions: Polls status
+        table_status: Polls status
+        table_actions: Actions
       show:
         can_vote: Can vote
         error_already_voted: Has already participated in this poll
+        no_actions: There is no available actions
         submit: Confirm vote
         success: "Vote introduced!"
+      can_vote:
+        submit_disable_with: "Wait, confirming vote..."

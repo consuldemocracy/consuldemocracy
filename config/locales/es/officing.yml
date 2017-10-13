@@ -58,9 +58,13 @@ es:
       new:
         title: Votaciones
         table_poll: Votación
-        table_actions: Estado de las votaciones
+        table_status: Estado de las votaciones
+        table_actions: Acciones
       show:
         can_vote: Puede votar
-        error_already_voted: "Ya ha participado en esta votación."
+        error_already_voted: "Ya ha participado en esta votación"
+        no_actions: No hay acciones disponibles
         submit: Confirmar voto
         success: "¡Voto introducido!"
+      can_vote:
+        submit_disable_with: "Espera, confirmando voto..."
