@@ -198,24 +198,12 @@ puts document
     YAML.load(File.read("#{Rails.root}/public/main_squares/config.yml"))
   end
 
-  namespace :polls do
-    desc "Migrate Poll White/Null/Total Results to Poll Recounts"
-    task migrate_to_recounts: :environment do
-      %w(white null total).each do |type|
-        "Poll::#{type.capitalize}Result".constantize.all.each do |result|
-          recount = Poll::Recount.new
-          recount.booth_assignment = result.booth_assignment
-          recount.officer_assignment = result.officer_assignment
-          recount["#{type}_amount"] = result.amount
-          recount["#{type}_amount_log"] = result.amount_log
-          recount.officer_assignment_id_log = result.officer_assignment_id_log
-          recount.date = result.date
-          recount.origin = result.origin
-          recount.author = result.author
-          recount.author_id_log = ":#{result.author.id}"
-          puts "Error creating Poll Recount with ##{result.id} and result type ##{type} params, #{recount.errors}" unless recount.save
-        end
-      end
-    end
+desc "Set correct order to answers on new Plazas Polls"
+  task set_answers_order: :environment do
+    Poll::Question::Answer.where(title: 'Sí').each { |answer| answer.update_attribute(:given_order, 1)}
+    Poll::Question::Answer.where(title: 'No').each { |answer| answer.update_attribute(:given_order, 2)}
+    Poll::Question::Answer.where(title: 'En blanco').each { |answer| answer.update_attribute(:given_order, 3)}
+    Poll::Question::Answer.where('title LIKE ?', 'Proyecto X:%').each { |answer| answer.update_attribute(:given_order, 1)}
+    Poll::Question::Answer.where('title LIKE ?', 'Proyecto Y:%').each { |answer| answer.update_attribute(:given_order, 2)}
   end
 end
