@@ -901,11 +901,12 @@ en:
         total: Total
         proposals_with_notifications: Proposals with notifications
     tags:
-      create: Create Topic
-      destroy: Destroy Topic
+      create: Create topic
+      destroy: Destroy topic
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
+        topic: Topic
       name:
         placeholder: Type the name of the topic
     users:

@@ -903,11 +903,12 @@ es:
         total: Total
         proposals_with_notifications: Propuestas con notificaciones
     tags:
-      create: Crear Tema
-      destroy: Eliminar Tema
+      create: Crear tema
+      destroy: Eliminar tema
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
+        topic: Tema
       name:
         placeholder: Escribe el nombre del tema
     users:
