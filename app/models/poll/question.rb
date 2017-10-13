@@ -10,7 +10,7 @@ class Poll::Question < ActiveRecord::Base
 
   has_many :comments, as: :commentable
   has_many :answers, class_name: 'Poll::Answer'
-  has_many :question_answers, class_name: 'Poll::Question::Answer'
+  has_many :question_answers, -> { order 'given_order asc' }, class_name: 'Poll::Question::Answer'
   has_many :partial_results
   belongs_to :proposal
 
