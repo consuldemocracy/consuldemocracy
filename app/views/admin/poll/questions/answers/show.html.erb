@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<%= link_to t('shared.edit'), edit_admin_answer_path(@answer),
+<%= link_to t("admin.answers.show.edit"), edit_admin_answer_path(@answer),
             class: "button hollow float-right" %>
 
 <ul class="breadcrumbs margin-top">
@@ -10,23 +10,22 @@
 
 <div class="clear"></div>
 
-<div class="small-12 medium-6">
-  <div class="callout highlight">
-    <p>
-      <strong><%= t("admin.answers.show.title") %></strong>
-      <br>
-      <%= @answer.title %>
-    </p>
-
-    <p>
-      <strong><%= t("admin.answers.show.description") %></strong>
-      <%= @answer.description %>
-    </p>
-
-    <p>
-      <strong><%= t("admin.answers.show.images") %></strong>
-      <br>
-      <%= link_to t("admin.answers.show.images_list"), admin_answer_images_path(@answer) %>
-    </p>
-  </div>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th scope="col"><%= t("admin.answers.show.title") %></th>
+      <th scope="col"><%= t("admin.answers.show.description") %></th>
+      <th scope="col" class="text-center"><%= t("admin.answers.show.images") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @answer.title %></td>
+      <td><%= @answer.description %></td>
+      <td class="text-center">
+        (<%= @answer.images.count %>)<br>
+        <%= link_to t("admin.answers.show.images_list"), admin_answer_images_path(@answer) %>
+      </td>
+    </tr>
+  </tbody>
+</table>

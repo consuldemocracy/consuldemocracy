@@ -10,7 +10,8 @@
       <%= link_to t("admin.booths.booth.shifts"),
                   new_admin_booth_shift_path(booth),
                   class: "button hollow" %>
-      <%= link_to t("admin.actions.edit"),
+    <% else %>
+      <%= link_to t("admin.booths.booth.edit"),
                   edit_admin_booth_path(booth),
                   class: "button hollow" %>
     <% end %>
