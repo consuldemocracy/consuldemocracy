@@ -525,12 +525,14 @@ puts " ✅"
 print "Active Polls"
 (1..3).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
+                     slug: "active-poll-#{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
                      geozone_restricted: false)
 end
 (1..5).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
+                     slug: "active-poll-#{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
                      geozone_restricted: true,
@@ -540,12 +542,14 @@ end
 puts " ✅"
 print "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
+                   slug: "upcoming-poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
 
 puts " ✅"
 print "Expired Poll"
 poll = Poll.create(name: "Expired Poll",
+                   slug: "expired-poll",
                    starts_at: 2.months.ago,
                    ends_at:   1.month.ago)
 
