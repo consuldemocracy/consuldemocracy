@@ -8,6 +8,8 @@ class Officing::ResultsController < Officing::BaseController
   before_action :check_booth_and_date, only: :create
   before_action :build_results, only: :create
 
+  before_action :verify_booth
+
   def new
   end
 
