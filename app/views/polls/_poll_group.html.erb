@@ -23,7 +23,7 @@
             <%= poll_dates(poll) %>
           <% end %>
         <% else %>
-          <h4><%= link_to poll.name, poll_path(id: poll.slug) %></h4>
+          <h4><%= link_to poll.name, poll_path(id: poll.slug || poll.id) %></h4>
           <%= poll_dates(poll) %>
           <ul class="margin-top">
             <% poll.questions.each do |question| %>
@@ -44,7 +44,7 @@
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell aling-middle">
-          <%= link_to poll_path(id: poll.slug), class: "button hollow expanded", data: { no_turbolink: true } do %>
+          <%= link_to poll_path(id: poll.slug || poll.id), class: "button hollow expanded", data: { no_turbolink: true } do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>
             <% elsif poll.incoming? %>
