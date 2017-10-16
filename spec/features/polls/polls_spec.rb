@@ -73,6 +73,17 @@ feature 'Polls' do
     scenario "Visit path with slug" do
       visit poll_path(poll.slug)
       expect(page).to have_current_path(poll_path(poll.slug))
+
+    end
+
+    scenario 'Show answers with videos' do
+      question = create(:poll_question, poll: poll)
+      answer = create(:poll_question_answer, question: question, title: 'Chewbacca')
+      video = create(:poll_answer_video, answer: answer, title: "Awesome project video", url: "https://www.youtube.com/watch?v=123")
+
+      visit poll_path(poll)
+
+      expect(page).to have_link("Awesome project video", href: "https://www.youtube.com/watch?v=123")
     end
 
     scenario 'Lists questions from proposals as well as regular ones' do
