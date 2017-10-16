@@ -40,7 +40,7 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def valid_answers
-    (super.try(:split, ',').compact || []).map(&:strip)
+    (super.try(:split, ',')&.compact || []).map(&:strip)
   end
 
   def copy_attributes_from_proposal(proposal)
