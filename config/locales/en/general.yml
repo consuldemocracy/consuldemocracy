@@ -497,6 +497,7 @@ en:
       read_more: "Read more about %{answer}"
       read_less: "Read less about %{answer}"
       participate_in_other_polls: Participate in other polls
+      videos: "External video"
   poll_questions:
     create_question: "Create question"
     default_valid_answers: "Yes, No"

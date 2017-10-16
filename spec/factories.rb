@@ -512,6 +512,12 @@ FactoryGirl.define do
     sequence(:description) { |n| "Answer description #{n}" }
   end
 
+  factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
+    association :answer, factory: :poll_question_answer
+    title "Sample video title"
+    url "https://youtu.be/nhuNb0XtRhQ"
+  end
+
   factory :poll_booth, class: 'Poll::Booth' do
     sequence(:name) { |n| "Booth #{n}" }
     sequence(:location) { |n| "Street #{n}" }

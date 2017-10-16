@@ -497,6 +497,7 @@ es:
       read_more: "Leer más sobre %{answer}"
       read_less: "Leer menos sobre %{answer}"
       participate_in_other_polls: Participar en otras votaciones
+      videos: "Vídeo externo"
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"
