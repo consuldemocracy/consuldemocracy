@@ -510,7 +510,7 @@ FactoryGirl.define do
   factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
     association :answer, factory: :poll_question_answer
     title "Sample video title"
-    url "http://sample-video-url.org"
+    url "https://youtu.be/nhuNb0XtRhQ"
   end
 
   factory :poll_booth, class: 'Poll::Booth' do
