@@ -92,6 +92,37 @@ feature 'Admin shifts' do
     end
   end
 
+  scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer", :js do
+    poll = create(:poll, :current)
+    booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    officer = create(:poll_officer)
+
+    shift1 = create(:poll_shift, :vote_collection_task, officer: officer, booth: booth, date: Time.zone.today)
+    shift2 = create(:poll_shift, :recount_scrutiny_task, officer: officer, booth: booth, date: Time.zone.tomorrow)
+
+    vote_collection_dates = (poll.starts_at.to_date..poll.ends_at.to_date).to_a
+                              .reject { |date| date == Time.zone.today }
+                              .map { |date| I18n.l(date, format: :long) }
+    recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a
+                              .reject { |date| date == Time.zone.tomorrow }
+                              .map { |date| I18n.l(date, format: :long) }
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    fill_in "search", with: officer.email
+    click_button "Search"
+    click_link "Edit shifts"
+
+    expect(page).to have_select('shift_date_vote_collection_date', options: ["Select day", *vote_collection_dates])
+    select "Recount & Scrutiny", from: 'shift_task'
+    expect(page).to have_select('shift_date_recount_scrutiny_date', options: ["Select day", *recount_scrutiny_dates])
+  end
+
   scenario "Error on create", :js do
     poll = create(:poll, :current)
     booth = create(:poll_booth)

@@ -113,4 +113,18 @@ feature 'Admin booths' do
     end
   end
 
+  scenario "Back link go back to available list when manage shifts" do
+    poll = create(:poll, :current)
+    booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    click_link "Go back"
+    expect(current_path).to eq(available_admin_booths_path)
+  end
 end

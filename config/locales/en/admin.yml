@@ -213,6 +213,7 @@ en:
         hidden_debate: Hidden debate
         hidden_proposal: Hidden proposal
         title: Hidden comments
+        no_hidden_comments: There is no hidden comments.
     dashboard:
       index:
         back: Go back to %{org}
@@ -226,6 +227,7 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+        no_hidden_debates: There is no hidden debates.
     hidden_users:
       index:
         filter: Filter
@@ -234,6 +236,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden users
+        user: User
+        no_hidden_users: There is no hidden users.
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
@@ -715,6 +719,7 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+        no_hidden_proposals: There is no hidden proposals.
     settings:
       flash:
         updated: Value updated
@@ -757,6 +762,9 @@ en:
         placeholder: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
+      actions: Actions
+      title: Title
+      description: Description
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -901,11 +909,12 @@ en:
         total: Total
         proposals_with_notifications: Proposals with notifications
     tags:
-      create: Create Topic
-      destroy: Destroy Topic
+      create: Create topic
+      destroy: Destroy topic
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
+        topic: Topic
       name:
         placeholder: Type the name of the topic
     users:

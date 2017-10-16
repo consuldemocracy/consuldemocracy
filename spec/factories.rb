@@ -536,6 +536,14 @@ FactoryGirl.define do
     association :booth, factory: :poll_booth
     association :officer, factory: :poll_officer
     date Date.current
+
+    trait :vote_collection_task do
+      task 0
+    end
+
+    trait :recount_scrutiny_task do
+      task 1
+    end
   end
 
   factory :poll_voter, class: 'Poll::Voter' do

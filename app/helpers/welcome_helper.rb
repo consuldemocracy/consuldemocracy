@@ -55,8 +55,4 @@ module WelcomeHelper
     end
   end
 
-  def highlight_background
-    (feature?("user.recommendations") && current_user) ? "highlight" : ""
-  end
-
 end
