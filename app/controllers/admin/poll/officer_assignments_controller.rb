@@ -25,7 +25,9 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
 
   def search_officers
     load_search
-    @officers = User.joins(:poll_officer).search(@search).order(username: :asc)
+
+    poll_officers = User.where(id: @poll.officers.pluck(:user_id))
+    @officers = poll_officers.search(@search).order(username: :asc)
 
     respond_to do |format|
       format.js
