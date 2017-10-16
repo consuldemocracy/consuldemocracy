@@ -1,0 +1,23 @@
+---
+es:
+  omniauth:
+    facebook:
+      sign_in: Entra con Facebook
+      sign_up: Regístrate con Facebook
+      name: Facebook
+    finish_signup:
+      title: Añade tu email
+    google_oauth2:
+      sign_in: Entra con Google
+      sign_up: Regístrate con Google
+      name: Google
+    twitter:
+      sign_in: Entra con Twitter
+      sign_up: Regístrate con Twitter
+      name: Twitter
+    info_sign_in: "Entra con:"
+    info_sign_up: "Regístrate con:"
+    or_fill: "O rellena el siguiente formulario:"
+    finish_signup:
+      title: "Detalles adicionales de tu cuenta"
+      username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
