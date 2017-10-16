@@ -20,7 +20,6 @@ feature 'Booth' do
   end
 
   scenario 'Officer with single booth assignment today' do
-    skip "bring back before launch"
     officer = create(:poll_officer)
     poll = create(:poll)
 
@@ -37,7 +36,6 @@ feature 'Booth' do
   end
 
   scenario 'Officer with multiple booth assignments today' do
-    skip "bring back before launch"
     officer = create(:poll_officer)
     poll = create(:poll)
 
@@ -63,8 +61,6 @@ feature 'Booth' do
   end
 
   scenario "Display single booth for any number of polls" do
-    skip "bring back before launch"
-
     officer = create(:poll_officer)
 
     booth1 = create(:poll_booth)

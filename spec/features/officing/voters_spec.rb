@@ -15,10 +15,10 @@ feature 'Voters' do
   end
 
   scenario "Can vote", :js do
-    # officer_assignment = create(:poll_officer_assignment, officer: officer)
+    officer_assignment = create(:poll_officer_assignment, officer: officer)
     # poll = officer_assignment.booth_assignment.poll
 
-    # set_officing_booth(officer_assignment.booth)
+    set_officing_booth(officer_assignment.booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -40,10 +40,11 @@ feature 'Voters' do
   scenario "Already voted", :js do
     poll2 = create(:poll, :current)
     booth_assignment = create(:poll_booth_assignment, poll: poll2, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll, user: user)
+    set_officing_booth(officer_assignment.booth)
 
     visit new_officing_voter_path(id: voter.user.id)
 
@@ -90,7 +91,7 @@ feature 'Voters' do
     poll_current = create(:poll, :current)
     second_booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll_current, booth: second_booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
     create(:poll_shift, officer: officer, booth: second_booth, date: Date.current, task: :recount_scrutiny)
     create(:poll_shift, officer: officer, booth: second_booth, date: Date.tomorrow, task: :vote_collection)
 
@@ -108,6 +109,7 @@ feature 'Voters' do
     booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_out, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
+    set_officing_booth(officer_assignment.booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -200,6 +202,7 @@ feature 'Voters' do
 
        booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
        officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+       set_officing_booth(officer_assignment.booth)
 
        visit root_path
        click_link "Sign out"

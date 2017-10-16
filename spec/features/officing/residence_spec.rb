@@ -110,24 +110,20 @@ feature 'Residence' do
   end
 
   scenario "Verify booth", :js do
-    skip "Review before launching booth votes"
     booth = create(:poll_booth)
     poll = create(:poll)
 
-    ba = create(:poll_booth_assignment, poll: poll, booth: booth )
+    ba = create(:poll_booth_assignment, poll: poll, booth: booth)
     oa = create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+    create(:poll_shift, officer: officer, booth: booth, date: Time.zone.today)
 
     login_as(officer.user)
-
-    # User somehow skips setting session[:booth_id]
-    # set_officing_booth(booth)
 
     visit new_officing_residence_path
     within("#officing-booth") do
       expect(page).to have_content "You are officing the booth located at #{booth.location}."
     end
 
-    visit new_officing_residence_path
     officing_verify_residence
 
     expect(page).to have_content poll.name
