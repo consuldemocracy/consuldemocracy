@@ -1,0 +1,53 @@
+<% cache [@stats] do %>
+  <% provide :title do %>
+    <%= t("polls.stats.page_title", poll: @poll.name) %>
+  <% end %>
+  <% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: poll_url(@poll),
+              social_title: @poll.name,
+              social_description: @poll.description %>
+  <% end %>
+
+  <div class="budgets-stats">
+    <div class="expanded no-margin-top padding header">
+      <div class="row">
+        <div class="small-12 column text-center">
+          <%= back_link_to polls_path %>
+          <h1 class="title"><%= t("polls.stats.title") %><br><%= @poll.name %></h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aquí se empiezan a mostrar los datos -->
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <div class="callout">
+          <span class="uppercase"><%= t("polls.stats.total_participants") %></span>
+          <p id="total_participants" class="big-number-stat budget">
+            <%= @stats[:total_participants] %>
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <td>Web</td>
+                <td>Booth</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= @stats[:total_participants_web] %></td>
+                <td><%= @stats[:total_participants_booth] %></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <span class="uppercase"><%= t("polls.stats.total_votes") %></span>
+          <p class="big-number-stat budget">
+            <%= @stats[:total_votes] %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

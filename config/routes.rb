@@ -112,6 +112,8 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  get "polls/:id/stats", to: "polls/stats#show", as: 'custom_poll_stats'
+  
   resources :polls, only: [:show, :index] do
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
