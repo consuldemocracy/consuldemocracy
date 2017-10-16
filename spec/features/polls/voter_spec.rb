@@ -51,8 +51,12 @@ feature "Voter" do
 
       expect(page).to have_content poll.name
 
-      first(:button, "Confirm vote").click
-      expect(page).to have_content "Vote introduced!"
+      within("#poll_#{poll.id}") do
+        click_button("Confirm vote")
+        expect(page).to_not have_button("Confirm vote")
+        expect(page).to have_button('Wait, confirming vote...', disabled: true)
+        expect(page).to have_content "Vote introduced!"
+      end
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("booth")

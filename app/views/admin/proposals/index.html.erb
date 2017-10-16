@@ -2,41 +2,55 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.proposals.index" %>
 
-<h3><%= page_entries_info @proposals %></h3>
+<% if @proposals.any? %>
+  <h3 class="margin"><%= page_entries_info @proposals %></h3>
 
-<table>
-  <% @proposals.each do |proposal| %>
-    <tr id="<%= dom_id(proposal) %>">
-      <td>
-        <strong><%= proposal.title %></strong>
-        <br>
-        <div class="moderation-description">
-          <p><%= proposal.summary %></p>
-          <%= proposal.description %>
-          <% if proposal.external_url.present? %>
-            <p><%= text_with_links proposal.external_url %></p>
-          <% end %>
-          <% if proposal.video_url.present? %>
-            <p><%= text_with_links proposal.video_url %></p>
-          <% end %>
-          <p><%= proposal.question %></p>
-        </div>
-      </td>
-      <td class="text-right">
-        <%= link_to t("admin.actions.restore"),
-              restore_admin_proposal_path(proposal, request.query_parameters),
-              method: :put,
-              data: { confirm: t("admin.actions.confirm") },
-              class: "button hollow on-hover-block" %>
-        <% unless proposal.confirmed_hide? %>
-          <%= link_to t("admin.actions.confirm_hide"),
-                confirm_hide_admin_proposal_path(proposal, request.query_parameters),
+  <table>
+    <thead>
+      <th scope="col"><%= t("admin.shared.title") %></th>
+      <th scope="col" class="small-6"><%= t("admin.shared.description") %></th>
+      <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr id="<%= dom_id(proposal) %>">
+        <td class="align-top">
+          <strong><%= proposal.title %></strong>
+        </td>
+        <td>
+          <div class="moderation-description">
+            <p><small><%= proposal.summary %></small></p>
+            <%= proposal.description %>
+            <% if proposal.external_url.present? %>
+              <p><%= text_with_links proposal.external_url %></p>
+            <% end %>
+            <% if proposal.video_url.present? %>
+              <p><%= text_with_links proposal.video_url %></p>
+            <% end %>
+            <p><%= proposal.question %></p>
+          </div>
+        </td>
+        <td class="align-top">
+          <%= link_to t("admin.actions.restore"),
+                restore_admin_proposal_path(proposal, request.query_parameters),
                 method: :put,
-                class: "button hollow warning on-hover-block" %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+                data: { confirm: t("admin.actions.confirm") },
+                class: "button hollow warning" %>
+          <% unless proposal.confirmed_hide? %>
+            <%= link_to t("admin.actions.confirm_hide"),
+                  confirm_hide_admin_proposal_path(proposal, request.query_parameters),
+                  method: :put,
+                  class: "button" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @proposals %>
+  <%= paginate @proposals %>
+<% else %>
+  <div class="callout primary margin">
+    <%= t("admin.proposals.index.no_hidden_proposals") %>
+  </div>
+<% end %>

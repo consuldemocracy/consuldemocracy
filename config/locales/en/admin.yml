@@ -221,6 +221,7 @@ en:
         hidden_debate: Hidden debate
         hidden_proposal: Hidden proposal
         title: Hidden comments
+        no_hidden_comments: There is no hidden comments.
     dashboard:
       index:
         back: Go back to %{org}
@@ -234,6 +235,7 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+        no_hidden_debates: There is no hidden debates.
     hidden_users:
       index:
         filter: Filter
@@ -242,6 +244,8 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden users
+        user: User
+        no_hidden_users: There is no hidden users.
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
@@ -561,6 +565,7 @@ en:
         create: "Create poll"
         name: "Name"
         dates: "Dates"
+        geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
         submit_button: "Create poll"
@@ -603,7 +608,8 @@ en:
       show:
         proposal: Original proposal
         author: Author
-        title: Title
+        question: Question
+        edit_question: Edit question
         valid_answers: Valid answers
         add_answer: Add answer
         video_url: External video
@@ -626,6 +632,7 @@ en:
         description: Description
         images: Images
         images_list: Images list
+        edit: Edit answer
       edit:
         title: Edit answer
       videos:
@@ -677,6 +684,7 @@ en:
         location: "Location"
       booth:
         shifts: "Manage shifts"
+        edit: "Edit booth"
     officials:
       edit:
         destroy: Remove 'Official' status
@@ -724,6 +732,7 @@ en:
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+        no_hidden_proposals: There is no hidden proposals.
     settings:
       flash:
         updated: Value updated
@@ -766,6 +775,9 @@ en:
         placeholder: Search user by name or email
       search_results: "Search results"
       no_search_results: "No results found."
+      actions: Actions
+      title: Title
+      description: Description
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1000,11 +1012,12 @@ en:
         clicked_email_link: Clicked email link
         clicked_signup_button: Clicked signup button
     tags:
-      create: Create Topic
-      destroy: Destroy Topic
+      create: Create topic
+      destroy: Destroy topic
       index:
         add_tag: Add a new proposal topic
         title: Proposal topics
+        topic: Topic
       name:
         placeholder: Type the name of the topic
     users:

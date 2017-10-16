@@ -48,7 +48,7 @@ feature 'Answers' do
 
     visit admin_answer_path(answer)
 
-    click_link 'Edit'
+    click_link 'Edit answer'
 
     old_title = answer.title
     new_title = 'Ex Machina'
