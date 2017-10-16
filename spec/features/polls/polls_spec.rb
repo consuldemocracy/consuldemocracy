@@ -67,15 +67,12 @@ feature 'Polls' do
 
     scenario 'Show answers with videos' do
       question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: 'Chewbacca')
-      answer2 = create(:poll_question_answer, question: question, title: 'Han Solo',
-                                              video_title: "Awesome project video",
-                                              video_url: "https://www.youtube.com/watch?v=123")
-
+      answer = create(:poll_question_answer, question: question, title: 'Chewbacca')
+      video = create(:poll_answer_video, answer: answer, title: "Awesome project video", url: "https://www.youtube.com/watch?v=123")
 
       visit poll_path(poll)
 
-
+      expect(page).to have_link("Awesome project video", href: "https://www.youtube.com/watch?v=123")
     end
 
     scenario 'Lists questions from proposals as well as regular ones' do
