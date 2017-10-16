@@ -377,7 +377,8 @@ feature 'Emails' do
       user1 = create(:user, email_on_comment: true)
       user2 = create(:user)
 
-      poll = create(:poll, author: user1)
+      login_as(user1)
+      poll = create(:poll)
       reset_mailer
 
       login_as(user2)
