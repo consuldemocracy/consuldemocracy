@@ -65,6 +65,19 @@ feature 'Polls' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
 
+    scenario 'Show answers with videos' do
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+      answer2 = create(:poll_question_answer, question: question, title: 'Han Solo',
+                                              video_title: "Awesome project video",
+                                              video_url: "https://www.youtube.com/watch?v=123")
+
+
+      visit poll_path(poll)
+
+
+    end
+
     scenario 'Lists questions from proposals as well as regular ones' do
       normal_question = create(:poll_question, poll: poll)
       proposal_question = create(:poll_question, poll: poll, proposal: create(:proposal))
