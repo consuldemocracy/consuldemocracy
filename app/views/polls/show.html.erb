@@ -95,9 +95,8 @@
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
 
-      <% @poll.questions.map(&:question_answers).flatten.sort { |a,b| b.id <=> a.id }.each do |answer| %>
-        <div class="small-12 medium-6 column end" id="answer_<%= answer.id %>"
-             data-toggler="medium-6 answer-divider">
+      <% @poll_questions_answers.each do |answer| %>
+        <div class="small-12 medium-6 column end answer <%= cycle('first', '') %>" id="answer_<%= answer.id %>">
 
           <% if answer.description.present? %>
             <h3><%= answer.title %></h3>
@@ -112,17 +111,19 @@
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
                 <%= safe_html_with_links simple_format(answer.description) %>
               </div>
-              <a id="read_more_<%= answer.id %>"
-                 data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                 data-toggler="hide">
-                <%= t("polls.show.read_more", answer: answer.title) %>
-              </a>
-              <a id="read_less_<%= answer.id %>"
-                 data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                 data-toggler="hide"
-                 class="hide">
-                <%= t("polls.show.read_less", answer: answer.title) %>
-              </a>
+              <div class="margin">
+                <a id="read_more_<%= answer.id %>"
+                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+                   data-toggler="hide">
+                  <%= t("polls.show.read_more", answer: answer.title) %>
+                </a>
+                <a id="read_less_<%= answer.id %>"
+                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
+                   data-toggler="hide"
+                   class="hide">
+                  <%= t("polls.show.read_less", answer: answer.title) %>
+                </a>
+              </div>
             </div>
           <% end %>
 
@@ -141,8 +142,33 @@
               <% end %>
             </div>
           <% end %>
+
+          <% if answer.videos.present? %>
+            <div class="video-link">
+              <p>
+                <span class="icon-video"></span>&nbsp;
+                <strong><%= t("polls.show.videos") %></strong>
+              </p>
+
+              <% answer.videos.each do |video| %>
+                  <%= link_to video.title,
+                              video.url,
+                              target: "_blank",
+                              rel: "nofollow" %><br>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
+
+  </div>
+</div>
+
+<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
+  <%= render "filter_subnav" %>
+
+  <div class="tabs-panel is-active" id="tab-comments">
+    <%= render "comments" %>
   </div>
 </div>

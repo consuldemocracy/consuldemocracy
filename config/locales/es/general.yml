@@ -512,6 +512,8 @@ es:
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      comments_tab: Comentarios
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       signin: iniciar sesión
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
@@ -524,7 +526,8 @@ es:
       zoom_plus: Ampliar imagen
       read_more: "Leer más sobre %{answer}"
       read_less: "Leer menos sobre %{answer}"
-      participate_in_other_polls: Participa en otras votaciones
+      participate_in_other_polls: Participar en otras votaciones
+      videos: "Vídeo externo"
   poll_questions:
     create_question: "Crear pregunta para votación"
     default_valid_answers: "Sí, No"

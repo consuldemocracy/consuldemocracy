@@ -20,6 +20,7 @@ es:
         registration: Registro
         debate: Debate
         proposal: Propuesta
+        poll: Votación
         verification: Verificación
         deregister: Baja
       action:

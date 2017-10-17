@@ -44,6 +44,8 @@ es:
         help_text_6: "Más información sobre las votaciones"
       orders:
         random: Aleatorias
+    show:
+      videos: "Vídeo"
   forums:
     index:
       deactivate_link: "Desactivar"

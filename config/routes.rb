@@ -342,6 +342,7 @@ Rails.application.routes.draw do
           resources :videos, controller: 'questions/answers/videos'
           get :documents, to: 'questions/answers#documents'
         end
+        post '/answers/order_answers', to: 'questions/answers#order_answers'
       end
     end
 
@@ -615,15 +616,15 @@ Rails.application.routes.draw do
 
   # more information pages
   get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',                 as: 'more_info'
-  get 'mas-informacion-votacion-febrero-2017',       to: 'pages#show', id: 'more_info/index_february_2017',   as: 'more_info_february'
-  get 'mas-informacion-votacion-octubre-2017',       to: 'pages#show', id: 'more_info/index_october_2017',    as: 'more_info_october'
+  get 'mas-informacion/votaciones',                  to: 'pages#show', id: 'more_info/polls/index',           as: 'more_info_polls'
+  get 'mas-informacion/votaciones/febrero-2017',     to: 'pages#show', id: 'more_info/polls/february_2017',   as: 'more_info_polls_february'
+  get 'mas-informacion/votaciones/octubre-2017',     to: 'pages#show', id: 'more_info/polls/october_2017',    as: 'more_info_polls_october'
   get 'mas-informacion/como-usar',                   to: 'pages#show', id: 'more_info/how_to_use/index',      as: 'how_to_use'
   get 'mas-informacion/faq',                         to: 'pages#show', id: 'more_info/faq/index',             as: 'faq'
   get 'mas-informacion/propuestas',                  to: 'pages#show', id: 'more_info/proposals/index',       as: 'more_info_proposals'
   get 'mas-informacion/presupuestos-participativos', to: 'pages#show', id: 'more_info/budgets/index',         as: 'more_info_budgets'
   get 'mas-informacion/participacion/hechos',        to: 'pages#show', id: 'more_info/participation/facts',   as: 'participation_facts'
   get 'mas-informacion/participacion/mundo',         to: 'pages#show', id: 'more_info/participation/world',   as: 'participation_world'
-  get 'mas-informacion/votaciones',                  to: 'pages#show', id: 'more_info/polls/index',           as: 'more_info_polls'
   get 'mas-informacion/kit-decide',                  to: 'pages#show', id: 'more_info/kit_decide/index',      as: 'kit_decide'
   get 'mas-informacion/espacios-presenciales-2016',  to: 'pages#show', id: 'more_info/budgets/meetings_2016', as: 'budgets_meetings_2016'
   get 'mas-informacion/espacios-presenciales-2017',  to: 'pages#show', id: 'more_info/budgets/meetings_2017', as: 'budgets_meetings_2017'
