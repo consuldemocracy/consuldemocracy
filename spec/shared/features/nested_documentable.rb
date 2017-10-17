@@ -199,8 +199,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       find("#tab-documents-label").click
       expect(page).to have_content "empty.pdf"
 
-      #Review
-      #Doble check why the file is stored with a name different to empty.pdf
+      # Review
+      # Doble check why the file is stored with a name different to empty.pdf
       expect(page).to have_css("a[href$='.pdf']")
     end
 

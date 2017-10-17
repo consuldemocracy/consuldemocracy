@@ -1,11 +1,11 @@
 module WelcomeHelper
 
   def active_class(index)
-    "is-active is-in" if index == 0
+    "is-active is-in" if index.zero?
   end
 
   def slide_display(index)
-    "display: none;" if index > 0
+    "display: none;" if index.positive?
   end
 
   def recommended_path(recommended)
