@@ -279,7 +279,8 @@ feature 'Admin polls' do
         create(:poll_recount,
                booth_assignment: booth_assignment_1,
                white_amount: 21,
-               null_amount: 44)
+               null_amount: 44,
+               total_amount: 66)
 
         visit admin_poll_path(poll)
 
@@ -303,6 +304,7 @@ feature 'Admin polls' do
 
         within('#white_results') { expect(page).to have_content('21') }
         within('#null_results') { expect(page).to have_content('44') }
+        within('#total_results') { expect(page).to have_content('66') }
       end
     end
   end
