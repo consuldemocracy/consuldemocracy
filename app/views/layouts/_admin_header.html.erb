@@ -8,7 +8,7 @@
   <div class="expanded row">
     <div class="top-bar">
 
-      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+      <span data-responsive-toggle="responsive_menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
         <%= t("application.menu")%>
       </span>
@@ -22,10 +22,10 @@
             <% end %>
           </h1>
         </div>
-        <div id="responsive-menu">
+        <div id="responsive_menu">
 
         <div class="top-bar-right">
-          <ul class="dropdown menu" data-dropdown-menu>
+          <ul class="menu" data-responsive-menu="medium-dropdown">
             <%= render "admin/shared/admin_shortcuts" %>
             <%= render "shared/admin_login_items" %>
             <%= render "devise/menu/login_items" %>

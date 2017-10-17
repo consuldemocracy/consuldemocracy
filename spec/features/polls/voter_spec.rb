@@ -41,6 +41,27 @@ feature "Voter" do
       expect(Poll::Voter.first.origin).to eq("web")
     end
 
+    scenario "Voting via web as unverified user", :js do
+      poll = create(:poll)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+
+      user = create(:user, :incomplete_verification)
+
+      login_as user
+      visit poll_path(poll)
+
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to_not have_link('Yes', href: "/questions/#{question.id}/answer?answer=Yes&token=")
+        expect(page).to_not have_link('No', href: "/questions/#{question.id}/answer?answer=No&token=")
+      end
+
+      expect(page).to have_content("You must verify your account in order to answer")
+      expect(page).to_not have_content("You have already participated in this poll. If you vote again it will be overwritten")
+    end
+
     scenario "Voting in booth", :js do
       user = create(:user, :in_census)
 
