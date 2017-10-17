@@ -156,7 +156,6 @@ feature 'Poll Officing' do
       page.should have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
-      page.should have_content("Validate document")
       within("#side_menu") do
         click_link "Validate document"
       end
