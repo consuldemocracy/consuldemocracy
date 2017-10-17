@@ -54,8 +54,8 @@ feature "Voter" do
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to_not have_link('Yes')
-        expect(page).to_not have_link('No')
+        expect(page).to_not have_link('Yes', href: "/questions/#{question.id}/answer?answer=Yes&token=")
+        expect(page).to_not have_link('No', href: "/questions/#{question.id}/answer?answer=No&token=")
       end
 
       expect(page).to have_content("You must verify your account in order to answer")
