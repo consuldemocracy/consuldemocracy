@@ -10,7 +10,7 @@ class Poll::PartialResult < ActiveRecord::Base
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
-  validates :answer, inclusion: {in: ->(a) { a.question.valid_answers }}
+  validates :answer, inclusion: {in: ->(a) { a.question.question_answers.pluck(:title) }}
   validates :origin, inclusion: {in: VALID_ORIGINS}
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
