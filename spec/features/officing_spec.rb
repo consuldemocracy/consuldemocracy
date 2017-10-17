@@ -108,10 +108,17 @@ feature 'Poll Officing' do
   end
 
   scenario 'Officing dashboard available for multiple sessions' do
+    poll = create(:poll)
+    booth = create(:poll_booth)
+    booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+
     user1 = create(:user)
     user2 = create(:user)
     officer1 = create(:poll_officer, user: user1)
     officer2 = create(:poll_officer, user: user2)
+
+    officer_assignment_1 = create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer1)
+    officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer2)
 
     in_browser(:one) do
       login_as user1
