@@ -586,21 +586,6 @@ FactoryGirl.define do
     answer { question.valid_answers.sample }
   end
 
-  factory :poll_white_result, class: 'Poll::WhiteResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_null_result, class: 'Poll::NullResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_total_result, class: 'Poll::TotalResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
   factory :poll_recount, class: 'Poll::Recount' do
     association :author, factory: :user
     origin { 'web' }
