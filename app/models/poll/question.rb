@@ -39,17 +39,12 @@ class Poll::Question < ActiveRecord::Base
       author_visible_name   => 'C' }
   end
 
-  def valid_answers
-    (super.try(:split, ',')&.compact || []).map(&:strip)
-  end
-
   def copy_attributes_from_proposal(proposal)
     if proposal.present?
       self.author = proposal.author
       self.author_visible_name = proposal.author.name
       self.proposal_id = proposal.id
       self.title = proposal.title
-      self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end
   end
 
