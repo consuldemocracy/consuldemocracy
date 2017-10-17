@@ -59,7 +59,7 @@ describe Poll::PartialResult do
 
       author1 = create(:poll_officer).user
       author2 = create(:poll_officer).user
-      author2 = create(:poll_officer).user
+      author3 = create(:poll_officer).user
 
       partial_result.amount = 33
       partial_result.author_id = author1.id
