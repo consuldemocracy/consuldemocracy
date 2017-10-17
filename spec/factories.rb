@@ -576,14 +576,14 @@ FactoryGirl.define do
   factory :poll_answer, class: 'Poll::Answer' do
     association :question, factory: :poll_question
     association :author, factory: [:user, :level_two]
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
     association :question, factory: :poll_question
     association :author, factory: :user
     origin { 'web' }
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_recount, class: 'Poll::Recount' do
