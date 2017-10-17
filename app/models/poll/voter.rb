@@ -1,7 +1,7 @@
 class Poll
   class Voter < ActiveRecord::Base
 
-    VALID_ORIGINS = %w{web booth}.freeze
+    VALID_ORIGINS = %w{web booth letter}.freeze
 
     belongs_to :poll
     belongs_to :user
@@ -20,6 +20,7 @@ class Poll
 
     scope :web,    -> { where(origin: 'web') }
     scope :booth,  -> { where(origin: 'booth') }
+    scope :letter,  -> { where(origin: 'letter') }
 
     def set_demographic_info
       return if user.blank?
