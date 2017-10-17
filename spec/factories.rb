@@ -503,6 +503,13 @@ FactoryGirl.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
+
+    trait :with_answers do
+      after(:create) do |question, _evaluator|
+        create(:poll_question_answer, question: question, title: "Yes")
+        create(:poll_question_answer, question: question, title: "No")
+      end
+    end
   end
 
   factory :poll_question_answer, class: 'Poll::Question::Answer' do
@@ -573,13 +580,13 @@ FactoryGirl.define do
   end
 
   factory :poll_answer, class: 'Poll::Answer' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: [:user, :level_two]
     answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
     origin { 'web' }
     answer { question.question_answers.sample.title }
