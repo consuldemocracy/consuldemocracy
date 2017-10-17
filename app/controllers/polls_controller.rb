@@ -27,4 +27,8 @@ class PollsController < ApplicationController
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
   end
 
+  def results
+    @poll = Poll.find(params[:poll_id])
+  end
+
 end

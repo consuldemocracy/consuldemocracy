@@ -113,6 +113,7 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
+    get :results
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
