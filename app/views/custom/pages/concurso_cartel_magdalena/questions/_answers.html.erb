@@ -18,7 +18,7 @@
             </span>
           <% else %>
             <% if question_answer.nil? %>
-              <%= link_to "#{t('poll_questions.show.vote_answer', answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.title"))}",
+              <%= link_to "#{t('poll_questions.show.vote_answer', answer: '')}",
                 answer_question_path(question, answer: answer),
                 method: :post,
                 data: { confirm: t('pages.cartel_magdalena_2018.confirm_votacion') },
@@ -27,7 +27,7 @@
                 class: "button secondary hollow" %>
             <% else %>
               <span class="button secondary hollow disabled">
-                <%= "#{t('poll_questions.show.vote_answer', answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.title"))}" %>
+                <%= "#{t('poll_questions.show.vote_answer', answer: '')}" %>
               </span>
             <% end %>
           <% end %>
@@ -44,7 +44,7 @@
         <div class="small-6 large-6 columns">
           <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
           <span class="button secondary hollow disabled">
-            <%= "#{t('poll_questions.show.vote_answer', answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.title"))}" %>
+            <%= "#{t('poll_questions.show.vote_answer', answer: '')}" %>
           </span>
         </div>
       </div>
