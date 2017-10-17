@@ -44,6 +44,8 @@ en:
         help_text_6: "More information about voting"
       orders:
         random: Random
+    show:
+      videos: "Video"
   forums:
     index:
       deactivate_link: "Deactivate"
