@@ -91,8 +91,8 @@ class Poll < ActiveRecord::Base
     Poll::Voter.where(poll: self, user: user, origin: "booth").exists?
   end
 
-  def voted_in_booth?(user)
-    Poll::Voter.where(poll: self, user: user, origin: "booth").exists?
+  def voted_in_web?(user)
+    Poll::Voter.where(poll: self, user: user, origin: "web").exists?
   end
 
   def date_range
