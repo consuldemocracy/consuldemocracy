@@ -6,20 +6,22 @@
     <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
       <div class="row">
 
-        <div class="small-8 large-8 columns">
-          <%= image_tag('concurs_cartell_magdalena_2018/cartel_2017.jpg') %>
+        <div class="small-6 large-6 columns">
+          <%= link_to image_tag("concurs_cartell_magdalena_2018/cartel_#{answer}_p.jpg"), asset_path("concurs_cartell_magdalena_2018/cartel_#{answer}.jpg"), target: "_blank" %>
         </div>
 
 
-        <div class="small-4 large-4 columns">
+        <div class="small-6 large-6 columns">
+          <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
           <% if answers_by_question_id[question.id] == answer %>
             <span class="button answered" title="<%= t("poll_questions.show.voted", answer: answer)%>">
               <%= answer %>
             </span>
           <% else %>
-            <%= link_to answer,
+            <%= link_to "#{t('poll_questions.show.vote_answer', answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.title"))}",
               answer_question_path(question, answer: answer),
               method: :post,
+              data: { confirm: t('pages.cartel_magdalena_2018.confirm_votacion') },
               remote: true,
               title: t("poll_questions.show.vote_answer", answer: answer),
               class: "button secondary hollow" %>
@@ -31,11 +33,14 @@
   <% else %>
     <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
       <div class="row">
-        <div class="small-8 large-8 columns">
-          <%= image_tag('concurs_cartell_magdalena_2018/cartel_2017.jpg') %>
+        <div class="small-6 large-6 columns">
+          <%= link_to image_tag("concurs_cartell_magdalena_2018/cartel_#{answer}_p.jpg"), asset_path("concurs_cartell_magdalena_2018/cartel_#{answer}.jpg"), target: "_blank" %>
         </div>
-        <div class="small-4 large-4 columns">
-          <span class="button secondary hollow disabled"><%= answer %></span>
+        <div class="small-6 large-6 columns">
+          <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
+          <span class="button secondary hollow disabled">
+            <%= "#{t('poll_questions.show.vote_answer', answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.title"))}" %>
+          </span>
         </div>
       </div>
       <hr>

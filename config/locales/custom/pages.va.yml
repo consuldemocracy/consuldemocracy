@@ -5,11 +5,88 @@ va:
       title: Concurs del cartell de la Magdalena 2018
       tab_link: Cartell Magdalena 2018
       carteles_seleccionados: Cartells seleccionats
-    titles:
-
-
-
-
+      confirm_votacion: Sols es pot votar per un cartell, segur que vols votar aquest cartell?
+      cartel_1:
+        title: Esclat de festa
+        lema: Esclat de festa
+      cartel_2:
+        title: Mone Castellonencs a Disfrutar com a Magdaleners
+        lema: Mone Castellonencs a Disfrutar com a Magdaleners
+      cartel_3:
+        title: Canyes Cintes Festa
+        lema: Canyes Cintes Festa
+      cartel_4:
+        title: Ensenya de Castelló
+        lema: Ensenya de Castelló
+      cartel_5:
+        title: Título cartel 5
+        lema: Lema cartel 5
+      cartel_6:
+        title: Título cartel 6
+        lema: Lema cartel 6
+      cartel_7:
+        title: Título cartel 7
+        lema: Lema cartel 7
+      cartel_8:
+        title: Título cartel 8
+        lema: Lema cartel 8
+      cartel_9:
+        title: Título cartel 9
+        lema: Lema cartel 9
+      cartel_10:
+        title: Título cartel 10
+        lema: Lema cartel 10
+      cartel_11:
+        title: Título cartel 11
+        lema: Lema cartel 11
+      cartel_12:
+        title: Título cartel 12
+        lema: Lema cartel 12
+      cartel_13:
+        title: Título cartel 13
+        lema: Lema cartel 13
+      cartel_14:
+        title: Título cartel 14
+        lema: Lema cartel 14
+      cartel_15:
+        title: Título cartel 15
+        lema: Lema cartel 15
+      cartel_16:
+        title: Título cartel 16
+        lema: Lema cartel 16
+      cartel_17:
+        title: Título cartel 17
+        lema: Lema cartel 17
+      cartel_18:
+        title: Título cartel 18
+        lema: Lema cartel 18
+      cartel_19:
+        title: Título cartel 19
+        lema: Lema cartel 19
+      cartel_20:
+        title: Título cartel 20
+        lema: Lema cartel 20
+      cartel_21:
+        title: Título cartel 21
+        lema: Lema cartel 21
+      cartel_22:
+        title: Título cartel 22
+        lema: Lema cartel 22
+      cartel_23:
+        title: Título cartel 23
+        lema: Lema cartel 23
+      cartel_24:
+        title: Título cartel 24
+        lema: Lema cartel 24
+      cartel_25:
+        title: Título cartel 25
+        lema: Lema cartel 25
+      cartel_26:
+        title: Título cartel 26
+        lema: Lema cartel 26
+      cartel_27:
+        title: Título cartel 27
+        lema: Lema cartel 27
 
     priv:
       title: "Política de Privadesa"
@@ -125,60 +202,6 @@ va:
 
       L'Ajuntament de Castelló de la Plana es reserva el dret de revisar les presents condicions d'ús i la política de privacitat en qualsevol moment i per qualsevol raó. En aquest cas, els usuaris registrats seran avisats a través d'aquest espai en línia i, si continuen utilitzant el Portal de Participació Ciutadana, s'entendran acceptades les modificacions introduïdes.
     general_terms: "Termes i Condicions"
-    more_information:
-      description:
-        faq: "Preguntes freqüents sobre problemes tècnics"
-        how_it_works: "Descobreix tot el que pots fer en aquesta web"
-        how_to_use: "Utilitza-ho lliurement o ajuda'ns a millorar-ho, és programari lliure"
-        participation: "Participació Ciutadana, Transparència i Govern Obert"
-        participation_facts: "Per a perdre-li la por"
-        participation_world: "Sistemes de participació ciutadana que ja existeixen al món"
-        proposals_info: "Crea les teues pròpies propostes"
-        signature_sheet: "Fulls de signatures per a arreplegar avals"
-        spending_proposals_info: "Envia les teues propostes d'inversió"
-      how_it_works:
-        i: "Participació"
-        i1: "Espai de debat"
-        i2: "Espai de propostes"
-        text: |-
-          El nou Portal de Govern Obert està dividit en tres parts: Participació, Transparència i Dades Obertes (veuràs els enllaços en la part superior dreta).
-          >**I. Participació:** On poder decidir què ciutat volem tenir (a través de propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, i molts altres processos que anirem implementant).
-           **II. Transparència:** En aquest espai es publicaran totes les dades relatives a qui i com es gestiona la ciutat (noms dels responsables, càrrecs, sous, plans de govern, contractes, agendes dels responsables...). A més és l'espai on exercir el dret d'accés a la informació, podent sol·licitar qualsevol informació sobre l'Ajuntament de manera fàcil i ràpida.
-           **III. Dades Obertes:** En aquest espai es pengen les bases de dades que té l'Ajuntament, perquè qualsevol puga usar tota la informació directament, sense necessitat ni tan sols de preguntar. També es pot sol·licitar la publicació de més bases de dades.
-
-
-          Inaugurem el nou portal amb la nova secció de Participació, i en breu afegirem les noves seccions de Transparència i Dades Obertes (així que mantenim de moment els enllaços a les pàgines sobre aquest tema que ja existien).
-          ## <a id='i'></a> I. Participació
-          L'apartat de participació comprendrà diferents mecanismes de participació: propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, entre molts uns altres. De moment presentem l'espai de debat, i molt ràpid les propostes ciutadanes.
-          ## <a id='i1'></a>I.I. Espai de debat
-          En aquest espai, qualsevol persona pot obrir un fil de discussió sobre qualsevol tema, creant un espai independent on la gent podrà debatre sobre el tema proposat. D'aquesta manera, en aquest espai digital conviuran cada dia centenars d'espais de debat diferents entre els quals la ciutadania podrà passejar-se, sumant-se als quals més els interesse.
-
-          Tant els fils, com els comentaris podran ser valorats per qualsevol, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són els temes més importants a cada moment. Aquests seran presentats en la portada de l'espai, podent per descomptat accedir-se a tots els altres temes en pàgines posteriors, o usant altres criteris d'ordenació (els temes amb més comentaris, els més nous, els més controvertits, etc.).
-
-          Cadascun dels treballadors de l'Ajuntament té un usuari propi, que serà ressaltat com a tal, permetent que participen en els debats al mateix nivell que tots els altres ciutadans. Açò permetrà crear espais de comunicació directes entre els uns i els altres, evitant els inconvenients que implica la comunicació intervinguda, i responent a un plantejament clar per part del nou govern pel qual l'Ajuntament treballa per a la ciutadania, i davant ella ha de respondre.
-          ## <a id='i2'></a> I.I. Espai de propostes
-          En aquest espai, qualsevol persona pot proposar una iniciativa amb la intenció de recaptar els suficients avals com perquè la idea passe a ser consultada a tota la ciutadania amb caràcter vinculant.
-
-          Les propostes poden ser avalades per ciutadans empadronats que hagen verificat el seu compte en la plataforma de participació, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són les propostes que mereixen la pena ser dutes a terme.
-
-          Una vegada que una proposta aconseguisca una quantitat de 25 avals, automàticament passa a ser estudiada per un grup de treball de l'Ajuntament i passarà a la següent fase de consulta popular, en la qual la ciutadania votarà si es duu a terme o no. El termini màxim per a recaptar els avals necessaris serà d'un mes.
-      how_to_use:
-        text: |-
-          Utilitza-ho en el teu municipi lliurement o ajuda'ns a millorar-ho, és programari lliure.
-
-          Aquest Portal de Govern Obert usa la [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul') que és programari lliure, amb [llicència AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que qualsevol pugues lliurement usar el codi, copiar-ho, veure-ho detalladament, modificar-ho, i redistribuir-ho al món amb les modificacions que vulga (mantenint el que uns altres puguen al seu torn fer el mateix). Perquè creiem que la cultura és millor i més rica quan s'allibera
-
-          Si eres programador, pots veure el codi i ajudar-nos a millorar-ho en [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul').
-      titles:
-        faq: "Solucions a problemes tècnics (FAQ)"
-        how_it_works: "Com funciona aquest Portal de Govern Obert?"
-        how_to_use: "Utilitza-ho al teu municipi"
-        participation: "Participació i Transparència - Pròximes novetats"
-        participation_facts: "Fets sobre participació ciutadana i democràcia directa"
-        participation_world: Participació ciutadana directa al món
-        proposals_info: "Com funcionen les propostes ciutadanes?"
-        signature_sheet: Fulls de signatures
-        spending_proposals_info: "Com funcionen els pressupostos participatius?"
     opendata:
       slogan: "Informació sobre Dades obertes."
       title: Dades obertes
@@ -427,3 +450,57 @@ va:
           El Govern municipal es compromet a dur a terme l’execució de les inversions seleccionades, tenint en compte els resultats d'aquesta consulta ciutadana, sempre que s’atenga als criteris tècnics de viabilitat dels projectes i els límits econòmics disponibles.
 
           Es podrà seguir el procés a través de la plataforma web decidim.castello.es
+
+      description:
+        faq: "Preguntes freqüents sobre problemes tècnics"
+        how_it_works: "Descobreix tot el que pots fer en aquesta web"
+        how_to_use: "Utilitza-ho lliurement o ajuda'ns a millorar-ho, és programari lliure"
+        participation: "Participació Ciutadana, Transparència i Govern Obert"
+        participation_facts: "Per a perdre-li la por"
+        participation_world: "Sistemes de participació ciutadana que ja existeixen al món"
+        proposals_info: "Crea les teues pròpies propostes"
+        signature_sheet: "Fulls de signatures per a arreplegar avals"
+        spending_proposals_info: "Envia les teues propostes d'inversió"
+      how_it_works:
+        i: "Participació"
+        i1: "Espai de debat"
+        i2: "Espai de propostes"
+        text: |-
+          El nou Portal de Govern Obert està dividit en tres parts: Participació, Transparència i Dades Obertes (veuràs els enllaços en la part superior dreta).
+          >**I. Participació:** On poder decidir què ciutat volem tenir (a través de propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, i molts altres processos que anirem implementant).
+           **II. Transparència:** En aquest espai es publicaran totes les dades relatives a qui i com es gestiona la ciutat (noms dels responsables, càrrecs, sous, plans de govern, contractes, agendes dels responsables...). A més és l'espai on exercir el dret d'accés a la informació, podent sol·licitar qualsevol informació sobre l'Ajuntament de manera fàcil i ràpida.
+           **III. Dades Obertes:** En aquest espai es pengen les bases de dades que té l'Ajuntament, perquè qualsevol puga usar tota la informació directament, sense necessitat ni tan sols de preguntar. També es pot sol·licitar la publicació de més bases de dades.
+
+
+          Inaugurem el nou portal amb la nova secció de Participació, i en breu afegirem les noves seccions de Transparència i Dades Obertes (així que mantenim de moment els enllaços a les pàgines sobre aquest tema que ja existien).
+          ## <a id='i'></a> I. Participació
+          L'apartat de participació comprendrà diferents mecanismes de participació: propostes ciutadanes, espais de debat, pressupostos participatius, legislació col·laborativa, entre molts uns altres. De moment presentem l'espai de debat, i molt ràpid les propostes ciutadanes.
+          ## <a id='i1'></a>I.I. Espai de debat
+          En aquest espai, qualsevol persona pot obrir un fil de discussió sobre qualsevol tema, creant un espai independent on la gent podrà debatre sobre el tema proposat. D'aquesta manera, en aquest espai digital conviuran cada dia centenars d'espais de debat diferents entre els quals la ciutadania podrà passejar-se, sumant-se als quals més els interesse.
+
+          Tant els fils, com els comentaris podran ser valorats per qualsevol, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són els temes més importants a cada moment. Aquests seran presentats en la portada de l'espai, podent per descomptat accedir-se a tots els altres temes en pàgines posteriors, o usant altres criteris d'ordenació (els temes amb més comentaris, els més nous, els més controvertits, etc.).
+
+          Cadascun dels treballadors de l'Ajuntament té un usuari propi, que serà ressaltat com a tal, permetent que participen en els debats al mateix nivell que tots els altres ciutadans. Açò permetrà crear espais de comunicació directes entre els uns i els altres, evitant els inconvenients que implica la comunicació intervinguda, i responent a un plantejament clar per part del nou govern pel qual l'Ajuntament treballa per a la ciutadania, i davant ella ha de respondre.
+          ## <a id='i2'></a> I.I. Espai de propostes
+          En aquest espai, qualsevol persona pot proposar una iniciativa amb la intenció de recaptar els suficients avals com perquè la idea passe a ser consultada a tota la ciutadania amb caràcter vinculant.
+
+          Les propostes poden ser avalades per ciutadans empadronats que hagen verificat el seu compte en la plataforma de participació, de tal manera que serà la pròpia ciutadania, i ningú en el seu nom, la que decidisca quins són les propostes que mereixen la pena ser dutes a terme.
+
+          Una vegada que una proposta aconseguisca una quantitat de 25 avals, automàticament passa a ser estudiada per un grup de treball de l'Ajuntament i passarà a la següent fase de consulta popular, en la qual la ciutadania votarà si es duu a terme o no. El termini màxim per a recaptar els avals necessaris serà d'un mes.
+      how_to_use:
+        text: |-
+          Utilitza-ho en el teu municipi lliurement o ajuda'ns a millorar-ho, és programari lliure.
+
+          Aquest Portal de Govern Obert usa la [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul') que és programari lliure, amb [llicència AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que qualsevol pugues lliurement usar el codi, copiar-ho, veure-ho detalladament, modificar-ho, i redistribuir-ho al món amb les modificacions que vulga (mantenint el que uns altres puguen al seu torn fer el mateix). Perquè creiem que la cultura és millor i més rica quan s'allibera
+
+          Si eres programador, pots veure el codi i ajudar-nos a millorar-ho en [aplicació Consul](https://github.com/ayuntamientoCastellón de la Plana 'github consul').
+      titles:
+        faq: "Solucions a problemes tècnics (FAQ)"
+        how_it_works: "Com funciona aquest Portal de Govern Obert?"
+        how_to_use: "Utilitza-ho al teu municipi"
+        participation: "Participació i Transparència - Pròximes novetats"
+        participation_facts: "Fets sobre participació ciutadana i democràcia directa"
+        participation_world: Participació ciutadana directa al món
+        proposals_info: "Com funcionen les propostes ciutadanes?"
+        signature_sheet: Fulls de signatures
+        spending_proposals_info: "Com funcionen els pressupostos participatius?"
