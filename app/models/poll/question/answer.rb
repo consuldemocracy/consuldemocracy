@@ -31,4 +31,18 @@ class Poll::Question::Answer < ActiveRecord::Base
   def self.last_position(question_id)
     where(question_id: question_id).maximum('given_order') || 0
   end
+
+  def total_votes
+    Poll::Answer.where(question_id: question, answer: title).count
+  end
+
+  def is_winner?
+    answers = question.question_answers
+                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
+    !answers.any?{ |a| a > total_votes }
+  end
+
+  def total_votes_percentage
+    ((total_votes*100) / question.answers_total_votes).round(2)
+  end
 end
