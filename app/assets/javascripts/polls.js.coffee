@@ -26,3 +26,19 @@ App.Polls =
           token_message.html(token_message.html() + "<br><strong>" + @token + "</strong>");
           token_message.show()
     false
+
+    $(".zoom-link").on "click", (event) ->
+      element = event.target
+      answer = $(element).closest('div.answer')
+
+      if $(answer).hasClass('medium-6')
+        $(answer).removeClass("medium-6");
+        $(answer).addClass("answer-divider");
+        unless $(answer).hasClass('first')
+          $(answer).insertBefore($(answer).prev('div.answer'));
+      else
+        $(answer).addClass("medium-6");
+        $(answer).removeClass("answer-divider");
+        unless $(answer).hasClass('first')
+          $(answer).insertAfter($(answer).next('div.answer'));
+
