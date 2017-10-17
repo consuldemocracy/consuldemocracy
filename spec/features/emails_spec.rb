@@ -408,7 +408,6 @@ feature 'Emails' do
       end
       expect(page).to have_content 'It will be done next week.'
 
-
       email = open_last_email
       expect(email).to have_subject('Someone has responded to your comment')
       expect(email).to deliver_to(user1)

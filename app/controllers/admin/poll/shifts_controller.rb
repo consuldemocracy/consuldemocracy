@@ -49,7 +49,7 @@ class Admin::Poll::ShiftsController < Admin::Poll::BaseController
     end
 
     def shift_params
-      shift_params = params.require(:shift).permit(:booth_id, :officer_id, :task, date:[:vote_collection_date, :recount_scrutiny_date])
+      shift_params = params.require(:shift).permit(:booth_id, :officer_id, :task, date: [:vote_collection_date, :recount_scrutiny_date])
       shift_params.merge(date: shift_params[:date]["#{shift_params[:task]}_date".to_sym])
     end
 end

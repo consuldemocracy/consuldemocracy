@@ -5,7 +5,7 @@ class Image < ActiveRecord::Base
   TITLE_LEGHT_RANGE = 4..80
   MIN_SIZE = 475
   MAX_IMAGE_SIZE = 1.megabyte
-  ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg)
+  ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg).freeze
 
   has_attached_file :attachment, styles: { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" },
                                  url: "/system/:class/:prefix/:style/:hash.:extension",
@@ -52,7 +52,7 @@ class Image < ActiveRecord::Base
     attachment.instance.prefix(attachment, style)
   end
 
-  def prefix(attachment, style)
+  def prefix(attachment, _style)
     if !attachment.instance.persisted?
       "cached_attachments/user/#{attachment.instance.user_id}"
     else
@@ -103,8 +103,8 @@ class Image < ActiveRecord::Base
 
     def remove_cached_attachment
       image = Image.new(imageable: imageable,
-                           cached_attachment: cached_attachment,
-                           user: user)
+                        cached_attachment: cached_attachment,
+                        user: user)
       image.set_attachment_from_cached_attachment
       image.attachment.destroy
     end

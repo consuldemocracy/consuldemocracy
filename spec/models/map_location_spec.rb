@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe MapLocation do
 
-  let(:map_location) { build(:map_location, :proposal_map_location ) }
+  let(:map_location) { build(:map_location, :proposal_map_location) }
 
   it "should be valid" do
     expect(map_location).to be_valid

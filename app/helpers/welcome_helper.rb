@@ -46,12 +46,12 @@ module WelcomeHelper
   end
 
   def calculate_offset(debates, proposals, apply_offset)
-    if (debates.any? && proposals.any?)
-      if apply_offset
-        offset = "medium-offset-2 large-offset-2"
-      else
-        offset = "end"
-      end
+    if debates.any? && proposals.any?
+      offset = if apply_offset
+        "medium-offset-2 large-offset-2"
+               else
+        "end"
+               end
     end
   end
 

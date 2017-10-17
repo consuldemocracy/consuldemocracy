@@ -102,11 +102,11 @@ feature 'Admin shifts' do
     shift2 = create(:poll_shift, :recount_scrutiny_task, officer: officer, booth: booth, date: Time.zone.tomorrow)
 
     vote_collection_dates = (Date.current..poll.ends_at.to_date).to_a
-                              .reject { |date| date == Time.zone.today }
-                              .map { |date| I18n.l(date, format: :long) }
+                                                                .reject { |date| date == Time.zone.today }
+                                                                .map { |date| I18n.l(date, format: :long) }
     recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a
-                              .reject { |date| date == Time.zone.tomorrow }
-                              .map { |date| I18n.l(date, format: :long) }
+                                                                                  .reject { |date| date == Time.zone.tomorrow }
+                                                                                  .map { |date| I18n.l(date, format: :long) }
 
     visit available_admin_booths_path
 

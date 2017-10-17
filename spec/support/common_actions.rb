@@ -163,7 +163,7 @@ module CommonActions
     expect(page).to have_content 'Document verified with Census'
   end
 
-  def confirm_phone(user=nil)
+  def confirm_phone(user = nil)
     user ||= User.last
 
     fill_in 'sms_phone', with: "611111111"
