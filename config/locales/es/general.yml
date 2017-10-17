@@ -500,7 +500,6 @@ es:
       videos: "Vídeo externo"
   poll_questions:
     create_question: "Crear pregunta para votación"
-    default_valid_answers: "Sí, No"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
