@@ -53,9 +53,7 @@ feature 'Officing Results' do
     expect(page).to_not have_content('Your results')
 
     booth_name = @officer_assignment.booth_assignment.booth.name
-    date = I18n.l(@poll.starts_at.to_date, format: :long)
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
 
     fill_in "questions[#{@question_1.id}][0]", with: '100'
     fill_in "questions[#{@question_1.id}][1]", with: '200'
@@ -71,8 +69,8 @@ feature 'Officing Results' do
 
     expect(page).to have_content('Your results')
 
-    within("#results_#{@officer_assignment.booth_assignment_id}_#{@poll.starts_at.to_date.strftime('%Y%m%d')}") do
-      expect(page).to have_content(date)
+    within("#results_#{@officer_assignment.booth_assignment_id}_#{Date.current.strftime('%Y%m%d')}") do
+      expect(page).to have_content(I18n.l(Date.current, format: :long))
       expect(page).to have_content(booth_name)
     end
   end
@@ -81,7 +79,7 @@ feature 'Officing Results' do
     partial_result = create(:poll_partial_result,
                       officer_assignment: @officer_assignment,
                       booth_assignment: @officer_assignment.booth_assignment,
-                      date: @poll.starts_at,
+                      date: Date.current,
                       question: @question_1,
                       answer: @question_1.valid_answers[0],
                       author: @poll_officer.user,
@@ -94,9 +92,7 @@ feature 'Officing Results' do
     visit new_officing_poll_result_path(@poll)
 
     booth_name = partial_result.booth_assignment.booth.name
-    date = I18n.l(partial_result.date, format: :long)
     select booth_name, from: 'officer_assignment_id'
-    select date, from: 'date'
 
     fill_in "questions[#{@question_1.id}][0]", with: '5555'
     fill_in "questions[#{@question_1.id}][1]", with: '200'
