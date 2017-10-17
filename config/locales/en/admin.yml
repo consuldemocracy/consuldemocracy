@@ -181,6 +181,7 @@ en:
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
+        user_tags: User assigned tags
         tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined

@@ -181,6 +181,7 @@ es:
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
+        user_tags: Etiquetas asignadas por el usuario        
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
