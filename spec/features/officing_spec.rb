@@ -117,6 +117,9 @@ feature 'Poll Officing' do
     officer1 = create(:poll_officer, user: user1)
     officer2 = create(:poll_officer, user: user2)
 
+    create(:poll_shift, officer: officer1, booth: booth, date: Date.current, task: :vote_collection)
+    create(:poll_shift, officer: officer2, booth: booth, date: Date.current, task: :vote_collection)
+
     officer_assignment_1 = create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer1)
     officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer2)
 
@@ -134,7 +137,16 @@ feature 'Poll Officing' do
       page.should have_content("Here you can validate user documents and store voting results")
 
       visit new_officing_residence_path
-      page.should have_content("Validate document")
+      within("#side_menu") do
+        click_link "Validate document"
+      end
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "12345678Z"
+      fill_in 'residence_year_of_birth', with: '1980'
+      click_button 'Validate document'
+      expect(page).to have_content 'Document verified with Census'
+      click_button "Confirm vote"
+      expect(page).to have_content "Vote introduced!"
 
       visit final_officing_polls_path
       page.should have_content("Polls ready for final recounting")
@@ -145,6 +157,16 @@ feature 'Poll Officing' do
 
       visit new_officing_residence_path
       page.should have_content("Validate document")
+      within("#side_menu") do
+        click_link "Validate document"
+      end
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "12345678Y"
+      fill_in 'residence_year_of_birth', with: '1980'
+      click_button 'Validate document'
+      expect(page).to have_content 'Document verified with Census'
+      click_button "Confirm vote"
+      expect(page).to have_content "Vote introduced!"
 
       visit final_officing_polls_path
       page.should have_content("Polls ready for final recounting")

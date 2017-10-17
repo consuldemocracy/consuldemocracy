@@ -17,6 +17,8 @@ class Officing::VotersController < Officing::BaseController
                              origin: "booth",
                              officer: current_user.poll_officer)
     @voter.save!
+
+    render 'create.js'
   end
 
   private
