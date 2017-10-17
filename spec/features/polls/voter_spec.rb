@@ -147,8 +147,34 @@ feature "Voter" do
           expect(page).to have_link('Yes')
           expect(page).to have_link('No')
         end
-
       end
+    end
+
+    scenario "Voting in poll and then verifiying account", :js do
+      user = create(:user)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+
+      login_through_form_as_officer(officer.user)
+      vote_for_poll_via_booth
+
+      visit root_path
+      click_link "Sign out"
+
+      login_as user
+      visit account_path
+      click_link 'Verify my account'
+
+      verify_residence
+      confirm_phone(user)
+
+      visit poll_path(poll)
+
+      expect(page).to_not have_link('Yes')
+      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+      expect(Poll::Voter.count).to eq(1)
     end
 
   end
