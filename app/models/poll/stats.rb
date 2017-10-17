@@ -26,7 +26,7 @@ class Poll
       end
       
       def total_participants_web_percentage
-        total_participants_web * 100 / total_participants
+        (total_participants) == 0 ? 0 : total_participants_web * 100 / total_participants
       end
 
       def total_participants_booth
