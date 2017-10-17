@@ -76,6 +76,7 @@ module Abilities
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+
         can :answer, Poll do |poll|
           poll.answerable_by?(user)
         end
