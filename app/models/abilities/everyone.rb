@@ -6,7 +6,7 @@ module Abilities
       can [:read, :map], Debate
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
-      can :read, Poll
+      can [:read, :results], Poll
       can :read, Poll::Question
       can [:read, :welcome], Budget
       can :read, SpendingProposal
