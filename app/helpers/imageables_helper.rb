@@ -9,10 +9,10 @@ module ImageablesHelper
   end
 
   def imageable_max_file_size
-    bytesToMeg(Image::MAX_IMAGE_SIZE)
+    bytes_to_megabytes(Image::MAX_IMAGE_SIZE)
   end
 
-  def bytesToMeg(bytes)
+  def bytes_to_megabytes(bytes)
     bytes / Numeric::MEGABYTE
   end
 
