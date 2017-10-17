@@ -13,6 +13,7 @@ booth_results = []
 
 poll.booth_assignments.each do |ba|
   response_in_booth = []
+  # TODO: HEY THIS MODELS ARE DEPRECATED; FIX IF NEEDED!!
   recount = Poll::TotalResult.where(booth_assignment_id: ba.id).sum(:amount)
   whites = Poll::WhiteResult.where(booth_assignment_id: ba.id).sum(:amount)
   nulls = Poll::NullResult.where(booth_assignment_id: ba.id).sum(:amount)
@@ -54,6 +55,7 @@ booth_results = []
 booths.each do |b|
   b.booth_assignments.each do |ba|
     response_in_booth = []
+    # TODO: HEY THIS MODELS ARE DEPRECATED; FIX IF NEEDED!!
     recount = Poll::TotalResult.where(booth_assignment_id: ba.id).sum(:amount)
     whites = Poll::WhiteResult.where(booth_assignment_id: ba.id).sum(:amount)
     nulls = Poll::NullResult.where(booth_assignment_id: ba.id).sum(:amount)
@@ -81,6 +83,7 @@ booths.each do |b|
   b.booth_assignments.each do |ba|
 
     results = ::Poll::PartialResult.where(booth_assignment: ba).count
+    # TODO: HEY THIS MODELS ARE DEPRECATED; FIX IF NEEDED!!
     recounts = Poll::TotalResult.where(booth_assignment_id: ba.id).amount
     whites = Poll::WhiteResult.where(booth_assignment_id: ba.id).count
     nulls = Poll::NullResult.where(booth_assignment_id: ba.id).count
