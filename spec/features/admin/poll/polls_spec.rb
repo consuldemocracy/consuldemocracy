@@ -261,8 +261,13 @@ feature 'Admin polls' do
         booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
         booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
 
-        question_1 = create(:poll_question, poll: poll, valid_answers: "Yes,No")
-        question_2 = create(:poll_question, poll: poll, valid_answers: "Today,Tomorrow")
+        question_1 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Yes', question: question_1)
+        create(:poll_question_answer, title: 'No', question: question_1)
+
+        question_2 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Today', question: question_2)
+        create(:poll_question_answer, title: 'Tomorrow', question: question_2)
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
@@ -279,30 +284,32 @@ feature 'Admin polls' do
         create(:poll_recount,
                booth_assignment: booth_assignment_1,
                white_amount: 21,
-               null_amount: 44)
+               null_amount: 44,
+               total_amount: 66)
 
         visit admin_poll_path(poll)
 
         click_link "Results"
 
         expect(page).to have_content(question_1.title)
-        question_1.valid_answers.each_with_index do |answer, i|
+        question_1.question_answers.each_with_index do |answer, i|
           within("#question_#{question_1.id}_#{i}_result") do
-            expect(page).to have_content(answer)
+            expect(page).to have_content(answer.title)
             expect(page).to have_content([33, 0][i])
           end
         end
 
         expect(page).to have_content(question_2.title)
-        question_2.valid_answers.each_with_index do |answer, i|
+        question_2.question_answers.each_with_index do |answer, i|
           within("#question_#{question_2.id}_#{i}_result") do
-            expect(page).to have_content(answer)
+            expect(page).to have_content(answer.title)
             expect(page).to have_content([0, 15][i])
           end
         end
 
         within('#white_results') { expect(page).to have_content('21') }
         within('#null_results') { expect(page).to have_content('44') }
+        within('#total_results') { expect(page).to have_content('66') }
       end
     end
   end

@@ -40,11 +40,11 @@
             </tr>
           </thead>
           <tbody>
-            <% question.valid_answers.each_with_index do |answer, i| %>
+            <% question.question_answers.each_with_index do |answer, i| %>
               <% by_answer = by_question[question.id].present? ? by_question[question.id].group_by(&:answer) : {} %>
               <tr id="question_<%= question.id %>_<%= i %>_result">
-                <td><%= answer %></td>
-                <td><%= by_answer[answer].present? ? by_answer[answer].first.amount : 0 %></td>
+                <td><%= answer.title %></td>
+                <td><%= by_answer[answer.title].present? ? by_answer[answer.title].first.amount : 0 %></td>
               </tr>
             <% end %>
           </tbody>
