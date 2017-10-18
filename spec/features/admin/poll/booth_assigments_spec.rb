@@ -126,9 +126,10 @@ feature 'Admin booths assignments' do
       end
     end
 
-    scenario 'Results' do
+    scenario 'Results for a booth assignment' do
       poll = create(:poll)
       booth_assignment = create(:poll_booth_assignment, poll: poll)
+      other_booth_assignment = create(:poll_booth_assignment, poll: poll)
 
       question_1 = create(:poll_question, poll: poll)
       create(:poll_question_answer, title: 'Yes', question: question_1)
@@ -162,11 +163,23 @@ feature 'Admin booths assignments' do
               answer: 'Tomorrow',
               amount: 6)
 
+      create(:poll_partial_result,
+              booth_assignment: other_booth_assignment,
+              question: question_1,
+              answer: 'Yes',
+              amount: 9999)
+
       create(:poll_recount,
              booth_assignment: booth_assignment,
              white_amount: 21,
              null_amount: 44,
              total_amount: 66)
+
+      create(:poll_recount,
+             booth_assignment: other_booth_assignment,
+             white_amount: 999,
+             null_amount: 999,
+             total_amount: 999)
 
       visit admin_poll_booth_assignment_path(poll, booth_assignment)
 
