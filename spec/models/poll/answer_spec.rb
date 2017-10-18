@@ -43,7 +43,7 @@ describe Poll::Answer do
 
     let(:author) { create(:user, :level_two) }
     let(:poll) { create(:poll) }
-    let(:question) { create(:poll_question, poll: poll) }
+    let(:question) { create(:poll_question, :with_answers, poll: poll) }
 
     it "creates a poll_voter with user and poll data" do
       answer = create(:poll_answer, question: question, author: author, answer: "Yes")
