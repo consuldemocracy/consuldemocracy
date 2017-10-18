@@ -2070,10 +2070,9 @@ table {
 }
 
 .public-interests {
-  margin-top: $line-height;
 
-  .column {
-    padding-left: 0;
+  li {
+    margin-right: $line-height / 4;
   }
 }
 

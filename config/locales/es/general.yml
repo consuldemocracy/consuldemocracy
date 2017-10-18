@@ -14,8 +14,8 @@ es:
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
       public_interests_label: Mostrar públicamente mis intereses
-      public_interests_my_title_list: Lista de intereses (Etiquetas de los elementos que sigues)
-      public_interests_user_title_list: Lista de intereses (Etiquetas de los elementos seguidos este usuario)
+      public_interests_my_title_list: Lista de intereses (etiquetas de los elementos que sigues)
+      public_interests_user_title_list: Lista de intereses (etiquetas de los elementos seguidos este usuario)
       public_interests_my_empty_list: Aún no sigues ningún elemento.
       public_interests_user_empty_list: Este usuario no sigue ningún elemento todavía.
       save_changes_submit: Guardar cambios
@@ -731,7 +731,7 @@ es:
           other: "%{count} Siguiendo"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
-      private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+      private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
     proposals:
       send_notification: "Enviar notificación"
