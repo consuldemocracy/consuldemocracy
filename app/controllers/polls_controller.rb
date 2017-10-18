@@ -1,6 +1,8 @@
 class PollsController < ApplicationController
   include PollsHelper
 
+  before_action :load_poll, except: [:index]
+  
   load_and_authorize_resource
 
   has_filters %w{current expired incoming}
@@ -26,5 +28,11 @@ class PollsController < ApplicationController
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
   end
+  
+  private
+  
+    def load_poll
+      @poll = ::Poll.find_by(slug: params[:id]) || ::Poll.find_by(id: params[:id])
+    end
 
 end

@@ -1,5 +1,6 @@
 class Poll < ActiveRecord::Base
   include Imageable
+  include Sluggable
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
@@ -19,6 +20,7 @@ class Poll < ActiveRecord::Base
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
 
   validates :name, presence: true
+  validates :slug, presence: true
 
   validate :date_range
 

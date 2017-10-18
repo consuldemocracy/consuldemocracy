@@ -471,6 +471,8 @@ FactoryGirl.define do
   factory :poll do
     sequence(:name) { |n| "Poll #{SecureRandom.hex}" }
 
+    slug "this-is-a-slug"
+      
     starts_at { 1.month.ago }
     ends_at { 1.month.from_now }
 

@@ -64,6 +64,20 @@ feature 'Polls' do
   context 'Show' do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+    
+    scenario "Visit path with id" do
+      visit poll_path(poll.id)
+      
+      expect(page).to have_current_path(poll_path(poll.id))
+      expect(page).to have_content(poll.name)
+    end
+ 
+    scenario "Visit path with slug" do
+      visit poll_path(poll.slug)
+      
+      expect(page).to have_current_path(poll_path(poll.slug))
+      expect(page).to have_content(poll.name)
+    end
 
     scenario 'Show answers with videos' do
       question = create(:poll_question, poll: poll)
