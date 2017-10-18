@@ -18,6 +18,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
     @booth_assignment = @poll.booth_assignments.includes(:recounts, :voters,
                                                          officer_assignments: [officer: [:user]]).find(params[:id])
     @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
+    @partial_results = @booth_assignment.partial_results
   end
 
   def create
