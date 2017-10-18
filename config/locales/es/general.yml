@@ -500,6 +500,7 @@ es:
       videos: "Vídeo externo"
       info_menu: "Información"
       stats_menu: "Estadísticas de participación"
+      results_menu: "Resultados de la votación"
       stats:
         title: "Datos de participación"
         total_participation: "Participación total"
