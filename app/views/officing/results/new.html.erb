@@ -12,16 +12,6 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <label><%= t("officing.results.new.date") %></label>
-        <%= select_tag :date,
-                        poll_dates_select_options(@poll),
-                        { prompt: t("officing.results.new.select_date"),
-                          label: false } %>
-      </div>
-    </div>
-
     <% @poll.questions.each do |question| %>
       <div class="row">
         <div class="small-12 column">
@@ -101,4 +91,3 @@
   </table>
 
 <% end %>
-
