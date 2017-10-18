@@ -9,7 +9,6 @@
                         booths_for_officer_select_options(@officer_assignments),
                         { prompt: t("officing.results.new.select_booth"),
                           label: false } %>
-        <%= hidden_field_tag :date, l(@poll.ends_at.to_date) %>
       </div>
     </div>
 
