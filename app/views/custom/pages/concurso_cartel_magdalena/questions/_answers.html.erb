@@ -7,7 +7,7 @@
     <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
       <div class="row">
         <div class="small-6 large-6 columns">
-          <%= link_to image_tag("concurs_cartell_magdalena_2018/cartel_#{answer}_p.jpg"), asset_path("concurs_cartell_magdalena_2018/cartel_#{answer}.jpg"), target: "_blank" %>
+          <%= link_to image_tag("/system/concurso_cartel_magdalena/cartel_#{answer}_p.jpg"), asset_path("/system/concurso_cartel_magdalena/cartel_#{answer}.jpg"), target: "_blank" %>
         </div>
         <div class="small-6 large-6 columns">
           <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
@@ -39,11 +39,11 @@
     <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
       <div class="row">
         <div class="small-6 large-6 columns">
-          <%= link_to image_tag("concurs_cartell_magdalena_2018/cartel_#{answer}_p.jpg"), asset_path("concurs_cartell_magdalena_2018/cartel_#{answer}.jpg"), target: "_blank" %>
+          <%= link_to image_tag("/system/concurso_cartel_magdalena/cartel_#{answer}_p.jpg"), asset_path("/system/concurso_cartel_magdalena/cartel_#{answer}.jpg"), target: "_blank" %>
         </div>
         <div class="small-6 large-6 columns">
           <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
-          <span class="button secondary hollow disabled">
+          <span class="button secondary hollow disabled" title: "holas">
             <%= "#{t('poll_questions.show.vote_answer', answer: '')}" %>
           </span>
         </div>

@@ -8,86 +8,21 @@ va:
       carteles_seleccionados: Cartells seleccionats
       confirm_votacion: Sols es pot votar per un cartell, segur que vols votar aquest cartell?
       cartel_1:
-        title: Esclat de festa
-        lema: Esclat de festa
+        lema: A un pas del cel
       cartel_2:
-        title: Mone Castellonencs a Disfrutar com a Magdaleners
-        lema: Mone Castellonencs a Disfrutar com a Magdaleners
+        lema: Cistella de tradició
       cartel_3:
-        title: Canyes Cintes Festa
-        lema: Canyes Cintes Festa
+        lema: Colors al vent
       cartel_4:
-        title: Ensenya de Castelló
-        lema: Ensenya de Castelló
+        lema: Els Festers
       cartel_5:
-        title: Título cartel 5
-        lema: Lema cartel 5
+        lema: Escut de la festa
       cartel_6:
-        title: Título cartel 6
-        lema: Lema cartel 6
+        lema: Festa
       cartel_7:
-        title: Título cartel 7
-        lema: Lema cartel 7
+        lema: Pum pum pum
       cartel_8:
-        title: Título cartel 8
-        lema: Lema cartel 8
-      cartel_9:
-        title: Título cartel 9
-        lema: Lema cartel 9
-      cartel_10:
-        title: Título cartel 10
-        lema: Lema cartel 10
-      cartel_11:
-        title: Título cartel 11
-        lema: Lema cartel 11
-      cartel_12:
-        title: Título cartel 12
-        lema: Lema cartel 12
-      cartel_13:
-        title: Título cartel 13
-        lema: Lema cartel 13
-      cartel_14:
-        title: Título cartel 14
-        lema: Lema cartel 14
-      cartel_15:
-        title: Título cartel 15
-        lema: Lema cartel 15
-      cartel_16:
-        title: Título cartel 16
-        lema: Lema cartel 16
-      cartel_17:
-        title: Título cartel 17
-        lema: Lema cartel 17
-      cartel_18:
-        title: Título cartel 18
-        lema: Lema cartel 18
-      cartel_19:
-        title: Título cartel 19
-        lema: Lema cartel 19
-      cartel_20:
-        title: Título cartel 20
-        lema: Lema cartel 20
-      cartel_21:
-        title: Título cartel 21
-        lema: Lema cartel 21
-      cartel_22:
-        title: Título cartel 22
-        lema: Lema cartel 22
-      cartel_23:
-        title: Título cartel 23
-        lema: Lema cartel 23
-      cartel_24:
-        title: Título cartel 24
-        lema: Lema cartel 24
-      cartel_25:
-        title: Título cartel 25
-        lema: Lema cartel 25
-      cartel_26:
-        title: Título cartel 26
-        lema: Lema cartel 26
-      cartel_27:
-        title: Título cartel 27
-        lema: Lema cartel 27
+        lema: Simbologia de festes
 
     priv:
       title: "Política de Privadesa"
