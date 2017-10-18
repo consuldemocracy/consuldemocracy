@@ -111,8 +111,9 @@ Rails.application.routes.draw do
   resources :annotations do
     get :search, on: :collection
   end
-  
+
   resources :polls, only: [:show, :index] do
+    get :stats
     get :results
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member

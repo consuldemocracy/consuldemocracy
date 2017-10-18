@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="small-12 column">
+    <ul class="tabs">
+      <li class="tabs-title">
+        <%= link_to t("polls.show.results_menu"),
+                    poll_results_path(@poll),
+                    class: (controller_name == "polls" && action_name == "results" ? "is-active" : "") %>
+      </li>
+      <li class="tabs-title">
+        <%= link_to t("polls.show.stats_menu"),
+                    poll_stats_path(@poll),
+                    class: (controller_name == "polls" && action_name == "stats" ? "is-active" : "") %>
+      </li>
+      <li class="tabs-title is-active">
+        <%= link_to t("polls.show.info_menu"),
+                    poll_path(@poll),
+                    class: (controller_name == "polls" && action_name == "show" ? "is-active" : "") %>
+      </li>
+    </ul>
+  </div>
+</div>
