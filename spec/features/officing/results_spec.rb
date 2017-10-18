@@ -7,8 +7,13 @@ feature 'Officing Results' do
     @officer_assignment = create(:poll_officer_assignment, :final, officer: @poll_officer)
     @poll = @officer_assignment.booth_assignment.poll
     @poll.update(ends_at: 1.day.ago)
-    @question_1 = create(:poll_question, poll: @poll, valid_answers: "Yes,No")
-    @question_2 = create(:poll_question, poll: @poll, valid_answers: "Today,Tomorrow")
+    @question_1 = create(:poll_question, poll: @poll)
+    create(:poll_question_answer, title: 'Yes', question: @question_1)
+    create(:poll_question_answer, title: 'No', question: @question_1)
+    @question_2 = create(:poll_question, poll: @poll)
+    create(:poll_question_answer, title: 'Today', question: @question_2)
+    create(:poll_question_answer, title: 'Tomorrow', question: @question_2)
+
     login_as(@poll_officer.user)
   end
 
@@ -81,7 +86,7 @@ feature 'Officing Results' do
                       booth_assignment: @officer_assignment.booth_assignment,
                       date: Date.current,
                       question: @question_1,
-                      answer: @question_1.valid_answers[0],
+                      answer: @question_1.question_answers.first.title,
                       author: @poll_officer.user,
                       amount: 7777)
 
@@ -139,13 +144,13 @@ feature 'Officing Results' do
     expect(page).to have_content(@officer_assignment.booth_assignment.booth.name)
 
     expect(page).to have_content(@question_1.title)
-    @question_1.valid_answers.each_with_index do |answer, i|
-      within("#question_#{@question_1.id}_#{i}_result") { expect(page).to have_content(answer) }
+    @question_1.question_answers.each_with_index do |answer, i|
+      within("#question_#{@question_1.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     expect(page).to have_content(@question_2.title)
-    @question_2.valid_answers.each_with_index do |answer, i|
-      within("#question_#{@question_2.id}_#{i}_result") { expect(page).to have_content(answer) }
+    @question_2.question_answers.each_with_index do |answer, i|
+      within("#question_#{@question_2.id}_#{i}_result") { expect(page).to have_content(answer.title) }
     end
 
     within('#white_results') { expect(page).to have_content('21') }

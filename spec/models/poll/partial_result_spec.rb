@@ -4,12 +4,16 @@ describe Poll::PartialResult do
 
   describe "validations" do
     it "validates that the answers are included in the Poll::Question's list" do
-      q = create(:poll_question, valid_answers: 'One, Two, Three')
-      expect(build(:poll_partial_result, question: q, answer: 'One')).to be_valid
-      expect(build(:poll_partial_result, question: q, answer: 'Two')).to be_valid
-      expect(build(:poll_partial_result, question: q, answer: 'Three')).to be_valid
+      question = create(:poll_question)
+      create(:poll_question_answer, title: 'One', question: question)
+      create(:poll_question_answer, title: 'Two', question: question)
+      create(:poll_question_answer, title: 'Three', question: question)
 
-      expect(build(:poll_partial_result, question: q, answer: 'Four')).to_not be_valid
+      expect(build(:poll_partial_result, question: question, answer: 'One')).to be_valid
+      expect(build(:poll_partial_result, question: question, answer: 'Two')).to be_valid
+      expect(build(:poll_partial_result, question: question, answer: 'Three')).to be_valid
+
+      expect(build(:poll_partial_result, question: question, answer: 'Four')).to_not be_valid
     end
   end
 
