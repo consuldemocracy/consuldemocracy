@@ -19,9 +19,9 @@ va:
       question: "Tens ja un compte en %{org_name}?"
       title: Verificació de compte
     welcome:
-      terms_censed: Per a poder participar en el proces de pressupostos participatius ha de ser major de 16 anys i ha d'estar empadronat en la ciutat de Castelló de la Plana
+      terms_censed: Per a poder participar en els processos participatius ha de ser major de 16 anys i ha d'estar empadronat en la ciutat de Castelló de la Plana
       verify_account: Per favor, fes click sobre el botó "Verificar el meu compte" per a realitzar aquesta comprovació.
-      go_to_index: "Ara no, veure propostes"
+      go_to_index: "Ara no"
       title: "Comença a participar"
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...

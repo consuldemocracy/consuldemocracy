@@ -46,7 +46,7 @@
         <p><%= t('users.show.private_activity') %></p>
       <% end %>
 
-      <%= render 'interests', user: @user if valid_interests_access? %>
+      <% render 'interests', user: @user if valid_interests_access? %>
 
     </div>
   </div>

@@ -1,6 +1,13 @@
 <% provide :title do %><%= t('pages.titles.more_information') %><% end %>
 
 <div class="row">
+  <div class="small-12 large-12 columns">
+    <%= link_to t('pages.cartel_magdalena_2018.bases_link'), "/system/concurso_cartel_magdalena/Cartel_Magdalena_2018_Bases_#{I18n.locale}.pdf", target: '_blank' %>
+  </div>
+</div>
+
+<hr />
+<div class="row">
   <div class="small-12 large-3 columns">
     <ul class="menu vertical margin-top">
       <% (1..9).each do |i| %>

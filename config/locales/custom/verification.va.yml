@@ -42,7 +42,7 @@ va:
       already_verified: El teu compte ja està verificat
       email_already_sent: "Ja t'enviem un email amb un enllaç de confirmació, si no ho trobes pots sol·licitar ací que t'ho reexpedim"
     residence:
-      permission_warning: "Per a poder participar en el procés de pressupostos participatius és necessari comprovar que vostè és major de 16 anys i que està empadronat en la ciutat de Castelló de la Plana. Per favor, faça clic en el botó 'Verificar el meu compte' per a realitzar aquesta comprovació."
+      permission_warning: "Per a poder participar en els procesos participatius és necessari comprovar que vostè és major de 16 anys i que està empadronat en la ciutat de Castelló de la Plana. Per favor, faça clic en el botó 'Verificar el meu compte' per a realitzar aquesta comprovació."
       permission_success: "Amb el teu compte ja pots participar en el procés de pressupostos participatius.Amb el teu compte ja pots participar en el procés de pressupostos participatius."
       alert:
         unconfirmed_residency: Encara no has verificat la teua residència
@@ -113,4 +113,4 @@ va:
         title: Informació disponible
         use_another_phone: Utilitzar un altre telèfon
     organization:
-      not_verified: "Per a poder participar en el procés de pressupostos participatius és necessari comprovar que l'associació te el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que és troba inscrita en el Registre d'Associacions."
+      not_verified: "Per a poder participar en els processos participatius és necessari comprovar que l'associació te el seu domicili social i el seu àmbit d'actuació territorial en la ciutat de Castelló de la Plana, i que és troba inscrita en el Registre d'Associacions."

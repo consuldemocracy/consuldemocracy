@@ -1,69 +1,19 @@
-
 <div class="expanded highlight padding no-margin-top">
   <div class="row">
     <div class="small-12 medium-12 column background-principal">
-      <!-- <%= image_tag('principal.png') %> -->
       <div class="hijo">
-        <%= link_to "Participa!", budgets_path, class: "button large alert" %>
+        <% if feature?(:concurso_cartel_magdalena) %>
+
+          <%= link_to "Participa!", page_path('concurso_cartel_magdalena'), class: "button large alert" %>
+        <% else %>
+          <%= link_to "Participa!", budgets_path, class: "button large alert" %>
+        <% end %>
       </div>
-
     </div>
-
   </div>
 </div>
-
 
 <div class="expanded highlight padding no-margin-top text-center">
   <h1><%= t("layouts.header.open_city_title") %></h1>
   <h2><%= t("layouts.header.open_date") %></h2>
 </div>
-
-
-
-<!-- <div class="expanded highlight padding no-margin-top">
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p>
-        <%= t("layouts.header.open_city_slogan_html") %>&nbsp;
-        <%= link_to t("layouts.header.more_information"), page_path('more_information') %>
-      </p>
-      <div class="small-12 medium-6">
-        <%= link_to t("layouts.header.see_all"), proposals_path, class: "button see-more expanded" %>
-      </div>
-    </div>
-
-    <div class="hide-for-small-only small-12 medium-5 column text-center">
-      <%= image_tag("icon_home.png", size: "330x240", alt:"") %>
-    </div>
-  </div>
-</div> -->
-
-<!-- <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
-  <main>
-    <div class="row text-center margin">
-      <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_debate.png", size: "168x168", alt: "", title: t("welcome.debates.title")) %>
-        <h2><%= t("welcome.debates.title") %></h2>
-        <p><%= t("welcome.debates.description") %></p>
-
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_proposal.png", size: "168x168", alt: "", title: t("welcome.proposal.title"))  %>
-        <h2><%= t("welcome.proposal.title") %></h2>
-        <p><%= t("welcome.proposal.description") %></p>
-      </div>
-
-      <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_decide.png", size: "168x168", alt: "", title: t("welcome.decide.title")) %>
-        <h2><%= t("welcome.decide.title") %></h2>
-        <p><%= t("welcome.decide.description") %></p>
-      </div>
-      <div class="small-12 medium-3 column">
-        <%= image_tag("icon_home_do.png", size: "168x168", alt: "", title: t("welcome.do.title")) %>
-        <h2><%= t("welcome.do.title") %></h2>
-        <p><%= t("welcome.do.description") %></p>
-      </div>
-    </div>
-  </main>
-<% end %> -->

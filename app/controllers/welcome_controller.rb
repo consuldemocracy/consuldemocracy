@@ -5,7 +5,11 @@ class WelcomeController < ApplicationController
 
   def index
     if current_user
-      redirect_to :budgets
+      if Setting["feature.concurso_cartel_magdalena"]
+        redirect_to page_path('concurso_cartel_magdalena')
+      else
+        redirect_to :budgets
+      end
     end
   end
 

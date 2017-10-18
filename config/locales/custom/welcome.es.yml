@@ -19,9 +19,9 @@ es:
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      terms_censed: Para poder participar en el proceso de presupuestos participativos debe ser mayor de 16 años y debe estar empadronado en la ciudad de Castellón de la Plana
+      terms_censed: Para poder participar en los procesos de participativos debe ser mayor de 16 años y debe estar empadronado en la ciudad de Castellón de la Plana
       verify_account: Por favor, haga clic en el botón "Verificar mi cuenta" para realizar esta comprobación.
-      go_to_index: Ahora no, ver propuestas
+      go_to_index: Ahora no
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...

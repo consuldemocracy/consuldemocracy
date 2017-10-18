@@ -42,7 +42,7 @@ es:
       already_verified: Tu cuenta ya está verificada
       email_already_sent: Ya te enviamos un email con un enlace de confirmación, si no lo encuentras puedes solicitar aquí que te lo reenviemos
     residence:
-      permission_warning: Para poder participar en el proceso de presupuestos participativos es necesario comprobar que usted es mayor de 16 años y que está empadronado en la ciudad de Castellón de la Plana. Por favor, haga clic en el botón "Verificar mi cuenta" para realizar esta comprobación.
+      permission_warning: Para poder participar en los procesos participativos es necesario comprobar que usted es mayor de 16 años y que está empadronado en la ciudad de Castellón de la Plana. Por favor, haga clic en el botón "Verificar mi cuenta" para realizar esta comprobación.
       permission_success: Con tu cuenta ya puedes participar en el proceso de presupuestos participativos.
       alert:
         unconfirmed_residency: Aún no has verificado tu residencia
@@ -113,4 +113,4 @@ es:
         title: Información disponible
         use_another_phone: Utilizar otro teléfono
     organization:
-      not_verified: Para poder participar en el proceso de presupuestos participativos es necesario comprobar que la asociación tiene su domicilio social y su ámbito de actuación territorial en la ciudad de Castellón de la Plana, y que se encuentra inscrita en el Registro de Asociaciones.
+      not_verified: Para poder participar en los procesos participativos es necesario comprobar que la asociación tiene su domicilio social y su ámbito de actuación territorial en la ciudad de Castellón de la Plana, y que se encuentra inscrita en el Registro de Asociaciones.
