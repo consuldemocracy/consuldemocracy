@@ -428,7 +428,7 @@ feature 'Users' do
       @user.update(public_interests: true)
       visit user_path(@user)
 
-      expect(page).to have_content("List of interests (Tags of elements this user follows)")
+      expect(page).to have_content("List of interests (tags of elements this user follows)")
     end
 
     scenario 'Should display custom interests title when user is visiting own user page' do
@@ -436,7 +436,7 @@ feature 'Users' do
       login_as(@user)
       visit user_path(@user)
 
-      expect(page).to have_content("List of interests (Tags of elements you follow)")
+      expect(page).to have_content("List of interests (tags of elements you follow)")
     end
 
     scenario 'Should display generic empty interests list message when visited user has not interests defined' do
