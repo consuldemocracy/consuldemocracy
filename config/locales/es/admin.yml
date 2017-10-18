@@ -537,6 +537,7 @@ es:
         no_officers: "No hay presidentes de mesa para esta urna"
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
+        results: "Resultados"
         date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
@@ -649,11 +650,16 @@ es:
       index:
         title: "Resultados"
         no_results: "No hay resultados"
+      result:
         table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
         table_answer: Respuesta
         table_votes: Votos
+      results_by_booth:
+        booth: Urna
+        results: Resultados
+        see_results: Ver resultados
     booths:
       index:
         title: "Lista de urnas"
