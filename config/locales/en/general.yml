@@ -158,6 +158,7 @@ en:
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
+      author: Author
     update:
       form:
         submit_button: Save changes

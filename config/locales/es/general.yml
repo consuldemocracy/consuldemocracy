@@ -158,6 +158,7 @@ es:
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
+      author: Autor
     update:
       form:
         submit_button: Guardar cambios
