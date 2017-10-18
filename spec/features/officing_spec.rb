@@ -148,6 +148,8 @@ feature 'Poll Officing' do
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
 
+      expect(Poll::Voter.where(document_number: '12345678Z').count).to be(1)
+
       visit final_officing_polls_path
       page.should have_content("Polls ready for final recounting")
     end
@@ -166,6 +168,8 @@ feature 'Poll Officing' do
       expect(page).to have_content 'Document verified with Census'
       click_button "Confirm vote"
       expect(page).to have_content "Vote introduced!"
+
+      expect(Poll::Voter.where(document_number: '12345678Y').count).to be(1)
 
       visit final_officing_polls_path
       page.should have_content("Polls ready for final recounting")
