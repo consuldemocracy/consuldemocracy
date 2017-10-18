@@ -1,7 +1,5 @@
-
 <% question_answer = question.answers.where(author_id: current_user.try(:id)).first %>
 <% answers_by_question_id = {question.id => question_answer.try(:answer)} %>
-
 <div class="poll-question-answers">
   <% if can? :answer, question %>
     <% question.valid_answers.sort { |a, b| Random.rand <=> Random.rand }.each do |answer| %>
@@ -12,9 +10,9 @@
         <div class="small-6 large-6 columns">
           <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
           <% if answers_by_question_id[question.id] == answer %>
-            <span class="button answered" title="<%= t("poll_questions.show.voted", answer: answer)%>">
-              <!-- <%# answer %> -->
-              <%= t("pages.cartel_magdalena_2018.cartel_#{answer}.title") %>
+            <span class="button answered" title="<%= t("poll_questions.show.voted", answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.lema"))%>">
+              <%# t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %>
+              <%= "#{t('poll_questions.show.vote_answer', answer: '')}" %>
             </span>
           <% else %>
             <% if question_answer.nil? %>
@@ -26,7 +24,7 @@
                 title: t("poll_questions.show.vote_answer", answer: t("pages.cartel_magdalena_2018.cartel_#{answer}.lema")),
                 class: "button secondary hollow" %>
             <% else %>
-              <span class="button secondary hollow disabled">
+              <span class="button secondary hollow disabled" title="<%= t("pages.cartel_magdalena_2018.already_voted") %>">
                 <%= "#{t('poll_questions.show.vote_answer', answer: '')}" %>
               </span>
             <% end %>
@@ -43,7 +41,7 @@
         </div>
         <div class="small-6 large-6 columns">
           <h2><%= t("pages.cartel_magdalena_2018.cartel_#{answer}.lema") %></h2>
-          <span class="button secondary hollow disabled" title: "holas">
+          <span class="button secondary hollow disabled" title="<%= t("pages.cartel_magdalena_2018.vote_forbidden") %>">
             <%= "#{t('poll_questions.show.vote_answer', answer: '')}" %>
           </span>
         </div>

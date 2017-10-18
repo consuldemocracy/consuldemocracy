@@ -7,6 +7,8 @@ es:
       bases_link: Bases del concurso del cartel de las fiestas de la Magdalena 2018
       carteles_seleccionados: Carteles seleccionados
       confirm_votacion: Solo se puede votar un cartel, ¿Seguro que deseas votar este?
+      already_voted: Ya has votado por otro cartel
+      vote_forbidden: No se puede votar si no se ha iniciado sesión y verificado la residencia
       cartel_1:
         lema: A un pas del cel
       cartel_2:

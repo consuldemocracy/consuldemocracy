@@ -7,6 +7,8 @@ va:
       bases_link: Bases del concurs del cartell de les festes de la Magdalena 2018
       carteles_seleccionados: Cartells seleccionats
       confirm_votacion: Sols es pot votar per un cartell, segur que vols votar aquest cartell?
+      already_voted: Ja has votat un altre cartell
+      vote_forbidden: No es pot votar si no s'ha iniciat sesió i verificat la residencia
       cartel_1:
         lema: A un pas del cel
       cartel_2:
