@@ -73,7 +73,6 @@ es:
       show:
         can_vote: Puede votar
         error_already_voted: "Ya ha participado en esta votación"
-        no_actions: No hay acciones disponibles
         submit: Confirmar voto
         success: "¡Voto introducido!"
       can_vote:
