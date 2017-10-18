@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="small-12 medium-4 column margin-bottom">
+    <figure class="figure-card">
+      <%= link_to "#{request.url}legislation/processes/25/debate", title: t("welcome.green_areas.link") do %>
+        <%= image_tag "welcome/zonas_verdes.jpg", alt: t("welcome.green_areas.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "#{request.url}legislation/processes/25/debate", title: t("welcome.green_areas.link") do %>
+          <span><%= t("welcome.green_areas.label") %></span><br>
+          <p class="title"><%= t("welcome.green_areas.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.green_areas.text") %></p>
+    <p>
+      <%= link_to t("welcome.green_areas.link"), "#{request.url}legislation/processes/25/debate" %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-4 column margin-bottom">
+    <figure class="figure-card">
+      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017/resultados", title: t("welcome.budgets_results.link") do %>
+        <%= image_tag "welcome/budgets_results.jpg", alt: t("welcome.budgets_results.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017/resultados", title: t("welcome.budgets_results.link") do %>
+          <span><%= t("welcome.budgets_results.label") %></span><br>
+          <p class="title"><%= t("welcome.budgets_results.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.budgets_results.text") %></p>
+    <p>
+      <%= link_to t("welcome.budgets_results.link"), "#{request.url}presupuestos/presupuestos-participativos-2017/resultados" %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-4 column margin-bottom">
+    <figure class="figure-card">
+      <%= link_to first_voting_path, title: t("welcome.first_voting.link") do %>
+        <%= image_tag "welcome/first_voting.jpg", alt: t("welcome.first_voting.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to first_voting_path, title: t("welcome.first_voting.link") do %>
+          <span><%= t("welcome.first_voting.label") %></span><br>
+          <p class="title"><%= t("welcome.first_voting.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.first_voting.text") %></p>
+    <p>
+      <%= link_to t("welcome.first_voting.link"), first_voting_path %>
+    </p>
+  </div>
+</div>

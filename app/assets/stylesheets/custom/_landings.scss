@@ -1,0 +1,444 @@
+// Custom styles for landings
+//
+// 00. Common styles for landings
+// 01. Budgets videos 2017
+// 02. Budgets materials 2017
+// 03. Geocraft
+//
+
+// 00. Budgets videos 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.franklin-title {
+  font-family: 'Franklin Gothic' !important;
+  text-transform: uppercase;
+}
+
+// 01. Budgets videos 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.budgets-videos-2017 {
+
+  .header {
+    background: $budget;
+    padding: $line-height 0;
+
+    h1 {
+      color: $text;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(40);
+      line-height: rem-calc(40);
+      margin-top: $line-height * 2;
+      text-transform: uppercase;
+    }
+
+    .button {
+      font-size: rem-calc(24);
+    }
+  }
+}
+
+// 02. Budgets materials 2017
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$arganzuela:        #b89774;
+$barajas:           #f70918;
+$carabanchel:       #a0a0aa;
+$centro:            #f88278;
+$chamartin:         #da4980;
+$chamberi:          #8339b4;
+$ciudad-lineal:     #b77de1;
+$fuencarral:        #fb9bf2;
+$hortaleza:         #191b72;
+$latina:            #1934db;
+$moncloa:           #009fe3;
+$moratalaz:         #7beded;
+$puente-vallecas:   #46c1a4;
+$retiro:            #326b00;
+$salamanca:         #7bcc18;
+$san-blas:          #c4d400;
+$tetuan:            #f7eb35;
+$usera:             #f6d32d;
+$vicalvaro:         #f77924;
+$villa-vallecas:    #a70500;
+$villaverde:        #8e4e28;
+
+.budgets-materials-2017 {
+
+  .header {
+    background: $budget;
+    padding: $line-height 0;
+
+    h1 {
+      color: $text;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(40);
+      line-height: rem-calc(40);
+      margin-top: $line-height;
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+        line-height: rem-calc(60);
+      }
+    }
+  }
+
+  .budget-lead {
+    font-size: rem-calc(24);
+  }
+
+  figure {
+    margin: 0;
+    position: relative;
+
+    figcaption {
+      bottom: 0;
+      color: #fff;
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(36);
+      line-height: rem-calc(36);
+      text-transform: uppercase;
+      padding: $line-height / 4 $line-height / 2;
+      position: absolute;
+      width: 100%;
+
+      h3 {
+        color: #000;
+        font-family: 'Franklin Gothic' !important;
+        font-size: rem-calc(36);
+        line-height: rem-calc(36);
+      }
+
+      span {
+        border-radius: rem-calc(4);
+        color: #fff;
+        display: inline;
+        font-size: $base-font-size;
+        padding: rem-calc(4) rem-calc(8);
+      }
+    }
+  }
+
+  .district-box {
+
+    .district-card {
+      border: 1px solid $border;
+      border-radius: 4px;
+      margin-bottom: $line-height;
+    }
+
+    .background-arganzuela {
+      background: $arganzuela;
+    }
+
+    .background-barajas {
+      background: $barajas;
+    }
+
+    .background-carabanchel {
+      background: $carabanchel;
+    }
+
+    .background-centro {
+      background: $centro;
+    }
+
+    .background-chamartin {
+      background: $chamartin;
+    }
+
+    .background-chamberi {
+      background: $chamberi;
+    }
+
+    .background-ciudad_lineal {
+      background: $ciudad-lineal;
+    }
+
+    .background-fuencarral_pardo {
+      background: $fuencarral;
+    }
+
+    .background-hortaleza {
+      background: $hortaleza;
+    }
+
+    .background-latina {
+      background: $latina;
+    }
+
+    .background-moncloa_aravaca {
+      background: $moncloa;
+    }
+
+    .background-moratalaz {
+      background: $moratalaz;
+    }
+
+    .background-puente_vallecas {
+      background: $puente-vallecas;
+    }
+
+    .background-retiro {
+      background: $retiro;
+    }
+
+    .background-salamanca {
+      background: $salamanca;
+    }
+
+    .background-san_blas_canillejas {
+      background: $san-blas;
+    }
+
+    .background-tetuan {
+      background: $tetuan;
+    }
+
+    .background-usera {
+      background: $usera;
+    }
+
+    .background-vicalvaro {
+      background: $vicalvaro;
+    }
+
+    .background-villa_vallecas {
+      background: $villa-vallecas;
+    }
+
+    .background-villaverde {
+      background: $villaverde;
+    }
+
+    .color-arganzuela {
+      color: $arganzuela;
+    }
+
+    .color-barajas {
+      color: $barajas;
+    }
+
+    .color-carabanchel {
+      color: $carabanchel;
+    }
+
+    .color-centro {
+      color: $centro;
+    }
+
+    .color-chamartin {
+      color: $chamartin;
+    }
+
+    .color-chamberi {
+      color: $chamberi;
+    }
+
+    .color-ciudad_lineal {
+      color: $ciudad-lineal;
+    }
+
+    .color-fuencarral_pardo {
+      color: $fuencarral;
+    }
+
+    .color-hortaleza {
+      color: $hortaleza;
+    }
+
+    .color-latina {
+      color: $latina;
+    }
+
+    .color-moncloa_aravaca {
+      color: $moncloa;
+    }
+
+    .color-moratalaz {
+      color: $moratalaz;
+    }
+
+    .color-puente_vallecas {
+      color: $puente-vallecas;
+    }
+
+    .color-retiro {
+      color: $retiro;
+    }
+
+    .color-salamanca {
+      color: $salamanca;
+    }
+
+    .color-san_blas_canillejas {
+      color: $san-blas;
+    }
+
+    .color-tetuan {
+      color: $tetuan;
+    }
+
+    .color-usera {
+      color: $usera;
+    }
+
+    .color-vicalvaro {
+      color: $vicalvaro;
+    }
+
+    .color-villa_vallecas {
+      color: $villa-vallecas;
+    }
+
+    .color-villaverde {
+      color: $villaverde;
+    }
+
+    ul {
+      padding: $line-height / 2;
+
+      &.no-district {
+        padding: 0;
+      }
+
+      li {
+        font-size: $small-font-size;
+        margin-bottom: $line-height / 2;
+      }
+    }
+
+    a {
+      color: #000;
+
+      span {
+        line-height: rem-calc(20);
+        margin-left: $line-height / 4;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// 03. Geocraft
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$geocraft: #006800;
+
+.geocraft {
+
+  .header {
+    background: $brand image-url('landings/header_geocraft.jpg');
+    background-position: 50% 90%;
+    background-size: cover;
+    min-height: $line-height * 20;
+
+    h1 {
+      color: #fff;
+
+      span {
+        display: block;
+      }
+
+      .word {
+        font-size: rem-calc(80);
+        line-height: $line-height * 2;
+      }
+    }
+
+    .button {
+      background: $geocraft;
+      color: #fff;
+      font-size: rem-calc(24);
+      text-transform: uppercase;
+    }
+
+    .content {
+      color: #fff;
+      padding: $line-height;
+
+      a:not(.button) {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .quote {
+    color: $geocraft;
+    font-size: rem-calc(36);
+    font-style: italic;
+    font-weight: bold;
+    line-height: $line-height * 2;
+    margin-top: $line-height * 2;
+  }
+
+  .section-white,
+  .section-green {
+    padding: $line-height * 2 0;
+
+    .text {
+      font-size: rem-calc(20);
+      line-height: $line-height * 1.5;
+    }
+  }
+
+  .section-green {
+    background: $geocraft;
+    color: #fff;
+
+    h2 {
+      color: #fff;
+    }
+
+    .button {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+
+  .screenshot {
+    margin-top: $line-height * 3;
+  }
+
+  h2 {
+    color: $geocraft;
+    text-transform: uppercase;
+  }
+
+  ol {
+    position: relative;
+    margin-left: $line-height * 3;
+
+    li {
+      line-height: $line-height * 2;
+      margin-bottom: $line-height;
+      word-break: break-all;
+
+      &::before {
+        content: image-url('landings/icon_minecraft.png');
+        left: -72px;
+        position: absolute;
+      }
+    }
+  }
+
+  .cta {
+    color: $geocraft;
+    border-radius: rem-calc(4);
+    padding: $line-height;
+
+    a {
+      color: $geocraft;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}

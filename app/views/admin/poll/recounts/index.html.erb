@@ -9,6 +9,24 @@
       <%= t("admin.recounts.index.no_recounts") %>
     </div>
   <% else %>
+
+    <table id="totals">
+      <thead>
+        <tr>
+          <th class="text-center"></th>
+          <th class="text-center"><%= t("admin.recounts.index.total_final") %></th>
+          <th class="text-center"><%= t("admin.recounts.index.total_system") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong><%= t("admin.recounts.index.all_booths_total") %></strong></td>
+          <td class="text-center" id="total_final"><%=  @all_booths_counts[:final] %></td>
+          <td class="text-center" id="total_system"><%= @all_booths_counts[:system] %></td>
+        </tr>
+      </tbody>
+    </table>
+
     <table class="fixed margin">
       <thead>
         <th><%= t("admin.recounts.index.table_booth_name") %></th>

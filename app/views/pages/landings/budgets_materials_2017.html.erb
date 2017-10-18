@@ -1,0 +1,107 @@
+<% provide :title, "Materiales para difundir los presupuestos participativos 2017" %>
+<% provide :meta_description, "Materiales para descargar sobre los presupuestos participativos 2017. Incluye un cartel, un díptico y una imagen de cada distrito de Madrid." %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budgets_materials_2017_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="https://decide.madrid.es/presupuestos-participativos-2017-materiales" />
+<meta property="og:title"         content="Materiales para difundir los presupuestos participativos 2017" />
+<meta property="og:image"         content="<%= image_url '/social_media_budgets_materials_2017.png' %>" />
+<meta property="og:description"   content="Materiales para descargar sobre los presupuestos participativos 2017. Incluye un cartel, un díptico y una imagen de cada distrito de Madrid." />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Materiales para difundir los presupuestos participativos 2017" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_budgets_materials_2017.png' %>" />
+<meta name="twitter:description"   content="Materiales para descargar sobre los presupuestos participativos 2017. Incluye un cartel, un díptico y una imagen de cada distrito de Madrid." />
+<% end %>
+
+<div class="budgets-materials-2017">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to budgets_welcome_path %>
+        <br>
+        <div class="district-box">
+          <h1>Materiales de difusión de los<br> presupuestos participativos 2017</h1>
+          <ul class="no-bullet no-district">
+            <li>
+              <%= link_to "/docs/budgets_materials_2017/cartel_generico.jpg", target: "_blank",
+                          title: "Descargar cartel genérico de Presupuestos participativos 2017 JPG - 275Kb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_poster.png", alt: "" %><span>Cartel genérico de Presupuestos participativos 2017</span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-9 column">
+      <p class="budget-lead"><strong>¿Quieres apoyar y ayudar a difundir los presupuestos participativos?</strong></p>
+      <p>Te facilitamos este <strong>kit con material gráfico</strong> para dar a conocer los proyectos de tu distrito.</p>
+      <p>En cada distrito encontrarás un <strong>cartel genérico</strong>, un <strong>díptico con información</strong> sobre el presupuesto y los proyectos que tiene cada distrito y una <strong>imagen</strong> para que puedas pasar por mensaje y/o difundir en redes sociales.</p>
+    </div>
+  </div>
+
+  <% districts = [
+    ["Arganzuela", "arganzuela", "27", "44", "669"],
+    ["Barajas", "barajas", "27", "43", "788"],
+    ["Carabanchel", "carabanchel", "28", "43", "530"],
+    ["Centro", "centro", "27", "42", "767"],
+    ["Chamartín", "chamartin", "27", "63", "669"],
+    ["Chamberí" , "chamberi", "28", "42", "722"],
+    ["Ciudad Lineal", "ciudad_lineal", "27", "42", "767"],
+    ["Fuencarral-El Pardo", "fuencarral_pardo", "28", "44", "801"],
+    ["Hortaleza", "hortaleza", "27", "86", "583"],
+    ["Latina", "latina", "27", "45", "774"],
+    ["Moncloa-Aravaca", "moncloa_aravaca", "27", "80", "896"],
+    ["Moratalaz", "moratalaz", "27", "108", "780"],
+    ["Puente de Vallecas", "puente_vallecas", "27", "103", "698"],
+    ["Retiro", "retiro", "27", "42", "693"],
+    ["Salamanca", "salamanca", "27", "43", "762"],
+    ["San Blas-Canillejas", "san_blas_canillejas", "27", "74", "804"],
+    ["Tetuán", "tetuan", "26", "42", "789"],
+    ["Usera", "usera", "28", "44", "853"],
+    ["Vicálvaro", "vicalvaro", "28", "96", "849"],
+    ["Villa de Vallecas", "villa_vallecas", "26", "64", "755"],
+    ["Villaverde",  "villaverde", "26", "75", "703"]] %>
+
+  <div class="row">
+    <% districts.each do |name, slug, size_1, size_2, size_3| %>
+      <div class="small-12 medium-6 large-4 column district-box">
+        <div class="district-card">
+          <figure>
+            <%= image_tag "budgets_materials_2017/title.png", alt: "" %>
+            <figcaption>
+              <span class="background-<%= slug %>">DISTRITO</span><br>
+              <h3 class="color-<%= slug %>"><%= name %></h3>
+            </figcaption>
+          </figure>
+          <ul class="no-bullet">
+            <li>
+              <%= link_to "/docs/budgets_materials_2017/cartel_#{slug}.pdf", target: "_blank",
+                          title: "Descargar cartel de #{name} PDF - #{size_1}Kb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_poster.png", alt: "" %><span>Cartel de <%= name %></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "/docs/budgets_materials_2017/diptico_#{slug}.pdf", target: "_blank",
+                          title: "Descargar díptico informativo de #{name} PDF - #{size_2}Kb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span>Díptico informativo de <%= name %></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "/docs/budgets_materials_2017/imagen_#{slug}.jpg", target: "_blank",
+                          title: "Descargar imagen para redes sociales de #{name} JPG - #{size_3}Kb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_image.png", alt: "" %><span>Imagen para redes sociales de <%= name %></span>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

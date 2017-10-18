@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  after_filter :after_login, only: :create
 
   def twitter
     sign_in_with :twitter_login, :twitter
@@ -31,6 +32,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
 
       if save_user
+        log_event("registration", "successful_registration")
         identity.update(user: @user)
         sign_in_and_redirect @user, event: :authentication
         set_flash_message(:notice, :success, kind: provider.to_s.capitalize) if is_navigational_format?
@@ -42,6 +44,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     def save_user
       @user.save || @user.save_requiring_finish_signup
+    end
+
+    def after_login
+      log_event("login", "successful_login")
     end
 
 end

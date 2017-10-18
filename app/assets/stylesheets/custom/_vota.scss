@@ -1,0 +1,307 @@
+// Primera votación ciudadana landing
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$campaign-blue:   #009fde;
+$campaign-red:    #e23135;
+$campaign-yellow: #ffdb19;
+
+.landing-voting {
+  font-family: 'Franklin Gothic' !important;
+  font-weight: normal;
+  font-size: rem-calc(24);
+
+  @include breakpoint(medium) {
+
+    .big {
+      font-size: rem-calc(80);
+      line-height: rem-calc(70);
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: rem-calc(36);
+  }
+
+  .button {
+    font-size: rem-calc(36);
+    line-height: $line-height * 1.5;
+    padding-bottom: $line-height / 2;
+    padding-top: $line-height / 2;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Franklin Gothic' !important;
+    font-weight: normal;
+  }
+
+  .header {
+    background: #000;
+
+    h1,
+    p {
+      color: #fff;
+    }
+
+    h1 {
+      text-transform: uppercase;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(80);
+        line-height: rem-calc(70);
+      }
+    }
+
+    .button {
+      background: #fff;
+      color: #000;
+      text-transform: uppercase;
+    }
+  }
+
+  .block {
+    padding-top: $line-height * 2;
+
+    @include breakpoint(medium) {
+
+      .block-content {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 48px;
+        position: relative;
+      }
+    }
+
+    .block-blue,
+    .block-yellow-vota {
+      padding: $line-height;
+      position: relative;
+
+      @include breakpoint(medium) {
+        padding: 0;
+      }
+    }
+
+    .block-blue {
+      background: $campaign-blue;
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(100);
+          line-height: rem-calc(90);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+      }
+
+      h2 a,
+      h3 {
+        color: #000;
+      }
+
+      .button {
+        background: #fff;
+        color: #000;
+        text-transform: uppercase;
+      }
+
+      .white {
+        color: #fff;
+      }
+    }
+
+    .block-yellow-vota {
+      background: $campaign-yellow;
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(105);
+          line-height: rem-calc(95);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+      }
+
+      h2 a,
+      h3 {
+        color: #000;
+      }
+
+      .button {
+        background: #000;
+        color: #fff;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .block-grey {
+    background: #fafafa;
+    margin-bottom: $line-height * 2;
+    padding: $line-height;
+    position: relative;
+
+    @include breakpoint(large) {
+
+      .button {
+        right: 24px;
+      }
+    }
+
+    h2 {
+
+      @include breakpoint(large) {
+        font-size: rem-calc(50);
+      }
+    }
+
+    h3 {
+      font-size: rem-calc(24);
+    }
+
+    .question {
+      margin-bottom: $line-height;
+      min-height: rem-calc(144);
+    }
+
+    h2,
+    h3,
+    h4 {
+      color: #000;
+    }
+
+    .button {
+      background: #000;
+      text-transform: uppercase;
+    }
+  }
+
+  .block-red,
+  .block-grey {
+
+    p {
+      font-size: rem-calc(30);
+      line-height: $line-height * 1.5;
+    }
+  }
+
+  .block-districts .button {
+    background: #000;
+  }
+
+  .plaza-espana-projects {
+    margin-top: $line-height * 2;
+    padding-bottom: $line-height * 2;
+    position: relative;
+
+    .block-red {
+      background: #b40000;
+      color: #fff;
+      padding: $line-height;
+      position: relative;
+
+      @include breakpoint(large) {
+
+        h2 {
+          font-size: rem-calc(90);
+          line-height: rem-calc(90);
+        }
+
+        h3 {
+          font-size: rem-calc(36);
+        }
+
+        .block-projects {
+          bottom: 30px;
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+
+        h4 {
+          font-size: rem-calc(36);
+          line-height: rem-calc(36);
+          margin-bottom: $line-height * 2;
+        }
+      }
+
+      h2 a,
+      h3 {
+        color: #fff;
+      }
+    }
+
+    .button {
+      background: #fff;
+      color: #000;
+      text-transform: uppercase;
+    }
+
+    figure {
+      margin: 0 $line-height / 2;
+      position: relative;
+    }
+
+    figcaption {
+      background: #000;
+      font-size: rem-calc(30);
+      margin-top: rem-calc(-1);
+      padding: $line-height;
+      text-align: center;
+      width: 100%;
+
+      a {
+        color: #fff;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .project-x,
+    .project-y {
+      padding: 0;
+    }
+
+    .project-x figcaption {
+      margin-bottom: $line-height / 2;
+    }
+  }
+
+  .how-voting {
+    background: #f7f7f7;
+    margin-bottom: rem-calc(-$line-height * 2);
+    padding: $line-height * 3 0;
+
+    ul li {
+      line-height: $line-height * 2;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('franklin_gothic.eot');
+  src: font-url('franklin_gothic.eot?#iefix') format('embedded-opentype'),
+       font-url('franklin_gothic.woff2')      format('woff2'),
+       font-url('franklin_gothic.woff')       format('woff'),
+       font-url('franklin_gothic.ttf')        format('truetype');
+}

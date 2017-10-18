@@ -31,9 +31,6 @@ feature 'Legislation' do
 
       visit legislation_processes_path(filter: 'next')
       expect(page).to have_text "There aren't planned processes"
-
-      visit legislation_processes_path(filter: 'past')
-      expect(page).to have_text "There aren't past processes"
     end
 
     scenario 'Processes can be listed' do

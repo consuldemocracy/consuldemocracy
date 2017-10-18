@@ -33,7 +33,7 @@ module Abilities
       can :unmark_featured, Debate
 
       can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment,
-                                      Legislation::Question, Legislation::Annotation, Topic]
+                                      Legislation::Question, Legislation::Annotation, Topic, SpendingProposal, ProbeOption]
 
       can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
@@ -42,9 +42,13 @@ module Abilities
       can [:search, :index], ::User
 
       can :manage, Annotation
+      can [:read, :stats, :results, :summary, :edit, :update], SpendingProposal
 
-      can [:read, :update, :valuate, :destroy, :summary], SpendingProposal
+      if Setting['feature.spending_proposal_features.valuation_allowed'].present?
+        can [:update, :destroy], SpendingProposal
+      end
 
+      can [:read, :valuate, :summary], SpendingProposal
       can [:index, :read, :new, :create, :update, :destroy, :calculate_winners, :read_results], Budget
       can [:read, :create, :update, :destroy], Budget::Group
       can [:read, :create, :update, :destroy], Budget::Heading
@@ -71,6 +75,7 @@ module Abilities
       can [:manage], ::Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
+
       cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation]
 
       can [:create, :destroy], Document

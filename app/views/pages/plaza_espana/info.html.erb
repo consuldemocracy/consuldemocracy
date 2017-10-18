@@ -1,0 +1,144 @@
+<% provide :title, "Remodelación de Plaza España" %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_plaza_espana" %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: remodeling_plaza_url %>
+<% end %>
+
+<%= render "shared/plaza_espana_header" %>
+
+<div class="process row margin">
+  <div class="small-12 medium-7 column">
+    <div class="flex-video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/2PisFJRfDj4?rel=0" style="border:0" allowfullscreen title="Proceso Participativo #decideplazaespaña"></iframe>
+  </div>
+    <h2>Información detallada para tomar la mejor decisión</h2>
+
+    <p>El pasado 14 de diciembre se convocó un grupo de trabajo multidisciplinar (asociaciones de vecinos, urbanistas, hoteleros, técnicos del Ayuntamiento, etc), que decidió las preguntas clave que habría que resolver para definir la nueva Plaza de España. Desde el 28 de enero esas preguntas han estado disponibles aquí para que cualquier madrileño las responda, y las respuestas mayoritarias se han convertido en las bases obligatorias del concurso internacional de remodelación de Plaza España.</p>
+
+    <p>Todos los proyectos presentados han sido publicados en la web para ser debatidos y valorados. Un jurado ha elegido cinco de ellos, que serán desarrollados, y posteriormente dos finalistas. Finalmente será la gente de Madrid la que vote entre esos dos decidiendo el proyecto final a ejecutar.</p>
+
+    <p>A continuación te ofrecemos diferentes documentos elaborados por el Área de Desarrollo Urbano Sostenible, para que todos tengan la máxima información a la hora de responder las preguntas sobre la reforma. Además encontrarás preguntas frecuentes, así como las actas y archivos relacionadas con el grupo de trabajo.</p>
+
+    <p>Si quieres opinar sobre el proceso hay <%= link_to "un debate abierto",
+    "https://decide.madrid.es/debates/4416" %>.</p>
+
+    <p>
+      Este era el <%= link_to "cuestionario <small>(PDF | 75Kb)</small>".html_safe, "/docs/cuestionario_plaza_espana.pdf", title: "Descargar el cuestionario (PDF | 75Kb)", target: "_blank" %> que se respondió en la primera fase del proceso.
+    </p>
+  </div>
+  <div class="small-12 medium-5 column">
+    <h3>Enlaces relacionados</h3>
+    <ul>
+      <li>
+        <%= link_to "Bases del concurso",
+                    "http://www.coam.org/media/Default%20Files/servicios/concursos/concursos_ocam/2016/plaza_espania/160617_bases_plaza_espana.pdf",
+                    target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Concurso de proyectos",
+                    "https://sede.madrid.es/portal/site/tramites/menuitem.1f3361415fda829be152e15284f1a5a0/?vgnextoid=d3dcffda5cd55510VgnVCM2000001f4a900aRCRD&vgnextchannel=e53965dd72ede410VgnVCM1000000b205a0aRCRD&vgnextfmt=default", target: "_blank", title: t("shared.target_blank_html") %>
+      </li>
+      <li>
+        <%= link_to "Debates sobre la Remodelación de Plaza España", plaza_debates_path %>
+      </li>
+    </ul>
+
+    <h3>Preguntas frecuentes</h3>
+    <ul>
+      <li>
+        <%= link_to "Dudas en el proceso participativo sobre la posible intervención en Plaza de España", plaza_faq_path %>
+      </li>
+    </ul>
+
+    <h3>Estudios</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "Resumen <small>(PDF | 64Kb)</small>".html_safe,
+                    "/docs/resumen_plaza_espana.pdf",
+                    title: "Resumen (PDF | 64Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Memoria síntesis <small>(PDF | 3,6Mb)</small>".html_safe,
+                    "/docs/00_memoria_sintesis.pdf",
+                    title: "Memoria síntesis (PDF | 3,6Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Valoración de costes <small>(PDF | 49Kb)</small>".html_safe,
+                    "/docs/valoracion_costes.pdf",
+                    title: "Valoración de costes (PDF | 49Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de la evolución histórica <small>(PDF | 7,2Mb)</small>".html_safe,
+                    "/docs/01_estudio_de_la_evolucion_historica.pdf",
+                    title: "Estudio de la evolución histórica (PDF | 7,2Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de otras miradas <small>(PDF | 1,2Mb)</small>".html_safe,
+                    "/docs/02_estudio_de_otras_miradas.pdf",
+                    title: "Estudio de otras miradas (PDF | 1,2Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio perceptivo del uso y utilización peatonal <small>(PDF | 2,6Mb)</small>".html_safe,
+                    "/docs/03_estudio_perceptivo_del_uso_y_utilizacion_peatonal.pdf",
+                    title: "Estudio perceptivo del uso y utilización peatonal (PDF | 2,6Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio ambiental y estado de la urbanización <small>(PDF | 2,6Mb)</small>".html_safe,
+                    "/docs/04_estudio_ambiental_y_estado_de_la_urbanizacion.pdf",
+                    title: "Estudio ambiental y estado de la urbanización (PDF | 2,6Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio sociodemográfico y dotacional <small>(PDF | 6,9Mb)</small>".html_safe,
+                    "/docs/05_estudio_sociodemografico_y_dotacional.pdf",
+                    title: "Estudio sociodemográfico y dotacional (PDF | 6,9Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de densidad, uso y protección de la edificación <small>(PDF | 3,1Mb)</small>".html_safe,
+                    "/docs/06_estudio_de_densidad_uso_y_proteccion_de_la_edificacion.pdf",
+                    title: "Estudio de densidad, uso y protección de la edificación (PDF | 3,1Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de las autorizaciones de uso <small>(PDF | 289Kb)</small>".html_safe,
+                    "/docs/07_estudio_de_las_autorizaciones_de_uso.pdf",
+                    title: "Estudio de las autorizaciones de uso (PDF | 289Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Estudio de la movilidad <small>(PDF | 8,6Mb)</small>".html_safe,
+                    "/docs/08_estudio_de_la_movilidad.pdf",
+                    title: "Estudio de la movilidad (PDF | 8,6Mb)", target: "_blank" %>
+      </li>
+    </ul>
+
+    <h3>Documentos del grupo de trabajo</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "Informe grupo de trabajo Plaza de España <small>(PDF | 1,5Mb)</small>".html_safe,
+                    "/docs/informe_grupo_de_trabajo_plaza_de_espana.pdf",
+                    title: "Informe grupo de trabajo Plaza de España (PDF | 1,5Mb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión 21/01/2016 <small>(DOC | 169Kb)</small>".html_safe,
+                    "/docs/acta_reunion_pza_espana_21_enero_2016.doc",
+                    title: "Acta reunión 21/01/2016 (DOC | 169Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión 11/01/2016 <small>(PDF | 68Kb)</small>".html_safe,
+                    "/docs/acta_reunion_pza_espana_11_enero_2016.pdf",
+                    title: "Acta reunión 11/01/2016 (PDF | 68Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión 14/12/2015 <small>(PDF | 54Kb)</small>".html_safe,
+                    "/docs/acta_reunion_pza_espana_14_diciembre_2015.pdf",
+                    title: "Acta reunión 14/12/2015 (PDF | 54Kb)", target: "_blank" %>
+      </li>
+      <li>
+        <%= link_to "Acta reunión 3/12/2015 <small>(PDF | 55Kb)</small>".html_safe,
+                    "/docs/acta_reunion_pza_espana_3_diciembre_2015.pdf",
+                    title: "Acta reunión 3/12/2015 (PDF | 55Kb)", target: "_blank" %>
+      </li>
+    </ul>
+  </div>
+
+</div>

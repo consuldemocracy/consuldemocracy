@@ -125,6 +125,5 @@ feature 'Admin booths assignments' do
         end
       end
     end
-
   end
 end

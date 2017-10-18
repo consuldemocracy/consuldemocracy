@@ -1,0 +1,91 @@
+<% provide :title, "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: label_streets_url,
+          social_title: t("pages.processes.index.process_12_title"),
+          social_description: t("pages.processes.index.process_12_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: label_streets_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura. Para dar cumplimiento a lo previsto en dicha Ley, el Pleno del Ayuntamiento de Madrid acordó, en abril de 2016, la creación del Comisionado de Memoria Histórica, órgano competente para proponer a los órganos municipales o administraciones públicas la adopción de las medidas necesarias para garantizar el cumplimiento de la referida norma en la Ciudad de Madrid.</p>
+
+    <p>Es por ello que el Ayuntamiento de Madrid somete a consulta pública la modificación de la Ordenanza reguladora de la denominación y rotulación de vías, espacios urbanos, así como edificios y monumentos de titularidad municipal y de la numeración de fincas y edificios. El objeto de esta Ordenanza será regular un procedimiento diferenciado para los cambios de denominación que vengan motivados por la aplicación de la Ley de Memoria Histórica.</p>
+
+    <p>Según este nuevo procedimiento, el Comisionado de Memoria Histórica propondrá las modificaciones necesarias para asegurar el cumplimiento de la Ley y en el que se hace partícipe en todo momento, tanto al Pleno del Ayuntamiento de Madrid, como a los Distritos y/o Áreas de Gobierno que pudieran verse afectados por dichas modificaciones.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "Consulta pública Ordenanza <br><small>(PDF | 79Kb)</small>".html_safe,
+                    "/docs/rotulacion_vias/consulta_publica_ordenanza.pdf", target: "_blank",
+                    title: "Ver consulta pública Ordenanza en formato PDF (se abre en ventana nueva)" %>
+      </li>
+      <li>
+        <%= link_to "Contenido de la iniciativa de modificación<br> <small>(PDF | 121Kb)</small>".html_safe,
+                    "/docs/rotulacion_vias/contenido_de_la_iniciativa_de_modificacion.pdf", target: "_blank",
+                    title: "Ver contenido de la iniciativa de modificación en formato PDF (se abre en ventana nueva)" %>
+      </li>
+      <li>
+        <%= link_to "Extracto Junta de Gobierno <br><small>(PDF | 117Kb)</small>".html_safe,
+                    "/docs/rotulacion_vias/extracto_junta_de_gobierno.pdf", target: "_blank",
+                    title: "Ver extracto Junta de Gobierno en formato PDF (se abre en ventana nueva)" %>
+      </li>
+      <li>
+        <%= link_to "Memoria-propuesta consulta pública <br><small>(PDF | 110Kb)</small>".html_safe,
+                    "/docs/rotulacion_vias/memoria_propuesta_consulta_publica.pdf", target: "_blank",
+                    title: "Ver Memoria propuesta consulta pública en formato PDF (se abre en ventana nueva)" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4899-pregunta-1-sobre-la-ordenanza-reguladora-de-la-denominacion-y-rotulacion-de-vias" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Considera conveniente la modificación de la Ordenanza para adaptarla a la normativa vigente en materia de Memoria Histórica?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4900-pregunta-2-sobre-la-ordenanza-reguladora-de-la-denominacion-y-rotulacion-de-vias" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Considera necesario modificar el procedimiento para la asignación o cambio de denominación de nombres de calles, edificios y espacios públicos?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4901-pregunta-3-sobre-la-ordenanza-reguladora-de-la-denominacion-y-rotulacion-de-vias" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Considera adecuado dar participación a los Distritos en este procedimiento?
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

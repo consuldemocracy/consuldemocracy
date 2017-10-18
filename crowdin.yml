@@ -1,5 +1,5 @@
 files:
-  - source: /config/locales/en/**.yml
+  - source: /config/locales/es/**.yml
     translation: /config/locales/%locale%/%original_file_name%
     languages_mapping:
       locale:
@@ -14,3 +14,4 @@ files:
         nl: nl
         pt-PT: pt
         ru: ru
+        en-US: en

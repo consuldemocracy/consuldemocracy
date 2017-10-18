@@ -177,6 +177,16 @@ feature "Voter" do
       expect(Poll::Voter.count).to eq(1)
     end
 
+    xscenario "Voting in web - Nvotes", :nvotes do
+      user  = create(:user, :in_census, id: rand(9999999))
+      poll = create(:poll)
+      nvote = create(:poll_nvote, user: user, poll: poll)
+
+      simulate_nvotes_callback(nvote, poll)
+
+      expect(Poll::Voter.count).to eq(1)
+      expect(Poll::Voter.first.origin).to eq("web")
+    end
   end
 
 end

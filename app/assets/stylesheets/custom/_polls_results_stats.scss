@@ -1,0 +1,349 @@
+// Polls results & stats
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.polls-results,
+.polls-stats {
+
+  .header {
+    background: #000;
+    color: #fff;
+    padding-bottom: $line-height * 2;
+    padding-top: $line-height * 2;
+
+    @include breakpoint(medium) {
+
+      .more-info {
+        float: right;
+      }
+    }
+
+    h1 {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(60);
+      font-weight: normal;
+      line-height: rem-calc(60);
+
+      span {
+        display: block;
+        font-size: rem-calc(30);
+        line-height: rem-calc(30);
+      }
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .more-info p {
+      color: #fff;
+      margin-bottom: 0;
+      margin-top: $line-height;
+
+      @include breakpoint(medium) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  h3 {
+    background: $campaign-yellow;
+    color: #000;
+    display: inline;
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(40);
+    line-height: $line-height * 2;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .sidebar {
+    border-right: 1px solid $border;
+
+    p {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(30);
+      text-transform: uppercase;
+    }
+
+    .menu {
+      padding: 0;
+
+      li a {
+        color: $link;
+      }
+    }
+  }
+}
+
+.polls-results,
+.polls-stats {
+
+  table {
+    table-layout: fixed;
+
+    caption {
+      padding: $line-height / 2 0;
+      text-align: left;
+    }
+
+    th.win {
+      background: $campaign-blue;
+    }
+
+    td.win {
+      background: #ccedf8;
+      font-weight: bold;
+    }
+  }
+}
+
+.polls-stats {
+
+  h4 {
+    background: #000;
+    color: #fff;
+    font-family: 'Franklin Gothic' !important;
+    font-size: rem-calc(24);
+    line-height: $line-height * 1.5;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    padding: $line-height / 2;
+  }
+
+  .stat-number {
+    text-transform: uppercase;
+
+    span {
+      font-family: 'Franklin Gothic' !important;
+      font-size: rem-calc(80);
+      font-weight: normal;
+      line-height: rem-calc(80);
+    }
+  }
+
+  table.polls-participation-age {
+
+    .progress {
+      background: #fff;
+      border: 1px solid #eee;
+      height: rem-calc(14);
+    }
+
+    .progress-meter {
+      background: $campaign-blue;
+      height: $line-height / 2;
+
+      &.web {
+        background: $campaign-yellow;
+      }
+
+      &.booth {
+        background: $campaign-red;
+      }
+
+      &.letter {
+        background: #000;
+      }
+    }
+
+    .progress-meter-text {
+      color: $text;
+      font-weight: normal;
+      left: 0;
+      top: $line-height / 2;
+      transform: initial;
+    }
+  }
+
+  table.polls-participation-district {
+
+    @include breakpoint(medium) {
+
+      .district {
+        width: rem-calc(200);
+      }
+    }
+  }
+}
+
+// Fixes tables on mobile version
+
+@include breakpoint(medium down) {
+
+  .polls-stats {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+
+      &.border-left {
+        border-left: 0;
+      }
+
+      &.border-right {
+        border-right: 0;
+      }
+    }
+
+    thead tr {
+      left: -9999px;
+      position: absolute;
+      top: -9999px;
+    }
+
+    tr {
+      border: 1px solid $border;
+    }
+
+    td {
+      border: 0;
+      padding-top: $line-height * 1.5;
+      position: relative;
+
+      &::before {
+        left: 6px;
+        padding-right: 10px;
+        position: absolute;
+        top: 6px;
+        white-space: nowrap;
+        width: 45%;
+      }
+    }
+  }
+
+  table {
+
+    &.polls-participation,
+    &.polls-participation-letter,
+    &.polls-participation-age,
+    &.polls-participation-district,
+    &.polls-total-stats,
+    &.polls-stats-district {
+      td:nth-of-type(1)::before,
+      td:nth-of-type(2)::before,
+      td:nth-of-type(3)::before,
+      td:nth-of-type(4)::before,
+      td:nth-of-type(5)::before,
+      td:nth-of-type(6)::before {
+        font-weight: bold;
+      }
+    }
+
+    &.polls-participation {
+
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'TOTAL';
+      }
+    }
+
+    &.polls-participation-letter {
+
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'CORREO';
+      }
+
+      td:nth-of-type(4)::before {
+        content: 'TOTAL';
+      }
+    }
+
+    &.polls-participation-age {
+
+      td:nth-of-type(1)::before {
+        content: 'EDAD';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(4)::before {
+        content: 'CORREO';
+      }
+
+      td:nth-of-type(5)::before {
+        content: 'TOTAL';
+      }
+    }
+
+    &.polls-participation-district {
+
+      td:nth-of-type(1)::before {
+        content: 'DISTRITO';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(4)::before {
+        content: 'CORREO';
+      }
+
+      td:nth-of-type(5)::before {
+        content: 'TOTAL';
+      }
+
+      td:nth-of-type(6)::before {
+        content: '% PARTICIPACIÓN POBLACIÓN DEL DISTRITO';
+      }
+    }
+
+    &.polls-total-stats {
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'CORREO';
+      }
+    }
+
+    &.polls-stats-district {
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'TOTAL';
+      }
+    }
+  }
+}

@@ -14,6 +14,7 @@ feature "Notifications" do
   let(:legislation_question) { create(:legislation_question, process: process, author: administrator) }
   let(:legislation_annotation) { create(:legislation_annotation, author: author) }
 
+
   scenario "User commented on my debate", :js do
     create(:notification, notifiable: debate, user: author)
     login_as author
@@ -61,7 +62,7 @@ feature "Notifications" do
     end
 
     logout
-    login_as author
+    login_as author.reload
     visit root_path
     visit root_path
 
@@ -89,8 +90,7 @@ feature "Notifications" do
     end
 
     logout
-
-    login_as author
+    login_as author.reload
     visit root_path
     visit root_path
 
@@ -119,7 +119,7 @@ feature "Notifications" do
       logout
     end
 
-    login_as author
+    login_as author.reload
     visit root_path
     visit root_path
 
@@ -146,7 +146,7 @@ feature "Notifications" do
 
   scenario "Author replied to his own comment", :js do
     comment = create :comment, commentable: debate, user: author
-    login_as author
+    login_as author.reload
     visit debate_path debate
 
     click_link "Reply"
@@ -179,7 +179,7 @@ feature "Notifications" do
       create(:vote, voter: user1, votable: proposal, vote_flag: true)
       create(:vote, voter: user2, votable: proposal, vote_flag: true)
 
-      login_as(author)
+      login_as author.reload
       visit root_path
 
       visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -191,7 +191,7 @@ feature "Notifications" do
       expect(page).to have_content "Your message has been sent correctly."
 
       logout
-      login_as user1
+      login_as user1.reload
       visit root_path
       visit root_path
 
@@ -203,7 +203,7 @@ feature "Notifications" do
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
 
       logout
-      login_as user2
+      login_as user2.reload
       visit root_path
       visit root_path
 
@@ -215,7 +215,7 @@ feature "Notifications" do
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
 
       logout
-      login_as user3
+      login_as user3.reload
       visit root_path
       visit root_path
 

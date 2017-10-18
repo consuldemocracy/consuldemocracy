@@ -1,0 +1,207 @@
+<% provide :title, "Borrador de Plan de Calidad de Aire y Cambio Climático" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: air_quality_plan_url,
+          social_title: t("pages.processes.index.process_11_title"),
+          social_description: t("pages.processes.index.process_11_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: air_quality_plan_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Borrador de Plan de Calidad de Aire y Cambio Climático</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>Una de las principales responsabilidades de los ayuntamientos está velar por la salud de sus ciudadanos, poniendo en marcha acciones encaminadas a reducir las situaciones de riesgo y, entre ellas, prevenir el cambio climático y vigilar y mejorar la calidad del aire que respiramos.</p>
+
+    <p>La reducción de la contaminación atmosférica y la lucha contra el cambio climático no debe demorarse, dado que la contaminación atmosférica de las ciudades es ya la cuarta causa de muerte prematura en el mundo, según un informe hecho público por el Banco Mundial el pasado mes de septiembre, y que además las ciudades son importantes emisoras de gases de efecto invernadero.</p>
+
+    <p>En el Ayuntamiento de Madrid estamos trabajando para que en 2017 tengamos un Plan de Calidad de Aire y Cambio Climático que responda a estas necesidades. Ahora mismo estamos definiendo treinta propuestas en colaboración con organizaciones vecinales y sociales, técnicos, administraciones, instituciones académicas, asociaciones y colectivos sociales y gremiales, sindicatos, organizaciones empresariales y grupos políticos. A la vez, queremos que los vecinos podáis conocerlas.</p>
+
+    <p>Es el momento de que nos cuentes aquí, cómo crees que funcionarían estas treinta medidas en tu calle, en tu barrio, en tu distrito.</p>
+
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/dossier_plan_de_calidad_de_aire_y_cambio_climatico.pdf", target: "_blank",
+                    title: "Diálogo Con los Barrios - Plan de Calidad de Aire y Cambio Climático del Ayuntamiento de Madrid (Se abre en ventana nueva)" do %>
+                    <strong>Diálogo Con los Barrios</strong><br><small>(Plan de Calidad de Aire y Cambio Climático del Ayuntamiento de Madrid)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4880-pregunta-1-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Considera usted que restringir el acceso de vehículos privados a ciertas zonas de su distrito puede mejorar la contaminación, el nivel de ruido y mejorar en general la calidad del espacio público?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4881-pregunta-2-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Considera usted que en su distrito sería adecuado mejorar el espacio peatonal construyendo aceras más anchas y facilitando el cruce de calzadas para los peatones?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">3</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4882-pregunta-3-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Cree usted que para mejorar la movilidad peatonal en los barrios de su distrito sería positivo limitar a 30 km/h la velocidad de circulación de los vehículos?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">4</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4883-pregunta-4-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                Creemos que la movilidad en bicicleta, además de beneficios para el propio usuario, tiene un efecto importante en la mejora de la circulación y de la movilidad en general. ¿Considera usted que en su barrio o distrito se pueden tomar medidas concretas que fomenten y faciliten un mayor uso de la bicicleta como medio de transporte? ¿Puede indicar algunas?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">5</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4884-pregunta-5-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Considera que en su barrio o distrito la dotación de transporte público es adecuada a sus necesidades?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">6</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4885-pregunta-6-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                Qué mejoras o medidas propondría para incentivar el uso del transporte público?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">7</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4886-pregunta-7-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                Teniendo en cuenta que los carriles bus mejoran la velocidad comercial, frecuencia y por tanto la calidad del servicio ¿considera usted que en su barrio o distrito la red de carriles bus es adecuada?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">8</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4887-pregunta-8-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                Indique en que calles o vías propondría la extensión de los carriles bus.
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">9</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4888-pregunta-9-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Considera usted que la implantación en su barrio o distrito de un sistema de regulación del estacionamiento en las calles, sin coste para los residentes, mejoraría el problema del estacionamiento y redundaría en la mejora de la movilidad peatonal?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">10</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4889-pregunta-10-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Considera que la renovación de las flotas de vehículos de la EMT, así como de los vehículos utilizados para la distribución urbana de mercancías, los taxis y resto de flotas, puede ayudar a mejorar el problema de la contaminación en su barrio y distrito y por tanto en el resto de la ciudad?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">11</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4890-pregunta-11-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Cree usted que en su barrio o distrito hay suficiente número de reservas de estacionamiento para carga y descarga de los vehículos encargados de la distribución urbana de mercancías? ¿Puede identificar algunas calles en la que considere que la necesidad es mayor?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">12</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4891-pregunta-12-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                Si dispusiera en su entorno habitual (domicilio, trabajo, etc) de una red suficiente de puntos de  recarga de vehículos eléctricos y tuviera que renovar su vehículo ¿se plantearía usted la adquisición de un vehículo eléctrico?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">13</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4892-pregunta-13-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                El borrador del Plan de Calidad del Aire y Cambio Climático propone una medida que supone la creación de un área central de acceso restringido al vehículo privado cuyo alcance y extensión es prácticamente coincidente con la del distrito Centro. Esta nueva área permitirá el acceso a los residentes, a los servicios públicos y vehículos de servicio a los residentes, vehículos de distribución urbana de mercancías y cualquier vehículo particular que acceda para aparcar en alguno de los aparcamientos públicos subterráneos existentes en el área. ¿Considera usted que esta medida tendrá un efecto positivo sobre la calidad del aire de la ciudad y en consecuencia en su distrito?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">14</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/4893-pregunta-14-sobre-el-plan-de-calidad-del-aire" do %>
+                <strong>
+                ¿Qué acciones propone usted que debería poner en marcha el Ayuntamiento de Madrid en la lucha contra la contaminación?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

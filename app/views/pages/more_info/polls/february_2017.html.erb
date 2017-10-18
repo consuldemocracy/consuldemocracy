@@ -1,0 +1,120 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: more_info_polls_url %>
+<% end %>
+
+<div class="row margin-top">
+  <div class="small-12 medium-3 column">
+    <%= back_link_to %>
+
+    <ul class="menu vertical margin-top">
+      <li><a href="#i"><strong>Información sobre las votaciones</strong></a></li>
+      <li><a href="#ii"><strong>Cómo votar</strong></a></li>
+      <li><a href="#iii"><strong>Colabora en la votación</strong></a></li>
+      <li><a href="#iv"><strong>Más información</strong></a></li>
+      <li><a href="#v"><strong>Resultados verificables</strong></a></li>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 column more-info-text">
+    <h1 id="i">Información sobre las votaciones</h1>
+    <p>Del 13 al 19 de febrero de 2017 tiene lugar la primera votación de propuestas ciudadanas del Ayuntamiento de Madrid. Las dos propuestas ciudadanas que han pasado a votación tras alcanzar el 1% de apoyos en Decide Madrid son: "Madrid 100% sostenible" y "Billete único para el transporte público".</p>
+
+    <p>Aprovechando la votación el Ayuntamiento preguntará una serie de cuestiones adicionales:</p>
+    <ul>
+      <li><strong>El futuro de la Plaza de España</strong>. Después de un largo proceso participativo hay dos proyectos de plazas finalistas candidatas a ser la nueva Plaza de España. En esta votación se decidirá cuál debe llevarse a cabo.</li>
+      <li><strong>Reforma de Gran Vía</strong>. Cuatro preguntas para decidir cómo reformar Gran Vía, sobre la ampliación de sus aceras, los pasos peatonales, el transporte público y las plazas adyacentes.</li>
+      <li><strong>Votaciones de distrito</strong>. Si estás empadronado en alguno de los siguientes distritos podrás decidir temas de los mismos: Vicálvaro (Nombre del Espacio de Igualdad), Salamanca (Protección de edificios históricos), Hortaleza (Nombre de distrito y Parque Felipe VI), Retiro (Nombres de centros culturales), San Blas-Canillejas  y Barajas (Prioriza el Plan Participativo de Actuación Territorial de ambos distritos).</li>
+    </ul>
+
+    <p>Los resultados de todas las votaciones serán vinculantes para el gobierno. Pueden votar todas las personas empadronadas en Madrid mayores de 16 años. Y recuerda que puedes hacer en cualquier momento una nueva propuesta ciudadana aquí mismo, que en el caso de conseguir un 1% de apoyos pasará a una nueva votación.</p>
+
+    <h2 id="ii">Cómo votar</h2>
+    <ul>
+      <li><strong>Por correo postal</strong>. Todos las personas empadronadas mayores de 16 años han recibido en su domicilio un sobre amarillo con la papeleta de votación de las propuestas ciudadanas y Plaza de España y un sobre prefranqueado. Este sobre puede ser depositado en cualquier buzón hasta el 12 de febrero. Si después de votar por correo la persona quiere votar las demás cuestiones, podrá hacerlo tanto en las mesas presenciales de votación como en la web. En caso de que por alguno de estos canales elija votar de nuevo sobre las propuestas ciudadanas y Plaza de España no habrá ningún problema, en el recuento final no se tendrá en cuenta su voto por correo.</li>
+
+      <li><strong>En mesas de votación presencial</strong>. Durante toda la semana de votación habrá mesas presenciales de votación. Puedes consultar su ubicación y horario en los mapas que encontrarás en decide.madrid.es/vota Puedes votar en cualquiera de las mesas de toda la ciudad, exceptuando las votaciones de distrito que sólo podrás votarlas en las mesas situadas en el distrito correspondiente.</li>
+
+      <li><strong>A través de esta web</strong>. Entra en decide.madrid.es/votaciones y haz click en la votación en la que quieras participar. Antes de votar se te pedirá que introduzcas tus datos de usuario si ya tienes una cuenta en esta web, o que crees una nueva cuenta si todavía no lo has hecho (es muy sencillo, puedes hacerlo en un par de minutos).</li>
+    </ul>
+
+    <h2 id="iii">Colabora en la votación</h2>
+
+    <p>Las mesas presenciales de votación están formadas por colaboradores voluntarios que han querido formar parte de ellas. Cada mesa cuenta con un presidente de mesa y un vocal que son responsables de la votación en esa mesa. Puedes consultar el <a href="/docs/manual_procedimiento_procesos_2017.pdf" target="_blank" title="PDF | 8,1Mb (se abre en ventana nueva)">Manual de Procedimiento</a> de las mesas presenciales de votación (<a href="/docs/decreto_firmado_procesos_2017.pdf" target="_blank" title="PDF | 243Kb (se abre en ventana nueva)">decreto de aprobación del procedimiento</a>). La lista de colaboradores ya se ha cerrado, pero si te registras en esta web te mandaremos un correo en la próxima votación para que formes partes de las mesas.</p>
+
+    <p>Cada mesa de votación presencial realiza un recuento de votos recibidos al terminar cada día de votación, y un escrutinio final el último día de votación. Ambos procesos son públicos por lo que también estás invitado a observarlos, así como la propia jornada de votación. No es necesario que te registres ni identifiques en ninguna parte para ser observador del proceso. En caso de que veas algo que no te parezca apropiado en alguna de las mesas tenemos una línea directa para que puedas informarnos: 915 886 707</p>
+
+    <h2 id="iv">Más información</h2>
+
+    <ul>
+      <li>
+        <a href="https://diario.madrid.es/decidemadrid/2017/02/14/quieres-votar-en-decidemadrid-es-te-explicamos-como/" target="_blank" title="(se abre en ventana nueva)">
+          ¿Quieres votar? Te explicamos cómo
+        </a>
+      </li>
+      <li>
+        <a href="https://statusvotaciondecidemadrid.nvotes.com/" target="_blank" title="(se abre en ventana nueva)">
+          Estado de las votaciones
+        </a>
+      </li>
+      <li>
+        <%= link_to more_info_proposals_path do %>
+          Explicación detallada del proceso de propuestas ciudadanas y preguntas frecuentes.
+        <% end %>
+      </li>
+      <li>
+        <a href="https://diario.madrid.es/decidemadrid/2017/02/09/preguntas-y-respuestas-sobre-la-seguridad-en-la-primera-votacion-ciudadana-de-madrid/" target="_blank" title="(se abre en ventana nueva)">
+          Información sobre la seguridad de la votación
+        </a>
+      </li>
+      <li>
+        <a href="https://decide.madrid.es/mas-informacion/participacion/hechos">
+          Hechos sobre participación ciudadana y democracia directa (para perderle el miedo)
+        </a>
+      </li>
+    </ul>
+
+    <h2 id="v">Resultados verificables</h2>
+    <ul>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/1005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/2005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          Gran Vía
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/6005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          Prioriza el Plan Participativo de Actuación Territorial de Barajas
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/7005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/5005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          Nombre de distrito y Parque Felipe VI en Hortaleza
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/8005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          Nombres de centros culturales en Retiro
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/4005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          ¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?
+        </a>
+      </li>
+      <li>
+        <a href="https://votsecdecide.madrid.es/election/3005/public/verify-results" target="_blank" title="(se abre en ventana nueva)">
+          ¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

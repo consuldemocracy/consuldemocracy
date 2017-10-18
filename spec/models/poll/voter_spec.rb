@@ -84,7 +84,6 @@ describe :voter do
     end
 
     context "origin" do
-
       it "should not be valid without an origin" do
         voter.origin = nil
         expect(voter).to_not be_valid
@@ -104,7 +103,30 @@ describe :voter do
         voter.origin = "web"
         expect(voter).to be_valid
       end
+    end
 
+    context "assignments" do
+      it "should not be valid without a booth_assignment_id when origin is booth" do
+        skip "rethink how to track when an officer accepts a vote"
+        voter.origin = 'booth'
+        voter.booth_assignment_id = nil
+        expect(voter).to_not be_valid
+      end
+
+      it "should not be valid without an officer_assignment_id when origin is booth" do
+        skip "rethink how to track when an officer accepts a vote"
+        voter.origin = 'booth'
+        voter.officer_assignment_id = nil
+        expect(voter).to_not be_valid
+      end
+
+      it "should be valid without assignments when origin is web" do
+        skip "rethink how to track when an officer accepts a vote"
+        voter.origin = 'web'
+        voter.booth_assignment_id = nil
+        voter.officer_assignment_id = nil
+        expect(voter).to be_valid
+      end
     end
 
   end
@@ -113,9 +135,10 @@ describe :voter do
 
     describe "#web" do
       it "returns voters with a web origin" do
+        oa = create(:poll_officer_assignment)
         voter1 = create(:poll_voter, origin: "web")
         voter2 = create(:poll_voter, origin: "web")
-        voter3 = create(:poll_voter, origin: "booth")
+        voter3 = create(:poll_voter, origin: "booth", officer_assignment: oa)
 
         web_voters = Poll::Voter.web
 
@@ -128,8 +151,9 @@ describe :voter do
 
     describe "#booth" do
       it "returns voters with a booth origin" do
-        voter1 = create(:poll_voter, origin: "booth")
-        voter2 = create(:poll_voter, origin: "booth")
+        oa = create(:poll_officer_assignment)
+        voter1 = create(:poll_voter, origin: "booth", officer_assignment: oa)
+        voter2 = create(:poll_voter, origin: "booth", officer_assignment: oa)
         voter3 = create(:poll_voter, origin: "web")
 
         booth_voters = Poll::Voter.booth
@@ -141,6 +165,20 @@ describe :voter do
       end
     end
 
+    describe "#letter" do
+      it "returns voters with a letter origin" do
+        voter1 = create(:poll_voter, origin: "letter")
+        voter2 = create(:poll_voter, origin: "letter")
+        voter3 = create(:poll_voter, origin: "web")
+
+        letter_voters = Poll::Voter.letter
+
+        expect(letter_voters.count).to eq(2)
+        expect(letter_voters).to     include(voter1)
+        expect(letter_voters).to     include(voter2)
+        expect(letter_voters).to_not include(voter3)
+      end
+    end
   end
 
   describe "save" do

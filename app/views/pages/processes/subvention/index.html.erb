@@ -1,0 +1,114 @@
+<% provide :title, "Ordenanza de subvenciones del Ayuntamiento de Madrid" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: page_url("processes_subvention_ordinance"),
+          social_title: t("pages.processes.index.process_10_title"),
+          social_description: t("pages.processes.index.process_10_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: subvention_ordinance_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Ordenanza de subvenciones del Ayuntamiento de Madrid</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>El Ayuntamiento de Madrid sometió a consulta pública la necesidad de modificar la regulación del sistema de subvenciones, simplificando la tramitación y reduciendo las cargas administrativas.</p>
+
+    <p>La actual Ordenanza reguladora de la Concesión de Subvenciones del Ayuntamiento de Madrid es restrictiva en muchos aspectos como los sistemas de justificación de las subvenciones concedidas, la prestación de garantías previas o en la concesión directa de subvenciones, lo que desanima a los posibles beneficiarios a la hora de presentar su solicitud.</p>
+
+    <p>Ante estas circunstancias, se plantea una modificación normativa que contemple la simplificación de las cargas administrativas mediante el establecimiento de módulos en el sistema de pago por resultados; eliminando en la mayoría de los casos la obligación de presentar garantías, salvo en los casos que expresamente lo prevea la convocatoria; ampliando los plazos de inicio del procedimiento cuando coincidan con el mes de agosto; y permitiendo determinados casos en los que no es necesario órgano colegiado de valoración.</p>
+
+    <p>Por otra parte, la nueva regulación permitiría incluir en al ámbito de las subvenciones la cooperación público-social, dando acceso a las mismas al "tercer sector" que forman asociaciones y entidades sin ánimo de lucro, y estableciendo una regulación específica para la concesión de subvenciones en materia de cooperación internacional para el desarrollo y la acción humanitaria.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "Memoria modificación Sistema subvencional <small>(PDF | 39Kb)</small>".html_safe,
+                    "/docs/procesos/memoria_modificacion_sistema_subvencional.pdf", target: "_blank",
+                    title: "Descargar Memoria modificación Sistema subvencional PDF - 39Kb" %>
+      </li>
+      <li>
+        <%= link_to "Borrador modificación Ordenanza subvenciones <small>(PDF | 85Kb)</small>".html_safe,
+                    "/docs/procesos/borrador_modificacion_ordenanza_subvenciones.pdf", target: "_blank",
+                    title: "Descargar Borrador modificación Ordenanza subvenciones PDF - 85Kb" %>
+      </li>
+      <li>
+        <%= link_to "Directrices consulta pública <small>(PDF | 71Kb)</small>".html_safe,
+                    "/docs/procesos/directrices_consulta_publica.pdf", target: "_blank",
+                    title: "Descargar Directrices consulta pública PDF - 71Kb" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Estos fueron los debates que se propusieron sobre el tema.</p>
+
+      <div class="row" data-equalizer>
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4865-pregunta-1-sobre-la-ordenanza-de-subvenciones" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Considera necesario modificar la actual ordenanza general de subvenciones para simplificar y reducir cargas administrativas?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4866-pregunta-2-sobre-la-ordenanza-de-subvenciones" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Está de acuerdo con limitar la obligación de depositar garantías antes de recibir una subvención?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4867-pregunta-3-sobre-la-ordenanza-de-subvenciones" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Cree necesario, a la vista de la singularidad de la materia, introducir un régimen específico para las subvenciones de cooperación internacional al desarrollo y de acción humanitaria?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4868-pregunta-4-sobre-la-ordenanza-de-subvenciones" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Considera necesario simplificar el procedimiento para justificar la correcta ejecución de las subvenciones?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4869-pregunta-5-sobre-la-ordenanza-de-subvenciones" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Le parece adecuado limitar o modular la publicación convocatorias de subvenciones en los meses de verano?
+            </div>
+          <% end %>
+        </div>
+
+        <div class="small-12 medium-4 column margin-bottom">
+          <%= link_to "https://decide.madrid.es/debates/4870-pregunta-6-sobre-la-ordenanza-de-subvenciones" do %>
+            <div class="panel" data-equalizer-watch>
+              ¿Qué medidas podría adoptar el Ayuntamiento de Madrid para que sea más sencillo solicitar una subvención?
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -28,7 +28,7 @@ feature 'Residence' do
 
     background do
       create(:poll_officer_assignment, officer: officer)
-      login_as(officer.user)
+      login_through_form_as_officer(officer.user)
       visit officing_root_path
     end
 
@@ -44,6 +44,22 @@ feature 'Residence' do
       click_button 'Validate document'
 
       expect(page).to have_content 'Document verified with Census'
+    end
+
+    scenario "Document number is copied from the census API" do
+      within("#side_menu") do
+        click_link "Validate document"
+      end
+
+      select 'DNI', from: 'residence_document_type'
+      fill_in 'residence_document_number', with: "00012345678Z"
+      fill_in 'residence_year_of_birth', with: '1980'
+
+      click_button 'Validate document'
+
+      expect(page).to have_content 'Document verified with Census'
+
+      expect(User.last.document_number).to eq('12345678Z')
     end
 
     scenario "Error on verify" do
@@ -91,6 +107,33 @@ feature 'Residence' do
       expect(page).to have_content 'The Census was unable to verify this document'
     end
 
+  end
+
+  scenario "Verify booth", :js do
+    skip "Review before launching booth votes"
+    booth = create(:poll_booth)
+    poll = create(:poll)
+
+    ba = create(:poll_booth_assignment, poll: poll, booth: booth )
+    oa = create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+
+    login_as(officer.user)
+
+    # User somehow skips setting session[:booth_id]
+    # set_officing_booth(booth)
+
+    visit new_officing_residence_path
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    end
+
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+    click_button "Confirm vote"
+
+    expect(page).to have_content "Vote introduced!"
   end
 
 end

@@ -17,7 +17,7 @@ es:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
         text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
-        title: Te damos la bienvenida al Portal de Gobierno Abierto
+        title: Te damos la bienvenida al Portal de Gobierno Abierto del Ayuntamiento de Madrid
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña

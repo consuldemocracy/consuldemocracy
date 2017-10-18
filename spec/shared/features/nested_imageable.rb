@@ -9,11 +9,17 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
   let!(:imageable)           { create(imageable_factory_name) }
 
   before do
+    Setting['feature.allow_images'] = true
+
     imageable_path_arguments&.each do |argument_name, path_to_value|
-        arguments.merge!("#{argument_name}": imageable.send(path_to_value))
+      arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
 
     imageable.update(author: user) if imageable.respond_to?(:author)
+  end
+
+  after do
+    Setting['feature.allow_images'] = nil
   end
 
   describe "at #{path}" do
@@ -143,7 +149,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
 
       if has_many_images
-         skip "no need to test, there are no attributes for the parent resource"
+        skip "no need to test, there are no attributes for the parent resource"
       else
         expect(page).to have_content imageable_success_notice
       end
@@ -245,7 +251,6 @@ end
 def imageable_fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title"
   fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
 end
 

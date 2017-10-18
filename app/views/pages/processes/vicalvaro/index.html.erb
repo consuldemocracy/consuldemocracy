@@ -1,0 +1,96 @@
+<% provide :title, "Nuevos barrios en el Distrito de Vicálvaro" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: vicalvaro_url,
+          social_title: t("pages.processes.index.process_18_title"),
+          social_description: t("pages.processes.index.process_18_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: vicalvaro_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Nuevos barrios en el Distrito de Vicálvaro.</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear nuevos barrios en el Distrito de Vicálvaro.</p>
+
+    <p>El Distrito de Vicálvaro actualmente solo contiene los barrios de Ambroz y el Casco Histórico, disponiendo de una serie de núcleos urbanos con entidad suficiente como para constituir barrios como son Valderrivas, Valdebernardo y El Cañaveral.</p>
+
+    <p>Por estos motivos, la Junta Municipal del Distrito de Vicálvaro, con fecha 19 de noviembre de 2015, aprobó la propuesta de revisión y modificación de la división administrativa del Distrito. Los informes emitidos en materia de urbanismo y estadística han permitido concretar la propuesta que quedaría configurada de la siguiente forma:</p>
+
+    <ul>
+      <li>Casco Histórico de Vicálvaro, que comprendería el actual barrio de Ambroz.</li>
+      <li>Valdebernardo.</li>
+      <li>Valderrivas.</li>
+      <li>El Cañaveral, que incluiría el ámbito de Los Cerros.</li>
+    </ul>
+
+    <p>Para culminar el proceso de creación de los nuevos barrios, es necesario que el Pleno del Ayuntamiento de Madrid acuerde la modificación del Anexo del Reglamento Orgánico de los Distritos.</p>
+
+    <p>Es por ello que el Ayuntamiento decide someter a consulta pública la nueva división en barrios del Distrito de Vicálvaro con objeto de conocer la opinión de la ciudadanía que pudiera verse afectada.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/consulta_previa_reglamento_organico_distritos_firmado.pdf", target: "_blank",
+                    title: "(se abre en ventana nueva)" do %>
+                    <strong>Consulta pública Distritos de la Ciudad de Madrid</strong><br>
+                    <small>(PDF | 135Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/5140-pregunta-1-sobre-nuevos-barrios-en-el-distrito-de-vicalvaro" do %>
+                <strong>
+                ¿Consideras conveniente la configuración del Distrito de Vicálvaro con los barrios de Casco Histórico de Vicálvaro, Valdebernardo, Valderrivas y El Cañaveral?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to "https://decide.madrid.es/debates/5141-pregunta-2-sobre-nuevos-barrios-en-el-distrito-de-vicalvaro" do %>
+                <strong>
+                ¿Crees necesaria la participación de los propios Distritos en el proceso de decisión sobre la creación o modificación de sus barrios?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

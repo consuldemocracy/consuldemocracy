@@ -1,2 +1,8 @@
 <% token = poll_voter_token(@question.poll, current_user) %>
 $("#<%= dom_id(@question) %>_answers").html('<%= j render("polls/questions/answers", question: @question, token: token) %>');
+App.Tracks.render_analytics('<%= j render("/layouts/analytics") %>')
+
+// Google Tag Manager event trigger
+if (typeof dataLayer !== 'undefined') {
+  dataLayer.push({ 'event': 'voto_ok' });
+}

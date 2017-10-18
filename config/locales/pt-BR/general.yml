@@ -40,7 +40,7 @@ pt-BR:
           recipient: Email
         residence:
           date_of_birth: Data de nascimento
-          document_number: Número do documento (incluindo letras)
+          document_number: Número do documento
           document_type: Tipo de documento
           postal_code: Código postal
         sms:
@@ -869,10 +869,6 @@ pt-BR:
         other: Você tem %{count} novas notificações
       no_notifications: Vocie nnao possui novas notificações
       open: aberto
-      open_city_slogan_html: Existem cidades que são governadas diretamente por seus
-        habitantes, que <b>discutem</b> os tópicos que lhes preocupam, <b>propõe</b>
-        ideias para melhorar suas vidas e <b>decidem</b> entre eles mesmos quais serão
-        implementadas. Madrid já é uma dessas cidades.
       open_city_title: Ame a cidade e ela se transformará na cidade que você ama.
       open_data: Dados abertos
       open_gov: Governo aberto

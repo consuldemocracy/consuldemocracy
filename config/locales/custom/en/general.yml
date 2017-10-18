@@ -1,0 +1,91 @@
+en:
+  debates:
+    index:
+      top: Featured
+      top_link_debates: '#TúPreguntas'
+      title: "Debates ciudadanos de Madrid - Decide Madrid"
+      description: "En el espacio de debates ciudadanos de Decide Madrid podrás compartir con otros habitantes de Madrid los temas de la ciudad que más te preocupan."
+      section_header:
+        title: Citizen Debates
+        help: Help about citizen debates
+      section_footer:
+        title: Help about citizen debates
+        description: Start a debate to share opinions with others about the topics you are concerned about of the city of Madrid.
+        help_text_1: "The space for citizen debates is aimed at anyone who can expose issues of their concern and those who want to share opinions with other people, preferably related to the city of Madrid."
+  proposals:
+    index:
+      section_header:
+        title: Citizen proposals
+        help: Help about citizen proposals
+      section_footer:
+        title: Help about citizen proposals
+        description: Make a citizen proposal. If it gets enough supports it will go to voting phase, so you can get all the citizens of Madrid to decide how they want their city to be.
+        help_text_1: "The citizen proposals are an opportunity for neighbours and collectives of Madrid to decide directly how they want to shape their city. Any person can make a proposal about a topic or concern of their interest, for the City Council to make it, after it gets enough supports to be put to a citizens vote."
+        help_text_1b: "Before to create a proposal, read this %{blog}."
+        help_text_1b_blog: "10 keys to propose better your idea and advices to broadcast it"
+        help_text_2: "To create a proposal, you must sign up on %{org}. The proposals that get the support of 1% of the users (persons over 16 years of age registered in Madrid; 27,064 people) in the web, goes to voting phase. To support proposals it is necessary to have a verified account."
+        help_text_3: "The City Council of Madrid celebrates a citizen vote when the proposals get the necessary supports. Once celebrated, if there are more people in favor than against, the City Council assumes the proposal and carries it out."
+        help_text_4: 'In February 2017 occurred the first citizen vote in which were approved the proposals "Madrid 100% sostenible" and "Billete único para el transporte público".'
+  polls:
+    index:
+      title: Vote eleven squares on Decide Madrid
+      description: You decide about remodeling of eleven squares of Madrid. From Barajas to Villaverde, vote how you want changes these places.
+      section_header:
+        title: Citizen Voting
+        help: Help about citizen voting
+      section_footer:
+        title: Help about citizen voting
+        description: "Decide now what the City Council will do with these 11 squares."
+        help_text_1: "The City Council has selected 11 squares of the city for its remodeling and has celebrated a participatory process to make that decision that culminates now. The process has had dialogues with neighbors, open debates in Decide Madrid and a contest of ideas that ends now in this direct citizen vote."
+        help_text_2: "You can decide on each square to remodel or not, and in case it is remodeled which of the two finalist projects will be carried out. Both decisions will be taken directly by the citizen by a majority of supports in each decision between the two possibilities."
+        help_text_3: "All persons registered in Madrid over 16 years old can participate."
+        help_text_4: "Sign up to vote on citizen proposals and questions the City Council of Madrid ask to the neighbors. Make municipal decisions directly."
+        help_text_5: "In addition to the issues that the City of Madrid submits to a direct decision of the citizens, also voting takes place when a citizen proposal supports reaches 1% of the census with voting rights. Voting can also include questions that the City Council of Madrid ask to the citizens decision."
+        help_text_6: "More information about voting"
+      orders:
+        random: Random
+    show:
+      videos: "Video"
+  forums:
+    index:
+      deactivate_link: "Deactivate"
+      delegating: "You are delegating your votes on <strong>%{representative}</strong>"
+      not_delegating: "You are not delegating your votes"
+      title: Delegate your votes
+      title_closed: Vote delegations
+    show:
+      delegate_button: "Delegate on %{forum}"
+      sign_in_to_delegate: "Sign in to delegate"
+      verify_accont_to_delegate: "Verify your account to delegate"
+      no_votes: This Forum has not supported any investment projects
+      no_city_votes: This Forum has not supported any city investment projects
+      no_district_votes: This Forum has not supported any district investment projects
+      confirm: You have already voted some investment projects. If you delegate your votes in %{forum}, your votes will be erased and you will vote whatever this forum votes.
+  layouts:
+    footer:
+      copyright: Ayuntamiento de Madrid, %{year}
+      description: This portal uses the %{consul} which is %{open_source}. From Madrid out into the world.
+    header:
+      logo: "Decide Madrid: portal of citizen participation of the City of Madrid."
+  social:
+    blog_link: "Blog"
+    facebook_link: "Facebook"
+    twitter_link: "Twitter"
+    youtube_link: "YouTube"
+    telegram_link: "Telegram"
+    instagram_link: "Instagram"
+  welcome:
+    title: "Decide Madrid: portal of citizen participation of the City of Madrid"
+    featured:
+      features: "Participate on %{org_name}"
+      label: "Participate"
+      proposals:
+        title: Create citizen proposals
+        text: "Do you have an idea for Madrid? Propose it. If 1% of the people of Madrid support it, we will vote to make it out."
+        link: See citizen proposals
+        alt_image: "Generic image related with proposals of the City of Madrid."
+      budgets:
+        title: "Decides which projects are earmarked for the participatory budget"
+        text: "You propose and decide on what the City Council invests in a part of the municipal budget."
+        link: See investment projects
+        alt_image: "Generic image related with budgets of the City of Madrid."

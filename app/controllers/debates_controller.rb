@@ -19,6 +19,7 @@ class DebatesController < ApplicationController
 
   def index_customization
     @featured_debates = @debates.featured
+    discard_probe_debates
   end
 
   def show
@@ -29,6 +30,7 @@ class DebatesController < ApplicationController
   def vote
     @debate.register_vote(current_user, params[:value])
     set_debate_votes(@debate)
+    log_event("debate", "vote", I18n.t("tracking.events.name.#{params[:value]}"))
   end
 
   def unmark_featured
@@ -41,10 +43,14 @@ class DebatesController < ApplicationController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
+  def discard_probe_debates
+    @resources = @resources.not_probe
+  end
+
   private
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
+      params.require(:debate).permit(:title, :description, :tag_list, :comment_kind, :terms_of_service)
     end
 
     def resource_model

@@ -114,9 +114,11 @@ describe :poll do
     let!(:current_poll) { create(:poll) }
     let!(:expired_poll) { create(:poll, :expired) }
     let!(:incoming_poll) { create(:poll, :incoming) }
+
     let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
     let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
     let!(:incoming_restricted_poll) { create(:poll, :incoming, geozone_restricted: true, geozones: [geozone]) }
+
     let!(:all_polls) { [current_poll, expired_poll, incoming_poll, current_poll, expired_restricted_poll, incoming_restricted_poll] }
     let(:non_current_polls) { [expired_poll, incoming_poll, expired_restricted_poll, incoming_restricted_poll] }
 
@@ -168,6 +170,88 @@ describe :poll do
                    .order(:geozone_restricted)
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end
+    end
+  end
+
+  describe "votable_by" do
+    it "returns polls that have not been voted by a user" do
+      user = create(:user, :level_two)
+
+      poll1 = create(:poll)
+      poll2 = create(:poll)
+      poll3 = create(:poll)
+
+      voter = create(:poll_voter, user: user, poll: poll1)
+
+      expect(Poll.votable_by(user)).to include(poll2)
+      expect(Poll.votable_by(user)).to include(poll3)
+      expect(Poll.votable_by(user)).to_not include(poll1)
+    end
+
+    it "returns polls that are answerable by a user" do
+      user = create(:user, :level_two, geozone: nil)
+      poll1 = create(:poll)
+      poll2 = create(:poll)
+
+      allow(Poll).to receive(:answerable_by).and_return(Poll.where(id: poll1))
+
+      expect(Poll.votable_by(user)).to include(poll1)
+      expect(Poll.votable_by(user)).to_not include(poll2)
+    end
+
+    it "returns polls even if there are no voters yet" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      expect(Poll.votable_by(user)).to include(poll)
+    end
+
+  end
+
+  describe "#votable_by" do
+    it "returns false if the user has already voted the poll" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      voter = create(:poll_voter, user: user, poll: poll)
+
+      expect(poll.votable_by?(user)).to eq(false)
+    end
+
+    it "returns false if the poll is not answerable by the user" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(false)
+
+      expect(poll.votable_by?(user)).to eq(false)
+    end
+
+    it "return true if a poll is answerable and has not been voted by the user" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      allow_any_instance_of(Poll).to receive(:answerable_by?).and_return(true)
+
+      expect(poll.votable_by?(user)).to eq(true)
+    end
+  end
+
+  describe "#voted_by?" do
+    it "return false if the user has not voted for this poll" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      expect(poll.voted_by?(user)).to eq(false)
+    end
+
+    it "returns true if the user has voted for this poll" do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      voter = create(:poll_voter, user: user, poll: poll)
+
+      expect(poll.voted_by?(user)).to eq(true)
     end
   end
 
