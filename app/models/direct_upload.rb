@@ -7,7 +7,7 @@ class DirectUpload
                 :relation, :resource_relation,
                 :attachment, :cached_attachment, :user
 
-  validates_presence_of :attachment, :resource_type, :resource_relation, :user
+  validates :attachment, :resource_type, :resource_relation, :user, presence: true
   validate :parent_resource_attachment_validations,
            if: -> { attachment.present? && resource_type.present? && resource_relation.present? && user.present? }
 
@@ -19,15 +19,15 @@ class DirectUpload
     if @resource_type.present? && @resource_relation.present? && (@attachment.present? || @cached_attachment.present?)
       @resource = @resource_type.constantize.find_or_initialize_by(id: @resource_id)
 
-      #Refactor
-      if @resource.respond_to?(:images) &&
-        ((@attachment.present? && !@attachment.content_type.match(/pdf/)) || @cached_attachment.present?)
-        @relation = @resource.images.send("build", relation_attributtes)
-      elsif @resource.class.reflections[@resource_relation].macro == :has_one
-        @relation = @resource.send("build_#{resource_relation}", relation_attributtes)
-      else
-        @relation = @resource.send(@resource_relation).build(relation_attributtes)
-      end
+      # Refactor
+      @relation = if @resource.respond_to?(:images) &&
+                     ((@attachment.present? && !@attachment.content_type.match(/pdf/)) || @cached_attachment.present?)
+        @resource.images.send("build", relation_attributtes)
+                  elsif @resource.class.reflections[@resource_relation].macro == :has_one
+        @resource.send("build_#{resource_relation}", relation_attributtes)
+                  else
+        @resource.send(@resource_relation).build(relation_attributtes)
+                  end
 
       @relation.user = user
     end
@@ -50,7 +50,7 @@ class DirectUpload
   def parent_resource_attachment_validations
     @relation.valid?
 
-    if @relation.errors.has_key? :attachment
+    if @relation.errors.key? :attachment
       errors[:attachment] = @relation.errors[:attachment]
     end
   end

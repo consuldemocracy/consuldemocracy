@@ -21,7 +21,7 @@ feature 'Commenting polls' do
   end
 
   scenario 'Show' do
-  	skip "Feature not implemented yet, review soon"
+    skip "Feature not implemented yet, review soon"
 
     parent_comment = create(:comment, commentable: poll)
     first_child    = create(:comment, commentable: poll, parent: parent_comment)
@@ -243,7 +243,7 @@ feature 'Commenting polls' do
   end
 
   scenario "Flagging as inappropriate", :js do
-  	skip "Feature not implemented yet, review soon"
+    skip "Feature not implemented yet, review soon"
 
     comment = create(:comment, commentable: poll)
 
@@ -261,7 +261,7 @@ feature 'Commenting polls' do
   end
 
   scenario "Undoing flagging as inappropriate", :js do
-  	skip "Feature not implemented yet, review soon"
+    skip "Feature not implemented yet, review soon"
 
     comment = create(:comment, commentable: poll)
     Flag.flag(user, comment)
@@ -280,7 +280,7 @@ feature 'Commenting polls' do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-  	skip "Feature not implemented yet, review soon"
+    skip "Feature not implemented yet, review soon"
 
     poll = create(:poll, title: "Should we change the world?")
     comment = create(:comment, commentable: poll)
@@ -310,7 +310,7 @@ feature 'Commenting polls' do
   feature "Moderators" do
 
     scenario "can create comment as a moderator", :js do
-    	skip "Feature not implemented yet, review soon"
+      skip "Feature not implemented yet, review soon"
 
       moderator = create(:moderator)
 
@@ -330,7 +330,7 @@ feature 'Commenting polls' do
     end
 
     scenario "can create reply as a moderator", :js do
-    	skip "Feature not implemented yet, review soon"
+      skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
@@ -359,7 +359,7 @@ feature 'Commenting polls' do
     end
 
     scenario "can not comment as an administrator" do
-    	skip "Feature not implemented yet, review soon"
+      skip "Feature not implemented yet, review soon"
 
       moderator = create(:moderator)
 
@@ -372,7 +372,7 @@ feature 'Commenting polls' do
 
   feature "Administrators" do
     scenario "can create comment as an administrator", :js do
-    	skip "Feature not implemented yet, review soon"
+      skip "Feature not implemented yet, review soon"
 
       admin = create(:administrator)
 
@@ -392,7 +392,7 @@ feature 'Commenting polls' do
     end
 
     scenario "can create reply as an administrator", :js do
-    	skip "Feature not implemented yet, review soon"
+      skip "Feature not implemented yet, review soon"
 
       citizen = create(:user, username: "Ana")
       manuela = create(:user, username: "Manuela")
@@ -421,7 +421,7 @@ feature 'Commenting polls' do
     end
 
     scenario "can not comment as a moderator" do
-    	skip "Feature not implemented yet, review soon"
+      skip "Feature not implemented yet, review soon"
 
       admin = create(:administrator)
 

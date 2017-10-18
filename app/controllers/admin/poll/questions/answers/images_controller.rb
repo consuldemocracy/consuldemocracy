@@ -5,7 +5,7 @@ class Admin::Poll::Questions::Answers::ImagesController < Admin::Poll::BaseContr
   end
 
   def new
-  	@answer = ::Poll::Question::Answer.find(params[:answer_id])
+    @answer = ::Poll::Question::Answer.find(params[:answer_id])
   end
 
   def create

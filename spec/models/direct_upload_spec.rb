@@ -42,7 +42,7 @@ describe DirectUpload do
 
       proposal_document_direct_upload.save_attachment
 
-      expect(File.exists?(proposal_document_direct_upload.relation.attachment.path)).to eq(true)
+      expect(File.exist?(proposal_document_direct_upload.relation.attachment.path)).to eq(true)
       expect(proposal_document_direct_upload.relation.attachment.path).to include('cached_attachments')
     end
 
@@ -57,7 +57,7 @@ describe DirectUpload do
       uploaded_path = proposal_document_direct_upload.relation.attachment.path
       proposal_document_direct_upload.destroy_attachment
 
-      expect(File.exists?(uploaded_path)).to eq(false)
+      expect(File.exist?(uploaded_path)).to eq(false)
     end
 
   end
