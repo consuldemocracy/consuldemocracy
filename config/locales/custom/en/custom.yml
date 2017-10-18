@@ -186,12 +186,12 @@ en:
       text: "Check out the winning projects that will take place from 2018."
       link: "View results for participatory budgets"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-    first_voting:
-      label: "Voting February"
-      title: "First citizen voting"
-      text: "The Madrid citizenship approved Madrid 100% sustainable and single ticket, also decided on Gran Vía and Plaza España."
-      link: "View results of first citizen voting"
-      alt: "Image of two volunteers at one of the polling stations of the first citizen voting in February 2017"
+    once_plazas:
+      label: "Eleven squares"
+      title: "Voting points"
+      text: "On Saturday 21 and Sunday 22 October, from 10am to 7pm, the citizens of Madrid can vote in ballot boxes if they want to remodel or not 11 squares of Madrid."
+      link: "See voting points"
+      alt: "Image of map of voting points to eleven squares"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
