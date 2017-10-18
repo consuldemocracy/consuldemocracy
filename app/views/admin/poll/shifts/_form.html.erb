@@ -24,12 +24,12 @@
     <div class="small-12 medium-3 column">
       <label><%= t("admin.poll_shifts.new.date") %></label>
       <%= select 'shift[date]', 'vote_collection_date',
-                  options_for_select(shift_vote_collection_dates(@booth.polls.current_or_incoming)),
+                  options_for_select(shift_vote_collection_dates(@booth, @booth.polls.current_or_incoming)),
                   { prompt: t("admin.poll_shifts.new.select_date"),
                   label: false },
                   class: 'js-shift-vote-collection-dates' %>
       <%= select 'shift[date]', 'recount_scrutiny_date',
-                  options_for_select(shift_recount_scrutiny_dates(@booth.polls.current_or_recounting_or_incoming)),
+                  options_for_select(shift_recount_scrutiny_dates(@booth, @booth.polls.current_or_recounting_or_incoming)),
                   { prompt: t("admin.poll_shifts.new.select_date"),
                   label: false },
                   class: 'js-shift-recount-scrutiny-dates',
