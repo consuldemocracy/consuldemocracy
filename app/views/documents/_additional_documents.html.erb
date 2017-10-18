@@ -8,8 +8,8 @@
           </p>
           <% documents.each do |document| %>
             <p><span class="icon-document"></span>&nbsp;
-            <%= link_to "#{document.title} <small>(#{documentable_humanized_content_type(document)} | \
-                        #{documentable_humanized_file_size(document)}</small>)".html_safe,
+            <%= link_to "#{document.title} <small>(#{document.humanized_content_type} | \
+                        #{number_to_human_size(document.attachment_file_size)}</small>)".html_safe,
                         document.attachment.url,
                         target: "_blank",
                         title: t("shared.target_blank_html") %>
