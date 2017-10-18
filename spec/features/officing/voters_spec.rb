@@ -12,13 +12,12 @@ feature 'Voters' do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    set_officing_booth(booth)
   end
 
   scenario "Can vote", :js do
-    # officer_assignment = create(:poll_officer_assignment, officer: officer)
-    # poll = officer_assignment.booth_assignment.poll
+    officer_assignment = create(:poll_officer_assignment, officer: officer)
 
-    # set_officing_booth(officer_assignment.booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -40,7 +39,7 @@ feature 'Voters' do
   scenario "Already voted", :js do
     poll2 = create(:poll, :current)
     booth_assignment = create(:poll_booth_assignment, poll: poll2, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll, user: user)
@@ -108,6 +107,7 @@ feature 'Voters' do
     booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_out, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
+    set_officing_booth(second_booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -130,7 +130,6 @@ feature 'Voters' do
      voter = create(:poll_voter, poll: poll1, user: user)
 
      use_physical_booth
-     set_officing_booth
      validate_officer
      visit new_officing_voter_path(id: voter.user.id)
 
@@ -161,8 +160,6 @@ feature 'Voters' do
      ba2 = create(:poll_booth_assignment, poll: poll2, booth: booth )
      oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
      oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
-
-     set_officing_booth(booth)
 
      validate_officer
      visit new_officing_residence_path
