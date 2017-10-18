@@ -29,7 +29,6 @@ en:
         create: "Results saved"
         error_create: "Results NOT saved. Error in data."
         error_wrong_booth: "Wrong booth. Results NOT saved."
-        error_wrong_date: "Wrong date. Results NOT saved."
       new:
         title: "%{poll} - Add results"
         not_allowed: "You are allowed to add results for this poll"

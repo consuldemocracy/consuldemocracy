@@ -29,7 +29,6 @@ es:
         create: "Datos guardados"
         error_create: "Resultados NO añadidos. Error en los datos"
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
-        error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
         not_allowed: "No tienes permiso para introducir resultados"

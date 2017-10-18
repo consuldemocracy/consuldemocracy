@@ -674,8 +674,8 @@ feature 'Stats' do
 
       poll = create(:poll)
 
-      question1 = create(:poll_question, poll: poll)
-      question2 = create(:poll_question, poll: poll)
+      question1 = create(:poll_question, :with_answers, poll: poll)
+      question2 = create(:poll_question, :with_answers, poll: poll)
 
       create(:poll_answer, question: question1, author: user1)
       create(:poll_answer, question: question2, author: user1)
