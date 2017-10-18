@@ -2,6 +2,8 @@
 
 <%= render 'legislation/processes/header', process: @process, header: :full %>
 
+<%= render 'documents/additional_documents', documents: @process.documents %>
+
 <%= render 'key_dates', process: @process, phase: :debate %>
 
 <div class="row">

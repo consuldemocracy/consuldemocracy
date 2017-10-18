@@ -1,6 +1,10 @@
 class Legislation::Process < ActiveRecord::Base
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
+  include Documentable
+  documentable max_documents_allowed: 3,
+               max_file_size: 3.megabytes,
+               accepted_content_types: [ "application/pdf" ]
 
   PHASES_AND_PUBLICATIONS = %i(debate_phase allegations_phase draft_publication result_publication).freeze
 

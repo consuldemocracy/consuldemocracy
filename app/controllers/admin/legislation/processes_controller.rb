@@ -52,7 +52,8 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :allegations_phase_enabled,
         :draft_publication_enabled,
         :result_publication_enabled,
-        :published
+        :published,
+        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
       )
     end
 end

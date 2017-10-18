@@ -38,4 +38,11 @@ module DocumentablesHelper
     documentable.documents.count >= documentable.class.max_documents_allowed
   end
 
+  def documentable_humanized_content_type(documentable_class)
+    documentable_class.attachment_content_type.split("/").last.upcase
+  end
+
+  def documentable_humanized_file_size(documentable_class)
+    number_to_human_size(documentable_class.attachment_file_size)
+  end
 end
