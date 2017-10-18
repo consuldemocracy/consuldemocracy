@@ -31,28 +31,11 @@
     
   <div class="tabs-content" data-tabs-content="polls-tabs" role="tablist">
     <%= render "results_subnavigation" %>
-        <% if current_user && @poll.voted_in_web?(current_user) %>
-        <div class="small-12 medium-6 column end answer <%= cycle('first', '') %>" id="answer_<%= answer.id %>">
 
     <div id="tab-stats" class="tabs-panel">
-      <%= render "polls/stats/show" %>    
-                              target: "_blank",
-                              rel: "nofollow" %><br>
-              <% end %>
-            </div>
-          <% end %>
-
-          <% if answer.videos.present? %>
-            <div class="video-link">
-              <p>
-                <span class="icon-video"></span>&nbsp;
-                <strong><%= t("polls.show.videos") %></strong>
-              </p>
-
-              <% answer.videos.each do |video| %>
-                  <%= link_to video.title,
-                              video.url,
+      <%= render "polls/stats/show" %> 
     </div>
+          
     <div id="tab-information" class="tabs-panel is-active">
       <%= render "show" %>    
     </div>    
