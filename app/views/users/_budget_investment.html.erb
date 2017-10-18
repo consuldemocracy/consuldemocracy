@@ -2,10 +2,10 @@
   <td>
     <%= link_to budget_investment.title, budget_investment_path(budget_investment.budget, budget_investment) %>
   </td>
-  <td class="text-right">
+  <td>
     <% if can? :destroy, budget_investment %>
       <%= link_to t('shared.delete'), budget_investment_path(budget_investment.budget, budget_investment),
-                  method: :delete, class: "button hollow alert" %>
+                  method: :delete, class: "button hollow alert expanded" %>
     <% end %>
   </td>
 </tr>
