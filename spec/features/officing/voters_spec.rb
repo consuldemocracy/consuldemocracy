@@ -12,13 +12,12 @@ feature "Voters" do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    set_officing_booth(booth)
   end
 
   scenario "Can vote", :js do
     create(:poll_officer_assignment, officer: officer)
 
-    officer_assignment = create(:poll_officer_assignment, officer: officer)
-    set_officing_booth(officer_assignment.booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -40,11 +39,10 @@ feature "Voters" do
   scenario "Already voted", :js do
     poll2 = create(:poll, :current)
     booth_assignment = create(:poll_booth_assignment, poll: poll2, booth: booth)
-    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll, user: user)
-    set_officing_booth(officer_assignment.booth)
 
     visit new_officing_voter_path(id: voter.user.id)
 
