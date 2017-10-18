@@ -136,7 +136,7 @@
     <% if feature?(:legislation) %>
       <li class="section-title <%= "active" if controller.class.parent == Admin::Legislation %>">
         <%= link_to admin_legislation_processes_path do %>
-          <span class="icon-edit"></span>
+          <span class="icon-file-text"></span>
           <strong><%= t("admin.menu.legislation") %></strong>
         <% end %>
       </li>
@@ -156,7 +156,7 @@
 
     <li class="section-title">
       <a href="#">
-        <span class="icon-settings"></span>
+        <span class="icon-edit"></span>
         <strong><%= t("admin.menu.title_site_customization") %></strong>
       </a>
       <ul <%= "class=is-active" if menu_customization? &&
@@ -178,6 +178,7 @@
 
     <li class="section-title <%= "active" if controller_name == "geozones" %>">
       <%= link_to admin_geozones_path do %>
+        <span class="icon-map-marker"></span>
         <strong><%= t('admin.menu.geozones') %></strong>
       <% end %>
     </li>
@@ -185,6 +186,7 @@
     <% if feature?(:signature_sheets) %>
       <li class="section-title <%= "active" if controller_name == "signature_sheets" %>">
         <%= link_to admin_signature_sheets_path do %>
+          <span class="icon-file-text-o"></span>
           <strong><%= t("admin.menu.signature_sheets") %></strong>
         <% end %>
       </li>

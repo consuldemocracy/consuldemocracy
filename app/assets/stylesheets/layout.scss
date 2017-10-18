@@ -372,6 +372,10 @@ a {
   display: table-cell;
 }
 
+.off-canvas-content {
+  box-shadow: none;
+}
+
 // 02. Header
 // ----------
 
@@ -1135,8 +1139,13 @@ form {
     color: #ecf00b;
     font-size: rem-calc(10);
     position: absolute;
-    right: 8px;
+    left: 12px;
     top: 6px;
+
+    @include breakpoint(medium) {
+      left: auto;
+      right: 8px;
+    }
   }
 }
 

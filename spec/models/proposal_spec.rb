@@ -903,10 +903,10 @@ describe Proposal do
     end
 
     it "Should return proposals ordered by cached_votes_up" do
-      proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport" )
-      proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport" )
-      proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport" )
-      proposal4 = create(:proposal, tag_list: "Sport" )
+      proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport")
+      proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport")
+      proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport")
+      proposal4 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal4, user: user)
 
       result = Proposal.recommendations(user).sort_by_recommendations
