@@ -47,6 +47,10 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     redirect_to admin_poll_path(@poll), notice: notice
   end
 
+  def booth_assignments
+    @polls = Poll.current_or_incoming
+  end
+
   private
 
     def load_geozones

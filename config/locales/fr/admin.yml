@@ -214,6 +214,7 @@ fr:
       valuators: Évaluateurs
       poll_officers: Présidents
       polls: Votes
+      poll_booth_assignments: Affectation des bureaux de votes
       poll_booths: Bureaux de vote
       officials: Officiels
       organizations: Organisations

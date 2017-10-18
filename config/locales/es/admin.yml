@@ -419,6 +419,7 @@ es:
       valuators: Evaluadores
       poll_officers: Presidentes de mesa
       polls: Votaciones
+      poll_booth_assignments: Asignación de urnas
       poll_booths: Ubicación de urnas
       poll_shifts: Asignar turnos
       officials: Cargos públicos

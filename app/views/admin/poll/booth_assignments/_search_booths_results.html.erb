@@ -29,6 +29,7 @@
             <%= link_to t("admin.poll_booth_assignments.index.add_booth"),
                           admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
                           method: :post,
+                          remote: true,
                           class: "button hollow" %>
           <% end %>
         </td>

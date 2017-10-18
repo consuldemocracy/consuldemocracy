@@ -408,6 +408,7 @@ en:
       valuators: Valuators
       poll_officers: Poll officers
       polls: Polls
+      poll_booth_assignments: Booths Assignments
       poll_booths: Booths location
       poll_shifts: Manage shifts
       officials: Officials
