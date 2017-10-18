@@ -30,9 +30,9 @@ feature 'Officer Assignments' do
       expect(page).to have_content officer2.name
       expect(page).to_not have_content officer3.name
     end
-	end
+  end
 
-	scenario "Search", :js do
+  scenario "Search", :js do
     poll = create(:poll)
     booth = create(:poll_booth)
 
@@ -62,7 +62,6 @@ feature 'Officer Assignments' do
       expect(page).to have_content officer2.name
       expect(page).to_not have_content officer3.name
     end
-	end
-
+  end
 
 end

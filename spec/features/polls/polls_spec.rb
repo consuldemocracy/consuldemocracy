@@ -367,4 +367,17 @@ feature 'Polls' do
     end
 
   end
+  
+  context "Results and stats" do
+    scenario "See polls statistics", :js do
+      user = create(:user)
+      poll = create(:poll, summary: "Summary", description: "Description")
+      login_as user
+      visit poll_path(poll)
+      
+      click_link "Participation statistics"
+      
+      expect(page).to have_content("Total participation")      
+    end
+  end
 end

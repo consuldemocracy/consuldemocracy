@@ -12,24 +12,14 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <label><%= t("officing.results.new.date") %></label>
-        <%= select_tag :date,
-                        poll_dates_select_options(@poll),
-                        { prompt: t("officing.results.new.select_date"),
-                          label: false } %>
-      </div>
-    </div>
-
     <% @poll.questions.each do |question| %>
       <div class="row">
         <div class="small-12 column">
           <h3><%= question.title %></h3>
         </div>
-        <% question.valid_answers.each_with_index do |answer, i| %>
+        <% question.question_answers.each_with_index do |answer, i| %>
           <div class="small-12 medium-6 large-3 column end">
-            <label><%= answer %></label>
+            <label><%= answer.title %></label>
             <%= text_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), placeholder: "0" %>
           </div>
         <% end %>
@@ -101,4 +91,3 @@
   </table>
 
 <% end %>
-

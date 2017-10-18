@@ -498,9 +498,21 @@ es:
       read_less: "Leer menos sobre %{answer}"
       participate_in_other_polls: Participar en otras votaciones
       videos: "Vídeo externo"
+      info_menu: "Información"
+      stats_menu: "Estadísticas de participación"
+      stats:
+        title: "Datos de participación"
+        total_participation: "Participación total"
+        total_votes: "Nº total de votos emitidos"
+        votes: "VOTOS"
+        web: "WEB"
+        booth: "URNAS"
+        total: "TOTAL"
+        valid: "Válidos"
+        white: "En blanco"
+        null_votes: "Nulos"
   poll_questions:
     create_question: "Crear pregunta para votación"
-    default_valid_answers: "Sí, No"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"

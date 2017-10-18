@@ -498,9 +498,21 @@ en:
       read_less: "Read less about %{answer}"
       participate_in_other_polls: Participate in other polls
       videos: "External video"
+      info_menu: "Information"
+      stats_menu: "Participation statistics"
+      stats:
+        title: "Participation data"
+        total_participation: "Total participation"
+        total_votes: "Total amount of given votes"
+        votes: "VOTES"
+        web: "WEB"
+        booth: "BOOTH"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "White votes"
+        null_votes: "Invalid"
   poll_questions:
     create_question: "Create question"
-    default_valid_answers: "Yes, No"
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"

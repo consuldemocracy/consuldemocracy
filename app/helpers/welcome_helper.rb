@@ -1,11 +1,11 @@
 module WelcomeHelper
 
   def active_class(index)
-    "is-active is-in" if index == 0
+    "is-active is-in" if index.zero?
   end
 
   def slide_display(index)
-    "display: none;" if index > 0
+    "display: none;" if index.positive?
   end
 
   def recommended_path(recommended)
@@ -46,12 +46,12 @@ module WelcomeHelper
   end
 
   def calculate_offset(debates, proposals, apply_offset)
-    if (debates.any? && proposals.any?)
-      if apply_offset
-        offset = "medium-offset-2 large-offset-2"
-      else
-        offset = "end"
-      end
+    if debates.any? && proposals.any?
+      offset = if apply_offset
+        "medium-offset-2 large-offset-2"
+               else
+        "end"
+               end
     end
   end
 

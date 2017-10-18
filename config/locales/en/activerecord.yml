@@ -156,7 +156,6 @@ en:
         description: "Description"
       poll/question:
         title: "Question"
-        valid_answers: "Posibles answers"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
