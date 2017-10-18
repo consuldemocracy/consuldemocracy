@@ -9,7 +9,8 @@ class Poll::Answer < ActiveRecord::Base
   validates :author, presence: true
   validates :answer, presence: true
 
-  validates :answer, inclusion: { in: ->(a) { a.question.question_answers.pluck(:title) }}
+  validates :answer, inclusion: { in: ->(a) { a.question.question_answers.pluck(:title) }},
+                     unless: ->(a) { a.question.blank? }
 
   scope :by_author, ->(author_id) { where(author_id: author_id) }
   scope :by_question, ->(question_id) { where(question_id: question_id) }
