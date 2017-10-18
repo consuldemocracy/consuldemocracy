@@ -1,19 +1,3 @@
-<table class="margin">
-  <thead>
-    <th><%= t("admin.results.result.table_whites") %></th>
-    <th><%= t("admin.results.result.table_nulls") %></th>
-    <th><%= t("admin.results.result.table_total") %></th>
-  </thead>
-  <tbody>
-    <tr>
-      <td id="white_results"><%= @poll.recounts.sum(:white_amount) %></td>
-      <td id="null_results"><%= @poll.recounts.sum(:null_amount) %></td>
-      <td id="total_results"><%= @poll.recounts.sum(:total_amount) %></td>
-    </tr>
-  </tbody>
-</table>
-
-
 <% by_question = @partial_results.group_by(&:question_id) %>
 <% @poll.questions.each do |question| %>
   <h3><%= question.title %></h3>
