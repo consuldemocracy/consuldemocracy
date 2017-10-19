@@ -11,30 +11,21 @@ feature 'Admin booths assignments' do
     poll = create(:poll)
     booth = create(:poll_booth)
 
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (0)'
-    end
-
-    expect(page).to have_content 'There are no booths assigned to this poll.'
+    visit manage_admin_poll_booth_assignments_path(poll)
 
     fill_in 'search-booths', with: booth.name
     click_button 'Search'
+
     expect(page).to have_content(booth.name)
 
     within('#search-booths-results') do
       click_link 'Assign booth'
     end
 
-    expect(page).to have_content 'Booth assigned'
+    expect(page).to have_content('Remove booth from poll')
 
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (1)'
-    end
-
-    expect(page).to_not have_content 'There are no booths assigned to this poll.'
-    expect(page).to have_content booth.name
+    visit manage_admin_poll_booth_assignments_path(poll)
+    expect(page).to have_content(booth.name)
   end
 
   scenario 'Remove booth from poll', :js do
@@ -42,27 +33,17 @@ feature 'Admin booths assignments' do
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (1)'
-    end
+    visit manage_admin_poll_booth_assignments_path(poll)
+    expect(page).to have_content(booth.name)
 
-    expect(page).to_not have_content 'There are no booths assigned to this poll.'
-    expect(page).to have_content booth.name
-
-    within("#poll_booth_assignment_#{assignment.id}") do
+    within("#poll_booth_#{booth.id}") do
       click_link 'Remove booth from poll'
     end
 
-    expect(page).to have_content 'Booth not assigned anymore'
+    expect(page).to have_content('Assign booth')
 
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (0)'
-    end
-
-    expect(page).to have_content 'There are no booths assigned to this poll.'
-    expect(page).to_not have_content booth.name
+    visit manage_admin_poll_booth_assignments_path(poll)
+    expect(page).to_not have_content('Remove booth from poll')
   end
 
   feature 'Show' do
