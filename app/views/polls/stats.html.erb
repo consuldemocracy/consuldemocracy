@@ -1,25 +1,28 @@
 <% provide :title do %><%= @poll.name %><% end %>
 
-<div class="polls-show">
+<div class="polls-results-stats">
   <%= render "poll_header" %>
 
   <%= render "poll_subnav" %>
 
-  <div class="row margin">
-    <div class="small-12 medium-3 column sidebar">
-      <p><%= t("polls.show.stats.title") %></p>
+  <div class="row margin" data-equalizer>
+    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.stats.title") %></strong></p>
+
       <ul class="menu vertical margin-top">
         <li><a href="#total"><%= t("polls.show.stats.total_participation") %></a></li>
       </ul>
     </div>
-    <div class="small-12 medium-9 column">
+
+    <div class="small-12 medium-9 column" data-equalizer-watch>
       <h3 id="total"><%= t("polls.show.stats.total_participation") %></h3>
 
-      <p class="stat-number margin-top">
+      <p class="margin-top uppercase">
         <%= t("polls.show.stats.total_votes") %><br>
-        <span><%= @stats[:total_participants] %></span>
+        <span class="number"><%= @stats[:total_participants] %></span>
       </p>
-      <table class="polls-total-stats">
+
+      <table>
         <thead>
           <tr>
             <th scope="col"><%= t("polls.show.stats.votes") %></th>
@@ -30,60 +33,81 @@
         </thead>
         <tbody>
           <tr>
-            <th><%= t("polls.show.stats.valid") %></th>
-            <td><%= @stats[:total_web_valid] %> <small><em>
-            (<%= number_to_percentage(@stats[:valid_percentage_web],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_booth_valid] %> <small><em>
-            (<%= number_to_percentage(@stats[:valid_percentage_booth],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_valid_votes] %> <small><em>
-            (<%= number_to_percentage(@stats[:total_valid_percentage],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
+            <th scope="row"><%= t("polls.show.stats.valid") %></th>
+            <td>
+              <%= @stats[:total_web_valid] %>
+              <small><em>(<%= number_to_percentage(@stats[:valid_percentage_web],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_booth_valid] %>
+              <small><em>(<%= number_to_percentage(@stats[:valid_percentage_booth],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_valid_votes] %>
+              <small><em>(<%= number_to_percentage(@stats[:total_valid_percentage],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
           </tr>
           <tr>
-            <th><%= t("polls.show.stats.white") %></th>
-            <td><%= @stats[:total_web_white] %> <small><em>
-            (<%= number_to_percentage(@stats[:white_percentage_web],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_booth_white] %> <small><em>
-            (<%= number_to_percentage(@stats[:white_percentage_booth],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_white_votes] %> <small><em>
-            (<%= number_to_percentage(@stats[:total_white_percentage],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
+            <th scope="row"><%= t("polls.show.stats.white") %></th>
+            <td>
+              <%= @stats[:total_web_white] %>
+              <small><em>(<%= number_to_percentage(@stats[:white_percentage_web],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_booth_white] %>
+              <small><em>(<%= number_to_percentage(@stats[:white_percentage_booth],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td><%= @stats[:total_white_votes] %>
+              <small><em>(<%= number_to_percentage(@stats[:total_white_percentage],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
           </tr>
           <tr>
-            <th><%= t("polls.show.stats.null_votes") %></th>
-            <td><%= @stats[:total_web_null] %> <small><em>
-            (<%= number_to_percentage(@stats[:null_percentage_web],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_booth_null] %> <small><em>
-            (<%= number_to_percentage(@stats[:null_percentage_booth],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_null_votes] %> <small><em>
-            (<%= number_to_percentage(@stats[:total_null_percentage],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
+            <th scope="row"><%= t("polls.show.stats.null_votes") %></th>
+            <td>
+              <%= @stats[:total_web_null] %>
+              <small><em>(<%= number_to_percentage(@stats[:null_percentage_web],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_booth_null] %>
+              <small><em>(<%= number_to_percentage(@stats[:null_percentage_booth],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_null_votes] %>
+              <small><em>(<%= number_to_percentage(@stats[:total_null_percentage],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
           </tr>
           <tr>
-            <th><%= t("polls.show.stats.total") %></th>
-            <td><%= @stats[:total_participants_web] %> <small><em>
-            (<%= number_to_percentage(@stats[:total_participants_web_percentage],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
-            <td><%= @stats[:total_participants_booth] %> <small><em>
-            (<%= number_to_percentage(@stats[:total_participants_booth_percentage],
-                                    strip_insignificant_zeros: true,
-                                    precision: 2) %>)</em></small></td>
+            <th scope="row"><%= t("polls.show.stats.total") %></th>
+            <td>
+              <%= @stats[:total_participants_web] %>
+              <small><em>(<%= number_to_percentage(@stats[:total_participants_web_percentage],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
+            <td>
+              <%= @stats[:total_participants_booth] %>
+              <small><em>(<%= number_to_percentage(@stats[:total_participants_booth_percentage],
+                                                  strip_insignificant_zeros: true,
+                                                  precision: 2) %>)</em></small>
+            </td>
             <td><%= @stats[:total_participants_web] + @stats[:total_participants_booth] %></td>
           </tr>
         </tbody>
