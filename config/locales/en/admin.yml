@@ -559,8 +559,6 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
-        table_assignment: "Assignment"
-        remove_booth: "Remove booth from poll"
         add_booth: "Assign booth"
     polls:
       index:

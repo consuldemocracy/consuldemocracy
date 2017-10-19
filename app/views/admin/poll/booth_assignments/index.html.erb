@@ -14,7 +14,6 @@
       <thead>
         <th><%= t("admin.poll_booth_assignments.index.table_name") %></th>
         <th><%= t("admin.poll_booth_assignments.index.table_location") %></th>
-        <th class="text-right"><%= t("admin.poll_booth_assignments.index.table_assignment") %></th>
       </thead>
       <tbody>
         <% @booth_assignments.each do |booth_assignment| %>
@@ -26,12 +25,6 @@
             </td>
             <td>
               <%= booth_assignment.booth.location %>
-            </td>
-            <td class="text-right">
-              <%= link_to t("admin.poll_booth_assignments.index.remove_booth"),
-                          admin_poll_booth_assignment_path(@poll, booth_assignment),
-                          method: :delete,
-                          class: "button hollow alert" %>
             </td>
           </tr>
         <% end %>
