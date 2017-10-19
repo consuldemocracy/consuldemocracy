@@ -214,6 +214,8 @@ a {
   margin-bottom: $line-height / 2;
 
   li {
+    font-size: $base-font-size;
+    margin-bottom: 0;
     margin-right: $line-height / 2;
 
     @include breakpoint(medium) {

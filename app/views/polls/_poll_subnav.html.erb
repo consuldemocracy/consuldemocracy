@@ -1,21 +1,29 @@
-<div class="row">
+<div class="row margin-top">
   <div class="small-12 column">
-    <ul class="tabs">
-      <li class="tabs-title">
-        <%= link_to t("polls.show.results_menu"),
-                    poll_results_path(@poll),
-                    class: (controller_name == "polls" && action_name == "results" ? "is-active" : "") %>
-      </li>
-      <li class="tabs-title">
-        <%= link_to t("polls.show.stats_menu"),
-                    poll_stats_path(@poll),
-                    class: (controller_name == "polls" && action_name == "stats" ? "is-active" : "") %>
-      </li>
-      <li class="tabs-title is-active">
-        <%= link_to t("polls.show.info_menu"),
-                    poll_path(@poll),
-                    class: (controller_name == "polls" && action_name == "show" ? "is-active" : "") %>
-      </li>
+    <ul class="menu simple clear">
+      <% if controller_name == "polls" && action_name == "results" %>
+        <li class="active">
+          <h2><%= t("polls.show.results_menu") %></h2>
+        </li>
+      <% else %>
+        <li><%= link_to t("polls.show.results_menu"), poll_results_path(@poll) %></li>
+      <% end %>
+
+      <% if controller_name == "polls" && action_name == "stats" %>
+        <li class="active">
+          <h2><%= t("polls.show.stats_menu") %></h2>
+        </li>
+      <% else %>
+        <li><%= link_to t("polls.show.stats_menu"), poll_stats_path(@poll) %></li>
+      <% end %>
+
+      <% if controller_name == "polls" && action_name == "show" %>
+        <li class="active">
+          <h2><%= t("polls.show.info_menu") %></h2>
+        </li>
+      <% else %>
+        <li><%= link_to t("polls.show.info_menu"), poll_path(@poll) %></li>
+      <% end %>
     </ul>
   </div>
 </div>
