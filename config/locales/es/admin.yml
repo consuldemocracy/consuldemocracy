@@ -527,6 +527,15 @@ es:
       recount_scrutiny: Recuento & Escrutinio
     booth_assignments:
       manage_assignments: Gestionar asignaciones
+      manage:
+        assignments_list: "Asignaciones para la votación '%{poll}'"
+        status:
+          assign_status: Asignación
+          assigned: Asignada
+          unassigned: No asignada
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"

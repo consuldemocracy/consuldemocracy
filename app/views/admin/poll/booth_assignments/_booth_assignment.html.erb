@@ -1,0 +1,17 @@
+<tr id="booth_<%= booth.id %>" class="booth">
+  <td>
+    <%= link_to booth.name, admin_booth_path(booth) %>
+  </td>
+  <td>
+    <%= t("admin.booth_assignments.status.assigned") %>
+    <%= t("admin.booth_assignments.status.unassigned") %>
+  </td>
+  <td class="text-right">
+      <%= link_to t("admin.booth_assignments.manage.assign"),
+                  new_admin_booth_shift_path(booth),
+                  class: "button" %>
+      <%= link_to t("admin.booth_assignments.manage.unassign"),
+                  new_admin_booth_shift_path(booth),
+                  class: "button hollow" %>
+  </td>
+</tr>

@@ -47,6 +47,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
 
   def manage
     @booths = ::Poll::Booth.all
+    @poll = Poll.find(params[:poll_id])
   end
 
   private

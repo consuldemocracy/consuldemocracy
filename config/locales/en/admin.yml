@@ -527,6 +527,15 @@ en:
       recount_scrutiny: Recount & Scrutiny
     booth_assignments:
       manage_assignments: Manage assignments
+      manage:
+        assignments_list: "Assignments for poll '%{poll}'"
+        status:
+          assign_status: Assignment
+          assigned: Assigned
+          unassigned: Unassigned
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"

@@ -1,25 +1,25 @@
-<h2 class="inline-block"><%= t("admin.booths.index.title") %></h2>
-
-<% if controller_name == "booths" && action_name != "available" %>
-  <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button success float-right" %>
+<%= link_to booth_assignments_admin_polls_path do %>
+  <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
+<hr>
+
+<h2 class="inline-block"><%= t("admin.booth_assignments.manage.assignments_list", poll: @poll.name) %></h2>
 
 <% if @booths.empty? %>
   <div class="callout primary">
     <%= t("admin.booths.index.no_booths") %>
   </div>
-<% end %>
-
-<% if @booths.any? %>
+<% else %>
   <table>
     <thead>
       <th><%= t("admin.booths.index.name") %></th>
+      <th><%= t("admin.booth_assignments.status.assign_status") %></th>
       <th class="text-right"><%= t("admin.actions.actions") %></th>
     </thead>
     <tbody>
     <% @booths.each do |booth| %>
+      <%= render partial: "booth_assignment", locals: { booth: booth } %>
     <% end %>
     </tbody>
   </table>
-
 <% end %>
