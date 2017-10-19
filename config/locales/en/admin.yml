@@ -675,6 +675,7 @@ en:
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
+        no_location: "No Location"
       new:
         title: "New booth"
         name: "Name"

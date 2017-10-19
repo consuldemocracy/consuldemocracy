@@ -1,6 +1,9 @@
 <td>
   <%= link_to booth.name, admin_booth_path(booth) %>
 </td>
+<td>
+  <%= booth.location || t("admin.booths.index.no_location") %>
+</td>
 <% if booth_assignment.present? %>
   <td>
     <span class="verified"><%= t("admin.booth_assignments.manage.status.assigned") %></span>

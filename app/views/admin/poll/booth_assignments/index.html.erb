@@ -30,7 +30,7 @@
               </strong>
             </td>
             <td>
-              <%= booth_assignment.booth.location %>
+              <%= booth_assignment.booth.location || t("admin.booths.index.no_location") %>
             </td>
           </tr>
         <% end %>
