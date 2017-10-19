@@ -691,6 +691,10 @@ en:
         official_updated: Details of official saved
       index:
         title: Officials
+        no_officials: There are no officials.
+        name: Nombre
+        official_position: Official position
+        official_level: Level
       level_0: Not official
       level_1: Level 1
       level_2: Level 2
@@ -701,6 +705,7 @@ en:
         edit_official: Edit official
         make_official: Make official
         title: 'Official positions: User search'
+        no_results: Official positions not found.
     organizations:
       index:
         filter: Filter

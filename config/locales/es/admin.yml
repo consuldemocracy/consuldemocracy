@@ -693,6 +693,10 @@ es:
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
+        no_officials: No hay cargos públicos.
+        name: Nombre
+        official_position: Cargo público
+        official_level: Nivel
       level_0: No es cargo público
       level_1: Nivel 1
       level_2: Nivel 2
@@ -703,6 +707,7 @@ es:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: 'Cargos Públicos: Búsqueda de usuarios'
+        no_results: No se han encontrado cargos públicos.
     organizations:
       index:
         filter: Filtro
