@@ -526,11 +526,6 @@ es:
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
     poll_booth_assignments:
-      flash:
-        destroy: "Urna desasignada"
-        create: "Urna asignada"
-        error_destroy: "Se ha producido un error al desasignar la urna"
-        error_create: "Se ha producido un error al intentar asignar la urna"
       show:
         location: "Ubicación"
         officers: "Presidentes de mesa"
@@ -544,8 +539,8 @@ es:
         count_by_system:  "Votos (automático)"
         total_system: "Votos totales acumulados(automático)"
       index:
-        booths_title: "Listado de urnas asignadas"
-        no_booths: "No hay urnas asignadas a esta votación."
+        # booths_title: "Listado de urnas asignadas"
+        # no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
         table_assignment: "Asignación"
@@ -567,7 +562,6 @@ es:
         submit_button: "Actualizar votación"
       show:
         questions_tab: Preguntas
-        booths_tab: Urnas
         officers_tab: Presidentes de mesa
         recounts_tab: Recuentos
         results_tab: Resultados

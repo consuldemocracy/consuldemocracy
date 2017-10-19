@@ -15,22 +15,6 @@
     </li>
   <% end %>
 
-  <% if controller_name == "booth_assignments" %>
-    <li class="active">
-      <h2>
-        <%= t("admin.polls.show.booths_tab") %>
-        (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
-      </h2>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to admin_poll_booth_assignments_path(@poll) do %>
-        <%= t("admin.polls.show.booths_tab") %>
-        (<%= @poll.booth_assignments.select(:booth_id).distinct.count %>)
-      <% end %>
-    </li>
-  <% end %>
-
   <% if controller_name == "officer_assignments" %>
     <li class="active">
       <h2>

@@ -526,11 +526,6 @@ en:
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
     poll_booth_assignments:
-      flash:
-        destroy: "Booth not assigned anymore"
-        create: "Booth assigned"
-        error_destroy: "An error ocurred when removing booth assignment"
-        error_create: "An error ocurred when assigning booth to the poll"
       show:
         location: "Location"
         officers: "Officers"
@@ -544,8 +539,8 @@ en:
         count_by_system:  "Votes (automatic)"
         total_system: Total votes (automatic)
       index:
-        booths_title: "List of booths"
-        no_booths: "There are no booths assigned to this poll."
+        # booths_title: "List of booths"
+        # no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
         table_assignment: "Assignment"
@@ -567,7 +562,6 @@ en:
         submit_button: "Update poll"
       show:
         questions_tab: Questions
-        booths_tab: Booths
         officers_tab: Officers
         recounts_tab: Recounting
         results_tab: Results

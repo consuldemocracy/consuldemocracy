@@ -2,10 +2,6 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll, except: [:create, :destroy]
 
-  def index
-    @booth_assignments = @poll.booth_assignments.includes(:booth).order('poll_booths.name').page(params[:page]).per(50)
-  end
-
   def search_booths
     load_search
     @booths = ::Poll::Booth.search(@search)

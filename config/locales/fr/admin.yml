@@ -305,11 +305,6 @@ fr:
         total_recounts: "Dépouillement final"
         total_recount: "Dépouillement final (par président)"
     poll_booth_assignments:
-      flash:
-        destroy: "Ce bureau de vote n'est plus affecté"
-        create: "Ce bureau de vote a été affecté"
-        error_destroy: "Une erreur s'est produite lors de la suppression de l'affectation du bureau de vote"
-        error_create: "Une erreur s'est produite lors de l'affectation du bureau de vote au vote"
       show:
         location: "Lieu"
         officers: "Présidents"
@@ -323,8 +318,8 @@ fr:
         total_count: "Dépouillement final (par président)"
         count_by_system:  "Votes (automatique)"
       index:
-        booths_title: "Liste des bureaux de vote"
-        no_booths: "Il n'y a pas de bureaux de vote affectés à ce vote."
+        # booths_title: "Liste des bureaux de vote"
+        # no_booths: "Il n'y a pas de bureaux de vote affectés à ce vote."
         table_name: "Nom"
         table_location: "Lieu"
         table_assignment: "Affectation"
@@ -345,7 +340,6 @@ fr:
         submit_button: "Mettre à jour le vote"
       show:
         questions_tab: Questions
-        booths_tab: Bureaux de vote
         officers_tab: Présidents
         recounts_tab: Dépouillements
         results_tab: Résultats
