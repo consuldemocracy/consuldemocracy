@@ -1,6 +1,5 @@
 <%= render "/admin/poll/polls/poll_header" %>
 
-
 <div id="poll-resources">
   <%= render "/admin/poll/polls/subnav" %>
   <%= render "search_booths" %>
@@ -30,7 +29,7 @@
               </strong>
             </td>
             <td>
-              <%= booth_assignment.booth.location %>
+              <%= booth_assignment.booth.location || t("admin.booths.index.no_location") %>
             </td>
           </tr>
         <% end %>
