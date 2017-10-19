@@ -430,6 +430,7 @@ es:
       poll_officers: Presidentes de mesa
       polls: Votaciones
       poll_booths: Ubicación de urnas
+      poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
@@ -534,6 +535,17 @@ es:
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
+    booth_assignments:
+      manage_assignments: Gestionar asignaciones
+      manage:
+        assignments_list: "Asignaciones para la votación '%{poll}'"
+        status:
+          assign_status: Asignación
+          assigned: Asignada
+          unassigned: No asignada
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -557,9 +569,6 @@ es:
         no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
-        table_assignment: "Asignación"
-        remove_booth: "Desasignar urna"
-        add_booth: "Asignar urna"
     polls:
       index:
         title: "Listado de votaciones"
@@ -679,6 +688,7 @@ es:
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
+        no_location: "Sin Ubicación"
       new:
         title: "Nueva urna"
         name: "Nombre"
