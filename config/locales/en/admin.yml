@@ -446,6 +446,9 @@ en:
     moderators:
       index:
         title: Moderators
+        name: Name
+        email: Email
+        no_moderators: There are no moderators.
       moderator:
         add: Add
         delete: Delete
