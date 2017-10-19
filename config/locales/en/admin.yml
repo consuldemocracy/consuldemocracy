@@ -432,6 +432,9 @@ en:
     administrators:
       index:
         title: Administrators
+        name: Name
+        email: Email
+        no_administrators: There are no administrators.
       administrator:
         add: Add
         delete: Delete
@@ -439,7 +442,7 @@ en:
       search:
         email_placeholder: Search user by email
         search: Search
-        user_not_found: User not found
+        user_not_found: User not found.
     moderators:
       index:
         title: Moderators

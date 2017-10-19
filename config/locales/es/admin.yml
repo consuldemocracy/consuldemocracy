@@ -382,6 +382,9 @@ es:
     administrators:
       index:
         title: Administradores
+        name: Nombre
+        email: Email
+        no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
         delete: Borrar
@@ -389,7 +392,7 @@ es:
       search:
         email_placeholder: Buscar usuario por email
         search: Buscar
-        user_not_found: Usuario no encontrado
+        user_not_found: Usuario no encontrado.
     managers:
       index:
         title: Gestores
