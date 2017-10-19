@@ -21,10 +21,6 @@ App.Polls =
       token_message.html(token_message.html() + "<br><strong>" + @token + "</strong>");
       token_message.show()
 
-  showTokenError: ->
-    if $('.js-marked-answer').length == 0
-      $('.js-token-error-message').show()
-
   initialize: ->
     @token = App.Polls.generateToken()
     App.Polls.replaceToken()
