@@ -11,8 +11,9 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   end
 
   def show
-    @booth_assignment = @poll.booth_assignments.includes(:recounts, :voters,
-                                                         officer_assignments: [officer: [:user]]).find(params[:id])
+    @booth_assignment = @poll.booth_assignments
+                             .includes(:recounts, :voters, officer_assignments: [officer: [:user]])
+                             .find_by(booth_id: params[:id], poll_id: params[:poll_id])
     @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
     @partial_results = @booth_assignment.partial_results
     @recounts = @booth_assignment.recounts
@@ -44,10 +45,6 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   end
 
   private
-
-    def load_booth_assignment
-      @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
-    end
 
     def booth_assignment_params
       params.permit(:booth_id, :poll_id)

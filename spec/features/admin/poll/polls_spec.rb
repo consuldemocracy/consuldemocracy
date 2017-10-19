@@ -106,28 +106,24 @@ feature 'Admin polls' do
 
       scenario "No booths" do
         poll = create(:poll)
-        visit admin_poll_path(poll)
-        click_link "Booths (0)"
+        visit manage_admin_poll_booth_assignments_path(poll)
 
-        expect(page).to have_content "There are no booths assigned to this poll."
+        expect(page).to_not have_content("Remove booth from poll")
       end
 
       scenario "Booth list" do
         poll = create(:poll)
         3.times { create(:poll_booth, polls: [poll]) }
 
-        visit admin_poll_path(poll)
-        click_link "Booths (3)"
+        visit manage_admin_poll_booth_assignments_path(poll)
 
-        expect(page).to have_css ".booth", count: 3
+        expect(page).to have_content("Remove booth from poll", count: 3)
 
-        poll.booth_assignments.each do |ba|
-          within("#poll_booth_assignment_#{ba.id}") do
-            expect(page).to have_content ba.booth.name
-            expect(page).to have_content ba.booth.location
+        poll.booths.each do |pb|
+          within("#poll_booth_#{pb.id}") do
+            expect(page).to have_content(pb.name)
           end
         end
-        expect(page).to_not have_content "There are no booths assigned to this poll."
       end
     end
   end

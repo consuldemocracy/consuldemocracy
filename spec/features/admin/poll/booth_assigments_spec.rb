@@ -59,9 +59,9 @@ feature 'Admin booths assignments' do
       officer_2 = officer_assignment_2.officer
 
       visit admin_poll_path(poll)
-      click_link 'Booths (2)'
+      click_link 'Recounting'
 
-      within('#assigned_booths_list') { click_link booth.name }
+      within('#poll_booth_recounts') { click_link booth.name }
 
       click_link 'Officers'
       within('#officers_list') do
@@ -84,9 +84,9 @@ feature 'Admin booths assignments' do
       booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
 
       visit admin_poll_path(poll)
-      click_link 'Booths (2)'
+      click_link 'Recounting'
 
-      within('#assigned_booths_list') { click_link booth.name }
+      within('#poll_booth_recounts') { click_link booth.name }
 
       click_link 'Recounts'
 

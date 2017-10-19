@@ -18,7 +18,8 @@
   <tbody>
     <% @booths.each do |booth| %>
       <tr id="<%= dom_id(booth) %>">
-        <td><%= booth.name %></td>
+        <td><%= link_to booth.name,
+                        admin_poll_booth_assignment_path(@poll, booth) %></td>
         <td class="text-right small">
           <% if booth.assigned_to_poll?(@poll) %>
             <%= link_to t("admin.poll_booth_assignments.index.remove_booth"),
