@@ -95,7 +95,7 @@ feature "Voter" do
 
       scenario "Trying to vote in web and then in booth", :js do
         login_as user
-        vote_for_poll_via_web(poll, question)
+        vote_for_poll_via_web(poll, question, 'Yes')
 
         click_link "Sign out"
 
@@ -127,7 +127,7 @@ feature "Voter" do
 
       scenario "Trying to vote in web again", :js do
         login_as user
-        vote_for_poll_via_web(poll, question)
+        vote_for_poll_via_web(poll, question, 'Yes')
 
         visit poll_path(poll)
 
