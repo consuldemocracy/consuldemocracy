@@ -525,6 +525,8 @@ en:
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
+    booth_assignments:
+      manage_assignments: Manage assignments
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"

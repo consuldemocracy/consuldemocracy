@@ -525,6 +525,8 @@ es:
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
+    booth_assignments:
+      manage_assignments: Gestionar asignaciones
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
