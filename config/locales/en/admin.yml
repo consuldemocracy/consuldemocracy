@@ -658,6 +658,7 @@ en:
         booth: Booth
         results: Results
         see_results: See results
+        title: "Results by booth"
     booths:
       index:
         title: "List of booths"

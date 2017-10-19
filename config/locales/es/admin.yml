@@ -660,6 +660,7 @@ es:
         booth: Urna
         results: Resultados
         see_results: Ver resultados
+        title: "Resultados por urna"
     booths:
       index:
         title: "Lista de urnas"
