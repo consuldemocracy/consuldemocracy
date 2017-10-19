@@ -534,6 +534,7 @@ es:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       voted_token: "Puedes apuntar este identificador de voto, para comprobar tu votación en el resultado final:"
+      vote_error: "Algo ha fallado y tu voto no se ha podido registrar correctamente. Por favor, vuelve a intentarlo más tarde o contacta con nosotros."
       see_projects: "Ver proyectos"
   proposal_notifications:
     new:
