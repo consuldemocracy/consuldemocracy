@@ -48,21 +48,19 @@
                 <%= t("shared.collective") %>
               </span>
             <% end %>
-            <% if comment.user_id == comment.commentable.author_id %>
+            <% comment.commentable.is_a?(Poll) ? nil : if comment.user_id == comment.commentable.author_id %>
               &nbsp;&bull;&nbsp;
               <span class="label round is-author">
                 <%= t("comments.comment.author") %>
               </span>
             <% end %>
-
           <% end %>
 
           &nbsp;&bull;&nbsp;<span><%= l comment.created_at.to_datetime, format: :datetime %></span>
         </div>
-
         <div class="comment-user
                   <%= user_level_class comment %>
-                  <%= comment_author_class comment, comment.commentable.author_id %>">
+                  <%= commentable_author_id_for_polls(comment, comment.commentable) %>">
           <%= simple_format text_with_links(comment.body), {}, sanitize: false %>
         </div>
 

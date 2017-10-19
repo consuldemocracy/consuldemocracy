@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
     if @comment.save
       CommentNotifier.new(comment: @comment).process
-      add_notification @comment
+      add_notification @comment unless @comment.commentable.is_a?(Poll)
     else
       render :new
     end
