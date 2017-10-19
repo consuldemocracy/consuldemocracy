@@ -12,18 +12,13 @@ class Polls::QuestionsController < ApplicationController
     answer.answer = params[:answer]
     answer.touch if answer.persisted?
 
-    if token.present?
-      if answer.save!
-        answer.record_voter_participation(token)
+    if token.present? && answer.save!
+      answer.record_voter_participation(token)
 
-        @answers_by_question_id = { @question.id => params[:answer] }
-        log_event("poll", 'vote')
+      @answers_by_question_id = { @question.id => params[:answer] }
+      log_event("poll", 'vote')
 
-        render :answer
-      else
-        flash.now[:error] = t("poll_questions.show.vote_error")
-        render :error
-      end
+      render :answer
     else
       flash.now[:error] = t("poll_questions.show.vote_error")
       render :error
