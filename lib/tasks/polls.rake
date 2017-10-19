@@ -198,12 +198,14 @@ puts document
     YAML.load(File.read("#{Rails.root}/public/main_squares/config.yml"))
   end
 
-desc "Set correct order to answers on new Plazas Polls"
-  task set_answers_order: :environment do
-    Poll::Question::Answer.where(title: 'Sí').each { |answer| answer.update_attribute(:given_order, 1)}
-    Poll::Question::Answer.where(title: 'No').each { |answer| answer.update_attribute(:given_order, 2)}
-    Poll::Question::Answer.where(title: 'En blanco').each { |answer| answer.update_attribute(:given_order, 3)}
-    Poll::Question::Answer.where('title LIKE ?', 'Proyecto X:%').each { |answer| answer.update_attribute(:given_order, 1)}
-    Poll::Question::Answer.where('title LIKE ?', 'Proyecto Y:%').each { |answer| answer.update_attribute(:given_order, 2)}
+desc "Create Poll Question Answer for each Poll Question still with valid_answers values"
+  task migrate_poll_question_valid_answers: :environment do
+    Poll::Question.all.each do |question|
+      valid_answers = question.valid_answers&.try(:split, ',')
+      next unless valid_answers.present?
+      valid_answers.each do |valid_answer|
+        Poll::Question::Answer.create(question: question, title: valid_answer, description: '')
+      end
+    end
   end
 end

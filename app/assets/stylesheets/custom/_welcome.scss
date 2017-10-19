@@ -87,6 +87,13 @@
       text-decoration: underline;
     }
   }
+
+  .icon-external {
+    display: inline-block;
+    line-height: $line-height;
+    padding-top: $line-height / 4;
+    vertical-align: middle;
+  }
 }
 
 @include breakpoint(medium) {

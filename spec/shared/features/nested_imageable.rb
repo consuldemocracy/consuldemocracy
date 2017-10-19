@@ -1,4 +1,4 @@
-shared_examples "nested imageable" do |imageable_factory_name, path, imageable_path_arguments, fill_resource_method_name, submit_button, imageable_success_notice, has_many_images=false|
+shared_examples "nested imageable" do |imageable_factory_name, path, imageable_path_arguments, fill_resource_method_name, submit_button, imageable_success_notice, has_many_images = false|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper
@@ -11,15 +11,11 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
   before do
     Setting['feature.allow_images'] = true
 
-    if imageable_path_arguments
-      imageable_path_arguments.each do |argument_name, path_to_value|
-        arguments.merge!("#{argument_name}": imageable.send(path_to_value))
-      end
+    imageable_path_arguments&.each do |argument_name, path_to_value|
+      arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
 
-    if imageable.respond_to?(:author)
-      imageable.update(author: user)
-    end
+    imageable.update(author: user) if imageable.respond_to?(:author)
   end
 
   after do
@@ -125,7 +121,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       click_on submit_button
 
       if has_many_images
-        #Pending. Review soon and test
+        # Pending. Review soon and test
       else
         within "#nested-image .image" do
           expect(page).to have_content("can't be blank", count: 2)
@@ -180,7 +176,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       imageable_redirected_to_resource_show_or_navigate_to
 
       if has_many_images
-        #Pending. Review soon and test
+        # Pending. Review soon and test
       else
         expect(page).to have_selector "figure img"
         expect(page).to have_selector "figure figcaption"
@@ -236,7 +232,7 @@ rescue
   return
 end
 
-def imageable_attach_new_file(imageable_factory_name, path, success = true)
+def imageable_attach_new_file(_imageable_factory_name, path, success = true)
   click_link "Add image"
   within "#nested-image" do
     image = find(".image")

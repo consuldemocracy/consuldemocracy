@@ -38,8 +38,8 @@ poll.questions.order(id: :asc).map(&:title)
   poll.questions.order(id: :asc).each do |question|
     answers_to_question = 0
 
-    question.valid_answers.each do |answer|
-      answers_to_question += ::Poll::PartialResult.where(question_id: question.id).where(answer: answer).where(booth_assignment: ba).sum(:amount)
+    question.question_answers.each do |answer|
+      answers_to_question += ::Poll::PartialResult.where(question_id: question.id).where(answer: answer.title).where(booth_assignment: ba).sum(:amount)
     end
     response_in_booth << (answers_to_question + wn)
   end

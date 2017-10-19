@@ -89,8 +89,6 @@ feature 'Officing Nvotes', :selenium do
     oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
     oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
 
-    set_officing_booth(booth)
-
     visit new_officing_residence_path
     officing_verify_residence
 

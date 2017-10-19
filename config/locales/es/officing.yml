@@ -7,6 +7,7 @@ es:
       index:
         title: Presidir mesa de votaciones
         info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+        not_allowed: "Hoy no tienes turnos de presidente de mesa"
     menu:
       voters: "Validar documento y votar"
       letters: "Validar documento"
@@ -29,7 +30,6 @@ es:
         create: "Datos guardados"
         error_create: "Resultados NO añadidos. Error en los datos"
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
-        error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
         not_allowed: "No tienes permiso para introducir resultados"
@@ -72,7 +72,6 @@ es:
       show:
         can_vote: Puede votar
         error_already_voted: "Ya ha participado en esta votación"
-        no_actions: No hay acciones disponibles
         submit: Confirmar voto
         success: "¡Voto introducido!"
       can_vote:

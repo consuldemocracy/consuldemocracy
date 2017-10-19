@@ -898,13 +898,11 @@ print "Creating Poll Questions"
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   open_at = rand(2.months.ago..2.months.from_now)
-  answers = Faker::Lorem.words((2..4).to_a.sample).map { |answer| answer.capitalize }
   question = Poll::Question.create!(author: author,
                                     title: Faker::Lorem.sentence(3).truncate(60),
-                                    valid_answers: answers.join(', '),
                                     poll: poll)
-  answers.each do |answer|
-    Poll::Question::Answer.create!(question: question, title: answer, description: Faker::ChuckNorris.fact)
+  Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
   end
 end
 
@@ -936,7 +934,10 @@ print "Creating Poll Questions from Proposals"
 3.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
+  question = Poll::Question.create(poll: poll)
+  Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+  end
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end
@@ -947,7 +948,10 @@ print "Creating Successful Proposals"
 10.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
+  question = Poll::Question.create(poll: poll)
+  Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+  end
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end

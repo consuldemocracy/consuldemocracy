@@ -19,13 +19,11 @@
           <td>
             <%= poll.name %>
           </td>
-          <td>
-            <% if poll.votable_by?(@user) %>
-              <%= render "can_vote", poll: poll %>
-            <% else %>
-              <%= render "already_voted" %>
-            <% end %>
-          </td>
+          <% if poll.votable_by?(@user) %>
+            <%= render "can_vote", poll: poll %>
+          <% else %>
+            <%= render "already_voted" %>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
