@@ -671,6 +671,7 @@ es:
         booth: Urna
         results: Resultados
         see_results: Ver resultados
+        title: "Resultados por urna"
     booths:
       index:
         title: "Lista de urnas"
@@ -1002,7 +1003,7 @@ es:
         table:
           poll_name: Votación
           question_name: Pregunta
-          origin_web: Participantes Web 
+          origin_web: Participantes Web
           origin_total: Participantes Totales
       proposal_notifications:
         title: Notificaciones de propuestas

@@ -35,7 +35,7 @@ describe UsersHelper do
 
       investment.hide
 
-      expect(comment_commentable_title(comment)).to eq '<del>' + comment.commentable.title + '</del> <span class="small">(This investment has been deleted)</span>'
+      expect(comment_commentable_title(comment)).to eq '<del>' + comment.commentable.title + '</del> <span class="small">(This investment project has been deleted)</span>'
     end
   end
 
