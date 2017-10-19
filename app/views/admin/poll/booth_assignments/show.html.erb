@@ -17,8 +17,11 @@
     <li class="tabs-title">
       <%= link_to t("admin.poll_booth_assignments.show.officers"), "#tab-officers" %>
     </li>
-    <li class="tabs-title is-active">
+    <li class="tabs-title">
       <%= link_to t("admin.poll_booth_assignments.show.recounts"), "#tab-recounts" %>
+    </li>
+    <li class="tabs-title is-active">
+      <%= link_to t("admin.poll_booth_assignments.show.results"), "#tab-results" %>
     </li>
   </ul>
 
@@ -43,7 +46,7 @@
     <% end %>
   </div>
 
-  <div class="tabs-panel is-active" id="tab-recounts">
+  <div class="tabs-panel" id="tab-recounts">
     <h3><%= t("admin.poll_booth_assignments.show.recounts_list") %></h3>
 
     <table id="totals">
@@ -55,8 +58,12 @@
       </thead>
       <tbody>
         <tr>
-          <td class="text-center" id="total_final"><%= total_recounts_by_booth(@booth_assignment) || '-'  %></td>
-          <td class="text-center" id="total_system"><%= @booth_assignment.voters.count %></td>
+          <td class="text-center" id="total_final">
+            <%= total_recounts_by_booth(@booth_assignment) || '-'  %>
+          </td>
+          <td class="text-center" id="total_system">
+            <%= @booth_assignment.voters.count %>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -78,5 +85,8 @@
       <% end %>
       </tbody>
     </table>
+  </div>
+  <div class="tabs-panel is-active" id="tab-results">
+    <%= render "results" %>
   </div>
 </div>
