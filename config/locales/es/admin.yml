@@ -405,7 +405,7 @@ es:
       admin: Menú de administración
       banner: Gestionar banners
       proposals_topics: Temas de propuestas
-      poll_questions: Preguntas ciudadanas
+      poll_questions: Preguntas de votaciones
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
@@ -577,12 +577,12 @@ es:
         error_on_question_added: "No se pudo asignar la pregunta"
     questions:
       index:
-        title: "Preguntas ciudadanas"
+        title: "Preguntas de votaciones"
         create: "Crear pregunta ciudadana"
         no_questions: "No hay ninguna pregunta ciudadana."
         filter_poll: "Filtrar por votación"
         select_poll: "Seleccionar votación"
-        questions_tab: "Preguntas ciudadanas"
+        questions_tab: "Preguntas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
         table_proposal: "Propuesta"
