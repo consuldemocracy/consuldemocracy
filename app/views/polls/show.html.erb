@@ -55,7 +55,12 @@
             <%= t("polls.show.already_voted_in_web") %>
           </div>
         <% end %>
+
+        <div class="callout warning js-token-error-message" style="display: none">
+          <%= t("poll_questions.show.vote_error") %>
+        </div>
       <% end %>
+
 
       <% @questions.each do |question| %>
         <%= render 'polls/questions/question', question: question, token: @token %>
