@@ -2,10 +2,6 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
 
   before_action :load_poll, except: [:create, :destroy]
 
-  def index
-    @booth_assignments = @poll.booth_assignments.includes(:booth).order('poll_booths.name').page(params[:page]).per(50)
-  end
-
   def search_booths
     load_search
     @booths = ::Poll::Booth.search(@search)
@@ -15,8 +11,9 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   end
 
   def show
-    @booth_assignment = @poll.booth_assignments.includes(:recounts, :voters,
-                                                         officer_assignments: [officer: [:user]]).find(params[:id])
+    @booth_assignment = @poll.booth_assignments
+                             .includes(:recounts, :voters, officer_assignments: [officer: [:user]])
+                             .find_by(booth_id: params[:id], poll_id: params[:poll_id])
     @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
     @partial_results = @booth_assignment.partial_results
     @recounts = @booth_assignment.recounts
@@ -25,31 +22,29 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   def create
     @booth_assignment = ::Poll::BoothAssignment.new(poll_id: booth_assignment_params[:poll_id],
                                                     booth_id: booth_assignment_params[:booth_id])
+    @booth_assignment.save
 
-    if @booth_assignment.save
-      notice = t("admin.poll_booth_assignments.flash.create")
-    else
-      notice = t("admin.poll_booth_assignments.flash.error_create")
+    respond_to do |format|
+      format.js { render layout: false }
     end
-    redirect_to admin_poll_booth_assignments_path(@booth_assignment.poll_id), notice: notice
   end
 
   def destroy
-    @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
+    @booth_assignment = ::Poll::BoothAssignment.find_by(
+      poll_id: params[:poll_id], booth_id: params[:id]
+    )
+    @booth_assignment.destroy
 
-    if @booth_assignment.destroy
-      notice = t("admin.poll_booth_assignments.flash.destroy")
-    else
-      notice = t("admin.poll_booth_assignments.flash.error_destroy")
+    respond_to do |format|
+      format.js { render layout: false }
     end
-    redirect_to admin_poll_booth_assignments_path(@booth_assignment.poll_id), notice: notice
+  end
+
+  def manage
+    @booths = ::Poll::Booth.order(name: :asc).page(params[:page])
   end
 
   private
-
-    def load_booth_assignment
-      @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
-    end
 
     def booth_assignment_params
       params.permit(:booth_id, :poll_id)

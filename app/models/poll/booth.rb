@@ -15,5 +15,9 @@ class Poll
       where(polls: { id: Poll.current_or_incoming }).includes(:polls)
     end
 
+    def assigned_to_poll?(poll)
+      polls.include?(poll)
+    end
+
   end
 end

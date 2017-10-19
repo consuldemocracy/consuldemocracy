@@ -1,0 +1,43 @@
+<h2 class="inline-block">
+  <%= t("admin.booths.index.title") %>
+</h2>
+
+<% if controller_name == "booths" && action_name != "available" %>
+  <%= link_to t("admin.booths.index.add_booth"),
+              new_admin_booth_path,
+              class: "button success float-right" %>
+<% end %>
+
+<%= render "search_booths" %>
+
+<table id="booths">
+  <thead>
+    <th><%= t("admin.booths.index.name") %></th>
+    <th class="text-right"><%= t("admin.actions.actions") %></th>
+  </thead>
+  <tbody>
+    <% @booths.each do |booth| %>
+      <tr id="<%= dom_id(booth) %>">
+        <td><%= link_to booth.name,
+                        admin_poll_booth_assignment_path(@poll, booth) %></td>
+        <td class="text-right small">
+          <% if booth.assigned_to_poll?(@poll) %>
+            <%= link_to t("admin.poll_booth_assignments.index.remove_booth"),
+                        admin_poll_booth_assignment_path(@poll, booth),
+                        method: :delete,
+                        remote: true,
+                        class: "button small" %>
+          <% else %>
+            <%= link_to t("admin.poll_booth_assignments.index.add_booth"),
+                        admin_poll_booth_assignments_path(@poll, booth_id: booth.id),
+                        method: :post,
+                        remote: true,
+                        class: "button small hollow" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @booths %>

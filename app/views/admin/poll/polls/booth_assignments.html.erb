@@ -1,0 +1,29 @@
+<h2 class="inline-block">
+  <%= t("admin.polls.index.title") %>
+</h2>
+
+<% if @polls.any? %>
+  <table>
+    <thead>
+      <th class="medium-6"><%= t("admin.polls.index.name") %></th>
+      <th class="text-right"><%= t("admin.polls.index.dates") %></th>
+    </thead>
+    <tbody>
+      <% @polls.each do |poll| %>
+        <tr id="<%= dom_id(poll) %>">
+          <td>
+            <strong><%= link_to poll.name,
+                                manage_admin_poll_booth_assignments_path(poll) %></strong>
+          </td>
+          <td class="text-right">
+            <%= l poll.starts_at.to_date %> - <%= l poll.ends_at.to_date %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.polls.index.no_polls") %>
+  </div>
+<% end %>

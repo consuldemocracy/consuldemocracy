@@ -9,7 +9,7 @@
       <%= t("admin.recounts.index.no_recounts") %>
     </div>
   <% else %>
-    <table class="fixed margin">
+    <table id="poll_booth_recounts" class="fixed margin">
       <thead>
         <th><%= t("admin.recounts.index.table_booth_name") %></th>
         <th class="text-center"><%= t("admin.recounts.index.table_total_recount") %></th>
@@ -22,7 +22,7 @@
           <tr id="<%= dom_id(booth_assignment) %>_recounts" class="booth_recounts">
             <td>
               <strong>
-                <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: 'tab-recounts') %>
+                <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment.booth_id, anchor: 'tab-recounts') %>
               </strong>
             </td>
             <td class="text-center <%= 'count-error' if total_recounts.to_i != system_count %>">

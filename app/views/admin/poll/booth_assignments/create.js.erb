@@ -1,0 +1,5 @@
+$('.button').bind('ajax:success', function () {
+  $(this).closest('a').attr(
+    'class', 'button small'
+  ).text('<%= t("admin.poll_booth_assignments.index.remove_booth") %>')
+})
