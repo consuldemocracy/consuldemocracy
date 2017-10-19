@@ -3,7 +3,7 @@
 </td>
 <% if booth_assignment.present? %>
   <td>
-    <span class="verified"><%= t("admin.booth_assignments.status.assigned") %></span>
+    <span class="verified"><%= t("admin.booth_assignments.manage.status.assigned") %></span>
   </td>
   <td class="text-right">
     <%= link_to t("admin.booth_assignments.manage.actions.unassign"),
@@ -15,7 +15,7 @@
   </td>
 <% else %>
   <td>
-    <span class="delete"><%= t("admin.booth_assignments.status.unassigned") %></span>
+    <span class="delete"><%= t("admin.booth_assignments.manage.status.unassigned") %></span>
   </td>
   <td class="text-right">
     <%= link_to t("admin.booth_assignments.manage.actions.assign"),
