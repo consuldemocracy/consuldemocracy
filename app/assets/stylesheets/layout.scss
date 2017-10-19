@@ -318,12 +318,15 @@ a {
 }
 
 .tabs {
-  border: {
-    left: 0;
-    right: 0;
-    top: 0;
-  };
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
   margin-bottom: $line-height;
+
+  .tabs-title {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
 
   .tabs-title > a {
     color: $text-medium;
