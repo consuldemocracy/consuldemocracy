@@ -660,6 +660,8 @@ print "For Active Poll"
 10.times do
   user = User.level_two_verified.sample
   Poll::Voter.create(poll_id: poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'web')
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
 end
 
 puts " ✅"
@@ -668,12 +670,16 @@ print "For Active Geolocalized Poll"
 10.times do
   user = User.level_two_verified.sample
   Poll::Voter.create(poll_id: poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'web')
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
 end
 
 puts " ✅"
 print "For Expired Poll"
 
 10.times do
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
   user = User.level_two_verified.sample
   Poll::Voter.create(poll_id: poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
 end
