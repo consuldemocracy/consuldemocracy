@@ -1,6 +1,8 @@
 require 'rails_helper'
 
-describe :poll do
+describe Poll do
+
+  it_behaves_like "sluggable"
 
   let(:poll) { build(:poll) }
 
