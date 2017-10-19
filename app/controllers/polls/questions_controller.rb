@@ -11,8 +11,11 @@ class Polls::QuestionsController < ApplicationController
 
     answer.answer = params[:answer]
     answer.touch if answer.persisted?
-    answer.save!
-    answer.record_voter_participation(token)
+
+    if params[:token].present?
+      answer.save!
+      answer.record_voter_participation(token)
+    end
 
     @answers_by_question_id = { @question.id => params[:answer] }
     log_event("poll", 'vote')
