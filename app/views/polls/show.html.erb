@@ -15,7 +15,7 @@
   <%= render "poll_subnav" %>
 
   <div class="row margin">
-    <div class="small-12 medium-9 column">
+    <div id="questions-container" class="small-12 medium-9 column">
       <%= render "callout" %>
 
       <% if @poll.voted_in_booth?(current_user) %>
@@ -29,10 +29,6 @@
             <%= t("polls.show.already_voted_in_web") %>
           </div>
         <% end %>
-
-        <div class="callout warning js-token-error-message" style="display: none">
-          <%= t("poll_questions.show.vote_error") %>
-        </div>
       <% end %>
 
       <% @questions.each do |question| %>
