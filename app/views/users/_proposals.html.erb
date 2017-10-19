@@ -1,7 +1,13 @@
-<table class="clear activity-proposals">
-  <% @proposals.each do |proposal| %>
-    <%= render "proposal", proposal: proposal %>
-  <% end %>
+<table class="margin-top">
+  <thead>
+    <th scope="col"><%= t("users.show.proposals") %></th>
+    <th scope="col" colspan="2"><%= t("users.show.actions") %></th>
+  </thead>
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <%= render "proposal", proposal: proposal %>
+    <% end %>
+  </tbody>
 </table>
 
 <%= paginate @proposals %>

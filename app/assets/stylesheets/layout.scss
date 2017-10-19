@@ -2033,7 +2033,6 @@ table {
 // ------------
 
 .activity {
-  margin-bottom: $line-height * 2;
 
   .accordion li {
     margin-bottom: $line-height / 2;
@@ -2065,62 +2064,15 @@ table {
     }
   }
 
-  table {
-    border: 0;
-    margin-bottom: 0;
-  }
-
-  td {
-    position: relative;
-
-    &:first-child {
-      padding-left: $line-height * 1.5;
-      width: 75%;
-    }
-
-    &::before {
-      color: $brand;
-      font-family: "icons" !important;
-      font-size: rem-calc(24);
-      left: 4px;
-      position: absolute;
-    }
-  }
-
-  .activity-comments td:first-child::before {
-    content: 'e';
-    top: 18px;
-  }
-
-  .activity-debates td:first-child::before {
-    content: 'i';
-    top: 14px;
-  }
-
-  .activity-proposals {
-
-    td:first-child::before {
-      content: 'h';
-      top: 18px;
-    }
-
-    .retired {
-      text-decoration: line-through;
-    }
-  }
-
-  .activity-investment-projects td:first-child::before,
-  .activity-ballot td:first-child::before {
-    content: '\53';
-    top: 10px;
+  .retired {
+    text-decoration: line-through;
   }
 }
 
 .public-interests {
-  margin-top: $line-height;
 
-  .column {
-    padding-left: 0;
+  li {
+    margin-right: $line-height / 4;
   }
 }
 

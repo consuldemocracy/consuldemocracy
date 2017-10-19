@@ -17,9 +17,9 @@
         <div class="small-12 column">
           <h3><%= question.title %></h3>
         </div>
-        <% question.valid_answers.each_with_index do |answer, i| %>
+        <% question.question_answers.each_with_index do |answer, i| %>
           <div class="small-12 medium-6 large-3 column end">
-            <label><%= answer %></label>
+            <label><%= answer.title %></label>
             <%= text_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), placeholder: "0" %>
           </div>
         <% end %>
