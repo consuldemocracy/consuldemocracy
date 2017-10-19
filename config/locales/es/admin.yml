@@ -714,6 +714,12 @@ es:
         hidden_count_html:
           one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
           other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
+        name: Nombre
+        email: Email
+        phone_number: Teléfono
+        responsible_name: Responsable
+        status: Estado
+        no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
         search: Buscar
@@ -721,8 +727,10 @@ es:
         title: Organizaciones
         verified: Verificada
         verify: Verificar
+        pending: Pendiente
       search:
         title: Buscar Organizaciones
+        no_results: No se han encontrado organizaciones.
     proposals:
       index:
         filter: Filtro

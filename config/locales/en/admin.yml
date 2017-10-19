@@ -712,6 +712,12 @@ en:
         hidden_count_html:
           one: There is also <strong>one organisation</strong> with no users or with a hidden user.
           other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
+        name: Name
+        email: Email
+        phone_number: Phone
+        responsible_name: Responsible
+        status: Status
+        no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
         search: Search
@@ -719,8 +725,10 @@ en:
         title: Organisations
         verified: Verified
         verify: Verify
+        pending: Pending
       search:
         title: Search Organisations
+        no_results: No organizations found.
     proposals:
       index:
         filter: Filter
