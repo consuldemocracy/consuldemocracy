@@ -45,6 +45,10 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
     redirect_to admin_poll_booth_assignments_path(@booth_assignment.poll_id), notice: notice
   end
 
+  def manage
+    @booths = ::Poll::Booth.all
+  end
+
   private
 
     def load_booth_assignment

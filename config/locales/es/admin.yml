@@ -420,6 +420,7 @@ es:
       poll_officers: Presidentes de mesa
       polls: Votaciones
       poll_booths: Ubicación de urnas
+      poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
