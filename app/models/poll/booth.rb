@@ -15,5 +15,8 @@ class Poll
       where(polls: { id: Poll.current_or_incoming }).includes(:polls)
     end
 
+    def assignment_on_poll(poll)
+      booth_assignments.where(poll: poll).first
+    end
   end
 end
