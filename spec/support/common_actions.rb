@@ -32,4 +32,8 @@ module CommonActions
     allow_any_instance_of(Officing::BaseController).
     to receive(:current_booth).and_return(booth)
   end
+
+  def remove_token_from_vote_link
+    page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
+  end
 end
