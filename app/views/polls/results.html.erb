@@ -1,6 +1,6 @@
 <% provide :title do %><%= @poll.name %><% end %>
 
-<div class="polls-show">
+<div class="polls-results-stats">
   <%= render "poll_header" %>
 
   <%= render "poll_subnav" %>
@@ -18,7 +18,7 @@
     <div class="small-12 medium-9 column">
       <%- @poll.questions.each do |question| %>
         <table id="question_<%= question.id %>_results_table">
-          <h3 anchor="<%= question.title.parameterize %>"><%= question.title %></h3>
+          <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
           <thead>
             <tr>
               <%- question.question_answers.each do |answer| %>
@@ -31,7 +31,7 @@
               <%- question.question_answers.each do |answer| %>
                 <td id="answer_<%= answer.id %>_result" <%= answer.most_voted? ? "class=win" : "" %>>
                   <%= answer.total_votes %>
-                  (<%= answer.total_votes_percentage %>%)
+                  (<%= answer.total_votes_percentage.round(2) %>%)
                 </td>
               <% end %>
             </tr>
