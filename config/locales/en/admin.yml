@@ -62,6 +62,7 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+        no_activity: There ares no moderators activity.
     budgets:
       index:
         title: Participatory budgets

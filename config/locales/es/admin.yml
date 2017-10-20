@@ -60,8 +60,9 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
-        title: Actividad de los Moderadores
+        title: Actividad de Moderadores
         type: Tipo
+        no_activity: No hay actividad de moderadores.
     budgets:
       index:
         title: Presupuestos participativos

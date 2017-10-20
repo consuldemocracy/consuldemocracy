@@ -29,7 +29,7 @@ module AdminHelper
   end
 
   def menu_profiles?
-    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users"].include? controller_name
+    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users", "activity"].include? controller_name
   end
 
   def menu_banners?
