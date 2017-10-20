@@ -8,6 +8,7 @@ feature "Voter" do
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
+    let(:admin) { create(:administrator) }
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
@@ -71,6 +72,19 @@ feature "Voter" do
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("booth")
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -107,6 +121,19 @@ feature "Voter" do
         expect(page).not_to have_link(answer_yes.title)
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
+
+        visit root_path
+        click_link "Sign out"
+        login_as(admin.user)
+        visit admin_poll_recounts_path(poll)
+
+        within("#total_system") do
+          expect(page).to have_content "1"
+        end
+
+        within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+          expect(page).to have_content "1"
+        end
       end
 
       scenario "Trying to vote in web again", :js do
@@ -162,6 +189,19 @@ feature "Voter" do
       expect(page).not_to have_link(answer_yes.title)
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
       expect(Poll::Voter.count).to eq(1)
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
     end
 
     context "Side menu" do
