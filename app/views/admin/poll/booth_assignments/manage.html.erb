@@ -1,0 +1,28 @@
+<%= link_to booth_assignments_admin_polls_path do %>
+  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<% end %>
+<hr>
+
+<h2 class="inline-block"><%= t("admin.booth_assignments.manage.assignments_list", poll: @poll.name) %></h2>
+
+<% if @booths.empty? %>
+  <div class="callout primary">
+    <%= t("admin.booths.index.no_booths") %>
+  </div>
+<% else %>
+  <table>
+    <thead>
+      <th><%= t("admin.booths.index.name") %></th>
+      <th><%= t("admin.booths.index.location") %></th>
+      <th><%= t("admin.booth_assignments.manage.status.assign_status") %></th>
+      <th class="text-right"><%= t("admin.actions.actions") %></th>
+    </thead>
+    <tbody>
+    <% @booths.each do |booth| %>
+      <tr id="<%= dom_id(booth) %>" class="booth">
+        <%= render partial: "booth_assignment", locals: { booth: booth, booth_assignment: booth.assignment_on_poll(@poll) } %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
