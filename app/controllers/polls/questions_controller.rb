@@ -12,15 +12,12 @@ class Polls::QuestionsController < ApplicationController
 
     voter = Poll::Voter.find_or_initialize_by(user: answer.author, poll: answer.poll, origin: "web", token: params[:token])
 
-    begin
-      answer.save!
-      voter.save!
-
+    if params[:token].present? && answer.save! && voter.save!
       @answers_by_question_id = { @question.id => params[:answer] }
       log_event("poll", 'vote')
 
       render :answer
-    rescue ActiveRecord::RecordInvalid => e
+    else
       flash.now[:error] = t("poll_questions.show.vote_error")
       render :error
     end
