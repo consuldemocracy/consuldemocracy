@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010143623) do
+ActiveRecord::Schema.define(version: 20171017221546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -772,7 +772,6 @@ ActiveRecord::Schema.define(version: 20171010143623) do
     t.integer  "author_id"
     t.string   "author_visible_name"
     t.string   "title"
-    t.string   "valid_answers"
     t.integer  "comments_count"
     t.datetime "hidden_at"
     t.datetime "created_at"
@@ -854,10 +853,10 @@ ActiveRecord::Schema.define(version: 20171010143623) do
     t.string   "nvotes_poll_id"
     t.text     "summary"
     t.text     "description"
+    t.string   "slug"
     t.integer  "comments_count",     default: 0
     t.integer  "author_id"
     t.datetime "hidden_at"
-    t.string   "slug"
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
