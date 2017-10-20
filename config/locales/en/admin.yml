@@ -383,6 +383,9 @@ en:
     managers:
       index:
         title: Managers
+        name: Name
+        email: Email
+        no_managers: There are no managers.
       manager:
         add: Add
         delete: Delete

@@ -397,6 +397,9 @@ es:
     managers:
       index:
         title: Gestores
+        name: Nombre
+        email: Email
+        no_managers: No hay gestores.
       manager:
         add: Añadir como Gestor
         delete: Borrar
