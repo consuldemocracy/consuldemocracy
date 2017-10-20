@@ -107,13 +107,15 @@ feature "Voters" do
     poll1 = create(:poll, name: "¿Quieres que XYZ sea aprobado?")
     poll2 = create(:poll, name: "Pregunta de votación de prueba")
 
-    ba1 = create(:poll_booth_assignment, poll: poll1)
-    ba2 = create(:poll_booth_assignment, poll: poll2)
-    oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
-    oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
+    second_booth = create(:poll_booth)
+
+    ba1 = create(:poll_booth_assignment, poll: poll1, booth: second_booth )
+    ba2 = create(:poll_booth_assignment, poll: poll2, booth: second_booth )
+    create(:poll_shift, officer: officer, booth: second_booth, date: Date.current, task: :vote_collection)
 
     validate_officer
     visit new_officing_residence_path
+    set_officing_booth(second_booth)
     officing_verify_residence
 
     within("#poll_#{poll1.id}") do
@@ -133,10 +135,10 @@ feature "Voters" do
     voter1 = Poll::Voter.first
 
     expect(voter1.booth_assignment).to eq(ba1)
-    expect(voter1.officer_assignment).to eq(oa1)
+    expect(voter1.officer_assignment).not_to be_nil
 
     voter2 = Poll::Voter.last
     expect(voter2.booth_assignment).to eq(ba2)
-    expect(voter2.officer_assignment).to eq(oa2)
+    expect(voter2.officer_assignment).not_to be_nil
   end
 end
