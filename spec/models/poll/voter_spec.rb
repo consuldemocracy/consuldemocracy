@@ -84,6 +84,28 @@ describe :voter do
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
+    it "should not be valid if token is not present via web" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "web", token: '')
+
+      expect(voter).to_not be_valid
+      expect(voter.errors.messages[:token]).to eq(["can't be blank"])
+    end
+
+    it "should be valid if token is not present via booth" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "booth", token: '')
+
+      expect(voter).to be_valid
+    end
+
+    it "should be valid if token is not present via letter" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "letter", token: '')
+
+      expect(voter).to be_valid
+    end
+
     context "origin" do
       it "should not be valid without an origin" do
         voter.origin = nil
