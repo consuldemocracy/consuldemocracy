@@ -41,6 +41,30 @@ feature "Voter" do
       expect(Poll::Voter.first.origin).to eq("web")
     end
 
+    scenario "Voting via web failing vote", :js do
+      poll = create(:poll)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+
+      user = create(:user, :level_two)
+
+      login_as user
+      visit poll_path(poll)
+
+      remove_token_from_vote_link
+
+      within("#poll_question_#{question.id}_answers") do
+        click_link 'Yes'
+      end
+
+      expect(page).to have_content "Something went wrong and your vote couldn't be registered. Please check if your browser supports Javascript and try again later."
+      expect(page).to_not have_content "You can write down this vote identifier, to check your vote on the final results"
+
+      expect(Poll::Voter.count).to eq(0)
+    end
+
     scenario "Voting via web as unverified user", :js do
       poll = create(:poll)
 
