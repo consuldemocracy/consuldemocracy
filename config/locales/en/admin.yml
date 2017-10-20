@@ -961,6 +961,7 @@ en:
         verification_level: Verification level
       index:
         title: User
+        no_users: There are no users.
       search:
         placeholder: Search user by email, name or document number
         search: Search

@@ -963,6 +963,7 @@ es:
         verification_level: Nivel de verficación
       index:
         title: Usuarios
+        no_users: No hay usuarios.
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar
