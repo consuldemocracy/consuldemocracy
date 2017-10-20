@@ -84,6 +84,25 @@ describe Poll::Voter do
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
+    it "should not be valid if token is not present via web" do
+      voter = build(:poll_voter, :from_web, token: "")
+
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:token]).to eq(["can't be blank"])
+    end
+
+    it "should be valid if token is not present via booth" do
+      voter = build(:poll_voter, :from_booth, token: "")
+
+      expect(voter).to be_valid
+    end
+
+    it "should be valid if token is not present via letter" do
+      voter = build(:poll_voter, origin: "letter", token: "")
+
+      expect(voter).to be_valid
+    end
+
     context "origin" do
 
       it "is not valid without an origin" do
