@@ -53,7 +53,7 @@ feature "Voter" do
       login_as user
       visit poll_path(poll)
 
-      page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
+      remove_token_from_vote_link
 
       within("#poll_question_#{question.id}_answers") do
         click_link 'Yes'
