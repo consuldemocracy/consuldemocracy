@@ -91,3 +91,14 @@ es:
         text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
         link: Ver proyectos de gasto
         alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
+  users:
+    show:
+      delete_spending_proposal: Eliminar
+      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
+      ballot_link_text:
+        zero: Todavía no has votado por ningún proyecto.
+        one: "Has votado un proyecto por un valor de %{amount_spent}."
+        other: "Has votado %{count} proyectos por un valor de %{amount_spent}."
+      ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
+      verify_account: verifica tu cuenta
+
