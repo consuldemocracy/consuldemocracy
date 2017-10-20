@@ -513,6 +513,8 @@ es:
         valid: "Válidos"
         white: "En blanco"
         null_votes: "Nulos"
+      results:
+        most_voted_answer: "Respuesta más votada: "
   poll_questions:
     create_question: "Crear pregunta para votación"
     show:
