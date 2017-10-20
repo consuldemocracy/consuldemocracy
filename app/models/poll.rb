@@ -90,4 +90,12 @@ class Poll < ActiveRecord::Base
     end
   end
 
+  def results_enabled?
+    results_enabled
+  end
+
+  def stats_enabled?
+    stats_enabled
+  end
+
 end
