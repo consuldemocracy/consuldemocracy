@@ -182,11 +182,11 @@ feature 'Voters' do
      voter1 = Poll::Voter.first
 
      expect(voter1.booth_assignment).to eq(ba1)
-     expect(voter1.officer_assignment).not_to be_nil
+     expect(voter1.officer_assignment).to eq(ba1.officer_assignments.first)
 
      voter2 = Poll::Voter.last
      expect(voter2.booth_assignment).to eq(ba2)
-     expect(voter2.officer_assignment).not_to be_nil
+     expect(voter2.officer_assignment).to eq(ba2.officer_assignments.first)
    end
 
    context "Booth type" do
