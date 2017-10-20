@@ -20,6 +20,7 @@ class Officing::VotersController < Officing::BaseController
                              poll: @poll,
                              origin: "booth",
                              officer: current_user.poll_officer,
+                             booth_assignment: Poll::BoothAssignment.where(poll: @poll, booth: current_booth).first,
                              officer_assignment: officer_assignment(@poll))
     @voter.save!
   end
@@ -35,6 +36,7 @@ class Officing::VotersController < Officing::BaseController
                              .by_poll(poll)
                              .by_booth(current_booth)
                              .by_date(Date.current)
+                             .where(final: false)
                              .first
     end
 
