@@ -1,7 +1,11 @@
-<div class="small-12 column">
-  <h3><%= t('admin.valuators.valuator.user_found') %></h3>
+<h3><%= t('admin.valuators.valuator.user_found') %></h3>
 
-  <table>
+<table>
+  <thead>
+    <th scope="col"><%= t("admin.valuators.index.name") %></th>
+    <th scope="col"><%= t("admin.valuators.index.email") %></th>
+  </thead>
+  <tbody>
     <tr>
       <td>
         <%= valuator.name %>
@@ -10,19 +14,21 @@
         <%= valuator.email %>
       </td>
     </tr>
-  </table>
+  </tbody>
+</table>
 
-  <% unless @valuator.persisted? %>
-    <%= form_for @valuator, url: admin_valuators_path do |f| %>
-      <div class="row">
-        <div class="small-12 medium-4 column ">
-          <%= f.text_field :description, label: false, placeholder: t('admin.valuators.valuator.description_placeholder') %>
+<% unless @valuator.persisted? %>
+  <%= form_for @valuator, url: admin_valuators_path do |f| %>
+    <div class="small-12 medium-8">
+      <div class="input-group">
+        <%= f.text_field :description, label: false, placeholder: t('admin.valuators.valuator.description_placeholder') %>
+
+        <div class="input-group-button">
           <%= f.hidden_field :user_id %>
-        </div>
-        <div class="small-12 medium-2 column end" style="border:ddotted 10px red;">
-          <%= f.submit t('admin.valuators.valuator.add'), class: "button success float-left" %>
+          <%= f.submit t('admin.valuators.valuator.add'), class: "button success" %>
         </div>
       </div>
-    <% end %>
+    </div>
+    <hr>
   <% end %>
-</div>
+<% end %>

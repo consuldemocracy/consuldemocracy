@@ -464,6 +464,11 @@ es:
     valuators:
       index:
         title: Evaluadores
+        name: Nombre
+        email: Email
+        description: Descripción
+        no_description: Sin descripción
+        no_valuators: No hay evaluadores.
       valuator:
         description_placeholder: "Descripción (opcional)"
         user_found: Usuario encontrado
