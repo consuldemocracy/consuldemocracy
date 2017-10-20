@@ -495,4 +495,7 @@ module CommonActions
     expect(Poll::Voter.count).to eq(1)
   end
 
+  def remove_token_from_vote_link
+    page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
+  end
 end

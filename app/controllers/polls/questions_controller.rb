@@ -7,18 +7,22 @@ class Polls::QuestionsController < ApplicationController
 
   def answer
     answer = @question.answers.find_or_initialize_by(author: current_user)
-    token = params[:token]
-
     answer.answer = params[:answer]
     answer.touch if answer.persisted?
 
-    if params[:token].present?
+    voter = Poll::Voter.find_or_initialize_by(user: answer.author, poll: answer.poll, origin: "web", token: params[:token])
+
+    if params[:token].present? && answer.valid? && voter.valid?
       answer.save!
-      answer.record_voter_participation(token)
+      voter.save!
+
+      @answers_by_question_id = { @question.id => params[:answer] }
+      log_event("poll", 'vote')
+    else
+      flash.now[:error] = t("poll_questions.show.vote_error")
+      render :error
     end
 
-    @answers_by_question_id = { @question.id => params[:answer] }
-    log_event("poll", 'vote')
   end
 
 end
