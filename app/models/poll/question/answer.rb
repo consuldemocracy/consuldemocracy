@@ -13,7 +13,6 @@ class Poll::Question::Answer < ActiveRecord::Base
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
   before_validation :set_order, on: :create
-  before_save :most_voted
 
   def description
     super.try :html_safe
@@ -37,15 +36,19 @@ class Poll::Question::Answer < ActiveRecord::Base
     Poll::Answer.where(question_id: question, answer: title).count
   end
 
-  def most_voted
-    answers = question.question_answers
-                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    most_voted = !answers.any?{ |a| a > total_votes }
-
-    self.update_attributes(most_voted: most_voted)
+  def most_voted?
+    self.most_voted
   end
 
   def total_votes_percentage
     ((total_votes*100) / question.answers_total_votes).round(2) rescue 0
+  end
+
+  def set_most_voted
+    answers = question.question_answers
+                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
+    is_most_voted = !answers.any?{ |a| a > self.total_votes }
+
+    self.update(most_voted: is_most_voted)
   end
 end
