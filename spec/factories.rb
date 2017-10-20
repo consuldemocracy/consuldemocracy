@@ -603,7 +603,7 @@ FactoryGirl.define do
     association :user, :level_two
     association :officer, factory: :poll_officer
     origin "web"
-
+    token SecureRandom.hex(32)
     trait :from_booth do
       association :booth_assignment, factory: :poll_booth_assignment
     end
