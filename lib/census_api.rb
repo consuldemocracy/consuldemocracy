@@ -129,7 +129,7 @@ class CensusApi
     def stubbed_response(document_type, document_number)
       case document_type
       when "1"
-        if document_number == "12345678Z"
+        if document_number == "12345678Z" || document_number == "12345678Y"
           stubbed_valid_response
         else
           stubbed_invalid_response
