@@ -306,8 +306,6 @@ module CommonActions
       click_link "#{answer}"
       expect(page).to_not have_link("#{answer}")
     end
-
-    expect(Poll::Voter.count).to eq(1)
   end
 
   def vote_for_poll_via_booth
