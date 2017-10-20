@@ -1,6 +1,10 @@
 <% if show_admin_menu? %>
   <li>
-    <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow", class: "hide-for-small-only" %>
+    <% if current_user.poll_officer? && Poll.current.any? && !current_user.administrator? %>
+      <%= link_to t("layouts.header.officing"), "#", rel: "nofollow" %>
+    <% else %>
+      <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow" %>
+    <% end %>
     <ul class="menu">
       <% if current_user.administrator? %>
         <li>
