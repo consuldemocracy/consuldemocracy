@@ -15,8 +15,8 @@ en:
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
       public_interests_label: Keep my interests public
-      public_interests_my_title_list: List of interests (Tags of elements you follow)
-      public_interests_user_title_list: List of interests (Tags of elements this user follows)
+      public_interests_my_title_list: List of interests (tags of elements you follow)
+      public_interests_user_title_list: List of interests (tags of elements this user follows)
       public_interests_my_empty_list: You do not follow any elements yet.
       public_interests_user_empty_list: This user does not follow any elements yet.
       save_changes_submit: Save changes
@@ -185,6 +185,7 @@ en:
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
+      author: Author
     update:
       form:
         submit_button: Save changes
@@ -527,6 +528,19 @@ en:
       read_less: "Read less about %{answer}"
       participate_in_other_polls: Participate in other polls
       videos: "External video"
+      info_menu: "Information"
+      stats_menu: "Participation statistics"
+      stats:
+        title: "Participation data"
+        total_participation: "Total participation"
+        total_votes: "Total amount of given votes"
+        votes: "VOTES"
+        web: "WEB"
+        booth: "BOOTH"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "White votes"
+        null_votes: "Invalid"
   poll_questions:
     create_question: "Create question"
     show:
@@ -825,14 +839,11 @@ en:
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
       deleted_budget_investment: This investment project has been deleted
-      delete_spending_proposal: Delete
-      confirm_deletion_spending_proposal: Are you sure? This action can not be undone
-      ballot_link_text:
-        zero: You have not voted for any investment yet.
-        one: You voted one investment with a cost of %{amount_spent}.
-        other: You voted %{count} investments with a cost of %{amount_spent}.
-      ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
-      verify_account: verify your account
+      proposals: Proposals
+      debates: Debates
+      budget_investments: Budget investments
+      comments: Comments
+      actions: Actions
       filters:
         comments:
           one: 1 Comment
@@ -855,7 +866,7 @@ en:
           other: "%{count} Following"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
-      private_activity: This user decided to keep the activity list private
+      private_activity: This user decided to keep the activity list private.
       send_private_message: "Send private message"
       delegation: List of recommended investments projects
     proposals:

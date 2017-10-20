@@ -25,6 +25,7 @@ module Abilities
       can [:read], Legislation::Question
       can [:create], Legislation::Answer
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
+      can :read_stats, Poll
       can :results_2017, Poll
       can :stats_2017, Poll
       can :info_2017, Poll
