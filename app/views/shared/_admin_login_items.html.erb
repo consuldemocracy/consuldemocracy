@@ -4,7 +4,7 @@
 
   <% if show_admin_menu? %>
     <li>
-      <% if current_user.poll_officer? && Poll.current.any? && !current_user.administrator? %>
+      <% if current_user && current_user.poll_officer? && Poll.current.any? && !current_user.administrator? %>
         <%= link_to t("layouts.header.officing"), "#", rel: "nofollow" %>
       <% else %>
         <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow" %>
