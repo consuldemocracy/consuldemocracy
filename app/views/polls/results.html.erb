@@ -24,7 +24,7 @@
               <%- question.question_answers.each do |answer| %>
                 <th scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
                   <% if answer.most_voted %>
-                    <span class="show-for-sr"><%= t ("polls.show.results.most_voted_answer") %></span>
+                    <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
                   <% end %>
                   <%= answer.title %>
                 </th>
