@@ -80,14 +80,14 @@
             <%= link_to t('admin.menu.poll_booths'), admin_booths_path %>
           </li>
 
+          <li <%= "class=active" if (controller_name == "polls" && action_name == "booth_assignments") || (controller_name == "booth_assignments" && action_name == "manage") %>>
+            <%= link_to t('admin.menu.poll_booth_assignments'), booth_assignments_admin_polls_path %>
+          </li>
+
           <li <%= "class=active" if controller_name == "shifts" ||
                                     controller_name == "booths" &&
                                     action_name == "available" %>>
             <%= link_to t('admin.menu.poll_shifts'), available_admin_booths_path %>
-          </li>
-
-          <li <%= "class=active" if (controller_name == "polls" && action_name == "booth_assignments") || (controller_name == "booth_assignments" && action_name == "manage") %>>
-            <%= link_to t('admin.menu.poll_booth_assignments'), booth_assignments_admin_polls_path %>
           </li>
         </ul>
       </li>
