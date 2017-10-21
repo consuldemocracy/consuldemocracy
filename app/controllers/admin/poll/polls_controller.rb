@@ -55,7 +55,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
 
     def poll_params
       params.require(:poll).permit(:name, :starts_at, :ends_at, :geozone_restricted,
-                                  :summary, :description, :results_enabled,:stats_enabled,
+                                  :summary, :description, :results_enabled, :stats_enabled,
                                   geozone_ids: [],
                                   image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy])
     end
