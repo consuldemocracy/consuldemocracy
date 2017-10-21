@@ -43,14 +43,14 @@
                 <%= link_to booth_assignment.booth.name, admin_poll_booth_assignment_path(@poll, booth_assignment, anchor: 'tab-recounts') %>
               </strong>
             </td>
-            <td class="text-center <%= 'count-error' if total_recounts.to_i != system_count %>">
+            <td class="text-center <%= 'count-error' if total_recounts.to_i != system_count %>" id="<%= dom_id(booth_assignment) %>_recount">
               <% if total_recounts.present? %>
                 <strong><%= total_recounts %></strong>
               <% else %>
                 <span>-</span>
               <% end %>
             </td>
-            <td class="text-center">
+            <td class="text-center" id="<%= dom_id(booth_assignment) %>_system">
               <% if system_count.present? %>
                 <strong><%= system_count %></strong>
               <% else %>
