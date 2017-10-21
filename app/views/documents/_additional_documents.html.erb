@@ -6,15 +6,7 @@
           <p>
             <strong><%= t('proposals.show.title_external_url') %></strong>
           </p>
-          <% documents.each do |document| %>
-            <p><span class="icon-document"></span>&nbsp;
-            <%= link_to "#{document.title} <small>(#{document.humanized_content_type} | \
-                        #{number_to_human_size(document.attachment_file_size)}</small>)".html_safe,
-                        document.attachment.url,
-                        target: "_blank",
-                        title: t("shared.target_blank_html") %>
-            </p>
-          <% end %>
+          <%= render partial: 'documents/additional_document', collection: documents, as: :document %>
         </div>
       </div>
     </div>
