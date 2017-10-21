@@ -59,7 +59,7 @@
         <legend><%= t('admin.polls.new.show_results_and_stats') %></legend>
         <%= f.check_box :results_enabled, checked: @poll.results_enabled?, label: t('admin.polls.new.show_results') %>
         <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, label: t('admin.polls.new.show_stats') %>
-        <p class="small"><%= t('admin.polls.new.results_and_stats_reminder') %>
+        <p class="small"><%= t('admin.polls.new.results_and_stats_reminder') %></p>
       </fieldset>
     </div>
   <% end %>
