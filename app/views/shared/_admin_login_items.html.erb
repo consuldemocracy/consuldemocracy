@@ -1,45 +1,50 @@
-<% if show_admin_menu? %>
-  <li>
-    <% if current_user.poll_officer? && Poll.current.any? && !current_user.administrator? %>
-      <%= link_to t("layouts.header.officing"), "#", rel: "nofollow" %>
-    <% else %>
-      <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow" %>
-    <% end %>
-    <ul class="menu">
-      <% if current_user.administrator? %>
-        <li>
-          <%= link_to t("layouts.header.administration"), admin_root_path %>
-        </li>
-      <% end %>
+<% if current_user && current_user.poll_officer? && Poll.current.any? %>
+  <li><%= link_to t("layouts.header.officing"), officing_root_path %></li>
+<% else %>
 
-      <% if current_user.administrator? || current_user.moderator? %>
-        <li>
-          <%= link_to t("layouts.header.moderation"), moderation_root_path %>
-        </li>
+  <% if show_admin_menu? %>
+    <li>
+      <% if current_user && current_user.poll_officer? && Poll.current.any? && !current_user.administrator? %>
+        <%= link_to t("layouts.header.officing"), "#", rel: "nofollow" %>
+      <% else %>
+        <%= link_to t("layouts.header.administration_menu"), "#", rel: "nofollow" %>
       <% end %>
+      <ul class="menu">
+        <% if current_user.administrator? %>
+          <li>
+            <%= link_to t("layouts.header.administration"), admin_root_path %>
+          </li>
+        <% end %>
 
-      <% if (feature?(:spending_proposals) || feature?(:budgets)) &&
-            (current_user.administrator? || current_user.valuator?) %>
-        <li>
-          <%= link_to t("layouts.header.valuation"), valuation_root_path %>
-        </li>
-      <% end %>
+        <% if current_user.administrator? || current_user.moderator? %>
+          <li>
+            <%= link_to t("layouts.header.moderation"), moderation_root_path %>
+          </li>
+        <% end %>
 
-      <% if current_user.administrator? || current_user.manager? %>
-        <li>
-          <%= link_to t("layouts.header.management"), management_sign_in_path %>
-        </li>
-      <% end %>
+        <% if (feature?(:spending_proposals) || feature?(:budgets)) &&
+              (current_user.administrator? || current_user.valuator?) %>
+          <li>
+            <%= link_to t("layouts.header.valuation"), valuation_root_path %>
+          </li>
+        <% end %>
 
-      <% if current_user.administrator? || current_user.poll_officer? && Poll.current.any? %>
-        <li>
-          <% if current_user.try(:poll_officer).try(:letter_officer?) %>
-              <%= link_to t("layouts.header.officing"), new_officing_letter_path %>
-          <% else %>
-              <%= link_to t("layouts.header.officing"), officing_root_path %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </li>
+        <% if current_user.administrator? || current_user.manager? %>
+          <li>
+            <%= link_to t("layouts.header.management"), management_sign_in_path %>
+          </li>
+        <% end %>
+
+        <% if current_user.administrator? || current_user.poll_officer? && Poll.current.any? %>
+          <li>
+            <% if current_user.try(:poll_officer).try(:letter_officer?) %>
+                <%= link_to t("layouts.header.officing"), new_officing_letter_path %>
+            <% else %>
+                <%= link_to t("layouts.header.officing"), officing_root_path %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
 <% end %>
