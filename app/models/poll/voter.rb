@@ -12,7 +12,9 @@ class Poll
 
     validates :poll_id, presence: true
     validates :user_id, presence: true
-    validates :token, presence: true
+    validates :token, presence: true, if: ->(voter) { voter.origin == 'web' }
+    validates :booth_assignment_id, presence: true, if: ->(voter) { voter.origin == 'booth' }
+    validates :officer_assignment_id, presence: true, if: ->(voter) { voter.origin == 'booth' }
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
     validates :origin, inclusion: { in: VALID_ORIGINS }
@@ -21,7 +23,7 @@ class Poll
 
     scope :web,    -> { where(origin: 'web') }
     scope :booth,  -> { where(origin: 'booth') }
-    scope :letter,  -> { where(origin: 'letter') }
+    scope :letter, -> { where(origin: 'letter') }
 
     def set_demographic_info
       return if user.blank?
