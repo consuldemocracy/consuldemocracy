@@ -157,6 +157,7 @@ en:
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
+        user_tags: User tags
         undefined: Undefined
         milestone: Milestone
         new_milestone: Create new milestone

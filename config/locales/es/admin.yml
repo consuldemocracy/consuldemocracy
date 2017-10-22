@@ -157,6 +157,7 @@ es:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
+        user_tags: Etiquetas del usuario
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
@@ -181,7 +182,7 @@ es:
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
-        user_tags: Etiquetas asignadas por el usuario        
+        user_tags: Etiquetas asignadas por el usuario
         tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
