@@ -547,11 +547,27 @@ poll = Poll.create(name: "Upcoming Poll",
                    ends_at:   2.months.from_now)
 
 puts " ✅"
+print "Recounting Poll"
+poll = Poll.create(name: "Recounting Poll",
+                   # slug: "recounting-poll",
+                   starts_at: 1.months.ago,
+                   ends_at:   5.days.ago)
+
+puts " ✅"
 print "Expired Poll"
 poll = Poll.create(name: "Expired Poll",
                    # slug: "expired-poll",
                    starts_at: 2.months.ago,
                    ends_at:   1.month.ago)
+
+puts " ✅"
+print "Expired Poll with Stats & Results"
+poll = Poll.create(name: "Expired Poll with Stats & Results",
+                   # slug: "expired-poll-with-stats-and-results",
+                   starts_at: 2.months.ago,
+                   ends_at:   1.month.ago,
+                   results_enabled: true,
+                   stats_enabled: true)
 
 puts " ✅"
 print "Creating Poll Questions"
