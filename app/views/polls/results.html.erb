@@ -5,9 +5,9 @@
 
   <%= render "poll_subnav" %>
 
-      <h4>Preguntas</h4>
   <div class="row margin" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.results.title") %></strong></p>
       <ul class="menu vertical">
         <%- @poll.questions.each do |question| %>
           <li><%=link_to question.title, "##{question.title.parameterize}" %></li>
