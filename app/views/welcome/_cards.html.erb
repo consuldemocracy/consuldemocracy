@@ -1,28 +1,6 @@
 <div class="row">
   <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card">
-      <%= link_to "https://www.google.com/maps/d/edit?hl=es&mid=1ZBLsBOF2lzSxZHfJnGFJp85gXgs&ll=40.449043487191815%2C-3.676230300000043&z=12", target:"_blank", title: t("welcome.once_plazas.link") + "" + t("shared.target_blank_html") do %>
-        <%= image_tag "welcome/booths_once_plazas.jpg", alt: t("welcome.once_plazas.alt") %>
-      <% end %>
-      <figcaption>
-        <%= link_to "https://www.google.com/maps/d/edit?hl=es&mid=1ZBLsBOF2lzSxZHfJnGFJp85gXgs&ll=40.449043487191815%2C-3.676230300000043&z=12", target:"_blank", title: t("welcome.once_plazas.link") + "" + t("shared.target_blank_html") do %>
-          <span><%= t("welcome.once_plazas.label") %></span><br>
-          <p class="title"><%= t("welcome.once_plazas.title") %></p>
-        <% end %>
-      </figcaption>
-    </figure>
-    <p><%= t("welcome.once_plazas.text") %></p>
-    <p>
-      <%= link_to "https://www.google.com/maps/d/edit?hl=es&mid=1ZBLsBOF2lzSxZHfJnGFJp85gXgs&ll=40.449043487191815%2C-3.676230300000043&z=12",
-                  target: "_blank" do %>
-        <%= t("welcome.once_plazas.link") %>
-        <span class="icon-external"></span>
-      <% end %>
-    </p>
-  </div>
-
-  <div class="small-12 medium-4 column margin-bottom">
-    <figure class="figure-card">
       <%= link_to "#{request.url}legislation/processes/25/debate", title: t("welcome.green_areas.link") do %>
         <%= image_tag "welcome/zonas_verdes.jpg", alt: t("welcome.green_areas.alt") %>
       <% end %>
@@ -39,7 +17,7 @@
     </p>
   </div>
 
-  <div class="small-12 medium-4 column margin-bottom">
+  <div class="small-12 medium-4 column margin-bottom end">
     <figure class="figure-card">
       <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017/resultados", title: t("welcome.budgets_results.link") do %>
         <%= image_tag "welcome/budgets_results.jpg", alt: t("welcome.budgets_results.alt") %>
