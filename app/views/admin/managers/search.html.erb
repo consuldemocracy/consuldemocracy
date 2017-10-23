@@ -1,25 +1,25 @@
-<h2><%= t("admin.managers.index.title") %></h2>
+<h2><%= t("admin.managers.search.title") %></h2>
 
 <%= render 'admin/shared/user_search', url: search_admin_managers_path %>
 
-<h3><%= page_entries_info @managers %></h3>
+<h3><%= page_entries_info @users %></h3>
 
 <table id="managers">
-  <% @managers.each do |manager| %>
+  <% @users.each do |user| %>
     <tr>
-      <td><%= manager.name %></td>
-      <td><%= manager.email %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
       <td class="text-right">
-        <% if manager.persisted? %>
+        <% if user.manager? && user.manager.persisted? %>
           <%= link_to t('admin.managers.manager.delete'),
-                      admin_manager_path(manager),
+                      admin_manager_path(user),
                       method: :delete,
                       class: "button hollow alert" %>
         <% else %>
           <%= link_to t('admin.managers.manager.add'),
                       { controller: "admin/managers",
                         action: :create,
-                        user_id: manager.user_id },
+                        user_id: user },
                       method: :post,
                       class: "button success" %>
         <% end %>
@@ -27,5 +27,3 @@
     </tr>
   <% end %>
 </table>
-
-<%= paginate @managers %>
