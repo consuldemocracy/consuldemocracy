@@ -183,12 +183,6 @@ en:
       text: "Check out the winning projects that will take place from 2018."
       link: "View results for participatory budgets"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
-    once_plazas:
-      label: "Eleven squares"
-      title: "Voting points"
-      text: "On Saturday 21 and Sunday 22 October, from 10am to 7pm, the citizens of Madrid can vote in ballot boxes if they want to remodel or not 11 squares of Madrid."
-      link: "See voting points"
-      alt: "Image of map of voting points to eleven squares"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
@@ -258,6 +252,11 @@ en:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
   once_plazas:
+    title: "Eleven squares"
+    date: "October 8-22, 2017"
+    title_results: "Results"
+    title_stats: "Statistics"
+    more_info: "More info about voting"
     results:
       title: "Eleven squares voting results"
       description: "Look at the results of the public consultation on the remodeling of eleven squares in Madrid and the winning projects that will change those public spaces."
