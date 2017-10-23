@@ -33,7 +33,18 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def total_votes
-    Poll::Answer.where(question_id: question, answer: title).count
+    total = Poll::Answer.where(question: question, answer: title).count
+    # TODO: FIX THIS HARCODED STUFF PLEASE!! When Blank Answers come along specifically
+    if title == 'En blanco'
+      other_question = question.poll.questions.where.not(id: question.id)
+      # We substract the number users that answered the other question from the number of users that answered the current option question
+      blanks_count = Poll::Answer.where(question: question).count - Poll::Answer.where(question: other_question).count
+      # A ZERO: Means all users answered both questions of the poll YAYY!
+      # B POSITIVE: Means there were more answers on the other question than on this one, so this one has the "blanks by omission"
+      # C NEGATIVE: You got it right?
+      total += blanks_count if blanks_count.positive?
+    end
+    total
   end
 
   def most_voted?
