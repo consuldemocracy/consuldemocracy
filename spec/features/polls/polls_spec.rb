@@ -396,10 +396,10 @@ feature 'Polls' do
       expect(page).to have_content("Participation statistics")
 
       visit poll_results_path(poll)
-      expect(page.driver.status_code).to eq(200)
+      expect(page).to have_content("Questions")
 
       visit poll_stats_path(poll)
-      expect(page.driver.status_code).to eq(200)
+      expect(page).to have_content("Participation data")
     end
 
     scenario "Don't show poll results and stats if not enabled" do
@@ -447,10 +447,10 @@ feature 'Polls' do
       expect(page).to have_content("Participation statistics")
 
       visit poll_results_path(poll)
-      expect(page.driver.status_code).to eq(200)
+      expect(page).to have_content("Questions")
 
       visit poll_stats_path(poll)
-      expect(page.driver.status_code).to eq(200)
+      expect(page).to have_content("Participation data")
     end
   end
 end
