@@ -1,4 +1,4 @@
-<% if current_user && current_user.administrator? || 
+<% if current_user && current_user.administrator? ||
   (@poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)) %>
   <div class="row margin-top">
     <div class="small-12 column">
