@@ -59,7 +59,7 @@ class Poll::Question < ApplicationRecord
   end
 
   def answers_total_votes
-    question_answers.map { |a| Poll::Answer.where(question_id: self, answer: a.title).count }.sum
+    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
 end

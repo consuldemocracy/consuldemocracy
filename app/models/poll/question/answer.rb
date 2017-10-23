@@ -32,7 +32,8 @@ class Poll::Question::Answer < ApplicationRecord
   end
 
   def total_votes
-    Poll::Answer.where(question_id: question, answer: title).count
+    Poll::Answer.where(question_id: question, answer: title).count +
+      ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
   end
 
   def most_voted?
