@@ -167,9 +167,10 @@ en:
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
     header:
-      label: New citizen voting
-      title: Citizen voting eleven squares
-      text: The results of the voting will be made public on Tuesday, October 24.
+      label: "End of citizen voting"
+      title: "Results of the public consultation Eleven Squares"
+      text: "Citizens have decided to remodel the eleven spaces that are put to a vote. Check out winning projects and participation statistics."
+      button: "See Results"
     green_areas:
       label: "Previous debate"
       title: "Green areas of Madrid"
@@ -238,6 +239,12 @@ en:
     information: Information
     more_poll_info: More information about polls
     full_recount_results: Results with 100% of the votes counted
+    show:
+      results:
+        tab: "Poll results"
+      stats:
+        tab: "Participation stats"
+        polls: "Polls"
   first_2017_poll:
     title: FIRST CITIZEN POLL
     date: FEBRUARY 13th-19th, 2017
@@ -250,3 +257,12 @@ en:
     stats:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
+  once_plazas:
+    results:
+      title: "Eleven squares voting results"
+      description: "Look at the results of the public consultation on the remodeling of eleven squares in Madrid and the winning projects that will change those public spaces."
+      social: "Results of the citizen consultation #Vota11Plazas: spaces that will be remodeled and winning architectural projects"
+    stats:
+      title: "Eleven squares voting statistics"
+      description: "Look at the statistics of the public consultation on the remodeling of eleven squares in Madrid.Check out the participation by sex, by age and how many people participated by district."
+      social: "Statistics of the participation by district, sex and age of the citizen consultation #Vota11Plazas"

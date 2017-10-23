@@ -9,6 +9,10 @@ module Abilities
       can :read, Poll
       cannot :results, Poll, results_enabled: false
       cannot :stats, Poll, stats_enabled: false
+
+      can :results_2018, Poll, results_enabled: true
+      can :stats_2018, Poll, stats_enabled: true
+
       can :read, Poll::Question
       can [:read, :welcome], Budget
       can [:read, :welcome, :select_district], SpendingProposal

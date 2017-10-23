@@ -138,6 +138,8 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
+  get "vota/stats_2018", to: "polls#stats_2018", as: 'poll_stats_2018'
+  get "vota/results_2018", to: "polls#results_2018", as: 'poll_results_2018'
   resources :polls, only: [:show, :index], path: 'vota' do
     get :stats
     get :results
@@ -617,6 +619,10 @@ Rails.application.routes.draw do
   get 'primera-votacion-ciudadana-estadisticas', to: 'polls#stats_2017',    as: 'primera_votacion_stats'
   get 'primera-votacion-ciudadana-informacion',  to: 'polls#info_2017',     as: 'primera_votacion_info'
   get 'primera-votacion-ciudadana-resultados',   to: 'polls#results_2017',  as: 'first_voting'
+
+  #Once plazas results & stats
+  get 'resultados-once-plazas',    to: 'polls#results_2018',  as: 'once_plazas_results'
+  get 'estadisticas-once-plazas',  to: 'polls#stats_2018',    as: 'once_plazas_stats'
 
   # more information pages
   get 'mas-informacion',                             to: 'pages#show', id: 'more_info/index',                 as: 'more_info'
