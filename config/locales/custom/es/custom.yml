@@ -239,6 +239,7 @@ es:
     show:
       results:
         tab: "Resultados de la votación"
+        more_info: "Más información sobre la votación %{poll}"
       stats:
         tab: "Estadísticas de participación"
         polls: "Votaciones"

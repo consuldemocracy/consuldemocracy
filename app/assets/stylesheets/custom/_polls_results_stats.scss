@@ -98,8 +98,7 @@
   }
 }
 
-.polls-stats,
-.polls-results-stats {
+.polls-stats {
 
   h4 {
     background: #000;
@@ -111,6 +110,10 @@
     text-transform: uppercase;
     padding: $line-height / 2;
   }
+}
+
+.polls-stats,
+.polls-results-stats {
 
   .stat-number {
     text-transform: uppercase;
@@ -166,6 +169,10 @@
       }
     }
   }
+}
+
+.polls-results-stats hr {
+  margin: $line-height * 2 0;
 }
 
 // Fixes tables on mobile version

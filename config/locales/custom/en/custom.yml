@@ -236,6 +236,7 @@ en:
     show:
       results:
         tab: "Poll results"
+        more_info: "More information about voting %{poll}"
       stats:
         tab: "Participation stats"
         polls: "Polls"
