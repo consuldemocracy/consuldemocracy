@@ -446,9 +446,7 @@ es:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Moderadores: Búsqueda de usuarios'
     newsletters:
       index:
         title: Envío de newsletters

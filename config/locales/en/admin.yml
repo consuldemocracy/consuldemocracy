@@ -446,9 +446,7 @@ en:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Moderators: User search'
     newsletters:
       index:
         title: Newsletters

@@ -2,30 +2,15 @@
 
 <h2 class="inline-block"><%= t("admin.moderators.index.title") %></h2>
 
-<div class="row">
-  <%= form_tag search_admin_moderators_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, '', placeholder: t('admin.moderators.search.email_placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.moderators.search.search'), class: 'button' %>
-    </div>
-  <% end %>
-</div>
-
-<div id="search-result" class="row"></div>
+<%= render 'admin/shared/user_search', url: search_admin_moderators_path %>
 
 <h3><%= page_entries_info @moderators %></h3>
 
 <table id="moderators">
   <% @moderators.each do |moderator| %>
     <tr>
-      <td>
-        <%= moderator.name %>
-      </td>
-      <td>
-        <%= moderator.email %>
-      </td>
+      <td><%= moderator.name %></td>
+      <td><%= moderator.email %></td>
       <td class="text-right">
         <% if moderator.persisted? %>
           <%= link_to t('admin.moderators.moderator.delete'),
@@ -35,7 +20,8 @@
           %>
         <% else %>
           <%= link_to t('admin.moderators.moderator.add'),
-                      { controller: "admin/moderators", action: :create,
+                      { controller: "admin/moderators",
+                        action: :create,
                         user_id: moderator.user_id },
                       method: :post,
                       class: "button success" %>
