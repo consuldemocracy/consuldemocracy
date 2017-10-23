@@ -42,14 +42,23 @@
 </div>
 
 <div class="polls-results-stats">
-  <% @polls.each do |poll| %>
-    <div class="row margin-top">
-      <div class="small-12 medium-9 column">
-        <h3><%= poll.name %></h3>
-      </div>
+  <div class="row margin-top" data-equalizer data-equalize-on="medium">
+    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.stats.polls") %></strong></p>
+      <ul class="menu vertical margin-top">
+        <% @polls.each do |poll| %>
+          <li><a href="#poll_<%= poll.id %>"><%= poll.name %></a></li>
+        <% end %>
+      </ul>
     </div>
 
-  	<%= render "results_2018", poll: poll %>
+    <div class="small-12 medium-9 column" data-equalizer-watch>
+      <% @polls.each do |poll| %>
+        <div class="margin">
+          <h3 id="poll_<%= poll.id %>"><%= poll.name %></h3>
+        </div>
+
+  	   <%= render "results_2018", poll: poll %>
     <hr>
   <% end %>
 </div>
