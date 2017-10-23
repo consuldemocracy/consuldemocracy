@@ -1,0 +1,5 @@
+<% @polls.each do |poll| %>
+  <h3><%= poll.name %></h3>
+
+	<%= render "results_2018", poll: poll %>
+<% end %>

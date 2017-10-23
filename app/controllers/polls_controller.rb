@@ -61,6 +61,14 @@ class PollsController < ApplicationController
   def info_2017
   end
 
+  def stats_2018
+    @polls = Poll.all
+  end
+
+  def results_2018
+    @polls = Poll.all
+  end
+
   private
 
     def load_poll

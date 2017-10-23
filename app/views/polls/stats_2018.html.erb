@@ -1,0 +1,23 @@
+<% @polls.each do |poll| %>
+  <h3><%= poll.name %></h3>
+
+  <div class="row margin" data-equalizer data-equalize-on="medium">    
+  	<div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+    <p><strong><%= t("polls.show.stats.title") %></strong></p>
+
+    <ul class="menu vertical margin-top">
+      <li><a href="#total"><%= t("polls.show.stats.total_participation") %></a></li>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-9 column" data-equalizer-watch>
+    <h3 id="total"><%= t("polls.show.stats.total_participation") %></h3>
+
+    <p class="margin-top uppercase">
+      <%= t("polls.show.stats.total_votes") %><br>
+      <span class="number"><%# @stats[:total_participants] %></span>
+    </p>
+
+		<%= render "stats_2018", poll: poll %>
+	</div>
+<% end %>
