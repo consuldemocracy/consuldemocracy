@@ -544,6 +544,7 @@ es:
         white: "En blanco"
         null_votes: "Nulos"
       results:
+        title: "Preguntas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
     create_question: "Crear pregunta para votación"

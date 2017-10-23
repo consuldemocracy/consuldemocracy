@@ -543,6 +543,7 @@ en:
         white: "White votes"
         null_votes: "Invalid"
       results:
+        title: "Questions"
         most_voted_answer: "Most voted answer: "
   poll_questions:
     create_question: "Create question"
