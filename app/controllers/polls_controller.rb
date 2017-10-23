@@ -62,11 +62,19 @@ class PollsController < ApplicationController
   end
 
   def stats_2018
-    @polls = Poll.all
+    if Rails.env.development?
+      @polls = Poll.expired
+    else
+      @polls = Poll.where(starts_at: Time.parse('08-10-2017'), ends_at: Time.parse('22-10-2017'))
+    end
   end
 
   def results_2018
-    @polls = Poll.all
+    if Rails.env.development?
+      @polls = Poll.expired
+    else
+      @polls = Poll.where(starts_at: Time.parse('08-10-2017'), ends_at: Time.parse('22-10-2017'))
+    end
   end
 
   private
