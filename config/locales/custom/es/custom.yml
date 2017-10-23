@@ -242,6 +242,9 @@ es:
     information: Información
     more_poll_info: Más información sobre las votaciones
     full_recount_results: Resultados con el 100% de los votos escrutados
+    show:
+      stats:
+        polls: "Votaciones"
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA
     date: 13-19 DE FEBRERO 2017

@@ -239,6 +239,9 @@ en:
     information: Information
     more_poll_info: More information about polls
     full_recount_results: Results with 100% of the votes counted
+    show:
+      stats:
+        polls: "Polls"
   first_2017_poll:
     title: FIRST CITIZEN POLL
     date: FEBRUARY 13th-19th, 2017
