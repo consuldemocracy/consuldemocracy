@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021142317) do
+ActiveRecord::Schema.define(version: 20171020163240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -762,6 +762,7 @@ ActiveRecord::Schema.define(version: 20171021142317) do
     t.text    "description"
     t.integer "question_id"
     t.integer "given_order", default: 1
+    t.boolean "most_voted",  default: false
   end
 
   add_index "poll_question_answers", ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
@@ -822,9 +823,9 @@ ActiveRecord::Schema.define(version: 20171021142317) do
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "poll_id",                      null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "poll_id",               null: false
     t.integer  "booth_assignment_id"
     t.integer  "age"
     t.string   "gender"
@@ -835,8 +836,6 @@ ActiveRecord::Schema.define(version: 20171021142317) do
     t.string   "origin"
     t.integer  "officer_id"
     t.string   "token"
-    t.integer  "actual_booth_assignment_id"
-    t.integer  "actual_officer_assignment_id"
   end
 
   add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree
@@ -859,6 +858,8 @@ ActiveRecord::Schema.define(version: 20171021142317) do
     t.integer  "author_id"
     t.datetime "hidden_at"
     t.string   "slug"
+    t.boolean  "results_enabled",    default: false
+    t.boolean  "stats_enabled",      default: false
   end
 
   add_index "polls", ["starts_at", "ends_at"], name: "index_polls_on_starts_at_and_ends_at", using: :btree
