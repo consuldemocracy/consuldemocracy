@@ -83,17 +83,18 @@ feature 'Poll Officing' do
     expect(page).to_not have_content "You do not have permission to access this page"
   end
 
-  scenario 'Access as an poll officer is authorized' do
-    create(:poll_officer, user: user)
+  scenario 'Access as an administrator is not authorized' do
+    create(:administrator, user: user)
     create(:poll)
     login_as(user)
     visit root_path
 
-    expect(page).to have_link("Polling officers")
-    click_on "Polling officers"
+    expect(page).to_not have_link("Polling officers")
+    visit officing_root_path
 
-    expect(current_path).to eq(officing_root_path)
-    expect(page).to_not have_content "You do not have permission to access this page"
+    expect(current_path).not_to eq(officing_root_path)
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content "You do not have permission to access this page"
   end
 
   scenario "Poll officer access links" do

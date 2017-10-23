@@ -171,9 +171,8 @@ es:
   welcome:
     header:
       label: Nueva votación ciudadana
-      title: Vota once plazas
-      text: Hasta el 22 de octubre, decide sobre la remodelación de las plazas de once distritos Madrid.
-      button: Vota aquí
+      title: Consulta ciudadana once plazas
+      text: Los resultados de la votación se harán públicos el martes 24 de octubre.
     green_areas:
       label: "Debate previo"
       title: "Zonas verdes de Madrid"
