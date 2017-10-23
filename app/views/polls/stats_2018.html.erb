@@ -68,11 +68,6 @@
         <div class="margin-bottom">
           <h3 id="poll_<%= poll.id %>"><%= poll.name %></h3>
 
-          <p class="margin-top uppercase">
-            <%= t("polls.show.stats.total_votes") %><br>
-            <span class="number"><%# @stats[:total_participants] %></span>
-          </p>
-
       		<%= render "stats_2018", poll: poll %>
         </div>
       <% end %>

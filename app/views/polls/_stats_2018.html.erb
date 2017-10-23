@@ -1,5 +1,12 @@
 <% stats = Poll::Stats.new(poll).generate %>
 
+<p class="margin-top uppercase">
+  <%= t("polls.show.stats.total_votes") %><br>
+  <span class="number">
+    <%= stats[:total_participants_web] + stats[:total_participants_booth] %>
+  </span>
+</p>
+
 <table>
   <thead>
     <tr>
