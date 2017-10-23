@@ -47,7 +47,13 @@ class Poll
       end
 
       def total_web_white
-        stats_cache('total_web_white') { @poll.questions.inject(0) { |total, question| total + question.blank_by_omission_votes } }
+        stats_cache('total_web_white') do
+          @poll.questions.inject(0) do |total, question|
+            # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+            # FIXME: Implement the "Blank Answers" feature at Consul
+            total + (question.blank_by_omission_votes + Poll::Answer.where(question: question, answer: 'En blanco').count)
+          end
+        end
       end
 
       def white_percentage_web
