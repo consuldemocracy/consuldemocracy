@@ -1,4 +1,4 @@
-<h3 id="11">Participación por grupos de edad</h3>
+<h3 id="age">Participación por grupos de edad</h3>
 
 <table class="polls-participation-age margin-top">
   <thead>
@@ -6,7 +6,6 @@
       <th scope="col" class="border-right">EDAD</th>
       <th scope="col">WEB</th>
       <th scope="col">URNAS</th>
-      <th scope="col">CORREO</th>
       <th scope="col" class="border-left">TOTAL</th>
     </tr>
   </thead>
@@ -24,7 +23,7 @@
           <% end %>
         </td>
 
-        <% ::Poll::Voter::VALID_ORIGINS.each do |origin| %>
+        <% ['web', 'booth'].each do |origin| %>
           <td>
             <div class="progress" role="progressbar" tabindex="0"
                  aria-valuetext="<%= percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%"

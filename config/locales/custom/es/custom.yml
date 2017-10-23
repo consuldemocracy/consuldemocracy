@@ -239,9 +239,15 @@ es:
     show:
       results:
         tab: "Resultados de la votación"
+        more_info: "Más información sobre la votación %{poll}"
       stats:
         tab: "Estadísticas de participación"
         polls: "Votaciones"
+        data: "Datos de participación"
+        total: "Participación total"
+        gender: "Participación por sexo"
+        age: "Participación por grupos de edad"
+        district: "Participación por distrito"
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA
     date: 13-19 DE FEBRERO 2017
