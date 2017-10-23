@@ -57,4 +57,15 @@ class Poll::Question < ActiveRecord::Base
     where(poll_id: Poll.answerable_by(user).pluck(:id))
   end
 
+  def answers_total_votes
+    Poll::Answer.where(question: self).count + blank_by_omission_votes
+  end
+
+  # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+  # FIXME: Implement the "Blank Answers" feature at Consul
+  def blank_by_omission_votes
+    blanks = Poll::Answer.where(question: poll.questions.where.not(id: id)).count - Poll::Answer.where(question: self).count
+    blanks.positive? ? blanks : 0
+  end
+
 end

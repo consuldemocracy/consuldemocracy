@@ -27,8 +27,13 @@ class PollsController < ApplicationController
 
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
+  end
 
+  def stats
     @stats = Poll::Stats.new(@poll).generate
+  end
+
+  def results
   end
 
   def results_2017
@@ -56,9 +61,31 @@ class PollsController < ApplicationController
   def info_2017
   end
 
+  def stats_2018
+    if Rails.env.development?
+      @polls = Poll.expired
+    else
+      @polls = Poll.where(starts_at: Time.parse('08-10-2017'), ends_at: Time.parse('22-10-2017'))
+    end
+
+    @totals = Stat.hash("polls_2018_participation")['totals']
+    @poll_stats = Stat.hash("polls_2018_polls")
+    @age_stats = Stat.hash("polls_2018_age")
+    @gender_stats = Stat.hash("polls_2018_gender")
+    @district_stats = Stat.hash("polls_2018_district")
+  end
+
+  def results_2018
+    if Rails.env.development?
+      @polls = Poll.expired
+    else
+      @polls = Poll.where(starts_at: Time.parse('08-10-2017'), ends_at: Time.parse('22-10-2017'))
+    end
+  end
+
   private
 
     def load_poll
-      @poll = Poll.where(slug: params[:id]).first || Poll.where(id: params[:id]).first
+      @poll = Poll.where(slug: params[:id]).first || Poll.where(slug: params[:poll_id]).first
     end
 end

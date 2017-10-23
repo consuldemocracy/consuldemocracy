@@ -1,0 +1,56 @@
+<h3 id="age">Participación por grupos de edad</h3>
+
+<table class="polls-participation-age margin-top">
+  <thead>
+    <tr>
+      <th scope="col" class="border-right">EDAD</th>
+      <th scope="col">WEB</th>
+      <th scope="col">URNAS</th>
+      <th scope="col" class="border-left">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% ::Poll::AGE_STEPS.each_with_index do |age, i| %>
+      <tr>
+        <% next_age = ::Poll::AGE_STEPS[i+1] %>
+
+        <td class="border-right">
+          <% if next_age.present? %>
+            <%= "De #{age} a #{next_age - 1} años" %>
+          <% else %>
+            <%= "De #{age} y más años" %>
+          <% end %>
+        </td>
+
+        <% ['web', 'booth'].each do |origin| %>
+          <td>
+            <div class="progress" role="progressbar" tabindex="0"
+                 aria-valuetext="<%= percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%"
+                 aria-valuemin="0" aria-valuemax="100">
+              <span class="progress-meter <%= origin %>" style="width: <%= @age_stats[age.to_s][origin]*100*6/@age_stats['all']['total'] rescue 0 %>%">
+                <span class="progress-meter-text">
+                  <%= @age_stats[age.to_s][origin] %>
+                  (<%=  percent_stat(@age_stats[age.to_s][origin], @age_stats['all']['total']) %>%)
+                </span>
+              </span>
+            </div>
+          </td>
+        <% end %>
+
+        <td class="border-left">
+          <strong>
+            <%= @age_stats[age.to_s]['total'] %>
+            (<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0"
+               aria-valuetext="<%= percent_stat(@age_stats[age.to_s]['total'], @age_stats['all']['total']) %>%"
+               aria-valuemin="0" aria-valuemax="100">
+            <span class="progress-meter" style="width: <%= @age_stats[age.to_s]['total']*100*6/@age_stats['all']['total'] rescue 0 %>%"></span>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>

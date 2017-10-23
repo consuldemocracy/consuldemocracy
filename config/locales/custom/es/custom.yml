@@ -170,9 +170,10 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      label: Nueva votación ciudadana
-      title: Consulta ciudadana once plazas
-      text: Los resultados de la votación se harán públicos el martes 24 de octubre.
+      label: "Fin de la votación ciudadana"
+      title: "Resultados de la consulta ciudadana Once Plazas"
+      text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
+      button: "Ver resultados"
     green_areas:
       label: "Debate previo"
       title: "Zonas verdes de Madrid"
@@ -185,12 +186,6 @@ es:
       text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
       link: "Ver resultados de los presupuestos participativos"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-    once_plazas:
-      label: "Once plazas"
-      title: "Puntos de votación"
-      text: "El sábado 21 y el domingo 22 de octubre, de 10 a 19h, la ciudadanía madrileña puede votar en urnas si quiere remodelar o no 11 plazas de distritos periféricos de Madrid."
-      link: "Ver puntos de votación"
-      alt: "Imagen del mapa de los puntos de votación para 11 plazas"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
@@ -241,6 +236,18 @@ es:
     information: Información
     more_poll_info: Más información sobre las votaciones
     full_recount_results: Resultados con el 100% de los votos escrutados
+    show:
+      results:
+        tab: "Resultados de la votación"
+        more_info: "Más información sobre la votación %{poll}"
+      stats:
+        tab: "Estadísticas de participación"
+        polls: "Votaciones"
+        data: "Datos de participación"
+        total: "Participación total"
+        gender: "Participación por sexo"
+        age: "Participación por grupos de edad"
+        district: "Participación por distrito"
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA
     date: 13-19 DE FEBRERO 2017
@@ -253,3 +260,17 @@ es:
     stats:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
+  once_plazas:
+    title: "Once plazas"
+    date: "8-22 de octubre de 2017"
+    title_results: "Resultados"
+    title_stats: "Estadísticas"
+    more_info: "Más información sobre las votaciones"
+    results:
+      title: "Resultados de la votación once plazas"
+      description: "Mira los resultados de la consulta ciudadana sobre la remodelación de once plazas de Madrid y los proyectos ganadores con los que se cambiarán esos espacios públicos."
+      social: "Resultados de la consulta ciudadana #Vota11Plazas: espacios que se remodelarán y proyectos arquitectónicos ganadores"
+    stats:
+      title: "Estadísticas de la votación once plazas"
+      description: "Mira las estadísticas de la consulta ciudadana sobre la remodelación de once plazas de Madrid. Entérate de la participación por sexo, por edad y cuántas personas participaron por distrito."
+      social: "Estadísticas de la participación por distrito, sexo y edad de la consulta ciudadana #Vota11Plazas"

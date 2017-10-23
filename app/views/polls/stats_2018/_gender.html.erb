@@ -1,0 +1,54 @@
+<h3 id="gender">Participación por sexo</h3>
+
+<div class="row">
+  <div class="small-12 column text-center margin-top">
+    <%
+      total = @gender_stats['all']['total']
+      h = (total > 0 ? (@gender_stats['male']['uniq_total']*10.0/total).round : 0)
+      h.times do
+    %>
+      <%= image_tag ("polls/stats_man.png") %>
+    <% end %>
+    <% (10 - h).times do %>
+      <%= image_tag ("polls/stats_woman.png") %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-6 column text-right">
+    <p class="stat-number margin-top">
+      Hombres (<%= percent_stat(@gender_stats['male']['uniq_total'], total)%>%)<br>
+      <span><%= @gender_stats['male']['uniq_total'] %></span>
+    </p>
+  </div>
+  <div class="small-12 medium-6 column">
+
+    <p class="stat-number margin-top">
+      Mujeres (<%= percent_stat(@gender_stats['female']['uniq_total'], total)%>%)<br>
+      <span><%= @gender_stats['female']['uniq_total'] %></span>
+    </p>
+  </div>
+</div>
+
+<table class="polls-total-stats">
+  <thead>
+    <tr>
+      <th scope="col" class="border-right">SEXO</th>
+      <th scope="col">WEB</th>
+      <th scope="col">URNAS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="text-left border-right">Hombres</th>
+      <td><%= @gender_stats['male']['web'] %> <small><em>(<%= percent_stat(@gender_stats['male']['web'], @gender_stats['male']['total'])%>%)</em></small></td>
+      <td><%= @gender_stats['male']['booth'] %> <small><em>(<%= percent_stat(@gender_stats['male']['booth'], @gender_stats['male']['total'])%>%)</em></small></td>
+    </tr>
+    <tr>
+      <th scope="row" class="text-left border-right">Mujeres</th>
+      <td><%= @gender_stats['female']['web'] %> <small><em>(<%= percent_stat(@gender_stats['female']['web'], @gender_stats['female']['total'])%>%)</em></small></td>
+      <td><%= @gender_stats['female']['booth'] %> <small><em>(<%= percent_stat(@gender_stats['female']['booth'], @gender_stats['female']['total'])%>%)</em></small></td>
+    </tr>
+  </tbody>
+</table>
