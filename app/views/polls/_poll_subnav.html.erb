@@ -9,7 +9,7 @@
               <h2><%= t("polls.show.results_menu") %></h2>
             </li>
           <% else %>
-            <li><%= link_to t("polls.show.results_menu"), poll_results_path(poll_id: @poll.slug || @poll.id) %></li>
+            <li><%= link_to t("polls.show.results_menu"), poll_results_path(poll_id: @poll.slug) %></li>
           <% end %>
         <% end %>
 
@@ -19,7 +19,7 @@
               <h2><%= t("polls.show.stats_menu") %></h2>
             </li>
           <% else %>
-            <li><%= link_to t("polls.show.stats_menu"), poll_stats_path(poll_id: @poll.slug || @poll.id) %></li>
+            <li><%= link_to t("polls.show.stats_menu"), poll_stats_path(poll_id: @poll.slug) %></li>
           <% end %>
         <% end %>
 
@@ -28,7 +28,7 @@
             <h2><%= t("polls.show.info_menu") %></h2>
           </li>
         <% else %>
-          <li><%= link_to t("polls.show.info_menu"), poll_path(id: @poll.slug || @poll.id) %></li>
+          <li><%= link_to t("polls.show.info_menu"), poll_path(id: @poll.slug) %></li>
         <% end %>
       </ul>
     </div>
