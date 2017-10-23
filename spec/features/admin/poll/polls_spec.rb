@@ -60,6 +60,10 @@ feature 'Admin polls' do
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
     fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
     fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
+
+    expect(page).to_not have_css("#poll_results_enabled")
+    expect(page).to_not have_css("#poll_stats_enabled")
+
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
@@ -78,6 +82,9 @@ feature 'Admin polls' do
     end_date = 1.year.from_now
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
+
+    expect(page).to have_css("#poll_results_enabled")
+    expect(page).to have_css("#poll_stats_enabled")
 
     fill_in "poll_name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
