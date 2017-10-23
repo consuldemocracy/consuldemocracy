@@ -67,6 +67,12 @@ class PollsController < ApplicationController
     else
       @polls = Poll.where(starts_at: Time.parse('08-10-2017'), ends_at: Time.parse('22-10-2017'))
     end
+
+    @totals = Stat.hash("polls_2018_participation")['totals']
+    @poll_stats = Stat.hash("polls_2018_polls")
+    @age_stats = Stat.hash("polls_2018_age")
+    @gender_stats = Stat.hash("polls_2018_gender")
+    @district_stats = Stat.hash("polls_2018_district")
   end
 
   def results_2018
