@@ -243,7 +243,10 @@ es:
     more_poll_info: Más información sobre las votaciones
     full_recount_results: Resultados con el 100% de los votos escrutados
     show:
+      results:
+        tab: "Resultados de la votación"
       stats:
+        tab: "Estadísticas de participación"
         polls: "Votaciones"
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA

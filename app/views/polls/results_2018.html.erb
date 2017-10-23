@@ -28,6 +28,19 @@
   </div>
 </div>
 
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="menu simple clear">
+      <li class="active">
+        <h2><%= t("polls.show.results.tab") %></h2>
+      </li>
+      <li>
+        <%= link_to t("polls.show.stats.tab"), once_plazas_stats_path %>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <div class="polls-results-stats">
   <% @polls.each do |poll| %>
     <div class="row margin-top">

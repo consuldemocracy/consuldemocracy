@@ -28,6 +28,19 @@
   </div>
 </div>
 
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="menu simple clear">
+      <li>
+        <%= link_to t("polls.show.results.tab"), once_plazas_results_path %>
+      </li>
+      <li class="active">
+        <h2><%= t("polls.show.stats.tab") %></h2>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <div class="polls-results-stats">
   <div class="row margin-top" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
