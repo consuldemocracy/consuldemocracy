@@ -917,7 +917,7 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
-        polls: Votaciones
+        polls: Polls
       direct_messages:
         title: Direct messages
         total: Total
