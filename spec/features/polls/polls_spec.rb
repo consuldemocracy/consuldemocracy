@@ -59,6 +59,22 @@ feature 'Polls' do
       expect(page).to have_link('Incoming')
       expect(page).to_not have_link('Expired')
     end
+
+    scenario "Poll title link to stats if enabled" do
+      poll = create(:poll, name: "Poll with stats", stats_enabled: true)
+
+      visit polls_path
+
+      expect(page).to have_link("Poll with stats", href: poll_stats_path(poll))
+    end
+
+    scenario "Poll title link to results if enabled" do
+      poll = create(:poll, name: "Poll with results", stats_enabled: true, results_enabled: true)
+
+      visit polls_path
+
+      expect(page).to have_link("Poll with results", href: poll_results_path(poll))
+    end
   end
 
   context 'Show' do
