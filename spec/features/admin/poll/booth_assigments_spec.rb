@@ -7,66 +7,109 @@ feature 'Admin booths assignments' do
     login_as(admin.user)
   end
 
-  scenario 'Assign booth to poll', :js do
-    poll = create(:poll)
-    booth = create(:poll_booth)
+  feature 'Admin Booth Assignment management' do
 
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (0)'
+    let!(:poll) { create(:poll) }
+    let!(:booth) { create(:poll_booth) }
+
+    scenario 'List Polls and Booths to manage', :js do
+      second_poll = create(:poll)
+      second_booth = create(:poll_booth)
+
+      visit booth_assignments_admin_polls_path
+
+      expect(page).to have_content(poll.name)
+      expect(page).to have_content(second_poll.name)
+
+      within("#poll_#{second_poll.id}") do
+        click_link 'Manage assignments'
+      end
+
+      expect(page).to have_content "Assignments for poll '#{second_poll.name}'"
+
+      expect(page).to have_content(booth.name)
+      expect(page).to have_content(second_booth.name)
     end
 
-    expect(page).to have_content 'There are no booths assigned to this poll.'
+    scenario 'Assign booth to poll', :js do
+      visit admin_poll_path(poll)
+      within('#poll-resources') do
+        click_link 'Booths (0)'
+      end
 
-    fill_in 'search-booths', with: booth.name
-    click_button 'Search'
-    expect(page).to have_content(booth.name)
+      expect(page).to have_content 'There are no booths assigned to this poll.'
+      expect(page).to_not have_content booth.name
 
-    within('#search-booths-results') do
-      click_link 'Assign booth'
+      fill_in 'search-booths', with: booth.name
+      click_button 'Search'
+      expect(page).to have_content(booth.name)
+
+      visit manage_admin_poll_booth_assignments_path(poll)
+
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
+
+      within("#poll_booth_#{booth.id}") do
+        expect(page).to have_content(booth.name)
+        expect(page).to have_content "Unassigned"
+
+        click_link 'Assign booth'
+
+        expect(page).not_to have_content "Unassigned"
+        expect(page).to have_content "Assigned"
+        expect(page).to have_link "Unassign booth"
+      end
+
+      visit admin_poll_path(poll)
+      within('#poll-resources') do
+        click_link 'Booths (1)'
+      end
+
+      expect(page).to_not have_content 'There are no booths assigned to this poll.'
+      expect(page).to have_content booth.name
     end
 
-    expect(page).to have_content 'Booth assigned'
+    scenario 'Unassign booth from poll', :js do
+      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (1)'
+      visit admin_poll_path(poll)
+      within('#poll-resources') do
+        click_link 'Booths (1)'
+      end
+
+      expect(page).not_to have_content 'There are no booths assigned to this poll.'
+      expect(page).to have_content booth.name
+
+      fill_in 'search-booths', with: booth.name
+      click_button 'Search'
+      expect(page).to have_content(booth.name)
+
+      visit manage_admin_poll_booth_assignments_path(poll)
+
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
+
+      within("#poll_booth_#{booth.id}") do
+        expect(page).to have_content(booth.name)
+        expect(page).to have_content "Assigned"
+
+        click_link 'Unassign booth'
+
+        expect(page).to have_content "Unassigned"
+        expect(page).not_to have_content "Assigned"
+        expect(page).to have_link "Assign booth"
+      end
+
+      visit admin_poll_path(poll)
+      within('#poll-resources') do
+        click_link 'Booths (0)'
+      end
+
+      expect(page).to have_content 'There are no booths assigned to this poll.'
+      expect(page).not_to have_content booth.name
     end
-
-    expect(page).to_not have_content 'There are no booths assigned to this poll.'
-    expect(page).to have_content booth.name
-  end
-
-  scenario 'Remove booth from poll', :js do
-    poll = create(:poll)
-    booth = create(:poll_booth)
-    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (1)'
-    end
-
-    expect(page).to_not have_content 'There are no booths assigned to this poll.'
-    expect(page).to have_content booth.name
-
-    within("#poll_booth_assignment_#{assignment.id}") do
-      click_link 'Remove booth from poll'
-    end
-
-    expect(page).to have_content 'Booth not assigned anymore'
-
-    visit admin_poll_path(poll)
-    within('#poll-resources') do
-      click_link 'Booths (0)'
-    end
-
-    expect(page).to have_content 'There are no booths assigned to this poll.'
-    expect(page).to_not have_content booth.name
   end
 
   feature 'Show' do
-    scenario 'Lists all assigned poll oficers' do
+    scenario 'Lists all assigned poll officers' do
       poll = create(:poll)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
