@@ -459,9 +459,7 @@ en:
         user_found: User found
         add: Add to valuators
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Valuators: User search'
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator

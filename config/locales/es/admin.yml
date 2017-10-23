@@ -459,9 +459,7 @@ es:
         user_found: Usuario encontrado
         add: Añadir como evaluador
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Evaluadores: Búsqueda de usuarios'
       summary:
         title: Resumen de evaluación de propuestas de inversión
         valuator_name: Evaluador
