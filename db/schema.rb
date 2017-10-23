@@ -666,6 +666,7 @@ ActiveRecord::Schema.define(version: 20171020163240) do
     t.text    "description"
     t.integer "question_id"
     t.integer "given_order", default: 1
+    t.boolean "most_voted",  default: false
   end
 
   add_index "poll_question_answers", ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree

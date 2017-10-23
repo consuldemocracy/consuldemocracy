@@ -7,6 +7,8 @@ module Abilities
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
       can :read, Poll
+      cannot :results, Poll, results_enabled: false
+      cannot :stats, Poll, stats_enabled: false
       can :read, Poll::Question
       can [:read, :welcome], Budget
       can :read, SpendingProposal
@@ -23,7 +25,6 @@ module Abilities
       can [:read], Legislation::Question
       can [:create], Legislation::Answer
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
-      can :read_stats, Poll
     end
   end
 end
