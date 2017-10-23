@@ -367,17 +367,74 @@ feature 'Polls' do
     end
 
   end
-  
+
   context "Results and stats" do
-    scenario "See polls statistics", :js do
+    scenario "Show poll results and stats if enabled and poll expired" do
+      poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
       user = create(:user)
-      poll = create(:poll, summary: "Summary", description: "Description")
+
       login_as user
       visit poll_path(poll)
-      
-      click_link "Participation statistics"
-      
-      expect(page).to have_content("Total participation")      
+
+      expect(page).to have_content("Poll results")
+      expect(page).to have_content("Participation statistics")
+
+      visit poll_results_path(poll)
+      expect(page.driver.status_code).to eq(200)
+
+      visit poll_stats_path(poll)
+      expect(page.driver.status_code).to eq(200)
+    end
+
+    scenario "Don't show poll results and stats if not enabled" do
+      poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
+      user = create(:user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to_not have_content("Poll results")
+      expect(page).to_not have_content("Participation statistics")
+
+      visit poll_results_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+
+      visit poll_stats_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
+    end
+
+    scenario "Don't show poll results and stats if is not expired" do
+      poll = create(:poll, :current, results_enabled: true, stats_enabled: true)
+      user = create(:user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to_not have_content("Poll results")
+      expect(page).to_not have_content("Participation statistics")
+
+      visit poll_results_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+
+      visit poll_stats_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
+    end
+
+    scenario "Show poll results and stats if user is administrator" do
+      poll = create(:poll, :current, results_enabled: false, stats_enabled: false)
+      user = create(:administrator).user
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to have_content("Poll results")
+      expect(page).to have_content("Participation statistics")
+
+      visit poll_results_path(poll)
+      expect(page.driver.status_code).to eq(200)
+
+      visit poll_stats_path(poll)
+      expect(page.driver.status_code).to eq(200)
     end
   end
 end
