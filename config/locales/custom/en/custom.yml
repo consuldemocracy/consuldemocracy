@@ -258,6 +258,11 @@ en:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
   once_plazas:
+    title: "Eleven squares"
+    date: "October 8-22, 2017"
+    title_results: "Results"
+    title_stats: "Statistics"
+    more_info: "More info about voting"
     results:
       title: "Eleven squares voting results"
       description: "Look at the results of the public consultation on the remodeling of eleven squares in Madrid and the winning projects that will change those public spaces."

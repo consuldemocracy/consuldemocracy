@@ -11,20 +11,20 @@
   <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_resultados_once_plazas.jpg"/>
 <% end %>
 
-<div class="expanded no-margin-top polls-show-header">
+<div class="expanded no-margin-top polls-show-header once-plazas">
   <div class="row">
     <div class="small-12 medium-9 column padding">
-      <h2><%= t("once_plazas.results.title") %></h2>
+      <h2 class="uppercase">
+        <%= t("once_plazas.title_results") %>
+        <span><%= t("once_plazas.title") %></span>
+        <span><%= t("once_plazas.date") %></span>
+      </h2>
       <p><%= t("once_plazas.results.description") %></p>
     </div>
 
-    <aside class="small-12 medium-3 column margin-top">
-      <%= render partial: 'shared/social_share', locals: {
-        share_title: t("shared.share"),
-        title: t("once_plazas.results.title"),
-        url: once_plazas_results_url
-      } %>
-    </aside>
+    <div class="small-12 medium-3 column text-right margin">
+      <%= link_to t("once_plazas.more_info"), more_info_polls_october_path, class: "small" %>
+    </div>
   </div>
 </div>
 
