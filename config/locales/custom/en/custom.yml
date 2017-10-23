@@ -167,10 +167,10 @@ en:
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
     header:
-      label: New citizen voting
-      title: Vote eleven squares
-      text: Until October 22th, decide about the remodeling of eleven squares of Madrid.
-      button: Vote here
+      label: "End of citizen voting"
+      title: "Results of the public consultation Eleven Squares"
+      text: "Citizens have decided to remodel the eleven spaces that are put to a vote. Check out winning projects and participation statistics."
+      button: "See Results"
     green_areas:
       label: "Previous debate"
       title: "Green areas of Madrid"

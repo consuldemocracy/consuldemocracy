@@ -170,10 +170,10 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      label: Nueva votación ciudadana
-      title: Vota once plazas
-      text: Hasta el 22 de octubre, decide sobre la remodelación de las plazas de once distritos Madrid.
-      button: Vota aquí
+      label: "Fin de la votación ciudadana"
+      title: "Resultados de la consulta ciudadana Once Plazas"
+      text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
+      button: "Ver resultados"
     green_areas:
       label: "Debate previo"
       title: "Zonas verdes de Madrid"
