@@ -1,23 +1,70 @@
-<% @polls.each do |poll| %>
-  <h3><%= poll.name %></h3>
+<%= provide :title, t("once_plazas.stats.title") %>
+<%= provide :meta_description, t("once_plazas.stats.description") %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: once_plazas_stats_url,
+              social_title: t("once_plazas.stats.title"),
+              social_description: t("once_plazas.stats.social") %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <meta name="twitter:image" content="<%= root_url %>social_media_estadisticas_once_plazas_twitter.jpg" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_estadisticas_once_plazas.jpg"/>
+<% end %>
 
-  <div class="row margin" data-equalizer data-equalize-on="medium">    
-  	<div class="small-12 medium-3 column sidebar" data-equalizer-watch>
-    <p><strong><%= t("polls.show.stats.title") %></strong></p>
+<div class="expanded no-margin-top polls-show-header">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <h2><%= t("once_plazas.stats.title") %></h2>
+      <p><%= t("once_plazas.stats.description") %></p>
+    </div>
 
-    <ul class="menu vertical margin-top">
-      <li><a href="#total"><%= t("polls.show.stats.total_participation") %></a></li>
+    <aside class="small-12 medium-3 column margin-top">
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("shared.share"),
+        title: t("once_plazas.results.title"),
+        url: once_plazas_results_url
+      } %>
+    </aside>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <ul class="menu simple clear">
+      <li>
+        <%= link_to t("polls.show.results.tab"), once_plazas_results_path %>
+      </li>
+      <li class="active">
+        <h2><%= t("polls.show.stats.tab") %></h2>
+      </li>
     </ul>
   </div>
+</div>
 
-  <div class="small-12 medium-9 column" data-equalizer-watch>
-    <h3 id="total"><%= t("polls.show.stats.total_participation") %></h3>
+<div class="polls-results-stats">
+  <div class="row margin-top" data-equalizer data-equalize-on="medium">
+    <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.stats.polls") %></strong></p>
+      <ul class="menu vertical margin-top">
+        <% @polls.each do |poll| %>
+          <li><a href="#poll_<%= poll.id %>"><%= poll.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
 
-    <p class="margin-top uppercase">
-      <%= t("polls.show.stats.total_votes") %><br>
-      <span class="number"><%# @stats[:total_participants] %></span>
-    </p>
+    <div class="small-12 medium-9 column" data-equalizer-watch>
+      <% @polls.each do |poll| %>
+        <div class="margin">
+          <h3 id="poll_<%= poll.id %>"><%= poll.name %></h3>
 
-		<%= render "stats_2018", poll: poll %>
-	</div>
-<% end %>
+          <p class="margin-top uppercase">
+            <%= t("polls.show.stats.total_votes") %><br>
+            <span class="number"><%# @stats[:total_participants] %></span>
+          </p>
+
+      		<%= render "stats_2018", poll: poll %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
