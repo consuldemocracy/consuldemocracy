@@ -47,11 +47,11 @@ class Poll
       end
 
       def total_web_white
-        stats_cache('total_web_white') { 0 }
+        stats_cache('total_web_white') { @poll.questions.inject(0) { |total, question| total + question.blank_by_omission_votes } }
       end
 
       def white_percentage_web
-        stats_cache('white_percentage_web') { 0 }
+        stats_cache('white_percentage_web') { calculate_percentage(total_web_white, total_web_valid) }
       end
 
       def total_web_null
@@ -59,7 +59,7 @@ class Poll
       end
 
       def null_percentage_web
-        stats_cache('null_percentage_web') { 0 }
+        stats_cache('null_percentage_web') { calculate_percentage(total_web_null, total_web_valid) }
       end
 
       def total_booth_valid
