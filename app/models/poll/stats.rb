@@ -31,7 +31,7 @@ class Poll
       end
 
       def total_participants_booth
-        stats_cache('total_participants_booth') { voters.where(origin: 'booth').count }
+        stats_cache('total_participants_booth') { recounts.sum(:total_amount) }
       end
 
       def total_participants_booth_percentage
@@ -83,7 +83,7 @@ class Poll
       end
 
       def total_booth_valid
-        stats_cache('total_booth_valid') { recounts.sum(:total_amount) }
+        stats_cache('total_booth_valid') { total_participants_booth - total_booth_white - total_booth_null }
       end
 
       def valid_percentage_booth
@@ -139,7 +139,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v1", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v2", &block)
       end
 
   end
