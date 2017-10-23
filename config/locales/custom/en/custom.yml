@@ -251,3 +251,12 @@ en:
     stats:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
+  once_plazas:
+    results:
+      title: "Eleven squares voting results"
+      description: "Look at the results of the public consultation on the remodeling of eleven squares in Madrid and the winning projects that will change those public spaces."
+      social: "Results of the citizen consultation #Vota11Plazas: spaces that will be remodeled and winning architectural projects"
+    stats:
+      title: "Eleven squares voting statistics"
+      description: "Look at the statistics of the public consultation on the remodeling of eleven squares in Madrid.Check out the participation by sex, by age and how many people participated by district."
+      social: "Statistics of the participation by district, sex and age of the citizen consultation #Vota11Plazas"
