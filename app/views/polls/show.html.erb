@@ -15,7 +15,7 @@
         </div>
       <% else %>
 
-        <% if current_user && @poll.voted_in_web?(current_user) %>
+        <% if current_user && @poll.voted_in_web?(current_user) && !@poll.expired? %>
           <div class="callout warning">
             <%= t("polls.show.already_voted_in_web") %>
           </div>
