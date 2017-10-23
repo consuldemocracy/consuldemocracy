@@ -7,7 +7,7 @@
 
   <div class="row margin">
     <div class="small-12 medium-3 column sidebar">
-      <h4>Preguntas</h4>
+      <h4><%= t("polls.show.results.title") %></h4>
       <ul class="menu vertical">
         <%- @poll.questions.each do |question| %>
           <li><%=link_to question.title, "##{question.title.parameterize}" %></li>
