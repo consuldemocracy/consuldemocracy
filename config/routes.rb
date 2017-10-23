@@ -323,6 +323,7 @@ Rails.application.routes.draw do
     resource :stats, only: :show do
       get :proposal_notifications, on: :collection
       get :direct_messages, on: :collection
+      get :polls, on: :collection
     end
 
     namespace :legislation do
