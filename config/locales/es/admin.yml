@@ -525,6 +525,7 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
+        no_voting_days: "Los dias de votación terminaron"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
