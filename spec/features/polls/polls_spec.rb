@@ -65,7 +65,7 @@ feature 'Polls' do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with stats", href: poll_stats_path(poll))
+      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
     end
 
     scenario "Poll title link to results if enabled" do
@@ -73,7 +73,7 @@ feature 'Polls' do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with results", href: poll_results_path(poll))
+      expect(page).to have_link("Poll with results", href: results_poll_path(poll))
     end
   end
 
@@ -395,10 +395,10 @@ feature 'Polls' do
       expect(page).to have_content("Poll results")
       expect(page).to have_content("Participation statistics")
 
-      visit poll_results_path(poll)
+      visit results_poll_path(poll)
       expect(page).to have_content("Questions")
 
-      visit poll_stats_path(poll)
+      visit stats_poll_path(poll)
       expect(page).to have_content("Participation data")
     end
 
@@ -412,10 +412,10 @@ feature 'Polls' do
       expect(page).to_not have_content("Poll results")
       expect(page).to_not have_content("Participation statistics")
 
-      visit poll_results_path(poll)
+      visit results_poll_path(poll)
       expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
 
-      visit poll_stats_path(poll)
+      visit stats_poll_path(poll)
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
@@ -429,10 +429,10 @@ feature 'Polls' do
       expect(page).to_not have_content("Poll results")
       expect(page).to_not have_content("Participation statistics")
 
-      visit poll_results_path(poll)
+      visit results_poll_path(poll)
       expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
 
-      visit poll_stats_path(poll)
+      visit stats_poll_path(poll)
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
@@ -446,10 +446,10 @@ feature 'Polls' do
       expect(page).to have_content("Poll results")
       expect(page).to have_content("Participation statistics")
 
-      visit poll_results_path(poll)
+      visit results_poll_path(poll)
       expect(page).to have_content("Questions")
 
-      visit poll_stats_path(poll)
+      visit stats_poll_path(poll)
       expect(page).to have_content("Participation data")
     end
   end
