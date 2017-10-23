@@ -39,7 +39,7 @@ class Poll
       end
 
       def total_web_valid
-        stats_cache('total_web_valid') { voters.where(origin: 'web').count }
+        stats_cache('total_web_valid') { voters.where(origin: 'web').count - total_web_white_en_blanco }
       end
 
       def valid_percentage_web
@@ -47,11 +47,25 @@ class Poll
       end
 
       def total_web_white
-        stats_cache('total_web_white') do
+        stats_cache('total_web_white') { total_web_white_en_blanco + total_web_white_by_omission }
+      end
+
+      def total_web_white_en_blanco
+        stats_cache('total_web_white_en_blanco') do
           @poll.questions.inject(0) do |total, question|
             # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
             # FIXME: Implement the "Blank Answers" feature at Consul
-            total + (question.blank_by_omission_votes + Poll::Answer.where(question: question, answer: 'En blanco').count)
+            total + Poll::Answer.where(question: question, answer: 'En blanco').count
+          end
+        end
+      end
+
+      def total_web_white_by_omission
+        stats_cache('total_web_white_by_omission') do
+          @poll.questions.inject(0) do |total, question|
+            # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+            # FIXME: Implement the "Blank Answers" feature at Consul
+            total + question.blank_by_omission_votes
           end
         end
       end
