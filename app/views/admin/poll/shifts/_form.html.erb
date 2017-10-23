@@ -24,7 +24,7 @@
     <div class="small-12 medium-3 column">
       <label><%= t("admin.poll_shifts.new.date") %></label>
       <%= select 'shift[date]', 'vote_collection_date',
-                  options_for_select(shift_vote_collection_dates(@booth, @vote_collection_polls)),
+                  options_for_select(shift_vote_collection_dates(@booth, @voting_polls)),
                   { prompt: @voting_polls.present? ? t("admin.poll_shifts.new.select_date") : t("admin.poll_shifts.new.no_voting_days"),
                   label: false },
                   class: 'js-shift-vote-collection-dates' %>
