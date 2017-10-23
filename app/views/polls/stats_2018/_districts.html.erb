@@ -1,4 +1,4 @@
-<h3 id="12">Participación por distritos</h3>
+<h3 id="districts">Participación por distritos</h3>
 
 <div class="show-for-medium medium-6 column small-centered margin">
   <%= image_tag("map.jpg", usemap: "#html_map", alt: "Mapa de distritos de Madrid") %>
@@ -20,7 +20,6 @@
       <th scope="col" class="border-right district">DISTRITO</th>
       <th scope="col">WEB</th>
       <th scope="col">URNAS</th>
-      <th scope="col">CORREO</th>
       <th scope="col" class="border-left">TOTAL</th>
       <th scope="col">% PARTICIPACIÓN POBLACIÓN DEL DISTRITO</th>
     </tr>
@@ -35,8 +34,6 @@
           <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['web'], @district_stats[geozone.id.to_s]['total'])%>%)</em></small></td>
         <td><%= @district_stats[geozone.id.to_s]['booth'] %>
           <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['booth'], @district_stats[geozone.id.to_s]['total'])%>%)</em></small></td>
-        <td><%= @district_stats[geozone.id.to_s]['letter'] %>
-          <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['letter'], @district_stats[geozone.id.to_s]['total'])%>%)</em></small></td>
         <td class="border-left"><%= @district_stats[geozone.id.to_s]['total'] %>
           <small><em>(<%= percent_stat(@district_stats[geozone.id.to_s]['total'], @district_stats['all']['total'])%>%)</em></small></td>
         <td><%= percent_stat(@district_stats[geozone.id.to_s]['total'], population_by_geozone(geozone.name))%>%</td>

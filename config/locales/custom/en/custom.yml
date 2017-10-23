@@ -239,6 +239,11 @@ en:
       stats:
         tab: "Participation stats"
         polls: "Polls"
+        data: "Participation data"
+        total: "Total participation"
+        age: "Participation by age group"
+        gender: "Participation by gender"
+        district: "Participation by district"
   first_2017_poll:
     title: FIRST CITIZEN POLL
     date: FEBRUARY 13th-19th, 2017

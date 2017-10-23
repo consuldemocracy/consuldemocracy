@@ -44,6 +44,14 @@
 <div class="polls-results-stats">
   <div class="row margin-top" data-equalizer data-equalize-on="medium">
     <div class="small-12 medium-3 column sidebar" data-equalizer-watch>
+      <p><strong><%= t("polls.show.stats.data") %></strong></p>
+      <ul class="menu vertical margin-top">
+        <li><a href="#total"><%= t("polls.show.stats.total") %></a></li>
+        <li><a href="#gender"><%= t("polls.show.stats.gender") %></a></li>
+        <li><a href="#age"><%= t("polls.show.stats.age") %></a></li>
+        <li><a href="#districts"><%= t("polls.show.stats.district") %></a></li>
+      </ul>
+
       <p><strong><%= t("polls.show.stats.polls") %></strong></p>
       <ul class="menu vertical margin-top">
         <% @polls.each do |poll| %>
@@ -52,9 +60,10 @@
       </ul>
     </div>
 
-    <%= render "stats_2018_demographics" %>
-
     <div class="small-12 medium-9 column" data-equalizer-watch>
+
+      <%= render "stats_2018_demographics" %>
+
       <% @polls.each do |poll| %>
         <div class="margin">
           <h3 id="poll_<%= poll.id %>"><%= poll.name %></h3>
@@ -67,12 +76,12 @@
       		<%= render "stats_2018", poll: poll %>
         </div>
       <% end %>
+
+      <p>
+        <em>* No se dispone de todos los datos demográficos de todos los participantes.</em><br>
+        <em>** En el canal web no se presenta el número de papeletas en blanco ya que por anonimización de los votantes no se dispone de esta información.</em><br>
+        <em>*** Cada persona ha podido participar en distintas votaciones a través de varios canales, por lo que en los datos demográficos la suma de los canales web y urna no debe coincidir con el total.</em>
+      </p>
     </div>
   </div>
 </div>
-
-<p>
-  <em>* No se dispone de todos los datos demográficos de todos los participantes.</em><br>
-  <em>** En el canal web no se presenta el número de papeletas en blanco ya que por anonimización de los votantes no se dispone de esta información.</em><br>
-  <em>*** Cada persona ha podido participar en distintas votaciones a través de varios canales, por lo que en los datos demográficos la suma de los canales web, urna y correo no debe coincidir con el total.</em>
-</p>

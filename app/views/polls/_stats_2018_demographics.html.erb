@@ -1,8 +1,4 @@
-<div class="small-12 medium-9 column">
-  <h2 class="show-for-sr">PARTICIPACIÓN</h2>
-  
-  <%= render "polls/stats_2017/total" if @totals.present?%>
-  <%= render "polls/stats_2017/gender" if @gender_stats.present? %>
-  <%= render "polls/stats_2017/age" if @age_stats.present? %>
-  <%= render "polls/stats_2017/districts" if @district_stats.present? %>
-</div>
+<%= render "polls/stats_2018/total" if @totals.present? %>
+<%= render "polls/stats_2018/gender" if @gender_stats.present? %>
+<%= render "polls/stats_2018/age" if @age_stats.present? %>
+<%= render "polls/stats_2018/districts" if @district_stats.present? %>
