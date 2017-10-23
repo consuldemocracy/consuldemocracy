@@ -168,9 +168,8 @@ en:
   welcome:
     header:
       label: New citizen voting
-      title: Vote eleven squares
-      text: Until October 22th, decide about the remodeling of eleven squares of Madrid.
-      button: Vote here
+      title: Citizen voting eleven squares
+      text: The results of the voting will be made public on Tuesday, October 24.
     green_areas:
       label: "Previous debate"
       title: "Green areas of Madrid"
