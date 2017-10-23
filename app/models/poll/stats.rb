@@ -31,7 +31,7 @@ class Poll
       end
 
       def total_participants_booth
-        stats_cache("total_participants_booth") { voters.where(origin: "booth").count }
+        stats_cache("total_participants_booth") { total_booth_valid + total_booth_white + total_booth_null }
       end
 
       def total_participants_booth_percentage
