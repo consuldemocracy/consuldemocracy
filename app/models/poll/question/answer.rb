@@ -1,4 +1,5 @@
 class Poll::Question::Answer < ActiveRecord::Base
+  include StatsHelper
   include Galleryable
   include Documentable
   documentable max_documents_allowed: 3,
@@ -45,7 +46,7 @@ class Poll::Question::Answer < ActiveRecord::Base
   end
 
   def total_votes_percentage
-    question.answers_total_votes == 0 ? 0 : (total_votes * 100) / question.answers_total_votes
+    calculate_percentage(total_votes, question.answers_total_votes)
   end
 
   def set_most_voted
