@@ -579,6 +579,10 @@ es:
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
+        show_results_and_stats: "Mostrar resultados y estadísticas"
+        show_results: "Mostrar resultados"
+        show_stats: "Mostrar estadísticas"
+        results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas de esta votación serán públicos y podrán verlos todos los usuarios."
         submit_button: "Crear votación"
       edit:
         title: "Editar votación"

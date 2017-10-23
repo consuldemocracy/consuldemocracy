@@ -139,6 +139,8 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index], path: 'vota' do
+    get :stats
+    get :results
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
