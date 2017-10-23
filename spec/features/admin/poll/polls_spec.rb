@@ -88,12 +88,20 @@ feature 'Admin polls' do
 
     fill_in "poll_name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    check 'poll_results_enabled'
+    check 'poll_stats_enabled'
 
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
     expect(page).to have_content I18n.l(end_date.to_date)
+
+    click_link "Edit poll"
+
+    expect(page).to have_field('poll_results_enabled', checked: true)
+    expect(page).to have_field('poll_stats_enabled', checked: true)
+
   end
 
   scenario 'Edit from index' do
