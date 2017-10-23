@@ -39,7 +39,7 @@ class Poll
       end
 
       def total_web_valid
-        stats_cache("total_web_valid") { voters.where(origin: "web").count }
+        stats_cache("total_web_valid") { voters.where(origin: "web").count - total_web_white }
       end
 
       def valid_percentage_web
@@ -51,7 +51,7 @@ class Poll
       end
 
       def white_percentage_web
-        stats_cache("white_percentage_web") { 0 }
+        stats_cache("white_percentage_web") { calculate_percentage(total_web_white, total_white_votes) }
       end
 
       def total_web_null
@@ -59,7 +59,7 @@ class Poll
       end
 
       def null_percentage_web
-        stats_cache("null_percentage_web") { 0 }
+        stats_cache("null_percentage_web") { calculate_percentage(total_web_null, total_null_votes) }
       end
 
       def total_booth_valid
