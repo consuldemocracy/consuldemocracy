@@ -238,7 +238,11 @@ header,
     }
 
     h2 {
-      font-size: rem-calc(60);
+      font-size: rem-calc(40);
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+      }
 
       span {
         display: block;
