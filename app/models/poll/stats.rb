@@ -50,13 +50,13 @@ class Poll
         stats_cache('total_web_white') do
           double_white = (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
           first_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id).count
-          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 1).first, question: @poll.questions.second).pluck(:author_id)).uniq.count
-          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 2).first, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 1).first.title, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 2).first.title, question: @poll.questions.second).pluck(:author_id)).uniq.count
           first_total -= double_white
 
           second_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id).count
-          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 1).first, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
-          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 2).first, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 1).first.title, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 2).first.title, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
           second_total -= double_white
 
           double_white + first_total + second_total
@@ -132,7 +132,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v6", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v666", &block)
       end
 
   end
