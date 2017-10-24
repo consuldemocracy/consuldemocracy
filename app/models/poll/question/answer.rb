@@ -33,17 +33,22 @@ class Poll::Question::Answer < ActiveRecord::Base
     where(question_id: question_id).maximum('given_order') || 0
   end
 
+  # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+  # FIXME: Implement the "Blank Answers" feature at Consul
   def total_votes
-    total = Poll::Answer.where(question_id: question, answer: title).count
-    total += ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
-    # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
-    # FIXME: Implement the "Blank Answers" feature at Consul
-    total += question.blank_by_omission_votes if title == 'En blanco'
-    total
+    if title == 'En blanco'
+      web_voters = Poll::Voter.where(poll: question.poll, origin: 'web').count
+      first_answer = Poll::Answer.where(answer: question.question_answers.where(given_order: 1).first.title, question: question).count
+      second_answer = Poll::Answer.where(answer: question.question_answers.where(given_order: 2).first.title, question: question).count
+      web_voters - first_answer - second_answer - Poll::Stats.new(question.poll).generate[:total_web_white]
+    else
+      total = Poll::Answer.where(question_id: question, answer: title).count
+      total + ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
+    end
   end
 
   def most_voted?
-    self.most_voted
+    most_voted
   end
 
   def total_votes_percentage
@@ -52,9 +57,9 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   def set_most_voted
     answers = question.question_answers
-                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    is_most_voted = !answers.any?{ |a| a > self.total_votes }
+                      .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
+    is_most_voted = answers.none?{ |a| a > total_votes }
 
-    self.update(most_voted: is_most_voted)
+    update(most_voted: is_most_voted)
   end
 end
