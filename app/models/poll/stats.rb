@@ -47,7 +47,20 @@ class Poll
       end
 
       def total_web_white
-        stats_cache('total_web_white') { Poll::Answer.where(question: @poll.questions, answer: 'En blanco').pluck(:author_id).uniq.count }
+        stats_cache('total_web_white') do
+          double_white = (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id).count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 1).first, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 2).first, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= double_white
+
+          second_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id).count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 1).first, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 2).first, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= double_white
+
+          double_white + first_total + second_total
+        end
       end
 
       def white_percentage_web
