@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <%- question.question_answers.each do |answer| %>
-          <th scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
+          <th scope="col" class="<%="win" if answer.most_voted? %>">
             <% if answer.most_voted %>
               <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
             <% end %>
@@ -16,7 +16,7 @@
     <tbody>
       <tr>
         <%- question.question_answers.each do |answer| %>
-          <td id="answer_<%= answer.id %>_result" <%= answer.most_voted? ? "class=win" : "" %>>
+          <td id="answer_<%= answer.id %>_result" class="<%="win" if answer.most_voted? %>">
             <%= answer.total_votes %>
             (<%= answer.total_votes_percentage.round(2) %>%)
           </td>
