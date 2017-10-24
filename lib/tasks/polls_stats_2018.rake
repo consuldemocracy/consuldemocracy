@@ -107,8 +107,8 @@ namespace :stats do
     end
     ba_ids = ba_ids.flatten
 
-    total_web_votes = Poll::Answer.where(question_id: question_ids).count
-    total_booth_votes = Poll::PartialResult.booth.where(booth_assignment_id: ba_ids).sum(:amount) + Poll::Recount.sum(:white_amount) + Poll::Recount.sum(:null_amount)
+    total_web_votes = 169890 # Poll::Answer.where(question_id: question_ids).count
+    total_booth_votes = 15768 # Poll::PartialResult.booth.where(booth_assignment_id: ba_ids).sum(:amount) + Poll::Recount.sum(:white_amount) + Poll::Recount.sum(:null_amount)
 
     Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
     Stat.named(namespace, "totals", 'votos_totales').set_value(total_web_votes + total_booth_votes)
