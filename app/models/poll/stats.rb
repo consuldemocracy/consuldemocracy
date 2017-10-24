@@ -51,7 +51,7 @@ class Poll
       end
 
       def white_percentage_web
-        stats_cache('white_percentage_web') { calculate_percentage(total_web_white, total_web_valid) }
+        stats_cache('white_percentage_web') { calculate_percentage(total_web_white, total_white_votes) }
       end
 
       def total_web_null
@@ -119,7 +119,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v4", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v5", &block)
       end
 
   end
