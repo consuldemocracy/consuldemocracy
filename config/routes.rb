@@ -141,8 +141,10 @@ Rails.application.routes.draw do
   get "vota/stats_2018", to: "polls#stats_2018", as: 'poll_stats_2018'
   get "vota/results_2018", to: "polls#results_2018", as: 'poll_results_2018'
   resources :polls, only: [:show, :index], path: 'vota' do
-    get :stats
-    get :results
+    member do
+      get :stats
+      get :results
+    end
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
