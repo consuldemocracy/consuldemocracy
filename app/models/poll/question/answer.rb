@@ -47,19 +47,8 @@ class Poll::Question::Answer < ActiveRecord::Base
     total + ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
   end
 
-  def most_voted?
-    most_voted
-  end
-
   def total_votes_percentage
     calculate_percentage(total_votes, question.answers_total_votes)
   end
 
-  def set_most_voted
-    answers = question.question_answers
-                      .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    is_most_voted = answers.none?{ |a| a > total_votes }
-
-    update(most_voted: is_most_voted)
-  end
 end

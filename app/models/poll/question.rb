@@ -61,4 +61,7 @@ class Poll::Question < ActiveRecord::Base
     question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
+  def most_voted_answer_id
+    question_answers.max_by {|answer| answer.total_votes }.id
+  end
 end
