@@ -167,10 +167,13 @@ en:
     share: "Share your list of your recommended investment projects with this link:"
   welcome:
     header:
-      label: "End of citizen voting"
-      title: "Results of the public consultation Eleven Squares"
-      text: "Citizens have decided to remodel the eleven spaces that are put to a vote. Check out winning projects and participation statistics."
-      button: "See Results"
+      label_end: "End of citizen voting"
+      title_end: "Results of the public consultation Eleven Squares"
+      text_end: "Citizens have decided to remodel the eleven spaces that are put to a vote. Check out winning projects and participation statistics."
+      button_end: "See Results"
+      label: New citizen voting
+      title: Citizen voting eleven squares
+      text: The results of the voting will be made public on Tuesday, October 24.
     green_areas:
       label: "Previous debate"
       title: "Green areas of Madrid"

@@ -170,10 +170,13 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      label: "Fin de la votación ciudadana"
-      title: "Resultados de la consulta ciudadana Once Plazas"
-      text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
-      button: "Ver resultados"
+      label_end: "Fin de la votación ciudadana"
+      title_end: "Resultados de la consulta ciudadana Once Plazas"
+      text_end: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
+      button_end: "Ver resultados"
+      label: Nueva votación ciudadana
+      title: Consulta ciudadana once plazas
+      text: Los resultados de la votación se harán públicos el martes 24 de octubre.
     green_areas:
       label: "Debate previo"
       title: "Zonas verdes de Madrid"
