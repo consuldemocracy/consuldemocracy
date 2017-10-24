@@ -94,18 +94,28 @@ namespace :stats do
     #  Stat.named(namespace, "#{poll_id}", 'total_total').set_value(web + booth + letter)
     #end
 
-    #namespace = "polls_2018_participation"
-    #total_web_votes = Poll::PartialResult.web.sum(:amount) + Poll::WhiteResult.web.sum(:amount) + Poll::NullResult.web.sum(:amount)
-    #total_booth_votes = Poll::PartialResult.booth.sum(:amount) + Poll::WhiteResult.booth.sum(:amount) + Poll::NullResult.booth.sum(:amount)
-    #
-    #Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
-    #Stat.named(namespace, "totals", 'votos_totales').set_value(total_web_votes + total_booth_votes + total_letter_votes)
-    #Stat.named(namespace, "totals", 'votos_total_web').set_value total_web_votes
-    #Stat.named(namespace, "totals", 'votos_total_booth').set_value total_booth_votes
-    #Stat.named(namespace, "totals", 'votos_total_letter').set_value total_letter_votes
-    #Stat.named(namespace, "totals", 'participantes_total_web').set_value polls_query.web.select(:user_id).distinct.count
-    #Stat.named(namespace, "totals", 'participantes_total_booth').set_value polls_query.booth.select(:user_id).distinct.count
-    #Stat.named(namespace, "totals", 'participantes_total_letter').set_value polls_query.letter.select(:user_id).distinct.count
+    namespace = "polls_2018_participation"
+    # total_web_votes = Poll::PartialResult.web.sum(:amount) + Poll::WhiteResult.web.sum(:amount) + Poll::NullResult.web.sum(:amount)
+    # total_booth_votes = Poll::PartialResult.booth.sum(:amount) + Poll::WhiteResult.booth.sum(:amount) + Poll::NullResult.booth.sum(:amount)
+
+    ba_ids = []
+    question_ids = []
+    poll_ids.each do |poll_id|
+      poll = Poll.find(poll_id)
+      ba_ids << poll.booth_assignment_ids
+      question_ids << poll.question_ids
+    end
+    ba_ids = ba_ids.flatten
+
+    total_web_votes = Poll::Answer.where(question_id: question_ids).count
+    total_booth_votes = Poll::PartialResult.booth.where(booth_assignment_id: ba_ids).sum(:amount) + Poll::Recount.sum(:white_amount) + Poll::Recount.sum(:null_amount)
+
+    Stat.named(namespace, "totals", 'participantes_totales').set_value polls_query.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'votos_totales').set_value(total_web_votes + total_booth_votes)
+    Stat.named(namespace, "totals", 'votos_total_web').set_value total_web_votes
+    Stat.named(namespace, "totals", 'votos_total_booth').set_value total_booth_votes
+    Stat.named(namespace, "totals", 'participantes_total_web').set_value polls_query.web.select(:user_id).distinct.count
+    Stat.named(namespace, "totals", 'participantes_total_booth').set_value polls_query.booth.select(:user_id).distinct.count
 
     namespace = "polls_2018_cache"
     Stat.named(namespace, "keys", 'stats').set_value(Stat.named(namespace, "keys", 'stats').value.to_i + 1)
