@@ -58,7 +58,7 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answers_total_votes
-    Poll::Answer.where(question: self).count + blank_by_omission_votes + Poll::PartialResult.where(question: question).sum(:amount)
+    Poll::Answer.where(question: self).count + blank_by_omission_votes + Poll::PartialResult.where(question: self).sum(:amount)
   end
 
   # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
