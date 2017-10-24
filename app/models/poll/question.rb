@@ -58,7 +58,7 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answers_total_votes
-    question.question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
+    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
   # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
