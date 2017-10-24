@@ -18,7 +18,7 @@ class Poll::Question < ActiveRecord::Base
 
   validates :title, presence: true
   validates :author, presence: true
-  #validates :poll_id, presence: true
+  # validates :poll_id, presence: true
 
   validates :title, length: { minimum: 4 }
 
@@ -58,7 +58,7 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answers_total_votes
-    Poll::Answer.where(question: self).count + blank_by_omission_votes + Poll::PartialResult.where(question: self).sum(:amount)
+    question.question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
   # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
