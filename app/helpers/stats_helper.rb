@@ -52,4 +52,8 @@ module StatsHelper
     content_tag :div, "", opt
   end
 
+  def calculate_percentage(fraction, total)
+    percent = fraction / total.to_f
+    percent.nan? ? 0.0 : (percent * 100).round(3)
+  end
 end

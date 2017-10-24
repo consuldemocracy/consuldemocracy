@@ -1,9 +1,26 @@
-<div class="expanded jumbo header text-center">
-  <div class="row">
-    <div class="small-12 medium column small-centered">
-      <span class="label"><%= t("welcome.header.label") %></span>
-      <p class="lead-title"><%= t("welcome.header.title") %></p>
-      <p class="lead"><%= t("welcome.header.text") %></p>
+<% if current_user && current_user.administrator? %>
+  <div class="expanded jumbo header text-center">
+    <div class="row">
+      <div class="small-12 medium column small-centered">
+        <span class="label"><%= t("welcome.header.label_end") %></span>
+        <p class="lead-title"><%= t("welcome.header.title_end") %></p>
+        <p class="lead"><%= t("welcome.header.text_end") %></p>
+        <div class="small-12 medium-6 large-4 column small-centered">
+          <%= link_to t("welcome.header.button_end"),
+                      once_plazas_results_path,
+                      class: "button expanded large", title: t("welcome.header.button_end") %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="expanded jumbo header text-center">
+    <div class="row">
+      <div class="small-12 medium column small-centered">
+        <span class="label"><%= t("welcome.header.label") %></span>
+        <p class="lead-title"><%= t("welcome.header.title") %></p>
+        <p class="lead"><%= t("welcome.header.text") %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

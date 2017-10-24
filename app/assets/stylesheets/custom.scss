@@ -220,6 +220,35 @@ header,
   border-bottom: 1px solid #eee;
 }
 
+// Once plazas results and stats
+
+.polls-show-header {
+
+  &.once-plazas {
+    background: #000;
+
+    h2,
+    p,
+    a {
+      color: #fff;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: rem-calc(60);
+
+      span {
+        display: block;
+        font-size: rem-calc(24);
+        line-height: $line-height;
+      }
+    }
+  }
+}
+
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

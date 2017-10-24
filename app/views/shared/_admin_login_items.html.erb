@@ -31,5 +31,7 @@
 <% end %>
 
 <% if current_user && current_user.poll_officer? && Poll.current.any? %>
-  <li><%= link_to t("layouts.header.officing"), officing_root_path %></li>
+  <li>
+    <%= link_to t("layouts.header.officing"), officing_root_path %>
+  </li>
 <% end %>

@@ -1,4 +1,5 @@
 class Poll::Question::Answer < ActiveRecord::Base
+  include StatsHelper
   include Galleryable
   include Documentable
   documentable max_documents_allowed: 3,
@@ -30,5 +31,29 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   def self.last_position(question_id)
     where(question_id: question_id).maximum('given_order') || 0
+  end
+
+  def total_votes
+    total = Poll::Answer.where(question_id: question, answer: title).count
+    # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+    # FIXME: Implement the "Blank Answers" feature at Consul
+    total += question.blank_by_omission_votes if title == 'En blanco'
+    total
+  end
+
+  def most_voted?
+    self.most_voted
+  end
+
+  def total_votes_percentage
+    calculate_percentage(total_votes, question.answers_total_votes)
+  end
+
+  def set_most_voted
+    answers = question.question_answers
+                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
+    is_most_voted = !answers.any?{ |a| a > self.total_votes }
+
+    self.update(most_voted: is_most_voted)
   end
 end

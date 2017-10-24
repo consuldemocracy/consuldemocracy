@@ -7,6 +7,14 @@ module Abilities
       can [:read, :map, :summary, :share], Proposal
       can :read, Comment
       can :read, Poll
+      can :results_2018, Poll
+      can :stats_2018, Poll
+      can :results, Poll do |poll|
+        poll.expired? && poll.results_enabled?
+      end
+      can :stats, Poll do |poll|
+        poll.expired? && poll.stats_enabled?
+      end
       can :read, Poll::Question
       can [:read, :welcome], Budget
       can [:read, :welcome, :select_district], SpendingProposal
@@ -25,7 +33,6 @@ module Abilities
       can [:read], Legislation::Question
       can [:create], Legislation::Answer
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
-      can :read_stats, Poll
       can :results_2017, Poll
       can :stats_2017, Poll
       can :info_2017, Poll
