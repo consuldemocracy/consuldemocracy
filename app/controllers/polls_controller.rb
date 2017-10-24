@@ -3,8 +3,6 @@ class PollsController < ApplicationController
 
   load_and_authorize_resource
 
-  before_filter :set_poll, only: [:stats, :results]
-
   has_filters %w{current expired incoming}
   has_orders %w{most_voted newest oldest}, only: :show
 
@@ -34,12 +32,6 @@ class PollsController < ApplicationController
   end
 
   def results
-  end
-
-  private
-
-  def set_poll
-    @poll = Poll.find(params[:poll_id])
   end
 
 end
