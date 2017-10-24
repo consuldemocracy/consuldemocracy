@@ -31,7 +31,7 @@ class Poll
       end
 
       def total_participants_booth
-        stats_cache('total_participants_booth') { recounts.sum(:total_amount) }
+        stats_cache('total_participants_booth') { recounts.sum(:total_amount) + total_booth_white + total_booth_null }
       end
 
       def total_participants_booth_percentage
@@ -76,7 +76,7 @@ class Poll
       end
 
       def total_booth_valid
-        stats_cache('total_booth_valid') { total_participants_booth - total_booth_white - total_booth_null }
+        stats_cache('total_booth_valid') { total_participants_booth }
       end
 
       def valid_percentage_booth
