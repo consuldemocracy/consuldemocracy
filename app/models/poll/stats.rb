@@ -52,11 +52,9 @@ class Poll
 
       def total_web_white_en_blanco
         stats_cache('total_web_white_en_blanco') do
-          @poll.questions.inject(0) do |total, question|
-            # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
-            # FIXME: Implement the "Blank Answers" feature at Consul
-            total + Poll::Answer.where(question: question, answer: 'En blanco').count
-          end
+          # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+          # FIXME: Implement the "Blank Answers" feature at Consul
+          Poll::Answer.where(question: @poll.questions, answer: 'En blanco').pluck(:author_id).uniq.count
         end
       end
 
@@ -139,7 +137,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v2", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v3", &block)
       end
 
   end
