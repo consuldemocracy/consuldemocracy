@@ -25,8 +25,13 @@ class PollsController < ApplicationController
 
     @commentable = @poll
     @comment_tree = CommentTree.new(@commentable, params[:page], @current_order)
-    
+  end
+
+  def stats
     @stats = Poll::Stats.new(@poll).generate
+  end
+
+  def results
   end
 
 end

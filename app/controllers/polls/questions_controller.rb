@@ -13,6 +13,9 @@ class Polls::QuestionsController < ApplicationController
     answer.touch if answer.persisted?
     answer.save!
     answer.record_voter_participation(token)
+    @question.question_answers.where(question_id: @question).each do |answer|
+      answer.set_most_voted
+    end
 
     @answers_by_question_id = { @question.id => params[:answer] }
   end

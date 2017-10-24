@@ -8,6 +8,7 @@
 // 06. Budget
 // 07. Proposals successful
 // 08. Polls
+// 09. Polls results and stats
 //
 
 // 01. Votes and supports
@@ -1797,5 +1798,61 @@
         top: -6px;
       }
     }
+  }
+}
+
+// 09. Polls results and stats
+// ---------------------------
+
+.polls-results-stats {
+
+  .sidebar {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+
+    @include breakpoint(medium) {
+      border-bottom: 0;
+      border-right: 1px solid $border;
+    }
+
+    .menu {
+      padding: 0;
+
+      li a {
+        color: $link;
+        line-height: $line-height;
+      }
+    }
+  }
+
+  table {
+    table-layout: fixed;
+
+    caption {
+      padding: $line-height / 2 0;
+      text-align: left;
+    }
+
+    th {
+      text-align: left;
+
+      &.win {
+        background: #009fde;
+      }
+    }
+
+    td {
+
+      &.win {
+        background: #ccedf8;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .number {
+    font-size: rem-calc(60);
+    font-weight: bold;
+    line-height: rem-calc(60);
   }
 }

@@ -501,6 +501,7 @@ es:
       videos: "Vídeo externo"
       info_menu: "Información"
       stats_menu: "Estadísticas de participación"
+      results_menu: "Resultados de la votación"
       stats:
         title: "Datos de participación"
         total_participation: "Participación total"
@@ -512,6 +513,9 @@ es:
         valid: "Válidos"
         white: "En blanco"
         null_votes: "Nulos"
+      results:
+        title: "Preguntas"
+        most_voted_answer: "Respuesta más votada: "
   poll_questions:
     create_question: "Crear pregunta para votación"
     show:
