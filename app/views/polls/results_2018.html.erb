@@ -56,6 +56,7 @@
       <% @polls.each do |poll| %>
         <div class="margin-bottom">
           <h3 id="poll_<%= poll.id %>"><%= poll.name %></h3>
+          <br>
           <%= link_to t("polls.show.results.more_info", poll: poll.name), poll_path(poll.slug) %>
         </div>
 

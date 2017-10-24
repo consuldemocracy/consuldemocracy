@@ -2,7 +2,8 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .polls-results,
-.polls-stats {
+.polls-stats,
+.polls-results-stats {
 
   .header {
     background: #000;
@@ -77,7 +78,8 @@
 }
 
 .polls-results,
-.polls-stats {
+.polls-stats,
+.polls-results-stats {
 
   table {
     table-layout: fixed;
@@ -175,7 +177,7 @@
   margin: $line-height * 2 0;
 }
 
-// Fixes tables on mobile version
+// Fixes tables on mobile version for polls february 2017
 
 @include breakpoint(medium down) {
 
@@ -337,6 +339,155 @@
 
       td:nth-of-type(3)::before {
         // content: 'CORREO';
+      }
+    }
+
+    &.polls-stats-district {
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'TOTAL';
+      }
+    }
+  }
+}
+
+// Fixes tables on mobile version for polls october 2017
+
+@include breakpoint(medium down) {
+
+  .polls-stats {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+
+      &.border-left {
+        border-left: 0;
+      }
+
+      &.border-right {
+        border-right: 0;
+      }
+    }
+
+    thead tr {
+      left: -9999px;
+      position: absolute;
+      top: -9999px;
+    }
+
+    tr {
+      border: 1px solid $border;
+    }
+
+    td {
+      border: 0;
+      padding-top: $line-height * 1.5;
+      position: relative;
+
+      &::before {
+        left: 6px;
+        padding-right: 10px;
+        position: absolute;
+        top: 6px;
+        white-space: nowrap;
+        width: 45%;
+      }
+    }
+  }
+
+  table {
+
+    &.polls-participation,
+    &.polls-participation-age,
+    &.polls-participation-district,
+    &.polls-total-stats,
+    &.polls-stats-district {
+      td:nth-of-type(1)::before,
+      td:nth-of-type(2)::before,
+      td:nth-of-type(3)::before,
+      td:nth-of-type(4)::before,
+      td:nth-of-type(5)::before,
+      td:nth-of-type(6)::before {
+        font-weight: bold;
+      }
+    }
+
+    &.polls-participation {
+
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'TOTAL';
+      }
+    }
+
+    &.polls-participation-age {
+
+      td:nth-of-type(1)::before {
+        content: 'EDAD';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(4)::before {
+        content: 'TOTAL';
+      }
+    }
+
+    &.polls-participation-district {
+
+      td:nth-of-type(1)::before {
+        content: 'DISTRITO';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(3)::before {
+        content: 'URNAS';
+      }
+
+      td:nth-of-type(4)::before {
+        content: 'TOTAL';
+      }
+
+      td:nth-of-type(5)::before {
+        content: '% PARTICIPACIÓN POBLACIÓN DEL DISTRITO';
+      }
+    }
+
+    &.polls-total-stats {
+      td:nth-of-type(1)::before {
+        content: 'WEB';
+      }
+
+      td:nth-of-type(2)::before {
+        content: 'URNAS';
       }
     }
 
