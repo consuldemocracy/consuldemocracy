@@ -119,7 +119,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v3", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v4", &block)
       end
 
   end
