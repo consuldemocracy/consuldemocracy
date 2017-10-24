@@ -35,6 +35,7 @@ class Poll::Question::Answer < ActiveRecord::Base
 
   def total_votes
     total = Poll::Answer.where(question_id: question, answer: title).count
+    total += ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
     # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
     # FIXME: Implement the "Blank Answers" feature at Consul
     total += question.blank_by_omission_votes if title == 'En blanco'
