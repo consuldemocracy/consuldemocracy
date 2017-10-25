@@ -1,5 +1,4 @@
 require 'database_cleaner'
-
 DatabaseCleaner.clean_with :truncation
 
 print "Creating Settings"
@@ -528,19 +527,19 @@ print "Creating polls"
 puts " ✅"
 print "Active Polls"
 poll_active = Poll.create(name: "Active Poll",
-                   # TODO: Uncomment when Poll get slugs
-                   # slug: "active-poll",
-                   starts_at: 1.month.ago,
-                   ends_at:   1.month.from_now,
-                   geozone_restricted: false)
+                          # TODO: Uncomment when Poll get slugs
+                          # slug: "active-poll",
+                          starts_at: 1.month.ago,
+                          ends_at:   1.month.from_now,
+                          geozone_restricted: false)
 
 poll_active_geolocalized = Poll.create(name: "Active Poll Restricted",
-                   # TODO: Uncomment when Poll get slugs
-                   # slug: "active-poll-restricted",
-                   starts_at: 1.month.ago,
-                   ends_at:   1.month.from_now,
-                   geozone_restricted: true,
-                   geozones: Geozone.reorder("RANDOM()").limit(3))
+                                       # TODO: Uncomment when Poll get slugs
+                                       # slug: "active-poll-restricted",
+                                       starts_at: 1.month.ago,
+                                       ends_at:   1.month.from_now,
+                                       geozone_restricted: true,
+                                       geozones: Geozone.reorder("RANDOM()").limit(3))
 
 puts " ✅"
 print "Upcoming Poll"
@@ -555,16 +554,16 @@ print "Recounting Poll"
 poll = Poll.create(name: "Recounting Poll",
                    # TODO: Uncomment when Poll get slugs
                    # slug: "recounting-poll",
-                   starts_at: 1.months.ago,
+                   starts_at: 1.month.ago,
                    ends_at:   5.days.ago)
 
 puts " ✅"
 print "Expired Poll"
 poll_expired = Poll.create(name: "Expired Poll",
-                   # TODO: Uncomment when Poll get slugs
-                   # slug: "expired-poll",
-                   starts_at: 2.months.ago,
-                   ends_at:   1.month.ago)
+                           # TODO: Uncomment when Poll get slugs
+                           # slug: "expired-poll",
+                           starts_at: 2.months.ago,
+                           ends_at:   1.month.ago)
 
 puts " ✅"
 print "Expired Poll with Stats & Results"
