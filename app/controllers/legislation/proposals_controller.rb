@@ -42,7 +42,7 @@ class Legislation::ProposalsController < Legislation::BaseController
   end
 
   def vote
-    @proposal.register_vote(current_user, 'yes')
+    @proposal.register_vote(current_user, params[:value])
     set_legislation_proposal_votes(@proposal)
   end
 
