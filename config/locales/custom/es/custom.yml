@@ -170,13 +170,10 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      label_end: "Fin de la votación ciudadana"
-      title_end: "Resultados de la consulta ciudadana Once Plazas"
-      text_end: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
-      button_end: "Ver resultados"
-      label: Nueva votación ciudadana
-      title: Consulta ciudadana once plazas
-      text: Los resultados de la votación se harán públicos el martes 24 de octubre.
+      label: "Fin de la votación ciudadana"
+      title: "Resultados de la consulta ciudadana Once Plazas"
+      text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
+      button: "Ver resultados"
     green_areas:
       label: "Debate previo"
       title: "Zonas verdes de Madrid"
@@ -189,6 +186,12 @@ es:
       text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
       link: "Ver resultados de los presupuestos participativos"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
+    consulcon:
+      label: "Congreso"
+      title: "CONSULCON 2017"
+      text: "Ven el 16 y 17 de noviembre a las conferencias sobre CONSUL, el software libre de la plataforma Decide Madrid."
+      link: "Más información sobre la CONSULCon17"
+      alt: "Imagen de dos participantes en un hackaton"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
