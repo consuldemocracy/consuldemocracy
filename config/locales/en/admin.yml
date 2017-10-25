@@ -386,9 +386,7 @@ en:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Managers: User search'
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -438,9 +436,7 @@ en:
         delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Administrators: User search'
     moderators:
       index:
         title: Moderators
@@ -448,9 +444,7 @@ en:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Moderators: User search'
     newsletters:
       index:
         title: Newsletters
@@ -460,12 +454,9 @@ en:
         title: Valuators
       valuator:
         description_placeholder: 'Description (optional)'
-        user_found: User found
         add: Add to valuators
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Valuators: User search'
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator

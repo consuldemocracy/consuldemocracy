@@ -387,9 +387,7 @@ es:
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Administradores: Búsqueda de usuarios'
     managers:
       index:
         title: Gestores
@@ -397,9 +395,7 @@ es:
         add: Añadir como Gestor
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Gestores: Búsqueda de usuarios'
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -448,9 +444,7 @@ es:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Moderadores: Búsqueda de usuarios'
     newsletters:
       index:
         title: Envío de newsletters
@@ -460,12 +454,9 @@ es:
         title: Evaluadores
       valuator:
         description_placeholder: "Descripción (opcional)"
-        user_found: Usuario encontrado
         add: Añadir como evaluador
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Evaluadores: Búsqueda de usuarios'
       summary:
         title: Resumen de evaluación de propuestas de inversión
         valuator_name: Evaluador
