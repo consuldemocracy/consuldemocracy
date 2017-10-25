@@ -100,7 +100,6 @@ poll_officer2 = create_user('poll_officer2@consul.dev', 'Pauline M. Espinosa')
 poll_officer2.create_poll_officer
 poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3311111111")
 
-
 create_user('unverified@consul.dev', 'unverified')
 
 level_2 = create_user('leveltwo@consul.dev', 'level 2')
@@ -529,13 +528,15 @@ print "Creating polls"
 puts " ✅"
 print "Active Polls"
 poll_active = Poll.create(name: "Active Poll",
-                   slug: "active-poll",
+                   # TODO: Uncomment when Poll get slugs
+                   # slug: "active-poll",
                    starts_at: 1.month.ago,
                    ends_at:   1.month.from_now,
                    geozone_restricted: false)
 
 poll_active_geolocalized = Poll.create(name: "Active Poll Restricted",
-                   slug: "active-poll-restricted",
+                   # TODO: Uncomment when Poll get slugs
+                   # slug: "active-poll-restricted",
                    starts_at: 1.month.ago,
                    ends_at:   1.month.from_now,
                    geozone_restricted: true,
@@ -544,13 +545,15 @@ poll_active_geolocalized = Poll.create(name: "Active Poll Restricted",
 puts " ✅"
 print "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
-                   slug: "upcoming-poll",
+                   # TODO: Uncomment when Poll get slugs
+                   # slug: "upcoming-poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
 
 puts " ✅"
 print "Recounting Poll"
 poll = Poll.create(name: "Recounting Poll",
+                   # TODO: Uncomment when Poll get slugs
                    # slug: "recounting-poll",
                    starts_at: 1.months.ago,
                    ends_at:   5.days.ago)
@@ -558,13 +561,15 @@ poll = Poll.create(name: "Recounting Poll",
 puts " ✅"
 print "Expired Poll"
 poll_expired = Poll.create(name: "Expired Poll",
-                   slug: "expired-poll",
+                   # TODO: Uncomment when Poll get slugs
+                   # slug: "expired-poll",
                    starts_at: 2.months.ago,
                    ends_at:   1.month.ago)
 
 puts " ✅"
 print "Expired Poll with Stats & Results"
 poll = Poll.create(name: "Expired Poll with Stats & Results",
+                   # TODO: Uncomment when Poll get slugs
                    # slug: "expired-poll-with-stats-and-results",
                    starts_at: 2.months.ago,
                    ends_at:   1.month.ago,
@@ -611,7 +616,7 @@ end
 
 puts " ✅"
 print "Creating Poll Shifts for Poll Officers"
- 
+
 Poll::BoothAssignment.all.each do |booth_assignment|
   Poll::Shift.create(booth_id: booth_assignment.booth_id,
                      officer_id: poll_officer.poll_officer.id,
