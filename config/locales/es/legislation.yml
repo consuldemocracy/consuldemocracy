@@ -49,6 +49,8 @@ es:
     processes:
       header:
         view_process_information: Ver información del proceso
+      proposals:
+        empty_proposals: No hay propuestas
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
