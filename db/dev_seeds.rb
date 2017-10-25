@@ -566,7 +566,6 @@ section "Creating Poll Questions" do
     poll = Poll.all.sample
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    open_at = rand(2.months.ago..2.months.from_now)
     question = Poll::Question.create!(author: author,
                                       title: Faker::Lorem.sentence(3).truncate(60),
                                       poll: poll)
