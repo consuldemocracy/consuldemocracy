@@ -421,6 +421,10 @@ en:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+      votes:
+        one: 1 vote
+        other: "%{count} votes"
+        zero: No votes
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
