@@ -52,7 +52,7 @@ feature 'Admin managers' do
       click_button 'Search'
 
       expect(page).to have_content('Managers: User search')
-      expect(page).to have_content('users cannot be found')
+      expect(page).to have_content('No results found')
       expect(page).to_not have_content(@manager1.name)
       expect(page).to_not have_content(@manager2.name)
     end
