@@ -519,36 +519,36 @@ end
 
 section "Creating polls" do
 
-  Poll.create(name: "Active Poll",
+  Poll.create(name: "Current Poll",
               # TODO: Uncomment when Poll get slugs
-              # slug: "active-poll",
-              starts_at: 1.month.ago,
-              ends_at:   1.month.from_now,
+              # slug: "current-poll",
+              starts_at: 7.days.ago,
+              ends_at:   7.days.from_now,
               geozone_restricted: false)
 
-  Poll.create(name: "Active Poll Restricted",
+  Poll.create(name: "Current Poll Geozone Restricted",
               # TODO: Uncomment when Poll get slugs
-              # slug: "active-poll-restricted",
-              starts_at: 1.month.ago,
-              ends_at:   1.month.from_now,
+              # slug: "current-poll-geozone-restricted",
+              starts_at: 5.days.ago,
+              ends_at:   5.days.from_now,
               geozone_restricted: true,
               geozones: Geozone.reorder("RANDOM()").limit(3))
 
-  Poll.create(name: "Upcoming Poll",
+  Poll.create(name: "Incoming Poll",
               # TODO: Uncomment when Poll get slugs
-              # slug: "upcoming-poll",
+              # slug: "incoming-poll",
               starts_at: 1.month.from_now,
               ends_at:   2.months.from_now)
 
   Poll.create(name: "Recounting Poll",
               # TODO: Uncomment when Poll get slugs
               # slug: "recounting-poll",
-              starts_at: 1.month.ago,
-              ends_at:   5.days.ago)
+              starts_at: 15.days.ago,
+              ends_at:   2.days.ago)
 
-  Poll.create(name: "Expired Poll",
+  Poll.create(name: "Expired Poll without Stats & Results",
               # TODO: Uncomment when Poll get slugs
-              # slug: "expired-poll",
+              # slug: "expired-poll-without-stats-and-results",
               starts_at: 2.months.ago,
               ends_at:   1.month.ago)
 
@@ -563,7 +563,7 @@ end
 
 section "Creating Poll Questions" do
   25.times do
-    poll = Poll.reorder("RANDOM()").first
+    poll = Poll.all.sample
     author = User.reorder("RANDOM()").first
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     open_at = rand(2.months.ago..2.months.from_now)
