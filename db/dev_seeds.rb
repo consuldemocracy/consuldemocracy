@@ -519,46 +519,46 @@ end
 
 section "Creating polls" do
 
-Poll.create(name: "Active Poll",
-            # TODO: Uncomment when Poll get slugs
-            # slug: "active-poll",
-            starts_at: 1.month.ago,
-            ends_at:   1.month.from_now,
-            geozone_restricted: false)
+  Poll.create(name: "Active Poll",
+              # TODO: Uncomment when Poll get slugs
+              # slug: "active-poll",
+              starts_at: 1.month.ago,
+              ends_at:   1.month.from_now,
+              geozone_restricted: false)
 
-Poll.create(name: "Active Poll Restricted",
-            # TODO: Uncomment when Poll get slugs
-            # slug: "active-poll-restricted",
-            starts_at: 1.month.ago,
-            ends_at:   1.month.from_now,
-            geozone_restricted: true,
-            geozones: Geozone.reorder("RANDOM()").limit(3))
+  Poll.create(name: "Active Poll Restricted",
+              # TODO: Uncomment when Poll get slugs
+              # slug: "active-poll-restricted",
+              starts_at: 1.month.ago,
+              ends_at:   1.month.from_now,
+              geozone_restricted: true,
+              geozones: Geozone.reorder("RANDOM()").limit(3))
 
-poll = Poll.create(name: "Upcoming Poll",
-                   # TODO: Uncomment when Poll get slugs
-                   # slug: "upcoming-poll",
-                   starts_at: 1.month.from_now,
-                   ends_at:   2.months.from_now)
+  Poll.create(name: "Upcoming Poll",
+              # TODO: Uncomment when Poll get slugs
+              # slug: "upcoming-poll",
+              starts_at: 1.month.from_now,
+              ends_at:   2.months.from_now)
 
-poll = Poll.create(name: "Recounting Poll",
-                   # TODO: Uncomment when Poll get slugs
-                   # slug: "recounting-poll",
-                   starts_at: 1.month.ago,
-                   ends_at:   5.days.ago)
+  Poll.create(name: "Recounting Poll",
+              # TODO: Uncomment when Poll get slugs
+              # slug: "recounting-poll",
+              starts_at: 1.month.ago,
+              ends_at:   5.days.ago)
 
-Poll.create(name: "Expired Poll",
-            # TODO: Uncomment when Poll get slugs
-            # slug: "expired-poll",
-            starts_at: 2.months.ago,
-            ends_at:   1.month.ago)
+  Poll.create(name: "Expired Poll",
+              # TODO: Uncomment when Poll get slugs
+              # slug: "expired-poll",
+              starts_at: 2.months.ago,
+              ends_at:   1.month.ago)
 
-poll = Poll.create(name: "Expired Poll with Stats & Results",
-                   # TODO: Uncomment when Poll get slugs
-                   # slug: "expired-poll-with-stats-and-results",
-                   starts_at: 2.months.ago,
-                   ends_at:   1.month.ago,
-                   results_enabled: true,
-                   stats_enabled: true)
+  Poll.create(name: "Expired Poll with Stats & Results",
+              # TODO: Uncomment when Poll get slugs
+              # slug: "expired-poll-with-stats-and-results",
+              starts_at: 2.months.ago,
+              ends_at:   1.month.ago,
+              results_enabled: true,
+              stats_enabled: true)
 end
 
 section "Creating Poll Questions" do
