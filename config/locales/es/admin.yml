@@ -454,7 +454,6 @@ es:
         title: Evaluadores
       valuator:
         description_placeholder: "Descripción (opcional)"
-        user_found: Usuario encontrado
         add: Añadir como evaluador
       search:
         title: 'Evaluadores: Búsqueda de usuarios'

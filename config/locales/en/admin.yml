@@ -454,7 +454,6 @@ en:
         title: Valuators
       valuator:
         description_placeholder: 'Description (optional)'
-        user_found: User found
         add: Add to valuators
       search:
         title: 'Valuators: User search'
