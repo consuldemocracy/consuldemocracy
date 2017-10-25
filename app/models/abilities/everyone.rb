@@ -27,7 +27,6 @@ module Abilities
       can [:read, :debate, :draft_publication, :allegations, :result_publication, :proposals], Legislation::Process, published: true
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
-      can [:create], Legislation::Answer
       can [:read, :map, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
     end
