@@ -47,7 +47,7 @@ feature 'Admin valuators' do
       click_button 'Search'
 
       expect(page).to have_content('Valuators: User search')
-      expect(page).to have_content('users cannot be found')
+      expect(page).to have_content('No results found')
       expect(page).to_not have_content(@valuator1.name)
       expect(page).to_not have_content(@valuator2.name)
     end
