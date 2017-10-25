@@ -400,12 +400,12 @@ section "Creating Budgets" do
       )
     )
 
-    (1..([1, 2, 3].sample)).each do |i|
-      group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{i}")
+    (1..([1, 2, 3].sample)).each do |k|
+      group = budget.groups.create!(name: "#{Faker::StarWars.planet} #{k}")
 
       geozones = Geozone.reorder("RANDOM()").limit([2, 5, 6, 7].sample)
       geozones.each do |geozone|
-        group.headings << group.headings.create!(name: "#{geozone.name} #{i}",
+        group.headings << group.headings.create!(name: "#{geozone.name} #{k}",
                                                  price: rand(1..100) * 100000,
                                                  population: rand(1..50) * 10000)
       end
