@@ -561,16 +561,17 @@ section "Creating polls" do
               stats_enabled: true)
 end
 
-section "Creating Poll Questions" do
-  25.times do
-    poll = Poll.all.sample
-    author = User.all.sample
-    description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
-    question = Poll::Question.create!(author: author,
-                                      title: Faker::Lorem.sentence(3).truncate(60),
-                                      poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+section "Creating Poll Questions & Answers" do
+  Poll.each do |poll|
+    (1..4).to_a.sample.times do
+      question = Poll::Question.create!(author: User.all.sample,
+                                        title: Faker::Lorem.sentence(3).truncate(60) + '?',
+                                        poll: poll)
+      Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+        Poll::Question::Answer.create!(question: question,
+                                       title: answer.capitalize,
+                                       description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>")
+      end
     end
   end
 end
