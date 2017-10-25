@@ -147,7 +147,7 @@ section "Creating Users" do
     level = [1, 2, 3].sample
     if level >= 2
       user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
-                  document_number: Faker::Number.number(10), document_type: "1", geozone: Geozone.reorder("RANDOM()").first)
+                  document_number: Faker::Number.number(10), document_type: "1", geozone: Geozone.all.sample)
     end
     if level == 3
       user.update(verified_at: Time.current, document_number: Faker::Number.number(10))
@@ -176,27 +176,27 @@ end
 section "Creating Debates" do
   tags = Faker::Lorem.words(25)
   30.times do
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     debate = Debate.create!(author: author,
                             title: Faker::Lorem.sentence(3).truncate(60),
                             created_at: rand((Time.current - 1.week)..Time.current),
                             description: description,
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
+                            geozone: Geozone.all.sample,
                             terms_of_service: "1")
   end
 
   tags = ActsAsTaggableOn::Tag.where(kind: 'category')
   30.times do
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     debate = Debate.create!(author: author,
                             title: Faker::Lorem.sentence(3).truncate(60),
                             created_at: rand((Time.current - 1.week)..Time.current),
                             description: description,
                             tag_list: tags.sample(3).join(','),
-                            geozone: Geozone.reorder("RANDOM()").first,
+                            geozone: Geozone.all.sample,
                             terms_of_service: "1")
   end
 end
@@ -204,7 +204,7 @@ end
 section "Creating Proposals" do
   tags = Faker::Lorem.words(25)
   30.times do
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
@@ -215,7 +215,7 @@ section "Creating Proposals" do
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
-                                geozone: Geozone.reorder("RANDOM()").first,
+                                geozone: Geozone.all.sample,
                                 terms_of_service: "1")
   end
 end
@@ -223,7 +223,7 @@ end
 section "Creating Archived Proposals" do
   tags = Faker::Lorem.words(25)
   5.times do
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
@@ -233,7 +233,7 @@ section "Creating Archived Proposals" do
                                 external_url: Faker::Internet.url,
                                 description: description,
                                 tag_list: tags.sample(3).join(','),
-                                geozone: Geozone.reorder("RANDOM()").first,
+                                geozone: Geozone.all.sample,
                                 terms_of_service: "1",
                                 created_at: Setting["months_to_archive_proposals"].to_i.months.ago)
   end
@@ -242,7 +242,7 @@ end
 section "Creating Successful Proposals" do
   tags = Faker::Lorem.words(25)
   10.times do
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
@@ -253,14 +253,14 @@ section "Creating Successful Proposals" do
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
-                                geozone: Geozone.reorder("RANDOM()").first,
+                                geozone: Geozone.all.sample,
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"])
   end
 
   tags = ActsAsTaggableOn::Tag.where(kind: 'category')
   30.times do
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     proposal = Proposal.create!(author: author,
                                 title: Faker::Lorem.sentence(3).truncate(60),
@@ -271,15 +271,15 @@ section "Creating Successful Proposals" do
                                 description: description,
                                 created_at: rand((Time.current - 1.week)..Time.current),
                                 tag_list: tags.sample(3).join(','),
-                                geozone: Geozone.reorder("RANDOM()").first,
+                                geozone: Geozone.all.sample,
                                 terms_of_service: "1")
   end
 end
 
 section "Commenting Debates" do
   100.times do
-    author = User.reorder("RANDOM()").first
-    debate = Debate.reorder("RANDOM()").first
+    author = User.all.sample
+    debate = Debate.all.sample
     Comment.create!(user: author,
                     created_at: rand(debate.created_at..Time.current),
                     commentable: debate,
@@ -289,8 +289,8 @@ end
 
 section "Commenting Proposals" do
   100.times do
-    author = User.reorder("RANDOM()").first
-    proposal = Proposal.reorder("RANDOM()").first
+    author = User.all.sample
+    proposal = Proposal.all.sample
     Comment.create!(user: author,
                     created_at: rand(proposal.created_at..Time.current),
                     commentable: proposal,
@@ -300,8 +300,8 @@ end
 
 section "Commenting Comments" do
   200.times do
-    author = User.reorder("RANDOM()").first
-    parent = Comment.reorder("RANDOM()").first
+    author = User.all.sample
+    parent = Comment.all.sample
     Comment.create!(user: author,
                     created_at: rand(parent.created_at..Time.current),
                     commentable_id: parent.commentable_id,
@@ -315,42 +315,42 @@ section "Voting Debates, Proposals & Comments" do
   org_user_ids = User.organizations.pluck(:id)
   not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
   100.times do
-    voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+    voter  = not_org_users.level_two_or_three_verified.all.sample
     vote   = [true, false].sample
-    debate = Debate.reorder("RANDOM()").first
+    debate = Debate.all.sample
     debate.vote_by(voter: voter, vote: vote)
   end
 
   100.times do
-    voter  = not_org_users.reorder("RANDOM()").first
+    voter  = not_org_users.all.sample
     vote   = [true, false].sample
-    comment = Comment.reorder("RANDOM()").first
+    comment = Comment.all.sample
     comment.vote_by(voter: voter, vote: vote)
   end
 
   100.times do
-    voter = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
-    proposal = Proposal.reorder("RANDOM()").first
+    voter = not_org_users.level_two_or_three_verified.all.sample
+    proposal = Proposal.all.sample
     proposal.vote_by(voter: voter, vote: true)
   end
 end
 
 section "Flagging Debates & Comments" do
   40.times do
-    debate = Debate.reorder("RANDOM()").first
-    flagger = User.where(["users.id <> ?", debate.author_id]).reorder("RANDOM()").first
+    debate = Debate.all.sample
+    flagger = User.where(["users.id <> ?", debate.author_id]).all.sample
     Flag.flag(flagger, debate)
   end
 
   40.times do
-    comment = Comment.reorder("RANDOM()").first
-    flagger = User.where(["users.id <> ?", comment.user_id]).reorder("RANDOM()").first
+    comment = Comment.all.sample
+    flagger = User.where(["users.id <> ?", comment.user_id]).all.sample
     Flag.flag(flagger, comment)
   end
 
   40.times do
-    proposal = Proposal.reorder("RANDOM()").first
-    flagger = User.where(["users.id <> ?", proposal.author_id]).reorder("RANDOM()").first
+    proposal = Proposal.all.sample
+    flagger = User.where(["users.id <> ?", proposal.author_id]).all.sample
     Flag.flag(flagger, proposal)
   end
 end
@@ -358,8 +358,8 @@ end
 section "Creating Spending Proposals" do
 tags = Faker::Lorem.words(10)
 60.times do
-  geozone = Geozone.reorder("RANDOM()").first
-  author = User.reorder("RANDOM()").first
+  geozone = Geozone.all.sample
+  author = User.all.sample
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   feasible_explanation = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   valuation_finished = [true, false].sample
@@ -381,7 +381,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..17).to_a.sample.times do
-    SpendingProposal.reorder("RANDOM()").first.valuators << Valuator.first.valuator
+    SpendingProposal.all.sample.valuators << Valuator.first.valuator
   end
 end
 
@@ -415,10 +415,10 @@ end
 section "Creating Investments" do
   tags = Faker::Lorem.words(10)
   100.times do
-    heading = Budget::Heading.reorder("RANDOM()").first
+    heading = Budget::Heading.all.sample
 
     investment = Budget::Investment.create!(
-      author: User.reorder("RANDOM()").first,
+      author: User.all.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
@@ -445,9 +445,9 @@ end
 section "Winner Investments" do
   budget = Budget.where(phase: "finished").last
   100.times do
-    heading = budget.headings.reorder("RANDOM()").first
+    heading = budget.headings.all.sample
     investment = Budget::Investment.create!(
-      author: User.reorder("RANDOM()").first,
+      author: User.all.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
@@ -469,7 +469,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.reorder("RANDOM()").first.valuators << Valuator.first.valuator
+    Budget::Investment.all.sample.valuators << Valuator.first.valuator
   end
 end
 
@@ -512,8 +512,8 @@ section "Creating proposal notifications" do
   100.times do |i|
     ProposalNotification.create!(title: "Proposal notification title #{i}",
                                  body: "Proposal notification body #{i}",
-                                 author: User.reorder("RANDOM()").first,
-                                 proposal: Proposal.reorder("RANDOM()").first)
+                                 author: User.all.sample,
+                                 proposal: Proposal.all.sample)
   end
 end
 
@@ -564,7 +564,7 @@ end
 section "Creating Poll Questions" do
   25.times do
     poll = Poll.all.sample
-    author = User.reorder("RANDOM()").first
+    author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
     open_at = rand(2.months.ago..2.months.from_now)
     question = Poll::Question.create!(author: author,
@@ -619,7 +619,7 @@ end
 
 section "Creating Poll Questions from Proposals" do
   3.times do
-    proposal = Proposal.reorder("RANDOM()").first
+    proposal = Proposal.all.sample
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
@@ -632,7 +632,7 @@ end
 
 section "Creating Successful Proposals" do
   10.times do
-    proposal = Proposal.reorder("RANDOM()").first
+    proposal = Proposal.all.sample
     poll = Poll.current.first
     question = Poll::Question.create(poll: poll)
     Faker::Lorem.words((2..4).to_a.sample).each do |answer|
@@ -645,8 +645,8 @@ end
 
 section "Commenting Poll Questions" do
   30.times do
-    author = User.reorder("RANDOM()").first
-    question = Poll::Question.reorder("RANDOM()").first
+    author = User.all.sample
+    question = Poll::Question.all.sample
     Comment.create!(user: author,
                     created_at: rand(question.created_at..Time.current),
                     commentable: question,
