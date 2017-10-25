@@ -2,26 +2,42 @@
 
 <%= render 'admin/shared/user_search', url: search_admin_officials_path %>
 
-<h3><%= page_entries_info @officials %></h3>
+<% if @officials.any? %>
+  <h3 class="margin"><%= page_entries_info @officials %></h3>
 
-<table>
-  <% @officials.each do |official| %>
-    <tr>
-      <td>
-        <%= link_to official.name, edit_admin_official_path(official) %>
-      </td>
-      <td>
-        <span class="label round level-<%= official.official_level %>">
-          <%= official.official_position %>
-        </span>
-        (<%= t("admin.officials.level_#{official.official_level}") %>)
-      </td>
-      <td class="text-right">
-        <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"),
-                    edit_admin_official_path(official), class: "button hollow" %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+  <table>
+    <thead>
+      <th scope="col"><%= t("admin.officials.index.name") %></th>
+      <th scope="col"><%= t("admin.officials.index.official_position") %></th>
+      <th scope="col"><%= t("admin.officials.index.official_level") %></th>
+      <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+    </thead>
+    <tbody>
+      <% @officials.each do |official| %>
+        <tr>
+          <td>
+            <%= link_to official.name, edit_admin_official_path(official) %>
+          </td>
+          <td>
+            <span class="label level-<%= official.official_level %>">
+              <%= official.official_position %>
+            </span>
+          </td>
+          <td>
+            <%= t("admin.officials.level_#{official.official_level}") %>
+          </td>
+          <td>
+            <%= link_to official.official? ? t("admin.officials.search.edit_official") : t("admin.officials.search.make_official"),
+                        edit_admin_official_path(official), class: "button hollow expanded" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @officials %>
+  <%= paginate @officials %>
+<% else %>
+  <div class="callot primary">
+    <%= t("admin.officials.index.no_officials") %>
+  </div>
+<% end %>

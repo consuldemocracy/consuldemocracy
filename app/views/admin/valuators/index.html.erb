@@ -1,36 +1,42 @@
 <h2><%= t("admin.valuators.index.title") %></h2>
 
-<div class="row">
-  <%= form_tag search_admin_valuators_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
-      <%= text_field_tag :email, '', placeholder: t('admin.valuators.search.email_placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.valuators.search.search'), class: 'button radius' %>
+<%= render 'admin/shared/user_search', url: search_admin_valuators_path %>
+
+<div id="valuators">
+  <% if @valuators.any? %>
+    <h3 class="margin"><%= page_entries_info @valuators %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.valuators.index.name") %></th>
+        <th scope="col"><%= t("admin.valuators.index.email") %></th>
+        <th scope="col"><%= t("admin.valuators.index.description") %></th>
+      </thead>
+      <tbody>
+        <% @valuators.each do |valuator| %>
+          <tr>
+            <td>
+              <%= valuator.name %>
+            </td>
+            <td>
+              <%= valuator.email %>
+            </td>
+            <td>
+              <% if valuator.description.present? %>
+                <%= valuator.description %>
+              <% else %>
+                <%= t("admin.valuators.index.no_description") %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @valuators %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.valuators.index.no_valuators") %>
     </div>
   <% end %>
 </div>
-
-<div id="search-result" class="row"></div>
-
-<h3><%= page_entries_info @valuators %></h3>
-
-<table id="valuators">
-  <% @valuators.each do |valuator| %>
-    <tr>
-      <td>
-        <%= valuator.name %>
-      </td>
-      <td>
-        <%= valuator.email %>
-      </td>
-      <td>
-        <% if valuator.description.present? %>
-          <%= valuator.description %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= paginate @valuators %>

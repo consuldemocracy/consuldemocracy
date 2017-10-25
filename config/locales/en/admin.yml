@@ -64,6 +64,7 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+        no_activity: There ares no moderators activity.
     budgets:
       index:
         title: Participatory budgets
@@ -391,13 +392,14 @@ en:
     managers:
       index:
         title: Managers
+        name: Name
+        email: Email
+        no_managers: There are no managers.
       manager:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Managers: User search'
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -442,24 +444,26 @@ en:
     administrators:
       index:
         title: Administrators
+        name: Name
+        email: Email
+        no_administrators: There are no administrators.
       administrator:
         add: Add
         delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: "Administrators: User search"
     moderators:
       index:
         title: Moderators
+        name: Name
+        email: Email
+        no_moderators: There are no moderators.
       moderator:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Moderators: User search'
     newsletters:
       index:
         title: Newsletters
@@ -467,14 +471,16 @@ en:
     valuators:
       index:
         title: Valuators
+        name: Name
+        email: Email
+        description: Description
+        no_description: No description
+        no_valuators: There are no valuators.
       valuator:
         description_placeholder: 'Description (optional)'
-        user_found: User found
         add: Add to valuators
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Valuators: User search'
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator
@@ -716,6 +722,10 @@ en:
         official_updated: Details of official saved
       index:
         title: Officials
+        no_officials: There are no officials.
+        name: Nombre
+        official_position: Official position
+        official_level: Level
       level_0: Not official
       level_1: Level 1
       level_2: Level 2
@@ -726,6 +736,7 @@ en:
         edit_official: Edit official
         make_official: Make official
         title: 'Official positions: User search'
+        no_results: Official positions not found.
     organizations:
       index:
         filter: Filter
@@ -737,6 +748,12 @@ en:
         hidden_count_html:
           one: There is also <strong>one organisation</strong> with no users or with a hidden user.
           other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
+        name: Name
+        email: Email
+        phone_number: Phone
+        responsible_name: Responsible
+        status: Status
+        no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
         search: Search
@@ -744,8 +761,10 @@ en:
         title: Organisations
         verified: Verified
         verify: Verify
+        pending: Pending
       search:
         title: Search Organisations
+        no_results: No organizations found.
     proposals:
       index:
         filter: Filter
@@ -1050,7 +1069,8 @@ en:
         roles: Roles
         verification_level: Verification level
       index:
-        title: Hidden users
+        title: User
+        no_users: There are no users.
       search:
         placeholder: Search user by email, name or document number
         search: Search
