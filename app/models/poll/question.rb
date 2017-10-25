@@ -18,7 +18,7 @@ class Poll::Question < ActiveRecord::Base
 
   validates :title, presence: true
   validates :author, presence: true
-  #validates :poll_id, presence: true
+  # validates :poll_id, presence: true
 
   validates :title, length: { minimum: 4 }
 
@@ -58,14 +58,10 @@ class Poll::Question < ActiveRecord::Base
   end
 
   def answers_total_votes
-    Poll::Answer.where(question: self).count + blank_by_omission_votes
+    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
-  # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
-  # FIXME: Implement the "Blank Answers" feature at Consul
-  def blank_by_omission_votes
-    blanks = Poll::Answer.where(question: poll.questions.where.not(id: id)).count - Poll::Answer.where(question: self).count
-    blanks.positive? ? blanks : 0
+  def most_voted_answer_id
+    question_answers.max_by {|answer| answer.total_votes }.id
   end
-
 end

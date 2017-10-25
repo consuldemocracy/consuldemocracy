@@ -31,7 +31,7 @@ class Poll
       end
 
       def total_participants_booth
-        stats_cache('total_participants_booth') { recounts.sum(:total_amount) }
+        stats_cache('total_participants_booth') { total_booth_valid + total_booth_white + total_booth_null }
       end
 
       def total_participants_booth_percentage
@@ -39,7 +39,7 @@ class Poll
       end
 
       def total_web_valid
-        stats_cache('total_web_valid') { voters.where(origin: 'web').count - total_web_white_en_blanco }
+        stats_cache('total_web_valid') { voters.where(origin: 'web').count - total_web_white }
       end
 
       def valid_percentage_web
@@ -47,31 +47,24 @@ class Poll
       end
 
       def total_web_white
-        stats_cache('total_web_white') { total_web_white_en_blanco + total_web_white_by_omission }
-      end
+        stats_cache('total_web_white') do
+          double_white = (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id).count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 1).first.title, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 2).first.title, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= double_white
 
-      def total_web_white_en_blanco
-        stats_cache('total_web_white_en_blanco') do
-          @poll.questions.inject(0) do |total, question|
-            # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
-            # FIXME: Implement the "Blank Answers" feature at Consul
-            total + Poll::Answer.where(question: question, answer: 'En blanco').count
-          end
-        end
-      end
+          second_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id).count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 1).first.title, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 2).first.title, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= double_white
 
-      def total_web_white_by_omission
-        stats_cache('total_web_white_by_omission') do
-          @poll.questions.inject(0) do |total, question|
-            # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
-            # FIXME: Implement the "Blank Answers" feature at Consul
-            total + question.blank_by_omission_votes
-          end
+          double_white + first_total + second_total
         end
       end
 
       def white_percentage_web
-        stats_cache('white_percentage_web') { calculate_percentage(total_web_white, total_web_valid) }
+        stats_cache('white_percentage_web') { calculate_percentage(total_web_white, total_white_votes) }
       end
 
       def total_web_null
@@ -83,7 +76,7 @@ class Poll
       end
 
       def total_booth_valid
-        stats_cache('total_booth_valid') { total_participants_booth - total_booth_white - total_booth_null }
+        stats_cache('total_booth_valid') { recounts.sum(:total_amount) }
       end
 
       def valid_percentage_booth
@@ -139,7 +132,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v2", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v12", &block)
       end
 
   end
