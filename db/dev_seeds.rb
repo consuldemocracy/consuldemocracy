@@ -96,6 +96,11 @@ poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
 poll_officer.create_poll_officer
 poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2211111111")
 
+poll_officer2 = create_user('poll_officer2@consul.dev', 'Pauline M. Espinosa')
+poll_officer2.create_poll_officer
+poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3311111111")
+
+
 create_user('unverified@consul.dev', 'unverified')
 
 level_2 = create_user('leveltwo@consul.dev', 'level 2')
@@ -523,26 +528,23 @@ print "Creating polls"
 
 puts " ✅"
 print "Active Polls"
-(1..3).each do |i|
-  poll = Poll.create(name: "Active Poll #{i}",
-                     # slug: "active-poll-#{i}",
-                     starts_at: 1.month.ago,
-                     ends_at:   1.month.from_now,
-                     geozone_restricted: false)
-end
-(1..5).each do |i|
-  poll = Poll.create(name: "Active Poll #{i}",
-                     # slug: "active-poll-#{i}",
-                     starts_at: 1.month.ago,
-                     ends_at:   1.month.from_now,
-                     geozone_restricted: true,
-                     geozones: Geozone.reorder("RANDOM()").limit(3))
-end
+poll_active = Poll.create(name: "Active Poll",
+                   slug: "active-poll",
+                   starts_at: 1.month.ago,
+                   ends_at:   1.month.from_now,
+                   geozone_restricted: false)
+
+poll_active_geolocalized = Poll.create(name: "Active Poll Restricted",
+                   slug: "active-poll-restricted",
+                   starts_at: 1.month.ago,
+                   ends_at:   1.month.from_now,
+                   geozone_restricted: true,
+                   geozones: Geozone.reorder("RANDOM()").limit(3))
 
 puts " ✅"
 print "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
-                   # slug: "upcoming-poll",
+                   slug: "upcoming-poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
 
@@ -555,8 +557,8 @@ poll = Poll.create(name: "Recounting Poll",
 
 puts " ✅"
 print "Expired Poll"
-poll = Poll.create(name: "Expired Poll",
-                   # slug: "expired-poll",
+poll_expired = Poll.create(name: "Expired Poll",
+                   slug: "expired-poll",
                    starts_at: 2.months.ago,
                    ends_at:   1.month.ago)
 
@@ -572,7 +574,7 @@ poll = Poll.create(name: "Expired Poll with Stats & Results",
 puts " ✅"
 print "Creating Poll Questions"
 
-50.times do
+25.times do
   poll = Poll.reorder("RANDOM()").first
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
@@ -587,7 +589,7 @@ end
 
 puts " ✅"
 print "Creating Poll Booths"
-30.times.each_with_index do |i|
+20.times.each_with_index do |i|
   Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
 end
 
@@ -605,6 +607,24 @@ print "Creating Poll Officer Assignments"
                                    booth_assignment: booth_assignment,
                                    date: booth_assignment.poll.starts_at)
   end
+end
+
+puts " ✅"
+print "Creating Poll Shifts for Poll Officers"
+ 
+Poll::BoothAssignment.all.each do |booth_assignment|
+  Poll::Shift.create(booth_id: booth_assignment.booth_id,
+                     officer_id: poll_officer.poll_officer.id,
+                     date: Date.current,
+                     officer_name: poll_officer.poll_officer.name,
+                     officer_email: poll_officer.poll_officer.email,
+                     task: 0)
+  Poll::Shift.create(booth_id: booth_assignment.booth_id,
+                     officer_id: poll_officer.poll_officer.id,
+                     date: Date.current,
+                     officer_name: poll_officer.poll_officer.name,
+                     officer_email: poll_officer.poll_officer.email,
+                     task: 1)
 end
 
 puts " ✅"
@@ -650,10 +670,46 @@ end
 puts " ✅"
 print "Creating Poll Voters"
 
+puts " ✅"
+print "For Active Poll"
+
 10.times do
-  poll = Poll.all.sample
   user = User.level_two_verified.sample
-  Poll::Voter.create(poll: poll, user: user)
+  Poll::Voter.create(poll_id: poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'web')
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
+end
+
+puts " ✅"
+print "For Active Geolocalized Poll"
+
+10.times do
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'web')
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
+end
+
+puts " ✅"
+print "For Expired Poll"
+
+10.times do
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
+  user = User.level_two_verified.sample
+  Poll::Voter.create(poll_id: poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
+end
+
+puts " ✅"
+print "Creating Poll Answers"
+
+Poll::Voter.all.each do |voter|
+  voter.poll.questions.each do |question|
+    answer = question.question_answers.sample
+    unless answer.nil?
+      Poll::Answer.create(question_id: question.id, author_id: voter.user_id, answer: answer.title)
+    end
+  end
 end
 
 puts " ✅"
