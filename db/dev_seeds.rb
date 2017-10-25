@@ -89,7 +89,8 @@ section "Creating Users" do
 
   admin = create_user('admin@consul.dev', 'admin')
   admin.create_administrator
-  admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "1111111111")
+  admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+               verified_at: Time.current, document_number: "1111111111")
 
   moderator = create_user('mod@consul.dev', 'mod')
   moderator.create_moderator
@@ -99,23 +100,28 @@ section "Creating Users" do
 
   @valuator = create_user('valuator@consul.dev', 'valuator')
   @valuator.create_valuator
-  @valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2111111111")
+  @valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                   verified_at: Time.current, document_number: "2111111111")
 
   poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
   poll_officer.create_poll_officer
-  poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "2211111111")
+  poll_officer.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                      verified_at: Time.current, document_number: "2211111111")
 
   poll_officer2 = create_user('poll_officer2@consul.dev', 'Pauline M. Espinosa')
   poll_officer2.create_poll_officer
-  poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3311111111")
+  poll_officer2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                       verified_at: Time.current, document_number: "3311111111")
 
   create_user('unverified@consul.dev', 'unverified')
 
   level_2 = create_user('leveltwo@consul.dev', 'level 2')
-  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222", document_type: "1")
+  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: "2222222222",
+                 document_type: "1")
 
   verified = create_user('verified@consul.dev', 'verified')
-  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1", verified_at: Time.current, document_number: "3333333333")
+  verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                  verified_at: Time.current, document_number: "3333333333")
 
   (1..10).each do |i|
     org_name = Faker::Company.name
@@ -140,7 +146,8 @@ section "Creating Users" do
     user = create_user("user#{i}@consul.dev")
     level = [1, 2, 3].sample
     if level >= 2
-      user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1", geozone: Geozone.reorder("RANDOM()").first)
+      user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
+                  document_number: Faker::Number.number(10), document_type: "1", geozone: Geozone.reorder("RANDOM()").first)
     end
     if level == 3
       user.update(verified_at: Time.current, document_number: Faker::Number.number(10))
