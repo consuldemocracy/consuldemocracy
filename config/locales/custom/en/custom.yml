@@ -186,6 +186,12 @@ en:
       text: "Check out the winning projects that will take place from 2018."
       link: "View results for participatory budgets"
       alt: "Image of one of the videos of participants in the Participatory Budgets 2017"
+    consulcon:
+      label: "CONGRESS"
+      title: "CONSULCON 2017"
+      text: "Conferences about CONSUL, Decide Madrid platform's free software. Join us 16th-17th November."
+      link: "More information about CONSULCon17"
+      alt: "Image of two participants in a hackaton"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"

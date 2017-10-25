@@ -189,6 +189,12 @@ es:
       text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
       link: "Ver resultados de los presupuestos participativos"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
+    consulcon:
+      label: "Congreso"
+      title: "CONSULCON 2017"
+      text: "Ven el 16 y 17 de noviembre a las conferencias sobre CONSUL, el software libre de la plataforma Decide Madrid."
+      link: "Más información sobre la CONSULCon17"
+      alt: "Imagen de dos participantes en un hackaton"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
