@@ -394,6 +394,7 @@ es:
         email_placeholder: Buscar usuario por email
         search: Buscar
         user_not_found: Usuario no encontrado.
+        title: "Administradores: Búsqueda de usuarios"
     managers:
       index:
         title: Gestores
@@ -404,9 +405,7 @@ es:
         add: Añadir como Gestor
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Gestores: Búsqueda de usuarios'
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
@@ -427,6 +426,7 @@ es:
       poll_officers: Presidentes de mesa
       polls: Votaciones
       poll_booths: Ubicación de urnas
+      poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
@@ -457,9 +457,7 @@ es:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Moderadores: Búsqueda de usuarios'
     newsletters:
       index:
         title: Envío de newsletters
@@ -474,12 +472,9 @@ es:
         no_valuators: No hay evaluadores.
       valuator:
         description_placeholder: "Descripción (opcional)"
-        user_found: Usuario encontrado
         add: Añadir como evaluador
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Evaluadores: Búsqueda de usuarios'
       summary:
         title: Resumen de evaluación de propuestas de inversión
         valuator_name: Evaluador
@@ -529,6 +524,7 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
+        no_voting_days: "Voting days ended"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
@@ -539,6 +535,17 @@ es:
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
+    booth_assignments:
+      manage_assignments: Gestionar asignaciones
+      manage:
+        assignments_list: "Asignaciones para la votación '%{poll}'"
+        status:
+          assign_status: Asignación
+          assigned: Asignada
+          unassigned: No asignada
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -562,9 +569,6 @@ es:
         no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
-        table_assignment: "Asignación"
-        remove_booth: "Desasignar urna"
-        add_booth: "Asignar urna"
     polls:
       index:
         title: "Listado de votaciones"
@@ -575,6 +579,10 @@ es:
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
+        show_results_and_stats: "Mostrar resultados y estadísticas"
+        show_results: "Mostrar resultados"
+        show_stats: "Mostrar estadísticas"
+        results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas de esta votación serán públicos y podrán verlos todos los usuarios."
         submit_button: "Crear votación"
       edit:
         title: "Editar votación"
@@ -683,6 +691,7 @@ es:
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
+        no_location: "Sin Ubicación"
       new:
         title: "Nueva urna"
         name: "Nombre"

@@ -25,7 +25,7 @@ App.PreventDoubleSubmission =
       unless event.target.id == "new_officing_voter"
         buttons = $(this).find(':button, :submit')
         App.PreventDoubleSubmission.disable_buttons(buttons)
-    ).on('ajax:success', ->
+    ).on('ajax:success', (event) ->
       unless event.target.id == "new_officing_voter"
         buttons = $(this).find(':button, :submit')
         App.PreventDoubleSubmission.reset_buttons(buttons)

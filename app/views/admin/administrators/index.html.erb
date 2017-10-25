@@ -1,18 +1,6 @@
 <h2><%= t("admin.administrators.index.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_tag search_admin_administrators_path, method: :get, remote: true  do %>
-    <div class="input-group">
-      <%= text_field_tag :email, '', placeholder: t('admin.administrators.search.email_placeholder') %>
-
-      <div class="input-group-button">
-        <%= submit_tag t('admin.administrators.search.search'), class: 'button' %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div id="search-result"></div>
+<%= render 'admin/shared/user_search', url: search_admin_administrators_path %>
 
 <% if @administrators.any? %>
   <h3 class="margin"><%= page_entries_info @administrators %></h3>
@@ -42,8 +30,8 @@
             <%= link_to t('admin.administrators.administrator.add'),
                         { controller: "admin/administrators", action: :create,
                           user_id: administrator.user_id },
-                        method: :post,
-                        class: "button success expanded" %>
+                          method: :post,
+                          class: "button success expanded" %>
           <% end %>
         </td>
       </tr>

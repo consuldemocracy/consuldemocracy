@@ -1,10 +1,12 @@
 module ShiftsHelper
 
   def shift_vote_collection_dates(booth, polls)
+    return [] if polls.blank?
     date_options((start_date(polls)..end_date(polls)), Poll::Shift.tasks[:vote_collection], booth)
   end
 
   def shift_recount_scrutiny_dates(booth, polls)
+    return [] if polls.blank?
     dates = polls.map(&:ends_at).map(&:to_date).sort.inject([]) do |total, date|
       initial_date = date < Date.current ? Date.current : date
       total << (initial_date..date + Poll::RECOUNT_DURATION).to_a

@@ -501,6 +501,7 @@ en:
       videos: "External video"
       info_menu: "Information"
       stats_menu: "Participation statistics"
+      results_menu: "Poll results"
       stats:
         title: "Participation data"
         total_participation: "Total participation"
@@ -512,6 +513,9 @@ en:
         valid: "Valid"
         white: "White votes"
         null_votes: "Invalid"
+      results:
+        title: "Questions"
+        most_voted_answer: "Most voted answer: "
   poll_questions:
     create_question: "Create question"
     show:

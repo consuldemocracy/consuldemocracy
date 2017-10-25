@@ -390,9 +390,7 @@ en:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Managers: User search'
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -413,6 +411,7 @@ en:
       poll_officers: Poll officers
       polls: Polls
       poll_booths: Booths location
+      poll_booth_assignments: Booths Assignments
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
@@ -447,6 +446,7 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found.
+        title: "Administrators: User search"
     moderators:
       index:
         title: Moderators
@@ -457,9 +457,7 @@ en:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Moderators: User search'
     newsletters:
       index:
         title: Newsletters
@@ -474,12 +472,9 @@ en:
         no_valuators: There are no valuators.
       valuator:
         description_placeholder: 'Description (optional)'
-        user_found: User found
         add: Add to valuators
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Valuators: User search'
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator
@@ -529,6 +524,7 @@ en:
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
+        no_voting_days: "Los dias de votación terminaron"
         select_task: "Select task"
         table_shift: "Shift"
         table_email: "Email"
@@ -539,6 +535,17 @@ en:
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
+    booth_assignments:
+      manage_assignments: Manage assignments
+      manage:
+        assignments_list: "Assignments for poll '%{poll}'"
+        status:
+          assign_status: Assignment
+          assigned: Assigned
+          unassigned: Unassigned
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"
@@ -562,9 +569,6 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
-        table_assignment: "Assignment"
-        remove_booth: "Remove booth from poll"
-        add_booth: "Assign booth"
     polls:
       index:
         title: "List of polls"
@@ -575,6 +579,10 @@ en:
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
+        show_results_and_stats: "Show results and stats"
+        show_results: "Show results"
+        show_stats: "Show stats"
+        results_and_stats_reminder: "Marking these checkboxes the results and/or stats of this poll will be publicly available and every user will see them."
         submit_button: "Create poll"
       edit:
         title: "Edit poll"
@@ -681,6 +689,7 @@ en:
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
+        no_location: "No Location"
       new:
         title: "New booth"
         name: "Name"

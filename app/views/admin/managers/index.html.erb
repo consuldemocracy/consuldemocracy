@@ -1,17 +1,6 @@
 <h2><%= t("admin.managers.index.title") %></h2>
 
-<div class="small-12 medium-6">
-  <%= form_tag search_admin_managers_path, method: :get, remote: true  do %>
-    <div class="input-group">
-      <%= text_field_tag :email, '', placeholder: t('admin.managers.search.email_placeholder') %>
-      <div class="input-group-button">
-        <%= submit_tag t('admin.managers.search.search'), class: 'button' %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div id="search-result"></div>
+<%= render 'admin/shared/user_search', url: search_admin_managers_path %>
 
 <div id="managers">
   <% if @managers.any? %>
@@ -40,8 +29,12 @@
                   class: "button hollow alert expanded"
                 %>
               <% else %>
-                <%= link_to t('admin.managers.manager.add'),{ controller: "admin/managers", action: :create, user_id: manager.user_id },
-                  method: :post, class: "button success expanded" %>
+                <%= link_to t('admin.managers.manager.add'),
+                             { controller: "admin/managers",
+                               action: :create,
+                               user_id: manager.user_id },
+                               method: :post,
+                               class: "button success expanded" %>
               <% end %>
             </td>
           </tr>
