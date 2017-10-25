@@ -17,19 +17,19 @@
         <tr>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
-          <td class="text-right">
+          <td>
             <% if user.moderator? && user.moderator.persisted? %>
               <%= link_to t('admin.moderators.moderator.delete'),
                           admin_moderator_path(user),
                           method: :delete,
-                          class: "button hollow alert" %>
+                          class: "button hollow alert expanded" %>
             <% else %>
               <%= link_to t('admin.moderators.moderator.add'),
                           { controller: "admin/moderators",
                             action: :create,
                             user_id: user },
                           method: :post,
-                          class: "button success" %>
+                          class: "button success expanded" %>
             <% end %>
           </td>
         </tr>
