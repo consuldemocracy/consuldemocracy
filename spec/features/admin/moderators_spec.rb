@@ -52,7 +52,7 @@ feature 'Admin moderators' do
       click_button 'Search'
 
       expect(page).to have_content('Moderators: User search')
-      expect(page).to have_content('users cannot be found')
+      expect(page).to have_content('No results found')
       expect(page).to_not have_content(@moderator1.name)
       expect(page).to_not have_content(@moderator2.name)
     end

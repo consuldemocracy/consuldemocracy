@@ -60,8 +60,9 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
-        title: Actividad de los Moderadores
+        title: Actividad de Moderadores
         type: Tipo
+        no_activity: No hay actividad de moderadores.
     budgets:
       index:
         title: Presupuestos participativos
@@ -382,15 +383,21 @@ es:
     administrators:
       index:
         title: Administradores
+        name: Nombre
+        email: Email
+        no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
-        title: 'Administradores: Búsqueda de usuarios'
+        title: "Administradores: Búsqueda de usuarios"
     managers:
       index:
         title: Gestores
+        name: Nombre
+        email: Email
+        no_managers: No hay gestores.
       manager:
         add: Añadir como Gestor
         delete: Borrar
@@ -440,6 +447,9 @@ es:
     moderators:
       index:
         title: Moderadores
+        name: Nombre
+        email: Email
+        no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
         delete: Borrar
@@ -452,6 +462,11 @@ es:
     valuators:
       index:
         title: Evaluadores
+        name: Nombre
+        email: Email
+        description: Descripción
+        no_description: Sin descripción
+        no_valuators: No hay evaluadores.
       valuator:
         description_placeholder: "Descripción (opcional)"
         add: Añadir como evaluador
@@ -696,6 +711,10 @@ es:
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
+        no_officials: No hay cargos públicos.
+        name: Nombre
+        official_position: Cargo público
+        official_level: Nivel
       level_0: No es cargo público
       level_1: Nivel 1
       level_2: Nivel 2
@@ -706,6 +725,7 @@ es:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: 'Cargos Públicos: Búsqueda de usuarios'
+        no_results: No se han encontrado cargos públicos.
     organizations:
       index:
         filter: Filtro
@@ -717,6 +737,12 @@ es:
         hidden_count_html:
           one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
           other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
+        name: Nombre
+        email: Email
+        phone_number: Teléfono
+        responsible_name: Responsable
+        status: Estado
+        no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
         search: Buscar
@@ -724,8 +750,10 @@ es:
         title: Organizaciones
         verified: Verificada
         verify: Verificar
+        pending: Pendiente
       search:
         title: Buscar Organizaciones
+        no_results: No se han encontrado organizaciones.
     proposals:
       index:
         filter: Filtro
@@ -941,6 +969,7 @@ es:
         verification_level: Nivel de verficación
       index:
         title: Usuarios
+        no_users: No hay usuarios.
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar
