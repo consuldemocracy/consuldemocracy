@@ -28,7 +28,6 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   def create
     @proposal = Legislation::Proposal.new(proposal_params.merge(author: current_user))
-    recover_documents_from_cache(@proposal)
 
     if @proposal.save
       redirect_to share_legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t('flash.actions.create.proposal')
