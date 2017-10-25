@@ -517,19 +517,6 @@ section "Creating proposal notifications" do
   end
 end
 
-section "Creating Successful Proposals" do
-  10.times do
-    proposal = Proposal.all.sample
-    poll = Poll.current.first
-    question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
-    end
-    question.copy_attributes_from_proposal(proposal)
-    question.save!
-  end
-end
-
 section "Creating polls" do
 
   Poll.create(name: "Current Poll",
@@ -629,23 +616,30 @@ section "Commenting Poll Questions" do
 end
 
 section "Creating Poll Voters" do
-  # TODO: We need to simulate correctly web and booth votes (with Poll::Answer, randomnly for all current, expired or recounting Polls,
-  # not for incoming ones )
-  # 10.times do
-  #   user = User.level_two_verified.sample
-  #   poll = Poll.current.first
-  #   Poll::Voter.create(poll: poll, user_id: user.id, document_number: user.document_number, origin: 'web')
-  #   user = User.level_two_verified.sample
-  #   Poll::Voter.create(poll: poll, user_id: user.id, document_number: user.document_number, origin: 'booth')
-  # end
-end
+  (Poll.expired + Poll.current + Poll.recounting).each do |poll|
+    level_two_verified_users = User.level_two_verified
+    level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids) if poll.geozone_restricted?
 
-section "Creating Poll Answers" do
-  Poll::Voter.all.each do |voter|
-    voter.poll.questions.each do |question|
-      answer = question.question_answers.sample
-      unless answer.nil?
-        Poll::Answer.create(question_id: question.id, author_id: voter.user_id, answer: answer.title)
+    level_two_verified_users.each_with_index do |user, i|
+      if i.even?
+        poll.questions.each do |question|
+          next unless [true, false].sample
+          Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
+
+        end
+        Poll::Voter.create!(document_type: user.document_type,
+                            document_number: user.document_number,
+                            user: user,
+                            poll: poll,
+                            origin: 'web',
+                            token: SecureRandom.hex(32))
+      else
+        Poll::Voter.create!(document_type: user.document_type,
+                            document_number: user.document_number,
+                            user: user,
+                            poll: poll,
+                            officer: Poll::Officer.all.sample,
+                            origin: 'booth')
       end
     end
   end
@@ -688,6 +682,32 @@ section "Creating Poll Results" do
         end
       end
     end
+  end
+end
+
+section "Creating Successful Proposals" do
+  10.times do
+    proposal = Proposal.all.sample
+    poll = Poll.current.first
+    question = Poll::Question.create(poll: poll)
+    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+    end
+    question.copy_attributes_from_proposal(proposal)
+    question.save!
+  end
+end
+
+section "Creating Poll Questions from Proposals" do
+  3.times do
+    proposal = Proposal.all.sample
+    poll = Poll.current.first
+    question = Poll::Question.create(poll: poll)
+    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+    end
+    question.copy_attributes_from_proposal(proposal)
+    question.save!
   end
 end
 
