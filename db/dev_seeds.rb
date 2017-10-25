@@ -98,10 +98,10 @@ section "Creating Users" do
   manager = create_user('manager@consul.dev', 'manager')
   manager.create_manager
 
-  @valuator = create_user('valuator@consul.dev', 'valuator')
-  @valuator.create_valuator
-  @valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
-                   verified_at: Time.current, document_number: "2111111111")
+  valuator = create_user('valuator@consul.dev', 'valuator')
+  valuator.create_valuator
+  valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+                  verified_at: Time.current, document_number: "2111111111")
 
   poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
   poll_officer.create_poll_officer
@@ -153,9 +153,6 @@ section "Creating Users" do
       user.update(verified_at: Time.current, document_number: Faker::Number.number(10))
     end
   end
-
-  org_user_ids = User.organizations.pluck(:id)
-  @not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 end
 
 section "Creating Tags Categories" do
@@ -315,22 +312,24 @@ section "Commenting Comments" do
 end
 
 section "Voting Debates, Proposals & Comments" do
+  org_user_ids = User.organizations.pluck(:id)
+  not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
   100.times do
-    voter  = @not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+    voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
     vote   = [true, false].sample
     debate = Debate.reorder("RANDOM()").first
     debate.vote_by(voter: voter, vote: vote)
   end
 
   100.times do
-    voter  = @not_org_users.reorder("RANDOM()").first
+    voter  = not_org_users.reorder("RANDOM()").first
     vote   = [true, false].sample
     comment = Comment.reorder("RANDOM()").first
     comment.vote_by(voter: voter, vote: vote)
   end
 
   100.times do
-    voter = @not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+    voter = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
     proposal = Proposal.reorder("RANDOM()").first
     proposal.vote_by(voter: voter, vote: true)
   end
@@ -382,7 +381,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..17).to_a.sample.times do
-    SpendingProposal.reorder("RANDOM()").first.valuators << @valuator.valuator
+    SpendingProposal.reorder("RANDOM()").first.valuators << Valuator.first.valuator
   end
 end
 
@@ -470,7 +469,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.reorder("RANDOM()").first.valuators << @valuator.valuator
+    Budget::Investment.reorder("RANDOM()").first.valuators << Valuator.first.valuator
   end
 end
 
@@ -520,20 +519,20 @@ end
 
 section "Creating polls" do
 
-@poll_active = Poll.create(name: "Active Poll",
-                           # TODO: Uncomment when Poll get slugs
-                           # slug: "active-poll",
-                           starts_at: 1.month.ago,
-                           ends_at:   1.month.from_now,
-                           geozone_restricted: false)
+Poll.create(name: "Active Poll",
+            # TODO: Uncomment when Poll get slugs
+            # slug: "active-poll",
+            starts_at: 1.month.ago,
+            ends_at:   1.month.from_now,
+            geozone_restricted: false)
 
-@poll_active_geolocalized = Poll.create(name: "Active Poll Restricted",
-                                        # TODO: Uncomment when Poll get slugs
-                                        # slug: "active-poll-restricted",
-                                        starts_at: 1.month.ago,
-                                        ends_at:   1.month.from_now,
-                                        geozone_restricted: true,
-                                        geozones: Geozone.reorder("RANDOM()").limit(3))
+Poll.create(name: "Active Poll Restricted",
+            # TODO: Uncomment when Poll get slugs
+            # slug: "active-poll-restricted",
+            starts_at: 1.month.ago,
+            ends_at:   1.month.from_now,
+            geozone_restricted: true,
+            geozones: Geozone.reorder("RANDOM()").limit(3))
 
 poll = Poll.create(name: "Upcoming Poll",
                    # TODO: Uncomment when Poll get slugs
@@ -547,11 +546,11 @@ poll = Poll.create(name: "Recounting Poll",
                    starts_at: 1.month.ago,
                    ends_at:   5.days.ago)
 
-@poll_expired = Poll.create(name: "Expired Poll",
-                            # TODO: Uncomment when Poll get slugs
-                            # slug: "expired-poll",
-                            starts_at: 2.months.ago,
-                            ends_at:   1.month.ago)
+Poll.create(name: "Expired Poll",
+            # TODO: Uncomment when Poll get slugs
+            # slug: "expired-poll",
+            starts_at: 2.months.ago,
+            ends_at:   1.month.ago)
 
 poll = Poll.create(name: "Expired Poll with Stats & Results",
                    # TODO: Uncomment when Poll get slugs
@@ -656,24 +655,15 @@ section "Commenting Poll Questions" do
 end
 
 section "Creating Poll Voters" do
-  10.times do
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
-  end
-  10.times do
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
-  end
-  10.times do
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-  end
+  # TODO: We need to simulate correctly web and booth votes (with Poll::Answer, randomnly for all current, expired or recounting Polls,
+  # not for incoming ones )
+  # 10.times do
+  #   user = User.level_two_verified.sample
+  #   poll = Poll.current.first
+  #   Poll::Voter.create(poll: poll, user_id: user.id, document_number: user.document_number, origin: 'web')
+  #   user = User.level_two_verified.sample
+  #   Poll::Voter.create(poll: poll, user_id: user.id, document_number: user.document_number, origin: 'booth')
+  # end
 end
 
 section "Creating Poll Answers" do
