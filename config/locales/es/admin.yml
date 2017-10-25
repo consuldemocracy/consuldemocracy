@@ -391,9 +391,6 @@ es:
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado.
         title: "Administradores: Búsqueda de usuarios"
     managers:
       index:

@@ -443,9 +443,6 @@ en:
         delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found.
         title: "Administrators: User search"
     moderators:
       index:
