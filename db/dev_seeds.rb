@@ -381,7 +381,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..17).to_a.sample.times do
-    SpendingProposal.all.sample.valuators << Valuator.first.valuator
+    SpendingProposal.all.sample.valuators << Valuator.first
   end
 end
 
@@ -469,7 +469,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.all.sample.valuators << Valuator.first.valuator
+    Budget::Investment.all.sample.valuators << Valuator.first
   end
 end
 
@@ -562,7 +562,7 @@ section "Creating polls" do
 end
 
 section "Creating Poll Questions & Answers" do
-  Poll.each do |poll|
+  Poll.all.each do |poll|
     (1..4).to_a.sample.times do
       question = Poll::Question.create!(author: User.all.sample,
                                         title: Faker::Lorem.sentence(3).truncate(60) + '?',
