@@ -48,8 +48,8 @@ class Debate < ActiveRecord::Base
   attr_accessor :link_required
 
   def self.recommendations(user)
-    tagged_with(user.interests, any: true).
-    where("author_id != ?", user.id)
+    tagged_with(user.interests, any: true)
+      .where("author_id != ?", user.id)
   end
 
   def searchable_values

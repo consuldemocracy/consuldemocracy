@@ -22,12 +22,12 @@
   <%= render "recommended",
               recommended_debates: @recommended_debates,
               recommended_proposals: @recommended_proposals %>
+  <hr>
 <% end %>
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
-
-    <div class="small-12 column text-center <%= highlight_background %>">
+    <div class="small-12 column text-center">
       <div class="row margin padding">
         <div class="small-12 medium-3 column">
           <h2><%= t("welcome.debates.title") %></h2>
@@ -47,6 +47,5 @@
         </div>
       </div>
     </div>
-
   </main>
 <% end %>

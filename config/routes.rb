@@ -113,6 +113,10 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
+    member do
+      get :stats
+      get :results
+    end
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
@@ -286,10 +290,12 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
+        get :booth_assignments, on: :collection
         patch :add_question, on: :member
 
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
           get :search_booths, on: :collection
+          get :manage, on: :collection
         end
 
         resources :officer_assignments, only: [:index, :create, :destroy] do
@@ -319,6 +325,7 @@ Rails.application.routes.draw do
           resources :videos, controller: 'questions/answers/videos'
           get :documents, to: 'questions/answers#documents'
         end
+        post '/answers/order_answers', to: 'questions/answers#order_answers'
       end
     end
 

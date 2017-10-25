@@ -2,7 +2,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   include ActionView::Helpers
 
-  let!(:user)         { create(:user, :level_two) }
+  let!(:user) { create(:user, :level_two) }
 
   before do
     Setting['feature.map'] = true
@@ -11,7 +11,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_new_path}" do
 
     let!(:arguments)    { {} }
-    let!(:mappable)     { create("#{mappable_factory_name}".to_sym) }
+    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
     let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
@@ -77,10 +77,10 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
   describe "At #{mappable_edit_path}" do
 
-    let!(:mappable)     { create("#{mappable_factory_name}".to_sym) }
+    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
     let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
-    before { skip } unless mappable_edit_path.present?
+    before { skip } if mappable_edit_path.blank?
 
     scenario "Should edit map on #{mappable_factory_name} and contain default values", :js do
       login_as mappable.author
@@ -143,13 +143,13 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   describe "At #{mappable_show_path}" do
 
     let!(:arguments)    { {} }
-    let!(:mappable)     { create("#{mappable_factory_name}".to_sym) }
+    let!(:mappable)     { create(mappable_factory_name.to_s.to_sym) }
     let!(:map_location) { create(:map_location, "#{mappable_factory_name}_map_location".to_sym, "#{mappable_association_name}": mappable) }
 
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
     scenario "Should display map on #{mappable_factory_name} show page", :js do
-      arguments.merge!("id": mappable.id)
+      arguments[:id] = mappable.id
 
       visit send(mappable_show_path, arguments)
 
@@ -157,9 +157,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
     end
 
     scenario "Should not display map on #{mappable_factory_name} show when marker is not defined", :js do
-      mappable_without_map = create("#{mappable_factory_name}".to_sym)
+      mappable_without_map = create(mappable_factory_name.to_s.to_sym)
       set_arguments(arguments, mappable_without_map, mappable_path_arguments)
-      arguments.merge!("id": mappable_without_map.id)
+      arguments[:id] = mappable_without_map.id
 
       visit send(mappable_show_path, arguments)
 
@@ -168,7 +168,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
     scenario "Should not display map on #{mappable_factory_name} show page when feature.map is disable", :js do
       Setting['feature.map'] = false
-      arguments.merge!("id": mappable.id)
+      arguments[:id] = mappable.id
 
       visit send(mappable_show_path, arguments)
 
@@ -212,9 +212,7 @@ def submit_budget_investment_form
 end
 
 def set_arguments(arguments, mappable, mappable_path_arguments)
-  if mappable_path_arguments
-    mappable_path_arguments.each do |argument_name, path_to_value|
+  mappable_path_arguments&.each do |argument_name, path_to_value|
       arguments.merge!("#{argument_name}": mappable.send(path_to_value))
-    end
   end
 end

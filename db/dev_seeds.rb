@@ -73,7 +73,7 @@ def create_user(email, username = Faker::Name.name)
     confirmed_at:           Time.current,
     terms_of_service:       "1",
     gender:                 ['Male', 'Female'].sample,
-    date_of_birth:          rand((Time.current - 80.years) .. (Time.current - 16.years)),
+    date_of_birth:          rand((Time.current - 80.years)..(Time.current - 16.years)),
     public_activity:        (rand(1..100) > 30)
   )
 end
@@ -127,7 +127,7 @@ end
   user = create_user("user#{i}@consul.dev")
   level = [1, 2, 3].sample
   if level >= 2
-    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1", geozone:  Geozone.reorder("RANDOM()").first)
+    user.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: Faker::Number.number(10), document_type: "1", geozone: Geozone.reorder("RANDOM()").first)
   end
   if level == 3
     user.update(verified_at: Time.current, document_number: Faker::Number.number(10))
@@ -319,7 +319,7 @@ end
 end
 
 100.times do
-  voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+  voter = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
   proposal = Proposal.reorder("RANDOM()").first
   proposal.vote_by(voter: voter, vote: true)
 end
@@ -504,7 +504,7 @@ Proposal.last(3).each do |proposal|
                                   "banner-img banner-img-three"].sample,
                           target_url: Rails.application.routes.url_helpers.proposal_path(proposal),
                           post_started_at: rand((Time.current - 1.week)..(Time.current - 1.day)),
-                          post_ended_at:   rand((Time.current  - 1.day)..(Time.current + 1.week)),
+                          post_ended_at:   rand((Time.current - 1.day)..(Time.current + 1.week)),
                           created_at: rand((Time.current - 1.week)..Time.current))
 end
 
@@ -525,12 +525,14 @@ puts " ✅"
 print "Active Polls"
 (1..3).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
+                     # slug: "active-poll-#{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
                      geozone_restricted: false)
 end
 (1..5).each do |i|
   poll = Poll.create(name: "Active Poll #{i}",
+                     # slug: "active-poll-#{i}",
                      starts_at: 1.month.ago,
                      ends_at:   1.month.from_now,
                      geozone_restricted: true,
@@ -540,14 +542,32 @@ end
 puts " ✅"
 print "Upcoming Poll"
 poll = Poll.create(name: "Upcoming Poll",
+                   # slug: "upcoming-poll",
                    starts_at: 1.month.from_now,
                    ends_at:   2.months.from_now)
 
 puts " ✅"
+print "Recounting Poll"
+poll = Poll.create(name: "Recounting Poll",
+                   # slug: "recounting-poll",
+                   starts_at: 1.months.ago,
+                   ends_at:   5.days.ago)
+
+puts " ✅"
 print "Expired Poll"
 poll = Poll.create(name: "Expired Poll",
+                   # slug: "expired-poll",
                    starts_at: 2.months.ago,
                    ends_at:   1.month.ago)
+
+puts " ✅"
+print "Expired Poll with Stats & Results"
+poll = Poll.create(name: "Expired Poll with Stats & Results",
+                   # slug: "expired-poll-with-stats-and-results",
+                   starts_at: 2.months.ago,
+                   ends_at:   1.month.ago,
+                   results_enabled: true,
+                   stats_enabled: true)
 
 puts " ✅"
 print "Creating Poll Questions"
@@ -557,13 +577,11 @@ print "Creating Poll Questions"
   author = User.reorder("RANDOM()").first
   description = "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>"
   open_at = rand(2.months.ago..2.months.from_now)
-  answers = Faker::Lorem.words((2..4).to_a.sample).map { |answer| answer.capitalize }
   question = Poll::Question.create!(author: author,
                                     title: Faker::Lorem.sentence(3).truncate(60),
-                                    valid_answers: answers.join(', '),
                                     poll: poll)
-  answers.each do |answer|
-    Poll::Question::Answer.create!(question: question, title: answer, description: Faker::ChuckNorris.fact)
+  Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
   end
 end
 
@@ -595,7 +613,10 @@ print "Creating Poll Questions from Proposals"
 3.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
+  question = Poll::Question.create(poll: poll)
+  Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+  end
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end
@@ -606,7 +627,10 @@ print "Creating Successful Proposals"
 10.times do
   proposal = Proposal.reorder("RANDOM()").first
   poll = Poll.current.first
-  question = Poll::Question.create(valid_answers: "Yes, No", poll: poll)
+  question = Poll::Question.create(poll: poll)
+  Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+    Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+  end
   question.copy_attributes_from_proposal(proposal)
   question.save!
 end
@@ -633,6 +657,49 @@ print "Creating Poll Voters"
 end
 
 puts " ✅"
+print "Creating Poll Recounts"
+
+Poll.all.each do |poll|
+  poll.booth_assignments.each do |booth_assignment|
+    officer_assignment = poll.officer_assignments.first
+    author = Poll::Officer.first.user
+
+    Poll::Recount.create!(officer_assignment: officer_assignment,
+                          booth_assignment: booth_assignment,
+                          author: author,
+                          date: poll.ends_at,
+                          white_amount: rand(0..10),
+                          null_amount: rand(0..10),
+                          total_amount: rand(100..9999),
+                          origin: "booth")
+  end
+end
+
+puts " ✅"
+print "Creating Poll Results"
+
+Poll.all.each do |poll|
+  poll.booth_assignments.each do |booth_assignment|
+    officer_assignment = poll.officer_assignments.first
+    author = Poll::Officer.first.user
+
+    poll.questions.each do |question|
+      question.question_answers.each do |answer|
+        Poll::PartialResult.create!(officer_assignment: officer_assignment,
+                                    booth_assignment: booth_assignment,
+                                    date: Date.current,
+                                    question: question,
+                                    answer: answer.title,
+                                    author: author,
+                                    amount: rand(999),
+                                    origin: "booth")
+      end
+    end
+  end
+
+end
+
+puts " ✅"
 print "Creating legislation processes"
 
 5.times do
@@ -652,8 +719,7 @@ print "Creating legislation processes"
                                            allegations_phase_enabled: true,
                                            draft_publication_enabled: true,
                                            result_publication_enabled: true,
-                                           published: true
-  )
+                                           published: true)
 end
 
 ::Legislation::Process.all.each do |process|

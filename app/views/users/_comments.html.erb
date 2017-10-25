@@ -1,13 +1,18 @@
-<table class="clear activity-comments">
-  <% @comments.each do |comment| %>
-    <tr id="comment_<%= comment.id %>">
-      <td>
-        <%= comment_commentable_title(comment) %>
-        <br>
-        <%= comment.body %>
-      </td>
-    </tr>
-  <% end %>
+<table class="margin-top">
+  <thead>
+    <th scope="col"><%= t("users.show.comments") %></th>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr id="comment_<%= comment.id %>">
+        <td>
+          <%= comment_commentable_title(comment) %>
+          <br>
+          <%= comment.body %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= paginate @comments %>

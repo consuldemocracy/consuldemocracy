@@ -489,6 +489,11 @@ FactoryGirl.define do
       ends_at { 15.days.ago }
     end
 
+    trait :recounting do
+      starts_at { 1.month.ago }
+      ends_at { Date.current }
+    end
+
     trait :published do
       published true
     end
@@ -498,13 +503,25 @@ FactoryGirl.define do
     poll
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
-    valid_answers { Faker::Lorem.words(3).join(', ') }
+
+    trait :with_answers do
+      after(:create) do |question, _evaluator|
+        create(:poll_question_answer, question: question, title: "Yes")
+        create(:poll_question_answer, question: question, title: "No")
+      end
+    end
   end
 
   factory :poll_question_answer, class: 'Poll::Question::Answer' do
     association :question, factory: :poll_question
-    sequence(:title) { |n| "Question title #{n}" }
-    sequence(:description) { |n| "Question description #{n}" }
+    sequence(:title) { |n| "Answer title #{n}" }
+    sequence(:description) { |n| "Answer description #{n}" }
+  end
+
+  factory :poll_answer_video, class: 'Poll::Question::Answer::Video' do
+    association :answer, factory: :poll_question_answer
+    title "Sample video title"
+    url "https://youtu.be/nhuNb0XtRhQ"
   end
 
   factory :poll_booth, class: 'Poll::Booth' do
@@ -531,6 +548,14 @@ FactoryGirl.define do
     association :booth, factory: :poll_booth
     association :officer, factory: :poll_officer
     date Date.current
+
+    trait :vote_collection_task do
+      task 0
+    end
+
+    trait :recount_scrutiny_task do
+      task 1
+    end
   end
 
   factory :poll_voter, class: 'Poll::Voter' do
@@ -555,31 +580,16 @@ FactoryGirl.define do
   end
 
   factory :poll_answer, class: 'Poll::Answer' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: [:user, :level_two]
-    answer { question.valid_answers.sample }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: 'Poll::PartialResult' do
-    association :question, factory: :poll_question
+    association :question, factory: [:poll_question, :with_answers]
     association :author, factory: :user
     origin { 'web' }
-    answer { question.valid_answers.sample }
-  end
-
-  factory :poll_white_result, class: 'Poll::WhiteResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_null_result, class: 'Poll::NullResult' do
-    association :author, factory: :user
-    origin { 'web' }
-  end
-
-  factory :poll_total_result, class: 'Poll::TotalResult' do
-    association :author, factory: :user
-    origin { 'web' }
+    answer { question.question_answers.sample.title }
   end
 
   factory :poll_recount, class: 'Poll::Recount' do

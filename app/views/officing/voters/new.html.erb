@@ -7,7 +7,8 @@
     <thead>
       <tr>
         <th><%= t("officing.voters.new.table_poll") %></th>
-        <th><%= t("officing.voters.new.table_actions") %></th>
+        <th><%= t("officing.voters.new.table_status") %></th>
+        <th class="text-center"><%= t("officing.voters.new.table_actions") %></th>
       </tr>
     </thead>
     <tbody>
@@ -16,13 +17,11 @@
         <td>
           <%= poll.name %>
         </td>
-        <td id="actions">
-          <% if poll.votable_by?(@user) %>
-            <%= render "can_vote", poll: poll %>
-          <% else %>
-            <%= render "already_voted" %>
-          <% end %>
-        </td>
+        <% if poll.votable_by?(@user) %>
+          <%= render "can_vote", poll: poll %>
+        <% else %>
+          <%= render "already_voted" %>
+        <% end %>
       </tr>
       <% end %>
     </tbody>

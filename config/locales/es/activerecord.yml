@@ -150,7 +150,6 @@ es:
         description: "Descripción"
       poll/question:
         title: "Pregunta"
-        valid_answers: "Posibles respuestas"
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"

@@ -33,7 +33,7 @@ module DocumentsHelper
 
   def render_attachment(builder, document)
     klass = document.errors[:attachment].any? ? "error" : ""
-    klass = document.persisted? || document.cached_attachment.present?  ? " hide" : ""
+    klass = document.persisted? || document.cached_attachment.present? ? " hide" : ""
     html = builder.label :attachment,
                          t("documents.form.attachment_label"),
                          class: "button hollow #{klass}"

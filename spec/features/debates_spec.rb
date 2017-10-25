@@ -394,7 +394,7 @@ feature 'Debates' do
       end
 
       scenario 'Debates are ordered by recommendations when there is a user logged', :js do
-        proposal = create(:proposal, tag_list: "Sport" )
+        proposal = create(:proposal, tag_list: "Sport")
         user = create(:user)
         create(:follow, followable: proposal, user: user)
         login_as(user)
@@ -830,7 +830,7 @@ feature 'Debates' do
       debate2 = create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
       debate3 = create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
       debate4 = create(:debate, title: "Do not display",    cached_votes_total: 1)
-      proposal1 =  create(:proposal, tag_list: "Sport")
+      proposal1 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
       visit debates_path

@@ -14,6 +14,12 @@ feature "Notifications" do
   let(:legislation_question) { create(:legislation_question, process: process, author: administrator) }
   let(:legislation_annotation) { create(:legislation_annotation, author: author) }
 
+  let(:topic) {
+    proposal = create(:proposal)
+    community = proposal.community
+    create(:topic, community: community, author: author)
+  }
+
   scenario "User commented on my debate", :js do
     create(:notification, notifiable: debate, user: author)
     login_as author
@@ -30,6 +36,19 @@ feature "Notifications" do
   scenario "User commented on my legislation question", :js do
     create(:notification, notifiable: legislation_question, user: administrator)
     login_as administrator
+    visit root_path
+
+    find(".icon-notification").click
+
+    expect(page).to have_css ".notification", count: 1
+
+    expect(page).to have_content "Someone commented on"
+    expect(page).to have_xpath "//a[@href='#{notification_path(Notification.last)}']"
+  end
+
+  scenario "User commented on my topic", :js do
+    create(:notification, notifiable: topic, user: author)
+    login_as author
     visit root_path
 
     find(".icon-notification").click

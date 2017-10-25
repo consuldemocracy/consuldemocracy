@@ -163,14 +163,15 @@ module CommonActions
     expect(page).to have_content 'Document verified with Census'
   end
 
-  def confirm_phone
+  def confirm_phone(user = nil)
+    user ||= User.last
+
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
     expect(page).to have_content 'Enter the confirmation code sent to you by text message'
 
-    user = User.last.reload
-    fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
+    fill_in 'sms_confirmation_code', with: user.reload.sms_confirmation_code
     click_button 'Send'
 
     expect(page).to have_content 'Code correct'
@@ -298,15 +299,13 @@ module CommonActions
     end
   end
 
-  def vote_for_poll_via_web(poll, question)
+  def vote_for_poll_via_web(poll, question, answer)
     visit poll_path(poll)
 
     within("#poll_question_#{question.id}_answers") do
-      click_link 'Yes'
-      expect(page).to_not have_link('Yes')
+      click_link "#{answer}"
+      expect(page).to_not have_link("#{answer}")
     end
-
-    expect(Poll::Voter.count).to eq(1)
   end
 
   def vote_for_poll_via_booth

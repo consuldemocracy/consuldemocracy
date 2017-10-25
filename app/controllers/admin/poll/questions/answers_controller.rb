@@ -39,6 +39,11 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
     render 'admin/poll/questions/answers/documents'
   end
 
+  def order_answers
+    ::Poll::Question::Answer.order_answers(params[:ordered_list])
+    render nothing: true
+  end
+
   private
 
     def answer_params

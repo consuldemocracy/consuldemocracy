@@ -60,6 +60,7 @@ feature 'Admin booths' do
     expect(page).to have_content booth_for_current_poll.name
     expect(page).to have_content booth_for_incoming_poll.name
     expect(page).to_not have_content booth_for_expired_poll.name
+    expect(page).to_not have_link "Edit booth"
   end
 
   scenario 'Show' do
@@ -91,10 +92,11 @@ feature 'Admin booths' do
     booth = create(:poll_booth)
     assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
-    visit available_admin_booths_path
+    visit admin_booths_path
 
     within("#booth_#{booth.id}") do
-      click_link "Edit"
+      expect(page).to_not have_link "Manage shifts"
+      click_link "Edit booth"
     end
 
     fill_in "poll_booth_name", with: "Next booth"
@@ -111,4 +113,18 @@ feature 'Admin booths' do
     end
   end
 
+  scenario "Back link go back to available list when manage shifts" do
+    poll = create(:poll, :current)
+    booth = create(:poll_booth)
+    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+
+    visit available_admin_booths_path
+
+    within("#booth_#{booth.id}") do
+      click_link "Manage shifts"
+    end
+
+    click_link "Go back"
+    expect(current_path).to eq(available_admin_booths_path)
+  end
 end

@@ -8,6 +8,7 @@
 // 06. Budget
 // 07. Proposals successful
 // 08. Polls
+// 09. Polls results and stats
 //
 
 // 01. Votes and supports
@@ -361,10 +362,6 @@
     text-align: center;
     vertical-align: top;
     width: rem-calc(48);
-  }
-
-  .edit-debate {
-    margin-bottom: 0;
   }
 
   .debate-info,
@@ -1478,33 +1475,6 @@
   }
 }
 
-.featured-proposals-ballot-banner,
-.sucessfull-proposals-banner {
-  background: #2d3e50 image-url('ballot_tiny.gif') no-repeat;
-  background-position: 75% 0;
-  position: relative;
-
-  @include breakpoint(medium) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  @include breakpoint(large) {
-    background: #2d3e50 image-url('ballot.gif') no-repeat;
-    background-position: 90% 0;
-  }
-
-  h2,
-  a:hover h2 {
-    color: #ffd200 !important;
-  }
-
-  p {
-    color: #fff;
-  }
-}
-
-.sucessfull-proposals-banner,
 .successful .panel {
 
   .icon-successful {
@@ -1596,7 +1566,7 @@
     height: 100%;
 
     &.short {
-      height: $line-height * 12;
+      height: rem-calc(300);
       overflow: hidden;
     }
   }
@@ -1828,5 +1798,61 @@
         top: -6px;
       }
     }
+  }
+}
+
+// 09. Polls results and stats
+// ---------------------------
+
+.polls-results-stats {
+
+  .sidebar {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
+
+    @include breakpoint(medium) {
+      border-bottom: 0;
+      border-right: 1px solid $border;
+    }
+
+    .menu {
+      padding: 0;
+
+      li a {
+        color: $link;
+        line-height: $line-height;
+      }
+    }
+  }
+
+  table {
+    table-layout: fixed;
+
+    caption {
+      padding: $line-height / 2 0;
+      text-align: left;
+    }
+
+    th {
+      text-align: left;
+
+      &.win {
+        background: #009fde;
+      }
+    }
+
+    td {
+
+      &.win {
+        background: #ccedf8;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .number {
+    font-size: rem-calc(60);
+    font-weight: bold;
+    line-height: rem-calc(60);
   }
 }
