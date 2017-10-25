@@ -517,6 +517,19 @@ section "Creating proposal notifications" do
   end
 end
 
+section "Creating Successful Proposals" do
+  10.times do
+    proposal = Proposal.all.sample
+    poll = Poll.current.first
+    question = Poll::Question.create(poll: poll)
+    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+    end
+    question.copy_attributes_from_proposal(proposal)
+    question.save!
+  end
+end
+
 section "Creating polls" do
 
   Poll.create(name: "Current Poll",
@@ -582,58 +595,25 @@ section "Creating Poll Booths & BoothAssignments" do
   end
 end
 
-# section "Creating Poll Officer Assignments" do
-#   (1..15).to_a.sample.times do |i|
-#     Poll::BoothAssignment.all.sample(i).each do |booth_assignment|
-#       Poll::OfficerAssignment.create(officer: poll_officer.poll_officer,
-#                                      booth_assignment: booth_assignment,
-#                                      date: booth_assignment.poll.starts_at)
-#     end
-#   end
-# end
-
 section "Creating Poll Shifts for Poll Officers" do
-  Poll::BoothAssignment.all.each do |booth_assignment|
-    # TODO: Create vote_collection on correct date ranges
-    Poll::Shift.create(booth_id: booth_assignment.booth_id,
-                       officer: Poll::Officer.first,
-                       date: Date.current,
-                       officer_name: Poll::Officer.first.name,
-                       officer_email: Poll::Officer.first.email,
-                       task: :vote_collection)
-    # TODO: Create recount_scrutiny shifts on correct date ranges
-    # Poll::Shift.create(booth_id: booth_assignment.booth_id,
-    #                    officer_id: poll_officer.poll_officer.id,
-    #                    date: Date.current,
-    #                    officer_name: poll_officer.poll_officer.name,
-    #                    officer_email: poll_officer.poll_officer.email,
-    #                    task: 1)
-  end
-end
-
-section "Creating Poll Questions from Proposals" do
-  3.times do
-    proposal = Proposal.all.sample
-    poll = Poll.current.first
-    question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+  Poll.all.each do |poll|
+    Poll::BoothAssignment.where(poll: poll).each do |booth_assignment|
+      Poll::Officer.all.each do |poll_officer|
+        {
+          vote_collection: (poll.starts_at.to_datetime..poll.ends_at.to_datetime),
+          recount_scrutiny: (poll.ends_at.to_datetime..poll.ends_at.to_datetime + Poll::RECOUNT_DURATION)
+        }.each do |task_name, task_dates|
+          task_dates.each do |shift_date|
+            Poll::Shift.create(booth: booth_assignment.booth,
+                               officer: poll_officer,
+                               date: shift_date,
+                               officer_name: poll_officer.name,
+                               officer_email: poll_officer.email,
+                               task: task_name)
+          end
+        end
+      end
     end
-    question.copy_attributes_from_proposal(proposal)
-    question.save!
-  end
-end
-
-section "Creating Successful Proposals" do
-  10.times do
-    proposal = Proposal.all.sample
-    poll = Poll.current.first
-    question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
-    end
-    question.copy_attributes_from_proposal(proposal)
-    question.save!
   end
 end
 
