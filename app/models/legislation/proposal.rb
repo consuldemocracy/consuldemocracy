@@ -80,8 +80,16 @@ class Legislation::Proposal < ActiveRecord::Base
     /\A#{Setting["proposal_code_prefix"]}-\d\d\d\d-\d\d-(\d*)\z/.match(terms)
   end
 
-  def total_votes
+  def likes
     cached_votes_up
+  end
+
+  def dislikes
+    cached_votes_down
+  end
+
+  def total_votes
+    cached_votes_total
   end
 
   def voters
