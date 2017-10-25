@@ -2,45 +2,47 @@
 
 <%= render 'admin/shared/user_search', url: search_admin_administrators_path %>
 
-<% if @administrators.any? %>
-  <h3 class="margin"><%= page_entries_info @administrators %></h3>
+<div id="administrators">
+  <% if @administrators.any? %>
+    <h3 class="margin"><%= page_entries_info @administrators %></h3>
 
-  <table id="administrators">
-    <thead>
-      <th scope="col"><%= t("admin.administrators.index.name") %></th>
-      <th scope="col"><%= t("admin.administrators.index.email") %></th>
-      <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
-    </thead>
-    <% @administrators.each do |administrator| %>
-      <tr>
-        <td>
-          <%= administrator.name %>
-        </td>
-        <td>
-          <%= administrator.email %>
-        </td>
-        <td>
-          <% if administrator.persisted? %>
-            <%= link_to t('admin.administrators.administrator.delete'),
-                        admin_administrator_path(administrator),
-                        method: :delete,
-                        class: "button hollow alert expanded"
-            %>
-          <% else %>
-            <%= link_to t('admin.administrators.administrator.add'),
-                        { controller: "admin/administrators", action: :create,
-                          user_id: administrator.user_id },
-                          method: :post,
-                          class: "button success expanded" %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.administrators.index.name") %></th>
+        <th scope="col"><%= t("admin.administrators.index.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <% @administrators.each do |administrator| %>
+        <tr>
+          <td>
+            <%= administrator.name %>
+          </td>
+          <td>
+            <%= administrator.email %>
+          </td>
+          <td>
+            <% if administrator.persisted? %>
+              <%= link_to t('admin.administrators.administrator.delete'),
+                          admin_administrator_path(administrator),
+                          method: :delete,
+                          class: "button hollow alert expanded"
+              %>
+            <% else %>
+              <%= link_to t('admin.administrators.administrator.add'),
+                          { controller: "admin/administrators", action: :create,
+                            user_id: administrator.user_id },
+                            method: :post,
+                            class: "button success expanded" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
 
-  <%= paginate @administrators %>
-<% else %>
-  <div class="callout primary margin">
-    <%= t("admin.administrators.index.no_administrators") %>
-  </div>
-<% end %>
+    <%= paginate @administrators %>
+  <% else %>
+    <div class="callout primary margin">
+      <%= t("admin.administrators.index.no_administrators") %>
+    </div>
+  <% end %>
+</div>
