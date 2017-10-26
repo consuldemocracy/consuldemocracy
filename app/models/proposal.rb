@@ -18,8 +18,9 @@ class Proposal < ActiveRecord::Base
   documentable max_documents_allowed: 3,
                max_file_size: 3.megabytes,
                accepted_content_types: [ "application/pdf" ]
-  include EmbedVideosHelper
+  # include EmbedVideosHelper
   include Relationable
+  include Videable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -46,7 +47,7 @@ class Proposal < ActiveRecord::Base
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  validate :valid_video_url?
+  # validate :valid_video_url?
 
   before_validation :set_responsible_name
 
