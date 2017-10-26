@@ -241,6 +241,26 @@ feature 'Proposals' do
     expect(page).to have_content I18n.l(Proposal.last.created_at.to_date)
   end
 
+  scenario "Create with wrong video url" do
+    author = create(:user)
+    login_as(author)
+
+    visit new_proposal_path
+    fill_in 'proposal_title', with: 'Help refugees'
+    fill_in 'proposal_question', with: '¿Would you like to give assistance to war refugees?'
+    fill_in 'proposal_summary', with: 'In summary, what we want is...'
+    fill_in 'proposal_description', with: 'This is very important because...'
+    fill_in 'proposal_external_url', with: 'http://rescue.org/refugees'
+    fill_in 'proposal_video_url', with: 'https://www.google.com'
+    fill_in 'proposal_responsible_name', with: 'Isabel Garcia'
+    fill_in 'proposal_tag_list', with: 'Refugees, Solidarity'
+    check 'proposal_terms_of_service'
+
+    click_button 'Create proposal'
+
+    expect(page).to have_content "1 error prevented this Proposal from being saved"
+  end
+
   scenario 'Create with proposal improvement info link' do
     Setting['proposal_improvement_path'] = '/more-information/proposal-improvement'
     author = create(:user)
