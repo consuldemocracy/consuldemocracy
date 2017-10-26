@@ -272,7 +272,7 @@ Rails.application.routes.draw do
       get :search, on: :collection
     end
 
-    resources :valuators, only: [:index, :create] do
+    resources :valuators, only: [:index, :create, :destroy] do
       get :search, on: :collection
       get :summary, on: :collection
     end
