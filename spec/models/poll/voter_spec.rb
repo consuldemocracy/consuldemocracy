@@ -94,14 +94,7 @@ describe Poll::Voter do
 
     it "should be valid if token is not present via booth" do
       user = create(:user, :level_two)
-      voter = build(:poll_voter, user: user, poll: poll, officer_assignment: officer_assignment, origin: "booth", token: '')
-
-      expect(voter).to be_valid
-    end
-
-    it "should be valid if token is not present via letter" do
-      user = create(:user, :level_two)
-      voter = build(:poll_voter, user: user, poll: poll, origin: "letter", token: '')
+      voter = build(:poll_voter, user: user, poll: poll, origin: "booth", token: '')
 
       expect(voter).to be_valid
     end
