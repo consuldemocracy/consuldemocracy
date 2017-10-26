@@ -12,17 +12,18 @@
 <% else %>
   <table>
     <thead>
-      <th><%= t("admin.booths.index.name") %></th>
-      <th><%= t("admin.booths.index.location") %></th>
+      <th><%= t("admin.shared.labels.name") %></th>
+      <th><%= t("admin.shared.labels.location") %></th>
       <th><%= t("admin.booth_assignments.manage.status.assign_status") %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th class="text-right"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
-    <% @booths.each do |booth| %>
-      <tr id="<%= dom_id(booth) %>" class="booth">
-        <%= render partial: "booth_assignment", locals: { booth: booth, booth_assignment: booth.assignment_on_poll(@poll) } %>
-      </tr>
-    <% end %>
+      <% @booths.each do |booth| %>
+        <tr id="<%= dom_id(booth) %>" class="booth">
+          <%= render partial: "booth_assignment",
+                     locals: { booth: booth, booth_assignment: booth.assignment_on_poll(@poll) } %>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 <% end %>

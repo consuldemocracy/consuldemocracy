@@ -7,7 +7,7 @@
 
 <% if @booth_assignment.booth.location.present? %>
   <p>
-    <strong><%= t("admin.poll_booth_assignments.show.location") %></strong>:
+    <strong><%= t("admin.shared.labels.location") %></strong>:
     <%= @booth_assignment.booth.location %>
   </p>
 <% end %>
@@ -37,7 +37,8 @@
         <tbody>
           <% @booth_assignment.officers.uniq.each do |officer| %>
             <tr id="officer_<%= officer.id %>" class="officer">
-              <td><%= link_to officer.name, by_officer_admin_poll_officer_assignments_path(@poll, officer_id: officer.id) %></td>
+              <td><%= link_to officer.name,
+                              by_officer_admin_poll_officer_assignments_path(@poll, officer_id: officer.id) %></td>
               <td><%= officer.email %></td>
             </tr>
           <% end %>

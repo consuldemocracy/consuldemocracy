@@ -8,19 +8,15 @@
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.valuators.index.name") %></th>
-        <th scope="col"><%= t("admin.valuators.index.email") %></th>
-        <th scope="col"><%= t("admin.valuators.index.description") %></th>
+        <th scope="col"><%= t("admin.shared.labels.name") %></th>
+        <th scope="col"><%= t("admin.shared.labels.email") %></th>
+        <th scope="col"><%= t("admin.shared.labels.description") %></th>
       </thead>
       <tbody>
         <% @valuators.each do |valuator| %>
           <tr>
-            <td>
-              <%= valuator.name %>
-            </td>
-            <td>
-              <%= valuator.email %>
-            </td>
+            <td><%= valuator.name %></td>
+            <td><%= valuator.email %></td>
             <td>
               <% if valuator.description.present? %>
                 <%= valuator.description %>

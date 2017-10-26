@@ -1,6 +1,7 @@
 <%= back_link_to %>
 
-<%= link_to t("admin.answers.show.edit"), edit_admin_answer_path(@answer),
+<%= link_to t("admin.answers.show.edit"),
+            edit_admin_answer_path(@answer),
             class: "button hollow float-right" %>
 
 <ul class="breadcrumbs margin-top">
@@ -13,9 +14,9 @@
 <table>
   <thead>
     <tr>
-      <th scope="col"><%= t("admin.answers.show.title") %></th>
-      <th scope="col"><%= t("admin.answers.show.description") %></th>
-      <th scope="col" class="text-center"><%= t("admin.answers.show.images") %></th>
+      <th scope="col"><%= t("admin.shared.labels.title") %></th>
+      <th scope="col"><%= t("admin.shared.labels.description") %></th>
+      <th scope="col" class="text-center"><%= t("admin.shared.labels.images") %></th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +25,7 @@
       <td><%= @answer.description %></td>
       <td class="text-center">
         (<%= @answer.images.count %>)<br>
-        <%= link_to t("admin.answers.show.images_list"), admin_answer_images_path(@answer) %>
+        <%= link_to t("admin.shared.labels.images_list"), admin_answer_images_path(@answer) %>
       </td>
     </tr>
   </tbody>

@@ -1,6 +1,6 @@
 <h2><%= t("admin.managers.index.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_managers_path %>
+<%= render "admin/shared/user_search", url: search_admin_managers_path %>
 
 <div id="managers">
   <% if @managers.any? %>
@@ -8,33 +8,28 @@
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.managers.index.name") %></th>
-        <th scope="col"><%= t("admin.managers.index.email") %></th>
-        <th scope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+        <th scope="col"><%= t("admin.shared.labels.name") %></th>
+        <th scope="col"><%= t("admin.shared.labels.email") %></th>
+        <th scope="col" class="small-3"><%= t("admin.shared.labels.actions") %></th>
       </thead>
       <tbody>
         <% @managers.each do |manager| %>
           <tr>
-            <td>
-              <%= manager.name %>
-            </td>
-            <td>
-              <%= manager.email %>
-            </td>
+            <td><%= manager.name %></td>
+            <td><%= manager.email %></td>
             <td>
               <% if manager.persisted? %>
-                <%= link_to t('admin.managers.manager.delete'),
-                  admin_manager_path(manager),
-                  method: :delete,
-                  class: "button hollow alert expanded"
-                %>
+                <%= link_to t("admin.shared.buttons.delete"),
+                            admin_manager_path(manager),
+                            method: :delete,
+                            class: "button hollow alert expanded" %>
               <% else %>
-                <%= link_to t('admin.managers.manager.add'),
-                             { controller: "admin/managers",
-                               action: :create,
-                               user_id: manager.user_id },
-                               method: :post,
-                               class: "button success expanded" %>
+                <%= link_to t("admin.managers.buttons.add"),
+                            { controller: "admin/managers",
+                              action: :create,
+                              user_id: manager.user_id },
+                            method: :post,
+                            class: "button success expanded" %>
               <% end %>
             </td>
           </tr>

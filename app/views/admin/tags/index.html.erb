@@ -15,25 +15,24 @@
 <table>
   <thead>
     <th scope="col" class="small-9"><%= t("admin.tags.index.topic") %></th>
-    <th scope="col"><%= t("admin.actions.actions") %></th>
+    <th scope="col"><%= t("admin.shared.labels.actions") %></th>
   </thead>
   <tbody>
-  <% @tags.each do |tag| %>
-    <tr>
-      <td>
-        <%= form_for(tag,
-            url: admin_tag_path(tag),
-            as: :tag,
-            html: { id: "edit_tag_#{tag.id}"}) do |f| %>
-
+    <% @tags.each do |tag| %>
+      <tr>
+        <td>
+          <%= form_for(tag, url: admin_tag_path(tag), as: :tag, html: { id: "edit_tag_#{tag.id}" }) do |f| %>
             <strong><%= tag.name %></strong>
-        <% end %>
-      </td>
-      <td id="tag_<%= tag.id %>">
-        <%= link_to t("admin.tags.destroy"), admin_tag_path(tag), method: :delete, class: "button hollow alert" %>
-      </td>
-    </tr>
-  <% end %>
+          <% end %>
+        </td>
+        <td id="tag_<%= tag.id %>">
+          <%= link_to t("admin.tags.destroy"),
+                      admin_tag_path(tag),
+                      method: :delete,
+                      class: "button hollow alert" %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

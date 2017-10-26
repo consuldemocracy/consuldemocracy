@@ -6,7 +6,7 @@
       <%= text_field_tag :term, "", placeholder: t("admin.organizations.index.search_placeholder") %>
 
       <div class="input-group-button">
-        <%= f.submit t("admin.organizations.index.search"), class: "button" %>
+        <%= f.submit t("admin.shared.buttons.search"), class: "button" %>
       </div>
     </div>
   <% end %>
@@ -20,48 +20,50 @@
   <table>
     <% hidden = 0 %>
     <thead>
-      <th scpope="col"><%= t("admin.organizations.index.name") %></th>
-      <th scpope="col"><%= t("admin.organizations.index.email") %></th>
-      <th scpope="col"><%= t("admin.organizations.index.phone_number") %></th>
-      <th scpope="col"><%= t("admin.organizations.index.responsible_name") %></th>
-      <th scpope="col"><%= t("admin.organizations.index.status") %></th>
-      <th scpope="col" class="small-3"><%= t("admin.shared.actions") %></th>
+      <th scope="col"><%= t("admin.shared.labels.name") %></th>
+      <th scope="col"><%= t("admin.shared.labels.email") %></th>
+      <th scope="col"><%= t("admin.organizations.index.phone_number") %></th>
+      <th scope="col"><%= t("admin.organizations.index.responsible_name") %></th>
+      <th scope="col"><%= t("admin.organizations.index.status") %></th>
+      <th scope="col" class="small-3"><%= t("admin.shared.labels.actions") %></th>
     </thead>
     <tbody>
-    <% @organizations.each do |organization| %>
-      <% hidden += 1 and next if organization.user.nil? || organization.user.hidden? %>
-      <tr id="<%= dom_id(organization) %>">
-      <td><%= organization.name %></td>
-      <td><%= organization.email %></td>
-      <td><%= organization.phone_number %></td>
-      <td><%= organization.responsible_name %></td>
-      <td>
-        <% if organization.verified? %>
-          <span class="icon-check"></span>
-          <%= t("admin.organizations.index.verified") %>
-        <% elsif organization.rejected? %>
-          <span class="icon-x rejected"></span>
-          <%= t("admin.organizations.index.rejected") %>
-        <% else %>
-          <span class="icon-eye"></span>
-          <%= t("admin.organizations.index.pending") %>
-        <% end %>
-      </td>
-      <td>
-        <% if can? :verify, organization %>
-          <%= link_to t("admin.organizations.index.verify"),
-                  verify_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button success small-5" %>
-        <% end %>
+      <% @organizations.each do |organization| %>
+        <% hidden += 1 and next if organization.user.nil? || organization.user.hidden? %>
+        <tr id="<%= dom_id(organization) %>">
+          <td><%= organization.name %></td>
+          <td><%= organization.email %></td>
+          <td><%= organization.phone_number %></td>
+          <td><%= organization.responsible_name %></td>
+          <td>
+            <% if organization.verified? %>
+              <span class="icon-check"></span>
+              <%= t("admin.organizations.index.verified") %>
+            <% elsif organization.rejected? %>
+              <span class="icon-x rejected"></span>
+              <%= t("admin.organizations.index.rejected") %>
+            <% else %>
+              <span class="icon-eye"></span>
+              <%= t("admin.organizations.index.pending") %>
+            <% end %>
+          </td>
+          <td>
+            <% if can? :verify, organization %>
+              <%= link_to t("admin.organizations.index.verify"),
+                          verify_admin_organization_path(organization, request.query_parameters),
+                          method: :put,
+                          class: "button success small-5" %>
+            <% end %>
 
-        <% if can? :reject, organization %>
-          <%= link_to t("admin.organizations.index.reject"),
-                  reject_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button hollow alert small-5"%>
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
+            <% if can? :reject, organization %>
+              <%= link_to t("admin.organizations.index.reject"),
+                          reject_admin_organization_path(organization, request.query_parameters),
+                          method: :put,
+                          class: "button hollow alert small-5" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 

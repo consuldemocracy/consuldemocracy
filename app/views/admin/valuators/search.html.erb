@@ -8,10 +8,10 @@
 
     <table>
       <thead>
-        <th scope="col"><%= t("admin.valuators.index.name") %></th>
-        <th scope="col"><%= t("admin.valuators.index.email") %></th>
-        <th scope="col"><%= t("admin.valuators.index.description") %></th>
-        <th scope="col"><%= t("admin.shared.actions") %></th>
+        <th scope="col"><%= t("admin.shared.labels.name") %></th>
+        <th scope="col"><%= t("admin.shared.labels.email") %></th>
+        <th scope="col"><%= t("admin.shared.labels.description") %></th>
+        <th scope="col"><%= t("admin.shared.labels.actions") %></th>
       </thead>
       <tbody>
         <% @users.each do |user| %>
@@ -35,7 +35,7 @@
                                    label: false,
                                    placeholder: t("admin.valuators.valuator.description_placeholder") %>
                   <%= f.hidden_field :user_id %>
-                  <%= f.submit t("admin.valuators.valuator.add"), class: "button success expanded" %>
+                  <%= f.submit t("admin.valuators.buttons.add"), class: "button success expanded" %>
                 <% end %>
               <% end %>
             </td>

@@ -8,7 +8,7 @@
 
     <h2><%= @process.title %></h2>
 
-    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
+    <%= render "admin/legislation/processes/subnav", process: @process, active: "questions" %>
 
     <div class="row">
       <div class="small-12 medium-9 column">
@@ -16,7 +16,9 @@
       </div>
 
       <div class="small-12 medium-3 column legislation-process-question">
-        <%= link_to t("admin.legislation.questions.index.create"), new_admin_legislation_process_question_path, class: "button" %>
+        <%= link_to t("admin.legislation.questions.index.create"),
+                    new_admin_legislation_process_question_path,
+                    class: "button" %>
       </div>
     </div>
 
@@ -24,31 +26,31 @@
       <table class="stack">
        <thead>
           <tr>
-            <th><%= t("admin.legislation.questions.table.title") %></th>
+            <th><%= t("admin.shared.labels.title") %></th>
             <th><%= t("admin.legislation.questions.table.question_options") %></th>
             <th><%= t("admin.legislation.questions.table.answers_count") %></th>
             <th><%= t("admin.legislation.questions.table.comments_count") %></th>
           </tr>
         </thead>
         <tbody>
-        <% @process.questions.each do |question| %>
-          <tr id="<%= dom_id(question) %>">
-            <td>
-              <%= link_to question.title, edit_admin_legislation_process_question_path(@process, question) %>
-            </td>
-            <td>
-              <%= content_tag :ul do %>
-                <% question.question_options.each do |question_option| %>
-                  <%= content_tag :li do %>
-                    <%= question_option.value %> (<%= question_option.answers_count %>)
+          <% @process.questions.each do |question| %>
+            <tr id="<%= dom_id(question) %>">
+              <td>
+                <%= link_to question.title,
+                            edit_admin_legislation_process_question_path(@process, question) %>
+              </td>
+              <td>
+                <ul>
+                  <% question.question_options.each do |question_option| %>
+                    <li><%= question_option.value %> (<%= question_option.answers_count %>)</li>
                   <% end %>
-                <% end %>
-              <% end %>
-            </td>
-            <td><%= question.answers_count %></td>
-            <td><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: 'comments') %></td>
-          </tr>
-        <% end %>
+                </ul>
+              </td>
+              <td><%= question.answers_count %></td>
+              <td><%= link_to question.comments.count,
+                              legislation_process_question_path(@process, question, anchor: 'comments') %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     <% end %>
