@@ -29,6 +29,14 @@ feature 'Admin valuators' do
     end
   end
 
+  scenario 'Delete Valuator' do
+    click_link 'Delete'
+
+    within('#valuators') do
+      expect(page).to_not have_content(@valuator.name)
+    end
+  end
+
   context 'Search' do
 
     background do
