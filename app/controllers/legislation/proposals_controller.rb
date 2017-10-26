@@ -30,7 +30,7 @@ class Legislation::ProposalsController < Legislation::BaseController
     @proposal = Legislation::Proposal.new(proposal_params.merge(author: current_user))
 
     if @proposal.save
-      redirect_to share_legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t('flash.actions.create.proposal')
+      redirect_to legislation_process_proposal_path(params[:process_id], @proposal), notice: I18n.t('flash.actions.create.proposal')
     else
       render :new
     end
@@ -44,12 +44,6 @@ class Legislation::ProposalsController < Legislation::BaseController
   def vote
     @proposal.register_vote(current_user, params[:value])
     set_legislation_proposal_votes(@proposal)
-  end
-
-  def share
-    if Setting['proposal_improvement_path'].present?
-      @proposal_improvement_path = Setting['proposal_improvement_path']
-    end
   end
 
   private
