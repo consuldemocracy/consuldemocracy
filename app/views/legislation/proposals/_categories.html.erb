@@ -3,10 +3,12 @@
 <br>
 
 <ul id="categories" class="no-bullet categories">
-  <% @categories.each do |category| %>
+  <% @process.tag_list_on(:customs).each do |tag| %>
     <li class="inline-block">
-      <% css_class = { class: 'active' } if params[:search] == category.name %>
-      <%= link_to category.name, proposals_path(search: category.name), css_class || {} %>
+      <% css_class = { class: 'active' } if params[:search] == tag %>
+      <%= link_to tag,
+                  legislation_process_proposals_path(process_id: @process, search: tag),
+                  css_class || {} %>
     </li>
   <% end %>
 </ul>
