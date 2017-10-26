@@ -19,12 +19,12 @@
         </div>
       </div>
 
-      <% if @process.proposals_phase.open? %>
-        <div class="small-12 medium-3 column">
+      <div class="small-12 medium-3 column">
+        <% if @process.proposals_phase.open? %>
           <p><%= link_to t("proposals.index.start_proposal"), new_legislation_process_proposal_path(@process), class: 'button expanded' %></p>
-          <%= render 'legislation/proposals/categories', taggable: @process %>
-        </div>
-      <% end %>
+        <% end %>
+        <%= render 'legislation/proposals/categories', taggable: @process %>
+      </div>
     </div>
   </div>
 </div>
