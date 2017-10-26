@@ -120,3 +120,6 @@ en:
     shared:
       share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}
+    proposals:
+      form:
+        tags_label: "Categories"

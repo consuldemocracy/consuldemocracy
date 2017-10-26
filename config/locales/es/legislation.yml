@@ -120,3 +120,6 @@ es:
     shared:
       share: Compartir
       share_comment: Comentario sobre la %{version_name} del borrador del proceso %{process_name}
+    proposals:
+      form:
+        tags_label: "Categorías"

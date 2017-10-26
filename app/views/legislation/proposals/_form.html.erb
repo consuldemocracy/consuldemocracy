@@ -58,11 +58,10 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("proposals.form.tags_label") %>
+      <%= f.label :tag_list, t("legislation.proposals.form.tags_label") %>
       <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
         <% @process.tag_list_on(:customs).each do |tag| %>
           <a class="js-add-tag-link"><%= tag %></a>
         <% end %>
