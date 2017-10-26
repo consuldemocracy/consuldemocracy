@@ -139,7 +139,6 @@ Rails.application.routes.draw do
           post :vote
           put :flag
           put :unflag
-          get :share
         end
         collection do
           get :map
