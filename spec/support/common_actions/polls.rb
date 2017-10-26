@@ -33,4 +33,8 @@ module Polls
 
     expect(page).to have_content 'Code correct'
   end
+
+  def remove_token_from_vote_link
+    page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
+  end
 end
