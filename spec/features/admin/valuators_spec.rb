@@ -21,7 +21,7 @@ feature 'Admin valuators' do
 
     expect(page).to have_content(@user.name)
     fill_in 'valuator_description', with: 'environmental expert'
-    click_button 'Add to valuators'
+    click_button 'Add as Valuator'
 
     within('#valuators') do
       expect(page).to have_content(@user.name)

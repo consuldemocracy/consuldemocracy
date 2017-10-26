@@ -61,7 +61,7 @@ feature 'Admin shifts' do
     within("#shifts") do
       expect(page).to have_css(".shift", count: 1)
       expect(page).to have_content(I18n.l(Date.current, format: :long))
-      expect(page).to have_content("Collect Votes")
+      expect(page).to have_content("Collect votes")
       expect(page).to have_content(officer.name)
     end
 

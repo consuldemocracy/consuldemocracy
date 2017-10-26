@@ -20,7 +20,7 @@ feature 'Admin managers' do
     click_button 'Search'
 
     expect(page).to have_content @user.name
-    click_link 'Add'
+    click_link 'Add as Manager'
     within("#managers") do
       expect(page).to have_content @user.name
     end
