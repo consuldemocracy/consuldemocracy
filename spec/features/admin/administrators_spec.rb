@@ -16,7 +16,7 @@ feature 'Admin administrators' do
   end
 
   scenario 'Create Administrator', :js do
-    fill_in 'email', with: @user.email
+    fill_in 'name_or_email', with: @user.email
     click_button 'Search'
 
     expect(page).to have_content @user.name
@@ -41,5 +41,53 @@ feature 'Admin administrators' do
       expect(page).to have_content I18n.t("admin.administrators.administrator.restricted_removal")
     end
   end
-end
 
+  context 'Search' do
+
+    background do
+      user  = create(:user, username: 'Bernard Sumner', email: 'bernard@sumner.com')
+      user2 = create(:user, username: 'Tony Soprano', email: 'tony@soprano.com')
+      @administrator1 = create(:administrator, user: user)
+      @administrator2 = create(:administrator, user: user2)
+      visit admin_administrators_path
+    end
+
+    scenario 'returns no results if search term is empty' do
+      expect(page).to have_content(@administrator1.name)
+      expect(page).to have_content(@administrator2.name)
+
+      fill_in 'name_or_email', with: ' '
+      click_button 'Search'
+
+      expect(page).to have_content('Administrators: User search')
+      expect(page).to have_content('No results found')
+      expect(page).to_not have_content(@administrator1.name)
+      expect(page).to_not have_content(@administrator2.name)
+    end
+
+    scenario 'search by name' do
+      expect(page).to have_content(@administrator1.name)
+      expect(page).to have_content(@administrator2.name)
+
+      fill_in 'name_or_email', with: 'Sumn'
+      click_button 'Search'
+
+      expect(page).to have_content('Administrators: User search')
+      expect(page).to have_content(@administrator1.name)
+      expect(page).to_not have_content(@administrator2.name)
+    end
+
+    scenario 'search by email' do
+      expect(page).to have_content(@administrator1.email)
+      expect(page).to have_content(@administrator2.email)
+
+      fill_in 'name_or_email', with: @administrator2.email
+      click_button 'Search'
+
+      expect(page).to have_content('Administrators: User search')
+      expect(page).to have_content(@administrator2.email)
+      expect(page).to_not have_content(@administrator1.email)
+    end
+  end
+
+end

@@ -20,12 +20,20 @@ module Abilities
 
       can [:read, :welcome], SpendingProposal
 
+      can :read, Legislation::Proposal
+      cannot [:edit, :update], Legislation::Proposal do |proposal|
+        proposal.editable_by?(user)
+      end
+      can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
+
       can :create, Comment
       can :create, Debate
       can :create, Proposal
+      can :create, Legislation::Proposal
 
       can :suggest, Debate
       can :suggest, Proposal
+      can :suggest, Legislation::Proposal
       can :suggest, ActsAsTaggableOn::Tag
 
       can [:flag, :unflag], Comment
@@ -36,6 +44,9 @@ module Abilities
 
       can [:flag, :unflag], Proposal
       cannot [:flag, :unflag], Proposal, author_id: user.id
+
+      can [:flag, :unflag], Legislation::Proposal
+      cannot [:flag, :unflag], Legislation::Proposal, author_id: user.id
 
       can [:create, :destroy], Follow
 
@@ -52,6 +63,10 @@ module Abilities
 
       if user.level_two_or_three_verified?
         can :create, SpendingProposal
+
+        can :vote, Legislation::Proposal
+        can :vote_featured, Legislation::Proposal
+        can :create, Legislation::Answer
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }

@@ -1,16 +1,17 @@
 <h2><%= t("admin.users.index.title") %></h2>
 
-<div class="row">
+<div class="small-12 medium-6">
   <%= form_tag admin_users_path, method: :get, remote: true  do %>
-    <div class="small-12 medium-6 column">
+    <div class="input-group">
       <%= text_field_tag :search, '', placeholder: t('admin.users.search.placeholder') %>
-    </div>
-    <div class="small-12 medium-6 column">
-      <%= submit_tag t('admin.users.search.search'), class: 'button' %>
+      <div class="input-group-button">
+        <%= submit_tag t('admin.users.search.search'), class: 'button' %>
+      </div>
     </div>
   <% end %>
 </div>
 
-<div  id="users">
+
+<div id="users">
   <%= render "users" %>
 </div>
