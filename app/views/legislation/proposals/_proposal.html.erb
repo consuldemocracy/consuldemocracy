@@ -1,10 +1,10 @@
 <div id="<%= dom_id(proposal) %>"
-     class="proposal clear <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
+     class="proposal clear <%= ("human-rights" if proposal.author.id == 505793) %>"
      data-type="proposal">
   <div class="panel">
-    <div class="icon-successful"></div>
-    <div class="row">
+    <div class="icon-human-rights"></div>
 
+    <div class="row">
       <div class="small-12 medium-9 column">
         <div class="proposal-content">
           <% cache [locale_and_user_status(proposal), 'index', proposal, proposal.author] do %>
