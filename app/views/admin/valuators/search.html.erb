@@ -1,0 +1,51 @@
+<h2><%= t("admin.valuators.search.title") %></h2>
+
+<%= render 'admin/shared/user_search', url: search_admin_valuators_path %>
+
+<div id="valuators">
+  <% if @users.any? %>
+    <h3 class="margin"><%= page_entries_info @users %></h3>
+
+    <table>
+      <thead>
+        <th scope="col"><%= t("admin.valuators.index.name") %></th>
+        <th scope="col"><%= t("admin.valuators.index.email") %></th>
+        <th scope="col"><%= t("admin.valuators.index.description") %></th>
+        <th scope="col"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td>
+              <% if user.valuator? %>
+                <% if user.valuator.description.present? %>
+                  <%= user.valuator.description %>
+                <% else %>
+                  <%= t("admin.valuators.index.no_description") %>
+                <% end %>
+              <% else %>
+                <%= t("admin.valuators.index.no_description") %>
+              <% end %>
+            <td>
+              <% unless user.valuator? %>
+                <%= form_for Valuator.new(user: user), url: admin_valuators_path do |f| %>
+                  <%= f.text_field :description,
+                                   label: false,
+                                   placeholder: t("admin.valuators.valuator.description_placeholder") %>
+                  <%= f.hidden_field :user_id %>
+                  <%= f.submit t("admin.valuators.valuator.add"), class: "button success expanded" %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="callout alert margin">
+      <%= t("admin.shared.no_search_results") %>
+    </div>
+  <% end %>
+</div>

@@ -9,13 +9,6 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to %>
 
-        <% if current_user && @debate.editable_by?(current_user) %>
-          <%= link_to edit_debate_path(@debate), class: 'edit-debate button success small float-right' do %>
-            <span class="icon-edit"></span>
-            <%= t("debates.show.edit_debate_link") %>
-          <% end %>
-        <% end %>
-
         <h1><%= @debate.title %></h1>
         <% if @debate.conflictive? %>
           <div data-alert class="callout alert margin-top">
@@ -47,6 +40,15 @@
       </div>
 
       <aside class="small-12 medium-3 column">
+        <% if current_user && @debate.editable_by?(current_user) %>
+          <div class="sidebar-divider"></div>
+          <h2><%= t("debates.show.author") %></h2>
+          <%= link_to edit_debate_path(@debate), class: 'button hollow expanded' do %>
+            <span class="icon-edit"></span>
+            <%= t("debates.show.edit_debate_link") %>
+          <% end %>
+        <% end %>
+
         <div class="sidebar-divider"></div>
         <h2><%= t("votes.supports") %></h2>
         <div id="<%= dom_id(@debate) %>_votes">

@@ -1,14 +1,24 @@
 <div id="<%= dom_id(investment) %>" class="budget-investment clear">
-  <div class="panel">
-    <div class="row">
+  <div class="panel with-image">
+    <div class="row" data-equalizer>
 
-      <div class="small-12 medium-9 column">
+      <div class="small-12 medium-3 large-2 column text-center">
+        <div data-equalizer-watch>
+          <% if investment.image.present? %>
+            <%= image_tag investment.image_url(:thumb), alt: investment.image.title %>
+          <% else %>
+            <div class="no-image"></div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-6 large-7 column">
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
             <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
-            <p class="investment-project-info">
 
+            <p class="investment-project-info">
               <%= l investment.created_at.to_date %>
 
               <% if investment.author.hidden? || investment.author.erased? %>
@@ -45,7 +55,7 @@
 
         <% if investment.should_show_votes? %>
           <div id="<%= dom_id(investment) %>_votes"
-               class="small-12 medium-3 column text-center">
+               class="small-12 medium-3 column text-center" data-equalizer-watch>
                <%= render partial: '/budgets/investments/votes', locals: {
                  investment: investment,
                  investment_votes: investment_votes,
@@ -54,7 +64,7 @@
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
-               class="small-12 medium-3 column text-center">
+               class="small-12 medium-3 column text-center" data-equalizer-watch>
             <div class="supports js-participation">
               <span class="total-supports no-button">
                 <%= t("budgets.investments.investment.supports",
@@ -64,7 +74,7 @@
           </div>
         <% elsif investment.should_show_ballots? %>
           <div id="<%= dom_id(investment) %>_ballot"
-                class="small-12 medium-3 column text-center">
+                class="small-12 medium-3 column text-center" data-equalizer-watch>
                 <%= render partial: '/budgets/investments/ballot', locals: {
                   investment: investment,
                   investment_ids: investment_ids,
@@ -73,11 +83,13 @@
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"
-               class="supports small-12 medium-3 column text-center">
+               class="supports small-12 medium-3 column text-center" data-equalizer-watch>
             <p class="investment-project-amount margin-top">
               <%= investment.formatted_price %>
             </p>
           </div>
+        <% else %>
+          <div data-equalizer-watch></div>
         <% end %>
 
       <% end %>

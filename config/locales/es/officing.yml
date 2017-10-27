@@ -21,15 +21,13 @@ es:
         create: "Datos guardados"
         error_create: "Resultados NO añadidos. Error en los datos"
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
-        error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
         not_allowed: "No tienes permiso para introducir resultados"
         booth: "Urna"
         date: "Día"
         select_booth: "Elige urna"
-        select_date: "Elige día"
-        ballots_white: "Papeletas en blanco"
+        ballots_white: "Papeletas totalmente en blanco"
         ballots_null: "Papeletas nulas"
         ballots_total: "Papeletas totales"
         submit: "Guardar"
@@ -40,7 +38,7 @@ es:
         results: "Resultados"
         table_answer: Respuesta
         table_votes: Votos
-        table_whites: Papeletas en blanco
+        table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
     residence:
@@ -58,9 +56,12 @@ es:
       new:
         title: Votaciones
         table_poll: Votación
-        table_actions: Estado de las votaciones
+        table_status: Estado de las votaciones
+        table_actions: Acciones
       show:
         can_vote: Puede votar
-        error_already_voted: "Ya ha participado en esta votación."
+        error_already_voted: "Ya ha participado en esta votación"
         submit: Confirmar voto
         success: "¡Voto introducido!"
+      can_vote:
+        submit_disable_with: "Espera, confirmando voto..."

@@ -1,0 +1,32 @@
+<div id="<%= dom_id(f.object) %>" class="image direct-upload nested-fields">
+  <%= f.hidden_field :id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :cached_attachment %>
+
+  <div class="small-12 column title">
+    <%= f.text_field :title, placeholder: t("images.form.title_placeholder") %>
+  </div>
+
+  <%= render_image(f.object, :thumb, false) if f.object.attachment.exists? %>
+
+  <div class="small-12 column attachment-actions">
+    <div class="small-9 column action-add attachment-errors image-attachment">
+      <%= render_image_attachment(f, imageable, f.object) %>
+    </div>
+    <div class="small-3 column action-remove text-right">
+      <%= render_destroy_image_link(f, f.object) %>
+    </div>
+  </div>
+
+  <div class="small-6 column">
+    <p class="file-name">
+      <%= image_attachment_file_name(f.object) %>
+    </p>
+  </div>
+
+  <div class="small-12 column">
+    <div class="progress-bar-placeholder"><div class="loading-bar"></div></div>
+  </div>
+
+  <hr>
+</div>

@@ -14,8 +14,8 @@ es:
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
       public_interests_label: Mostrar públicamente mis intereses
-      public_interests_my_title_list: Lista de intereses (Etiquetas de los elementos que sigues)
-      public_interests_user_title_list: Lista de intereses (Etiquetas de los elementos seguidos este usuario)
+      public_interests_my_title_list: Lista de intereses (etiquetas de los elementos que sigues)
+      public_interests_user_title_list: Lista de intereses (etiquetas de los elementos seguidos este usuario)
       public_interests_my_empty_list: Aún no sigues ningún elemento.
       public_interests_user_empty_list: Este usuario no sigue ningún elemento todavía.
       save_changes_submit: Guardar cambios
@@ -109,6 +109,10 @@ es:
         hot_score: Más activos hoy
         most_commented: Más comentados
         relevance: Más relevantes
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen debates relacionados con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       search_form:
         button: Buscar
         placeholder: Buscar debates...
@@ -154,6 +158,7 @@ es:
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
+      author: Autor
     update:
       form:
         submit_button: Guardar cambios
@@ -176,11 +181,13 @@ es:
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
     poll/shift: el turno
+    poll/question/answer: la respuesta
     user: la cuenta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
     document: el documento
     topic: Tema
+    image: Imagen
   geozones:
     none: Toda la ciudad
     all: Todos los ámbitos de actuación
@@ -332,6 +339,9 @@ es:
       tags_label: Temas
       tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      map_location: "Ubicación en el mapa"
+      map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
+      map_remove_marker: "Eliminar el marcador"
     index:
       featured_proposals: Destacadas
       filter_topic:
@@ -344,6 +354,10 @@ es:
         most_commented: Más comentadas
         relevance: Más relevantes
         archival_date: Archivadas
+        recommendations: Recomendaciones
+      recommendations:
+        without_results: No existen propuestas relacionadas con tus intereses
+        without_interests: Sigue propuestas para que podamos darte recomendaciones
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
@@ -390,7 +404,7 @@ es:
     proposal:
       created: "¡Has creado una propuesta!"
       share:
-        guide: "Compártela para que la gente empieze a apoyarla."
+        guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: "Ahora no, ir a mi propuesta"
       improve_info: "Mejora tu campaña y consigue más apoyos"
@@ -454,10 +468,6 @@ es:
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
       geozone_info: "Pueden participar las personas empadronadas en: "
-      can_answer: "¡Puedes participar en esta votación!"
-      cant_answer: "Esta votación no está disponible en tu zona"
-      cant_answer_not_logged_in: "Necesitas iniciar sesión o registrarte para participar"
-      cant_answer_verify: "Por favor verifica tu cuenta para poder responder"
       already_answer: "Ya has participado en esta votación"
       section_header:
         icon_alt: Icono de Votaciones
@@ -469,24 +479,12 @@ es:
         help_text_1: "Las votaciones se convocan cuando una propuesta ciudadana alcanza el 1% de apoyos del censo con derecho a voto. En las votaciones también se pueden incluir cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
         help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
     show:
-      dates_title: "Fechas de participación"
+      already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
+      already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
+      back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
-      signin: iniciar sesión
-      signup: registrarte
-      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
-      verify_link: "verifica tu cuenta"
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
-      cant_answer_expired: "Esta votación ha terminado."
-  poll_questions:
-    create_question: "Crear pregunta para votación"
-    default_valid_answers: "Sí, No"
-    show:
-      answer_this_question: "Responder a esta pregunta"
-      original_proposal: "Propuesta original"
-      author: "Creado por"
-      dates_title: "Fechas de participación"
-      more_info: "Más información"
-      not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      comments_tab: Comentarios
+      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       signin: iniciar sesión
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
@@ -494,9 +492,36 @@ es:
       cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
+      more_info_title: "Más información"
+      documents: Documentación
+      zoom_plus: Ampliar imagen
+      read_more: "Leer más sobre %{answer}"
+      read_less: "Leer menos sobre %{answer}"
+      participate_in_other_polls: Participar en otras votaciones
+      videos: "Vídeo externo"
+      info_menu: "Información"
+      stats_menu: "Estadísticas de participación"
+      results_menu: "Resultados de la votación"
+      stats:
+        title: "Datos de participación"
+        total_participation: "Participación total"
+        total_votes: "Nº total de votos emitidos"
+        votes: "VOTOS"
+        web: "WEB"
+        booth: "URNAS"
+        total: "TOTAL"
+        valid: "Válidos"
+        white: "En blanco"
+        null_votes: "Nulos"
+      results:
+        title: "Preguntas"
+        most_voted_answer: "Respuesta más votada: "
+  poll_questions:
+    create_question: "Crear pregunta para votación"
+    show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
-      poll: "Votación"
+      voted_token: "Puedes apuntar este identificador de voto, para comprobar tu votación en el resultado final:"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -511,9 +536,6 @@ es:
     edit: 'Editar'
     save: 'Guardar'
     delete: 'Borrar'
-    comments:
-      title: 'Comentarios'
-      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     "yes": "Sí"
     "no": "No"
     search_results: "Resultados de búsqueda"
@@ -594,6 +616,10 @@ es:
       budget: Presupuestos participativos
       searcher: Buscador
     go_to_page: "Ir a la página de "
+    share: Compartir
+    orbit:
+      previous_slide: Imagen anterior
+      next_slide: Siguiente imagen
   social:
     blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
@@ -686,6 +712,11 @@ es:
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Esta propuesta ha sido eliminada
       deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
+      proposals: Propuestas
+      debates: Debates
+      budget_investments: Proyectos de presupuestos participativos
+      comments: Comentarios
+      actions: Acciones
       filters:
         comments:
           one: 1 Comentario
@@ -704,7 +735,7 @@ es:
           other: "%{count} Siguiendo"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
-      private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+      private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
     proposals:
       send_notification: "Enviar notificación"
@@ -749,6 +780,16 @@ es:
     proposal:
       description: Espacio abierto para propuestas ciudadanas sobre el tipo de ciudad en el que queremos vivir.
       title: Propones
+    recommended:
+      title: Recomendaciones que te pueden interesar
+      debates:
+        title: Debates recomendados
+        btn_text_link: Todos los debates recomendados
+      proposals:
+        title: Propuestas recomendadas
+        btn_text_link: Todas las propuestas recomendadas
+      budget_investments:
+        title: Presupuestos recomendados
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar

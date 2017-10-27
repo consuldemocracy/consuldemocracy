@@ -31,6 +31,12 @@ en:
       administrator:
         one: "Administrator"
         other: "Administrators"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
+      manager:
+        one: "Manager"
+        other: "Managers"
       vote:
         one: "Vote"
         other: "Votes"
@@ -79,6 +85,9 @@ en:
       documents:
         one: "Document"
         other: "Documents"
+      images:
+        one: "Image"
+        other: "Images"
     attributes:
       budget:
         name: "Name"
@@ -104,6 +113,8 @@ en:
         title: "Title"
         location: "Location"
         organization_name: "If you are proposing in the name of a collective/organization, write its name"
+        image: "Proposal descriptive image"
+        image_title: "Image title"
       budget/investment/milestone:
         title: "Title"
         description: "Description"
@@ -147,9 +158,10 @@ en:
         starts_at: "Start Date"
         ends_at: "Closing Date"
         geozone_restricted: "Restricted by geozone"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
-        valid_answers: "Posibles answers"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
@@ -203,6 +215,15 @@ en:
       document:
         title: Title
         attachment: Attachment
+      image:
+        title: Title
+        attachment: Attachment
+      poll/question/answer:
+        title: Answer
+        description: Description
+      poll/question/answer/video:
+        title: Title
+        url: External video
     errors:
       models:
         user:
@@ -217,6 +238,11 @@ en:
           attributes:
             max_per_day:
               invalid: "You have reached the maximum number of private messages per day"
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Image Width must be at least %{required_min_width}px"
+              min_image_height: "Image Height must be at least %{required_min_height}px"
         poll/voter:
           attributes:
             document_number:

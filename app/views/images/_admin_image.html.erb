@@ -1,0 +1,40 @@
+<div class="images small-12 column">
+    <div>
+      <%= f.label :image, t("images.form.admin_title") %>
+      
+      <%= link_to_add_association t('images.form.add_new_image'), f, :image,
+                            force_non_association_create: true,
+                            partial: "images/image_fields",
+                            id: "new_image_link",
+                            class: "button hollow",
+                            render_options: {
+                              locals: { imageable: imageable }
+                            },
+                            data: {
+                              association_insertion_node: "#nested-image",
+                              association_insertion_method: "append"
+                            } %>
+      
+      <%= render_image(f.object.image, :thumb, false) if f.object.image %>
+
+      <div id="nested-image">
+        <%= f.fields_for :image do |image_builder| %>
+        
+          <div id="<%= dom_id(image_builder.object) %>" class="image direct-upload nested-fields">
+            <%= image_builder.hidden_field :id %>
+            <%= image_builder.hidden_field :user_id, value: current_user.id %>
+            <%= image_builder.hidden_field :cached_attachment %>
+
+            <%= image_builder.text_field :title, placeholder: t("images.form.title_placeholder"), label: "#{t("images.form.admin_alt_text")}" %>
+
+            <div class="attachment-actions">
+              <div class="small-12 column action-add attachment-errors image-attachment">
+                <%= render_image_attachment(image_builder, imageable, image_builder.object) %>
+              </div>
+            </div>
+          </div>
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
