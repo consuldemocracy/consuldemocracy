@@ -25,15 +25,11 @@ class Legislation::Proposal < ActiveRecord::Base
   has_many :comments, as: :commentable
 
   validates :title, presence: true
-  validates :question, presence: true
   validates :summary, presence: true
   validates :author, presence: true
-  validates :responsible_name, presence: true
 
   validates :title, length: { in: 4..Legislation::Proposal.title_max_length }
   validates :description, length: { maximum: Legislation::Proposal.description_max_length }
-  validates :question, length: { in: 10..Legislation::Proposal.question_max_length }
-  validates :responsible_name, length: { in: 6..Legislation::Proposal.responsible_name_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
