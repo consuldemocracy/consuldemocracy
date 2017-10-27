@@ -52,8 +52,8 @@ Setting["youtube_handle"] = nil
 Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
 Setting["blog_url"] = nil
-Setting["transparency_url"] = nil
-Setting["opendata_url"] = "/opendata"
+Setting["transparency_url"] = "http://www.toledo.es/toledo-abierto"
+Setting["opendata_url"] = nil
 
 # Public-facing URL of the app.
 Setting["url"] = "http://example.com"
