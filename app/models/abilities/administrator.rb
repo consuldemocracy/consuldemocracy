@@ -14,6 +14,7 @@ module Abilities
       can :restore, Proposal
       cannot :restore, Proposal, hidden_at: nil
 
+      can :create, Legislation::Proposal
       can :restore, Legislation::Proposal
       cannot :restore, Legislation::Proposal, hidden_at: nil
 
