@@ -140,6 +140,8 @@ GEM
       railties (>= 3.2.6, < 5.0)
     diff-lcs (1.3)
     docile (1.1.5)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
     easy_translate (0.5.0)
       json
       thread
@@ -184,6 +186,8 @@ GEM
     hashie (3.5.5)
     highline (1.7.8)
     htmlentities (4.3.4)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     httpi (2.4.2)
       rack
       socksify
@@ -261,6 +265,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
+    netrc (0.11.0)
     newrelic_rpm (4.1.0.333)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -314,6 +319,7 @@ GEM
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
     public_suffix (2.0.5)
+    puma (3.10.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.8)
@@ -359,6 +365,10 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rinku (2.0.3)
     rollbar (2.14.1)
       multi_json
@@ -460,6 +470,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
     unicode-display_width (1.3.0)
     unicorn (5.3.0)
       kgio (~> 2.6)
@@ -541,12 +554,14 @@ DEPENDENCIES
   pg (~> 0.21.0)
   pg_search (~> 2.0.1)
   poltergeist (~> 1.15.0)
+  puma (~> 3.10.0)
   quiet_assets (~> 1.1.0)
   rails (= 4.2.9)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 8.2.1)!
   redcarpet (~> 3.4.0)
   responders (~> 2.4.0)
+  rest-client (= 2.0.2)
   rinku (~> 2.0.2)
   rollbar (~> 2.14.1)
   rspec-rails (~> 3.6)

@@ -13,7 +13,7 @@ set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/consul/consul.git'
+set :repo_url, 'https://github.com/AyuntamientoToledo/consul.git'
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/sms.wsdl}
 set :linked_dirs, %w{log tmp public/system public/assets}
 
 set :keep_releases, 5

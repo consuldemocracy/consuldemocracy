@@ -913,12 +913,12 @@ ActiveRecord::Schema.define(version: 20171025142440) do
   end
 
   create_table "spending_proposals", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",                       limit: 255
     t.text     "description"
     t.integer  "author_id"
     t.string   "external_url"
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.integer  "geozone_id"
     t.integer  "price",                       limit: 8
     t.boolean  "feasible"
@@ -926,17 +926,17 @@ ActiveRecord::Schema.define(version: 20171025142440) do
     t.text     "price_explanation"
     t.text     "feasible_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                     default: false
+    t.boolean  "valuation_finished",                      default: false
     t.text     "explanations_log"
     t.integer  "administrator_id"
-    t.integer  "valuation_assignments_count",            default: 0
+    t.integer  "valuation_assignments_count",             default: 0
     t.integer  "price_first_year",            limit: 8
     t.string   "time_scope"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "cached_votes_up",                        default: 0
+    t.integer  "cached_votes_up",                         default: 0
     t.tsvector "tsv"
     t.string   "responsible_name",            limit: 60
-    t.integer  "physical_votes",                         default: 0
+    t.integer  "physical_votes",                          default: 0
   end
 
   add_index "spending_proposals", ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree

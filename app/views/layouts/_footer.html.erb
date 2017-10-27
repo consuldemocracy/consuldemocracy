@@ -27,8 +27,10 @@
       </div>
 
       <div class="small-12 medium-4 column">
-        <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"), class: "title", rel: "nofollow" %>
-        <p><%= t("layouts.footer.open_data_text") %></p>
+        <% if setting['opendata_url'] %>
+          <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"), class: "title", rel: "nofollow" %>
+          <p><%= t("layouts.footer.open_data_text") %></p>
+        <% end %>
       </div>
     </div>
   </div>

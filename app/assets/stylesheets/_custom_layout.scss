@@ -1,0 +1,110 @@
+.footer {  background: $footer-background; }
+
+footer {
+
+  background: $footer-background !important;
+  color: white;
+
+  p {
+    color: $footer-text !important;
+  }
+
+  a {
+    color: $footer-text !important;
+  }
+}
+
+.auth-image {
+
+  background-position: center !important;
+}
+
+
+.jumbo.highlight {
+
+  background-image: asset_url('custom/logo_landing.png');
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-color: rgba(0,0,0,0.4);
+  h1 { color: white; }
+  p {
+    color: white;
+    a { color: lighten($brand, 50%); }
+  }
+
+
+  .column {
+
+    background-color: rgba(0,0,0,0.5);
+    padding: 15px;
+  }
+}
+
+.expanded.budget {
+
+  background-image: asset_url('custom/budget_info_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: center top;
+  .info {
+    background: $budget-darken;
+  }
+}
+
+.jumbo-budget.budget-heading,
+.jumbo.light{
+
+  background-image: asset_url('custom/budget_main_bg.jpg');
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: cover;
+  color: white;
+}
+
+
+
+.top-bar-title a,
+.logo a {
+  font-family: $header-font-family !important;
+  text-transform: uppercase;
+  font-weight: $header-font-weight;
+}
+
+p {
+  font-size: $base-font-size;
+  font-weight: $body-font-weight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-weight: $header-font-weight;
+}
+
+
+@media screen and (min-width: 760px) {
+  .subnavigation a {
+
+    font-size: 75%;
+  }
+}
+
+.button.hollow {
+
+  border-color: lighten($brand, 70%);
+  color: lighten($brand, 70%);
+}
+
+.button.hollow:hover, .button.hollow:focus {
+
+  border-color: $brand;
+  background-color: $brand;
+  color: white;
+}
+
+.button:hover, .button:focus {
+  background-color: $dark;
+}
