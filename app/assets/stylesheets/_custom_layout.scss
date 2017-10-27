@@ -93,11 +93,18 @@ h6 {
 }
 
 .button.hollow {
-  border-color: lighten($brand, 20%);
-  color: lighten($brand, 20%);
+
+  border-color: lighten($brand, 70%);
+  color: lighten($brand, 70%);
 }
 
 .button.hollow:hover, .button.hollow:focus {
-  border-color: lighten($brand, 70%);
-  color: lighten($brand, 70%);
+
+  border-color: $brand;
+  background-color: $brand;
+  color: white;
+}
+
+.button:hover, .button:focus {
+  background-color: $dark;
 }
