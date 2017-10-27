@@ -3,16 +3,21 @@ require_dependency Rails.root.join('lib', 'sms_api').to_s
 
 # Custom Ayto.Toledo SMS service implementation.
 # SOAP
-class SMSApi
+class ToledoSMSApi
   attr_accessor :client
 
   def initialize
-    @client = Savon.client(wsdl: url, ssl_verify_mode: Rails.application.secrets.sms_ssl_verification, convert_request_keys_to: :camelcase)
+    ssl_verification_mode = Rails.application.secrets.sms_ssl_verification
+    ssl_verification_mode ||= :peer
+
+    @client = Savon.client(wsdl: url,
+                           ssl_verify_mode: ssl_verification_mode.to_sym,
+                           convert_request_keys_to: :camelcase)
   end
 
   def url
     return '' unless end_point_available?
-    open(Rails.application.secrets.sms_end_point).base_uri.to_s
+    Rails.root.join(Rails.application.secrets.sms_wsdl_path).to_s
   end
 
   def authorization
@@ -20,8 +25,6 @@ class SMSApi
   end
 
   def sms_deliver(phone, code)
-
-    raise "*******"
     return stubbed_response unless end_point_available?
 
     response = client.call(:sms_text_submit, message: request(phone, code))
@@ -30,11 +33,11 @@ class SMSApi
 
   def request(phone, code)
     {
-      version: Rails.application.secrets.version,
+      version: Rails.application.secrets.sms_api_version,
       authorization:  authorization,
-      sender: Rails.application.secrets.sender,
+      sender: Rails.application.secrets.sms_api_sender,
       recipients: [{ to: phone }],
-      SMSText: I18n.t('.sms_text', code: code)
+      SMSText: I18n.t('verification.sms.message_payload', code: code)
     }
   end
 

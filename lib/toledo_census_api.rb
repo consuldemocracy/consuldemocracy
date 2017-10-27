@@ -1,4 +1,6 @@
 include DocumentParser
+
+# REQUIREMENT TOL-2: Custom Census verification model and API integration to use custom Toledo's service
 class ToledoCensusApi < CensusApi
   def call(document_type, document_number)
     response = nil
@@ -50,7 +52,7 @@ class ToledoCensusApi < CensusApi
         @census_response = @parsed_to_json.kind_of?(Array)? @parsed_to_json[0] : @parsed_to_json
       rescue Exception => ex
 
-        @census_response = { error: { code: 500, message: ex.message } }
+        @census_response = { error: { code: 404, message: ex.message } }
       end
       @census_response
     else
@@ -59,7 +61,6 @@ class ToledoCensusApi < CensusApi
   end
 
   def rest_client_response(document_number)
-
     RestClient.get "#{Rails.application.secrets.census_api_endpoint}#{document_number}",
                    Rails.application.secrets.census_x_key => Rails.application.secrets.census_api_key
 
