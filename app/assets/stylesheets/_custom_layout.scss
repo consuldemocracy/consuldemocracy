@@ -83,3 +83,11 @@ h6 {
   clear: both;
   font-weight: $header-font-weight;
 }
+
+
+@media screen and (min-width: 760px) {
+  .subnavigation a {
+
+    font-size: 75%;
+  }
+}
