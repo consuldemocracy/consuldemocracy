@@ -1,0 +1,20 @@
+
+<% if false %>
+  <% votacion.questions.each do |question| %>
+    <%= render 'pages/concurso_cartel_magdalena/questions/question', question: question %>
+  <% end %>
+<% else %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <ul class="tabs">
+        <li class="tabs-title <%= concurso_cartel_class('results') %>">
+          <span class="show-for-sr"><%= t("shared.you_are_in") %></span>
+          <%= link_to t("results.results_link"), concurso_cartel_magdalena_results_path , class: concurso_cartel_class('results')  %>
+        </li>
+        <li class="tabs-title <%= concurso_cartel_class('stats') %>">
+          <%= link_to t("stats.stats_link"), concurso_cartel_magdalena_stats_path, class: concurso_cartel_class('stats') %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% end %>

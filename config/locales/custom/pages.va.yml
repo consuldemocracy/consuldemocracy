@@ -9,6 +9,10 @@ va:
       confirm_votacion: Sols es pot votar per un cartell, segur que vols votar aquest cartell?
       already_voted: Ja has votat un altre cartell
       vote_forbidden: No es pot votar si no s'ha iniciat sesió i verificat la residencia
+      results: Resultats
+      votos: Vots
+      lema: Lema
+      cartel: Cartell
       cartel_1:
         lema: A un pas del cel
       cartel_2:

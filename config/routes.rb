@@ -449,4 +449,7 @@ Rails.application.routes.draw do
   # Pages personalizadas
 
   get 'concurso_cartel_magdalena', to: 'pages#show', id: 'concurso_cartel_magdalena',  as: 'concurso_cartel_magdalena'
+  get 'concurso_cartel_magdalena/results', to: 'pages#show', id: 'concurso_cartel_magdalena_results',  as: 'concurso_cartel_magdalena_results'
+  get 'concurso_cartel_magdalena/stats', to: 'pages#show', id: 'concurso_cartel_magdalena_stats',  as: 'concurso_cartel_magdalena_stats'
+
 end
