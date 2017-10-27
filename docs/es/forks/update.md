@@ -16,8 +16,8 @@ deberías ver algo como:
 Ahora debes añadir el repositorio git de consul como servidor remoto con:
 
 ```bash
-git add remote upstream git@github.com:consul/consul.git
-``` 
+git remote add upstream git@github.com:consul/consul.git
+```
 
 comprueba de nuevo que con:
 

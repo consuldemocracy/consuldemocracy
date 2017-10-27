@@ -15,7 +15,7 @@ it should output something alike:
 Now we have to add consul github as upstream remote with:
 
 ```bash
-git add remote upstream git@github.com:consul/consul.git
+git remote add upstream git@github.com:consul/consul.git
 ```
 
 and to check everything is fine with
