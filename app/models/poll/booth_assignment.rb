@@ -8,5 +8,18 @@ class Poll
     has_many :voters
     has_many :partial_results
     has_many :recounts
+
+    before_destroy :destroy_poll_shifts
+    
+    def has_shifts?
+      
+    end
+
+    private
+
+      def destroy_poll_shifts
+#        officers = poll.officers_in_booth(booth.id)
+#        Poll::Shift.where(officer_id: officers, booth_id: booth.id)
+      end
   end
 end
