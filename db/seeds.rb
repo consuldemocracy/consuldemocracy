@@ -29,7 +29,7 @@ Setting['comments_body_max_length'] = 1000
 Setting["proposal_code_prefix"] = 'MAD'
 
 # Number of votes needed for proposal success
-Setting["votes_for_proposal_success"] = 53726
+Setting["votes_for_proposal_success"] = 80000
 
 # Months to archive proposals
 Setting["months_to_archive_proposals"] = 12
@@ -46,8 +46,8 @@ Setting['per_page_code_body'] = ''
 
 # Social settings
 Setting["twitter_handle"] = nil
-Setting["twitter_hashtag"] = nil
-Setting["facebook_handle"] = nil
+Setting["twitter_hashtag"] = 'ToledoParticipa'
+Setting["facebook_handle"] = 'ToledoParticipa'
 Setting["youtube_handle"] = nil
 Setting["telegram_handle"] = nil
 Setting["instagram_handle"] = nil
@@ -56,17 +56,17 @@ Setting["transparency_url"] = "http://www.toledo.es/toledo-abierto"
 Setting["opendata_url"] = nil
 
 # Public-facing URL of the app.
-Setting["url"] = "http://example.com"
+Setting["url"] = "http://participa.toledo.es"
 
 # CONSUL installation's organization name
-Setting["org_name"] = "CONSUL"
+Setting["org_name"] = "#ToledoParticipa"
 
 # CONSUL installation place name (City, Country...)
-Setting["place_name"] = "CONSUL-land"
+Setting["place_name"] = "Ciudad de Toledo"
 
 # Meta tags for SEO
-Setting["meta_description"] = nil
-Setting["meta_keywords"] = nil
+Setting["meta_description"] = 'Portal de participación ciudadana de la Ciudad de Toledo. Ayuntamiento de Toledo.'
+Setting["meta_keywords"] = 'Participación Consul Gobierno Abierto Presupuestos Participativos'
 
 # Feature flags
 Setting['feature.debates'] = true
@@ -85,22 +85,18 @@ Setting['feature.community'] = true
 Setting['feature.spending_proposal_features.voting_allowed'] = nil
 
 # Banner styles
-Setting['banner-style.banner-style-one']   = "Banner style 1"
-Setting['banner-style.banner-style-two']   = "Banner style 2"
-Setting['banner-style.banner-style-three'] = "Banner style 3"
+Setting['banner-style.banner-style-one']   = "Defaults Banner"
 
 # Banner images
-Setting['banner-img.banner-img-one']   = "Banner image 1"
-Setting['banner-img.banner-img-two']   = "Banner image 2"
-Setting['banner-img.banner-img-three'] = "Banner image 3"
+Setting['banner-img.banner-img-one']   = "Default Banner Image"
 
 # Proposal notifications
 Setting['proposal_notification_minimum_interval_in_days'] = 3
 Setting['direct_message_max_per_day'] = 3
 
 # Email settings
-Setting['mailer_from_name'] = 'CONSUL'
-Setting['mailer_from_address'] = 'noreply@consul.dev'
+Setting['mailer_from_name'] = 'ToledoParticipa'
+Setting['mailer_from_address'] = 'noresponder@toledo.es'
 
 # Verification settings
 Setting['verification_offices_url'] = 'http://oficinas-atencion-ciudadano.url/'

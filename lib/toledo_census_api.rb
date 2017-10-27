@@ -71,7 +71,8 @@ class ToledoCensusApi < CensusApi
   end
 
   def stubbed_response(document_type, document_number)
-    if document_number == "01234567" && document_type == "1"
+
+    if document_number == "12345678" && document_type == "1"
       stubbed_valid_response
     else
       stubbed_invalid_response
@@ -81,11 +82,11 @@ class ToledoCensusApi < CensusApi
   def stubbed_valid_response
     {
       'IDHAB' => '111111',
-      'DNI' => '01234567',
+      'DNI' => '12345678Z',
       'Nombre' => 'Doménikos',
       'PrimerApellido' => 'Theotokópoulo',
       'SegundoApellido' => 'ElGreco',
-      'FechaNacimiento' => '1992-11-01 00:00:00',
+      'FechaNacimiento' => '1980-12-31 00:00:00',
       'Telefono' => '666666666',
       'Barrio' => 'CENTRO',
       'Barrio_ID'=> '08',
@@ -97,7 +98,7 @@ class ToledoCensusApi < CensusApi
     {
       error:
         {
-          code: 500,
+          code: 404,
           message: '404 Not Found'
         }
     }
