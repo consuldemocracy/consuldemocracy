@@ -17,7 +17,7 @@ module AdminHelper
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users"].include? controller_name
+    ["proposals", "debates", "comments", "hidden_users"].include? controller_name && controller.class.parent != Admin::Legislation
   end
 
   def menu_budget?
@@ -29,7 +29,7 @@ module AdminHelper
   end
 
   def menu_profiles?
-    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users"].include? controller_name
+    ["administrators", "organizations", "officials", "moderators", "valuators", "managers", "users", "activity"].include? controller_name
   end
 
   def menu_banners?

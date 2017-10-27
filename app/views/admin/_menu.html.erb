@@ -19,7 +19,7 @@
         <strong><%= t("admin.menu.title_moderated_content") %></strong>
       </a>
       <ul <%= "class=is-active" if menu_moderated_content? %>>
-        <li <%= "class=active" if controller_name == "proposals" %>>
+        <li <%= "class=active" if controller_name == "proposals" && controller.class.parent != Admin::Legislation %>>
           <%= link_to t("admin.menu.hidden_proposals"), admin_proposals_path %>
         </li>
 
@@ -120,7 +120,7 @@
           <%= link_to t("admin.menu.officials"), admin_officials_path %>
         </li>
 
-        <li <%= "class=active" if controller_name == "moderators" %>>
+        <li <%= "class=active" if controller_name == "moderators" || controller_name == "activity" %>>
           <%= link_to t('admin.menu.moderators'), admin_moderators_path%>
         </li>
 
