@@ -91,3 +91,13 @@ h6 {
     font-size: 75%;
   }
 }
+
+.button.hollow {
+  border-color: lighten($brand, 20%);
+  color: lighten($brand, 20%);
+}
+
+.button.hollow:hover, .button.hollow:focus {
+  border-color: lighten($brand, 70%);
+  color: lighten($brand, 70%);
+}
