@@ -109,16 +109,13 @@ $border-dark:  darken($border, 10%);
     li {
       cursor: pointer;
       display: inline-block;
-      margin: 0 1rem 1rem 0;
+      margin-bottom: $line-height;
+      margin-right: $line-height;
       transition: all 0.4s;
       border-bottom: 2px solid transparent;
 
       @include breakpoint(medium) {
-        margin-left: $line-height * 2;
-      }
-
-      &:first-of-type {
-        margin-left: 0;
+        margin-bottom: 0;
       }
 
       &:hover,
