@@ -855,7 +855,9 @@
 }
 
 .debate,
-.debate-show {
+.debate-show,
+.proposal-show,
+.legislation-proposals {
 
   .votes {
     @include votes;
@@ -870,6 +872,7 @@
   }
 }
 
+.proposal-show .votes,
 .debate-show .votes {
   border: 0;
   padding: $line-height / 2 0;

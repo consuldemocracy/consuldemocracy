@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020163240) do
+ActiveRecord::Schema.define(version: 20171025142440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -486,6 +486,10 @@ ActiveRecord::Schema.define(version: 20171020163240) do
     t.boolean  "draft_publication_enabled",  default: false
     t.boolean  "result_publication_enabled", default: false
     t.boolean  "published",                  default: true
+    t.date     "proposals_phase_start_date"
+    t.date     "proposals_phase_end_date"
+    t.boolean  "proposals_phase_enabled"
+    t.text     "proposals_description"
   end
 
   add_index "legislation_processes", ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
@@ -497,6 +501,38 @@ ActiveRecord::Schema.define(version: 20171020163240) do
   add_index "legislation_processes", ["hidden_at"], name: "index_legislation_processes_on_hidden_at", using: :btree
   add_index "legislation_processes", ["result_publication_date"], name: "index_legislation_processes_on_result_publication_date", using: :btree
   add_index "legislation_processes", ["start_date"], name: "index_legislation_processes_on_start_date", using: :btree
+
+  create_table "legislation_proposals", force: :cascade do |t|
+    t.integer  "legislation_process_id"
+    t.string   "title",                  limit: 80
+    t.text     "description"
+    t.string   "question"
+    t.string   "external_url"
+    t.integer  "author_id"
+    t.datetime "hidden_at"
+    t.integer  "flags_count",                       default: 0
+    t.datetime "ignored_flag_at"
+    t.integer  "cached_votes_up",                   default: 0
+    t.integer  "comments_count",                    default: 0
+    t.datetime "confirmed_hide_at"
+    t.integer  "hot_score",              limit: 8,  default: 0
+    t.integer  "confidence_score",                  default: 0
+    t.string   "responsible_name",       limit: 60
+    t.text     "summary"
+    t.string   "video_url"
+    t.tsvector "tsv"
+    t.integer  "geozone_id"
+    t.datetime "retired_at"
+    t.string   "retired_reason"
+    t.text     "retired_explanation"
+    t.integer  "community_id"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.integer  "cached_votes_total",                default: 0
+    t.integer  "cached_votes_down",                 default: 0
+  end
+
+  add_index "legislation_proposals", ["legislation_process_id"], name: "index_legislation_proposals_on_legislation_process_id", using: :btree
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
@@ -921,16 +957,20 @@ ActiveRecord::Schema.define(version: 20171020163240) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name",                     limit: 40
-    t.integer "taggings_count",                      default: 0
-    t.integer "debates_count",                       default: 0
-    t.integer "proposals_count",                     default: 0
-    t.integer "spending_proposals_count",            default: 0
+    t.string  "name",                        limit: 40
+    t.integer "taggings_count",                         default: 0
+    t.integer "debates_count",                          default: 0
+    t.integer "proposals_count",                        default: 0
+    t.integer "spending_proposals_count",               default: 0
     t.string  "kind"
-    t.integer "budget/investments_count",            default: 0
+    t.integer "budget/investments_count",               default: 0
+    t.integer "legislation/proposals_count",            default: 0
+    t.integer "legislation/processes_count",            default: 0
   end
 
   add_index "tags", ["debates_count"], name: "index_tags_on_debates_count", using: :btree
+  add_index "tags", ["legislation/processes_count"], name: "index_tags_on_legislation/processes_count", using: :btree
+  add_index "tags", ["legislation/proposals_count"], name: "index_tags_on_legislation/proposals_count", using: :btree
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
   add_index "tags", ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
   add_index "tags", ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
@@ -1108,6 +1148,7 @@ ActiveRecord::Schema.define(version: 20171020163240) do
   add_foreign_key "identities", "users"
   add_foreign_key "images", "users"
   add_foreign_key "legislation_draft_versions", "legislation_processes"
+  add_foreign_key "legislation_proposals", "legislation_processes"
   add_foreign_key "locks", "users"
   add_foreign_key "managers", "users"
   add_foreign_key "moderators", "users"
