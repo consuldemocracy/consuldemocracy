@@ -28,10 +28,10 @@ module Abilities
       can :read_results, Budget, phase: "finished"
       can :read_stats, Budget, phase: ['reviewing_ballots', 'finished']
       can :new, DirectMessage
-      can [:read, :debate, :draft_publication, :allegations, :result_publication], Legislation::Process, published: true
+      can [:read, :debate, :draft_publication, :allegations, :result_publication, :proposals], Legislation::Process, published: true
       can [:read, :changes, :go_to_version], Legislation::DraftVersion
       can [:read], Legislation::Question
-      can [:create], Legislation::Answer
+      can [:read, :map, :share], Legislation::Proposal
       can [:search, :comments, :read, :create, :new_comment], Legislation::Annotation
       can :results_2017, Poll
       can :stats_2017, Poll

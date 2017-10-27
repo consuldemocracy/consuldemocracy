@@ -49,6 +49,8 @@ en:
     processes:
       header:
         view_process_information: View process information
+      proposals:
+        empty_proposals: There are no proposals
       debate:
         empty_questions: There aren't any questions
         participate: Participate in the debate
@@ -86,6 +88,7 @@ en:
         draft_publication_date: Draft publication
         allegations_dates: Allegations
         result_publication_date: Final result publication
+        proposals_dates: Proposals
     questions:
       comments:
         comment_button: Publish answer
@@ -117,3 +120,8 @@ en:
     shared:
       share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}
+    proposals:
+      form:
+        tags_label: "Categories"
+      not_verified: "For vote proposals %{verify_account}."
+      closed: "This process has been closed and can not receive votes."
