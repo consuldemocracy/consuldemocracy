@@ -253,6 +253,37 @@ header,
   }
 }
 
+// Legislation proposals
+
+.legislation-proposals {
+
+  .proposal h3 {
+    margin-top: 0;
+  }
+
+  .proposal-content.human-rights {
+    margin-top: $line-height / 2;
+  }
+
+  .label {
+
+    &.proposal,
+    &.question {
+      font-size: rem-calc(10);
+    }
+
+    &.proposal {
+      background: #ffae00;
+      color: #000;
+    }
+
+    &.question {
+      background: $brand;
+      color: #fff;
+    }
+  }
+}
+
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
