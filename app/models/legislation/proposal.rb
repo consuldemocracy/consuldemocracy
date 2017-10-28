@@ -137,6 +137,10 @@ class Legislation::Proposal < ActiveRecord::Base
     tags.each{ |t| t.increment_custom_counter_for('LegislationProposal') }
   end
 
+  def self.title_max_length
+    160
+  end
+
   protected
 
     def set_responsible_name
