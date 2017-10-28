@@ -258,28 +258,46 @@ header,
 .legislation-proposals {
 
   .proposal h3 {
+    font-size: rem-calc(20);
     margin-top: 0;
   }
 
-  .proposal-content.human-rights {
-    margin-top: $line-height / 2;
+  .proposal-content {
+
+    &.human-rights {
+      margin-top: $line-height / 2;
+    }
   }
 
   .label {
 
     &.proposal,
     &.question {
+      background: #edf2f8;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      color: $text;
       font-size: rem-calc(10);
+      margin-bottom: $line-height / 4;
     }
 
     &.proposal {
-      background: #ffae00;
-      color: #000;
+      border-left: 2px solid #ffae00;
     }
 
     &.question {
-      background: $brand;
-      color: #fff;
+      border-left: 2px solid #003df6;
+    }
+  }
+}
+
+.proposal-show {
+
+  &.legislation-proposal-show h1 {
+    font-size: rem-calc(24);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(36);
     }
   }
 }
