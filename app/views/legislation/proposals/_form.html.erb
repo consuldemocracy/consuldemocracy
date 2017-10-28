@@ -6,11 +6,15 @@
   <div class="row">
     <div class="small-12 column">
       <%= f.label :proposal_type, t("proposals.form.proposal_type") %>
-      <%= f.select :proposal_type, Legislation::Proposal::VALID_TYPES.map { |t| [t.capitalize, t] }, label: false %>
+      <%= f.select :proposal_type, proposal_type_options, label: false %>
     </div>
 
     <div class="small-12 column">
-      <%= f.label :title, t("proposals.form.proposal_title") %>
+
+      <%= f.label :title do %>
+        <span id="js-legislation-proposal-label-title"><%= t("proposals.form.proposal_title") %></span>
+        <span id="js-legislation-proposal-label-question-title"><%= t("legislation_proposals.form.question_title") %></span>
+      <% end %>
       <%= f.text_field :title, maxlength: Legislation::Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false %>
     </div>
 
@@ -25,7 +29,14 @@
     </div>
 
     <div class="ckeditor small-12 column">
-      <%= f.label :description, t("proposals.form.proposal_text") %>
+      <%= f.label :description do %>
+        <span id="js-legislation-proposal-label-description">
+           <%= t("proposals.form.proposal_text") %>
+        </span>
+        <span id="js-legislation-proposal-label-question-description">
+          <%= t("legislation_proposals.form.question_description") %>
+        </span>
+      <% end %>
       <%= f.cktext_area :description, maxlength: Legislation::Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 

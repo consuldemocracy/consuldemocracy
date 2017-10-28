@@ -280,3 +280,6 @@ en:
   legislation_proposals:
     label_proposal: Proposal
     label_question: Question
+    form:
+      question_title: Question
+      question_description: Question description

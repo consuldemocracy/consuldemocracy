@@ -283,3 +283,6 @@ es:
   legislation_proposals:
     label_proposal: Propuesta
     label_question: Pregunta
+    form:
+      question_title: Pregunta
+      question_description: Descripción de la pregunta
