@@ -28,7 +28,7 @@ class Legislation::Proposal < ActiveRecord::Base
   validates :summary, presence: true
   validates :author, presence: true
 
-  validates :title, length: { in: 4..Legislation::Proposal.title_max_length }
+  validates :title, length: { in: 4..160 }
   validates :description, length: { maximum: Legislation::Proposal.description_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
@@ -135,10 +135,6 @@ class Legislation::Proposal < ActiveRecord::Base
 
   def after_restore
     tags.each{ |t| t.increment_custom_counter_for('LegislationProposal') }
-  end
-
-  def self.title_max_length
-    160
   end
 
   protected
