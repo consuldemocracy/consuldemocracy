@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028091224) do
+ActiveRecord::Schema.define(version: 20171028104203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -582,6 +582,7 @@ ActiveRecord::Schema.define(version: 20171028091224) do
     t.datetime "updated_at",                                    null: false
     t.integer  "cached_votes_total",                default: 0
     t.integer  "cached_votes_down",                 default: 0
+    t.string   "proposal_type"
   end
 
   add_index "legislation_proposals", ["legislation_process_id"], name: "index_legislation_proposals_on_legislation_process_id", using: :btree
@@ -859,9 +860,9 @@ ActiveRecord::Schema.define(version: 20171028091224) do
   create_table "poll_voters", force: :cascade do |t|
     t.string   "document_number"
     t.string   "document_type"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "poll_id",                      null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "poll_id",               null: false
     t.integer  "booth_assignment_id"
     t.integer  "age"
     t.string   "gender"
@@ -872,8 +873,6 @@ ActiveRecord::Schema.define(version: 20171028091224) do
     t.string   "origin"
     t.integer  "officer_id"
     t.string   "token"
-    t.integer  "actual_booth_assignment_id"
-    t.integer  "actual_officer_assignment_id"
   end
 
   add_index "poll_voters", ["booth_assignment_id"], name: "index_poll_voters_on_booth_assignment_id", using: :btree
