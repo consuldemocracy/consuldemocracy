@@ -45,9 +45,11 @@
           <strong><%= @proposal.code %></strong>
         </p>
 
-        <blockquote><%= @proposal.summary %></blockquote>
+        <% if @proposal.is_proposal? %>
+          <blockquote><%= @proposal.summary %></blockquote>
+        <% end %>
 
-        <% if @proposal.video_url.present? %>
+        <% if @proposal.is_proposal? && @proposal.video_url.present? %>
           <div class="small-12 medium-7 small-centered">
             <div class="flex-video">
               <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
@@ -57,7 +59,7 @@
 
         <%= safe_html_with_links @proposal.description %>
 
-        <% if @proposal.external_url.present? %>
+        <% if @proposal.is_proposal? && @proposal.external_url.present? %>
           <div class="document-link">
             <p>
               <span class="icon-document"></span>&nbsp;
@@ -67,7 +69,7 @@
           </div>
         <% end %>
 
-        <% if @proposal.video_url.present? %>
+        <% if @proposal.is_proposal? && @proposal.video_url.present? %>
           <div class="video-link">
             <p>
               <span class="icon-video"></span>&nbsp;
@@ -80,9 +82,11 @@
 
         <h4><%= @proposal.question %></h4>
 
-        <%= render 'shared/tags', taggable: @proposal %>
+        <% if @proposal.is_proposal? %>
+          <%= render 'shared/tags', taggable: @proposal %>
 
-        <%= render 'shared/geozone', geozonable: @proposal %>
+          <%= render 'shared/geozone', geozonable: @proposal %>
+        <% end %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render 'proposals/actions', proposal: @proposal %>
@@ -113,9 +117,11 @@
     <%= render "legislation/proposals/comments" %>
   </div>
 
-  <div class="tabs-panel" id="tab-documents">
-    <%= render 'documents/documents',
-                documents: @proposal.documents,
-                max_documents_allowed: Proposal.max_documents_allowed %>
-  </div>
+  <% if @proposal.is_proposal? %>
+    <div class="tabs-panel" id="tab-documents">
+      <%= render 'documents/documents',
+                  documents: @proposal.documents,
+                  max_documents_allowed: Proposal.max_documents_allowed %>
+    </div>
+  <% end %>
 </div>

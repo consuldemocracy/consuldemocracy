@@ -5,13 +5,18 @@
 
   <div class="row">
     <div class="small-12 column">
+      <%= f.label :proposal_type, t("proposals.form.proposal_type") %>
+      <%= f.select :proposal_type, Legislation::Proposal::VALID_TYPES.map { |t| [t.capitalize, t] }, label: false %>
+    </div>
+
+    <div class="small-12 column">
       <%= f.label :title, t("proposals.form.proposal_title") %>
       <%= f.text_field :title, maxlength: Legislation::Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false %>
     </div>
 
     <%= f.invisible_captcha :subtitle %>
 
-    <div class="small-12 column">
+    <div class="small-12 column" id="js-legislation-proposal-summary">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
       <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
@@ -24,23 +29,23 @@
       <%= f.cktext_area :description, maxlength: Legislation::Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
     </div>
 
-    <div class="small-12 column">
+    <div class="small-12 column" id="js-legislation-proposal-video-url">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
       <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 
-    <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>">
+    <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>" id="js-legislation-proposal-documents">
       <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
     </div>
 
-    <div class="small-12 medium-6 column">
+    <div class="small-12 medium-6 column" id="js-legislation-proposal-geozone">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>
       <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
     </div>
 
-    <div class="small-12 column">
+    <div class="small-12 column" id="js-legislation-proposal-tags">
       <%= f.label :tag_list, t("legislation.proposals.form.tags_label") %>
       <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
 
