@@ -363,6 +363,7 @@ en:
       proposal_summary: Proposal summary
       proposal_summary_note: "(maximum 200 characters)"
       proposal_text: Proposal text
+      proposal_type: Proposal type
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
