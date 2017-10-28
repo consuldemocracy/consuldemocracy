@@ -91,8 +91,6 @@
     </div>
 
     <div class="clear"></div>
-    <!-- <hr class="double"> -->
-
     <div class="row" data-equalizer>
 
       <!-- Participación por sexo -->
@@ -152,43 +150,12 @@
     </div>
 
     <div class="row">
-
       <!-- Participación por grupos de edad -->
       <div class="small-12 column margin-top">
         <h2 class="subtitle"><%= t('stats.age_participation') %></h2>
       </div>
-
-      <!-- <hr class="double"> -->
-
       <%= render 'budgets_investments_results_age' %>
     </div>
 
-    <!-- <hr class="double"> -->
-
-    <!-- <div class="row"> -->
-
-      <!-- Participación por distritos -->
-      <!-- <div class="small-12 column">
-        <h2 class="subtitle">Participación por<br> distritos</h2>
-      </div> -->
-
-      <!-- <hr class="double"> -->
-
-      <!-- <div class="show-for-medium medium-6 column small-centered">
-        <%# image_tag("map.jpg", usemap: "#html_map", alt: "Mapa de distritos de Madrid") %>
-      </div> -->
-
-      <!-- <map name="html_map" id="html_map">
-        <%# @geozones.each do |geozone| %>
-          <area shape="poly"
-                coords="<%# geozone.html_map_coordinates %>"
-                href="#<%# geozone.name.parameterize %>"
-                title="<%# geozone.name %>"
-                alt="<%# geozone.name %>">
-        <%# end %>
-      </map> -->
-
-      <%# render "heading_stats" %>
-    <!-- </div> -->
   </div>
 <% end %>

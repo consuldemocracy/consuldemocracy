@@ -1,0 +1,36 @@
+
+<table class="age-groups-investment-projects">
+  <thead>
+    <tr>
+      <th class="table-width border-right"><%= t('stats.age') %></th>
+      <th class="border-left"><%= t('stats.total') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% all_ages_count = @stats[:age_groups].values.sum.to_f %>
+    <% @stats[:age_groups].each do |age_group, count| %>
+      <tr id="age_group_<%= age_group.gsub(" - ", "_to_") %>">
+        <td class="border-right">
+          <%= age_group.gsub("+", " #{t('stats.more_than')}") %> <%= t('stats.years') %>
+        </td>
+        <td class="border-left">
+          <strong>
+            <%
+              percentage_age_count = all_ages_count == 0 ? 0 : (count / all_ages_count * 100)
+              formatted_percentage_age_count = number_to_percentage(percentage_age_count,
+                                                                     strip_insignificant_zeros: true,
+                                                                     precision: 2)
+            %>
+            <%= count %>
+           (<%= formatted_percentage_age_count %>)
+          </strong>
+          <div class="progress" role="progressbar" tabindex="0" aria-valuenow="20" aria-valuemin="0" aria-valuetext="<%= percentage_age_count %>" aria-valuemax="100">
+            <span class="progress-meter" style="width: <%= number_to_percentage(percentage_age_count,
+                                                                     strip_insignificant_zeros: true,
+                                                                     precision: 2, locale: :es).gsub(',','.') %>;"></span>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

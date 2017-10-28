@@ -13,6 +13,10 @@ es:
       votos: Votos
       cartel: Cartel
       lema: Lema
+      total_vots: Votos totales
+      catells_seleccionats: Cateles seleccionados
+      sex_participation: Participación por sexos
+      age_participation: Participación por grupos de edad
       cartel_1:
         lema: A un pas del cel
       cartel_2:
