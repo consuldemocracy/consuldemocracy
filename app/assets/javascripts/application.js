@@ -76,6 +76,7 @@
 //= require map
 //= require polls
 //= require sortable
+//= require legislation_proposals
 
 var initialize_modules = function() {
   App.Comments.initialize();
@@ -116,6 +117,7 @@ var initialize_modules = function() {
   App.Map.initialize();
   App.Polls.initialize();
   App.Sortable.initialize();
+  App.LegislationProposals.initialize();
 };
 
 $(function(){
