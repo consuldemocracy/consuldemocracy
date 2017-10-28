@@ -1,4 +1,6 @@
 class Legislation::Proposal < ActiveRecord::Base
+  VALID_TYPES = %w(proposal question).freeze
+
   include ActsAsParanoidAliases
   include Flaggable
   include Taggable
@@ -24,8 +26,9 @@ class Legislation::Proposal < ActiveRecord::Base
   belongs_to :geozone
   has_many :comments, as: :commentable
 
+  validates :proposal_type, presence: true, inclusion: { in: VALID_TYPES }
   validates :title, presence: true
-  validates :summary, presence: true
+  validates :summary, presence: true, unless: ->(p) { p.proposal_type == 'question' }
   validates :author, presence: true
 
   validates :title, length: { in: 4..160 }
@@ -139,6 +142,14 @@ class Legislation::Proposal < ActiveRecord::Base
 
   def self.title_max_length
     160
+  end
+
+  def is_proposal?
+    proposal_type == 'proposal'
+  end
+
+  def is_question?
+    proposal_type == 'question'
   end
 
   protected
