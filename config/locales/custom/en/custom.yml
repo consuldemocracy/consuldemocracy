@@ -281,5 +281,12 @@ en:
     label_proposal: Proposal
     label_question: Question
     form:
-      question_title: Question
-      question_description: Question description
+      question_title: "Write your question"
+      question_description: "You can add an explanation about your question or additional information"
+  form:
+    legislation/proposal: the form
+  proposals:
+    form:
+      proposal_type: Choose if you wanna make a proposal or a question
+    index:
+    start_proposal_question: Create proposal or question

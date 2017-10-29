@@ -284,5 +284,12 @@ es:
     label_proposal: Propuesta
     label_question: Pregunta
     form:
-      question_title: Pregunta
-      question_description: Descripción de la pregunta
+      question_title: "Escribe aquí tu pregunta"
+      question_description: "Puedes añadir una explicación sobre tu pregunta o información adicional"
+  form:
+    legislation/proposal: el formulario
+  proposals:
+    form:
+      proposal_type: Elige si quieres hacer una propuesta o una pregunta
+    index:
+      start_proposal_question: Crear propuesta o pregunta
