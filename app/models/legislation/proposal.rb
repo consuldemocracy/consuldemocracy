@@ -141,7 +141,7 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def self.title_max_length
-    160
+    200
   end
 
   def is_proposal?
