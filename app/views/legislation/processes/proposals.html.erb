@@ -14,11 +14,6 @@
               <p><%= t('.empty_proposals') %></p>
             </div>
           <% else %>
-            <% if @process.proposals_description.present? %>
-              <div class="callout primary">
-                <%= @process.proposals_description %>
-              </div>
-            <% end %>
             <%= render @process.proposals %>
           <% end %>
         </div>
