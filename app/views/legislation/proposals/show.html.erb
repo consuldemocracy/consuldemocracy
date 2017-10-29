@@ -38,14 +38,14 @@
           <% end %>
 
         </div>
-
         <br>
-        <p>
-          <%= t("proposals.show.code") %>
-          <strong><%= @proposal.code %></strong>
-        </p>
 
         <% if @proposal.is_proposal? %>
+          <p>
+            <%= t("proposals.show.code") %>
+            <strong><%= @proposal.code %></strong>
+          </p>
+
           <blockquote><%= @proposal.summary %></blockquote>
         <% end %>
 
