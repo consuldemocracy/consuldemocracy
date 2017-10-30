@@ -35,12 +35,6 @@
                 <span class="author">
                   <%= proposal.author.name %>
                 </span>
-                <% if proposal.author.display_official_position_badge? %>
-                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-                  <span class="label round level-<%= proposal.author.official_level %>">
-                    <%= proposal.author.official_position %>
-                  </span>
-                <% end %>
               <% end %>
 
               <% if proposal.author.verified_organization? %>
