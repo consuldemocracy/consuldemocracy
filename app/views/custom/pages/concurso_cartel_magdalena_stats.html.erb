@@ -19,7 +19,6 @@
 <div class="row">
   <div class="small-12 medium-9 column">
     <%= render 'pages/concurso_cartel_magdalena/concurso_tabs' %>
-    <h2>Estadísticas</h2>
     <%= javascript_include_tag "chart", 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "participatory-budget-charts", 'data-turbolinks-track' => true %>
     <% @stats = calcula_resultados_cartel(votacion) %>
