@@ -143,7 +143,7 @@ feature 'Admin booths assignments' do
     end
   end
 
-  xfeature 'Show' do
+  feature 'Show' do
     scenario 'Lists all assigned poll officers' do
       poll = create(:poll)
       booth = create(:poll_booth)
