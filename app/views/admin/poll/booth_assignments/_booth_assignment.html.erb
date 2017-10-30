@@ -14,8 +14,8 @@
                 method: :delete,
                 remote: true,
                 title: t("admin.booth_assignments.manage.actions.unassign"),
-                class: "button hollow alert #{@poll.expired? ? 'disabled' : ''}",
-                data: (booth_assignment.shifts? ? {confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}"} : nil) %>
+                class: "button hollow alert",
+                data: (booth_assignment.shifts? ? {confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}"} : nil) if !@poll.expired? %>
   </td>
 <% else %>
   <td>
@@ -27,6 +27,6 @@
                 method: :post,
                 remote: true,
                 title: t("admin.booth_assignments.manage.actions.assign"),
-                class: "button #{@poll.expired? ? 'disabled' : ''}" %>
+                class: "button" if !@poll.expired? %>
   </td>
 <% end %>
