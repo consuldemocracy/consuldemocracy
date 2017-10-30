@@ -90,8 +90,4 @@ class Poll < ActiveRecord::Base
     end
   end
 
-  def shifts_in_booth(booth_id)
-    officer_assignments.where(booth_assignment_id: booth_assignments.where(booth_id: booth_id).pluck(:id)).pluck(:officer_id).uniq
-  end
-
 end
