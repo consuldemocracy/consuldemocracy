@@ -1,5 +1,8 @@
 class Legislation::Proposal < ActiveRecord::Base
   VALID_TYPES = %w(proposal question).freeze
+  TITLE_MIN_LENGTH = 4
+  TITLE_MAX_LENGTH = 200
+  DESCRIPTION_MAX_LENGTH = 5000
 
   include ActsAsParanoidAliases
   include Flaggable
@@ -31,8 +34,8 @@ class Legislation::Proposal < ActiveRecord::Base
   validates :summary, presence: true, unless: ->(p) { p.proposal_type == 'question' }
   validates :author, presence: true
 
-  validates :title, length: { in: 4..160 }
-  validates :description, length: { maximum: Legislation::Proposal.description_max_length }
+  validates :title, length: { in: TITLE_MIN_LENGTH..TITLE_MAX_LENGTH }
+  validates :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -60,8 +63,7 @@ class Legislation::Proposal < ActiveRecord::Base
       tag_list.join(' ') => 'B',
       geozone.try(:name) => 'B',
       summary            => 'C',
-      description        => 'D'
-    }
+      description        => 'D'}
   end
 
   def self.search(terms)
@@ -72,7 +74,7 @@ class Legislation::Proposal < ActiveRecord::Base
   def self.search_by_code(terms)
     matched_code = match_code(terms)
     results = where(id: matched_code[1]) if matched_code
-    return results if (results.present? && results.first.code == terms)
+    return results if results.present? && results.first.code == terms
   end
 
   def self.match_code(terms)
@@ -108,9 +110,7 @@ class Legislation::Proposal < ActiveRecord::Base
   end
 
   def register_vote(user, vote_value)
-    if votable_by?(user)
-      vote_by(voter: user, vote: vote_value)
-    end
+    vote_by(voter: user, vote: vote_value) if votable_by?(user)
   end
 
   def code
@@ -138,10 +138,6 @@ class Legislation::Proposal < ActiveRecord::Base
 
   def after_restore
     tags.each{ |t| t.increment_custom_counter_for('LegislationProposal') }
-  end
-
-  def self.title_max_length
-    200
   end
 
   def is_proposal?
