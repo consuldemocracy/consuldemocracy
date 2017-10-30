@@ -900,6 +900,16 @@ LOREM_IPSUM
     user
   end
 
+  factory :legislation_proposal, class: 'Legislation::Proposal' do
+    association :process, factory: :legislation_process
+    association :author, factory: :user
+    title 'Legislation Proposal Title'
+    description 'Legislation Proposal Description as long as you want'
+    summary 'Legislation Proposal Summary'
+    proposal_type 'proposal'
+    terms_of_service '1'
+  end
+
   factory :site_customization_page, class: 'SiteCustomization::Page' do
     slug "example-page"
     title "Example page"

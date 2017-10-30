@@ -277,3 +277,16 @@ en:
       title: "Eleven squares voting statistics"
       description: "Look at the statistics of the public consultation on the remodeling of eleven squares in Madrid.Check out the participation by sex, by age and how many people participated by district."
       social: "Statistics of the participation by district, sex and age of the citizen consultation #Vota11Plazas"
+  legislation_proposals:
+    label_proposal: Proposal
+    label_question: Question
+    form:
+      question_title: "Write your question"
+      question_description: "You can add an explanation about your question or additional information"
+  form:
+    legislation/proposal: the form
+  proposals:
+    form:
+      proposal_type: Choose if you wanna make a proposal or a question
+    index:
+    start_proposal_question: Create proposal or question

@@ -280,3 +280,16 @@ es:
       title: "Estadísticas de la votación once plazas"
       description: "Mira las estadísticas de la consulta ciudadana sobre la remodelación de once plazas de Madrid. Entérate de la participación por sexo, por edad y cuántas personas participaron por distrito."
       social: "Estadísticas de la participación por distrito, sexo y edad de la consulta ciudadana #Vota11Plazas"
+  legislation_proposals:
+    label_proposal: Propuesta
+    label_question: Pregunta
+    form:
+      question_title: "Escribe aquí tu pregunta"
+      question_description: "Puedes añadir una explicación sobre tu pregunta o información adicional"
+  form:
+    legislation/proposal: el formulario
+  proposals:
+    form:
+      proposal_type: Elige si quieres hacer una propuesta o una pregunta
+    index:
+      start_proposal_question: Crear propuesta o pregunta

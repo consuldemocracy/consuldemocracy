@@ -14,11 +14,6 @@
               <p><%= t('.empty_proposals') %></p>
             </div>
           <% else %>
-            <% if @process.proposals_description.present? %>
-              <div class="callout primary">
-                <%= @process.proposals_description %>
-              </div>
-            <% end %>
             <%= render @process.proposals %>
           <% end %>
         </div>
@@ -26,7 +21,11 @@
 
       <div class="small-12 medium-3 column">
         <% if @process.proposals_phase.open? %>
-          <p><%= link_to t("proposals.index.start_proposal"), new_legislation_process_proposal_path(@process), class: 'button expanded' %></p>
+          <% if @process.id == 24 %>
+            <p><%= link_to t("proposals.index.start_proposal_question"), new_legislation_process_proposal_path(@process), class: 'button expanded' %></p>
+          <% else %>
+            <p><%= link_to t("proposals.index.start_proposal"), new_legislation_process_proposal_path(@process), class: 'button expanded' %></p>
+          <% end %>
         <% end %>
         <%= render 'legislation/proposals/categories', taggable: @process %>
       </div>
