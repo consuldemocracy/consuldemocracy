@@ -4,8 +4,7 @@
   <%= f.hidden_field(:legislation_process_id, :value => params[:process_id]) %>
 
   <div class="row">
-
-    <div class="small-12 column <%= "hide" unless @process.id == 24 %>">
+    <div class="small-12 column">
       <%= f.label :proposal_type, t("proposals.form.proposal_type") %>
       <%= f.select :proposal_type, proposal_type_options, label: false %>
     </div>
