@@ -364,6 +364,7 @@ es:
       proposal_summary: Resumen de la propuesta
       proposal_summary_note: "(máximo 200 caracteres)"
       proposal_text: Texto desarrollado de la propuesta
+      proposal_type: Tipo de propuesta
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
