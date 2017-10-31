@@ -1,4 +1,42 @@
 <div class="row">
+  <div class="small-12 medium-6 column margin-bottom">
+    <figure class="figure-card">
+      <%= link_to "#{request.url}legislation/processes/26/proposals", title: t("welcome.ess.link") do %>
+        <%= image_tag "welcome/ess.jpg", alt: t("welcome.ess.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "#{request.url}legislation/processes/26/proposals", title: t("welcome.ess.link") do %>
+          <span><%= t("welcome.ess.label") %></span><br>
+          <p class="title"><%= t("welcome.ess.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.ess.text") %></p>
+    <p>
+      <%= link_to t("welcome.ess.link"), "#{request.url}legislation/processes/26/proposals" %>
+    </p>
+  </div>
+
+  <div class="small-12 medium-6 column margin-bottom">
+    <figure class="figure-card">
+      <%= link_to "#{request.url}legislation/processes/24/proposals", title: t("welcome.open_plenary.link") do %>
+        <%= image_tag "welcome/open_plenary.jpg", alt: t("welcome.open_plenary.alt") %>
+      <% end %>
+      <figcaption>
+        <%= link_to "#{request.url}legislation/processes/24/proposals", title: t("welcome.open_plenary.link") do %>
+          <span><%= t("welcome.open_plenary.label") %></span><br>
+          <p class="title"><%= t("welcome.open_plenary.title") %></p>
+        <% end %>
+      </figcaption>
+    </figure>
+    <p><%= t("welcome.open_plenary.text") %></p>
+    <p>
+      <%= link_to t("welcome.open_plenary.link"), "#{request.url}legislation/processes/24/proposals" %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
   <div class="small-12 medium-4 column margin-bottom">
     <figure class="figure-card">
       <%= link_to "http://ciudades-democraticas.cc/consulcon/", target: "_blank", title: t("welcome.consulcon.link") do %>
