@@ -9,12 +9,12 @@
     <div class="row">
       <div class="small-12 medium-9 column">
         <div class="legislation-proposals">
-          <% if @process.proposals.empty? %>
+          <% if @proposals.empty? %>
             <div class="callout primary">
               <p><%= t('.empty_proposals') %></p>
             </div>
           <% else %>
-            <%= render @process.proposals %>
+            <%= render @proposals %>
           <% end %>
         </div>
       </div>

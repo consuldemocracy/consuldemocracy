@@ -89,8 +89,9 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :proposals_phase
 
+    @proposals = Legislation::Proposal.where(process: @process)
     if @process.proposals_phase.started?
-      legislation_proposal_votes(@process.proposals)
+      legislation_proposal_votes(@proposals)
       render :proposals
     else
       render :phase_not_open
