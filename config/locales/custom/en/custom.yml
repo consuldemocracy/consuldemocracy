@@ -301,4 +301,4 @@ en:
     form:
       proposal_type: Choose if you wanna make a proposal or a question
     index:
-    start_proposal_question: Create proposal or question
+      start_proposal_question: Create proposal or question
