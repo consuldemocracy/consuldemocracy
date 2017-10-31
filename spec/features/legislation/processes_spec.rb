@@ -193,5 +193,44 @@ feature 'Legislation' do
 
       include_examples "not published permissions", :result_publication_legislation_process_path
     end
+
+    context 'proposals phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, proposals_phase_start_date: Date.current + 1.day, proposals_phase_end_date: Date.current + 2.days)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, proposals_phase_start_date: Date.current - 1.day, proposals_phase_end_date: Date.current + 2.days, proposals_phase_enabled: true)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("There are no proposals")
+      end
+
+      scenario 'create proposal button leads to create proposal path if user is logged in' do
+        process = create(:legislation_process, proposals_phase_start_date: Date.current - 1.day, proposals_phase_end_date: Date.current + 2.days, proposals_phase_enabled: true)
+
+        login_as create(:user)
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("Crea una propuesta")
+        expect(find("#create-new-proposal")[:href]).to have_content("/legislation/processes/#{process.id}/proposals/new")
+      end
+
+      scenario 'create proposal button leads to register path if user is not logged in' do
+        process = create(:legislation_process, proposals_phase_start_date: Date.current - 1.day, proposals_phase_end_date: Date.current + 2.days, proposals_phase_enabled: true)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("Crea una propuesta")
+        expect(find("#create-new-proposal")[:href]).to have_content("/users/sign_in")
+      end
+
+      include_examples "not published permissions", :legislation_process_proposals_path
+    end
   end
 end
