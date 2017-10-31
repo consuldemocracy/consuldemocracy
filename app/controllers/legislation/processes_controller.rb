@@ -2,7 +2,7 @@ class Legislation::ProcessesController < Legislation::BaseController
   has_filters %w{open next past}, only: :index
   load_and_authorize_resource
 
-  before_action :set_random_seed, only: :index
+  before_action :set_random_seed, only: :proposals
 
   def index
     @current_filter ||= 'open'
@@ -115,6 +115,6 @@ class Legislation::ProcessesController < Legislation::BaseController
                0
              end
       session[:random_seed], params[:random_seed] = seed
-      ::Legislation::Process.connection.execute "select setseed(#{seed})"
+      ::Legislation::Proposal.connection.execute "select setseed(#{seed})"
     end
 end
