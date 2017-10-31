@@ -189,6 +189,18 @@ en:
       text: "Conferences about CONSUL, Decide Madrid platform's free software. Join us 16th-17th November."
       link: "More information about CONSULCon17"
       alt: "Image of two participants in a hackaton"
+    ess:
+      label: "Debate"
+      title: "Social and Solidarity Economy Strategy"
+      text: "Choose and propose actions so that the City Council makes the economy of the city more human, democratic, inclusive and sustainable."
+      link: "See Social and Solidarity Economy Strategy"
+      alt: "Image of a map of Madrid"
+    open_plenary:
+      label: "Participate"
+      title: "Open Plenary 2017"
+      text: "On November 18 you ask Manuela Carmena and the municipal political groups in your plenary session."
+      link: "See Open Plenary 2017"
+      alt: "Poster image of the Open Plenary 2017"
   budgets_banner:
     title: "100 million to make Madrid"
     date: "From May 15 to June 30"
@@ -289,4 +301,4 @@ en:
     form:
       proposal_type: Choose if you wanna make a proposal or a question
     index:
-    start_proposal_question: Create proposal or question
+      start_proposal_question: Create proposal or question
