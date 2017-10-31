@@ -193,5 +193,42 @@ feature 'Legislation' do
 
       include_examples "not published permissions", :result_publication_legislation_process_path
     end
+
+    context 'proposals phase' do
+      scenario 'not open' do
+        process = create(:legislation_process, :upcoming_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("This phase is not open yet")
+      end
+
+      scenario 'open' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_content("There are no proposals")
+      end
+
+      scenario 'create proposal button leads to create proposal path if user is logged in' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        login_as create(:user)
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_link("Create proposal", href: new_legislation_process_proposal_path(process))
+      end
+
+      scenario 'create proposal button leads to register path if user is not logged in' do
+        process = create(:legislation_process, :in_proposals_phase)
+
+        visit legislation_process_proposals_path(process)
+
+        expect(page).to have_link("Create proposal", href: new_user_session_path)
+      end
+
+      include_examples "not published permissions", :legislation_process_proposals_path
+    end
   end
 end

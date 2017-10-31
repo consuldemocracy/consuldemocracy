@@ -27,7 +27,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :debate_phase
 
-    if @process.debate_phase.started? || current_user.administrator?
+    if @process.debate_phase.started? || (current_user && current_user.administrator?)
       render :debate
     else
       render :phase_not_open
@@ -89,7 +89,8 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :proposals_phase
     @proposals = Legislation::Proposal.where(process: @process)
-    if @process.proposals_phase.started? || current_user.administrator?
+
+    if @process.proposals_phase.started? || (current_user && current_user.administrator?)
       set_legislation_proposal_votes(@proposals)
       render :proposals
     else

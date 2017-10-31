@@ -59,13 +59,13 @@
         <iframe src="https://www.google.com/maps/d/embed?mid=1lf155NMY1TmVElqka-UEw5qrvEo" height="480" style="border:0; width:100%; margin-top: 24px;" allowfullscreen title="Mapa de propuestas localizables geográficamente de los presupuestos participativos 2017"></iframe>
       </div>
 
-      <%= link_to "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017" do %>
+      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017" do %>
         <small>Ver lista completa de propuestas</small>
       <% end %><br>
-      <%= link_to "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017?filter=unfeasible" do %>
+      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017?filter=unfeasible" do %>
         <small>Ver lista de propuestas inviables</small>
       <% end %><br>
-      <%= link_to "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017?filter=unselected" do %>
+      <%= link_to "#{request.url}presupuestos/presupuestos-participativos-2017?filter=unselected" do %>
         <small>Ver lista de propuestas no seleccionadas para la votación final</small>
       <% end %>
     </div>
@@ -140,7 +140,7 @@
         <div class="small-12 medium-8 column">
           <h4>Si te sientes gato</h4>
           <p>Si eres docente o responsable de un grupo de jóvenes puedes implicar a los votantes de menor edad en esta iniciativa didáctica sobre los presupuestos participativos.</p>
-          <%# link_to "Visitar Si te sientes gato", "https://decide.madrid.es/sitesientesgato", target: "_blank" %>
+          <%# link_to "Visitar Si te sientes gato", "#{request.url}sitesientesgato", target: "_blank" %>
         </div>
       </div>
     </div>
