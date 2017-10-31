@@ -4,7 +4,7 @@
 <% end %>
 <% provide :social_media_meta_tags do %>
 <!-- Facebook OG -->
-<meta property="og:url"           content="https://decide.madrid.es/haz-propuestas" />
+<meta property="og:url"           content="<%= #{request.url} %>haz-propuestas" />
 <meta property="og:title"         content="Haz propuestas en Decide Madrid" />
 <meta property="og:image"         content="<%= image_url '/social_media_blas.jpg' %>" />
 <meta property="og:description"   content="Haz caso a Blas Bonilla y presenta tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en https://decide.madrid.es/haz-propuestas" />
@@ -35,7 +35,7 @@
 
       <p>Blas Bonilla es un ciudadano que ha aprendido hace poco a usar Internet y se ha topado con la página de participación del Ayuntamiento de Madrid: <%= link_to "decide.madrid.es", "https://decide.madrid.es" %>.</p>
 
-      <p>Entre otras iniciativas, cualquier persona puede crear una propuesta relacionada con nuestra ciudad y conseguir el apoyo de la ciudadanía para que se lleven a cabo. Si la apoyan y luego hay más gente a favor de la propuesta que en contra, ¡se hace! <%= link_to "Regístrate", "https://decide.madrid.es/users/sign_up" %>, y crea tus <%= link_to "propuestas ciudadanas", more_info_proposals_path %>.</p>
+      <p>Entre otras iniciativas, cualquier persona puede crear una propuesta relacionada con nuestra ciudad y conseguir el apoyo de la ciudadanía para que se lleven a cabo. Si la apoyan y luego hay más gente a favor de la propuesta que en contra, ¡se hace! <%= link_to "Regístrate", "#{request.url}users/sign_up" %>, y crea tus <%= link_to "propuestas ciudadanas", more_info_proposals_path %>.</p>
 
       <p>No te pierdas las propuestas que ha hecho Blas Bonilla. ¡Mira el vídeo y compártelo! <%= link_to "#LoDiceBlasBonilla", "https://twitter.com/search?f=tweets&q=%23LoDiceBlasBonilla", target: "_blank" %></p>
 
@@ -116,12 +116,12 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
         <div class="small-6 large-2 large-offset-4 column margin-top">
-          <div class="fb-share-button" data-href="https://decide.madrid.es/haz-propuestas" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdecide.madrid.es%2Fhaz-propuestas&amp;src=sdkpreparse">Compartir</a></div>
+          <div class="fb-share-button" data-href="<%= #{request.url} %>haz-propuestas" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdecide.madrid.es%2Fhaz-propuestas&amp;src=sdkpreparse">Compartir</a></div>
         </div>
 
         <!-- Compartir en Twitter -->
         <div class="small-6 large-2 column end margin-top">
-          <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://decide.madrid.es/haz-propuestas" data-text="#LoDiceBlasBonilla: Haz tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= #{request.url} %>haz-propuestas" data-text="#LoDiceBlasBonilla: Haz tus propuestas para que Madrid sea una ciudad mejor. Entra, regístrate y participa en" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </div>
       </div>
     </div>

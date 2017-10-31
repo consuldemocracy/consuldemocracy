@@ -3,7 +3,7 @@
   <p class="lead"><%= t("budgets_banner.city_text_html") %></p>
   <div class="small-12 medium-6 large-5">
   <%= link_to t("budgets_banner.city_button"),
-              "https://decide.madrid.es/presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
+              "#{request.url}presupuestos/presupuestos-participativos-2017/toda-la-ciudad/toda-la-ciudad?filter=selected",
               class: "button hollow expanded large" %>
   </div>
 </div>
