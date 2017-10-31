@@ -88,8 +88,8 @@ class Legislation::ProcessesController < Legislation::BaseController
   def proposals
     set_process
     @phase = :proposals_phase
+    @proposals = ::Legislation::Proposal.where(process: @process).order('random()')
 
-    @proposals = Legislation::Proposal.where(process: @process)
     if @process.proposals_phase.started?
       legislation_proposal_votes(@proposals)
       render :proposals
@@ -110,11 +110,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
 
     def set_random_seed
-      seed = begin
-               Float(params[:random_seed] || session[:random_seed] || (rand(99) / 100.0))
-             rescue
-               0
-             end
+      seed = Float(params[:random_seed] || session[:random_seed] || (rand(99) / 100.0)) rescue 0
       session[:random_seed], params[:random_seed] = seed
       ::Legislation::Proposal.connection.execute "select setseed(#{seed})"
     end
