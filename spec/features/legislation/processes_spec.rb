@@ -217,8 +217,7 @@ feature 'Legislation' do
         login_as create(:user)
         visit legislation_process_proposals_path(process)
 
-        expect(page).to have_content("Create proposal")
-        expect(find("#create-new-proposal")[:href]).to have_content("/legislation/processes/#{process.id}/proposals/new")
+        expect(page).to have_link("Create proposal", href: new_legislation_process_proposal_path(process))
       end
 
       scenario 'create proposal button leads to register path if user is not logged in' do
@@ -226,8 +225,7 @@ feature 'Legislation' do
 
         visit legislation_process_proposals_path(process)
 
-        expect(page).to have_content("Create proposal")
-        expect(find("#create-new-proposal")[:href]).to have_content("/users/sign_in")
+        expect(page).to have_link("Create proposal", href: new_user_session_path)
       end
 
       include_examples "not published permissions", :legislation_process_proposals_path
