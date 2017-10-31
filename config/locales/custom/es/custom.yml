@@ -192,6 +192,18 @@ es:
       text: "Ven el 16 y 17 de noviembre a las conferencias sobre CONSUL, el software libre de la plataforma Decide Madrid."
       link: "Más información sobre la CONSULCon17"
       alt: "Imagen de dos participantes en un hackaton"
+    ess:
+      label: "Debate"
+      title: "Estrategia de Economía Social y Solidaria"
+      text: "Elige y propón acciones para que el Ayuntamiento haga la economía de la ciudad más humana, democrática, inclusiva y sostenible."
+      link: "Ver Estrategia de Economía Social y Solidaria"
+      alt: "Imagen de un mapa de Madrid"
+    open_plenary:
+      label: "Participa"
+      title: "Pleno Abierto 2017"
+      text: "El 18 de noviembre tú preguntas a Manuela Carmena y a los grupos políticos municipales en tu pleno."
+      link: "Ver Pleno Abierto 2017"
+      alt: "Imagen del cartel del Pleno Abierto 2017"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
