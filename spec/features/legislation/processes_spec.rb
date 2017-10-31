@@ -217,7 +217,7 @@ feature 'Legislation' do
         login_as create(:user)
         visit legislation_process_proposals_path(process)
 
-        expect(page).to have_content("Crea una propuesta")
+        expect(page).to have_content("Create proposal")
         expect(find("#create-new-proposal")[:href]).to have_content("/legislation/processes/#{process.id}/proposals/new")
       end
 
@@ -226,7 +226,7 @@ feature 'Legislation' do
 
         visit legislation_process_proposals_path(process)
 
-        expect(page).to have_content("Crea una propuesta")
+        expect(page).to have_content("Create proposal")
         expect(find("#create-new-proposal")[:href]).to have_content("/users/sign_in")
       end
 
