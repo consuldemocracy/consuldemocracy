@@ -26,26 +26,30 @@ feature 'Legislation Proposals' do
     in_browser(:one) do
       login_as user
       visit legislation_process_proposals_path(process)
-      @first_user_proposals_order = all("[id^='legislation_proposal_']").collect { |e| e[:id] }
+      @first_user_proposals_order = legislation_proposals_order
     end
 
     in_browser(:two) do
       login_as user2
       visit legislation_process_proposals_path(process)
-      @second_user_proposals_order = all("[id^='legislation_proposal_']").collect { |e| e[:id] }
+      @second_user_proposals_order = legislation_proposals_order
     end
 
     expect(@first_user_proposals_order).not_to eq(@second_user_proposals_order)
 
     in_browser(:one) do
       visit legislation_process_proposals_path(process)
-      expect(all("[id^='legislation_proposal_']").collect { |e| e[:id] }).to eq(@first_user_proposals_order)
+      expect(legislation_proposals_order).to eq(@first_user_proposals_order)
     end
 
     in_browser(:two) do
       visit legislation_process_proposals_path(process)
-      expect(all("[id^='legislation_proposal_']").collect { |e| e[:id] }).to eq(@second_user_proposals_order)
+      expect(legislation_proposals_order).to eq(@second_user_proposals_order)
     end
+  end
+
+  def legislation_proposals_order
+    all("[id^='legislation_proposal_']").collect { |e| e[:id] }
   end
 
   scenario "Create a legislation proposal with an image", :js do
