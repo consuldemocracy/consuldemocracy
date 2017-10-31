@@ -170,10 +170,10 @@ es:
     share: "Comparte tu lista de proyectos recomendados con este enlace:"
   welcome:
     header:
-      label: Nueva votación ciudadana
-      title: Vota once plazas
-      text: Hasta el 22 de octubre, decide sobre la remodelación de las plazas de once distritos Madrid.
-      button: Vota aquí
+      label: "Fin de la votación ciudadana"
+      title: "Resultados de la consulta ciudadana Once Plazas"
+      text: "La ciudadanía ha decidido que se remodelen los once espacios sometidos a votación. Consulta los proyectos ganadores y las estadísticas de participación."
+      button: "Ver resultados"
     green_areas:
       label: "Debate previo"
       title: "Zonas verdes de Madrid"
@@ -186,12 +186,24 @@ es:
       text: "Consulta los proyectos ganadores que se llevarán a cabo a partir de 2018."
       link: "Ver resultados de los presupuestos participativos"
       alt: "Imagen de uno de los vídeos de participantes en los Presupuestos participativos 2017"
-    first_voting:
-      label: "Votación febrero"
-      title: "Primera votación ciudadana"
-      text: "La ciudadanía madrileña aprobó Madrid 100% sostenible y billete único. También decidió sobre Gran Vía y Plaza España."
-      link: "Ver resultados de la primera votación ciudadana"
-      alt: "Imagen de dos voluntarias en una de las mesas de votación de la primera votación ciudadana en febrero de 2017"
+    consulcon:
+      label: "Congreso"
+      title: "CONSULCON 2017"
+      text: "Ven el 16 y 17 de noviembre a las conferencias sobre CONSUL, el software libre de la plataforma Decide Madrid."
+      link: "Más información sobre la CONSULCon17"
+      alt: "Imagen de dos participantes en un hackaton"
+    ess:
+      label: "Debate"
+      title: "Estrategia de Economía Social y Solidaria"
+      text: "Elige y propón acciones para que el Ayuntamiento haga la economía de la ciudad más humana, democrática, inclusiva y sostenible."
+      link: "Ver Estrategia de Economía Social y Solidaria"
+      alt: "Imagen de un mapa de Madrid"
+    open_plenary:
+      label: "Participa"
+      title: "Pleno Abierto 2017"
+      text: "El 18 de noviembre tú preguntas a Manuela Carmena y a los grupos políticos municipales en tu pleno."
+      link: "Ver Pleno Abierto 2017"
+      alt: "Imagen del cartel del Pleno Abierto 2017"
   budgets_banner:
     title: "100 millones para hacer Madrid"
     date: "Del 15 de mayo al 30 de junio"
@@ -242,6 +254,18 @@ es:
     information: Información
     more_poll_info: Más información sobre las votaciones
     full_recount_results: Resultados con el 100% de los votos escrutados
+    show:
+      results:
+        tab: "Resultados de la votación"
+        more_info: "Más información sobre la votación %{poll}"
+      stats:
+        tab: "Estadísticas de participación"
+        polls: "Votaciones"
+        data: "Datos de participación"
+        total: "Participación total"
+        gender: "Participación por sexo"
+        age: "Participación por grupos de edad"
+        district: "Participación por distrito"
   first_2017_poll:
     title: PRIMERA VOTACIÓN CIUDADANA
     date: 13-19 DE FEBRERO 2017
@@ -254,3 +278,30 @@ es:
     stats:
       title: "Estadísticas de la primera votación ciudadana"
       description: "Consulta los datos completos de número de votos, participación total y por distritos de la primera votación de propuestas ciudadanas de Madrid, el futuro de la Gran Vía y de la Plaza de España y de seis preguntas en distritos."
+  once_plazas:
+    title: "Once plazas"
+    date: "8-22 de octubre de 2017"
+    title_results: "Resultados"
+    title_stats: "Estadísticas"
+    more_info: "Más información sobre las votaciones"
+    results:
+      title: "Resultados de la votación once plazas"
+      description: "Mira los resultados de la consulta ciudadana sobre la remodelación de once plazas de Madrid y los proyectos ganadores con los que se cambiarán esos espacios públicos."
+      social: "Resultados de la consulta ciudadana #Vota11Plazas: espacios que se remodelarán y proyectos arquitectónicos ganadores"
+    stats:
+      title: "Estadísticas de la votación once plazas"
+      description: "Mira las estadísticas de la consulta ciudadana sobre la remodelación de once plazas de Madrid. Entérate de la participación por sexo, por edad y cuántas personas participaron por distrito."
+      social: "Estadísticas de la participación por distrito, sexo y edad de la consulta ciudadana #Vota11Plazas"
+  legislation_proposals:
+    label_proposal: Propuesta
+    label_question: Pregunta
+    form:
+      question_title: "Escribe aquí tu pregunta"
+      question_description: "Puedes añadir una explicación sobre tu pregunta o información adicional"
+  form:
+    legislation/proposal: el formulario
+  proposals:
+    form:
+      proposal_type: Elige si quieres hacer una propuesta o una pregunta
+    index:
+      start_proposal_question: Crear propuesta o pregunta

@@ -29,7 +29,6 @@ en:
         create: "Results saved"
         error_create: "Results NOT saved. Error in data."
         error_wrong_booth: "Wrong booth. Results NOT saved."
-        error_wrong_date: "Wrong date. Results NOT saved."
       new:
         title: "%{poll} - Add results"
         not_allowed: "You are allowed to add results for this poll"
@@ -67,9 +66,12 @@ en:
       new:
         title: Polls
         table_poll: Poll
-        table_actions: Polls status
+        table_status: Polls status
+        table_actions: Actions
       show:
         can_vote: Can vote
         error_already_voted: Has already participated in this poll
         submit: Confirm vote
         success: "Vote introduced!"
+      can_vote:
+        submit_disable_with: "Wait, confirming vote..."

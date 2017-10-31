@@ -10,7 +10,7 @@ class Poll::Question < ActiveRecord::Base
 
   has_many :comments, as: :commentable
   has_many :answers, class_name: 'Poll::Answer'
-  has_many :question_answers, class_name: 'Poll::Question::Answer'
+  has_many :question_answers, -> { order 'given_order asc' }, class_name: 'Poll::Question::Answer'
   has_many :partial_results
   belongs_to :proposal
 
@@ -18,7 +18,7 @@ class Poll::Question < ActiveRecord::Base
 
   validates :title, presence: true
   validates :author, presence: true
-  #validates :poll_id, presence: true
+  # validates :poll_id, presence: true
 
   validates :title, length: { minimum: 4 }
 
@@ -41,17 +41,12 @@ class Poll::Question < ActiveRecord::Base
       author_visible_name   => 'C' }
   end
 
-  def valid_answers
-    (super.try(:split, ',').compact || []).map(&:strip)
-  end
-
   def copy_attributes_from_proposal(proposal)
     if proposal.present?
       self.author = proposal.author
       self.author_visible_name = proposal.author.name
       self.proposal_id = proposal.id
       self.title = proposal.title
-      self.valid_answers = I18n.t('poll_questions.default_valid_answers')
     end
   end
 
@@ -62,4 +57,11 @@ class Poll::Question < ActiveRecord::Base
     where(poll_id: Poll.answerable_by(user).pluck(:id))
   end
 
+  def answers_total_votes
+    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
+  end
+
+  def most_voted_answer_id
+    question_answers.max_by {|answer| answer.total_votes }.id
+  end
 end

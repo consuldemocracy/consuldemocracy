@@ -8,7 +8,7 @@
 // 06. Budget
 // 07. Proposals successful
 // 08. Polls
-// 09. Budgets stats
+// 09. Polls results and stats
 //
 
 // 01. Votes and supports
@@ -362,10 +362,6 @@
     text-align: center;
     vertical-align: top;
     width: rem-calc(48);
-  }
-
-  .edit-debate {
-    margin-bottom: 0;
   }
 
   .debate-info,
@@ -859,7 +855,9 @@
 }
 
 .debate,
-.debate-show {
+.debate-show,
+.proposal-show,
+.legislation-proposals {
 
   .votes {
     @include votes;
@@ -874,6 +872,7 @@
   }
 }
 
+.proposal-show .votes,
 .debate-show .votes {
   border: 0;
   padding: $line-height / 2 0;
@@ -1479,33 +1478,6 @@
   }
 }
 
-.featured-proposals-ballot-banner,
-.sucessfull-proposals-banner {
-  background: #2d3e50 image-url('ballot_tiny.gif') no-repeat;
-  background-position: 75% 0;
-  position: relative;
-
-  @include breakpoint(medium) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  @include breakpoint(large) {
-    background: #2d3e50 image-url('ballot.gif') no-repeat;
-    background-position: 90% 0;
-  }
-
-  h2,
-  a:hover h2 {
-    color: #ffd200 !important;
-  }
-
-  p {
-    color: #fff;
-  }
-}
-
-.sucessfull-proposals-banner,
 .successful .panel {
 
   .icon-successful {
@@ -1828,163 +1800,58 @@
   }
 }
 
-// 09. Budgets stats
-// ----------------------
+// 09. Polls results and stats
+// ---------------------------
 
-.budgets-stats {
+.polls-results-stats {
 
-  .header {
-    background: $budget;
-
-    h1,
-    .back,
-    .icon-angle-left {
-      color: #fff;
-    }
-  }
-
-  .legend {
-    color: $text-medium;
-    margin-bottom: 0;
-  }
-
-  .title {
-    color: #000201;
-    font-size: rem-calc(40);
-    line-height: rem-calc(40);
-    text-transform: uppercase;
+  .sidebar {
+    border-bottom: 1px solid $border;
+    margin-bottom: $line-height;
 
     @include breakpoint(medium) {
-      font-size: rem-calc(60);
-      line-height: rem-calc(60);
+      border-bottom: 0;
+      border-right: 1px solid $border;
+    }
+
+    .menu {
+      padding: 0;
+
+      li a {
+        color: $link;
+        line-height: $line-height;
+      }
     }
   }
 
-  h2 {
-    color: $brand;
-  }
+  table {
+    table-layout: fixed;
 
-  .big-number-stat {
-    font-size: rem-calc(72);
-    font-weight: bold;
-    line-height: rem-calc(72);
-
-    &.budget {
-      color: $budget;
+    caption {
+      padding: $line-height / 2 0;
+      text-align: left;
     }
-  }
-
-  .progress {
-    background: none;
-  }
-
-  .progress-meter {
-    background: #00dae0;
-    height: $line-height / 2;
-
-    &.web {
-      background: #00ad51;
-    }
-
-    &.zero-ten {
-      background: #007dc3;
-    }
-
-    &.paper {
-      background: #ffdc08;
-    }
-  }
-
-  .progress-meter-text {
-    color: #000201;
-    font-weight: normal;
-    left: 0;
-    top: $line-height / 2;
-    transform: initial;
-  }
-
-  .label {
-
-    &.feasible {
-      background: #9cc56a;
-    }
-
-    &.unfeasible {
-      background: #e87461;
-    }
-
-    &.supports {
-      background: #d0cef6;
-    }
-
-    &.balloting {
-      background: #454372;
-    }
-  }
-
-  .border-left {
-    border-left: 1px solid $border;
-  }
-
-  .border-right {
-    border-right: 1px solid $border;
-  }
-
-  .table-width {
-
-    @include breakpoint(medium) {
-      width: rem-calc(200);
-    }
-  }
-}
-
-.stats-districts {
-
-  th {
-    text-transform: uppercase;
-  }
-
-  tr th {
-    border: 1px solid $border;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .tiny {
-    font-size: rem-calc(11);
-    font-weight: normal;
-  }
-}
-
-@include breakpoint(medium down) {
-
-  .survey-districts thead {
-    font-size: rem-calc(12);
 
     th {
-      width: 25%;
-      word-break: break-all;
-    }
-  }
+      text-align: left;
 
-  .questions-table {
-
-    thead th {
-      font-size: rem-calc(13);
-      width: 20%;
-      word-break: break-all;
+      &.win {
+        background: #009fde;
+      }
     }
 
     td {
-      font-size: rem-calc(13);
+
+      &.win {
+        background: #ccedf8;
+        font-weight: bold;
+      }
     }
   }
-}
 
-.age-groups {
-
-  th {
-    width: 20%;
+  .number {
+    font-size: rem-calc(60);
+    font-weight: bold;
+    line-height: rem-calc(60);
   }
 }

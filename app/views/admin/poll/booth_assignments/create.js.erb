@@ -1,0 +1,1 @@
+$("#<%= dom_id(@booth) %>").html('<%= j render("booth_assignment", booth: @booth, booth_assignment: @booth.assignment_on_poll(@poll)) %>');

@@ -15,8 +15,8 @@ en:
       phone_number_label: Phone number
       public_activity_label: Keep my list of activities public
       public_interests_label: Keep my interests public
-      public_interests_my_title_list: List of interests (Tags of elements you follow)
-      public_interests_user_title_list: List of interests (Tags of elements this user follows)
+      public_interests_my_title_list: List of interests (tags of elements you follow)
+      public_interests_user_title_list: List of interests (tags of elements this user follows)
       public_interests_my_empty_list: You do not follow any elements yet.
       public_interests_user_empty_list: This user does not follow any elements yet.
       save_changes_submit: Save changes
@@ -185,6 +185,7 @@ en:
       flag: This debate has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
+      author: Author
     update:
       form:
         submit_button: Save changes
@@ -362,6 +363,7 @@ en:
       proposal_summary: Proposal summary
       proposal_summary_note: "(maximum 200 characters)"
       proposal_text: Proposal text
+      proposal_type: Proposal type
       proposal_title: Proposal title
       proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
@@ -449,6 +451,10 @@ en:
         one: 1 support
         other: "%{count} supports"
         zero: No supports
+      votes:
+        one: 1 vote
+        other: "%{count} votes"
+        zero: No votes
       supports_necessary: "%{number} supports needed"
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
@@ -526,14 +532,31 @@ en:
       read_more: "Read more about %{answer}"
       read_less: "Read less about %{answer}"
       participate_in_other_polls: Participate in other polls
+      videos: "External video"
+      info_menu: "Information"
+      stats_menu: "Participation statistics"
+      results_menu: "Poll results"
+      stats:
+        title: "Participation data"
+        total_participation: "Total participation"
+        total_votes: "Total amount of given votes"
+        votes: "VOTES"
+        web: "WEB"
+        booth: "BOOTH"
+        total: "TOTAL"
+        valid: "Valid"
+        white: "White votes"
+        null_votes: "Invalid"
+      results:
+        title: "Questions"
+        most_voted_answer: "Most voted answer: "
   poll_questions:
     create_question: "Create question"
-    default_valid_answers: "Yes, No"
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
       voted_token: "You can write down this vote identifier, to check your vote on the final results:"
-      see_projects: "See projects"
+      vote_error: "Something went wrong and your vote couldn't be registered. Please check if your browser supports Javascript and try again later."
   proposal_notifications:
     new:
       title: "Send message"
@@ -824,14 +847,11 @@ en:
       deleted_debate: This debate has been deleted
       deleted_proposal: This proposal has been deleted
       deleted_budget_investment: This investment project has been deleted
-      delete_spending_proposal: Delete
-      confirm_deletion_spending_proposal: Are you sure? This action can not be undone
-      ballot_link_text:
-        zero: You have not voted for any investment yet.
-        one: You voted one investment with a cost of %{amount_spent}.
-        other: You voted %{count} investments with a cost of %{amount_spent}.
-      ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
-      verify_account: verify your account
+      proposals: Proposals
+      debates: Debates
+      budget_investments: Budget investments
+      comments: Comments
+      actions: Actions
       filters:
         comments:
           one: 1 Comment
@@ -854,7 +874,7 @@ en:
           other: "%{count} Following"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
-      private_activity: This user decided to keep the activity list private
+      private_activity: This user decided to keep the activity list private.
       send_private_message: "Send private message"
       delegation: List of recommended investments projects
     proposals:

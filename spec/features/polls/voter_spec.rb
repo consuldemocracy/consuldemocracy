@@ -7,6 +7,7 @@ feature "Voter" do
     let(:poll) { create(:poll, :current) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
+    let(:admin) { create(:administrator) }
 
     background do
       create(:geozone, :in_census)
@@ -41,6 +42,51 @@ feature "Voter" do
       expect(Poll::Voter.first.origin).to eq("web")
     end
 
+    scenario "Voting via web failing vote", :js do
+      poll = create(:poll)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+
+      user = create(:user, :level_two)
+
+      login_as user
+      visit poll_path(poll)
+
+      remove_token_from_vote_link
+
+      within("#poll_question_#{question.id}_answers") do
+        click_link 'Yes'
+      end
+
+      expect(page).to have_content "Something went wrong and your vote couldn't be registered. Please check if your browser supports Javascript and try again later."
+      expect(page).to_not have_content "You can write down this vote identifier, to check your vote on the final results"
+
+      expect(Poll::Voter.count).to eq(0)
+    end
+
+    scenario "Voting via web as unverified user", :js do
+      poll = create(:poll)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+
+      user = create(:user, :incomplete_verification)
+
+      login_as user
+      visit poll_path(poll)
+
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to_not have_link('Yes', href: "/questions/#{question.id}/answer?answer=Yes&token=")
+        expect(page).to_not have_link('No', href: "/questions/#{question.id}/answer?answer=No&token=")
+      end
+
+      expect(page).to have_content("You must verify your account in order to answer")
+      expect(page).to_not have_content("You have already participated in this poll. If you vote again it will be overwritten")
+    end
+
     scenario "Voting in booth", :js do
       user = create(:user, :in_census)
 
@@ -51,11 +97,28 @@ feature "Voter" do
 
       expect(page).to have_content poll.name
 
-      first(:button, "Confirm vote").click
-      expect(page).to have_content "Vote introduced!"
+      within("#poll_#{poll.id}") do
+        click_button("Confirm vote")
+        expect(page).to_not have_button("Confirm vote")
+        expect(page).to have_button('Wait, confirming vote...', disabled: true)
+        expect(page).to have_content "Vote introduced!"
+      end
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("booth")
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -70,7 +133,8 @@ feature "Voter" do
 
       scenario "Trying to vote in web and then in booth", :js do
         login_as user
-        vote_for_poll_via_web(poll, question)
+        vote_for_poll_via_web(poll, question, 'Yes')
+        expect(Poll::Voter.count).to eq(1)
 
         click_link "Sign out"
 
@@ -98,11 +162,25 @@ feature "Voter" do
         expect(page).to_not have_link('Yes')
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
+
+        visit root_path
+        click_link "Sign out"
+        login_as(admin.user)
+        visit admin_poll_recounts_path(poll)
+
+        within("#total_system") do
+          expect(page).to have_content "1"
+        end
+
+        within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+          expect(page).to have_content "1"
+        end
       end
 
       scenario "Trying to vote in web again", :js do
         login_as user
-        vote_for_poll_via_web(poll, question)
+        vote_for_poll_via_web(poll, question, 'Yes')
+        expect(Poll::Voter.count).to eq(1)
 
         visit poll_path(poll)
 
@@ -122,7 +200,46 @@ feature "Voter" do
           expect(page).to have_link('Yes')
           expect(page).to have_link('No')
         end
+      end
+    end
 
+    scenario "Voting in poll and then verifiying account", :js do
+      user = create(:user)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Yes')
+      answer2 = create(:poll_question_answer, question: question, title: 'No')
+
+      login_through_form_as_officer(officer.user)
+      vote_for_poll_via_booth
+
+      visit root_path
+      click_link "Sign out"
+
+      login_as user
+      visit account_path
+      click_link 'Verify my account'
+
+      verify_residence
+      confirm_phone(user)
+
+      visit poll_path(poll)
+
+      expect(page).to_not have_link('Yes')
+      expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
+      expect(Poll::Voter.count).to eq(1)
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
       end
     end
 
@@ -136,7 +253,6 @@ feature "Voter" do
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")
     end
-
   end
 
 end

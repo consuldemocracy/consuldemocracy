@@ -1,43 +1,56 @@
+<%= back_link_to admin_moderators_path %>
+
 <h2><%= t("admin.activity.show.title") %></h2>
 
 <%= render 'shared/filter_subnav', i18n_namespace: "admin.activity.show" %>
 
-<h3><%= page_entries_info @activity %></h3>
+<% if @activity.any? %>
+  <h3 class="margin"><%= page_entries_info @activity %></h3>
 
-<table>
-  <tr>
-    <th><%= t("admin.activity.show.type") %></th>
-    <th><%= t("admin.activity.show.action") %></th>
-    <th class="text-left"><%= t("admin.activity.show.content") %></th>
-    <th><%= t("admin.activity.show.by") %></th>
-  </tr>
-  <% @activity.each do |activity| %>
-    <tr id="<%= dom_id(activity) %>">
-      <td>
-        <%= activity.actionable_type.constantize.model_name.human %><br>
-        <span class="date"><%= l activity.actionable.created_at.to_date %></span>
-      </td>
-      <td>
-        <%= t("admin.activity.show.actions.#{activity.action}") %><br>
-        <span class="date"><%= l activity.created_at.to_date %></span>
-      </td>
-      <td>
-        <% case activity.actionable_type %>
-        <% when "User" %>
-          <%= activity.actionable.username %> (<%= activity.actionable.email %>)
-        <% when "Comment" %>
-          <%= activity.actionable.body %>
-        <% else %>
-          <strong><%= activity.actionable.title %></strong>
-          <br>
-          <div class="proposal-description">
-            <%= activity.actionable.description %>
-          </div>
-        <% end %>
-      </td>
-      <td><%= activity.user.name %> (<%= activity.user.email %>)</td>
-    </tr>
-  <% end %>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= t("admin.activity.show.type") %></th>
+        <th scope="col"><%= t("admin.activity.show.action") %></th>
+        <th scope="col" class="small-6"><%= t("admin.activity.show.content") %></th>
+        <th scope="col"><%= t("admin.activity.show.by") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @activity.each do |activity| %>
+        <tr id="<%= dom_id(activity) %>">
+          <td class="align-top">
+            <strong><%= activity.actionable_type.constantize.model_name.human %></strong><br>
+            <span class="date"><%= l activity.actionable.created_at.to_date %></span>
+          </td>
+          <td class="align-top">
+            <%= t("admin.activity.show.actions.#{activity.action}") %><br>
+            <span class="date"><%= l activity.created_at.to_date %></span>
+          </td>
+          <td class="align-top">
+            <% case activity.actionable_type %>
+            <% when "User" %>
+              <%= activity.actionable.username %> (<%= activity.actionable.email %>)
+            <% when "Comment" %>
+              <%= activity.actionable.body %>
+            <% else %>
+              <strong><%= activity.actionable.title %></strong>
+              <br>
+              <div class="proposal-description">
+                <%= activity.actionable.description %>
+              </div>
+            <% end %>
+          <td class="align-top">
+            <%= activity.user.name %> (<%= activity.user.email %>)
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= paginate @activity %>
+  <%= paginate @activity %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.activity.show.no_activity") %>
+  </div>
+<% end %>

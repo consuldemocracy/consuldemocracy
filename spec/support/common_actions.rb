@@ -258,14 +258,15 @@ module CommonActions
     to receive(:physical_booth?).and_return(true)
   end
 
-  def confirm_phone
+  def confirm_phone(user = nil)
+    user ||= User.last
+
     fill_in 'sms_phone', with: "611111111"
     click_button 'Send'
 
     expect(page).to have_content 'Enter the confirmation code sent to you by text message'
 
-    user = User.last.reload
-    fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
+    fill_in 'sms_confirmation_code', with: user.reload.sms_confirmation_code
     click_button 'Send'
 
     expect(page).to have_content 'Code correct'
@@ -467,19 +468,13 @@ module CommonActions
     end
   end
 
-  def csv_path_for(table)
-    "system/api/#{table}.csv"
-  end
-
-  def vote_for_poll_via_web(poll, question)
+  def vote_for_poll_via_web(poll, question, answer)
     visit poll_path(poll)
 
     within("#poll_question_#{question.id}_answers") do
-      click_link 'Yes'
-      expect(page).to_not have_link('Yes')
+      click_link "#{answer}"
+      expect(page).to_not have_link("#{answer}")
     end
-
-    expect(Poll::Voter.count).to eq(1)
   end
 
   def vote_for_poll_via_booth
@@ -494,4 +489,7 @@ module CommonActions
     expect(Poll::Voter.count).to eq(1)
   end
 
+  def remove_token_from_vote_link
+    page.execute_script("$('.js-question-answer')[0]['href'] = $('.js-question-answer')[0]['href'].match(/.+?(?=token)/)[0] + 'token='")
+  end
 end

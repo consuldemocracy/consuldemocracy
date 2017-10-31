@@ -29,7 +29,6 @@ es:
         create: "Datos guardados"
         error_create: "Resultados NO añadidos. Error en los datos"
         error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
-        error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
       new:
         title: "%{poll} - Añadir resultados"
         not_allowed: "No tienes permiso para introducir resultados"
@@ -67,9 +66,12 @@ es:
       new:
         title: Votaciones
         table_poll: Votación
-        table_actions: Estado de las votaciones
+        table_status: Estado de las votaciones
+        table_actions: Acciones
       show:
         can_vote: Puede votar
-        error_already_voted: "Ya ha participado en esta votación."
+        error_already_voted: "Ya ha participado en esta votación"
         submit: Confirmar voto
         success: "¡Voto introducido!"
+      can_vote:
+        submit_disable_with: "Espera, confirmando voto..."

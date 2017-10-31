@@ -220,6 +220,89 @@ header,
   border-bottom: 1px solid #eee;
 }
 
+// Once plazas results and stats
+
+.polls-show-header {
+
+  &.once-plazas {
+    background: #000;
+
+    h2,
+    p,
+    a {
+      color: #fff;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: rem-calc(40);
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(60);
+      }
+
+      span {
+        display: block;
+        font-size: rem-calc(24);
+        line-height: $line-height;
+      }
+    }
+  }
+}
+
+// Legislation proposals
+
+.legislation-proposals {
+  margin-top: rem-calc(-6);
+
+  .proposal h3 {
+    font-size: rem-calc(20);
+    margin-top: 0;
+  }
+
+  .proposal-content {
+
+    &.human-rights {
+      margin-top: $line-height / 2;
+    }
+  }
+
+  .label {
+
+    &.proposal,
+    &.question {
+      background: #edf2f8;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      color: $text;
+      font-size: rem-calc(10);
+      margin-bottom: $line-height / 4;
+    }
+
+    &.proposal {
+      border-left: 2px solid #ffae00;
+    }
+
+    &.question {
+      border-left: 2px solid #003df6;
+    }
+  }
+}
+
+.proposal-show {
+
+  &.legislation-proposal-show h1 {
+    font-size: rem-calc(24);
+
+    @include breakpoint(medium) {
+      font-size: rem-calc(36);
+    }
+  }
+}
+
 // 01. Global styles
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -1964,9 +2047,9 @@ aside {
 .human-rights .panel {
 
   .icon-human-rights {
-    border-left: 48px solid $brand;
+    border-left: 36px solid $brand;
     border-top: 0;
-    border-bottom: 48px solid transparent;
+    border-bottom: 36px solid transparent;
     height: 0;
     position: absolute;
     left: 0;
@@ -1977,6 +2060,8 @@ aside {
       color: #fff;
       content: '\73';
       font-family: "icons" !important;
+      font-size: rem-calc(16);
+      left: -34px;
       right: 24px;
       position: absolute;
       top: 0;

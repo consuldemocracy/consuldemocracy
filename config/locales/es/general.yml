@@ -15,8 +15,8 @@ es:
       phone_number_label: Teléfono
       public_activity_label: Mostrar públicamente mi lista de actividades
       public_interests_label: Mostrar públicamente mis intereses
-      public_interests_my_title_list: Lista de intereses (Etiquetas de los elementos que sigues)
-      public_interests_user_title_list: Lista de intereses (Etiquetas de los elementos seguidos este usuario)
+      public_interests_my_title_list: Lista de intereses (etiquetas de los elementos que sigues)
+      public_interests_user_title_list: Lista de intereses (etiquetas de los elementos seguidos este usuario)
       public_interests_my_empty_list: Aún no sigues ningún elemento.
       public_interests_user_empty_list: Este usuario no sigue ningún elemento todavía.
       save_changes_submit: Guardar cambios
@@ -185,6 +185,7 @@ es:
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
+      author: Autor
     update:
       form:
         submit_button: Guardar cambios
@@ -363,6 +364,7 @@ es:
       proposal_summary: Resumen de la propuesta
       proposal_summary_note: "(máximo 200 caracteres)"
       proposal_text: Texto desarrollado de la propuesta
+      proposal_type: Tipo de propuesta
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
@@ -450,6 +452,10 @@ es:
         one: 1 apoyo
         other: "%{count} apoyos"
         zero: Sin apoyos
+      votes:
+        one: 1 voto
+        other: "%{count} votos"
+        zero: Sin votos
       supports_necessary: "%{number} apoyos necesarios"
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
@@ -526,15 +532,32 @@ es:
       zoom_plus: Ampliar imagen
       read_more: "Leer más sobre %{answer}"
       read_less: "Leer menos sobre %{answer}"
-      participate_in_other_polls: Participa en otras votaciones
+      participate_in_other_polls: Participar en otras votaciones
+      videos: "Vídeo externo"
+      info_menu: "Información"
+      stats_menu: "Estadísticas de participación"
+      results_menu: "Resultados de la votación"
+      stats:
+        title: "Datos de participación"
+        total_participation: "Participación total"
+        total_votes: "Nº total de votos emitidos"
+        votes: "VOTOS"
+        web: "WEB"
+        booth: "URNAS"
+        total: "TOTAL"
+        valid: "Válidos"
+        white: "En blanco"
+        null_votes: "Nulos"
+      results:
+        title: "Preguntas"
+        most_voted_answer: "Respuesta más votada: "
   poll_questions:
     create_question: "Crear pregunta para votación"
-    default_valid_answers: "Sí, No"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       voted_token: "Puedes apuntar este identificador de voto, para comprobar tu votación en el resultado final:"
-      see_projects: "Ver proyectos"
+      vote_error: "Algo ha fallado y tu voto no se ha podido registrar correctamente. Por favor comprueba que tu navegador soporta Javascript y vuelve a intentarlo más tarde."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -825,14 +848,11 @@ es:
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Esta propuesta ha sido eliminada
       deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
-      delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
-      ballot_link_text:
-        zero: Todavía no has votado por ningún proyecto.
-        one: "Has votado un proyecto por un valor de %{amount_spent}."
-        other: "Has votado %{count} proyectos por un valor de %{amount_spent}."
-      ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
-      verify_account: verifica tu cuenta
+      proposals: Propuestas
+      debates: Debates
+      budget_investments: Proyectos de presupuestos participativos
+      comments: Comentarios
+      actions: Acciones
       filters:
         comments:
           one: 1 Comentario
@@ -855,7 +875,7 @@ es:
           other: "%{count} Siguiendo"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
-      private_activity: Este usuario ha decidido mantener en privado su lista de actividades
+      private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
       delegation: Lista de proyectos de gasto recomendados
     proposals:

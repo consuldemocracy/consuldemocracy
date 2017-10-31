@@ -185,27 +185,27 @@ module Polls2017ResultsStatsHelper
   end
 
   def population_by_geozone(geozone_name)
-    geozones_population = { "Arganzuela" => 152116,
-                            "Barajas" => 45417,
-                            "Carabanchel" => 244471,
-                            "Centro" => 135842,
-                            "Chamartín" => 141018,
-                            "Chamberí" => 134143,
-                            "Ciudad Lineal" => 211241,
-                            "Fuencarral-El Pardo" => 233791,
-                            "Hortaleza" => 176052,
-                            "Latina" => 231645,
-                            "Moncloa-Aravaca" => 112939,
-                            "Moratalaz" => 92764,
-                            "Puente de Vallecas" => 224655,
-                            "Retiro" => 114439,
-                            "Salamanca" => 139428,
-                            "San Blas-Canillejas" => 151965,
-                            "Tetuán" => 152742,
-                            "Usera" => 135368,
-                            "Vicálvaro" => 71111,
-                            "Villa de Vallecas" => 110063,
-                            "Villaverde" => 141569 }
+    geozones_population = { "Arganzuela" => 131429,
+                            "Barajas" => 37725,
+                            "Carabanchel" => 205197,
+                            "Centro" => 120867,
+                            "Chamartín" => 123099,
+                            "Chamberí" => 122280,
+                            "Ciudad Lineal" => 184285,
+                            "Fuencarral-El Pardo" => 194232,
+                            "Hortaleza" => 146471,
+                            "Latina" => 204427,
+                            "Moncloa-Aravaca" => 99274,
+                            "Moratalaz" => 82741,
+                            "Puente de Vallecas" => 194314,
+                            "Retiro" => 103666,
+                            "Salamanca" => 126699,
+                            "San Blas-Canillejas" => 127800,
+                            "Tetuán" => 133972,
+                            "Usera" => 112158,
+                            "Vicálvaro" => 55783,
+                            "Villa de Vallecas" => 82504,
+                            "Villaverde" => 117478 }
     geozones_population[geozone_name]
   end
 end

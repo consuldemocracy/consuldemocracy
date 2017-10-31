@@ -53,6 +53,17 @@
     </div>
   </div>
 
+  <% if controller_name == "polls" && action_name == "edit" %>
+    <div class="row">
+      <fieldset class="fieldset">
+        <legend><%= t('admin.polls.new.show_results_and_stats') %></legend>
+        <%= f.check_box :results_enabled, checked: @poll.results_enabled?, label: t('admin.polls.new.show_results') %>
+        <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, label: t('admin.polls.new.show_stats') %>
+        <p class="small"><%= t('admin.polls.new.results_and_stats_reminder') %></p>
+      </fieldset>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="small-12 medium-4 column">
       <%= f.submit t("admin.polls.#{admin_submit_action(@poll)}.submit_button"),

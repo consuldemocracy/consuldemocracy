@@ -1,0 +1,7 @@
+---
+en:
+  admin:
+    legislation:
+      proposals:
+        form:
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")

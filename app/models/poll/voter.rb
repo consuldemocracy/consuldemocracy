@@ -1,7 +1,7 @@
 class Poll
   class Voter < ActiveRecord::Base
 
-    VALID_ORIGINS = %w{ web booth letter }
+    VALID_ORIGINS = %w{web booth letter}.freeze
 
     belongs_to :poll
     belongs_to :user
@@ -12,6 +12,9 @@ class Poll
 
     validates :poll_id, presence: true
     validates :user_id, presence: true
+    validates :token, presence: true, if: ->(voter) { voter.origin == 'web' }
+    validates :booth_assignment_id, presence: true, if: ->(voter) { voter.origin == 'booth' }
+    validates :officer_assignment_id, presence: true, if: ->(voter) { voter.origin == 'booth' }
 
     validates :document_number, presence: true, uniqueness: { scope: [:poll_id, :document_type], message: :has_voted }
     validates :origin, inclusion: { in: VALID_ORIGINS }

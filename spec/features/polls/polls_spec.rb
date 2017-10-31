@@ -59,6 +59,22 @@ feature 'Polls' do
       expect(page).to have_link('Incoming')
       expect(page).to_not have_link('Expired')
     end
+
+    scenario "Poll title link to stats if enabled" do
+      poll = create(:poll, name: "Poll with stats", stats_enabled: true)
+
+      visit polls_path
+
+      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
+    end
+
+    scenario "Poll title link to results if enabled" do
+      poll = create(:poll, name: "Poll with results", stats_enabled: true, results_enabled: true)
+
+      visit polls_path
+
+      expect(page).to have_link("Poll with results", href: results_poll_path(poll))
+    end
   end
 
   context 'Show' do
@@ -73,6 +89,17 @@ feature 'Polls' do
     scenario "Visit path with slug" do
       visit poll_path(poll.slug)
       expect(page).to have_current_path(poll_path(poll.slug))
+
+    end
+
+    scenario 'Show answers with videos' do
+      question = create(:poll_question, poll: poll)
+      answer = create(:poll_question_answer, question: question, title: 'Chewbacca')
+      video = create(:poll_answer_video, answer: answer, title: "Awesome project video", url: "https://www.youtube.com/watch?v=123")
+
+      visit poll_path(poll)
+
+      expect(page).to have_link("Awesome project video", href: "https://www.youtube.com/watch?v=123")
     end
 
     scenario 'Lists questions from proposals as well as regular ones' do
@@ -86,6 +113,30 @@ feature 'Polls' do
 
       expect(page).to have_content(normal_question.title)
       expect(page).to have_content(proposal_question.title)
+    end
+
+    scenario "Question answers appear in the given order" do
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
+
+      visit poll_path(poll)
+
+      within("div#poll_question_#{question.id}") do
+        expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+      end
+    end
+
+    scenario "More info answers appear in the given order" do
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, title: 'First', question: question, given_order: 2)
+      answer2 = create(:poll_question_answer, title: 'Second', question: question, given_order: 1)
+
+      visit poll_path(poll)
+
+      within('div.poll-more-info-answers') do
+        expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+      end
     end
 
     scenario 'Non-logged in users' do
@@ -425,5 +476,75 @@ feature 'Polls' do
       end
     end
 
+  end
+
+  context "Results and stats" do
+    scenario "Show poll results and stats if enabled and poll expired" do
+      poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
+      user = create(:user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to have_content("Poll results")
+      expect(page).to have_content("Participation statistics")
+
+      visit results_poll_path(poll)
+      expect(page).to have_content("Questions")
+
+      visit stats_poll_path(poll)
+      expect(page).to have_content("Participation data")
+    end
+
+    scenario "Don't show poll results and stats if not enabled" do
+      poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
+      user = create(:user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to_not have_content("Poll results")
+      expect(page).to_not have_content("Participation statistics")
+
+      visit results_poll_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+
+      visit stats_poll_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
+    end
+
+    scenario "Don't show poll results and stats if is not expired" do
+      poll = create(:poll, :current, results_enabled: true, stats_enabled: true)
+      user = create(:user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to_not have_content("Poll results")
+      expect(page).to_not have_content("Participation statistics")
+
+      visit results_poll_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+
+      visit stats_poll_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
+    end
+
+    scenario "Show poll results and stats if user is administrator" do
+      poll = create(:poll, :current, results_enabled: false, stats_enabled: false)
+      user = create(:administrator).user
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).to have_content("Poll results")
+      expect(page).to have_content("Participation statistics")
+
+      visit results_poll_path(poll)
+      expect(page).to have_content("Questions")
+
+      visit stats_poll_path(poll)
+      expect(page).to have_content("Participation data")
+    end
   end
 end

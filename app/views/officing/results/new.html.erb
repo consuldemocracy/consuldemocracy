@@ -9,30 +9,17 @@
                         booths_for_officer_select_options(@officer_assignments),
                         { prompt: t("officing.results.new.select_booth"),
                           label: false } %>
-        <%= hidden_field_tag :date, l(@poll.ends_at.to_date) %>
       </div>
     </div>
-
-    <% if current_user.administrator? %>
-      <div class="row">
-        <div class="small-12 medium-6 column">
-          <label>Origen</label>
-          <%= select_tag :origin,
-                          options_for_select([["Urna", "booth"], ["Ágora", "web"], ["Correo", "letter"]]),
-                          { prompt: "Elige origen",
-                            label: false } %>
-        </div>
-      </div>
-    <% end %>
 
     <% @poll.questions.each do |question| %>
       <div class="row">
         <div class="small-12 column">
           <h3><%= question.title %></h3>
         </div>
-        <% question.valid_answers.each_with_index do |answer, i| %>
+        <% question.question_answers.each_with_index do |answer, i| %>
           <div class="small-12 medium-6 large-3 column end">
-            <label><%= answer %></label>
+            <label><%= answer.title %></label>
             <%= text_field_tag "questions[#{question.id}][#{i}]", answer_result_value(question.id, i), placeholder: "0" %>
           </div>
         <% end %>

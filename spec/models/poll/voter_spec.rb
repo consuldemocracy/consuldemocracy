@@ -6,6 +6,7 @@ describe :voter do
   let(:booth) { create(:poll_booth) }
   let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
   let(:voter) { create(:poll_voter) }
+  let(:officer_assignment) { create(:poll_officer_assignment) }
 
   describe "validations" do
 
@@ -76,11 +77,34 @@ describe :voter do
 
     it "should not be valid if the user has voted via web" do
       answer = create(:poll_answer)
-      answer.record_voter_participation('token')
+
+      Poll::Voter.find_or_create_by(user: answer.author, poll: answer.poll, origin: "web", token: 'token')
 
       voter = build(:poll_voter, poll: answer.question.poll, user: answer.author)
       expect(voter).to_not be_valid
       expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
+    end
+
+    it "should not be valid if token is not present via web" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "web", token: '')
+
+      expect(voter).to_not be_valid
+      expect(voter.errors.messages[:token]).to eq(["can't be blank"])
+    end
+
+    it "should be valid if token is not present via booth" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, officer_assignment: officer_assignment, origin: "booth", token: '')
+
+      expect(voter).to be_valid
+    end
+
+    it "should be valid if token is not present via letter" do
+      user = create(:user, :level_two)
+      voter = build(:poll_voter, user: user, poll: poll, origin: "letter", token: '')
+
+      expect(voter).to be_valid
     end
 
     context "origin" do
@@ -96,6 +120,7 @@ describe :voter do
 
       it "should be valid with a booth origin" do
         voter.origin = "booth"
+        voter.officer_assignment = officer_assignment
         expect(voter).to be_valid
       end
 
@@ -107,21 +132,18 @@ describe :voter do
 
     context "assignments" do
       it "should not be valid without a booth_assignment_id when origin is booth" do
-        skip "rethink how to track when an officer accepts a vote"
         voter.origin = 'booth'
         voter.booth_assignment_id = nil
         expect(voter).to_not be_valid
       end
 
       it "should not be valid without an officer_assignment_id when origin is booth" do
-        skip "rethink how to track when an officer accepts a vote"
         voter.origin = 'booth'
         voter.officer_assignment_id = nil
         expect(voter).to_not be_valid
       end
 
       it "should be valid without assignments when origin is web" do
-        skip "rethink how to track when an officer accepts a vote"
         voter.origin = 'web'
         voter.booth_assignment_id = nil
         voter.officer_assignment_id = nil

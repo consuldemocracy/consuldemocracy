@@ -12,13 +12,12 @@ feature 'Voters' do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    set_officing_booth(booth)
   end
 
   scenario "Can vote", :js do
-    # officer_assignment = create(:poll_officer_assignment, officer: officer)
-    # poll = officer_assignment.booth_assignment.poll
+    officer_assignment = create(:poll_officer_assignment, officer: officer)
 
-    # set_officing_booth(officer_assignment.booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -40,7 +39,7 @@ feature 'Voters' do
   scenario "Already voted", :js do
     poll2 = create(:poll, :current)
     booth_assignment = create(:poll_booth_assignment, poll: poll2, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
     user = create(:user, :level_two)
     voter = create(:poll_voter, poll: poll, user: user)
@@ -108,6 +107,7 @@ feature 'Voters' do
     booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_out, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
+    set_officing_booth(second_booth)
     visit new_officing_residence_path
     officing_verify_residence
 
@@ -130,7 +130,6 @@ feature 'Voters' do
      voter = create(:poll_voter, poll: poll1, user: user)
 
      use_physical_booth
-     set_officing_booth
      validate_officer
      visit new_officing_voter_path(id: voter.user.id)
 
@@ -150,22 +149,20 @@ feature 'Voters' do
      expect(page).to_not have_content "You already have participated in this poll."
    end
 
-   xscenario "Store officer and booth information", :js do
+   scenario "Store officer and booth information", :js do
      user  = create(:user, :in_census, id: rand(9999999))
      poll1 = create(:poll, nvotes_poll_id: 128, name: "¿Quieres que XYZ sea aprobado?")
      poll2 = create(:poll, nvotes_poll_id: 136, name: "Pregunta de votación de prueba")
 
-     booth = create(:poll_booth)
+     second_booth = create(:poll_booth)
 
-     ba1 = create(:poll_booth_assignment, poll: poll1, booth: booth )
-     ba2 = create(:poll_booth_assignment, poll: poll2, booth: booth )
-     oa1 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba1, date: Date.current)
-     oa2 = create(:poll_officer_assignment, officer: officer, booth_assignment: ba2, date: Date.current)
-
-     set_officing_booth(booth)
+     ba1 = create(:poll_booth_assignment, poll: poll1, booth: second_booth )
+     ba2 = create(:poll_booth_assignment, poll: poll2, booth: second_booth )
+     create(:poll_shift, officer: officer, booth: second_booth, date: Date.current, task: :vote_collection)
 
      validate_officer
      visit new_officing_residence_path
+     set_officing_booth(second_booth)
      officing_verify_residence
 
      within("#poll_#{poll1.id}") do
@@ -185,11 +182,11 @@ feature 'Voters' do
      voter1 = Poll::Voter.first
 
      expect(voter1.booth_assignment).to eq(ba1)
-     expect(voter1.officer_assignment).to eq(oa1)
+     expect(voter1.officer_assignment).to eq(ba1.officer_assignments.first)
 
      voter2 = Poll::Voter.last
      expect(voter2.booth_assignment).to eq(ba2)
-     expect(voter2.officer_assignment).to eq(oa2)
+     expect(voter2.officer_assignment).to eq(ba2.officer_assignments.first)
    end
 
    context "Booth type" do

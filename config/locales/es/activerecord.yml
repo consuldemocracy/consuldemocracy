@@ -31,6 +31,12 @@ es:
       administrator:
         one: "Administrador"
         other: "Administradores"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
+      manager:
+        one: "Gestor"
+        other: "Gestores"
       vote:
         one: "Voto"
         other: "Votos"
@@ -205,7 +211,6 @@ es:
         description: "Descripción"
       poll/question:
         title: "Pregunta"
-        valid_answers: "Posibles respuestas"
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"

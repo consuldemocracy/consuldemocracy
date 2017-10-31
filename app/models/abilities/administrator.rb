@@ -14,6 +14,13 @@ module Abilities
       can :restore, Proposal
       cannot :restore, Proposal, hidden_at: nil
 
+      can :create, Legislation::Proposal
+      can :show, Legislation::Proposal
+      can :proposals, ::Legislation::Process
+
+      can :restore, Legislation::Proposal
+      cannot :restore, Legislation::Proposal, hidden_at: nil
+
       can :restore, User
       cannot :restore, User, hidden_at: nil
 
@@ -26,6 +33,9 @@ module Abilities
       can :confirm_hide, Proposal
       cannot :confirm_hide, Proposal, hidden_at: nil
 
+      can :confirm_hide, Legislation::Proposal
+      cannot :confirm_hide, Legislation::Proposal, hidden_at: nil
+
       can :confirm_hide, User
       cannot :confirm_hide, User, hidden_at: nil
 
@@ -33,7 +43,7 @@ module Abilities
       can :unmark_featured, Debate
 
       can :comment_as_administrator, [Debate, Comment, Proposal, Poll::Question, Budget::Investment,
-                                      Legislation::Question, Legislation::Annotation, Topic, SpendingProposal, ProbeOption]
+                                      Legislation::Question, Legislation::Proposal, Legislation::Annotation, Topic, SpendingProposal, ProbeOption]
 
       can [:search, :create, :index, :destroy], ::Administrator
       can [:search, :create, :index, :destroy], ::Moderator
@@ -60,10 +70,10 @@ module Abilities
 
       can [:index, :create, :edit, :update, :destroy], Geozone
 
-      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers], Poll
+      can [:read, :create, :update, :destroy, :add_question, :search_booths, :search_officers, :booth_assignments, :results, :stats], Poll
       can [:read, :create, :update, :destroy, :available], Poll::Booth
       can [:search, :create, :index, :destroy], ::Poll::Officer
-      can [:create, :destroy], ::Poll::BoothAssignment
+      can [:create, :destroy, :manage], ::Poll::BoothAssignment
       can [:create, :destroy], ::Poll::OfficerAssignment
       can [:read, :create, :update], Poll::Question
       can :destroy, Poll::Question # , comments_count: 0, votes_up: 0
@@ -75,8 +85,9 @@ module Abilities
       can [:manage], ::Legislation::Process
       can [:manage], ::Legislation::DraftVersion
       can [:manage], ::Legislation::Question
+      can [:manage], ::Legislation::Proposal
 
-      cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation]
+      cannot :comment_as_moderator, [::Legislation::Question, Legislation::Annotation, ::Legislation::Proposal]
 
       can [:create, :destroy], Document
       can [:destroy], Image

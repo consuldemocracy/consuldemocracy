@@ -10,14 +10,11 @@ class Officing::BaseController < ApplicationController
   private
 
     def verify_officer
-      raise CanCan::AccessDenied unless current_user.try(:poll_officer?) || current_user.try(:administrator?)
+      raise CanCan::AccessDenied unless current_user.try(:poll_officer?)
     end
 
     def load_officer_assignment
-      @officer_assignments ||= current_user.poll_officer.
-                               officer_assignments.
-                               voting_days.
-                               where(date: Time.current.to_date)
+      @officer_assignments ||= current_user.poll_officer.officer_assignments.where(date: Time.current.to_date)
     end
 
     def verify_officer_assignment
@@ -27,13 +24,24 @@ class Officing::BaseController < ApplicationController
     end
 
     def verify_booth
-      if current_booth.blank?
+      return unless current_booth.blank?
+      booths = todays_booths_for_officer(current_user.poll_officer)
+      case booths.count
+      when 0
+        redirect_to officing_root_path
+      when 1
+        session[:booth_id] = booths.first.id
+      else
         redirect_to new_officing_booth_path
       end
     end
 
     def current_booth
       Poll::Booth.where(id: session[:booth_id]).first
+    end
+
+    def todays_booths_for_officer(officer)
+      officer.officer_assignments.by_date(Date.today).map(&:booth).uniq
     end
 
     def letter?

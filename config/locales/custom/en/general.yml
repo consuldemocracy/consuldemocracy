@@ -44,6 +44,8 @@ en:
         help_text_6: "More information about voting"
       orders:
         random: Random
+    show:
+      videos: "Video"
   forums:
     index:
       deactivate_link: "Deactivate"
@@ -87,3 +89,13 @@ en:
         text: "You propose and decide on what the City Council invests in a part of the municipal budget."
         link: See investment projects
         alt_image: "Generic image related with budgets of the City of Madrid."
+  users:
+    show:
+      delete_spending_proposal: Delete
+      confirm_deletion_spending_proposal: Are you sure? This action can not be undone
+      ballot_link_text:
+        zero: You have not voted for any investment yet.
+        one: You voted one investment with a cost of %{amount_spent}.
+        other: You voted %{count} investments with a cost of %{amount_spent}.
+      ballot_verified_only: Only verified users can vote on participatory budget, %{verify_account}.
+      verify_account: verify your account
