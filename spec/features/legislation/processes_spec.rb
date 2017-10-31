@@ -196,7 +196,7 @@ feature 'Legislation' do
 
     context 'proposals phase' do
       scenario 'not open' do
-        process = create(:legislation_process, proposals_phase_start_date: Date.current + 1.day, proposals_phase_end_date: Date.current + 2.days)
+        process = create(:legislation_process, :upcoming_proposals_phase)
 
         visit legislation_process_proposals_path(process)
 
@@ -204,7 +204,7 @@ feature 'Legislation' do
       end
 
       scenario 'open' do
-        process = create(:legislation_process, proposals_phase_start_date: Date.current - 1.day, proposals_phase_end_date: Date.current + 2.days, proposals_phase_enabled: true)
+        process = create(:legislation_process, :in_proposals_phase)
 
         visit legislation_process_proposals_path(process)
 
@@ -212,7 +212,7 @@ feature 'Legislation' do
       end
 
       scenario 'create proposal button leads to create proposal path if user is logged in' do
-        process = create(:legislation_process, proposals_phase_start_date: Date.current - 1.day, proposals_phase_end_date: Date.current + 2.days, proposals_phase_enabled: true)
+        process = create(:legislation_process, :in_proposals_phase)
 
         login_as create(:user)
         visit legislation_process_proposals_path(process)
@@ -222,7 +222,7 @@ feature 'Legislation' do
       end
 
       scenario 'create proposal button leads to register path if user is not logged in' do
-        process = create(:legislation_process, proposals_phase_start_date: Date.current - 1.day, proposals_phase_end_date: Date.current + 2.days, proposals_phase_enabled: true)
+        process = create(:legislation_process, :in_proposals_phase)
 
         visit legislation_process_proposals_path(process)
 
