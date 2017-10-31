@@ -48,6 +48,22 @@ feature 'Legislation Proposals' do
     end
   end
 
+  scenario 'Random order maintained with pagination', :js do
+    create_list(:legislation_proposal, (Kaminari.config.default_per_page + 2), process: process)
+
+    login_as user
+    visit legislation_process_proposals_path(process)
+    first_page_proposals_order = legislation_proposals_order
+
+    click_link 'Next'
+    expect(page).to have_content "You're on page 2"
+
+    click_link 'Previous'
+    expect(page).to have_content "You're on page 1"
+
+    expect(legislation_proposals_order).to eq(first_page_proposals_order)
+  end
+
   def legislation_proposals_order
     all("[id^='legislation_proposal_']").collect { |e| e[:id] }
   end
