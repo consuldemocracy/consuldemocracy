@@ -66,6 +66,18 @@ FactoryBot.define do
       result_publication_date { Date.current + 5.days }
     end
 
+    trait :in_proposals_phase do
+      proposals_phase_start_date { Date.current - 1.day }
+      proposals_phase_end_date { Date.current + 2.days }
+      proposals_phase_enabled true
+    end
+
+    trait :upcoming_proposals_phase do
+      proposals_phase_start_date { Date.current + 1.day }
+      proposals_phase_end_date { Date.current + 2.days }
+      proposals_phase_enabled true
+    end
+
     trait :published do
       published true
     end
