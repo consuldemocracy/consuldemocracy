@@ -2,6 +2,8 @@ class Legislation::ProcessesController < Legislation::BaseController
   has_filters %w{open next past}, only: :index
   load_and_authorize_resource
 
+  before_action :set_random_seed, only: :index
+
   def index
     @current_filter ||= 'open'
     @processes = ::Legislation::Process.send(@current_filter).published.page(params[:page])
@@ -104,5 +106,15 @@ class Legislation::ProcessesController < Legislation::BaseController
     def set_process
       return if member_method?
       @process = ::Legislation::Process.find(params[:process_id])
+    end
+
+    def set_random_seed
+      seed = begin
+               Float(params[:random_seed] || session[:random_seed] || (rand(99) / 100.0))
+             rescue
+               0
+             end
+      session[:random_seed], params[:random_seed] = seed
+      ::Legislation::Process.connection.execute "select setseed(#{seed})"
     end
 end
