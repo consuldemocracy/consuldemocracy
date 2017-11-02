@@ -7,7 +7,7 @@
   <%= t("mailers.email_verification.instructions_html",
         verification_link: link_to(
           t('mailers.email_verification.click_here_to_verify'),
-          email_url(email_verification_token: @token))) %>
+          date_of_birth_management_email_verification_url(email_verification_token: @token))) %> <!-- new_email_url -->
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">

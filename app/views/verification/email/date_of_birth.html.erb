@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="small-12 medium-6 column">
+    <h1>
+      <%= t("mailers.email_verification.title") %>
+    </h1>
+    <p>
+      Por favor, introduce tu fecha de nacimiento para verificar tu cuenta
+    </p>  
+    <div class="row">
+      <%= form_tag(save_date_of_birth_management_email_verification_path) do %>  
+        <%= hidden_field_tag :email_verification_token, params[:email_verification_token] %>
+        <div class="small-4 column">
+           <%=select_day nil, prompt: 'Día'%>
+        </div>
+        <div class="small-4 column">
+           <%=select_month nil, prompt: 'Mes'%>
+        </div>
+        <div class="small-4 column">
+           <%=select_year nil, prompt: 'Año'%>
+        </div>
+      
+        <div class="small-12 column">
+          <%= submit_tag "Verificar mi cuenta" %>
+        </div>
+      <% end %>
+    </div>  
+  </div>
+</div>

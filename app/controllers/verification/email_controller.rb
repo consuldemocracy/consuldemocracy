@@ -12,6 +12,9 @@ class Verification::EmailController < ApplicationController
       redirect_to verified_user_path, alert: t('verification.email.show.alert.failure')
     end
   end
+  
+  def new    
+  end
 
   def create
     @email = Verification::Email.new(@verified_user)
@@ -32,9 +35,14 @@ class Verification::EmailController < ApplicationController
 
     def set_verified_user
       @verified_user = VerifiedUser.by_user(current_user).where(id: verified_user_params[:id]).first
+      @verified_user.set_date_of_birth(date_of_birth)
     end
 
     def verified_user_params
       params.require(:verified_user).permit(:id)
+    end
+    
+    def date_of_birth
+      params.require(:date).permit(:day, :month, :year)
     end
 end
