@@ -13,9 +13,8 @@ class Officing::ResultsController < Officing::BaseController
 
   def create
     @results.each { |result| result.save! }
-
-    notice = t("officing.results.flash.create")
-    redirect_to new_officing_poll_result_path(@poll), notice: notice
+    redirect_to new_officing_poll_result_path(@poll),
+                notice: t("officing.results.flash.create")
   end
 
   def index
@@ -23,9 +22,10 @@ class Officing::ResultsController < Officing::BaseController
     if current_user.poll_officer.officer_assignments.final.
                     where(booth_assignment_id: @booth_assignment.id).exists?
 
-      @partial_results = ::Poll::PartialResult.includes(:question).
-                                            where(booth_assignment_id: index_params[:booth_assignment_id]).
-                                            where(date: index_params[:date])
+      @partial_results = ::Poll::PartialResult.includes(:question).where(
+        booth_assignment_id: index_params[:booth_assignment_id]
+      )
+
       @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id)
     end
   end
@@ -33,9 +33,7 @@ class Officing::ResultsController < Officing::BaseController
   private
 
     def check_officer_assignment
-      if @officer_assignment.blank?
-        go_back_to_new(t("officing.results.flash.error_wrong_booth"))
-      end
+      go_back_to_new(t("officing.results.flash.error_wrong_booth")) if @officer_assignment.blank?
     end
 
     def build_results
@@ -50,15 +48,17 @@ class Officing::ResultsController < Officing::BaseController
           answer = question.question_answers.where(given_order: answer_index.to_i + 1).first.title
           go_back_to_new if question.blank?
 
-          partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                                       date: Date.current,
-                                                                       question_id: question_id,
-                                                                       answer: answer)
+          partial_result = ::Poll::PartialResult.find_or_initialize_by(
+            booth_assignment_id: @officer_assignment.booth_assignment_id,
+            question_id: question_id,
+            answer: answer
+          )
+
           partial_result.officer_assignment_id = @officer_assignment.id
           partial_result.amount = count.to_i
           partial_result.author = current_user
           partial_result.origin = 'booth'
-          @results << partial_result
+          @results.push(partial_result)
         end
       end
 
@@ -75,7 +75,7 @@ class Officing::ResultsController < Officing::BaseController
           recount["#{recount_type.to_s.singularize}_amount"] = results_params[recount_type].to_i
         end
       end
-      @results << recount
+      @results.push(recount)
     end
 
     def go_back_to_new(alert = nil)
@@ -108,8 +108,9 @@ class Officing::ResultsController < Officing::BaseController
 
     def load_partial_results
       if @officer_assignments.present?
-        @partial_results = ::Poll::PartialResult.where(officer_assignment_id: @officer_assignments.map(&:id))
-                                                .order(:booth_assignment_id, :date)
+        @partial_results = ::Poll::PartialResult.where(
+          officer_assignment_id: @officer_assignments.map(&:id)
+        ).order(:booth_assignment_id, :created_at)
       end
     end
 

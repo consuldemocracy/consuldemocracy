@@ -715,7 +715,6 @@ section "Creating Poll Results" do
         question.question_answers.each do |answer|
           Poll::PartialResult.create!(officer_assignment: officer_assignment,
                                       booth_assignment: booth_assignment,
-                                      date: Date.current,
                                       question: question,
                                       answer: answer.title,
                                       author: author,
