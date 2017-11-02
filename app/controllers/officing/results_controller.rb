@@ -26,7 +26,7 @@ class Officing::ResultsController < Officing::BaseController
       @partial_results = ::Poll::PartialResult.includes(:question).
                                             where(booth_assignment_id: index_params[:booth_assignment_id]).
                                             where(date: index_params[:date])
-      @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id, date: index_params[:date])
+      @recounts = ::Poll::Recount.where(booth_assignment_id: @booth_assignment.id)
     end
   end
 
@@ -66,8 +66,7 @@ class Officing::ResultsController < Officing::BaseController
     end
 
     def build_recounts
-      recount = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
-                                                      date: Date.current)
+      recount = ::Poll::Recount.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id)
       recount.officer_assignment_id = @officer_assignment.id
       recount.author = current_user
       recount.origin = 'booth'

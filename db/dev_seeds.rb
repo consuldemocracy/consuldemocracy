@@ -696,7 +696,7 @@ section "Creating Poll Recounts" do
       Poll::Recount.create!(officer_assignment: officer_assignment,
                             booth_assignment: booth_assignment,
                             author: author,
-                            date: poll.ends_at,
+                            created_at: poll.ends_at,
                             white_amount: rand(0..10),
                             null_amount: rand(0..10),
                             total_amount: rand(100..9999),

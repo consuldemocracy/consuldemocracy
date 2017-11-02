@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025142440) do
+ActiveRecord::Schema.define(version: 20171102122649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -727,19 +727,19 @@ ActiveRecord::Schema.define(version: 20171025142440) do
   add_index "poll_questions", ["tsv"], name: "index_poll_questions_on_tsv", using: :gin
 
   create_table "poll_recounts", force: :cascade do |t|
-    t.integer "author_id"
-    t.string  "origin"
-    t.date    "date"
-    t.integer "booth_assignment_id"
-    t.integer "officer_assignment_id"
-    t.text    "officer_assignment_id_log", default: ""
-    t.text    "author_id_log",             default: ""
-    t.integer "white_amount",              default: 0
-    t.text    "white_amount_log",          default: ""
-    t.integer "null_amount",               default: 0
-    t.text    "null_amount_log",           default: ""
-    t.integer "total_amount",              default: 0
-    t.text    "total_amount_log",          default: ""
+    t.integer  "author_id"
+    t.string   "origin"
+    t.integer  "booth_assignment_id"
+    t.integer  "officer_assignment_id"
+    t.text     "officer_assignment_id_log", default: ""
+    t.text     "author_id_log",             default: ""
+    t.integer  "white_amount",              default: 0
+    t.text     "white_amount_log",          default: ""
+    t.integer  "null_amount",               default: 0
+    t.text     "null_amount_log",           default: ""
+    t.integer  "total_amount",              default: 0
+    t.text     "total_amount_log",          default: ""
+    t.datetime "created_at"
   end
 
   add_index "poll_recounts", ["booth_assignment_id"], name: "index_poll_recounts_on_booth_assignment_id", using: :btree
