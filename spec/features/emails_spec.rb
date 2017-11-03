@@ -84,6 +84,37 @@ feature 'Emails' do
     end
   end
 
+  context 'Budget investments comments' do
+    scenario 'Send email on budget investment comment', :js do
+      user = create(:user, email_on_comment: true)
+      investment = create(:budget_investment, author: user, budget: create(:budget))
+      comment_on(investment)
+
+      email = open_last_email
+      expect(email).to have_subject('Someone has commented on your investment')
+      expect(email).to deliver_to(investment.author)
+      expect(email).to have_body_text(budget_investment_path(investment, budget_id: investment.budget_id))
+      expect(email).to have_body_text(I18n.t('mailers.config.manage_email_subscriptions'))
+      expect(email).to have_body_text(account_path)
+    end
+
+    scenario 'Do not send email about own budget investments comments', :js do
+      user = create(:user, email_on_comment: true)
+      investment = create(:budget_investment, author: user, budget: create(:budget))
+      comment_on(investment, user)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+
+    scenario 'Do not send email about budget investment comment unless set in preferences', :js do
+      user = create(:user, email_on_comment: false)
+      investment = create(:budget_investment, author: user, budget: create(:budget))
+      comment_on(investment)
+
+      expect { open_last_email }.to raise_error 'No email has been sent!'
+    end
+  end
+
   context 'Comment replies' do
     scenario "Send email on comment reply", :js do
       user = create(:user, email_on_comment_reply: true)
