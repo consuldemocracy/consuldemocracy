@@ -7,8 +7,9 @@
       Por favor, introduce tu fecha de nacimiento para verificar tu cuenta
     </p>  
     <div class="row">
-      <%= form_tag(save_date_of_birth_management_email_verification_path) do %>  
+      <%= form_tag(save_date_of_birth_email_path) do %>  
         <%= hidden_field_tag :email_verification_token, params[:email_verification_token] %>
+        <%= hidden_field_tag :id, @user.id %>
         <div class="small-4 column">
            <%=select_day nil, prompt: 'Día'%>
         </div>

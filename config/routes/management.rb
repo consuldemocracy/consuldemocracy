@@ -5,10 +5,7 @@ namespace :management do
     post :check, on: :collection
   end
 
-  resources :email_verifications, only: [:new, :create] do
-    get :date_of_birth
-    post :save_date_of_birth
-  end
+  resources :email_verifications, only: [:new, :create]
 
   resources :user_invites, only: [:new, :create]
 
