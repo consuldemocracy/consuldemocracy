@@ -1,27 +1,27 @@
 <div class="row">
   <div class="small-12 medium-6 column">
     <h1>
-      <%= t("mailers.email_verification.title") %>
+      <%= t("verification.email.date.title") %>
     </h1>
     <p>
-      Por favor, introduce tu fecha de nacimiento para verificar tu cuenta
+      <%= t("verification.email.date.explanation") %>
     </p>  
     <div class="row">
       <%= form_tag(save_date_of_birth_email_path) do %>  
         <%= hidden_field_tag :email_verification_token, params[:email_verification_token] %>
         <%= hidden_field_tag :id, @user.id %>
         <div class="small-4 column">
-           <%=select_day nil, prompt: 'Día'%>
+           <%=  select_day nil, prompt: t("verification.email.date.day"), required: true %>
         </div>
         <div class="small-4 column">
-           <%=select_month nil, prompt: 'Mes'%>
+           <%=  select_month nil, prompt: t("verification.email.date.month"), required: true %>
         </div>
         <div class="small-4 column">
-           <%=select_year nil, prompt: 'Año'%>
+           <%=  select_year nil, prompt: t("verification.email.date.year"), required: true %>
         </div>
       
         <div class="small-12 column">
-          <%= submit_tag "Verificar mi cuenta" %>
+          <%= submit_tag t("verification.email.date.submit") %>
         </div>
       <% end %>
     </div>  

@@ -14,6 +14,13 @@ es:
           failure: Código de verificación incorrecto
         flash:
           success: Eres un usuario verificado
+      date:
+        title: Verifica tu cuenta
+        explanation: Por favor, introduce tu fecha de nacimiento para verificar la cuenta
+        day: Día
+        month: Mes
+        year: Año
+        submit: Verificar mi cuenta
     letter:
       alert:
         unconfirmed_code: Todavía no has introducido el código de confirmación

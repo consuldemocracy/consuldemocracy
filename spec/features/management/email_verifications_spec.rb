@@ -21,9 +21,20 @@ feature 'EmailVerifications' do
     user.reload
 
     login_as(user)
+    
+    sent_token = /.*email_verification_token=(.*)&amp;.*".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+        
+    visit date_of_birth_email_path(email_verification_token: sent_token, id: user.id)
+    
+    expect(page).to have_content "Confirm your account"
 
-    sent_token = /.*email_verification_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
-    visit email_path(email_verification_token: sent_token)
+    page.find_by_id('date_day').find("option[value='1']").select_option
+    page.find_by_id('date_month').find("option[value='1']").select_option
+    page.find_by_id('date_year').find("option[value='2012']").select_option
+    
+    click_button "Confirm my account"
+    
+#    visit email_path(email_verification_token: sent_token)
 
     expect(page).to have_content "You are a verified user"
 
@@ -32,6 +43,7 @@ feature 'EmailVerifications' do
 
     expect(user.reload.document_number).to eq('12345678Z')
     expect(user).to be_level_three_verified
+    expect(user.date_of_birth.to_date).to eq(DateTime.new(2012, 1, 1, 0, 0, 0).in_time_zone.to_date)
   end
 
 end
