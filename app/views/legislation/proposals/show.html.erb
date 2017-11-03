@@ -2,12 +2,12 @@
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
 <%= render "shared/social_media_meta_tags",
-            social_url: proposal_url(@proposal),
+            social_url: legislation_process_proposal_url(process_id: @process),
             social_title: @proposal.title,
             social_description: @proposal.summary %>
 <% end %>
 <% content_for :canonical do %>
-  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+  <%= render "shared/canonical", href: legislation_process_proposal_url(process_id: @process) %>
 <% end %>
 
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @legislation_proposal_votes] do %>
@@ -95,9 +95,9 @@
 
       <!-- hotfix for th Open Plenay 2017
            This aims to avoid lobbies from skewing the voting.
-           
+
            By only allowing voting in the index of Proposals,
-           hopefully citizens will see other interesting proposals 
+           hopefully citizens will see other interesting proposals
            to vote for -->
       <% unless @process.id == 24 %>
         <aside class="small-12 medium-3 column">
