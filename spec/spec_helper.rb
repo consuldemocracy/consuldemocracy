@@ -106,3 +106,6 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+# Parallel build helper configuration for travis
+KnapsackPro::Adapters::RSpecAdapter.bind
