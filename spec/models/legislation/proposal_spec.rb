@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Legislation::Proposal, type: :model do
+describe Legislation::Proposal do
+  let(:legislation_proposal) { build(:legislation_proposal) }
 
   it "should be valid" do
-    expect(build(:legislation_proposal)).to be_valid
+    expect(legislation_proposal).to be_valid
   end
 
   describe "title length" do

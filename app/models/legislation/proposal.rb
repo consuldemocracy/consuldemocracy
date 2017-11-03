@@ -1,7 +1,7 @@
 class Legislation::Proposal < ActiveRecord::Base
   VALID_TYPES = %w(proposal question).freeze
   TITLE_MIN_LENGTH = 4
-  TITLE_MAX_LENGTH = 200
+  TITLE_MAX_LENGTH = 500
   DESCRIPTION_MAX_LENGTH = 5000
 
   include ActsAsParanoidAliases
