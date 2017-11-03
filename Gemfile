@@ -57,11 +57,13 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
 end
 
+gem 'database_cleaner', '~> 1.6.1'
+gem "faker", '~> 1.7.3'
+
 group :development, :test do
   gem "bullet", '~> 5.5.1'
   gem 'byebug', '~> 9.1.0'
   gem 'factory_girl_rails', '~> 4.8.0'
-  gem "faker", '~> 1.7.3'
   gem 'i18n-tasks', '~> 0.9.15'
   gem 'knapsack', '~> 1.13.3'
   gem 'launchy', '~> 2.4.3'
@@ -75,7 +77,6 @@ end
 group :test do
   gem 'capybara', '~> 2.14.0'
   gem 'coveralls', '~> 0.8.21', require: false
-  gem 'database_cleaner', '~> 1.6.1'
   gem 'email_spec', '~> 2.1.0'
   gem 'poltergeist', '~> 1.15.0'
   gem 'rspec-rails', '~> 3.6'
