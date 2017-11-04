@@ -2,14 +2,17 @@
      class="proposal clear
             <%= ("successful" if proposal.total_votes > Proposal.votes_needed_for_success) %>"
      data-type="proposal">
-  <div class="panel <%= 'with-image' if proposal.image.present? %>">
+  <div class="panel">
     <div class="icon-successful"></div>
+    <div class="row">
 
-    <% if proposal.image.present? %>
-      <div class="row">
-        <div class="small-12 medium-3 large-2 column text-center">
-          <%= image_tag proposal.image_url(:thumb),
-                        alt: proposal.image.title.unicode_normalize %>
+      <div class="small-12 medium-3 large-2 column text-center">
+        <div data-equalizer-watch>
+          <% if proposal.image.present? %>
+            <%# image_tag proposal.image_url(:thumb), alt: proposal.image.title %>
+          <% else %>
+            <!-- <div class="no-image"></div> -->
+          <% end %>
         </div>
 
         <div class="small-12 medium-6 large-7 column">
