@@ -11,17 +11,17 @@
         <%= hidden_field_tag :email_verification_token, params[:email_verification_token] %>
         <%= hidden_field_tag :id, @user.id %>
         <div class="small-4 column">
-           <%=  select_day nil, prompt: t("verification.email.date.day"), required: true %>
+           <%= select_day nil, prompt: true %>
         </div>
         <div class="small-4 column">
-           <%=  select_month nil, prompt: t("verification.email.date.month"), required: true %>
+           <%= select_month nil, prompt: true %>
         </div>
         <div class="small-4 column">
-           <%=  select_year nil, prompt: t("verification.email.date.year"), required: true %>
+           <%= select_year nil, prompt: true, start_year: 1900, end_year: 16.years.ago.year %>
         </div>
       
         <div class="small-12 column">
-          <%= submit_tag t("verification.email.date.submit") %>
+          <%= submit_tag t("verification.email.date.submit"), class: 'button' %>
         </div>
       <% end %>
     </div>  

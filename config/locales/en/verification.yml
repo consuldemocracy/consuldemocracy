@@ -17,10 +17,8 @@ en:
       date:
         title: Confirm your account
         explanation: Please, select your date of birth to confirm the account
-        day: Day
-        month: Month
-        year: Year
         submit: Confirm my account
+        error: Date cannot be blank
     letter:
       alert:
         unconfirmed_code: You have not yet entered the confirmation code

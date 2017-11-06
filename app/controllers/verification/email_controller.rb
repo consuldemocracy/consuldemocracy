@@ -19,9 +19,13 @@ class Verification::EmailController < ApplicationController
 
   def save_date_of_birth
     user = User.where(id: params[:id]).first
-    user.date_of_birth = Date.new(date_of_birth_params[:year].to_i, date_of_birth_params[:month].to_i, date_of_birth_params[:day].to_i)
-    user.save
-    redirect_to email_path(email_verification_token: params[:email_verification_token])
+    if correct_date?
+      user.date_of_birth = Date.new(date_of_birth_params[:year].to_i, date_of_birth_params[:month].to_i, date_of_birth_params[:day].to_i)
+      user.save
+      redirect_to email_path(email_verification_token: params[:email_verification_token])
+    else
+      redirect_to date_of_birth_email_path(email_verification_token: params[:email_verification_token], id: params[:id]), flash: { error: t('verification.email.date.error') }
+    end
   end
 
   def create
@@ -51,5 +55,9 @@ class Verification::EmailController < ApplicationController
 
     def date_of_birth_params
       params.require(:date).permit(:day, :month, :year)
+    end
+
+    def correct_date?
+      date_of_birth_params[:year].to_i.positive? && date_of_birth_params[:month].to_i.positive? && date_of_birth_params[:day].to_i.positive?
     end
 end

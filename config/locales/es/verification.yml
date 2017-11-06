@@ -17,10 +17,8 @@ es:
       date:
         title: Verifica tu cuenta
         explanation: Por favor, introduce tu fecha de nacimiento para verificar la cuenta
-        day: Día
-        month: Mes
-        year: Año
         submit: Verificar mi cuenta
+        error: La fecha no puede estar en blanco
     letter:
       alert:
         unconfirmed_code: Todavía no has introducido el código de confirmación
