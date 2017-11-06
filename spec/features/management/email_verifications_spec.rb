@@ -28,9 +28,17 @@ feature 'EmailVerifications' do
 
     expect(page).to have_content "Confirm your account"
 
-    page.find_by(id: 'date_day').find("option[value='1']").select_option
-    page.find_by(id: 'date_month').find("option[value='1']").select_option
-    page.find_by(id: 'date_year').find("option[value='#{16.years.ago.year}']").select_option
+    within('#date_day') do
+      find("option[value='1']").select_option
+    end
+    
+    within('#date_month') do
+      find("option[value='1']").select_option
+    end
+    
+    within('#date_year') do
+      find("option[value='#{16.years.ago.year}']").select_option
+    end
 
     click_button "Confirm my account"
 
