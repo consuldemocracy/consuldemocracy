@@ -30,7 +30,7 @@ feature 'EmailVerifications' do
 
     page.find_by_id('date_day').find("option[value='1']").select_option
     page.find_by_id('date_month').find("option[value='1']").select_option
-    page.find_by_id('date_year').find("option[value='2012']").select_option
+    page.find_by_id('date_year').find("option[value='#{16.years.ago.year}']").select_option
     
     click_button "Confirm my account"
     
@@ -43,7 +43,7 @@ feature 'EmailVerifications' do
 
     expect(user.reload.document_number).to eq('12345678Z')
     expect(user).to be_level_three_verified
-    expect(user.date_of_birth.to_date).to eq(DateTime.new(2012, 1, 1, 0, 0, 0).in_time_zone.to_date)
+    expect(user.date_of_birth.to_date).to eq(DateTime.new(16.years.ago.year, 1, 1, 0, 0, 0).in_time_zone.to_date)
   end
 
 end
