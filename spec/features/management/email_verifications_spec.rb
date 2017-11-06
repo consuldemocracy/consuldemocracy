@@ -21,20 +21,18 @@ feature 'EmailVerifications' do
     user.reload
 
     login_as(user)
-    
+
     sent_token = /.*email_verification_token=(.*)&amp;.*".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
-        
+
     visit date_of_birth_email_path(email_verification_token: sent_token, id: user.id)
-    
+
     expect(page).to have_content "Confirm your account"
 
-    page.find_by_id('date_day').find("option[value='1']").select_option
-    page.find_by_id('date_month').find("option[value='1']").select_option
-    page.find_by_id('date_year').find("option[value='#{16.years.ago.year}']").select_option
-    
+    page.find_by(id: 'date_day').find("option[value='1']").select_option
+    page.find_by(id: 'date_month').find("option[value='1']").select_option
+    page.find_by(id: 'date_year').find("option[value='#{16.years.ago.year}']").select_option
+
     click_button "Confirm my account"
-    
-#    visit email_path(email_verification_token: sent_token)
 
     expect(page).to have_content "You are a verified user"
 
