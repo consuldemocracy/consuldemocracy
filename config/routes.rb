@@ -115,6 +115,9 @@ Rails.application.routes.draw do
       resources :ballot_lines, only: [:create, :destroy], shallow: true
     end
 
+    resource :budget_poll, only: [:show, :new, :create] do
+      get :thanks, on: :collection
+    end
   end
 
   resources :open_plenaries, only: [] do
@@ -560,6 +563,7 @@ Rails.application.routes.draw do
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
 
+  get 'jornada-presupuestos-participativos'=> redirect('/participatory_budget/budget_poll/new')
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')

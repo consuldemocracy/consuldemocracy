@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="small-12 column">
+    <h2>Te agradecemos tu inscripción para la jornada de evaluación del proceso de presupuestos participativos.</h2>
+    <p>Esta información nos ayudará con la logística y organización de la jornada.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-9 large-6 column">
+    <%= form_for @budget_poll, url: budget_poll_path do |f| %>
+      <%= f.text_field :name %>
+      <%= f.email_field :email %>
+      <%= f.collection_select :preferred_subject, BudgetPoll::VALID_PREFERRED_SUBJECTS, :to_s, :to_s %>
+
+      <p><strong>Información adicional</strong></p>
+      <%= f.check_box :collective %>
+      <%= f.check_box :public_worker %>
+      <%= f.check_box :proposal_author %>
+      <%= f.check_box :selected_proposal_author %>
+
+      <div class="small-12 medium-6 margin-top">
+        <%= f.submit "Enviar", class: "button expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>
