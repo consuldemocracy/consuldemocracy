@@ -517,7 +517,6 @@ Rails.application.routes.draw do
 
   resources :probes, only: [:show] do
     post :selection,  on: :collection
-    get :thanks, on: :collection
 
     resources :probe_options, only: :show do
       post :discard, on: :member
@@ -563,7 +562,9 @@ Rails.application.routes.draw do
 
   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
 
-  get 'jornada-presupuestos-participativos'=> redirect('/participatory_budget/budget_poll/new')
+  get 'jornada-presupuestos-participativos', to: 'budget_polls#new'
+  get 'jornada-presupuestos-participativos/success', to: 'budget_polls#success'
+
   get 'voluntarios-mesas-presenciales' => redirect('/volunteer_poll/new')
   get 'encuesta-plaza-espana' => redirect('/encuesta-plaza-espana-resultados')
   get '/blog' => redirect('http://diario.madrid.es/decidemadrid/')

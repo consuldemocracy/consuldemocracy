@@ -14,13 +14,13 @@ class BudgetPollsController < ApplicationController
     @budget_poll = BudgetPoll.create(budget_poll_params)
 
     if @budget_poll.save
-      redirect_to thanks_budget_poll_path
+      redirect_to jornada_presupuestos_participativos_success_path
     else
       render :new
     end
   end
 
-  def thanks
+  def success
   end
 
   private
