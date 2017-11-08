@@ -58,7 +58,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         :draft_publication_enabled,
         :result_publication_enabled,
         :published,
-        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
         :proposals_description,
         :custom_list
       )
