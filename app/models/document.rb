@@ -52,6 +52,10 @@ class Document < ActiveRecord::Base
     end
   end
 
+  def humanized_content_type
+    attachment_content_type.split("/").last.upcase
+  end
+
   private
 
     def documentable_class

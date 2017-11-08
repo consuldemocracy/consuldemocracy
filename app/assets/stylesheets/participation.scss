@@ -312,7 +312,9 @@
 .proposal-form,
 .proposal-edit,
 .polls-form,
-.poll-question-form {
+.poll-question-form,
+.legislation-process-new,
+.legislation-process-edit {
   @include direct-uploads;
 }
 

@@ -54,4 +54,11 @@ module DocumentsHelper
                        "direct_upload[resource_relation]": "documents")
   end
 
+  def document_item_link(document)
+    link_to "#{document.title} <small>(#{document.humanized_content_type} | \
+             #{number_to_human_size(document.attachment_file_size)}</small>)".html_safe,
+             document.attachment.url,
+             target: "_blank",
+             title: t("shared.target_blank_html")
+  end
 end
