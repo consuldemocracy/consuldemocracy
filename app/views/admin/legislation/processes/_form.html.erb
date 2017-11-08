@@ -185,6 +185,13 @@
     </div>
   </div>
 
+  <div class="documents small-12 column">
+    <%= render 'documents/nested_documents', documentable: @process, f: f %>
+    <div class="small-12 column">
+      <hr>
+    </div>
+  </div>
+
   <div class="row">
     <div class="small-12 medium-4 column">
       <%= f.label :title %>
