@@ -1,33 +1,43 @@
 <% provide :title do %><%= @proposal.title %><% end %>
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-            social_url: proposal_url(@proposal),
-            social_title: @proposal.title,
-            social_description: @proposal.summary %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: proposal_url(@proposal),
+              social_title: @proposal.title,
+              social_description: @proposal.summary %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal),
+          @proposal,
+          @proposal.author,
+          Flag.flagged?(current_user, @proposal),
+          @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
-        <%= back_link_to %>
+        <%= back_link_to @proposal.proceeding? ? human_rights_proposals_path : proposals_path %>
 
         <h1><%= @proposal.title %></h1>
         <% if @proposal.retired? %>
           <div data-alert class="callout alert margin-top proposal-retired">
             <strong>
               <%= t("proposals.show.retired_warning") %><br>
-              <%= link_to t("proposals.show.retired_warning_link_to_explanation"), "#retired_explanation" %>
+              <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
+                          "#retired_explanation" %>
             </strong>
           </div>
         <% elsif @proposal.conflictive? %>
           <div data-alert class="callout alert margin-top">
             <strong><%= t("proposals.show.flag") %></strong>
           </div>
+        <% end %>
+
+        <% if @proposal.proceeding? %>
+          <h2 class="proceeding"><%= @proposal.proceeding %></h2>
+          <h3 class="sub-proceeding"><%= @proposal.sub_proceeding %></h3>
         <% end %>
 
         <div class="proposal-info">
@@ -93,18 +103,21 @@
 
         <% end %>
 
-        <h4><%= @proposal.question %></h4>
-
         <% if @proposal.retired? %>
           <div id="retired_explanation" class="callout">
-            <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
+            <h2>
+              <%= t('proposals.show.retired') %>:
+              <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %>
+            </h2>
             <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
           </div>
         <% end %>
 
         <%= render 'shared/tags', taggable: @proposal %>
 
-        <%= render 'shared/geozone', geozonable: @proposal %>
+        <% unless @proposal.proceeding? %>
+          <%= render 'shared/geozone', geozonable: @proposal %>
+        <% end %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render 'proposals/actions', proposal: @proposal %>
@@ -173,6 +186,7 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
+
         <%= render partial: 'shared/social_share', locals: {
           share_title: t("proposals.show.share"),
           title: @proposal.title,
@@ -204,3 +218,8 @@
                 max_documents_allowed: Proposal.max_documents_allowed %>
   </div>
 </div>
+
+<span id="js-tracking"
+      data-proposal-show="true"
+      data-proposal-rank="<%= @proposal_rank %>">
+</span>

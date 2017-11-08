@@ -122,7 +122,8 @@ feature 'Emails' do
     expect(email).to have_body_text(user_confirmation_path)
   end
 
-  scenario "Email on unfeasible spending proposal" do
+
+  xscenario "Email on unfeasible spending proposal" do
     Setting["feature.spending_proposals"] = true
 
     spending_proposal = create(:spending_proposal)
@@ -210,7 +211,7 @@ feature 'Emails' do
       email_digest.mark_as_emailed
 
       email = open_last_email
-      expect(email).to have_subject("Proposal notifications in CONSUL")
+      expect(email).to have_subject("Proposal notifications in Decide Madrid")
       expect(email).to deliver_to(user.email)
 
       expect(email).to have_body_text(proposal1.title)
@@ -239,6 +240,9 @@ feature 'Emails' do
       expect(notification2.emailed_at).to be
     end
 
+    xscenario "Delete all Notifications included in the digest after email sent" do
+    end
+
   end
 
   context "User invites" do
@@ -257,7 +261,7 @@ feature 'Emails' do
       expect(unread_emails_for("isable@example.com").count).to eq 1
 
       email = open_last_email
-      expect(email).to have_subject("Invitation to CONSUL")
+      expect(email).to have_subject("Invitation to Decide Madrid")
       expect(email).to have_body_text(/#{new_user_registration_path}/)
     end
 
@@ -299,6 +303,8 @@ feature 'Emails' do
     end
 
     scenario "Unfeasible investment" do
+      Setting['feature.budgets.valuators_allowed'] = true
+
       investment = create(:budget_investment, author: author, budget: budget)
 
       valuator = create(:valuator)

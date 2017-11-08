@@ -127,4 +127,43 @@ feature 'Admin booths' do
     click_link "Go back"
     expect(current_path).to eq(available_admin_booths_path)
   end
+
+  context "Booth type" do
+
+    scenario "Defaults to physical booth" do
+      visit admin_booths_path
+      click_link "Add booth"
+
+      fill_in "poll_booth_name", with: "Upcoming booth"
+      fill_in "poll_booth_location", with: "39th Street, number 2, ground floor"
+      click_button "Create booth"
+
+      expect(page).to have_content "Booth created successfully"
+
+      visit edit_admin_booth_path(Poll::Booth.last)
+
+      physical_booth = find('#poll_booth_physical')
+      expect(physical_booth).to be_checked
+    end
+
+    scenario "Choose digital booth instead of physical booth" do
+      visit admin_booths_path
+      click_link "Add booth"
+
+      fill_in "poll_booth_name", with: "Upcoming booth"
+      fill_in "poll_booth_location", with: "39th Street, number 2, ground floor"
+      uncheck "poll_booth_physical"
+
+      click_button "Create booth"
+
+      expect(page).to have_content "Booth created successfully"
+
+      visit edit_admin_booth_path(Poll::Booth.last)
+
+      physical_booth = find('#poll_booth_physical')
+      expect(physical_booth).to_not be_checked
+    end
+
+  end
+
 end

@@ -13,6 +13,11 @@
                 rel: "nofollow",
                 title: t("shared.go_to_page") + t("layouts.header.external_link_opendata") + t('shared.target_blank_html') %>
   </li>
+  <li class="show-for-medium">
+    <%= link_to t("layouts.header.forums"),
+                participation_forums_path,
+                title: t("shared.go_to_page") + t("layouts.header.forums") %>
+  </li>
 
   <% if setting['blog_url'] %>
     <li>

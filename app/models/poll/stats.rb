@@ -1,5 +1,6 @@
 class Poll
   class Stats
+    include StatsHelper
 
     def initialize(poll)
       @poll = poll
@@ -7,11 +8,11 @@ class Poll
 
     def generate
       stats = %w[total_participants total_participants_web total_web_valid total_web_white total_web_null
-                  total_participants_booth total_booth_valid total_booth_white total_booth_null
-                  total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
-                  total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage
-                  null_percentage_web null_percentage_booth total_null_percentage total_participants_web_percentage
-                  total_participants_booth_percentage]
+                 total_participants_booth total_booth_valid total_booth_white total_booth_null
+                 total_valid_votes total_white_votes total_null_votes valid_percentage_web valid_percentage_booth
+                 total_valid_percentage white_percentage_web white_percentage_booth total_white_percentage
+                 null_percentage_web null_percentage_booth total_null_percentage total_participants_web_percentage
+                 total_participants_booth_percentage]
       stats.map { |stat_name| [stat_name.to_sym, send(stat_name)] }.to_h
     end
 
@@ -26,37 +27,44 @@ class Poll
       end
 
       def total_participants_web_percentage
-        stats_cache('total_participants_web_percentage') {
-          (total_participants) == 0 ? 0 : total_participants_web * 100 / total_participants
-        }
+        stats_cache('total_participants_web_percentage') { calculate_percentage(total_participants_web, total_participants) }
       end
 
       def total_participants_booth
-        stats_cache('total_participants_booth') { voters.where(origin: 'booth').count }
+        stats_cache('total_participants_booth') { total_booth_valid + total_booth_white + total_booth_null }
       end
 
       def total_participants_booth_percentage
-        stats_cache('total_participants_booth_percentage') {
-          (total_participants) == 0 ? 0 : total_participants_booth * 100 / total_participants.to_f
-        }
+        stats_cache('total_participants_booth_percentage') { calculate_percentage(total_participants_booth, total_participants) }
       end
 
       def total_web_valid
-        stats_cache('total_web_valid') { voters.where(origin: 'web').count }
+        stats_cache('total_web_valid') { voters.where(origin: 'web').count - total_web_white }
       end
 
       def valid_percentage_web
-        stats_cache('valid_percentage_web') {
-          (total_valid_votes) == 0 ? 0 : total_web_valid * 100 / total_valid_votes.to_f
-        }
+        stats_cache('valid_percentage_web') { calculate_percentage(total_web_valid, total_valid_votes) }
       end
 
       def total_web_white
-        stats_cache('total_web_white') { 0 }
+        stats_cache('total_web_white') do
+          double_white = (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id).count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 1).first.title, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= (Poll::Answer.where(answer: 'En blanco', question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: @poll.questions.second.question_answers.where(given_order: 2).first.title, question: @poll.questions.second).pluck(:author_id)).uniq.count
+          first_total -= double_white
+
+          second_total =  Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id).count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 1).first.title, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= (Poll::Answer.where(answer: @poll.questions.first.question_answers.where(given_order: 2).first.title, question: @poll.questions.first).pluck(:author_id) & Poll::Answer.where(answer: 'En blanco', question: @poll.questions.second).pluck(:author_id)).uniq.count
+          second_total -= double_white
+
+          double_white + first_total + second_total
+        end
       end
 
       def white_percentage_web
-        stats_cache('white_percentage_web') { 0 }
+        stats_cache('white_percentage_web') { calculate_percentage(total_web_white, total_white_votes) }
       end
 
       def total_web_null
@@ -64,7 +72,7 @@ class Poll
       end
 
       def null_percentage_web
-        stats_cache('null_percentage_web') { 0 }
+        stats_cache('null_percentage_web') { calculate_percentage(total_web_null, total_web_valid) }
       end
 
       def total_booth_valid
@@ -72,9 +80,7 @@ class Poll
       end
 
       def valid_percentage_booth
-        stats_cache('valid_percentage_booth') {
-          (total_valid_votes) == 0 ? 0 : total_booth_valid * 100 / total_valid_votes.to_f
-        }
+        stats_cache('valid_percentage_booth') { calculate_percentage(total_booth_valid, total_valid_votes) }
       end
 
       def total_booth_white
@@ -82,9 +88,7 @@ class Poll
       end
 
       def white_percentage_booth
-        stats_cache('white_percentage_booth') {
-          (total_white_votes) == 0 ? 0 : total_booth_white * 100 / total_white_votes.to_f
-        }
+        stats_cache('white_percentage_booth') { calculate_percentage(total_booth_white, total_white_votes) }
       end
 
       def total_booth_null
@@ -92,9 +96,7 @@ class Poll
       end
 
       def null_percentage_booth
-        stats_cache('null_percentage_booth') {
-          (total_null_votes == 0) ? 0 : total_booth_null * 100 / total_null_votes.to_f
-        }
+        stats_cache('null_percentage_booth') { calculate_percentage(total_booth_null, total_null_votes) }
       end
 
       def total_valid_votes
@@ -102,9 +104,7 @@ class Poll
       end
 
       def total_valid_percentage
-        stats_cache('total_valid_percentage'){
-          (total_participants) == 0 ? 0 : total_valid_votes * 100 / total_participants.to_f
-        }
+        stats_cache('total_valid_percentage'){ calculate_percentage(total_valid_votes, total_participants) }
       end
 
       def total_white_votes
@@ -112,9 +112,7 @@ class Poll
       end
 
       def total_white_percentage
-        stats_cache('total_white_percentage') {
-          (total_participants) == 0 ? 0 : total_white_votes * 100 / total_participants.to_f
-        }
+        stats_cache('total_white_percentage') { calculate_percentage(total_white_votes, total_participants) }
       end
 
       def total_null_votes
@@ -122,9 +120,7 @@ class Poll
       end
 
       def total_null_percentage
-        stats_cache('total_null_percentage') {
-          (total_participants) == 0 ? 0 : total_null_votes * 100 / total_participants.to_f
-        }
+        stats_cache('total_null_percentage') { calculate_percentage(total_null_votes, total_participants) }
       end
 
       def voters
@@ -136,7 +132,7 @@ class Poll
       end
 
       def stats_cache(key, &block)
-        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}", &block)
+        Rails.cache.fetch("polls_stats/#{@poll.id}/#{key}/v12", &block)
       end
 
   end

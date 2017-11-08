@@ -3,10 +3,11 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
+      delegation: Delegación de voto en presupuestos participativos
       email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
       email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
-      finish_verification: Finalizar verificación
+      finish_verification: "Añade una doble comprobación de verificación a tu cuenta"
       notifications: Notificaciones
       organization_name_label: Nombre de la organización
       organization_responsible_name_placeholder: Representante de la asociación/colectivo
@@ -30,14 +31,21 @@ es:
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_title: Participación
       user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
+      user_permission_create_budget_investments: Crear proyectos de gasto*
+      user_permission_votes: Participar en todas las consultas*
       username_label: Nombre de usuario
       verified_account: Cuenta verificada
       verify_my_account: Verificar mi cuenta
   application:
     close: Cerrar
     menu: Menú
+  answers:
+    index:
+      title: Respuesta enviada
+      sent: Tu respuesta ha sido enviada. Gracias por participar.
+    new:
+      send: Enviar respuesta
   comments:
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}
@@ -60,6 +68,7 @@ es:
       comment_as_admin: Comentar como administrador
       comment_as_moderator: Comentar como moderador
       leave_comment: Deja tu comentario
+      leave_reply: Deja tu respuesta
     orders:
       most_voted: Más votados
       newest: Más nuevos primero
@@ -68,12 +77,23 @@ es:
     select_order: Ordenar por
     show:
       return_to_commentable: 'Volver a '
+  questions:
+    form:
+      leave_comment: Haz tu pregunta
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
     comments_title: Comentarios
     reply_button: Publicar respuesta
     reply_link: Responder
+  questions_helper:
+    comment_button: Publicar pregunta
+    comment_link: Preguntar
+    reply_button: Publicar respuesta
+    reply_link: Respuesta
+  comment_kinds:
+    comment: Comentario
+    question: Pregunta
   debates:
     create:
       form:
@@ -93,6 +113,8 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
+      comment_kind_label: Tipo de comentarios
+      comment_kind_instructions: Escoge el tipo de comentario
       debate_text: Texto inicial del debate
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
@@ -153,7 +175,12 @@ es:
         one: 1 Comentario
         other: "%{count} Comentarios"
         zero: Sin comentarios
+      questions:
+        one: 1 pregunta
+        other: "%{count} preguntas"
+        zero: Sin preguntas
       comments_title: Comentarios
+      questions_title: Preguntas
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
@@ -177,6 +204,8 @@ es:
     not_saved: 'impidieron guardar %{resource}:'
     policy: Política de privacidad
     proposal: la propuesta
+    signature_sheet: la hoja de firmas
+    spending_proposal: la propuesta de inversión
     proposal_notification: "la notificación"
     spending_proposal: la propuesta de gasto
     budget/investment: la propuesta de inversión
@@ -190,7 +219,6 @@ es:
     image: Imagen
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -210,23 +238,26 @@ es:
       open_data_title: Datos Abiertos
       open_source: software libre
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Decide cómo debe ser la ciudad que quieres.
+      participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
       participation_title: Participación
       privacy: Política de privacidad
-      transparency_text: Obtén cualquier información sobre la ciudad.
+      transparency_text: Obtén cualquier información sobre el Ayuntamiento de Madrid.
       transparency_title: Transparencia
-      transparency_url: https://transparency.consul
+      transparency_url: http://transparencia.madrid.es
     header:
       administration_menu: Admin
       administration: Administrar
       available_locales: Idiomas disponibles
-      collaborative_legislation: Procesos legislativos
+      collaborative_legislation: Procesos
       debates: Debates
       external_link_blog: Blog
       external_link_opendata: Datos abiertos
-      external_link_opendata_url: https://opendata.consul
+      external_link_opendata_url: http://datos.madrid.es
       external_link_transparency: Transparencia
-      external_link_transparency_url: https://transparency.consul
+      external_link_transparency_url: http://transparencia.madrid.es
+      forums: "Foros Locales"
+      help_translate: Ayúdanos a traducir
+      help_translate_info: Cómo ayudar
       locale: 'Idioma:'
       logo: CONSUL logo
       management: Gestión
@@ -242,12 +273,14 @@ es:
         other: Tienes %{count} notificaciones nuevas
       no_notifications: No tienes notificaciones nuevas
       open: abierto
-      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_city_title: La ciudad que quieres será la ciudad que quieras
+      open_city_slogan_html: Existen ciudades gobernadas directamente por sus habitantes, que <strong>debaten</strong> sobre temas que les preocupan, <strong>proponen</strong> ideas para mejorar sus vidas y <strong>deciden</strong> entre todas y todos las que se llevan a cabo.
       open_gov: Gobierno %{open}
       proposals: Propuestas
+      spending_proposals: Presupuestos participativos
       poll_questions: Votaciones
       budgets: Presupuestos participativos
+      delegation: Delegación
       spending_proposals: "Propuestas de inversión"
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
@@ -324,21 +357,20 @@ es:
       other: Otra
     form:
       geozone: "Ámbito de actuación"
+      sub_proceeding: "Derecho"
       proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta de la propuesta
-      proposal_question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No. <br>Ej. '¿Está usted de acuerdo en peatonalizar la calle Mayor?'"
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       proposal_summary: Resumen de la propuesta
       proposal_summary_note: "(máximo 200 caracteres)"
       proposal_text: Texto desarrollado de la propuesta
+      proposal_type: Tipo de propuesta
       proposal_title: Título de la propuesta
       proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
-      tags_label: Temas
-      tag_category_label: "Categorías"
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      tags_label: Tags
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
@@ -377,7 +409,6 @@ es:
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
-      title: Propuestas ciudadanas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
@@ -526,6 +557,7 @@ es:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
       voted_token: "Puedes apuntar este identificador de voto, para comprobar tu votación en el resultado final:"
+      vote_error: "Algo ha fallado y tu voto no se ha podido registrar correctamente. Por favor comprueba que tu navegador soporta Javascript y vuelve a intentarlo más tarde."
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -537,6 +569,9 @@ es:
     show:
       back: "Volver a mi actividad"
   shared:
+    comments:
+      title: 'Comentarios'
+      login_to_comment: 'Necesitas %{signin} o %{signup} para comentar.'
     edit: 'Editar'
     save: 'Guardar'
     delete: 'Borrar'
@@ -563,6 +598,7 @@ es:
     delete: 'Borrar'
     author_info:
       author_deleted: Usuario eliminado
+      forum: Espacio de debate distrital
     back: Volver
     check: Seleccionar
     check_all: Todos
@@ -614,6 +650,7 @@ es:
     target_blank_html: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
+    probe_plaza_banner: "#RemodelaciónPlazaEspaña"
     unfollow: Dejar de seguir
     unfollow_entity: "Dejar de seguir %{entity}"
     outline:
@@ -638,14 +675,17 @@ es:
       association_name: 'Nombre de la asociación'
       description: Descripción detallada
       external_url: Enlace a documentación adicional
-      geozone: "Ámbito de actuación"
+      geozone: "Elige si es una propuesta para toda la ciudad o para un distrito"
       submit_buttons:
         create: Crear
         new: Crear
-      title: Título de la propuesta de gasto
+      title: Título de la propuesta de inversión
     index:
+      available: "Disponible:"
       title: Presupuestos participativos
       unfeasible: Propuestas de inversión no viables
+      unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+      unfeasible_text_definitions: ver definiciones aquí
       by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
       search_form:
         button: Buscar
@@ -655,31 +695,123 @@ es:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
-        geozones: Ámbitos de actuación
-        feasibility: Viabilidad
-        unfeasible: No viables
-      start_spending_proposal: Crea una propuesta de inversión
+        back: Volver a página de selección
+        district: Distrito
+        my_ballot: Mis votos
+        remember_city: Además puedes votar propuestas de inversión para %{city}.
+        remember_city_link_html: <strong>toda la ciudad</strong>
+        remember_district: Además puedes votar propuestas de inversión para %{district}.
+        remember_district_link_html: <strong>un distrito</strong>
+        voted_html:
+          one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+          other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+        voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+        votes: Apoyos restantes
+        votes_district: "Solo puedes votar en el distrito %{district}"
+        zero: "Todavía no has votado ninguna propuesta de inversión."
+      orders:
+        random: Aleatorias
+        confidence_score: Mejor valoradas
+        price: Por coste
+    welcome:
+      city_link: Votar para toda la ciudad
+      city_link_close: Propuestas de toda la ciudad
+      contact_html: Si tienes alguna duda puedes %{contact_faq} o enviarnos un email a <strong>preparticipativos@madrid.es</strong>
+      contact_faq: consultar las preguntas frecuentes
+      delegation: Delegar mis votos
+      delegation_closed: Ver delegaciones de voto
+      delegation_info_html: "Si activas la delegación en cualquiera de los espacios, tus votos se realizarán<br> automáticamente sobre las propuestas que haya decidido el espacio correspondiente."
+      delegation_meetings: espacios presenciales de debate
+      delegation_text: Delega tu votación en lo que se decida en cualquiera de los %{meetings}
+      delegation_text_closed: A continuación podrás ver lo que se ha decido en los %{meetings}
+      delegation_title: Delegación de voto
+      districts: Distritos
+      districts_link: Votar propuestas de distrito
+      districts_link_close: Propuestas de distrito
+      in_two_minutes: Toda la información sobre los presupuestos participativos
+      title: "Ya puedes votar las propuestas"
+      title_close: "Presupuestos participativos"
+      title_results: "Presupuestos participativos"
+      text_first_html: "Desde el <strong>15 de mayo</strong> hasta el día <strong>30 de junio</strong> puedes votar las propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_close_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_first_results_html: "El <strong>30 de junio</strong> finalizó el plazo para votar propuestas de inversión de los Presupuestos participativos 2016."
+      text_second_html: "Puedes votar todas las propuestas que quieras hasta alcanzar el presupuesto destinado para el ámbito de <strong>toda la ciudad y además del distrito</strong> que selecciones."
+      text_second_close_html: "En breve mostraremos los resultados de las votaciones."
+      text_second_results_html: "Ya puedes consultar los resultados."
+      text_long_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente hace propuestas, y las vota. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_close_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>En breve podrás ver los resultados</strong>. El Gobierno asumirá la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      text_long_results_html: "Hemos reservado <strong>60 millones de euros</strong> de inversiones del próximo presupuesto de Madrid para que sea la gente la que decida qué proyectos llevar a cabo. La gente ha hecho sus propuestas, y las ha votado. <strong>Puedes consultar los resultados</strong>. El Gobierno asume la decisión como vinculante y la incluirá en los presupuestos municipales, que se ejecutarán a partir del 1 de enero de 2017. Propones, decides, se hace."
+      unfeasible_link: Ver propuestas de inversión no viables
+      see_results: Ver resultados
     new:
       more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
       recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
       recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
+      recommendations_title: Cómo crear una propuesta de inversión
+      start_new: Crear una propuesta de inversión
+      back_link: Volver
     show:
       author_deleted: Usuario eliminado
-      code: 'Código de la propuesta:'
+      price_explanation: Informe de coste
+      unfeasibility_explanation: Informe de inviabilidad
+      code: 'Código propuesta de gasto:'
       share: Compartir
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
+      add: Añadir
+      already_added: "Ya has añadido esta propuesta de inversión"
       already_supported: Ya has apoyado este proyecto. ¡Compártelo!
-      support: Apoyar
+      forum: Espacio de debate distrital
       support_title: Apoyar este proyecto
       supports:
         one: 1 apoyo
         other: "%{count} apoyos"
         zero: Sin apoyos
+      vote: Votar
+    header:
+      check_ballot: Revisar mis votos
+      different_district_active: "Ya apoyaste propuestas de otro distrito:"
+      different_district_active_info: "(Si retiras todos los votos de este distrito puedes seleccionar otro)"
+    results:
+      page_title: "Presupuestos participativos | Resultados"
+      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
+      geozone_selection_title: "Ámbito de actuación"
+      spending_proposal: Título
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Coste
+      amount_available: Presupuesto disponible
+      incompatible: Incompatibles
+      accepted: "Propuesta de inversión aceptada: "
+      discarded: "Propuesta de inversión descartada: "
+    stats:
+      page_title: "Presupuestos participativos | Estadísticas de participación"
+      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
+  ballots:
+    show:
+      city_link: Votar para toda la ciudad
+      city_wide: Toda la ciudad
+      districts_link: Votar propuestas de distrito
+      district_wide: Distrito
+      title: Mis votos
+      amount_spent: Coste total
+      remaining_city_html: "Te quedan <span>%{amount_city}</span> para invertir en toda la ciudad."
+      remaining_district_html: "Te quedan <span>%{amount_district}</span> para invertir en <span>%{geozone}</span>."
+      remove: Quitar voto
+      social_share: He decidido dónde quiero que se inviertan %{amount} para %{geozone}. ¡Participa!
+      voted_html:
+        one: "Has votado <span>una</span> propuesta."
+        other: "Has votado <span>%{count}</span> propuestas."
+      voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+      zero: "Todavía no has votado ninguna propuesta de inversión."
   stats:
     index:
       visits: Visitas
@@ -731,9 +863,13 @@ es:
         proposals:
           one: 1 Propuesta
           other: "%{count} Propuestas"
+        spending_proposals:
+          one: 1 Propuesta de inversión
+          other: "%{count} Propuestas de inversión"
         budget_investments:
           one: 1 Proyecto de presupuestos participativos
           other: "%{count} Proyectos de presupuestos participativos"
+        ballot: Presupuestos participativos
         follows:
           one: 1 Siguiendo
           other: "%{count} Siguiendo"
@@ -741,6 +877,7 @@ es:
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
+      delegation: Lista de proyectos de gasto recomendados
     proposals:
       send_notification: "Enviar notificación"
       retire: "Retirar"
@@ -761,9 +898,17 @@ es:
     spending_proposals:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+      unfeasible: Las propuestas no viables no pueden recibir apoyos.
       organization: Las organizaciones no pueden votar.
-      unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
+      no_city_supports_available: Ya has usado todos tus apoyos de ciudad.
+      no_district_supports_available: Ya has usado todos tus apoyos de distrito.
+      different_district_assigned: Ya apoyaste propuestas de otro distrito.
+      different_geozone_assigned: Tienes votos activos en otro distrito. %{my_geozone}
+      not_enough_money: El precio de esta propuesta es mayor que el presupuesto que te queda disponible.
+      confirm_first_vote_on_district: "Cada persona puede apoyar las propuestas de toda la ciudad y de un distrito a su elección. Si pulsas aceptar apoyarás esta propuesta y de ahora en adelante sólo podrás apoyar las propuestas de %{district}. Este distrito no se puede cambiar luego. ¿Quieres apoyar esta propuesta y seleccionar este distrito?"
+      confirm_discard_delegation: "Si votas dejarás de delegar. "
+      no_ballots_allowed: No se puede votar
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
@@ -800,14 +945,14 @@ es:
       question: ¿Tienes ya una cuenta en %{org_name}?
       title: Verificación de cuenta
     welcome:
-      go_to_index: Ahora no, ver propuestas
+      go_to_index: Ahora no, empezar a participar
       title: Empieza a participar
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas*
       user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
+      user_permission_verify_info: "* Sólo usuarios empadronados en el municipio de Madrid."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
   invisible_captcha:

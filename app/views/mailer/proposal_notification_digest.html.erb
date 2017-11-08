@@ -29,9 +29,9 @@
               <%= notification.notifiable.proposal.created_at.to_date %>&nbsp;&bull;&nbsp;
               <%= notification.notifiable.proposal.author.name %>
             </p>
-            <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-              <%= notification.notifiable.body %>
-            </p>
+            <div style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+              <%= simple_format text_with_links(notification.notifiable.body), {}, sanitize: false %>
+            </div>
 
             <table style="width: 100%;">
               <tbody>

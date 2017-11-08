@@ -1,0 +1,25 @@
+<%= back_link_to %>
+
+<h2><%= t("admin.stats.reedemable_codes.title")%></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.reedemable_codes.total") %><br>
+        <span id="redeemable_codes_count" class="number">
+          <%= @users.count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-3 column end">
+      <p class="featured">
+        <%= t("admin.stats.reedemable_codes.campaign") %><br>
+        <span id="redeemable_codes_after_campaign_count" class="number">
+          <%= @users_after_campaign %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

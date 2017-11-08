@@ -33,6 +33,7 @@ module CommentableActions
 
   def new
     @resource = resource_model.new
+    add_predefined_tag
     set_geozone
     set_resource_instance
   end
@@ -48,6 +49,7 @@ module CommentableActions
 
     if @resource.save
       track_event
+      log_event("proposal", "create") if @resource.class == Proposal
       redirect_path = url_for(controller: controller_name, action: :show, id: @resource.id)
       redirect_to redirect_path, notice: t("flash.actions.create.#{resource_name.underscore}")
     else
@@ -114,4 +116,14 @@ module CommentableActions
       nil
     end
 
+    def add_predefined_tag
+      @resource.tag_list << params[:tag] if params[:tag].present?
+    end
+
+    def recover_documents_from_cache(resource)
+      return false unless resource.try(:documents)
+      resource.documents = resource.documents.each do |document|
+        document.set_attachment_from_cached_attachment if document.cached_attachment.present?
+      end
+    end
 end

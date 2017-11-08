@@ -1,0 +1,152 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: plaza_probe_option_url %>
+<% end %>
+
+<% cache ["plaza", "header", "probe_option", @probe_option.id] do %>
+  <%= render "probe_options/plaza/header" %>
+<% end %>
+
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_1_20170602"] do %>
+  <div class="probe-show">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <%= back_link_to plaza_path, t("probes.back") %>
+
+        <h1>
+          <% if project_x?(@probe_option) %>
+            Proyecto X:
+          <% elsif project_y?(@probe_option) %>
+            Proyecto Y:
+          <% end %>
+          <%= @probe_option.name %>
+          <span>(<%= t("probes.show.code_html", code: @probe_option.code) %>)</span>
+        </h1>
+        <h2 class="codename"><%= t("probes.codenames.#{@probe.codename}") %></h2>
+
+        <% if project_x?(@probe_option) %>
+          <%= render "probe_options/plaza/project_x" %>
+        <% elsif project_y?(@probe_option) %>
+          <%= render "probe_options/plaza/project_y" %>
+        <% end %>
+
+        <% if finalist?(@probe_option) %>
+          <%= render "probe_options/plaza/video_#{@probe_option.code}" %>
+          <%= render "probe_options/plaza/finalist_docs" %>
+        <% else %>
+          <div class="margin">
+            <%= image_tag @probe_option.original_image_url,
+                          alt: "Proyecto #{@probe_option.code} para la Remodelación de Plaza España: #{@probe_option.name}" %>
+          </div>
+        <% end %>
+      </div>
+
+      <aside class="small-12 medium-3 column">
+<% end %>
+      <% if @probe.selecting_allowed? %>
+        <div class="sidebar-divider"></div>
+        <h3><%= t("probes.show.vote") %></h3>
+        <% if user_signed_in? %>
+          <% if @probe_option == @user_selection %>
+            <div class="callout success">
+              <strong>Has votado este proyecto</strong><br>Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+            </div>
+          <% elsif current_user.level_two_or_three_verified? %>
+            <% if @user_selection && @probe_option.present? != @user_selection %>
+              <div class="callout success">
+                <strong>Has votado el proyecto <%= link_to @user_selection.name, plaza_probe_option_path(@user_selection) %></strong><br>Puedes cambiarlo en cualquier momento hasta el día <u>28 de octubre</u>.
+              </div>
+            <% end %>
+            <%= form_tag selection_probes_path, id: "#{dom_id(@probe_option)}_form" do %>
+              <input type="hidden" name="id" value="<%= @probe.codename %>">
+              <input type="hidden" name="option_id" value="<%= @probe_option.id %>">
+              <input type="submit" value="<%= t("probes.show.button") %>" class="button expanded">
+            <% end %>
+          <% else %>
+            <% cache ["plaza", "probe_option", "user_not_verified_msg"] do %>
+              <p class="callout warning callout-small">
+                <%= t("probes.verified_only",
+                    verify_account: link_to(t("probes.verify_account"), verification_path, class: "probe-message")).html_safe %>
+              </p>
+              <p class="button expanded secondary disabled margin-top"><%= t("probes.show.button") %></p>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% cache ["plaza", "probe_option", "user_not_logged_in_msg"] do %>
+            <p class="callout primary callout-small">
+              <small>
+                <%= t("probes.not_logged_in",
+                    signin: link_to(t("probes.signin"), new_user_session_path, class: "probe-message"),
+                    signup: link_to(t("probes.signup"), new_user_registration_path, class: "probe-message")).html_safe %>
+              </small>
+            </p>
+            <p class="button expanded secondary disabled margin-top"><%= t("probes.show.button") %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+
+<% cache ["plaza", "probe_option", @probe_option.id, "fragment_2_20170419"] do %>
+        <div class="sidebar-divider"></div>
+        <% if finalist?(@probe_option) %>
+          <h3><%= t("probes.show.documents_finalist") %></h3>
+          <% if external_pdf?(@probe_option) %>
+            <%= link_to "#{request.url}system/30_memoria_finalista_welcome_mother_nature_good_bye_mr_ford.pdf",
+                      title: "PDF #{@probe_option.name} finalista | (165Mb)",
+                      target: "_blank", class: "button hollow expanded",
+                      rel: "nofollow" do %>
+                      <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                      <%= "<small>Memoria Final (165Mb)</small>".html_safe %>
+            <% end %>
+          <% else %>
+            <%= link_to @probe_option.file_path('memoria_finalista', 'pdf'),
+                        title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('memoria_finalista', 'pdf')}",
+                        target: "_blank", class: "button hollow expanded",
+                        rel: "nofollow" do %>
+                        <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                        <%= "<small>Memoria Final (#{@probe_option.file_size('memoria_finalista', 'pdf')})</small>".html_safe %>
+            <% end %>
+          <% end %>
+          <%= link_to @probe_option.file_path('dossier_finalista', 'pdf'),
+                      title: "PDF #{@probe_option.name} finalista | #{@probe_option.file_size('dossier_finalista', 'pdf')}",
+                      target: "_blank", class: "button hollow expanded",
+                      rel: "nofollow" do %>
+                      <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                      <%= "<small>Imágenes Finales  (#{@probe_option.file_size('dossier_finalista', 'pdf')})</small>".html_safe %>
+          <% end %>
+          <br>
+        <% end %>
+
+        <h3><%= t("probes.show.documents") %></h3>
+        <%= link_to @probe_option.file_path('memoria', 'pdf'),
+                    title: "PDF #{@probe_option.name} | #{@probe_option.file_size('memoria', 'pdf')}",
+                    target: "_blank", class: "button hollow expanded",
+                    rel: "nofollow" do %>
+                    <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                    <%= "<small>Memoria (#{@probe_option.file_size('memoria', 'pdf')})</small>".html_safe %>
+        <% end %>
+        <%= link_to @probe_option.file_path('dossier', 'pdf'),
+                    title: "PDF #{@probe_option.name} | #{@probe_option.file_size('dossier', 'pdf')}",
+                    target: "_blank", class: "button hollow expanded",
+                    rel: "nofollow" do %>
+                    <%= image_tag "icon_pdf.png", alt: "PDF" %>
+                    <%= "<small>Imágenes (#{@probe_option.file_size('dossier', 'pdf')})</small>".html_safe %>
+        <% end %>
+
+        <div class="sidebar-divider"></div>
+        <h3><%= t("probes.show.share") %></h3>
+        <div class="social-share-full">
+          <%= social_share_button_tag("#{@probe_option.name} #{setting['twitter_hashtag']}") %>
+          <a href="whatsapp://send?text=<%= CGI.escape(@probe_option.name) %>&nbsp;<%= plaza_probe_option_url(@probe_option) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+            <span class="show-for-sr"><%= t("social.whatsapp") %></span>
+          </a>
+        </div>
+      </aside>
+    </div>
+<% end %>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <%= render 'probe_options/comments' %>
+    </div>
+  </div>
+</div>

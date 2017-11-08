@@ -1,0 +1,89 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: service_letters_url %>
+<% end %>
+
+<div class="expanded processes show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <h2 class="margin-bottom"><%= t("pages.processes.index.process_6_title") %></h2>
+
+      <div id="service-letters" class="small-12 medium-7 margin-bottom">
+        <p><%= t("pages.processes.index.process_6_description") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-bottom services-letters" data-equalizer>
+
+   <div class="small-12 medium-6 column margin-top">
+    <div class="panel" data-equalizer-watch>
+      <h3>Carta de Servicios del Centro de Prevención del Deterioro Cognitivo</h3>
+      <p>El Ayuntamiento pone en funcionamiento el Centro de Prevención del Deterioro Cognitivo (CPDC), como centro pionero en España en la evaluación y el entrenamiento de la memoria y otras funciones cognitivas.</p>
+      <%= link_to "Ver carta de servicios", service_letters_1_path, class: "button hollow" %>
+      <%= link_to "/docs/procesos/resultados_proceso_CPD_cognitivo.pdf",
+                  target: "_blank",
+                  class: "button hollow",
+                  title: "Resultados Carta de Servicios del Centro de Prevención del Deterioro Cognitivo" do %>
+        <%= image_tag "icon_pdf.png", alt: "Documento PDF" %>&nbsp;Resultados de participación
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-6 column margin-top">
+    <div class="panel" data-equalizer-watch>
+      <h3>Carta de Servicios del Servicio de Ayuda a Domicilio</h3>
+      <p>Esta Carta de Servicios hace referencia al servicio de Ayuda a Domicilio que tiene como objetivo proporcionar a las personas mayores y a las personas con discapacidad la posibilidad de permanecer en su medio habitual de convivencia, contribuyendo así a la mejora de su calidad de vida.</p>
+      <%= link_to "Ver carta de servicios", service_letters_2_path, class: "button hollow" %>
+      <%= link_to "/docs/procesos/resultados_proceso_SAD.pdf",
+                  target: "_blank",
+                  class: "button hollow",
+                  title: "Resultados Carta de Servicios del Servicio de Ayuda a Domicilio" do %>
+        <%= image_tag "icon_pdf.png", alt: "Documento PDF" %>&nbsp;Resultados de participación
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-6 column margin-top">
+    <div class="panel" data-equalizer-watch>
+      <h3>Carta de Servicios de los Centros de Día</h3>
+      <p>Esta Carta de Servicios hace referencia a los Centros de Día que son servicios dirigidos a proporcionar una atención integral, en régimen diurno, a las personas mayores de 65 años con deterioro físico y relacional, y sin límite de edad, a las personas con enfermedad de Alzheimer u otras demencias.</p>
+      <%= link_to "Ver carta de servicios", service_letters_3_path, class: "button hollow" %>
+      <%= link_to "/docs/procesos/resultados_proceso_centros_dia.pdf",
+                  target: "_blank",
+                  class: "button hollow",
+                  title: "Resultados Carta de Servicios de los Centros de Día" do %>
+        <%= image_tag "icon_pdf.png", alt: "Documento PDF" %>&nbsp;Resultados de participación
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-6 column margin-top">
+    <div class="panel" data-equalizer-watch>
+      <h3>Carta de Servicios de Centros Municipales de Mayores</h3>
+      <p>Esta Carta de Servicios hace referencia a los Centros Municipales de Mayores. Diseñados como equipamientos de servicios sociales no residenciales, estos centros tienen como objetivo promover la convivencia de las personas mayores, mejorar su calidad de vida y propiciar su participación activa.</p>
+      <%= link_to "Ver carta de servicios", service_letters_4_path, class: "button hollow" %>
+      <%= link_to "/docs/procesos/resultados_proceso_centros_mayores.pdf",
+                  target: "_blank",
+                  class: "button hollow",
+                  title: "Resultados Carta de Servicios de Centros Municipales de Mayores" do %>
+        <%= image_tag "icon_pdf.png", alt: "Documento PDF" %>&nbsp;Resultados de participación
+      <% end %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-6 column margin-top end">
+    <div class="panel" data-equalizer-watch>
+      <h3>Carta de Servicios del Servicio de Teleasistencia Domiciliaria</h3>
+      <p>Esta Carta de Servicios hace referencia al Servicio de Teleasistencia Domiciliaria que permite a las personas mayores (65 y más años) ponerse en comunicación con un Centro de Atención de llamadas.</p>
+      <%= link_to "Ver carta de servicios", service_letters_5_path, class: "button hollow" %>
+      <%= link_to "/docs/procesos/resultados_proceso_teleasistencia.pdf",
+                  target: "_blank",
+                  class: "button hollow",
+                  title: "Resultados Carta de Servicios del Servicio de Teleasistencia Domiciliaria" do %>
+        <%= image_tag "icon_pdf.png", alt: "Documento PDF" %>&nbsp;Resultados de participación
+      <% end %>
+    </div>
+  </div>
+
+</div>

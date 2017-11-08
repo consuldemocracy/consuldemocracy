@@ -19,9 +19,11 @@
     <%= t("welcome.welcome.user_permission_verify") %>
   </p>
 
-  <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success radius expand") %>
+  <div class="small-12 medium-6">
+    <%= link_to(t("welcome.welcome.user_permission_verify_my_account"), verification_path, class: "button success large expanded") %>
+  </div>
 
-  <p class="text-center">
-    <%= link_to t("welcome.welcome.go_to_index"), proposals_path %>
+  <p>
+    <%= link_to t("welcome.welcome.go_to_index"), more_info_path %>
   </p>
 </div>

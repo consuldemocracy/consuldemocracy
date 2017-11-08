@@ -41,6 +41,22 @@
                        label: false,
                        class: "js-submit-on-change" } %>
     </div>
+
+    <div class="small-12 medium-3 column float-right">
+      <%= select_tag :max_per_geozone,
+                      numeric_range_options((5..100), 5, params[:max_per_geozone]),
+                     { prompt: t("admin.spending_proposals.index.max_per_geozone"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :max_for_no_geozone,
+                      numeric_range_options((5..300), 5, params[:max_for_no_geozone]),
+                     { prompt: t("admin.spending_proposals.index.max_for_no_geozone"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
   <% end %>
 </div>
 
@@ -76,6 +92,9 @@
       </td>
       <td class="small">
         <%= t("admin.spending_proposals.index.feasibility.#{spending_proposal.feasibility}", price: spending_proposal.price) %>
+      </td>
+      <td class="small total-votes">
+        <%= spending_proposal.total_votes %>
       </td>
     </tr>
   <% end %>

@@ -1,0 +1,5 @@
+en:
+  flash:
+    actions:
+      create:
+        spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"

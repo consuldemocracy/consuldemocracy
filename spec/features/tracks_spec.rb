@@ -2,133 +2,349 @@ require 'rails_helper'
 
 feature 'Tracking' do
 
-  context 'Custom variable' do
+  context 'User data' do
 
-     scenario 'Usertype anonymous' do
-      visit proposals_path
+    context 'User ID' do
 
-      expect(page.html).to include "anonymous"
-     end
+      scenario 'Anonymous' do
+        visit "/"
 
-    scenario 'Usertype level_1_user' do
-      create(:geozone)
-      user = create(:user)
-      login_as(user)
+        expect(page).to_not have_css("span[data-track-user-id]")
+      end
 
-      visit proposals_path
+      scenario 'Logged in' do
+        user = create(:user)
 
-      expect(page.html).to include "level_1_user"
+        login_as(user)
+        visit "/"
+
+        expect(page).to have_css("span[data-track-user-id='#{user.id}']")
+      end
+
     end
 
-    scenario 'Usertype level_2_user' do
-      create(:geozone)
+    context 'Verification level' do
+
+      scenario 'Anonymous' do
+        visit "/"
+
+        expect(page).to_not have_css("span[data-track-verification-level]")
+      end
+
+      scenario 'Level 1' do
+        login_as(create(:user))
+        visit "/"
+
+        expect(page).to have_css("span[data-track-verification-level='Nivel 1']")
+      end
+
+      scenario 'Level 2' do
+        login_as(create(:user, :level_two))
+        visit "/"
+
+        expect(page).to have_css("span[data-track-verification-level='Nivel 2']")
+      end
+
+      scenario 'Level 3' do
+        login_as(create(:user, :level_three))
+        visit "/"
+
+        expect(page).to have_css("span[data-track-verification-level='Nivel 3']")
+      end
+
+    end
+
+    context 'Demographics' do
+
+      scenario 'Age' do
+        user = create(:user, date_of_birth: 18.years.ago)
+
+        login_as(user)
+        visit "/"
+
+        expect(page).to have_css("span[data-track-age='18']")
+      end
+
+      scenario 'Gender' do
+        male   = create(:user, gender: 'Male')
+        female = create(:user, gender: 'Female')
+
+        login_as(male)
+        visit "/"
+
+        expect(page).to have_css("span[data-track-gender='Hombre']")
+
+        login_as(female)
+        visit "/"
+
+        expect(page).to have_css("span[data-track-gender='Mujer']")
+      end
+
+      scenario 'District' do
+        new_york = create(:geozone, name: "New York")
+        user = create(:user, geozone: new_york)
+
+        login_as(user)
+        visit "/"
+
+        expect(page).to have_css("span[data-track-district='New York']")
+      end
+    end
+
+  end
+
+  context 'Events' do
+
+    scenario 'Login' do
+      user = create(:user)
+      login_through_form_as(user)
+
+      expect(page).to have_css("span[data-track-event-category='Login']")
+      expect(page).to have_css("span[data-track-event-action='Entrar']")
+    end
+
+    scenario 'Registration' do
+      sign_up
+
+      expect(page).to have_css("span[data-track-event-category='Registro']")
+      expect(page).to have_css("span[data-track-event-action='Registrar']")
+    end
+
+    scenario 'Register as organization' do
+      sign_up_as_organization
+
+      expect(page).to have_css("span[data-track-event-category='Registro']")
+      expect(page).to have_css("span[data-track-event-action='Registrar']")
+    end
+
+    scenario 'Up vote a debate', :js do
+      user = create(:user)
+      debate = create(:debate)
+
+      login_as(user)
+      visit debate_path(debate)
+
+
+      find('.in-favor a').click
+      expect(page).to have_css("span[data-track-event-category='Debate']")
+      expect(page).to have_css("span[data-track-event-action='Votar']")
+      expect(page).to have_css("span[data-track-event-name='Positivo']")
+    end
+
+    scenario 'Down vote a debate', :js do
+      user = create(:user)
+      debate = create(:debate)
+
+      login_as(user)
+      visit debate_path(debate)
+
+      find('.against a').click
+      expect(page).to have_css("span[data-track-event-category='Debate']")
+      expect(page).to have_css("span[data-track-event-action='Votar']")
+      expect(page).to have_css("span[data-track-event-name='Negativo']")
+    end
+
+    scenario 'Support a proposal', :js do
+      user = create(:user, :level_two)
+      proposal = create(:proposal)
+
+      login_as(user)
+      visit proposal_path(proposal)
+
+      find('.in-favor a').click
+      expect(page).to have_css("span[data-track-event-category='Propuesta']")
+      expect(page).to have_css("span[data-track-event-action='Apoyar']")
+      expect(page).to have_css("span[data-track-event-name='#{proposal.id}']")
+    end
+
+    scenario 'Proposal ranking', :js do
+      user = create(:user, :level_two)
+
+      medium = create(:proposal, title: 'Medium proposal')
+      best   = create(:proposal, title: 'Best proposal')
+      worst  = create(:proposal, title: 'Worst proposal')
+
+      10.times { create(:vote, votable: best)   }
+      5.times  { create(:vote, votable: medium) }
+      2.times  { create(:vote, votable: worst)  }
+
+      login_as(user)
+
+      visit proposals_path
+      click_link 'Best proposal'
+      find('.in-favor a').click
+
+      expect(page).to have_css("span[data-track-event-category='Propuesta']")
+      expect(page).to have_css("span[data-track-event-action='Apoyar']")
+      expect(page).to have_css("span[data-track-event-custom-value='1']")
+      expect(page).to have_css("span[data-track-event-dimension='6']")
+      expect(page).to have_css("span[data-track-event-dimension-value='1']")
+
+      visit proposals_path
+      click_link 'Medium proposal'
+      find('.in-favor a').click
+
+      expect(page).to have_css("span[data-track-event-custom-value='2']")
+      expect(page).to have_css("span[data-track-event-dimension-value='2']")
+
+      visit proposals_path
+      click_link 'Worst proposal'
+      find('.in-favor a').click
+
+      expect(page).to have_css("span[data-track-event-custom-value='3']")
+      expect(page).to have_css("span[data-track-event-dimension-value='3']")
+    end
+
+    scenario 'Create a proposal' do
+      author = create(:user)
+      login_as(author)
+
+      visit new_proposal_path
+      fill_in_proposal
+      click_button 'Create proposal'
+
+      expect(page).to have_content 'Proposal created successfully.'
+      expect(page).to have_css("span[data-track-event-category='Propuesta']")
+      expect(page).to have_css("span[data-track-event-action='Crear']")
+    end
+
+    scenario 'Comment a proposal', :js do
+      user = create(:user)
+      proposal = create(:proposal)
+
+      login_as(user)
+      visit proposal_path(proposal)
+
+      fill_in "comment-body-proposal_#{proposal.id}", with: 'Have you thought about...?'
+      click_button 'Publish comment'
+
+      expect(page).to have_css("span[data-track-event-category='Propuesta']")
+      expect(page).to have_css("span[data-track-event-action='Comentar']")
+    end
+
+    scenario 'Vote a poll', :js do
+      user = create(:user, :level_two)
+      poll = create(:poll)
+
+      question = create(:poll_question, poll: poll)
+      answer1 = create(:poll_question_answer, question: question, title: 'Han Solo')
+      answer2 = create(:poll_question_answer, question: question, title: 'Chewbacca')
+
+      login_as user
+      visit poll_path(poll)
+
+      click_link 'Han Solo'
+
+      expect(page).to_not have_link('Han Solo')
+
+      expect(page).to have_css("span[data-track-event-category]")
+      expect(page).to have_css("span[data-track-event-category='Votación']")
+      expect(page).to have_css("span[data-track-event-action='Votar']")
+    end
+
+    scenario 'Verify census' do
       user = create(:user)
       login_as(user)
 
-      visit account_path
-      click_link 'Verify my account'
-
+      visit verification_path
       verify_residence
 
-      fill_in 'sms_phone', with: "611111111"
-      click_button 'Send'
+      expect(page).to have_css("span[data-track-event-category='Verificación']")
+      expect(page).to have_css("span[data-track-event-action='Censo']")
+    end
 
-      user = user.reload
-      fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
-      click_button 'Send'
+    scenario 'Verify sms' do
+      user = create(:user, residence_verified_at: Time.now)
+      login_as(user)
 
-      expect(page.html).to include "level_2_user"
+      visit verification_path
+      confirm_phone
+
+      expect(page).to have_css("span[data-track-event-category='Verificación']")
+      expect(page).to have_css("span[data-track-event-action='SMS']")
+    end
+
+    scenario 'Delete account' do
+      user = create(:user)
+      login_as(user)
+
+      visit users_registrations_delete_form_path
+      click_button 'Erase my account'
+
+      expect(page).to have_css("span[data-track-event-category='Baja']")
+      expect(page).to have_css("span[data-track-event-action='Dar de baja']")
     end
   end
 
-  context 'Tracking events' do
-    scenario 'Verification: start census' do
-      user = create(:user)
-      login_as(user)
+  #Requires testing outgoing _paq.push call from track.js.coffee
+  xscenario 'Track events on ajax call'
 
-      visit account_path
-      click_link 'Verify my account'
+  #Requires testing outgoing _paq.push call from track.js.coffee
+  xcontext 'Page view' do
+    scenario 'Url'
+    scenario 'Referer'
+    scenario 'Title'
+  end
 
-      expect(page.html).to include "data-track-event-category=verification"
-      expect(page.html).to include "data-track-event-action=start_census"
+  #Requires testing social network registrations
+  xscenario 'Register with social network'
+
+  #Requires testing method track_proposal from track.js.coffee
+  xcontext 'Proposals' do
+    scenario 'show' do
+    end
+  end
+
+  context "Tracking pages" do
+
+    background do
+      Setting['per_page_code_head'] = '<script type="text/javascript">function weboConv(idConv){}</script>'
     end
 
-    scenario 'Verification: success census' do
-      create(:geozone)
-      user = create(:user)
+    scenario "Codes", :js do
+      visit root_path
+      expect(page.html).to have_content "weboConv(23);"
+
+      visit "users/sign_up"
+      expect(page.html).to have_content "weboConv(24);"
+
+      visit "users/sign_up/success"
+      expect(page.html).to have_content "weboConv(26);"
+
+      visit "debates"
+      expect(page.html).to have_content "weboConv(27);"
+
+      user = create(:user, :level_two)
       login_as(user)
 
-      visit account_path
-      click_link 'Verify my account'
+      visit "debates/new"
+      expect(page.html).to have_content "weboConv(28);"
 
-      verify_residence
+      visit "proposals"
+      expect(page.html).to have_content "weboConv(29);"
 
-      fill_in 'sms_phone', with: "611111111"
-      click_button 'Send'
+      visit "proposals/new"
+      expect(page.html).to have_content "weboConv(30);"
 
-      expect(page.html).to include "data-track-event-category=verification"
-      expect(page.html).to include "data-track-event-action=start_sms"
+      visit "procesos"
+      expect(page.html).to have_content "weboConv(32);"
+
+      budget = create(:budget)
+      visit "presupuestos"
+      expect(page.html).to have_content "weboConv(33);"
+
+      visit "mas-informacion"
+      expect(page.html).to have_content "weboConv(34);"
     end
 
-    scenario 'Verification: start sms' do
-      create(:geozone)
-      user = create(:user)
-      login_as(user)
+    scenario "codes with turbolinks", :js do
+      visit "debates"
+      expect(page.html).to have_content "weboConv(27);"
 
-      visit account_path
-      click_link 'Verify my account'
-
-      verify_residence
-
-      fill_in 'sms_phone', with: "611111111"
-      click_button 'Send'
-
-      expect(page.html).to include "data-track-event-category=verification"
-      expect(page.html).to include "data-track-event-action=start_sms"
+      first(:link, "Proposals").click
+      expect(page).to have_content "Create proposal"
+      expect(page.html).to have_content "weboConv(29);"
     end
 
-    scenario 'Verification: success sms' do
-      create(:geozone)
-      user = create(:user)
-      login_as(user)
-
-      visit account_path
-      click_link 'Verify my account'
-
-      verify_residence
-
-      fill_in 'sms_phone', with: "611111111"
-      click_button 'Send'
-
-      user = user.reload
-      fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
-      click_button 'Send'
-
-      expect(page.html).to include "data-track-event-category=verification"
-      expect(page.html).to include "data-track-event-action=success_sms"
-    end
-
-    scenario 'Verification: letter' do
-      create(:geozone)
-      user = create(:user)
-      login_as(user)
-
-      visit account_path
-      click_link 'Verify my account'
-
-      verify_residence
-
-      fill_in 'sms_phone', with: "611111111"
-      click_button 'Send'
-
-      user = user.reload
-      fill_in 'sms_confirmation_code', with: user.sms_confirmation_code
-      click_button 'Send'
-
-      click_link "Send me a letter with the code"
-
-      expect(page.html).to include "data-track-event-category=verification"
-      expect(page.html).to include "data-track-event-action=start_letter"
-    end
   end
 end

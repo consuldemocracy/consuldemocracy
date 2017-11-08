@@ -1,0 +1,105 @@
+<% provide :title,             t("first_2017_poll.stats.title") %>
+<% provide :meta_description,  t("first_2017_poll.stats.description") %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: primera_votacion_stats_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+  <!-- Facebook -->
+  <meta property="og:url"            content="<%= primera_votacion_stats_url %>" />
+  <meta property="og:title"          content="<%= t("first_2017_poll.stats.title") %>" />
+  <meta property="og:image"          content="<%= image_url '/social_media_polls_results.png' %>" />
+  <meta property="og:description"    content="<%= t("first_2017_poll.stats.description") %>" />
+  <!-- Twitter -->
+  <meta name="twitter:card"          content="summary" />
+  <meta name="twitter:site"          content="@DecideMadrid" />
+  <meta name="twitter:title"         content="<%= t("first_2017_poll.stats.title") %>" />
+  <meta name="twitter:image"         content="<%= image_url '/social_media_polls_results_twitter.png' %>" />
+  <meta name="twitter:description"   content="<%= t("first_2017_poll.stats.description") %>" />
+<% end %>
+<% cache ["stats:polls_2017:rake_task:#{Stat.named('polls_2017_cache', 'keys', 'stats').value}"] do %>
+  <div class="polls-stats">
+    <div class="header no-margin-top">
+      <div class="row">
+        <div class="small-12 column">
+          <h1 class="inline-block">
+            <%= t("polls.stats").upcase %>
+            <span><%= t("first_2017_poll.title") %></span>
+            <span><%= t("first_2017_poll.date") %></span>
+          </h1>
+
+          <div class="more-info">
+            <p><%= t("polls.full_recount_results") %></p>
+            <div class="text-right">
+              <%= link_to t("polls.more_poll_info"), more_info_polls_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-top">
+      <div class="small-12 column">
+        <ul class="tabs">
+          <li class="tabs-title">
+            <%= link_to t("polls.results"), first_voting_path %>
+          </li>
+          <li class="tabs-title is-active">
+            <span class="is-active"><%= t("polls.stats") %></span>
+          </li>
+          <li class="tabs-title">
+            <%= link_to t("polls.information"), primera_votacion_info_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 medium-3 column sidebar">
+        <p>Participación</p>
+        <ul class="menu vertical margin-top">
+          <li><a href="#9">Participación total</a></li>
+          <li><a href="#10">Participación por sexo</a></li>
+          <li><a href="#11">Participación por grupos de edad</a></li>
+          <li><a href="#12">Participación por distrito</a></li>
+        </ul>
+
+        <p>Votaciones</p>
+        <ul class="menu vertical margin-top">
+          <li><a href="#<%= @poll_1.try(:id) %>">Madrid 100% Sostenible, Billete único para el transporte público y Plaza de España</a></li>
+          <li><a href="#<%= @poll_2.try(:id) %>">Gran Vía</a></li>
+          <li><a href="#<%= @poll_3.try(:id) %>">Prioriza el Plan Participativo de Actuación Territorial de Barajas</a></li>
+          <li><a href="#<%= @poll_4.try(:id) %>">Prioriza el Plan Participativo de Actuación Territorial de San Blas - Canillejas</a></li>
+          <li><a href="#<%= @poll_5.try(:id) %>">Nombre de distrito y Parque Felipe VI en Hortaleza</a></li>
+          <li><a href="#<%= @poll_6.try(:id) %>">Nombres de centros culturales en Retiro</a></li>
+          <li><a href="#<%= @poll_7.try(:id) %>">¿Considera que la Junta Municipal del Distrito de Salamanca debe llevar a cabo las acciones necesarias para incrementar la protección de edificios históricos e instar para que se protejan los que actualmente no figuran en el catálogo de bienes protegidos?</a></li>
+          <li><a href="#<%= @poll_8.try(:id) %>">¿Cómo quieres que se llame el Espacio de Igualdad del Distrito de Vicálvaro?</a></li>
+        </ul>
+      </div>
+
+      <div class="small-12 medium-9 column">
+        <h2 class="show-for-sr">PARTICIPACIÓN</h2>
+
+        <!-- Participación total -->
+        <%= render "polls/stats_2017/total" %>
+
+        <!-- Participación por sexo -->
+        <%= render "polls/stats_2017/gender" %>
+
+        <!-- Participación por grupos de edad -->
+        <%= render "polls/stats_2017/age" %>
+
+        <!-- Participación por distrito -->
+        <%= render "polls/stats_2017/districts" %>
+
+        <h2 class="show-for-sr">VOTACIONES</h2>
+
+        <%= render "polls/stats_2017/polls" %>
+      <p>
+        <em>* No se dispone de todos los datos demográficos de todos los participantes.</em><br>
+        <em>** En el canal web no se presenta el número de papeletas en blanco ya que por anonimización de los votantes no se dispone de esta información.</em><br>
+        <em>*** Cada persona ha podido participar en distintas votaciones a través de varios canales, por lo que en los datos demográficos la suma de los canales web, urna y correo no debe coincidir con el total.</em>
+      </p>
+      </div>
+    </div>
+  </div>
+<% end %>

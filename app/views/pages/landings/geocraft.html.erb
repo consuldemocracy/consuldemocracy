@@ -1,0 +1,104 @@
+<% provide :title, "Haz Madrid - Presupuestos participativos" %>
+<% provide :meta_description do %>
+  Imagina y crea tu propio Madrid en este entorno que recrea la Plaza Santa Ana de Madrid.
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: geocraft_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= geocraft_url %>" />
+<meta property="og:title"         content="Haz Madrid - Presupuestos participativos" />
+<meta property="og:image"         content="<%= image_url '/social_media_haz_madrid.jpg' %>" />
+<meta property="og:description"   content="Imagina y crea tu propio Madrid en este entorno que recrea la Plaza Santa Ana de Madrid." />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Haz Madrid - Presupuestos participativos" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_haz_madrid_twitter.jpg' %>" />
+<meta name="twitter:description"   content="Imagina y crea tu propio Madrid en este entorno que recrea la Plaza Santa Ana de Madrid." />
+
+<% end %>
+
+<div class="geocraft">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-9 small-centered column text-center">
+        <div class="content">
+          <h1>
+            <span>HAZ</span>
+            <span class="word">MADRID</span>
+          </h1>
+          <br>
+          <p class="lead">Imagina y crea tu propio Madrid en este entorno<br> que recrea la Plaza Santa Ana de la capital.</p>
+
+          <%= link_to "/docs/entorno_plaza_santa_ana.zip", class: "button large margin-top",
+                      title: "Descargar entorno Plaza Santa Ana - ZIP 1.8Mb" do %>
+            <strong>Descargar entorno</strong>
+          <% end %>
+
+          <p><small><em>*Este descargable es una instalación para Minecraft versión 1.11 y 12 (Java edition)</em></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row section-white">
+    <div class="small-12 medium-6 column">
+      <h2>¿Qué harías si tuvieras<br> 100 millones de piezas?</h2>
+      <p class="text">En el mundo real, los <%= link_to "Presupuestos participativos 2017", budgets_welcome_path %> destinan 100 millones de euros para los proyectos que propone la ciudadanía.</p>
+
+      <p class="text">Para empezar a crear el Madrid que te gustaría, descárgate en tu ordenador este entorno que toma como base Geocraft y un mundo basado en la geografía real.</p>
+    </div>
+    <div class="small-12 medium-6 column text-center">
+        <p class="quote">
+          <span>"</span>En este entorno virtual tienes una idea, decides y haces.<span>"</span>
+        </p>
+      </div>
+  </div>
+
+  <div class="section-green">
+    <div class="row">
+      <div class="small-12 medium-4 large-5 column text-center screenshot">
+        <%= image_tag ('landings/geocraft.jpg'), alt: "Imagen del entorno que recrea la Plaza Santa Ana de Madrid." %>
+      </div>
+      <div class="small-12 medium-8 large-6 column">
+        <div class="margin-bottom">
+          <h2>Instrucciones de instalación</h2>
+        </div>
+
+        <ol>
+          <li>Descarga el entorno en esta misma página.</li>
+          <li>Descomprime el archivo <em>.zip</em> descargado en tu disco duro.</li>
+          <li>Copia la carpeta descomprimida "Santa_Ana" del mundo a: C:\Users\<strong>USUARIO</strong>\AppData\Roaming\.minecraft\saves*</li>
+          <li>¡Crea el Madrid que quieres!</li>
+        </ol>
+
+        <p><small>*Debes sustituir <strong>USUARIO</strong> por el nombre de usuario de tu ordenador donde tengas instalado Minecraft.</small></p>
+
+        <div class="small-12 medium-9 large-6">
+          <%= link_to "Descargar entorno", "/docs/entorno_plaza_santa_ana.zip", class: "button expanded",
+                      title: "Descargar entorno Plaza Santa Ana - ZIP 1.8Mb" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 medium-9 small-centered column">
+      <div class="flex-video widescreen">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/W4yR_Ww5TB8?rel=0&amp;showinfo=0" style="border:0;" allowfullscreen
+        title="¡SrChincheto77 nos acompaña por el Madrid que decide la ciudadanía!"></iframe>
+      </div>
+      <p class="text-center"><small>¡SrChincheto77 nos acompaña por el Madrid que decide la ciudadanía!</small></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered text-center">
+      <div class="cta">
+        <p class="lead">Y si quieres que las decisiones sobre tu ciudad sean una realidad,<br> vota los <%= link_to "Presupuestos participativos", budgets_welcome_path %> de Madrid hasta el 30 de junio.</p>
+      </div>
+    </div>
+  </div>
+</div>

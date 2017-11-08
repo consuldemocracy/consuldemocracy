@@ -1,6 +1,17 @@
 <% provide :title do %><%= t("polls.index.title") %><% end %>
+<% provide :meta_description, t("polls.index.description") %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: polls_url %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: "#{request.url}vota",
+              social_title: t("polls.index.title"),
+              social_description: t("polls.index.description") %>
+<% end %>
+<%= provide :social_media_meta_tags do %>
+  <meta name="twitter:image" content="<%= root_url %>social_media_vota_once_plazas_twitter.jpg" />
+  <meta id="ogimage" property="og:image" content="<%= root_url %>social_media_vota_once_plazas.jpg"/>
 <% end %>
 
 <%= render "shared/section_header", i18n_namespace: "polls.index.section_header", image: "polls" %>
@@ -33,8 +44,11 @@
       </p>
       <p><%= t("polls.index.section_footer.description") %></p>
       <p><%= t("polls.index.section_footer.help_text_1") %></p>
-      <p><%= t("polls.index.section_footer.help_text_2",
-                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
+      <p><%= t("polls.index.section_footer.help_text_2") %></p>
+      <p><%= t("polls.index.section_footer.help_text_3") %></p>
+      <p><%= t("polls.index.section_footer.help_text_4") %></p>
+      <p><%= t("polls.index.section_footer.help_text_5") %></p>
+      <p><%= link_to t("polls.index.section_footer.help_text_6"), more_info_polls_october_path %></p>
     </div>
   </div>
 </div>

@@ -1,8 +1,9 @@
 class Poll::Question::Answer < ActiveRecord::Base
+  include StatsHelper
   include Galleryable
   include Documentable
   documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
+               max_file_size: 20.megabytes,
                accepted_content_types: [ "application/pdf" ]
   accepts_nested_attributes_for :documents, allow_destroy: true
 
@@ -32,23 +33,22 @@ class Poll::Question::Answer < ActiveRecord::Base
     where(question_id: question_id).maximum('given_order') || 0
   end
 
+  # Hardcoded Stuff for Madrid 11 Polls where there are only 2 Questions per Poll
+  # FIXME: Implement the "Blank Answers" feature at Consul
   def total_votes
-    Poll::Answer.where(question_id: question, answer: title).count
-  end
-
-  def most_voted?
-    self.most_voted
+    total = if title == 'En blanco'
+              web_voters = Poll::Voter.where(poll: question.poll, origin: 'web').count
+              first_answer = Poll::Answer.where(answer: question.question_answers.where(given_order: 1).first.title, question: question).count
+              second_answer = Poll::Answer.where(answer: question.question_answers.where(given_order: 2).first.title, question: question).count
+              web_voters - first_answer - second_answer - Poll::Stats.new(question.poll).generate[:total_web_white]
+            else
+              Poll::Answer.where(question_id: question, answer: title).count
+            end
+    total + ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
   end
 
   def total_votes_percentage
-    question.answers_total_votes == 0 ? 0 : (total_votes * 100) / question.answers_total_votes
+    calculate_percentage(total_votes, question.answers_total_votes)
   end
 
-  def set_most_voted
-    answers = question.question_answers
-                  .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    is_most_voted = !answers.any?{ |a| a > self.total_votes }
-
-    self.update(most_voted: is_most_voted)
-  end
 end
