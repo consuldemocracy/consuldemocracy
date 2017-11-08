@@ -40,6 +40,13 @@
         </div>
       <% end %>
 
+      <% if process.proposals_phase.enabled? %>
+        <div class="small-6 medium-<%= column_width %> column">
+            <h5><%= t('legislation.processes.shared.proposals_dates') %></h5>
+            <p><%= format_date(process.proposals_phase_start_date) %> - <%= format_date(process.proposals_phase_end_date) %></p>
+        </div>
+      <% end %>
+
       <% if process.allegations_phase.enabled? %>
         <div class="small-6 medium-<%= column_width %> column">
             <h5><%= t('legislation.processes.shared.allegations_dates') %></h5>

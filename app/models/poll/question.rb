@@ -55,4 +55,8 @@ class Poll::Question < ActiveRecord::Base
     where(poll_id: Poll.answerable_by(user).pluck(:id))
   end
 
+  def answers_total_votes
+    question_answers.map { |a| Poll::Answer.where(question_id: self, answer: a.title).count }.sum
+  end
+
 end

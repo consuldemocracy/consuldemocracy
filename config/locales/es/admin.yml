@@ -60,8 +60,9 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
-        title: Actividad de los Moderadores
+        title: Actividad de Moderadores
         type: Tipo
+        no_activity: No hay actividad de moderadores.
     budgets:
       index:
         title: Presupuestos participativos
@@ -264,6 +265,7 @@ es:
           process: Proceso
           debate_phase: Fase previa
           allegations_phase: Fase de alegaciones
+          proposals_phase: Fase de propuestas
           start: Inicio
           end: Fin
           use_markdown: Usa Markdown para formatear el texto
@@ -296,6 +298,17 @@ es:
           info: Información
           draft_texts: Texto
           questions: Debate
+          proposals: Propuestas
+      proposals:
+        index:
+          title: Propuestas
+          back: Volver
+        form:
+          header_information: Encabezado de información
+          header_information_description: Proporciona información sobre el recorrido de las propuestas. Este texto se mostrará como una alerta en el encabezado de la sección de Propuestas dentro de este proceso. Usa Markdown para formatear el texto.
+          header_information_placeholder: Añade información para el encabezado de las las propuestas
+          custom_categories: Categorías
+          custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta.
       draft_versions:
         create:
           notice: 'Borrador creado correctamente. <a href="%{link}">Haz click para verlo</a>'
@@ -382,30 +395,32 @@ es:
     administrators:
       index:
         title: Administradores
+        name: Nombre
+        email: Email
+        no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
         delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: "Administradores: Búsqueda de usuarios"
     managers:
       index:
         title: Gestores
+        name: Nombre
+        email: Email
+        no_managers: No hay gestores.
       manager:
         add: Añadir como Gestor
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Gestores: Búsqueda de usuarios'
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
       proposals_topics: Temas de propuestas
-      poll_questions: Preguntas ciudadanas
+      poll_questions: Preguntas de votaciones
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
@@ -420,6 +435,7 @@ es:
       poll_officers: Presidentes de mesa
       polls: Votaciones
       poll_booths: Ubicación de urnas
+      poll_booth_assignments: Asignación de urnas
       poll_shifts: Asignar turnos
       officials: Cargos públicos
       organizations: Organizaciones
@@ -443,13 +459,14 @@ es:
     moderators:
       index:
         title: Moderadores
+        name: Nombre
+        email: Email
+        no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
         delete: Borrar
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Moderadores: Búsqueda de usuarios'
     newsletters:
       index:
         title: Envío de newsletters
@@ -457,14 +474,16 @@ es:
     valuators:
       index:
         title: Evaluadores
+        name: Nombre
+        email: Email
+        description: Descripción
+        no_description: Sin descripción
+        no_valuators: No hay evaluadores.
       valuator:
         description_placeholder: "Descripción (opcional)"
-        user_found: Usuario encontrado
         add: Añadir como evaluador
       search:
-        email_placeholder: Buscar usuario por email
-        search: Buscar
-        user_not_found: Usuario no encontrado
+        title: 'Evaluadores: Búsqueda de usuarios'
       summary:
         title: Resumen de evaluación de propuestas de inversión
         valuator_name: Evaluador
@@ -514,6 +533,7 @@ es:
         search_officer_placeholder: Buscar presidentes de mesa
         search_officer_text: Busca al presidente de mesa para asignar un turno
         select_date: "Seleccionar día"
+        no_voting_days: "Voting days ended"
         select_task: "Seleccionar tarea"
         table_shift: "Turno"
         table_email: "Email"
@@ -524,6 +544,17 @@ es:
         date_missing: "Debe seleccionarse una fecha"
       vote_collection: Recoger Votos
       recount_scrutiny: Recuento & Escrutinio
+    booth_assignments:
+      manage_assignments: Gestionar asignaciones
+      manage:
+        assignments_list: "Asignaciones para la votación '%{poll}'"
+        status:
+          assign_status: Asignación
+          assigned: Asignada
+          unassigned: No asignada
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -537,6 +568,7 @@ es:
         no_officers: "No hay presidentes de mesa para esta urna"
         recounts: "Recuentos"
         recounts_list: "Lista de recuentos de esta urna"
+        results: "Resultados"
         date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
         count_by_system:  "Votos (automático)"
@@ -546,9 +578,6 @@ es:
         no_booths: "No hay urnas asignadas a esta votación."
         table_name: "Nombre"
         table_location: "Ubicación"
-        table_assignment: "Asignación"
-        remove_booth: "Desasignar urna"
-        add_booth: "Asignar urna"
     polls:
       index:
         title: "Listado de votaciones"
@@ -559,6 +588,10 @@ es:
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
+        show_results_and_stats: "Mostrar resultados y estadísticas"
+        show_results: "Mostrar resultados"
+        show_stats: "Mostrar estadísticas"
+        results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas de esta votación serán públicos y podrán verlos todos los usuarios."
         submit_button: "Crear votación"
       edit:
         title: "Editar votación"
@@ -577,12 +610,12 @@ es:
         error_on_question_added: "No se pudo asignar la pregunta"
     questions:
       index:
-        title: "Preguntas ciudadanas"
+        title: "Preguntas de votaciones"
         create: "Crear pregunta ciudadana"
         no_questions: "No hay ninguna pregunta ciudadana."
         filter_poll: "Filtrar por votación"
         select_poll: "Seleccionar votación"
-        questions_tab: "Preguntas ciudadanas"
+        questions_tab: "Preguntas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
         table_proposal: "Propuesta"
@@ -649,11 +682,17 @@ es:
       index:
         title: "Resultados"
         no_results: "No hay resultados"
+      result:
         table_whites: Papeletas totalmente en blanco
         table_nulls: Papeletas nulas
         table_total: Papeletas totales
         table_answer: Respuesta
         table_votes: Votos
+      results_by_booth:
+        booth: Urna
+        results: Resultados
+        see_results: Ver resultados
+        title: "Resultados por urna"
     booths:
       index:
         title: "Lista de urnas"
@@ -661,6 +700,7 @@ es:
         add_booth: "Añadir urna"
         name: "Nombre"
         location: "Ubicación"
+        no_location: "Sin Ubicación"
       new:
         title: "Nueva urna"
         name: "Nombre"
@@ -683,6 +723,10 @@ es:
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
+        no_officials: No hay cargos públicos.
+        name: Nombre
+        official_position: Cargo público
+        official_level: Nivel
       level_0: No es cargo público
       level_1: Nivel 1
       level_2: Nivel 2
@@ -693,6 +737,7 @@ es:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
         title: 'Cargos Públicos: Búsqueda de usuarios'
+        no_results: No se han encontrado cargos públicos.
     organizations:
       index:
         filter: Filtro
@@ -704,6 +749,12 @@ es:
         hidden_count_html:
           one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
           other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
+        name: Nombre
+        email: Email
+        phone_number: Teléfono
+        responsible_name: Responsable
+        status: Estado
+        no_organizations: No hay organizaciones.
         reject: Rechazar
         rejected: Rechazada
         search: Buscar
@@ -711,8 +762,10 @@ es:
         title: Organizaciones
         verified: Verificada
         verify: Verificar
+        pending: Pendiente
       search:
         title: Buscar Organizaciones
+        no_results: No se han encontrado organizaciones.
     proposals:
       index:
         filter: Filtro
@@ -928,6 +981,7 @@ es:
         verification_level: Nivel de verficación
       index:
         title: Usuarios
+        no_users: No hay usuarios.
       search:
         placeholder: Buscar usuario por email, nombre o DNI
         search: Buscar

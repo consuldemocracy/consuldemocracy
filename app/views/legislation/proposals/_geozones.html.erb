@@ -1,0 +1,6 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("shared.tags_cloud.districts") %></h2>
+<br>
+<%= link_to map_proposals_path, id: 'map', title: t("shared.tags_cloud.districts_list") do %>
+  <%= image_tag("map.jpg", alt: t("shared.tags_cloud.districts_list")) %>
+<% end %>

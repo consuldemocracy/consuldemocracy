@@ -84,7 +84,7 @@ class CensusApi
     end
 
     def stubbed_response(document_type, document_number)
-      if document_number == "12345678Z" && document_type == "1"
+      if (document_number == "12345678Z" || document_number == "12345678Y") && document_type == "1"
         stubbed_valid_response
       else
         stubbed_invalid_response

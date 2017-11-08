@@ -1,33 +1,9 @@
 <% provide :title do %><%= @poll.name %><% end %>
 
 <div class="polls-show">
-  <div class="expanded no-margin-top polls-show-header">
-    <div class="row">
-      <div class="small-12 medium-9 column padding">
-        <%= back_link_to polls_path, t("polls.show.back") %>
+  <%= render "poll_header" %>
 
-        <h2><%= @poll.name %></h2>
-
-        <%= safe_html_with_links simple_format(@poll.summary) %>
-
-        <% if @poll.geozones.any? %>
-          <ul class="no-bullet margin-top tags">
-            <% @poll.geozones.each do |g| %>
-              <li class="inline-block"><span><%= g.name %></span></li>
-            <% end %>
-          </ul>
-        <% end %>
-      </div>
-
-      <aside class="small-12 medium-3 column margin-top">
-        <%= render partial: 'shared/social_share', locals: {
-          share_title: t("shared.share"),
-          title: @poll.name,
-          url: poll_url
-        } %>
-      </aside>
-    </div>
-  </div>
+  <%= render "poll_subnav" %>
 
   <div class="row margin">
     <div class="small-12 medium-9 column">
@@ -39,7 +15,7 @@
         </div>
       <% else %>
 
-        <% if current_user && @poll.voted_in_web?(current_user) %>
+        <% if current_user && @poll.voted_in_web?(current_user) && !@poll.expired? %>
           <div class="callout warning">
             <%= t("polls.show.already_voted_in_web") %>
           </div>
@@ -147,12 +123,12 @@
     </div>
 
   </div>
-</div>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "filter_subnav" %>
+  <div class="tabs-content" data-tabs-content="polls_tabs" role="tablist">
+    <%= render "filter_subnav" %>
 
-  <div class="tabs-panel is-active" id="tab-comments">
-    <%= render "comments" %>
+    <div class="tabs-panel is-active" id="tab-comments">
+      <%= render "comments" %>
+    </div>
   </div>
 </div>

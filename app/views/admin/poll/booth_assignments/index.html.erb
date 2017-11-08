@@ -1,9 +1,14 @@
 <%= render "/admin/poll/polls/poll_header" %>
+
 <div id="poll-resources">
   <%= render "/admin/poll/polls/subnav" %>
   <%= render "search_booths" %>
 
   <h3><%= t("admin.poll_booth_assignments.index.booths_title") %></h3>
+
+  <%= link_to t("admin.booth_assignments.manage_assignments"),
+              manage_admin_poll_booth_assignments_path(@poll),
+              class: "button hollow float-right" %>
 
   <% if @booth_assignments.empty? %>
     <div class="callout primary margin-top">
@@ -14,7 +19,6 @@
       <thead>
         <th><%= t("admin.poll_booth_assignments.index.table_name") %></th>
         <th><%= t("admin.poll_booth_assignments.index.table_location") %></th>
-        <th class="text-right"><%= t("admin.poll_booth_assignments.index.table_assignment") %></th>
       </thead>
       <tbody>
         <% @booth_assignments.each do |booth_assignment| %>
@@ -25,13 +29,7 @@
               </strong>
             </td>
             <td>
-              <%= booth_assignment.booth.location %>
-            </td>
-            <td class="text-right">
-              <%= link_to t("admin.poll_booth_assignments.index.remove_booth"),
-                          admin_poll_booth_assignment_path(@poll, booth_assignment),
-                          method: :delete,
-                          class: "button hollow alert" %>
+              <%= booth_assignment.booth.location || t("admin.booths.index.no_location") %>
             </td>
           </tr>
         <% end %>
