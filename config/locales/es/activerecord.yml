@@ -135,7 +135,7 @@ es:
         villa_de_vallecas: "Villa de Vallecas"
         villaverde: "Villaverde"
       budget_poll:
-        name: "Nomre y apellidos"
+        name: "Nombre y apellidos"
         email: "Email (opcional)"
         preferred_subject: "Tema preferido"
         collective: "Colectivo"
