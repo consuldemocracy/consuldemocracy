@@ -31,6 +31,12 @@ en:
       administrator:
         one: "Administrator"
         other: "Administrators"
+      valuator:
+        one: "Evaluador"
+        other: "Evaluadores"
+      manager:
+        one: "Manager"
+        other: "Managers"
       vote:
         one: "Vote"
         other: "Votes"

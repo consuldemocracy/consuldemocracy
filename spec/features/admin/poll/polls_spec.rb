@@ -60,6 +60,10 @@ feature 'Admin polls' do
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
     fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
     fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
+
+    expect(page).to_not have_css("#poll_results_enabled")
+    expect(page).to_not have_css("#poll_stats_enabled")
+
     click_button "Create poll"
 
     expect(page).to have_content "Poll created successfully"
@@ -79,14 +83,25 @@ feature 'Admin polls' do
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
+    expect(page).to have_css("#poll_results_enabled")
+    expect(page).to have_css("#poll_stats_enabled")
+
     fill_in "poll_name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    check 'poll_results_enabled'
+    check 'poll_stats_enabled'
 
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
     expect(page).to have_content I18n.l(end_date.to_date)
+
+    click_link "Edit poll"
+
+    expect(page).to have_field('poll_results_enabled', checked: true)
+    expect(page).to have_field('poll_stats_enabled', checked: true)
+
   end
 
   scenario 'Edit from index' do
@@ -310,6 +325,43 @@ feature 'Admin polls' do
         within('#white_results') { expect(page).to have_content('21') }
         within('#null_results') { expect(page).to have_content('44') }
         within('#total_results') { expect(page).to have_content('66') }
+      end
+
+      scenario "Link to results by booth" do
+        poll = create(:poll)
+        booth_assignment1 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment2 = create(:poll_booth_assignment, poll: poll)
+
+        question = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: 'Yes', question: question)
+        create(:poll_question_answer, title: 'No', question: question)
+
+        create(:poll_partial_result,
+               booth_assignment: booth_assignment1,
+               question: question,
+               answer: 'Yes',
+               amount: 5)
+
+        create(:poll_partial_result,
+               booth_assignment: booth_assignment2,
+               question: question,
+               answer: 'Yes',
+               amount: 6)
+
+        visit admin_poll_path(poll)
+
+        click_link "Results"
+
+        expect(page).to have_link("See results", count: 2)
+
+        within("#booth_assignment_#{booth_assignment1.id}_result") do
+          click_link "See results"
+        end
+
+        expect(page).to have_content booth_assignment1.booth.name
+        expect(page).to have_content "Results"
+        expect(page).to have_content "Yes"
+        expect(page).to have_content "5"
       end
     end
   end

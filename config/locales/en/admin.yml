@@ -62,6 +62,7 @@ en:
           on_users: Users
         title: Moderator activity
         type: Type
+        no_activity: There ares no moderators activity.
     budgets:
       index:
         title: Participatory budgets
@@ -264,6 +265,7 @@ en:
           process: Process
           debate_phase: Debate phase
           allegations_phase: Allegations phase
+          proposals_phase: Proposals phase
           start: Start
           end: End
           use_markdown: Use Markdown to format the text
@@ -296,6 +298,17 @@ en:
           info: Information
           draft_texts: Text
           questions: Debate
+          proposals: Proposals
+      proposals:
+        index:
+          title: Proposals
+          back: Back
+        form:
+          header_information: Information header
+          header_information_description: Provide information about the proposals. This text will be displayed as an alert in the Proposals section inside this Process. Use Markdown to format the text.
+          header_information_placeholder: Add information for the proposals' header
+          custom_categories: Categories
+          custom_categories_description: Categories that users can select creating the proposal.
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
@@ -382,13 +395,14 @@ en:
     managers:
       index:
         title: Managers
+        name: Name
+        email: Email
+        no_managers: There are no managers.
       manager:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Managers: User search'
     menu:
       activity: Moderator activity
       admin: Admin menu
@@ -409,6 +423,7 @@ en:
       poll_officers: Poll officers
       polls: Polls
       poll_booths: Booths location
+      poll_booth_assignments: Booths Assignments
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
@@ -432,24 +447,26 @@ en:
     administrators:
       index:
         title: Administrators
+        name: Name
+        email: Email
+        no_administrators: There are no administrators.
       administrator:
         add: Add
         delete: Delete
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: "Administrators: User search"
     moderators:
       index:
         title: Moderators
+        name: Name
+        email: Email
+        no_moderators: There are no moderators.
       moderator:
         add: Add
         delete: Delete
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Moderators: User search'
     newsletters:
       index:
         title: Newsletters
@@ -457,14 +474,16 @@ en:
     valuators:
       index:
         title: Valuators
+        name: Name
+        email: Email
+        description: Description
+        no_description: No description
+        no_valuators: There are no valuators.
       valuator:
         description_placeholder: 'Description (optional)'
-        user_found: User found
         add: Add to valuators
       search:
-        email_placeholder: Search user by email
-        search: Search
-        user_not_found: User not found
+        title: 'Valuators: User search'
       summary:
         title: Valuator summary for investment projects
         valuator_name: Valuator
@@ -514,6 +533,7 @@ en:
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
+        no_voting_days: "Los dias de votación terminaron"
         select_task: "Select task"
         table_shift: "Shift"
         table_email: "Email"
@@ -524,6 +544,17 @@ en:
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
+    booth_assignments:
+      manage_assignments: Manage assignments
+      manage:
+        assignments_list: "Assignments for poll '%{poll}'"
+        status:
+          assign_status: Assignment
+          assigned: Assigned
+          unassigned: Unassigned
+        actions:
+          assign: Assign booth
+          unassign: Unassign booth
     poll_booth_assignments:
       flash:
         destroy: "Booth not assigned anymore"
@@ -537,6 +568,7 @@ en:
         no_officers: "There are no officers for this booth"
         recounts: "Recounts"
         recounts_list: "Recount list for this booth"
+        results: "Results"
         date: "Date"
         count_final: "Final recount (by officer)"
         count_by_system:  "Votes (automatic)"
@@ -546,9 +578,6 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
-        table_assignment: "Assignment"
-        remove_booth: "Remove booth from poll"
-        add_booth: "Assign booth"
     polls:
       index:
         title: "List of polls"
@@ -559,6 +588,10 @@ en:
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
+        show_results_and_stats: "Show results and stats"
+        show_results: "Show results"
+        show_stats: "Show stats"
+        results_and_stats_reminder: "Marking these checkboxes the results and/or stats of this poll will be publicly available and every user will see them."
         submit_button: "Create poll"
       edit:
         title: "Edit poll"
@@ -647,11 +680,17 @@ en:
       index:
         title: "Results"
         no_results: "There are no results"
+      result:
         table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
         table_total: "Total ballots"
         table_answer: Answer
         table_votes: Votes
+      results_by_booth:
+        booth: Booth
+        results: Results
+        see_results: See results
+        title: "Results by booth"
     booths:
       index:
         title: "List of booths"
@@ -659,6 +698,7 @@ en:
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
+        no_location: "No Location"
       new:
         title: "New booth"
         name: "Name"
@@ -681,6 +721,10 @@ en:
         official_updated: Details of official saved
       index:
         title: Officials
+        no_officials: There are no officials.
+        name: Nombre
+        official_position: Official position
+        official_level: Level
       level_0: Not official
       level_1: Level 1
       level_2: Level 2
@@ -691,6 +735,7 @@ en:
         edit_official: Edit official
         make_official: Make official
         title: 'Official positions: User search'
+        no_results: Official positions not found.
     organizations:
       index:
         filter: Filter
@@ -702,6 +747,12 @@ en:
         hidden_count_html:
           one: There is also <strong>one organisation</strong> with no users or with a hidden user.
           other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
+        name: Name
+        email: Email
+        phone_number: Phone
+        responsible_name: Responsible
+        status: Status
+        no_organizations: There are no organizations.
         reject: Reject
         rejected: Rejected
         search: Search
@@ -709,8 +760,10 @@ en:
         title: Organisations
         verified: Verified
         verify: Verify
+        pending: Pending
       search:
         title: Search Organisations
+        no_results: No organizations found.
     proposals:
       index:
         filter: Filter
@@ -926,6 +979,7 @@ en:
         verification_level: Verification level
       index:
         title: User
+        no_users: There are no users.
       search:
         placeholder: Search user by email, name or document number
         search: Search

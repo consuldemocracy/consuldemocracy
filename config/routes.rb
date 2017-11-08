@@ -113,6 +113,10 @@ Rails.application.routes.draw do
   end
 
   resources :polls, only: [:show, :index] do
+    member do
+      get :stats
+      get :results
+    end
     resources :questions, controller: 'polls/questions', shallow: true do
       post :answer, on: :member
     end
@@ -125,9 +129,21 @@ Rails.application.routes.draw do
         get :draft_publication
         get :allegations
         get :result_publication
+        get :proposals
       end
       resources :questions, only: [:show] do
         resources :answers, only: [:create]
+      end
+      resources :proposals do
+        member do
+          post :vote
+          put :flag
+          put :unflag
+        end
+        collection do
+          get :map
+          get :suggest
+        end
       end
       resources :draft_versions, only: [:show] do
         get :go_to_version, on: :collection
@@ -273,10 +289,12 @@ Rails.application.routes.draw do
 
     scope module: :poll do
       resources :polls do
+        get :booth_assignments, on: :collection
         patch :add_question, on: :member
 
         resources :booth_assignments, only: [:index, :show, :create, :destroy] do
           get :search_booths, on: :collection
+          get :manage, on: :collection
         end
 
         resources :officer_assignments, only: [:index, :create, :destroy] do
@@ -326,6 +344,7 @@ Rails.application.routes.draw do
     namespace :legislation do
       resources :processes do
         resources :questions
+        resources :proposals
         resources :draft_versions
       end
     end

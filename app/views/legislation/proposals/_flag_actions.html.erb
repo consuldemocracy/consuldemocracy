@@ -1,0 +1,21 @@
+<span class="js-flag-actions">
+  <span class="flag-content">
+    <% if show_flag_action? proposal %>
+      <a id="flag-expand-proposal-<%= proposal.id %>" data-toggle="flag-drop-proposal-<%= proposal.id %>" title="<%= t('shared.flag') %>">
+        <span class="icon-flag flag-disable"></span>
+      </a>
+      <span class="dropdown-pane" id="flag-drop-proposal-<%= proposal.id %>" data-dropdown data-auto-focus="true">
+        <%= link_to t('shared.flag'), flag_proposal_path(proposal), method: :put, remote: true, id: "flag-proposal-#{ proposal.id }" %>
+      </span>
+    <% end %>
+
+    <% if show_unflag_action? proposal %>
+      <a id="unflag-expand-proposal-<%= proposal.id %>" data-toggle="unflag-drop-proposal-<%= proposal.id %>" title="<%= t('shared.unflag') %>">
+        <span class="icon-flag flag-active"></span>
+      </a>
+      <span class="dropdown-pane" id="unflag-drop-proposal-<%= proposal.id %>" data-dropdown data-auto-focus="true">
+        <%= link_to t('shared.unflag'), unflag_proposal_path(proposal), method: :put, remote: true, id: "unflag-proposal-#{ proposal.id }" %>
+      </span>
+    <% end %>
+  </span>
+</span>
