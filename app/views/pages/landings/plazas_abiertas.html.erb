@@ -1,0 +1,98 @@
+<% provide :title, "Plazas Abiertas - Debate de Presupuestos participativos" %>
+<% provide :meta_description do %>
+  La ciudadanía de Madrid debate sobre los presupuestos participativos del Ayuntamiento de Madrid en plazas de los 21 distritos de la ciudad el 18 de junio.
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: plazas_abiertas_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= request.url %>plazas-abiertas" />
+<meta property="og:title"         content="Plazas Abiertas - Debate de Presupuestos participativos" />
+<meta property="og:image"         content="<%= image_url '/social_media_plazas_abiertas.png' %>" />
+<meta property="og:description"   content="La ciudadanía de Madrid debate sobre los presupuestos participativos del Ayuntamiento de Madrid en plazas de los 21 distritos de la ciudad el 18 de junio." />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Plazas Abiertas - Debate de Presupuestos participativos" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_plazas_abiertas.png' %>" />
+<meta name="twitter:description"   content="La ciudadanía de Madrid debate sobre los presupuestos participativos del Ayuntamiento de Madrid en plazas de los 21 distritos de la ciudad el 18 de junio." />
+<% end %>
+
+<div class="plazas-abiertas">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <h1>Plazas Abiertas</h1>
+        <p class="lead">El 18 de junio de 11 a 13 horas debatimos sobre los<br> proyectos de los Presupuestos participativos 2017</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 medium-9 column">
+      <h2>¿Qué es 'Plazas Abiertas'?</h2>
+      <p>Decide Madrid inaugura el formato <strong>'Plazas Abiertas'</strong>, un acto en el que la ciudadanía participa de las decisiones de la ciudad.</p>
+
+      <p>El primer acto <strong>'Plazas Abiertas'</strong> está dedicado al debate de los proyectos finalistas de los Presupuestos participativos 2017. Este año el Ayuntamiento de Madrid dedica <strong>100 millones de euros</strong> de las cuentas municipales a proyectos que plantea la ciudadanía y cuya votación final está en marcha <strong>hasta el 30 de junio</strong>.</p>
+
+      <p>Cualquier persona que quiera debatir sobre los proyectos planteados en su barrio está invitada a acudir a este acto abierto, que <strong>no requiere inscripción previa</strong>.</p>
+
+      <p><strong>'Plazas Abiertas'</strong> tiene lugar el <strong>domingo 18 de junio de 2017, de 11:00 a 13:00 horas</strong>, a una plaza en cada uno de los 21 distritos de Madrid que se puede encontrar en el siguiente mapa:</p>
+    </div>
+    <div class="small-12 medium-3 column">
+      <div class="share">
+        <h3>¡Ven a 'Plazas Abiertas'!</h3>
+        <p>Ayúdanos a difundir en redes sociales usando las etiquetas:<br><span class="hashtag"><strong>#PlazasAbiertas18J</strong></span><br><span class="hashtag"><strong>#VotaPresupuestosParticipativos</strong></span></p>
+
+        <div class="text-center margin">
+          <%= image_tag "landings/plazas_abiertas.jpg", alt: "Imagen del cartel de Plazas Abiertas" %>
+        </div>
+
+        <p>
+          <small>También puedes descargar una imagen del cartel para compartirla.</small><br>
+          <%= link_to "Descargar cartel Plazas Abiertas".html_safe,
+                      "/docs/plazas_abiertas.jpg", target: "_blank",
+                      title: "Cartel Plazas Abiertas JPG - 335Kb "+ t("shared.target_blank_html") %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1-j5I-Ysp3rEQ9vNa4SlIPXhEFHw" height="480" style="border:0; width:100%;" allowfullscreen title="#PlazasAbiertas: Presupuestos participativos 2017"></iframe>
+    </div>
+  </div>
+
+  <div class="how-works margin padding">
+    <div class="row margin-bottom">
+      <div class="small-12 column">
+        <h2>Cómo funciona 'Plazas Abiertas'</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-6 column step">
+        <p><span>1.</span><br> En cada plaza hay una persona que presenta el debate, explica qué son los presupuestos participativos del Ayuntamiento de Madrid, sus fases, qué parte de los 100 millones de euros de este año se destina a cada distrito y qué proyectos han pasado a la fase final.</p>
+      </div>
+      <div class="small-12 medium-6 column step">
+        <p><span>2.</span><br> Tras la introducción, personas que han planteado proyectos que están en la votación final y puedan asistir a ‘Plazas Abiertas’ tendrán la oportunidad de explicar al resto de vecinos y vecinas en qué consiste su idea. Se da un tiempo para formular preguntas, dudas y reflexiones.</p>
+      </div>
+      <div class="small-12 medium-6 column step">
+        <p><span>3.</span><br> Una vez se hayan expuesto los proyectos, se da un tiempo de micrófono abierto para que cualquier persona pueda hablar en general de los presupuestos participativos, exponer las necesidades de su barrio, etc.</p>
+      </div>
+      <div class="small-12 medium-6 column step">
+        <p><span>4.</span><br> Simultáneamente al debate, en las plazas está previsto que haya miembros de <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Servicios-sociales-y-salud/Servicios-sociales/Departamento-de-Voluntariado?vgnextfmt=default&vgnextoid=77f211242de9f010VgnVCM2000000c205a0aRCRD&vgnextchannel=70e4c8eb248fe410VgnVCM1000000b205a0aRCRD&idCapitulo=4441730" target="_blank" title="Visitar página de Voluntarios por Madrid (se abre en ventana nueva)" rel="nofollow">Voluntarios por Madrid</a> que informen y ayuden a votar a las personas interesadas en participar en los Presupuestos participativos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column text-center">
+      <span class="hashtag big"><strong>#PlazasAbiertas18J</strong></span>
+    </div>
+    <div class="small-12 medium-6 column text-center">
+      <span class="hashtag big"><strong>#VotaPresupuestosParticipativos</strong></span>
+    </div>
+  </div>
+</div>

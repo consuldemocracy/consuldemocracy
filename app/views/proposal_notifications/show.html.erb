@@ -3,6 +3,6 @@
     <%= back_link_to user_path(current_user), t("proposal_notifications.show.back") %>
 
     <h2><%= @notification.title %></h2>
-    <p><%= @notification.body %></p>
+    <%= simple_format text_with_links(@notification.body), {}, sanitize: false %>
   </div>
 </div>

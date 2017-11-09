@@ -1,0 +1,7 @@
+<% provide :title, @probe_option.name %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+           social_url: plaza_probe_option_url(@probe_option),
+           social_title: @probe_option.name,
+           social_description: t("pages.processes.index.process_plaza_description") %>
+<% end %>

@@ -5,7 +5,7 @@ feature 'Budgets' do
   scenario 'Index' do
     budgets = create_list(:budget, 3)
     visit budgets_path
-    budgets.each {|budget| expect(page).to have_link(budget.name)}
+    expect(page).to have_content "Los presupuestos participativos en 2 minutos"
   end
 
   context 'Show' do

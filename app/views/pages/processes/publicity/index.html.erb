@@ -1,0 +1,112 @@
+<% provide :title, "Modificación de la ordenanza reguladora de la publicidad exterior" %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+          social_url: publicity_url,
+          social_title: t("pages.processes.index.process_17_title"),
+          social_description: t("pages.processes.index.process_17_description") %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: publicity_url %>
+<% end %>
+
+<div class="expanded processes-show no-margin-top">
+  <div class="row padding">
+    <div class="small-12 column">
+      <%= back_link_to %>
+      <h1>Trámite de consulta pública sobre la modificación de la ordenanza reguladora de la publicidad exterior</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 medium-6 large-8 column">
+    <h2>Introducción</h2>
+
+    <p>Los avances tecnológicos que se han producido en el mundo de la publicidad exterior y la puesta en práctica de la normativa reguladora de esta materia durante estos últimos años, han puesto de manifiesto la necesidad de modificar la Ordenanza Reguladora de la Publicidad Exterior (OPE).</p>
+
+    <p>El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales. Por su parte, se han incorporado actuaciones autorizadas con carácter temporal, tras comprobarse que se han integrado de forma positiva en el paisaje urbano, regulando también una materia, como es la relativa a la instalación de pantallas digitales en establecimientos, en la que hasta el momento existe un vacío legal, y que requiere una respuesta inmediata por parte de la Administración, dado el impacto que su proliferación está provocando en el paisaje urbano.</p>
+
+    <p>Así mismo, la modificación pretende adaptar la OPE a las definiciones contenidas en la Ordenanza Fiscal reguladora de la Utilización Privativa o el Aprovechamiento Especial del Dominio público Local para el Desarrollo de Acciones Publicitarias Especiales, así como reflejar las Sentencias recaídas en relación con diversos artículos de la Ordenanza e Incorporar los criterios aprobados por las comisiones competentes en materia de protección del patrimonio o por el Grupo Técnico de Publicidad.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-4 column">
+    <h3>Información adicional</h3>
+    <ul class="no-bullet download">
+      <li>
+        <%= link_to "/docs/procesos/memoria_publicidad_exterior.pdf", target: "_blank",
+                    title: "Consulta pública publicidad exterior (se abre en ventana nueva)" do %>
+                    <strong>Consulta pública publicidad exterior</strong><br>
+                    <small>(PDF | 130Kb)</small>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/docs/procesos/publicidad_exterior_BOAM.pdf", target: "_blank",
+                    title: "Acuerdo de la Junta de Gobierno publicado en el BOAM (se abre en ventana nueva)" do %>
+                    <strong>Acuerdo de la Junta de Gobierno publicado en el BOAM</strong><br>
+                    <small>(PDF | 70Kb)</small>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="process-debates">
+  <div class="row">
+    <div class="small-12 column">
+      <h3>Preguntas del debate</h3>
+
+      <p>Puedes entrar en los debates que se proponen a continuación y dar tu opinión, o valorar otras respuestas con los botones de votación que encontrarás a la derecha de cada respuesta.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Nº</th>
+            <th scope="col">Pregunta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <%= link_to "#{request.url}debates/5133-pregunta-1-sobre-la-ordenanza-de-la-publicidad-exterior" do %>
+                <strong>
+                ¿Cómo calificarías la gestión actual de solicitudes de instalación de los soportes publicitarios/ identificativos regulados en la Ordenanza Reguladora de la Publicidad Exterior?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">2</td>
+            <td>
+              <%= link_to "#{request.url}debates/5134-pregunta-2-sobre-la-ordenanza-de-la-publicidad-exterior" do %>
+                <strong>
+                ¿Consideras necesaria la modificación de regulación actual de la publicidad exterior contenida en la Ordenanza? En caso afirmativo explica brevemente los motivos.
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">3</td>
+            <td>
+              <%= link_to "#{request.url}debates/5135-pregunta-3-sobre-la-ordenanza-de-la-publicidad-exterior" do %>
+                <strong>
+                ¿Estás de acuerdo con la necesidad de introducir una regulación de la instalación de pantallas digitales en establecimientos? Manifieste su conformidad o no con la instalación de las mismas.
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">4</td>
+            <td>
+              <%= link_to "#{request.url}debates/5136-pregunta-4-sobre-la-ordenanza-de-la-publicidad-exterior" do %>
+                <strong>
+                ¿Calificarías de excesiva la utilización del espacio público para la realización de acciones promocionales publicitarias?
+                </strong>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,7 @@ class Debate < ActiveRecord::Base
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
   belongs_to :geozone
+  has_one :probe_option
   has_many :comments, as: :commentable
 
   validates :title, presence: true
@@ -24,12 +25,14 @@ class Debate < ActiveRecord::Base
 
   validates :title, length: { in: 4..Debate.title_max_length }
   validates :description, length: { in: 10..Debate.description_max_length }
+  validates :comment_kind, inclusion: { in: ["comment", "question"] }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
   before_save :calculate_hot_score, :calculate_confidence_score
+  before_save :set_comment_kind
 
-  scope :for_render,               -> { includes(:tags) }
+  scope :for_render,               -> { includes(:tags, :probe_option, author: :organization) }
   scope :sort_by_hot_score,        -> { reorder(hot_score: :desc) }
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
@@ -40,6 +43,7 @@ class Debate < ActiveRecord::Base
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
+  scope :not_probe,                -> { where.not(id: ProbeOption.pluck(:debate_id))}
   scope :public_for_api,           -> { all }
 
   # Ahoy setup
@@ -102,6 +106,7 @@ class Debate < ActiveRecord::Base
 
   def votable_by?(user)
     return false unless user
+    return false if ProbeOption.where(debate: self).present?
     total_votes <= 100 ||
       !user.unverified? ||
       Setting['max_ratio_anon_votes_on_debates'].to_i == 100 ||
@@ -144,7 +149,38 @@ class Debate < ActiveRecord::Base
 
   def self.debates_orders(user)
     orders = %w{hot_score confidence_score created_at relevance}
-    orders << "recommendations" if user.present?
+    if user.present? && Setting['feature.user.recommendations'].present?
+      orders << "recommendations"
+    end
     orders
   end
+
+  def set_comment_kind
+    self.comment_kind ||= 'comment'
+  end
+
+  def self.open_plenary_winners
+    where(comment_kind: 'question').first
+                                   .comments
+                                   .sort_by_most_voted
+                                   .limit(5)
+  end
+
+  def self.public_columns_for_api
+    %w[id
+       title
+       description
+       created_at
+       cached_votes_total
+       cached_votes_up
+       cached_votes_down
+       comments_count
+       hot_score
+       confidence_score]
+  end
+
+  def public_for_api?
+    hidden? ? false : true
+  end
+
 end

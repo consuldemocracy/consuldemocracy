@@ -64,6 +64,12 @@
     </div>
   </div>
 
+  <h2><%= t("admin.spending_proposals.edit.compatibility") %></h2>
+
+  <label>
+    <%= f.check_box :compatible %>
+  </label>
+
   <p class="clear">
     <%= f.submit(class: "button", value: t("admin.spending_proposals.edit.submit_button")) %>
   </p>

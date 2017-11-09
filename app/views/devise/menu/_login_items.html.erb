@@ -17,6 +17,11 @@
       <% end %>
     <% end %>
   </li>
+  <% if Budget.current.any? %>
+    <li>
+      <%= link_to(t("layouts.header.delegation"), new_budget_recommendation_path(budget_id: Budget.current.last.slug), accesskey: "d") %>
+    </li>
+  <% end %>
   <li>
     <%= layout_menu_link_to t("layouts.header.my_activity_link"),
                               user_path(current_user),

@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Proyecto de inversión"
-        other: "Proyectos de inversión"
+        one: "Proyecto de gasto"
+        other: "Proyectos de gasto"
       budget/investment/milestone:
         one: "hito"
         other: "hitos"
@@ -65,11 +65,11 @@ es:
         one: Bloque
         other: Bloques
       legislation/process:
-          one: "Proceso"
-          other: "Procesos"
+        one: "Proceso"
+        other: "Procesos"
       legislation/draft_versions:
-          one: "Versión borrador"
-          other: "Versiones borrador"
+        one: "Versión borrador"
+        other: "Versiones borrador"
       legislation/draft_texts:
         one: "Borrador"
         other: "Borradores"
@@ -89,6 +89,60 @@ es:
         one: "Imagen"
         other: "Imágenes"
     attributes:
+      volunteer_poll:
+        email: "Email"
+        first_name: "Nombre"
+        last_name: "Apellidos"
+        document_number: "Número de documento"
+        phone: "Número de teléfono de contacto (preferiblemente móvil)"
+        monday_13_morning: Lunes 13 feb mañana
+        monday_13_afternoon: Lunes 13 feb tarde
+        tuesday_14_morning: Martes 14 feb mañana
+        tuesday_14_afternoon: Martes 14 feb tarde
+        wednesday_15_morning: Miércoles 15 feb mañana
+        wednesday_15_afternoon: Miércoles 15 feb tarde
+        thursday_16_morning: Jueves 16 feb mañana
+        thursday_16_afternoon: Jueves 16 feb tarde
+        friday_17_morning: Viernes 17 feb mañana
+        friday_17_afternoon: Viernes 17 feb tarde
+        saturday_18_morning: Sábado 18 feb mañana
+        saturday_18_afternoon: Sábado 18 feb tarde
+        sunday_19_morning: Domingo 19 feb mañana
+        sunday_19_afternoon: Domingo 19 feb tarde
+        monday_20_morning: Lunes 20 feb mañana
+        monday_20_afternoon: Lunes 20 feb tarde
+        turns: "turnos"
+        any_district: "En cualquier distrito"
+        arganzuela: "Arganzuela"
+        barajas: "Barajas"
+        carabanchel: "Carabanchel"
+        centro: "Centro"
+        chamartin: "Chamartín"
+        chamberi: "Chamberí"
+        ciudad_lineal: "Ciudad Lineal"
+        fuencarral_el_pardo: "Fuencarral-El Pardo"
+        hortaleza: "Hortaleza"
+        latina: "Latina"
+        moncloa_aravaca: "Moncola-Aravaca"
+        moratalaz: "Moratalaz"
+        puente_de_vallecas: "Puente de Vallecas"
+        retiro: "Retiro"
+        salamanca: "Salamanca"
+        san_blas_canillejas: "San Blas Canillejas"
+        tetuan: "Tetuán"
+        usera: "Usera"
+        vicalvaro: "Vicálvaro"
+        villa_de_vallecas: "Villa de Vallecas"
+        villaverde: "Villaverde"
+      budget_poll:
+        name: "Nombre y apellidos"
+        email: "Email (opcional)"
+        preferred_subject: "Tema preferido"
+        collective: "Colectivo"
+        public_worker: "Empleado público"
+        proposal_author: "Autor de propuesta"
+        selected_proposal_author: "Autor de propuesta seleccionado"
+        help: "Quiero ayudar"
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"
@@ -104,11 +158,12 @@ es:
         administrator_id: "Administrador"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
-        heading_id: "Partida presupuestaria"
+        heading_id: "¿Tu proyecto es para toda la ciudad o está ubicado en un distrito en concreto?"
         title: "Título"
-        location: "Ubicación"
+        location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
         image: "Imagen descriptiva de la propuesta de inversión"
+        image_title: "Título de la imagen"
       comment:
         body: "Comentario"
         user: "Usuario"

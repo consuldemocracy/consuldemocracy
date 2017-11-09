@@ -1,9 +1,16 @@
 ---
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
+    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado en Madrid aportando los datos indicados anteriormente, los cuales serán contrastados por la Dirección General de Participación Ciudadana con los ficheros 'Padrón Municipal de Habitantes' cuyo responsable es la Dirección General de Economía y Sector Público y 'Servicios Atención al Ciudadano' cuyo responsable es la Dirección General de Transparencia y Atención a la Ciudadanía. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados por la Dirección General de Participación Ciudadana en el fichero 'Gestión de Procesos Participativos' indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
+    help_translate:
+      title: ¡Ayúdanos a traducir!
+      text: |-
+        Si hablas otros idiomas por favor ayúdanos a que esta web y el software que utiliza esté disponible en otros idiomas.
+
+        Escríbenos a ag.gobiernoabierto@madrid.es para que te demos acceso al sistema de traducción colaborativo.
+        Todos juntos conseguiremos que cualquier país pueda disfrutar de esta herramienta. ¡Un millón de gracias!
     more_info:
       title: "Descubre %{org_name}"
       subtitle: "Aprende todo lo que puedes hacer en esta web."
@@ -12,6 +19,7 @@ es:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
+        polls: "Votaciones"
         other: "Otra información de interés"
       debates:
         title: "Debates"
@@ -23,6 +31,7 @@ es:
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
         title: "Propuestas"
+        detail: "Información detallada de propuestas"
         description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
         feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
@@ -32,6 +41,7 @@ es:
         figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
       budgets:
         title: "Presupuestos participativos"
+        detail: "Información detallada de presupuestos"
         description: "Los primeros seis meses de cada año puedes decidir cómo gastar parte del presupuesto."
         feature_1: "Para crear un proyecto de gasto tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
@@ -42,23 +52,24 @@ es:
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
+        detail: "Información detallada de Votaciones"
         description: "Las propuestas ciudadanas que alcancen el 1% de apoyos pasarán a votación."
         feature_1: "Para participar en la próxima votación tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
         feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de 16 años."
         feature_3: "Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        image_alt: "Primera votación ciudadana"
+        figcaption: "Imagen de campaña de la Primera Votación Ciudadana en febrero de 2017."
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
         button: "Ver preguntas frecuentes"
-        page:
-          title: "Preguntas Frecuentes"
-          description: "Utiliza esta página para resolver las Preguntas frencuentes a los usuarios del sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
+        world: "Participación ciudadana directa en el mundo"
+        facts: "Hechos sobre participación ciudadana y democracia directa"
+        forums: "Foros Locales"
       how_to_use:
         text: |-
           Utilízalo en tu municipio libremente o ayúdanos a mejorarlo, es software libre.
@@ -68,12 +79,92 @@ es:
           Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
       titles:
         how_to_use: Utilízalo en tu municipio
+        meetings: Espacios presenciales de debate y propuesta
     privacy: Política de Privacidad
+    processes:
+      back: Volver
+      index:
+        process_1_title: Ordenanza de Transparencia
+        process_1_description: Madrid quiere poner en marcha un sistema de transparencia pública a la altura de los más avanzados del mundo.
+        process_1_button: Más información sobre la Ordenanza
+        process_2_title: Remodelación de Plaza España
+        process_2_description_close: La preselección ciudadana de los proyectos ha terminado. Ya puedes ver los resultados.
+        process_2_button: Ver resultados
+        process_3_title: "Pleno Abierto"
+        process_3_description: Apoya las propuestas y preguntas enviadas. Las cinco más votadas serán formuladas en persona a los grupos políticos en el Pleno Abierto del 24 de abril.
+        process_3_button: Ver propuestas y preguntas
+        process_5_title: Plan de Derechos Humanos
+        process_5_description: El Ayuntamiento de Madrid quiere reforzar su compromiso con los Derechos Humanos con la elaboración de un Plan para el desarrollo de sus políticas públicas.
+        process_5_title_voting: Plan de Derechos Humanos
+        process_5_description_voting_html: "Hasta el 4 de noviembre los ciudadanos priorizaron las medidas y comentaron el borrador del Plan de Derechos Humanos."
+        process_5_button_voting: Más información
+        process_6_title: Cartas de Servicios
+        process_6_description: Puedes dejar tus comentarios en las Cartas de Servicios de los servicios de Ayuda a Domicilio, de los Centros de Día, de Centros Municipales de Mayores y de Teleasistencia Domiciliaria.
+        process_6_button: Ver resultados de participación
+        process_7_title: "Urbanismo: nuevos bancos"
+        process_7_description: Los ciudadanos eligieron el nuevo diseño de bancos para sentarse que les gustaría que se instalasen en la ciudad.
+        process_7_button: Ver resultados de la votación
+        process_8_title: "Licencias urbanísticas, declaraciones responsables y comunicaciones previas"
+        process_8_description: Consulta previa sobre la regulación de la concesión de licencias urbanísticas para la realización de obras y la apertura de locales comerciales o empresariales.
+        process_8_button: "Más información"
+        process_9_title: "Alianza para el Gobierno Abierto"
+        process_9_description: "Esta organización compuesta por gobiernos y sociedad civil, ayuda a que los gobiernos desarrollen medidas relevantes y específicas para avanzar en la participación y la transparencia, y certifica el cumplimiento de las mismas por medio de evaluadores independientes."
+        process_9_button: "Más información"
+        process_10_title: "Ordenanza de subvenciones"
+        process_10_description: "El Ayuntamiento de Madrid sometió a consulta pública la necesidad de modificar la regulación del sistema de subvenciones."
+        process_10_button: "Más información"
+        process_11_title: "Borrador de Plan de Calidad de Aire y Cambio Climático"
+        process_11_description: "Información y comunicación de las medidas propuestas en el borrador del nuevo plan de calidad del aire y cambio climático de la ciudad de Madrid."
+        process_11_button: "Más información"
+        process_12_title: "Consulta pública modificación Ordenanza Reguladora de la denominación y Rotulación de Vías, Espacios Urbanos"
+        process_12_description: "En el año 2007, se aprobó la denominada Ley de Memoria Histórica que tiene por objeto reconocer y ampliar derechos así como establecer medidas en favor de quienes padecieron persecución o violencia durante la guerra civil y la dictadura."
+        process_12_button: "Más información"
+        process_13_title: "Nuevo barrio en el distrito de Villa de Vallecas"
+        process_13_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear un nuevo barrio en el distrito de Villa de Vallecas denominado "Ensanche de Vallecas".'
+        process_13_button: "Más información"
+        process_14_title: "Atención a la ciudadanía de Línea Madrid"
+        process_14_description: 'El Proyecto Línea Madrid se enmarca dentro de uno de los principales objetivos del Ayuntamiento de Madrid como es la mejora continua en la prestación de servicios a la ciudadanía.'
+        process_14_button: "Más información"
+        process_15_title: "Nueva ordenanza de movilidad"
+        process_15_description: "Se pretende abrir un profundo debate en la ciudadanía que permita hallar soluciones eficaces y socialmente consensuadas a los problemas de la movilidad urbana presente y futura."
+        process_15_button: "Más información"
+        process_16_title: "Conservación, Rehabilitación y Estado Ruinoso de las Edificaciones"
+        process_16_description: "El Ayuntamiento de Madrid somete a consulta pública la aprobación de una nueva Ordenanza con el ánimo de proteger más eficazmente la calidad de vida de los ciudadanos en términos de sostenibilidad ambiental y cohesión social y territorial."
+        process_16_button: "Más información"
+        process_17_title: "Modificación de la ordenanza reguladora de la publicidad exterior"
+        process_17_description: "El objetivo de la modificación es conseguir una normativa más clara que facilite su aplicación, clarificando conceptos, ámbitos de aplicación y definiciones, eliminando exigencias innecesarias y referencias a normativas sectoriales."
+        process_17_button: "Más información"
+        process_18_title: "Nuevos barrios en el Distrito de Vicálvaro"
+        process_18_description: "El Ayuntamiento de Madrid somete a consulta pública la conveniencia de crear nuevos barrios en el Distrito de Vicálvaro."
+        process_18_button: "Más información"
+        process_19_title: 'Cambio de denominación  del barrio "San Andrés"'
+        process_19_description: 'El Ayuntamiento de Madrid somete a consulta pública la conveniencia de cambiar la denominación del "Barrio San Andrés" por el de "Villaverde Alto, Casco Histórico de Villaverde", en el Distrito de Villaverde.'
+        process_19_button: "Más información"
+        process_plaza_title: Remodelación de Plaza España
+        process_plaza_description: Selecciona el proyecto que más te guste para este nuevo espacio en tu ciudad.
+        more_info_title: "Ver más información del proceso "
+      process_1:
+        title: Ayúdanos a mejorar la Ordenanza de Transparencia de la Ciudad de Madrid
+        comment: dejar tus comentarios
+        text: |
+          Este es el texto sometido a consulta pública. En breve publicaremos el texto del proyecto inicial de Ordenanza que apruebe la Junta de Gobierno de la Ciudad de Madrid con las aportaciones ciudadanas que se hayan incluido.
+
+          La Ordenanza regulará la publicidad activa, el derecho de acceso y la reutilización de la información pública, así como el registro de lobbies, desde un principio básico de máxima transparencia y divulgación de la información que genera el Ayuntamiento de Madrid y el resto de los sujetos obligados por la norma.
+
+          Este texto, en cuya elaboración ha participado un nutrido grupo de representantes de diferentes áreas de gobierno y órganos directivos municipales, surge con la vocación de convertir la transparencia en uno de los ejes inspiradores de la actuación municipal y para lograr devolver la información que genera la Administración a sus verdaderos propietarios, los ciudadanos.
+
+          El proceso de consulta pública finalizó el 31 de Enero de 2016.
+
+        button: Ver borrador
+      process_3:
+        view_all: Ver propuestas y preguntas más votadas
+        view_questions: Ver todas las preguntas enviadas
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       more_info: "Más información sobre %{org_name}"
       privacy: Política de Privacidad
+      kit_decide: "Kit Decide: para hacer tus campañas de comunicación después de crear una propuesta"
     verify:
       code: Código que has recibido en tu carta
       email: Email

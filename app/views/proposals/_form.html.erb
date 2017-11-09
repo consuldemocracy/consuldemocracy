@@ -1,25 +1,38 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
   <%= render 'shared/errors', resource: @proposal %>
 
+  <% if @proposal.proceeding? %>
+    <h2 class="proceeding"><%= @proposal.proceeding %></h2>
+    <%= f.hidden_field :proceeding %>
+    <% if @proposal.sub_proceeding? && @proposal.errors[:sub_proceeding].empty? %>
+      <h3 class="sub-proceeding"><%= @proposal.sub_proceeding %></h3>
+      <%= f.hidden_field :sub_proceeding %>
+    <% else %>
+      <div class="row">
+        <div class="small-12 column">
+          <%= f.label :sub_proceeding, t("proposals.form.sub_proceeding") %>
+          <%= f.text_field :sub_proceeding, maxlength: 200, label: false,
+                            placeholder: t("proposals.form.sub_proceeding") %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
   <div class="row">
     <div class="small-12 column">
       <%= f.label :title, t("proposals.form.proposal_title") %>
-      <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
+      <%= f.text_field :title,
+                       label: false,
+                       maxlength: Proposal.title_max_length,
+                       placeholder: t("proposals.form.proposal_title"),
+                       data: @proposal.proceeding? ? {} : { js_suggest_result: "js_suggest_result",
+                                                            js_suggest: "#js-suggest",
+                                                            js_url: suggest_proposals_path } %>
     </div>
     <div id="js-suggest"></div>
 
     <%= f.invisible_captcha :subtitle %>
-
-    <div class="small-12 column">
-      <%= f.label :question, t("proposals.form.proposal_question") %>
-      <p class="help-text" id="question-help-text">
-        <%= t("proposals.form.proposal_question_example_html") %>
-      </p>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length,
-                                  placeholder: t("proposals.form.proposal_question"),
-                                  label: false,
-                                  aria: {describedby: "question-help-text"} %>
-    </div>
 
     <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
@@ -46,9 +59,11 @@
       <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
     </div>
 
-    <div class="images small-12 column">
-      <%= render 'images/nested_image', imageable: @proposal, f: f %>
-    </div>
+    <% if feature?(:allow_images) %>
+      <div class="images small-12 column">
+        <%= render 'images/nested_image', imageable: @proposal, f: f %>
+      </div>
+    <% end %>
 
     <div class="documents small-12 column">
       <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
@@ -78,14 +93,13 @@
       <p class="help-text" id="tag-list-help-text"><%= t("proposals.form.tags_instructions") %></p>
 
       <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("proposals.form.tag_category_label") %>
         <% @categories.each do |tag| %>
           <a class="js-add-tag-link"><%= tag.name %></a>
         <% end %>
       </div>
 
       <br>
-      <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
+      <%= f.text_field :tag_list, value: display_tag_list(@proposal),
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
                         class: 'js-tag-list tag-autocomplete',

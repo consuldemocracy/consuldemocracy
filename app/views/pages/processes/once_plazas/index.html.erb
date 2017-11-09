@@ -1,0 +1,98 @@
+<% provide :title, "Plan MAD-RE: Remodelación de 11 plazas en la periferia de Madrid" %>
+<% provide :meta_description, "Participa en el debate del concurso de ideas previo a la remodelación de 11 plazas públicas en los distritos de la periferia de Madrid." %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: once_plazas_url %>
+<% end %>
+<% provide :social_media_meta_tags do %>
+<!-- Facebook OG -->
+<meta property="og:url"           content="<%= once_plazas_url %>" />
+<meta property="og:title"         content="Plan MAD-RE: Remodelación de 11 plazas en la periferia de Madrid" />
+<meta property="og:image"         content="<%= image_url '/social_media_once_plazas.png' %>" />
+<meta property="og:description"   content="Participa en el debate del concurso de ideas previo a la remodelación de 11 plazas públicas en los distritos de la periferia de Madrid." />
+<!-- Twitter -->
+<meta name="twitter:card"          content="summary" />
+<meta name="twitter:site"          content="@decideMadrid" />
+<meta name="twitter:title"         content="Plan MAD-RE: Remodelación de 11 plazas en la periferia de Madrid" />
+<meta name="twitter:image"         content="<%= image_url '/social_media_once_plazas_twitter.png' %>" />
+<meta name="twitter:description"   content="Participa en el debate del concurso de ideas previo a la remodelación de 11 plazas públicas en los distritos de la periferia de Madrid." />
+<% end %>
+
+<div class="landing once-plazas">
+  <div class="expanded no-margin-top padding header">
+    <div class="row">
+      <div class="small-12 medium-8 column">
+        <%= back_link_to processes_path %>
+        <br>
+        <h1><span>Plan MAD-RE</span><br> Remodelación de 11 plazas en la periferia de Madrid</h1>
+        <p>La rehabilitación de los espacios públicos de nuestra ciudad continúa. El Ayuntamiento de Madrid te invita a participar con tus comentarios en la fase de debate del un concurso de ideas previo a iniciar para la remodelación de <strong>11 plazas públicas en los Distritos de la periferia de Madrid</strong>. Es una de las acciones incluidas en el <strong>Plan MAD-RE (Madrid Recupera)</strong>, que impulsa la regeneración de la ciudad.</p>
+      </div>
+      <div class="small-12 medium-4 column text-center">
+        <%= image_tag "once_plazas/logo_plan_madre.png", alt: "Logo Plan MAD-RE (Madrid Recupera)" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 column">
+      <p>Las personas registradas en Decide Madrid han contestado a tres preguntas sobre cada una de las plazas incluidas en el proceso:</p>
+
+      <ol>
+        <li>¿Qué opinas sobre la reforma de esta plaza?</li>
+        <li>¿Qué problemas crees que afectan a esta plaza?</li>
+        <li>Sugiere mejoras sobre su aspecto, uso, funcionalidades y otras características que te parezcan importantes</li>
+      </ol>
+
+      <p>Todos los comentarios han sido analizados y tenidos en cuenta por el Área de Desarrollo Urbano Sostenible del Ayuntamiento de Madrid.</p>
+    </div>
+  </div>
+
+  <% once_plazas = [
+    ["Plaza de la Remonta",            "1_plaza_remonta",                    "Tetuán",                "15", "363"],
+    ["Plaza de la Vaguada",            "2_plaza_vaguada",                    "Fuencarral - El Pardo", "16", "265"],
+    ["Plaza Cívica Lucero",            "3_plaza_civica_lucero",              "Latina",                "7",  "281"],
+    ["Plaza de la Emperatriz",         "4_plaza_emperatriz",                 "Carabanchel",           "10", "317"],
+    ["Plaza Puerto Canfranc",          "5_plaza_puerto_canfranc",            "Puente de Vallecas",    "14", "361"],
+    ["Plaza del Encuentro" ,           "6_plaza_encuentro",                  "Moratalaz",             "12", "350"],
+    ["Plaza de los Misterios" ,        "7_plaza_misterios",                  "Ciudad Lineal",         "11", "343"],
+    ["Plaza Cívica Mar de cristal",    "8_plaza_civica_mar_cristal",         "Hortaleza",             "8",  "495"],
+    ["Plaza Mayor Villaverde",         "9_plaza_conjunto_plazas_villaverde", "Villaverde",            "6",  "312"],
+    ["Plaza Cívica de San Blas",       "10_plaza_civica_san_blas",           "San Blas - Canillejas", "9",  "321"],
+    ["Plaza Duquesa de Osuna Barajas", "11_plaza_duquesa_osuna",             "Barajas",               "13", "272"]] %>
+
+  <div class="row" data-equalizer>
+    <% once_plazas.each do |name, slug, district, process_id, pdf_size| %>
+      <div class="small-12 medium-6 large-4 column figure-box end">
+        <div class="figure-container-card" data-equalizer-watch>
+          <figure class="figure-card">
+            <%= link_to "#{request.url}legislation/processes/#{process_id}/debate",
+                         title: "Ver proceso de #{name}" do %>
+              <%= image_tag "once_plazas/#{slug}.jpg", alt: "" %>
+            <% end %>
+            <figcaption>
+              <%= link_to "#{request.url}legislation/processes/#{process_id}/debate",
+                         title: "Ver proceso de #{name}" do %>
+                <span><%= district %></span><br>
+                <h3><%= name %></h3>
+              <% end %>
+            </figcaption>
+          </figure>
+          <ul class="no-bullet">
+            <li>
+              <%= link_to "/docs/procesos/once_plazas/#{slug}.pdf", target: "_blank",
+                          title: "Descargar mapa informativo de #{name} PDF - #{pdf_size}Kb (se abre en ventana nueva)" do %>
+                <%= image_tag "budgets_materials_2017/icon_diptico.png", alt: "" %><span class="attachment">Mapa de <%= name %></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#{request.url}legislation/processes/#{process_id}/debate",
+                          class: "button hollow expanded text-center margin-top",
+                          title: "Ver proceso de #{name}" do %>
+                  Ver proceso <%= name %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

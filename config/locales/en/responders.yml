@@ -11,6 +11,8 @@ en:
         poll_question_answer: "Answer created successfully"
         poll_question_answer_video: "Video created successfully"
         proposal: "Proposal created successfully."
+        spending_proposal: "Investment project created successfully. You can access it from %{activity}"
+        representative: "You have updated your representative"
         proposal_notification: "Your message has been sent correctly."
         spending_proposal: "Spending proposal created successfully. You can access it from %{activity}"
         budget_investment: "Budget Investment created successfully."
@@ -29,6 +31,7 @@ en:
         topic: "Topic updated successfully."
       destroy:
         spending_proposal: "Spending proposal deleted succesfully."
+        representative: "You do not have a representative anymore."
         budget_investment: "Investment project deleted succesfully."
         error: "Could not delete"
         topic: "Topic deleted successfully."
