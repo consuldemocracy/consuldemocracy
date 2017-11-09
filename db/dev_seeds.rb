@@ -87,6 +87,12 @@ section "Creating Users" do
     )
   end
 
+  def unique_document_number
+    @document_number ||= 12345678
+    @document_number = @document_number + 1
+    @document_number.to_s
+  end
+
   admin = create_user('admin@consul.dev', 'admin')
   admin.create_administrator
   admin.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
