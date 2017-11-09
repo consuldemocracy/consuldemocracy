@@ -165,21 +165,21 @@ section "Creating Users" do
 end
 
 section "Creating Tags Categories" do
-  ActsAsTaggableOn::Tag.category.create!(name:  "Asociaciones")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Cultura")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Deportes")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Derechos Sociales")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Economía")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Empleo")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Equidad")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Sostenibilidad")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Participación")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Movilidad")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Medios")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Salud")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Transparencia")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Seguridad y Emergencias")
-  ActsAsTaggableOn::Tag.category.create!(name:  "Medio Ambiente")
+  ActsAsTaggableOn::Tag.category.create!(name: "Asociaciones")
+  ActsAsTaggableOn::Tag.category.create!(name: "Cultura")
+  ActsAsTaggableOn::Tag.category.create!(name: "Deportes")
+  ActsAsTaggableOn::Tag.category.create!(name: "Derechos Sociales")
+  ActsAsTaggableOn::Tag.category.create!(name: "Economía")
+  ActsAsTaggableOn::Tag.category.create!(name: "Empleo")
+  ActsAsTaggableOn::Tag.category.create!(name: "Equidad")
+  ActsAsTaggableOn::Tag.category.create!(name: "Sostenibilidad")
+  ActsAsTaggableOn::Tag.category.create!(name: "Participación")
+  ActsAsTaggableOn::Tag.category.create!(name: "Movilidad")
+  ActsAsTaggableOn::Tag.category.create!(name: "Medios")
+  ActsAsTaggableOn::Tag.category.create!(name: "Salud")
+  ActsAsTaggableOn::Tag.category.create!(name: "Transparencia")
+  ActsAsTaggableOn::Tag.category.create!(name: "Seguridad y Emergencias")
+  ActsAsTaggableOn::Tag.category.create!(name: "Medio Ambiente")
 end
 
 section "Creating Debates" do
