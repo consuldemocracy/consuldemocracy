@@ -581,15 +581,9 @@ section "Creating Poll Questions & Answers" do
   end
 end
 
-section "Creating Poll Booths" do
-  20.times.each_with_index do |i|
-    Poll::Booth.create(name: "Booth #{i}", polls: [Poll.all.sample])
-  end
-end
-
-section "Creating Booth Assignments" do
-  Poll::Booth.all.each do |booth|
-    Poll::BoothAssignment.create(booth: booth, poll: Poll.all.sample)
+section "Creating Poll Booths & BoothAssignments" do
+  20.times do |i|
+    Poll::Booth.create(name: "Booth #{i}", location: Faker::Address.street_address, polls: [Poll.all.sample])
   end
 end
 
