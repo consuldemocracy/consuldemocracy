@@ -104,9 +104,9 @@ section "Creating Users" do
   manager = create_user('manager@consul.dev', 'manager')
   manager.create_manager
 
-  @valuator = create_user('valuator@consul.dev', 'valuator')
-  @valuator.create_valuator
-  @valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
+  valuator = create_user('valuator@consul.dev', 'valuator')
+  valuator.create_valuator
+  valuator.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer = create_user('poll_officer@consul.dev', 'Paul O. Fisher')
@@ -388,7 +388,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..17).to_a.sample.times do
-    SpendingProposal.reorder("RANDOM()").first.valuators << @valuator.valuator
+    SpendingProposal.reorder("RANDOM()").first.valuators << Valuator.first
   end
 end
 
@@ -476,7 +476,7 @@ end
 
 section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
-    Budget::Investment.reorder("RANDOM()").first.valuators << @valuator.valuator
+    Budget::Investment.reorder("RANDOM()").first.valuators << Valuator.first
   end
 end
 
