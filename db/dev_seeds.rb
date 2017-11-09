@@ -621,32 +621,29 @@ section "Commenting Poll Questions" do
 end
 
 section "Creating Poll Voters" do
-  10.times do
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
-  end
-  10.times do
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_active_geolocalized.id, user_id: user.id, document_number: user.document_number, origin: 'booth')
-  end
-  10.times do
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-    user = User.level_two_verified.sample
-    Poll::Voter.create(poll_id: @poll_expired.id, user_id: user.id, document_number: user.document_number, origin: 'web')
-  end
-end
+  (Poll.expired + Poll.current + Poll.recounting).uniq.each do |poll|
+    level_two_verified_users = User.level_two_verified
+    level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids) if poll.geozone_restricted?
 
-section "Creating Poll Answers" do
-  Poll::Voter.all.each do |voter|
-    voter.poll.questions.each do |question|
-      answer = question.question_answers.sample
-      unless answer.nil?
-        Poll::Answer.create(question_id: question.id, author_id: voter.user_id, answer: answer.title)
+    level_two_verified_users.each_with_index do |user, i|
+      if i.even?
+        poll.questions.each do |question|
+          next unless [true, false].sample
+          Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
+        end
+        Poll::Voter.create!(document_type: user.document_type,
+                            document_number: user.document_number,
+                            user: user,
+                            poll: poll,
+                            origin: 'web',
+                            token: SecureRandom.hex(32))
+      else
+        Poll::Voter.create!(document_type: user.document_type,
+                            document_number: user.document_number,
+                            user: user,
+                            poll: poll,
+                            officer: Poll::Officer.all.sample,
+                            origin: 'booth')
       end
     end
   end
