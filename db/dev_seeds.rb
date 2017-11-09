@@ -159,9 +159,6 @@ section "Creating Users" do
       user.update(verified_at: Time.current, document_number: unique_document_number)
     end
   end
-
-  org_user_ids = User.organizations.pluck(:id)
-  @not_org_users = User.where(['users.id NOT IN(?)', org_user_ids])
 end
 
 section "Creating Tags Categories" do
@@ -321,22 +318,23 @@ section "Commenting Comments" do
 end
 
 section "Voting Debates, Proposals & Comments" do
+  not_org_users = User.where(['users.id NOT IN(?)', User.organizations.pluck(:id)])
   100.times do
-    voter  = @not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+    voter  = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
     vote   = [true, false].sample
     debate = Debate.reorder("RANDOM()").first
     debate.vote_by(voter: voter, vote: vote)
   end
 
   100.times do
-    voter  = @not_org_users.reorder("RANDOM()").first
+    voter  = not_org_users.reorder("RANDOM()").first
     vote   = [true, false].sample
     comment = Comment.reorder("RANDOM()").first
     comment.vote_by(voter: voter, vote: vote)
   end
 
   100.times do
-    voter = @not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
+    voter = not_org_users.level_two_or_three_verified.reorder("RANDOM()").first
     proposal = Proposal.reorder("RANDOM()").first
     proposal.vote_by(voter: voter, vote: true)
   end
