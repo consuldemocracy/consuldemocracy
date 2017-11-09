@@ -89,8 +89,8 @@ section "Creating Users" do
 
   def unique_document_number
     @document_number ||= 12345678
-    @document_number = @document_number + 1
-    @document_number.to_s
+    @document_number += 1
+    "#{@document_number}#{[*'A'..'Z'].sample}"
   end
 
   admin = create_user('admin@consul.dev', 'admin')
