@@ -621,29 +621,41 @@ section "Commenting Poll Questions" do
 end
 
 section "Creating Poll Voters" do
+
+  def vote_poll_on_booth(user, poll)
+    Poll::Voter.create!(document_type: user.document_type,
+                        document_number: user.document_number,
+                        user: user,
+                        poll: poll,
+                        origin: 'booth',
+                        officer: Poll::Officer.all.sample)
+  end
+
+  def vote_poll_on_web(user, poll)
+    randomly_answer_questions(poll, user)
+    Poll::Voter.create!(document_type: user.document_type,
+                        document_number: user.document_number,
+                        user: user,
+                        poll: poll,
+                        origin: 'web',
+                        token: SecureRandom.hex(32))
+  end
+
+  def randomly_answer_poll_questions(poll, user)
+    poll.questions.each do |question|
+      next unless [true, false].sample
+      Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
+    end
+  end
+
   (Poll.expired + Poll.current + Poll.recounting).uniq.each do |poll|
     level_two_verified_users = User.level_two_verified
     level_two_verified_users = level_two_verified_users.where(geozone_id: poll.geozone_ids) if poll.geozone_restricted?
-
     level_two_verified_users.each_with_index do |user, i|
       if i.even?
-        poll.questions.each do |question|
-          next unless [true, false].sample
-          Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
-        end
-        Poll::Voter.create!(document_type: user.document_type,
-                            document_number: user.document_number,
-                            user: user,
-                            poll: poll,
-                            origin: 'web',
-                            token: SecureRandom.hex(32))
+        vote_poll_on_web(user, poll)
       else
-        Poll::Voter.create!(document_type: user.document_type,
-                            document_number: user.document_number,
-                            user: user,
-                            poll: poll,
-                            officer: Poll::Officer.all.sample,
-                            origin: 'booth')
+        vote_poll_on_booth(user, poll)
       end
     end
   end
