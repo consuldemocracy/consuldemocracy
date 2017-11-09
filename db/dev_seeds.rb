@@ -122,8 +122,8 @@ section "Creating Users" do
   create_user('unverified@consul.dev', 'unverified')
 
   level_2 = create_user('leveltwo@consul.dev', 'level 2')
-  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_number: unique_document_number,
-                 document_type: "1")
+  level_2.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number,
+                 document_number: unique_document_number, document_type: "1")
 
   verified = create_user('verified@consul.dev', 'verified')
   verified.update(residence_verified_at: Time.current, confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
