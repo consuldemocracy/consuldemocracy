@@ -609,32 +609,6 @@ section "Creating Poll Shifts for Poll Officers" do
   end
 end
 
-section "Creating Poll Questions from Proposals" do
-  3.times do
-    proposal = Proposal.all.sample
-    poll = Poll.current.first
-    question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
-    end
-    question.copy_attributes_from_proposal(proposal)
-    question.save!
-  end
-end
-
-section "Creating Successful Proposals" do
-  10.times do
-    proposal = Proposal.all.sample
-    poll = Poll.current.first
-    question = Poll::Question.create(poll: poll)
-    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
-      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
-    end
-    question.copy_attributes_from_proposal(proposal)
-    question.save!
-  end
-end
-
 section "Commenting Poll Questions" do
   30.times do
     author = User.all.sample
@@ -715,6 +689,32 @@ section "Creating Poll Results" do
         end
       end
     end
+  end
+end
+
+section "Creating Poll Questions from Proposals" do
+  3.times do
+    proposal = Proposal.all.sample
+    poll = Poll.current.first
+    question = Poll::Question.create(poll: poll)
+    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+    end
+    question.copy_attributes_from_proposal(proposal)
+    question.save!
+  end
+end
+
+section "Creating Successful Proposals" do
+  10.times do
+    proposal = Proposal.all.sample
+    poll = Poll.current.first
+    question = Poll::Question.create(poll: poll)
+    Faker::Lorem.words((2..4).to_a.sample).each do |answer|
+      Poll::Question::Answer.create!(question: question, title: answer.capitalize, description: Faker::ChuckNorris.fact)
+    end
+    question.copy_attributes_from_proposal(proposal)
+    question.save!
   end
 end
 
