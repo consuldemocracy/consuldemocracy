@@ -14,6 +14,7 @@
   * [macOS](getting_started/prerequisites/macos.md)
   * [Windows](getting_started/prerequisites/windows.md)
 * [Instalación local](getting_started/installation.md)
+  * [Servidor local de correo](getting_started/dev_mailserver.md)
 * [Servidores de prueba y producción](getting_started/servers.md)
 * [Recomendaciones](getting_started/recomendations.md)
 
