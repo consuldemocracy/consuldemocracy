@@ -67,7 +67,6 @@ group :development, :test do
   gem 'launchy', '~> 2.4.3'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'quiet_assets', '~> 1.1.0'
-  gem 'rubocop', '~> 0.49.1', require: false
   gem 'spring', '~> 2.0.1'
   gem 'spring-commands-rspec', '~> 1.0.4'
 end
@@ -87,6 +86,7 @@ group :development do
   gem "capistrano-rails", '~> 1.2.3', require: false
   gem 'capistrano3-delayed-job', '~> 1.7.3'
   gem 'mdl', '~> 0.4.0', require: false
+  gem 'rubocop', '~> 0.49.1', require: false
   gem 'rvm1-capistrano3', '~> 1.4.0', require: false
   gem 'scss_lint', '~> 0.54.0', require: false
   gem 'web-console', '~> 3.3.0'
