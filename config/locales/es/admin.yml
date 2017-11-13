@@ -1,11 +1,10 @@
----
 es:
   admin:
     header:
       title: Administración
     actions:
       actions: Acciones
-      confirm: "¿Estás seguro?"
+      confirm: '¿Estás seguro?'
       confirm_hide: Confirmar
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -27,8 +26,8 @@ es:
         preview: Vista previa
       banner:
         title: Título
-        description:  Descripción
-        target_url:  Enlace
+        description: Descripción
+        target_url: Enlace
         style: Estilo
         image: Imagen
         post_started_at: Inicio de publicación
@@ -41,7 +40,7 @@ es:
         form:
           error:
             one: "error impidió guardar el banner"
-            other: "errores impidieron guardar el banner."
+            other: 'errores impidieron guardar el banner.'
       new:
         creating: Crear banner
     activity:
@@ -60,7 +59,7 @@ es:
           on_debates: Debates
           on_proposals: Propuestas
           on_users: Usuarios
-        title: Actividad de Moderadores
+        title: Actividad de los Moderadores
         type: Tipo
         no_activity: No hay actividad de moderadores.
     budgets:
@@ -80,7 +79,7 @@ es:
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
       create:
-        notice: ¡Nueva campaña de presupuestos participativos creada con éxito!
+        notice: '¡Nueva campaña de presupuestos participativos creada con éxito!'
       update:
         notice: Campaña de presupuestos participativos actualizada
       edit:
@@ -148,7 +147,7 @@ es:
         assigned_admin: Administrador asignado
         assigned_valuators: Evaluadores asignados
         classification: Clasificación
-        info: "%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}"
+        info: '%{budget_name} - Grupo: %{group_name} - Propuesta de inversión %{id}'
         edit: Editar
         edit_classification: Editar clasificación
         by: Autor
@@ -170,7 +169,7 @@ es:
           "true": Seleccionado
           "false": No seleccionado
         winner:
-          title: Ganador
+          title: Ganadora
           "true": "Si"
           "false": "No"
       edit:
@@ -392,18 +391,6 @@ es:
           comments_count: Número de comentarios
         question_option_fields:
           remove_option: Eliminar
-    administrators:
-      index:
-        title: Administradores
-        name: Nombre
-        email: Email
-        no_administrators: No hay administradores.
-      administrator:
-        add: Añadir como Administrador
-        delete: Borrar
-        restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
-      search:
-        title: "Administradores: Búsqueda de usuarios"
     managers:
       index:
         title: Gestores
@@ -419,16 +406,16 @@ es:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
+      poll_questions: Preguntas ciudadanas
       proposals_topics: Temas de propuestas
-      poll_questions: Preguntas de votaciones
       budgets: Presupuestos participativos
       geozones: Gestionar distritos
       hidden_comments: Comentarios ocultos
       hidden_debates: Debates ocultos
       hidden_proposals: Propuestas ocultas
       hidden_users: Usuarios bloqueados
-      managers: Gestores
       administrators: Administradores
+      managers: Gestores
       moderators: Moderadores
       newsletter: Envío de Newsletters
       valuators: Evaluadores
@@ -456,6 +443,18 @@ es:
       title_site_customization: Personalizar sitio
       legislation: Legislación colaborativa
       users: Usuarios
+    administrators:
+      index:
+        title: Administradores
+        name: Nombre
+        email: Email
+        no_administrators: No hay administradores.
+      administrator:
+        add: Añadir como Administrador
+        delete: Borrar
+        restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
+      search:
+        title: 'Administradores: Búsqueda de usuarios'
     moderators:
       index:
         title: Moderadores
@@ -480,7 +479,7 @@ es:
         no_description: Sin descripción
         no_valuators: No hay evaluadores.
       valuator:
-        description_placeholder: "Descripción (opcional)"
+        description_placeholder: 'Descripción (opcional)'
         add: Añadir como evaluador
       search:
         title: 'Evaluadores: Búsqueda de usuarios'
@@ -553,8 +552,8 @@ es:
           assigned: Asignada
           unassigned: No asignada
         actions:
-          assign: Assign booth
-          unassign: Unassign booth
+          assign: Asignar urna
+          unassign: Asignar urna
     poll_booth_assignments:
       flash:
         destroy: "Urna desasignada"
@@ -571,8 +570,8 @@ es:
         results: "Resultados"
         date: "Fecha"
         count_final: "Recuento final (presidente de mesa)"
-        count_by_system:  "Votos (automático)"
-        total_system: "Votos totales acumulados(automático)"
+        count_by_system: "Votos (automático)"
+        total_system: Votos totales acumulados(automático)
       index:
         booths_title: "Listado de urnas asignadas"
         no_booths: "No hay urnas asignadas a esta votación."
@@ -613,8 +612,8 @@ es:
         title: "Preguntas de votaciones"
         create: "Crear pregunta ciudadana"
         no_questions: "No hay ninguna pregunta ciudadana."
-        filter_poll: "Filtrar por votación"
-        select_poll: "Seleccionar votación"
+        filter_poll: Filtrar por votación
+        select_poll: Seleccionar votación
         questions_tab: "Preguntas"
         successful_proposals_tab: "Propuestas que han superado el umbral"
         create_question: "Crear pregunta para votación"
@@ -651,8 +650,6 @@ es:
     answers:
       new:
         title: Nueva respuesta
-        video_url: Video externo
-        documents: Documentos (1)
       show:
         title: Título
         description: Descripción
@@ -666,7 +663,7 @@ es:
           title: Vídeos
           add_video: Añadir vídeo
           video_title: Título
-          video_url: External video
+          video_url: Vídeo externo
         new:
           title: Nuevo video
         edit:
@@ -683,9 +680,9 @@ es:
         title: "Resultados"
         no_results: "No hay resultados"
       result:
-        table_whites: Papeletas totalmente en blanco
-        table_nulls: Papeletas nulas
-        table_total: Papeletas totales
+        table_whites: "Papeletas totalmente en blanco"
+        table_nulls: "Papeletas nulas"
+        table_total: "Papeletas totales"
         table_answer: Respuesta
         table_votes: Votos
       results_by_booth:
@@ -818,8 +815,8 @@ es:
       search_results: "Resultados de la búsqueda"
       no_search_results: "No se han encontrado resultados."
       actions: Acciones
-      title: "Título"
-      description: "Descripción"
+      title: Título
+      description: Descripción
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -848,7 +845,7 @@ es:
         assigned_valuators: Evaluadores asignados
         back: Volver
         classification: Clasificación
-        heading: Propuesta de inversión %{id}
+        heading: "Propuesta de inversión %{id}"
         edit: Editar
         edit_classification: Editar clasificación
         association_name: Asociación
@@ -891,7 +888,7 @@ es:
         form:
           error:
             one: "error impidió guardar el distrito"
-            other: "errores impidieron guardar el distrito."
+            other: 'errores impidieron guardar el distrito.'
       edit:
         form:
           submit_button: Guardar cambios
