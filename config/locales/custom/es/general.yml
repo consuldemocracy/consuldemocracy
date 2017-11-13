@@ -12,6 +12,11 @@ es:
         title: Ayuda sobre los debates ciudadanos
         description: Inicia un debate para compartir puntos de vista con otras personas sobre los temas que te preocupan de la ciudad de Madrid.
         help_text_1: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas, preferentemente relacionados con la ciudad de Madrid."
+    show:
+      questions:
+        one: 1 pregunta
+        other: "%{count} preguntas"
+        zero: Sin preguntas
   proposals:
     index:
       section_header:
@@ -26,6 +31,8 @@ es:
         help_text_2: "Para crear una propuesta hay que registrarse en %{org}. Las propuestas que consigan el apoyo del 1% de la gente (personas mayores de 16 años empadronadas en Madrid; 27.064 apoyos) en la web, pasan a votación. Para apoyar propuestas es necesario tener una cuenta verificada."
         help_text_3: "El Ayuntamiento de Madrid convoca una votación ciudadana cuando las propuestas consiguen los apoyos necesarios. Una vez celebrada, si hay más gente a favor que en contra, el Consistorio asume la propuesta y la lleva a cabo."
         help_text_4: 'En febrero de 2017 tuvo lugar la primera votación ciudadana en la que se aprobaron las propuestas "Madrid 100% sostenible" y "Billete único para el transporte público".'
+    form:
+      sub_proceeding: "Derecho"
   polls:
     index:
       title: Vota once plazas en Decide Madrid
@@ -65,10 +72,73 @@ es:
     footer:
       copyright: Ayuntamiento de Madrid, %{year}
       description: Este portal usa la %{consul} que es %{open_source}. De Madrid, para el mundo entero.
+      open_source: software libre
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Decide cómo debe ser la ciudad de Madrid que quieres.
+      transparency_url: http://transparencia.madrid.es
     header:
       logo: "Decide Madrid: portal de participación ciudadana del Ayuntamiento de Madrid."
-  form:
-    budget/investment: el proyecto de gasto
+      external_link_opendata_url: http://datos.madrid.es
+      external_link_transparency: Transparencia
+      external_link_transparency_url: http://transparencia.madrid.es
+      forums: "Foros Locales"
+      help_translate: Ayúdanos a traducir
+      help_translate_info: Cómo ayudar
+      delegation: Delegación
+  shared:
+    probe_plaza_banner: "#RemodelaciónPlazaEspaña"
+  spending_proposals:
+    form:
+      geozone: "Elige si es una propuesta para toda la ciudad o para un distrito"
+    index:
+      unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+      unfeasible_text_definitions: ver definiciones aquí
+    new:
+      recommendation_one: Consulta los %{requirements}.
+      recommendation_one_link: requisitos que debe cumplir una propuesta
+    spending_proposal:
+      vote: Votar
+    header:
+      check_ballot: Revisar mis votos
+      different_district_active: "Ya apoyaste propuestas de otro distrito:"
+      different_district_active_info: "(Si retiras todos los votos de este distrito puedes seleccionar otro)"
+    results:
+      page_title: "Presupuestos participativos | Resultados"
+      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
+      geozone_selection_title: "Ámbito de actuación"
+      spending_proposal: Título
+      ballot_lines_count: Votos
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Coste
+      amount_available: Presupuesto disponible
+      incompatible: Incompatibles
+      accepted: "Propuesta de inversión aceptada: "
+      discarded: "Propuesta de inversión descartada: "
+    stats:
+      page_title: "Presupuestos participativos | Estadísticas de participación"
+      heading: "PRESUPUESTOS PARTICIPATIVOS"
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
+  ballots:
+    show:
+      city_link: Votar para toda la ciudad
+      city_wide: Toda la ciudad
+      districts_link: Votar propuestas de distrito
+      district_wide: Distrito
+      title: Mis votos
+      amount_spent: Coste total
+      remaining_city_html: "Te quedan <span>%{amount_city}</span> para invertir en toda la ciudad."
+      remaining_district_html: "Te quedan <span>%{amount_district}</span> para invertir en <span>%{geozone}</span>."
+      remove: Quitar voto
+      social_share: He decidido dónde quiero que se inviertan %{amount} para %{geozone}. ¡Participa!
+      voted_html:
+        one: "Has votado <span>una</span> propuesta."
+        other: "Has votado <span>%{count}</span> propuestas."
+      voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
+      zero: "Todavía no has votado ninguna propuesta de inversión."
   social:
     blog_link: "Blog"
     facebook_link: "Facebook"
@@ -76,29 +146,28 @@ es:
     youtube_link: "YouTube"
     telegram_link: "Telegram"
     instagram_link: "Instagram"
+  users:
+    show:
+      delete_spending_proposal: Borrar
+      confirm_deletion_spending_proposal: Estas seguro? Esta acción no puede deshacerse
+      ballot_link_text:
+        zero: No has votado en ninguna propuesta aún.
+        one: Has votado una propuesta con un coste de %{amount_spent}.
+        other: Has votado %{count} propuestas con un coste de %{amount_spent}.
+      ballot_verified_only: Sólo usuarios verificados pueden votar en presupuestos participativos, %{verify_account}.
+      verify_account: verifica tu cuenta
   welcome:
-    title: "Decide Madrid: espacio de participación ciudadana del Ayuntamiento de Madrid"
+    title: "Decide Madrid: portal of citizen participation of the City of Madrid"
     featured:
-      features: "Participa en %{org_name}"
+      features: "Participar en %{org_name}"
       label: "Participa"
       proposals:
         title: Crea propuestas ciudadanas
-        text: "¿Tienes una idea para Madrid? Proponla. Si el 1% de los madrileños la apoya, votaremos si llevarla a cabo."
+        text: "¿Tienes una idea para Madrid? Proponla. Si consigue el apoyo de un 1% de la población de Madrid, se hará una votación ciudadana."
         link: Ver propuestas ciudadanas
-        alt_image: "Imagen genérica relacionada con las propuestas ciudadanas del Ayuntamiento de Madrid."
+        alt_image: "Generic image related with proposals of the City of Madrid."
       budgets:
-        title: "Decide a qué proyectos se destina el presupuesto participativo"
-        text: "Tú propones y decides en qué invierte el Ayuntamiento una parte del presupuesto municipal."
-        link: Ver proyectos de gasto
-        alt_image: "Imagen genérica relacionada con los presupuestos participativos del Ayuntamiento de Madrid."
-  users:
-    show:
-      delete_spending_proposal: Eliminar
-      confirm_deletion_spending_proposal: "¿Seguro que desea eliminar esta propuesta?"
-      ballot_link_text:
-        zero: Todavía no has votado por ningún proyecto.
-        one: "Has votado un proyecto por un valor de %{amount_spent}."
-        other: "Has votado %{count} proyectos por un valor de %{amount_spent}."
-      ballot_verified_only: En que invertir los presupuestos participativos lo deciden sólo los usuarios verificados, %{verify_account}.
-      verify_account: verifica tu cuenta
-
+        title: "Decide que proyectos de inversión se llevan a cabo"
+        text: "Tu propones y decides en que se gasta el presupuesto municipal."
+        link: Ver proyectos de inversión
+        alt_image: "Generic image related with budgets of the City of Madrid."

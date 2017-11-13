@@ -28,9 +28,9 @@ es:
         edit_button: Editar
         destroy_button: Eliminar
         comments:
+          zero: Sin comentarios
           one: 1 Comentario
           other: "%{count} Comentarios"
-          zero: Sin comentarios
     topic:
       create: Crear un tema
       edit: Editar tema

@@ -91,7 +91,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     @proposals = ::Legislation::Proposal.where(process: @process).order('random()').page(params[:page])
 
     if @process.proposals_phase.started? || (current_user && current_user.administrator?)
-      set_legislation_proposal_votes(@proposals)
+      legislation_proposal_votes(@proposals)
       render :proposals
     else
       render :phase_not_open
