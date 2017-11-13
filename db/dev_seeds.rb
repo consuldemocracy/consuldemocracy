@@ -641,7 +641,7 @@ section "Creating Poll Voters" do
                         token: SecureRandom.hex(32))
   end
 
-  def randomly_answer_poll_questions(poll, user)
+  def randomly_answer_questions(poll, user)
     poll.questions.each do |question|
       next unless [true, false].sample
       Poll::Answer.create!(question_id: question.id, author: user, answer: question.question_answers.sample.title)
