@@ -2,116 +2,153 @@ fr:
   budgets:
     ballots:
       show:
-        title: Votre vote
-        amount_spent: Montant dépensé
-        remaining: "Il vous reste <span>%{amount}</span> à investir."
-        no_balloted_group_yet: "Vous n'avez pas encore voté dans ce groupe, allez voter !"
-        remove: Supprimer le vote
+        title: Your ballot
+        amount_spent: Amount spent
+        remaining: "You still have <span>%{amount}</span> to invest."
+        no_balloted_group_yet: "You have not voted on this group yet, go vote!"
+        remove: Remove vote
         voted_html:
-          one: "Vous avez voté pour <span>une</span> proposition."
-          other: "Vous avez voté pour <span>%{count}</span> propositions."
-        voted_info_html: "Vous pouvez modifier votre vote à tout moment jusqu'à la fin de cette phase.<br> Vous n'avez pas besoin de dépenser tout le budget disponible."
-        zero: "Vous n'avez voté pour aucune des propositions d'investissement."
+          one: "You have voted <span>one</span> investment."
+          other: "You have voted <span>%{count}</span> investments."
+        voted_info_html: "You can change your vote at any time until the close of this phase.<br> No need to spend all the money available."
+        zero: You have not voted any investment project.
       reasons_for_not_balloting:
-        not_logged_in: Vous devez %{signin} ou %{signup} pour continuer.
-        not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions, %{verify_account}.
-        organization: Les organisations ne sont pas autorisées à voter.
-        not_selected: Les propositions d'investissement non-sélectionnées ne peuvent être soutenues.
-        not_enough_money: "Vous n'avez pas assez de fonds."
-        no_ballots_allowed: La phase de sélection est terminée.
-        different_heading_assigned: Vous avez déjà voté pour une autre section de cette proposition.
+        not_logged_in: You must %{signin} or %{signup} to continue.
+        not_verified: Only verified users can vote on investments; %{verify_account}.
+        organization: Organizations are not permitted to vote
+        not_selected: Unselected investment projects can not be supported
+        not_enough_money_html: "You have already assigned the available budget.<br><small>Remember you can %{change_ballot} at any time</small>"
+        no_ballots_allowed: Selecting phase is closed
+        different_heading_assigned: You have already voted a different heading
+        change_ballot: change your votes
     groups:
       show:
-        title: Sélectionner une option
-        unfeasible_title: Investissements infaisables
-        unfeasible: Voir les investissements infaisables
-        unselected_title: Investissements non-sélectionnés pour la phase de vote
-        unselected: Voir les investissements non-sélectionnés pour la phase de vote
+        title: Select an option
+        unfeasible_title: Unfeasible investments
+        unfeasible: See unfeasible investments
+        unselected_title: Investments not selected for balloting phase
+        unselected: See investments not selected for balloting phase
     phase:
-      accepting: Présentation des projets
-      reviewing: Revue interne des projets
-      selecting: Phase de sélection
-      valuating: Évaluation des projets
-      balloting: Vote final
-      reviewing_ballots: Clôture des votes
-      finished: Résultats
+      accepting: Accepting projects
+      reviewing: Reviewing projects
+      selecting: Selecting projects
+      valuating: Valuating projects
+      balloting: Balloting projects
+      reviewing_ballots: Reviewing Ballots
+      finished: Finished budget
     index:
-      title: Budgets participatifs
+      title: Participatory budgets
+      section_header:
+        icon_alt: Participatory budgets icon
+        title: Participatory budgets
+        help: Help about participatory budgets
+      section_footer:
+        title: Help about participatory budgets
+        description: With the participatory budgets the citizens decide to which projects presented by the neighbors is destined a part of the municipal budget.
+        help_text_1: "Participatory budgets are processes in which citizens decide directly on what is spent part of the municipal budget. Any registered person over 16 years old can propose an investment project that is preselected in a phase of citizen supports."
+        help_text_2: "The most voted projects are evaluated and passed to a final vote in which they decide the actions to be carried out by the City Council once the municipal budgets of the next year are approved."
+        help_text_3: "The presentation of participatory budgeting projects takes place from January and over a period of one and a half months. To participate and propose proposals for the entire city and / or districts, you must sign up on %{org} and verify your account."
+        help_text_4: "To get as many supports and votes as possible, choose a descriptive and understandable headline for your project. Then you have a space to develop the approach of your proposal. Provide all the data and explanations, and even documents and images, to help other participants to better understand what you are proposing."
     investments:
       form:
-        tag_category_label: "Catégories"
-        tags_instructions: "Marquez cette proposition. Vous pouvez choisir parmi les catégories proposées ou en ajouter"
-        tags_label: Sujets
-        tags_placeholder: "Saisissez les étiquettes que vous souhaitez utiliser, séparées par des virgules (',')"
+        tag_category_label: "Categories"
+        tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
+        tags_label: Tags
+        tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
+        map_location: "Map location"
+        map_location_instructions: "Navigate the map to the location and place the marker."
+        map_remove_marker: "Remove map marker"
       index:
-        title: Budget participatif
-        unfeasible: Propositions d'investissement infaisables
-        unfeasible_text: "Les propositions doivent satisfaire un certain nombre de critères (être légale, concrète, relever des compétences de la Ville, ne pas dépasser le plafond des budgets, %{definitions}) pour être déclarer viable et atteindre le stade final des votes. Toutes les propositions qui ne respectent pas ces critères sont identifiées comme infaisables et publiées dans la liste suivante, accompagnées de leur rapport d'infaisabilité."
-        unfeasible_text_definitions: voir les définitions ici
-        by_heading: "Portée des propositions d'investissement: %{heading}"
+        title: Participatory budgeting
+        unfeasible: Unfeasible investment projects
+        unfeasible_text: "The proposals must meet a number of criteria (legality, concreteness, be the responsibility of the city, not exceed the limit of the budget; %{definitions}) to be declared viable and reach the stage of final vote. All proposals don't meet these criteria are marked as unfeasible and published in the following list, along with its report of infeasibility."
+        unfeasible_text_definitions: see definitions here
+        by_heading: 'Investment projects with scope: %{heading}'
         search_form:
-          button: Rechercher
-          placeholder: Rechercher des propositions d'investissement...
-          title: Recherche
-        search_results:
-          one: " contenant le terme '%{search_term}'"
-          other: " contenant les termes '%{search_term}'"
+          button: Search
+          placeholder: Search investment projects...
+          title: Search
+        search_results_html:
+          one: " containing the term <strong>'%{search_term}'</strong>"
+          other: " containing the term <strong>'%{search_term}'</strong>"
         sidebar:
-          my_ballot: Mon vote
+          my_ballot: My ballot
           voted_html:
-            one: "<strong>Vous avez voté une proposition pour un coût de %{amount_spent}</strong>"
-            other: "<strong>Vous avez voté %{count} propositions pour un coût de %{amount_spent}</strong>"
-          voted_info: Vous pouvez %{link} à tout moment jusqu'à la clôture de cette phase. Vous n'avez pas besoin de dépenser tout le budget disponible.
-          voted_info_link: modifier votre vote
-          different_heading_assigned_html: "Vous avez des votes actifs dans une autre section : %{heading_link}"
-          zero: Vous n'avez voté pour aucune proposition d'investissement dans ce groupe.
-          verified_only: "Pour créer une proposition d'investissement %{verify}."
-          verify_account: "vérifiez votre compte"
-          create: "Créer une proposition d'investissement"
-          not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
-          sign_in: "connecter"
-          sign_up: "enregistrer"
-          by_feasibility: Par faisabilité
-          feasible: Projets faisables
-          unfeasible: Projets infaisables
+            one: "<strong>You voted one proposal with a cost of %{amount_spent}</strong>"
+            other: "<strong>You voted %{count} proposals with a cost of %{amount_spent}</strong>"
+          voted_info: You can %{link} at any time until the close of this phase. No need to spend all the money available.
+          voted_info_link: change your vote
+          different_heading_assigned_html: 'You have active votes in another heading: %{heading_link}'
+          change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+          check_ballot_link: "check my ballot"
+          zero: You have not voted any investment project in this group.
+          verified_only: "To create a new budget investment %{verify}."
+          verify_account: "verify your account"
+          create: "Create budget investment"
+          not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
+          sign_in: "sign in"
+          sign_up: "sign up"
+          by_feasibility: By feasibility
+          feasible: Feasible projects
+          unfeasible: Unfeasible projects
         orders:
-          random: aléatoire
-          confidence_score: les mieux notés
-          price: par coût
+          random: random
+          confidence_score: highest rated
+          price: by price
       show:
-        author_deleted: Utilisateur supprimé
-        price_explanation: Explication du coût
-        unfeasibility_explanation: Explication de l'infaisabilité
-        code_html: 'Code de la proposition de dépense: <strong>%{code}</strong>'
-        location_html: 'Lieu: <strong>%{location}</strong>'
-        organization_name_html: 'Organisation: <strong>%{name}</strong>'
-        share: Partager
-        title: Proposition d'investissement
-        supports: Soutiens
+        author_deleted: User deleted
+        price_explanation: Price explanation
+        unfeasibility_explanation: Unfeasibility explanation
+        code_html: 'Investment project code: <strong>%{code}</strong>'
+        location_html: 'Location: <strong>%{location}</strong>'
+        organization_name_html: 'Organization: <strong>%{name}</strong>'
+        share: Share
+        title: Investment project
+        supports: Supports
         votes: Votes
-        price: Coût
-      wrong_price_format: Nombres entiers uniquement
+        price: Price
+        comments_tab: Comments
+        milestones_tab: Milestones
+        no_milestones: Don't have defined milestones
+        milestone_publish_date: "Published %{publish_date}"
+      wrong_price_format: Only integer numbers
       investment:
-        title: Proposition d'investissement
-        add: Voter
-        already_added: Vous avez déjà ajouté cette proposition d'investissement.
-        already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
-        support_title: Soutenir cette proposition
-        confirm_group: "Vous pouvez seulement soutenir les propositions d'un district. Si vous continuez, vous ne pourrez pas changer ce choix. Êtes-vous sûr(e) ?"
+        add: Vote
+        already_added: You have already added this investment project
+        already_supported: You have already supported this. Share it!
+        support_title: Support this project
+        confirm_group: "You can only support investments in one district. If you continue you cannot change your decision. Are you sure?"
         supports:
-          one: 1 soutien
-          other: "%{count} soutiens"
-          zero: Pas de soutiens
-        give_support: Soutenir
+          zero: No supports
+          one: 1 support
+          other: "%{count} supports"
+        give_support: Support
       header:
-        check_ballot: Vérifier mon vote
-        different_heading_assigned_html: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
+        check_ballot: Check my ballot
+        different_heading_assigned_html: 'You have active votes in another heading: %{heading_link}'
+        change_ballot: "If your change your mind you can remove your votes in %{check_ballot} and start again."
+        check_ballot_link: "check my ballot"
     progress_bar:
-      available: "Disponible : "
+      available: 'Available: '
     show:
-      group: Groupe
-      phase: Phase actuelle
-      unfeasible_title: Propositions infaisables
-      unfeasible: Voir les propositions infaisables
-      unselected_title: Propositions non-sélectionnées pour la phase de vote
-      unselected: Voir les propositions non-sélectionnées pour la phase de vote
+      group: Group
+      phase: Actual phase
+      unfeasible_title: Unfeasible investments
+      unfeasible: See unfeasible investments
+      unselected_title: Investments not selected for balloting phase
+      unselected: See investments not selected for balloting phase
+      see_results: See results
+    results:
+      link: Results
+      page_title: "%{budget} - Results"
+      heading: "Participatory budget results"
+      heading_selection_title: "By district"
+      spending_proposal: Proposal title
+      ballot_lines_count: Times selected
+      hide_discarded_link: Hide discarded
+      show_all_link: Show all
+      price: Cost
+      amount_available: Available budget
+      accepted: 'Accepted spending proposal: '
+      discarded: 'Discarded spending proposal: '
+      incompatibles: Incompatibles
