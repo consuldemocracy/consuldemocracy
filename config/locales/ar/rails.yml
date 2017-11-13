@@ -1,13 +1,275 @@
 ar:
+  date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names:
+      - [ ]
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - [ ]
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order:
+      - :year
+      - :month
+      - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        zero: about %{count} hours
+        one: about 1 hour
+        two: about %{count} hours
+        few: about %{count} hours
+        many: about %{count} hours
+        other: about %{count} hours
+      about_x_months:
+        zero: about %{count} months
+        one: about 1 month
+        two: about %{count} months
+        few: about %{count} months
+        many: about %{count} months
+        other: about %{count} months
+      about_x_years:
+        zero: about %{count} years
+        one: about 1 year
+        two: about %{count} years
+        few: about %{count} years
+        many: about %{count} years
+        other: about %{count} years
+      almost_x_years:
+        zero: almost %{count} years
+        one: almost 1 year
+        two: almost %{count} years
+        few: almost %{count} years
+        many: almost %{count} years
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        zero: less than %{count} minutes
+        one: less than a minute
+        two: less than %{count} minutes
+        few: less than %{count} minutes
+        many: less than %{count} minutes
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        zero: less than %{count} seconds
+        one: less than 1 second
+        two: less than %{count} seconds
+        few: less than %{count} seconds
+        many: less than %{count} seconds
+        other: less than %{count} seconds
+      over_x_years:
+        zero: over %{count} years
+        one: over 1 year
+        two: over %{count} years
+        few: over %{count} years
+        many: over %{count} years
+        other: over %{count} years
+      x_days:
+        zero: "%{count} days"
+        one: 1 day
+        two: "%{count} days"
+        few: "%{count} days"
+        many: "%{count} days"
+        other: "%{count} days"
+      x_minutes:
+        zero: "%{count} minutes"
+        one: 1 minute
+        two: "%{count} minutes"
+        few: "%{count} minutes"
+        many: "%{count} minutes"
+        other: "%{count} minutes"
+      x_months:
+        zero: "%{count} months"
+        one: 1 month
+        two: "%{count} months"
+        few: "%{count} months"
+        many: "%{count} months"
+        other: "%{count} months"
+      x_years:
+        zero: "%{count} years"
+        one: 1 year
+        two: "%{count} years"
+        few: "%{count} years"
+        many: "%{count} years"
+        other: "%{count} years"
+      x_seconds:
+        zero: "%{count} seconds"
+        one: 1 second
+        two: "%{count} seconds"
+        few: "%{count} seconds"
+        many: "%{count} seconds"
+        other: "%{count} seconds"
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: doesn't match %{attribute}
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      model_invalid: 'Validation failed: %{errors}'
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      required: must exist
+      taken: has already been taken
+      too_long:
+        zero: is too long (maximum is %{count} characters)
+        one: is too long (maximum is 1 character)
+        two: is too long (maximum is %{count} characters)
+        few: is too long (maximum is %{count} characters)
+        many: is too long (maximum is %{count} characters)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        zero: is too short (minimum is %{count} characters)
+        one: is too short (minimum is 1 character)
+        two: is too short (minimum is %{count} characters)
+        few: is too short (minimum is %{count} characters)
+        many: is too short (minimum is %{count} characters)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        zero: is the wrong length (should be %{count} characters)
+        one: is the wrong length (should be 1 character)
+        two: is the wrong length (should be %{count} characters)
+        few: is the wrong length (should be %{count} characters)
+        many: is the wrong length (should be %{count} characters)
+        other: is the wrong length (should be %{count} characters)
+      other_than: must be other than %{count}
+    template:
+      body: 'There were problems with the following fields:'
+      header:
+        zero: "%{count} errors prohibited this %{model} from being saved"
+        one: 1 error prohibited this %{model} from being saved
+        two: "%{count} errors prohibited this %{model} from being saved"
+        few: "%{count} errors prohibited this %{model} from being saved"
+        many: "%{count} errors prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
   number:
     currency:
       format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
         significant: false
         strip_insignificant_zeros: false
+        unit: "$"
     format:
+      delimiter: ","
+      precision: 3
+      separator: "."
       significant: false
       strip_insignificant_zeros: false
     human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
       format:
+        delimiter: ''
+        precision: 3
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            zero: Bytes
+            one: Byte
+            two: Bytes
+            few: Bytes
+            many: Bytes
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      datetime: "%Y-%m-%d %H:%M:%S"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+      api: "%Y-%m-%d %H"
+    pm: pm
