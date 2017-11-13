@@ -50,13 +50,7 @@ fr:
         title: "Problèmes techniques ?"
         description: "Lisez la FAQ et trouvez la réponse à vos questions."
         button: "Voir les questions fréquemment posées"
-        page:
-          title: "Frequently Asked Questions"
-          description: "Use this page to resolve the common FAQs to the users of site."
-          faq_1_title: "Question 1"
-          faq_1_description: "This is an example for the description of question one."
       other:
-        title: "Other information of interest"
         how_to_use: "Utiliser %{org_name} dans votre ville"
       how_to_use:
         text: |-
@@ -65,19 +59,5 @@ fr:
           Ce portail de Gouvernement Ouvert utilise l'[application Consul](https://github.com/consul/consul 'consul github') qui est un logiciel libre, sous [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), ce qui, en quelques mots, signifie que tout le monde peut utiliser le code librement, le copier, le voir en détail, le modifier et le redistribuer avec ces modifications (permettant à d'autres d'en faire de même). Car nous pensons que la culture est meilleure et plus riche quand elle est libre.
           
           Si vous êtes un développeur, vous pouvez voir le code et nous aider à l'améliorer en allant sur l'[applicationConsul](https://github.com/consul/consul 'consul github').
-      titles:
-        how_to_use: Use it in your local government
-    privacy: Privacy Policy
-    titles:
-      accessibility: Accessibility
-      conditions: Terms of use
-      more_info: "More information about %{org_name}"
-      privacy: Privacy Policy
     verify:
-      code: Code you received in letter
       email: Email
-      info: 'For verufy your account introduce your access data:'
-      info_code: 'Now introduce the code you received in letter:'
-      password: Password
-      submit: Verify my account
-      title: Verify your account
